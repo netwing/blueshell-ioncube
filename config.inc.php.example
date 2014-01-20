@@ -25,6 +25,9 @@ $dbprefix = "";
 // Licenza acquistata su http://my.netwing.it
 $license_key = "";
 
+// Default VAT
+$vat_percentage = 0;
+
 // Config debug and trace level FOR WEBAPP
 $yii_debug = true;
 $yii_trace_level = 1;
