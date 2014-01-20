@@ -1,332 +1,131 @@
-<?php
-
-// Default configuration file
-// If you want to override any configuration
-// please create a config.php file in the same directory of this file
-// and rewrite only what you want to change
-
-// *** DO NOT OVERWRITE THIS FILE!!! ***
-
-// ***************************
-// *** COSTANTS DEFINITION ***
-// ***************************
-
-define("APPLICATION_NAME", "BlueShell");
-define("APPLICATION_VERSION", "2.0.0-alpha");
-define("APPLICATION_SOFTWARE_HOUSE", "Netwing SRL");
-define("APPLICATION_PATH", dirname(__FILE__) . DIRECTORY_SEPARATOR . '..');
-
-// *********************
-// *** CONFIGURATION ***
-// *********************
-// Config debug and trace level
-$yii_debug = false;
-$yii_trace_level = 1;
-
-// Config debug and trace level for console
-$yiic_debug = false;
-$yiic_trace_level = 1;
-
-// CSRF Validation
-defined("APPLICATION_ENABLE_CSRF_VALIDATION") or define("APPLICATION_ENABLE_CSRF_VALIDATION", true);
-
-// Main configuration array
-$config = array(
-    
-    'basePath'  => APPLICATION_PATH,
-    'name'      => APPLICATION_NAME,
-    'theme'     => 'cerulean',
-    'timeZone'  => 'Europe/London',
-    'language'  => 'en',
-    
-    // path aliases
-    'aliases' => array(
-        'vendor'    => realpath(__DIR__ . '/../../../vendor'),
-        'bootstrap' => realpath(__DIR__ . '/../extensions/netwing/bootstrap'),
-        'bower'     => realpath(__DIR__ . '/../../../bower_components'),
-    ),
-
-    // preloading 'log' component
-    'preload'   => array(
-        'log',
-    ),
-
-    // autoloading model and component classes
-    'import'    => array(
-        'application.models.*',
-        'application.components.*',
-        'application.modules.admin.models.*',
-    ),
-
-    'modules'   => array(
-
-        'admin',
-        'example',
-        'v1',
-        
-        // Yii code generator
-        'gii' => array(
-            'class'             => 'system.gii.GiiModule',
-            'password'          => 'develop',
-            'generatorPaths'    => array(
-                'application.gii',
-            ),
-            'newFileMode'       => 0776,
-            'newDirMode'        => 0777,
-            // If removed, Gii defaults to localhost only. Edit carefully to taste.
-            // Default to only local net 192.168.*.* and localhost
-            'ipFilters'         => array('192.168.*.*', '127.0.0.1', '::1'),
-        ),
-
-    ),
-
-    'components'    => array(
-
-        // *** YII DEFAULT COMPONENTS ***
-        // Request
-        'request'=>array(
-            'enableCsrfValidation' => APPLICATION_ENABLE_CSRF_VALIDATION,
-            'enableCookieValidation' => true,
-        ),        // Assets component
-        'assetManager' => array(
-            'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'assets',
-            'baseUrl'  => '../assets/',
-        ),
-        // Main log component
-        'log' => array(
-            'class'=>'CLogRouter',
-            // Routes for logging
-            'routes'=>array(
-                
-                // Log errors and warnings in errors.log
-                'error' => array(
-                    'class'         => 'CFileLogRoute',
-                    'levels'        => 'error, warning',
-                    'logfile'       => 'error.log',
-                    'enabled'       => true,
-                    'maxFileSize'   => 20480,
-                    'maxLogFiles'   => 10,
-                ),
-                
-                // Log errors, warnings and info in application.log
-                'application' => array(
-                    'class'     => 'CFileLogRoute',
-                    'levels'    => 'error, warning, info',
-                    'logfile'   => 'application.log',
-                    'enabled'   => true,
-                    'maxFileSize'   => 20480,
-                    'maxLogFiles'   => 10,
-                ),
-                
-                // Log trace query in query.log
-                'query' => array(
-                    'class'         => 'CFileLogRoute',
-                    'logfile'       => 'query.log',
-                    'categories'    => 'system.db.CDbCommand',
-                    'levels'        => 'trace, info, warning, error',
-                    'enabled'       => true,
-                    'maxFileSize'   => 20480,
-                    'maxLogFiles'   => 10,
-                ),
-
-                // Log trace in debug.log
-                'debug' => array(
-                    'class'         => 'CFileLogRoute',
-                    'logfile'       => 'debug.log',
-                    'levels'        => 'trace',
-                    'enabled'       => true,
-                    'maxFileSize'   => 20480,
-                    'maxLogFiles'   => 10,
-                ),
-                // Debug toolbar
-                'toolbar' => array(
-                    'class'     => 'vendor.malyshev.yii-debug-toolbar.YiiDebugToolbarRoute',
-                    'ipFilters' => array('0.0.0.0/0'),
-                    'enabled'   => false,
-                ),
-            ),
-        ), // end of log route array
-
-        'urlManager'=>array(
-            'rules'=>array(
-                'app/' => array('route1', 'urlSuffix'=>'.xml', 'caseSensitive'=>false),
-            ),
-        ),
-
-        // Database connection
-        'db' => array(
-            'connectionString'      => 'mysql:host=localhost;dbname=yiiapp',
-            'emulatePrepare'        => true,
-            'username'              => 'username',
-            'password'              => 'password',
-            'charset'               => 'utf8',
-            'tablePrefix'           => null,
-            'enableParamLogging'    => true,
-            'enableProfiling'       => true,
-            // 'queryCacheID'          => 'redis',
-            // 'schemaCacheID'         => 'redis',
-            // 'schemaCachingDuration' =>  3600,
-        ),
-
-        // User authentication and login
-        'user' => array(
-            'class'             => 'WebUser',
-            'allowAutoLogin'    => true,
-        ),
-
-        // Route for error handler
-        'errorHandler' => array(
-            // use 'site/error' action to display errors
-            'errorAction' => 'site/error',
-        ),
-
-        // Authorization manager for RBAC
-        'authManager'=>array(
-            'class'=>'CDbAuthManager',
-        ),
-
-        // Redis cache
-        'cache'=>array(
-            'class'     =>'CRedisCache',
-            'hostname'  =>'localhost',
-            'port'      => 6379,
-            'database'  => 0,
-        ),
-
-        // *** THIRD PARTY COMPONENTS
-
-        // *** NETWING COMPONENTS ***
-        
-        // Custom bootstrap css and js inclusion
-        'bootstrap'     => array(
-            'class'     => 'ext.netwing.bootstrap.Bootstrap',
-        ),
-
-        // Redis component - Actually using Predis for more advanced features
-        'redis'         => array(
-            'class'     => 'ext.netwing.redis.Redis',
-            'servers'   => array(
-                'host'  =>  'localhost',
-                'port'  =>  6379,
-            ),
-            'database'  => 1, // 0 is used for caching purpose, see 'cache' component config
-            'prefix'    => "",
-        ),
-
-        // Font awesome component for publish assets and register link to css
-        'fontAwesome'   => array(
-            'class'     => 'ext.netwing.font-awesome.FontAwesome',
-        ),
-
-        // Timepicker component for publish assets and register link to css
-        'timepicker'   => array(
-            'class'     => 'ext.netwing.timepicker.Timepicker',
-        ),
-
-        // Custom formatter
-        'format' => array(
-            'class' => 'MyFormatter',
-        ),
-
-        // jQuery Full Calendar
-        'calendar' => array(
-            'class' => 'ext.netwing.calendar.Calendar',
-        ),
-
-        // jQuery Select2
-        'select2' => array(
-            'class' => 'ext.netwing.select2.Select2',
-        ),
-
-        // jQuery Select2
-        'minicolors' => array(
-            'class' => 'ext.netwing.minicolors.Minicolors',
-        ),
-
-        // Brdige from old to new app
-        'bridge' => array(
-            'class' => 'Bridge',
-        ),
-
-    ),
-
-    // *** APPLICATION PARAMETER
-    // This can be accessed using Yii::app()->params['paramName']
-    'params'    => array(
-        // this is used in contact page
-        'adminEmail'  => 'info@netwing.it',
-    ),    
-
-);
-
-if (!file_exists(dirname(__FILE__) . '/config.php')) {
-    if (PHP_SAPI == 'cli') {
-        echo "*** Configuration not found! ***" . PHP_EOL;
-        echo "Please copy ./protected/config/config.php.example in ./protected/config/config.php and set the correct configuration parameters." . PHP_EOL . PHP_EOL;
-    } else {
-        echo "<html><head></head><body>";
-        echo "<h1>Configuration not found!</h1>";
-        echo "<p>Please copy <strong>./protected/config/config.php.example</strong> to <strong>./protected/config/config.php</strong> and set the correct configuration parameters.</p>";
-        echo "</body></html>";
-    }
-    exit;
-}
-
-// Load user configuration
-// in this file, you can overwrite any configuration
-require_once "config.php";
-
-$config['timeZone'] = APPLICATION_TIMEZONE;
-
-$config['components']['log']['routes']['error']['maxFileSize']       = LOG_MAX_FILE_SIZE;
-$config['components']['log']['routes']['error']['maxLogFiles']       = LOG_MAX_LOG_FILES;
-$config['components']['log']['routes']['error']['enabled']           = LOG_ERROR_ENABLED;
-$config['components']['log']['routes']['application']['maxFileSize'] = LOG_MAX_FILE_SIZE;
-$config['components']['log']['routes']['application']['maxLogFiles'] = LOG_MAX_LOG_FILES;
-$config['components']['log']['routes']['application']['enabled']     = LOG_APPLICATION_ENABLED;
-$config['components']['log']['routes']['query']['maxFileSize']       = LOG_MAX_FILE_SIZE;
-$config['components']['log']['routes']['query']['maxLogFiles']       = LOG_MAX_LOG_FILES;
-$config['components']['log']['routes']['query']['enabled']           = LOG_QUERY_ENABLED;
-$config['components']['log']['routes']['debug']['maxFileSize']       = LOG_MAX_FILE_SIZE;
-$config['components']['log']['routes']['debug']['maxLogFiles']       = LOG_MAX_LOG_FILES;
-$config['components']['log']['routes']['debug']['enabled']           = LOG_DEBUG_ENABLED;
-if (LOG_TOOLBAR_ENABLED !== true) {
-    unset($config['components']['log']['routes']['toolbar']);
-}
-
-if (DB_HOST === null) {
-    unset($config['components']['db']);
-} else {
-    $config['components']['db']['connectionString'] = 'mysql:host=' . DB_HOST . ';dbname=' . DB_DATABASE_NAME;
-    $config['components']['db']['emulatePrepare'] = DB_EMULATE_PREPARE;
-    $config['components']['db']['username'] = DB_USERNAME;
-    $config['components']['db']['password'] = DB_PASSWORD;
-    $config['components']['db']['charset'] = DB_CHARSET;
-    $config['components']['db']['tablePrefix'] = DB_TABLE_PREFIX;
-    $config['components']['db']['enableParamLogging'] = DB_ENABLE_PARAM_LOGGING;
-    $config['components']['db']['enableProfiling'] = DB_ENABLE_PROFILING;
-
-    $config['components']['authManager']['itemTable'] = DB_TABLE_PREFIX . "auth_item";
-    $config['components']['authManager']['itemChildTable'] = DB_TABLE_PREFIX . "auth_item_child";
-    $config['components']['authManager']['assignmentTable'] = DB_TABLE_PREFIX . "auth_assignment";
-
-}
-
-if (REDIS_HOST === null) {
-    unset($config['components']['redis']);
-} else {
-    $config['components']['redis']['servers']['host'] = REDIS_HOST;
-    $config['components']['redis']['servers']['port'] = REDIS_PORT;
-    $config['components']['redis']['database']        = REDIS_DATABASE;
-    $config['components']['redis']['prefix']          = REDIS_KEY_PREFIX;    
-}
-
-define("_MPDF_TEMP_PATH", APPLICATION_PATH . DIRECTORY_SEPARATOR . 'runtime' . DIRECTORY_SEPARATOR . 'mpdf' . DIRECTORY_SEPARATOR);
-if (!file_exists(_MPDF_TEMP_PATH)) {
-    mkdir(_MPDF_TEMP_PATH);
-    chmod(_MPDF_TEMP_PATH, 0777);
-}
-
-// Define Debug costants based on variable value
-define('YII_DEBUG', $yii_debug);
-define('YII_TRACE_LEVEL', $yii_trace_level);
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
