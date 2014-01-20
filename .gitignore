@@ -6,7 +6,6 @@ upload/*
 !upload/.gitkeep
 *.sublime-workspace
 config.inc.php
-assets
 protected/runtime/*
 !protected/runtime/.gitkeep
 stats

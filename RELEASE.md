@@ -13,6 +13,8 @@ You must install this application from scratch and keep only your database.
 
 ```
 git clone git@github.com:netwing/blueshell-ioncube.git
+php composer.phar install --no-dev
+bower install
 ./app/protected/yiic migrate
 ```
 
