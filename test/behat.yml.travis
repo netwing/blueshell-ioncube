@@ -1,7 +1,0 @@
-default:
-    extensions:
-        Behat\MinkExtension\Extension:
-            base_url: http://bs2.ispeed.local
-            files_path: /absolute/path/to/files/for/test
-            goutte: ~
-            selenium2: ~
