@@ -39,6 +39,9 @@ $yii_trace_level = 1;
 $yiic_debug = true;
 $yiic_trace_level = 0;
 
+// Show map on home page
+define("APPLICATION_SHOW_MAP", false);
+
 // *** Do not touch anything below this line! ***
 // ----------------------------------------------------------------------------
 require_once "init.inc.php";
