@@ -1,0 +1,32 @@
+<?php
+// Name of port
+$port_name = "Port name";
+
+// PARAMETRI DI CONNESSIONE AL DATABASE
+$dbhost = "localhost";
+$dbuser = "ubuntu";
+$dbpass = "";
+$dbdata = "circle_test";
+$dbprefix = "blue_";
+
+// Licenza acquistata su http://my.netwing.it
+$license_key = "a2d62a18f58381a72ee9adddf92c80326233d72d260f8bb11cc6bafb31f04bb647feb379a6eb56a2497133b08b6aa2868bb6a51675ba6d120b72569e49b0e2e7";
+
+// Default VAT Percentage
+$vat_percentage = "22";
+
+// Base URL di default SENZA / alla fine
+$base_url = "";
+
+// Config debug and trace level FOR WEBAPP
+$yii_debug = true;
+$yii_trace_level = 1;
+
+// Config debug and trace level FOR CONSOLE
+$yiic_debug = true;
+$yiic_trace_level = 0;
+
+// *** Do not touch anything below this line! ***
+// ----------------------------------------------------------------------------
+require_once "init.inc.php";
+

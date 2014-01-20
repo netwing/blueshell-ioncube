@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>MovieClip.pauseTween() , TextField.pauseTween()</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script language="JavaScript" src="../../_sharedassets/pages.js"></script>
+</head>
+<body>
+<table class="nav" width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="100%" align="left"></td>
+    <td><a href="pauseAllTweens.html"><img src="../../_sharedassets/previous.gif" alt="Previous"></a><img src="../../_sharedassets/shim.gif" width="10"  height="1"><a href="rewTween.html"><img src="../../_sharedassets/next.gif" alt="Next"></a></td>
+  </tr>
+  <tr>
+    <td colspan="2"><img src="../../_sharedassets/shim.gif" height="4" width="1"></td>
+  </tr>
+  <tr>
+    <td colspan="2"><img src="../../_sharedassets/pixel.gif" height="1" width="100%"></td>
+  </tr>
+  <tr>
+    <td colspan="2"><img src="../../_sharedassets/shim.gif" height="11" width="1"></td>
+  </tr>
+</table>
+<h1>MovieClip.pauseTween() , TextField.pauseTween()</h1>
+<h4><a name="251024"></a>Availability</h4>
+<p>Flash Player 6.</p>
+<h4><a name="251026"></a>Usage</h4>
+<pre>my_mc.pauseTween(props)</pre>
+<h4><a name="1765408"></a>Parameters</h4>
+<p><code><em>props</em></code>&#32;One or more properties to be specifically affected. If the param is not passed, all  properties being tweened are affected.</p>
+<p>Accepts the following formats:</p>
+<ul>
+	<li> String such as <code>&quot;_x&quot;</code></li>
+	<li>Comma-delimited string for more than one property, such as  <code>&quot;_x, _y&quot;</code></li>
+	<li>Array of strings, such as <code>[&quot;_x&quot;, &quot;_y&quot;]</code></li>
+</ul>
+<p>
+To affect colorTransform (methods colorTo, brightnessTo, colorTransformTo, invertColorTo, tintTo) use &quot;_ct_&quot; as props parameter.</p>
+<h4><a name="1765410"></a>Returns</h4>
+<p>Nothing.</p>
+<h4><a name="251032"></a>Description</h4>
+<p>method, pauses<i>&nbsp;props</i> of a (currently-playing) tween within an individual MovieClip or TextField.<i> </i>If<i>&nbsp;props </i>is not passed, pauses all tweens the movieclip or textfield. </p>
+<p>Note that if you passed a start delay in the tween and call <em>pauseTween()</em> while the delay is still running, the delay will be paused and can be unpaused in progress. However, individual properties are not supported during delays and the props argument will be ignored in this case.</p>
+<p>example:</p>
+<pre>my_mc.tween([&quot;_x&quot;,&quot;_width&quot;],[200,0],10);
+
+my_mc.onPress = function() {
+  this.pauseTween();  // pauses all movements 
+  //this.pauseTween(&quot;_x&quot;); // pauses just _x tween
+}</pre>
+<table class="nav" width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td colspan="2"><img src="../../_sharedassets/shim.gif" height="6" width="1"></td>
+  </tr>
+  <tr>
+    <td colspan="2"><img src="../../_sharedassets/pixel.gif" height="1" width="100%"></td>
+  </tr>
+  <tr>
+    <td colspan="2"><img src="../../_sharedassets/shim.gif" height="4" width="1"></td>
+  </tr>
+  <tr>
+    <td width="100%" align="left"></td>
+    <td><a href="pauseAllTweens.html"><img src="../../_sharedassets/previous.gif" alt="Previous"></a><img src="../../_sharedassets/shim.gif" width="10" height="1"><a href="rewTween.html"><img src="../../_sharedassets/next.gif" alt="Next"></a></td>
+  </tr>
+</table>
+</body>
+</html>
+
+
+
+
+
+
+
