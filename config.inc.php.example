@@ -25,6 +25,9 @@ $dbprefix = "";
 // Licenza acquistata su http://my.netwing.it
 $license_key = "";
 
+// Base url of application
+$base_url = "";
+
 // Default VAT
 $vat_percentage = 0;
 
