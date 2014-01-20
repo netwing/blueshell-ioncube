@@ -1,0 +1,12 @@
+#!/bin/bash
+if pgrep Xvfb | grep "[0-9]" 
+then
+    echo "Xvfb already started with pid `pgrep Xvfb | grep "[0-9]"`"
+else
+    Xvfb :99 -extension RANDR -ac 2>/dev/null &
+fi
+export DISPLAY=:99
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+MYJARFILE="$DIR/../vendor/netwing/selenium-server-standalone/selenium-server-standalone-2.37.0.jar -port 7055"
+java -jar $MYJARFILE

@@ -1,0 +1,124 @@
+<html>
+<head>
+<title>tweenManager class</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script language="JavaScript" src="../../_sharedassets/pages.js"></script>
+</head>
+<body>
+<table class="nav" width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td width="100%" align="left"></td>
+		<td><a href="tween.html"><img src="../../_sharedassets/previous.gif" alt="Previous"></a><img src="../../_sharedassets/shim.gif" width="10"  height="1"><a href="unlockTween.html"><img src="../../_sharedassets/next.gif" alt="Next"></a></td>
+	</tr>
+    <tr>
+        <td colspan="2"><img src="../../_sharedassets/shim.gif" height="4" width="1"></td>
+	</tr>
+    <tr>
+        <td colspan="2"><img src="../../_sharedassets/pixel.gif" height="1" width="100%"></td>
+	</tr>
+    <tr>
+        <td colspan="2"><img src="../../_sharedassets/shim.gif" height="11" width="1"></td>
+	</tr>
+</table>
+<h1>tweenManager class</h1>
+<p>Main class of MovieClip Tweening prototypes, prototypes only parses arguments (and does not store any variables to MovieClip) to instance of class named <strong>$tweenManager </strong></p>
+<h4><a name="251024"></a>Properties</h4>
+<p><em>autoStop</em> - Boolean, default is false. </p>
+<p>Set true if you want all tweens in the target to stop whenever a new tween is added.(In prior releases, autoStop only affected the new properties tweened.) For example:</p>
+<pre>_global.$tweenManager.autoStop = true;
+my_mc.slideTo(100,100,1);
+my_mc.tween('_x',200,1);// stops both _x and _y in the clip</pre>
+<br>
+<p><em>updateInterval</em> - Number, default 0. (getter/setter)</p>
+<p>Normally tweens are executed onEnterFrame, similar to Penner's Tween class. (Frame-based updates tend to run much more smoothly than setInterval-based updates in Flash.) </p>
+<p>To force $tweenManager to run on a setInterval instead, set the updateInterval property to a millisecond value. If reset to 0 updates will revert to onEnterFrame.</p>
+<p><code>_global.$tweenManager.updateInterval = 100;</code></p>
+<p><br>
+    <em>controllerDepth</em> - Number, default 6789. (getter/setter)</p>
+<p>The onEnterFrame used for updates (see updateInterval above) is broadcast from a controlling clip called &quot;_th_&quot;, created on depth 6789 of the root timeline by default. If this depth is inconvenient (for example when using <em>getNextHighestDepth</em> in the root timeline), you may set the depth using this property. Example:</p>
+<pre>_global.$tweenManager.controllerDepth = 0; // moves clip to depth 0</pre>
+<blockquote>
+	<p>Please note that although it is possible to use negative depths (at times be the most convenient location for this type of clip), you should not do so if looping the main timeline.<br>
+    </p>
+</blockquote>
+<p><em>broadcastEvents </em>- boolean, default false. When true, MovieClips and TextFields broadcast events (based on older AsBroadcaster model). Events should be subscribed to via the MovieClip or TextField being tweened.</p>
+<p><code>onTweenStart (evtObj)<br>
+  onTweenUpdate (evtObj)<br>
+onTweenEnd (evtObj)<br>
+onTweenInterrupt (evtObj)</code> - broadcast when any property's tween is stopped or overwritten.</p>
+
+<p>The <code>evtObj</code> argument contains the properties:</p>
+<ul>
+	<li><code>target</code> - the MovieClip or TextField broadcasting the event. (Useful when subscribing multiple targets to a single listener)</li>
+</ul>
+<ul>
+	<li><code>props</code> - an array of properties (as strings) being affected is sent as an argument in the broadcast call. The string &quot;_ct_&quot; is sent for any color-transform tween.</li>
+</ul>
+<p>
+<p>example:
+<pre>_global.$tweenManager.broadcastEvents = true; 
+my_obj = {};
+my_obj.onTweenStart = function(){
+	trace('my_obj onTweenStart');
+} 
+my_obj.onTweenUpdate = function(){
+	trace('my_obj onTweenUpdate');
+} 
+my_obj.onTweenEnd = function(){
+	trace('my_obj onTweenEnd');
+} 
+my_second_obj = {};
+my_second_obj.onTweenEnd = function(){
+	trace('my_second_obj onTweenEnd');
+} 
+my_mc.onTweenEnd = function(o:Object){
+  trace('my_mc tween ended for props: ' + o.props)
+} 
+my_mc.addListener(my_obj);
+my_mc.addListener(my_second_obj);
+my_mc.addListener(my_mc);
+my_mc.tween('_x',200,1);
+my_mc.tween('_y',200,2);
+</pre>
+<br>
+<p><strong>Methods:</strong></p>
+<p><em>pauseAll() </em>: pauses all runing and delayed tweens</p>
+<p><em>unPauseAll() </em>: unpauses all runing and delayed tweens</p>
+<p><em>stopAll() </em>: stops all running and delayed tweens </p>
+<p>example usage: <em>_global.$tweenManager.pauseAll();</em> </p>
+<p>Note: these same 'global' methods can now also be accessed by calling the <em>pauseAllTweens(), unpauseAllTweens()</em> and <em>stopAllTweens()</em> shortcut methods on any MovieClip or Textfield. <br>
+</p>
+<p><strong>Tips:</strong></p>
+<p>I some cases when you upgrade from older version you may have trouble accessing new features, or receive undexpected compiler errors. To check the version being run by Flash, use the command:</p>
+<p><code> trace($tweenManager);</code></p>
+<p>If you see [object Object] or [AS2 tweenManager [version nr]], and  nr is lower than your installed version, that means  that an older version of tweenManager is loaded. To fix this issue (caused by automatic caching of classes), you must delete the specific precompiled class file (*.aso), or simply delete the entire aso directory which will force Flash to recompile all classes on publish. To find the directory or file, look here:</p>
+<p>
+WinXP:<br>
+    <code>C:\Documents and Settings\[username]\Local Settings\Application Data\Macromedia\Flash MX 2004\[language]\Configuration\Classes\aso\
+zigo.tweenManager.aso</code></p>
+<p>Macintosh:<br>
+    <code>[username]:Library:Application Support:Macromedia:Flash MX 2004:en:Configuration:Classes:aso:zigo:tweenManager.aso</code></p>
+<table class="nav" width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td colspan="2"><img src="../../_sharedassets/shim.gif" height="6" width="1"></td>
+	</tr>
+    <tr>
+        <td colspan="2"><img src="../../_sharedassets/pixel.gif" height="1" width="100%"></td>
+	</tr>
+    <tr>
+        <td colspan="2"><img src="../../_sharedassets/shim.gif" height="4" width="1"></td>
+	</tr>
+    <tr>
+        <td width="100%" align="left"></td>
+		<td><a href="tween.html"><img src="../../_sharedassets/previous.gif" alt="Previous"></a><img src="../../_sharedassets/shim.gif" width="10" height="1"><a href="unlockTween.html"><img src="../../_sharedassets/next.gif" alt="Next"></a></td>
+	</tr>
+</table>
+</body>
+</html>
+
+
+
+
+
+
+
