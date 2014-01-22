@@ -1,0 +1,345 @@
+[
+    {
+        "name": "codeplex/phpexcel",
+        "version": "1.7.8",
+        "version_normalized": "1.7.8.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/markushausammann/PHPExcel.git",
+            "reference": "6236b1e1513dda38a68a5ac22bbab5fc2b7942fd"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/markushausammann/PHPExcel/zipball/6236b1e1513dda38a68a5ac22bbab5fc2b7942fd",
+            "reference": "6236b1e1513dda38a68a5ac22bbab5fc2b7942fd",
+            "shasum": ""
+        },
+        "require": {
+            "ext-xml": "*",
+            "php": ">=5.2.0"
+        },
+        "time": "2012-11-21 10:55:52",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "PHPExcel": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "LGPL"
+        ],
+        "authors": [
+            {
+                "name": "Maarten Balliauw",
+                "homepage": "http://blog.maartenballiauw.be"
+            },
+            {
+                "name": "Mark Baker"
+            },
+            {
+                "name": "Erit Tilt"
+            }
+        ],
+        "description": "PHPExcel - OpenXML - Create Excel2007 documents in PHP - Spreadsheet engine",
+        "homepage": "http://phpexcel.codeplex.com",
+        "keywords": [
+            "OpenXML",
+            "excel",
+            "php",
+            "spreadsheet"
+        ]
+    },
+    {
+        "name": "predis/predis",
+        "version": "v0.8.5",
+        "version_normalized": "0.8.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/nrk/predis.git",
+            "reference": "5f2eea628eb465d866ad2771927d83769c8f956c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/nrk/predis/zipball/5f2eea628eb465d866ad2771927d83769c8f956c",
+            "reference": "5f2eea628eb465d866ad2771927d83769c8f956c",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.2"
+        },
+        "suggest": {
+            "ext-curl": "Allows access to Webdis when paired with phpiredis",
+            "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol"
+        },
+        "time": "2014-01-16 14:10:29",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Predis": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Daniele Alessandri",
+                "email": "suppakilla@gmail.com",
+                "homepage": "http://clorophilla.net"
+            }
+        ],
+        "description": "Flexible and feature-complete PHP client library for Redis",
+        "homepage": "http://github.com/nrk/predis",
+        "keywords": [
+            "nosql",
+            "predis",
+            "redis"
+        ]
+    },
+    {
+        "name": "smarty/smarty",
+        "version": "v3.1.16",
+        "version_normalized": "3.1.16.0",
+        "source": {
+            "type": "svn",
+            "url": "http://smarty-php.googlecode.com/svn",
+            "reference": "/tags/v3.1.16/@4802"
+        },
+        "require": {
+            "php": ">=5.2"
+        },
+        "time": "2013-12-17 16:56:58",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "classmap": [
+                "distribution/libs/Smarty.class.php",
+                "distribution/libs/SmartyBC.class.php",
+                "distribution/libs/sysplugins/smarty_security.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "LGPL-3.0"
+        ],
+        "authors": [
+            {
+                "name": "Monte Ohrt",
+                "email": "monte@ohrt.com"
+            },
+            {
+                "name": "Uwe Tews",
+                "email": "uwe.tews@googlemail.com"
+            },
+            {
+                "name": "Rodney Rehm",
+                "email": "rodney.rehm@medialize.de"
+            }
+        ],
+        "description": "Smarty - the compiling PHP template engine",
+        "homepage": "http://www.smarty.net",
+        "keywords": [
+            "templating"
+        ]
+    },
+    {
+        "name": "swiftmailer/swiftmailer",
+        "version": "v5.0.3",
+        "version_normalized": "5.0.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/swiftmailer/swiftmailer.git",
+            "reference": "32edc3b0de0fdc1b10f5c4912e8677b3f411a230"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/32edc3b0de0fdc1b10f5c4912e8677b3f411a230",
+            "reference": "32edc3b0de0fdc1b10f5c4912e8677b3f411a230",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2.4"
+        },
+        "time": "2013-12-03 13:33:24",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.1-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "lib/swift_required.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Chris Corbyn"
+            }
+        ],
+        "description": "Swiftmailer, free feature-rich PHP mailer",
+        "homepage": "http://swiftmailer.org",
+        "keywords": [
+            "mail",
+            "mailer"
+        ]
+    },
+    {
+        "name": "tecnick.com/tcpdf",
+        "version": "6.0.055",
+        "version_normalized": "6.0.055.0",
+        "source": {
+            "type": "git",
+            "url": "git://git.code.sf.net/p/tcpdf/code",
+            "reference": "31866c4b5b40a4f0bc5ac75606f1b77eb820dc7d"
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2014-01-15 18:02:49",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "classmap": [
+                "fonts",
+                "config",
+                "include",
+                "tcpdf.php",
+                "tcpdf_parser.php",
+                "tcpdf_import.php",
+                "tcpdf_barcodes_1d.php",
+                "tcpdf_barcodes_2d.php",
+                "include/tcpdf_colors.php",
+                "include/tcpdf_filters.php",
+                "include/tcpdf_font_data.php",
+                "include/tcpdf_fonts.php",
+                "include/tcpdf_images.php",
+                "include/tcpdf_static.php",
+                "include/barcodes/datamatrix.php",
+                "include/barcodes/pdf417.php",
+                "include/barcodes/qrcode.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "LGPLv3"
+        ],
+        "authors": [
+            {
+                "name": "Nicola Asuni",
+                "email": "info@tecnick.com",
+                "homepage": "http://nicolaasuni.tecnick.com"
+            }
+        ],
+        "description": "TCPDF is a PHP class for generating PDF documents.",
+        "homepage": "http://www.tcpdf.org/",
+        "keywords": [
+            "PDFD32000-2008",
+            "TCPDF",
+            "barcodes",
+            "datamatrix",
+            "pdf",
+            "pdf417",
+            "qrcode"
+        ]
+    },
+    {
+        "name": "yiisoft/yii",
+        "version": "1.1.14",
+        "version_normalized": "1.1.14.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/yiisoft/yii.git",
+            "reference": "f0fee98ee84f70f1f3652f65562c9670e919cb4e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/yiisoft/yii/zipball/f0fee98ee84f70f1f3652f65562c9670e919cb4e",
+            "reference": "f0fee98ee84f70f1f3652f65562c9670e919cb4e",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.1.0"
+        },
+        "time": "2013-08-12 00:12:08",
+        "bin": [
+            "framework/yiic"
+        ],
+        "type": "library",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Qiang Xue",
+                "email": "qiang.xue@gmail.com",
+                "homepage": "http://www.yiiframework.com/",
+                "role": "Founder and project lead"
+            },
+            {
+                "name": "Alexander Makarov",
+                "email": "sam@rmcreative.ru",
+                "homepage": "http://rmcreative.ru/",
+                "role": "Core framework development"
+            },
+            {
+                "name": "Maurizio Domba",
+                "homepage": "http://mdomba.info/",
+                "role": "Core framework development"
+            },
+            {
+                "name": "Carsten Brandt",
+                "email": "mail@cebe.cc",
+                "homepage": "http://cebe.cc/",
+                "role": "Core framework development"
+            },
+            {
+                "name": "Wei Zhuo",
+                "email": "weizhuo@gmail.com",
+                "role": "Project site maintenance and development"
+            },
+            {
+                "name": "Sebastián Thierer",
+                "email": "sebas@artfos.com",
+                "role": "Component development"
+            },
+            {
+                "name": "Jeffrey Winesett",
+                "email": "jefftulsa@gmail.com",
+                "role": "Documentation and marketing"
+            },
+            {
+                "name": "Timur Ruziev",
+                "email": "resurtm@gmail.com",
+                "homepage": "http://resurtm.com/",
+                "role": "Core framework development"
+            },
+            {
+                "name": "Paul Klimov",
+                "email": "klimov.paul@gmail.com",
+                "role": "Core framework development"
+            }
+        ],
+        "description": "Yii Web Programming Framework",
+        "homepage": "http://www.yiiframework.com/",
+        "keywords": [
+            "framework",
+            "yii"
+        ]
+    }
+]
