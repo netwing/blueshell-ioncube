@@ -24,7 +24,8 @@
     "select2": ">=3.4.0",
     "fullcalendar": ">=1.6.4",
     "highcharts": ">=v3.0.5",
-    "tinymce": ">=4.0.0"
+    "tinymce": ">=4.0.0",
+    "dropzone": "*"
   },
   "resolutions": {
     "jquery-ui": ">=1.10"

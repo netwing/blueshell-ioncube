@@ -4,18 +4,17 @@
     "license": "proprietary",
     "require": {
         "yiisoft/yii": "1.1.*",
-        "tecnick.com/tcpdf": "dev-master",
-        "codeplex/phpexcel": "v1.7.8",
-        "swiftmailer/swiftmailer": "v5.0.2",
-        "smarty/smarty": "v3.1.15",
-        "predis/predis": "dev-master"
+        "tecnick.com/tcpdf": "6.0.*",
+        "codeplex/phpexcel": "1.7.*",
+        "swiftmailer/swiftmailer": "v5.0.*",
+        "smarty/smarty": "v3.1.*",
+        "predis/predis": "v0.8.*"
     },
     "require-dev": {
         "codeception/codeception": "1.8.*",
-        "netwing/selenium-server-standalone": "2.37.0",
+        "netwing/selenium-server-standalone": "2.*",
         "kevintweber/phpunit-markup-validators": "*",
         "squizlabs/php_codesniffer": "1.*",
-        "satooshi/php-coveralls": "dev-master",
         "malyshev/yii-debug-toolbar": "dev-master"
     },
     "minimum-stability": "stable",

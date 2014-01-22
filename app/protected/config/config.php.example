@@ -11,6 +11,9 @@
 // Application timezone
 define('APPLICATION_TIMEZONE', 'Europe/London');
 define("APPLICATION_COMPANY_NAME", "Company name");
+define("APPLICATION_COMPANY_EMAIL", "company@example.com");
+define("APPLICATION_LICENSE_KEY", "");
+define("APPLICATION_BASE_URL", "");
 
 // LOG rotation
 // Define how much big a log file can become before rotate
