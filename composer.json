@@ -6,9 +6,9 @@
         "yiisoft/yii": "1.1.*",
         "tecnick.com/tcpdf": "6.0.*",
         "codeplex/phpexcel": "1.7.*",
-        "swiftmailer/swiftmailer": "v5.0.*",
-        "smarty/smarty": "v3.1.*",
-        "predis/predis": "v0.8.*"
+        "swiftmailer/swiftmailer": "5.0.*",
+        "smarty/smarty": "3.1.*",
+        "predis/predis": "0.8.*"
     },
     "require-dev": {
         "codeception/codeception": "1.8.*",
