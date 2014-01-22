@@ -49,7 +49,7 @@ test:
     - cp tests/acceptance.suite.yml.ci tests/acceptance.suite.yml
     - cp tests/unit/_bootstrap.php.ci tests/unit/_bootstrap.php
     - echo "SELENIUM LOG FILE" > $CIRCLE_ARTIFACTS/selenium.log
-    - nohup bash -c "java -jar vendor/netwing/selenium-server-standalone/selenium-server-standalone-2.37.0.jar >> $CIRCLE_ARTIFACTS/selenium.log 2>&1 &" > /dev/null
+    - nohup bash -c "java -jar vendor/netwing/selenium-server-standalone/selenium-server-standalone-2.39.0.jar >> $CIRCLE_ARTIFACTS/selenium.log 2>&1 &" > /dev/null
     - sleep 5 
     - vendor/bin/codecept build
   override:
