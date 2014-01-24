@@ -1,353 +1,195 @@
-<?php
-
-namespace Guzzle\Plugin\Cache;
-
-use Guzzle\Cache\CacheAdapterFactory;
-use Guzzle\Cache\CacheAdapterInterface;
-use Guzzle\Common\Event;
-use Guzzle\Common\Exception\InvalidArgumentException;
-use Guzzle\Common\Version;
-use Guzzle\Http\Message\RequestInterface;
-use Guzzle\Http\Message\Response;
-use Guzzle\Cache\DoctrineCacheAdapter;
-use Guzzle\Http\Exception\CurlException;
-use Doctrine\Common\Cache\ArrayCache;
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-
-/**
- * Plugin to enable the caching of GET and HEAD requests.  Caching can be done on all requests passing through this
- * plugin or only after retrieving resources with cacheable response headers.
- *
- * This is a simple implementation of RFC 2616 and should be considered a private transparent proxy cache, meaning
- * authorization and private data can be cached.
- *
- * It also implements RFC 5861's `stale-if-error` Cache-Control extension, allowing stale cache responses to be used
- * when an error is encountered (such as a `500 Internal Server Error` or DNS failure).
- */
-class CachePlugin implements EventSubscriberInterface
-{
-    /** @var RevalidationInterface Cache revalidation strategy */
-    protected $revalidation;
-
-    /** @var CanCacheStrategyInterface Object used to determine if a request can be cached */
-    protected $canCache;
-
-    /** @var CacheStorageInterface $cache Object used to cache responses */
-    protected $storage;
-
-    /** @var bool */
-    protected $autoPurge;
-
-    /**
-     * @param array|CacheAdapterInterface|CacheStorageInterface $options Array of options for the cache plugin,
-     *     cache adapter, or cache storage object.
-     *     - CacheStorageInterface storage:      Adapter used to cache responses
-     *     - RevalidationInterface revalidation: Cache revalidation strategy
-     *     - CanCacheInterface     can_cache:    Object used to determine if a request can be cached
-     *     - bool                  auto_purge    Set to true to automatically PURGE resources when non-idempotent
-     *                                           requests are sent to a resource. Defaults to false.
-     * @throws InvalidArgumentException if no cache is provided and Doctrine cache is not installed
-     */
-    public function __construct($options = null)
-    {
-        if (!is_array($options)) {
-            if ($options instanceof CacheAdapterInterface) {
-                $options = array('storage' => new DefaultCacheStorage($options));
-            } elseif ($options instanceof CacheStorageInterface) {
-                $options = array('storage' => $options);
-            } elseif ($options) {
-                $options = array('storage' => new DefaultCacheStorage(CacheAdapterFactory::fromCache($options)));
-            } elseif (!class_exists('Doctrine\Common\Cache\ArrayCache')) {
-                // @codeCoverageIgnoreStart
-                throw new InvalidArgumentException('No cache was provided and Doctrine is not installed');
-                // @codeCoverageIgnoreEnd
-            }
-        }
-
-        $this->autoPurge = isset($options['auto_purge']) ? $options['auto_purge'] : false;
-
-        // Add a cache storage if a cache adapter was provided
-        $this->storage = isset($options['storage'])
-            ? $options['storage']
-            : new DefaultCacheStorage(new DoctrineCacheAdapter(new ArrayCache()));
-
-        if (!isset($options['can_cache'])) {
-            $this->canCache = new DefaultCanCacheStrategy();
-        } else {
-            $this->canCache = is_callable($options['can_cache'])
-                ? new CallbackCanCacheStrategy($options['can_cache'])
-                : $options['can_cache'];
-        }
-
-        // Use the provided revalidation strategy or the default
-        $this->revalidation = isset($options['revalidation'])
-            ? $options['revalidation']
-            : new DefaultRevalidation($this->storage, $this->canCache);
-    }
-
-    public static function getSubscribedEvents()
-    {
-        return array(
-            'request.before_send' => array('onRequestBeforeSend', -255),
-            'request.sent'        => array('onRequestSent', 255),
-            'request.error'       => array('onRequestError', 0),
-            'request.exception'   => array('onRequestException', 0),
-        );
-    }
-
-    /**
-     * Check if a response in cache will satisfy the request before sending
-     *
-     * @param Event $event
-     */
-    public function onRequestBeforeSend(Event $event)
-    {
-        $request = $event['request'];
-        $request->addHeader('Via', sprintf('%s GuzzleCache/%s', $request->getProtocolVersion(), Version::VERSION));
-
-        if (!$this->canCache->canCacheRequest($request)) {
-            switch ($request->getMethod()) {
-                case 'PURGE':
-                    $this->purge($request);
-                    $request->setResponse(new Response(200, array(), 'purged'));
-                    break;
-                case 'PUT':
-                case 'POST':
-                case 'DELETE':
-                case 'PATCH':
-                    if ($this->autoPurge) {
-                        $this->purge($request);
-                    }
-            }
-            return;
-        }
-
-        if ($response = $this->storage->fetch($request)) {
-            $params = $request->getParams();
-            $params['cache.lookup'] = true;
-            $response->setHeader(
-                'Age',
-                time() - strtotime($response->getDate() ? : $response->getLastModified() ?: 'now')
-            );
-            // Validate that the response satisfies the request
-            if ($this->canResponseSatisfyRequest($request, $response)) {
-                if (!isset($params['cache.hit'])) {
-                    $params['cache.hit'] = true;
-                }
-                $request->setResponse($response);
-            }
-        }
-    }
-
-    /**
-     * If possible, store a response in cache after sending
-     *
-     * @param Event $event
-     */
-    public function onRequestSent(Event $event)
-    {
-        $request = $event['request'];
-        $response = $event['response'];
-
-        if ($request->getParams()->get('cache.hit') === null &&
-            $this->canCache->canCacheRequest($request) &&
-            $this->canCache->canCacheResponse($response)
-        ) {
-            $this->storage->cache($request, $response);
-        }
-
-        $this->addResponseHeaders($request, $response);
-    }
-
-    /**
-     * If possible, return a cache response on an error
-     *
-     * @param Event $event
-     */
-    public function onRequestError(Event $event)
-    {
-        $request = $event['request'];
-
-        if (!$this->canCache->canCacheRequest($request)) {
-            return;
-        }
-
-        if ($response = $this->storage->fetch($request)) {
-            $response->setHeader(
-                'Age',
-                time() - strtotime($response->getLastModified() ? : $response->getDate() ?: 'now')
-            );
-
-            if ($this->canResponseSatisfyFailedRequest($request, $response)) {
-                $request->getParams()->set('cache.hit', 'error');
-                $this->addResponseHeaders($request, $response);
-                $event['response'] = $response;
-                $event->stopPropagation();
-            }
-        }
-    }
-
-    /**
-     * If possible, set a cache response on a cURL exception
-     *
-     * @param Event $event
-     *
-     * @return null
-     */
-    public function onRequestException(Event $event)
-    {
-        if (!$event['exception'] instanceof CurlException) {
-            return;
-        }
-
-        $request = $event['request'];
-        if (!$this->canCache->canCacheRequest($request)) {
-            return;
-        }
-
-        if ($response = $this->storage->fetch($request)) {
-            $response->setHeader('Age', time() - strtotime($response->getDate() ? : 'now'));
-            if (!$this->canResponseSatisfyFailedRequest($request, $response)) {
-                return;
-            }
-            $request->getParams()->set('cache.hit', 'error');
-            $request->setResponse($response);
-            $this->addResponseHeaders($request, $response);
-            $event->stopPropagation();
-        }
-    }
-
-    /**
-     * Check if a cache response satisfies a request's caching constraints
-     *
-     * @param RequestInterface $request  Request to validate
-     * @param Response         $response Response to validate
-     *
-     * @return bool
-     */
-    public function canResponseSatisfyRequest(RequestInterface $request, Response $response)
-    {
-        $responseAge = $response->calculateAge();
-        $reqc = $request->getHeader('Cache-Control');
-        $resc = $response->getHeader('Cache-Control');
-
-        // Check the request's max-age header against the age of the response
-        if ($reqc && $reqc->hasDirective('max-age') &&
-            $responseAge > $reqc->getDirective('max-age')) {
-            return false;
-        }
-
-        // Check the response's max-age header
-        if ($response->isFresh() === false) {
-            $maxStale = $reqc ? $reqc->getDirective('max-stale') : null;
-            if (null !== $maxStale) {
-                if ($maxStale !== true && $response->getFreshness() < (-1 * $maxStale)) {
-                    return false;
-                }
-            } elseif ($resc && $resc->hasDirective('max-age')
-                && $responseAge > $resc->getDirective('max-age')
-            ) {
-                return false;
-            }
-        }
-
-        if ($this->revalidation->shouldRevalidate($request, $response)) {
-            try {
-                return $this->revalidation->revalidate($request, $response);
-            } catch (CurlException $e) {
-                $request->getParams()->set('cache.hit', 'error');
-                return $this->canResponseSatisfyFailedRequest($request, $response);
-            }
-        }
-
-        return true;
-    }
-
-    /**
-     * Check if a cache response satisfies a failed request's caching constraints
-     *
-     * @param RequestInterface $request  Request to validate
-     * @param Response         $response Response to validate
-     *
-     * @return bool
-     */
-    public function canResponseSatisfyFailedRequest(RequestInterface $request, Response $response)
-    {
-        $reqc = $request->getHeader('Cache-Control');
-        $resc = $response->getHeader('Cache-Control');
-        $requestStaleIfError = $reqc ? $reqc->getDirective('stale-if-error') : null;
-        $responseStaleIfError = $resc ? $resc->getDirective('stale-if-error') : null;
-
-        if (!$requestStaleIfError && !$responseStaleIfError) {
-            return false;
-        }
-
-        if (is_numeric($requestStaleIfError) && $response->getAge() - $response->getMaxAge() > $requestStaleIfError) {
-            return false;
-        }
-
-        if (is_numeric($responseStaleIfError) && $response->getAge() - $response->getMaxAge() > $responseStaleIfError) {
-            return false;
-        }
-
-        return true;
-    }
-
-    /**
-     * Purge all cache entries for a given URL
-     *
-     * @param string $url URL to purge
-     */
-    public function purge($url)
-    {
-        // BC compatibility with previous version that accepted a Request object
-        $url = $url instanceof RequestInterface ? $url->getUrl() : $url;
-        $this->storage->purge($url);
-    }
-
-    /**
-     * Add the plugin's headers to a response
-     *
-     * @param RequestInterface $request  Request
-     * @param Response         $response Response to add headers to
-     */
-    protected function addResponseHeaders(RequestInterface $request, Response $response)
-    {
-        $params = $request->getParams();
-        $response->setHeader('Via', sprintf('%s GuzzleCache/%s', $request->getProtocolVersion(), Version::VERSION));
-
-        $lookup = ($params['cache.lookup'] === true ? 'HIT' : 'MISS') . ' from GuzzleCache';
-        if ($header = $response->getHeader('X-Cache-Lookup')) {
-            // Don't add duplicates
-            $values = $header->toArray();
-            $values[] = $lookup;
-            $response->setHeader('X-Cache-Lookup', array_unique($values));
-        } else {
-            $response->setHeader('X-Cache-Lookup', $lookup);
-        }
-
-        if ($params['cache.hit'] === true) {
-            $xcache = 'HIT from GuzzleCache';
-        } elseif ($params['cache.hit'] == 'error') {
-            $xcache = 'HIT_ERROR from GuzzleCache';
-        } else {
-            $xcache = 'MISS from GuzzleCache';
-        }
-
-        if ($header = $response->getHeader('X-Cache')) {
-            // Don't add duplicates
-            $values = $header->toArray();
-            $values[] = $xcache;
-            $response->setHeader('X-Cache', array_unique($values));
-        } else {
-            $response->setHeader('X-Cache', $xcache);
-        }
-
-        if ($response->isFresh() === false) {
-            $response->addHeader('Warning', sprintf('110 GuzzleCache/%s "Response is stale"', Version::VERSION));
-            if ($params['cache.hit'] === 'error') {
-                $response->addHeader('Warning', sprintf('111 GuzzleCache/%s "Revalidation failed"', Version::VERSION));
-            }
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+mdU4bcnSPFks6xumyG==

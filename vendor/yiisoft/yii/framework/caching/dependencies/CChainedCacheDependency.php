@@ -1,97 +1,46 @@
-<?php
-/**
- * CChainedCacheDependency class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CChainedCacheDependency represents a list of cache dependencies.
- *
- * If any of the dependencies reports a dependency change, CChainedCacheDependency
- * will return true for the checking.
- *
- * To add dependencies to CChainedCacheDependency, use {@link getDependencies Dependencies}
- * which gives a {@link CTypedList} instance and can be used like an array
- * (see {@link CList} for more details}).
- *
- * @property CTypedList $dependencies List of dependency objects.
- * @property boolean $hasChanged Whether the dependency is changed or not.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.caching.dependencies
- * @since 1.0
- */
-class CChainedCacheDependency extends CComponent implements ICacheDependency
-{
-	private $_dependencies=null;
-
-	/**
-	 * Constructor.
-	 * @param array $dependencies the dependencies to be added to this chain.
-	 * @since 1.1.4
-	 */
-	public function __construct($dependencies=array())
-	{
-		if(!empty($dependencies))
-			$this->setDependencies($dependencies);
-	}
-
-	/**
-	 * @return CTypedList list of dependency objects
-	 */
-	public function getDependencies()
-	{
-		if($this->_dependencies===null)
-			$this->_dependencies=new CTypedList('ICacheDependency');
-		return $this->_dependencies;
-	}
-
-	/**
-	 * @param array $values list of dependency objects or configurations to be added to this chain.
-	 * If a dependency is specified as a configuration, it must be an array that can be recognized
-	 * by {@link YiiBase::createComponent}.
-	 */
-	public function setDependencies($values)
-	{
-		$dependencies=$this->getDependencies();
-		foreach($values as $value)
-		{
-			if(is_array($value))
-				$value=Yii::createComponent($value);
-			$dependencies->add($value);
-		}
-	}
-
-	/**
-	 * Evaluates the dependency by generating and saving the data related with dependency.
-	 */
-	public function evaluateDependency()
-	{
-		if($this->_dependencies!==null)
-		{
-			foreach($this->_dependencies as $dependency)
-				$dependency->evaluateDependency();
-		}
-	}
-
-	/**
-	 * Performs the actual dependency checking.
-	 * This method returns true if any of the dependency objects
-	 * reports a dependency change.
-	 * @return boolean whether the dependency is changed or not.
-	 */
-	public function getHasChanged()
-	{
-		if($this->_dependencies!==null)
-		{
-			foreach($this->_dependencies as $dependency)
-				if($dependency->getHasChanged())
-					return true;
-		}
-		return false;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+2M3we/TcFslnvetDWHfO9RpwwNcy3rMe+m==

@@ -1,901 +1,241 @@
-<?php
-/**
- *    base include file for SimpleTest
- *    @package    SimpleTest
- *    @subpackage    UnitTester
- *    @version    $Id: expectation.php 1788 2008-04-27 11:01:59Z pp11 $
- */
-
-/**#@+
- *    include other SimpleTest class files
- */
-require_once(dirname(__FILE__) . '/dumper.php');
-require_once(dirname(__FILE__) . '/compatibility.php');
-/**#@-*/
-
-/**
- *    Assertion that can display failure information.
- *    Also includes various helper methods.
- *    @package SimpleTest
- *    @subpackage UnitTester
- *    @abstract
- */
-class SimpleExpectation {
-    protected $dumper = false;
-    private $message;
-
-    /**
-     *    Creates a dumper for displaying values and sets
-     *    the test message.
-     *    @param string $message    Customised message on failure.
-     */
-    function __construct($message = '%s') {
-        $this->message = $message;
-    }
-
-    /**
-     *    Tests the expectation. True if correct.
-     *    @param mixed $compare        Comparison value.
-     *    @return boolean              True if correct.
-     *    @access public
-     *    @abstract
-     */
-    function test($compare) {
-    }
-
-    /**
-     *    Returns a human readable test message.
-     *    @param mixed $compare      Comparison value.
-     *    @return string             Description of success
-     *                               or failure.
-     *    @access public
-     *    @abstract
-     */
-    function testMessage($compare) {
-    }
-
-    /**
-     *    Overlays the generated message onto the stored user
-     *    message. An additional message can be interjected.
-     *    @param mixed $compare        Comparison value.
-     *    @param SimpleDumper $dumper  For formatting the results.
-     *    @return string               Description of success
-     *                                 or failure.
-     *    @access public
-     */
-    function overlayMessage($compare, $dumper) {
-        $this->dumper = $dumper;
-        return sprintf($this->message, $this->testMessage($compare));
-    }
-
-    /**
-     *    Accessor for the dumper.
-     *    @return SimpleDumper    Current value dumper.
-     *    @access protected
-     */
-    protected function getDumper() {
-        if (! $this->dumper) {
-            $dumper = new SimpleDumper();
-            return $dumper;
-        }
-        return $this->dumper;
-    }
-
-    /**
-     *    Test to see if a value is an expectation object.
-     *    A useful utility method.
-     *    @param mixed $expectation    Hopefully an Expectation
-     *                                 class.
-     *    @return boolean              True if descended from
-     *                                 this class.
-     *    @access public
-     */
-    static function isExpectation($expectation) {
-        return is_object($expectation) &&
-                SimpleTestCompatibility::isA($expectation, 'SimpleExpectation');
-    }
-}
-
-/**
- *    A wildcard expectation always matches.
- *    @package SimpleTest
- *    @subpackage MockObjects
- */
-class AnythingExpectation extends SimpleExpectation {
-
-    /**
-     *    Tests the expectation. Always true.
-     *    @param mixed $compare  Ignored.
-     *    @return boolean        True.
-     *    @access public
-     */
-    function test($compare) {
-        return true;
-    }
-
-    /**
-     *    Returns a human readable test message.
-     *    @param mixed $compare      Comparison value.
-     *    @return string             Description of success
-     *                               or failure.
-     *    @access public
-     */
-    function testMessage($compare) {
-        $dumper = $this->getDumper();
-        return 'Anything always matches [' . $dumper->describeValue($compare) . ']';
-    }
-}
-
-/**
- *    An expectation that never matches.
- *    @package SimpleTest
- *    @subpackage MockObjects
- */
-class FailedExpectation extends SimpleExpectation {
-
-    /**
-     *    Tests the expectation. Always false.
-     *    @param mixed $compare  Ignored.
-     *    @return boolean        True.
-     *    @access public
-     */
-    function test($compare) {
-        return false;
-    }
-
-    /**
-     *    Returns a human readable test message.
-     *    @param mixed $compare      Comparison value.
-     *    @return string             Description of failure.
-     *    @access public
-     */
-    function testMessage($compare) {
-        $dumper = $this->getDumper();
-        return 'Failed expectation never matches [' . $dumper->describeValue($compare) . ']';
-    }
-}
-
-/**
- *    An expectation that passes on boolean true.
- *    @package SimpleTest
- *    @subpackage MockObjects
- */
-class TrueExpectation extends SimpleExpectation {
-
-    /**
-     *    Tests the expectation.
-     *    @param mixed $compare  Should be true.
-     *    @return boolean        True on match.
-     *    @access public
-     */
-    function test($compare) {
-        return (boolean)$compare;
-    }
-
-    /**
-     *    Returns a human readable test message.
-     *    @param mixed $compare      Comparison value.
-     *    @return string             Description of success
-     *                               or failure.
-     *    @access public
-     */
-    function testMessage($compare) {
-        $dumper = $this->getDumper();
-        return 'Expected true, got [' . $dumper->describeValue($compare) . ']';
-    }
-}
-
-/**
- *    An expectation that passes on boolean false.
- *    @package SimpleTest
- *    @subpackage MockObjects
- */
-class FalseExpectation extends SimpleExpectation {
-
-    /**
-     *    Tests the expectation.
-     *    @param mixed $compare  Should be false.
-     *    @return boolean        True on match.
-     *    @access public
-     */
-    function test($compare) {
-        return ! (boolean)$compare;
-    }
-
-    /**
-     *    Returns a human readable test message.
-     *    @param mixed $compare      Comparison value.
-     *    @return string             Description of success
-     *                               or failure.
-     *    @access public
-     */
-    function testMessage($compare) {
-        $dumper = $this->getDumper();
-        return 'Expected false, got [' . $dumper->describeValue($compare) . ']';
-    }
-}
-
-/**
- *    Test for equality.
- *    @package SimpleTest
- *    @subpackage UnitTester
- */
-class EqualExpectation extends SimpleExpectation {
-    private $value;
-
-    /**
-     *    Sets the value to compare against.
-     *    @param mixed $value        Test value to match.
-     *    @param string $message     Customised message on failure.
-     *    @access public
-     */
-    function __construct($value, $message = '%s') {
-        parent::__construct($message);
-        $this->value = $value;
-    }
-
-    /**
-     *    Tests the expectation. True if it matches the
-     *    held value.
-     *    @param mixed $compare        Comparison value.
-     *    @return boolean              True if correct.
-     *    @access public
-     */
-    function test($compare) {
-        return (($this->value == $compare) && ($compare == $this->value));
-    }
-
-    /**
-     *    Returns a human readable test message.
-     *    @param mixed $compare      Comparison value.
-     *    @return string             Description of success
-     *                               or failure.
-     *    @access public
-     */
-    function testMessage($compare) {
-        if ($this->test($compare)) {
-            return "Equal expectation [" . $this->dumper->describeValue($this->value) . "]";
-        } else {
-            return "Equal expectation fails " .
-                    $this->dumper->describeDifference($this->value, $compare);
-        }
-    }
-
-    /**
-     *    Accessor for comparison value.
-     *    @return mixed       Held value to compare with.
-     *    @access protected
-     */
-    protected function getValue() {
-        return $this->value;
-    }
-}
-
-/**
- *    Test for inequality.
- *    @package SimpleTest
- *    @subpackage UnitTester
- */
-class NotEqualExpectation extends EqualExpectation {
-
-    /**
-     *    Sets the value to compare against.
-     *    @param mixed $value       Test value to match.
-     *    @param string $message    Customised message on failure.
-     *    @access public
-     */
-    function __construct($value, $message = '%s') {
-        parent::__construct($value, $message);
-    }
-
-    /**
-     *    Tests the expectation. True if it differs from the
-     *    held value.
-     *    @param mixed $compare        Comparison value.
-     *    @return boolean              True if correct.
-     *    @access public
-     */
-    function test($compare) {
-        return ! parent::test($compare);
-    }
-
-    /**
-     *    Returns a human readable test message.
-     *    @param mixed $compare      Comparison value.
-     *    @return string             Description of success
-     *                               or failure.
-     *    @access public
-     */
-    function testMessage($compare) {
-        $dumper = $this->getDumper();
-        if ($this->test($compare)) {
-            return "Not equal expectation passes " .
-                    $dumper->describeDifference($this->getValue(), $compare);
-        } else {
-            return "Not equal expectation fails [" .
-                    $dumper->describeValue($this->getValue()) .
-                    "] matches";
-        }
-    }
-}
-
-/**
- *    Test for being within a range.
- *    @package SimpleTest
- *    @subpackage UnitTester
- */
-class WithinMarginExpectation extends SimpleExpectation {
-    private $upper;
-    private $lower;
-
-    /**
-     *    Sets the value to compare against and the fuzziness of
-     *    the match. Used for comparing floating point values.
-     *    @param mixed $value        Test value to match.
-     *    @param mixed $margin       Fuzziness of match.
-     *    @param string $message     Customised message on failure.
-     *    @access public
-     */
-    function __construct($value, $margin, $message = '%s') {
-        parent::__construct($message);
-        $this->upper = $value + $margin;
-        $this->lower = $value - $margin;
-    }
-
-    /**
-     *    Tests the expectation. True if it matches the
-     *    held value.
-     *    @param mixed $compare        Comparison value.
-     *    @return boolean              True if correct.
-     *    @access public
-     */
-    function test($compare) {
-        return (($compare <= $this->upper) && ($compare >= $this->lower));
-    }
-
-    /**
-     *    Returns a human readable test message.
-     *    @param mixed $compare      Comparison value.
-     *    @return string             Description of success
-     *                               or failure.
-     *    @access public
-     */
-    function testMessage($compare) {
-        if ($this->test($compare)) {
-            return $this->withinMessage($compare);
-        } else {
-            return $this->outsideMessage($compare);
-        }
-    }
-
-    /**
-     *    Creates a the message for being within the range.
-     *    @param mixed $compare        Value being tested.
-     *    @access private
-     */
-    protected function withinMessage($compare) {
-        return "Within expectation [" . $this->dumper->describeValue($this->lower) . "] and [" .
-                $this->dumper->describeValue($this->upper) . "]";
-    }
-
-    /**
-     *    Creates a the message for being within the range.
-     *    @param mixed $compare        Value being tested.
-     *    @access private
-     */
-    protected function outsideMessage($compare) {
-        if ($compare > $this->upper) {
-            return "Outside expectation " .
-                    $this->dumper->describeDifference($compare, $this->upper);
-        } else {
-            return "Outside expectation " .
-                    $this->dumper->describeDifference($compare, $this->lower);
-        }
-    }
-}
-
-/**
- *    Test for being outside of a range.
- *    @package SimpleTest
- *    @subpackage UnitTester
- */
-class OutsideMarginExpectation extends WithinMarginExpectation {
-
-    /**
-     *    Sets the value to compare against and the fuzziness of
-     *    the match. Used for comparing floating point values.
-     *    @param mixed $value        Test value to not match.
-     *    @param mixed $margin       Fuzziness of match.
-     *    @param string $message     Customised message on failure.
-     *    @access public
-     */
-    function __construct($value, $margin, $message = '%s') {
-        parent::__construct($value, $margin, $message);
-    }
-
-    /**
-     *    Tests the expectation. True if it matches the
-     *    held value.
-     *    @param mixed $compare        Comparison value.
-     *    @return boolean              True if correct.
-     *    @access public
-     */
-    function test($compare) {
-        return ! parent::test($compare);
-    }
-
-    /**
-     *    Returns a human readable test message.
-     *    @param mixed $compare      Comparison value.
-     *    @return string             Description of success
-     *                               or failure.
-     *    @access public
-     */
-    function testMessage($compare) {
-        if (! $this->test($compare)) {
-            return $this->withinMessage($compare);
-        } else {
-            return $this->outsideMessage($compare);
-        }
-    }
-}
-
-/**
- *    Test for reference.
- *    @package SimpleTest
- *    @subpackage UnitTester
- */
-class ReferenceExpectation {
-    private $value;
-
-    /**
-     *    Sets the reference value to compare against.
-     *    @param mixed $value       Test reference to match.
-     *    @param string $message    Customised message on failure.
-     *    @access public
-     */
-    function __construct(&$value, $message = '%s') {
-        $this->message = $message;
-        $this->value = &$value;
-    }
-
-    /**
-     *    Tests the expectation. True if it exactly
-     *    references the held value.
-     *    @param mixed $compare        Comparison reference.
-     *    @return boolean              True if correct.
-     *    @access public
-     */
-    function test(&$compare) {
-        return SimpleTestCompatibility::isReference($this->value, $compare);
-    }
-
-    /**
-     *    Returns a human readable test message.
-     *    @param mixed $compare      Comparison value.
-     *    @return string             Description of success
-     *                               or failure.
-     *    @access public
-     */
-    function testMessage($compare) {
-        if ($this->test($compare)) {
-            return "Reference expectation [" . $this->dumper->describeValue($this->value) . "]";
-        } else {
-            return "Reference expectation fails " .
-                    $this->dumper->describeDifference($this->value, $compare);
-        }
-    }
-
-    /**
-     *    Overlays the generated message onto the stored user
-     *    message. An additional message can be interjected.
-     *    @param mixed $compare        Comparison value.
-     *    @param SimpleDumper $dumper  For formatting the results.
-     *    @return string               Description of success
-     *                                 or failure.
-     *    @access public
-     */
-    function overlayMessage($compare, $dumper) {
-        $this->dumper = $dumper;
-        return sprintf($this->message, $this->testMessage($compare));
-    }
-
-    /**
-     *    Accessor for the dumper.
-     *    @return SimpleDumper    Current value dumper.
-     *    @access protected
-     */
-    protected function getDumper() {
-        if (! $this->dumper) {
-            $dumper = new SimpleDumper();
-            return $dumper;
-        }
-        return $this->dumper;
-    }
-}
-
-/**
- *    Test for identity.
- *    @package SimpleTest
- *    @subpackage UnitTester
- */
-class IdenticalExpectation extends EqualExpectation {
-
-    /**
-     *    Sets the value to compare against.
-     *    @param mixed $value       Test value to match.
-     *    @param string $message    Customised message on failure.
-     *    @access public
-     */
-    function __construct($value, $message = '%s') {
-        parent::__construct($value, $message);
-    }
-
-    /**
-     *    Tests the expectation. True if it exactly
-     *    matches the held value.
-     *    @param mixed $compare        Comparison value.
-     *    @return boolean              True if correct.
-     *    @access public
-     */
-    function test($compare) {
-        return SimpleTestCompatibility::isIdentical($this->getValue(), $compare);
-    }
-
-    /**
-     *    Returns a human readable test message.
-     *    @param mixed $compare      Comparison value.
-     *    @return string             Description of success
-     *                               or failure.
-     *    @access public
-     */
-    function testMessage($compare) {
-        $dumper = $this->getDumper();
-        if ($this->test($compare)) {
-            return "Identical expectation [" . $dumper->describeValue($this->getValue()) . "]";
-        } else {
-            return "Identical expectation [" . $dumper->describeValue($this->getValue()) .
-                    "] fails with [" .
-                    $dumper->describeValue($compare) . "] " .
-                    $dumper->describeDifference($this->getValue(), $compare, TYPE_MATTERS);
-        }
-    }
-}
-
-/**
- *    Test for non-identity.
- *    @package SimpleTest
- *    @subpackage UnitTester
- */
-class NotIdenticalExpectation extends IdenticalExpectation {
-
-    /**
-     *    Sets the value to compare against.
-     *    @param mixed $value        Test value to match.
-     *    @param string $message     Customised message on failure.
-     *    @access public
-     */
-    function __construct($value, $message = '%s') {
-        parent::__construct($value, $message);
-    }
-
-    /**
-     *    Tests the expectation. True if it differs from the
-     *    held value.
-     *    @param mixed $compare        Comparison value.
-     *    @return boolean              True if correct.
-     *    @access public
-     */
-    function test($compare) {
-        return ! parent::test($compare);
-    }
-
-    /**
-     *    Returns a human readable test message.
-     *    @param mixed $compare      Comparison value.
-     *    @return string             Description of success
-     *                               or failure.
-     *    @access public
-     */
-    function testMessage($compare) {
-        $dumper = $this->getDumper();
-        if ($this->test($compare)) {
-            return "Not identical expectation passes " .
-                    $dumper->describeDifference($this->getValue(), $compare, TYPE_MATTERS);
-        } else {
-            return "Not identical expectation [" . $dumper->describeValue($this->getValue()) . "] matches";
-        }
-    }
-}
-
-/**
- *    Test for a pattern using Perl regex rules.
- *    @package SimpleTest
- *    @subpackage UnitTester
- */
-class PatternExpectation extends SimpleExpectation {
-    private $pattern;
-
-    /**
-     *    Sets the value to compare against.
-     *    @param string $pattern    Pattern to search for.
-     *    @param string $message    Customised message on failure.
-     *    @access public
-     */
-    function __construct($pattern, $message = '%s') {
-        parent::__construct($message);
-        $this->pattern = $pattern;
-    }
-
-    /**
-     *    Accessor for the pattern.
-     *    @return string       Perl regex as string.
-     *    @access protected
-     */
-    protected function getPattern() {
-        return $this->pattern;
-    }
-
-    /**
-     *    Tests the expectation. True if the Perl regex
-     *    matches the comparison value.
-     *    @param string $compare        Comparison value.
-     *    @return boolean               True if correct.
-     *    @access public
-     */
-    function test($compare) {
-        return (boolean)preg_match($this->getPattern(), $compare);
-    }
-
-    /**
-     *    Returns a human readable test message.
-     *    @param mixed $compare      Comparison value.
-     *    @return string             Description of success
-     *                               or failure.
-     *    @access public
-     */
-    function testMessage($compare) {
-        if ($this->test($compare)) {
-            return $this->describePatternMatch($this->getPattern(), $compare);
-        } else {
-            $dumper = $this->getDumper();
-            return "Pattern [" . $this->getPattern() .
-                    "] not detected in [" .
-                    $dumper->describeValue($compare) . "]";
-        }
-    }
-
-    /**
-     *    Describes a pattern match including the string
-     *    found and it's position.
-     *    @param string $pattern        Regex to match against.
-     *    @param string $subject        Subject to search.
-     *    @access protected
-     */
-    protected function describePatternMatch($pattern, $subject) {
-        preg_match($pattern, $subject, $matches);
-        $position = strpos($subject, $matches[0]);
-        $dumper = $this->getDumper();
-        return "Pattern [$pattern] detected at character [$position] in [" .
-                $dumper->describeValue($subject) . "] as [" .
-                $matches[0] . "] in region [" .
-                $dumper->clipString($subject, 100, $position) . "]";
-    }
-}
-
-/**
- *    Fail if a pattern is detected within the
- *    comparison.
- *    @package SimpleTest
- *    @subpackage UnitTester
- */
-class NoPatternExpectation extends PatternExpectation {
-
-    /**
-     *    Sets the reject pattern
-     *    @param string $pattern    Pattern to search for.
-     *    @param string $message    Customised message on failure.
-     *    @access public
-     */
-    function __construct($pattern, $message = '%s') {
-        parent::__construct($pattern, $message);
-    }
-
-    /**
-     *    Tests the expectation. False if the Perl regex
-     *    matches the comparison value.
-     *    @param string $compare        Comparison value.
-     *    @return boolean               True if correct.
-     *    @access public
-     */
-    function test($compare) {
-        return ! parent::test($compare);
-    }
-
-    /**
-     *    Returns a human readable test message.
-     *    @param string $compare      Comparison value.
-     *    @return string              Description of success
-     *                                or failure.
-     *    @access public
-     */
-    function testMessage($compare) {
-        if ($this->test($compare)) {
-            $dumper = $this->getDumper();
-            return "Pattern [" . $this->getPattern() .
-                    "] not detected in [" .
-                    $dumper->describeValue($compare) . "]";
-        } else {
-            return $this->describePatternMatch($this->getPattern(), $compare);
-        }
-    }
-}
-
-/**
- *    Tests either type or class name if it's an object.
- *      @package SimpleTest
- *      @subpackage UnitTester
- */
-class IsAExpectation extends SimpleExpectation {
-    private $type;
-
-    /**
-     *    Sets the type to compare with.
-     *    @param string $type       Type or class name.
-     *    @param string $message    Customised message on failure.
-     *    @access public
-     */
-    function __construct($type, $message = '%s') {
-        parent::__construct($message);
-        $this->type = $type;
-    }
-
-    /**
-     *    Accessor for type to check against.
-     *    @return string    Type or class name.
-     *    @access protected
-     */
-    protected function getType() {
-        return $this->type;
-    }
-
-    /**
-     *    Tests the expectation. True if the type or
-     *    class matches the string value.
-     *    @param string $compare        Comparison value.
-     *    @return boolean               True if correct.
-     *    @access public
-     */
-    function test($compare) {
-        if (is_object($compare)) {
-            return SimpleTestCompatibility::isA($compare, $this->type);
-        } else {
-            return (strtolower(gettype($compare)) == $this->canonicalType($this->type));
-        }
-    }
-
-    /**
-     *    Coerces type name into a gettype() match.
-     *    @param string $type        User type.
-     *    @return string             Simpler type.
-     *    @access private
-     */
-    protected function canonicalType($type) {
-        $type = strtolower($type);
-        $map = array(
-                'bool' => 'boolean',
-                'float' => 'double',
-                'real' => 'double',
-                'int' => 'integer');
-        if (isset($map[$type])) {
-            $type = $map[$type];
-        }
-        return $type;
-    }
-
-    /**
-     *    Returns a human readable test message.
-     *    @param mixed $compare      Comparison value.
-     *    @return string             Description of success
-     *                               or failure.
-     *    @access public
-     */
-    function testMessage($compare) {
-        $dumper = $this->getDumper();
-        return "Value [" . $dumper->describeValue($compare) .
-                "] should be type [" . $this->type . "]";
-    }
-}
-
-/**
- *    Tests either type or class name if it's an object.
- *    Will succeed if the type does not match.
- *      @package SimpleTest
- *      @subpackage UnitTester
- */
-class NotAExpectation extends IsAExpectation {
-    private $type;
-
-    /**
-     *    Sets the type to compare with.
-     *    @param string $type       Type or class name.
-     *    @param string $message    Customised message on failure.
-     *    @access public
-     */
-    function __construct($type, $message = '%s') {
-        parent::__construct($type, $message);
-    }
-
-    /**
-     *    Tests the expectation. False if the type or
-     *    class matches the string value.
-     *    @param string $compare        Comparison value.
-     *    @return boolean               True if different.
-     *    @access public
-     */
-    function test($compare) {
-        return ! parent::test($compare);
-    }
-
-    /**
-     *    Returns a human readable test message.
-     *    @param mixed $compare      Comparison value.
-     *    @return string             Description of success
-     *                               or failure.
-     *    @access public
-     */
-    function testMessage($compare) {
-        $dumper = $this->getDumper();
-        return "Value [" . $dumper->describeValue($compare) .
-                "] should not be type [" . $this->getType() . "]";
-    }
-}
-
-/**
- *    Tests for existance of a method in an object
- *      @package SimpleTest
- *      @subpackage UnitTester
- */
-class MethodExistsExpectation extends SimpleExpectation {
-    private $method;
-
-    /**
-     *    Sets the value to compare against.
-     *    @param string $method     Method to check.
-     *    @param string $message    Customised message on failure.
-     *    @access public
-     *    @return void
-     */
-    function __construct($method, $message = '%s') {
-        parent::__construct($message);
-        $this->method = &$method;
-    }
-
-    /**
-     *    Tests the expectation. True if the method exists in the test object.
-     *    @param string $compare        Comparison method name.
-     *    @return boolean               True if correct.
-     *    @access public
-     */
-    function test($compare) {
-        return (boolean)(is_object($compare) && method_exists($compare, $this->method));
-    }
-
-    /**
-     *    Returns a human readable test message.
-     *    @param mixed $compare      Comparison value.
-     *    @return string             Description of success
-     *                               or failure.
-     *    @access public
-     */
-    function testMessage($compare) {
-        $dumper = $this->getDumper();
-        if (! is_object($compare)) {
-            return 'No method on non-object [' . $dumper->describeValue($compare) . ']';
-        }
-        $method = $this->method;
-        return "Object [" . $dumper->describeValue($compare) .
-                "] should contain method [$method]";
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+DB4YKSUfnkvsrW==

@@ -1,55 +1,44 @@
-<?php
-
-namespace Tests\Behat\Mink\Driver;
-
-use Behat\Mink\Driver\Selenium2Driver;
-
-/**
- * @group selenium2driver
- */
-class Selenium2DriverTest extends JavascriptDriverTest
-{
-    protected static function getDriver()
-    {
-        $browser = $_SERVER['WEB_FIXTURES_BROWSER'];
-
-        return new Selenium2Driver($browser, null, 'http://localhost:4444/wd/hub');
-    }
-
-    public function testMouseEvents() {} // Right click and blur are not supported
-
-    public function testOtherMouseEvents()
-    {
-        $this->getSession()->visit($this->pathTo('/js_test.php'));
-
-        $clicker = $this->getSession()->getPage()->find('css', '.elements div#clicker');
-
-        $this->assertEquals('not clicked', $clicker->getText());
-
-        $clicker->click();
-        $this->assertEquals('single clicked', $clicker->getText());
-
-        $clicker->doubleClick();
-        $this->assertEquals('double clicked', $clicker->getText());
-
-        $clicker->mouseOver();
-        $this->assertEquals('mouse overed', $clicker->getText());
-    }
-
-    public function testIssue178()
-    {
-        $session = $this->getSession();
-        $session->visit($this->pathTo('/issue178.html'));
-
-        $session->getPage()->findById('source')->setValue('foo');
-        $this->assertEquals('foo', $session->getPage()->findById('target')->getText());
-    }
-
-    public function testIssue215()
-    {
-        $session = $this->getSession();
-        $session->visit($this->pathTo('/issue215.html'));
-
-        $this->assertContains("foo\nbar", $session->getPage()->findById('textarea')->getValue());
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

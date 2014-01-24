@@ -1,34 +1,29 @@
-<?php
-/* @var $this OrderController */
-/* @var $data Order */
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
-
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h3 class="panel-title">
-            <?php echo CHtml::link(CHtml::encode($data->id), array('view','id'=>$data->id)); ?>
-        </h3>
-    </div>
-    <div class="panel-body">
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('customer_id')); ?>:</b>
-	<?php echo CHtml::encode($data->customer_id); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('date')); ?>:</b>
-	<?php echo CHtml::encode($data->date); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('status_id')); ?>:</b>
-	<?php echo CHtml::encode($data->status_id); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('notes')); ?>:</b>
-	<?php echo CHtml::encode($data->notes); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('create_time')); ?>:</b>
-	<?php echo CHtml::encode($data->create_time); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('update_time')); ?>:</b>
-	<?php echo CHtml::encode($data->update_time); ?><br />
-
-    </div>
-</div>
-
+HR+cPoum9sSs69n8suQoH2hQfOyQCqp2cJZKylIDTYS2oyQgv17FM5pJQ7m3IxKLt2V9iFG0lmwz
+zCBS9AYaI8Qymu91qeVEr20m5LeLrk9cfdQiospS0kFcv4UfPy885MfATegsK7odrCH8UeAFmr7J
+oISV74J6+19UWKQrOl4gxepq5wnmeWd1m8j2xkG4BBj1Ge4gj28S3TYFq8CQI/c4hevhpp9LyA6P
+ZHuA4vnTQiEE7W2woeAdnwzHAE4xzt2gh9fl143SQNGiO+M/cZtBrb2KmCLWKL/06HrP9LxCYLdN
+19BRa+z4EaCno6kZWnYqSaEgtoPYQfdj0Le/lYqwlU1/kymH/MEAhPIXe3amr62gpBI9OqBpl2kJ
+NYl6suKoZwkvSuKrEjgW14LuDPdMCq4qubkmlPeDgJiuYy78oPk5+SzqmEPhfnoB+lI9frnCAZf8
+4o21mJg69pDyfAfCha6Qzc8U/jFFv4Iegzit9BjhpTvzM7NFnSK5pL9iMQHqXPzBmCWzhmXqs3Mz
+qpRFDEChz+sjSJaCD+WEsYwrLj1+b/Sj7Fo3dNsjY2z3X5+Pc4+rJVRWZlJBSsYa8ZZzE5F6/bW7
+PfZQUBz6zjvrPbRR45dsbGqHbQIHQI2OmDvYXxHXw9kxR6TjxiihSa64E7z5bcx+/njvmAnh+8l+
+q8ugbeuQMWLp7SwI/fpiW/96zeOIxUKX4zgKHCa9C5CGaJ3b3tvQnw5rQo6dlc7+87nun7njkW3b
+HeXT7CUlOGLZphnEJJPst1fjvg7M8dr6ijdfbJJ02emC7cn97BjK38h3rzi4SbvXEuA1P3aR9y/Y
+QvatgDu+X2+UckcaQlltOow6cFGnNFPpA1/13r23FJG/4GzFSjPXiz4IfkWcNSja47gjWyA4p58z
+CS1gjdRrbG7mIMuuzAe0r1GBWCROyxUuE/N2g6mr6wYI7kc/KzJ65fVUiC4qtDujHSAq4hXuLURQ
+rg3Oeo//gr3O5Nok3MyZhcv1afZXedjw4eBnU7Y9ngliujMeZWq1b6M4rIMnvD40f5S7b2hwyMNA
+/9YAfwVB7xJCEDxuD+72IIYlPVIVAEFT+09CoeI/wihtMn/m1udsoHoKteL05n9k5nlxBP/6WhMI
+havUzRIO03eUyF8jN7+bXHaoeitDKT03EdPpykc4Vko5J5IB4I8KeQ4D9DE9do//4ig8M9iHVoyT
+cJyz667qic0on516oDvm4P5vArOpXAmugveNK5lCQCB1z8qFRBa6y5caQQUALdUUjSyPGDhZSbTx
+B/5Mh6z4OmkskbnhGI30JWP3qhOb3qYtCv3DHsafdJK8KVyQRGzrikfLQ3/xc+tkzbEXqhkrCxdH
+gCQS8ZIFSkgEHQB1291zsVhEGLQ58QCGnc/TGvTZLxFgkC+anA8ueXYW4Hm2pZQSb4g/aboJv+9Z
+uBR+mhLNipYfeYxxrVqZQIc0EjFvczpi5tADn37bySINcEDfWrIcZBAzBwncObgOTiiwQgp5GUZe
+a0RtAM49gTdDKmv0lSdAKvddlRc19h+ZyWcNfLHQCIVEyUclE2qviMEPPJgLUeB+KUqOxro8DyaJ
+0SIwcBnwLMPnGjYwIAFK47DxhA3bQD5StP7TzFFnUkD9RUyoB/yO/77KVGyQfVqbYCZCJRFDL6Cq
+fB5ZoDzHgiqEU56ecsb4MH4MTGbk2QSLdy7dBx/SADpE6IQkaFDc5YQupRydBoJWVnvmx02Y0YQu
+VTWPlU0o3Io+AIJopHTRjkUGI/+5eS3FYRHGk4KFCX9hS0/HuQSLwdeS0p3tG/Q8WA9PfxaGwtCh
+imiM9K0mHfmTl4dfajdqe+KX07sy+xWMOJDhM7FWCrpDXv+g0Sf5e2K8Dyv/h6RUKmq2rgvLC5lg
+KpsnMpRfl2DfiXK=

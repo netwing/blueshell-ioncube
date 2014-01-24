@@ -1,341 +1,164 @@
-<?php
-/**
- * Ensures that systems, asset types and libs are included before they are used.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer_MySource
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-if (class_exists('PHP_CodeSniffer_Standards_AbstractScopeSniff', true) === false) {
-    $error = 'Class PHP_CodeSniffer_Standards_AbstractScopeSniff not found';
-    throw new PHP_CodeSniffer_Exception($error);
-}
-
-/**
- * Ensures that systems, asset types and libs are included before they are used.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer_MySource
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class MySource_Sniffs_Channels_IncludeSystemSniff extends PHP_CodeSniffer_Standards_AbstractScopeSniff
-{
-
-    /**
-     * A list of classes that don't need to be included.
-     *
-     * @var array(string)
-     */
-    private $_ignore = array(
-                        'self',
-                        'static',
-                        'parent',
-                        'channels',
-                        'basesystem',
-                        'dal',
-                        'init',
-                        'pdo',
-                        'util',
-                        'ziparchive',
-                        'phpunit_framework_assert',
-                        'abstractmysourceunittest',
-                        'abstractdatacleanunittest',
-                        'exception',
-                        'abstractwidgetwidgettype',
-                        'domdocument',
-                       );
-
-
-    /**
-     * Constructs a Squiz_Sniffs_Scope_MethodScopeSniff.
-     */
-    public function __construct()
-    {
-        parent::__construct(array(T_FUNCTION), array(T_DOUBLE_COLON, T_EXTENDS), true);
-
-    }//end __construct()
-
-
-    /**
-     * Processes the function tokens within the class.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file where this token was found.
-     * @param integer              $stackPtr  The position where the token was found.
-     * @param integer              $currScope The current scope opener token.
-     *
-     * @return void
-     */
-    protected function processTokenWithinScope(
-        PHP_CodeSniffer_File $phpcsFile,
-        $stackPtr,
-        $currScope
-    ) {
-        $tokens = $phpcsFile->getTokens();
-
-        // Determine the name of the class that the static function
-        // is being called on.
-        $classNameToken = $phpcsFile->findPrevious(
-            T_WHITESPACE,
-            ($stackPtr - 1),
-            null,
-            true
-        );
-
-        // Don't process class names represented by variables as this can be
-        // an inexact science.
-        if ($tokens[$classNameToken]['code'] === T_VARIABLE) {
-            return;
-        }
-
-        $className = $tokens[$classNameToken]['content'];
-        if (in_array(strtolower($className), $this->_ignore) === true) {
-            return;
-        }
-
-        $includedClasses = array();
-
-        $fileName = strtolower($phpcsFile->getFilename());
-        $matches  = array();
-        if (preg_match('|/systems/(.*)/([^/]+)?actions.inc$|', $fileName, $matches) !== 0) {
-            // This is an actions file, which means we don't
-            // have to include the system in which it exists.
-            $includedClasses[] = $matches[2];
-
-            // Or a system it implements.
-            $class      = $phpcsFile->getCondition($stackPtr, T_CLASS);
-            $implements = $phpcsFile->findNext(T_IMPLEMENTS, $class, ($class + 10));
-            if ($implements !== false) {
-                $implementsClass     = $phpcsFile->findNext(T_STRING, $implements);
-                $implementsClassName = strtolower($tokens[$implementsClass]['content']);
-                if (substr($implementsClassName, -7) === 'actions') {
-                    $includedClasses[] = substr($implementsClassName, 0, -7);
-                }
-            }
-        }
-
-        // Go searching for includeSystem and includeAsset calls within this
-        // function, or the inclusion of .inc files, which
-        // would be library files.
-        for ($i = ($currScope + 1); $i < $stackPtr; $i++) {
-            $name = $this->getIncludedClassFromToken($phpcsFile, $tokens, $i);
-            if ($name !== false) {
-                $includedClasses[] = $name;
-                // Special case for Widgets cause they are, well, special.
-            } else if (strtolower($tokens[$i]['content']) === 'includewidget') {
-                $typeName          = $phpcsFile->findNext(T_CONSTANT_ENCAPSED_STRING, ($i + 1));
-                $typeName          = trim($tokens[$typeName]['content'], " '");
-                $includedClasses[] = strtolower($typeName).'widgettype';
-            }
-        }
-
-        // Now go searching for includeSystem, includeAsset or require/include
-        // calls outside our scope. If we are in a class, look outside the
-        // class. If we are not, look outside the function.
-        $condPtr = $currScope;
-        if ($phpcsFile->hasCondition($stackPtr, T_CLASS) === true) {
-            foreach ($tokens[$stackPtr]['conditions'] as $condPtr => $condType) {
-                if ($condType === T_CLASS) {
-                    break;
-                }
-            }
-        }
-
-        for ($i = 0; $i < $condPtr; $i++) {
-            // Skip other scopes.
-            if (isset($tokens[$i]['scope_closer']) === true) {
-                $i = $tokens[$i]['scope_closer'];
-                continue;
-            }
-
-            $name = $this->getIncludedClassFromToken($phpcsFile, $tokens, $i);
-            if ($name !== false) {
-                $includedClasses[] = $name;
-            }
-        }
-
-        // If we are in a testing class, we might have also included
-        // some systems and classes in our setUp() method.
-        $setupFunction = null;
-        if ($phpcsFile->hasCondition($stackPtr, T_CLASS) === true) {
-            foreach ($tokens[$stackPtr]['conditions'] as $condPtr => $condType) {
-                if ($condType === T_CLASS) {
-                    // Is this is a testing class?
-                    $name = $phpcsFile->findNext(T_STRING, $condPtr);
-                    $name = $tokens[$name]['content'];
-                    if (substr($name, -8) === 'UnitTest') {
-                        // Look for a method called setUp().
-                        $end      = $tokens[$condPtr]['scope_closer'];
-                        $function = $phpcsFile->findNext(T_FUNCTION, ($condPtr + 1), $end);
-                        while ($function !== false) {
-                            $name = $phpcsFile->findNext(T_STRING, $function);
-                            if ($tokens[$name]['content'] === 'setUp') {
-                                $setupFunction = $function;
-                                break;
-                            }
-
-                            $function = $phpcsFile->findNext(T_FUNCTION, ($function + 1), $end);
-                        }
-                    }
-                }
-            }//end foreach
-        }//end if
-
-        if ($setupFunction !== null) {
-            $start = ($tokens[$setupFunction]['scope_opener'] + 1);
-            $end   = $tokens[$setupFunction]['scope_closer'];
-            for ($i = $start; $i < $end; $i++) {
-                $name = $this->getIncludedClassFromToken($phpcsFile, $tokens, $i);
-                if ($name !== false) {
-                    $includedClasses[] = $name;
-                }
-            }
-        }//end if
-
-        if (in_array(strtolower($className), $includedClasses) === false) {
-            $error = 'Static method called on non-included class or system "%s"; include system with Channels::includeSystem() or include class with require_once';
-            $data  = array($className);
-            $phpcsFile->addError($error, $stackPtr, 'NotIncludedCall', $data);
-        }
-
-    }//end processTokenWithinScope()
-
-
-    /**
-     * Processes a token within the scope that this test is listening to.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file where the token was found.
-     * @param int                  $stackPtr  The position in the stack where
-     *                                        this token was found.
-     *
-     * @return void
-     */
-    protected function processTokenOutsideScope(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-
-        if ($tokens[$stackPtr]['code'] === T_EXTENDS) {
-            // Find the class name.
-            $classNameToken = $phpcsFile->findNext(T_STRING, ($stackPtr + 1));
-            $className      = $tokens[$classNameToken]['content'];
-        } else {
-            // Determine the name of the class that the static function
-            // is being called on. But don't process class names represented by
-            // variables as this can be an inexact science.
-            $classNameToken = $phpcsFile->findPrevious(T_WHITESPACE, ($stackPtr - 1), null, true);
-            if ($tokens[$classNameToken]['code'] === T_VARIABLE) {
-                return;
-            }
-
-            $className = $tokens[$classNameToken]['content'];
-        }
-
-        // Some systems are always available.
-        if (in_array(strtolower($className), $this->_ignore) === true) {
-            return;
-        }
-
-        $includedClasses = array();
-
-        $fileName = strtolower($phpcsFile->getFilename());
-        $matches  = array();
-        if (preg_match('|/systems/([^/]+)/([^/]+)?actions.inc$|', $fileName, $matches) !== 0) {
-            // This is an actions file, which means we don't
-            // have to include the system in which it exists
-            // We know the system from the path.
-            $includedClasses[] = $matches[1];
-        }
-
-        // Go searching for includeSystem, includeAsset or require/include
-        // calls outside our scope.
-        for ($i = 0; $i < $stackPtr; $i++) {
-            // Skip classes and functions as will we never get
-            // into their scopes when including this file, although
-            // we have a chance of getting into IF's, WHILE's etc.
-            $ignoreTokens = array(
-                             T_CLASS,
-                             T_INTERFACE,
-                             T_FUNCTION,
-                            );
-
-            if (in_array($tokens[$i]['code'], $ignoreTokens) === true
-                && isset($tokens[$i]['scope_closer']) === true
-            ) {
-                $i = $tokens[$i]['scope_closer'];
-                continue;
-            }
-
-            $name = $this->getIncludedClassFromToken($phpcsFile, $tokens, $i);
-            if ($name !== false) {
-                $includedClasses[] = $name;
-                // Special case for Widgets cause they are, well, special.
-            } else if (strtolower($tokens[$i]['content']) === 'includewidget') {
-                $typeName          = $phpcsFile->findNext(T_CONSTANT_ENCAPSED_STRING, ($i + 1));
-                $typeName          = trim($tokens[$typeName]['content'], " '");
-                $includedClasses[] = strtolower($typeName).'widgettype';
-            }
-        }//end for
-
-        if (in_array(strtolower($className), $includedClasses) === false) {
-            if ($tokens[$stackPtr]['code'] === T_EXTENDS) {
-                $error = 'Class extends non-included class or system "%s"; include system with Channels::includeSystem() or include class with require_once';
-                $data  = array($className);
-                $phpcsFile->addError($error, $stackPtr, 'NotIncludedExtends', $data);
-            } else {
-                $error = 'Static method called on non-included class or system "%s"; include system with Channels::includeSystem() or include class with require_once';
-                $data  = array($className);
-                $phpcsFile->addError($error, $stackPtr, 'NotIncludedCall', $data);
-            }
-        }
-
-    }//end processTokenOutsideScope()
-
-
-    /**
-     * Determines the included class name from given token.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file where this token was found.
-     * @param array                $tokens    The array of file tokens.
-     * @param int                  $stackPtr  The position in the tokens array of the
-     *                                        potentially included class.
-     *
-     * @return string
-     */
-    protected function getIncludedClassFromToken(
-        PHP_CodeSniffer_File $phpcsFile,
-        array $tokens,
-        $stackPtr
-    ) {
-        if (strtolower($tokens[$stackPtr]['content']) === 'includesystem') {
-            $systemName = $phpcsFile->findNext(T_CONSTANT_ENCAPSED_STRING, ($stackPtr + 1));
-            $systemName = trim($tokens[$systemName]['content'], " '");
-            return strtolower($systemName);
-        } else if (strtolower($tokens[$stackPtr]['content']) === 'includeasset') {
-            $typeName = $phpcsFile->findNext(T_CONSTANT_ENCAPSED_STRING, ($stackPtr + 1));
-            $typeName = trim($tokens[$typeName]['content'], " '");
-            return strtolower($typeName).'assettype';
-        } else if (in_array($tokens[$stackPtr]['code'], PHP_CodeSniffer_Tokens::$includeTokens) === true) {
-            $filePath = $phpcsFile->findNext(T_CONSTANT_ENCAPSED_STRING, ($stackPtr + 1));
-            $filePath = $tokens[$filePath]['content'];
-            $filePath = trim($filePath, " '");
-            $filePath = basename($filePath, '.inc');
-            return strtolower($filePath);
-        }
-
-        return false;
-
-    }//end getIncludedClassFromToken()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

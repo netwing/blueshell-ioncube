@@ -1,220 +1,93 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\DomCrawler;
-
-use Symfony\Component\DomCrawler\Field\FormField;
-
-/**
- * This is an internal class that must not be used directly.
- */
-class FormFieldRegistry
-{
-    private $fields = array();
-
-    private $base;
-
-    /**
-     * Adds a field to the registry.
-     *
-     * @param FormField $field The field
-     *
-     * @throws \InvalidArgumentException when the name is malformed
-     */
-    public function add(FormField $field)
-    {
-        $segments = $this->getSegments($field->getName());
-
-        $target =& $this->fields;
-        while ($segments) {
-            if (!is_array($target)) {
-                $target = array();
-            }
-            $path = array_shift($segments);
-            if ('' === $path) {
-                $target =& $target[];
-            } else {
-                $target =& $target[$path];
-            }
-        }
-        $target = $field;
-    }
-
-    /**
-     * Removes a field and its children from the registry.
-     *
-     * @param string $name The fully qualified name of the base field
-     *
-     * @throws \InvalidArgumentException when the name is malformed
-     */
-    public function remove($name)
-    {
-        $segments = $this->getSegments($name);
-        $target =& $this->fields;
-        while (count($segments) > 1) {
-            $path = array_shift($segments);
-            if (!array_key_exists($path, $target)) {
-                return;
-            }
-            $target =& $target[$path];
-        }
-        unset($target[array_shift($segments)]);
-    }
-
-    /**
-     * Returns the value of the field and its children.
-     *
-     * @param string $name The fully qualified name of the field
-     *
-     * @return mixed The value of the field
-     *
-     * @throws \InvalidArgumentException when the name is malformed
-     * @throws \InvalidArgumentException if the field does not exist
-     */
-    public function &get($name)
-    {
-        $segments = $this->getSegments($name);
-        $target =& $this->fields;
-        while ($segments) {
-            $path = array_shift($segments);
-            if (!array_key_exists($path, $target)) {
-                throw new \InvalidArgumentException(sprintf('Unreachable field "%s"', $path));
-            }
-            $target =& $target[$path];
-        }
-
-        return $target;
-    }
-
-    /**
-     * Tests whether the form has the given field.
-     *
-     * @param string $name The fully qualified name of the field
-     *
-     * @return Boolean Whether the form has the given field
-     */
-    public function has($name)
-    {
-        try {
-            $this->get($name);
-
-            return true;
-        } catch (\InvalidArgumentException $e) {
-            return false;
-        }
-    }
-
-    /**
-     * Set the value of a field and its children.
-     *
-     * @param string $name  The fully qualified name of the field
-     * @param mixed  $value The value
-     *
-     * @throws \InvalidArgumentException when the name is malformed
-     * @throws \InvalidArgumentException if the field does not exist
-     */
-    public function set($name, $value)
-    {
-        $target =& $this->get($name);
-        if (!is_array($value) || $target instanceof Field\ChoiceFormField) {
-            $target->setValue($value);
-        } else {
-            $fields = self::create($name, $value);
-            foreach ($fields->all() as $k => $v) {
-                $this->set($k, $v);
-            }
-        }
-    }
-
-    /**
-     * Returns the list of field with their value.
-     *
-     * @return array The list of fields as array((string) Fully qualified name => (mixed) value)
-     */
-    public function all()
-    {
-        return $this->walk($this->fields, $this->base);
-    }
-
-    /**
-     * Creates an instance of the class.
-     *
-     * This function is made private because it allows overriding the $base and
-     * the $values properties without any type checking.
-     *
-     * @param string $base   The fully qualified name of the base field
-     * @param array  $values The values of the fields
-     *
-     * @return FormFieldRegistry
-     */
-    private static function create($base, array $values)
-    {
-        $registry = new static();
-        $registry->base = $base;
-        $registry->fields = $values;
-
-        return $registry;
-    }
-
-    /**
-     * Transforms a PHP array in a list of fully qualified name / value.
-     *
-     * @param array  $array  The PHP array
-     * @param string $base   The name of the base field
-     * @param array  $output The initial values
-     *
-     * @return array The list of fields as array((string) Fully qualified name => (mixed) value)
-     */
-    private function walk(array $array, $base = '', array &$output = array())
-    {
-        foreach ($array as $k => $v) {
-            $path = empty($base) ? $k : sprintf("%s[%s]", $base, $k);
-            if (is_array($v)) {
-                $this->walk($v, $path, $output);
-            } else {
-                $output[$path] = $v;
-            }
-        }
-
-        return $output;
-    }
-
-    /**
-     * Splits a field name into segments as a web browser would do.
-     *
-     * <code>
-     *     getSegments('base[foo][3][]') = array('base', 'foo, '3', '');
-     * </code>
-     *
-     * @param string $name The name of the field
-     *
-     * @return array The list of segments
-     *
-     * @throws \InvalidArgumentException when the name is malformed
-     */
-    private function getSegments($name)
-    {
-        if (preg_match('/^(?P<base>[^[]+)(?P<extra>(\[.*)|$)/', $name, $m)) {
-            $segments = array($m['base']);
-            while (!empty($m['extra'])) {
-                if (preg_match('/^\[(?P<segment>.*?)\](?P<extra>.*)$/', $m['extra'], $m)) {
-                    $segments[] = $m['segment'];
-                } else {
-                    throw new \InvalidArgumentException(sprintf('Malformed field path "%s"', $name));
-                }
-            }
-
-            return $segments;
-        }
-
-        throw new \InvalidArgumentException(sprintf('Malformed field path "%s"', $name));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

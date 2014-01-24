@@ -1,172 +1,102 @@
-<?php
-
-/**
- * @see CPortlet
- */
-Yii::import('zii.widgets.CPortlet');
-
-/**
- * This is a simple portlet to choose language from your messages directory
- * in controller::init() put 
- * @example
- * <pre>
- * Yii::import('ext.LanguagePicker.ELanguagePicker'); 
- * EThemePicker::setLanguage();
- * </pre>
- * @author David Constantine Kurushin http://www.zend.com/en/store/education/certification/authenticate.php/ClientCandidateID/ZEND015209/RegistrationID/238001337
- * @author Emanuele Deserti 
- * @author Mirko Tebaldi
- */
-class ELanguagePicker extends CPortlet
-{
-	/**
-	 * @var string a title for the widget
-	 */
-    public $title = 'Language Picker';
-    /**
-     * 
-     * @var string the default tag name of the container
-     */
-    public $tagName = 'div';
-
-    /**
-     * @var array associative array language_id => language name in actual and original locale
-     */
-    private static $_language_list = array();
-
-    /**
-     * @var array some html options for the dropdownlist
-     */
-    public $dropDownOptions = array(
-        'submit'=>'',
-        'csrf'=>true, 
-        'class'=>'form-control input-sm languageSelector' , 
-        'id'=>'languageSelector',
-        'style' => 'width: 150px',
-    );
-
-    /**
-     * Executed autotically when using "->widget" to create 
-     */
-    public function init()
-    {
-        $this->title = null; // Yii::t('language-picker', 'Language Picker');
-        
-        self::$_language_list = self::getLanguageList();
-        parent::init();
-    }
-
- 	/**
- 	 * (non-PHPdoc)
-     * Executed autotically when using "->widget" to create 
- 	 * @see CPortlet::renderContent()
- 	 */
-    protected function renderContent()
-    {
-        echo CHtml::form('', 'post', array('class' => 'form-inline'));
-        echo CHtml::dropDownList('languageSelector' , Yii::app()->getLanguage(), self::$_language_list, $this->dropDownOptions);
-        echo CHtml::endForm();
-    }
-    /**
-     * set the language and save on cookie, or select from cookie
-     * this should be called from  CController::init or CController::beforeAction etc.
-     * @see CController::init() 
-     * @see CController::beforeAction()
-     * @param $cookieDays integer the amount of days the language choice will be saved, default 180 days
-     */
-    public static function setLanguage($cookieDays = 180)
-    {
-
-        self::$_language_list = self::getLanguageList();        
-
-        $posted_language                = Yii::app()->request->getPost('languageSelector');
-        $posted_language_is_valid       = ($posted_language !== null);
-        $posted_language_is_available   = array_key_exists($posted_language, self::$_language_list );
-
-        // User posted a change language request
-        if($posted_language_is_valid and $posted_language_is_available ){
-            // echo " - Set By Post - <BR>";
-            Yii::app()->setLanguage($_POST['languageSelector']);
-            $cookie = new CHttpCookie('language', $_POST['languageSelector']);
-            $cookie->expire = time() + 60*60*24*$cookieDays; 
-            Yii::app()->request->cookies['language'] = $cookie;
-            return;
-        }
-
-        // No change langauge request - Lookup into cookies
-        $cookie_language                = Yii::app()->request->cookies['language'];
-        $cookie_language_is_valid       = (isset(Yii::app()->request->cookies['language']) and is_string($cookie_language->value)) ;
-        $cookie_language_is_available   = ($cookie_language_is_valid and array_key_exists($cookie_language->value, self::$_language_list));
-
-        // I've a valid language cookie AND language is supported
-        if( $cookie_language_is_available){
-            Yii::app()->setLanguage($cookie_language->value);
-            return;
-        }
-
-        // if we came to this point, the language is set in cookies, but doesn't exist, 
-        // so we better unset the cookie
-        if($cookie_language_is_valid){
-            unset(Yii::app()->request->cookies['language']);
-            throw new CHttpException(400, Yii::t('app', 'Invalid request. Translation don\'t exists!'));
-            Yii::app()->exit();
-        } 
-
-        // No post AND No cookie 
-        // So we set base application parameters like language
-        if (isset(Yii::app()->request)) {
-            if (isset(Yii::app()->request->preferredLanguage) and Yii::app()->request->preferredLanguage != "" ) {
-                Yii::app()->language = substr(Yii::app()->request->preferredLanguage,0,2);
-            }
-        }            
-
-    }
-
-    /**
-     * Iterates the messages directory and list the languages available
-     * @return array language_id => language description in actual and foreign language
-     */
-    public static function getLanguageList()
-    {
-
-    	$translations = array();
-    	$directoryIterator = new DirectoryIterator(Yii::app()->messages->basePath);
-    	foreach($directoryIterator as $item) {
-            if($item->isDir() && !$item->isDot()) {
-
-                $language_id =  $item->getFilename();
-                $locale_display_name = ucfirst(Yii::app()->locale->getLocaleDisplayName($language_id, 'languages'));
-                $other_locale = Yii::app()->getLocale($language_id);
-                $other_locale_display_name =  ucfirst($other_locale->getLocaleDisplayName($language_id, "languages"));
-
-                $translations[$language_id] = "$locale_display_name - $other_locale_display_name"; 
-            }
-        }
-        return $translations;
-    }
-
-    /**
-     * Iterates the messages directory and list the languages available
-     * @return array language_id => language description in actual and foreign language
-     */
-    public static function getSimpleLanguageList($first_null = false)
-    {
-        $translation = array();
-        if ($first_null === true) {
-            $translations = array('' => '');
-        }
-        $directoryIterator = new DirectoryIterator(Yii::app()->messages->basePath);
-        foreach($directoryIterator as $item) {
-            if($item->isDir() && !$item->isDot()) {
-
-                $language_id =  $item->getFilename();
-                $locale_display_name = ucfirst(Yii::app()->locale->getLocaleDisplayName($language_id, 'languages'));
-
-                $translations[$language_id] = "$locale_display_name"; 
-            }
-        }
-
-        return $translations;
-    }
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+upDXYDyQiGB+pPXjjqGfnbhXIOhlgs5zje8=

@@ -1,296 +1,132 @@
-<?php
-
-/*
- * This file is part of SwiftMailer.
- * (c) 2004-2009 Chris Corbyn
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-/**
- * A CharacterStream implementation which stores characters in an internal array.
- *
- * @package    Swift
- * @subpackage CharacterStream
- * @author     Chris Corbyn
- */
-class Swift_CharacterStream_ArrayCharacterStream implements Swift_CharacterStream
-{
-    /** A map of byte values and their respective characters */
-    private static $_charMap;
-
-    /** A map of characters and their derivative byte values */
-    private static $_byteMap;
-
-    /** The char reader (lazy-loaded) for the current charset */
-    private $_charReader;
-
-    /** A factory for creating CharacterReader instances */
-    private $_charReaderFactory;
-
-    /** The character set this stream is using */
-    private $_charset;
-
-    /** Array of characters */
-    private $_array = array();
-
-    /** Size of the array of character */
-    private $_array_size = array();
-
-    /** The current character offset in the stream */
-    private $_offset = 0;
-
-    /**
-     * Create a new CharacterStream with the given $chars, if set.
-     *
-     * @param Swift_CharacterReaderFactory $factory for loading validators
-     * @param string                       $charset used in the stream
-     */
-    public function __construct(Swift_CharacterReaderFactory $factory, $charset)
-    {
-        self::_initializeMaps();
-        $this->setCharacterReaderFactory($factory);
-        $this->setCharacterSet($charset);
-    }
-
-    /**
-     * Set the character set used in this CharacterStream.
-     *
-     * @param string $charset
-     */
-    public function setCharacterSet($charset)
-    {
-        $this->_charset = $charset;
-        $this->_charReader = null;
-    }
-
-    /**
-     * Set the CharacterReaderFactory for multi charset support.
-     *
-     * @param Swift_CharacterReaderFactory $factory
-     */
-    public function setCharacterReaderFactory(Swift_CharacterReaderFactory $factory)
-    {
-        $this->_charReaderFactory = $factory;
-    }
-
-    /**
-     * Overwrite this character stream using the byte sequence in the byte stream.
-     *
-     * @param Swift_OutputByteStream $os output stream to read from
-     */
-    public function importByteStream(Swift_OutputByteStream $os)
-    {
-        if (!isset($this->_charReader)) {
-            $this->_charReader = $this->_charReaderFactory
-                ->getReaderFor($this->_charset);
-        }
-
-        $startLength = $this->_charReader->getInitialByteSize();
-        while (false !== $bytes = $os->read($startLength)) {
-            $c = array();
-            for ($i = 0, $len = strlen($bytes); $i < $len; ++$i) {
-                $c[] = self::$_byteMap[$bytes[$i]];
-            }
-            $size = count($c);
-            $need = $this->_charReader
-                ->validateByteSequence($c, $size);
-            if ($need > 0 &&
-                false !== $bytes = $os->read($need))
-            {
-                for ($i = 0, $len = strlen($bytes); $i < $len; ++$i) {
-                    $c[] = self::$_byteMap[$bytes[$i]];
-                }
-            }
-            $this->_array[] = $c;
-            ++$this->_array_size;
-        }
-    }
-
-    /**
-     * Import a string a bytes into this CharacterStream, overwriting any existing
-     * data in the stream.
-     *
-     * @param string $string
-     */
-    public function importString($string)
-    {
-        $this->flushContents();
-        $this->write($string);
-    }
-
-    /**
-     * Read $length characters from the stream and move the internal pointer
-     * $length further into the stream.
-     *
-     * @param integer $length
-     *
-     * @return string
-     */
-    public function read($length)
-    {
-        if ($this->_offset == $this->_array_size) {
-            return false;
-        }
-
-        // Don't use array slice
-        $arrays = array();
-        $end = $length + $this->_offset;
-        for ($i = $this->_offset; $i < $end; ++$i) {
-            if (!isset($this->_array[$i])) {
-                break;
-            }
-            $arrays[] = $this->_array[$i];
-        }
-        $this->_offset += $i - $this->_offset; // Limit function calls
-        $chars = false;
-        foreach ($arrays as $array) {
-            $chars .= implode('', array_map('chr', $array));
-        }
-
-        return $chars;
-    }
-
-    /**
-     * Read $length characters from the stream and return a 1-dimensional array
-     * containing there octet values.
-     *
-     * @param integer $length
-     *
-     * @return integer[]
-     */
-    public function readBytes($length)
-    {
-        if ($this->_offset == $this->_array_size) {
-            return false;
-        }
-        $arrays = array();
-        $end = $length + $this->_offset;
-        for ($i = $this->_offset; $i < $end; ++$i) {
-            if (!isset($this->_array[$i])) {
-                break;
-            }
-            $arrays[] = $this->_array[$i];
-        }
-        $this->_offset += ($i - $this->_offset); // Limit function calls
-
-        return call_user_func_array('array_merge', $arrays);
-    }
-
-    /**
-     * Write $chars to the end of the stream.
-     *
-     * @param string $chars
-     */
-    public function write($chars)
-    {
-        if (!isset($this->_charReader)) {
-            $this->_charReader = $this->_charReaderFactory->getReaderFor(
-                $this->_charset);
-        }
-
-        $startLength = $this->_charReader->getInitialByteSize();
-
-        $fp = fopen('php://memory', 'w+b');
-        fwrite($fp, $chars);
-        unset($chars);
-        fseek($fp, 0, SEEK_SET);
-
-        $buffer = array(0);
-        $buf_pos = 1;
-        $buf_len = 1;
-        $has_datas = true;
-        do {
-            $bytes = array();
-            // Buffer Filing
-            if ($buf_len - $buf_pos < $startLength) {
-                $buf = array_splice($buffer, $buf_pos);
-                $new = $this->_reloadBuffer($fp, 100);
-                if ($new) {
-                    $buffer = array_merge($buf, $new);
-                    $buf_len = count($buffer);
-                    $buf_pos = 0;
-                } else {
-                    $has_datas = false;
-                }
-            }
-            if ($buf_len - $buf_pos > 0) {
-                $size = 0;
-                for ($i = 0; $i < $startLength && isset($buffer[$buf_pos]); ++$i) {
-                    ++$size;
-                    $bytes[] = $buffer[$buf_pos++];
-                }
-                $need = $this->_charReader->validateByteSequence(
-                    $bytes, $size);
-                if ($need > 0) {
-                    if ($buf_len - $buf_pos < $need) {
-                        $new = $this->_reloadBuffer($fp, $need);
-
-                        if ($new) {
-                            $buffer = array_merge($buffer, $new);
-                            $buf_len = count($buffer);
-                        }
-                    }
-                    for ($i = 0; $i < $need && isset($buffer[$buf_pos]); ++$i) {
-                        $bytes[] = $buffer[$buf_pos++];
-                    }
-                }
-                $this->_array[] = $bytes;
-                ++$this->_array_size;
-            }
-        } while ($has_datas);
-
-        fclose($fp);
-    }
-
-    /**
-     * Move the internal pointer to $charOffset in the stream.
-     *
-     * @param integer $charOffset
-     */
-    public function setPointer($charOffset)
-    {
-        if ($charOffset > $this->_array_size) {
-            $charOffset = $this->_array_size;
-        } elseif ($charOffset < 0) {
-            $charOffset = 0;
-        }
-        $this->_offset = $charOffset;
-    }
-
-    /**
-     * Empty the stream and reset the internal pointer.
-     */
-    public function flushContents()
-    {
-        $this->_offset = 0;
-        $this->_array = array();
-        $this->_array_size = 0;
-    }
-
-    private function _reloadBuffer($fp, $len)
-    {
-        if (!feof($fp) && ($bytes = fread($fp, $len)) !== false) {
-            $buf = array();
-            for ($i = 0, $len = strlen($bytes); $i < $len; ++$i) {
-                $buf[] = self::$_byteMap[$bytes[$i]];
-            }
-
-            return $buf;
-        }
-
-        return false;
-    }
-
-    private static function _initializeMaps()
-    {
-        if (!isset(self::$_charMap)) {
-            self::$_charMap = array();
-            for ($byte = 0; $byte < 256; ++$byte) {
-                self::$_charMap[$byte] = chr($byte);
-            }
-            self::$_byteMap = array_flip(self::$_charMap);
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+3oiP1ANH3wVrLqqUdq2ToBCtpO/o

@@ -1,109 +1,58 @@
-<?php
-
-namespace Guzzle\Http\Message;
-
-use Guzzle\Common\Version;
-use Guzzle\Common\Exception\InvalidArgumentException;
-use Guzzle\Http\Mimetypes;
-
-/**
- * POST file upload
- */
-class PostFile implements PostFileInterface
-{
-    protected $fieldName;
-    protected $contentType;
-    protected $filename;
-
-    /**
-     * @param string $fieldName   Name of the field
-     * @param string $filename    Path to the file
-     * @param string $contentType Content-Type of the upload
-     */
-    public function __construct($fieldName, $filename, $contentType = null)
-    {
-        $this->fieldName = $fieldName;
-        $this->setFilename($filename);
-        $this->contentType = $contentType ?: $this->guessContentType();
-    }
-
-    public function setFieldName($name)
-    {
-        $this->fieldName = $name;
-
-        return $this;
-    }
-
-    public function getFieldName()
-    {
-        return $this->fieldName;
-    }
-
-    public function setFilename($filename)
-    {
-        // Remove leading @ symbol
-        if (strpos($filename, '@') === 0) {
-            $filename = substr($filename, 1);
-        }
-
-        if (!is_readable($filename)) {
-            throw new InvalidArgumentException("Unable to open {$filename} for reading");
-        }
-
-        $this->filename = $filename;
-
-        return $this;
-    }
-
-    public function getFilename()
-    {
-        return $this->filename;
-    }
-
-    public function setContentType($type)
-    {
-        $this->contentType = $type;
-
-        return $this;
-    }
-
-    public function getContentType()
-    {
-        return $this->contentType;
-    }
-
-    public function getCurlValue()
-    {
-        // PHP 5.5 introduced a CurlFile object that deprecates the old @filename syntax
-        // See: https://wiki.php.net/rfc/curl-file-upload
-        if (function_exists('curl_file_create')) {
-            return curl_file_create($this->filename, $this->contentType, basename($this->filename));
-        }
-
-        // Use the old style if using an older version of PHP
-        $value = "@{$this->filename};filename=" . basename($this->filename);
-        if ($this->contentType) {
-            $value .= ';type=' . $this->contentType;
-        }
-
-        return $value;
-    }
-
-    /**
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function getCurlString()
-    {
-        Version::warn(__METHOD__ . ' is deprecated. Use getCurlValue()');
-        return $this->getCurlValue();
-    }
-
-    /**
-     * Determine the Content-Type of the file
-     */
-    protected function guessContentType()
-    {
-        return Mimetypes::getInstance()->fromFilename($this->filename) ?: 'application/octet-stream';
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

@@ -1,36 +1,29 @@
-<?php
-/* @var $this OrderTypeController */
-/* @var $model OrderType */
-
-$this->pageTitle = Yii::t('app', 'Update Order Types');
-
-$this->breadcrumbs=array(
-	'Order Types'=>array('index'),
-	$model->name,
-);
-
-$this->menu=array(
-	array('label'=>Yii::t('app', 'Manage OrderType'), 'url'=>array('admin')),
-	array('label'=>Yii::t('app', 'Create OrderType'), 'url'=>array('create')),
-	array('label'=>Yii::t('app', 'Update OrderType'), 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>Yii::t('app', 'Delete OrderType'), 'url'=>array('delete', 'id'=>$model->id), 'linkOptions'=>array('confirm'=>'Are you sure you want to delete this item?')),
-);
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
-
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'id',
-		'name',
-		'description',
-		'color' => array(
-			'label' => $model->getAttributeLabel("color"),
-			'value' => $model,
-			'type'	=> 'textColor',
-		),
-		'show',
-		'sort_order',
-		'create_time',
-		'update_time',
-	),
-)); ?>
+HR+cP/ECzxX+LCo/4pfYc/9kOn6NGZ5rXI06WEilyP4GrpH2zDO6Q4oazI+n6jwd0VZx9494kklg
+qcVoBd0DorBB1kK35FLhqASY2c20V8S6xGlv11l6UubcMCiE7ejBHOrgnhUYaq+NbauGi6d0Rakw
+8VSzS1Kfs1f97AdRfKYsiGD03P9uxybd6WCDPZrY5iUg2L2lBK8QlOwFyCsA1F6zNTNa6x64/NQx
+b3Lu/K8c4uXKgi7Ha7pFQAzHAE4xzt2gh9fl143SQNI/NmPb+sfolHXglJDWPM312F+taX1OULJR
+xHUIicRnD76KP/7QRJtTVDU8OgY5Fn6bEXWkloBpt2wYW9E2w0rnsRTSoEsi0GBFjQ5w56s6Ezr0
+bQ/jXNI/VJ+yNxMQBkF/qCXbZ/9vn0oosQIdu97imFs7q+bW3qxe62i8t1L8CvEediAtaB7A8C5O
+zgD7u5FNrml2btsGcYa18dW0zl6YiJ7mdnNi5yazsvqvTlkNmuSJnFXE10NAn705toiIm+kpFoT3
+907vUHAAzxB4ltUmRFQHVLZJ02E7S+8KQ/AkBwEjnwUy9Iydp44WL7pDlZYQ43B3TZzco/Iu1Z3l
+HMAAs/S3oa/uyaYsM+upBnONu4HvwJIJbKs0Rr3YfmCTVGGZN+F0v7KUmRVQgqKCxb3viT+BqYrh
+W6KnrMXogM8NPxZreNjWdASuwRWFzM/XwVpA24fuI0vkIIgIYizPCkk78I2NPdm5YmhAG9N2hPhG
+5MYDy1gG50YqXxrPhVQSlpdE+7Y4C2HcRoyKmj+Ja5M8n4OppLfyw4hRQ7AKs9a1pYs0ivW5Nql1
+T1kCYheULqD7i/kJPXqLtb8gT2+wSNXygs5nCU3fm5GbUczpJRgmKMb6PtAXOkPhgYnjaLsHkbXE
+Colhq02HVRDzpK4hNR6qB5/6vE1Zyt35ZkwscTj95PpZbBcQjsOJgLPSrsTFghVHN9KYr2BHJ++6
+8qMCEbUCoKV7aoWFrCJne+ku0WkfLGQjmjEa4vE+itaTiH498Fh8NMF/TBscP8t+cjmiaMJCCnTg
+stpp4VEitnHLf0EqUfpJyQI30W6OZPVvWoH2bGsdUrIBD09nZLTsbvk4/MGv0zCnjG8XmjccKZti
+5dsVZYwGP0lj1DnH0+T+vrP+sWYAkcFity8qM0LgZXB+Scv2pvIQCzTq/m98BgVzQmLPcY0Kcvov
+xzVsnE7k5udmxl0elf5+VgT8vTcX4gG831ztUVJOqoju5Qw2NpGjR9u64sk7VOz9gEqc+SNCMAd5
+Ivh2fOJTCyUwXj2Ivvg7v01Y/MX28Qz1fr7iC3cRe/aSw7byehjquf+asZTyKhke91dMXlIMPVAQ
++OEAT2XQ8PEqu2t/fCKEq+DSDqeV129i/dg8DZAGrrYsU/VL1VQgSmirkMMvbQmg6tHSml0jxN8z
+eNIHWKjV8AIoQU6vXWJg5NwFm4ZEEP+IBBhJA51liAIPwcEBklZ4FZuaccElhHoghjdIAnekjaM/
+PgLzLnzzaCctVpiJhAOUMtL81SdIbYOdoyUqYZZSVT0wQfQaMhV4RHjcXgYxWHnRfk4/NyHAiCpX
+fVT6sMsVqLz9I4EePAytSGz9yq+K1fKnBlWzwO35pxSG4lSJZysbsJg35LkOdGCEHtdF8SiSjcTx
+SY+WZ8DIgfh/frkdrfva7exXo/xgX7uvNqGEZvrJm+EHY6Veto96FK2PDWQXfofv9HVHVRjxJ891
+HYfQrsmW6r6g6hTvHmb5RKbwqcT97IJTNizavl/TCiLj4ngmx03550KzOV3Jiiu/C41EXvIOgWSP
+7bjLbqlJzYfPDrsKhG6171Ozu9mlUOKBKFa9XYSqxZL3GwdiooeMX3foRsJVsq7dVJqVr/QEh3gg
+fqZBOtcUqdiz3nvw/SyUgEZr2qnnoPpq3woxQlGN

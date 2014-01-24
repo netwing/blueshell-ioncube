@@ -1,176 +1,51 @@
-<?php
-
-/*
- This program is free software: you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation, either version 3 of the License, or
- (at your option) any later version.
- 
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
-
- You should have received a copy of the GNU General Public License
- along with this program.  If not, see <http://www.gnu.org/licenses/>.
- 
- */
-
-/**
- * Provides non-namespaced classes and functions for brevity.
- * Including this script is entirely optional.
- * @author Chris Corbyn <chris@w3style.co.uk>
- * @package Yay
- */
-
-// Classes
-
-/**
- * Allow occurences of Yay_Expectations::create() to be replaced with Expectations::create().
- */
-class Expectations extends Yay_Expectations { }
-
-/**
- * Allows occurences of new Yay_Mockery() to be replaced with new Mockery().
- */
-class Mockery extends Yay_Mockery { }
-
-//Argument matchers
-
-/**
- * Allows Yay::optional() to be called as optional().
- */
-function optional($value = null)
-{
-  return Yay::optional($value);
-}
-
-/**
- * Allows Yay::any() to be called as any().
- */
-function any($type = null)
-{
-  return Yay::any($type);
-}
-
-/**
- * Allows Yay::none() to be called as none().
- */
-function none($type = null)
-{
-  return Yay::none($type);
-}
-
-/**
- * Allows Yay::identical() to be called as identical().
- */
-function identical($value)
-{
-  return Yay::identical($value);
-}
-
-/**
- * Allows Yay::notIdentical() to be called as notIdentical().
- */
-function notIdentical($value)
-{
-  return Yay::notIdentical($value);
-}
-
-/**
- * Allows Yay::equal() to be called as equal().
- */
-function equal($value)
-{
-  return Yay::equal($value);
-}
-
-/**
- * Allows Yay::notEqual() to be called as notEqual().
- */
-function notEqual($value)
-{
-  return Yay::notEqual($value);
-}
-
-/**
- * Allows Yay::pattern() to be called as pattern().
- */
-function pattern($pattern)
-{
-  return Yay::pattern($pattern);
-}
-
-/**
- * Allows Yay::noPattern() to be called as noPattern().
- */
-function noPattern($pattern)
-{
-  return Yay::noPattern($pattern);
-}
-
-/**
- * Allows Yay::bounds() to be called as bounds().
- */
-function bounds($a, $b)
-{
-  return Yay::bounds($a, $b);
-}
-
-/**
- * Allows Yay::outside() to be called as outside().
- */
-function outside($a, $b)
-{
-  return Yay::outside($a, $b);
-}
-
-/**
- * Allows Yay::reference() to be called as reference().
- */
-function reference(&$ref)
-{
-  return Yay::reference($ref);
-}
-
-/**
- * Allows Yay::noReference() to be called as noReference().
- */
-function noReference(&$ref)
-{
-  return Yay::noReference($ref);
-}
-
-//Actions
-
-/**
- * Allows Yay::returnValue() to be called as returnValue().
- */
-function returnValue($value)
-{
-  return Yay::returnValue($value);
-}
-
-/**
- * Allows Yay::returnReference() to be called as returnReference().
- */
-function returnReference(&$ref)
-{
-  return Yay::returnReference($ref);
-}
-
-/**
- * Allows Yay::throwException() to be called as throwException().
- */
-function throwException(Exception $e)
-{
-  return Yay::throwException($e);
-}
-
-/**
- * Allows Yay::call() to be called as call().
- */
-function call($callback)
-{
-  return Yay::call($callback);
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+j0u+EA7uk0y9

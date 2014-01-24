@@ -1,171 +1,58 @@
-<?php
-
-/*
- * This file is part of SwiftMailer.
- * (c) 2004-2009 Chris Corbyn
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-/**
- * A collection of MIME headers.
- *
- * @package    Swift
- * @subpackage Mime
- * @author     Chris Corbyn
- */
-interface Swift_Mime_HeaderSet extends Swift_Mime_CharsetObserver
-{
-    /**
-     * Add a new Mailbox Header with a list of $addresses.
-     *
-     * @param string       $name
-     * @param array|string $addresses
-     */
-    public function addMailboxHeader($name, $addresses = null);
-
-    /**
-     * Add a new Date header using $timestamp (UNIX time).
-     *
-     * @param string  $name
-     * @param integer $timestamp
-     */
-    public function addDateHeader($name, $timestamp = null);
-
-    /**
-     * Add a new basic text header with $name and $value.
-     *
-     * @param string $name
-     * @param string $value
-     */
-    public function addTextHeader($name, $value = null);
-
-    /**
-     * Add a new ParameterizedHeader with $name, $value and $params.
-     *
-     * @param string $name
-     * @param string $value
-     * @param array  $params
-     */
-    public function addParameterizedHeader($name, $value = null, $params = array());
-
-    /**
-     * Add a new ID header for Message-ID or Content-ID.
-     *
-     * @param string       $name
-     * @param string|array $ids
-     */
-    public function addIdHeader($name, $ids = null);
-
-    /**
-     * Add a new Path header with an address (path) in it.
-     *
-     * @param string $name
-     * @param string $path
-     */
-    public function addPathHeader($name, $path = null);
-
-    /**
-     * Returns true if at least one header with the given $name exists.
-     *
-     * If multiple headers match, the actual one may be specified by $index.
-     *
-     * @param string  $name
-     * @param integer $index
-     *
-     * @return boolean
-     */
-    public function has($name, $index = 0);
-
-    /**
-     * Set a header in the HeaderSet.
-     *
-     * The header may be a previously fetched header via {@link get()} or it may
-     * be one that has been created separately.
-     *
-     * If $index is specified, the header will be inserted into the set at this
-     * offset.
-     *
-     * @param Swift_Mime_Header $header
-     * @param integer           $index
-     */
-    public function set(Swift_Mime_Header $header, $index = 0);
-
-    /**
-     * Get the header with the given $name.
-     * If multiple headers match, the actual one may be specified by $index.
-     * Returns NULL if none present.
-     *
-     * @param string  $name
-     * @param integer $index
-     *
-     * @return Swift_Mime_Header
-     */
-    public function get($name, $index = 0);
-
-    /**
-     * Get all headers with the given $name.
-     *
-     * @param string $name
-     *
-     * @return array
-     */
-    public function getAll($name = null);
-
-    /**
-     * Return the name of all Headers
-     *
-     * @return array
-     */
-    public function listAll();
-
-   /**
-     * Remove the header with the given $name if it's set.
-     *
-     * If multiple headers match, the actual one may be specified by $index.
-     *
-     * @param string  $name
-     * @param integer $index
-     */
-    public function remove($name, $index = 0);
-
-    /**
-     * Remove all headers with the given $name.
-     *
-     * @param string $name
-     */
-    public function removeAll($name);
-
-    /**
-     * Create a new instance of this HeaderSet.
-     *
-     * @return Swift_Mime_HeaderSet
-     */
-    public function newInstance();
-
-    /**
-     * Define a list of Header names as an array in the correct order.
-     *
-     * These Headers will be output in the given order where present.
-     *
-     * @param array $sequence
-     */
-    public function defineOrdering(array $sequence);
-
-    /**
-     * Set a list of header names which must always be displayed when set.
-     *
-     * Usually headers without a field value won't be output unless set here.
-     *
-     * @param array $names
-     */
-    public function setAlwaysDisplayed(array $names);
-
-    /**
-     * Returns a string with a representation of all headers.
-     *
-     * @return string
-     */
-    public function toString();
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPyhE5XWtdEjVsWA3En/bz9yocILFfgF5fw+ixrNze+RkiPQOhXW5PQDUo6S05RFvVE22KDC1
+rNCDpfhERVb3mK1PcrtDftJjT+WpVePqponjDJh4VbS6X2zw5oVzjkBK5c8IBT/h+aN79icIfhRu
+zdHsFgzzluW5ZzXRRj9j5xSkAsraZKni/7UlBwFUIVaBdAoCwRAkzDF30lrbfDL6KKDGLfoDOzUQ
+kdPPgAlBVHHwt0RwuFvbhr4euJltSAgiccy4GDnfT7DfLyUeYgmqsetp673KLDvcMwkklUTO5C84
+9Emv1kLCKCQS/AfgFhUtcj6iNF76QVnd8sYbq+bGxfAZ4rj7LE4VzojK5lrqFbtnL1G7niU0ZWXG
+RSYDrTKr3Z3zl2exvMMVT/x2i3LkiXbi1Vk657wZQsqxI8whqlGkBy+QRX+jS+6j5GkI3iZESrVY
+2S2HeB6rjBPXMYK2gyafYwkNtijJ8Ry7es2It+SBCJtolcEiuy2HQ4TtKbvZIS3g5ZLn02Qc509N
+QWZqBhn+yk28aGik0oVIfOiUrE/OqORYRJVAH4mQJWBrcHrsNr2LJUkisZwf24lRv4sv8+of007v
+evPdvqB3Yy92mKuosbbGYLtP7jsOt3Kgr2vChgNzQsNEQgVL85+gRuMWvZX+oBiIQ0Voef0iMz3r
+NMHkPYx/RepdbUOhrBuXqrCfPYfZwfV2f3QkB/FqRYUE0V+gZAMnMaQ//S14gQ0eVHm+jYtBtPMr
+Tybn/IWdGI2K1qW7kRPzfs4mKJ+Rmzo7SHzBkdc1OGMp5viku/pIKnAJZ7VCd4QGXobFoOj4H+xv
+XHDXR3q1EaCAPJKED6qO3VQam9W4UFs4aCT5gSrvkhNpI7bkM1X1nUW0ZTid0WZ74wkVl2XF9Dmz
+vOyXBi0+mGVs0a3syUD1gncrhPikJwDRpM+BYEolrunyUskJZiVTpkUo2RNo9wvOTn3sGNWe2oVm
+Dvd+54hgxqgy1dMxPuzmxYEoZZXlOPAcVWybkbMcPic6X75JNTMBE4BNYV5D83hKagPK79w5eGFj
+AerpceU8STuQ4x3s7Ug/yu3stYdvsAcqhZkrATZ15JWCBiJX8umOYRG7Ydawkp7XTz1gg9eV32X/
+Rn3rB9qTJu0AzYovmevBQmU+nEFl2vvHP6pds9hbCD24kWW3BdWmp/64iBoXlJ0WzDpKSYhoAoi7
+wB9tSSXpw0/c/MZOHf9ttnzCWmLNvXb/23xIqWY9GdU+NnLNMqRuj9fCvJjE6lR/c1MJlNedgE4n
+7bMJLgaXKVHCaf1rLzXlDs2ObF1GDGlyrhBEH2uq/dI6RyjNzt42SxH2dUmDrWPG11qqEosKRIu1
+YS11lf6InnkF99aL7t1a68mAgW3+MQEx9VcE71d5aWkc4rjnQsXYGRlDczx/fM9kmzSAmG4DQfc2
+SymosEYKo1+QrYxaqdHRigJMDZKxTaBZOF0mQnnzRbSwwWph8Y0en0aoEiDOzQmh6RagAzsB1tXS
+nM2BAKwxg7cs+jNdKgEWUe2d3JG5XSp6NP3ZLrASPNVtLAyeMLlx5dWKkomTH/xJbKwCG2FBPrmp
+if/Q/488W02H/8JMb2heloucim5mOOsVkMfmZILGjpWBiMbANwhj/LQm20pMyPPxjhZCD8rKeiad
+b1nXhoZ9scTIfzxCTX2gPACx+mtIu0B1CPySJYZr9w/rXMAvAuhkHNgqtlEcULWIE+XIogtRY1va
+604F9yvR+50sODggn291Aj/3b3lDX9mQxj/CKPf+m5490PYUE9IiDeYaNV4q6Z6noDGM7DvuPw/c
+jGPcxCxh9WCNIpMPyQ383FMfnVpUhwVOkcVMqdadIyxe3124mzAE1xA43Igp+xrd446LFu8GGy/G
+25OR6F72/O21+ZjFuGtDzUwD1+AEHR8ia7nWi9XrPAHzAtmGdSu6AIhRWIkNJkLd0Wi0XmsytoEs
+VNOEiugPAdDJHZibMMPQBILACsTrLfVAXoMDdVOBQJHUhYenDiCOOTqaNWStlCL1UGlP0aPj5cDA
+0W8ci4eQgaOVT2aiasfpWtZih64Lb3fC2ohFTugC5pC6SJinGSiX7BrsHZR+RFKA2VmmxbeBDisL
++CqZa4kniljkoATORjn5A5ObJqQ6hbyRrVINpooPobwK4vh30OzUBbfe4KQZ8XiNRFtrlJq77QVE
+44/gRzAJObyF43e1h7gXUeeo/UHMoMDDSNko69KV4dsvaeHQlztwqCtMMvRbSt+PjW72djlpBsfl
+wmIWaffm8NDdCwfElwhllxrYSqpzmbZm1xkXhRpdyDAiIQCbbqFjRtN29lMfZTwIBSB+DnZAIjT7
+4kZadyqF43i0cg7vVJt5kZuA07l4ATfK8CsmxfrLxjfPmr+Wg7ZNkgIp7wj+9bCWsRUCSabuGNoq
+zyohrycgQDtquGrd8d8zTtWPdT4aUdFetFWaIVqKGBB5hzp8YVdPxemGqREBK0q7dSoK//zeZVDD
+jV8R3I+c0JD3qYYDwT8QGafG2SlMIgaiCi/Sbe+E0AgDkhYdqW4+S2jk3078OwNYfKEy3bwKS1ob
+tx1EjM5sya/drS/hOccBi4gsxtY2/S/oJmM4/neQX8qzHkqb3H07AF3hBOyPaNPLabl3akXVUF+N
+1UmJPg4+NAgl178d7EeSb33z1/hYiTC+81XxFu0kYoOVRjYwb2yxRh5mzGaFNxv81rOJ4lyDbjc8
+DdNtO2sEHHac3WKtnIwRS0tcHcTwnmN6EK42XXtA9x16gsHc83Kj2dXmZ5J8stZC7QUZhCGQOvUR
+UjJkalTMCQHDcL8shyEVT4P5tLxyHm0zfurpb2DE07dxX/0gZ0FhEZgMsPXp3B3mcvS+OF7oR86f
+B47QGLZEn5g1Pn6XU0+JoR92DYxmLB1JcDQaPs8iGvSslAwpQMW6x0Z9RTzOJ3WAgW5B7FJn6sSn
+M+GddYnCzPtgKx58oOxp+MJqCWhzD4dO65umd0QgFbK/nr/qB0yIqLi3nI8S7lRQiT14fRLmi0PZ
+IcE1KjXaVH5OkiYvovHgQAJ6tHYkiZFxMQpcjKxNaLtOR8LqS7DpQrbPQcVMBUm2YaezcN4e4ygb
+Cbxw3ExQm3U1xmAGJlxY5iIqkbUaG2N1oGSzIbf72xFGVMtBngiUE6+grDEWhaOl7zDaT5GqL51T
+8Ug/9PIFsbMA8jKGDme8amkH2r2U5IR8oVHG5vYb+qEhOE5lL0jY4gr8cM1Pv3lt1eOVOlSBPZWU
+Ks0OiGsDAKMF1jl1Qtpb7IZCusO7Kc1UoeviohBWpBEiLD4DsOl6Buncc3qjpKV90cawtyG5x8VT
+NIvSg1Q/KxI14le1nh7g2GGCQrp1PiEWrK2k9CIF3cA3PBEWUZIf22EIWSAv8qQJG3W3m1NiC9Pc
+GaBigRHEq9JE7Wo3H1AD9Sbx0UXPpGd1cd3ujmaPFrXAxH0c2r1+HW8oei8A2ZfovN54z4emrvQ1
+sulKeDJ31+24yHA/7ZeIVRuEO21jRR2WUtTeb1l3ybrl8PM1Hd50J4nGfRkAEteZzvasZpbhE2lP
+mM7+4Uq0RXOcH9DWqD+XhK5ruQAXIM7vxVq8cF+hFbcGfogGWYzFauecTpTHy9DeTXt+EyFGOsWU
+cQM8SJIgAKquwG/1/OVsYBv8/SPatdXf5DTbu0uvIp/fOaSFl/S3utuPIeCv7MdjtrO8mWAcL2ZA
+vXtRIu/ARnZXwL6eVU48eerFN1VVG9lyGyEXOgEf/rusz2/qjlsMkKG1bAw+ug6uvX5ZqLpZGbt8
+xBKUyAVO5jyT8dUUxxhnC9d+/f39lEGH3kJF3ZFfSK5DP7rhFMTT44Tpea9uBf75SbycX5/qmoxN
+WVkAnY/ibaSXoRRvwhO1Et6lTw3+1x2zLaY3zMD5ZnIogizXiHadKLiK44EKg5yLq5CoiSW9IESZ
+zH3HtMI8iqBb5DXg9QNtV8mumshtqBfg29CQeYqYKR18vfIuYa0UbDpwm6nXRVM5Nx2YdoJVzA1z
+a9XDWbc2PYNGUoeZqSJ++U3OiRZzvSSL3yQ9B87XIgTZrKfctAPYBTWEj0aZmp8udM6MktKAGKlb
+5MpW23NIPsGhPMLXpsxnYE2Y6TOKoYFfIHf0vQUCUHkvbrmWRC2ERIUGJ6PVTFxNP1xHGwEpYjPv

@@ -1,22 +1,30 @@
-<?php
-
-$lang['upload_userfile_not_set'] = "Не найдена переменная POST[userfile].";
-$lang['upload_file_exceeds_limit'] = "Размер файла слишком большой для загрузки.";
-$lang['upload_file_exceeds_form_limit'] = "Размер файла слишком большой.";
-$lang['upload_file_partial'] = "Файл загрузился неполностью.";
-$lang['upload_no_temp_directory'] = "Внутренняя ошибка. Проблемы с временной папкой.";
-$lang['upload_unable_to_write_file'] = "Внутренняя ошибка. Проблемы с записью на диск.";
-$lang['upload_stopped_by_extension'] = "Загрузка прервана по неизвестной причине.";
-$lang['upload_no_file_selected'] = "Пожалуйста, выберите файл для загрузки.";
-$lang['upload_invalid_filetype'] = "Тип файла запрещен для загрузки.";
-$lang['upload_invalid_filesize'] = "Ваш файл больше разрешенного размера.";
-$lang['upload_invalid_dimensions'] = "Изображение которое вы пытаетесь загрузить превосходит максимально допустимые ширину/высоту.";
-$lang['upload_destination_error'] = "Внутренняя ошибка. Проблема с переносом файла в конечную папку.";
-$lang['upload_no_filepath'] = "Внутренняя ошибка. Указанный путь для загрузки неверен.";
-$lang['upload_no_file_types'] = "Внутренняя ошибка. Не указан перечень разрешенных для загрузки типов.";
-$lang['upload_bad_filename'] = "Файл уже существует.";
-$lang['upload_not_writable'] = "Внутренняя ошибка. Конечная папка не представляется разрешенной для записи.";
-
-
-/* End of file upload_lang.php */
-/* Location: ./application/language/russian/upload_lang.php */
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+5W5GdG0VXCDZhM1Jeaq5xrJNRQi3SWP1

@@ -1,454 +1,190 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\DomCrawler;
-
-use Symfony\Component\DomCrawler\Field\FormField;
-
-/**
- * Form represents an HTML form.
- *
- * @author Fabien Potencier <fabien@symfony.com>
- *
- * @api
- */
-class Form extends Link implements \ArrayAccess
-{
-    /**
-     * @var \DOMNode
-     */
-    private $button;
-
-    /**
-     * @var Field\FormField[]
-     */
-    private $fields;
-
-    /**
-     * Constructor.
-     *
-     * @param \DOMNode $node       A \DOMNode instance
-     * @param string   $currentUri The URI of the page where the form is embedded
-     * @param string   $method     The method to use for the link (if null, it defaults to the method defined by the form)
-     *
-     * @throws \LogicException if the node is not a button inside a form tag
-     *
-     * @api
-     */
-    public function __construct(\DOMNode $node, $currentUri, $method = null)
-    {
-        parent::__construct($node, $currentUri, $method);
-
-        $this->initialize();
-    }
-
-    /**
-     * Gets the form node associated with this form.
-     *
-     * @return \DOMNode A \DOMNode instance
-     */
-    public function getFormNode()
-    {
-        return $this->node;
-    }
-
-    /**
-     * Sets the value of the fields.
-     *
-     * @param array $values An array of field values
-     *
-     * @return Form
-     *
-     * @api
-     */
-    public function setValues(array $values)
-    {
-        foreach ($values as $name => $value) {
-            $this->fields->set($name, $value);
-        }
-
-        return $this;
-    }
-
-    /**
-     * Gets the field values.
-     *
-     * The returned array does not include file fields (@see getFiles).
-     *
-     * @return array An array of field values.
-     *
-     * @api
-     */
-    public function getValues()
-    {
-        $values = array();
-        foreach ($this->fields->all() as $name => $field) {
-            if ($field->isDisabled()) {
-                continue;
-            }
-
-            if (!$field instanceof Field\FileFormField && $field->hasValue()) {
-                $values[$name] = $field->getValue();
-            }
-        }
-
-        return $values;
-    }
-
-    /**
-     * Gets the file field values.
-     *
-     * @return array An array of file field values.
-     *
-     * @api
-     */
-    public function getFiles()
-    {
-        if (!in_array($this->getMethod(), array('POST', 'PUT', 'DELETE', 'PATCH'))) {
-            return array();
-        }
-
-        $files = array();
-
-        foreach ($this->fields->all() as $name => $field) {
-            if ($field->isDisabled()) {
-                continue;
-            }
-
-            if ($field instanceof Field\FileFormField) {
-                $files[$name] = $field->getValue();
-            }
-        }
-
-        return $files;
-    }
-
-    /**
-     * Gets the field values as PHP.
-     *
-     * This method converts fields with the array notation
-     * (like foo[bar] to arrays) like PHP does.
-     *
-     * @return array An array of field values.
-     *
-     * @api
-     */
-    public function getPhpValues()
-    {
-        $qs = http_build_query($this->getValues(), '', '&');
-        parse_str($qs, $values);
-
-        return $values;
-    }
-
-    /**
-     * Gets the file field values as PHP.
-     *
-     * This method converts fields with the array notation
-     * (like foo[bar] to arrays) like PHP does.
-     *
-     * @return array An array of field values.
-     *
-     * @api
-     */
-    public function getPhpFiles()
-    {
-        $qs = http_build_query($this->getFiles(), '', '&');
-        parse_str($qs, $values);
-
-        return $values;
-    }
-
-    /**
-     * Gets the URI of the form.
-     *
-     * The returned URI is not the same as the form "action" attribute.
-     * This method merges the value if the method is GET to mimics
-     * browser behavior.
-     *
-     * @return string The URI
-     *
-     * @api
-     */
-    public function getUri()
-    {
-        $uri = parent::getUri();
-
-        if (!in_array($this->getMethod(), array('POST', 'PUT', 'DELETE', 'PATCH')) && $queryString = http_build_query($this->getValues(), null, '&')) {
-            $sep = false === strpos($uri, '?') ? '?' : '&';
-            $uri .= $sep.$queryString;
-        }
-
-        return $uri;
-    }
-
-    protected function getRawUri()
-    {
-        return $this->node->getAttribute('action');
-    }
-
-    /**
-     * Gets the form method.
-     *
-     * If no method is defined in the form, GET is returned.
-     *
-     * @return string The method
-     *
-     * @api
-     */
-    public function getMethod()
-    {
-        if (null !== $this->method) {
-            return $this->method;
-        }
-
-        return $this->node->getAttribute('method') ? strtoupper($this->node->getAttribute('method')) : 'GET';
-    }
-
-    /**
-     * Returns true if the named field exists.
-     *
-     * @param string $name The field name
-     *
-     * @return Boolean true if the field exists, false otherwise
-     *
-     * @api
-     */
-    public function has($name)
-    {
-        return $this->fields->has($name);
-    }
-
-    /**
-     * Removes a field from the form.
-     *
-     * @param string $name The field name
-     *
-     * @throws \InvalidArgumentException when the name is malformed
-     *
-     * @api
-     */
-    public function remove($name)
-    {
-        $this->fields->remove($name);
-    }
-
-    /**
-     * Gets a named field.
-     *
-     * @param string $name The field name
-     *
-     * @return FormField The field instance
-     *
-     * @throws \InvalidArgumentException When field is not present in this form
-     *
-     * @api
-     */
-    public function get($name)
-    {
-        return $this->fields->get($name);
-    }
-
-    /**
-     * Sets a named field.
-     *
-     * @param FormField $field The field
-     *
-     * @api
-     */
-    public function set(FormField $field)
-    {
-        $this->fields->add($field);
-    }
-
-    /**
-     * Gets all fields.
-     *
-     * @return FormField[] An array of fields
-     *
-     * @api
-     */
-    public function all()
-    {
-        return $this->fields->all();
-    }
-
-    /**
-     * Returns true if the named field exists.
-     *
-     * @param string $name The field name
-     *
-     * @return Boolean true if the field exists, false otherwise
-     */
-    public function offsetExists($name)
-    {
-        return $this->has($name);
-    }
-
-    /**
-     * Gets the value of a field.
-     *
-     * @param string $name The field name
-     *
-     * @return FormField The associated Field instance
-     *
-     * @throws \InvalidArgumentException if the field does not exist
-     */
-    public function offsetGet($name)
-    {
-        return $this->fields->get($name);
-    }
-
-    /**
-     * Sets the value of a field.
-     *
-     * @param string       $name  The field name
-     * @param string|array $value The value of the field
-     *
-     * @throws \InvalidArgumentException if the field does not exist
-     */
-    public function offsetSet($name, $value)
-    {
-        $this->fields->set($name, $value);
-    }
-
-    /**
-     * Removes a field from the form.
-     *
-     * @param string $name The field name
-     */
-    public function offsetUnset($name)
-    {
-        $this->fields->remove($name);
-    }
-
-    /**
-     * Disables validation
-     *
-     * @return self
-     */
-    public function disableValidation()
-    {
-        foreach ($this->fields->all() as $field) {
-            if ($field instanceof Field\ChoiceFormField) {
-                $field->disableValidation();
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * Sets the node for the form.
-     *
-     * Expects a 'submit' button \DOMNode and finds the corresponding form element.
-     *
-     * @param \DOMNode $node A \DOMNode instance
-     *
-     * @throws \LogicException If given node is not a button or input or does not have a form ancestor
-     */
-    protected function setNode(\DOMNode $node)
-    {
-        $this->button = $node;
-        if ('button' == $node->nodeName || ('input' == $node->nodeName && in_array($node->getAttribute('type'), array('submit', 'button', 'image')))) {
-            if ($node->hasAttribute('form')) {
-                // if the node has the HTML5-compliant 'form' attribute, use it
-                $formId = $node->getAttribute('form');
-                $form = $node->ownerDocument->getElementById($formId);
-                if (null === $form) {
-                    throw new \LogicException(sprintf('The selected node has an invalid form attribute (%s).', $formId));
-                }
-                $this->node = $form;
-
-                return;
-            }
-            // we loop until we find a form ancestor
-            do {
-                if (null === $node = $node->parentNode) {
-                    throw new \LogicException('The selected node does not have a form ancestor.');
-                }
-            } while ('form' != $node->nodeName);
-        } elseif ('form' != $node->nodeName) {
-            throw new \LogicException(sprintf('Unable to submit on a "%s" tag.', $node->nodeName));
-        }
-
-        $this->node = $node;
-    }
-
-    /**
-     * Adds form elements related to this form.
-     *
-     * Creates an internal copy of the submitted 'button' element and
-     * the form node or the entire document depending on whether we need
-     * to find non-descendant elements through HTML5 'form' attribute.
-     */
-    private function initialize()
-    {
-        $this->fields = new FormFieldRegistry();
-
-        $document = new \DOMDocument('1.0', 'UTF-8');
-        $xpath = new \DOMXPath($document);
-        $root = $document->appendChild($document->createElement('_root'));
-
-        // add submitted button if it has a valid name
-        if ('form' !== $this->button->nodeName && $this->button->hasAttribute('name') && $this->button->getAttribute('name')) {
-            $this->set(new Field\InputFormField($document->importNode($this->button, true)));
-        }
-
-        // find form elements corresponding to the current form
-        if ($this->node->hasAttribute('id')) {
-            // traverse through the whole document
-            $node = $document->importNode($this->node->ownerDocument->documentElement, true);
-            $root->appendChild($node);
-
-            // corresponding elements are either descendants or have a matching HTML5 form attribute
-            $formId = Crawler::xpathLiteral($this->node->getAttribute('id'));
-            $fieldNodes = $xpath->query(sprintf('descendant::input[@form=%s] | descendant::button[@form=%s] | descendant::textarea[@form=%s] | descendant::select[@form=%s] | //form[@id=%s]//input[not(@form)] | //form[@id=%s]//button[not(@form)] | //form[@id=%s]//textarea[not(@form)] | //form[@id=%s]//select[not(@form)]', $formId, $formId, $formId, $formId, $formId, $formId, $formId, $formId), $root);
-            foreach ($fieldNodes as $node) {
-                $this->addField($node);
-            }
-        } else {
-            // parent form has no id, add descendant elements only
-            $node = $document->importNode($this->node, true);
-            $root->appendChild($node);
-
-            // descendant elements with form attribute are not part of this form
-            $fieldNodes = $xpath->query('descendant::input[not(@form)] | descendant::button[not(@form)] | descendant::textarea[not(@form)] | descendant::select[not(@form)]', $root);
-            foreach ($fieldNodes as $node) {
-                $this->addField($node);
-            }
-        }
-    }
-
-    private function addField(\DOMNode $node)
-    {
-        if (!$node->hasAttribute('name') || !$node->getAttribute('name')) {
-            return;
-        }
-
-        $nodeName = $node->nodeName;
-        if ('select' == $nodeName || 'input' == $nodeName && 'checkbox' == $node->getAttribute('type')) {
-            $this->set(new Field\ChoiceFormField($node));
-        } elseif ('input' == $nodeName && 'radio' == $node->getAttribute('type')) {
-            if ($this->has($node->getAttribute('name'))) {
-                $this->get($node->getAttribute('name'))->addChoice($node);
-            } else {
-                $this->set(new Field\ChoiceFormField($node));
-            }
-        } elseif ('input' == $nodeName && 'file' == $node->getAttribute('type')) {
-            $this->set(new Field\FileFormField($node));
-        } elseif ('input' == $nodeName && !in_array($node->getAttribute('type'), array('submit', 'button', 'image'))) {
-            $this->set(new Field\InputFormField($node));
-        } elseif ('textarea' == $nodeName) {
-            $this->set(new Field\TextareaFormField($node));
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+BmJ7GarCoDmS/b6L9RIe8vJ1

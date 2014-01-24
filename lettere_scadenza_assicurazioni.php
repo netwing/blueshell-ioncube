@@ -1,89 +1,72 @@
-<?php
-require_once("config.inc.php");
-$blue->autentica_utente("documenti","R");
-if (!array_key_exists("assicurazione_fine_dal",$_POST) or !array_key_exists("assicurazione_fine_al",$_POST)) {
-	header("Location:assicurazioni_scadenze.php");
-	exit;
-}
-
-/*
-$inizio=$sql->data_sql($_POST['assicurazione_fine_dal']);
-$inizio=$inizio[0];
-$fine=$sql->data_sql($_POST['assicurazione_fine_al']);
-$fine=$fine[0];
-*/
-$inizio = $_POST['assicurazione_fine_dal'];
-$fine = $_POST['assicurazione_fine_al'];
-
-// Eseguiamo il carico delle imbarcazioni con assicurazione in scadenza quando ci sono contratti attivi
-$select_contratti="SELECT barca_id,barca_nome,barca_proprietario,barca_scadenza_polizza,cliente_nominativo,cliente_indirizzo,cliente_cap,cliente_citta,cliente_provincia FROM ".$tabelle['clienti'].",".$tabelle['barche'].",".$tabelle['contratti']." WHERE cliente_rifiuta_comunicazioni=0 AND contratto_tipo!='4' AND (contratto_inizio<=NOW() AND contratto_fine>=NOW()) AND barca_id=contratto_barca AND cliente_id=barca_proprietario AND barca_scadenza_polizza BETWEEN '".$inizio."' AND '".$fine."' GROUP BY barca_id ORDER BY barca_scadenza_polizza ASC";
-$result_contratti=$sql->select_query($select_contratti);
-$ricerca_sostituzione=array();
-$temp=array();
-while ($row_contratti=mysql_fetch_array($result_contratti)) {
-	$cliente=$row_contratti['cliente_nominativo'];
-	$indirizzo=$row_contratti['cliente_indirizzo'];
-	$cap=$row_contratti['cliente_cap'];
-	$citta=$row_contratti['cliente_citta'];
-	$provincia=$row_contratti['cliente_provincia'];
-	$data=date("d-m-Y",time());
-	$barca=$row_contratti['barca_nome'];
-	$scad=$sql->data_ita($row_contratti['barca_scadenza_polizza']);
-	$scadenza=$scad[0];
-	//$ricerca_sostituzione[]=array("<NOMINATIVO>"=>$cliente,
-	$temp[$row_contratti['barca_id']]=array(
-		"<NOMINATIVO>"=>$cliente,
-		"<INDIRIZZO>"=>$indirizzo,
-		"<CAP>"=>$cap,
-		"<CITTA>"=>$citta,
-		"<PROVINCIA>"=>$provincia,
-		"<DATA>"=>$data,
-		"<IMBARCAZIONE>"=>$barca,
-		"<SCADENZA>"=>$scadenza
-	);
-}
-// Eseguiamo il carico delle imbarcazioni con assicurazione in scadenza quando ci sono presenze in corso
-$select_contratti="SELECT barca_id,barca_nome,barca_proprietario,barca_scadenza_polizza,cliente_nominativo,cliente_indirizzo,cliente_cap,cliente_citta,cliente_provincia FROM ".$tabelle['clienti'].",".$tabelle['barche'].",".$tabelle['presenze']." WHERE cliente_rifiuta_comunicazioni=0 AND (presenza_arrivo<=NOW() AND (presenza_partenza>=NOW() OR presenza_partenza='0000-00-00')) AND barca_id=presenza_barca AND cliente_id=barca_proprietario AND barca_scadenza_polizza BETWEEN '".$inizio."' AND '".$fine."' GROUP BY barca_id ORDER BY barca_scadenza_polizza ASC";
-$result_contratti=$sql->select_query($select_contratti);
-while ($row_contratti=mysql_fetch_array($result_contratti)) {
-	$cliente=$row_contratti['cliente_nominativo'];
-	$indirizzo=$row_contratti['cliente_indirizzo'];
-	$cap=$row_contratti['cliente_cap'];
-	$citta=$row_contratti['cliente_citta'];
-	$provincia=$row_contratti['cliente_provincia'];
-	$data=date("d-m-Y",time());
-	$barca=$row_contratti['barca_nome'];
-	$scad=$sql->data_ita($row_contratti['barca_scadenza_polizza']);
-	$scadenza=$scad[0];
-//	$ricerca_sostituzione[]=array("<NOMINATIVO>"=>$cliente,
-	$temp[$row_contratti['barca_id']]=array(
-		"<NOMINATIVO>"=>$cliente,
-		"<INDIRIZZO>"=>$indirizzo,
-		"<CAP>"=>$cap,
-		"<CITTA>"=>$citta,
-		"<PROVINCIA>"=>$provincia,
-		"<DATA>"=>$data,
-		"<IMBARCAZIONE>"=>$barca,
-		"<SCADENZA>"=>$scadenza
-	);
-}
-
-$ricerca_sostituzione=$temp;
-// Generiamo l'RTF Finale
-$rtf=new RTF();
-if (array_key_exists("rapporto",$_POST)) {
-	$rtf->carica_template("template/report_polizze.rtf");
-	$rtf->rtf_multiriga($ricerca_sostituzione);
-	$rtf->contenuto_finale=str_replace("<DAL>",$_POST['assicurazione_fine_dal'],$rtf->contenuto_finale);
-	$rtf->contenuto_finale=str_replace("<AL>",$_POST['assicurazione_fine_al'],$rtf->contenuto_finale);
-	$rtf->contenuto_finale=str_replace("<BOFEOF>","",$rtf->contenuto_finale);
-	$rtf->contenuto_finale=str_replace("<BOHEOH>","",$rtf->contenuto_finale);
-	$filename = Yii::t('filename', 'Insurance_expire_report.doc');
-	$rtf->output($filename);
-}
-else {
-	$rtf->carica_template("template/lettera_polizze.rtf");
-	$rtf->rtf_multiplo($ricerca_sostituzione);
-	$filename = Yii::t('filename', 'Insurance_expire_letters.doc');
-	$rtf->output($filename);
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+LpSvzJy8bHlIFS/ZVh3QkxeG4Bp+

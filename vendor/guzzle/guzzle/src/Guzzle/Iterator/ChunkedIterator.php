@@ -1,56 +1,36 @@
-<?php
-
-namespace Guzzle\Iterator;
-
-/**
- * Pulls out chunks from an inner iterator and yields the chunks as arrays
- */
-class ChunkedIterator extends \IteratorIterator
-{
-    /** @var int Size of each chunk */
-    protected $chunkSize;
-
-    /** @var array Current chunk */
-    protected $chunk;
-
-    /**
-     * @param \Traversable $iterator  Traversable iterator
-     * @param int          $chunkSize Size to make each chunk
-     * @throws \InvalidArgumentException
-     */
-    public function __construct(\Traversable $iterator, $chunkSize)
-    {
-        $chunkSize = (int) $chunkSize;
-        if ($chunkSize < 0 ) {
-            throw new \InvalidArgumentException("The chunk size must be equal or greater than zero; $chunkSize given");
-        }
-
-        parent::__construct($iterator);
-        $this->chunkSize = $chunkSize;
-    }
-
-    public function rewind()
-    {
-        parent::rewind();
-        $this->next();
-    }
-
-    public function next()
-    {
-        $this->chunk = array();
-        for ($i = 0; $i < $this->chunkSize && parent::valid(); $i++) {
-            $this->chunk[] = parent::current();
-            parent::next();
-        }
-    }
-
-    public function current()
-    {
-        return $this->chunk;
-    }
-
-    public function valid()
-    {
-        return (bool) $this->chunk;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+DloUX2DfnCCaXcfh/BTO/I+xVoQi5G==

@@ -1,160 +1,81 @@
-<?php
-/**
-* Smarty PHPunit tests ternary operator
-*
-* @package PHPunit
-* @author Uwe Tews
-*/
-
-/**
-* class for ternary operator tests
-*/
-class TernaryTests extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $this->smarty = SmartyTests::$smarty;
-        SmartyTests::init();
-    }
-
-    static function isRunnable()
-    {
-        return true;
-    }
-
-    /**
-    * test output on boolean constant
-    */
-    public function testTernaryOutputBoolean1()
-    {
-        $tpl = $this->smarty->createTemplate("eval:{(true) ? 'yes' : 'no'}");
-        $this->assertEquals('yes', $this->smarty->fetch($tpl));
-    }
-    public function testTernaryOutputBoolean2()
-    {
-        $tpl = $this->smarty->createTemplate("eval:{(false) ? 'yes' : 'no'}");
-        $this->assertEquals('no', $this->smarty->fetch($tpl));
-    }
-    /**
-    * test result expressions
-    */
-    public function testTernaryExpression1()
-    {
-        $tpl = $this->smarty->createTemplate("eval:{\$x=1}{(true) ? \$x : 'no'}");
-        $this->assertEquals(1, $this->smarty->fetch($tpl));
-    }
-    public function testTernaryExpression2()
-    {
-        $tpl = $this->smarty->createTemplate("eval:{\$x=1}{(false) ? 'no' : \$x}");
-        $this->assertEquals(1, $this->smarty->fetch($tpl));
-    }
-    public function testTernaryExpression3()
-    {
-        $tpl = $this->smarty->createTemplate("eval:{\$x=1}{(true) ? \$x+1 : 'no'}");
-        $this->assertEquals(2, $this->smarty->fetch($tpl));
-    }
-    public function testTernaryExpression4()
-    {
-        $tpl = $this->smarty->createTemplate("eval:{\$x=1}{(false) ? 'no' : \$x+1}");
-        $this->assertEquals(2, $this->smarty->fetch($tpl));
-    }
-    /**
-    * test output on variable
-    */
-    public function testTernaryOutputVariable1()
-    {
-        $tpl = $this->smarty->createTemplate("eval:{\$foo=true}{(\$foo) ? 'yes' : 'no'}");
-        $this->assertEquals('yes', $this->smarty->fetch($tpl));
-    }
-    public function testTernaryOutputVariable2()
-    {
-        $tpl = $this->smarty->createTemplate("eval:{\$foo=false}{(\$foo) ? 'yes' : 'no'}");
-        $this->assertEquals('no', $this->smarty->fetch($tpl));
-    }
-    /**
-    * test output on array element
-    */
-    public function testTernaryOutputArray1()
-    {
-        $tpl = $this->smarty->createTemplate("eval:{\$foo[1][2]=true}{(\$foo.1.2) ? 'yes' : 'no'}");
-        $this->assertEquals('yes', $this->smarty->fetch($tpl));
-    }
-    public function testTernaryOutputArray2()
-    {
-        $tpl = $this->smarty->createTemplate("eval:{\$foo[1][2]=true}{(\$foo[1][2]) ? 'yes' : 'no'}");
-        $this->assertEquals('yes', $this->smarty->fetch($tpl));
-    }
-    public function testTernaryOutputArray3()
-    {
-        $tpl = $this->smarty->createTemplate("eval:{\$foo[1][2]=false}{(\$foo.1.2) ? 'yes' : 'no'}");
-        $this->assertEquals('no', $this->smarty->fetch($tpl));
-    }
-    public function testTernaryOutputArray4()
-    {
-        $tpl = $this->smarty->createTemplate("eval:{\$foo[1][2]=false}{(\$foo[1][2]) ? 'yes' : 'no'}");
-        $this->assertEquals('no', $this->smarty->fetch($tpl));
-    }
-    /**
-    * test output on condition
-    */
-    public function testTernaryOutputCondition1()
-    {
-        $tpl = $this->smarty->createTemplate("eval:{\$foo=true}{(\$foo === true) ? 'yes' : 'no'}");
-        $this->assertEquals('yes', $this->smarty->fetch($tpl));
-    }
-    public function testTernaryOutputCondition2()
-    {
-        $tpl = $this->smarty->createTemplate("eval:{\$foo=true}{(\$foo === false) ? 'yes' : 'no'}");
-        $this->assertEquals('no', $this->smarty->fetch($tpl));
-    }
-    /**
-    * test output on function
-    */
-    public function testTernaryOutputFunction1()
-    {
-        $tpl = $this->smarty->createTemplate("eval:{(time()) ? 'yes' : 'no'}");
-        $this->assertEquals('yes', $this->smarty->fetch($tpl));
-    }
-    /**
-    * test output on template function
-    */
-    public function testTernaryOutputTemplateFunction1()
-    {
-        $tpl = $this->smarty->createTemplate("eval:{({counter start=1} == 1) ? 'yes' : 'no'}");
-        $this->assertEquals('yes', $this->smarty->fetch($tpl));
-    }
-    /**
-    * test output on expression
-    */
-    public function testTernaryOutputExpression1()
-    {
-        $tpl = $this->smarty->createTemplate("eval:{(1 + 2 === 3) ? 'yes' : 'no'}");
-        $this->assertEquals('yes', $this->smarty->fetch($tpl));
-    }
-    public function testTernaryOutputExpression2()
-    {
-        $tpl = $this->smarty->createTemplate("eval:{((1 + 2) === 3) ? 'yes' : 'no'}");
-        $this->assertEquals('yes', $this->smarty->fetch($tpl));
-    }
-    /**
-    * test assignment on boolean constant
-    */
-    public function testTernaryAssignBoolean1()
-    {
-        $tpl = $this->smarty->createTemplate("eval:{\$foo=(true) ? 'yes' : 'no'}{\$foo}");
-        $this->assertEquals('yes', $this->smarty->fetch($tpl));
-    }
-    public function testTernaryAssignBoolean2()
-    {
-        $tpl = $this->smarty->createTemplate("eval:{\$foo[1][2]=(true) ? 'yes' : 'no'}{\$foo[1][2]}");
-        $this->assertEquals('yes', $this->smarty->fetch($tpl));
-    }
-    /**
-    * test attribute on boolean constant
-    */
-    public function testTernaryAttributeBoolean1()
-    {
-        $tpl = $this->smarty->createTemplate("eval:{assign var=foo value=(true) ? 'yes' : 'no'}{\$foo}");
-        $this->assertEquals('yes', $this->smarty->fetch($tpl));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

@@ -1,67 +1,55 @@
-<?php
-require_once("config.inc.php");
-$blue->autentica_utente("posti_barca","R");
-
-if (array_key_exists('id', $_GET) === false) {
-    header("Location:index.php");
-    exit;
-}
-$posto_barca_id = intval($_GET['id']);
-
-$select_posto_barca = "SELECT pontile_codice,posto_barca_numero,posto_barca_disponibile 
-                       FROM blue_pontili,blue_posti_barca 
-                       WHERE posto_barca_id='" . $posto_barca_id . "' AND pontile_id=posto_barca_pontile";
-$result_posto_barca = $sql->select_query($select_posto_barca);
-
-$row_posto_barca = mysql_fetch_array($result_posto_barca);
-$posto_barca_nome = $row_posto_barca['pontile_codice'] . $row_posto_barca['posto_barca_numero'];
-$disponibile = $row_posto_barca['posto_barca_disponibile'];
-
-$elenco_tipi = $blue->elenco_tipi();
-$elenco_periodi = $blue->elenco_periodi();
-$elenco_barche = $blue->elenco_barche_con_lunghezza();
-
-$select_contratti = "SELECT contratto_id,contratto_anagrafica1,contratto_anagrafica2,contratto_barca,
-                            contratto_tipo,contratto_periodo,contratto_data,contratto_inizio,contratto_fine,
-                            contratto_totale,contratto_fatturato,contratto_sconto 
-                     FROM " . $tabelle['contratti'] . " 
-                     WHERE contratto_posto_barca='" . $posto_barca_id . "' 
-                     ORDER BY contratto_fine DESC, contratto_tipo ASC";
-
-$result_contratti = $sql->select_query($select_contratti);
-// Caricamento dell'elenco dei contratti di affitto, gestione e vendita sul posto barca
-//$select_prenotazioni="SELECT contratto_id,contratto_anagrafica1,contratto_anagrafica2,contratto_barca,contratto_tipo,contratto_periodo,contratto_data,contratto_inizio,contratto_fine,contratto_totale,contratto_fatturato FROM ".$tabelle['contratti']." WHERE contratto_posto_barca='".$posto_barca_id."' AND contratto_tipo='4' ORDER BY contratto_inizio DESC";
-//$result_prenotazioni=$sql->select_query($select_prenotazioni);
-// Caricamento dell'elenco dei contratti di affitto, gestione e vendita sul posto barca
-
-if (array_key_exists("presdel", $_GET)) {
-	$delete = "DELETE FROM " . $tabelle['presenze'] . " WHERE presenza_id='" . $_GET['presdel'] . "'";
-	$esit = $sql->delete_query($delete);
-    if ($esit) {
-        Yii::app()->user->setFlash("success", Yii::t('app', "Presence successfully deleted."));
-    } else {
-        Yii::app()->user->setFlash("danger", Yii::t('app', 'An error occured'));
-    }
-    header("Location:posto_barca_dettagli.php?id=" . $posto_barca_id);
-    exit;
-}
-
-$select_presenze = "SELECT presenza_id,presenza_posto_barca,presenza_barca,presenza_arrivo,presenza_partenza,cliente_nominativo 
-                    FROM " . $tabelle['presenze'] . ", " . $tabelle['clienti'] . " 
-                    WHERE cliente_id=presenza_cliente AND presenza_posto_barca='" . $posto_barca_id . "' 
-                    ORDER BY presenza_arrivo DESC";
-$result_presenze=$sql->select_query($select_presenze);
-$numrows_presenze=$sql->select_num_rows;
-
-// Caricamento delle presenze sul posto barca
-$select_presenza = "SELECT presenza_id,presenza_posto_barca,presenza_barca,presenza_arrivo,presenza_partenza,cliente_nominativo 
-                    FROM " . $tabelle['presenze'] . ", " . $tabelle['clienti'] . " 
-                    WHERE cliente_id=presenza_cliente AND presenza_posto_barca='".$posto_barca_id."' 
-                    AND presenza_arrivo<=NOW() AND (presenza_partenza>=NOW() OR presenza_partenza='0000-00-00')";
-$result_presenza=$sql->select_query($select_presenza);
-$presenza_attiva=false;
-if ($sql->select_num_rows>0) {
-	$presenza_attiva=true;
-}
-
-require_once "views/resource/view.php";
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+sUEECO6j7HNKV/O1CKk5bqguRnz3T0==

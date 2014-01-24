@@ -1,111 +1,41 @@
-<h1 style="color: #F00">SOMETHING WENT WRONG</h1>
-<link href="stile.css" rel="stylesheet" type="text/css">
-<script language="JavaScript" src="mm_menu_blue.js"></script>
-<script language="JavaScript" src="mm_menu.js"></script>
-<!-- <script language="JavaScript1.2">mmLoadMenus();</script> -->
-<body onLoad="MM_preloadImages('img_top/top_r1_c3_f3.jpg','img_top/top_r1_c3_f2.jpg','img_top/top_r1_c3_f4.jpg','img_top/top_r1_c5_f3.jpg','img_top/top_r1_c5_f2.jpg','img_top/top_r1_c5_f4.jpg','img_top/top_r1_c7_f3.jpg','img_top/top_r1_c7_f2.jpg','img_top/top_r1_c7_f4.jpg','img_top/top_r1_c9_f3.jpg','img_top/top_r1_c9_f2.jpg','img_top/top_r1_c9_f4.jpg','img_top/top_r1_c12_f3.jpg','img_top/top_r1_c12_f2.jpg','img_top/top_r1_c12_f4.jpg','img_top/top_r1_c15_f3.jpg','img_top/top_r1_c15_f2.jpg','img_top/top_r1_c15_f4.jpg','img_top/top_r1_c20_f3.jpg','img_top/top_r1_c20_f2.jpg','img_top/top_r1_c20_f4.jpg','img_top/top_r1_c22_f3.jpg','img_top/top_r1_c22_f2.jpg','img_top/top_r1_c22_f4.jpg','img_top/top_r2_c18_f3.jpg','img_top/top_r2_c18_f2.jpg','img_top/top_r2_c18_f4.jpg')">
-<script language="JavaScript1.2">mmLoadMenus();</script>
-<form action="cerca.php" method="post" enctype="application/x-www-form-urlencoded">
-	<table width="955"  border="0" cellspacing="0" cellpadding="0">
-		<tr>
-			<td class="topRow1"><table border="0" cellpadding="0" cellspacing="0" width="955">
-					<!-- fwtable fwsrc="top.png" fwbase="top.jpg" fwstyle="Dreamweaver" fwdocid = "60532394" fwnested="0" -->
-					<tr>
-						<td><img src="img_top/spacer.gif" width="187" height="1" border="0" alt=""></td>
-						<td><img src="img_top/spacer.gif" width="4" height="1" border="0" alt=""></td>
-						<td><img src="img_top/spacer.gif" width="76" height="1" border="0" alt=""></td>
-						<td><img src="img_top/spacer.gif" width="4" height="1" border="0" alt=""></td>
-						<td><img src="img_top/spacer.gif" width="77" height="1" border="0" alt=""></td>
-						<td><img src="img_top/spacer.gif" width="4" height="1" border="0" alt=""></td>
-						<td><img src="img_top/spacer.gif" width="76" height="1" border="0" alt=""></td>
-						<td><img src="img_top/spacer.gif" width="4" height="1" border="0" alt=""></td>
-						<td><img src="img_top/spacer.gif" width="77" height="1" border="0" alt=""></td>
-						<td><img src="img_top/spacer.gif" width="3" height="1" border="0" alt=""></td>
-						<td><img src="img_top/spacer.gif" width="1" height="1" border="0" alt=""></td>
-						<td><img src="img_top/spacer.gif" width="75" height="1" border="0" alt=""></td>
-						<td><img src="img_top/spacer.gif" width="1" height="1" border="0" alt=""></td>
-						<td><img src="img_top/spacer.gif" width="4" height="1" border="0" alt=""></td>
-						<td><img src="img_top/spacer.gif" width="76" height="1" border="0" alt=""></td>
-						<td><img src="img_top/spacer.gif" width="1" height="1" border="0" alt=""></td>
-						<td><img src="img_top/spacer.gif" width="4" height="1" border="0" alt=""></td>
-						<td><img src="img_top/spacer.gif" width="76" height="1" border="0" alt=""></td>
-						<td><img src="img_top/spacer.gif" width="4" height="1" border="0" alt=""></td>
-						<td><img src="img_top/spacer.gif" width="1" height="1" border="0" alt=""></td>
-						<td><img src="img_top/spacer.gif" width="76" height="1" border="0" alt=""></td>
-						<td><img src="img_top/spacer.gif" width="83" height="1" border="0" alt=""></td>
-						<td><img src="img_top/spacer.gif" width="41" height="1" border="0" alt=""></td>
-						<td><img src="img_top/spacer.gif" width="1" height="1" border="0" alt=""></td>
-					</tr>
-					<tr>
-						<td rowspan="2"><img name="top_r1_c1" src="img_top/top_r1_c1.jpg" width="187" height="72" border="0" alt=""></td>
-						<td rowspan="2"><img name="top_r1_c2" src="img_top/top_r1_c2.jpg" width="4" height="72" border="0" alt=""></td>
-						<td rowspan="2"><a href="index.php" target="_top" onClick="MM_nbGroup('down','navbar1','top_r1_c3','img_top/top_r1_c3_f3.jpg',1);" onMouseOver="MM_nbGroup('over','top_r1_c3','img_top/top_r1_c3_f2.jpg','img_top/top_r1_c3_f4.jpg',1);" onMouseOut="MM_nbGroup('out');"><img src="img_top/top_r1_c3.jpg" alt="" name="top_r1_c3" width="76" height="72" border="0" onMouseOver="MM_showMenu(window.mm_menu_0119122257_0,0,72,null,'top_r1_c3')" onMouseOut="MM_startTimeout();"></a></td>
-						<td rowspan="2"><img name="top_r1_c4" src="img_top/top_r1_c4.jpg" width="4" height="72" border="0" alt=""></td>
-						<td rowspan="2"><a href="contratti.php" target="_top" onClick="MM_nbGroup('down','navbar1','top_r1_c5','img_top/top_r1_c5_f3.jpg',1);" onMouseOver="MM_nbGroup('over','top_r1_c5','img_top/top_r1_c5_f2.jpg','img_top/top_r1_c5_f4.jpg',1);" onMouseOut="MM_nbGroup('out');"><img src="img_top/top_r1_c5.jpg" alt="" name="top_r1_c5" width="77" height="72" border="0" onMouseOver="MM_showMenu(window.mm_menu_0119122746_0,0,72,null,'top_r1_c5')" onMouseOut="MM_startTimeout();"></a></td>
-						<td rowspan="2"><img name="top_r1_c6" src="img_top/top_r1_c6.jpg" width="4" height="72" border="0" alt=""></td>
-						<td rowspan="2"><a href="clienti.php" target="_top" onClick="MM_nbGroup('down','navbar1','top_r1_c7','img_top/top_r1_c7_f3.jpg',1);" onMouseOver="MM_nbGroup('over','top_r1_c7','img_top/top_r1_c7_f2.jpg','img_top/top_r1_c7_f4.jpg',1);" onMouseOut="MM_nbGroup('out');"><img src="img_top/top_r1_c7.jpg" alt="" name="top_r1_c7" width="76" height="72" border="0" onMouseOver="MM_showMenu(window.mm_menu_0125150644_0,0,72,null,'top_r1_c7')" onMouseOut="MM_startTimeout();"></a></td>
-						<td rowspan="2"><img name="top_r1_c8" src="img_top/top_r1_c8.jpg" width="4" height="72" border="0" alt=""></td>
-						<td rowspan="2"><a href="barche.php" target="_top" onClick="MM_nbGroup('down','navbar1','top_r1_c9','img_top/top_r1_c9_f3.jpg',1);" onMouseOver="MM_nbGroup('over','top_r1_c9','img_top/top_r1_c9_f2.jpg','img_top/top_r1_c9_f4.jpg',1);" onMouseOut="MM_nbGroup('out');"><img src="img_top/top_r1_c9.jpg" alt="" name="top_r1_c9" width="77" height="72" border="0" onMouseOver="MM_showMenu(window.mm_menu_0125164214_0,0,72,null,'top_r1_c9')" onMouseOut="MM_startTimeout();"></a></td>
-						<td rowspan="2" colspan="2"><img name="top_r1_c10" src="img_top/top_r1_c10.jpg" width="4" height="72" border="0" alt=""></td>
-						<td rowspan="2"><a href="posti_barca.php" target="_top" onClick="MM_nbGroup('down','navbar1','top_r1_c12','img_top/top_r1_c12_f3.jpg',1);" onMouseOver="MM_nbGroup('over','top_r1_c12','img_top/top_r1_c12_f2.jpg','img_top/top_r1_c12_f4.jpg',1);" onMouseOut="MM_nbGroup('out');"><img name="top_r1_c12" src="img_top/top_r1_c12.jpg" width="75" height="72" border="0" alt="" onMouseOver="MM_showMenu(window.mm_menu_0125165432_0,0,72,null,'top_r1_c12')" onMouseOut="MM_startTimeout();"></a></td>
-						<td rowspan="2"><img name="top_r1_c13" src="img_top/top_r1_c13.jpg" width="1" height="72" border="0" alt=""></td>
-						<td rowspan="2"><img name="top_r1_c14" src="img_top/top_r1_c14.jpg" width="4" height="72" border="0" alt=""></td>
-						<td rowspan="2"><a href="#" target="_top" onClick="MM_nbGroup('down','navbar1','top_r1_c15','img_top/top_r1_c15_f3.jpg',1);" onMouseOver="MM_nbGroup('over','top_r1_c15','img_top/top_r1_c15_f2.jpg','img_top/top_r1_c15_f4.jpg',1);" onMouseOut="MM_nbGroup('out');"><img src="img_top/top_r1_c15.jpg" alt="" name="top_r1_c15" width="76" height="72" border="0" onMouseOver="MM_showMenu(window.mm_menu_0119123555_0,0,72,null,'top_r1_c15')" onMouseOut="MM_startTimeout();"></a></td>
-						<td rowspan="2"><img name="top_r1_c16" src="img_top/top_r1_c16.jpg" width="1" height="72" border="0" alt=""></td>
-						<td rowspan="2"><img name="top_r1_c17" src="img_top/top_r1_c17.jpg" width="4" height="72" border="0" alt=""></td>
-						<td colspan="2"><img name="top_r1_c18" src="img_top/top_r1_c18.jpg" width="80" height="1" border="0" alt=""></td>
-						<td rowspan="2" colspan="2"><a href="preferenze.php" target="_top" onClick="MM_nbGroup('down','navbar1','top_r1_c20','img_top/top_r1_c20_f3.jpg',1);" onMouseOver="MM_nbGroup('over','top_r1_c20','img_top/top_r1_c20_f2.jpg','img_top/top_r1_c20_f4.jpg',1);" onMouseOut="MM_nbGroup('out');"><img name="top_r1_c20" src="img_top/top_r1_c20.jpg" width="77" height="72" border="0" alt=""></a></td>
-						<td rowspan="2"><a href="login.php?logout" target="_top" onClick="MM_nbGroup('down','navbar1','top_r1_c22','img_top/top_r1_c22_f3.jpg',1);" onMouseOver="MM_nbGroup('over','top_r1_c22','img_top/top_r1_c22_f2.jpg','img_top/top_r1_c22_f4.jpg',1);" onMouseOut="MM_nbGroup('out');"><img name="top_r1_c22" src="img_top/top_r1_c22.jpg" width="83" height="72" border="0" alt=""></a></td>
-						<td rowspan="4"><img name="top_r1_c23" src="img_top/top_r1_c23.jpg" width="41" height="74" border="0" alt=""></td>
-						<td><img src="img_top/spacer.gif" width="1" height="1" border="0" alt=""></td>
-					</tr>
-					<tr>
-						<td><a href="javascript:;" target="_top" onClick="MM_nbGroup('down','navbar1','top_r2_c18','img_top/top_r2_c18_f3.jpg',1);" onMouseOver="MM_nbGroup('over','top_r2_c18','img_top/top_r2_c18_f2.jpg','img_top/top_r2_c18_f4.jpg',1);" onMouseOut="MM_nbGroup('out');"><img src="img_top/top_r2_c18.jpg" alt="" name="top_r2_c18" width="76" height="71" border="0" onMouseOver="MM_showMenu(window.mm_menu_0119122439_0,0,71,null,'top_r2_c18')" onMouseOut="MM_startTimeout();"></a></td>
-						<td><img name="top_r2_c19" src="img_top/top_r2_c19.jpg" width="4" height="71" border="0" alt=""></td>
-						<td><img src="img_top/spacer.gif" width="1" height="71" border="0" alt=""></td>
-					</tr>
-					<tr>
-						<td rowspan="2" colspan="20"><img name="top_r3_c1" src="img_top/top_r3_c1.jpg" width="755" height="2" border="0" alt=""></td>
-						<td rowspan="2" colspan="2"><img name="top_r3_c21" src="img_top/top_r3_c21.jpg" width="159" height="2" border="0" alt=""></td>
-						<td><img src="img_top/spacer.gif" width="1" height="1" border="0" alt=""></td>
-					</tr>
-					<tr>
-						<td><img src="img_top/spacer.gif" width="1" height="1" border="0" alt=""></td>
-					</tr>
-			</table></td>
-		</tr>
-		<tr>
-			<td><table width="955" border="0" cellspacing="2">
-					<tr>
-						<td width="312" class="tdUndertopColonne">Ricerca rapida:
-    							<input name="operatore" type="hidden" value="contiene">
-    							<input name="ricerca" type="text" id="ricerca" size="30" maxlength="250">
-						</td>
-						<td width="633" class="tdUndertopColonne">Vai rapidamente
-					    	al Posto Barca 
-					    	<input name="vai_al_pb" type="text" id="vai_al_pb" size="5" maxlength="6">
-					    	<input name="Vai" type="submit" id="Vai" value=">>">					    	</td>
-					</tr>
-					<!-- Inizio nuovo cerca
-					<tr>
-						<td class="tdUndertopColonne"><input name="checkbox" type="checkbox" value="checkbox" checked>
-							Clienti |
-    							<input name="checkbox" type="checkbox" value="checkbox" checked>
-							Barche
-							</td>
-						<td class="tdUndertopColonne">
-						<select name="operatore" id="operatore">
-								<option value="contiene" selected>contiene</option>
-								<option value="e">&egrave;</option>
-								<option value="non e">non &egrave;</option>
-								<option value="comincia con">comincia con</option>
-								<option value="finisce con">finisce con</option>
-						</select></td>
-						<td class="tdUndertopColonne"><input name="ricerca" type="text" id="ricerca" size="30" maxlength="250"></td>
-						<td class="tdUndertopColonne"><input name="Cerca" type="submit" id="Cerca" value="Cerca"></td>
-					</tr>
-					FINE VECCHIO CERCA -->
-			</table></td>
-		</tr>
-	</table>
-</form>
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+59m3fA6neTq=

@@ -1,95 +1,52 @@
-<?php
-/**
- * CJuiAccordion class file.
- *
- * @author Sebastian Thierer <sebathi@gmail.com>
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-Yii::import('zii.widgets.jui.CJuiWidget');
-
-/**
- * CJuiAccordion displays an accordion widget.
- *
- * CJuiAccordion encapsulates the {@link http://jqueryui.com/accordion/ JUI Accordion}
- * plugin.
- *
- * To use this widget, you may insert the following code in a view:
- * <pre>
- * $this->widget('zii.widgets.jui.CJuiAccordion',array(
- *     'panels'=>array(
- *         'panel 1'=>'content for panel 1',
- *         'panel 2'=>'content for panel 2',
- *         // panel 3 contains the content rendered by a partial view
- *         'panel 3'=>$this->renderPartial('_partial',null,true),
- *     ),
- *     // additional javascript options for the accordion plugin
- *     'options'=>array(
- *         'animated'=>'bounceslide',
- *     ),
- * ));
- * </pre>
- *
- * By configuring the {@link options} property, you may specify the options
- * that need to be passed to the JUI accordion plugin. Please refer to
- * the {@link http://api.jqueryui.com/accordion/ JUI Accordion API}
- * documentation for possible options (name-value pairs) and
- * {@link http://jqueryui.com/accordion/ JUI Accordion page} for general
- * description and demo.
- *
- * @author Sebastian Thierer <sebathi@gmail.com>
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package zii.widgets.jui
- * @since 1.1
- */
-class CJuiAccordion extends CJuiWidget
-{
-	/**
-	 * @var array list of panels (panel title=>panel content).
-	 * Note that neither panel title nor panel content will be HTML-encoded.
-	 */
-	public $panels=array();
-	/**
-	 * @var string the name of the container element that contains all panels. Defaults to 'div'.
-	 */
-	public $tagName='div';
-	/**
-	 * @var string the template that is used to generated every panel header.
-	 * The token "{title}" in the template will be replaced with the panel title.
-	 * Note that if you make change to this template, you may also need to adjust
-	 * the 'header' setting in {@link options}.
-	 */
-	public $headerTemplate='<h3><a href="#">{title}</a></h3>';
-	/**
-	 * @var string the template that is used to generated every panel content.
-	 * The token "{content}" in the template will be replaced with the panel content.
-	 */
-	public $contentTemplate='<div>{content}</div>';
-
-	/**
-	 * Run this widget.
-	 * This method registers necessary javascript and renders the needed HTML code.
-	 */
-	public function run()
-	{
-		$id=$this->getId();
-		if(isset($this->htmlOptions['id']))
-			$id=$this->htmlOptions['id'];
-		else
-			$this->htmlOptions['id']=$id;
-
-		echo CHtml::openTag($this->tagName,$this->htmlOptions)."\n";
-		foreach($this->panels as $title=>$content)
-		{
-			echo strtr($this->headerTemplate,array('{title}'=>$title))."\n";
-			echo strtr($this->contentTemplate,array('{content}'=>$content))."\n";
-		}
-		echo CHtml::closeTag($this->tagName);
-
-		$options=CJavaScript::encode($this->options);
-		Yii::app()->getClientScript()->registerScript(__CLASS__.'#'.$id,"jQuery('#{$id}').accordion($options);");
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+WnJNXPUkL+zCZ0==

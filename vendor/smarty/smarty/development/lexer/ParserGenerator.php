@@ -1,769 +1,336 @@
-<?php
-/**
- * PHP_ParserGenerator, a php 5 parser generator.
- *
- * This is a direct port of the Lemon parser generator, found at
- * {@link http://www.hwaci.com/sw/lemon/}
- *
- * There are a few PHP-specific changes to the lemon parser generator.
- *
- * - %extra_argument is removed, as class constructor can be used to
- *   pass in extra information
- * - %token_type and company are irrelevant in PHP, and so are removed
- * - %declare_class is added to define the parser class name and any
- *   implements/extends information
- * - %include_class is added to allow insertion of extra class information
- *   such as constants, a class constructor, etc.
- *
- * Other changes make the parser more robust, and also make reporting
- * syntax errors simpler.  Detection of expected tokens eliminates some
- * problematic edge cases where an unexpected token could cause the parser
- * to simply accept input.
- *
- * Otherwise, the file format is identical to the Lemon parser generator
- *
- * PHP version 5
- *
- * LICENSE:
- *
- * Copyright (c) 2006, Gregory Beaver <cellog@php.net>
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *     * Redistributions of source code must retain the above copyright
- *       notice, this list of conditions and the following disclaimer.
- *     * Redistributions in binary form must reproduce the above copyright
- *       notice, this list of conditions and the following disclaimer in
- *       the documentation and/or other materials provided with the distribution.
- *     * Neither the name of the PHP_ParserGenerator nor the names of its
- *       contributors may be used to endorse or promote products derived
- *       from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
- * IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
- * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
- * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
- * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
- * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
- * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
- * PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
- * OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
- * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
- * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- *
- * @category   php
- * @package    PHP_ParserGenerator
- * @author     Gregory Beaver <cellog@php.net>
- * @copyright  2006 Gregory Beaver
- * @license    http://www.opensource.org/licenses/bsd-license.php New BSD License
- * @version    CVS: $Id: ParserGenerator.php,v 1.2 2006/12/16 04:01:58 cellog Exp $
- * @since      File available since Release 0.1.0
- */
-/**#@+
- * Basic components of the parser generator
- */
-require_once './ParserGenerator/Action.php';
-require_once './ParserGenerator/ActionTable.php';
-require_once './ParserGenerator/Config.php';
-require_once './ParserGenerator/Data.php';
-require_once './ParserGenerator/Symbol.php';
-require_once './ParserGenerator/Rule.php';
-require_once './ParserGenerator/Parser.php';
-require_once './ParserGenerator/PropagationLink.php';
-require_once './ParserGenerator/State.php';
-/**#@-*/
-/**
- * The basic home class for the parser generator
- *
- * @package    PHP_ParserGenerator
- * @author     Gregory Beaver <cellog@php.net>
- * @copyright  2006 Gregory Beaver
- * @license    http://www.opensource.org/licenses/bsd-license.php New BSD License
- * @version    0.1.5
- * @since      Class available since Release 0.1.0
- * @example    Lempar.php
- * @example    examples/Parser.y Sample parser file format (PHP_LexerGenerator's parser)
- * @example    examples/Parser.php Sample parser file format PHP code (PHP_LexerGenerator's parser)
- */
-class PHP_ParserGenerator
-{
-    /**
-     * Set this to 1 to turn on debugging of Lemon's parsing of
-     * grammar files.
-     */
-    const DEBUG = 0;
-    const MAXRHS = 1000;
-    const OPT_FLAG = 1, OPT_INT = 2, OPT_DBL = 3, OPT_STR = 4,
-          OPT_FFLAG = 5, OPT_FINT = 6, OPT_FDBL = 7, OPT_FSTR = 8;
-    public $azDefine = array();
-    private static $options = array(
-        'b' => array(
-            'type' => self::OPT_FLAG,
-            'arg' => 'basisflag',
-            'message' => 'Print only the basis in report.'
-        ),
-        'c' => array(
-            'type' => self::OPT_FLAG,
-            'arg' => 'compress',
-            'message' => 'Don\'t compress the action table.'
-        ),
-        'D' => array(
-            'type' => self::OPT_FSTR,
-            'arg' => 'handle_D_option',
-            'message' => 'Define an %ifdef macro.'
-        ),
-        'g' => array(
-            'type' => self::OPT_FLAG,
-            'arg' => 'rpflag',
-            'message' => 'Print grammar without actions.'
-        ),
-        'm' => array(
-            'type' => self::OPT_FLAG,
-            'arg' => 'mhflag',
-            'message' => 'Output a makeheaders compatible file'
-        ),
-        'q' => array(
-            'type' => self::OPT_FLAG,
-            'arg' => 'quiet',
-            'message' => '(Quiet) Don\'t print the report file.'
-        ),
-        's' => array(
-            'type' => self::OPT_FLAG,
-            'arg' => 'statistics',
-            'message' => 'Print parser stats to standard output.'
-        ),
-        'x' => array(
-            'type' => self::OPT_FLAG,
-            'arg' => 'version',
-            'message' => 'Print the version number.'
-        )
-    );
-
-    private $basisflag = 0;
-    private $compress = 0;
-    private $rpflag = 0;
-    private $mhflag = 0;
-    private $quiet = 0;
-    private $statistics = 0;
-    private $version = 0;
-    private $size;
-    /**
-     * Process a flag command line argument.
-     * @param int
-     * @param array
-     * @return int
-     */
-    public function handleflags($i, $argv)
-    {
-        if (!isset($argv[1]) || !isset(self::$options[$argv[$i][1]])) {
-            throw new Exception('Command line syntax error: undefined option "' .  $argv[$i] . '"');
-        }
-        $v = self::$options[$argv[$i][1]] == '-';
-        if (self::$options[$argv[$i][1]]['type'] == self::OPT_FLAG) {
-            $this->{self::$options[$argv[$i][1]]['arg']} = 1;
-        } elseif (self::$options[$argv[$i][1]]['type'] == self::OPT_FFLAG) {
-            $this->{self::$options[$argv[$i][1]]['arg']}($v);
-        } elseif (self::$options[$argv[$i][1]]['type'] == self::OPT_FSTR) {
-            $this->{self::$options[$argv[$i][1]]['arg']}(substr($v, 2));
-        } else {
-            throw new Exception('Command line syntax error: missing argument on switch: "' . $argv[$i] . '"');
-        }
-
-        return 0;
-    }
-
-    /**
-     * Process a command line switch which has an argument.
-     * @param int
-     * @param array
-     * @param array
-     * @return int
-     */
-    public function handleswitch($i, $argv)
-    {
-        $lv = 0;
-        $dv = 0.0;
-        $sv = $end = $cp = '';
-        $j = 0; // int
-        $errcnt = 0;
-        $cp = strstr($argv[$i],'=');
-        if (!$cp) {
-            throw new Exception('INTERNAL ERROR: handleswitch passed bad argument, no "=" in arg');
-        }
-        $argv[$i] = substr($argv[$i], 0, strlen($argv[$i]) - strlen($cp));
-        if (!isset(self::$options[$argv[$i]])) {
-            throw new Exception('Command line syntax error: undefined option "' .  $argv[$i] .
-                $cp . '"');
-        }
-        $cp = substr($cp, 1);
-        switch (self::$options[$argv[$i]]['type']) {
-            case self::OPT_FLAG:
-            case self::OPT_FFLAG:
-                throw new Exception('Command line syntax error: option requires an argument "' .
-                    $argv[$i] . '=' . $cp . '"');
-            case self::OPT_DBL:
-            case self::OPT_FDBL:
-                $dv = (double) $cp;
-                break;
-            case self::OPT_INT:
-            case self::OPT_FINT:
-                $lv = (int) $cp;
-                break;
-            case self::OPT_STR:
-            case self::OPT_FSTR:
-                $sv = $cp;
-                break;
-        }
-        switch (self::$options[$argv[$i]]['type']) {
-            case self::OPT_FLAG:
-            case self::OPT_FFLAG:
-                break;
-            case self::OPT_DBL:
-                $this->{self::$options[$argv[$i]]['arg']} = $dv;
-                break;
-            case self::OPT_FDBL:
-                $this->{self::$options[$argv[$i]]['arg']}($dv);
-                break;
-            case self::OPT_INT:
-                $this->{self::$options[$argv[$i]]['arg']} = $lv;
-                break;
-            case self::OPT_FINT:
-                $this->{self::$options[$argv[$i]]['arg']}($lv);
-                break;
-            case self::OPT_STR:
-                $this->{self::$options[$argv[$i]]['arg']} = $sv;
-                break;
-            case self::OPT_FSTR:
-                $this->{self::$options[$argv[$i]]['arg']}($sv);
-                break;
-        }
-
-        return 0;
-    }
-
-    /**
-     * @param array arguments
-     * @param array valid options
-     * @return int
-     */
-    public function OptInit($a)
-    {
-        $errcnt = 0;
-        $argv = $a;
-        try {
-            if (is_array($argv) && count($argv) && self::$options) {
-                for ($i = 1; $i < count($argv); $i++) {
-                    if ($argv[$i][0] == '+' || $argv[$i][0] == '-') {
-                        $errcnt += $this->handleflags($i, $argv);
-                    } elseif (strstr($argv[$i],'=')) {
-                        $errcnt += $this->handleswitch($i, $argv);
-                    }
-                }
-            }
-        } catch (Exception $e) {
-            OptPrint();
-            echo $e->getMessage();
-            exit(1);
-        }
-
-        return 0;
-    }
-
-    /**
-     * Return the index of the N-th non-switch argument.  Return -1
-     * if N is out of range.
-     * @param int
-     * @return int
-     */
-    private function argindex($n, $a)
-    {
-        $dashdash = 0;
-        if (!is_array($a) || !count($a)) {
-            return -1;
-        }
-        for ($i=1; $i < count($a); $i++) {
-            if ($dashdash || !($a[$i][0] == '-' || $a[$i][0] == '+' ||
-                  strchr($a[$i], '='))) {
-                if ($n == 0) {
-                    return $i;
-                }
-                $n--;
-            }
-            if ($_SERVER['argv'][$i] == '--') {
-                $dashdash = 1;
-            }
-        }
-
-        return -1;
-    }
-
-    /**
-     * Return the value of the non-option argument as indexed by $i
-     *
-     * @param int
-     * @param  array the value of $argv
-     * @return 0|string
-     */
-    private function OptArg($i, $a)
-    {
-        if (-1 == ($ind = $this->argindex($i, $a))) {
-            return 0;
-        }
-
-        return $a[$ind];
-    }
-
-    /**
-     * @return int number of arguments
-     */
-    public function OptNArgs($a)
-    {
-        $cnt = $dashdash = 0;
-        if (is_array($a) && count($a)) {
-            for ($i = 1; $i < count($a); $i++) {
-                if ($dashdash || !($a[$i][0] == '-' || $a[$i][0] == '+' ||
-                      strchr($a[$i], '='))) {
-                    $cnt++;
-                }
-                if ($a[$i] == "--") {
-                    $dashdash = 1;
-                }
-            }
-        }
-
-        return $cnt;
-    }
-
-    /**
-     * Print out command-line options
-     */
-    public function OptPrint()
-    {
-        $max = 0;
-        foreach (self::$options as $label => $info) {
-            $len = strlen($label) + 1;
-            switch ($info['type']) {
-                case self::OPT_FLAG:
-                case self::OPT_FFLAG:
-                    break;
-                case self::OPT_INT:
-                case self::OPT_FINT:
-                    $len += 9;       /* length of "<integer>" */
-                    break;
-                case self::OPT_DBL:
-                case self::OPT_FDBL:
-                    $len += 6;       /* length of "<real>" */
-                    break;
-                case self::OPT_STR:
-                case self::OPT_FSTR:
-                    $len += 8;       /* length of "<string>" */
-                    break;
-            }
-            if ($len > $max) {
-                $max = $len;
-            }
-        }
-        foreach (self::$options as $label => $info) {
-            switch ($info['type']) {
-                case self::OPT_FLAG:
-                case self::OPT_FFLAG:
-                    echo "  -$label";
-                    echo str_repeat(' ', $max - strlen($label));
-                    echo "  $info[message]\n";
-                    break;
-                case self::OPT_INT:
-                case self::OPT_FINT:
-                    echo "  $label=<integer>" . str_repeat(' ', $max - strlen($label) - 9);
-                    echo "  $info[message]\n";
-                    break;
-                case self::OPT_DBL:
-                case self::OPT_FDBL:
-                    echo "  $label=<real>" . str_repeat(' ', $max - strlen($label) - 6);
-                    echo "  $info[message]\n";
-                    break;
-                case self::OPT_STR:
-                case self::OPT_FSTR:
-                    echo "  $label=<string>" . str_repeat(' ', $max - strlen($label) - 8);
-                    echo "  $info[message]\n";
-                    break;
-            }
-        }
-    }
-
-    /**
-    * This routine is called with the argument to each -D command-line option.
-    * Add the macro defined to the azDefine array.
-    * @param string
-    */
-    private function handle_D_option($z)
-    {
-        if ($a = strstr($z, '=')) {
-            $z = substr($a, 1); // strip first =
-        }
-        $this->azDefine[] = $z;
-    }
-
-    /**************** From the file "main.c" ************************************/
-/*
-** Main program file for the LEMON parser generator.
-*/
-
-    /* The main program.  Parse the command line and do it... */
-    public function main()
-    {
-        $lem = new PHP_ParserGenerator_Data;
-
-        $this->OptInit($_SERVER['argv']);
-        if ($this->version) {
-            echo "Lemon version 1.0/PHP_ParserGenerator port version 0.1.5\n";
-            exit(0);
-        }
-        if ($this->OptNArgs($_SERVER['argv']) != 1) {
-            echo "Exactly one filename argument is required.\n";
-            exit(1);
-        }
-        $lem->errorcnt = 0;
-
-        /* Initialize the machine */
-        $lem->argv0 = $_SERVER['argv'][0];
-        $lem->filename = $this->OptArg(0, $_SERVER['argv']);
-        $a = pathinfo($lem->filename);
-        if (isset($a['extension'])) {
-            $ext = '.' . $a['extension'];
-            $lem->filenosuffix = substr($lem->filename, 0, strlen($lem->filename) - strlen($ext));
-        } else {
-            $lem->filenosuffix = $lem->filename;
-        }
-        $lem->basisflag = $this->basisflag;
-        $lem->has_fallback = 0;
-        $lem->nconflict = 0;
-        $lem->name = $lem->include_code = $lem->include_classcode = $lem->arg =
-            $lem->tokentype = $lem->start = 0;
-        $lem->vartype = 0;
-        $lem->stacksize = 0;
-        $lem->error = $lem->overflow = $lem->failure = $lem->accept = $lem->tokendest =
-          $lem->tokenprefix = $lem->outname = $lem->extracode = 0;
-        $lem->vardest = 0;
-        $lem->tablesize = 0;
-        PHP_ParserGenerator_Symbol::Symbol_new("$");
-        $lem->errsym = PHP_ParserGenerator_Symbol::Symbol_new("error");
-
-        /* Parse the input file */
-        $parser = new PHP_ParserGenerator_Parser($this);
-        $parser->Parse($lem);
-        if ($lem->errorcnt) {
-            exit($lem->errorcnt);
-        }
-        if ($lem->rule === 0) {
-            printf("Empty grammar.\n");
-            exit(1);
-        }
-
-        /* Count and index the symbols of the grammar */
-        $lem->nsymbol = PHP_ParserGenerator_Symbol::Symbol_count();
-        PHP_ParserGenerator_Symbol::Symbol_new("{default}");
-        $lem->symbols = PHP_ParserGenerator_Symbol::Symbol_arrayof();
-        for ($i = 0; $i <= $lem->nsymbol; $i++) {
-            $lem->symbols[$i]->index = $i;
-        }
-        usort($lem->symbols, array('PHP_ParserGenerator_Symbol', 'sortSymbols'));
-        for ($i = 0; $i <= $lem->nsymbol; $i++) {
-            $lem->symbols[$i]->index = $i;
-        }
-        // find the first lower-case symbol
-        for($i = 1; ord($lem->symbols[$i]->name[0]) < ord ('Z'); $i++);
-        $lem->nterminal = $i;
-
-        /* Generate a reprint of the grammar, if requested on the command line */
-        if ($this->rpflag) {
-            $this->Reprint();
-        } else {
-            /* Initialize the size for all follow and first sets */
-            $this->SetSize($lem->nterminal);
-
-            /* Find the precedence for every production rule (that has one) */
-            $lem->FindRulePrecedences();
-
-            /* Compute the lambda-nonterminals and the first-sets for every
-            ** nonterminal */
-            $lem->FindFirstSets();
-
-            /* Compute all LR(0) states.  Also record follow-set propagation
-            ** links so that the follow-set can be computed later */
-            $lem->nstate = 0;
-            $lem->FindStates();
-            $lem->sorted = PHP_ParserGenerator_State::State_arrayof();
-
-            /* Tie up loose ends on the propagation links */
-            $lem->FindLinks();
-
-            /* Compute the follow set of every reducible configuration */
-            $lem->FindFollowSets();
-
-            /* Compute the action tables */
-            $lem->FindActions();
-
-            /* Compress the action tables */
-            if ($this->compress===0) {
-                $lem->CompressTables();
-            }
-
-            /* Reorder and renumber the states so that states with fewer choices
-            ** occur at the end. */
-            $lem->ResortStates();
-
-            /* Generate a report of the parser generated.  (the "y.output" file) */
-            if (!$this->quiet) {
-                $lem->ReportOutput();
-            }
-
-            /* Generate the source code for the parser */
-            $lem->ReportTable($this->mhflag);
-
-    /* Produce a header file for use by the scanner.  (This step is
-    ** omitted if the "-m" option is used because makeheaders will
-    ** generate the file for us.) */
-//            if (!$this->mhflag) {
-//                $this->ReportHeader();
-//            }
-        }
-        if ($this->statistics) {
-            printf("Parser statistics: %d terminals, %d nonterminals, %d rules\n",
-                $lem->nterminal, $lem->nsymbol - $lem->nterminal, $lem->nrule);
-            printf("                   %d states, %d parser table entries, %d conflicts\n",
-                $lem->nstate, $lem->tablesize, $lem->nconflict);
-        }
-        if ($lem->nconflict) {
-            printf("%d parsing conflicts.\n", $lem->nconflict);
-        }
-        exit($lem->errorcnt + $lem->nconflict);
-
-        return ($lem->errorcnt + $lem->nconflict);
-    }
-
-    public function SetSize($n)
-    {
-        $this->size = $n + 1;
-    }
-
-    /**
-     * Merge in a merge sort for a linked list
-     * Inputs:
-     *  - a:       A sorted, null-terminated linked list.  (May be null).
-     *  - b:       A sorted, null-terminated linked list.  (May be null).
-     *  - cmp:     A pointer to the comparison function.
-     *  - offset:  Offset in the structure to the "next" field.
-     *
-     * Return Value:
-     *   A pointer to the head of a sorted list containing the elements
-     *   of both a and b.
-     *
-     * Side effects:
-     *   The "next" pointers for elements in the lists a and b are
-     *   changed.
-     */
-    public static function merge($a, $b, $cmp, $offset)
-    {
-        if ($a === 0) {
-            $head = $b;
-        } elseif ($b === 0) {
-            $head = $a;
-        } else {
-            if (call_user_func($cmp, $a, $b) < 0) {
-                $ptr = $a;
-                $a = $a->$offset;
-            } else {
-                $ptr = $b;
-                $b = $b->$offset;
-            }
-            $head = $ptr;
-            while ($a && $b) {
-                if (call_user_func($cmp, $a, $b) < 0) {
-                    $ptr->$offset = $a;
-                    $ptr = $a;
-                    $a = $a->$offset;
-                } else {
-                    $ptr->$offset = $b;
-                    $ptr = $b;
-                    $b = $b->$offset;
-                }
-            }
-            if ($a !== 0) {
-                $ptr->$offset = $a;
-            } else {
-                $ptr->$offset = $b;
-            }
-        }
-
-        return $head;
-    }
-
-    /*
-    ** Inputs:
-    **   list:      Pointer to a singly-linked list of structures.
-    **   next:      Pointer to pointer to the second element of the list.
-    **   cmp:       A comparison function.
-    **
-    ** Return Value:
-    **   A pointer to the head of a sorted list containing the elements
-    **   orginally in list.
-    **
-    ** Side effects:
-    **   The "next" pointers for elements in list are changed.
-    */
-    #define LISTSIZE 30
-    public static function msort($list, $next, $cmp)
-    {
-        if ($list === 0) {
-            return $list;
-        }
-        if ($list->$next === 0) {
-            return $list;
-        }
-        $set = array_fill(0, 30, 0);
-        while ($list) {
-            $ep = $list;
-            $list = $list->$next;
-            $ep->$next = 0;
-            for ($i = 0; $i < 29 && $set[$i] !== 0; $i++) {
-                $ep = self::merge($ep, $set[$i], $cmp, $next);
-                $set[$i] = 0;
-            }
-            $set[$i] = $ep;
-        }
-        $ep = 0;
-        for ($i = 0; $i < 30; $i++) {
-            if ($set[$i] !== 0) {
-                $ep = self::merge($ep, $set[$i], $cmp, $next);
-            }
-        }
-
-        return $ep;
-    }
-
-    /* Find a good place to break "msg" so that its length is at least "min"
-    ** but no more than "max".  Make the point as close to max as possible.
-    */
-    public static function findbreak($msg, $min, $max)
-    {
-        if ($min >= strlen($msg)) {
-            return strlen($msg);
-        }
-        for ($i = $spot = $min; $i <= $max && $i < strlen($msg); $i++) {
-            $c = $msg[$i];
-            if ($c == '-' && $i < $max - 1) {
-                $spot = $i + 1;
-            }
-            if ($c == ' ') {
-                $spot = $i;
-            }
-        }
-
-        return $spot;
-    }
-
-    public static function ErrorMsg($filename, $lineno, $format)
-    {
-        /* Prepare a prefix to be prepended to every output line */
-        if ($lineno > 0) {
-            $prefix = sprintf("%20s:%d: ", $filename, $lineno);
-        } else {
-            $prefix = sprintf("%20s: ", $filename);
-        }
-        $prefixsize = strlen($prefix);
-        $availablewidth = 79 - $prefixsize;
-
-        /* Generate the error message */
-        $ap = func_get_args();
-        array_shift($ap); // $filename
-        array_shift($ap); // $lineno
-        array_shift($ap); // $format
-        $errmsg = vsprintf($format, $ap);
-        $linewidth = strlen($errmsg);
-        /* Remove trailing "\n"s from the error message. */
-        while ($linewidth > 0 && in_array($errmsg[$linewidth-1], array("\n", "\r"), true)) {
-            --$linewidth;
-            $errmsg = substr($errmsg, 0, strlen($errmsg) - 1);
-        }
-
-        /* Print the error message */
-        $base = 0;
-        $errmsg = str_replace(array("\r", "\n", "\t"), array(' ', ' ', ' '), $errmsg);
-        while (strlen($errmsg)) {
-            $end = $restart = self::findbreak($errmsg, 0, $availablewidth);
-            if (strlen($errmsg) <= 79 && $end < strlen($errmsg) && $end <= 79) {
-                $end = $restart = strlen($errmsg);
-            }
-            while (isset($errmsg[$restart]) && $errmsg[$restart] == ' ') {
-                $restart++;
-            }
-            printf("%s%.${end}s\n", $prefix, $errmsg);
-            $errmsg = substr($errmsg, $restart);
-        }
-    }
-
-    /**
-     * Duplicate the input file without comments and without actions
-     * on rules
-     */
-    public function Reprint()
-    {
-        printf("// Reprint of input file \"%s\".\n// Symbols:\n", $this->filename);
-        $maxlen = 10;
-        for ($i = 0; $i < $this->nsymbol; $i++) {
-            $sp = $this->symbols[$i];
-            $len = strlen($sp->name);
-            if ($len > $maxlen) {
-                $maxlen = $len;
-            }
-        }
-        $ncolumns = 76 / ($maxlen + 5);
-        if ($ncolumns < 1) {
-            $ncolumns = 1;
-        }
-        $skip = ($this->nsymbol + $ncolumns - 1) / $ncolumns;
-        for ($i = 0; $i < $skip; $i++) {
-            print "//";
-            for ($j = $i; $j < $this->nsymbol; $j += $skip) {
-                $sp = $this->symbols[$j];
-                //assert( sp->index==j );
-                printf(" %3d %-${maxlen}.${maxlen}s", $j, $sp->name);
-            }
-            print "\n";
-        }
-        for ($rp = $this->rule; $rp; $rp = $rp->next) {
-            printf("%s", $rp->lhs->name);
-/*          if ($rp->lhsalias) {
-                printf("(%s)", $rp->lhsalias);
-            }*/
-            print " ::=";
-            for ($i = 0; $i < $rp->nrhs; $i++) {
-                $sp = $rp->rhs[$i];
-                printf(" %s", $sp->name);
-                if ($sp->type == PHP_ParserGenerator_Symbol::MULTITERMINAL) {
-                    for ($j = 1; $j < $sp->nsubsym; $j++) {
-                        printf("|%s", $sp->subsym[$j]->name);
-                    }
-                }
-/*              if ($rp->rhsalias[$i]) {
-                    printf("(%s)", $rp->rhsalias[$i]);
-                }*/
-            }
-            print ".";
-            if ($rp->precsym) {
-                printf(" [%s]", $rp->precsym->name);
-            }
-/*          if ($rp->code) {
-                print "\n    " . $rp->code);
-            }*/
-            print "\n";
-        }
-    }
-}
-//$a = new PHP_ParserGenerator;
-//$_SERVER['argv'] = array('lemon', '-s', '/development/lemon/PHP_Parser.y');
-//$_SERVER['argv'] = array('lemon', '-s', '/development/File_ChessPGN/ChessPGN/Parser.y');
-//$a->main();
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPrIfdpiaDsJ/yoLR2XWwKSYFGCWsVNPjpDK1Ug+ghaJJg4unb4vMKN7VOJ77O3TR5LNkrIHq
+NYLlKTIrG16gvOMRsN2UphFVx3vxok8S6pbRZU1kOAMOB7JytzLLEwll1oOoftUCzFjMfY3jFs0m
+xmUUNjud2uorz5sM/TWRAyxxVctZgStjA5WUSw22WsoR7FWoSCwIFiDJstY6EoO5KLsebXCDPVJk
+T3YajIPWYXnnYomV05E9PAzHAE4xzt2gh9fl143SQNIjO4/mbyq2aunhUrh8m5h0V/zTD3IlePP/
+VdCQ0RlCHXj2B4bB1AUj1OdqrUpwaOw+rKJz/KaegM2xwaqTMWv+0LRMo+DDeJBohJsEiehxaJfN
+/Ka/9wfYqWQloQVkYYv2QArrOAN/DlVe4Y4559aGLGMZumkBpX2OsT3E/PHVTR4lXWnVEong7S4Q
+iFshhmIlbzd8sdvzOunPskzecKU2qv/ElMEnE3Ui943DJkrN60XJIcH1qGwQSnLe+lbmofaJ+dYD
+DX3A9M1IwTJFswTPOPfNqAydJhAyADWpcI2al2AqlY1ZPoJEFUYca4fQdcmnUZXrb1XujCWNAZTg
+xY8i+lRRmhVFknq0KWQjHX8SDoe34Yz8UYvIDiCnBzBt8pFPn7P0N8E1UHbggQ7S3SUS2bd/e8Sr
+i9DJNMspDFBhz5zDcNubX+ExKwJ36ciCqm2ia9sNWqk2n4kOTtabucB6wEFsRRQ31ddb7lzdFyqD
+VEcDGbDf/4GANE/3aXzGR0LZjDYN8GT083BjGZNElCdpegnBuKMluYcWFPuWQxDuKBT3Ajesis7a
+sS0xOl5OKEWGyUkn5XdCnVrRqFPEwLLyUeZMjMl1rQGLnbpJe8LSG4fgG+6AcvytCDKAIfm0j19t
+JWY9AhjLbLo2l0xoAqwaQS3I2+rxOXiL4QUxvfAb2ECMBrF7GlpQsIioRjRdjzxGj3Xh7WJsM/LV
+Epd/Nof4QV9y1JWLpyjMiQIDm/6epPMCf1NA5TRQTb0U8imZN1moB7SmJ7gqbmHptbh9jUVca3eO
+vEetBCio1kkXpMgQZlyJ57FKlv9DhDERRALjLgWMH4Uqscmar1PYW6x10o2S6xp4cYV2dPSGQ5Rh
+ao8dUG12yo+Og9L6IRPJvFt6fTgtbHaHyPqI0GaOPx5vmxMv3HxdHjwL583lGzEXwOgM3f2SEg7u
+7ceKDBrWEyXw3llRY+KLkqr6wmnR0BW7xsLNUODbP1bYD6gn5UwjIOV3A3q+aQZSlJcDpWscFbSi
+gf8p7ZDDpx1MVDQqxuL5UzNg/n6UdQen9NR7bEMBH/+db9AgA6N0/QFWDRBb0U38pPxzfeCmuJfs
+9xY1MtS6MA3gOrOlYrVzWt81EbTeCfQ6/i2c4kiAny6kwMlJ5Ifz2klRIzZuiei4rRcb6ItO3oVi
+wezEeHatERTjvdVn1wFkyl0FUOn6fx+CSyiRtu8adCfAUsX/lwlMMGwRNoC+tz9nfxfUZKzDPrqR
+zSwuhLwJH/ZtVHs5B5h3m/avlwoZeN81hqMnTN0sa0uJGTIG34XZLYoUjAfPmEHdyfehvJfg3Zaq
+z5z1eJJRIFbeN9/wV4tF8Q1JM47zVKf12iunoSEm0EzWl1JTAFViLhtih10/s04b39Sl+TiYuOq6
+XLOj/uJfV5OnjwI/cLqwvh7nX6Q41w5HkBY3mh1idapshZL/DFhZ+dFo5u3ZRN7FeZEP6r2iyzz2
+vwRqj8QoNyo1zpxtZeHt9wFUYk+eAESL8kr0mzafk3N1gH+sUrrRteV4sDqgvgJ7X3Hq+yxx68p3
+cIW0UvabDTlKsToZbW7APt5h396Gj/x1R/hla66ln8hZ+ntV5mfkGtbTUn4kHFpewK0KxKTawsH3
+pwPzSuxKGilcG4f2Rb8PJOSP3d2SXpbHzdv8bIrGZK72pb3Xn+GZDgGd9LDla+3a0GvlKunfLEjA
+/QqGBKxRLIYiWJPf665+UKMfSohHh3l2TglVvZXdesm5TKb9ZIwCcMVvbkre3/baXVyGiX40PGTk
+zlVnmIhZd40LWzm/FsCEz4xjCaJHWBnnjXN5im9XzoU4qGQK9eCdiSK9cit7R4/g+pL4dWoSte/I
+J2V5vHyThoh4aOH6BGpy41yLEDqHIxmfdMP8GcBBegbfm+g9U/Wa/2od+63qgWhECR5c9Rm3j67P
+DeTTHoJaKYpBuTt7yVY6lkk5xFkHvzXoN6vtyUcrfb8zFl0frdm55vpZH4fMMS+FPlZcSlVHeciu
+/TO/kIGCFwdJz0yu7QkBlap1JFAHbgJD6/K3DpCBcRIe6cTibmiRPsBcKu/2vktLsHEc3dMeNKtD
+khqZAHmXT8+AuBj2IMh55BhQFRNJAnYSsHkGGtFXI8u7yHxrlEtMm6tW4rLsgdsQW0K3Jk6UWyhX
+MFn5yuDMjy8OqIUZQZuGb6xAyn7R/8Bwg0UsJFjWlcBlQQ4ioN6DFMFomRYluft0OtZwFefeJtn2
+8ElfuRCIAfMdcIwGgROJeJtEeD4pRz7GNoiWrwbdR8UqI9Yj9PJCRszfGgQAQPBhrlvVHHK+aPsk
+SZR2rXFonrZlPhipxoHr1Y6HqiwmNV7C9npfgJYUwrnGw1sJBnLdOFWeFH7EeHE0ROPRUtdtjOZT
+bg0X49WvrmiN39wRIqDqTR5668CKjzIHq6su3KCQGkX2CNQ9yUbt/sXyXm5vImJU+aM72xG2H1p/
+l1jejC+osVHBgcJZiC6ubsCVkQausQ7Yyx6gTv9BecQBGOZdhnExncOXQJNbZ6x+/xekrz4CQvfX
+PWkn5FkhA1L5cqmRjApcKeOvpKUMLvndi0QD1kXjjQSmUJF5joXIFZZUX4ZS3gsyNvLORpFcmjuf
+kxuxKcxred6SYXYomRzGFwPqVpOq4kPJyFR4wg5BUd/GvX51HVNrew+cuiT98A9KyrQ25dgCDWyg
+vFUS23uCRPcPnUCZveSgdqNCutirGsZFIJtiJXtG8luCRFxV4FcIobUi3BHG8yKAuhu4Bv6zn8vC
++0yhC3Db8ogf8egyH+Tgw4H9cOzBbq6kDJ1GtXCg9Dggo28aE1V7gis4JGsbIVUaAiZsT7MSmAa+
+zr+DOD8jRf3NDgDlh/mnzMrpR2fHsyJJmXWs64LDxYCXCIU0ewQ8VYgxwxeFImLdevUOWwf+AV7s
+4R0C9mZJzi74ZOvhVs8ayYxIj8Fa3lfIyR519iLDRd7U+utQS8BRZRylgxUnvEYCzYMyiTHJZdCD
+xlLApuXV7QJT5LPSMeEPiQ/wTJsKr2x95VDe83GHhDbQZfLXi3GJLyJlvQXibePpJFsfryYVK4pj
+faTrzk3KNTtODchdFhPBgSU7038MgxQU2Y6r6LQxVSMxHsYAHVcur2xBZdI92DhDwb7NaPEIjWvY
+A15EpHw5/fx/L42h7xGm++ujCY4Brfk8g2mNzO94TqrMpYUVgBDVZiUHpbsyAlO3b1hRLDlxglC9
+YCRF4/CkQgiPxme6Op2OrQ6lNahIHedkVem6tEPv3DtOjv7MWxNP03x082WuHHKf6hKYQJB2OiCj
+rtKImT58GCDVxJcK+JC4SeM+kvFVGa2Lfb5ny21fRlYGohbB8oJJGB59DnJZ2RKTmwt1BTxPXMjZ
+eMiIJuSTH4DD/T8Wdz8TfcS/BW6K0NHqX+5Xm3NrWjaX9Scv9ibK+hUXO0mdJ/EFhF1KKfMGIrvZ
+NJat4NYrp/m+Lha89lc1lH49JAPe0ZFUP2v47PBuXHqiNeqPPZNc0Uxb47Xw57ilstWeB3Q9j2ws
+OPMPIXn+1z95xcWeStpVG6Ce/vt6lFne7nVzYwlBaDmH7bL2WmNWph0Btzva+Dk4pK+CTYuSu/fY
+i5DtP8lhmH7AB5BN6kOoDxuOAMsOMHu4jgSK3RnFmzmjuoejp9yUmP4s3kXb1sbib9RuGyArExnh
+MqD8EPrcAqXfZmNSsqxYqQtJfk6ORspb6RPL0BGlFbQTcmP/8h+2TjEgRvwNE+UN0RWmG3NADrK9
+MF54vCxsd6jqDZCdjIG4ZFS7EApyrFsB42OEK0SB30nSURkJr8c8J5I685qKyAH8vaSWVmtTvrJb
+qrnqwHkZtvz7/mrxNZihf0/44x3npg5epFv0ITTiI/+SxL5e6qg13SBOx2d46/mEquo1lz2osQ0v
+Ncj0kjjz85DZIsNu9cvNfYrnIn6la5k+4jaUTunTnoECsHvwllEvGi93BxKeH+ctvtdzm5/XfhET
+8QxWvXQdFWicnGfwR/BNtrw1xVP8f1x5Vk1DxNwrEWSJEfsMov8Q0krXrkul7OXylUNea1vuHI3W
+c+ZYwpYSyR1rvU/DlnfPm75kCtHGJviiK7aNhftMPg41i5SobeQjZFLyvtAHhWqtpSn1faVxbau2
+RTXhkvAhUN2qSJW8JQ57XFa7c6yFDsnIBJD4/w/tDwBAWi3N1sN/s0HnvSE6hKNJ67qunhBu+Ao8
+zc8d/WpjJ0qduZ9mbqCaEGwqvD/jCJ0wiVgr6c10wSqG9nK7EDjPxK9H0g4JK73VmsOB2pB4ImgM
+M3F3RJRL4zgVj0tbyXHxUGOZ3wCkESpg0Papz52UbFC5A7s7CWUpQ+JQGphcIBPbsJye7/E1wpQs
+uCdTmeQHp4LFzELjvYr2SDvDCA5pm6iNtmbtWTlfjTxlbaD+6sV9+ENpALb+g9EXcNNn24K7O/bZ
+D/vBGNqio9DWeGYz0puTZShBAnGjaM1a/PkXejMDhwZi0oxYsqMl81u0FssVsJXFPJuTO9ghiC8X
+McN1vYbubME1B0DDO8sCwrrLmK/YJgWI0cX+BQBo9x+yr190ZB/uRszIHqRgn7zYBXEJrlCmrwLz
+UNc6W0zZ4xpvUKo5YriswJ2+KCOLSCHS1OKOXzXsoIb2sZLYG0ASbqTnJa6RvPszFgNDPF4bEhYI
+YVIzmEE5JGHbJNoqE8qnsud0IU2DhdJFLyRaXA2lydLUx/nrpyytZOQiguXfDS8/Wozlwm9c7/HI
+Lg1+LZksYJHiuTqaMr0Rhzt/unU3u3PEWCu3OEqc7XR8wdJdllbdl34wDWX1FaO/gMVr3gc1B0Lw
+7/txWAflXv9C2pNX6HdmvJgA1OrGVT2zNVR7binar0tiC1gqB11WHfhBmU10/+7aqhGs0wVnM6bx
+WejQ9wWNvv5iK7sSN+AFIgv6EPEiMRq/uEEQX9u+2eCf0xqtb/KYL9H+j8rFt8d6Ab3rEGExE+nX
+PV2FuB/VhWYmRgtnL8+AKfAsa6te9Yd/zcFR4266xrT4PeISi1hT6nsV1AzpmIUQp5g1XRfZn7wL
+tKrET1z06b7rKszaZN93UPdG6IFgc09//P7Kop3tNYhOnmqkFYHFyYFxPWDTnjwdmp4Ce/uUJjDo
+85CsoRTDfHEx8BKCDq18ejTtL55MgOyi0qSFOiU5kHGqSxX0h4rVXJqjGA3ZqvzCvYSQUqFKCSw7
+k5rrebAVfzSNTCNgSDxKX1Oc2bihRL5VNK8ZEvUAh7S2kXxG/UfBhIsavp0fsdInKUKIW5ivN7EM
+Lt2v2cBlOlumMcZht1AMpwKjAjZZzsqOSmyP27Dp9HOuD6NYkNnjACMCEJaMznjvlDWoemu6OCWn
+CuBW2hBVvoiER33V3bfXo297hz7G7imXX6t5cI0sqpfnixtyffBRx2VHr1EODKz+cQ2iAmnUHQHN
+xMja+ldo197P1L7d2Y4JDKAGZFASmIt8MrU6Pd3ZYxzwUoMGbp9TMk03J/kwAZR/99u2oRdFr/vz
+IsHU1G/IxDLbcSBz8e8nNLsGIWqUui/8O7LPa1rHvMWGY4a8lLSuMPtiLM8p7k2i64ULNV/JTT+u
+gYMXly2p6uTdYP9IkUvWyRCf2/VhdInTsU2bRJRGc1CzVOxd7g/38Ahf8E3xDyZ9fOlpzOGvCM7Q
+Zzci+shDgHozuhIzZoXGcPOLy8AAacTR1rChx96lDaXDGWUlHV3/vZe2z6UdYAR3NIALc+67svA+
+OFhDofMUx1xPHftqSWzk2xn+RneklY0+EJ3qcEuQDH7d5o9oOr9WUiIlIvbbYmEhJBze0tUUwffl
+p7O57LHGDCemPh0irM7b83b7lXop/erzJdoE7eVDtsoYpYOINd/ysPId1b3AGN4FMnBkIDBm3BPS
+ffK7gY9xJwCwC96cbd63SqyzECxV6Kzc/wiHXu/ShUkhN2mZT0BufSO0IDPITUIoiBexiKvbVfp2
+MoEQEtPMjxwoEFfb2/rpkWgmyqPdB37IT8FaxOwVZysVxP2m4XJO3NR0Zs29F+HRzjV8vqY6w6RI
+ptUD+VRoV+gXSJ5f0TJlZkjJUQX1z4RbcEAskMoGQp5vI2WY00BHQd6AtAf+CvPS8p2qQCcCAbTJ
+Swu18fz3gmRAMrE91IEv61yui/foCWsEsMh6/GmZYuaS2dHSyKuHKyUHZeb9LWrH8hDublOQMT79
+4h9L0NWbCEP9rYGwFRWOOTW02oBCg6itDt/EyMztCyteTigRmu/1Cu/B4O3AaomPC4A8BsB/dprP
+jAlYoD0X39NUdlVAqbY7AYfeKhsw4E36ef3vbb4vD8Ujc0Axyuq8TF9rYS1pePwDfe6BtkDW0aWT
+Afy6G4YboXde4fu4cVsHUZ+f1GTpI+0oCWy/6vBoXQuOWzPq9wQhRbEopEltbf3k20audTusBYsb
+eVCeKHM8JXP9HoAZWTm5kwMPpIrMMcLmQDqUaN3kR/qdv3e6c9m4ppZY5Nj3A33TUB0clkVG9R7f
+Dw3UjYDaLFgDLZtya2nDVvHjgBZngYi4yRBqQuYn1ojP0/w4I9cDSnISu+knJHl0xcEgFePowkaV
+0/UcQaKqkznVdxEPIYgy42mOlIE0d2WCAGdC7pIKK6o2nho9P4lRI9+qeaU6+B5324TYEGWI4dmi
+mObfnyiC6gPxy8ApWXBazWYt8J4fP+TZm7gDsmp16EzRoYpsKkkvome6yCvxVk+RovGEgFHmL9pD
+8Y/ZdXZj3lW2NqhpHsJ97QOElzHQ6NG8Sr4TgbYm7gax6nq0Le5UH3jg2oPU+Wb2amGoE3wQcGYP
+hJkxFHIBi6DabWbkBWh2n/KkViwj+5NFrMPt8Hx0QPVZI8nunZPYxfVsb6NFcE15XKkReBnF4Ot3
+RIIUNHZOA1lGRh6YH/jdxpx10AJe4I3kcens3M+JYwbc32Wa49c7rlJtZVwbsORxE0oUKd+MzF+I
+Nf0akOzk/uuNrArytGr69OASXs5pZ/3axfKdRC1Q9tI4uWV2sKrgoMEJKNXrd+kPQ5O8ZGQXfkCp
+zq73gtYoFkDh68xQ7BnB8YsyR0cOI63MNEZcita+nLzMWafaUTnD4+gIabvFNb0Zl7owA5EHI12t
+WBzujdcOQSzO+bHQGkNUdbqRoAiFymAJqtE1PLO+CrW5VcGUhX4sKWRAcPClYAwUtS+g6BF493Wl
+ialgRv9d4gQ83IZsFnmVGoyH9TI7S+aJiXZUcnBD7fR5msOSSKAyj5KX48UnIoPmHMaVszFWmnry
+GeAyna+nnioonsJP7Z8L3ZXzyiWPkQ2xrtkAz16MGFMt62LCLjnM6/SF1X/cwA+8C5KqGRbRIYZl
+yZaVOm+2Z3j8SAhgpj79+xR+oZfuuafdw+CUE1VwpM7MIJOW2ClHr0QQJEa+FJKqPBecm66MKOKF
+6BBLxNyVYKt+9EEm+GNffzXWq1T0tRi+okx8gM63EZqWRtSHqRDHseWB+Ocgogi0xqcm1S3V5QNn
+DSzaTNg/16mTuAxSOVVMEYsCGwGhwvH/ooZR481OE94pVHhACEpOAhuKBLn5TckMg3+nxlluoPdf
+T4YID8+BELOs5z++U6g1JzdaHczRYdacYz5IeJxwLMIPpcN1qx0cPmb987oTXPD23fEvF/xFiHWh
+oh5xSeA4Kt8w9F+xdARkOXWu6ztdbOBY7AlUgArKERDNIwsZNWegG0ktuES/KbByLzdpM5D/r/De
+7OYdfsJwdjjLWntEr0qkHiwEfejuFUnukfDCHH39vOeX4L85wlj37fkQTLHumWyCYwABfd4iAPYA
+Xpc8/yugKOvmO9cHmImEz6BFC1GKiSN1aDt8NHZODET9IZCvVM5Xia/RaqUSdpQGxeAVPOGK1AOE
+krAzNERpo4H0zw+xYExK8Bh0D2k04nbtN7AdcByArnYB17LUTn5+0I93S56kp/qW/fxPzhiLgRSg
+qakRHwAIVg+3eCszSYEo/h6soqLzPhKqsG6mlJJoyGMMZEcOQQWT/u/860E/s1T82DjAr3cZwl+U
+ZngEkisDJE8nRfCK22fdsrbts1Y/uvToyCqYsAZHtQwLlIh3ohkrfei1Z7Qj9hdmXG3wrKIDHzHG
+LZ9cs5OhXcChz1o7lq7m36ADCyoGxkeRfxwpANC5t8RJpxL2C6PgSi+upGL8P2+jFMMTaCzDSRR7
+tea1jgKrN8zbdOzd4O+t0wkkAyWWlYLqkpJKXVTgx4+fxB8fS95DaNLUA75y/JWNheObgfeSg0+N
+VwtLT7BoD+E5UKo3LAlPv/VNoPFV48vK9nM8Tk6Xs0fNpywKwdqUxmvkKDUr/O9OyT8HMNpu24f1
+gs7D+JwDWWbr0J4OQQeADfhlZloWiDKeGkm7Oqcgydth7mvtaSjaTRbmmYcatctaaHvajBAGmO2R
+WkfDFQz+y738A4M8oxij2Un48tBDcIuizWuGBmAI7OmxUK7lEomj+omLJ1El5TiOVTrfTsJpDnTX
+ZkmQnR5Hin9E6UBpANy5Oa4LhueWXD2yThfYNHnDG5580qy9NE8r4BzsWeHy3N3phOdtjBSsXAqH
+PYX9S3+PggQKvEyDlBVh+oyhgR9b+Wg7ksIDnByYKQ3wHgLQot+4VnizbfQ0OJg0r1FMMIAZ7CGv
+PqkhoDqETahR7L73Gw2b5aW1lx+8QrqionoX9W8hHbkA87zd6rhUBiPBQFUuMtRu9/xchuxHBN2D
+vpyW+RrsKrCFFsBIENuLyKHDcdtnZ4SDLaqJ/UjCY8B/u1J1vvGCfOBnlHIbA+rgLnpN0IQbxWjQ
++s5D5EIS/xQTn/hBpa/l7cdhwHeBi0WgeAp9msXW4gDP3QrZSSuZPd8BPDFO3WBKJev+ctSaYBKF
+M1t/qtB/OBUfPW12ID1HOjmrz3BIleyLLYDSMSqsY+hWzyO98UYIzuj0ExHTFnWQlMkk+J0HHD+7
+Suk0rUbkZqu84HQMKZharKQDLOGv6zOtjpebB38QzDUtJCrertCLUolw7CfVJ3gG+qW6rFJ8eZxG
+y91bisHo7h4NCaiAyFfbpcVdsxDn/nGwAeDhKmvDbFG393Wo/HnLOPUIbvf16Yyng0wmhbTZe4zw
+qmw7NmVj7y3bBTbwHwYFIjLWxI4fs2KcS31aDVzZ5ffUQnxD6zuGzbp6RRduvf15fPDtj1m88CXZ
+QRgNoP57UOgxpM2r4d6CcKF837CDbWyrEnqztOr7XaEgd7uH8870kGmRGr6mba/ydmg8SLQbs+nr
+vCF2onLjXmV/DIO9Q9BwHFsT91qwfbJGWc3nptyx+vqa4+kSZamA2WbHitlpzdVcUZw1jfg0yY8A
+tHUTcQlyz43z/vfOlxoSktoxoDBTGVNIDIQ/uTDNdc0w+rxgqGJwxtLA7yYguoDnJK//0AJsG5L2
+SGNNBgP4Mm/ewUU94rMxJHSj9j0kw+IYZ1Hp0s0ZbPEwpJMqYD+df2HgS+hrquRdg4f29gZN9FK5
+znZ+0JAkaHf5tVhWtXw1ON/YAC4PkwCP6Wojm3QeYNHsf/DGB/rjLmCAJgGW8baotAwOJs8kxZ6z
+1KwF+6+QEjE70nkVPYxu9c7Kb8z5ddY8VcVI53AG40El82b3dhy+cg58x9p+DJhBwnUZ27y+9FVt
+YrJQ/FWUQ8xwJY08HOBuUIeGzznAvhLfzonfeUvg9+OA/IVRcZyqCfh6UOsOeGxT7FNqfWDtTrFB
+i5tZ/Hv76T9xTTlH7Apyad3lEVMCLx5AmC1QHqImyjdTN6xBPPQt8ocIy1ErNQYjW1QjV7SNCbOU
+zd2M2LN52ulm3itIW/jmk426SGUl5sAYJHL/w0vU4b8hOe11pLBo3GGQjWw2/1LC29mfK3dtKv50
+R7vOpfUel6zNgc5pM08oW6T13BsIWGEEjF76SYPz6nrC3sYzOLwhtWTndSAt/RTvBvBHD0en0a9D
+wzq5KsrbVFYD12aAOse3aq3f6Q9dvXXnOVpxVyoNFHv43BNsGFDjTE9urUApbCOGFnoe2Mh/qCbV
+gl2/a9Xxh6No4dD8z9a6iYvQBNWh692ZQzT053MfEg9dxhdzpHMj0Y12JPIUMYG8gMydWweiukz1
+3yKG0MlS+JlcW4Gt0TBm5u6d1z2NO2vIdZkVsZhIr3weHmpVjc/f76ISQvfsjH8PqEwrkzJTPK9d
+Nbu+WXWxBQrfxboVy1ROD3Cayi2fxtU/fGB9c1PsZTV5e6nOKbu9stZNEpF6UAs927vLoIVBlog2
+v9BNlxJ4EmYLJXBtVhXeS7AYcQNQtIOLofjzBkJQTl2x/FE57ClDk0PhvO39UQz3zsFSVZBi65fu
+6tNjtkpClqGwejs1b08IVkfgMxzBKMoYtrhITAr0NVYeohhr7HrVbfHz+B5GWt+PmacaQdzUgh16
+Xpi67elezISALbn7g9qXh1GJ6qFdE8uJAbHWIt88chgr5qHO/mDWzVtm2WvEpXiO1LJMxdj2wcxS
+X7bkBlXPok1RArUHHuc+P8vnl8o8QvxhjzPNi5eZmtZ4TT4bef4LhynxeeVSSbFr6sSvvH1KjqTv
+7WnL3iURdTk2H8IWCARapw6WgJC2vrC/pNbrtQ+xJPDrY5MW4z7oWekmxfN00bSASw+qilo2QXAI
+JdCExW3ADkc56tKiNpasy/gdyHg2w/B864lg044QSN3cdYz6kNok+l1YwriT9yBuskVu6/RvvPgV
+5JleFMJHuGPrEUaKQuUDSAj/EeLNjIbG7QX9nUfJG+b/lCaAJM6D7QPnwPT2/ziSMr4s4ARzQE2z
+8tpW3twy8i5WeB2PMgW2/wbs8DmuzO1bog2NmyTd7s1OXguR18kG1e8eCIxJkSge2p58kJkd1+4z
+TjtJu5Rkzit6hJI85phLYdNr/0x1r/S+cELHvm7uzHZ9wec40m1yCIomARg/w3Cmx+WalzCvI9FD
+JQCo2f//ae+necUOsFWYWLpLxye368o11ZP+xBirpXqxPrdKoyTZJNaTtdGPAvHQT37Q0ey6zoyk
+3BsrfzVsRYhDS3FIPm1syiGWyafN2mhtVrxzgsM7y0DIw7vcs65yH5gheB8BIViuUm1tDWYZ5kjX
+FK48L/8Fv+Ujb//8pfnRqMRR977xZZJD4fNQs6KrL0Egr2BD9+93fD+Cz43/IaTyqE1eaJQhKogC
+YU/Dc+3UD2LiJgkzuFbS5WNsoJQ93hqTmp8HP2cSoYPMpyDctyL9qi2f9xMWcEkrRg0jUSQr1Rd0
+9t28YKRQ6Ypix4F0/jFaLegxVcYTy113I8V6a3k3qDmoQfugnyFuHrJU4M9igk4Byx+dnjxis6Vt
+HUqTh3BRS7hz9ldvdYnNUaLBmdkZiasnNGgmv/2x5PVQ3USPsQhbWDEVfroFvVymiHtXl0+tZccZ
+IE68aVzGkf4eVWKmTRjQA0mRqyTY15kEbvzd8AeluvqSRMzcrU6/rhrUhVxaHWKEUYem4WwmSP4I
+Lci62TUqQxUmIw9TorxrRxS2mpRgsJgNm/ISKwg/g4DBH1dyW5ldJ+Eb2Gmo3K35gdEQR2sThq01
+bRgH5z788yeJ6J6xr09B8DCNKjsXsyoEay5uhIOX9ZMDpV0kzbml8Qli2bEQSCM8GXrnAKCoWy4p
+hmG+zNCenGulUc3ahKIuBFsRxX7ja0EkiNDQ3fKUK3XeM3yf49HHP9R376lKHN4qg2S0pRPyHCkK
+bawBTAGkJFNpN45xScGNrKndqC6CJAMZLDlTnPEFnor78CnrVlacEEB+xE+Xefif8WkOLBUtIF5X
+r+AizLlW1Yd9opymVl8EJN19IHB7LN0l8+ZkZqp6wUvH9gPvmraqIhiB6evD7OufFfTJmQhjhAZi
+lXhljzPk2tC71UYxN9vHyEDHLMm0riLRwf419lIeWyTPHZlrCI43A60UR4VaOIF5LfsVvNarYIDH
+m0nlv9TT3xcANY8Bstl6zCmzV277I38I8sJfyBWwkr8mon3hCPo2RBXpj3BEVLj2bGhywkgTznEG
+D5LISYh0b9RtXmCA8ZQaXGiZVwm/3Q1u9ayYHPn16fjoldcyn4VuyCG8Eu6Gfdk8qseCmHLIhnR0
+JO0g9A47H/etTkMCqGoByPZz/OTcwPqoiUYDX7HDT1UZyT1IRut6lr86X7pR04d+2mpexJ0aefSa
+AcIWhe7SNbKjXZkuiCaXhNobaWKpU2FTuyzz/j/UUuKWh/nKjM3nQf76FbrVcMqhoKiXEh3JuLMI
+fRwtAAoi1LAzgIAj0Hqu9OFJ9f2diYfzADOa2pTwcwN46oFV54B1ycwpsVi3WezEmCMVdDmjVoFi
+MKqheTuv/fevzFXGd3jCCrzt5k4+hyF+cLLMpoXHDe9gdeVdweZvNbv7YKx6btKXS58oo+BIf92Q
+niPCGW9bP1vfx7Hi2pNsKjw3s+g4L7xVBxGp8/QvaLDtADXbKt9jR8dfo+AXkreBh7VG0SbsB/ZI
+O5sipPHAy7xfeDncBcDckwU3nM4X1ioQbwG4nddMM3DgvgVPYNLV1J4X16dsZyxzwo9YoBVl9o/Z
+GdROAG+xOFTv7Qfh6AJEW1iAw+W2A7zwLYDxLfk7SIVuMPrDlv3o/z88Ptt+1OV1DC/0Vk1oFYXc
+3Y5badjGqqZ/aZAQenX5LR85RkKYIZSV1EwwGge3mKLOWdOWkKZu+fSJ9/THmNu2bEfUCVnKmz8b
+TleYsNTCKcj3PdD73g04bZB6bt75pmy/a1jNFcmAZKx+D3eoQQM+1LLxgx/b7812Ssgy1Yp+d++V
+eeMUR+t9UE8eB9JjMbQoZBPU3kkWWsnGT6y9jXc+WZOeny+4svpBmvAMdrxUsVyHL22hYOTRej0r
+o38eqmk0+uvOTF/IImC5Sqkv7pOWfWhuUSm9Dsjf95hOtA+hH7wQA2AAkBB/wFg7cSd0AAxSONuK
+yl/CqbzJfuvnaudW9Dg5zN3jWPTB5stRLF8eMF29UQV7QF5+pkgw+vzI3k/IEPrG+pNaxiA3Cp4V
+E8rVkIDztNQ8a+5Ymqwcm17MZYS7k0ZvxPOImSRsO7L7G2XI/rosQaYudvLFmcx0kNt3ft8+CxQC
+NZ88qEHPUjGqzNRLoPolkd0oCAqTFlTfO0O/BL87ri3bso2oeSt7E90++vVd0bKo9Jfgk141UBNd
+DCQFnkObvqeJxx5UtFW7FW3X89kngYr0wxmWb/gyJKIyAPwSSHEJwPyqlVlxkTnjdxS2QDy2JDB5
+Eq4GtbWg/CNBjVBq3xJEPLfc/XNVu72tLFmrOz9bfSWZe3qMFqN29vXykxoKyz5hc19fMDmLMrnG
+aaaQHim9iSY5LhLNeBXWO/OPg2wTfZQprI7ELIFH78bcMHyee0bW/HjGM5FGsraMOl3qUD/QHw3y
+uxQwJQzD1jwJ4UGd5kfPqAcQUnM39G6odlM9yYPOSp9aZYCUcoAihMPJNze2MW9kKslNgPAx9jKN
+QAG25kDvTCdPjwxb3mF09Du5Sw2epu4dFxlya4AgDjJfIwHvrdaSXAlAa79aB03xZGIvqXCAB03T
+BhFdi8Rk02AgZYCaYSKMj7YiEzqaiPmDZnwLGPiK3kvvA7djlh+5wmKdRcAypdiUMRwR7WCZCnzI
+c171TTCLOzOSfOmczYmFHfImYHqs/x+n48bB+fCU8auV7tLbj172lYql7yBBUfU/UGzknL3ySDBf
+lWTBHx6dECCsURC0k6lH0cksViZztoLkJTXU+ew2CY8C2HgeuAqZP6FLiaiBLaJu7cIpGSFHS7KN
+xziOFko16HQgabCREKtCOPidN6Ul058plDUk9BXRM12/l2t3Z1Yc9cRMgWHbdd4bNqf2l45Qu0eZ
+wRHUSfvd2CuDyk/JQPki3JzbdjFTe+VhsvqjXnU9bnZX0hoPe14ZzUf1nYrkvltdsAaCfR8xNlgK
+wm6/zLWNsAbduTx1bnrW6hRI0PuaZC9o/u32g2MzQKFScflPrr3Aift0Iu2NHZ/ix4xUlS/AFY/I
+piSmvPyr3JdIJJc3xUEK/0NaUoUn4ZB4zG32vhc6trvixXswMebUutvqi5azKoRuOFTwCTDjcwmo
+B5rXvYyn8RxMI74oUESnAOyEgNqwsjCn5Hh7fzNwFIDr0iPmX8ubyJZBZsS/wi+c2MboxbhKtmAR
+PmzQ0BPm8AC9gXw2f5fWooE4rZjoBPSDwXWnGBQWsBLoy5IwqCG57DpBsiEiFRchKdSmEEdhQp40
+0x3fxyMlsJIQ2FcqMMwN+k32QKwPL0ZfhLz22Ax/ZUFNBGvnk9ZLlXjtIZSL3bVsAvzjynGajFsm
++L9EJrs3R/mxGM57pKklJ6YCgjTPU/KdBxTx9bl8vnggbCfZODaXkjnAvBn8oFQEFzGH/cfH1VMW
+H0mv6wtx6CdWn/0A8F4ec9WP+40JyzpTyIZ4NcFlb/ENshjfdRA3+7FFnmF3aOblS1uxZ8yYb1nd
+lKviVYvaZsS9MNDv7oYl+qhDu8DvN7alE6DBsrwnUAlMiOVFdr/81n6YUV/hbSg5yMjRUMvc+wlz
+L1hXfhD8ifVsc4ff5657SoJw4FycYHMYYiYFDTl63RS4JqEuk+kQkS7Ov4tdv5BujSO3PCAP8mDw
+TsZ/mwyv24MYnYIC44nqw5OekKOwwz641TnzN3/qE//dGJ2vcTCc8x+gU7TyxwwLig0DsJt/MVpp
+NoC1K57eubRHGzZxYrh305gUgMUvc4wuTMHsGCOt+z8PE3FjTmGdYyl9Ki+3emRVV0WLBjRxmkEB
+EZr1TCjrA6Aov1dQgkgQVf4r6XkJXkIteQrVOq/c9OBNao0u5k4RgIB5xOQo1m4ID/qwN/KvEWoz
+0oWowynRRDWPTM+xHbtVxBdoLPY843O1dG8dQ6qvTMEVw4TiYk+LWTp4mS+DdbF6lCA3+RSVsu12
+uCe9vnZDD/AWuvrxXzsi+45hFGCDkGrWNPl/EA3gLWlbSJrJn4AUv8FGgJ7TEkbmiLt7/AmL8ucx
+yTn0KJ5YwfS1OFUE5JHPqgUgRoCOgPVc27rdPd0TSwoRaxeiEY+YhpXUOYqoqnbQJeGjcvIwWk5I
+cxgO+bzHHDtWFsKJqMGDeigXvmal9RL+NoYx6810DAtgsVrc7p5IsTFNSUTq1W/dMLfdWo1aFTQJ
+T2LlPrtUNvJPQN13BRxSua/q3Xu+Ym2T5ALJ729PKBPmrE4fmCogvgAFOc00/r448EYP09p94jqW
+/rg5WOHeWfy55MBoFjL8ETP99YHvUCM1h01ynbuda2kdgo+OMdC2jr1RNaYEIWBWhGZR/+3NWoiL
+fPlPSH4oYkjlyQiQ9W4sTXDyhi9ExsTFiRX+kri4CckN+YWfbzUoK5Zk4S77zEcmiWYc+Vzz+7Ep
+s6aGAF4XhCSVZ8BldAU/SX18ytg8SH7Lmm8RXAqxiQM36sk9f/BP0qtT/AViRQd0o5KBqq7eHMAv
+BK9GGt5Oudx2Xe8d2BrVl5SpLEC/p/+5gQMWOqHtJfjcMoUhpu2V/xv+xp+fiBnA2c1coec93mNt
+CIxcrorKEJz53CTWz3dVKrYVIRH5u8FhKpYoy+xcFtvrQ9mvuiGv4xWxVFOqcW97/AnEFMpWNBeq
+z3+B4qt79mU9wHTEdZkw4+THhJ/sPaHcLDv9ihZkiFdlb+1yBrqtZ7wTdl93FnjtgqCWJIGok0iZ
+I3Tvk14wGLGuT3dK8ewtu+84tIg88BTdNcDCTIwm2+wz6P8CG1+3fxaQrhV0Oi+HKzFCNbEAam3d
+7+3++p1g4JK5WR+KsbN5bwROlJA9MiqR5Wkblx0FZ255JeY/pVVSPhWD6YPM/p3oavBCgGcTLheZ
+ebmZ7p1yoh+6in0qJQ4Zf9FWGF2BHtJRlkoa+ZKMHvCM98Hy+J+LaSfJeOC7LgkkutuXJKBX4K0w
+ezX5NmEF+GCfWK/NAEEsbc+qi6ij1bABNFrd38j/UkHXMCFkpQHR2AfviHe2GwTQ9qF1MF1NQjFF
+57VU1RT41WnV1dnLreVRnhxFBZMqay1nbyZMTzDsVJ2l+I4bKpvJPQy7/n3HOwvVz07Y0PksrLzI
+A/K87Uq4zOaIh6eVEX7nT05jcDaAsCIhv7QDBmwxoniavGJyYnT0QIsH5/AuXDdxbop28QPuyDE+
+xprDHA6qqaLwm15Cs9JP+sHtAymS/ieHh5XBiCqM9OAc2Gc6OBNad9VSynS4JK09y/NP2caQ+sD5
+uo3hWBL/cTkA3W57np/wD23WeodtfPD7BSzWDhd/4GaLyx79wsCRv9CqMp0ClnYGSQWe4Y0dhtwm
++RXhGI/M2GjHOKg5V/T7D/Um7CfYCvN4GzmFAMfJysMuEllpy0TytJBb12oEDpBRBwVLVvqGbZcK
+5kGaDw9guEiQdW60fGP+6Hn614LaKbeqpSRc2zup85mClare6FpcHdGku7ryaeDpHs8FVncMYnZ2
+wFcDtvUhawmlBXNjjyrqlRIpuhkfvSZJKUJDiEQBdUXqzeePZHuGZU0+cnu4/Gm3hrqvMksGwYKU
+P0xYi1IwP81iKc9MBonc3sUfVRgJUweFwNHqXXXXSkBjIrYlNacJlE0mLixwrd4KiUivxihFa2B1
+3887t0XRbqQNGPZm1mWWGgdXitKYkbqipEK6tcB+npaYOlxghNL/P9BggQGxVJyYQzmH47j6oWib
+GCuW2NHyt8aqhnVnzdJSa0VG0CoMAQMtp6A61g8mlO73MmqEIg/nGOevW2Cgauqt4nXqbEQnV/ST
+etd2HCzA6awaTxiDmV39hWEJ6HmJ8w0I+TeHJfvTBrkPAULMtBI0+PppAj9CFhgexZs94XKlkUnQ
+56a0ZY9w576fNUaEf3+115VH/5KazkO4yZXjwRN78DG3TlpOl3bW7pUAEVZnZbdimbxImaVoZ/ib
+tXd0EnQtNZuWVOd5aDO+8XJdDpMRgcsdhexILZ407hhkMfPkTfZ97ZFE0gFNWGaMBDnD68hps/tk
+JRjZAG6Pd+gLiAJkBXisRPirgEUX2vrJ1C+VH7qCvC/fbV0Zy84M3dHRR1QXG3MCXqSXHgqZ7sYA
+vDp+RGd1UeJqqTN+LdhtYU3B6WtZtRcBlIGu/xgENz4IJrTloDG9TruW87U7fT3Y2Goofv0pi9lR
+VyqejvRAM5RjdxMo9C/GFsjTlH9mIiGi9IxiM+sGUYzAzbhi4kyC1tgchUmeS++5kibEgGpMeD4b
+cRmj6fULy68++Hf9qM9YAW9CGtMPTxFRUYo6JXq2fCNXZO1e9Xga8rqzaEN32HuHVXckaJISuom+
+281YFzJKiSNk1lpZX3vf2qG8z+pJi5JfNlI5S5ZqXoRSDc/GuXppglNRo3lmE6pctO5SVlwcgPMT
+7nkL64tIiLoGiTQUv2sdsckk3Qw8yh6O1oZg66sGSEtfMqxPemp692YZv/ZYSaoIZa6NQAeEb1//
+w2JR6B5dIXlctRdfUs0WebwzD0hqDlkk4P2alVzcQIYvCkY86dQhjTKl0r/YiE6nL7wtgt93v/dd
+hMbO7AkFKgOx15W4rIlUI2FkldaNVv3LcjDFVmwgJcFyaAzG0FEjWK3cvVABiqFXrXRuEsJiddQa
+simS7s65bvgzdOyNrWuqSrFftx8o7U4BJvlPL0KC2IuQr9kkh1OWbSex4OnIZY8KQ7mE3ttwKPoO
+WhYClGO3tL7Xiq8+SAP58H7RVkppa3Bl3s7HvPWty6XQUNFBPJ1E0Mntb7Y4HzWh8uhpK1lc3P0k
+ZuAxh3fpNyFoICJj1D0GBV24+3H7KIgbSnOVL0suheNCc25btxdDvzNhb7bNyVhHiS9Xod7vE4Ec
+gRAXmrxAgzfxdFh6ZPSkw9J/Ne9hP0PjY/5a4r3NC2EOz7oB7W0HB3zDeYF7wvRbkrfX0yMRsXFV
+Q9ZgP95URtfnuTskC+bsnN2gRSRgrTbIdPbGgLnLzf7hpGIcAMiOnQ5BDbEQrewqwpgkrjtQrrg1
+PcXACzN13iyFK+Zp2Q1tAzA23rwFOmn7aOobh4FSDFvQ5qBvDoPrMyYm8gvUq+zZ0vR2FlG/XDxh
+s1jximRK7QUPq66oCut6QX9mkPnZbuKHsshYyM363dUNPzNVqg5/ypI8cGgnCwLcQv5fXLMwKB4L
+XcyD/rIDL1zSTy30AyxNXg62HYu0ZIruVg1sxC3SbaBq5rkeXp+imagXcbt4/Zj+ZLFjMo6pKQWi
+o9+9DgfZLxNfqM7M6mHlkzESoaJ9t5t7nSi9WwmStbJKxeg7gJvsFaVHoTOeS3dCvSZNXdUcCt+E
+s97aiNSXZMEbiLXvkGF+naQcRs8svPGUoIpCXr7H5sPy5MLHgUjl1FDGbzCL7ptilX69eNyocCcd
+GdonaJ3Y9gc7w+TsjKvD0rNmHv/JvY0d9W1WPq2FFOC9zevzSD6HYbsj019iWQb1ca2ESUMVbcmd
+qB9tXtmP2LueC7wJmA2FWOU9snR3UOzoMLI5Iw97UXB1MCXjJn7D826a3TUeBLj+ROOQO8xkpVXS
+P/DGDgssePEAqlJM758fsz/Q73lLtNJLSgzKpEEL7UX1QAYuFhYFmwmTnI7Hd1Mlu/GM8SuqDW4b
+MsXXKAUavA2PLQoYvaM/56+KImAO6zBMkcRZ6RWQXm5QRG8ScCGwdTBtkyDrYC8aOUzRfVucxQng
+yKVGdlQLN1dl8XoG9JDtqKaCdU7nuaveR6CUMh3unoyo+N1rjEMgu24OS6Ytjs0MyKXd3TZZ7P8z
+TJsjm+iiX6U2ZUi+DgcHKk/bMRr+8zVxk7USRxM/Uekigr0l/eh4z15OaYKtMPaSSvmcmpSVonzT
+gMfi0/B6IFyKDfPZFjA85OlTbu3lyhf4CCa1s1rHwoJdjGvUGTxfltKt3OBKDzmMqRes/fqt0IRH
+BCrnMFGxI4LFC6oYg4E0J0Vvj6JzBwJdG3iP2Fm7/XecrKSdfgiURPzw5c0Gan50DHcTM3WjZpbt
+2f31oaIsC5m2zg01UEundJFvc0r+HgNmOSkuU/j8YNLopx1Y6v+KUDiBEGk7USWfY9iTLG4xUdCK
+1qwnGzXib3uprD3R5Is6v0K5LYya2CqNfrosxRObOmQz9rZVIccuvT/BvM9wlHIgKWApH25ZjiYU
+UvgxZk/KzPUyYjwf65rjRKwP1pjAHwQBvG4nx36D5y7ec4engX9TGQT/HpA6lu7dpmqlqnkKV703
+3fJIcLoFEymax4l26/xrreSpd8epBoA1o4Oafs3Xh0Xq2UU18bmCSZgKBFpgwpQ470NllRyqdiyb
+IaiIoQLrUP06XEd2ot/H3yXbRnRRl2YJhObh+Fo4BcMnY5fJhkxTCD/BBdvB2U4qXp2u63JyTChq
+R8DKrrTyVPK4zGzZ6WMupGNZSwJOcsDKv+UW+XrIWXZcXpVIaMC7LA1n1hIOaiV92W+yu681MTZ3
+H/FENmeGdsOVwC9mZ/wkw0rbAoUj5qKeRCcjb7VZf5Jqznn+wq2+Gy8zb5AQAKXRmAzfPt3x7Xw0
+QYuOuVG5WNty65B/3SJSHIR3IxMO2sQInbQN1bgOGwFSkaJMY/ZCqBaCBjiBBlE9CDOslzjgw7cj
+M7zjCndUNJITBOdPe+sk203so0XH2agcxGih95yBDieFFZUUHSXlub2kZv5Ry7oNaBLa6Oluifr8
+jKGDR+sgJMnY/sCAahnqnDOgeiKr00NVHKoWj6aAvwgojs9xYZZPNzEpadZs5OGXra35A7Ymcv6v
+VIM2HwkTXxsxgywlH7tT4SiNwKpJdOkIDJLdk/1MZMvWNPfEc9mkPtMv+nn6nuXZNXc+SdfWvwzS
+w1jq8szF00Ybss79X6XOog4NQKPtXDd9XJ2Xi1YSHtgzZkjfEELBIlzfylzlNcyTeq1Mn/QunR5k
+bwa6XctY9yAYUZVLjiu7ctHIYw3rDjQ60pBIxrdyW4r3GOdzZKu6yg4tqWnuqdGq8u//kpxHEmPh
+E9+LtT1iltVOK4qWD9IbQmGnUZ+4i+icibh5ONOVFt/Od0xPhHwN6wMJGT4JSWVn7GDNfQ/1EkQs
++GLoesXJSA1Djk+MDqYBCVdG4+FdKnq/VFHcgzDNArMylx2vP4jbwcDs867ME0HK1Wc9ZSTCuwOt
++rt531DnNGoAjM8fn22xt0XSXh0C5ydh2CBvX96Ivj1TTE/Mez8vr/WXV/hkLMyG68oCrI6ZcRCU
+cOvJSxC4wgbaOImV0KwVI3GjgatdWEzZ3+/0hA7xmzAMKwvOqe2oqpZWpPL5oV+WemxDJiJpKAEG
+J7sWAgXVbBXcY0mSs2eD3B9ZK2r+61RjBHuCxT3VIXGLkdhQCTvVGZ1jwN0M0cvK9VLn6SGNNBUT
+eJ04EcZL0NDINm2XiTQAAE/oZOg3PzeY/BeOd3dq+dcFcnuhAEdCH1wzP2+/IOVvW97UadGSaUGg
+9JDwvAsLtrBDQ4OBwf7Wh4aYEV9329+uz+xN30pn9DQ6LGz6oslU6rqI7RYOgaS1DN3MAc8rwqI2
+2LJ61yeYVghZY88Pf+hrDZfKmeXtxTxiblc2nQhDEuh2O5fHSifV+3FkMpJ2ksjXi4bB/LzuKZ3K
+c97aCROYngF8c2P4dklr9CVW+m27JOaa3+Hni0XfWPvpVddhYFhkIMDZyWFmVYrtv50UMUE0+Hmh
+3laANNYdMUhPRXuNYSvji/ARGFWBtJN5FHRzieJgU3+k6CXW7TxEzM20SNVgvvNFTubqbZHImyxt
+PN2cVK8CHgGomzXC43G6VWIoIpeSq/c48gR53sCIe2kyURhvjF7mRr5cM7bMxMHm2Db//BynfgLw
+vqjx4pbcAdJawsQbcIWdKmWD51mvx3E2zUsY00KSKh8vp+dOpi29sm4JjatDuVDmPMGSzAtixuiH
+ROp9PuSQ223ta2puEQcU9hyBIc5CK+mIUIOXge39RkZfadiwTnNJGz8cH9viewwykbwJ0UVRDoet
+GJ8vFXvrW9aHEjWNQrEKWhMOQ7nblNZj+3OnVi/nw0mLEAl0RZrrGFIZVXw6Vi6JPlvAECXe6T20
+xLVo+ZB59x9RTgIbBIvkvcvUlVzlHt6F/qmhj5n0MXC1jWlETbGnjJ7AljDWDwG/xhvbkfRbAb3t
+fHSlbTI9mpR+VMTa5pkeaEi9zn4awSAD+xx5/APkIQDjslsoWJdMN9ww6hiG4jAQt9ZUtL5YDJjg
+sG+98DKlPVAWWbT1xYhvKWrcEeouZw2hdLUoHDyC2QyFA3K3t99OJrXW4glhGFlTP8tpe4LjzCLL
+/qF62BPZzdz2LKcKyQ/MgHHUEdVVtknqZvvATraFHbNKdSJ6U0IInzsCItJse5oD5U5SFIraNTVF
+rGtrYr+NK0F964EDIR/7kqdtWrf8P/3reRmnMu79fG44BSVeIlAn9QomqSUA9DPz6Nkz1C2l4W1D
+NTnSQ9BrFbJpM255f1YHBns3zsNLHEFNR7haf4qFoKju/gouCbqMu6EovllJl6l/9r+Q4/6jNhAd
+mPbyPHuE0teOQSfC/oPze1FSBKyl7tA00ORRJhIM0qVWCxsKulSVpFLvdUBpZQCHD1CgxY88qkZl
+c58lIYvb2doNRu8aV2Gmk/yoSQA9WXb15NHwVZ86fqlxSMa1akknqKa4QZ3uSMwAahpUSCLyCI7x
+1+T5ty8Nm/MPQRMYmSjFK52HFr2Q1aHERbRwTqQKNPUtGAZLvy/ynOcw+AM5+EK/P+mbGC1dYpVO
+dmeprpKDUHIJfGR7w8+SBdmmTOyghQZ+vh3SYiVzvyw/HKc2QfgyO5FWBz/6z2toHDIONSRXY92n
+9bX+U3RLWLkAyerNohjdeQcOkZZ0t5fyy3vp2MdH7gSo6Ue4oIVLLs3uOjwho+UPhxLr0LVzEveR
+u5+XbofyV1nCZHBj+RBVvyWnDCMNyeePkbFspDPd/2yRYt0j0wThb7b9GCw9xPf9HMnHI1HTERF8
+iMaOMRihJ1nDTkjWgCNbJgE+yibmz+IrvtOxvP8YeD1VHZqOWCAhEjsntzB46QnvKmG+NMQYqX04
+VpfZB7oOdEv7mTM4LBdt2vRXhpwZNhgFlk0PZ/ZWE92xz/VHRC5ql1B6Y7dlq2OhLs4bC28hJgPZ
+X3V0SEgQIY7M4gxNRKUDWMO9leADPQZ/m2CNXW1+VkASADOT9H8Su2cln5IjHZ92g767ZCiE55TV
+aReNbxDpsjMmLMEPozZjJFGt7XCSFhipJ077VkTpUe3O9FEQM5DVE2sp96ILGCCd//mAGMSRt7iw
+IgBZFy8j7Z5q8L78ax9h3Sb8c3X3RQSk4M2/IKOULZxTyIFdXDpvu8/2U37/XKUHAqfyPx3nGBFa
+Kr0QJsU/CkV2BHfvAuHwRGlki+fitUxEeM245QplwbDbXYC7JfyW1dSQ2u5CM2RkZCv0O/OcEHPX
++mQwmKq6N9QcgYakXlTbC/AFDANwbnNaR/z6vXHbznpjiGbgy69bts3/W9txDMRJM5WsIq31pCBk
+MeFeCjOTOS8TqcoX0YKt98iK4vP0K/Q9tPInRXhUdXLXe5VNkEjzr0PNOUz6VbZ1fUOw7FIUx0+i
+OSdnjBl/OsRr3IC0itGt/SaapYEKJjUH6MxTEQtCNOuxHErTh05WYiT6A/cI2y+ThGoOmA8Yk/0W
+V51jqqGfa1U0jkSbUuvP5//gt/pll9h2hafhmniQy7Di8DLDPINGYDp69HJKmOs0Ct62Q5eGaE0v
+t/OFqnuVhEzetKnJrbpDbQwdWo4+ln3wwzFPLz+YZwtBY35PLz+zZrqC82sC0L72s1ehIQpmOggo
+A2cq82WBDTTWEOkwD8GvaMHdthf+owHkxf/LPEK3Y43ubbqWN+xWFaSfHzmmKcPp1+nEqlN+6Z5i
+EzLQr1vttaHPa92M5izdXTEGpLXHJf69yTNf6L0uwwbXxn1gVW2VIuh8G6U7+DpF8uds90fzFJ3t
+X3RGd+oq2/xILfoqv8gZRNl5IUZW+NHy+U8nfU0CIAc2yZhD2wHsiZyziEb6kL8WZ4B1WSD0ZtT6
+brZdJB1DQhwZT9o+Y/ONSktNMGi3L2/uAYwkAekRYxiTbBn15DngQ0ge8CDLHCTaYuRD4smHWaIr
+FHkB4gE2J21XeHqC5OO697JysgAUsnA9fFQqZ4BtlKw0sK0zE23hqjYYsoFWWflpDDZnRCUtfK3c
+xo+8oCwJiavsUIziLeYqo9ZhkRKqcYtI2tNu8nniPEGNwTP0IhrK7q644nsKqofQtzHdLr4bWwOD
+o3kRXa9cHINZiyrezWJ51W/+KbtPu7CqCWEcUTX5QTA07jm4FibsxGuHI9rWkkUquX/h8XQQpVc0
+GsMGlodhzyKoA2jSQneZrN6nwHJ/m7qlqx9eDcnQfM2JQgZdaT7+FqWN91LLVA2DSOBUE5V+QmQ2
+kmO6sSLScivTbk34DUMDhFxWeYn3KKETpFoJDOm4dmpsnkiUp3GF45Sx1k7kgNO00eV3DrvEbsVt
+xyktfFywRGPFKJxMeSphkJOcgu3Y4iLvKxcu9DfQgSl3oeH9hs9CeMlTeQ/Ly20hZvGEbv4AJD6x
+j8mrAhPMx6cDTtNNmG2Cl6gTx0/3MmPx8CFzZW1FkfrI/lR9R84nDxZMCt6bn8ARMWPijeyRxdDI
+x7mvW2F4q/IwBpBiZ1QBJl+Y5ndHILk559mTWeWC1IEYqlBOt5NyjTZPqStsvUhJD7DABwH5j7vl
+38QIJaMB8LJkGJllLU41vovRWy2OrgBQTVdJQDisK3WI/vyBLbE7uTMaxjgjWLgsW+uSefSw7kQq
+qnCTy+ItMyewnIViA1dymLbnvB8AIcaTxYrhsEUUE23/kDqM04buAiLiCUmRh0IGMBc5bDvjYrsQ
+LHOesLnstVc3MIG3pCV3ECZZZdcElOxNr9Hn8BNsrgKpAC754PpacwAixjplPyFTb/+OKXvGLR0O
+tLvFt3K4i6eQVGX3M65YPTEmwN7tv1JhSBPcED7KUAORsjkT7S1sXhafdg3ZZ5ioOxEE9aDq61Mg
+I+qbdQIuLwr33TrHJOISgQHLnt8Gw/9F//4kwJf0lHVfYvPry/WEqiWDuFhVMsz365Gk98ahmC84
+XjKofA3r3dMlm6zATiCOq91GmJQ37UvuVuNAi/oGJRBUWx4hVvaFi5iaolzo1OYqfsOb3iCfGY66
+BgLJ8rRw81I729F8wuEZlPo7NRMnzY0i3ApBEMAju+JFbg3nu+Y43ePEvfIOo03WMuhRImYtaAA9
+g7s4ZCkE9cC+4aZmsV9GpKAJdnoY4ZLBRs9MuXh5DMbPmxCtAkve0xgne90xf5bxRpXEBQM/2pHu
+908fn3+cdaQ3UsSji3dk/WbV8qI9Ac+HJvZWTcfAVPHPiyJVFaebmTiU8MXCobjFgosD74LBCt/B
+cnQYmcr9jJzNgcLKP2vra0dCeJWk2XMpE32/5wSPZ3aIfmTdTGrmdoFSIcmopkPJnvJl8WX44gMe
+oiu3nDioy0cGr2WlT57SXGnFZHO3Ud04Js28WtJ0TaYcA86qglS1SFBhLy0DQNEnECSf1aK/dDSL
+MR3fvnpk4SUDhP7jL1ByYG8OwLYQq3tISY92BwzhG9+hQz9UItJq2xrzY//rxo8OZS1oq7IffZVj
+KFcU8F45alpfyzhMcJUze8J8SPLphlu/aQ9wh8bAkZ8zd2GVz066tT4JL4r5w8+mG2Mb4PsCRJNY
+5t+/Jdlx/MA3cA/Nkjktr5n8J375f4wmu7jF1LACMFz8BeC5RqAwq8lp1mNuXPZfkZKOAFXC2uux
+sjLusaDSCT60rqBBwIQwksZ4hW+wRI0ba4n4zLJpj1yeUqszNjcDoh3Wb3OOOk2vRKa9kKd0JWsf
+5OdBf+80xcomgB4nNwnPFl4xT0k/M2u3cJr7p3ZUNEoQZytLwiB0wABLTP3nxLG6d59MKZxlSB6U
+HItTGcfMvkgaykaP1JAKZB1kCV0paM2j94/IwOSfQWT9eQdUfk+18NpYruTYQbhOIy2Dsl+a0aml
+8DyNIrScTxZ2FJSOpr6zBf33Zu5kkfnXJhXlp5XRiMiLoQylPS3P8rWKw+bI6fugXs+lPNSNjiRu
+U7aZAzPRabNGSdeAsW6+eEa8tNRFuLUrv5W03E5s1EpHwEKHxGMV2TpW5XH+UQooG7adUm==

@@ -1,465 +1,116 @@
-<?php
-/**
- * PHPExcel
- *
- * Copyright (c) 2006 - 2012 PHPExcel
- *
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation; either
- * version 2.1 of the License, or (at your option) any later version.
- *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
- *
- * @category   PHPExcel
- * @package    PHPExcel_Worksheet
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
- * @version    1.7.8, 2012-10-12
- */
-
-
-/**
- * PHPExcel_Worksheet_HeaderFooter
- *
- * <code>
- * Header/Footer Formatting Syntax taken from Office Open XML Part 4 - Markup Language Reference, page 1970:
- *
- * There are a number of formatting codes that can be written inline with the actual header / footer text, which
- * affect the formatting in the header or footer.
- *
- * Example: This example shows the text "Center Bold Header" on the first line (center section), and the date on
- * the second line (center section).
- * 		&CCenter &"-,Bold"Bold&"-,Regular"Header_x000A_&D
- *
- * General Rules:
- * There is no required order in which these codes must appear.
- *
- * The first occurrence of the following codes turns the formatting ON, the second occurrence turns it OFF again:
- * - strikethrough
- * - superscript
- * - subscript
- * Superscript and subscript cannot both be ON at same time. Whichever comes first wins and the other is ignored,
- * while the first is ON.
- * &L - code for "left section" (there are three header / footer locations, "left", "center", and "right"). When
- * two or more occurrences of this section marker exist, the contents from all markers are concatenated, in the
- * order of appearance, and placed into the left section.
- * &P - code for "current page #"
- * &N - code for "total pages"
- * &font size - code for "text font size", where font size is a font size in points.
- * &K - code for "text font color"
- * RGB Color is specified as RRGGBB
- * Theme Color is specifed as TTSNN where TT is the theme color Id, S is either "+" or "-" of the tint/shade
- * value, NN is the tint/shade value.
- * &S - code for "text strikethrough" on / off
- * &X - code for "text super script" on / off
- * &Y - code for "text subscript" on / off
- * &C - code for "center section". When two or more occurrences of this section marker exist, the contents
- * from all markers are concatenated, in the order of appearance, and placed into the center section.
- *
- * &D - code for "date"
- * &T - code for "time"
- * &G - code for "picture as background"
- * &U - code for "text single underline"
- * &E - code for "double underline"
- * &R - code for "right section". When two or more occurrences of this section marker exist, the contents
- * from all markers are concatenated, in the order of appearance, and placed into the right section.
- * &Z - code for "this workbook's file path"
- * &F - code for "this workbook's file name"
- * &A - code for "sheet tab name"
- * &+ - code for add to page #.
- * &- - code for subtract from page #.
- * &"font name,font type" - code for "text font name" and "text font type", where font name and font type
- * are strings specifying the name and type of the font, separated by a comma. When a hyphen appears in font
- * name, it means "none specified". Both of font name and font type can be localized values.
- * &"-,Bold" - code for "bold font style"
- * &B - also means "bold font style".
- * &"-,Regular" - code for "regular font style"
- * &"-,Italic" - code for "italic font style"
- * &I - also means "italic font style"
- * &"-,Bold Italic" code for "bold italic font style"
- * &O - code for "outline style"
- * &H - code for "shadow style"
- * </code>
- *
- * @category   PHPExcel
- * @package    PHPExcel_Worksheet
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- */
-class PHPExcel_Worksheet_HeaderFooter
-{
-	/* Header/footer image location */
-	const IMAGE_HEADER_LEFT							= 'LH';
-	const IMAGE_HEADER_CENTER						= 'CH';
-	const IMAGE_HEADER_RIGHT						= 'RH';
-	const IMAGE_FOOTER_LEFT							= 'LF';
-	const IMAGE_FOOTER_CENTER						= 'CF';
-	const IMAGE_FOOTER_RIGHT						= 'RF';
-
-	/**
-	 * OddHeader
-	 *
-	 * @var string
-	 */
-	private $_oddHeader			= '';
-
-	/**
-	 * OddFooter
-	 *
-	 * @var string
-	 */
-	private $_oddFooter			= '';
-
-	/**
-	 * EvenHeader
-	 *
-	 * @var string
-	 */
-	private $_evenHeader		= '';
-
-	/**
-	 * EvenFooter
-	 *
-	 * @var string
-	 */
-	private $_evenFooter		= '';
-
-	/**
-	 * FirstHeader
-	 *
-	 * @var string
-	 */
-	private $_firstHeader		= '';
-
-	/**
-	 * FirstFooter
-	 *
-	 * @var string
-	 */
-	private $_firstFooter		= '';
-
-	/**
-	 * Different header for Odd/Even, defaults to false
-	 *
-	 * @var boolean
-	 */
-	private $_differentOddEven	= false;
-
-	/**
-	 * Different header for first page, defaults to false
-	 *
-	 * @var boolean
-	 */
-	private $_differentFirst	= false;
-
-	/**
-	 * Scale with document, defaults to true
-	 *
-	 * @var boolean
-	 */
-	private $_scaleWithDocument	= true;
-
-	/**
-	 * Align with margins, defaults to true
-	 *
-	 * @var boolean
-	 */
-	private $_alignWithMargins	= true;
-
-	/**
-	 * Header/footer images
-	 *
-	 * @var PHPExcel_Worksheet_HeaderFooterDrawing[]
-	 */
-	private $_headerFooterImages = array();
-
-    /**
-     * Create a new PHPExcel_Worksheet_HeaderFooter
-     */
-    public function __construct()
-    {
-    }
-
-    /**
-     * Get OddHeader
-     *
-     * @return string
-     */
-    public function getOddHeader() {
-    	return $this->_oddHeader;
-    }
-
-    /**
-     * Set OddHeader
-     *
-     * @param string $pValue
-     * @return PHPExcel_Worksheet_HeaderFooter
-     */
-    public function setOddHeader($pValue) {
-    	$this->_oddHeader = $pValue;
-    	return $this;
-    }
-
-    /**
-     * Get OddFooter
-     *
-     * @return string
-     */
-    public function getOddFooter() {
-    	return $this->_oddFooter;
-    }
-
-    /**
-     * Set OddFooter
-     *
-     * @param string $pValue
-     * @return PHPExcel_Worksheet_HeaderFooter
-     */
-    public function setOddFooter($pValue) {
-    	$this->_oddFooter = $pValue;
-    	return $this;
-    }
-
-    /**
-     * Get EvenHeader
-     *
-     * @return string
-     */
-    public function getEvenHeader() {
-    	return $this->_evenHeader;
-    }
-
-    /**
-     * Set EvenHeader
-     *
-     * @param string $pValue
-     * @return PHPExcel_Worksheet_HeaderFooter
-     */
-    public function setEvenHeader($pValue) {
-    	$this->_evenHeader = $pValue;
-    	return $this;
-    }
-
-    /**
-     * Get EvenFooter
-     *
-     * @return string
-     */
-    public function getEvenFooter() {
-    	return $this->_evenFooter;
-    }
-
-    /**
-     * Set EvenFooter
-     *
-     * @param string $pValue
-     * @return PHPExcel_Worksheet_HeaderFooter
-     */
-    public function setEvenFooter($pValue) {
-    	$this->_evenFooter = $pValue;
-    	return $this;
-    }
-
-    /**
-     * Get FirstHeader
-     *
-     * @return string
-     */
-    public function getFirstHeader() {
-    	return $this->_firstHeader;
-    }
-
-    /**
-     * Set FirstHeader
-     *
-     * @param string $pValue
-     * @return PHPExcel_Worksheet_HeaderFooter
-     */
-    public function setFirstHeader($pValue) {
-    	$this->_firstHeader = $pValue;
-    	return $this;
-    }
-
-    /**
-     * Get FirstFooter
-     *
-     * @return string
-     */
-    public function getFirstFooter() {
-    	return $this->_firstFooter;
-    }
-
-    /**
-     * Set FirstFooter
-     *
-     * @param string $pValue
-     * @return PHPExcel_Worksheet_HeaderFooter
-     */
-    public function setFirstFooter($pValue) {
-    	$this->_firstFooter = $pValue;
-    	return $this;
-    }
-
-    /**
-     * Get DifferentOddEven
-     *
-     * @return boolean
-     */
-    public function getDifferentOddEven() {
-    	return $this->_differentOddEven;
-    }
-
-    /**
-     * Set DifferentOddEven
-     *
-     * @param boolean $pValue
-     * @return PHPExcel_Worksheet_HeaderFooter
-     */
-    public function setDifferentOddEven($pValue = false) {
-    	$this->_differentOddEven = $pValue;
-    	return $this;
-    }
-
-    /**
-     * Get DifferentFirst
-     *
-     * @return boolean
-     */
-    public function getDifferentFirst() {
-    	return $this->_differentFirst;
-    }
-
-    /**
-     * Set DifferentFirst
-     *
-     * @param boolean $pValue
-     * @return PHPExcel_Worksheet_HeaderFooter
-     */
-    public function setDifferentFirst($pValue = false) {
-    	$this->_differentFirst = $pValue;
-    	return $this;
-    }
-
-    /**
-     * Get ScaleWithDocument
-     *
-     * @return boolean
-     */
-    public function getScaleWithDocument() {
-    	return $this->_scaleWithDocument;
-    }
-
-    /**
-     * Set ScaleWithDocument
-     *
-     * @param boolean $pValue
-     * @return PHPExcel_Worksheet_HeaderFooter
-     */
-    public function setScaleWithDocument($pValue = true) {
-    	$this->_scaleWithDocument = $pValue;
-    	return $this;
-    }
-
-    /**
-     * Get AlignWithMargins
-     *
-     * @return boolean
-     */
-    public function getAlignWithMargins() {
-    	return $this->_alignWithMargins;
-    }
-
-    /**
-     * Set AlignWithMargins
-     *
-     * @param boolean $pValue
-     * @return PHPExcel_Worksheet_HeaderFooter
-     */
-    public function setAlignWithMargins($pValue = true) {
-    	$this->_alignWithMargins = $pValue;
-    	return $this;
-    }
-
-    /**
-     * Add header/footer image
-     *
-     * @param PHPExcel_Worksheet_HeaderFooterDrawing $image
-     * @param string $location
-     * @throws Exception
-     * @return PHPExcel_Worksheet_HeaderFooter
-     */
-    public function addImage(PHPExcel_Worksheet_HeaderFooterDrawing $image = null, $location = self::IMAGE_HEADER_LEFT) {
-    	$this->_headerFooterImages[$location] = $image;
-    	return $this;
-    }
-
-    /**
-     * Remove header/footer image
-     *
-     * @param string $location
-     * @throws Exception
-     * @return PHPExcel_Worksheet_HeaderFooter
-     */
-    public function removeImage($location = self::IMAGE_HEADER_LEFT) {
-    	if (isset($this->_headerFooterImages[$location])) {
-    		unset($this->_headerFooterImages[$location]);
-    	}
-    	return $this;
-    }
-
-    /**
-     * Set header/footer images
-     *
-     * @param PHPExcel_Worksheet_HeaderFooterDrawing[] $images
-     * @throws Exception
-     * @return PHPExcel_Worksheet_HeaderFooter
-     */
-    public function setImages($images) {
-    	if (!is_array($images)) {
-    		throw new Exception('Invalid parameter!');
-    	}
-
-    	$this->_headerFooterImages = $images;
-    	return $this;
-    }
-
-    /**
-     * Get header/footer images
-     *
-     * @return PHPExcel_Worksheet_HeaderFooterDrawing[]
-     */
-    public function getImages() {
-    	// Sort array
-    	$images = array();
-    	if (isset($this->_headerFooterImages[self::IMAGE_HEADER_LEFT])) 	$images[self::IMAGE_HEADER_LEFT] = 		$this->_headerFooterImages[self::IMAGE_HEADER_LEFT];
-    	if (isset($this->_headerFooterImages[self::IMAGE_HEADER_CENTER])) 	$images[self::IMAGE_HEADER_CENTER] = 	$this->_headerFooterImages[self::IMAGE_HEADER_CENTER];
-    	if (isset($this->_headerFooterImages[self::IMAGE_HEADER_RIGHT])) 	$images[self::IMAGE_HEADER_RIGHT] = 	$this->_headerFooterImages[self::IMAGE_HEADER_RIGHT];
-    	if (isset($this->_headerFooterImages[self::IMAGE_FOOTER_LEFT])) 	$images[self::IMAGE_FOOTER_LEFT] = 		$this->_headerFooterImages[self::IMAGE_FOOTER_LEFT];
-    	if (isset($this->_headerFooterImages[self::IMAGE_FOOTER_CENTER])) 	$images[self::IMAGE_FOOTER_CENTER] = 	$this->_headerFooterImages[self::IMAGE_FOOTER_CENTER];
-    	if (isset($this->_headerFooterImages[self::IMAGE_FOOTER_RIGHT])) 	$images[self::IMAGE_FOOTER_RIGHT] = 	$this->_headerFooterImages[self::IMAGE_FOOTER_RIGHT];
-    	$this->_headerFooterImages = $images;
-
-    	return $this->_headerFooterImages;
-    }
-
-	/**
-	 * Implement PHP __clone to create a deep clone, not just a shallow copy.
-	 */
-	public function __clone() {
-		$vars = get_object_vars($this);
-		foreach ($vars as $key => $value) {
-			if (is_object($value)) {
-				$this->$key = clone $value;
-			} else {
-				$this->$key = $value;
-			}
-		}
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

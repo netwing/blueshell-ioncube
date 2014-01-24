@@ -1,85 +1,59 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\Finder\Tests\Iterator;
-
-use Symfony\Component\Finder\Iterator\PathFilterIterator;
-
-class PathFilterIteratorTest extends IteratorTestCase
-{
-
-    /**
-     * @dataProvider getTestFilterData
-     */
-    public function testFilter(\Iterator $inner, array $matchPatterns, array $noMatchPatterns, array $resultArray)
-    {
-        $iterator = new PathFilterIterator($inner, $matchPatterns, $noMatchPatterns);
-        $this->assertIterator($resultArray, $iterator);
-    }
-
-    public function getTestFilterData()
-    {
-        $inner = new MockFileListIterator();
-
-        //PATH:   A/B/C/abc.dat
-        $inner[] = new MockSplFileInfo(array(
-            'name'              => 'abc.dat',
-            'relativePathname'  => 'A'.DIRECTORY_SEPARATOR.'B'.DIRECTORY_SEPARATOR.'C'.DIRECTORY_SEPARATOR.'abc.dat',
-        ));
-
-        //PATH:   A/B/ab.dat
-        $inner[] = new MockSplFileInfo(array(
-            'name'              => 'ab.dat',
-            'relativePathname'  => 'A'.DIRECTORY_SEPARATOR.'B'.DIRECTORY_SEPARATOR.'ab.dat',
-        ));
-
-        //PATH:   A/a.dat
-        $inner[] = new MockSplFileInfo(array(
-            'name'              => 'a.dat',
-            'relativePathname'  => 'A'.DIRECTORY_SEPARATOR.'a.dat',
-        ));
-
-        //PATH:   copy/A/B/C/abc.dat.copy
-        $inner[] = new MockSplFileInfo(array(
-            'name'              => 'abc.dat.copy',
-            'relativePathname'  => 'copy'.DIRECTORY_SEPARATOR.'A'.DIRECTORY_SEPARATOR.'B'.DIRECTORY_SEPARATOR.'C'.DIRECTORY_SEPARATOR.'abc.dat',
-        ));
-
-        //PATH:   copy/A/B/ab.dat.copy
-        $inner[] = new MockSplFileInfo(array(
-            'name'              => 'ab.dat.copy',
-            'relativePathname'  => 'copy'.DIRECTORY_SEPARATOR.'A'.DIRECTORY_SEPARATOR.'B'.DIRECTORY_SEPARATOR.'ab.dat',
-        ));
-
-        //PATH:   copy/A/a.dat.copy
-        $inner[] = new MockSplFileInfo(array(
-            'name'              => 'a.dat.copy',
-            'relativePathname'  => 'copy'.DIRECTORY_SEPARATOR.'A'.DIRECTORY_SEPARATOR.'a.dat',
-        ));
-
-        return array(
-            array($inner, array('/^A/'),       array(), array('abc.dat', 'ab.dat', 'a.dat')),
-            array($inner, array('/^A\/B/'),    array(), array('abc.dat', 'ab.dat')),
-            array($inner, array('/^A\/B\/C/'), array(), array('abc.dat')),
-            array($inner, array('/A\/B\/C/'),  array(), array('abc.dat', 'abc.dat.copy')),
-
-            array($inner, array('A'),      array(), array('abc.dat', 'ab.dat', 'a.dat', 'abc.dat.copy', 'ab.dat.copy', 'a.dat.copy')),
-            array($inner, array('A/B'),    array(), array('abc.dat', 'ab.dat', 'abc.dat.copy', 'ab.dat.copy')),
-            array($inner, array('A/B/C'),  array(), array('abc.dat', 'abc.dat.copy')),
-
-            array($inner, array('copy/A'),      array(), array('abc.dat.copy', 'ab.dat.copy', 'a.dat.copy')),
-            array($inner, array('copy/A/B'),    array(), array('abc.dat.copy', 'ab.dat.copy')),
-            array($inner, array('copy/A/B/C'),  array(), array('abc.dat.copy')),
-
-        );
-    }
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+5WQJovOKA1KRwOOeHTrMJoaYfdQysUC=

@@ -1,64 +1,31 @@
-<?php
-/**
- * Generic_Sniffs_PHP_ClosingPHPTagSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Stefano Kowalke <blueduck@gmx.net>
- * @copyright 2010 Stefano Kowalke
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Checks that open PHP tags are paired with closing tags.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Stefano Kowalke <blueduck@gmx.net>
- * @copyright 2010 Stefano Kowalke
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class Generic_Sniffs_PHP_ClosingPHPTagSniff implements PHP_CodeSniffer_Sniff
-{
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        return array(T_OPEN_TAG);
-
-    }//end register()
-
-
-    /**
-     * Processes this sniff, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token in
-     *                                        the stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $closeTag = $phpcsFile->findNext(T_CLOSE_TAG, $stackPtr);
-        if ($closeTag === false) {
-            $error = 'The PHP open tag does not have a corresponding PHP close tag';
-            $phpcsFile->addError($error, $stackPtr, 'NotFound');
-        }
-
-    }//end process()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+StIHESMPBk+gfj2gJ5hnh8cNdua=

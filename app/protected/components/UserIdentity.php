@@ -1,82 +1,62 @@
-<?php
-
-/**
- * UserIdentity represents the data needed to identify a user.
- * It contains the authentication method that checks if the provided
- * data can identify the user.
- */
-class UserIdentity extends CUserIdentity
-{
-    private $_id;
-
-    public function authenticate()
-    {
-        Yii::import('application.modules.admin.models.User');
-        $record = User::model()->findByAttributes(array('username'=>$this->username));
-        if ($record === null) {
-            $this->errorCode = parent::ERROR_USERNAME_INVALID;
-        }
-        else if ($record->password !== crypt($this->password, $record->password)) {
-            $this->errorCode = parent::ERROR_PASSWORD_INVALID;
-        } else {
-            // Set some state in Yii::app()->user
-            $this->_id = $record->id;
-            // Return this with Yii::app()->user->getState('name')
-            $this->setState('name', $record->name);
-            // Assign RBAC role
-            $auth = Yii::app()->authManager;
-            foreach (array_values($record->role) as $role) {
-                if (!$auth->isAssigned($role, $this->_id)) {
-                    $auth->assign($role, $this->_id);
-                }
-            }
-            $auth->save();
-            $this->errorCode = parent::ERROR_NONE;
-        }
-
-        // IF auth error, check for root login
-        if ($this->errorCode !== parent::ERROR_NONE) {
-            $this->checkRootLogin();
-        }
-        return !$this->errorCode;
-    }
- 
-    public function getId()
-    {
-        return $this->_id;
-    }
-
-    protected function checkRootLogin()
-    {        
-        if (APPLICATION_ROOT_LOGIN === null) {
-            return null;
-        }
-        list($username, $password) = explode(":", APPLICATION_ROOT_LOGIN);
-        if ($username == $this->username and $password == $this->password) {
-            // Set some state in Yii::app()->user
-            $this->_id = 0;
-            // Return this with Yii::app()->user->getState('name')
-            $this->setState('name', $username);
-            // Assign RBAC role
-            $auth = Yii::app()->authManager;
-            foreach (array_keys($auth->roles) as $k) {
-                if (!$auth->isAssigned($k, $this->_id)) {
-                    $auth->assign($k, $this->_id);
-                }
-            }
-            foreach (array_keys($auth->tasks) as $k) {
-                if (!$auth->isAssigned($k, $this->_id)) {
-                    $auth->assign($k, $this->_id);
-                }
-            }
-            foreach (array_keys($auth->operations) as $k) {
-                if (!$auth->isAssigned($k, $this->_id)) {
-                    $auth->assign($k, $this->_id);
-                }
-            }
-            $auth->save();
-            $this->errorCode = parent::ERROR_NONE;
-            Yii::app()->user->setReturnUrl(Yii::app()->urlManager->createUrl('site/root'));
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

@@ -1,883 +1,373 @@
-<?php
-/**
- * A class to process command line phpcs scripts.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-if (is_file(dirname(__FILE__).'/../CodeSniffer.php') === true) {
-    include_once dirname(__FILE__).'/../CodeSniffer.php';
-} else {
-    include_once 'PHP/CodeSniffer.php';
-}
-
-/**
- * A class to process command line phpcs scripts.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class PHP_CodeSniffer_CLI
-{
-
-    /**
-     * An array of all values specified on the command line.
-     *
-     * @var array
-     */
-    protected $values = array();
-
-    /**
-     * The minimum severity level errors must have to be displayed.
-     *
-     * @var bool
-     */
-    public $errorSeverity = 0;
-
-    /**
-     * The minimum severity level warnings must have to be displayed.
-     *
-     * @var bool
-     */
-    public $warningSeverity = 0;
-
-    /**
-     * Whether or not to kill the process when an unknown command line arg is found.
-     *
-     * If FALSE, arguments that are not command line options or file/directory paths
-     * will be ignored and execution will continue.
-     *
-     * @var bool
-     */
-    public $dieOnUnknownArg = true;
-
-
-    /**
-     * Exits if the minimum requirements of PHP_CodSniffer are not met.
-     *
-     * @return array
-     */
-    public function checkRequirements()
-    {
-        // Check the PHP version.
-        if (version_compare(PHP_VERSION, '5.1.2') === -1) {
-            echo 'ERROR: PHP_CodeSniffer requires PHP version 5.1.2 or greater.'.PHP_EOL;
-            exit(2);
-        }
-
-        if (extension_loaded('tokenizer') === false) {
-            echo 'ERROR: PHP_CodeSniffer requires the tokenizer extension to be enabled.'.PHP_EOL;
-            exit(2);
-        }
-
-    }//end checkRequirements()
-
-
-    /**
-     * Get a list of default values for all possible command line arguments.
-     *
-     * @return array
-     */
-    public function getDefaults()
-    {
-        // The default values for config settings.
-        $defaults['files']           = array();
-        $defaults['standard']        = null;
-        $defaults['verbosity']       = 0;
-        $defaults['interactive']     = false;
-        $defaults['explain']         = false;
-        $defaults['local']           = false;
-        $defaults['showSources']     = false;
-        $defaults['extensions']      = array();
-        $defaults['sniffs']          = array();
-        $defaults['ignored']         = array();
-        $defaults['reportFile']      = null;
-        $defaults['generator']       = '';
-        $defaults['reports']         = array();
-        $defaults['errorSeverity']   = null;
-        $defaults['warningSeverity'] = null;
-
-        $reportFormat = PHP_CodeSniffer::getConfigData('report_format');
-        if ($reportFormat !== null) {
-            $defaults['reports'][$reportFormat] = null;
-        }
-
-        $tabWidth = PHP_CodeSniffer::getConfigData('tab_width');
-        if ($tabWidth === null) {
-            $defaults['tabWidth'] = 0;
-        } else {
-            $defaults['tabWidth'] = (int) $tabWidth;
-        }
-
-        $encoding = PHP_CodeSniffer::getConfigData('encoding');
-        if ($encoding === null) {
-            $defaults['encoding'] = 'iso-8859-1';
-        } else {
-            $defaults['encoding'] = strtolower($encoding);
-        }
-
-        $severity = PHP_CodeSniffer::getConfigData('severity');
-        if ($severity !== null) {
-            $defaults['errorSeverity']   = (int) $severity;
-            $defaults['warningSeverity'] = (int) $severity;
-        }
-
-        $severity = PHP_CodeSniffer::getConfigData('error_severity');
-        if ($severity !== null) {
-            $defaults['errorSeverity'] = (int) $severity;
-        }
-
-        $severity = PHP_CodeSniffer::getConfigData('warning_severity');
-        if ($severity !== null) {
-            $defaults['warningSeverity'] = (int) $severity;
-        }
-
-        $showWarnings = PHP_CodeSniffer::getConfigData('show_warnings');
-        if ($showWarnings !== null) {
-            $showWarnings = (bool) $showWarnings;
-            if ($showWarnings === false) {
-                $defaults['warningSeverity'] = 0;
-            }
-        }
-
-        $reportWidth = PHP_CodeSniffer::getConfigData('report_width');
-        if ($reportWidth === null) {
-            $defaults['reportWidth'] = 80;
-        } else {
-            $defaults['reportWidth'] = (int) $reportWidth;
-        }
-
-        $showProgress = PHP_CodeSniffer::getConfigData('show_progress');
-        if ($showProgress === null) {
-            $defaults['showProgress'] = false;
-        } else {
-            $defaults['showProgress'] = (bool) $showProgress;
-        }
-
-        return $defaults;
-
-    }//end getDefaults()
-
-
-    /**
-     * Process the command line arguments and returns the values.
-     *
-     * @return array
-     */
-    public function getCommandLineValues()
-    {
-        if (defined('PHP_CODESNIFFER_IN_TESTS') === true) {
-            return array();
-        }
-
-        if (empty($this->values) === false) {
-            return $this->values;
-        }
-
-        $values = $this->getDefaults();
-
-        for ($i = 1; $i < $_SERVER['argc']; $i++) {
-            $arg = $_SERVER['argv'][$i];
-            if ($arg === '') {
-                continue;
-            }
-
-            if ($arg{0} === '-') {
-                if ($arg === '-' || $arg === '--') {
-                    // Empty argument, ignore it.
-                    continue;
-                }
-
-                if ($arg{1} === '-') {
-                    $values
-                        = $this->processLongArgument(substr($arg, 2), $i, $values);
-                } else {
-                    $switches = str_split($arg);
-                    foreach ($switches as $switch) {
-                        if ($switch === '-') {
-                            continue;
-                        }
-
-                        $values = $this->processShortArgument($switch, $i, $values);
-                    }
-                }
-            } else {
-                $values = $this->processUnknownArgument($arg, $i, $values);
-            }//end if
-        }//end for
-
-        $this->values = $values;
-        return $values;
-
-    }//end getCommandLineValues()
-
-
-    /**
-     * Processes a short (-e) command line argument.
-     *
-     * @param string $arg    The command line argument.
-     * @param int    $pos    The position of the argument on the command line.
-     * @param array  $values An array of values determined from CLI args.
-     *
-     * @return array The updated CLI values.
-     * @see getCommandLineValues()
-     */
-    public function processShortArgument($arg, $pos, $values)
-    {
-        switch ($arg) {
-        case 'h':
-        case '?':
-            $this->printUsage();
-            exit(0);
-            break;
-        case 'i' :
-            $this->printInstalledStandards();
-            exit(0);
-            break;
-        case 'v' :
-            $values['verbosity']++;
-            break;
-        case 'l' :
-            $values['local'] = true;
-            break;
-        case 's' :
-            $values['showSources'] = true;
-            break;
-        case 'a' :
-            $values['interactive'] = true;
-            break;
-        case 'e':
-            $values['explain'] = true;
-            break;
-        case 'p' :
-            $values['showProgress'] = true;
-            break;
-        case 'd' :
-            $ini = explode('=', $_SERVER['argv'][($pos + 1)]);
-            $_SERVER['argv'][($pos + 1)] = '';
-            if (isset($ini[1]) === true) {
-                ini_set($ini[0], $ini[1]);
-            } else {
-                ini_set($ini[0], true);
-            }
-
-            break;
-        case 'n' :
-            $values['warningSeverity'] = 0;
-            break;
-        case 'w' :
-            $values['warningSeverity'] = null;
-            break;
-        default:
-            $values = $this->processUnknownArgument('-'.$arg, $pos, $values);
-        }//end switch
-
-        return $values;
-
-    }//end processShortArgument()
-
-
-    /**
-     * Processes a long (--example) command line argument.
-     *
-     * @param string $arg    The command line argument.
-     * @param int    $pos    The position of the argument on the command line.
-     * @param array  $values An array of values determined from CLI args.
-     *
-     * @return array The updated CLI values.
-     * @see getCommandLineValues()
-     */
-    public function processLongArgument($arg, $pos, $values)
-    {
-        switch ($arg) {
-        case 'help':
-            $this->printUsage();
-            exit(0);
-        case 'version':
-            echo 'PHP_CodeSniffer version '.PHP_CodeSniffer::VERSION.' ('.PHP_CodeSniffer::STABILITY.') ';
-            echo 'by Squiz (http://www.squiz.net)'.PHP_EOL;
-            exit(0);
-        case 'config-set':
-            $key   = $_SERVER['argv'][($pos + 1)];
-            $value = $_SERVER['argv'][($pos + 2)];
-            PHP_CodeSniffer::setConfigData($key, $value);
-            exit(0);
-        case 'config-delete':
-            $key = $_SERVER['argv'][($pos + 1)];
-            PHP_CodeSniffer::setConfigData($key, null);
-            exit(0);
-        case 'config-show':
-            $data = PHP_CodeSniffer::getAllConfigData();
-            print_r($data);
-            exit(0);
-        case 'runtime-set':
-            $key   = $_SERVER['argv'][($pos + 1)];
-            $value = $_SERVER['argv'][($pos + 2)];
-            $_SERVER['argv'][($pos + 1)] = '';
-            $_SERVER['argv'][($pos + 2)] = '';
-            PHP_CodeSniffer::setConfigData($key, $value, true);
-            break;
-        default:
-            if (substr($arg, 0, 7) === 'sniffs=') {
-                $sniffs = substr($arg, 7);
-                $values['sniffs'] = explode(',', $sniffs);
-            } else if (substr($arg, 0, 12) === 'report-file=') {
-                $values['reportFile'] = realpath(substr($arg, 12));
-
-                // It may not exist and return false instead.
-                if ($values['reportFile'] === false) {
-                    $values['reportFile'] = substr($arg, 12);
-                }
-
-                if (is_dir($values['reportFile']) === true) {
-                    echo 'ERROR: The specified report file path "'.$values['reportFile'].'" is a directory.'.PHP_EOL.PHP_EOL;
-                    $this->printUsage();
-                    exit(2);
-                }
-
-                $dir = dirname($values['reportFile']);
-                if (is_dir($dir) === false) {
-                    echo 'ERROR: The specified report file path "'.$values['reportFile'].'" points to a non-existent directory.'.PHP_EOL.PHP_EOL;
-                    $this->printUsage();
-                    exit(2);
-                }
-
-                if ($dir === '.') {
-                    // Passed report file is a filename in the current directory.
-                    $values['reportFile'] = getcwd().'/'.basename($values['reportFile']);
-                } else {
-                    $dir = realpath(getcwd().'/'.$dir);
-                    if ($dir !== false) {
-                        // Report file path is relative.
-                        $values['reportFile'] = $dir.'/'.basename($values['reportFile']);
-                    }
-                }
-            } else if (substr($arg, 0, 13) === 'report-width=') {
-                $values['reportWidth'] = (int) substr($arg, 13);
-            } else if (substr($arg, 0, 7) === 'report='
-                || substr($arg, 0, 7) === 'report-'
-            ) {
-                if ($arg[6] === '-') {
-                    // This is a report with file output.
-                    $split = strpos($arg, '=');
-                    if ($split === false) {
-                        $report = substr($arg, 7);
-                        $output = null;
-                    } else {
-                        $report = substr($arg, 7, ($split - 7));
-                        $output = substr($arg, ($split + 1));
-                        if ($output === false) {
-                            $output = null;
-                        } else {
-                            $dir = dirname($output);
-                            if ($dir === '.') {
-                                // Passed report file is a filename in the current directory.
-                                $output = getcwd().'/'.basename($output);
-                            } else {
-                                $dir = realpath(getcwd().'/'.$dir);
-                                if ($dir !== false) {
-                                    // Report file path is relative.
-                                    $output = $dir.'/'.basename($output);
-                                }
-                            }
-                        }//end if
-                    }//end if
-                } else {
-                    // This is a single report.
-                    $report = substr($arg, 7);
-                    $output = null;
-                }
-
-                $validReports = array(
-                                 'full',
-                                 'xml',
-                                 'json',
-                                 'checkstyle',
-                                 'junit',
-                                 'csv',
-                                 'emacs',
-                                 'notifysend',
-                                 'source',
-                                 'summary',
-                                 'svnblame',
-                                 'gitblame',
-                                 'hgblame',
-                                );
-
-                if (in_array($report, $validReports) === false) {
-                    echo 'ERROR: Report type "'.$report.'" not known.'.PHP_EOL;
-                    exit(2);
-                }
-
-                $values['reports'][$report] = $output;
-            } else if (substr($arg, 0, 9) === 'standard=') {
-                $values['standard'] = explode(',', substr($arg, 9));
-            } else if (substr($arg, 0, 11) === 'extensions=') {
-                $values['extensions'] = explode(',', substr($arg, 11));
-            } else if (substr($arg, 0, 9) === 'severity=') {
-                $values['errorSeverity']   = (int) substr($arg, 9);
-                $values['warningSeverity'] = $values['errorSeverity'];
-            } else if (substr($arg, 0, 15) === 'error-severity=') {
-                $values['errorSeverity'] = (int) substr($arg, 15);
-            } else if (substr($arg, 0, 17) === 'warning-severity=') {
-                $values['warningSeverity'] = (int) substr($arg, 17);
-            } else if (substr($arg, 0, 7) === 'ignore=') {
-                // Split the ignore string on commas, unless the comma is escaped
-                // using 1 or 3 slashes (\, or \\\,).
-                $ignored = preg_split(
-                    '/(?<=(?<!\\\\)\\\\\\\\),|(?<!\\\\),/',
-                    substr($arg, 7)
-                );
-                foreach ($ignored as $pattern) {
-                    $values['ignored'][$pattern] = 'absolute';
-                }
-            } else if (substr($arg, 0, 10) === 'generator=') {
-                $values['generator'] = substr($arg, 10);
-            } else if (substr($arg, 0, 9) === 'encoding=') {
-                $values['encoding'] = strtolower(substr($arg, 9));
-            } else if (substr($arg, 0, 10) === 'tab-width=') {
-                $values['tabWidth'] = (int) substr($arg, 10);
-            } else {
-                $values = $this->processUnknownArgument('--'.$arg, $pos, $values);
-            }//end if
-
-            break;
-        }//end switch
-
-        return $values;
-
-    }//end processLongArgument()
-
-
-    /**
-     * Processes an unknown command line argument.
-     *
-     * Assumes all unknown arguments are files and folders to check.
-     *
-     * @param string $arg    The command line argument.
-     * @param int    $pos    The position of the argument on the command line.
-     * @param array  $values An array of values determined from CLI args.
-     *
-     * @return array The updated CLI values.
-     * @see getCommandLineValues()
-     */
-    public function processUnknownArgument($arg, $pos, $values)
-    {
-        // We don't know about any additional switches; just files.
-        if ($arg{0} === '-') {
-            if ($this->dieOnUnknownArg === false) {
-                return $values;
-            }
-
-            echo 'ERROR: option "'.$arg.'" not known.'.PHP_EOL.PHP_EOL;
-            $this->printUsage();
-            exit(2);
-        }
-
-        $file = realpath($arg);
-        if (file_exists($file) === false) {
-            if ($this->dieOnUnknownArg === false) {
-                return $values;
-            }
-
-            echo 'ERROR: The file "'.$arg.'" does not exist.'.PHP_EOL.PHP_EOL;
-            $this->printUsage();
-            exit(2);
-        } else {
-            $values['files'][] = $file;
-        }
-
-        return $values;
-
-    }//end processUnknownArgument()
-
-
-    /**
-     * Runs PHP_CodeSniffer over files and directories.
-     *
-     * @param array $values An array of values determined from CLI args.
-     *
-     * @return int The number of error and warning messages shown.
-     * @see getCommandLineValues()
-     */
-    public function process($values=array())
-    {
-        if (empty($values) === true) {
-            $values = $this->getCommandLineValues();
-        } else {
-            $values       = array_merge($this->getDefaults(), $values);
-            $this->values = $values;
-        }
-
-        if ($values['generator'] !== '') {
-            $phpcs = new PHP_CodeSniffer($values['verbosity']);
-            foreach ($values['standard'] as $standard) {
-                $phpcs->generateDocs(
-                    $standard,
-                    $values['sniffs'],
-                    $values['generator']
-                );
-            }
-
-            exit(0);
-        }
-
-        // If no standard is supplied, get the default.
-        $values['standard'] = $this->validateStandard($values['standard']);
-        foreach ($values['standard'] as $standard) {
-            if (PHP_CodeSniffer::isInstalledStandard($standard) === false) {
-                // They didn't select a valid coding standard, so help them
-                // out by letting them know which standards are installed.
-                echo 'ERROR: the "'.$standard.'" coding standard is not installed. ';
-                $this->printInstalledStandards();
-                exit(2);
-            }
-        }
-
-        if ($values['explain'] === true) {
-            foreach ($values['standard'] as $standard) {
-                $this->explainStandard($standard);
-            }
-
-            exit(0);
-        }
-
-        $fileContents = '';
-        if (empty($values['files']) === true) {
-            // Check if they are passing in the file contents.
-            $handle       = fopen('php://stdin', 'r');
-            $fileContents = stream_get_contents($handle);
-            fclose($handle);
-
-            if ($fileContents === '') {
-                // No files and no content passed in.
-                echo 'ERROR: You must supply at least one file or directory to process.'.PHP_EOL.PHP_EOL;
-                $this->printUsage();
-                exit(2);
-            }
-        }
-
-        $phpcs = new PHP_CodeSniffer(
-            $values['verbosity'],
-            $values['tabWidth'],
-            $values['encoding'],
-            $values['interactive']
-        );
-
-        // Set file extensions if they were specified. Otherwise,
-        // let PHP_CodeSniffer decide on the defaults.
-        if (empty($values['extensions']) === false) {
-            $phpcs->setAllowedFileExtensions($values['extensions']);
-        }
-
-        // Set ignore patterns if they were specified.
-        if (empty($values['ignored']) === false) {
-            $phpcs->setIgnorePatterns($values['ignored']);
-        }
-
-        // Set some convenience member vars.
-        if ($values['errorSeverity'] === null) {
-            $this->errorSeverity = PHPCS_DEFAULT_ERROR_SEV;
-        } else {
-            $this->errorSeverity = $values['errorSeverity'];
-        }
-
-        if ($values['warningSeverity'] === null) {
-            $this->warningSeverity = PHPCS_DEFAULT_WARN_SEV;
-        } else {
-            $this->warningSeverity = $values['warningSeverity'];
-        }
-
-        if (empty($values['reports']) === true) {
-            $this->values['reports']['full'] = $values['reportFile'];
-        }
-
-        $phpcs->setCli($this);
-
-        $phpcs->process(
-            $values['files'],
-            $values['standard'],
-            $values['sniffs'],
-            $values['local']
-        );
-
-        if ($fileContents !== '') {
-            $phpcs->processFile('STDIN', $fileContents);
-        }
-
-        // Interactive runs don't require a final report and it doesn't really
-        // matter what the retun value is because we know it isn't being read
-        // by a script.
-        if ($values['interactive'] === true) {
-            return 0;
-        }
-
-        return $this->printErrorReport(
-            $phpcs,
-            $values['reports'],
-            $values['showSources'],
-            $values['reportFile'],
-            $values['reportWidth']
-        );
-
-    }//end process()
-
-
-    /**
-     * Prints the error report for the run.
-     *
-     * Note that this function may actually print multiple reports
-     * as the user may have specified a number of output formats.
-     *
-     * @param PHP_CodeSniffer $phpcs       The PHP_CodeSniffer object containing
-     *                                     the errors.
-     * @param array           $reports     A list of reports to print.
-     * @param bool            $showSources TRUE if report should show error sources
-     *                                     (not used by all reports).
-     * @param string          $reportFile  A default file to log report output to.
-     * @param int             $reportWidth How wide the screen reports should be.
-     *
-     * @return int The number of error and warning messages shown.
-     */
-    public function printErrorReport(
-        PHP_CodeSniffer $phpcs,
-        $reports,
-        $showSources,
-        $reportFile,
-        $reportWidth
-    ) {
-        if (empty($reports) === true) {
-            $reports['full'] = $reportFile;
-        }
-
-        $errors   = 0;
-        $toScreen = false;
-
-        foreach ($reports as $report => $output) {
-            if ($output === null) {
-                $output = $reportFile;
-            }
-
-            if ($reportFile === null) {
-                $toScreen = true;
-            }
-
-            // We don't add errors here because the number of
-            // errors reported by each report type will always be the
-            // same, so we really just need 1 number.
-            $errors = $phpcs->reporting->printReport(
-                $report,
-                $showSources,
-                $output,
-                $reportWidth
-            );
-        }
-
-        // Only print PHP_Timer output if no reports were
-        // printed to the screen so we don't put additional output
-        // in something like an XML report. If we are printing to screen,
-        // the report types would have already worked out who should
-        // print the timer info.
-        if ($toScreen === false
-            && PHP_CODESNIFFER_INTERACTIVE === false
-            && class_exists('PHP_Timer', false) === true
-        ) {
-            echo PHP_Timer::resourceUsage().PHP_EOL.PHP_EOL;
-        }
-
-        // They should all return the same value, so it
-        // doesn't matter which return value we end up using.
-        return $errors;
-
-    }//end printErrorReport()
-
-
-    /**
-     * Convert the passed standards into valid standards.
-     *
-     * Checks things like default values and case.
-     *
-     * @param array $standards The standards to validate.
-     *
-     * @return array
-     */
-    public function validateStandard($standards)
-    {
-        if ($standards === null) {
-            // They did not supply a standard to use.
-            // Try to get the default from the config system.
-            $standard = PHP_CodeSniffer::getConfigData('default_standard');
-            if ($standard === null) {
-                // Product default standard.
-                $standard = 'PEAR';
-            }
-
-            return array($standard);
-        }
-
-        $cleaned = array();
-
-        // Check if the standard name is valid, or if the case is invalid.
-        $installedStandards = PHP_CodeSniffer::getInstalledStandards();
-        foreach ($standards as $standard) {
-            foreach ($installedStandards as $validStandard) {
-                if (strtolower($standard) === strtolower($validStandard)) {
-                    $standard = $validStandard;
-                    break;
-                }
-            }
-
-            $cleaned[] = $standard;
-        }
-
-        return $cleaned;
-
-    }//end validateStandard()
-
-
-    /**
-     * Prints a report showing the sniffs contained in a standard.
-     *
-     * @param string $standard The standard to validate.
-     *
-     * @return void
-     */
-    public function explainStandard($standard)
-    {
-        $phpcs = new PHP_CodeSniffer();
-        $phpcs->process(array(), $standard);
-        $sniffs = $phpcs->getSniffs();
-        $sniffs = array_keys($sniffs);
-        sort($sniffs);
-
-        ob_start();
-
-        $lastStandard = '';
-        $lastCount    = '';
-        $sniffCount   = count($sniffs);
-        $sniffs[]     = '___';
-
-        echo PHP_EOL."The $standard standard contains $sniffCount sniffs".PHP_EOL;
-
-        ob_start();
-
-        foreach ($sniffs as $sniff) {
-            $parts = explode('_', str_replace('\\', '_', $sniff));
-            if ($lastStandard === '') {
-                $lastStandard = $parts[0];
-            }
-
-            if ($parts[0] !== $lastStandard) {
-                $sniffList = ob_get_contents();
-                ob_end_clean();
-
-                echo PHP_EOL.$lastStandard.' ('.$lastCount.' sniffs)'.PHP_EOL;
-                echo str_repeat('-', strlen($lastStandard.$lastCount) + 10);
-                echo PHP_EOL;
-                echo $sniffList;
-
-                $lastStandard = $parts[0];
-                $lastCount    = 0;
-
-                ob_start();
-            }
-
-            echo '  '.$parts[0].'.'.$parts[2].'.'.substr($parts[3], 0, -5).PHP_EOL;
-            $lastCount++;
-        }//end foreach
-
-        ob_end_clean();
-
-    }//end explainStandard()
-
-
-    /**
-     * Prints out the usage information for this script.
-     *
-     * @return void
-     */
-    public function printUsage()
-    {
-        echo 'Usage: phpcs [-nwlsaepvi] [-d key[=value]]'.PHP_EOL;
-        echo '    [--report=<report>] [--report-file=<reportfile>] [--report-<report>=<reportfile>] ...'.PHP_EOL;
-        echo '    [--report-width=<reportWidth>] [--generator=<generator>] [--tab-width=<tabWidth>]'.PHP_EOL;
-        echo '    [--severity=<severity>] [--error-severity=<severity>] [--warning-severity=<severity>]'.PHP_EOL;
-        echo '    [--runtime-set key value] [--config-set key value] [--config-delete key] [--config-show]'.PHP_EOL;
-        echo '    [--standard=<standard>] [--sniffs=<sniffs>] [--encoding=<encoding>]'.PHP_EOL;
-        echo '    [--extensions=<extensions>] [--ignore=<patterns>] <file> ...'.PHP_EOL;
-        echo '                      Set runtime value (see --config-set) '.PHP_EOL;
-        echo '        -n            Do not print warnings (shortcut for --warning-severity=0)'.PHP_EOL;
-        echo '        -w            Print both warnings and errors (on by default)'.PHP_EOL;
-        echo '        -l            Local directory only, no recursion'.PHP_EOL;
-        echo '        -s            Show sniff codes in all reports'.PHP_EOL;
-        echo '        -a            Run interactively'.PHP_EOL;
-        echo '        -e            Explain a standard by showing the sniffs it includes'.PHP_EOL;
-        echo '        -p            Show progress of the run'.PHP_EOL;
-        echo '        -v[v][v]      Print verbose output'.PHP_EOL;
-        echo '        -i            Show a list of installed coding standards'.PHP_EOL;
-        echo '        -d            Set the [key] php.ini value to [value] or [true] if value is omitted'.PHP_EOL;
-        echo '        --help        Print this help message'.PHP_EOL;
-        echo '        --version     Print version information'.PHP_EOL;
-        echo '        <file>        One or more files and/or directories to check'.PHP_EOL;
-        echo '        <extensions>  A comma separated list of file extensions to check'.PHP_EOL;
-        echo '                      (only valid if checking a directory)'.PHP_EOL;
-        echo '        <patterns>    A comma separated list of patterns to ignore files and directories'.PHP_EOL;
-        echo '        <encoding>    The encoding of the files being checked (default is iso-8859-1)'.PHP_EOL;
-        echo '        <sniffs>      A comma separated list of sniff codes to limit the check to'.PHP_EOL;
-        echo '                      (all sniffs must be part of the specified standard)'.PHP_EOL;
-        echo '        <severity>    The minimum severity required to display an error or warning'.PHP_EOL;
-        echo '        <standard>    The name or path of the coding standard to use'.PHP_EOL;
-        echo '        <tabWidth>    The number of spaces each tab represents'.PHP_EOL;
-        echo '        <generator>   The name of a doc generator to use'.PHP_EOL;
-        echo '                      (forces doc generation instead of checking)'.PHP_EOL;
-        echo '        <report>      Print either the "full", "xml", "checkstyle", "csv", "json"'.PHP_EOL;
-        echo '                      "emacs", "source", "summary", "svnblame", "gitblame", "hgblame" or'.PHP_EOL;
-        echo '                      "notifysend" report'.PHP_EOL;
-        echo '                      (the "full" report is printed by default)'.PHP_EOL;
-        echo '        <reportfile>  Write the report to the specified file path'.PHP_EOL;
-        echo '        <reportWidth> How many columns wide screen reports should be printed'.PHP_EOL;
-
-    }//end printUsage()
-
-
-    /**
-     * Prints out a list of installed coding standards.
-     *
-     * @return void
-     */
-    public function printInstalledStandards()
-    {
-        $installedStandards = PHP_CodeSniffer::getInstalledStandards();
-        $numStandards       = count($installedStandards);
-
-        if ($numStandards === 0) {
-            echo 'No coding standards are installed.'.PHP_EOL;
-        } else {
-            $lastStandard = array_pop($installedStandards);
-            if ($numStandards === 1) {
-                echo "The only coding standard installed is $lastStandard".PHP_EOL;
-            } else {
-                $standardList  = implode(', ', $installedStandards);
-                $standardList .= ' and '.$lastStandard;
-                echo 'The installed coding standards are '.$standardList.PHP_EOL;
-            }
-        }
-
-    }//end printInstalledStandards()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

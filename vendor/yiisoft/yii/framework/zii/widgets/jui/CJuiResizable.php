@@ -1,78 +1,41 @@
-<?php
-/**
- * CJuiResizable class file.
- *
- * @author Sebastian Thierer <sebathi@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-Yii::import('zii.widgets.jui.CJuiWidget');
-
-/**
- * CJuiResizable displays a resizable widget.
- *
- * CJuiResizable encapsulates the {@link http://jqueryui.com/resizable/ JUI Resizable}
- * plugin.
- *
- * To use this widget, you may insert the following code in a view:
- * <pre>
- * $this->beginWidget('zii.widgets.jui.CJuiResizable',array(
- *     // additional javascript options for the resizable plugin
- *     'options'=>array(
- *         'minHeight'=>'150',
- *     ),
- * ));
- *     echo 'Your Resizable content here';
- *
- * $this->endWidget();
- *
- * </pre>
- *
- * By configuring the {@link options} property, you may specify the options
- * that need to be passed to the JUI Resizable plugin. Please refer to
- * the {@link http://api.jqueryui.com/resizable/ JUI Resizable API} documentation
- * for possible options (name-value pairs) and
- * {@link http://jqueryui.com/resizable/ JUI Resizable page} for general
- * description and demo.
- *
- * @author Sebastian Thierer <sebathi@gmail.com>
- * @package zii.widgets.jui
- * @since 1.1
- */
-class CJuiResizable extends CJuiWidget
-{
-	/**
-	 * @var string the name of the Resizable element. Defaults to 'div'.
-	 */
-	public $tagName='div';
-
-	/**
-	 * Renders the open tag of the resizable element.
-	 * This method also registers the necessary javascript code.
-	 */
-	public function init()
-	{
-		parent::init();
-
-		$id=$this->getId();
-		if(isset($this->htmlOptions['id']))
-			$id=$this->htmlOptions['id'];
-		else
-			$this->htmlOptions['id']=$id;
-
-		$options=CJavaScript::encode($this->options);
-		Yii::app()->getClientScript()->registerScript(__CLASS__.'#'.$id,"jQuery('#{$id}').resizable($options);");
-
-		echo CHtml::openTag($this->tagName,$this->htmlOptions)."\n";
-	}
-
-	/**
-	 * Renders the close tag of the resizable element.
-	 */
-	public function run()
-	{
-		echo CHtml::closeTag($this->tagName);
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+VUA/gAne6W==

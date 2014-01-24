@@ -1,725 +1,142 @@
-<?php
-/**
- * PHPExcel
- *
- * Copyright (c) 2006 - 2012 PHPExcel
- *
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation; either
- * version 2.1 of the License, or (at your option) any later version.
- *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
- *
- * @category	PHPExcel
- * @package		PHPExcel_Calculation
- * @copyright	Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- * @license		http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
- * @version		1.7.8, 2012-10-12
- */
-
-
-/** PHPExcel root directory */
-if (!defined('PHPEXCEL_ROOT')) {
-	/**
-	 * @ignore
-	 */
-	define('PHPEXCEL_ROOT', dirname(__FILE__) . '/../../');
-	require(PHPEXCEL_ROOT . 'PHPExcel/Autoloader.php');
-}
-
-
-/**
- * PHPExcel_Calculation_Database
- *
- * @category	PHPExcel
- * @package		PHPExcel_Calculation
- * @copyright	Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- */
-class PHPExcel_Calculation_Database {
-
-
-	/**
-	 * __fieldExtract
-	 *
-	 * Extracts the column ID to use for the data field.
-	 *
-	 * @access	private
-	 * @param	mixed[]		$database		The range of cells that makes up the list or database.
-	 *										A database is a list of related data in which rows of related
-	 *										information are records, and columns of data are fields. The
-	 *										first row of the list contains labels for each column.
-	 * @param	mixed		$field			Indicates which column is used in the function. Enter the
-	 *										column label enclosed between double quotation marks, such as
-	 *										"Age" or "Yield," or a number (without quotation marks) that
-	 *										represents the position of the column within the list: 1 for
-	 *										the first column, 2 for the second column, and so on.
-	 * @return	string|NULL
-	 *
-	 */
-	private static function __fieldExtract($database,$field) {
-		$field = strtoupper(PHPExcel_Calculation_Functions::flattenSingleValue($field));
-		$fieldNames = array_map('strtoupper',array_shift($database));
-
-		if (is_numeric($field)) {
-			$keys = array_keys($fieldNames);
-			return $keys[$field-1];
-		}
-		$key = array_search($field,$fieldNames);
-		return ($key) ? $key : NULL;
-	}
-
-	/**
-	 * __filter
-	 *
-	 * Parses the selection criteria, extracts the database rows that match those criteria, and
-	 * returns that subset of rows.
-	 *
-	 * @access	private
-	 * @param	mixed[]		$database		The range of cells that makes up the list or database.
-	 *										A database is a list of related data in which rows of related
-	 *										information are records, and columns of data are fields. The
-	 *										first row of the list contains labels for each column.
-	 * @param	mixed[]		$criteria		The range of cells that contains the conditions you specify.
-	 *										You can use any range for the criteria argument, as long as it
-	 *										includes at least one column label and at least one cell below
-	 *										the column label in which you specify a condition for the
-	 *										column.
-	 * @return	array of mixed
-	 *
-	 */
-	private static function __filter($database,$criteria) {
-		$fieldNames = array_shift($database);
-		$criteriaNames = array_shift($criteria);
-
-		//	Convert the criteria into a set of AND/OR conditions with [:placeholders]
-		$testConditions = $testValues = array();
-		$testConditionsCount = 0;
-		foreach($criteriaNames as $key => $criteriaName) {
-			$testCondition = array();
-			$testConditionCount = 0;
-			foreach($criteria as $row => $criterion) {
-				if ($criterion[$key] > '') {
-					$testCondition[] = '[:'.$criteriaName.']'.PHPExcel_Calculation_Functions::_ifCondition($criterion[$key]);
-					$testConditionCount++;
-				}
-			}
-			if ($testConditionCount > 1) {
-				$testConditions[] = 'OR('.implode(',',$testCondition).')';
-				$testConditionsCount++;
-			} elseif($testConditionCount == 1) {
-				$testConditions[] = $testCondition[0];
-				$testConditionsCount++;
-			}
-		}
-
-		if ($testConditionsCount > 1) {
-			$testConditionSet = 'AND('.implode(',',$testConditions).')';
-		} elseif($testConditionsCount == 1) {
-			$testConditionSet = $testConditions[0];
-		}
-
-		//	Loop through each row of the database
-		foreach($database as $dataRow => $dataValues) {
-			//	Substitute actual values from the database row for our [:placeholders]
-			$testConditionList = $testConditionSet;
-			foreach($criteriaNames as $key => $criteriaName) {
-				$k = array_search($criteriaName,$fieldNames);
-				if (isset($dataValues[$k])) {
-					$dataValue = $dataValues[$k];
-					$dataValue = (is_string($dataValue)) ? PHPExcel_Calculation::_wrapResult(strtoupper($dataValue)) : $dataValue;
-					$testConditionList = str_replace('[:'.$criteriaName.']',$dataValue,$testConditionList);
-				}
-			}
-			//	evaluate the criteria against the row data
-			$result = PHPExcel_Calculation::getInstance()->_calculateFormulaValue('='.$testConditionList);
-			//	If the row failed to meet the criteria, remove it from the database
-			if (!$result) {
-				unset($database[$dataRow]);
-			}
-		}
-
-		return $database;
-	}
-
-
-	/**
-	 * DAVERAGE
-	 *
-	 * Averages the values in a column of a list or database that match conditions you specify.
-	 *
-	 * Excel Function:
-	 *		DAVERAGE(database,field,criteria)
-	 *
-	 * @access	public
-	 * @category Database Functions
-	 * @param	mixed[]			$database	The range of cells that makes up the list or database.
-	 *										A database is a list of related data in which rows of related
-	 *										information are records, and columns of data are fields. The
-	 *										first row of the list contains labels for each column.
-	 * @param	string|integer	$field		Indicates which column is used in the function. Enter the
-	 *										column label enclosed between double quotation marks, such as
-	 *										"Age" or "Yield," or a number (without quotation marks) that
-	 *										represents the position of the column within the list: 1 for
-	 *										the first column, 2 for the second column, and so on.
-	 * @param	mixed[]			$criteria	The range of cells that contains the conditions you specify.
-	 *										You can use any range for the criteria argument, as long as it
-	 *										includes at least one column label and at least one cell below
-	 *										the column label in which you specify a condition for the
-	 *										column.
-	 * @return	float
-	 *
-	 */
-	public static function DAVERAGE($database,$field,$criteria) {
-		$field = self::__fieldExtract($database,$field);
-		if (is_null($field)) {
-			return NULL;
-		}
-		//	reduce the database to a set of rows that match all the criteria
-		$database = self::__filter($database,$criteria);
-		//	extract an array of values for the requested column
-		$colData = array();
-		foreach($database as $row) {
-			$colData[] = $row[$field];
-		}
-
-		// Return
-		return PHPExcel_Calculation_Statistical::AVERAGE($colData);
-	}	//	function DAVERAGE()
-
-
-	/**
-	 * DCOUNT
-	 *
-	 * Counts the cells that contain numbers in a column of a list or database that match conditions
-	 * that you specify.
-	 *
-	 * Excel Function:
-	 *		DCOUNT(database,[field],criteria)
-	 *
-	 * Excel Function:
-	 *		DAVERAGE(database,field,criteria)
-	 *
-	 * @access	public
-	 * @category Database Functions
-	 * @param	mixed[]			$database	The range of cells that makes up the list or database.
-	 *										A database is a list of related data in which rows of related
-	 *										information are records, and columns of data are fields. The
-	 *										first row of the list contains labels for each column.
-	 * @param	string|integer	$field		Indicates which column is used in the function. Enter the
-	 *										column label enclosed between double quotation marks, such as
-	 *										"Age" or "Yield," or a number (without quotation marks) that
-	 *										represents the position of the column within the list: 1 for
-	 *										the first column, 2 for the second column, and so on.
-	 * @param	mixed[]			$criteria	The range of cells that contains the conditions you specify.
-	 *										You can use any range for the criteria argument, as long as it
-	 *										includes at least one column label and at least one cell below
-	 *										the column label in which you specify a condition for the
-	 *										column.
-	 * @return	integer
-	 *
-	 * @TODO	The field argument is optional. If field is omitted, DCOUNT counts all records in the
-	 *			database that match the criteria.
-	 *
-	 */
-	public static function DCOUNT($database,$field,$criteria) {
-		$field = self::__fieldExtract($database,$field);
-		if (is_null($field)) {
-			return NULL;
-		}
-
-		//	reduce the database to a set of rows that match all the criteria
-		$database = self::__filter($database,$criteria);
-		//	extract an array of values for the requested column
-		$colData = array();
-		foreach($database as $row) {
-			$colData[] = $row[$field];
-		}
-
-		// Return
-		return PHPExcel_Calculation_Statistical::COUNT($colData);
-	}	//	function DCOUNT()
-
-
-	/**
-	 * DCOUNTA
-	 *
-	 * Counts the nonblank cells in a column of a list or database that match conditions that you specify.
-	 *
-	 * Excel Function:
-	 *		DCOUNTA(database,[field],criteria)
-	 *
-	 * @access	public
-	 * @category Database Functions
-	 * @param	mixed[]			$database	The range of cells that makes up the list or database.
-	 *										A database is a list of related data in which rows of related
-	 *										information are records, and columns of data are fields. The
-	 *										first row of the list contains labels for each column.
-	 * @param	string|integer	$field		Indicates which column is used in the function. Enter the
-	 *										column label enclosed between double quotation marks, such as
-	 *										"Age" or "Yield," or a number (without quotation marks) that
-	 *										represents the position of the column within the list: 1 for
-	 *										the first column, 2 for the second column, and so on.
-	 * @param	mixed[]			$criteria	The range of cells that contains the conditions you specify.
-	 *										You can use any range for the criteria argument, as long as it
-	 *										includes at least one column label and at least one cell below
-	 *										the column label in which you specify a condition for the
-	 *										column.
-	 * @return	integer
-	 *
-	 * @TODO	The field argument is optional. If field is omitted, DCOUNTA counts all records in the
-	 *			database that match the criteria.
-	 *
-	 */
-	public static function DCOUNTA($database,$field,$criteria) {
-		$field = self::__fieldExtract($database,$field);
-		if (is_null($field)) {
-			return NULL;
-		}
-
-		//	reduce the database to a set of rows that match all the criteria
-		$database = self::__filter($database,$criteria);
-		//	extract an array of values for the requested column
-		$colData = array();
-		foreach($database as $row) {
-			$colData[] = $row[$field];
-		}
-
-		// Return
-		return PHPExcel_Calculation_Statistical::COUNTA($colData);
-	}	//	function DCOUNTA()
-
-
-	/**
-	 * DGET
-	 *
-	 * Extracts a single value from a column of a list or database that matches conditions that you
-	 * specify.
-	 *
-	 * Excel Function:
-	 *		DGET(database,field,criteria)
-	 *
-	 * @access	public
-	 * @category Database Functions
-	 * @param	mixed[]			$database	The range of cells that makes up the list or database.
-	 *										A database is a list of related data in which rows of related
-	 *										information are records, and columns of data are fields. The
-	 *										first row of the list contains labels for each column.
-	 * @param	string|integer	$field		Indicates which column is used in the function. Enter the
-	 *										column label enclosed between double quotation marks, such as
-	 *										"Age" or "Yield," or a number (without quotation marks) that
-	 *										represents the position of the column within the list: 1 for
-	 *										the first column, 2 for the second column, and so on.
-	 * @param	mixed[]			$criteria	The range of cells that contains the conditions you specify.
-	 *										You can use any range for the criteria argument, as long as it
-	 *										includes at least one column label and at least one cell below
-	 *										the column label in which you specify a condition for the
-	 *										column.
-	 * @return	mixed
-	 *
-	 */
-	public static function DGET($database,$field,$criteria) {
-		$field = self::__fieldExtract($database,$field);
-		if (is_null($field)) {
-			return NULL;
-		}
-
-		//	reduce the database to a set of rows that match all the criteria
-		$database = self::__filter($database,$criteria);
-		//	extract an array of values for the requested column
-		$colData = array();
-		foreach($database as $row) {
-			$colData[] = $row[$field];
-		}
-
-		// Return
-		if (count($colData) > 1) {
-			return PHPExcel_Calculation_Functions::NaN();
-		}
-
-		return $colData[0];
-	}	//	function DGET()
-
-
-	/**
-	 * DMAX
-	 *
-	 * Returns the largest number in a column of a list or database that matches conditions you that
-	 * specify.
-	 *
-	 * Excel Function:
-	 *		DMAX(database,field,criteria)
-	 *
-	 * @access	public
-	 * @category Database Functions
-	 * @param	mixed[]			$database	The range of cells that makes up the list or database.
-	 *										A database is a list of related data in which rows of related
-	 *										information are records, and columns of data are fields. The
-	 *										first row of the list contains labels for each column.
-	 * @param	string|integer	$field		Indicates which column is used in the function. Enter the
-	 *										column label enclosed between double quotation marks, such as
-	 *										"Age" or "Yield," or a number (without quotation marks) that
-	 *										represents the position of the column within the list: 1 for
-	 *										the first column, 2 for the second column, and so on.
-	 * @param	mixed[]			$criteria	The range of cells that contains the conditions you specify.
-	 *										You can use any range for the criteria argument, as long as it
-	 *										includes at least one column label and at least one cell below
-	 *										the column label in which you specify a condition for the
-	 *										column.
-	 * @return	float
-	 *
-	 */
-	public static function DMAX($database,$field,$criteria) {
-		$field = self::__fieldExtract($database,$field);
-		if (is_null($field)) {
-			return NULL;
-		}
-
-		//	reduce the database to a set of rows that match all the criteria
-		$database = self::__filter($database,$criteria);
-		//	extract an array of values for the requested column
-		$colData = array();
-		foreach($database as $row) {
-			$colData[] = $row[$field];
-		}
-
-		// Return
-		return PHPExcel_Calculation_Statistical::MAX($colData);
-	}	//	function DMAX()
-
-
-	/**
-	 * DMIN
-	 *
-	 * Returns the smallest number in a column of a list or database that matches conditions you that
-	 * specify.
-	 *
-	 * Excel Function:
-	 *		DMIN(database,field,criteria)
-	 *
-	 * @access	public
-	 * @category Database Functions
-	 * @param	mixed[]			$database	The range of cells that makes up the list or database.
-	 *										A database is a list of related data in which rows of related
-	 *										information are records, and columns of data are fields. The
-	 *										first row of the list contains labels for each column.
-	 * @param	string|integer	$field		Indicates which column is used in the function. Enter the
-	 *										column label enclosed between double quotation marks, such as
-	 *										"Age" or "Yield," or a number (without quotation marks) that
-	 *										represents the position of the column within the list: 1 for
-	 *										the first column, 2 for the second column, and so on.
-	 * @param	mixed[]			$criteria	The range of cells that contains the conditions you specify.
-	 *										You can use any range for the criteria argument, as long as it
-	 *										includes at least one column label and at least one cell below
-	 *										the column label in which you specify a condition for the
-	 *										column.
-	 * @return	float
-	 *
-	 */
-	public static function DMIN($database,$field,$criteria) {
-		$field = self::__fieldExtract($database,$field);
-		if (is_null($field)) {
-			return NULL;
-		}
-
-		//	reduce the database to a set of rows that match all the criteria
-		$database = self::__filter($database,$criteria);
-		//	extract an array of values for the requested column
-		$colData = array();
-		foreach($database as $row) {
-			$colData[] = $row[$field];
-		}
-
-		// Return
-		return PHPExcel_Calculation_Statistical::MIN($colData);
-	}	//	function DMIN()
-
-
-	/**
-	 * DPRODUCT
-	 *
-	 * Multiplies the values in a column of a list or database that match conditions that you specify.
-	 *
-	 * Excel Function:
-	 *		DPRODUCT(database,field,criteria)
-	 *
-	 * @access	public
-	 * @category Database Functions
-	 * @param	mixed[]			$database	The range of cells that makes up the list or database.
-	 *										A database is a list of related data in which rows of related
-	 *										information are records, and columns of data are fields. The
-	 *										first row of the list contains labels for each column.
-	 * @param	string|integer	$field		Indicates which column is used in the function. Enter the
-	 *										column label enclosed between double quotation marks, such as
-	 *										"Age" or "Yield," or a number (without quotation marks) that
-	 *										represents the position of the column within the list: 1 for
-	 *										the first column, 2 for the second column, and so on.
-	 * @param	mixed[]			$criteria	The range of cells that contains the conditions you specify.
-	 *										You can use any range for the criteria argument, as long as it
-	 *										includes at least one column label and at least one cell below
-	 *										the column label in which you specify a condition for the
-	 *										column.
-	 * @return	float
-	 *
-	 */
-	public static function DPRODUCT($database,$field,$criteria) {
-		$field = self::__fieldExtract($database,$field);
-		if (is_null($field)) {
-			return NULL;
-		}
-
-		//	reduce the database to a set of rows that match all the criteria
-		$database = self::__filter($database,$criteria);
-		//	extract an array of values for the requested column
-		$colData = array();
-		foreach($database as $row) {
-			$colData[] = $row[$field];
-		}
-
-		// Return
-		return PHPExcel_Calculation_MathTrig::PRODUCT($colData);
-	}	//	function DPRODUCT()
-
-
-	/**
-	 * DSTDEV
-	 *
-	 * Estimates the standard deviation of a population based on a sample by using the numbers in a
-	 * column of a list or database that match conditions that you specify.
-	 *
-	 * Excel Function:
-	 *		DSTDEV(database,field,criteria)
-	 *
-	 * @access	public
-	 * @category Database Functions
-	 * @param	mixed[]			$database	The range of cells that makes up the list or database.
-	 *										A database is a list of related data in which rows of related
-	 *										information are records, and columns of data are fields. The
-	 *										first row of the list contains labels for each column.
-	 * @param	string|integer	$field		Indicates which column is used in the function. Enter the
-	 *										column label enclosed between double quotation marks, such as
-	 *										"Age" or "Yield," or a number (without quotation marks) that
-	 *										represents the position of the column within the list: 1 for
-	 *										the first column, 2 for the second column, and so on.
-	 * @param	mixed[]			$criteria	The range of cells that contains the conditions you specify.
-	 *										You can use any range for the criteria argument, as long as it
-	 *										includes at least one column label and at least one cell below
-	 *										the column label in which you specify a condition for the
-	 *										column.
-	 * @return	float
-	 *
-	 */
-	public static function DSTDEV($database,$field,$criteria) {
-		$field = self::__fieldExtract($database,$field);
-		if (is_null($field)) {
-			return NULL;
-		}
-
-		//	reduce the database to a set of rows that match all the criteria
-		$database = self::__filter($database,$criteria);
-		//	extract an array of values for the requested column
-		$colData = array();
-		foreach($database as $row) {
-			$colData[] = $row[$field];
-		}
-
-		// Return
-		return PHPExcel_Calculation_Statistical::STDEV($colData);
-	}	//	function DSTDEV()
-
-
-	/**
-	 * DSTDEVP
-	 *
-	 * Calculates the standard deviation of a population based on the entire population by using the
-	 * numbers in a column of a list or database that match conditions that you specify.
-	 *
-	 * Excel Function:
-	 *		DSTDEVP(database,field,criteria)
-	 *
-	 * @access	public
-	 * @category Database Functions
-	 * @param	mixed[]			$database	The range of cells that makes up the list or database.
-	 *										A database is a list of related data in which rows of related
-	 *										information are records, and columns of data are fields. The
-	 *										first row of the list contains labels for each column.
-	 * @param	string|integer	$field		Indicates which column is used in the function. Enter the
-	 *										column label enclosed between double quotation marks, such as
-	 *										"Age" or "Yield," or a number (without quotation marks) that
-	 *										represents the position of the column within the list: 1 for
-	 *										the first column, 2 for the second column, and so on.
-	 * @param	mixed[]			$criteria	The range of cells that contains the conditions you specify.
-	 *										You can use any range for the criteria argument, as long as it
-	 *										includes at least one column label and at least one cell below
-	 *										the column label in which you specify a condition for the
-	 *										column.
-	 * @return	float
-	 *
-	 */
-	public static function DSTDEVP($database,$field,$criteria) {
-		$field = self::__fieldExtract($database,$field);
-		if (is_null($field)) {
-			return NULL;
-		}
-
-		//	reduce the database to a set of rows that match all the criteria
-		$database = self::__filter($database,$criteria);
-		//	extract an array of values for the requested column
-		$colData = array();
-		foreach($database as $row) {
-			$colData[] = $row[$field];
-		}
-
-		// Return
-		return PHPExcel_Calculation_Statistical::STDEVP($colData);
-	}	//	function DSTDEVP()
-
-
-	/**
-	 * DSUM
-	 *
-	 * Adds the numbers in a column of a list or database that match conditions that you specify.
-	 *
-	 * Excel Function:
-	 *		DSUM(database,field,criteria)
-	 *
-	 * @access	public
-	 * @category Database Functions
-	 * @param	mixed[]			$database	The range of cells that makes up the list or database.
-	 *										A database is a list of related data in which rows of related
-	 *										information are records, and columns of data are fields. The
-	 *										first row of the list contains labels for each column.
-	 * @param	string|integer	$field		Indicates which column is used in the function. Enter the
-	 *										column label enclosed between double quotation marks, such as
-	 *										"Age" or "Yield," or a number (without quotation marks) that
-	 *										represents the position of the column within the list: 1 for
-	 *										the first column, 2 for the second column, and so on.
-	 * @param	mixed[]			$criteria	The range of cells that contains the conditions you specify.
-	 *										You can use any range for the criteria argument, as long as it
-	 *										includes at least one column label and at least one cell below
-	 *										the column label in which you specify a condition for the
-	 *										column.
-	 * @return	float
-	 *
-	 */
-	public static function DSUM($database,$field,$criteria) {
-		$field = self::__fieldExtract($database,$field);
-		if (is_null($field)) {
-			return NULL;
-		}
-
-		//	reduce the database to a set of rows that match all the criteria
-		$database = self::__filter($database,$criteria);
-		//	extract an array of values for the requested column
-		$colData = array();
-		foreach($database as $row) {
-			$colData[] = $row[$field];
-		}
-
-		// Return
-		return PHPExcel_Calculation_MathTrig::SUM($colData);
-	}	//	function DSUM()
-
-
-	/**
-	 * DVAR
-	 *
-	 * Estimates the variance of a population based on a sample by using the numbers in a column
-	 * of a list or database that match conditions that you specify.
-	 *
-	 * Excel Function:
-	 *		DVAR(database,field,criteria)
-	 *
-	 * @access	public
-	 * @category Database Functions
-	 * @param	mixed[]			$database	The range of cells that makes up the list or database.
-	 *										A database is a list of related data in which rows of related
-	 *										information are records, and columns of data are fields. The
-	 *										first row of the list contains labels for each column.
-	 * @param	string|integer	$field		Indicates which column is used in the function. Enter the
-	 *										column label enclosed between double quotation marks, such as
-	 *										"Age" or "Yield," or a number (without quotation marks) that
-	 *										represents the position of the column within the list: 1 for
-	 *										the first column, 2 for the second column, and so on.
-	 * @param	mixed[]			$criteria	The range of cells that contains the conditions you specify.
-	 *										You can use any range for the criteria argument, as long as it
-	 *										includes at least one column label and at least one cell below
-	 *										the column label in which you specify a condition for the
-	 *										column.
-	 * @return	float
-	 *
-	 */
-	public static function DVAR($database,$field,$criteria) {
-		$field = self::__fieldExtract($database,$field);
-		if (is_null($field)) {
-			return NULL;
-		}
-
-		//	reduce the database to a set of rows that match all the criteria
-		$database = self::__filter($database,$criteria);
-		//	extract an array of values for the requested column
-		$colData = array();
-		foreach($database as $row) {
-			$colData[] = $row[$field];
-		}
-
-		// Return
-		return PHPExcel_Calculation_Statistical::VARFunc($colData);
-	}	//	function DVAR()
-
-
-	/**
-	 * DVARP
-	 *
-	 * Calculates the variance of a population based on the entire population by using the numbers
-	 * in a column of a list or database that match conditions that you specify.
-	 *
-	 * Excel Function:
-	 *		DVARP(database,field,criteria)
-	 *
-	 * @access	public
-	 * @category Database Functions
-	 * @param	mixed[]			$database	The range of cells that makes up the list or database.
-	 *										A database is a list of related data in which rows of related
-	 *										information are records, and columns of data are fields. The
-	 *										first row of the list contains labels for each column.
-	 * @param	string|integer	$field		Indicates which column is used in the function. Enter the
-	 *										column label enclosed between double quotation marks, such as
-	 *										"Age" or "Yield," or a number (without quotation marks) that
-	 *										represents the position of the column within the list: 1 for
-	 *										the first column, 2 for the second column, and so on.
-	 * @param	mixed[]			$criteria	The range of cells that contains the conditions you specify.
-	 *										You can use any range for the criteria argument, as long as it
-	 *										includes at least one column label and at least one cell below
-	 *										the column label in which you specify a condition for the
-	 *										column.
-	 * @return	float
-	 *
-	 */
-	public static function DVARP($database,$field,$criteria) {
-		$field = self::__fieldExtract($database,$field);
-		if (is_null($field)) {
-			return NULL;
-		}
-
-		//	reduce the database to a set of rows that match all the criteria
-		$database = self::__filter($database,$criteria);
-		//	extract an array of values for the requested column
-		$colData = array();
-		foreach($database as $row) {
-			$colData[] = $row[$field];
-		}
-
-		// Return
-		return PHPExcel_Calculation_Statistical::VARP($colData);
-	}	//	function DVARP()
-
-
-}	//	class PHPExcel_Calculation_Database
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPqV2sgmVSJ+3yXrFZpwq0TsfAOjhkUom0gMiDkCpTgtDL8zjJ702heJbr9D/T3DxevHICVN7
+hR0n6rruXfLsbdSMGbFxHMDLZxjEGnpEsHUdAqVY5T+puFeNNqZywpK+171K2GZ3gRq08kx4Tldj
+cwc633hs77N9l5Z4VD3+xNECV1LH1NmPf2M0JTx9BtcYhr0eeEml6VcRMxXBb/vFwwN+MgYJ5DDc
+Mhs6HUlemUkFwqIxzPo5hr4euJltSAgiccy4GDnfTE5bPdqJxoF7FsUlx53k1xzk94XlJzKOFh/4
+EZUmCDGqD9Ubr6skrin3JIhKRnF0ioU8wWa21OveAhozf9mxAWH3St5SCWo53wAxLkWLEVtiyBxt
+1051N3rYTyLNeDrLgKougw43JTcKQ97RQQwgYjQdgg72wDMyHlYAHzdZunIo3XhxE+IjxW9xmkTS
+Emi60VO2fE6XThH6BsncnftxGDR6yBNjZL9hYYKVLZz/QyjtEBuf0F6+y1Omz+XkjHPlWJfVgu0M
+weKVo1KOxoJYq0E31vIUVc/Y89bpfvrIFI3d0f2zIN2NJnyKSDLM47qlHnoVvCTai8eL914PvvL4
+9txSgt2hHXMQjvGaguJ39WiO7CteDuUkQLXedmZ/RdwuDiKMhZhJqe9lLqN3JWkB0KlmfdUjNFSH
+9Ws3vkjVb+fYzTQ6GxZsJjW9JrG/N8Yp0tq2TQiB3vwUGmtN+pSUXxXWE7wRsvJU3bAsHOC1zDJY
+2FgpgoB/yrU4r2eMVaVM5Z8vwVN/xPT3E+wRKwI0X40/MVDBSuQaAVtryJZFj+KvMQTbAc+q4KBh
+aMeIwwvCn8ZegvHPSQbC5SzEP/3UssqFjcT+HddXCeUEo9SsE1FqxES7dDOwU1XYlRjWBV8NIl64
+OikG0xn3cryqp/cvUpPm/QmhPvntRGkcqBASI9T8OzGFp4UYALPbmWLQ3odF5Odhz54ixKnz4PjF
+Qokcpja3sts1KWvNs8Rtf/eCzWb65OBjpxCgWNHjMz8VhPNJpAqF7A+5GIVfYzOAq/gCITtif6ul
+aAxU3oIpAyZYnl4DWy+Q63sjuo2pP+DyE4s1r89ySfpldVau4AR+yIx08MX8Af/LDH7z39/MDWoP
+G6L5bw3eQ+x3i2OjOAOl+gd6UagLS26OHfWi83h0qsLb0TPzMb9ZStLnHJXNtjPh2TQS2QN1682Y
+INwKAXaVtfYyvWA1k0QMSF+wCBCTAfaCW+VV2x+NP6OiSmEYufB0JyVvWzIzNO8GZiFOputkB0vz
+a4V+CN4tPvAfeYTq8N6WUaQDHpzSXFsO0nIa8oB7IMXy/wcIA4kVCOL9yG/+EXPBpNKh7SbX8Raj
+JQN6fManYEX6MmRk/VvjDRO4i9n7qB6ZCGfLvgOxPNnXZm9B/y1avtaA39l+EFmZ0QKPspMDYeai
+mRhSu9ACGF0901+BmRCMt6J8np9GMiBhA1d3mJQCCmcaqt1PRYRxfIT+qbZVMvTaGZLL21Xi4pfb
+AcYvw6jWezETNNSU8bqv3j2qlBgu0j9fnjnhtijaybX8o5EtORz3CVWWQvxVrpNXgWoY7RRlyQcG
+NB2mKBsMUhvQw+z5PKoLqXiDjHFIYsORYGcXP9gP0rXKNp15+g8/cAW/GPXqbZGvD/lqv3Tk+4rA
+Rx5zCZML1FW3ojcrNxQGBH55dBG3/AtIUeMh6W7SFx4BjGdPidgdyFb5I7o/RtGYUN4jhZVfhqVf
+ucgdg1SvOSCLIendrV5BM3T2iTPzjjkQZvt3NFp3q77UzKw+OOBEeSOgrwbb40zRCwNjSwadu3Bn
+lH02ONyqk0UN0tdkmY+YEWZLT/naFgRM5zmSRPwt5Km0H8cS1yLkA/ELVcbf/PG5IklLaAAttFH/
+m1RmprkFDCitK2Q8sSdtAhfffJwfq8o6rt8VeuOFXugfpaLkIQVK+Kh40qU/ASjn5C8pyp/R3e1H
+CfTbpNlGmERZc8AmHvbDCtiSlQ1e9JPqhLd8bLGq1/SFEj1N4vGgGxjaPbuwEEV5XU7/IzNDNNbk
+JCGfa02KfzwpaFKU62NFXuJvBKMLTZroPCixZckx8G9Ec9gPIOmUlIdgNjgTyRpa2MFU+9Y67yAf
+fSqJluEvL0YpENFvBazSR/jWp22UZMFWA7vD1fcvOm6NbmyEG8EGp9NZJT+mW43PrMPoUsTWlb+a
+X+O24tWg0smL02yR1E0KanziQeXP7r9TcnxituIE6+F/LiFbm0p3jIQRGr5fORNE1wVcK3k/Ala0
+iB7PmQWg2Lyq0PQ90F9aKDJznzUaNHJe8BWT0NTH+51tRXeMTbQmsFSucwuv5KfsCDFNybhnn/Oz
+hthF4I1DnkQvaGnR8ZIydGDe36lJ4ncPllRPeVXipdO5Oobe6LngzNiszVg9cckRpoTBzUc2Hpyq
+bnex6303lSTXTBGCKuR/A8319pA+C3z7kxVFRauIN3SU9khYD3itP0/Di2paPzYJv5wTIvkuzURw
+OHv6f26/EuvkcTTVXwbna7pSAIoATZlZ/axwMeBbgWsTTqNEyDwJzsbgCS4IQ735hTZ2UfG3dHyh
+i+KPInwHPi9hHnGVLGn3BlANSQmS45H2jioR1I/dMyM/lCy2xDqtrFoErXf1FlLGORcsKJWS3Oqx
+GG7hW+gBXxGmX0fWvwk9sOWq7hSkjwlEu1hDW2cGoDXV7sv88j2xW00g3V0RNHMXGoe3LLNydDo9
+1mzHV1y6Ya7mbFbdchy7qcAwmS5bXOtouowI7rpd1VhVFdbfQb0HmoYVgGEbDp7nxdhmsHlZT3UY
+iFlDfwposxmZqlKd2h4/P0IcXrGOECTPxkCkj67ifMyzDKmexwWpN1toSto/d/VPIsHILDL+OVKb
+eK7aIDBppQpHV5CYQwtlgUr9r0okZdqGC5wZtZYt2u0a6p7kTW+LpHTTbCTjUiMooSr/UB76ITVT
+JC/E03iDcqlknp4hC/sMyx1m4vT+uVhNcEemOGYpVe6h2D79GsERyeImtuppfOYyf0ZDPdVWPgt2
+v/f53difNz+bcWVn8s+wG7MARWqUB2NEoGvM2Pou8pGuhBGtHNI93+sUtOD+UlfTaRYVkf7hIwH6
+S+hnZBnWHP3GlytOHouYtHj9V4mpeJjtXrZ5M+blpxz6r3HGuzcqw/gbNMOb3AaqMdvPlBF2qxyW
+akGh0AjA5UjLuTtA7of1nmbgJO1r5PFl/R9qQ8ZBNj1qhVQvR377Ljug/HFMsRw8+9BGdKCgInqo
+NRD97gj36b9w0tcgzhLmrx2QnwfRBtCF4OL0W0s1EqwuYTe6dZN3f9s1jcukVVGbtf++4Xgym3NA
+ZiOvNy+Zzi8IZuWfeLRWNz79seYgFNNlB26127BaKzCucLq7GZS1xyYGceGC9ZlN+VJ7Xa5b/i5H
+Pg6KCqQBLPUoNfCC8n3sstdwun/lT69woKylSA6ooejHYpMhNMyzgK9/y9H8pz3GAiIg837pega4
+9hSGTAv5fc/aX0JdZLFIramWE+PkkSVKBmQ4T1U2cDkl2m2ulSFMZJZU2eAix97hKnsRMmOwGiAZ
+3hyhQZEznYItlXhKFok2fOXMPteDdPFZ17fJXxqa9So0EPdafsvJKC0are7xyYn7dthJFL2jlahW
+qltD/Q4qeQSGT43AnyAadjz6nDFzMUDyJK7cXGp+Gatfz+wbzmrNOmJxkjIBpGqIyfc//8zj/x7x
+9xfxm5EffUUly8ZAzNE9B7PGPN4dTIhRhv9pJWy722PjjWt/Hx0MgCy+HOTw3iaOsG0ur+VAdU94
+kGbL12yztlyCGUt3pFWDoc4lIFWOlzg1+dSDJyERS1xJjrABwLfcvhIDqchnTf5qCmPkWwW7HFNo
+JIeF+5aPAyazk8KbzPeVpLI8CwGfJ0y2hF/G/arKfBqSVvMWHSVt0EsWBpeaPiIb/hIQ/4mHyUOd
+3dEd7gRCp2l23VpdWQjWQY2rnVB52t4Cn0jU46ZGoIgHBnRXgUZbrhYQ8pAGQ5VylQ09wXMvJlGI
+UHyR3rqOeCDU1bO0QlWhGK1+s6G2Jq6agMqvNnLlUrYOhNDSTlha4ab/e6ZzpSQoRTL7KzEseXtX
+NwwgXzia7lyrRUhMWirp2g7AoIoe6shrhoZLPtMmKUP/dz7S9V+uOCXWQdp1ROkYIywDxlv8NgVy
+8ekC2tHK0+hjYeOkGFXneNMzd6SREXJi6OS4WgHmqIFMWjleYgRvjqTgQd2X1WsLqdSB8/e4d2ul
+eSKMC9pwCqB7qs/w4Vm9SekSDbWk8WpmX7z5kUz+z+C7y22/8y4lFONzsq6gVzALt+NJv7YpSflu
+4O9GXIUdBp8Bil144PbH2DyxcfC5LvoiOp4s9K56ITsIsGhc2uXKvaweh+74G8CSgLd6pgmf9kaO
+FSHi3g0GsxEGbv+XtVxxztvELH+oFniqQ/0eX189Wg4ptUbuGuMAZ6e3n5+g/odHmjVevyA6m+KQ
+U52LJIgW1mRyh/hkNWNzDqWFNuHuv5w+YhepNT3TKf+rrux4/53HqZsF3wdkbosOhp52LO/tkQ2b
+8RaM8QBImcGYkUDpaxZNDwbd7C1QkwsXhHIjxPAvdMeqRCDPejCuxLhIQQ2oJ3DOns1yWapoQ0js
+09AXaR4AGqwGfRLC0t66rG08tuTx1nh73k26gEUbDZlPVkFCRq9/PZX3fXhyNLNyScYnt2qfKUk0
+1DpTiZGYG/jnYd3foek1HnkALNmqiYXfTXDm5GjeD8vqWqs0PC5GxmTmKsT1+YbRmPmc7NZ6ucrH
+g/Ic4Ws9mFILvGRClUWp+6x/Y88UEEAY1vca0riP7IBSuD27UHt4/aFd/iszALGVfrVqRAN5LSXb
+sQN6OyYtSSIIhtvGFGhLBVPPDQvD9siXUK5Eqq72+ZGKmftaR75PFXzdr8/MSJRYKW8S+/YvPctd
+b82QNoFxurvoJ2CbCAiiWpLSZHWma48KbaGGYhD2cYbyFxh3MbnC3l4SPUHec0a7/MPg/PlnavYj
+BP69ESc9e4JYPft6TgnsFhsKmDb9GPkYC8Qk8rJgFZ6XXFa0Vaqf2mEWoPi8MNNxvg6eZbrv7gJ3
+9y45+0o9tG6OnJiTxCZ9S4waCb3nniGYNjzNqFe93V5Lct+PRUcK9WDNKPLd7Cw8NAVffAg5hsYi
+NqfShE4dnrlT7McDXnobWx5WNZsw+waSl2K4eJBnRagxXApoC189PRoQFp+oMtWJ2LQpTFaGiNfn
+a+Lq358oQU9jKUaMUHrbHCnfH8xO96r8+1kOzMhuth5kADtjK7IZLB21LOgVJur7W/zbU+HQBpGJ
+YKGqH6BcVrpxZysX5CWUpEMMVBgoY/cjwfbG79KdYA0acJhvoi123rrW7XaUroavltawD93ytbm/
+eSvTbiMAvEtjSzMs+9PQs8cLPD3eBH1IJvnsD321KUOVLWs8+DSum6lZgJui5VnEMZbA4VeRR90P
+8uHRBXTUBFKLmZ59Lss8XUe018igYumq5Z2nC41lQflVnz9uMwpQh6VPY6/dLLmhaU8QBVuJt33G
++1lDfRQyyQl30riu7N6yFODENgC58pce2BdId1KjMWoyC+wgDY6eaMnIoHoq4ikTD0Pg0Vy3bUdQ
+pFN8y3RhW4qX49iCJ0GwSXb5OG+Z4fvrfXwfJRVtxWxOoPvzBKpFOvuWUMqn92oAocDpq1rhgzYH
+eEi8qhWC7iFZOY/zW6VDSmfH8Xeu2z4l3ihetp9ruXPB+TW58Zws3zpDNf8p4tatc6eRflgLHBZ8
+ntA1Ei2Fl5/nYj+3cgJoXFxEvV3GqNZ+r8gJ5IMPQQSwewn14btWdL2AmAwRdZh1d0a0/H4WE5Ji
+b9y7u757rJe6FIunCY15l87cv0L2+56H9S0KllMHS1oodzWi1hsoHQrbiqI+OLEvgthrXxHWKKem
+IK6V2Pyr72g+XbqWqLpEA2P77dj1WxI0rD4/ZDbm3xIr2rX+0mGHpaiX1/2eNI54nTW31n4Lpm/X
+GXejVjLtxzDddatBv6m2vukQp4KN9fNQkBg0f8qgKCIPMZaWtMqtSlFqditdiU29x+2vEbadfSfh
+OMt3fRBvysuz2bq0nA9Fegjzl5lTCFFwEbjavy6JCMwhfDEEMWBPdfn7QolxuVTquFzJpNWMEjBI
+f4Tr2Ly6k/ssW5+w/mgliOfY9mgsHKCxzVQcxPQ50l/r5cRjjyI+VQ62BqcFhIltXj7ZJS+IxFY0
+Xox8U2Tuk/3A6Rbsqcd/t8G/6TBIFumUGkoEZtVMZFyFKDMGtCG0nb61RmGiWhaUujdMQSBFpErH
+NwpYLrOgIqsB4+8ZcdGqZlB8bPuOtu/CC/rvFvAmDGb+1HOGKXpZY2ikA9xxyut6ogwII+V4Agih
+WUcxrXaMlpcGHVAAbFn3ORrLz+c6B9dyGojBDiySA38d43tvP4zkJ3YYvb/mtjIsQS9uQJjLhYBm
+eE38oY6lxr9UuahDftTSHUrZ2HEPrDdbBHHsj1NsFSdUGVZ79SfgJ34sIUl9k63BmK2zxKf4km1+
+8effzP/sy+FqdRqRJRm0q2EjhtBTxFVUENyUh4ASsEJhUBmoUOBczFPAC0PQ2s7pRKh9GKYFdX+i
+4n9OTHFeWhe/BfRPM93Iul/aNXdNg+W3UTjJi9OZZEIanLNxM34QjtS4QVyUBbVLQ6tqAiyJJdA9
+andBzrb+7rmP6q/SwK9zFfahmnjYMruu6mm00tpcZLU8WlJdfKNzywexnAPJ5T0gI5g+L1ePlXsU
+9BjYgowTF++GCu+xhkpUBmkh5lgQHA+pjZkU6oNycGR2Xvapi1oI8dQ/ccDuAFUZTZ6kWg/8kxxl
+Pb9QHDVQrEp/NsVTnzsL1eLmk+dsYV0K2Jb3e4F2GG7dyLq7N30IE9mkE9s0KWluNu8sTCdJeVOe
+C9A4EEl8MJIpn1s8tJM6DoLmCyx+Sa4P/+VzL4gT4MmBlxmPE/uO0LwG9FlYxOvgAGyRW0r7w9Ni
+C5wUOUYaBJvgMGMsC9dUuTr/D2IoRGb2ZeRkR+icDhW6WNmKPjsQQADOJIJyN++H4zog/iDEcaoh
+E5oYc1iTqcJA+m+hbY8/pI16DtgGhyIAXs9YYh8wN17L9RhKwg2W1MbyhM6IqJuGKMufDdHAGfYH
+tvZiO0xMOunSaAP9hVpqKCSighkvHW3HeZYsxrZZVdzgRnMZocK2An4nd5rrFPCX6Yj3cFsRPsXk
+Sj0WiicN8fO7DKLQ6J3hHcS6jqdVN0HgNuR08V1ilyw2zZcONuyeLqhYQMDHTpd2gKtpDuZpCTiR
+zrNXmPgPDHs7UFg1xvrPB0ZXGB+xSRrFUQWNKzThE/guuH1XMat8cEEsfkBND+/yEGWmAG1EM68P
+WaHmxwWgKWlrDQoErW7lmXP0qd3i93UlpwND3/owwr99Ihe+9iN7/NdxdrjnBXr41PZl0oTZQUdi
+rCNI9WUeWSLwnwQkOKxZSVGjsFCs7APQHD6vk5E6dTXm74u74qaIerSwsdnbRO4jjB+EJj6r0+3s
+PzQicbYGZaefqLRVL642Dnyuzj1obwdh/CAEC8B9RLLK4M2MpWaJh77HWU9DnWJs+USamGllFQ1N
+CnolfaFUp77ZY/qfP0bZSGp7SCQCKatW3volxMuxj5yxEhGxTAhjwoL29+2SW9dYaj7JxFP9DiCA
+wZJHolAScOMzqsv6XHV+Khumvk6kQR+bAnzPnQ03ArLjSegQn/CfBhSmVphmZnhm4usNxkgrkiNl
+Ijk8y1CVl99rzbLYrGme9A3vddECEH74OMaKY40pK3syI7oQdEU0T0JKy3XQLj+dTseBBFQWbZ2R
+70YXgZxJVQ5sGLeInhwY2I+4fcizN/0nds92ONU1sq9EhHac4pIgO1xefg4N1IThAu9uOyDZhBjo
+HV6Pb2Gc/8bQbCWCdQ7tYjRp0ZQkjy04YdJ/uRpRZE2+OBKTFX76ja8vySNQ77FU9i92eFuHtY1O
+3e6j5hSMtRuPitHVWy1qZsMYDu2N57jAO7ypiYb9tCRXT2wL0URKOvguyfUs/9cuXE3vNfrHabkB
+Lap1KfVKkvelPkmhCz+3nV9/uPTVNtJHRwcL0y8lfjXpmhK2KJWFRK+aUV8aFprqozGPhnuVOpHc
+usLVoQta/8p5g6hsBP8Myd7NZvEK9s2PGtYOw+Ja0oWHu7GmGdTyFqqmiv7STVDFz1qJh2U3CjAs
+ISd/s/a73S3T/8/slVE7/y3GmXaolzz4l2qE/B2Yo2Ge927sEEGUIn3jIzEtN6Ubpwi/o2X81RSQ
+5tbF0TNrbjXZLoqOFm4bvzv8w6AenalHvvbVRSSMkpLQunO2XNrbRWWVI+RNwisZ8uQ99zmXZebE
+65mgfI8W0E/SLBvt8uCQzkWissIasY71GyX9GMEMxbAdnIB5ZwVcdh/x6nbHZwDx/szaI3upc9/n
+HiAomLsZLzvV3nvVatKwUiwQ0p2IUHSi4Qq/o/7nCnwQkf7LE8/rz/v9qtyHh2In9Xtd/Talhgcp
+yj7MFMGBPNRVea+5ZHf7aw1uWSV4n7d7cr5DviqncocEdw3HrtbcnQtz5c21IU0aGcgv/UIO2VNt
+f4Kzy8CcQTsYFTwJlfWmLlx3NnNvj+cUon/3t9aA/+C44O3pEoW1WXK7phbJXWz9LFN9Jk97RlB7
+Tc3uIPZiizXvztYS9YYM3qKN+HXo230GHb/HbQu0dNPQOAGYA2vD+M7PNPTbzS3uQ/yzvltIjq44
+GXRAIBDNHXutPLCLZKoQuDQAt2mzOX9ZDfD3wt7+iTWYC7KWxHxnV7DE0snM6atv1dn1/OAK/r/4
+sgUXs77FEEwm7YXrP/Spgs0Ubipui6QnrEmxKiwEE3bJmeDYSvYCS7H5aIqW1AohmmAq6CPMqs8k
+nEojcMr4wTH5DbdWFM+70D3Hf/b1/Pgn3r9app1DReFQ6HpisnOjY9is4dt2+2X7sXzKJP6wdu9B
+or2YCe3ntogav1jYT7x82ZNG4QlrD78NU+sFXXXC3T79ENmqXJTNL1jty4fWBQqqRMqzoG6Ict6q
+sOwUCzcgzNPwFhk3Itc0D8MgXHqnAiowSwK94U4IlywUVkM0jKz1QL8JrGn9NuvZHAoLHoT7kTno
+KCmaHrShIGwgRLUsp30Yju3R/mXi6ZEMBQE499Xbk7rkr9Q1vzodCCuY1Lbihhci4+ShaEvON51u
+uS8FZmyKYhappRNfbA2JcgDwptu1ibiLZhXsoDKtEfdRRRYCJ+TDGt88szfGWIax0Y5t3DQN6kK7
+klN8GS+DCGrzIj3yqjaGzL+6RDQnJjqN+goae69Zv/bzH9wwC1W8eY5dfyHqmitJi3yZd0vhx1E0
+nCIBXLNxCQWON1aYpMmVp1NzivYyrl9qfPRFZtqNoWa390J1RJO1ygZWGKYvtFkX9QSBcbsFEskW
+IhuqiZI38+5UhFTiOHv4NLaEruTxOjUI4OiBSeYPoCTqtfDVFPN310pKDkJb9UkeGhh8o+cqkuEw
+ls3UK39WoM83lIBAAbGw95QLj4lo/uJYJM3nXXEOGNv/sboIFfO2kjLQCkQJ08ACPyh9VhXVMmaj
+j+7zqKBqnNdFgHpHDTvy365NnyWUzAHhY5yFklf6ztphKtzH0bxMGq9ShnYZqrOuWdcRHsYFp+Ef
+KXzlNlqiITPWiQ6gH4QqjOOhzvjyIoBqmSC2j7YY0m9GFVH/p2BMbmjzBsaksHuZHD5oPJSgxhed
+tBQQ2iC69fM9WX3F8Jg6JusHKX2SbsfhSb170IDCZUuUavF/FcMDZs0JPLeQNTweirgaUHKh/aeM
+/i+8inUl0DD01Q6KYjacfQR4Tt1/EGRNzTVBaGbwU1OsM4FDPFBFqoTxzDdD8rlFb48iqptUagSZ
+42dsOcqqMdD6SYFthyqQJu371asC8680SMsZgbD7NfZxv9TEHgiJDB8gXi+71UzdbS4SaUa3HKIL
+brmkfOZFeWCLBiKp9w8TdM+QfhxNIM0GLO9k/22ufcc4M2A4tN/cfdKfXmZ9t0xZSEmGsFdvufeM
+ApipapybWyOncz3hLyVAIpcQr8sbAv3Ed+ILW3BLNwKFGhFONt0m6DRnVldGOi7i3Ar7uFzJrmaK
+867yJw9L8I8SIJfKAUMXV89tZbUH43K+p9o6Ao+hjBfpdhmbEDK6Djps83jcGx+zw/QO4AnpeXfw
+f4xSAZNUv4KnK1JFhafXZ4/0gSQfX1tx6/zv2A2xA6bvyCxqcTWouheNncPRM/3J6RTrq6KShQ7L
+/+s7Uog6zKkVFNdL+SMAnFZx6JEn327LLjvyOrVTxgvTWLaTyMLzIW8U9zO+v/HW4j3wk8Edx83W
+Kat4UbGaKhawti/jFr0oAHzqsYgO2rh1cRFx7p+cm+1bKmDr6ff1G3zBCt7ncsK4YJrRJBglhAyk
+kbxzHQB4Aw5FWqmfl+GnIj9ZKMXB3nceUq9FhhQQu58mnsbzN5Dck4esnw9QgnqOztcC8O3sjxRA
++m95MyydJFoufKGQun+Rp18BAQ8n/HOquZXoK8gwMEzr10==

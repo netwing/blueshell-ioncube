@@ -1,774 +1,254 @@
-<?php
-/**
- * Tokenizes PHP code.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Tokenizes PHP code.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class PHP_CodeSniffer_Tokenizers_PHP
-{
-
-    /**
-     * A list of tokens that are allowed to open a scope.
-     *
-     * This array also contains information about what kind of token the scope
-     * opener uses to open and close the scope, if the token strictly requires
-     * an opener, if the token can share a scope closer, and who it can be shared
-     * with. An example of a token that shares a scope closer is a CASE scope.
-     *
-     * @var array
-     */
-    public $scopeOpeners = array(
-                            T_IF            => array(
-                                                'start'  => array(
-                                                             T_OPEN_CURLY_BRACKET,
-                                                             T_COLON,
-                                                            ),
-                                                'end'    => array(
-                                                             T_CLOSE_CURLY_BRACKET,
-                                                             T_ENDIF,
-                                                            ),
-                                                'strict' => false,
-                                                'shared' => false,
-                                                'with'   => array(),
-                                               ),
-                            T_TRY           => array(
-                                                'start'  => array(T_OPEN_CURLY_BRACKET),
-                                                'end'    => array(T_CLOSE_CURLY_BRACKET),
-                                                'strict' => true,
-                                                'shared' => false,
-                                                'with'   => array(),
-                                               ),
-                            T_CATCH         => array(
-                                                'start'  => array(T_OPEN_CURLY_BRACKET),
-                                                'end'    => array(T_CLOSE_CURLY_BRACKET),
-                                                'strict' => true,
-                                                'shared' => false,
-                                                'with'   => array(),
-                                               ),
-                            T_FINALLY       => array(
-                                                'start'  => array(T_OPEN_CURLY_BRACKET),
-                                                'end'    => array(T_CLOSE_CURLY_BRACKET),
-                                                'strict' => true,
-                                                'shared' => false,
-                                                'with'   => array(),
-                                               ),
-                            T_ELSE          => array(
-                                                'start'  => array(T_OPEN_CURLY_BRACKET),
-                                                'end'    => array(T_CLOSE_CURLY_BRACKET),
-                                                'strict' => false,
-                                                'shared' => false,
-                                                'with'   => array(),
-                                               ),
-                            T_ELSEIF        => array(
-                                                'start'  => array(T_OPEN_CURLY_BRACKET),
-                                                'end'    => array(T_CLOSE_CURLY_BRACKET),
-                                                'strict' => false,
-                                                'shared' => false,
-                                                'with'   => array(),
-                                               ),
-                            T_FOR           => array(
-                                                'start'  => array(
-                                                             T_OPEN_CURLY_BRACKET,
-                                                             T_COLON,
-                                                            ),
-                                                'end'    => array(
-                                                             T_CLOSE_CURLY_BRACKET,
-                                                             T_ENDFOR,
-                                                            ),
-                                                'strict' => false,
-                                                'shared' => false,
-                                                'with'   => array(),
-                                               ),
-                            T_FOREACH       => array(
-                                                'start'  => array(
-                                                             T_OPEN_CURLY_BRACKET,
-                                                             T_COLON,
-                                                            ),
-                                                'end'    => array(
-                                                             T_CLOSE_CURLY_BRACKET,
-                                                             T_ENDFOREACH,
-                                                            ),
-                                                'strict' => false,
-                                                'shared' => false,
-                                                'with'   => array(),
-                                               ),
-                            T_INTERFACE     => array(
-                                                'start'  => array(T_OPEN_CURLY_BRACKET),
-                                                'end'    => array(T_CLOSE_CURLY_BRACKET),
-                                                'strict' => true,
-                                                'shared' => false,
-                                                'with'   => array(),
-                                               ),
-                            T_FUNCTION      => array(
-                                                'start'  => array(T_OPEN_CURLY_BRACKET),
-                                                'end'    => array(T_CLOSE_CURLY_BRACKET),
-                                                'strict' => true,
-                                                'shared' => false,
-                                                'with'   => array(),
-                                               ),
-                            T_CLASS         => array(
-                                                'start'  => array(T_OPEN_CURLY_BRACKET),
-                                                'end'    => array(T_CLOSE_CURLY_BRACKET),
-                                                'strict' => true,
-                                                'shared' => false,
-                                                'with'   => array(),
-                                               ),
-                            T_TRAIT         => array(
-                                                'start'  => array(T_OPEN_CURLY_BRACKET),
-                                                'end'    => array(T_CLOSE_CURLY_BRACKET),
-                                                'strict' => true,
-                                                'shared' => false,
-                                                'with'   => array(),
-                                               ),
-                            T_NAMESPACE     => array(
-                                                'start'  => array(T_OPEN_CURLY_BRACKET),
-                                                'end'    => array(T_CLOSE_CURLY_BRACKET),
-                                                'strict' => false,
-                                                'shared' => false,
-                                                'with'   => array(),
-                                               ),
-                            T_WHILE         => array(
-                                                'start'  => array(
-                                                             T_OPEN_CURLY_BRACKET,
-                                                             T_COLON,
-                                                            ),
-                                                'end'    => array(
-                                                             T_CLOSE_CURLY_BRACKET,
-                                                             T_ENDWHILE,
-                                                            ),
-                                                'strict' => false,
-                                                'shared' => false,
-                                                'with'   => array(),
-                                               ),
-                            T_DO            => array(
-                                                'start'  => array(T_OPEN_CURLY_BRACKET),
-                                                'end'    => array(T_CLOSE_CURLY_BRACKET),
-                                                'strict' => true,
-                                                'shared' => false,
-                                                'with'   => array(),
-                                               ),
-                            T_SWITCH        => array(
-                                                'start'  => array(T_OPEN_CURLY_BRACKET),
-                                                'end'    => array(T_CLOSE_CURLY_BRACKET),
-                                                'strict' => true,
-                                                'shared' => false,
-                                                'with'   => array(),
-                                               ),
-                            T_CASE          => array(
-                                                'start'  => array(
-                                                             T_COLON,
-                                                             T_SEMICOLON,
-                                                            ),
-                                                'end'    => array(
-                                                             T_BREAK,
-                                                             T_RETURN,
-                                                             T_CONTINUE,
-                                                             T_THROW,
-                                                             T_EXIT,
-                                                            ),
-                                                'strict' => true,
-                                                'shared' => true,
-                                                'with'   => array(
-                                                             T_DEFAULT,
-                                                             T_CASE,
-                                                             T_SWITCH,
-                                                            ),
-                                               ),
-                            T_DEFAULT       => array(
-                                                'start'  => array(T_COLON),
-                                                'end'    => array(
-                                                             T_BREAK,
-                                                             T_RETURN,
-                                                             T_CONTINUE,
-                                                             T_THROW,
-                                                             T_EXIT,
-                                                            ),
-                                                'strict' => true,
-                                                'shared' => true,
-                                                'with'   => array(
-                                                             T_CASE,
-                                                             T_SWITCH,
-                                                            ),
-                                               ),
-                            T_START_HEREDOC => array(
-                                                'start'  => array(T_START_HEREDOC),
-                                                'end'    => array(T_END_HEREDOC),
-                                                'strict' => true,
-                                                'shared' => false,
-                                                'with'   => array(),
-                                               ),
-                           );
-
-    /**
-     * A list of tokens that end the scope.
-     *
-     * This array is just a unique collection of the end tokens
-     * from the _scopeOpeners array. The data is duplicated here to
-     * save time during parsing of the file.
-     *
-     * @var array
-     */
-    public $endScopeTokens = array(
-                              T_CLOSE_CURLY_BRACKET,
-                              T_BREAK,
-                              T_END_HEREDOC,
-                             );
-
-
-    /**
-     * Creates an array of tokens when given some PHP code.
-     *
-     * Starts by using token_get_all() but does a lot of extra processing
-     * to insert information about the context of the token.
-     *
-     * @param string $string  The string to tokenize.
-     * @param string $eolChar The EOL character to use for splitting strings.
-     *
-     * @return array
-     */
-    public function tokenizeString($string, $eolChar='\n')
-    {
-        $tokens      = @token_get_all($string);
-        $finalTokens = array();
-
-        $newStackPtr = 0;
-        $numTokens   = count($tokens);
-
-        $insideInlineIf = false;
-
-        for ($stackPtr = 0; $stackPtr < $numTokens; $stackPtr++) {
-            $token        = $tokens[$stackPtr];
-            $tokenIsArray = is_array($token);
-
-            /*
-                If we are using \r\n newline characters, the \r and \n are sometimes
-                split over two tokens. This normally occurs after comments. We need
-                to merge these two characters together so that our line endings are
-                consistent for all lines.
-            */
-
-            if ($tokenIsArray === true && substr($token[1], -1) === "\r") {
-                if (isset($tokens[($stackPtr + 1)]) === true
-                    && is_array($tokens[($stackPtr + 1)]) === true
-                    && $tokens[($stackPtr + 1)][1][0] === "\n"
-                ) {
-                    $token[1] .= "\n";
-
-                    if ($tokens[($stackPtr + 1)][1] === "\n") {
-                        // The next token's content has been merged into this token,
-                        // so we can skip it.
-                        $stackPtr++;
-                    } else {
-                        $tokens[($stackPtr + 1)][1]
-                            = substr($tokens[($stackPtr + 1)][1], 1);
-                    }
-                }
-            }//end if
-
-            /*
-                If this is a double quoted string, PHP will tokenise the whole
-                thing which causes problems with the scope map when braces are
-                within the string. So we need to merge the tokens together to
-                provide a single string.
-            */
-
-            if ($tokenIsArray === false && $token === '"') {
-                $tokenContent = '"';
-                $nestedVars   = array();
-                for ($i = ($stackPtr + 1); $i < $numTokens; $i++) {
-                    $subTokenIsArray = is_array($tokens[$i]);
-
-                    if ($subTokenIsArray === true) {
-                        $tokenContent .= $tokens[$i][1];
-                        if ($tokens[$i][1] === '{'
-                            && $tokens[$i][0] !== T_ENCAPSED_AND_WHITESPACE
-                        ) {
-                            $nestedVars[] = $i;
-                        }
-                    } else {
-                        $tokenContent .= $tokens[$i];
-                        if ($tokens[$i] === '}') {
-                            array_pop($nestedVars);
-                        }
-                    }
-
-                    if ($subTokenIsArray === false
-                        && $tokens[$i] === '"'
-                        && empty($nestedVars) === true
-                    ) {
-                        // We found the other end of the double quoted string.
-                        break;
-                    }
-                }
-
-                $stackPtr = $i;
-
-                // Convert each line within the double quoted string to a
-                // new token, so it conforms with other multiple line tokens.
-                $tokenLines = explode($eolChar, $tokenContent);
-                $numLines   = count($tokenLines);
-                $newToken   = array();
-
-                for ($j = 0; $j < $numLines; $j++) {
-                    $newToken['content'] = $tokenLines[$j];
-                    if ($j === ($numLines - 1)) {
-                        if ($tokenLines[$j] === '') {
-                            break;
-                        }
-                    } else {
-                        $newToken['content'] .= $eolChar;
-                    }
-
-                    $newToken['code']          = T_DOUBLE_QUOTED_STRING;
-                    $newToken['type']          = 'T_DOUBLE_QUOTED_STRING';
-                    $finalTokens[$newStackPtr] = $newToken;
-                    $newStackPtr++;
-                }
-
-                // Continue, as we're done with this token.
-                continue;
-            }//end if
-
-            /*
-                If this is a heredoc, PHP will tokenise the whole
-                thing which causes problems when heredocs don't
-                contain real PHP code, which is almost never.
-                We want to leave the start and end heredoc tokens
-                alone though.
-            */
-
-            if ($tokenIsArray === true && $token[0] === T_START_HEREDOC) {
-                // Add the start heredoc token to the final array.
-                $finalTokens[$newStackPtr]
-                    = PHP_CodeSniffer::standardiseToken($token);
-
-                // Check if this is actually a nowdoc and use a different token
-                // to help the sniffs.
-                $nowdoc = false;
-                if ($token[1][3] === "'") {
-                    $finalTokens[$newStackPtr]['code'] = T_START_NOWDOC;
-                    $finalTokens[$newStackPtr]['type'] = 'T_START_NOWDOC';
-                    $nowdoc = true;
-                }
-
-                $newStackPtr++;
-
-                $tokenContent = '';
-                for ($i = ($stackPtr + 1); $i < $numTokens; $i++) {
-                    $subTokenIsArray = is_array($tokens[$i]);
-                    if ($subTokenIsArray === true
-                        && $tokens[$i][0] === T_END_HEREDOC
-                    ) {
-                        // We found the other end of the heredoc.
-                        break;
-                    }
-
-                    if ($subTokenIsArray === true) {
-                        $tokenContent .= $tokens[$i][1];
-                    } else {
-                        $tokenContent .= $tokens[$i];
-                    }
-                }
-
-                $stackPtr = $i;
-
-                // Convert each line within the heredoc to a
-                // new token, so it conforms with other multiple line tokens.
-                $tokenLines = explode($eolChar, $tokenContent);
-                $numLines   = count($tokenLines);
-                $newToken   = array();
-
-                for ($j = 0; $j < $numLines; $j++) {
-                    $newToken['content'] = $tokenLines[$j];
-                    if ($j === ($numLines - 1)) {
-                        if ($tokenLines[$j] === '') {
-                            break;
-                        }
-                    } else {
-                        $newToken['content'] .= $eolChar;
-                    }
-
-                    if ($nowdoc === true) {
-                        $newToken['code'] = T_NOWDOC;
-                        $newToken['type'] = 'T_NOWDOC';
-                    } else {
-                        $newToken['code'] = T_HEREDOC;
-                        $newToken['type'] = 'T_HEREDOC';
-                    }
-
-                    $finalTokens[$newStackPtr] = $newToken;
-                    $newStackPtr++;
-                }
-
-                // Add the end heredoc token to the final array.
-                $finalTokens[$newStackPtr]
-                    = PHP_CodeSniffer::standardiseToken($tokens[$stackPtr]);
-
-                if ($nowdoc === true) {
-                    $finalTokens[$newStackPtr]['code'] = T_END_NOWDOC;
-                    $finalTokens[$newStackPtr]['type'] = 'T_END_NOWDOC';
-                    $nowdoc = true;
-                }
-
-                $newStackPtr++;
-
-                // Continue, as we're done with this token.
-                continue;
-            }//end if
-
-            /*
-                PHP doesn't assign a token to goto labels, so we have to.
-                These are just string tokens with a single colon after them. Double
-                colons are already tokenized and so don't interfere with this check.
-                But we do have to account for CASE statements, that look just like
-                goto labels.
-            */
-
-            if ($tokenIsArray === true
-                && $token[0] === T_STRING
-                && $tokens[($stackPtr + 1)] === ':'
-                && $tokens[($stackPtr - 1)][0] !== T_PAAMAYIM_NEKUDOTAYIM
-            ) {
-                $stopTokens = array(
-                               T_CASE,
-                               T_SEMICOLON,
-                               T_OPEN_CURLY_BRACKET,
-                               T_INLINE_THEN,
-                              );
-
-                for ($x = ($newStackPtr - 1); $x > 0; $x--) {
-                    if (in_array($finalTokens[$x]['code'], $stopTokens) === true) {
-                        break;
-                    }
-                }
-
-                if ($finalTokens[$x]['code'] !== T_CASE
-                    && $finalTokens[$x]['code'] !== T_INLINE_THEN
-                ) {
-                    $finalTokens[$newStackPtr] = array(
-                                                  'content' => $token[1].':',
-                                                  'code'    => T_GOTO_LABEL,
-                                                  'type'    => 'T_GOTO_LABEL',
-                                                 );
-                    $newStackPtr++;
-                    $stackPtr++;
-                    continue;
-                }
-            }//end if
-
-            /*
-                If this token has newlines in its content, split each line up
-                and create a new token for each line. We do this so it's easier
-                to ascertain where errors occur on a line.
-                Note that $token[1] is the token's content.
-            */
-
-            if ($tokenIsArray === true && strpos($token[1], $eolChar) !== false) {
-                $tokenLines = explode($eolChar, $token[1]);
-                $numLines   = count($tokenLines);
-                $tokenName  = token_name($token[0]);
-
-                for ($i = 0; $i < $numLines; $i++) {
-                    $newToken['content'] = $tokenLines[$i];
-                    if ($i === ($numLines - 1)) {
-                        if ($tokenLines[$i] === '') {
-                            break;
-                        }
-                    } else {
-                        $newToken['content'] .= $eolChar;
-                    }
-
-                    $newToken['type']          = $tokenName;
-                    $newToken['code']          = $token[0];
-                    $finalTokens[$newStackPtr] = $newToken;
-                    $newStackPtr++;
-                }
-            } else {
-                $newToken = PHP_CodeSniffer::standardiseToken($token);
-
-                // Convert colons that are actually the ELSE component of an
-                // inline IF statement.
-                if ($newToken['code'] === T_INLINE_THEN) {
-                    $insideInlineIf = true;
-                } else if ($insideInlineIf === true && $newToken['code'] === T_COLON) {
-                    $insideInlineIf = false;
-                    $newToken['code'] = T_INLINE_ELSE;
-                    $newToken['type'] = 'T_INLINE_ELSE';
-                }
-
-                // This is a special condition for T_ARRAY tokens used for
-                // type hinting function arguments as being arrays. We want to keep
-                // the parenthesis map clean, so let's tag these tokens as
-                // T_ARRAY_HINT.
-                if ($newToken['code'] === T_ARRAY) {
-                    // Recalculate number of tokens.
-                    $numTokens = count($tokens);
-                    for ($i = $stackPtr; $i < $numTokens; $i++) {
-                        if (is_array($tokens[$i]) === false) {
-                            if ($tokens[$i] === '(') {
-                                break;
-                            }
-                        } else if ($tokens[$i][0] === T_VARIABLE) {
-                            $newToken['code'] = T_ARRAY_HINT;
-                            $newToken['type'] = 'T_ARRAY_HINT';
-                            break;
-                        }
-                    }
-                }
-
-                $finalTokens[$newStackPtr] = $newToken;
-                $newStackPtr++;
-            }//end if
-        }//end for
-
-        return $finalTokens;
-
-    }//end tokenizeString()
-
-
-    /**
-     * Performs additional processing after main tokenizing.
-     *
-     * This additional processing checks for CASE statements that are using curly
-     * braces for scope openers and closers. It also turns some T_FUNCTION tokens
-     * into T_CLOSURE when they are not standard function definitions. It also
-     * detects short array syntax and converts those square brackets into new tokens.
-     * It also corrects some usage of the static and class keywords.
-     *
-     * @param array  &$tokens The array of tokens to process.
-     * @param string $eolChar The EOL character to use for splitting strings.
-     *
-     * @return void
-     */
-    public function processAdditional(&$tokens, $eolChar)
-    {
-        if (PHP_CODESNIFFER_VERBOSITY > 1) {
-            echo "\t*** START ADDITIONAL PHP PROCESSING ***".PHP_EOL;
-        }
-
-        $numTokens = count($tokens);
-        for ($i = ($numTokens - 1); $i >= 0; $i--) {
-            // Looking for functions that are actually closures.
-            if ($tokens[$i]['code'] === T_FUNCTION && isset($tokens[$i]['scope_opener']) === true) {
-                for ($x = ($i + 1); $x < $numTokens; $x++) {
-                    if (in_array($tokens[$x]['code'], PHP_CodeSniffer_Tokens::$emptyTokens) === false) {
-                        break;
-                    }
-                }
-
-                if ($tokens[$x]['code'] === T_OPEN_PARENTHESIS) {
-                    $tokens[$i]['code'] = T_CLOSURE;
-                    $tokens[$i]['type'] = 'T_CLOSURE';
-                    if (PHP_CODESNIFFER_VERBOSITY > 1) {
-                        $line = $tokens[$i]['line'];
-                        echo "\t* token $i on line $line changed from T_FUNCTION to T_CLOSURE".PHP_EOL;
-                    }
-
-                    for ($x = ($tokens[$i]['scope_opener'] + 1); $x < $tokens[$i]['scope_closer']; $x++) {
-                        if (isset($tokens[$x]['conditions'][$i]) === false) {
-                            continue;
-                        }
-
-                        $tokens[$x]['conditions'][$i] = T_CLOSURE;
-                        if (PHP_CODESNIFFER_VERBOSITY > 1) {
-                            $type = $tokens[$x]['type'];
-                            echo "\t\t* cleaned $x ($type) *".PHP_EOL;
-                        }
-                    }
-                }
-
-                continue;
-            } else if ($tokens[$i]['code'] === T_OPEN_SQUARE_BRACKET) {
-                // Unless there is a variable or a bracket before this token,
-                // it is the start of an array being defined using the short syntax.
-                for ($x = ($i - 1); $x > 0; $x--) {
-                    if (in_array($tokens[$x]['code'], PHP_CodeSniffer_Tokens::$emptyTokens) === false) {
-                        break;
-                    }
-                }
-
-                $allowed = array(
-                            T_CLOSE_SQUARE_BRACKET,
-                            T_CLOSE_PARENTHESIS,
-                            T_VARIABLE,
-                            T_STRING,
-                           );
-
-                if (in_array($tokens[$x]['code'], $allowed) === false) {
-                    $tokens[$i]['code'] = T_OPEN_SHORT_ARRAY;
-                    $tokens[$i]['type'] = 'T_OPEN_SHORT_ARRAY';
-
-                    $closer                  = $tokens[$i]['bracket_closer'];
-                    $tokens[$closer]['code'] = T_CLOSE_SHORT_ARRAY;
-                    $tokens[$closer]['type'] = 'T_CLOSE_SHORT_ARRAY';
-                    if (PHP_CODESNIFFER_VERBOSITY > 1) {
-                        $line = $tokens[$i]['line'];
-                        echo "\t* token $i on line $line changed from T_OPEN_SQUARE_BRACKET to T_OPEN_SHORT_ARRAY".PHP_EOL;
-                        $line = $tokens[$closer]['line'];
-                        echo "\t* token $closer on line $line changed from T_CLOSE_SQUARE_BRACKET to T_CLOSE_SHORT_ARRAY".PHP_EOL;
-                    }
-                }
-
-                continue;
-            } else if ($tokens[$i]['code'] === T_STATIC) {
-                for ($x = ($i - 1); $x > 0; $x--) {
-                    if (in_array($tokens[$x]['code'], PHP_CodeSniffer_Tokens::$emptyTokens) === false) {
-                        break;
-                    }
-                }
-
-                if ($tokens[$x]['code'] === T_INSTANCEOF) {
-                    $tokens[$i]['code'] = T_STRING;
-                    $tokens[$i]['type'] = 'T_STRING';
-
-                    if (PHP_CODESNIFFER_VERBOSITY > 1) {
-                        $line = $tokens[$i]['line'];
-                        echo "\t* token $i on line $line changed from T_STATIC to T_STRING".PHP_EOL;
-                    }
-                }
-
-                continue;
-            } else if ($tokens[$i]['code'] === T_CLASS
-                && $tokens[($i - 1)]['code'] === T_DOUBLE_COLON
-            ) {
-                $tokens[$i]['code'] = T_STRING;
-                $tokens[$i]['type'] = 'T_STRING';
-
-                if (PHP_CODESNIFFER_VERBOSITY > 1) {
-                    $line = $tokens[$i]['line'];
-                    echo "\t* token $i on line $line changed from T_CLASS to T_STRING".PHP_EOL;
-                }
-            }//end if
-
-            if (($tokens[$i]['code'] !== T_CASE
-                && $tokens[$i]['code'] !== T_DEFAULT)
-                || isset($tokens[$i]['scope_opener']) === false
-            ) {
-                // Only interested in CASE and DEFAULT statements from here on in.
-                continue;
-            }
-
-            $scopeOpener = $tokens[$i]['scope_opener'];
-            $scopeCloser = $tokens[$i]['scope_closer'];
-
-            // If the first char after the opener is a curly brace
-            // and that brace has been ignored, it is actually
-            // opening this case statement and the opener and closer are
-            // probably set incorrectly.
-            for ($x = ($scopeOpener + 1); $x < $numTokens; $x++) {
-                if (in_array($tokens[$x]['code'], PHP_CodeSniffer_Tokens::$emptyTokens) === false) {
-                    // Non-whitespace content.
-                    break;
-                }
-            }
-
-            if ($tokens[$x]['code'] === T_CASE) {
-                // Special case for multiple CASE statements that share the same
-                // closer. Because we are going backwards through the file, this next
-                // CASE statement is already fixed, so just use its closer and don't
-                // worry about fixing anything.
-                $newCloser = $tokens[$x]['scope_closer'];
-                $tokens[$i]['scope_closer'] = $newCloser;
-                if (PHP_CODESNIFFER_VERBOSITY > 1) {
-                    $oldType = $tokens[$scopeCloser]['type'];
-                    $newType = $tokens[$newCloser]['type'];
-                    $line    = $tokens[$i]['line'];
-                    echo "\t* token $i (T_CASE) on line $line closer changed from $scopeCloser ($oldType) to $newCloser ($newType)".PHP_EOL;
-                }
-
-                continue;
-            }
-
-            if ($tokens[$x]['code'] !== T_OPEN_CURLY_BRACKET
-                || isset($tokens[$x]['scope_condition']) === true
-            ) {
-                // Not a CASE with a curly brace opener.
-                continue;
-            }
-
-            // The closer for this CASE/DEFAULT should be the closing curly brace and
-            // not whatever it already is. The opener needs to be the opening curly
-            // brace so everything matches up.
-            $newCloser = $tokens[$x]['bracket_closer'];
-            $tokens[$i]['scope_closer'] = $newCloser;
-            $tokens[$x]['scope_closer'] = $newCloser;
-            $tokens[$i]['scope_opener'] = $x;
-            $tokens[$x]['scope_condition'] = $i;
-            $tokens[$newCloser]['scope_condition'] = $i;
-            $tokens[$newCloser]['scope_opener']    = $x;
-            if (PHP_CODESNIFFER_VERBOSITY > 1) {
-                $line      = $tokens[$i]['line'];
-                $tokenType = $tokens[$i]['type'];
-
-                $oldType = $tokens[$scopeOpener]['type'];
-                $newType = $tokens[$x]['type'];
-                echo "\t* token $i ($tokenType) on line $line opener changed from $scopeOpener ($oldType) to $x ($newType)".PHP_EOL;
-
-                $oldType = $tokens[$scopeCloser]['type'];
-                $newType = $tokens[$newCloser]['type'];
-                echo "\t* token $i ($tokenType) on line $line closer changed from $scopeCloser ($oldType) to $newCloser ($newType)".PHP_EOL;
-            }
-
-            // Now fix up all the tokens that think they are
-            // inside the CASE/DEFAULT statement when they are really outside.
-            for ($x = $newCloser; $x < $scopeCloser; $x++) {
-                foreach ($tokens[$x]['conditions'] as $num => $oldCond) {
-                    if ($oldCond === $tokens[$i]['code']) {
-                        $oldConditions = $tokens[$x]['conditions'];
-                        unset($tokens[$x]['conditions'][$num]);
-
-                        if (PHP_CODESNIFFER_VERBOSITY > 1) {
-                            $type     = $tokens[$x]['type'];
-                            $oldConds = '';
-                            foreach ($oldConditions as $condition) {
-                                $oldConds .= token_name($condition).',';
-                            }
-
-                            $oldConds = rtrim($oldConds, ',');
-
-                            $newConds = '';
-                            foreach ($tokens[$x]['conditions'] as $condition) {
-                                $newConds .= token_name($condition).',';
-                            }
-
-                            $newConds = rtrim($newConds, ',');
-
-                            echo "\t\t* cleaned $x ($type) *".PHP_EOL;
-                            echo "\t\t\t=> conditions changed from $oldConds to $newConds".PHP_EOL;
-                        }
-
-                        break;
-                    }
-                }
-            }
-        }//end for
-
-        if (PHP_CODESNIFFER_VERBOSITY > 1) {
-            echo "\t*** END ADDITIONAL PHP PROCESSING ***".PHP_EOL;
-        }
-
-    }//end processAdditional()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+HR+cPzC4ltLQlWDwD+GgLhKzMAvsvUzKn95tiPci8HRBeIBbm+qFNIuaUiNU3fxN96hb1GHucBE9
+0VIcWdv5W7tMZFOGd/kdUwm21Eh/k8oxggLBJGhUCk4A8YshMBDkJSK0b10FcwbutUAlsIWtstML
+l7zoOdm1Uzj9hrvYGKBrlFxY5BhV8DsNRGmnh2EiGnSRJ44Al/sXNI7lJLxRbqVy2KXovPRjpcRg
+AXJ+/5YlYRXrJh6HxRmXhr4euJltSAgiccy4GDnfT1DaPex1SPUArrzfyyX0QUXU/tKNU/DuY2Cx
+KbR7UHZLbHKA9DC6byEcHCmAQYDomjCCPSXlIz527q+A64t/kNtcBqWmM/Baa6lmkG6Kt4lWLk6E
+tLhgOlLtQxBiXtNwztbFzEs5/tXM7obvryHx9qOo/uNMPTJL7n0CcoVYHyUxY+iK/aoCfVnsLBaV
+aoQJRpDMFmPyIuQceuQZBPOFLMmFdAyH0G7HNAs3SbH4Lzx9/dpWFy0Vlg+aRAFho2bgRVwTh/0F
+aZ4gPiE05/SaQifKykV/xDcm70imVPlBvZfWGtXQiGs93aA6izIa1GR6MtOevTRLhWW99gtn7vFX
+GeLoLhyiE3crvMLmoBVu+CvoB14DYE4Zl61TmI4clNdEIf4x90aYyLkKqcOooyQ4gKWcC1Yca9nb
+TKjYqbD211DvUzaRvpiKUySgr7am6MyhkWUiiPtWjXI8rJB0lyYH4f8mIkEttdxu+j1o9SNPiGM8
+I50tfGQ/2V41zEdKAkRr68v/iRj3ILhM/VM+Eqgbl6C7F/pkrRPxVePDrwYIOjlemaFQPSD+5dma
+DpsqL4UyURd9yQOfmuxk/HOOzRxQ/QqcFfhJnyOwQFoU9zMcBj912+zE3GbC+2gqzZhzTF7NW1v2
+Gb5+OciD7CIeMBwbR2r97iSrZnoiVr8SCAaex94xIKJipHHg1rUd1eNmGgqKt6oSL62DXMW2SYZ0
+Ps5GBMG6k2y5Qb76pGbofxhrKvxG7R3Nm6rUy2QfybgshVdEnmaOK9OiU37UahOfq2MnmFUGXSWA
+QOlnjJL7jJe57LNVaaL7af9yz2LFFas/0qz1IhL5SImR7PSkMblWTOdZXxztdNXdOVKT10nBENsa
+yn0mm4b1oYu2bo4LjGxkqLtWj62ynybv1v1DWRBxPAqlfo7K8+z6tXIl4/wX5mKIweM2Mx1saSoD
+ZyWDK7hgyS/nrdN4bqbMNQHloj4qQB5YK8oV0VwpUKoLgYE3Ji3Q2qjB92JmSvXxz9/6Iael7Ltx
+9cUXFkEWLJy/7TrpmNBLhqlhn6OcNTuzdCQPBmanMrv2CJgboek+7fOEqReIN4Sq0Ku17a7Lw+PG
+GxsVWh5UQoW421MEd68Vy8pjfssyI+Fx94E2RozsJQYAKQ2YS+a2IOR3pY9KPPxMLeN++tYqEAjp
+YX/II6WNsoxH7R7hstf3m8Odpz+EukDW1R5xIwX/ia2n4lzKqSd4pdAkOvhZB8bE4kLCPWA2h8Ba
+XWpy3t7LtazcnNlTFaTpOvtSXWZj/sCXC79tEAzcwet4xuzjHZ4ThLbI9G7pvaTCKCL62nHETPNp
+3ttdWPudjn2D6/FdN9awMZky5vJJJ+MKQAMBrRIKXYuM9CYBBXybi/MNsBcTsqwqIGgNPZXwhGgV
+Xlgco3/7AN+zdGPgdJu99vz65WqpApkJdd0XzNqdA7nDuECNIxA3tot7JPRCIi3z74gXXaCbf+Qj
+2JzjwQDR3TCce7bsbYoT5uCZKCqrTwx/JzhiRM//HP3isIkX5jJ1oe6z+qCnACasj94W2ADbEgZe
+Cld7CVpo43KCJNnd+P23BEPJjIhTzmrFS9sKQPopWB5VpxiUKCmZBvBU6ef9X6cFzR7RkoP9HqfJ
+McAf0pM8yNC/lGyg9b8CCfzaeqzyGEBapd/MpgMZwq/wcq36+Bxd0H/q5iwLArUzjJdFo/XrBDNF
+n10ssdgQyMusZwYXydzJ+7z1cre86w5HcqosE+8Y8qEz1rj2dzeEAVYJXLHIQlydQ2x94e0lGYrt
+nzrV0DXl1hoxrgteJ2xiNLn1SDkmfeZiTRy9/KVUo1DPFo+2nGJZ6GXUUfPeLPzBETcf+SXaCF//
+l232C05RGo6CYxzmZt3jyjudiJAxXhT2tpqYOmJKVXBnbDjjb6q6k1ooQ3XbNoDV/VWV5pYkGtzG
+NUnKmwN+BePNfuIYg63OXm+C1SoddxoEMfrpoQ4G1i7Y+Bl1wLvm6RVXPQoVSCCYVZ36CNEaqceu
+TWSYJOwMdB7p5PzCYMiP5qMNlNC3i0/ppoH0dJOTZJLUgmk9yShkBjwQvMceslE8aiyCR6cSWmZs
+AIIqSBPfclpDZpQnqfiojeHtI56AhjRo6QXDk4uvZDwczX2fWfCKypCsFfXHr1QYHY6tb1Toq24R
+IRoDov4jetKPcd9Qclfy3FZX8ZbGwTjbAd9RcO13ZI0fd9VLHNg0nqxtP5OBENjSIMEGy6TTzwhc
+JujpoL5gXe3QGAP8gCwxdOJB3jwhD3I374Dl/TfccnvTAbp4jlcXPMNqHJdZ9M6ZIdzklhAKC8Aq
+D1amPoUKxTrtmdrC6/Uw0Prq3YO2AhmF/kiweB8mmJyx65+5AlNNfu7p2jjTl8KGJZixvwiZTfhG
+4FfMpcFdXhW2c1I0jSuhph1yy80nClFj08yYpaGNCNn3WeoUxtQPGkWkO8f7cYgqJmwF0PtqIYQ1
+I4BEm+UkaKzqeNx6D8Y7or2plmkHR+dLsDNTrt5ITOlk9w7wu8gm6IYwgUFbc4t6si/j7KIKFSo6
+S4+sNh72sE3VHC1cqQvB1TT9hN7nmtitcUzc1fV8HWvVEOPhJMc8iedJWbBQKutBrKPntqoJx1XB
+E5zEn4YlGkrmgF7dN0jt60S1A+GD1CiUd5hlpIFwva/iqMJVNVhH47jvwRZCkHAS/PqsPmnGLGqk
+7ZF9lNJudebDS8IlzqZIQj/sOabmmorxKTEbCtkDtIqz0jZvuEBO0WunVwgtNde8SHjV3TzN4rjM
+Bnn45bftAJ+NkYzOWlA71jTvz+zgGrMONHv6lQ7zd+ON6ZNXg6kZK4hXirFeETIgXSVsU01l5ive
+Nl8NXt0uBm6x214xAqsDSdrD3LVyS9o4hWY9SrvUxyFwvq79BJTj01pcPYMexqCIabEwq2rzS4vU
+PeiejiqDoOk/D/ft3+zzCvL1o7nJoEeQjx2G/3CCUiPlqUH/1qRVWsDo22rDgAxELMcFk+p+B0bx
+u9LCbBomm+tnJL/xCfkvBFTTu2WWSbGIL1WETjgYu8igR5lFjjwzmEeO2krZKEQ3GIlaG2fqJ2Yt
+KeOWs5JYLePlQj7/JCyaiBH3rWIj0mIXTxEXNbfy/pgVWluLQrToKFpSHgrBSRiStm+/j05ynpT0
+yM1rQi4sGcjjNHFaTvGrOh3k2AeYzKd4nwS1lwofDtyTNjSYSWJzgLWWuP1imCpvD5w4c/22AaEb
+pJ0vDZfQ+dsqiT57HHtrcwMy3qEP/d8Ptttq+mn7EJ+Rud+KPhlHg300ANHwWliK1ija6fdJERQR
+yv60sRp0osBV8xwuoLd4TnEQtwEtYCNA9815gDB/WLKYVItL/rTSQrfFZrQBKOV4bqq+QZ9+j9XK
+A/Tv3KmnUgGgitOuBBeIWwI1ydU03LV1hMZsJbU6fhBIutEDuIVZA9Id56UUstJLM5WlxdeJ8wCf
+TA+iQKucf+hzRr9HuHeulUW6LXuMjnyj2iTNf2f+AUtn0fVpnsbrkN7RQRrDZkOJYIgan5/bbZ3C
+qxQPIUZmHQw81GKDo18YQEyDf7OXzNZD2Ayar4A4E+aukzvLORtXeCJm8ZiicxvUM5vDcVcP/WX2
+d46kjheJrtqrL8C8Wo+yEx0gu3RKAHC6Yun8awP/dT3o2Nhafl/MLOSkfBY5bcf0sH6UhZb9jrMr
+4YXNkTkIzc/cDXridZfSgcQDhXzmtLdhPmagsxYM+qjT9fpNcqILqxx8SVyQFKBEX2Z8u5/0FToq
+7ZM00+ocmIy/Tohaw1+TjZY+s7gsZLc2jSCFQuXdCOHw2EMe7+HKykS5PQOHmvzy2lLHGNo/UQJM
+bXLpa+k7hznpkCLUqccpK162bMzr1WA5bmM99frLiOPebPIMSnDjQLJ2WIcaM4D6LrKq44X4N6JP
+xqRX2zBTUD035Xt1u/idusOPIc2zvnepPt+P97hjosMq4aBIPJ2S2eai059bhTQTuFnsPYK9J7Bb
+jAL839/rw0MxUeWqBOr2h9P4y5kBeXLvZpK03Oqotmbymi4vMU8nSpU02YfxHXUzdmywy2I8HPub
+ZaJTv6aSGqQgyjx2b00mK1xmt8kJyxeGugI4ulcuE7GHbJ7mRUEmRbeBrnXK/RG9rhO8LHTBl0o/
+MGusDa+liovBdfGMidyoSL9ZbCC8LrGV3ZMJg7mPkG4PUWohzNQblUyGw+IRWB1KN6P/EQU6H0NV
+Liyi9eHyE0AEbfWzUDK/lySSemyQPCD1mOShoMEseicOnsgQ5GSb5Oz6jHWMH/bP/WHDxpbD86Vg
+HKijXzP6NDxbnGRA74kE0gBX2FjjzLNkhL4o9Xs51A6Rjslk8SEF69JyMK7Wggr9bRO03l4vqZ1f
+9Sa2JwnvrVLmbtb562c+JbUaaj4AE1dDmy689d2GCSwmXwCGX/49TFnEE2U7Ox2w6CKlZEjrh9Ey
+xhy+hLEDfxQTUDtgwcftOCX/QPNg3X62PMb5DndPKGB9x7/1Q1EkKyBTrXj9tSomh2UXSwwqLFAO
+eraWP0RcQKks7WRJHn6AfExnUGB7CLRiso25RfI8GqZTol8zhjllBvIwjb8KAjGQmf+ZXf1nu8OS
+C5XZ1BjnX5D9rQIHMrAJ2Vt6zt9BsXBDXaLCxL0p6NReMG0mJYsvSpgZw8a/O1l08DF7lISTcokq
+yeAIhgIRN3M/Gjlt1el/2V4Mc8e1CHXiNOwj5Cb7jueq0R+AvN3B4vJEojX8LsDAOqE+uUBEtfWC
+JgD8nPMiNVzEkYFBbLNZNdBVnI9PJr5z9jocGL1HAVrNUVikxOHfx9tzUb3A8O6oxPeHyFtOBThQ
+6Ok5fWestnwfELSOGz2OnmSZ5oCG3IQAm7oZi9vULlmSzTKkPs2Xj2BpGvO5r5ussRw1ANCFJQ6l
+urbdjZab7rNyZJlOUrEehu9wJGZW03wDoSe/t32s/mKu+6d56BeFndwd/llWmjK5xbK0GN+Z4aHN
+EA8FZfRNdLuNIpQVTE7dHmqumAF2VurxiGYBkBJfVr9Rh5+J98mwRk26Ga7sQHTYxF7Jyp5GndIN
+VajfysFdDJhsveunbci2SC8VngmZwHIloXza7T9AYJ5c6P5KopkzVmBmUVuwV5QWlNZSf61THI64
+s0c5Fz8IFKvhY0bPkJT/1f6dov34BDJyWUFFKuEVqHdY24PmMuImQZi3VRTfmkN6Xj3zvoxOPefL
+cxrP9eeaZbwqDYQacIxT1LYysbtIBJ6p/RVl3e/drs1/Tkw4WP9hBUxbDahgN8dZPG9NK6M7mjhV
+fV0HSHFLRuGdEHinbrOi2r9N0/QKpGcKMzt9vfr7AjbpE52dA1wef5+yU6eTUgI+p/itXsMr1O4A
+TKFgwPRbUBIsJeM3yMWXNACYRnnVoK3eFeZgqc6+stFPn9chbmdvpp44JmYuIMV0IrjQsXtWoZtF
+kYMbuEFcMNbkynPZYw1n2pAJBsl0Oeipk4paKrTyG+XxhLLuzuEQdg5e1800jeFYvdFy7egg/HSn
+UA+hzCEgLgIQXV1mXxW+dP6nkbtKe30SoZFVkJwtj67l2Lu+R/kPJXVikLdxE9u2Y9uK48sI6OqV
+0HQFSnhvJyJHSZ4JMkxlPpfgCPBwcoBurVWCzv7uFUb982pAqmV3lmSGH1FtUxjyqQFjg7D1wquz
+2uZ8QA6NoxpccYYAqJjuwXUSVnzR16ubMozTECzz1clNEr7eIpxMmXrGvmNamfEGPwfw490QSvI3
+QtYT9Egcwd2r82AnxG9FUXDZHRC7be30YoeZ24C23KirjEKuxf1nrRyTHiuwx6NGaqakpHUiihG8
+idF9crwMiN2BfOnE0eSmBBmDQW71ctyq3KLlNsN5pF4tTL8PG0sK13GYZ6+MuY62MJFAsuk8kgIl
+wfDCyaWmkdOnXvp/KLzG9ghsEfHL7Hjh38jlpxcFpM5DLnDQ8pasKFzaWMi20k563yETvM87D5BP
+I7NHuaw9GbL9oozsePJK7B69GJLCS/vOPsKsGnyaNE52cZXg2UyIuQqNZOkubQqzP87OC/R7htuj
+y687cO0DHLuqoL7MyUp4eqcejeFW8LAiO2gEhAs6fUF1C2MXhTdd4GHpUTkWIorltVlSbLkSx8Dl
+ie3QvY5ECysEggCL4neU5CLASVtdN6pxR7YHZGUEkp9rQhV78un1ZJiP7j0Pxr/m2TKcKHyrYIpK
+/6HTMvIHWiCJDBXzuTqe9qcUrfjKV3/9B0pBeADozoKg7BviYEmla4Qcd3JKpkO6GXozlflHu5jX
+6epQY1gy520q2yxSk5sOs9x4Oprp608OfFOQvNejieD9yc4b4FyEdAEvwGkWS0dv9Gk3eu/4s6qk
+OUPpVqfgd/lYZm/BQu0dNnljqovfidpkLq0qyRxEyXmipvy7xYBrjCl5YgebYFE9t+27+0u3rDNo
+p+tn9i4wzI/81YuTTo038lHkxvOb1D4dvKKFgqj5DUlQ6briYGLSJOoerk8gVwtYjrv2wN4kEyaD
+db6sE9gG9WLMIYn1KqtnfsIQRzvLZ9UXmfnK11QPQM2lPmXaRHfFhdITlAJU3O46FHJ/zUUCimPX
+9Uw9WO86C1k/wvoBhvqQTYHoqZsUmqZYOgI7qsPEmnLp4K5iAIpYZFBF7spw0wRoA8ZrlWmHyv2l
+up9w/B5E5tablDynVU9inaLkYQitgUc3OemFSNrt8hEMT9SqtI8OVDDKzBpAmv+EWqCBrQ7VBkeZ
+W7dtRUaCTkKmZCv0M7lVuvsHmXMMk30KzpJsCZ4C86rC7YU2mkuTFwHit5jtjVQ8sUzT9xMCOsGm
+DIPgbNwCZbmuhhJIcf9/tXQzQ2VpNG5Z5UZrIDeRys9lnGmFxr3La/dhWDyTZnN0pgRMIeU8qA0q
+sK93Q8kF3xreoRTv/4hPu1GtbdqaO1dGHEnAXV8YGcBRx0je+Et/fGSFLcomEok4J6bbvNjoJBJV
+9BJMn4pwlh3Vav8CofG91EyZbrHZKuTR3cC4XRsWecL0A2+difwPrXCEzxQJOhGxLIiol8QqcRYJ
+RNVmq0Q67FE+byYdVk1iqIxhbB4DZlDhmlXZBYDHj8nn+FH/S2b5dp18bBmNHVjLm55ttaUfN468
+PKeFWKkKLo2qTtJCDtLIhXnc4UcoKA4TR3lE9wQX/rRSGll8VsKPBrHxgF6FK23q++KciecvtYzE
+Ru0F+0zecEksxotBRu0B2Rb/ZJNL915r8l7nLd5Q2N+umrzaRt5t2pv/SaykfkZYNP5LrCD3TB36
+jgqwSwK00QhZlZ2XJ2ejgrN2FpZe476lXDfxxy/hdWxWfGHaL8XMYgpEOsUfWwczT8nQBvRrE9IF
+SN+cVEET02P4cx4klP9DKo395RWwp3LsA+GubtWRee1onMO4Vo5cP1Uh4ayhkqDhVPD7I6z1C9cp
+3TUB1Kzq9EjArFJFsX5UCPedSYRZOE7n801eYRPXbCea1eFJ5vg1iMbS2c/8KONkXo+wyQKBUTGw
+mLhoVz394KxywrezWLWPpAOOhwS3mpRAsYAM+Dqt1Pz4RPiOZLcmCmprD+wBNF36CH+8ztPk04Qs
+CWNn+r5NjYHKt7Yx5stGiqp5oOzc42SUKkpbh1zkTHO9wV83wFdtWxygBpdnfy9wdQjiSmSqa782
+n4FEHPObdcuHLAP2GHyEewXCCAXgGbGiX5soqOZJk4iWI/6/b3uVzJP+NbrbJk+SdlrPjoHA8pk2
+hiEhP2X0ILlA0hzpL250s7bwYGCcfLN+2fFWKVmVvjCx0yEtPOwbj8SXU5Exl4wHd5EYlBCAoXXI
+bMWbp0t8aNXoBz3P3P31lXQKE0A37h/XuTwWFfndqWIvqwLxZ0Fb4B6XlShEj3ftYRlVP/y/K8Nm
+ZfQ981saEprx27o4PgX8rWZPcDF++6O3gFj4uEUEhNWgTT/EOTWpnP9hiMOi++3KPYPGVDU4TZ0F
+4qdOgZ6YLfdFLndwGle/8iJ86ZFo8NTXBAhTv9b//s2S3CtJbt0PBM4elrK+WojtURERoWtmbpDE
+VJaxnY5Imdd8vFxVglwpCiMErtWxgjsM2LXfarG5JYqXwzsKuMKDv2iY0j2dTPojJqdL1uKg3L0l
+2oOWgMXM4vjtQzZ+9KWNCXUDnfOrXY/1MgoulwQUGPwYfPZ24dCSUxv2v0JBIYgwblNOX0j7jXAU
+uzUB1PXRMT3o0++PanZzu+YY12xXpOtsJPgj0JLg+1+YpvTMadWHGgUug9su/trjM3izKP6zZkMj
+coOJSinbdyieuksoORktT6LjYNo+UJTYc/vFhl8t9lGFW493NuwfF+qgEae/DKllcKPb+R1J5Tbp
+BNTtb4zmIgxNQu8lAY2rhYG1KWARX9AOq4bho9mOG1IN6Tq/ydFSZcPcTtUjuYFpJll+1buUaWsa
+mUH0rHZxCSU1Ko3zLxjTZ4SKZmJU9DA1LtBDdap0dzEaIa9404PSbMTQePCSPzxBVcTtTWLRW9i0
+UjDVfou9LMmd63A0l1nO8Q/QnRgSZivtls+Rrx3xdFMLsJeaQLdsdoFNrNb7d9+MLMHsJYgjvry+
+3SmZrrXFUrJMyFLv/AzLoHuq7Mc3bS5Ow9LX5VsavnegYmO5M5SYYAftTs2Rxxrq6K7oYOIlONGc
+uHpYPYvY4LdImFq9j+EYNu9X3ccjWJG1Y/nmSR24gd3HQudo8+NtdFliQk9zROfVn46UJctr7XRM
+4vO4YS/JyRUf7/AT2Nz606uuDr+vOOm5zdlgGZYfHzquksYadpCUb7WX/vM4QwZtWTCrxnvpAo5L
+9CrdAOJvjuHWEiUmRB0n8ymO/v/Gj8am0ovn7UvssUN6Vhv15txr1zQ6aNWX4EqAWcQC8D/zFUAh
+DSUIHO2wekDjIIeWBgXMgXoqI//WkF91CuX8AKKugUWxIrbucwDItyL1rSxmRBlPFLBjJrvdqn4X
+Gxr2WsxTIDOMJt7mpylIYXArztE6sOwo15Ehsnc4uQAnslfDe2Ghp2srSCbRwspU9+Nf4WfosqJa
+x7zSUpSmf61IGwHkg1uotHt5J3EuEPEMm4Nk52JY4yVFchxublQ5wfrIgQ23Cqs3x38gKqTue5lN
+N0wlDV5Lu+LTdqsKzqIZ8Y0IsKB58zySwO6UmnEm2fWjHupjKlgx8+FGM6YAjZSALVJ9phRrPhGg
+nddF7cD8gETWcxsSP5yQIB8lzexTwLdUEYfycbnDMa+J8Bds6+qFjoiUCpIz7ro+1ut2vB4Caee+
+c+EmeGnMgt7Vh9derXrG5/1h38iTjn+Duk0+MUMxvUk3B5+TdMQMRUS+sm6Nd47s42n6Bxa7S9II
+q+9/9R7n98GfR5kdo1yUuO8qG2a4N9Va7NhYOtNCFX9grPzMnOBkQkLP28gn81QJlEu3qgzTkH5L
+eA3DOPl6Nuois4/Eq0vAKUC8F+ka9LiFdlZXlkwJORh0+Hw3DFaOBYO8pQc0MFzonQEsWIzpcjK0
+LEshMGR52RcS3YCXChl1Z1/jtvb/9Oe8euVSWBf3Cpy9bad4G0BFoxDsFolHlZ058y75gwgNd4h2
+TFEKjZRUzepIWMo8Q3HxEYh03HHsW2Kb0heLCZ2KczkXw3kcxPXV95SWZQFa1IYtIphFQZSbWqAq
+umN6bVR6fP/NiwobV1ctHJ9H9w/bT332KAd/WQHSNOy9BpDPOYDrj9UVKK4bL5bE5xg8cNmqXw0h
+4V80zgKYMwTgDUGGCQpqw7WQXXUItJbLpZL1mWyQRn9nPQ39EpNwjqoiYNa4JcD6IR3UbqM1lbBs
+8JGRvUSixfNSCptNBfVDpTfF2Xx0Gbc+ppfrBD+FbqOFd92MATXbalGBpJzW5hKDXlr02VudImWU
+aUNhYu3EIuefC6tJAyO4kAosharwdORzV/2JsPJqWHw7oGyTniLtM3bha5FsV4uK6ed9O99bw9/+
+jYuBuhoYHduqXd981ByBbRXzGyMm+cQqHbD78K0PvNwIGVR73R/Zw0wwg5AOQHXjXy3nbqx6iX2e
+SXDn9oXlCX6PacMwdRuhsD82/uw262WzM8Jd9191oSQBImLFawlHDv0FGJuloxRB7nqmes4A6FUK
+tdKt7/Z8TTWRqNpnqfSfBcf4SqLwPrecJzr9swDFW1WBv/X4i5eeYxn4Bl1MLmFyoY2InyUqr3Yu
+A1N/NpuDTBxg5l0gp5N0Q4xTWVGtjRW4i6KbF+EBxj6uxOpYH0EnOaf0+7e8vi4L0PgIL0349f0w
+VcqQhhqtyNYNLc+pnih6056vh59SZUtgOBtYn/JzgtvWpQ3LN2s5Y+2jjSTtO4md38k2fjCQSdEC
+4GU/VuRpjJZUR4e7sLo/6qJjs7YoyI5NHntxW7OpACUwWV67NoKCZ5IarxQGBGQX/hktw7u/CNbY
+kg+7WgL6QmtTPYdVQo/meSDM8cWzwUZmpmdqPOj+4qy0vftxSRNLORcvKAkqHorgMGbKZus+ppt/
+7ag5+BIHTSgmuEjYoYlAYtFpncU7pf5mG6e7N4iaMV/3mFB/aDE7Zy1XiwHuEu8R1dmghaI8Yged
+sFtVcIyRzhnwSYqYA24aARh+5/TOORZhsS7LnddReCNR0usu69BfxbtFTTfWOdgKOMqUMICeMSKj
+RYyo9ElBMuGjaC3iqT9kmF6CPzJXs1duCd4STmycyui9DLgU1rvZAwKsQtRkeRejdK/Ubw6r21p/
+fI0VDgOIrBywTACOmNSxeJzIoAx2u9b8GpBfn/asbRbiNIg/Qu+Vze/7luywkisHuytPckQckD80
+Xu36rxRcxYeRv61lG3gylJqYfj7qDdr6rNktUvKfr/+5XnddVhonjEJGWN6LDhSdCKYrKtezSUs0
+hJIdsQUKKnNYTYXQPeFYX5Z7zrTrjHNzTNaTlncCVMs9AqsXPAPH2vB0jtQviOdMi5RZCn3vj6Q7
+RiVT+ZOhSeDz0ktuQ8YTbxSHOXrmrGBTqb/oZdJtIfPVItpC5hduZMRPXbJJAeAFPga8UHOd1SW6
+dXWVMjyDBqV97xrmcJaML9kzCCRWnpYbZ8Xd2nhvT2em9b0O4IIhvk/99UcKQWm0kZigUdzoH2ar
+DcS2yY9eKqvfsI2XLgACjS3nrkWCMu2OD7A2Ox9T/Bee4Jaeyh6fhUT0TGZpXjxM1YRdOnweEUAW
+jb2o8K/cKvL+JHpok0E8wlSOnYAoAGVeeyqHOk+Jge18fg/x7zrQCHVjBBphbQXoGsiZENzQ9rxP
+6L0QUufGdP440GB1+u70AqSJo3OYnj07o003WfkQv6tk72BSAYXZcskVC1kt/BagPS/o2pcT+LnK
+TgnPcRu9WeanjSW+lFBv/lKMZYFsPnotv3BhurdpNejPSPoWMQWtdTr9c3C0bY4wY+Ae/IiQAeZG
+aqKfr1RKNrg9fT2/KXRXMaxxTh87ODzuWGLDu8r7Iacx3lZu/byYNLklOfIwyhDHHaGE8YHSGHYX
+JDy80gQ901sjyEWzW2B7y13QAnbv64of5GkjOU7JEp/LC49LuGqEYT1Z3+z3zF7q5kvWqnUKuf9r
+gEyOr7yTCOiGn59fM6nzY9fcwHy9BG0ATNMghvrLDIHq44IJAM6yXngbHUx3vto6oF0uEl0hl/14
+rm2V+j4xWsFYkOba7K3QVmXR/aHiPKab05YH5bgOucebeyJzij7G4i84e47b5KAcBS5V6teJtJHd
+FREKCAc6d6H6k21jZaboUJQMyZlHdMz3a6Sn3psYpdjSCWyc6xTALmwVweJj1ldjKkZAOLaxdJV/
+UQZQP7DEa9ZtSF24jyj5nPOs8aGQeB2fpSD0bCyciQL36118rUdAOLlJ3nj4TLUWMgetEiGO4hc5
+lEYKDB5TiMJCfrAAcMEn0vhDmkxJ6krf4mKn+tFEL07PzixrnIgyfsXSQElzuY6PEYk0g9SzOJgn
+xQ1Mi9vAnhB+y4qdxcYyqnePiiJAxtGpg9tdG3PyOXZuiStCYWJz/gEe090Mn26NOPLA+/r6wwBC
+VaOMIVs6nursXIZQOqbmvjAQYmEEv4Om9P1f/SSr4az9A1bFe9Sq3DGL1DH5u51t5Z6tl8pSBI6i
+x2Ak8wy/wC7rrJMf1S3b1+r9VtbF766NklqEIW/WAsXKt/8cMfFWbDL729dKsta0iigFff+Syz6n
+NwMUTsaOca89JRPv/xGhFoNbpuIox+QwhwuL5OZpO0+j5nKr1BY7BhuvnbkaaxdMfMmqSjL0bZRV
+rAp4etNvIG6lL30T20ZKdbjm+EQCG3K2wDM7WNzHIACnrMmD4XK8bkqjF+bWUzUMG+4Xwpz2245l
+kOSJra7Wz9mPOc+aZ9TbU55UWBzj+vBfqyTmCFkEe+pU7+HbtfhzOkBvNrfDAWlIWzrGeeo1NQ1G
+S0YAG2Vk/32m9VkmWB2/gL2Ugk3oaMb+OwEa1+isWBEkRXcuhRHsPKZzumYvnszyv3MDnOqGK5CL
+irR3LQkdkjVx+SeXNq0TRr/jk/Q4Vhq1YASSMqFCl88M6U7iw2R+J81kn1PQ1NI1jmflwJ2rmnfH
+g7G7lxvNQSSSCGzki5fx/8TK4ZcRR8yi7O2Ij6+oxo8nqoGGGlTLhX6js2gyV7uWw5SR/au9gUWc
+/uZ25eLIzPfxin7wp1YqMAazx0u8geuaabQtqgTFSspIPHQYJktbSxOnozLwC12FUvDEs31yaFX5
+SyaIUvE+w9MgchLO6DyI8tDDyGahH2keBQQe4+rprWwAqcz4CbcozdAfVs7plugCy+3nFOuP5eas
+ihA7GM9kcyJ8Pml+dhWBL2JibxBqkBAWQl8XbMYAq1cKw1tmocc9HsUbnvsV8QfrK/nhG1ZS+5K5
+IHABSmw/I/F1ng3u5V9seE5zn+T0NCeNt0rvQWEq3x+Sm4rmfR6qr6XtocbTNKy4/YHsd2357Zyw
+rW/d7NCMTHj4Sy2xGMJLTbtUeb3qxYi8ai1l2Ilaq5PZeudqxox/1F2yb7z9qK4aB0BuPtljQzZn
+klpCgLTmdPiOXzgC1WIzBb3QCZNBDRLJGwVi9fIOQcco36BkRYy5Ow7acljdkjGGycugPe9eo/5A
+boKJyEsxehDbaNuzIOtJkoclh64mIoSETchhOKXgVxUowkmk0PtWJXyR27BjTGHeQPjWb6YftzmP
+V2NOPjWol2EQ5nQlaFgTd5fp3rzGD8MJnsU23lQQOQr1aJHiVaYfuDd0LO9ChiO8sY1hjt3Uhxhb
+PyzCOz5D4km90Z1qN6T1cVOSAKPJJ7EQ7w2IkPDmnEAUIhIJowH73ds+3VcSTOV1gRUpAwY/8Mdb
+uSOuv2UEI6ZsC/+Xh7ElJHFM6TZOG83unUfEtP6KN00nPtqPUh2bxyUL+p0qvwSWIA5Oxk+iPc0P
+rKsfzvaJ2ygdS0sguFlYtg/Q5cfQqRYsDrZ/IxxWUDrYxNAlppB116LJxXLkOB5DTk6UxbkBDguf
+1um+k1ZECcNnKkFu/CDlerVoegJESUvSITTxKLh4g2VjFWOkVKdE+qcZirtpT3CT2uUGE8fU78YG
+ODsHN1RPzSiWLW0Md5d2dfLigQzfaowE1c1iKjTy4pYf/v+2KNnEbTTGYpa3Sr2qx6wqI+gl6rcF
+8ykvu8J1YuMYFn/wFx9uXlCNelee+cwsNeeQhvWvY9UZYVnT2qXXIqk5mLEirgjqP0N88URmTdE0
+BzWfsJrC41Q7sad+OKgb1cWQzhZ+Bj6oFrTe2e1luFXdnAitJwjKv0FeGyxyA5LcFbx1J25OhJPD
+HO6dHIYTdhD63As9TEnuPqa1cZQRfKqolNAXCVHZqGzpCJhvUZsF+L/ebtMpXNL87sGjDYS+cHyq
+DitESeL0KThM1/28QWBZYPF2Et0SSaY8MoTgs/g8IMzMvHSmJH5boIS1MGMrfx1rSf1oZYyi5t08
+moX8kn+8p1lksBItljW8tI9fATxSstoAQBaqUwTRvm0mZvOzJfv79N5evniqTY2PRQCu8JqvGU/r
+XmnE2eJGtPYX+EPvneaGKwCau7WGCXAGXF5P0b41UMglv+7ASvXuM+utM9G9OlRyI3C3uqOwAfvB
+SZFVZYUuqKxpriOXvY1t6TOhBe0pCe4F+lbmY6xpPu8nBXu7XogKmfPRCe/rlVEnxTU1DVvAElwr
+X5X8FKcrroBjr2Qo9jLNBRM/M3keVylCn2YJriEis9ClfJAQlFNVRqtHw8P8c2zTeqYG0A+f6XDy
+vo6gQTj7a/F78OQ+U4ic6BrMUk/q63cdjE9s4zjqm5oaqctHojAZtl8dPywexwtsqKbMENgeqsgf
+hR6WNDu1KLmmA0zjjbKjuyjYhC9U34SX4decy3Y1T4PRp+yHT7ZEa19vI6UAFUi0CfKp7zBO+DgU
+T8Fi6APpZaMTkeuc9+Wx8M9RRUntGonPW4Mk3iAePoH5jt6CaK4n/J18KZTR+fpzuAtvF+viKn9t
+/js8MqM9iWEtGsueHi5RtYVrUOMZLr4rzg7gEFF+jp8wudS+dMhb7kzDYQUyEoNu2ivEiKm56FSH
+gEI5GDOBRH10Uk+d5Q4GCPfWMEVtb9LOqVPVH0sqhPDGszIAWw6ejEEtRbJB0CMKgQBDk0op0Urh
+hrw4tW97V/bHU825+7fCaMWRGIvNTKCGEY6apOh2eLlDK0UVNqKebvsEuiaUdhzfEYIxpbsoQdox
+oeZyiYBGUr6j3DwQVwFZP3bzwIbptuKN5mFjdTOVfdR3s8hyZox1RzBAPbbUxDGF6KV5tUZ12M3W
+31bdsSszEpI0fJOdo6AO+hsdYdO+tvocmjKN6EY4aXDfb4z+f+AAR2Sia1dPpzTfdzLVmHqXd1ss
+fp05QaMqOqD/WZNDQ+8VExduyu89nVw0UoT11qeZiybxlFuCJnnH0s4QDeg+Ehfn0+p0tm03gwly
+VG2Xw0apA5mHbvlweGOtLhxnOklKhoNJQjIV+p5OQMQbK1XXEGQ9LBAM1jHh6Xew8UdZYobqQXao
+CJ6D/F83t+5E7PLyljTSslxo8EUw0RnPbJDbYzSmxKs4LuwnqaMacsrX3SWwKVkacvkZ5uz42esb
+TJTP7YV/f4Me3saDJ1am8AjND1aZGqKE3VSFKoD3bLahE9y2dhw2TbHIsFe5aaLcfXSz14Z8YpqQ
+Hth+zRnveSEa0RYcAYaSnC81XMI0LRZ2CnJi6CRCZFUJXDdIy5VPZacvW8FQHsOR6GzkCebTOZd/
+0VSfW11jFfgTybWSMOQ+vMKQsQHjnvMg52895zZTcdZ5i9yAgfenKGNWDkM3vnqdvNZi+pSeMIw0
+yhMVvhRnsb++3OJxN7UyY3Idw0LspbNu3fTlU7HGlpZmhBBN7/Q8Qf2tbD2nYzf0/o9GqnMnadOA
+dJYb5E+5qwRIJYVPL9l/GlZ1aUjXuajG759sjA2HU2bpVpBVhrhIJFHLKHL43HdAQ9rWms9oKFyR
+/0utxXXn4JMv8qdANDHKexO+a60M5V6t+CM0ePzAUym7wlXAhD6OHyVRngHvBqLzM4Lj+eBLDIa2
+RLioDYMXZuSL65Z6A7hIj90b7KD8B+wNtYPHOHXnZIruqiAxT6gwxs9uus9PjCasTsxVVbU8O9IZ
+h9Kdi2eM98Au5byKeFceIosclZk0rNLSX6i5qBYgj2IoJnO92Wv5AIviaX5rBy1hcnBKQZjZ8qCK
+KEnbEag4/SvVjlFjAV7ccKKcitadx9bW0yZlYcmCWXpcXJHwk3jCGyAEn7/1d8ad+x/CA3zTrXKk
+kWj1r38sW3OGI76rLp+e98V2Ayy7XuxHwm5qCktoe45/7xlC+D0WO5Khxko2zUVp9mHjsj3FWODn
+2GxKh8QPdpeMLZA1QeScy1HXlPOCiLc5P90lNRQ8HoHKFJvSkX74b1jd7+av+0aw2Uixl2ou9lyP
+DBa40VKfgAMLEwzU4Bk/Ur+T5PtetQWY1GxM0Bs6sA6zZIHtxCz+rOOQZbWzIrZRFs6VRRwV+Iqv
+8FuZ4P4+/TbT0gaLL/LKq2mzVq04MgFsTTXQLPav3ZXdEBfSaKgskAhKDA48GcnbTEccaiHbLRKs
+n5C/SPH0KhCIbLfXzEGs5RofnIv8KCbgRwDqyF5iYEjLFst+8FnIdYB/wjkrkGPfbzini4Gn7C/Y
+2b0hOfDc1i/aHEd8VeT9QEDp6/yp668Tm4uY+hmoV9Ib2Pt5j+FvaDMtOwAd08k4ZgksdtOPMat9
+N3NeSKd2GkaUiwdpkwIfeoUeWccYW4G+Fqx95P0pV8EJx1lUBa2v6mjJalfGzyV89t0xFl/uXArW
+l+I5R8J17xY2pYeqHVzVRl1MZCNWDkOzdaE62ndNQSaCOOvXFwEv1PfL+xftfCc7ZUIjiAJFOrDR
+tDvhSvesKLk+KkrFsMKDp4lvgWo17c4VWTMX3sE14378kWrz7hIBWl/rfsk9rQJN3T9UXtyaKdoO
+/ZBWfB1ped0Dq3FhP6r65OzQ2e2znAbgh3RS2blzVc+qW+Jr6lSCBbL58eZZUTqg1zCTdkCrDWPe
+S3/8vcPanZVprgz1wNNh4JSO/Xh2f42Z3/ElQ2WsNx1gJNOgjEEEPo0nHooDNY0BG7AhykWuLCmx
+OQ4a2RwYO2VbX8ToDj0f13Pm8NY63tbwRHI267I7fnakPmJA9zjHzNHLMg5pkXAyR9oFzyLO1f1s
+zwh776Izue8OOf8dN5erqSejaeAFzX3fIIGDZ8Anfso2o1fiNfH+7/G8zlJcnc4UB7cISAz3HyFC
+5tEAR9F24nEmlqD1p5qRL84xqWe1kx9e7oeGnbqupRgSc3soeSZnf3gq/uhO4rq1//LuBOu3OqSA
+1tBzd+GuOAs3LoWrqLMMMwKkuO3zBGJokoAVweJIYulkjIkelCqDT2/rRplBpS/6AQgxZrnw5u6d
+w+qTjaEH58GEsIkuGIOxpfXupcYgyycDm1KW/jOxEIsXqB2WEK2BTP1lYWrxEMtfYJb8PDbIbjqD
+/wYvjcdxYDLSQeKs8bfhi6qt87BByeII1zkwwvHcvdukGLV3KjSfBnXzyvb7Pedu43zzcof7an1T
+TsJY0qGb2KhwMXeEzNtSGPJSxgw2D4ounn0ApAt6epUB1WwybTdbRS/NkxFKssOc0t9VvQ++Wfx+
+JuEwl21il/x1AtXMhG9TC1MW7YAC6ANNLah70iu+KbP8X2OokQd7wGbQ+HpobBk/+K3+ABDwu0im
+mlUbSyiRh1p/b/pGUZs4BzY72HareuR35jN/xOfcxEQJUnf+0Qsy5VjlgwHTsG/gzOJ1al64Hhmn
+ah6ViuDKQb6cUCGak2/UgHbMvnNsKCmJiRsLImMvHJHusUSMNTFQfDy8Kxlw6gE2X3ya0WmRWgPs
+D0AUBqxsKtXgZTgop0oFOUjZ2gnk6wJHkykhmguodv9EA6aJFqtP1TEDvQzAoqm++1l3WIByxvuS
+phqNMHYkoog2wDos9jmiVPsERbiajbq48UTZabTSuaAPBA0k5k7pYqqq1DBcVYCxAZg6c5HAPKHV
+IF+zKOodkcsKaAoVBOaM7A8ZmVq0qNbjyMrbpL/WAA3+JM89NGg5dO0F7UGt9skF9ErsgZqgiEEE
+JnIkH+ddqNkXCSqivmBaCYbs1O4RJ/4e31BfmYU0wECcry+k2wbFo0snr6SD/mELrvn9dzz1msut
+V2SgOzLlytHOz5jeD2bQiBgRpp+vsthTfKSsGId7MBIoHXvdpfJiqbY7lbn4U7hwR2NnNvPsrcIR
+cG/J0pRmf8vdDzMci9QGhrWCLkRkZDPspsqVB24N5IiwcH8BSfNuc0VfuWY3aRzCQQXeBKPAjgDr
+H5C4EY89NpjIIBYvAjT0+rlm2l5t6stsqY5G8kO7/v3/CryPSh42WXLK1gVpXj6fUD2823hqINg6
+ADRvnDrIcmMvV2m0P0Qj4fRN7zoVGQ/RkMKZLc1NDzyYXhT7/stXoHpGOy42MMwNKuDdPIYbdJkB
+svMc263ogiWUqhOsKgi6baRw7QLj9B3eji9COt8nePNxU6UIUTUmFUxpsM6zBMUxix0f8j/D/spa
+eQrUQkr7DtN3QrBW+lWjsteGX6lWOeGSudtqDEaZZDir/3V4THWAIllK7sfL0/VczYKbs+ovusQY
+hgc3Wf0vQQySSuqDqdXWRAASXl8eS4UnS0jf9S4/SIMyvoopRpDM7SKvOJ18pdajLGdxECOrHVSQ
+j7lfJ/1k2p0SdzvUf1YdTocSuHaQdD7II41+TlXJvThzt8yb7s9he+5tclSkm+6FdngJs+cbFq8I
+x4aqQyp30OrSKTQGkIJqdNAC7kPOJrvQFXPYu30oJ5BDA2LAboCKmxG/aE9ZB5X6ixIKUeSjB5Ds
+ZFgqOgBBwcl282wCAIo5WRTHPWpInL9MmGvKWPPXhwBHNqlk9BAHX76QMnQoUw99Ol+MlgJPSJF4
+pJl9iXEyehz+YZO8ApP+uRPrc/nMlEbLzL7eBH3gBnc0KKnHK+Pi8to1w14P5vuJZnuh9lIhYcyj
+NmT0ahG3sQkR4HyLfc1NhhE7WRa0eu2LN2PHpWigA+dl3hswoRro8KvaFtaqwClh73AvcgXUim5k
+ncp2bT7gLd5Ipf/NI+FUzXLWEAm+DJxpnWl4ASlC+TOGFL5aBcV2ddVk5UmcUg55q1rjadM+8Nox
+jr93SPTVwkyhL+1SHvjlqyHlEwys5NC5Yhwg1cAUSJtp8Ie0lxpRjcHzwRTYUu4ZERsPeMoKTN8z
+HoaCBn+WU7q3wGsv51IH819TwKs7t9bnjUjHiPJy6SFQGhtzD/lOdCi9zyQFbJuoxi/FPXIr9meZ
+gW==

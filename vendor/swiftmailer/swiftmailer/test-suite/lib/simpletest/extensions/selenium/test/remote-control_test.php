@@ -1,36 +1,45 @@
-<?php
-// $Id: remote-control_test.php 1642 2008-01-22 20:49:15Z pp11 $
-require_once(dirname(__FILE__) . '/../../../autorun.php');
-require_once(dirname(__FILE__) . '/../remote-control.php');
-
-class TestOfSimpleSeleniumRemoteControl extends UnitTestCase {
-	function testSesssionIdShouldBePreserved() {
-		$remote_control = new SimpleSeleniumRemoteControl("tester", "http://simpletest.org/");
-		$this->assertEqual($remote_control->sessionIdParser('OK,123456789123456789'), '123456789123456789');
-	}
-	
-	function testIsUpReturnsFalseWhenDirectedToLocalhostDown() {
-		$remote_control = new SimpleSeleniumRemoteControl("tester", "http://simpletest.org/", "localhost-down");;
-		$this->assertFalse($remote_control->isUp());
-	}
-
-	function testIsUpReturnsTrueWhenDirectedToLocalhostOnPort80() {
-		$remote_control = new SimpleSeleniumRemoteControl("tester", "http://simpletest.org/", "localhost", "80");
-		$this->assertTrue($remote_control->isUp());
-	}
-}
-
-class TestOfSimpleSeleniumRemoteControlWhenItIsUp extends UnitTestCase {
-	function skip() {
-        $remote_control = new SimpleSeleniumRemoteControl("*custom opera -nosession", "http://simpletest.org/");
-		$this->skipUnless($remote_control->isUp(), 'Remote control tests desperatly need a working Selenium Server.');
-	}
-
-    function testOfCommandCreation() {
-        $remote_control = new SimpleSeleniumRemoteControl("tester", "http://simpletest.org/");
-        $this->assertEqual($remote_control->buildUrlCmd("test"), 'http://localhost:4444/selenium-server/driver/?cmd=test');
-        $this->assertEqual($remote_control->buildUrlCmd("test", array("next")), 'http://localhost:4444/selenium-server/driver/?cmd=test&1=next');
-        $this->assertEqual($remote_control->buildUrlCmd("test", array("ŽtŽ")), 'http://localhost:4444/selenium-server/driver/?cmd=test&1=%C3%A9t%C3%A9');
-        $this->assertEqual($remote_control->buildUrlCmd("test", array("next", "then")), 'http://localhost:4444/selenium-server/driver/?cmd=test&1=next&2=then');
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

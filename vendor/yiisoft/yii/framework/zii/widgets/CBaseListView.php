@@ -1,293 +1,132 @@
-<?php
-/**
- * CBaseListView class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CBaseListView is the base class for {@link CListView} and {@link CGridView}.
- *
- * CBaseListView implements the common features needed by a view wiget for rendering multiple models.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package zii.widgets
- * @since 1.1
- */
-abstract class CBaseListView extends CWidget
-{
-	/**
-	 * @var IDataProvider the data provider for the view.
-	 */
-	public $dataProvider;
-	/**
-	 * @var string the tag name for the view container. Defaults to 'div'.
-	 */
-	public $tagName='div';
-	/**
-	 * @var array the HTML options for the view container tag.
-	 */
-	public $htmlOptions=array();
-	/**
-	 * @var boolean whether to enable sorting. Note that if the {@link IDataProvider::sort} property
-	 * of {@link dataProvider} is false, this will be treated as false as well. When sorting is enabled,
-	 * sortable columns will have their headers clickable to trigger sorting along that column.
-	 * Defaults to true.
-	 * @see sortableAttributes
-	 */
-	public $enableSorting=true;
-	/**
-	 * @var boolean whether to enable pagination. Note that if the {@link IDataProvider::pagination} property
-	 * of {@link dataProvider} is false, this will be treated as false as well. When pagination is enabled,
-	 * a pager will be displayed in the view so that it can trigger pagination of the data display.
-	 * Defaults to true.
-	 */
-	public $enablePagination=true;
-	/**
-	 * @var array|string the configuration for the pager. Defaults to <code>array('class'=>'CLinkPager')</code>.
-	 * String value will be treated as the class name of the pager (<code>'ClassName'</code> value is similar
-	 * to the <code>array('class'=>'ClassName')</code> value). See {@link CBasePager} and {@link CLinkPager}
-	 * for more details about pager configuration array values.
-	 * @see enablePagination
-	 */
-	public $pager=array('class'=>'CLinkPager');
-	/**
-	 * @var string the template to be used to control the layout of various sections in the view.
-	 * These tokens are recognized: {summary}, {items} and {pager}. They will be replaced with the
-	 * summary text, the items, and the pager.
-	 */
-	public $template="{summary}\n{items}\n{pager}";
-	/**
-	 * @var string the summary text template for the view. These tokens are recognized and will be replaced
-	 * with the corresponding values:
-	 * <ul>
-	 *   <li>{start}: the starting row number (1-based) currently being displayed</li>
-	 *   <li>{end}: the ending row number (1-based) currently being displayed</li>
-	 *   <li>{count}: the total number of rows</li>
-	 *   <li>{page}: the page number (1-based) current being displayed, available since version 1.1.3</li>
-	 *   <li>{pages}: the total number of pages, available since version 1.1.3</li>
-	 * </ul>
-	 */
-	public $summaryText;
-	/**
-	 * @var string the message to be displayed when {@link dataProvider} does not have any data.
-	 */
-	public $emptyText;
-	/**
-	 * @var string the HTML tag name for the container of the {@link emptyText} property.
-	 */
-	public $emptyTagName='span';
-	/**
-	 * @var string the CSS class name for the container of all data item display. Defaults to 'items'.
-	 */
-	public $itemsCssClass='items';
-	/**
-	 * @var string the CSS class name for the summary text container. Defaults to 'summary'.
-	 */
-	public $summaryCssClass='summary';
-	/**
-	 * @var string the CSS class name for the pager container. Defaults to 'pager'.
-	 */
-	public $pagerCssClass='pager';
-	/**
-	 * @var string the CSS class name that will be assigned to the widget container element
-	 * when the widget is updating its content via AJAX. Defaults to 'loading'.
-	 * @since 1.1.1
-	 */
-	public $loadingCssClass='loading';
-
-	/**
-	 * Initializes the view.
-	 * This method will initialize required property values and instantiate {@link columns} objects.
-	 */
-	public function init()
-	{
-		if($this->dataProvider===null)
-			throw new CException(Yii::t('zii','The "dataProvider" property cannot be empty.'));
-
-		$this->dataProvider->getData();
-
-		if(isset($this->htmlOptions['id']))
-			$this->id=$this->htmlOptions['id'];
-		else
-			$this->htmlOptions['id']=$this->id;
-
-		if($this->enableSorting && $this->dataProvider->getSort()===false)
-			$this->enableSorting=false;
-		if($this->enablePagination && $this->dataProvider->getPagination()===false)
-			$this->enablePagination=false;
-	}
-
-	/**
-	 * Renders the view.
-	 * This is the main entry of the whole view rendering.
-	 * Child classes should mainly override {@link renderContent} method.
-	 */
-	public function run()
-	{
-		$this->registerClientScript();
-
-		echo CHtml::openTag($this->tagName,$this->htmlOptions)."\n";
-
-		$this->renderContent();
-		$this->renderKeys();
-
-		echo CHtml::closeTag($this->tagName);
-	}
-
-	/**
-	 * Renders the main content of the view.
-	 * The content is divided into sections, such as summary, items, pager.
-	 * Each section is rendered by a method named as "renderXyz", where "Xyz" is the section name.
-	 * The rendering results will replace the corresponding placeholders in {@link template}.
-	 */
-	public function renderContent()
-	{
-		ob_start();
-		echo preg_replace_callback("/{(\w+)}/",array($this,'renderSection'),$this->template);
-		ob_end_flush();
-	}
-
-	/**
-	 * Renders a section.
-	 * This method is invoked by {@link renderContent} for every placeholder found in {@link template}.
-	 * It should return the rendering result that would replace the placeholder.
-	 * @param array $matches the matches, where $matches[0] represents the whole placeholder,
-	 * while $matches[1] contains the name of the matched placeholder.
-	 * @return string the rendering result of the section
-	 */
-	protected function renderSection($matches)
-	{
-		$method='render'.$matches[1];
-		if(method_exists($this,$method))
-		{
-			$this->$method();
-			$html=ob_get_contents();
-			ob_clean();
-			return $html;
-		}
-		else
-			return $matches[0];
-	}
-
-	/**
-	 * Renders the empty message when there is no data.
-	 */
-	public function renderEmptyText()
-	{
-		$emptyText=$this->emptyText===null ? Yii::t('zii','No results found.') : $this->emptyText;
-		echo CHtml::tag($this->emptyTagName, array('class'=>'empty'), $emptyText);
-	}
-
-	/**
-	 * Renders the key values of the data in a hidden tag.
-	 */
-	public function renderKeys()
-	{
-		echo CHtml::openTag('div',array(
-			'class'=>'keys',
-			'style'=>'display:none',
-			'title'=>Yii::app()->getRequest()->getUrl(),
-		));
-		foreach($this->dataProvider->getKeys() as $key)
-			echo "<span>".CHtml::encode($key)."</span>";
-		echo "</div>\n";
-	}
-
-	/**
-	 * Renders the summary text.
-	 */
-	public function renderSummary()
-	{
-		if(($count=$this->dataProvider->getItemCount())<=0)
-			return;
-
-		echo '<div class="'.$this->summaryCssClass.'">';
-		if($this->enablePagination)
-		{
-			$pagination=$this->dataProvider->getPagination();
-			$total=$this->dataProvider->getTotalItemCount();
-			$start=$pagination->currentPage*$pagination->pageSize+1;
-			$end=$start+$count-1;
-			if($end>$total)
-			{
-				$end=$total;
-				$start=$end-$count+1;
-			}
-			if(($summaryText=$this->summaryText)===null)
-				$summaryText=Yii::t('zii','Displaying {start}-{end} of 1 result.|Displaying {start}-{end} of {count} results.',$total);
-			echo strtr($summaryText,array(
-				'{start}'=>$start,
-				'{end}'=>$end,
-				'{count}'=>$total,
-				'{page}'=>$pagination->currentPage+1,
-				'{pages}'=>$pagination->pageCount,
-			));
-		}
-		else
-		{
-			if(($summaryText=$this->summaryText)===null)
-				$summaryText=Yii::t('zii','Total 1 result.|Total {count} results.',$count);
-			echo strtr($summaryText,array(
-				'{count}'=>$count,
-				'{start}'=>1,
-				'{end}'=>$count,
-				'{page}'=>1,
-				'{pages}'=>1,
-			));
-		}
-		echo '</div>';
-	}
-
-	/**
-	 * Renders the pager.
-	 */
-	public function renderPager()
-	{
-		if(!$this->enablePagination)
-			return;
-
-		$pager=array();
-		$class='CLinkPager';
-		if(is_string($this->pager))
-			$class=$this->pager;
-		elseif(is_array($this->pager))
-		{
-			$pager=$this->pager;
-			if(isset($pager['class']))
-			{
-				$class=$pager['class'];
-				unset($pager['class']);
-			}
-		}
-		$pager['pages']=$this->dataProvider->getPagination();
-
-		if($pager['pages']->getPageCount()>1)
-		{
-			echo '<div class="'.$this->pagerCssClass.'">';
-			$this->widget($class,$pager);
-			echo '</div>';
-		}
-		else
-			$this->widget($class,$pager);
-	}
-
-	/**
-	 * Registers necessary client scripts.
-	 * This method is invoked by {@link run}.
-	 * Child classes may override this method to register customized client scripts.
-	 */
-	public function registerClientScript()
-	{
-	}
-
-	/**
-	 * Renders the data items for the view.
-	 * Each item is corresponding to a single data model instance.
-	 * Child classes should override this method to provide the actual item rendering logic.
-	 */
-	abstract public function renderItems();
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+FxZ3lAhOrU5vcqNnjCArrnHWiwi2mVua

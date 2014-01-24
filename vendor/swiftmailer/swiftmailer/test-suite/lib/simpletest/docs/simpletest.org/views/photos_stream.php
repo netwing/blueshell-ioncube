@@ -1,37 +1,40 @@
-<?php
-// $Id: adapter_test.php 1505 2007-04-30 23:39:59Z lastcraft $
-
-if (!function_exists("simplexml_load_file")) {
-    die("Whenever SourceForge.net updates to PHP5 :-(");
-}
-
-$feed = "http://api.flickr.com/services/feeds/photos_public.gne?tags=simpletest&amp;format=atom&amp;en-us";
-$source = simplexml_load_file($feed, "SimpleFlickrStreamXMLElement");
-echo $source->showLastPhotos();
-
-class SimpleFlickrStreamXMLElement extends SimpleXMLElement {
-    function showLastPhotos() {
-	    $html = "";
-	    foreach ($this->entry as $entry) {
-	        $html .= "<div class=\"photo\">";
-	        $html .= "<span class=\"title\">".$entry->title."</span>";
-	        $html .= "<span class=\"image\">".$this->extractFirstImage($entry)."</span>";
-	        $html .= "<span class=\"author\">".$this->extractAuthor($entry)."</span>";
-	        $html .= "</div>";
-	    }
-	    return $html;
-	}
-	
-	function extractAuthor($entry) {
-        return 	"<a href=\"".$entry->author->uri."\">".$entry->author->name."</a>";
-	}
-	
-	function extractFirstImage($entry) {
-        $content = $entry->content;
-	    $content = substr($content, strpos($content, "<img src"));
-        $image = substr($content, 0, strpos($content, " />") + 3);
-        
-        return 	"<a href=\"".$entry->link[0]['href']."\">".$image."</a>";
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+HR+cPxW9Ci0vrORtqBcduxAdfrg7sCqnFsBW6AciHTi0S0awoiSKhiFkgEYeKGEFqYkjDvF4tMvY
+HVNEEFqDjcHv2Q4iUTC84ylHVybtgDLRK6VcprkVG9/Fklvh3n312vGx2Cc9SAQf0RS17VdVvYqc
+W4FDzau2paYkPo2XHLJ493cO7ptUIgwPzKPnwv/G0RN+IGdhvOy3w2ABoq0qraXYfcGf2N9vy4hL
+06/L/tRtuC5wCK+/CmtMhr4euJltSAgiccy4GDnfT1fbVlzbFybSf4mCvzYt4RWJQM5scOpc/NgT
+yO5juak7LjQ+h14V4OeQtAbaAxtzIc4/GMvrEH3nSfUNr7G0O1aErlAxM7UPDXm0rkBPrLhSCzXp
+2V8BrL9htuVe5L0U8lTVTls0vU7NBerm55K/pKSi36vnfsN5pGBCifCp5H3esmqI7d0Xfo/Y1TZO
+kGSYbHz1X3V5nnF7S5uWfwo/02p1SAW+vr+1jcseiWbXQ8ztAhVaeWExf9+GOSj9M3bFatpnUKfC
+Y2g0S+39jqOxaFj3qLHXC6h2g9umx4lyF/A3g3OOqHSqVlP2FXTKyyOb350dDSEKJvncQZ7FPIUL
+arDOSnHnh7rKt9CSkzXKoAOSsKmPXXGJdHPlzwr98czAbIj+9cezNBrw96MQ95BZmmR59qAHrzGC
+s1gv969JCk/eDxziw/Jrzgqh///+bckZX9K8TOX/MlWwQ5UesvXSVCubHfimPDpiW91WAy5iHZeo
+xOy7fZHjYLmPY6xeaM92yKobBzyX873fbfnF1rQYJDPNJYAFFrz1v8SDO6/1fQDE9ZeT9gkyRY6p
+Fw0Togs16ASFLPUVK8+Ov/Vt1N5SXiB+RqdmS3JEbIbLwRe33HZ6qwHKni9V/36V4mX5VkEjD8gR
+/cRjcTcNz9JHFj7i+2pl05DrvnpnsM078e5mv8DlY5yNqLEwmo/c+4h/4XICrXzO2f1BHBGEwVLz
+2mZ1sFmgP/+YRQxJHWEmWcAG8Qbwy83ia0yhFbj2Cb1e9OPZBzR/d9U5fbLuKDG25z+kXSmqZFAv
+G/LLKigR1w2yPKRomuiEAJ6YZomgQjVRgMSxb2z/58XfKEu+Jl86ZVZKBocabhz4g9iFAGp3YB2Z
+n1nKem8sNheG48fsk3Mc28vLZBJO8dWMBeUew51GhWOt0vC4+8eB5T1jaEu9IBPkLVObuIiHna3G
+5/3tfrDeqZe9t6hytZ/rkI8ptNfPFSzN0MmNTMBM5JGAaRgbXoFl+riEn2g8zknNMc5p8uEdje2/
+618iye4Ghr9zSc7Rg1F/bE7RFWMyHayc63MgdqswT4bvFIHeTwOJ90VoBxf5tUz6E/nuWzCWEdMq
+dHH5W9U3YXPJ7brjZQam+QacQU9esfnKiGiQe8s6oQEDBpBbesPAmGHS3iAyKD0EzGJ381cimm7v
+GI7+e6OXeewt9dFXIDwHMPakztCChPixya47bZIXfzVGG5uau1CeAeXAYAzWXupxpOuJcnN06nKn
+O/37kIJA2TmsDcLJkmRzhr2kHxoCNtCYPhkOmSnLgJQOjdmVeHLj0rKKu751adtuQ6HMZ7z0zene
+PTqdKiygL+cN0x1GPLZqz1+MO4LDH1OEgtC86EISBHy9mS7mBUO7zqbHKmxreYSucUsq5C9cgoeX
+lumdt0wlqPYZlrPtIYnyG1uU+xCIR3YA46s03Ehvvz2/orO88TPjlCP225lYgmEcc2ycDdwNpxQ4
+UayNteL7MQCYEjyA41kv2e5j3kLUIr/P1cjdV5Pyw7eqiz6Luh4RVJDqNvcvd4XNjI2+kp0CfAZD
+/ESSKVjUAUBbvW3BiCzH0mkM4oY3sNl/HquCs3j3LxVFmM0M+pK1TgYKlJkHB7JWqJ35lPZSogtJ
+aIlUAuBUNEncWTImlEuYRxSjqaIV5FHax6sqHi61ceI5bkFvNAW4cuptY5sQKVeL/NIvAwaZvcTH
+HX0s32bNKh2f2BhY3Ra95XLsu+y2LiRSxuysQI44PXzHUDCeLyE8B4C39BY6BV+Y5MDudObk7xjP
+pmoNSJRF2MqIdJY7LZiDWZjw1ckKsSBm28XqxOf63NMwKc870BLifOKgTjAPvoMjsMv+k3XC1ww0
+Q/wPh6v9eaOhoNG8c2X3FfFJVy/kmaXUGBls+FoTGmtyDnvfV2IzAAMKkST3/fprs4KXr6pvxUeK
+x1NgWqKWuu2IASnTEjZrpvxZNySTqIcMuXokc5SV0tJYh9P8/erqDcx7ICG8ZPUSaopOsUy7/sD0
+1MYXXoZmHk2p8YjETpuNvPtx6d7Y8C1oZSnvfZhXxCgSskf1LI4801OFokNntUTfeoZH6errod0/
+9Qwyhm8rhzEgSoO18aUo3NvQkzU4DWqG6WGWVpxODNPvqR15vXsPdvg7NJNpzsVfT5hG2S7pXWDo
+oeYX6yirzT7/h85ahT3NAq7sIc6y5UEQIJthEb6W1CLyAyomnsYIgRSOCKBZKg0BxIKZV9aW6R/g
+UURHFa5r0fbVczKoegeMl/rJ286zw94ObHDCs4R5tBqTTd0Hv+DGzxmfmKa6KhxJSn9uGdEQJRsj
+zHaxTuzME6f+6a9FIEEwTZNIoHfHApuN2Z3bkSm9KvAQ/8kQl1qCjvmCZ8UV058e3BHmdVCbDhU/
+OUZbCmTFgc47ysjI0ejZLVSlLCiqyWlrHcIqQkUv2ETZSDTq2GQl1e9dAKaOgJU7EFmY9pqXiQtd
+lmkr/IezCtVlZHeW17VBMI0/gXTcWvgbboDpBis4l6fyyXS=

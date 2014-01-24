@@ -1,730 +1,270 @@
-<?php
-/**
- * PHPExcel
- *
- * Copyright (c) 2006 - 2012 PHPExcel
- *
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation; either
- * version 2.1 of the License, or (at your option) any later version.
- *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
- *
- * @category   PHPExcel
- * @package    PHPExcel_Shared
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
- * @version    1.7.8, 2012-10-12
- */
-
-
-/**
- * PHPExcel_Shared_String
- *
- * @category   PHPExcel
- * @package    PHPExcel_Shared
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- */
-class PHPExcel_Shared_String
-{
-	/**	Constants				*/
-	/**	Regular Expressions		*/
-	//	Fraction
-	const STRING_REGEXP_FRACTION	= '(-?)(\d+)\s+(\d+\/\d+)';
-
-
-	/**
-	 * Control characters array
-	 *
-	 * @var string[]
-	 */
-	private static $_controlCharacters = array();
-
-	/**
-	 * SYLK Characters array
-	 *
-	 * $var array
-	 */
-	private static $_SYLKCharacters = array();
-
-	/**
-	 * Decimal separator
-	 *
-	 * @var string
-	 */
-	private static $_decimalSeparator;
-
-	/**
-	 * Thousands separator
-	 *
-	 * @var string
-	 */
-	private static $_thousandsSeparator;
-
-	/**
-	 * Currency code
-	 *
-	 * @var string
-	 */
-	private static $_currencyCode;
-
-	/**
-	 * Is mbstring extension avalable?
-	 *
-	 * @var boolean
-	 */
-	private static $_isMbstringEnabled;
-
-	/**
-	 * Is iconv extension avalable?
-	 *
-	 * @var boolean
-	 */
-	private static $_isIconvEnabled;
-
-	/**
-	 * Build control characters array
-	 */
-	private static function _buildControlCharacters() {
-		for ($i = 0; $i <= 31; ++$i) {
-			if ($i != 9 && $i != 10 && $i != 13) {
-				$find = '_x' . sprintf('%04s' , strtoupper(dechex($i))) . '_';
-				$replace = chr($i);
-				self::$_controlCharacters[$find] = $replace;
-			}
-		}
-	}
-
-	/**
-	 * Build SYLK characters array
-	 */
-	private static function _buildSYLKCharacters()
-	{
-		self::$_SYLKCharacters = array(
-			"\x1B 0"  => chr(0),
-			"\x1B 1"  => chr(1),
-			"\x1B 2"  => chr(2),
-			"\x1B 3"  => chr(3),
-			"\x1B 4"  => chr(4),
-			"\x1B 5"  => chr(5),
-			"\x1B 6"  => chr(6),
-			"\x1B 7"  => chr(7),
-			"\x1B 8"  => chr(8),
-			"\x1B 9"  => chr(9),
-			"\x1B :"  => chr(10),
-			"\x1B ;"  => chr(11),
-			"\x1B <"  => chr(12),
-			"\x1B :"  => chr(13),
-			"\x1B >"  => chr(14),
-			"\x1B ?"  => chr(15),
-			"\x1B!0"  => chr(16),
-			"\x1B!1"  => chr(17),
-			"\x1B!2"  => chr(18),
-			"\x1B!3"  => chr(19),
-			"\x1B!4"  => chr(20),
-			"\x1B!5"  => chr(21),
-			"\x1B!6"  => chr(22),
-			"\x1B!7"  => chr(23),
-			"\x1B!8"  => chr(24),
-			"\x1B!9"  => chr(25),
-			"\x1B!:"  => chr(26),
-			"\x1B!;"  => chr(27),
-			"\x1B!<"  => chr(28),
-			"\x1B!="  => chr(29),
-			"\x1B!>"  => chr(30),
-			"\x1B!?"  => chr(31),
-			"\x1B'?"  => chr(127),
-			"\x1B(0"  => '€', // 128 in CP1252
-			"\x1B(2"  => '‚', // 130 in CP1252
-			"\x1B(3"  => 'ƒ', // 131 in CP1252
-			"\x1B(4"  => '„', // 132 in CP1252
-			"\x1B(5"  => '…', // 133 in CP1252
-			"\x1B(6"  => '†', // 134 in CP1252
-			"\x1B(7"  => '‡', // 135 in CP1252
-			"\x1B(8"  => 'ˆ', // 136 in CP1252
-			"\x1B(9"  => '‰', // 137 in CP1252
-			"\x1B(:"  => 'Š', // 138 in CP1252
-			"\x1B(;"  => '‹', // 139 in CP1252
-			"\x1BNj"  => 'Œ', // 140 in CP1252
-			"\x1B(>"  => 'Ž', // 142 in CP1252
-			"\x1B)1"  => '‘', // 145 in CP1252
-			"\x1B)2"  => '’', // 146 in CP1252
-			"\x1B)3"  => '“', // 147 in CP1252
-			"\x1B)4"  => '”', // 148 in CP1252
-			"\x1B)5"  => '•', // 149 in CP1252
-			"\x1B)6"  => '–', // 150 in CP1252
-			"\x1B)7"  => '—', // 151 in CP1252
-			"\x1B)8"  => '˜', // 152 in CP1252
-			"\x1B)9"  => '™', // 153 in CP1252
-			"\x1B):"  => 'š', // 154 in CP1252
-			"\x1B);"  => '›', // 155 in CP1252
-			"\x1BNz"  => 'œ', // 156 in CP1252
-			"\x1B)>"  => 'ž', // 158 in CP1252
-			"\x1B)?"  => 'Ÿ', // 159 in CP1252
-			"\x1B*0"  => ' ', // 160 in CP1252
-			"\x1BN!"  => '¡', // 161 in CP1252
-			"\x1BN\"" => '¢', // 162 in CP1252
-			"\x1BN#"  => '£', // 163 in CP1252
-			"\x1BN("  => '¤', // 164 in CP1252
-			"\x1BN%"  => '¥', // 165 in CP1252
-			"\x1B*6"  => '¦', // 166 in CP1252
-			"\x1BN'"  => '§', // 167 in CP1252
-			"\x1BNH " => '¨', // 168 in CP1252
-			"\x1BNS"  => '©', // 169 in CP1252
-			"\x1BNc"  => 'ª', // 170 in CP1252
-			"\x1BN+"  => '«', // 171 in CP1252
-			"\x1B*<"  => '¬', // 172 in CP1252
-			"\x1B*="  => '­', // 173 in CP1252
-			"\x1BNR"  => '®', // 174 in CP1252
-			"\x1B*?"  => '¯', // 175 in CP1252
-			"\x1BN0"  => '°', // 176 in CP1252
-			"\x1BN1"  => '±', // 177 in CP1252
-			"\x1BN2"  => '²', // 178 in CP1252
-			"\x1BN3"  => '³', // 179 in CP1252
-			"\x1BNB " => '´', // 180 in CP1252
-			"\x1BN5"  => 'µ', // 181 in CP1252
-			"\x1BN6"  => '¶', // 182 in CP1252
-			"\x1BN7"  => '·', // 183 in CP1252
-			"\x1B+8"  => '¸', // 184 in CP1252
-			"\x1BNQ"  => '¹', // 185 in CP1252
-			"\x1BNk"  => 'º', // 186 in CP1252
-			"\x1BN;"  => '»', // 187 in CP1252
-			"\x1BN<"  => '¼', // 188 in CP1252
-			"\x1BN="  => '½', // 189 in CP1252
-			"\x1BN>"  => '¾', // 190 in CP1252
-			"\x1BN?"  => '¿', // 191 in CP1252
-			"\x1BNAA" => 'À', // 192 in CP1252
-			"\x1BNBA" => 'Á', // 193 in CP1252
-			"\x1BNCA" => 'Â', // 194 in CP1252
-			"\x1BNDA" => 'Ã', // 195 in CP1252
-			"\x1BNHA" => 'Ä', // 196 in CP1252
-			"\x1BNJA" => 'Å', // 197 in CP1252
-			"\x1BNa"  => 'Æ', // 198 in CP1252
-			"\x1BNKC" => 'Ç', // 199 in CP1252
-			"\x1BNAE" => 'È', // 200 in CP1252
-			"\x1BNBE" => 'É', // 201 in CP1252
-			"\x1BNCE" => 'Ê', // 202 in CP1252
-			"\x1BNHE" => 'Ë', // 203 in CP1252
-			"\x1BNAI" => 'Ì', // 204 in CP1252
-			"\x1BNBI" => 'Í', // 205 in CP1252
-			"\x1BNCI" => 'Î', // 206 in CP1252
-			"\x1BNHI" => 'Ï', // 207 in CP1252
-			"\x1BNb"  => 'Ð', // 208 in CP1252
-			"\x1BNDN" => 'Ñ', // 209 in CP1252
-			"\x1BNAO" => 'Ò', // 210 in CP1252
-			"\x1BNBO" => 'Ó', // 211 in CP1252
-			"\x1BNCO" => 'Ô', // 212 in CP1252
-			"\x1BNDO" => 'Õ', // 213 in CP1252
-			"\x1BNHO" => 'Ö', // 214 in CP1252
-			"\x1B-7"  => '×', // 215 in CP1252
-			"\x1BNi"  => 'Ø', // 216 in CP1252
-			"\x1BNAU" => 'Ù', // 217 in CP1252
-			"\x1BNBU" => 'Ú', // 218 in CP1252
-			"\x1BNCU" => 'Û', // 219 in CP1252
-			"\x1BNHU" => 'Ü', // 220 in CP1252
-			"\x1B-="  => 'Ý', // 221 in CP1252
-			"\x1BNl"  => 'Þ', // 222 in CP1252
-			"\x1BN{"  => 'ß', // 223 in CP1252
-			"\x1BNAa" => 'à', // 224 in CP1252
-			"\x1BNBa" => 'á', // 225 in CP1252
-			"\x1BNCa" => 'â', // 226 in CP1252
-			"\x1BNDa" => 'ã', // 227 in CP1252
-			"\x1BNHa" => 'ä', // 228 in CP1252
-			"\x1BNJa" => 'å', // 229 in CP1252
-			"\x1BNq"  => 'æ', // 230 in CP1252
-			"\x1BNKc" => 'ç', // 231 in CP1252
-			"\x1BNAe" => 'è', // 232 in CP1252
-			"\x1BNBe" => 'é', // 233 in CP1252
-			"\x1BNCe" => 'ê', // 234 in CP1252
-			"\x1BNHe" => 'ë', // 235 in CP1252
-			"\x1BNAi" => 'ì', // 236 in CP1252
-			"\x1BNBi" => 'í', // 237 in CP1252
-			"\x1BNCi" => 'î', // 238 in CP1252
-			"\x1BNHi" => 'ï', // 239 in CP1252
-			"\x1BNs"  => 'ð', // 240 in CP1252
-			"\x1BNDn" => 'ñ', // 241 in CP1252
-			"\x1BNAo" => 'ò', // 242 in CP1252
-			"\x1BNBo" => 'ó', // 243 in CP1252
-			"\x1BNCo" => 'ô', // 244 in CP1252
-			"\x1BNDo" => 'õ', // 245 in CP1252
-			"\x1BNHo" => 'ö', // 246 in CP1252
-			"\x1B/7"  => '÷', // 247 in CP1252
-			"\x1BNy"  => 'ø', // 248 in CP1252
-			"\x1BNAu" => 'ù', // 249 in CP1252
-			"\x1BNBu" => 'ú', // 250 in CP1252
-			"\x1BNCu" => 'û', // 251 in CP1252
-			"\x1BNHu" => 'ü', // 252 in CP1252
-			"\x1B/="  => 'ý', // 253 in CP1252
-			"\x1BN|"  => 'þ', // 254 in CP1252
-			"\x1BNHy" => 'ÿ', // 255 in CP1252
-		);
-	}
-
-	/**
-	 * Get whether mbstring extension is available
-	 *
-	 * @return boolean
-	 */
-	public static function getIsMbstringEnabled()
-	{
-		if (isset(self::$_isMbstringEnabled)) {
-			return self::$_isMbstringEnabled;
-		}
-
-		self::$_isMbstringEnabled = function_exists('mb_convert_encoding') ?
-			true : false;
-
-		return self::$_isMbstringEnabled;
-	}
-
-	/**
-	 * Get whether iconv extension is available
-	 *
-	 * @return boolean
-	 */
-	public static function getIsIconvEnabled()
-	{
-		if (isset(self::$_isIconvEnabled)) {
-			return self::$_isIconvEnabled;
-		}
-
-		// Fail if iconv doesn't exist
-		if (!function_exists('iconv')) {
-			self::$_isIconvEnabled = false;
-			return false;
-		}
-
-		// Sometimes iconv is not working, and e.g. iconv('UTF-8', 'UTF-16LE', 'x') just returns false,
-		if (!@iconv('UTF-8', 'UTF-16LE', 'x')) {
-			self::$_isIconvEnabled = false;
-			return false;
-		}
-
-		// Sometimes iconv_substr('A', 0, 1, 'UTF-8') just returns false in PHP 5.2.0
-		// we cannot use iconv in that case either (http://bugs.php.net/bug.php?id=37773)
-		if (!@iconv_substr('A', 0, 1, 'UTF-8')) {
-			self::$_isIconvEnabled = false;
-			return false;
-		}
-
-		// CUSTOM: IBM AIX iconv() does not work
-		if ( defined('PHP_OS') && @stristr(PHP_OS, 'AIX')
-				&& defined('ICONV_IMPL') && (@strcasecmp(ICONV_IMPL, 'unknown') == 0)
-				&& defined('ICONV_VERSION') && (@strcasecmp(ICONV_VERSION, 'unknown') == 0) )
-		{
-			self::$_isIconvEnabled = false;
-			return false;
-		}
-
-		// If we reach here no problems were detected with iconv
-		self::$_isIconvEnabled = true;
-		return true;
-	}
-
-	public static function buildCharacterSets() {
-		if(empty(self::$_controlCharacters)) {
-			self::_buildControlCharacters();
-		}
-		if(empty(self::$_SYLKCharacters)) {
-			self::_buildSYLKCharacters();
-		}
-	}
-
-	/**
-	 * Convert from OpenXML escaped control character to PHP control character
-	 *
-	 * Excel 2007 team:
-	 * ----------------
-	 * That's correct, control characters are stored directly in the shared-strings table.
-	 * We do encode characters that cannot be represented in XML using the following escape sequence:
-	 * _xHHHH_ where H represents a hexadecimal character in the character's value...
-	 * So you could end up with something like _x0008_ in a string (either in a cell value (<v>)
-	 * element or in the shared string <t> element.
-	 *
-	 * @param 	string	$value	Value to unescape
-	 * @return 	string
-	 */
-	public static function ControlCharacterOOXML2PHP($value = '') {
-		return str_replace( array_keys(self::$_controlCharacters), array_values(self::$_controlCharacters), $value );
-	}
-
-	/**
-	 * Convert from PHP control character to OpenXML escaped control character
-	 *
-	 * Excel 2007 team:
-	 * ----------------
-	 * That's correct, control characters are stored directly in the shared-strings table.
-	 * We do encode characters that cannot be represented in XML using the following escape sequence:
-	 * _xHHHH_ where H represents a hexadecimal character in the character's value...
-	 * So you could end up with something like _x0008_ in a string (either in a cell value (<v>)
-	 * element or in the shared string <t> element.
-	 *
-	 * @param 	string	$value	Value to escape
-	 * @return 	string
-	 */
-	public static function ControlCharacterPHP2OOXML($value = '') {
-		return str_replace( array_values(self::$_controlCharacters), array_keys(self::$_controlCharacters), $value );
-	}
-
-	/**
-	 * Try to sanitize UTF8, stripping invalid byte sequences. Not perfect. Does not surrogate characters.
-	 *
-	 * @param string $value
-	 * @return string
-	 */
-	public static function SanitizeUTF8($value)
-	{
-		if (self::getIsIconvEnabled()) {
-			$value = @iconv('UTF-8', 'UTF-8', $value);
-			return $value;
-		}
-
-		if (self::getIsMbstringEnabled()) {
-			$value = mb_convert_encoding($value, 'UTF-8', 'UTF-8');
-			return $value;
-		}
-
-		// else, no conversion
-		return $value;
-	}
-
-	/**
-	 * Check if a string contains UTF8 data
-	 *
-	 * @param string $value
-	 * @return boolean
-	 */
-	public static function IsUTF8($value = '') {
-		return utf8_encode(utf8_decode($value)) === $value;
-	}
-
-	/**
-	 * Formats a numeric value as a string for output in various output writers forcing
-	 * point as decimal separator in case locale is other than English.
-	 *
-	 * @param mixed $value
-	 * @return string
-	 */
-	public static function FormatNumber($value) {
-		if (is_float($value)) {
-			return str_replace(',', '.', $value);
-		}
-		return (string) $value;
-	}
-
-	/**
-	 * Converts a UTF-8 string into BIFF8 Unicode string data (8-bit string length)
-	 * Writes the string using uncompressed notation, no rich text, no Asian phonetics
-	 * If mbstring extension is not available, ASCII is assumed, and compressed notation is used
-	 * although this will give wrong results for non-ASCII strings
-	 * see OpenOffice.org's Documentation of the Microsoft Excel File Format, sect. 2.5.3
-	 *
-	 * @param string $value UTF-8 encoded string
-	 * @return string
-	 */
-	public static function UTF8toBIFF8UnicodeShort($value, $arrcRuns = array())
-	{
-		// character count
-		$ln = self::CountCharacters($value, 'UTF-8');
-
-		// option flags
-		if(empty($arrcRuns)){
-			$opt = (self::getIsIconvEnabled() || self::getIsMbstringEnabled()) ?
-				0x0001 : 0x0000;
-			$data = pack('CC', $ln, $opt);
-			// characters
-			$data .= self::ConvertEncoding($value, 'UTF-16LE', 'UTF-8');
-		}
-		else {
-			$data = pack('vC', $ln, 0x08);
-			$data .= pack('v', count($arrcRuns));
-			// characters
-			$data .= $value;
-			foreach ($arrcRuns as $cRun){
-				$data .= pack('v', $cRun['strlen']);
-				$data .= pack('v', $cRun['fontidx']);
-			}
-		}
-		return $data;
-	}
-
-	/**
-	 * Converts a UTF-8 string into BIFF8 Unicode string data (16-bit string length)
-	 * Writes the string using uncompressed notation, no rich text, no Asian phonetics
-	 * If mbstring extension is not available, ASCII is assumed, and compressed notation is used
-	 * although this will give wrong results for non-ASCII strings
-	 * see OpenOffice.org's Documentation of the Microsoft Excel File Format, sect. 2.5.3
-	 *
-	 * @param string $value UTF-8 encoded string
-	 * @return string
-	 */
-	public static function UTF8toBIFF8UnicodeLong($value)
-	{
-		// character count
-		$ln = self::CountCharacters($value, 'UTF-8');
-
-		// option flags
-		$opt = (self::getIsIconvEnabled() || self::getIsMbstringEnabled()) ?
-			0x0001 : 0x0000;
-
-		// characters
-		$chars = self::ConvertEncoding($value, 'UTF-16LE', 'UTF-8');
-
-		$data = pack('vC', $ln, $opt) . $chars;
-		return $data;
-	}
-
-	/**
-	 * Convert string from one encoding to another. First try iconv, then mbstring, or no convertion
-	 *
-	 * @param string $value
-	 * @param string $to Encoding to convert to, e.g. 'UTF-8'
-	 * @param string $from Encoding to convert from, e.g. 'UTF-16LE'
-	 * @return string
-	 */
-	public static function ConvertEncoding($value, $to, $from)
-	{
-		if (self::getIsIconvEnabled()) {
-			$value = iconv($from, $to, $value);
-			return $value;
-		}
-
-		if (self::getIsMbstringEnabled()) {
-			$value = mb_convert_encoding($value, $to, $from);
-			return $value;
-		}
-		if($from == 'UTF-16LE'){
-			return self::utf16_decode($value, false);
-		}else if($from == 'UTF-16BE'){
-			return self::utf16_decode($value);
-		}
-		// else, no conversion
-		return $value;
-	}
-
-	/**
-	 * Decode UTF-16 encoded strings.
-	 *
-	 * Can handle both BOM'ed data and un-BOM'ed data.
-	 * Assumes Big-Endian byte order if no BOM is available.
-	 * This function was taken from http://php.net/manual/en/function.utf8-decode.php
-	 * and $bom_be parameter added.
-	 *
-	 * @param   string  $str  UTF-16 encoded data to decode.
-	 * @return  string  UTF-8 / ISO encoded data.
-	 * @access  public
-	 * @version 0.2 / 2010-05-13
-	 * @author  Rasmus Andersson {@link http://rasmusandersson.se/}
-	 * @author vadik56
-	 */
-	public static function utf16_decode( $str, $bom_be=true ) {
-		if( strlen($str) < 2 ) return $str;
-		$c0 = ord($str{0});
-		$c1 = ord($str{1});
-		if( $c0 == 0xfe && $c1 == 0xff ) { $str = substr($str,2); }
-		elseif( $c0 == 0xff && $c1 == 0xfe ) { $str = substr($str,2); $bom_be = false; }
-		$len = strlen($str);
-		$newstr = '';
-		for($i=0;$i<$len;$i+=2) {
-			if( $bom_be ) { $val = ord($str{$i})   << 4; $val += ord($str{$i+1}); }
-			else {        $val = ord($str{$i+1}) << 4; $val += ord($str{$i}); }
-			$newstr .= ($val == 0x228) ? "\n" : chr($val);
-		}
-		return $newstr;
-	}
-
-	/**
-	 * Get character count. First try mbstring, then iconv, finally strlen
-	 *
-	 * @param string $value
-	 * @param string $enc Encoding
-	 * @return int Character count
-	 */
-	public static function CountCharacters($value, $enc = 'UTF-8')
-	{
-		if (self::getIsIconvEnabled()) {
-			return iconv_strlen($value, $enc);
-		}
-
-		if (self::getIsMbstringEnabled()) {
-			return mb_strlen($value, $enc);
-		}
-
-		// else strlen
-		return strlen($value);
-	}
-
-	/**
-	 * Get a substring of a UTF-8 encoded string
-	 *
-	 * @param string $pValue UTF-8 encoded string
-	 * @param int $start Start offset
-	 * @param int $length Maximum number of characters in substring
-	 * @return string
-	 */
-	public static function Substring($pValue = '', $pStart = 0, $pLength = 0)
-	{
-		if (self::getIsIconvEnabled()) {
-			return iconv_substr($pValue, $pStart, $pLength, 'UTF-8');
-		}
-
-		if (self::getIsMbstringEnabled()) {
-			return mb_substr($pValue, $pStart, $pLength, 'UTF-8');
-		}
-
-		// else substr
-		return substr($pValue, $pStart, $pLength);
-	}
-
-
-	/**
-	 * Identify whether a string contains a fractional numeric value,
-	 *    and convert it to a numeric if it is
-	 *
-	 * @param string &$operand string value to test
-	 * @return boolean
-	 */
-	public static function convertToNumberIfFraction(&$operand) {
-		if (preg_match('/^'.self::STRING_REGEXP_FRACTION.'$/i', $operand, $match)) {
-			$sign = ($match[1] == '-') ? '-' : '+';
-			$fractionFormula = '='.$sign.$match[2].$sign.$match[3];
-			$operand = PHPExcel_Calculation::getInstance()->_calculateFormulaValue($fractionFormula);
-			return true;
-		}
-		return false;
-	}	//	function convertToNumberIfFraction()
-
-	/**
-	 * Get the decimal separator. If it has not yet been set explicitly, try to obtain number
-	 * formatting information from locale.
-	 *
-	 * @return string
-	 */
-	public static function getDecimalSeparator()
-	{
-		if (!isset(self::$_decimalSeparator)) {
-			$localeconv = localeconv();
-			self::$_decimalSeparator = ($localeconv['decimal_point'] != '')
-				? $localeconv['decimal_point'] : $localeconv['mon_decimal_point'];
-
-			if (self::$_decimalSeparator == '') {
-				// Default to .
-				self::$_decimalSeparator = '.';
-			}
-		}
-		return self::$_decimalSeparator;
-	}
-
-	/**
-	 * Set the decimal separator. Only used by PHPExcel_Style_NumberFormat::toFormattedString()
-	 * to format output by PHPExcel_Writer_HTML and PHPExcel_Writer_PDF
-	 *
-	 * @param string $pValue Character for decimal separator
-	 */
-	public static function setDecimalSeparator($pValue = '.')
-	{
-		self::$_decimalSeparator = $pValue;
-	}
-
-	/**
-	 * Get the thousands separator. If it has not yet been set explicitly, try to obtain number
-	 * formatting information from locale.
-	 *
-	 * @return string
-	 */
-	public static function getThousandsSeparator()
-	{
-		if (!isset(self::$_thousandsSeparator)) {
-			$localeconv = localeconv();
-			self::$_thousandsSeparator = ($localeconv['thousands_sep'] != '')
-				? $localeconv['thousands_sep'] : $localeconv['mon_thousands_sep'];
-		}
-		return self::$_thousandsSeparator;
-	}
-
-	/**
-	 * Set the thousands separator. Only used by PHPExcel_Style_NumberFormat::toFormattedString()
-	 * to format output by PHPExcel_Writer_HTML and PHPExcel_Writer_PDF
-	 *
-	 * @param string $pValue Character for thousands separator
-	 */
-	public static function setThousandsSeparator($pValue = ',')
-	{
-		self::$_thousandsSeparator = $pValue;
-	}
-
-	/**
-	 *	Get the currency code. If it has not yet been set explicitly, try to obtain the
-	 *		symbol information from locale.
-	 *
-	 * @return string
-	 */
-	public static function getCurrencyCode()
-	{
-		if (!isset(self::$_currencyCode)) {
-			$localeconv = localeconv();
-			self::$_currencyCode = ($localeconv['currency_symbol'] != '')
-				? $localeconv['currency_symbol'] : $localeconv['int_curr_symbol'];
-
-			if (self::$_currencyCode == '') {
-				// Default to $
-				self::$_currencyCode = '$';
-			}
-		}
-		return self::$_currencyCode;
-	}
-
-	/**
-	 * Set the currency code. Only used by PHPExcel_Style_NumberFormat::toFormattedString()
-	 *		to format output by PHPExcel_Writer_HTML and PHPExcel_Writer_PDF
-	 *
-	 * @param string $pValue Character for currency code
-	 */
-	public static function setCurrencyCode($pValue = '$')
-	{
-		self::$_currencyCode = $pValue;
-	}
-
-	/**
-	 * Convert SYLK encoded string to UTF-8
-	 *
-	 * @param string $pValue
-	 * @return string UTF-8 encoded string
-	 */
-	public static function SYLKtoUTF8($pValue = '')
-	{
-		// If there is no escape character in the string there is nothing to do
-		if (strpos($pValue, '') === false) {
-			return $pValue;
-		}
-
-		foreach (self::$_SYLKCharacters as $k => $v) {
-			$pValue = str_replace($k, $v, $pValue);
-		}
-
-		return $pValue;
-	}
-
-	/**
-	 * Retrieve any leading numeric part of a string, or return the full string if no leading numeric
-	 *	(handles basic integer or float, but not exponent or non decimal)
-	 *
-	 * @param	string	$value
-	 * @return	mixed	string or only the leading numeric part of the string
-	 */
-	public static function testStringAsNumeric($value)
-	{
-		if (is_numeric($value))
-			return $value;
-		$v = floatval($value);
-		return (is_numeric(substr($value,0,strlen($v)))) ? $v : $value;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+edG=

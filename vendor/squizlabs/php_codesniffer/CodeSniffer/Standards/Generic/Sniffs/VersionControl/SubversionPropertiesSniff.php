@@ -1,206 +1,79 @@
-<?php
-/**
- * Generic_Sniffs_VersionControl_SubversionPropertiesSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Jack Bates <ms419@freezone.co.uk>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Generic_Sniffs_VersionControl_SubversionPropertiesSniff.
- *
- * Tests that the correct Subversion properties are set.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Jack Bates <ms419@freezone.co.uk>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class Generic_Sniffs_VersionControl_SubversionPropertiesSniff implements PHP_CodeSniffer_Sniff
-{
-
-    /**
-     * The Subversion properties that should be set.
-     *
-     * Key of array is the SVN property and the value is the
-     * exact value the property should have or NULL if the
-     * property should just be set but the value is not fixed.
-     *
-     * @var array
-     */
-    protected $properties = array(
-                             'svn:keywords'  => 'Author Id Revision',
-                             'svn:eol-style' => 'native',
-                            );
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        return array(T_OPEN_TAG);
-
-    }//end register()
-
-
-    /**
-     * Processes this test, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token
-     *                                        in the stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-
-        // Make sure this is the first PHP open tag so we don't process the
-        // same file twice.
-        $prevOpenTag = $phpcsFile->findPrevious(T_OPEN_TAG, ($stackPtr - 1));
-        if ($prevOpenTag !== false) {
-            return;
-        }
-
-        $path       = $phpcsFile->getFileName();
-        $properties = $this->getProperties($path);
-        if ($properties === null) {
-            // Not under version control.
-            return;
-        }
-
-        $allProperties = $properties + $this->properties;
-        foreach ($allProperties as $key => $value) {
-            if (isset($properties[$key]) === true
-                && isset($this->properties[$key]) === false
-            ) {
-                $error = 'Unexpected Subversion property "%s" = "%s"';
-                $data  = array(
-                          $key,
-                          $properties[$key],
-                         );
-                $phpcsFile->addError($error, $stackPtr, 'Unexpected', $data);
-                continue;
-            }
-
-            if (isset($properties[$key]) === false
-                && isset($this->properties[$key]) === true
-            ) {
-                $error = 'Missing Subversion property "%s" = "%s"';
-                $data  = array(
-                          $key,
-                          $this->properties[$key],
-                         );
-                $phpcsFile->addError($error, $stackPtr, 'Missing', $data);
-                continue;
-            }
-
-            if ($properties[$key] !== null
-                && $properties[$key] !== $this->properties[$key]
-            ) {
-                $error = 'Subversion property "%s" = "%s" does not match "%s"';
-                $data  = array(
-                          $key,
-                          $properties[$key],
-                          $this->properties[$key],
-                         );
-                $phpcsFile->addError($error, $stackPtr, 'NoMatch', $data);
-            }
-        }//end foreach
-
-    }//end process()
-
-
-    /**
-     * Returns the Subversion properties which are actually set on a path.
-     *
-     * Returns NULL if the file is not under version control.
-     *
-     * @param string $path The path to return Subversion properties on.
-     *
-     * @return array
-     * @throws PHP_CodeSniffer_Exception If Subversion properties file could
-     *                                   not be opened.
-     */
-    protected function getProperties($path)
-    {
-        $properties = array();
-
-        $paths   = array();
-        $paths[] = dirname($path).'/.svn/props/'.basename($path).'.svn-work';
-        $paths[] = dirname($path).'/.svn/prop-base/'.basename($path).'.svn-base';
-
-        $foundPath = false;
-        foreach ($paths as $path) {
-            if (file_exists($path) === true) {
-                $foundPath = true;
-
-                $handle = fopen($path, 'r');
-                if ($handle === false) {
-                    $error = 'Error opening file; could not get Subversion properties';
-                    throw new PHP_CodeSniffer_Exception($error);
-                }
-
-                while (feof($handle) === false) {
-                    // Read a key length line. Might be END, though.
-                    $buffer = trim(fgets($handle));
-
-                    // Check for the end of the hash.
-                    if ($buffer === 'END') {
-                        break;
-                    }
-
-                    // Now read that much into a buffer.
-                    $key = fread($handle, substr($buffer, 2));
-
-                    // Suck up extra newline after key data.
-                    fgetc($handle);
-
-                    // Read a value length line.
-                    $buffer = trim(fgets($handle));
-
-                    // Now read that much into a buffer.
-                    $length = substr($buffer, 2);
-                    if ($length === '0') {
-                        // Length of value is ZERO characters, so
-                        // value is actually empty.
-                        $value = '';
-                    } else {
-                        $value = fread($handle, $length);
-                    }
-
-                    // Suck up extra newline after value data.
-                    fgetc($handle);
-
-                    $properties[$key] = $value;
-                }//end while
-
-                fclose($handle);
-            }//end if
-        }//end foreach
-
-        if ($foundPath === false) {
-            return null;
-        }
-
-        return $properties;
-
-    }//end getProperties()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

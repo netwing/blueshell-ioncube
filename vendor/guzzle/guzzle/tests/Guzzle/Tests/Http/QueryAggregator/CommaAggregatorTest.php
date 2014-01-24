@@ -1,30 +1,29 @@
-<?php
-
-namespace Guzzle\Tests\Http;
-
-use Guzzle\Http\QueryString;
-use Guzzle\Http\QueryAggregator\CommaAggregator as Ag;
-
-class CommaAggregatorTest extends \Guzzle\Tests\GuzzleTestCase
-{
-    public function testAggregates()
-    {
-        $query = new QueryString();
-        $a = new Ag();
-        $key = 'test 123';
-        $value = array('foo 123', 'baz', 'bar');
-        $result = $a->aggregate($key, $value, $query);
-        $this->assertEquals(array('test%20123' => 'foo%20123,baz,bar'), $result);
-    }
-
-    public function testEncodes()
-    {
-        $query = new QueryString();
-        $query->useUrlEncoding(false);
-        $a = new Ag();
-        $key = 'test 123';
-        $value = array('foo 123', 'baz', 'bar');
-        $result = $a->aggregate($key, $value, $query);
-        $this->assertEquals(array('test 123' => 'foo 123,baz,bar'), $result);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPz0etuc2yoEkJvvAgg+Bz8GB1rnGPkj/UvQisywbvzRBk+vVIwFyX9V6mTYd6yiiWnaBn8zJ
+AZxgMILJcHg3rzTn7HTu8w4sFGA84krH1YMP5LSeoY+mP8gNgfoJiIn5hEwVVtHbd3WNBuBrYxpV
+9fkTouI5xnpEsBJ4NMfibHnezIvIPijFuHaJGu1zRqEijqWzktoDhFd3HCelC3QANsSSgpJRNvMH
+Mi55ZvuktS6LHzaF5uS4hr4euJltSAgiccy4GDnfT9vXLTyO1qNzdv0dYzZ1AyT8/t/R9RTS2CZn
+5eiXx0K4fEmOBZO2WQhI0r2FsRrlBtH2xVMkvSKHl+bplX7J9lj0SWnCRAYNEpiNq1G+YBK3nBVo
+WXedrbGiGVksPnqmQSg2co1Um0ELk9Zabo3qHSndgFT1+OfgS5+kcua+z08nX//H736GELlHQu12
+ZbAW5kWbZO9qn9y44r49o1pZrz2lWMNSguiUdaZJ3PvoKLuagJTmFMOxVkccNTdvD6kU1p54OW2X
+E6hM+5B2I5HGzDHm+OVBREeL+nMgeNMALYB4ziVzRKR+FekdtyoTAIX2opF+tZacX77W5BnOcqte
+mfMOwqZGb+SO9UdWVLlkdujsddd/KpzPwvyEc/rp1R2wtCR5nVUhG1PE3lCU74+p2iv4/4aC+HSY
+l2ZZQUZklJzBiwGEMRQ+fTcle9F9fVzro25ynbfqsoNDJxQN6ksKYQbIfdYHLUdrx5HbpRIIkIsj
+fA7QDTiW+qdtEFmYLp78CqAJjtiiZFjsfijhXJMbOOjShTCg63GZv4GSugebHfyvuroPCgfYL1gh
+5ULYMd+XpCqCGFC+bGI1ic1gQiwHvMKT1uo2OaIaP0SFhCrq6HDNyvw2o6fTD7krQiy13vM48Qlx
+ae9rgyakkjYdkJEFQQxkvLoB+hm5UNiEwk71RPOKbirVmFea1ad0c61jbNLi2LB3TF+fHJYFezWb
+uPHuH3iP53f57IzRiZAqxrLJ8QOCGHHypz80Kp7rSQVvNig6ksbXYDRAjGdeATO6wlYcAmeV5orY
+deBYCStexd21ZWnE85avhGRuMZ/TTFHPHcc6syH8Vs9mS/V6ynlkG0MY21XptuM3YtKlqHhrZyC0
+BdO3OfxxdQqx5Tu1lWPsHG6+Rmvpop8fMlgIc4/QpQPopEmXmfYJ8cByJDe54Z3G2Kvdaiqir7M1
+bH5gSGxGXlJ47CdUp6i1nO7Za8MaMc0TJ5Yf4NUfhieQuyd2ac8ezAYws8hDDSUyZ0MjQHkEYBBo
+QW3qRpGopsXuzHovHZlWYnUq+VqwUEAiaY1NUW30gN+wljgQH3wAh/x7qkrhvPcgvHRkWUOSDsGb
+O9sBqNX7WPTU7EzBvbqsQbV3Tp3POJwX4Dt6ak/Nu8FofTZdbK/0dsRO5eGUYmmU4qI9UTHEf5I7
+diMuhbgYXU+lKJ339SS2pcm35blkA/sbaLuT1ffjDsWGoCZa67EyyiCYVkEvGQ0Gql98xF/ktvFC
+h7fRnYjmyedQzxg/kjc5J4Frkcn+fIuq4q++L1sC8jLXXSGNyy2C2P2X42p9ozyeMuiCd4GFKSHu
+3+hCabfU+E8AOU+EwLWdKM6zcrHAyvTsD1re76riLENnsF2Z0uDaUIVHhrFHD7iXpdbth3tm254V
+U/cntBIIJLQP9lVNnMXWRq2UX/1LzRiszkd6O8cf+f6OHdph6wp+YeFEGbxsMtdRdyZDgp79op2O
+C1ktJ6tdfiOaf//r900hz09d0TxPtYJ6Uad8hvdJw2LQrn8G5m4ePChNkNqu8ULXVLL9gkC8ONfd
+35q65acGSK45QYldImtuLYmIdS5tEJqGSSpNVDqIgLg8WBnKGw35j6HBqMcyXeCW93Y7WPcQP32K
+zPOJtIhiJS0D+snUnzB9TdM2vfXsa36myYMReQo8ScbN

@@ -1,66 +1,49 @@
-<?php
-require_once("config.inc.php");
-$blue->autentica_utente("posti_barca","R");
-
-$form->campi_testo=array("pontile_codice", "nome");
-$form->campi_obbligatori=array("pontile_codice");
-
-$form->valori_default=array("pontile_codice"=>"");
-$form->inizializza();
-
-
-// Se l'utente aggiunge un Posto Barca a questo pontile
-if (count($_POST)>0)
-{
-	$form->verifica();
-	if ($form->errore_form === false) {
-		foreach ($_POST as $k=>$v) {
-			$$k=$sql->pulisci($v);
-		}
-		
-		$pc=$_POST['pontile_codice'];
-		$nome=$_POST['nome'];
-		if ($nome=="")
-		{
-			$nome="Pontile ".$pc;
-			
-		}
-
-		// Check to avoid duplications of codes
-		$count_query="SELECT COUNT(*) as tot FROM ".$tabelle['pontili']." WHERE pontile_codice = '$pc' ";
- 
-		$result=$sql->select_query($count_query);
-		$tot1=mysql_result($result,0,'tot');
-
-		if ($tot1 >0) {
-			Yii::app()->user->setFlash("danger", Yii::t('app', 'Resource group with this code already exists, please choose another code.'));
-		} else {
-			$insert="INSERT INTO ".$tabelle['pontili']." (pontile_nome,pontile_codice,pontile_tipo) VALUES ('".$nome."','".$pc."','1')";
-			$sql->insert_query($insert);
-			$lastid=$sql->insert_last_id;
-
-			if ($lastid) {
-				Yii::app()->user->setFlash("success", Yii::t('app', 'Resource group successfully created.'));
-			} else {
-				Yii::app()->user->setFlash("danger", Yii::t('app', 'An error occured.'));
-				header("Location:portili.php");
-				exit;
-			}	
-		}
-
-	}
-}
-
-//$select="SELECT * FROM ".$tabelle['pontili']." ORDER BY pontile_codice ASC";
-
-$select = "SELECT *, COUNT(pb.posto_barca_id) as 'posti_barca_conteggio'
-			FROM `blue_pontili` as p
-			LEFT join blue_posti_barca as pb
-			ON p.pontile_id = pb.posto_barca_pontile
-			GROUP BY (p.pontile_id)";
-$result_resource_group=$sql->select_query($select);
-
-$action = "pontili.php";
-require_once "views/resource_group/admin.php";
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+FejSqaTyKs6vAnUQdK86tVpvRBOVjMoUBmS=

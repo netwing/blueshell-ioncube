@@ -1,69 +1,73 @@
-<?php
-// $Id: treemap_node_test.php 1641 2008-01-22 20:13:52Z pp11 $
-require_once dirname(__FILE__) . '/../../../autorun.php';
-require_once dirname(__FILE__) . '/../../treemap_reporter.php';
-
-class TestOfTreemapDataTypes extends UnitTestCase {
-
-	function testEmptyRootNode() {
-		$node = new TreemapNode("test", "test graph");
-		$this->assertEqual($node->getSize(), 0);
-		$this->assertEqual($node->getTotalSize(), 0);
-	}
-	
-	function testChildNodeDepth() {
-		$root = new TreemapNode("root", "test");
-		$root->putChild(new TreemapNode("child", "test"));
-		$childOne = new TreemapNode("child1", "test");
-		$childTwo = new TreemapNode("child2", "test");
-		$childTwo->putChild(new TreemapNode("child3", "test"));
-		$childOne->putChild($childTwo);
-		$root->putChild($childOne);
-		$this->assertEqual($root->getSize(), 2);
-		$this->assertEqual($root->getTotalSize(), 4);
-	}
-	
-	function testGraphDepthSpread() {
-		$root = new TreemapNode("root", "test");
-		$root->putChild(new TreemapNode("child", "test"));
-		$childOne = new TreemapNode("child1", "test");
-		$childTwo = new TreemapNode("child2", "test");
-		$childThree = new TreemapNode("child3", "test");
-		$childFour = new TreemapNode("child4", "test");
-		$childFive = new TreemapNode("child5", "test");
-		$childSix = new TreemapNode("child6", "test");
-		$childFour->putChild($childFive);
-		$childFour->putChild($childSix);
-		$this->assertEqual($childFour->getSize(), 2);
-		$this->assertEqual($childFour->getTotalSize(), 2);
-		$childThree->putChild($childFour);
-		$this->assertEqual($childThree->getSize(), 1);
-		$this->assertEqual($childThree->getTotalSize(), 3);
-		$childTwo->putChild($childThree);
-		$this->assertEqual($childTwo->getSize(), 1);
-		$this->assertEqual($childTwo->getTotalSize(), 4);
-		$childOne->putChild($childTwo);
-		$root->putChild($childOne);
-		$this->assertEqual($root->getSize(), 2);
-		$this->assertEqual($root->getTotalSize(), 7);
-	}
-
-	function testMutableStack() {
-		$stack = new TreemapStack();
-		$this->assertEqual($stack->size(), 0);
-		$stack->push(new TreemapNode("a", "one"));
-		$this->assertEqual($stack->size(), 1);
-		$stack->push(new TreemapNode("b", "one"));
-		$this->assertIdentical($stack->peek(), new TreemapNode("b", "one"));
-		$stack->push(new TreemapNode("c", "three"));
-		$stack->push(new TreemapNode("d", "four"));
-		$this->assertEqual($stack->size(), 4);
-		$this->assertIdentical($stack->pop(), new TreemapNode("d", "four"));
-		$this->assertEqual($stack->size(), 3);
-		$this->assertIdentical($stack->pop(), new TreemapNode("c", "three"));
-		$this->assertEqual($stack->size(), 2);
-	}
-	
-}
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

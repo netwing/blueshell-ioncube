@@ -1,38 +1,46 @@
-<?php
-require_once("config.inc.php");
-$blue->autentica_utente("imbarcazioni","W");
-if (!array_key_exists("id",$_GET)) {
-	header("Location:barche.php");
-	exit();	
-}
-$get_id=intval($_GET['id']);
-// Definiamo l'id della barca passato via GET
-if (count($_POST) > 0) {
-	if (array_key_exists("cliente",$_POST)) {
-		$data = $_POST['trasferimento_data'];
-		$insert="INSERT INTO ".$tabelle['barche_trasferimenti']." (barca_trasferimento_barca,barca_trasferimento_da,barca_trasferimento_a,barca_trasferimento_data) VALUES ('".$get_id."','".$_POST['cliente_id']."','".$_POST['cliente']."','".$data."')";
-		$sql->insert_query($insert);
-		$update="UPDATE ".$tabelle['barche']." SET barca_proprietario='".$_POST['cliente']."' WHERE barca_id='".$get_id."'";
-		$sql->update_query($update);
-	}
-}
-// Questo se viene passato il form
-$elenco_clienti=$blue->elenco_clienti();
-// Carichiamo l'elenco dei clienti
-$select_nome="SELECT barca_nome, barca_lunghezza, cliente_id, cliente_nominativo FROM ".$tabelle['barche'].",".$tabelle['clienti']." WHERE barca_id='".$get_id."' AND cliente_id=barca_proprietario";
-$result=$sql->select_query($select_nome);
-$barca_nome=mysql_result($result,0,'barca_nome');
-$barca_lunghezza=mysql_result($result,0,'barca_lunghezza');
-$proprietario_nome=mysql_result($result,0,'cliente_nominativo');
-$cliente_id=mysql_result($result,0,'cliente_id');
-// Query per recuperare il nome della barca
-$select="SELECT * FROM ".$tabelle['barche_trasferimenti']." WHERE barca_trasferimento_barca='".$get_id."' ORDER BY barca_trasferimento_data DESC";
-$result=$sql->select_query($select);
-$elenco_trasferimenti=array();
-while ($row=mysql_fetch_array($result))
-{
-	$elenco_trasferimenti[]=$row;
-}
-// Query per recuperare le informazioni sui trasferimenti della barca.
-
-require_once "views/vector/transfer.php";
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

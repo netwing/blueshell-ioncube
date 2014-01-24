@@ -1,322 +1,232 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\CssSelector\Tests\XPath;
-
-use Symfony\Component\CssSelector\XPath\Extension\HtmlExtension;
-use Symfony\Component\CssSelector\XPath\Translator;
-
-class TranslatorTest extends \PHPUnit_Framework_TestCase
-{
-    /** @dataProvider getXpathLiteralTestData */
-    public function testXpathLiteral($value, $literal)
-    {
-        $this->assertEquals($literal, Translator::getXpathLiteral($value));
-    }
-
-    /** @dataProvider getCssToXPathTestData */
-    public function testCssToXPath($css, $xpath)
-    {
-        $translator = new Translator();
-        $translator->registerExtension(new HtmlExtension($translator));
-        $this->assertEquals($xpath, $translator->cssToXPath($css, ''));
-    }
-
-    /** @dataProvider getXmlLangTestData */
-    public function testXmlLang($css, array $elementsId)
-    {
-        $translator = new Translator();
-        $document = new \SimpleXMLElement(file_get_contents(__DIR__.'/Fixtures/lang.xml'));
-        $elements = $document->xpath($translator->cssToXPath($css));
-        $this->assertEquals(count($elementsId), count($elements));
-        foreach ($elements as $element) {
-            $this->assertTrue(in_array($element->attributes()->id, $elementsId));
-        }
-    }
-
-    /** @dataProvider getHtmlIdsTestData */
-    public function testHtmlIds($css, array $elementsId)
-    {
-        $translator = new Translator();
-        $translator->registerExtension(new HtmlExtension($translator));
-        $document = new \DOMDocument();
-        $document->strictErrorChecking = false;
-        libxml_use_internal_errors(true);
-        $document->loadHTMLFile(__DIR__.'/Fixtures/ids.html');
-        $document = simplexml_import_dom($document);
-        $elements = $document->xpath($translator->cssToXPath($css));
-        $this->assertCount(count($elementsId), $elementsId);
-        foreach ($elements as $element) {
-            if (null !== $element->attributes()->id) {
-                $this->assertTrue(in_array($element->attributes()->id, $elementsId));
-            }
-        }
-    }
-
-    /** @dataProvider getHtmlShakespearTestData */
-    public function testHtmlShakespear($css, $count)
-    {
-        $translator = new Translator();
-        $translator->registerExtension(new HtmlExtension($translator));
-        $document = new \DOMDocument();
-        $document->strictErrorChecking = false;
-        $document->loadHTMLFile(__DIR__.'/Fixtures/shakespear.html');
-        $document = simplexml_import_dom($document);
-        $bodies = $document->xpath('//body');
-        $elements = $bodies[0]->xpath($translator->cssToXPath($css));
-        $this->assertEquals($count, count($elements));
-    }
-
-    public function getXpathLiteralTestData()
-    {
-        return array(
-            array('foo', "'foo'"),
-            array("foo's bar", '"foo\'s bar"'),
-            array("foo's \"middle\" bar", 'concat(\'foo\', "\'", \'s "middle" bar\')'),
-            array("foo's 'middle' \"bar\"", 'concat(\'foo\', "\'", \'s \', "\'", \'middle\', "\'", \' "bar"\')'),
-        );
-    }
-
-    public function getCssToXPathTestData()
-    {
-        return array(
-            array('*', "*"),
-            array('e', "e"),
-            array('*|e', "e"),
-            array('e|f', "e:f"),
-            array('e[foo]', "e[@foo]"),
-            array('e[foo|bar]', "e[@foo:bar]"),
-            array('e[foo="bar"]', "e[@foo = 'bar']"),
-            array('e[foo~="bar"]', "e[@foo and contains(concat(' ', normalize-space(@foo), ' '), ' bar ')]"),
-            array('e[foo^="bar"]', "e[@foo and starts-with(@foo, 'bar')]"),
-            array('e[foo$="bar"]', "e[@foo and substring(@foo, string-length(@foo)-2) = 'bar']"),
-            array('e[foo*="bar"]', "e[@foo and contains(@foo, 'bar')]"),
-            array('e[hreflang|="en"]', "e[@hreflang and (@hreflang = 'en' or starts-with(@hreflang, 'en-'))]"),
-            array('e:nth-child(1)', "*/*[name() = 'e' and (position() = 1)]"),
-            array('e:nth-last-child(1)', "*/*[name() = 'e' and (position() = last() - 0)]"),
-            array('e:nth-last-child(2n+2)', "*/*[name() = 'e' and (last() - position() - 1 >= 0 and (last() - position() - 1) mod 2 = 0)]"),
-            array('e:nth-of-type(1)', "*/e[position() = 1]"),
-            array('e:nth-last-of-type(1)', "*/e[position() = last() - 0]"),
-            array('div e:nth-last-of-type(1) .aclass', "div/descendant-or-self::*/e[position() = last() - 0]/descendant-or-self::*/*[@class and contains(concat(' ', normalize-space(@class), ' '), ' aclass ')]"),
-            array('e:first-child', "*/*[name() = 'e' and (position() = 1)]"),
-            array('e:last-child', "*/*[name() = 'e' and (position() = last())]"),
-            array('e:first-of-type', "*/e[position() = 1]"),
-            array('e:last-of-type', "*/e[position() = last()]"),
-            array('e:only-child', "*/*[name() = 'e' and (last() = 1)]"),
-            array('e:only-of-type', "e[last() = 1]"),
-            array('e:empty', "e[not(*) and not(string-length())]"),
-            array('e:EmPTY', "e[not(*) and not(string-length())]"),
-            array('e:root', "e[not(parent::*)]"),
-            array('e:hover', "e[0]"),
-            array('e:contains("foo")', "e[contains(string(.), 'foo')]"),
-            array('e:ConTains(foo)', "e[contains(string(.), 'foo')]"),
-            array('e.warning', "e[@class and contains(concat(' ', normalize-space(@class), ' '), ' warning ')]"),
-            array('e#myid', "e[@id = 'myid']"),
-            array('e:not(:nth-child(odd))', "e[not(position() - 1 >= 0 and (position() - 1) mod 2 = 0)]"),
-            array('e:nOT(*)', "e[0]"),
-            array('e f', "e/descendant-or-self::*/f"),
-            array('e > f', "e/f"),
-            array('e + f', "e/following-sibling::*[name() = 'f' and (position() = 1)]"),
-            array('e ~ f', "e/following-sibling::f"),
-            array('div#container p', "div[@id = 'container']/descendant-or-self::*/p"),
-        );
-    }
-
-    public function getXmlLangTestData()
-    {
-        return array(
-            array(':lang("EN")', array('first', 'second', 'third', 'fourth')),
-            array(':lang("en-us")', array('second', 'fourth')),
-            array(':lang(en-nz)', array('third')),
-            array(':lang(fr)', array('fifth')),
-            array(':lang(ru)', array('sixth')),
-            array(":lang('ZH')", array('eighth')),
-            array(':lang(de) :lang(zh)', array('eighth')),
-            array(':lang(en), :lang(zh)', array('first', 'second', 'third', 'fourth', 'eighth')),
-            array(':lang(es)', array()),
-        );
-    }
-
-    public function getHtmlIdsTestData()
-    {
-        return array(
-            array('div', array('outer-div', 'li-div', 'foobar-div')),
-            array('DIV', array('outer-div', 'li-div', 'foobar-div')),  // case-insensitive in HTML
-            array('div div', array('li-div')),
-            array('div, div div', array('outer-div', 'li-div', 'foobar-div')),
-            array('a[name]', array('name-anchor')),
-            array('a[NAme]', array('name-anchor')), // case-insensitive in HTML:
-            array('a[rel]', array('tag-anchor', 'nofollow-anchor')),
-            array('a[rel="tag"]', array('tag-anchor')),
-            array('a[href*="localhost"]', array('tag-anchor')),
-            array('a[href*=""]', array()),
-            array('a[href^="http"]', array('tag-anchor', 'nofollow-anchor')),
-            array('a[href^="http:"]', array('tag-anchor')),
-            array('a[href^=""]', array()),
-            array('a[href$="org"]', array('nofollow-anchor')),
-            array('a[href$=""]', array()),
-            array('div[foobar~="bc"]', array('foobar-div')),
-            array('div[foobar~="cde"]', array('foobar-div')),
-            array('[foobar~="ab bc"]', array('foobar-div')),
-            array('[foobar~=""]', array()),
-            array('[foobar~=" \t"]', array()),
-            array('div[foobar~="cd"]', array()),
-            array('*[lang|="En"]', array('second-li')),
-            array('[lang|="En-us"]', array('second-li')),
-            // Attribute values are case sensitive
-            array('*[lang|="en"]', array()),
-            array('[lang|="en-US"]', array()),
-            array('*[lang|="e"]', array()),
-            // ... :lang() is not.
-            array(':lang("EN")', array('second-li', 'li-div')),
-            array('*:lang(en-US)', array('second-li', 'li-div')),
-            array(':lang("e")', array()),
-            array('li:nth-child(3)', array('third-li')),
-            array('li:nth-child(10)', array()),
-            array('li:nth-child(2n)', array('second-li', 'fourth-li', 'sixth-li')),
-            array('li:nth-child(even)', array('second-li', 'fourth-li', 'sixth-li')),
-            array('li:nth-child(2n+0)', array('second-li', 'fourth-li', 'sixth-li')),
-            array('li:nth-child(+2n+1)', array('first-li', 'third-li', 'fifth-li', 'seventh-li')),
-            array('li:nth-child(odd)', array('first-li', 'third-li', 'fifth-li', 'seventh-li')),
-            array('li:nth-child(2n+4)', array('fourth-li', 'sixth-li')),
-            array('li:nth-child(3n+1)', array('first-li', 'fourth-li', 'seventh-li')),
-            array('li:nth-child(n)', array('first-li', 'second-li', 'third-li', 'fourth-li', 'fifth-li', 'sixth-li', 'seventh-li')),
-            array('li:nth-child(n-1)', array('first-li', 'second-li', 'third-li', 'fourth-li', 'fifth-li', 'sixth-li', 'seventh-li')),
-            array('li:nth-child(n+1)', array('first-li', 'second-li', 'third-li', 'fourth-li', 'fifth-li', 'sixth-li', 'seventh-li')),
-            array('li:nth-child(n+3)', array('third-li', 'fourth-li', 'fifth-li', 'sixth-li', 'seventh-li')),
-            array('li:nth-child(-n)', array()),
-            array('li:nth-child(-n-1)', array()),
-            array('li:nth-child(-n+1)', array('first-li')),
-            array('li:nth-child(-n+3)', array('first-li', 'second-li', 'third-li')),
-            array('li:nth-last-child(0)', array()),
-            array('li:nth-last-child(2n)', array('second-li', 'fourth-li', 'sixth-li')),
-            array('li:nth-last-child(even)', array('second-li', 'fourth-li', 'sixth-li')),
-            array('li:nth-last-child(2n+2)', array('second-li', 'fourth-li', 'sixth-li')),
-            array('li:nth-last-child(n)', array('first-li', 'second-li', 'third-li', 'fourth-li', 'fifth-li', 'sixth-li', 'seventh-li')),
-            array('li:nth-last-child(n-1)', array('first-li', 'second-li', 'third-li', 'fourth-li', 'fifth-li', 'sixth-li', 'seventh-li')),
-            array('li:nth-last-child(n-3)', array('first-li', 'second-li', 'third-li', 'fourth-li', 'fifth-li', 'sixth-li', 'seventh-li')),
-            array('li:nth-last-child(n+1)', array('first-li', 'second-li', 'third-li', 'fourth-li', 'fifth-li', 'sixth-li', 'seventh-li')),
-            array('li:nth-last-child(n+3)', array('first-li', 'second-li', 'third-li', 'fourth-li', 'fifth-li')),
-            array('li:nth-last-child(-n)', array()),
-            array('li:nth-last-child(-n-1)', array()),
-            array('li:nth-last-child(-n+1)', array('seventh-li')),
-            array('li:nth-last-child(-n+3)', array('fifth-li', 'sixth-li', 'seventh-li')),
-            array('ol:first-of-type', array('first-ol')),
-            array('ol:nth-child(1)', array('first-ol')),
-            array('ol:nth-of-type(2)', array('second-ol')),
-            array('ol:nth-last-of-type(1)', array('second-ol')),
-            array('span:only-child', array('foobar-span')),
-            array('li div:only-child', array('li-div')),
-            array('div *:only-child', array('li-div', 'foobar-span')),
-            array('p:only-of-type', array('paragraph')),
-            array('a:empty', array('name-anchor')),
-            array('a:EMpty', array('name-anchor')),
-            array('li:empty', array('third-li', 'fourth-li', 'fifth-li', 'sixth-li')),
-            array(':root', array('html')),
-            array('html:root', array('html')),
-            array('li:root', array()),
-            array('* :root', array()),
-            array('*:contains("link")', array('html', 'outer-div', 'tag-anchor', 'nofollow-anchor')),
-            array(':CONtains("link")', array('html', 'outer-div', 'tag-anchor', 'nofollow-anchor')),
-            array('*:contains("LInk")', array()),  // case sensitive
-            array('*:contains("e")', array('html', 'nil', 'outer-div', 'first-ol', 'first-li', 'paragraph', 'p-em')),
-            array('*:contains("E")', array()),  // case-sensitive
-            array('.a', array('first-ol')),
-            array('.b', array('first-ol')),
-            array('*.a', array('first-ol')),
-            array('ol.a', array('first-ol')),
-            array('.c', array('first-ol', 'third-li', 'fourth-li')),
-            array('*.c', array('first-ol', 'third-li', 'fourth-li')),
-            array('ol *.c', array('third-li', 'fourth-li')),
-            array('ol li.c', array('third-li', 'fourth-li')),
-            array('li ~ li.c', array('third-li', 'fourth-li')),
-            array('ol > li.c', array('third-li', 'fourth-li')),
-            array('#first-li', array('first-li')),
-            array('li#first-li', array('first-li')),
-            array('*#first-li', array('first-li')),
-            array('li div', array('li-div')),
-            array('li > div', array('li-div')),
-            array('div div', array('li-div')),
-            array('div > div', array()),
-            array('div>.c', array('first-ol')),
-            array('div > .c', array('first-ol')),
-            array('div + div', array('foobar-div')),
-            array('a ~ a', array('tag-anchor', 'nofollow-anchor')),
-            array('a[rel="tag"] ~ a', array('nofollow-anchor')),
-            array('ol#first-ol li:last-child', array('seventh-li')),
-            array('ol#first-ol *:last-child', array('li-div', 'seventh-li')),
-            array('#outer-div:first-child', array('outer-div')),
-            array('#outer-div :first-child', array('name-anchor', 'first-li', 'li-div', 'p-b', 'checkbox-fieldset-disabled', 'area-href')),
-            array('a[href]', array('tag-anchor', 'nofollow-anchor')),
-            array(':not(*)', array()),
-            array('a:not([href])', array('name-anchor')),
-            array('ol :Not(li[class])', array('first-li', 'second-li', 'li-div', 'fifth-li', 'sixth-li', 'seventh-li')),
-            // HTML-specific
-            array(':link', array('link-href', 'tag-anchor', 'nofollow-anchor', 'area-href')),
-            array(':visited', array()),
-            array(':enabled', array('link-href', 'tag-anchor', 'nofollow-anchor', 'checkbox-unchecked', 'text-checked', 'checkbox-checked', 'area-href')),
-            array(':disabled', array('checkbox-disabled', 'checkbox-disabled-checked', 'fieldset', 'checkbox-fieldset-disabled')),
-            array(':checked', array('checkbox-checked', 'checkbox-disabled-checked')),
-        );
-    }
-
-    public function getHtmlShakespearTestData()
-    {
-        return array(
-            array('*', 246),
-            array('div:contains(CELIA)', 26),
-            array('div:only-child', 22), // ?
-            array('div:nth-child(even)', 106),
-            array('div:nth-child(2n)', 106),
-            array('div:nth-child(odd)', 137),
-            array('div:nth-child(2n+1)', 137),
-            array('div:nth-child(n)', 243),
-            array('div:last-child', 53),
-            array('div:first-child', 51),
-            array('div > div', 242),
-            array('div + div', 190),
-            array('div ~ div', 190),
-            array('body', 1),
-            array('body div', 243),
-            array('div', 243),
-            array('div div', 242),
-            array('div div div', 241),
-            array('div, div, div', 243),
-            array('div, a, span', 243),
-            array('.dialog', 51),
-            array('div.dialog', 51),
-            array('div .dialog', 51),
-            array('div.character, div.dialog', 99),
-            array('div.direction.dialog', 0),
-            array('div.dialog.direction', 0),
-            array('div.dialog.scene', 1),
-            array('div.scene.scene', 1),
-            array('div.scene .scene', 0),
-            array('div.direction .dialog ', 0),
-            array('div .dialog .direction', 4),
-            array('div.dialog .dialog .direction', 4),
-            array('#speech5', 1),
-            array('div#speech5', 1),
-            array('div #speech5', 1),
-            array('div.scene div.dialog', 49),
-            array('div#scene1 div.dialog div', 142),
-            array('#scene1 #speech1', 1),
-            array('div[class]', 103),
-            array('div[class=dialog]', 50),
-            array('div[class^=dia]', 51),
-            array('div[class$=log]', 50),
-            array('div[class*=sce]', 1),
-            array('div[class|=dialog]', 50), // ? Seems right
-            array('div[class!=madeup]', 243), // ? Seems right
-            array('div[class~=dialog]', 51), // ? Seems right
-        );
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

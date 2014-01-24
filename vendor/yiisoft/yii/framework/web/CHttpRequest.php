@@ -1,1396 +1,637 @@
-<?php
-/**
- * CHttpRequest and CCookieCollection class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-
-/**
- * CHttpRequest encapsulates the $_SERVER variable and resolves its inconsistency among different Web servers.
- *
- * CHttpRequest also manages the cookies sent from and sent to the user.
- * By setting {@link enableCookieValidation} to true,
- * cookies sent from the user will be validated to see if they are tampered.
- * The property {@link getCookies cookies} returns the collection of cookies.
- * For more details, see {@link CCookieCollection}.
- *
- * CHttpRequest is a default application component loaded by {@link CWebApplication}. It can be
- * accessed via {@link CWebApplication::getRequest()}.
- *
- * @property string $url Part of the request URL after the host info.
- * @property string $hostInfo Schema and hostname part (with port number if needed) of the request URL (e.g. http://www.yiiframework.com).
- * @property string $baseUrl The relative URL for the application.
- * @property string $scriptUrl The relative URL of the entry script.
- * @property string $pathInfo Part of the request URL that is after the entry script and before the question mark.
- * Note, the returned pathinfo is decoded starting from 1.1.4.
- * Prior to 1.1.4, whether it is decoded or not depends on the server configuration
- * (in most cases it is not decoded).
- * @property string $requestUri The request URI portion for the currently requested URL.
- * @property string $queryString Part of the request URL that is after the question mark.
- * @property boolean $isSecureConnection If the request is sent via secure channel (https).
- * @property string $requestType Request type, such as GET, POST, HEAD, PUT, DELETE.
- * @property boolean $isPostRequest Whether this is a POST request.
- * @property boolean $isDeleteRequest Whether this is a DELETE request.
- * @property boolean $isPutRequest Whether this is a PUT request.
- * @property boolean $isAjaxRequest Whether this is an AJAX (XMLHttpRequest) request.
- * @property boolean $isFlashRequest Whether this is an Adobe Flash or Adobe Flex request.
- * @property string $serverName Server name.
- * @property integer $serverPort Server port number.
- * @property string $urlReferrer URL referrer, null if not present.
- * @property string $userAgent User agent, null if not present.
- * @property string $userHostAddress User IP address.
- * @property string $userHost User host name, null if cannot be determined.
- * @property string $scriptFile Entry script file path (processed w/ realpath()).
- * @property array $browser User browser capabilities.
- * @property string $acceptTypes User browser accept types, null if not present.
- * @property integer $port Port number for insecure requests.
- * @property integer $securePort Port number for secure requests.
- * @property CCookieCollection|CHttpCookie[] $cookies The cookie collection.
- * @property array $preferredAcceptType The user preferred accept type as an array map, e.g. array('type' => 'application', 'subType' => 'xhtml', 'baseType' => 'xml', 'params' => array('q' => 0.9)).
- * @property array $preferredAcceptTypes An array of all user accepted types (as array maps like array('type' => 'application', 'subType' => 'xhtml', 'baseType' => 'xml', 'params' => array('q' => 0.9)) ) in order of preference.
- * @property string $preferredLanguage The user preferred language.
- * @property array $preferredLanguages An array of all user accepted languages in order of preference.
- * @property string $csrfToken The random token for CSRF validation.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.web
- * @since 1.0
- */
-class CHttpRequest extends CApplicationComponent
-{
-	/**
-	 * @var boolean whether cookies should be validated to ensure they are not tampered. Defaults to false.
-	 */
-	public $enableCookieValidation=false;
-	/**
-	 * @var boolean whether to enable CSRF (Cross-Site Request Forgery) validation. Defaults to false.
-	 * By setting this property to true, forms submitted to an Yii Web application must be originated
-	 * from the same application. If not, a 400 HTTP exception will be raised.
-	 * Note, this feature requires that the user client accepts cookie.
-	 * You also need to use {@link CHtml::form} or {@link CHtml::statefulForm} to generate
-	 * the needed HTML forms in your pages.
-	 * @see http://seclab.stanford.edu/websec/csrf/csrf.pdf
-	 */
-	public $enableCsrfValidation=false;
-	/**
-	 * @var string the name of the token used to prevent CSRF. Defaults to 'YII_CSRF_TOKEN'.
-	 * This property is effectively only when {@link enableCsrfValidation} is true.
-	 */
-	public $csrfTokenName='YII_CSRF_TOKEN';
-	/**
-	 * @var array the property values (in name-value pairs) used to initialize the CSRF cookie.
-	 * Any property of {@link CHttpCookie} may be initialized.
-	 * This property is effective only when {@link enableCsrfValidation} is true.
-	 */
-	public $csrfCookie;
-
-	private $_requestUri;
-	private $_pathInfo;
-	private $_scriptFile;
-	private $_scriptUrl;
-	private $_hostInfo;
-	private $_baseUrl;
-	private $_cookies;
-	private $_preferredAcceptTypes;
-	private $_preferredLanguages;
-	private $_csrfToken;
-	private $_restParams;
-
-	/**
-	 * Initializes the application component.
-	 * This method overrides the parent implementation by preprocessing
-	 * the user request data.
-	 */
-	public function init()
-	{
-		parent::init();
-		$this->normalizeRequest();
-	}
-
-	/**
-	 * Normalizes the request data.
-	 * This method strips off slashes in request data if get_magic_quotes_gpc() returns true.
-	 * It also performs CSRF validation if {@link enableCsrfValidation} is true.
-	 */
-	protected function normalizeRequest()
-	{
-		// normalize request
-		if(function_exists('get_magic_quotes_gpc') && get_magic_quotes_gpc())
-		{
-			if(isset($_GET))
-				$_GET=$this->stripSlashes($_GET);
-			if(isset($_POST))
-				$_POST=$this->stripSlashes($_POST);
-			if(isset($_REQUEST))
-				$_REQUEST=$this->stripSlashes($_REQUEST);
-			if(isset($_COOKIE))
-				$_COOKIE=$this->stripSlashes($_COOKIE);
-		}
-
-		if($this->enableCsrfValidation)
-			Yii::app()->attachEventHandler('onBeginRequest',array($this,'validateCsrfToken'));
-	}
-
-
-	/**
-	 * Strips slashes from input data.
-	 * This method is applied when magic quotes is enabled.
-	 * @param mixed $data input data to be processed
-	 * @return mixed processed data
-	 */
-	public function stripSlashes(&$data)
-	{
-		if(is_array($data))
-		{
-			if(count($data) == 0)
-				return $data;
-			$keys=array_map('stripslashes',array_keys($data));
-			$data=array_combine($keys,array_values($data));
-			return array_map(array($this,'stripSlashes'),$data);
-		}
-		else
-			return stripslashes($data);
-	}
-
-	/**
-	 * Returns the named GET or POST parameter value.
-	 * If the GET or POST parameter does not exist, the second parameter to this method will be returned.
-	 * If both GET and POST contains such a named parameter, the GET parameter takes precedence.
-	 * @param string $name the GET parameter name
-	 * @param mixed $defaultValue the default parameter value if the GET parameter does not exist.
-	 * @return mixed the GET parameter value
-	 * @see getQuery
-	 * @see getPost
-	 */
-	public function getParam($name,$defaultValue=null)
-	{
-		return isset($_GET[$name]) ? $_GET[$name] : (isset($_POST[$name]) ? $_POST[$name] : $defaultValue);
-	}
-
-	/**
-	 * Returns the named GET parameter value.
-	 * If the GET parameter does not exist, the second parameter to this method will be returned.
-	 * @param string $name the GET parameter name
-	 * @param mixed $defaultValue the default parameter value if the GET parameter does not exist.
-	 * @return mixed the GET parameter value
-	 * @see getPost
-	 * @see getParam
-	 */
-	public function getQuery($name,$defaultValue=null)
-	{
-		return isset($_GET[$name]) ? $_GET[$name] : $defaultValue;
-	}
-
-	/**
-	 * Returns the named POST parameter value.
-	 * If the POST parameter does not exist, the second parameter to this method will be returned.
-	 * @param string $name the POST parameter name
-	 * @param mixed $defaultValue the default parameter value if the POST parameter does not exist.
-	 * @return mixed the POST parameter value
-	 * @see getParam
-	 * @see getQuery
-	 */
-	public function getPost($name,$defaultValue=null)
-	{
-		return isset($_POST[$name]) ? $_POST[$name] : $defaultValue;
-	}
-
-	/**
-	 * Returns the named DELETE parameter value.
-	 * If the DELETE parameter does not exist or if the current request is not a DELETE request,
-	 * the second parameter to this method will be returned.
-	 * If the DELETE request was tunneled through POST via _method parameter, the POST parameter
-	 * will be returned instead (available since version 1.1.11).
-	 * @param string $name the DELETE parameter name
-	 * @param mixed $defaultValue the default parameter value if the DELETE parameter does not exist.
-	 * @return mixed the DELETE parameter value
-	 * @since 1.1.7
-	 */
-	public function getDelete($name,$defaultValue=null)
-	{
-		if($this->getIsDeleteViaPostRequest())
-			return $this->getPost($name, $defaultValue);
-
-		if($this->getIsDeleteRequest())
-		{
-			$restParams=$this->getRestParams();
-			return isset($restParams[$name]) ? $restParams[$name] : $defaultValue;
-		}
-		else
-			return $defaultValue;
-	}
-
-	/**
-	 * Returns the named PUT parameter value.
-	 * If the PUT parameter does not exist or if the current request is not a PUT request,
-	 * the second parameter to this method will be returned.
-	 * If the PUT request was tunneled through POST via _method parameter, the POST parameter
-	 * will be returned instead (available since version 1.1.11).
-	 * @param string $name the PUT parameter name
-	 * @param mixed $defaultValue the default parameter value if the PUT parameter does not exist.
-	 * @return mixed the PUT parameter value
-	 * @since 1.1.7
-	 */
-	public function getPut($name,$defaultValue=null)
-	{
-		if($this->getIsPutViaPostRequest())
-			return $this->getPost($name, $defaultValue);
-
-		if($this->getIsPutRequest())
-		{
-			$restParams=$this->getRestParams();
-			return isset($restParams[$name]) ? $restParams[$name] : $defaultValue;
-		}
-		else
-			return $defaultValue;
-	}
-
-	/**
-	 * Returns request parameters. Typically PUT or DELETE.
-	 * @return array the request parameters
-	 * @since 1.1.7
-	 * @since 1.1.13 method became public
-	 */
-	public function getRestParams()
-	{
-		if($this->_restParams===null)
-		{
-			$result=array();
-			if(function_exists('mb_parse_str'))
-				mb_parse_str($this->getRawBody(), $result);
-			else
-				parse_str($this->getRawBody(), $result);
-			$this->_restParams=$result;
-		}
-
-		return $this->_restParams;
-	}
-
-	/**
-	 * Returns the raw HTTP request body.
-	 * @return string the request body
-	 * @since 1.1.13
-	 */
-	public function getRawBody()
-	{
-		static $rawBody;
-		if($rawBody===null)
-			$rawBody=file_get_contents('php://input');
-		return $rawBody;
-	}
-
-	/**
-	 * Returns the currently requested URL.
-	 * This is the same as {@link getRequestUri}.
-	 * @return string part of the request URL after the host info.
-	 */
-	public function getUrl()
-	{
-		return $this->getRequestUri();
-	}
-
-	/**
-	 * Returns the schema and host part of the application URL.
-	 * The returned URL does not have an ending slash.
-	 * By default this is determined based on the user request information.
-	 * You may explicitly specify it by setting the {@link setHostInfo hostInfo} property.
-	 * @param string $schema schema to use (e.g. http, https). If empty, the schema used for the current request will be used.
-	 * @return string schema and hostname part (with port number if needed) of the request URL (e.g. http://www.yiiframework.com)
-	 * @see setHostInfo
-	 */
-	public function getHostInfo($schema='')
-	{
-		if($this->_hostInfo===null)
-		{
-			if($secure=$this->getIsSecureConnection())
-				$http='https';
-			else
-				$http='http';
-			if(isset($_SERVER['HTTP_HOST']))
-				$this->_hostInfo=$http.'://'.$_SERVER['HTTP_HOST'];
-			else
-			{
-				$this->_hostInfo=$http.'://'.$_SERVER['SERVER_NAME'];
-				$port=$secure ? $this->getSecurePort() : $this->getPort();
-				if(($port!==80 && !$secure) || ($port!==443 && $secure))
-					$this->_hostInfo.=':'.$port;
-			}
-		}
-		if($schema!=='')
-		{
-			$secure=$this->getIsSecureConnection();
-			if($secure && $schema==='https' || !$secure && $schema==='http')
-				return $this->_hostInfo;
-
-			$port=$schema==='https' ? $this->getSecurePort() : $this->getPort();
-			if($port!==80 && $schema==='http' || $port!==443 && $schema==='https')
-				$port=':'.$port;
-			else
-				$port='';
-
-			$pos=strpos($this->_hostInfo,':');
-			return $schema.substr($this->_hostInfo,$pos,strcspn($this->_hostInfo,':',$pos+1)+1).$port;
-		}
-		else
-			return $this->_hostInfo;
-	}
-
-	/**
-	 * Sets the schema and host part of the application URL.
-	 * This setter is provided in case the schema and hostname cannot be determined
-	 * on certain Web servers.
-	 * @param string $value the schema and host part of the application URL.
-	 */
-	public function setHostInfo($value)
-	{
-		$this->_hostInfo=rtrim($value,'/');
-	}
-
-	/**
-	 * Returns the relative URL for the application.
-	 * This is similar to {@link getScriptUrl scriptUrl} except that
-	 * it does not have the script file name, and the ending slashes are stripped off.
-	 * @param boolean $absolute whether to return an absolute URL. Defaults to false, meaning returning a relative one.
-	 * @return string the relative URL for the application
-	 * @see setScriptUrl
-	 */
-	public function getBaseUrl($absolute=false)
-	{
-		if($this->_baseUrl===null)
-			$this->_baseUrl=rtrim(dirname($this->getScriptUrl()),'\\/');
-		return $absolute ? $this->getHostInfo() . $this->_baseUrl : $this->_baseUrl;
-	}
-
-	/**
-	 * Sets the relative URL for the application.
-	 * By default the URL is determined based on the entry script URL.
-	 * This setter is provided in case you want to change this behavior.
-	 * @param string $value the relative URL for the application
-	 */
-	public function setBaseUrl($value)
-	{
-		$this->_baseUrl=$value;
-	}
-
-	/**
-	 * Returns the relative URL of the entry script.
-	 * The implementation of this method referenced Zend_Controller_Request_Http in Zend Framework.
-	 * @throws CException when it is unable to determine the entry script URL.
-	 * @return string the relative URL of the entry script.
-	 */
-	public function getScriptUrl()
-	{
-		if($this->_scriptUrl===null)
-		{
-			$scriptName=basename($_SERVER['SCRIPT_FILENAME']);
-			if(basename($_SERVER['SCRIPT_NAME'])===$scriptName)
-				$this->_scriptUrl=$_SERVER['SCRIPT_NAME'];
-			elseif(basename($_SERVER['PHP_SELF'])===$scriptName)
-				$this->_scriptUrl=$_SERVER['PHP_SELF'];
-			elseif(isset($_SERVER['ORIG_SCRIPT_NAME']) && basename($_SERVER['ORIG_SCRIPT_NAME'])===$scriptName)
-				$this->_scriptUrl=$_SERVER['ORIG_SCRIPT_NAME'];
-			elseif(($pos=strpos($_SERVER['PHP_SELF'],'/'.$scriptName))!==false)
-				$this->_scriptUrl=substr($_SERVER['SCRIPT_NAME'],0,$pos).'/'.$scriptName;
-			elseif(isset($_SERVER['DOCUMENT_ROOT']) && strpos($_SERVER['SCRIPT_FILENAME'],$_SERVER['DOCUMENT_ROOT'])===0)
-				$this->_scriptUrl=str_replace('\\','/',str_replace($_SERVER['DOCUMENT_ROOT'],'',$_SERVER['SCRIPT_FILENAME']));
-			else
-				throw new CException(Yii::t('yii','CHttpRequest is unable to determine the entry script URL.'));
-		}
-		return $this->_scriptUrl;
-	}
-
-	/**
-	 * Sets the relative URL for the application entry script.
-	 * This setter is provided in case the entry script URL cannot be determined
-	 * on certain Web servers.
-	 * @param string $value the relative URL for the application entry script.
-	 */
-	public function setScriptUrl($value)
-	{
-		$this->_scriptUrl='/'.trim($value,'/');
-	}
-
-	/**
-	 * Returns the path info of the currently requested URL.
-	 * This refers to the part that is after the entry script and before the question mark.
-	 * The starting and ending slashes are stripped off.
-	 * @return string part of the request URL that is after the entry script and before the question mark.
-	 * Note, the returned pathinfo is decoded starting from 1.1.4.
-	 * Prior to 1.1.4, whether it is decoded or not depends on the server configuration
-	 * (in most cases it is not decoded).
-	 * @throws CException if the request URI cannot be determined due to improper server configuration
-	 */
-	public function getPathInfo()
-	{
-		if($this->_pathInfo===null)
-		{
-			$pathInfo=$this->getRequestUri();
-
-			if(($pos=strpos($pathInfo,'?'))!==false)
-			   $pathInfo=substr($pathInfo,0,$pos);
-
-			$pathInfo=$this->decodePathInfo($pathInfo);
-
-			$scriptUrl=$this->getScriptUrl();
-			$baseUrl=$this->getBaseUrl();
-			if(strpos($pathInfo,$scriptUrl)===0)
-				$pathInfo=substr($pathInfo,strlen($scriptUrl));
-			elseif($baseUrl==='' || strpos($pathInfo,$baseUrl)===0)
-				$pathInfo=substr($pathInfo,strlen($baseUrl));
-			elseif(strpos($_SERVER['PHP_SELF'],$scriptUrl)===0)
-				$pathInfo=substr($_SERVER['PHP_SELF'],strlen($scriptUrl));
-			else
-				throw new CException(Yii::t('yii','CHttpRequest is unable to determine the path info of the request.'));
-
-			$this->_pathInfo=trim($pathInfo,'/');
-		}
-		return $this->_pathInfo;
-	}
-
-	/**
-	 * Decodes the path info.
-	 * This method is an improved variant of the native urldecode() function and used in {@link getPathInfo getPathInfo()} to
-	 * decode the path part of the request URI. You may override this method to change the way the path info is being decoded.
-	 * @param string $pathInfo encoded path info
-	 * @return string decoded path info
-	 * @since 1.1.10
-	 */
-	protected function decodePathInfo($pathInfo)
-	{
-		$pathInfo = urldecode($pathInfo);
-
-		// is it UTF-8?
-		// http://w3.org/International/questions/qa-forms-utf-8.html
-		if(preg_match('%^(?:
-		   [\x09\x0A\x0D\x20-\x7E]            # ASCII
-		 | [\xC2-\xDF][\x80-\xBF]             # non-overlong 2-byte
-		 | \xE0[\xA0-\xBF][\x80-\xBF]         # excluding overlongs
-		 | [\xE1-\xEC\xEE\xEF][\x80-\xBF]{2}  # straight 3-byte
-		 | \xED[\x80-\x9F][\x80-\xBF]         # excluding surrogates
-		 | \xF0[\x90-\xBF][\x80-\xBF]{2}      # planes 1-3
-		 | [\xF1-\xF3][\x80-\xBF]{3}          # planes 4-15
-		 | \xF4[\x80-\x8F][\x80-\xBF]{2}      # plane 16
-		)*$%xs', $pathInfo))
-		{
-			return $pathInfo;
-		}
-		else
-		{
-			return utf8_encode($pathInfo);
-		}
-	}
-
-	/**
-	 * Returns the request URI portion for the currently requested URL.
-	 * This refers to the portion that is after the {@link hostInfo host info} part.
-	 * It includes the {@link queryString query string} part if any.
-	 * The implementation of this method referenced Zend_Controller_Request_Http in Zend Framework.
-	 * @return string the request URI portion for the currently requested URL.
-	 * @throws CException if the request URI cannot be determined due to improper server configuration
-	 */
-	public function getRequestUri()
-	{
-		if($this->_requestUri===null)
-		{
-			if(isset($_SERVER['HTTP_X_REWRITE_URL'])) // IIS
-				$this->_requestUri=$_SERVER['HTTP_X_REWRITE_URL'];
-			elseif(isset($_SERVER['REQUEST_URI']))
-			{
-				$this->_requestUri=$_SERVER['REQUEST_URI'];
-				if(!empty($_SERVER['HTTP_HOST']))
-				{
-					if(strpos($this->_requestUri,$_SERVER['HTTP_HOST'])!==false)
-						$this->_requestUri=preg_replace('/^\w+:\/\/[^\/]+/','',$this->_requestUri);
-				}
-				else
-					$this->_requestUri=preg_replace('/^(http|https):\/\/[^\/]+/i','',$this->_requestUri);
-			}
-			elseif(isset($_SERVER['ORIG_PATH_INFO']))  // IIS 5.0 CGI
-			{
-				$this->_requestUri=$_SERVER['ORIG_PATH_INFO'];
-				if(!empty($_SERVER['QUERY_STRING']))
-					$this->_requestUri.='?'.$_SERVER['QUERY_STRING'];
-			}
-			else
-				throw new CException(Yii::t('yii','CHttpRequest is unable to determine the request URI.'));
-		}
-
-		return $this->_requestUri;
-	}
-
-	/**
-	 * Returns part of the request URL that is after the question mark.
-	 * @return string part of the request URL that is after the question mark
-	 */
-	public function getQueryString()
-	{
-		return isset($_SERVER['QUERY_STRING'])?$_SERVER['QUERY_STRING']:'';
-	}
-
-	/**
-	 * Return if the request is sent via secure channel (https).
-	 * @return boolean if the request is sent via secure channel (https)
-	 */
-	public function getIsSecureConnection()
-	{
-		return isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS']=='on' || $_SERVER['HTTPS']==1)
-			|| isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO']=='https';
-	}
-
-	/**
-	 * Returns the request type, such as GET, POST, HEAD, PUT, DELETE.
-	 * Request type can be manually set in POST requests with a parameter named _method. Useful
-	 * for RESTful request from older browsers which do not support PUT or DELETE
-	 * natively (available since version 1.1.11).
-	 * @return string request type, such as GET, POST, HEAD, PUT, DELETE.
-	 */
-	public function getRequestType()
-	{
-		if(isset($_POST['_method']))
-			return strtoupper($_POST['_method']);
-
-		return strtoupper(isset($_SERVER['REQUEST_METHOD'])?$_SERVER['REQUEST_METHOD']:'GET');
-	}
-
-	/**
-	 * Returns whether this is a POST request.
-	 * @return boolean whether this is a POST request.
-	 */
-	public function getIsPostRequest()
-	{
-		return isset($_SERVER['REQUEST_METHOD']) && !strcasecmp($_SERVER['REQUEST_METHOD'],'POST');
-	}
-
-	/**
-	 * Returns whether this is a DELETE request.
-	 * @return boolean whether this is a DELETE request.
-	 * @since 1.1.7
-	 */
-	public function getIsDeleteRequest()
-	{
-		return (isset($_SERVER['REQUEST_METHOD']) && !strcasecmp($_SERVER['REQUEST_METHOD'],'DELETE')) || $this->getIsDeleteViaPostRequest();
-	}
-
-	/**
-	 * Returns whether this is a DELETE request which was tunneled through POST.
-	 * @return boolean whether this is a DELETE request tunneled through POST.
-	 * @since 1.1.11
-	 */
-	protected function getIsDeleteViaPostRequest()
-	{
-		return isset($_POST['_method']) && !strcasecmp($_POST['_method'],'DELETE');
-	}
-
-	/**
-	 * Returns whether this is a PUT request.
-	 * @return boolean whether this is a PUT request.
-	 * @since 1.1.7
-	 */
-	public function getIsPutRequest()
-	{
-		return (isset($_SERVER['REQUEST_METHOD']) && !strcasecmp($_SERVER['REQUEST_METHOD'],'PUT')) || $this->getIsPutViaPostRequest();
-	}
-
-	/**
-	 * Returns whether this is a PUT request which was tunneled through POST.
-	 * @return boolean whether this is a PUT request tunneled through POST.
-	 * @since 1.1.11
-	 */
-	protected function getIsPutViaPostRequest()
-	{
-		return isset($_POST['_method']) && !strcasecmp($_POST['_method'],'PUT');
-	}
-
-	/**
-	 * Returns whether this is an AJAX (XMLHttpRequest) request.
-	 * @return boolean whether this is an AJAX (XMLHttpRequest) request.
-	 */
-	public function getIsAjaxRequest()
-	{
-		return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']==='XMLHttpRequest';
-	}
-
-	/**
-	 * Returns whether this is an Adobe Flash or Adobe Flex request.
-	 * @return boolean whether this is an Adobe Flash or Adobe Flex request.
-	 * @since 1.1.11
-	 */
-	public function getIsFlashRequest()
-	{
-		return isset($_SERVER['HTTP_USER_AGENT']) && (stripos($_SERVER['HTTP_USER_AGENT'],'Shockwave')!==false || stripos($_SERVER['HTTP_USER_AGENT'],'Flash')!==false);
-	}
-
-	/**
-	 * Returns the server name.
-	 * @return string server name
-	 */
-	public function getServerName()
-	{
-		return $_SERVER['SERVER_NAME'];
-	}
-
-	/**
-	 * Returns the server port number.
-	 * @return integer server port number
-	 */
-	public function getServerPort()
-	{
-		return $_SERVER['SERVER_PORT'];
-	}
-
-	/**
-	 * Returns the URL referrer, null if not present
-	 * @return string URL referrer, null if not present
-	 */
-	public function getUrlReferrer()
-	{
-		return isset($_SERVER['HTTP_REFERER'])?$_SERVER['HTTP_REFERER']:null;
-	}
-
-	/**
-	 * Returns the user agent, null if not present.
-	 * @return string user agent, null if not present
-	 */
-	public function getUserAgent()
-	{
-		return isset($_SERVER['HTTP_USER_AGENT'])?$_SERVER['HTTP_USER_AGENT']:null;
-	}
-
-	/**
-	 * Returns the user IP address.
-	 * @return string user IP address
-	 */
-	public function getUserHostAddress()
-	{
-		return isset($_SERVER['REMOTE_ADDR'])?$_SERVER['REMOTE_ADDR']:'127.0.0.1';
-	}
-
-	/**
-	 * Returns the user host name, null if it cannot be determined.
-	 * @return string user host name, null if cannot be determined
-	 */
-	public function getUserHost()
-	{
-		return isset($_SERVER['REMOTE_HOST'])?$_SERVER['REMOTE_HOST']:null;
-	}
-
-	/**
-	 * Returns entry script file path.
-	 * @return string entry script file path (processed w/ realpath())
-	 */
-	public function getScriptFile()
-	{
-		if($this->_scriptFile!==null)
-			return $this->_scriptFile;
-		else
-			return $this->_scriptFile=realpath($_SERVER['SCRIPT_FILENAME']);
-	}
-
-	/**
-	 * Returns information about the capabilities of user browser.
-	 * @param string $userAgent the user agent to be analyzed. Defaults to null, meaning using the
-	 * current User-Agent HTTP header information.
-	 * @return array user browser capabilities.
-	 * @see http://www.php.net/manual/en/function.get-browser.php
-	 */
-	public function getBrowser($userAgent=null)
-	{
-		return get_browser($userAgent,true);
-	}
-
-	/**
-	 * Returns user browser accept types, null if not present.
-	 * @return string user browser accept types, null if not present
-	 */
-	public function getAcceptTypes()
-	{
-		return isset($_SERVER['HTTP_ACCEPT'])?$_SERVER['HTTP_ACCEPT']:null;
-	}
-
-	private $_port;
-
- 	/**
-	 * Returns the port to use for insecure requests.
-	 * Defaults to 80, or the port specified by the server if the current
-	 * request is insecure.
-	 * You may explicitly specify it by setting the {@link setPort port} property.
-	 * @return integer port number for insecure requests.
-	 * @see setPort
-	 * @since 1.1.3
-	 */
-	public function getPort()
-	{
-		if($this->_port===null)
-			$this->_port=!$this->getIsSecureConnection() && isset($_SERVER['SERVER_PORT']) ? (int)$_SERVER['SERVER_PORT'] : 80;
-		return $this->_port;
-	}
-
-	/**
-	 * Sets the port to use for insecure requests.
-	 * This setter is provided in case a custom port is necessary for certain
-	 * server configurations.
-	 * @param integer $value port number.
-	 * @since 1.1.3
-	 */
-	public function setPort($value)
-	{
-		$this->_port=(int)$value;
-		$this->_hostInfo=null;
-	}
-
-	private $_securePort;
-
-	/**
-	 * Returns the port to use for secure requests.
-	 * Defaults to 443, or the port specified by the server if the current
-	 * request is secure.
-	 * You may explicitly specify it by setting the {@link setSecurePort securePort} property.
-	 * @return integer port number for secure requests.
-	 * @see setSecurePort
-	 * @since 1.1.3
-	 */
-	public function getSecurePort()
-	{
-		if($this->_securePort===null)
-			$this->_securePort=$this->getIsSecureConnection() && isset($_SERVER['SERVER_PORT']) ? (int)$_SERVER['SERVER_PORT'] : 443;
-		return $this->_securePort;
-	}
-
-	/**
-	 * Sets the port to use for secure requests.
-	 * This setter is provided in case a custom port is necessary for certain
-	 * server configurations.
-	 * @param integer $value port number.
-	 * @since 1.1.3
-	 */
-	public function setSecurePort($value)
-	{
-		$this->_securePort=(int)$value;
-		$this->_hostInfo=null;
-	}
-
-	/**
-	 * Returns the cookie collection.
-	 * The result can be used like an associative array. Adding {@link CHttpCookie} objects
-	 * to the collection will send the cookies to the client; and removing the objects
-	 * from the collection will delete those cookies on the client.
-	 * @return CCookieCollection the cookie collection.
-	 */
-	public function getCookies()
-	{
-		if($this->_cookies!==null)
-			return $this->_cookies;
-		else
-			return $this->_cookies=new CCookieCollection($this);
-	}
-
-	/**
-	 * Redirects the browser to the specified URL.
-	 * @param string $url URL to be redirected to. Note that when URL is not
-	 * absolute (not starting with "/") it will be relative to current request URL.
-	 * @param boolean $terminate whether to terminate the current application
-	 * @param integer $statusCode the HTTP status code. Defaults to 302. See {@link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html}
-	 * for details about HTTP status code.
-	 */
-	public function redirect($url,$terminate=true,$statusCode=302)
-	{
-		if(strpos($url,'/')===0 && strpos($url,'//')!==0)
-			$url=$this->getHostInfo().$url;
-		header('Location: '.$url, true, $statusCode);
-		if($terminate)
-			Yii::app()->end();
-	}
-
-	/**
-	 * Parses an HTTP Accept header, returning an array map with all parts of each entry.
-	 * Each array entry consists of a map with the type, subType, baseType and params, an array map of key-value parameters,
-	 * obligatorily including a `q` value (i.e. preference ranking) as a double.
-	 * For example, an Accept header value of <code>'application/xhtml+xml;q=0.9;level=1'</code> would give an array entry of
-	 * <pre>
-	 * array(
-	 *        'type' => 'application',
-	 *        'subType' => 'xhtml',
-	 *        'baseType' => 'xml',
-	 *        'params' => array(
-	 *            'q' => 0.9,
-	 *            'level' => '1',
-	 *        ),
-	 * )
-	 * </pre>
-	 *
-	 * <b>Please note:</b>
-	 * To avoid great complexity, there are no steps taken to ensure that quoted strings are treated properly.
-	 * If the header text includes quoted strings containing space or the , or ; characters then the results may not be correct!
-	 *
-	 * See also {@link http://tools.ietf.org/html/rfc2616#section-14.1} for details on Accept header.
-	 * @param string $header the accept header value to parse
-	 * @return array the user accepted MIME types.
-	 */
-	public static function parseAcceptHeader($header)
-	{
-		$matches=array();
-		$accepts=array();
-		// get individual entries with their type, subtype, basetype and params
-		preg_match_all('/(?:\G\s?,\s?|^)(\w+|\*)\/(\w+|\*)(?:\+(\w+))?|(?<!^)\G(?:\s?;\s?(\w+)=([\w\.]+))/',$header,$matches);
-		// the regexp should (in theory) always return an array of 6 arrays
-		if(count($matches)===6)
-		{
-			$i=0;
-			$itemLen=count($matches[1]);
-			while($i<$itemLen)
-			{
-				// fill out a content type
-				$accept=array(
-					'type'=>$matches[1][$i],
-					'subType'=>$matches[2][$i],
-					'baseType'=>null,
-					'params'=>array(),
-				);
-				// fill in the base type if it exists
-				if($matches[3][$i]!==null && $matches[3][$i]!=='')
-					$accept['baseType']=$matches[3][$i];
-				// continue looping while there is no new content type, to fill in all accompanying params
-				for($i++;$i<$itemLen;$i++)
-				{
-					// if the next content type is null, then the item is a param for the current content type
-					if($matches[1][$i]===null || $matches[1][$i]==='')
-					{
-						// if this is the quality param, convert it to a double
-						if($matches[4][$i]==='q')
-						{
-							// sanity check on q value
-							$q=(double)$matches[5][$i];
-							if($q>1)
-								$q=(double)1;
-							elseif($q<0)
-								$q=(double)0;
-							$accept['params'][$matches[4][$i]]=$q;
-						}
-						else
-							$accept['params'][$matches[4][$i]]=$matches[5][$i];
-					}
-					else
-						break;
-				}
-				// q defaults to 1 if not explicitly given
-				if(!isset($accept['params']['q']))
-					$accept['params']['q']=(double)1;
-				$accepts[] = $accept;
-			}
-		}
-		return $accepts;
-	}
-
-	/**
-	 * Compare function for determining the preference of accepted MIME type array maps
-	 * See {@link parseAcceptHeader()} for the format of $a and $b
-	 * @param array $a user accepted MIME type as an array map
-	 * @param array $b user accepted MIME type as an array map
-	 * @return integer -1, 0 or 1 if $a has respectively greater preference, equal preference or less preference than $b (higher preference comes first).
-	 */
-	public static function compareAcceptTypes($a,$b)
-	{
-		// check for equal quality first
-		if($a['params']['q']===$b['params']['q'])
-			if(!($a['type']==='*' xor $b['type']==='*'))
-				if (!($a['subType']==='*' xor $b['subType']==='*'))
-					// finally, higher number of parameters counts as greater precedence
-					if(count($a['params'])===count($b['params']))
-						return 0;
-					else
-						return count($a['params'])<count($b['params']) ? 1 : -1;
-				// more specific takes precedence - whichever one doesn't have a * subType
-				else
-					return $a['subType']==='*' ? 1 : -1;
-			// more specific takes precedence - whichever one doesn't have a * type
-			else
-				return $a['type']==='*' ? 1 : -1;
-		else
-			return ($a['params']['q']<$b['params']['q']) ? 1 : -1;
-	}
-
-	/**
-	 * Returns an array of user accepted MIME types in order of preference.
-	 * Each array entry consists of a map with the type, subType, baseType and params, an array map of key-value parameters.
-	 * See {@link parseAcceptHeader()} for a description of the array map.
-	 * @return array the user accepted MIME types, as array maps, in the order of preference.
-	 */
-	public function getPreferredAcceptTypes()
-	{
-		if($this->_preferredAcceptTypes===null)
-		{
-			$accepts=self::parseAcceptHeader($this->getAcceptTypes());
-			usort($accepts,array(get_class($this),'compareAcceptTypes'));
-			$this->_preferredAcceptTypes=$accepts;
-		}
-		return $this->_preferredAcceptTypes;
-	}
-
-	/**
-	 * Returns the user preferred accept MIME type.
-	 * The MIME type is returned as an array map (see {@link parseAcceptHeader()}).
-	 * @return array the user preferred accept MIME type or false if the user does not have any.
-	 */
-	public function getPreferredAcceptType()
-	{
-		$preferredAcceptTypes=$this->getPreferredAcceptTypes();
-		return empty($preferredAcceptTypes) ? false : $preferredAcceptTypes[0];
-	}
-
-	/**
-	 * Returns an array of user accepted languages in order of preference.
-	 * The returned language IDs will NOT be canonicalized using {@link CLocale::getCanonicalID}.
-	 * @return array the user accepted languages in the order of preference.
-	 * See {@link http://tools.ietf.org/html/rfc2616#section-14.4}
-	 */
-	public function getPreferredLanguages()
-	{
-		if($this->_preferredLanguages===null)
-		{
-			$sortedLanguages=array();
-			if(isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) && $n=preg_match_all('/([\w\-_]+)(?:\s*;\s*q\s*=\s*(\d*\.?\d*))?/',$_SERVER['HTTP_ACCEPT_LANGUAGE'],$matches))
-			{
-				$languages=array();
-
-				for($i=0;$i<$n;++$i)
-				{
-					$q=$matches[2][$i];
-					if($q==='')
-						$q=1;
-					if($q)
-						$languages[]=array((float)$q,$matches[1][$i]);
-				}
-
-				usort($languages,create_function('$a,$b','if($a[0]==$b[0]) {return 0;} return ($a[0]<$b[0]) ? 1 : -1;'));
-				foreach($languages as $language)
-					$sortedLanguages[]=$language[1];
-			}
-			$this->_preferredLanguages=$sortedLanguages;
-		}
-		return $this->_preferredLanguages;
-	}
-
-	/**
-	 * Returns the user preferred language.
-	 * The returned language ID will be canonicalized using {@link CLocale::getCanonicalID}.
-	 * @return string the user preferred language or false if the user does not have any.
-	 */
-	public function getPreferredLanguage()
-	{
-		$preferredLanguages=$this->getPreferredLanguages();
-		return !empty($preferredLanguages) ? CLocale::getCanonicalID($preferredLanguages[0]) : false;
-	}
-
-	/**
-	 * Sends a file to user.
-	 * @param string $fileName file name
-	 * @param string $content content to be set.
-	 * @param string $mimeType mime type of the content. If null, it will be guessed automatically based on the given file name.
-	 * @param boolean $terminate whether to terminate the current application after calling this method
-	 */
-	public function sendFile($fileName,$content,$mimeType=null,$terminate=true)
-	{
-		if($mimeType===null)
-		{
-			if(($mimeType=CFileHelper::getMimeTypeByExtension($fileName))===null)
-				$mimeType='text/plain';
-		}
-
-		$fileSize=(function_exists('mb_strlen') ? mb_strlen($content,'8bit') : strlen($content));
-		$contentStart=0;
-		$contentEnd=$fileSize-1;
-
-		if(isset($_SERVER['HTTP_RANGE']))
-		{
-			header('Accept-Ranges: bytes');
-
-			//client sent us a multibyte range, can not hold this one for now
-			if(strpos($_SERVER['HTTP_RANGE'],',')!==false)
-			{
-				header("Content-Range: bytes $contentStart-$contentEnd/$fileSize");
-				throw new CHttpException(416,'Requested Range Not Satisfiable');
-			}
-
-			$range=str_replace('bytes=','',$_SERVER['HTTP_RANGE']);
-
-			//range requests starts from "-", so it means that data must be dumped the end point.
-			if($range[0]==='-')
-				$contentStart=$fileSize-substr($range,1);
-			else
-			{
-				$range=explode('-',$range);
-				$contentStart=$range[0];
-
-				// check if the last-byte-pos presents in header
-				if((isset($range[1]) && is_numeric($range[1])))
-					$contentEnd=$range[1];
-			}
-
-			/* Check the range and make sure it's treated according to the specs.
-			 * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html
-			 */
-			// End bytes can not be larger than $end.
-			$contentEnd=($contentEnd > $fileSize) ? $fileSize-1 : $contentEnd;
-
-			// Validate the requested range and return an error if it's not correct.
-			$wrongContentStart=($contentStart>$contentEnd || $contentStart>$fileSize-1 || $contentStart<0);
-
-			if($wrongContentStart)
-			{
-				header("Content-Range: bytes $contentStart-$contentEnd/$fileSize");
-				throw new CHttpException(416,'Requested Range Not Satisfiable');
-			}
-
-			header('HTTP/1.1 206 Partial Content');
-			header("Content-Range: bytes $contentStart-$contentEnd/$fileSize");
-		}
-		else
-			header('HTTP/1.1 200 OK');
-
-		$length=$contentEnd-$contentStart+1; // Calculate new content length
-
-		header('Pragma: public');
-		header('Expires: 0');
-		header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
-		header("Content-Type: $mimeType");
-		header('Content-Length: '.$length);
-		header("Content-Disposition: attachment; filename=\"$fileName\"");
-		header('Content-Transfer-Encoding: binary');
-		$content=function_exists('mb_substr') ? mb_substr($content,$contentStart,$length) : substr($content,$contentStart,$length);
-
-		if($terminate)
-		{
-			// clean up the application first because the file downloading could take long time
-			// which may cause timeout of some resources (such as DB connection)
-			ob_start();
-			Yii::app()->end(0,false);
-			ob_end_clean();
-			echo $content;
-			exit(0);
-		}
-		else
-			echo $content;
-	}
-
-	/**
-	 * Sends existing file to a browser as a download using x-sendfile.
-	 *
-	 * X-Sendfile is a feature allowing a web application to redirect the request for a file to the webserver
-	 * that in turn processes the request, this way eliminating the need to perform tasks like reading the file
-	 * and sending it to the user. When dealing with a lot of files (or very big files) this can lead to a great
-	 * increase in performance as the web application is allowed to terminate earlier while the webserver is
-	 * handling the request.
-	 *
-	 * The request is sent to the server through a special non-standard HTTP-header.
-	 * When the web server encounters the presence of such header it will discard all output and send the file
-	 * specified by that header using web server internals including all optimizations like caching-headers.
-	 *
-	 * As this header directive is non-standard different directives exists for different web servers applications:
-	 * <ul>
-	 * <li>Apache: {@link http://tn123.org/mod_xsendfile X-Sendfile}</li>
-	 * <li>Lighttpd v1.4: {@link http://redmine.lighttpd.net/projects/lighttpd/wiki/X-LIGHTTPD-send-file X-LIGHTTPD-send-file}</li>
-	 * <li>Lighttpd v1.5: {@link http://redmine.lighttpd.net/projects/lighttpd/wiki/X-LIGHTTPD-send-file X-Sendfile}</li>
-	 * <li>Nginx: {@link http://wiki.nginx.org/XSendfile X-Accel-Redirect}</li>
-	 * <li>Cherokee: {@link http://www.cherokee-project.com/doc/other_goodies.html#x-sendfile X-Sendfile and X-Accel-Redirect}</li>
-	 * </ul>
-	 * So for this method to work the X-SENDFILE option/module should be enabled by the web server and
-	 * a proper xHeader should be sent.
-	 *
-	 * <b>Note:</b>
-	 * This option allows to download files that are not under web folders, and even files that are otherwise protected (deny from all) like .htaccess
-	 *
-	 * <b>Side effects</b>:
-	 * If this option is disabled by the web server, when this method is called a download configuration dialog
-	 * will open but the downloaded file will have 0 bytes.
-	 *
-	 * <b>Known issues</b>:
-	 * There is a Bug with Internet Explorer 6, 7 and 8 when X-SENDFILE is used over an SSL connection, it will show
-	 * an error message like this: "Internet Explorer was not able to open this Internet site. The requested site is either unavailable or cannot be found.".
-	 * You can work around this problem by removing the <code>Pragma</code>-header.
-	 *
-	 * <b>Example</b>:
-	 * <pre>
-	 * <?php
-	 *    Yii::app()->request->xSendFile('/home/user/Pictures/picture1.jpg',array(
-	 *        'saveName'=>'image1.jpg',
-	 *        'mimeType'=>'image/jpeg',
-	 *        'terminate'=>false,
-	 *    ));
-	 * ?>
-	 * </pre>
-	 * @param string $filePath file name with full path
-	 * @param array $options additional options:
-	 * <ul>
-	 * <li>saveName: file name shown to the user, if not set real file name will be used</li>
-	 * <li>mimeType: mime type of the file, if not set it will be guessed automatically based on the file name, if set to null no content-type header will be sent.</li>
-	 * <li>xHeader: appropriate x-sendfile header, defaults to "X-Sendfile"</li>
-	 * <li>terminate: whether to terminate the current application after calling this method, defaults to true</li>
-	 * <li>forceDownload: specifies whether the file will be downloaded or shown inline, defaults to true. (Since version 1.1.9.)</li>
-	 * <li>addHeaders: an array of additional http headers in header-value pairs (available since version 1.1.10)</li>
-	 * </ul>
-	 */
-	public function xSendFile($filePath, $options=array())
-	{
-		if(!isset($options['forceDownload']) || $options['forceDownload'])
-			$disposition='attachment';
-		else
-			$disposition='inline';
-
-		if(!isset($options['saveName']))
-			$options['saveName']=basename($filePath);
-
-		if(!isset($options['mimeType']))
-		{
-			if(($options['mimeType']=CFileHelper::getMimeTypeByExtension($filePath))===null)
-				$options['mimeType']='text/plain';
-		}
-
-		if(!isset($options['xHeader']))
-			$options['xHeader']='X-Sendfile';
-
-		if($options['mimeType']!==null)
-			header('Content-Type: '.$options['mimeType']);
-		header('Content-Disposition: '.$disposition.'; filename="'.$options['saveName'].'"');
-		if(isset($options['addHeaders']))
-		{
-			foreach($options['addHeaders'] as $header=>$value)
-				header($header.': '.$value);
-		}
-		header(trim($options['xHeader']).': '.$filePath);
-
-		if(!isset($options['terminate']) || $options['terminate'])
-			Yii::app()->end();
-	}
-
-	/**
-	 * Returns the random token used to perform CSRF validation.
-	 * The token will be read from cookie first. If not found, a new token
-	 * will be generated.
-	 * @return string the random token for CSRF validation.
-	 * @see enableCsrfValidation
-	 */
-	public function getCsrfToken()
-	{
-		if($this->_csrfToken===null)
-		{
-			$cookie=$this->getCookies()->itemAt($this->csrfTokenName);
-			if(!$cookie || ($this->_csrfToken=$cookie->value)==null)
-			{
-				$cookie=$this->createCsrfCookie();
-				$this->_csrfToken=$cookie->value;
-				$this->getCookies()->add($cookie->name,$cookie);
-			}
-		}
-
-		return $this->_csrfToken;
-	}
-
-	/**
-	 * Creates a cookie with a randomly generated CSRF token.
-	 * Initial values specified in {@link csrfCookie} will be applied
-	 * to the generated cookie.
-	 * @return CHttpCookie the generated cookie
-	 * @see enableCsrfValidation
-	 */
-	protected function createCsrfCookie()
-	{
-		$cookie=new CHttpCookie($this->csrfTokenName,sha1(uniqid(mt_rand(),true)));
-		if(is_array($this->csrfCookie))
-		{
-			foreach($this->csrfCookie as $name=>$value)
-				$cookie->$name=$value;
-		}
-		return $cookie;
-	}
-
-	/**
-	 * Performs the CSRF validation.
-	 * This is the event handler responding to {@link CApplication::onBeginRequest}.
-	 * The default implementation will compare the CSRF token obtained
-	 * from a cookie and from a POST field. If they are different, a CSRF attack is detected.
-	 * @param CEvent $event event parameter
-	 * @throws CHttpException if the validation fails
-	 */
-	public function validateCsrfToken($event)
-	{
-		if ($this->getIsPostRequest() ||
-			$this->getIsPutRequest() ||
-			$this->getIsDeleteRequest())
-		{
-			$cookies=$this->getCookies();
-
-			$method=$this->getRequestType();
-			switch($method)
-			{
-				case 'POST':
-					$userToken=$this->getPost($this->csrfTokenName);
-				break;
-				case 'PUT':
-					$userToken=$this->getPut($this->csrfTokenName);
-				break;
-				case 'DELETE':
-					$userToken=$this->getDelete($this->csrfTokenName);
-			}
-
-			if (!empty($userToken) && $cookies->contains($this->csrfTokenName))
-			{
-				$cookieToken=$cookies->itemAt($this->csrfTokenName)->value;
-				$valid=$cookieToken===$userToken;
-			}
-			else
-				$valid = false;
-			if (!$valid)
-				throw new CHttpException(400,Yii::t('yii','The CSRF token could not be verified.'));
-		}
-	}
-}
-
-
-/**
- * CCookieCollection implements a collection class to store cookies.
- *
- * You normally access it via {@link CHttpRequest::getCookies()}.
- *
- * Since CCookieCollection extends from {@link CMap}, it can be used
- * like an associative array as follows:
- * <pre>
- * $cookies[$name]=new CHttpCookie($name,$value); // sends a cookie
- * $value=$cookies[$name]->value; // reads a cookie value
- * unset($cookies[$name]);  // removes a cookie
- * </pre>
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.web
- * @since 1.0
- */
-class CCookieCollection extends CMap
-{
-	private $_request;
-	private $_initialized=false;
-
-	/**
-	 * Constructor.
-	 * @param CHttpRequest $request owner of this collection.
-	 */
-	public function __construct(CHttpRequest $request)
-	{
-		$this->_request=$request;
-		$this->copyfrom($this->getCookies());
-		$this->_initialized=true;
-	}
-
-	/**
-	 * @return CHttpRequest the request instance
-	 */
-	public function getRequest()
-	{
-		return $this->_request;
-	}
-
-	/**
-	 * @return array list of validated cookies
-	 */
-	protected function getCookies()
-	{
-		$cookies=array();
-		if($this->_request->enableCookieValidation)
-		{
-			$sm=Yii::app()->getSecurityManager();
-			foreach($_COOKIE as $name=>$value)
-			{
-				if(is_string($value) && ($value=$sm->validateData($value))!==false)
-					$cookies[$name]=new CHttpCookie($name,@unserialize($value));
-			}
-		}
-		else
-		{
-			foreach($_COOKIE as $name=>$value)
-				$cookies[$name]=new CHttpCookie($name,$value);
-		}
-		return $cookies;
-	}
-
-	/**
-	 * Adds a cookie with the specified name.
-	 * This overrides the parent implementation by performing additional
-	 * operations for each newly added CHttpCookie object.
-	 * @param mixed $name Cookie name.
-	 * @param CHttpCookie $cookie Cookie object.
-	 * @throws CException if the item to be inserted is not a CHttpCookie object.
-	 */
-	public function add($name,$cookie)
-	{
-		if($cookie instanceof CHttpCookie)
-		{
-			$this->remove($name);
-			parent::add($name,$cookie);
-			if($this->_initialized)
-				$this->addCookie($cookie);
-		}
-		else
-			throw new CException(Yii::t('yii','CHttpCookieCollection can only hold CHttpCookie objects.'));
-	}
-
-	/**
-	 * Removes a cookie with the specified name.
-	 * This overrides the parent implementation by performing additional
-	 * cleanup work when removing a CHttpCookie object.
-	 * Since version 1.1.11, the second parameter is available that can be used to specify
-	 * the options of the CHttpCookie being removed. For example, this may be useful when dealing
-	 * with ".domain.tld" where multiple subdomains are expected to be able to manage cookies:
-	 *
-	 * <pre>
-	 * $options=array('domain'=>'.domain.tld');
-	 * Yii::app()->request->cookies['foo']=new CHttpCookie('cookie','value',$options);
-	 * Yii::app()->request->cookies->remove('cookie',$options);
-	 * </pre>
-	 *
-	 * @param mixed $name Cookie name.
-	 * @param array $options Cookie configuration array consisting of name-value pairs, available since 1.1.11.
-	 * @return CHttpCookie The removed cookie object.
-	 */
-	public function remove($name,$options=array())
-	{
-		if(($cookie=parent::remove($name))!==null)
-		{
-			if($this->_initialized)
-			{
-				$cookie->configure($options);
-				$this->removeCookie($cookie);
-			}
-		}
-
-		return $cookie;
-	}
-
-	/**
-	 * Sends a cookie.
-	 * @param CHttpCookie $cookie cookie to be sent
-	 */
-	protected function addCookie($cookie)
-	{
-		$value=$cookie->value;
-		if($this->_request->enableCookieValidation)
-			$value=Yii::app()->getSecurityManager()->hashData(serialize($value));
-		if(version_compare(PHP_VERSION,'5.2.0','>='))
-			setcookie($cookie->name,$value,$cookie->expire,$cookie->path,$cookie->domain,$cookie->secure,$cookie->httpOnly);
-		else
-			setcookie($cookie->name,$value,$cookie->expire,$cookie->path,$cookie->domain,$cookie->secure);
-	}
-
-	/**
-	 * Deletes a cookie.
-	 * @param CHttpCookie $cookie cookie to be deleted
-	 */
-	protected function removeCookie($cookie)
-	{
-		if(version_compare(PHP_VERSION,'5.2.0','>='))
-			setcookie($cookie->name,'',0,$cookie->path,$cookie->domain,$cookie->secure,$cookie->httpOnly);
-		else
-			setcookie($cookie->name,'',0,$cookie->path,$cookie->domain,$cookie->secure);
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+/3EcGPC5tm==

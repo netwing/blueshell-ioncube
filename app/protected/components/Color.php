@@ -1,52 +1,38 @@
-<?php
-
-class Color extends CApplicationComponent 
-{
-
-    static public function getContrastYIQ($hexcolor, $return = "hex")
-    {
-        $black = "#000";
-        $white = "#fff";
-        if ($return === "text") {
-            $black = "black";
-            $white = "white";
-        }
-        if ($return === "int") {
-            $black = 0;
-            $white = 255;
-        }
-        $hexcolor = trim($hexcolor, '#');
-        $r = hexdec(substr($hexcolor,0,2));
-        $g = hexdec(substr($hexcolor,2,2));
-        $b = hexdec(substr($hexcolor,4,2));
-        $yiq = (($r*299)+($g*587)+($b*114))/1000;
-        return ($yiq >= 128) ? $black : $white;
-    }
-
-    static public function getContrast50($hexcolor, $return = "hex")
-    {
-        $black = "#000";
-        $white = "#fff";
-        if ($return == "text") {
-            $black = "black";
-            $white = "white";
-        }
-        if ($return === "int") {
-            $black = 0;
-            $white = 255;
-        }
-        $hexcolor = trim($hexcolor, '#');
-        return (hexdec($hexcolor) > 0xffffff/2) ? $black : $white;
-    }
-
-    static public function getDecimal($hexcolor)
-    {
-        $hexcolor = trim($hexcolor, '#');
-        $r = hexdec(substr($hexcolor,0,2));
-        $g = hexdec(substr($hexcolor,2,2));
-        $b = hexdec(substr($hexcolor,4,2));
-
-        return array($r, $g, $b);        
-    }
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

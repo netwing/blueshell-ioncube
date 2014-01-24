@@ -1,183 +1,66 @@
-<?php
-/**
- * PHPExcel
- *
- * Copyright (c) 2006 - 2012 PHPExcel
- *
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation; either
- * version 2.1 of the License, or (at your option) any later version.
- *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
- *
- * @category   PHPExcel
- * @package    PHPExcel_Shared
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
- * @version    1.7.8, 2012-10-12
- */
-
-
-/**
- * PHPExcel_Shared_ZipStreamWrapper
- *
- * @category   PHPExcel
- * @package    PHPExcel_Shared
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- */
-class PHPExcel_Shared_ZipStreamWrapper {
-	/**
-	 * Internal ZipAcrhive
-	 *
-	 * @var ZipAcrhive
-	 */
-    private $_archive;
-
-    /**
-     * Filename in ZipAcrhive
-     *
-     * @var string
-     */
-    private $_fileNameInArchive = '';
-
-    /**
-     * Position in file
-     *
-     * @var int
-     */
-    private $_position = 0;
-
-    /**
-     * Data
-     *
-     * @var mixed
-     */
-    private $_data = '';
-
-    /**
-     * Register wrapper
-     */
-    public static function register() {
-		@stream_wrapper_unregister("zip");
-		@stream_wrapper_register("zip", __CLASS__);
-    }
-
-    /**
-	 * Implements support for fopen().
-	 *
-	 * @param	string	$path			resource name including scheme, e.g.
-	 * @param	string	$mode			only "r" is supported
-	 * @param	int		$options		mask of STREAM_REPORT_ERRORS and STREAM_USE_PATH
-	 * @param	string  &$openedPath	absolute path of the opened stream (out parameter)
-	 * @return	bool    true on success
-     */
-    public function stream_open($path, $mode, $options, &$opened_path) {
-        // Check for mode
-        if ($mode{0} != 'r') {
-            throw new Exception('Mode ' . $mode . ' is not supported. Only read mode is supported.');
-        }
-
-		$pos = strrpos($path, '#');
-		$url['host'] = substr($path, 6, $pos - 6); // 6: strlen('zip://')
-		$url['fragment'] = substr($path, $pos + 1);
-
-        // Open archive
-        $this->_archive = new ZipArchive();
-        $this->_archive->open($url['host']);
-
-        $this->_fileNameInArchive = $url['fragment'];
-        $this->_position = 0;
-        $this->_data = $this->_archive->getFromName( $this->_fileNameInArchive );
-
-        return true;
-    }
-
-    /**
-	 * Implements support for fstat().
-	 *
-	 * @return  boolean
-     */
-    public function stream_stat() {
-        return $this->_archive->statName( $this->_fileNameInArchive );
-    }
-
-    /**
-	 * Implements support for fread(), fgets() etc.
-	 *
-	 * @param   int		$count	maximum number of bytes to read
-	 * @return  string
-     */
-    function stream_read($count) {
-        $ret = substr($this->_data, $this->_position, $count);
-        $this->_position += strlen($ret);
-        return $ret;
-    }
-
-    /**
-	 * Returns the position of the file pointer, i.e. its offset into the file
-	 * stream. Implements support for ftell().
-	 *
-	 * @return  int
-     */
-    public function stream_tell() {
-        return $this->_position;
-    }
-
-    /**
-     * EOF stream
-	 *
-	 * @return	bool
-     */
-    public function stream_eof() {
-        return $this->_position >= strlen($this->_data);
-    }
-
-    /**
-     * Seek stream
-	 *
-	 * @param	int		$offset	byte offset
-	 * @param	int		$whence	SEEK_SET, SEEK_CUR or SEEK_END
-	 * @return	bool
-     */
-    public function stream_seek($offset, $whence) {
-        switch ($whence) {
-            case SEEK_SET:
-                if ($offset < strlen($this->_data) && $offset >= 0) {
-                     $this->_position = $offset;
-                     return true;
-                } else {
-                     return false;
-                }
-                break;
-
-            case SEEK_CUR:
-                if ($offset >= 0) {
-                     $this->_position += $offset;
-                     return true;
-                } else {
-                     return false;
-                }
-                break;
-
-            case SEEK_END:
-                if (strlen($this->_data) + $offset >= 0) {
-                     $this->_position = strlen($this->_data) + $offset;
-                     return true;
-                } else {
-                     return false;
-                }
-                break;
-
-            default:
-                return false;
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+OT6E

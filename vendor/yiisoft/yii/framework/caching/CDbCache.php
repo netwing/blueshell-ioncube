@@ -1,313 +1,146 @@
-<?php
-/**
- * CDbCache class file
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CDbCache implements a cache application component by storing cached data in a database.
- *
- * CDbCache stores cache data in a DB table named {@link cacheTableName}.
- * If the table does not exist, it will be automatically created.
- * By setting {@link autoCreateCacheTable} to false, you can also manually create the DB table.
- *
- * CDbCache relies on {@link http://www.php.net/manual/en/ref.pdo.php PDO} to access database.
- * By default, it will use a SQLite3 database under the application runtime directory.
- * You can also specify {@link connectionID} so that it makes use of
- * a DB application component to access database.
- *
- * See {@link CCache} manual for common cache operations that are supported by CDbCache.
- *
- * @property integer $gCProbability The probability (parts per million) that garbage collection (GC) should be performed
- * when storing a piece of data in the cache. Defaults to 100, meaning 0.01% chance.
- * @property CDbConnection $dbConnection The DB connection instance.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.caching
- * @since 1.0
- */
-class CDbCache extends CCache
-{
-	/**
-	 * @var string the ID of the {@link CDbConnection} application component. If not set,
-	 * a SQLite3 database will be automatically created and used. The SQLite database file
-	 * is <code>protected/runtime/cache-YiiVersion.db</code>.
-	 */
-	public $connectionID;
-	/**
-	 * @var string name of the DB table to store cache content. Defaults to 'YiiCache'.
-	 * Note, if {@link autoCreateCacheTable} is false and you want to create the DB table
-	 * manually by yourself, you need to make sure the DB table is of the following structure:
-	 * <pre>
-	 * (id CHAR(128) PRIMARY KEY, expire INTEGER, value BLOB)
-	 * </pre>
-	 * Note, some DBMS might not support BLOB type. In this case, replace 'BLOB' with a suitable
-	 * binary data type (e.g. LONGBLOB in MySQL, BYTEA in PostgreSQL.)
-	 * @see autoCreateCacheTable
-	 */
-	public $cacheTableName='YiiCache';
-	/**
-	 * @var boolean whether the cache DB table should be created automatically if it does not exist. Defaults to true.
-	 * If you already have the table created, it is recommended you set this property to be false to improve performance.
-	 * @see cacheTableName
-	 */
-	public $autoCreateCacheTable=true;
-	/**
-	 * @var CDbConnection the DB connection instance
-	 */
-	private $_db;
-	private $_gcProbability=100;
-	private $_gced=false;
-
-	/**
-	 * Initializes this application component.
-	 *
-	 * This method is required by the {@link IApplicationComponent} interface.
-	 * It ensures the existence of the cache DB table.
-	 * It also removes expired data items from the cache.
-	 */
-	public function init()
-	{
-		parent::init();
-
-		$db=$this->getDbConnection();
-		$db->setActive(true);
-		if($this->autoCreateCacheTable)
-		{
-			$sql="DELETE FROM {$this->cacheTableName} WHERE expire>0 AND expire<".time();
-			try
-			{
-				$db->createCommand($sql)->execute();
-			}
-			catch(Exception $e)
-			{
-				$this->createCacheTable($db,$this->cacheTableName);
-			}
-		}
-	}
-
-	/**
-	 * @return integer the probability (parts per million) that garbage collection (GC) should be performed
-	 * when storing a piece of data in the cache. Defaults to 100, meaning 0.01% chance.
-	 */
-	public function getGCProbability()
-	{
-		return $this->_gcProbability;
-	}
-
-	/**
-	 * @param integer $value the probability (parts per million) that garbage collection (GC) should be performed
-	 * when storing a piece of data in the cache. Defaults to 100, meaning 0.01% chance.
-	 * This number should be between 0 and 1000000. A value 0 meaning no GC will be performed at all.
-	 */
-	public function setGCProbability($value)
-	{
-		$value=(int)$value;
-		if($value<0)
-			$value=0;
-		if($value>1000000)
-			$value=1000000;
-		$this->_gcProbability=$value;
-	}
-
-	/**
-	 * Creates the cache DB table.
-	 * @param CDbConnection $db the database connection
-	 * @param string $tableName the name of the table to be created
-	 */
-	protected function createCacheTable($db,$tableName)
-	{
-		$driver=$db->getDriverName();
-		if($driver==='mysql')
-			$blob='LONGBLOB';
-		elseif($driver==='pgsql')
-			$blob='BYTEA';
-		else
-			$blob='BLOB';
-		$sql=<<<EOD
-CREATE TABLE $tableName
-(
-	id CHAR(128) PRIMARY KEY,
-	expire INTEGER,
-	value $blob
-)
-EOD;
-		$db->createCommand($sql)->execute();
-	}
-
-	/**
-	 * @return CDbConnection the DB connection instance
-	 * @throws CException if {@link connectionID} does not point to a valid application component.
-	 */
-	public function getDbConnection()
-	{
-		if($this->_db!==null)
-			return $this->_db;
-		elseif(($id=$this->connectionID)!==null)
-		{
-			if(($this->_db=Yii::app()->getComponent($id)) instanceof CDbConnection)
-				return $this->_db;
-			else
-				throw new CException(Yii::t('yii','CDbCache.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.',
-					array('{id}'=>$id)));
-		}
-		else
-		{
-			$dbFile=Yii::app()->getRuntimePath().DIRECTORY_SEPARATOR.'cache-'.Yii::getVersion().'.db';
-			return $this->_db=new CDbConnection('sqlite:'.$dbFile);
-		}
-	}
-
-	/**
-	 * Sets the DB connection used by the cache component.
-	 * @param CDbConnection $value the DB connection instance
-	 * @since 1.1.5
-	 */
-	public function setDbConnection($value)
-	{
-		$this->_db=$value;
-	}
-
-	/**
-	 * Retrieves a value from cache with a specified key.
-	 * This is the implementation of the method declared in the parent class.
-	 * @param string $key a unique key identifying the cached value
-	 * @return string|boolean the value stored in cache, false if the value is not in the cache or expired.
-	 */
-	protected function getValue($key)
-	{
-		$time=time();
-		$sql="SELECT value FROM {$this->cacheTableName} WHERE id='$key' AND (expire=0 OR expire>$time)";
-		$db=$this->getDbConnection();
-		if($db->queryCachingDuration>0)
-		{
-			$duration=$db->queryCachingDuration;
-			$db->queryCachingDuration=0;
-			$result=$db->createCommand($sql)->queryScalar();
-			$db->queryCachingDuration=$duration;
-			return $result;
-		}
-		else
-			return $db->createCommand($sql)->queryScalar();
-	}
-
-	/**
-	 * Retrieves multiple values from cache with the specified keys.
-	 * @param array $keys a list of keys identifying the cached values
-	 * @return array a list of cached values indexed by the keys
-	 */
-	protected function getValues($keys)
-	{
-		if(empty($keys))
-			return array();
-
-		$ids=implode("','",$keys);
-		$time=time();
-		$sql="SELECT id, value FROM {$this->cacheTableName} WHERE id IN ('$ids') AND (expire=0 OR expire>$time)";
-
-		$db=$this->getDbConnection();
-		if($db->queryCachingDuration>0)
-		{
-			$duration=$db->queryCachingDuration;
-			$db->queryCachingDuration=0;
-			$rows=$db->createCommand($sql)->queryAll();
-			$db->queryCachingDuration=$duration;
-		}
-		else
-			$rows=$db->createCommand($sql)->queryAll();
-
-		$results=array();
-		foreach($keys as $key)
-			$results[$key]=false;
-		foreach($rows as $row)
-			$results[$row['id']]=$row['value'];
-		return $results;
-	}
-
-	/**
-	 * Stores a value identified by a key in cache.
-	 * This is the implementation of the method declared in the parent class.
-	 *
-	 * @param string $key the key identifying the value to be cached
-	 * @param string $value the value to be cached
-	 * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
-	 * @return boolean true if the value is successfully stored into cache, false otherwise
-	 */
-	protected function setValue($key,$value,$expire)
-	{
-		$this->deleteValue($key);
-		return $this->addValue($key,$value,$expire);
-	}
-
-	/**
-	 * Stores a value identified by a key into cache if the cache does not contain this key.
-	 * This is the implementation of the method declared in the parent class.
-	 *
-	 * @param string $key the key identifying the value to be cached
-	 * @param string $value the value to be cached
-	 * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
-	 * @return boolean true if the value is successfully stored into cache, false otherwise
-	 */
-	protected function addValue($key,$value,$expire)
-	{
-		if(!$this->_gced && mt_rand(0,1000000)<$this->_gcProbability)
-		{
-			$this->gc();
-			$this->_gced=true;
-		}
-
-		if($expire>0)
-			$expire+=time();
-		else
-			$expire=0;
-		$sql="INSERT INTO {$this->cacheTableName} (id,expire,value) VALUES ('$key',$expire,:value)";
-		try
-		{
-			$command=$this->getDbConnection()->createCommand($sql);
-			$command->bindValue(':value',$value,PDO::PARAM_LOB);
-			$command->execute();
-			return true;
-		}
-		catch(Exception $e)
-		{
-			return false;
-		}
-	}
-
-	/**
-	 * Deletes a value with the specified key from cache
-	 * This is the implementation of the method declared in the parent class.
-	 * @param string $key the key of the value to be deleted
-	 * @return boolean if no error happens during deletion
-	 */
-	protected function deleteValue($key)
-	{
-		$sql="DELETE FROM {$this->cacheTableName} WHERE id='$key'";
-		$this->getDbConnection()->createCommand($sql)->execute();
-		return true;
-	}
-
-	/**
-	 * Removes the expired data values.
-	 */
-	protected function gc()
-	{
-		$this->getDbConnection()->createCommand("DELETE FROM {$this->cacheTableName} WHERE expire>0 AND expire<".time())->execute();
-	}
-
-	/**
-	 * Deletes all values from cache.
-	 * This is the implementation of the method declared in the parent class.
-	 * @return boolean whether the flush operation was successful.
-	 * @since 1.1.5
-	 */
-	protected function flushValues()
-	{
-		$this->getDbConnection()->createCommand("DELETE FROM {$this->cacheTableName}")->execute();
-		return true;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

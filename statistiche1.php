@@ -1,74 +1,61 @@
-<?php
-require_once("config.inc.php");
-$anni=$blue->presenze_anni();
-$anno=date("Y",time());
-if (array_key_exists('anno',$_POST))
-{
-	$anno=$_POST['anno'];
-}
-$selnaz="SELECT cliente_nazione,nazione_nome FROM blue_clienti,blue_nazioni,blue_presenze WHERE nazione_id=cliente_nazione AND cliente_id=presenza_cliente AND (LEFT(presenza_arrivo,4)='".$anno."' OR LEFT(presenza_partenza,4)='".$anno."') GROUP BY cliente_nazione";
-$resnaz=$sql->select_query($selnaz);
-$stat1=array();
-$x=0;
-while ($row=mysql_fetch_array($resnaz))
-{
-	$stat1[$row['cliente_nazione']]=array('nazione'=>$row['nazione_nome'],1=>0,2=>0,3=>0,4=>0,5=>0,6=>0,7=>0,8=>0,9=>0,10=>0,11=>0,12=>0,'tot'=>0);
-	$selcon="SELECT presenza_arrivo,presenza_partenza FROM blue_presenze,blue_clienti WHERE presenza_cliente=cliente_id AND cliente_nazione='".$row['cliente_nazione']."' AND ((LEFT(presenza_arrivo,4)='".$anno."' OR LEFT(presenza_arrivo,4)='".($anno-1)."') OR (LEFT(presenza_partenza,4)='".$anno."' OR LEFT(presenza_partenza,4)='0000'))"; // AND (presenza_partenza>'0000-00-00' AND presenza_arrivo>'0000-00-00')";
-	$rescon=$sql->select_query($selcon);
-	while ($rowcon=mysql_fetch_array($rescon))
-	{
-		for ($i=1;$i<=12;$i++)
-		{
-			if (strlen($i)==1)
-			{
-				$j="0".$i;
-			}
-			else
-			{
-				$j=$i;
-			}
-			$gg=date('t',time(12,0,0,$i)); // giorni del mese
-			$im=$anno."-".$j."-01"; // Data di inizio mese
-			$fm=$anno."-".$j."-".$gg; // Data di fine mese
-			$ic=$rowcon['presenza_arrivo']; // Data di inizio contratto
-			if ($ic=='0000-00-00')
-			{
-				$ic=date("Y-m-d",time());
-			}
-			$fc=$rowcon['presenza_partenza']; // Data di fine contratto
-			if ($fc=='0000-00-00')
-			{
-				$fc=date("Y-m-d",time());
-			}
-			//Se inizia e finisce all'interno del mese attuale			
-			if ($ic>=$im AND $fc<=$fm)
-			{
-				$addgg=intval((strtotime($fc)-strtotime($ic))/86400);
-				$stat1[$row['cliente_nazione']][$i]+=$addgg;
-				$stat1[$row['cliente_nazione']]['tot']+=$addgg;
-			}
-			//Se inizia nel mese attuale ma finisce oltre
-			elseif ($ic>=$im AND $ic<=$fm AND $fc>=$fm)
-			{
-				$addgg=intval((strtotime($fm)-strtotime($ic))/86400);
-				$stat1[$row['cliente_nazione']][$i]+=$addgg;
-				$stat1[$row['cliente_nazione']]['tot']+=$addgg;
-			}
-			//Se inizia prima del mese attuale ma finisce in questo mese
-			elseif ($ic<=$im AND $fc<=$fm AND $fc>=$im)
-			{
-				$addgg=intval((strtotime($fc)-strtotime($im))/86400);
-				$stat1[$row['cliente_nazione']][$i]+=$addgg;
-				$stat1[$row['cliente_nazione']]['tot']+=$addgg;
-			}
-			//Se il contratto inizia e finisce oltre il mese attuale
-			elseif($ic<=$im AND $fc>=$fm)
-			{
-				$stat1[$row['cliente_nazione']][$i]+=$gg;
-				$stat1[$row['cliente_nazione']]['tot']+=$gg;
-			}
-		}
-	}
-}
-
-require_once "views/stats/stats1.php";
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+aNc7GAUvf/yvvol3

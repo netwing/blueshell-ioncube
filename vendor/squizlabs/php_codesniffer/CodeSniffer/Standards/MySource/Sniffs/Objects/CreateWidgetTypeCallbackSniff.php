@@ -1,228 +1,98 @@
-<?php
-/**
- * Ensures the create() method of widget types properly uses callbacks.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer_MySource
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Ensures the create() method of widget types properly uses callbacks.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer_MySource
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class MySource_Sniffs_Objects_CreateWidgetTypeCallbackSniff implements PHP_CodeSniffer_Sniff
-{
-
-    /**
-     * A list of tokenizers this sniff supports.
-     *
-     * @var array
-     */
-    public $supportedTokenizers = array('JS');
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        return array(T_OBJECT);
-
-    }//end register()
-
-
-    /**
-     * Processes this test, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token
-     *                                        in the stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-
-        $className = $tokens[$stackPtr]['content'];
-        if (substr(strtolower($className), -10) !== 'widgettype') {
-            return;
-        }
-
-        // Search for a create method.
-        $start  = ($tokens[$stackPtr]['scope_opener'] + 1);
-        $end    = ($tokens[$stackPtr]['scope_closer'] - 1);
-        $create = $phpcsFile->findNext(T_PROPERTY, $start, $end, null, 'create');
-        if ($create === false) {
-            return;
-        }
-
-        $function = $phpcsFile->findNext(array(T_WHITESPACE, T_COLON), ($create + 1), null, true);
-        if ($tokens[$function]['code'] !== T_FUNCTION) {
-            continue;
-        }
-
-        $start = ($tokens[$function]['scope_opener'] + 1);
-        $end   = ($tokens[$function]['scope_closer'] - 1);
-
-        // Check that the first argument is called "callback".
-        $arg = $phpcsFile->findNext(T_WHITESPACE, ($tokens[$function]['parenthesis_opener'] + 1), null, true);
-        if ($tokens[$arg]['content'] !== 'callback') {
-            $error = 'The first argument of the create() method of a widget type must be called "callback"';
-            $phpcsFile->addError($error, $arg, 'FirstArgNotCallback');
-        }
-
-        /*
-            Look for return statements within the function. They cannot return
-            anything and must be preceded by the callback.call() line. The
-            callback itself must contain "self" or "this" as the first argument
-            and there needs to be a call to the callback function somewhere
-            in the create method. All calls to the callback function must be
-            followed by a return statement or the end of the method.
-        */
-
-        $foundCallback  = false;
-        $passedCallback = false;
-        $nestedFunction = null;
-        for ($i = $start; $i <= $end; $i++) {
-            // Keep track of nested functions.
-            if ($nestedFunction !== null) {
-                if ($i === $nestedFunction) {
-                    $nestedFunction = null;
-                    continue;
-                }
-            } else if ($tokens[$i]['code'] === T_FUNCTION
-                && isset($tokens[$i]['scope_closer']) === true
-            ) {
-                $nestedFunction = $tokens[$i]['scope_closer'];
-                continue;
-            }
-
-            if ($nestedFunction === null && $tokens[$i]['code'] === T_RETURN) {
-                // Make sure return statements are not returning anything.
-                if ($tokens[($i + 1)]['code'] !== T_SEMICOLON) {
-                    $error = 'The create() method of a widget type must not return a value';
-                    $phpcsFile->addError($error, $i, 'ReturnValue');
-                }
-
-                continue;
-            } else if ($tokens[$i]['code'] !== T_STRING
-                || $tokens[$i]['content'] !== 'callback'
-            ) {
-                continue;
-            }
-
-            // If this is the form "callback.call(" then it is a call
-            // to the callback function.
-            if ($tokens[($i + 1)]['code'] !== T_OBJECT_OPERATOR
-                || $tokens[($i + 2)]['content'] !== 'call'
-                || $tokens[($i + 3)]['code'] !== T_OPEN_PARENTHESIS
-            ) {
-                // One last chance; this might be the callback function
-                // being passed to another function, like this
-                // "this.init(something, callback, something)".
-                if (isset($tokens[$i]['nested_parenthesis']) === false) {
-                    continue;
-                }
-
-                // Just make sure those brackets dont belong to anyone,
-                // like an IF or FOR statement.
-                foreach ($tokens[$i]['nested_parenthesis'] as $bracket) {
-                    if (isset($tokens[$bracket]['parenthesis_owner']) === true) {
-                        continue(2);
-                    }
-                }
-
-                // Note that we use this endBracket down further when checking
-                // for a RETURN statement.
-                $endBracket = end($tokens[$i]['nested_parenthesis']);
-                $bracket    = key($tokens[$i]['nested_parenthesis']);
-
-                $prev = $phpcsFile->findPrevious(
-                    PHP_CodeSniffer_Tokens::$emptyTokens,
-                    ($bracket - 1),
-                    null,
-                    true
-                );
-
-                if ($tokens[$prev]['code'] !== T_STRING) {
-                    // This is not a function passing the callback.
-                    continue;
-                }
-
-                $passedCallback = true;
-            }//end if
-
-            $foundCallback = true;
-
-            if ($passedCallback === false) {
-                // The first argument must be "this" or "self".
-                $arg = $phpcsFile->findNext(T_WHITESPACE, ($i + 4), null, true);
-                if ($tokens[$arg]['content'] !== 'this'
-                    && $tokens[$arg]['content'] !== 'self'
-                ) {
-                    $error = 'The first argument passed to the callback function must be "this" or "self"';
-                    $phpcsFile->addError($error, $arg, 'FirstArgNotSelf');
-                }
-            }
-
-            // Now it must be followed by a return statement or the end of the function.
-            if ($passedCallback === false) {
-                $endBracket = $tokens[($i + 3)]['parenthesis_closer'];
-            }
-
-            for ($next = $endBracket; $next <= $end; $next++) {
-                // Skip whitespace so we find the next content after the call.
-                if (in_array($tokens[$next]['code'], PHP_CodeSniffer_Tokens::$emptyTokens) === true) {
-                    continue;
-                }
-
-                // Skip closing braces like END IF because it is not executable code.
-                if ($tokens[$next]['code'] === T_CLOSE_CURLY_BRACKET) {
-                    continue;
-                }
-
-                // We don't care about anything on the current line, like a
-                // semicolon. It doesn't matter if there are other statements on the
-                // line because another sniff will check for those.
-                if ($tokens[$next]['line'] === $tokens[$endBracket]['line']) {
-                    continue;
-                }
-
-                break;
-            }
-
-            if ($next !== $tokens[$function]['scope_closer']
-                && $tokens[$next]['code'] !== T_RETURN
-            ) {
-                $error = 'The call to the callback function must be followed by a return statement if it is not the last statement in the create() method';
-                $phpcsFile->addError($error, $i, 'NoReturn');
-            }
-        }//end for
-
-        if ($foundCallback === false) {
-            $error = 'The create() method of a widget type must call the callback function';
-            $phpcsFile->addError($error, $create, 'CallbackNotCalled');
-        }
-
-    }//end process()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

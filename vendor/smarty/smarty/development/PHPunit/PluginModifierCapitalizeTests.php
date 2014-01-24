@@ -1,138 +1,88 @@
-<?php
-/**
-* Smarty PHPunit tests of modifier
-*
-* @package PHPunit
-* @author Rodney Rehm
-*/
-
-/**
-* class for modifier tests
-*/
-class PluginModifierCapitalizeTests extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $this->smarty = SmartyTests::$smarty;
-        SmartyTests::init();
-    }
-
-    static function isRunnable()
-    {
-        return true;
-    }
-
-    public function testDefault()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{"next x-men fiLm, x3, delayed. ümlauts äre cööl."|capitalize}');
-        $this->assertEquals("Next X-Men FiLm, x3, Delayed. Ümlauts Äre Cööl.", $this->smarty->fetch($tpl));
-    }
-
-    public function testDigits()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{"next x-men fiLm, x3, delayed. ümlauts äre cööl."|capitalize:true}');
-        $this->assertEquals("Next X-Men FiLm, X3, Delayed. Ümlauts Äre Cööl.", $this->smarty->fetch($tpl));
-    }
-
-    public function testTrueCaptials()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{"next x-men fiLm, x3, delayed. ümlauts äre cööl."|capitalize:true:true}');
-        $this->assertEquals("Next X-Men Film, X3, Delayed. Ümlauts Äre Cööl.", $this->smarty->fetch($tpl));
-    }
-
-    public function testDefaultWithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $tpl = $this->smarty->createTemplate('eval:{"next x-men fiLm, x3, delayed."|capitalize}');
-        $this->assertEquals("Next X-Men FiLm, x3, Delayed.", $this->smarty->fetch($tpl));
-        Smarty::$_MBSTRING = true;
-    }
-
-    public function testDigitsWithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $tpl = $this->smarty->createTemplate('eval:{"next x-men fiLm, x3, delayed."|capitalize:true}');
-        $this->assertEquals("Next X-Men FiLm, X3, Delayed.", $this->smarty->fetch($tpl));
-        Smarty::$_MBSTRING = true;
-    }
-
-    public function testTrueCaptialsWithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $tpl = $this->smarty->createTemplate('eval:{"next x-men fiLm, x3, delayed."|capitalize:true:true}');
-        $this->assertEquals("Next X-Men Film, X3, Delayed.", $this->smarty->fetch($tpl));
-        Smarty::$_MBSTRING = true;
-    }
-
-    public function testQuotes()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{"next x-men fiLm, x3, \"delayed. umlauts\" foo."|capitalize}');
-        $this->assertEquals("Next X-Men FiLm, x3, \"Delayed. Umlauts\" Foo.", $this->smarty->fetch($tpl));
-        $tpl = $this->smarty->createTemplate('eval:{"next x-men fiLm, x3, \'delayed. umlauts\' foo."|capitalize}');
-        $this->assertEquals("Next X-Men FiLm, x3, 'Delayed. Umlauts' Foo.", $this->smarty->fetch($tpl));
-    }
-
-    public function testQuotesWithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $tpl = $this->smarty->createTemplate('eval:{"next x-men fiLm, x3, \"delayed. umlauts\" foo."|capitalize}');
-        $this->assertEquals("Next X-Men FiLm, x3, \"Delayed. Umlauts\" Foo.", $this->smarty->fetch($tpl));
-        $tpl = $this->smarty->createTemplate('eval:{"next x-men fiLm, x3, \'delayed. umlauts\' foo."|capitalize}');
-        $this->assertEquals("Next X-Men FiLm, x3, 'Delayed. Umlauts' Foo.", $this->smarty->fetch($tpl));
-        Smarty::$_MBSTRING = true;
-    }
-
-    public function testQuotesDigits()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{"next x-men fiLm, x3, \"delayed. umlauts\" foo."|capitalize:true}');
-        $this->assertEquals("Next X-Men FiLm, X3, \"Delayed. Umlauts\" Foo.", $this->smarty->fetch($tpl));
-        $tpl = $this->smarty->createTemplate('eval:{"next x-men fiLm, x3, \'delayed. umlauts\' foo."|capitalize:true}');
-        $this->assertEquals("Next X-Men FiLm, X3, 'Delayed. Umlauts' Foo.", $this->smarty->fetch($tpl));
-    }
-
-    public function testQuotesDigitsWithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $tpl = $this->smarty->createTemplate('eval:{"next x-men fiLm, x3, \"delayed. umlauts\" foo."|capitalize:true}');
-        $this->assertEquals("Next X-Men FiLm, X3, \"Delayed. Umlauts\" Foo.", $this->smarty->fetch($tpl));
-        $tpl = $this->smarty->createTemplate('eval:{"next x-men fiLm, x3, \'delayed. umlauts\' foo."|capitalize:true}');
-        $this->assertEquals("Next X-Men FiLm, X3, 'Delayed. Umlauts' Foo.", $this->smarty->fetch($tpl));
-        Smarty::$_MBSTRING = true;
-    }
-
-    public function testQuotesTrueCapitals()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{"next x-men fiLm, x3, \"delayed. umlauts\" foo."|capitalize:true:true}');
-        $this->assertEquals("Next X-Men Film, X3, \"Delayed. Umlauts\" Foo.", $this->smarty->fetch($tpl));
-        $tpl = $this->smarty->createTemplate('eval:{"next x-men fiLm, x3, \'delayed. umlauts\' foo."|capitalize:true:true}');
-        $this->assertEquals("Next X-Men Film, X3, 'Delayed. Umlauts' Foo.", $this->smarty->fetch($tpl));
-    }
-
-    public function testQuotesTrueCapitalsWithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $tpl = $this->smarty->createTemplate('eval:{"next x-men fiLm, x3, \"delayed. umlauts\" foo."|capitalize:true:true}');
-        $this->assertEquals("Next X-Men Film, X3, \"Delayed. Umlauts\" Foo.", $this->smarty->fetch($tpl));
-        $tpl = $this->smarty->createTemplate('eval:{"next x-men fiLm, x3, \'delayed. umlauts\' foo."|capitalize:true:true}');
-        $this->assertEquals("Next X-Men Film, X3, 'Delayed. Umlauts' Foo.", $this->smarty->fetch($tpl));
-        Smarty::$_MBSTRING = true;
-    }
-
-    public function testQuotesBeginning()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{"\"delayed. umlauts\" foo."|capitalize}');
-        $this->assertEquals("\"Delayed. Umlauts\" Foo.", $this->smarty->fetch($tpl));
-        $tpl = $this->smarty->createTemplate('eval:{"\'delayed. umlauts\' foo."|capitalize}');
-        $this->assertEquals("'Delayed. Umlauts' Foo.", $this->smarty->fetch($tpl));
-    }
-
-    public function testQuotesBeginningWithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $tpl = $this->smarty->createTemplate('eval:{"\"delayed. umlauts\" foo."|capitalize}');
-        $this->assertEquals("\"Delayed. Umlauts\" Foo.", $this->smarty->fetch($tpl));
-        $tpl = $this->smarty->createTemplate('eval:{"\'delayed. umlauts\' foo."|capitalize}');
-        $this->assertEquals("'Delayed. Umlauts' Foo.", $this->smarty->fetch($tpl));
-        Smarty::$_MBSTRING = true;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+bWE5A77Td/slDzsmym==

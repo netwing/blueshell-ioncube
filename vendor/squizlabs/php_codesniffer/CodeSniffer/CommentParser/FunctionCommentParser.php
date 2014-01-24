@@ -1,212 +1,59 @@
-<?php
-/**
- * Parses function doc comments.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-if (class_exists('PHP_CodeSniffer_CommentParser_AbstractParser', true) === false) {
-    $error = 'Class PHP_CodeSniffer_CommentParser_AbstractParser not found';
-    throw new PHP_CodeSniffer_Exception($error);
-}
-
-if (class_exists('PHP_CodeSniffer_CommentParser_ParameterElement', true) === false) {
-    $error = 'Class PHP_CodeSniffer_CommentParser_ParameterElement not found';
-    throw new PHP_CodeSniffer_Exception($error);
-}
-
-if (class_exists('PHP_CodeSniffer_CommentParser_PairElement', true) === false) {
-    $error = 'Class PHP_CodeSniffer_CommentParser_PairElement not found';
-    throw new PHP_CodeSniffer_Exception($error);
-}
-
-if (class_exists('PHP_CodeSniffer_CommentParser_SingleElement', true) === false) {
-    $error = 'Class PHP_CodeSniffer_CommentParser_SingleElement not found';
-    throw new PHP_CodeSniffer_Exception($error);
-}
-
-/**
- * Parses function doc comments.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class PHP_CodeSniffer_CommentParser_FunctionCommentParser extends PHP_CodeSniffer_CommentParser_AbstractParser
-{
-
-    /**
-     * The parameter elements within this function comment.
-     *
-     * @var array(PHP_CodeSniffer_CommentParser_ParameterElement)
-     */
-    private $_params = array();
-
-    /**
-     * The return element in this function comment.
-     *
-     * @var PHP_CodeSniffer_CommentParser_PairElement.
-     */
-    private $_return = null;
-
-    /**
-     * The throws element list for this function comment.
-     *
-     * @var array(PHP_CodeSniffer_CommentParser_PairElement)
-     */
-    private $_throws = array();
-
-
-    /**
-     * Constructs a PHP_CodeSniffer_CommentParser_FunctionCommentParser.
-     *
-     * @param string               $comment   The comment to parse.
-     * @param PHP_CodeSniffer_File $phpcsFile The file that this comment is in.
-     */
-    public function __construct($comment, PHP_CodeSniffer_File $phpcsFile)
-    {
-        parent::__construct($comment, $phpcsFile);
-
-    }//end __construct()
-
-
-    /**
-     * Parses parameter elements.
-     *
-     * @param array(string) $tokens The tokens that comprise this sub element.
-     *
-     * @return PHP_CodeSniffer_CommentParser_ParameterElement
-     */
-    protected function parseParam($tokens)
-    {
-        $param = new PHP_CodeSniffer_CommentParser_ParameterElement(
-            $this->previousElement,
-            $tokens,
-            $this->phpcsFile
-        );
-
-        $this->_params[] = $param;
-        return $param;
-
-    }//end parseParam()
-
-
-    /**
-     * Parses return elements.
-     *
-     * @param array(string) $tokens The tokens that comprise this sub element.
-     *
-     * @return PHP_CodeSniffer_CommentParser_PairElement
-     */
-    protected function parseReturn($tokens)
-    {
-        $return = new PHP_CodeSniffer_CommentParser_PairElement(
-            $this->previousElement,
-            $tokens,
-            'return',
-            $this->phpcsFile
-        );
-
-        $this->_return = $return;
-        return $return;
-
-    }//end parseReturn()
-
-
-    /**
-     * Parses throws elements.
-     *
-     * @param array(string) $tokens The tokens that comprise this sub element.
-     *
-     * @return PHP_CodeSniffer_CommentParser_PairElement
-     */
-    protected function parseThrows($tokens)
-    {
-        $throws = new PHP_CodeSniffer_CommentParser_PairElement(
-            $this->previousElement,
-            $tokens,
-            'throws',
-            $this->phpcsFile
-        );
-
-        $this->_throws[] = $throws;
-        return $throws;
-
-    }//end parseThrows()
-
-
-    /**
-     * Returns the parameter elements that this function comment contains.
-     *
-     * Returns an empty array if no parameter elements are contained within
-     * this function comment.
-     *
-     * @return array(PHP_CodeSniffer_CommentParser_ParameterElement)
-     */
-    public function getParams()
-    {
-        return $this->_params;
-
-    }//end getParams()
-
-
-    /**
-     * Returns the return element in this function comment.
-     *
-     * Returns null if no return element exists in the comment.
-     *
-     * @return PHP_CodeSniffer_CommentParser_PairElement
-     */
-    public function getReturn()
-    {
-        return $this->_return;
-
-    }//end getReturn()
-
-
-    /**
-     * Returns the throws elements in this function comment.
-     *
-     * Returns empty array if no throws elements in the comment.
-     *
-     * @return array(PHP_CodeSniffer_CommentParser_PairElement)
-     */
-    public function getThrows()
-    {
-        return $this->_throws;
-
-    }//end getThrows()
-
-
-    /**
-     * Returns the allowed tags that can exist in a function comment.
-     *
-     * @return array(string => boolean)
-     */
-    protected function getAllowedTags()
-    {
-        return array(
-                'param'  => false,
-                'return' => true,
-                'throws' => false,
-               );
-
-    }//end getAllowedTags()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

@@ -1,94 +1,35 @@
-<?php
-/**
- * PHPUnit
- *
- * Copyright (c) 2010-2013, Sebastian Bergmann <sb@sebastian-bergmann.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @package    PHPUnit_MockObject
- * @author     Sebastian Bergmann <sb@sebastian-bergmann.de>
- * @copyright  2010-2013 Sebastian Bergmann <sb@sebastian-bergmann.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://github.com/sebastianbergmann/phpunit-mock-objects
- * @since      File available since Release 1.0.0
- */
-
-/**
- *
- *
- * @package    PHPUnit_MockObject
- * @author     Sebastian Bergmann <sb@sebastian-bergmann.de>
- * @copyright  2010-2013 Sebastian Bergmann <sb@sebastian-bergmann.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @version    Release: @package_version@
- * @link       http://github.com/sebastianbergmann/phpunit-mock-objects
- * @since      Class available since Release 1.0.0
- */
-class PHPUnit_Framework_MockObject_Stub_ReturnCallback implements PHPUnit_Framework_MockObject_Stub
-{
-    protected $callback;
-
-    public function __construct($callback)
-    {
-        $this->callback = $callback;
-    }
-
-    public function invoke(PHPUnit_Framework_MockObject_Invocation $invocation)
-    {
-        return call_user_func_array($this->callback, $invocation->parameters);
-    }
-
-    public function toString()
-    {
-        if (is_array($this->callback)) {
-            if (is_object($this->callback[0])) {
-                $class = get_class($this->callback[0]);
-                $type  = '->';
-            } else {
-                $class = $this->callback[0];
-                $type  = '::';
-            }
-
-            return sprintf(
-              'return result of user defined callback %s%s%s() with the ' .
-              'passed arguments',
-
-              $class,
-              $type,
-              $this->callback[1]
-            );
-        } else {
-            return 'return result of user defined callback ' . $this->callback .
-                   ' with the passed arguments';
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

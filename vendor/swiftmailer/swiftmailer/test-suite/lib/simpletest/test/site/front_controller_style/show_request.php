@@ -1,49 +1,36 @@
-        <h1>Request</h1>
-        <dl>
-            <dt>Protocol version</dt><dd><?php print $_SERVER['SERVER_PROTOCOL']; ?></dd>
-            <dt>Request method</dt><dd><?php print $_SERVER['REQUEST_METHOD']; ?></dd>
-            <dt>Accept header</dt><dd><?php print $_SERVER['HTTP_ACCEPT']; ?></dd>
-        </dl>
-        <h1>Cookies</h1>
-        <?php
-            if (count($_COOKIE) > 0) {
-                foreach ($_COOKIE as $key => $value) {
-                    print "$key=[$value]<br />\n";
-                }
-            }
-        ?>
-        <h1>Raw GET data</h1>
-        <?php
-            print "[" . $_SERVER['QUERY_STRING'] . "]";
-        ?>
-        <h1>GET data</h1>
-        <?php
-            $get = PageRequest::get();
-            if (count($get) > 0) {
-                foreach ($get as $key => $value) {
-                    if (is_array($value)) {
-                        $value = implode(', ', $value);
-                    }
-                    print "$key=[$value]<br />\n";
-                }
-            }
-        ?>
-        <h1>Raw POST data</h1>
-        <?php
-            print "[" . $HTTP_RAW_POST_DATA . "]";
-        ?>
-        <pre><?php print_r(PageRequest::post()); ?></pre>
-        <h1>POST data</h1>
-        <?php
-            if (count($_POST) > 0) {
-                foreach ($_POST as $key => $value) {
-                    print $key . "=[";
-                    if (is_array($value)) {
-                        print implode(', ', $value);
-                    } else {
-                        print $value;
-                    }
-                    print "]<br />\n";
-                }
-            }
-        ?>
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+V3a0yEXuPBxYqXicBGUlvI9R3W==

@@ -1,125 +1,83 @@
-<?php
-/**
- * Smarty PHPunit test suite
- *
- * @package PHPunit
- * @author Uwe Tews
- */
-
-define ('SMARTY_DIR', '../../distribution/libs/');
-
-require_once SMARTY_DIR . 'SmartyBC.class.php';
-
-/**
- * class for running test suite
- */
-class SmartyTests extends PHPUnit_Framework_TestSuite
-{
-    static $smarty = null ;
-    static $smartyBC = null ;
-
-    public function __construct()
-    {
-        SmartyTests::$smarty = new Smarty();
-        SmartyTests::$smartyBC = new SmartyBC();
-    }
-
-    protected static function _init($smarty)
-    {
-        $smarty->template_dir = array('.' . DS . 'templates' . DS);
-        $smarty->compile_dir = '.' . DS . 'templates_c' . DS;
-        $smarty->plugins_dir = array(SMARTY_PLUGINS_DIR);
-        $smarty->cache_dir = '.' . DS . 'cache' . DS;
-        $smarty->config_dir = array('.' . DS . 'configs' . DS);
-        $smarty->template_objects = array();
-        $smarty->config_vars = array();
-        Smarty::$global_tpl_vars = array();
-        $smarty->template_functions = array();
-        $smarty->tpl_vars = array();
-        $smarty->force_compile = false;
-        $smarty->force_cache = false;
-        $smarty->auto_literal = true;
-        $smarty->caching = false;
-        $smarty->debugging = false;
-        Smarty::$_smarty_vars = array();
-        $smarty->registered_plugins = array();
-        $smarty->default_plugin_handler_func = null;
-        $smarty->registered_objects = array();
-        $smarty->default_modifiers = array();
-        $smarty->registered_filters = array();
-        $smarty->autoload_filters = array();
-        $smarty->escape_html = false;
-        $smarty->use_sub_dirs = false;
-        $smarty->config_overwrite = true;
-        $smarty->config_booleanize = true;
-        $smarty->config_read_hidden = true;
-        $smarty->security_policy = null;
-        $smarty->left_delimiter = '{';
-        $smarty->right_delimiter = '}';
-        $smarty->php_handling = Smarty::PHP_PASSTHRU;
-        $smarty->enableSecurity();
-        $smarty->error_reporting = null;
-        $smarty->error_unassigned = true;
-        $smarty->caching_type = 'file';
-        $smarty->cache_locking = false;
-        $smarty->cache_id = null;
-        $smarty->compile_id = null;
-        $smarty->default_resource_type = 'file';
-    }
-
-    static function init()
-    {
-        error_reporting(E_ALL | E_STRICT);
-        self::_init(SmartyTests::$smarty);
-        self::_init(SmartyTests::$smartyBC);
-        SmartyTests::$smartyBC->registerPlugin('block','php','smarty_php_tag');
-        Smarty_Resource::$sources = array();
-        Smarty_Resource::$compileds = array();
-//        Smarty_Resource::$resources = array();
-    }
-    /**
-     * look for test units and run them
-     */
-    static function suite()
-    {
-        $testorder = array(
-            'CacheResourceCustomMemcacheTests',
-            // 'PluginFunctionHtmlImageTests',
-            // 'PluginFunctionFetchTests',
-        );
-        $smarty_libs_dir = dirname(__FILE__) . '/../../distribution/libs';
-        if (method_exists('PHPUnit_Util_Filter', $smarty_libs_dir)) {
-            // Older versions of PHPUnit did not have this function,
-            // which is used when determining which PHP files are
-            // included in the PHPUnit code coverage result.
-            PHPUnit_Util_Filter::addDirectoryToWhitelist($smarty_libs_dir);
-            // PHPUnit_Util_Filt<er::removeDirectoryFromWhitelist('../');
-            // PHPUnit_Util_Filter::addDirectoryToWhitelist('../libs/plugins');
-        }
-        $suite = new self('Smarty 3 - Unit Tests Report');
-        // load test which should run in specific order
-        foreach ($testorder as $class) {
-            require_once $class . '.php';
-            $suite->addTestSuite($class);
-        }
-
-        if (false) {
-            foreach (new DirectoryIterator(dirname(__FILE__)) as $file) {
-                if (!$file->isDot() && !$file->isDir() && (string) $file !== 'smartytests.php' && (string) $file !== 'smartysingletests.php' && substr((string) $file, -4) === '.php') {
-                    $class = basename($file, '.php');
-                    if (!in_array($class, $testorder)) {
-                        require_once $file->getPathname();
-                        // to have an optional test suite, it should implement a static function isRunnable
-                        // that returns true only if all the conditions are met to run it successfully, for example
-                        // it can check that an external library is present
-                        if (!method_exists($class, 'isRunnable') || call_user_func(array($class, 'isRunnable'))) {
-                            $suite->addTestSuite($class);
-                        }
-                    }
-                }
-            }
-        }
-
-        return $suite;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+m93xyxb45dlfC22liJY5vMD2d232PKgjk4/450==

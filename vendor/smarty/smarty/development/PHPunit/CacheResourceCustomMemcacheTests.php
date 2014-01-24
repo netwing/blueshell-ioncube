@@ -1,75 +1,50 @@
-<?php
-/**
-* Smarty PHPunit tests for cache resource file
-*
-* @package PHPunit
-* @author Uwe Tews
-*/
-
-require_once( dirname(__FILE__) . "/CacheResourceCustomMysqlTests.php" );
-
-/**
-* class for cache resource file tests
-*/
-class CacheResourceCustomMemcacheTests extends CacheResourceCustomMysqlTests
-{
-    public function setUp()
-    {
-        $this->smarty = SmartyTests::$smarty;
-        SmartyTests::init();
-        $this->smarty->caching_type = 'memcachetest';
-        $this->smarty->addPluginsDir(dirname(__FILE__)."/PHPunitplugins/");
-    }
-
-    static function isRunnable()
-    {
-        return class_exists('Memcache');
-    }
-
-    protected function doClearCacheAssertion($a, $b)
-    {
-        $this->assertEquals(-1, $b);
-    }
-
-    public function testGetCachedFilepathSubDirs()
-    {
-        $this->smarty->caching = true;
-        $this->smarty->cache_lifetime = 1000;
-        $tpl = $this->smarty->createTemplate('helloworld.tpl');
-        $sha1 = $tpl->source->uid . '#helloworld_tpl##';
-        $this->assertEquals($sha1, $tpl->cached->filepath);
-    }
-    /**
-    * test getCachedFilepath with cache_id
-    */
-    public function testGetCachedFilepathCacheId()
-    {
-        $this->smarty->caching = true;
-        $this->smarty->cache_lifetime = 1000;
-        $tpl = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar');
-        $sha1 = $tpl->source->uid . '#helloworld_tpl#foo|bar#';
-        $this->assertEquals($sha1, $tpl->cached->filepath);
-    }
-    /**
-    * test getCachedFilepath with compile_id
-    */
-    public function testGetCachedFilepathCompileId()
-    {
-        $this->smarty->caching = true;
-        $this->smarty->cache_lifetime = 1000;
-        $tpl = $this->smarty->createTemplate('helloworld.tpl', null, 'blar');
-        $sha1 = $tpl->source->uid . '#helloworld_tpl##blar';
-        $this->assertEquals($sha1, $tpl->cached->filepath);
-    }
-    /**
-    * test getCachedFilepath with cache_id and compile_id
-    */
-    public function testGetCachedFilepathCacheIdCompileId()
-    {
-        $this->smarty->caching = true;
-        $this->smarty->cache_lifetime = 1000;
-        $tpl = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar', 'blar');
-        $sha1 = $tpl->source->uid . '#helloworld_tpl#foo|bar#blar';
-        $this->assertEquals($sha1, $tpl->cached->filepath);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+pW+m8NZ7EJjo3ASrat7RH4BTcamDJQkbgBhYe0==

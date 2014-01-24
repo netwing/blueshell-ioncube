@@ -1,106 +1,53 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/*
-| -------------------------------------------------------------------
-| MIME TYPES
-| -------------------------------------------------------------------
-| This file contains an array of mime types.  It is used by the
-| Upload class to help identify allowed file types.
-|
-*/
-
-$mimes = array(	'hqx'	=>	'application/mac-binhex40',
-				'cpt'	=>	'application/mac-compactpro',
-				'csv'	=>	array('text/x-comma-separated-values', 'text/comma-separated-values', 'application/octet-stream', 'application/vnd.ms-excel', 'application/x-csv', 'text/x-csv', 'text/csv', 'application/csv', 'application/excel', 'application/vnd.msexcel'),
-				'bin'	=>	'application/macbinary',
-				'dms'	=>	'application/octet-stream',
-				'lha'	=>	'application/octet-stream',
-				'lzh'	=>	'application/octet-stream',
-				'exe'	=>	array('application/octet-stream', 'application/x-msdownload'),
-				'class'	=>	'application/octet-stream',
-				'psd'	=>	'application/x-photoshop',
-				'so'	=>	'application/octet-stream',
-				'sea'	=>	'application/octet-stream',
-				'dll'	=>	'application/octet-stream',
-				'oda'	=>	'application/oda',
-				'pdf'	=>	array('application/pdf', 'application/x-download'),
-				'ai'	=>	'application/postscript',
-				'eps'	=>	'application/postscript',
-				'ps'	=>	'application/postscript',
-				'smi'	=>	'application/smil',
-				'smil'	=>	'application/smil',
-				'mif'	=>	'application/vnd.mif',
-				'xls'	=>	array('application/excel', 'application/vnd.ms-excel', 'application/msexcel'),
-				'ppt'	=>	array('application/powerpoint', 'application/vnd.ms-powerpoint'),
-				'wbxml'	=>	'application/wbxml',
-				'wmlc'	=>	'application/wmlc',
-				'dcr'	=>	'application/x-director',
-				'dir'	=>	'application/x-director',
-				'dxr'	=>	'application/x-director',
-				'dvi'	=>	'application/x-dvi',
-				'gtar'	=>	'application/x-gtar',
-				'gz'	=>	'application/x-gzip',
-				'php'	=>	'application/x-httpd-php',
-				'php4'	=>	'application/x-httpd-php',
-				'php3'	=>	'application/x-httpd-php',
-				'phtml'	=>	'application/x-httpd-php',
-				'phps'	=>	'application/x-httpd-php-source',
-				'js'	=>	'application/x-javascript',
-				'swf'	=>	'application/x-shockwave-flash',
-				'sit'	=>	'application/x-stuffit',
-				'tar'	=>	'application/x-tar',
-				'tgz'	=>	array('application/x-tar', 'application/x-gzip-compressed'),
-				'xhtml'	=>	'application/xhtml+xml',
-				'xht'	=>	'application/xhtml+xml',
-				'zip'	=>  array('application/x-zip', 'application/zip', 'application/x-zip-compressed'),
-				'mid'	=>	'audio/midi',
-				'midi'	=>	'audio/midi',
-				'mpga'	=>	'audio/mpeg',
-				'mp2'	=>	'audio/mpeg',
-				'mp3'	=>	array('audio/mpeg', 'audio/mpg', 'audio/mpeg3', 'audio/mp3'),
-				'aif'	=>	'audio/x-aiff',
-				'aiff'	=>	'audio/x-aiff',
-				'aifc'	=>	'audio/x-aiff',
-				'ram'	=>	'audio/x-pn-realaudio',
-				'rm'	=>	'audio/x-pn-realaudio',
-				'rpm'	=>	'audio/x-pn-realaudio-plugin',
-				'ra'	=>	'audio/x-realaudio',
-				'rv'	=>	'video/vnd.rn-realvideo',
-				'wav'	=>	array('audio/x-wav', 'audio/wave', 'audio/wav'),
-				'bmp'	=>	array('image/bmp', 'image/x-windows-bmp'),
-				'gif'	=>	'image/gif',
-				'jpeg'	=>	array('image/jpeg', 'image/pjpeg'),
-				'jpg'	=>	array('image/jpeg', 'image/pjpeg'),
-				'jpe'	=>	array('image/jpeg', 'image/pjpeg'),
-				'png'	=>	array('image/png',  'image/x-png'),
-				'tiff'	=>	'image/tiff',
-				'tif'	=>	'image/tiff',
-				'css'	=>	'text/css',
-				'html'	=>	'text/html',
-				'htm'	=>	'text/html',
-				'shtml'	=>	'text/html',
-				'txt'	=>	'text/plain',
-				'text'	=>	'text/plain',
-				'log'	=>	array('text/plain', 'text/x-log'),
-				'rtx'	=>	'text/richtext',
-				'rtf'	=>	'text/rtf',
-				'xml'	=>	'text/xml',
-				'xsl'	=>	'text/xml',
-				'mpeg'	=>	'video/mpeg',
-				'mpg'	=>	'video/mpeg',
-				'mpe'	=>	'video/mpeg',
-				'qt'	=>	'video/quicktime',
-				'mov'	=>	'video/quicktime',
-				'avi'	=>	'video/x-msvideo',
-				'movie'	=>	'video/x-sgi-movie',
-				'doc'	=>	'application/msword',
-				'docx'	=>	array('application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/zip'),
-				'xlsx'	=>	array('application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/zip'),
-				'word'	=>	array('application/msword', 'application/octet-stream'),
-				'xl'	=>	'application/excel',
-				'eml'	=>	'message/rfc822',
-				'json' => array('application/json', 'text/json')
-			);
-
-
-/* End of file mimes.php */
-/* Location: ./application/config/mimes.php */
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPzOf8B/wz9Ymbvgrd4th+KZouj3WDPcpwknmN64krtosFMGL0gyBLkU50ZwgDsWmC1eAcpKS
+sa5rPAdpmOXdnB8A8CXr2ji1C6FO9bdmQAgIGD90Rk6jjaUD/V4d5dAv45HHHXJXvTbLtyTPbFmp
+osIGRjlNXEibyQLdFTQF6/3LbbRjO5xllw8S7ROxouNwPRA6YOJg4o7s5k0dTbKJgQGcyncfONCN
+UdkmYz9ld7x9h8s4+DOMpAzHAE4xzt2gh9fl143SQNJXPrYQB9iDTnRCPmLWKL/0RlzoYkMwmjnR
+XUTfsIC797PnXG5wN8ZcWl1JrszWl+xEO29AFySMstbTYeLHJuXwSrsO/C7AlCYRUloOy6wr85nv
+xzbTUqT9lFVWfqJUyvPQxowBC71FRtpX4OiARsHRyEhS6SJktI0qhIDxyWH3rQlKs/WDRWG32N3S
+XN8aw8d4rDi1o2b3sIrY9zL07dzLFd4PTb9eFXBUYuTaa8KsVCHfJYBuZK+fuu5IkSC2iaKqwkLp
+U85+/UOlL/kXZdQoFyaq67EzmSVrJuf9BdGVNaUnzzZpNeJ7s2aIM30C/n3iMueZAkFj/79ir54s
+bxR2g85VJ0soYypHLiND1VAzL10uuapo5lklw1cm75u9/H42hvtnA7T3qzf7noQlIIAGhgnMgJfb
+vthzPepKb7lbM4Rv5nmzGIGalPDXoH8qnGQCL312C9IxcqjmEEpAzyhzmu1TkTK/gphV+csiksU0
++W8fHFATiiQrvktQQgUs16eEDX87QT+wsnVhU2TsVR848+5lbt8s1TM/JnWuHgNMZxkuQ/s5nhDf
+waYRHfomkQ9M2eCV9CwCqMcEG6L7dAEwgXZh+qwtHLsfOo4iURVTRLpXKmG6R0jTYf5RLKoGGeMj
+xfEMQl730mIMONi08KJIPFZXLC6OK6aSWWqL25km3JfK5c5a4d0DuwoUi9IAjzzKoMkiGGpryC/N
+fPDJMLPTi7e7YR5rDwSgxY+cz2k8w+ypIUia+jK4z0NQsLpUhA6Q3ytTf58qb08Q6NwU2p3G/IK+
+HePpkajCGO6QjudvJahH4bO9FdVsbGylcTE3v6X075HAo2YuIza7UaozJYZSISdCTx0IErA4/1pB
+MUV+Zw/ZH8gj8rJ30J8Vd7Kihmk7pfMaoIisG/Ir5T9Sg9iannVCip5uw8xGvNl7IWGXhY9x0eJa
+tY6D+acKNx0+Z9CQe2edyB1SERw4TI0D5ZgE/JJZaah8HjW2YE3oA2VM9fHajNQ9n5Sx8ZI9hgcS
+Olt/DruD60pCMMLOHvQCK3K9CugKeVACyxg6HFz00wIZwcaEVX4f5ydhXFp7KQDGn1vMPau47K35
+9sdBUhQVWo1Y0/FZdBQNjahJMTNYA9KpK6MT5+wiBtXd4L89Am/zRQluFkoHcUGUqlC3DSOoadzs
+LvytR/1JTECc+7Zwsr/A5MGsUlQ8f9q7aVSB5dTIDC/9cX9SXsiKa9guNggA8IhaU1nQVd5QvYaK
+MPeTItik2/ue9rpCexzmkaBpuLYUxGJltk3tNm1sdRP3W5Yf+E3bj5LPTw2g1MOUm8x1pbqJXZUb
+4p1elPxZRy4cHJSoT9mV3qFxdR3B34tWJoRPvFZV/UgXyapcL8omV1gFjY0QII4/NP9VL7J5MJiB
+/zVs9Xwly2zW4e56e0HOLz5zYvGRMJMVKq8R72zA/e0Zemx5QmNnyv8ZOp5rbRokJ7ptNfB0g7oN
+Uf9z9sUUwOrRgPxGUnJAj4rqQ1RO/TTPClnmIpQRQsWPgP5AQPLxK4cRCY1ffIVj3pTn7JqYFQjq
+icG5hIjercjLUXr3/aWJmMWS4wQ0OMSqDNFYArCL/vakJBD/erzA1k8abXBN9T48R+2QJB8CxTfX
+T418uojhWsurNDZ8o2AzzYe6wkmU5zwP5hVaGROgJt14Q2evB0cTtY4Kh69oox1n+dYgI3dh+Kid
+moJM8sxxNf6cTF9gfX6+AqgC3bYlxjET9yC6qX0iiUh9UP4E8mbEAuk4ToevE40P+xdXyI4lnsjJ
+/W0FeYCEjw2crxHKErcMEr2Go7qg8Vb4PE8k8QnEoIjVwnTP5CSGmalkpcBeRJ9bNc8KoDr9jFQP
+Yjp67u/ddV92Cr9F5xNvVTl5IOJLfxg79arzNn6F8YcVzZ5AJvI1xNRJXDUCn3H/Hqx/8fPIPDQf
+h0L6cOAjL7FyeIEm2lh5sSLgI+/8B0J/ecQnfrH+J4XmfYpp+wDuNlC7c4tYKNESLFOOxdT3RzhU
+gVzGTMXIKXG72/WhUlOElN1RDAt4DYuw9+RK7tViFeMdRDAO7TG1NBM4pi5P0BkCPPnqyt23ZFi8
+GkXtbZQjVPzkURc1Jm9JDLUjZ0EzoCsdt6Afids9WI5ij9C4h2+lAY5dq1GBtDuh/wnHhGQZN8P9
+wKc8JNkqllB5T06GZ4E4w1KTYVAVq4V/x8ABCG/SdW6VNS+gn+zSANdPSZSTT22Za9veGvzDxFb2
+A/6stCt1B9fSGBFzNq8i2SdGSTcw1masvcto4mqJgDEjfrZt3PzY7xQQJkDlufeY6yAUllGuRZM7
+BprNK85tY5/pRe9bM7iKVxVCJ8o1AeqvJfaNEmCXTXIRTnGxAvoRSx/JvGz2lAE+3rRL6aqeSl4j
+IcxuP8b6eBoNuKD2ajBy2tt4JudslD7C+T34fzIXHS/XTzS7EBMKLL85sZtwNJr0/vA7zb31DeQy
+SXkUGSX6NEFbQCVoIz2kMcUVhxZAXvt4EaJZD0jJQ8aKBcU+8EgyHWwObX/s1VEjScZOGAEp0JaS
+5+EEkASJ8AFlbY0he6QV7dRda9p8Tl2Th41XkA5P8pZ8/3I517YsDoPbX+sE/q47nv+2V7Zqa3Xp
+m0A/G7eYgvbs1AZCD0VmuG0wbECpdX31kNf3yQS1soyfQfqBqIE77KLgo/ml7Bg+BJPDRBLoMq7F
+EiQqRjJnPrKky5hkWjZWv228X5rTUObxk65WNP3f77+yp1VO6MkldoXiGcQFbnzfoLrznxbjuqlY
+MGbfLs3j1SlWgX5LDU6iAj61SIZ/QkpBuBPCFGWfejkvoueOOP1PUHSlH4pXul7TVwzEw8evkOcK
+otOj2n+TNj5AuxU/BlUBYc4mkzBOovbxCox54lANJvbgK29lm6BIW5FsTUCqCuPMn91OQevaJBfo
+KL5RVdxbfHHWthKD7YuYdaoCAAPr+9XCRN6hM2CNP9OgpCDAXBUCHw4j481VkxNTXknRuzU4TDKl
+EFBxCAQ1tDPDy7TiyLxaZU3ji+K81pzAjxZQV18zybY0uGmWuhVALuqR+8H8aaiDCekHznOVvaDn
+dpKMeXV0PW3UwRDw1+tfabbyjsbQsezm9s2xy2j73XKmkkSE1bTdszJ8xMPyiqpqT2Pj0134OSTm
+ysri4BMZ4hAEo15ZRcqW2uzsKq5vJyHKupMrrgL4FfHhIN4VsT0Lr6ytBn3IvM2EOAEayVPqzrXG
+v+RQ0uw4Ka/WJX5ztfcDeSL8A4aFlyToKCACAFSf8IG0kX84hmO3Ywf3KgrcwVjKXxRuQHOs3dDw
+HzBiBBpPS+qg5tvdk1FDp4z1L695h+v9aLirevd/BfBRZebkPMR7R0V7dcLukHse5J4RovlazCuP
+oFz1hCyfg6kmMprEmQI3AhacIrzzpI9+9yASTkZCMpRgzZqUGVx49R0AzxMQxwQoygi6QRTjm1Xx
+coIE8R2Nf2wMGWJKikDt8CW1BllQDus0mS4X1jgYkneeoRJi12iM

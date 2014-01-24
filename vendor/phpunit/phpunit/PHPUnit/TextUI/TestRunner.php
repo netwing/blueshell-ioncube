@@ -1,817 +1,345 @@
-<?php
-/**
- * PHPUnit
- *
- * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @package    PHPUnit
- * @subpackage TextUI
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      File available since Release 2.0.0
- */
-
-/**
- * A TestRunner for the Command Line Interface (CLI)
- * PHP SAPI Module.
- *
- * @package    PHPUnit
- * @subpackage TextUI
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      Class available since Release 2.0.0
- */
-class PHPUnit_TextUI_TestRunner extends PHPUnit_Runner_BaseTestRunner
-{
-    const SUCCESS_EXIT   = 0;
-    const FAILURE_EXIT   = 1;
-    const EXCEPTION_EXIT = 2;
-
-    /**
-     * @var PHP_CodeCoverage_Filter
-     */
-    protected $codeCoverageFilter;
-
-    /**
-     * @var PHPUnit_Runner_TestSuiteLoader
-     */
-    protected $loader = NULL;
-
-    /**
-     * @var PHPUnit_TextUI_ResultPrinter
-     */
-    protected $printer = NULL;
-
-    /**
-     * @var boolean
-     */
-    protected static $versionStringPrinted = FALSE;
-
-    /**
-     * @param PHPUnit_Runner_TestSuiteLoader $loader
-     * @param PHP_CodeCoverage_Filter        $filter
-     * @since Method available since Release 3.4.0
-     */
-    public function __construct(PHPUnit_Runner_TestSuiteLoader $loader = NULL, PHP_CodeCoverage_Filter $filter = NULL)
-    {
-        if ($filter === NULL) {
-            $filter = new PHP_CodeCoverage_Filter;
-        }
-
-        $this->codeCoverageFilter = $filter;
-        $this->loader             = $loader;
-    }
-
-    /**
-     * @param  mixed $test
-     * @param  array $arguments
-     * @throws PHPUnit_Framework_Exception
-     */
-    public static function run($test, array $arguments = array())
-    {
-        if ($test instanceof ReflectionClass) {
-            $test = new PHPUnit_Framework_TestSuite($test);
-        }
-
-        if ($test instanceof PHPUnit_Framework_Test) {
-            $aTestRunner = new PHPUnit_TextUI_TestRunner;
-
-            return $aTestRunner->doRun(
-              $test,
-              $arguments
-            );
-        } else {
-            throw new PHPUnit_Framework_Exception(
-              'No test case or test suite found.'
-            );
-        }
-    }
-
-    /**
-     * @return PHPUnit_Framework_TestResult
-     */
-    protected function createTestResult()
-    {
-        return new PHPUnit_Framework_TestResult;
-    }
-
-    /**
-     * @param  PHPUnit_Framework_Test $suite
-     * @param  array                  $arguments
-     * @return PHPUnit_Framework_TestResult
-     */
-    public function doRun(PHPUnit_Framework_Test $suite, array $arguments = array())
-    {
-        $this->handleConfiguration($arguments);
-
-        if (isset($arguments['bootstrap'])) {
-            $GLOBALS['__PHPUNIT_BOOTSTRAP'] = $arguments['bootstrap'];
-        }
-
-        if ($arguments['backupGlobals'] === FALSE) {
-            $suite->setBackupGlobals(FALSE);
-        }
-
-        if ($arguments['backupStaticAttributes'] === TRUE) {
-            $suite->setBackupStaticAttributes(TRUE);
-        }
-
-        if (is_integer($arguments['repeat'])) {
-            $test = new PHPUnit_Extensions_RepeatedTest(
-              $suite,
-              $arguments['repeat'],
-              $arguments['filter'],
-              $arguments['groups'],
-              $arguments['excludeGroups'],
-              $arguments['processIsolation']
-            );
-
-            $suite = new PHPUnit_Framework_TestSuite();
-            $suite->addTest($test);
-        }
-
-        $result = $this->createTestResult();
-
-        if (!$arguments['convertErrorsToExceptions']) {
-            $result->convertErrorsToExceptions(FALSE);
-        }
-
-        if (!$arguments['convertNoticesToExceptions']) {
-            PHPUnit_Framework_Error_Notice::$enabled = FALSE;
-        }
-
-        if (!$arguments['convertWarningsToExceptions']) {
-            PHPUnit_Framework_Error_Warning::$enabled = FALSE;
-        }
-
-        if ($arguments['stopOnError']) {
-            $result->stopOnError(TRUE);
-        }
-
-        if ($arguments['stopOnFailure']) {
-            $result->stopOnFailure(TRUE);
-        }
-
-        if ($arguments['stopOnIncomplete']) {
-            $result->stopOnIncomplete(TRUE);
-        }
-
-        if ($arguments['stopOnSkipped']) {
-            $result->stopOnSkipped(TRUE);
-        }
-
-        if ($this->printer === NULL) {
-            if (isset($arguments['printer']) &&
-                $arguments['printer'] instanceof PHPUnit_Util_Printer) {
-                $this->printer = $arguments['printer'];
-            } else {
-                $this->printer = new PHPUnit_TextUI_ResultPrinter(
-                  NULL,
-                  $arguments['verbose'],
-                  $arguments['colors'],
-                  $arguments['debug']
-                );
-            }
-        }
-
-        if (!$this->printer instanceof PHPUnit_Util_Log_TAP &&
-            !self::$versionStringPrinted) {
-            $this->printer->write(
-              PHPUnit_Runner_Version::getVersionString() . "\n\n"
-            );
-
-            if (isset($arguments['configuration'])) {
-                $this->printer->write(
-                  sprintf(
-                    "Configuration read from %s\n\n",
-                    $arguments['configuration']->getFilename()
-                  )
-                );
-            }
-        }
-
-        foreach ($arguments['listeners'] as $listener) {
-            $result->addListener($listener);
-        }
-
-        $result->addListener($this->printer);
-
-        if ($this->printer instanceof PHPUnit_TextUI_ResultPrinter) {
-            $result->addListener(new PHPUnit_Util_DeprecatedFeature_Logger);
-        }
-
-        if (isset($arguments['testdoxHTMLFile'])) {
-            $result->addListener(
-              new PHPUnit_Util_TestDox_ResultPrinter_HTML(
-                $arguments['testdoxHTMLFile']
-              )
-            );
-        }
-
-        if (isset($arguments['testdoxTextFile'])) {
-            $result->addListener(
-              new PHPUnit_Util_TestDox_ResultPrinter_Text(
-                $arguments['testdoxTextFile']
-              )
-            );
-        }
-
-        $codeCoverageReports = 0;
-
-        if (extension_loaded('xdebug')) {
-            if (isset($arguments['coverageClover'])) {
-                $codeCoverageReports++;
-            }
-
-            if (isset($arguments['reportDirectory'])) {
-                $codeCoverageReports++;
-            }
-
-            if (isset($arguments['coveragePHP'])) {
-                $codeCoverageReports++;
-            }
-
-            if (isset($arguments['coverageText'])) {
-                $codeCoverageReports++;
-            }
-        }
-
-        if ($codeCoverageReports > 0) {
-            $codeCoverage = new PHP_CodeCoverage(
-              NULL, $this->codeCoverageFilter
-            );
-
-            $codeCoverage->setAddUncoveredFilesFromWhitelist(
-              $arguments['addUncoveredFilesFromWhitelist']
-            );
-
-            $codeCoverage->setProcessUncoveredFilesFromWhitelist(
-              $arguments['processUncoveredFilesFromWhitelist']
-            );
-
-            if (isset($arguments['forceCoversAnnotation'])) {
-                $codeCoverage->setForceCoversAnnotation(
-                  $arguments['forceCoversAnnotation']
-                );
-            }
-
-            if (isset($arguments['mapTestClassNameToCoveredClassName'])) {
-                $codeCoverage->setMapTestClassNameToCoveredClassName(
-                  $arguments['mapTestClassNameToCoveredClassName']
-                );
-            }
-
-            $result->setCodeCoverage($codeCoverage);
-        }
-
-        if ($codeCoverageReports > 1) {
-            if (isset($arguments['cacheTokens'])) {
-                $codeCoverage->setCacheTokens($arguments['cacheTokens']);
-            }
-        }
-
-        if (isset($arguments['jsonLogfile'])) {
-            $result->addListener(
-              new PHPUnit_Util_Log_JSON($arguments['jsonLogfile'])
-            );
-        }
-
-        if (isset($arguments['tapLogfile'])) {
-            $result->addListener(
-              new PHPUnit_Util_Log_TAP($arguments['tapLogfile'])
-            );
-        }
-
-        if (isset($arguments['junitLogfile'])) {
-            $result->addListener(
-              new PHPUnit_Util_Log_JUnit(
-                $arguments['junitLogfile'], $arguments['logIncompleteSkipped']
-              )
-            );
-        }
-
-        if ($arguments['strict']) {
-            $result->strictMode(TRUE);
-
-            $result->setTimeoutForSmallTests(
-              $arguments['timeoutForSmallTests']
-            );
-
-            $result->setTimeoutForMediumTests(
-              $arguments['timeoutForMediumTests']
-            );
-
-            $result->setTimeoutForLargeTests(
-              $arguments['timeoutForLargeTests']
-            );
-        }
-
-        $suite->run(
-          $result,
-          $arguments['filter'],
-          $arguments['groups'],
-          $arguments['excludeGroups'],
-          $arguments['processIsolation']
-        );
-
-        unset($suite);
-        $result->flushListeners();
-
-        if ($this->printer instanceof PHPUnit_TextUI_ResultPrinter) {
-            $this->printer->printResult($result);
-        }
-
-        if (isset($codeCoverage)) {
-            if (isset($arguments['coverageClover'])) {
-                $this->printer->write(
-                  "\nGenerating code coverage report in Clover XML format ..."
-                );
-
-                $writer = new PHP_CodeCoverage_Report_Clover;
-                $writer->process($codeCoverage, $arguments['coverageClover']);
-
-                $this->printer->write(" done\n");
-                unset($writer);
-            }
-
-            if (isset($arguments['reportDirectory'])) {
-                $this->printer->write(
-                  "\nGenerating code coverage report in HTML format ..."
-                );
-
-                $writer = new PHP_CodeCoverage_Report_HTML(
-                  $arguments['reportCharset'],
-                  $arguments['reportHighlight'],
-                  $arguments['reportLowUpperBound'],
-                  $arguments['reportHighLowerBound'],
-                  sprintf(
-                    ' and <a href="http://phpunit.de/">PHPUnit %s</a>',
-                    PHPUnit_Runner_Version::id()
-                  )
-                );
-
-                $writer->process($codeCoverage, $arguments['reportDirectory']);
-
-                $this->printer->write(" done\n");
-                unset($writer);
-            }
-
-            if (isset($arguments['coveragePHP'])) {
-                $this->printer->write(
-                  "\nGenerating code coverage report in PHP format ..."
-                );
-
-                $writer = new PHP_CodeCoverage_Report_PHP;
-                $writer->process($codeCoverage, $arguments['coveragePHP']);
-
-                $this->printer->write(" done\n");
-                unset($writer);
-            }
-
-            if (isset($arguments['coverageText'])) {
-                if ($arguments['coverageText'] == 'php://stdout') {
-                    $outputStream = $this->printer;
-                    $colors       = (bool)$arguments['colors'];
-                } else {
-                    $outputStream = new PHPUnit_Util_Printer($arguments['coverageText']);
-                    $colors       = FALSE;
-                }
-
-                $writer = new PHP_CodeCoverage_Report_Text(
-                  $outputStream,
-                  $arguments['reportLowUpperBound'],
-                  $arguments['reportHighLowerBound'],
-                  $arguments['coverageTextShowUncoveredFiles']
-                );
-
-                $writer->process($codeCoverage, $colors);
-            }
-        }
-
-        return $result;
-    }
-
-    /**
-     * @param  PHPUnit_TextUI_ResultPrinter $resultPrinter
-     */
-    public function setPrinter(PHPUnit_TextUI_ResultPrinter $resultPrinter)
-    {
-        $this->printer = $resultPrinter;
-    }
-
-    /**
-     * Override to define how to handle a failed loading of
-     * a test suite.
-     *
-     * @param  string  $message
-     */
-    protected function runFailed($message)
-    {
-        self::printVersionString();
-        self::write($message . PHP_EOL);
-        exit(self::FAILURE_EXIT);
-    }
-
-    /**
-     * @param  string $buffer
-     * @since  Method available since Release 3.1.0
-     */
-    protected static function write($buffer)
-    {
-        if (PHP_SAPI != 'cli') {
-            $buffer = htmlspecialchars($buffer);
-        }
-
-        print $buffer;
-    }
-
-    /**
-     * Returns the loader to be used.
-     *
-     * @return PHPUnit_Runner_TestSuiteLoader
-     * @since  Method available since Release 2.2.0
-     */
-    public function getLoader()
-    {
-        if ($this->loader === NULL) {
-            $this->loader = new PHPUnit_Runner_StandardTestSuiteLoader;
-        }
-
-        return $this->loader;
-    }
-
-    /**
-     */
-    public static function showError($message)
-    {
-        self::printVersionString();
-        self::write($message . "\n");
-
-        exit(self::FAILURE_EXIT);
-    }
-
-    /**
-     */
-    public static function printVersionString()
-    {
-        if (!self::$versionStringPrinted) {
-            self::write(PHPUnit_Runner_Version::getVersionString() . "\n\n");
-            self::$versionStringPrinted = TRUE;
-        }
-    }
-
-    /**
-     * @param  array $arguments
-     * @since  Method available since Release 3.2.1
-     */
-    protected function handleConfiguration(array &$arguments)
-    {
-        if (isset($arguments['configuration']) &&
-            !$arguments['configuration'] instanceof PHPUnit_Util_Configuration) {
-            $arguments['configuration'] = PHPUnit_Util_Configuration::getInstance(
-              $arguments['configuration']
-            );
-        }
-
-        $arguments['debug']     = isset($arguments['debug'])     ? $arguments['debug']     : FALSE;
-        $arguments['filter']    = isset($arguments['filter'])    ? $arguments['filter']    : FALSE;
-        $arguments['listeners'] = isset($arguments['listeners']) ? $arguments['listeners'] : array();
-
-        if (isset($arguments['configuration'])) {
-            $arguments['configuration']->handlePHPConfiguration();
-
-            $phpunitConfiguration = $arguments['configuration']->getPHPUnitConfiguration();
-
-            if (isset($phpunitConfiguration['backupGlobals']) &&
-                !isset($arguments['backupGlobals'])) {
-                $arguments['backupGlobals'] = $phpunitConfiguration['backupGlobals'];
-            }
-
-            if (isset($phpunitConfiguration['backupStaticAttributes']) &&
-                !isset($arguments['backupStaticAttributes'])) {
-                $arguments['backupStaticAttributes'] = $phpunitConfiguration['backupStaticAttributes'];
-            }
-
-            if (isset($phpunitConfiguration['bootstrap']) &&
-                !isset($arguments['bootstrap'])) {
-                $arguments['bootstrap'] = $phpunitConfiguration['bootstrap'];
-            }
-
-            if (isset($phpunitConfiguration['cacheTokens']) &&
-                !isset($arguments['cacheTokens'])) {
-                $arguments['cacheTokens'] = $phpunitConfiguration['cacheTokens'];
-            }
-
-            if (isset($phpunitConfiguration['colors']) &&
-                !isset($arguments['colors'])) {
-                $arguments['colors'] = $phpunitConfiguration['colors'];
-            }
-
-            if (isset($phpunitConfiguration['convertErrorsToExceptions']) &&
-                !isset($arguments['convertErrorsToExceptions'])) {
-                $arguments['convertErrorsToExceptions'] = $phpunitConfiguration['convertErrorsToExceptions'];
-            }
-
-            if (isset($phpunitConfiguration['convertNoticesToExceptions']) &&
-                !isset($arguments['convertNoticesToExceptions'])) {
-                $arguments['convertNoticesToExceptions'] = $phpunitConfiguration['convertNoticesToExceptions'];
-            }
-
-            if (isset($phpunitConfiguration['convertWarningsToExceptions']) &&
-                !isset($arguments['convertWarningsToExceptions'])) {
-                $arguments['convertWarningsToExceptions'] = $phpunitConfiguration['convertWarningsToExceptions'];
-            }
-
-            if (isset($phpunitConfiguration['processIsolation']) &&
-                !isset($arguments['processIsolation'])) {
-                $arguments['processIsolation'] = $phpunitConfiguration['processIsolation'];
-            }
-
-            if (isset($phpunitConfiguration['stopOnFailure']) &&
-                !isset($arguments['stopOnFailure'])) {
-                $arguments['stopOnFailure'] = $phpunitConfiguration['stopOnFailure'];
-            }
-
-            if (isset($phpunitConfiguration['timeoutForSmallTests']) &&
-                !isset($arguments['timeoutForSmallTests'])) {
-                $arguments['timeoutForSmallTests'] = $phpunitConfiguration['timeoutForSmallTests'];
-            }
-
-            if (isset($phpunitConfiguration['timeoutForMediumTests']) &&
-                !isset($arguments['timeoutForMediumTests'])) {
-                $arguments['timeoutForMediumTests'] = $phpunitConfiguration['timeoutForMediumTests'];
-            }
-
-            if (isset($phpunitConfiguration['timeoutForLargeTests']) &&
-                !isset($arguments['timeoutForLargeTests'])) {
-                $arguments['timeoutForLargeTests'] = $phpunitConfiguration['timeoutForLargeTests'];
-            }
-
-            if (isset($phpunitConfiguration['strict']) &&
-                !isset($arguments['strict'])) {
-                $arguments['strict'] = $phpunitConfiguration['strict'];
-            }
-
-            if (isset($phpunitConfiguration['verbose']) &&
-                !isset($arguments['verbose'])) {
-                $arguments['verbose'] = $phpunitConfiguration['verbose'];
-            }
-
-            if (isset($phpunitConfiguration['forceCoversAnnotation']) &&
-                !isset($arguments['forceCoversAnnotation'])) {
-                $arguments['forceCoversAnnotation'] = $phpunitConfiguration['forceCoversAnnotation'];
-            }
-
-            if (isset($phpunitConfiguration['mapTestClassNameToCoveredClassName']) &&
-                !isset($arguments['mapTestClassNameToCoveredClassName'])) {
-                $arguments['mapTestClassNameToCoveredClassName'] = $phpunitConfiguration['mapTestClassNameToCoveredClassName'];
-            }
-
-            $groupCliArgs = array();
-            if (!empty($arguments['groups'])) {
-                $groupCliArgs = $arguments['groups'];
-            }
-
-            $groupConfiguration = $arguments['configuration']->getGroupConfiguration();
-
-            if (!empty($groupConfiguration['include']) &&
-                !isset($arguments['groups'])) {
-                $arguments['groups'] = $groupConfiguration['include'];
-            }
-
-            if (!empty($groupConfiguration['exclude']) &&
-                !isset($arguments['excludeGroups'])) {
-                $arguments['excludeGroups'] = array_diff($groupConfiguration['exclude'], $groupCliArgs);
-            }
-
-            foreach ($arguments['configuration']->getListenerConfiguration() as $listener) {
-                if (!class_exists($listener['class'], FALSE) &&
-                    $listener['file'] !== '') {
-                    require_once $listener['file'];
-                }
-
-                if (class_exists($listener['class'])) {
-                    if (count($listener['arguments']) == 0) {
-                        $listener = new $listener['class'];
-                    } else {
-                        $listenerClass = new ReflectionClass(
-                                           $listener['class']
-                                         );
-                        $listener      = $listenerClass->newInstanceArgs(
-                                           $listener['arguments']
-                                         );
-                    }
-
-                    if ($listener instanceof PHPUnit_Framework_TestListener) {
-                        $arguments['listeners'][] = $listener;
-                    }
-                }
-            }
-
-            $loggingConfiguration = $arguments['configuration']->getLoggingConfiguration();
-
-            if (isset($loggingConfiguration['coverage-html']) &&
-                !isset($arguments['reportDirectory'])) {
-                if (isset($loggingConfiguration['charset']) &&
-                    !isset($arguments['reportCharset'])) {
-                    $arguments['reportCharset'] = $loggingConfiguration['charset'];
-                }
-
-                if (isset($loggingConfiguration['highlight']) &&
-                    !isset($arguments['reportHighlight'])) {
-                    $arguments['reportHighlight'] = $loggingConfiguration['highlight'];
-                }
-
-                if (isset($loggingConfiguration['lowUpperBound']) &&
-                    !isset($arguments['reportLowUpperBound'])) {
-                    $arguments['reportLowUpperBound'] = $loggingConfiguration['lowUpperBound'];
-                }
-
-                if (isset($loggingConfiguration['highLowerBound']) &&
-                    !isset($arguments['reportHighLowerBound'])) {
-                    $arguments['reportHighLowerBound'] = $loggingConfiguration['highLowerBound'];
-                }
-
-                $arguments['reportDirectory'] = $loggingConfiguration['coverage-html'];
-            }
-
-            if (isset($loggingConfiguration['coverage-clover']) &&
-                !isset($arguments['coverageClover'])) {
-                $arguments['coverageClover'] = $loggingConfiguration['coverage-clover'];
-            }
-
-            if (isset($loggingConfiguration['coverage-php']) &&
-                !isset($arguments['coveragePHP'])) {
-                $arguments['coveragePHP'] = $loggingConfiguration['coverage-php'];
-            }
-
-            if (isset($loggingConfiguration['coverage-text']) &&
-                !isset($arguments['coverageText'])) {
-                $arguments['coverageText'] = $loggingConfiguration['coverage-text'];
-                if (isset($loggingConfiguration['coverageTextShowUncoveredFiles'])) {
-                    $arguments['coverageTextShowUncoveredFiles'] = $loggingConfiguration['coverageTextShowUncoveredFiles'];
-                } else {
-                    $arguments['coverageTextShowUncoveredFiles'] = FALSE;
-                }
-            }
-
-            if (isset($loggingConfiguration['json']) &&
-                !isset($arguments['jsonLogfile'])) {
-                $arguments['jsonLogfile'] = $loggingConfiguration['json'];
-            }
-
-            if (isset($loggingConfiguration['plain'])) {
-                $arguments['listeners'][] = new PHPUnit_TextUI_ResultPrinter(
-                  $loggingConfiguration['plain'], TRUE
-                );
-            }
-
-            if (isset($loggingConfiguration['tap']) &&
-                !isset($arguments['tapLogfile'])) {
-                $arguments['tapLogfile'] = $loggingConfiguration['tap'];
-            }
-
-            if (isset($loggingConfiguration['junit']) &&
-                !isset($arguments['junitLogfile'])) {
-                $arguments['junitLogfile'] = $loggingConfiguration['junit'];
-
-                if (isset($loggingConfiguration['logIncompleteSkipped']) &&
-                    !isset($arguments['logIncompleteSkipped'])) {
-                    $arguments['logIncompleteSkipped'] = $loggingConfiguration['logIncompleteSkipped'];
-                }
-            }
-
-            if (isset($loggingConfiguration['testdox-html']) &&
-                !isset($arguments['testdoxHTMLFile'])) {
-                $arguments['testdoxHTMLFile'] = $loggingConfiguration['testdox-html'];
-            }
-
-            if (isset($loggingConfiguration['testdox-text']) &&
-                !isset($arguments['testdoxTextFile'])) {
-                $arguments['testdoxTextFile'] = $loggingConfiguration['testdox-text'];
-            }
-
-            if ((isset($arguments['coverageClover']) ||
-                isset($arguments['reportDirectory']) ||
-                isset($arguments['coveragePHP']) ||
-                isset($arguments['coverageText'])) &&
-                extension_loaded('xdebug')) {
-
-                $filterConfiguration = $arguments['configuration']->getFilterConfiguration();
-                $arguments['addUncoveredFilesFromWhitelist'] = $filterConfiguration['whitelist']['addUncoveredFilesFromWhitelist'];
-                $arguments['processUncoveredFilesFromWhitelist'] = $filterConfiguration['whitelist']['processUncoveredFilesFromWhitelist'];
-
-                foreach ($filterConfiguration['blacklist']['include']['directory'] as $dir) {
-                    $this->codeCoverageFilter->addDirectoryToBlacklist(
-                      $dir['path'], $dir['suffix'], $dir['prefix'], $dir['group']
-                    );
-                }
-
-                foreach ($filterConfiguration['blacklist']['include']['file'] as $file) {
-                    $this->codeCoverageFilter->addFileToBlacklist($file);
-                }
-
-                foreach ($filterConfiguration['blacklist']['exclude']['directory'] as $dir) {
-                    $this->codeCoverageFilter->removeDirectoryFromBlacklist(
-                      $dir['path'], $dir['suffix'], $dir['prefix'], $dir['group']
-                    );
-                }
-
-                foreach ($filterConfiguration['blacklist']['exclude']['file'] as $file) {
-                    $this->codeCoverageFilter->removeFileFromBlacklist($file);
-                }
-
-                foreach ($filterConfiguration['whitelist']['include']['directory'] as $dir) {
-                    $this->codeCoverageFilter->addDirectoryToWhitelist(
-                      $dir['path'], $dir['suffix'], $dir['prefix']
-                    );
-                }
-
-                foreach ($filterConfiguration['whitelist']['include']['file'] as $file) {
-                    $this->codeCoverageFilter->addFileToWhitelist($file);
-                }
-
-                foreach ($filterConfiguration['whitelist']['exclude']['directory'] as $dir) {
-                    $this->codeCoverageFilter->removeDirectoryFromWhitelist(
-                      $dir['path'], $dir['suffix'], $dir['prefix']
-                    );
-                }
-
-                foreach ($filterConfiguration['whitelist']['exclude']['file'] as $file) {
-                    $this->codeCoverageFilter->removeFileFromWhitelist($file);
-                }
-            }
-        }
-
-        $arguments['addUncoveredFilesFromWhitelist']     = isset($arguments['addUncoveredFilesFromWhitelist'])     ? $arguments['addUncoveredFilesFromWhitelist']     : TRUE;
-        $arguments['processUncoveredFilesFromWhitelist'] = isset($arguments['processUncoveredFilesFromWhitelist']) ? $arguments['processUncoveredFilesFromWhitelist'] : FALSE;
-        $arguments['backupGlobals']                      = isset($arguments['backupGlobals'])                      ? $arguments['backupGlobals']                      : NULL;
-        $arguments['backupStaticAttributes']             = isset($arguments['backupStaticAttributes'])             ? $arguments['backupStaticAttributes']             : NULL;
-        $arguments['cacheTokens']                        = isset($arguments['cacheTokens'])                        ? $arguments['cacheTokens']                        : FALSE;
-        $arguments['colors']                             = isset($arguments['colors'])                             ? $arguments['colors']                             : FALSE;
-        $arguments['convertErrorsToExceptions']          = isset($arguments['convertErrorsToExceptions'])          ? $arguments['convertErrorsToExceptions']          : TRUE;
-        $arguments['convertNoticesToExceptions']         = isset($arguments['convertNoticesToExceptions'])         ? $arguments['convertNoticesToExceptions']         : TRUE;
-        $arguments['convertWarningsToExceptions']        = isset($arguments['convertWarningsToExceptions'])        ? $arguments['convertWarningsToExceptions']        : TRUE;
-        $arguments['excludeGroups']                      = isset($arguments['excludeGroups'])                      ? $arguments['excludeGroups']                      : array();
-        $arguments['groups']                             = isset($arguments['groups'])                             ? $arguments['groups']                             : array();
-        $arguments['logIncompleteSkipped']               = isset($arguments['logIncompleteSkipped'])               ? $arguments['logIncompleteSkipped']               : FALSE;
-        $arguments['processIsolation']                   = isset($arguments['processIsolation'])                   ? $arguments['processIsolation']                   : FALSE;
-        $arguments['repeat']                             = isset($arguments['repeat'])                             ? $arguments['repeat']                             : FALSE;
-        $arguments['reportCharset']                      = isset($arguments['reportCharset'])                      ? $arguments['reportCharset']                      : 'UTF-8';
-        $arguments['reportHighlight']                    = isset($arguments['reportHighlight'])                    ? $arguments['reportHighlight']                    : FALSE;
-        $arguments['reportHighLowerBound']               = isset($arguments['reportHighLowerBound'])               ? $arguments['reportHighLowerBound']               : 70;
-        $arguments['reportLowUpperBound']                = isset($arguments['reportLowUpperBound'])                ? $arguments['reportLowUpperBound']                : 35;
-        $arguments['stopOnError']                        = isset($arguments['stopOnError'])                        ? $arguments['stopOnError']                        : FALSE;
-        $arguments['stopOnFailure']                      = isset($arguments['stopOnFailure'])                      ? $arguments['stopOnFailure']                      : FALSE;
-        $arguments['stopOnIncomplete']                   = isset($arguments['stopOnIncomplete'])                   ? $arguments['stopOnIncomplete']                   : FALSE;
-        $arguments['stopOnSkipped']                      = isset($arguments['stopOnSkipped'])                      ? $arguments['stopOnSkipped']                      : FALSE;
-        $arguments['timeoutForSmallTests']               = isset($arguments['timeoutForSmallTests'])               ? $arguments['timeoutForSmallTests']               : 1;
-        $arguments['timeoutForMediumTests']              = isset($arguments['timeoutForMediumTests'])              ? $arguments['timeoutForMediumTests']              : 10;
-        $arguments['timeoutForLargeTests']               = isset($arguments['timeoutForLargeTests'])               ? $arguments['timeoutForLargeTests']               : 60;
-        $arguments['strict']                             = isset($arguments['strict'])                             ? $arguments['strict']                             : FALSE;
-        $arguments['verbose']                            = isset($arguments['verbose'])                            ? $arguments['verbose']                            : FALSE;
-
-        if ($arguments['filter'] !== FALSE &&
-            preg_match('/^[a-zA-Z0-9_]/', $arguments['filter'])) {
-            // Escape delimiters in regular expression. Do NOT use preg_quote,
-            // to keep magic characters.
-            $arguments['filter'] = '/' . str_replace(
-              '/', '\\/', $arguments['filter']
-            ) . '/';
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+gLZY+v0Kn1LVbkYy7lIkIh+974fW

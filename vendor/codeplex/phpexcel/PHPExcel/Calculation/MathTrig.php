@@ -1,1366 +1,471 @@
-<?php
-/**
- * PHPExcel
- *
- * Copyright (c) 2006 - 2012 PHPExcel
- *
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation; either
- * version 2.1 of the License, or (at your option) any later version.
- *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
- *
- * @category	PHPExcel
- * @package		PHPExcel_Calculation
- * @copyright	Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- * @license		http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
- * @version		1.7.8, 2012-10-12
- */
-
-
-/** PHPExcel root directory */
-if (!defined('PHPEXCEL_ROOT')) {
-	/**
-	 * @ignore
-	 */
-	define('PHPEXCEL_ROOT', dirname(__FILE__) . '/../../');
-	require(PHPEXCEL_ROOT . 'PHPExcel/Autoloader.php');
-}
-
-
-/**
- * PHPExcel_Calculation_MathTrig
- *
- * @category	PHPExcel
- * @package		PHPExcel_Calculation
- * @copyright	Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- */
-class PHPExcel_Calculation_MathTrig {
-
-	//
-	//	Private method to return an array of the factors of the input value
-	//
-	private static function _factors($value) {
-		$startVal = floor(sqrt($value));
-
-		$factorArray = array();
-		for ($i = $startVal; $i > 1; --$i) {
-			if (($value % $i) == 0) {
-				$factorArray = array_merge($factorArray,self::_factors($value / $i));
-				$factorArray = array_merge($factorArray,self::_factors($i));
-				if ($i <= sqrt($value)) {
-					break;
-				}
-			}
-		}
-		if (!empty($factorArray)) {
-			rsort($factorArray);
-			return $factorArray;
-		} else {
-			return array((integer) $value);
-		}
-	}	//	function _factors()
-
-
-	private static function _romanCut($num, $n) {
-		return ($num - ($num % $n ) ) / $n;
-	}	//	function _romanCut()
-
-
-	/**
-	 * ATAN2
-	 *
-	 * This function calculates the arc tangent of the two variables x and y. It is similar to
-	 *		calculating the arc tangent of y ÷ x, except that the signs of both arguments are used
-	 *		to determine the quadrant of the result.
-	 * The arctangent is the angle from the x-axis to a line containing the origin (0, 0) and a
-	 *		point with coordinates (xCoordinate, yCoordinate). The angle is given in radians between
-	 *		-pi and pi, excluding -pi.
-	 *
-	 * Note that the Excel ATAN2() function accepts its arguments in the reverse order to the standard
-	 *		PHP atan2() function, so we need to reverse them here before calling the PHP atan() function.
-	 *
-	 * Excel Function:
-	 *		ATAN2(xCoordinate,yCoordinate)
-	 *
-	 * @access	public
-	 * @category Mathematical and Trigonometric Functions
-	 * @param	float	$xCoordinate		The x-coordinate of the point.
-	 * @param	float	$yCoordinate		The y-coordinate of the point.
-	 * @return	float	The inverse tangent of the specified x- and y-coordinates.
-	 */
-	public static function ATAN2($xCoordinate = NULL, $yCoordinate = NULL) {
-		$xCoordinate	= PHPExcel_Calculation_Functions::flattenSingleValue($xCoordinate);
-		$yCoordinate	= PHPExcel_Calculation_Functions::flattenSingleValue($yCoordinate);
-
-		$xCoordinate	= ($xCoordinate !== NULL)	? $xCoordinate : 0.0;
-		$yCoordinate	= ($yCoordinate !== NULL)	? $yCoordinate : 0.0;
-
-		if (((is_numeric($xCoordinate)) || (is_bool($xCoordinate))) &&
-			((is_numeric($yCoordinate)))  || (is_bool($yCoordinate))) {
-			$xCoordinate	= (float) $xCoordinate;
-			$yCoordinate	= (float) $yCoordinate;
-
-			if (($xCoordinate == 0) && ($yCoordinate == 0)) {
-				return PHPExcel_Calculation_Functions::DIV0();
-			}
-
-			return atan2($yCoordinate, $xCoordinate);
-		}
-		return PHPExcel_Calculation_Functions::VALUE();
-	}	//	function ATAN2()
-
-
-	/**
-	 * CEILING
-	 *
-	 * Returns number rounded up, away from zero, to the nearest multiple of significance.
-	 *		For example, if you want to avoid using pennies in your prices and your product is
-	 *		priced at $4.42, use the formula =CEILING(4.42,0.05) to round prices up to the
-	 *		nearest nickel.
-	 *
-	 * Excel Function:
-	 *		CEILING(number[,significance])
-	 *
-	 * @access	public
-	 * @category Mathematical and Trigonometric Functions
-	 * @param	float	$number			The number you want to round.
-	 * @param	float	$significance	The multiple to which you want to round.
-	 * @return	float	Rounded Number
-	 */
-	public static function CEILING($number, $significance = NULL) {
-		$number			= PHPExcel_Calculation_Functions::flattenSingleValue($number);
-		$significance	= PHPExcel_Calculation_Functions::flattenSingleValue($significance);
-
-		if ((is_null($significance)) &&
-			(PHPExcel_Calculation_Functions::getCompatibilityMode() == PHPExcel_Calculation_Functions::COMPATIBILITY_GNUMERIC)) {
-			$significance = $number/abs($number);
-		}
-
-		if ((is_numeric($number)) && (is_numeric($significance))) {
-			if ($significance == 0.0) {
-				return 0.0;
-			} elseif (self::SIGN($number) == self::SIGN($significance)) {
-				return ceil($number / $significance) * $significance;
-			} else {
-				return PHPExcel_Calculation_Functions::NaN();
-			}
-		}
-		return PHPExcel_Calculation_Functions::VALUE();
-	}	//	function CEILING()
-
-
-	/**
-	 * COMBIN
-	 *
-	 * Returns the number of combinations for a given number of items. Use COMBIN to
-	 *		determine the total possible number of groups for a given number of items.
-	 *
-	 * Excel Function:
-	 *		COMBIN(numObjs,numInSet)
-	 *
-	 * @access	public
-	 * @category Mathematical and Trigonometric Functions
-	 * @param	int		$numObjs	Number of different objects
-	 * @param	int		$numInSet	Number of objects in each combination
-	 * @return	int		Number of combinations
-	 */
-	public static function COMBIN($numObjs, $numInSet) {
-		$numObjs	= PHPExcel_Calculation_Functions::flattenSingleValue($numObjs);
-		$numInSet	= PHPExcel_Calculation_Functions::flattenSingleValue($numInSet);
-
-		if ((is_numeric($numObjs)) && (is_numeric($numInSet))) {
-			if ($numObjs < $numInSet) {
-				return PHPExcel_Calculation_Functions::NaN();
-			} elseif ($numInSet < 0) {
-				return PHPExcel_Calculation_Functions::NaN();
-			}
-			return round(self::FACT($numObjs) / self::FACT($numObjs - $numInSet)) / self::FACT($numInSet);
-		}
-		return PHPExcel_Calculation_Functions::VALUE();
-	}	//	function COMBIN()
-
-
-	/**
-	 * EVEN
-	 *
-	 * Returns number rounded up to the nearest even integer.
-	 * You can use this function for processing items that come in twos. For example,
-	 *		a packing crate accepts rows of one or two items. The crate is full when
-	 *		the number of items, rounded up to the nearest two, matches the crate's
-	 *		capacity.
-	 *
-	 * Excel Function:
-	 *		EVEN(number)
-	 *
-	 * @access	public
-	 * @category Mathematical and Trigonometric Functions
-	 * @param	float	$number			Number to round
-	 * @return	int		Rounded Number
-	 */
-	public static function EVEN($number) {
-		$number	= PHPExcel_Calculation_Functions::flattenSingleValue($number);
-
-		if (is_null($number)) {
-			return 0;
-		} elseif (is_bool($number)) {
-			$number = (int) $number;
-		}
-
-		if (is_numeric($number)) {
-			$significance = 2 * self::SIGN($number);
-			return (int) self::CEILING($number,$significance);
-		}
-		return PHPExcel_Calculation_Functions::VALUE();
-	}	//	function EVEN()
-
-
-	/**
-	 * FACT
-	 *
-	 * Returns the factorial of a number.
-	 * The factorial of a number is equal to 1*2*3*...* number.
-	 *
-	 * Excel Function:
-	 *		FACT(factVal)
-	 *
-	 * @access	public
-	 * @category Mathematical and Trigonometric Functions
-	 * @param	float	$factVal	Factorial Value
-	 * @return	int		Factorial
-	 */
-	public static function FACT($factVal) {
-		$factVal	= PHPExcel_Calculation_Functions::flattenSingleValue($factVal);
-
-		if (is_numeric($factVal)) {
-			if ($factVal < 0) {
-				return PHPExcel_Calculation_Functions::NaN();
-			}
-			$factLoop = floor($factVal);
-			if (PHPExcel_Calculation_Functions::getCompatibilityMode() == PHPExcel_Calculation_Functions::COMPATIBILITY_GNUMERIC) {
-				if ($factVal > $factLoop) {
-					return PHPExcel_Calculation_Functions::NaN();
-				}
-			}
-
-			$factorial = 1;
-			while ($factLoop > 1) {
-				$factorial *= $factLoop--;
-			}
-			return $factorial ;
-		}
-		return PHPExcel_Calculation_Functions::VALUE();
-	}	//	function FACT()
-
-
-	/**
-	 * FACTDOUBLE
-	 *
-	 * Returns the double factorial of a number.
-	 *
-	 * Excel Function:
-	 *		FACTDOUBLE(factVal)
-	 *
-	 * @access	public
-	 * @category Mathematical and Trigonometric Functions
-	 * @param	float	$factVal	Factorial Value
-	 * @return	int		Double Factorial
-	 */
-	public static function FACTDOUBLE($factVal) {
-		$factLoop	= PHPExcel_Calculation_Functions::flattenSingleValue($factVal);
-
-		if (is_numeric($factLoop)) {
-			$factLoop	= floor($factLoop);
-			if ($factVal < 0) {
-				return PHPExcel_Calculation_Functions::NaN();
-			}
-			$factorial = 1;
-			while ($factLoop > 1) {
-				$factorial *= $factLoop--;
-				--$factLoop;
-			}
-			return $factorial ;
-		}
-		return PHPExcel_Calculation_Functions::VALUE();
-	}	//	function FACTDOUBLE()
-
-
-	/**
-	 * FLOOR
-	 *
-	 * Rounds number down, toward zero, to the nearest multiple of significance.
-	 *
-	 * Excel Function:
-	 *		FLOOR(number[,significance])
-	 *
-	 * @access	public
-	 * @category Mathematical and Trigonometric Functions
-	 * @param	float	$number			Number to round
-	 * @param	float	$significance	Significance
-	 * @return	float	Rounded Number
-	 */
-	public static function FLOOR($number, $significance = NULL) {
-		$number			= PHPExcel_Calculation_Functions::flattenSingleValue($number);
-		$significance	= PHPExcel_Calculation_Functions::flattenSingleValue($significance);
-
-		if ((is_null($significance)) && (PHPExcel_Calculation_Functions::getCompatibilityMode() == PHPExcel_Calculation_Functions::COMPATIBILITY_GNUMERIC)) {
-			$significance = $number/abs($number);
-		}
-
-		if ((is_numeric($number)) && (is_numeric($significance))) {
-			if ((float) $significance == 0.0) {
-				return PHPExcel_Calculation_Functions::DIV0();
-			}
-			if (self::SIGN($number) == self::SIGN($significance)) {
-				return floor($number / $significance) * $significance;
-			} else {
-				return PHPExcel_Calculation_Functions::NaN();
-			}
-		}
-		return PHPExcel_Calculation_Functions::VALUE();
-	}	//	function FLOOR()
-
-
-	/**
-	 * GCD
-	 *
-	 * Returns the greatest common divisor of a series of numbers.
-	 * The greatest common divisor is the largest integer that divides both
-	 *		number1 and number2 without a remainder.
-	 *
-	 * Excel Function:
-	 *		GCD(number1[,number2[, ...]])
-	 *
-	 * @access	public
-	 * @category Mathematical and Trigonometric Functions
-	 * @param	mixed	$arg,...		Data values
-	 * @return	integer					Greatest Common Divisor
-	 */
-	public static function GCD() {
-		$returnValue = 1;
-		$allValuesFactors = array();
-		// Loop through arguments
-		foreach(PHPExcel_Calculation_Functions::flattenArray(func_get_args()) as $value) {
-			if (!is_numeric($value)) {
-				return PHPExcel_Calculation_Functions::VALUE();
-			} elseif ($value == 0) {
-				continue;
-			} elseif($value < 0) {
-				return PHPExcel_Calculation_Functions::NaN();
-			}
-			$myFactors = self::_factors($value);
-			$myCountedFactors = array_count_values($myFactors);
-			$allValuesFactors[] = $myCountedFactors;
-		}
-		$allValuesCount = count($allValuesFactors);
-		if ($allValuesCount == 0) {
-			return 0;
-		}
-
-		$mergedArray = $allValuesFactors[0];
-		for ($i=1;$i < $allValuesCount; ++$i) {
-			$mergedArray = array_intersect_key($mergedArray,$allValuesFactors[$i]);
-		}
-		$mergedArrayValues = count($mergedArray);
-		if ($mergedArrayValues == 0) {
-			return $returnValue;
-		} elseif ($mergedArrayValues > 1) {
-			foreach($mergedArray as $mergedKey => $mergedValue) {
-				foreach($allValuesFactors as $highestPowerTest) {
-					foreach($highestPowerTest as $testKey => $testValue) {
-						if (($testKey == $mergedKey) && ($testValue < $mergedValue)) {
-							$mergedArray[$mergedKey] = $testValue;
-							$mergedValue = $testValue;
-						}
-					}
-				}
-			}
-
-			$returnValue = 1;
-			foreach($mergedArray as $key => $value) {
-				$returnValue *= pow($key,$value);
-			}
-			return $returnValue;
-		} else {
-			$keys = array_keys($mergedArray);
-			$key = $keys[0];
-			$value = $mergedArray[$key];
-			foreach($allValuesFactors as $testValue) {
-				foreach($testValue as $mergedKey => $mergedValue) {
-					if (($mergedKey == $key) && ($mergedValue < $value)) {
-						$value = $mergedValue;
-					}
-				}
-			}
-			return pow($key,$value);
-		}
-	}	//	function GCD()
-
-
-	/**
-	 * INT
-	 *
-	 * Casts a floating point value to an integer
-	 *
-	 * Excel Function:
-	 *		INT(number)
-	 *
-	 * @access	public
-	 * @category Mathematical and Trigonometric Functions
-	 * @param	float	$number			Number to cast to an integer
-	 * @return	integer	Integer value
-	 */
-	public static function INT($number) {
-		$number	= PHPExcel_Calculation_Functions::flattenSingleValue($number);
-
-		if (is_null($number)) {
-			return 0;
-		} elseif (is_bool($number)) {
-			return (int) $number;
-		}
-		if (is_numeric($number)) {
-			return (int) floor($number);
-		}
-		return PHPExcel_Calculation_Functions::VALUE();
-	}	//	function INT()
-
-
-	/**
-	 * LCM
-	 *
-	 * Returns the lowest common multiplier of a series of numbers
-	 * The least common multiple is the smallest positive integer that is a multiple
-	 * of all integer arguments number1, number2, and so on. Use LCM to add fractions
-	 * with different denominators.
-	 *
-	 * Excel Function:
-	 *		LCM(number1[,number2[, ...]])
-	 *
-	 * @access	public
-	 * @category Mathematical and Trigonometric Functions
-	 * @param	mixed	$arg,...		Data values
-	 * @return	int		Lowest Common Multiplier
-	 */
-	public static function LCM() {
-		$returnValue = 1;
-		$allPoweredFactors = array();
-		// Loop through arguments
-		foreach(PHPExcel_Calculation_Functions::flattenArray(func_get_args()) as $value) {
-			if (!is_numeric($value)) {
-				return PHPExcel_Calculation_Functions::VALUE();
-			}
-			if ($value == 0) {
-				return 0;
-			} elseif ($value < 0) {
-				return PHPExcel_Calculation_Functions::NaN();
-			}
-			$myFactors = self::_factors(floor($value));
-			$myCountedFactors = array_count_values($myFactors);
-			$myPoweredFactors = array();
-			foreach($myCountedFactors as $myCountedFactor => $myCountedPower) {
-				$myPoweredFactors[$myCountedFactor] = pow($myCountedFactor,$myCountedPower);
-			}
-			foreach($myPoweredFactors as $myPoweredValue => $myPoweredFactor) {
-				if (array_key_exists($myPoweredValue,$allPoweredFactors)) {
-					if ($allPoweredFactors[$myPoweredValue] < $myPoweredFactor) {
-						$allPoweredFactors[$myPoweredValue] = $myPoweredFactor;
-					}
-				} else {
-					$allPoweredFactors[$myPoweredValue] = $myPoweredFactor;
-				}
-			}
-		}
-		foreach($allPoweredFactors as $allPoweredFactor) {
-			$returnValue *= (integer) $allPoweredFactor;
-		}
-		return $returnValue;
-	}	//	function LCM()
-
-
-	/**
-	 * LOG_BASE
-	 *
-	 * Returns the logarithm of a number to a specified base. The default base is 10.
-	 *
-	 * Excel Function:
-	 *		LOG(number[,base])
-	 *
-	 * @access	public
-	 * @category Mathematical and Trigonometric Functions
-	 * @param	float	$value		The positive real number for which you want the logarithm
-	 * @param	float	$base		The base of the logarithm. If base is omitted, it is assumed to be 10.
-	 * @return	float
-	 */
-	public static function LOG_BASE($number = NULL, $base = 10) {
-		$number	= PHPExcel_Calculation_Functions::flattenSingleValue($number);
-		$base	= (is_null($base))	? 10 :	(float) PHPExcel_Calculation_Functions::flattenSingleValue($base);
-
-		if ((!is_numeric($base)) || (!is_numeric($number)))
-			return PHPExcel_Calculation_Functions::VALUE();
-		if (($base <= 0) || ($number <= 0))
-			return PHPExcel_Calculation_Functions::NaN();
-		return log($number, $base);
-	}	//	function LOG_BASE()
-
-
-	/**
-	 * MDETERM
-	 *
-	 * Returns the matrix determinant of an array.
-	 *
-	 * Excel Function:
-	 *		MDETERM(array)
-	 *
-	 * @access	public
-	 * @category Mathematical and Trigonometric Functions
-	 * @param	array	$matrixValues	A matrix of values
-	 * @return	float
-	 */
-	public static function MDETERM($matrixValues) {
-		$matrixData = array();
-		if (!is_array($matrixValues)) { $matrixValues = array(array($matrixValues)); }
-
-		$row = $maxColumn = 0;
-		foreach($matrixValues as $matrixRow) {
-			if (!is_array($matrixRow)) { $matrixRow = array($matrixRow); }
-			$column = 0;
-			foreach($matrixRow as $matrixCell) {
-				if ((is_string($matrixCell)) || ($matrixCell === null)) {
-					return PHPExcel_Calculation_Functions::VALUE();
-				}
-				$matrixData[$column][$row] = $matrixCell;
-				++$column;
-			}
-			if ($column > $maxColumn) { $maxColumn = $column; }
-			++$row;
-		}
-		if ($row != $maxColumn) { return PHPExcel_Calculation_Functions::VALUE(); }
-
-		try {
-			$matrix = new PHPExcel_Shared_JAMA_Matrix($matrixData);
-			return $matrix->det();
-		} catch (Exception $ex) {
-			return PHPExcel_Calculation_Functions::VALUE();
-		}
-	}	//	function MDETERM()
-
-
-	/**
-	 * MINVERSE
-	 *
-	 * Returns the inverse matrix for the matrix stored in an array.
-	 *
-	 * Excel Function:
-	 *		MINVERSE(array)
-	 *
-	 * @access	public
-	 * @category Mathematical and Trigonometric Functions
-	 * @param	array	$matrixValues	A matrix of values
-	 * @return	array
-	 */
-	public static function MINVERSE($matrixValues) {
-		$matrixData = array();
-		if (!is_array($matrixValues)) { $matrixValues = array(array($matrixValues)); }
-
-		$row = $maxColumn = 0;
-		foreach($matrixValues as $matrixRow) {
-			if (!is_array($matrixRow)) { $matrixRow = array($matrixRow); }
-			$column = 0;
-			foreach($matrixRow as $matrixCell) {
-				if ((is_string($matrixCell)) || ($matrixCell === null)) {
-					return PHPExcel_Calculation_Functions::VALUE();
-				}
-				$matrixData[$column][$row] = $matrixCell;
-				++$column;
-			}
-			if ($column > $maxColumn) { $maxColumn = $column; }
-			++$row;
-		}
-		if ($row != $maxColumn) { return PHPExcel_Calculation_Functions::VALUE(); }
-
-		try {
-			$matrix = new PHPExcel_Shared_JAMA_Matrix($matrixData);
-			return $matrix->inverse()->getArray();
-		} catch (Exception $ex) {
-			return PHPExcel_Calculation_Functions::VALUE();
-		}
-	}	//	function MINVERSE()
-
-
-	/**
-	 * MMULT
-	 *
-	 * @param	array	$matrixData1	A matrix of values
-	 * @param	array	$matrixData2	A matrix of values
-	 * @return	array
-	 */
-	public static function MMULT($matrixData1,$matrixData2) {
-		$matrixAData = $matrixBData = array();
-		if (!is_array($matrixData1)) { $matrixData1 = array(array($matrixData1)); }
-		if (!is_array($matrixData2)) { $matrixData2 = array(array($matrixData2)); }
-
-		$rowA = 0;
-		foreach($matrixData1 as $matrixRow) {
-			if (!is_array($matrixRow)) { $matrixRow = array($matrixRow); }
-			$columnA = 0;
-			foreach($matrixRow as $matrixCell) {
-				if ((is_string($matrixCell)) || ($matrixCell === null)) {
-					return PHPExcel_Calculation_Functions::VALUE();
-				}
-				$matrixAData[$rowA][$columnA] = $matrixCell;
-				++$columnA;
-			}
-			++$rowA;
-		}
-		try {
-			$matrixA = new PHPExcel_Shared_JAMA_Matrix($matrixAData);
-			$rowB = 0;
-			foreach($matrixData2 as $matrixRow) {
-				if (!is_array($matrixRow)) { $matrixRow = array($matrixRow); }
-				$columnB = 0;
-				foreach($matrixRow as $matrixCell) {
-					if ((is_string($matrixCell)) || ($matrixCell === null)) {
-						return PHPExcel_Calculation_Functions::VALUE();
-					}
-					$matrixBData[$rowB][$columnB] = $matrixCell;
-					++$columnB;
-				}
-				++$rowB;
-			}
-			$matrixB = new PHPExcel_Shared_JAMA_Matrix($matrixBData);
-
-			if (($rowA != $columnB) || ($rowB != $columnA)) {
-				return PHPExcel_Calculation_Functions::VALUE();
-			}
-
-			return $matrixA->times($matrixB)->getArray();
-		} catch (Exception $ex) {
-			return PHPExcel_Calculation_Functions::VALUE();
-		}
-	}	//	function MMULT()
-
-
-	/**
-	 * MOD
-	 *
-	 * @param	int		$a		Dividend
-	 * @param	int		$b		Divisor
-	 * @return	int		Remainder
-	 */
-	public static function MOD($a = 1, $b = 1) {
-		$a		= PHPExcel_Calculation_Functions::flattenSingleValue($a);
-		$b		= PHPExcel_Calculation_Functions::flattenSingleValue($b);
-
-		if ($b == 0.0) {
-			return PHPExcel_Calculation_Functions::DIV0();
-		} elseif (($a < 0.0) && ($b > 0.0)) {
-			return $b - fmod(abs($a),$b);
-		} elseif (($a > 0.0) && ($b < 0.0)) {
-			return $b + fmod($a,abs($b));
-		}
-
-		return fmod($a,$b);
-	}	//	function MOD()
-
-
-	/**
-	 * MROUND
-	 *
-	 * Rounds a number to the nearest multiple of a specified value
-	 *
-	 * @param	float	$number			Number to round
-	 * @param	int		$multiple		Multiple to which you want to round $number
-	 * @return	float	Rounded Number
-	 */
-	public static function MROUND($number,$multiple) {
-		$number		= PHPExcel_Calculation_Functions::flattenSingleValue($number);
-		$multiple	= PHPExcel_Calculation_Functions::flattenSingleValue($multiple);
-
-		if ((is_numeric($number)) && (is_numeric($multiple))) {
-			if ($multiple == 0) {
-				return 0;
-			}
-			if ((self::SIGN($number)) == (self::SIGN($multiple))) {
-				$multiplier = 1 / $multiple;
-				return round($number * $multiplier) / $multiplier;
-			}
-			return PHPExcel_Calculation_Functions::NaN();
-		}
-		return PHPExcel_Calculation_Functions::VALUE();
-	}	//	function MROUND()
-
-
-	/**
-	 * MULTINOMIAL
-	 *
-	 * Returns the ratio of the factorial of a sum of values to the product of factorials.
-	 *
-	 * @param	array of mixed		Data Series
-	 * @return	float
-	 */
-	public static function MULTINOMIAL() {
-		$summer = 0;
-		$divisor = 1;
-		// Loop through arguments
-		foreach (PHPExcel_Calculation_Functions::flattenArray(func_get_args()) as $arg) {
-			// Is it a numeric value?
-			if (is_numeric($arg)) {
-				if ($arg < 1) {
-					return PHPExcel_Calculation_Functions::NaN();
-				}
-				$summer += floor($arg);
-				$divisor *= self::FACT($arg);
-			} else {
-				return PHPExcel_Calculation_Functions::VALUE();
-			}
-		}
-
-		// Return
-		if ($summer > 0) {
-			$summer = self::FACT($summer);
-			return $summer / $divisor;
-		}
-		return 0;
-	}	//	function MULTINOMIAL()
-
-
-	/**
-	 * ODD
-	 *
-	 * Returns number rounded up to the nearest odd integer.
-	 *
-	 * @param	float	$number			Number to round
-	 * @return	int		Rounded Number
-	 */
-	public static function ODD($number) {
-		$number	= PHPExcel_Calculation_Functions::flattenSingleValue($number);
-
-		if (is_null($number)) {
-			return 1;
-		} elseif (is_bool($number)) {
-			$number = (int) $number;
-		}
-
-		if (is_numeric($number)) {
-			$significance = self::SIGN($number);
-			if ($significance == 0) {
-				return 1;
-			}
-
-			$result = self::CEILING($number,$significance);
-			if ($result == self::EVEN($result)) {
-				$result += $significance;
-			}
-
-			return (int) $result;
-		}
-		return PHPExcel_Calculation_Functions::VALUE();
-	}	//	function ODD()
-
-
-	/**
-	 * POWER
-	 *
-	 * Computes x raised to the power y.
-	 *
-	 * @param	float		$x
-	 * @param	float		$y
-	 * @return	float
-	 */
-	public static function POWER($x = 0, $y = 2) {
-		$x	= PHPExcel_Calculation_Functions::flattenSingleValue($x);
-		$y	= PHPExcel_Calculation_Functions::flattenSingleValue($y);
-
-		// Validate parameters
-		if ($x == 0.0 && $y == 0.0) {
-			return PHPExcel_Calculation_Functions::NaN();
-		} elseif ($x == 0.0 && $y < 0.0) {
-			return PHPExcel_Calculation_Functions::DIV0();
-		}
-
-		// Return
-		$result = pow($x, $y);
-		return (!is_nan($result) && !is_infinite($result)) ? $result : PHPExcel_Calculation_Functions::NaN();
-	}	//	function POWER()
-
-
-	/**
-	 * PRODUCT
-	 *
-	 * PRODUCT returns the product of all the values and cells referenced in the argument list.
-	 *
-	 * Excel Function:
-	 *		PRODUCT(value1[,value2[, ...]])
-	 *
-	 * @access	public
-	 * @category Mathematical and Trigonometric Functions
-	 * @param	mixed		$arg,...		Data values
-	 * @return	float
-	 */
-	public static function PRODUCT() {
-		// Return value
-		$returnValue = null;
-
-		// Loop through arguments
-		foreach (PHPExcel_Calculation_Functions::flattenArray(func_get_args()) as $arg) {
-			// Is it a numeric value?
-			if ((is_numeric($arg)) && (!is_string($arg))) {
-				if (is_null($returnValue)) {
-					$returnValue = $arg;
-				} else {
-					$returnValue *= $arg;
-				}
-			}
-		}
-
-		// Return
-		if (is_null($returnValue)) {
-			return 0;
-		}
-		return $returnValue;
-	}	//	function PRODUCT()
-
-
-	/**
-	 * QUOTIENT
-	 *
-	 * QUOTIENT function returns the integer portion of a division. Numerator is the divided number
-	 *		and denominator is the divisor.
-	 *
-	 * Excel Function:
-	 *		QUOTIENT(value1[,value2[, ...]])
-	 *
-	 * @access	public
-	 * @category Mathematical and Trigonometric Functions
-	 * @param	mixed		$arg,...		Data values
-	 * @return	float
-	 */
-	public static function QUOTIENT() {
-		// Return value
-		$returnValue = null;
-
-		// Loop through arguments
-		foreach (PHPExcel_Calculation_Functions::flattenArray(func_get_args()) as $arg) {
-			// Is it a numeric value?
-			if ((is_numeric($arg)) && (!is_string($arg))) {
-				if (is_null($returnValue)) {
-					$returnValue = ($arg == 0) ? 0 : $arg;
-				} else {
-					if (($returnValue == 0) || ($arg == 0)) {
-						$returnValue = 0;
-					} else {
-						$returnValue /= $arg;
-					}
-				}
-			}
-		}
-
-		// Return
-		return intval($returnValue);
-	}	//	function QUOTIENT()
-
-
-	/**
-	 * RAND
-	 *
-	 * @param	int		$min	Minimal value
-	 * @param	int		$max	Maximal value
-	 * @return	int		Random number
-	 */
-	public static function RAND($min = 0, $max = 0) {
-		$min		= PHPExcel_Calculation_Functions::flattenSingleValue($min);
-		$max		= PHPExcel_Calculation_Functions::flattenSingleValue($max);
-
-		if ($min == 0 && $max == 0) {
-			return (rand(0,10000000)) / 10000000;
-		} else {
-			return rand($min, $max);
-		}
-	}	//	function RAND()
-
-
-	public static function ROMAN($aValue, $style=0) {
-		$aValue	= PHPExcel_Calculation_Functions::flattenSingleValue($aValue);
-		$style	= (is_null($style))	? 0 :	(integer) PHPExcel_Calculation_Functions::flattenSingleValue($style);
-		if ((!is_numeric($aValue)) || ($aValue < 0) || ($aValue >= 4000)) {
-			return PHPExcel_Calculation_Functions::VALUE();
-		}
-		$aValue = (integer) $aValue;
-		if ($aValue == 0) {
-			return '';
-		}
-
-		$mill = Array('', 'M', 'MM', 'MMM', 'MMMM', 'MMMMM');
-		$cent = Array('', 'C', 'CC', 'CCC', 'CD', 'D', 'DC', 'DCC', 'DCCC', 'CM');
-		$tens = Array('', 'X', 'XX', 'XXX', 'XL', 'L', 'LX', 'LXX', 'LXXX', 'XC');
-		$ones = Array('', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX');
-
-		$roman = '';
-		while ($aValue > 5999) {
-			$roman .= 'M';
-			$aValue -= 1000;
-		}
-		$m = self::_romanCut($aValue, 1000);	$aValue %= 1000;
-		$c = self::_romanCut($aValue, 100);		$aValue %= 100;
-		$t = self::_romanCut($aValue, 10);		$aValue %= 10;
-
-		return $roman.$mill[$m].$cent[$c].$tens[$t].$ones[$aValue];
-	}	//	function ROMAN()
-
-
-	/**
-	 * ROUNDUP
-	 *
-	 * Rounds a number up to a specified number of decimal places
-	 *
-	 * @param	float	$number			Number to round
-	 * @param	int		$digits			Number of digits to which you want to round $number
-	 * @return	float	Rounded Number
-	 */
-	public static function ROUNDUP($number,$digits) {
-		$number	= PHPExcel_Calculation_Functions::flattenSingleValue($number);
-		$digits	= PHPExcel_Calculation_Functions::flattenSingleValue($digits);
-
-		if ((is_numeric($number)) && (is_numeric($digits))) {
-			$significance = pow(10,(int) $digits);
-			if ($number < 0.0) {
-				return floor($number * $significance) / $significance;
-			} else {
-				return ceil($number * $significance) / $significance;
-			}
-		}
-		return PHPExcel_Calculation_Functions::VALUE();
-	}	//	function ROUNDUP()
-
-
-	/**
-	 * ROUNDDOWN
-	 *
-	 * Rounds a number down to a specified number of decimal places
-	 *
-	 * @param	float	$number			Number to round
-	 * @param	int		$digits			Number of digits to which you want to round $number
-	 * @return	float	Rounded Number
-	 */
-	public static function ROUNDDOWN($number,$digits) {
-		$number	= PHPExcel_Calculation_Functions::flattenSingleValue($number);
-		$digits	= PHPExcel_Calculation_Functions::flattenSingleValue($digits);
-
-		if ((is_numeric($number)) && (is_numeric($digits))) {
-			$significance = pow(10,(int) $digits);
-			if ($number < 0.0) {
-				return ceil($number * $significance) / $significance;
-			} else {
-				return floor($number * $significance) / $significance;
-			}
-		}
-		return PHPExcel_Calculation_Functions::VALUE();
-	}	//	function ROUNDDOWN()
-
-
-	/**
-	 * SERIESSUM
-	 *
-	 * Returns the sum of a power series
-	 *
-	 * @param	float			$x	Input value to the power series
-	 * @param	float			$n	Initial power to which you want to raise $x
-	 * @param	float			$m	Step by which to increase $n for each term in the series
-	 * @param	array of mixed		Data Series
-	 * @return	float
-	 */
-	public static function SERIESSUM() {
-		// Return value
-		$returnValue = 0;
-
-		// Loop through arguments
-		$aArgs = PHPExcel_Calculation_Functions::flattenArray(func_get_args());
-
-		$x = array_shift($aArgs);
-		$n = array_shift($aArgs);
-		$m = array_shift($aArgs);
-
-		if ((is_numeric($x)) && (is_numeric($n)) && (is_numeric($m))) {
-			// Calculate
-			$i = 0;
-			foreach($aArgs as $arg) {
-				// Is it a numeric value?
-				if ((is_numeric($arg)) && (!is_string($arg))) {
-					$returnValue += $arg * pow($x,$n + ($m * $i++));
-				} else {
-					return PHPExcel_Calculation_Functions::VALUE();
-				}
-			}
-			// Return
-			return $returnValue;
-		}
-		return PHPExcel_Calculation_Functions::VALUE();
-	}	//	function SERIESSUM()
-
-
-	/**
-	 * SIGN
-	 *
-	 * Determines the sign of a number. Returns 1 if the number is positive, zero (0)
-	 *		if the number is 0, and -1 if the number is negative.
-	 *
-	 * @param	float	$number			Number to round
-	 * @return	int		sign value
-	 */
-	public static function SIGN($number) {
-		$number	= PHPExcel_Calculation_Functions::flattenSingleValue($number);
-
-		if (is_bool($number))
-			return (int) $number;
-		if (is_numeric($number)) {
-			if ($number == 0.0) {
-				return 0;
-			}
-			return $number / abs($number);
-		}
-		return PHPExcel_Calculation_Functions::VALUE();
-	}	//	function SIGN()
-
-
-	/**
-	 * SQRTPI
-	 *
-	 * Returns the square root of (number * pi).
-	 *
-	 * @param	float	$number		Number
-	 * @return	float	Square Root of Number * Pi
-	 */
-	public static function SQRTPI($number) {
-		$number	= PHPExcel_Calculation_Functions::flattenSingleValue($number);
-
-		if (is_numeric($number)) {
-			if ($number < 0) {
-				return PHPExcel_Calculation_Functions::NaN();
-			}
-			return sqrt($number * M_PI) ;
-		}
-		return PHPExcel_Calculation_Functions::VALUE();
-	}	//	function SQRTPI()
-
-
-	/**
-	 * SUBTOTAL
-	 *
-	 * Returns a subtotal in a list or database.
-	 *
-	 * @param	int		the number 1 to 11 that specifies which function to
-	 *					use in calculating subtotals within a list.
-	 * @param	array of mixed		Data Series
-	 * @return	float
-	 */
-	public static function SUBTOTAL() {
-		$aArgs = PHPExcel_Calculation_Functions::flattenArray(func_get_args());
-
-		// Calculate
-		$subtotal = array_shift($aArgs);
-
-		if ((is_numeric($subtotal)) && (!is_string($subtotal))) {
-			switch($subtotal) {
-				case 1	:
-					return PHPExcel_Calculation_Statistical::AVERAGE($aArgs);
-					break;
-				case 2	:
-					return PHPExcel_Calculation_Statistical::COUNT($aArgs);
-					break;
-				case 3	:
-					return PHPExcel_Calculation_Statistical::COUNTA($aArgs);
-					break;
-				case 4	:
-					return PHPExcel_Calculation_Statistical::MAX($aArgs);
-					break;
-				case 5	:
-					return PHPExcel_Calculation_Statistical::MIN($aArgs);
-					break;
-				case 6	:
-					return self::PRODUCT($aArgs);
-					break;
-				case 7	:
-					return PHPExcel_Calculation_Statistical::STDEV($aArgs);
-					break;
-				case 8	:
-					return PHPExcel_Calculation_Statistical::STDEVP($aArgs);
-					break;
-				case 9	:
-					return self::SUM($aArgs);
-					break;
-				case 10	:
-					return PHPExcel_Calculation_Statistical::VARFunc($aArgs);
-					break;
-				case 11	:
-					return PHPExcel_Calculation_Statistical::VARP($aArgs);
-					break;
-			}
-		}
-		return PHPExcel_Calculation_Functions::VALUE();
-	}	//	function SUBTOTAL()
-
-
-	/**
-	 * SUM
-	 *
-	 * SUM computes the sum of all the values and cells referenced in the argument list.
-	 *
-	 * Excel Function:
-	 *		SUM(value1[,value2[, ...]])
-	 *
-	 * @access	public
-	 * @category Mathematical and Trigonometric Functions
-	 * @param	mixed		$arg,...		Data values
-	 * @return	float
-	 */
-	public static function SUM() {
-		// Return value
-		$returnValue = 0;
-
-		// Loop through the arguments
-		foreach (PHPExcel_Calculation_Functions::flattenArray(func_get_args()) as $arg) {
-			// Is it a numeric value?
-			if ((is_numeric($arg)) && (!is_string($arg))) {
-				$returnValue += $arg;
-			}
-		}
-
-		// Return
-		return $returnValue;
-	}	//	function SUM()
-
-
-	/**
-	 * SUMIF
-	 *
-	 * Counts the number of cells that contain numbers within the list of arguments
-	 *
-	 * Excel Function:
-	 *		SUMIF(value1[,value2[, ...]],condition)
-	 *
-	 * @access	public
-	 * @category Mathematical and Trigonometric Functions
-	 * @param	mixed		$arg,...		Data values
-	 * @param	string		$condition		The criteria that defines which cells will be summed.
-	 * @return	float
-	 */
-	public static function SUMIF($aArgs,$condition,$sumArgs = array()) {
-		// Return value
-		$returnValue = 0;
-
-		$aArgs = PHPExcel_Calculation_Functions::flattenArray($aArgs);
-		$sumArgs = PHPExcel_Calculation_Functions::flattenArray($sumArgs);
-		if (empty($sumArgs)) {
-			$sumArgs = $aArgs;
-		}
-		$condition = PHPExcel_Calculation_Functions::_ifCondition($condition);
-		// Loop through arguments
-		foreach ($aArgs as $key => $arg) {
-			if (!is_numeric($arg)) { $arg = PHPExcel_Calculation::_wrapResult(strtoupper($arg)); }
-			$testCondition = '='.$arg.$condition;
-			if (PHPExcel_Calculation::getInstance()->_calculateFormulaValue($testCondition)) {
-				// Is it a value within our criteria
-				$returnValue += $sumArgs[$key];
-			}
-		}
-
-		// Return
-		return $returnValue;
-	}	//	function SUMIF()
-
-
-	/**
-	 * SUMPRODUCT
-	 *
-	 * Excel Function:
-	 *		SUMPRODUCT(value1[,value2[, ...]])
-	 *
-	 * @access	public
-	 * @category Mathematical and Trigonometric Functions
-	 * @param	mixed		$arg,...		Data values
-	 * @return	float
-	 */
-	public static function SUMPRODUCT() {
-		$arrayList = func_get_args();
-
-		$wrkArray = PHPExcel_Calculation_Functions::flattenArray(array_shift($arrayList));
-		$wrkCellCount = count($wrkArray);
-
-		for ($i=0; $i< $wrkCellCount; ++$i) {
-			if ((!is_numeric($wrkArray[$i])) || (is_string($wrkArray[$i]))) {
-				$wrkArray[$i] = 0;
-			}
-		}
-
-		foreach($arrayList as $matrixData) {
-			$array2 = PHPExcel_Calculation_Functions::flattenArray($matrixData);
-			$count = count($array2);
-			if ($wrkCellCount != $count) {
-				return PHPExcel_Calculation_Functions::VALUE();
-			}
-
-			foreach ($array2 as $i => $val) {
-				if ((!is_numeric($val)) || (is_string($val))) {
-					$val = 0;
-				}
-				$wrkArray[$i] *= $val;
-			}
-		}
-
-		return array_sum($wrkArray);
-	}	//	function SUMPRODUCT()
-
-
-	/**
-	 * SUMSQ
-	 *
-	 * SUMSQ returns the sum of the squares of the arguments
-	 *
-	 * Excel Function:
-	 *		SUMSQ(value1[,value2[, ...]])
-	 *
-	 * @access	public
-	 * @category Mathematical and Trigonometric Functions
-	 * @param	mixed		$arg,...		Data values
-	 * @return	float
-	 */
-	public static function SUMSQ() {
-		// Return value
-		$returnValue = 0;
-
-		// Loop through arguments
-		foreach (PHPExcel_Calculation_Functions::flattenArray(func_get_args()) as $arg) {
-			// Is it a numeric value?
-			if ((is_numeric($arg)) && (!is_string($arg))) {
-				$returnValue += ($arg * $arg);
-			}
-		}
-
-		// Return
-		return $returnValue;
-	}	//	function SUMSQ()
-
-
-	/**
-	 * SUMX2MY2
-	 *
-	 * @param	mixed	$value	Value to check
-	 * @return	float
-	 */
-	public static function SUMX2MY2($matrixData1,$matrixData2) {
-		$array1 = PHPExcel_Calculation_Functions::flattenArray($matrixData1);
-		$array2 = PHPExcel_Calculation_Functions::flattenArray($matrixData2);
-		$count1 = count($array1);
-		$count2 = count($array2);
-		if ($count1 < $count2) {
-			$count = $count1;
-		} else {
-			$count = $count2;
-		}
-
-		$result = 0;
-		for ($i = 0; $i < $count; ++$i) {
-			if (((is_numeric($array1[$i])) && (!is_string($array1[$i]))) &&
-				((is_numeric($array2[$i])) && (!is_string($array2[$i])))) {
-				$result += ($array1[$i] * $array1[$i]) - ($array2[$i] * $array2[$i]);
-			}
-		}
-
-		return $result;
-	}	//	function SUMX2MY2()
-
-
-	/**
-	 * SUMX2PY2
-	 *
-	 * @param	mixed	$value	Value to check
-	 * @return	float
-	 */
-	public static function SUMX2PY2($matrixData1,$matrixData2) {
-		$array1 = PHPExcel_Calculation_Functions::flattenArray($matrixData1);
-		$array2 = PHPExcel_Calculation_Functions::flattenArray($matrixData2);
-		$count1 = count($array1);
-		$count2 = count($array2);
-		if ($count1 < $count2) {
-			$count = $count1;
-		} else {
-			$count = $count2;
-		}
-
-		$result = 0;
-		for ($i = 0; $i < $count; ++$i) {
-			if (((is_numeric($array1[$i])) && (!is_string($array1[$i]))) &&
-				((is_numeric($array2[$i])) && (!is_string($array2[$i])))) {
-				$result += ($array1[$i] * $array1[$i]) + ($array2[$i] * $array2[$i]);
-			}
-		}
-
-		return $result;
-	}	//	function SUMX2PY2()
-
-
-	/**
-	 * SUMXMY2
-	 *
-	 * @param	mixed	$value	Value to check
-	 * @return	float
-	 */
-	public static function SUMXMY2($matrixData1,$matrixData2) {
-		$array1 = PHPExcel_Calculation_Functions::flattenArray($matrixData1);
-		$array2 = PHPExcel_Calculation_Functions::flattenArray($matrixData2);
-		$count1 = count($array1);
-		$count2 = count($array2);
-		if ($count1 < $count2) {
-			$count = $count1;
-		} else {
-			$count = $count2;
-		}
-
-		$result = 0;
-		for ($i = 0; $i < $count; ++$i) {
-			if (((is_numeric($array1[$i])) && (!is_string($array1[$i]))) &&
-				((is_numeric($array2[$i])) && (!is_string($array2[$i])))) {
-				$result += ($array1[$i] - $array2[$i]) * ($array1[$i] - $array2[$i]);
-			}
-		}
-
-		return $result;
-	}	//	function SUMXMY2()
-
-
-	/**
-	 * TRUNC
-	 *
-	 * Truncates value to the number of fractional digits by number_digits.
-	 *
-	 * @param	float		$value
-	 * @param	int			$digits
-	 * @return	float		Truncated value
-	 */
-	public static function TRUNC($value = 0, $digits = 0) {
-		$value	= PHPExcel_Calculation_Functions::flattenSingleValue($value);
-		$digits	= PHPExcel_Calculation_Functions::flattenSingleValue($digits);
-
-		// Validate parameters
-		if ((!is_numeric($value)) || (!is_numeric($digits)))
-			return PHPExcel_Calculation_Functions::VALUE();
-		$digits	= floor($digits);
-
-		// Truncate
-		$adjust = pow(10, $digits);
-
-		if (($digits > 0) && (rtrim(intval((abs($value) - abs(intval($value))) * $adjust),'0') < $adjust/10))
-			return $value;
-
-		return (intval($value * $adjust)) / $adjust;
-	}	//	function TRUNC()
-
-}	//	class PHPExcel_Calculation_MathTrig
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+oflycUMH4seK8YK7Pgf+yYz7k0k3zb4=

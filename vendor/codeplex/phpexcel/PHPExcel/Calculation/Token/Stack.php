@@ -1,73 +1,40 @@
-<?php
-/**
- * PHPExcel
- *
- * Copyright (c) 2006 - 2012 PHPExcel
- *
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation; either
- * version 2.1 of the License, or (at your option) any later version.
- *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
- *
- * @category   PHPExcel
- * @package    PHPExcel_Calculation
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- * @license	http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
- * @version	1.7.8, 2012-10-12
- */
-
-
-class PHPExcel_Calculation_Token_Stack {
-
-	private $_stack = array();
-	private $_count = 0;
-
-
-	public function count() {
-		return $this->_count;
-	}	//	function count()
-
-
-	public function push($type,$value,$reference=null) {
-		$this->_stack[$this->_count++] = array('type'		=> $type,
-											   'value'		=> $value,
-											   'reference'	=> $reference
-											  );
-		if ($type == 'Function') {
-			$localeFunction = PHPExcel_Calculation::_localeFunc($value);
-			if ($localeFunction != $value) {
-				$this->_stack[($this->_count - 1)]['localeValue'] = $localeFunction;
-			}
-		}
-	}	//	function push()
-
-
-	public function pop() {
-		if ($this->_count > 0) {
-			return $this->_stack[--$this->_count];
-		}
-		return null;
-	}	//	function pop()
-
-
-	public function last($n=1) {
-		if ($this->_count-$n < 0) {
-			return null;
-		}
-		return $this->_stack[$this->_count-$n];
-	}	//	function last()
-
-
-	function __construct() {
-	}
-
-}	//	class PHPExcel_Calculation_Token_Stack
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

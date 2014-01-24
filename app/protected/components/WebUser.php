@@ -1,38 +1,41 @@
-<?php
-
-class WebUser extends CWebUser
-{
-    public function isAdmin()
-    {
-        return ($this->getState('role') == 'admin');
-    }
-
-    public function logout($destroySession = true)
-    {
-        $auth = Yii::app()->authManager;
-        $assigned_roles = $auth->getRoles(Yii::app()->user->id); //obtains all assigned roles for this user id
-        if(!empty($assigned_roles)) { //checks that there are assigned roles
-            foreach(array_keys($assigned_roles) as $n) {
-                $auth->revoke($n, Yii::app()->user->id);
-            }
-            $auth->save(); //again always save the result
-        }
-        // If root login
-        if (Yii::app()->user->id == 0) {
-            $roles = $auth->getRoles(Yii::app()->user->id);
-            foreach(array_keys($roles) as $n) {
-                $auth->revoke($n, Yii::app()->user->id);            
-            }
-            $tasks = $auth->getTasks(Yii::app()->user->id);
-            foreach(array_keys($tasks) as $n) {
-                $auth->revoke($n, Yii::app()->user->id);            
-            }
-            $operations = $auth->getOperations(Yii::app()->user->id);
-            foreach(array_keys($operations) as $n) {
-                $auth->revoke($n, Yii::app()->user->id);            
-            }
-            $auth->save(); //again always save the result
-        }
-        parent::logout();
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

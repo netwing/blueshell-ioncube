@@ -1,129 +1,86 @@
-<?php
-
-require_once 'Swift/Tests/SwiftUnitTestCase.php';
-require_once 'Swift/Plugins/BandwidthMonitorPlugin.php';
-require_once 'Swift/Events/SendEvent.php';
-require_once 'Swift/Events/CommandEvent.php';
-require_once 'Swift/Events/ResponseEvent.php';
-require_once 'Swift/Mime/Message.php';
-
-class Swift_Plugins_BandwidthMonitorPluginTest
-    extends Swift_Tests_SwiftUnitTestCase
-{
-    public function setUp()
-    {
-        $this->_monitor = new Swift_Plugins_BandwidthMonitorPlugin();
-    }
-
-    public function testBytesOutIncreasesAccordingToMessageLength()
-    {
-        $message = $this->_createMessageWithByteCount(6);
-        $evt = $this->_createSendEvent($message);
-
-        $this->assertEqual(0, $this->_monitor->getBytesOut());
-        $this->_monitor->sendPerformed($evt);
-        $this->assertEqual(6, $this->_monitor->getBytesOut());
-        $this->_monitor->sendPerformed($evt);
-        $this->assertEqual(12, $this->_monitor->getBytesOut());
-    }
-
-    public function testBytesOutIncreasesWhenCommandsSent()
-    {
-        $evt = $this->_createCommandEvent("RCPT TO: <foo@bar.com>\r\n");
-
-        $this->assertEqual(0, $this->_monitor->getBytesOut());
-        $this->_monitor->commandSent($evt);
-        $this->assertEqual(24, $this->_monitor->getBytesOut());
-        $this->_monitor->commandSent($evt);
-        $this->assertEqual(48, $this->_monitor->getBytesOut());
-    }
-
-    public function testBytesInIncreasesWhenResponsesReceived()
-    {
-        $evt = $this->_createResponseEvent("250 Ok\r\n");
-
-        $this->assertEqual(0, $this->_monitor->getBytesIn());
-        $this->_monitor->responseReceived($evt);
-        $this->assertEqual(8, $this->_monitor->getBytesIn());
-        $this->_monitor->responseReceived($evt);
-        $this->assertEqual(16, $this->_monitor->getBytesIn());
-    }
-
-    public function testCountersCanBeReset()
-    {
-        $evt = $this->_createResponseEvent("250 Ok\r\n");
-
-        $this->assertEqual(0, $this->_monitor->getBytesIn());
-        $this->_monitor->responseReceived($evt);
-        $this->assertEqual(8, $this->_monitor->getBytesIn());
-        $this->_monitor->responseReceived($evt);
-        $this->assertEqual(16, $this->_monitor->getBytesIn());
-
-        $evt = $this->_createCommandEvent("RCPT TO: <foo@bar.com>\r\n");
-
-        $this->assertEqual(0, $this->_monitor->getBytesOut());
-        $this->_monitor->commandSent($evt);
-        $this->assertEqual(24, $this->_monitor->getBytesOut());
-        $this->_monitor->commandSent($evt);
-        $this->assertEqual(48, $this->_monitor->getBytesOut());
-
-        $this->_monitor->reset();
-
-        $this->assertEqual(0, $this->_monitor->getBytesOut());
-        $this->assertEqual(0, $this->_monitor->getBytesIn());
-    }
-
-    // -- Creation Methods
-
-    private function _createSendEvent($message)
-    {
-        $evt = $this->_mock('Swift_Events_SendEvent');
-        $this->_checking(Expectations::create()
-            -> ignoring($evt)->getMessage() -> returns($message)
-            );
-
-        return $evt;
-    }
-
-    private function _createCommandEvent($command)
-    {
-        $evt = $this->_mock('Swift_Events_CommandEvent');
-        $this->_checking(Expectations::create()
-            -> ignoring($evt)->getCommand() -> returns($command)
-            );
-
-        return $evt;
-    }
-
-    private function _createResponseEvent($response)
-    {
-        $evt = $this->_mock('Swift_Events_ResponseEvent');
-        $this->_checking(Expectations::create()
-            -> ignoring($evt)->getResponse() -> returns($response)
-            );
-
-        return $evt;
-    }
-
-    private function _createMessageWithByteCount($bytes)
-    {
-        $this->_bytes = $bytes;
-        $msg = $this->_mock('Swift_Mime_Message');
-        $this->_checking(Expectations::create()
-            -> ignoring($msg)->toByteStream(any()) -> calls(array($this, '_write'))
-        );
-
-        return $msg;
-    }
-
-    private $_bytes = 0;
-    public function _write($invocation)
-    {
-        $args = $invocation->getArguments();
-        $is = $args[0];
-        for ($i = 0; $i < $this->_bytes; ++$i) {
-            $is->write('x');
-        }
-    }
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+w0ylVjy5Y+jCOrf3IpqNMsqX0gEGdaQ0

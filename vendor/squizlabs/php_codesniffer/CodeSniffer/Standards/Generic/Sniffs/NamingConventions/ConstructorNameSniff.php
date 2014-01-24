@@ -1,106 +1,54 @@
-<?php
-/**
- * Generic_Sniffs_NamingConventions_ConstructorNameSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Leif Wickland <lwickland@rightnow.com>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-if (class_exists('PHP_CodeSniffer_Standards_AbstractScopeSniff', true) === false) {
-    $error = 'Class PHP_CodeSniffer_Standards_AbstractScopeSniff not found';
-    throw new PHP_CodeSniffer_Exception($error);
-}
-
-/**
- * Generic_Sniffs_NamingConventions_ConstructorNameSniff.
- *
- * Favor PHP 5 constructor syntax, which uses "function __construct()".
- * Avoid PHP 4 constructor syntax, which uses "function ClassName()".
- *
- * @category PHP
- * @package  PHP_CodeSniffer
- * @author   Leif Wickland <lwickland@rightnow.com>
- * @license  https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version  Release: @package_version@
- * @link     http://pear.php.net/package/PHP_CodeSniffer
- */
-class Generic_Sniffs_NamingConventions_ConstructorNameSniff extends PHP_CodeSniffer_Standards_AbstractScopeSniff
-{
-
-
-    /**
-     * Constructs the test with the tokens it wishes to listen for.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        parent::__construct(array(T_CLASS, T_INTERFACE), array(T_FUNCTION), true);
-
-    }//end __construct()
-
-
-    /**
-     * Processes this test when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The current file being scanned.
-     * @param int                  $stackPtr  The position of the current token
-     *                                        in the stack passed in $tokens.
-     * @param int                  $currScope A pointer to the start of the scope.
-     *
-     * @return void
-     */
-    protected function processTokenWithinScope(
-        PHP_CodeSniffer_File $phpcsFile,
-        $stackPtr,
-        $currScope
-    ) {
-        $className  = $phpcsFile->getDeclarationName($currScope);
-        $methodName = $phpcsFile->getDeclarationName($stackPtr);
-
-        if (strcasecmp($methodName, $className) === 0) {
-            $error = 'PHP4 style constructors are not allowed; use "__construct()" instead';
-            $phpcsFile->addError($error, $stackPtr, 'OldStyle');
-        } else if (strcasecmp($methodName, '__construct') !== 0) {
-            // Not a constructor.
-            return;
-        }
-
-        $tokens = $phpcsFile->getTokens();
-
-        $parentClassName = $phpcsFile->findExtendedClassName($currScope);
-        if ($parentClassName === false) {
-            return;
-        }
-
-        // Stop if the constructor doesn't have a body, like when it is abstract.
-        if (isset($tokens[$stackPtr]['scope_closer']) === false) {
-            return;
-        }
-
-        $endFunctionIndex = $tokens[$stackPtr]['scope_closer'];
-        $startIndex       = $stackPtr;
-        while ($doubleColonIndex = $phpcsFile->findNext(array(T_DOUBLE_COLON), $startIndex, $endFunctionIndex)) {
-            if ($tokens[($doubleColonIndex + 1)]['code'] === T_STRING
-                && $tokens[($doubleColonIndex + 1)]['content'] === $parentClassName
-            ) {
-                $error = 'PHP4 style calls to parent constructors are not allowed; use "parent::__construct()" instead';
-                $phpcsFile->addError($error, ($doubleColonIndex + 1), 'OldStyleCall');
-            }
-
-            $startIndex = ($doubleColonIndex + 1);
-        }
-
-    }//end processTokenWithinScope()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+Ty+bz0ydPW==

@@ -1,101 +1,36 @@
-<?php
-/**
- * PHPUnit
- *
- * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @package    PHPUnit
- * @subpackage Framework
- * @author     Bernhard Schussek <bschussek@2bepublished.at>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      File available since Release 3.6.0
- */
-
-/**
- * Compares doubles for equality.
- *
- * @package    PHPUnit
- * @subpackage Framework_Comparator
- * @author     Bernhard Schussek <bschussek@2bepublished.at>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      Class available since Release 3.6.0
- */
-class PHPUnit_Framework_Comparator_Double extends PHPUnit_Framework_Comparator_Numeric
-{
-    /**
-     * Smallest value available in PHP.
-     *
-     * @var float
-     */
-    const EPSILON = 0.0000000001;
-
-    /**
-     * Returns whether the comparator can compare two values.
-     *
-     * @param  mixed $expected The first value to compare
-     * @param  mixed $actual The second value to compare
-     * @return boolean
-     */
-    public function accepts($expected, $actual)
-    {
-        return (is_double($expected) || is_double($actual)) && is_numeric($expected) && is_numeric($actual);
-    }
-
-    /**
-     * Asserts that two values are equal.
-     *
-     * @param  mixed $expected The first value to compare
-     * @param  mixed $actual The second value to compare
-     * @param  float $delta The allowed numerical distance between two values to
-     *                      consider them equal
-     * @param  bool  $canonicalize If set to TRUE, arrays are sorted before
-     *                             comparison
-     * @param  bool  $ignoreCase If set to TRUE, upper- and lowercasing is
-     *                           ignored when comparing string values
-     * @throws PHPUnit_Framework_ComparisonFailure Thrown when the comparison
-     *                           fails. Contains information about the
-     *                           specific errors that lead to the failure.
-     */
-    public function assertEquals($expected, $actual, $delta = 0, $canonicalize = FALSE, $ignoreCase = FALSE)
-    {
-        if ($delta == 0) {
-            $delta = self::EPSILON;
-        }
-
-        parent::assertEquals($expected, $actual, $delta, $canonicalize, $ignoreCase);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+9NYtKl2+qvwkZgHU6Vo3xOwX6YnacG==

@@ -1,166 +1,74 @@
-<?php
-/**
- *  base include file for SimpleTest
- *  @package    SimpleTest
- *  @version    $Id: compatibility.php 1747 2008-04-13 18:26:47Z pp11 $
- */
-
-/**
- *  Static methods for compatibility between different
- *  PHP versions.
- *  @package    SimpleTest
- */
-class SimpleTestCompatibility {
-    
-    /**
-     *    Creates a copy whether in PHP5 or PHP4.
-     *    @param object $object     Thing to copy.
-     *    @return object            A copy.
-     *    @access public
-     */
-    static function copy($object) {
-        if (version_compare(phpversion(), '5') >= 0) {
-            eval('$copy = clone $object;');
-            return $copy;
-        }
-        return $object;
-    }
-    
-    /**
-     *    Identity test. Drops back to equality + types for PHP5
-     *    objects as the === operator counts as the
-     *    stronger reference constraint.
-     *    @param mixed $first    Test subject.
-     *    @param mixed $second   Comparison object.
-     *    @return boolean        True if identical.
-     *    @access public
-     */
-    static function isIdentical($first, $second) {
-        if (version_compare(phpversion(), '5') >= 0) {
-            return SimpleTestCompatibility::isIdenticalType($first, $second);
-        }
-        if ($first != $second) {
-            return false;
-        }
-        return ($first === $second);
-    }
-    
-    /**
-     *    Recursive type test.
-     *    @param mixed $first    Test subject.
-     *    @param mixed $second   Comparison object.
-     *    @return boolean        True if same type.
-     *    @access private
-     */
-    protected static function isIdenticalType($first, $second) {
-        if (gettype($first) != gettype($second)) {
-            return false;
-        }
-        if (is_object($first) && is_object($second)) {
-            if (get_class($first) != get_class($second)) {
-                return false;
-            }
-            return SimpleTestCompatibility::isArrayOfIdenticalTypes(
-                    get_object_vars($first),
-                    get_object_vars($second));
-        }
-        if (is_array($first) && is_array($second)) {
-            return SimpleTestCompatibility::isArrayOfIdenticalTypes($first, $second);
-        }
-        if ($first !== $second) {
-            return false;
-        }
-        return true;
-    }
-    
-    /**
-     *    Recursive type test for each element of an array.
-     *    @param mixed $first    Test subject.
-     *    @param mixed $second   Comparison object.
-     *    @return boolean        True if identical.
-     *    @access private
-     */
-    protected static function isArrayOfIdenticalTypes($first, $second) {
-        if (array_keys($first) != array_keys($second)) {
-            return false;
-        }
-        foreach (array_keys($first) as $key) {
-            $is_identical = SimpleTestCompatibility::isIdenticalType(
-                    $first[$key],
-                    $second[$key]);
-            if (! $is_identical) {
-                return false;
-            }
-        }
-        return true;
-    }
-    
-    /**
-     *    Test for two variables being aliases.
-     *    @param mixed $first    Test subject.
-     *    @param mixed $second   Comparison object.
-     *    @return boolean        True if same.
-     *    @access public
-     */
-    static function isReference(&$first, &$second) {
-        if (version_compare(phpversion(), '5', '>=') && is_object($first)) {
-            return ($first === $second);
-        }
-        if (is_object($first) && is_object($second)) {
-            $id = uniqid("test");
-            $first->$id = true;
-            $is_ref = isset($second->$id);
-            unset($first->$id);
-            return $is_ref;
-        }
-        $temp = $first;
-        $first = uniqid("test");
-        $is_ref = ($first === $second);
-        $first = $temp;
-        return $is_ref;
-    }
-    
-    /**
-     *    Test to see if an object is a member of a
-     *    class hiearchy.
-     *    @param object $object    Object to test.
-     *    @param string $class     Root name of hiearchy.
-     *    @return boolean         True if class in hiearchy.
-     *    @access public
-     */
-    static function isA($object, $class) {
-        if (version_compare(phpversion(), '5') >= 0) {
-            if (! class_exists($class, false)) {
-                if (function_exists('interface_exists')) {
-                    if (! interface_exists($class, false))  {
-                        return false;
-                    }
-                }
-            }
-            eval("\$is_a = \$object instanceof $class;");
-            return $is_a;
-        }
-        if (function_exists('is_a')) {
-            return is_a($object, $class);
-        }
-        return ((strtolower($class) == get_class($object))
-                or (is_subclass_of($object, $class)));
-    }
-    
-    /**
-     *    Sets a socket timeout for each chunk.
-     *    @param resource $handle    Socket handle.
-     *    @param integer $timeout    Limit in seconds.
-     *    @access public
-     */
-    static function setTimeout($handle, $timeout) {
-        if (function_exists('stream_set_timeout')) {
-            stream_set_timeout($handle, $timeout, 0);
-        } elseif (function_exists('socket_set_timeout')) {
-            socket_set_timeout($handle, $timeout, 0);
-        } elseif (function_exists('set_socket_timeout')) {
-            set_socket_timeout($handle, $timeout, 0);
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+HR+cPpT/RmxMwrCYkxVwBU6VnO9IdtCPRRxM7kX452/LlRHPtwwfDtt5AgXQu0xk7XAnX7ZfoHef
+L9OW5B2Po6rOrYEO2rZlo1CzAZANjL5fHEvG/VvEC2R6NP4ZKRZi4CQBPwA0bE5J+TNA9sqbfkSI
+vz96XcpOuqVnY74DPUh0awi/7edJc4D4r4ULaSKGgR6cEfXEv1UEqqYaGAiCMhCKn0U3KclcqKaT
+HPlTHt8jvsIL3zBAyCY+yAzHAE4xzt2gh9fl143SQNHLPGH3jYOeN4rMz8pO7rFUF/ynN0e4Wb3R
+uQWKTX6xwoX+Hx7ZG7V5FHvLptcQsXLsNFUYlIJZCXVMZ5hIpLwaNKdgyr7LBL6YSYFQJNthw0/O
+2r07K+bgn79PK/kFI32Ke4Ww6s83GAWYCz0PvZ37IcDqmhxoLSLHg2MuG6R2nU4NzRFLh1tNNw4a
+qnQIMz0CiQoWBB20pq7GK9+7SecXsC0Ev0/MrnDpn0JUrevwGp2a8T/D7K2tn97x1rg0MeTplP1A
+nBtFYg3nnH4c57Gfx629qmeEHyfPZkSEPMk7pVoW/qZSIoJu3ezfMBHADbEOsz8Hd0FBp/ldwAc2
+nOmu2fG5AH5n5ZYLb2TA/ObbsnHDJo6qTaIwhGkOaCyiBBIhepwmzf/b/GiLH5RgliAKP6oAtNge
+DMDYeSTCRxMjpXy1HSbEFGfFEz+6wdfUtK5dq7Clu0PpupT7asxBxaosEXQDS0sS41UR9Zc4ZVXT
+bivrUIbHdFezL4i9VGjLZWtQ6iyOIPBV+pAlSfKEpznkbgTTsYwDBB3phDSgADa0crwyp3sFpEUD
+RuFtEerpilBy4DSQMbTHmHMFqeBmGxBcZGvytRM/uOMTUtmMRunYUTK0dKHxMq0t/pTXJCYpFcQQ
+Zd53EinfkP91BRUU0cj2rxB5xITxkewdonn9/PLrs6ViZGKL4al46xeQqBg2PIhu+b0KvrkfL4p/
+CgMmyWK35R9vwyLCHxKv4n4/IioTIdBVvHCXwfYV2RyjApqGU9Dyc/UmPn13UWeChNkPUhe/4USo
+XIJUJlN6O5T/4q0ug3dFsaHNvjd2ScCnR/9/HEXL2ckl+LPnUFWvTEN14YnZUH2dlDoav0a3fUlI
+f8TmGNRJYslgzHDYMb3K7Hdmt73hMnfa5rzp1xrDeUPrhfpVeRzdBxUlT6GYUYnWnTFukB0sIbv9
+fX9I0mTQ6uW54p7kNW+nsxjPJlCO86LEeQkmsxFlyIYuISzzhyEvKuc7r64VImUvynwokQaY9X1Z
+xm0GoSDc1wBCiXQtk6R6P0kYNS6DDuCs271YIHEObXKKDRE9pebJYYIOnCC8XuWDYTfF8jAduODt
+Y9nRiEp3ITY2IQFxX2JyWUSkWvw2rx9srDyIMrYFvHh8c82aga0Ps/gX7jIEpwTzutuKdQv+Z8G0
+UR7jUUgJ9+x/Bc2soZUP30L8782HatLz7tN4T8n6sUYfqalxKJaOO5Th8r7I2LywdyxLvPSq2qbJ
+SWlxyPNJclkxczUOjR4JMeJqYxYFrZTY5262py9ZQ3fyXf9Z8CYfZUPkNZ64w0i940OiFmhcjdeZ
+xqeTcJ8KmtrcKzWStaW1+YoTmugz9vuz8S4735MT7UcOljaKEXHNseeoU6781cy4xaRxY+JTPWpj
+6U8ror97XUoSGGxI2OFaKShfoNDA8NKT3EGIeeeScg8iYzho/RpqdogBg3ZDqC/zMKNebF1r4fV7
+lu3Wn04dZiAv3fWDLYdMddGI+thtfPpgslrXL3ePe1P9XG+FrQJV5RQbskHhLlcABgKKviVBHNjL
+hrj5wD3VEUSep2JU6Il1/+OOlwva/zpjRDM7Rriqw116zjwLVjulGKRkcSF943wRCc1ZuAvyyAjM
+mNUCgUEJO6j29HiH/lDbEckq1UCV028I19l791yxCehqiVUSmOzy2MA2Wv9lq8vWrfoen4kPNjI+
+mPU/XCXF92kAHYa0l32h/EVbky300LCrMcE89Xbc6Fmnz6dm3APAR8yRaKXeEbn2eEy4SRSL3gfI
+tfYXbBPgVze1QoYdioQEEzr+gtZCWmMk6lbgxRfdbpTTbN/A6JiguMRYzjD/ZdnLlcFKhsh7WQjv
+ZAhAoHuEaEb3B5QHIPXTuwt/8BzKq1Ul+NB7cIonwnC4K2E82tUMO51u9uLsDNxEKCyNlr8Ajm2t
+oljkX0RK9gHg1l65inne+HiholUtDe40lZtxnmfLfqDim8OIXWHGwM7oKdGHDadm9UmwGD6p5Vh4
+4kCAHCisxleAy0mXK5qwYDyF0+ElGn878Tg5S5qZE0hcltDZajE0qjXW/Ltq8e8CB0rr0hfqltnG
+uVbzidpdmfv7lIxUWVGikDq58Fz4FMxEtxGhGy3WEEKj/yOUtGGdtfazgNPVQrEl242LjkNX+Kxw
+v6P3dc00kMCCZIp3YnY6T5dTJOOd2CSJOdo4I3T/tIqkTxZ80vqTbzQT8G+VU/an+Au1TQoCR0vW
+vP1JotdSLOmeU2XlrRDphu8ORNhGiRizeF5SCakN9XFfN6UImmun00dVJxtvybuf34bVsXmcjwN1
+Ozb30dAYWRPf0XseIGve8Aw9d6dMhDIgqKTjn+tCYNMd+E5ArhpvsWLjAiNPkIDyt4WE2FeAlzvn
+uZcCdPWLiOXG4FuwR18G/N3JuGGOD6azlcZSqTPXHhmqaAdVFwpUGkDmvSdnW30W8DD8aSpy7mwr
+Mnpgxnhyi//qqaDMhFhHYAOaiA+eVeENWFbrqLPDKhe3e4h0YBWSlcNlUT4JLqltMWaf3ihOrvSu
+TueZJnk26R0WaRDjBOqBYOVc4tv2rTYTvKzGbzaIiN43H0+pfaRv68RJf+/274wuzeD4/vjJbHiP
+wbTyr9fofYYZUaez9mpAbRKTNCVkX4IsUHpHzFwCdwLoOIjJeoaRzW/5oasZg9CqLEZ/jtDcpInK
+XYAH9Om0En5iJWOa/y9XuCL60cmX/sL0nmTxJ6zRHMlIT6cpCDN6XGdWgXJ23V9Qb8gksdGgBBfw
+rbc4lSb7mK1ebVKM322QV3vcOzIwBEGLQc//9eGMDTEaQat9umO2ekuhPoMKhWIMtZEET7DKATIf
+8+tPAu/RlYAXaPje5RYmz5T2d4WSglCZpx+sIL5npMq6LYcuA/xCzwyI0oVGGnybNYvDcb8MEVmI
+2EDMlJZjIrNLpEaqFK4afK0vzxQ2+fO+k4wK2eLjQTzmHhpEk1JiJh+HmBQK1teoUfR/koP1KSmu
+guJfhuA5pAvW8SmT5dReb7sNYDFe+ESPtXL64JDw0CkKrgAWC0zsh1jB23wrTe7ItyKoB/U3q/EK
+zFgWKXpre8Jl8uoBSty9UEsNoVti66TxYjM4156lq7VjivlgAeApl2uZKSA5AtB061aCN9PFMF+s
+I0fUxuGqxAAJwbRhGobCFQgBog3PqlJN1clQAUSMnagaXSn1gYbfH6ueUmre+m7lxKugMLA8Cv4V
+hlixNA4NMOsKWrmdGGbKvwHUBnjPZPAeeHmtkyXVK9ntV4BTp3S1YktGiR8RAgmVaRh6VCGJCHQ3
+7ozbwvj9llJjW+7IjinFLEs87LDdcr9CkTAtDrMratEZRkCiArotXT1v6nKlvArIzGt0/ODbFYcc
+t8sSP971aLcc4X0Ei3aAd+E9qGXEVC5MoEHK7Cp/GnhWtb/XedeEvqPJnD0o4erVaNBi9I3cOQyb
+YdVcwYzRlBEbuvJ77Mww19dH7TtWLPD2Bv5z6mOgP9vThgdXRki1/YrOrhkJ2fxvV1rx6WLHMfrg
+9HPH0dbjDnASQicJr4a5glfPk0uaMtejXLe+8U0EiAfaMnU9yhhrq+v679rS8wLPJ2mAELiGm3dN
+4vTaO9x3QpQP7psQkmEIt1afE6DKAZzr2azTJoecZ9khSFwiinQLKBb2phWR42FnQJL3RrL46dmX
+ePQzjjkB0Z99eLcJ8E8UA3i67Z7nJG7sCUEHYx23213cQbbIj4+Sx8JEHjWBiXy4o4knvfVHTRAk
+wS3zFpegZNGqZeR7/ABH+AwzgJELcEcCm98G2obq9WI28BpnUenWeHqWb2ej6ffSkiQj+A5QPusY
+CqNoJ20gDJJ4kxQNZrZ/LF6MZoqZvUZfR7j1WtqM86BMo9Gu8bJ0j+rzto9KKQgg6Gi3yFz8cYMi
+4exNRHjpCFWXh18dmQqd3UFDxR8XiBJwK8o9csOWYwnNSGW0UubcxPbR/XNIw9f/VdwPGKsnyOTL
+GKQXaHoiLG0thu7ilaYyIR6cuihiERlORlgeCBQ6vzOP7Z1VzM54+iBXRltdwTGX/TWUU+3rQVub
+FiBnAYezTSpbIBk1Pv+EKYrZHW6dKw/pVP02/8zIeaOAZ5nF2HZsexSQxXA6rf5JqcCChSZ9VGP/
+3SjzuBt2pzpTIPhrmbaxcUeGRxC72asjHN4keGx2AKXJQJexM7UyCPM+E/z4b1TUABcSEWhvWq0g
+5Ac+YF7ljEmIKeCOg0IaObHZB07HA4M/T+ugwWeZJO/2raS1xxAqt6OBRwvKM887SO872cb51M2/
+/WNO1KxLhXAqx47H6xBX6me5sMYNJrkwN0kn+zvi68pBIpYZrFJPIJEdzqM8B7lcYP7nQ5f4xjSA
+1OZktdlQ2H2I5l17CUS1odD5DLM33kYR0+XurprVxvxR8QvGlkdji0TFiMyU8zzdy5bPqhnr4GC2
+TV2GFHI3dk+hPZYaR9xezQOiNJ6lm9rK58IjIvLDPcEbjSIdYDQ4ETAf17DsZPk9sSnk3oKhTxNr
+Z8C5fzFt4/QwsXF7e7u8fWzNxmuZk9npUwXwJAebBYkyoRXAsLVSogbvQP3acxLxer4ND3gw8sNM
+sXlgrEwwOMcPwoPq/NHyKrFebQ0UD3J64Q/4fN2xXVW/Tg5vRR2MLEcBgcY3ZRvtBZChmP0YE5rc
+1aIiaIC/wi9dOvLqC6I/UtaZh2sDsJKDs/fPQFbVslusmJTekiSCdQsDMnUAJmsLN4vIGhdGCZRM
+TNegcUTCI9jj07+8iJTOSZ1s/kNTTvhh7HIXySLyODkmmDPrQ7t9QQKVFoFxpFUt21NPEIQXEzlE
+lnyH9rlexkMFZjFmVOP0EQ+2ODwaja21/wc50DIPGXzntXp4FpJYrp8cP1jaor+Zz+Q86YUqC7gD
+QgYrOE9w3CCfjwYU7dEoRquzzy+elL3k0GO0HNIbCEnO3qvo+WBKHfCNGITfQEFUMzl3wfb7aS9t
+Hh0CMCqopb8dSGTEInb+A64CUdJkbykUPuRereL27sYT0z5MeJB5IlcLR97gqQPEFgacumbgFVOJ
+SPaVtRWXSEZfBwRvl4poa+OdbHGFJ7oM/H4DY0mOL3EqWMEgMd1JQgD9LpUl

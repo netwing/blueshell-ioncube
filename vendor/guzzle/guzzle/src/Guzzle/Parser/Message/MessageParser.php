@@ -1,110 +1,69 @@
-<?php
-
-namespace Guzzle\Parser\Message;
-
-/**
- * Default request and response parser used by Guzzle. Optimized for speed.
- */
-class MessageParser extends AbstractMessageParser
-{
-    public function parseRequest($message)
-    {
-        if (!$message) {
-            return false;
-        }
-
-        $parts = $this->parseMessage($message);
-
-        // Parse the protocol and protocol version
-        if (isset($parts['start_line'][2])) {
-            $startParts = explode('/', $parts['start_line'][2]);
-            $protocol = strtoupper($startParts[0]);
-            $version = isset($startParts[1]) ? $startParts[1] : '1.1';
-        } else {
-            $protocol = 'HTTP';
-            $version = '1.1';
-        }
-
-        $parsed = array(
-            'method'   => strtoupper($parts['start_line'][0]),
-            'protocol' => $protocol,
-            'version'  => $version,
-            'headers'  => $parts['headers'],
-            'body'     => $parts['body']
-        );
-
-        $parsed['request_url'] = $this->getUrlPartsFromMessage($parts['start_line'][1], $parsed);
-
-        return $parsed;
-    }
-
-    public function parseResponse($message)
-    {
-        if (!$message) {
-            return false;
-        }
-
-        $parts = $this->parseMessage($message);
-        list($protocol, $version) = explode('/', trim($parts['start_line'][0]));
-
-        return array(
-            'protocol'      => $protocol,
-            'version'       => $version,
-            'code'          => $parts['start_line'][1],
-            'reason_phrase' => isset($parts['start_line'][2]) ? $parts['start_line'][2] : '',
-            'headers'       => $parts['headers'],
-            'body'          => $parts['body']
-        );
-    }
-
-    /**
-     * Parse a message into parts
-     *
-     * @param string $message Message to parse
-     *
-     * @return array
-     */
-    protected function parseMessage($message)
-    {
-        $startLine = null;
-        $headers = array();
-        $body = '';
-
-        // Iterate over each line in the message, accounting for line endings
-        $lines = preg_split('/(\\r?\\n)/', $message, -1, PREG_SPLIT_DELIM_CAPTURE);
-        for ($i = 0, $totalLines = count($lines); $i < $totalLines; $i += 2) {
-
-            $line = $lines[$i];
-
-            // If two line breaks were encountered, then this is the end of body
-            if (empty($line)) {
-                if ($i < $totalLines - 1) {
-                    $body = implode('', array_slice($lines, $i + 2));
-                }
-                break;
-            }
-
-            // Parse message headers
-            if (!$startLine) {
-                $startLine = explode(' ', $line, 3);
-            } elseif (strpos($line, ':')) {
-                $parts = explode(':', $line, 2);
-                $key = trim($parts[0]);
-                $value = isset($parts[1]) ? trim($parts[1]) : '';
-                if (!isset($headers[$key])) {
-                    $headers[$key] = $value;
-                } elseif (!is_array($headers[$key])) {
-                    $headers[$key] = array($headers[$key], $value);
-                } else {
-                    $headers[$key][] = $value;
-                }
-            }
-        }
-
-        return array(
-            'start_line' => $startLine,
-            'headers'    => $headers,
-            'body'       => $body
-        );
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPn1l7iOCykBftQ2BvHMBA1dHlRA9d2WKmf6iYT/bYUW45zh837FjGPc25pRvjCgMzhMNJT8k
+GiyryPqry+tjR0DCWiG6qgRWmX6UbS/6+KYYVUkezXEEzzXvMos/uH8KAFJS1MflOmfugvyB67vB
+o6Fp3wpHAhp/JUgMHcRPtM3I7w9FdJEPtMVj7WeSGgWA3GLenMtg8Vs3tKNWAmHfDr8fAhJZbFMj
+QN/AtP+gUGj7/7UAuLEGhr4euJltSAgiccy4GDnfT6zdO1HcuqegS1T6Ar0s1hzO/qSFL3B4tXBV
+J2VysPVvskkn0YIso3XJlXoJhmrGz0ZDU1TylKlz7rnN1H9ZlswPP0gb6aLJGVfBUhDKvSiTwPkc
+EjFIxzZlOrjToje4kIwasAueJlv5rWEu7TjA1C48M4ByA/4uQvATN+KMSvE+72EL1m/NWVV9rd3B
+Zw414Iu1ZgW1NT8+RAjk1cOBU8yxJjaEX1yty9dO8t21Ae00pMTFDxalXaIiM0MR+WzoS0UMnAFT
+JCtNDLbj7MDz7+ckxcbp7RrU4jgUYhChfR5C7GFMG9uK9SC5On3zdAEcBFpg5iMEtvgaMrY94JXe
+VomEA+5WFK/vkJFAyXyk6GgXmqN/7JiJC69d/Um+7OtnswfwTARIYPkwwrf5sHcMBxKrFmrYobbC
+SWB18I1q5M2DsoUQn6t+FktJ4/eSZUitiAoOhWKWx1rUZEOHSI0Tuqd9gMLcYJ63aw4HNr8a04gF
+2MXNbSJn3nBaT/UMnR6TS/W6K7t23/zl9ZrHOjWrmm5/iOnuvk7s0/m6l3NFa8nyEnLrWunsi2D9
+s/v5h1FcEyrYdbbNSR1lEyJSe2QCHfLylHsehq/H3PpMb7TPz7Q3H+TOOTsEPBvJ7O1vs/T0kKP2
+3/7zTpMluB17S+J3sp0x5XO/rX0by+vlsKF3seRslgzBgZQu05EGdMJnhuRkwx9n0F+gPUGQnel1
+TbrETiAjgstMIanGcXvrhQHMtXapzBNB0d5s/K3tT/g1ZCM0RGUMGDuzB9vZvt/T9t+0GAyWvQzJ
+A/T5Sg1AIrEwX/isnJ1ekVAM09x+X+05pni31BifdMzd4f2iZ7VLGZqJHobcXEywFQXJCXihsCls
+TrGU7drWf6NBIJ0EL4NjfmN0BhsQAL57hq71/Z65w9nDMTlLMqmlT35cSA2pkG1BXYKaS3IlJCfR
+IyfVI6ktznDCZu/yT9FELNtkI+95smAe/OqUGWrw0wISlYDWdAqqGI8tAvN3TST/5hyOxdYE0D7D
+5808OYIyB1TE+ekbRyYpxhKrOmW5gKrwz11J07S2FoCMReqRHhvsfWdTzU4YcNNtqNVShITlyPNA
+c/6SnBidbe8M+083Fcj2VixbSm26jpIZGwD5uZQ7qmzdgkt5ZQ1x/etAi3AQP3TqtnUx4pjiyGeR
+1rlCoEjPTRh/8NSjeFavJgnutqmXLHmEoRQuR/hBe3YiCc9BiVDWGGS/q4lrObwl3ziGjshvzWKp
+mRRVEdRZ8+clpldKzH0dJmNLtsg5asDLmpu74xSAUcmSdiksxA2odK8aTj+n2Ju9qPtzu1zOFlbj
+DtAYwqE0VrQvsA4LR7u8q2cETHPVnPpyUjqhXr36CgU8LCj45ebL3CiQNxEAY3I2bz7eL7J/creJ
+Zo77XHEI20ErhX8m6H2nHBGpwbyQDnq1N233rST67YdkWNnTV2SqKk1Gtnm+5KopHUKWXGbYCKLR
+BL7wGxi6EpIutJE61R6xNF/Q9897WiyYRZlAr554JFdb9cPa1T0L5SXI3MMCB3BcqIh9KCQeoEMa
+kFlKAri2kEx+C2uX5EShxFtIjfwspF52hPGx6TqgyDeLGwuPvBmaoekfUfZHlHHgW9p2UDG++GtH
+UtymPZzYdzVYlyn5Ohvw6qcTJr1fX3voxpPsgoZKYe/VR6idT7yAQrIC9kLLOqsLk/YHP1t+QH5n
+1BdflsZtprgawIZrGZfOjHsKEzfFkaaJB/CApeHQCx/5H8ChdWEfdRz6BNUfVqnbWnJpqtl2XlxC
++G2VA1pzRalM8F2aBF6AIeFfEI8x6rnQVB7DhnfqWhYwoLa+cua125Z1hYxCssok26R/5yedxyvo
+387JxS30PsIAJ7O7/FZb5ilyg5S9kxipL5cTW0T3YG6UTCuCm8egrpRzzdQc6wznYLy1a7rWZ+Ib
+xSJLqUKUAUiioNrXglzPoAHFeqolrd+Ld1TNK5k41EwFc7esmTVsbg7kwwK5rkQdPTpEs9vd2yZf
+JqrFY+can6fzv3x2gS/MyzpMXRjqWofqcCCr4gmfaM7trEVYhiR5sSsFu3KBSIgPoFrgnE9VTYGP
+/+oCdnmeP73+waFUcszicFg5go+Cjs9ErkRRV5YTsydeZ2jCCpCCYiV5j0adFurKMk8hskXagZUL
+yvJv8EThPGZT+jddCeGswbBxG8xPEgemyupQ9lOacqpoB02AkunvCfF5YjcdlZWQkCo9W5OcjgAx
+nMEJrYinO3xBGkwDgLWHB8IYtXpmh6YUm/5aFmVYpxbeR2Oz6/VL5hOmDA8CYEgd9R/emhdoOdd/
+RL+WEj9oYXXwGMBKXRLthNewP4SSQnDn1G8Gc2LL9INC8zVZcAjIH5ZbCcq2QWHGl/Tcm7OvI/WH
+Y3xXu5s7w6UQKguCcmtq2gZfY0iJhC3A2n37V1aIOWiIWX8oDvOHuwHxuf3n25r4cUoFx1aO4rXd
+vzsSjbrbxXMat8pvKXC7dkW71V5bcGHfqgKfyA3gntChFyMgTrqKFuDeyjBXk04FCWAWK5v5L848
+RtacB27ZAcVzVU6yHNi+y7hX+3dufyloDvZF0gnW1mXg3KmK09/AD1fLH+1V4jz/UUCgN59fVH/j
+oL/tbD75Wnts+eue7lyZM+zWGqWfVCgIDxePpiEYnOZ9R+iJb1QdZflysDhUM+WNptDP+SK31dap
+RfakX5HALyYkFI1Lj99rOAlcWlXqznyI1fXk3AzqT0pGlSeDRpAaL0iqUn2MorKaS5jbHHSdyLCu
+EohXX5yu9WR/lqzNv/etZ2dbrs2HuCSvaJ2GkYpb5lJweubKuMHcdXnIgpGkLdUxJdrX2S70E3yd
+MsGIJoVWB+d39S3OjssfdChia8TimqC6oiSJS4ehyHGu12Z05kEIeC89+ht/cYxX9BdQw/YasT2m
+6HfIEXQRqWPXZUbggiUZj5PJ9WhX3wkkU6vbil+hipNHM+dqNo5i0aZiIqTqa6ylvGpUmBQMw2d6
+iTW8Dcvmkvuji0ecQr3uyx/t6p0XxKaeA7I/BbzU2XRPa3vCHfyWyrT3TTNK+bz4IibPYUqULGrL
+3rSezfNEoOqockbQDGGT2wj6BTopvUG4OEspoagnaTm6h3SkQ/bOphjZgvzMElqN35gPcVGdyBre
+tVnekZxS0nTfkBjxBDYq0hywyOOBfSqRyqcV7wJw+Y4mCycIEM/9r2jXyW6c/nxtn+jx4iH+6H81
+ritbsugEt/NFhh8Eg5Pkgvy78x829N68t+YBe/KJ74Wlwqhz/1cnlOu/5LIgA6+mN4jc49zzQO45
+eqSq9+6CwDKMH8rr9qlDkM8op8ir2W7hYvVeTrkbJIgLPHjjaGyhxWQz32p8pBaMJfXwa4EUW238
+z2AB1Ej5+VGtNYvxBmI2uShelIjwnAoDM8AvCDQbUQhItKkFkJNB4A71xA6VYL/vxb2SWyjgkNEr
+Lc6B24m5nqPPvBWZ2SVupwiMWfb1UeC99FN4eidBohGwX8wl64DSItULMRlMQxjVyFUPeizEVeS5
+7Ce4nMleqGl/9YF9jhJuBoejTFYgHS40rjNNT0VO0FZVU5L7Rp+eimFpAcxp6S74JxSUuIrIlwLg
+W5IigIySYHs55L46NqtgwufJfKUwaycs+32QyQ4T05yIYI2v5FhRND/OqpHxlLtqOgUo0iNx38CG
+V2IuLM277mePak+JnWKL++4TEfHjVnPiueaBdwnlQhbFcz4uIFHMrDRDgvAQmvsJ+9oXLeB+LgLl
+SvQr+yaDH723Ppbm2cD+TQysH7Y0DKZOqgvGZJzQdhKxPVXfn9LX8piChoV/zwezwtdvcDCxBtg2
+i3kyTqTz8xfQOWdsiYKgHh6yxNkmwqUPlxjU5EraxnzEGTYI/79Qn0SAmVg+QHPPFhUZRXY9zydX
+pimPI90qPx3MZHynQuM1LAndwCZmWXHCAx0ELVlHrcbRjiMS2Z+0jbmqEKSYVnmjY5sba7/apoPC
+MSQJB1s+GxCcwRP1QrcOcId5gkNeQmZxSAGgk1QDETqSkYImca50tViNZRJxtv3Rj0+Im731b1OZ
+BkRGWaPtqIcnLzAdZFQkDGvsztF7qNpFvYF5QPgkcD9G4zbki+KrjJsKIKNs3enIDsdIiP/ahk48
+qcdti8Si/Cd8RLbsn7OG3V+brhlE9pMtlFCIO87U89S/C0m5X3j8/OuGtaL10dt/zfezsduIwC+L
+eIEYazq3l1YA0GimQwM3GTGnclDJhRgQr4VNqLRlqrZ3/NLQGJsNUo+k0Lu1nqeqXl6SUJwkUl0e
+dZldijNFZz1ARns1Tsv2O8kxOWdFc3tlV4OMbNa09/tQnalRV2RTvVcW6Ea393LtKQ5lbNe4pnMQ
+B5R/S0+k4hs+6CGODeyZClAKnk5I4cMJxlO1qHkP/npfJ8id0HXZ4PYTkXTl6NP807hMmEXwNF5s
+rkwQyVfMwFAxDwQsHQLHTOV2TLPGcKIxt2RwQxLL9lThHnzRBqOAdDqu+NuZWmJqyNmvwQqGXPu7
+enoVRtRbWXVPkegWSE/eejzaZkj5jTTGcjmcKWkzge6+RDVKH+SOhgT2Z5fpcIovJntU/yHzvt7S
+XsyvfT9afLBs+qXSS2+olES6iRV1wknalIeQlXgsUoUhULeWwBscDzE3DTYNnILNtK+wtcuftbOJ
+JVkH+XBgk7BBBf0=

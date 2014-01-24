@@ -1,263 +1,95 @@
-<?php
-/**
- * PHP_CodeCoverage
- *
- * Copyright (c) 2009-2013, Sebastian Bergmann <sebastian@phpunit.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @category   PHP
- * @package    CodeCoverage
- * @subpackage Tests
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://github.com/sebastianbergmann/php-code-coverage
- * @since      File available since Release 1.1.0
- */
-
-if (!defined('TEST_FILES_PATH')) {
-    define(
-      'TEST_FILES_PATH',
-      dirname(dirname(dirname(dirname(__FILE__)))) . DIRECTORY_SEPARATOR .
-      '_files' . DIRECTORY_SEPARATOR
-    );
-}
-
-require_once TEST_FILES_PATH . '../TestCase.php';
-
-/**
- * Tests for the PHP_CodeCoverage_Report_Factory class.
- *
- * @category   PHP
- * @package    CodeCoverage
- * @subpackage Tests
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://github.com/sebastianbergmann/php-code-coverage
- * @since      Class available since Release 1.1.0
- */
-class PHP_CodeCoverage_Report_FactoryTest extends PHP_CodeCoverage_TestCase
-{
-    protected $factory;
-
-    protected function setUp()
-    {
-        $this->factory = new PHP_CodeCoverage_Report_Factory;
-    }
-
-    public function testSomething()
-    {
-        $root = $this->getCoverageForBankAccount()->getReport();
-
-        $expectedPath = rtrim(TEST_FILES_PATH, DIRECTORY_SEPARATOR);
-        $this->assertEquals($expectedPath, $root->getName());
-        $this->assertEquals($expectedPath, $root->getPath());
-        $this->assertEquals(10, $root->getNumExecutableLines());
-        $this->assertEquals(5, $root->getNumExecutedLines());
-        $this->assertEquals(1, $root->getNumClasses());
-        $this->assertEquals(0, $root->getNumTestedClasses());
-        $this->assertEquals(4, $root->getNumMethods());
-        $this->assertEquals(3, $root->getNumTestedMethods());
-        $this->assertEquals('0.00%', $root->getTestedClassesPercent());
-        $this->assertEquals('75.00%', $root->getTestedMethodsPercent());
-        $this->assertEquals('50.00%', $root->getLineExecutedPercent());
-        $this->assertEquals(0, $root->getNumFunctions());
-        $this->assertEquals(0, $root->getNumTestedFunctions());
-        $this->assertNull($root->getParent());
-        $this->assertEquals(array(), $root->getDirectories());
-        #$this->assertEquals(array(), $root->getFiles());
-        #$this->assertEquals(array(), $root->getChildNodes());
-
-        $this->assertEquals(
-          array(
-            'BankAccount' => array(
-              'methods' => array(
-                'getBalance' => array(
-                  'signature' => 'getBalance()',
-                  'startLine' => 6,
-                  'endLine' => 9,
-                  'executableLines' => 1,
-                  'executedLines' => 1,
-                  'ccn' => 1,
-                  'coverage' => 100,
-                  'crap' => '1',
-                  'link' => 'BankAccount.php.html#6',
-                  'methodName' => 'getBalance'
-                ),
-                'setBalance' => array(
-                  'signature' => 'setBalance($balance)',
-                  'startLine' => 11,
-                  'endLine' => 18,
-                  'executableLines' => 5,
-                  'executedLines' => 0,
-                  'ccn' => 2,
-                  'coverage' => 0,
-                  'crap' => 6,
-                  'link' => 'BankAccount.php.html#11',
-                  'methodName' => 'setBalance'
-                ),
-                'depositMoney' => array(
-                  'signature' => 'depositMoney($balance)',
-                  'startLine' => 20,
-                  'endLine' => 25,
-                  'executableLines' => 2,
-                  'executedLines' => 2,
-                  'ccn' => 1,
-                  'coverage' => 100,
-                  'crap' => '1',
-                  'link' => 'BankAccount.php.html#20',
-                  'methodName' => 'depositMoney'
-                ),
-                'withdrawMoney' => array(
-                  'signature' => 'withdrawMoney($balance)',
-                  'startLine' => 27,
-                  'endLine' => 32,
-                  'executableLines' => 2,
-                  'executedLines' => 2,
-                  'ccn' => 1,
-                  'coverage' => 100,
-                  'crap' => '1',
-                  'link' => 'BankAccount.php.html#27',
-                  'methodName' => 'withdrawMoney'
-                ),
-              ),
-              'startLine' => 2,
-              'executableLines' => 10,
-              'executedLines' => 5,
-              'ccn' => 5,
-              'coverage' => 50,
-              'crap' => '8.12',
-              'package' => array(
-                'namespace' => '',
-                'fullPackage' => '',
-                'category' => '',
-                'package' => '',
-                'subpackage' => ''
-              ),
-              'link' => 'BankAccount.php.html#2',
-              'className' => 'BankAccount'
-            )
-          ),
-          $root->getClasses()
-        );
-
-        $this->assertEquals(array(), $root->getFunctions());
-    }
-
-    /**
-     * @covers PHP_CodeCoverage_Report_Factory::buildDirectoryStructure
-     */
-    public function testBuildDirectoryStructure()
-    {
-        $method = new ReflectionMethod(
-          'PHP_CodeCoverage_Report_Factory', 'buildDirectoryStructure'
-        );
-
-        $method->setAccessible(TRUE);
-
-        $this->assertEquals(
-          array(
-            'src' => array(
-              'Money.php/f' => array(),
-              'MoneyBag.php/f' => array()
-            )
-          ),
-          $method->invoke(
-            $this->factory,
-            array('src/Money.php' => array(), 'src/MoneyBag.php' => array())
-          )
-        );
-    }
-
-    /**
-     * @covers       PHP_CodeCoverage_Report_Factory::reducePaths
-     * @dataProvider reducePathsProvider
-     */
-    public function testReducePaths($reducedPaths, $commonPath, $paths)
-    {
-        $method = new ReflectionMethod(
-          'PHP_CodeCoverage_Report_Factory', 'reducePaths'
-        );
-
-        $method->setAccessible(TRUE);
-
-        $_commonPath = $method->invokeArgs($this->factory, array(&$paths));
-
-        $this->assertEquals($reducedPaths, $paths);
-        $this->assertEquals($commonPath, $_commonPath);
-    }
-
-    public function reducePathsProvider()
-    {
-        return array(
-          array(
-            array(
-              'Money.php' => array(),
-              'MoneyBag.php' => array()
-            ),
-            '/home/sb/Money',
-            array(
-              '/home/sb/Money/Money.php' => array(),
-              '/home/sb/Money/MoneyBag.php' => array()
-            )
-          ),
-          array(
-            array(
-              'Money.php' => array()
-            ),
-            '/home/sb/Money/',
-            array(
-              '/home/sb/Money/Money.php' => array()
-            )
-          ),
-          array(
-            array(),
-            '.',
-            array()
-          ),
-          array(
-            array(
-              'Money.php' => array(),
-              'MoneyBag.php' => array(),
-              'Cash.phar/Cash.php' => array(),
-            ),
-            '/home/sb/Money',
-            array(
-              '/home/sb/Money/Money.php' => array(),
-              '/home/sb/Money/MoneyBag.php' => array(),
-              'phar:///home/sb/Money/Cash.phar/Cash.php' => array(),
-            ),
-          ),
-        );
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+i0x1cNa=

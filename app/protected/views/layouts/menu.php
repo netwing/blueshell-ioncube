@@ -1,139 +1,157 @@
-<?php if (!Yii::app()->user->isGuest): ?>
-<nav class="navbar navbar-default" role="navigation" id="topNavbar">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-            <span class="sr-only"><?php echo Yii::t('app', 'Toggle navigation'); ?></span>
-            <span class="fa fa-bars"></span>
-        </button>
-        <a class="navbar-brand" href="index.php">
-        <img src="<?php echo Yii::app()->bridge->oldUrl("images/shell.png"); ?>" alt="BlueShell" />
-        <span style="font-weight: bold;">Blue</span><span style="font-weight: 200">Shell</span></a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <ul class="nav navbar-nav">
-
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <!-- <i class="fa fa-file-text"></i> --> <?php echo Yii::t('app', 'Contracts'); ?></a>
-                <ul class="dropdown-menu">
-                <li><a href="<?php echo Yii::app()->bridge->menuUrl('/admin/contractType/admin'); ?>"><?php echo Yii::t('app', 'Contracts type'); ?></a></li>
-                    <li><a href="<?php echo Yii::app()->bridge->oldUrl("contratti.php"); ?>"><?php echo Yii::t('app', 'View contracts'); ?></a></li>
-                    <li><a href="<?php echo Yii::app()->bridge->oldUrl("contratto_nuovo.php"); ?>"><?php echo Yii::t('app', 'New contract'); ?></a></li>
-                    <li><a href="<?php echo Yii::app()->bridge->oldUrl("contratti_in_scadenza.php"); ?>"><?php echo Yii::t('app', 'Expiring'); ?></a></li>
-                    <li role="presentation" class="divider"></li>
-                    <li><a href="<?php echo Yii::app()->bridge->oldUrl("report_contratti.php"); ?>"><?php echo Yii::t('app', 'Generic report'); ?></a></li>
-                    <li><a href="<?php echo Yii::app()->bridge->oldUrl("rapporto_annuale.php"); ?>"><?php echo Yii::t('app', 'Annual report'); ?></a></li>
-                    <li><a href="<?php echo Yii::app()->bridge->oldUrl("corrispettivi.php"); ?>"><?php echo Yii::t('app', 'Fees report'); ?></a></li>
-                    <li><a href="<?php echo Yii::app()->bridge->oldUrl("rendite.php"); ?>"><?php echo Yii::t('app', 'Income report'); ?></a></li>
-                    <li role="presentation" class="divider"></li>
-                    <li><a href="<?php echo Yii::app()->bridge->oldUrl("statistiche1.php"); ?>"><?php echo Yii::t('app', 'Country statistics'); ?></a></li>
-                    <li><a href="<?php echo Yii::app()->bridge->oldUrl("statistiche4.php"); ?>"><?php echo Yii::t('app', 'Province statistics'); ?></a></li>
-                    <li><a href="<?php echo Yii::app()->bridge->oldUrl("statistiche2.php"); ?>"><?php echo Yii::t('app', 'Presence for resource dimension'); ?></a></li>
-                    <li><a href="<?php echo Yii::app()->bridge->oldUrl("statistiche3.php"); ?>"><?php echo Yii::t('app', 'Presence for vector type'); ?></a></li>
-                    <li role="presentation" class="divider"></li>
-                    <li><a href="<?php echo Yii::app()->bridge->oldUrl("scadenze.php"); ?>"><?php echo Yii::t('app', 'Deadlines'); ?></a></li>
-                </ul>
-            </li>    
-
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><!-- <i class="icon-user"></i> --> <?php echo Yii::t('app', 'Clients'); ?></a>
-                <ul class="dropdown-menu">
-                    <li><a href="<?php echo Yii::app()->bridge->oldUrl("clienti.php"); ?>"><?php echo Yii::t('app', 'View clients'); ?></a></li>
-                    <li><a href="<?php echo Yii::app()->bridge->oldUrl("cliente_inserimento.php"); ?>"><?php echo Yii::t('app', 'New client'); ?></a></li>
-                    <li><a href="<?php echo Yii::app()->bridge->oldUrl("nota_inserimento.php"); ?>"><?php echo Yii::t('app', 'Notes'); ?></a></li>
-                    <li role="presentation" class="divider"></li>
-                    <li><a href="<?php echo Yii::app()->bridge->oldUrl("clienti_comunicazioni.php"); ?>"><?php echo Yii::t('app', 'Communication'); ?></a></li>
-                    <li role="presentation" class="divider"></li>
-                    <li><a href="<?php echo Yii::app()->bridge->oldUrl("clienti_etichette.php"); ?>"><?php echo Yii::t('app', 'Label print'); ?></a></li>
-                </ul>
-            </li>
-
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><!-- <i class="fa fa-rocket"></i> --> <?php echo Yii::t('app', 'Vectors'); ?></a>
-                <ul class="dropdown-menu">
-                    <li><a href="<?php echo Yii::app()->bridge->oldUrl("barche.php"); ?>"><?php echo Yii::t('app', 'View vectors'); ?></a></li>
-                    <li><a href="<?php echo Yii::app()->bridge->oldUrl("barca_inserimento.php?id=0"); ?>"><?php echo Yii::t('app', 'New vector'); ?></a></li>
-                    <li role="presentation" class="divider"></li>
-                    <li><a href="<?php echo Yii::app()->bridge->oldUrl("assicurazioni_in_scadenza.php"); ?>"><?php echo Yii::t('app', 'Expiring insurances'); ?></a></li>
-                </ul>
-            </li>
-
-
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><!-- <i class="icon-anchor"></i> --> <?php echo Yii::t('app', 'Port'); ?></a>
-                <ul class="dropdown-menu">
-                <li><a href="<?php echo Yii::app()->bridge->menuUrl('/admin/dimension/admin'); ?>"><?php echo Yii::t('app', 'Dimensions'); ?></a></li>
-                    <li><a href="<?php echo Yii::app()->bridge->oldUrl("posti_barca.php"); ?>"><?php echo Yii::t('app', 'Resources'); ?></a></li>
-                    <li><a href="<?php echo Yii::app()->bridge->oldUrl("pontili.php"); ?>"><?php echo Yii::t('app', 'Piers'); ?></a></li>
-                    <li role="presentation" class="divider"></li>
-                    <li><a href="<?php echo Yii::app()->bridge->oldUrl("report_presenze.php"); ?>"><?php echo Yii::t('app', 'Presence report'); ?></a></li>
-                    <li><a href="<?php echo Yii::app()->bridge->oldUrl("report_arrivi.php"); ?>"><?php echo Yii::t('app', 'Arrival report'); ?></a></li>
-                </ul>
-            </li>
-
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><!-- <i class="icon-user"></i> --> <?php echo Yii::t('app', 'Orders'); ?></a>
-                <ul class="dropdown-menu">
-                    <li><a href="<?php echo Yii::app()->bridge->menuUrl('/admin/order/create'); ?>"><?php echo Yii::t('app', 'Add new order'); ?></a></li>
-                    <li><a href="<?php echo Yii::app()->bridge->menuUrl('/admin/order/admin'); ?>"><?php echo Yii::t('app', 'Show orders'); ?></a></li>
-                    <li role="presentation" class="divider"></li>
-                    <li><a href="<?php echo Yii::app()->bridge->menuUrl('/admin/orderType/admin'); ?>"><?php echo Yii::t('app', 'Order types'); ?></a></li>
-                    <li><a href="<?php echo Yii::app()->bridge->menuUrl('/admin/orderStatus/admin'); ?>"><?php echo Yii::t('app', 'Order status'); ?></a></li>
-                </ul>
-            </li>
-
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><!-- <i class="icon-archive"></i> --> <?php echo Yii::t('app', 'Documents'); ?></a>
-                <ul class="dropdown-menu">
-                    <?php /* <li><a href="<?php echo Yii::app()->bridge->oldUrl("fatture.php"); ?>"><?php echo Yii::t('app', 'Invoice'); ?></a></li> */ ?>
-                    <li><a href="<?php echo Yii::app()->bridge->menuUrl('/admin/invoice/admin'); ?>"><?php echo Yii::t('app', 'Show invoices'); ?></a></li>
-                    <li><a href="<?php echo Yii::app()->bridge->menuUrl('/admin/invoiceStatus/admin'); ?>"><?php echo Yii::t('app', 'Invoices status'); ?></a></li>
-                    <li><a href="<?php echo Yii::app()->bridge->menuUrl('/admin/invoiceType/admin'); ?>"><?php echo Yii::t('app', 'Invoices types'); ?></a></li>
-                    <li role="presentation" class="divider"></li>
-                    <li><a href="<?php echo Yii::app()->bridge->oldUrl("prima_nota.php"); ?>"><?php echo Yii::t('app', 'Petty cash book'); ?></a></li>
-                    <li role="presentation" class="divider"></li>
-                    <li><a href="<?php echo Yii::app()->bridge->oldUrl("contratti_scadenze.php"); ?>"><?php echo Yii::t('app', 'Expiring contract letters'); ?></a></li>
-                    <li><a href="<?php echo Yii::app()->bridge->oldUrl("assicurazioni_scadenze.php"); ?>"><?php echo Yii::t('app', 'Expiring insurance letters'); ?></a></li>
-                    <li><a href="<?php echo Yii::app()->bridge->oldUrl("stampa_spese_condominiali.php"); ?>"><?php echo Yii::t('app', 'Services charges letters'); ?></a></li>
-                    <li role="presentation" class="divider"></li>
-                    <li><a href="<?php echo Yii::app()->bridge->menuUrl('/admin/systemTemplate/admin'); ?>"><?php echo Yii::t('app', 'System templates'); ?></a></li>
-                    <li><a href="<?php echo Yii::app()->bridge->oldUrl("stampa_gestione_template.php"); ?>"><?php echo Yii::t('app', 'Print templates'); ?></a></li>
-                    <li role="presentation" class="divider"></li>
-                    <li><a href="<?php echo Yii::app()->bridge->oldUrl("percentuali.php"); ?>"><?php echo Yii::t('app', 'Management statistics'); ?></a></li>
-                    <li role="presentation" class="divider"></li>
-                    <li><a href="<?php echo Yii::app()->bridge->oldUrl("listini_nuovo.php"); ?>"><?php echo Yii::t('app', 'New prices list'); ?></a></li>
-                    <li><a href="<?php echo Yii::app()->bridge->oldUrl("listini_posti_barca.php"); ?>"><?php echo Yii::t('app', 'Resources price list'); ?></a></li>
-                    <li><a href="<?php echo Yii::app()->bridge->menuUrl('/admin/productGroup/admin'); ?>"><?php echo Yii::t('app', 'Products and services groups'); ?></a></li>
-                    <li><a href="<?php echo Yii::app()->bridge->menuUrl('/admin/product/admin'); ?>"><?php echo Yii::t('app', 'Products and services'); ?></a></li>
-                </ul>
-            </li>    
-
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <li>
-            <a href="<?php echo Yii::app()->bridge->oldUrl("preferenze.php"); ?>" class="visible-xs" title="<?php echo Yii::t('app', 'Settings'); ?>">
-                <i class="fa fa-wrench"></i> <?php echo Yii::t('app', "Settings"); ?></a>
-            <a href="<?php echo Yii::app()->bridge->oldUrl("preferenze.php"); ?>" class="visible-sm visible-md visible-lg" rel="tooltip" data-toggle="tooltip" title="<?php echo Yii::t('app', 'Settings'); ?>" data-placement="bottom">
-                <i class="fa fa-wrench"></i></a>
-            </li>
-            <li>
-            <a href="<?php echo Yii::app()->bridge->menuUrl('/site/logout'); ?>" class="visible-xs" title="<?php echo Yii::t('app', 'Sign out'); ?>">
-                <i class="fa fa-sign-out"></i> <?php echo Yii::t('app', "Sign out"); ?></a>
-            <a href="<?php echo Yii::app()->bridge->menuUrl('/site/logout'); ?>" class="visible-sm visible-md visible-lg" rel="tooltip" data-toggle="tooltip" title="<?php echo Yii::t('app', 'Sign out'); ?>" data-placement="bottom">
-                <i class="fa fa-sign-out"></i></a>
-            </li>
-        </ul>
-        <form class="hidden-xs hidden-sm navbar-form navbar-right" role="search" action="<?php echo Yii::app()->bridge->oldUrl("cerca.php"); ?>" method="post" id="formMainSearch">
-            <div class="form-group">
-                <input name="operatore" type="hidden" value="contiene" />
-                <input type="text" class="form-control" placeholder="Cerca" style="width: 80px" name="ricerca" id="topNavbarMainSearch">
-                <input type="text" class="form-control" placeholder="P.B." style="width: 50px" name="vai_al_pb" id="vai_al_pb">
-            </div>
-            <button type="submit" class="btn btn-default"><?php echo Yii::t('app', 'Go'); ?></button>
-        </form>
-    </div><!-- /.navbar-collapse -->
-</nav>
-<?php endif; ?>
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

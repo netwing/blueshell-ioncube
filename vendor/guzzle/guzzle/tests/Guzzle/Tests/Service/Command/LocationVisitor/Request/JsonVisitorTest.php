@@ -1,60 +1,58 @@
-<?php
-
-namespace Guzzle\Tests\Service\Command\LocationVisitor\Request;
-
-use Guzzle\Service\Command\LocationVisitor\Request\JsonVisitor as Visitor;
-
-/**
- * @covers Guzzle\Service\Command\LocationVisitor\Request\JsonVisitor
- * @covers Guzzle\Service\Command\LocationVisitor\Request\AbstractRequestVisitor::resolveRecursively
- */
-class JsonVisitorTest extends AbstractVisitorTestCase
-{
-    public function testVisitsLocation()
-    {
-        $visitor = new Visitor();
-        // Test after when no body query values were found
-        $visitor->after($this->command, $this->request);
-
-        $param = $this->getNestedCommand('json')->getParam('foo');
-        $visitor->visit($this->command, $this->request, $param->setSentAs('test'), '123');
-        $visitor->visit($this->command, $this->request, $param->setSentAs('test2'), 'abc');
-        $visitor->after($this->command, $this->request);
-        $this->assertEquals('{"test":"123","test2":"abc"}', (string) $this->request->getBody());
-    }
-
-    public function testAddsJsonHeader()
-    {
-        $visitor = new Visitor();
-        $visitor->setContentTypeHeader('application/json-foo');
-        $param = $this->getNestedCommand('json')->getParam('foo');
-        $visitor->visit($this->command, $this->request, $param->setSentAs('test'), '123');
-        $visitor->after($this->command, $this->request);
-        $this->assertEquals('application/json-foo', (string) $this->request->getHeader('Content-Type'));
-    }
-
-    public function testRecursivelyBuildsJsonBodies()
-    {
-        $command = $this->getCommand('json');
-        $request = $command->prepare();
-        $this->assertEquals('{"Foo":{"test":{"baz":true,"Jenga_Yall!":"HELLO"},"bar":123}}', (string) $request->getBody());
-    }
-
-    public function testAppliesFiltersToAdditionalProperties()
-    {
-        $command = $this->getCommand('json');
-        $command->set('foo', array('not_set' => 'abc'));
-        $request = $command->prepare();
-        $result = json_decode($request->getBody(), true);
-        $this->assertEquals('ABC', $result['Foo']['not_set']);
-    }
-
-    public function testAppliesFiltersToArrayItemValues()
-    {
-        $command = $this->getCommand('json');
-        $command->set('arr', array('a', 'b'));
-        $request = $command->prepare();
-        $result = json_decode($request->getBody(), true);
-        $this->assertEquals(array('A', 'B'), $result['arr']);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

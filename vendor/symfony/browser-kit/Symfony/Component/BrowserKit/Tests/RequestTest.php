@@ -1,53 +1,42 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\BrowserKit\Tests;
-
-use Symfony\Component\BrowserKit\Request;
-
-class RequestTest extends \PHPUnit_Framework_TestCase
-{
-    public function testGetUri()
-    {
-        $request = new Request('http://www.example.com/', 'get');
-        $this->assertEquals('http://www.example.com/', $request->getUri(), '->getUri() returns the URI of the request');
-    }
-
-    public function testGetMethod()
-    {
-        $request = new Request('http://www.example.com/', 'get');
-        $this->assertEquals('get', $request->getMethod(), '->getMethod() returns the method of the request');
-    }
-
-    public function testGetParameters()
-    {
-        $request = new Request('http://www.example.com/', 'get', array('foo' => 'bar'));
-        $this->assertEquals(array('foo' => 'bar'), $request->getParameters(), '->getParameters() returns the parameters of the request');
-    }
-
-    public function testGetFiles()
-    {
-        $request = new Request('http://www.example.com/', 'get', array(), array('foo' => 'bar'));
-        $this->assertEquals(array('foo' => 'bar'), $request->getFiles(), '->getFiles() returns the uploaded files of the request');
-    }
-
-    public function testGetCookies()
-    {
-        $request = new Request('http://www.example.com/', 'get', array(), array(), array('foo' => 'bar'));
-        $this->assertEquals(array('foo' => 'bar'), $request->getCookies(), '->getCookies() returns the cookies of the request');
-    }
-
-    public function testGetServer()
-    {
-        $request = new Request('http://www.example.com/', 'get', array(), array(), array(), array('foo' => 'bar'));
-        $this->assertEquals(array('foo' => 'bar'), $request->getServer(), '->getServer() returns the server parameters of the request');
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+e6ZLdCy=

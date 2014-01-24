@@ -1,126 +1,61 @@
-<?php
-
-/*
- * This file is part of SwiftMailer.
- * (c) 2004-2009 Chris Corbyn
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-/**
- * Standard factory for creating CharacterReaders.
- *
- * @package    Swift
- * @subpackage Encoder
- * @author     Chris Corbyn
- */
-class Swift_CharacterReaderFactory_SimpleCharacterReaderFactory implements Swift_CharacterReaderFactory
-{
-    /**
-     * A map of charset patterns to their implementation classes.
-     *
-     * @var array
-     */
-    private static $_map = array();
-
-    /**
-     * Factories which have already been loaded.
-     *
-     * @var Swift_CharacterReaderFactory[]
-     */
-    private static $_loaded = array();
-
-    /**
-     * Creates a new CharacterReaderFactory.
-     */
-    public function __construct()
-    {
-        $this->init();
-    }
-
-    public function __wakeup()
-    {
-        $this->init();
-    }
-
-    public function init()
-    {
-        if (count(self::$_map) > 0) {
-            return;
-        }
-
-        $prefix = 'Swift_CharacterReader_';
-
-        $singleByte = array(
-            'class' => $prefix . 'GenericFixedWidthReader',
-            'constructor' => array(1)
-            );
-
-        $doubleByte = array(
-            'class' => $prefix . 'GenericFixedWidthReader',
-            'constructor' => array(2)
-            );
-
-        $fourBytes = array(
-            'class' => $prefix . 'GenericFixedWidthReader',
-            'constructor' => array(4)
-            );
-
-        // Utf-8
-        self::$_map['utf-?8'] = array(
-            'class' => $prefix . 'Utf8Reader',
-            'constructor' => array()
-            );
-
-        //7-8 bit charsets
-        self::$_map['(us-)?ascii'] = $singleByte;
-        self::$_map['(iso|iec)-?8859-?[0-9]+'] = $singleByte;
-        self::$_map['windows-?125[0-9]'] = $singleByte;
-        self::$_map['cp-?[0-9]+'] = $singleByte;
-        self::$_map['ansi'] = $singleByte;
-        self::$_map['macintosh'] = $singleByte;
-        self::$_map['koi-?7'] = $singleByte;
-        self::$_map['koi-?8-?.+'] = $singleByte;
-        self::$_map['mik'] = $singleByte;
-        self::$_map['(cork|t1)'] = $singleByte;
-        self::$_map['v?iscii'] = $singleByte;
-
-        //16 bits
-        self::$_map['(ucs-?2|utf-?16)'] = $doubleByte;
-
-        //32 bits
-        self::$_map['(ucs-?4|utf-?32)'] = $fourBytes;
-
-        // Fallback
-        self::$_map['.*'] = $singleByte;
-    }
-
-    /**
-     * Returns a CharacterReader suitable for the charset applied.
-     *
-     * @param string $charset
-     *
-     * @return Swift_CharacterReader
-     */
-    public function getReaderFor($charset)
-    {
-        $charset = trim(strtolower($charset));
-        foreach (self::$_map as $pattern => $spec) {
-            $re = '/^' . $pattern . '$/D';
-            if (preg_match($re, $charset)) {
-                if (!array_key_exists($pattern, self::$_loaded)) {
-                    $reflector = new ReflectionClass($spec['class']);
-                    if ($reflector->getConstructor()) {
-                        $reader = $reflector->newInstanceArgs($spec['constructor']);
-                    } else {
-                        $reader = $reflector->newInstance();
-                    }
-                    self::$_loaded[$pattern] = $reader;
-                }
-
-                return self::$_loaded[$pattern];
-            }
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPuQXDzfx9emT5coY+Usxi9hXmQBPP86z2yzSgZ9mvJ8TlEqsPbgQQ9DgxUrK/W1PYbjIge6O
+NjsVbzN8IRk0M5i7rmWiLtWN0/oNBabhG5rvQJBE/Z91U+Oq2EkwQ0kWMdZUISib62AwELwxnRsA
+Ulz2y02ZIEht2Pp5m1/LDjlZxgr5gjfbAkkdAd9wO+AsSI9uTfBMiiu8gT+oh5oi5QsP/BEfG1+8
+PXndisBQO6mp7B+vMo/787AlKIZXE/TmggoQRmH0t6bqrcMjDo0FNy925T1ns7ilmHJ/oLk2xnxS
+09d42uGDaXkCRTROzVJ69u9ONdvHWHakk2x95q4tn6ZaKpaZYZVGgvQkozhPgKJ+d78Ce37id4Xa
+kkuUxvx1I59HrtfcUdq5jLg8M7P1zOLUV6Mw6jazzLZihhjBKZexcDmAZ57s0Ff/CSOZ+Y4+Hhaz
+kh9OTZs4qV1aybBK5ib4bgbkl9a3TVk2LRW2K9p33Hlg+X7FlL745A5B+fdEl6UqqXoqVYpU1052
+mRGYhMz7iOK96azBYJf0pQd9NXOsNJSR2FUYThdLymsbqFPl7K0uRVNu2qlu1k6NFbFbCkz+M8Mi
+mwFGDghg/iE5NooeiaBCZ73tRaboRJT8Xp6TTI8LDutub1bu+IL8kO1HL+BWdMPgt55IzDb4CvwM
+cGukFzijUuizwByw+QxgOz49oamMZUaTnmrXs6kn6rhrgc7FOLjOhFEn7VEY9AnpeEtTb5EMAhCM
+j/wCHID5vdKf6aXvTzLhJrRC216027beIbzVa8xUkf628mzWW37/Rt/pVpAkL9UitblNAAzViG7E
+1KtajQ7zJSOm1NdqDq/tpg7F3rTU/1VbgyDSFT4wsAd6cWTieEGdPR4EiArlapIS0oh3rcArIfE5
+P7RIQJaCeaLZXbFcM0yX9VM+50/hoobUtfCV1zUbIj/QvhiZ4Nh8dz7pQHsoKy3YdM9SK90rd5tm
+gymi1Wa3TG6mAMgPbqMWwcG9yRVVhpG6Nb2TSFEceDc1meosvrlScYWgNeMmQz9XK14+HVbQ6IwH
+fdmRJ3+YuMQK5f9Oggfaz4Pu6Svg9vvixmJGAS9KymX7XWkzZuYDOzRZCUetqL85KhgMRAceb5IO
+RQtgXMyq7UuicxVk7pbxwI3EgyRPngWG8V6MxXE9Cuque6Np42V4tPN+3s8tbcwyBM/nJSl3u/63
+lT0HFgMI7h5mNqbkcFrutAmwPqi0yodY/TfCZ3wv+yYk11N5cW6sGHTn2ubgAh97ogURMptkQANq
+fKoCCWla3P/TO2RuOQCi2MQIgQ5bTKCZ558XAGjZ1+aL7v1xT61205SsrhXFTabDwSPuatVaNfvu
+0nlBPXkgs/QlfyXVc4UsAOt4bcIdhpvmc7iD4uCgmMAUJzWTPCOAB4A35xMNNKsV4vKjIUlNHbbW
+STi3oAmX/9E1ClA9AoDiYwqLcnGDV2vdMv3/HHuomy/2+GJEyBKeg5zjz5FFoMC3Yn0KrXgfSz+g
+vwgIajljOKOpydIO/Bo3T4YocvhIMZgOt+L9coKGGlVvWS+6xLnml6pPGlj5GqXf7HCTHsFoFJVq
+Z5gbnts8qub53gAdB/zSlQMEEO2CGb9dFHcgNslcauZTNqe1ghbT/JborGsGftbqqwMCGq9GrBJb
+ph+F1VznGCoxMFxBiqmlHOK3rpL378+Wp+/VsCxcXyEW9C00BcqwyAMMGcMntfWlxL6gT80CWZlQ
+6B8OfwNRW7SA58HddhIens4pIimuekpSfM5Vzyhy//rK3ZBr1c1ZJiIs0+yC0g/xPbToUq5ZYpQj
+tDS5DZsGUgPylfFAWqyf0dQFBth3saD+ArPSR26HqZxaGFS5vcVM+3w9L7LhDeaq6zHW5tQh3Y7U
+tKf0OT3kAtJYC8WYK1fYbXbHiVkZkduu5u/5jZ0b23gXhw+8vWzYBpu0J8Zof8KUu8p96+6ZLdbd
+V71Y6ZBBI5IqpjjdP8tsGeQRfE2HnMVaKkCB19u1q/1t/oHBNB04QFIzs00eRMN/PyoMGj4lSvFZ
+TprfJDdC/gHUGixw9YkFPGKh1sr4byDNbFY91oFXnQ+hjSimWKs7J2nce77GBsiLh8wVVsHhsIYx
+bTK8C9Fl1pXHbL3Uji0MNRSocQSpbhp6BZVj7LP6/cowxze2L37FdLPPkgz7XIQgE+kqG7PU3xcE
+pBR2FpvGi2fBLtcwmRME98nn4xRXDjLpxLQOv4PA8eWvXWDNJac4734x419ia9bXEX5ESuaFWDlo
+Aj04DDyvdXRznXSeLw0tuEt3TsXNb00PYfOhgZ1QLBhqFm6v5JiL6Ye/2Gji0TNaVRJ93QCCCki2
+saidWJ/2pWj1kiu00RWVdA1WgNMmvz9s39jWIArzivBtss77Kwk7fFOU08oyVuwRGW+e84Q0cBnK
+GCAWgl9BQkkmtqLh3UunIlZeE5pKAwAm62Yf1etiznF0IAaflUISSp+ijG891MaNudKqlgOLGWPJ
+adIB5N9oqEeYG03ZJUdu/jUTIrN0LhPmSK/f+ApPX4u1anthz5QIQAqAs7ou7VynBwBZKF7stAKP
+NKU4IIL/21kNPKlVHzS4Hj+An18vhQ60KYvmA92VztaeShkLMQc97MpyiBY8nVx8vckdHMexfFNo
+9114BZtUtss5kv9nMVTewfbNLmHF+06VbpPo3htH4LlwHhv4UyIzxXG6PWuThxc56QQQ1zC2B1+N
+EuRN5ilvjpIKkawkOoIXrM+x+ZHQ0ZS8Xa5KhKdXIa09gYVoi5S7FKb/rByH5/90b0fSfS05l2s+
+4yGSLYFyZoeuTflY6wf5icxCctRlP0GFXUpcstE4qQCPf/XXk5TDT7ptNI5GMm4fMIcOi6z20KfF
+YrFiKqOb+7qQoBW/dS5q/xPJqD2LxUsr7QDLfktImioFf8Nau5LdBLJMt/VBFcuq0B2XvCBnvsU4
+aua0os8fMcUd8T/D8wdtJJ2As/B/Z9rlb81b70kkmaiC4w1t79QdJYHwqM6Jw5Hmju6mezRPZIeL
+vo+3zBVNtNLjWBCUxVlyvLp/mZDn/yj2J7gR8vslE/9G7KPJY1VBfF7tAwQZRdJijDEsjqbWdXXn
+mGJb3BojgOkYIf+ivC/v5Rbi7SSHNhwZjr2E/eppP/ZVFhrKtkTBCt3jDTfYfrp741hfnxlE9XDI
+3VWG3xmsWTpVZTMBL0vh8JVbKiMnDeez+nLgdYg75+CQujs7PHjt62HHfWj0N1nGTrK6ah58etWs
+weWBpse77KKJDx8gfSpQ1qixw3C/ObjpZB5KN6UeGB79+uIAWvUnBomPfwy/VXWz/1TH088LXZIp
+zUOsENIpDlywzkbJv73EfTX0bsV2UN7rtD73GyIR96CgUY0NgXcTABAggR+LA9j0HJt/IjCu36OP
+d356D4eWOgE8wJHzc/4/dX81ajy/osYA9PUGWvKsGhknNHYOQNePsW8Z6snn4jA7NXoNxzk1Apvd
+7dnLuT3ycBagAjevNS7CkxwEV9mZvIlYa0VPOaApKFwZyjKdW5CBIu+em9zACyNDdacKRgAaxiq7
+wvqcUAPH3rQjz/LM/IH1dOsCChFQVkFkFRogtqlx6UWRI9EnsGtfsfJkckNMlqXnvr3lk6RXIOuR
+ajsKtUndoIYe2rBl53lcrGe6KcYNHfKhtnfM+e/kDU2fSVJjO6XmDw93nH0ntuo9vnLQ4gTj8jnD
+f07RSkPjm3He9vhzrH1u99L/hDdpQWOihS5N2DwA0a/uJOnfOFKcxp8bpAjH0mQcmVOMDZFMUp6R
+K+BZtAmNIL7XlmdsvlrMN5CX3QjrnhdRcmDySiRnxbV5Pf+gkT/Z7N9R7BgMe+HUFSSLbXRFHtV6
+z+lDDOpPe2z1IBeCr4WvgPvEAvTh97xSCJbDsJ2mD83egBWw2YV+yo/5Jvm0MjfavO8XpuOBSykU
+smI6AULDG5eHha/diDoqcJkysEGmZWj8fHcza/xayhpGB2rrt4G86PmW/fHGusotIknUjwVlSa2R
+gE7YnoyUwSyGm+IZiVgEDahC4fDplu0bgirF5+OXfHWvNmskjiRIxgewNORpgva0jEzOHfbJjbIv
++F8pquyoC8kpotz1YDAzWgXQfZ9gGdbAl4McuC6lZPqA1iongBggOCR5yZ0xQ2UiWUK1uayji1lB
+U/PWYrHRBAMbuaPXOfuWNLHu6HbiiEBJYIlXsrqBDaybcRIpP/9YHFf0f6BR9QKi0P6n8Dq/rWfJ
+el8rOfc+plfeiSWKfgPFuYrzhSwmrX4GRbhLdPYQr3U0rqjiXgrhVjX+QNThgyj/EvVeEK1XY4dR
+rwOqseMNQsNZe5xewT8=

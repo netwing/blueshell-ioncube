@@ -1,160 +1,52 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\CssSelector\Parser;
-
-/**
- * CSS selector token.
- *
- * This component is a port of the Python cssselector library,
- * which is copyright Ian Bicking, @see https://github.com/SimonSapin/cssselect.
- *
- * @author Jean-François Simon <jeanfrancois.simon@sensiolabs.com>
- */
-class Token
-{
-    const TYPE_FILE_END   = 'eof';
-    const TYPE_DELIMITER  = 'delimiter';
-    const TYPE_WHITESPACE = 'whitespace';
-    const TYPE_IDENTIFIER = 'identifier';
-    const TYPE_HASH       = 'hash';
-    const TYPE_NUMBER     = 'number';
-    const TYPE_STRING     = 'string';
-
-    /**
-     * @var int
-     */
-    private $type;
-
-    /**
-     * @var string
-     */
-    private $value;
-
-    /**
-     * @var int
-     */
-    private $position;
-
-    /**
-     * @param int    $type
-     * @param string $value
-     * @param int    $position
-     */
-    public function __construct($type, $value, $position)
-    {
-        $this->type = $type;
-        $this->value = $value;
-        $this->position = $position;
-    }
-
-    /**
-     * @return int
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * @return string
-     */
-    public function getValue()
-    {
-        return $this->value;
-    }
-
-    /**
-     * @return int
-     */
-    public function getPosition()
-    {
-        return $this->position;
-    }
-
-    /**
-     * @return boolean
-     */
-    public function isFileEnd()
-    {
-        return self::TYPE_FILE_END === $this->type;
-    }
-
-    /**
-     * @param array $values
-     *
-     * @return boolean
-     */
-    public function isDelimiter(array $values = array())
-    {
-        if (self::TYPE_DELIMITER !== $this->type) {
-            return false;
-        }
-
-        if (empty($values)) {
-            return true;
-        }
-
-        return in_array($this->value, $values);
-    }
-
-    /**
-     * @return boolean
-     */
-    public function isWhitespace()
-    {
-        return self::TYPE_WHITESPACE === $this->type;
-    }
-
-    /**
-     * @return boolean
-     */
-    public function isIdentifier()
-    {
-        return self::TYPE_IDENTIFIER === $this->type;
-    }
-
-    /**
-     * @return boolean
-     */
-    public function isHash()
-    {
-        return self::TYPE_HASH === $this->type;
-    }
-
-    /**
-     * @return boolean
-     */
-    public function isNumber()
-    {
-        return self::TYPE_NUMBER === $this->type;
-    }
-
-    /**
-     * @return boolean
-     */
-    public function isString()
-    {
-        return self::TYPE_STRING === $this->type;
-    }
-
-    /**
-     * @return string
-     */
-    public function __toString()
-    {
-        if ($this->value) {
-            return sprintf('<%s "%s" at %s>', $this->type, $this->value, $this->position);
-        }
-
-        return sprintf('<%s at %s>', $this->type, $this->position);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+PkCqMG==

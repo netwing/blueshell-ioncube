@@ -1,191 +1,91 @@
-<?php
-
-class MyFormatter extends CLocalizedFormatter 
-{
-
-    // Localize to Yes everything evaluable as true; No for everything else
-    public function formatBooleanString($value)
-    {
-        if ($value) return Yii::t('app','Yes');
-        return Yii::t('app','No');
-    }
-
-    // Return green tick icon for true and red cross for false
-    public function formatBooleanIcon($value)
-    {
-        if ($value) {
-            $result = '<span class="text-success"><i class="fa fa-check"></i></span>';
-        } else {
-            $result = '<span class="text-danger"><i class="fa fa-times"></i></span>';
-        }
-        return $result;
-    }
-
-    // Localize INCOME and OUTCOME
-    public function formatInvoiceType($value)
-    {
-        return ($value == 'INCOME') ? Yii::t('app','Income') : Yii::t('app','Outcome');
-    }
-
-    /**
-     * Customer Link to detail
-     * @return string html ready to use
-     */
-    public function formatCustomerDetailLink(Customer $customer)
-    {
-        return '<a href="' . Yii::app()->createUrl("/admin/customer/detail", array("id" => $customer->cliente_id)) 
-                            . '">' . $customer->cliente_nominativo . '</a>';
-    }
-
-    /**
-     * Customer Link to detail #order
-     * @return string html ready to use
-     */
-    public function formatCustomerDetailOrderLink(Customer $customer)
-    {
-        return '<a href="' . Yii::app()->createUrl("/admin/customer/detail", array("id" => $customer->cliente_id, "#" => "order")) 
-                            . '">' . $customer->cliente_nominativo . '</a>';
-    }
-
-    /**
-     * Customer Link to detail #invoice
-     * @return string html ready to use
-     */
-    public function formatCustomerDetailInvoiceLink(Customer $customer)
-    {
-        return '<a href="' . Yii::app()->createUrl("/admin/customer/detail", array("id" => $customer->cliente_id, "#" => "invoice")) 
-                            . '">' . $customer->cliente_nominativo . '</a>';
-    }
-
-    // Return background-color and color for text
-    public function formatTextColor($value)
-    {
-        if (!is_object($value) and !is_array($value)) {
-            throw new Exception("Value for formatTextColor should be an object or an array.");
-        }
-        if (!isset($value['name'])) {
-            throw new Exception("Object or array passed as argument must contain a 'name' attribute.");   
-        }
-        if (!isset($value['color'])) {
-            throw new Exception("Object or array passed as argument must contain a 'color' attribute.");   
-        }
-
-        if ($value->color == "") {
-            $value->color = "#ffffff";
-        }
-
-        $result = '<span style="white-space: nowrap; font-weight: bold; padding: 3px; color:' . Color::getContrastYIQ($value->color) . '; background-color:' . $value->color . ';">'
-                . $value->name
-                . '</span>';
-
-        return $result;
-    }
-
-    public function formatCurrency($value)
-    {
-        defined("APPLICATION_CURRENCY") or define("APPLICATION_CURRENCY", "EUR");
-        return Yii::app()->numberFormatter->formatCurrency($value, APPLICATION_CURRENCY);
-    }
-
-    public function formatDecimal($value) 
-    {
-        return Yii::app()->numberFormatter->format('0.00', $value);
-    }
-
-    public function formatDate($value) 
-    {
-        $this->dateFormat = "medium";
-        if ($value === null or $value == "" or $value == "0000-00-00") {
-            return null;
-        }
-        return parent::formatDate($value);
-    }
-
-    public function formatDateShort($value) 
-    {
-        $this->dateFormat = "short";
-        if ($value === null or $value == "" or $value == "0000-00-00") {
-            return null;
-        }
-        return parent::formatDate($value);
-    }
-
-    public function formatDateLong($value) 
-    {
-        $this->dateFormat = "long";
-        if ($value === null or $value == "" or $value == "0000-00-00") {
-            return null;
-        }
-        return parent::formatDate($value);
-    }
-
-    public function formatDateFull($value) 
-    {
-        $this->dateFormat = "full";
-        if ($value === null or $value == "" or $value == "0000-00-00") {
-            return null;
-        }
-        return parent::formatDate($value);
-    }
-
-    public function formatTime($value) 
-    {
-        $this->timeFormat = "medium";
-        if ($value === null or $value == "") {
-            return null;
-        }
-        return parent::formatTime($value);
-    }
-
-    public function formatTimeShort($value) 
-    {
-        $this->timeFormat = "short";
-        if ($value === null or $value == "") {
-            return null;
-        }
-        return parent::formatTime($value);
-    }
-
-    public function formatTimeLong($value) 
-    {
-        $this->timeFormat = "long";
-        if ($value === null or $value == "") {
-            return null;
-        }
-        return parent::formatTime($value);
-    }
-
-    public function formatTimeFull($value) 
-    {
-        $this->timeFormat = "full";
-        if ($value === null or $value == "") {
-            return null;
-        }
-        return parent::formatTime($value);
-    }
-
-    public function formatDatetime($value) 
-    {
-        $this->dateFormat = "medium";
-        return parent::formatDatetime($value);
-    }
-
-    public function formatDatetimeShort($value) 
-    {
-        $this->dateFormat = "short";
-        return parent::formatDatetime($value);
-    }
-
-    public function formatDatetimeLong($value) 
-    {
-        $this->dateFormat = "long";
-        return parent::formatDatetime($value);
-    }
-
-    public function formatDatetimeFull($value) 
-    {
-        $this->dateFormat = "full";
-        return parent::formatDatetime($value);
-    }
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

@@ -1,337 +1,140 @@
-<?php
-/**
- * PEAR_Sniffs_Functions_FunctionDeclarationSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * PEAR_Sniffs_Functions_FunctionDeclarationSniff.
- *
- * Ensure single and multi-line function declarations are defined correctly.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class PEAR_Sniffs_Functions_FunctionDeclarationSniff implements PHP_CodeSniffer_Sniff
-{
-
-    /**
-     * The number of spaces code should be indented.
-     *
-     * @var int
-     */
-    public $indent = 4;
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        return array(
-                T_FUNCTION,
-                T_CLOSURE,
-               );
-
-    }//end register()
-
-
-    /**
-     * Processes this test, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token
-     *                                        in the stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-
-        $spaces = 0;
-        if ($tokens[($stackPtr + 1)]['code'] === T_WHITESPACE) {
-            $spaces = strlen($tokens[($stackPtr + 1)]['content']);
-        }
-
-        if ($spaces !== 1) {
-            $error = 'Expected 1 space after FUNCTION keyword; %s found';
-            $data  = array($spaces);
-            $phpcsFile->addError($error, $stackPtr, 'SpaceAfterFunction', $data);
-        }
-
-        // Must be one space before and after USE keyword for closures.
-        $openBracket  = $tokens[$stackPtr]['parenthesis_opener'];
-        $closeBracket = $tokens[$stackPtr]['parenthesis_closer'];
-        if ($tokens[$stackPtr]['code'] === T_CLOSURE) {
-            $use = $phpcsFile->findNext(T_USE, ($closeBracket + 1), $tokens[$stackPtr]['scope_opener']);
-            if ($use !== false) {
-                if ($tokens[($use + 1)]['code'] !== T_WHITESPACE) {
-                    $length = 0;
-                } else if ($tokens[($use + 1)]['content'] === "\t") {
-                    $length = '\t';
-                } else {
-                    $length = strlen($tokens[($use + 1)]['content']);
-                }
-
-                if ($length !== 1) {
-                    $error = 'Expected 1 space after USE keyword; found %s';
-                    $data  = array($length);
-                    $phpcsFile->addError($error, $use, 'SpaceAfterUse', $data);
-                }
-
-                if ($tokens[($use - 1)]['code'] !== T_WHITESPACE) {
-                    $length = 0;
-                } else if ($tokens[($use - 1)]['content'] === "\t") {
-                    $length = '\t';
-                } else {
-                    $length = strlen($tokens[($use - 1)]['content']);
-                }
-
-                if ($length !== 1) {
-                    $error = 'Expected 1 space before USE keyword; found %s';
-                    $data  = array($length);
-                    $phpcsFile->addError($error, $use, 'SpaceBeforeUse', $data);
-                }
-            }//end if
-        }//end if
-
-        // Check if this is a single line or multi-line declaration.
-        $singleLine = true;
-        if ($tokens[$openBracket]['line'] === $tokens[$closeBracket]['line']) {
-            // Closures may use the USE keyword and so be multi-line in this way.
-            if ($tokens[$stackPtr]['code'] === T_CLOSURE) {
-                if ($use !== false) {
-                    // If the opening and closing parenthesis of the use statement
-                    // are also on the same line, this is a single line declaration.
-                    $open  = $phpcsFile->findNext(T_OPEN_PARENTHESIS, ($use + 1));
-                    $close = $tokens[$open]['parenthesis_closer'];
-                    if ($tokens[$open]['line'] !== $tokens[$close]['line']) {
-                        $singleLine = false;
-                    }
-                }
-            }
-        } else {
-            $singleLine = false;
-        }
-
-        if ($singleLine === true) {
-            $this->processSingleLineDeclaration($phpcsFile, $stackPtr, $tokens);
-        } else {
-            $this->processMultiLineDeclaration($phpcsFile, $stackPtr, $tokens);
-        }
-
-    }//end process()
-
-
-    /**
-     * Processes single-line declarations.
-     *
-     * Just uses the Generic BSD-Allman brace sniff.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token
-     *                                        in the stack passed in $tokens.
-     * @param array                $tokens    The stack of tokens that make up
-     *                                        the file.
-     *
-     * @return void
-     */
-    public function processSingleLineDeclaration(PHP_CodeSniffer_File $phpcsFile, $stackPtr, $tokens)
-    {
-        if ($tokens[$stackPtr]['code'] === T_CLOSURE) {
-            if (class_exists('Generic_Sniffs_Functions_OpeningFunctionBraceKernighanRitchieSniff', true) === false) {
-                throw new PHP_CodeSniffer_Exception('Class Generic_Sniffs_Functions_OpeningFunctionBraceKernighanRitchieSniff not found');
-            }
-
-            $sniff = new Generic_Sniffs_Functions_OpeningFunctionBraceKernighanRitchieSniff();
-        } else {
-            if (class_exists('Generic_Sniffs_Functions_OpeningFunctionBraceBsdAllmanSniff', true) === false) {
-                throw new PHP_CodeSniffer_Exception('Class Generic_Sniffs_Functions_OpeningFunctionBraceBsdAllmanSniff not found');
-            }
-
-            $sniff = new Generic_Sniffs_Functions_OpeningFunctionBraceBsdAllmanSniff();
-        }
-
-        $sniff->process($phpcsFile, $stackPtr);
-
-    }//end processSingleLineDeclaration()
-
-
-    /**
-     * Processes mutli-line declarations.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token
-     *                                        in the stack passed in $tokens.
-     * @param array                $tokens    The stack of tokens that make up
-     *                                        the file.
-     *
-     * @return void
-     */
-    public function processMultiLineDeclaration(PHP_CodeSniffer_File $phpcsFile, $stackPtr, $tokens)
-    {
-        // We need to work out how far indented the function
-        // declaration itself is, so we can work out how far to
-        // indent parameters.
-        $functionIndent = 0;
-        for ($i = ($stackPtr - 1); $i >= 0; $i--) {
-            if ($tokens[$i]['line'] !== $tokens[$stackPtr]['line']) {
-                $i++;
-                break;
-            }
-        }
-
-        if ($tokens[$i]['code'] === T_WHITESPACE) {
-            $functionIndent = strlen($tokens[$i]['content']);
-        }
-
-        // The closing parenthesis must be on a new line, even
-        // when checking abstract function definitions.
-        $closeBracket = $tokens[$stackPtr]['parenthesis_closer'];
-        $prev = $phpcsFile->findPrevious(
-            T_WHITESPACE,
-            ($closeBracket - 1),
-            null,
-            true
-        );
-
-        if ($tokens[$closeBracket]['line'] !== $tokens[$tokens[$closeBracket]['parenthesis_opener']]['line']) {
-            if ($tokens[$prev]['line'] === $tokens[$closeBracket]['line']) {
-                $error = 'The closing parenthesis of a multi-line function declaration must be on a new line';
-                $phpcsFile->addError($error, $closeBracket, 'CloseBracketLine');
-            }
-        }
-
-        // If this is a closure and is using a USE statement, the closing
-        // parenthesis we need to look at from now on is the closing parenthesis
-        // of the USE statement.
-        if ($tokens[$stackPtr]['code'] === T_CLOSURE) {
-            $use = $phpcsFile->findNext(T_USE, ($closeBracket + 1), $tokens[$stackPtr]['scope_opener']);
-            if ($use !== false) {
-                $open         = $phpcsFile->findNext(T_OPEN_PARENTHESIS, ($use + 1));
-                $closeBracket = $tokens[$open]['parenthesis_closer'];
-
-                $prev = $phpcsFile->findPrevious(
-                    T_WHITESPACE,
-                    ($closeBracket - 1),
-                    null,
-                    true
-                );
-
-                if ($tokens[$closeBracket]['line'] !== $tokens[$tokens[$closeBracket]['parenthesis_opener']]['line']) {
-                    if ($tokens[$prev]['line'] === $tokens[$closeBracket]['line']) {
-                        $error = 'The closing parenthesis of a multi-line use declaration must be on a new line';
-                        $phpcsFile->addError($error, $closeBracket, 'CloseBracketLine');
-                    }
-                }
-            }//end if
-        }//end if
-
-        // Each line between the parenthesis should be indented 4 spaces.
-        $openBracket  = $tokens[$stackPtr]['parenthesis_opener'];
-        $lastLine     = $tokens[$openBracket]['line'];
-        for ($i = ($openBracket + 1); $i < $closeBracket; $i++) {
-            if ($tokens[$i]['line'] !== $lastLine) {
-                if ($i === $tokens[$stackPtr]['parenthesis_closer']
-                    || ($tokens[$i]['code'] === T_WHITESPACE
-                    && (($i + 1) === $closeBracket
-                    || ($i + 1) === $tokens[$stackPtr]['parenthesis_closer']))
-                ) {
-                    // Closing braces need to be indented to the same level
-                    // as the function.
-                    $expectedIndent = $functionIndent;
-                } else {
-                    $expectedIndent = ($functionIndent + $this->indent);
-                }
-
-                // We changed lines, so this should be a whitespace indent token.
-                if ($tokens[$i]['code'] !== T_WHITESPACE) {
-                    $foundIndent = 0;
-                } else {
-                    $foundIndent = strlen($tokens[$i]['content']);
-                }
-
-                if ($expectedIndent !== $foundIndent) {
-                    $error = 'Multi-line function declaration not indented correctly; expected %s spaces but found %s';
-                    $data  = array(
-                              $expectedIndent,
-                              $foundIndent,
-                             );
-                    $phpcsFile->addError($error, $i, 'Indent', $data);
-                }
-
-                $lastLine = $tokens[$i]['line'];
-            }//end if
-
-            if ($tokens[$i]['code'] === T_ARRAY) {
-                // Skip arrays as they have their own indentation rules.
-                $i        = $tokens[$i]['parenthesis_closer'];
-                $lastLine = $tokens[$i]['line'];
-                continue;
-            }
-        }//end for
-
-        if (isset($tokens[$stackPtr]['scope_opener']) === true) {
-            // The openning brace needs to be one space away
-            // from the closing parenthesis.
-            $next = $tokens[($closeBracket + 1)];
-            if ($next['code'] !== T_WHITESPACE) {
-                $length = 0;
-            } else if ($next['content'] === $phpcsFile->eolChar) {
-                $length = -1;
-            } else {
-                $length = strlen($next['content']);
-            }
-
-            if ($length !== 1) {
-                $data = array($length);
-                $code = 'SpaceBeforeOpenBrace';
-
-                $error = 'There must be a single space between the closing parenthesis and the opening brace of a multi-line function declaration; found ';
-                if ($length === -1) {
-                    $error .= 'newline';
-                    $code   = 'NewlineBeforeOpenBrace';
-                } else {
-                    $error .= '%s spaces';
-                }
-
-                $phpcsFile->addError($error, ($closeBracket + 1), $code, $data);
-                return;
-            }
-
-            // And just in case they do something funny before the brace...
-            $next = $phpcsFile->findNext(
-                T_WHITESPACE,
-                ($closeBracket + 1),
-                null,
-                true
-            );
-
-            if ($next !== false && $tokens[$next]['code'] !== T_OPEN_CURLY_BRACKET) {
-                $error = 'There must be a single space between the closing parenthesis and the opening brace of a multi-line function declaration';
-                $phpcsFile->addError($error, $next, 'NoSpaceBeforeOpenBrace');
-            }
-        }//end if
-
-    }//end processMultiLineDeclaration()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+0ncoy22vwNwc0Ibc8OHE4S1Jqg9fOnYd3QmKpm==

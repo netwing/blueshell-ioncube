@@ -1,51 +1,29 @@
-<?php
-/* @var $this OrderDetailController */
-/* @var $data OrderDetail */
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
-
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h3 class="panel-title">
-            <?php echo CHtml::link(CHtml::encode($data->id), array('view','id'=>$data->id)); ?>
-        </h3>
-    </div>
-    <div class="panel-body">
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('order_id')); ?>:</b>
-	<?php echo CHtml::encode($data->order_id); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('product_id')); ?>:</b>
-	<?php echo CHtml::encode($data->product_id); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('price')); ?>:</b>
-	<?php echo CHtml::encode($data->price); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('quantity')); ?>:</b>
-	<?php echo CHtml::encode($data->quantity); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('total_no_vat')); ?>:</b>
-	<?php echo CHtml::encode($data->total_no_vat); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('vat')); ?>:</b>
-	<?php echo CHtml::encode($data->vat); ?><br />
-
-	<?php /*
-	<b><?php echo CHtml::encode($data->getAttributeLabel('total_vat')); ?>:</b>
-	<?php echo CHtml::encode($data->total_vat); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('discount')); ?>:</b>
-	<?php echo CHtml::encode($data->discount); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('total')); ?>:</b>
-	<?php echo CHtml::encode($data->total); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('create_time')); ?>:</b>
-	<?php echo CHtml::encode($data->create_time); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('update_time')); ?>:</b>
-	<?php echo CHtml::encode($data->update_time); ?><br />
-
-	*/ ?>
-    </div>
-</div>
-
+HR+cPssMEiuPSf/Xy22lxGAWoPRmr4RbQGpRsibqEVGqd3HlqaHOU1G9uE66/55zg4w5Yjma3V3L
+SqCxXGa+9QJs3sHycXTbrg3xawcN1lrFnX2wvt7J+fT4NAUo5vJQztvyrnGTMu136TnjKH0p4ecC
+mc9K3OAaS3wew9EBe3lckQectPs24+neEACXupVVQGA7DxgD1mZ1DCx1P8PX3/NXKtvbJBRVUgrm
+zGOicCuSnBg4J1QmtWlntQzHAE4xzt2gh9fl143SQNJFPF+LqiONYonmjwHWEGQ/8vGtw7sCV3Xl
+JWe/M2VmM/nZBm2smRAbx7a5y0KPrz32udjt7Kd0HkFWSwifaVQSCCWiIc/52cWlJaiYPy/bcXxu
+AO077tvqsqwt8YxyVL/Htcw1KzGXAwKgrtPE66MOGNmtVJcDAcHy7YZA2eGl8FHWKAoAs7iM+sz0
+yItN93aB/70fdJiFsIhfclwnTtrW0Lhy+2lXWt5DQXwLU+0cwRNNL6dtlIa87cja2a7CoyyQGSYp
+ckDAiufQhpvVFu5zVIqOnBO141HSL/PMlvJb2uGjx6tCTixHU+ztdtWtZj3fhH5gowik7uSnPU4z
+zMGqgFRTG0gTwJdhpMuRG/1BWxvL6yL1nGSJ39NcXFwaTKrIcTPXjemvynSU8WtiBQOR+KZaG1pI
+RlvvfCP8QTJK592CXOK9WrsNi8uQ8AHpfyLa2CavWCWx2OYkVKXSIVajSN8B16ohV2teEXQVP5z9
+SysOvhE1IvlYiGasSHXxfF8+GNLB4ibR1CAfEMJSFb52EhrMjPduJdP4C+J4R4oDWRD9cnw/Ipyc
+V9GO/91opjyY+dcQ63Ufhkkl7OCFEgKwtQgz2A9bzGPuRXiMqDFxXmRaG5XelBd4fXOtWO9GERM8
+dQx7UpZdSu1ECHg4c19M4wvsMls0w9T7I9fno65G/LBexWwTYMt1DXzTiHIvukBvi81PxfX4DWuS
+wSUlgK91ztEIfJlzcag+YJPOyWzC8jhO0I2Nr8xFNU9jue1h3RRR4NUtsg/zPXGRRXzdU8mqS+Z4
+o0gTOh7v394RAGAVfkPzD4VnQghRDy7HPkjnuEOsF+jagvJ4jHwvXlSjHzHGlGBE1kSMQmx5dqR+
+KxpniWtwRXErvs9JXLjhYAyOL9kkRBIYUfj0kt4uvTHYhgSAl/2yUU4+lp6TkU2xnNkaxjPPiemQ
+xHDRyN2Y/+SUUaIjR7fTi1QPchDno22Md5gN8g8HNv/vcbi/nnFSi5KEXQawFMsj7Au79vD6DuD/
+7o8+RffhoHA1VW8ScwjbKgfSJpiQYYw3XaCWKWQeGLZwj/tH1Lopbk48t7yPpYGAgTIyHT12VTTx
+nr1M2Su0rPZXqOwgFuVFWoQXb7Q5iHqvXSReWeGhtXEKn/zAKQiwFgRRwrfN5UJOXj0bOBhmM8Fb
+sH60XKiSWPTkfjX7GqMFlxjs8Gm8meuDWHlJ1VeBAKkBEOOUPMm+mUeKq45i6tVWuWGUj10A2jJV
+1Ob8gyZEAQFrnWEFkTwbSopH8se/r2ONMchUuu5jfmkgd0TMGLlLfZ5SHaE7O6tEaBsMXJGsZSJ7
+UD2TAhhixGKv7tKVqiImMDrCrrnO7wJHllvKZZB3HgrgollwTf6kzpNf8jWeff3RYINFws2HyUq/
+bkrHBMrGNC/N9eG9mQuB5LNEC6VudtwPEauz6tn20Hml50v8tgre5LF0goSP15Av9mHZ9yVA8scK
+b4I4CBoHUes1sjOFI1xCcPS2VXMlw8ISIj9gufe5tneKMTIYg+fxXfFoaFjuOaVGp0eoGVtljYLf
+PCxEGX1DIKXe3DKDfSrvOpUvl6Au+Z5TpPBx5aAmKrWHeX3FGxPOW+EVegexlJI70brfY/Vsnzqk
+zIRH/JExDm7+q011zOhh2/QxVED5Wu4FKs6QIK8eiwbRnti=

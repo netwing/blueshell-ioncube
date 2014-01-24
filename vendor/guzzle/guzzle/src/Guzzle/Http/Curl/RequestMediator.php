@@ -1,147 +1,75 @@
-<?php
-
-namespace Guzzle\Http\Curl;
-
-use Guzzle\Http\Message\RequestInterface;
-use Guzzle\Http\EntityBody;
-use Guzzle\Http\Message\Response;
-
-/**
- * Mediator between curl handles and request objects
- */
-class RequestMediator
-{
-    /** @var RequestInterface */
-    protected $request;
-
-    /** @var bool Whether or not to emit read/write events */
-    protected $emitIo;
-
-    /**
-     * @param RequestInterface $request Request to mediate
-     * @param bool             $emitIo  Set to true to dispatch events on input and output
-     */
-    public function __construct(RequestInterface $request, $emitIo = false)
-    {
-        $this->request = $request;
-        $this->emitIo = $emitIo;
-    }
-
-    /**
-     * Receive a response header from curl
-     *
-     * @param resource $curl   Curl handle
-     * @param string   $header Received header
-     *
-     * @return int
-     */
-    public function receiveResponseHeader($curl, $header)
-    {
-        static $normalize = array("\r", "\n");
-        $length = strlen($header);
-        $header = str_replace($normalize, '', $header);
-
-        if (strpos($header, 'HTTP/') === 0) {
-
-            $startLine = explode(' ', $header, 3);
-            $code = $startLine[1];
-            $status = isset($startLine[2]) ? $startLine[2] : '';
-
-            // Only download the body of the response to the specified response
-            // body when a successful response is received.
-            if ($code >= 200 && $code < 300) {
-                $body = $this->request->getResponseBody();
-            } else {
-                $body = EntityBody::factory();
-            }
-
-            $response = new Response($code, null, $body);
-            $response->setStatus($code, $status);
-            $this->request->startResponse($response);
-
-            $this->request->dispatch('request.receive.status_line', array(
-                'request'       => $this,
-                'line'          => $header,
-                'status_code'   => $code,
-                'reason_phrase' => $status
-            ));
-
-        } elseif ($pos = strpos($header, ':')) {
-            $this->request->getResponse()->addHeader(
-                trim(substr($header, 0, $pos)),
-                trim(substr($header, $pos + 1))
-            );
-        }
-
-        return $length;
-    }
-
-    /**
-     * Received a progress notification
-     *
-     * @param int        $downloadSize Total download size
-     * @param int        $downloaded   Amount of bytes downloaded
-     * @param int        $uploadSize   Total upload size
-     * @param int        $uploaded     Amount of bytes uploaded
-     * @param resource   $handle       CurlHandle object
-     */
-    public function progress($downloadSize, $downloaded, $uploadSize, $uploaded, $handle = null)
-    {
-        $this->request->dispatch('curl.callback.progress', array(
-            'request'       => $this->request,
-            'handle'        => $handle,
-            'download_size' => $downloadSize,
-            'downloaded'    => $downloaded,
-            'upload_size'   => $uploadSize,
-            'uploaded'      => $uploaded
-        ));
-    }
-
-    /**
-     * Write data to the response body of a request
-     *
-     * @param resource $curl  Curl handle
-     * @param string   $write Data that was received
-     *
-     * @return int
-     */
-    public function writeResponseBody($curl, $write)
-    {
-        if ($this->emitIo) {
-            $this->request->dispatch('curl.callback.write', array(
-                'request' => $this->request,
-                'write'   => $write
-            ));
-        }
-
-        if ($response = $this->request->getResponse()) {
-            return $response->getBody()->write($write);
-        } else {
-            // Unexpected data received before response headers - abort transfer
-            return 0;
-        }
-    }
-
-    /**
-     * Read data from the request body and send it to curl
-     *
-     * @param resource $ch     Curl handle
-     * @param resource $fd     File descriptor
-     * @param int      $length Amount of data to read
-     *
-     * @return string
-     */
-    public function readRequestBody($ch, $fd, $length)
-    {
-        if (!($body = $this->request->getBody())) {
-            return '';
-        }
-
-        $read = (string) $body->read($length);
-        if ($this->emitIo) {
-            $this->request->dispatch('curl.callback.read', array('request' => $this->request, 'read' => $read));
-        }
-
-        return $read;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPnJE682pc+6tNWQDezHpuq+wNefdRgvX89Miqt4LQnEZ0SpgoICTkBoR/Osx4D4zj6qX9myR
+urZCvptyMviYlWSuDZcgV0tMPNhDdyBu1zZEbeWABrWXO5SPfmrteNWXtykiZ3L/HqhBCX5ZZ3dT
+IzvEoljU+tN1Cs4umdMI02+OxaK5f8P7uHd1bTaltdzMC5iEuEn4W8keqE5pZYcMW4v3ZCu1EpYf
+selaU//jNzKemNRrLJ6mhr4euJltSAgiccy4GDnfTEvXmvGEvSp+uYrhTDXroRz5dNPlOm/QXS1M
+Z+Vm5XeNyKZXcPrgpgwDpVhHu4pSoQaIjKj721eQajE3M4ITD1sfgH8Nm3ijned8Ejx7iim/+5ZV
+xPDOiZQChqtxwLVZSbqMD3PBXeJuxDSHABm0/NqpTr2D5vV6GCyIPI3vph7jO0UhiR0AL2cw8Wht
+mFJP/EZmU+aLv5xBjmpDSSaM3Vohugdmt0SBtbnXgQto8KI5QsHXM1thEmDkkJ30QB8ZnURL4Gc3
+lcPIgpYeIBMtSg5tY/l73g8XuFV2T/P2rIJwTEbhc73Gafxu7UvK6Hog48VqgsnApfMolpOM/81H
+RIGZeVZ5aOcg6TDV4QACINDi84Pw/Yx/KULl0E9WU9y1nowAQooIlqF8gDBjXRm/YVzzPjk8jvam
+M6kY5Sw0m6EEPkHCRmFQ5BoPabGb1z/i4npHZ6aByvOoag8+1j2fc3TF1WsahPCfVPn7xMveFSr5
+8lfqkusQ4yVGKC9vXP4SAzS+CptsflNr7FXmwHApp3qSw53iWopyKkPnpD1IiVlSUUWbWiD8U8Ag
+leNXrj385ihqy7H28qVw6ApMQGPZ7BFo5pSMe1lP7inCVpKQ7AiCHiplUw8ckjpDjWqVzvWJRs8v
+/l1kw81n0NVROD4574lrSIzYVdFi5q6/J8JmeZD10HcaXMAnNVRuHTZRdZkx4w+CijrjHVy8tIJy
+9FC8LLT+FymXNVmbhLFxxHam875k4fjXVHR5+dSnx6uKHkfG1CVQqArikyfZUS18luXm5d89KgYr
+4VGOg1OHavsUxvDkfQQeQUss2/nX+EK+LpFCWLypeqFpeZlj18VgXTKPDUZZOI1BSnA+z02FNqV0
+vxsGDOIZErluul89z00Lv83VYxNgGk2bXKsE9aXeM6wxFfEX4hfR6l2DCwukSUVydkUBWQqmnV38
+keIqy105YML8OzIDUPS08j2JN1/xKkm7dch9FRTOY7zWqRpx1e8DBgMxYZTPUQ2+MuwnV+gI+YiC
+f7uY0cFC5HnVg3Ku4yuk+CVMtTfvk3Gj/q8sA8AjIzfWEIytnqKt5LJuuu9YFNo8Omxr3T9JDuG7
+E6zee8jLVdLvw0AQy7+Jj2nSH3NtyUatNH4Rbz1hz2PS6c7jzz4keR3J7DQlrLKlhDO9ZJBcMCz6
+VZGiz38AAyJN2Xc/5W2SLEnRAdlAQxPWX53Wi072DpVraAFibsxJFra2d6LrX54AVrdv7xprntdd
+8G0rjBDMskXo4TzRGcrUQEB3gp3PeIHh5C0BKQ3GB4VEHjxv281ENgjwSWEKxw3HXg7vyMt/DXfJ
+PsyuIRh1teCX7/GcxJky7ZVueodF0OgWByhVmHAsCKTQshcRimeGKp38tIjdt3gflg9opGqw/h+/
+8V2kwsoqrUlmAoHqu9BRrSPsko94Z5OG1RLizr2BGYPwvHShkTBEs96jpbXVsS6KK1E305ts8eqP
+4yJk1by/0EOIzaS/jV2h67g2iPr8p9khAofPIduMoUgwNKdvaOFCW8XRPopCnb1YJszIY+DI1W+x
+lzRMiB777qo86Cr3iA0CD3umuB6SZubwWbm5WCCzhX6jeOTDUV5+sW4vBak6h198GzdteuWJrERs
+FtBfcLbgQfZYm5fZqSJpSTdhNZjOKCCP3aclQBGW/tTeoHuXKQ4r5Acj5NwJL7hiwxnoTL5GeBSH
+Y0/NTf48fe4qROH+QFThhsuOxGChi1fH1M/CPVyWd6Kl/VS47kwe7JujYLCHOMKPdGOuUKtjpeny
+kTz2qsACGK4BUE2eTFi5eL8lDIm5XBfKFOKfwbuRKQ1xFSZBWl8Eupxj6ewAkNbds4hT/v67frov
+mXExaqwgZLxble5PXieDW4MW29BmlufMq7mP1eiMxqoIqo06EFgCE/5Qc+8Px4BE/b92S+tDtlR7
+wwuhaMJKE/2HUUj1zkLh4szF+q+L292Mgu5LBxq+/Gj7wr8qs+4gS5KodhVY7U58BDUq3WBNtAe2
+QYqrBqHllcVxjxjlD6pWULjxZu/IieAsEfkTfidU8P5yzXn16u277rnq19teKpqMXeY/1i5UaR9o
+/o3lh0LFDxDybVK16YUlFxAA9kdSAtVtoPHH+6YPkhQrJJZSxRUIee6zldMdZMkN0MM7QJg4vdRH
+6NYsRp3N3o90rvQrnlpP71masYBm9sEMEE9/tJXqrcPAh26IUHtUHPN9rRylW/foMDmnaA20L7j3
+JWXTXVjdXLr6PSrrMtVBJKiBdC45BECIt6SoIorA/IqdKbJwy39TlSjaf8sJU5RvCh4AkcM0YKzW
+fvy+H/3Awsbz6ARmNKce3Ojzi+Q6qN8L+gkGwKIAgigyKlpVbaLIMY8sJGM1/deXEzohtrT1d7i6
+7Iyb2+PzyEEOcTeOGnoeNUUlGoKJ+YIatqDxbmh/IS1NEb48qFcRf1pxZAl7Q/rBndiPr/n7jKPq
+8pbWpF/XtX9TI97jB08iv19jKczPRK6KEeHRtxqUNADI9ffFtkSLw25HFj+BozQ2cS3X1Z9F+dqr
+wu4YY7erIbiL7pyUfmRJKoGe7Dz3BkDcSZxNZfFJWSJcihSmEK/7+bwFY5IYGTBfpB5x591X0eM5
+07feEFrI5ijBkH5ympsBkVzdZuPtJSAgheOjJ1sJxhaLUf+qn7FlV0yjx5eMSe4EaxPQ0cS+mzdd
+ipl2H5O6qKOTS6bv+5JzMopeSSf4whSOD0ptPu0K232KCbPO0LslkfNOPuHook/yN12kxTDhoBRa
+NVyzwlcLf21t/yIzUKREvvfRzM6+zfonTq8lwoDWvvnvjo3iwrHOkI8frGqnQBuZl/W7XNaDapIq
+Lw6yAfBB5yZxR2JimsV4PsvzIGFxVuhryfW0MiPHGWhLbmkug/vHK3Dx6F7OyWwtdg/F0fIru58O
+AfizpeJfujgQOp57HTHeZ2oERbOeS9lv1kTQ32HwBXzHzFZ4OnAd+SL9sWJFIsOV828etBz5QZ2e
+t8x/GiREKB8cOoqZqAt4fV3LA8TEkmDQzlIp7YkNukE1Tfc36MTgoo/M3OMSDd4ZYAhAZ3dswn/R
+/1ocLiME7ESCjPfeKkYE9KwvW5CB5g6wu+jWzWv7gAOPk7a4+aGwUwVLjEfW2CXuoUYH89RiSPPr
+BkR0IOL89FTcDsCOdITPYS5G35rMsTF1d5DqdZ1e6ngsHcv3+EwOjpQRLn8krR8lfHUmtjPYwmR1
+u3wVUUkxIJZh+raU2xNGuVyCYtdCEKmxOySVwX4UJfxB+h7z7AbWb3k8IN7FsgQmmfwRw2+ohFZl
+/hjfohcixOJMrylpTZ1v2gQ0yK+AB+wItlloJ8T35LRY4yVFfzj0L1q4HEjYmxgwbwO3WHisyZr5
+IdERS9xrLZWS6nU7PNQXKQPC2rmWuDF4CJWTVsdfa8LST/SOUjnCpsSn+rJoU0fOz0qqjlmSurdr
+n24FqWP29BlHI4mB7FeTTnNx0J3DDgShdNEeGMtgjKIv2VR5z67sibL6LT/246MpEDS8O9DcXl9Q
+9hkBMvlb0QcNA5a0HbcrXXiplEd9crP9T+gDEjUneNl1QHpWVKTLT/7XWj215bG9l0vgZmDlFuDG
+Aux7BIWmBxcObnViApZQ/0eY1S3qmG4Qqs8twPnDr0Jvu6LIXEGkxgrdc+1+6BL0P4+o0v6IPVZ7
+2Msawq7qVGFD3GHtKdXnGTZtRPt75Laqi/Js6/dH5J3tSDIzj1yq8wWT8KioUP5ouBE+3NdVoLDE
+Z9x2cLMibqw9n9iQq2CxHScvl2E4YTS+nR5JSZtOioz5j2PvC//CzYW7OI2z3F8OUgJfvReSrMI+
+aUZUhpMlszTfHvWmK95dywunpuR9u1GgcBrwoArcBq7uHKJReFTmRi7kbj49Pg4Pr7vJ/KNsGFzn
+O4V1Q9NvKoFFtufk90GsEF+U7Wae/OTK9uaL62Cshm92Uyu2jJH5uz+S7NxlqU9GAaDDWi4bjpVk
+H45WbDKbFbQCLk7Wez1tCCsdQlNPy0fCoFMHUbfVbNfto0LhvrrvjYYab2BEs8DyPj8o5siStbwS
+oYHAp5jB3XFar/83NA/ICVi6q4phxwWfBN9eMph3p6JAUNe46FictGrj07nvAy02TuJ/dmC8WY0t
+/nAxTbcXmU55/nRpnYqxnFauTbtqhFUVgVhFadeAPwoovmMV0hJKx0a2eCM4KOdl3vlLROrwhjRh
+E4izgjJxk8EZGLLFLNm/nhABGjgRP4Fu3ypdaL1LkkEk6zEyyK8BNON0t/xjN8NBBVsSrfwCOlbB
+26ld/XX+R1XNyfJBR16jzOQCtjrNLoEe7gN6FGNH9o4b0+A2xkPQj6sU5DuUMkWUMugeHbdjfvRc
+Z5A84/eIQt+bUxcYUBaXfdnyuiV9uwPqWP0w6b05y8kOqc+m53exE87lJxABvAqdeMzOCZQ6IJbY
+3kYv6mhhl56Oel3fr9VRoTZy8PQ3dOrQZ4rSP18lN08p03QQvplPScMGmwoZOZMP8tewC+7zYQuC
+SlOz7Q4Z8nCqiONnVcjtwlGM6v3gTF/5fh258sS1MoVFEZRxqWQnbcuSCyRTkANBanGtGutHdIfw
+xI0vcJb0jm/ujRbeGgSJoXtOAQkt89VwyEs8k+/ztOXK2GnLujJwve3SfjxQTSMqFOZBqb1XG6tm
+BaaWzc4X+sDPExdZLLt5In5PJoOb+XBnkwewZUZ68qafO8M2MrUlPAf6kyaNLw6U0VxK7FSpaQlm
+EjLf89DIKUMvz1PxuFXG/EzFoCyxxMtB7pwngPj+QoKe1/pu6VFQJzU89BXuAB4XhMWpb95+GDfk
+jhIRJIskblsy4SEzLl+GuEc6MJD2rJs1BZNk0mPxXfu1sRMSE7UTSQeWht4EKZx08wGXm+/s/v+z
+j6CPw5x6nTcddg3FYT0MSZhcLHvjt4DH4HO2hKfw+cfnh90IRK/AGipZoCt/UNA/Pc2QgM8JOLTV
+8Pri0eHCgsDWutvUKmYwiDI1X+VmX7bWg1Tk8lnwdtQlesrxX3V1FwEUb8R4sVR4+Hjc30Pl4vqL
+/eMjkQZ28mO71B/o7JeUjVzRwIzoT9FmNmoy11lNCUBRt8YzFt2/lOlX8OhziLhW2TnawznqpUp/
+1tImJLykqCcHB3VNK5c4YsprYUN4XCOi8jfQ/tBVZGonK4HYfKzmVtHH1e2dfa6tLQeFfpNe

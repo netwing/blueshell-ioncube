@@ -1,40 +1,30 @@
-<h2>View Post <?php echo $post->id; ?></h2>
-
-<div class="actionBar">
-[<?php echo CHtml::link('Post List',array('list')); ?>]
-[<?php echo CHtml::link('New Post',array('create')); ?>]
-[<?php echo CHtml::link('Update Post',array('update','id'=>$post->id)); ?>]
-[<?php echo CHtml::linkButton('Delete Post',array('submit'=>array('delete','id'=>$post->id),'confirm'=>'Are you sure?')); ?>
-]
-</div>
-
-<table class="dataGrid">
-<tr>
-	<th class="label"><?php echo CHtml::encode($post->getAttributeLabel('title')); ?>
-</th>
-    <td><?php echo CHtml::encode($post->title); ?>
-</td>
-    </div>
-</tr>
-<tr>
-	<th class="label"><?php echo CHtml::encode($post->getAttributeLabel('create_time')); ?>
-</th>
-    <td><?php echo CHtml::encode($post->create_time); ?>
-</td>
-    </div>
-</tr>
-<tr>
-	<th class="label"><?php echo CHtml::encode($post->getAttributeLabel('author_id')); ?>
-</th>
-    <td><?php echo CHtml::encode($post->author_id); ?>
-</td>
-    </div>
-</tr>
-<tr>
-	<th class="label"><?php echo CHtml::encode($post->getAttributeLabel('content')); ?>
-</th>
-    <td><?php echo CHtml::encode($post->content); ?>
-</td>
-    </div>
-</tr>
-</table>
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+HYsi4ERX850EceSw4JfteTQ4uG0=

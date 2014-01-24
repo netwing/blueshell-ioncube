@@ -1,106 +1,43 @@
-<?php
-/**
- * CAuthAssignment class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CAuthAssignment represents an assignment of a role to a user.
- * It includes additional assignment information such as {@link bizRule} and {@link data}.
- * Do not create a CAuthAssignment instance using the 'new' operator.
- * Instead, call {@link IAuthManager::assign}.
- *
- * @property mixed $userId User ID (see {@link IWebUser::getId}).
- * @property string $itemName The authorization item name.
- * @property string $bizRule The business rule associated with this assignment.
- * @property mixed $data Additional data for this assignment.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.web.auth
- * @since 1.0
- */
-class CAuthAssignment extends CComponent
-{
-	private $_auth;
-	private $_itemName;
-	private $_userId;
-	private $_bizRule;
-	private $_data;
-
-	/**
-	 * Constructor.
-	 * @param IAuthManager $auth the authorization manager
-	 * @param string $itemName authorization item name
-	 * @param mixed $userId user ID (see {@link IWebUser::getId})
-	 * @param string $bizRule the business rule associated with this assignment
-	 * @param mixed $data additional data for this assignment
-	 */
-	public function __construct($auth,$itemName,$userId,$bizRule=null,$data=null)
-	{
-		$this->_auth=$auth;
-		$this->_itemName=$itemName;
-		$this->_userId=$userId;
-		$this->_bizRule=$bizRule;
-		$this->_data=$data;
-	}
-
-	/**
-	 * @return mixed user ID (see {@link IWebUser::getId})
-	 */
-	public function getUserId()
-	{
-		return $this->_userId;
-	}
-
-	/**
-	 * @return string the authorization item name
-	 */
-	public function getItemName()
-	{
-		return $this->_itemName;
-	}
-
-	/**
-	 * @return string the business rule associated with this assignment
-	 */
-	public function getBizRule()
-	{
-		return $this->_bizRule;
-	}
-
-	/**
-	 * @param string $value the business rule associated with this assignment
-	 */
-	public function setBizRule($value)
-	{
-		if($this->_bizRule!==$value)
-		{
-			$this->_bizRule=$value;
-			$this->_auth->saveAuthAssignment($this);
-		}
-	}
-
-	/**
-	 * @return mixed additional data for this assignment
-	 */
-	public function getData()
-	{
-		return $this->_data;
-	}
-
-	/**
-	 * @param mixed $value additional data for this assignment
-	 */
-	public function setData($value)
-	{
-		if($this->_data!==$value)
-		{
-			$this->_data=$value;
-			$this->_auth->saveAuthAssignment($this);
-		}
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

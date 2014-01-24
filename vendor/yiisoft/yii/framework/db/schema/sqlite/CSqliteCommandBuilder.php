@@ -1,63 +1,46 @@
-<?php
-/**
- * CSqliteCommandBuilder class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CSqliteCommandBuilder provides basic methods to create query commands for SQLite tables.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.db.schema.sqlite
- * @since 1.0
- */
-class CSqliteCommandBuilder extends CDbCommandBuilder
-{
-	/**
-	 * Generates the expression for selecting rows with specified composite key values.
-	 * This method is overridden because SQLite does not support the default
-	 * IN expression with composite columns.
-	 * @param CDbTableSchema $table the table schema
-	 * @param array $values list of primary key values to be selected within
-	 * @param string $prefix column prefix (ended with dot)
-	 * @return string the expression for selection
-	 */
-	protected function createCompositeInCondition($table,$values,$prefix)
-	{
-		$keyNames=array();
-		foreach(array_keys($values[0]) as $name)
-			$keyNames[]=$prefix.$table->columns[$name]->rawName;
-		$vs=array();
-		foreach($values as $value)
-			$vs[]=implode("||','||",$value);
-		return implode("||','||",$keyNames).' IN ('.implode(', ',$vs).')';
-	}
-
-	/**
-	 * Creates a multiple INSERT command.
-	 * This method could be used to achieve better performance during insertion of the large
-	 * amount of data into the database tables.
-	 * Note that SQLite does not keep original order of the inserted rows.
-	 * @param mixed $table the table schema ({@link CDbTableSchema}) or the table name (string).
-	 * @param array[] $data list data to be inserted, each value should be an array in format (column name=>column value).
-	 * If a key is not a valid column name, the corresponding value will be ignored.
-	 * @return CDbCommand multiple insert command
-	 * @since 1.1.14
-	 */
-	public function createMultipleInsertCommand($table,array $data)
-	{
-		$templates=array(
-			'main'=>'INSERT INTO {{tableName}} ({{columnInsertNames}}) {{rowInsertValues}}',
-			'columnInsertValue'=>'{{value}} AS {{column}}',
-			'columnInsertValueGlue'=>', ',
-			'rowInsertValue'=>'SELECT {{columnInsertValues}}',
-			'rowInsertValueGlue'=>' UNION ',
-			'columnInsertNameGlue'=>', ',
-		);
-		return $this->composeMultipleInsertCommand($table,$data,$templates);
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+o4HuXjpphKbHAXMFXsUDbbN3jYLc5BfEI54d

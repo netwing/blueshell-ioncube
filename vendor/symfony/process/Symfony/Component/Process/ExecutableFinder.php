@@ -1,90 +1,56 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\Process;
-
-/**
- * Generic executable finder.
- *
- * @author Fabien Potencier <fabien@symfony.com>
- * @author Johannes M. Schmitt <schmittjoh@gmail.com>
- */
-class ExecutableFinder
-{
-    private $suffixes = array('.exe', '.bat', '.cmd', '.com');
-
-    /**
-     * Replaces default suffixes of executable.
-     *
-     * @param array $suffixes
-     */
-    public function setSuffixes(array $suffixes)
-    {
-        $this->suffixes = $suffixes;
-    }
-
-    /**
-     * Adds new possible suffix to check for executable.
-     *
-     * @param string $suffix
-     */
-    public function addSuffix($suffix)
-    {
-        $this->suffixes[] = $suffix;
-    }
-
-    /**
-     * Finds an executable by name.
-     *
-     * @param string $name      The executable name (without the extension)
-     * @param string $default   The default to return if no executable is found
-     * @param array  $extraDirs Additional dirs to check into
-     *
-     * @return string The executable path or default value
-     */
-    public function find($name, $default = null, array $extraDirs = array())
-    {
-        if (ini_get('open_basedir')) {
-            $searchPath = explode(PATH_SEPARATOR, getenv('open_basedir'));
-            $dirs = array();
-            foreach ($searchPath as $path) {
-                if (is_dir($path)) {
-                    $dirs[] = $path;
-                } else {
-                    $file = str_replace(dirname($path), '', $path);
-                    if ($file == $name && is_executable($path)) {
-                        return $path;
-                    }
-                }
-            }
-        } else {
-            $dirs = array_merge(
-                explode(PATH_SEPARATOR, getenv('PATH') ?: getenv('Path')),
-                $extraDirs
-            );
-        }
-
-        $suffixes = array('');
-        if (defined('PHP_WINDOWS_VERSION_BUILD')) {
-            $pathExt = getenv('PATHEXT');
-            $suffixes = $pathExt ? explode(PATH_SEPARATOR, $pathExt) : $this->suffixes;
-        }
-        foreach ($suffixes as $suffix) {
-            foreach ($dirs as $dir) {
-                if (is_file($file = $dir.DIRECTORY_SEPARATOR.$name.$suffix) && (defined('PHP_WINDOWS_VERSION_BUILD') || is_executable($file))) {
-                    return $file;
-                }
-            }
-        }
-
-        return $default;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

@@ -1,92 +1,40 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\EventDispatcher;
-
-/**
- * A read-only proxy for an event dispatcher.
- *
- * @author Bernhard Schussek <bschussek@gmail.com>
- */
-class ImmutableEventDispatcher implements EventDispatcherInterface
-{
-    /**
-     * The proxied dispatcher.
-     * @var EventDispatcherInterface
-     */
-    private $dispatcher;
-
-    /**
-     * Creates an unmodifiable proxy for an event dispatcher.
-     *
-     * @param EventDispatcherInterface $dispatcher The proxied event dispatcher.
-     */
-    public function __construct(EventDispatcherInterface $dispatcher)
-    {
-        $this->dispatcher = $dispatcher;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function dispatch($eventName, Event $event = null)
-    {
-        return $this->dispatcher->dispatch($eventName, $event);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function addListener($eventName, $listener, $priority = 0)
-    {
-        throw new \BadMethodCallException('Unmodifiable event dispatchers must not be modified.');
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function addSubscriber(EventSubscriberInterface $subscriber)
-    {
-        throw new \BadMethodCallException('Unmodifiable event dispatchers must not be modified.');
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function removeListener($eventName, $listener)
-    {
-        throw new \BadMethodCallException('Unmodifiable event dispatchers must not be modified.');
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function removeSubscriber(EventSubscriberInterface $subscriber)
-    {
-        throw new \BadMethodCallException('Unmodifiable event dispatchers must not be modified.');
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getListeners($eventName = null)
-    {
-        return $this->dispatcher->getListeners($eventName);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function hasListeners($eventName = null)
-    {
-        return $this->dispatcher->hasListeners($eventName);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+4FwRYrZIJvKRPFAv3PNdfW==

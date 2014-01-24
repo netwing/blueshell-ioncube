@@ -1,90 +1,37 @@
-<?php
-
-namespace Guzzle\Batch\Exception;
-
-use Guzzle\Common\Exception\GuzzleException;
-use Guzzle\Batch\BatchTransferInterface as TransferStrategy;
-use Guzzle\Batch\BatchDivisorInterface as DivisorStrategy;
-
-/**
- * Exception thrown during a batch transfer
- */
-class BatchTransferException extends \Exception implements GuzzleException
-{
-    /** @var array The batch being sent when the exception occurred */
-    protected $batch;
-
-    /** @var TransferStrategy The transfer strategy in use when the exception occurred */
-    protected $transferStrategy;
-
-    /** @var DivisorStrategy The divisor strategy in use when the exception occurred */
-    protected $divisorStrategy;
-
-    /** @var array Items transferred at the point in which the exception was encountered */
-    protected $transferredItems;
-
-    /**
-     * @param array            $batch            The batch being sent when the exception occurred
-     * @param array            $transferredItems Items transferred at the point in which the exception was encountered
-     * @param \Exception       $exception        Exception encountered
-     * @param TransferStrategy $transferStrategy The transfer strategy in use when the exception occurred
-     * @param DivisorStrategy  $divisorStrategy  The divisor strategy in use when the exception occurred
-     */
-    public function __construct(
-        array $batch,
-        array $transferredItems,
-        \Exception $exception,
-        TransferStrategy $transferStrategy = null,
-        DivisorStrategy $divisorStrategy = null
-    ) {
-        $this->batch = $batch;
-        $this->transferredItems = $transferredItems;
-        $this->transferStrategy = $transferStrategy;
-        $this->divisorStrategy = $divisorStrategy;
-        parent::__construct(
-            'Exception encountered while transferring batch: ' . $exception->getMessage(),
-            $exception->getCode(),
-            $exception
-        );
-    }
-
-    /**
-     * Get the batch that we being sent when the exception occurred
-     *
-     * @return array
-     */
-    public function getBatch()
-    {
-        return $this->batch;
-    }
-
-    /**
-     * Get the items transferred at the point in which the exception was encountered
-     *
-     * @return array
-     */
-    public function getTransferredItems()
-    {
-        return $this->transferredItems;
-    }
-
-    /**
-     * Get the transfer strategy
-     *
-     * @return TransferStrategy
-     */
-    public function getTransferStrategy()
-    {
-        return $this->transferStrategy;
-    }
-
-    /**
-     * Get the divisor strategy
-     *
-     * @return DivisorStrategy
-     */
-    public function getDivisorStrategy()
-    {
-        return $this->divisorStrategy;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

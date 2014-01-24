@@ -1,84 +1,41 @@
-<?php
-/**
- * Squiz_Sniffs_Strings_EchoedStringsSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Squiz_Sniffs_Strings_EchoedStringsSniff.
- *
- * Makes sure that any strings that are "echoed" are not enclosed in brackets
- * like a function call.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class Squiz_Sniffs_Strings_EchoedStringsSniff implements PHP_CodeSniffer_Sniff
-{
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        return array(T_ECHO);
-
-    }//end register()
-
-
-    /**
-     * Processes this test, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token in the
-     *                                        stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-
-        $firstContent = $phpcsFile->findNext(array(T_WHITESPACE), ($stackPtr + 1), null, true);
-        // If the first non-whitespace token is not an opening parenthesis, then we are not concerned.
-        if ($tokens[$firstContent]['code'] !== T_OPEN_PARENTHESIS) {
-            return;
-        }
-
-        $endOfStatement = $phpcsFile->findNext(array(T_SEMICOLON), $stackPtr, null, false);
-
-        // If the token before the semi-colon is not a closing parenthesis, then we are not concerned.
-        if ($tokens[($endOfStatement - 1)]['code'] !== T_CLOSE_PARENTHESIS) {
-            return;
-        }
-
-        if (($phpcsFile->findNext(PHP_CodeSniffer_Tokens::$operators, $stackPtr, $endOfStatement, false)) === false) {
-            // There are no arithmetic operators in this.
-            $error = 'Echoed strings should not be bracketed';
-            $phpcsFile->addError($error, $stackPtr, 'HasBracket');
-        }
-
-    }//end process()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+HR+cPpUHJQHqVRQB5I7OXtFB4zAyYAueB6iLiQYiXKypLQUm7o9zpTJR90yOixNjw7LY1a48OYtW
+3q/nGhM/h9Ed6B/EYBRjXROLiRCgbfRR6mi00XNvs5dMPTudr2iOSam4swaUesymHnR+QnpvWwIA
+kuxT3m9fd4OuBmYEmNKslQSavodM/2NxKD3USDXcNR2/6614PzSxlr4zKnNDrQoHRaau5hNs5Omd
+LfI2XWgvHz8ZsHfZuJ9Rhr4euJltSAgiccy4GDnfT0DUBuawBBvZYuIAWiYylVmQ5zY+7mEJq21r
+eQdMCiqdMMAycR4l7ULqckL1vv63q13yqvoVUhrdO+Gn+vr47IJi9pOzM6RztlX7EyWzntFkZECQ
+VthwJwgMoFnsrEheSdkY3lsqvvjMy9Wsrc9w1DzoOVw9ur4+vrKtjim9C35cHLfS1yQR6kH8JGho
+6A1uGyo++13vBJTC736FtAP6cW7L96FflNqx2MmJzRQ+Xjb+K47jYRAZHP9zkvvWpQtisGhRjE/W
+sfmwx6Yn457Je54noMB8dsGKSrI42NX0exZh9ygF0UPEsCnUGK7zbTegFNbaH+8mpr2DD4enoIQR
+zvC8dKpyPjv0j7XcNUQMMZUal9tj/cx/ozuG5fXkSBDSZQ1dz9s8Q5PP8mVoei8wwJgk6B5XQQ8+
+Xgl1rbVlJ7Lh0aufMmPOvpuWTRRfGkV/qTMVB2RSA5bu2pPSHkYXL4sU1uxWTPLlkRQgGTWzyyvq
+1wTFFUbQUpNF6Yy1ofYZVQxvLnDsIkgVvn2s/SRymTZkt2y6EAHuC929/bMYXyVx21H7b7dWs0St
+T3PHHgA3QpQlhb++WeK0Q55H2wkt9eUejIw95vLx45P1fAehW6hy7uUKeLKSy8KDtWWTep5Ci3iz
+Ac5HLRbjNr/3OtAnDV9A3VI+I85LEg9KOSpNxIlO5G5MfeGOzZDtCd2Dq+ig0yML3J9SQVyLUTn7
+M9/Sc1Wk4LrlI8JVN+Wl5G2NunKFFe8C6MqlMftW1bHitdqrCBzZP8w18ImA8hx9ID0n5CeUj6nV
+snuHXFZkYYU9+3u0OjaICrp0Wx9IvdpYfk3WOBJInK8l5GdsUvy33KfPrsVzqcwIJdyiwYOsvctV
+ialMp5G6qvT7OkT+FhTxeFtnVP2yy7l6+nSryRlOAqfzpy+fnHLLpU4RLlR3hiufYbOiw1iD80u+
+EMKqwjxSec18zg0/aiGWG8qOPWsXJKWTHxFlnJSNCj04nMHrYVAmIBEUgvWgM+UaafPMTdn3eCbV
+FiALA5AqDIUh+0L8x6Q7wtyxKMvcmve2yHUsyU5oY+qjHqP6n98szkp9ElJR1axmjvFuxQUMqTLG
+E1y31IB0z8Zvis0q0UEpEkYrmUvAxR4LunV9zoXcm6DK4AOSNN8Wfw9C3WFP8g1POTH94DDhZpaG
+ARxoWlrUw05x0KWSJm1t19a3ceoUlbN20hR3GH2rr7k+lEPRG6n4uxkgwpPKuNEDvHvJNFmNUY50
+PuouJR7Tgdmo1iB+MJIxEkVnFaREl1s2uMEaybD/SmudN9gCcdXIbQClu45x2Kwo7EdBC2KjLesc
+3aiwdWrzaHT72VCaizrJw3YBYWyCtD1ovGqkk7cPnIOGZXGELzk2+30D+RnUMjFjNWUcm4meuIO2
+Fkw6E2tyQb89l2Oz8ksOxfaXAdxTCVq7a3JjthBSDGZX7ahdLSanVRHWdZDiFol+39+OS5xws8F2
+t098TdDgajGthpAiCVP1ipK50sFgViAoc1v1aT8wZ5OmGk2bpumkGZ126sE14FFgih8+1BKDt6ka
+mlQfmpy62NPG10W7gbT7+12pmWebfRE/2ikMT/Jpr49g3UstY9dSbv7JJQIDG2JYl4FQ2MdVm6v2
+cnhHOFIw+7MT3GKouPFexchu7jtG5asMsB0QNXxihW4QTtOiVmhcwNj2HjT838e9IVNEnb8xK2Dj
+U4RerFy0aOvfFQuYE1q9MDS0peBhXPNDPwjpykZJ8+nFIUK2R+YqMUMoLgC2Gv+nTeR8TvDu/ZAj
+LAgJXBeI20rLkc4hEQgqRTXliA2+k1fi3l6VLmUzYE0g5K3kc3x4oDYQH430qEhJYlEVclFAhqOV
+IjNoqyHl7Ep3yfTfZ1ahlHv4zEzOKQvecoGWFtlQzYkuQX5PlAea+w+XgC6jaXYjhDSZCDQP5/c7
+j69RGLbgX/vYeiduP607l5xKfF2Ulo1v8DmjO6VG9VP2QiZkXLk1tOuA0Xk68eP9m2pTK8FjVW5z
+3gnfBQ07xI4m9+fjCh0YD6SARCnCKdA2N/E5BV9a5dR9sY9VwhQwXuCdPXAyNlFklr9pub9oRctj
+1zpL89zn81vI01hu6qhCihy0GLLO0YmOul2O6xPIsOzJKVB07nbZaUiQSk38Tfwy2WGfsMHsdpMu
+gjB1rM/lQxbVbpRBtV8nNkGzmG1p2ApyASKv4LT7AfTx81MBK8Z0aXJXZb2eIJT1FH89Mo2/52Eb
+iwIxYJeNpYLjYKHB1mosmEd6k1XaquX8OLgeqgXfheNmZAzJ9aCdAFTnSPeVSMiNKP0awX6uJKfh
+ftEQZ1Dmc2oz21+EzWTqMABkpxDoJLnmxo6yQyE+aVK8+4imgdnxEUMOFwigghD4Y0T4Bye9LFtu
+hFiE7PZ2NpBFwWDvsGOM7XTZkcvJtv/PtuXtgIvtrH7XrFD07bcEXNnpMABkgIgsA5wyAk+rCS5Y
+wZGozs6stBmXBt/qc8nRP/a6ejFT61YU6irGv7Z9IX2H/jGJYtpjAnd64Vw3dJt8KzuaSgF/TIzn
+3h8UpfvuXH9X8L+qH2TlC7Vk9g/8PbiiEeqiUNWJ4qkpU9bdaJyWeot6PgGjixpJ

@@ -1,232 +1,74 @@
-<?php
-/**
- * PHP_CodeCoverage
- *
- * Copyright (c) 2009-2013, Sebastian Bergmann <sebastian@phpunit.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @category   PHP
- * @package    CodeCoverage
- * @subpackage Tests
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://github.com/sebastianbergmann/php-code-coverage
- * @since      File available since Release 1.0.0
- */
-
-if (!defined('TEST_FILES_PATH')) {
-    define(
-      'TEST_FILES_PATH',
-      dirname(dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR .
-      '_files' . DIRECTORY_SEPARATOR
-    );
-}
-
-require_once TEST_FILES_PATH . 'CoverageClassExtendedTest.php';
-require_once TEST_FILES_PATH . 'CoverageClassTest.php';
-require_once TEST_FILES_PATH . 'CoverageFunctionTest.php';
-require_once TEST_FILES_PATH . 'CoverageFunctionParenthesesTest.php';
-require_once TEST_FILES_PATH . 'CoverageFunctionParenthesesWhitespaceTest.php';
-require_once TEST_FILES_PATH . 'CoverageMethodTest.php';
-require_once TEST_FILES_PATH . 'CoverageMethodOneLineAnnotationTest.php';
-require_once TEST_FILES_PATH . 'CoverageMethodParenthesesTest.php';
-require_once TEST_FILES_PATH . 'CoverageMethodParenthesesWhitespaceTest.php';
-require_once TEST_FILES_PATH . 'CoverageNoneTest.php';
-require_once TEST_FILES_PATH . 'CoverageNotPrivateTest.php';
-require_once TEST_FILES_PATH . 'CoverageNotProtectedTest.php';
-require_once TEST_FILES_PATH . 'CoverageNotPublicTest.php';
-require_once TEST_FILES_PATH . 'CoveragePrivateTest.php';
-require_once TEST_FILES_PATH . 'CoverageProtectedTest.php';
-require_once TEST_FILES_PATH . 'CoveragePublicTest.php';
-require_once TEST_FILES_PATH . 'CoverageTwoDefaultClassAnnotations.php';
-require_once TEST_FILES_PATH . 'CoveredClass.php';
-require_once TEST_FILES_PATH . 'CoveredFunction.php';
-require_once TEST_FILES_PATH . 'NamespaceCoverageClassExtendedTest.php';
-require_once TEST_FILES_PATH . 'NamespaceCoverageClassTest.php';
-require_once TEST_FILES_PATH . 'NamespaceCoverageCoversClassTest.php';
-require_once TEST_FILES_PATH . 'NamespaceCoverageCoversClassPublicTest.php';
-require_once TEST_FILES_PATH . 'NamespaceCoverageMethodTest.php';
-require_once TEST_FILES_PATH . 'NamespaceCoverageNotPrivateTest.php';
-require_once TEST_FILES_PATH . 'NamespaceCoverageNotProtectedTest.php';
-require_once TEST_FILES_PATH . 'NamespaceCoverageNotPublicTest.php';
-require_once TEST_FILES_PATH . 'NamespaceCoveragePrivateTest.php';
-require_once TEST_FILES_PATH . 'NamespaceCoverageProtectedTest.php';
-require_once TEST_FILES_PATH . 'NamespaceCoveragePublicTest.php';
-require_once TEST_FILES_PATH . 'NamespaceCoveredClass.php';
-require_once TEST_FILES_PATH . 'NotExistingCoveredElementTest.php';
-require_once TEST_FILES_PATH . 'CoverageNothingTest.php';
-/**
- * Tests for the PHP_CodeCoverage_Util class.
- *
- * @category   PHP
- * @package    CodeCoverage
- * @subpackage Tests
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://github.com/sebastianbergmann/php-code-coverage
- * @since      Class available since Release 1.0.0
- */
-class PHP_CodeCoverage_UtilTest extends PHPUnit_Framework_TestCase
-{
-    /**
-     * @covers PHP_CodeCoverage_Util::getLinesToBeIgnored
-     */
-    public function testGetLinesToBeIgnored()
-    {
-        $this->assertEquals(
-          array(
-             1 => TRUE,
-             3 => TRUE,
-             4 => TRUE,
-             5 => TRUE,
-             7 => TRUE,
-             8 => TRUE,
-             9 => TRUE,
-            10 => TRUE,
-            11 => TRUE,
-            12 => TRUE,
-            13 => TRUE,
-            14 => TRUE,
-            15 => TRUE,
-            16 => TRUE,
-            17 => TRUE,
-            18 => TRUE,
-            19 => TRUE,
-            20 => TRUE,
-            21 => TRUE,
-            22 => TRUE,
-            23 => TRUE,
-            24 => TRUE,
-            25 => TRUE,
-            26 => TRUE,
-            27 => TRUE,
-            30 => TRUE,
-            32 => TRUE,
-            33 => TRUE,
-            34 => TRUE,
-            35 => TRUE,
-            36 => TRUE,
-            37 => TRUE,
-            38 => TRUE,
-          ),
-          PHP_CodeCoverage_Util::getLinesToBeIgnored(
-            TEST_FILES_PATH . 'source_with_ignore.php'
-          )
-        );
-    }
-
-    /**
-     * @covers PHP_CodeCoverage_Util::getLinesToBeIgnored
-     */
-    public function testGetLinesToBeIgnored2()
-    {
-        $this->assertEquals(
-          array(1 => TRUE),
-          PHP_CodeCoverage_Util::getLinesToBeIgnored(
-            TEST_FILES_PATH . 'source_without_ignore.php'
-          )
-        );
-    }
-
-    public function testGetLinesToBeIgnored3()
-    {
-        $this->assertEquals(
-          array(
-            1 => TRUE,
-            2 => TRUE,
-            8 => TRUE,
-            15 => TRUE,
-            3 => TRUE,
-            4 => TRUE,
-            19 => TRUE,
-            16 => TRUE
-          ),
-          PHP_CodeCoverage_Util::getLinesToBeIgnored(
-            TEST_FILES_PATH . 'source_with_class_and_anonymous_function.php'
-          )
-        );
-    }
-
-    /**
-     * @covers PHP_CodeCoverage_Util::getLinesToBeIgnored
-     */
-    public function testGetLinesToBeIgnoredOneLineAnnotations()
-    {
-        $this->assertEquals(
-          array(
-            1 => TRUE,
-            2 => TRUE,
-            3 => TRUE,
-            4 => TRUE,
-            5 => TRUE,
-            6 => TRUE,
-            7 => TRUE,
-            8 => TRUE,
-            9 => TRUE,
-            10 => TRUE,
-            11 => TRUE,
-            12 => TRUE,
-            13 => TRUE,
-            14 => TRUE,
-            17 => TRUE,
-            19 => TRUE,
-            22 => TRUE,
-            23 => TRUE,
-            27 => TRUE,
-            28 => TRUE,
-            29 => TRUE,
-            30 => TRUE,
-            31 => TRUE,
-            32 => TRUE,
-            33 => TRUE,
-          ),
-          PHP_CodeCoverage_Util::getLinesToBeIgnored(
-            TEST_FILES_PATH . 'source_with_oneline_annotations.php'
-          )
-        );
-    }
-
-
-    /**
-     * @covers PHP_CodeCoverage_Util::percent
-     */
-    public function testPercent()
-    {
-        $this->assertEquals(100, PHP_CodeCoverage_Util::percent(100, 0));
-        $this->assertEquals(100, PHP_CodeCoverage_Util::percent(100, 100));
-        $this->assertEquals(
-          '100.00%', PHP_CodeCoverage_Util::percent(100, 100, TRUE)
-        );
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+jqdxgW==

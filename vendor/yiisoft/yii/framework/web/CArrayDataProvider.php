@@ -1,193 +1,107 @@
-<?php
-/**
- * CArrayDataProvider class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CArrayDataProvider implements a data provider based on a raw data array.
- *
- * The {@link rawData} property contains all data that may be sorted and/or paginated.
- * CArrayDataProvider will supply the data after sorting and/or pagination.
- * You may configure the {@link sort} and {@link pagination} properties to
- * customize sorting and pagination behaviors.
- *
- * Elements in the raw data array may be either objects (e.g. model objects)
- * or associative arrays (e.g. query results of DAO).
- * Make sure to set the {@link keyField} property to the name of the field that uniquely
- * identifies a data record or false if you do not have such a field.
- * 
- * CArrayDataProvider may be used in the following way:
- * <pre>
- * $rawData=Yii::app()->db->createCommand('SELECT * FROM tbl_user')->queryAll();
- * // or using: $rawData=User::model()->findAll();
- * $dataProvider=new CArrayDataProvider($rawData, array(
- *     'id'=>'user',
- *     'sort'=>array(
- *         'attributes'=>array(
- *              'id', 'username', 'email',
- *         ),
- *     ),
- *     'pagination'=>array(
- *         'pageSize'=>10,
- *     ),
- * ));
- * // $dataProvider->getData() will return a list of arrays.
- * </pre>
- *
- * Note: if you want to use the sorting feature, you must configure {@link sort} property
- * so that the provider knows which columns can be sorted.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.web
- * @since 1.1.4
- */
-class CArrayDataProvider extends CDataProvider
-{
-	/**
-	 * @var string the name of the key field. This is a field that uniquely identifies a
-	 * data record. In database this would be the primary key.
-	 * Defaults to 'id'. If it's set to false, keys of {@link rawData} array are used.
-	 */
-	public $keyField='id';
-	/**
-	 * @var array the data that is not paginated or sorted. When pagination is enabled,
-	 * this property usually contains more elements than {@link data}.
-	 * The array elements must use zero-based integer keys.
-	 */
-	public $rawData=array();
-	/**
-	 * @var boolean controls how sorting works. True value means that case will be
-	 * taken into account. False value will lead to the case insensitive sort. Default
-	 * value is true.
-	 * @since 1.1.13
-	 */
-	public $caseSensitiveSort=true;
-
-	/**
-	 * Constructor.
-	 * @param array $rawData the data that is not paginated or sorted. The array elements must use zero-based integer keys.
-	 * @param array $config configuration (name=>value) to be applied as the initial property values of this class.
-	 */
-	public function __construct($rawData,$config=array())
-	{
-		$this->rawData=$rawData;
-		foreach($config as $key=>$value)
-			$this->$key=$value;
-	}
-
-	/**
-	 * Fetches the data from the persistent data storage.
-	 * @return array list of data items
-	 */
-	protected function fetchData()
-	{
-		if(($sort=$this->getSort())!==false && ($order=$sort->getOrderBy())!='')
-			$this->sortData($this->getSortDirections($order));
-
-		if(($pagination=$this->getPagination())!==false)
-		{
-			$pagination->setItemCount($this->getTotalItemCount());
-			return array_slice($this->rawData, $pagination->getOffset(), $pagination->getLimit());
-		}
-		else
-			return $this->rawData;
-	}
-
-	/**
-	 * Fetches the data item keys from the persistent data storage.
-	 * @return array list of data item keys.
-	 */
-	protected function fetchKeys()
-	{
-		if($this->keyField===false)
-			return array_keys($this->rawData);
-		$keys=array();
-		foreach($this->getData() as $i=>$data)
-			$keys[$i]=is_object($data) ? $data->{$this->keyField} : $data[$this->keyField];
-		return $keys;
-	}
-
-	/**
-	 * Calculates the total number of data items.
-	 * This method simply returns the number of elements in {@link rawData}.
-	 * @return integer the total number of data items.
-	 */
-	protected function calculateTotalItemCount()
-	{
-		return count($this->rawData);
-	}
-
-	/**
-	 * Sorts the raw data according to the specified sorting instructions.
-	 * After calling this method, {@link rawData} will be modified.
-	 * @param array $directions the sorting directions (field name => whether it is descending sort)
-	 */
-	protected function sortData($directions)
-	{
-		if(empty($directions))
-			return;
-		$args=array();
-		$dummy=array();
-		foreach($directions as $name=>$descending)
-		{
-			$column=array();
-			$fields_array=preg_split('/\.+/',$name,-1,PREG_SPLIT_NO_EMPTY);
-			foreach($this->rawData as $index=>$data)
-				$column[$index]=$this->getSortingFieldValue($data, $fields_array);
-			$args[]=&$column;
-			$dummy[]=&$column;
-			unset($column);
-			$direction=$descending ? SORT_DESC : SORT_ASC;
-			$args[]=&$direction;
-			$dummy[]=&$direction;
-			unset($direction);
-		}
-		$args[]=&$this->rawData;
-		call_user_func_array('array_multisort', $args);
-	}
-
-	/**
-	 * Get field for sorting, using dot like delimiter in query.
-	 * @param mixed $data array or object
-	 * @param array $fields sorting fields in $data
-	 * @return mixed $data sorting field value
-	 */
-	protected function getSortingFieldValue($data, $fields)
-	{
-		if(is_object($data))
-		{
-			foreach($fields as $field)
-				$data=isset($data->$field) ? $data->$field : null;
-		}
-		else
-		{
-			foreach($fields as $field)
-				$data=isset($data[$field]) ? $data[$field] : null;
-		}
-		return $this->caseSensitiveSort ? $data : mb_strtolower($data,Yii::app()->charset);
-	}
-
-	/**
-	 * Converts the "ORDER BY" clause into an array representing the sorting directions.
-	 * @param string $order the "ORDER BY" clause.
-	 * @return array the sorting directions (field name => whether it is descending sort)
-	 */
-	protected function getSortDirections($order)
-	{
-		$segs=explode(',',$order);
-		$directions=array();
-		foreach($segs as $seg)
-		{
-			if(preg_match('/(.*?)(\s+(desc|asc))?$/i',trim($seg),$matches))
-				$directions[$matches[1]]=isset($matches[3]) && !strcasecmp($matches[3],'desc');
-			else
-				$directions[trim($seg)]=false;
-		}
-		return $directions;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+jG==

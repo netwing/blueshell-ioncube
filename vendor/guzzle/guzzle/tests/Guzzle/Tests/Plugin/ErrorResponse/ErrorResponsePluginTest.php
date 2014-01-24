@@ -1,137 +1,75 @@
-<?php
-
-namespace Guzzle\Tests\Plugin\ErrorResponse;
-
-use Guzzle\Service\Client;
-use Guzzle\Http\Message\Response;
-use Guzzle\Plugin\ErrorResponse\ErrorResponsePlugin;
-use Guzzle\Service\Description\ServiceDescription;
-use Guzzle\Tests\Mock\ErrorResponseMock;
-
-/**
- * @covers \Guzzle\Plugin\ErrorResponse\ErrorResponsePlugin
- */
-class ErrorResponsePluginTest extends \Guzzle\Tests\GuzzleTestCase
-{
-    protected $client;
-
-    public static function tearDownAfterClass()
-    {
-        self::getServer()->flush();
-    }
-
-    public function setUp()
-    {
-        $mockError = 'Guzzle\Tests\Mock\ErrorResponseMock';
-        $description = ServiceDescription::factory(array(
-            'operations' => array(
-                'works' => array(
-                    'httpMethod' => 'GET',
-                    'errorResponses' => array(
-                        array('code' => 500, 'class' => $mockError),
-                        array('code' => 503, 'reason' => 'foo', 'class' => $mockError),
-                        array('code' => 200, 'reason' => 'Error!', 'class' => $mockError)
-                    )
-                ),
-                'bad_class' => array(
-                    'httpMethod' => 'GET',
-                    'errorResponses' => array(
-                        array('code' => 500, 'class' => 'Does\\Not\\Exist')
-                    )
-                ),
-                'does_not_implement' => array(
-                    'httpMethod' => 'GET',
-                    'errorResponses' => array(
-                        array('code' => 500, 'class' => __CLASS__)
-                    )
-                ),
-                'no_errors' => array('httpMethod' => 'GET'),
-                'no_class' => array(
-                    'httpMethod' => 'GET',
-                    'errorResponses' => array(
-                        array('code' => 500)
-                    )
-                ),
-            )
-        ));
-        $this->client = new Client($this->getServer()->getUrl());
-        $this->client->setDescription($description);
-    }
-
-    /**
-     * @expectedException \Guzzle\Http\Exception\ServerErrorResponseException
-     */
-    public function testSkipsWhenErrorResponsesIsNotSet()
-    {
-        $this->getServer()->enqueue("HTTP/1.1 500 Foo\r\nContent-Length: 0\r\n\r\n");
-        $this->client->addSubscriber(new ErrorResponsePlugin());
-        $this->client->getCommand('no_errors')->execute();
-    }
-
-    public function testSkipsWhenErrorResponsesIsNotSetAndAllowsSuccess()
-    {
-        $this->getServer()->enqueue("HTTP/1.1 200 OK\r\nContent-Length: 0\r\n\r\n");
-        $this->client->addSubscriber(new ErrorResponsePlugin());
-        $this->client->getCommand('no_errors')->execute();
-    }
-
-    /**
-     * @expectedException \Guzzle\Plugin\ErrorResponse\Exception\ErrorResponseException
-     * @expectedExceptionMessage Does\Not\Exist does not exist
-     */
-    public function testEnsuresErrorResponseExists()
-    {
-        $this->getServer()->enqueue("HTTP/1.1 500 Foo\r\nContent-Length: 0\r\n\r\n");
-        $this->client->addSubscriber(new ErrorResponsePlugin());
-        $this->client->getCommand('bad_class')->execute();
-    }
-
-    /**
-     * @expectedException \Guzzle\Plugin\ErrorResponse\Exception\ErrorResponseException
-     * @expectedExceptionMessage must implement Guzzle\Plugin\ErrorResponse\ErrorResponseExceptionInterface
-     */
-    public function testEnsuresErrorResponseImplementsInterface()
-    {
-        $this->getServer()->enqueue("HTTP/1.1 500 Foo\r\nContent-Length: 0\r\n\r\n");
-        $this->client->addSubscriber(new ErrorResponsePlugin());
-        $this->client->getCommand('does_not_implement')->execute();
-    }
-
-    public function testThrowsSpecificErrorResponseOnMatch()
-    {
-        try {
-            $this->getServer()->enqueue("HTTP/1.1 500 Foo\r\nContent-Length: 0\r\n\r\n");
-            $this->client->addSubscriber(new ErrorResponsePlugin());
-            $command = $this->client->getCommand('works');
-            $command->execute();
-            $this->fail('Exception not thrown');
-        } catch (ErrorResponseMock $e) {
-            $this->assertSame($command, $e->command);
-            $this->assertEquals(500, $e->response->getStatusCode());
-        }
-    }
-
-    /**
-     * @expectedException \Guzzle\Tests\Mock\ErrorResponseMock
-     */
-    public function testThrowsWhenCodeAndPhraseMatch()
-    {
-        $this->getServer()->enqueue("HTTP/1.1 200 Error!\r\nContent-Length: 0\r\n\r\n");
-        $this->client->addSubscriber(new ErrorResponsePlugin());
-        $this->client->getCommand('works')->execute();
-    }
-
-    public function testSkipsWhenReasonDoesNotMatch()
-    {
-        $this->getServer()->enqueue("HTTP/1.1 200 OK\r\nContent-Length: 0\r\n\r\n");
-        $this->client->addSubscriber(new ErrorResponsePlugin());
-        $this->client->getCommand('works')->execute();
-    }
-
-    public function testSkipsWhenNoClassIsSet()
-    {
-        $this->getServer()->enqueue("HTTP/1.1 200 OK\r\nContent-Length: 0\r\n\r\n");
-        $this->client->addSubscriber(new ErrorResponsePlugin());
-        $this->client->getCommand('no_class')->execute();
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

@@ -1,134 +1,74 @@
-<?php
-/**
- * CCodeFile class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CCodeFile represents a code file being generated.
- *
- * @property string $relativePath The code file path relative to the application base path.
- * @property string $type The code file extension (e.g. php, txt).
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.gii
- * @since 1.1.2
- */
-class CCodeFile extends CComponent
-{
-	const OP_NEW='new';
-	const OP_OVERWRITE='overwrite';
-	const OP_SKIP='skip';
-
-	/**
-	 * @var string the file path that the new code should be saved to.
-	 */
-	public $path;
-	/**
-	 * @var mixed the newly generated code. If this is null, it means {@link path}
-	 * should be treated as a directory.
-	 */
-	public $content;
-	/**
-	 * @var string the operation to be performed
-	 */
-	public $operation;
-	/**
-	 * @var string the error occurred when saving the code into a file
-	 */
-	public $error;
-
-	/**
-	 * Constructor.
-	 * @param string $path the file path that the new code should be saved to.
-	 * @param string $content the newly generated code
-	 */
-	public function __construct($path,$content)
-	{
-		$this->path=strtr($path,array('/'=>DIRECTORY_SEPARATOR,'\\'=>DIRECTORY_SEPARATOR));
-		$this->content=$content;
-		if(is_file($path))
-			$this->operation=file_get_contents($path)===$content ? self::OP_SKIP : self::OP_OVERWRITE;
-		elseif($content===null)  // is dir
-			$this->operation=is_dir($path) ? self::OP_SKIP : self::OP_NEW;
-		else
-			$this->operation=self::OP_NEW;
-	}
-
-	/**
-	 * Saves the code into the file {@link path}.
-	 */
-	public function save()
-	{
-		$module=Yii::app()->controller->module;
-		if($this->content===null)  // a directory
-		{
-			if(!is_dir($this->path))
-			{
-				$oldmask=@umask(0);
-				$result=@mkdir($this->path,$module->newDirMode,true);
-				@umask($oldmask);
-				if(!$result)
-				{
-					$this->error="Unable to create the directory '{$this->path}'.";
-					return false;
-				}
-			}
-			return true;
-		}
-
-		if($this->operation===self::OP_NEW)
-		{
-			$dir=dirname($this->path);
-			if(!is_dir($dir))
-			{
-				$oldmask=@umask(0);
-				$result=@mkdir($dir,$module->newDirMode,true);
-				@umask($oldmask);
-				if(!$result)
-				{
-					$this->error="Unable to create the directory '$dir'.";
-					return false;
-				}
-			}
-		}
-		if(@file_put_contents($this->path,$this->content)===false)
-		{
-			$this->error="Unable to write the file '{$this->path}'.";
-			return false;
-		}
-		else
-		{
-			$oldmask=@umask(0);
-			@chmod($this->path,$module->newFileMode);
-			@umask($oldmask);
-		}
-		return true;
-	}
-
-	/**
-	 * @return string the code file path relative to the application base path.
-	 */
-	public function getRelativePath()
-	{
-		if(strpos($this->path,Yii::app()->basePath)===0)
-			return substr($this->path,strlen(Yii::app()->basePath)+1);
-		else
-			return $this->path;
-	}
-
-	/**
-	 * @return string the code file extension (e.g. php, txt)
-	 */
-	public function getType()
-	{
-		if(($pos=strrpos($this->path,'.'))!==false)
-			return substr($this->path,$pos+1);
-		else
-			return 'unknown';
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+8PYji5V6s0==

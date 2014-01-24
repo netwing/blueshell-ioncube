@@ -1,210 +1,72 @@
-<?php
-
-namespace Behat\Mink;
-
-use Behat\Mink\Driver\DriverInterface,
-    Behat\Mink\Selector\SelectorsHandler;
-
-/*
- * This file is part of the Behat\Mink.
- * (c) Konstantin Kudryashov <ever.zet@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-/**
- * Mink sessions manager.
- *
- * @author Konstantin Kudryashov <ever.zet@gmail.com>
- */
-class Mink
-{
-    private $defaultSessionName;
-    private $sessions = array();
-
-    /**
-     * Initializes manager.
-     *
-     * @param array $sessions
-     */
-    public function __construct(array $sessions = array())
-    {
-        foreach ($sessions as $name => $session) {
-            $this->registerSession($name, $session);
-        }
-    }
-
-    /**
-     * Stops all started sessions.
-     */
-    public function __destruct()
-    {
-        $this->stopSessions();
-    }
-
-    /**
-     * Registers new session.
-     *
-     * @param string  $name
-     * @param Session $session
-     */
-    public function registerSession($name, Session $session)
-    {
-        $name = strtolower($name);
-
-        $this->sessions[$name] = $session;
-    }
-
-    /**
-     * Checks whether session with specified name is registered.
-     *
-     * @param string $name
-     *
-     * @return Boolean
-     */
-    public function hasSession($name)
-    {
-        return isset($this->sessions[strtolower($name)]);
-    }
-
-    /**
-     * Sets default session name to use.
-     *
-     * @param string $name name of the registered session
-     *
-     * @throws \InvalidArgumentException
-     */
-    public function setDefaultSessionName($name)
-    {
-        $name = strtolower($name);
-
-        if (!isset($this->sessions[$name])) {
-            throw new \InvalidArgumentException(sprintf('Session "%s" is not registered.', $name));
-        }
-
-        $this->defaultSessionName = $name;
-    }
-
-    /**
-     * Returns default session name or null if none.
-     *
-     * @return null|string
-     */
-    public function getDefaultSessionName()
-    {
-        return $this->defaultSessionName;
-    }
-
-    /**
-     * Returns registered session by it's name or active one and automatically starts it if required.
-     *
-     * @param string $name session name
-     *
-     * @return Session
-     *
-     * @throws \InvalidArgumentException If the named session is not registered
-     */
-    public function getSession($name = null)
-    {
-        $session = $this->locateSession($name);
-
-        // start session if needed
-        if (!$session->isStarted()) {
-            $session->start();
-        }
-
-        return $session;
-    }
-
-    /**
-     * Checks whether a named session (or the default session) has already been started
-     *
-     * @param string $name session name - if null then the default session will be checked
-     *
-     * @return bool whether the session has been started
-     *
-     * @throws \InvalidArgumentException If the named session is not registered
-     */
-    public function isSessionStarted($name = null)
-    {
-        $session = $this->locateSession($name);
-        return $session->isStarted();
-    }
-
-    /**
-     * Returns session asserter.
-     *
-     * @param Session|string $session session object or name
-     *
-     * @return WebAssert
-     */
-    public function assertSession($session = null)
-    {
-        if (!($session instanceof Session)) {
-            $session = $this->getSession($session);
-        }
-        return new WebAssert($session);
-    }
-
-    /**
-     * Resets all started sessions.
-     */
-    public function resetSessions()
-    {
-        foreach ($this->sessions as $name => $session) {
-            if ($session->isStarted()) {
-                $session->reset();
-            }
-        }
-    }
-
-    /**
-     * Restarts all started sessions.
-     */
-    public function restartSessions()
-    {
-        foreach ($this->sessions as $name => $session) {
-            if ($session->isStarted()) {
-                $session->restart();
-            }
-        }
-    }
-
-    /**
-     * Stops all started sessions.
-     */
-    public function stopSessions()
-    {
-        foreach ($this->sessions as $session) {
-            if ($session->isStarted()) {
-                $session->stop();
-            }
-        }
-    }
-
-    /**
-     * Returns the named or default session without starting it.
-     *
-     * @param string $name session name
-     *
-     * @return Session
-     *
-     * @throws \InvalidArgumentException If the named session is not registered
-     */
-    protected function locateSession($name = null)
-    {
-        $name = strtolower($name) ?: $this->defaultSessionName;
-
-        if (null === $name) {
-            throw new \InvalidArgumentException('Specify session name to get');
-        }
-
-        if (!isset($this->sessions[$name])) {
-            throw new \InvalidArgumentException(sprintf('Session "%s" is not registered.', $name));
-        }
-
-        $session = $this->sessions[$name];
-        return $session;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

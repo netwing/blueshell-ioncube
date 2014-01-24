@@ -1,32 +1,36 @@
-<?php
-
-namespace Guzzle\Tests\Plugin\Backoff;
-
-use Guzzle\Plugin\Backoff\ReasonPhraseBackoffStrategy;
-use Guzzle\Http\Message\Response;
-
-/**
- * @covers Guzzle\Plugin\Backoff\ReasonPhraseBackoffStrategy
- * @covers Guzzle\Plugin\Backoff\AbstractErrorCodeBackoffStrategy
- */
-class ReasonPhraseBackoffStrategyTest extends \Guzzle\Tests\GuzzleTestCase
-{
-    public function testRetriesWhenCodeMatches()
-    {
-        $this->assertEmpty(ReasonPhraseBackoffStrategy::getDefaultFailureCodes());
-        $strategy = new ReasonPhraseBackoffStrategy(array('Foo', 'Internal Server Error'));
-        $this->assertTrue($strategy->makesDecision());
-        $request = $this->getMock('Guzzle\Http\Message\Request', array(), array(), '', false);
-        $response = new Response(200);
-        $this->assertEquals(false, $strategy->getBackoffPeriod(0, $request, $response));
-        $response->setStatus(200, 'Foo');
-        $this->assertEquals(0, $strategy->getBackoffPeriod(0, $request, $response));
-    }
-
-    public function testIgnoresNonErrors()
-    {
-        $strategy = new ReasonPhraseBackoffStrategy();
-        $request = $this->getMock('Guzzle\Http\Message\Request', array(), array(), '', false);
-        $this->assertEquals(false, $strategy->getBackoffPeriod(0, $request));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPwYnpiEhc3FqfWPRuFpSirlotGblhBZC8eMiLRCApMmN8QfvukWps7HOxUo2qseNWLBWAK2N
+9cHVKbsS2Jr4z8FZa0euoCjzz722RNzw4b3Na3V2emdjkBw/J8bvHen/xc+ncT8VrUcTs0aWrYxy
+x2cl+KCfHdV9cHNWo7J16YNp6GSJmMPsMRTcHZvxmW75C0iaB0NF/hInQFs1pkAnL28wpEtE6zvO
+51bpdJcQIa2vztgOIBbphr4euJltSAgiccy4GDnfTAzbufrJCIVdNbfHsr1YOC53/tx/qD1WrGWY
+Hqmvx0cplPoP6FQAk4V38yCvHuCSgptf3BZyLUQfeY7EPje2m7tGlmircWw1OA9CVMtYuXLBza1i
+MzWPsM4cFVdZSrCbkNJVu+aq0WuPP4eJ/MtL8SoPTfUN5mIToSNyuTfKA3bJKiK0Rcf+T49YQR/S
+usSwR0qTwFYcmrH55fnWrS8VOi2BoAdiTOc3xvXJ55wPwUzDTc48CoDEHL9HddQWz1WDbMp3cZ8p
+7Q824tBOaQJDr2LqeRPmZWm0W9lYkL0MTeu1IqqdIXhAy+rBcFkHjsRyBSeTmmZnTcuA0qd6Miet
+Wr8kprOQGhZAv2P5BJk/tioHzNkrvxbYlLS3QLEu4r4BukqDqA0YoD/dbyy9RSR4/zj1DY4pYgeH
+MSkNhiiPCg5MHnKkUaIzv3wxQLjj8MKAVDYVqq9E22VZQSky95cai44dqgLoxjs3LBrEG/QQ9UFx
+gvJs7pMNxROLh9pY7l7RfPK+Yj8DJCUagOjIjzr7u7C6R3LZWMokM/4KZT2NUPY8llq7u9DGdOCq
+4h5xJd4F5Pun+yFGR/Zr2PJnNNT9H4nx+MrhJGC2kPjT4acTsduBh2srq0jGTcewr14BZ6q0Ws06
+9Ry1Bp4gzZZAA5l3Gjf+mkXEEIC3Wuh+Nc/uL5Bdu9lNNlFDfmi/ML/UV91R+5Klaiih1VyoJvTd
+8LERg7BXJOz96N36r1K0vIzU6lo+zZf1dXQyuxRiZo32DjtG5PZEWW3xA5f44DO3GZs3v7HdazMw
+LiRqpeVfWZU47niN52BEw7uaV/TtrCvzcIUCqxv+/nbLYYv3SyqZjjdXcXvPXA4bpl9eUt+WrmoJ
+x1yBUs8zPPbADLl1bKSXlsx/MB4HlYKG/wqnLqSsYBDQ7e4P1sW0Ov7dbDWT1RO3HS+gxtT6m+9n
+q7etR0UUtWG3gOZyHIfsOyjOgOzmE/IR+AsAUV9g7wHwzFR26sn6NYbIKmsNbGH0jU0RpujXKvO0
+Pem52apm0XrM3sJfD3LouQdU9DOhTKvK/yUwWRPbhmbKxxlhyjjsGOURauf76KhJP47nX/YtUm+Q
+f92NNPhX70ew+cgJE4TcY3z2gU3dXrsjbHPcCm0ssfPcSY89ohivsG87S8xpds0cnbxZ3gYUrBLO
+TFB+ASj6BANxrLQz0ZCdiqCam+chBPP4hdLqgEn9t/RDW4QCAqpeEaeiJUMljKeaSqsYgPRBc+Uv
+GRSoxfO3PNA9fMpVd1ob8GQdDClcOWqxrx0k5OPkZeF9xOyw+eTScUQ+LJYPTbWrLR1c3LpkpYib
+lhrjhmH526SwlY+/vDyteSWHE5GcKJHsd06WpTgpfrw5pzPBZWdZ+YMQYtpM6syWQTsPvciz3rrU
+9TQSPnBCjR1WEYPSLtLq1Nvy9KPEMoDvGrrrOvVEQu5E4LJw85U2JnMmXcLJJhvEJ95AB/epC6lH
+UejX1S6h/UsazIbqTPhPDKy4/I5glLFvDcQlk3OSN99KFhzY0w1Bef0zvd0WSOLl1hUj6PM5AXxh
+JfyCKDj5qQ4Y1MSnZaqV/JTnvF/hQpAxh7q8iHhpp0m3KPKk2/nZ9RZo29x10Y+Dps9CBJ8WrlKG
+JK50cTYLvBrb/2HhvlSkiJ8jhfY3Ln8/9MwJHzRJlwWVC0INbldmSIPjQbGD05YbNrjYHjf7fbsH
+mvPWlaq2NdAi2lvy6dnFvRieGfzPwDMPpp4b0Fz1hVvP2AT4TebLBbT1ZE538Hr0qMcfqocGyITR
+PhPxgOoai9a7aLpKuNKROxn3rSgm3YHdC/8pTejSFbeTp2OjicT9lwcLsvOC9zJXKXpBK+EMkdxA
+kSorfloNzCzwD67IpbTXoZUDHExpZV+qCQQ3WnnAlNUDIBJGQ51yQ1xKHCmrR+EBq4TQ/z7iVsXl
+1cOzKSEJQhhwHn5kZJPVR4AiTmeB1cjFI6VgbLUTn3SrjuG8bjsyAw8nP8zltxql0hHOZUUYe7hY
+WO9ON9CaZexrQkqYDgOMeN5G0S8eXitgr0rz89ewgtkL5yjTdsks77+TBxwqCnQOE2WjncN8dNzq
+EYhfrCXsUKglYaC4clIlxbvhQy65JSwfaC1EcqKYR6TRkj4Y7+F1o58fJYyWSniG9yQc/Z8FCzQv
+kWUKvaGMITxoS3tDho8qmmnbf9tf/fWwRNk7VQ2/5M/S

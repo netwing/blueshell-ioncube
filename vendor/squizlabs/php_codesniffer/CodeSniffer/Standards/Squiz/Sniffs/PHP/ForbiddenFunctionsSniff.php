@@ -1,71 +1,31 @@
-<?php
-/**
- * Squiz_Sniffs_PHP_ForbiddenFunctionsSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-if (class_exists('Generic_Sniffs_PHP_ForbiddenFunctionsSniff', true) === false) {
-    throw new PHP_CodeSniffer_Exception('Class Generic_Sniffs_PHP_ForbiddenFunctionsSniff not found');
-}
-
-/**
- * Squiz_Sniffs_PHP_ForbiddenFunctionsSniff.
- *
- * Discourages the use of alias functions that are kept in PHP for compatibility
- * with older versions. Can be used to forbid the use of any function.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class Squiz_Sniffs_PHP_ForbiddenFunctionsSniff extends Generic_Sniffs_PHP_ForbiddenFunctionsSniff
-{
-
-    /**
-     * A list of forbidden functions with their alternatives.
-     *
-     * The value is NULL if no alternative exists. IE, the
-     * function should just not be used.
-     *
-     * @var array(string => string|null)
-     */
-    protected $forbiddenFunctions = array(
-                                     'sizeof'          => 'count',
-                                     'delete'          => 'unset',
-                                     'print'           => 'echo',
-                                     'is_null'         => null,
-                                     'create_function' => null,
-                                    );
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        $tokens = parent::register();
-        $tokens[] = T_PRINT;
-        return $tokens;
-
-    }//end register()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+89ZVjG==

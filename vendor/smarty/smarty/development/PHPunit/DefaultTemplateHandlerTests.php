@@ -1,103 +1,58 @@
-<?php
-/**
-* Smarty PHPunit tests deault template handler
-*
-* @package PHPunit
-* @author Uwe Tews
-*/
-
-/**
-* class for block plugin tests
-*/
-class DefaultTemplateHandlerTests extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $this->smarty = SmartyTests::$smarty;
-        SmartyTests::init();
-        $this->smarty->force_compile = true;
-        $this->smarty->disableSecurity();
-    }
-
-    static function isRunnable()
-    {
-        return true;
-    }
-
-    /**
-    * test error on unknow template
-    */
-    public function testUnknownTemplate()
-    {
-        try {
-            $this->smarty->fetch('foo.tpl');
-        } catch (Exception $e) {
-            $this->assertContains('Unable to load template', $e->getMessage());
-
-            return;
-        }
-        $this->fail('Exception for none existing template has not been raised.');
-    }
-    /**
-    * test error on registration on none existent handler function.
-    */
-    public function testRegisterNoneExistentHandlerFunction()
-    {
-        try {
-            $this->smarty->registerDefaultTemplateHandler('foo');
-        } catch (Exception $e) {
-            $this->assertContains("Default template handler 'foo' not callable", $e->getMessage());
-
-            return;
-        }
-        $this->fail('Exception for none callable function has not been raised.');
-    }
-    /**
-    * test replacement by default template handler
-    */
-/**
-    public function testDefaultTemplateHandlerReplacement()
-    {
-        $this->smarty->register->defaultTemplateHandler('my_template_handler');
-        $this->assertEquals("Recsource foo.tpl of type file not found", $this->smarty->fetch('foo.tpl'));
-    }
-*/
-    public function testDefaultTemplateHandlerReplacementByTemplateFile()
-    {
-        $this->smarty->registerDefaultTemplateHandler('my_template_handler_file');
-        $this->assertEquals("hello world", $this->smarty->fetch('foo.tpl'));
-    }
-    /**
-    * test default template handler returning fals
-    */
-    public function testDefaultTemplateHandlerReturningFalse()
-    {
-        $this->smarty->registerDefaultTemplateHandler('my_false');
-        try {
-            $this->smarty->fetch('foo.tpl');
-        } catch (Exception $e) {
-            $this->assertContains('Unable to load template', $e->getMessage());
-
-            return;
-        }
-        $this->fail('Exception for none existing template has not been raised.');
-    }
-
-}
-
-function my_template_handler ($resource_type, $resource_name, &$template_source, &$template_timestamp, Smarty $smarty)
-{
-    $output = "Recsource $resource_name of type $resource_type not found";
-    $template_source = $output;
-    $template_timestamp = time();
-
-    return true;
-}
-function my_template_handler_file ($resource_type, $resource_name, &$template_source, &$template_timestamp, Smarty $smarty)
-{
-    return $smarty->getTemplateDir(0) . 'helloworld.tpl';
-}
-function my_false ($resource_type, $resource_name, &$template_source, &$template_timestamp, Smarty $smarty)
-{
-    return false;
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPtuW/Z9gfi85P+nh4KGamdkzvQWuYXNkbkikY8JtXdpgWFWnf0p0R+2SIe8c7iMcsPG81mJU
+MuRfRbActRhTlqm0D2pg58BA8wbzpFFOVxnjdD8Cw9iS/S+7B9yJd4kxJOOQFjVKnYOVIAGMa7OU
+fdn/GtxX6DlBYsvuy7XNkCtSQ7OGC/6x/tsr+sUtQcCA+yMRqCVK0TVO6IG7ngvlMpKF9UW1XJQB
+pvTTI4pNQhj4ixSkh40xKAzHAE4xzt2gh9fl143SQNH5PUhwawjbmfWE1ORui7YvUMP9VC2qUIbZ
+kEUOoFa74vDJWGhbRhn/BAr4O3f0a7YrUAP9ZehMZr8gz+E4Kof1NJF9RsA18gEgOaeWSEg7fItP
+mDisPN8+sZ/l4S7jns4H4pYObFmDySbQN4hLBe/ldcHYE6djjv2PUaqsA854Yh9uMZ6WIbyAHizt
+xYfRsn31cVbctRHoGxn4KLelkcW2UFsVKdzpc9NzhXLpKsJ60ABIZHii1VwI/QkTZAXu4efrMVsL
+Zo6aK2ecIxibsdPoevW2TY43U9UTYmOMnXDnsBILTKiq+0JdwZFQJBcLnh6ZLylv1GMMw5qc6aHY
+/NaQySNCyv+rvjcC9nVRWwqGsDvXxsjnqwbiroxMH196PRjI/zDN6PPhyVl/XhzeLH12VfXKLPq1
+TUM/gMp0sB8KW1fVA214ccgsrlbNJVnBeeiNR4lE/P97JcItRUAZFroq/RuNr+7cK/xryvVKLj/H
+72qNEcac9pQw03Qu/F4Y8/ARzO9m7l1FIKgghb06ValVXvPag8KaMPmWMS5TX7UWUpeBRHTz/usH
+LOiKCb8caK2vaSFctvlEc8HyVW8OFIJcJ86f6b0iNxa82ZevvvLGz5ThTAu1wupB7gvTOhJZ239K
+/Yjo8qs0yzY08tRW56Hqwy/tKVmdSWG8+eZhv588evy/h6qSiRvG9oKm18ghoZf0qMflzhSMEDwR
+eIENmmbzEL7Z4uK8++lnPxQanF7dyARkKCbZrrS66XGbRN/eXwllWBKGPU53VjQ0La4r21gt/1K3
+jWDfYPlHWsL1ca6tpBIziNDUd/cPRokgOWMzU/9G/QZR1SKJDwQrA9Fzim0a3kM0qgs2g6lSp43E
+Z6HKEImsYmx8/iZTs4sHrVAqNzsUHQYr6mSQmrR4B5cyoO6sERU7jnFNtVwUilFqzHuPaZWTixky
+m86Lb2oiY1ElquhqCsx/BY03TA+Wu4WjxuiqEW8S9PTa71Qk3aoBsMX2scH1QZ0haYBiMEo9uyQh
+89wUXxqoVZAHMnaRP7pwxeJNufUqmCGduRB4ljfrwEHlnVhuto8YPeYop37fMipw6Lz4jEkMFcdH
+7zP80pkImrSD4dRzp4YaRo/iFMMX8i0n8ak/AtFnObKBk+PBMY17G7qEdF/X51a0BYh8dBAImwCZ
+g6bYIcSMbKFw5b53+72TSg5AfI2pGzlLtTbvoG8t521E2qVIDwTBonnji0jHKR7mwzfbLdPGrpCX
+gk6j4hZpXYKPTfbT3MwPGmeUp46JMRocojJpezphYOdGdHmmfEDJ/EfZg8LTAfjUhxNKbRfE8mzt
+IHU4oDr1Hi46mCdv2MZZr8J3Ja4HG8moC0dArM/kq2P0T0yxtrbEkYWLYN62FS+wzlRoMlx6u9Yg
+AIamALSO179AAtygLHb32OwfWYrzSBkLSuEMPlLXlgRXGU79zOaicUTz0/lrFL0Jdm7ynt4sBJ2l
+6O38Z4pynZ9I8Uo74J4QrnAL7+lfolgMnwEtFRYYDrGRalV1bd3ifQ3tYXZ/AbPMFb641He8bdQi
+dmQJ+TkUN9gaXB7kaQ6CROHJdjA1bBm500OzphdybOCgUg2AGK9s5HkzgYyPnKY2rCELrcX4KShZ
+zIONGPy6gFL622StE05KfMaPI8ICAFnUWIo60+hui1MTBEFct2X9rOyKgMKoTZf2qiy3a6r8lB+A
+pMANkvRkld5EJbxlyyEd2bwfwdlHn22LV27bcYUqUK7KjyXfv+FS2b5tFgp82t7NgrdPGc7XjCRm
+bTZfh5smpQoYaTFm8C4/2/BElvQO7koAd4ATopY3efdK1cJlMD7qNbe8s2AB7/kWY8vLCNtz8tCe
+aSi6l/Wv5yPGPIz5yuF5eQLrLMjSbX1DZn6nmtMiTUsFeI6cyCZbtNR7iiKYhGuhbulkhSBFXdcJ
+c4z5lT+JQ4OiwKo43X33qrDEDNEGpVoq2nkRqWgvB1nFSIHSVBPRHPAi1fbOc7V7Jd3VXlbo8r9h
+B+rlFjuPo+tGru3vwAwuFsEemDl7iTLbDCqicUTeReFuuJ+HidadYGMYfVd+PPp1OzrFu4p3hnHe
+tR99QlX/KgFcO2TsEWoiJ1Bj5rLRCV+JkuetEs3YLSzJTMVfKvBGvqWkdn3BDNTlhJYR60sik4vO
+UIs7qLb2g4GNP91asg8kC26y8Xk9xfkOCbArJlYmKPOxOOBJlZHHdtM+DFMx8M37iWeceLkG/89v
+RlmuoZi/HoLy2JGT5MResxMZf3KcImaMZMhy30qZ1MjMfsxreKfFVJdwNW9dZ6yoKAp8/4sTGkwa
+j1ieHpq97CBpd5JK3iwlJRj3aSG2KaQS6+CoLnEB2/5yij76IxSfFfijE9//8q+41u2s0iezdncl
+wTPsoZqekn7CLWDpCcfSAAp3ZUyDaILgLrAkx2KPJ10wRd0TCna/5PXeRzZCCOUxRXOIYwUrY27G
+3J2AWZO69VXEl767JMWI41Aa2O5+jeJGU9xUFGgWb1k7Rire0jXjLT7SRJNk1Bs8xTqPG1APFd41
+IOLx6dcKQkd6dSPXnKNdzQ1qvtzV4TPfsmw1q4thhA2ycAF7NoDGnj/29iJIExYe2Qo+feGaPSHA
+3HIM6rR+IOFpv6KtADeSBKlUCXQIB0LpiImrl62mIk45hozGYKFo3guFF/OrRLxQosEKnU3fnmsb
+84Q7vqCiBMq9OjC7pXvWEC842HkRatB2pTjtuZYFjDYGBshMJ0khLw3K6vyMkOU7CrARDn7sLGSo
+LAkW6kpAutAj1WsIlzATaoiJBonxGfns667/dpXltV4uAwUyApthHSNwkZ6VX6EjQgeL74N2B/86
+QAeod4qHMCdkMzo89UKczc/4gmfNmuP5jIGrQXE+ostJHq+6vZb6U8B58mQglAkpn4FGk2UlY+n/
+N/HGB9NCY6y0wXmmfuBmzbFFcot1mXukOegbqSgf6e4AbpLD6EL975YKo/a23IlC/g/KzrqYkuhw
+31n6u58klalsmY4JJ6nCISZwu/OiN3woq75iLMrXWs8jAA+3EDaVEac0IUjUKI+WvbdSKXZnktze
+S3PhHnSN4SZIRnX7JJ9Pm9KZdZh4b9QipLgjKPlK/MwclLoZA0uwbsLox9RNq2Ssr/33IKecNlza
+hrHnht7xhwqPKWo9BUxQJ+NEwH4v3ML7hmyNeZH1Izxhw3q+08JAUETcvquu6TwhMsA37SLZrfyg
+Sq7s2mtPkT5oK7DzQCrL7/Ttnkpe5cA+Fpdhsmi3aeR3zYMWnF2uNrnPjzwGgEEzk6v55vkwsivf
+gKAHLP4BdFL4IIXIsEBE2H9wcAau+qi4vl4DR5K2qgJ6cvJuFUyqX2ICBs7uLW3eVPT4bK6w4bK1
+mqS5JAGpEon9kAqkmZy+0PLqOlKw7pVrHoQgG3h3ILJ31xfW3I11XsgX5Pu5L/ODqlc5Kcuqm+qC
+ZUq/a1Mo2Wj1e+iO6YUGoDZUb57aJ9qgbKDjbUiSpll6TCz2NLA9fmzrM05NI+9IQHBoRAGb5P4l
+ivdpl1ROM83yYhxN1VKZ3oPGgbryWHkQcsCMhu4EhrMeNn7pRdk0XAOgJSmaj93/4Bmpk+yQ2u9d
+BwpRmAN4GL3U7GqlstUBldXjD9yx8BWU5Hw740LUgt9kYo0SlEJwK0+10U6ijXaN1DxGw1H4obyW
+S2r6gY7fZM9QQGnRU3XXTwlal0CgruvomSuZxTznRWxF6Rbw+CZVnvI380nev8XLvEIHl73EqUhN
+InDYyYK2NmV8oEsK/01X5GepU8F3XsEJM62qXcFXFSDOa4PLwT6tUoMDS3+L7i8UtWmZNRWv3eeO
+50mgzeKccMG0nKoIdszVeDxqBMZxLy48Mc0XOqHYhwiCQU/dGNTy2kEmSe8ofKgB3wG=

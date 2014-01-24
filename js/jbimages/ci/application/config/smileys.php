@@ -1,66 +1,53 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/*
-| -------------------------------------------------------------------
-| SMILEYS
-| -------------------------------------------------------------------
-| This file contains an array of smileys for use with the emoticon helper.
-| Individual images can be used to replace multiple simileys.  For example:
-| :-) and :) use the same image replacement.
-|
-| Please see user guide for more info:
-| http://codeigniter.com/user_guide/helpers/smiley_helper.html
-|
-*/
-
-$smileys = array(
-
-//	smiley			image name						width	height	alt
-
-	':-)'			=>	array('grin.gif',			'19',	'19',	'grin'),
-	':lol:'			=>	array('lol.gif',			'19',	'19',	'LOL'),
-	':cheese:'		=>	array('cheese.gif',			'19',	'19',	'cheese'),
-	':)'			=>	array('smile.gif',			'19',	'19',	'smile'),
-	';-)'			=>	array('wink.gif',			'19',	'19',	'wink'),
-	';)'			=>	array('wink.gif',			'19',	'19',	'wink'),
-	':smirk:'		=>	array('smirk.gif',			'19',	'19',	'smirk'),
-	':roll:'		=>	array('rolleyes.gif',		'19',	'19',	'rolleyes'),
-	':-S'			=>	array('confused.gif',		'19',	'19',	'confused'),
-	':wow:'			=>	array('surprise.gif',		'19',	'19',	'surprised'),
-	':bug:'			=>	array('bigsurprise.gif',	'19',	'19',	'big surprise'),
-	':-P'			=>	array('tongue_laugh.gif',	'19',	'19',	'tongue laugh'),
-	'%-P'			=>	array('tongue_rolleye.gif',	'19',	'19',	'tongue rolleye'),
-	';-P'			=>	array('tongue_wink.gif',	'19',	'19',	'tongue wink'),
-	':P'			=>	array('raspberry.gif',		'19',	'19',	'raspberry'),
-	':blank:'		=>	array('blank.gif',			'19',	'19',	'blank stare'),
-	':long:'		=>	array('longface.gif',		'19',	'19',	'long face'),
-	':ohh:'			=>	array('ohh.gif',			'19',	'19',	'ohh'),
-	':grrr:'		=>	array('grrr.gif',			'19',	'19',	'grrr'),
-	':gulp:'		=>	array('gulp.gif',			'19',	'19',	'gulp'),
-	'8-/'			=>	array('ohoh.gif',			'19',	'19',	'oh oh'),
-	':down:'		=>	array('downer.gif',			'19',	'19',	'downer'),
-	':red:'			=>	array('embarrassed.gif',	'19',	'19',	'red face'),
-	':sick:'		=>	array('sick.gif',			'19',	'19',	'sick'),
-	':shut:'		=>	array('shuteye.gif',		'19',	'19',	'shut eye'),
-	':-/'			=>	array('hmm.gif',			'19',	'19',	'hmmm'),
-	'>:('			=>	array('mad.gif',			'19',	'19',	'mad'),
-	':mad:'			=>	array('mad.gif',			'19',	'19',	'mad'),
-	'>:-('			=>	array('angry.gif',			'19',	'19',	'angry'),
-	':angry:'		=>	array('angry.gif',			'19',	'19',	'angry'),
-	':zip:'			=>	array('zip.gif',			'19',	'19',	'zipper'),
-	':kiss:'		=>	array('kiss.gif',			'19',	'19',	'kiss'),
-	':ahhh:'		=>	array('shock.gif',			'19',	'19',	'shock'),
-	':coolsmile:'	=>	array('shade_smile.gif',	'19',	'19',	'cool smile'),
-	':coolsmirk:'	=>	array('shade_smirk.gif',	'19',	'19',	'cool smirk'),
-	':coolgrin:'	=>	array('shade_grin.gif',		'19',	'19',	'cool grin'),
-	':coolhmm:'		=>	array('shade_hmm.gif',		'19',	'19',	'cool hmm'),
-	':coolmad:'		=>	array('shade_mad.gif',		'19',	'19',	'cool mad'),
-	':coolcheese:'	=>	array('shade_cheese.gif',	'19',	'19',	'cool cheese'),
-	':vampire:'		=>	array('vampire.gif',		'19',	'19',	'vampire'),
-	':snake:'		=>	array('snake.gif',			'19',	'19',	'snake'),
-	':exclaim:'		=>	array('exclaim.gif',		'19',	'19',	'excaim'),
-	':question:'	=>	array('question.gif',		'19',	'19',	'question') // no comma after last item
-
-		);
-
-/* End of file smileys.php */
-/* Location: ./application/config/smileys.php */
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+/0==

@@ -1,85 +1,33 @@
-<?php
-/**
- * PHPExcel
- *
- * Copyright (c) 2006 - 2012 PHPExcel
- *
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation; either
- * version 2.1 of the License, or (at your option) any later version.
- *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
- *
- * @category   PHPExcel
- * @package    PHPExcel
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
- * @version    1.7.8, 2012-10-12
- */
-
-PHPExcel_Autoloader::Register();
-//	As we always try to run the autoloader before anything else, we can use it to do a few
-//		simple checks and initialisations
-PHPExcel_Shared_ZipStreamWrapper::register();
-// check mbstring.func_overload
-if (ini_get('mbstring.func_overload') & 2) {
-    throw new Exception('Multibyte function overloading in PHP must be disabled for string functions (2).');
-}
-PHPExcel_Shared_String::buildCharacterSets();
-
-
-/**
- * PHPExcel_Autoloader
- *
- * @category	PHPExcel
- * @package		PHPExcel
- * @copyright	Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- */
-class PHPExcel_Autoloader
-{
-	/**
-	 * Register the Autoloader with SPL
-	 *
-	 */
-	public static function Register() {
-		if (function_exists('__autoload')) {
-			//	Register any existing autoloader function with SPL, so we don't get any clashes
-			spl_autoload_register('__autoload');
-		}
-		//	Register ourselves with SPL
-		return spl_autoload_register(array('PHPExcel_Autoloader', 'Load'));
-	}	//	function Register()
-
-
-	/**
-	 * Autoload a class identified by name
-	 *
-	 * @param	string	$pClassName		Name of the object to load
-	 */
-	public static function Load($pClassName){
-		if ((class_exists($pClassName,FALSE)) || (strpos($pClassName, 'PHPExcel') !== 0)) {
-			//	Either already loaded, or not a PHPExcel class request
-			return FALSE;
-		}
-
-		$pClassFilePath = PHPEXCEL_ROOT .
-						  str_replace('_',DIRECTORY_SEPARATOR,$pClassName) .
-						  '.php';
-
-		if ((file_exists($pClassFilePath) === false) || (is_readable($pClassFilePath) === false)) {
-			//	Can't load
-			return FALSE;
-		}
-
-		require($pClassFilePath);
-	}	//	function Load()
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

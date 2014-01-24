@@ -1,113 +1,36 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\Console\Output;
-
-use Symfony\Component\Console\Formatter\OutputFormatterInterface;
-
-/**
- * OutputInterface is the interface implemented by all Output classes.
- *
- * @author Fabien Potencier <fabien@symfony.com>
- *
- * @api
- */
-interface OutputInterface
-{
-    const VERBOSITY_QUIET        = 0;
-    const VERBOSITY_NORMAL       = 1;
-    const VERBOSITY_VERBOSE      = 2;
-    const VERBOSITY_VERY_VERBOSE = 3;
-    const VERBOSITY_DEBUG        = 4;
-
-    const OUTPUT_NORMAL = 0;
-    const OUTPUT_RAW    = 1;
-    const OUTPUT_PLAIN  = 2;
-
-    /**
-     * Writes a message to the output.
-     *
-     * @param string|array $messages The message as an array of lines or a single string
-     * @param Boolean      $newline  Whether to add a newline
-     * @param integer      $type     The type of output (one of the OUTPUT constants)
-     *
-     * @throws \InvalidArgumentException When unknown output type is given
-     *
-     * @api
-     */
-    public function write($messages, $newline = false, $type = self::OUTPUT_NORMAL);
-
-    /**
-     * Writes a message to the output and adds a newline at the end.
-     *
-     * @param string|array $messages The message as an array of lines of a single string
-     * @param integer      $type     The type of output (one of the OUTPUT constants)
-     *
-     * @throws \InvalidArgumentException When unknown output type is given
-     *
-     * @api
-     */
-    public function writeln($messages, $type = self::OUTPUT_NORMAL);
-
-    /**
-     * Sets the verbosity of the output.
-     *
-     * @param integer $level The level of verbosity (one of the VERBOSITY constants)
-     *
-     * @api
-     */
-    public function setVerbosity($level);
-
-    /**
-     * Gets the current verbosity of the output.
-     *
-     * @return integer The current level of verbosity (one of the VERBOSITY constants)
-     *
-     * @api
-     */
-    public function getVerbosity();
-
-    /**
-     * Sets the decorated flag.
-     *
-     * @param Boolean $decorated Whether to decorate the messages
-     *
-     * @api
-     */
-    public function setDecorated($decorated);
-
-    /**
-     * Gets the decorated flag.
-     *
-     * @return Boolean true if the output will decorate messages, false otherwise
-     *
-     * @api
-     */
-    public function isDecorated();
-
-    /**
-     * Sets output formatter.
-     *
-     * @param OutputFormatterInterface $formatter
-     *
-     * @api
-     */
-    public function setFormatter(OutputFormatterInterface $formatter);
-
-    /**
-     * Returns current output formatter instance.
-     *
-     * @return  OutputFormatterInterface
-     *
-     * @api
-     */
-    public function getFormatter();
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+6oII8kUUvOqFOu2JnhpFG0cVK255gmiUIfa=

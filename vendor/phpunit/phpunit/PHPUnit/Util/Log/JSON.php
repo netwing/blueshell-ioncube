@@ -1,261 +1,86 @@
-<?php
-/**
- * PHPUnit
- *
- * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @package    PHPUnit
- * @subpackage Util_Log
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      File available since Release 3.0.0
- */
-
-/**
- * A TestListener that generates JSON messages.
- *
- * @package    PHPUnit
- * @subpackage Util_Log
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      Class available since Release 3.0.0
- */
-class PHPUnit_Util_Log_JSON extends PHPUnit_Util_Printer implements PHPUnit_Framework_TestListener
-{
-    /**
-     * @var    string
-     */
-    protected $currentTestSuiteName = '';
-
-    /**
-     * @var    string
-     */
-    protected $currentTestName = '';
-
-    /**
-     * @var     boolean
-     * @access  private
-     */
-    protected $currentTestPass = TRUE;
-
-    /**
-     * An error occurred.
-     *
-     * @param  PHPUnit_Framework_Test $test
-     * @param  Exception              $e
-     * @param  float                  $time
-     */
-    public function addError(PHPUnit_Framework_Test $test, Exception $e, $time)
-    {
-        $this->writeCase(
-          'error',
-          $time,
-          PHPUnit_Util_Filter::getFilteredStacktrace($e, FALSE),
-          $e->getMessage(),
-          $test
-        );
-
-        $this->currentTestPass = FALSE;
-    }
-
-    /**
-     * A failure occurred.
-     *
-     * @param  PHPUnit_Framework_Test                 $test
-     * @param  PHPUnit_Framework_AssertionFailedError $e
-     * @param  float                                  $time
-     */
-    public function addFailure(PHPUnit_Framework_Test $test, PHPUnit_Framework_AssertionFailedError $e, $time)
-    {
-        $this->writeCase(
-          'fail',
-          $time,
-          PHPUnit_Util_Filter::getFilteredStacktrace($e, FALSE),
-          $e->getMessage(),
-          $test
-        );
-
-        $this->currentTestPass = FALSE;
-    }
-
-    /**
-     * Incomplete test.
-     *
-     * @param  PHPUnit_Framework_Test $test
-     * @param  Exception              $e
-     * @param  float                  $time
-     */
-    public function addIncompleteTest(PHPUnit_Framework_Test $test, Exception $e, $time)
-    {
-        $this->writeCase(
-          'error',
-          $time,
-          PHPUnit_Util_Filter::getFilteredStacktrace($e, FALSE),
-          'Incomplete Test: ' . $e->getMessage(),
-          $test
-        );
-
-        $this->currentTestPass = FALSE;
-    }
-
-    /**
-     * Skipped test.
-     *
-     * @param  PHPUnit_Framework_Test $test
-     * @param  Exception              $e
-     * @param  float                  $time
-     */
-    public function addSkippedTest(PHPUnit_Framework_Test $test, Exception $e, $time)
-    {
-        $this->writeCase(
-          'error',
-          $time,
-          PHPUnit_Util_Filter::getFilteredStacktrace($e, FALSE),
-          'Skipped Test: ' . $e->getMessage(),
-          $test
-        );
-
-        $this->currentTestPass = FALSE;
-    }
-
-    /**
-     * A testsuite started.
-     *
-     * @param  PHPUnit_Framework_TestSuite $suite
-     */
-    public function startTestSuite(PHPUnit_Framework_TestSuite $suite)
-    {
-        $this->currentTestSuiteName = $suite->getName();
-        $this->currentTestName      = '';
-
-        $this->write(
-          array(
-            'event' => 'suiteStart',
-            'suite' => $this->currentTestSuiteName,
-            'tests' => count($suite)
-          )
-        );
-    }
-
-    /**
-     * A testsuite ended.
-     *
-     * @param  PHPUnit_Framework_TestSuite $suite
-     */
-    public function endTestSuite(PHPUnit_Framework_TestSuite $suite)
-    {
-        $this->currentTestSuiteName = '';
-        $this->currentTestName      = '';
-    }
-
-    /**
-     * A test started.
-     *
-     * @param  PHPUnit_Framework_Test $test
-     */
-    public function startTest(PHPUnit_Framework_Test $test)
-    {
-        $this->currentTestName = PHPUnit_Util_Test::describe($test);
-        $this->currentTestPass = TRUE;
-
-        $this->write(
-          array(
-            'event' => 'testStart',
-            'suite' => $this->currentTestSuiteName,
-            'test'  => $this->currentTestName
-          )
-        );
-    }
-
-    /**
-     * A test ended.
-     *
-     * @param  PHPUnit_Framework_Test $test
-     * @param  float                  $time
-     */
-    public function endTest(PHPUnit_Framework_Test $test, $time)
-    {
-        if ($this->currentTestPass) {
-            $this->writeCase('pass', $time, array(), '', $test);
-        }
-    }
-
-    /**
-     * @param string $status
-     * @param float  $time
-     * @param array  $trace
-     * @param string $message
-     */
-    protected function writeCase($status, $time, array $trace = array(), $message = '', $test = NULL)
-    {
-        $output = '';
-        // take care of TestSuite producing error (e.g. by running into exception) as TestSuite doesn't have hasOutput
-        if ($test !== NULL && method_exists($test, 'hasOutput') && $test->hasOutput()) {
-            $output = $test->getActualOutput();
-        }
-        $this->write(
-          array(
-            'event'   => 'test',
-            'suite'   => $this->currentTestSuiteName,
-            'test'    => $this->currentTestName,
-            'status'  => $status,
-            'time'    => $time,
-            'trace'   => $trace,
-            'message' => PHPUnit_Util_String::convertToUtf8($message),
-            'output'  => $output,
-          )
-        );
-    }
-
-    /**
-     * @param string $buffer
-     */
-    public function write($buffer)
-    {
-        array_walk_recursive($buffer, function(&$input) {
-            if (is_string($input)) {
-                $input = PHPUnit_Util_String::convertToUtf8($input);
-            }
-        });
-
-        if (defined('JSON_PRETTY_PRINT')) {
-            parent::write(json_encode($buffer, JSON_PRETTY_PRINT));
-        } else {
-            parent::write(json_encode($buffer));
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+OLbmBJfgiMI5VcC=

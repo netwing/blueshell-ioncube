@@ -1,119 +1,65 @@
-<?php
-/**
-* Smarty PHPunit tests stream variables
-*
-* @package PHPunit
-* @author Uwe Tews
-*/
-
-/**
-* class for stream variables tests
-*/
-class StreamVariableTests extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $this->smarty = SmartyTests::$smarty;
-        SmartyTests::init();
-        stream_wrapper_register("var", "VariableStream")
-        or die("Failed to register protocol");
-        $fp = fopen("var://foo", "r+");
-        fwrite($fp, 'hello world');
-        fclose($fp);
-    }
-
-    public function tearDown()
-    {
-        stream_wrapper_unregister("var");
-    }
-
-    static function isRunnable()
-    {
-        return true;
-    }
-
-    /**
-    * test stream variable
-    */
-    public function testStreamVariable1()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$var:foo}', null, null, $this->smarty);
-        $this->assertEquals('hello world', $this->smarty->fetch($tpl));
-    }
-/*
-    public function testStreamVariable2()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{var:\'foo\'}', null, null, $this->smarty);
-        $this->assertEquals('hello world', $this->smarty->fetch($tpl));
-    }
-
-    public function testStreamVariable3()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{var:"foo"}', null, null, $this->smarty);
-        $this->assertEquals('hello world', $this->smarty->fetch($tpl));
-    }
-*/
-    /**
-    * test no existant stream variable
-    */
-//    public function testStreamVariable2()
-//    {
-//        $tpl = $this->smarty->createTemplate('eval:{$var:bar}', null, null, $this->smarty);
-//        $this->assertEquals('', $this->smarty->fetch($tpl));
-//    }
-}
-class VariableStream
-{
-    private $position;
-    private $varname;
-    public function stream_open($path, $mode, $options, &$opened_path)
-    {
-        $url = parse_url($path);
-        $this->varname = $url["host"];
-        $this->position = 0;
-
-        return true;
-    }
-    public function stream_read($count)
-    {
-        $p = &$this->position;
-        $ret = substr($GLOBALS[$this->varname], $p, $count);
-        $p += strlen($ret);
-
-        return $ret;
-    }
-    public function stream_write($data)
-    {
-        $v = &$GLOBALS[$this->varname];
-        $l = strlen($data);
-        $p = &$this->position;
-        $v = substr($v, 0, $p) . $data . substr($v, $p += $l);
-
-        return $l;
-    }
-    public function stream_tell()
-    {
-        return $this->position;
-    }
-    public function stream_eof()
-    {
-        return $this->position >= strlen($GLOBALS[$this->varname]);
-    }
-    public function stream_seek($offset, $whence)
-    {
-        $l = strlen($GLOBALS[$this->varname]);
-        $p = &$this->position;
-        switch ($whence) {
-            case SEEK_SET: $newPos = $offset;
-                break;
-            case SEEK_CUR: $newPos = $p + $offset;
-                break;
-            case SEEK_END: $newPos = $l + $offset;
-                break;
-            default: return false;
-        }
-        $ret = ($newPos >= 0 && $newPos <= $l);
-        if ($ret) $p = $newPos;
-        return $ret;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+gW==

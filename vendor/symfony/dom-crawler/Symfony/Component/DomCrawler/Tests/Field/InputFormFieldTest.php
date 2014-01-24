@@ -1,49 +1,38 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\DomCrawler\Tests\Field;
-
-use Symfony\Component\DomCrawler\Field\InputFormField;
-
-class InputFormFieldTest extends FormFieldTestCase
-{
-    public function testInitialize()
-    {
-        $node = $this->createNode('input', '', array('type' => 'text', 'name' => 'name', 'value' => 'value'));
-        $field = new InputFormField($node);
-
-        $this->assertEquals('value', $field->getValue(), '->initialize() sets the value of the field to the value attribute value');
-
-        $node = $this->createNode('textarea', '');
-        try {
-            $field = new InputFormField($node);
-            $this->fail('->initialize() throws a \LogicException if the node is not an input');
-        } catch (\LogicException $e) {
-            $this->assertTrue(true, '->initialize() throws a \LogicException if the node is not an input');
-        }
-
-        $node = $this->createNode('input', '', array('type' => 'checkbox'));
-        try {
-            $field = new InputFormField($node);
-            $this->fail('->initialize() throws a \LogicException if the node is a checkbox');
-        } catch (\LogicException $e) {
-            $this->assertTrue(true, '->initialize() throws a \LogicException if the node is a checkbox');
-        }
-
-        $node = $this->createNode('input', '', array('type' => 'file'));
-        try {
-            $field = new InputFormField($node);
-            $this->fail('->initialize() throws a \LogicException if the node is a file');
-        } catch (\LogicException $e) {
-            $this->assertTrue(true, '->initialize() throws a \LogicException if the node is a file');
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

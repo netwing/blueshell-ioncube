@@ -1,94 +1,53 @@
-<?php
-
-/*
- * This file is part of the Monolog package.
- *
- * (c) Jordi Boggiano <j.boggiano@seld.be>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Monolog\Handler;
-
-use Monolog\TestCase;
-use Monolog\Logger;
-
-/**
- * @covers Monolog\Handler\FirePHPHandler
- */
-class FirePHPHandlerTest extends TestCase
-{
-    public function setUp()
-    {
-        TestFirePHPHandler::reset();
-    }
-
-    public function testHeaders()
-    {
-        $handler = new TestFirePHPHandler;
-        $handler->setFormatter($this->getIdentityFormatter());
-        $handler->handle($this->getRecord(Logger::DEBUG));
-        $handler->handle($this->getRecord(Logger::WARNING));
-
-        $expected = array(
-            'X-Wf-Protocol-1'    => 'http://meta.wildfirehq.org/Protocol/JsonStream/0.2',
-            'X-Wf-1-Structure-1' => 'http://meta.firephp.org/Wildfire/Structure/FirePHP/FirebugConsole/0.1',
-            'X-Wf-1-Plugin-1'    => 'http://meta.firephp.org/Wildfire/Plugin/FirePHP/Library-FirePHPCore/0.3',
-            'X-Wf-1-1-1-1'       => 'test',
-            'X-Wf-1-1-1-2'       => 'test',
-        );
-
-        $this->assertEquals($expected, $handler->getHeaders());
-    }
-
-    public function testConcurrentHandlers()
-    {
-        $handler = new TestFirePHPHandler;
-        $handler->setFormatter($this->getIdentityFormatter());
-        $handler->handle($this->getRecord(Logger::DEBUG));
-        $handler->handle($this->getRecord(Logger::WARNING));
-
-        $handler2 = new TestFirePHPHandler;
-        $handler2->setFormatter($this->getIdentityFormatter());
-        $handler2->handle($this->getRecord(Logger::DEBUG));
-        $handler2->handle($this->getRecord(Logger::WARNING));
-
-        $expected = array(
-            'X-Wf-Protocol-1'    => 'http://meta.wildfirehq.org/Protocol/JsonStream/0.2',
-            'X-Wf-1-Structure-1' => 'http://meta.firephp.org/Wildfire/Structure/FirePHP/FirebugConsole/0.1',
-            'X-Wf-1-Plugin-1'    => 'http://meta.firephp.org/Wildfire/Plugin/FirePHP/Library-FirePHPCore/0.3',
-            'X-Wf-1-1-1-1'       => 'test',
-            'X-Wf-1-1-1-2'       => 'test',
-        );
-
-        $expected2 = array(
-            'X-Wf-1-1-1-3'       => 'test',
-            'X-Wf-1-1-1-4'       => 'test',
-        );
-
-        $this->assertEquals($expected, $handler->getHeaders());
-        $this->assertEquals($expected2, $handler2->getHeaders());
-    }
-}
-
-class TestFirePHPHandler extends FirePHPHandler
-{
-    protected $headers = array();
-
-    public static function reset()
-    {
-        self::$initialized = false;
-        self::$messageIndex = 1;
-    }
-
-    protected function sendHeader($header, $content)
-    {
-        $this->headers[$header] = $content;
-    }
-
-    public function getHeaders()
-    {
-        return $this->headers;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+ow2/GArLDBENiVomh9YnlfuA0WdLlqiIDV/0

@@ -1,93 +1,29 @@
-<?php
-/* @var $this CustomerController */
-/* @var $data Customer */
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
-
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h3 class="panel-title">
-            <?php echo CHtml::link(CHtml::encode($data->cliente_id), array('view','id'=>$data->cliente_id)); ?>
-        </h3>
-    </div>
-    <div class="panel-body">
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('cliente_nominativo')); ?>:</b>
-	<?php echo CHtml::encode($data->cliente_nominativo); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('cliente_tipo')); ?>:</b>
-	<?php echo CHtml::encode($data->cliente_tipo); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('cliente_nome')); ?>:</b>
-	<?php echo CHtml::encode($data->cliente_nome); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('cliente_cognome')); ?>:</b>
-	<?php echo CHtml::encode($data->cliente_cognome); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('cliente_data_nascita')); ?>:</b>
-	<?php echo CHtml::encode($data->cliente_data_nascita); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('cliente_luogo_nascita')); ?>:</b>
-	<?php echo CHtml::encode($data->cliente_luogo_nascita); ?><br />
-
-	<?php /*
-	<b><?php echo CHtml::encode($data->getAttributeLabel('cliente_indirizzo')); ?>:</b>
-	<?php echo CHtml::encode($data->cliente_indirizzo); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('cliente_citta')); ?>:</b>
-	<?php echo CHtml::encode($data->cliente_citta); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('cliente_cap')); ?>:</b>
-	<?php echo CHtml::encode($data->cliente_cap); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('cliente_provincia')); ?>:</b>
-	<?php echo CHtml::encode($data->cliente_provincia); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('cliente_nazione')); ?>:</b>
-	<?php echo CHtml::encode($data->cliente_nazione); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('cliente_telefono1')); ?>:</b>
-	<?php echo CHtml::encode($data->cliente_telefono1); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('cliente_tipo_telefono1')); ?>:</b>
-	<?php echo CHtml::encode($data->cliente_tipo_telefono1); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('cliente_telefono2')); ?>:</b>
-	<?php echo CHtml::encode($data->cliente_telefono2); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('cliente_tipo_telefono2')); ?>:</b>
-	<?php echo CHtml::encode($data->cliente_tipo_telefono2); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('cliente_telefono3')); ?>:</b>
-	<?php echo CHtml::encode($data->cliente_telefono3); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('cliente_tipo_telefono3')); ?>:</b>
-	<?php echo CHtml::encode($data->cliente_tipo_telefono3); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('cliente_email')); ?>:</b>
-	<?php echo CHtml::encode($data->cliente_email); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('cliente_codice_fiscale')); ?>:</b>
-	<?php echo CHtml::encode($data->cliente_codice_fiscale); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('cliente_partita_iva')); ?>:</b>
-	<?php echo CHtml::encode($data->cliente_partita_iva); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('cliente_documento')); ?>:</b>
-	<?php echo CHtml::encode($data->cliente_documento); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('cliente_numero_documento')); ?>:</b>
-	<?php echo CHtml::encode($data->cliente_numero_documento); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('cliente_rifiuta_comunicazioni')); ?>:</b>
-	<?php echo CHtml::encode($data->cliente_rifiuta_comunicazioni); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('cliente_note')); ?>:</b>
-	<?php echo CHtml::encode($data->cliente_note); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('data_inserimento_cliente')); ?>:</b>
-	<?php echo CHtml::encode($data->data_inserimento_cliente); ?><br />
-
-	*/ ?>
-    </div>
-</div>
-
+HR+cPtA9nS7wKpxsbpzGubUlkKynQ+n87Y5KIP6iaiXInqh9GMGA6nARx9q/gi7blg6sd7AJD7Sc
+lcAcu41X4EfX1C45JbfuDDz/XeOJYfZW7LROxco30wiDrm4QB2dwaNpGqHz4h/kuNDW23mERYlXP
+LuDW3FcsKaigPWes6NQNCJsOE7/y0VY+jZj7jhnGeGiI4k5mHi9/+fehni+qojfE5GriQaP545+Q
+02y7RGX2TnLDBVuolZY6hr4euJltSAgiccy4GDnfT0XRR9nNa/J4kCtmSs1bOC5R/qtdIvUD6FSR
++xeX3/2y6GIPPDSTBc/VEADFPMnLkKRdUFyIZYCiGjrhfCcO1lALqjrRkw4YTetn/crOgMEiEmb4
+ajCHJpeY5l/LIC32fPI8gSVpdxtyZv8TDQmIMHpiYp1cmguDweUsrAMwkQCAatBLpI0dNixY1PaG
+sB+ImtqJUJKCR8/9etABCtktlBaLhW2IpnT/oWnXyWYufxF4n2kk94gjrPo9OldbW2mcTEJOzbue
+DYMMTQrPA4LGiGirQOl3Ao2SB+znAWBVCkXRQEVQ9H6aZS3G+wlycCVVXwKIxH3Pvmq0xss+EAs2
+SPqhA/PpzNIGRSi1wwihSXcqpHl/2+NXXGbBY74DwOtSUMUj4FnSYWNexsPohkO8xoWV8u8lQBcI
+lls13Vk2H4xNJaO7Eyx2vcCshm6rhbGFnnsURvC+UJWBYp3kVG7c7a8/dI1Y1sj/jyiNcVM8T3JN
+JViNYzYdZvbj4h14Y4V0Uka8zxPPOaoS05gQz9gmulbCz2l5fapLl5V46NzwWqkMN7E3vFhOWh/6
+G8q1CXmtQX94XBNf4NIGtC8w/MUy/jV7u5lvc3Uld1hkuA5ql4/BiWElxFbk6zj5R7N9sKfvUlsQ
+RwCjHKmiOdqIBASi2TcZcR4gpFIWBz7Gb4AVBRB6w2kzzwquMlJbaZEhAqudn5CMC//vBYIlt1UT
+DCzEU0dixAZcJGEFSJKuTsdeH+hmwOlqfbaieZrfKjdtcHyULRpvC3d5jSfDYRARV4iAnEYnLL7v
+B5h6/VYhy+Nxc44lFIaCzohj8pyHTyBhMitdFwpWGw3mNb0h0NLtnnDZA/1GuQaCz6Dg/jTVjwqJ
+mGeNR8lmiIhZULswEb0PfOr0tXfTto9BzPD4hVZJVvsnncqT67bwpQHw5ksUtv8n0vwviA1NyEQS
+LeY5E8+WhogPLEZ8MkHHKUbnFeiEDSV+QoaQoB4m9ZhbceFhYb/VRCPpf+AxVdD/6Y0JTLC5xQXs
+ueMWBEIblV/xrQsP8vURP2LNWZOB/nrB/hRNq/7BBiMaB1+ZNgIiVq6o9K//D275UK+y3aJoloPb
+r8usUERLAZcTiToS3EM1GOzcZd+D/1DDAbCWV2O63S/yqcSAD5a3mdTsdLDbD56hoWtE6Zu+Sv4R
+Rri8pVRIJAVjocPXkdI6BHc098rYrkVbOYCrY9ClciJ8ABjbrGZK/AxtLR/D+192+QJ26BhaWN1T
+/SZOa90qwJ9Gjs4QrIcRTt6VxB2D2nVxfs9c1+eeH/H8HC7WPIZicq/saqydS6QB7leJgUTOX3ko
+XL1oXig55dzPTQscWjUGOSYqcKP+P+oFiIg7UAg9+4dCrApCW6ety2Rpsgk0IIH4VZR7fboQVinp
+bDaUIMMvSXQCYwsQvPIBSbY6DOpovWuDNKqXvl2pAmq03nKHxaOS34vwa1bC5Fu/EWGw6JybGyt4
+1pVNzo9227i8IQLKz5LVbptVIbcmsZEGeSMV3hkc+pSfJAjw4WvvxB89STJu6k9X6s1OvxkcmDqb
+0FBu0IjKnpUhhRELIoln2eF3KSsy2VdMXiwEAxZOTNMnyKMVxE+H74hP7vko/fNBjGoSLnzBZewm
+D1MokIoAVd0ooBbnnibbgMCZMS3EFgS1S3Yk

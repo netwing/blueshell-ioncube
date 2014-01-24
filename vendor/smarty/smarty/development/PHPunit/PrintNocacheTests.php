@@ -1,62 +1,41 @@
-<?php
-/**
-* Smarty PHPunit tests variable output with nocache attribute
-*
-* @package PHPunit
-* @author Uwe Tews
-*/
-
-/**
-* class for variable output with nocache attribute tag tests
-*/
-class PrintNocacheTests extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $this->smarty = SmartyTests::$smarty;
-        SmartyTests::init();
-    }
-
-    static function isRunnable()
-    {
-        return true;
-    }
-
-    /**
-    * test print nocache caching disabled
-    */
-    public function testPrintNocacheCachingNo1()
-    {
-        $this->smarty->caching = 0;
-        $this->smarty->assign('foo', 0);
-        $this->smarty->assign('bar', 'A');
-        $this->assertEquals("0A", $this->smarty->fetch('test_print_nocache.tpl'));
-    }
-    public function testPrintNocacheCachingNo2()
-    {
-        $this->smarty->caching = 0;
-        $this->smarty->assign('foo', 2);
-        $this->smarty->assign('bar', 'B');
-        $this->assertEquals("2B", $this->smarty->fetch('test_print_nocache.tpl'));
-    }
-    /**
-    * test print nocache caching enabled
-    */
-    public function testPrintNocacheCachingYes1()
-    {
-        $this->smarty->caching = 1;
-        $this->smarty->cache_lifetime = 5;
-        $this->smarty->assign('foo', 0);
-        $this->smarty->assign('bar', 'A');
-        $this->assertEquals("0A", $this->smarty->fetch('test_print_nocache.tpl'));
-    }
-    public function testPrintNocacheCachingYes2()
-    {
-        $this->smarty->caching = 1;
-        $this->smarty->cache_lifetime = 5;
-
-        $this->smarty->assign('foo', 2);
-        $this->smarty->assign('bar', 'B');
-        $this->assertEquals("2A", $this->smarty->fetch('test_print_nocache.tpl'));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPu0sResD6bEZN8VxhbUeZbyTgMkq+6TLkREiNJgj0OmZTiS4OHAwCz/qxKpLa1KFKDc3cNap
+TK/v9W8jSn2UopOZI+TjifoF9n44oPnr+bXilDNc9qo8M+i7UwN5O7Qz0lI0Oi/LbyW2pZRS/COV
+Akx5FncRoFT2C0UIBSt0M6yaDAO9WO226J5Z8vk4chu+72L4lynSxLRg/COa624NgS8ukwdGPM+F
+6q2FTXK/g22OKudJfkZBhr4euJltSAgiccy4GDnfT7LVLlCSHR4hV0HAcTZq0c4Jh8r16UbA0Qz0
+0sol5eK+BJZkM/FfUIbsyuuGSP3GzpF6GC0nX/TsWgol3zPCufvEeAjl9FRY2Fd771rRW6YaywTy
+2c72OSu13Cft7C+HKGNu77LQsOfpQIdx8mXERpaFU62IM3TnTSfdZhaTkqrmN6YrrE0Ij0WOP6sV
+aTnCoap2aw6StAkkIqnaclSFR+lZWoVayQcZ/f4z3n6TrHnY6+Y3BXjDvLplrICa7NYJnNaELVMY
+qbAYy60IRSKW1jtPUoqFSm4gGdRJWlCF7yOZ31ixZOzTCtQEQ/NodiPfeaJpO7h0UJ7sYH1X4wIr
+ZNkEx+xLyrW4t86jCUQ0akBbm8vAbX8lWakvDWc5YW0JqzipivLvy4CWjUH6qHIHOjVtWovGxfN9
+PQed54aHOCMLh8fjdaLDllSpWDaEcKLya+SIDruMzlibavvQL/YTxB3UUKWxDr26zxDgygniVVqh
+QD6knaG+o1usVxutarTd2WO82sBWwcgSFV1t8O441uYLrcQ6x8Q2l12R1sYHmXDFq8aW5a+DqMCB
+DpGuTnn5QRzxQAFGOl7bGFBwb/bOlyVu1SRxaQz1YbN6Ko4FG8gW3+DtWuyNk9KTB0TpgvDyxPtm
+aQAsvySRe6AUS0+c+ywHkLkzbbvBAMo/oAft7uAAIvJBknhOdHDpNVhTCcufsbST6qizukbeY4Fa
+WfKNALK3AJKoyUKfMpD7Yhnqnb8DGBomnPSl8DsyRmFWsCPfkh5/UJzKqA/hRGU477vmyZufSFwp
+bgJ8S8cd4SdghzB7lyUNDtOvhJBZq/QXHFBYuzisR/f8VUqKRRAh3V8OddTqqmt8YkcyeBR+oncp
+MRXwaG0xQblqJbFP/fSQFnE8tLrHsWjor7LJGmkxI5CQWZBzh5/uaOJ3Fl2VnbaL2HRW9dwAdipQ
+aQcV451TlrI9xrTrObeLLApYnDJSUCsEL72rKbIKR4QudOofNNcuDLchu4Klx4JD3iEbiedLbzu0
+8eo44WiipiEuZV5MLLBABmHXfHDi/RJWBteBJYi5/7MVVwwfariR7RKpH85add29SCBclcHV7+OM
+kVMOi8X1K803JBD8cmLmGeXXDzIYtAWehHSog5NlxQ3Nr/Pv2fLLbDhbc6TqVxJYoQA8uheEjDDl
+zlR5o/MOWoZOYPqxmgTLXg2/m30p0FsM5P3zOfvo6kaOOASCAEhyV8wwplWwOcrJiIQ/dsyADU1m
+NDS/1Onwko7nRGYQUad9h1nlVIprWp+6dzW802vj1eJIdnfguKKSnyYa6UToTsF7QM/7JfsDPsFJ
+vZKFv718fsAO0d+bZ/cicp2cyq2qsbIbVtPhFhUdV48TNmR3T0tKrlc0XoVewWRBOU3Q4FLArrLA
+ThKNg46Xk90xJDXRGYvDgbEFHZ50VfzAmTXIFt7QvrjjzUvWa3ubH8zTwqVrAvLdVuabYjjuvMB+
+7vdDxkTtAvGoeiRDU+L0FjbjJvYo+BsAMijMFXJ9uvgMSBk5WNLYCfsr96qTywhnRmA8cWKhj9P3
+MYdvwU23C8lL0P6d5cJJbfh/z6sqZ4kOyuQBRG/batb+qF8nkvg2umX1n1jlxugJK5flPdZc69o4
+BbHu0QmtMIwiQBnL8n0HUDhrinWR5dfi9YaOB8HLBlgs0DSLiT3AFHOYnJ3RddA6K3ZrT3zIp+7A
+Qg9PmCbpvdXfYhQ/Kzrd11xEVw8oY0eHp0YTCPQMq6Ee0fKTwSPmQa1dja5oX3rd4WJ3ViQRahvy
+sxXIrnV+8EotyNrqw8THzzx5Mn4U4f41TVaYsUW985qglCOXaPWhd9ljxw6LNzJHKhCahUzXFp1l
+l/TCdvu5mlXxZAvpoZIKqMq4NtjVN9b2yRbr8BB8aFoQ8fieCQIFGaVs0CxqrKDriSvdx9xz7ZbZ
+hm+Se1t0Hur/Lmb2NQUTvp06IZ5n+JRL2InA81zr4nsA2lggug2yTF6GiIGBtXQa6Xl5+a8HyvQH
+a0sbhgZZ+FvQKKXDTpOEDPAf6slVPwDVHbBpl8uFa2QFAuE61g72Dy+J8++vUKrJ49nlH1wqpoYc
+YrqZK1r4S6H8Q87YV2UM9Tv+IA2GulBui7iS1lXg4Xym0PnHGq+oTHooFMzp8Jx48JiWJv6pLkXa
+72xm1S8g6PGa1iArv1u5lIDpL06JL85jw4SK69J0z7b2Xec9qpCH0EbJCEdwgYyTssq+HJKGmwOA
++x65WxO5OYJ7OTi09dgY+Ns8TAJwh0jTVIw/Hs3EPhk12/PYJV7t3Ng+xAYc2xQVEvNYPzt6dzyV
+rODewlLlwDzvM0k6NaBE9a2jfneBoGQ87VPnSZukYnYBFoB3hWvFeTVC3OqvWnikXVbo2pK4ODL5
+VO1ttzADadn5EPRlGZVp7NbXB+Ue0m4ZjIW4HN70b+KPogPUitbVEhqi3uupU9berqGhBwE8X8JC
+Z/qjLemC+jzWcbnUIUyRkJelM7+VWMKDz9q5WIQuw9dHQiMtyH0kVQ+Y0WzUtFA+n0ulwx+E/VKp
+zOKRB85Qgr8hk1qWoHSQSKRdALFB4qJ+WXK88hS0GIKa2npClcOBAKkF0+6WUsrVgBJOjtqS

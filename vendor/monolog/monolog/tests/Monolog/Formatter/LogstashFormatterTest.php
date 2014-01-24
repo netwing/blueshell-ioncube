@@ -1,293 +1,147 @@
-<?php
-
-/*
- * This file is part of the Monolog package.
- *
- * (c) Jordi Boggiano <j.boggiano@seld.be>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Monolog\Formatter;
-
-use Monolog\Logger;
-use Monolog\Formatter\LogstashFormatter;
-
-class LogstashFormatterTest extends \PHPUnit_Framework_TestCase
-{
-
-    /**
-     * @covers Monolog\Formatter\LogstashFormatter::format
-     */
-    public function testDefaultFormatter()
-    {
-        $formatter = new LogstashFormatter('test', 'hostname');
-        $record = array(
-            'level' => Logger::ERROR,
-            'level_name' => 'ERROR',
-            'channel' => 'meh',
-            'context' => array(),
-            'datetime' => new \DateTime("@0"),
-            'extra' => array(),
-            'message' => 'log',
-        );
-
-        $message = json_decode($formatter->format($record), true);
-
-        $this->assertEquals("1970-01-01T00:00:00.000000+00:00", $message['@timestamp']);
-        $this->assertEquals('log', $message['@message']);
-        $this->assertEquals('meh', $message['@fields']['channel']);
-        $this->assertContains('meh', $message['@tags']);
-        $this->assertEquals(Logger::ERROR, $message['@fields']['level']);
-        $this->assertEquals('test', $message['@type']);
-        $this->assertEquals('hostname', $message['@source']);
-
-        $formatter = new LogstashFormatter('mysystem');
-
-        $message = json_decode($formatter->format($record), true);
-
-        $this->assertEquals('mysystem', $message['@type']);
-    }
-
-    /**
-     * @covers Monolog\Formatter\LogstashFormatter::format
-     */
-    public function testFormatWithFileAndLine()
-    {
-        $formatter = new LogstashFormatter('test');
-        $record = array(
-            'level' => Logger::ERROR,
-            'level_name' => 'ERROR',
-            'channel' => 'meh',
-            'context' => array('from' => 'logger'),
-            'datetime' => new \DateTime("@0"),
-            'extra' => array('file' => 'test', 'line' => 14),
-            'message' => 'log',
-        );
-
-        $message = json_decode($formatter->format($record), true);
-
-        $this->assertEquals('test', $message['@fields']['file']);
-        $this->assertEquals(14, $message['@fields']['line']);
-    }
-
-    /**
-     * @covers Monolog\Formatter\LogstashFormatter::format
-     */
-    public function testFormatWithContext()
-    {
-        $formatter = new LogstashFormatter('test');
-        $record = array(
-            'level' => Logger::ERROR,
-            'level_name' => 'ERROR',
-            'channel' => 'meh',
-            'context' => array('from' => 'logger'),
-            'datetime' => new \DateTime("@0"),
-            'extra' => array('key' => 'pair'),
-            'message' => 'log'
-        );
-
-        $message = json_decode($formatter->format($record), true);
-
-        $message_array = $message['@fields'];
-
-        $this->assertArrayHasKey('ctxt_from', $message_array);
-        $this->assertEquals('logger', $message_array['ctxt_from']);
-
-        // Test with extraPrefix
-        $formatter = new LogstashFormatter('test', null, null, 'CTX');
-        $message = json_decode($formatter->format($record), true);
-
-        $message_array = $message['@fields'];
-
-        $this->assertArrayHasKey('CTXfrom', $message_array);
-        $this->assertEquals('logger', $message_array['CTXfrom']);
-
-    }
-
-    /**
-     * @covers Monolog\Formatter\LogstashFormatter::format
-     */
-    public function testFormatWithExtra()
-    {
-        $formatter = new LogstashFormatter('test');
-        $record = array(
-            'level' => Logger::ERROR,
-            'level_name' => 'ERROR',
-            'channel' => 'meh',
-            'context' => array('from' => 'logger'),
-            'datetime' => new \DateTime("@0"),
-            'extra' => array('key' => 'pair'),
-            'message' => 'log'
-        );
-
-        $message = json_decode($formatter->format($record), true);
-
-        $message_array = $message['@fields'];
-
-        $this->assertArrayHasKey('key', $message_array);
-        $this->assertEquals('pair', $message_array['key']);
-
-        // Test with extraPrefix
-        $formatter = new LogstashFormatter('test', null, 'EXT');
-        $message = json_decode($formatter->format($record), true);
-
-        $message_array = $message['@fields'];
-
-        $this->assertArrayHasKey('EXTkey', $message_array);
-        $this->assertEquals('pair', $message_array['EXTkey']);
-    }
-
-    public function testFormatWithApplicationName()
-    {
-        $formatter = new LogstashFormatter('app', 'test');
-        $record = array(
-            'level' => Logger::ERROR,
-            'level_name' => 'ERROR',
-            'channel' => 'meh',
-            'context' => array('from' => 'logger'),
-            'datetime' => new \DateTime("@0"),
-            'extra' => array('key' => 'pair'),
-            'message' => 'log'
-        );
-
-        $message = json_decode($formatter->format($record), true);
-
-        $this->assertArrayHasKey('@type', $message);
-        $this->assertEquals('app', $message['@type']);
-    }
-
-    /**
-     * @covers Monolog\Formatter\LogstashFormatter::format
-     */
-    public function testDefaultFormatterV1()
-    {
-        $formatter = new LogstashFormatter('test', 'hostname', null, 'ctxt_', LogstashFormatter::V1);
-        $record = array(
-            'level' => Logger::ERROR,
-            'level_name' => 'ERROR',
-            'channel' => 'meh',
-            'context' => array(),
-            'datetime' => new \DateTime("@0"),
-            'extra' => array(),
-            'message' => 'log',
-        );
-
-        $message = json_decode($formatter->format($record), true);
-
-        $this->assertEquals("1970-01-01T00:00:00.000000+00:00", $message['@timestamp']);
-        $this->assertEquals("1", $message['@version']);
-        $this->assertEquals('log', $message['message']);
-        $this->assertEquals('meh', $message['channel']);
-        $this->assertEquals('ERROR', $message['level']);
-        $this->assertEquals('test', $message['type']);
-        $this->assertEquals('hostname', $message['host']);
-
-        $formatter = new LogstashFormatter('mysystem', null, null, 'ctxt_', LogstashFormatter::V1);
-
-        $message = json_decode($formatter->format($record), true);
-
-        $this->assertEquals('mysystem', $message['type']);
-    }
-
-    /**
-     * @covers Monolog\Formatter\LogstashFormatter::format
-     */
-    public function testFormatWithFileAndLineV1()
-    {
-        $formatter = new LogstashFormatter('test', null, null, 'ctxt_', LogstashFormatter::V1);
-        $record = array(
-            'level' => Logger::ERROR,
-            'level_name' => 'ERROR',
-            'channel' => 'meh',
-            'context' => array('from' => 'logger'),
-            'datetime' => new \DateTime("@0"),
-            'extra' => array('file' => 'test', 'line' => 14),
-            'message' => 'log',
-        );
-
-        $message = json_decode($formatter->format($record), true);
-
-        $this->assertEquals('test', $message['file']);
-        $this->assertEquals(14, $message['line']);
-    }
-
-    /**
-     * @covers Monolog\Formatter\LogstashFormatter::format
-     */
-    public function testFormatWithContextV1()
-    {
-        $formatter = new LogstashFormatter('test', null, null, 'ctxt_', LogstashFormatter::V1);
-        $record = array(
-            'level' => Logger::ERROR,
-            'level_name' => 'ERROR',
-            'channel' => 'meh',
-            'context' => array('from' => 'logger'),
-            'datetime' => new \DateTime("@0"),
-            'extra' => array('key' => 'pair'),
-            'message' => 'log'
-        );
-
-        $message = json_decode($formatter->format($record), true);
-
-        $this->assertArrayHasKey('ctxt_from', $message);
-        $this->assertEquals('logger', $message['ctxt_from']);
-
-        // Test with extraPrefix
-        $formatter = new LogstashFormatter('test', null, null, 'CTX', LogstashFormatter::V1);
-        $message = json_decode($formatter->format($record), true);
-
-        $this->assertArrayHasKey('CTXfrom', $message);
-        $this->assertEquals('logger', $message['CTXfrom']);
-
-    }
-
-    /**
-     * @covers Monolog\Formatter\LogstashFormatter::format
-     */
-    public function testFormatWithExtraV1()
-    {
-        $formatter = new LogstashFormatter('test', null, null, 'ctxt_', LogstashFormatter::V1);
-        $record = array(
-            'level' => Logger::ERROR,
-            'level_name' => 'ERROR',
-            'channel' => 'meh',
-            'context' => array('from' => 'logger'),
-            'datetime' => new \DateTime("@0"),
-            'extra' => array('key' => 'pair'),
-            'message' => 'log'
-        );
-
-        $message = json_decode($formatter->format($record), true);
-
-        $this->assertArrayHasKey('key', $message);
-        $this->assertEquals('pair', $message['key']);
-
-        // Test with extraPrefix
-        $formatter = new LogstashFormatter('test', null, 'EXT', 'ctxt_', LogstashFormatter::V1);
-        $message = json_decode($formatter->format($record), true);
-
-        $this->assertArrayHasKey('EXTkey', $message);
-        $this->assertEquals('pair', $message['EXTkey']);
-    }
-
-    public function testFormatWithApplicationNameV1()
-    {
-        $formatter = new LogstashFormatter('app', 'test', null, 'ctxt_', LogstashFormatter::V1);
-        $record = array(
-            'level' => Logger::ERROR,
-            'level_name' => 'ERROR',
-            'channel' => 'meh',
-            'context' => array('from' => 'logger'),
-            'datetime' => new \DateTime("@0"),
-            'extra' => array('key' => 'pair'),
-            'message' => 'log'
-        );
-
-        $message = json_decode($formatter->format($record), true);
-
-        $this->assertArrayHasKey('type', $message);
-        $this->assertEquals('app', $message['type']);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

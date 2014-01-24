@@ -1,79 +1,46 @@
-<?php
-
-/**
- * LoginForm class.
- * LoginForm is the data structure for keeping
- * user login form data. It is used by the 'login' action of 'SiteController'.
- */
-class LoginForm extends CFormModel
-{
-	public $username;
-	public $password;
-	public $rememberMe;
-
-	private $_identity;
-
-	/**
-	 * Declares the validation rules.
-	 * The rules state that username and password are required,
-	 * and password needs to be authenticated.
-	 */
-	public function rules()
-	{
-		return array(
-			// username and password are required
-			array('username, password', 'required'),
-			// rememberMe needs to be a boolean
-			array('rememberMe', 'boolean'),
-			// password needs to be authenticated
-			array('password', 'authenticate'),
-		);
-	}
-
-	/**
-	 * Declares attribute labels.
-	 */
-	public function attributeLabels()
-	{
-		return array(
-			'username'	=> Yii::t('app', 'Username'),
-			'password'	=> Yii::t('app', 'Password'),
-			'rememberMe' => Yii::t('app', 'Remember me next time'),
-		);
-	}
-
-	/**
-	 * Authenticates the password.
-	 * This is the 'authenticate' validator as declared in rules().
-	 */
-	public function authenticate($attribute,$params)
-	{
-		if(!$this->hasErrors())
-		{
-			$this->_identity=new UserIdentity($this->username,$this->password);
-			if(!$this->_identity->authenticate())
-				$this->addError('password','Incorrect username or password.');
-		}
-	}
-
-	/**
-	 * Logs in the user using the given username and password in the model.
-	 * @return boolean whether login is successful
-	 */
-	public function login()
-	{
-		if($this->_identity===null)
-		{
-			$this->_identity=new UserIdentity($this->username,$this->password);
-			$this->_identity->authenticate();
-		}
-		if($this->_identity->errorCode===UserIdentity::ERROR_NONE)
-		{
-			$duration=$this->rememberMe ? 3600*24*30 : 0; // 30 days
-			Yii::app()->user->login($this->_identity,$duration);
-			return true;
-		}
-		else
-			return false;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+LybgyRSqom95iz90E3a=

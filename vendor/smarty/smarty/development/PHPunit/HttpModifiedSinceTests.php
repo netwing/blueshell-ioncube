@@ -1,107 +1,64 @@
-<?php
-/**
-* Smarty PHPunit tests for cache resource file
-*
-* @package PHPunit
-* @author Uwe Tews
-*/
-
-/**
-* class for cache resource file tests
-*/
-class HttpModifiedSinceTests extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $this->smarty = SmartyTests::$smarty;
-        $this->smarty->clearCompiledTemplate();
-        $this->smarty->clearAllCache();
-        SmartyTests::init();
-    }
-
-    static function isRunnable()
-    {
-        return true;
-    }
-
-    public function testDisabled()
-    {
-        $_SERVER['SMARTY_PHPUNIT_DISABLE_HEADERS'] = true;
-        $_SERVER['SMARTY_PHPUNIT_HEADERS'] = array();
-
-        $this->smarty->cache_modified_check = false;
-        $this->smarty->caching = true;
-        $this->smarty->cache_lifetime = 20;
-        ob_start();
-        $this->smarty->display('helloworld.tpl');
-        $output = ob_get_contents();
-        ob_end_clean();
-        $this->assertEquals('hello world', $output);
-        $this->assertEquals('', join( "\r\n",$_SERVER['SMARTY_PHPUNIT_HEADERS']));
-
-        unset($_SERVER['HTTP_IF_MODIFIED_SINCE']);
-        unset($_SERVER['SMARTY_PHPUNIT_HEADERS']);
-        unset($_SERVER['SMARTY_PHPUNIT_DISABLE_HEADERS']);
-    }
-
-    public function testEnabledUncached()
-    {
-        $_SERVER['SMARTY_PHPUNIT_DISABLE_HEADERS'] = true;
-        $_SERVER['SMARTY_PHPUNIT_HEADERS'] = array();
-
-        $this->smarty->cache_modified_check = true;
-        $this->smarty->caching = false;
-        $this->smarty->cache_lifetime = 20;
-        ob_start();
-        $this->smarty->display('helloworld.tpl');
-        $output = ob_get_contents();
-        ob_end_clean();
-        $this->assertEquals('hello world', $output);
-        $this->assertEquals('', join( "\r\n",$_SERVER['SMARTY_PHPUNIT_HEADERS']));
-
-        unset($_SERVER['HTTP_IF_MODIFIED_SINCE']);
-        unset($_SERVER['SMARTY_PHPUNIT_HEADERS']);
-        unset($_SERVER['SMARTY_PHPUNIT_DISABLE_HEADERS']);
-    }
-
-    public function testEnabledCached()
-    {
-        $_SERVER['SMARTY_PHPUNIT_DISABLE_HEADERS'] = true;
-        $_SERVER['SMARTY_PHPUNIT_HEADERS'] = array();
-
-        $this->smarty->cache_modified_check = true;
-        $this->smarty->caching = true;
-        $this->smarty->cache_lifetime = 20;
-
-        ob_start();
-        $this->smarty->display('helloworld.tpl');
-        $output = ob_get_contents();
-        ob_end_clean();
-        $this->assertEquals('hello world', $output);
-        $header = 'Last-Modified: ' . gmdate('D, d M Y H:i:s') . ' GMT';
-        $this->assertEquals($header, join( "\r\n",$_SERVER['SMARTY_PHPUNIT_HEADERS']));
-
-        $_SERVER['SMARTY_PHPUNIT_HEADERS'] = array();
-        $_SERVER['HTTP_IF_MODIFIED_SINCE'] = gmdate('D, d M Y H:i:s', time() - 3600) . ' GMT';
-        ob_start();
-        $this->smarty->display('helloworld.tpl');
-        $output = ob_get_contents();
-        ob_end_clean();
-        $this->assertEquals('hello world', $output);
-        $this->assertEquals($header, join( "\r\n",$_SERVER['SMARTY_PHPUNIT_HEADERS']));
-
-        $_SERVER['SMARTY_PHPUNIT_HEADERS'] = array();
-        $_SERVER['HTTP_IF_MODIFIED_SINCE'] = gmdate('D, d M Y H:i:s', time() + 10) . ' GMT';
-        ob_start();
-        $this->smarty->display('helloworld.tpl');
-        $output = ob_get_contents();
-        ob_end_clean();
-        $this->assertEquals('', $output);
-        $this->assertEquals('304 Not Modified', join( "\r\n",$_SERVER['SMARTY_PHPUNIT_HEADERS']));
-
-        unset($_SERVER['HTTP_IF_MODIFIED_SINCE']);
-        unset($_SERVER['SMARTY_PHPUNIT_HEADERS']);
-        unset($_SERVER['SMARTY_PHPUNIT_DISABLE_HEADERS']);
-    }
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

@@ -1,84 +1,45 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\Console\Tests\Helper;
-
-use Symfony\Component\Console\Helper\FormatterHelper;
-
-class FormatterHelperTest extends \PHPUnit_Framework_TestCase
-{
-    public function testFormatSection()
-    {
-        $formatter = new FormatterHelper();
-
-        $this->assertEquals(
-            '<info>[cli]</info> Some text to display',
-            $formatter->formatSection('cli', 'Some text to display'),
-            '::formatSection() formats a message in a section'
-        );
-    }
-
-    public function testFormatBlock()
-    {
-        $formatter = new FormatterHelper();
-
-        $this->assertEquals(
-            '<error> Some text to display </error>',
-            $formatter->formatBlock('Some text to display', 'error'),
-            '::formatBlock() formats a message in a block'
-        );
-
-        $this->assertEquals(
-            '<error> Some text to display </error>'."\n" .
-            '<error> foo bar              </error>',
-            $formatter->formatBlock(array('Some text to display', 'foo bar'), 'error'),
-            '::formatBlock() formats a message in a block'
-        );
-
-        $this->assertEquals(
-            '<error>                        </error>'."\n" .
-            '<error>  Some text to display  </error>'."\n" .
-            '<error>                        </error>',
-            $formatter->formatBlock('Some text to display', 'error', true),
-            '::formatBlock() formats a message in a block'
-        );
-    }
-
-    public function testFormatBlockWithDiacriticLetters()
-    {
-        if (!extension_loaded('mbstring')) {
-            $this->markTestSkipped('This test requires mbstring to work.');
-        }
-
-        $formatter = new FormatterHelper();
-
-        $this->assertEquals(
-            '<error>                       </error>'."\n" .
-            '<error>  Du texte à afficher  </error>'."\n" .
-            '<error>                       </error>',
-            $formatter->formatBlock('Du texte à afficher', 'error', true),
-            '::formatBlock() formats a message in a block'
-        );
-    }
-
-    public function testFormatBlockLGEscaping()
-    {
-        $formatter = new FormatterHelper();
-
-        $this->assertEquals(
-            '<error>                            </error>'."\n" .
-            '<error>  \<info>some info\</info>  </error>'."\n" .
-            '<error>                            </error>',
-            $formatter->formatBlock('<info>some info</info>', 'error', true),
-            '::formatBlock() escapes \'<\' chars'
-        );
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

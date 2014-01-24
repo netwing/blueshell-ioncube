@@ -1,86 +1,47 @@
-<?php
-/**
- * Smarty PHPunit tests  of the <?xml...> tag handling
- *
- * @package PHPunit
- * @author Uwe Tews
- */
-
-/**
- * class for <?xml...> tests
- */
-class XmlTests extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $this->smarty = SmartyTests::$smarty;
-        SmartyTests::init();
-        $this->smarty->force_compile = true;
-    }
-
-    static function isRunnable()
-    {
-        return true;
-    }
-
-    /**
-     * test standard xml
-     */
-    public function testXml()
-    {
-        $tpl = $this->smarty->createTemplate('xml.tpl');
-        $this->assertEquals('<?xml version="1.0" encoding="UTF-8"?>', $this->smarty->fetch($tpl));
-    }
-    /**
-     * test standard xml Smarty::PHP_QUOTE
-     */
-    public function testXmlPhpQuote()
-    {
-        $this->smarty->security_policy->php_handling = Smarty::PHP_QUOTE;
-        $tpl = $this->smarty->createTemplate('xml.tpl');
-        $this->assertEquals('<?xml version="1.0" encoding="UTF-8"?>', $this->smarty->fetch($tpl));
-    }
-    /**
-     * test standard xml Smarty::PHP_ALLOW
-     */
-    public function testXmlPhpAllow()
-    {
-        $this->smarty->security_policy->php_handling = Smarty::PHP_ALLOW;
-        $tpl = $this->smarty->createTemplate('xml.tpl');
-        $this->assertEquals('<?xml version="1.0" encoding="UTF-8"?>', $this->smarty->fetch($tpl));
-    }
-    /**
-     * test standard xml
-     */
-    public function testXmlCaching()
-    {
-        $this->smarty->security_policy->php_handling = Smarty::PHP_PASSTHRU;
-        $this->smarty->caching = true;
-        $this->smarty->cache_lifetime = 1000;
-        $content = $this->smarty->fetch('xml.tpl');
-        $this->assertEquals('<?xml version="1.0" encoding="UTF-8"?>', $content);
-    }
-    /*
-    * test standard xml
-    */
-    public function testXmlCachingPhpQuote()
-    {
-        $this->smarty->security_policy->php_handling = Smarty::PHP_QUOTE;
-        $this->smarty->caching = true;
-        $this->smarty->cache_lifetime = 1000;
-        $content = $this->smarty->fetch('xml.tpl');
-        $this->assertEquals('<?xml version="1.0" encoding="UTF-8"?>', $content);
-    }
-
-    /*
-    * test standard xml
-    */
-    public function testXmlCachingPhpAllow()
-    {
-        $this->smarty->security_policy->php_handling = Smarty::PHP_ALLOW;
-        $this->smarty->caching = true;
-        $this->smarty->cache_lifetime = 1000;
-        $content = $this->smarty->fetch('xml.tpl');
-        $this->assertEquals('<?xml version="1.0" encoding="UTF-8"?>', $content);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

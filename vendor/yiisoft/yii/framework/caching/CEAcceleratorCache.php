@@ -1,106 +1,55 @@
-<?php
-/**
- * CEAcceleratorCache class file
- *
- * @author Steffen Dietz <steffo.dietz[at]googlemail[dot]com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CEAcceleratorCache implements a cache application module based on {@link http://eaccelerator.net/ eaccelerator}.
- *
- * To use this application component, the eAccelerator PHP extension must be loaded.
- *
- * See {@link CCache} manual for common cache operations that are supported by CEAccelerator.
- *
- * Please note that as of v0.9.6, eAccelerator no longer supports data caching.
- * This means if you still want to use this component, your eAccelerator should be of 0.9.5.x or lower version.
- *
- * @author Steffen Dietz <steffo.dietz[at]googlemail[dot]com>
- * @package system.caching
- */
-class CEAcceleratorCache extends CCache
-{
-	/**
-	 * Initializes this application component.
-	 * This method is required by the {@link IApplicationComponent} interface.
-	 * It checks the availability of eAccelerator.
-	 * @throws CException if eAccelerator extension is not loaded, is disabled or the cache functions are not compiled in.
-	 */
-	public function init()
-	{
-		parent::init();
-		if(!function_exists('eaccelerator_get'))
-			throw new CException(Yii::t('yii','CEAcceleratorCache requires PHP eAccelerator extension to be loaded, enabled or compiled with the "--with-eaccelerator-shared-memory" option.'));
-	}
-
-	/**
-	 * Retrieves a value from cache with a specified key.
-	 * This is the implementation of the method declared in the parent class.
-	 * @param string $key a unique key identifying the cached value
-	 * @return string|boolean the value stored in cache, false if the value is not in the cache or expired.
-	 */
-	protected function getValue($key)
-	{
-		$result = eaccelerator_get($key);
-		return $result !== NULL ? $result : false;
-	}
-
-	/**
-	 * Stores a value identified by a key in cache.
-	 * This is the implementation of the method declared in the parent class.
-	 *
-	 * @param string $key the key identifying the value to be cached
-	 * @param string $value the value to be cached
-	 * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
-	 * @return boolean true if the value is successfully stored into cache, false otherwise
-	 */
-	protected function setValue($key,$value,$expire)
-	{
-		return eaccelerator_put($key,$value,$expire);
-	}
-
-	/**
-	 * Stores a value identified by a key into cache if the cache does not contain this key.
-	 * This is the implementation of the method declared in the parent class.
-	 *
-	 * @param string $key the key identifying the value to be cached
-	 * @param string $value the value to be cached
-	 * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
-	 * @return boolean true if the value is successfully stored into cache, false otherwise
-	 */
-	protected function addValue($key,$value,$expire)
-	{
-		return (NULL === eaccelerator_get($key)) ? $this->setValue($key,$value,$expire) : false;
-	}
-
-	/**
-	 * Deletes a value with the specified key from cache
-	 * This is the implementation of the method declared in the parent class.
-	 * @param string $key the key of the value to be deleted
-	 * @return boolean if no error happens during deletion
-	 */
-	protected function deleteValue($key)
-	{
-		return eaccelerator_rm($key);
-	}
-
-	/**
-	 * Deletes all values from cache.
-	 * This is the implementation of the method declared in the parent class.
-	 * @return boolean whether the flush operation was successful.
-	 * @since 1.1.5
-	 */
-	protected function flushValues()
-	{
-		// first, remove expired content from cache
-		eaccelerator_gc();
-		// now, remove leftover cache-keys
-		$keys = eaccelerator_list_keys();
-		foreach($keys as $key)
-			$this->deleteValue(substr($key['name'], 1));
-		return true;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

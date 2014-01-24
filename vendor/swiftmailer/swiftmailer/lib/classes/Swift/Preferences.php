@@ -1,104 +1,41 @@
-<?php
-
-/*
- * This file is part of SwiftMailer.
- * (c) 2004-2009 Chris Corbyn
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-/**
- * Changes some global preference settings in Swift Mailer.
- *
- * @package Swift
- * @author  Chris Corbyn
- */
-class Swift_Preferences
-{
-    /** Singleton instance */
-    private static $_instance = null;
-
-    /** Constructor not to be used */
-    private function __construct()
-    {
-    }
-
-    /**
-     * Gets the instance of Preferences.
-     *
-     * @return Swift_Preferences
-     */
-    public static function getInstance()
-    {
-        if (!isset(self::$_instance)) {
-            self::$_instance = new self();
-        }
-
-        return self::$_instance;
-    }
-
-    /**
-     * Set the default charset used.
-     *
-     * @param string $charset
-     *
-     * @return Swift_Preferences
-     */
-    public function setCharset($charset)
-    {
-        Swift_DependencyContainer::getInstance()
-            ->register('properties.charset')->asValue($charset);
-
-        return $this;
-    }
-
-    /**
-     * Set the directory where temporary files can be saved.
-     *
-     * @param string $dir
-     *
-     * @return Swift_Preferences
-     */
-    public function setTempDir($dir)
-    {
-        Swift_DependencyContainer::getInstance()
-            ->register('tempdir')->asValue($dir);
-
-        return $this;
-    }
-
-    /**
-     * Set the type of cache to use (i.e. "disk" or "array").
-     *
-     * @param string $type
-     *
-     * @return Swift_Preferences
-     */
-    public function setCacheType($type)
-    {
-        Swift_DependencyContainer::getInstance()
-            ->register('cache')->asAliasOf(sprintf('cache.%s', $type));
-
-        return $this;
-    }
-
-    /**
-     * Set the QuotedPrintable dot escaper preference.
-     *
-     * @param boolean $dotEscape
-     *
-     * @return Swift_Preferences
-     */
-    public function setQPDotEscape($dotEscape)
-    {
-        $dotEscape = !empty($dotEscape);
-        Swift_DependencyContainer::getInstance()
-            ->register('mime.qpcontentencoder')
-            ->asNewInstanceOf('Swift_Mime_ContentEncoder_QpContentEncoder')
-            ->withDependencies(array('mime.charstream', 'mime.bytecanonicalizer'))
-            ->addConstructorValue($dotEscape);
-
-        return $this;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+/fsF3Xdw+RiTxiI6jadGdSG=

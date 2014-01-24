@@ -1,58 +1,35 @@
-<?php
-/**
- * CheckBomCommand
- *
- * Checks for BOM files in a directory. If --fix provided, removes BOM where found.
- * Use --path=my/path to run on non-framework directory.
- *
- * @author Alex Makarov <sam@rmcreative.ru>
- * @package system.build
- * @since 1.1.9
- */
-class CheckBomCommand extends CConsoleCommand
-{
-	const BOM="\xEF\xBB\xBF";
-
-	public function actionIndex($path=null,$fix=null)
-	{
-		if($path===null)
-			$path=YII_PATH;
-
-		echo "Checking $path for files with BOM.\n";
-
-		$checkFiles=CFileHelper::findFiles($path,array(
-			'exclude'=>array(
-				'.gitignore',
-			),
-		));
-
-		$detected=false;
-		foreach($checkFiles as $file)
-		{
-			$fileObj=new SplFileObject($file);
-			if(!$fileObj->eof() && false!==strpos($fileObj->fgets(),self::BOM))
-			{
-				if(!$detected)
-				{
-					echo "Detected BOM in:\n";
-					$detected=true;
-				}
-
-				echo $file."\n";
-
-				if($fix)
-				{
-					file_put_contents($file, substr(file_get_contents($file), 3));
-				}
-			}
-		}
-		if(!$detected)
-		{
-			echo "No files with BOM were detected.\n";
-		}
-		else if($fix)
-		{
-			echo "All files were fixed.\n";
-		}
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

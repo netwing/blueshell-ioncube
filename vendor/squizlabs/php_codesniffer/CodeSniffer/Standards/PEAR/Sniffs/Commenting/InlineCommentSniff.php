@@ -1,70 +1,32 @@
-<?php
-/**
- * PHP_CodeSniffer_Sniffs_PEAR_Commenting_InlineCommentSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * PHP_CodeSniffer_Sniffs_PEAR_Commenting_InlineCommentSniff.
- *
- * Checks that no perl-style comments are used.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class PEAR_Sniffs_Commenting_InlineCommentSniff implements PHP_CodeSniffer_Sniff
-{
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        return array(T_COMMENT);
-
-    }//end register()
-
-
-    /**
-     * Processes this test, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token
-     *                                        in the stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-
-        if ($tokens[$stackPtr]['content']{0} === '#') {
-            $error  = 'Perl-style comments are not allowed. Use "// Comment."';
-            $error .= ' or "/* comment */" instead.';
-            $phpcsFile->addError($error, $stackPtr, 'WrongStyle');
-        }
-
-    }//end process()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

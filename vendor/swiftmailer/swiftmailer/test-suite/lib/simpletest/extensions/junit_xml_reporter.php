@@ -1,118 +1,84 @@
-<?php
-/**
- *	@package	SimpleTest
- *	@subpackage	Extensions
- *	@version	$Id: junit_xml_reporter.php 1802 2008-09-08 10:43:58Z maetl_ $
- *  @author Patrice Neff - mailinglists@patrice.ch (original code)
- */
-
-require_once dirname(__FILE__).'/../reporter.php';
-
-/**
- * Reporter which outputs test results in a format compatible
- * with JUnit / Maven XML output. Can be used for integrating
- * test suite with continuous integration servers such as
- * Atlassian Bamboo.
- */
-class JUnitXMLReporter extends SimpleReporter {
-    function JUnitXMLReporter() {
-        $this->SimpleReporter();
-
-        $this->doc = new DOMDocument();
-        $this->doc->loadXML('<testsuite/>');
-        $this->root = $this->doc->documentElement;
-    }
-
-    function paintHeader($test_name) {
-        $this->testsStart = microtime(true);
-        
-        $this->root->setAttribute('name', $test_name);
-        $this->root->setAttribute('timestamp', date('c'));
-        $this->root->setAttribute('hostname', 'localhost');
-        
-        echo "<?xml version=\"1.0\"?>\n";
-        echo "<!-- starting test suite $test_name\n";
-    }
-
-    /**
-     *    Paints the end of the test with a summary of
-     *    the passes and failures.
-     *    @param string $test_name        Name class of test.
-     *    @access public
-     */
-    function paintFooter($test_name) {
-        echo "-->\n";
-        
-        $duration = microtime(true) - $this->testsStart;
-
-        $this->root->setAttribute('tests', $this->getPassCount() + $this->getFailCount() + $this->getExceptionCount());
-        $this->root->setAttribute('failures', $this->getFailCount());
-        $this->root->setAttribute('errors', $this->getExceptionCount());
-        $this->root->setAttribute('time', $duration);
-        
-        $this->doc->formatOutput = true;
-        $xml = $this->doc->saveXML();
-        // Cut out XML declaration
-        echo preg_replace('/<\?[^>]*\?>/', "", $xml);
-        echo "\n";
-    }
-    
-    function paintCaseStart($case) {
-        echo "- case start $case\n";
-        $this->currentCaseName = $case;
-    }
-
-    function paintCaseEnd($case) {
-        // No output here
-    }
-    
-    function paintMethodStart($test) {
-        echo "  - test start: $test\n";
-        
-        $this->methodStart = microtime(true);
-        $this->currCase = $this->doc->createElement('testcase');
-    }
-    
-    function paintMethodEnd($test) {
-        $duration = microtime(true) - $this->methodStart;
-        
-        $this->currCase->setAttribute('name', $test);
-        $this->currCase->setAttribute('classname', $this->currentCaseName);
-        $this->currCase->setAttribute('time', $duration);
-        $this->root->appendChild($this->currCase);
-    }
-    
-    function paintFail($message) {
-        parent::paintFail($message);
-
-        error_log("Failure: " . $message);
-        $this->terminateAbnormally($message);
-    }
-    
-    function paintException($exception) {
-        parent::paintException($exception);
-        
-        error_log("Exception: " . $exception);
-        $this->terminateAbnormally($exception);
-    }
-    
-    function terminateAbnormally($message) {
-        if (!$this->currCase) {
-            error_log("!! currCase was not set.");
-            return;
-        }
-
-        $ch = $this->doc->createElement('failure');
-        $breadcrumb = $this->getTestList();
-        $ch->setAttribute('message', $breadcrumb[count($breadcrumb)-1]);
-        $ch->setAttribute('type', $breadcrumb[count($breadcrumb)-1]);
-        
-        $message = implode(' -> ', $breadcrumb) . "\n\n\n" . $message;
-        $content = $this->doc->createTextNode($message);
-        $ch->appendChild($content);
-        
-        $this->currCase->appendChild($ch);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
-
+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
+gW==

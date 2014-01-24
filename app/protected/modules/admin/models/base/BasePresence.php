@@ -1,137 +1,66 @@
-<?php
-
-/**
- * This is the model class for table "{{presenze}}".
- *
- * The followings are the available columns in table '{{presenze}}':
- * @property string $presenza_id
- * @property integer $presenza_posto_barca
- * @property integer $presenza_cliente
- * @property integer $presenza_barca
- * @property string $presenza_arrivo
- * @property string $presenza_partenza
- */
-class BasePresence extends CActiveRecord
-{
-	/**
-	 * @return string the associated database table name
-	 */
-	public function tableName()
-	{
-		return '{{presenze}}';
-	}
-
-	/**
-	 * @return array validation rules for model attributes.
-	 */
-	public function rules()
-	{
-		// NOTE: you should only define rules for those attributes that
-		// will receive user inputs.
-		return array(
-			array('presenza_posto_barca, presenza_cliente, presenza_barca', 'numerical', 'integerOnly'=>true),
-			array('presenza_arrivo, presenza_partenza', 'safe'),
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
-			array('presenza_id, presenza_posto_barca, presenza_cliente, presenza_barca, presenza_arrivo, presenza_partenza', 'safe', 'on'=>'search'),
-		);
-	}
-
-	/**
-	 * @return array relational rules.
-	 */
-	public function relations()
-	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
-		return array(
-		);
-	}
-
-	/**
-	 * @return array customized attribute labels (name=>label)
-	 */
-	public function attributeLabels()
-	{
-		return array(
-			'presenza_id' => Yii::t('app', 'Presenza'),
-			'presenza_posto_barca' => Yii::t('app', 'Presenza Posto Barca'),
-			'presenza_cliente' => Yii::t('app', 'Presenza Cliente'),
-			'presenza_barca' => Yii::t('app', 'Presenza Barca'),
-			'presenza_arrivo' => Yii::t('app', 'Presenza Arrivo'),
-			'presenza_partenza' => Yii::t('app', 'Presenza Partenza'),
-		);
-	}
-
-	/**
-	 * Retrieves a list of models based on the current search/filter conditions.
-	 *
-	 * Typical usecase:
-	 * - Initialize the model fields with values from filter form.
-	 * - Execute this method to get CActiveDataProvider instance which will filter
-	 * models according to data in model fields.
-	 * - Pass data provider to CGridView, CListView or any similar widget.
-	 *
-	 * @return CActiveDataProvider the data provider that can return the models
-	 * based on the search/filter conditions.
-	 */
-	public function search()
-	{
-		// @todo Please modify the following code to remove attributes that should not be searched.
-
-		$criteria=new CDbCriteria;
-
-		$criteria->compare('presenza_id',$this->presenza_id,true);
-		$criteria->compare('presenza_posto_barca',$this->presenza_posto_barca);
-		$criteria->compare('presenza_cliente',$this->presenza_cliente);
-		$criteria->compare('presenza_barca',$this->presenza_barca);
-		$criteria->compare('presenza_arrivo',$this->presenza_arrivo,true);
-		$criteria->compare('presenza_partenza',$this->presenza_partenza,true);
-
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
-	}
-
-	/**
-	 * Returns the static model of the specified AR class.
-	 * Please note that you should have this exact method in all your CActiveRecord descendants!
-	 * @param string $className active record class name.
-	 * @return Presence the static model class
-	 */
-	public static function model($className=__CLASS__)
-	{
-		return parent::model($className);
-	}
-
-	/**
-	 * Behavior for timestamp
-	 */
-	public function behaviors(){
-		return array(
-			'CTimestampBehavior' => array(
-				'class' => 'zii.behaviors.CTimestampBehavior',
-				// 'createAttribute' => 'create_time',
-				// 'updateAttribute' => 'update_time',
-			)
-		);
-	}
-
-	/**
-	 * Either attributes required (one or another)
-	 * Use like this: 
-	 * array('attributes1', 'either', 'other' => 'attributes2')
-	 */ 
-	public function either($attribute_name, $params)
-	{
-	    $field1 = $this->getAttributeLabel($attribute_name);
-	    $field2 = $this->getAttributeLabel($params['other']);
-	    if (empty($this->$attribute_name) && empty($this->$params['other'])) {
-	        $this->addError(
-	        	$attribute_name, 
-	        	Yii::t('app', "Either {field1} or {field2} is required.", array('{field1}' => $field1, '{field2}' => $field2)));
-	        return false;
-	    }
-	    return true;
-	}	 
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

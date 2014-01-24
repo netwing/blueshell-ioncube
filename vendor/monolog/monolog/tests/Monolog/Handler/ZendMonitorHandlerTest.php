@@ -1,69 +1,44 @@
-<?php
-/*
- * This file is part of the Monolog package.
- *
- * (c) Jordi Boggiano <j.boggiano@seld.be>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Monolog\Handler;
-
-use Monolog\TestCase;
-
-class ZendMonitorHandlerTest extends TestCase
-{
-    protected $zendMonitorHandler;
-
-    public function setUp()
-    {
-        if (!function_exists('zend_monitor_custom_event')) {
-            $this->markTestSkipped('ZendServer is not installed');
-        }
-    }
-
-    /**
-     * @covers  Monolog\Handler\ZendMonitorHandler::write
-     */
-    public function testWrite()
-    {
-        $record = $this->getRecord();
-        $formatterResult = array(
-            'message' => $record['message']
-        );
-
-        $zendMonitor = $this->getMockBuilder('Monolog\Handler\ZendMonitorHandler')
-            ->setMethods(array('writeZendMonitorCustomEvent', 'getDefaultFormatter'))
-            ->getMock();
-
-        $formatterMock = $this->getMockBuilder('Monolog\Formatter\NormalizerFormatter')
-            ->disableOriginalConstructor()
-            ->getMock();
-
-        $formatterMock->expects($this->once())
-            ->method('format')
-            ->will($this->returnValue($formatterResult));
-
-        $zendMonitor->expects($this->once())
-            ->method('getDefaultFormatter')
-            ->will($this->returnValue($formatterMock));
-
-        $levelMap = $zendMonitor->getLevelMap();
-
-        $zendMonitor->expects($this->once())
-            ->method('writeZendMonitorCustomEvent')
-            ->with($levelMap[$record['level']], $record['message'], $formatterResult);
-
-        $zendMonitor->handle($record);
-    }
-
-    /**
-     * @covers Monolog\Handler\ZendMonitorHandler::getDefaultFormatter
-     */
-    public function testGetDefaultFormatterReturnsNormalizerFormatter()
-    {
-        $zendMonitor = new ZendMonitorHandler();
-        $this->assertInstanceOf('Monolog\Formatter\NormalizerFormatter', $zendMonitor->getDefaultFormatter());
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+txfQP0et7m4FCfz7TpF3kMBuZCm=

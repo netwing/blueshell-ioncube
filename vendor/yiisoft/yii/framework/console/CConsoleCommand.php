@@ -1,599 +1,285 @@
-<?php
-/**
- * CConsoleCommand class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CConsoleCommand represents an executable console command.
- *
- * It works like {@link CController} by parsing command line options and dispatching
- * the request to a specific action with appropriate option values.
- *
- * Users call a console command via the following command format:
- * <pre>
- * yiic CommandName ActionName --Option1=Value1 --Option2=Value2 ...
- * </pre>
- *
- * Child classes mainly needs to implement various action methods whose name must be
- * prefixed with "action". The parameters to an action method are considered as options
- * for that specific action. The action specified as {@link defaultAction} will be invoked
- * when a user does not specify the action name in his command.
- *
- * Options are bound to action parameters via parameter names. For example, the following
- * action method will allow us to run a command with <code>yiic sitemap --type=News</code>:
- * <pre>
- * class SitemapCommand extends CConsoleCommand {
- *     public function actionIndex($type) {
- *         ....
- *     }
- * }
- * </pre>
- *
- * Since version 1.1.11 the return value of action methods will be used as application exit code if it is an integer value.
- *
- * @property string $name The command name.
- * @property CConsoleCommandRunner $commandRunner The command runner instance.
- * @property string $help The command description. Defaults to 'Usage: php entry-script.php command-name'.
- * @property array $optionHelp The command option help information. Each array element describes
- * the help information for a single action.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.console
- * @since 1.0
- */
-abstract class CConsoleCommand extends CComponent
-{
-	/**
-	 * @var string the name of the default action. Defaults to 'index'.
-	 * @since 1.1.5
-	 */
-	public $defaultAction='index';
-
-	private $_name;
-	private $_runner;
-
-	/**
-	 * Constructor.
-	 * @param string $name name of the command
-	 * @param CConsoleCommandRunner $runner the command runner
-	 */
-	public function __construct($name,$runner)
-	{
-		$this->_name=$name;
-		$this->_runner=$runner;
-		$this->attachBehaviors($this->behaviors());
-	}
-
-	/**
-	 * Initializes the command object.
-	 * This method is invoked after a command object is created and initialized with configurations.
-	 * You may override this method to further customize the command before it executes.
-	 * @since 1.1.6
-	 */
-	public function init()
-	{
-	}
-
-	/**
-	 * Returns a list of behaviors that this command should behave as.
-	 * The return value should be an array of behavior configurations indexed by
-	 * behavior names. Each behavior configuration can be either a string specifying
-	 * the behavior class or an array of the following structure:
-	 * <pre>
-	 * 'behaviorName'=>array(
-	 *     'class'=>'path.to.BehaviorClass',
-	 *     'property1'=>'value1',
-	 *     'property2'=>'value2',
-	 * )
-	 * </pre>
-	 *
-	 * Note, the behavior classes must implement {@link IBehavior} or extend from
-	 * {@link CBehavior}. Behaviors declared in this method will be attached
-	 * to the controller when it is instantiated.
-	 *
-	 * For more details about behaviors, see {@link CComponent}.
-	 * @return array the behavior configurations (behavior name=>behavior configuration)
-	 * @since 1.1.11
-	 */
-	public function behaviors()
-	{
-		return array();
-	}
-
-	/**
-	 * Executes the command.
-	 * The default implementation will parse the input parameters and
-	 * dispatch the command request to an appropriate action with the corresponding
-	 * option values
-	 * @param array $args command line parameters for this command.
-	 * @return integer application exit code, which is returned by the invoked action. 0 if the action did not return anything.
-	 * (return value is available since version 1.1.11)
-	 */
-	public function run($args)
-	{
-		list($action, $options, $args)=$this->resolveRequest($args);
-		$methodName='action'.$action;
-		if(!preg_match('/^\w+$/',$action) || !method_exists($this,$methodName))
-			$this->usageError("Unknown action: ".$action);
-
-		$method=new ReflectionMethod($this,$methodName);
-		$params=array();
-		// named and unnamed options
-		foreach($method->getParameters() as $i=>$param)
-		{
-			$name=$param->getName();
-			if(isset($options[$name]))
-			{
-				if($param->isArray())
-					$params[]=is_array($options[$name]) ? $options[$name] : array($options[$name]);
-				elseif(!is_array($options[$name]))
-					$params[]=$options[$name];
-				else
-					$this->usageError("Option --$name requires a scalar. Array is given.");
-			}
-			elseif($name==='args')
-				$params[]=$args;
-			elseif($param->isDefaultValueAvailable())
-				$params[]=$param->getDefaultValue();
-			else
-				$this->usageError("Missing required option --$name.");
-			unset($options[$name]);
-		}
-
-		// try global options
-		if(!empty($options))
-		{
-			$class=new ReflectionClass(get_class($this));
-			foreach($options as $name=>$value)
-			{
-				if($class->hasProperty($name))
-				{
-					$property=$class->getProperty($name);
-					if($property->isPublic() && !$property->isStatic())
-					{
-						$this->$name=$value;
-						unset($options[$name]);
-					}
-				}
-			}
-		}
-
-		if(!empty($options))
-			$this->usageError("Unknown options: ".implode(', ',array_keys($options)));
-
-		$exitCode=0;
-		if($this->beforeAction($action,$params))
-		{
-			$exitCode=$method->invokeArgs($this,$params);
-			$exitCode=$this->afterAction($action,$params,is_int($exitCode)?$exitCode:0);
-		}
-		return $exitCode;
-	}
-
-	/**
-	 * This method is invoked right before an action is to be executed.
-	 * You may override this method to do last-minute preparation for the action.
-	 * @param string $action the action name
-	 * @param array $params the parameters to be passed to the action method.
-	 * @return boolean whether the action should be executed.
-	 */
-	protected function beforeAction($action,$params)
-	{
-		if($this->hasEventHandler('onBeforeAction'))
-		{
-			$event = new CConsoleCommandEvent($this,$params,$action);
-			$this->onBeforeAction($event);
-			return !$event->stopCommand;
-		}
-		else
-		{
-			return true;
-		}
-	}
-
-	/**
-	 * This method is invoked right after an action finishes execution.
-	 * You may override this method to do some postprocessing for the action.
-	 * @param string $action the action name
-	 * @param array $params the parameters to be passed to the action method.
-	 * @param integer $exitCode the application exit code returned by the action method.
-	 * @return integer application exit code (return value is available since version 1.1.11)
-	 */
-	protected function afterAction($action,$params,$exitCode=0)
-	{
-		$event=new CConsoleCommandEvent($this,$params,$action,$exitCode);
-		if($this->hasEventHandler('onAfterAction'))
-			$this->onAfterAction($event);
-		return $event->exitCode;
-	}
-
-	/**
-	 * Parses the command line arguments and determines which action to perform.
-	 * @param array $args command line arguments
-	 * @return array the action name, named options (name=>value), and unnamed options
-	 * @since 1.1.5
-	 */
-	protected function resolveRequest($args)
-	{
-		$options=array();	// named parameters
-		$params=array();	// unnamed parameters
-		foreach($args as $arg)
-		{
-			if(preg_match('/^--(\w+)(=(.*))?$/',$arg,$matches))  // an option
-			{
-				$name=$matches[1];
-				$value=isset($matches[3]) ? $matches[3] : true;
-				if(isset($options[$name]))
-				{
-					if(!is_array($options[$name]))
-						$options[$name]=array($options[$name]);
-					$options[$name][]=$value;
-				}
-				else
-					$options[$name]=$value;
-			}
-			elseif(isset($action))
-				$params[]=$arg;
-			else
-				$action=$arg;
-		}
-		if(!isset($action))
-			$action=$this->defaultAction;
-
-		return array($action,$options,$params);
-	}
-
-	/**
-	 * @return string the command name.
-	 */
-	public function getName()
-	{
-		return $this->_name;
-	}
-
-	/**
-	 * @return CConsoleCommandRunner the command runner instance
-	 */
-	public function getCommandRunner()
-	{
-		return $this->_runner;
-	}
-
-	/**
-	 * Provides the command description.
-	 * This method may be overridden to return the actual command description.
-	 * @return string the command description. Defaults to 'Usage: php entry-script.php command-name'.
-	 */
-	public function getHelp()
-	{
-		$help='Usage: '.$this->getCommandRunner()->getScriptName().' '.$this->getName();
-		$options=$this->getOptionHelp();
-		if(empty($options))
-			return $help."\n";
-		if(count($options)===1)
-			return $help.' '.$options[0]."\n";
-		$help.=" <action>\nActions:\n";
-		foreach($options as $option)
-			$help.='    '.$option."\n";
-		return $help;
-	}
-
-	/**
-	 * Provides the command option help information.
-	 * The default implementation will return all available actions together with their
-	 * corresponding option information.
-	 * @return array the command option help information. Each array element describes
-	 * the help information for a single action.
-	 * @since 1.1.5
-	 */
-	public function getOptionHelp()
-	{
-		$options=array();
-		$class=new ReflectionClass(get_class($this));
-        foreach($class->getMethods(ReflectionMethod::IS_PUBLIC) as $method)
-        {
-        	$name=$method->getName();
-        	if(!strncasecmp($name,'action',6) && strlen($name)>6)
-        	{
-        		$name=substr($name,6);
-        		$name[0]=strtolower($name[0]);
-        		$help=$name;
-
-				foreach($method->getParameters() as $param)
-				{
-					$optional=$param->isDefaultValueAvailable();
-					$defaultValue=$optional ? $param->getDefaultValue() : null;
-					if(is_array($defaultValue)) {
-						$defaultValue = str_replace(array("\r\n", "\n", "\r"), "", print_r($defaultValue, true));
-					}
-					$name=$param->getName();
-
-					if($name==='args')
-						continue;
-
-					if($optional)
-						$help.=" [--$name=$defaultValue]";
-					else
-						$help.=" --$name=value";
-				}
-				$options[]=$help;
-        	}
-        }
-        return $options;
-	}
-
-	/**
-	 * Displays a usage error.
-	 * This method will then terminate the execution of the current application.
-	 * @param string $message the error message
-	 */
-	public function usageError($message)
-	{
-		echo "Error: $message\n\n".$this->getHelp()."\n";
-		exit(1);
-	}
-
-	/**
-	 * Copies a list of files from one place to another.
-	 * @param array $fileList the list of files to be copied (name=>spec).
-	 * The array keys are names displayed during the copy process, and array values are specifications
-	 * for files to be copied. Each array value must be an array of the following structure:
-	 * <ul>
-	 * <li>source: required, the full path of the file/directory to be copied from</li>
-	 * <li>target: required, the full path of the file/directory to be copied to</li>
-	 * <li>callback: optional, the callback to be invoked when copying a file. The callback function
-	 *   should be declared as follows:
-	 *   <pre>
-	 *   function foo($source,$params)
-	 *   </pre>
-	 *   where $source parameter is the source file path, and the content returned
-	 *   by the function will be saved into the target file.</li>
-	 * <li>params: optional, the parameters to be passed to the callback</li>
-	 * </ul>
-	 * @see buildFileList
-	 */
-	public function copyFiles($fileList)
-	{
-		$overwriteAll=false;
-		foreach($fileList as $name=>$file)
-		{
-			$source=strtr($file['source'],'/\\',DIRECTORY_SEPARATOR);
-			$target=strtr($file['target'],'/\\',DIRECTORY_SEPARATOR);
-			$callback=isset($file['callback']) ? $file['callback'] : null;
-			$params=isset($file['params']) ? $file['params'] : null;
-
-			if(is_dir($source))
-			{
-				$this->ensureDirectory($target);
-				continue;
-			}
-
-			if($callback!==null)
-				$content=call_user_func($callback,$source,$params);
-			else
-				$content=file_get_contents($source);
-			if(is_file($target))
-			{
-				if($content===file_get_contents($target))
-				{
-					echo "  unchanged $name\n";
-					continue;
-				}
-				if($overwriteAll)
-					echo "  overwrite $name\n";
-				else
-				{
-					echo "      exist $name\n";
-					echo "            ...overwrite? [Yes|No|All|Quit] ";
-					$answer=trim(fgets(STDIN));
-					if(!strncasecmp($answer,'q',1))
-						return;
-					elseif(!strncasecmp($answer,'y',1))
-						echo "  overwrite $name\n";
-					elseif(!strncasecmp($answer,'a',1))
-					{
-						echo "  overwrite $name\n";
-						$overwriteAll=true;
-					}
-					else
-					{
-						echo "       skip $name\n";
-						continue;
-					}
-				}
-			}
-			else
-			{
-				$this->ensureDirectory(dirname($target));
-				echo "   generate $name\n";
-			}
-			file_put_contents($target,$content);
-		}
-	}
-
-	/**
-	 * Builds the file list of a directory.
-	 * This method traverses through the specified directory and builds
-	 * a list of files and subdirectories that the directory contains.
-	 * The result of this function can be passed to {@link copyFiles}.
-	 * @param string $sourceDir the source directory
-	 * @param string $targetDir the target directory
-	 * @param string $baseDir base directory
-	 * @param array $ignoreFiles list of the names of files that should
-	 * be ignored in list building process. Argument available since 1.1.11.
-	 * @param array $renameMap hash array of file names that should be
-	 * renamed. Example value: array('1.old.txt'=>'2.new.txt').
-	 * Argument available since 1.1.11.
-	 * @return array the file list (see {@link copyFiles})
-	 */
-	public function buildFileList($sourceDir, $targetDir, $baseDir='', $ignoreFiles=array(), $renameMap=array())
-	{
-		$list=array();
-		$handle=opendir($sourceDir);
-		while(($file=readdir($handle))!==false)
-		{
-			if(in_array($file,array('.','..','.svn','.gitignore')) || in_array($file,$ignoreFiles))
-				continue;
-			$sourcePath=$sourceDir.DIRECTORY_SEPARATOR.$file;
-			$targetPath=$targetDir.DIRECTORY_SEPARATOR.strtr($file,$renameMap);
-			$name=$baseDir===''?$file : $baseDir.'/'.$file;
-			$list[$name]=array('source'=>$sourcePath, 'target'=>$targetPath);
-			if(is_dir($sourcePath))
-				$list=array_merge($list,$this->buildFileList($sourcePath,$targetPath,$name,$ignoreFiles,$renameMap));
-		}
-		closedir($handle);
-		return $list;
-	}
-
-	/**
-	 * Creates all parent directories if they do not exist.
-	 * @param string $directory the directory to be checked
-	 */
-	public function ensureDirectory($directory)
-	{
-		if(!is_dir($directory))
-		{
-			$this->ensureDirectory(dirname($directory));
-			echo "      mkdir ".strtr($directory,'\\','/')."\n";
-			mkdir($directory);
-		}
-	}
-
-	/**
-	 * Renders a view file.
-	 * @param string $_viewFile_ view file path
-	 * @param array $_data_ optional data to be extracted as local view variables
-	 * @param boolean $_return_ whether to return the rendering result instead of displaying it
-	 * @return mixed the rendering result if required. Null otherwise.
-	 */
-	public function renderFile($_viewFile_,$_data_=null,$_return_=false)
-	{
-		if(is_array($_data_))
-			extract($_data_,EXTR_PREFIX_SAME,'data');
-		else
-			$data=$_data_;
-		if($_return_)
-		{
-			ob_start();
-			ob_implicit_flush(false);
-			require($_viewFile_);
-			return ob_get_clean();
-		}
-		else
-			require($_viewFile_);
-	}
-
-	/**
-	 * Converts a word to its plural form.
-	 * @param string $name the word to be pluralized
-	 * @return string the pluralized word
-	 */
-	public function pluralize($name)
-	{
-		$rules=array(
-			'/(m)ove$/i' => '\1oves',
-			'/(f)oot$/i' => '\1eet',
-			'/(c)hild$/i' => '\1hildren',
-			'/(h)uman$/i' => '\1umans',
-			'/(m)an$/i' => '\1en',
-			'/(s)taff$/i' => '\1taff',
-			'/(t)ooth$/i' => '\1eeth',
-			'/(p)erson$/i' => '\1eople',
-			'/([m|l])ouse$/i' => '\1ice',
-			'/(x|ch|ss|sh|us|as|is|os)$/i' => '\1es',
-			'/([^aeiouy]|qu)y$/i' => '\1ies',
-			'/(?:([^f])fe|([lr])f)$/i' => '\1\2ves',
-			'/(shea|lea|loa|thie)f$/i' => '\1ves',
-			'/([ti])um$/i' => '\1a',
-			'/(tomat|potat|ech|her|vet)o$/i' => '\1oes',
-			'/(bu)s$/i' => '\1ses',
-			'/(ax|test)is$/i' => '\1es',
-			'/s$/' => 's',
-		);
-		foreach($rules as $rule=>$replacement)
-		{
-			if(preg_match($rule,$name))
-				return preg_replace($rule,$replacement,$name);
-		}
-		return $name.'s';
-	}
-
-	/**
-	 * Reads input via the readline PHP extension if that's available, or fgets() if readline is not installed.
-	 *
-	 * @param string $message to echo out before waiting for user input
-	 * @param string $default the default string to be returned when user does not write anything.
-	 * Defaults to null, means that default string is disabled. This parameter is available since version 1.1.11.
-	 * @return mixed line read as a string, or false if input has been closed
-	 *
-	 * @since 1.1.9
-	 */
-	public function prompt($message,$default=null)
-	{
-		if($default!==null)
-			$message.=" [$default] ";
-		else
-			$message.=' ';
-
-		if(extension_loaded('readline'))
-		{
-			$input=readline($message);
-			if($input!==false)
-				readline_add_history($input);
-		}
-		else
-		{
-			echo $message;
-			$input=fgets(STDIN);
-		}
-
-		if($input===false)
-			return false;
-		else{
-			$input=trim($input);
-			return ($input==='' && $default!==null) ? $default : $input;
-		}
-	}
-
-	/**
-	 * Asks user to confirm by typing y or n.
-	 *
-	 * @param string $message to echo out before waiting for user input
-	 * @param boolean $default this value is returned if no selection is made. This parameter has been available since version 1.1.11.
-	 * @return boolean whether user confirmed
-	 *
-	 * @since 1.1.9
-	 */
-	public function confirm($message,$default=false)
-	{
-		echo $message.' (yes|no) [' . ($default ? 'yes' : 'no') . ']:';
-
-		$input = trim(fgets(STDIN));
-		return empty($input) ? $default : !strncasecmp($input,'y',1);
-	}
-
-	/**
-	 * This event is raised before an action is to be executed.
-	 * @param CConsoleCommandEvent $event the event parameter
-	 * @since 1.1.11
-	 */
-	public function onBeforeAction($event)
-	{
-		$this->raiseEvent('onBeforeAction',$event);
-	}
-
-	/**
-	 * This event is raised after an action finishes execution.
-	 * @param CConsoleCommandEvent $event the event parameter
-	 * @since 1.1.11
-	 */
-	public function onAfterAction($event)
-	{
-		$this->raiseEvent('onAfterAction',$event);
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPpGgjiUdoGhegjKZvFws0A4/rAbEgwAlZyICcVn1B1umWtQBdXDYV6H57pb1ci6rgiS3ZgBC
+B1yxbUC60cFGmGMXml9Rzr77FOiBDc4ibKpjY5PhqPyGqawTnxdFzMvy0KXxlTzNZa7uAJlpY6J9
+BI8EgNfVGBrIOPaQ2nXiJVhV1iSMVOYjjqo85Pan34JMRYF+rJVdRD9A//UYPf/akm6toCVCQTBD
+3BBKLIOM/9uoSbUDWfyIYxQlKIZXE/TmggoQRmH0t6bqq6Fk4/ZMrrqrQFvss7ilmL//NHQp4KDv
+so5MxALpZOtot89As7Mx6eHxEDBnnXi2D8MEEGpPLB/KHyNq8OB2kNE6GnPy1+1y3/zCenpN7ce6
+/6QYDtQ9eBBgHNnxsZTadtCc9bWlR7pOTJgUiQTuvDHDxxGc8yXUAj2CLCx+fGDGXktSUyDQ6i6y
+9XOneoS9OS/kHOzeN6gzUs+yx1bYNMfpz+lghRlYCs4ofhOsmGiUNQjv50xaG9mkt6XQxiv7LtnX
+nqXpZxBu0V16h6b9AiTv7E04kDbLqLQTqKN2/w9Xlmt1434TJdwdq1X1hHN2fGflv+61lqfSLxRo
+EZZR24GF0goC7MODItkBg2OuZjTt01dZXQFvZfSlYExEnTTcpcrYPYWi+dOKjQQXWAPB32mq87Fb
+1tEn+bkMHejcJr3HVblnLAJr/hAdkcek8zb2nt/olL3AmxTeI9Eq/YWNXO9T5pr0VPI1LdVCS1OQ
+yRVebs4RStDQhJ0inPluh+v1W4lHAKtGxaDb72aXnDBOoez505Tjr0kS4OvvhRwZ7K/KZSFU8pQd
+tfmwy5FSY8mdA30WT49nzS4znXm8AbKUI8bMxAxwhsN8PFei0PP8lvETXOBl9vtILTII00Iigmuw
+vyY+7uW97uctQLg0MdWlPjqA0PSi1cAmapZZUB3INkg+r8kpynP64aFwzs7wyQXCMHMmjO+6KBx0
+ZJDL11fzqCsFB57QOGpAzhE7+mJ4UIqM/2RsWQcXdRQzmrOZPBNvLeNqrDd0lrX2rLJDKXzRQ113
+L3elMndn7Dz5ScHoPgFi4uafaH2kU7+qrsXheAXAi8bA4rai48VtN++wJ6hjaKCEczB5Ulz6io6w
+f7o2Zx8qGm1hUfFGiGXAMscKouuipGEFSJ0MxrZAVbbfvc4pZfxuL0G6qd0m/U7ol3cDb6jcuVpd
+zLs4WPHNcUQxuWnrqNE6cFEg+nrouKyLJ6/CqDYUSDISctfQVzLMRjKUZbETY7CRhHZFV6g7WraQ
+LBOWgF+LjL+tdxJL7DvhOgPParHA4ah6Px1LKtq5fvlFmhyPAkoRkYR/xKQ6ZjPsfC22TQQgKf23
+OeE5r4ApxEVHK8w5E9emJvEGdi+ZO3ALJmASTZ94okIhq5qqRVs20m9FtvNrqalNFbuvCQ/sVmVh
++y7v21D+E1zT8zSTP2GLLDfbI1vrLzNywDo+TsVFE4dlg5TDUGrXHSzdrF9r4DH3DOIg4VEXyouG
+YPwdmNF4fsh8RIXCY30B9SyWe4RsG2tGXAPD/uZsnA7VaWNMboV3pBOdVbim1Rghv9iLX+QRgtn2
+QMSQZQX+3tqTFJ+egw8ENRtYlhLobqPZGolUGQ1P1PWAlS+UrudECNb2AnGzU2tU9+RYEFc2Ff40
+sTSwqexJ/QjsgM+bVVz/NQNW1zfMukI7PN3mPF8HOvwgPg8qCtS5805Y33i8ALLpgunY/o+qqROa
+GeMANXeEng4ZXCLk8N80aCT7E3yINJBnZzZjYhx2xEuGJRbnP83DuI62X2AeJqCswo6fvlaTJ/B/
+xoNHqAmmQuIviG7mo9LUZWAH1xwBq82ecKY+w/JsFujqgaWangMpg0Tx+xEtPKYlF/fclGFY0bor
+CGYBb2ZIojuxAvtkkRvE5TFGYjMYS0o3tyuu4zgs83WMhI9p9fn1tvhYq9I9VJXUD0mvoMgYSdRd
+tpKJW9BiBxBGQUltt8Cacm7TbbAlyGAXSfx/BTglPJMchfs3RhLqCi1r8syA2XDsXERz7z4QEH/2
+IuBQSw0LDMBOtXkcukqLhP1sT7/CbPfGsn9unru0Cn0Ij9s2LW5CV6PHMnVigOmLfCQkxKuSeKDk
+VF1aYAa830DaRLoW2aub/FhY4X5IfAIULDRYZ6KNVvzwzKeorPIbCdFmu0TDDupXO3eG4Gl5deeY
+5wMXhQnHkA7yIMDn5eHfGWPU1T7ephPpnIWFVfY6jAfuCBgWSoj5Y9dNpOo/Z71l+zBlgt+GXFMj
+On1aINe1Hvjs9StGNt7B+64FSZe1S5BGwFneaGVYmrQXh04LwCT+elNEzRxdone6tQwJzTyKLaQa
+VMq65cad3gqPHY2pdN//NXN/WWXNku0UcUtjNoS1EYjjzs90HyTQ3qo5759hmj/xMFLFNeNpLSLm
+zqE8T5dPTyKBobRZCWI/c65nzAp5DPot3QXY+aNtHO9DuIWgp2RXVM+B/tpXIaITayV0hSDUYE+C
+Bkry8csFnEha8XsA0xb8d5+wUb941Ea8jCnSKEHnLuClaRAkkjl1+tcj0ULqmrcvoBPGcYQD6yeA
+Lf0EtBgTvjL8YQDdY4RgYlGQS9tiEqii1DOZ0YReBgNupbhZs2bPj6fpxMPNYjZr47ixAS7aLkm7
+YY0ixNETFhBXqC27eXS5k6clSYu/EtFYx9rilq66rJzbWF7PInN/uEkKitUa7S9LwhazBau9sp39
+JYHdlhS9V1V4Xuni4KGfRjABeJAz7yJGEcYsOqE9/8PixOJZm/J6NFzd5aTVNT+okDcK2kc5SkIj
+gzTZR/HN+zeU9AxkOJ3CeWKvOH3Z83TmIipwXOTsg2hm9gRmLkLKQW6PYlcBW88JgSWj70xFhMkc
+6wFfrRcx5GB9GYgXl/u85lVnv0+WsYKIdbhJs0XRgFpoQF3AkIrvMeU84CIdBC3av6ErXUo1tBQc
+CMg+ZglwssYNYmneAvrE5Jl2rF0/U6bkHL/aD8i70JuY+iFLVLJ06V0zxsSnWy3BG0HBVxSX7yNW
+ihEmRNh6aw6OCHMWz5XXuNrOdGS14aJ1dJl/fe05rdCS+xfC4Ira0BQVrL7aw+s1ZN0nQC/vCRpu
+zuG+Uv8gPoBF5A+3g71MqaK/wF3Z4sFEERJc4AXeB1cnbzMqZxBUZCO8Pojq0hZ3s5Maw/Fu+RFD
+bfLgLCM4pqtSbgL2bl6W8uRwzaQ9xw3K6pZ1rQcoBVGZEEnWNBc55IHMGGIs6WuSYUn5nagK7rKI
+ncBrzO2H2+kgZ5x6CvXnyOy8ygKEXHg3qAV3mllkdoOURpL+pCE7TvF4fQlIEuG7Q3qabeCa1Uvv
+m/n5U3R8yB+A+A+tdrYj2SLmcLbZEQX3N5L7y2j2PG4ZbRk7dy4L6yQPyrc0enChSfH098Ga409g
++P1HQtA2Q+maajOFVlL524XDw04rl6AwJLZz7XGD2/0wSInOn1mssgCooWaJjGGAyvBd53XtyiIa
+2OZziei94Q1ne6gl2+8ZxmfiQkLd/scHsdBG/UveCPtEoR9MoTKxBExEIhGwAYXbBluNltmhO9hX
+ZUr2ofYBy7I94B+ebYG6n+3LnUlrTUvyedDd8AExzrnNO1phxQF7udE3tp5mHPBANxLx9IgBePWJ
+Ea+bd1vC60ApFrQohsQz+zzXAHUGYiUiPEmwimDR5koFK/L5EYuiHu8cDWgoEPOz1/kTpCf1cELx
+oLdlRSGvHOQoWVNkex1niRDyMgiPx4cQMJ9yZcO4nDbG/nBcbmFsRzq9c7o5U5RbTs5oeEHkmzaY
+snmJPhvKIlU//xan70ADoWBrWznoG1dYBHLnlOgerFIRAHEo74TSQ4PvT+ensfE0bHbpgfkzHed4
+lWQwNNv/gKGtpx9omtyg0zD1TlAiwhKPJmQ6Q7hVggKcgEUWO/GsMu/UTpvgA59o3eVmlZv6oXZJ
+YmX8VJUR6Ua9x071f0+KncmWTmvdCaniilLNd7rum+ddh8M/6kCDtO/n4b6VBwKNy/emWvCLn0uj
+nzjL/ZO+bwE/ca/HXLqXmhMJgn4NyIQYfEDBvOS+clBdfYTQuAVYUGiq/MKD+1FVWpTgfa7H25XB
+LQgxaL//7Reqgu+mMT1Xg7qgobw+GYI8aBWhCnFGSGVpef08SP3tm6momwlKEaGCSS59HXqEUbvr
+UqYzcSaIaNqtwJ7DkAGC1uUSKsmGiQWbk8zxAJait/SgLRpDNuX8Zy61cpKCp9vb5+w5h6VWMsx9
+V/h0zqZG6Dji0S1FcG5uESxdlwi6lau9NDI2LSO8wK0vRlmV4RgBY4ye2fWD5wA/3tq5dsy1InoR
+z9aKk7JP7wNAmJzMLSt37n2QnMDgwyG0V6/bAxvZuSNORTx4lf6p7pOkQIjedg+2vTic5EMU4VOs
+mis/namfamV6e/GXrFvTl+4eDvQDC33NsqMY0ypnkmVxLXRprMhZpt5XP47lz/Ufi2qfUONxtyrj
+bejnw6Xv6J9q9v7uDNz/JuucyIagfyJBpzFXe5xwLvf8SVW9oojnkqKjz/g2T4sQ4BnOOrzMMw0b
+Kto1VSbvQTTmHXU43kTZQJ81Ku2lBnDiuTxxMLgYIwuspDtkT5ju0xMTHsLQJKustNFHPVO4cvoa
+a8/YtJzHjfsN1CTEKVTGUjmrBRkxV7dFWvAozVdmD9TdbRDT06w+vjBvXxcFj0LyjLdg/aKaIF/i
+H2qn6pb1uBwk7udcxwGTygyvmoEakQHlvWAk8KGMBI5G77YbrAZ2SZ/qY0nlcDbfu6JCdmlEtZgb
+4Gnwitc1xdSVMqvyW2oNarKzdTVCFpiH1/qGTbl7L59hkx9H2tcCenV/7DcqXeAUeju4+zMC65us
+02N+EmLdZ/vNJN6QdiUtVbx33dqgzxzbjz4ei6UP3yMcSDS6QbWHltumIJIVpK4pQ/qYaWVWPOAf
+RD7Km9Qa4RBtBhz8zeerkx/3amEVBbxt65cdzSQhpoKOoWBreVI57nt6WQexRuWQcePyTW1ovlQ0
+KvrwfhSThfbbXIKDX8KmVLJdS0mQYK/yyAYtKXB4dQ49TToAExZ0JDz5pfsOr3xvwDtsd/91hvX2
+76HDTb87OI3bMxJMDFTjTW34sm1MVD4aHLGly+CZ8tddAFQVVNx9eLGntq1HGYk6d9YGqQeYILeb
+liMtSSdzeL4cC0OB39dlQQAt1YwNvF/gvPrOSLy5EFRn/b/GUSitQWapzS5/Z8DXjVShMugjqfzw
+/jpzm6eZFb3nlrN+W8ymhKK1tPljVldXCpPsiHMaXfOGlHBImHvJdvmPwVfyl2fssTTFSBdzfwDA
+I/+2JezRxM8ThHXH/fq4OVwQ13jU8wE2kRHGhpVmp4glf8WG57vdLk6jEnsmObujVVFy7SMk5ZBU
+aA0Rpi30TJ2kRWlDqfu7kzwj4Gp7jnNLsoEXQ7RTwO+mcYQ2mRRSWO0DJb+ouibD0qaQxPX0Mr+/
+xntBILG12LlqjJfodz/lht8WUHJkKQnbMK1BEek5WKaWpuvGimSoQ9dx8Uf7ixy6HsA6mCpV8MiB
+greK8zlMZ4/ppOjwvj22alIwiqLfmpvX7KEGM5llyPooMaaj08edMEgovh9u6+8cAz2n/lXoTKdc
+SBro2OXDDg9+xal9Hr+jYk1GsgV3rJ6M6UIsrp3cQJA7BZ/zsh4GAp7VyY0Kp4jDNpGjpjn2xqo6
+xbsgTmIi5nA3jK+qR4sDZG3venKenOBXcojmuYShxgKYSYGN3yyMfg4GIJx6EqrQLXULPLMos8+O
++0wSFPHBBar2cuF4moztskVAG+0w2hYTz+DpdoZiQ76Rjmu1PUg11cuPg31jBUpTC+1c/rbUQJ4l
+TOS9ZZ99Oz0GA7UyCb5PxgRMTPrKIwbSClYrDSP97xxqTQOQ5l/OSa3v8tA+4DdZOUP/DBLJMTq/
+jOLFezhPN/a2KAN8cfVnKtridiYr98/FuxVlG9/bCDx0FdfJz7tbMc673GWGwEswXCe3MeTUxZgt
+QkhcYdLKItlUoWyc0Z16swEDQUPJUnf2jaUqaC7Ti1R4NPxbpmi3kdc975jtaScQzPvwX6LUfXM3
+Pf8kCYddpQskSYWEC5kDEcofsFbr5ZysAwTfLtTsmMh/npvPbOWw+Bs32RP0wgtEv0wcm27WpZ7O
+NReJjL+HpP6V3rtV5+jO9vLwbhIETJ7/GQwOtJWG7qPQYEvijDV5r09FS/xfZmf9S+MXv+NH+vJO
+TkhzdiKV5PBeOQBDyeyPckW+zyfAv0zQAY4AVjEWz4vmiOG/JCY47rSFwE0B8CMg6xjyAITylTgp
+k6v4m4PYLvCMIgx8gUv8Ih/KlFQgB5CfD3xlY0jxjCEL3+rIYk+fmQkwcN96NLtPxc5JgXx2uqu7
+JxNSOaThSJ+aVGO/cr6/I+MSwO6PEIMVPJaRuANYo0QILkgrf8jNYSYMQ65Ftj42Q6gnuo06RLLg
+qOKc7PUhb4FAHuEqOLsajZhMZYrLxeQ1LTXE1Z5GdGTCVTSvB5Ygy+/u0Gemywh5MoL+Bo6+3rJz
+Ch+kgM8fHtkPj4ts239ReWus7BdPU+/+RfLBGowFUNN1kVwHXcVcL7v0iBmNV+iLDsPdXb8lVFM9
+ZbAx8R8ony4RbLsiyh26adwpNaTeasp7BrJvfNda60Dp8L/fIjjCpnjLRBRnaZR9J3bwgcdtxdBm
+/vLpm1PMroiGuH5Y+MR+BsRUkHDDUY5SsoACtqBCqLPD8CRjDkIDXheBUu5gxAwyi8lz87tKGBsl
+HgMoj6YnGo7J6EjyYxn2HvmtVX5cXq2s/Uwtr3KaliymQ6AxcspPiOZtOOJrGQyRdlnNsHwRE9Lh
+2nksclzjI6fJD//quhbbetnbnZ+5MRAdHFZeTZ1FAaegJfP/u0nQ1PhYJ/URVbVLfXkT1+YQWwZB
+0BXt4TPLIYAM6K8dq2cJA8ziADGvjHg5wN9yI0cinORWNNvgsaBAvgRlluhdc6WTjroxj93l9w6s
+SL08fT9/Sw7x3/5dShqcjgg8n1P4scsXlFjDJpYS4QmN+hbGgXM+yTPYXCvr3GJGFs+DlpTLfc8q
+6DHT8VNZNVU8NXylLh6ocSAcwTipG2kPbTut6oeUFzFWjk6uEq47Ih2Ua/p3uFHD9aqBwvJBoTqB
+RMQ8y/F/LDe0yC39SrUt4IKP3JEQeMIpEEmF6mk7h5CqkLaFkaW5QODBGhCvvuVurWNhJvZo+Qgx
+3MT48L7/ihvPyfNH9n2X4we8yXLR7rHL7JrueVRfPbGXmwsSjJ/HZWVV5PLZ2gTYJiWSVdxMyRIQ
+5lMlYGoabEAQr/X/pIobDp48XgtG++I9REa3ykaUGR3+pl7U79a3IKKv0GoXoOBky4Rm4MUL68s5
+iJwj1egGM2m4y54kxmGLsX4xNqZaTrpfET9jAtdwqM8LXitPp9CrKQ2epw8jCPvz8KOHb88LNG6Y
+ibU1juZJpb545Ijv82Vz0vaKeb7n6fcSqj2NkNw0Dyy03hsV2rRnOqtUgLDPp3VgNEuBP26qwXxF
+V+jl5cGIZ/aMlA48w1fu56naCHdC0G4ZlQe4JJlrK1av5NNVS1R/ln2wsq/9SmxB0WekpW43isHh
++6XCGEC1gC6CcYki0WI3m8vdt2Z7NJyqopejGkpSVDuMPVftJ4laTSu9tPVb8GiRhFd1pw4i0X3x
+UL/H0cruddqBpacid90pAiDqXlb34i/o4685OPJw4eM6RthYG8cL6Ns9dpe7TTkoG3DNpRFTHc09
+QyP1syGNCOjcTNY4nVGnGDo065b+FpNw63ZxmcfUZXDxGpRVBs/bEziXZHSiGM7krIc+gZiEaVjP
+oqT6qyHOloLan09BbxgDrUuico046v0T5GzT2yRmDGp8kJQCPc5TSuRRzpen91vaxJztvNH/Jzdi
+aTyf/bnly6OHAK1jVAQvNo+/NAW1pEF3hSIY/gR/JNL2KWsrKRWaAeFruJH3LCZqmU+xaJzofc9N
+xhTNS11MjI3+ao2/m3wrHf5f7SN54TspuWhaGrRP3LV24ECSO+ScE1B4SWkrZFhKdmKbdGssPANi
+mPwdMOY/Hy2LSJWBW93rXuRBmh8h+NJtX1GrpvnsPlmP3B6XaFavSc7F+SMI2eE4XXgzWQPCiGTV
+upBVyvfX7D2xwGKjXxVfGtUtlpSZOIWhmOc0dl37M39sWhsggmhY+JBLgZrHGIPI7KYIgKCQ7Yb5
++uyJ5PpK+icK5A845RYpVoJhaz/ELxg3HNiJv/udbcGA8DsOWlM1gNhRBfxRjb2SrB5HDWphshMt
+emHwN+HHu+RW3re8AMarQCk9a1UCmtSUnAPSKGIZsJvVLkVGBeeKGCEVWXvo6Q6+h7juHfQ3ZHEt
+7VjXNfbZZ4OUH5It1z3d6tb4GdbtOm0v25x6FeFm8Msn/sZ9Y5TOtLyTfczfViOe3CRWzVk74Ioy
+6E+ggzKOfX57HbKqeLh1gZFMCdripPvBohdJHk9ktZPzaFXUOYI70UuX55E8Q3lubnRz3kFcyePs
++btzNqZPPeKpv+NbFxwe6gd9+Bpy5Cw5rq74cBZBt91jCzqRfGuM9JMCcHYg2jY7stzUFsCdmp6v
+QvVE5BAVX4GCPEtkBmch13QEMS255jBOFWd1xvFBJqtYb+zqMDtlNzmDMq4DuKWczPi7m8qF+0AV
+NrQSXwAdfAiNZ1ubv7123ohIBi/jg3zWCNdOUFrcAn0KK1LeC1lLM+DJxmz24hzyYtwl+Odc+xHo
+TvGFpvj+dySK7zEGCQsisZPzAMNjBpVuq7waztn0VDJ3u4lrNj0kNcFLaYSfhlULWSk/pbSVfOxx
+NPJh/rh48CF41SQwjzfuuCJF0BzLl04AxdmxJEKMpkRUUl4K68H9FNXEYuoqa7k1DgB0Sss3braA
+opQiw76MMnCiYnHpDNZUN5npYeEU1m/kSTHMz78P5Nt9D7YF09TSsw4oyE6pbMahy9nVpgTX+vNn
++diY22ontIA/HxrIr5zXUtYzLG9Xu+SA62qhnIpkpVLeVYRcxQGDLiG9OYKkv+W2Lq6iRzSnB2h6
+T7krAuP7O74ME0UfWtCWtF2k1XkBQmAxkbFLt7YxGBW3lT2kV3lqNgCzJ9vRzajNyep6W5w5dQZM
+StSUtL//aOk4GpllS7ON09ZZ02OLXu8fByYJMIX9mBUhwT86GWuKt9/PcwMUXoMQoptoBHMP712H
+8pxh2VGI1lvNMm4NLQx65RFmBrpLmQM2we7mNfF/R7bfOKE2RfdsWgKaW+5jek5JfZvaSutAem6h
+gm3eW07E0wsU0czoQa+A3Gtwz0EUWSbs0yVBOrx//rr4fCQO5gwd5asw5EpvWW83BTCYD7MV2HaE
+zNWhl0g+Zn1iRLY/GjVjhFT8ysPCmP6HmltMvSiR9kS7k3+1L+68L13hVYPCKXUqvEBixssggaXX
+dVK/Jq3t/IWnhhpG5cF7Qb3JANBStgor7DtZB7ngrX0sRWmMUk75hZFEB+NUzV86n+TXHI6EWGBk
+oc90qp88Ob6itoDU+uqZTSsrckZBQAsuHTtp3qWJFcSaAEN7vX07x/+EjnGEipsYQEYRSMHswNOB
+fqxiKshsf8FWhn7Tn9Abh9pEUsdRpdDkjqiASMmi3loMt11Ep5ttKInOFutyxHvev4I1XxNkfDp8
+D/yM975N7RJoJQv9lcA/TvtEHUiQFrIn/bGPQCeFXzLP0k0AI+duPpli0WTAVOZrvRWSAuE4uodr
+0efJcG5sUo/J6y6CTRBQkE6tQZNg89eh+/B3ULhbEitCSPXjqzwCQdMzLlgMK0BZMlAPm5mxQJwN
+z+3EJwLKIwqAGfnJ5JwaM3xhKxyVWikRlc7xp3Mblh3uPqoScp2z4Wz5Sb1AulhLmyM20t5HHQjp
+Vy8QWOoowqMoRSuod9TLtKRm3r+EMAnDxYT++jYlTpdnKjZ8IhmFVmrd5o/e3rQ8iiq5XtvgSgYH
+sr2trGm+Dt94erBGKTFHfK2kL8b3hmfrjoGl3Ljxg1sq5dP8TvRO7aqkYm3EvJxM+QZjtK7Ob6lM
+KmAP9i5QUAhgL6BvjyVG18NAjSJeNtWaY+492IiBp6simpLS6OD8Cjt0cmTqAPac3Of56lm+2ffr
+fvblWTXW4V27+SZglJhg8nGZXL+Z3pzlBxuNviJEkbBsjokLEwxk0ccapTIIxASAcsOCxYjEfyGw
+364znvigrZ5KBNH+4mmwtVh5BRsASp2ER4KVuflg25RECFmmtTW5CVZf/PBRohPYoigx1rIrnfSg
+QEaaj6al8RpSK87RN+/GvpWhtg1Oab/p5yOaT+LRec+mzGVtIoXFErrvsz6/qVavd8mGgh+Nj917
+4++xv7VVHwz5s2JOXQoD0yftzOUOQbNuZjqJku3+aRpp4UnNGRfBbzmTrbht0tiNfw0GaXUSYyFP
+lng3xvXvsK7rBx+MN6Rd40lIH71FVctS4fh3cCiEvGdECXCoelhJSe9cNq71wnZ4E6LXjireOiRt
+D7V2QwaYH20LydTkzRBi0pNl5ucQcNwR/xGpgRmWwaXCls/q/wtwVyieo1smgpAbpk5egz37MNsY
+XuknGD76AI9GumjdGag9rw51e/4HH+KAzvPvh36jfizx3jIscJ6VdhC0M9Y2Ugc8LnjKYWKDSa2C
+MPVC9H+vq9S0p1n4xuhvY5YS1/EruuOwKdODlF1krY/QDE3M54k8JS6sqV/owzoEnABjrUjMquJ2
+MAsWgcl/wN+KtFxwUUt17g6cu+lSFwoFVsb9i7mbQSN6t8hWITwMYyWPWYZXi5WTvj0l2oq/cnYK
+C40ePl5T+IAnW32keIqD3Zx8tu08hKP/IUc6dwtqO7DquAijtWd/1IrojO3L6OhU2Mjb0Chy0Y9v
+SFJPJ5MO1shaVenyfeLwP3glcnsIMW+3STR7rPNgjepNt3qHs/CTvUGhMcshUNT0dfZXm7TALujm
+eAZeJ/zX377G9ndJ9kXicCDT5bfIa5tBFiy3OM3jWFZQ5nQZNjNEmXF3zpb3CcOERMvX0w2fZi6H
+b/7mJjIimga6q/Qhw2OD35N0s/NI9fvlSRjKqetthb7dT91PcoUpOMgnCvauQA30n7e0sxwdOG+w
+7oZRUAJIC/AL98eC/T6qci/m0FLZgkoNMZ0Szq6TLzE/7T6vbfDUdq33lKniPePS9I1VqhwKSckB
+Q9aqUpV6vui9HO/yIEoSNubrXYAVs93kMZBQIDIQucFNt40cCWiHqtfiB09kogRqKCoWHqYK82Sn
+df/zLq6GwNiCqE5mCSKBJ/9HeHuEcQrRLk7dME4iAd6Kzd471Obzaadbrmdwm/+cGtAc3uxI8POW
+Cw/Yif1Gxudxzcgjhm76g3sg7EXMcGvX0HGE/Gru1YnGkdckyDF5xZCT7imNqA7K5qCJf9iq2l+D
+sCq5Mgw/6AmSs09umcpFAsonKOum4NZB3t+qmQ2t2rMzaIR8G3KYcGTdSV1DeJxh50DCSjth9koE
+mAxzBvPMSt3bI+elRXTtvgSfZWRNbO99t3JCnBbXSlRFhjj0fiZzEPG3hRHr/KhmawXp4snxrrIE
+Uvxo3W9Rk9ZsvT6x8vB29aAWb1AfAt+xDPsMqO8JjKHxCtD1O6YBIXf0FGaAG1vSWhpRRs2RnGc9
+lM5o+T1V5Qj2wSr/jwLyyD26QIgOi/OkTh+bXbyCBtI1ypUksrtoUyONhUt6ifQB+vx+iR/TFsNo
+vAHRBN42bXx/lzma2x1N28sumb0400iMvfnt/yyGsHggJ6v4mTdkQaJc29yCRatb9TfQaxazuGAB
+4KyY9ntaHsLJdMnVZ82tvMG+VIMDd2+XoPlwATRMOI0bpLufcKyHwPSzjEuBt4iZ/Oo6/PMWrGOk
+ZmrSeS3u3iNGosrsxRpOInblzZ2ILTvz9qg9RR2sfe2lp7MYjudchspaaTaJUfRU8242MNNphU7G
+TKaqg8+IOCNMsle2Jsi4o+rJ0hamTMUKD+oi4kS8I5PTo9qiw6yjMfgJYeBskfk2Pd8ZcZ6ONCnU
+9I7guubYfsuB6eT+kS5T6mM1vq4Z6W25UDOlm0Xiy91u7jqStLAhzMIa3mbNaoVGhfxWu7WOIrI2
+FP+6ysgaGwZ2hJRkrFN/AIPxnneMedMYp1rxTg+cGBAGFsGF3rFbDDym4wsPcouRf1MBV4Ep8QJl
+1Z7r7SUOJ1C+04iPhbP1y4LJU7AVsShwoojoasoSsKLh5FpJqZc3GEnR7Hxl4mzTTLFaTWFjBCUS
+J+y855xFCXIqqZQv74wF/fHe67ot5RrPJOCwneZjeEorsxCGy9d6cqYvnaQUxAkMkfjaZUiflWa9
+Kl/aNxCtWJvYxiNBMM9thSt9jn6RtXCLzdgF04ce/kcsEHREl4eetL8lYR+IrA8CJrIjZTbZOmpQ
+ZBjOqerYmLaHI544rpTHV+tTzANIqrqoUeQblDRrP9vRS/oGDdx5KLtOteb+ri0N3el3UtnplDAd
+XJV2/nzoUm0eOG6XPONDhXKHeOJYjMbJBqmjb2xJs3AVzd521ulNmeX2CD/k9FTyHyp80PMhqksK
+q9xEOjcrmMrDv4zhrLo1N5XP1mIn6k6seKKvv5ZySBPdPLZM5c1KWxzzvs6uKBfIsczbvi5XHcPa
+8xeZaKMh/Yi0iRWT0fybJ3ll/OJ/LbLfBE5ZLGkQfNaoC931oCGgpaZy3QGECRNtXcrfw1ULCuc0
+FQwg/PSPzEZLbMJgtlGgeAjCKrZ5xzpPMFfkhDpiwseZslrj5AVQNE0MPIC8+E3fCeYUbknu2hLG
+iHxPzEaN0Tqj//Q4V5832dkVDdF8sqRdiiF/pBexl3wotM5Lik07StiFpn/GZ/N5B/1jnVRNEcsb
+aVYzveQPaGOvG8KgNlrpIxyJYazffdz3zYzaSTbDvp+hQh2sxfGKtMxW6qOXZpBt2EwMb448iMzB
+mtwIul+pu35T5+xcL0oWKMed/mUFBzRB0v0nxNUc+QBgOp3Bot0zL32wdR/15/dZ90NHg1I5Khhj
+VmiUfs/wQ9nZ4RItS7naz2CtVfJGXgk3mjTYWnlVdRLUb76KmJIo3M93XyRNyMBDEDhBJ27zJq5F
+DUjEact+CKKt/u9Q2ETWWhO1qxSsCChSruS7sEe/gkd1dZUYzbsJHlGR/gdbMcgV/qhE0NoCfTCL
+MeomQ/CuExXfKQm628nEX/5YrfDflMFIAUnKDXotR/6+yr2B51yalTPDCVT/3EE9rnFwOpMM26yV
+TPzrYEM6e1i+B26DzBjjPukmXcaIQDl9DOVbYL6E1hkPThoHSYSJt4GNhgfqWrX1wO43HFb+6dAk
+N+vspef/E9tbb7bL+bKldU14Qv7jBRpDQWmmhzN4aZRK9XZiUciEH2TDNZ46BOr3Cvz05zDWhgQz
+Z6RO2iSB3ZJQj37t2O+j0Nrl9k1qWX2yXUPo6VNGs5JZp1vPoNxZf8nt07ktIQENDbDMCab275Lc
+8lj45gdhVN8NmvBQGFzn4p2fV04k26W3mUOrCoA2moScAXLKnM/ECmbPlfoirtT5C8GnJ8spFdWU
+qk6nahNV3aaf9XAq9FYTzvSvhCyoFu/BOXLOH5DonZSIrhSmI5Z4j2U/AQsde9c1W5gTMYES/PPp
+g3KwaL/QGmesSn12pJCtgt/Frv7HJmjFNUtsdlWHofRgAzUtBlxJay2qFNk4D7oAMtzyiPMYfO5t
+pC8SUkqWNtS7KkFSTkP+WAFNDSl1nNM0uqFJcuV1p57W/f4Tu7WmMWKGMUYgidRlaZC4HyxXysl/
+p/xPJtK9OBbcIpEBO/iLEyBpAMpf5OocYK4WCKlzMMeDEYhZo0cxVLvSaIuNTbiMLf13x0pI0Ru2
+mZwvZvxyN/53jDdq98nXQnaU1rQB7RlBK246lgz3CVh9YQN8FtMtC/IP5qyTwiawexNk/Yk5NWbA
+3mMoWZD/rKcpYl6bih+h0yjSFwcPL28dbLhNHbnr2fPdNp1rZi+MrUms3u1IepLmaXsN5jeQFdA6
+6y7oY+LiuwLeWIpTUQlyICwSt5mP8FfZ/XZUw7dO7FopXRgm/Ub44f3jbRswlPoPFquObKqa0qjS
+F+4uRQH8D09E31dT4hgrYUvE3UMdyQ4fKHyclNLrDeYUJT89GKanma6qcC67g3hWe51P4VL1oTAA
+5zylTwgybJM05DR9K5cVJK04TvJSqWsqtOcV+J/TaHaTEBLdH9sXMi6DoNNYGFHIe4AGgi9Y2EGt
+WZFmcmTqKxlcuVNZdM81WxmxpbdZcNLzwwIFZJdelaWjbAIrjRhVGxf4+Sn82LM7Kr3uDErAV2e5
+OEIZSzEHuXsdbbr8SPZfYgxYfeZ3MTtYp+ggyy5fag0fALF1TjIlXhIrvALc2kQd4G9yijMUC7aW
+NFDh9DjHD7+eN2c9hj+dNlrh39RwXbdO/1C6oXb9bzYMZKqnIlXhotBlvtoEcyeTEmqq7+BCFd0h
+7cyjkfBOrZaG3DwHnBNs90u7NWl1znUfCLAPtf1DLrH2B9bnH5gedj/039xVm9qzjKSn+rkG5l+X
+YeaRc/jX1TUwA3V638ifASuHvUax34Jtt1dqqA/vBb/Bjt5+Q15mNOrEdG9jugsI3Ch1Iq1q+TmS
+z5KFZfBfw7UiQqC5pLdHE6tQ7HXpHT7/iYZP8yvmsN2sGWqOm5j7ujFatVP6mvvs9u+zydIG7aqw
+3jaVtpSHTnlR/x9S8X3fWt4hGbEi1ZDbzmyB7S86xRQwmT/9a0zKc+16BvnJSHS0AlBcr0vIwIiL
+ISu1S/03x87lRvelRBMELHgfeA/L+yQWvo0xvJ2tHDMwjpAUnIOgjgNCMGsBUHwIQTv6M6+ICDt3
+q1yTNxtCScgcQ7A3VFrO1yCaPoYdkI79kgfv4cFYqIbZTVf1Qaux+S2OO5I2rfdZ2E0LEfODsvv2
+XABtnfjkndzpH4zmhuXcqC8iLlSn2bKeMUcZOTVSWJ0gcA9yMVJ50gQI8RIY6EF+IBaboBeJYDFK
+4S8daiXlGIgqOHJKEAO2I5Lb7A5pgJANPpqKNYi7tv4YhCkhRM8kPXzf7GTZIfVHZ/IgGXJKnWRQ
+Q7cf+nsmGIjvNVXO9LhhgyFtve+n8ShIRrlfpIkGc5L6lrWkdlxg8Hfh3It548T8woXjZqDK8MO0
+Nt2QSILjUHHba5KlLoV7p2jGeVRsFJAx6g3gSOI5ihrFTOG6eHLemOYZmY3XtuZjNGimq14FjkxQ
+9iXkGmx/Y6FwFz3rAtB/sq7aoi/wIFyJRetAGNTpvYcZ38UjcxUO6hLSYgEpud8UpXIc+U5zdwKc
+orYPY5vOhm33TAEb+xAzxzkqlR279/gOhI+N4OgTlrArcDMwZJElybu26/WwxullCPAQl9xVh1Dk
+EA6gaxGhikvlTMKLnax6HzZ+1faGAa5W0ohTbd+n2N48fntAWsk/UpKBOlgnH/VaJxeFUph0henk
+K3XOKCKuON4TCvRjVTReKBwlHjvV5Q+6QrQHGjmizW0xFW0hNq1W6nH9Hy4OJg/BEcmve4YNPkWI
+2uHPb8Yc3xPauZuPtHg7qVkGqF/NX7Lt3NUt58aP4ygSNfV8pLiZVCvbsklUjzF1EAa2LQsAIpxP
+VCYPu1e6V0FEmHkQ2YHybfoTBTbQL67O+s4iXgCiOTTJ/mKqs4+l1UjJ5wNK1ipYhPtDHkaDEd01
+QAnp9b4RIsQ32DOilRFhJ8CcGfpC40MWBmDvS40LTqjau1WGRP7baQ8Q5yNqVTejOAFuBUZwDiRG
+KrGAeSxHgc6EJDS0lzTKdbSSDT3acl+WCAwDKYgt0Swf6TfsdYuvTpFHHHBHIDPlnXe5zAnVzAWM
+v3YHPv2LdolLCR/SunBVdEfqCNBoaDpz/daCv6hsYZ6R4apkzXOLU4ABqkjFdNGDBwItqJdLVc/7
+ABeLxOTjmleYHdzC/v07E/LTRL9Oy5fWiP5Zc9swvXHdpeEbzF4+Cpi8KLyjpT/I4qctNOyx7BUR
+5yb/hsP4VRgoGkLQYqVe+K7R0E0EcSBKAprqrXG56rjxBtxlDDr7139/zwb5zhbxPnpjkseWnn+S
+x/6jeN2+qBhIS2HkK+boLk89WCESd19zQpiRmUK2FabGXmC6T2tXRGKPlTiRg1yN0ii9uGtRWjkE
+NnFhTq8V6Nt4K6FUqvIvhJI6iSaqMZDSmxEA9QiX9LQM/DOjbTxMyVDkjCrGEAnIXaUFYp6qsg5R
++JuvEpZ0bOVxT/WxkBVFazDm11ip099Otp83xeKqwosd/LALjFdu8HR/OSBIejfEEOkIQF7g8ZKt
+ph63UUQ92VCYGjzEKTWskv7nnhDN9rXyRJNstZ7qpFQEfb2UeC35o/zEIKEjzohBhfe3SOU9Jwvt
+3tR5pH0hh+wnH0Yi4AxX3mrH9A288UdMc5JS/4SlbRTrt0IguyMujcqibF71TvfLwJk5Ee6Fi3zO
++UfL5oAFRX4Soi4EeGCCNxgH91XckUrxG/sSLdZqK5FbSM0vDP94RI7CcmhoSf3Tsiy+EFXQgwcY
+x0gCY/An6wP+dAckC/3qNGK3HEYkjh2Fm+q6TinApuEkO3DSzg7x2eWoeRp8sPg56tFJTN7wmYKa
+nZDPHoD6Dd5VwAoQEpUhzJrNu+HrTqGX9tjxX8gVuFX2bXlIiNizbPcqogEq2gP9MAQQVsepK/6E
+cy4kK2MPI/v6EDTRcyudnsjiIVIYC/GGv2EggBEwonQHSGzMhfZ4xI61xhBx/s40ncu1Nyp/UcgK
+7yBLl86aq1yu0vpHIEG2I+iMzqsODrtc29odLZ0WKOgJqw/09XvYMAl7aPQwGyv6/3VzuztNAtSl
+rKt8brJyB79L/gAa2T3MhxErXObxRV9tgSCnB/IE8H3EwIXz/LSDgZWXBCtrVlpvucbfHIko9O6s
+nxas3vEiWnDPdq5FQLwX975sQSMWrOhu/7fXnXKUki67ot+qJPvslPwNExrq/tXosR9zNO5gP1n/
+ux/bR7YDWd7Jed3CrKdZAatNHEg4L+xrbWSs2iPEdI4gQMqZK3H1cmr+cwZKLWHUKJ83Zh/lhEhU
+EReK/LsMLsZaL05jZ6xKBHRZLEQOBjRoYMPZKZGX8S1ISZz48d0BX9WRVSJrwOCX2CJsHrDY5vlC
+ahjXFhYcgk0N1tpTxOY5jHqh1QQP1+JZDtXWqM746Y9RNOkifImon7q2rlmq7MYNSQa/S/9H2J8f
+k8YSUUZOyhLl+NSbqOnYIiUsJQ/V7hZslcJEZ3efqMJBqjnSIgU5ulxz38KAW1GBvZXxFzO9bHFr
+Kx4QtdVfa/T4FIpCNPU/vM7cKTaIwBrBONGbrEt8T2xQXKx9KAVHYJPwxyNfAM8SZ1vGoDUsVDVp
+qf/Zh2NpZ6IWNAowZzXo5ElBeYgy3pKut//qa1w8zVaFWv3hyyVjrLwlvPQ2RJWWSfCiq1geelQY
+MwX0SO2J2fVz+xHgYbrWrXAbJVF8ZbZa3zizC4cYkAGMVg5yPAGhdg5qKI5c06G3/7bm1D7WPKMd
+HJBDtiQ5GUNDaBPMib5GNzXYDzDL6/GhEsB0qGrmDFP30NT4vrkYz41Idu72dNnSVtpTqaHw0EA+
+c6jShkHpkOqp5aksV3WAYn4Y7Q+1+siOS4/0DLtsU7Kgdz8TVf8+PcN86+nz6YDF1lyqkCBF+4Wm
+kvx5z9fpuwVdyjTjOSqNo6WmWmKn6ytc2EuR7rBeohgjnUiUVbAlkz6ktiX1pseWUqNra3QbZ29p
+D/zqaxQbgvKpD+efVn9o4yMl0m7fC/1lxeDv/8S5bQ9x3tIPUalU6imh+SC46wy75eeHCoymlDZi
+IvD87TO5HjfJ7m9HBCEx1vllQcb1hR3Gd3dnV2zPKcg0Sx2B0PsEk7ZzJhoZGt+4ry+iETByIA4o
+vrzwLAnUbrqWR8GboWcs6q66z73/A14mYaxSxAdQynSUy+BIaae3FtQf5QaACB8WeGOJ393JIXVh
+MNGL9UZ/iM7/u7wgovWaxckxC5Pt6HQ2U5AZrVchkA/xLXSVorqsfHVqj82ia3UNDKgYvZz8CMpj
+Y7uBGwZcs6Qen/hFLu3J5RJyKD+nIxBxDhlmbd/VnEx5+Gj0EvcQXNNzxy5Y1eKsVwWYYokKzFiG
+gjbi/GnV74GS9EQtdkjZu5ZHp+d4R+xmbN1+t5W6jl3nGNVH3G3k3BrFvT1QW6Vr2gccxZJxl41E
+uKtRTZ6vuByR9YOVXcX19dVgPlgGfDptnhkJbc/6dy00hnJbfLoQWA9AYdHeGb7xA48D8Vsyx7R7
+/LbLCsfOIzaX6D+I7GzT9peT8RhhO14HeAlyOtyS1jhFTHgkjqZ7HfJdBR2OJty5Y7Rpg2gHFKbf
+onTPmrV0YssFUkq0oM9AwlZp+CtxoumFQcH4JGHGWep8FhP7BkHMMFQaJgXj+bt3dIJUn+GmoUXf
+li25yi5JN8+LIkNC9NgEu6A8kvthQHUhCPoA7F6b6y11sJ9QuTkRsVwfGCeqhOVWYHLVbMo3RJTH
+Olpvmr5BLsgFIs1uMDWcr0dOB3WslrV/Ey/LWZk8ewU8hX8j7RfNgljAX3iUgaQVbb8vRJrvGJqN
+u+06yQg21qUxm7n/VlnKimUHU4ERQlJLvD/1W8FEfB76zQf17yOXZwtnlG0njpNjVjOeuADpCDtl
+zz+qxea2dMUgAkYAkYyfQ/KiK4/YVkYfIKB/yPQj2/zeEbex3CYKM0GDmruA7j4ajBI7KljlF+d+
+vBvOo4LWI67g45E78YG2CXUk8SsQuM8/x7q1CpItopSkIYrBl7UQWCrzvvurHcsdbjUEPJ5kLBfV
+gSz05sUqjD30/f3XiLJVaIuEn1DzdEXEmoGjHj491Wzh9RTKD6vFmnh3r4nCRhSIg0Q7KtHk+Jg8
+F/+1RBLCLyVDi16lJ3lKp43qt1adpN9p91rpgr22gMAb+Eqq6e4U9+e4i/UeuVQwB8yK+ydCrvLk
+5AGdNi3GBUHHmJlw6stmpiaZcAWukuTBW3Yynrk4+qkBPWINfz8oG2mgxdVyvTfz4E76MaFqELWk
+a2mEHlh4xdBaKXxxRF7smuRhGbSfrcfMq/aENwWYFVxDcn1b/3Q41PbFqqhj8135mY61vMgmskme
+4Gi4E07vPYWEhQ/e3ioxQjAEdIX/lLC/xrNj0yekPwq0p4v300B8t0vdtGNLVTdydrgSoUxsBSPV
+pazewPF6f+yCCMi8Jc7mneIjDR2HanvmuyxQFWWQdimpaBePjqeOG2n7UXD2euvgy9UxX67qEGvg
+TNmDDa8EX4V1rXSk/QTB8R/tKlsuJJZIBrvWHgtsannSKOY8PpX21PlUxzVJTq8LhBnHw6ZE6kty
+dZH/qO+DbsdYBtj8cq6c+9PIVCM4pEPzmwvcriJJaW1BVgxY/3vvb2IS28UDYaKgSGI30IJNJdbx
+KbnYsiQtXhd8acONSFs0IKBq1gIj0tKindDY+xZXAfPh0zrEAU7UHRvY4WlsitDCs7axxBJ/zoGj
+yql7XPuU9Cd8Ars8jtpxvUZFvXfXKn8OsMQI4ci1R7cnpgA+sna9269wFVgpPPwKU3J8G9vsiyhi
+TMN+srrJwURYmCPTgTq/34wWC+/u1cIDSTOR2CIVYATf71i/mL6HxAqXvLYpc0bKKCIqjW3yWRdK
+PXSU43eUn214LNLa8DVtekaXV3957WrqTwKTp8q4AsCVpQdjnQX7lua6fOY3Wh4N05OZ3OP4c7+d
+Q9B1886XLtxqlMsiQdZGHMGDiRlliJdTgyeuLpsCQ/wRavtBcD4Pb8p+omacWMUoki1PzYWQjrN3
+Edq56FEK9iE5SIxc9n0byYx6nvy7Rywfc9SDPj7+zqWN+58Zf1fVcwC041iL+6hTz4mGKpWXui7i
+newLXOnI0IYI47UOsG44+RBfae7FyVaaOf5Enhq6GZyYiptlR/h0XeTBGFFxZEj8LLVwwL+6JUKf
+JQGOJHw19EDXZxnoDkfxHi8G3jz96iyIkSQKwEBLYdTQsoAJmAD0hWkkwIPR5xGBx8elajfsnRU5
+Wq1g5DPrvyHry8lpCPMeMwAjPfmsNgvsdiEFzenFdgDNuEX04dC9GFG4HrHjDwJjhTPDzbTZC57z
+9l2rBx2l1FZNj0cb/fY3MOKDO03MiCVl6KDUToAUKUV8IzUxoeS1qlr+UnrYVs1FYYGMLodf+cG+
+jC9v4HseDMxwDhY1q2lASNxWl/MMRIl8ajDbpQZKxw8XfBllXmGO5PyDC3t78BqjnBWosehqbfId
+zqk43AxTC0UBwwxxnIskfh5/Zq4xqtXKESdopQjBx/YjYE0BaNVju0QeqPLQuBAHNyVmGewrbRm4
+1M3cz1rxyV40Jp5igR+5raw9X4zg38BLQkSuw+cpNxltuaxAnENkQmlE96VJnfGYAwwmqE//NDN2
+JHIrmZuPw0wzA1oB7ut5AGYdSgkvKnQdBaBQOIw83VHwOkisOiKFruSYjFRyS0wrkQrZV3YImSKv
+GVGguaVKrfnGl2gAZJSL4kPLdPNpQKMXFd+RISU4YnxLxlzkIEN9dyoiQ3cvzRjpeU+x+KM2XQ2K
+zCLlJ3R1A9NsOPXC7MQPeLVZSSRfORyNCWxGoZ1MKUxnuYk9a340otGWr8JwU5upEu+Dgdwg1Ua2
+w0BL+wowILzzlvWmKmPsE/ixNuRZa8tm/FJrmpB4kl/SbxCnvqKTKzlkzneP2zNFuwSJqq3SB8WW
+9OBdFxKWKn2eZ0N13TfURuo20X8apd07Np3mgAsMZr3f+C2ZxTURgeuHb9t3tSaWDva2egTM1WOn
+8NAl1JuhyFZ901R2j3yUgY8BB4XWkpVfBktjpA9dicZaIVHhzFem1V3wCdO3HK8B9eYYvMP1+9ov
+3B7+xTeMthtG3+zyd+7jZkoSvkvm393Z8lug+aRsMXT9PVDpPNSbt7dIPjnygc5UWQ8xy/7oW6+U
+yo+1KoECOtIfEIMWSk/f/cMa0TECJkt9QaejMnrYeQ/Vx2adMwacj+w+1kn84YN4MrkGfx7BxH0n
+ulBjVF+YBsbAGY70bs91wgDtYD1apzVX6oNUDYTPmD1X0eBL/K93kwE1ObIsf4YAntIUSlc6to3B
+1B+wb+pSraQuPSOiBf01ctf5UKM0+4YRoy6L2VTTr/bkC3XPp6eNoeBVIyqEeY4tIUTOqaGPcWVa
+QYAKZJ/55PS/ru4qyuVXP5Mtd1HGLNlEZOwh8Qbt0NVYjLgHfqCKVh+AHopRKISBhO5fkWUaG7RF
+QiT3PvK/BXTWDl8AT4jF0toNhxo8n6Puh4L3tvvbMXZHEOGUSuxmaJrFDjiBxdpsigdzIBL3R5am
+FrWsvWswOgJEhNdkqrcjZevzUzntp1biq9h0leDrGiARwE8+n+Z0hDvqTqdzKw7Vj/yWqST05zPc
+4qEvYcWOlyGipDDo1nafzV/UL2EQAL+SwVHve6z1J5u=

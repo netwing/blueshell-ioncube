@@ -1,78 +1,43 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\CssSelector\Parser\Tokenizer;
-
-use Symfony\Component\CssSelector\Parser\Handler;
-use Symfony\Component\CssSelector\Parser\Reader;
-use Symfony\Component\CssSelector\Parser\Token;
-use Symfony\Component\CssSelector\Parser\TokenStream;
-
-/**
- * CSS selector tokenizer.
- *
- * This component is a port of the Python cssselector library,
- * which is copyright Ian Bicking, @see https://github.com/SimonSapin/cssselect.
- *
- * @author Jean-François Simon <jeanfrancois.simon@sensiolabs.com>
- */
-class Tokenizer
-{
-    /**
-     * @var Handler\HandlerInterface[]
-     */
-    private $handlers;
-
-    /**
-     * Constructor.
-     */
-    public function __construct()
-    {
-        $patterns = new TokenizerPatterns();
-        $escaping = new TokenizerEscaping($patterns);
-
-        $this->handlers = array(
-            new Handler\WhitespaceHandler(),
-            new Handler\IdentifierHandler($patterns, $escaping),
-            new Handler\HashHandler($patterns, $escaping),
-            new Handler\StringHandler($patterns, $escaping),
-            new Handler\NumberHandler($patterns),
-            new Handler\CommentHandler(),
-        );
-    }
-
-    /**
-     * Tokenize selector source code.
-     *
-     * @param Reader $reader
-     *
-     * @return TokenStream
-     */
-    public function tokenize(Reader $reader)
-    {
-        $stream = new TokenStream();
-
-        while (!$reader->isEOF()) {
-            foreach ($this->handlers as $handler) {
-                if ($handler->handle($reader, $stream)) {
-                    continue 2;
-                }
-            }
-
-            $stream->push(new Token(Token::TYPE_DELIMITER, $reader->getSubstring(1), $reader->getPosition()));
-            $reader->moveForward(1);
-        }
-
-        return $stream
-            ->push(new Token(Token::TYPE_FILE_END, null, $reader->getPosition()))
-            ->freeze();
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+om==

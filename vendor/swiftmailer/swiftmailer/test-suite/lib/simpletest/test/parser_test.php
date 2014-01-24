@@ -1,551 +1,388 @@
-<?php
-// $Id: parser_test.php 1748 2008-04-14 01:50:41Z lastcraft $
-require_once(dirname(__FILE__) . '/../autorun.php');
-require_once(dirname(__FILE__) . '/../parser.php');
-Mock::generate('SimpleHtmlSaxParser');
-Mock::generate('SimpleSaxListener');
-
-class TestOfParallelRegex extends UnitTestCase {
-    
-    function testNoPatterns() {
-        $regex = new ParallelRegex(false);
-        $this->assertFalse($regex->match("Hello", $match));
-        $this->assertEqual($match, "");
-    }
-    
-    function testNoSubject() {
-        $regex = new ParallelRegex(false);
-        $regex->addPattern(".*");
-        $this->assertTrue($regex->match("", $match));
-        $this->assertEqual($match, "");
-    }
-    
-    function testMatchAll() {
-        $regex = new ParallelRegex(false);
-        $regex->addPattern(".*");
-        $this->assertTrue($regex->match("Hello", $match));
-        $this->assertEqual($match, "Hello");
-    }
-    
-    function testCaseSensitive() {
-        $regex = new ParallelRegex(true);
-        $regex->addPattern("abc");
-        $this->assertTrue($regex->match("abcdef", $match));
-        $this->assertEqual($match, "abc");
-        $this->assertTrue($regex->match("AAABCabcdef", $match));
-        $this->assertEqual($match, "abc");
-    }
-    
-    function testCaseInsensitive() {
-        $regex = new ParallelRegex(false);
-        $regex->addPattern("abc");
-        $this->assertTrue($regex->match("abcdef", $match));
-        $this->assertEqual($match, "abc");
-        $this->assertTrue($regex->match("AAABCabcdef", $match));
-        $this->assertEqual($match, "ABC");
-    }
-    
-    function testMatchMultiple() {
-        $regex = new ParallelRegex(true);
-        $regex->addPattern("abc");
-        $regex->addPattern("ABC");
-        $this->assertTrue($regex->match("abcdef", $match));
-        $this->assertEqual($match, "abc");
-        $this->assertTrue($regex->match("AAABCabcdef", $match));
-        $this->assertEqual($match, "ABC");
-        $this->assertFalse($regex->match("Hello", $match));
-    }
-    
-    function testPatternLabels() {
-        $regex = new ParallelRegex(false);
-        $regex->addPattern("abc", "letter");
-        $regex->addPattern("123", "number");
-        $this->assertIdentical($regex->match("abcdef", $match), "letter");
-        $this->assertEqual($match, "abc");
-        $this->assertIdentical($regex->match("0123456789", $match), "number");
-        $this->assertEqual($match, "123");
-    }
-}
-
-class TestOfStateStack extends UnitTestCase {
-    
-    function testStartState() {
-        $stack = new SimpleStateStack("one");
-        $this->assertEqual($stack->getCurrent(), "one");
-    }
-    
-    function testExhaustion() {
-        $stack = new SimpleStateStack("one");
-        $this->assertFalse($stack->leave());
-    }
-    
-    function testStateMoves() {
-        $stack = new SimpleStateStack("one");
-        $stack->enter("two");
-        $this->assertEqual($stack->getCurrent(), "two");
-        $stack->enter("three");
-        $this->assertEqual($stack->getCurrent(), "three");
-        $this->assertTrue($stack->leave());
-        $this->assertEqual($stack->getCurrent(), "two");
-        $stack->enter("third");
-        $this->assertEqual($stack->getCurrent(), "third");
-        $this->assertTrue($stack->leave());
-        $this->assertTrue($stack->leave());
-        $this->assertEqual($stack->getCurrent(), "one");
-    }
-}
-
-class TestParser {
-    
-    function accept() {
-    }
-    
-    function a() {
-    }
-    
-    function b() {
-    }
-}
-Mock::generate('TestParser');
-
-class TestOfLexer extends UnitTestCase {
-    
-    function testEmptyPage() {
-        $handler = new MockTestParser();
-        $handler->expectNever("accept");
-        $handler->setReturnValue("accept", true);
-        $handler->expectNever("accept");
-        $handler->setReturnValue("accept", true);
-        $lexer = new SimpleLexer($handler);
-        $lexer->addPattern("a+");
-        $this->assertTrue($lexer->parse(""));
-    }
-    
-    function testSinglePattern() {
-        $handler = new MockTestParser();
-        $handler->expectAt(0, "accept", array("aaa", LEXER_MATCHED));
-        $handler->expectAt(1, "accept", array("x", LEXER_UNMATCHED));
-        $handler->expectAt(2, "accept", array("a", LEXER_MATCHED));
-        $handler->expectAt(3, "accept", array("yyy", LEXER_UNMATCHED));
-        $handler->expectAt(4, "accept", array("a", LEXER_MATCHED));
-        $handler->expectAt(5, "accept", array("x", LEXER_UNMATCHED));
-        $handler->expectAt(6, "accept", array("aaa", LEXER_MATCHED));
-        $handler->expectAt(7, "accept", array("z", LEXER_UNMATCHED));
-        $handler->expectCallCount("accept", 8);
-        $handler->setReturnValue("accept", true);
-        $lexer = new SimpleLexer($handler);
-        $lexer->addPattern("a+");
-        $this->assertTrue($lexer->parse("aaaxayyyaxaaaz"));
-    }
-    
-    function testMultiplePattern() {
-        $handler = new MockTestParser();
-        $target = array("a", "b", "a", "bb", "x", "b", "a", "xxxxxx", "a", "x");
-        for ($i = 0; $i < count($target); $i++) {
-            $handler->expectAt($i, "accept", array($target[$i], '*'));
-        }
-        $handler->expectCallCount("accept", count($target));
-        $handler->setReturnValue("accept", true);
-        $lexer = new SimpleLexer($handler);
-        $lexer->addPattern("a+");
-        $lexer->addPattern("b+");
-        $this->assertTrue($lexer->parse("ababbxbaxxxxxxax"));
-    }
-}
-
-class TestOfLexerModes extends UnitTestCase {
-    
-    function testIsolatedPattern() {
-        $handler = new MockTestParser();
-        $handler->expectAt(0, "a", array("a", LEXER_MATCHED));
-        $handler->expectAt(1, "a", array("b", LEXER_UNMATCHED));
-        $handler->expectAt(2, "a", array("aa", LEXER_MATCHED));
-        $handler->expectAt(3, "a", array("bxb", LEXER_UNMATCHED));
-        $handler->expectAt(4, "a", array("aaa", LEXER_MATCHED));
-        $handler->expectAt(5, "a", array("x", LEXER_UNMATCHED));
-        $handler->expectAt(6, "a", array("aaaa", LEXER_MATCHED));
-        $handler->expectAt(7, "a", array("x", LEXER_UNMATCHED));
-        $handler->expectCallCount("a", 8);
-        $handler->setReturnValue("a", true);
-        $lexer = new SimpleLexer($handler, "a");
-        $lexer->addPattern("a+", "a");
-        $lexer->addPattern("b+", "b");
-        $this->assertTrue($lexer->parse("abaabxbaaaxaaaax"));
-    }
-    
-    function testModeChange() {
-        $handler = new MockTestParser();
-        $handler->expectAt(0, "a", array("a", LEXER_MATCHED));
-        $handler->expectAt(1, "a", array("b", LEXER_UNMATCHED));
-        $handler->expectAt(2, "a", array("aa", LEXER_MATCHED));
-        $handler->expectAt(3, "a", array("b", LEXER_UNMATCHED));
-        $handler->expectAt(4, "a", array("aaa", LEXER_MATCHED));
-        $handler->expectAt(0, "b", array(":", LEXER_ENTER));
-        $handler->expectAt(1, "b", array("a", LEXER_UNMATCHED));
-        $handler->expectAt(2, "b", array("b", LEXER_MATCHED));
-        $handler->expectAt(3, "b", array("a", LEXER_UNMATCHED));
-        $handler->expectAt(4, "b", array("bb", LEXER_MATCHED));
-        $handler->expectAt(5, "b", array("a", LEXER_UNMATCHED));
-        $handler->expectAt(6, "b", array("bbb", LEXER_MATCHED));
-        $handler->expectAt(7, "b", array("a", LEXER_UNMATCHED));
-        $handler->expectCallCount("a", 5);
-        $handler->expectCallCount("b", 8);
-        $handler->setReturnValue("a", true);
-        $handler->setReturnValue("b", true);
-        $lexer = new SimpleLexer($handler, "a");
-        $lexer->addPattern("a+", "a");
-        $lexer->addEntryPattern(":", "a", "b");
-        $lexer->addPattern("b+", "b");
-        $this->assertTrue($lexer->parse("abaabaaa:ababbabbba"));
-    }
-    
-    function testNesting() {
-        $handler = new MockTestParser();
-        $handler->setReturnValue("a", true);
-        $handler->setReturnValue("b", true);
-        $handler->expectAt(0, "a", array("aa", LEXER_MATCHED));
-        $handler->expectAt(1, "a", array("b", LEXER_UNMATCHED));
-        $handler->expectAt(2, "a", array("aa", LEXER_MATCHED));
-        $handler->expectAt(3, "a", array("b", LEXER_UNMATCHED));
-        $handler->expectAt(0, "b", array("(", LEXER_ENTER));
-        $handler->expectAt(1, "b", array("bb", LEXER_MATCHED));
-        $handler->expectAt(2, "b", array("a", LEXER_UNMATCHED));
-        $handler->expectAt(3, "b", array("bb", LEXER_MATCHED));
-        $handler->expectAt(4, "b", array(")", LEXER_EXIT));
-        $handler->expectAt(4, "a", array("aa", LEXER_MATCHED));
-        $handler->expectAt(5, "a", array("b", LEXER_UNMATCHED));
-        $handler->expectCallCount("a", 6);
-        $handler->expectCallCount("b", 5);
-        $lexer = new SimpleLexer($handler, "a");
-        $lexer->addPattern("a+", "a");
-        $lexer->addEntryPattern("(", "a", "b");
-        $lexer->addPattern("b+", "b");
-        $lexer->addExitPattern(")", "b");
-        $this->assertTrue($lexer->parse("aabaab(bbabb)aab"));
-    }
-    
-    function testSingular() {
-        $handler = new MockTestParser();
-        $handler->setReturnValue("a", true);
-        $handler->setReturnValue("b", true);
-        $handler->expectAt(0, "a", array("aa", LEXER_MATCHED));
-        $handler->expectAt(1, "a", array("aa", LEXER_MATCHED));
-        $handler->expectAt(2, "a", array("xx", LEXER_UNMATCHED));
-        $handler->expectAt(3, "a", array("xx", LEXER_UNMATCHED));
-        $handler->expectAt(0, "b", array("b", LEXER_SPECIAL));
-        $handler->expectAt(1, "b", array("bbb", LEXER_SPECIAL));
-        $handler->expectCallCount("a", 4);
-        $handler->expectCallCount("b", 2);
-        $lexer = new SimpleLexer($handler, "a");
-        $lexer->addPattern("a+", "a");
-        $lexer->addSpecialPattern("b+", "a", "b");
-        $this->assertTrue($lexer->parse("aabaaxxbbbxx"));
-    }
-    
-    function testUnwindTooFar() {
-        $handler = new MockTestParser();
-        $handler->setReturnValue("a", true);
-        $handler->expectAt(0, "a", array("aa", LEXER_MATCHED));
-        $handler->expectAt(1, "a", array(")", LEXER_EXIT));
-        $handler->expectCallCount("a", 2);
-        $lexer = new SimpleLexer($handler, "a");
-        $lexer->addPattern("a+", "a");
-        $lexer->addExitPattern(")", "a");
-        $this->assertFalse($lexer->parse("aa)aa"));
-    }
-}
-
-class TestOfLexerHandlers extends UnitTestCase {
-    
-    function testModeMapping() {
-        $handler = new MockTestParser();
-        $handler->setReturnValue("a", true);
-        $handler->expectAt(0, "a", array("aa", LEXER_MATCHED));
-        $handler->expectAt(1, "a", array("(", LEXER_ENTER));
-        $handler->expectAt(2, "a", array("bb", LEXER_MATCHED));
-        $handler->expectAt(3, "a", array("a", LEXER_UNMATCHED));
-        $handler->expectAt(4, "a", array("bb", LEXER_MATCHED));
-        $handler->expectAt(5, "a", array(")", LEXER_EXIT));
-        $handler->expectAt(6, "a", array("b", LEXER_UNMATCHED));
-        $handler->expectCallCount("a", 7);
-        $lexer = new SimpleLexer($handler, "mode_a");
-        $lexer->addPattern("a+", "mode_a");
-        $lexer->addEntryPattern("(", "mode_a", "mode_b");
-        $lexer->addPattern("b+", "mode_b");
-        $lexer->addExitPattern(")", "mode_b");
-        $lexer->mapHandler("mode_a", "a");
-        $lexer->mapHandler("mode_b", "a");
-        $this->assertTrue($lexer->parse("aa(bbabb)b"));
-    }
-}
-
-class TestOfSimpleHtmlLexer extends UnitTestCase {
-    
-    function &createParser() {
-        $parser = new MockSimpleHtmlSaxParser();
-        $parser->setReturnValue('acceptStartToken', true);
-        $parser->setReturnValue('acceptEndToken', true);
-        $parser->setReturnValue('acceptAttributeToken', true);
-        $parser->setReturnValue('acceptEntityToken', true);
-        $parser->setReturnValue('acceptTextToken', true);
-        $parser->setReturnValue('ignore', true);
-        return $parser;
-    }
-    
-    function testNoContent() {
-        $parser = &$this->createParser();
-        $parser->expectNever('acceptStartToken');
-        $parser->expectNever('acceptEndToken');
-        $parser->expectNever('acceptAttributeToken');
-        $parser->expectNever('acceptEntityToken');
-        $parser->expectNever('acceptTextToken');
-        $lexer = new SimpleHtmlLexer($parser);
-        $this->assertTrue($lexer->parse(''));
-    }
-    
-    function testUninteresting() {
-        $parser = &$this->createParser();
-        $parser->expectOnce('acceptTextToken', array('<html></html>', '*'));
-        $lexer = new SimpleHtmlLexer($parser);
-        $this->assertTrue($lexer->parse('<html></html>'));
-    }
-    
-    function testSkipCss() {
-        $parser = &$this->createParser();
-        $parser->expectNever('acceptTextToken');
-        $parser->expectAtLeastOnce('ignore');
-        $lexer = new SimpleHtmlLexer($parser);
-        $this->assertTrue($lexer->parse("<style>Lot's of styles</style>"));
-    }
-    
-    function testSkipJavaScript() {
-        $parser = &$this->createParser();
-        $parser->expectNever('acceptTextToken');
-        $parser->expectAtLeastOnce('ignore');
-        $lexer = new SimpleHtmlLexer($parser);
-        $this->assertTrue($lexer->parse("<SCRIPT>Javascript code {';:^%^%£$'@\"*(}</SCRIPT>"));
-    }
-    
-    function testSkipHtmlComments() {
-        $parser = &$this->createParser();
-        $parser->expectNever('acceptTextToken');
-        $parser->expectAtLeastOnce('ignore');
-        $lexer = new SimpleHtmlLexer($parser);
-        $this->assertTrue($lexer->parse("<!-- <title>title</title><style>styles</style> -->"));
-    }
-    
-    function testTagWithNoAttributes() {
-        $parser = &$this->createParser();
-        $parser->expectAt(0, 'acceptStartToken', array('<title', '*'));
-        $parser->expectAt(1, 'acceptStartToken', array('>', '*'));
-        $parser->expectCallCount('acceptStartToken', 2);
-        $parser->expectOnce('acceptTextToken', array('Hello', '*'));
-        $parser->expectOnce('acceptEndToken', array('</title>', '*'));
-        $lexer = new SimpleHtmlLexer($parser);
-        $this->assertTrue($lexer->parse('<title>Hello</title>'));
-    }
-    
-    function testTagWithAttributes() {
-        $parser = &$this->createParser();
-        $parser->expectOnce('acceptTextToken', array('label', '*'));
-        $parser->expectAt(0, 'acceptStartToken', array('<a', '*'));
-        $parser->expectAt(1, 'acceptStartToken', array('href', '*'));
-        $parser->expectAt(2, 'acceptStartToken', array('>', '*'));
-        $parser->expectCallCount('acceptStartToken', 3);
-        $parser->expectAt(0, 'acceptAttributeToken', array('= "', '*'));
-        $parser->expectAt(1, 'acceptAttributeToken', array('here.html', '*'));
-        $parser->expectAt(2, 'acceptAttributeToken', array('"', '*'));
-        $parser->expectCallCount('acceptAttributeToken', 3);
-        $parser->expectOnce('acceptEndToken', array('</a>', '*'));
-        $lexer = new SimpleHtmlLexer($parser);
-        $this->assertTrue($lexer->parse('<a href = "here.html">label</a>'));
-    }
-}
-
-class TestOfHtmlSaxParser extends UnitTestCase {
-    
-    function &createListener() {
-        $listener = new MockSimpleSaxListener();
-        $listener->setReturnValue('startElement', true);
-        $listener->setReturnValue('addContent', true);
-        $listener->setReturnValue('endElement', true);
-        return $listener;
-    }
-    
-    function testFramesetTag() {
-        $listener = &$this->createListener();
-        $listener->expectOnce('startElement', array('frameset', array()));
-        $listener->expectOnce('addContent', array('Frames'));
-        $listener->expectOnce('endElement', array('frameset'));
-        $parser = new SimpleHtmlSaxParser($listener);
-        $this->assertTrue($parser->parse('<frameset>Frames</frameset>'));
-    }
-    
-    function testTagWithUnquotedAttributes() {
-        $listener = &$this->createListener();
-        $listener->expectOnce(
-                'startElement',
-                array('input', array('name' => 'a.b.c', 'value' => 'd')));
-        $parser = new SimpleHtmlSaxParser($listener);
-        $this->assertTrue($parser->parse('<input name=a.b.c value = d>'));
-    }
-    
-    function testTagInsideContent() {
-        $listener = &$this->createListener();
-        $listener->expectOnce('startElement', array('a', array()));
-        $listener->expectAt(0, 'addContent', array('<html>'));
-        $listener->expectAt(1, 'addContent', array('</html>'));
-        $parser = new SimpleHtmlSaxParser($listener);
-        $this->assertTrue($parser->parse('<html><a></a></html>'));
-    }
-    
-    function testTagWithInternalContent() {
-        $listener = &$this->createListener();
-        $listener->expectOnce('startElement', array('a', array()));
-        $listener->expectOnce('addContent', array('label'));
-        $listener->expectOnce('endElement', array('a'));
-        $parser = new SimpleHtmlSaxParser($listener);
-        $this->assertTrue($parser->parse('<a>label</a>'));
-    }
-    
-    function testLinkAddress() {
-        $listener = &$this->createListener();
-        $listener->expectOnce('startElement', array('a', array('href' => 'here.html')));
-        $listener->expectOnce('addContent', array('label'));
-        $listener->expectOnce('endElement', array('a'));
-        $parser = new SimpleHtmlSaxParser($listener);
-        $this->assertTrue($parser->parse("<a href = 'here.html'>label</a>"));
-    }
-    
-    function testEncodedAttribute() {
-        $listener = &$this->createListener();
-        $listener->expectOnce('startElement', array('a', array('href' => 'here&there.html')));
-        $listener->expectOnce('addContent', array('label'));
-        $listener->expectOnce('endElement', array('a'));
-        $parser = new SimpleHtmlSaxParser($listener);
-        $this->assertTrue($parser->parse("<a href = 'here&amp;there.html'>label</a>"));
-    }
-    
-    function testTagWithId() {
-        $listener = &$this->createListener();
-        $listener->expectOnce('startElement', array('a', array('id' => '0')));
-        $listener->expectOnce('addContent', array('label'));
-        $listener->expectOnce('endElement', array('a'));
-        $parser = new SimpleHtmlSaxParser($listener);
-        $this->assertTrue($parser->parse('<a id="0">label</a>'));
-    }
-     
-    function testTagWithEmptyAttributes() {
-        $listener = &$this->createListener();
-        $listener->expectOnce(
-                'startElement',
-                array('option', array('value' => '', 'selected' => '')));
-        $listener->expectOnce('addContent', array('label'));
-        $listener->expectOnce('endElement', array('option'));
-        $parser = new SimpleHtmlSaxParser($listener);
-        $this->assertTrue($parser->parse('<option value="" selected>label</option>'));
-    }
-   
-    function testComplexTagWithLotsOfCaseVariations() {
-        $listener = &$this->createListener();
-        $listener->expectOnce(
-                'startElement',
-                array('a', array('href' => 'here.html', 'style' => "'cool'")));
-        $listener->expectOnce('addContent', array('label'));
-        $listener->expectOnce('endElement', array('a'));
-        $parser = new SimpleHtmlSaxParser($listener);
-        $this->assertTrue($parser->parse('<A HREF = \'here.html\' Style="\'cool\'">label</A>'));
-    }
-    
-    function testXhtmlSelfClosingTag() {
-        $listener = &$this->createListener();
-        $listener->expectOnce(
-                'startElement',
-                array('input', array('type' => 'submit', 'name' => 'N', 'value' => 'V')));
-        $parser = new SimpleHtmlSaxParser($listener);
-        $this->assertTrue($parser->parse('<input type="submit" name="N" value="V" />'));
-    }
-    
-    function testNestedFrameInFrameset() {
-        $listener = &$this->createListener();
-        $listener->expectAt(0, 'startElement', array('frameset', array()));
-        $listener->expectAt(1, 'startElement', array('frame', array('src' => 'frame.html')));
-        $listener->expectCallCount('startElement', 2);
-        $listener->expectOnce('addContent', array('<noframes>Hello</noframes>'));
-        $listener->expectOnce('endElement', array('frameset'));
-        $parser = new SimpleHtmlSaxParser($listener);
-        $this->assertTrue($parser->parse(
-                '<frameset><frame src="frame.html"><noframes>Hello</noframes></frameset>'));
-    }
-}
-
-class TestOfTextExtraction extends UnitTestCase {
-    
-	function testImageSuppressionWhileKeepingParagraphsAndAltText() {
-        $this->assertEqual(
-                SimpleHtmlSaxParser::normalise('<img src="foo.png" /><p>some text</p><img src="bar.png" alt="bar" />'),
-                'some text bar');
-		
-	}
-
-    function testSpaceNormalisation() {
-        $this->assertEqual(
-                SimpleHtmlSaxParser::normalise("\nOne\tTwo   \nThree\t"),
-                'One Two Three');
-    }
-    
-    function testMultilinesCommentSuppression() {
-        $this->assertEqual(
-                SimpleHtmlSaxParser::normalise('<!--\n Hello \n-->'),
-                '');
-    }
-    
-    function testCommentSuppression() {
-        $this->assertEqual(
-                SimpleHtmlSaxParser::normalise('<!--Hello-->'),
-                '');
-    }
-    
-    function testJavascriptSuppression() {
-        $this->assertEqual(
-                SimpleHtmlSaxParser::normalise('<script attribute="test">\nHello\n</script>'),
-                '');
-        $this->assertEqual(
-                SimpleHtmlSaxParser::normalise('<script attribute="test">Hello</script>'),
-                '');
-        $this->assertEqual(
-                SimpleHtmlSaxParser::normalise('<script>Hello</script>'),
-                '');
-    }
-    
-    function testTagSuppression() {
-        $this->assertEqual(
-                SimpleHtmlSaxParser::normalise('<b>Hello</b>'),
-                'Hello');
-    }
-    
-    function testAdjoiningTagSuppression() {
-        $this->assertEqual(
-                SimpleHtmlSaxParser::normalise('<b>Hello</b><em>Goodbye</em>'),
-                'HelloGoodbye');
-    }
-    
-    function testExtractImageAltTextWithDifferentQuotes() {
-        $this->assertEqual(
-                SimpleHtmlSaxParser::normalise('<img alt="One"><img alt=\'Two\'><img alt=Three>'),
-                'One Two Three');
-    }
-    
-    function testExtractImageAltTextMultipleTimes() {
-        $this->assertEqual(
-                SimpleHtmlSaxParser::normalise('<img alt="One"><img alt="Two"><img alt="Three">'),
-                'One Two Three');
-    }
-    
-    function testHtmlEntityTranslation() {
-        $this->assertEqual(
-                SimpleHtmlSaxParser::normalise('&lt;&gt;&quot;&amp;&#039;'),
-                '<>"&\'');
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+OApN+aZn/CzbKwXo1yZs

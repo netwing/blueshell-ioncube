@@ -1,79 +1,38 @@
-<?php
-
-/*
- * This file is part of the Monolog package.
- *
- * (c) Jordi Boggiano <j.boggiano@seld.be>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Monolog\Formatter;
-
-use Monolog\Logger;
-
-/**
- * Formats a log message according to the ChromePHP array format
- *
- * @author Christophe Coevoet <stof@notk.org>
- */
-class ChromePHPFormatter implements FormatterInterface
-{
-    /**
-     * Translates Monolog log levels to Wildfire levels.
-     */
-    private $logLevels = array(
-        Logger::DEBUG     => 'log',
-        Logger::INFO      => 'info',
-        Logger::NOTICE    => 'info',
-        Logger::WARNING   => 'warn',
-        Logger::ERROR     => 'error',
-        Logger::CRITICAL  => 'error',
-        Logger::ALERT     => 'error',
-        Logger::EMERGENCY => 'error',
-    );
-
-    /**
-     * {@inheritdoc}
-     */
-    public function format(array $record)
-    {
-        // Retrieve the line and file if set and remove them from the formatted extra
-        $backtrace = 'unknown';
-        if (isset($record['extra']['file']) && isset($record['extra']['line'])) {
-            $backtrace = $record['extra']['file'].' : '.$record['extra']['line'];
-            unset($record['extra']['file']);
-            unset($record['extra']['line']);
-        }
-
-        $message = array('message' => $record['message']);
-        if ($record['context']) {
-            $message['context'] = $record['context'];
-        }
-        if ($record['extra']) {
-            $message['extra'] = $record['extra'];
-        }
-        if (count($message) === 1) {
-            $message = reset($message);
-        }
-
-        return array(
-            $record['channel'],
-            $message,
-            $backtrace,
-            $this->logLevels[$record['level']],
-        );
-    }
-
-    public function formatBatch(array $records)
-    {
-        $formatted = array();
-
-        foreach ($records as $record) {
-            $formatted[] = $this->format($record);
-        }
-
-        return $formatted;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+/swJnGFz29jKt28SBhkPbQGIn+AQCWwgWMX1j0==

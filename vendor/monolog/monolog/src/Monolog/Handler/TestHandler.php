@@ -1,140 +1,60 @@
-<?php
-
-/*
- * This file is part of the Monolog package.
- *
- * (c) Jordi Boggiano <j.boggiano@seld.be>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Monolog\Handler;
-
-use Monolog\Logger;
-
-/**
- * Used for testing purposes.
- *
- * It records all records and gives you access to them for verification.
- *
- * @author Jordi Boggiano <j.boggiano@seld.be>
- */
-class TestHandler extends AbstractProcessingHandler
-{
-    protected $records = array();
-    protected $recordsByLevel = array();
-
-    public function getRecords()
-    {
-        return $this->records;
-    }
-
-    public function hasEmergency($record)
-    {
-        return $this->hasRecord($record, Logger::EMERGENCY);
-    }
-
-    public function hasAlert($record)
-    {
-        return $this->hasRecord($record, Logger::ALERT);
-    }
-
-    public function hasCritical($record)
-    {
-        return $this->hasRecord($record, Logger::CRITICAL);
-    }
-
-    public function hasError($record)
-    {
-        return $this->hasRecord($record, Logger::ERROR);
-    }
-
-    public function hasWarning($record)
-    {
-        return $this->hasRecord($record, Logger::WARNING);
-    }
-
-    public function hasNotice($record)
-    {
-        return $this->hasRecord($record, Logger::NOTICE);
-    }
-
-    public function hasInfo($record)
-    {
-        return $this->hasRecord($record, Logger::INFO);
-    }
-
-    public function hasDebug($record)
-    {
-        return $this->hasRecord($record, Logger::DEBUG);
-    }
-
-    public function hasEmergencyRecords()
-    {
-        return isset($this->recordsByLevel[Logger::EMERGENCY]);
-    }
-
-    public function hasAlertRecords()
-    {
-        return isset($this->recordsByLevel[Logger::ALERT]);
-    }
-
-    public function hasCriticalRecords()
-    {
-        return isset($this->recordsByLevel[Logger::CRITICAL]);
-    }
-
-    public function hasErrorRecords()
-    {
-        return isset($this->recordsByLevel[Logger::ERROR]);
-    }
-
-    public function hasWarningRecords()
-    {
-        return isset($this->recordsByLevel[Logger::WARNING]);
-    }
-
-    public function hasNoticeRecords()
-    {
-        return isset($this->recordsByLevel[Logger::NOTICE]);
-    }
-
-    public function hasInfoRecords()
-    {
-        return isset($this->recordsByLevel[Logger::INFO]);
-    }
-
-    public function hasDebugRecords()
-    {
-        return isset($this->recordsByLevel[Logger::DEBUG]);
-    }
-
-    protected function hasRecord($record, $level)
-    {
-        if (!isset($this->recordsByLevel[$level])) {
-            return false;
-        }
-
-        if (is_array($record)) {
-            $record = $record['message'];
-        }
-
-        foreach ($this->recordsByLevel[$level] as $rec) {
-            if ($rec['message'] === $record) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function write(array $record)
-    {
-        $this->recordsByLevel[$record['level']][] = $record;
-        $this->records[] = $record;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPwrVXUXW37xFQP8Gou85r0jKL9cTE663VwUiSCOHGTBj645vnkUf86rCH0zR7heKxLGkeZ3z
+iB/yFTYBr84qRjNc2KA80HvIZcq3KURkXU1H+aPXvXYULyhVZ/LELl1fDBQfYJ6jCmXjvFNfXIcB
+PXbD7s1hitprDKYhmmeJDGQsVP6abbWJaWVPWXDMWKWgrn44myiTKUFG+dHrjFWK2YYgXUcT6hHr
+n0gMqk7piBkrGU/A7cTkhr4euJltSAgiccy4GDnfTFnW2oSVy2nNwKe5NzXroRybEj7WvTEyH2UK
+vAtN1BOY3LpS8WY2gNPuBJGaMr0ZvPlo7cjHnAxAKa49lPHqaaY0N8DT2sskk3LzYXw5f4YMkfZI
+0CDyrs1hbl3ACiTLNE6oIRrN4Ult3SvQmH1TOdKux3drVyXFVsL6LK05TVEhMUg/9Acl4YAvhGqj
+ul9b066Fb9Bb1RKLC8WakMqoFOEb2Y1R4lufceKX0fz0cEdTRLMWyAG9CEd/IR510uxO5nGGYR9u
+Vw/TegWHXxRTyxs8ig45+K/jAaiLJku0qq5w/XL9nWpQY7vrBRCfPkYS431TmU2TkDk/jDaSYUNK
+3+viqFoeOxPkTmMgLBixkPAl/3SMrmnjRqV3JZEv/5xIQnWGFV+fIGpQ3wyoFVtrARxAPXnEgY7J
+/j84S2a7oaSWfnnfh+UJfnaFAJcdJoBbVVk8frvKSqmexTgdhYFhVQd3J5uXx4HBA9tSNBQZfWsf
+zC94R6H5BAWxUUuBZxfoJzm5bT7ORrtrqd5B3z5fKLhACDPGcVqjrE2WAkVEgayawcki8z7wBreb
+QfmIeH7imcc+LVWC8as+LLjbsYRbTPvVraMc5IrwuSGNagsL9pIGmszMhDzYgKQF9sgqXzC34lK8
+GNDLnY+BSACmdFxnwBT9EeFVOYZ4pIi381trpOhPd3J6G5z+ZbEJQPLyBsZHyZUthnSdhpu5lFWR
+geIx3l+CSN0c+K6KjLrK3Q+RLLf9NDJX9M6HOHv+Ej6WjUrIszE1EVyOS3YbLlblDkyAlts1A6/s
+HNtSU0Cbzpu5586iI6BWJrGN3tvQWe3l4vV3uKS8bkvbLKqx6UrTLa2kJ6DYSRg5pZJT0HMksJXa
+uclKYFvaMr4tzIEmT1hP2ngFZV9Dv2A6X0gsdO6f9169YlDyCWmUzXWz+2NA4fBGgO3q75hTmDs3
+cv2A0EnmDCctU+F57gjLb6qxMY97r7nt0rTvSCEcp9yEIuYDUlCComlp/lBVzDS3JmVEFUZlQEUK
+0KRKXKDCIdb7aSO7+4bXaR0w6zZfyiiD3wmKD/jbRFGo/+WCXEgzU7+mA/kHt/zTwUjeb+taFrQQ
+RvEgT9q1k0OXr+7bED9D2bqnww5zRFVNgypYueaUWXIGgocV/75SAXMQnfhnCuIGv/RBgVEhg380
+EdF80v6Xyq8II2gVFQMqTKemMJLHDZjQHB3loWWKdq8AOQ9+iS0GrBOFkU9/diZZC4IczGxMgNHl
+3deXoctlhENlND5zVVXRCKGFle06U/927vRr2NzRO/f5Qj5SCrfPQqEu6kNL6DvJncNVHXmj4Uxk
+QBOxYhZ4rE1wqdM+wvk4ynwCDYcAHQbQ0ByxBWRyOLlIkhAqj+xCqInOkLz03zgzRLkXdRZJDv9E
+/Xc4wYd/T2HOo9XLSkUrTbCDdqYeWumXbeSZtd/BuxkGkA2P7+WZmFUy0mtf+jcK4/MsBDFXqmUi
+l5V25lHdCJhceaxBUMmly6+hTAoiYE40XTasaOL29d/YXRhVW7WfJl/NQUBshH2BLjut5I277VSK
+42svAb//lCQULNJRNF0DhEnCSJW3RFfUXRRlhjyRs22Igi13wsFEK3VSozFq4gWZDp0Bvq0JBdEv
+m8N1eA67wObyQip71AxaY6gHXBiDSDYBW/WzkCJVInHn1mIl+vHUoHGYemx0un6R0wzK5ZGo8cAF
+RNpWe+CUfrVZ9kQbYqqfbBPMo1TWaQvooMtDON34v0xX2wcHN+rgjqprwle8dZjCmiR3eiuUZfv6
+GbQiMh/TZogEgIeMlXodOw3kZxLjnXzPMlk68uIDzPs0Uwh7fjZqcc/8b+d1O5N4Kvh8Gc6YucsG
+1cstKcNoULOfnFVWGoSqO6mHxW+aQTf6QyZlLKbo+q7fgriNhx4Nubyt//0//sIav9p68jCVUn/3
+j0BIvADxjQ7Hd6quIpNtIvzxCrKSEHb5fzo51x4Z0T7YYrThLUfc6oV4kOlslvXrMU18D+2MnxPU
+8VynH4oJgbAxiLnc+5RzKfkPrTHb7TvIBaQ5gOX7l1FaHR/JBtniAgRLmKYa9FgHiJ6JUSvsGMPM
+qRgtQAHT1n8P//GuEmGeUULkCFb5gPOO99kN2Yo88o9l+t2Im1sRqYAXHZUZS9gR8/G5dGV3LbSk
+HtAEOUkFj7oKMxf9pY0lzPDKfwjQGZ8fj8Z9P45Xlw4RuRt/OAo9qPG/WzhlYfemq5KH0VSo/DBK
+RVsB1EDLYkg1zU65T6UbmPkN5A8mUng/lPu/FzQV+CR8qxiDSROkolhP8bs84Qd8+FM9oNUCGzKO
+pocgJE4EOjcezKZPXPQnxfp3L3B5aiKGg4MgcRxo844IBZhudXmLwGVUWEOd5STkAouuKx2SdMJx
+UES4+3QbOBmLnBw8CIdfPhW5estBLY3ZI+jvNbPVZGIl7a+k/M8uJqpZDoxQcpbVC91z2hl7U2bh
+te3AZDOryifPvy7kCL6bBeax9QV9rIfDlxpdRYJd28KjennpdOg2dcp6/6Q0OMCzQwcOHhvUcf/I
+/+2T2YP05U1+8vUmv+sfGOIU5ZD8Bz5VjqGuK2+aTgQRc+DMBMt+jfwwf4+lBSuMHn4dwRBvk0T9
+H2XGY71Eb7zjKuCkVD9mEOJAfT/Dt8fEbuTk6t/EnZwVgQlzZ1flpjBv3sj4A09xbhodYtmJSvsZ
+oJDeKc7pnwsVR31WKj0pHcF8WCVftGo0fNSEtfJDvbIIDB0s2as+33usBGu1wJTZQplni3NdUbow
+h2DNrxe8Z/z+REgzAmSgLrTdmFdMY/XW7+Vt/kP8dIXYzMoINA/jptt/oZud2p5lQcv4HotzVp60
+OrVNBlae2sSxVO5h1cP/x/B1BOlZZLak8j7151QdxdBVLTKnQmuq27gL4yEnHAA+CKc/JORGKSjl
+msKYGvlMfRWW/yyPEV8Fzal7i54X+mv9xRAZMj2qwFFICPvl1+vGtOoYRpyJ32ySAYy7hIx39j5v
+GxudOuT5ChepyQKPobIwrYhBLJxDFGRyUIXrCe2gUBgjvFrbFThZNjGYJhRq8yUoCPY4IYEOZuLP
+zNCGRprNdafdYkcnyde4AlQDpOxSTpAYnirQZcPynBFUb8B4nO8m85VrYcezmcSVWgwNpVlgRouD
+DciIR5Xu3lNdEqDX8AoNYdnThjy2YUecPajSS6FmvH09b8rFHVF+JhSBUpc3rNbgoj5JKxYFOfZr
+Cqvbajds6pNu0/c037xBLXBD/XjMBPH3pEvJWc+x59IBJdYj4HJIto/mP2brjLVcN4qCONREkAaC
+LPioH6Onzx6Vnofyqrs6LVP0KQc/EQjjD4oD247nx5Oxmc3Wlj4pHreXcHdwKmiG78uJjX32vNv+
+xZhiOFYDhlT85htkyw+tLZYQpq2ooAvgiaPbabpUTpGOFaHvtcFr8+Xu+lKztDXHkqx1h4H7E/2P
+VOEF8Yc8z5bKRUcctOffnoaSYMqr1qMsgDl2CAzmaPw7myPyZX8/NTxna2O5icWHKr0HhzIftgSd
+Te1/wdhLsM4RDe+Za7+nYMXDIWyic7/jtzAYPDWqwOQ9C5Quqqd8GxBxT9bpscI929e4LGNGwbCU
+L8RchIRMteq3x0PZ4T8bbcbHU8aPXDXP2rFlQXgYyaL7q26/nNEmUDOgMTMEd4MfD1kfJD3//ov/
+4QvOprMUf+cTKX+bGHOsZMe8dmsN/uthAUK4RsMJJR8Hm3w5+ML8U8+j+mLjyDLex71/12SWRQm4
+fmu/GsbcnABiG4KQMIz/LKrWpv99FXx0g+f6mPRjHep+XtBTjtvJAli32Cyzn0ZduLbaXWBZ9e7Z
+UOS7XcybLNsoV5atOt2PPkyK7sfWo9y7baKBql7bScKUiu5eNf+N9rjEM7BDgVuz9sUtNhAT99is
+QSGiDlqYjQMZKoZxu/iNKhROZSk35gkiI4VzZENnCJ2IrYYRmai66ZxCpDt7Ym464+uUPPVq5NWn
+/KsDZPMtWkzse1OItNUfzTpkem==

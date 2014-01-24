@@ -1,80 +1,33 @@
-<?php
-
-/*
- * This file is part of the PhpunitMarkupValidators package.
- *
- * (c) Kevin Weber <kevintweber@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace kevintweber\PhpunitMarkupValidators\Constraint;
-
-use kevintweber\PhpunitMarkupValidators\Connector\Connector;
-
-class GenericConstraint extends \PHPUnit_Framework_Constraint
-{
-    /**
-     * The service connector.
-     */
-    protected $connector;
-
-    /**
-     * Constructor
-     */
-    public function __construct(Connector $connector)
-    {
-        $this->connector = $connector;
-    }
-
-    /**
-     * Evaluates the constraint for parameter $other. Returns TRUE if the
-     * constraint is met, FALSE otherwise.
-     *
-     * @param mixed $other Value or object to evaluate.
-     * @return bool
-     */
-    protected function matches($other)
-    {
-        return $this->connector->processResponse($other);
-    }
-
-    /**
-     * Returns a string representation of the constraint.
-     *
-     * @return string
-     */
-    public function toString()
-    {
-        return 'is valid';
-    }
-
-    /**
-     * Returns the description of the failure
-     *
-     * The beginning of failure messages is "Failed asserting that" in most
-     * cases. This method should return the second part of that sentence.
-     *
-     * @param mixed $other Evaluated value or object.
-     * @return string
-     */
-    protected function failureDescription($other)
-    {
-        return 'the markup ' . $this->toString();
-    }
-
-    /**
-     * Return additional failure description where needed
-     *
-     * The function can be overridden to provide additional failure
-     * information like a diff
-     *
-     * @param mixed $other Evaluated value or object.
-     * @return string
-     */
-    protected function additionalFailureDescription($other)
-    {
-        return $this->connector->describeFailure($other);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+1E8nJi9wek5x81qQFLNDQrQ/85scjindl0==

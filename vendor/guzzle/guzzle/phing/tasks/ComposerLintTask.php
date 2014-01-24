@@ -1,152 +1,70 @@
-<?php
-/**
- * Phing task for composer validation.
- *
- * @copyright 2012 Clay Loveless <clay@php.net>
- * @license   http://claylo.mit-license.org/2012/ MIT License
- */
-
-require_once 'phing/Task.php';
-
-class ComposerLintTask extends Task
-{
-    protected $dir = null;
-    protected $file = null;
-    protected $passthru = false;
-    protected $composer = null;
-
-    /**
-     * The setter for the dir
-     *
-     * @param string $str Directory to crawl recursively for composer files
-     */
-    public function setDir($str)
-    {
-        $this->dir = $str;
-    }
-
-    /**
-     * The setter for the file
-     *
-     * @param string $str Individual file to validate
-     */
-    public function setFile($str)
-    {
-        $this->file = $str;
-    }
-
-    /**
-     * Whether to use PHP's passthru() function instead of exec()
-     *
-     * @param boolean $passthru If passthru shall be used
-     */
-    public function setPassthru($passthru)
-    {
-        $this->passthru = (bool) $passthru;
-    }
-
-    /**
-     * Composer to execute. If unset, will attempt composer.phar in project
-     * basedir, and if that fails, will attempt global composer
-     * installation.
-     *
-     * @param string $str Individual file to validate
-     */
-    public function setComposer($str)
-    {
-        $this->file = $str;
-    }
-
-    /**
-     * The init method: do init steps
-     */
-    public function init()
-    {
-        // nothing needed here
-    }
-
-    /**
-     * The main entry point
-     */
-    public function main()
-    {
-        if ($this->composer === null) {
-            $this->findComposer();
-        }
-
-        $files = array();
-        if (!empty($this->file) && file_exists($this->file)) {
-            $files[] = $this->file;
-        }
-
-        if (!empty($this->dir)) {
-            $found = $this->findFiles();
-            foreach ($found as $file) {
-                $files[] = $this->dir . DIRECTORY_SEPARATOR . $file;
-            }
-        }
-
-        foreach ($files as $file) {
-
-            $cmd = $this->composer . ' validate ' . $file;
-            $cmd = escapeshellcmd($cmd);
-
-            if ($this->passthru) {
-                $retval = null;
-                passthru($cmd, $retval);
-                if ($retval == 1) {
-                    throw new BuildException('invalid composer.json');
-                }
-            } else {
-                $out = array();
-                $retval = null;
-                exec($cmd, $out, $retval);
-                if ($retval == 1) {
-                    $err = join("\n", $out);
-                    throw new BuildException($err);
-                } else {
-                    $this->log($out[0]);
-                }
-            }
-
-        }
-
-    }
-
-    /**
-     * Find the composer.json files using Phing's directory scanner
-     *
-     * @return array
-     */
-    protected function findFiles()
-    {
-        $ds = new DirectoryScanner();
-        $ds->setBasedir($this->dir);
-        $ds->setIncludes(array('**/composer.json'));
-        $ds->scan();
-        return $ds->getIncludedFiles();
-    }
-
-    /**
-     * Find composer installation
-     *
-     */
-    protected function findComposer()
-    {
-        $basedir = $this->project->getBasedir();
-        $php = $this->project->getProperty('php.interpreter');
-
-        if (file_exists($basedir . '/composer.phar')) {
-            $this->composer = "$php $basedir/composer.phar";
-        } else {
-            $out = array();
-            exec('which composer', $out);
-            if (empty($out)) {
-                throw new BuildException(
-                    'Could not determine composer location.'
-                );
-            }
-            $this->composer = $out[0];
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

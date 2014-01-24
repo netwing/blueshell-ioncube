@@ -1,78 +1,74 @@
-<?php
-// $Id: parser_test.php 1608 2007-12-27 09:03:07Z pp11 $
-// Handle with care : this file is UTF8.
-
-require_once(dirname(__FILE__) . '/../autorun.php');
-require_once(dirname(__FILE__) . '/../parser.php');
-require_once(dirname(__FILE__) . '/../url.php');
-Mock::generate('SimpleHtmlSaxParser');
-Mock::generate('SimpleSaxListener');
-     
-class TestOfHtmlSaxParserWithDifferentCharset extends UnitTestCase {
-    function testWithTextInUTF8() {
-        $regex = &new ParallelRegex(false);
-        $regex->addPattern("eé");
-        $this->assertTrue($regex->match("eéêè", $match));
-        $this->assertEqual($match, "eé");
-    }
-    
-    function testWithTextInLatin1() {
-        $regex = &new ParallelRegex(false);
-        $regex->addPattern(utf8_decode("eé"));
-        $this->assertTrue($regex->match(utf8_decode("eéêè"), $match));
-        $this->assertEqual($match, utf8_decode("eé"));
-    }
-    
-    function &createParser() {
-        $parser = &new MockSimpleHtmlSaxParser();
-        $parser->setReturnValue('acceptStartToken', true);
-        $parser->setReturnValue('acceptEndToken', true);
-        $parser->setReturnValue('acceptAttributeToken', true);
-        $parser->setReturnValue('acceptEntityToken', true);
-        $parser->setReturnValue('acceptTextToken', true);
-        $parser->setReturnValue('ignore', true);
-        return $parser;
-    }
-
-    function testTagWithAttributesInUTF8() {
-        $parser = &$this->createParser();
-        $parser->expectOnce('acceptTextToken', array('label', '*'));
-        $parser->expectAt(0, 'acceptStartToken', array('<a', '*'));
-        $parser->expectAt(1, 'acceptStartToken', array('href', '*'));
-        $parser->expectAt(2, 'acceptStartToken', array('>', '*'));
-        $parser->expectCallCount('acceptStartToken', 3);
-        $parser->expectAt(0, 'acceptAttributeToken', array('= "', '*'));
-        $parser->expectAt(1, 'acceptAttributeToken', array('hère.html', '*'));
-        $parser->expectAt(2, 'acceptAttributeToken', array('"', '*'));
-        $parser->expectCallCount('acceptAttributeToken', 3);
-        $parser->expectOnce('acceptEndToken', array('</a>', '*'));
-        $lexer = &new SimpleHtmlLexer($parser);
-        $this->assertTrue($lexer->parse('<a href = "hère.html">label</a>'));
-    }
-
-    function testTagWithAttributesInLatin1() {
-        $parser = &$this->createParser();
-        $parser->expectOnce('acceptTextToken', array('label', '*'));
-        $parser->expectAt(0, 'acceptStartToken', array('<a', '*'));
-        $parser->expectAt(1, 'acceptStartToken', array('href', '*'));
-        $parser->expectAt(2, 'acceptStartToken', array('>', '*'));
-        $parser->expectCallCount('acceptStartToken', 3);
-        $parser->expectAt(0, 'acceptAttributeToken', array('= "', '*'));
-        $parser->expectAt(1, 'acceptAttributeToken', array(utf8_decode('hère.html'), '*'));
-        $parser->expectAt(2, 'acceptAttributeToken', array('"', '*'));
-        $parser->expectCallCount('acceptAttributeToken', 3);
-        $parser->expectOnce('acceptEndToken', array('</a>', '*'));
-        $lexer = &new SimpleHtmlLexer($parser);
-        $this->assertTrue($lexer->parse(utf8_decode('<a href = "hère.html">label</a>')));
-    }
-}
-
-class TestOfUrlithDifferentCharset extends UnitTestCase {
-    function testUsernameAndPasswordInUTF8() {
-        $url = new SimpleUrl('http://pÈrick:penËt@www.lastcraft.com');
-        $this->assertEqual($url->getUsername(), 'pÈrick');
-        $this->assertEqual($url->getPassword(), 'penËt');
-    }
-}
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

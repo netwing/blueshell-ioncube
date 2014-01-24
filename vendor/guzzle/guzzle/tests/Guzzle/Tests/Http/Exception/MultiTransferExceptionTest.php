@@ -1,51 +1,49 @@
-<?php
-
-namespace Guzzle\Tests\Http\Exception;
-
-use Guzzle\Http\Exception\MultiTransferException;
-use Guzzle\Http\Curl\CurlHandle;
-use Guzzle\Http\Message\Request;
-
-/**
- * @covers Guzzle\Http\Exception\MultiTransferException
- */
-class MultiTransferExceptionTest extends \Guzzle\Tests\GuzzleTestCase
-{
-    public function testHasRequests()
-    {
-        $r1 = new Request('GET', 'http://www.foo.com');
-        $r2 = new Request('GET', 'http://www.foo.com');
-        $e = new MultiTransferException();
-        $e->addSuccessfulRequest($r1);
-        $e->addFailedRequest($r2);
-        $this->assertEquals(array($r1), $e->getSuccessfulRequests());
-        $this->assertEquals(array($r2), $e->getSuccessfulRequests());
-        $this->assertEquals(array($r1, $r2), $e->getAllRequests());
-        $this->assertTrue($e->containsRequest($r1));
-        $this->assertTrue($e->containsRequest($r2));
-        $this->assertFalse($e->containsRequest(new Request('POST', '/foo')));
-    }
-
-    public function testCanSetRequests()
-    {
-        $s = array($r1 = new Request('GET', 'http://www.foo.com'));
-        $f = array($r2 = new Request('GET', 'http://www.foo.com'));
-        $e = new MultiTransferException();
-        $e->setSuccessfulRequests($s);
-        $e->setFailedRequests($f);
-        $this->assertEquals(array($r1), $e->getSuccessfulRequests());
-        $this->assertEquals(array($r2), $e->getSuccessfulRequests());
-    }
-
-    public function testAssociatesExceptionsWithRequests()
-    {
-        $r1 = new Request('GET', 'http://www.foo.com');
-        $re1 = new \Exception('foo');
-        $re2 = new \Exception('bar');
-        $e = new MultiTransferException();
-        $e->add($re2);
-        $e->addFailedRequestWithException($r1, $re1);
-        $this->assertSame($re1, $e->getExceptionForFailedRequest($r1));
-        $this->assertNull($e->getExceptionForFailedRequest(new Request('POST', '/foo')));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+NprGUbGJl0TskJUJEWO=

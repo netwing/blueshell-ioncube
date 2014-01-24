@@ -1,167 +1,69 @@
-<?php
-/**
- * CFormElement class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CFormElement is the base class for presenting all kinds of form element.
- *
- * CFormElement implements the way to get and set arbitrary attributes.
- *
- * @property boolean $visible Whether this element is visible and should be rendered.
- * @property mixed $parent The direct parent of this element. This could be either a {@link CForm} object or a {@link CBaseController} object
- * (a controller or a widget).
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.web.form
- * @since 1.1
- */
-abstract class CFormElement extends CComponent
-{
-	/**
-	 * @var array list of attributes (name=>value) for the HTML element represented by this object.
-	 */
-	public $attributes=array();
-
-	private $_parent;
-	private $_visible;
-
-	/**
-	 * Renders this element.
-	 * @return string the rendering result
-	 */
-	abstract function render();
-
-	/**
-	 * Constructor.
-	 * @param mixed $config the configuration for this element.
-	 * @param mixed $parent the direct parent of this element.
-	 * @see configure
-	 */
-	public function __construct($config,$parent)
-	{
-		$this->configure($config);
-		$this->_parent=$parent;
-	}
-
-	/**
-	 * Converts the object to a string.
-	 * This is a PHP magic method.
-	 * The default implementation simply calls {@link render} and return
-	 * the rendering result.
-	 * @return string the string representation of this object.
-	 */
-	public function __toString()
-	{
-		return $this->render();
-	}
-
-	/**
-	 * Returns a property value or an attribute value.
-	 * Do not call this method. This is a PHP magic method that we override
-	 * to allow using the following syntax to read a property or attribute:
-	 * <pre>
-	 * $value=$element->propertyName;
-	 * $value=$element->attributeName;
-	 * </pre>
-	 * @param string $name the property or attribute name
-	 * @return mixed the property or attribute value
-	 * @throws CException if the property or attribute is not defined
-	 * @see __set
-	 */
-	public function __get($name)
-	{
-		$getter='get'.$name;
-		if(method_exists($this,$getter))
-			return $this->$getter();
-		elseif(isset($this->attributes[$name]))
-			return $this->attributes[$name];
-		else
-			throw new CException(Yii::t('yii','Property "{class}.{property}" is not defined.',
-				array('{class}'=>get_class($this), '{property}'=>$name)));
-	}
-
-	/**
-	 * Sets value of a property or attribute.
-	 * Do not call this method. This is a PHP magic method that we override
-	 * to allow using the following syntax to set a property or attribute.
-	 * <pre>
-	 * $this->propertyName=$value;
-	 * $this->attributeName=$value;
-	 * </pre>
-	 * @param string $name the property or attribute name
-	 * @param mixed $value the property or attribute value
-	 * @see __get
-	 */
-	public function __set($name,$value)
-	{
-		$setter='set'.$name;
-		if(method_exists($this,$setter))
-			$this->$setter($value);
-		else
-			$this->attributes[$name]=$value;
-	}
-
-	/**
-	 * Configures this object with property initial values.
-	 * @param mixed $config the configuration for this object. This can be an array
-	 * representing the property names and their initial values.
-	 * It can also be a string representing the file name of the PHP script
-	 * that returns a configuration array.
-	 */
-	public function configure($config)
-	{
-		if(is_string($config))
-			$config=require(Yii::getPathOfAlias($config).'.php');
-		if(is_array($config))
-		{
-			foreach($config as $name=>$value)
-				$this->$name=$value;
-		}
-	}
-
-	/**
-	 * Returns a value indicating whether this element is visible and should be rendered.
-	 * This method will call {@link evaluateVisible} to determine the visibility of this element.
-	 * @return boolean whether this element is visible and should be rendered.
-	 */
-	public function getVisible()
-	{
-		if($this->_visible===null)
-			$this->_visible=$this->evaluateVisible();
-		return $this->_visible;
-	}
-
-	/**
-	 * @param boolean $value whether this element is visible and should be rendered.
-	 */
-	public function setVisible($value)
-	{
-		$this->_visible=$value;
-	}
-
-	/**
-	 * @return mixed the direct parent of this element. This could be either a {@link CForm} object or a {@link CBaseController} object
-	 * (a controller or a widget).
-	 */
-	public function getParent()
-	{
-		return $this->_parent;
-	}
-
-	/**
-	 * Evaluates the visibility of this element.
-	 * Child classes should override this method to implement the actual algorithm
-	 * for determining the visibility.
-	 * @return boolean whether this element is visible. Defaults to true.
-	 */
-	protected function evaluateVisible()
-	{
-		return true;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+6wy6d5Uppj4Y80==

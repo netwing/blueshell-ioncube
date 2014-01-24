@@ -1,300 +1,133 @@
-<?php
-/**
- * Squiz_Sniffs_Functions_FunctionDeclarationArgumentSpacingSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Squiz_Sniffs_Functions_FunctionDeclarationArgumentSpacingSniff.
- *
- * Checks that arguments in function declarations are spaced correctly.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class Squiz_Sniffs_Functions_FunctionDeclarationArgumentSpacingSniff implements PHP_CodeSniffer_Sniff
-{
-
-    /**
-     * How many spaces should surround the equals signs.
-     *
-     * @var int
-     */
-    public $equalsSpacing = 0;
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        return array(
-                T_FUNCTION,
-                T_CLOSURE,
-               );
-
-    }//end register()
-
-
-    /**
-     * Processes this test, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token in the
-     *                                        stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $this->equalsSpacing = (int) $this->equalsSpacing;
-
-        $tokens       = $phpcsFile->getTokens();
-        $openBracket  = $tokens[$stackPtr]['parenthesis_opener'];
-        $this->processBracket($phpcsFile, $openBracket);
-
-        if ($tokens[$stackPtr]['code'] === T_CLOSURE) {
-            $use = $phpcsFile->findNext(T_USE, ($tokens[$openBracket]['parenthesis_closer'] + 1), $tokens[$stackPtr]['scope_opener']);
-            if ($use !== false) {
-                $openBracket  = $phpcsFile->findNext(T_OPEN_PARENTHESIS, ($use + 1), null);
-                $this->processBracket($phpcsFile, $openBracket);
-            }
-        }
-
-    }//end process()
-
-
-    /**
-     * Processes the contents of a single set of brackets.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile   The file being scanned.
-     * @param int                  $openBracket The position of the open bracket
-     *                                          in the stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function processBracket(PHP_CodeSniffer_File $phpcsFile, $openBracket)
-    {
-        $tokens       = $phpcsFile->getTokens();
-        $closeBracket = $tokens[$openBracket]['parenthesis_closer'];
-        $multiLine    = ($tokens[$openBracket]['line'] !== $tokens[$closeBracket]['line']);
-
-        $nextParam = $openBracket;
-        $params    = array();
-        while (($nextParam = $phpcsFile->findNext(T_VARIABLE, ($nextParam + 1), $closeBracket)) !== false) {
-
-            $nextToken = $phpcsFile->findNext(T_WHITESPACE, ($nextParam + 1), ($closeBracket + 1), true);
-            if ($nextToken === false) {
-                break;
-            }
-
-            $nextCode = $tokens[$nextToken]['code'];
-
-            if ($nextCode === T_EQUAL) {
-                // Check parameter default spacing.
-                $spacesBefore = 0;
-                if (($nextToken - $nextParam) > 1) {
-                    $spacesBefore = strlen($tokens[($nextParam + 1)]['content']);
-                }
-
-                if ($spacesBefore !== $this->equalsSpacing) {
-                    $error = 'Incorrect spacing between argument "%s" and equals sign; expected '.$this->equalsSpacing.' but found %s';
-                    $data  = array(
-                              $tokens[$nextParam]['content'],
-                              $spacesBefore,
-                             );
-                    $phpcsFile->addError($error, $nextToken, 'SpaceBeforeEquals', $data);
-                }
-
-                $spacesAfter = 0;
-                if ($tokens[($nextToken + 1)]['code'] === T_WHITESPACE) {
-                    $spacesAfter = strlen($tokens[($nextToken + 1)]['content']);
-                }
-
-                if ($spacesAfter !== $this->equalsSpacing) {
-                    $error = 'Incorrect spacing between default value and equals sign for argument "%s"; expected '.$this->equalsSpacing.' but found %s';
-                    $data  = array(
-                              $tokens[$nextParam]['content'],
-                              $spacesAfter,
-                             );
-                    $phpcsFile->addError($error, $nextToken, 'SpaceAfterDefault', $data);
-                }
-            }//end if
-
-            // Find and check the comma (if there is one).
-            $nextComma = $phpcsFile->findNext(T_COMMA, ($nextParam + 1), $closeBracket);
-            if ($nextComma !== false) {
-                // Comma found.
-                if ($tokens[($nextComma - 1)]['code'] === T_WHITESPACE) {
-                    $error = 'Expected 0 spaces between argument "%s" and comma; %s found';
-                    $data  = array(
-                              $tokens[$nextParam]['content'],
-                              strlen($tokens[($nextComma - 1)]['content']),
-                             );
-                    $phpcsFile->addError($error, $nextToken, 'SpaceBeforeComma', $data);
-                }
-            }
-
-            // Take references into account when expecting the
-            // location of whitespace.
-            if ($phpcsFile->isReference(($nextParam - 1)) === true) {
-                $whitespace = ($nextParam - 2);
-            } else {
-                $whitespace = ($nextParam - 1);
-            }
-
-            if (empty($params) === false) {
-                // This is not the first argument in the function declaration.
-                $arg = $tokens[$nextParam]['content'];
-
-                if ($tokens[$whitespace]['code'] === T_WHITESPACE) {
-                    $gap = strlen($tokens[$whitespace]['content']);
-
-                    // Before we throw an error, make sure there is no type hint.
-                    $comma     = $phpcsFile->findPrevious(T_COMMA, ($nextParam - 1));
-                    $nextToken = $phpcsFile->findNext(T_WHITESPACE, ($comma + 1), null, true);
-                    if ($phpcsFile->isReference($nextToken) === true) {
-                        $nextToken++;
-                    }
-
-                    if ($nextToken !== $nextParam) {
-                        // There was a type hint, so check the spacing between
-                        // the hint and the variable as well.
-                        $hint = $tokens[$nextToken]['content'];
-
-                        if ($gap !== 1) {
-                            $error = 'Expected 1 space between type hint and argument "%s"; %s found';
-                            $data  = array(
-                                      $arg,
-                                      $gap,
-                                     );
-                            $phpcsFile->addError($error, $nextToken, 'SpacingAfterHint', $data);
-                        }
-
-                        if ($multiLine === false) {
-                            if ($tokens[($comma + 1)]['code'] !== T_WHITESPACE) {
-                                $error = 'Expected 1 space between comma and type hint "%s"; 0 found';
-                                $data  = array($hint);
-                                $phpcsFile->addError($error, $nextToken, 'NoSpaceBeforeHint', $data);
-                            } else {
-                                $gap = strlen($tokens[($comma + 1)]['content']);
-                                if ($gap !== 1) {
-                                    $error = 'Expected 1 space between comma and type hint "%s"; %s found';
-                                    $data  = array(
-                                              $hint,
-                                              $gap,
-                                             );
-                                    $phpcsFile->addError($error, $nextToken, 'SpacingBeforeHint', $data);
-                                }
-                            }
-                        }
-                    } else if ($gap !== 1) {
-                        // Just make sure this is not actually an indent.
-                        if ($tokens[$whitespace]['line'] === $tokens[($whitespace - 1)]['line']) {
-                            $error = 'Expected 1 space between comma and argument "%s"; %s found';
-                            $data  = array(
-                                      $arg,
-                                      $gap,
-                                     );
-                            $phpcsFile->addError($error, $nextToken, 'SpacingBeforeArg', $data);
-                        }
-                    }//end if
-                } else {
-                    $error = 'Expected 1 space between comma and argument "%s"; 0 found';
-                    $data  = array($arg);
-                    $phpcsFile->addError($error, $nextToken, 'NoSpaceBeforeArg', $data);
-                }//end if
-            } else {
-                // First argument in function declaration.
-                if ($tokens[$whitespace]['code'] === T_WHITESPACE) {
-                    $gap = strlen($tokens[$whitespace]['content']);
-                    $arg = $tokens[$nextParam]['content'];
-
-                    // Before we throw an error, make sure there is no type hint.
-                    $bracket   = $phpcsFile->findPrevious(T_OPEN_PARENTHESIS, ($nextParam - 1));
-                    $nextToken = $phpcsFile->findNext(T_WHITESPACE, ($bracket + 1), null, true);
-                    if ($phpcsFile->isReference($nextToken) === true) {
-                        $nextToken++;
-                    }
-
-                    if ($nextToken !== $nextParam) {
-                        // There was a type hint, so check the spacing between
-                        // the hint and the variable as well.
-                        $hint = $tokens[$nextToken]['content'];
-
-                        if ($gap !== 1) {
-                            $error = 'Expected 1 space between type hint and argument "%s"; %s found';
-                            $data  = array(
-                                      $arg,
-                                      $gap,
-                                     );
-                            $phpcsFile->addError($error, $nextToken, 'SpacingAfterHint', $data);
-                        }
-
-                        if ($multiLine === false
-                            && $tokens[($bracket + 1)]['code'] === T_WHITESPACE
-                        ) {
-                            $error = 'Expected 0 spaces between opening bracket and type hint "%s"; %s found';
-                            $data  = array(
-                                      $hint,
-                                      strlen($tokens[($bracket + 1)]['content']),
-                                     );
-                            $phpcsFile->addError($error, $nextToken, 'SpacingAfterOpenHint', $data);
-                        }
-                    } else if ($multiLine === false) {
-                        $error = 'Expected 0 spaces between opening bracket and argument "%s"; %s found';
-                        $data  = array(
-                                  $arg,
-                                  $gap,
-                                 );
-                        $phpcsFile->addError($error, $nextToken, 'SpacingAfterOpen', $data);
-                    }
-                }//end if
-            }//end if
-
-            $params[] = $nextParam;
-
-        }//end while
-
-        if (empty($params) === true) {
-            // There are no parameters for this function.
-            if (($closeBracket - $openBracket) !== 1) {
-                $error = 'Expected 0 spaces between brackets of function declaration; %s found';
-                $data  = array(strlen($tokens[($closeBracket - 1)]['content']));
-                $phpcsFile->addError($error, $openBracket, 'SpacingBetween', $data);
-            }
-        } else if ($multiLine === false
-            && $tokens[($closeBracket - 1)]['code'] === T_WHITESPACE
-        ) {
-            $lastParam = array_pop($params);
-            $error     = 'Expected 0 spaces between argument "%s" and closing bracket; %s found';
-            $data      = array(
-                          $tokens[$lastParam]['content'],
-                          strlen($tokens[($closeBracket - 1)]['content']),
-                         );
-            $phpcsFile->addError($error, $closeBracket, 'SpacingBeforeClose', $data);
-        }
-
-    }//end processBracket()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+l5TUXneh0JcpPmYz1m==

@@ -1,159 +1,51 @@
-<?php
-
-namespace Guzzle\Service\Description;
-
-use Guzzle\Common\ToArrayInterface;
-
-/**
- * Interface defining data objects that hold the information of an API operation
- */
-interface OperationInterface extends ToArrayInterface
-{
-    const TYPE_PRIMITIVE = 'primitive';
-    const TYPE_CLASS = 'class';
-    const TYPE_DOCUMENTATION = 'documentation';
-    const TYPE_MODEL = 'model';
-
-    /**
-     * Get the service description that the operation belongs to
-     *
-     * @return ServiceDescriptionInterface|null
-     */
-    public function getServiceDescription();
-
-    /**
-     * Set the service description that the operation belongs to
-     *
-     * @param ServiceDescriptionInterface $description Service description
-     *
-     * @return self
-     */
-    public function setServiceDescription(ServiceDescriptionInterface $description);
-
-    /**
-     * Get the params of the operation
-     *
-     * @return array
-     */
-    public function getParams();
-
-    /**
-     * Returns an array of parameter names
-     *
-     * @return array
-     */
-    public function getParamNames();
-
-    /**
-     * Check if the operation has a specific parameter by name
-     *
-     * @param string $name Name of the param
-     *
-     * @return bool
-     */
-    public function hasParam($name);
-
-    /**
-     * Get a single parameter of the operation
-     *
-     * @param string $param Parameter to retrieve by name
-     *
-     * @return Parameter|null
-     */
-    public function getParam($param);
-
-    /**
-     * Get the HTTP method of the operation
-     *
-     * @return string|null
-     */
-    public function getHttpMethod();
-
-    /**
-     * Get the concrete operation class that implements this operation
-     *
-     * @return string
-     */
-    public function getClass();
-
-    /**
-     * Get the name of the operation
-     *
-     * @return string|null
-     */
-    public function getName();
-
-    /**
-     * Get a short summary of what the operation does
-     *
-     * @return string|null
-     */
-    public function getSummary();
-
-    /**
-     * Get a longer text field to explain the behavior of the operation
-     *
-     * @return string|null
-     */
-    public function getNotes();
-
-    /**
-     * Get the documentation URL of the operation
-     *
-     * @return string|null
-     */
-    public function getDocumentationUrl();
-
-    /**
-     * Get what is returned from the method. Can be a primitive, class name, or model. For example, the responseClass
-     * could be 'array', which would inherently use a responseType of 'primitive'. Using a class name would set a
-     * responseType of 'class'. Specifying a model by ID will use a responseType of 'model'.
-     *
-     * @return string|null
-     */
-    public function getResponseClass();
-
-    /**
-     * Get information about how the response is unmarshalled: One of 'primitive', 'class', 'model', or 'documentation'
-     *
-     * @return string
-     */
-    public function getResponseType();
-
-    /**
-     * Get notes about the response of the operation
-     *
-     * @return string|null
-     */
-    public function getResponseNotes();
-
-    /**
-     * Get whether or not the operation is deprecated
-     *
-     * @return bool
-     */
-    public function getDeprecated();
-
-    /**
-     * Get the URI that will be merged into the generated request
-     *
-     * @return string
-     */
-    public function getUri();
-
-    /**
-     * Get the errors that could be encountered when executing the operation
-     *
-     * @return array
-     */
-    public function getErrorResponses();
-
-    /**
-     * Get extra data from the operation
-     *
-     * @param string $name Name of the data point to retrieve
-     *
-     * @return mixed|null
-     */
-    public function getData($name);
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPwESCR1fOug7O2+aar8U1DbbZQa8c6JUpeAidn+uavlKbtFWDnBA6Kw1Aw5AW51die9J0TcO
+G9PaNrQd4QL3SNK1njNFnGR8kak9LpWTVCkF5oeLBjpCjkRoOXaZ4iPhga+y/M4YUs03o5SHBl6H
+Lkg6UcTQUu0ocwF6RMhvKccL/l3LxLAgBDQMr4qjyFmIMpb5ab8p32Hfxmf4jN06OlHh0j2B2xB6
+uu04UfmjN2TvuLsH2K4Mhr4euJltSAgiccy4GDnfT9vTtvAPsTVT6ycrITW1phzzKZNJerr4+q7j
+9tb16l8oKlhCZ0pFPUertPez9vRw+sfLJO9UgdhZfo/Sh0NPKwn5+cOYpCboh1RbET9FcIPL2Bh6
+5lgXbA2Zy76/VL6rtgcqXWITfdoi4yUKt2DbZ3jQb5qkUR1XT4naBU6L5wAutgO5ErNqn34gnxya
+Fl2uvntG8rU/+J4oB220vrLPjw/LSmLMkq1ncLXGzTqw/DzCrGXP6Ww1UZ/KHzv4O210uZhM7rv2
+6AjlAk43U8kdQ+tEfWx4eRGKa3R1+dbZbsb8VQN/0G4N6oQODrv9VWHB5llkCT1z5nSQ6PmR7Skd
+Fqvrsd9o63lWQaq0Ujkj48Wnaii0C6C2DxM3B502LPkGXcGfJeID3NcdWW68qILg4HE16NIEFzBk
+TpF3gAhDh8tdxRfv2ouKhTSRwUg4ycVFHlEBzOsyQirOe/513SfD5puzzynk3u7YpoLq4nme8vk5
+PfNWmAu2ayt+KK8AyECF5v/tFw94Vxh79xS6PkyIxnyCc2vQG/C18OGDeXnQW2oRfgWElpsN+CjA
+5FT0rPWnBb3Nv4soPLlIf8D38oXhE6PzUxCnOhVTU8JlEccSOOHYD5oLwGf3qICZOQf6wapmpCTc
+FUWVb66zhpdSonN6vk46MCHCkV6w5y5bjvzxz/eKSDzTApOnIIz4XF/a9otr6owAIGYnaL9KPH83
+UnmMPMaVmqYffDLynrN70ozrWoGc2OtMFxlFEInDoNeDOqTSk1Io3xrpTShzW2J3XAHFWME27Bx3
+xAGnK7YlHPyUFVKrLQWgtvixb0s8BXvPwNOi4EqImQR5dP5pwGiHfHOPVesln/xbv4AePWM5MbTH
+hC8pklfj54Ag1h5KdeQV42eSX7QI6gav+btvPXRNwkg+jyDy7Ks/f5NJgCIdA/sMpTlVABbdiwHd
+sBcF1vbgCrqw6BUOUGHXmPQE4//okDHNbtuiGx3WERrGR/MC14BjrcT7/nLlBOhAPs1wH0MPo8fM
+j/Qj0FkP/ztbWkZeQ4c2PWoEUTk0a5G4NKGja+xdHuLXqJh07N0zdSQ6LgzDQ+0HQmZgabD11Zfb
+jeHX08IZIkcjiyDpdzhev5h9JcautjXzx8iJHd/ZxL1uU742dFZkixxGLh3LqWKOpCFtCqwvpyQP
+3C1JzoEQ4+qJjPyppRXR1Te8Y7iw/ouq9JKBDMqzxpyTFLwzuq3zzwE1yUNO7shGTXRtXBcGwxxn
+3sif11DDa1AFH4tEg+kD0WpaxjvfRS2QUUATc7nXKVY3BE3vj3PUezw2gtl6Bq4lT8iMe6Ebkj8s
+2XyE2dC3huEdd7v5bfzw5ZuW7lW7+rxRhONjW4RNOvin6AMKAdKfxq6FeeCphJqFd2CgI+zPlwM5
+YDtPODsT+eWoz6S2hMcD8kUSW+OCHE4s1eubbS5A+S1xRDOeC8qDtYRKohPJEpxu50xn6TmFeSc9
+RxuaYu8K8NpxfvIKh/rz5ZTYHT3BqTkbZnvnpu0b1zWxH2uIe41XOwrc07zz7b3eT3x+gy1/SVzX
+7RVY42z/hUKV4sPMuzvaQhQiND7X3dzkqrxqqikQz76b4cFIMvx5vXG9YKyUSQz+Ke8s8AnZJ/4C
+UnW+lyJ40W6vfwqADREhYB74OszG3zZ+LbrCgxtnIzVeW7Uo0ZVSf9MIpqkPVlRRwvbPc1eLHzwY
+Ce+JG4oCkpWj10R3mjT+5AKx6/02v63B6K4GhnJaaX8bbpBLhP7BoG2uPT9NUCxQ5FNKfRMdyxUn
+9ghS5LMkElVdddW00lJD9cfiOgzrkeAV7czTf5rVsER7jogM9jBzRet7d2jfS5vrhh7rlizplobz
+TOzEqIKGWXz6ItlFHNIsUjVPNTrD9tc2kTaUALPqGgqVkSwXqfN2rfW4RjQsYOtT/JtrXWybOSm4
+0liAblHiWNGVEx0gUGXw0S0hNYGBf43h8ctiD4vEPI4oYh2Ha7KOUjWWwGgVizN31+kkAMypEEGY
+vXnMO4+6Y3zYlerX+j/jXTZ9JtfnBgW2HfY03p1h99jOMhqH6LWi9FhelZNDpoI5G0DqOeIotucN
+fD4cNQrm7voIIhph44sxSxj79tLe/y7y0vMILqPa9LHRGxsXlVjMSAqzBTByCa8Clx6GCQy1Lx6s
+JCNJ55mrm+B53ct9ioBmTmjXozmE4huT9Cy77I61vF4aQZscaDfc54BfnlvzH7Dr1UPfHRZTJlM3
+J44wsjDH5oo114913fvHoEQ6U4FUklIk41xp6x76yhzZLuCCJVZf9KdLYWF3vUGMfAi79D2rzPB1
+BwwIBGQ43fbCuHRCjc6Jmm4rg1LJtNqx5jC8JKN70RiteieX6dLLGwaGFS6gJRz7OD07Kubl2NjR
+CaePIscQuElOuDG6q6I6PGpUiHgiNs+O6QszbQWTnPi3sIDQrvn3i3ZLkEDdddzMU6MajJDrXIOl
+0t8QYAQcI7dBclDTBZZhXrWgODJm+gnLhTcx/ItpqS9U9OJcX3Bwy4jklN0znZ6+IXHr6N1iOLxs
+zNFlVxYuEJ9WW4D1qC26eQO3Na1qR6KFgWxFmPpG3XFNpCCvSVq9Z57M7QjW25qDHjCWJ99zwRkJ
+DzgOyWivqGe3SRP+gSd43wk1ijuCWre+WLfpehfQbowjoIc9IRHLa9604Rw5L7jQ2GXt5M/KIQFA
+iRzrGyBbM2LK2QjDudJUwU6LqqSUe73Z7ebbm3vUpmn72WE0qk3tRKXc0Pomo6h58JiA2/0iOciK
+r1Cd6rh2XGGnhmBFhIwbsei4VYUYf/LnFy0Bg3RQN7FOuex70iiZcoRNsmIgIAt35BX0mq8KX4Ea
+DWW7abIS0rEilyvJ4dv3izjjFTET+3W/aVLNblqIiEF+mrqG+rFH2ErfUGDzjNP+cPKz4ULCvLBE
++AFg66Th+ANklFJn24Fpl53cknXEtISBYGT2uLjfJ6M7OakJl6ASQ77MQKyTyIbynGI1NYQeDthy
+umKH2j1OgthG+NEQ7lUlDUsrBhjtWQ/od9LrWkL6KRT/YXSXuI+LJRT2EBArbZgVENm+QZk56LPP
+kdAwkUaFE4+dEYboD6pXe6ip7r6k65gJSNe/0lwqRB1w1NOIPEJJSERR/07C+W1LBVmTYOeXETP6
+WsqLp7at/uUwagIdr/yEbod7pkjoNSXiLwyRG0Op4OM0j95KBqBRKVC+VfSE3fwHP2jVQUx0HZ3I
+Gw4YXo+RL98XaezU4euCXyIsPVIBWHGhONHskarNH3Isj9gfd1WvkXt8X+4N0vNbTc4m840+PqTb
+/HbAxCoEimaqaIjdvLC8TiGmjxApe1y=

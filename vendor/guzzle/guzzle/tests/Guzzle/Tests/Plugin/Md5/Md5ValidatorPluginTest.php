@@ -1,120 +1,68 @@
-<?php
-
-namespace Guzzle\Tests\Plugin\Md5;
-
-use Guzzle\Http\EntityBody;
-use Guzzle\Http\Message\RequestFactory;
-use Guzzle\Http\Message\Response;
-use Guzzle\Plugin\Md5\Md5ValidatorPlugin;
-
-/**
- * @covers Guzzle\Plugin\Md5\Md5ValidatorPlugin
- */
-class Md5ValidatorPluginTest extends \Guzzle\Tests\GuzzleTestCase
-{
-    public function testValidatesMd5()
-    {
-        $plugin = new Md5ValidatorPlugin();
-        $request = RequestFactory::getInstance()->create('GET', 'http://www.test.com/');
-        $request->getEventDispatcher()->addSubscriber($plugin);
-
-        $body = 'abc';
-        $hash = md5($body);
-        $response = new Response(200, array(
-            'Content-MD5' => $hash,
-            'Content-Length' => 3
-        ), 'abc');
-
-        $request->dispatch('request.complete', array(
-            'response' => $response
-        ));
-
-        // Try again with no Content-MD5
-        $response->removeHeader('Content-MD5');
-        $request->dispatch('request.complete', array(
-            'response' => $response
-        ));
-    }
-
-    /**
-     * @expectedException UnexpectedValueException
-     */
-    public function testThrowsExceptionOnInvalidMd5()
-    {
-        $plugin = new Md5ValidatorPlugin();
-        $request = RequestFactory::getInstance()->create('GET', 'http://www.test.com/');
-        $request->getEventDispatcher()->addSubscriber($plugin);
-
-        $request->dispatch('request.complete', array(
-            'response' => new Response(200, array(
-                'Content-MD5' => 'foobar',
-                'Content-Length' => 3
-            ), 'abc')
-        ));
-    }
-
-    public function testSkipsWhenContentLengthIsTooLarge()
-    {
-        $plugin = new Md5ValidatorPlugin(false, 1);
-        $request = RequestFactory::getInstance()->create('GET', 'http://www.test.com/');
-        $request->getEventDispatcher()->addSubscriber($plugin);
-
-        $request->dispatch('request.complete', array(
-            'response' => new Response(200, array(
-                'Content-MD5' => 'foobar',
-                'Content-Length' => 3
-            ), 'abc')
-        ));
-    }
-
-    public function testProperlyValidatesWhenUsingContentEncoding()
-    {
-        $plugin = new Md5ValidatorPlugin(true);
-        $request = RequestFactory::getInstance()->create('GET', 'http://www.test.com/');
-        $request->getEventDispatcher()->addSubscriber($plugin);
-
-        // Content-MD5 is the MD5 hash of the canonical content after all
-        // content-encoding has been applied.  Because cURL will automatically
-        // decompress entity bodies, we need to re-compress it to calculate.
-        $body = EntityBody::factory('abc');
-        $body->compress();
-        $hash = $body->getContentMd5();
-        $body->uncompress();
-
-        $response = new Response(200, array(
-            'Content-MD5' => $hash,
-            'Content-Encoding' => 'gzip'
-        ), 'abc');
-        $request->dispatch('request.complete', array(
-            'response' => $response
-        ));
-        $this->assertEquals('abc', $response->getBody(true));
-
-        // Try again with an unknown encoding
-        $response = new Response(200, array(
-            'Content-MD5' => $hash,
-            'Content-Encoding' => 'foobar'
-        ), 'abc');
-        $request->dispatch('request.complete', array(
-            'response' => $response
-        ));
-
-        // Try again with compress
-        $body->compress('bzip2.compress');
-        $response = new Response(200, array(
-            'Content-MD5' => $body->getContentMd5(),
-            'Content-Encoding' => 'compress'
-        ), 'abc');
-        $request->dispatch('request.complete', array(
-            'response' => $response
-        ));
-
-        // Try again with encoding and disabled content-encoding checks
-        $request->getEventDispatcher()->removeSubscriber($plugin);
-        $plugin = new Md5ValidatorPlugin(false);
-        $request->getEventDispatcher()->addSubscriber($plugin);
-        $request->dispatch('request.complete', array(
-            'response' => $response
-        ));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+kz2l0W4=

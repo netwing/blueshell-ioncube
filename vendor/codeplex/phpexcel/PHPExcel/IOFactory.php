@@ -1,288 +1,89 @@
-<?php
-/**
- * PHPExcel
- *
- * Copyright (c) 2006 - 2012 PHPExcel
- *
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation; either
- * version 2.1 of the License, or (at your option) any later version.
- *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
- *
- * @category   PHPExcel
- * @package    PHPExcel
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
- * @version    1.7.8, 2012-10-12
- */
-
-
-/**	PHPExcel root directory */
-if (!defined('PHPEXCEL_ROOT')) {
-	/**
-	 * @ignore
-	 */
-	define('PHPEXCEL_ROOT', dirname(__FILE__) . '/../');
-	require(PHPEXCEL_ROOT . 'PHPExcel/Autoloader.php');
-}
-
-/**
- * PHPExcel_IOFactory
- *
- * @category   PHPExcel
- * @package    PHPExcel
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- */
-class PHPExcel_IOFactory
-{
-	/**
-	 * Search locations
-	 *
-	 * @var	array
-	 * @access	private
-	 * @static
-	 */
-	private static $_searchLocations = array(
-		array( 'type' => 'IWriter', 'path' => 'PHPExcel/Writer/{0}.php', 'class' => 'PHPExcel_Writer_{0}' ),
-		array( 'type' => 'IReader', 'path' => 'PHPExcel/Reader/{0}.php', 'class' => 'PHPExcel_Reader_{0}' )
-	);
-
-	/**
-	 * Autoresolve classes
-	 *
-	 * @var	array
-	 * @access	private
-	 * @static
-	 */
-	private static $_autoResolveClasses = array(
-		'Excel2007',
-		'Excel5',
-		'Excel2003XML',
-		'OOCalc',
-		'SYLK',
-		'Gnumeric',
-		'HTML',
-		'CSV',
-	);
-
-    /**
-     *	Private constructor for PHPExcel_IOFactory
-     */
-    private function __construct() { }
-
-    /**
-     * Get search locations
-     *
-	 * @static
-	 * @access	public
-     * @return	array
-     */
-	public static function getSearchLocations() {
-		return self::$_searchLocations;
-	}	//	function getSearchLocations()
-
-	/**
-	 * Set search locations
-	 *
-	 * @static
-	 * @access	public
-	 * @param	array $value
-	 * @throws	Exception
-	 */
-	public static function setSearchLocations($value) {
-		if (is_array($value)) {
-			self::$_searchLocations = $value;
-		} else {
-			throw new Exception('Invalid parameter passed.');
-		}
-	}	//	function setSearchLocations()
-
-	/**
-	 * Add search location
-	 *
-	 * @static
-	 * @access	public
-	 * @param	string $type		Example: IWriter
-	 * @param	string $location	Example: PHPExcel/Writer/{0}.php
-	 * @param	string $classname 	Example: PHPExcel_Writer_{0}
-	 */
-	public static function addSearchLocation($type = '', $location = '', $classname = '') {
-		self::$_searchLocations[] = array( 'type' => $type, 'path' => $location, 'class' => $classname );
-	}	//	function addSearchLocation()
-
-	/**
-	 * Create PHPExcel_Writer_IWriter
-	 *
-	 * @static
-	 * @access	public
-	 * @param	PHPExcel $phpExcel
-	 * @param	string  $writerType	Example: Excel2007
-	 * @return	PHPExcel_Writer_IWriter
-	 * @throws	Exception
-	 */
-	public static function createWriter(PHPExcel $phpExcel, $writerType = '') {
-		// Search type
-		$searchType = 'IWriter';
-
-		// Include class
-		foreach (self::$_searchLocations as $searchLocation) {
-			if ($searchLocation['type'] == $searchType) {
-				$className = str_replace('{0}', $writerType, $searchLocation['class']);
-
-				$instance = new $className($phpExcel);
-				if ($instance !== NULL) {
-					return $instance;
-				}
-			}
-		}
-
-		// Nothing found...
-		throw new Exception("No $searchType found for type $writerType");
-	}	//	function createWriter()
-
-	/**
-	 * Create PHPExcel_Reader_IReader
-	 *
-	 * @static
-	 * @access	public
-	 * @param	string $readerType	Example: Excel2007
-	 * @return	PHPExcel_Reader_IReader
-	 * @throws	Exception
-	 */
-	public static function createReader($readerType = '') {
-		// Search type
-		$searchType = 'IReader';
-
-		// Include class
-		foreach (self::$_searchLocations as $searchLocation) {
-			if ($searchLocation['type'] == $searchType) {
-				$className = str_replace('{0}', $readerType, $searchLocation['class']);
-
-				$instance = new $className();
-				if ($instance !== NULL) {
-					return $instance;
-				}
-			}
-		}
-
-		// Nothing found...
-		throw new Exception("No $searchType found for type $readerType");
-	}	//	function createReader()
-
-	/**
-	 * Loads PHPExcel from file using automatic PHPExcel_Reader_IReader resolution
-	 *
-	 * @static
-	 * @access public
-	 * @param 	string 		$pFileName		The name of the spreadsheet file
-	 * @return	PHPExcel
-	 * @throws	Exception
-	 */
-	public static function load($pFilename) {
-		$reader = self::createReaderForFile($pFilename);
-		return $reader->load($pFilename);
-	}	//	function load()
-
-	/**
-	 * Identify file type using automatic PHPExcel_Reader_IReader resolution
-	 *
-	 * @static
-	 * @access public
-	 * @param 	string 		$pFileName		The name of the spreadsheet file to identify
-	 * @return	string
-	 * @throws	Exception
-	 */
-	public static function identify($pFilename) {
-		$reader = self::createReaderForFile($pFilename);
-		$className = get_class($reader);
-		$classType = explode('_',$className);
-		unset($reader);
-		return array_pop($classType);
-	}	//	function identify()
-
-	/**
-	 * Create PHPExcel_Reader_IReader for file using automatic PHPExcel_Reader_IReader resolution
-	 *
-	 * @static
-	 * @access	public
-	 * @param 	string 		$pFileName		The name of the spreadsheet file
-	 * @return	PHPExcel_Reader_IReader
-	 * @throws	Exception
-	 */
-	public static function createReaderForFile($pFilename) {
-
-		// First, lucky guess by inspecting file extension
-		$pathinfo = pathinfo($pFilename);
-
-		$extensionType = NULL;
-		if (isset($pathinfo['extension'])) {
-			switch (strtolower($pathinfo['extension'])) {
-				case 'xlsx':			//	Excel (OfficeOpenXML) Spreadsheet
-				case 'xlsm':			//	Excel (OfficeOpenXML) Macro Spreadsheet (macros will be discarded)
-				case 'xltx':			//	Excel (OfficeOpenXML) Template
-				case 'xltm':			//	Excel (OfficeOpenXML) Macro Template (macros will be discarded)
-					$extensionType = 'Excel2007';
-					break;
-				case 'xls':				//	Excel (BIFF) Spreadsheet
-				case 'xlt':				//	Excel (BIFF) Template
-					$extensionType = 'Excel5';
-					break;
-				case 'ods':				//	Open/Libre Offic Calc
-				case 'ots':				//	Open/Libre Offic Calc Template
-					$extensionType = 'OOCalc';
-					break;
-				case 'slk':
-					$extensionType = 'SYLK';
-					break;
-				case 'xml':				//	Excel 2003 SpreadSheetML
-					$extensionType = 'Excel2003XML';
-					break;
-				case 'gnumeric':
-					$extensionType = 'Gnumeric';
-					break;
-				case 'htm':
-				case 'html':
-					$extensionType = 'HTML';
-					break;
-				case 'csv':
-					// Do nothing
-					// We must not try to use CSV reader since it loads
-					// all files including Excel files etc.
-					break;
-				default:
-					break;
-			}
-
-			if ($extensionType !== NULL) {
-				$reader = self::createReader($extensionType);
-				// Let's see if we are lucky
-				if (isset($reader) && $reader->canRead($pFilename)) {
-					return $reader;
-				}
-			}
-		}
-
-		// If we reach here then "lucky guess" didn't give any result
-		// Try walking through all the options in self::$_autoResolveClasses
-		foreach (self::$_autoResolveClasses as $autoResolveClass) {
-			//	Ignore our original guess, we know that won't work
-			if ($autoResolveClass !== $extensionType) {
-				$reader = self::createReader($autoResolveClass);
-				if ($reader->canRead($pFilename)) {
-					return $reader;
-				}
-			}
-		}
-
-		throw new Exception('Unable to identify a reader for this file');
-	}	//	function createReaderForFile()
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

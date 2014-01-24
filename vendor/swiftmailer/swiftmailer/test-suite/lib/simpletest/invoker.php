@@ -1,139 +1,48 @@
-<?php
-/**
- *  Base include file for SimpleTest
- *  @package    SimpleTest
- *  @subpackage UnitTester
- *  @version    $Id: invoker.php 1785 2008-04-26 13:56:41Z pp11 $
- */
-
-/**#@+
- * Includes SimpleTest files and defined the root constant
- * for dependent libraries.
- */
-require_once(dirname(__FILE__) . '/errors.php');
-require_once(dirname(__FILE__) . '/compatibility.php');
-require_once(dirname(__FILE__) . '/scorer.php');
-require_once(dirname(__FILE__) . '/expectation.php');
-require_once(dirname(__FILE__) . '/dumper.php');
-if (! defined('SIMPLE_TEST')) {
-    define('SIMPLE_TEST', dirname(__FILE__) . '/');
-}
-/**#@-*/
-
-/**
- *    This is called by the class runner to run a
- *    single test method. Will also run the setUp()
- *    and tearDown() methods.
- *    @package SimpleTest
- *    @subpackage UnitTester
- */
-class SimpleInvoker {
-    private $test_case;
-
-    /**
-     *    Stashes the test case for later.
-     *    @param SimpleTestCase $test_case  Test case to run.
-     */
-    function __construct($test_case) {
-        $this->test_case = $test_case;
-    }
-
-    /**
-     *    Accessor for test case being run.
-     *    @return SimpleTestCase    Test case.
-     *    @access public
-     */
-    function getTestCase() {
-        return $this->test_case;
-    }
-
-    /**
-     *    Runs test level set up. Used for changing
-     *    the mechanics of base test cases.
-     *    @param string $method    Test method to call.
-     *    @access public
-     */
-    function before($method) {
-        $this->test_case->before($method);
-    }
-
-    /**
-     *    Invokes a test method and buffered with setUp()
-     *    and tearDown() calls.
-     *    @param string $method    Test method to call.
-     *    @access public
-     */
-    function invoke($method) {
-        $this->test_case->setUp();
-        $this->test_case->$method();
-        $this->test_case->tearDown();
-    }
-
-    /**
-     *    Runs test level clean up. Used for changing
-     *    the mechanics of base test cases.
-     *    @param string $method    Test method to call.
-     *    @access public
-     */
-    function after($method) {
-        $this->test_case->after($method);
-    }
-}
-
-/**
- *    Do nothing decorator. Just passes the invocation
- *    straight through.
- *    @package SimpleTest
- *    @subpackage UnitTester
- */
-class SimpleInvokerDecorator {
-    private $invoker;
-
-    /**
-     *    Stores the invoker to wrap.
-     *    @param SimpleInvoker $invoker  Test method runner.
-     */
-    function __construct($invoker) {
-        $this->invoker = $invoker;
-    }
-
-    /**
-     *    Accessor for test case being run.
-     *    @return SimpleTestCase    Test case.
-     *    @access public
-     */
-    function getTestCase() {
-        return $this->invoker->getTestCase();
-    }
-
-    /**
-     *    Runs test level set up. Used for changing
-     *    the mechanics of base test cases.
-     *    @param string $method    Test method to call.
-     *    @access public
-     */
-    function before($method) {
-        $this->invoker->before($method);
-    }
-
-    /**
-     *    Invokes a test method and buffered with setUp()
-     *    and tearDown() calls.
-     *    @param string $method    Test method to call.
-     *    @access public
-     */
-    function invoke($method) {
-        $this->invoker->invoke($method);
-    }
-
-    /**
-     *    Runs test level clean up. Used for changing
-     *    the mechanics of base test cases.
-     *    @param string $method    Test method to call.
-     *    @access public
-     */
-    function after($method) {
-        $this->invoker->after($method);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+HR+cPykgU4RDYa5gd1ZjPITSaL71IcLs+WlD/jvWAhUjD118ND8HtE44xOpFffA8tmYtiDySjsfN
+WpKn8tjL04706C1h5iW0F+XebqygrQQGWgMc/sf6g0YMzYnizq5uQ8l6q7QMtyUeuNkzyjYdbdhQ
+uxar0PTvlxy17J/6iaioQiHU+wkwLCt++5y+NPdmoLpH3EwcR7gSrszEQhuLRTiDYr0CRsuJopPd
+Kwsr2u4h8lKWrJhG5IzBLwzHAE4xzt2gh9fl143SQNIhP9xCCw2M5oUZlwB8zAEuKCu26necjACO
+FvumuPPYNaNYPMizXOuQjWLPEcVKwBbd1w22BcQ69W7yg15cDi2AZd3im4l2qIAdXmvqs9IsuiqP
+ta+Tp5CYh3RghOchqSLbK6pxZGgqRCip/sOsdcxq8h++geoGGXFhApaB67/zUF1gQsQgTbni83QJ
+gdo0x2VyXHP4LSW6bRJ1jeECATTB6e43/BXUZ6FaCGzdO/XmJJZh3+7/zFpF0rIX8oCduoI8+Ei8
+OsWKEivFGvdSN8kjqwdq5peXDdxO6gMQpXr2wP2cFJ3tqCb2C4W6pPcFPX6xHWDBRn/UCkogjH6n
+ByACBqrWKpR2JOfCxWbXGdQxqmVb6ZCd/zGwNHeerjSq57t1Oy3CC6PvgXzNJZ72Ko6AKDUxbcNv
+7XIvLGMu2xo0EXAqcglbK94mIOyJ5sB+cVFwrklcePf6S18ut/Yja+Yzva3Hk5VmagB3OrxFLnyn
+rWnJ3QSUz4tz/Yu+C3GetG7nH5m2eQWNMP35hw8833fX/CBG8HEGSgCkDWDf6LXSBtzHTzjfNkPh
+sQtmsK1fWl6gcoeMHpzFCcgZbMvBGuU28tYyh5+Bs03fAeQ24XUVa3epGu+/nA4PqfHTUrYrdYQd
+wXujYiPl4RzPsOkQXvyWCuXUGZ1rumsnjDAbCZv0QlmFDgO1/qH+o/1K8gRPkaCkPV2dU0rDUTRZ
+zW/CgMZdPOBhHSx+YpJXKfFZeWCnzAyt0KiUbHhUZHZYR5Z5PeRsf+zPFREP9foMrwJiCrUuEueR
+zcUhdQ3iTrn5QVHqojNuV/cDStYnCMPSXtSD9ruoaM0QGyyTliEN8sCVP4m+NybatnjyAkm7lk+Z
+95zOCfI6g2UQ/6GPGOiDbDo4CzsfQdIUlKUPwuFsE6DOw3srABF0nmmdZ8TTmIz2ijxFLjztKaYL
+mhitKMJkbcMvz5LbzHgq5EQIdZx+R34xf5A7PRlw3J9mIr5XqXoCU31mK/PF+0o1E0zB/jQ27E7a
+7/CWkT+KVBOjPoMh1MEQGhkmKbgsVg5J8p9qDR8MnPzN5F2obD4wEoBmW5JFnZlYdn4eqm/0c6rC
+d40JJpL5SPwvJ5RWTfJ8GnHaUfF+qlTvybnWmKm/lhYpMtNUJmjDEFxZx1wYav1PT5YCZac8W989
+Cy4YpXmjyxwSSmsatPdAgE8KuEjtbIzEZY+BiJc3wy86XcsO7PrYEqXs2ZzZkFm/DT9uJK2KYrWS
+MvYiY+WIcgxUIX2Y1FSBLrGkbaQhIln3AdDxY5v32bGGPbfRbLKlJFvkoi7rK/TS7zeji/ZZD4+q
+2SV8i2mbRyfFVV5Civc1VdwcsP0icEI8eiCd8s+a27AJmlZMGGRkNFIWFfPNhkoEtIbk652cXkxi
+SsC6KI8MQBZEPNoZvKhv74n/GVhAQxrlaHdbymtv1H5X+cgNWq8tE9sRMv50g4JAPJQ4aTMBhu4X
+LNsuxu0MTwpePgaRtSWSYB4/uu7bXyBX0YO9z8Q65AsSNhnrd/DIQZy7IzZUlihtyOEtJBSR/SYD
+GrUDhbZUYtR0Iq4LO/ZlI2mB3l9EZ0fUwCHKSkgoczIAxY8pghni1R5fLW/QI2R1ZAl6fwg0sT7/
+jrBpvYjATiUcW/AW2PyiCHa9wOhMhFSmtTPNdKo5RYFheKMcn3LCAxGm2Rt3vSpL6ohPxps3VlTm
+2V+oPou0PYdT7afc8E0GOYzaZv9a5pXqAxu4vg8/mJ+IYndWXT/u/E3BHyPheeQruVp3Mv151XN7
+cTC1Z0mg3PujmzGc8E46NoT9hHfJcKQtAfuKJ/gWJY8KZhonO1ziymnD8KCRZnArmfVRP9p2aQ0V
+YrTLMXfMk0YWDT1wyCS0DKV6NZ/RHnZLQvgGX91uUg0ZK8VN5R5VQUnJDgdV52S4XFNxx7tx3sul
+P1jJtxyNUNz6pZSS9hnQ2dYA8pSxWFGsxPhx+ENtgcXGf73Ks+0AzG+qfe7KLopksMTkhZSPY7xM
+LcBGNA1tGtTynjwX5SO1mJv3ghqmXrKqH0uzx1uhwbEPMHGUKvOn+mly7J2ZD0WVjVFD9Ux+bpto
+Im7GGqhfku2T6Ga1mCdWJ48qTc6PpXiBJx/LPKt+Vp+ZZyIRiKhfYKRM6JLGZeDZIr+bLBa5y4na
+gs/F16qLfdCmxgYnmvLn6pueOT+lBDYo8TPcUa4Ww2Sg6kL1as7ITX84B4iwY1gdDzvbO/vnnDf6
++9Oz0KMyNQN8bUMxmvHyGn7n0IkDsHKQfkW0OddaGRaCAXp5ccrL/uY7ceoSjZwgfu8RW6tyt3Yr
+P/Vc8z68TCYnm5G8qQmjpdJFUX9R1RxwNvQyugAvQGp+Pc2Npj/Z5gYgClelFy8ZUOVun2aEYkMw
+tHqWldL8SZuisIAG94GV3SmZ1XGgeKSd61PqHuvJ6lP/ZgVHRnqDrgizez8T//z4MQHVjAl0icuK
+MVEX+/rpZ+P5doZ7yDHGxoCd8cinJmZUCi9bxpJx1V4eLVQIBPx+/E8wOfkG4BqTb1WbO8NxRTcM
+O+99bCtyhakIyH1JvBgMf6W/QgcUQmuBbUR++Nb5SFMvLyk5T7uwm2kbx1QBiYguP46L/8+mcSAw
+L4zEUoc1mLefC4beocKU4UZR4SitA3ZIJFYxuOwdsmJes0m0KkNm4hdSuLB88o/xH9Xi3Olf2gWN
+FoaooJVX0FcTc34zaDCFvI3JiO2FML1hl8hjYRecFxYpy0JGelgcUzAq+vUIinLshGKS003beuFl
+ft8js5MsCuPoYKg+MXHLn4430Aj8WQDNAAsc05m1iDwRcVIhgovzCaPaAIn8ijdUL9dv2vVaHN+C
+pLHHEUj1NBUNwK42Nd21YqGkm0BOcUkfYBtSwZdHAMiCudXB4UW+UKJLUg9FXmD835KDtE55DZZ4
+CgPXkbBjyuGPQf2O49Qch+2DmAGiBBHj8DxYOVXVoB5ExX2RXtA5eRwuP9HX7XB6Nk/lXJx9avWN
+QQtSGbxIMlJbV+pKqW98L+yP0+mGuG2zNwuokY4C3eZ+MIM8h4k26zMMJN+bgml/M8dONaetUiGD
+sEuZRPEyuqw8KjBhCNVfyP4LiEIBy5IIcqgGUKpeBFUN8Ido8LdVGwYlVtiX9G==

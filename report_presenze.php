@@ -1,27 +1,29 @@
-<?php
-require_once("config.inc.php");
-$blue->autentica_utente("contratti","R");
-
-$data_presenza = date("Y-m-d",time());
-$pontili = $blue->elenco_pontili();
-
-$messaggio = "";
-
-if (array_key_exists("id",$_GET)) {
-	$pontile = intval($_GET['id']);
-} else {
-	$pontile = 0;
-}
-if (array_key_exists("nopb",$_GET)) {
-    Yii::app()->user->setFlash('warning', Yii::t('app', 'No enabled resources for selected group.'));
-    header("Location:report_presenze.php?id=" . $pontile);
-    exit;
-} elseif (array_key_exists("nopr",$_GET)) {
-    Yii::app()->user->setFlash('warning', Yii::t('app', 'No presences for selected group and dates.'));
-    header("Location:report_presenze.php?id=" . $pontile);
-    exit;
-} else {
-    $messaggio = "";
-}
-
-require_once "views/resource/presence_report.php";
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

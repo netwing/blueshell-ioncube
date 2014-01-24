@@ -1,65 +1,40 @@
-<?php
-/**
- * Text_Template
- *
- * Copyright (c) 2009-2010, Sebastian Bergmann <sb@sebastian-bergmann.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @category   Text
- * @package    Template
- * @author     Sebastian Bergmann <sb@sebastian-bergmann.de>
- * @copyright  2009-2010 Sebastian Bergmann <sb@sebastian-bergmann.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://github.com/sebastianbergmann/php-text-template
- * @since      File available since Release 1.1.0
- */
-
-spl_autoload_register(
-  function ($class) {
-      static $classes = NULL;
-      static $path = NULL;
-
-      if ($classes === NULL) {
-          $classes = array(
-            'text_template' => '/Template.php'
-          );
-
-          $path = dirname(dirname(__FILE__));
-      }
-
-      $cn = strtolower($class);
-
-      if (isset($classes[$cn])) {
-          require $path . $classes[$cn];
-      }
-  }
-);
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

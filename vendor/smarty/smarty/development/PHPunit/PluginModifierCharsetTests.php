@@ -1,96 +1,60 @@
-<?php
-/**
-* Smarty PHPunit tests of modifier
-*
-* @package PHPunit
-* @author Rodney Rehm
-*/
-
-/**
-* class for modifier tests
-*/
-class PluginModifierCharsetTests extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $this->smarty = SmartyTests::$smarty;
-        SmartyTests::init();
-    }
-
-    static function isRunnable()
-    {
-        return true;
-    }
-
-    public function testToLatin1()
-    {
-        $encoded = "hällö wörld 1";
-        $result = utf8_decode($encoded);
-        $tpl = $this->smarty->createTemplate('eval:{"' . $encoded . '"|to_charset}');
-        $this->assertEquals($result, $tpl->fetch());
-    }
-
-    public function testToLatin1WithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $encoded = "hällö wörld 2";
-        $result = utf8_decode($encoded);
-        $tpl = $this->smarty->createTemplate('eval:{"' . $encoded . '"|to_charset}');
-        $this->assertEquals($encoded, $tpl->fetch());
-        Smarty::$_MBSTRING = true;
-    }
-
-    public function testFromLatin1()
-    {
-        $result = "hällö wörld 3";
-        $encoded = utf8_decode($result);
-        $tpl = $this->smarty->createTemplate('eval:{"' . $encoded . '"|from_charset}');
-        $this->assertEquals($result, $tpl->fetch());
-    }
-
-    public function testFromLatin1WithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $result = "hällö wörld 4";
-        $encoded = utf8_decode($result);
-        $tpl = $this->smarty->createTemplate('eval:{"' . $encoded . '"|from_charset}');
-        $this->assertEquals($encoded, $tpl->fetch());
-        Smarty::$_MBSTRING = true;
-    }
-
-    public function testFromUtf32le()
-    {
-        $result = "hällö wörld 5";
-        $encoded = mb_convert_encoding($result, "UTF-32LE", "UTF-8");
-        $tpl = $this->smarty->createTemplate('eval:{"' . $encoded . '"|from_charset:"UTF-32LE"}');
-        $this->assertEquals($result, $tpl->fetch());
-    }
-
-    public function testFromUtf32leWithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $result = "hällö wörld 6";
-        $encoded = mb_convert_encoding($result, "UTF-32LE", "UTF-8");
-        $tpl = $this->smarty->createTemplate('eval:{"' . $encoded . '"|from_charset:"UTF-32LE"}');
-        $this->assertEquals($encoded, $tpl->fetch());
-        Smarty::$_MBSTRING = true;
-    }
-
-    public function testToUtf32le()
-    {
-        $encoded = "hällö wörld 7";
-        $result = mb_convert_encoding($encoded, "UTF-32LE", "UTF-8");
-        $tpl = $this->smarty->createTemplate('eval:{"' . $encoded . '"|to_charset:"UTF-32LE"}');
-        $this->assertEquals($result, $tpl->fetch());
-    }
-
-    public function testToUtf32leWithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $encoded = "hällö wörld 8";
-        $result = mb_convert_encoding($encoded, "UTF-32LE", "UTF-8");
-        $tpl = $this->smarty->createTemplate('eval:{"' . $encoded . '"|to_charset:"UTF-32LE"}');
-        $this->assertEquals($encoded, $tpl->fetch());
-        Smarty::$_MBSTRING = true;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

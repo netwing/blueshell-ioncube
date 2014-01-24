@@ -1,638 +1,351 @@
-<?php
-/**
- * CDbCriteriaTest
- */
-class CDbCriteriaTest extends CTestCase {
-	protected $backupStaticAttributes = true;
-
-	/**
-	 * @covers CDbCriteria::addCondition
-	 */
-	public function testAddCondition() {
-		//adding new condition to empty one
-		CDbCriteria::$paramCount=0;
-		$criteria = new CDbCriteria();
-		$criteria->addCondition('A');
-		$this->assertEquals('A', $criteria->condition);
-
-		//adding multiple conditions
-		$criteria = new CDbCriteria();
-		$criteria->addCondition('A');
-		$criteria->addCondition('B');
-		$criteria->addCondition('C', 'OR');
-		$this->assertEquals('((A) AND (B)) OR (C)', $criteria->condition);
-
-		//adding empty array as condition
-		$criteria = new CDbCriteria();
-		$criteria->addCondition('A');
-		$criteria->addCondition(array());
-		$this->assertEquals('A', $criteria->condition);
-
-		//adding array as condition
-		$criteria = new CDbCriteria();
-		$criteria->addCondition(array('A', 'B'));
-		$this->assertEquals('(A) AND (B)', $criteria->condition);
-	}
-
-	/**
-	 * @depends testAddCondition
-	 * @covers CDbCriteria::addInCondition
-	 */
-	public function testAddInCondition() {
-		CDbCriteria::$paramCount=0;
-		$criteria = new CDbCriteria();
-
-		$criteria->addInCondition('A', array());
-		$this->assertEquals('0=1', $criteria->condition);
-		$this->assertTrue(empty($criteria->params));
-
-		// IN with one parameter should transform to =
-		$criteria = new CDbCriteria();
-
-		$criteria->addInCondition('A', array(1));
-		$this->assertEquals('A=:ycp0', $criteria->condition);
-		$this->assertEquals(1, $criteria->params[':ycp0']);
-
-		// IN with null should transform to IS NULL
-		$criteria = new CDbCriteria();
-
-		$criteria->addInCondition('A', array(null));
-		$this->assertEquals('A IS NULL', $criteria->condition);
-		$this->assertTrue(empty($criteria->params));
-
-		// IN with many parameters
-		$criteria = new CDbCriteria();
-
-		$criteria->addInCondition('B', array(1, 2, '3'));
-		$this->assertEquals('B IN (:ycp1, :ycp2, :ycp3)', $criteria->condition);
-		$this->assertEquals(1, $criteria->params[':ycp1']);
-		$this->assertEquals(2, $criteria->params[':ycp2']);
-		$this->assertEquals('3', $criteria->params[':ycp3']);
-	}
-
-	/**
-	 * @depends testAddCondition
-	 * @covers CDbCriteria::addNotInCondition
-	 */
-	public function testAddNotInCondition() {
-		// NOT IN with empty array should not change anything
-		CDbCriteria::$paramCount=0;
-		$criteria = new CDbCriteria();
-
-		$criteria->addNotInCondition('A', array());
-		$this->assertEquals('', $criteria->condition);
-		$this->assertTrue(empty($criteria->params));
-
-		// NOT IN with one parameter should transform to !=
-		$criteria = new CDbCriteria();
-
-		$criteria->addNotInCondition('A', array(1));
-		$this->assertEquals('A!=:ycp0', $criteria->condition);
-		$this->assertEquals(1, $criteria->params[':ycp0']);
-
-		// NOT IN with null should transform to IS NOT NULL
-		$criteria = new CDbCriteria();
-
-		$criteria->addNotInCondition('A', array(null));
-		$this->assertEquals('A IS NOT NULL', $criteria->condition);
-		$this->assertTrue(empty($criteria->params));
-
-		// NOT IN with many parameters
-		$criteria = new CDbCriteria();
-
-		$criteria->addNotInCondition('B', array(1, 2, '3'));
-		$this->assertEquals('B NOT IN (:ycp1, :ycp2, :ycp3)', $criteria->condition);
-		$this->assertEquals(1, $criteria->params[':ycp1']);
-		$this->assertEquals(2, $criteria->params[':ycp2']);
-		$this->assertEquals('3', $criteria->params[':ycp3']);
-	}
-
-	/**
-	 * @depends testAddCondition
-	 * @covers CDbCriteria::addSearchCondition
-	 */
-	public function testAddSearchCondition() {
-		// string escaping
-		CDbCriteria::$paramCount=0;
-		$criteria = new CDbCriteria();
-		$criteria->addSearchCondition('A', 'key_word%');
-
-		$this->assertEquals('A LIKE :ycp0', $criteria->condition);
-		$this->assertEquals('%key\_word\%%', $criteria->params[':ycp0']);
-
-		// no escaping
-		$criteria = new CDbCriteria();
-		$criteria->addSearchCondition('A', 'key_word%', false);
-
-		$this->assertEquals('A LIKE :ycp1', $criteria->condition);
-		$this->assertEquals('key_word%', $criteria->params[':ycp1']);
-	}
-
-	/**
-	 * @depends testAddCondition
-	 * @covers CDbCriteria::addColumnCondition
-	 */
-	public function testAddColumnCondition() {
-		CDbCriteria::$paramCount=0;
-		$criteria = new CDbCriteria();
-		$criteria->addColumnCondition(array('A' => 1, 'B' => null, 'C' => '2'));
-
-		$this->assertEquals('A=:ycp0 AND B IS NULL AND C=:ycp1', $criteria->condition);
-		$this->assertEquals(1, $criteria->params[':ycp0']);
-		$this->assertEquals('2', $criteria->params[':ycp1']);
-	}
-
-	/**
-	 * @depends testAddCondition
-	 * @covers CDbCriteria::compare
-	 */
-	public function testCompare(){
-		CDbCriteria::$paramCount=0;
-		$criteria = new CDbCriteria();
-		$criteria->compare('A', '');
-		$this->assertEquals('', $criteria->condition);
-
-		$criteria = new CDbCriteria();
-		$criteria->compare('A', 1);
-		$this->assertEquals('A=:ycp0', $criteria->condition);
-		$this->assertEquals(1, $criteria->params[':ycp0']);
-
-		$criteria = new CDbCriteria();
-		$criteria->compare('A', '>1');
-		$this->assertEquals('A>:ycp1', $criteria->condition);
-		$this->assertEquals(1, $criteria->params[':ycp1']);
-
-		$criteria = new CDbCriteria();
-		$criteria->compare('A', '<1');
-		$this->assertEquals('A<:ycp2', $criteria->condition);
-		$this->assertEquals(1, $criteria->params[':ycp2']);
-
-		$criteria = new CDbCriteria();
-		$criteria->compare('A', '<=1');
-		$this->assertEquals('A<=:ycp3', $criteria->condition);
-		$this->assertEquals(1, $criteria->params[':ycp3']);
-
-		$criteria = new CDbCriteria();
-		$criteria->compare('A', '>=1');
-		$this->assertEquals('A>=:ycp4', $criteria->condition);
-		$this->assertEquals(1, $criteria->params[':ycp4']);
-
-		$criteria = new CDbCriteria();
-		$criteria->compare('A', '<>1');
-		$this->assertEquals('A<>:ycp5', $criteria->condition);
-		$this->assertEquals(1, $criteria->params[':ycp5']);
-
-		$criteria = new CDbCriteria();
-		$criteria->compare('A', '=1');
-		$this->assertEquals('A=:ycp6', $criteria->condition);
-		$this->assertEquals(1, $criteria->params[':ycp6']);
-
-		$criteria = new CDbCriteria();
-		$criteria->compare('A', '1', true);
-		$this->assertEquals('A LIKE :ycp7', $criteria->condition);
-		$this->assertEquals('%1%', $criteria->params[':ycp7']);
-
-		$criteria = new CDbCriteria();
-		$criteria->compare('A', '=1', true);
-		$this->assertEquals('A=:ycp8', $criteria->condition);
-		$this->assertEquals('1', $criteria->params[':ycp8']);
-
-		$criteria = new CDbCriteria();
-		$criteria->compare('A', '<>1', true);
-		$this->assertEquals('A NOT LIKE :ycp9', $criteria->condition);
-		$this->assertEquals('%1%', $criteria->params[':ycp9']);
-
-		$criteria = new CDbCriteria();
-		$criteria->compare('A', '    value_with_spaces  ');
-		$this->assertEquals('A=:ycp10', $criteria->condition);
-		$this->assertEquals('    value_with_spaces  ', $criteria->params[':ycp10']);
-
-		$criteria = new CDbCriteria();
-		$criteria->compare('A', array());
-		$this->assertEquals('', $criteria->condition);
-
-		$criteria = new CDbCriteria();
-		$criteria->compare('A', array(1, '2'));
-		$this->assertEquals('A IN (:ycp11, :ycp12)', $criteria->condition);
-		$this->assertEquals(1, $criteria->params[':ycp11']);
-		$this->assertEquals('2', $criteria->params[':ycp12']);
-	}
-
-	/**
-	 * @depends testCompare
-	 * @covers CDbCriteria::mergeWith
-	 */
-	public function testMergeWith() {
-		// merging select
-
-		// * should be replaced
-		CDbCriteria::$paramCount=0;
-		$criteria1 = new CDbCriteria;
-		$criteria1->select = '*';
-
-		$criteria2 = new CDbCriteria;
-		$criteria2->select = 'a';
-
-		$criteria1->mergeWith($criteria2);
-
-		$this->assertEquals('a', $criteria1->select);
-
-		// equal selects should be left as is
-		$criteria1 = new CDbCriteria;
-		$criteria1->select = 'a';
-
-		$criteria2 = new CDbCriteria;
-		$criteria2->select = 'a';
-
-		$criteria1->mergeWith($criteria2);
-
-		$this->assertEquals('a', $criteria1->select);
-
-		// not equal selects are being merged
-		$criteria1 = new CDbCriteria;
-		$criteria1->select = 'a, b, c, d';
-
-		$criteria2 = new CDbCriteria;
-		$criteria2->select = 'a, c, e, f';
-
-		$criteria1->mergeWith($criteria2);
-
-		$this->assertEquals(array('a', 'b', 'c', 'd', 'e', 'f'), $criteria1->select);
-
-		// conditions
-
-		// equal conditions are not merged
-		$criteria1 = new CDbCriteria;
-		$criteria1->condition = 'a';
-
-		$criteria2 = new CDbCriteria;
-		$criteria2->condition = 'a';
-
-		$criteria1->mergeWith($criteria2);
-
-		$this->assertEquals('a', $criteria1->condition);
-
-		// empty condition is being replaced
-		$criteria1 = new CDbCriteria;
-		$criteria1->condition = '';
-
-		$criteria2 = new CDbCriteria;
-		$criteria2->condition = 'a';
-
-		$criteria1->mergeWith($criteria2);
-
-		$this->assertEquals('a', $criteria1->condition);
-
-		// not empty conditions are merged
-		$criteria1 = new CDbCriteria;
-		$criteria1->condition = 'a';
-
-		$criteria2 = new CDbCriteria;
-		$criteria2->condition = 'b';
-
-		$criteria1->mergeWith($criteria2);
-
-		$this->assertEquals('(a) AND (b)', $criteria1->condition);
-
-		// limit, offset, distinct and alias are being replaced
-		$criteria1 = new CDbCriteria;
-		$criteria1->limit = 10;
-		$criteria1->offset = 5;
-		$criteria1->alias = 'alias1';
-		$criteria1->distinct = true;
-
-		$criteria2 = new CDbCriteria;
-		$criteria2->limit = 20;
-		$criteria2->offset = 6;
-		$criteria2->alias = 'alias2';
-		$criteria1->distinct = false;
-
-		$criteria1->mergeWith($criteria2);
-
-		$this->assertEquals(20, $criteria1->limit);
-		$this->assertEquals(6, $criteria1->offset);
-		$this->assertEquals('alias2', $criteria1->alias);
-		$this->assertFalse($criteria1->distinct);
-
-
-		// empty order, group, join, having are being replaced
-		$criteria1 = new CDbCriteria;
-		$criteria1->order = '';
-		$criteria1->group = '';
-		$criteria1->join = '';
-		$criteria1->having = '';
-
-		$criteria2 = new CDbCriteria;
-		$criteria2->order = 'a';
-		$criteria1->group = 'a';
-		$criteria1->join = 'a';
-		$criteria2->having = 'a';
-
-		$criteria1->mergeWith($criteria2);
-
-		$this->assertEquals('a', $criteria1->order);
-		$this->assertEquals('a', $criteria1->group);
-		$this->assertEquals('a', $criteria1->join);
-		$this->assertEquals('a', $criteria1->having);
-
-		// merging with empty order, group, join ignored
-		$criteria1 = new CDbCriteria;
-		$criteria1->order = 'a';
-		$criteria1->group = 'a';
-		$criteria1->join = 'a';
-		$criteria1->having = 'a';
-
-		$criteria2 = new CDbCriteria;
-		$criteria2->order = '';
-		$criteria2->group = '';
-		$criteria2->join = '';
-		$criteria2->having = '';
-
-		$criteria1->mergeWith($criteria2);
-
-		$this->assertEquals('a', $criteria1->order);
-		$this->assertEquals('a', $criteria1->group);
-		$this->assertEquals('a', $criteria1->join);
-		$this->assertEquals('a', $criteria1->having);
-
-		// not empty order, group, join are being merged
-		$criteria1 = new CDbCriteria;
-		$criteria1->order = 'a';
-		$criteria1->group = 'a';
-		$criteria1->join = 'a';
-		$criteria1->having = 'a';
-
-		$criteria2 = new CDbCriteria;
-		$criteria2->order = 'b';
-		$criteria2->group = 'b';
-		$criteria2->join = 'b';
-		$criteria2->having = 'b';
-
-		$criteria1->mergeWith($criteria2);
-
-		$this->assertEquals('b, a', $criteria1->order);
-		$this->assertEquals('a, b', $criteria1->group);
-		$this->assertEquals('a b', $criteria1->join);
-		$this->assertEquals('(a) AND (b)', $criteria1->having);
-
-		// empty with is replaced
-		$criteria1 = new CDbCriteria;
-		$criteria1->with = '';
-
-		$criteria2 = new CDbCriteria;
-		$criteria2->with = 'a';
-
-		$criteria1->mergeWith($criteria2);
-
-		$this->assertEquals('a', $criteria1->with);
-
-		// not empty with are merged
-		$criteria1 = new CDbCriteria;
-		$criteria1->with = 'a';
-
-		$criteria2 = new CDbCriteria;
-		$criteria2->with = 'b';
-
-		$criteria1->mergeWith($criteria2);
-
-		$this->assertEquals(array('a', 'b'), $criteria1->with);
-
-		// not empty with are merged (more complex test)
-		$criteria1 = new CDbCriteria;
-		$criteria1->with = array('a', 'b');
-
-		$criteria2 = new CDbCriteria;
-		$criteria2->with = array('a', 'c');
-
-		$criteria1->mergeWith($criteria2);
-
-		$this->assertEquals(array('a', 'b', 'a', 'c'), $criteria1->with);
-
-		// merging scopes
-		$criteria1=new CDbCriteria;
-		$criteria1->scopes='scope1';
-
-		$criteria2=new CDbCriteria;
-		$criteria2->scopes='scope2';
-
-		$criteria1->mergeWith($criteria2);
-
-		$this->assertEquals(array('scope1','scope2'),$criteria1->scopes);
-
-		$criteria1=new CDbCriteria;
-		$criteria1->scopes='scope1';
-
-		$criteria2=new CDbCriteria;
-		$criteria2->scopes=array('scope2'=>1);
-
-		$criteria1->mergeWith($criteria2);
-
-		$this->assertEquals(array('scope1','scope2'=>1),$criteria1->scopes);
-
-		$criteria1=new CDbCriteria;
-		$criteria1->scopes=array('scope1'=>array(1,2));
-
-		$criteria2=new CDbCriteria;
-		$criteria2->scopes=array('scope2'=>array(3,4));
-
-		$criteria1->mergeWith($criteria2);
-
-		$this->assertEquals(array('scope1'=>array(1,2),'scope2'=>array(3,4)),$criteria1->scopes);
-
-		$criteria1=new CDbCriteria;
-		$criteria1->scopes=array('scope'=>array(1,2));
-
-		$criteria2=new CDbCriteria;
-		$criteria2->scopes=array('scope'=>array(3,4));
-
-		$criteria1->mergeWith($criteria2);
-
-		$this->assertEquals(array(array('scope'=>array(1,2)),array('scope'=>array(3,4))),$criteria1->scopes);
-
-		$criteria1=new CDbCriteria;
-		$criteria1->scopes=array('scope'=>array(1,2),'scope1');
-
-		$criteria2=new CDbCriteria;
-		$criteria2->scopes=array('scope2','scope'=>array(3,4));
-
-		$criteria1->mergeWith($criteria2);
-
-		$this->assertEquals(array(array('scope'=>array(1,2)),'scope1','scope2',array('scope'=>array(3,4))),$criteria1->scopes);
-
-		$criteria1=new CDbCriteria;
-		$criteria1->scopes=array(array('scope'=>array(1,2)),array('scope'=>array(3,4)));
-
-		$criteria2=new CDbCriteria;
-		$criteria2->scopes=array(array('scope'=>array(5,6)),array('scope'=>array(7,8)));
-
-		$criteria1->mergeWith($criteria2);
-
-		$this->assertEquals(array(array('scope'=>array(1,2)),array('scope'=>array(3,4)),array('scope'=>array(5,6)),array('scope'=>array(7,8))),$criteria1->scopes);
-
-		// merging two criteria with parameters
-		$criteria1 = new CDbCriteria;
-		$criteria1->compare('A1', 1);
-		$criteria1->compare('A2', 2);
-		$criteria1->compare('A3', 3);
-		$criteria1->compare('A4', 4);
-		$criteria1->compare('A5', 5);
-		$criteria1->compare('A6', 6);
-
-		$criteria2 = new CDbCriteria;
-		$criteria2->compare('B1', 7);
-		$criteria2->compare('B2', 8);
-		$criteria2->compare('B3', 9);
-		$criteria2->compare('B4', 10);
-		$criteria2->compare('B5', 11);
-		$criteria2->compare('B6', 12);
-
-		$criteria1->mergeWith($criteria2);
-
-		$this->assertEquals('((((((A1=:ycp0) AND (A2=:ycp1)) AND (A3=:ycp2)) AND (A4=:ycp3)) AND (A5=:ycp4)) AND (A6=:ycp5)) AND ((((((B1=:ycp6) AND (B2=:ycp7)) AND (B3=:ycp8)) AND (B4=:ycp9)) AND (B5=:ycp10)) AND (B6=:ycp11))', $criteria1->condition);
-		$this->assertEquals(1, $criteria1->params[':ycp0']);
-		$this->assertEquals(2, $criteria1->params[':ycp1']);
-		$this->assertEquals(3, $criteria1->params[':ycp2']);
-		$this->assertEquals(4, $criteria1->params[':ycp3']);
-		$this->assertEquals(5, $criteria1->params[':ycp4']);
-		$this->assertEquals(6, $criteria1->params[':ycp5']);
-		$this->assertEquals(7, $criteria1->params[':ycp6']);
-		$this->assertEquals(8, $criteria1->params[':ycp7']);
-		$this->assertEquals(9, $criteria1->params[':ycp8']);
-		$this->assertEquals(10, $criteria1->params[':ycp9']);
-		$this->assertEquals(11, $criteria1->params[':ycp10']);
-		$this->assertEquals(12, $criteria1->params[':ycp11']);
-	}
-
-	/**
-	 * Merging criterias with positioned and non positioned parameters.
-	 *
-	 * @depends testCompare
-	 * @covers CDbCriteria::mergeWith
-	 */
-	public function testMergeWithPositionalPlaceholders(){
-		CDbCriteria::$paramCount=0;
-		$criteria1 = new CDbCriteria();
-		$criteria1->condition = 'A=? AND B=?';
-		$criteria1->params = array(0 => 10, 1 => 20);
-
-		$criteria2 = new CDbCriteria();
-		$criteria2->compare('C', 30);
-		$criteria2->compare('D', 40);
-
-		$criteria2->mergeWith($criteria1);
-
-		$this->assertEquals('((C=:ycp0) AND (D=:ycp1)) AND (A=? AND B=?)', $criteria2->condition);
-
-		$this->assertEquals(10, $criteria2->params[0]);
-		$this->assertEquals(20, $criteria2->params[1]);
-		$this->assertEquals(30, $criteria2->params[':ycp0']);
-		$this->assertEquals(40, $criteria2->params[':ycp1']);
-
-		// and vice versa
-
-		$criteria1 = new CDbCriteria();
-		$criteria1->condition = 'A=? AND B=?';
-		$criteria1->params = array(0 => 10, 1 => 20);
-
-		$criteria2 = new CDbCriteria();
-		$criteria2->compare('C', 30);
-		$criteria2->compare('D', 40);
-
-		$criteria1->mergeWith($criteria2);
-
-		$this->assertEquals('(A=? AND B=?) AND ((C=:ycp2) AND (D=:ycp3))', $criteria1->condition);
-		$this->assertEquals(10, $criteria1->params[0]);
-		$this->assertEquals(20, $criteria1->params[1]);
-		$this->assertEquals(30, $criteria1->params[':ycp2']);
-		$this->assertEquals(40, $criteria1->params[':ycp3']);
-	}
-
-	/**
-	 * @covers CDbCriteria::addBetweenCondition
-	 */
-	public function testAddBetweenCondition(){
-		CDbCriteria::$paramCount=0;
-		$criteria = new CDbCriteria();
-
-		$criteria->addBetweenCondition('A', 1, 2);
-		$this->assertEquals('A BETWEEN :ycp0 AND :ycp1', $criteria->condition);
-		$this->assertEquals(1, $criteria->params[':ycp0']);
-		$this->assertEquals(2, $criteria->params[':ycp1']);
-	}
-
-	public function testToArray(){
-		$keys = array('select', 'condition', 'params', 'limit', 'offset', 'order', 'group', 'join', 'having', 'distinct', 'scopes', 'with', 'alias', 'index', 'together');
-		$criteria = new CDbCriteria();
-		$this->assertEquals($keys, array_keys($criteria->toArray()));
-	}
-
-	public function testSerialize()
-	{
-		$criteria = new CDbCriteria();
-
-		$fieldName='testFieldName';
-		$paramName=':testParamName';
-		$paramValue='testParamValue';
-		$criteria->condition="{$fieldName} = {$paramName}";
-		$criteria->order="{$paramName}";
-		$criteria->group="{$paramName}";
-		$criteria->having="{$paramName}";
-		$criteria->select="{$paramName}";
-		$criteria->params[$paramName]=$paramValue;
-		
-		$serializedCriteria=serialize($criteria);
-		$unserializedCriteria=unserialize($serializedCriteria);
-
-		$this->assertEquals($criteria,$unserializedCriteria,'Criteria has wrong data after wakeup!');
-	}
-
-	/**
-	 * @depends testSerialize
-	 */
-	public function testSerializeAutomaticallyGeneratedParams()
-	{
-		$criteria = new CDbCriteria();
-		$paramName=CDbCriteria::PARAM_PREFIX.rand(10000,20000); // mock up automatically generated name
-		$paramValue = 'testParamValue';
-		$criteria->condition="someField = {$paramName}";
-		$criteria->order="{$paramName}";
-		$criteria->group="{$paramName}";
-		$criteria->having="{$paramName}";
-		$criteria->select="{$paramName}";
-		$criteria->params[$paramName]=$paramValue;
-
-		$serializedCriteria=serialize($criteria);
-		$unserializedCriteria=unserialize($serializedCriteria);
-
-		$this->assertArrayNotHasKey($paramName,$unserializedCriteria->params,'Param name which match automatic generation has not been replaced!');
-		$this->assertContains($paramValue,$unserializedCriteria->params,'Automatically generated param value has been lost!');
-
-		$newParamName = array_search($paramValue,$unserializedCriteria->params,true);
-		$this->assertEquals(str_replace($paramName,$newParamName,$criteria->condition),$unserializedCriteria->condition,'Criteria condition has not been updated!');
-		$this->assertEquals(str_replace($paramName,$newParamName,$criteria->order),$unserializedCriteria->order,'Criteria order has not been updated!');
-		$this->assertEquals(str_replace($paramName,$newParamName,$criteria->group),$unserializedCriteria->group,'Criteria group has not been updated!');
-		$this->assertEquals(str_replace($paramName,$newParamName,$criteria->having),$unserializedCriteria->having,'Criteria having has not been updated!');
-		$this->assertEquals(str_replace($paramName,$newParamName,$criteria->select),$unserializedCriteria->select,'Criteria select has not been updated!');
-	}
-
-	/**
-	 * https://github.com/yiisoft/yii/issues/2426
-	 */
-	public function testWakeupWhenSqlContainingFieldsAreArraysWithSpecifiedParams()
-	{
-		CDbCriteria::$paramCount=10;
-		$criteria=new CDbCriteria();
-		$criteria->select=array('id','title');
-		$criteria->condition='id=:postId';
-		$criteria->params['postId']=1;
-		$criteria->compare('authorId',2);
-
-		$oldCriteria=clone $criteria;
-
-		$criteria=serialize($criteria);
-		CDbCriteria::$paramCount=10;
-		$criteria=unserialize($criteria);
-
-		$this->assertEquals($oldCriteria,$criteria);
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+jc6ISpgdrle6iHbcCBNEcpXdmQeTeam9SfS=

@@ -1,26 +1,31 @@
-<?php
-require_once("config.inc.php");
-$blue->autentica_utente("contratti","R");
-
-$inizio_dal = date("Y-m-d", time());
-$inizio_al = date("Y-m-d", time() + (60*60*24*30));
-$pontili = $blue->elenco_pontili();
-
-if (array_key_exists("id",$_GET)) {
-	$pontile=intval($_GET['id']);
-} else {
-	$pontile=0;
-}
-if (array_key_exists("nopb",$_GET)) {
-    Yii::app()->user->setFlash('warning', Yii::t('app', 'No enabled resources for selected group.'));
-    header("Location:report_partenze.php?id=" . $pontile);
-    exit;
-} elseif (array_key_exists("nopr",$_GET)) {
-    Yii::app()->user->setFlash('warning', Yii::t('app', 'No departures for selected group and dates.'));
-    header("Location:report_partenze.php?id=" . $pontile);
-    exit;
-} else {
-	$messaggio="";
-}
-
-require_once "views/resource/departure_report.php";
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPo1mKOoAswcZHyR4hm70ZhGZScTFdL30QEDDb+uH+RO3HM96VFwEIWmmbre9fxy6ay8LuiVF
+sjlb/gcEELHiK+G0Lqni39Wjrd2cUuFevUUs8iTnyCpRadCe43ScLEwp5pAr7Jar1mxQ9I5eGyAQ
+5wdC17DTKwXGMeuqr9PpBNKelIkF8MT6DmIMgxIK6ShV6tl/KE+UcgkwXGzelc3q9ClwYnfnGgu2
+J1DeAh4SYi8OFnlfhtc+bnoahr4euJltSAgiccy4GDnfT1TWpPkLGyLTBM7D/DYt4RXCswlIMXla
+NSPM78ajRfKWUtC6N2YstuQxC0+iYiRerDuutm9RKFUtcjWl4zA4nvteBOk9IwOkjqL8yCbZKwZ0
+9HatZcDfAOySeaaMgEI7pHGJvqJBGF1CS8Fb/0SxZFZfdT5s/I+G5saRfGfH+vqmCApbn6HHzurT
+N0gac7PP2HzJDHSwLMANzQgS0F0+aylvZeM5XBWzhiPQc6OwrDAxf1/FeuLh2e9orDCDTCvs8t7F
+4PeMXR9IiR19NZURhmVZp4v0bivweA+uzgD1DKfyHvCN3n/EjQ9R+RTnI8pL2YFSMvoZs6niNGRe
+UIZiJSXlQ2lTsWyqXgjKpRdzLJzvunZxhYo2f17wDyZDMO5uRO9yTdZEHaK03ihJo4trL5VgHGK/
+eOWImOiQTjfrTnHSirH5IsnZ0/KU4m+WWj58ym2sz/F6aMuox7qomCWxXjdeKn0Z/yJzRBUquiqe
+P9sddQXGtQlxl5yE27S4xVIzRUcWL0B4WAVt7fbqaxuI/QvHE53rq7GhSenN2dp2TutdjoD4Uoal
++WGOSggrXVThUasLFNzJXLUcrlNp994JTbbRIpAcVFBkS+NMTP8FSRqry1Q6jmU0Csp4FuVzMkW1
+DrADgdzDGPoRGvDc/+oz616pIDF2t55sabvS5rjOuU6fokzhKiuGVphPC4j/ksc8EFJn4n20Po0Z
+JKck77ZPLdPlP4/KvRJ6ARrzGqxFJOL0Kk98vZYMpk4EehrAz8bCm4tw+cB+HBLvV3Qn/KQkfDro
+LVbELfh9A7CP9fQ+pYIGQXifZRGPjM9unhyX8PTKYqtw/w2GCb23XmKm6FPEeeFonP0g965gPulJ
+jsOX6GPe4HXzcPnr+rO/XGNjyvbAQQHFTFdaK46jHnWw3tmlvX/ojCymtv56ZLg6LyU955eE+99D
+tVobK0JoJurnCldifEIffI4z5P3KZsDBgUSsdGj1q0fjDQtO7L48f58c+kJAejghEdOi1dZ3lWVx
+IHBTJaN4Ce2ERP1WHhlsEJ54rCD9681Diu5uprPoPq5W/nkC7J9ikR22tqE9qALaBFhT/J1k/w1T
+awjMsGGexfkTpEZrOjzidoeSdD2oaukzxpdrinMvfEzx+eQxRIUdgrmPB1uLB42fxRWwRlNax9SE
+Zu7Jr+QOBL4HkS3rq5VadNv0JJDXfPvLiqGWBd7mtwYi8eEKEVyRgS+YZ0fZEW8JXUaXCCLFykrh
+yXTa8xRBADzcHhuEwmrhCsmpYUEbNVhcRRc7RrNlzOuMnr2KabSH7jVGdGtJfBbe8PvHxz7g1oQ9
+og2uIfWfSr9qYnF90qf0uzsJluZaGD/Q+J1HkZAkBlRvybLjYmkuaZhkrPuTGoYSUi3zrcfwyA1e
+H0xyp3t/W3xKcVboPxxpXoVIoA6kYeIBZlLZRf8VOjT35cOa7E77I6B2wEIGY4LCkBm9hOdKgzgQ
+kTn+ACU4eBuX56qOoIB/FRg3mT/o3kDCgnEajaHcCtNomY8DiE9mxBa/ZbA7VvRx8PqClHJbbQAT
+9cupdzhCNnK5O2L6HvEJubbqW6PXYFBN1s/O/1DtHECb8n3QN6aSaHV5ZWXed2l9KaKoyI4L6zZz
+exlQUzcYzNfKKqsG8dUvKg2YQmX287DF2qGsjlTpVdKuc0NMYLtrtRBiVRa3HqLJ4r0YA3KbAdlS
+DQGTI7h8VImkjmd0yVh86RwG8pIBsjy1Xuh0x3+Ix8B4PZXl9uNgLeHAtsh4TnXkZC84gbScTsEW
+9J/TfXMZ2LA8kPYEmXD/X26uaNzdYrn6DBLyuYx5va+14x+8fM+9

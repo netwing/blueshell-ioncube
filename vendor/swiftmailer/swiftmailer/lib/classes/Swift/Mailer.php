@@ -1,115 +1,46 @@
-<?php
-
-/*
- * This file is part of SwiftMailer.
- * (c) 2004-2009 Chris Corbyn
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-/**
- * Swift Mailer class.
- *
- * @package Swift
- * @author  Chris Corbyn
- */
-class Swift_Mailer
-{
-    /** The Transport used to send messages */
-    private $_transport;
-
-    /**
-     * Create a new Mailer using $transport for delivery.
-     *
-     * @param Swift_Transport $transport
-     */
-    public function __construct(Swift_Transport $transport)
-    {
-        $this->_transport = $transport;
-    }
-
-    /**
-     * Create a new Mailer instance.
-     *
-     * @param Swift_Transport $transport
-     *
-     * @return Swift_Mailer
-     */
-    public static function newInstance(Swift_Transport $transport)
-    {
-        return new self($transport);
-    }
-
-    /**
-     * Create a new class instance of one of the message services.
-     *
-     * For example 'mimepart' would create a 'message.mimepart' instance
-     *
-     * @param string $service
-     *
-     * @return object
-     */
-    public function createMessage($service = 'message')
-    {
-        return Swift_DependencyContainer::getInstance()
-            ->lookup('message.'.$service);
-    }
-
-    /**
-     * Send the given Message like it would be sent in a mail client.
-     *
-     * All recipients (with the exception of Bcc) will be able to see the other
-     * recipients this message was sent to.
-     *
-     * Recipient/sender data will be retrieved from the Message object.
-     *
-     * The return value is the number of recipients who were accepted for
-     * delivery.
-     *
-     * @param Swift_Mime_Message $message
-     * @param array              $failedRecipients An array of failures by-reference
-     *
-     * @return integer
-     */
-    public function send(Swift_Mime_Message $message, &$failedRecipients = null)
-    {
-        $failedRecipients = (array) $failedRecipients;
-
-        if (!$this->_transport->isStarted()) {
-            $this->_transport->start();
-        }
-
-        $sent = 0;
-
-        try {
-            $sent = $this->_transport->send($message, $failedRecipients);
-        } catch (Swift_RfcComplianceException $e) {
-            foreach ($message->getTo() as $address => $name) {
-                $failedRecipients[] = $address;
-            }
-        }
-
-        return $sent;
-    }
-
-    /**
-     * Register a plugin using a known unique key (e.g. myPlugin).
-     *
-     * @param Swift_Events_EventListener $plugin
-     */
-    public function registerPlugin(Swift_Events_EventListener $plugin)
-    {
-        $this->_transport->registerPlugin($plugin);
-    }
-
-    /**
-     * The Transport used to send messages.
-     *
-     * @return Swift_Transport
-     */
-    public function getTransport()
-    {
-        return $this->_transport;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

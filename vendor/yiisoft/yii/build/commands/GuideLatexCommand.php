@@ -1,79 +1,63 @@
-<?php
-
-class GuideLatexCommand extends CConsoleCommand
-{
-	function getHelp()
-	{
-		return <<<EOD
-USAGE
-  yiic guidelatex
-
-DESCRIPTION
-  This command generates latex files for the definitive guide.
-  The generated latex files are stored in the guide directory.
-
-EOD;
-	}
-
-	function getSourceDir()
-	{
-		return dirname(__FILE__).'/../../docs/guide';
-	}
-
-	function getOutputDir()
-	{
-		return dirname(__FILE__).'/guide';
-	}
-
-	function run($args)
-	{
-		require_once(dirname(__FILE__).'/markdown/MarkdownHtml2Tex.php');
-		$sourcePath=$this->getSourceDir();
-		$chapters=$this->getGuideTopics();
-		$toc = '';
-		foreach($chapters as $chapter=>$sections)
-		{
-			$toc .= sprintf("\\chapter{%s}\n", $chapter);
-			foreach($sections as $path=>$section)
-			{
-				echo "creating '$section'...";
-				$content=file_get_contents($sourcePath."/{$path}.txt");
-				$this->createLatexFile($chapter,$section,$content, $path);
-				echo "done\n";
-				$toc .= sprintf("\\input{%s}\n", $path);
-			}
-		}
-		$main_file = sprintf('%s/main.tex', $this->getOutputDir());
-		file_put_contents($main_file, $toc);
-	}
-
-	function getGuideTopics()
-	{
-		$file = $this->getSourceDir().'/toc.txt';
-		$lines=file($file);
-		$chapter='';
-		$guideTopics=array();
-		foreach($lines as $line)
-		{
-			if(($line=trim($line))==='')
-				continue;
-			if($line[0]==='*')
-				$chapter=trim($line,'* ');
-			else if($line[0]==='-' && preg_match('/\[(.*?)\]\((.*?)\)/',$line,$matches))
-				$guideTopics[$chapter][$matches[2]]=$matches[1];
-		}
-		return $guideTopics;
-	}
-
-	function createLatexFile($chapter, $section, $content, $path)
-	{
-		$parser=new MarkdownParserLatex;
-		$content=$parser->transform($content);
-		$img_src = $this->getSourceDir().'/images';
-		$img_dst = $this->getOutputDir();
-		$html2tex = new MarkdownHtml2Tex($img_src, $img_dst);
-		$tex = $html2tex->parse_html($content, $path);
-		$filename = sprintf('%s/%s.tex', $this->getOutputDir(), $path);
-		file_put_contents($filename, $tex);
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

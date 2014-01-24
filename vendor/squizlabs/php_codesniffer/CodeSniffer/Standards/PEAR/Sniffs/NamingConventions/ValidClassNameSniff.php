@@ -1,115 +1,58 @@
-<?php
-/**
- * PEAR_Sniffs_NamingConventions_ValidClassNameSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * PEAR_Sniffs_NamingConventions_ValidClassNameSniff.
- *
- * Ensures class and interface names start with a capital letter
- * and use _ separators.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class PEAR_Sniffs_NamingConventions_ValidClassNameSniff implements PHP_CodeSniffer_Sniff
-{
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        return array(
-                T_CLASS,
-                T_INTERFACE,
-               );
-
-    }//end register()
-
-
-    /**
-     * Processes this test, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The current file being processed.
-     * @param int                  $stackPtr  The position of the current token
-     *                                        in the stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-
-        $className = $phpcsFile->findNext(T_STRING, $stackPtr);
-        $name      = trim($tokens[$className]['content']);
-        $errorData = array(ucfirst($tokens[$stackPtr]['content']));
-
-        // Make sure the first letter is a capital.
-        if (preg_match('|^[A-Z]|', $name) === 0) {
-            $error = '%s name must begin with a capital letter';
-            $phpcsFile->addError($error, $stackPtr, 'StartWithCapital', $errorData);
-        }
-
-        // Check that each new word starts with a capital as well, but don't
-        // check the first word, as it is checked above.
-        $validName = true;
-        $nameBits  = explode('_', $name);
-        $firstBit  = array_shift($nameBits);
-        foreach ($nameBits as $bit) {
-            if ($bit === '' || $bit{0} !== strtoupper($bit{0})) {
-                $validName = false;
-                break;
-            }
-        }
-
-        if ($validName === false) {
-            // Strip underscores because they cause the suggested name
-            // to be incorrect.
-            $nameBits = explode('_', trim($name, '_'));
-            $firstBit = array_shift($nameBits);
-            if ($firstBit === '') {
-                $error = '%s name is not valid';
-                $phpcsFile->addError($error, $stackPtr, 'Invalid', $errorData);
-            } else {
-                $newName = strtoupper($firstBit{0}).substr($firstBit, 1).'_';
-                foreach ($nameBits as $bit) {
-                    if ($bit !== '') {
-                        $newName .= strtoupper($bit{0}).substr($bit, 1).'_';
-                    }
-                }
-
-                $newName = rtrim($newName, '_');
-                $error   = '%s name is not valid; consider %s instead';
-                $data    = $errorData;
-                $data[]  = $newName;
-                $phpcsFile->addError($error, $stackPtr, 'Invalid', $data);
-            }
-        }//end if
-
-    }//end process()
-
-
-}//end class
-
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+G5iJmT890+E8m50WtM58UPnd/RQFlfEYdJu=

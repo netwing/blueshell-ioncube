@@ -1,950 +1,315 @@
-<?php
-/**
- * PHPUnit
- *
- * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @package    PHPUnit
- * @subpackage Framework
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      File available since Release 2.0.0
- */
-
-/**
- * A TestSuite is a composite of Tests. It runs a collection of test cases.
- *
- * Here is an example using the dynamic test definition.
- *
- * <code>
- * <?php
- * $suite = new PHPUnit_Framework_TestSuite;
- * $suite->addTest(new MathTest('testPass'));
- * ?>
- * </code>
- *
- * Alternatively, a TestSuite can extract the tests to be run automatically.
- * To do so you pass a ReflectionClass instance for your
- * PHPUnit_Framework_TestCase class to the PHPUnit_Framework_TestSuite
- * constructor.
- *
- * <code>
- * <?php
- * $suite = new PHPUnit_Framework_TestSuite(
- *   new ReflectionClass('MathTest')
- * );
- * ?>
- * </code>
- *
- * This constructor creates a suite with all the methods starting with
- * "test" that take no arguments.
- *
- * @package    PHPUnit
- * @subpackage Framework
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      Class available since Release 2.0.0
- */
-class PHPUnit_Framework_TestSuite implements PHPUnit_Framework_Test, PHPUnit_Framework_SelfDescribing, IteratorAggregate
-{
-    /**
-     * Enable or disable the backup and restoration of the $GLOBALS array.
-     *
-     * @var    boolean
-     */
-    protected $backupGlobals = NULL;
-
-    /**
-     * Enable or disable the backup and restoration of static attributes.
-     *
-     * @var    boolean
-     */
-    protected $backupStaticAttributes = NULL;
-
-    /**
-     * The name of the test suite.
-     *
-     * @var    string
-     */
-    protected $name = '';
-
-    /**
-     * The test groups of the test suite.
-     *
-     * @var    array
-     */
-    protected $groups = array();
-
-    /**
-     * The tests in the test suite.
-     *
-     * @var    array
-     */
-    protected $tests = array();
-
-    /**
-     * The number of tests in the test suite.
-     *
-     * @var    integer
-     */
-    protected $numTests = -1;
-
-    /**
-     * @var boolean
-     */
-    protected $testCase = FALSE;
-
-    /**
-     * Constructs a new TestSuite:
-     *
-     *   - PHPUnit_Framework_TestSuite() constructs an empty TestSuite.
-     *
-     *   - PHPUnit_Framework_TestSuite(ReflectionClass) constructs a
-     *     TestSuite from the given class.
-     *
-     *   - PHPUnit_Framework_TestSuite(ReflectionClass, String)
-     *     constructs a TestSuite from the given class with the given
-     *     name.
-     *
-     *   - PHPUnit_Framework_TestSuite(String) either constructs a
-     *     TestSuite from the given class (if the passed string is the
-     *     name of an existing class) or constructs an empty TestSuite
-     *     with the given name.
-     *
-     * @param  mixed  $theClass
-     * @param  string $name
-     * @throws PHPUnit_Framework_Exception
-     */
-    public function __construct($theClass = '', $name = '')
-    {
-        $argumentsValid = FALSE;
-
-        if (is_object($theClass) &&
-            $theClass instanceof ReflectionClass) {
-            $argumentsValid = TRUE;
-        }
-
-        else if (is_string($theClass) &&
-                 $theClass !== '' &&
-                 class_exists($theClass, FALSE)) {
-            $argumentsValid = TRUE;
-
-            if ($name == '') {
-                $name = $theClass;
-            }
-
-            $theClass = new ReflectionClass($theClass);
-        }
-
-        else if (is_string($theClass)) {
-            $this->setName($theClass);
-            return;
-        }
-
-        if (!$argumentsValid) {
-            throw new PHPUnit_Framework_Exception;
-        }
-
-        if (!$theClass->isSubclassOf('PHPUnit_Framework_TestCase')) {
-            throw new PHPUnit_Framework_Exception(
-              'Class "' . $theClass->name . '" does not extend PHPUnit_Framework_TestCase.'
-            );
-        }
-
-        if ($name != '') {
-            $this->setName($name);
-        } else {
-            $this->setName($theClass->getName());
-        }
-
-        $constructor = $theClass->getConstructor();
-
-        if ($constructor !== NULL &&
-            !$constructor->isPublic()) {
-            $this->addTest(
-              self::warning(
-                sprintf(
-                  'Class "%s" has no public constructor.',
-
-                  $theClass->getName()
-                )
-              )
-            );
-
-            return;
-        }
-
-        foreach ($theClass->getMethods() as $method) {
-            $this->addTestMethod($theClass, $method);
-        }
-
-        if (empty($this->tests)) {
-            $this->addTest(
-              self::warning(
-                sprintf(
-                  'No tests found in class "%s".',
-
-                  $theClass->getName()
-                )
-              )
-            );
-        }
-
-        $this->testCase = TRUE;
-    }
-
-    /**
-     * Returns a string representation of the test suite.
-     *
-     * @return string
-     */
-    public function toString()
-    {
-        return $this->getName();
-    }
-
-    /**
-     * Adds a test to the suite.
-     *
-     * @param  PHPUnit_Framework_Test $test
-     * @param  array                  $groups
-     */
-    public function addTest(PHPUnit_Framework_Test $test, $groups = array())
-    {
-        $class = new ReflectionClass($test);
-
-        if (!$class->isAbstract()) {
-            $this->tests[]  = $test;
-            $this->numTests = -1;
-
-            if ($test instanceof PHPUnit_Framework_TestSuite &&
-                empty($groups)) {
-                $groups = $test->getGroups();
-            }
-
-            if (empty($groups)) {
-                $groups = array('__nogroup__');
-            }
-
-            foreach ($groups as $group) {
-                if (!isset($this->groups[$group])) {
-                    $this->groups[$group] = array($test);
-                } else {
-                    $this->groups[$group][] = $test;
-                }
-            }
-        }
-    }
-
-    /**
-     * Adds the tests from the given class to the suite.
-     *
-     * @param  mixed $testClass
-     * @throws PHPUnit_Framework_Exception
-     */
-    public function addTestSuite($testClass)
-    {
-        if (is_string($testClass) && class_exists($testClass)) {
-            $testClass = new ReflectionClass($testClass);
-        }
-
-        if (!is_object($testClass)) {
-            throw PHPUnit_Util_InvalidArgumentHelper::factory(
-              1, 'class name or object'
-            );
-        }
-
-        if ($testClass instanceof PHPUnit_Framework_TestSuite) {
-            $this->addTest($testClass);
-        }
-
-        else if ($testClass instanceof ReflectionClass) {
-            $suiteMethod = FALSE;
-
-            if (!$testClass->isAbstract()) {
-                if ($testClass->hasMethod(PHPUnit_Runner_BaseTestRunner::SUITE_METHODNAME)) {
-                    $method = $testClass->getMethod(
-                      PHPUnit_Runner_BaseTestRunner::SUITE_METHODNAME
-                    );
-
-                    if ($method->isStatic()) {
-                        $this->addTest(
-                          $method->invoke(NULL, $testClass->getName())
-                        );
-
-                        $suiteMethod = TRUE;
-                    }
-                }
-            }
-
-            if (!$suiteMethod && !$testClass->isAbstract()) {
-                $this->addTest(new PHPUnit_Framework_TestSuite($testClass));
-            }
-        }
-
-        else {
-            throw new PHPUnit_Framework_Exception;
-        }
-    }
-
-    /**
-     * Wraps both <code>addTest()</code> and <code>addTestSuite</code>
-     * as well as the separate import statements for the user's convenience.
-     *
-     * If the named file cannot be read or there are no new tests that can be
-     * added, a <code>PHPUnit_Framework_Warning</code> will be created instead,
-     * leaving the current test run untouched.
-     *
-     * @param  string  $filename
-     * @param  array   $phptOptions Array with ini settings for the php instance
-     *                              run, key being the name if the setting,
-     *                              value the ini value.
-     * @throws PHPUnit_Framework_Exception
-     * @since  Method available since Release 2.3.0
-     * @author Stefano F. Rausch <stefano@rausch-e.net>
-     */
-    public function addTestFile($filename, $phptOptions = array())
-    {
-        if (!is_string($filename)) {
-            throw PHPUnit_Util_InvalidArgumentHelper::factory(1, 'string');
-        }
-
-        if (file_exists($filename) && substr($filename, -5) == '.phpt') {
-            $this->addTest(
-              new PHPUnit_Extensions_PhptTestCase($filename, $phptOptions)
-            );
-
-            return;
-        }
-
-        PHPUnit_Util_Class::collectStart();
-        $filename   = PHPUnit_Util_Fileloader::checkAndLoad($filename);
-        $newClasses = PHPUnit_Util_Class::collectEnd();
-        $baseName   = str_replace('.php', '', basename($filename));
-
-        foreach ($newClasses as $className) {
-            if (substr($className, 0 - strlen($baseName)) == $baseName) {
-                $class = new ReflectionClass($className);
-
-                if ($class->getFileName() == $filename) {
-                    $newClasses = array($className);
-                    break;
-                }
-            }
-        }
-
-        $testsFound = FALSE;
-
-        foreach ($newClasses as $className) {
-            $class = new ReflectionClass($className);
-
-            if (!$class->isAbstract()) {
-                if ($class->hasMethod(PHPUnit_Runner_BaseTestRunner::SUITE_METHODNAME)) {
-                    $method = $class->getMethod(
-                      PHPUnit_Runner_BaseTestRunner::SUITE_METHODNAME
-                    );
-
-                    if ($method->isStatic()) {
-                        $this->addTest($method->invoke(NULL, $className));
-
-                        $testsFound = TRUE;
-                    }
-                }
-
-                else if ($class->implementsInterface('PHPUnit_Framework_Test')) {
-                    $this->addTestSuite($class);
-
-                    $testsFound = TRUE;
-                }
-            }
-        }
-
-        $this->numTests = -1;
-    }
-
-    /**
-     * Wrapper for addTestFile() that adds multiple test files.
-     *
-     * @param  array|Iterator $filenames
-     * @throws PHPUnit_Framework_Exception
-     * @since  Method available since Release 2.3.0
-     */
-    public function addTestFiles($filenames)
-    {
-        if (!(is_array($filenames) ||
-             (is_object($filenames) && $filenames instanceof Iterator))) {
-            throw PHPUnit_Util_InvalidArgumentHelper::factory(
-              1, 'array or iterator'
-            );
-        }
-
-        foreach ($filenames as $filename) {
-            $this->addTestFile((string)$filename);
-        }
-    }
-
-    /**
-     * Counts the number of test cases that will be run by this test.
-     *
-     * @return integer
-     */
-    public function count()
-    {
-        if ($this->numTests > -1) {
-            return $this->numTests;
-        }
-
-        $this->numTests = 0;
-
-        foreach ($this->tests as $test) {
-            $this->numTests += count($test);
-        }
-
-        return $this->numTests;
-    }
-
-    /**
-     * @param  ReflectionClass $theClass
-     * @param  string          $name
-     * @return PHPUnit_Framework_Test
-     * @throws PHPUnit_Framework_Exception
-     */
-    public static function createTest(ReflectionClass $theClass, $name)
-    {
-        $className = $theClass->getName();
-
-        if (!$theClass->isInstantiable()) {
-            return self::warning(
-              sprintf('Cannot instantiate class "%s".', $className)
-            );
-        }
-
-        $backupSettings           = PHPUnit_Util_Test::getBackupSettings(
-                                      $className, $name
-                                    );
-        $preserveGlobalState      = PHPUnit_Util_Test::getPreserveGlobalStateSettings(
-                                      $className, $name
-                                    );
-        $runTestInSeparateProcess = PHPUnit_Util_Test::getProcessIsolationSettings(
-                                      $className, $name
-                                    );
-
-        $constructor = $theClass->getConstructor();
-
-        if ($constructor !== NULL) {
-            $parameters = $constructor->getParameters();
-
-            // TestCase() or TestCase($name)
-            if (count($parameters) < 2) {
-                $test = new $className;
-            }
-
-            // TestCase($name, $data)
-            else {
-                try {
-                    $data = PHPUnit_Util_Test::getProvidedData(
-                      $className, $name
-                    );
-                }
-
-                catch (Exception $e) {
-                    $message = sprintf(
-                      'The data provider specified for %s::%s is invalid.',
-                      $className,
-                      $name
-                    );
-
-                    $_message = $e->getMessage();
-
-                    if (!empty($_message)) {
-                        $message .= "\n" . $_message;
-                    }
-
-                    $data = self::warning($message);
-                }
-
-                // Test method with @dataProvider.
-                if (isset($data)) {
-                    $test = new PHPUnit_Framework_TestSuite_DataProvider(
-                      $className . '::' . $name
-                    );
-
-                    if (empty($data)) {
-                        $data = self::warning(
-                          sprintf(
-                            'No tests found in suite "%s".',
-                            $test->getName()
-                          )
-                        );
-                    }
-
-                    $groups = PHPUnit_Util_Test::getGroups($className, $name);
-
-                    if ($data instanceof PHPUnit_Framework_Warning) {
-                        $test->addTest($data, $groups);
-                    }
-
-                    else {
-                        foreach ($data as $_dataName => $_data) {
-                            $_test = new $className($name, $_data, $_dataName);
-
-                            if ($runTestInSeparateProcess) {
-                                $_test->setRunTestInSeparateProcess(TRUE);
-
-                                if ($preserveGlobalState !== NULL) {
-                                    $_test->setPreserveGlobalState($preserveGlobalState);
-                                }
-                            }
-
-                            if ($backupSettings['backupGlobals'] !== NULL) {
-                                $_test->setBackupGlobals(
-                                  $backupSettings['backupGlobals']
-                                );
-                            }
-
-                            if ($backupSettings['backupStaticAttributes'] !== NULL) {
-                                $_test->setBackupStaticAttributes(
-                                  $backupSettings['backupStaticAttributes']
-                                );
-                            }
-
-                            $test->addTest($_test, $groups);
-                        }
-                    }
-                }
-
-                else {
-                    $test = new $className;
-                }
-            }
-        }
-
-        if (!isset($test)) {
-            throw new PHPUnit_Framework_Exception('No valid test provided.');
-        }
-
-        if ($test instanceof PHPUnit_Framework_TestCase) {
-            $test->setName($name);
-
-            if ($runTestInSeparateProcess) {
-                $test->setRunTestInSeparateProcess(TRUE);
-
-                if ($preserveGlobalState !== NULL) {
-                    $test->setPreserveGlobalState($preserveGlobalState);
-                }
-            }
-
-            if ($backupSettings['backupGlobals'] !== NULL) {
-                $test->setBackupGlobals($backupSettings['backupGlobals']);
-            }
-
-            if ($backupSettings['backupStaticAttributes'] !== NULL) {
-                $test->setBackupStaticAttributes(
-                  $backupSettings['backupStaticAttributes']
-                );
-            }
-        }
-
-        return $test;
-    }
-
-    /**
-     * Creates a default TestResult object.
-     *
-     * @return PHPUnit_Framework_TestResult
-     */
-    protected function createResult()
-    {
-        return new PHPUnit_Framework_TestResult;
-    }
-
-    /**
-     * Returns the name of the suite.
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Returns the test groups of the suite.
-     *
-     * @return array
-     * @since  Method available since Release 3.2.0
-     */
-    public function getGroups()
-    {
-        return array_keys($this->groups);
-    }
-
-    /**
-     * Runs the tests and collects their result in a TestResult.
-     *
-     * @param  PHPUnit_Framework_TestResult $result
-     * @param  mixed                        $filter
-     * @param  array                        $groups
-     * @param  array                        $excludeGroups
-     * @param  boolean                      $processIsolation
-     * @return PHPUnit_Framework_TestResult
-     * @throws PHPUnit_Framework_Exception
-     */
-    public function run(PHPUnit_Framework_TestResult $result = NULL, $filter = FALSE, array $groups = array(), array $excludeGroups = array(), $processIsolation = FALSE)
-    {
-        if ($result === NULL) {
-            $result = $this->createResult();
-        }
-
-        $result->startTestSuite($this);
-
-        $doSetup = TRUE;
-
-        if (!empty($excludeGroups)) {
-            foreach ($this->groups as $_group => $_tests) {
-                if (in_array($_group, $excludeGroups) &&
-                    count($_tests) == count($this->tests)) {
-                    $doSetup = FALSE;
-                }
-            }
-        }
-
-        if ($doSetup) {
-            try {
-                $this->setUp();
-
-                if ($this->testCase &&
-                    // Some extensions use test names that are not classes;
-                    // The method_exists() triggers an autoload call that causes issues with die()ing autoloaders.
-                    class_exists($this->name, false) &&
-                    method_exists($this->name, 'setUpBeforeClass')) {
-                    call_user_func(array($this->name, 'setUpBeforeClass'));
-                }
-            }
-
-            catch (PHPUnit_Framework_SkippedTestSuiteError $e) {
-                $numTests = count($this);
-
-                for ($i = 0; $i < $numTests; $i++) {
-                    $result->addFailure($this, $e, 0);
-                }
-
-                return $result;
-            }
-
-            catch (Exception $e) {
-                $numTests = count($this);
-
-                for ($i = 0; $i < $numTests; $i++) {
-                    $result->addError($this, $e, 0);
-                }
-
-                return $result;
-            }
-        }
-
-        if (empty($groups)) {
-            $tests = $this->tests;
-        } else {
-            $tests = new SplObjectStorage;
-
-            foreach ($groups as $group) {
-                if (isset($this->groups[$group])) {
-                    foreach ($this->groups[$group] as $test) {
-                        $tests->attach($test);
-                    }
-                }
-            }
-        }
-
-        foreach ($tests as $test) {
-            if ($result->shouldStop()) {
-                break;
-            }
-
-            if ($test instanceof PHPUnit_Framework_TestSuite) {
-                $test->setBackupGlobals($this->backupGlobals);
-                $test->setBackupStaticAttributes($this->backupStaticAttributes);
-
-                $test->run(
-                  $result, $filter, $groups, $excludeGroups, $processIsolation
-                );
-            } else {
-                $runTest = TRUE;
-
-                if ($filter !== FALSE ) {
-                    $tmp = PHPUnit_Util_Test::describe($test, FALSE);
-
-                    if ($tmp[0] != '') {
-                        $name = join('::', $tmp);
-                    } else {
-                        $name = $tmp[1];
-                    }
-
-                    if (preg_match($filter, $name) == 0) {
-                        $runTest = FALSE;
-                    }
-                }
-
-                if ($runTest && !empty($excludeGroups)) {
-                    foreach ($this->groups as $_group => $_tests) {
-                        if (in_array($_group, $excludeGroups)) {
-                            foreach ($_tests as $_test) {
-                                if ($test === $_test) {
-                                    $runTest = FALSE;
-                                    break 2;
-                                }
-                            }
-                        }
-                    }
-                }
-
-                if ($runTest) {
-                    if ($test instanceof PHPUnit_Framework_TestCase) {
-                        $test->setBackupGlobals($this->backupGlobals);
-                        $test->setBackupStaticAttributes(
-                          $this->backupStaticAttributes
-                        );
-                        $test->setRunTestInSeparateProcess($processIsolation);
-                    }
-
-                    $this->runTest($test, $result);
-                }
-            }
-        }
-
-        if ($doSetup) {
-            if ($this->testCase &&
-                // Some extensions use test names that are not classes;
-                // The method_exists() triggers an autoload call that causes issues with die()ing autoloaders.
-                class_exists($this->name, false) &&
-                method_exists($this->name, 'tearDownAfterClass')) {
-                call_user_func(array($this->name, 'tearDownAfterClass'));
-            }
-
-            $this->tearDown();
-        }
-
-        $result->endTestSuite($this);
-
-        return $result;
-    }
-
-    /**
-     * Runs a test.
-     *
-     * @param  PHPUnit_Framework_Test        $test
-     * @param  PHPUnit_Framework_TestResult  $result
-     */
-    public function runTest(PHPUnit_Framework_Test $test, PHPUnit_Framework_TestResult $result)
-    {
-        $test->run($result);
-    }
-
-    /**
-     * Sets the name of the suite.
-     *
-     * @param  string
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
-
-    /**
-     * Returns the test at the given index.
-     *
-     * @param  integer
-     * @return PHPUnit_Framework_Test
-     */
-    public function testAt($index)
-    {
-        if (isset($this->tests[$index])) {
-            return $this->tests[$index];
-        } else {
-            return FALSE;
-        }
-    }
-
-    /**
-     * Returns the tests as an enumeration.
-     *
-     * @return array
-     */
-    public function tests()
-    {
-        return $this->tests;
-    }
-
-    /**
-     * Mark the test suite as skipped.
-     *
-     * @param  string  $message
-     * @throws PHPUnit_Framework_SkippedTestSuiteError
-     * @since  Method available since Release 3.0.0
-     */
-    public function markTestSuiteSkipped($message = '')
-    {
-        throw new PHPUnit_Framework_SkippedTestSuiteError($message);
-    }
-
-    /**
-     * @param ReflectionClass  $class
-     * @param ReflectionMethod $method
-     */
-    protected function addTestMethod(ReflectionClass $class, ReflectionMethod $method)
-    {
-        $name = $method->getName();
-
-        if ($this->isPublicTestMethod($method)) {
-            $test = self::createTest($class, $name);
-
-            if ($test instanceof PHPUnit_Framework_TestCase ||
-                $test instanceof PHPUnit_Framework_TestSuite_DataProvider) {
-                $test->setDependencies(
-                  PHPUnit_Util_Test::getDependencies($class->getName(), $name)
-                );
-            }
-
-            $this->addTest($test, PHPUnit_Util_Test::getGroups(
-              $class->getName(), $name)
-            );
-        }
-
-        else if ($this->isTestMethod($method)) {
-            $this->addTest(
-              self::warning(
-                sprintf(
-                  'Test method "%s" in test class "%s" is not public.',
-                  $name,
-                  $class->getName()
-                )
-              )
-            );
-        }
-    }
-
-    /**
-     * @param  ReflectionMethod $method
-     * @return boolean
-     */
-    public static function isPublicTestMethod(ReflectionMethod $method)
-    {
-        return (self::isTestMethod($method) && $method->isPublic());
-    }
-
-    /**
-     * @param  ReflectionMethod $method
-     * @return boolean
-     */
-    public static function isTestMethod(ReflectionMethod $method)
-    {
-        if (strpos($method->name, 'test') === 0) {
-            return TRUE;
-        }
-
-        // @scenario on TestCase::testMethod()
-        // @test     on TestCase::testMethod()
-        return strpos($method->getDocComment(), '@test')     !== FALSE ||
-               strpos($method->getDocComment(), '@scenario') !== FALSE;
-    }
-
-    /**
-     * @param  string  $message
-     * @return PHPUnit_Framework_Warning
-     */
-    protected static function warning($message)
-    {
-        return new PHPUnit_Framework_Warning($message);
-    }
-
-    /**
-     * @param  boolean $backupGlobals
-     * @since  Method available since Release 3.3.0
-     */
-    public function setBackupGlobals($backupGlobals)
-    {
-        if (is_null($this->backupGlobals) && is_bool($backupGlobals)) {
-            $this->backupGlobals = $backupGlobals;
-        }
-    }
-
-    /**
-     * @param  boolean $backupStaticAttributes
-     * @since  Method available since Release 3.4.0
-     */
-    public function setBackupStaticAttributes($backupStaticAttributes)
-    {
-        if (is_null($this->backupStaticAttributes) &&
-            is_bool($backupStaticAttributes)) {
-            $this->backupStaticAttributes = $backupStaticAttributes;
-        }
-    }
-
-    /**
-     * Returns an iterator for this test suite.
-     *
-     * @return RecursiveIteratorIterator
-     * @since  Method available since Release 3.1.0
-     */
-    public function getIterator()
-    {
-        return new RecursiveIteratorIterator(
-          new PHPUnit_Util_TestSuiteIterator($this)
-        );
-    }
-
-    /**
-     * Template Method that is called before the tests
-     * of this test suite are run.
-     *
-     * @since  Method available since Release 3.1.0
-     */
-    protected function setUp()
-    {
-    }
-
-    /**
-     * Template Method that is called after the tests
-     * of this test suite have finished running.
-     *
-     * @since  Method available since Release 3.1.0
-     */
-    protected function tearDown()
-    {
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+2QSqBRlwUgSJICFhjrJzGLa=

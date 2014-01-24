@@ -1,240 +1,111 @@
-<?php
-/**
- * PHPUnit
- *
- * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @package    PHPUnit
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      File available since Release 3.3.6
- */
-
-require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'ExceptionTest.php';
-require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'ExceptionNamespaceTest.php';
-require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'RequirementsTest.php';
-require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'RequirementsClassDocBlockTest.php';
-
-/**
- *
- *
- * @package    PHPUnit
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      Class available since Release 3.3.6
- */
-class Util_TestTest extends PHPUnit_Framework_TestCase
-{
-    public function testGetExpectedException()
-    {
-        $this->assertSame(
-          array('class' => 'FooBarBaz', 'code' => NULL, 'message' => ''),
-          PHPUnit_Util_Test::getExpectedException('ExceptionTest', 'testOne')
-        );
-
-        $this->assertSame(
-          array('class' => 'Foo_Bar_Baz', 'code' => NULL, 'message' => ''),
-          PHPUnit_Util_Test::getExpectedException('ExceptionTest', 'testTwo')
-        );
-
-        $this->assertSame(
-          array('class' => 'Foo\Bar\Baz', 'code' => NULL, 'message' => ''),
-          PHPUnit_Util_Test::getExpectedException('ExceptionTest', 'testThree')
-        );
-
-        $this->assertSame(
-          array('class' => 'ほげ', 'code' => NULL, 'message' => ''),
-          PHPUnit_Util_Test::getExpectedException('ExceptionTest', 'testFour')
-        );
-
-        $this->assertSame(
-          array('class' => 'Class', 'code' => 1234, 'message' => 'Message'),
-          PHPUnit_Util_Test::getExpectedException('ExceptionTest', 'testFive')
-        );
-
-        $this->assertSame(
-          array('class' => 'Class', 'code' => 1234, 'message' => 'Message'),
-          PHPUnit_Util_Test::getExpectedException('ExceptionTest', 'testSix')
-        );
-
-        $this->assertSame(
-          array('class' => 'Class', 'code' => 'ExceptionCode', 'message' => 'Message'),
-          PHPUnit_Util_Test::getExpectedException('ExceptionTest', 'testSeven')
-        );
-
-        $this->assertSame(
-          array('class' => 'Class', 'code' => 0, 'message' => 'Message'),
-          PHPUnit_Util_Test::getExpectedException('ExceptionTest', 'testEight')
-        );
-        $this->assertSame(
-          array('class' => 'Class', 'code' => ExceptionTest::ERROR_CODE, 'message' => ExceptionTest::ERROR_MESSAGE),
-          PHPUnit_Util_Test::getExpectedException('ExceptionTest', 'testNine')
-        );
-        $this->assertSame(
-          array('class' => 'Class', 'code' => NULL, 'message' => ''),
-          PHPUnit_Util_Test::getExpectedException('ExceptionTest', 'testSingleLine')
-        );
-        $this->assertSame(
-            array('class' => 'Class', 'code' => My\Space\ExceptionNamespaceTest::ERROR_CODE, 'message' => My\Space\ExceptionNamespaceTest::ERROR_MESSAGE),
-            PHPUnit_Util_Test::getExpectedException('My\Space\ExceptionNamespaceTest', 'testConstants')
-        );
-        // Ensure the Class::CONST expression is only evaluated when the constant really exists
-        $this->assertSame(
-            array('class' => 'Class', 'code' => 'ExceptionTest::UNKNOWN_CODE_CONSTANT', 'message' => 'ExceptionTest::UNKNOWN_MESSAGE_CONSTANT'),
-            PHPUnit_Util_Test::getExpectedException('ExceptionTest', 'testUnknownConstants')
-        );
-        $this->assertSame(
-            array('class' => 'Class', 'code' => 'My\Space\ExceptionNamespaceTest::UNKNOWN_CODE_CONSTANT', 'message' => 'My\Space\ExceptionNamespaceTest::UNKNOWN_MESSAGE_CONSTANT'),
-            PHPUnit_Util_Test::getExpectedException('My\Space\ExceptionNamespaceTest', 'testUnknownConstants')
-        );
-    }
-
-    public function provideRequirements()
-    {
-        return array(
-            array('testOne',   array()),
-            array('testTwo',   array('PHPUnit' => '1.0')),
-            array('testThree', array('PHP' => '2.0')),
-            array('testFour',  array('PHPUnit'=>'2.0', 'PHP' => '1.0')),
-            array('testFive',  array('PHP' => '5.4.0RC6')),
-            array('testSix',   array('PHP' => '5.4.0-alpha1')),
-            array('testSeven', array('PHP' => '5.4.0beta2')),
-            array('testEight', array('PHP' => '5.4-dev')),
-            array('testNine',  array('functions' => array('testFunc'))),
-            array('testTen',   array('extensions' => array('testExt'))),
-            array(
-                'testAllPossibleRequirements',
-                array(
-                    'PHP' => '99-dev',
-                    'PHPUnit' => '9-dev',
-                    'functions' => array(
-                        'testFuncOne',
-                        'testFuncTwo',
-                    ),
-                    'extensions' => array(
-                        'testExtOne',
-                        'testExtTwo',
-                    )
-                )
-            )
-        );
-    }
-
-    /**
-     * @dataProvider provideRequirements
-     */
-    public function testGetRequirements($test, $result)
-    {
-        $this->assertEquals(
-          $result,
-          PHPUnit_Util_Test::getRequirements('RequirementsTest', $test)
-        );
-    }
-
-    public function testGetRequirementsMergesClassAndMethodDocBlocks()
-    {
-        $expectedAnnotations = array(
-            'PHP' => '5.4',
-            'PHPUnit' => '3.7',
-            'functions' => array(
-                'testFuncClass',
-                'testFuncMethod',
-            ),
-            'extensions' => array(
-                'testExtClass',
-                'testExtMethod',
-            )
-        );
-
-        $this->assertEquals(
-          $expectedAnnotations,
-          PHPUnit_Util_Test::getRequirements('RequirementsClassDocBlockTest', 'testMethod')
-        );
-    }
-
-    public function testGetProvidedDataRegEx()
-    {
-        $result = preg_match(PHPUnit_Util_Test::REGEX_DATA_PROVIDER, '@dataProvider method', $matches);
-        $this->assertEquals(1, $result);
-        $this->assertEquals('method', $matches[1]);
-
-        $result = preg_match(PHPUnit_Util_Test::REGEX_DATA_PROVIDER, '@dataProvider class::method', $matches);
-        $this->assertEquals(1, $result);
-        $this->assertEquals('class::method', $matches[1]);
-
-        $result = preg_match(PHPUnit_Util_Test::REGEX_DATA_PROVIDER, '@dataProvider namespace\class::method', $matches);
-        $this->assertEquals(1, $result);
-        $this->assertEquals('namespace\class::method', $matches[1]);
-
-        $result = preg_match(PHPUnit_Util_Test::REGEX_DATA_PROVIDER, '@dataProvider namespace\namespace\class::method', $matches);
-        $this->assertEquals(1, $result);
-        $this->assertEquals('namespace\namespace\class::method', $matches[1]);
-
-        $result = preg_match(PHPUnit_Util_Test::REGEX_DATA_PROVIDER, '@dataProvider メソッド', $matches);
-        $this->assertEquals(1, $result);
-        $this->assertEquals('メソッド', $matches[1]);
-    }
-
-    public function testParseAnnotation()
-    {
-        $this->assertEquals(
-          array('Foo', 'ほげ'),
-          PHPUnit_Util_Test::getDependencies(get_class($this), 'methodForTestParseAnnotation')
-        );
-    }
-
-    /**
-     * @depends Foo
-     * @depends ほげ
-     */
-    public function methodForTestParseAnnotation()
-    {
-    }
-
-    public function testParseAnnotationThatIsOnlyOneLine()
-    {
-        $this->assertEquals(
-          array('Bar'),
-          PHPUnit_Util_Test::getDependencies(get_class($this), 'methodForTestParseAnnotationThatIsOnlyOneLine')
-        );
-    }
-
-    /** @depends Bar */
-    public function methodForTestParseAnnotationThatIsOnlyOneLine()
-    {
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+FKucvIohwzKIoc21SgsjEb6HXW==

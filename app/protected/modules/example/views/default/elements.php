@@ -1,268 +1,46 @@
-<style>
-.bs-docs-example {
-    position: relative;
-    margin: 15px 0;
-    padding: 39px 19px 14px;
-    background-color: 
-    #fff;
-    border: 1px solid 
-    #ddd;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-}
-.bs-docs-example::after {
-    content: "Example";
-    position: absolute;
-    top: -1px;
-    left: -1px;
-    padding: 3px 7px;
-    font-size: 12px;
-    font-weight: bold;
-    background-color: 
-    #f5f5f5;
-    border: 1px solid 
-    #ddd;
-    color: 
-    #9da0a4;
-    -webkit-border-radius: 4px 0 4px 0;
-    -moz-border-radius: 4px 0 4px 0;
-    border-radius: 4px 0 4px 0;
-}    
-</style>
-
-<?php
-$this->breadcrumbs=array(
-	'Example' => array($this->module->id),
-    'Elements'
-);
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
-<div class="bs-docs-example">
-<h1>Justo Nullam Dapibus Venenatis Malesuada</h1>
-<h2>Justo Nullam Dapibus Venenatis Malesuada</h2>
-<h3>Justo Nullam Dapibus Venenatis Malesuada</h3>
-<h4>Justo Nullam Dapibus Venenatis Malesuada</h4>
-<h5>Justo Nullam Dapibus Venenatis Malesuada</h5>
-<h6>Justo Nullam Dapibus Venenatis Malesuada</h6>
-</div>
-
-<div class="bs-docs-example">
-<p class="text-muted">Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-<p class="text-primary">Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-<p class="text-success">Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-<p class="text-info">Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-<p class="text-warning">Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-<p class="text-danger">Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-</div>
-
-<div class="bs-docs-example">
-<blockquote>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-  <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
-</blockquote>
-</div>
-
-<div class="bs-docs-example">
-<form role="form">
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputFile">File input</label>
-    <input type="file" id="exampleInputFile">
-    <p class="help-block">Example block-level help text here.</p>
-  </div>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox"> Check me out
-    </label>
-  </div>
-  <button type="submit" class="btn btn-default">Submit</button>
-</form>
-</div>
-
-<div class="bs-docs-example">
-<form class="form-inline" role="form">
-  <div class="form-group">
-    <label class="sr-only" for="exampleInputEmail2">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
-  </div>
-  <div class="form-group">
-    <label class="sr-only" for="exampleInputPassword2">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
-  </div>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox"> Remember me
-    </label>
-  </div>
-  <button type="submit" class="btn btn-default">Sign in</button>
-</form>
-</div>
-
-<div class="bs-docs-example">
-<form class="form-horizontal" role="form">
-  <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Email</label>
-    <div class="col-lg-10">
-      <input type="email" class="form-control" id="inputEmail1" placeholder="Email">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputPassword1" class="col-lg-2 control-label">Password</label>
-    <div class="col-lg-10">
-      <input type="password" class="form-control" id="inputPassword1" placeholder="Password">
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="col-lg-offset-2 col-lg-10">
-      <div class="checkbox">
-        <label>
-          <input type="checkbox"> Remember me
-        </label>
-      </div>
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="col-lg-offset-2 col-lg-10">
-      <button type="submit" class="btn btn-default">Sign in</button>
-    </div>
-  </div>
-</form>
-</div>
-
-<div class="bs-docs-example">
-<!-- Standard gray button with gradient -->
-<button type="button" class="btn btn-default">Default</button>
-
-<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-<button type="button" class="btn btn-primary">Primary</button>
-
-<!-- Indicates a successful or positive action -->
-<button type="button" class="btn btn-success">Success</button>
-
-<!-- Contextual button for informational alert messages -->
-<button type="button" class="btn btn-info">Info</button>
-
-<!-- Indicates caution should be taken with this action -->
-<button type="button" class="btn btn-warning">Warning</button>
-
-<!-- Indicates a dangerous or potentially negative action -->
-<button type="button" class="btn btn-danger">Danger</button>
-
-<!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
-<button type="button" class="btn btn-link">Link</button>
-</div>
-
-<div class="bs-docs-example">
-<p>
-  <button type="button" class="btn btn-primary btn-lg">Large button</button>
-  <button type="button" class="btn btn-default btn-lg">Large button</button>
-</p>
-<p>
-  <button type="button" class="btn btn-primary">Default button</button>
-  <button type="button" class="btn btn-default">Default button</button>
-</p>
-<p>
-  <button type="button" class="btn btn-primary btn-sm">Small button</button>
-  <button type="button" class="btn btn-default btn-sm">Small button</button>
-</p>
-<p>
-  <button type="button" class="btn btn-primary btn-xs">Extra small button</button>
-  <button type="button" class="btn btn-default btn-xs">Extra small button</button>
-</p></div>
-
-<div class="bs-docs-example">
-<div class="btn-group">
-  <button type="button" class="btn btn-default">Left</button>
-  <button type="button" class="btn btn-default">Middle</button>
-  <button type="button" class="btn btn-default">Right</button>
-</div>
-</div>
-
-<div class="bs-docs-example">
-<!-- Single button -->
-<div class="btn-group">
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-    Action <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" role="menu">
-    <li><a href="#">Action</a></li>
-    <li><a href="#">Another action</a></li>
-    <li><a href="#">Something else here</a></li>
-    <li class="divider"></li>
-    <li><a href="#">Separated link</a></li>
-  </ul>
-</div>
-
-</div>
-
-<div class="bs-docs-example">
-
-<h3>Example heading <span class="label label-default">New</span></h3>
-
-<span class="label label-default">Default</span>
-<span class="label label-primary">Primary</span>
-<span class="label label-success">Success</span>
-<span class="label label-info">Info</span>
-<span class="label label-warning">Warning</span>
-<span class="label label-danger">Danger</span>
-
-<a href="#">Inbox <span class="badge">42</span></a>
-
-
-</div>
-
-<div class="bs-docs-example">
-<div class="progress">
-  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-    <span class="sr-only">40% Complete (success)</span>
-  </div>
-</div>
-<div class="progress">
-  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-    <span class="sr-only">20% Complete</span>
-  </div>
-</div>
-<div class="progress">
-  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-    <span class="sr-only">60% Complete (warning)</span>
-  </div>
-</div>
-<div class="progress">
-  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-    <span class="sr-only">80% Complete</span>
-  </div>
-</div>
-</div>
-
-<div class="bs-docs-example">
-<div class="alert alert-success">Cras justo odio, dapibus ac facilisis in, egestas eget quam.</div>
-<div class="alert alert-info">Cras justo odio, dapibus ac facilisis in, egestas eget quam.</div>
-<div class="alert alert-warning">Cras justo odio, dapibus ac facilisis in, egestas eget quam.</div>
-<div class="alert alert-danger">Cras justo odio, dapibus ac facilisis in, egestas eget quam.</div>
-</div>
-
-
-<div class="bs-docs-example">
-<div class="panel panel-default">
-  <div class="panel-heading">Panel heading without title</div>
-  <div class="panel-body">
-    Panel content
-  </div>
-</div>
-
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Panel title</h3>
-  </div>
-  <div class="panel-body">
-    Panel content
-  </div>
-</div>    
-</div>
+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

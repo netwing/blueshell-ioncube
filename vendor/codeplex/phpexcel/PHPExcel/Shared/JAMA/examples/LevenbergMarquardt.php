@@ -1,185 +1,72 @@
-<?php
-
-// Levenberg-Marquardt in PHP
-
-// http://www.idiom.com/~zilla/Computer/Javanumeric/LM.java
-
-class LevenbergMarquardt {
-
-	/**
-	 * Calculate the current sum-squared-error
-	 *
-	 * Chi-squared is the distribution of squared Gaussian errors,
-	 * thus the name.
-	 *
-	 * @param double[][] $x
-	 * @param double[] $a
-	 * @param double[] $y,
-	 * @param double[] $s,
-	 * @param object $f
-	 */
-	function chiSquared($x, $a, $y, $s, $f) {
-		$npts = count($y);
-		$sum = 0.0;
-
-		for ($i = 0; $i < $npts; ++$i) {
-			$d = $y[$i] - $f->val($x[$i], $a);
-			$d = $d / $s[$i];
-			$sum = $sum + ($d*$d);
-		}
-
-		return $sum;
-	}	//	function chiSquared()
-
-
-	/**
-	 * Minimize E = sum {(y[k] - f(x[k],a)) / s[k]}^2
-	 * The individual errors are optionally scaled by s[k].
-	 * Note that LMfunc implements the value and gradient of f(x,a),
-	 * NOT the value and gradient of E with respect to a!
-	 *
-	 * @param x array of domain points, each may be multidimensional
-	 * @param y corresponding array of values
-	 * @param a the parameters/state of the model
-	 * @param vary false to indicate the corresponding a[k] is to be held fixed
-	 * @param s2 sigma^2 for point i
-	 * @param lambda blend between steepest descent (lambda high) and
-	 *	jump to bottom of quadratic (lambda zero).
-	 * 	Start with 0.001.
-	 * @param termepsilon termination accuracy (0.01)
-	 * @param maxiter	stop and return after this many iterations if not done
-	 * @param verbose	set to zero (no prints), 1, 2
-	 *
-	 * @return the new lambda for future iterations.
-	 *  Can use this and maxiter to interleave the LM descent with some other
-	 *  task, setting maxiter to something small.
-	 */
-	function solve($x, $a, $y, $s, $vary, $f, $lambda, $termepsilon, $maxiter, $verbose) {
-		$npts = count($y);
-		$nparm = count($a);
-
-		if ($verbose > 0) {
-			print("solve x[".count($x)."][".count($x[0])."]");
-			print(" a[".count($a)."]");
-			println(" y[".count(length)."]");
-		}
-
-		$e0 = $this->chiSquared($x, $a, $y, $s, $f);
-
-		//double lambda = 0.001;
-		$done = false;
-
-		// g = gradient, H = hessian, d = step to minimum
-		// H d = -g, solve for d
-		$H = array();
-		$g = array();
-
-		//double[] d = new double[nparm];
-
-		$oos2 = array();
-
-		for($i = 0; $i < $npts; ++$i) {
-			$oos2[$i] = 1./($s[$i]*$s[$i]);
-		}
-		$iter = 0;
-		$term = 0;	// termination count test
-
-		do {
-			++$iter;
-
-			// hessian approximation
-			for( $r = 0; $r < $nparm; ++$r) {
-				for( $c = 0; $c < $nparm; ++$c) {
-					for( $i = 0; $i < $npts; ++$i) {
-						if ($i == 0) $H[$r][$c] = 0.;
-						$xi = $x[$i];
-						$H[$r][$c] += ($oos2[$i] * $f->grad($xi, $a, $r) * $f->grad($xi, $a, $c));
-					}  //npts
-				} //c
-			} //r
-
-			// boost diagonal towards gradient descent
-			for( $r = 0; $r < $nparm; ++$r)
-				$H[$r][$r] *= (1. + $lambda);
-
-			// gradient
-			for( $r = 0; $r < $nparm; ++$r) {
-				for( $i = 0; $i < $npts; ++$i) {
-					if ($i == 0) $g[$r] = 0.;
-					$xi = $x[$i];
-					$g[$r] += ($oos2[$i] * ($y[$i]-$f->val($xi,$a)) * $f->grad($xi, $a, $r));
-				}
-			} //npts
-
-			// scale (for consistency with NR, not necessary)
-			if ($false) {
-				for( $r = 0; $r < $nparm; ++$r) {
-					$g[$r] = -0.5 * $g[$r];
-					for( $c = 0; $c < $nparm; ++$c) {
-						$H[$r][$c] *= 0.5;
-					}
-				}
-			}
-
-			// solve H d = -g, evaluate error at new location
-			//double[] d = DoubleMatrix.solve(H, g);
-//			double[] d = (new Matrix(H)).lu().solve(new Matrix(g, nparm)).getRowPackedCopy();
-			//double[] na = DoubleVector.add(a, d);
-//			double[] na = (new Matrix(a, nparm)).plus(new Matrix(d, nparm)).getRowPackedCopy();
-//			double e1 = chiSquared(x, na, y, s, f);
-
-//			if (verbose > 0) {
-//				System.out.println("\n\niteration "+iter+" lambda = "+lambda);
-//				System.out.print("a = ");
-//				(new Matrix(a, nparm)).print(10, 2);
-//				if (verbose > 1) {
-//					System.out.print("H = ");
-//					(new Matrix(H)).print(10, 2);
-//					System.out.print("g = ");
-//					(new Matrix(g, nparm)).print(10, 2);
-//					System.out.print("d = ");
-//					(new Matrix(d, nparm)).print(10, 2);
-//				}
-//				System.out.print("e0 = " + e0 + ": ");
-//				System.out.print("moved from ");
-//				(new Matrix(a, nparm)).print(10, 2);
-//				System.out.print("e1 = " + e1 + ": ");
-//				if (e1 < e0) {
-//					System.out.print("to ");
-//					(new Matrix(na, nparm)).print(10, 2);
-//				} else {
-//					System.out.println("move rejected");
-//				}
-//			}
-
-			// termination test (slightly different than NR)
-//			if (Math.abs(e1-e0) > termepsilon) {
-//				term = 0;
-//			} else {
-//				term++;
-//				if (term == 4) {
-//					System.out.println("terminating after " + iter + " iterations");
-//					done = true;
-//				}
-//			}
-//			if (iter >= maxiter) done = true;
-
-			// in the C++ version, found that changing this to e1 >= e0
-			// was not a good idea.  See comment there.
-			//
-//			if (e1 > e0 || Double.isNaN(e1)) { // new location worse than before
-//				lambda *= 10.;
-//			} else {		// new location better, accept new parameters
-//				lambda *= 0.1;
-//				e0 = e1;
-//				// simply assigning a = na will not get results copied back to caller
-//				for( int i = 0; i < nparm; i++ ) {
-//					if (vary[i]) a[i] = na[i];
-//				}
-//			}
-		} while(!$done);
-
-		return $lambda;
-	}	//	function solve()
-
-}	//	class LevenbergMarquardt
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+Ao0Lhhj4kjOSqD8=

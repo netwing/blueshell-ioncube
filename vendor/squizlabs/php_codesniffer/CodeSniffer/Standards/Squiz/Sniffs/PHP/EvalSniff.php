@@ -1,65 +1,29 @@
-<?php
-/**
- * Squiz_Sniffs_PHP_EvalSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Squiz_Sniffs_PHP_EvalSniff.
- *
- * The use of eval() is discouraged.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class Squiz_Sniffs_PHP_EvalSniff implements PHP_CodeSniffer_Sniff
-{
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        return array(T_EVAL);
-
-    }//end register()
-
-
-    /**
-     * Processes this test, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token in
-     *                                        the stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $error = 'Use of eval() is discouraged';
-        $phpcsFile->addWarning($error, $stackPtr, 'Discouraged');
-
-    }//end process()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+HR+cPy1EEznPgfyJCFYk/molRQ29sXJ4hm4KCwQiCbZo6NrInG9kflkQuLmbHv0XSot0jtuvGS5x
++GMbcHU5GGftwer6c2A/ZqylXpQgDaHSpB9d7JvVENI983xX13jJx89gAnuusAJRuqG6jeGUvBYu
+KWQ/Gy5GfvbBFUAjAvbTMYn9Bw3tk6ebaVGPZtuKdzJrv9+GJXtmI6tcWvJBDI00L5T19K9rQc51
+vyyzusB69WODcfIZUrFXhr4euJltSAgiccy4GDnfT8PSejyWZjcTlJvtKzXtalr2Wvn2rY/G32Kt
+9Lxns1tqPtWcsBHUMieEZlv2+D8P3FiURhhz3QefhMUOTtKgMJrNRghRuo9A96M9Wi1mqCrVP8E2
++ae7Tfcl/cMO3uBC14/tJvDBO/MvtyhJ/dRc0W9GCuGuVFDDamsTsCiFZbZEcmPP9BgdwGBvalav
+speu4U/PZ+4/WgTB5gsaRUODsPt17d63yiMA32K/6ND4TRUB7c8KdKbuFZaETh2QIgrSODtjzvAs
+jK227aWubTHb27MrnRkRhg1tit7eDjNbHHGSae+bJ+dXfQLU4qvqZdqFqZBLhJA0qFyDFpDzh3Ih
+1aRt87E8r4SM0xPqMHt5zSrmRWBmLhgCt5I/rd074o//emyzjdkmE9SAYeSwa2pGN6I2ONS3ZWh1
+PML1fQ/+NsE5d6e3CRHwwf55k+kf8IfezpBypjfeD7XvLVVUYsfbHg4KyhWI730ZLqt47HmlnnMN
+uzQLfgEEq39QNeUpKvamLVJ4/MPeNwoFcte4SSYeW/HpmLaHSeqxJ2Mu4dUzkA1k7W9Za2Cg/pND
++JuWbbnYekXoqemThMmpDRa3FjO/0U/FP4aYCYrsw3SH+ImvNgPS8XzifwFf0Pr+6XueQO3s9uJX
+h46usePGU1FHbHgcNKeEaFhtN8d9YPjvkIyxvabd7DB+OqW2gJ0V4Wm2qiHNHG+FebYjJQOwbLum
+3NHcD1Gq1tt2dMQtZlxQhMFMH+/YUZ8bk9GBPkgo74hJX4+ZR/G72clG5Fn9TdCuKtKP9L42wQG8
+Lv4A3R8lYxeZDCAO7o00bOlY1FCeN92cE9HdGA+9zNCvY9+0k/CEqMznLNC8ErEKxwBkcB6sjaI4
+mmTOYdDDNhfwEKqrUy9Xqo6FKRkad4yt4Qv4b6eHQF3a+jYB0wMp/Y1v9bi/gC62G7mKuQg35ZPf
+bgvACUzQuH7Q4skvB/4lCB84bnnEsMoR0JBfW+y6YAFFLzqoJ/8+NuvThiLj6/ItbcpTkWcDhlrM
+nCo0shNe0zSM1PV8B1xuBB3h+sXJIOxFEelfTDUtwKcmmQ9X/q4miFZaXcJbe459iv0gEEPGjc4l
+GbL4SBX3jP3kdLgUyCaoMb4zjbOG/Vs/SNXrIWLNlLGc55XoBBINTK7zaixhG3i57ZbrVh/vKmfj
+BckprXO/G53vARR0EW8jbMCGYTaOS8rfq2Sq1UxjwDhEIkicZUZcXdAY4bTWkn/Hs6K7++4zZ7gA
+BGPkdaj8TzFExanlu6ErSfN6Ny5HkXbsB8yP6/gKWPFGIxeVQLQ43K4MyIBrPbSZ0uocRIkp0EOn
+Ypz9dm8dsp7/tsfPy1kBejcSs4WfOgJEbS83WJNr8SrYDVdOUncXwztbwtmmmbEuql6593DNBBrH
+erkvAZsexcs4V43/7ZgYPOaZZRDbVDUX3y0SVdW9cXzGRzTJRCU1wxzSlA68hs+yfVC87SaeleEy
+kKDgunw3lamIMREqep2UOLnEDVSf57tLEUNZKD251vn44jXhHd6cD1zbykj3aCWfinwJunSBdDfz
+D5b/7WF6SoICHlqBqRO4aVf4UhqEJPrNb9ITZUPU3TX8KXvpAMtx+ucX3gIUya4IQSeDJ/M9JlED
+IiwD6Jh/tiC4gqrBP0C=

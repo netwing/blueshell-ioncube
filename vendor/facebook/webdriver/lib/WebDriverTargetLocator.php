@@ -1,84 +1,38 @@
-<?php
-// Copyright 2004-present Facebook. All Rights Reserved.
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
-/**
- * Used to locate a given frame or window.
- */
-class WebDriverTargetLocator {
-
-  protected $executor;
-  protected $driver;
-
-  public function __construct($executor, $driver) {
-    $this->executor = $executor;
-    $this->driver = $driver;
-  }
-
-  /**
-   * Switch to the main document if the page contains iframes. Otherwise, switch
-   * to the first frame on the page.
-   *
-   * @return WebDriver The driver focused on the top window or the first frame.
-   */
-  public function defaultContent() {
-    $this->executor->execute('focusFrame', array());
-
-    return $this->driver;
-  }
-
-  /**
-   * Switch to the iframe by its id or name.
-   *
-   * @param WebDriverElement|string $frame The WebDriverElement,
-                                           the id or the name of the frame.
-   * @return WebDriver The driver focused on the given frame.
-   */
-  public function frame($frame) {
-    if ($frame instanceof WebDriverElement) {
-      $id = array('ELEMENT' => $frame->getID());
-    } else {
-      $id = (string)$frame;
-    }
-
-    $params = array('id' => $id);
-    $this->executor->execute('focusFrame', $params);
-
-    return $this->driver;
-  }
-
-  /**
-   * Switch the focus to another window by its handle.
-   *
-   * @param string $handle The handle of the window to be focused on.
-   * @return WebDriver Tge driver focused on the given window.
-   * @see WebDriver::getWindowHandles
-   */
-  public function window($handle) {
-    $params = array('name' => (string)$handle);
-    $this->executor->execute('focusWindow', $params);
-
-    return $this->driver;
-  }
-
-  /**
-   * Switch to the currently active modal dialog for this particular driver
-   * instance.
-   *
-   * @return WebDriverAlert
-   */
-  public function alert() {
-    return new WebDriverAlert($this->executor);
-  }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+VOTGab2w3G6VSj8fjxHLtEa=

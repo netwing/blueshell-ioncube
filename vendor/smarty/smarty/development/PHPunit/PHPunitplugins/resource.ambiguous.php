@@ -1,56 +1,44 @@
-<?php
-
-/**
- * Ambiguous Filename Custom Resource Example
- *
- * @package Resource-examples
- * @author Rodney Rehm
- */
-class Smarty_Resource_Ambiguous extends Smarty_Internal_Resource_File
-{
-    protected $directory;
-    protected $segment;
-
-    public function __construct($directory)
-    {
-        $this->directory = rtrim($directory, "/\\") . DS;
-    }
-
-    public function setSegment($segment)
-    {
-        $this->segment = $segment;
-    }
-
-    /**
-     * modify resource_name according to resource handlers specifications
-     *
-     * @param  Smarty $smarty        Smarty instance
-     * @param  string $resource_name resource_name to make unique
-     * @return string unique resource name
-     */
-    protected function buildUniqueResourceName(Smarty $smarty, $resource_name, $is_config = false)
-    {
-        return get_class($this) . '#' . $this->segment . '#' . $resource_name;
-    }
-
-    /**
-     * populate Source Object with meta data from Resource
-     *
-     * @param Smarty_Template_Source   $source    source object
-     * @param Smarty_Internal_Template $_template template object
-     */
-    public function populate(Smarty_Template_Source $source, Smarty_Internal_Template $_template=null)
-    {
-        $segment = '';
-        if ($this->segment) {
-            $segment = rtrim($this->segment, "/\\") . DS;
-        }
-
-        $source->filepath = $this->directory . $segment . $source->name;
-        $source->uid = sha1($source->filepath);
-        if ($source->smarty->compile_check && !isset($source->timestamp)) {
-            $source->timestamp = @filemtime($source->filepath);
-            $source->exists = !!$source->timestamp;
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

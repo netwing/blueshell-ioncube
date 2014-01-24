@@ -1,160 +1,88 @@
-<?php
-/**
- * Smarty PHPunit tests double quoted strings
- *
- * @package PHPunit
- * @author Uwe Tews
- */
-
-/**
- * class for double quoted string tests
- */
-class DoubleQuotedStringTests extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $this->smarty = SmartyTests::$smarty;
-        SmartyTests::init();
-    }
-
-    static function isRunnable()
-    {
-        return true;
-    }
-
-    /**
-     * test simple double quoted string
-     */
-    public function testSimpleDoubleQuotedString()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$foo="Hello World"}{$foo}', null, null, $this->smarty);
-        $this->assertEquals('Hello World', $this->smarty->fetch($tpl));
-    }
-    /**
-     * test expression tags in double quoted strings
-     */
-    public function testTagsInDoubleQuotedString()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$foo="Hello {1+2} World"}{$foo}', null, null, $this->smarty);
-        $this->assertEquals('Hello 3 World', $this->smarty->fetch($tpl));
-    }
-    /**
-     * test vars in double quoted strings
-     */
-    public function testVarsInDoubleQuotedString1()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$bar=\'blah\'}{$foo="Hello $bar World"}{$foo}', null, null, $this->smarty);
-        $this->assertEquals('Hello blah World', $this->smarty->fetch($tpl));
-    }
-    public function testVarsInDoubleQuotedString2()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$bar=\'blah\'}{$buh=\'buh\'}{$foo="Hello $bar$buh World"}{$foo}', null, null, $this->smarty);
-        $this->assertEquals('Hello blahbuh World', $this->smarty->fetch($tpl));
-    }
-    /**
-     * test vars with backtick in double quoted strings
-     */
-    public function testVarsBacktickInDoubleQuotedString1()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$bar=\'blah\'}{$foo="Hello `$bar`.test World"}{$foo}', null, null, $this->smarty);
-        $this->assertEquals('Hello blah.test World', $this->smarty->fetch($tpl));
-    }
-    public function testVarsBacktickInDoubleQuotedString2()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$bar=\'blah\'}{$buh=\'buh\'}{$foo="Hello `$bar``$buh`.test World"}{$foo}', null, null, $this->smarty);
-        $this->assertEquals('Hello blahbuh.test World', $this->smarty->fetch($tpl));
-    }
-    /**
-     * test variable vars with backtick in double quoted strings
-     */
-    public function testVariableVarsBacktickInDoubleQuotedString()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$barbuh=\'blah\'}{$buh=\'buh\'}{$foo="Hello `$bar{$buh}`.test World"}{$foo}', null, null, $this->smarty);
-        $this->assertEquals('Hello blah.test World', $this->smarty->fetch($tpl));
-    }
-    /**
-     * test array vars with backtick in double quoted strings
-     */
-    public function testArrayVarsBacktickInDoubleQuotedString1()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$bar[1][2]=\'blah\'}{$foo="Hello `$bar.1.2`.test World"}{$foo}', null, null, $this->smarty);
-        $this->assertEquals('Hello blah.test World', $this->smarty->fetch($tpl));
-    }
-    public function testArrayVarsBacktickInDoubleQuotedString2()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$bar[1][2]=\'blah\'}{$foo="Hello `$bar[1][2]`.test World"}{$foo}', null, null, $this->smarty);
-        $this->assertEquals('Hello blah.test World', $this->smarty->fetch($tpl));
-    }
-    /**
-     * test expression in backtick in double quoted strings
-     */
-    public function testExpressionBacktickInDoubleQuotedString()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$a=1}{"`$a+1`"}', null, null, $this->smarty);
-        $this->assertEquals('2', $this->smarty->fetch($tpl));
-    }
-    /**
-     * test smartytag in double quoted strings
-     */
-    public function testSmartytagInDoubleQuotedString1()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$foo="Hello {counter start=1} World"}{$foo}', null, null, $this->smarty);
-        $this->assertEquals('Hello 1 World', $this->smarty->fetch($tpl));
-    }
-    public function testSmartytagInDoubleQuotedString2()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$foo="Hello {counter start=1}{counter} World"}{$foo}', null, null, $this->smarty);
-        $this->assertEquals('Hello 12 World', $this->smarty->fetch($tpl));
-    }
-    /**
-     * test block smartytag in double quoted strings
-     */
-    public function testSmartyBlockTagInDoubleQuotedString1()
-    {
-        $this->smarty->assign('x', 1);
-        $this->smarty->assign('y', 1);
-        $this->smarty->assign('z', true);
-        $this->assertEquals('Hello 1 World', $this->smarty->fetch('eval:{"Hello{if $z} {$x} {else}{$y}{/if}World"}'));
-    }
-    /**
-     * test vars in delimiter in double quoted strings
-     */
-    public function testVarsDelimiterInDoubleQuotedString()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$bar=\'blah\'}{$foo="Hello {$bar}.test World"}{$foo}', null, null, $this->smarty);
-        $this->assertEquals('Hello blah.test World', $this->smarty->fetch($tpl));
-    }
-    /**
-     * test escaped quotes in double quoted strings
-     */
-    public function testEscapedQuotesInDoubleQuotedString()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$foo="Hello \" World"}{$foo}', null, null, $this->smarty);
-        $this->assertEquals('Hello " World', $this->smarty->fetch($tpl));
-    }
-
-    /**
-     * test single quotes in double quoted strings
-     */
-    public function testSingleQuotesInDoubleQuotedString()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$foo="Hello \'World\'"}{$foo}', null, null, $this->smarty);
-        $this->assertEquals("Hello 'World'", $this->smarty->fetch($tpl));
-    }
-    /**
-     * test single quote tags in double quoted strings
-     */
-    public function testSingleQuoteTagsInDoubleQuotedString()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$foo="Hello {\'World\'} Test"}{$foo}', null, null, $this->smarty);
-        $this->assertEquals("Hello World Test", $this->smarty->fetch($tpl));
-    }
-    /**
-     * test empty double quoted strings
-     */
-    public function testEmptyDoubleQuotedString()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$foo=""}{$foo}', null, null, $this->smarty);
-        $this->assertEquals("", $this->smarty->fetch($tpl));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

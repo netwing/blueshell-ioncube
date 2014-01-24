@@ -1,92 +1,41 @@
-<?php
-/**
- * Generic_Sniffs_Commenting_FixmeSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Sam Graham <php-codesniffer@illusori.co.uk>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Generic_Sniffs_Commenting_FixmeSniff.
- *
- * Warns about FIXME comments.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Sam Graham <php-codesniffer@illusori.co.uk>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class Generic_Sniffs_Commenting_FixmeSniff implements PHP_CodeSniffer_Sniff
-{
-
-    /**
-     * A list of tokenizers this sniff supports.
-     *
-     * @var array
-     */
-    public $supportedTokenizers = array(
-                                   'PHP',
-                                   'JS',
-                                  );
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        return PHP_CodeSniffer_Tokens::$commentTokens;
-
-    }//end register()
-
-
-    /**
-     * Processes this sniff, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token
-     *                                        in the stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-
-        $content = $tokens[$stackPtr]['content'];
-        $matches = array();
-        if (preg_match('|[^a-z]+fixme[^a-z]+(.*)|i', $content, $matches) !== 0) {
-            // Clear whitespace and some common characters not required at
-            // the end of a fixme message to make the error more informative.
-            $type         = 'CommentFound';
-            $fixmeMessage = trim($matches[1]);
-            $fixmeMessage = trim($fixmeMessage, '[]().');
-            $error        = 'Comment refers to a FIXME task';
-            $data         = array($fixmeMessage);
-            if ($fixmeMessage !== '') {
-                $type   = 'TaskFound';
-                $error .= ' "%s"';
-            }
-
-            $phpcsFile->addError($error, $stackPtr, $type, $data);
-        }
-
-    }//end process()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+w0==

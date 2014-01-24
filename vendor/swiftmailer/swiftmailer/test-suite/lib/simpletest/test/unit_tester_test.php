@@ -1,61 +1,42 @@
-<?php
-// $Id: unit_tester_test.php 1748 2008-04-14 01:50:41Z lastcraft $
-require_once(dirname(__FILE__) . '/../autorun.php');
-
-class ReferenceForTesting {
-}
-
-class TestOfUnitTester extends UnitTestCase {
-    
-    function testAssertTrueReturnsAssertionAsBoolean() {
-        $this->assertTrue($this->assertTrue(true));
-    }
-    
-    function testAssertFalseReturnsAssertionAsBoolean() {
-        $this->assertTrue($this->assertFalse(false));
-    }
-    
-    function testAssertEqualReturnsAssertionAsBoolean() {
-        $this->assertTrue($this->assertEqual(5, 5));
-    }
-    
-    function testAssertIdenticalReturnsAssertionAsBoolean() {
-        $this->assertTrue($this->assertIdentical(5, 5));
-    }
-    
-    function testCoreAssertionsDoNotThrowErrors() {
-        $this->assertIsA($this, 'UnitTestCase');
-        $this->assertNotA($this, 'WebTestCase');
-    }
-    
-    function testReferenceAssertionOnObjects() {
-        $a = new ReferenceForTesting();
-        $b = $a;
-        $this->assertSame($a, $b);
-    }
-    
-    function testReferenceAssertionOnScalars() {
-        $a = 25;
-        $b = &$a;
-        $this->assertReference($a, $b);
-    }
-    
-    function testCloneOnObjects() {
-        $a = new ReferenceForTesting();
-        $b = new ReferenceForTesting();
-        $this->assertClone($a, $b);
-    }
-
-    function TODO_testCloneOnScalars() {
-        $a = 25;
-        $b = 25;
-        $this->assertClone($a, $b);
-    }
-
-    function testCopyOnScalars() {
-        $a = 25;
-        $b = 25;
-        $this->assertCopy($a, $b);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
++lRbVMGJclbrTBXaxKb153bfDAKNv8+D

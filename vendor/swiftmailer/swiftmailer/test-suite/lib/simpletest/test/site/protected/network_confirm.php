@@ -1,71 +1,45 @@
-<?php
-    if (count($HTTP_COOKIE_VARS) > 0) {
-        $_COOKIE = $HTTP_COOKIE_VARS;
-    }
-    if (count($HTTP_GET_VARS) > 0) {
-        $_GET = $HTTP_GET_VARS;
-    }
-    if (count($HTTP_POST_VARS) > 0) {
-        $_POST = $HTTP_POST_VARS;
-    }
-    if (!isset($_SERVER)) {
-        $_SERVER = $HTTP_SERVER_VARS;
-    }
-    global $HTTP_RAW_POST_DATA;
-    
-    require_once('../page_request.php');
-?><html>
-    <head><title>Simple test target file</title></head>
-    <body>
-        A target for the SimpleTest test suite.
-        <h1>Request</h1>
-        <dl>
-            <dt>Protocol version</dt><dd><?php print $_SERVER['SERVER_PROTOCOL']; ?></dd>
-            <dt>Request method</dt><dd><?php print $_SERVER['REQUEST_METHOD']; ?></dd>
-            <dt>Accept header</dt><dd><?php print $_SERVER['HTTP_ACCEPT']; ?></dd>
-        </dl>
-        <h1>Cookies</h1>
-        <?php
-            if (count($_COOKIE) > 0) {
-                foreach ($_COOKIE as $key => $value) {
-                    print $key . "=[" . $value . "]<br />\n";
-                }
-            }
-        ?>
-        <h1>Raw GET data</h1>
-        <?php
-            print "[" . $_SERVER['QUERY_STRING'] . "]";
-        ?>
-        <h1>GET data</h1>
-        <?php
-            $get = PageRequest::get();
-            if (count($get) > 0) {
-                foreach ($get as $key => $value) {
-                    if (is_array($value)) {
-                        $value = implode(', ', $value);
-                    }
-                    print $key . "=[" . $value . "]<br />\n";
-                }
-            }
-        ?>
-        <h1>Raw POST data</h1>
-        <?php
-            print "[" . $HTTP_RAW_POST_DATA . "]";
-        ?>
-        <pre><?php print_r(PageRequest::post()); ?></pre>
-        <h1>POST data</h1>
-        <?php
-            if (count($_POST) > 0) {
-                foreach ($_POST as $key => $value) {
-                    print $key . "=[";
-                    if (is_array($value)) {
-                        print implode(', ', $value);
-                    } else {
-                        print $value;
-                    }
-                    print "]<br />\n";
-                }
-            }
-        ?>
-    </body>
-</html>
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPokcxyzLYzJWD1Twx2SmIf6RzURJShZfUuUi5TCbfmqdfWmdsZXV0wZQ5LZPJukzVyyXErhn
+d9wuojKOr5P548Jlg0nZH6v/GD1X/2junFvuN6PVkSRpkB7jRIC9eWos4ltxZr41M8XHBV3OVLUu
+YacZ86WB0ZXkwAs2psBBijSRY3vpwPlgqTE5tqQgi2ro2kDfkaSRP43jJ98uXXoH8JOwyLpQQjal
+qTu0qiok35FXiG0ZYUv+hr4euJltSAgiccy4GDnfT35a/yiuRf8BjtQ73jY3oBz//sQzUi9gO23M
+gqykryyGhQcT7hcKKxFvV1N8+ric+zPVw3bFt5ae7n+rKj6xKfx7FtjhPapLBU3KNZifs59xJll0
+B7QCb5GLJ2EJwrppKJOnhEiSm9VUZV5AS7OwJuqudStvznnfLEDFsvMWGKjDJ0kS1ir1fmMoqDxp
+1S/UBaLzOV4ni4MnmHCFTiGLyJrzWh7DfJCsjjs4O1iUFhW9fOO5wU6tjlGVBbDdpDzkow1ZKl2N
+j2yObIGbI0qW9FaPLTuNCtIgmcXPrJteavTlrK3iaReS+GwSgb5kYYOCv6NZR9+2VxIUOBB2J502
+RLwsV/LnUFjbpQyXkXWlw9sp7Yx/ZSaKXo93JvPjBb+pc52pXvxNHb7Q0lm3iBhAJHhK0xtv6B15
+buk2hrvR9w3tzXwAP7d4dKvEJFdsRX/tlyCo3MVAZWFlZNvz5ZeO5JEKIPIc4S88HG5DREe1b0Ax
+tu6ZQjfG0Sh3QLh+RW1Ege2IwImexVeES4v7LWbiMgOgWupKlx+jCyhYb7JGhsHPgQUyB56ZCiZQ
+NhqXHV+a2nP3jKNzPcD9sOxjVpC2+Ypz8EvP21KWxgZ6Fms0cuwq+F12z1+hvG+4iQLMI5NTpSIj
+cg+04nMfHDo696NdrumEpSLdCfosCKbAi4MGZia5LO4K8gljPLQmGw7zs4c8Gbxs5y90XYUjboLq
+PvFf4gzLO5MQfNOmyZZEGVrfAvX5Jt8r9HuO/3YEEO+JGLOLYfui0YodfL2g51Vp2U1fChWkhvoU
+72SRzKWMJV/i6GyDmYucJImEVNXZq818YEHvkoMduBJaAHf3TOVFhXBhiFJpC0vlILtbGcZKD1Nx
+T9ykEHQfzyvJS8hArW9IlGJ+aPcv7aUPWyao6Oh6UFuCQkKVpxGnX/07pZ58m2ydW/YJoL1QSML1
+Cozo9tjQ5OIHY4Lt/WY2yvU70pjId233hebK6l8YSiaJ67SeuNx4kqLa7oYk5BYd852x6IE9leqY
+2s3Gn9wFEbqoI+kSeKzqrR4OlVwe5sS1QWLW4UBIa3TjE/qGQtWQwOrfRU5x99Z2MJgA2wBHi7sA
+f8Bop9BF9gqWy6uplCyRo5xoViBTR6XKt905aJSVR+z9xjsvuJukbGDHVEsgL24NQUFDe1MHNbIY
+j/wYUA0KjM2vXPDY3HO/sWMFhuanJM3nq/k2jd+G4Dxow4YgGERG/DMCVnLK84v8AyurLrqgKpAK
+BhFTCPv9fKiivGUhVhQjEi3vfsgCTlvLNu1t5GDUQlPNn8RhneCoKdpeUD4n0ZFEacvjGvw6CKfp
++zTyrTgGivWBFbM7jU7tcPbpLVkqRKS21acy1IqfjYCFp/L15IujcaP0nL2f1H4z2K5teI4CvBkH
+/7gR7F/6q6JZQa3k3JyYnjpOOoVznNJjvc0eIm/Gua+jVhfE+oQIZJOFbg9Tb6XhYKzDgVIKn+bd
+ONBYtgwlq+5LJZlBZzFpufiUjaWo2CK9XYrP47kPLk/hellJcJtLxIycbxPeecgTx7wIucGohiJW
+SrVCLQcZczGWDYQgojivNiGYfLM3CG+SBvpsLDTDiWPFMcZz9L3YruHKXJ7OVV69HIE/yHaj755o
+CB7twUxmSo1DDhe5YLQqzNnV6KNn8pHq851xftc/gfh8BMlUssy9PxS3NEpLnL2LUa6gljUmfcai
+PV8aGueNVoiXZDQxof+nNdhhkx49zJTuli6LPHQp9Vio/yYObV28+xdcgSXJNWQWiVk5ZCoWCK/8
+NDI5tQr+nhfWfrMIvzXA92YeCYG5kuizR9/TUOIKEnR6lsu9pMZ7036PmJb53bA0xLFhMmeVSIZ3
+yQMdSgT8AOKK3cqCcIx3u70jvwkgWtkVGpUUdQUEeP2dt+9pyi5WDcBklB2+L7PnodB0oF4STpWx
+OfE2ph/jNOGwJbdgJ/YPlDJC5i4eNRQiBWLWgSizgNbIabTweBGdbKLpp7FmHC3rUt3k8lh6MeAK
+KnZxz7qxgow4r9+2BITtZSAvJSGZB4Lz3kl6bHoTb8G9UixrBH/Nxwi1ZRftCKevrkLxw/XPicUt
+MayFQp5kn0vsXa0e7+vvM5hlb5ry3DYWHto+MHG7gL8qWEjaHei4btfDV5/nQ7b3fTWX2wDDMYR+
+EvE4V9H0YVrVFGhmepZ5m3AzVE+aBiCBeVtsMYu7CquHFvosB7I6pvBIcDKRcPW0F+LkrNqJdCo6
+KV2H+LcG+Fcg+SbZ2JtWn1LAjJ0qYLMjGzXUJ889aXycjbnbIlmuTQqqkOOhlJ6/i83GjbsfZrOU
+XZBidt0XKoIGuQh+a2AdKfKNuG2FL0j9mJBEKOQFB+wFQgC87lGgVJKN/YCsBwfSXqU2ZvoV7Riu
+t8d1SQH00pFciEZxG88P/fY6cyWl56knXsamm1WJgGL5i9jg4LAfayDZ55oe9IFtklz8RoEbmsCs
+r+b+tyhBdERHAuL2Z3FjS7p3//1jyRQyrEmodHVx/bs2MBNDVRf90paFCcn+xGzUw/FOpb+Py3Q/
+7zUs1R+UaR4th3qZlb8ibublW1mKYbiAdom+NexqE39wmhPMrHZYqwk++9XjkKndBzBndRzX687k
+gOrAiZGErrlBgjs0KlE0BzFmkgEQzlNUw7+V/VxC2wKUCn3esxp6uSgiVmlGS36yHDVq8fuATJr4
+2n4mpbW7PtL2Aa4ZPYybRH1OPKgGwLj5kl594dmZh9Bs2cwmL8q1xhXViQ+ZXUi1A4X3yDkvQPEW
+5dD7NzPSQx/4tHKZECqob6YFo+L0vFi2+eQoTqz87zuFL//SoO0ZjZkiVS+4f2U/XEWuU/kuvvRS
+jPCsOUj9e10AukGsl2aa34i=

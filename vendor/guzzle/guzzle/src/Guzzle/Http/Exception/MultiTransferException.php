@@ -1,145 +1,54 @@
-<?php
-
-namespace Guzzle\Http\Exception;
-
-use Guzzle\Common\Exception\ExceptionCollection;
-use Guzzle\Http\Message\RequestInterface;
-
-/**
- * Exception encountered during a multi transfer
- */
-class MultiTransferException extends ExceptionCollection
-{
-    protected $successfulRequests = array();
-    protected $failedRequests = array();
-    protected $exceptionForRequest = array();
-
-    /**
-     * Get all of the requests in the transfer
-     *
-     * @return array
-     */
-    public function getAllRequests()
-    {
-        return array_merge($this->successfulRequests, $this->failedRequests);
-    }
-
-    /**
-     * Add to the array of successful requests
-     *
-     * @param RequestInterface $request Successful request
-     *
-     * @return self
-     */
-    public function addSuccessfulRequest(RequestInterface $request)
-    {
-        $this->successfulRequests[] = $request;
-
-        return $this;
-    }
-
-    /**
-     * Add to the array of failed requests
-     *
-     * @param RequestInterface $request Failed request
-     *
-     * @return self
-     */
-    public function addFailedRequest(RequestInterface $request)
-    {
-        $this->failedRequests[] = $request;
-
-        return $this;
-    }
-
-    /**
-     * Add to the array of failed requests and associate with exceptions
-     *
-     * @param RequestInterface $request   Failed request
-     * @param \Exception       $exception Exception to add and associate with
-     *
-     * @return self
-     */
-    public function addFailedRequestWithException(RequestInterface $request, \Exception $exception)
-    {
-        $this->add($exception)
-             ->addFailedRequest($request)
-             ->exceptionForRequest[spl_object_hash($request)] = $exception;
-
-        return $this;
-    }
-
-    /**
-     * Get the Exception that caused the given $request to fail
-     *
-     * @param RequestInterface $request Failed command
-     *
-     * @return \Exception|null
-     */
-    public function getExceptionForFailedRequest(RequestInterface $request)
-    {
-        $oid = spl_object_hash($request);
-
-        return isset($this->exceptionForRequest[$oid]) ? $this->exceptionForRequest[$oid] : null;
-    }
-
-    /**
-     * Set all of the successful requests
-     *
-     * @param array Array of requests
-     *
-     * @return self
-     */
-    public function setSuccessfulRequests(array $requests)
-    {
-        $this->successfulRequests = $requests;
-
-        return $this;
-    }
-
-    /**
-     * Set all of the failed requests
-     *
-     * @param array Array of requests
-     *
-     * @return self
-     */
-    public function setFailedRequests(array $requests)
-    {
-        $this->failedRequests = $requests;
-
-        return $this;
-    }
-
-    /**
-     * Get an array of successful requests sent in the multi transfer
-     *
-     * @return array
-     */
-    public function getSuccessfulRequests()
-    {
-        return $this->successfulRequests;
-    }
-
-    /**
-     * Get an array of failed requests sent in the multi transfer
-     *
-     * @return array
-     */
-    public function getFailedRequests()
-    {
-        return $this->failedRequests;
-    }
-
-    /**
-     * Check if the exception object contains a request
-     *
-     * @param RequestInterface $request Request to check
-     *
-     * @return bool
-     */
-    public function containsRequest(RequestInterface $request)
-    {
-        return in_array($request, $this->failedRequests, true) || in_array($request, $this->successfulRequests, true);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

@@ -1,222 +1,90 @@
-<?php
-/**
- * PHP_CodeCoverage
- *
- * Copyright (c) 2009-2013, Sebastian Bergmann <sebastian@phpunit.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @category   PHP
- * @package    CodeCoverage
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://github.com/sebastianbergmann/php-code-coverage
- * @since      File available since Release 1.0.0
- */
-
-/**
- * Generates an HTML report from an PHP_CodeCoverage object.
- *
- * @category   PHP
- * @package    CodeCoverage
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://github.com/sebastianbergmann/php-code-coverage
- * @since      Class available since Release 1.0.0
- */
-class PHP_CodeCoverage_Report_HTML
-{
-    /**
-     * @var string
-     */
-    protected $templatePath;
-
-    /**
-     * @var string
-     */
-    protected $charset;
-
-    /**
-     * @var string
-     */
-    protected $generator;
-
-    /**
-     * @var integer
-     */
-    protected $lowUpperBound;
-
-    /**
-     * @var integer
-     */
-    protected $highLowerBound;
-
-    /**
-     * @var boolean
-     */
-    protected $highlight;
-
-    /**
-     * Constructor.
-     *
-     * @param array $options
-     */
-    public function __construct($charset = 'UTF-8', $highlight = FALSE, $lowUpperBound = 35, $highLowerBound = 70, $generator = '')
-    {
-        $this->charset        = $charset;
-        $this->generator      = $generator;
-        $this->highLowerBound = $highLowerBound;
-        $this->highlight      = $highlight;
-        $this->lowUpperBound  = $lowUpperBound;
-
-        $this->templatePath = sprintf(
-          '%s%sHTML%sRenderer%sTemplate%s',
-
-          dirname(__FILE__),
-          DIRECTORY_SEPARATOR,
-          DIRECTORY_SEPARATOR,
-          DIRECTORY_SEPARATOR,
-          DIRECTORY_SEPARATOR
-        );
-    }
-
-    /**
-     * @param PHP_CodeCoverage $coverage
-     * @param string           $target
-     */
-    public function process(PHP_CodeCoverage $coverage, $target)
-    {
-        $target = $this->getDirectory($target);
-        $report = $coverage->getReport();
-        unset($coverage);
-
-        if (!isset($_SERVER['REQUEST_TIME'])) {
-            $_SERVER['REQUEST_TIME'] = time();
-        }
-
-        $date = date('D M j G:i:s T Y', $_SERVER['REQUEST_TIME']);
-
-        $dashboard = new PHP_CodeCoverage_Report_HTML_Renderer_Dashboard(
-          $this->templatePath,
-          $this->charset,
-          $this->generator,
-          $date,
-          $this->lowUpperBound,
-          $this->highLowerBound
-        );
-
-        $directory = new PHP_CodeCoverage_Report_HTML_Renderer_Directory(
-          $this->templatePath,
-          $this->charset,
-          $this->generator,
-          $date,
-          $this->lowUpperBound,
-          $this->highLowerBound
-        );
-
-        $file = new PHP_CodeCoverage_Report_HTML_Renderer_File(
-          $this->templatePath,
-          $this->charset,
-          $this->generator,
-          $date,
-          $this->lowUpperBound,
-          $this->highLowerBound,
-          $this->highlight
-        );
-
-        $dashboard->render($report, $target . 'index.dashboard.html');
-        $directory->render($report, $target . 'index.html');
-
-        foreach ($report as $node) {
-            $id = $node->getId();
-
-            if ($node instanceof PHP_CodeCoverage_Report_Node_Directory) {
-                $dashboard->render($node, $target . $id . '.dashboard.html');
-                $directory->render($node, $target . $id . '.html');
-            } else {
-                $file->render($node, $target . $id . '.html');
-            }
-        }
-
-        $this->copyFiles($target);
-    }
-
-    /**
-     * @param string $target
-     */
-    protected function copyFiles($target)
-    {
-        $dir = $this->getDirectory($target . 'css');
-        copy($this->templatePath . 'css/bootstrap.min.css', $dir . 'bootstrap.min.css');
-        copy($this->templatePath . 'css/bootstrap-responsive.min.css', $dir . 'bootstrap-responsive.min.css');
-        copy($this->templatePath . 'css/style.css', $dir . 'style.css');
-
-        $dir = $this->getDirectory($target . 'js');
-        copy($this->templatePath . 'js/bootstrap.min.js', $dir . 'bootstrap.min.js');
-        copy($this->templatePath . 'js/highcharts.js', $dir . 'highcharts.js');
-        copy($this->templatePath . 'js/jquery.min.js', $dir . 'jquery.min.js');
-        copy($this->templatePath . 'js/html5shiv.js', $dir . 'html5shiv.js');
-
-        $dir = $this->getDirectory($target . 'img');
-        copy($this->templatePath . 'img/glyphicons-halflings.png', $dir . 'glyphicons-halflings.png');
-        copy($this->templatePath . 'img/glyphicons-halflings-white.png', $dir . 'glyphicons-halflings-white.png');
-    }
-
-    /**
-     * @param  string $directory
-     * @return string
-     * @throws PHP_CodeCoverage_Exception
-     * @since  Method available since Release 1.2.0
-     */
-    protected function getDirectory($directory)
-    {
-        if (substr($directory, -1, 1) != DIRECTORY_SEPARATOR) {
-            $directory .= DIRECTORY_SEPARATOR;
-        }
-
-        if (is_dir($directory)) {
-            return $directory;
-        }
-
-        if (@mkdir($directory, 0777, TRUE)) {
-            return $directory;
-        }
-
-        throw new PHP_CodeCoverage_Exception(
-          sprintf(
-            'Directory "%s" does not exist.',
-            $directory
-          )
-        );
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+DT6G

@@ -1,73 +1,56 @@
-<?php
-require_once("config.inc.php");
-$blue->autentica_utente("template","W");
-$messaggio="";
-$elenco_file=array(	
-    'contratto_affitto.rtf'=>'Contratto di Affitto',
-    'contratto_affitto_inglese.rtf'=>'Contratto di Affitto inglese',
-    'contratto_gestione.rtf'=>'Contratto di Gestione',
-    'contratto_vendita.rtf'=>'Contratto di Vendita',
-    'etichette.rtf'=>'Etichette',
-    'fattura.rtf'=>'Fattura',
-    'lettera_comunicazione.rtf'=>'Comunicazioni ai Clienti',
-    'lettera_polizze.rtf'=>'Lettere di Scadenza Polizze',
-    'lettera_scadenza.rtf'=>'Lettere di Scadenza Contratti',
-    'lettera_spese_condominiali.rtf'=>'Lettere di Spese Condominiali',
-    'report_arrivi.rtf'=>'Rapporto Arrivi',
-    'report_contratti_fatturato.rtf'=>'Rapporto Contratti e Fatturato',
-    'report_contratti.rtf'=>'Rapporto Contratti',
-    'report_polizze.rtf'=>'Rapporto Polizze in Scadenza',
-    'report_pontile.rtf'=>'Rapporto Status del Pontile',
-    'report_presenze.rtf'=>'Rapporto delle Presenze',
-    'report_rendite.rtf'=>'Rapporto sulle Rendite'
-);
-
-// Template reset
-if (array_key_exists('t', $_GET)) {
-    $t = trim($_GET['t']);
-    if (array_key_exists($t, $elenco_file)) {
-        if (file_exists("original-print-template/" . $t) and is_writable("template/")) {
-            // Delete file if exists
-            if (file_exists("template/" . $t)) {
-                unlink("template/" . $t);
-            }
-            // Copy file
-            $esit = copy("original-print-template/" . $t, "template/" . $t);
-            if ($esit) {
-                Yii::app()->user->setFlash('success', "The template has been reset to original version.");
-            } else {
-                Yii::app()->user->setFlash('danger', "An error occured.");
-            }
-            header("Location:stampa_gestione_template.php");
-            exit;
-        } else {
-            if (!file_exists("original-print-template/" . $t)) {
-                Yii::app()->user->setFlash('danger', "Default template do not exists!");
-            }
-            if (!is_writable("template/")) {
-                Yii::app()->user->setFlash('danger', "Template path was not writable!");
-            }
-            header("Location:stampa_gestione_template.php");
-            exit;
-        }
-    }
-}
-
-if (count($_POST)>0) {
-	if ($_FILES['file']['error']==0 and $_POST['nomefile']!="") {
-		$esit = move_uploaded_file($_FILES['file']['tmp_name'],"template/".$_POST['nomefile']);
-        if ($esit) {
-            Yii::app()->user->setFlash('success', "The template has been updated successfully.");
-        } else {
-            Yii::app()->user->setFlash('danger', "An error occured.");
-        }
-        header("Location:stampa_gestione_template.php");
-        exit;
-	} else {
-		Yii::app()->user->setFlash('warning', "You must upload a file and select a destination template.");
-        header("Location:stampa_gestione_template.php");
-        exit;
-	}
-}
-
-require_once "views/site/print_template.php";
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+6mfDC5LP+9M+AaeXem==

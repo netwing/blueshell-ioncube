@@ -1,92 +1,47 @@
-<?php
-/**
- * Squiz_Sniffs_WhiteSpace_ScopeKeywordSpacingSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Squiz_Sniffs_WhiteSpace_ScopeKeywordSpacingSniff.
- *
- * Ensure there is a single space after scope keywords.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class Squiz_Sniffs_WhiteSpace_ScopeKeywordSpacingSniff implements PHP_CodeSniffer_Sniff
-{
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        $register   = PHP_CodeSniffer_Tokens::$scopeModifiers;
-        $register[] = T_STATIC;
-        return $register;
-
-    }//end register()
-
-
-    /**
-     * Processes this test, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token
-     *                                        in the stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-
-        $prevToken = $phpcsFile->findPrevious(T_WHITESPACE, ($stackPtr - 1), null, true);
-        $nextToken = $phpcsFile->findNext(T_WHITESPACE, ($stackPtr + 1), null, true);
-
-        if ($tokens[$stackPtr]['code'] === T_STATIC
-            && ($tokens[$nextToken]['code'] === T_DOUBLE_COLON
-            || $tokens[$prevToken]['code'] === T_NEW)
-        ) {
-            // Late static binding, e.g., static:: OR new static() usage.
-            return;
-        }
-
-        if ($tokens[$prevToken]['code'] === T_AS) {
-            // Trait visibilty change, e.g., use HelloWorld { sayHello as private; }
-            return;
-        }
-
-        $nextToken = $tokens[($stackPtr + 1)];
-        if ($nextToken['code'] !== T_WHITESPACE
-            || strlen($nextToken['content']) !== 1
-            || $nextToken['content'] === $phpcsFile->eolChar
-        ) {
-            $error = 'Scope keyword "%s" must be followed by a single space';
-            $data  = array($tokens[$stackPtr]['content']);
-            $phpcsFile->addError($error, $stackPtr, 'Incorrect', $data);
-        }
-
-    }//end process()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

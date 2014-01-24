@@ -1,130 +1,59 @@
-<?php
-/**
- * CHtmlPurifier class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-if(!class_exists('HTMLPurifier_Bootstrap',false))
-{
-	require_once(Yii::getPathOfAlias('system.vendors.htmlpurifier').DIRECTORY_SEPARATOR.'HTMLPurifier.standalone.php');
-	HTMLPurifier_Bootstrap::registerAutoload();
-}
-
-/**
- * CHtmlPurifier is wrapper of {@link http://htmlpurifier.org HTML Purifier}.
- *
- * CHtmlPurifier removes all malicious code (better known as XSS) with a thoroughly audited,
- * secure yet permissive whitelist. It will also make sure the resulting code
- * is standard-compliant.
- *
- * CHtmlPurifier can be used as either a widget or a controller filter.
- *
- * Note: since HTML Purifier is a big package, its performance is not very good.
- * You should consider either caching the purification result or purifying the user input
- * before saving to database.
- *
- * Usage as a class:
- * <pre>
- * $p = new CHtmlPurifier();
- * $p->options = array('URI.AllowedSchemes'=>array(
- *   'http' => true,
- *   'https' => true,
- * ));
- * $text = $p->purify($text);
- * </pre>
- *
- * Usage as validation rule:
- * <pre>
- * array('text','filter','filter'=>array($obj=new CHtmlPurifier(),'purify')),
- * </pre>
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.web.widgets
- * @since 1.0
- */
-class CHtmlPurifier extends COutputProcessor
-{
-	/**
-	 * @var object the HTML Purifier instance.
-	 */
-	private $_purifier;
-	/**
-	 * @var mixed the options to be passed to HTML Purifier instance.
-	 * This can be a HTMLPurifier_Config object,  an array of directives (Namespace.Directive => Value)
-	 * or the filename of an ini file.
-	 * @see http://htmlpurifier.org/live/configdoc/plain.html
-	 */
-	private $_options=null;
-	
-	/**
-	 * Processes the captured output.
-	 * This method purifies the output using {@link http://htmlpurifier.org HTML Purifier}.
-	 * @param string $output the captured output to be processed
-	 */
-	public function processOutput($output)
-	{
-		$output=$this->purify($output);
-		parent::processOutput($output);
-	}
-	
-	/**
-	 * Purifies the HTML content by removing malicious code.
-	 * @param mixed $content the content to be purified.
-	 * @return mixed the purified content 
-	 */
-	public function purify($content)
-	{
-		if(is_array($content))
-			$content=array_map(array($this,'purify'),$content);
-		else
-			$content=$this->getPurifier()->purify($content);
-		return $content;
-	}
-	
-	/**
-	 * Set the options for HTML Purifier and create a new HTML Purifier instance based on these options.
-	 * @param mixed $options the options for HTML Purifier
-	 * @return CHtmlPurifier
-	 */
-	public function setOptions($options)
-	{
-		$this->_options=$options;
-		$this->createNewHtmlPurifierInstance();
-		return $this;
-	}
-	
-	/**
-	 * Get the options for the HTML Purifier instance.
-	 * @return mixed the HTML Purifier instance options
-	 */
-	public function getOptions()
-	{
-		return $this->_options;
-	}
-	
-	/**
-	 * Get the HTML Purifier instance or create a new one if it doesn't exist.
-	 * @return HTMLPurifier
-	 */
-	protected function getPurifier()
-	{
-		if($this->_purifier!==null)
-			return $this->_purifier;
-		return $this->createNewHtmlPurifierInstance();
-	}
-	
-	/**
-	 * Create a new HTML Purifier instance.
-	 * @return HTMLPurifier
-	 */
-	protected function createNewHtmlPurifierInstance()
-	{
-		$this->_purifier=new HTMLPurifier($this->getOptions());
-		$this->_purifier->config->set('Cache.SerializerPath',Yii::app()->getRuntimePath());
-		return $this->_purifier;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+d3/yiQxxePrqd5eGtPwFKr6cjgQnoe7q

@@ -1,4267 +1,1113 @@
-<?php
-/**
- * PHPUnit
- *
- * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @package    PHPUnit
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @author     Bernhard Schussek <bschussek@2bepublished.at>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      File available since Release 2.0.0
- */
-
-require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'ClassWithNonPublicAttributes.php';
-require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'SampleClass.php';
-require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'Struct.php';
-require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'TestIterator.php';
-require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'Author.php';
-require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'Book.php';
-require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'ClassWithToString.php';
-require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'SampleArrayAccess.php';
-
-/**
- *
- *
- * @package    PHPUnit
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @author     Bernhard Schussek <bschussek@2bepublished.at>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      Class available since Release 2.0.0
- */
-class Framework_AssertTest extends PHPUnit_Framework_TestCase
-{
-    protected $filesDirectory;
-
-    protected function setUp()
-    {
-        $this->filesDirectory = dirname(__DIR__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR;
-
-        $this->html = file_get_contents(
-            $this->filesDirectory . 'SelectorAssertionsFixture.html'
-        );
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::fail
-     */
-    public function testFail()
-    {
-        try {
-            $this->fail();
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        throw new PHPUnit_Framework_AssertionFailedError('Fail did not throw fail exception');
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertContains
-     */
-    public function testAssertSplObjectStorageContainsObject()
-    {
-        $a = new stdClass;
-        $b = new stdClass;
-        $c = new SplObjectStorage;
-        $c->attach($a);
-
-        $this->assertContains($a, $c);
-
-        try {
-            $this->assertContains($b, $c);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertContains
-     */
-    public function testAssertArrayContainsObject()
-    {
-        $a = new stdClass;
-        $b = new stdClass;
-
-        $this->assertContains($a, array($a));
-
-        try {
-            $this->assertContains($a, array($b));
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertContains
-     */
-    public function testAssertArrayContainsString()
-    {
-        $this->assertContains('foo', array('foo'));
-
-        try {
-            $this->assertContains('foo', array('bar'));
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-    /**
-     * @covers PHPUnit_Framework_Assert::assertContainsOnlyInstancesOf
-     */
-    public function testAssertContainsOnlyInstancesOf()
-    {
-        $test = array(
-            new Book(),
-            new Book
-        );
-        $this->assertContainsOnlyInstancesOf('Book', $test);
-        $this->assertContainsOnlyInstancesOf('stdClass', array(new stdClass()));
-
-        $test2 = array(
-            new Author('Test')
-        );
-        try {
-            $this->assertContainsOnlyInstancesOf('Book', $test2);
-        } catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-        $this->fail();
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertArrayHasKey
-     * @expectedException PHPUnit_Framework_Exception
-     */
-    public function testAssertArrayHasKeyThrowsException()
-    {
-        $this->assertArrayHasKey(NULL, array());
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertArrayHasKey
-     */
-    public function testAssertArrayHasIntegerKey()
-    {
-        $this->assertArrayHasKey(0, array('foo'));
-
-        try {
-            $this->assertArrayHasKey(1, array('foo'));
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertArrayNotHasKey
-     * @expectedException PHPUnit_Framework_Exception
-     */
-    public function testAssertArrayNotHasKeyThrowsException()
-    {
-        $this->assertArrayNotHasKey(NULL, array());
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertArrayNotHasKey
-     */
-    public function testAssertArrayNotHasIntegerKey()
-    {
-        $this->assertArrayNotHasKey(1, array('foo'));
-
-        try {
-            $this->assertArrayNotHasKey(0, array('foo'));
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertArrayHasKey
-     */
-    public function testAssertArrayHasStringKey()
-    {
-        $this->assertArrayHasKey('foo', array('foo' => 'bar'));
-
-        try {
-            $this->assertArrayHasKey('bar', array('foo' => 'bar'));
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertArrayNotHasKey
-     */
-    public function testAssertArrayNotHasStringKey()
-    {
-        $this->assertArrayNotHasKey('bar', array('foo' => 'bar'));
-
-        try {
-            $this->assertArrayNotHasKey('foo', array('foo' => 'bar'));
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertArrayHasKey
-     */
-    public function testAssertArrayHasKeyAcceptsArrayObjectValue()
-    {
-        $array = new ArrayObject();
-        $array['foo'] = 'bar';
-        $this->assertArrayHasKey('foo', $array);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertArrayHasKey
-     * @expectedException PHPUnit_Framework_AssertionFailedError
-     */
-    public function testAssertArrayHasKeyProperlyFailsWithArrayObjectValue()
-    {
-        $array = new ArrayObject();
-        $array['bar'] = 'bar';
-        $this->assertArrayHasKey('foo', $array);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertArrayHasKey
-     */
-    public function testAssertArrayHasKeyAcceptsArrayAccessValue()
-    {
-        $array = new SampleArrayAccess();
-        $array['foo'] = 'bar';
-        $this->assertArrayHasKey('foo', $array);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertArrayHasKey
-     * @expectedException PHPUnit_Framework_AssertionFailedError
-     */
-    public function testAssertArrayHasKeyProperlyFailsWithArrayAccessValue()
-    {
-        $array = new SampleArrayAccess();
-        $array['bar'] = 'bar';
-        $this->assertArrayHasKey('foo', $array);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertArrayNotHasKey
-     */
-    public function testAssertArrayNotHasKeyAcceptsArrayAccessValue()
-    {
-        $array = new ArrayObject();
-        $array['foo'] = 'bar';
-        $this->assertArrayNotHasKey('bar', $array);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertArrayNotHasKey
-     * @expectedException PHPUnit_Framework_AssertionFailedError
-     */
-    public function testAssertArrayNotHasKeyPropertlyFailsWithArrayAccessValue()
-    {
-        $array = new ArrayObject();
-        $array['bar'] = 'bar';
-        $this->assertArrayNotHasKey('bar', $array);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertContains
-     * @expectedException PHPUnit_Framework_Exception
-     */
-    public function testAssertContainsThrowsException()
-    {
-        $this->assertContains(NULL, NULL);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertContains
-     */
-    public function testAssertIteratorContainsObject()
-    {
-        $foo = new stdClass;
-
-        $this->assertContains($foo, new TestIterator(array($foo)));
-
-        try {
-            $this->assertContains($foo, new TestIterator(array(new stdClass)));
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertContains
-     */
-    public function testAssertIteratorContainsString()
-    {
-        $this->assertContains('foo', new TestIterator(array('foo')));
-
-        try {
-            $this->assertContains('foo', new TestIterator(array('bar')));
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertContains
-     */
-    public function testAssertStringContainsString()
-    {
-        $this->assertContains('foo', 'foobar');
-
-        try {
-            $this->assertContains('foo', 'bar');
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertNotContains
-     * @expectedException PHPUnit_Framework_Exception
-     */
-    public function testAssertNotContainsThrowsException()
-    {
-        $this->assertNotContains(NULL, NULL);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertNotContains
-     */
-    public function testAssertSplObjectStorageNotContainsObject()
-    {
-        $a = new stdClass;
-        $b = new stdClass;
-        $c = new SplObjectStorage;
-        $c->attach($a);
-
-        $this->assertNotContains($b, $c);
-
-        try {
-            $this->assertNotContains($a, $c);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertNotContains
-     */
-    public function testAssertArrayNotContainsObject()
-    {
-        $a = new stdClass;
-        $b = new stdClass;
-
-        $this->assertNotContains($a, array($b));
-
-        try {
-            $this->assertNotContains($a, array($a));
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertNotContains
-     */
-    public function testAssertArrayNotContainsString()
-    {
-        $this->assertNotContains('foo', array('bar'));
-
-        try {
-            $this->assertNotContains('foo', array('foo'));
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertNotContains
-     */
-    public function testAssertStringNotContainsString()
-    {
-        $this->assertNotContains('foo', 'bar');
-
-        try {
-            $this->assertNotContains('foo', 'foo');
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertContainsOnly
-     * @expectedException PHPUnit_Framework_Exception
-     */
-    public function testAssertContainsOnlyThrowsException()
-    {
-        $this->assertContainsOnly(NULL, NULL);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertContainsOnlyInstancesOf
-     * @expectedException PHPUnit_Framework_Exception
-     */
-    public function testAssertContainsOnlyInstancesOfThrowsException()
-    {
-        $this->assertContainsOnlyInstancesOf(NULL, NULL);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertContainsOnly
-     */
-    public function testAssertArrayContainsOnlyIntegers()
-    {
-        $this->assertContainsOnly('integer', array(1, 2, 3));
-
-        try {
-            $this->assertContainsOnly('integer', array("1", 2, 3));
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertNotContainsOnly
-     */
-    public function testAssertArrayNotContainsOnlyIntegers()
-    {
-        $this->assertNotContainsOnly('integer', array("1", 2, 3));
-
-        try {
-            $this->assertNotContainsOnly('integer', array(1, 2, 3));
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertContainsOnly
-     */
-    public function testAssertArrayContainsOnlyStdClass()
-    {
-        $this->assertContainsOnly('StdClass', array(new StdClass));
-
-        try {
-            $this->assertContainsOnly('StdClass', array('StdClass'));
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertNotContainsOnly
-     */
-    public function testAssertArrayNotContainsOnlyStdClass()
-    {
-        $this->assertNotContainsOnly('StdClass', array('StdClass'));
-
-        try {
-            $this->assertNotContainsOnly('StdClass', array(new StdClass));
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    protected function createDOMDocument($content)
-    {
-        $document = new DOMDocument;
-        $document->preserveWhiteSpace = FALSE;
-        $document->loadXML($content);
-
-        return $document;
-    }
-
-    protected function sameValues()
-    {
-        $object = new SampleClass(4, 8, 15);
-        // cannot use $filesDirectory, because neither setUp() nor
-        // setUpBeforeClass() are executed before the data providers
-        $file = dirname(__DIR__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'foo.xml';
-        $resource = fopen($file, 'r');
-
-        return array(
-            // NULL
-            array(NULL, NULL),
-            // strings
-            array('a', 'a'),
-            // integers
-            array(0, 0),
-            // floats
-            array(2.3, 2.3),
-            array(1/3, 1 - 2/3),
-            array(log(0), log(0)),
-            // arrays
-            array(array(), array()),
-            array(array(0 => 1), array(0 => 1)),
-            array(array(0 => NULL), array(0 => NULL)),
-            array(array('a', 'b' => array(1, 2)), array('a', 'b' => array(1, 2))),
-            // objects
-            array($object, $object),
-            // resources
-            array($resource, $resource),
-        );
-    }
-
-    protected function notEqualValues()
-    {
-        // cyclic dependencies
-        $book1 = new Book;
-        $book1->author = new Author('Terry Pratchett');
-        $book1->author->books[] = $book1;
-        $book2 = new Book;
-        $book2->author = new Author('Terry Pratch');
-        $book2->author->books[] = $book2;
-
-        $book3 = new Book;
-        $book3->author = 'Terry Pratchett';
-        $book4 = new stdClass;
-        $book4->author = 'Terry Pratchett';
-
-        $object1 = new SampleClass( 4,  8, 15);
-        $object2 = new SampleClass(16, 23, 42);
-        $object3 = new SampleClass( 4,  8, 15);
-        $storage1 = new SplObjectStorage;
-        $storage1->attach($object1);
-        $storage2 = new SplObjectStorage;
-        $storage2->attach($object3); // same content, different object
-
-        // cannot use $filesDirectory, because neither setUp() nor
-        // setUpBeforeClass() are executed before the data providers
-        $file = dirname(__DIR__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'foo.xml';
-
-        return array(
-            // strings
-            array('a', 'b'),
-            array('a', 'A'),
-            // integers
-            array(1, 2),
-            array(2, 1),
-            // floats
-            array(2.3, 4.2),
-            array(2.3, 4.2, 0.5),
-            array(array(2.3), array(4.2), 0.5),
-            array(array(array(2.3)), array(array(4.2)), 0.5),
-            array(new Struct(2.3), new Struct(4.2), 0.5),
-            array(array(new Struct(2.3)), array(new Struct(4.2)), 0.5),
-            // NAN
-            array(NAN, NAN),
-            // arrays
-            array(array(), array(0 => 1)),
-            array(array(0 => 1), array()),
-            array(array(0 => NULL), array()),
-            array(array(0 => 1, 1 => 2), array(0 => 1, 1 => 3)),
-            array(array('a', 'b' => array(1, 2)), array('a', 'b' => array(2, 1))),
-            // objects
-            array(new SampleClass(4, 8, 15), new SampleClass(16, 23, 42)),
-            array($object1, $object2),
-            array($book1, $book2),
-            array($book3, $book4), // same content, different class
-            // resources
-            array(fopen($file, 'r'), fopen($file, 'r')),
-            // SplObjectStorage
-            array($storage1, $storage2),
-            // DOMDocument
-            array(
-                $this->createDOMDocument('<root></root>'),
-                $this->createDOMDocument('<bar/>'),
-            ),
-            array(
-                $this->createDOMDocument('<foo attr1="bar"/>'),
-                $this->createDOMDocument('<foo attr1="foobar"/>'),
-            ),
-            array(
-                $this->createDOMDocument('<foo> bar </foo>'),
-                $this->createDOMDocument('<foo />'),
-            ),
-            array(
-                $this->createDOMDocument('<foo xmlns="urn:myns:bar"/>'),
-                $this->createDOMDocument('<foo xmlns="urn:notmyns:bar"/>'),
-            ),
-            array(
-                $this->createDOMDocument('<foo> bar </foo>'),
-                $this->createDOMDocument('<foo> bir </foo>'),
-            ),
-            // Exception
-            //array(new Exception('Exception 1'), new Exception('Exception 2')),
-            // different types
-            array(new SampleClass(4, 8, 15), FALSE),
-            array(FALSE, new SampleClass(4, 8, 15)),
-            array(array(0 => 1, 1 => 2), FALSE),
-            array(FALSE, array(0 => 1, 1 => 2)),
-            array(array(), new stdClass),
-            array(new stdClass, array()),
-            // PHP: 0 == 'Foobar' => TRUE!
-            // We want these values to differ
-            array(0, 'Foobar'),
-            array('Foobar', 0),
-            array(3, acos(8)),
-            array(acos(8), 3)
-        );
-    }
-
-    protected function equalValues()
-    {
-        // cyclic dependencies
-        $book1 = new Book;
-        $book1->author = new Author('Terry Pratchett');
-        $book1->author->books[] = $book1;
-        $book2 = new Book;
-        $book2->author = new Author('Terry Pratchett');
-        $book2->author->books[] = $book2;
-
-        $object1 = new SampleClass(4, 8, 15);
-        $object2 = new SampleClass(4, 8, 15);
-        $storage1 = new SplObjectStorage;
-        $storage1->attach($object1);
-        $storage2 = new SplObjectStorage;
-        $storage2->attach($object1);
-
-        return array(
-            // strings
-            array('a', 'A', 0, FALSE, TRUE), // ignore case
-            // arrays
-            array(array('a' => 1, 'b' => 2), array('b' => 2, 'a' => 1)),
-            array(array(1), array('1')),
-            array(array(3, 2, 1), array(2, 3, 1), 0, TRUE), // canonicalized comparison
-            // floats
-            array(2.3, 2.5, 0.5),
-            array(array(2.3), array(2.5), 0.5),
-            array(array(array(2.3)), array(array(2.5)), 0.5),
-            array(new Struct(2.3), new Struct(2.5), 0.5),
-            array(array(new Struct(2.3)), array(new Struct(2.5)), 0.5),
-            // numeric with delta
-            array(1, 2, 1),
-            // objects
-            array($object1, $object2),
-            array($book1, $book2),
-            // SplObjectStorage
-            array($storage1, $storage2),
-            // DOMDocument
-            array(
-                $this->createDOMDocument('<root></root>'),
-                $this->createDOMDocument('<root/>'),
-            ),
-            array(
-                $this->createDOMDocument('<root attr="bar"></root>'),
-                $this->createDOMDocument('<root attr="bar"/>'),
-            ),
-            array(
-                $this->createDOMDocument('<root><foo attr="bar"></foo></root>'),
-                $this->createDOMDocument('<root><foo attr="bar"/></root>'),
-            ),
-            array(
-                $this->createDOMDocument("<root>\n  <child/>\n</root>"),
-                $this->createDOMDocument('<root><child/></root>'),
-            ),
-            // Exception
-            //array(new Exception('Exception 1'), new Exception('Exception 1')),
-            // mixed types
-            array(0, '0'),
-            array('0', 0),
-            array(2.3, '2.3'),
-            array('2.3', 2.3),
-            array((string)(1/3), 1 - 2/3),
-            array(1/3, (string)(1 - 2/3)),
-            array('string representation', new ClassWithToString),
-            array(new ClassWithToString, 'string representation'),
-        );
-    }
-
-    public function equalProvider()
-    {
-        // same |= equal
-        return array_merge($this->equalValues(), $this->sameValues());
-    }
-
-    public function notEqualProvider()
-    {
-        return $this->notEqualValues();
-    }
-
-    public function sameProvider()
-    {
-        return $this->sameValues();
-    }
-
-    public function notSameProvider()
-    {
-        // not equal |= not same
-        // equal, ¬same |= not same
-        return array_merge($this->notEqualValues(), $this->equalValues());
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertEquals
-     * @dataProvider equalProvider
-     */
-    public function testAssertEqualsSucceeds($a, $b, $delta = 0, $canonicalize = FALSE, $ignoreCase = FALSE)
-    {
-        $this->assertEquals($a, $b, '', $delta, 10, $canonicalize, $ignoreCase);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertEquals
-     * @dataProvider notEqualProvider
-     */
-    public function testAssertEqualsFails($a, $b, $delta = 0, $canonicalize = FALSE, $ignoreCase = FALSE)
-    {
-        try {
-            $this->assertEquals($a, $b, '', $delta, 10, $canonicalize, $ignoreCase);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertNotEquals
-     * @dataProvider notEqualProvider
-     */
-    public function testAssertNotEqualsSucceeds($a, $b, $delta = 0, $canonicalize = FALSE, $ignoreCase = FALSE)
-    {
-        $this->assertNotEquals($a, $b, '', $delta, 10, $canonicalize, $ignoreCase);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertNotEquals
-     * @dataProvider equalProvider
-     */
-    public function testAssertNotEqualsFails($a, $b, $delta = 0, $canonicalize = FALSE, $ignoreCase = FALSE)
-    {
-        try {
-            $this->assertNotEquals($a, $b, '', $delta, 10, $canonicalize, $ignoreCase);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertSame
-     * @dataProvider sameProvider
-     */
-    public function testAssertSameSucceeds($a, $b)
-    {
-        $this->assertSame($a, $b);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertSame
-     * @dataProvider notSameProvider
-     */
-    public function testAssertSameFails($a, $b)
-    {
-        try {
-            $this->assertSame($a, $b);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertNotSame
-     * @dataProvider notSameProvider
-     */
-    public function testAssertNotSameSucceeds($a, $b)
-    {
-        $this->assertNotSame($a, $b);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertNotSame
-     * @dataProvider sameProvider
-     */
-    public function testAssertNotSameFails($a, $b)
-    {
-        try {
-            $this->assertNotSame($a, $b);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertXmlFileEqualsXmlFile
-     */
-    public function testAssertXmlFileEqualsXmlFile()
-    {
-        $this->assertXmlFileEqualsXmlFile(
-          $this->filesDirectory . 'foo.xml',
-          $this->filesDirectory . 'foo.xml'
-        );
-
-        try {
-            $this->assertXmlFileEqualsXmlFile(
-              $this->filesDirectory . 'foo.xml',
-              $this->filesDirectory . 'bar.xml'
-            );
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertXmlFileNotEqualsXmlFile
-     */
-    public function testAssertXmlFileNotEqualsXmlFile()
-    {
-        $this->assertXmlFileNotEqualsXmlFile(
-          $this->filesDirectory . 'foo.xml',
-          $this->filesDirectory . 'bar.xml'
-        );
-
-        try {
-            $this->assertXmlFileNotEqualsXmlFile(
-              $this->filesDirectory . 'foo.xml',
-              $this->filesDirectory . 'foo.xml'
-            );
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertXmlStringEqualsXmlFile
-     */
-    public function testAssertXmlStringEqualsXmlFile()
-    {
-        $this->assertXmlStringEqualsXmlFile(
-          $this->filesDirectory . 'foo.xml',
-          file_get_contents($this->filesDirectory . 'foo.xml')
-        );
-
-        try {
-            $this->assertXmlStringEqualsXmlFile(
-              $this->filesDirectory . 'foo.xml',
-              file_get_contents($this->filesDirectory . 'bar.xml')
-            );
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertXmlStringNotEqualsXmlFile
-     */
-    public function testXmlStringNotEqualsXmlFile()
-    {
-        $this->assertXmlStringNotEqualsXmlFile(
-          $this->filesDirectory . 'foo.xml',
-          file_get_contents($this->filesDirectory . 'bar.xml')
-        );
-
-        try {
-            $this->assertXmlStringNotEqualsXmlFile(
-              $this->filesDirectory . 'foo.xml',
-              file_get_contents($this->filesDirectory . 'foo.xml')
-            );
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertXmlStringEqualsXmlString
-     */
-    public function testAssertXmlStringEqualsXmlString()
-    {
-        $this->assertXmlStringEqualsXmlString('<root/>', '<root/>');
-
-        try {
-            $this->assertXmlStringEqualsXmlString('<foo/>', '<bar/>');
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertXmlStringNotEqualsXmlString
-     */
-    public function testAssertXmlStringNotEqualsXmlString()
-    {
-        $this->assertXmlStringNotEqualsXmlString('<foo/>', '<bar/>');
-
-        try {
-            $this->assertXmlStringNotEqualsXmlString('<root/>', '<root/>');
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertEqualXMLStructure
-     */
-    public function testXMLStructureIsSame()
-    {
-        $expected = new DOMDocument;
-        $expected->load($this->filesDirectory . 'structureExpected.xml');
-
-        $actual = new DOMDocument;
-        $actual->load($this->filesDirectory . 'structureExpected.xml');
-
-        $this->assertEqualXMLStructure(
-          $expected->firstChild, $actual->firstChild, TRUE
-        );
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertEqualXMLStructure
-     * @expectedException PHPUnit_Framework_ExpectationFailedException
-     */
-    public function testXMLStructureWrongNumberOfAttributes()
-    {
-        $expected = new DOMDocument;
-        $expected->load($this->filesDirectory . 'structureExpected.xml');
-
-        $actual = new DOMDocument;
-        $actual->load($this->filesDirectory . 'structureWrongNumberOfAttributes.xml');
-
-        $this->assertEqualXMLStructure(
-          $expected->firstChild, $actual->firstChild, TRUE
-        );
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertEqualXMLStructure
-     * @expectedException PHPUnit_Framework_ExpectationFailedException
-     */
-    public function testXMLStructureWrongNumberOfNodes()
-    {
-        $expected = new DOMDocument;
-        $expected->load($this->filesDirectory . 'structureExpected.xml');
-
-        $actual = new DOMDocument;
-        $actual->load($this->filesDirectory . 'structureWrongNumberOfNodes.xml');
-
-        $this->assertEqualXMLStructure(
-          $expected->firstChild, $actual->firstChild, TRUE
-        );
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertEqualXMLStructure
-     */
-    public function testXMLStructureIsSameButDataIsNot()
-    {
-        $expected = new DOMDocument;
-        $expected->load($this->filesDirectory . 'structureExpected.xml');
-
-        $actual = new DOMDocument;
-        $actual->load($this->filesDirectory . 'structureIsSameButDataIsNot.xml');
-
-        $this->assertEqualXMLStructure(
-          $expected->firstChild, $actual->firstChild, TRUE
-        );
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertEqualXMLStructure
-     */
-    public function testXMLStructureAttributesAreSameButValuesAreNot()
-    {
-        $expected = new DOMDocument;
-        $expected->load($this->filesDirectory . 'structureExpected.xml');
-
-        $actual = new DOMDocument;
-        $actual->load($this->filesDirectory . 'structureAttributesAreSameButValuesAreNot.xml');
-
-        $this->assertEqualXMLStructure(
-          $expected->firstChild, $actual->firstChild, TRUE
-        );
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertEqualXMLStructure
-     */
-    public function testXMLStructureIgnoreTextNodes()
-    {
-        $expected = new DOMDocument;
-        $expected->load($this->filesDirectory . 'structureExpected.xml');
-
-        $actual = new DOMDocument;
-        $actual->load($this->filesDirectory . 'structureIgnoreTextNodes.xml');
-
-        $this->assertEqualXMLStructure(
-          $expected->firstChild, $actual->firstChild, TRUE
-        );
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertEquals
-     */
-    public function testAssertStringEqualsNumeric()
-    {
-        $this->assertEquals('0', 0);
-
-        try {
-            $this->assertEquals('0', 1);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertNotEquals
-     */
-    public function testAssertStringEqualsNumeric2()
-    {
-        $this->assertNotEquals('A', 0);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertFileExists
-     * @expectedException PHPUnit_Framework_Exception
-     */
-    public function testAssertFileExistsThrowsException()
-    {
-        $this->assertFileExists(NULL);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertFileExists
-     */
-    public function testAssertFileExists()
-    {
-        $this->assertFileExists(__FILE__);
-
-        try {
-            $this->assertFileExists(__DIR__ . DIRECTORY_SEPARATOR . 'NotExisting');
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertFileNotExists
-     * @expectedException PHPUnit_Framework_Exception
-     */
-    public function testAssertFileNotExistsThrowsException()
-    {
-        $this->assertFileNotExists(NULL);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertFileNotExists
-     */
-    public function testAssertFileNotExists()
-    {
-        $this->assertFileNotExists(__DIR__ . DIRECTORY_SEPARATOR . 'NotExisting');
-
-        try {
-            $this->assertFileNotExists(__FILE__);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertObjectHasAttribute
-     */
-    public function testAssertObjectHasAttribute()
-    {
-        $o = new Author('Terry Pratchett');
-
-        $this->assertObjectHasAttribute('name', $o);
-
-        try {
-            $this->assertObjectHasAttribute('foo', $o);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertObjectNotHasAttribute
-     */
-    public function testAssertObjectNotHasAttribute()
-    {
-        $o = new Author('Terry Pratchett');
-
-        $this->assertObjectNotHasAttribute('foo', $o);
-
-        try {
-            $this->assertObjectNotHasAttribute('name', $o);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertNull
-     */
-    public function testAssertNull()
-    {
-        $this->assertNull(NULL);
-
-        try {
-            $this->assertNull(new stdClass);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertNotNull
-     */
-    public function testAssertNotNull()
-    {
-        $this->assertNotNull(new stdClass);
-
-        try {
-            $this->assertNotNull(NULL);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertTrue
-     */
-    public function testAssertTrue()
-    {
-        $this->assertTrue(TRUE);
-
-        try {
-            $this->assertTrue(FALSE);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertFalse
-     */
-    public function testAssertFalse()
-    {
-        $this->assertFalse(FALSE);
-
-        try {
-            $this->assertFalse(TRUE);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertRegExp
-     * @expectedException PHPUnit_Framework_Exception
-     */
-    public function testAssertRegExpThrowsException()
-    {
-        $this->assertRegExp(NULL, NULL);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertRegExp
-     * @expectedException PHPUnit_Framework_Exception
-     */
-    public function testAssertRegExpThrowsException2()
-    {
-        $this->assertRegExp('', NULL);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertNotRegExp
-     * @expectedException PHPUnit_Framework_Exception
-     */
-    public function testAssertNotRegExpThrowsException()
-    {
-        $this->assertNotRegExp(NULL, NULL);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertNotRegExp
-     * @expectedException PHPUnit_Framework_Exception
-     */
-    public function testAssertNotRegExpThrowsException2()
-    {
-        $this->assertNotRegExp('', NULL);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertRegExp
-     */
-    public function testAssertRegExp()
-    {
-        $this->assertRegExp('/foo/', 'foobar');
-
-        try {
-            $this->assertRegExp('/foo/', 'bar');
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertNotRegExp
-     */
-    public function testAssertNotRegExp()
-    {
-        $this->assertNotRegExp('/foo/', 'bar');
-
-        try {
-            $this->assertNotRegExp('/foo/', 'foobar');
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertSame
-     */
-    public function testAssertSame()
-    {
-        $o = new stdClass;
-
-        $this->assertSame($o, $o);
-
-        try {
-            $this->assertSame(
-              new stdClass,
-              new stdClass
-            );
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertSame
-     */
-    public function testAssertSame2()
-    {
-        $this->assertSame(TRUE, TRUE);
-        $this->assertSame(FALSE, FALSE);
-
-        try {
-            $this->assertSame(TRUE, FALSE);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertNotSame
-     */
-    public function testAssertNotSame()
-    {
-        $this->assertNotSame(
-          new stdClass,
-          NULL
-        );
-
-        $this->assertNotSame(
-          NULL,
-          new stdClass
-        );
-
-        $this->assertNotSame(
-          new stdClass,
-          new stdClass
-        );
-
-        $o = new stdClass;
-
-        try {
-            $this->assertNotSame($o, $o);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertNotSame
-     */
-    public function testAssertNotSame2()
-    {
-        $this->assertNotSame(TRUE, FALSE);
-        $this->assertNotSame(FALSE, TRUE);
-
-        try {
-            $this->assertNotSame(TRUE, TRUE);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertNotSame
-     */
-    public function testAssertNotSameFailsNull()
-    {
-        try {
-            $this->assertNotSame(NULL, NULL);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertGreaterThan
-     */
-    public function testGreaterThan()
-    {
-        $this->assertGreaterThan(1, 2);
-
-        try {
-            $this->assertGreaterThan(2, 1);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertAttributeGreaterThan
-     */
-    public function testAttributeGreaterThan()
-    {
-        $this->assertAttributeGreaterThan(
-          1, 'bar', new ClassWithNonPublicAttributes
-        );
-
-        try {
-            $this->assertAttributeGreaterThan(
-              1, 'foo', new ClassWithNonPublicAttributes
-            );
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertGreaterThanOrEqual
-     */
-    public function testGreaterThanOrEqual()
-    {
-        $this->assertGreaterThanOrEqual(1, 2);
-
-        try {
-            $this->assertGreaterThanOrEqual(2, 1);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertAttributeGreaterThanOrEqual
-     */
-    public function testAttributeGreaterThanOrEqual()
-    {
-        $this->assertAttributeGreaterThanOrEqual(
-          1, 'bar', new ClassWithNonPublicAttributes
-        );
-
-        try {
-            $this->assertAttributeGreaterThanOrEqual(
-              2, 'foo', new ClassWithNonPublicAttributes
-            );
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertLessThan
-     */
-    public function testLessThan()
-    {
-        $this->assertLessThan(2, 1);
-
-        try {
-            $this->assertLessThan(1, 2);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertAttributeLessThan
-     */
-    public function testAttributeLessThan()
-    {
-        $this->assertAttributeLessThan(
-          2, 'foo', new ClassWithNonPublicAttributes
-        );
-
-        try {
-            $this->assertAttributeLessThan(
-              1, 'bar', new ClassWithNonPublicAttributes
-            );
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertLessThanOrEqual
-     */
-    public function testLessThanOrEqual()
-    {
-        $this->assertLessThanOrEqual(2, 1);
-
-        try {
-            $this->assertLessThanOrEqual(1, 2);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertAttributeLessThanOrEqual
-     */
-    public function testAttributeLessThanOrEqual()
-    {
-        $this->assertAttributeLessThanOrEqual(
-          2, 'foo', new ClassWithNonPublicAttributes
-        );
-
-        try {
-            $this->assertAttributeLessThanOrEqual(
-              1, 'bar', new ClassWithNonPublicAttributes
-            );
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::readAttribute
-     */
-    public function testReadAttribute()
-    {
-        $obj = new ClassWithNonPublicAttributes;
-
-        $this->assertEquals('foo', $this->readAttribute($obj, 'publicAttribute'));
-        $this->assertEquals('bar', $this->readAttribute($obj, 'protectedAttribute'));
-        $this->assertEquals('baz', $this->readAttribute($obj, 'privateAttribute'));
-        $this->assertEquals('bar', $this->readAttribute($obj, 'protectedParentAttribute'));
-        //$this->assertEquals('bar', $this->readAttribute($obj, 'privateParentAttribute'));
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::readAttribute
-     */
-    public function testReadAttribute2()
-    {
-        $this->assertEquals('foo', $this->readAttribute('ClassWithNonPublicAttributes', 'publicStaticAttribute'));
-        $this->assertEquals('bar', $this->readAttribute('ClassWithNonPublicAttributes', 'protectedStaticAttribute'));
-        $this->assertEquals('baz', $this->readAttribute('ClassWithNonPublicAttributes', 'privateStaticAttribute'));
-        $this->assertEquals('foo', $this->readAttribute('ClassWithNonPublicAttributes', 'protectedStaticParentAttribute'));
-        $this->assertEquals('foo', $this->readAttribute('ClassWithNonPublicAttributes', 'privateStaticParentAttribute'));
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::readAttribute
-     * @expectedException PHPUnit_Framework_Exception
-     */
-    public function testReadAttribute3()
-    {
-        $this->readAttribute('StdClass', NULL);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::readAttribute
-     * @expectedException PHPUnit_Framework_Exception
-     */
-    public function testReadAttribute4()
-    {
-        $this->readAttribute('NotExistingClass', 'foo');
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::readAttribute
-     * @expectedException PHPUnit_Framework_Exception
-     */
-    public function testReadAttribute5()
-    {
-        $this->readAttribute(NULL, 'foo');
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertAttributeContains
-     */
-    public function testAssertPublicAttributeContains()
-    {
-        $obj = new ClassWithNonPublicAttributes;
-
-        $this->assertAttributeContains('foo', 'publicArray', $obj);
-
-        try {
-            $this->assertAttributeContains('bar', 'publicArray', $obj);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertAttributeContainsOnly
-     */
-    public function testAssertPublicAttributeContainsOnly()
-    {
-        $obj = new ClassWithNonPublicAttributes;
-
-        $this->assertAttributeContainsOnly('string', 'publicArray', $obj);
-
-        try {
-            $this->assertAttributeContainsOnly('integer', 'publicArray', $obj);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertAttributeNotContains
-     */
-    public function testAssertPublicAttributeNotContains()
-    {
-        $obj = new ClassWithNonPublicAttributes;
-
-        $this->assertAttributeNotContains('bar', 'publicArray', $obj);
-
-        try {
-            $this->assertAttributeNotContains('foo', 'publicArray', $obj);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertAttributeNotContainsOnly
-     */
-    public function testAssertPublicAttributeNotContainsOnly()
-    {
-        $obj = new ClassWithNonPublicAttributes;
-
-        $this->assertAttributeNotContainsOnly('integer', 'publicArray', $obj);
-
-        try {
-            $this->assertAttributeNotContainsOnly('string', 'publicArray', $obj);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertAttributeContains
-     */
-    public function testAssertProtectedAttributeContains()
-    {
-        $obj = new ClassWithNonPublicAttributes;
-
-        $this->assertAttributeContains('bar', 'protectedArray', $obj);
-
-        try {
-            $this->assertAttributeContains('foo', 'protectedArray', $obj);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertAttributeNotContains
-     */
-    public function testAssertProtectedAttributeNotContains()
-    {
-        $obj = new ClassWithNonPublicAttributes;
-
-        $this->assertAttributeNotContains('foo', 'protectedArray', $obj);
-
-        try {
-            $this->assertAttributeNotContains('bar', 'protectedArray', $obj);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertAttributeContains
-     */
-    public function testAssertPrivateAttributeContains()
-    {
-        $obj = new ClassWithNonPublicAttributes;
-
-        $this->assertAttributeContains('baz', 'privateArray', $obj);
-
-        try {
-            $this->assertAttributeContains('foo', 'privateArray', $obj);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertAttributeNotContains
-     */
-    public function testAssertPrivateAttributeNotContains()
-    {
-        $obj = new ClassWithNonPublicAttributes;
-
-        $this->assertAttributeNotContains('foo', 'privateArray', $obj);
-
-        try {
-            $this->assertAttributeNotContains('baz', 'privateArray', $obj);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertAttributeEquals
-     */
-    public function testAssertPublicAttributeEquals()
-    {
-        $obj = new ClassWithNonPublicAttributes;
-
-        $this->assertAttributeEquals('foo', 'publicAttribute', $obj);
-
-        try {
-            $this->assertAttributeEquals('bar', 'publicAttribute', $obj);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertAttributeNotEquals
-     */
-    public function testAssertPublicAttributeNotEquals()
-    {
-        $obj = new ClassWithNonPublicAttributes;
-
-        $this->assertAttributeNotEquals('bar', 'publicAttribute', $obj);
-
-        try {
-            $this->assertAttributeNotEquals('foo', 'publicAttribute', $obj);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertAttributeSame
-     */
-    public function testAssertPublicAttributeSame()
-    {
-        $obj = new ClassWithNonPublicAttributes;
-
-        $this->assertAttributeSame('foo', 'publicAttribute', $obj);
-
-        try {
-            $this->assertAttributeSame('bar', 'publicAttribute', $obj);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertAttributeNotSame
-     */
-    public function testAssertPublicAttributeNotSame()
-    {
-        $obj = new ClassWithNonPublicAttributes;
-
-        $this->assertAttributeNotSame('bar', 'publicAttribute', $obj);
-
-        try {
-            $this->assertAttributeNotSame('foo', 'publicAttribute', $obj);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertAttributeEquals
-     */
-    public function testAssertProtectedAttributeEquals()
-    {
-        $obj = new ClassWithNonPublicAttributes;
-
-        $this->assertAttributeEquals('bar', 'protectedAttribute', $obj);
-
-        try {
-            $this->assertAttributeEquals('foo', 'protectedAttribute', $obj);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertAttributeNotEquals
-     */
-    public function testAssertProtectedAttributeNotEquals()
-    {
-        $obj = new ClassWithNonPublicAttributes;
-
-        $this->assertAttributeNotEquals('foo', 'protectedAttribute', $obj);
-
-        try {
-            $this->assertAttributeNotEquals('bar', 'protectedAttribute', $obj);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertAttributeEquals
-     */
-    public function testAssertPrivateAttributeEquals()
-    {
-        $obj = new ClassWithNonPublicAttributes;
-
-        $this->assertAttributeEquals('baz', 'privateAttribute', $obj);
-
-        try {
-            $this->assertAttributeEquals('foo', 'privateAttribute', $obj);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertAttributeNotEquals
-     */
-    public function testAssertPrivateAttributeNotEquals()
-    {
-        $obj = new ClassWithNonPublicAttributes;
-
-        $this->assertAttributeNotEquals('foo', 'privateAttribute', $obj);
-
-        try {
-            $this->assertAttributeNotEquals('baz', 'privateAttribute', $obj);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertAttributeEquals
-     */
-    public function testAssertPublicStaticAttributeEquals()
-    {
-        $this->assertAttributeEquals('foo', 'publicStaticAttribute', 'ClassWithNonPublicAttributes');
-
-        try {
-            $this->assertAttributeEquals('bar', 'publicStaticAttribute', 'ClassWithNonPublicAttributes');
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertAttributeNotEquals
-     */
-    public function testAssertPublicStaticAttributeNotEquals()
-    {
-        $this->assertAttributeNotEquals('bar', 'publicStaticAttribute', 'ClassWithNonPublicAttributes');
-
-        try {
-            $this->assertAttributeNotEquals('foo', 'publicStaticAttribute', 'ClassWithNonPublicAttributes');
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertAttributeEquals
-     */
-    public function testAssertProtectedStaticAttributeEquals()
-    {
-        $this->assertAttributeEquals('bar', 'protectedStaticAttribute', 'ClassWithNonPublicAttributes');
-
-        try {
-            $this->assertAttributeEquals('foo', 'protectedStaticAttribute', 'ClassWithNonPublicAttributes');
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertAttributeNotEquals
-     */
-    public function testAssertProtectedStaticAttributeNotEquals()
-    {
-        $this->assertAttributeNotEquals('foo', 'protectedStaticAttribute', 'ClassWithNonPublicAttributes');
-
-        try {
-            $this->assertAttributeNotEquals('bar', 'protectedStaticAttribute', 'ClassWithNonPublicAttributes');
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertAttributeEquals
-     */
-    public function testAssertPrivateStaticAttributeEquals()
-    {
-        $this->assertAttributeEquals('baz', 'privateStaticAttribute', 'ClassWithNonPublicAttributes');
-
-        try {
-            $this->assertAttributeEquals('foo', 'privateStaticAttribute', 'ClassWithNonPublicAttributes');
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertAttributeNotEquals
-     */
-    public function testAssertPrivateStaticAttributeNotEquals()
-    {
-        $this->assertAttributeNotEquals('foo', 'privateStaticAttribute', 'ClassWithNonPublicAttributes');
-
-        try {
-            $this->assertAttributeNotEquals('baz', 'privateStaticAttribute', 'ClassWithNonPublicAttributes');
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertClassHasAttribute
-     * @expectedException PHPUnit_Framework_Exception
-     */
-    public function testAssertClassHasAttributeThrowsException()
-    {
-        $this->assertClassHasAttribute(NULL, NULL);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertClassHasAttribute
-     * @expectedException PHPUnit_Framework_Exception
-     */
-    public function testAssertClassHasAttributeThrowsException2()
-    {
-        $this->assertClassHasAttribute('foo', NULL);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertClassNotHasAttribute
-     * @expectedException PHPUnit_Framework_Exception
-     */
-    public function testAssertClassNotHasAttributeThrowsException()
-    {
-        $this->assertClassNotHasAttribute(NULL, NULL);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertClassNotHasAttribute
-     * @expectedException PHPUnit_Framework_Exception
-     */
-    public function testAssertClassNotHasAttributeThrowsException2()
-    {
-        $this->assertClassNotHasAttribute('foo', NULL);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertClassHasStaticAttribute
-     * @expectedException PHPUnit_Framework_Exception
-     */
-    public function testAssertClassHasStaticAttributeThrowsException()
-    {
-        $this->assertClassHasStaticAttribute(NULL, NULL);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertClassHasStaticAttribute
-     * @expectedException PHPUnit_Framework_Exception
-     */
-    public function testAssertClassHasStaticAttributeThrowsException2()
-    {
-        $this->assertClassHasStaticAttribute('foo', NULL);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertClassNotHasStaticAttribute
-     * @expectedException PHPUnit_Framework_Exception
-     */
-    public function testAssertClassNotHasStaticAttributeThrowsException()
-    {
-        $this->assertClassNotHasStaticAttribute(NULL, NULL);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertClassNotHasStaticAttribute
-     * @expectedException PHPUnit_Framework_Exception
-     */
-    public function testAssertClassNotHasStaticAttributeThrowsException2()
-    {
-        $this->assertClassNotHasStaticAttribute('foo', NULL);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertObjectHasAttribute
-     * @expectedException PHPUnit_Framework_Exception
-     */
-    public function testAssertObjectHasAttributeThrowsException()
-    {
-        $this->assertObjectHasAttribute(NULL, NULL);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertObjectHasAttribute
-     * @expectedException PHPUnit_Framework_Exception
-     */
-    public function testAssertObjectHasAttributeThrowsException2()
-    {
-        $this->assertObjectHasAttribute('foo', NULL);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertObjectNotHasAttribute
-     * @expectedException PHPUnit_Framework_Exception
-     */
-    public function testAssertObjectNotHasAttributeThrowsException()
-    {
-        $this->assertObjectNotHasAttribute(NULL, NULL);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertObjectNotHasAttribute
-     * @expectedException PHPUnit_Framework_Exception
-     */
-    public function testAssertObjectNotHasAttributeThrowsException2()
-    {
-        $this->assertObjectNotHasAttribute('foo', NULL);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertClassHasAttribute
-     */
-    public function testClassHasPublicAttribute()
-    {
-        $this->assertClassHasAttribute('publicAttribute', 'ClassWithNonPublicAttributes');
-
-        try {
-            $this->assertClassHasAttribute('attribute', 'ClassWithNonPublicAttributes');
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertClassNotHasAttribute
-     */
-    public function testClassNotHasPublicAttribute()
-    {
-        $this->assertClassNotHasAttribute('attribute', 'ClassWithNonPublicAttributes');
-
-        try {
-            $this->assertClassNotHasAttribute('publicAttribute', 'ClassWithNonPublicAttributes');
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertClassHasStaticAttribute
-     */
-    public function testClassHasPublicStaticAttribute()
-    {
-        $this->assertClassHasStaticAttribute('publicStaticAttribute', 'ClassWithNonPublicAttributes');
-
-        try {
-            $this->assertClassHasStaticAttribute('attribute', 'ClassWithNonPublicAttributes');
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertClassNotHasStaticAttribute
-     */
-    public function testClassNotHasPublicStaticAttribute()
-    {
-        $this->assertClassNotHasStaticAttribute('attribute', 'ClassWithNonPublicAttributes');
-
-        try {
-            $this->assertClassNotHasStaticAttribute('publicStaticAttribute', 'ClassWithNonPublicAttributes');
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertObjectHasAttribute
-     */
-    public function testObjectHasPublicAttribute()
-    {
-        $obj = new ClassWithNonPublicAttributes;
-
-        $this->assertObjectHasAttribute('publicAttribute', $obj);
-
-        try {
-            $this->assertObjectHasAttribute('attribute', $obj);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertObjectNotHasAttribute
-     */
-    public function testObjectNotHasPublicAttribute()
-    {
-        $obj = new ClassWithNonPublicAttributes;
-
-        $this->assertObjectNotHasAttribute('attribute', $obj);
-
-        try {
-            $this->assertObjectNotHasAttribute('publicAttribute', $obj);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertObjectHasAttribute
-     */
-    public function testObjectHasOnTheFlyAttribute()
-    {
-        $obj = new StdClass;
-        $obj->foo = 'bar';
-
-        $this->assertObjectHasAttribute('foo', $obj);
-
-        try {
-            $this->assertObjectHasAttribute('bar', $obj);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertObjectNotHasAttribute
-     */
-    public function testObjectNotHasOnTheFlyAttribute()
-    {
-        $obj = new StdClass;
-        $obj->foo = 'bar';
-
-        $this->assertObjectNotHasAttribute('bar', $obj);
-
-        try {
-            $this->assertObjectNotHasAttribute('foo', $obj);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertObjectHasAttribute
-     */
-    public function testObjectHasProtectedAttribute()
-    {
-        $obj = new ClassWithNonPublicAttributes;
-
-        $this->assertObjectHasAttribute('protectedAttribute', $obj);
-
-        try {
-            $this->assertObjectHasAttribute('attribute', $obj);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertObjectNotHasAttribute
-     */
-    public function testObjectNotHasProtectedAttribute()
-    {
-        $obj = new ClassWithNonPublicAttributes;
-
-        $this->assertObjectNotHasAttribute('attribute', $obj);
-
-        try {
-            $this->assertObjectNotHasAttribute('protectedAttribute', $obj);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertObjectHasAttribute
-     */
-    public function testObjectHasPrivateAttribute()
-    {
-        $obj = new ClassWithNonPublicAttributes;
-
-        $this->assertObjectHasAttribute('privateAttribute', $obj);
-
-        try {
-            $this->assertObjectHasAttribute('attribute', $obj);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertObjectNotHasAttribute
-     */
-    public function testObjectNotHasPrivateAttribute()
-    {
-        $obj = new ClassWithNonPublicAttributes;
-
-        $this->assertObjectNotHasAttribute('attribute', $obj);
-
-        try {
-            $this->assertObjectNotHasAttribute('privateAttribute', $obj);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertThat
-     * @covers PHPUnit_Framework_Assert::attribute
-     * @covers PHPUnit_Framework_Assert::equalTo
-     */
-    public function testAssertThatAttributeEquals()
-    {
-        $this->assertThat(
-          new ClassWithNonPublicAttributes,
-          $this->attribute(
-            $this->equalTo('foo'),
-            'publicAttribute'
-          )
-        );
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertThat
-     * @covers            PHPUnit_Framework_Assert::attribute
-     * @covers            PHPUnit_Framework_Assert::equalTo
-     * @expectedException PHPUnit_Framework_AssertionFailedError
-     */
-    public function testAssertThatAttributeEquals2()
-    {
-        $this->assertThat(
-          new ClassWithNonPublicAttributes,
-          $this->attribute(
-            $this->equalTo('bar'),
-            'publicAttribute'
-          )
-        );
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertThat
-     * @covers PHPUnit_Framework_Assert::attribute
-     * @covers PHPUnit_Framework_Assert::equalTo
-     */
-    public function testAssertThatAttributeEqualTo()
-    {
-        $this->assertThat(
-          new ClassWithNonPublicAttributes,
-          $this->attributeEqualTo('publicAttribute', 'foo')
-        );
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertThat
-     * @covers PHPUnit_Framework_Assert::anything
-     */
-    public function testAssertThatAnything()
-    {
-        $this->assertThat('anything', $this->anything());
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertThat
-     * @covers PHPUnit_Framework_Assert::anything
-     * @covers PHPUnit_Framework_Assert::logicalAnd
-     */
-    public function testAssertThatAnythingAndAnything()
-    {
-        $this->assertThat(
-          'anything',
-          $this->logicalAnd(
-            $this->anything(), $this->anything()
-          )
-        );
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertThat
-     * @covers PHPUnit_Framework_Assert::anything
-     * @covers PHPUnit_Framework_Assert::logicalOr
-     */
-    public function testAssertThatAnythingOrAnything()
-    {
-        $this->assertThat(
-          'anything',
-          $this->logicalOr(
-            $this->anything(), $this->anything()
-          )
-        );
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertThat
-     * @covers PHPUnit_Framework_Assert::anything
-     * @covers PHPUnit_Framework_Assert::logicalNot
-     * @covers PHPUnit_Framework_Assert::logicalXor
-     */
-    public function testAssertThatAnythingXorNotAnything()
-    {
-        $this->assertThat(
-          'anything',
-          $this->logicalXor(
-            $this->anything(),
-            $this->logicalNot($this->anything())
-          )
-        );
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertThat
-     * @covers PHPUnit_Framework_Assert::contains
-     */
-    public function testAssertThatContains()
-    {
-        $this->assertThat(array('foo'), $this->contains('foo'));
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertThat
-     * @covers PHPUnit_Framework_Assert::stringContains
-     */
-    public function testAssertThatStringContains()
-    {
-        $this->assertThat('barfoobar', $this->stringContains('foo'));
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertThat
-     * @covers PHPUnit_Framework_Assert::containsOnly
-     */
-    public function testAssertThatContainsOnly()
-    {
-        $this->assertThat(array('foo'), $this->containsOnly('string'));
-    }
-    /**
-     * @covers PHPUnit_Framework_Assert::assertThat
-     * @covers PHPUnit_Framework_Assert::containsOnlyInstancesOf
-     */
-    public function testAssertThatContainsOnlyInstancesOf()
-    {
-        $this->assertThat(array(new Book), $this->containsOnlyInstancesOf('Book'));
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertThat
-     * @covers PHPUnit_Framework_Assert::arrayHasKey
-     */
-    public function testAssertThatArrayHasKey()
-    {
-        $this->assertThat(array('foo' => 'bar'), $this->arrayHasKey('foo'));
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertThat
-     * @covers PHPUnit_Framework_Assert::classHasAttribute
-     */
-    public function testAssertThatClassHasAttribute()
-    {
-        $this->assertThat(
-          new ClassWithNonPublicAttributes,
-          $this->classHasAttribute('publicAttribute')
-        );
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertThat
-     * @covers PHPUnit_Framework_Assert::classHasStaticAttribute
-     */
-    public function testAssertThatClassHasStaticAttribute()
-    {
-        $this->assertThat(
-          new ClassWithNonPublicAttributes,
-          $this->classHasStaticAttribute('publicStaticAttribute')
-        );
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertThat
-     * @covers PHPUnit_Framework_Assert::objectHasAttribute
-     */
-    public function testAssertThatObjectHasAttribute()
-    {
-        $this->assertThat(
-          new ClassWithNonPublicAttributes,
-          $this->objectHasAttribute('publicAttribute')
-        );
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertThat
-     * @covers PHPUnit_Framework_Assert::equalTo
-     */
-    public function testAssertThatEqualTo()
-    {
-        $this->assertThat('foo', $this->equalTo('foo'));
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertThat
-     * @covers PHPUnit_Framework_Assert::identicalTo
-     */
-    public function testAssertThatIdenticalTo()
-    {
-        $value      = new StdClass;
-        $constraint = $this->identicalTo($value);
-
-        $this->assertThat($value, $constraint);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertThat
-     * @covers PHPUnit_Framework_Assert::isInstanceOf
-     */
-    public function testAssertThatIsInstanceOf()
-    {
-        $this->assertThat(new StdClass, $this->isInstanceOf('StdClass'));
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertThat
-     * @covers PHPUnit_Framework_Assert::isType
-     */
-    public function testAssertThatIsType()
-    {
-        $this->assertThat('string', $this->isType('string'));
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertThat
-     * @covers PHPUnit_Framework_Assert::fileExists
-     */
-    public function testAssertThatFileExists()
-    {
-        $this->assertThat(__FILE__, $this->fileExists());
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertThat
-     * @covers PHPUnit_Framework_Assert::greaterThan
-     */
-    public function testAssertThatGreaterThan()
-    {
-        $this->assertThat(2, $this->greaterThan(1));
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertThat
-     * @covers PHPUnit_Framework_Assert::greaterThanOrEqual
-     */
-    public function testAssertThatGreaterThanOrEqual()
-    {
-        $this->assertThat(2, $this->greaterThanOrEqual(1));
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertThat
-     * @covers PHPUnit_Framework_Assert::lessThan
-     */
-    public function testAssertThatLessThan()
-    {
-        $this->assertThat(1, $this->lessThan(2));
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertThat
-     * @covers PHPUnit_Framework_Assert::lessThanOrEqual
-     */
-    public function testAssertThatLessThanOrEqual()
-    {
-        $this->assertThat(1, $this->lessThanOrEqual(2));
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertThat
-     * @covers PHPUnit_Framework_Assert::matchesRegularExpression
-     */
-    public function testAssertThatMatchesRegularExpression()
-    {
-        $this->assertThat('foobar', $this->matchesRegularExpression('/foo/'));
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertTag
-     */
-    public function testAssertTagTypeTrue()
-    {
-        $matcher = array('tag' => 'html');
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertTag
-     * @expectedException PHPUnit_Framework_AssertionFailedError
-     */
-    public function testAssertTagTypeFalse()
-    {
-        $matcher = array('tag' => 'code');
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertTag
-     */
-    public function testAssertTagIdTrue()
-    {
-        $matcher = array('id' => 'test_text');
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertTag
-     * @expectedException PHPUnit_Framework_AssertionFailedError
-     */
-    public function testAssertTagIdFalse()
-    {
-        $matcher = array('id' => 'test_text_doesnt_exist');
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertTag
-     */
-    public function testAssertTagStringContentTrue()
-    {
-        $matcher = array('id' => 'test_text',
-                         'content' => 'My test tag content');
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertTag
-     * @expectedException PHPUnit_Framework_AssertionFailedError
-     */
-    public function testAssertTagStringContentFalse()
-    {
-        $matcher = array('id' => 'test_text',
-                         'content' => 'My non existent tag content');
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertTag
-     */
-    public function testAssertTagRegexpContentTrue()
-    {
-        $matcher = array('id' => 'test_text',
-                         'content' => 'regexp:/test tag/');
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertTag
-     */
-    public function testAssertTagRegexpModifierContentTrue()
-    {
-        $matcher = array('id' => 'test_text',
-                         'content' => 'regexp:/TEST TAG/i');
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertTag
-     * @expectedException PHPUnit_Framework_AssertionFailedError
-     */
-    public function testAssertTagRegexpContentFalse()
-    {
-        $matcher = array('id' => 'test_text',
-                         'content' => 'regexp:/asdf/');
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertTag
-     */
-    public function testAssertTagCdataContentTrue()
-    {
-        $matcher = array('tag' => 'script',
-                         'content' => 'alert(\'Hello, world!\');');
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertTag
-     * @expectedException PHPUnit_Framework_AssertionFailedError
-     */
-    public function testAssertTagCdataontentFalse()
-    {
-        $matcher = array('tag' => 'script',
-                         'content' => 'asdf');
-        $this->assertTag($matcher, $this->html);
-    }
-
-
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertTag
-     */
-    public function testAssertTagAttributesTrueA()
-    {
-        $matcher = array('tag' => 'span',
-                         'attributes' => array('class' => 'test_class'));
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertTag
-     */
-    public function testAssertTagAttributesTrueB()
-    {
-        $matcher = array('tag' => 'div',
-                         'attributes' => array('id' => 'test_child_id'));
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertTag
-     * @expectedException PHPUnit_Framework_AssertionFailedError
-     */
-    public function testAssertTagAttributesFalse()
-    {
-        $matcher = array('tag' => 'span',
-                         'attributes' => array('class' => 'test_missing_class'));
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertTag
-     */
-    public function testAssertTagAttributesRegexpTrueA()
-    {
-        $matcher = array('tag' => 'span',
-                         'attributes' => array('class' => 'regexp:/.+_class/'));
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertTag
-     */
-    public function testAssertTagAttributesRegexpTrueB()
-    {
-        $matcher = array('tag' => 'div',
-                         'attributes' => array('id' => 'regexp:/.+_child_.+/'));
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertTag
-     */
-    public function testAssertTagAttributesRegexpModifierTrue()
-    {
-        $matcher = array('tag' => 'div',
-                         'attributes' => array('id' => 'regexp:/.+_CHILD_.+/i'));
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertTag
-     * @expectedException PHPUnit_Framework_AssertionFailedError
-     */
-    public function testAssertTagAttributesRegexpModifierFalse()
-    {
-        $matcher = array('tag' => 'div',
-                         'attributes' => array('id' => 'regexp:/.+_CHILD_.+/'));
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertTag
-     * @expectedException PHPUnit_Framework_AssertionFailedError
-     */
-    public function testAssertTagAttributesRegexpFalse()
-    {
-        $matcher = array('tag' => 'span',
-                         'attributes' => array('class' => 'regexp:/.+_missing_.+/'));
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertTag
-     */
-    public function testAssertTagAttributesMultiPartClassTrueA()
-    {
-        $matcher = array('tag' => 'div',
-                         'id'  => 'test_multi_class',
-                         'attributes' => array('class' => 'multi class'));
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertTag
-     */
-    public function testAssertTagAttributesMultiPartClassTrueB()
-    {
-        $matcher = array('tag' => 'div',
-                         'id'  => 'test_multi_class',
-                         'attributes' => array('class' => 'multi'));
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertTag
-     * @expectedException PHPUnit_Framework_AssertionFailedError
-     */
-    public function testAssertTagAttributesMultiPartClassFalse()
-    {
-        $matcher = array('tag' => 'div',
-                         'id'  => 'test_multi_class',
-                         'attributes' => array('class' => 'mul'));
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertTag
-     */
-    public function testAssertTagParentTrue()
-    {
-        $matcher = array('tag' => 'head',
-                         'parent' => array('tag' => 'html'));
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertTag
-     * @expectedException PHPUnit_Framework_AssertionFailedError
-     */
-    public function testAssertTagParentFalse()
-    {
-        $matcher = array('tag' => 'head',
-                         'parent' => array('tag' => 'div'));
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-    * @covers PHPUnit_Framework_Assert::assertTag
-    */
-    public function testAssertTagMultiplePossibleChildren()
-    {
-        $matcher = array(
-            'tag' => 'li',
-            'parent' => array(
-                'tag' => 'ul',
-                'id' => 'another_ul'
-            )
-        );
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertTag
-     */
-    public function testAssertTagChildTrue()
-    {
-        $matcher = array('tag' => 'html',
-                         'child' => array('tag' => 'head'));
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertTag
-     * @expectedException PHPUnit_Framework_AssertionFailedError
-     */
-    public function testAssertTagChildFalse()
-    {
-        $matcher = array('tag' => 'html',
-                         'child' => array('tag' => 'div'));
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertTag
-     */
-    public function testAssertTagAncestorTrue()
-    {
-        $matcher = array('tag' => 'div',
-                         'ancestor' => array('tag' => 'html'));
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertTag
-     * @expectedException PHPUnit_Framework_AssertionFailedError
-     */
-    public function testAssertTagAncestorFalse()
-    {
-        $matcher = array('tag' => 'html',
-                         'ancestor' => array('tag' => 'div'));
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertTag
-     */
-    public function testAssertTagDescendantTrue()
-    {
-        $matcher = array('tag' => 'html',
-                         'descendant' => array('tag' => 'div'));
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertTag
-     * @expectedException PHPUnit_Framework_AssertionFailedError
-     */
-    public function testAssertTagDescendantFalse()
-    {
-        $matcher = array('tag' => 'div',
-                         'descendant' => array('tag' => 'html'));
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertTag
-     */
-    public function testAssertTagChildrenCountTrue()
-    {
-        $matcher = array('tag' => 'ul',
-                         'children' => array('count' => 3));
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertTag
-     * @expectedException PHPUnit_Framework_AssertionFailedError
-     */
-    public function testAssertTagChildrenCountFalse()
-    {
-        $matcher = array('tag' => 'ul',
-                         'children' => array('count' => 5));
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertTag
-     */
-    public function testAssertTagChildrenLessThanTrue()
-    {
-        $matcher = array('tag' => 'ul',
-                         'children' => array('less_than' => 10));
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertTag
-     * @expectedException PHPUnit_Framework_AssertionFailedError
-     */
-    public function testAssertTagChildrenLessThanFalse()
-    {
-        $matcher = array('tag' => 'ul',
-                         'children' => array('less_than' => 2));
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertTag
-     */
-    public function testAssertTagChildrenGreaterThanTrue()
-    {
-        $matcher = array('tag' => 'ul',
-                         'children' => array('greater_than' => 2));
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertTag
-     * @expectedException PHPUnit_Framework_AssertionFailedError
-     */
-    public function testAssertTagChildrenGreaterThanFalse()
-    {
-        $matcher = array('tag' => 'ul',
-                         'children' => array('greater_than' => 10));
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertTag
-     */
-    public function testAssertTagChildrenOnlyTrue()
-    {
-        $matcher = array('tag' => 'ul',
-                         'children' => array('only' => array('tag' =>'li')));
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertTag
-     * @expectedException PHPUnit_Framework_AssertionFailedError
-     */
-    public function testAssertTagChildrenOnlyFalse()
-    {
-        $matcher = array('tag' => 'ul',
-                         'children' => array('only' => array('tag' =>'div')));
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertTag
-     */
-    public function testAssertTagTypeIdTrueA()
-    {
-        $matcher = array('tag' => 'ul', 'id' => 'my_ul');
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertTag
-     */
-    public function testAssertTagTypeIdTrueB()
-    {
-        $matcher = array('id' => 'my_ul', 'tag' => 'ul');
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertTag
-     */
-    public function testAssertTagTypeIdTrueC()
-    {
-        $matcher = array('tag' => 'input', 'id'  => 'input_test_id');
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertTag
-     * @expectedException PHPUnit_Framework_AssertionFailedError
-     */
-    public function testAssertTagTypeIdFalse()
-    {
-        $matcher = array('tag' => 'div', 'id'  => 'my_ul');
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertTag
-     */
-    public function testAssertTagContentAttributes()
-    {
-        $matcher = array('tag' => 'div',
-                         'content'    => 'Test Id Text',
-                         'attributes' => array('id' => 'test_id',
-                                               'class' => 'my_test_class'));
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertTag
-     */
-    public function testAssertParentContentAttributes()
-    {
-        $matcher = array('tag'        => 'div',
-                         'content'    => 'Test Id Text',
-                         'attributes' => array('id'    => 'test_id',
-                                               'class' => 'my_test_class'),
-                         'parent'     => array('tag' => 'body'));
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertTag
-     */
-    public function testAssertChildContentAttributes()
-    {
-        $matcher = array('tag'        => 'div',
-                         'content'    => 'Test Id Text',
-                         'attributes' => array('id'    => 'test_id',
-                                               'class' => 'my_test_class'),
-                         'child'      => array('tag'        => 'div',
-                                               'attributes' => array('id' => 'test_child_id')));
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertTag
-     */
-    public function testAssertChildSubChildren()
-    {
-        $matcher = array('id' => 'test_id',
-                         'child' => array('id' => 'test_child_id',
-                                          'child' => array('id' => 'test_subchild_id')));
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertTag
-     */
-    public function testAssertAncestorContentAttributes()
-    {
-        $matcher = array('id'         => 'test_subchild_id',
-                         'content'    => 'My Subchild',
-                         'attributes' => array('id' => 'test_subchild_id'),
-                         'ancestor'   => array('tag'        => 'div',
-                                               'attributes' => array('id' => 'test_id')));
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertTag
-     */
-    public function testAssertDescendantContentAttributes()
-    {
-        $matcher = array('id'         => 'test_id',
-                         'content'    => 'Test Id Text',
-                         'attributes' => array('id'  => 'test_id'),
-                         'descendant' => array('tag'        => 'span',
-                                               'attributes' => array('id' => 'test_subchild_id')));
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertTag
-     */
-    public function testAssertChildrenContentAttributes()
-    {
-        $matcher = array('id'         => 'test_children',
-                         'content'    => 'My Children',
-                         'attributes' => array('class'  => 'children'),
-
-                         'children' => array('less_than'    => '25',
-                                             'greater_than' => '2',
-                                             'only'         => array('tag' => 'div',
-                                                                     'attributes' => array('class' => 'my_child'))
-                                            ));
-        $this->assertTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertNotTag
-     */
-    public function testAssertNotTagTypeIdFalse()
-    {
-        $matcher = array('tag' => 'div', 'id'  => 'my_ul');
-        $this->assertNotTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertNotTag
-     * @expectedException PHPUnit_Framework_AssertionFailedError
-     */
-    public function testAssertNotTagContentAttributes()
-    {
-        $matcher = array('tag' => 'div',
-                         'content'    => 'Test Id Text',
-                         'attributes' => array('id' => 'test_id',
-                                               'class' => 'my_test_class'));
-        $this->assertNotTag($matcher, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertSelectCount
-     */
-    public function testAssertSelectCountPresentTrue()
-    {
-        $selector = 'div#test_id';
-        $count    = TRUE;
-
-        $this->assertSelectCount($selector, $count, $this->html);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertSelectCount
-     * @expectedException PHPUnit_Framework_AssertionFailedError
-     */
-    public function testAssertSelectCountPresentFalse()
-    {
-        $selector = 'div#non_existent';
-        $count    = TRUE;
-
-        $this->assertSelectCount($selector, $count, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertSelectCount
-     */
-    public function testAssertSelectCountNotPresentTrue()
-    {
-        $selector = 'div#non_existent';
-        $count    = FALSE;
-
-        $this->assertSelectCount($selector, $count, $this->html);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertSelectCount
-     * @expectedException PHPUnit_Framework_AssertionFailedError
-     */
-    public function testAssertSelectNotPresentFalse()
-    {
-        $selector = 'div#test_id';
-        $count    = FALSE;
-
-        $this->assertSelectCount($selector, $count, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertSelectCount
-     */
-    public function testAssertSelectCountChildTrue()
-    {
-        $selector = '#my_ul > li';
-        $count    = 3;
-
-        $this->assertSelectCount($selector, $count, $this->html);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertSelectCount
-     * @expectedException PHPUnit_Framework_AssertionFailedError
-     */
-    public function testAssertSelectCountChildFalse()
-    {
-        $selector = '#my_ul > li';
-        $count    = 4;
-
-        $this->assertSelectCount($selector, $count, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertSelectCount
-     */
-    public function testAssertSelectCountDescendantTrue()
-    {
-        $selector = '#my_ul li';
-        $count    = 3;
-
-        $this->assertSelectCount($selector, $count, $this->html);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertSelectCount
-     * @expectedException PHPUnit_Framework_AssertionFailedError
-     */
-    public function testAssertSelectCountDescendantFalse()
-    {
-        $selector = '#my_ul li';
-        $count    = 4;
-
-        $this->assertSelectCount($selector, $count, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertSelectCount
-     */
-    public function testAssertSelectCountGreaterThanTrue()
-    {
-        $selector = '#my_ul > li';
-        $range    = array('>' => 2);
-
-        $this->assertSelectCount($selector, $range, $this->html);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertSelectCount
-     * @expectedException PHPUnit_Framework_AssertionFailedError
-     */
-    public function testAssertSelectCountGreaterThanFalse()
-    {
-        $selector = '#my_ul > li';
-        $range    = array('>' => 3);
-
-        $this->assertSelectCount($selector, $range, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertSelectCount
-     */
-    public function testAssertSelectCountGreaterThanEqualToTrue()
-    {
-        $selector = '#my_ul > li';
-        $range    = array('>=' => 3);
-
-        $this->assertSelectCount($selector, $range, $this->html);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertSelectCount
-     * @expectedException PHPUnit_Framework_AssertionFailedError
-     */
-    public function testAssertSelectCountGreaterThanEqualToFalse()
-    {
-        $selector = '#my_ul > li';
-        $range    = array('>=' => 4);
-
-        $this->assertSelectCount($selector, $range, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertSelectCount
-     */
-    public function testAssertSelectCountLessThanTrue()
-    {
-        $selector = '#my_ul > li';
-        $range    = array('<' => 4);
-
-        $this->assertSelectCount($selector, $range, $this->html);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertSelectCount
-     * @expectedException PHPUnit_Framework_AssertionFailedError
-     */
-    public function testAssertSelectCountLessThanFalse()
-    {
-        $selector = '#my_ul > li';
-        $range    = array('<' => 3);
-
-        $this->assertSelectCount($selector, $range, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertSelectCount
-     */
-    public function testAssertSelectCountLessThanEqualToTrue()
-    {
-        $selector = '#my_ul > li';
-        $range    = array('<=' => 3);
-
-        $this->assertSelectCount($selector, $range, $this->html);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertSelectCount
-     * @expectedException PHPUnit_Framework_AssertionFailedError
-     */
-    public function testAssertSelectCountLessThanEqualToFalse()
-    {
-        $selector = '#my_ul > li';
-        $range  = array('<=' => 2);
-
-        $this->assertSelectCount($selector, $range, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertSelectCount
-     */
-    public function testAssertSelectCountRangeTrue()
-    {
-        $selector = '#my_ul > li';
-        $range    = array('>' => 2, '<' => 4);
-
-        $this->assertSelectCount($selector, $range, $this->html);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertSelectCount
-     * @expectedException PHPUnit_Framework_AssertionFailedError
-     */
-    public function testAssertSelectCountRangeFalse()
-    {
-        $selector = '#my_ul > li';
-        $range    = array('>' => 1, '<' => 3);
-
-        $this->assertSelectCount($selector, $range, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertSelectEquals
-     */
-    public function testAssertSelectEqualsContentPresentTrue()
-    {
-        $selector = 'span.test_class';
-        $content  = 'Test Class Text';
-
-        $this->assertSelectEquals($selector, $content, TRUE, $this->html);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertSelectEquals
-     * @expectedException PHPUnit_Framework_AssertionFailedError
-     */
-    public function testAssertSelectEqualsContentPresentFalse()
-    {
-        $selector = 'span.test_class';
-        $content  = 'Test Nonexistent';
-
-        $this->assertSelectEquals($selector, $content, TRUE, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertSelectEquals
-     */
-    public function testAssertSelectEqualsContentNotPresentTrue()
-    {
-        $selector = 'span.test_class';
-        $content  = 'Test Nonexistent';
-
-        $this->assertSelectEquals($selector, $content, FALSE, $this->html);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertSelectEquals
-     * @expectedException PHPUnit_Framework_AssertionFailedError
-     */
-    public function testAssertSelectEqualsContentNotPresentFalse()
-    {
-        $selector = 'span.test_class';
-        $content  = 'Test Class Text';
-
-        $this->assertSelectEquals($selector, $content, FALSE, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertSelectRegExp
-     */
-    public function testAssertSelectRegExpContentPresentTrue()
-    {
-        $selector = 'span.test_class';
-        $regexp   = '/Test.*Text/';
-
-        $this->assertSelectRegExp($selector, $regexp, TRUE, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertSelectRegExp
-     */
-    public function testAssertSelectRegExpContentPresentFalse()
-    {
-        $selector = 'span.test_class';
-        $regexp   = '/Nonexistant/';
-
-        $this->assertSelectRegExp($selector, $regexp, FALSE, $this->html);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertFileEquals
-     */
-    public function testAssertFileEquals()
-    {
-        $this->assertFileEquals(
-          $this->filesDirectory . 'foo.xml',
-          $this->filesDirectory . 'foo.xml'
-        );
-
-        try {
-            $this->assertFileEquals(
-              $this->filesDirectory . 'foo.xml',
-              $this->filesDirectory . 'bar.xml'
-            );
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertFileNotEquals
-     */
-    public function testAssertFileNotEquals()
-    {
-        $this->assertFileNotEquals(
-          $this->filesDirectory . 'foo.xml',
-          $this->filesDirectory . 'bar.xml'
-        );
-
-        try {
-            $this->assertFileNotEquals(
-              $this->filesDirectory . 'foo.xml',
-              $this->filesDirectory . 'foo.xml'
-            );
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertStringEqualsFile
-     */
-    public function testAssertStringEqualsFile()
-    {
-        $this->assertStringEqualsFile(
-          $this->filesDirectory . 'foo.xml',
-          file_get_contents($this->filesDirectory . 'foo.xml')
-        );
-
-        try {
-            $this->assertStringEqualsFile(
-              $this->filesDirectory . 'foo.xml',
-              file_get_contents($this->filesDirectory . 'bar.xml')
-            );
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertStringNotEqualsFile
-     */
-    public function testAssertStringNotEqualsFile()
-    {
-        $this->assertStringNotEqualsFile(
-          $this->filesDirectory . 'foo.xml',
-          file_get_contents($this->filesDirectory . 'bar.xml')
-        );
-
-        try {
-            $this->assertStringNotEqualsFile(
-              $this->filesDirectory . 'foo.xml',
-              file_get_contents($this->filesDirectory . 'foo.xml')
-            );
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertStringStartsWith
-     * @expectedException PHPUnit_Framework_Exception
-     */
-    public function testAssertStringStartsWithThrowsException()
-    {
-        $this->assertStringStartsWith(NULL, NULL);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertStringStartsWith
-     * @expectedException PHPUnit_Framework_Exception
-     */
-    public function testAssertStringStartsWithThrowsException2()
-    {
-        $this->assertStringStartsWith('', NULL);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertStringStartsNotWith
-     * @expectedException PHPUnit_Framework_Exception
-     */
-    public function testAssertStringStartsNotWithThrowsException()
-    {
-        $this->assertStringStartsNotWith(NULL, NULL);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertStringStartsNotWith
-     * @expectedException PHPUnit_Framework_Exception
-     */
-    public function testAssertStringStartsNotWithThrowsException2()
-    {
-        $this->assertStringStartsNotWith('', NULL);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertStringEndsWith
-     * @expectedException PHPUnit_Framework_Exception
-     */
-    public function testAssertStringEndsWithThrowsException()
-    {
-        $this->assertStringEndsWith(NULL, NULL);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertStringEndsWith
-     * @expectedException PHPUnit_Framework_Exception
-     */
-    public function testAssertStringEndsWithThrowsException2()
-    {
-        $this->assertStringEndsWith('', NULL);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertStringEndsNotWith
-     * @expectedException PHPUnit_Framework_Exception
-     */
-    public function testAssertStringEndsNotWithThrowsException()
-    {
-        $this->assertStringEndsNotWith(NULL, NULL);
-    }
-
-    /**
-     * @covers            PHPUnit_Framework_Assert::assertStringEndsNotWith
-     * @expectedException PHPUnit_Framework_Exception
-     */
-    public function testAssertStringEndsNotWithThrowsException2()
-    {
-        $this->assertStringEndsNotWith('', NULL);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertStringStartsWith
-     */
-    public function testAssertStringStartsWith()
-    {
-        $this->assertStringStartsWith('prefix', 'prefixfoo');
-
-        try {
-            $this->assertStringStartsWith('prefix', 'foo');
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertStringStartsNotWith
-     */
-    public function testAssertStringStartsNotWith()
-    {
-        $this->assertStringStartsNotWith('prefix', 'foo');
-
-        try {
-            $this->assertStringStartsNotWith('prefix', 'prefixfoo');
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertStringEndsWith
-     */
-    public function testAssertStringEndsWith()
-    {
-        $this->assertStringEndsWith('suffix', 'foosuffix');
-
-        try {
-            $this->assertStringEndsWith('suffix', 'foo');
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertStringEndsNotWith
-     */
-    public function testAssertStringEndsNotWith()
-    {
-        $this->assertStringEndsNotWith('suffix', 'foo');
-
-        try {
-            $this->assertStringEndsNotWith('suffix', 'foosuffix');
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertStringMatchesFormat
-     */
-    public function testAssertStringMatchesFormat()
-    {
-        $this->assertStringMatchesFormat('*%s*', '***');
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertStringMatchesFormat
-     * @expectedException PHPUnit_Framework_AssertionFailedError
-     */
-    public function testAssertStringMatchesFormatFailure()
-    {
-        $this->assertStringMatchesFormat('*%s*', '**');
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertStringNotMatchesFormat
-     */
-    public function testAssertStringNotMatchesFormat()
-    {
-        $this->assertStringNotMatchesFormat('*%s*', '**');
-
-        try {
-            $this->assertStringMatchesFormat('*%s*', '**');
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertEmpty
-     */
-    public function testAssertEmpty()
-    {
-        $this->assertEmpty(array());
-
-        try {
-            $this->assertEmpty(array('foo'));
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertNotEmpty
-     */
-    public function testAssertNotEmpty()
-    {
-        $this->assertNotEmpty(array('foo'));
-
-        try {
-            $this->assertNotEmpty(array());
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertAttributeEmpty
-     */
-    public function testAssertAttributeEmpty()
-    {
-        $o    = new StdClass;
-        $o->a = array();
-
-        $this->assertAttributeEmpty('a', $o);
-
-        try {
-            $o->a = array('b');
-            $this->assertAttributeEmpty('a', $o);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertAttributeNotEmpty
-     */
-    public function testAssertAttributeNotEmpty()
-    {
-        $o    = new StdClass;
-        $o->a = array('b');
-
-        $this->assertAttributeNotEmpty('a', $o);
-
-        try {
-            $o->a = array();
-            $this->assertAttributeNotEmpty('a', $o);
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::markTestIncomplete
-     */
-    public function testMarkTestIncomplete()
-    {
-        try {
-            $this->markTestIncomplete('incomplete');
-        }
-
-        catch (PHPUnit_Framework_IncompleteTestError $e) {
-            $this->assertEquals('incomplete', $e->getMessage());
-
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::markTestSkipped
-     */
-    public function testMarkTestSkipped()
-    {
-        try {
-            $this->markTestSkipped('skipped');
-        }
-
-        catch (PHPUnit_Framework_SkippedTestError $e) {
-            $this->assertEquals('skipped', $e->getMessage());
-
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertCount
-     */
-    public function testAssertCount()
-    {
-        $this->assertCount(2, array(1,2));
-
-        try {
-            $this->assertCount(2, array(1,2,3));
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertCount
-     */
-    public function testAssertCountThrowsExceptionIfExpectedCountIsNoInteger()
-    {
-
-        try {
-            $this->assertCount('a', array());
-        }
-
-        catch (PHPUnit_Framework_Exception $e) {
-            $this->assertEquals('Argument #1 of PHPUnit_Framework_Assert::assertCount() must be a integer', $e->getMessage());
-
-            return;
-        }
-
-        $this->fail();
-    }
-
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertCount
-     */
-    public function testAssertCountThrowsExceptionIfElementIsNotCountable()
-    {
-
-        try {
-            $this->assertCount(2, '');
-        }
-
-        catch (PHPUnit_Framework_Exception $e) {
-            $this->assertEquals('Argument #2 of PHPUnit_Framework_Assert::assertCount() must be a countable', $e->getMessage());
-
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertSameSize
-     */
-    public function testAssertSameSize()
-    {
-        $this->assertSameSize(array(1,2), array(3,4));
-
-        try {
-            $this->assertSameSize(array(1,2), array(1,2,3));
-        }
-
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertSameSize
-     */
-    public function testAssertSameSizeThrowsExceptionIfExpectedIsNotCoutable()
-    {
-
-        try {
-            $this->assertSameSize('a', array());
-        }
-
-        catch (PHPUnit_Framework_Exception $e) {
-            $this->assertEquals('Argument #1 of PHPUnit_Framework_Assert::assertSameSize() must be a countable', $e->getMessage());
-
-            return;
-        }
-
-        $this->fail();
-    }
-
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertSameSize
-     */
-    public function testAssertSameSizeThrowsExceptionIfActualIsNotCountable()
-    {
-
-        try {
-            $this->assertSameSize(array(), '');
-        }
-
-        catch (PHPUnit_Framework_Exception $e) {
-            $this->assertEquals('Argument #2 of PHPUnit_Framework_Assert::assertSameSize() must be a countable', $e->getMessage());
-
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertJsonStringEqualsJsonString
-     */
-    public function testAssertJsonStringEqualsJsonString()
-    {
-        $expected = '{"Mascott" : "Tux"}';
-        $actual   = '{"Mascott" : "Tux"}';
-        $message  = 'Given Json strings do not match';
-
-        $this->assertJsonStringEqualsJsonString($expected, $actual, $message);
-    }
-
-    /**
-     * @dataProvider validInvalidJsonDataprovider
-     * @covers PHPUnit_Framework_Assert::assertJsonStringEqualsJsonString
-     */
-    public function testAssertJsonStringEqualsJsonStringErrorRaised($expected, $actual)
-    {
-        try {
-            $this->assertJsonStringEqualsJsonString($expected, $actual);
-        } catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-        $this->fail('Expected exception not found');
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertJsonStringNotEqualsJsonString
-     */
-    public function testAssertJsonStringNotEqualsJsonString()
-    {
-        $expected = '{"Mascott" : "Beastie"}';
-        $actual   = '{"Mascott" : "Tux"}';
-        $message  = 'Given Json strings do match';
-
-        $this->assertJsonStringNotEqualsJsonString($expected, $actual, $message);
-    }
-
-    /**
-     * @dataProvider validInvalidJsonDataprovider
-     * @covers PHPUnit_Framework_Assert::assertJsonStringNotEqualsJsonString
-     */
-    public function testAssertJsonStringNotEqualsJsonStringErrorRaised($expected, $actual)
-    {
-        try {
-            $this->assertJsonStringNotEqualsJsonString($expected, $actual);
-        } catch (PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-        $this->fail('Expected exception not found');
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertJsonStringEqualsJsonFile
-     */
-    public function testAssertJsonStringEqualsJsonFile()
-    {
-        $file = __DIR__ . '/../_files/JsonData/simpleObject.js';
-        $actual = json_encode(array("Mascott" => "Tux"));
-        $message = '';
-        $this->assertJsonStringEqualsJsonFile($file, $actual, $message);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertJsonStringEqualsJsonFile
-     */
-    public function testAssertJsonStringEqualsJsonFileExpectingExpectationFailedException()
-    {
-        $file = __DIR__ . '/../_files/JsonData/simpleObject.js';
-        $actual = json_encode(array("Mascott" => "Beastie"));
-        $message = '';
-        try {
-            $this->assertJsonStringEqualsJsonFile($file, $actual, $message);
-        } catch (PHPUnit_Framework_ExpectationFailedException $e) {
-            $this->assertEquals(
-                'Failed asserting that \'{"Mascott":"Beastie"}\' matches JSON string "{"Mascott":"Tux"}".',
-                $e->getMessage()
-            );
-            return;
-        }
-
-        $this->fail('Expected Exception not thrown.');
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertJsonStringEqualsJsonFile
-     */
-    public function testAssertJsonStringEqualsJsonFileExpectingException()
-    {
-        $file = __DIR__ . '/../_files/JsonData/simpleObject.js';
-        try {
-            $this->assertJsonStringEqualsJsonFile($file, NULL);
-        } catch (PHPUnit_Framework_Exception $e) {
-            return;
-        }
-        $this->fail('Expected Exception not thrown.');
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertJsonStringNotEqualsJsonFile
-     */
-    public function testAssertJsonStringNotEqualsJsonFile()
-    {
-        $file = __DIR__ . '/../_files/JsonData/simpleObject.js';
-        $actual = json_encode(array("Mascott" => "Beastie"));
-        $message = '';
-        $this->assertJsonStringNotEqualsJsonFile($file, $actual, $message);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertJsonStringNotEqualsJsonFile
-     */
-    public function testAssertJsonStringNotEqualsJsonFileExpectingException()
-    {
-        $file = __DIR__ . '/../_files/JsonData/simpleObject.js';
-        try {
-            $this->assertJsonStringNotEqualsJsonFile($file, NULL);
-        } catch (PHPUnit_Framework_Exception $e) {
-            return;
-        }
-        $this->fail('Expected exception not found.');
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertJsonFileNotEqualsJsonFile
-     */
-    public function testAssertJsonFileNotEqualsJsonFile()
-    {
-        $fileExpected = __DIR__ . '/../_files/JsonData/simpleObject.js';
-        $fileActual   = __DIR__ . '/../_files/JsonData/arrayObject.js';
-        $message = '';
-        $this->assertJsonFileNotEqualsJsonFile($fileExpected, $fileActual, $message);
-    }
-
-    /**
-     * @covers PHPUnit_Framework_Assert::assertJsonFileEqualsJsonFile
-     */
-    public function testAssertJsonFileEqualsJsonFile()
-    {
-        $file = __DIR__ . '/../_files/JsonData/simpleObject.js';
-        $message = '';
-        $this->assertJsonFileEqualsJsonFile($file, $file, $message);
-    }
-
-    public static function validInvalidJsonDataprovider()
-    {
-        return array(
-            'error syntax in expected JSON' => array('{"Mascott"::}', '{"Mascott" : "Tux"}'),
-            'error UTF-8 in actual JSON'    => array('{"Mascott" : "Tux"}', '{"Mascott" : :}'),
-        );
-    }
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

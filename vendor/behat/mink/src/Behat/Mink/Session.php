@@ -1,304 +1,88 @@
-<?php
-
-namespace Behat\Mink;
-
-use Behat\Mink\Driver\DriverInterface,
-    Behat\Mink\Selector\SelectorsHandler,
-    Behat\Mink\Element\DocumentElement;
-
-/*
- * This file is part of the Behat\Mink.
- * (c) Konstantin Kudryashov <ever.zet@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-/**
- * Mink session.
- *
- * @author Konstantin Kudryashov <ever.zet@gmail.com>
- */
-class Session
-{
-    private $driver;
-    private $page;
-    private $selectorsHandler;
-
-    /**
-     * Initializes session.
-     *
-     * @param DriverInterface  $driver
-     * @param SelectorsHandler $selectorsHandler
-     */
-    public function __construct(DriverInterface $driver, SelectorsHandler $selectorsHandler = null)
-    {
-        $driver->setSession($this);
-
-        if (null === $selectorsHandler) {
-            $selectorsHandler = new SelectorsHandler();
-        }
-
-        $this->driver           = $driver;
-        $this->page             = new DocumentElement($this);
-        $this->selectorsHandler = $selectorsHandler;
-    }
-
-    /**
-     * Checks whether session (driver) was started.
-     *
-     * @return Boolean
-     */
-    public function isStarted()
-    {
-        return $this->driver->isStarted();
-    }
-
-    /**
-     * Starts session driver.
-     */
-    public function start()
-    {
-        $this->driver->start();
-    }
-
-    /**
-     * Stops session driver.
-     */
-    public function stop()
-    {
-        $this->driver->stop();
-    }
-
-    /**
-     * Restart session driver.
-     */
-    public function restart()
-    {
-        $this->driver->stop();
-        $this->driver->start();
-    }
-
-    /**
-     * Reset session driver.
-     */
-    public function reset()
-    {
-        $this->driver->reset();
-    }
-
-    /**
-     * Returns session driver.
-     *
-     * @return DriverInterface
-     */
-    public function getDriver()
-    {
-        return $this->driver;
-    }
-
-    /**
-     * Returns page element.
-     *
-     * @return DocumentElement
-     */
-    public function getPage()
-    {
-        return $this->page;
-    }
-
-    /**
-     * Returns selectors handler.
-     *
-     * @return SelectorsHandler
-     */
-    public function getSelectorsHandler()
-    {
-        return $this->selectorsHandler;
-    }
-
-    /**
-     * Visit specified URL.
-     *
-     * @param string $url url of the page
-     */
-    public function visit($url)
-    {
-        $this->driver->visit($url);
-    }
-
-    /**
-     * Sets HTTP Basic authentication parameters
-     *
-     * @param string|Boolean $user     user name or false to disable authentication
-     * @param string         $password password
-     */
-    public function setBasicAuth($user, $password = '')
-    {
-        $this->driver->setBasicAuth($user, $password);
-    }
-
-    /**
-     * Sets specific request header.
-     *
-     * @param string $name
-     * @param string $value
-     */
-    public function setRequestHeader($name, $value)
-    {
-        $this->driver->setRequestHeader($name, $value);
-    }
-
-    /**
-     * Returns all response headers.
-     *
-     * @return array
-     */
-    public function getResponseHeaders()
-    {
-        return $this->driver->getResponseHeaders();
-    }
-
-    /**
-     * Sets cookie.
-     *
-     * @param string $name
-     * @param string $value
-     */
-    public function setCookie($name, $value = null)
-    {
-        $this->driver->setCookie($name, $value);
-    }
-
-    /**
-     * Returns cookie by name.
-     *
-     * @param string $name
-     *
-     * @return string|null
-     */
-    public function getCookie($name)
-    {
-        return $this->driver->getCookie($name);
-    }
-
-    /**
-     * Returns response status code.
-     *
-     * @return integer
-     */
-    public function getStatusCode()
-    {
-        return $this->driver->getStatusCode();
-    }
-
-    /**
-     * Returns current URL address.
-     *
-     * @return string
-     */
-    public function getCurrentUrl()
-    {
-        return $this->driver->getCurrentUrl();
-    }
-
-    /**
-     * Capture a screenshot of the current window.
-     *
-     * @return  string  screenshot of MIME type image/* depending 
-     *   on driver (e.g., image/png, image/jpeg)
-     */
-    public function getScreenshot()
-    {
-        return $this->driver->getScreenshot();
-    }
-
-    /**
-     * Reloads current session page.
-     */
-    public function reload()
-    {
-        $this->driver->reload();
-    }
-
-    /**
-     * Moves backward 1 page in history.
-     */
-    public function back()
-    {
-        $this->driver->back();
-    }
-
-    /**
-     * Moves forward 1 page in history.
-     */
-    public function forward()
-    {
-        $this->driver->forward();
-    }
-
-    /**
-     * Switches to specific browser window.
-     *
-     * @param string $name window name (null for switching back to main window)
-     */
-    public function switchToWindow($name = null)
-    {
-        $this->driver->switchToWindow($name);
-    }
-
-    /**
-     * Switches to specific iFrame.
-     *
-     * @param string $name iframe name (null for switching back)
-     */
-    public function switchToIFrame($name = null)
-    {
-        $this->driver->switchToIFrame($name);
-    }
-
-    /**
-     * Execute JS in browser.
-     *
-     * @param string $script javascript
-     */
-    public function executeScript($script)
-    {
-        $this->driver->executeScript($script);
-    }
-
-    /**
-     * Execute JS in browser and return it's response.
-     *
-     * @param string $script javascript
-     *
-     * @return string
-     */
-    public function evaluateScript($script)
-    {
-        return $this->driver->evaluateScript($script);
-    }
-
-    /**
-     * Waits some time or until JS condition turns true.
-     *
-     * @param integer $time      time in milliseconds
-     * @param string  $condition JS condition
-     */
-    public function wait($time, $condition = 'false')
-    {
-        $this->driver->wait($time, $condition);
-    }
-
-    /**
-     * Set the dimensions of the window.
-     *
-     * @param integer $width set the window width, measured in pixels
-     * @param integer $height set the window height, measured in pixels
-     * @param string $name window name (null for the main window)
-     */
-    public function resizeWindow($width, $height, $name = null)
-    {
-        return $this->driver->resizeWindow($width, $height, $name);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+ihi=

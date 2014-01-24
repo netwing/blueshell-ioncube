@@ -1,46 +1,47 @@
-<?php
-
-namespace Guzzle\Tests\Inflection;
-
-use Guzzle\Inflection\MemoizingInflector;
-use Guzzle\Inflection\Inflector;
-
-/**
- * @covers Guzzle\Inflection\MemoizingInflector
- */
-class MemoizingInflectorTest extends \Guzzle\Tests\GuzzleTestCase
-{
-    public function testUsesCache()
-    {
-        $mock = $this->getMock('Guzzle\Inflection\Inflector', array('snake', 'camel'));
-        $mock->expects($this->once())->method('snake')->will($this->returnValue('foo_bar'));
-        $mock->expects($this->once())->method('camel')->will($this->returnValue('FooBar'));
-
-        $inflector = new MemoizingInflector($mock);
-        $this->assertEquals('foo_bar', $inflector->snake('FooBar'));
-        $this->assertEquals('foo_bar', $inflector->snake('FooBar'));
-        $this->assertEquals('FooBar', $inflector->camel('foo_bar'));
-        $this->assertEquals('FooBar', $inflector->camel('foo_bar'));
-    }
-
-    public function testProtectsAgainstCacheOverflow()
-    {
-        $inflector = new MemoizingInflector(new Inflector(), 10);
-        for ($i = 1; $i < 11; $i++) {
-            $inflector->camel('foo_' . $i);
-            $inflector->snake('Foo' . $i);
-        }
-
-        $cache = $this->readAttribute($inflector, 'cache');
-        $this->assertEquals(10, count($cache['snake']));
-        $this->assertEquals(10, count($cache['camel']));
-
-        $inflector->camel('baz!');
-        $inflector->snake('baz!');
-
-        // Now ensure that 20% of the cache was removed (2), then the item was added
-        $cache = $this->readAttribute($inflector, 'cache');
-        $this->assertEquals(9, count($cache['snake']));
-        $this->assertEquals(9, count($cache['camel']));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

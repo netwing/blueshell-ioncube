@@ -1,73 +1,41 @@
-<?php
-/**
-* Smarty PHPunit tests single quoted strings
-*
-* @package PHPunit
-* @author Uwe Tews
-*/
-
-/**
-* class for single quoted string tests
-*/
-class SingleQuotedStringTests extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $this->smarty = SmartyTests::$smarty;
-        SmartyTests::init();
-    }
-
-    static function isRunnable()
-    {
-        return true;
-    }
-
-    /**
-    * test simple single quoted string
-    */
-    public function testSimpleSingleQuotedString()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$foo=\'Hello World\'}{$foo}');
-        $this->assertEquals('Hello World', $this->smarty->fetch($tpl));
-    }
-    /**
-    * test that tags not interpreted in single quoted strings
-    */
-    public function testTagsInSingleQuotedString()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$foo=\'Hello {1+2} World\'}{$foo}');
-        $this->assertEquals('Hello {1+2} World', $this->smarty->fetch($tpl));
-    }
-    /**
-    * test that vars not interpreted in single quoted strings
-    */
-    public function testVarsInSingleQuotedString()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$foo=\'Hello $bar World\'}{$foo}');
-        $this->assertEquals('Hello $bar World', $this->smarty->fetch($tpl));
-    }
-    /**
-    * test double quotes in single quoted strings
-    */
-    public function testDoubleQuotesInSingleQuotedString()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$foo=\'Hello "World"\'}{$foo}');
-        $this->assertEquals('Hello "World"', $this->smarty->fetch($tpl));
-    }
-    /**
-    * test escaped single quotes in single quoted strings
-    */
-    public function testEscapedSingleQuotesInSingleQuotedString()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$foo=\'Hello \\\'World\'}{$foo}');
-        $this->assertEquals("Hello 'World", $this->smarty->fetch($tpl));
-    }
-    /**
-    * test empty single quoted strings
-    */
-    public function testEmptySingleQuotedString()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$foo=\'\'}{$foo}');
-        $this->assertEquals("", $this->smarty->fetch($tpl));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+Z5fjKZfni2U/O5u=

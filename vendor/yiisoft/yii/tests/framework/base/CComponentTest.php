@@ -1,346 +1,221 @@
-<?php
-require_once dirname(__FILE__) . '/NewComponent.php';
-require_once dirname(__FILE__) . '/NewBehavior.php';
-
-function globalEventHandler($event)
-{
-	$event->sender->eventHandled=true;
-}
-
-function globalEventHandler2($event)
-{
-	$event->sender->eventHandled=true;
-	$event->handled=true;
-}
-
-class CComponentTest extends CTestCase
-{
-	/**
-	 * @var NewComponent
-	 */
-	protected $component;
-
-	public function setUp()
-	{
-		$this->component = new NewComponent();
-	}
-
-	public function tearDown()
-	{
-		$this->component = null;
-	}
-
-	public function testHasProperty()
-	{
-		$this->assertTrue($this->component->hasProperty('Text'), "Component hasn't property Text");
-		$this->assertTrue($this->component->hasProperty('text'), "Component hasn't property text");
-		$this->assertTrue($this->component->hasProperty('Object'), "Component hasn't property Object");
-		$this->assertTrue($this->component->hasProperty('object'), "Component hasn't property object");
-		$this->assertFalse($this->component->hasProperty('Caption'), "Component has property Caption");
-	}
-
-	public function testCanGetProperty()
-	{
-		$this->assertTrue($this->component->canGetProperty('Text'));
-		$this->assertTrue($this->component->canGetProperty('text'));
-		$this->assertFalse($this->component->canGetProperty('Caption'));
-		$this->assertTrue($this->component->canGetProperty('Object'));
-		$this->assertTrue($this->component->canGetProperty('object'));
-	}
-
-	public function testCanSetProperty()
-	{
-		$this->assertTrue($this->component->canSetProperty('Text'));
-		$this->assertTrue($this->component->canSetProperty('text'));
-		$this->assertFalse($this->component->canSetProperty('Caption'));
-		$this->assertFalse($this->component->canSetProperty('Object'));
-		$this->assertFalse($this->component->canSetProperty('object'));
-	}
-
-	public function testGetProperty()
-	{
-		$this->assertSame('default', $this->component->Text);
-		$this->assertSame('default', $this->component->text);
-		$this->assertInstanceOf('NewComponent', $this->component->Object);
-		$this->assertInstanceOf('NewComponent', $this->component->object);
-
-		try {
-			$this->component->caption;
-		} catch (Exception $e) {
-			$this->assertInstanceOf('CException', $e);
-			$this->assertSame('Property "NewComponent.caption" is not defined.', $e->getMessage());
-		}
-	}
-
-	public function testSetProperty()
-	{
-		$this->component->text = 'new value';
-		$this->assertSame('new value', $this->component->text);
-
-		try {
-			$this->component->object = new NewComponent();
-		} catch (Exception $e) {
-			$this->assertInstanceOf('CException', $e);
-			$this->assertSame('Property "NewComponent.object" is read only.', $e->getMessage());
-		}
-
-		try {
-			$this->component->newMember = 'new value';
-		} catch (Exception $e) {
-			$this->assertInstanceOf('CException', $e);
-			$this->assertSame('Property "NewComponent.newMember" is not defined.', $e->getMessage());
-		}
-	}
-
-	public function testIsset()
-	{
-		$this->assertTrue(isset($this->component->Text));
-		$this->assertFalse(empty($this->component->Text));
-		$this->assertTrue(isset($this->component->object));
-	}
-
-	public function testUnset()
-	{
-		unset($this->component->Text);
-		$this->assertFalse(isset($this->component->Text));
-		$this->assertTrue(empty($this->component->Text));
-
-		$this->component->Text='new text';
-		$this->assertTrue(isset($this->component->Text));
-		$this->assertFalse(empty($this->component->Text));
-
-		try {
-			unset($this->component->object);
-		} catch (Exception $e) {
-			$this->assertInstanceOf('CException', $e);
-			$this->assertSame('Property "NewComponent.object" is read only.', $e->getMessage());
-		}
-	}
-
-	public function testCallMethodFromBehavior()
-	{
-		$this->component->attachBehavior('newBehavior', new NewBehavior);
-		$this->assertSame(2, $this->component->test());
-
-		try {
-			$this->component->otherMethod();
-		} catch (Exception $e) {
-			$this->assertInstanceOf('CException', $e);
-			$this->assertSame('NewComponent and its behaviors do not have a method or closure named "otherMethod".', $e->getMessage());
-		}
-	}
-
-	public function testHasEvent()
-	{
-		$this->assertTrue($this->component->hasEvent('OnMyEvent'));
-		$this->assertTrue($this->component->hasEvent('onmyevent'));
-		$this->assertFalse($this->component->hasEvent('onYourEvent'));
-	}
-
-	public function testHasEventHandler()
-	{
-		$this->assertFalse($this->component->hasEventHandler('OnMyEvent'));
-		$this->component->attachEventHandler('OnMyEvent','foo');
-		$this->assertTrue($this->component->hasEventHandler('OnMyEvent'));
-	}
-
-	public function testGetEventHandlers()
-	{
-		$list=$this->component->getEventHandlers('OnMyEvent');
-		$this->assertSame($list->getCount(),0);
-		$this->component->attachEventHandler('OnMyEvent','foo');
-		$this->assertSame($list->getCount(),1);
-
-		try {
-			$this->component->getEventHandlers('YourEvent');
-		} catch (Exception $e) {
-			$this->assertInstanceOf('CException', $e);
-			$this->assertSame('Event "NewComponent.YourEvent" is not defined.', $e->getMessage());
-		}
-	}
-
-	public function testAttachEventHandler()
-	{
-		$this->component->attachEventHandler('OnMyEvent','foo');
-		$this->assertInstanceOf('CList', $this->component->getEventHandlers('onMyEvent'));
-		$this->assertSame(1, $this->component->getEventHandlers('onMyEvent')->getCount());
-
-		try {
-			$this->component->attachEventHandler('onYourEvent', 'foo');
-		} catch (Exception $e) {
-			$this->assertInstanceOf('CException', $e);
-			$this->assertSame('Event "NewComponent.onYourEvent" is not defined.', $e->getMessage());
-		}
-	}
-
-	public function testDetachEventHandler()
-	{
-		$this->component->attachEventHandler('OnMyEvent','foo');
-		$this->component->attachEventHandler('OnMyEvent',array($this->component,'myEventHandler'));
-		$this->assertSame($this->component->getEventHandlers('OnMyEvent')->getCount(),2);
-
-		$this->assertTrue($this->component->detachEventHandler('OnMyEvent','foo'));
-		$this->assertSame($this->component->getEventHandlers('OnMyEvent')->getCount(),1);
-
-		$this->assertFalse($this->component->detachEventHandler('OnMyEvent','foo'));
-		$this->assertSame($this->component->getEventHandlers('OnMyEvent')->getCount(),1);
-
-		$this->assertTrue($this->component->detachEventHandler('OnMyEvent',array($this->component,'myEventHandler')));
-		$this->assertSame($this->component->getEventHandlers('OnMyEvent')->getCount(),0);
-
-		$this->assertFalse($this->component->detachEventHandler('OnMyEvent','foo'));
-	}
-
-	/**
-	 * https://github.com/yiisoft/yii/issues/1191
-	 */
-	public function testAttachDetachEventHandler()
-	{
-		$this->component->attachEventHandler('OnMyEvent',array($this->component,'handler1'));
-		$this->component->onMyEvent();
-		$this->component->attachEventHandler('OnMyEvent',array($this->component,'handler2'));
-		$this->component->onMyEvent();
-		$this->component->attachEventHandler('OnMyEvent',array($this->component,'handler3'));
-		$this->component->onMyEvent();
-
-		$this->component->detachEventHandler('OnMyEvent',array($this->component,'handler2'));
-		$this->component->onMyEvent();
-
-		$this->component->attachEventHandler('OnMyEvent',array($this->component,'handler2'));
-		$this->component->onMyEvent();
-		$this->component->detachEventHandler('OnMyEvent',array($this->component,'handler1'));
-		$this->component->onMyEvent();
-		$this->component->attachEventHandler('OnMyEvent',array($this->component,'handler2'));
-		$this->component->onMyEvent();
-	}
-
-
-	public function testRaiseEvent()
-	{
-		$this->component->attachEventHandler('OnMyEvent',array($this->component,'myEventHandler'));
-		$this->assertFalse($this->component->eventHandled);
-		$this->component->raiseEvent('OnMyEvent',new CEvent($this->component));
-		$this->assertTrue($this->component->eventHandled);
-
-		try {
-			$this->component->raiseEvent('OnUnknown', new CEvent($this->component));
-		} catch (Exception $e) {
-			$this->assertInstanceOf('CException', $e);
-			$this->assertSame('Event "NewComponent.onunknown" is not defined.', $e->getMessage());
-		}
-	}
-
-	public function testEventAccessor()
-	{
-		$component=new NewComponent;
-		$this->assertSame($component->onMyEvent->getCount(),0);
-		$component->onMyEvent='globalEventHandler';
-		$component->onMyEvent=array($this->component,'myEventHandler');
-		$this->assertSame($component->onMyEvent->getCount(),2);
-		$this->assertFalse($component->eventHandled);
-		$this->assertFalse($this->component->eventHandled);
-		$component->onMyEvent();
-		$this->assertTrue($component->eventHandled);
-		$this->assertTrue($this->component->eventHandled);
-	}
-
-	public function testStopEvent()
-	{
-		$component=new NewComponent;
-		$component->onMyEvent='globalEventHandler2';
-		$component->onMyEvent=array($this->component,'myEventHandler');
-		$component->onMyEvent();
-		$this->assertTrue($component->eventHandled);
-		$this->assertFalse($this->component->eventHandled);
-	}
-
-	public function testInvalidHandler1()
-	{
-		$this->component->onMyEvent = array(1, 2, 3);
-
-		try {
-			$this->component->onMyEvent();
-		} catch (Exception $e) {
-			$this->assertInstanceOf('CException', $e);
-			$this->assertSame('Event "NewComponent.onmyevent" is attached with an invalid handler "array".', $e->getMessage());
-		}
-	}
-
-	public function testInvalidHandler2()
-	{
-		$this->component->onMyEvent = array($this->component, 'nullHandler');
-
-		try {
-			$this->component->onMyEvent();
-		} catch (Exception $e) {
-			$this->assertInstanceOf('CException', $e);
-			$this->assertSame('Event "NewComponent.onmyevent" is attached with an invalid handler "nullHandler".', $e->getMessage());
-		}
-	}
-
-	public function testAttachingBehavior()
-	{
-		$this->component->attachBehavior('newBehavior', 'NewBehavior');
-		$this->assertInstanceOf('NewBehavior', $this->component->newBehavior);
-	}
-
-	public function testDetachingBehavior()
-	{
-		$behavior = new NewBehavior;
-		$this->component->attachBehavior('newBehavior', $behavior);
-		$this->assertSame($behavior, $this->component->detachBehavior('newBehavior'));
-		$this->assertFalse(isset($this->component->newBehavior));
-	}
-
-	public function testDetachingBehaviors()
-	{
-		$behavior = new NewBehavior;
-
-		$this->component->attachBehavior('newBehavior', $behavior);
-		$this->component->detachBehaviors();
-
-		try {
-			$this->component->test();
-		} catch (Exception $e) {
-			$this->assertInstanceOf('CException', $e);
-			$this->assertSame('NewComponent and its behaviors do not have a method or closure named "test".', $e->getMessage());
-		}
-	}
-
-	public function testEnablingBehavior()
-	{
-		$behavior = new NewBehavior;
-
-		$this->component->attachBehavior('newBehavior', $behavior);
-		$this->component->disableBehavior('newBehavior');
-		$this->assertFalse($behavior->getEnabled());
-
-		$this->component->enableBehavior('newBehavior');
-		$this->assertTrue($behavior->getEnabled());
-	}
-
-	public function testEnablingBehaviors()
-	{
-		$behavior = new NewBehavior;
-
-		$this->component->attachBehavior('newBehavior', $behavior);
-		$this->component->disableBehaviors();
-		$this->assertFalse($behavior->getEnabled());
-
-		$this->component->enableBehaviors();
-		$this->assertTrue($behavior->getEnabled());
-	}
-
-	public function testAsa()
-	{
-		$behavior = new NewBehavior;
-		$this->component->attachBehavior('newBehavior', $behavior);
-		$this->assertSame($behavior, $this->component->asa('newBehavior'));
-	}
-
-	public function testEvaluateExpression()
-	{
-		$this->assertSame('Hello world', $this->component->evaluateExpression('"Hello $who"', array('who' => 'world')));
-		$this->assertSame('Hello world', $this->component->evaluateExpression(array($this->component, 'exprEvaluator'), array('who' => 'world')));
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

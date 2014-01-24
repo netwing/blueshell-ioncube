@@ -1,186 +1,69 @@
-<?php
-
-/*
- * This file is part of SwiftMailer.
- * (c) 2004-2009 Chris Corbyn
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-/**
- * Allows reading and writing of bytes to and from an array.
- *
- * @package    Swift
- * @subpackage ByteStream
- * @author     Chris Corbyn
- */
-class Swift_ByteStream_ArrayByteStream implements Swift_InputByteStream, Swift_OutputByteStream
-{
-    /**
-     * The internal stack of bytes.
-     *
-     * @var string[]
-     */
-    private $_array = array();
-
-    /**
-     * The size of the stack
-     *
-     * @var integer
-     */
-    private $_arraySize = 0;
-
-    /**
-     * The internal pointer offset.
-     *
-     * @var integer
-     */
-    private $_offset = 0;
-
-    /**
-     * Bound streams.
-     *
-     * @var Swift_InputByteStream[]
-     */
-    private $_mirrors = array();
-
-    /**
-     * Create a new ArrayByteStream.
-     *
-     * If $stack is given the stream will be populated with the bytes it contains.
-     *
-     * @param mixed $stack of bytes in string or array form, optional
-     */
-    public function __construct($stack = null)
-    {
-        if (is_array($stack)) {
-            $this->_array = $stack;
-            $this->_arraySize = count($stack);
-        } elseif (is_string($stack)) {
-            $this->write($stack);
-        } else {
-            $this->_array = array();
-        }
-    }
-
-    /**
-     * Reads $length bytes from the stream into a string and moves the pointer
-     * through the stream by $length.
-     *
-     * If less bytes exist than are requested the
-     * remaining bytes are given instead. If no bytes are remaining at all, boolean
-     * false is returned.
-     *
-     * @param integer $length
-     *
-     * @return string
-     */
-    public function read($length)
-    {
-        if ($this->_offset == $this->_arraySize) {
-            return false;
-        }
-
-        // Don't use array slice
-        $end = $length + $this->_offset;
-        $end = $this->_arraySize<$end
-            ?$this->_arraySize
-            :$end;
-        $ret = '';
-        for (; $this->_offset < $end; ++$this->_offset) {
-            $ret .= $this->_array[$this->_offset];
-        }
-
-        return $ret;
-    }
-
-    /**
-     * Writes $bytes to the end of the stream.
-     *
-     * @param string $bytes
-     */
-    public function write($bytes)
-    {
-        $to_add = str_split($bytes);
-        foreach ($to_add as $value) {
-            $this->_array[] = $value;
-        }
-        $this->_arraySize = count($this->_array);
-
-        foreach ($this->_mirrors as $stream) {
-            $stream->write($bytes);
-        }
-    }
-
-    /**
-     * Not used.
-     */
-    public function commit()
-    {
-    }
-
-    /**
-     * Attach $is to this stream.
-     *
-     * The stream acts as an observer, receiving all data that is written.
-     * All {@link write()} and {@link flushBuffers()} operations will be mirrored.
-     *
-     * @param Swift_InputByteStream $is
-     */
-    public function bind(Swift_InputByteStream $is)
-    {
-        $this->_mirrors[] = $is;
-    }
-
-    /**
-     * Remove an already bound stream.
-     *
-     * If $is is not bound, no errors will be raised.
-     * If the stream currently has any buffered data it will be written to $is
-     * before unbinding occurs.
-     *
-     * @param Swift_InputByteStream $is
-     */
-    public function unbind(Swift_InputByteStream $is)
-    {
-        foreach ($this->_mirrors as $k => $stream) {
-            if ($is === $stream) {
-                unset($this->_mirrors[$k]);
-            }
-        }
-    }
-
-    /**
-     * Move the internal read pointer to $byteOffset in the stream.
-     *
-     * @param integer $byteOffset
-     *
-     * @return boolean
-     */
-    public function setReadPointer($byteOffset)
-    {
-        if ($byteOffset > $this->_arraySize) {
-            $byteOffset = $this->_arraySize;
-        } elseif ($byteOffset < 0) {
-            $byteOffset = 0;
-        }
-
-        $this->_offset = $byteOffset;
-    }
-
-    /**
-     * Flush the contents of the stream (empty it) and set the internal pointer
-     * to the beginning.
-     */
-    public function flushBuffers()
-    {
-        $this->_offset = 0;
-        $this->_array = array();
-        $this->_arraySize = 0;
-
-        foreach ($this->_mirrors as $stream) {
-            $stream->flushBuffers();
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

@@ -1,44 +1,29 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\CssSelector\Parser\Handler;
-
-use Symfony\Component\CssSelector\Parser\Reader;
-use Symfony\Component\CssSelector\Parser\Token;
-use Symfony\Component\CssSelector\Parser\TokenStream;
-
-/**
- * CSS selector whitespace handler.
- *
- * This component is a port of the Python cssselector library,
- * which is copyright Ian Bicking, @see https://github.com/SimonSapin/cssselect.
- *
- * @author Jean-François Simon <jeanfrancois.simon@sensiolabs.com>
- */
-class WhitespaceHandler implements HandlerInterface
-{
-    /**
-     * {@inheritdoc}
-     */
-    public function handle(Reader $reader, TokenStream $stream)
-    {
-        $match = $reader->findPattern('~^[ \t\r\n\f]+~');
-
-        if (false === $match) {
-            return false;
-        }
-
-        $stream->push(new Token(Token::TYPE_WHITESPACE, $match[0], $reader->getPosition()));
-        $reader->moveForward(strlen($match[0]));
-
-        return true;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

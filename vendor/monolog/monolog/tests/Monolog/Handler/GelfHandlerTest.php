@@ -1,94 +1,63 @@
-<?php
-
-/*
- * This file is part of the Monolog package.
- *
- * (c) Jordi Boggiano <j.boggiano@seld.be>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Monolog\Handler;
-
-use Monolog\TestCase;
-use Monolog\Logger;
-use Monolog\Formatter\GelfMessageFormatter;
-
-class GelfHandlerTest extends TestCase
-{
-    public function setUp()
-    {
-        if (!class_exists("Gelf\MessagePublisher") || !class_exists("Gelf\Message")) {
-            $this->markTestSkipped("mlehner/gelf-php not installed");
-        }
-
-        require_once __DIR__ . '/GelfMocks.php';
-    }
-
-    /**
-     * @covers Monolog\Handler\GelfHandler::__construct
-     */
-    public function testConstruct()
-    {
-        $handler = new GelfHandler($this->getMessagePublisher());
-        $this->assertInstanceOf('Monolog\Handler\GelfHandler', $handler);
-    }
-
-    protected function getHandler($messagePublisher)
-    {
-        $handler = new GelfHandler($messagePublisher);
-
-        return $handler;
-    }
-
-    protected function getMessagePublisher()
-    {
-        return new MockMessagePublisher('localhost');
-    }
-
-    public function testDebug()
-    {
-        $messagePublisher = $this->getMessagePublisher();
-        $handler = $this->getHandler($messagePublisher);
-
-        $record = $this->getRecord(Logger::DEBUG, "A test debug message");
-        $handler->handle($record);
-
-        $this->assertEquals(7, $messagePublisher->lastMessage->getLevel());
-        $this->assertEquals('test', $messagePublisher->lastMessage->getFacility());
-        $this->assertEquals($record['message'], $messagePublisher->lastMessage->getShortMessage());
-        $this->assertEquals(null, $messagePublisher->lastMessage->getFullMessage());
-    }
-
-    public function testWarning()
-    {
-        $messagePublisher = $this->getMessagePublisher();
-        $handler = $this->getHandler($messagePublisher);
-
-        $record = $this->getRecord(Logger::WARNING, "A test warning message");
-        $handler->handle($record);
-
-        $this->assertEquals(4, $messagePublisher->lastMessage->getLevel());
-        $this->assertEquals('test', $messagePublisher->lastMessage->getFacility());
-        $this->assertEquals($record['message'], $messagePublisher->lastMessage->getShortMessage());
-        $this->assertEquals(null, $messagePublisher->lastMessage->getFullMessage());
-    }
-
-    public function testInjectedGelfMessageFormatter()
-    {
-        $messagePublisher = $this->getMessagePublisher();
-        $handler = $this->getHandler($messagePublisher);
-
-        $handler->setFormatter(new GelfMessageFormatter('mysystem', 'EXT', 'CTX'));
-
-        $record = $this->getRecord(Logger::WARNING, "A test warning message");
-        $record['extra']['blarg'] = 'yep';
-        $record['context']['from'] = 'logger';
-        $handler->handle($record);
-
-        $this->assertEquals('mysystem', $messagePublisher->lastMessage->getHost());
-        $this->assertArrayHasKey('_EXTblarg', $messagePublisher->lastMessage->toArray());
-        $this->assertArrayHasKey('_CTXfrom', $messagePublisher->lastMessage->toArray());
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+EU+fJH7fPG==

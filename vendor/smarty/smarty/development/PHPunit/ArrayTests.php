@@ -1,118 +1,65 @@
-<?php
-/**
-* Smarty PHPunit tests array definitions and access
-*
-* @package PHPunit
-* @author Uwe Tews
-*/
-
-/**
-* class for array tests
-*/
-class ArrayTests extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $this->smarty = SmartyTests::$smarty;
-        SmartyTests::init();
-    }
-
-    static function isRunnable()
-    {
-        return true;
-    }
-
-    /**
-    * test simple array definition
-    */
-    public function testSimpleArrayDefinition()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$foo=[1,2,3,4,5]}{foreach $foo as $bar}{$bar}{/foreach}');
-        $this->assertEquals('12345', $this->smarty->fetch($tpl));
-    }
-    /**
-    * test smarty2 array access
-    */
-    public function testSmarty2ArrayAccess()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$foo=[1,2,3,4,5]}{$foo.0}{$foo.1}{$foo.2}');
-        $this->assertEquals('123', $this->smarty->fetch($tpl));
-    }
-    /**
-    * test smarty3 array access
-    */
-    public function testSmarty3ArrayAccess()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$foo=[1,2,3,4,5]}{$foo[0]}{$foo[1]}{$foo[2]}');
-        $this->assertEquals('123', $this->smarty->fetch($tpl));
-    }
-    /**
-    * test indexed array definition
-    */
-    public function testIndexedArrayDefinition()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$x=\'d\'}{$foo=[a=>1,\'b\'=>2,"c"=>3,$x=>4]}{$foo[\'a\']}{$foo[\'b\']}{$foo[\'c\']}{$foo[\'d\']}');
-        $this->assertEquals('1234', $this->smarty->fetch($tpl));
-    }
-    /**
-    * test nested array
-    */
-    public function testNestedArray()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$foo=[1,2,[a,b,c],4,5]}{$foo[2][1]}');
-        $this->assertEquals('b', $this->smarty->fetch($tpl));
-    }
-    /**
-    * test array math
-    */
-    public function testArrayMath1()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$foo=[1,2,[7,8,9],4,5]}{$foo[2][1]+1}');
-        $this->assertEquals('9', $this->smarty->fetch($tpl));
-    }
-    public function testArrayMath2()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$foo=[1,2,[7,8,9],4,5]}{$foo.2.1+1}');
-        $this->assertEquals('9', $this->smarty->fetch($tpl));
-    }
-    public function testArrayMath3()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$foo=[1,2,[7,8,9],4,5]}{2+$foo[2][1]}');
-        $this->assertEquals('10', $this->smarty->fetch($tpl));
-    }
-    public function testArrayMath4()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$foo=[1,2,[7,8,9],4,5]}{2+$foo.2.1}');
-        $this->assertEquals('10', $this->smarty->fetch($tpl));
-    }
-    public function testArrayMath5()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$foo=[1,2,[7,8,9],4,5]}{$foo[2][0]+$foo[2][1]}');
-        $this->assertEquals('15', $this->smarty->fetch($tpl));
-    }
-    public function testArrayMath6()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$foo=[1,2,[7,8,9],4,5]}{$foo.2.0+$foo.2.1}');
-        $this->assertEquals('15', $this->smarty->fetch($tpl));
-    }
-    public function testArrayVariableIndex1()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$foo=[1,2,[7,8,9],4,5]}{$x=2}{$y=0}{$foo.$x.$y}');
-        $this->assertEquals('7', $this->smarty->fetch($tpl));
-    }
-    public function testArrayVariableIndex2()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$foo=[1,2,[7,8,9],4,5]}{$x=2}{$foo.$x.0}');
-        $this->assertEquals('7', $this->smarty->fetch($tpl));
-    }
-    public function testArrayVariableIndex3()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$foo=[1,2,[7,8,9],4,5]}{$x=0}{$foo.2.$x}');
-        $this->assertEquals('7', $this->smarty->fetch($tpl));
-    }
-    public function testArrayVariableIndex4()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{$foo=[1,2,[7,8,9],4,5]}{$x=[1,0]}{$foo.2.{$x.1}}');
-        $this->assertEquals('7', $this->smarty->fetch($tpl));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

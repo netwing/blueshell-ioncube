@@ -1,77 +1,44 @@
-<?php
-/**
- * FontAwesom class file.
- * @author Emanuele Deserti <emanuele.deserti@netwing.it>
- * @copyright Copyright &copy; Emanuele Deserti 2013-
- * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
- * @package netwing
- * @version 1.0.0
- */
-
-/**
- * Font awesome component.
- */
-class FontAwesome extends CApplicationComponent
-{
-    /**
-     * @var bool whether we should copy the asset file or directory even if it is already published before.
-     */
-    public $forceCopyAssets = false;
-
-    private $_assetsUrl;
-
-    /**
-     * Registers the Font awesome CSS.
-     * @param string $url the URL to the CSS file to register.
-     */
-    public function registerCss($url = null)
-    {
-        if ($url === null) {
-            $fileName = YII_DEBUG ? 'font-awesome.css' : 'font-awesome.min.css';
-            $url = $this->getAssetsUrl() . "/css/" . $fileName;
-        }
-        Yii::app()->clientScript->registerCssFile($url);
-    }
-
-    /**
-     * Registers all Bootstrap CSS files.
-     */
-    public function registerAllCss()
-    {
-        $this->registerCss();
-    }
-
-
-    /**
-     * Registers all assets.
-     */
-    public function register()
-    {
-        $this->registerAllCss();
-    }
-
-    /**
-     * Returns the url to the published assets folder.
-     * @return string the url.
-     */
-    protected function getAssetsUrl()
-    {
-        if (isset($this->_assetsUrl)) {
-            return $this->_assetsUrl;
-        } else {
-            // Save default exclude files
-            $excludeFiles = Yii::app()->assetManager->excludeFiles;
-            // Do not publish less, scss and src
-            Yii::app()->assetManager->excludeFiles = array_merge(
-                $excludeFiles, 
-                array('.git', 'gitignore', '.ruby-version', 'CONTRIBUTING.md', 'Gemfile', 'Gemfile.lock', 'README.md', '_config.yml', 'composer.json', 'less', 'package.json', 'scss', 'src')
-            );
-            $assetsPath = Yii::getPathOfAlias('bower.font-awesome');
-            $assetsUrl = Yii::app()->assetManager->publish($assetsPath, true, -1, $this->forceCopyAssets);
-            // Reset default exclude files
-            Yii::app()->assetManager->excludeFiles = $excludeFiles;
-            return $this->_assetsUrl = $assetsUrl;
-        }
-    }
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

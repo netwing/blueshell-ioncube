@@ -1,1084 +1,352 @@
-<?php
-/**
-* Smarty PHPunit tests of modifier
-*
-* @package PHPunit
-* @author Rodney Rehm
-*/
-
-/**
-* class for modifier tests
-*/
-class PluginFunctionHtmlSelectTimeTests extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $this->smarty = SmartyTests::$smarty;
-        SmartyTests::init();
-
-        $this->now = mktime( 16, 15, 11, 2, 20, 2011 );
-    }
-
-    static function isRunnable()
-    {
-        return true;
-    }
-
-    protected $now = null;
-    protected $hours = array(
-        'none' => '<option value="00">00</option>
-<option value="01">01</option>
-<option value="02">02</option>
-<option value="03">03</option>
-<option value="04">04</option>
-<option value="05">05</option>
-<option value="06">06</option>
-<option value="07">07</option>
-<option value="08">08</option>
-<option value="09">09</option>
-<option value="10">10</option>
-<option value="11">11</option>
-<option value="12">12</option>
-<option value="13">13</option>
-<option value="14">14</option>
-<option value="15">15</option>
-<option value="16">16</option>
-<option value="17">17</option>
-<option value="18">18</option>
-<option value="19">19</option>
-<option value="20">20</option>
-<option value="21">21</option>
-<option value="22">22</option>
-<option value="23">23</option>',
-        'default' => '<option value="00">00</option>
-<option value="01">01</option>
-<option value="02">02</option>
-<option value="03">03</option>
-<option value="04">04</option>
-<option value="05">05</option>
-<option value="06">06</option>
-<option value="07">07</option>
-<option value="08">08</option>
-<option value="09">09</option>
-<option value="10">10</option>
-<option value="11">11</option>
-<option value="12">12</option>
-<option value="13">13</option>
-<option value="14">14</option>
-<option value="15">15</option>
-<option value="16" selected="selected">16</option>
-<option value="17">17</option>
-<option value="18">18</option>
-<option value="19">19</option>
-<option value="20">20</option>
-<option value="21">21</option>
-<option value="22">22</option>
-<option value="23">23</option>',
-        '12h' => '<option value="01">01</option>
-<option value="02">02</option>
-<option value="03">03</option>
-<option value="04" selected="selected">04</option>
-<option value="05">05</option>
-<option value="06">06</option>
-<option value="07">07</option>
-<option value="08">08</option>
-<option value="09">09</option>
-<option value="10">10</option>
-<option value="11">11</option>
-<option value="12">12</option>',
-        'format_%03d' => '<option value="00">000</option>
-<option value="01">001</option>
-<option value="02">002</option>
-<option value="03">003</option>
-<option value="04">004</option>
-<option value="05">005</option>
-<option value="06">006</option>
-<option value="07">007</option>
-<option value="08">008</option>
-<option value="09">009</option>
-<option value="10">010</option>
-<option value="11">011</option>
-<option value="12">012</option>
-<option value="13">013</option>
-<option value="14">014</option>
-<option value="15">015</option>
-<option value="16" selected="selected">016</option>
-<option value="17">017</option>
-<option value="18">018</option>
-<option value="19">019</option>
-<option value="20">020</option>
-<option value="21">021</option>
-<option value="22">022</option>
-<option value="23">023</option>',
-        'format_value_%03d' => '<option value="000">00</option>
-<option value="001">01</option>
-<option value="002">02</option>
-<option value="003">03</option>
-<option value="004">04</option>
-<option value="005">05</option>
-<option value="006">06</option>
-<option value="007">07</option>
-<option value="008">08</option>
-<option value="009">09</option>
-<option value="010">10</option>
-<option value="011">11</option>
-<option value="012">12</option>
-<option value="013">13</option>
-<option value="014">14</option>
-<option value="015">15</option>
-<option value="016" selected="selected">16</option>
-<option value="017">17</option>
-<option value="018">18</option>
-<option value="019">19</option>
-<option value="020">20</option>
-<option value="021">21</option>
-<option value="022">22</option>
-<option value="023">23</option>',
-    );
-    protected $minutes = array(
-        'none' => '<option value="00">00</option>
-<option value="01">01</option>
-<option value="02">02</option>
-<option value="03">03</option>
-<option value="04">04</option>
-<option value="05">05</option>
-<option value="06">06</option>
-<option value="07">07</option>
-<option value="08">08</option>
-<option value="09">09</option>
-<option value="10">10</option>
-<option value="11">11</option>
-<option value="12">12</option>
-<option value="13">13</option>
-<option value="14">14</option>
-<option value="15">15</option>
-<option value="16">16</option>
-<option value="17">17</option>
-<option value="18">18</option>
-<option value="19">19</option>
-<option value="20">20</option>
-<option value="21">21</option>
-<option value="22">22</option>
-<option value="23">23</option>
-<option value="24">24</option>
-<option value="25">25</option>
-<option value="26">26</option>
-<option value="27">27</option>
-<option value="28">28</option>
-<option value="29">29</option>
-<option value="30">30</option>
-<option value="31">31</option>
-<option value="32">32</option>
-<option value="33">33</option>
-<option value="34">34</option>
-<option value="35">35</option>
-<option value="36">36</option>
-<option value="37">37</option>
-<option value="38">38</option>
-<option value="39">39</option>
-<option value="40">40</option>
-<option value="41">41</option>
-<option value="42">42</option>
-<option value="43">43</option>
-<option value="44">44</option>
-<option value="45">45</option>
-<option value="46">46</option>
-<option value="47">47</option>
-<option value="48">48</option>
-<option value="49">49</option>
-<option value="50">50</option>
-<option value="51">51</option>
-<option value="52">52</option>
-<option value="53">53</option>
-<option value="54">54</option>
-<option value="55">55</option>
-<option value="56">56</option>
-<option value="57">57</option>
-<option value="58">58</option>
-<option value="59">59</option>',
-        'default' => '<option value="00">00</option>
-<option value="01">01</option>
-<option value="02">02</option>
-<option value="03">03</option>
-<option value="04">04</option>
-<option value="05">05</option>
-<option value="06">06</option>
-<option value="07">07</option>
-<option value="08">08</option>
-<option value="09">09</option>
-<option value="10">10</option>
-<option value="11">11</option>
-<option value="12">12</option>
-<option value="13">13</option>
-<option value="14">14</option>
-<option value="15" selected="selected">15</option>
-<option value="16">16</option>
-<option value="17">17</option>
-<option value="18">18</option>
-<option value="19">19</option>
-<option value="20">20</option>
-<option value="21">21</option>
-<option value="22">22</option>
-<option value="23">23</option>
-<option value="24">24</option>
-<option value="25">25</option>
-<option value="26">26</option>
-<option value="27">27</option>
-<option value="28">28</option>
-<option value="29">29</option>
-<option value="30">30</option>
-<option value="31">31</option>
-<option value="32">32</option>
-<option value="33">33</option>
-<option value="34">34</option>
-<option value="35">35</option>
-<option value="36">36</option>
-<option value="37">37</option>
-<option value="38">38</option>
-<option value="39">39</option>
-<option value="40">40</option>
-<option value="41">41</option>
-<option value="42">42</option>
-<option value="43">43</option>
-<option value="44">44</option>
-<option value="45">45</option>
-<option value="46">46</option>
-<option value="47">47</option>
-<option value="48">48</option>
-<option value="49">49</option>
-<option value="50">50</option>
-<option value="51">51</option>
-<option value="52">52</option>
-<option value="53">53</option>
-<option value="54">54</option>
-<option value="55">55</option>
-<option value="56">56</option>
-<option value="57">57</option>
-<option value="58">58</option>
-<option value="59">59</option>',
-        '30' => '<option value="00" selected="selected">00</option>
-<option value="30">30</option>',
-        '15' => '<option value="00">00</option>
-<option value="15" selected="selected">15</option>
-<option value="30">30</option>
-<option value="45">45</option>',
-        '10' => '<option value="00">00</option>
-<option value="10" selected="selected">10</option>
-<option value="20">20</option>
-<option value="30">30</option>
-<option value="40">40</option>
-<option value="50">50</option>',
-        '5' => '<option value="00">00</option>
-<option value="05">05</option>
-<option value="10">10</option>
-<option value="15" selected="selected">15</option>
-<option value="20">20</option>
-<option value="25">25</option>
-<option value="30">30</option>
-<option value="35">35</option>
-<option value="40">40</option>
-<option value="45">45</option>
-<option value="50">50</option>
-<option value="55">55</option>',
-        'format_%03d' => '<option value="00">000</option>
-<option value="01">001</option>
-<option value="02">002</option>
-<option value="03">003</option>
-<option value="04">004</option>
-<option value="05">005</option>
-<option value="06">006</option>
-<option value="07">007</option>
-<option value="08">008</option>
-<option value="09">009</option>
-<option value="10">010</option>
-<option value="11">011</option>
-<option value="12">012</option>
-<option value="13">013</option>
-<option value="14">014</option>
-<option value="15" selected="selected">015</option>
-<option value="16">016</option>
-<option value="17">017</option>
-<option value="18">018</option>
-<option value="19">019</option>
-<option value="20">020</option>
-<option value="21">021</option>
-<option value="22">022</option>
-<option value="23">023</option>
-<option value="24">024</option>
-<option value="25">025</option>
-<option value="26">026</option>
-<option value="27">027</option>
-<option value="28">028</option>
-<option value="29">029</option>
-<option value="30">030</option>
-<option value="31">031</option>
-<option value="32">032</option>
-<option value="33">033</option>
-<option value="34">034</option>
-<option value="35">035</option>
-<option value="36">036</option>
-<option value="37">037</option>
-<option value="38">038</option>
-<option value="39">039</option>
-<option value="40">040</option>
-<option value="41">041</option>
-<option value="42">042</option>
-<option value="43">043</option>
-<option value="44">044</option>
-<option value="45">045</option>
-<option value="46">046</option>
-<option value="47">047</option>
-<option value="48">048</option>
-<option value="49">049</option>
-<option value="50">050</option>
-<option value="51">051</option>
-<option value="52">052</option>
-<option value="53">053</option>
-<option value="54">054</option>
-<option value="55">055</option>
-<option value="56">056</option>
-<option value="57">057</option>
-<option value="58">058</option>
-<option value="59">059</option>',
-        'format_value_%03d' => '<option value="000">00</option>
-<option value="001">01</option>
-<option value="002">02</option>
-<option value="003">03</option>
-<option value="004">04</option>
-<option value="005">05</option>
-<option value="006">06</option>
-<option value="007">07</option>
-<option value="008">08</option>
-<option value="009">09</option>
-<option value="010">10</option>
-<option value="011">11</option>
-<option value="012">12</option>
-<option value="013">13</option>
-<option value="014">14</option>
-<option value="015" selected="selected">15</option>
-<option value="016">16</option>
-<option value="017">17</option>
-<option value="018">18</option>
-<option value="019">19</option>
-<option value="020">20</option>
-<option value="021">21</option>
-<option value="022">22</option>
-<option value="023">23</option>
-<option value="024">24</option>
-<option value="025">25</option>
-<option value="026">26</option>
-<option value="027">27</option>
-<option value="028">28</option>
-<option value="029">29</option>
-<option value="030">30</option>
-<option value="031">31</option>
-<option value="032">32</option>
-<option value="033">33</option>
-<option value="034">34</option>
-<option value="035">35</option>
-<option value="036">36</option>
-<option value="037">37</option>
-<option value="038">38</option>
-<option value="039">39</option>
-<option value="040">40</option>
-<option value="041">41</option>
-<option value="042">42</option>
-<option value="043">43</option>
-<option value="044">44</option>
-<option value="045">45</option>
-<option value="046">46</option>
-<option value="047">47</option>
-<option value="048">48</option>
-<option value="049">49</option>
-<option value="050">50</option>
-<option value="051">51</option>
-<option value="052">52</option>
-<option value="053">53</option>
-<option value="054">54</option>
-<option value="055">55</option>
-<option value="056">56</option>
-<option value="057">57</option>
-<option value="058">58</option>
-<option value="059">59</option>',
-    );
-    protected $seconds = array(
-        'none' => '<option value="00">00</option>
-<option value="01">01</option>
-<option value="02">02</option>
-<option value="03">03</option>
-<option value="04">04</option>
-<option value="05">05</option>
-<option value="06">06</option>
-<option value="07">07</option>
-<option value="08">08</option>
-<option value="09">09</option>
-<option value="10">10</option>
-<option value="11">11</option>
-<option value="12">12</option>
-<option value="13">13</option>
-<option value="14">14</option>
-<option value="15">15</option>
-<option value="16">16</option>
-<option value="17">17</option>
-<option value="18">18</option>
-<option value="19">19</option>
-<option value="20">20</option>
-<option value="21">21</option>
-<option value="22">22</option>
-<option value="23">23</option>
-<option value="24">24</option>
-<option value="25">25</option>
-<option value="26">26</option>
-<option value="27">27</option>
-<option value="28">28</option>
-<option value="29">29</option>
-<option value="30">30</option>
-<option value="31">31</option>
-<option value="32">32</option>
-<option value="33">33</option>
-<option value="34">34</option>
-<option value="35">35</option>
-<option value="36">36</option>
-<option value="37">37</option>
-<option value="38">38</option>
-<option value="39">39</option>
-<option value="40">40</option>
-<option value="41">41</option>
-<option value="42">42</option>
-<option value="43">43</option>
-<option value="44">44</option>
-<option value="45">45</option>
-<option value="46">46</option>
-<option value="47">47</option>
-<option value="48">48</option>
-<option value="49">49</option>
-<option value="50">50</option>
-<option value="51">51</option>
-<option value="52">52</option>
-<option value="53">53</option>
-<option value="54">54</option>
-<option value="55">55</option>
-<option value="56">56</option>
-<option value="57">57</option>
-<option value="58">58</option>
-<option value="59">59</option>',
-        'default' => '<option value="00">00</option>
-<option value="01">01</option>
-<option value="02">02</option>
-<option value="03">03</option>
-<option value="04">04</option>
-<option value="05">05</option>
-<option value="06">06</option>
-<option value="07">07</option>
-<option value="08">08</option>
-<option value="09">09</option>
-<option value="10">10</option>
-<option value="11" selected="selected">11</option>
-<option value="12">12</option>
-<option value="13">13</option>
-<option value="14">14</option>
-<option value="15">15</option>
-<option value="16">16</option>
-<option value="17">17</option>
-<option value="18">18</option>
-<option value="19">19</option>
-<option value="20">20</option>
-<option value="21">21</option>
-<option value="22">22</option>
-<option value="23">23</option>
-<option value="24">24</option>
-<option value="25">25</option>
-<option value="26">26</option>
-<option value="27">27</option>
-<option value="28">28</option>
-<option value="29">29</option>
-<option value="30">30</option>
-<option value="31">31</option>
-<option value="32">32</option>
-<option value="33">33</option>
-<option value="34">34</option>
-<option value="35">35</option>
-<option value="36">36</option>
-<option value="37">37</option>
-<option value="38">38</option>
-<option value="39">39</option>
-<option value="40">40</option>
-<option value="41">41</option>
-<option value="42">42</option>
-<option value="43">43</option>
-<option value="44">44</option>
-<option value="45">45</option>
-<option value="46">46</option>
-<option value="47">47</option>
-<option value="48">48</option>
-<option value="49">49</option>
-<option value="50">50</option>
-<option value="51">51</option>
-<option value="52">52</option>
-<option value="53">53</option>
-<option value="54">54</option>
-<option value="55">55</option>
-<option value="56">56</option>
-<option value="57">57</option>
-<option value="58">58</option>
-<option value="59">59</option>',
-        '30' => '<option value="00" selected="selected">00</option>
-<option value="30">30</option>',
-        '15' => '<option value="00" selected="selected">00</option>
-<option value="15">15</option>
-<option value="30">30</option>
-<option value="45">45</option>',
-        '10' => '<option value="00">00</option>
-<option value="10" selected="selected">10</option>
-<option value="20">20</option>
-<option value="30">30</option>
-<option value="40">40</option>
-<option value="50">50</option>',
-        '5' => '<option value="00">00</option>
-<option value="05">05</option>
-<option value="10" selected="selected">10</option>
-<option value="15">15</option>
-<option value="20">20</option>
-<option value="25">25</option>
-<option value="30">30</option>
-<option value="35">35</option>
-<option value="40">40</option>
-<option value="45">45</option>
-<option value="50">50</option>
-<option value="55">55</option>',
-        'format_%03d' => '<option value="00">000</option>
-<option value="01">001</option>
-<option value="02">002</option>
-<option value="03">003</option>
-<option value="04">004</option>
-<option value="05">005</option>
-<option value="06">006</option>
-<option value="07">007</option>
-<option value="08">008</option>
-<option value="09">009</option>
-<option value="10">010</option>
-<option value="11" selected="selected">011</option>
-<option value="12">012</option>
-<option value="13">013</option>
-<option value="14">014</option>
-<option value="15">015</option>
-<option value="16">016</option>
-<option value="17">017</option>
-<option value="18">018</option>
-<option value="19">019</option>
-<option value="20">020</option>
-<option value="21">021</option>
-<option value="22">022</option>
-<option value="23">023</option>
-<option value="24">024</option>
-<option value="25">025</option>
-<option value="26">026</option>
-<option value="27">027</option>
-<option value="28">028</option>
-<option value="29">029</option>
-<option value="30">030</option>
-<option value="31">031</option>
-<option value="32">032</option>
-<option value="33">033</option>
-<option value="34">034</option>
-<option value="35">035</option>
-<option value="36">036</option>
-<option value="37">037</option>
-<option value="38">038</option>
-<option value="39">039</option>
-<option value="40">040</option>
-<option value="41">041</option>
-<option value="42">042</option>
-<option value="43">043</option>
-<option value="44">044</option>
-<option value="45">045</option>
-<option value="46">046</option>
-<option value="47">047</option>
-<option value="48">048</option>
-<option value="49">049</option>
-<option value="50">050</option>
-<option value="51">051</option>
-<option value="52">052</option>
-<option value="53">053</option>
-<option value="54">054</option>
-<option value="55">055</option>
-<option value="56">056</option>
-<option value="57">057</option>
-<option value="58">058</option>
-<option value="59">059</option>',
-        'format_value_%03d' => '<option value="000">00</option>
-<option value="001">01</option>
-<option value="002">02</option>
-<option value="003">03</option>
-<option value="004">04</option>
-<option value="005">05</option>
-<option value="006">06</option>
-<option value="007">07</option>
-<option value="008">08</option>
-<option value="009">09</option>
-<option value="010">10</option>
-<option value="011" selected="selected">11</option>
-<option value="012">12</option>
-<option value="013">13</option>
-<option value="014">14</option>
-<option value="015">15</option>
-<option value="016">16</option>
-<option value="017">17</option>
-<option value="018">18</option>
-<option value="019">19</option>
-<option value="020">20</option>
-<option value="021">21</option>
-<option value="022">22</option>
-<option value="023">23</option>
-<option value="024">24</option>
-<option value="025">25</option>
-<option value="026">26</option>
-<option value="027">27</option>
-<option value="028">28</option>
-<option value="029">29</option>
-<option value="030">30</option>
-<option value="031">31</option>
-<option value="032">32</option>
-<option value="033">33</option>
-<option value="034">34</option>
-<option value="035">35</option>
-<option value="036">36</option>
-<option value="037">37</option>
-<option value="038">38</option>
-<option value="039">39</option>
-<option value="040">40</option>
-<option value="041">41</option>
-<option value="042">42</option>
-<option value="043">43</option>
-<option value="044">44</option>
-<option value="045">45</option>
-<option value="046">46</option>
-<option value="047">47</option>
-<option value="048">48</option>
-<option value="049">49</option>
-<option value="050">50</option>
-<option value="051">51</option>
-<option value="052">52</option>
-<option value="053">53</option>
-<option value="054">54</option>
-<option value="055">55</option>
-<option value="056">56</option>
-<option value="057">57</option>
-<option value="058">58</option>
-<option value="059">59</option>',
-    );
-    protected $meridians = array(
-        'default' => '<option value="am">AM</option>
-<option value="pm" selected="selected">PM</option>',
-    );
-
-    public function testDefault()
-    {
-        $n = "\n";
-        $result = '<select name="Time_Hour">'.$n. $this->hours['default'] .$n.'</select>'
-            .$n.'<select name="Time_Minute">'.$n. $this->minutes['default'] .$n.'</select>'
-            .$n.'<select name="Time_Second">'.$n. $this->seconds['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $this->now .'}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testPrefix()
-    {
-        $n = "\n";
-        $result = '<select name="foobar_Hour">'.$n. $this->hours['default'] .$n.'</select>'
-            .$n.'<select name="foobar_Minute">'.$n. $this->minutes['default'] .$n.'</select>'
-            .$n.'<select name="foobar_Second">'.$n. $this->seconds['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $this->now .' prefix="foobar_"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testFieldArray()
-    {
-        $n = "\n";
-        $result = '<select name="namorized[Time_Hour]">'.$n. $this->hours['default'] .$n.'</select>'
-            .$n.'<select name="namorized[Time_Minute]">'.$n. $this->minutes['default'] .$n.'</select>'
-            .$n.'<select name="namorized[Time_Second]">'.$n. $this->seconds['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $this->now .' field_array="namorized"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="namorized[foobar_Hour]">'.$n. $this->hours['default'] .$n.'</select>'
-            .$n.'<select name="namorized[foobar_Minute]">'.$n. $this->minutes['default'] .$n.'</select>'
-            .$n.'<select name="namorized[foobar_Second]">'.$n. $this->seconds['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $this->now .' field_array="namorized" prefix="foobar_"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testExtra()
-    {
-        $n = "\n";
-        $result = '<select name="Time_Hour" data-foo="xy">'.$n. $this->hours['default'] .$n.'</select>'
-            .$n.'<select name="Time_Minute" data-foo="xy">'.$n. $this->minutes['default'] .$n.'</select>'
-            .$n.'<select name="Time_Second" data-foo="xy">'.$n. $this->seconds['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $this->now .' all_extra="data-foo=\"xy\""}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="Time_Hour" data-foo="hour">'.$n. $this->hours['default'] .$n.'</select>'
-            .$n.'<select name="Time_Minute" data-foo="minute">'.$n. $this->minutes['default'] .$n.'</select>'
-            .$n.'<select name="Time_Second" data-foo="second">'.$n. $this->seconds['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $this->now .' hour_extra="data-foo=\"hour\"" minute_extra="data-foo=\"minute\"" second_extra="data-foo=\"second\""}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="Time_Hour" data_foo="foo">'.$n. $this->hours['default'] .$n.'</select>'
-            .$n.'<select name="Time_Minute" data_foo="foo">'.$n. $this->minutes['default'] .$n.'</select>'
-            .$n.'<select name="Time_Second" data_foo="foo">'.$n. $this->seconds['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $this->now .' data_foo="foo"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testFieldSeparator()
-    {
-        $n = "\n";
-        $result = '<select name="Time_Hour">'.$n. $this->hours['default'] .$n.'</select>'
-            .' - <select name="Time_Minute">'.$n. $this->minutes['default'] .$n.'</select>'
-            .' - <select name="Time_Second">'.$n. $this->seconds['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $this->now .' field_separator=" - "}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testEmpty()
-    {
-        $n = "\n";
-        $result = '<select name="Time_Hour">'.$n.'<option value=""></option>'.$n. $this->hours['default'] .$n.'</select>'
-            .$n.'<select name="Time_Minute">'.$n.'<option value=""></option>'.$n. $this->minutes['default'] .$n.'</select>'
-            .$n.'<select name="Time_Second">'.$n.'<option value=""></option>'.$n. $this->seconds['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $this->now .' all_empty=""}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="Time_Hour">'.$n.'<option value="">all</option>'.$n. $this->hours['default'] .$n.'</select>'
-            .$n.'<select name="Time_Minute">'.$n.'<option value="">all</option>'.$n. $this->minutes['default'] .$n.'</select>'
-            .$n.'<select name="Time_Second">'.$n.'<option value="">all</option>'.$n. $this->seconds['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $this->now .' all_empty="all"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="Time_Hour">'.$n. $this->hours['default'] .$n.'</select>'
-            .$n.'<select name="Time_Minute">'.$n. $this->minutes['default'] .$n.'</select>'
-            .$n.'<select name="Time_Second">'.$n.'<option value=""></option>'.$n. $this->seconds['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $this->now .' second_empty=""}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="Time_Hour">'.$n.'<option value="">hour</option>'.$n. $this->hours['default'] .$n.'</select>'
-            .$n.'<select name="Time_Minute">'.$n.'<option value="">minute</option>'.$n. $this->minutes['default'] .$n.'</select>'
-            .$n.'<select name="Time_Second">'.$n.'<option value="">second</option>'.$n. $this->seconds['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $this->now .' hour_empty="hour" minute_empty="minute" second_empty="second"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testEmptyUnset()
-    {
-        $n = "\n";
-        $result = '<select name="Time_Hour">'.$n.'<option value=""></option>'.$n. $this->hours['none'] .$n.'</select>'
-            .$n.'<select name="Time_Minute">'.$n.'<option value=""></option>'.$n. $this->minutes['none'] .$n.'</select>'
-            .$n.'<select name="Time_Second">'.$n.'<option value=""></option>'.$n. $this->seconds['none'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time=null all_empty=""}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="Time_Hour">'.$n.'<option value="">all</option>'.$n. $this->hours['none'] .$n.'</select>'
-            .$n.'<select name="Time_Minute">'.$n.'<option value="">all</option>'.$n. $this->minutes['none'] .$n.'</select>'
-            .$n.'<select name="Time_Second">'.$n.'<option value="">all</option>'.$n. $this->seconds['none'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time=null all_empty="all"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="Time_Hour">'.$n. $this->hours['none'] .$n.'</select>'
-            .$n.'<select name="Time_Minute">'.$n. $this->minutes['none'] .$n.'</select>'
-            .$n.'<select name="Time_Second">'.$n.'<option value=""></option>'.$n. $this->seconds['none'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time=null second_empty=""}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="Time_Hour">'.$n.'<option value="">hour</option>'.$n. $this->hours['none'] .$n.'</select>'
-            .$n.'<select name="Time_Minute">'.$n.'<option value="">minute</option>'.$n. $this->minutes['none'] .$n.'</select>'
-            .$n.'<select name="Time_Second">'.$n.'<option value="">second</option>'.$n. $this->seconds['none'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time=null hour_empty="hour" minute_empty="minute" second_empty="second"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testId()
-    {
-        $n = "\n";
-        $result = '<select name="Time_Hour" id="Time_Hour">'.$n. $this->hours['default'] .$n.'</select>'
-            .$n.'<select name="Time_Minute" id="Time_Minute">'.$n. $this->minutes['default'] .$n.'</select>'
-            .$n.'<select name="Time_Second" id="Time_Second">'.$n. $this->seconds['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $this->now .' all_id=""}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="Time_Hour" id="all-Time_Hour">'.$n. $this->hours['default'] .$n.'</select>'
-            .$n.'<select name="Time_Minute" id="all-Time_Minute">'.$n. $this->minutes['default'] .$n.'</select>'
-            .$n.'<select name="Time_Second" id="all-Time_Second">'.$n. $this->seconds['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $this->now .' all_id="all-"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="Time_Hour" id="hour">'.$n. $this->hours['default'] .$n.'</select>'
-            .$n.'<select name="Time_Minute" id="minute">'.$n. $this->minutes['default'] .$n.'</select>'
-            .$n.'<select name="Time_Second" id="second">'.$n. $this->seconds['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $this->now .' hour_id="hour" minute_id="minute" second_id="second"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testDisplay()
-    {
-        $n = "\n";
-        $result = '<select name="Time_Hour">'.$n. $this->hours['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $this->now .' display_minutes=false display_seconds=false}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="Time_Minute">'.$n. $this->minutes['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $this->now .' display_hours=false display_seconds=false}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="Time_Second">'.$n. $this->seconds['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $this->now .' display_hours=false display_minutes=false}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testMeridian()
-    {
-        $n = "\n";
-        $result = '<select name="Time_Hour">'.$n. $this->hours['12h'] .$n.'</select>'
-            .$n.'<select name="Time_Minute">'.$n. $this->minutes['default'] .$n.'</select>'
-            .$n.'<select name="Time_Second">'.$n. $this->seconds['default'] .$n.'</select>'
-            .$n.'<select name="Time_Meridian">'.$n. $this->meridians['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $this->now .' use_24_hours=false}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $n = "\n";
-        $result = '<select name="Time_Hour">'.$n. $this->hours['12h'] .$n.'</select>'
-            .$n.'<select name="Time_Minute">'.$n. $this->minutes['default'] .$n.'</select>'
-            .$n.'<select name="Time_Second">'.$n. $this->seconds['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $this->now .' use_24_hours=false display_meridian=false}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $time = mktime( 0, 15, 11, 2, 20, 2011 );
-        $result = '<select name="Time_Hour">'.$n. '<option value="01">01</option>
-<option value="02">02</option>
-<option value="03">03</option>
-<option value="04">04</option>
-<option value="05">05</option>
-<option value="06">06</option>
-<option value="07">07</option>
-<option value="08">08</option>
-<option value="09">09</option>
-<option value="10">10</option>
-<option value="11">11</option>
-<option value="12" selected="selected">12</option>
-</select>
-<select name="Time_Meridian">
-<option value="am" selected="selected">AM</option>
-<option value="pm">PM</option>
-</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $time .' use_24_hours=false display_minutes=false display_seconds=false}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $time = mktime( 4, 15, 11, 2, 20, 2011 );
-        $result = '<select name="Time_Hour">'.$n. '<option value="01">01</option>
-<option value="02">02</option>
-<option value="03">03</option>
-<option value="04" selected="selected">04</option>
-<option value="05">05</option>
-<option value="06">06</option>
-<option value="07">07</option>
-<option value="08">08</option>
-<option value="09">09</option>
-<option value="10">10</option>
-<option value="11">11</option>
-<option value="12">12</option>
-</select>
-<select name="Time_Meridian">
-<option value="am" selected="selected">AM</option>
-<option value="pm">PM</option>
-</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $time .' use_24_hours=false display_minutes=false display_seconds=false}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $time = mktime( 12, 15, 11, 2, 20, 2011 );
-        $result = '<select name="Time_Hour">'.$n. '<option value="01">01</option>
-<option value="02">02</option>
-<option value="03">03</option>
-<option value="04">04</option>
-<option value="05">05</option>
-<option value="06">06</option>
-<option value="07">07</option>
-<option value="08">08</option>
-<option value="09">09</option>
-<option value="10">10</option>
-<option value="11">11</option>
-<option value="12" selected="selected">12</option>
-</select>
-<select name="Time_Meridian">
-<option value="am">AM</option>
-<option value="pm" selected="selected">PM</option>
-</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $time .' use_24_hours=false display_minutes=false display_seconds=false}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $time = mktime( 16, 15, 11, 2, 20, 2011 );
-        $result = '<select name="Time_Hour">'.$n. '<option value="01">01</option>
-<option value="02">02</option>
-<option value="03">03</option>
-<option value="04" selected="selected">04</option>
-<option value="05">05</option>
-<option value="06">06</option>
-<option value="07">07</option>
-<option value="08">08</option>
-<option value="09">09</option>
-<option value="10">10</option>
-<option value="11">11</option>
-<option value="12">12</option>
-</select>
-<select name="Time_Meridian">
-<option value="am">AM</option>
-<option value="pm" selected="selected">PM</option>
-</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $time .' use_24_hours=false display_minutes=false display_seconds=false}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testMinuteInterval()
-    {
-        $n = "\n";
-        $result = '<select name="Time_Hour">'.$n. $this->hours['default'] .$n.'</select>'
-            .$n.'<select name="Time_Minute">'.$n. $this->minutes['30'] .$n.'</select>'
-            .$n.'<select name="Time_Second">'.$n. $this->seconds['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $this->now .' minute_interval=30}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="Time_Hour">'.$n. $this->hours['default'] .$n.'</select>'
-            .$n.'<select name="Time_Minute">'.$n. $this->minutes['15'] .$n.'</select>'
-            .$n.'<select name="Time_Second">'.$n. $this->seconds['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $this->now .' minute_interval=15}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="Time_Hour">'.$n. $this->hours['default'] .$n.'</select>'
-            .$n.'<select name="Time_Minute">'.$n. $this->minutes['10'] .$n.'</select>'
-            .$n.'<select name="Time_Second">'.$n. $this->seconds['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $this->now .' minute_interval=10}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="Time_Hour">'.$n. $this->hours['default'] .$n.'</select>'
-            .$n.'<select name="Time_Minute">'.$n. $this->minutes['5'] .$n.'</select>'
-            .$n.'<select name="Time_Second">'.$n. $this->seconds['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $this->now .' minute_interval=5}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testSecondInterval()
-    {
-        $n = "\n";
-        $result = '<select name="Time_Hour">'.$n. $this->hours['default'] .$n.'</select>'
-            .$n.'<select name="Time_Minute">'.$n. $this->minutes['default'] .$n.'</select>'
-            .$n.'<select name="Time_Second">'.$n. $this->seconds['30'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $this->now .' second_interval=30}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="Time_Hour">'.$n. $this->hours['default'] .$n.'</select>'
-            .$n.'<select name="Time_Minute">'.$n. $this->minutes['default'] .$n.'</select>'
-            .$n.'<select name="Time_Second">'.$n. $this->seconds['15'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $this->now .' second_interval=15}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="Time_Hour">'.$n. $this->hours['default'] .$n.'</select>'
-            .$n.'<select name="Time_Minute">'.$n. $this->minutes['default'] .$n.'</select>'
-            .$n.'<select name="Time_Second">'.$n. $this->seconds['10'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $this->now .' second_interval=10}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="Time_Hour">'.$n. $this->hours['default'] .$n.'</select>'
-            .$n.'<select name="Time_Minute">'.$n. $this->minutes['default'] .$n.'</select>'
-            .$n.'<select name="Time_Second">'.$n. $this->seconds['5'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $this->now .' second_interval=5}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testFormat()
-    {
-        $n = "\n";
-        $result = '<select name="Time_Hour">'.$n. $this->hours['format_%03d'] .$n.'</select>'
-            .$n.'<select name="Time_Minute">'.$n. $this->minutes['default'] .$n.'</select>'
-            .$n.'<select name="Time_Second">'.$n. $this->seconds['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $this->now .' hour_format="%03d"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="Time_Hour">'.$n. $this->hours['default'] .$n.'</select>'
-            .$n.'<select name="Time_Minute">'.$n. $this->minutes['format_%03d'] .$n.'</select>'
-            .$n.'<select name="Time_Second">'.$n. $this->seconds['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $this->now .' minute_format="%03d"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="Time_Hour">'.$n. $this->hours['default'] .$n.'</select>'
-            .$n.'<select name="Time_Minute">'.$n. $this->minutes['default'] .$n.'</select>'
-            .$n.'<select name="Time_Second">'.$n. $this->seconds['format_%03d'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $this->now .' second_format="%03d"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testValueFormat()
-    {
-        $n = "\n";
-        $result = '<select name="Time_Hour">'.$n. $this->hours['format_value_%03d'] .$n.'</select>'
-            .$n.'<select name="Time_Minute">'.$n. $this->minutes['default'] .$n.'</select>'
-            .$n.'<select name="Time_Second">'.$n. $this->seconds['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $this->now .' hour_value_format="%03d"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="Time_Hour">'.$n. $this->hours['default'] .$n.'</select>'
-            .$n.'<select name="Time_Minute">'.$n. $this->minutes['format_value_%03d'] .$n.'</select>'
-            .$n.'<select name="Time_Second">'.$n. $this->seconds['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $this->now .' minute_value_format="%03d"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="Time_Hour">'.$n. $this->hours['default'] .$n.'</select>'
-            .$n.'<select name="Time_Minute">'.$n. $this->minutes['default'] .$n.'</select>'
-            .$n.'<select name="Time_Second">'.$n. $this->seconds['format_value_%03d'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time='. $this->now .' second_value_format="%03d"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testTimeArray()
-    {
-        $n = "\n";
-        $result = '<select name="namorized[foobar_Hour]">'.$n. $this->hours['default'] .$n.'</select>'
-            .$n.'<select name="namorized[foobar_Minute]">'.$n. $this->minutes['default'] .$n.'</select>'
-            .$n.'<select name="namorized[foobar_Second]">'.$n. $this->seconds['default'] .$n.'</select>';
-
-        $time_array = array(
-            'namorized' => array(
-                'foobar_Hour' => '16',
-                'foobar_Minute' => '15',
-                'foobar_Second' => '11',
-            ),
-        );
-
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time=$time_array.namorized field_array="namorized" prefix="foobar_"}');
-        $tpl->assign('time_array', $time_array);
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time=$time_array field_array="namorized" prefix="foobar_"}');
-        $tpl->assign('time_array', $time_array);
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testTimeArrayMerdidian()
-    {
-        $n = "\n";
-        $result = '<select name="namorized[foobar_Hour]">'.$n. $this->hours['12h'] .$n.'</select>'
-            .$n.'<select name="namorized[foobar_Minute]">'.$n. $this->minutes['default'] .$n.'</select>'
-            .$n.'<select name="namorized[foobar_Second]">'.$n. $this->seconds['default'] .$n.'</select>'
-            .$n.'<select name="namorized[foobar_Meridian]">'.$n. $this->meridians['default'] .$n.'</select>';
-
-        $time_array = array(
-            'namorized' => array(
-                'foobar_Hour' => '04',
-                'foobar_Minute' => '15',
-                'foobar_Second' => '11',
-                'foobar_Meridian' => 'pm',
-            ),
-        );
-
-        $tpl = $this->smarty->createTemplate('eval:{html_select_time time=$time_array use_24_hours=false field_array="namorized" prefix="foobar_"}');
-        $tpl->assign('time_array', $time_array);
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

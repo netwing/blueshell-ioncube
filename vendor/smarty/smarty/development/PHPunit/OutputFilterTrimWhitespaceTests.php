@@ -1,52 +1,35 @@
-<?php
-/**
-* Smarty PHPunit tests for PHP resources
-*
-* @package PHPunit
-* @author Uwe Tews
-*/
-
-/**
-* class for PHP resource tests
-*/
-class OutputFilterTrimWhitespaceTests extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $this->smarty = SmartyTests::$smarty;
-        SmartyTests::init();
-        $this->smarty->clearAllCache();
-        $this->smarty->clearCompiledTemplate();
-        $this->smarty->loadFilter('output', 'trimwhitespace');
-    }
-
-    static function isRunnable()
-    {
-        return true;
-    }
-
-    public function testWhitespace()
-    {
-        $expected = <<<EOT
-<!DOCTYPE html> <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de"> <head> <meta charset="utf-8" /> <meta http-equiv="content-type" content="text/html; charset=utf-8" /> <title>whitespace</title> <meta name="title" content="" /> <meta name="description" content="" /> <link rel="stylesheet" type="text/css" href="screen.css" /> </head> <body> <!--[if lte IE 6]>internet explorer conditional comment<![endif]--> <!--[if lte IE 7]>internet explorer conditional comment<![endif]--> <div class="  asdasd   " id='not' data-one = " " style=" " title=' ' ></div> <img src="foo" alt="" /> <script type="text/javascript">
-        foobar
-    </script> <script>
-        foobar
-    </script> <pre id="foobar">
-        foobar
-    </pre> <pre>
-        foobar
-    </pre> <p> <textarea name="foobar">
-        foobar
-    </textarea> </p> </body> </html>
-EOT;
-
-        $this->assertEquals($expected, $this->smarty->fetch('whitespace.tpl'));
-    }
-
-    public function teardown()
-    {
-        $this->smarty->clearAllCache();
-        $this->smarty->clearCompiledTemplate();
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

@@ -1,76 +1,40 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\Finder\Iterator;
-
-/**
- * FilecontentFilterIterator filters files by their contents using patterns (regexps or strings).
- *
- * @author Fabien Potencier  <fabien@symfony.com>
- * @author Włodzimierz Gajda <gajdaw@gajdaw.pl>
- */
-class FilecontentFilterIterator extends MultiplePcreFilterIterator
-{
-    /**
-     * Filters the iterator values.
-     *
-     * @return Boolean true if the value should be kept, false otherwise
-     */
-    public function accept()
-    {
-        if (!$this->matchRegexps && !$this->noMatchRegexps) {
-            return true;
-        }
-
-        $fileinfo = $this->current();
-
-        if ($fileinfo->isDir() || !$fileinfo->isReadable()) {
-            return false;
-        }
-
-        $content = $fileinfo->getContents();
-        if (!$content) {
-            return false;
-        }
-
-        // should at least not match one rule to exclude
-        foreach ($this->noMatchRegexps as $regex) {
-            if (preg_match($regex, $content)) {
-                return false;
-            }
-        }
-
-        // should at least match one rule
-        $match = true;
-        if ($this->matchRegexps) {
-            $match = false;
-            foreach ($this->matchRegexps as $regex) {
-                if (preg_match($regex, $content)) {
-                    return true;
-                }
-            }
-        }
-
-        return $match;
-    }
-
-    /**
-     * Converts string to regexp if necessary.
-     *
-     * @param string $str Pattern: string or regexp
-     *
-     * @return string regexp corresponding to a given string or regexp
-     */
-    protected function toRegex($str)
-    {
-        return $this->isRegex($str) ? $str : '/'.preg_quote($str, '/').'/';
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

@@ -1,75 +1,44 @@
-<?php
-
-/*
- * This file is part of SwiftMailer.
- * (c) 2004-2009 Chris Corbyn
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-/**
- * Does real time reporting of pass/fail for each recipient.
- *
- * @package    Swift
- * @subpackage Plugins
- * @author     Chris Corbyn
- */
-class Swift_Plugins_ReporterPlugin implements Swift_Events_SendListener
-{
-    /**
-     * The reporter backend which takes notifications.
-     *
-     * @var Swift_Plugin_Reporter
-     */
-    private $_reporter;
-
-    /**
-     * Create a new ReporterPlugin using $reporter.
-     *
-     * @param Swift_Plugins_Reporter $reporter
-     */
-    public function __construct(Swift_Plugins_Reporter $reporter)
-    {
-        $this->_reporter = $reporter;
-    }
-
-    /**
-     * Not used.
-     */
-    public function beforeSendPerformed(Swift_Events_SendEvent $evt)
-    {
-    }
-
-    /**
-     * Invoked immediately after the Message is sent.
-     *
-     * @param Swift_Events_SendEvent $evt
-     */
-    public function sendPerformed(Swift_Events_SendEvent $evt)
-    {
-        $message = $evt->getMessage();
-        $failures = array_flip($evt->getFailedRecipients());
-        foreach ((array) $message->getTo() as $address => $null) {
-            $this->_reporter->notify(
-                $message, $address, (array_key_exists($address, $failures)
-                ? Swift_Plugins_Reporter::RESULT_FAIL
-                : Swift_Plugins_Reporter::RESULT_PASS)
-                );
-        }
-        foreach ((array) $message->getCc() as $address => $null) {
-            $this->_reporter->notify(
-                $message, $address, (array_key_exists($address, $failures)
-                ? Swift_Plugins_Reporter::RESULT_FAIL
-                : Swift_Plugins_Reporter::RESULT_PASS)
-                );
-        }
-        foreach ((array) $message->getBcc() as $address => $null) {
-            $this->_reporter->notify(
-                $message, $address, (array_key_exists($address, $failures)
-                ? Swift_Plugins_Reporter::RESULT_FAIL
-                : Swift_Plugins_Reporter::RESULT_PASS)
-                );
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

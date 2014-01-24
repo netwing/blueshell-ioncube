@@ -1,74 +1,37 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\Finder\Tests\Iterator;
-
-use Symfony\Component\Finder\Iterator\DateRangeFilterIterator;
-use Symfony\Component\Finder\Comparator\DateComparator;
-
-class DateRangeFilterIteratorTest extends RealIteratorTestCase
-{
-    /**
-     * @dataProvider getAcceptData
-     */
-    public function testAccept($size, $expected)
-    {
-        $inner = new Iterator(self::$files);
-
-        $iterator = new DateRangeFilterIterator($inner, $size);
-
-        $this->assertIterator($expected, $iterator);
-    }
-
-    public function getAcceptData()
-    {
-        $since20YearsAgo = array(
-            '.git',
-            'test.py',
-            'foo',
-            'foo/bar.tmp',
-            'test.php',
-            'toto',
-            '.bar',
-            '.foo',
-            '.foo/.bar',
-            'foo bar',
-            '.foo/bar',
-        );
-
-        $since2MonthsAgo = array(
-            '.git',
-            'test.py',
-            'foo',
-            'toto',
-            '.bar',
-            '.foo',
-            '.foo/.bar',
-            'foo bar',
-            '.foo/bar',
-        );
-
-        $untilLastMonth = array(
-            '.git',
-            'foo',
-            'foo/bar.tmp',
-            'test.php',
-            'toto',
-            '.foo',
-        );
-
-        return array(
-            array(array(new DateComparator('since 20 years ago')), $this->toAbsolute($since20YearsAgo)),
-            array(array(new DateComparator('since 2 months ago')), $this->toAbsolute($since2MonthsAgo)),
-            array(array(new DateComparator('until last month')), $this->toAbsolute($untilLastMonth)),
-        );
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+0EAob4GtX0==

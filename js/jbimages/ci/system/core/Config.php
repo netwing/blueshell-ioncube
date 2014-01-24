@@ -1,379 +1,128 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/**
- * CodeIgniter
- *
- * An open source application development framework for PHP 5.1.6 or newer
- *
- * @package		CodeIgniter
- * @author		ExpressionEngine Dev Team
- * @copyright	Copyright (c) 2008 - 2011, EllisLab, Inc.
- * @license		http://codeigniter.com/user_guide/license.html
- * @link		http://codeigniter.com
- * @since		Version 1.0
- * @filesource
- */
-
-// ------------------------------------------------------------------------
-
-/**
- * CodeIgniter Config Class
- *
- * This class contains functions that enable config files to be managed
- *
- * @package		CodeIgniter
- * @subpackage	Libraries
- * @category	Libraries
- * @author		ExpressionEngine Dev Team
- * @link		http://codeigniter.com/user_guide/libraries/config.html
- */
-class CI_Config {
-
-	/**
-	 * List of all loaded config values
-	 *
-	 * @var array
-	 */
-	var $config = array();
-	/**
-	 * List of all loaded config files
-	 *
-	 * @var array
-	 */
-	var $is_loaded = array();
-	/**
-	 * List of paths to search when trying to load a config file
-	 *
-	 * @var array
-	 */
-	var $_config_paths = array(APPPATH);
-
-	/**
-	 * Constructor
-	 *
-	 * Sets the $config data from the primary config.php file as a class variable
-	 *
-	 * @access   public
-	 * @param   string	the config file name
-	 * @param   boolean  if configuration values should be loaded into their own section
-	 * @param   boolean  true if errors should just return false, false if an error message should be displayed
-	 * @return  boolean  if the file was successfully loaded or not
-	 */
-	function __construct()
-	{
-		$this->config =& get_config();
-		log_message('debug', "Config Class Initialized");
-
-		// Set the base_url automatically if none was provided
-		if ($this->config['base_url'] == '')
-		{
-			if (isset($_SERVER['HTTP_HOST']))
-			{
-				$base_url = isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) !== 'off' ? 'https' : 'http';
-				$base_url .= '://'. $_SERVER['HTTP_HOST'];
-				$base_url .= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
-			}
-
-			else
-			{
-				$base_url = 'http://localhost/';
-			}
-
-			$this->set_item('base_url', $base_url);
-		}
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * Load Config File
-	 *
-	 * @access	public
-	 * @param	string	the config file name
-	 * @param   boolean  if configuration values should be loaded into their own section
-	 * @param   boolean  true if errors should just return false, false if an error message should be displayed
-	 * @return	boolean	if the file was loaded correctly
-	 */
-	function load($file = '', $use_sections = FALSE, $fail_gracefully = FALSE)
-	{
-		$file = ($file == '') ? 'config' : str_replace('.php', '', $file);
-		$found = FALSE;
-		$loaded = FALSE;
-
-		$check_locations = defined('ENVIRONMENT')
-			? array(ENVIRONMENT.'/'.$file, $file)
-			: array($file);
-
-		foreach ($this->_config_paths as $path)
-		{
-			foreach ($check_locations as $location)
-			{
-				$file_path = $path.'config/'.$location.'.php';
-
-				if (in_array($file_path, $this->is_loaded, TRUE))
-				{
-					$loaded = TRUE;
-					continue 2;
-				}
-
-				if (file_exists($file_path))
-				{
-					$found = TRUE;
-					break;
-				}
-			}
-
-			if ($found === FALSE)
-			{
-				continue;
-			}
-
-			include($file_path);
-
-			if ( ! isset($config) OR ! is_array($config))
-			{
-				if ($fail_gracefully === TRUE)
-				{
-					return FALSE;
-				}
-				show_error('Your '.$file_path.' file does not appear to contain a valid configuration array.');
-			}
-
-			if ($use_sections === TRUE)
-			{
-				if (isset($this->config[$file]))
-				{
-					$this->config[$file] = array_merge($this->config[$file], $config);
-				}
-				else
-				{
-					$this->config[$file] = $config;
-				}
-			}
-			else
-			{
-				$this->config = array_merge($this->config, $config);
-			}
-
-			$this->is_loaded[] = $file_path;
-			unset($config);
-
-			$loaded = TRUE;
-			log_message('debug', 'Config file loaded: '.$file_path);
-			break;
-		}
-
-		if ($loaded === FALSE)
-		{
-			if ($fail_gracefully === TRUE)
-			{
-				return FALSE;
-			}
-			show_error('The configuration file '.$file.'.php does not exist.');
-		}
-
-		return TRUE;
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * Fetch a config file item
-	 *
-	 *
-	 * @access	public
-	 * @param	string	the config item name
-	 * @param	string	the index name
-	 * @param	bool
-	 * @return	string
-	 */
-	function item($item, $index = '')
-	{
-		if ($index == '')
-		{
-			if ( ! isset($this->config[$item]))
-			{
-				return FALSE;
-			}
-
-			$pref = $this->config[$item];
-		}
-		else
-		{
-			if ( ! isset($this->config[$index]))
-			{
-				return FALSE;
-			}
-
-			if ( ! isset($this->config[$index][$item]))
-			{
-				return FALSE;
-			}
-
-			$pref = $this->config[$index][$item];
-		}
-
-		return $pref;
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * Fetch a config file item - adds slash after item (if item is not empty)
-	 *
-	 * @access	public
-	 * @param	string	the config item name
-	 * @param	bool
-	 * @return	string
-	 */
-	function slash_item($item)
-	{
-		if ( ! isset($this->config[$item]))
-		{
-			return FALSE;
-		}
-		if( trim($this->config[$item]) == '')
-		{
-			return '';
-		}
-
-		return rtrim($this->config[$item], '/').'/';
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * Site URL
-	 * Returns base_url . index_page [. uri_string]
-	 *
-	 * @access	public
-	 * @param	string	the URI string
-	 * @return	string
-	 */
-	function site_url($uri = '')
-	{
-		if ($uri == '')
-		{
-			return $this->slash_item('base_url').$this->item('index_page');
-		}
-
-		if ($this->item('enable_query_strings') == FALSE)
-		{
-			$suffix = ($this->item('url_suffix') == FALSE) ? '' : $this->item('url_suffix');
-			return $this->slash_item('base_url').$this->slash_item('index_page').$this->_uri_string($uri).$suffix;
-		}
-		else
-		{
-			return $this->slash_item('base_url').$this->item('index_page').'?'.$this->_uri_string($uri);
-		}
-	}
-
-	// -------------------------------------------------------------
-
-	/**
-	 * Base URL
-	 * Returns base_url [. uri_string]
-	 *
-	 * @access public
-	 * @param string $uri
-	 * @return string
-	 */
-	function base_url($uri = '')
-	{
-		return $this->slash_item('base_url').ltrim($this->_uri_string($uri), '/');
-	}
-
-	// -------------------------------------------------------------
-
-	/**
-	 * Build URI string for use in Config::site_url() and Config::base_url()
-	 *
-	 * @access protected
-	 * @param  $uri
-	 * @return string
-	 */
-	protected function _uri_string($uri)
-	{
-		if ($this->item('enable_query_strings') == FALSE)
-		{
-			if (is_array($uri))
-			{
-				$uri = implode('/', $uri);
-			}
-			$uri = trim($uri, '/');
-		}
-		else
-		{
-			if (is_array($uri))
-			{
-				$i = 0;
-				$str = '';
-				foreach ($uri as $key => $val)
-				{
-					$prefix = ($i == 0) ? '' : '&';
-					$str .= $prefix.$key.'='.$val;
-					$i++;
-				}
-				$uri = $str;
-			}
-		}
-	    return $uri;
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * System URL
-	 *
-	 * @access	public
-	 * @return	string
-	 */
-	function system_url()
-	{
-		$x = explode("/", preg_replace("|/*(.+?)/*$|", "\\1", BASEPATH));
-		return $this->slash_item('base_url').end($x).'/';
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * Set a config file item
-	 *
-	 * @access	public
-	 * @param	string	the config item key
-	 * @param	string	the config item value
-	 * @return	void
-	 */
-	function set_item($item, $value)
-	{
-		$this->config[$item] = $value;
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * Assign to Config
-	 *
-	 * This function is called by the front controller (CodeIgniter.php)
-	 * after the Config class is instantiated.  It permits config items
-	 * to be assigned or overriden by variables contained in the index.php file
-	 *
-	 * @access	private
-	 * @param	array
-	 * @return	void
-	 */
-	function _assign_to_config($items = array())
-	{
-		if (is_array($items))
-		{
-			foreach ($items as $key => $val)
-			{
-				$this->set_item($key, $val);
-			}
-		}
-	}
-}
-
-// END CI_Config class
-
-/* End of file Config.php */
-/* Location: ./system/core/Config.php */
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+OW==

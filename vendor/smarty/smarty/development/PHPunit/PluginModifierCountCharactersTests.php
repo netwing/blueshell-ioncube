@@ -1,88 +1,51 @@
-<?php
-/**
-* Smarty PHPunit tests of modifier
-*
-* @package PHPunit
-* @author Rodney Rehm
-*/
-
-/**
-* class for modifier tests
-*/
-class PluginModifierCountCharactersTests extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $this->smarty = SmartyTests::$smarty;
-        SmartyTests::init();
-    }
-
-    static function isRunnable()
-    {
-        return true;
-    }
-
-    public function testDefault()
-    {
-        $result = "29";
-        $tpl = $this->smarty->createTemplate('eval:{"Cold Wave Linked to Temperatures."|count_characters}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testDefaultWithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $result = "29";
-        $tpl = $this->smarty->createTemplate('eval:{"Cold Wave Linked to Temperatures."|count_characters}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-        Smarty::$_MBSTRING = true;
-    }
-
-    public function testSpaces()
-    {
-        $result = "33";
-        $tpl = $this->smarty->createTemplate('eval:{"Cold Wave Linked to Temperatures."|count_characters:true}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testSpacesWithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $result = "33";
-        $tpl = $this->smarty->createTemplate('eval:{"Cold Wave Linked to Temperatures."|count_characters:true}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-        Smarty::$_MBSTRING = true;
-    }
-
-    public function testUmlauts()
-    {
-        $result = "29";
-        $tpl = $this->smarty->createTemplate('eval:{"Cold Wäve Linked tö Temperatures."|count_characters}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testUmlautsWithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $result = "29";
-        $tpl = $this->smarty->createTemplate('eval:{"Cold Wäve Linked tö Temperatures."|count_characters}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-        Smarty::$_MBSTRING = true;
-    }
-
-    public function testUmlautsSpaces()
-    {
-        $result = "33";
-        $tpl = $this->smarty->createTemplate('eval:{"Cold Wäve Linked tö Temperatures."|count_characters:true}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testUmlautsSpacesWithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $result = "33";
-        $tpl = $this->smarty->createTemplate('eval:{"Cold Wäve Linked tö Temperatures."|count_characters:true}');
-        $this->assertNotEquals($result, $this->smarty->fetch($tpl));
-        Smarty::$_MBSTRING = true;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

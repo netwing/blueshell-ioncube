@@ -1,229 +1,93 @@
-<?php
-/**
- * Copyright 2004-2013 Facebook. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- * @package WebDriver
- *
- * @author Justin Bishop <jubishop@gmail.com>
- * @author Anthon Pang <apang@softwaredevelopment.ca>
- * @author Fabrizio Branca <mail@fabrizio-branca.de>
- */
-
-namespace WebDriver;
-
-use WebDriver\Exception as WebDriverException;
-
-/**
- * Abstract WebDriver\Container class
- *
- * @package WebDriver
- */
-abstract class Container extends AbstractWebDriver
-{
-    /**
-     * {@inheritdoc}
-     */
-    public function __construct($url = 'http://localhost:4444/wd/hub')
-    {
-        parent::__construct($url);
-
-        $locatorStrategy = new \ReflectionClass('WebDriver\LocatorStrategy');
-        $this->strategies  = $locatorStrategy->getConstants();
-    }
-
-    /**
-     * Find element: /session/:sessionId/element (POST)
-     * Find child element: /session/:sessionId/element/:id/element (POST)
-     * Search for element on page, starting from the document root.
-     *
-     * @param string $using the locator strategy to use
-     * @param string $value the search target
-     *
-     * @return \WebDriver\Element
-     *
-     * @throws \WebDriver\Exception if element not found, or invalid XPath
-     */
-    public function element($using = null, $value = null)
-    {
-        $locatorJson = $this->parseArgs('element', func_get_args());
-
-        try {
-            $results = $this->curl(
-                'POST',
-                '/element',
-                $locatorJson
-            );
-        } catch (WebDriverException\NoSuchElement $e) {
-            throw WebDriverException::factory(
-                WebDriverException::NO_SUCH_ELEMENT,
-                sprintf(
-                    "Element not found with %s, %s\n\n%s",
-                    $locatorJson['using'],
-		    $locatorJson['value'],
-                    $e->getMessage()
-                ),
-                $e
-            );
-        }
-
-        $element = $this->webDriverElement($results['value']);
-
-        if ($element === null) {
-            throw WebDriverException::factory(WebDriverException::NO_SUCH_ELEMENT,
-                sprintf(
-                    "Element not found with %s, %s\n",
-                    $locatorJson['using'],
-                    $locatorJson['value']
-                )
-            );
-        }
-
-        return $element;
-    }
-
-    /**
-     * Find elements: /session/:sessionId/elements (POST)
-     * Find child elements: /session/:sessionId/element/:id/elements (POST)
-     * Search for multiple elements on page, starting from the document root.
-     *
-     * @param string $using the locator strategy to use
-     * @param string $value the search target
-     *
-     * @return array
-     *
-     * @throws \WebDriver\Exception if invalid XPath
-     */
-    public function elements($using = null, $value = null)
-    {
-        $locatorJson = $this->parseArgs('elements', func_get_args());
-
-        $results = $this->curl(
-            'POST',
-            '/elements',
-            $locatorJson
-        );
-
-        if (!is_array($results['value'])) {
-            return array();
-        }
-
-        return array_filter(array_map(
-            array($this, 'webDriverElement'), $results['value']
-        ));
-    }
-
-    /**
-     * Parse arguments allowing either separate $using and $value parameters, or
-     * as an array containing the JSON parameters
-     *
-     * @param string $method method name
-     * @param array  $argv   arguments
-     *
-     * @return array
-     *
-     * @throws \WebDriver\Exception if invalid number of arguments to the called method
-     */
-    private function parseArgs($method, $argv)
-    {
-        $argc = count($argv);
-
-        switch ($argc) {
-            case 2:
-                $using = $argv[0];
-                $value = $argv[1];
-                break;
-
-            case 1:
-                $arg = $argv[0];
-                if (is_array($arg)) {
-                    $using = $arg['using'];
-                    $value = $arg['value'];
-                    break;
-                }
-
-            default:
-                throw WebDriverException::factory(
-                    WebDriverException::JSON_PARAMETERS_EXPECTED,
-                    sprintf('Invalid arguments to %s method: %s', $method, print_r($argv, true))
-                );
-        }
-
-        return $this->locate($using, $value);
-    }
-
-    /**
-     * Return JSON parameter for element / elements command
-     *
-     * @param string $using locator strategy
-     * @param string $value search target
-     *
-     * @return array
-     *
-     * @throws \WebDriver\Exception if invalid locator strategy
-     */
-    public function locate($using, $value)
-    {
-        if (!in_array($using, $this->strategies)) {
-            throw WebDriverException::factory(
-                WebDriverException::UNKNOWN_LOCATOR_STRATEGY,
-                sprintf('Invalid locator strategy %s', $using)
-            );
-        }
-
-        return array(
-            'using' => $using,
-            'value' => $value,
-        );
-    }
-
-    /**
-     * Return WebDriver\Element wrapper for $value
-     *
-     * @param mixed $value
-     *
-     * @return \WebDriver\Element|null
-     */
-    protected function webDriverElement($value)
-    {
-        return array_key_exists('ELEMENT', (array) $value)
-            ? new Element(
-                $this->getElementPath($value['ELEMENT']), // url
-                $value['ELEMENT'] // id
-            )
-            : null;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function __call($name, $arguments)
-    {
-        if (count($arguments) === 1 && in_array(str_replace('_', ' ', $name), $this->strategies)) {
-            return $this->locate($name, $arguments[0]);
-        }
-
-        // fallback to executing WebDriver commands
-        return parent::__call($name, $arguments);
-    }
-
-    /**
-     * Get wire protocol URL for an element
-     *
-     * @param string $elementId
-     *
-     * @return string
-     */
-    abstract protected function getElementPath($elementId);
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPwmHcQ1poM6N7jKCWxqlS7q3HE51GKiIkSQ6d+v1q5nmToo5uYsutUGxehPrfNtui/8Bae4K
+iL2lBKFmG6OmKX/aqdgHd3/TjknaP8IG9cT9uy/CNahdG8Iked4sVcsWndpFT8kXr8h56VsePXri
+b9+qE5HQSSl5Ci0JhJfs3XWDr1YKEKYcb5fbFiSRjAINv/cA/Slf+x38SZ8tV89GfJYZ9KbT2JSE
+2NXck4GhKZuoZmJzU2pj5wzHAE4xzt2gh9fl143SQNHuOGtkEJLci0N1T27OmIl70CWnDMitC4o+
+QI/uoMP94i4OURpt4yxoUYOdb+gOPcdKejeH0ifuB6sHWVLcEXojZaYdFt/GCRG0yyU4p0VrFyAQ
+8lrZzHM/j0YRlot0gqts+bHT++ER4PBYLv/9COVsHj1G7X1zhvlYODXnldSBzFQr7gPItYD9aeAX
+14hKOfQXu4UWY9V8qvy8Wdba5HvhXNMZVfq577fPS/Wn3n/XlmKa/vdqtNdK2RXBK5JtHNbQR68G
+vpxKVl/lSB7037keAAdr4L3rZw0AEe2VPpR3a/Xtmqtkso87qJsR8hkesM/ZS9RqEQLlDMCziWVU
+UfT263RUKv5+t19tRSjlyaOSCx90yeO2SN0DrPnhWBEBb6hUTlqfX4Icv0YTz+Bsp0fqpKE3IIBW
+Yb2AWxFzafrfR7h+5NKznvdP7fmRnFeP/NLqvLivqz+9/Dni1lKnrB3Qs3OKKQTiBw4leRa0yYJB
+5phd9omJ3raVykQcL44jExJRJQcqMPAjWgHYI/qs52v82awnXefR1v4seu4hlCYIYMTKwuh0EMsr
+c4yFIWV6tCw1EYx4JMhpIGP+/jsqscBuAK0+02DwQ8K8J0zi/FQw9JxervkCx8BZ3q4S0GCAcs8r
+SSf/UeiomQB9sBQ94qujx3N0ZyQGoYbS9b3ItMWZsdf3E8aOQOKIznabjg0UqOnJtL+tUC+TmMk5
+3Y9CmQlz9few71crBp/cXof+/Ty4WudaTUtK1cs+HdJ4gz6PYpJj8kxlpB9m6Z2BXYYb9bzNaEK7
+/QkrevQX6lwAUPaZiECOAvAWQUAnLuAZShAA7mUdUESRjlAnYqoX3f43XTWw1Xah4gmQis1t3Sbn
+B4TsapwbnNDZoopx63ZJ13T7BCDR+NvkyKgUBDtXf2qRcA6DDG543gaGu+nqapgUqmSYn1qMj1J4
+SsKRbPSb3g15lEAPY2XxFtuD0V46fn/ClJf4EnCGroLLIaWLXoCn4Kk/jeiZhM9CQHGXISsLDY40
+EmuVM+n7l/pqJmkV+DmVPC3PAdaeqGqMFOM6BjZz7YleV2OgmGky2VvOolpjlS2pDbrp10n1LiWe
+LWzqvKZTdGEnxobe3cp+L9mODTZ0T4JAtF71aZeALbVg0nzfNlxl5yqlAqfWGvcldYo/p+u1SKI1
+1I2lwVvqNOJA+dyJWkkgMJTZRyVY/JY9RlO1HEXYqBZ3htMubPU3UywMRSlCrWcwGi/bXkpA0DAx
+hRfTyakLwDWWxs61yWlJimFqKwYvcwH4M/pyNyf+6eIw3MGXVxj+1OZnfJtHUHobd7fQbOi1hsfD
+BMLIXl5Gm4CImXCRvb8meh8rIbL3CMfeqTPLycFmJtOqMjLeMfpqrEW11cjMcq+q8KgS1S6Y+Nof
+gEbpI+W669C7yol0IVVWuWup6O9dFUZjb6X8T56LO2EPNAq69sSBOYwviNyoK647KXhI4t4lyXFW
+evo6GSFj3o9zfOhsw5LkKvvZaZHqP7YCL4xce/M3mB1pvUEmdNVWZZPtuDdhYHIqHQJ0Qs/G7oqa
+5J8oOgFpGZFblBS5/3qoqBIxzNCpgTXp27G+9oyAKNVnET0LQmi+CEE22P4ohUEUwJkJjvdeIhbb
+R1IdtapTK78u9X/AsHkAvEhNP76DeO4A5f8kTeHAumXXZ3TQMFnMgS8mQteBQUz4r0tcSkMvWYwo
+GLPLfjE1c6tviDv4TbUjCECHZ6fqZ909/8Sj5WltH+kH0V1naN8iPt1GFNF0N8tM7HU8RI4kkkx/
+KXaV3dwXhMP5+7bEteNufUPTTlxYAkCcZwBrkPui+g+NbSZhtsQziLLILvg45h3i2YVtWzH/hjYI
+V8pPJ2jg6VcGD0zTVZ4q74rD1JuGlgg+oWaoykFPJXAsSF/iVrAUm3c23u953i2ELYDXnDagrGC/
+ND+NGdFH+qjwefMEPt9rBoai/xWbDWob5Dch2+0CrQVTLsTubQK4VK0fC9Oj46QgZyTWK24MVfaZ
+yoQP8WqZOCj7AlztpmaGGEjL0LqRkFeq3GuSQhAf77xIE/2QFzDYqYyL7JfCq1TTp1vbDhQ9iOcr
+RUdF3jeUTV7Spj47LtqNXbpYIbo9NrcSPj+BBiqdyUIdj04zFbaSvyEgLa6NpCMLL3GcHKmILrmP
+378l1gYCzOMv2Xrir8lDmaTsTxQoFUH9GCb8Dob9CB9j98Wzi7BqCCjbQ1UHFkdLbz3o+yeelues
+PaadRNJRkm1JPuqSXLPfW5texU5ZKcvr/U8n+PHGwos48MmD6jwsylw2OYulJcI22hEL9TJozQZU
+uFEkFatQIHA7zC4x7ZewAVcfXbPnMA+VZ+alcpwXShh5ZUk7n/oLAMkq04LqnOTXuZGFTl9m6S0P
+dgiQXlulSRAd8MZzJfFmv/UUFJNYkJ/fPhz1DhvMo27+TTQQDFegetV+gbSW3St1m1zZsRH9ydOY
+Cf2Ac8FZQBZROAAj9/qAhntfHgkIpsNiwUXW+7ONmSxP52kjIhmeI1l8U6SOJAKbQTSCHpF8D7U+
+fVmXvLT710O71qe7W2tTeQG+xsqirp0xgQ6m7PlZW8xYpemcWb/DnHQowryj2pd1eUT4Av1QWi6q
+mD/5tEuCMjtXuKbKwUFi5cmLLgRKz9zgkvc6nJtBpY1fMmrI1UozIZvCsM6IsOprQcjphph+4Fo3
+tilhcdBG26k7B3sCNuuDENvyEWts2wyM1MFWmIuIEj88WuqSuq/LEgyB2XSJ81StCOeDIaxvBCZP
+bzzsElVDZA9BNhGgYOWo32D2pL1VSXw8zhI3lZr62A8aThIhxkS+KvS8FPFUs+kj6ujsGLSm2KQU
+as96VeXvNVAPCb3tOjamGFSm+Yvk+dUYeO4erp6dNyzaMDeq6ajAuE4/uPsL9w4XCr4QuxByQ0QT
+YqJZAB+fJZ0OukgJJyeTWHfphwv9YirJFOe2M5Sb0HPlDzElqP1sHdaBVGT9EbYLVGuM4TkTTh11
+mzfk9eVemMDt8jVpAP7AEkKi0JbU44+FtguNjUPZcPoUWlWxHgdvE4qRVxSiZ/gvzItt+gW+Cw3b
+a4YgcoBo6BMHZA7HTNCviOLOW0xswkZQ3uLkEPhnNuavDSCuuOU3AXQ4TfQmc9XwY1rtmPHBj2ef
+qOEHNoy4BpJsR3bLC6xTU73nM8sm7RoXXXF1zTm6KbWAdNsTc+nfASPBEq8pom88KvpNGbYWI7wj
+yjo9Zt5hocBIzK0VR67+12NpyEnZp5D8CtZ6M9vHrWwHHvIWYE+uN6inISAYnzwoTqYHUdcdeMgf
+oGf931LpDHmfRGU7kWQAzwnmt0KCxGs5Wj7d6vBdW/B0PhmhSWyVhPgNqn3uen53l4zq0KBXZnum
+Q5CrN52qB9TZ6DiQiMgTFgKBYnIYVPqhx5NG4EhVrEX/RQnuUgWo/YgMw4snjti8qe+ovTMHy43y
+nTPEcm/FKHStOMdPvMhwHqlkyBBjNvnNoUZIiQWQYVonc9v3HNCzG9LxnHZG91UYXMIzZ/SIr+q8
+Oc2JT5pI2TIxgO7CQQqiAHuS7PHbgwY26cnTAN0AfNkyO/cnhd46y20ftx4hG6QTWa6+ZKoJSR75
+0sW1Ikl66XIvhxGpWjE1D+HFIHXD77z2qNTi2wqVMp3j7DWGCiU1frlyNVABEUE/KsHH3WhjRsHN
+mUvKKD+hOnQQpi4YUDHSK9hifjWShviSMo0zBn8+OxqH6zS/G8CsrEu1Rv2F7TGINUann4HUH85g
+FjNQpZr3RHO3y3jr4ZrZbCFZyJKT1Knx1ZYetLsIZKPYveOYTcdZeEwUrPknjjEAmOHJYzT7WFT2
+xZHQnti5X1d8xW6q4oPqfW5dh4jLHHOGGzAOnm5KJbCuDJd8yP72lglmM8j0uHiN/XG3xRK+UPg9
+wyzWz+AksY+ZaVni58U0s2kRUTSWDWCcQblFtMlo8aGlAkdLtmkRX7R09tZmoQfcGUkHhavn+Bd0
+k93TIXEoiN+AQ74YhJLJmSs6wsX8EWTJ19PBNRZ6lWK6CN44iLKNSyVPJY7Btkk62Dcw03Z73hU6
+qpd8ZY/eKMAdrvMCU8yW5tWJbfpY2R21xtcFvhCaryBFb6hlY3T9GUEfgxbo4MGAro4mLjmHhZue
+S5HZ9EsyDMaAO/MCj27BmRdMN4uU1rEVuXRjI3D4zroSBhJ2idTdbsfTgiGtpqNs3lteYfdxJKWq
+cMKMuo/W43MeAhL3Aj11KsfsU8dzj2LDmIEHHRwgHFhsfDtHAfywYc4TY+BRtMhdKDbsEIlLMzv5
+brcNJQiXGtxDit20a/9b27IkAv4vUz5T167TS2J0fpBB0pHa9A0jF+plmLKGX7n7DghTw0Dcp7U0
+Dcgvi/FKV3LhA6QibIxKo07BcnjBJUOY/IaFNROGJGWucR3fWdwlBQOrc+f2WpvknpEx2jgj4VU0
+MtkmSDgKg3IJWXZCTTwsEyYJbpr0sR4M8t55OvOYBPCWiHTZt5aZoBsHdBI08OZKXp3yesqBDZ3e
+xst2j2fCIyBLyiwHXE0dr2DmZYCt0HHH/sfY4hKViBEPtr4VDm37QNsMCpQUbdjlPwiKQeDQ/eE0
+ASxBbsVmNoNOL9S6OI2q/3hZYcaE79ZVEkB4QTVqgPgnEQQm6ZTS5johU2bW/ANFl+lN1Gxs07Wl
+UlCS5HjEP8daCvtq2g8Yo7Tz4lW/TEhwYo9NlAff1OoayuX5OFPW/7AzJsnolDfxqj6YVu0HN5Md
+sEwprSWSNUuCgb7FAb7LAYMm56LOpW4NOgq63fTahCK/K9BlXbeCxN+ZAEO6P5HUy9sKyLpRR1FI
+Bqk7t80U5QqCqBkef8zJwHvW6DYPkdQW8adjcvEV2Y78Ydbyf9jrWfGAlZypjQuEY63xWYJ/TwiJ
+dMebuKetQxRjPMNm6glt5qfDBjP0mCb0U8DPP2xiiUKmwRfqaCtbeyuEghdx8pteB/F3Cs2cXQWD
+gPdRoeKvkyzGhQe0ElguIfjcqbo2EbtK/csh2PKQLkKpzanor+Y/HagUEWEjnbjRyUrMT2WhWn3L
+P2LKxOmk7V72SArby+B9IEegOIbN+qTPTI91UZOuR1lgZVoP8qhdArhzhS9wu0TSBA4uGcD2AbGJ
+3gbOeM3jh1BIO91u1PiRcIUbYYzdTLP1ozMJDts4kQZdvLohoTIU4AnlDZds2i+TUHNBqph8dZ91
+/Oewz5NA+h9XmOELoGsEiID0LeupMJMGTcgbIvyU+0kGfUH9Zmue2Cl7noHmz3upFHl6cifBFpAh
+llv4wJanc0a09ojt7E1JiyaDla1xBUBEv+Gvr8FIxBbO/oBVYahshy1GqPBu+RsvP8fVNkYDjP6P
+vkO0OqbOFG8vxqxCuDPChihpbeHt8UxNYU6QwLN9t9WozE/R+IKXk0/AxPSs01tl53KY8NAcZPTH
+5d9JshBbk8blbe5q5PCpAUrweUiXC9s5m9yn3vpTDbYBN/cJG3kryp2OoaT+ta22vVXk+tcV3/H1
+W9qbxT4O4WkRPF82bjrVyPuKDiHxOrxjsyq/pDlMRV5iUhkD6nPGGiGDcb6yaTWgChfx0A/j7vco
+EkSVSsmCsp8+fgHuYwkC6UynTYRSeqJYVjzlT6mzA3cmX+MIM/z+3yOox7G0m6DYlg20bOIqhzZU
+Rz7wz2+Qt+0n3gPjmQIfEx3j3LdPR0ASGNQ2Y1KzVxrIMGiS/Z1W8qnBWWsktiJlPyqZsuwgTf6/
+Vqzi6qIVU6UBa0iKL2em6x07Eqp1OwG7j1zI+OukM9G3EHgB4xxv91EWpd+JNPEEZjGw5Fh/ZT5P
+pTaau9xLGH3UBNur4QijH/Czqv1NbDfuSd0QjStfzTIuLFeCWBqiw8D4tOYwMqOsfZtvV8vlRjlx
+bdRietJkgrJZzZ2Jzl82rxqCOUTxPsJ1RyJOmtUAOeBteM//DQRaL176P2b4JuZZqzHbt8PXiExM
+u4ibDQBCW8UHXrwyTx43mhYNp0wmtZRx27ikBZXEPjd2Rw1huZPhy3KVlKycbAfGgTPTb6BBvSNu
+zOAiAHN+OcbEKhIhVOupb0nCYg8n4Hbg8xOb/eDG4kHwh+wkN4JdVtHyAKo0t1X6GB8pdcdF9V4u
+o63+iVW05YOTiSaSg1hB9QI4TADzPRhtAZG5HeBk7fj0WUph85rJRkkyAROCVrLUhZ/GUP36UZYn
+B2okzSpyUtJzYxsp9wL+drSoVMvJAfJkTT7+W8nQjB5pMm3oHydkyoU/7YoOwA+4fpb+o1XZlmuH
+Y+JVH/DtCggUenOGR0kF15V+AsXw71/eLOe/kDQyyrn3m/RyK2e/gtqZdAD80MJfrSDlVVWO4E9R
++MoWaQ3FCQIFa37hpi5nMagYmMZEYQY97KufnNz900oCmkPA63VEgVOt4l2BqN0IyfT3PikYvbh4
+ZLBuodS/9LHRi9/GoRqCrRgE4lH8t9wOTroZAtHMD+zHHdPjYoExiaAkWlMTP7haHkBYXsS01S4+
+lSJs4KhtXg9LOaKA

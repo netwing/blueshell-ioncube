@@ -1,130 +1,60 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="language" content="<?php echo (isset(Yii::app()->language)) ? Yii::app()->language : 'en'; ?>" />
-    <?php Yii::app()->bootstrap->register();  // Netwing Bootstrap ?>
-    <?php Yii::app()->fontAwesome->register();  // Netwing Font Awesome ?>
-    <?php Yii::app()->getClientScript()->registerCssFile('css/application.css'); ?>
-	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
-    <style>
-    #mainsearchresults {
-        background-color: #FFF;
-        border: 1px solid #CCC;
-        border-radius: 5px;
-        -moz-border-radius: 5px;
-        -webkit-border-radius: 5px;
-        padding-left: 10px;
-        padding-right: 10px;
-        box-shadow: 0px 0px 5px black; 
-        z-index: 1001;
-    }
-    </style>
-</head>
-
-<body>
-
-<?php $this->renderPartial('//layouts/menu'); ?>
-
-<div class="container" id="page">
-
-    <?php if (count(Yii::app()->user->getFlashes(false)) > 0): ?>
-    <div class="row">
-        <div class="col-lg-12">
-        <?php foreach (Yii::app()->user->getFlashes() as $k => $v): ?>
-        <div class="alert alert-<?php echo $k; ?> alert-dismissable">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <?php echo $v; ?></div>
-        <?php endforeach; ?>
-        </div>
-    </div>
-    <?php endif; ?>
-        
-    <?php echo $content; ?>
-
-<hr />
-    <div class="row">
-        <div class="col-xs-12 col-sm-4">
-            <?php if (!Yii::app()->user->isGuest): ?>
-            <a href="<?php echo $this->createUrl("/site/contact"); ?>"><?php echo Yii::t('app', 'Contact us'); ?></a>
-            <?php endif; ?>
-            <?php // $this->widget('ext.ELanguagePicker', array()); ?><br />
-        </div>
-        <div class="col-xs-12 col-sm-4 col-sm-push-4 text-right">
-            <?php if (isset(Yii::app()->theme)): ?>
-                <?php // $this->widget('ext.netwing.ThemePicker.EThemePicker', array()); ?>
-            <?php endif; ?>
-            <?php $this->widget('ext.ELanguagePicker', array()); ?>
-            <br />
-        </div>
-        <div class="col-xs-12 col-sm-4 col-sm-pull-4" style="text-align: center">
-            Copyright &copy; <?php echo date('Y'); ?> by Netwing SRL, All Rights Reserved. 
-        </div>
-    </div>
-</div>
-
-<!-- Container for search results -->
-<div id="mainsearchresults" style="display: none" class="col-md-4">
-    &nbsp;
-</div>
-
-<?php Yii::app()->clientScript->registerScript('main_search', '
-
-/*
-$.ajax({
-    url:"rest/api/customer/5451",
-    type:"GET",
-    success:function(data) {
-      console.log(data);
-  },
-  error:function (xhr, ajaxOptions, thrownError){
-      console.log(xhr.responseText);
-  } 
-}); 
-*/
-var myAjax = undefined;
-$("#topNavbarMainSearch").on("keyup", function() {
-    var s = $("#topNavbarMainSearch").val();
-    if (s.length >= 3) {
-        if (myAjax !== undefined) {
-            $("#mainsearchresults").html("").hide();
-            myAjax.abort();
-        }
-        $("#mainsearchresults").position({
-            my:        "right top",
-            at:        "right bottom",
-            of:        $("#topNavbar"),
-            collision: "none"
-        })        
-        $("#mainsearchresults").html(\'<div style="text-align: center"><p><img src="images/loading.gif" alt="loading..." /></p></div>\').show();
-        myAjax = $.ajax({
-            url: "../mainsearch.php",
-            quietMillis: 500,
-            data: {"s": s}
-        }).done(function ( data ) {
-            $("#mainsearchresults").position({
-                my:        "right top",
-                at:        "right bottom",
-                of:        $("#topNavbar"),
-                collision: "none"
-            })        
-            $("#mainsearchresults").html(data).show();
-        });        
-    } else {
-        $("#mainsearchresults").html("").hide();
-    }
-})
-$("#topNavbarMainSearchReset").on("click", function() {
-    if (myAjax !== undefined) {
-        myAjax.abort();
-    }
-    $("#topNavbarMainSearch").val("");
-    $("#mainsearchresults").html("").hide();
-    return false;
-})
-');?>
-
-    <?php Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' ); ?>
-
-</body>
-</html>
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

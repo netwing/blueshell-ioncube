@@ -1,193 +1,76 @@
-<?php
-/**
- * Squiz_Sniffs_Formatting_FunctionSpacingSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Squiz_Sniffs_WhiteSpace_FunctionSpacingSniff.
- *
- * Checks the separation between methods in a class or interface.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class Squiz_Sniffs_WhiteSpace_FunctionSpacingSniff implements PHP_CodeSniffer_Sniff
-{
-
-    /**
-     * The number of blank lines between functions.
-     *
-     * @var int
-     */
-    public $spacing = 2;
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        return array(T_FUNCTION);
-
-    }//end register()
-
-
-    /**
-     * Processes this sniff when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token
-     *                                        in the stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens        = $phpcsFile->getTokens();
-        $this->spacing = (int) $this->spacing;
-
-        /*
-            Check the number of blank lines
-            after the function.
-        */
-
-        if (isset($tokens[$stackPtr]['scope_closer']) === false) {
-            // Must be an interface method, so the closer is the semi-colon.
-            $closer = $phpcsFile->findNext(T_SEMICOLON, $stackPtr);
-        } else {
-            $closer = $tokens[$stackPtr]['scope_closer'];
-        }
-
-        $nextLineToken = null;
-        for ($i = $closer; $i < $phpcsFile->numTokens; $i++) {
-            if (strpos($tokens[$i]['content'], $phpcsFile->eolChar) === false) {
-                continue;
-            } else {
-                $nextLineToken = ($i + 1);
-                break;
-            }
-        }
-
-        if (is_null($nextLineToken) === true) {
-            // Never found the next line, which means
-            // there are 0 blank lines after the function.
-            $foundLines = 0;
-        } else {
-            $nextContent = $phpcsFile->findNext(array(T_WHITESPACE), ($nextLineToken + 1), null, true);
-            if ($nextContent === false) {
-                // We are at the end of the file.
-                $foundLines = 0;
-            } else {
-                $foundLines = ($tokens[$nextContent]['line'] - $tokens[$nextLineToken]['line']);
-            }
-        }
-
-        if ($foundLines !== $this->spacing) {
-            $error = 'Expected %s blank line';
-            if ($this->spacing !== 1) {
-                $error .= 's';
-            }
-
-            $error .= ' after function; %s found';
-            $data   = array(
-                       $this->spacing,
-                       $foundLines,
-                      );
-            $phpcsFile->addError($error, $closer, 'After', $data);
-        }
-
-        /*
-            Check the number of blank lines
-            before the function.
-        */
-
-        $prevLineToken = null;
-        for ($i = $stackPtr; $i > 0; $i--) {
-            if (strpos($tokens[$i]['content'], $phpcsFile->eolChar) === false) {
-                continue;
-            } else {
-                $prevLineToken = $i;
-                break;
-            }
-        }
-
-        if (is_null($prevLineToken) === true) {
-            // Never found the previous line, which means
-            // there are 0 blank lines before the function.
-            $foundLines = 0;
-        } else {
-            $prevContent = $phpcsFile->findPrevious(array(T_WHITESPACE, T_DOC_COMMENT), $prevLineToken, null, true);
-
-            // Before we throw an error, check that we are not throwing an error
-            // for another function. We don't want to error for no blank lines after
-            // the previous function and no blank lines before this one as well.
-            $currentLine = $tokens[$stackPtr]['line'];
-            $prevLine    = ($tokens[$prevContent]['line'] - 1);
-            $i           = ($stackPtr - 1);
-            $foundLines  = 0;
-            while ($currentLine != $prevLine && $currentLine > 1 && $i > 0) {
-                if (isset($tokens[$i]['scope_condition']) === true) {
-                    $scopeCondition = $tokens[$i]['scope_condition'];
-                    if ($tokens[$scopeCondition]['code'] === T_FUNCTION) {
-                        // Found a previous function.
-                        return;
-                    }
-                } else if ($tokens[$i]['code'] === T_FUNCTION) {
-                    // Found another interface function.
-                    return;
-                }
-
-                $currentLine = $tokens[$i]['line'];
-                if ($currentLine === $prevLine) {
-                    break;
-                }
-
-                if ($tokens[($i - 1)]['line'] < $currentLine && $tokens[($i + 1)]['line'] > $currentLine) {
-                    // This token is on a line by itself. If it is whitespace, the line is empty.
-                    if ($tokens[$i]['code'] === T_WHITESPACE) {
-                        $foundLines++;
-                    }
-                }
-
-                $i--;
-            }//end while
-        }//end if
-
-        if ($foundLines !== $this->spacing) {
-            $error = 'Expected %s blank line';
-            if ($this->spacing !== 1) {
-                $error .= 's';
-            }
-
-            $error .= ' before function; %s found';
-            $data   = array(
-                       $this->spacing,
-                       $foundLines,
-                      );
-            $phpcsFile->addError($error, $stackPtr, 'Before', $data);
-        }
-
-    }//end process()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

@@ -1,196 +1,88 @@
-<?php
-    /**
-     *	adapter for SimpleTest to use PEAR PHPUnit test cases
-     *	@package	SimpleTest
-     *	@subpackage Extensions
-     *	@version	$Id: pear_test_case.php 1770 2008-04-20 01:09:16Z lastcraft $
-     */
-    
-    /**#@+
-     * include SimpleTest files
-     */
-    require_once(dirname(__FILE__) . '/../dumper.php');
-    require_once(dirname(__FILE__) . '/../compatibility.php');
-    require_once(dirname(__FILE__) . '/../test_case.php');
-    require_once(dirname(__FILE__) . '/../expectation.php');
-	/**#@-*/
-   
-    /**
-     *    Adapter for PEAR PHPUnit test case to allow
-     *    legacy PEAR test cases to be used with SimpleTest.
-     *    @package      SimpleTest
-     *    @subpackage   Extensions
-     */
-    class PHPUnit_TestCase extends SimpleTestCase {
-        private $_loosely_typed;
-        
-        /**
-         *    Constructor. Sets the test name.
-         *    @param $label        Test name to display.
-         *    @public
-         */
-        function PHPUnit_TestCase($label = false) {
-            parent::__construct($label);
-            $this->_loosely_typed = false;
-        }
-        
-        /**
-         *    Will test straight equality if set to loose
-         *    typing, or identity if not.
-         *    @param $first          First value.
-         *    @param $second         Comparison value.
-         *    @param $message        Message to display.
-         *    @public
-         */
-        function assertEquals($first, $second, $message = "%s", $delta = 0) {
-            if ($this->_loosely_typed) {
-                $expectation = new EqualExpectation($first);
-            } else {
-                $expectation = new IdenticalExpectation($first);
-            }
-            $this->assert($expectation, $second, $message);
-        }
-        
-        /**
-         *    Passes if the value tested is not null.
-         *    @param $value          Value to test against.
-         *    @param $message        Message to display.
-         *    @public
-         */
-        function assertNotNull($value, $message = "%s") {
-            parent::assert(new TrueExpectation(), isset($value), $message);
-        }
-        
-        /**
-         *    Passes if the value tested is null.
-         *    @param $value          Value to test against.
-         *    @param $message        Message to display.
-         *    @public
-         */
-        function assertNull($value, $message = "%s") {
-            parent::assert(new TrueExpectation(), !isset($value), $message);
-        }
-        
-        /**
-         *    Identity test tests for the same object.
-         *    @param $first          First object handle.
-         *    @param $second         Hopefully the same handle.
-         *    @param $message        Message to display.
-         *    @public
-         */
-        function assertSame($first, $second, $message = "%s") {
-            $dumper = new SimpleDumper();
-            $message = sprintf(
-                    $message,
-                    "[" . $dumper->describeValue($first) .
-                            "] and [" . $dumper->describeValue($second) .
-                            "] should reference the same object");
-            return $this->assert(
-					new TrueExpectation(),
-                    SimpleTestCompatibility::isReference($first, $second),
-                    $message);
-        }
-        
-        /**
-         *    Inverted identity test.
-         *    @param $first          First object handle.
-         *    @param $second         Hopefully a different handle.
-         *    @param $message        Message to display.
-         *    @public
-         */
-        function assertNotSame($first, $second, $message = "%s") {
-            $dumper = new SimpleDumper();
-            $message = sprintf(
-                    $message,
-                    "[" . $dumper->describeValue($first) .
-                            "] and [" . $dumper->describeValue($second) .
-                            "] should not be the same object");
-            return $this->assert(
-					new falseExpectation(),
-                    SimpleTestCompatibility::isReference($first, $second),
-                    $message);
-        }
-        
-        /**
-         *    Sends pass if the test condition resolves true,
-         *    a fail otherwise.
-         *    @param $condition      Condition to test true.
-         *    @param $message        Message to display.
-         *    @public
-         */
-        function assertTrue($condition, $message = "%s") {
-            parent::assert(new TrueExpectation(), $condition, $message);
-        }
-        
-        /**
-         *    Sends pass if the test condition resolves false,
-         *    a fail otherwise.
-         *    @param $condition      Condition to test false.
-         *    @param $message        Message to display.
-         *    @public
-         */
-        function assertFalse($condition, $message = "%s") {
-            parent::assert(new FalseExpectation(), $condition, $message);
-        }
-        
-        /**
-         *    Tests a regex match. Needs refactoring.
-         *    @param $pattern        Regex to match.
-         *    @param $subject        String to search in.
-         *    @param $message        Message to display.
-         *    @public
-         */
-        function assertRegExp($pattern, $subject, $message = "%s") {
-            $this->assert(new PatternExpectation($pattern), $subject, $message);
-        }
-        
-        /**
-         *    Tests the type of a value.
-         *    @param $value          Value to take type of.
-         *    @param $type           Hoped for type.
-         *    @param $message        Message to display.
-         *    @public
-         */
-        function assertType($value, $type, $message = "%s") {
-            parent::assert(new TrueExpectation(), gettype($value) == strtolower($type), $message);
-        }
-        
-        /**
-         *    Sets equality operation to act as a simple equal
-         *    comparison only, allowing a broader range of
-         *    matches.
-         *    @param $loosely_typed     True for broader comparison.
-         *    @public
-         */
-        function setLooselyTyped($loosely_typed) {
-            $this->_loosely_typed = $loosely_typed;
-        }
-
-        /**
-         *    For progress indication during
-         *    a test amongst other things.
-         *    @return            Usually one.
-         *    @public
-         */
-        function countTestCases() {
-            return $this->getSize();
-        }
-        
-        /**
-         *    Accessor for name, normally just the class
-         *    name.
-         *    @public
-         */
-        function getName() {
-            return $this->getLabel();
-        }
-        
-        /**
-         *    Does nothing. For compatibility only.
-         *    @param $name        Dummy
-         *    @public
-         */
-        function setName($name) {
-        }
-    }
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+Q6mKaZQAffdS+mK=

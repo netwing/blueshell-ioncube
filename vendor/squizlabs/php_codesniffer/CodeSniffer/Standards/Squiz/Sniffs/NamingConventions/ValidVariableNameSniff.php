@@ -1,241 +1,103 @@
-<?php
-/**
- * Squiz_Sniffs_NamingConventions_ValidVariableNameSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-if (class_exists('PHP_CodeSniffer_Standards_AbstractVariableSniff', true) === false) {
-    throw new PHP_CodeSniffer_Exception('Class PHP_CodeSniffer_Standards_AbstractVariableSniff not found');
-}
-
-/**
- * Squiz_Sniffs_NamingConventions_ValidVariableNameSniff.
- *
- * Checks the naming of variables and member variables.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class Squiz_Sniffs_NamingConventions_ValidVariableNameSniff extends PHP_CodeSniffer_Standards_AbstractVariableSniff
-{
-
-    /**
-     * Tokens to ignore so that we can find a DOUBLE_COLON.
-     *
-     * @var array
-     */
-    private $_ignore = array(
-                        T_WHITESPACE,
-                        T_COMMENT,
-                       );
-
-
-    /**
-     * Processes this test, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token in the
-     *                                        stack passed in $tokens.
-     *
-     * @return void
-     */
-    protected function processVariable(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens  = $phpcsFile->getTokens();
-        $varName = ltrim($tokens[$stackPtr]['content'], '$');
-
-        $phpReservedVars = array(
-                            '_SERVER',
-                            '_GET',
-                            '_POST',
-                            '_REQUEST',
-                            '_SESSION',
-                            '_ENV',
-                            '_COOKIE',
-                            '_FILES',
-                            'GLOBALS',
-                           );
-
-        // If it's a php reserved var, then its ok.
-        if (in_array($varName, $phpReservedVars) === true) {
-            return;
-        }
-
-        $objOperator = $phpcsFile->findNext(array(T_WHITESPACE), ($stackPtr + 1), null, true);
-        if ($tokens[$objOperator]['code'] === T_OBJECT_OPERATOR) {
-            // Check to see if we are using a variable from an object.
-            $var = $phpcsFile->findNext(array(T_WHITESPACE), ($objOperator + 1), null, true);
-            if ($tokens[$var]['code'] === T_STRING) {
-                $bracket = $objOperator = $phpcsFile->findNext(array(T_WHITESPACE), ($var + 1), null, true);
-                if ($tokens[$bracket]['code'] !== T_OPEN_PARENTHESIS) {
-                    $objVarName = $tokens[$var]['content'];
-
-                    // There is no way for us to know if the var is public or
-                    // private, so we have to ignore a leading underscore if there is
-                    // one and just check the main part of the variable name.
-                    $originalVarName = $objVarName;
-                    if (substr($objVarName, 0, 1) === '_') {
-                        $objVarName = substr($objVarName, 1);
-                    }
-
-                    if (PHP_CodeSniffer::isCamelCaps($objVarName, false, true, false) === false) {
-                        $error = 'Variable "%s" is not in valid camel caps format';
-                        $data  = array($originalVarName);
-                        $phpcsFile->addError($error, $var, 'NotCamelCaps', $data);
-                    }
-                }//end if
-            }//end if
-        }//end if
-
-        // There is no way for us to know if the var is public or private,
-        // so we have to ignore a leading underscore if there is one and just
-        // check the main part of the variable name.
-        $originalVarName = $varName;
-        if (substr($varName, 0, 1) === '_') {
-            $objOperator = $phpcsFile->findPrevious(array(T_WHITESPACE), ($stackPtr - 1), null, true);
-            if ($tokens[$objOperator]['code'] === T_DOUBLE_COLON) {
-                // The variable lives within a class, and is referenced like
-                // this: MyClass::$_variable, so we don't know its scope.
-                $inClass = true;
-            } else {
-                $inClass = $phpcsFile->hasCondition($stackPtr, array(T_CLASS, T_INTERFACE));
-            }
-
-            if ($inClass === true) {
-                $varName = substr($varName, 1);
-            }
-        }
-
-        if (PHP_CodeSniffer::isCamelCaps($varName, false, true, false) === false) {
-            $error = 'Variable "%s" is not in valid camel caps format';
-            $data  = array($originalVarName);
-            $phpcsFile->addError($error, $stackPtr, 'NotCamelCaps', $data);
-        }
-
-    }//end processVariable()
-
-
-    /**
-     * Processes class member variables.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token in the
-     *                                        stack passed in $tokens.
-     *
-     * @return void
-     */
-    protected function processMemberVar(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-
-        $varName     = ltrim($tokens[$stackPtr]['content'], '$');
-        $memberProps = $phpcsFile->getMemberProperties($stackPtr);
-        if (empty($memberProps) === true) {
-            // Couldn't get any info about this variable, which
-            // generally means it is invalid or possibly has a parse
-            // error. Any errors will be reported by the core, so
-            // we can ignore it.
-            return;
-        }
-
-        $public    = ($memberProps['scope'] !== 'private');
-        $errorData = array($varName);
-
-        if ($public === true) {
-            if (substr($varName, 0, 1) === '_') {
-                $error = '%s member variable "%s" must not contain a leading underscore';
-                $data  = array(
-                          ucfirst($memberProps['scope']),
-                          $errorData[0],
-                         );
-                $phpcsFile->addError($error, $stackPtr, 'PublicHasUnderscore', $data);
-                return;
-            }
-        } else {
-            if (substr($varName, 0, 1) !== '_') {
-                $error = 'Private member variable "%s" must contain a leading underscore';
-                $phpcsFile->addError($error, $stackPtr, 'PrivateNoUnderscore', $errorData);
-                return;
-            }
-        }
-
-        if (PHP_CodeSniffer::isCamelCaps($varName, false, $public, false) === false) {
-            $error = 'Variable "%s" is not in valid camel caps format';
-            $phpcsFile->addError($error, $stackPtr, 'MemberNotCamelCaps', $errorData);
-        }
-
-    }//end processMemberVar()
-
-
-    /**
-     * Processes the variable found within a double quoted string.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the double quoted
-     *                                        string.
-     *
-     * @return void
-     */
-    protected function processVariableInString(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-
-        $phpReservedVars = array(
-                            '_SERVER',
-                            '_GET',
-                            '_POST',
-                            '_REQUEST',
-                            '_SESSION',
-                            '_ENV',
-                            '_COOKIE',
-                            '_FILES',
-                            'GLOBALS',
-                           );
-        if (preg_match_all('|[^\\\]\${?([a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*)|', $tokens[$stackPtr]['content'], $matches) !== 0) {
-            foreach ($matches[1] as $varName) {
-                // If it's a php reserved var, then its ok.
-                if (in_array($varName, $phpReservedVars) === true) {
-                    continue;
-                }
-
-                // There is no way for us to know if the var is public or private,
-                // so we have to ignore a leading underscore if there is one and just
-                // check the main part of the variable name.
-                $originalVarName = $varName;
-                if (substr($varName, 0, 1) === '_') {
-                    if ($phpcsFile->hasCondition($stackPtr, array(T_CLASS, T_INTERFACE)) === true) {
-                        $varName = substr($varName, 1);
-                    }
-                }
-
-                if (PHP_CodeSniffer::isCamelCaps($varName, false, true, false) === false) {
-                    $varName = $matches[0];
-                    $error = 'Variable "%s" is not in valid camel caps format';
-                    $data  = array($originalVarName);
-                    $phpcsFile->addError($error, $stackPtr, 'StringNotCamelCaps', $data);
-                    
-                }
-            }
-        }//end if
-
-    }//end processVariableInString()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+cbMlVtedfm==

@@ -1,98 +1,31 @@
-<?php
-/**
- * PHPUnit
- *
- * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @package    PHPUnit
- * @subpackage Framework_Constraint
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @author     Bernhard Schussek <bschussek@2bepublished.at>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      File available since Release 3.1.0
- */
-
-/**
- * Constraint that asserts that the class it is evaluated for has a given
- * static attribute.
- *
- * The attribute name is passed in the constructor.
- *
- * @package    PHPUnit
- * @subpackage Framework_Constraint
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @author     Bernhard Schussek <bschussek@2bepublished.at>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      Class available since Release 3.1.0
- */
-class PHPUnit_Framework_Constraint_ClassHasStaticAttribute extends PHPUnit_Framework_Constraint_ClassHasAttribute
-{
-    /**
-     * Evaluates the constraint for parameter $other. Returns TRUE if the
-     * constraint is met, FALSE otherwise.
-     *
-     * @param mixed $other Value or object to evaluate.
-     * @return bool
-     */
-    protected function matches($other)
-    {
-        $class = new ReflectionClass($other);
-
-        if ($class->hasProperty($this->attributeName)) {
-            $attribute = $class->getProperty($this->attributeName);
-
-            return $attribute->isStatic();
-        } else {
-            return FALSE;
-        }
-    }
-
-    /**
-     * Returns a string representation of the constraint.
-     *
-     * @return string
-     * @since  Method available since Release 3.3.0
-     */
-    public function toString()
-    {
-        return sprintf(
-          'has static attribute "%s"',
-
-          $this->attributeName
-        );
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

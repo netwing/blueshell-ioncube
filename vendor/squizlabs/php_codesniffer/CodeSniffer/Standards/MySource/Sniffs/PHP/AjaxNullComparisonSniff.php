@@ -1,113 +1,61 @@
-<?php
-/**
- * Ensures that values submitted via JS are not compared to NULL.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer_MySource
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Ensures that values submitted via JS are not compared to NULL.
- *
- * jQuery 1.8 changed the behaviour of ajax requests so that null values are
- * submitted as null= instead of null=null.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer_MySource
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class MySource_Sniffs_PHP_AjaxNullComparisonSniff implements PHP_CodeSniffer_Sniff
-{
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        return array(T_FUNCTION);
-
-    }//end register()
-
-
-    /**
-     * Processes this sniff, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token in
-     *                                        the stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-
-        // Make sure it is an API function. We know this by the doc comment.
-        $commentEnd   = $phpcsFile->findPrevious(T_DOC_COMMENT, $stackPtr);
-        $commentStart = $phpcsFile->findPrevious(T_DOC_COMMENT, ($commentEnd - 1), null, true);
-        $comment = $phpcsFile->getTokensAsString($commentStart, ($commentEnd - $commentStart));
-        if (strpos($comment, '* @api') === false) {
-            return;
-        }
-
-
-        // Find all the vars passed in as we are only interested in comparisons
-        // to NULL for these specific variables.
-        $foundVars = array();
-        $open  = $tokens[$stackPtr]['parenthesis_opener'];
-        $close = $tokens[$stackPtr]['parenthesis_closer'];
-        for ($i = ($open + 1); $i < $close; $i++) {
-            if ($tokens[$i]['code'] === T_VARIABLE) {
-                $foundVars[] = $tokens[$i]['content'];
-            }
-        }
-
-        if (empty($foundVars) === true) {
-            return;
-        }
-
-        $start = $tokens[$stackPtr]['scope_opener'];
-        $end   = $tokens[$stackPtr]['scope_closer'];
-        for ($i = ($start + 1); $i < $end; $i++) {
-            if ($tokens[$i]['code'] !== T_VARIABLE
-                || in_array($tokens[$i]['content'], $foundVars) === false
-            ) {
-                continue;
-            }
-
-            $operator = $phpcsFile->findNext(T_WHITESPACE, ($i + 1), null, true);
-            if ($tokens[$operator]['code'] !== T_IS_IDENTICAL
-                && $tokens[$operator]['code'] !== T_IS_NOT_IDENTICAL
-            ) {
-                continue;
-            }
-
-            $nullValue = $phpcsFile->findNext(T_WHITESPACE, ($operator + 1), null, true);
-            if ($tokens[$nullValue]['code'] !== T_NULL) {
-                continue;
-            }
-
-            $error = 'Values submitted via Ajax requests must not be compared directly to NULL; use empty() instead';
-            $phpcsFile->addError($error, $nullValue, 'Found');
-        }//end for
-
-
-    }//end process()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

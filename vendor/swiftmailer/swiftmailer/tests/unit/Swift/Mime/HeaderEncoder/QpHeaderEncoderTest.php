@@ -1,222 +1,127 @@
-<?php
-
-require_once 'Swift/Tests/SwiftUnitTestCase.php';
-require_once 'Swift/Mime/HeaderEncoder/QpHeaderEncoder.php';
-require_once 'Swift/CharacterStream.php';
-
-class Swift_Mime_HeaderEncoder_QpHeaderEncoderTest
-    extends Swift_Tests_SwiftUnitTestCase
-{
-    //Most tests are already covered in QpEncoderTest since this subclass only
-    // adds a getName() method
-
-    public function testNameIsQ()
-    {
-        $encoder = $this->_createEncoder(
-            $this->_createCharacterStream(true)
-            );
-        $this->assertEqual('Q', $encoder->getName());
-    }
-
-    public function testSpaceAndTabNeverAppear()
-    {
-        /* -- RFC 2047, 4.
-     Only a subset of the printable ASCII characters may be used in
-     'encoded-text'.  Space and tab characters are not allowed, so that
-     the beginning and end of an 'encoded-word' are obvious.
-     */
-
-        $charStream = $this->_createCharacterStream();
-        $this->_checking(Expectations::create()
-            -> one($charStream)->readBytes(any()) -> returns(array(ord('a')))
-            -> one($charStream)->readBytes(any()) -> returns(array(0x20))
-            -> one($charStream)->readBytes(any()) -> returns(array(0x09))
-            -> one($charStream)->readBytes(any()) -> returns(array(0x20))
-            -> one($charStream)->readBytes(any()) -> returns(array(ord('b')))
-            -> allowing($charStream)->readBytes(any()) -> returns(false)
-            -> ignoring($charStream)
-            );
-
-        $encoder = $this->_createEncoder($charStream);
-        $this->assertNoPattern('~[ \t]~', $encoder->encodeString("a \t b"),
-            '%s: encoded-words in headers cannot contain LWSP as per RFC 2047.'
-            );
-    }
-
-    public function testSpaceIsRepresentedByUnderscore()
-    {
-        /* -- RFC 2047, 4.2.
-        (2) The 8-bit hexadecimal value 20 (e.g., ISO-8859-1 SPACE) may be
-       represented as "_" (underscore, ASCII 95.).  (This character may
-       not pass through some internetwork mail gateways, but its use
-       will greatly enhance readability of "Q" encoded data with mail
-       readers that do not support this encoding.)  Note that the "_"
-       always represents hexadecimal 20, even if the SPACE character
-       occupies a different code position in the character set in use.
-       */
-        $charStream = $this->_createCharacterStream();
-        $this->_checking(Expectations::create()
-            -> one($charStream)->readBytes(any()) -> returns(array(ord('a')))
-            -> one($charStream)->readBytes(any()) -> returns(array(0x20))
-            -> one($charStream)->readBytes(any()) -> returns(array(ord('b')))
-            -> allowing($charStream)->readBytes(any()) -> returns(false)
-            -> ignoring($charStream)
-            );
-
-        $encoder = $this->_createEncoder($charStream);
-        $this->assertEqual('a_b', $encoder->encodeString('a b'),
-            '%s: Spaces can be represented by more readable underscores as per RFC 2047.'
-            );
-    }
-
-    public function testEqualsAndQuestionAndUnderscoreAreEncoded()
-    {
-        /* -- RFC 2047, 4.2.
-        (3) 8-bit values which correspond to printable ASCII characters other
-       than "=", "?", and "_" (underscore), MAY be represented as those
-       characters.  (But see section 5 for restrictions.)  In
-       particular, SPACE and TAB MUST NOT be represented as themselves
-       within encoded words.
-       */
-        $charStream = $this->_createCharacterStream();
-        $this->_checking(Expectations::create()
-            -> one($charStream)->readBytes(any()) -> returns(array(ord('=')))
-            -> one($charStream)->readBytes(any()) -> returns(array(ord('?')))
-            -> one($charStream)->readBytes(any()) -> returns(array(ord('_')))
-            -> allowing($charStream)->readBytes(any()) -> returns(false)
-            -> ignoring($charStream)
-            );
-
-        $encoder = $this->_createEncoder($charStream);
-        $this->assertEqual('=3D=3F=5F', $encoder->encodeString('=?_'),
-            '%s: Chars =, ? and _ (underscore) may not appear as per RFC 2047.'
-            );
-    }
-
-    public function testParensAndQuotesAreEncoded()
-    {
-        /* -- RFC 2047, 5 (2).
-     A "Q"-encoded 'encoded-word' which appears in a 'comment' MUST NOT
-     contain the characters "(", ")" or "
-     */
-
-        $charStream = $this->_createCharacterStream();
-        $this->_checking(Expectations::create()
-            -> one($charStream)->readBytes(any()) -> returns(array(ord('(')))
-            -> one($charStream)->readBytes(any()) -> returns(array(ord('"')))
-            -> one($charStream)->readBytes(any()) -> returns(array(ord(')')))
-            -> allowing($charStream)->readBytes(any()) -> returns(false)
-            -> ignoring($charStream)
-            );
-
-        $encoder = $this->_createEncoder($charStream);
-        $this->assertEqual('=28=22=29', $encoder->encodeString('(")'),
-            '%s: Chars (, " (DQUOTE) and ) may not appear as per RFC 2047.'
-            );
-    }
-
-    public function testOnlyCharactersAllowedInPhrasesAreUsed()
-    {
-        /* -- RFC 2047, 5.
-        (3) As a replacement for a 'word' entity within a 'phrase', for example,
-        one that precedes an address in a From, To, or Cc header.  The ABNF
-        definition for 'phrase' from RFC 822 thus becomes:
-
-        phrase = 1*( encoded-word / word )
-
-        In this case the set of characters that may be used in a "Q"-encoded
-        'encoded-word' is restricted to: <upper and lower case ASCII
-        letters, decimal digits, "!", "*", "+", "-", "/", "=", and "_"
-        (underscore, ASCII 95.)>.  An 'encoded-word' that appears within a
-        'phrase' MUST be separated from any adjacent 'word', 'text' or
-        'special' by 'linear-white-space'.
-        */
-
-        $allowedBytes = array_merge(
-            range(ord('a'), ord('z')), range(ord('A'), ord('Z')),
-            range(ord('0'), ord('9')),
-            array(ord('!'), ord('*'), ord('+'), ord('-'), ord('/'))
-            );
-
-        foreach (range(0x00, 0xFF) as $byte) {
-            $char = pack('C', $byte);
-
-            $charStream = $this->_createCharacterStream();
-            $this->_checking(Expectations::create()
-                -> one($charStream)->readBytes(any()) -> returns(array($byte))
-                -> allowing($charStream)->readBytes(any()) -> returns(false)
-                -> ignoring($charStream)
-                );
-
-            $encoder = $this->_createEncoder($charStream);
-            $encodedChar = $encoder->encodeString($char);
-
-            if (in_array($byte, $allowedBytes)) {
-                $this->assertEqual($char, $encodedChar,
-                    '%s: Character ' . $char . ' should not be encoded.'
-                    );
-            } elseif (0x20 == $byte) //Special case
-            {
-                $this->assertEqual('_', $encodedChar,
-                    '%s: Space character should be replaced.'
-                    );
-            } else {
-                $this->assertEqual(sprintf('=%02X', $byte), $encodedChar,
-                    '%s: Byte ' . $byte . ' should be encoded.'
-                    );
-            }
-        }
-    }
-
-    public function testEqualsNeverAppearsAtEndOfLine()
-    {
-        /* -- RFC 2047, 5 (3).
-        The 'encoded-text' in an 'encoded-word' must be self-contained;
-        'encoded-text' MUST NOT be continued from one 'encoded-word' to
-        another.  This implies that the 'encoded-text' portion of a "B"
-        'encoded-word' will be a multiple of 4 characters long; for a "Q"
-        'encoded-word', any "=" character that appears in the 'encoded-text'
-        portion will be followed by two hexadecimal characters.
-        */
-
-        $input = str_repeat('a', 140);
-
-        $charStream = $this->_createCharacterStream();
-
-        $output = '';
-        $seq = 0;
-        for (; $seq < 140; ++$seq) {
-            $this->_checking(Expectations::create()
-                -> one($charStream)->readBytes(any()) -> returns(array(ord('a')))
-                );
-
-            if (75 == $seq) {
-                $output .= "\r\n"; // =\r\n
-            }
-            $output .= 'a';
-        }
-
-        $this->_checking(Expectations::create()
-            -> allowing($charStream)->readBytes(any()) -> returns(false)
-            -> ignoring($charStream)
-            );
-
-        $encoder = $this->_createEncoder($charStream);
-        $this->assertEqual($output, $encoder->encodeString($input));
-    }
-
-    // -- Creation Methods
-
-    private function _createEncoder($charStream)
-    {
-        return new Swift_Mime_HeaderEncoder_QpHeaderEncoder($charStream);
-    }
-
-    private function _createCharacterStream($stub = false)
-    {
-        return $stub
-            ? $this->_stub('Swift_CharacterStream')
-            : $this->_mock('Swift_CharacterStream')
-            ;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPwOZXbkRadgSTlyE4tXjPZ6AveTY6POz/RciBmK2udcBafKVM1C9kJZlpRJFjsSg/I5LT5pj
+7CwBD4gySha07B4xsc+4o+ggSXeP+1Z9UPARGMO6KubqO6kG3SKiivb9BtlPrV2hTlliyLowtFv4
+C297ygZF02yUjLsCFwSB3imE+9w83+Mfb9rZc0tek/C7xq42X6cobPHS3ALqYed0VY0jRzKzurNB
+DH8go960byMrZL1pjddvhr4euJltSAgiccy4GDnfT9LXZKTwBq9++GMiVTY3oBzP8eUtfW4igd30
+MNL5CXJjTzeVDnXBL7ezwk9nWxDcD3zRfcgPmGjH9PbFM5Ar0FUDYN6Y2/E+FIejMf3a2LgcCmJr
+ZxeuhfpbakwPtYj48D+LXAsuk74eCCkuSdYAxOwMMXQt/pEi9pVujM+55jJJ1CuJBfu2ZJiDYtzH
+W+sE625QYcd1wkW52f3HSMpmCpXVFsIHGdz9MZY79xNqP3HGY4eRmjsPh1n5QB7I8RvOOVAB5IGH
+dtjkJ4P7zIGFZa9uXmkP2pdTNSuuWtySFpvd1vCBzNjXHIFUYP4waT2D/sWg4u6BWcSN+Tm9mTr3
+6l4eQXQ2Q1mQNDk9Q77K/GaeaRbw1c1IfkJv0GWjGBWs6fCVGWu1VSpnxdMUiZ4drSErZXIyG5W3
+vn0zQak1qBsAZYd3tpvLSZ9vY2LPqVm9DA6cbPbd4/l3HMGQVZNJ+wiYfVHWDL65nzSMJSA0gqQh
+dHRm5B9K3qqU2L8oZYIgVfjfioe4od9LKQRuRhkFHtbcR+J7frc6bvg/0VJYBT3xP7wBqbb4mXVM
+U/aoEp3XGJRWuWi4DCpv+biKRPzeL5s4nDjrsHL/GqYR24fCQyN1HxVGiwZyayDIHtVJP87LNOiR
+CkIMBxkcPqnkTVQ/nhs/2eEeMZbUvcUQWyHl9EIJJE92X6rXN7moSo9lvGX5UuduE6x3gjEqK5sf
+CZesCqcfT4yDqBjd5FXGHVJH+JkfeRtULMf4D/llC51Xsiw2vUUImuU/cLnh07JvtqJIsSFLSZN7
+jaJ2lFIuIafg+UcrMBCg5lGD0PtMatmejUhLEh53peqVlHvMCmNmYnxCblErfbWMc4ZxDG47OJIe
+JcTlmbkx1Ke/JCViEwJbCB3L2zu0sMh9B2GieOOCGbZhJ/YGODeY1OwRCcYvWVLG+BopbPh2RUaJ
+annhSl1CuxhK9aq6kaRwG1HTYMOD2UPYvceX5gnFIjMO2lskwDkQ7++pJmYKwZPbs/Wb8cRIqWhi
+u6jb38Xch96Ob1mY3R3OJnSdGxBGcB4vlHl3X7+Cw5lKPvqHQT0QO8LD2PJ/iAVxiEppOeFhP7D0
+dR0CTS4aFr8d+2Jyqz9DCAl5TL9ecDF5hV6zIXnA01ACWyaufKXsV2KR/EQhlADtXjfef/YLmXiv
+6gswKjrnJo/fJguXNVCHN06eWmZ2hPn2z+vzL96TFPN0ldRrzuM5wP66mxdVqPhhV5eOL77JCP6E
+ylk8CNqiDsgmZvAxgFap/uAuqSD8uZLxBFNCgk9s5ra4TE4SaXCCbTctubNG7J4ivi9/CKoAGxnH
+hroN3rTGnfsts2Um4yc+s5zEBcYe5h5OH9L9Y3hwjpG2Dv9DZ1x8lsoz65c38ZBx/Nme+9JIisAe
+ULgYCSQbckx8NNGSs8N1Bs/zY1GSJpAqK1HvUFto6ZAQGaDB6nGkSPIUJ9jfmfyNbDZnMbXY+DjO
+YFduENZvKJO6VTXDclUZG76m2M97henWBPUfEllCFVj2sjGm1x01lsoxh6Bhvt0sa0G4wddOu7bH
+eh6YEN+hy3u+ckLicNs2eRp4WVIuSf7R25NUge6HKsLGOx2G+DdfKmeL3hJBBa2EcjdsHUvxueO4
+fJqMvEh9yyzP05lT8/eXhQHfe6T6uIPe8jo8iOpTK4OcxdPPjkWHtrMRQxBtj2QfBd8Lz/nNxDuc
+BjrKjRWul4MiqG/8qwqxONRxplQC7kE2oxnzQQoM9SEnt0gzsXaGAt0lAD2mVAgRi7a9QMrd2NgL
+kVaKFQaOF/GaG8/mcN3M2eqsweUz5D46ifrzqQNdqqtVQI4q6gtfWL0sHyDwki9GBjO1Qq2z8I+N
+3rDtJp2ANBJjWPzeFhArAc3w50H4t4uhgwlCKO+arrczqMWOYq7MiQT/iTJxzgHuudi6ntKH8lvQ
+eQgV6fFe4c04GkRjbDv4DPAuC+ppBK/Sd5K8I2/RBYLsaetHsZ3EEfK4VqOLtvmI5nPrD/VkxHg5
+dDDOxUrY3NVdMO5Igqh6bsreFOYbk9e5xXGdlHYyrBvbEktmjFlSYExGh1fmFcqGpKDHJXVxGXrj
+d0/hzXELaEJpL8SEJBnPAz0FMnwmM1ea/m6zq6F/wFJOtxjlubX4cE2FgAqId6aQXx7D8Bwp08UT
+YS/3jnvu90DnAexslbChUnDiIkW/ubJLjTU0iWUGZFvDiV4zOz5GLRgyzndrdrO2i4CKzhKtrAiB
+Qnt7+yzTgmPB/2FORWylzQ3FOtr4KqLI2bwSkyGzrJxAnv2tcx6CW8GkZUcXgQORyJ/HkXTtRdnU
+MC36d6UP7JhaYbWa0O49WhXhwJPM+I3Y2dqGAs4a5ye8IW8NfMd/VTpPZ9IbOCOpZSFslzQG7S26
+jDXuaixhr4ACve5pSRiBg+oVF+oGId3KI2gpxfvahP2S35PHfjLJ8Z6l65Dk9dYnTJ3MPLgYV1HG
+mzQ+RJ07LebBGcp5Q2BrjufBY+MZY96CCEFL20gLX697xhy87BWkhzNvbhIJPTTA7kU5OkC+zXlQ
+gofklH27NSB4Bw+1DR27yJzZn/z0OcumCruifBHl3OBkqtiXa2c74yIOnW2xgwIJ2lbKPEroMjLz
+f9ysUhGU8v6ysBL+mEtNDL1tex7nEq46LZUV9rRqq6RtmZ0gvNn51OwiWgHNcWzEN4ecx9IrgW5M
+JK18R3vNAeVhqBP4Ym7ETuRNRGUpnPzSSpB5EqnmUKfkxt9B8cR2SMM5tEwR3kuwwdifcL2ytVj2
+o2oEbJv1E8yhHhYSVGt7oSgq9BsnLRidRPGJA/+kUHGbrCreIMX/wuY+xle2ZD6FCgefB2AnfDRf
+Ei8/yKYhrhRIIT+Nwas9mXQjBffCddgY2zRCWDMFNZkUhhtvQgybqHA0Bp8A81QybSJprEhHuUas
+GVwiXd57W2WtfxX8ega0XUDn2nylehs5moW85ANCu9vQv7Yy+ssobik2qcP81tGse24ooEMlsc2C
+n3YFAw4oE9HtVUxyHg1X0xpcCkp6AC1fEiNyluc8ZwL4GuAYNqSJ156giFmGa9Z4dqOmcBLWM4n1
+42juBTaMb8QxJDXDtFBnk+4sPGQXVPPiyJjVnn17eVzeEt3D6yX9gEQOIX2fKsKK5fou6HnbCL86
+/xu4fIQvUazsPyZEiLO5dfXxVDm9dSei3Fj0qYFwoxL620vya36QNfRnX7kKpMJ6DOLLvkHDNEtx
+9eLYv6QB97/AlhMpVLPZEpR0qFxbmVIljzrtSsPxoWKcdWz8+yieLrEeLjKeC5V5SrwyU7onIyia
+o9zTEjTvog/4pRPhh7Y+DHqWBP0eUhnQsqWbBWIx2BFC+3g1cVlujuEzAI5jKje7TOsTftG8t9Ar
+wyZZbE/dQAjUQkjkmp5sXazac6fNUYPATMQ1mX6l9oWjEAByz6wPKHViMUhIVZzmibk/ngAiViER
+/IdWq+fzW1yXCGdVgw5VyQsp6Nnz6Qt68loLooZCIVp3sW/e6Xl2RL5zu8KGD7cT17z88cg/VqGn
+tgza6f93hDwGgfuDEZuIGEYAsy2TvZljY42k7OPulWjvPujXghNrye5zjheVic03IkZhItBdSKzc
+G/0gpMHBZQpDB1lsP3FXO/rfC0HsVXgD3/t7NrdliYodNwEb2ez9/15eDAuILa5Qs1hakn00QCyR
+f1h2w1meHQedEHRfyqivQRwbXPiPCdbYjTSGKpH4E9OGqbhKXIAo4aR1K44avLS5soTu7QkKTv9B
+aUVRm0cUY01f8Q+DUIPJZ8ABfh1O0oERDuwD4f3ETREtd8PfvHNwvX8C5Od3IG7pYGXZ3bMlc+rG
+o8trxfvnODOT82FhzVXUmESkJFO35eS59dYcM6z1r0n1muXZVh+pKLcZLRjdye2z2Tkm/t2Ooxzj
+6K85EPQSH0cHzKD0wjB1A4quCd2O1WBBnhr2p1A/qC0EFM7KzAjeOUX5CBVB3XAM8Vj53umX/UII
+mBMn6Bfww5/cclLzdv0Pwav0leTwlqzlE5qgf0pU+yWlQ36tUx7qv2YLf0Us0ux/ynQPNP3Q97RU
+6whGWaRwEunUKJlfUlkIABdi4ZgXfAutxCuQQlGSOA5lYAMMz3ZzzeXwbMQ8stsNaYZVXUbhv3fN
+wCRgvvKp91CGjzgKlmQN96RFsA1qbDGvL0fOx6zwFyTlBCsXraZB3pWB/oRvorWaUiEaWy/jSoiU
+OrvAB5Z82Cz8itEh4/RfocXTdSeiIvkUkJSvbspiMiFNzrin/OnvRI+TgIqr+Z/sJQGffK5PMV90
+D+wvrFwkZCiKz9529RmPXxR9ZLQpjQu8x6Cmvy6PWVN10wQlxrPmM//R/5ZKH4+s7tCA3neUmdMY
+dJ/Lamd36wQWPOQYb/7C0t3EX+MlmtAvcoQUnT1QIRkfI3k1kJKLekiH5eUdgldKu2WON8Eh1gsX
+ZG5okbLPQn3voQIJGJ3gxhkNYgv3ERtiMmezKt63FgCI7iW4MBllz4uqrE0lAvb5zRQ/qnjR3nBY
+p36inIZMvpSE83MOZ7V/v++lrNbcvh7Fdy/78wPva1vBfDAiWlZsgjDaq81+KBH8Xe7+ZYx+eyo7
+LWIZ4EpIjnIEmdyR6NZr1DCpZtxIRO7tOyvZsrlxbPUv7odbaOC4T8u9xLpGy0PToqhkKRfd0JRs
+0AKFgcnQVzTp0zDPEH6Vz/j3zLnsTWpNPTVrBq29mBDzrenf1keHCmIA2icX/XFDpgOeOdaIsyQX
+LsTzixBRKaXQBuk7Q6fIROOF3wyI98rgQSlR4e0WqiLmUVPN1tSVcDaSQ2lMRxKjbBNaZ/NV2Snv
+5rP/2Dgf7ce9nFn09HWHgHraudPWpTqEIP5uwqty/By7d7cVn5QVD2Ve3kAo3zZHLkq1P0WKqY9k
+u+8aGL2PB8b9s+wWIbh3N8jzWmLW8HuVTY1xToHf1XNY3rA+GJ1KBLdDtA3RwucDIiat02/tNqIC
+HiOD7X3yudp+E+pJLEZqHhzJwXcXtG4BJJC3wk6B4GWH8yaMl98af4fSSQ/egI4D5RKhFgE4LJ8L
+p4lnYP5YS5cXLNotDFZg4vkSygKhKA8okibgNQoeXryPOWg/rJd5fQ+6Ox8HE0TMMlB8uwVOS9dx
+f1IlasdHF+t9VsG5sKomz7oVJrNIDgTTxtcUz/gY/c+XcrwdOZd8ZnpFZYzB79H6AeQHXJR/UkMt
+etvkt++NLLW7PgHkhESSHTLzOD7TMsOpNXv97Gp6+Ku06cyARNctJFno3zYtgEil/xnGLQ2/KwfE
+HABih+YkiuFZR9v2zt7tleA2DbsWAm2/iOA01j0c7o2Ph+obkuuxk3215eAGngEi9oPZ85xcHs2E
+7fqvIJ/L/vluaCnGQYWX3iPt7wFiu2HrQcykLErllwZmVZZ7l1vD8yyxbz12VFpwCPgCssaD68xW
+NMDXUhnNXWIC9MM9DJ8MAF9aidzAitGq0O1YptSxUTBsWkc5H98oB4Ua6ArefIAl1c1WqXk27lO2
+zI93cjSUBz7kympdzoDYGqj7kuxV/tt/V23CjxUsq+U4vwRnC7DQR2aj49UB31PC02zgndwzsNT5
+rPEzRGfE7vX+t0MOwRLJZ8pzmF5mtLrNSjiXSUogWFbCsngHloAU8J221mrq89obpuhbansgFOu3
+YsCCjgKCl96WZQZtbxX9kGcCcyjfsgQQv3wJuaHWdVoEi8rRx6AFfHKiFYWvcoGCOR0mSafpU7aY
+bN09odAMJ7stRRU7CNRrVAsjeeWlw8H4JS1AjD8b8tzJKDOC94uPmaCk35sOT5ZUIeOzQZQxglo7
+6ln63XqXbrXmQmxWbyvtikKIqdEB2QG/YxHlXLYijl1cVj4wzduJit2qCTSeaJPoq3qVlVGJDc8Q
+CauHYTyxEswFpuZk1XyweEsG1sE9V7sc0TCO/M5x0TbQM7zl3fKqUaMVBN1bU/4rbt4Uu+3/RStM
+uv1xb7kL9SnhckyJBlsGdIUfKajR7/ZG1B7iGNyPpKJ0FsGB5HK0HsVVq+n/WxturIIxUYkCOysA
+kIhvfNaq0mTnkfHyRxo2oeJgoi7N4YqCwY4RaXSLXUL/Nb/njve5CUVHi8ija8piQNcPLMxSLb66
++4XoyNFjkxUBvPIbMGNWB+1pM77nh/Kk8QKADyimJp7u3YW9SxH1Lhc0KNwthCi0RYBLVJa1Lce/
+MY+1EJSiVgte9CSwP6JD0ipcjmS6WRC79S1KngoBJgBZFyr7Wm/+gKwcCcW68p/RAAwK+KsE2WJl
+tKpivR0zIr7LDhovpjB4lQJAb7oAd/ZlACBJOSwY+NFN22ikPYM5A7kMH22ozcSA1OctTmEJBUDE
+LPlCyfzgTEZFwWhFR3Akp5S+ceIRLHbpE9tkAZ0rWRNQsPqT4exEjnLG+Lx7rles+cN+beM1znMw
+9n+OJa+/X5GZ69tjJy0hurx6QgAAY1g2YYkIGa27OpllpJzNf0WFoIrx0YF/TPFk1eArbVoE2qB/
+8TeOSYe6/Kk9SBBE8Ax9c+A/5suZPgd32zSLIaiHpDT+M29SDTPn3bZeQkTyuOxaIJ8HpbNhQ2SA
+3Dm1dbRN+9ywHUOMQow9CvY5g1n4I7lokQnUJ6pDalvtR3AVcwD5w2HP6QitGjY+BntyRUpsMcpo
+dbm4mfBqS9veb9Gl9xVJhqil5q/IjebTnIZZreDbU9cHFM/544A/2RHDushTyform7wlXMGrwSpb
+AnCQ8RMP04QztWG5ffzmEfo401IbZz6VEJvBaBcJnVpNgsc4bKM5DLwn75YUQEtEgkPxaUHzjiJX
+yVV7Wehah1Z56AEMkqQWTOEXJC/WlwBtUP7lHZhEwrWiLkwGTgBGKLgn4nb3irkOYjhl8Y4lrl7/
+pLg2dT2QoSZgWALiX3MOO9Y+CkrWAuzxrmaI6misMr62bY4mv50h3VLzNzlj1eDYm7OKHRfQDUxf
+X+9yXgiubpPa2NcE+kcB7V+m9MzykXmtuJdnOkG82K2o9QUGopSQy8rn7NS6Eo8T6TJb7JGwENqL
+O+73VP7xwY75GCWSvbxenNyVRa5JCl4rFwSdeBr3Dgy1O/6xEmx8CwNx4NrNPb9NkVmJs4vImyJG
+Xgf2LiqvRYOUvPUd8iXadfgjpBhPQEt1VE6dcqwxQ0DYMDJ4H7dx7Ju27qK8wzrm9nBqOR6U6Nq/
+/Y07iju6OpZsDjk0bq7IHPsbwsTqE0cyANxLl1IFUkMPtMVluhodxE7g2yvePO9lZapG+t5JQO3L
+bXqpGjcWZlgyLgmze8Z2/8lDT8P2iPxNxcNVBAmdYSYqQDVpCUoFe7F0sFTI0lFuaXzUEle2yJHL
+w6fST/UR63i5CXYh+zZuVdHM2ORDPGO94e1TANypAkItK7PTsAsBmtF2h1/jDUppcYsKrjYUZWrs
+B2S0UUprqSP8wQWnBy7rTBLXBRscixR+tPa7cnotU6ch6+Yk3aE/pITZyqViIBqDGP2U4MD5gI9f
+UiOKzMeu4ZWz4HjI7ogvIrcQGHUGZ041xAxIMLEH3S/bpeL+g6eaSrrX8C46YlJZ/pBwvOesIwJY
+3+gsHOrZG4gUNzghg5u28snrEHJ9pV4M7+n7C8MznC5WHGE/cqv5yPjKzHlN0ke4TcSeNHgknwoG
+8pPnZFMfJnVFR8y7l5c+UsVXrPfRHZkOY3SB74rPqPtoBFi3YFQNd2ehuXvkxq7UhiG+uk9NW6zP
+t2tHDcDGIwh5odaxAMvvGbw8egF2f4h2S7fqQugSLiTr65ueLG4VTfQip0RhMBOhdRjCyfStZnmG
+EQMAq5oEYM+4akMHAGpei5gjnD5R5RTCN7uWEdUFf10gYdzh0157Z08GtzlPUBSNchwpj+RsfEso
+lhGcSMHrkwG7TI+qOzIN8nHPRLe7+VLg+5AOuXGfIubN8Ke0UJzATEHH5fBwJMbY211lpFeBdrFC
+oP4gb0p4ZBZTbqwewVPrOAU2gaXdNVE2vpGHLh8wdegEmEROlHD/fwuvTvjVeqJ3bT1+zMGJgklB
+3J2Q1e32srBM3cgtqoAEsllSY5YpIWet+5oFonvzALSZ3RHcoib9qp+ehuPrUUC78fYdP4V6uMa1
+qm+RojRNWb2RtBBMlBVS5qIHN1+Fla16kTDHcdQlbHGOoQLoq+KaZx08WwJ9FPsq1yKSWC9BNq+x
+mMkx6/NycWiHH8tfERWSHYAWlOPLA4fteWlBl80YGIzuDqe5cgQ8mbhYfOZV/O3BIZtn+Saa7o2v
+1Y1yHRjartm+c/carQjt+NEeJjtoU8XFVCCPmH2qIt1YKWsEKJMix8Y18ZF4ANfwRaS/2ViT4tb0
+5tNCuB9YpIHdEPTf5TLChVZCwFirxYPspyxLHX7dsHKG4x0eWg4/8MFA8fjXYt9Z0OzUTFXYMMaH
+qU6NBtBCQumAMFDHTeVhlPzjDDs/5EZRVOmIxaV1vp+eBe+70JY6lvuvQp712XYgMQo5PwgTC9Z3
+itYx73YWZIEsvj0+hN6TFp1kfTINBjc8DjGSjrWPf9MNX4kFsiAfOitxTD15y9/NbP3VNw+5DbmS
+h3+wCRKgz+OKHOzyruQphtctxFqYZB6utQBc/CI9blgfDjF61PQWRGAwW7bfJb1d2DZekrFiwkF1
+mxX6AT2hMWAT/153psCXSaDo3bOxUVu+8r+0C1GTyBhBRkGUqCtZzrtybzZayd+Z+bIhOg1Cv1qZ
+uwkcbc7WHH7rtvKkxKiiWW5QEJ7nZqfQil3E/R0ubQTFheyccPZf/rYTsmBirkw/aZcmcuon9JZi
+rt2BO6xIOdcgn3y+yFX8f22R4wIhmBtrwc0KBJ/74/hih4cXr4dpbkCxXAKFBRocPMXI7b06iNpo
+J68xPlCKQ9nwRQ54duZ5mGZ2uA5UmObBRLognyBa4rJipBkwpUw0Bg4vnY9R8g85dsISWPtBCa+2
+3vqG7++6PmGzQnfOAMHxZSwXPhZhn647rOR8ZUirCqBCQkDT0kPToA1rstn5KrCGk8Qyfp65p41l
+SuHs0jYxd1q0xNGfJGPTlUHC8fu40cIpCVVzbTOL6MT2qI7LTUH4Jr80RqprHo4OUlp1v0olq+73
+fwB7PyG57k6ennzTq+bG8IdIb3i0kWYefL7vhG==

@@ -1,76 +1,32 @@
-<?php
-
-/*
- * This file is part of SwiftMailer.
- * (c) 2004-2009 Chris Corbyn
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-/*
- * List of MIME type automatically detected in Swift Mailer.
- */
-
-// You may add or take away what you like (lowercase required)
-
-$swift_mime_types = array(
-    'aif'  => 'audio/x-aiff',
-    'aiff' => 'audio/x-aiff',
-    'avi'  => 'video/avi',
-    'bmp'  => 'image/bmp',
-    'bz2'  => 'application/x-bz2',
-    'csv'  => 'text/csv',
-    'dmg'  => 'application/x-apple-diskimage',
-    'doc'  => 'application/msword',
-    'docx' => 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-    'eml'  => 'message/rfc822',
-    'aps'  => 'application/postscript',
-    'exe'  => 'application/x-ms-dos-executable',
-    'flv'  => 'video/x-flv',
-    'gif'  => 'image/gif',
-    'gz'   => 'application/x-gzip',
-    'hqx'  => 'application/stuffit',
-    'htm'  => 'text/html',
-    'html' => 'text/html',
-    'jar'  => 'application/x-java-archive',
-    'jpeg' => 'image/jpeg',
-    'jpg'  => 'image/jpeg',
-    'm3u'  => 'audio/x-mpegurl',
-    'm4a'  => 'audio/mp4',
-    'mdb'  => 'application/x-msaccess',
-    'mid'  => 'audio/midi',
-    'midi' => 'audio/midi',
-    'mov'  => 'video/quicktime',
-    'mp3'  => 'audio/mpeg',
-    'mp4'  => 'video/mp4',
-    'mpeg' => 'video/mpeg',
-    'mpg'  => 'video/mpeg',
-    'odg'  => 'vnd.oasis.opendocument.graphics',
-    'odp'  => 'vnd.oasis.opendocument.presentation',
-    'odt'  => 'vnd.oasis.opendocument.text',
-    'ods'  => 'vnd.oasis.opendocument.spreadsheet',
-    'ogg'  => 'audio/ogg',
-    'pdf'  => 'application/pdf',
-    'png'  => 'image/png',
-    'ppt'  => 'application/vnd.ms-powerpoint',
-    'pptx' => 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
-    'ps'   => 'application/postscript',
-    'rar'  => 'application/x-rar-compressed',
-    'rtf'  => 'application/rtf',
-    'tar'  => 'application/x-tar',
-    'sit'  => 'application/x-stuffit',
-    'svg'  => 'image/svg+xml',
-    'tif'  => 'image/tiff',
-    'tiff' => 'image/tiff',
-    'ttf'  => 'application/x-font-truetype',
-    'txt'  => 'text/plain',
-    'vcf'  => 'text/x-vcard',
-    'wav'  => 'audio/wav',
-    'wma'  => 'audio/x-ms-wma',
-    'wmv'  => 'audio/x-ms-wmv',
-    'xls'  => 'application/excel',
-    'xlsx' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-    'xml'  => 'application/xml',
-    'zip'  => 'application/zip'
-);
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

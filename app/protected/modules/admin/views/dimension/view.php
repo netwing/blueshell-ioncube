@@ -1,29 +1,29 @@
-<?php
-/* @var $this DimensionController */
-/* @var $model Dimension */
-
-$this->pageTitle = Yii::t('app', 'Update Dimensions');
-
-$this->breadcrumbs=array(
-	'Dimensions'=>array('index'),
-	$model->dimensione_id,
-);
-
-$this->menu=array(
-	array('label'=>Yii::t('app', 'Manage Dimension'), 'url'=>array('admin')),
-	array('label'=>Yii::t('app', 'Create Dimension'), 'url'=>array('create')),
-	array('label'=>Yii::t('app', 'Update Dimension'), 'url'=>array('update', 'id'=>$model->dimensione_id)),
-	array('label'=>Yii::t('app', 'Delete Dimension'), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->dimensione_id),'confirm'=>'Are you sure you want to delete this item?','params'=> array('YII_CSRF_TOKEN' => Yii::app()->request->csrfToken))),
-);
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
-
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'dimensione_id',
-		'dimensione_lunghezza',
-		'dimensione_larghezza',
-		'dimensione_profondita',
-		'dimensione_tipo',
-	),
-)); ?>
+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

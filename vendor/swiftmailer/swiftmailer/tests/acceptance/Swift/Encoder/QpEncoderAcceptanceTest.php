@@ -1,58 +1,44 @@
-<?php
-
-require_once 'Swift/Tests/SwiftUnitTestCase.php';
-require_once 'Swift/Encoder/QpEncoder.php';
-require_once 'Swift/CharacterStream/ArrayCharacterStream.php';
-require_once 'Swift/CharacterReaderFactory/SimpleCharacterReaderFactory.php';
-
-class Swift_Encoder_QpEncoderAcceptanceTest
-    extends Swift_Tests_SwiftUnitTestCase
-{
-    private $_samplesDir;
-    private $_factory;
-
-    public function setUp()
-    {
-        $this->_samplesDir = realpath(dirname(__FILE__) . '/../../../_samples/charsets');
-        $this->_factory = new Swift_CharacterReaderFactory_SimpleCharacterReaderFactory();
-    }
-
-    public function testEncodingAndDecodingSamples()
-    {
-        $sampleFp = opendir($this->_samplesDir);
-        while (false !== $encodingDir = readdir($sampleFp)) {
-            if (substr($encodingDir, 0, 1) == '.') {
-                continue;
-            }
-
-            $encoding = $encodingDir;
-            $charStream = new Swift_CharacterStream_ArrayCharacterStream(
-                $this->_factory, $encoding);
-            $encoder = new Swift_Encoder_QpEncoder($charStream);
-
-            $sampleDir = $this->_samplesDir . '/' . $encodingDir;
-
-            if (is_dir($sampleDir)) {
-
-                $fileFp = opendir($sampleDir);
-                while (false !== $sampleFile = readdir($fileFp)) {
-                    if (substr($sampleFile, 0, 1) == '.') {
-                        continue;
-                    }
-
-                    $text = file_get_contents($sampleDir . '/' . $sampleFile);
-                    $encodedText = $encoder->encodeString($text);
-
-                    $this->assertEqual(
-                        quoted_printable_decode($encodedText), $text,
-                        '%s: Encoded string should decode back to original string for sample ' .
-                        $sampleDir . '/' . $sampleFile
-                        );
-                }
-                closedir($fileFp);
-            }
-
-        }
-        closedir($sampleFp);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

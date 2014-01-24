@@ -1,580 +1,202 @@
-<?php
-/**
- * PHP_ParserGenerator, a php 5 parser generator.
- *
- * This is a direct port of the Lemon parser generator, found at
- * {@link http://www.hwaci.com/sw/lemon/}
- *
- * PHP version 5
- *
- * LICENSE:
- *
- * Copyright (c) 2006, Gregory Beaver <cellog@php.net>
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *     * Redistributions of source code must retain the above copyright
- *       notice, this list of conditions and the following disclaimer.
- *     * Redistributions in binary form must reproduce the above copyright
- *       notice, this list of conditions and the following disclaimer in
- *       the documentation and/or other materials provided with the distribution.
- *     * Neither the name of the PHP_ParserGenerator nor the names of its
- *       contributors may be used to endorse or promote products derived
- *       from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
- * IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
- * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
- * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
- * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
- * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
- * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
- * PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
- * OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
- * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
- * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- *
- * @category   php
- * @package    PHP_ParserGenerator
- * @author     Gregory Beaver <cellog@php.net>
- * @copyright  2006 Gregory Beaver
- * @license    http://www.opensource.org/licenses/bsd-license.php New BSD License
- * @version    CVS: $Id: Config.php,v 1.1 2006/07/18 00:53:10 cellog Exp $
- * @since      File available since Release 0.1.0
- */
-/**
-/** A configuration is a production rule of the grammar together with
- * a mark (dot) showing how much of that rule has been processed so far.
- *
- * Configurations also contain a follow-set which is a list of terminal
- * symbols which are allowed to immediately follow the end of the rule.
- * Every configuration is recorded as an instance of the following class.
- *
- * @package    PHP_ParserGenerator
- * @author     Gregory Beaver <cellog@php.net>
- * @copyright  2006 Gregory Beaver
- * @license    http://www.opensource.org/licenses/bsd-license.php New BSD License
- * @version    0.1.5
- * @since      Class available since Release 0.1.0
- */
-class PHP_ParserGenerator_Config
-{
-    const COMPLETE = 1;
-    const INCOMPLETE = 2;
-    /**
-     * The parser rule upon with the configuration is based.
-     *
-     * A parser rule is something like:
-     * <pre>
-     * blah ::= FOO bar.
-     * </pre>
-     * @var PHP_ParserGenerator_Rule
-     */
-    public $rp;
-    /**
-     * The parse point.
-     *
-     * This is the index into the right-hand side of a rule that is
-     * represented by this configuration.  In other words, possible
-     * dots for this rule:
-     *
-     * <pre>
-     * blah ::= FOO bar.
-     * </pre>
-     *
-     * are (represented by "[here]"):
-     *
-     * <pre>
-     * blah ::= [here] FOO bar.
-     * blah ::= FOO [here] bar.
-     * blah ::= FOO bar [here].
-     * </pre>
-     * @var int
-     */
-    public $dot;
-    /**
-     * Follow-set for this configuration only
-     *
-     * This is the list of terminals and non-terminals that
-     * can follow this configuration.
-     * @var array
-     */
-    public $fws;
-    /**
-     * Follow-set forward propagation links.
-     * @var PHP_ParserGenerator_PropagationLink
-     */
-    public $fplp;
-    /**
-     * Follow-set backwards propagation links
-     * @var PHP_ParserGenerator_PropagationLink
-     */
-    public $bplp;
-    /**
-     * State that contains this configuration
-     * @var PHP_ParserGenerator_State
-     */
-    public $stp;
-  /* enum {
-    COMPLETE,              /* The status is used during followset and
-    INCOMPLETE             /*    shift computations
-  } */
-    /**
-     * Status during followset and shift computations.
-     *
-     * One of PHP_ParserGenerator_Config::COMPLETE or
-     * PHP_ParserGenerator_Config::INCOMPLETE.
-     * @var int
-     */
-    public $status;
-    /**
-     * Next configuration in the state.
-     *
-     * Index of next PHP_ParserGenerator_Config object.
-     * @var int
-     */
-    public $next;
-    /**
-     * Index of the next basis configuration PHP_ParserGenerator_Config object
-     * @var int
-     */
-    public $bp;
-
-    /**
-     * Top of the list of configurations for the current state.
-     * @var PHP_ParserGenerator_Config
-     */
-    public static $current;
-    /**
-     * Last on the list of configurations for the current state.
-     * @var PHP_ParserGenerator_Config
-     */
-    public static $currentend;
-
-    /**
-     * Top of the list of basis configurations for the current state.
-     * @var PHP_ParserGenerator_Config
-     */
-    public static $basis;
-    /**
-     * Last on the list of basis configurations for the current state.
-     * @var PHP_ParserGenerator_Config
-     */
-    public static $basisend;
-
-    /**
-     * Associative array representation of the linked list of configurations
-     * found in {@link $current}
-     *
-     * @var array
-     */
-    public static $x4a = array();
-
-    /**
-     * Return a pointer to a new configuration
-     * @return PHP_ParserGenerator_Config
-     */
-    private static function newconfig()
-    {
-        return new PHP_ParserGenerator_Config;
-    }
-
-    /**
-     * Display the current configuration for the .out file
-     *
-     * @param PHP_ParserGenerator_Config $cfp
-     * @see PHP_ParserGenerator_Data::ReportOutput()
-     */
-    public static function Configshow(PHP_ParserGenerator_Config $cfp)
-    {
-        $fp = fopen('php://output', 'w');
-        while ($cfp) {
-            if ($cfp->dot == $cfp->rp->nrhs) {
-                $buf = sprintf('(%d)', $cfp->rp->index);
-                fprintf($fp, '    %5s ', $buf);
-            } else {
-                fwrite($fp,'          ');
-            }
-            $cfp->ConfigPrint($fp);
-            fwrite($fp, "\n");
-            if (0) {
-                //SetPrint(fp,cfp->fws,$this);
-                //PlinkPrint(fp,cfp->fplp,"To  ");
-                //PlinkPrint(fp,cfp->bplp,"From");
-            }
-            $cfp = $cfp->next;
-        }
-        fwrite($fp, "\n");
-        fclose($fp);
-    }
-
-    /**
-     * Initialize the configuration list builder for a new state.
-     */
-    public static function Configlist_init()
-    {
-        self::$current = 0;
-        self::$currentend = &self::$current;
-        self::$basis = 0;
-        self::$basisend = &self::$basis;
-        self::$x4a = array();
-    }
-
-    /**
-     * Remove all data from the table.
-     *
-     * Pass each data to the function $f as it is removed if
-     * $f is a valid callback.
-     * @param callback|null
-     * @see Configtable_clear()
-     */
-    public static function Configtable_reset($f)
-    {
-        self::$current = 0;
-        self::$currentend = &self::$current;
-        self::$basis = 0;
-        self::$basisend = &self::$basis;
-        self::Configtable_clear(0);
-    }
-
-    /**
-     * Remove all data from the associative array representation
-     * of configurations.
-     *
-     * Pass each data to the function $f as it is removed if
-     * $f is a valid callback.
-     * @param callback|null
-     */
-    public static function Configtable_clear($f)
-    {
-        if (!count(self::$x4a)) {
-            return;
-        }
-        if ($f) {
-            for ($i = 0; $i < count(self::$x4a); $i++) {
-                call_user_func($f, self::$x4a[$i]->data);
-            }
-        }
-        self::$x4a = array();
-    }
-
-    /**
-     * Reset the configuration list builder for a new state.
-     * @see Configtable_clear()
-     */
-    public static function Configlist_reset()
-    {
-        self::Configtable_clear(0);
-    }
-
-    /**
-     * Add another configuration to the configuration list for this parser state.
-     * @param PHP_ParserGenerator_Rule the rule
-     * @param int Index into the right-hand side of the rule where the dot goes
-     * @return PHP_ParserGenerator_Config
-     */
-    public static function Configlist_add($rp, $dot)
-    {
-        $model = new PHP_ParserGenerator_Config;
-        $model->rp = $rp;
-        $model->dot = $dot;
-        $cfp = self::Configtable_find($model);
-        if ($cfp === 0) {
-            $cfp = self::newconfig();
-            $cfp->rp = $rp;
-            $cfp->dot = $dot;
-            $cfp->fws = array();
-            $cfp->stp = 0;
-            $cfp->fplp = $cfp->bplp = 0;
-            $cfp->next = 0;
-            $cfp->bp = 0;
-            self::$currentend = $cfp;
-            self::$currentend = &$cfp->next;
-            self::Configtable_insert($cfp);
-        }
-
-        return $cfp;
-    }
-
-    /**
-     * Add a basis configuration to the configuration list for this parser state.
-     *
-     * Basis configurations are the root for a configuration.  This method also
-     * inserts the configuration into the regular list of configurations for this
-     * reason.
-     * @param PHP_ParserGenerator_Rule the rule
-     * @param int Index into the right-hand side of the rule where the dot goes
-     * @return PHP_ParserGenerator_Config
-     */
-    public static function Configlist_addbasis($rp, $dot)
-    {
-        $model = new PHP_ParserGenerator_Config;
-        $model->rp = $rp;
-        $model->dot = $dot;
-        $cfp = self::Configtable_find($model);
-        if ($cfp === 0) {
-            $cfp = self::newconfig();
-            $cfp->rp = $rp;
-            $cfp->dot = $dot;
-            $cfp->fws = array();
-            $cfp->stp = 0;
-            $cfp->fplp = $cfp->bplp = 0;
-            $cfp->next = 0;
-            $cfp->bp = 0;
-            self::$currentend = $cfp;
-            self::$currentend = &$cfp->next;
-            self::$basisend = $cfp;
-            self::$basisend = &$cfp->bp;
-            self::Configtable_insert($cfp);
-        }
-
-        return $cfp;
-    }
-
-    /**
-     * Compute the closure of the configuration list.
-     *
-     * This calculates all of the possible continuations of
-     * each configuration, ensuring that each state accounts
-     * for every configuration that could arrive at that state.
-     */
-    public static function Configlist_closure(PHP_ParserGenerator_Data $lemp)
-    {
-        for ($cfp = self::$current; $cfp; $cfp = $cfp->next) {
-            $rp = $cfp->rp;
-            $dot = $cfp->dot;
-            if ($dot >= $rp->nrhs) {
-                continue;
-            }
-            $sp = $rp->rhs[$dot];
-            if ($sp->type == PHP_ParserGenerator_Symbol::NONTERMINAL) {
-                if ($sp->rule === 0 && $sp !== $lemp->errsym) {
-                    PHP_ParserGenerator::ErrorMsg($lemp->filename, $rp->line,
-                        "Nonterminal \"%s\" has no rules.", $sp->name);
-                    $lemp->errorcnt++;
-                }
-                for ($newrp = $sp->rule; $newrp; $newrp = $newrp->nextlhs) {
-                    $newcfp = self::Configlist_add($newrp, 0);
-                    for ($i = $dot + 1; $i < $rp->nrhs; $i++) {
-                        $xsp = $rp->rhs[$i];
-                        if ($xsp->type == PHP_ParserGenerator_Symbol::TERMINAL) {
-                            $newcfp->fws[$xsp->index] = 1;
-                            break;
-                        } elseif ($xsp->type == PHP_ParserGenerator_Symbol::MULTITERMINAL) {
-                            for ($k = 0; $k < $xsp->nsubsym; $k++) {
-                                $newcfp->fws[$xsp->subsym[$k]->index] = 1;
-                            }
-                            break;
-                        } else {
-                            $a = array_diff_key($xsp->firstset, $newcfp->fws);
-                            $newcfp->fws += $a;
-                            if ($xsp->lambda === false) {
-                                break;
-                            }
-                        }
-                    }
-                    if ($i == $rp->nrhs) {
-                        PHP_ParserGenerator_PropagationLink::Plink_add($cfp->fplp, $newcfp);
-                    }
-                }
-            }
-        }
-    }
-
-    /**
-     * Sort the configuration list
-     * @uses Configcmp()
-     */
-    public static function Configlist_sort()
-    {
-        $a = 0;
-        //self::Configshow(self::$current);
-        self::$current = PHP_ParserGenerator::msort(self::$current,'next', array('PHP_ParserGenerator_Config', 'Configcmp'));
-        //self::Configshow(self::$current);
-        self::$currentend = &$a;
-        self::$currentend = 0;
-    }
-
-    /**
-     * Sort the configuration list
-     * @uses Configcmp
-     */
-    public static function Configlist_sortbasis()
-    {
-        $a = 0;
-        self::$basis = PHP_ParserGenerator::msort(self::$current,'bp', array('PHP_ParserGenerator_Config', 'Configcmp'));
-        self::$basisend = &$a;
-        self::$basisend = 0;
-    }
-
-    /**
-     * Return a pointer to the head of the configuration list and
-     * reset the list
-     * @see $current
-     * @return PHP_ParserGenerator_Config
-     */
-    public static function Configlist_return()
-    {
-        $old = self::$current;
-        self::$current = 0;
-        self::$currentend = &self::$current;
-
-        return $old;
-    }
-
-    /**
-     * Return a pointer to the head of the basis list and
-     * reset the list
-     * @see $basis
-     * @return PHP_ParserGenerator_Config
-     */
-    public static function Configlist_basis()
-    {
-        $old = self::$basis;
-        self::$basis = 0;
-        self::$basisend = &self::$basis;
-
-        return $old;
-    }
-
-    /**
-     * Free all elements of the given configuration list
-     * @param PHP_ParserGenerator_Config
-     */
-    public static function Configlist_eat($cfp)
-    {
-    $nextcfp = null;
-    for (; $cfp; $cfp = $nextcfp) {
-            $nextcfp = $cfp->next;
-            if ($cfp->fplp !=0) {
-                throw new Exception('fplp of configuration non-zero?');
-            }
-            if ($cfp->bplp !=0) {
-                throw new Exception('bplp of configuration non-zero?');
-            }
-            if ($cfp->fws) {
-                $cfp->fws = array();
-            }
-        }
-    }
-
-    /**
-     * Compare two configurations for sorting purposes.
-     *
-     * Configurations based on higher precedence rules
-     * (those earlier in the file) are chosen first.  Two
-     * configurations that are the same rule are sorted by
-     * dot (see {@link $dot}), and those configurations
-     * with a dot closer to the left-hand side are chosen first.
-     * @param  unknown_type $a
-     * @param  unknown_type $b
-     * @return unknown
-     */
-    public static function Configcmp($a, $b)
-    {
-        $x = $a->rp->index - $b->rp->index;
-        if (!$x) {
-            $x = $a->dot - $b->dot;
-        }
-
-        return $x;
-    }
-
-    /**
-     * Print out information on this configuration.
-     *
-     * @param resource $fp
-     * @see PHP_ParserGenerator_Data::ReportOutput()
-     */
-    public function ConfigPrint($fp)
-    {
-        $rp = $this->rp;
-        fprintf($fp, "%s ::=", $rp->lhs->name);
-        for ($i = 0; $i <= $rp->nrhs; $i++) {
-            if ($i === $this->dot) {
-                fwrite($fp,' *');
-            }
-            if ($i === $rp->nrhs) {
-                break;
-            }
-            $sp = $rp->rhs[$i];
-            fprintf($fp,' %s', $sp->name);
-            if ($sp->type == PHP_ParserGenerator_Symbol::MULTITERMINAL) {
-                for ($j = 1; $j < $sp->nsubsym; $j++) {
-                    fprintf($fp, '|%s', $sp->subsym[$j]->name);
-                }
-            }
-        }
-    }
-
-    /**
-     * Hash a configuration for the associative array {@link $x4a}
-     */
-    private static function confighash(PHP_ParserGenerator_Config $a)
-    {
-        $h = 0;
-        $h = $h * 571 + $a->rp->index * 37 + $a->dot;
-
-        return $h;
-    }
-
-    /**
-     * Insert a new record into the array.  Return TRUE if successful.
-     * Prior data with the same key is NOT overwritten
-     */
-    public static function Configtable_insert(PHP_ParserGenerator_Config $data)
-    {
-        $h = self::confighash($data);
-        if (isset(self::$x4a[$h])) {
-            $np = self::$x4a[$h];
-        } else {
-            $np = 0;
-        }
-        while ($np) {
-            if (self::Configcmp($np->data, $data) == 0) {
-                /* An existing entry with the same key is found. */
-                /* Fail because overwrite is not allows. */
-
-                return 0;
-            }
-            $np = $np->next;
-        }
-        /* Insert the new data */
-        $np = array('data' => $data, 'next' => 0, 'from' => 0);
-        $np = new PHP_ParserGenerator_StateNode;
-        $np->data = $data;
-        if (isset(self::$x4a[$h])) {
-            self::$x4a[$h]->from = $np->next;
-            $np->next = self::$x4a[$h];
-        }
-        $np->from = $np;
-        self::$x4a[$h] = $np;
-
-        return 1;
-    }
-
-    /**
-     * Return a pointer to data assigned to the given key.  Return NULL
-     * if no such key.
-     * @return PHP_ParserGenerator_Config|0
-     */
-    public static function Configtable_find(PHP_ParserGenerator_Config $key)
-    {
-        $h = self::confighash($key);
-        if (!isset(self::$x4a[$h])) {
-            return 0;
-        }
-        $np = self::$x4a[$h];
-        while ($np) {
-            if (self::Configcmp($np->data, $key) == 0) {
-                break;
-            }
-            $np = $np->next;
-        }
-
-        return $np ? $np->data : 0;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+cJupddO522qoHqtZUJCCl5Pwx/G=

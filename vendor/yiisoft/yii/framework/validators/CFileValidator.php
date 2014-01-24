@@ -1,305 +1,177 @@
-<?php
-/**
- * CFileValidator class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CFileValidator verifies if an attribute is receiving a valid uploaded file.
- *
- * It uses the model class and attribute name to retrieve the information
- * about the uploaded file. It then checks if a file is uploaded successfully,
- * if the file size is within the limit and if the file type is allowed.
- *
- * This validator will attempt to fetch uploaded data if attribute is not
- * previously set. Please note that this cannot be done if input is tabular:
- * <pre>
- *  foreach($models as $i=>$model)
- *     $model->attribute = CUploadedFile::getInstance($model, "[$i]attribute");
- * </pre>
- * Please note that you must use {@link CUploadedFile::getInstances} for multiple
- * file uploads.
- *
- * When using CFileValidator with an active record, the following code is often used:
- * <pre>
- *  $model->attribute = CUploadedFile::getInstance($model, "attribute");
- *  if($model->save())
- *  {
- *     // single upload
- *     $model->attribute->saveAs($path);
- *     // multiple upload
- *     foreach($model->attribute as $file)
- *        $file->saveAs($path);
- *  }
- * </pre>
- *
- * You can use {@link CFileValidator} to validate the file attribute.
- *
- * In addition to the {@link message} property for setting a custom error message,
- * CFileValidator has a few custom error messages you can set that correspond to different
- * validation scenarios. When the file is too large, you may use the {@link tooLarge} property
- * to define a custom error message. Similarly for {@link tooSmall}, {@link wrongType} and
- * {@link tooMany}. The messages may contain additional placeholders that will be replaced
- * with the actual content. In addition to the "{attribute}" placeholder, recognized by all
- * validators (see {@link CValidator}), CFileValidator allows for the following placeholders
- * to be specified:
- * <ul>
- * <li>{file}: replaced with the name of the file.</li>
- * <li>{limit}: when using {@link tooLarge}, replaced with {@link maxSize};
- * when using {@link tooSmall}, replaced with {@link minSize}; and when using {@link tooMany}
- * replaced with {@link maxFiles}.</li>
- * <li>{extensions}: when using {@link wrongType}, it will be replaced with the allowed extensions.</li>
- * </ul>
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.validators
- * @since 1.0
- */
-class CFileValidator extends CValidator
-{
-	/**
-	 * @var boolean whether the attribute requires a file to be uploaded or not.
-	 * Defaults to false, meaning a file is required to be uploaded.
-	 */
-	public $allowEmpty=false;
-	/**
-	 * @var mixed a list of file name extensions that are allowed to be uploaded.
-	 * This can be either an array or a string consisting of file extension names
-	 * separated by space or comma (e.g. "gif, jpg").
-	 * Extension names are case-insensitive. Defaults to null, meaning all file name
-	 * extensions are allowed.
-	 */
-	public $types;
-	/**
-	 * @var mixed a list of MIME-types of the file that are allowed to be uploaded.
-	 * This can be either an array or a string consisting of MIME-types separated
-	 * by space or comma (e.g. "image/gif, image/jpeg"). MIME-types are
-	 * case-insensitive. Defaults to null, meaning all MIME-types are allowed.
-	 * In order to use this property fileinfo PECL extension should be installed.
-	 * @since 1.1.11
-	 */
-	public $mimeTypes;
-	/**
-	 * @var integer the minimum number of bytes required for the uploaded file.
-	 * Defaults to null, meaning no limit.
-	 * @see tooSmall
-	 */
-	public $minSize;
-	/**
-	 * @var integer the maximum number of bytes required for the uploaded file.
-	 * Defaults to null, meaning no limit.
-	 * Note, the size limit is also affected by 'upload_max_filesize' INI setting
-	 * and the 'MAX_FILE_SIZE' hidden field value.
-	 * @see tooLarge
-	 */
-	public $maxSize;
-	/**
-	 * @var string the error message used when the uploaded file is too large.
-	 * @see maxSize
-	 */
-	public $tooLarge;
-	/**
-	 * @var string the error message used when the uploaded file is too small.
-	 * @see minSize
-	 */
-	public $tooSmall;
-	/**
-	 * @var string the error message used when the uploaded file has an extension name
-	 * that is not listed among {@link types}.
-	 */
-	public $wrongType;
-	/**
-	 * @var string the error message used when the uploaded file has a MIME-type
-	 * that is not listed among {@link mimeTypes}. In order to use this property
-	 * fileinfo PECL extension should be installed.
-	 * @since 1.1.11
-	 */
-	public $wrongMimeType;
-	/**
-	 * @var integer the maximum file count the given attribute can hold.
-	 * It defaults to 1, meaning single file upload. By defining a higher number,
-	 * multiple uploads become possible.
-	 */
-	public $maxFiles=1;
-	/**
-	 * @var string the error message used if the count of multiple uploads exceeds
-	 * limit.
-	 */
-	public $tooMany;
-	/**
-	 * @var boolean whether attributes listed with this validator should be considered safe for massive assignment.
-	 * For this validator it defaults to false.
-	 * @since 1.1.12
-	 */
-	public $safe=false;
-
-	/**
-	 * Set the attribute and then validates using {@link validateFile}.
-	 * If there is any error, the error message is added to the object.
-	 * @param CModel $object the object being validated
-	 * @param string $attribute the attribute being validated
-	 */
-	protected function validateAttribute($object, $attribute)
-	{
-		if($this->maxFiles > 1)
-		{
-			$files=$object->$attribute;
-			if(!is_array($files) || !isset($files[0]) || !$files[0] instanceof CUploadedFile)
-				$files = CUploadedFile::getInstances($object, $attribute);
-			if(array()===$files)
-				return $this->emptyAttribute($object, $attribute);
-			if(count($files) > $this->maxFiles)
-			{
-				$message=$this->tooMany!==null?$this->tooMany : Yii::t('yii', '{attribute} cannot accept more than {limit} files.');
-				$this->addError($object, $attribute, $message, array('{attribute}'=>$attribute, '{limit}'=>$this->maxFiles));
-			}
-			else
-				foreach($files as $file)
-					$this->validateFile($object, $attribute, $file);
-		}
-		else
-		{
-			$file = $object->$attribute;
-			if(!$file instanceof CUploadedFile)
-			{
-				$file = CUploadedFile::getInstance($object, $attribute);
-				if(null===$file)
-					return $this->emptyAttribute($object, $attribute);
-			}
-			$this->validateFile($object, $attribute, $file);
-		}
-	}
-
-	/**
-	 * Internally validates a file object.
-	 * @param CModel $object the object being validated
-	 * @param string $attribute the attribute being validated
-	 * @param CUploadedFile $file uploaded file passed to check against a set of rules
-	 * @throws CException if failed to upload the file
-	 */
-	protected function validateFile($object, $attribute, $file)
-	{
-		if(null===$file || ($error=$file->getError())==UPLOAD_ERR_NO_FILE)
-			return $this->emptyAttribute($object, $attribute);
-		elseif($error==UPLOAD_ERR_INI_SIZE || $error==UPLOAD_ERR_FORM_SIZE || $this->maxSize!==null && $file->getSize()>$this->maxSize)
-		{
-			$message=$this->tooLarge!==null?$this->tooLarge : Yii::t('yii','The file "{file}" is too large. Its size cannot exceed {limit} bytes.');
-			$this->addError($object,$attribute,$message,array('{file}'=>$file->getName(), '{limit}'=>$this->getSizeLimit()));
-		}
-		elseif($error==UPLOAD_ERR_PARTIAL)
-			throw new CException(Yii::t('yii','The file "{file}" was only partially uploaded.',array('{file}'=>$file->getName())));
-		elseif($error==UPLOAD_ERR_NO_TMP_DIR)
-			throw new CException(Yii::t('yii','Missing the temporary folder to store the uploaded file "{file}".',array('{file}'=>$file->getName())));
-		elseif($error==UPLOAD_ERR_CANT_WRITE)
-			throw new CException(Yii::t('yii','Failed to write the uploaded file "{file}" to disk.',array('{file}'=>$file->getName())));
-		elseif(defined('UPLOAD_ERR_EXTENSION') && $error==UPLOAD_ERR_EXTENSION)  // available for PHP 5.2.0 or above
-			throw new CException(Yii::t('yii','A PHP extension stopped the file upload.'));
-
-		if($this->minSize!==null && $file->getSize()<$this->minSize)
-		{
-			$message=$this->tooSmall!==null?$this->tooSmall : Yii::t('yii','The file "{file}" is too small. Its size cannot be smaller than {limit} bytes.');
-			$this->addError($object,$attribute,$message,array('{file}'=>$file->getName(), '{limit}'=>$this->minSize));
-		}
-
-		if($this->types!==null)
-		{
-			if(is_string($this->types))
-				$types=preg_split('/[\s,]+/',strtolower($this->types),-1,PREG_SPLIT_NO_EMPTY);
-			else
-				$types=$this->types;
-			if(!in_array(strtolower($file->getExtensionName()),$types))
-			{
-				$message=$this->wrongType!==null?$this->wrongType : Yii::t('yii','The file "{file}" cannot be uploaded. Only files with these extensions are allowed: {extensions}.');
-				$this->addError($object,$attribute,$message,array('{file}'=>$file->getName(), '{extensions}'=>implode(', ',$types)));
-			}
-		}
-
-		if($this->mimeTypes!==null)
-		{
-			if(function_exists('finfo_open'))
-			{
-				$mimeType=false;
-				if($info=finfo_open(defined('FILEINFO_MIME_TYPE') ? FILEINFO_MIME_TYPE : FILEINFO_MIME))
-					$mimeType=finfo_file($info,$file->getTempName());
-			}
-			elseif(function_exists('mime_content_type'))
-				$mimeType=mime_content_type($file->getTempName());
-			else
-				throw new CException(Yii::t('yii','In order to use MIME-type validation provided by CFileValidator fileinfo PECL extension should be installed.'));
-
-			if(is_string($this->mimeTypes))
-				$mimeTypes=preg_split('/[\s,]+/',strtolower($this->mimeTypes),-1,PREG_SPLIT_NO_EMPTY);
-			else
-				$mimeTypes=$this->mimeTypes;
-
-			if($mimeType===false || !in_array(strtolower($mimeType),$mimeTypes))
-			{
-				$message=$this->wrongMimeType!==null?$this->wrongMimeType : Yii::t('yii','The file "{file}" cannot be uploaded. Only files of these MIME-types are allowed: {mimeTypes}.');
-				$this->addError($object,$attribute,$message,array('{file}'=>$file->getName(), '{mimeTypes}'=>implode(', ',$mimeTypes)));
-			}
-		}
-	}
-
-	/**
-	 * Raises an error to inform end user about blank attribute.
-	 * @param CModel $object the object being validated
-	 * @param string $attribute the attribute being validated
-	 */
-	protected function emptyAttribute($object, $attribute)
-	{
-		if(!$this->allowEmpty)
-		{
-			$message=$this->message!==null?$this->message : Yii::t('yii','{attribute} cannot be blank.');
-			$this->addError($object,$attribute,$message);
-		}
-	}
-
-	/**
-	 * Returns the maximum size allowed for uploaded files.
-	 * This is determined based on three factors:
-	 * <ul>
-	 * <li>'upload_max_filesize' in php.ini</li>
-	 * <li>'MAX_FILE_SIZE' hidden field</li>
-	 * <li>{@link maxSize}</li>
-	 * </ul>
-	 *
-	 * @return integer the size limit for uploaded files.
-	 */
-	protected function getSizeLimit()
-	{
-		$limit=ini_get('upload_max_filesize');
-		$limit=$this->sizeToBytes($limit);
-		if($this->maxSize!==null && $limit>0 && $this->maxSize<$limit)
-			$limit=$this->maxSize;
-		if(isset($_POST['MAX_FILE_SIZE']) && $_POST['MAX_FILE_SIZE']>0 && $_POST['MAX_FILE_SIZE']<$limit)
-			$limit=$_POST['MAX_FILE_SIZE'];
-		return $limit;
-	}
-
-	/**
-	 * Converts php.ini style size to bytes. Examples of size strings are: 150, 1g, 500k, 5M (size suffix
-	 * is case insensitive). If you pass here the number with a fractional part, then everything after
-	 * the decimal point will be ignored (php.ini values common behavior). For example 1.5G value would be
-	 * treated as 1G and 1073741824 number will be returned as a result. This method is public
-	 * (was private before) since 1.1.11.
-	 *
-	 * @param string $sizeStr the size string to convert.
-	 * @return integer the byte count in the given size string.
-	 * @since 1.1.11
-	 */
-	public function sizeToBytes($sizeStr)
-	{
-		// get the latest character
-		switch (strtolower(substr($sizeStr, -1)))
-		{
-			case 'm': return (int)$sizeStr * 1048576; // 1024 * 1024
-			case 'k': return (int)$sizeStr * 1024; // 1024
-			case 'g': return (int)$sizeStr * 1073741824; // 1024 * 1024 * 1024
-			default: return (int)$sizeStr; // do nothing
-		}
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+PNoyqPuQ3Lsqvh5sg0==

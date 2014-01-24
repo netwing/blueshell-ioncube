@@ -1,106 +1,83 @@
-<?php
-
-class CCookieCollectionTest extends CTestCase
-{
-	protected $request;
-	protected $cookies;
-	protected $testCookies=array(
-		'testCookieOne'=>'testValue',
-		'someEmptyCookie'=>'',
-		'IntegerValue'=>1242,
-		'cookieWithOptions'=>array(
-			'value'=>'options',
-			'httpOnly'=>true,
-			'expire'=>12422,
-		),
-	);
-	protected $cookieBefore;
-	public function setUp()
-	{
-		$this->cookieBefore=$_COOKIE;
-		$_COOKIE['testGlobal']='value';
-		$this->request=new TestHttpRequest;
-		$this->cookies=$this->request->cookies;
-	}
-	public function tearDown()
-	{
-		$_COOKIE=$this->cookieBefore;
-	}
-	/**
-	 * @covers CCookieCollection::getCookies
-	 * @covers CCookieCollection::__construct
-	 */
-	public function testConstructorCookieBuilding()
-	{
-		$this->assertTrue($this->cookies->contains('testGlobal'));
-		$this->assertTrue($this->cookies['testGlobal'] instanceof CHttpCookie);
-		$this->assertEquals($_COOKIE['testGlobal'], $this->cookies['testGlobal']->value);
-	}
-	/**
-	 * @runInSeparateProcess
-	 * @outputBuffering enabled
-	 */
-	public function testAdd()
-	{
-		$this->cookies['simple_name']=new CHttpCookie('simple_name', 'simple_value');
-		$this->assertTrue($this->cookies['simple_name'] instanceof CHttpCookie);
-		$this->assertEquals('simple_value',$this->cookies['simple_name']->value);
-		// test if reference is not destroyed
-		$cookie=new CHttpCookie('referenceTest','someValue');
-		$this->cookies[$cookie->name]=$cookie;
-		$this->assertTrue($this->cookies[$cookie->name] instanceof CHttpCookie);
-		$this->assertEquals('someValue',$this->cookies[$cookie->name]->value);
-		$cookie->value='SomeNewValue';
-		$this->assertEquals($cookie->value,$this->cookies[$cookie->name]->value);
-		// test if cookies are added to internal array correctly
-		$this->assertTrue($this->cookies->contains('simple_name'));
-		$this->assertTrue($this->cookies->contains('referenceTest'));
-		$this->assertFalse($this->cookies->contains('someNonExistingCookie'));
-	}
-	/**
-	 * @runInSeparateProcess
-	 * @outputBuffering enabled
-	 */
-	public function testRemove()
-	{
-		// add some cookies to have something to base the tests (remove)
-		foreach($this->testCookies as $name=>$options)
-		{
-			if(is_array($options))
-			{
-				$value=$options['value'];
-				unset($options['value']);
-				$cookie=new CHttpCookie($name,$value,$options);
-			}
-			else
-				$cookie=new CHttpCookie($name,$options);
-			$this->cookies[$cookie->name] = $cookie;
-		}
-		//check if cookies were added, else fail the test, since it makes no sence to do this, if there are no cookies
-		$this->assertTrue($this->cookies->contains('testCookieOne'),'A default cookie is missing! Check the testcase!');
-		$this->assertTrue($this->cookies->contains('someEmptyCookie'),'A default cookie is missing! Check the testcase!');		
-		$this->assertTrue($this->cookies->contains('someEmptyCookie'),'A default cookie is missing! Check the testcase!');
-		$this->assertTrue($this->cookies->contains('cookieWithOptions'),'A default cookie is missing! Check the testcase!');
-		// Real tests below:
-		foreach($this->testCookies as $name=>$options)
-		{
-			if(is_array($options))
-			{
-				$value=$options['value'];
-				unset($options['value']);
-				$this->assertTrue($this->cookies->remove($name,$options) instanceof CHttpCookie);
-				$this->assertFalse($this->cookies->contains($name),'Cookie(with options) has not been removed');
-			}
-			else
-			{
-				$this->assertTrue($this->cookies->remove($name) instanceof CHttpCookie);
-				$this->assertFalse($this->cookies->contains($name));
-			}
-		}		
-	}
-	public function testGetRequest()
-	{
-		$this->assertTrue($this->cookies->getRequest() instanceof CHttpRequest);
-		$this->assertEquals($this->request,$this->cookies->getRequest(),'The collections does not contain the CHttpRequest instance it is stored in.');
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+dQ2TTM5kDntAYFbl0hehjOHjOzm=

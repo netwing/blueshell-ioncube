@@ -1,205 +1,110 @@
-<?php
-/**
- * CProfileLogRoute class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CProfileLogRoute displays the profiling results in Web page.
- *
- * The profiling is done by calling {@link YiiBase::beginProfile()} and {@link YiiBase::endProfile()},
- * which marks the begin and end of a code block.
- *
- * CProfileLogRoute supports two types of report by setting the {@link setReport report} property:
- * <ul>
- * <li>summary: list the execution time of every marked code block</li>
- * <li>callstack: list the mark code blocks in a hierarchical view reflecting their calling sequence.</li>
- * </ul>
- *
- * @property string $report The type of the profiling report to display. Defaults to 'summary'.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.logging
- * @since 1.0
- */
-class CProfileLogRoute extends CWebLogRoute
-{
-	/**
-	 * @var boolean whether to aggregate results according to profiling tokens.
-	 * If false, the results will be aggregated by categories.
-	 * Defaults to true. Note that this property only affects the summary report
-	 * that is enabled when {@link report} is 'summary'.
-	 */
-	public $groupByToken=true;
-	/**
-	 * @var string type of profiling report to display
-	 */
-	private $_report='summary';
-
-	/**
-	 * Initializes the route.
-	 * This method is invoked after the route is created by the route manager.
-	 */
-	public function init()
-	{
-		$this->levels=CLogger::LEVEL_PROFILE;
-	}
-
-	/**
-	 * @return string the type of the profiling report to display. Defaults to 'summary'.
-	 */
-	public function getReport()
-	{
-		return $this->_report;
-	}
-
-	/**
-	 * @param string $value the type of the profiling report to display. Valid values include 'summary' and 'callstack'.
-	 * @throws CException if given value is not "summary" or "callstack"
-	 */
-	public function setReport($value)
-	{
-		if($value==='summary' || $value==='callstack')
-			$this->_report=$value;
-		else
-			throw new CException(Yii::t('yii','CProfileLogRoute.report "{report}" is invalid. Valid values include "summary" and "callstack".',
-				array('{report}'=>$value)));
-	}
-
-	/**
-	 * Displays the log messages.
-	 * @param array $logs list of log messages
-	 */
-	public function processLogs($logs)
-	{
-		$app=Yii::app();
-		if(!($app instanceof CWebApplication) || $app->getRequest()->getIsAjaxRequest())
-			return;
-
-		if($this->getReport()==='summary')
-			$this->displaySummary($logs);
-		else
-			$this->displayCallstack($logs);
-	}
-
-	/**
-	 * Displays the callstack of the profiling procedures for display.
-	 * @param array $logs list of logs
-	 * @throws CException if Yii::beginProfile() and Yii::endProfile() are not matching
-	 */
-	protected function displayCallstack($logs)
-	{
-		$stack=array();
-		$results=array();
-		$n=0;
-		foreach($logs as $log)
-		{
-			if($log[1]!==CLogger::LEVEL_PROFILE)
-				continue;
-			$message=$log[0];
-			if(!strncasecmp($message,'begin:',6))
-			{
-				$log[0]=substr($message,6);
-				$log[4]=$n;
-				$stack[]=$log;
-				$n++;
-			}
-			elseif(!strncasecmp($message,'end:',4))
-			{
-				$token=substr($message,4);
-				if(($last=array_pop($stack))!==null && $last[0]===$token)
-				{
-					$delta=$log[3]-$last[3];
-					$results[$last[4]]=array($token,$delta,count($stack));
-				}
-				else
-					throw new CException(Yii::t('yii','CProfileLogRoute found a mismatching code block "{token}". Make sure the calls to Yii::beginProfile() and Yii::endProfile() be properly nested.',
-						array('{token}'=>$token)));
-			}
-		}
-		// remaining entries should be closed here
-		$now=microtime(true);
-		while(($last=array_pop($stack))!==null)
-			$results[$last[4]]=array($last[0],$now-$last[3],count($stack));
-		ksort($results);
-		$this->render('profile-callstack',$results);
-	}
-
-	/**
-	 * Displays the summary report of the profiling result.
-	 * @param array $logs list of logs
-	 * @throws CException if Yii::beginProfile() and Yii::endProfile() are not matching
-	 */
-	protected function displaySummary($logs)
-	{
-		$stack=array();
-		$results=array();
-		foreach($logs as $log)
-		{
-			if($log[1]!==CLogger::LEVEL_PROFILE)
-				continue;
-			$message=$log[0];
-			if(!strncasecmp($message,'begin:',6))
-			{
-				$log[0]=substr($message,6);
-				$stack[]=$log;
-			}
-			elseif(!strncasecmp($message,'end:',4))
-			{
-				$token=substr($message,4);
-				if(($last=array_pop($stack))!==null && $last[0]===$token)
-				{
-					$delta=$log[3]-$last[3];
-					if(!$this->groupByToken)
-						$token=$log[2];
-					if(isset($results[$token]))
-						$results[$token]=$this->aggregateResult($results[$token],$delta);
-					else
-						$results[$token]=array($token,1,$delta,$delta,$delta);
-				}
-				else
-					throw new CException(Yii::t('yii','CProfileLogRoute found a mismatching code block "{token}". Make sure the calls to Yii::beginProfile() and Yii::endProfile() be properly nested.',
-						array('{token}'=>$token)));
-			}
-		}
-
-		$now=microtime(true);
-		while(($last=array_pop($stack))!==null)
-		{
-			$delta=$now-$last[3];
-			$token=$this->groupByToken ? $last[0] : $last[2];
-			if(isset($results[$token]))
-				$results[$token]=$this->aggregateResult($results[$token],$delta);
-			else
-				$results[$token]=array($token,1,$delta,$delta,$delta);
-		}
-
-		$entries=array_values($results);
-		$func=create_function('$a,$b','return $a[4]<$b[4]?1:0;');
-		usort($entries,$func);
-
-		$this->render('profile-summary',$entries);
-	}
-
-	/**
-	 * Aggregates the report result.
-	 * @param array $result log result for this code block
-	 * @param float $delta time spent for this code block
-	 * @return array
-	 */
-	protected function aggregateResult($result,$delta)
-	{
-		list($token,$calls,$min,$max,$total)=$result;
-		if($delta<$min)
-			$min=$delta;
-		elseif($delta>$max)
-			$max=$delta;
-		$calls++;
-		$total+=$delta;
-		return array($token,$calls,$min,$max,$total);
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

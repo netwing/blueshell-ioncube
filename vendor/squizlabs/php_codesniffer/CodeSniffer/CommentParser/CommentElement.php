@@ -1,245 +1,87 @@
-<?php
-/**
- * A class to represent Comments of a doc comment.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-if (class_exists('PHP_CodeSniffer_CommentParser_SingleElement', true) === false) {
-    $error = 'Class PHP_CodeSniffer_CommentParser_SingleElement not found';
-    throw new PHP_CodeSniffer_Exception($error);
-}
-
-/**
- * A class to represent Comments of a doc comment.
- *
- * Comments are in the following format.
- * <code>
- * /** <--this is the start of the comment.
- *  * This is a short comment description
- *  *
- *  * This is a long comment description
- *  * <-- this is the end of the comment
- *  * @return something
- *  {@/}
- *  </code>
- *
- * Note that the sentence before two newlines is assumed
- * the short comment description.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class PHP_CodeSniffer_CommentParser_CommentElement extends PHP_CodeSniffer_CommentParser_SingleElement
-{
-
-
-    /**
-     * Constructs a PHP_CodeSniffer_CommentParser_CommentElement.
-     *
-     * @param PHP_CodeSniffer_CommentParser_DocElement $previousElement The element
-     *                                                                  that
-     *                                                                  appears
-     *                                                                  before this
-     *                                                                  element.
-     * @param array                                    $tokens          The tokens
-     *                                                                  that make
-     *                                                                  up this
-     *                                                                  element.
-     * @param PHP_CodeSniffer_File                     $phpcsFile       The file
-     *                                                                  that this
-     *                                                                  element is
-     *                                                                  in.
-     */
-    public function __construct(
-        $previousElement,
-        $tokens,
-        PHP_CodeSniffer_File $phpcsFile
-    ) {
-        parent::__construct($previousElement, $tokens, 'comment', $phpcsFile);
-
-    }//end __construct()
-
-
-    /**
-     * Returns the short comment description.
-     *
-     * @return string
-     * @see getLongComment()
-     */
-    public function getShortComment()
-    {
-        $pos = $this->_getShortCommentEndPos();
-        if ($pos === -1) {
-            return '';
-        }
-
-        return implode('', array_slice($this->tokens, 0, ($pos + 1)));
-
-    }//end getShortComment()
-
-
-    /**
-     * Returns the last token position of the short comment description.
-     *
-     * @return int The last token position of the short comment description
-     * @see _getLongCommentStartPos()
-     */
-    private function _getShortCommentEndPos()
-    {
-        $found      = false;
-        $whiteSpace = array(
-                       ' ',
-                       "\t",
-                      );
-
-        foreach ($this->tokens as $pos => $token) {
-            $token = str_replace($whiteSpace, '', $token);
-            if ($token === $this->phpcsFile->eolChar) {
-                if ($found === false) {
-                    // Include newlines before short description.
-                    continue;
-                } else {
-                    if (isset($this->tokens[($pos + 1)]) === true) {
-                        if ($this->tokens[($pos + 1)] === $this->phpcsFile->eolChar) {
-                            return ($pos - 1);
-                        }
-                    } else {
-                        return $pos;
-                    }
-                }
-            } else {
-                $found = true;
-            }
-        }//end foreach
-
-        return (count($this->tokens) - 1);
-
-    }//end _getShortCommentEndPos()
-
-
-    /**
-     * Returns the long comment description.
-     *
-     * @return string
-     * @see getShortComment
-     */
-    public function getLongComment()
-    {
-        $start = $this->_getLongCommentStartPos();
-        if ($start === -1) {
-            return '';
-        }
-
-        return implode('', array_slice($this->tokens, $start));
-
-    }//end getLongComment()
-
-
-    /**
-     * Returns the start position of the long comment description.
-     *
-     * Returns -1 if there is no long comment.
-     *
-     * @return int The start position of the long comment description.
-     * @see _getShortCommentEndPos()
-     */
-    private function _getLongCommentStartPos()
-    {
-        $pos = ($this->_getShortCommentEndPos() + 1);
-        if ($pos === (count($this->tokens) - 1)) {
-            return -1;
-        }
-
-        $count = count($this->tokens);
-        for ($i = $pos; $i < $count; $i++) {
-            $content = trim($this->tokens[$i]);
-            if ($content !== '') {
-                if ($content{0} === '@') {
-                    return -1;
-                }
-
-                return $i;
-            }
-        }
-
-        return -1;
-
-    }//end _getLongCommentStartPos()
-
-
-    /**
-     * Returns the whitespace that exists between
-     * the short and the long comment description.
-     *
-     * @return string
-     */
-    public function getWhiteSpaceBetween()
-    {
-        $endShort  = ($this->_getShortCommentEndPos() + 1);
-        $startLong = ($this->_getLongCommentStartPos() - 1);
-        if ($startLong === -1) {
-            return '';
-        }
-
-        return implode(
-            '',
-            array_slice($this->tokens, $endShort, ($startLong - $endShort))
-        );
-
-    }//end getWhiteSpaceBetween()
-
-
-    /**
-     * Returns the number of newlines that exist before the tags.
-     *
-     * @return int
-     */
-    public function getNewlineAfter()
-    {
-        $long = $this->getLongComment();
-        if ($long !== '') {
-            $long     = rtrim($long, ' ');
-            $long     = strrev($long);
-            $newlines = strspn($long, $this->phpcsFile->eolChar);
-        } else {
-            $endShort = ($this->_getShortCommentEndPos() + 1);
-            $after    = implode('', array_slice($this->tokens, $endShort));
-            $after    = trim($after, ' ');
-            $newlines = strspn($after, $this->phpcsFile->eolChar);
-        }
-
-        return ($newlines / strlen($this->phpcsFile->eolChar));
-
-    }//end getNewlineAfter()
-
-
-    /**
-     * Returns true if there is no comment.
-     *
-     * @return boolean
-     */
-    public function isEmpty()
-    {
-        return (trim($this->getContent()) === '');
-
-    }//end isEmpty()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+il0KDSpn1xbaq8GQ

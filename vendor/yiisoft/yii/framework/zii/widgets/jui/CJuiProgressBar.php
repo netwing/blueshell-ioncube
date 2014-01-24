@@ -1,74 +1,42 @@
-<?php
-/**
- * CJuiProgressBar class file.
- *
- * @author Sebastian Thierer <sebathi@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-Yii::import('zii.widgets.jui.CJuiWidget');
-
-/**
- * CJuiProgressBar displays a progress bar widget.
- *
- * CJuiProgressBar encapsulates the {@link http://jqueryui.com/progressbar/ JUI
- * Progressbar} plugin.
- *
- * To use this widget, you may insert the following code in a view:
- * <pre>
- * $this->widget('zii.widgets.jui.CJuiProgressBar',array(
- *     'value'=>75,
- *     // additional javascript options for the progress bar plugin
- *     'options'=>array(
- *         'change'=>new CJavaScriptExpression('function(event, ui) {...}'),
- *     ),
- *     'htmlOptions'=>array(
- *         'style'=>'height:20px;',
- *     ),
- * ));
- * </pre>
- *
- * By configuring the {@link options} property, you may specify the options
- * that need to be passed to the JUI progressbar plugin. Please refer to
- * the {@link http://api.jqueryui.com/progressbar/ JUI ProgressBar} documentation
- * for possible options (name-value pairs) and
- * {@link http://jqueryui.com/progressbar/ JUI ProgressBar page} for general
- * description and demo.
- *
- * @author Sebastian Thierer <sebathi@gmail.com>
- * @package zii.widgets.jui
- * @since 1.1
- */
-class CJuiProgressBar extends CJuiWidget
-{
-	/**
-	 * @var string the name of the container element that contains the progress bar. Defaults to 'div'.
-	 */
-	public $tagName='div';
-	/**
-	 * @var integer the percentage of the progress. This must be an integer between 0 and 100. Defaults to 0.
-	 */
-	public $value=0;
-
-	/**
-	 * Run this widget.
-	 * This method registers necessary javascript and renders the needed HTML code.
-	 */
-	public function run()
-	{
-		$id=$this->getId();
-		if(isset($this->htmlOptions['id']))
-			$id=$this->htmlOptions['id'];
-		else
-			$this->htmlOptions['id']=$id;
-
-		echo CHtml::openTag($this->tagName,$this->htmlOptions);
-		echo CHtml::closeTag($this->tagName);
-
-		$this->options['value']=$this->value;
-		$options=CJavaScript::encode($this->options);
-		Yii::app()->getClientScript()->registerScript(__CLASS__.'#'.$id,"jQuery('#{$id}').progressbar($options);");
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+fhfhheyr+TUNKuILRLhOG1s9DB6dv9GE

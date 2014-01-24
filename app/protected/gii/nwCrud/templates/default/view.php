@@ -1,38 +1,32 @@
-<?php
-/**
- * The following variables are available in this template:
- * - $this: the CrudCode object
- */
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
-<?php echo "<?php\n"; ?>
-/* @var $this <?php echo $this->getControllerClass(); ?> */
-/* @var $model <?php echo $this->getModelClass(); ?> */
-
-<?php echo "\$this->pageTitle = Yii::t('app', 'Update " . $this->pluralize($this->class2name($this->modelClass)) . "');\n"; ?>
-
-<?php
-$nameColumn=$this->guessNameColumn($this->tableSchema->columns);
-$label=$this->pluralize($this->class2name($this->modelClass));
-echo "\$this->breadcrumbs=array(
-	'$label'=>array('index'),
-	\$model->{$nameColumn},
-);\n";
-?>
-
-$this->menu=array(
-	array('label'=>Yii::t('app', 'Manage <?php echo $this->modelClass; ?>'), 'url'=>array('admin')),
-	array('label'=>Yii::t('app', 'Create <?php echo $this->modelClass; ?>'), 'url'=>array('create')),
-	array('label'=>Yii::t('app', 'Update <?php echo $this->modelClass; ?>'), 'url'=>array('update', 'id'=>$model-><?php echo $this->tableSchema->primaryKey; ?>)),
-	array('label'=>Yii::t('app', 'Delete <?php echo $this->modelClass; ?>'), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model-><?php echo $this->tableSchema->primaryKey; ?>),'confirm'=>'Are you sure you want to delete this item?')),
-);
-?>
-
-<?php echo "<?php"; ?> $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-<?php
-foreach($this->tableSchema->columns as $column)
-	echo "\t\t'".$column->name."',\n";
-?>
-	),
-)); ?>
+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

@@ -1,55 +1,43 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="language" content="en" />
-
-	<!-- blueprint CSS framework -->
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection" />
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print" />
-	<!--[if lt IE 8]>
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection" />
-	<![endif]-->
-
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
-
-	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
-</head>
-
-<body>
-
-<div class="container" id="page">
-
-	<div id="header">
-		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
-	</div><!-- header -->
-
-	<div id="mainmenu">
-		<?php $this->widget('zii.widgets.CMenu',array(
-			'items'=>array(
-				array('label'=>'Home', 'url'=>array('post/index')),
-				array('label'=>'About', 'url'=>array('site/page', 'view'=>'about')),
-				array('label'=>'Contact', 'url'=>array('site/contact')),
-				array('label'=>'Login', 'url'=>array('site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-			),
-		)); ?>
-	</div><!-- mainmenu -->
-
-	<?php $this->widget('zii.widgets.CBreadcrumbs', array(
-		'links'=>$this->breadcrumbs,
-	)); ?><!-- breadcrumbs -->
-
-	<?php echo $content; ?>
-
-	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
-		All Rights Reserved.<br/>
-		<?php echo Yii::powered(); ?>
-	</div><!-- footer -->
-
-</div><!-- page -->
-
-</body>
-</html>
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

@@ -1,59 +1,42 @@
-<?php
-/**
-* Smarty PHPunit tests compilation of {section} tag
-*
-* @package PHPunit
-* @author Uwe Tews
-*/
-
-/**
-* class for {section} tag tests
-*/
-class CompileSectionTests extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $this->smarty = SmartyTests::$smarty;
-        SmartyTests::init();
-    }
-
-    static function isRunnable()
-    {
-        return true;
-    }
-
-    /**
-    * test {section} tag
-    */
-    public function testSection1()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{assign var=foo value=[0,1,2,3,4,5,6,7,8,9]}{section name=bar loop=$foo}{$foo[bar]}{/section}');
-        $this->assertEquals("0123456789", $this->smarty->fetch($tpl));
-    }
-    public function testSection2()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{assign var=foo value=[0,1,2,3,4,5,6,7,8,9]}{section name=bar loop=$foo}{$foo[bar]}{sectionelse} else {/section}');
-        $this->assertEquals("0123456789", $this->smarty->fetch($tpl));
-    }
-    public function testSection3()
-    {
-         $this->smarty->error_reporting  = error_reporting() & ~(E_NOTICE|E_USER_NOTICE);
-        $tpl = $this->smarty->createTemplate('eval:{section name=bar loop=$foo}{$foo[bar]}{sectionelse}else{/section}');
-        $this->assertEquals("else", $this->smarty->fetch($tpl));
-    }
-    public function testSection4()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{assign var=foo value=[0,1,2,3,4,5,6,7,8,9]}{section name=bar loop=$foo}{$foo[bar]}{sectionelse} else {/section}');
-        $this->assertEquals("0123456789", $this->smarty->fetch($tpl));
-    }
-    public function testSection6()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{assign var=foo value=[0,1,2,3,4,5,6,7,8,9]}{section name=bar loop=$foo}{$foo[bar]}{sectionelse} else {/section}total{$smarty.section.bar.total}');
-        $this->assertEquals("0123456789total10", $this->smarty->fetch($tpl));
-    }
-    public function testSection7()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{assign var=foo value=[0,1,2,3,4,5,6,7,8,9]}{section name=bar loop=$foo}{$smarty.section.bar.index}{$smarty.section.bar.iteration}{sectionelse} else {/section}');
-        $this->assertEquals("011223344556677889910", $this->smarty->fetch($tpl));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

@@ -1,81 +1,44 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\Finder\Tests\Iterator;
-
-use Symfony\Component\Finder\Iterator\DepthRangeFilterIterator;
-
-class DepthRangeFilterIteratorTest extends RealIteratorTestCase
-{
-    /**
-     * @dataProvider getAcceptData
-     */
-    public function testAccept($minDepth, $maxDepth, $expected)
-    {
-        $inner = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($this->toAbsolute(), \FilesystemIterator::SKIP_DOTS), \RecursiveIteratorIterator::SELF_FIRST);
-
-        $iterator = new DepthRangeFilterIterator($inner, $minDepth, $maxDepth);
-
-        $actual = array_keys(iterator_to_array($iterator));
-        sort($expected);
-        sort($actual);
-        $this->assertEquals($expected, $actual);
-    }
-
-    public function getAcceptData()
-    {
-        $lessThan1 = array(
-            '.git',
-            'test.py',
-            'foo',
-            'test.php',
-            'toto',
-            '.foo',
-            '.bar',
-            'foo bar',
-        );
-
-        $lessThanOrEqualTo1 = array(
-            '.git',
-            'test.py',
-            'foo',
-            'foo/bar.tmp',
-            'test.php',
-            'toto',
-            '.foo',
-            '.foo/.bar',
-            '.bar',
-            'foo bar',
-            '.foo/bar',
-        );
-
-        $graterThanOrEqualTo1 = array(
-            'foo/bar.tmp',
-            '.foo/.bar',
-            '.foo/bar',
-        );
-
-        $equalTo1 = array(
-            'foo/bar.tmp',
-            '.foo/.bar',
-            '.foo/bar',
-        );
-
-        return array(
-            array(0, 0, $this->toAbsolute($lessThan1)),
-            array(0, 1, $this->toAbsolute($lessThanOrEqualTo1)),
-            array(2, PHP_INT_MAX, array()),
-            array(1, PHP_INT_MAX, $this->toAbsolute($graterThanOrEqualTo1)),
-            array(1, 1, $this->toAbsolute($equalTo1)),
-        );
-    }
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+e+T0AE/BSc9BRWMcu9tayB3E6PlN

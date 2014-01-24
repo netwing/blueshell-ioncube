@@ -1,85 +1,35 @@
-<?php
-
-/*
- * This file is part of SwiftMailer.
- * (c) 2004-2009 Chris Corbyn
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-/**
- * Interface for the EventDispatcher which handles the event dispatching layer.
- *
- * @package    Swift
- * @subpackage Events
- * @author     Chris Corbyn
- */
-interface Swift_Events_EventDispatcher
-{
-    /**
-     * Create a new SendEvent for $source and $message.
-     *
-     * @param Swift_Transport $source
-     * @param Swift_Mime_Message
-     *
-     * @return Swift_Events_SendEvent
-     */
-    public function createSendEvent(Swift_Transport $source, Swift_Mime_Message $message);
-
-    /**
-     * Create a new CommandEvent for $source and $command.
-     *
-     * @param Swift_Transport $source
-     * @param string          $command      That will be executed
-     * @param array           $successCodes That are needed
-     *
-     * @return Swift_Events_CommandEvent
-     */
-    public function createCommandEvent(Swift_Transport $source, $command, $successCodes = array());
-
-    /**
-     * Create a new ResponseEvent for $source and $response.
-     *
-     * @param Swift_Transport $source
-     * @param string          $response
-     * @param boolean         $valid    If the response is valid
-     *
-     * @return Swift_Events_ResponseEvent
-     */
-    public function createResponseEvent(Swift_Transport $source, $response, $valid);
-
-    /**
-     * Create a new TransportChangeEvent for $source.
-     *
-     * @param Swift_Transport $source
-     *
-     * @return Swift_Events_TransportChangeEvent
-     */
-    public function createTransportChangeEvent(Swift_Transport $source);
-
-    /**
-     * Create a new TransportExceptionEvent for $source.
-     *
-     * @param Swift_Transport          $source
-     * @param Swift_TransportException $ex
-     *
-     * @return Swift_Events_TransportExceptionEvent
-     */
-    public function createTransportExceptionEvent(Swift_Transport $source, Swift_TransportException $ex);
-
-    /**
-     * Bind an event listener to this dispatcher.
-     *
-     * @param Swift_Events_EventListener $listener
-     */
-    public function bindEventListener(Swift_Events_EventListener $listener);
-
-    /**
-     * Dispatch the given Event to all suitable listeners.
-     *
-     * @param Swift_Events_EventObject $evt
-     * @param string                   $target method
-     */
-    public function dispatchEvent(Swift_Events_EventObject $evt, $target);
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+1+ctVuum81UqpI5cn0==

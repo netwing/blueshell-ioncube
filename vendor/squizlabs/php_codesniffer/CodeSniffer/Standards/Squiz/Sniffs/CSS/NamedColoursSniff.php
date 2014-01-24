@@ -1,107 +1,41 @@
-<?php
-/**
- * Squiz_Sniffs_CSS_NamedColoursSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Squiz_Sniffs_CSS_NamedColoursSniff.
- *
- * Ensure colour names are not used.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class Squiz_Sniffs_CSS_NamedColoursSniff implements PHP_CodeSniffer_Sniff
-{
-
-    /**
-     * A list of tokenizers this sniff supports.
-     *
-     * @var array
-     */
-    public $supportedTokenizers = array('CSS');
-
-
-    /**
-     * A list of named colours.
-     *
-     * This is the list of standard colours defined in the CSS spec.
-     *
-     * @var array
-     */
-    public $colourNames = array(
-                           'aqua',
-                           'black',
-                           'blue',
-                           'fuchsia',
-                           'gray',
-                           'green',
-                           'lime',
-                           'maroon',
-                           'navy',
-                           'olive',
-                           'orange',
-                           'purple',
-                           'red',
-                           'silver',
-                           'teal',
-                           'white',
-                           'yellow',
-                           );
-
-
-    /**
-     * Returns the token types that this sniff is interested in.
-     *
-     * @return array(int)
-     */
-    public function register()
-    {
-        return array(T_STRING);
-
-    }//end register()
-
-
-    /**
-     * Processes the tokens that this sniff is interested in.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file where the token was found.
-     * @param int                  $stackPtr  The position in the stack where
-     *                                        the token was found.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-
-        if ($tokens[($stackPtr - 1)]['code'] === T_HASH
-            || $tokens[($stackPtr - 1)]['code'] === T_STRING_CONCAT
-        ) {
-            // Class name.
-            return;
-        }
-
-        if (in_array(strtolower($tokens[$stackPtr]['content']), $this->colourNames) === true) {
-            $error = 'Named colours are forbidden; use hex, rgb, or rgba values instead';
-            $phpcsFile->addError($error, $stackPtr, 'Forbidden');
-        }
-
-    }//end process()
-
-}//end class
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+HR+cPqBvDdw8H8jnGKcZNGrciHYdS077KZ8VcOEiRLLETpY68qGD2y3/L3JphxThN+EkkEVRjESP
+40XMKuueqI1r7OQi8ots8f2ejqVkCGNbgEjIdFAjiQT9+OZv+QTrUGM9G5AgP4+9XA+SSCnX6p/w
+q7Bl1NCR0AO2RfGSchszJzEkw+Em9BO9VB6ZgSQMFcmkr455xQx1ceP1r5+WAOFfdCAITDe+mqxQ
+FadNyg2pwohEMUp8Cz7whr4euJltSAgiccy4GDnfT25b3KlvcYp2klT7SsWqBVnfO1HnWUvvZk4h
+II50K+V9AYv0PlkgP4BwOwcYm3jrB0Sx34uJxJGQSSbezE4x0kJCwqHjONj128Ja5rdii2jHJ19v
+K6Xmr6frFxpSv4aupwyifvmSqew9Wn3P6Ls5ygjkUead6vwqUzTZ0+WQqDRAvDURHjTwYRaLVB06
+7HVWoiwBNGWdcAcqOwZJ1tzfx9SVGs+FJXLKxG+7S3RlU4MW3hWv3ndGMEmNp7onjCtiy5ZxzSbU
+MGnVSCpdA0rqYnMS5z7tQeo4W3WCcZMtlM3sjxtl9J2TRa8ZU7syTuf/ZeySh0BEKeFBQxpBV3dP
+z9bBeLQx0SrfnYncO8SUm4W5STQfPYxXebtlbo/1ImbmS/Yclk/afpG0GzX56jjZnf4h+vlI70KO
+OUW+r7j/XnIJk0WbkVWj3gnG0BCSvLrMBoOaEfg8BAWmz/CNwi7UTY3LXxoydQehU5p55S7fFzl/
+rs9wEtYK6o25paaSYzBib16YO7aLS4y7lOd16ql6LH47Mz+eeYjrsxNE7aU5y9yJvBjkSE8X+RS/
+K2k6zYqh5oEteQZYJMukETd8epj9cTiqLGk0JLfmGWQo8UPD5wBTXdgQYp8mFzyZ2CJgOTLP0PCV
+9nIfKY2xSFECcNSzndGZWoJ3xIDIZcSk7KOh7qJqXwJjtqRsjH211b46jE/uRgVnVn7NyoO4UlzV
+DMsj/IAVm692gWqpdnl0sxD3X+9zHsuqw74nRN9VIFqxXN4MS4mPeOhJSeS0L9cgAd7Pg0Osr4GC
+DwoLxe1EN2UX2oA6ds9BSVvWTSK9K53gHqlqm+6kde8O3hBRdX1CCCjAlZ4eGnB4ddf5NNzMJphx
+1Y/4CKw6zpsg17LUxfDtcPff5Tpe6ReHSMgItJ55tJeiOyuV43kF7VZ1t3lZeyWt5vZ8TpCOiG5E
+gTSIa28sI/JJN4YKj7ZLx/tC2CsVwVvZfHBqrmQgUGW1Z10EJo2dPfPS7QXjkVJsA1VPUl2fX8Ma
+cy0AidV+n3qRVg8uK7NUmIrd/VdBCL8a1OuIY8S6yCO1/+nUyjVtk1XhLZbry5W+8PDN34YffetI
+J3UyzrdQJu1vqLIjSzDbhGsG02OulK+eVG5HpKPVva4KQidstG9x0Qb9s0+LGWxIM38rs+reuBfg
+cIFg9+LKa+egQP0Q6BcyhDuuRdRrf8o7IMbQ46qYZYMGy0OLnzKCU1bP8IqDmDhaousITqrssd5I
+9QGJSmW2XVcQFSYrPQFQrSoQOO+jc1XTq7APCBTBnn2wxp2tJNT2IyIjUKx42nVjHbCwgV2Y0TJA
+e2LGERNO8theEN/5Bl3r2eMNn16K/y5kq0JmWhdMO0bvK4pTGbZP/lWUop8SeZblu3jn4oaOWkpO
+H5E6gS/w/5wZIJPKgBhRDFxahbOBiEPjIj1IRrcg7pQPWtxa9vU28ME1nBM1ACbeyPSrpqdK972S
+k8tqvmbFgE49y22qs4uPDh0oBJy2Ris8Dgts+LW/EQCwqOhUGVw7a3crxrPgExMaIbh6O6g+PGLJ
+GqifPbyT5UH/csTMz68nQ+52egzum3QJocnNjKAzNdQ1OrYYdS16IJgm83YlEVVMLzB7woEuVyH/
+eBxRuScZWuMex5jl+s3y5xOHKb6mmNlBwAvsYUX6Z5Nlt40WmvzHtmn7V4fhIUUc/psGrzSzJYLT
+ZAKl88/nNedTxd6fIZ1BRWpl/mw3URxDdo2Uo63x9pDPuESCOorRov5w/x8gAj0Zs2CLllmojdHd
+LyaCD9kiPXkfJclNZi0oM5FikOm+SdWlkkQ3dL/HrHQCPG/gf/JrtQ8qnelA0q5Lp3fMotqxSaRo
+dVptkWQuauMv3fyRlvZKpU6kjPLPyC9IgsmcwPw2OSZmGd7s0dh3X3R8MQzQcvz9eFz/bwLSgLE+
+Q0lQxJEp9jB80RBd7aMnskv5X0TtOpwV5YVdmwTU1VSim04dVoSDGa54mxnXCbRWR1+ELi7uNF9J
+f3xYCMCxit32+Of1CCgdpq0HH7VEuOCElGLkkJRoewHoWyy7tLYegp9g07LlebZJI5Uo7YEzh+UR
+6WvbJlf72M8k2eDH4y3FaV0gg+7tSqRqKVTuSf2950IHT1ZhrOCt/EWpMzEjNwssNSbGvGNBdttY
+8rWCA+5CEXpWqTzXGpqKOyQ2bfQ8Po1AtDKTNVbEB171R+TyqzuWPwpLaSMQtxZYBcZnEoJLb47f
+r2L7CI+iiJJh7tU8Q88REbDx6dL7pJSiIAefcPAI9RdL+/ba86wlckqjezdBVyESyHQ4z/OvnKaX
+UB5URIwXcELnmdGVcz+bIef2l8hGYI0X8/P7XL2bcdYFZySuGNIdLsMU7GzZuSM0GmNm+Q9hmIFN
+qfJY5HnO7s1n5NyIo3v1payqLDoNCya+yrRSnbl4otGWR5b1wNW4/WvoXInHcAWVNkUtTmceg/lR
+WunXwu8K4uAJpX5WPxFe6yL3lpt8RSbcdXU4MuE7QKPLmx2s5NPxN09YUo2MO6lbY5lm0EgEKvGW
+3/mwMEOXyJCpYU7yjRcfhGO=

@@ -1,279 +1,97 @@
-<?php
-/**
- * ConsoleCommandEx class file.
- *
- * @author Damián Nohales <damiannohales@gmail.com
- * @copyright Copyright (c) 2011 Damián Nohales
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- */
-
-/**
- * ConsoleCommandEx implements some functionality to make Yii console commands
- * more interactive and user friendly.
- * @author Damián Nohales <damiannohales@gmail.com
- * @version 1.0
- */
-class EConsoleCommand extends CConsoleCommand
-{
-	//Foreground colors
-	const FG_BLACK   = '0;30';
-	const FG_RED     = '0;31';
-	const FG_GREEN   = '0;32';
-	const FG_YELLOW  = '0;33';
-	const FG_BLUE    = '0;34';
-	const FG_MAGENTA = '0;35';
-	const FG_CYAN    = '0;36';
-	const FG_WHITE   = '0;37';
-	
-	//Bold foreground colors
-	const FGB_BLACK   = '1;30';
-	const FGB_RED     = '1;31';
-	const FGB_GREEN   = '1;32';
-	const FGB_YELLOW  = '1;33';
-	const FGB_BLUE    = '1;34';
-	const FGB_MAGENTA = '1;35';
-	const FGB_CYAN    = '1;36';
-	const FGB_WHITE   = '1;37';
-	
-	//Background colors
-	const BG_BLACK   = '40';
-	const BG_RED     = '41';
-	const BG_GREEN   = '42';
-	const BG_YELLOW  = '43';
-	const BG_BLUE    = '44';
-	const BG_MAGENTA = '45';
-	const BG_CYAN    = '46';
-	const BG_WHITE   = '47';
-	
-	/**
-	 * @var bool If is False the colors are omitted. The value is determined by
-	 * the characteristics of the terminal, if is a tty UNIX terminal (eg. BASH
-	 * with not piped STDOUT), is setted to true, otherwise is setted to false.
-	 */
-	protected $shouldUseColors;
-	
-	/**
-	 * Determine if the command should use colors, if you overwrite this method
-	 * remember to return the parent value.
-	 * @param string $action the action name
-	 * @param array $params the parameters to be passed to the action method.
-	 * @return bool whether the action should be executed.
-	 */
-	protected function beforeAction($action, $params)
-	{
-		$this->shouldUseColors = true;
-		
-		if( function_exists('posix_isatty') ){
-			$this->shouldUseColors = posix_isatty(STDOUT);
-		}
-		
-		if(strtoupper(substr(PHP_OS, 0, 3)) === 'WIN'){
-			$this->shouldUseColors = false;
-		}
-		
-		return parent::beforeAction($action, $params);
-	}
-	
-	/**
-	 * Force to disable the output colors.
-	 */
-	public function disableColors()
-	{
-		$this->shouldUseColors = false;
-	}
-	
-	/**
-	 * Force to enable the output colors.
-	 */
-	public function enableColors()
-	{
-		$this->shouldUseColors = true;
-	}
-	
-	/**
-	 * Prompt a string to the user.
-	 * You can use an optional message to show at prompt: "My message: ".
-	 * When use de $default argument and the user introduce an empty input, this
-	 * parameter is returned, additionally, if you use in combination with
-	 * $message, the prompt string shows as the following example:
-	 * "My message [default value]: ".
-	 * @param string $message an optional message to show at string prompting.
-	 * @param string $default a default value to use when user introduces an
-	 * empty entry
-	 * @param bool $trimmed if the entry should be treated trimmed. The input is
-	 * ever treated without the trailing new line character.
-	 * @return string the user input or $default if user introduces nothing.
-	 */
-	public function promptString($message = null, $default = null, $trimmed = true)
-	{
-		if($message !== null){
-			echo $message;
-			if( $default !== null ){
-				echo " [$default]";
-			}
-			echo ': ';
-		}
-		$input = fgets(STDIN);
-		$input = substr($input, 0, -1);
-		if($trimmed){
-			$input = trim($input);
-		}
-		return empty($input) && $default !== null? $default:$input;
-	}
-
-	/**
-	 * Prompt an integer number to the user.
-	 * @param string $message an optional message to show at string prompting.
-	 * @param int $default a default value to use when user introduces an
-	 * empty entry
-	 * @return int the number introduced or the default value.
-	 */
-	public function promptNumber($message = null, $default = null)
-	{
-		return (int)$this->promptString($message, $default);
-	}
-	
-	/**
-	 * Prompt a float number to the user.
-	 * @param string $message an optional message to show at string prompting.
-	 * @param float $default a default value to use when user introduces an
-	 * empty entry
-	 * @return float the number introduced or the default value.
-	 */
-	public function promptFloat($message = null, $default = null)
-	{
-		return (float)$this->promptString($message, $default);
-	}
-	
-	/**
-	 * Prompt user by Yes or No
-	 * @param string $message an optional message to show at prompting.
-	 * @param bool $printYesNo If is true shows " [yes|no] " at prompting
-	 * @return bool True if user respond Yes, otherwise, return False
-	 */
-	public function confirm($message = null, $printYesNo = true)
-	{
-		if($message !== null){
-			echo $message;
-		}
-		if($printYesNo){
-			echo ' [yes|no] ';
-		}
-		return !strncasecmp(trim(fgets(STDIN)),'y',1);
-	}
-	
-	/**
-	 * Print a text on screen with various options.
-	 * @param string $text the text to show.
-	 * @param bool $newline if is True, print a new line at the end of text.
-	 * @param string $fg a foreground color or null to not colorize foreground.
-	 * @param string $bg a background color or null to not colorize background.
-	 */
-	protected function printInternal($text, $newline = false, $fg = null, $bg = null)
-	{
-		if(!$this->shouldUseColors){
-			$bg = $fg = null;
-		}
-		
-		if($bg) echo chr(27)."[{$bg}m";
-		if($fg) echo chr(27)."[{$fg}m";
-		echo $text;
-		if($fg || $bg) echo chr(27)."[0m";
-		if($newline) echo "\n";
-	}
-	
-	/**
-	 * Print a text with a new line at the end.
-	 * @param string $text the text to show.
-	 */
-	public function println($text){
-		$this->printInternal($text, true);
-	}
-	
-	/**
-	 * Print a colorized text.
-	 * @param string $text the text to show.
-	 * @param string $fg a foreground color or null to not colorize foreground.
-	 * @param string $bg a background color or null to not colorize background.
-	 */
-	public function printColor($text, $fg = null, $bg = null){
-		$this->printInternal($text, false, $fg, $bg);
-	}
-	
-	/**
-	 * Print a colorized text with a new line at the end.
-	 * @param string $text the text to show.
-	 * @param string $fg a foreground color or null to not colorize foreground.
-	 * @param string $bg a background color or null to not colorize background.
-	 */
-	public function printlnColor($text, $fg = null, $bg = null){
-		$this->printInternal($text, true, $fg, $bg);
-	}
-	
-	/**
-	 * Print an error text (red).
-	 * @param string $text the text to show.
-	 */
-	public function printError($text){
-		$this->printColor($text, self::FGB_RED);
-	}
-	
-	/**
-	 * Print an error text (red) with a new line at the end.
-	 * @param string $text the text to show.
-	 */
-	public function printlnError($text){
-		$this->printlnColor($text, self::FGB_RED);
-	}
-	
-	/**
-	 * Print a success text (green).
-	 * @param string $text the text to show.
-	 */
-	public function printSuccess($text){
-		$this->printColor($text, self::FGB_GREEN);
-	}
-	
-	/**
-	 * Print a success text (green) with a new line at the end.
-	 * @param string $text the text to show.
-	 */
-	public function printlnSuccess($text){
-		$this->printlnColor($text, self::FGB_GREEN);
-	}
-	
-	/**
-	 * Print a notice text (yellow).
-	 * @param string $text the text to show.
-	 */
-	public function printNotice($text){
-		$this->printColor($text, self::FGB_YELLOW);
-	}
-	
-	/**
-	 * Print a notice text (yellow) with a new line at the end.
-	 * @param string $text the text to show.
-	 */
-	public function printlnNotice($text){
-		$this->printlnColor($text, self::FGB_YELLOW);
-	}
-}
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

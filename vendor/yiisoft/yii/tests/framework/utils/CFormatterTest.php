@@ -1,126 +1,79 @@
-<?php
-
-class CFormatterTest extends CTestCase
-{
-	public function tearDown()
-	{
-		parent::tearDown();
-		Yii::app()->language=null; // reset language to not affect other tests
-	}
-
-	/**
-	 * Test formatting size numbers in bytes, kilobytes, ...
-	 */
-	public function testSizeFormat()
-	{
-		$formatter = new CFormatter();
-
-		Yii::app()->language = 'en';
-		$this->assertEquals('1 byte', $formatter->formatSize(1, true));
-		$this->assertEquals('10 bytes', $formatter->formatSize(10, true));
-		$this->assertEquals('1 kilobyte', $formatter->formatSize(1024, true));
-		$this->assertEquals('1.5 kilobytes', $formatter->formatSize(1536, true));
-		$this->assertEquals('1.51 kilobytes', $formatter->formatSize(1550, true));
-		$formatter->sizeFormat['decimals']=3;
-		$this->assertEquals('1.514 kilobytes', $formatter->formatSize(1550, true));
-		$formatter->sizeFormat['decimals']=4;
-		$this->assertEquals('1.5137 kilobytes', $formatter->formatSize(1550, true));
-
-		$this->assertEquals('1 B', $formatter->formatSize(1, false));
-		$this->assertEquals('10 B', $formatter->formatSize(10, false));
-		$this->assertEquals('1 KB', $formatter->formatSize(1024, false));
-		$this->assertEquals('1.5 KB', $formatter->formatSize(1536, false));
-
-		$this->assertEquals('1 byte', $formatter->formatSize(1, true));
-		$this->assertEquals('1 kilobyte', $formatter->formatSize(1024, true));
-		$this->assertEquals('1 megabyte', $formatter->formatSize(1024 * 1024, true));
-		$this->assertEquals('1 gigabyte', $formatter->formatSize(1024 * 1024 * 1024, true));
-		$this->assertEquals('1 terabyte', $formatter->formatSize(1024 * 1024 * 1024 * 1024, true));
-
-		Yii::app()->language = 'de';
-		$formatter->sizeFormat['decimalSeparator']=',';
-		$this->assertEquals('1 Byte', $formatter->formatSize(1, true));
-		$this->assertEquals('10 Byte', $formatter->formatSize(10, true));
-		$this->assertEquals('1 Kilobyte', $formatter->formatSize(1024, true));
-		$this->assertEquals('1,5 Kilobyte', $formatter->formatSize(1536, true));
-	}
-
-	public function languages()
-	{
-		return array(
-			array('cs'),
-			array('de'),
-			array('ja'),
-			array('kk'),
-			array('ru'),
-			array('sk'),
-			array('uk'),
-		);
-	}
-
-	/**
-	 * This test is to check whether messages get actually translated to non-english
-	 *
-	 * @dataProvider languages
-	 * @param $language
-	 */
-	public function testSizeFormatTranslation($language)
-	{
-		$formatter = new CFormatter();
-
-		Yii::app()->language=$language;
-
-		$this->assertNotEquals('1 byte', $formatter->formatSize(1, true));
-		$this->assertNotEquals('1 kilobyte', $formatter->formatSize(1024, true));
-		$this->assertNotEquals('1 megabyte', $formatter->formatSize(1024 * 1024, true));
-		$this->assertNotEquals('1 gigabyte', $formatter->formatSize(1024 * 1024 * 1024, true));
-		$this->assertNotEquals('1 terabyte', $formatter->formatSize(1024 * 1024 * 1024 * 1024, true));
-
-		// test sizeformat works with non integers
-		$formatter->sizeFormat['decimals']=4;
-		$this->assertNotEquals('1.5137 kilobytes', $formatter->formatSize(1550, true));
-	}
-
-	public function providerFormatNtext()
-	{
-		return array(
-			array(
-				"<br/>\nline2\n\nline3\n\n\nline4\n\n\n\nline5",
-				false,
-				false,
-				"&lt;br/&gt;<br />\nline2<br />\n<br />\nline3<br />\n<br />\n<br />\nline4<br />\n<br />\n<br />\n<br />\nline5",
-			),
-			array(
-				"<br/>\nline2\n\nline3\n\n\nline4\n\n\n\nline5",
-				false,
-				true,
-				"&lt;br/&gt;<br />\nline2<br />\n<br />\nline3<br />\n<br />\n<br />\nline4<br />\n<br />\n<br />\n<br />\nline5",
-			),
-			array(
-				"<br/>\nline2\n\nline3\n\n\nline4\n\n\n\nline5",
-				true,
-				false,
-				'<p>&lt;br/&gt;</p><p>line2</p><p></p><p>line3</p><p></p><p></p><p>line4</p><p></p><p></p><p></p><p>line5</p>',
-			),
-			array(
-				"<br/>\nline2\n\nline3\n\n\nline4\n\n\n\nline5",
-				true,
-				true,
-				'<p>&lt;br/&gt;</p><p>line2</p><p>line3</p><p>line4</p><p>line5</p>',
-			),
-		);
-	}
-
-	/**
-	 * @dataProvider providerFormatNtext
-	 * @param string $value
-	 * @param string $paragraphs
-	 * @param string $removeEmptyParagraphs
-	 * @param string $assertion
-	 */
-	public function testFormatNtext($value, $paragraphs, $removeEmptyParagraphs, $assertion)
-	{
-		$formatter = new CFormatter();
-		$this->assertEquals($assertion, $formatter->formatNtext($value, $paragraphs, $removeEmptyParagraphs));
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

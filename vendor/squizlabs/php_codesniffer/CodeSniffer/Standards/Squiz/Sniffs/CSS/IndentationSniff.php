@@ -1,128 +1,57 @@
-<?php
-/**
- * Squiz_Sniffs_CSS_IndentationSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Squiz_Sniffs_CSS_IndentationSniff.
- *
- * Ensures styles are indented 4 spaces.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class Squiz_Sniffs_CSS_IndentationSniff implements PHP_CodeSniffer_Sniff
-{
-
-    /**
-     * A list of tokenizers this sniff supports.
-     *
-     * @var array
-     */
-    public $supportedTokenizers = array('CSS');
-
-    /**
-    * The number of spaces code should be indented.
-    *
-    * @var int
-    */
-    public $indent = 4;
-
-
-    /**
-     * Returns the token types that this sniff is interested in.
-     *
-     * @return array(int)
-     */
-    public function register()
-    {
-        return array(T_OPEN_TAG);
-
-    }//end register()
-
-
-    /**
-     * Processes the tokens that this sniff is interested in.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file where the token was found.
-     * @param int                  $stackPtr  The position in the stack where
-     *                                        the token was found.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-
-        $numTokens    = (count($tokens) - 2);
-        $indentLevel  = 0;
-        $nestingLevel = 0;
-        for ($i = 1; $i < $numTokens; $i++) {
-            if ($tokens[$i]['code'] === T_COMMENT) {
-                // Don't check the indent of comments.
-                continue;
-            }
-
-            if ($tokens[$i]['code'] === T_OPEN_CURLY_BRACKET) {
-                $indentLevel++;
-
-                // Check for nested class definitions.
-                $found  = $phpcsFile->findNext(
-                    T_OPEN_CURLY_BRACKET,
-                    ($i + 1),
-                    $tokens[$i]['bracket_closer']
-                );
-                if ($found !== false) {
-                    $nestingLevel = $indentLevel;
-                }
-            } else if ($tokens[($i + 1)]['code'] === T_CLOSE_CURLY_BRACKET) {
-                $indentLevel--;
-            }
-
-            if ($tokens[$i]['column'] !== 1) {
-                continue;
-            }
-
-            // We started a new line, so check indent.
-            if ($tokens[$i]['code'] === T_WHITESPACE) {
-                $content     = str_replace($phpcsFile->eolChar, '', $tokens[$i]['content']);
-                $foundIndent = strlen($content);
-            } else {
-                $foundIndent = 0;
-            }
-
-            $expectedIndent = ($indentLevel * $this->indent);
-            if ($expectedIndent > 0
-                && strpos($tokens[$i]['content'], $phpcsFile->eolChar) !== false
-            ) {
-                if ($nestingLevel !== $indentLevel) {
-                    $error = 'Blank lines are not allowed in class definitions';
-                    $phpcsFile->addError($error, $i, 'BlankLine');
-                }
-            } else if ($foundIndent !== $expectedIndent) {
-                $error = 'Line indented incorrectly; expected %s spaces, found %s';
-                $data  = array(
-                          $expectedIndent,
-                          $foundIndent,
-                         );
-                $phpcsFile->addError($error, $i, 'Incorrect', $data);
-            }
-        }//end foreach
-    }//end process()
-
-}//end class
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+A0sHqtOtNzUgVOK+P0==

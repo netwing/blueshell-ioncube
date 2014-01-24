@@ -1,66 +1,60 @@
-<?php
-require_once("config.inc.php");
-foreach($_POST as $k=>$v)
-{
-	if (get_magic_quotes_gpc())
-	{
-		$$k=stripslashes($v);
-	}
-	else
-	{
-		$$k=$v;
-	}
-}
-$sql_costo=str_replace(',','.',$costo);
-$sql_costo_totale=str_replace(',','.',$costo_totale);
-// Salviamo le informazioni relative ai dettagli del contratto
-$contratto_id=$_SESSION['riepilogo']['contratto']['contratto_id'];
-$select="SELECT * FROM blue_contratti_dettagli WHERE contratto_dettaglio_contratto_id='".$contratto_id."'";
-$result=$sql->select_query($select);
-$update="UPDATE blue_contratti SET contratto_imponibile='".$sql_costo."', contratto_totale='".$sql_costo_totale."' WHERE contratto_id='".$contratto_id."'";
-$sql->update_query($update);
-if ($sql->select_num_rows>0)
-{
-	$update="UPDATE blue_contratti_dettagli SET contratto_dettaglio_costo_lettere='".$costo_lettere."',contratto_dettaglio_iva_lettere='".$iva_lettere."',contratto_dettaglio_totale_lettere='".$costo_totale_lettere."',contratto_dettaglio_modalita_pagamento='".$modalita_pagamento."',contratto_dettaglio_oneri_anno='".$anno_oneri."',contratto_dettaglio_oneri_cifra='".$costo_oneri."',contratto_dettaglio_oneri_lettere='".$costo_oneri_lettere."',contratto_dettaglio_oneri_saldabili_mese='".$mese_oneri."' WHERE contratto_dettaglio_contratto_id='".$contratto_id."'";
-	$sql->update_query($update);
-}
-else
-{
-	$insert="INSERT INTO blue_contratti_dettagli (contratto_dettaglio_contratto_id,contratto_dettaglio_costo_lettere,contratto_dettaglio_iva_lettere,contratto_dettaglio_totale_lettere,contratto_dettaglio_modalita_pagamento,contratto_dettaglio_oneri_anno,contratto_dettaglio_oneri_cifra,contratto_dettaglio_oneri_lettere,contratto_dettaglio_oneri_saldabili_mese) VALUES ('".$contratto_id."','".$costo_lettere."','".$iva_lettere."','".$costo_totale_lettere."','".$modalita_pagamento."','".$anno_oneri."','".$costo_oneri."','".$costo_oneri_lettere."','".$mese_oneri."')";
-	$sql->insert_query($insert);
-}
-
-$campi=array(
-			 "<NOMINATIVO>"=>$nominativo,
-			 "<DATA_NASCITA>"=>$data_nascita,
-			 "<LUOGO_NASCITA>"=>$luogo_nascita,
-			 "<INDIRIZZO>"=>$indirizzo,
-			 "<CAP>"=>$cap,
-			 "<CITTA>"=>$citta,
-			 "<NAZIONE>"=>$nazione,
-			 "<PARTITA_IVA>"=>$partita_iva,
-			 "<CODICE_FISCALE>"=>$codice_fiscale,
-			 "<PONTILE>"=>$pontile,
-			 "<POSTO_BARCA>"=>$posto_barca,
- 			 "<LUNGHEZZA>"=>$lunghezza,
-			 "<LARGHEZZA>"=>$larghezza,
- 			 "<COSTO>"=>$costo,
-			 "<COSTO_LETTERE>"=>$costo_lettere,
- 			 "<COSTO_TOTALE>"=>$costo_totale,
-			 "<COSTO_TOTALE_LETTERE>"=>$costo_totale_lettere,
- 			 "<IVA>"=>$iva,
-			 "<IVA_LETTERE>"=>$iva_lettere,
- 			 "<MODALITA_PAGAMENTO>"=>$modalita_pagamento,
-			 "<ANNO_ONERI>"=>$anno_oneri,
- 			 "<MESE_ONERI>"=>$mese_oneri,
- 			 "<COSTO_ONERI>"=>$costo_oneri,
-			 "<COSTO_ONERI_LETTERE>"=>$costo_oneri_lettere,
-			 "<DATA>"=>$data
-			);
-$chiavi=array_keys($campi);
-$valori=array_values($campi);
-$rtf=new RTF();
-$rtf->carica_template("template/contratto_vendita.rtf");
-$rtf->rtf_singolo($chiavi,$valori);
-$rtf->output("Contratto di Vendita.doc");
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+KAgJqV5qvRud+nLkkfhCr3i=

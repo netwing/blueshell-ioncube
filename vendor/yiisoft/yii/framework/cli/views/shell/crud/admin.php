@@ -1,73 +1,33 @@
-<?php
-/**
- * This is the template for generating the admin view for crud.
- * The following variables are available in this template:
- * - $ID: the primary key name
- * - $modelClass: the model class name
- * - $columns: a list of column schema objects
- */
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
-<?php
-echo "<?php\n";
-$label=$this->class2name($modelClass,true);
-echo "\$this->breadcrumbs=array(
-	'$label'=>array('index'),
-	'Manage',
-);\n";
-?>
-
-$this->menu=array(
-	array('label'=>'List <?php echo $modelClass; ?>', 'url'=>array('index')),
-	array('label'=>'Create <?php echo $modelClass; ?>', 'url'=>array('create')),
-);
-
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#<?php echo $this->class2id($modelClass); ?>-grid').yiiGridView('update', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
-?>
-
-<h1>Manage <?php echo $this->class2name($modelClass,true); ?></h1>
-
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
-
-<?php echo "<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>"; ?>
-
-<div class="search-form" style="display:none">
-<?php echo "<?php \$this->renderPartial('_search',array(
-	'model'=>\$model,
-)); ?>\n"; ?>
-</div><!-- search-form -->
-
-<?php echo "<?php"; ?> $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'<?php echo $this->class2id($modelClass); ?>-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
-<?php
-$count=0;
-foreach($columns as $column)
-{
-	if(++$count==7)
-		echo "\t\t/*\n";
-	echo "\t\t'".$column->name."',\n";
-}
-if($count>=7)
-	echo "\t\t*/\n";
-?>
-		array(
-			'class'=>'CButtonColumn',
-		),
-	),
-)); ?>
+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
+GxlgEOnIMDmG3a1yM3tD7gJuL51wSYkgnT1TCW==

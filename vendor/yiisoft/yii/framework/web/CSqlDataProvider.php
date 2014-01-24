@@ -1,142 +1,77 @@
-<?php
-/**
- * CSqlDataProvider implements a data provider based on a plain SQL statement.
- *
- * CSqlDataProvider provides data in terms of arrays, each representing a row of query result.
- *
- * Like other data providers, CSqlDataProvider also supports sorting and pagination.
- * It does so by modifying the given {@link sql} statement with "ORDER BY" and "LIMIT"
- * clauses. You may configure the {@link sort} and {@link pagination} properties to
- * customize sorting and pagination behaviors.
- *
- * CSqlDataProvider may be used in the following way:
- * <pre>
- * $count=Yii::app()->db->createCommand('SELECT COUNT(*) FROM tbl_user')->queryScalar();
- * $sql='SELECT * FROM tbl_user';
- * $dataProvider=new CSqlDataProvider($sql, array(
- *     'totalItemCount'=>$count,
- *     'sort'=>array(
- *         'attributes'=>array(
- *              'id', 'username', 'email',
- *         ),
- *     ),
- *     'pagination'=>array(
- *         'pageSize'=>10,
- *     ),
- * ));
- * // $dataProvider->getData() will return a list of arrays.
- * </pre>
- *
- * Note: if you want to use the pagination feature, you must configure the {@link totalItemCount} property
- * to be the total number of rows (without pagination). And if you want to use the sorting feature,
- * you must configure {@link sort} property so that the provider knows which columns can be sorted.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.web
- * @since 1.1.4
- */
-class CSqlDataProvider extends CDataProvider
-{
-	/**
-	 * @var CDbConnection the database connection to be used in the queries.
-	 * Defaults to null, meaning using Yii::app()->db.
-	 */
-	public $db;
-	/**
-	 * @var string|CDbCommand the SQL statement to be used for fetching data rows.
-	 * Since version 1.1.13 this can also be an instance of {@link CDbCommand}.
-	 */
-	public $sql;
-	/**
-	 * @var array parameters (name=>value) to be bound to the SQL statement.
-	 */
-	public $params=array();
-	/**
-	 * @var string the name of key field. Defaults to 'id'.
-	 */
-	public $keyField='id';
-
-	/**
-	 * Constructor.
-	 * @param string|CDbCommand $sql the SQL statement to be used for fetching data rows. Since version 1.1.13 this can also be an instance of {@link CDbCommand}.
-	 * @param array $config configuration (name=>value) to be applied as the initial property values of this class.
-	 */
-	public function __construct($sql,$config=array())
-	{
-		$this->sql=$sql;
-		foreach($config as $key=>$value)
-			$this->$key=$value;
-	}
-
-	/**
-	 * Fetches the data from the persistent data storage.
-	 * @return array list of data items
-	 */
-	protected function fetchData()
-	{
-		if(!($this->sql instanceof CDbCommand))
-		{
-			$db=$this->db===null ? Yii::app()->db : $this->db;
-			$command=$db->createCommand($this->sql);
-		}
-		else
-			$command=clone $this->sql;
-
-		if(($sort=$this->getSort())!==false)
-		{
-			$order=$sort->getOrderBy();
-			if(!empty($order))
-			{
-				if(preg_match('/\s+order\s+by\s+[\w\s,\.]+$/i',$command->text))
-					$command->text.=', '.$order;
-				else
-					$command->text.=' ORDER BY '.$order;
-			}
-		}
-
-		if(($pagination=$this->getPagination())!==false)
-		{
-			$pagination->setItemCount($this->getTotalItemCount());
-			$limit=$pagination->getLimit();
-			$offset=$pagination->getOffset();
-			$command->text=$command->getConnection()->getCommandBuilder()->applyLimit($command->text,$limit,$offset);
-		}
-
-		foreach($this->params as $name=>$value)
-			$command->bindValue($name,$value);
-
-		return $command->queryAll();
-	}
-
-	/**
-	 * Fetches the data item keys from the persistent data storage.
-	 * @return array list of data item keys.
-	 */
-	protected function fetchKeys()
-	{
-		$keys=array();
-		if($data=$this->getData())
-		{
-			if(is_object(reset($data)))
-				foreach($data as $i=>$item)
-					$keys[$i]=$item->{$this->keyField};
-			else
-				foreach($data as $i=>$item)
-					$keys[$i]=$item[$this->keyField];
-		}
-		return $keys;
-	}
-
-	/**
-	 * Calculates the total number of data items.
-	 * This method is invoked when {@link getTotalItemCount()} is invoked
-	 * and {@link totalItemCount} is not set previously.
-	 * The default implementation simply returns 0.
-	 * You may override this method to return accurate total number of data items.
-	 * @return integer the total number of data items.
-	 */
-	protected function calculateTotalItemCount()
-	{
-		return 0;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

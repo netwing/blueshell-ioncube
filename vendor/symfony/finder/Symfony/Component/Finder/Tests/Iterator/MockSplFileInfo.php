@@ -1,134 +1,69 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\Finder\Tests\Iterator;
-
-class MockSplFileInfo extends \SplFileInfo
-{
-    const   TYPE_DIRECTORY = 1;
-    const   TYPE_FILE      = 2;
-    const   TYPE_UNKNOWN   = 3;
-
-    private $contents         = null;
-    private $mode             = null;
-    private $type             = null;
-    private $relativePath     = null;
-    private $relativePathname = null;
-
-    public function __construct($param)
-    {
-        if (is_string($param)) {
-            parent::__construct($param);
-        } elseif (is_array($param)) {
-            $defaults = array(
-              'name'             => 'file.txt',
-              'contents'         => null,
-              'mode'             => null,
-              'type'             => null,
-              'relativePath'     => null,
-              'relativePathname' => null,
-            );
-            $defaults = array_merge($defaults, $param);
-            parent::__construct($defaults['name']);
-            $this->setContents($defaults['contents']);
-            $this->setMode($defaults['mode']);
-            $this->setType($defaults['type']);
-            $this->setRelativePath($defaults['relativePath']);
-            $this->setRelativePathname($defaults['relativePathname']);
-        } else {
-            throw new \RuntimeException(sprintf('Incorrect parameter "%s"', $param));
-        }
-    }
-
-    public function isFile()
-    {
-        if ($this->type === null) {
-            return preg_match('/file/', $this->getFilename());
-        };
-
-        return self::TYPE_FILE === $this->type;
-    }
-
-    public function isDir()
-    {
-        if ($this->type === null) {
-            return preg_match('/directory/', $this->getFilename());
-        }
-
-        return self::TYPE_DIRECTORY === $this->type;
-    }
-
-    public function isReadable()
-    {
-        if ($this->mode === null) {
-            return preg_match('/r\+/', $this->getFilename());
-        }
-
-        return preg_match('/r\+/', $this->mode);
-    }
-
-    public function getContents()
-    {
-        return $this->contents;
-    }
-
-    public function setContents($contents)
-    {
-        $this->contents = $contents;
-    }
-
-    public function setMode($mode)
-    {
-        $this->mode = $mode;
-    }
-
-    public function setType($type)
-    {
-        if (is_string($type)) {
-            switch ($type) {
-                case 'directory':
-                    $this->type = self::TYPE_DIRECTORY;
-                case 'd':
-                    $this->type = self::TYPE_DIRECTORY;
-                    break;
-                case 'file':
-                    $this->type = self::TYPE_FILE;
-                case 'f':
-                    $this->type = self::TYPE_FILE;
-                    break;
-                default:
-                    $this->type = self::TYPE_UNKNOWN;
-            }
-        } else {
-            $this->type = $type;
-        }
-    }
-
-    public function setRelativePath($relativePath)
-    {
-        $this->relativePath = $relativePath;
-    }
-
-    public function setRelativePathname($relativePathname)
-    {
-        $this->relativePathname = $relativePathname;
-    }
-
-    public function getRelativePath()
-    {
-        return $this->relativePath;
-    }
-
-    public function getRelativePathname()
-    {
-        return $this->relativePathname;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+NK4JVeTg8uPBWF2YRoAzd/QqVDl0KG==

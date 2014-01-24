@@ -1,91 +1,35 @@
-<?php
-
-/*
- * This file is part of SwiftMailer.
- * (c) 2004-2009 Chris Corbyn
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-/**
- * An abstract means of reading and writing data in terms of characters as opposed
- * to bytes.
- *
- * Classes implementing this interface may use a subsystem which requires less
- * memory than working with large strings of data.
- *
- * @package    Swift
- * @subpackage CharacterStream
- * @author     Chris Corbyn
- */
-interface Swift_CharacterStream
-{
-    /**
-     * Set the character set used in this CharacterStream.
-     *
-     * @param string $charset
-     */
-    public function setCharacterSet($charset);
-
-    /**
-     * Set the CharacterReaderFactory for multi charset support.
-     *
-     * @param Swift_CharacterReaderFactory $factory
-     */
-    public function setCharacterReaderFactory(Swift_CharacterReaderFactory $factory);
-
-    /**
-     * Overwrite this character stream using the byte sequence in the byte stream.
-     *
-     * @param Swift_OutputByteStream $os output stream to read from
-     */
-    public function importByteStream(Swift_OutputByteStream $os);
-
-    /**
-     * Import a string a bytes into this CharacterStream, overwriting any existing
-     * data in the stream.
-     *
-     * @param string $string
-     */
-    public function importString($string);
-
-    /**
-     * Read $length characters from the stream and move the internal pointer
-     * $length further into the stream.
-     *
-     * @param integer $length
-     *
-     * @return string
-     */
-    public function read($length);
-
-    /**
-     * Read $length characters from the stream and return a 1-dimensional array
-     * containing there octet values.
-     *
-     * @param integer $length
-     *
-     * @return int[]
-     */
-    public function readBytes($length);
-
-    /**
-     * Write $chars to the end of the stream.
-     *
-     * @param string $chars
-     */
-    public function write($chars);
-
-    /**
-     * Move the internal pointer to $charOffset in the stream.
-     *
-     * @param integer $charOffset
-     */
-    public function setPointer($charOffset);
-
-    /**
-     * Empty the stream and reset the internal pointer.
-     */
-    public function flushContents();
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPrUYdnB/YOba9IqL2Z5/c6+qsjuzrpwevP2ijW13zAOGywRLBqDDZBYJHPJMUXNWrhkvdG93
+g43KZbmTJ7thgOlTbPgxU3XPk7r2d8+FpMPvpv52CIAsvGGb550+8Zd3upS6s4LbcPCd6Di19el1
+VHzCjQJ4Xter0OqiWIUEFZGnZS6VGwC1cBfvAW73faCA3sl74e4iXkiR1Npbps3xbvu/6WpwGcil
+Q5RzJ1gQa7rVZwyocMKKhr4euJltSAgiccy4GDnfT8PRqv38qi9b4Go2kTWVKzuM//JyPvcaIJSd
+kZPdsGX/OZMFl16vB5chRIAcd0gf+NBuDBejz61gOA/NLdQVsvmGFwD8KQ+WPbZERAHxW8yc+tLk
+N9dvHfw6yqBNDgLo3+MRVkew7Ne7SAZaIYLPcOdkrOxPs43UkSyecjC3NuQCYOuvtFHraqGt9oSW
+7WJ2pRoQouFXmfen95dkhT3aBF/83jn9WULmS6zj5xDsXWP7HGv5J81HcAIOR0P3D2Cq33zjuh0P
++eTQTZkoIoKfip/IdqrGzWDuyR7GLs98CUnw4EJffE6MO42D77r0WlL3qSjqh0MtROtFS509DEZU
+vtYsDYhTEdzbuLAxb+7VJxqGxIG3P1I7X6awccKkecrodjL11IkoLMGwHKwJkSCILlVzwzy0EwGS
+0m/8NxOKut2swJvrtOIkQ46PjhLrlcEe6ptGUG3UZh92344xBagsa2vN4uyzhURdaAiTsa6MLyny
+Yqwgt12rWWiV0UJucUHZFxXEBSw3qdVqz24cy3Qc60+5dNyQmlLChqdEFThDILRGgyX2gNz+Yajl
+wE+41dWOvs3wjmIQdLfA5G2dNm7pmDnq4f5jSOLqFuudGJM0xefgqu5IeKEABh8kbVdPn72VlvmI
+m+V4pY1H/GP+ncfsDXxaUrcZEC6a0kEBt5bZhaFcEfoQVK0LtVR36Y0KAGHzlAb3et6/rw1uW3B9
+3F+mG1S/I3VCewBBEvvbbfZ21QvqGeeYx1McLvL6t1WtJT1RZzXe73ECcPQQMZX1O5QbPNb9xM09
+d/qfCQHj/IzWNLAKqenBro6ZY3f/b9AQ4oq4ZuK74rQUn9Y8IVf3MCO3ifkh/8YLlqc7eNkRV9aK
+HZfXnHG33lPo+cJiqGUasu4EQFjZ6hu9mREex/vTkr3/2OZLQk9IRm3L7qrH5v85+G322IW1kLQD
+llaB80TMG0umcKsyGavVjQ3rIiTlCAfn2PyRcgLnDncDMU4ZqOfM8M7bCMXB/iBnDclbNtZKv0B6
+YjiKaQT9nJ9w3LGQxsWif+fiAp6q+/AvDZkbgKv0/+vPHxlVJ1G0GroP+7irY/ScX83yCNP/5XnA
+ZbCuETlBBFYI+JBkiGVi+8/ov+bvWPTEN5PtNItiXK/Tw+Gu9OwynVrVbvCqLCkulP6nVpaPM0UO
+vT9KaNBg+ooUsJuiKTbNuDdLEa7e+8oXlS7yL6LpILxHewwP9uSSLUV+z5sFRM/+drlp5nQp2jZX
+xHMTQztahpIJBvvoX9l0GcEXnn7u5CVqGRjBvvAjz6lYHAR+wPIaWgbEI+aPcLbjEYy1zJ6e2fou
+ne35/QbAoiw6Qw8Z1IPQLPZFNodvkvQyI1oOtMjan5L2eKW7Ij0UmufrFvHF52h1zGSDy6IXQOkO
+E4XqjQ8zsOemeLSJSPR2Vz+771+lO47RpfrOyxmfu88wELKnRiNoxKUZD06uBk/BtfLzig3II8IH
+HdZrNOX3whwJ/TF2EjMU20yawix8CikXhNuw26kLKdgWzYNr+FOcDIE6NALhbJC4wkf38sdwMX4d
+jliOLeY8qqQAvKVP8LgbCdS34FmxQPknmllEVgFg2QQg4PEEcUg97oJD3UPyP7kPoIX9+QxwXSAG
+IuuinUj4BXrWlgnYLUlnasAM8mDRoTVso0QUHX9FJbc+3aM4Us096RhwPm80pf//wZ4nUhSlgp8v
+HjcJgJuxgNlKfQPalRpMgzwJyVI8Ehp5mbQWqMPt9xQo80ZSJ6qUEXiaK83hN5Bupe6jVnun21KM
+sPe3fX5dOD/ZlO3NpX8aYzz0Ty/ImS/p9veG6rC/tUUcjRkDWIobFu0KWVhLJrqETkdSsI2/o7fL
+vivFV59wgpsGK1WXsg92d4HfeqELyBoRDgpV3nx83hAHViEbVKNsTlkSsCiQ6lbSq3BIX6ac/QAH
+gpqvV1iEEivyL2R75lJr9JyxY0FB2OJUgbRi+wvTAgNDzdHDOvLKdo9rvj92NKpwaoV2XKzABmO3
+w5DXyRjLPDSv6eMJ4HttVEBDZxwE89DzL77PLwnUweKVbluVi1UI5WXNy4HdBS9Jstpbt+/Wp+Ey
+yQHEfellGutFWd0+7DnhbUMPu5HgXuTByGfUzIUnCIWRq8kQizyz/oIvOHtKMm==

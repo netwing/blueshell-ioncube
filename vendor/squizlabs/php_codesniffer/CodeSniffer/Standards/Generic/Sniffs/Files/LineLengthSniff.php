@@ -1,160 +1,66 @@
-<?php
-/**
- * Generic_Sniffs_Files_LineLengthSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Generic_Sniffs_Files_LineLengthSniff.
- *
- * Checks all lines in the file, and throws warnings if they are over 80
- * characters in length and errors if they are over 100. Both these
- * figures can be changed by extending this sniff in your own standard.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class Generic_Sniffs_Files_LineLengthSniff implements PHP_CodeSniffer_Sniff
-{
-
-    /**
-     * The limit that the length of a line should not exceed.
-     *
-     * @var int
-     */
-    public $lineLimit = 80;
-
-    /**
-     * The limit that the length of a line must not exceed.
-     *
-     * Set to zero (0) to disable.
-     *
-     * @var int
-     */
-    public $absoluteLineLimit = 100;
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        return array(T_OPEN_TAG);
-
-    }//end register()
-
-
-    /**
-     * Processes this test, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token in
-     *                                        the stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-
-        // Make sure this is the first open tag.
-        $previousOpenTag = $phpcsFile->findPrevious(T_OPEN_TAG, ($stackPtr - 1));
-        if ($previousOpenTag !== false) {
-            return;
-        }
-
-        $tokenCount         = 0;
-        $currentLineContent = '';
-        $currentLine        = 1;
-
-        $trim = (strlen($phpcsFile->eolChar) * -1);
-        for (; $tokenCount < $phpcsFile->numTokens; $tokenCount++) {
-            if ($tokens[$tokenCount]['line'] === $currentLine) {
-                $currentLineContent .= $tokens[$tokenCount]['content'];
-            } else {
-                $currentLineContent = substr($currentLineContent, 0, $trim);
-                $this->checkLineLength($phpcsFile, ($tokenCount - 1), $currentLineContent);
-                $currentLineContent = $tokens[$tokenCount]['content'];
-                $currentLine++;
-            }
-        }
-
-        $currentLineContent = substr($currentLineContent, 0, $trim);
-        $this->checkLineLength($phpcsFile, ($tokenCount - 1), $currentLineContent);
-
-    }//end process()
-
-
-    /**
-     * Checks if a line is too long.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile   The file being scanned.
-     * @param int                  $stackPtr    The token at the end of the line.
-     * @param string               $lineContent The content of the line.
-     *
-     * @return void
-     */
-    protected function checkLineLength(PHP_CodeSniffer_File $phpcsFile, $stackPtr, $lineContent)
-    {
-        // If the content is a CVS or SVN id in a version tag, or it is
-        // a license tag with a name and URL, or it is an SVN URL, there
-        // is nothing the developer can do to shorten the line,
-        // so don't throw errors.
-        $regex = '~@license|@version[^\$]+\$Id|\$(Head)?URL[:\$]~';
-        if (preg_match($regex, $lineContent) !== 0) {
-            return;
-        }
-
-        if (PHP_CODESNIFFER_ENCODING !== 'iso-8859-1') {
-            // Not using the default encoding, so take a bit more care.
-            $lineLength = iconv_strlen($lineContent, PHP_CODESNIFFER_ENCODING);
-            if ($lineLength === false) {
-                // String contained invalid characters, so revert to default.
-                $lineLength = strlen($lineContent);
-            }
-        } else {
-            $lineLength = strlen($lineContent);
-        }
-
-        if ($this->absoluteLineLimit > 0
-            && $lineLength > $this->absoluteLineLimit
-        ) {
-            $data = array(
-                     $this->absoluteLineLimit,
-                     $lineLength,
-                    );
-
-            $error = 'Line exceeds maximum limit of %s characters; contains %s characters';
-            $phpcsFile->addError($error, $stackPtr, 'MaxExceeded', $data);
-        } else if ($lineLength > $this->lineLimit) {
-            $data = array(
-                     $this->lineLimit,
-                     $lineLength,
-                    );
-
-            $warning = 'Line exceeds %s characters; contains %s characters';
-            $phpcsFile->addWarning($warning, $stackPtr, 'TooLong', $data);
-        }
-
-    }//end checkLineLength()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+4KblVeqFXZCGUjA1OYGejcrLilt2wZUXXtlW7W==

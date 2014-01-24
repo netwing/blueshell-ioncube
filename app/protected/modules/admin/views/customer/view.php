@@ -1,50 +1,33 @@
-<?php
-/* @var $this CustomerController */
-/* @var $model Customer */
-
-$this->pageTitle = Yii::t('app', 'Update Customers');
-
-$this->breadcrumbs=array(
-	'Customers'=>array('index'),
-	$model->cliente_id,
-);
-
-$this->menu=array(
-	array('label'=>Yii::t('app', 'Manage Customer'), 'url'=>array('admin')),
-	array('label'=>Yii::t('app', 'Create Customer'), 'url'=>array('create')),
-	array('label'=>Yii::t('app', 'Update Customer'), 'url'=>array('update', 'id'=>$model->cliente_id)),
-	array('label'=>Yii::t('app', 'Delete Customer'), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->cliente_id),'confirm'=>'Are you sure you want to delete this item?')),
-);
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
-
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'cliente_id',
-		'cliente_nominativo',
-		'cliente_tipo',
-		'cliente_nome',
-		'cliente_cognome',
-		'cliente_data_nascita',
-		'cliente_luogo_nascita',
-		'cliente_indirizzo',
-		'cliente_citta',
-		'cliente_cap',
-		'cliente_provincia',
-		'cliente_nazione',
-		'cliente_telefono1',
-		'cliente_tipo_telefono1',
-		'cliente_telefono2',
-		'cliente_tipo_telefono2',
-		'cliente_telefono3',
-		'cliente_tipo_telefono3',
-		'cliente_email',
-		'cliente_codice_fiscale',
-		'cliente_partita_iva',
-		'cliente_documento',
-		'cliente_numero_documento',
-		'cliente_rifiuta_comunicazioni',
-		'cliente_note',
-		'data_inserimento_cliente',
-	),
-)); ?>
+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
+//dwm9W5NFXKf2NNB0sch6BF4sW=

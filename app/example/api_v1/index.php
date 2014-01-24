@@ -1,80 +1,42 @@
-<?php
-
-// Configuration parameters
-$url      = 'http://bs21.ispeed.local/app/soap.php'; // You can use http or https
-$username = "admin";
-$password = "password";
-
-ini_set("soap.wsdl_cache_ttl", '0');
-ini_set("soap.wsdl_cache_enabled", '0');
-
-// Get client
-$client = new SoapClient($url);
-// Try to login if not logged in
-if (!$client->loggedIn()) {
-    try {
-        $login = $client->login($username, $password);
-        echo "Login successful" . PHP_EOL;
-    } catch (SoapFault $e) {
-        echo $e->faultcode . PHP_EOL;
-        echo $e->faultstring . PHP_EOL;
-        exit;
-    }
-}
-
-print_r(get_class_methods(get_class($client)));
-print_r($client->__getFunctions());
-print_r($client->index());
-exit;
-
-// Get a client
-try {
-    echo "This is our first customer:" . PHP_EOL;
-    $customer = $client->get(1);
-    print_r($customer);
-} catch (SoapFault $e) {
-    echo $e->faultcode . PHP_EOL;
-    echo $e->faultstring . PHP_EOL;
-}
-
-// Get total customer and first 10 customers
-try {
-    $count = $client->count();
-    echo "We have " . $count . " total customers." . PHP_EOL;
-    $limit = 2;
-    $offset = 0;
-    $customer = $client->getList($limit, $offset);
-    echo "This are our first " . $limit . " customers:" . PHP_EOL;
-    print_r($customer);
-} catch (SoapFault $e) {
-    echo $e->faultcode . PHP_EOL;
-    echo $e->faultstring . PHP_EOL;
-}
-
-// Get client vectors
-try {
-    echo "Client 1 has the following vectors:" . PHP_EOL;
-    $vectors = $client->getVectors(1);
-    print_r($vectors);
-} catch (SoapFault $e) {
-    echo $e->faultcode . PHP_EOL;
-    echo $e->faultstring . PHP_EOL;
-}
-
-
-
-// Create a new client
-/*
-try {
-    // This field are mandatory, if you omit one of them, the response will be a SoapFault exception
-    $my = array(
-        "cliente_nominativo" => "New client name",
-        "cliente_telefono1"  => "1234567890",
-    );
-    $customer = $client->create($my);
-    print_r($customer);
-} catch (SoapFault $e) {
-    echo $e->faultcode . PHP_EOL;
-    echo $e->faultstring . PHP_EOL;
-}
-*/
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

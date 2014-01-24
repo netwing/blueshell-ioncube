@@ -1,88 +1,51 @@
-<?php
-
-/*
- * This file is part of the Monolog package.
- *
- * (c) Jordi Boggiano <j.boggiano@seld.be>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Monolog\Handler;
-
-use Monolog\TestCase;
-use Monolog\Logger;
-
-class StreamHandlerTest extends TestCase
-{
-    /**
-     * @covers Monolog\Handler\StreamHandler::__construct
-     * @covers Monolog\Handler\StreamHandler::write
-     */
-    public function testWrite()
-    {
-        $handle = fopen('php://memory', 'a+');
-        $handler = new StreamHandler($handle);
-        $handler->setFormatter($this->getIdentityFormatter());
-        $handler->handle($this->getRecord(Logger::WARNING, 'test'));
-        $handler->handle($this->getRecord(Logger::WARNING, 'test2'));
-        $handler->handle($this->getRecord(Logger::WARNING, 'test3'));
-        fseek($handle, 0);
-        $this->assertEquals('testtest2test3', fread($handle, 100));
-    }
-
-    /**
-     * @covers Monolog\Handler\StreamHandler::close
-     */
-    public function testClose()
-    {
-        $handle = fopen('php://memory', 'a+');
-        $handler = new StreamHandler($handle);
-        $this->assertTrue(is_resource($handle));
-        $handler->close();
-        $this->assertFalse(is_resource($handle));
-    }
-
-    /**
-     * @covers Monolog\Handler\StreamHandler::write
-     */
-    public function testWriteCreatesTheStreamResource()
-    {
-        $handler = new StreamHandler('php://memory');
-        $handler->handle($this->getRecord());
-    }
-
-    /**
-     * @expectedException LogicException
-     * @covers Monolog\Handler\StreamHandler::__construct
-     * @covers Monolog\Handler\StreamHandler::write
-     */
-    public function testWriteMissingResource()
-    {
-        $handler = new StreamHandler(null);
-        $handler->handle($this->getRecord());
-    }
-
-    /**
-     * @expectedException UnexpectedValueException
-     * @covers Monolog\Handler\StreamHandler::__construct
-     * @covers Monolog\Handler\StreamHandler::write
-     */
-    public function testWriteInvalidResource()
-    {
-        $handler = new StreamHandler('bogus://url');
-        $handler->handle($this->getRecord());
-    }
-
-    /**
-     * @expectedException UnexpectedValueException
-     * @covers Monolog\Handler\StreamHandler::__construct
-     * @covers Monolog\Handler\StreamHandler::write
-     */
-    public function testWriteNonExistingResource()
-    {
-        $handler = new StreamHandler('/foo/bar/baz/'.rand(0, 10000));
-        $handler->handle($this->getRecord());
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+hA5WmY7B

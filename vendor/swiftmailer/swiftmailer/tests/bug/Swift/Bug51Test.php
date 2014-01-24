@@ -1,125 +1,75 @@
-<?php
-
-require_once 'Swift/Tests/SwiftUnitTestCase.php';
-
-class Swift_Bug51Test extends Swift_Tests_SwiftUnitTestCase
-{
-    private $_attachmentFile;
-    private $_outputFile;
-
-    public function skip()
-    {
-        $this->skipUnless(
-            is_writable(SWIFT_TMP_DIR),
-            '%s: This test requires tests/acceptance.conf.php to specify a ' .
-            'writable SWIFT_TMP_DIR'
-        );
-    }
-
-    public function setUp()
-    {
-        $this->_attachmentFile = SWIFT_TMP_DIR . '/attach.rand.bin';
-        file_put_contents($this->_attachmentFile, '');
-
-        $this->_outputFile = SWIFT_TMP_DIR . '/attach.out.bin';
-        file_put_contents($this->_outputFile, '');
-    }
-
-    public function tearDown()
-    {
-        unlink($this->_attachmentFile);
-        unlink($this->_outputFile);
-    }
-
-    public function testAttachmentsDoNotGetTruncatedUsingToByteStream()
-    {
-        //Run 100 times with 10KB attachments
-        for ($i = 0; $i < 10; ++$i) {
-            $message = $this->_createMessageWithRandomAttachment(
-                10000, $this->_attachmentFile
-            );
-
-            file_put_contents($this->_outputFile, '');
-            $message->toByteStream(
-                new Swift_ByteStream_FileByteStream($this->_outputFile, true)
-            );
-
-            $emailSource = file_get_contents($this->_outputFile);
-
-            $this->assertAttachmentFromSourceMatches(
-                file_get_contents($this->_attachmentFile),
-                $emailSource
-            );
-        }
-    }
-
-    public function testAttachmentsDoNotGetTruncatedUsingToString()
-    {
-        //Run 100 times with 10KB attachments
-        for ($i = 0; $i < 10; ++$i) {
-            $message = $this->_createMessageWithRandomAttachment(
-                10000, $this->_attachmentFile
-            );
-
-            $emailSource = $message->toString();
-
-            $this->assertAttachmentFromSourceMatches(
-                file_get_contents($this->_attachmentFile),
-                $emailSource
-            );
-        }
-    }
-
-    // -- Custom Assertions
-
-    public function assertAttachmentFromSourceMatches($attachmentData, $source)
-    {
-        $encHeader = 'Content-Transfer-Encoding: base64';
-        $base64declaration = strpos($source, $encHeader);
-
-        $attachmentDataStart = strpos($source, "\r\n\r\n", $base64declaration);
-        $attachmentDataEnd = strpos($source, "\r\n--", $attachmentDataStart);
-
-        if (false === $attachmentDataEnd) {
-            $attachmentBase64 = trim(substr($source, $attachmentDataStart));
-        } else {
-            $attachmentBase64 = trim(substr(
-                $source, $attachmentDataStart,
-                $attachmentDataEnd - $attachmentDataStart
-            ));
-        }
-
-        $this->assertIdenticalBinary($attachmentData, base64_decode($attachmentBase64));
-    }
-
-    // -- Creation Methods
-
-    private function _fillFileWithRandomBytes($byteCount, $file)
-    {
-        // I was going to use dd with if=/dev/random but this way seems more
-        // cross platform even if a hella expensive!!
-
-        file_put_contents($file, '');
-        $fp = fopen($file, 'wb');
-        for ($i = 0; $i < $byteCount; ++$i) {
-            $byteVal = rand(0, 255);
-            fwrite($fp, pack('i', $byteVal));
-        }
-        fclose($fp);
-    }
-
-    private function _createMessageWithRandomAttachment($size, $attachmentPath)
-    {
-        $this->_fillFileWithRandomBytes($size, $attachmentPath);
-
-        $message = Swift_Message::newInstance()
-            ->setSubject('test')
-            ->setBody('test')
-            ->setFrom('a@b.c')
-            ->setTo('d@e.f')
-            ->attach(Swift_Attachment::fromPath($attachmentPath))
-            ;
-
-        return $message;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+UNZAixcCQ7QU

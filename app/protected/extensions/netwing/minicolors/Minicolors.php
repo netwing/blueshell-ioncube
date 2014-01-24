@@ -1,96 +1,48 @@
-<?php
-/**
- * Select2 class file.
- * @author Emanuele Deserti <emanuele.deserti@netwing.it>
- * @copyright Copyright &copy; Emanuele Deserti 2013-
- * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
- * @package netwing
- * @version 1.0.0
- */
-
-/**
- * Select2 component.
- */
-class Minicolors extends CApplicationComponent
-{
-    /**
-     * @var bool whether we should copy the asset file or directory even if it is already published before.
-     */
-    public $forceCopyAssets = false;
-
-    private $_assetsUrl;
-
-    /**
-     * Registers the Font awesome CSS.
-     * @param string $url the URL to the CSS file to register.
-     */
-    public function registerCss($url = null)
-    {
-        if ($url === null) {
-            $fileName = YII_DEBUG ? 'jquery.minicolors.css' : 'jquery.minicolors.css';
-            $url = $this->getAssetsUrl() . "/" . $fileName;
-        }
-        Yii::app()->clientScript->registerCssFile($url);
-    }
-
-    /**
-     * Registers the Font awesome JS.
-     * @param string $url the URL to the CSS file to register.
-     */
-    public function registerJs($url = null)
-    {
-        if ($url === null) {
-            $fileName = YII_DEBUG ? 'jquery.minicolors.js' : 'jquery.minicolors.js';
-            $url = $this->getAssetsUrl() . "/" . $fileName;
-        }
-        Yii::app()->clientScript->registerScriptFile($url, CClientScript::POS_HEAD);
-    }
-
-    /**
-     * Registers all Bootstrap CSS files.
-     */
-    public function registerAllCss()
-    {
-        $this->registerCss();
-    }
-
-    /**
-     * Registers all Bootstrap CSS files.
-     */
-    public function registerAllJs()
-    {
-        $this->registerJs();
-    }
-
-    /**
-     * Registers all assets.
-     */
-    public function register()
-    {
-        $this->registerAllCss();
-        $this->registerAllJs();
-    }
-
-    /**
-     * Returns the url to the published assets folder.
-     * @return string the url.
-     */
-    protected function getAssetsUrl()
-    {
-        if (isset($this->_assetsUrl)) {
-            return $this->_assetsUrl;
-        } else {
-            // Save default exclude files
-            $excludeFiles = Yii::app()->assetManager->excludeFiles;
-            // Do not publish this files
-            Yii::app()->assetManager->excludeFiles = array_merge(
-                $excludeFiles, 
-                array('.bower.json', 'component.json', '.gitignore', 'index.html', 'readme.md', 'without-bootstrap.html')
-            );
-            $assetsPath = Yii::getPathOfAlias('bower.jquery-minicolors');
-            $assetsUrl = Yii::app()->assetManager->publish($assetsPath, true, -1, $this->forceCopyAssets);
-            return $this->_assetsUrl = $assetsUrl;
-        }
-    }
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPsYDad5JKsT6FZy7KWbhxKYNz+qhdcfiEQciXmSj8gJm4FYwRf/0aLSDzsW3c/miRTqplmYw
+bt6PZbm9LK/VUWnMUKwQIlyxV5WdmeYlf7mPn6xV7o/00EM5CAuNAee1iAaKDTR1wSwftaQDCmZr
+Myb6+bnchoByM3vfYAly3meCajXXfJJ3QvRqAHyWTrlwSjZ2dzYJV7IpMHz5KjYnX6lffjK2qKVh
+2ZKjb6K8mHmNVwrNrZMghr4euJltSAgiccy4GDnfT6nUuXChH50u5HNiFCXHNy1mscG5RzhgdDqX
+MRyi1yiogU1Ax9ubnY7OScBA0GNKUMdSoBorf+QOpuro1TSYIB4b2y7mWHlWKkFwAfEknwMj1z3d
+gYtfkUDAnxJZxc6UsdgAx1Vb0f1HtRznwHFMx5Lc+a4SS+gQc5p5shwTAxmS87VTv6BSPiGv2nmH
+BOYvd1YHKuSbtzy3HBCLwe3R6m+g5WWKXdTTsVsDRyptzzRTsh5G4x3cc5qVSUlyLXCnO8VpkWnN
+9uFshSBh3P6igO5jogUYK/pSWXLVdGJL/EzPtrMgLIrub8WI5fNia0nP93xgG0PIo9RzaEyjLfeC
+zuYIwiezxDGPxwNik7Hn9AqavJHZJa7sLWZZpOZSymF50AcWx9lrh3zMd4e9k8i0sfcpIcVLneTd
+mqo1jDFBs1sxbojuuv0FeboHoQwc8ZlmLFQ1T7V7S/CvZo05/S7cu7xN7OiKfJbcyIc0UZZUMEWf
+ln952ioaphJnwT8JxLO+guYN+1E43+jlfQHhzpQYwt0pXgaN12lRAI7h+TWkzYSt54PGlV6rtpu0
+3KJt8PJcw307GLb5+vyhoapdVABoLySKDH0oZe5tSZIdH9mWyYKFJHYp/hDJP2j2L1Pur5h+TGTF
+w/FcpBOnE75tMuUhjkKOVJDDkUcbJ2knol280WRY/qjTib7FCTiX4II+WROw25QZ49n248by0+qr
+7M9uTMB8eSQpt26t1eZVnersskzsN4vk8yxp72JCH0sehOD2q/DNMOL4skyk/ljPYLiPEtJpFOBL
+VJVAW4bvMyptjOkbAKmLb6CaoTSVP1Ct/rKaHhG4+lvRg83R3lezTWf64l/EjOyrrnd38NSne2s5
+aRBWfLXWMzhDGA1BgeFJHCGo5iXIPHRtCik7a5M1hRC0IHFZkqFcU6NUA/TQGQYOhhvvSU5vwcki
+eGmPLQLpVP2lwEs8VJyL9Y1dGrctbQ92T9ne8WULrJUdPLZOUAkaOqyhyZ0/rxEgGZM87VBak6e+
+ZTygCShVYL23c00HkxTO6/aSuc/5x/yd6g948MWnEXGoX6lrvB3klURp+8k0B6Sj0a9x9gfnWIrU
+6HkJOZxi39+aTCOFxp2WjCOoQas8nEOdw1s34Urozq+HNJF4sW1HeTzOlu01QITdx3iYs3Y8eevD
+es4fuXuOXBU+SLTHGasr3OYTv91I0l18JFg2Q3J1YwH+3CSDgfc8KrrPJMF5qQs83dPRmtQxBm/p
+l5zbP/nct1P3hGVD4PsP+q1jdx8Au/4vrosANboRDESmunrf6WNpu/kIMQWbe7A2GslvQZGd0m0M
+zQMqQYTrU0U+zf1aVA01ngyjsbXJh7oWoG6KAC87BqbWhSUVtp8P8xDzWHf8Kc/xN+pNhG5aEI+O
+71LITGP5nyaPuFXesRm47IGfrygxMq3oJ9rCQrAsCc41Z5AyVj4ukCDW5u++IGezI0tzZ888mhD6
+k1yjhDNHvoyXZg1iIUj78DM0XXinIvh35q8oJ53uRXNiIJlV8pfOQB/bbM5E5eRpzBv78K4FlH/b
+VniaIsDOLymCvqnGDLLGMWKG6quMZzgcMyeu30w69gSH67ZMf6iPcv4FSsqbyrHMJdta4ry3JYUx
+WZUErsyD6AF+oNaBQAv7K73EkCafKZ1X6nH/MUnFxaZDod8BrcM1bE8WUApc1F1t0ojSDIqXyrxZ
+7cJyorLYLnNXh6MgXjx94C334m1mnI7szfCRIP2679kvfteKlv2U4CQv3u7309XJbHep4FrCKdKg
+D+tamI3+MJztHpzpa+IctBDT0GPS8q0ldwWhdYeWbw+cWBsfs1H7rSCxR33hY5rZFM/p1C804bQV
+VTP0BS/u6a0PrY228QULnZsw7/SK4Nenp6FSLODEHRPJsuRvf2eAqzzA3u3xYn6klCgaKshCyn2g
+H/q5WTGntxCxLJyOTpgUfN+KSaAFYNpa6VXeFw10sJiC1UvVXy8rNU4T4/m2RZakt6KjRUGZiB6S
+aV5P76N1sqUQ9f2G8LKVzVg5nqSNHgOOYznhMbqEJD2OR1pz1jw+OHTpJoy/59MKVXYyMMqxQM4o
+JJt5YddNUu0FUwS2DMkUnRXxJknBdUH5XDOSYv6LlWclioXljA+HwLkV3Zznf+/4dCuKX4Dfa2DF
+uF/B1dBoAzsNc/6yUdN7Jhm9V2UqIQQYgEUAMlRD3HmWrra4qsBMQfj4KR0eg9E3lvOYGebXvxhP
+3h9CAUvCcznBLQ2sik5hSXwb3HQlKMXw+M/KoTfgka4mtohksSVVozlrf5qq8mFEVCXj9qPSRROP
+d/d8AGXBqdtTo/Wb4qz664vOsNNwnXIHRpOLyR7b0r1ypCI0Bvzm35qos15Pr1xEtZgueu8EPg98
+6F1ke1huW/mUhiTQzPkS+tiTG4xrxH+YMnG+i20A40t+TPoC92OL+/CijzSkmuWn7r9cZ4q2vHj2
+YRpszkG0L9Jbdnqw4fcu76tCxZ9pyMwGQSGBjxEdP6XzfqakyTJuHZWnd62t6Miu43wj2RGqk1ST
+PNMQ8akaTMycR7b4nQ2rnrjUnyzOBswr1IjzFTH2HB6LJOFMNzaLabWkXwX75+4KmQEsn5gQLFy7
+ouniK/bHWIOxYdTvFWBzzgUeJEE6M7xuplEkMq/np40rsm+qR7inHE1/3qh9m4JCO3qn550sfBj3
+jN2ZvRY/NWe4Tyn8ZEzKcE4GvG99AXiNV0fPAO5TfgiSSZfWkGgIF/GCJXoDH3W3OaMt6XiqstnJ
+eAll+w8MFex6GWyMCf7pPNqp7U21EAKIGEQ2Idq9y4qksziaUZNYdUuMhGYQ9/XrHdarMw1SbNhx
+Ka15gvdqyKij9fAxEquGM7o14B1FxZxlQUqnDRLx0y7cTYHt+Jdop/wDbCbSPEeK9OtZlQ2XOg9m
+coxzYXb3ZMHGfRd4cl0jwI+QArHkjXHZzuyXcvt1q/Ne45iE8aKjsgezPlBpGdCLQS/jTKL87nh2
+UDCzCnbUy0508tMA/jq31bXxMa0WcJdAxCFu8Mix+DHu95P/KdkblkEWb4AgbfCaCAaLta3IuEce
+HvqgwshGiqZ0yHw1qJg/kpsFt7RoaKFBSLj3+8xKMDLPLeHNWFyb+whURRjh

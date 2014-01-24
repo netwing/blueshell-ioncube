@@ -1,100 +1,42 @@
-<?php
-/**
- * Svnblame report for PHP_CodeSniffer.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Gabriele Santini <gsantini@sqli.com>
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2009 SQLI <www.sqli.com>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Svnblame report for PHP_CodeSniffer.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Gabriele Santini <gsantini@sqli.com>
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2009 SQLI <www.sqli.com>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class PHP_CodeSniffer_Reports_Svnblame extends PHP_CodeSniffer_Reports_VersionControl
-{
-
-    /**
-     * The name of the report we want in the output
-     *
-     * @var string
-     */
-    protected $reportName = 'SVN';
-
-
-    /**
-     * Extract the author from a blame line.
-     *
-     * @param string $line Line to parse.
-     *
-     * @return mixed string or false if impossible to recover.
-     */
-    protected function getAuthor($line)
-    {
-        $blameParts = array();
-        preg_match('|\s*([^\s]+)\s+([^\s]+)|', $line, $blameParts);
-
-        if (isset($blameParts[2]) === false) {
-            return false;
-        }
-
-        return $blameParts[2];
-
-    }//end getAuthor()
-
-
-    /**
-     * Gets the blame output.
-     *
-     * @param string $filename File to blame.
-     *
-     * @return array
-     */
-    protected function getBlameContent($filename)
-    {
-        if (PHP_CODESNIFFER_VERBOSITY > 0) {
-            echo 'Getting SVN blame info for '.basename($filename).'... ';
-        }
-
-        $command = 'svn blame "'.$filename.'"';
-        $handle  = popen($command, 'r');
-        if ($handle === false) {
-            echo 'ERROR: Could not execute "'.$command.'"'.PHP_EOL.PHP_EOL;
-            exit(2);
-        }
-
-        $rawContent = stream_get_contents($handle);
-        fclose($handle);
-
-        if (PHP_CODESNIFFER_VERBOSITY > 0) {
-            echo 'DONE'.PHP_EOL;
-        }
-
-        $blames = explode("\n", $rawContent);
-
-        return $blames;
-
-    }//end getBlameContent()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

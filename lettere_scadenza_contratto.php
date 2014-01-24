@@ -1,44 +1,48 @@
-<?php
-require_once("config.inc.php");
-$blue->autentica_utente("documenti","R");
-if (!array_key_exists("contratto_fine_dal",$_POST) or !array_key_exists("contratto_fine_al",$_POST))
-{
-	header("Location:contratti_scadenze.php");
-	exit;
-}
-
-$inizio = $_POST['contratto_fine_dal'];
-$fine = $_POST['contratto_fine_al'];
-
-$select_contratti="SELECT contratto_id,contratto_fine,cliente_id,cliente_nominativo,cliente_indirizzo,cliente_cap,cliente_citta,cliente_provincia,barca_nome,pontile_codice,posto_barca_id,posto_barca_numero FROM ".$tabelle['contratti'].",".$tabelle['clienti'].",".$tabelle['barche'].",".$tabelle['pontili'].",".$tabelle['posti_barca']." WHERE contratto_tipo='1' AND cliente_id=contratto_anagrafica2 AND barca_id=contratto_barca AND posto_barca_id=contratto_posto_barca AND pontile_id=posto_barca_pontile AND contratto_fine BETWEEN '".$inizio."' AND '".$fine."' AND cliente_rifiuta_comunicazioni=0";
-$result_contratti=$sql->select_query($select_contratti);
-$ricerca_sostituzione=array();
-while ($row_contratti=mysql_fetch_array($result_contratti))
-{
-	$cliente=$row_contratti['cliente_nominativo'];
-	$indirizzo=$row_contratti['cliente_indirizzo'];
-	$cap=$row_contratti['cliente_cap'];
-	$citta=$row_contratti['cliente_citta'];
-	$provincia=$row_contratti['cliente_provincia'];
-	$data = date("d-m-Y", time());
-	$pontile=$row_contratti['pontile_codice'];
-	$posto_barca=$row_contratti['posto_barca_numero'];
-	$barca=$row_contratti['barca_nome'];
-	$fine=$sql->data_ita($row_contratti['contratto_fine']);
-	$scadenza=$fine[0];
-	$ricerca_sostituzione[]=array("<NOMINATIVO>"=>$cliente,
-								  "<INDIRIZZO>"=>$indirizzo,
-								  "<CAP>"=>$cap,
-								  "<CITTA>"=>$citta,
-								  "<PROVINCIA>"=>$provincia,
-								  "<DATA>"=>$data,
-								  "<PONTILE>"=>$pontile,
-								  "<POSTO_BARCA>"=>$posto_barca,
-								  "<IMBARCAZIONE>"=>$barca,
-								  "<SCADENZA>"=>$scadenza
-								  );
-}
-$rtf=new RTF();
-$rtf->carica_template("template/lettera_scadenza.rtf");
-$rtf->rtf_multiplo($ricerca_sostituzione);
-$rtf->output("Lettere_Scadenza_Contratti.doc");
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

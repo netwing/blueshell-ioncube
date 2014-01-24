@@ -1,83 +1,46 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
-*
-* (c) Fabien Potencier <fabien@symfony.com>
-*
-* For the full copyright and license information, please view the LICENSE
-* file that was distributed with this source code.
-*/
-
-namespace Symfony\Component\Finder\Tests\Iterator;
-
-use Symfony\Component\Finder\Iterator\RecursiveDirectoryIterator;
-
-class RecursiveDirectoryIteratorTest extends IteratorTestCase
-{
-    /**
-     * @dataProvider getPaths
-     *
-     * @param string  $path
-     * @param Boolean $seekable
-     * @param array   $contains
-     * @param string  $message
-     */
-    public function testRewind($path, $seekable, $contains, $message = null)
-    {
-        try {
-            $i = new RecursiveDirectoryIterator($path, \RecursiveDirectoryIterator::SKIP_DOTS);
-        } catch (\UnexpectedValueException $e) {
-            $this->markTestSkipped(sprintf('Unsupported stream "%s".', $path));
-        }
-
-        $i->rewind();
-
-        $this->assertTrue(true, $message);
-    }
-
-    /**
-     * @dataProvider getPaths
-     *
-     * @param string  $path
-     * @param Boolean $seekable
-     * @param array   $contains
-     * @param string  $message
-     */
-    public function testSeek($path, $seekable, $contains, $message = null)
-    {
-        try {
-            $i = new RecursiveDirectoryIterator($path, \RecursiveDirectoryIterator::SKIP_DOTS);
-        } catch (\UnexpectedValueException $e) {
-            $this->markTestSkipped(sprintf('Unsupported stream "%s".', $path));
-        }
-
-        $actual = array();
-
-        $i->seek(0);
-        $actual[] = $i->getPathname();
-
-        $i->seek(1);
-        $actual[] = $i->getPathname();
-
-        $i->seek(2);
-        $actual[] = $i->getPathname();
-
-        $this->assertEquals($contains, $actual);
-    }
-
-    public function getPaths()
-    {
-        $data = array();
-
-        // ftp
-        $contains = array(
-            'ftp://ftp.mozilla.org'.DIRECTORY_SEPARATOR.'README',
-            'ftp://ftp.mozilla.org'.DIRECTORY_SEPARATOR.'index.html',
-            'ftp://ftp.mozilla.org'.DIRECTORY_SEPARATOR.'pub',
-        );
-        $data[] = array('ftp://ftp.mozilla.org/', false, $contains);
-
-        return $data;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+cpexMG==

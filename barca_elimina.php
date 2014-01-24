@@ -1,56 +1,51 @@
-<?php
-require_once("config.inc.php");
-$blue->autentica_utente("imbarcazioni","W");
-$tot1=0;
-$tot2=0;
-$tot3=0;
-
-if (array_key_exists("barca_id",$_POST)) {
-	$delete="DELETE FROM " . $tabelle['barche'] . " WHERE barca_id='" . $_POST['barca_id'] . "'";
-	$result = $sql->delete_query($delete);
-	if ($result) {
-		Yii::app()->user->setFlash('success', Yii::t('app', 'Vector deleted successfully.'));
-	} else {
-		Yii::app()->user->setFlash('success', Yii::t('app', 'An error occured'));
-	}
-	header("Location:barche.php");
-	exit();
-} elseif (array_key_exists("id",$_GET)) {
-	$select="SELECT COUNT(*) AS tot FROM ".$tabelle['contratti'] . " WHERE contratto_barca='".$_GET['id']."'";
-	$result=$sql->select_query($select);
-	$tot1=mysql_result($result,0,'tot');
-	// Totale delle ricorrenze della barca nei contratti
-	$select="SELECT COUNT(*) AS tot FROM ".$tabelle['presenze']." WHERE presenza_barca='".$_GET['id']."'";
-	$result=$sql->select_query($select);
-	$tot2=mysql_result($result,0,'tot');
-	// Totale delle ricorrenze della barca nelle presenze
-	$select="SELECT COUNT(*) AS tot FROM ".$tabelle['barche_trasferimenti']." WHERE barca_trasferimento_barca='".$_GET['id']."'";
-	$result=$sql->select_query($select);
-	$tot3=mysql_result($result,0,'tot');
-	// Totale delle ricorrenze della barca nelle presenze
-	if ($tot1==0 and $tot2==0 and $tot3==0)
-	{
-		$messaggio = '<div class="alert alert-success">' 
-				   . Yii::t('app', 'This vector was unused in the system and can be safely deleted.')
-				   . '</div>';
-		$elimina=true;
-	}
-	else
-	{
-		$messaggio = '<div class="alert alert-info">' 
-				   . Yii::t('app', 'This vector was in {count1} contract, {count2} presence and {count3} property transfer.', array('{count1}' => $tot1, '{count2}' => $tot2, '{count3}' => $tot3))
-				   . '</div>'; 
-		$messaggio.= '<div class="alert alert-danger">' . Yii::t('app', 'This vector cannot be deleted.') . '</div>';
-		$elimina=false;
-	}
-	/*
-	$smarty->assign("messaggio",$messaggio);
-	$smarty->assign("get_id",$_GET['id']);
-	$smarty->assign("elimina",$elimina);
-	*/
-	require_once "views/vector/delete.php";
-} else {
-	header("Location:barche.php");
-	exit();
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+thtv

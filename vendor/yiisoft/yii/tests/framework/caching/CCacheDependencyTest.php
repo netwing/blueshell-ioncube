@@ -1,67 +1,52 @@
-<?php
-Yii::import('system.caching.dependencies.CFileCacheDependency');
-
-class CCacheDependencyTest extends CTestCase
-{
-    protected $_cacheDependentData=null;
-
-    public function setCacheDependentData($cacheDependentData)
-    {
-        $this->_cacheDependentData = $cacheDependentData;
-    }
-
-    public function getCacheDependentData()
-    {
-        return $this->_cacheDependentData;
-    }
-
-    public function testReuseDependentData()
-    {
-        MockCacheDependency::$generateDependentDataCallback=array($this,'getCacheDependentData');
-        $dependency1=new MockCacheDependency();
-        $dependency1->reuseDependentData = true;
-        $dependency2=new MockCacheDependency();
-        $dependency2->reuseDependentData = true;
-
-        CCacheDependency::resetReusableData();
-        $this->setCacheDependentData('start');
-        $dependency1->evaluateDependency();
-        $dependency2->evaluateDependency();
-        $this->assertFalse($dependency1->getHasChanged(),'Initial dependency1 changed!');
-        $this->assertFalse($dependency2->getHasChanged(),'Initial dependency2 changed!');
-        $this->assertEquals(1,MockCacheDependency::$generateDependentDataCalled,'Extra invokations of "generateDependentData()"!');
-
-        // New request:
-        CCacheDependency::resetReusableData();
-        MockCacheDependency::$generateDependentDataCalled=0;
-        $this->assertFalse($dependency1->getHasChanged(),'Dependency1 changed for new request!');
-        $this->assertFalse($dependency2->getHasChanged(),'Dependency2 changed for new request!');
-        $this->assertEquals(1,MockCacheDependency::$generateDependentDataCalled,'Extra invokations of "generateDependentData()"!');
-
-        // New request:
-        CCacheDependency::resetReusableData();
-        MockCacheDependency::$generateDependentDataCalled=0;
-        $this->setCacheDependentData('change1');
-        $this->assertTrue($dependency1->getHasChanged(),'Dependency1 is not changed after source change!');
-        $dependency1->evaluateDependency();
-
-        // New request:
-        CCacheDependency::resetReusableData();
-        MockCacheDependency::$generateDependentDataCalled=0;
-        $this->assertFalse($dependency1->getHasChanged(),'Dependency1 has been changed!');
-        $this->assertTrue($dependency2->getHasChanged(),'Dependency2 has not been changed!');
-        $this->assertEquals(1,MockCacheDependency::$generateDependentDataCalled,'Extra invokations of "generateDependentData()"!');
-    }
-}
-
-class MockCacheDependency extends CCacheDependency
-{
-    public static $generateDependentDataCallback;
-    public static $generateDependentDataCalled = 0;
-
-    public function generateDependentData()
-    {
-        self::$generateDependentDataCalled++;
-        return call_user_func(self::$generateDependentDataCallback);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

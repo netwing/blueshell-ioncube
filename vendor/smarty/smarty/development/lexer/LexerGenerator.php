@@ -1,331 +1,84 @@
-<?php
-/**
- * PHP_LexerGenerator, a php 5 lexer generator.
- *
- * This lexer generator translates a file in a format similar to
- * re2c ({@link http://re2c.org}) and translates it into a PHP 5-based lexer
- *
- * PHP version 5
- *
- * LICENSE:
- *
- * Copyright (c) 2006, Gregory Beaver <cellog@php.net>
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *     * Redistributions of source code must retain the above copyright
- *       notice, this list of conditions and the following disclaimer.
- *     * Redistributions in binary form must reproduce the above copyright
- *       notice, this list of conditions and the following disclaimer in
- *       the documentation and/or other materials provided with the distribution.
- *     * Neither the name of the PHP_LexerGenerator nor the names of its
- *       contributors may be used to endorse or promote products derived
- *       from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
- * IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
- * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
- * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
- * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
- * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
- * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
- * PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
- * OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
- * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
- * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- *
- * @category   php
- * @package    PHP_LexerGenerator
- * @author     Gregory Beaver <cellog@php.net>
- * @copyright  2006 Gregory Beaver
- * @license    http://www.opensource.org/licenses/bsd-license.php New BSD License
- * @version    CVS: $Id: LexerGenerator.php 294970 2010-02-12 03:46:38Z clockwerx $
- * @since      File available since Release 0.1.0
- */
-/**
- * The Lexer generation parser
- */
-require_once './LexerGenerator/Parser.php';
-/**
- * Hand-written lexer for lex2php format files
- */
-require_once './LexerGenerator/Lexer.php';
-
-/**
- * The basic home class for the lexer generator.  A lexer scans text and
- * organizes it into tokens for usage by a parser.
- *
- * Sample Usage:
- * <code>
- * require_once 'PHP/LexerGenerator.php';
- * $lex = new PHP_LexerGenerator('/path/to/lexerfile.plex');
- * </code>
- *
- * A file named "/path/to/lexerfile.php" will be created.
- *
- * File format consists of a PHP file containing specially
- * formatted comments like so:
- *
- * <code>
- * /*!lex2php
- * {@*}
- * </code>
- *
- * All lexer definition files must contain at least two lex2php comment blocks:
- *  - 1 regex declaration block
- *  - 1 or more rule declaration blocks
- *
- * The first lex2php comment is the regex declaration block and must contain
- * several processor instruction as well as defining a name for all
- * regular expressions.  Processor instructions start with
- * a "%" symbol and must be:
- *
- *  - %counter
- *  - %input
- *  - %token
- *  - %value
- *  - %line
- *
- * token and counter should define the class variables used to define lexer input
- * and the index into the input.  token and value should be used to define the class
- * variables used to store the token number and its textual value.  Finally, line
- * should be used to define the class variable used to define the current line number
- * of scanning.
- *
- * For example:
- * <code>
- * /*!lex2php
- * %counter {$this->N}
- * %input {$this->data}
- * %token {$this->token}
- * %value {$this->value}
- * %line {%this->linenumber}
- * {@*}
- * </code>
- *
- * Patterns consist of an identifier containing an letters or an underscore, and
- * a descriptive match pattern.
- *
- * Descriptive match patterns may either be regular expressions (regexes) or
- * quoted literal strings.  Here are some examples:
- *
- * <pre>
- * pattern = "quoted literal"
- * ANOTHER = /[a-zA-Z_]+/
- * COMPLEX = @<([a-zA-Z_]+)( +(([a-zA-Z_]+)=((["\'])([^\6]*)\6))+){0,1}>[^<]*</\1>@
- * </pre>
- *
- * Quoted strings must escape the \ and " characters with \" and \\.
- *
- * Regex patterns must be in Perl-compatible regular expression format (preg).
- * special characters (like \t \n or \x3H) can only be used in regexes, all
- * \ will be escaped in literal strings.
- *
- * Sub-patterns may be defined and back-references (like \1) may be used.  Any sub-
- * patterns detected will be passed to the token handler in the variable
- * $yysubmatches.
- *
- * In addition, lookahead expressions, and once-only expressions are allowed.
- * Lookbehind expressions are impossible (scanning always occurs from the
- * current position forward), and recursion (?R) can't work and is not allowed.
- *
- * <code>
- * /*!lex2php
- * %counter {$this->N}
- * %input {$this->data}
- * %token {$this->token}
- * %value {$this->value}
- * %line {%this->linenumber}
- * alpha = /[a-zA-Z]/
- * alphaplus = /[a-zA-Z]+/
- * number = /[0-9]/
- * numerals = /[0-9]+/
- * whitespace = /[ \t\n]+/
- * blah = "$\""
- * blahblah = /a\$/
- * GAMEEND = @(?:1\-0|0\-1|1/2\-1/2)@
- * PAWNMOVE = /P?[a-h]([2-7]|[18]\=(Q|R|B|N))|P?[a-h]x[a-h]([2-7]|[18]\=(Q|R|B|N))/
- * {@*}
- * </code>
- *
- * All regexes must be delimited.  Any legal preg delimiter can be used (as in @ or / in
- * the example above)
- *
- * Rule lex2php blocks each define a lexer state.  You can optionally name the state
- * with the %statename processor instruction.  State names can be used to transfer to
- * a new lexer state with the yybegin() method
- *
- * <code>
- * /*!lexphp
- * %statename INITIAL
- * blah {
- *     $this->yybegin(self::INBLAH);
- *     // note - $this->yybegin(2) would also work
- * }
- * {@*}
- * /*!lex2php
- * %statename INBLAH
- * ANYTHING {
- *     $this->yybegin(self::INITIAL);
- *     // note - $this->yybegin(1) would also work
- * }
- * {@*}
- * </code>
- *
- * You can maintain a parser state stack simply by using yypushstate() and
- * yypopstate() instead of yybegin():
- *
- * <code>
- * /*!lexphp
- * %statename INITIAL
- * blah {
- *     $this->yypushstate(self::INBLAH);
- * }
- * {@*}
- * /*!lex2php
- * %statename INBLAH
- * ANYTHING {
- *     $this->yypopstate();
- *     // now INBLAH doesn't care where it was called from
- * }
- * {@*}
- * </code>
- *
- * Code blocks can choose to skip the current token and cycle to the next token by
- * returning "false"
- *
- * <code>
- * /*!lex2php
- * WHITESPACE {
- *     return false;
- * }
- * {@*}
- * </code>
- *
- * If you wish to re-process the current token in a new state, simply return true.
- * If you forget to change lexer state, this will cause an unterminated loop,
- * so be careful!
- *
- * <code>
- * /*!lex2php
- * "(" {
- *     $this->yypushstate(self::INPARAMS);
- *     return true;
- * }
- * {@*}
- * </code>
- *
- * Lastly, if you wish to cycle to the next matching rule, return any value other than
- * true, false or null:
- *
- * <code>
- * /*!lex2php
- * "{@" ALPHA {
- *     if ($this->value == '{@internal') {
- *         return 'more';
- *     }
- *     ...
- * }
- * "{@internal" {
- *     ...
- * }
- * {@*}
- * </code>
- *
- * Note that this procedure is exceptionally inefficient, and it would be far better
- * to take advantage of PHP_LexerGenerator's top-down precedence and instead code:
- *
- * <code>
- * /*!lex2php
- * "{@internal" {
- *     ...
- * }
- * "{@" ALPHA {
- *     ...
- * }
- * {@*}
- * </code>
- * @package    PHP_LexerGenerator
- * @author     Gregory Beaver <cellog@php.net>
- * @copyright  2006 Gregory Beaver
- * @license    http://www.php.net/license/3_01.txt  PHP License 3.01
- * @version    @package_version@
- * @since      Class available since Release 0.1.0
- * @example    TestLexer.plex Example lexer source
- * @example    TestLexer.php  Example lexer generated php code
- * @example    usage.php      Example usage of PHP_LexerGenerator
- * @example    Lexer.plex     File_ChessPGN lexer source (complex)
- * @example    Lexer.php      File_ChessPGN lexer generated php code
- */
-
-class PHP_LexerGenerator
-{
-    /**
-     * Plex file lexer.
-     * @var PHP_LexerGenerator_Lexer
-     */
-    private $_lex;
-
-    /**
-     * Plex file parser.
-     * @var PHP_LexerGenerator_Parser
-     */
-    private $_parser;
-
-    /**
-     * Path to the output PHP file.
-     * @var string
-     */
-    private $_outfile;
-
-    /**
-     * Debug flag. When set, Parser trace information is generated.
-     * @var boolean
-     */
-    public $debug = false;
-
-    /**
-     * Create a lexer generator and optionally generate a lexer file.
-     *
-     * @param string Optional plex file {@see PHP_LexerGenerator::create}.
-     * @param string Optional output file {@see PHP_LexerGenerator::create}.
-     */
-    public function __construct($lexerfile = '', $outfile = '')
-    {
-        if ($lexerfile) {
-            $this -> create($lexerfile, $outfile);
-        }
-    }
-
-    /**
-     * Create a lexer file from its skeleton plex file.
-     *
-     * @param string Path to the plex file.
-     * @param string Optional path to output file. Default is lexerfile with
-     * extension of ".php".
-     */
-    public function create($lexerfile, $outfile = '')
-    {
-        $this->_lex = new PHP_LexerGenerator_Lexer(file_get_contents($lexerfile));
-        $info = pathinfo($lexerfile);
-        if ($outfile) {
-            $this->outfile = $outfile;
-        } else {
-            $this->outfile = $info['dirname'] . DIRECTORY_SEPARATOR .
-                substr($info['basename'], 0,
-                strlen($info['basename']) - strlen($info['extension'])) . 'php';
-        }
-        $this->_parser = new PHP_LexerGenerator_Parser($this->outfile, $this->_lex);
-        if ($this -> debug) {
-            $this->_parser->PrintTrace();
-        }
-        while ($this->_lex->advance($this->_parser)) {
-            $this->_parser->doParse($this->_lex->token, $this->_lex->value);
-        }
-        $this->_parser->doParse(0, 0);
-    }
-}
-//$a = new PHP_LexerGenerator('/development/File_ChessPGN/ChessPGN/Lexer.plex');
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+pPddCmDFONot3N2zfG==

@@ -1,397 +1,171 @@
-<?php
-/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
-/**
- * Highlighter base class
- *
- * PHP versions 4 and 5
- *
- * LICENSE: This source file is subject to version 3.0 of the PHP license
- * that is available through the world-wide-web at the following URI:
- * http://www.php.net/license/3_0.txt.  If you did not receive a copy of
- * the PHP License and are unable to obtain it through the web, please
- * send a note to license@php.net so we can mail you a copy immediately.
- *
- * @category   Text
- * @package    Text_Highlighter
- * @author     Andrey Demenev <demenev@gmail.com>
- * @copyright  2004-2006 Andrey Demenev
- * @license    http://www.php.net/license/3_0.txt  PHP License
- * @version    CVS: $Id: Highlighter.php,v 1.1 2007/06/03 02:35:28 ssttoo Exp $
- * @link       http://pear.php.net/package/Text_Highlighter
- */
-
-// {{{ BC constants
-
-// BC trick : define constants related to default
-// renderer if needed
-if (!defined('HL_NUMBERS_LI')) {
-    /**#@+
-     * Constant for use with $options['numbers']
-     * @see Text_Highlighter_Renderer_Html::_init()
-     */
-    /**
-     * use numbered list
-     */
-    define ('HL_NUMBERS_LI'    ,    1);
-    /**
-     * Use 2-column table with line numbers in left column and code in  right column.
-     * Forces $options['tag'] = HL_TAG_PRE
-     */
-    define ('HL_NUMBERS_TABLE'    , 2);
-    /**#@-*/
-}
-
-// }}}
-// {{{ constants
-/**
- * for our purpose, it is infinity
- */
-define ('HL_INFINITY',      1000000000);
-
-// }}}
-
-/**
- * Text highlighter base class
- *
- * @author     Andrey Demenev <demenev@gmail.com>
- * @copyright  2004-2006 Andrey Demenev
- * @license    http://www.php.net/license/3_0.txt  PHP License
- * @version    Release: 0.7.1
- * @link       http://pear.php.net/package/Text_Highlighter
- */
-
-// {{{ Text_Highlighter
-
-/**
- * Text highlighter base class
- *
- * This class implements all functions necessary for highlighting,
- * but it does not contain highlighting rules. Actual highlighting is
- * done using a descendent of this class.
- *
- * One is not supposed to manually create descendent classes.
- * Instead, describe highlighting  rules in XML format and
- * use {@link Text_Highlighter_Generator} to create descendent class.
- * Alternatively, an instance of a descendent class can be created
- * directly.
- *
- * Use {@link Text_Highlighter::factory()} to create an
- * object for particular language highlighter
- *
- * Usage example
- * <code>
- *require_once 'Text/Highlighter.php';
- *$hlSQL =& Text_Highlighter::factory('SQL',array('numbers'=>true));
- *echo $hlSQL->highlight('SELECT * FROM table a WHERE id = 12');
- * </code>
- *
- * @author Andrey Demenev <demenev@gmail.com>
- * @package Text_Highlighter
- * @access public
- */
-
-class Text_Highlighter
-{
-    // {{{ members
-    
-    /**
-     * Syntax highlighting rules.
-     * Auto-generated classes set this var
-     *
-     * @access protected
-     * @see _init
-     * @var array
-     */
-    var $_syntax;
-
-    /**
-     * Renderer object.
-     *
-     * @access private
-     * @var array
-     */
-    var $_renderer;
-
-    /**
-     * Options. Keeped for BC
-     *
-     * @access protected
-     * @var array
-     */
-    var $_options = array();
-
-    /**
-     * Conditionds
-     *
-     * @access protected
-     * @var array
-     */
-    var $_conditions = array();
-
-    /**
-     * Disabled keywords
-     *
-     * @access protected
-     * @var array
-     */
-    var $_disabled = array();
-
-    /**
-     * Language
-     *
-     * @access protected
-     * @var string
-     */
-    var $_language = '';
-
-    // }}}
-    // {{{ _checkDefines
-    
-    /**
-     * Called by subclssses' constructors to enable/disable
-     * optional highlighter rules
-     *
-     * @param array $defines  Conditional defines
-     *
-     * @access protected
-     */
-    function _checkDefines()
-    {
-        if (isset($this->_options['defines'])) {
-            $defines = $this->_options['defines'];
-        } else {
-            $defines = array();
-        }
-        foreach ($this->_conditions as $name => $actions) {
-            foreach($actions as $action) {
-                $present = in_array($name, $defines);
-                if (!$action[1]) {
-                    $present = !$present;
-                }
-                if ($present) {
-                    unset($this->_disabled[$action[0]]);
-                } else {
-                    $this->_disabled[$action[0]] = true;
-                }
-            }
-        }
-    }
-
-    // }}}
-    // {{{ factory
-    
-    /**
-     * Create a new Highlighter object for specified language
-     *
-     * @param string $lang    language, for example "SQL"
-     * @param array  $options Rendering options. This
-     * parameter is only keeped for BC reasons, use 
-     * {@link Text_Highlighter::setRenderer()} instead
-     *
-     * @return mixed a newly created Highlighter object, or 
-     * a PEAR error object on error
-     *
-     * @static
-     * @access public
-     */
-    public static function factory($lang, $options = array())
-    {
-        $lang = strtoupper($lang);
-        $langFile = dirname(__FILE__)."/Highlighter/$lang.php";
-        if (is_file($langFile))
-        	include_once $langFile;
-        else
-        	return false;
-
-        $classname = 'Text_Highlighter_' . $lang;
-
-        if (!class_exists($classname))
-        	return false;
-
-		return new $classname($options);
-    }
-
-    // }}}
-    // {{{ setRenderer
-    
-    /**
-     * Set renderer object
-     *
-     * @param object $renderer  Text_Highlighter_Renderer
-     *
-     * @access public
-     */
-    function setRenderer($renderer)
-    {
-        $this->_renderer = $renderer;
-    }
-
-    // }}}
-
-    /**
-     * Helper function to find matching brackets
-     *
-     * @access private
-     */
-    function _matchingBrackets($str)
-    {
-        return strtr($str, '()<>[]{}', ')(><][}{');
-    }
-
-
-    
-    
-    function _getToken()
-    {
-        if (!empty($this->_tokenStack)) {
-            return array_pop($this->_tokenStack);
-        }
-        if ($this->_pos >= $this->_len) {
-            return NULL;
-        }
-
-        if ($this->_state != -1 && preg_match($this->_endpattern, $this->_str, $m, PREG_OFFSET_CAPTURE, $this->_pos)) {
-            $endpos = $m[0][1];
-            $endmatch = $m[0][0];
-        } else {
-            $endpos = -1;
-        }
-        preg_match ($this->_regs[$this->_state], $this->_str, $m, PREG_OFFSET_CAPTURE, $this->_pos);
-        $n = 1;
- 
- 
-         foreach ($this->_counts[$this->_state] as $i=>$count) {
-            if (!isset($m[$n])) {
-                break;
-            }
-            if ($m[$n][1]>-1 && ($endpos == -1 || $m[$n][1] < $endpos)) {
-                if ($this->_states[$this->_state][$i] != -1) {
-                    $this->_tokenStack[] = array($this->_delim[$this->_state][$i], $m[$n][0]);
-                } else {
-                    $inner = $this->_inner[$this->_state][$i];
-                    if (isset($this->_parts[$this->_state][$i])) {
-                        $parts = array();
-                        $partpos = $m[$n][1];
-                        for ($j=1; $j<=$count; $j++) {
-                            if ($m[$j+$n][1] < 0) {
-                                continue;
-                            }
-                            if (isset($this->_parts[$this->_state][$i][$j])) {
-                                if ($m[$j+$n][1] > $partpos) {
-                                    array_unshift($parts, array($inner, substr($this->_str, $partpos, $m[$j+$n][1]-$partpos)));
-                                }
-                                array_unshift($parts, array($this->_parts[$this->_state][$i][$j], $m[$j+$n][0]));
-                            }
-                            $partpos = $m[$j+$n][1] + strlen($m[$j+$n][0]);
-                        }
-                        if ($partpos < $m[$n][1] + strlen($m[$n][0])) {
-                            array_unshift($parts, array($inner, substr($this->_str, $partpos, $m[$n][1] - $partpos + strlen($m[$n][0]))));
-                        }
-                        $this->_tokenStack = array_merge($this->_tokenStack, $parts);
-                    } else {
-                        foreach ($this->_keywords[$this->_state][$i] as $g => $re) {
-                            if (isset($this->_disabled[$g])) {
-                                continue;
-                            }
-                            if (preg_match($re, $m[$n][0])) {
-                                $inner = $this->_kwmap[$g];
-                                break;
-                            }
-                        }
-                        $this->_tokenStack[] = array($inner, $m[$n][0]);
-                    }
-                }
-                if ($m[$n][1] > $this->_pos) {
-                    $this->_tokenStack[] = array($this->_lastinner, substr($this->_str, $this->_pos, $m[$n][1]-$this->_pos));
-                }
-                $this->_pos = $m[$n][1] + strlen($m[$n][0]);
-                if ($this->_states[$this->_state][$i] != -1) {
-                    $this->_stack[] = array($this->_state, $this->_lastdelim, $this->_lastinner, $this->_endpattern);
-                    $this->_lastinner = $this->_inner[$this->_state][$i];
-                    $this->_lastdelim = $this->_delim[$this->_state][$i];
-                    $l = $this->_state;
-                    $this->_state = $this->_states[$this->_state][$i];
-                    $this->_endpattern = $this->_end[$this->_state];
-                    if ($this->_subst[$l][$i]) {
-                        for ($k=0; $k<=$this->_counts[$l][$i]; $k++) {
-                            if (!isset($m[$i+$k])) {
-                                break;
-                            }
-                            $quoted = preg_quote($m[$n+$k][0], '/');
-                            $this->_endpattern = str_replace('%'.$k.'%', $quoted, $this->_endpattern);
-                            $this->_endpattern = str_replace('%b'.$k.'%', $this->_matchingBrackets($quoted), $this->_endpattern);
-                        }
-                    }
-                }
-                return array_pop($this->_tokenStack);
-            }
-            $n += $count + 1;
-        }
-
-        if ($endpos > -1) {
-            $this->_tokenStack[] = array($this->_lastdelim, $endmatch);
-            if ($endpos > $this->_pos) {
-                $this->_tokenStack[] = array($this->_lastinner, substr($this->_str, $this->_pos, $endpos-$this->_pos));
-            }
-            list($this->_state, $this->_lastdelim, $this->_lastinner, $this->_endpattern) = array_pop($this->_stack);
-            $this->_pos = $endpos + strlen($endmatch);
-            return array_pop($this->_tokenStack);
-        }
-        $p = $this->_pos;
-        $this->_pos = HL_INFINITY;
-        return array($this->_lastinner, substr($this->_str, $p));
-    }
-    
-    
-    
-    
-    // {{{ highlight
-
-    /**
-     * Highlights code
-     *
-     * @param  string $str      Code to highlight
-     * @access public
-     * @return string Highlighted text
-     *
-     */
-
-    function highlight($str)
-    {
-        if (!($this->_renderer)) {
-            include_once(dirname(__FILE__).'/Renderer/Html.php');
-            $this->_renderer = new Text_Highlighter_Renderer_Html($this->_options);
-        }
-        $this->_state = -1;
-        $this->_pos = 0;
-        $this->_stack = array();
-        $this->_tokenStack = array();
-        $this->_lastinner = $this->_defClass;
-        $this->_lastdelim = $this->_defClass;
-        $this->_endpattern = '';
-        $this->_renderer->reset();
-        $this->_renderer->setCurrentLanguage($this->_language);
-        $this->_str = $this->_renderer->preprocess($str);
-        $this->_len = strlen($this->_str);
-        while ($token = $this->_getToken()) {
-            $this->_renderer->acceptToken($token[0], $token[1]);
-        }
-        $this->_renderer->finalize();
-        return $this->_renderer->getOutput();
-    }
-    
-    // }}}
-    
-}
-
-// }}}
-
-/*
- * Local variables:
- * tab-width: 4
- * c-basic-offset: 4
- * c-hanging-comment-ender-p: nil
- * End:
- */
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

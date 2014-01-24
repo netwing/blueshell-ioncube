@@ -1,355 +1,161 @@
-<?php
-/**
- *  Base include file for SimpleTest.
- *  @package    SimpleTest
- *  @subpackage WebTester
- *  @version    $Id: form.php 1784 2008-04-26 13:07:14Z pp11 $
- */
-    
-/**#@+
- * include SimpleTest files
- */
-require_once(dirname(__FILE__) . '/tag.php');
-require_once(dirname(__FILE__) . '/encoding.php');
-require_once(dirname(__FILE__) . '/selector.php');
-/**#@-*/
-
-/**
- *    Form tag class to hold widget values.
- *    @package SimpleTest
- *    @subpackage WebTester
- */
-class SimpleForm {
-    private $method;
-    private $action;
-    private $encoding;
-    private $default_target;
-    private $id;
-    private $buttons;
-    private $images;
-    private $widgets;
-    private $radios;
-    private $checkboxes;
-    
-    /**
-     *    Starts with no held controls/widgets.
-     *    @param SimpleTag $tag        Form tag to read.
-     *    @param SimplePage $page      Holding page.
-     */
-    function __construct($tag, $page) {
-        $this->method = $tag->getAttribute('method');
-        $this->action = $this->createAction($tag->getAttribute('action'), $page);
-        $this->encoding = $this->setEncodingClass($tag);
-        $this->default_target = false;
-        $this->id = $tag->getAttribute('id');
-        $this->buttons = array();
-        $this->images = array();
-        $this->widgets = array();
-        $this->radios = array();
-        $this->checkboxes = array();
-    }
-    
-    /**
-     *    Creates the request packet to be sent by the form.
-     *    @param SimpleTag $tag        Form tag to read.
-     *    @return string               Packet class.
-     *    @access private
-     */
-    protected function setEncodingClass($tag) {
-        if (strtolower($tag->getAttribute('method')) == 'post') {
-            if (strtolower($tag->getAttribute('enctype')) == 'multipart/form-data') {
-                return 'SimpleMultipartEncoding';
-            }
-            return 'SimplePostEncoding';
-        }
-        return 'SimpleGetEncoding';
-    }
-    
-    /**
-     *    Sets the frame target within a frameset.
-     *    @param string $frame        Name of frame.
-     *    @access public
-     */
-    function setDefaultTarget($frame) {
-        $this->default_target = $frame;
-    }
-    
-    /**
-     *    Accessor for method of form submission.
-     *    @return string           Either get or post.
-     *    @access public
-     */
-    function getMethod() {
-        return ($this->method ? strtolower($this->method) : 'get');
-    }
-    
-    /**
-     *    Combined action attribute with current location
-     *    to get an absolute form target.
-     *    @param string $action    Action attribute from form tag.
-     *    @param SimpleUrl $base   Page location.
-     *    @return SimpleUrl        Absolute form target.
-     */
-    protected function createAction($action, $page) {
-        if (($action === '') || ($action === false)) {
-            return $page->expandUrl($page->getUrl());
-        }
-        return $page->expandUrl(new SimpleUrl($action));;
-    }
-    
-    /**
-     *    Absolute URL of the target.
-     *    @return SimpleUrl           URL target.
-     *    @access public
-     */
-    function getAction() {
-        $url = $this->action;
-        if ($this->default_target && ! $url->getTarget()) {
-            $url->setTarget($this->default_target);
-        }
-        return $url;
-    }
-    
-    /**
-     *    Creates the encoding for the current values in the
-     *    form.
-     *    @return SimpleFormEncoding    Request to submit.
-     *    @access private
-     */
-    protected function encode() {
-        $class = $this->encoding;
-        $encoding = new $class();
-        for ($i = 0, $count = count($this->widgets); $i < $count; $i++) {
-            $this->widgets[$i]->write($encoding);
-        }
-        return $encoding;
-    }
-            
-    /**
-     *    ID field of form for unique identification.
-     *    @return string           Unique tag ID.
-     *    @access public
-     */
-    function getId() {
-        return $this->id;
-    }
-    
-    /**
-     *    Adds a tag contents to the form.
-     *    @param SimpleWidget $tag        Input tag to add.
-     *    @access public
-     */
-    function addWidget($tag) {
-        if (strtolower($tag->getAttribute('type')) == 'submit') {
-            $this->buttons[] = $tag;
-        } elseif (strtolower($tag->getAttribute('type')) == 'image') {
-            $this->images[] = $tag;
-        } elseif ($tag->getName()) {
-            $this->setWidget($tag);
-        }
-    }
-    
-    /**
-     *    Sets the widget into the form, grouping radio
-     *    buttons if any.
-     *    @param SimpleWidget $tag   Incoming form control.
-     *    @access private
-     */
-    protected function setWidget($tag) {
-        if (strtolower($tag->getAttribute('type')) == 'radio') {
-            $this->addRadioButton($tag);
-        } elseif (strtolower($tag->getAttribute('type')) == 'checkbox') {
-            $this->addCheckbox($tag);
-        } else {
-            $this->widgets[] = &$tag;
-        }
-    }
-    
-    /**
-     *    Adds a radio button, building a group if necessary.
-     *    @param SimpleRadioButtonTag $tag   Incoming form control.
-     *    @access private
-     */
-    protected function addRadioButton($tag) {
-        if (! isset($this->radios[$tag->getName()])) {
-            $this->widgets[] = new SimpleRadioGroup();
-            $this->radios[$tag->getName()] = count($this->widgets) - 1;
-        }
-        $this->widgets[$this->radios[$tag->getName()]]->addWidget($tag);
-    }
-    
-    /**
-     *    Adds a checkbox, making it a group on a repeated name.
-     *    @param SimpleCheckboxTag $tag   Incoming form control.
-     *    @access private
-     */
-    protected function addCheckbox($tag) {
-        if (! isset($this->checkboxes[$tag->getName()])) {
-            $this->widgets[] = $tag;
-            $this->checkboxes[$tag->getName()] = count($this->widgets) - 1;
-        } else {
-            $index = $this->checkboxes[$tag->getName()];
-            if (! SimpleTestCompatibility::isA($this->widgets[$index], 'SimpleCheckboxGroup')) {
-                $previous = $this->widgets[$index];
-                $this->widgets[$index] = new SimpleCheckboxGroup();
-                $this->widgets[$index]->addWidget($previous);
-            }
-            $this->widgets[$index]->addWidget($tag);
-        }
-    }
-    
-    /**
-     *    Extracts current value from form.
-     *    @param SimpleSelector $selector   Criteria to apply.
-     *    @return string/array              Value(s) as string or null
-     *                                      if not set.
-     *    @access public
-     */
-    function getValue($selector) {
-        for ($i = 0, $count = count($this->widgets); $i < $count; $i++) {
-            if ($selector->isMatch($this->widgets[$i])) {
-                return $this->widgets[$i]->getValue();
-            }
-        }
-        foreach ($this->buttons as $button) {
-            if ($selector->isMatch($button)) {
-                return $button->getValue();
-            }
-        }
-        return null;
-    }
-    
-    /**
-     *    Sets a widget value within the form.
-     *    @param SimpleSelector $selector   Criteria to apply.
-     *    @param string $value              Value to input into the widget.
-     *    @return boolean                   True if value is legal, false
-     *                                      otherwise. If the field is not
-     *                                      present, nothing will be set.
-     *    @access public
-     */
-    function setField($selector, $value, $position=false) {
-        $success = false;
-        $_position = 0;
-        for ($i = 0, $count = count($this->widgets); $i < $count; $i++) {
-            if ($selector->isMatch($this->widgets[$i])) {
-                $_position++;
-                if ($position === false or $_position === (int)$position) {
-                    if ($this->widgets[$i]->setValue($value)) {
-                        $success = true;
-                    }
-                }
-            }
-        }
-        return $success;
-    }
-    
-    /**
-     *    Used by the page object to set widgets labels to
-     *    external label tags.
-     *    @param SimpleSelector $selector   Criteria to apply.
-     *    @access public
-     */
-    function attachLabelBySelector($selector, $label) {
-        for ($i = 0, $count = count($this->widgets); $i < $count; $i++) {
-            if ($selector->isMatch($this->widgets[$i])) {
-                if (method_exists($this->widgets[$i], 'setLabel')) {
-                    $this->widgets[$i]->setLabel($label);
-                    return;
-                }
-            }
-        }
-    }
-    
-    /**
-     *    Test to see if a form has a submit button.
-     *    @param SimpleSelector $selector   Criteria to apply.
-     *    @return boolean                   True if present.
-     *    @access public
-     */
-    function hasSubmit($selector) {
-        foreach ($this->buttons as $button) {
-            if ($selector->isMatch($button)) {
-                return true;
-            }
-        }
-        return false;
-    }
-    
-    /**
-     *    Test to see if a form has an image control.
-     *    @param SimpleSelector $selector   Criteria to apply.
-     *    @return boolean                   True if present.
-     *    @access public
-     */
-    function hasImage($selector) {
-        foreach ($this->images as $image) {
-            if ($selector->isMatch($image)) {
-                return true;
-            }
-        }
-        return false;
-    }
-    
-    /**
-     *    Gets the submit values for a selected button.
-     *    @param SimpleSelector $selector   Criteria to apply.
-     *    @param hash $additional           Additional data for the form.
-     *    @return SimpleEncoding            Submitted values or false
-     *                                      if there is no such button
-     *                                      in the form.
-     *    @access public
-     */
-    function submitButton($selector, $additional = false) {
-        $additional = $additional ? $additional : array();
-        foreach ($this->buttons as $button) {
-            if ($selector->isMatch($button)) {
-                $encoding = $this->encode();
-                $button->write($encoding);
-                if ($additional) {
-                    $encoding->merge($additional);
-                }
-                return $encoding;           
-            }
-        }
-        return false;
-    }
-        
-    /**
-     *    Gets the submit values for an image.
-     *    @param SimpleSelector $selector   Criteria to apply.
-     *    @param integer $x                 X-coordinate of click.
-     *    @param integer $y                 Y-coordinate of click.
-     *    @param hash $additional           Additional data for the form.
-     *    @return SimpleEncoding            Submitted values or false
-     *                                      if there is no such button in the
-     *                                      form.
-     *    @access public
-     */
-    function submitImage($selector, $x, $y, $additional = false) {
-        $additional = $additional ? $additional : array();
-        foreach ($this->images as $image) {
-            if ($selector->isMatch($image)) {
-                $encoding = $this->encode();
-                $image->write($encoding, $x, $y);
-                if ($additional) {
-                    $encoding->merge($additional);
-                }
-                return $encoding;           
-            }
-        }
-        return false;
-    }
-    
-    /**
-     *    Simply submits the form without the submit button
-     *    value. Used when there is only one button or it
-     *    is unimportant.
-     *    @return hash           Submitted values.
-     *    @access public
-     */
-    function submit() {
-        return $this->encode();
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

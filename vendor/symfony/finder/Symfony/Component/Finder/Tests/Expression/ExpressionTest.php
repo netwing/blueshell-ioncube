@@ -1,68 +1,37 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\Finder\Tests\Expression;
-
-use Symfony\Component\Finder\Expression\Expression;
-
-class ExpressionTest extends \PHPUnit_Framework_TestCase
-{
-    /**
-     * @dataProvider getTypeGuesserData
-     */
-    public function testTypeGuesser($expr, $type)
-    {
-        $this->assertEquals($type, Expression::create($expr)->getType());
-    }
-
-    /**
-     * @dataProvider getCaseSensitiveData
-     */
-    public function testCaseSensitive($expr, $isCaseSensitive)
-    {
-        $this->assertEquals($isCaseSensitive, Expression::create($expr)->isCaseSensitive());
-    }
-
-    /**
-     * @dataProvider getRegexRenderingData
-     */
-    public function testRegexRendering($expr, $body)
-    {
-        $this->assertEquals($body, Expression::create($expr)->renderPattern());
-    }
-
-    public function getTypeGuesserData()
-    {
-        return array(
-            array('{foo}', Expression::TYPE_REGEX),
-            array('/foo/', Expression::TYPE_REGEX),
-            array('foo',   Expression::TYPE_GLOB),
-            array('foo*',  Expression::TYPE_GLOB),
-        );
-    }
-
-    public function getCaseSensitiveData()
-    {
-        return array(
-            array('{foo}m', true),
-            array('/foo/i', false),
-            array('foo*',   true),
-        );
-    }
-
-    public function getRegexRenderingData()
-    {
-        return array(
-            array('{foo}m', 'foo'),
-            array('/foo/i', 'foo'),
-        );
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+sDzZwGu8XUFsMj7LnRHYIK7a

@@ -1,35 +1,39 @@
-<?php
-/**
- * CAutoCompleteTest
- */
-class CAutoCompleteTest extends CTestCase
-{
-	public function testCallbackEncoding()
-	{
-		$expected = "'highlight':function() { /* callback */ }";
-
-		$out=$this->getWidgetScript('js:function() { /* callback */ }');
-		$this->assertTrue(mb_strpos($out,$expected, null, Yii::app()->charset)!==false, "Unexpected JavaScript (js:): ".$out);
-
-		$out=$this->getWidgetScript('function() { /* callback */ }');
-		$this->assertTrue(mb_strpos($out,$expected, null, Yii::app()->charset)!==false, "Unexpected JavaScript (w/o js:): ".$out);
-
-		$out=$this->getWidgetScript(new CJavaScriptExpression('function() { /* callback */ }'));
-		$this->assertTrue(mb_strpos($out,$expected, null, Yii::app()->charset)!==false, "Unexpected JavaScript (wrap): ".$out);
-	}
-
-	private function getWidgetScript($callback)
-	{
-		Yii::app()->clientScript->scripts = array();
-		ob_start();
-		$widget = new CAutoComplete(null);
-		$widget->name = 'test';
-		$widget->highlight = $callback;
-		$widget->data = array(1, 2, 3);
-		$widget->init();
-		$widget->run();
-		Yii::app()->clientScript->render($out);
-		ob_end_clean();
-		return $out;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

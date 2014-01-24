@@ -1,92 +1,40 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\CssSelector\Node;
-
-/**
- * Represents a combined node.
- *
- * This component is a port of the Python cssselector library,
- * which is copyright Ian Bicking, @see https://github.com/SimonSapin/cssselect.
- *
- * @author Jean-François Simon <jeanfrancois.simon@sensiolabs.com>
- */
-class CombinedSelectorNode extends AbstractNode
-{
-    /**
-     * @var NodeInterface
-     */
-    private $selector;
-
-    /**
-     * @var string
-     */
-    private $combinator;
-
-    /**
-     * @var NodeInterface
-     */
-    private $subSelector;
-
-    /**
-     * @param NodeInterface $selector
-     * @param string        $combinator
-     * @param NodeInterface $subSelector
-     */
-    public function __construct(NodeInterface $selector, $combinator, NodeInterface $subSelector)
-    {
-        $this->selector = $selector;
-        $this->combinator = $combinator;
-        $this->subSelector = $subSelector;
-    }
-
-    /**
-     * @return NodeInterface
-     */
-    public function getSelector()
-    {
-        return $this->selector;
-    }
-
-    /**
-     * @return string
-     */
-    public function getCombinator()
-    {
-        return $this->combinator;
-    }
-
-    /**
-     * @return NodeInterface
-     */
-    public function getSubSelector()
-    {
-        return $this->subSelector;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getSpecificity()
-    {
-        return $this->selector->getSpecificity()->plus($this->subSelector->getSpecificity());
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function __toString()
-    {
-        $combinator = ' ' === $this->combinator ? '<followed>' : $this->combinator;
-
-        return sprintf('%s[%s %s %s]', $this->getNodeName(), $this->selector, $combinator, $this->subSelector);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+FYmKbkLv4M3e9DqdWx+TgWMa

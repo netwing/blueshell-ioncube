@@ -1,400 +1,190 @@
-<?php
-/* vim: set expandtab tabstop=4 shiftwidth=4 foldmethod=marker: */
-/**
- * PEAR_Exception
- *
- * PHP versions 4 and 5
- *
- * LICENSE: This source file is subject to version 3.0 of the PHP license
- * that is available through the world-wide-web at the following URI:
- * http://www.php.net/license/3_0.txt.  If you did not receive a copy of
- * the PHP License and are unable to obtain it through the web, please
- * send a note to license@php.net so we can mail you a copy immediately.
- *
- * @category   pear
- * @package    PEAR
- * @author     Tomas V. V. Cox <cox@idecnet.com>
- * @author     Hans Lellelid <hans@velum.net>
- * @author     Bertrand Mansion <bmansion@mamasam.com>
- * @author     Greg Beaver <cellog@php.net>
- * @copyright  1997-2008 The PHP Group
- * @license    http://www.php.net/license/3_0.txt  PHP License 3.0
- * @version    CVS: $Id: Exception.php,v 1.29 2008/01/03 20:26:35 cellog Exp $
- * @link       http://pear.php.net/package/PEAR
- * @since      File available since Release 1.3.3
- */
-
-/**
- * Base PEAR_Exception Class
- *
- * 1) Features:
- *
- * - Nestable exceptions (throw new PEAR_Exception($msg, $prev_exception))
- * - Definable triggers, shot when exceptions occur
- * - Pretty and informative error messages
- * - Added more context info available (like class, method or cause)
- * - cause can be a PEAR_Exception or an array of mixed
- *   PEAR_Exceptions/PEAR_ErrorStack warnings
- * - callbacks for specific exception classes and their children
- *
- * 2) Ideas:
- *
- * - Maybe a way to define a 'template' for the output
- *
- * 3) Inherited properties from PHP Exception Class:
- *
- * protected $message
- * protected $code
- * protected $line
- * protected $file
- * private   $trace
- *
- * 4) Inherited methods from PHP Exception Class:
- *
- * __clone
- * __construct
- * getMessage
- * getCode
- * getFile
- * getLine
- * getTraceSafe
- * getTraceSafeAsString
- * __toString
- *
- * 5) Usage example
- *
- * <code>
- *  require_once 'PEAR/Exception.php';
- *
- *  class Test {
- *     function foo() {
- *         throw new PEAR_Exception('Error Message', ERROR_CODE);
- *     }
- *  }
- *
- *  function myLogger($pear_exception) {
- *     echo $pear_exception->getMessage();
- *  }
- *  // each time a exception is thrown the 'myLogger' will be called
- *  // (its use is completely optional)
- *  PEAR_Exception::addObserver('myLogger');
- *  $test = new Test;
- *  try {
- *     $test->foo();
- *  } catch (PEAR_Exception $e) {
- *     print $e;
- *  }
- * </code>
- *
- * @category   pear
- * @package    PEAR
- * @author     Tomas V.V.Cox <cox@idecnet.com>
- * @author     Hans Lellelid <hans@velum.net>
- * @author     Bertrand Mansion <bmansion@mamasam.com>
- * @author     Greg Beaver <cellog@php.net>
- * @copyright  1997-2008 The PHP Group
- * @license    http://www.php.net/license/3_0.txt  PHP License 3.0
- * @version    Release: 1.7.2
- * @link       http://pear.php.net/package/PEAR
- * @since      Class available since Release 1.3.3
- *
- */
-class PEAR_Exception extends Exception
-{
-    const OBSERVER_PRINT = -2;
-    const OBSERVER_TRIGGER = -4;
-    const OBSERVER_DIE = -8;
-    protected $cause;
-    private static $_observers = array();
-    private static $_uniqueid = 0;
-    private $_trace;
-
-    /**
-     * Supported signatures:
-     *  - PEAR_Exception(string $message);
-     *  - PEAR_Exception(string $message, int $code);
-     *  - PEAR_Exception(string $message, Exception $cause);
-     *  - PEAR_Exception(string $message, Exception $cause, int $code);
-     *  - PEAR_Exception(string $message, PEAR_Error $cause);
-     *  - PEAR_Exception(string $message, PEAR_Error $cause, int $code);
-     *  - PEAR_Exception(string $message, array $causes);
-     *  - PEAR_Exception(string $message, array $causes, int $code);
-     * @param string exception message
-     * @param int|Exception|PEAR_Error|array|null exception cause
-     * @param int|null exception code or null
-     */
-    public function __construct($message, $p2 = null, $p3 = null)
-    {
-        if (is_int($p2)) {
-            $code = $p2;
-            $this->cause = null;
-        } elseif (is_object($p2) || is_array($p2)) {
-            // using is_object allows both Exception and PEAR_Error
-            if (is_object($p2) && !($p2 instanceof Exception)) {
-                if (!class_exists('PEAR_Error',false) || !($p2 instanceof PEAR_Error)) {
-                    throw new PEAR_Exception('exception cause must be Exception, ' .
-                        'array, or PEAR_Error');
-                }
-            }
-            $code = $p3;
-            if (is_array($p2) && isset($p2['message'])) {
-                // fix potential problem of passing in a single warning
-                $p2 = array($p2);
-            }
-            $this->cause = $p2;
-        } else {
-            $code = null;
-            $this->cause = null;
-        }
-        parent::__construct($message, $code);
-        $this->signal();
-    }
-
-    /**
-     * @param mixed $callback - A valid php callback, see php func is_callable()
-     *                         - A PEAR_Exception::OBSERVER_* constant
-     *                         - An array(const PEAR_Exception::OBSERVER_*,
-     *                           mixed $options)
-     * @param string $label The name of the observer. Use this if you want
-     *                         to remove it later with removeObserver()
-     */
-    public static function addObserver($callback, $label = 'default')
-    {
-        self::$_observers[$label] = $callback;
-    }
-
-    public static function removeObserver($label = 'default')
-    {
-        unset(self::$_observers[$label]);
-    }
-
-    /**
-     * @return int unique identifier for an observer
-     */
-    public static function getUniqueId()
-    {
-        return self::$_uniqueid++;
-    }
-
-    private function signal()
-    {
-        foreach (self::$_observers as $func) {
-            if (is_callable($func)) {
-                call_user_func($func, $this);
-                continue;
-            }
-            settype($func, 'array');
-            switch ($func[0]) {
-                case self::OBSERVER_PRINT :
-                    $f = (isset($func[1])) ? $func[1] : '%s';
-                    printf($f, $this->getMessage());
-                    break;
-                case self::OBSERVER_TRIGGER :
-                    $f = (isset($func[1])) ? $func[1] : E_USER_NOTICE;
-                    trigger_error($this->getMessage(), $f);
-                    break;
-                case self::OBSERVER_DIE :
-                    $f = (isset($func[1])) ? $func[1] : '%s';
-                    die(printf($f, $this->getMessage()));
-                    break;
-                default:
-                    trigger_error('invalid observer type', E_USER_WARNING);
-            }
-        }
-    }
-
-    /**
-     * Return specific error information that can be used for more detailed
-     * error messages or translation.
-     *
-     * This method may be overridden in child exception classes in order
-     * to add functionality not present in PEAR_Exception and is a placeholder
-     * to define API
-     *
-     * The returned array must be an associative array of parameter => value like so:
-     * <pre>
-     * array('name' => $name, 'context' => array(...))
-     * </pre>
-     * @return array
-     */
-    public function getErrorData()
-    {
-        return array();
-    }
-
-    /**
-     * Returns the exception that caused this exception to be thrown
-     * @access public
-     * @return Exception|array The context of the exception
-     */
-    public function getCause()
-    {
-        return $this->cause;
-    }
-
-    /**
-     * Function must be public to call on caused exceptions
-     * @param array
-     */
-    public function getCauseMessage(&$causes)
-    {
-        $trace = $this->getTraceSafe();
-        $cause = array('class'   => get_class($this),
-                       'message' => $this->message,
-                       'file' => 'unknown',
-                       'line' => 'unknown');
-        if (isset($trace[0])) {
-            if (isset($trace[0]['file'])) {
-                $cause['file'] = $trace[0]['file'];
-                $cause['line'] = $trace[0]['line'];
-            }
-        }
-        $causes[] = $cause;
-        if ($this->cause instanceof PEAR_Exception) {
-            $this->cause->getCauseMessage($causes);
-        } elseif ($this->cause instanceof Exception) {
-            $causes[] = array('class'   => get_class($this->cause),
-                              'message' => $this->cause->getMessage(),
-                              'file' => $this->cause->getFile(),
-                              'line' => $this->cause->getLine());
-        } elseif (class_exists('PEAR_Error',false) && $this->cause instanceof PEAR_Error) {
-            $causes[] = array('class' => get_class($this->cause),
-                              'message' => $this->cause->getMessage(),
-                              'file' => 'unknown',
-                              'line' => 'unknown');
-        } elseif (is_array($this->cause)) {
-            foreach ($this->cause as $cause) {
-                if ($cause instanceof PEAR_Exception) {
-                    $cause->getCauseMessage($causes);
-                } elseif ($cause instanceof Exception) {
-                    $causes[] = array('class'   => get_class($cause),
-                                   'message' => $cause->getMessage(),
-                                   'file' => $cause->getFile(),
-                                   'line' => $cause->getLine());
-                } elseif (class_exists('PEAR_Error',false) && $cause instanceof PEAR_Error) {
-                    $causes[] = array('class' => get_class($cause),
-                                      'message' => $cause->getMessage(),
-                                      'file' => 'unknown',
-                                      'line' => 'unknown');
-                } elseif (is_array($cause) && isset($cause['message'])) {
-                    // PEAR_ErrorStack warning
-                    $causes[] = array(
-                        'class' => $cause['package'],
-                        'message' => $cause['message'],
-                        'file' => isset($cause['context']['file']) ?
-                                            $cause['context']['file'] :
-                                            'unknown',
-                        'line' => isset($cause['context']['line']) ?
-                                            $cause['context']['line'] :
-                                            'unknown',
-                    );
-                }
-            }
-        }
-    }
-
-    public function getTraceSafe()
-    {
-        if (!isset($this->_trace)) {
-            $this->_trace = $this->getTrace();
-            if (empty($this->_trace)) {
-                $backtrace = debug_backtrace();
-                $this->_trace = array($backtrace[count($backtrace)-1]);
-            }
-        }
-
-        return $this->_trace;
-    }
-
-    public function getErrorClass()
-    {
-        $trace = $this->getTraceSafe();
-
-        return $trace[0]['class'];
-    }
-
-    public function getErrorMethod()
-    {
-        $trace = $this->getTraceSafe();
-
-        return $trace[0]['function'];
-    }
-
-    public function __toString()
-    {
-        if (isset($_SERVER['REQUEST_URI'])) {
-            return $this->toHtml();
-        }
-
-        return $this->toText();
-    }
-
-    public function toHtml()
-    {
-        $trace = $this->getTraceSafe();
-        $causes = array();
-        $this->getCauseMessage($causes);
-        $html =  '<table border="1" cellspacing="0">' . "\n";
-        foreach ($causes as $i => $cause) {
-            $html .= '<tr><td colspan="3" bgcolor="#ff9999">'
-               . str_repeat('-', $i) . ' <b>' . $cause['class'] . '</b>: '
-               . htmlspecialchars($cause['message']) . ' in <b>' . $cause['file'] . '</b> '
-               . 'on line <b>' . $cause['line'] . '</b>'
-               . "</td></tr>\n";
-        }
-        $html .= '<tr><td colspan="3" bgcolor="#aaaaaa" align="center"><b>Exception trace</b></td></tr>' . "\n"
-               . '<tr><td align="center" bgcolor="#cccccc" width="20"><b>#</b></td>'
-               . '<td align="center" bgcolor="#cccccc"><b>Function</b></td>'
-               . '<td align="center" bgcolor="#cccccc"><b>Location</b></td></tr>' . "\n";
-
-        foreach ($trace as $k => $v) {
-            $html .= '<tr><td align="center">' . $k . '</td>'
-                   . '<td>';
-            if (!empty($v['class'])) {
-                $html .= $v['class'] . $v['type'];
-            }
-            $html .= $v['function'];
-            $args = array();
-            if (!empty($v['args'])) {
-                foreach ($v['args'] as $arg) {
-                    if (is_null($arg)) $args[] = 'null';
-                    elseif (is_array($arg)) $args[] = 'Array';
-                    elseif (is_object($arg)) $args[] = 'Object('.get_class($arg).')';
-                    elseif (is_bool($arg)) $args[] = $arg ? 'true' : 'false';
-                    elseif (is_int($arg) || is_double($arg)) $args[] = $arg;
-                    else {
-                        $arg = (string) $arg;
-                        $str = htmlspecialchars(substr($arg, 0, 16));
-                        if (strlen($arg) > 16) $str .= '&hellip;';
-                        $args[] = "'" . $str . "'";
-                    }
-                }
-            }
-            $html .= '(' . implode(', ',$args) . ')'
-                   . '</td>'
-                   . '<td>' . (isset($v['file']) ? $v['file'] : 'unknown')
-                   . ':' . (isset($v['line']) ? $v['line'] : 'unknown')
-                   . '</td></tr>' . "\n";
-        }
-        $html .= '<tr><td align="center">' . ($k+1) . '</td>'
-               . '<td>{main}</td>'
-               . '<td>&nbsp;</td></tr>' . "\n"
-               . '</table>';
-
-        return $html;
-    }
-
-    public function toText()
-    {
-        $causes = array();
-        $this->getCauseMessage($causes);
-        $causeMsg = '';
-        foreach ($causes as $i => $cause) {
-            $causeMsg .= str_repeat(' ', $i) . $cause['class'] . ': '
-                   . $cause['message'] . ' in ' . $cause['file']
-                   . ' on line ' . $cause['line'] . "\n";
-        }
-
-        return $causeMsg . $this->getTraceAsString();
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+ul380mcdUzg+AW4TUIsm93MrpG==

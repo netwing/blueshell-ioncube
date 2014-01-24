@@ -1,188 +1,82 @@
-<?php
-/**
- * php-token-stream
- *
- * Copyright (c) 2009-2013, Sebastian Bergmann <sebastian@phpunit.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @package    PHP_TokenStream
- * @subpackage Tests
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @since      File available since Release 1.0.0
- */
-
-if (!defined('TEST_FILES_PATH')) {
-    define(
-      'TEST_FILES_PATH',
-      dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR .
-      '_files' . DIRECTORY_SEPARATOR
-    );
-}
-
-require_once 'PHP/Token/Stream.php';
-
-/**
- * Tests for the PHP_Token_FUNCTION class.
- *
- * @package    PHP_TokenStream
- * @subpackage Tests
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @version    Release: @package_version@
- * @link       http://github.com/sebastianbergmann/php-token-stream/
- * @since      Class available since Release 1.0.0
- */
-class PHP_Token_FunctionTest extends PHPUnit_Framework_TestCase
-{
-    protected $functions;
-
-    protected function setUp()
-    {
-        $ts = new PHP_Token_Stream(TEST_FILES_PATH . 'source.php');
-
-        foreach ($ts as $token) {
-            if ($token instanceof PHP_Token_FUNCTION) {
-                $this->functions[] = $token;
-            }
-        }
-    }
-
-    /**
-     * @covers PHP_Token_FUNCTION::getArguments
-     */
-    public function testGetArguments()
-    {
-        $this->assertEquals(array(), $this->functions[0]->getArguments());
-
-        $this->assertEquals(
-          array('$baz' => 'Baz'), $this->functions[1]->getArguments()
-        );
-
-        $this->assertEquals(
-          array('$foobar' => 'Foobar'), $this->functions[2]->getArguments()
-        );
-
-        $this->assertEquals(
-          array('$barfoo' => 'Barfoo'), $this->functions[3]->getArguments()
-        );
-
-        $this->assertEquals(array(), $this->functions[4]->getArguments());
-    }
-
-    /**
-     * @covers PHP_Token_FUNCTION::getName
-     */
-    public function testGetName()
-    {
-        $this->assertEquals('foo', $this->functions[0]->getName());
-        $this->assertEquals('bar', $this->functions[1]->getName());
-        $this->assertEquals('foobar', $this->functions[2]->getName());
-        $this->assertEquals('barfoo', $this->functions[3]->getName());
-        $this->assertEquals('baz', $this->functions[4]->getName());
-    }
-
-    /**
-     * @covers PHP_Token::getLine
-     */
-    public function testGetLine()
-    {
-        $this->assertEquals(5, $this->functions[0]->getLine());
-        $this->assertEquals(10, $this->functions[1]->getLine());
-        $this->assertEquals(17, $this->functions[2]->getLine());
-        $this->assertEquals(21, $this->functions[3]->getLine());
-        $this->assertEquals(29, $this->functions[4]->getLine());
-    }
-
-    /**
-     * @covers PHP_TokenWithScope::getEndLine
-     */
-    public function testGetEndLine()
-    {
-        $this->assertEquals(5, $this->functions[0]->getEndLine());
-        $this->assertEquals(12, $this->functions[1]->getEndLine());
-        $this->assertEquals(19, $this->functions[2]->getEndLine());
-        $this->assertEquals(23, $this->functions[3]->getEndLine());
-        $this->assertEquals(31, $this->functions[4]->getEndLine());
-    }
-
-    /**
-     * @covers PHP_Token_FUNCTION::getDocblock
-     */
-    public function testGetDocblock()
-    {
-        $this->assertNull($this->functions[0]->getDocblock());
-
-        $this->assertEquals(
-          "/**\n     * @param Baz \$baz\n     */",
-          $this->functions[1]->getDocblock()
-        );
-
-        $this->assertEquals(
-          "/**\n     * @param Foobar \$foobar\n     */",
-          $this->functions[2]->getDocblock()
-        );
-
-        $this->assertNull($this->functions[3]->getDocblock());
-        $this->assertNull($this->functions[4]->getDocblock());
-    }
-
-    public function testSignature()
-    {
-        $ts = new PHP_Token_Stream(TEST_FILES_PATH . 'source5.php');
-        $f  = $ts->getFunctions();
-        $c  = $ts->getClasses();
-        $i  = $ts->getInterfaces();
-
-        $this->assertEquals(
-          'foo($a, array $b, array $c = array())',
-          $f['foo']['signature']
-        );
-
-        $this->assertEquals(
-          'm($a, array $b, array $c = array())',
-          $c['c']['methods']['m']['signature']
-        );
-
-        $this->assertEquals(
-          'm($a, array $b, array $c = array())',
-          $c['a']['methods']['m']['signature']
-        );
-
-        $this->assertEquals(
-          'm($a, array $b, array $c = array())',
-          $i['i']['methods']['m']['signature']
-        );
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

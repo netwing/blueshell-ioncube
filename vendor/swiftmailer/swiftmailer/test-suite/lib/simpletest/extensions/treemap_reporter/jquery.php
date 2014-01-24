@@ -1,75 +1,46 @@
-<?php
-/**
- *	extension file for SimpleTest
- *  @package        SimpleTest
- *  @subpackage     Extensions
- *	@version	$Id: jquery.php 1802 2008-09-08 10:43:58Z maetl_ $
- */
-require_once dirname(__FILE__) . '/../treemap_reporter.php';
-
-/**
- * outputs <ul> representing treemap of test report,
- * and attaches jQuery Treemap to render results.
- *
- *  @package        SimpleTest
- *  @subpackage     Extensions
- */
-class JqueryTreemapReporter extends TreemapReporter {
-
-	function _getCss() {
-		$css = ".treemapView { color:white; }
-				.treemapCell {background-color:green;font-size:10px;font-family:Arial;}
-  				.treemapHead {cursor:pointer;background-color:#B34700}
-				.treemapCell.selected, .treemapCell.selected .treemapCell.selected {background-color:#FFCC80}
-  				.treemapCell.selected .treemapCell {background-color:#FF9900}
-  				.treemapCell.selected .treemapHead {background-color:#B36B00}
-  				.transfer {border:1px solid black}";
-		return $css;
-	}
-
-	function paintResultsHeader() {
-		$title = $this->_reporter->getTitle();
-		echo "<html><head>";
-		echo "<title>{$title}</title>";
-		echo "<style type=\"text/css\">" . $this->_getCss() . "</style>";
-		echo "<script type=\"text/javascript\" src=\"http://code.jquery.com/jquery-latest.js\"></script>";
-		echo "<script type=\"text/javascript\" src=\"http://www.fbtools.com/jquery/treemap/treemap.js\"></script>";
-		echo "<script type=\"text/javascript\">\n";
-		echo "	window.onload = function() { jQuery(\"ul\").treemap(800,600,{getData:getDataFromUL}); };
-					function getDataFromUL(el) {
-					 var data = [];
-					 jQuery(\"li\",el).each(function(){
-					   var item = jQuery(this);
-					   var row = [item.find(\"span.desc\").html(),item.find(\"span.data\").html()];
-					   data.push(row);
-					 });
-					 return data;
-					}";
-		echo "</script></head>";
-		echo "<body><ul>";
-	}
-	
-	function paintRectangleStart($node) {
-		echo "<li><span class=\"desc\">". basename($node->getDescription()) . "</span>";
-		echo "<span class=\"data\">" . $node->getTotalSize() . "</span>";
-	}
-	
-	function paintRectangleEnd() {}
-	
-	function paintResultsFooter() {
-		echo "</ul></body>";
-		echo "</html>";
-	}
-	
-	function divideMapNodes($map) {
-		foreach($map->getChildren() as $node) {
-			if (!$node->isLeaf()) {
-				$this->paintRectangleStart($node);
-				$this->divideMapNodes($node);
-			}
-		}
-	}
-
-}
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

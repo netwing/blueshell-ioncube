@@ -1,201 +1,69 @@
-<?php
-/**
- * An AbstractScopeTest allows for tests that extend from this class to
- * listen for tokens within a particular scope.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * An AbstractScopeTest allows for tests that extend from this class to
- * listen for tokens within a particular scope.
- *
- * Below is a test that listens to methods that exist only within classes:
- * <code>
- * class ClassScopeTest extends PHP_CodeSniffer_Standards_AbstractScopeSniff
- * {
- *     public function __construct()
- *     {
- *         parent::__construct(array(T_CLASS), array(T_FUNCTION));
- *     }
- *
- *     protected function processTokenWithinScope(PHP_CodeSniffer_File $phpcsFile, $)
- *     {
- *         $className = $phpcsFile->getDeclarationName($currScope);
- *         echo 'encountered a method within class '.$className;
- *     }
- * }
- * </code>
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-abstract class PHP_CodeSniffer_Standards_AbstractScopeSniff implements PHP_CodeSniffer_Sniff
-{
-
-    /**
-     * The token types that this test wishes to listen to within the scope.
-     *
-     * @var array
-     */
-    private $_tokens = array();
-
-    /**
-     * The type of scope opener tokens that this test wishes to listen to.
-     *
-     * @var string
-     */
-    private $_scopeTokens = array();
-
-    /**
-     * True if this test should fire on tokens outside of the scope.
-     *
-     * @var boolean
-     */
-    private $_listenOutside = false;
-
-
-    /**
-     * Constructs a new AbstractScopeTest.
-     *
-     * @param array   $scopeTokens   The type of scope the test wishes to listen to.
-     * @param array   $tokens        The tokens that the test wishes to listen to
-     *                               within the scope.
-     * @param boolean $listenOutside If true this test will also alert the
-     *                               extending class when a token is found outside
-     *                               the scope, by calling the
-     *                               processTokenOutsideScope method.
-     *
-     * @see PHP_CodeSniffer.getValidScopeTokeners()
-     * @throws PHP_CodeSniffer_Exception If the specified tokens array is empty.
-     */
-    public function __construct(
-        array $scopeTokens,
-        array $tokens,
-        $listenOutside=false
-    ) {
-        if (empty($scopeTokens) === true) {
-            $error = 'The scope tokens list cannot be empty';
-            throw new PHP_CodeSniffer_Exception($error);
-        }
-
-        if (empty($tokens) === true) {
-            $error = 'The tokens list cannot be empty';
-            throw new PHP_CodeSniffer_Exception($error);
-        }
-
-        $invalidScopeTokens = array_intersect($scopeTokens, $tokens);
-        if (empty($invalidScopeTokens) === false) {
-            $invalid = implode(', ', $invalidScopeTokens);
-            $error   = "Scope tokens [$invalid] cant be in the tokens array";
-            throw new PHP_CodeSniffer_Exception($error);
-        }
-
-        $this->_listenOutside = $listenOutside;
-        $this->_scopeTokens   = $scopeTokens;
-        $this->_tokens        = $tokens;
-
-    }//end __construct()
-
-
-    /**
-     * The method that is called to register the tokens this test wishes to
-     * listen to.
-     *
-     * DO NOT OVERRIDE THIS METHOD. Use the constructor of this class to register
-     * for the desired tokens and scope.
-     *
-     * @return array(int)
-     * @see __constructor()
-     */
-    public final function register()
-    {
-        return $this->_tokens;
-
-    }//end register()
-
-
-    /**
-     * Processes the tokens that this test is listening for.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file where this token was found.
-     * @param int                  $stackPtr  The position in the stack where this
-     *                                        token was found.
-     *
-     * @return void
-     * @see processTokenWithinScope()
-     */
-    public final function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-
-        $foundScope = false;
-        foreach ($tokens[$stackPtr]['conditions'] as $scope => $code) {
-            if (in_array($code, $this->_scopeTokens) === true) {
-                $this->processTokenWithinScope($phpcsFile, $stackPtr, $scope);
-                $foundScope = true;
-            }
-        }
-
-        if ($this->_listenOutside === true && $foundScope === false) {
-            $this->processTokenOutsideScope($phpcsFile, $stackPtr);
-        }
-
-    }//end process()
-
-
-    /**
-     * Processes a token that is found within the scope that this test is
-     * listening to.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file where this token was found.
-     * @param int                  $stackPtr  The position in the stack where this
-     *                                        token was found.
-     * @param int                  $currScope The position in the tokens array that
-     *                                        opened the scope that this test is
-     *                                        listening for.
-     *
-     * @return void
-     */
-    protected abstract function processTokenWithinScope(
-        PHP_CodeSniffer_File $phpcsFile,
-        $stackPtr,
-        $currScope
-    );
-
-
-    /**
-     * Processes a token that is found within the scope that this test is
-     * listening to.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file where this token was found.
-     * @param int                  $stackPtr  The position in the stack where this
-     *                                        token was found.
-     *
-     * @return void
-     */
-    protected function processTokenOutsideScope(
-        PHP_CodeSniffer_File $phpcsFile,
-        $stackPtr
-    ) {
-
-    }//end processTokenOutsideScope()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+M3Icfye0tW==

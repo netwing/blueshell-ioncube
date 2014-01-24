@@ -1,104 +1,59 @@
-<?php
-
-require_once 'ModelMock.php';
-
-/**
- * CBooleanValidatorTest
- * 
- * @author   Kevin Bradwick <kbradwick@gmail.com>
- */
-class CBooleanValidatorTest extends CTestCase
-{
-    /**
-     * Test we can catch validation errors using custom false/true values
-     * 
-     * @return null
-     */
-    public function testValidationUsingCustomFalseTrueValues()
-    {
-        $model = $this->getModelMock(array('falseValue' => 'false', 'trueValue' => 'true'));
-        $model->foo = 'blah';
-        $this->assertFalse($model->hasErrors('foo'));
-
-        $model->foo = 'false';
-        $this->assertTrue($model->validate());
-
-        // client script
-        $validator = new CBooleanValidator;
-        $validator->trueValue = 'foo';
-        $validator->falseValue = 'bar';
-        $script = $validator->clientValidateAttribute($model, 'foo');
-        $this->assertContains('Foo must be either foo or bar', $script);
-    }
-
-    /**
-     * Test allow empty
-     *
-     * @return null
-     */
-    public function testValidateAndAllowEmpty()
-    {
-        $model = $this->getModelMock(array('allowEmpty' => false));
-        $this->assertFalse($model->validate());
-        $this->assertTrue($model->hasErrors('foo'));
-
-        $model = $this->getModelMock(array('allowEmpty' => true));
-        $this->assertTrue($model->validate());
-    }
-
-    /**
-     * Test using strict
-     *
-     * @return null
-     */
-    public function testValidationUsingStrict()
-    {
-        $model = $this->getModelMock(array('strict' => true));
-        $model->foo = 1;
-        $this->assertFalse($model->validate());
-        $this->assertTrue($model->hasErrors('foo'));
-
-        $model->foo = '1';
-        $this->assertTrue($model->hasErrors('foo'));
-    }
-
-    /**
-     * Test array typed value
-     * https://github.com/yiisoft/yii/issues/1955
-     *
-     * @return null
-     */
-    public function testValidateArrayValue()
-    {
-        $model = $this->getModelMock();
-        $model->foo = array(1);
-        $this->assertFalse($model->validate());
-        $this->assertTrue($model->hasErrors('foo'));
-        $this->assertSame(array('Foo must be either 1 or 0.'), $model->getErrors('foo'));
-    }
-    
-    /**
-     * Mocks up an object to test with
-     *
-     * @param array $params additional parameters sent to rules
-     *
-     * @return null
-     */
-    protected function getModelMock($params=array())
-    {
-        $rules = array(
-            array('foo', 'boolean')
-        );
-
-        foreach ($params as $rule => $value) {
-            $rules[0][$rule] = $value;
-        }
-        
-        $stub = $this->getMock('ModelMock', array('rules'));
-        $stub->expects($this->any())
-             ->method('rules')
-             ->will($this->returnValue($rules));
-        
-        return $stub;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+as+BHHPdl4++X9y=

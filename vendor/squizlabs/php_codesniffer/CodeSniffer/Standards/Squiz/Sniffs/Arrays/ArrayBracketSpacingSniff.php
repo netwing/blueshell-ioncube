@@ -1,111 +1,58 @@
-<?php
-/**
- * Squiz_Sniffs_Arrays_ArrayBracketSpacingSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Squiz_Sniffs_Arrays_ArrayBracketSpacingSniff.
- *
- * Ensure that there are no spaces around square brackets.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class Squiz_Sniffs_Arrays_ArrayBracketSpacingSniff implements PHP_CodeSniffer_Sniff
-{
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        return array(
-                T_OPEN_SQUARE_BRACKET,
-                T_CLOSE_SQUARE_BRACKET,
-               );
-
-    }//end register()
-
-
-    /**
-     * Processes this sniff, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The current file being checked.
-     * @param int                  $stackPtr  The position of the current token in the
-     *                                        stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-
-        // PHP 5.4 introduced a shorthand array declaration syntax, so we need
-        // to ignore the these type of array declarations because this sniff is
-        // only dealing with array usage.
-        if ($tokens[$stackPtr]['code'] === T_OPEN_SQUARE_BRACKET) {
-            $openBracket = $stackPtr;
-        } else {
-            $openBracket = $tokens[$stackPtr]['bracket_opener'];
-        }
-
-        $prev = $phpcsFile->findPrevious(PHP_CodeSniffer_Tokens::$emptyTokens, ($openBracket - 1), null, true);
-        if ($tokens[$prev]['code'] === T_EQUAL) {
-            return;
-        }
-
-        // Square brackets can not have a space before them.
-        $prevType = $tokens[($stackPtr - 1)]['code'];
-        if (in_array($prevType, PHP_CodeSniffer_Tokens::$emptyTokens) === true) {
-            $nonSpace = $phpcsFile->findPrevious(PHP_CodeSniffer_Tokens::$emptyTokens, ($stackPtr - 2), null, true);
-            $expected = $tokens[$nonSpace]['content'].$tokens[$stackPtr]['content'];
-            $found    = $phpcsFile->getTokensAsString($nonSpace, ($stackPtr - $nonSpace)).$tokens[$stackPtr]['content'];
-            $error    = 'Space found before square bracket; expected "%s" but found "%s"';
-            $data     = array(
-                         $expected,
-                         $found,
-                        );
-            $phpcsFile->addError($error, $stackPtr, 'SpaceBeforeBracket', $data);
-        }
-
-        // Open square brackets can't ever have spaces after them.
-        if ($tokens[$stackPtr]['code'] === T_OPEN_SQUARE_BRACKET) {
-            $nextType = $tokens[($stackPtr + 1)]['code'];
-            if (in_array($nextType, PHP_CodeSniffer_Tokens::$emptyTokens) === true) {
-                $nonSpace = $phpcsFile->findNext(PHP_CodeSniffer_Tokens::$emptyTokens, ($stackPtr + 2), null, true);
-                $expected = $tokens[$stackPtr]['content'].$tokens[$nonSpace]['content'];
-                $found    = $phpcsFile->getTokensAsString($stackPtr, ($nonSpace - $stackPtr + 1));
-                $error    = 'Space found after square bracket; expected "%s" but found "%s"';
-                $data     = array(
-                             $expected,
-                             $found,
-                            );
-                $phpcsFile->addError($error, $stackPtr, 'SpaceAfterBracket', $data);
-            }
-        }
-
-    }//end process()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

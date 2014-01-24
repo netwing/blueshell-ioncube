@@ -1,149 +1,101 @@
-<?php
-
-require_once 'Swift/Tests/SwiftUnitTestCase.php';
-require_once 'Swift/Mailer.php';
-require_once 'Swift/RfcComplianceException.php';
-require_once 'Swift/Transport.php';
-require_once 'Swift/Mime/Message.php';
-require_once 'Swift/Mailer/RecipientIterator.php';
-require_once 'Swift/Events/EventListener.php';
-
-class Swift_MailerTest extends Swift_Tests_SwiftUnitTestCase
-{
-    public function testTransportIsStartedWhenSending()
-    {
-        $transport = $this->_createTransport();
-        $message = $this->_createMessage();
-        $con = $this->_states('Connection')->startsAs('off');
-        $this->_checking(Expectations::create()
-            -> allowing($transport)->isStarted() -> returns(false) -> when($con->is('off'))
-            -> allowing($transport)->isStarted() -> returns(false) -> when($con->is('on'))
-            -> one($transport)->start() -> when($con->is('off')) -> then($con->is('on'))
-            -> ignoring($transport)
-            -> ignoring($message)
-            );
-
-        $mailer = $this->_createMailer($transport);
-        $mailer->send($message);
-    }
-
-    public function testTransportIsOnlyStartedOnce()
-    {
-        $transport = $this->_createTransport();
-        $message = $this->_createMessage();
-        $con = $this->_states('Connection')->startsAs('off');
-        $this->_checking(Expectations::create()
-            -> allowing($transport)->isStarted() -> returns(false) -> when($con->is('off'))
-            -> allowing($transport)->isStarted() -> returns(false) -> when($con->is('on'))
-            -> one($transport)->start() -> when($con->is('off')) -> then($con->is('on'))
-            -> ignoring($transport)
-            -> ignoring($message)
-            );
-        $mailer = $this->_createMailer($transport);
-        for ($i = 0; $i < 10; ++$i) {
-            $mailer->send($message);
-        }
-    }
-
-    public function testMessageIsPassedToTransport()
-    {
-        $transport = $this->_createTransport();
-        $message = $this->_createMessage();
-        $this->_checking(Expectations::create()
-            -> one($transport)->send($message, optional())
-            -> ignoring($transport)
-            -> ignoring($message)
-            );
-
-        $mailer = $this->_createMailer($transport);
-        $mailer->send($message);
-    }
-
-    public function testSendReturnsCountFromTransport()
-    {
-        $transport = $this->_createTransport();
-        $message = $this->_createMessage();
-        $this->_checking(Expectations::create()
-            -> one($transport)->send($message, optional()) -> returns(57)
-            -> ignoring($transport)
-            -> ignoring($message)
-            );
-
-        $mailer = $this->_createMailer($transport);
-        $this->assertEqual(57, $mailer->send($message));
-    }
-
-    public function testFailedRecipientReferenceIsPassedToTransport()
-    {
-        $failures = array();
-
-        $transport = $this->_createTransport();
-        $message = $this->_createMessage();
-        $this->_checking(Expectations::create()
-            -> one($transport)->send($message, reference($failures))
-            -> ignoring($transport)
-            -> ignoring($message)
-            );
-
-        $mailer = $this->_createMailer($transport);
-        $mailer->send($message, $failures);
-    }
-
-    public function testSendRecordsRfcComplianceExceptionAsEntireSendFailure()
-    {
-        $failures = array();
-
-        $rfcException = new Swift_RfcComplianceException('test');
-        $transport = $this->_createTransport();
-        $message = $this->_createMessage();
-        $this->_checking(Expectations::create()
-            -> allowing($message)->getTo() -> returns(array('foo&invalid' => 'Foo', 'bar@valid.tld' => 'Bar'))
-            -> one($transport)->send($message, reference($failures)) -> throws($rfcException)
-            -> ignoring($transport)
-            -> ignoring($message)
-            );
-
-        $mailer = $this->_createMailer($transport);
-        $this->assertEqual(0, $mailer->send($message, $failures), '%s: Should return 0');
-        $this->assertEqual(array('foo&invalid', 'bar@valid.tld'), $failures, '%s: Failures should contain all addresses since the entire message failed to compile');
-    }
-
-    public function testRegisterPluginDelegatesToTransport()
-    {
-        $plugin = $this->_createPlugin();
-        $transport = $this->_createTransport();
-        $mailer = $this->_createMailer($transport);
-
-        $this->_checking(Expectations::create()
-            -> one($transport)->registerPlugin($plugin)
-            );
-        $mailer->registerPlugin($plugin);
-    }
-
-    // -- Creation methods
-
-    private function _createPlugin()
-    {
-        return $this->_mock('Swift_Events_EventListener');
-    }
-
-    private function _createTransport()
-    {
-        return $this->_mock('Swift_Transport');
-    }
-
-    private function _createMessage()
-    {
-        return $this->_mock('Swift_Mime_Message');
-    }
-
-    private function _createIterator()
-    {
-        return $this->_mock('Swift_Mailer_RecipientIterator');
-    }
-
-    private function _createMailer(Swift_Transport $transport)
-    {
-        return new Swift_Mailer($transport);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+m54lcB8+JgzM

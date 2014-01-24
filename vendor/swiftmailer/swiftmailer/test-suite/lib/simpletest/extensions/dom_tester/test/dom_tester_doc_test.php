@@ -1,24 +1,31 @@
-<?php
-// $Id: dom_tester_doc_test.php 1753 2008-04-14 15:41:02Z pp11 $
-
-require_once dirname(__FILE__) . '/../../../autorun.php';
-require_once dirname(__FILE__) . '/../../dom_tester.php';
-
-SimpleTest :: prefer(new TextReporter());
-
-class TestOfLiveCssSelectors extends DomTestCase {
-    function setUp() {
-        $this->addHeader('User-Agent: SimpleTest ' . SimpleTest::getVersion());
-    }
-    
-    function testGet() {
-        $url = 'http://simpletest.org/';
-        $this->assertTrue($this->get($url));
-        $this->assertEqual($this->getUrl(), $url);
-        $this->assertElementsBySelector('h2', array('Screenshots', 'Documentation', 'Contributing'));
-		$this->assertElementsBySelector('a[href="http://simpletest.org/api/"]', array('the complete API', 'documented API'));
-   		$this->assertElementsBySelector('div#content > p > strong', array('SimpleTest PHP unit tester'));
-    }
-}
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+zhctYdpH

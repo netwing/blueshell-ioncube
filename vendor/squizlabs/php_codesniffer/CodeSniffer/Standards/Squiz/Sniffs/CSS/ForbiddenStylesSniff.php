@@ -1,185 +1,68 @@
-<?php
-/**
- * Squiz_Sniffs_CSS_ForbiddenStylesSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Squiz_Sniffs_CSS_ForbiddenStylesSniff.
- *
- * Bans the use of some styles, such as deprecated or browser-specific styles.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class Squiz_Sniffs_CSS_ForbiddenStylesSniff implements PHP_CodeSniffer_Sniff
-{
-
-    /**
-     * A list of tokenizers this sniff supports.
-     *
-     * @var array
-     */
-    public $supportedTokenizers = array('CSS');
-
-    /**
-     * A list of forbidden styles with their alternatives.
-     *
-     * The value is NULL if no alternative exists. i.e., the
-     * function should just not be used.
-     *
-     * @var array(string => string|null)
-     */
-    protected $forbiddenStyles = array(
-                                     '-moz-border-radius'             => 'border-radius',
-                                     '-webkit-border-radius'          => 'border-radius',
-                                     '-moz-border-radius-topleft'     => 'border-top-left-radius',
-                                     '-moz-border-radius-topright'    => 'border-top-right-radius',
-                                     '-moz-border-radius-bottomright' => 'border-bottom-right-radius',
-                                     '-moz-border-radius-bottomleft'  => 'border-bottom-left-radius',
-                                     '-moz-box-shadow'                => 'box-shadow',
-                                     '-webkit-box-shadow'             => 'box-shadow',
-                                    );
-
-    /**
-     * A cache of forbidden style names, for faster lookups.
-     *
-     * @var array(string)
-     */
-    protected $forbiddenStyleNames = array();
-
-    /**
-     * If true, forbidden styles will be considered regular expressions.
-     *
-     * @var bool
-     */
-    protected $patternMatch = false;
-
-    /**
-     * If true, an error will be thrown; otherwise a warning.
-     *
-     * @var bool
-     */
-    public $error = true;
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        $this->forbiddenStyleNames = array_keys($this->forbiddenStyles);
-
-        if ($this->patternMatch === true) {
-            foreach ($this->forbiddenStyleNames as $i => $name) {
-                $this->forbiddenStyleNames[$i] = '/'.$name.'/i';
-            }
-        }
-
-        return array(T_STYLE);
-
-    }//end register()
-
-
-    /**
-     * Processes this test, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token in
-     *                                        the stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens  = $phpcsFile->getTokens();
-        $style   = strtolower($tokens[$stackPtr]['content']);
-        $pattern = null;
-
-        if ($this->patternMatch === true) {
-            $count   = 0;
-            $pattern = preg_replace(
-                $this->forbiddenStyleNames,
-                $this->forbiddenStyleNames,
-                $style,
-                1,
-                $count
-            );
-
-            if ($count === 0) {
-                return;
-            }
-
-            // Remove the pattern delimiters and modifier.
-            $pattern = substr($pattern, 1, -2);
-        } else {
-            if (in_array($style, $this->forbiddenStyleNames) === false) {
-                return;
-            }
-        }
-
-        $this->addError($phpcsFile, $stackPtr, $style, $pattern);
-
-    }//end process()
-
-
-    /**
-     * Generates the error or warning for this sniff.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the forbidden style
-     *                                        in the token array.
-     * @param string               $style     The name of the forbidden style.
-     * @param string               $pattern   The pattern used for the match.
-     *
-     * @return void
-     */
-    protected function addError($phpcsFile, $stackPtr, $style, $pattern=null)
-    {
-        $data  = array($style);
-        $error = 'The use of style %s is ';
-        if ($this->error === true) {
-            $type   = 'Found';
-            $error .= 'forbidden';
-        } else {
-            $type   = 'Discouraged';
-            $error .= 'discouraged';
-        }
-
-        if ($pattern === null) {
-            $pattern = $style;
-        }
-
-        if ($this->forbiddenStyles[$pattern] !== null) {
-            $type  .= 'WithAlternative';
-            $data[] = $this->forbiddenStyles[$pattern];
-            $error .= '; use %s instead';
-        }
-
-        if ($this->error === true) {
-            $phpcsFile->addError($error, $stackPtr, $type, $data);
-        } else {
-            $phpcsFile->addWarning($error, $stackPtr, $type, $data);
-        }
-
-    }//end addError()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+xdVpWKjxRhf6w5PX5QODkdK/

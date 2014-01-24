@@ -1,59 +1,38 @@
-<?php
-
-namespace Guzzle\Inflection;
-
-/**
- * Decorator used to add pre-computed inflection mappings to an inflector
- */
-class PreComputedInflector implements InflectorInterface
-{
-    /** @var array Array of pre-computed inflections */
-    protected $mapping = array(
-        'snake' => array(),
-        'camel' => array()
-    );
-
-    /** @var InflectorInterface Decorated inflector */
-    protected $decoratedInflector;
-
-    /**
-     * @param InflectorInterface $inflector Inflector being decorated
-     * @param array              $snake     Hash of pre-computed camel to snake
-     * @param array              $camel     Hash of pre-computed snake to camel
-     * @param bool               $mirror    Mirror snake and camel reflections
-     */
-    public function __construct(InflectorInterface $inflector, array $snake = array(), array $camel = array(), $mirror = false)
-    {
-        if ($mirror) {
-            $camel = array_merge(array_flip($snake), $camel);
-            $snake = array_merge(array_flip($camel), $snake);
-        }
-
-        $this->decoratedInflector = $inflector;
-        $this->mapping = array(
-            'snake' => $snake,
-            'camel' => $camel
-        );
-    }
-
-    public function snake($word)
-    {
-        return isset($this->mapping['snake'][$word])
-            ? $this->mapping['snake'][$word]
-            : $this->decoratedInflector->snake($word);
-    }
-
-    /**
-     * Converts strings from snake_case to upper CamelCase
-     *
-     * @param string $word Value to convert into upper CamelCase
-     *
-     * @return string
-     */
-    public function camel($word)
-    {
-        return isset($this->mapping['camel'][$word])
-            ? $this->mapping['camel'][$word]
-            : $this->decoratedInflector->camel($word);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+8ZcYi1zxbyAoKZERSirLrQLMcTovxwRQTwwa

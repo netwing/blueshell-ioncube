@@ -1,267 +1,123 @@
-<?php
-/**
- * A doc generator that outputs text-based documentation.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-if (class_exists('PHP_CodeSniffer_DocGenerators_Generator', true) === false) {
-    throw new PHP_CodeSniffer_Exception('Class PHP_CodeSniffer_DocGenerators_Generator not found');
-}
-
-/**
- * A doc generator that outputs text-based documentation.
- *
- * Output is designed to be displayed in a terminal and is wrapped to 100 characters.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class PHP_CodeSniffer_DocGenerators_Text extends PHP_CodeSniffer_DocGenerators_Generator
-{
-
-
-    /**
-     * Process the documentation for a single sniff.
-     *
-     * @param DOMNode $doc The DOMNode object for the sniff.
-     *                     It represents the "documentation" tag in the XML
-     *                     standard file.
-     *
-     * @return void
-     */
-    public function processSniff(DOMNode $doc)
-    {
-        $this->printTitle($doc);
-
-        foreach ($doc->childNodes as $node) {
-            if ($node->nodeName === 'standard') {
-                $this->printTextBlock($node);
-            } else if ($node->nodeName === 'code_comparison') {
-                $this->printCodeComparisonBlock($node);
-            }
-        }
-
-    }//end processSniff()
-
-
-    /**
-     * Prints the title area for a single sniff.
-     *
-     * @param DOMNode $doc The DOMNode object for the sniff.
-     *                     It represents the "documentation" tag in the XML
-     *                     standard file.
-     *
-     * @return void
-     */
-    protected function printTitle(DOMNode $doc)
-    {
-        $title    = $this->getTitle($doc);
-        $standard = $this->getStandard();
-
-        echo PHP_EOL;
-        echo str_repeat('-', (strlen("$standard CODING STANDARD: $title") + 4));
-        echo strtoupper(PHP_EOL."| $standard CODING STANDARD: $title |".PHP_EOL);
-        echo str_repeat('-', (strlen("$standard CODING STANDARD: $title") + 4));
-        echo PHP_EOL.PHP_EOL;
-
-    }//end printTitle()
-
-
-    /**
-     * Print a text block found in a standard.
-     *
-     * @param DOMNode $node The DOMNode object for the text block.
-     *
-     * @return void
-     */
-    protected function printTextBlock($node)
-    {
-        $text = trim($node->nodeValue);
-        $text = str_replace('<em>', '*', $text);
-        $text = str_replace('</em>', '*', $text);
-
-        $lines    = array();
-        $tempLine = '';
-        $words    = explode(' ', $text);
-
-        foreach ($words as $word) {
-            if (strlen($tempLine.$word) >= 99) {
-                if (strlen($tempLine.$word) === 99) {
-                    // Adding the extra space will push us to the edge
-                    // so we are done.
-                    $lines[]  = $tempLine.$word;
-                    $tempLine = '';
-                } else if (strlen($tempLine.$word) === 100) {
-                    // We are already at the edge, so we are done.
-                    $lines[]  = $tempLine.$word;
-                    $tempLine = '';
-                } else {
-                    $lines[]  = rtrim($tempLine);
-                    $tempLine = $word.' ';
-                }
-            } else {
-                $tempLine .= $word.' ';
-            }
-        }//end foreach
-
-        if ($tempLine !== '') {
-            $lines[] = rtrim($tempLine);
-        }
-
-        echo implode(PHP_EOL, $lines).PHP_EOL.PHP_EOL;
-
-    }//end printTextBlock()
-
-
-    /**
-     * Print a code comparison block found in a standard.
-     *
-     * @param DOMNode $node The DOMNode object for the code comparison block.
-     *
-     * @return void
-     */
-    protected function printCodeComparisonBlock($node)
-    {
-        $codeBlocks = $node->getElementsByTagName('code');
-        $first      = trim($codeBlocks->item(0)->nodeValue);
-        $firstTitle = $codeBlocks->item(0)->getAttribute('title');
-
-        $firstTitleLines = array();
-        $tempTitle       = '';
-        $words           = explode(' ', $firstTitle);
-
-        foreach ($words as $word) {
-            if (strlen($tempTitle.$word) >= 45) {
-                if (strlen($tempTitle.$word) === 45) {
-                    // Adding the extra space will push us to the edge
-                    // so we are done.
-                    $firstTitleLines[] = $tempTitle.$word;
-                    $tempTitle         = '';
-                } else if (strlen($tempTitle.$word) === 46) {
-                    // We are already at the edge, so we are done.
-                    $firstTitleLines[] = $tempTitle.$word;
-                    $tempTitle         = '';
-                } else {
-                    $firstTitleLines[] = $tempTitle;
-                    $tempTitle         = $word;
-                }
-            } else {
-                $tempTitle .= $word.' ';
-            }
-        }//end foreach
-
-        if ($tempTitle !== '') {
-            $firstTitleLines[] = $tempTitle;
-        }
-
-        $first      = str_replace('<em>', '', $first);
-        $first      = str_replace('</em>', '', $first);
-        $firstLines = explode("\n", $first);
-
-        $second      = trim($codeBlocks->item(1)->nodeValue);
-        $secondTitle = $codeBlocks->item(1)->getAttribute('title');
-
-        $secondTitleLines = array();
-        $tempTitle        = '';
-        $words            = explode(' ', $secondTitle);
-
-        foreach ($words as $word) {
-            if (strlen($tempTitle.$word) >= 45) {
-                if (strlen($tempTitle.$word) === 45) {
-                    // Adding the extra space will push us to the edge
-                    // so we are done.
-                    $secondTitleLines[] = $tempTitle.$word;
-                    $tempTitle          = '';
-                } else if (strlen($tempTitle.$word) === 46) {
-                    // We are already at the edge, so we are done.
-                    $secondTitleLines[] = $tempTitle.$word;
-                    $tempTitle          = '';
-                } else {
-                    $secondTitleLines[] = $tempTitle;
-                    $tempTitle          = $word;
-                }
-            } else {
-                $tempTitle .= $word.' ';
-            }
-        }//end foreach
-
-        if ($tempTitle !== '') {
-            $secondTitleLines[] = $tempTitle;
-        }
-
-        $second      = str_replace('<em>', '', $second);
-        $second      = str_replace('</em>', '', $second);
-        $secondLines = explode("\n", $second);
-
-        $maxCodeLines  = max(count($firstLines), count($secondLines));
-        $maxTitleLines = max(count($firstTitleLines), count($secondTitleLines));
-
-        echo str_repeat('-', 41);
-        echo ' CODE COMPARISON ';
-        echo str_repeat('-', 42).PHP_EOL;
-
-        for ($i = 0; $i < $maxTitleLines; $i++) {
-            if (isset($firstTitleLines[$i]) === true) {
-                $firstLineText = $firstTitleLines[$i];
-            } else {
-                $firstLineText = '';
-            }
-
-            if (isset($secondTitleLines[$i]) === true) {
-                $secondLineText = $secondTitleLines[$i];
-            } else {
-                $secondLineText = '';
-            }
-
-            echo '| ';
-            echo $firstLineText.str_repeat(' ', (46 - strlen($firstLineText)));
-            echo ' | ';
-            echo $secondLineText.str_repeat(' ', (47 - strlen($secondLineText)));
-            echo ' |'.PHP_EOL;
-        }//end for
-
-        echo str_repeat('-', 100).PHP_EOL;
-
-        for ($i = 0; $i < $maxCodeLines; $i++) {
-            if (isset($firstLines[$i]) === true) {
-                $firstLineText = $firstLines[$i];
-            } else {
-                $firstLineText = '';
-            }
-
-            if (isset($secondLines[$i]) === true) {
-                $secondLineText = $secondLines[$i];
-            } else {
-                $secondLineText = '';
-            }
-
-            echo '| ';
-            echo $firstLineText.str_repeat(' ', (47 - strlen($firstLineText)));
-            echo '| ';
-            echo $secondLineText.str_repeat(' ', (48 - strlen($secondLineText)));
-            echo '|'.PHP_EOL;
-        }//end for
-
-        echo str_repeat('-', 100).PHP_EOL.PHP_EOL;
-
-    }//end printCodeComparisonBlock()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

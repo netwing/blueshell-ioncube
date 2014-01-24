@@ -1,513 +1,308 @@
-<?php
-/**
- * PHPExcel
- *
- * Copyright (c) 2006 - 2012 PHPExcel
- *
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation; either
- * version 2.1 of the License, or (at your option) any later version.
- *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
- *
- * @category	PHPExcel
- * @package		PHPExcel_Reader_Excel5
- * @copyright	Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- * @license		http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
- * @version		1.7.8, 2012-10-12
- */
-
-/**
- * PHPExcel_Reader_Excel2007_Chart
- *
- * @category	PHPExcel
- * @package		PHPExcel_Reader_Excel2007
- * @copyright	Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- */
-class PHPExcel_Reader_Excel2007_Chart
-{
-	private static function _getAttribute($component, $name, $format) {
-		$attributes = $component->attributes();
-		if (isset($attributes[$name])) {
-			if ($format == 'string') {
-				return (string) $attributes[$name];
-			} elseif ($format == 'integer') {
-				return (integer) $attributes[$name];
-			} elseif ($format == 'boolean') {
-				return (boolean) ($attributes[$name] == '0') ? false : true;
-			} else {
-				return (float) $attributes[$name];
-			}
-		}
-		return null;
-	}	//	function _getAttribute()
-
-
-	private static function _readColor($color,$background=false) {
-		if (isset($color["rgb"])) {
-			return (string)$color["rgb"];
-		} else if (isset($color["indexed"])) {
-			return PHPExcel_Style_Color::indexedColor($color["indexed"]-7,$background)->getARGB();
-		}
-	}
-
-
-	public static function readChart($chartElements,$chartName) {
-		$namespacesChartMeta = $chartElements->getNamespaces(true);
-		$chartElementsC = $chartElements->children($namespacesChartMeta['c']);
-
-		$XaxisLabel = $YaxisLabel = $legend = $title = NULL;
-		$dispBlanksAs = $plotVisOnly = NULL;
-
-		foreach($chartElementsC as $chartElementKey => $chartElement) {
-			switch ($chartElementKey) {
-				case "chart":
-					foreach($chartElement as $chartDetailsKey => $chartDetails) {
-						$chartDetailsC = $chartDetails->children($namespacesChartMeta['c']);
-						switch ($chartDetailsKey) {
-							case "plotArea":
-									$plotAreaLayout = $XaxisLable = $YaxisLable = null;
-									$plotSeries = $plotAttributes = array();
-									foreach($chartDetails as $chartDetailKey => $chartDetail) {
-										switch ($chartDetailKey) {
-											case "layout":
-												$plotAreaLayout = self::_chartLayoutDetails($chartDetail,$namespacesChartMeta,'plotArea');
-												break;
-											case "catAx":
-												if (isset($chartDetail->title)) {
-													$XaxisLabel = self::_chartTitle($chartDetail->title->children($namespacesChartMeta['c']),$namespacesChartMeta,'cat');
-												}
-												break;
-											case "dateAx":
-												if (isset($chartDetail->title)) {
-													$XaxisLabel = self::_chartTitle($chartDetail->title->children($namespacesChartMeta['c']),$namespacesChartMeta,'cat');
-												}
-												break;
-											case "valAx":
-												if (isset($chartDetail->title)) {
-													$YaxisLabel = self::_chartTitle($chartDetail->title->children($namespacesChartMeta['c']),$namespacesChartMeta,'cat');
-												}
-												break;
-											case "barChart":
-											case "bar3DChart":
-												$barDirection = self::_getAttribute($chartDetail->barDir, 'val', 'string');
-												$plotSer = self::_chartDataSeries($chartDetail,$namespacesChartMeta,$chartDetailKey);
-												$plotSer->setPlotDirection($barDirection);
-												$plotSeries[] = $plotSer;
-												$plotAttributes = self::_readChartAttributes($chartDetail);
-												break;
-											case "lineChart":
-											case "line3DChart":
-												$plotSeries[] = self::_chartDataSeries($chartDetail,$namespacesChartMeta,$chartDetailKey);
-												$plotAttributes = self::_readChartAttributes($chartDetail);
-												break;
-											case "areaChart":
-											case "area3DChart":
-												$plotSeries[] = self::_chartDataSeries($chartDetail,$namespacesChartMeta,$chartDetailKey);
-												$plotAttributes = self::_readChartAttributes($chartDetail);
-												break;
-											case "doughnutChart":
-											case "pieChart":
-											case "pie3DChart":
-												$explosion = isset($chartDetail->ser->explosion);
-												$plotSer = self::_chartDataSeries($chartDetail,$namespacesChartMeta,$chartDetailKey);
-												$plotSer->setPlotStyle($explosion);
-												$plotSeries[] = $plotSer;
-												$plotAttributes = self::_readChartAttributes($chartDetail);
-												break;
-											case "scatterChart":
-												$scatterStyle = self::_getAttribute($chartDetail->scatterStyle, 'val', 'string');
-												$plotSer = self::_chartDataSeries($chartDetail,$namespacesChartMeta,$chartDetailKey);
-												$plotSer->setPlotStyle($scatterStyle);
-												$plotSeries[] = $plotSer;
-												$plotAttributes = self::_readChartAttributes($chartDetail);
-												break;
-											case "bubbleChart":
-												$bubbleScale = self::_getAttribute($chartDetail->bubbleScale, 'val', 'integer');
-												$plotSer = self::_chartDataSeries($chartDetail,$namespacesChartMeta,$chartDetailKey);
-												$plotSer->setPlotStyle($bubbleScale);
-												$plotSeries[] = $plotSer;
-												$plotAttributes = self::_readChartAttributes($chartDetail);
-												break;
-											case "radarChart":
-												$radarStyle = self::_getAttribute($chartDetail->radarStyle, 'val', 'string');
-												$plotSer = self::_chartDataSeries($chartDetail,$namespacesChartMeta,$chartDetailKey);
-												$plotSer->setPlotStyle($radarStyle);
-												$plotSeries[] = $plotSer;
-												$plotAttributes = self::_readChartAttributes($chartDetail);
-												break;
-											case "surfaceChart":
-											case "surface3DChart":
-												$wireFrame = self::_getAttribute($chartDetail->wireframe, 'val', 'boolean');
-												$plotSer = self::_chartDataSeries($chartDetail,$namespacesChartMeta,$chartDetailKey);
-												$plotSer->setPlotStyle($wireFrame);
-												$plotSeries[] = $plotSer;
-												$plotAttributes = self::_readChartAttributes($chartDetail);
-												break;
-											case "stockChart":
-												$plotSeries[] = self::_chartDataSeries($chartDetail,$namespacesChartMeta,$chartDetailKey);
-												$plotAttributes = self::_readChartAttributes($plotAreaLayout);
-												break;
-										}
-									}
-									if ($plotAreaLayout == NULL) {
-										$plotAreaLayout = new PHPExcel_Chart_Layout();
-									}
-									$plotArea = new PHPExcel_Chart_PlotArea($plotAreaLayout,$plotSeries);
-									self::_setChartAttributes($plotAreaLayout,$plotAttributes);
-									break;
-							case "plotVisOnly":
-									$plotVisOnly = self::_getAttribute($chartDetails, 'val', 'string');
-									break;
-							case "dispBlanksAs":
-									$dispBlanksAs = self::_getAttribute($chartDetails, 'val', 'string');
-									break;
-							case "title":
-									$title = self::_chartTitle($chartDetails,$namespacesChartMeta,'title');
-									break;
-							case "legend":
-									$legendPos = 'r';
-									$legendLayout = null;
-									$legendOverlay = false;
-									foreach($chartDetails as $chartDetailKey => $chartDetail) {
-										switch ($chartDetailKey) {
-											case "legendPos":
-												$legendPos = self::_getAttribute($chartDetail, 'val', 'string');
-												break;
-											case "overlay":
-												$legendOverlay = self::_getAttribute($chartDetail, 'val', 'boolean');
-												break;
-											case "layout":
-												$legendLayout = self::_chartLayoutDetails($chartDetail,$namespacesChartMeta,'legend');
-												break;
-										}
-									}
-									$legend = new PHPExcel_Chart_Legend($legendPos, $legendLayout, $legendOverlay);
-									break;
-						}
-					}
-			}
-		}
-		$chart = new PHPExcel_Chart($chartName,$title,$legend,$plotArea,$plotVisOnly,$dispBlanksAs,$XaxisLabel,$YaxisLabel);
-
-		return $chart;
-	}	//	function readChart()
-
-
-	private static function _chartTitle($titleDetails,$namespacesChartMeta,$type) {
-		$caption = array();
-		$titleLayout = null;
-		foreach($titleDetails as $titleDetailKey => $chartDetail) {
-			switch ($titleDetailKey) {
-				case "tx":
-					$titleDetails = $chartDetail->rich->children($namespacesChartMeta['a']);
-					foreach($titleDetails as $titleKey => $titleDetail) {
-						switch ($titleKey) {
-							case "p":
-								$titleDetailPart = $titleDetail->children($namespacesChartMeta['a']);
-								$caption[] = self::_parseRichText($titleDetailPart);
-						}
-					}
-					break;
-				case "layout":
-					$titleLayout = self::_chartLayoutDetails($chartDetail,$namespacesChartMeta);
-					break;
-			}
-		}
-
-		return new PHPExcel_Chart_Title($caption, $titleLayout);
-	}	//	function _chartTitle()
-
-
-	private static function _chartLayoutDetails($chartDetail,$namespacesChartMeta) {
-		if (!isset($chartDetail->manualLayout)) {
-			return null;
-		}
-		$details = $chartDetail->manualLayout->children($namespacesChartMeta['c']);
-		if (is_null($details)) {
-			return null;
-		}
-		$layout = array();
-		foreach($details as $detailKey => $detail) {
-//			echo $detailKey,' => ',self::_getAttribute($detail, 'val', 'string'),PHP_EOL;
-			$layout[$detailKey] = self::_getAttribute($detail, 'val', 'string');
-		}
-		return new PHPExcel_Chart_Layout($layout);
-	}	//	function _chartLayoutDetails()
-
-
-	private static function _chartDataSeries($chartDetail,$namespacesChartMeta,$plotType) {
-		$multiSeriesType = NULL;
-		$smoothLine = false;
-		$seriesLabel = $seriesCategory = $seriesValues = $plotOrder = array();
-
-		$seriesDetailSet = $chartDetail->children($namespacesChartMeta['c']);
-		foreach($seriesDetailSet as $seriesDetailKey => $seriesDetails) {
-			switch ($seriesDetailKey) {
-				case "grouping":
-					$multiSeriesType = self::_getAttribute($chartDetail->grouping, 'val', 'string');
-					break;
-				case "ser":
-					$marker = NULL;
-					foreach($seriesDetails as $seriesKey => $seriesDetail) {
-						switch ($seriesKey) {
-							case "idx":
-								$seriesIndex = self::_getAttribute($seriesDetail, 'val', 'integer');
-								break;
-							case "order":
-								$seriesOrder = self::_getAttribute($seriesDetail, 'val', 'integer');
-								$plotOrder[$seriesIndex] = $seriesOrder;
-								break;
-							case "tx":
-								$seriesLabel[$seriesIndex] = self::_chartDataSeriesValueSet($seriesDetail,$namespacesChartMeta);
-								break;
-							case "marker":
-								$marker = self::_getAttribute($seriesDetail->symbol, 'val', 'string');
-								break;
-							case "smooth":
-								$smoothLine = self::_getAttribute($seriesDetail, 'val', 'boolean');
-								break;
-							case "cat":
-								$seriesCategory[$seriesIndex] = self::_chartDataSeriesValueSet($seriesDetail,$namespacesChartMeta);
-								break;
-							case "val":
-								$seriesValues[$seriesIndex] = self::_chartDataSeriesValueSet($seriesDetail,$namespacesChartMeta,$marker);
-								break;
-							case "xVal":
-								$seriesCategory[$seriesIndex] = self::_chartDataSeriesValueSet($seriesDetail,$namespacesChartMeta,$marker);
-								break;
-							case "yVal":
-								$seriesValues[$seriesIndex] = self::_chartDataSeriesValueSet($seriesDetail,$namespacesChartMeta,$marker);
-								break;
-						}
-					}
-			}
-		}
-		return new PHPExcel_Chart_DataSeries($plotType,$multiSeriesType,$plotOrder,$seriesLabel,$seriesCategory,$seriesValues,$smoothLine);
-	}	//	function _chartDataSeries()
-
-
-	private static function _chartDataSeriesValueSet($seriesDetail, $namespacesChartMeta, $marker = null, $smoothLine = false) {
-		if (isset($seriesDetail->strRef)) {
-			$seriesSource = (string) $seriesDetail->strRef->f;
-			$seriesData = self::_chartDataSeriesValues($seriesDetail->strRef->strCache->children($namespacesChartMeta['c']),'s');
-
-			return new PHPExcel_Chart_DataSeriesValues('String',$seriesSource,$seriesData['formatCode'],$seriesData['pointCount'],$seriesData['dataValues'],$marker,$smoothLine);
-		} elseif (isset($seriesDetail->numRef)) {
-			$seriesSource = (string) $seriesDetail->numRef->f;
-			$seriesData = self::_chartDataSeriesValues($seriesDetail->numRef->numCache->children($namespacesChartMeta['c']));
-
-			return new PHPExcel_Chart_DataSeriesValues('Number',$seriesSource,$seriesData['formatCode'],$seriesData['pointCount'],$seriesData['dataValues'],$marker,$smoothLine);
-		} elseif (isset($seriesDetail->multiLvlStrRef)) {
-			$seriesSource = (string) $seriesDetail->multiLvlStrRef->f;
-			$seriesData = self::_chartDataSeriesValuesMultiLevel($seriesDetail->multiLvlStrRef->multiLvlStrCache->children($namespacesChartMeta['c']),'s');
-			$seriesData['pointCount'] = count($seriesData['dataValues']);
-
-			return new PHPExcel_Chart_DataSeriesValues('String',$seriesSource,$seriesData['formatCode'],$seriesData['pointCount'],$seriesData['dataValues'],$marker,$smoothLine);
-		} elseif (isset($seriesDetail->multiLvlNumRef)) {
-			$seriesSource = (string) $seriesDetail->multiLvlNumRef->f;
-			$seriesData = self::_chartDataSeriesValuesMultiLevel($seriesDetail->multiLvlNumRef->multiLvlNumCache->children($namespacesChartMeta['c']),'s');
-			$seriesData['pointCount'] = count($seriesData['dataValues']);
-
-			return new PHPExcel_Chart_DataSeriesValues('String',$seriesSource,$seriesData['formatCode'],$seriesData['pointCount'],$seriesData['dataValues'],$marker,$smoothLine);
-		}
-		return null;
-	}	//	function _chartDataSeriesValueSet()
-
-
-	private static function _chartDataSeriesValues($seriesValueSet,$dataType='n') {
-		$seriesVal = array();
-		$formatCode = '';
-		$pointCount = 0;
-
-		foreach($seriesValueSet as $seriesValueIdx => $seriesValue) {
-			switch ($seriesValueIdx) {
-				case 'ptCount':
-					$pointCount = self::_getAttribute($seriesValue, 'val', 'integer');
-					break;
-				case 'formatCode':
-					$formatCode = (string) $seriesValue;
-					break;
-				case 'pt':
-					$pointVal = self::_getAttribute($seriesValue, 'idx', 'integer');
-					if ($dataType == 's') {
-						$seriesVal[$pointVal] = (string) $seriesValue->v;
-					} else {
-						$seriesVal[$pointVal] = (float) $seriesValue->v;
-					}
-					break;
-			}
-		}
-
-		return array( 'formatCode'	=> $formatCode,
-					  'pointCount'	=> $pointCount,
-					  'dataValues'	=> $seriesVal
-					);
-	}	//	function _chartDataSeriesValues()
-
-
-	private static function _chartDataSeriesValuesMultiLevel($seriesValueSet,$dataType='n') {
-		$seriesVal = array();
-		$formatCode = '';
-		$pointCount = 0;
-
-		foreach($seriesValueSet->lvl as $seriesLevelIdx => $seriesLevel) {
-			foreach($seriesLevel as $seriesValueIdx => $seriesValue) {
-				switch ($seriesValueIdx) {
-					case 'ptCount':
-						$pointCount = self::_getAttribute($seriesValue, 'val', 'integer');
-						break;
-					case 'formatCode':
-						$formatCode = (string) $seriesValue;
-						break;
-					case 'pt':
-						$pointVal = self::_getAttribute($seriesValue, 'idx', 'integer');
-						if ($dataType == 's') {
-							$seriesVal[$pointVal][] = (string) $seriesValue->v;
-						} else {
-							$seriesVal[$pointVal][] = (float) $seriesValue->v;
-						}
-						break;
-				}
-			}
-		}
-
-		return array( 'formatCode'	=> $formatCode,
-					  'pointCount'	=> $pointCount,
-					  'dataValues'	=> $seriesVal
-					);
-	}	//	function _chartDataSeriesValuesMultiLevel()
-
-	private static function _parseRichText($titleDetailPart = null) {
-		$value = new PHPExcel_RichText();
-
-		foreach($titleDetailPart as $titleDetailElementKey => $titleDetailElement) {
-			if (isset($titleDetailElement->t)) {
-				$objText = $value->createTextRun( (string) $titleDetailElement->t );
-			}
-			if (isset($titleDetailElement->rPr)) {
-				if (isset($titleDetailElement->rPr->rFont["val"])) {
-					$objText->getFont()->setName((string) $titleDetailElement->rPr->rFont["val"]);
-				}
-
-				$fontSize = (self::_getAttribute($titleDetailElement->rPr, 'sz', 'integer'));
-				if (!is_null($fontSize)) {
-					$objText->getFont()->setSize(floor($fontSize / 100));
-				}
-
-				$fontColor = (self::_getAttribute($titleDetailElement->rPr, 'color', 'string'));
-				if (!is_null($fontColor)) {
-					$objText->getFont()->setColor( new PHPExcel_Style_Color( self::_readColor($fontColor) ) );
-				}
-
-				$bold = self::_getAttribute($titleDetailElement->rPr, 'b', 'boolean');
-				if (!is_null($bold)) {
-					$objText->getFont()->setBold($bold);
-				}
-
-				$italic = self::_getAttribute($titleDetailElement->rPr, 'i', 'boolean');
-				if (!is_null($italic)) {
-					$objText->getFont()->setItalic($italic);
-				}
-
-				$baseline = self::_getAttribute($titleDetailElement->rPr, 'baseline', 'integer');
-				if (!is_null($baseline)) {
-					if ($baseline > 0) {
-						$objText->getFont()->setSuperScript(true);
-					} elseif($baseline < 0) {
-						$objText->getFont()->setSubScript(true);
-					}
-				}
-
-				$underscore = (self::_getAttribute($titleDetailElement->rPr, 'u', 'string'));
-				if (!is_null($underscore)) {
-					if ($underscore == 'sng') {
-						$objText->getFont()->setUnderline(PHPExcel_Style_Font::UNDERLINE_SINGLE);
-					} elseif($underscore == 'dbl') {
-						$objText->getFont()->setUnderline(PHPExcel_Style_Font::UNDERLINE_DOUBLE);
-					} else {
-						$objText->getFont()->setUnderline(PHPExcel_Style_Font::UNDERLINE_NONE);
-					}
-				}
-
-				$strikethrough = (self::_getAttribute($titleDetailElement->rPr, 's', 'string'));
-				if (!is_null($strikethrough)) {
-					if ($strikethrough == 'noStrike') {
-						$objText->getFont()->setStrikethrough(false);
-					} else {
-						$objText->getFont()->setStrikethrough(true);
-					}
-				}
-			}
-		}
-
-		return $value;
-	}
-
-	private static function _readChartAttributes($chartDetail) {
-		$plotAttributes = array();
-		if (isset($chartDetail->dLbls)) {
-			if (isset($chartDetail->dLbls->howLegendKey)) {
-				$plotAttributes['showLegendKey'] = self::_getAttribute($chartDetail->dLbls->showLegendKey, 'val', 'string');
-			}
-			if (isset($chartDetail->dLbls->showVal)) {
-				$plotAttributes['showVal'] = self::_getAttribute($chartDetail->dLbls->showVal, 'val', 'string');
-			}
-			if (isset($chartDetail->dLbls->showCatName)) {
-				$plotAttributes['showCatName'] = self::_getAttribute($chartDetail->dLbls->showCatName, 'val', 'string');
-			}
-			if (isset($chartDetail->dLbls->showSerName)) {
-				$plotAttributes['showSerName'] = self::_getAttribute($chartDetail->dLbls->showSerName, 'val', 'string');
-			}
-			if (isset($chartDetail->dLbls->showPercent)) {
-				$plotAttributes['showPercent'] = self::_getAttribute($chartDetail->dLbls->showPercent, 'val', 'string');
-			}
-			if (isset($chartDetail->dLbls->showBubbleSize)) {
-				$plotAttributes['showBubbleSize'] = self::_getAttribute($chartDetail->dLbls->showBubbleSize, 'val', 'string');
-			}
-			if (isset($chartDetail->dLbls->showLeaderLines)) {
-				$plotAttributes['showLeaderLines'] = self::_getAttribute($chartDetail->dLbls->showLeaderLines, 'val', 'string');
-			}
-		}
-
-		return $plotAttributes;
-	}
-
-	private static function _setChartAttributes($plotArea,$plotAttributes)
-	{
-		foreach($plotAttributes as $plotAttributeKey => $plotAttributeValue) {
-			switch($plotAttributeKey) {
-				case 'showLegendKey' :
-					$plotArea->setShowLegendKey($plotAttributeValue);
-					break;
-				case 'showVal' :
-					$plotArea->setShowVal($plotAttributeValue);
-					break;
-				case 'showCatName' :
-					$plotArea->setShowCatName($plotAttributeValue);
-					break;
-				case 'showSerName' :
-					$plotArea->setShowSerName($plotAttributeValue);
-					break;
-				case 'showPercent' :
-					$plotArea->setShowPercent($plotAttributeValue);
-					break;
-				case 'showBubbleSize' :
-					$plotArea->setShowBubbleSize($plotAttributeValue);
-					break;
-				case 'showLeaderLines' :
-					$plotArea->setShowLeaderLines($plotAttributeValue);
-					break;
-			}
-		}
-	}
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+yU3EGgX3JI1B2C+wIUOFkndAK+Ag/0Z/UZq=

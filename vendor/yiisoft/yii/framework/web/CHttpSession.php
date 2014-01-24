@@ -1,572 +1,192 @@
-<?php
-/**
- * CHttpSession class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CHttpSession provides session-level data management and the related configurations.
- *
- * To start the session, call {@link open()}; To complete and send out session data, call {@link close()};
- * To destroy the session, call {@link destroy()}.
- *
- * If {@link autoStart} is set true, the session will be started automatically
- * when the application component is initialized by the application.
- *
- * CHttpSession can be used like an array to set and get session data. For example,
- * <pre>
- *   $session=new CHttpSession;
- *   $session->open();
- *   $value1=$session['name1'];  // get session variable 'name1'
- *   $value2=$session['name2'];  // get session variable 'name2'
- *   foreach($session as $name=>$value) // traverse all session variables
- *   $session['name3']=$value3;  // set session variable 'name3'
- * </pre>
- *
- * The following configurations are available for session:
- * <ul>
- * <li>{@link setSessionID sessionID};</li>
- * <li>{@link setSessionName sessionName};</li>
- * <li>{@link autoStart};</li>
- * <li>{@link setSavePath savePath};</li>
- * <li>{@link setCookieParams cookieParams};</li>
- * <li>{@link setGCProbability gcProbability};</li>
- * <li>{@link setCookieMode cookieMode};</li>
- * <li>{@link setUseTransparentSessionID useTransparentSessionID};</li>
- * <li>{@link setTimeout timeout}.</li>
- * </ul>
- * See the corresponding setter and getter documentation for more information.
- * Note, these properties must be set before the session is started.
- *
- * CHttpSession can be extended to support customized session storage.
- * Override {@link openSession}, {@link closeSession}, {@link readSession},
- * {@link writeSession}, {@link destroySession} and {@link gcSession}
- * and set {@link useCustomStorage} to true.
- * Then, the session data will be stored and retrieved using the above methods.
- *
- * CHttpSession is a Web application component that can be accessed via
- * {@link CWebApplication::getSession()}.
- *
- * @property boolean $useCustomStorage Whether to use custom storage.
- * @property boolean $isStarted Whether the session has started.
- * @property string $sessionID The current session ID.
- * @property string $sessionName The current session name.
- * @property string $savePath The current session save path, defaults to {@link http://php.net/session.save_path}.
- * @property array $cookieParams The session cookie parameters.
- * @property string $cookieMode How to use cookie to store session ID. Defaults to 'Allow'.
- * @property float $gCProbability The probability (percentage) that the gc (garbage collection) process is started on every session initialization, defaults to 1 meaning 1% chance.
- * @property boolean $useTransparentSessionID Whether transparent sid support is enabled or not, defaults to false.
- * @property integer $timeout The number of seconds after which data will be seen as 'garbage' and cleaned up, defaults to 1440 seconds.
- * @property CHttpSessionIterator $iterator An iterator for traversing the session variables.
- * @property integer $count The number of session variables.
- * @property array $keys The list of session variable names.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.web
- * @since 1.0
- */
-class CHttpSession extends CApplicationComponent implements IteratorAggregate,ArrayAccess,Countable
-{
-	/**
-	 * @var boolean whether the session should be automatically started when the session application component is initialized, defaults to true.
-	 */
-	public $autoStart=true;
-
-	/**
-	 * Initializes the application component.
-	 * This method is required by IApplicationComponent and is invoked by application.
-	 */
-	public function init()
-	{
-		parent::init();
-
-		if($this->autoStart)
-			$this->open();
-		register_shutdown_function(array($this,'close'));
-	}
-
-	/**
-	 * Returns a value indicating whether to use custom session storage.
-	 * This method should be overriden to return true if custom session storage handler should be used.
-	 * If returning true, make sure the methods {@link openSession}, {@link closeSession}, {@link readSession},
-	 * {@link writeSession}, {@link destroySession}, and {@link gcSession} are overridden in child
-	 * class, because they will be used as the callback handlers.
-	 * The default implementation always return false.
-	 * @return boolean whether to use custom storage.
-	 */
-	public function getUseCustomStorage()
-	{
-		return false;
-	}
-
-	/**
-	 * Starts the session if it has not started yet.
-	 */
-	public function open()
-	{
-		if($this->getUseCustomStorage())
-			@session_set_save_handler(array($this,'openSession'),array($this,'closeSession'),array($this,'readSession'),array($this,'writeSession'),array($this,'destroySession'),array($this,'gcSession'));
-
-		@session_start();
-		if(YII_DEBUG && session_id()=='')
-		{
-			$message=Yii::t('yii','Failed to start session.');
-			if(function_exists('error_get_last'))
-			{
-				$error=error_get_last();
-				if(isset($error['message']))
-					$message=$error['message'];
-			}
-			Yii::log($message, CLogger::LEVEL_WARNING, 'system.web.CHttpSession');
-		}
-	}
-
-	/**
-	 * Ends the current session and store session data.
-	 */
-	public function close()
-	{
-		if(session_id()!=='')
-			@session_write_close();
-	}
-
-	/**
-	 * Frees all session variables and destroys all data registered to a session.
-	 */
-	public function destroy()
-	{
-		if(session_id()!=='')
-		{
-			@session_unset();
-			@session_destroy();
-		}
-	}
-
-	/**
-	 * @return boolean whether the session has started
-	 */
-	public function getIsStarted()
-	{
-		return session_id()!=='';
-	}
-
-	/**
-	 * @return string the current session ID
-	 */
-	public function getSessionID()
-	{
-		return session_id();
-	}
-
-	/**
-	 * @param string $value the session ID for the current session
-	 */
-	public function setSessionID($value)
-	{
-		session_id($value);
-	}
-
-	/**
-	 * Updates the current session id with a newly generated one .
-	 * Please refer to {@link http://php.net/session_regenerate_id} for more details.
-	 * @param boolean $deleteOldSession Whether to delete the old associated session file or not.
-	 * @since 1.1.8
-	 */
-	public function regenerateID($deleteOldSession=false)
-	{
-		session_regenerate_id($deleteOldSession);
-	}
-
-	/**
-	 * @return string the current session name
-	 */
-	public function getSessionName()
-	{
-		return session_name();
-	}
-
-	/**
-	 * @param string $value the session name for the current session, must be an alphanumeric string, defaults to PHPSESSID
-	 */
-	public function setSessionName($value)
-	{
-		session_name($value);
-	}
-
-	/**
-	 * @return string the current session save path, defaults to {@link http://php.net/session.save_path}.
-	 */
-	public function getSavePath()
-	{
-		return session_save_path();
-	}
-
-	/**
-	 * @param string $value the current session save path
-	 * @throws CException if the path is not a valid directory
-	 */
-	public function setSavePath($value)
-	{
-		if(is_dir($value))
-			session_save_path($value);
-		else
-			throw new CException(Yii::t('yii','CHttpSession.savePath "{path}" is not a valid directory.',
-				array('{path}'=>$value)));
-	}
-
-	/**
-	 * @return array the session cookie parameters.
-	 * @see http://us2.php.net/manual/en/function.session-get-cookie-params.php
-	 */
-	public function getCookieParams()
-	{
-		return session_get_cookie_params();
-	}
-
-	/**
-	 * Sets the session cookie parameters.
-	 * The effect of this method only lasts for the duration of the script.
-	 * Call this method before the session starts.
-	 * @param array $value cookie parameters, valid keys include: lifetime, path,
-	 * domain, secure, httponly. Note that httponly is all lowercase.
-	 * @see http://us2.php.net/manual/en/function.session-set-cookie-params.php
-	 */
-	public function setCookieParams($value)
-	{
-		$data=session_get_cookie_params();
-		extract($data);
-		extract($value);
-		if(isset($httponly))
-			session_set_cookie_params($lifetime,$path,$domain,$secure,$httponly);
-		else
-			session_set_cookie_params($lifetime,$path,$domain,$secure);
-	}
-
-	/**
-	 * @return string how to use cookie to store session ID. Defaults to 'Allow'.
-	 */
-	public function getCookieMode()
-	{
-		if(ini_get('session.use_cookies')==='0')
-			return 'none';
-		elseif(ini_get('session.use_only_cookies')==='0')
-			return 'allow';
-		else
-			return 'only';
-	}
-
-	/**
-	 * @param string $value how to use cookie to store session ID. Valid values include 'none', 'allow' and 'only'.
-	 */
-	public function setCookieMode($value)
-	{
-		if($value==='none')
-		{
-			ini_set('session.use_cookies','0');
-			ini_set('session.use_only_cookies','0');
-		}
-		elseif($value==='allow')
-		{
-			ini_set('session.use_cookies','1');
-			ini_set('session.use_only_cookies','0');
-		}
-		elseif($value==='only')
-		{
-			ini_set('session.use_cookies','1');
-			ini_set('session.use_only_cookies','1');
-		}
-		else
-			throw new CException(Yii::t('yii','CHttpSession.cookieMode can only be "none", "allow" or "only".'));
-	}
-
-	/**
-	 * @return float the probability (percentage) that the gc (garbage collection) process is started on every session initialization, defaults to 1 meaning 1% chance.
-	 */
-	public function getGCProbability()
-	{
-		return (float)(ini_get('session.gc_probability')/ini_get('session.gc_divisor')*100);
-	}
-
-	/**
-	 * @param float $value the probability (percentage) that the gc (garbage collection) process is started on every session initialization.
-	 * @throws CException if the value is beyond [0,100]
-	 */
-	public function setGCProbability($value)
-	{
-		if($value>=0 && $value<=100)
-		{
-			// percent * 21474837 / 2147483647 ≈ percent * 0.01
-			ini_set('session.gc_probability',floor($value*21474836.47));
-			ini_set('session.gc_divisor',2147483647);
-		}
-		else
-			throw new CException(Yii::t('yii','CHttpSession.gcProbability "{value}" is invalid. It must be a float between 0 and 100.',
-				array('{value}'=>$value)));
-	}
-
-	/**
-	 * @return boolean whether transparent sid support is enabled or not, defaults to false.
-	 */
-	public function getUseTransparentSessionID()
-	{
-		return ini_get('session.use_trans_sid')==1;
-	}
-
-	/**
-	 * @param boolean $value whether transparent sid support is enabled or not.
-	 */
-	public function setUseTransparentSessionID($value)
-	{
-		ini_set('session.use_trans_sid',$value?'1':'0');
-	}
-
-	/**
-	 * @return integer the number of seconds after which data will be seen as 'garbage' and cleaned up, defaults to 1440 seconds.
-	 */
-	public function getTimeout()
-	{
-		return (int)ini_get('session.gc_maxlifetime');
-	}
-
-	/**
-	 * @param integer $value the number of seconds after which data will be seen as 'garbage' and cleaned up
-	 */
-	public function setTimeout($value)
-	{
-		ini_set('session.gc_maxlifetime',$value);
-	}
-
-	/**
-	 * Session open handler.
-	 * This method should be overridden if {@link useCustomStorage} is set true.
-	 * Do not call this method directly.
-	 * @param string $savePath session save path
-	 * @param string $sessionName session name
-	 * @return boolean whether session is opened successfully
-	 */
-	public function openSession($savePath,$sessionName)
-	{
-		return true;
-	}
-
-	/**
-	 * Session close handler.
-	 * This method should be overridden if {@link useCustomStorage} is set true.
-	 * Do not call this method directly.
-	 * @return boolean whether session is closed successfully
-	 */
-	public function closeSession()
-	{
-		return true;
-	}
-
-	/**
-	 * Session read handler.
-	 * This method should be overridden if {@link useCustomStorage} is set true.
-	 * Do not call this method directly.
-	 * @param string $id session ID
-	 * @return string the session data
-	 */
-	public function readSession($id)
-	{
-		return '';
-	}
-
-	/**
-	 * Session write handler.
-	 * This method should be overridden if {@link useCustomStorage} is set true.
-	 * Do not call this method directly.
-	 * @param string $id session ID
-	 * @param string $data session data
-	 * @return boolean whether session write is successful
-	 */
-	public function writeSession($id,$data)
-	{
-		return true;
-	}
-
-	/**
-	 * Session destroy handler.
-	 * This method should be overridden if {@link useCustomStorage} is set true.
-	 * Do not call this method directly.
-	 * @param string $id session ID
-	 * @return boolean whether session is destroyed successfully
-	 */
-	public function destroySession($id)
-	{
-		return true;
-	}
-
-	/**
-	 * Session GC (garbage collection) handler.
-	 * This method should be overridden if {@link useCustomStorage} is set true.
-	 * Do not call this method directly.
-	 * @param integer $maxLifetime the number of seconds after which data will be seen as 'garbage' and cleaned up.
-	 * @return boolean whether session is GCed successfully
-	 */
-	public function gcSession($maxLifetime)
-	{
-		return true;
-	}
-
-	//------ The following methods enable CHttpSession to be CMap-like -----
-
-	/**
-	 * Returns an iterator for traversing the session variables.
-	 * This method is required by the interface IteratorAggregate.
-	 * @return CHttpSessionIterator an iterator for traversing the session variables.
-	 */
-	public function getIterator()
-	{
-		return new CHttpSessionIterator;
-	}
-
-	/**
-	 * Returns the number of items in the session.
-	 * @return integer the number of session variables
-	 */
-	public function getCount()
-	{
-		return count($_SESSION);
-	}
-
-	/**
-	 * Returns the number of items in the session.
-	 * This method is required by Countable interface.
-	 * @return integer number of items in the session.
-	 */
-	public function count()
-	{
-		return $this->getCount();
-	}
-
-	/**
-	 * @return array the list of session variable names
-	 */
-	public function getKeys()
-	{
-		return array_keys($_SESSION);
-	}
-
-	/**
-	 * Returns the session variable value with the session variable name.
-	 * This method is very similar to {@link itemAt} and {@link offsetGet},
-	 * except that it will return $defaultValue if the session variable does not exist.
-	 * @param mixed $key the session variable name
-	 * @param mixed $defaultValue the default value to be returned when the session variable does not exist.
-	 * @return mixed the session variable value, or $defaultValue if the session variable does not exist.
-	 * @since 1.1.2
-	 */
-	public function get($key,$defaultValue=null)
-	{
-		return isset($_SESSION[$key]) ? $_SESSION[$key] : $defaultValue;
-	}
-
-	/**
-	 * Returns the session variable value with the session variable name.
-	 * This method is exactly the same as {@link offsetGet}.
-	 * @param mixed $key the session variable name
-	 * @return mixed the session variable value, null if no such variable exists
-	 */
-	public function itemAt($key)
-	{
-		return isset($_SESSION[$key]) ? $_SESSION[$key] : null;
-	}
-
-	/**
-	 * Adds a session variable.
-	 * Note, if the specified name already exists, the old value will be removed first.
-	 * @param mixed $key session variable name
-	 * @param mixed $value session variable value
-	 */
-	public function add($key,$value)
-	{
-		$_SESSION[$key]=$value;
-	}
-
-	/**
-	 * Removes a session variable.
-	 * @param mixed $key the name of the session variable to be removed
-	 * @return mixed the removed value, null if no such session variable.
-	 */
-	public function remove($key)
-	{
-		if(isset($_SESSION[$key]))
-		{
-			$value=$_SESSION[$key];
-			unset($_SESSION[$key]);
-			return $value;
-		}
-		else
-			return null;
-	}
-
-	/**
-	 * Removes all session variables
-	 */
-	public function clear()
-	{
-		foreach(array_keys($_SESSION) as $key)
-			unset($_SESSION[$key]);
-	}
-
-	/**
-	 * @param mixed $key session variable name
-	 * @return boolean whether there is the named session variable
-	 */
-	public function contains($key)
-	{
-		return isset($_SESSION[$key]);
-	}
-
-	/**
-	 * @return array the list of all session variables in array
-	 */
-	public function toArray()
-	{
-		return $_SESSION;
-	}
-
-	/**
-	 * This method is required by the interface ArrayAccess.
-	 * @param mixed $offset the offset to check on
-	 * @return boolean
-	 */
-	public function offsetExists($offset)
-	{
-		return isset($_SESSION[$offset]);
-	}
-
-	/**
-	 * This method is required by the interface ArrayAccess.
-	 * @param integer $offset the offset to retrieve element.
-	 * @return mixed the element at the offset, null if no element is found at the offset
-	 */
-	public function offsetGet($offset)
-	{
-		return isset($_SESSION[$offset]) ? $_SESSION[$offset] : null;
-	}
-
-	/**
-	 * This method is required by the interface ArrayAccess.
-	 * @param integer $offset the offset to set element
-	 * @param mixed $item the element value
-	 */
-	public function offsetSet($offset,$item)
-	{
-		$_SESSION[$offset]=$item;
-	}
-
-	/**
-	 * This method is required by the interface ArrayAccess.
-	 * @param mixed $offset the offset to unset element
-	 */
-	public function offsetUnset($offset)
-	{
-		unset($_SESSION[$offset]);
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+zhqBceO8NjiGWHBqn5W9k36AiX0=

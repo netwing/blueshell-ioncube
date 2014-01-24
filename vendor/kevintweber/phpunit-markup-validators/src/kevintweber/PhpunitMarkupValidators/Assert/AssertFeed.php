@@ -1,131 +1,59 @@
-<?php
-
-/*
- * This file is part of the PhpunitMarkupValidators package.
- *
- * (c) Kevin Weber <kevintweber@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace kevintweber\PhpunitMarkupValidators\Assert;
-
-use kevintweber\PhpunitMarkupValidators\Connector\FeedConnector;
-use kevintweber\PhpunitMarkupValidators\Connector\FeedW3CConnector;
-use kevintweber\PhpunitMarkupValidators\Constraint\GenericConstraint;
-
-/**
- * A validator for both RSS and Atom feeds.
- */
-class AssertFeed extends \PHPUnit_Framework_Assert
-{
-    /**
-     * Asserts that the feed string is valid.
-     *
-     * @param string         $feed       The feed text to be validated.
-     * @param string         $message    Test message.
-     * @param FeedConnector  $connector  A connector to a HTML validation service.
-     */
-    public static function IsValidMarkup($feed,
-                                         $message = '',
-                                         FeedConnector $connector = null)
-    {
-        // Check that $feed is a string.
-        if (empty($feed) || !is_string($feed)) {
-            throw \PHPUnit_Util_InvalidArgumentHelper::factory(
-                1, 'string'
-                );
-        }
-
-        // Assign connector if there isn't one already.
-        if ($connector === null) {
-            $connector = new FeedW3CConnector();
-        }
-
-        // Validate the feed.
-        $connector->setInput($feed);
-        $response = $connector->execute('markup');
-
-        // Tell PHPUnit of the results.
-        $constraint = new GenericConstraint($connector);
-        self::assertThat($response, $constraint, $message);
-    }
-
-    /**
-     * Asserts that the feed file is valid.
-     *
-     * @param string         $path       The file path to be validated.
-     * @param string         $message    Test message.
-     * @param FeedConnector  $connector  A connector to a HTML5 validation service.
-     */
-    public static function IsValidFile($path,
-                                       $message = '',
-                                       FeedConnector $connector = null)
-    {
-        // Check that $path is exists.
-        if (!file_exists($path)) {
-            throw new \PHPUnit_Framework_Exception(
-                sprintf('File "%s" does not exist.' . "\n", $path)
-                );
-        }
-
-        // Get file contents.
-        $feed = file_get_contents($path);
-        if ($feed === false) {
-            throw new \PHPUnit_Framework_Exception(
-                sprintf('Cannot read file "%s".' . "\n", $path)
-                );
-        }
-
-        // Assign connector if there isn't one already.
-        if ($connector === null) {
-            $connector = new FeedW3CConnector();
-        }
-
-        // Validate the feed
-        $connector->setInput($feed);
-        $response = $connector->execute('file');
-
-        // Tell PHPUnit of the results.
-        $constraint = new GenericConstraint($connector);
-        self::assertThat($response, $constraint, $message);
-    }
-
-    /**
-     * Asserts that the feed url is valid.
-     *
-     * @param string         $url        The external url to be validated.
-     * @param string         $message    Test message.
-     * @param FeedConnector  $connector  A connector to a HTML5 validation service.
-     */
-    public static function IsValidURL($url,
-                                      $message = '',
-                                      FeedConnector $connector = null)
-    {
-        // Check that $url is a string.
-        if (empty($url) || !is_string($url)) {
-            throw \PHPUnit_Util_InvalidArgumentHelper::factory(
-                1, 'string'
-                );
-        }
-
-        // Check that $url is a valid url.
-        if (filter_var($url, FILTER_VALIDATE_URL) === false) {
-            throw new \PHPUnit_Framework_Exception("Url is not valid.\n");
-        }
-
-        // Assign connector if there isn't one already.
-        if ($connector === null) {
-            $connector = new FeedW3CConnector();
-        }
-
-        // Validate the feed
-        $connector->setInput($url);
-        $response = $connector->execute('url');
-
-        // Tell PHPUnit of the results.
-        $constraint = new GenericConstraint($connector);
-        self::assertThat($response, $constraint, $message);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

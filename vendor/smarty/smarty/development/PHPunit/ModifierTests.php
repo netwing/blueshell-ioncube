@@ -1,190 +1,110 @@
-<?php
-/**
-* Smarty PHPunit tests of modifier
-*
-* @package PHPunit
-* @author Uwe Tews
-*/
-
-/**
-* class for modifier tests
-*/
-class ModifierTests extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $this->smarty = SmartyTests::$smarty;
-        SmartyTests::init();
-    }
-
-    static function isRunnable()
-    {
-        return true;
-    }
-
-    /**
-    * test PHP function as modifier
-    */
-    public function testPHPFunctionModifier()
-    {
-        $this->smarty->security_policy->php_modifiers = array('strlen');
-        $tpl = $this->smarty->createTemplate('eval:{"hello world"|strlen}');
-        $this->assertEquals("11", $this->smarty->fetch($tpl));
-    }
-    public function testPHPFunctionModifier2()
-    {
-        $this->smarty->security_policy->php_modifiers = array('strlen');
-        $tpl = $this->smarty->createTemplate('eval:{assign var=foo value="hello world"}{$foo|strlen}');
-        $this->assertEquals("11", $this->smarty->fetch($tpl));
-    }
-    /**
-    * test plugin as modifier
-    */
-    public function testPluginModifier()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{"hello world"|truncate:6}');
-        $this->assertEquals("hel...", $this->smarty->fetch($tpl));
-    }
-    /**
-    * test plugin as modifier with variable
-    */
-    public function testPluginModifierVar()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{"hello world"|truncate:$foo}');
-        $tpl->assign('foo', 6);
-        $this->assertEquals("hel...", $this->smarty->fetch($tpl));
-    }
-    public function testPluginModifierVar2()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{"hello world"|truncate:$foo:"   "}');
-        $tpl->assign('foo', 6);
-        $this->assertEquals("hel   ", $this->smarty->fetch($tpl));
-    }
-    public function testPluginModifierVar3()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{"hello world"|truncate:$foo:$bar}');
-        $tpl->assign('foo', 6);
-        $tpl->assign('bar', '   ');
-        $this->assertEquals("hel   ", $this->smarty->fetch($tpl));
-    }
-    /**
-    * test modifier chaining
-    */
-    public function testModifierChaining()
-    {
-        $this->smarty->security_policy->php_modifiers = array('strlen');
-        $tpl = $this->smarty->createTemplate('eval:{"hello world"|truncate:6|strlen}');
-        $this->assertEquals("6", $this->smarty->fetch($tpl));
-    }
-   /**
-    * test modifier in {if}
-    */
-    public function testModifierInsideIf()
-    {
-        $this->smarty->security_policy->php_modifiers = array('strlen');
-        $tpl = $this->smarty->createTemplate('eval:{if "hello world"|truncate:6|strlen == 6}okay{/if}');
-        $this->assertEquals("okay", $this->smarty->fetch($tpl));
-    }
-   /**
-    * test modifier in expressions
-    */
-    public function testModifierInsideExpression()
-    {
-        $this->smarty->security_policy->php_modifiers = array('strlen');
-        $tpl = $this->smarty->createTemplate('eval:{"hello world"|truncate:6|strlen + ("hello world"|truncate:8|strlen)}');
-        $this->assertEquals("14", $this->smarty->fetch($tpl));
-    }
-    public function testModifierInsideExpression2()
-    {
-        $this->smarty->security_policy->php_modifiers = array('round');
-        $tpl = $this->smarty->createTemplate('eval:{1.1*7.1|round}');
-        $this->assertEquals("7.7", $this->smarty->fetch($tpl));
-    }
-    /**
-    * test modifier at plugin result
-    */
-    public function testModifierAtPluginResult()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{counter|truncate:5 start=100000}');
-        $this->assertEquals("10...", $this->smarty->fetch($tpl));
-    }
-    /**
-    * test unqouted string as modifier parameter
-    */
-    public function testModifierUnqoutedString()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{"hello world"|replace:hello:xxxxx}');
-        $this->assertEquals("xxxxx world", $this->smarty->fetch($tpl));
-    }
-    /**
-    * test registered modifier function
-    */
-    public function testModifierRegisteredFunction()
-    {
-        $this->smarty->registerPlugin(Smarty::PLUGIN_MODIFIER,'testmodifier','testmodifier');
-        $tpl = $this->smarty->createTemplate('eval:{$foo|testmodifier}');
-        $tpl->assign('foo',2);
-        $this->assertEquals("mymodifier function 2", $this->smarty->fetch($tpl));
-    }
-    /**
-    * test registered modifier static class
-    */
-    public function testModifierRegisteredStaticClass()
-    {
-        $this->smarty->registerPlugin(Smarty::PLUGIN_MODIFIER,'testmodifier',array('testmodifierclass','staticcall'));
-        $tpl = $this->smarty->createTemplate('eval:{$foo|testmodifier}');
-        $tpl->assign('foo',1);
-        $this->assertEquals("mymodifier static 1", $this->smarty->fetch($tpl));
-    }
-    /**
-    * test registered modifier methode call
-    */
-    public function testModifierRegisteredMethodCall()
-    {
-        $obj= new testmodifierclass();
-        $this->smarty->registerPlugin(Smarty::PLUGIN_MODIFIER,'testmodifier',array($obj,'method'));
-        $tpl = $this->smarty->createTemplate('eval:{$foo|testmodifier}');
-        $tpl->assign('foo',3);
-        $this->assertEquals("mymodifier method 3", $this->smarty->fetch($tpl));
-    }
-    /**
-    * test unknown modifier error
-    */
-    public function testUnknownModifier()
-    {
-        try {
-            $this->smarty->fetch('eval:{"hello world"|unknown}');
-        } catch (Exception $e) {
-            $this->assertContains('unknown modifier "unknown"', $e->getMessage());
-
-            return;
-        }
-        $this->fail('Exception for unknown modifier has not been raised.');
-    }
-    /**
-    * test default modifier
-    */
-    public function testDefaultModifier()
-    {
-        $this->smarty->default_modifiers = array('escape');
-        $tpl = $this->smarty->createTemplate('eval:{$foo}{$foo nofilter}');
-        $tpl->assign('foo','<bar>');
-        $this->assertEquals('&lt;bar&gt;<bar>', $this->smarty->fetch($tpl));
-    }
-
-}
-function testmodifier($value)
-{
-    return "mymodifier function $value";
-}
-class testmodifierclass
-{
-    static function staticcall($value)
-    {
-        return "mymodifier static $value";
-    }
-    public function method($value)
-    {
-        return "mymodifier method $value";
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

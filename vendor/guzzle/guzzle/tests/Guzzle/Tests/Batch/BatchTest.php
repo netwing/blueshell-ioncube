@@ -1,91 +1,75 @@
-<?php
-
-namespace Guzzle\Tests\Batch;
-
-use Guzzle\Batch\Batch;
-use Guzzle\Batch\Exception\BatchTransferException;
-
-/**
- * @covers Guzzle\Batch\Batch
- */
-class BatchTest extends \Guzzle\Tests\GuzzleTestCase
-{
-    private function getMockTransfer()
-    {
-        return $this->getMock('Guzzle\Batch\BatchTransferInterface');
-    }
-
-    private function getMockDivisor()
-    {
-        return $this->getMock('Guzzle\Batch\BatchDivisorInterface');
-    }
-
-    public function testAddsItemsToQueue()
-    {
-        $batch = new Batch($this->getMockTransfer(), $this->getMockDivisor());
-        $this->assertSame($batch, $batch->add('foo'));
-        $this->assertEquals(1, count($batch));
-    }
-
-    public function testFlushReturnsItems()
-    {
-        $transfer = $this->getMockTransfer();
-        $transfer->expects($this->exactly(2))
-            ->method('transfer');
-
-        $divisor = $this->getMockDivisor();
-        $divisor->expects($this->once())
-            ->method('createBatches')
-            ->will($this->returnValue(array(array('foo', 'baz'), array('bar'))));
-
-        $batch = new Batch($transfer, $divisor);
-
-        $batch->add('foo')->add('baz')->add('bar');
-        $items = $batch->flush();
-
-        $this->assertEquals(array('foo', 'baz', 'bar'), $items);
-    }
-
-    public function testThrowsExceptionContainingTheFailedBatch()
-    {
-        $called = 0;
-        $originalException = new \Exception('Foo!');
-
-        $transfer = $this->getMockTransfer();
-        $transfer->expects($this->exactly(2))
-            ->method('transfer')
-            ->will($this->returnCallback(function () use (&$called, $originalException) {
-                if (++$called == 2) {
-                    throw $originalException;
-                }
-            }));
-
-        $divisor = $this->getMockDivisor();
-        $batch = new Batch($transfer, $divisor);
-
-        // PHPunit clones objects before passing them to a callback.
-        // Horrible hack to get around this!
-        $queue = $this->readAttribute($batch, 'queue');
-
-        $divisor->expects($this->once())
-            ->method('createBatches')
-            ->will($this->returnCallback(function ($batch) use ($queue) {
-                foreach ($queue as $item) {
-                    $items[] = $item;
-                }
-                return array_chunk($items, 2);
-            }));
-
-        $batch->add('foo')->add('baz')->add('bar')->add('bee')->add('boo');
-        $this->assertFalse($batch->isEmpty());
-
-        try {
-            $items = $batch->flush();
-            $this->fail('Expected exception');
-        } catch (BatchTransferException $e) {
-            $this->assertEquals($originalException, $e->getPrevious());
-            $this->assertEquals(array('bar', 'bee'), array_values($e->getBatch()));
-            $this->assertEquals(1, count($batch));
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

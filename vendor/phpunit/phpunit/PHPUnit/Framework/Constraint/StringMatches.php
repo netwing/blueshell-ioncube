@@ -1,134 +1,50 @@
-<?php
-/**
- * PHPUnit
- *
- * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @package    PHPUnit
- * @subpackage Framework_Constraint
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @author     Bernhard Schussek <bschussek@2bepublished.at>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      File available since Release 3.5.0
- */
-
-/**
- * ...
- *
- * @package    PHPUnit
- * @subpackage Framework_Constraint
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @author     Bernhard Schussek <bschussek@2bepublished.at>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      Class available since Release 3.5.0
- */
-class PHPUnit_Framework_Constraint_StringMatches extends PHPUnit_Framework_Constraint_PCREMatch
-{
-    /**
-     * @var string
-     */
-    protected $string;
-
-    /**
-     * @param string $string
-     */
-    public function __construct($string)
-    {
-        $this->pattern = $this->createPatternFromFormat(
-            preg_replace('/\r\n/', "\n", $string)
-        );
-        $this->string  = $string;
-    }
-
-    protected function failureDescription($other)
-    {
-        return "format description matches text";
-    }
-
-    protected function additionalFailureDescription($other)
-    {
-        $from = preg_split('(\r\n|\r|\n)', $this->string);
-        $to = preg_split('(\r\n|\r|\n)', $other);
-        foreach ($from as $index => $line) {
-            if (isset($to[$index]) && $line !== $to[$index]) {
-                $line = $this->createPatternFromFormat($line);
-                if (preg_match($line, $to[$index]) > 0) {
-                    $from[$index] = $to[$index];
-                }
-            }
-        }
-        $this->string = join("\n", $from);
-        $other = join("\n", $to);
-        return PHPUnit_Util_Diff::diff($this->string, $other);
-    }
-
-    protected function createPatternFromFormat($string)
-    {
-        $string = str_replace(
-          array(
-            '%e',
-            '%s',
-            '%S',
-            '%a',
-            '%A',
-            '%w',
-            '%i',
-            '%d',
-            '%x',
-            '%f',
-            '%c'
-          ),
-          array(
-            '\\' . DIRECTORY_SEPARATOR,
-            '[^\r\n]+',
-            '[^\r\n]*',
-            '.+',
-            '.*',
-            '\s*',
-            '[+-]?\d+',
-            '\d+',
-            '[0-9a-fA-F]+',
-            '[+-]?\.?\d+\.?\d*(?:[Ee][+-]?\d+)?',
-            '.'
-          ),
-          preg_quote($string, '/')
-        );
-        return '/^' . $string . '$/s';
-    }
-
-}
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

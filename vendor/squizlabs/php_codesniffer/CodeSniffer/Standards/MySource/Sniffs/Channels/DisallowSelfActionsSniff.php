@@ -1,137 +1,71 @@
-<?php
-/**
- * Ensures that self and static are not used to call public methods in action classes.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer_MySource
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Ensures that self and static are not used to call public methods in action classes.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer_MySource
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class MySource_Sniffs_Channels_DisallowSelfActionsSniff implements PHP_CodeSniffer_Sniff
-{
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        return array(T_CLASS);
-
-    }//end register()
-
-
-    /**
-     * Processes this sniff, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token in
-     *                                        the stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-
-        // We are not interested in abstract classes.
-        $prev = $phpcsFile->findPrevious(T_WHITESPACE, ($stackPtr - 1), null, true);
-        if ($prev !== false && $tokens[$prev]['code'] === T_ABSTRACT) {
-            return;
-        }
-
-        // We are only interested in Action classes.
-        $classNameToken = $phpcsFile->findNext(T_WHITESPACE, ($stackPtr + 1), null, true);
-        $className      = $tokens[$classNameToken]['content'];
-        if (substr($className, -7) !== 'Actions') {
-            return;
-        }
-
-        $foundFunctions = array();
-        $foundCalls     = array();
-
-        // Find all static method calls in the form self::method() in the class.
-        $classEnd = $tokens[$stackPtr]['scope_closer'];
-        for ($i = ($classNameToken + 1); $i < $classEnd; $i++) {
-            if ($tokens[$i]['code'] !== T_DOUBLE_COLON) {
-                if ($tokens[$i]['code'] === T_FUNCTION) {
-                    // Cache the function information.
-                    $funcName  = $phpcsFile->findNext(T_STRING, ($i + 1));
-                    $funcScope = $phpcsFile->findPrevious(PHP_CodeSniffer_Tokens::$scopeModifiers, ($i - 1));
-
-                    $foundFunctions[$tokens[$funcName]['content']] = strtolower($tokens[$funcScope]['content']);
-                }
-
-                continue;
-            }
-
-            $prevToken = $phpcsFile->findPrevious(T_WHITESPACE, ($i - 1), null, true);
-            if ($tokens[$prevToken]['content'] !== 'self'
-                && $tokens[$prevToken]['content'] !== 'static'
-            ) {
-                continue;
-            }
-
-            $funcNameToken = $phpcsFile->findNext(T_WHITESPACE, ($i + 1), null, true);
-            if ($tokens[$funcNameToken]['code'] === T_VARIABLE) {
-                // We are only interested in function calls.
-                continue;
-            }
-
-            $funcName = $tokens[$funcNameToken]['content'];
-
-            // We've found the function, now we need to find it and see if it is
-            // public, private or protected. If it starts with an underscore we
-            // can assume it is private.
-            if ($funcName{0} === '_') {
-                continue;
-            }
-
-            $foundCalls[$i] = array(
-                               'name' => $funcName,
-                               'type' => strtolower($tokens[$prevToken]['content']),
-                              );
-        }//end for
-
-        $errorClassName = substr($className, 0, -7);
-
-        foreach ($foundCalls as $token => $funcData) {
-            if (isset($foundFunctions[$funcData['name']]) === false) {
-                // Function was not in this class, might have come from the parent.
-                // Either way, we can't really check this.
-                continue;
-            } else if ($foundFunctions[$funcData['name']] === 'public') {
-                $type  = $funcData['type'];
-                $error = "Static calls to public methods in Action classes must not use the $type keyword; use %s::%s() instead";
-                $data  = array(
-                          $errorClassName,
-                          $funcName,
-                         );
-                $phpcsFile->addError($error, $token, 'Found'.ucfirst($funcData['type']), $data);
-            }
-        }
-
-    }//end process()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

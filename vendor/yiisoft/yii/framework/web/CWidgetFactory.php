@@ -1,197 +1,96 @@
-<?php
-/**
- * CWidgetFactory class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-
-/**
- * CWidgetFactory creates new widgets to be used in views.
- *
- * CWidgetFactory is used as the default "widgetFactory" application component.
- *
- * When calling {@link CBaseController::createWidget}, {@link CBaseController::widget}
- * or {@link CBaseController::beginWidget}, if the "widgetFactory" component is installed,
- * it will be used to create the requested widget. To install the "widgetFactory" component,
- * we should have the following application configuration:
- * <pre>
- * return array(
- *     'components'=>array(
- *         'widgetFactory'=>array(
- *             'class'=>'CWidgetFactory',
- *         ),
- *     ),
- * )
- * </pre>
- *
- * CWidgetFactory implements the "skin" feature, which allows a new widget to be created
- * and initialized with a set of predefined property values (called skin).
- *
- * When CWidgetFactory is used to create a new widget, it will first instantiate the
- * widget instance. It then checks if there is a skin available for this widget
- * according to the widget class name and the widget {@link CWidget::skin} property.
- * If a skin is found, it will be merged with the initial properties passed via
- * {@link createWidget}. Then the merged initial properties will be used to initialize
- * the newly created widget instance.
- *
- * As aforementioned, a skin is a set of initial property values for a widget.
- * It is thus represented as an associative array of name-value pairs.
- * Skins are stored in PHP scripts like other configurations. Each script file stores the skins
- * for a particular widget type and is named as the widget class name (e.g. CLinkPager.php).
- * Each widget type may have one or several skins, identified by the skin name set via
- * {@link CWidget::skin} property. If the {@link CWidget::skin} property is not set for a given
- * widget, it means the default skin would be used. The following shows the possible skins for
- * the {@link CLinkPager} widget:
- * <pre>
- * return array(
- *     'default'=>array(
- *         'nextPageLabel'=>'&gt;&gt;',
- *         'prevPageLabel'=>'&lt;&lt;',
- *     ),
- *     'short'=>array(
- *         'header'=>'',
- *         'maxButtonCount'=>5,
- *     ),
- * );
- * </pre>
- * In the above, there are two skins. The first one is the default skin which is indexed by the string "default".
- * Note that {@link CWidget::skin} defaults to "default". Therefore, this is the skin that will be applied
- * if we do not explicitly specify the {@link CWidget::skin} property.
- * The second one is named as the "short" skin which will be used only when we set {@link CWidget::skin}
- * to be "short".
- *
- * By default, CWidgetFactory looks for the skin of a widget under the "skins" directory
- * of the current application's {@link CWebApplication::viewPath} (e.g. protected/views/skins).
- * If a theme is being used, it will look for the skin under the "skins" directory of
- * the theme's {@link CTheme::viewPath} (as well as the aforementioned skin directory).
- * In case the specified skin is not found, a widget will still be created
- * normally without causing any error.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.web
- * @since 1.1
- */
-class CWidgetFactory extends CApplicationComponent implements IWidgetFactory
-{
-	/**
-	 * @var boolean whether to enable widget skinning. Defaults to false.
-	 * @see skinnableWidgets
-	 * @since 1.1.3
-	 */
-	public $enableSkin=false;
-	/**
-	 * @var array widget initial property values. Each array key-value pair
-	 * represents the initial property values for a single widget class, with
-	 * the array key being the widget class name, and array value being the initial
-	 * property value array. For example,
-	 * <pre>
-	 * array(
-	 *     'CLinkPager'=>array(
-	 *         'maxButtonCount'=>5,
-	 *         'cssFile'=>false,
-	 *     ),
-	 *     'CJuiDatePicker'=>array(
-	 *         'language'=>'ru',
-	 *     ),
-	 * )
-	 * </pre>
-	 *
-	 * Note that the initial values specified here may be overridden by
-	 * the values given in {@link CBaseController::createWidget} calls.
-	 * They may also be overridden by widget skins, if {@link enableSkin} is true.
-	 * @since 1.1.3
-	 */
-	public $widgets=array();
-	/**
-	 * @var array list of widget class names that can be skinned.
-	 * Because skinning widgets has performance impact, you may want to specify this property
-	 * to limit skinning only to specific widgets. Any widgets that are not in this list
-	 * will not be skinned. Defaults to null, meaning all widgets can be skinned.
-	 * @since 1.1.3
-	 */
-	public $skinnableWidgets;
-	/**
-	 * @var string the directory containing all the skin files. Defaults to null,
-	 * meaning using the "skins" directory under the current application's {@link CWebApplication::viewPath}.
-	 */
-	public $skinPath;
-
-	private $_skins=array();  // class name, skin name, property name => value
-
-	/**
-	 * Initializes the application component.
-	 * This method overrides the parent implementation by resolving the skin path.
-	 */
-	public function init()
-	{
-		parent::init();
-
-		if($this->enableSkin && $this->skinPath===null)
-			$this->skinPath=Yii::app()->getViewPath().DIRECTORY_SEPARATOR.'skins';
-	}
-
-	/**
-	 * Creates a new widget based on the given class name and initial properties.
-	 * @param CBaseController $owner the owner of the new widget
-	 * @param string $className the class name of the widget. This can also be a path alias (e.g. system.web.widgets.COutputCache)
-	 * @param array $properties the initial property values (name=>value) of the widget.
-	 * @return CWidget the newly created widget whose properties have been initialized with the given values.
-	 */
-	public function createWidget($owner,$className,$properties=array())
-	{
-		$className=Yii::import($className,true);
-		$widget=new $className($owner);
-
-		if(isset($this->widgets[$className]))
-			$properties=$properties===array() ? $this->widgets[$className] : CMap::mergeArray($this->widgets[$className],$properties);
-		if($this->enableSkin)
-		{
-			if($this->skinnableWidgets===null || in_array($className,$this->skinnableWidgets))
-			{
-				$skinName=isset($properties['skin']) ? $properties['skin'] : 'default';
-				if($skinName!==false && ($skin=$this->getSkin($className,$skinName))!==array())
-					$properties=$properties===array() ? $skin : CMap::mergeArray($skin,$properties);
-			}
-		}
-		foreach($properties as $name=>$value)
-			$widget->$name=$value;
-		return $widget;
-	}
-
-	/**
-	 * Returns the skin for the specified widget class and skin name.
-	 * @param string $className the widget class name
-	 * @param string $skinName the widget skin name
-	 * @return array the skin (name=>value) for the widget
-	 */
-	protected function getSkin($className,$skinName)
-	{
-		if(!isset($this->_skins[$className][$skinName]))
-		{
-			$skinFile=$this->skinPath.DIRECTORY_SEPARATOR.$className.'.php';
-			if(is_file($skinFile))
-				$this->_skins[$className]=require($skinFile);
-			else
-				$this->_skins[$className]=array();
-
-			if(($theme=Yii::app()->getTheme())!==null)
-			{
-				$skinFile=$theme->getSkinPath().DIRECTORY_SEPARATOR.$className.'.php';
-				if(is_file($skinFile))
-				{
-					$skins=require($skinFile);
-					foreach($skins as $name=>$skin)
-						$this->_skins[$className][$name]=$skin;
-				}
-			}
-
-			if(!isset($this->_skins[$className][$skinName]))
-				$this->_skins[$className][$skinName]=array();
-		}
-		return $this->_skins[$className][$skinName];
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

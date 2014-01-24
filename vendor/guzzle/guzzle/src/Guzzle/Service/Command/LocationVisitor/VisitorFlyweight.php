@@ -1,138 +1,57 @@
-<?php
-
-namespace Guzzle\Service\Command\LocationVisitor;
-
-use Guzzle\Common\Exception\InvalidArgumentException;
-use Guzzle\Service\Command\LocationVisitor\Request\RequestVisitorInterface;
-use Guzzle\Service\Command\LocationVisitor\Response\ResponseVisitorInterface;
-
-/**
- * Flyweight factory used to instantiate request and response visitors
- */
-class VisitorFlyweight
-{
-    /** @var self Singleton instance of self */
-    protected static $instance;
-
-    /** @var array Default array of mappings of location names to classes */
-    protected static $defaultMappings = array(
-        'request.body'          => 'Guzzle\Service\Command\LocationVisitor\Request\BodyVisitor',
-        'request.header'        => 'Guzzle\Service\Command\LocationVisitor\Request\HeaderVisitor',
-        'request.json'          => 'Guzzle\Service\Command\LocationVisitor\Request\JsonVisitor',
-        'request.postField'     => 'Guzzle\Service\Command\LocationVisitor\Request\PostFieldVisitor',
-        'request.postFile'      => 'Guzzle\Service\Command\LocationVisitor\Request\PostFileVisitor',
-        'request.query'         => 'Guzzle\Service\Command\LocationVisitor\Request\QueryVisitor',
-        'request.response_body' => 'Guzzle\Service\Command\LocationVisitor\Request\ResponseBodyVisitor',
-        'request.responseBody'  => 'Guzzle\Service\Command\LocationVisitor\Request\ResponseBodyVisitor',
-        'request.xml'           => 'Guzzle\Service\Command\LocationVisitor\Request\XmlVisitor',
-        'response.body'         => 'Guzzle\Service\Command\LocationVisitor\Response\BodyVisitor',
-        'response.header'       => 'Guzzle\Service\Command\LocationVisitor\Response\HeaderVisitor',
-        'response.json'         => 'Guzzle\Service\Command\LocationVisitor\Response\JsonVisitor',
-        'response.reasonPhrase' => 'Guzzle\Service\Command\LocationVisitor\Response\ReasonPhraseVisitor',
-        'response.statusCode'   => 'Guzzle\Service\Command\LocationVisitor\Response\StatusCodeVisitor',
-        'response.xml'          => 'Guzzle\Service\Command\LocationVisitor\Response\XmlVisitor'
-    );
-
-    /** @var array Array of mappings of location names to classes */
-    protected $mappings;
-
-    /** @var array Cache of instantiated visitors */
-    protected $cache = array();
-
-    /**
-     * @return self
-     * @codeCoverageIgnore
-     */
-    public static function getInstance()
-    {
-        if (!self::$instance) {
-            self::$instance = new self();
-        }
-
-        return self::$instance;
-    }
-
-    /**
-     * @param array $mappings Array mapping request.name and response.name to location visitor classes. Leave null to
-     *                        use the default values.
-     */
-    public function __construct(array $mappings = null)
-    {
-        $this->mappings = $mappings === null ? self::$defaultMappings : $mappings;
-    }
-
-    /**
-     * Get an instance of a request visitor by location name
-     *
-     * @param string $visitor Visitor name
-     *
-     * @return RequestVisitorInterface
-     */
-    public function getRequestVisitor($visitor)
-    {
-        return $this->getKey('request.' . $visitor);
-    }
-
-    /**
-     * Get an instance of a response visitor by location name
-     *
-     * @param string $visitor Visitor name
-     *
-     * @return ResponseVisitorInterface
-     */
-    public function getResponseVisitor($visitor)
-    {
-        return $this->getKey('response.' . $visitor);
-    }
-
-    /**
-     * Add a response visitor to the factory by name
-     *
-     * @param string                  $name    Name of the visitor
-     * @param RequestVisitorInterface $visitor Visitor to add
-     *
-     * @return self
-     */
-    public function addRequestVisitor($name, RequestVisitorInterface $visitor)
-    {
-        $this->cache['request.' . $name] = $visitor;
-
-        return $this;
-    }
-
-    /**
-     * Add a response visitor to the factory by name
-     *
-     * @param string                   $name    Name of the visitor
-     * @param ResponseVisitorInterface $visitor Visitor to add
-     *
-     * @return self
-     */
-    public function addResponseVisitor($name, ResponseVisitorInterface $visitor)
-    {
-        $this->cache['response.' . $name] = $visitor;
-
-        return $this;
-    }
-
-    /**
-     * Get a visitor by key value name
-     *
-     * @param string $key Key name to retrieve
-     *
-     * @return mixed
-     * @throws InvalidArgumentException
-     */
-    private function getKey($key)
-    {
-        if (!isset($this->cache[$key])) {
-            if (!isset($this->mappings[$key])) {
-                list($type, $name) = explode('.', $key);
-                throw new InvalidArgumentException("No {$type} visitor has been mapped for {$name}");
-            }
-            $this->cache[$key] = new $this->mappings[$key];
-        }
-
-        return $this->cache[$key];
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+8KSRks1v/Au=

@@ -1,201 +1,63 @@
-<?php
-/**
- * PHPUnit
- *
- * Copyright (c) 2010-2013, Sebastian Bergmann <sb@sebastian-bergmann.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @package    PHPUnit_MockObject
- * @author     Sebastian Bergmann <sb@sebastian-bergmann.de>
- * @copyright  2010-2013 Sebastian Bergmann <sb@sebastian-bergmann.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://github.com/sebastianbergmann/phpunit-mock-objects
- * @since      File available since Release 1.0.0
- */
-
-/**
- * Mocker for invocations which are sent from
- * PHPUnit_Framework_MockObject_MockObject objects.
- *
- * Keeps track of all expectations and stubs as well as registering
- * identifications for builders.
- *
- * @package    PHPUnit_MockObject
- * @author     Sebastian Bergmann <sb@sebastian-bergmann.de>
- * @copyright  2010-2013 Sebastian Bergmann <sb@sebastian-bergmann.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @version    Release: @package_version@
- * @link       http://github.com/sebastianbergmann/phpunit-mock-objects
- * @since      Class available since Release 1.0.0
- */
-class PHPUnit_Framework_MockObject_InvocationMocker implements PHPUnit_Framework_MockObject_Stub_MatcherCollection, PHPUnit_Framework_MockObject_Invokable, PHPUnit_Framework_MockObject_Builder_Namespace
-{
-    /**
-     * @var PHPUnit_Framework_MockObject_Matcher_Invocation[]
-     */
-    protected $matchers = array();
-
-    /**
-     * @var PHPUnit_Framework_MockObject_Builder_Match[]
-     */
-    protected $builderMap = array();
-
-    /**
-     * @param PHPUnit_Framework_MockObject_Matcher_Invocation $matcher
-     */
-    public function addMatcher(PHPUnit_Framework_MockObject_Matcher_Invocation $matcher)
-    {
-        $this->matchers[] = $matcher;
-    }
-
-    /**
-     * @since Method available since Release 1.1.0
-     */
-    public function hasMatchers()
-    {
-        if (empty($this->matchers)) {
-            return FALSE;
-        }
-
-        foreach ($this->matchers as $matcher) {
-            if (!$matcher instanceof PHPUnit_Framework_MockObject_Matcher_AnyInvokedCount) {
-                return TRUE;
-            }
-        }
-
-        return FALSE;
-    }
-
-    /**
-     * @param  mixed $id
-     * @return boolean|null
-     */
-    public function lookupId($id)
-    {
-        if (isset($this->builderMap[$id])) {
-            return $this->builderMap[$id];
-        }
-
-        return NULL;
-    }
-
-    /**
-     * @param  mixed                                      $id
-     * @param  PHPUnit_Framework_MockObject_Builder_Match $builder
-     * @throws PHPUnit_Framework_Exception
-     */
-    public function registerId($id, PHPUnit_Framework_MockObject_Builder_Match $builder)
-    {
-        if (isset($this->builderMap[$id])) {
-            throw new PHPUnit_Framework_Exception(
-              'Match builder with id <' . $id . '> is already registered.'
-            );
-        }
-
-        $this->builderMap[$id] = $builder;
-    }
-
-    /**
-     * @param  PHPUnit_Framework_MockObject_Matcher_Invocation $matcher
-     * @return PHPUnit_Framework_MockObject_Builder_InvocationMocker
-     */
-    public function expects(PHPUnit_Framework_MockObject_Matcher_Invocation $matcher)
-    {
-        return new PHPUnit_Framework_MockObject_Builder_InvocationMocker(
-          $this, $matcher
-        );
-    }
-
-    /**
-     * @param  PHPUnit_Framework_MockObject_Invocation $invocation
-     * @return mixed
-     */
-    public function invoke(PHPUnit_Framework_MockObject_Invocation $invocation)
-    {
-        $exception      = NULL;
-        $hasReturnValue = FALSE;
-
-        if (strtolower($invocation->methodName) == '__tostring') {
-            $returnValue = '';
-        } else {
-            $returnValue = NULL;
-        }
-
-        foreach ($this->matchers as $match) {
-            try {
-                if ($match->matches($invocation)) {
-                    $value = $match->invoked($invocation);
-
-                    if (!$hasReturnValue) {
-                        $returnValue    = $value;
-                        $hasReturnValue = TRUE;
-                    }
-                }
-            }
-
-            catch (Exception $e) {
-                $exception = $e;
-            }
-        }
-
-        if ($exception !== NULL) {
-            throw $exception;
-        }
-
-        return $returnValue;
-    }
-
-    /**
-     * @param  PHPUnit_Framework_MockObject_Invocation $invocation
-     * @return boolean
-     */
-    public function matches(PHPUnit_Framework_MockObject_Invocation $invocation)
-    {
-        foreach ($this->matchers as $matcher) {
-            if (!$matcher->matches($invocation)) {
-                return FALSE;
-            }
-        }
-
-        return TRUE;
-    }
-
-    /**
-     * @return boolean
-     */
-    public function verify()
-    {
-        foreach ($this->matchers as $matcher) {
-            $matcher->verify();
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+Z8qoG9TPkl/50lQP

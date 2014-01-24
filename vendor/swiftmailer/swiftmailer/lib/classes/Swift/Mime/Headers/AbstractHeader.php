@@ -1,504 +1,164 @@
-<?php
-
-/*
- * This file is part of SwiftMailer.
- * (c) 2004-2009 Chris Corbyn
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-/**
- * An abstract base MIME Header.
- *
- * @package    Swift
- * @subpackage Mime
- * @author     Chris Corbyn
- */
-abstract class Swift_Mime_Headers_AbstractHeader implements Swift_Mime_Header
-{
-    /**
-     * The name of this Header.
-     *
-     * @var string
-     */
-    private $_name;
-
-    /**
-     * The Grammar used for this Header.
-     *
-     * @var Swift_Mime_Grammar
-     */
-    private $_grammar;
-
-    /**
-     * The Encoder used to encode this Header.
-     *
-     * @var Swift_Encoder
-     */
-    private $_encoder;
-
-    /**
-     * The maximum length of a line in the header.
-     *
-     * @var int
-     */
-    private $_lineLength = 78;
-
-    /**
-     * The language used in this Header.
-     *
-     * @var string
-     */
-    private $_lang;
-
-    /**
-     * The character set of the text in this Header.
-     *
-     * @var string
-     */
-    private $_charset = 'utf-8';
-
-    /**
-     * The value of this Header, cached.
-     *
-     * @var string
-     */
-    private $_cachedValue = null;
-
-    /**
-     * Creates a new Header.
-     *
-     * @param Swift_Mime_Grammar $grammar
-     */
-    public function __construct(Swift_Mime_Grammar $grammar)
-    {
-        $this->setGrammar($grammar);
-    }
-
-    /**
-     * Set the character set used in this Header.
-     *
-     * @param string $charset
-     */
-    public function setCharset($charset)
-    {
-        $this->clearCachedValueIf($charset != $this->_charset);
-        $this->_charset = $charset;
-        if (isset($this->_encoder)) {
-            $this->_encoder->charsetChanged($charset);
-        }
-    }
-
-    /**
-     * Get the character set used in this Header.
-     *
-     * @return string
-     */
-    public function getCharset()
-    {
-        return $this->_charset;
-    }
-
-    /**
-     * Set the language used in this Header.
-     *
-     * For example, for US English, 'en-us'.
-     * This can be unspecified.
-     *
-     * @param string $lang
-     */
-    public function setLanguage($lang)
-    {
-        $this->clearCachedValueIf($this->_lang != $lang);
-        $this->_lang = $lang;
-    }
-
-    /**
-     * Get the language used in this Header.
-     *
-     * @return string
-     */
-    public function getLanguage()
-    {
-        return $this->_lang;
-    }
-
-    /**
-     * Set the encoder used for encoding the header.
-     *
-     * @param Swift_Mime_HeaderEncoder $encoder
-     */
-    public function setEncoder(Swift_Mime_HeaderEncoder $encoder)
-    {
-        $this->_encoder = $encoder;
-        $this->setCachedValue(null);
-    }
-
-    /**
-     * Get the encoder used for encoding this Header.
-     *
-     * @return Swift_Mime_HeaderEncoder
-     */
-    public function getEncoder()
-    {
-        return $this->_encoder;
-    }
-
-    /**
-     * Set the grammar used for the header.
-     *
-     * @param Swift_Mime_Grammar $grammar
-     */
-    public function setGrammar(Swift_Mime_Grammar $grammar)
-    {
-        $this->_grammar = $grammar;
-        $this->setCachedValue(null);
-    }
-
-    /**
-     * Get the grammar used for this Header.
-     *
-     * @return Swift_Mime_Grammar
-     */
-    public function getGrammar()
-    {
-        return $this->_grammar;
-    }
-
-    /**
-     * Get the name of this header (e.g. charset).
-     *
-     * @return string
-     */
-    public function getFieldName()
-    {
-        return $this->_name;
-    }
-
-    /**
-     * Set the maximum length of lines in the header (excluding EOL).
-     *
-     * @param integer $lineLength
-     */
-    public function setMaxLineLength($lineLength)
-    {
-        $this->clearCachedValueIf($this->_lineLength != $lineLength);
-        $this->_lineLength = $lineLength;
-    }
-
-    /**
-     * Get the maximum permitted length of lines in this Header.
-     *
-     * @return int
-     */
-    public function getMaxLineLength()
-    {
-        return $this->_lineLength;
-    }
-
-    /**
-     * Get this Header rendered as a RFC 2822 compliant string.
-     *
-     * @return string
-     *
-     * @throws Swift_RfcComplianceException
-     */
-    public function toString()
-    {
-        return $this->_tokensToString($this->toTokens());
-    }
-
-    /**
-     * Returns a string representation of this object.
-     *
-     * @return string
-     *
-     * @see toString()
-     */
-    public function __toString()
-    {
-        return $this->toString();
-    }
-
-    // -- Points of extension
-
-    /**
-     * Set the name of this Header field.
-     *
-     * @param string $name
-     */
-    protected function setFieldName($name)
-    {
-        $this->_name = $name;
-    }
-
-    /**
-     * Produces a compliant, formatted RFC 2822 'phrase' based on the string given.
-     *
-     * @param Swift_Mime_Header        $header
-     * @param string                   $string  as displayed
-     * @param string                   $charset of the text
-     * @param Swift_Mime_HeaderEncoder $encoder
-     * @param boolean                  $shorten the first line to make remove for header name
-     *
-     * @return string
-     */
-    protected function createPhrase(Swift_Mime_Header $header, $string, $charset, Swift_Mime_HeaderEncoder $encoder = null, $shorten = false)
-    {
-        // Treat token as exactly what was given
-        $phraseStr = $string;
-        // If it's not valid
-        if (!preg_match('/^' . $this->getGrammar()->getDefinition('phrase') . '$/D', $phraseStr)) {
-            // .. but it is just ascii text, try escaping some characters
-            // and make it a quoted-string
-            if (preg_match('/^' . $this->getGrammar()->getDefinition('text') . '*$/D', $phraseStr)) {
-                $phraseStr = $this->getGrammar()->escapeSpecials(
-                    $phraseStr, array('"'), $this->getGrammar()->getSpecials()
-                    );
-                $phraseStr = '"' . $phraseStr . '"';
-            } else { // ... otherwise it needs encoding
-                // Determine space remaining on line if first line
-                if ($shorten) {
-                    $usedLength = strlen($header->getFieldName() . ': ');
-                } else {
-                    $usedLength = 0;
-                }
-                $phraseStr = $this->encodeWords($header, $string, $usedLength);
-            }
-        }
-
-        return $phraseStr;
-    }
-
-    /**
-     * Encode needed word tokens within a string of input.
-     *
-     * @param Swift_Mime_Header $header
-     * @param string            $input
-     * @param string            $usedLength optional
-     *
-     * @return string
-     */
-    protected function encodeWords(Swift_Mime_Header $header, $input, $usedLength = -1)
-    {
-        $value = '';
-
-        $tokens = $this->getEncodableWordTokens($input);
-
-        foreach ($tokens as $token) {
-            // See RFC 2822, Sect 2.2 (really 2.2 ??)
-            if ($this->tokenNeedsEncoding($token)) {
-                // Don't encode starting WSP
-                $firstChar = substr($token, 0, 1);
-                switch ($firstChar) {
-                    case ' ':
-                    case "\t":
-                        $value .= $firstChar;
-                        $token = substr($token, 1);
-                }
-
-                if (-1 == $usedLength) {
-                    $usedLength = strlen($header->getFieldName() . ': ') + strlen($value);
-                }
-                $value .= $this->getTokenAsEncodedWord($token, $usedLength);
-
-                $header->setMaxLineLength(76); // Forcefully override
-            } else {
-                $value .= $token;
-            }
-        }
-
-        return $value;
-    }
-
-    /**
-     * Test if a token needs to be encoded or not.
-     *
-     * @param string $token
-     *
-     * @return boolean
-     */
-    protected function tokenNeedsEncoding($token)
-    {
-        return preg_match('~[\x00-\x08\x10-\x19\x7F-\xFF\r\n]~', $token);
-    }
-
-    /**
-     * Splits a string into tokens in blocks of words which can be encoded quickly.
-     *
-     * @param string $string
-     *
-     * @return string[]
-     */
-    protected function getEncodableWordTokens($string)
-    {
-        $tokens = array();
-
-        $encodedToken = '';
-        // Split at all whitespace boundaries
-        foreach (preg_split('~(?=[\t ])~', $string) as $token) {
-            if ($this->tokenNeedsEncoding($token)) {
-                $encodedToken .= $token;
-            } else {
-                if (strlen($encodedToken) > 0) {
-                    $tokens[] = $encodedToken;
-                    $encodedToken = '';
-                }
-                $tokens[] = $token;
-            }
-        }
-        if (strlen($encodedToken)) {
-            $tokens[] = $encodedToken;
-        }
-
-        return $tokens;
-    }
-
-    /**
-     * Get a token as an encoded word for safe insertion into headers.
-     *
-     * @param string  $token           token to encode
-     * @param integer $firstLineOffset optional
-     *
-     * @return string
-     */
-    protected function getTokenAsEncodedWord($token, $firstLineOffset = 0)
-    {
-        // Adjust $firstLineOffset to account for space needed for syntax
-        $charsetDecl = $this->_charset;
-        if (isset($this->_lang)) {
-            $charsetDecl .= '*' . $this->_lang;
-        }
-        $encodingWrapperLength = strlen(
-            '=?' . $charsetDecl . '?' . $this->_encoder->getName() . '??='
-            );
-
-        if ($firstLineOffset >= 75) { //Does this logic need to be here?
-            $firstLineOffset = 0;
-        }
-
-        $encodedTextLines = explode("\r\n",
-            $this->_encoder->encodeString(
-                $token, $firstLineOffset, 75 - $encodingWrapperLength, $this->_charset
-                )
-        );
-
-        if (strtolower($this->_charset) !== 'iso-2022-jp') { // special encoding for iso-2022-jp using mb_encode_mimeheader
-            foreach ($encodedTextLines as $lineNum => $line) {
-                $encodedTextLines[$lineNum] = '=?' . $charsetDecl .
-                    '?' . $this->_encoder->getName() .
-                    '?' . $line . '?=';
-            }
-        }
-
-        return implode("\r\n ", $encodedTextLines);
-    }
-
-    /**
-     * Generates tokens from the given string which include CRLF as individual tokens.
-     *
-     * @param string $token
-     *
-     * @return string[]
-     */
-    protected function generateTokenLines($token)
-    {
-        return preg_split('~(\r\n)~', $token, -1, PREG_SPLIT_DELIM_CAPTURE);
-    }
-
-    /**
-     * Set a value into the cache.
-     *
-     * @param string $value
-     */
-    protected function setCachedValue($value)
-    {
-        $this->_cachedValue = $value;
-    }
-
-    /**
-     * Get the value in the cache.
-     *
-     * @return string
-     */
-    protected function getCachedValue()
-    {
-        return $this->_cachedValue;
-    }
-
-    /**
-     * Clear the cached value if $condition is met.
-     *
-     * @param boolean $condition
-     */
-    protected function clearCachedValueIf($condition)
-    {
-        if ($condition) {
-            $this->setCachedValue(null);
-        }
-    }
-
-    // -- Private methods
-
-    /**
-     * Generate a list of all tokens in the final header.
-     *
-     * @param string $string The string to tokenize
-     *
-     * @return array An array of tokens as strings
-     */
-    protected function toTokens($string = null)
-    {
-        if (is_null($string)) {
-            $string = $this->getFieldBody();
-        }
-
-        $tokens = array();
-
-        // Generate atoms; split at all invisible boundaries followed by WSP
-        foreach (preg_split('~(?=[ \t])~', $string) as $token) {
-            $newTokens = $this->generateTokenLines($token);
-            foreach ($newTokens as $newToken) {
-                $tokens[] = $newToken;
-            }
-        }
-        return $tokens;
-    }
-
-    /**
-     * Takes an array of tokens which appear in the header and turns them into
-     * an RFC 2822 compliant string, adding FWSP where needed.
-     *
-     * @param string[] $tokens
-     *
-     * @return string
-     */
-    private function _tokensToString(array $tokens)
-    {
-        $lineCount = 0;
-        $headerLines = array();
-        $headerLines[] = $this->_name . ': ';
-        $currentLine =& $headerLines[$lineCount++];
-
-        // Build all tokens back into compliant header
-        foreach ($tokens as $i => $token) {
-            // Line longer than specified maximum or token was just a new line
-            if (("\r\n" == $token) ||
-                ($i > 0 && strlen($currentLine . $token) > $this->_lineLength)
-                && 0 < strlen($currentLine))
-            {
-                $headerLines[] = '';
-                $currentLine =& $headerLines[$lineCount++];
-            }
-
-            // Append token to the line
-            if ("\r\n" != $token) {
-                $currentLine .= $token;
-            }
-        }
-
-        // Implode with FWS (RFC 2822, 2.2.3)
-        return implode("\r\n", $headerLines) . "\r\n";
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

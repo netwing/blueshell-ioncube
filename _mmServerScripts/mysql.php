@@ -1,438 +1,193 @@
-<?php
-// If this file is not included from the MMHTTPDB possible hacking problem.
-if (!function_exists('create_error')){
-	die();
-}
-
-define('MYSQL_NOT_EXISTS', create_error("Your PHP server doesn't have the MySQL module loaded or you can't use the mysql_(p)connect functions."));
-define('CONN_NOT_OPEN_GET_TABLES', create_error('The Connection could not be opened when trying to retrieve the tables.'));
-define('CONN_NOT_OPEN_GET_DB_LIST', create_error('The Connection could not be opened when trying to retrieve the database list.'));
-			 
-if (!function_exists('mysql_connect') || !function_exists('mysql_pconnect') || !extension_loaded('mysql')){
-	echo MYSQL_NOT_EXISTS;
-	die();
-}
-
-// Now let's handle the crashes or any other PHP errors that we can catch
-function KT_ErrorHandler($errno, $errstr, $errfile, $errline) { 
-	global $f, $already_sent;
-	$errortype = array ( 
-		1   =>  "Error", 
-		2   =>  "Warning", 
-		4   =>  "Parsing Error", 
-		8   =>  "Notice", 
-		16  =>  "Core Error", 
-		32  =>  "Core Warning", 
-		64  =>  "Compile Error", 
-		128 =>  "Compile Warning", 
-		256 =>  "User Error", 
-		512 =>  "User Warning", 
-		1024=>  "User Notice",
-		2048=>  "E_ALL",
-		2049=>  "PHP5 E_STRICT"
-	
-	);
-	$str = sprintf("[%s]\n%s:\t%s\nFile:\t\t'%s'\nLine:\t\t%s\n\n", date('d-m-Y H:i:s'),(isset($errortype[@$errno])?$errortype[@$errno]:('Unknown '.$errno)),@$errstr,@$errfile,@$errline);
-	if (error_reporting() != 0) {
-			@fwrite($f, $str);
-			if (@$errno == 2 && isset($already_sent) && !$already_sent==true){
-				$error = '<ERRORS>'."\n";
-				$error .= '<ERROR><DESCRIPTION>An Warning Type error appeared. The error is logged into the log file.</DESCRIPTION></ERROR>'."\n";
-				$error .= '</ERRORS>'."\n";
-				$already_sent = true;
-				echo $error;
-			}
-	}
-}
-if ($debug_to_file){
-		$old_error_handler = set_error_handler("KT_ErrorHandler");
-}
-
-class MySqlConnection
-{
-/*
- // The 'var' keyword is deprecated in PHP5 ... we will define these variables at runtime.
-  var $isOpen;
-	var $hostname;
-	var $database;
-	var $username;
-	var $password;
-	var $timeout;
-	var $connectionId;
-	var $error;
-*/
-	function MySqlConnection($ConnectionString, $Timeout, $Host, $DB, $UID, $Pwd)
-	{
-		$this->isOpen = false;
-		$this->timeout = $Timeout;
-		$this->error = '';
-
-		if( $Host ) { 
-			$this->hostname = $Host;
-		}
-		elseif( preg_match("/host=([^;]+);/", $ConnectionString, $ret) )  {
-			$this->hostname = $ret[1];
-		}
-		
-		if( $DB ) {
-			$this->database = $DB;
-		}
-		elseif( preg_match("/db=([^;]+);/",   $ConnectionString, $ret) ) {
-			$this->database = $ret[1];
-		}
-		
-		if( $UID ) {
-			$this->username = $UID;
-		}
-		elseif( preg_match("/uid=([^;]+);/",  $ConnectionString, $ret) ) {
-			$this->username = $ret[1];
-		}
-		
-		if( $Pwd ) {
-			$this->password = $Pwd;
-		}
-		elseif( preg_match("/pwd=([^;]+);/",  $ConnectionString, $ret) ) {
-			$this->password = $ret[1];
-		}
-	}
-
-	function Open()
-	{
-	  $this->connectionId = mysql_connect($this->hostname, $this->username, $this->password);
-		if (isset($this->connectionId) && $this->connectionId && is_resource($this->connectionId))
-		{
-			$this->isOpen = ($this->database == "") ? true : mysql_select_db($this->database, $this->connectionId);
-		}
-		else
-		{
-			$this->isOpen = false;
-		}	
-	}
-
-	function TestOpen()
-	{
-		return ($this->isOpen) ? '<TEST status=true></TEST>' : $this->HandleException();
-	}
-
-	function Close()
-	{
-		if (is_resource($this->connectionId) && $this->isOpen)
-		{
-			if (mysql_close($this->connectionId))
-			{
-				$this->isOpen = false;
-				unset($this->connectionId);
-			}
-		}
-	}
-
-	function GetTables($table_name = '')
-	{
-		$xmlOutput = "";
-		if ($this->isOpen && isset($this->connectionId) && is_resource($this->connectionId)){
-			// 1. mysql_list_tables and mysql_tablename are deprecated in PHP5
-			// 2. For backward compatibility GetTables don't have any parameters
-			if ($table_name === ''){
-					$table_name = @$_POST['Database'];
-			}
-			//added backtick for handling reserved words and special characters
-			//http://dev.mysql.com/doc/refman/5.0/en/legal-names.html
-			$sql = ' SHOW TABLES FROM ' . $this->ensureTicks($table_name) ;
-			$results = mysql_query($sql, $this->connectionId) or $this->HandleException();
-
-			$xmlOutput = "<RESULTSET><FIELDS>";
-
-			// Columns are referenced by index, so Schema and
-			// Catalog must be specified even though they are not supported
-
-			$xmlOutput .= '<FIELD><NAME>TABLE_CATALOG</NAME></FIELD>';		// column 0 (zero-based)
-			$xmlOutput .= '<FIELD><NAME>TABLE_SCHEMA</NAME></FIELD>';		// column 1
-			$xmlOutput .= '<FIELD><NAME>TABLE_NAME</NAME></FIELD>';		// column 2
-
-			$xmlOutput .= "</FIELDS><ROWS>";
-
-			if (is_resource($results) && mysql_num_rows($results) > 0){
-					while ($row = mysql_fetch_array($results)){
-							$xmlOutput .= '<ROW><VALUE/><VALUE/><VALUE>' . $row[0]. '</VALUE></ROW>';	
-					}
-			}
-			$xmlOutput .= "</ROWS></RESULTSET>";
-
-    }
-		return $xmlOutput;
-	}
-
-	function GetViews()
-	{
-		// not supported
-		return "<RESULTSET><FIELDS></FIELDS><ROWS></ROWS></RESULTSET>";
-	}
-
-	function GetProcedures()
-	{
-		// not supported
-		return "<RESULTSET><FIELDS></FIELDS><ROWS></ROWS></RESULTSET>";
-	}
-
-	function GetColumnsOfTable($TableName)
-	{
-		$xmlOutput = "";
-		//added backtick for handling reserved words and special characters
-		//http://dev.mysql.com/doc/refman/5.0/en/legal-names.html
-		$query  = "DESCRIBE ".$this->ensureTicks($TableName);
-		$result = mysql_query($query) or $this->HandleException();
-
-		if ($result)
-		{
-			$xmlOutput = "<RESULTSET><FIELDS>";
-
-			// Columns are referenced by index, so Schema and
-			// Catalog must be specified even though they are not supported
-			$xmlOutput .= "<FIELD><NAME>TABLE_CATALOG</NAME></FIELD>";		// column 0 (zero-based)
-			$xmlOutput .= "<FIELD><NAME>TABLE_SCHEMA</NAME></FIELD>";		// column 1
-			$xmlOutput .= "<FIELD><NAME>TABLE_NAME</NAME></FIELD>";			// column 2
-			$xmlOutput .= "<FIELD><NAME>COLUMN_NAME</NAME></FIELD>";
-			$xmlOutput .= "<FIELD><NAME>DATA_TYPE</NAME></FIELD>";
-			$xmlOutput .= "<FIELD><NAME>IS_NULLABLE</NAME></FIELD>";
-			$xmlOutput .= "<FIELD><NAME>COLUMN_SIZE</NAME></FIELD>";
-
-			$xmlOutput .= "</FIELDS><ROWS>";
-
-			// The fields returned from DESCRIBE are: Field, Type, Null, Key, Default, Extra
-			while ($row = mysql_fetch_array($result, MYSQL_ASSOC))
-			{
-				$xmlOutput .= "<ROW><VALUE/><VALUE/><VALUE/>";
-
-				// Separate type from size. Format is: type(size)
-				if (preg_match("/(.*)\((.*)\)/", $row["Type"], $ret))
-				{
-					$type = $ret[1];
-					$size = $ret[2];
-				}
-				else
-				{
-					$type = $row["Type"];
-					$size = "";
-				}
-
-				// MySQL sets nullable to "YES" or "", so we need to set "NO"
-				$null = $row["Null"];
-				if ($null == "")
-					$null = "NO";
-
-				$xmlOutput .= "<VALUE>" . $row["Field"] . "</VALUE>";
-				$xmlOutput .= "<VALUE>" . $type         . "</VALUE>";
-				$xmlOutput .= "<VALUE>" . $null         . "</VALUE>";
-				$xmlOutput .= "<VALUE>" . $size         . "</VALUE></ROW>";
-			}
-			mysql_free_result($result);
-
-			$xmlOutput .= "</ROWS></RESULTSET>";
-		}
-
-		return $xmlOutput;
-	}
-
-	function GetParametersOfProcedure($ProcedureName, $SchemaName, $CatalogName)
-	{
-		// not supported on MySQL
-		return '<RESULTSET><FIELDS></FIELDS><ROWS></ROWS></RESULTSET>';
-	}
-
-	function ExecuteSQL($aStatement, $MaxRows)
-	{
-		if ( get_magic_quotes_gpc() )
-		{
-				$aStatement = stripslashes( $aStatement ) ;
-		}
-				
-		$xmlOutput = "";
-
-		$result = mysql_query($aStatement) or $this->HandleException();
-		
-		if (isset($result) && is_resource($result))
-		{
-			$xmlOutput = "<RESULTSET><FIELDS>";
-
-			$fieldCount = mysql_num_fields($result);
-			for ($i=0; $i < $fieldCount; $i++)
-			{
-				$meta = mysql_fetch_field($result);
-				if ($meta)
-				{
-					$xmlOutput .= '<FIELD';
-					$xmlOutput .= ' type="'			    . $meta->type;
-					$xmlOutput .= '" max_length="'	. $meta->max_length;
-					$xmlOutput .= '" table="'			  . $meta->table;
-					$xmlOutput .= '" not_null="'		. $meta->not_null;
-					$xmlOutput .= '" numeric="'		  . $meta->numeric;
-					$xmlOutput .= '" unsigned="'		. $meta->unsigned;
-					$xmlOutput .= '" zerofill="'		. $meta->zerofill;
-					$xmlOutput .= '" primary_key="'	. $meta->primary_key;
-					$xmlOutput .= '" multiple_key="'. $meta->multiple_key;
-					$xmlOutput .= '" unique_key="'	. $meta->unique_key;
-					$xmlOutput .= '"><NAME>'			  . $meta->name;
-					$xmlOutput .= '</NAME></FIELD>';
-				}
-			}
-
-			$xmlOutput .= "</FIELDS><ROWS>";
-			$row = mysql_fetch_assoc($result);
-
-			for ($i=0; $row && ($i < $MaxRows); $i++)
-			{
-				$xmlOutput .= "<ROW>";
-
-				foreach ($row as $key => $value)
-				{
-					$xmlOutput .= "<VALUE>";
-					$xmlOutput .= htmlspecialchars($value);
-					$xmlOutput .= "</VALUE>";
-				}
-
- 				$xmlOutput .= "</ROW>";
-				$row = mysql_fetch_assoc($result);
-			}
-
-			mysql_free_result($result);
-
-			$xmlOutput .= "</ROWS></RESULTSET>";
-		}
-				
-		return $xmlOutput;
-	}
-
-	function GetProviderTypes()
-	{
-		return '<RESULTSET><FIELDS></FIELDS><ROWS></ROWS></RESULTSET>';
-	}
-
-	function ExecuteSP($aProcStatement, $TimeOut, $Parameters)
-	{
-		return '<RESULTSET><FIELDS></FIELDS><ROWS></ROWS></RESULTSET>';
-	}
-
-	function ReturnsResultSet($ProcedureName)
-	{
-		return '<RETURNSRESULTSET status=false></RETURNSRESULTSET>';
-	}
-
-	function SupportsProcedure()
-	{	
-		return '<SUPPORTSPROCEDURE status=false></SUPPORTSPROCEDURE>';
-	}
-
-	/*
-	*  HandleException added by InterAKT for ease in database translation answer
-	*/
-	function HandleException()
-	{
-		global $debug_to_file, $f;
-		$this->error = create_error(' MySQL Error#: '. ((int)mysql_errno()) . "\n\n".mysql_error());
-		log_messages($this->error);
-		die($this->error.'</HTML>');
-	}
-
-	function ensureTicks($inputSQL)
-	{
-		$outSQL = $inputSQL;
-		//added backtick for handling reserved words and special characters
-		//http://dev.mysql.com/doc/refman/5.0/en/legal-names.html
-
-		//only add ticks if not already there
-		$oLength = strlen($outSQL);
-		$bHasTick = false;
-		if (($oLength > 0) && (($outSQL[0] == "`") && ($outSQL[$oLength-1] == "`")))
-		{
-			$bHasTick = true;
-		}
-		if ($bHasTick == false)
-		{
-			$outSQL = "`".$outSQL."`";
-		}
-		return $outSQL;
-	}
-
-	function GetDatabaseList()
-	{
-		$xmlOutput = '<RESULTSET><FIELDS><FIELD><NAME>NAME</NAME></FIELD></FIELDS><ROWS>';
-
-		if (isset($this->connectionId) && is_resource($this->connectionId)){
-				$dbList = mysql_list_dbs($this->connectionId);
-				
-				while ($row = mysql_fetch_object($dbList))
-				{
-					$xmlOutput .= '<ROW><VALUE>' . $row->Database . '</VALUE></ROW>';
-				}
-    }else{
-				$this->error = CONN_NOT_OPEN_GET_DB_LIST;
-				return $this->error;
-		}
-		$xmlOutput .= '</ROWS></RESULTSET>';
-
-		return $xmlOutput;
-	}
-
-	function GetPrimaryKeysOfTable($TableName)
-	{
-		$xmlOutput = '';
-		//added backtick for handling reserved words and special characters
-		//http://dev.mysql.com/doc/refman/5.0/en/legal-names.html
-		$query  = "DESCRIBE ".$this->ensureTicks($TableName);
-		$result = mysql_query($query) or $this->HandleException();
-		
-		
-		if ($result)
-		{
-			$xmlOutput = '<RESULTSET><FIELDS>';
-
-			// Columns are referenced by index, so Schema and
-			// Catalog must be specified even though they are not supported
-			$xmlOutput .= '<FIELD><NAME>TABLE_CATALOG</NAME></FIELD>';		// column 0 (zero-based)
-			$xmlOutput .= '<FIELD><NAME>TABLE_SCHEMA</NAME></FIELD>';		// column 1
-			$xmlOutput .= '<FIELD><NAME>TABLE_NAME</NAME></FIELD>';			// column 2
-			$xmlOutput .= '<FIELD><NAME>COLUMN_NAME</NAME></FIELD>';
-			$xmlOutput .= '<FIELD><NAME>DATA_TYPE</NAME></FIELD>';
-			$xmlOutput .= '<FIELD><NAME>IS_NULLABLE</NAME></FIELD>';
-			$xmlOutput .= '<FIELD><NAME>COLUMN_SIZE</NAME></FIELD>';
-
-			$xmlOutput .= '</FIELDS><ROWS>';
-
-			// The fields returned from DESCRIBE are: Field, Type, Null, Key, Default, Extra
-			while ($row = mysql_fetch_array($result, MYSQL_ASSOC))
-			{
-			  if (strtoupper($row['Key']) == 'PRI'){
-  				$xmlOutput .= '<ROW><VALUE/><VALUE/><VALUE/>';
-  
-  				// Separate type from size. Format is: type(size)
-  				if (preg_match("/(.*)\((.*)\)/", $row['Type'], $ret))
-  				{
-  					$type = $ret[1];
-  					$size = $ret[2];
-  				}
-  				else
-  				{
-  					$type = $row['Type'];
-  					$size = '';
-  				}
-  
-  				// MySQL sets nullable to "YES" or "", so we need to set "NO"
-  				$null = $row['Null'];
-  				if ($null == '')
-  					$null = 'NO';
-  
-  				$xmlOutput .= '<VALUE>' . $row['Field'] . '</VALUE>';
-  				$xmlOutput .= '<VALUE>' . $type         . '</VALUE>';
-  				$xmlOutput .= '<VALUE>' . $null         . '</VALUE>';
-  				$xmlOutput .= '<VALUE>' . $size         . '</VALUE></ROW>';
-  			}
-			}
-			mysql_free_result($result);
-
-			$xmlOutput .= '</ROWS></RESULTSET>';
-		}
-		return $xmlOutput;
-	}
-
-}	// class MySqlConnection
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+HF1kwD2OzSMO7zEo4708WG==

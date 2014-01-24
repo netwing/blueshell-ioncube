@@ -1,232 +1,101 @@
-<?php
-/**
- * CActiveDataProvider class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CActiveDataProvider implements a data provider based on ActiveRecord.
- *
- * CActiveDataProvider provides data in terms of ActiveRecord objects which are
- * of class {@link modelClass}. It uses the AR {@link CActiveRecord::findAll} method
- * to retrieve the data from database. The {@link criteria} property can be used to
- * specify various query options.
- *
- * CActiveDataProvider may be used in the following way:
- * <pre>
- * $dataProvider=new CActiveDataProvider('Post', array(
- *     'criteria'=>array(
- *         'condition'=>'status=1',
- *         'order'=>'create_time DESC',
- *         'with'=>array('author'),
- *     ),
- *     'countCriteria'=>array(
- *         'condition'=>'status=1',
- *         // 'order' and 'with' clauses have no meaning for the count query
- *     ),
- *     'pagination'=>array(
- *         'pageSize'=>20,
- *     ),
- * ));
- * // $dataProvider->getData() will return a list of Post objects
- * </pre>
- *
- * @property CDbCriteria $criteria The query criteria.
- * @property CDbCriteria $countCriteria The count query criteria. This property is available
- * since 1.1.14
- * @property CSort $sort The sorting object. If this is false, it means the sorting is disabled.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.web
- * @since 1.1
- */
-class CActiveDataProvider extends CDataProvider
-{
-	/**
-	 * @var string the primary ActiveRecord class name. The {@link getData()} method
-	 * will return a list of objects of this class.
-	 */
-	public $modelClass;
-	/**
-	 * @var CActiveRecord the AR finder instance (eg <code>Post::model()</code>).
-	 * This property can be set by passing the finder instance as the first parameter
-	 * to the constructor. For example, <code>Post::model()->published()</code>.
-	 * @since 1.1.3
-	 */
-	public $model;
-	/**
-	 * @var string the name of key attribute for {@link modelClass}. If not set,
-	 * it means the primary key of the corresponding database table will be used.
-	 */
-	public $keyAttribute;
-
-	/**
-	 * @var CDbCriteria
-	 */
-	private $_criteria;
-	/**
-	 * @var CDbCriteria
-	 */
-	private $_countCriteria;
-
-	/**
-	 * Constructor.
-	 * @param mixed $modelClass the model class (e.g. 'Post') or the model finder instance
-	 * (e.g. <code>Post::model()</code>, <code>Post::model()->published()</code>).
-	 * @param array $config configuration (name=>value) to be applied as the initial property values of this class.
-	 */
-	public function __construct($modelClass,$config=array())
-	{
-		if(is_string($modelClass))
-		{
-			$this->modelClass=$modelClass;
-			$this->model=$this->getModel($this->modelClass);
-		}
-		elseif($modelClass instanceof CActiveRecord)
-		{
-			$this->modelClass=get_class($modelClass);
-			$this->model=$modelClass;
-		}
-		$this->setId(CHtml::modelName($this->model));
-		foreach($config as $key=>$value)
-			$this->$key=$value;
-	}
-
-	/**
-	 * Returns the query criteria.
-	 * @return CDbCriteria the query criteria
-	 */
-	public function getCriteria()
-	{
-		if($this->_criteria===null)
-			$this->_criteria=new CDbCriteria;
-		return $this->_criteria;
-	}
-
-	/**
-	 * Sets the query criteria.
-	 * @param CDbCriteria|array $value the query criteria. This can be either a CDbCriteria object or an array
-	 * representing the query criteria.
-	 */
-	public function setCriteria($value)
-	{
-		$this->_criteria=$value instanceof CDbCriteria ? $value : new CDbCriteria($value);
-	}
-
-	/**
-	 * Returns the count query criteria.
-	 * @return CDbCriteria the count query criteria.
-	 * @since 1.1.14
-	 */
-	public function getCountCriteria()
-	{
-		if($this->_countCriteria===null)
-			return $this->getCriteria();
-		return $this->_countCriteria;
-	}
-
-	/**
-	 * Sets the count query criteria.
-	 * @param CDbCriteria|array $value the count query criteria. This can be either a CDbCriteria object
-	 * or an array representing the query criteria.
-	 * @since 1.1.14
-	 */
-	public function setCountCriteria($value)
-	{
-		$this->_countCriteria=$value instanceof CDbCriteria ? $value : new CDbCriteria($value);
-	}
-
-	/**
-	 * Returns the sorting object.
-	 * @param string $className the sorting object class name. Parameter is available since version 1.1.13.
-	 * @return CSort the sorting object. If this is false, it means the sorting is disabled.
-	 */
-	public function getSort($className='CSort')
-	{
-		if(($sort=parent::getSort($className))!==false)
-			$sort->modelClass=$this->modelClass;
-		return $sort;
-	}
-
-	/**
-	 * Given active record class name returns new model instance.
-	 *
-	 * @param string $className active record class name.
-	 * @return CActiveRecord active record model instance.
-	 *
-	 * @since 1.1.14
-	 */
-	protected function getModel($className)
-	{
-		return CActiveRecord::model($className);
-	}
-
-	/**
-	 * Fetches the data from the persistent data storage.
-	 * @return array list of data items
-	 */
-	protected function fetchData()
-	{
-		$criteria=clone $this->getCriteria();
-
-		if(($pagination=$this->getPagination())!==false)
-		{
-			$pagination->setItemCount($this->getTotalItemCount());
-			$pagination->applyLimit($criteria);
-		}
-
-		$baseCriteria=$this->model->getDbCriteria(false);
-
-		if(($sort=$this->getSort())!==false)
-		{
-			// set model criteria so that CSort can use its table alias setting
-			if($baseCriteria!==null)
-			{
-				$c=clone $baseCriteria;
-				$c->mergeWith($criteria);
-				$this->model->setDbCriteria($c);
-			}
-			else
-				$this->model->setDbCriteria($criteria);
-			$sort->applyOrder($criteria);
-		}
-
-		$this->model->setDbCriteria($baseCriteria!==null ? clone $baseCriteria : null);
-		$data=$this->model->findAll($criteria);
-		$this->model->setDbCriteria($baseCriteria);  // restore original criteria
-		return $data;
-	}
-
-	/**
-	 * Fetches the data item keys from the persistent data storage.
-	 * @return array list of data item keys.
-	 */
-	protected function fetchKeys()
-	{
-		$keys=array();
-		foreach($this->getData() as $i=>$data)
-		{
-			$key=$this->keyAttribute===null ? $data->getPrimaryKey() : $data->{$this->keyAttribute};
-			$keys[$i]=is_array($key) ? implode(',',$key) : $key;
-		}
-		return $keys;
-	}
-
-	/**
-	 * Calculates the total number of data items.
-	 * @return integer the total number of data items.
-	 */
-	protected function calculateTotalItemCount()
-	{
-		$baseCriteria=$this->model->getDbCriteria(false);
-		if($baseCriteria!==null)
-			$baseCriteria=clone $baseCriteria;
-		$count=$this->model->count($this->getCountCriteria());
-		$this->model->setDbCriteria($baseCriteria);
-		return $count;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+XAkxLk2DgrXD/L0=

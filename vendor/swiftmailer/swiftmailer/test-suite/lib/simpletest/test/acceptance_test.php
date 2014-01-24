@@ -1,1653 +1,995 @@
-<?php
-// $Id: acceptance_test.php 1808 2008-09-11 19:18:02Z pp11 $
-require_once(dirname(__FILE__) . '/../autorun.php');
-require_once(dirname(__FILE__) . '/../compatibility.php');
-require_once(dirname(__FILE__) . '/../browser.php');
-require_once(dirname(__FILE__) . '/../web_tester.php');
-require_once(dirname(__FILE__) . '/../unit_tester.php');
-
-class SimpleTestAcceptanceTest extends WebTestCase {
-    static function samples() {
-        return 'http://www.lastcraft.com/test/';
-    }
-}
-
-class TestOfLiveBrowser extends UnitTestCase {
-    function samples() {
-        return SimpleTestAcceptanceTest::samples();
-    }
-
-    function testGet() {
-        $browser = new SimpleBrowser();
-        $browser->addHeader('User-Agent: SimpleTest ' . SimpleTest::getVersion());
-        $this->assertTrue($browser->get($this->samples() . 'network_confirm.php'));
-        $this->assertPattern('/target for the SimpleTest/', $browser->getContent());
-        $this->assertPattern('/Request method.*?<dd>GET<\/dd>/', $browser->getContent());
-        $this->assertEqual($browser->getTitle(), 'Simple test target file');
-        $this->assertEqual($browser->getResponseCode(), 200);
-        $this->assertEqual($browser->getMimeType(), 'text/html');
-    }
-    
-    function testPost() {
-        $browser = new SimpleBrowser();
-        $browser->addHeader('User-Agent: SimpleTest ' . SimpleTest::getVersion());
-        $this->assertTrue($browser->post($this->samples() . 'network_confirm.php'));
-        $this->assertPattern('/target for the SimpleTest/', $browser->getContent());
-        $this->assertPattern('/Request method.*?<dd>POST<\/dd>/', $browser->getContent());
-    }
-    
-    function testAbsoluteLinkFollowing() {
-        $browser = new SimpleBrowser();
-        $browser->addHeader('User-Agent: SimpleTest ' . SimpleTest::getVersion());
-        $browser->get($this->samples() . 'link_confirm.php');
-        $this->assertTrue($browser->clickLink('Absolute'));
-        $this->assertPattern('/target for the SimpleTest/', $browser->getContent());
-    }
-    
-    function testRelativeEncodedeLinkFollowing() {
-        $browser = new SimpleBrowser();
-        $browser->addHeader('User-Agent: SimpleTest ' . SimpleTest::getVersion());
-        $browser->get($this->samples() . 'link_confirm.php');
-        $this->assertTrue($browser->clickLink("m�rc�l kiek'eboe"));
-        $this->assertPattern('/target for the SimpleTest/', $browser->getContent());
-    }
-    
-    function testRelativeLinkFollowing() {
-        $browser = new SimpleBrowser();
-        $browser->addHeader('User-Agent: SimpleTest ' . SimpleTest::getVersion());
-        $browser->get($this->samples() . 'link_confirm.php');
-        $this->assertTrue($browser->clickLink('Relative'));
-        $this->assertPattern('/target for the SimpleTest/', $browser->getContent());
-    }
-    
-    function testUnifiedClickLinkClicking() {
-        $browser = new SimpleBrowser();
-        $browser->addHeader('User-Agent: SimpleTest ' . SimpleTest::getVersion());
-        $browser->get($this->samples() . 'link_confirm.php');
-        $this->assertTrue($browser->click('Relative'));
-        $this->assertPattern('/target for the SimpleTest/', $browser->getContent());
-    }
-    
-    function testIdLinkFollowing() {
-        $browser = new SimpleBrowser();
-        $browser->addHeader('User-Agent: SimpleTest ' . SimpleTest::getVersion());
-        $browser->get($this->samples() . 'link_confirm.php');
-        $this->assertTrue($browser->clickLinkById(1));
-        $this->assertPattern('/target for the SimpleTest/', $browser->getContent());
-    }
-    
-    function testCookieReading() {
-        $browser = new SimpleBrowser();
-        $browser->addHeader('User-Agent: SimpleTest ' . SimpleTest::getVersion());
-        $browser->get($this->samples() . 'set_cookies.php');
-        $this->assertEqual($browser->getCurrentCookieValue('session_cookie'), 'A');
-        $this->assertEqual($browser->getCurrentCookieValue('short_cookie'), 'B');
-        $this->assertEqual($browser->getCurrentCookieValue('day_cookie'), 'C');
-    }
-    
-    function testSimpleSubmit() {
-        $browser = new SimpleBrowser();
-        $browser->addHeader('User-Agent: SimpleTest ' . SimpleTest::getVersion());
-        $browser->get($this->samples() . 'form.html');
-        $this->assertTrue($browser->clickSubmit('Go!'));
-        $this->assertPattern('/Request method.*?<dd>POST<\/dd>/', $browser->getContent());
-        $this->assertPattern('/go=\[Go!\]/', $browser->getContent());
-    }
-    
-    function testUnifiedClickCanSubmit() {
-        $browser = new SimpleBrowser();
-        $browser->addHeader('User-Agent: SimpleTest ' . SimpleTest::getVersion());
-        $browser->get($this->samples() . 'form.html');
-        $this->assertTrue($browser->click('Go!'));
-        $this->assertPattern('/go=\[Go!\]/', $browser->getContent());
-    }
-}
-
-class TestOfLocalFileBrowser extends UnitTestCase {
-    function samples() {
-        return 'file://'.dirname(__FILE__).'/site/';
-    }
-
-    function testGet() {
-        $browser = new SimpleBrowser();
-        $browser->addHeader('User-Agent: SimpleTest ' . SimpleTest::getVersion());
-        $this->assertTrue($browser->get($this->samples() . 'file.html'));
-        $this->assertPattern('/Link to SimpleTest/', $browser->getContent());
-        $this->assertEqual($browser->getTitle(), 'Link to SimpleTest');
-        $this->assertFalse($browser->getResponseCode());
-        $this->assertEqual($browser->getMimeType(), '');
-    }
-}
-
-class TestRadioFields extends SimpleTestAcceptanceTest {
-	function testSetFieldAsInteger() {
-		$this->get($this->samples() . 'form_with_radio_buttons.html');
-		$this->assertTrue($this->setField('tested_field', 2));
-		$this->clickSubmitByName('send');
-		$this->assertEqual($this->getUrl(), $this->samples() . 'form_with_radio_buttons.html?tested_field=2&send=click+me');
-	}
-
-	function testSetFieldAsString() {
-		$this->get($this->samples() . 'form_with_radio_buttons.html');
-		$this->assertTrue($this->setField('tested_field', '2'));
-		$this->clickSubmitByName('send');
-		$this->assertEqual($this->getUrl(), $this->samples() . 'form_with_radio_buttons.html?tested_field=2&send=click+me');
-	}
-}
-
-class TestOfLiveFetching extends SimpleTestAcceptanceTest {
-    function setUp() {
-        $this->addHeader('User-Agent: SimpleTest ' . SimpleTest::getVersion());
-    }
- 
-	function testFormWithArrayBasedInputs() {
-		$this->get($this->samples() . 'form_with_array_based_inputs.php');
-		$this->setField('value[]', '3', '1');
-		$this->setField('value[]', '4', '2');
-		$this->clickSubmit('Go');
-        $this->assertPattern('/QUERY_STRING : value%5B%5D=3&value%5B%5D=4&submit=Go/');
-	}
-
-	function testFormWithQuotedValues() {
-		$this->get($this->samples() . 'form_with_quoted_values.php');
-		$this->assertField('a', 'default');
-		$this->assertFieldById('text_field', 'default');
-		$this->clickSubmit('Go');
-        $this->assertPattern('/a=default&submit=Go/');
-	}
-
-    function testGet() {
-        $this->assertTrue($this->get($this->samples() . 'network_confirm.php'));
-        $this->assertEqual($this->getUrl(), $this->samples() . 'network_confirm.php');
-        $this->assertText('target for the SimpleTest');
-        $this->assertPattern('/Request method.*?<dd>GET<\/dd>/');
-        $this->assertTitle('Simple test target file');
-        $this->assertTitle(new PatternExpectation('/target file/'));
-        $this->assertResponse(200);
-        $this->assertMime('text/html');
-        $this->assertHeader('connection', 'close');
-        $this->assertHeader('connection', new PatternExpectation('/los/'));
-    }
-    
-    function testSlowGet() {
-        $this->assertTrue($this->get($this->samples() . 'slow_page.php'));
-    }
-    
-    function testTimedOutGet() {
-        $this->setConnectionTimeout(1);
-        $this->ignoreErrors();
-        $this->assertFalse($this->get($this->samples() . 'slow_page.php'));
-    }
-    
-    function testPost() {
-        $this->assertTrue($this->post($this->samples() . 'network_confirm.php'));
-        $this->assertText('target for the SimpleTest');
-        $this->assertPattern('/Request method.*?<dd>POST<\/dd>/');
-    }
-    
-    function testGetWithData() {
-        $this->get($this->samples() . 'network_confirm.php', array("a" => "aaa"));
-        $this->assertPattern('/Request method.*?<dd>GET<\/dd>/');
-        $this->assertText('a=[aaa]');
-    }
-    
-    function testPostWithData() {
-        $this->post($this->samples() . 'network_confirm.php', array("a" => "aaa"));
-        $this->assertPattern('/Request method.*?<dd>POST<\/dd>/');
-        $this->assertText('a=[aaa]');
-    }
-
-    function testPostWithRecursiveData() {
-        $this->post($this->samples() . 'network_confirm.php', array("a" => "aaa"));
-        $this->assertPattern('/Request method.*?<dd>POST<\/dd>/');
-        $this->assertText('a=[aaa]');
-
-        $this->post($this->samples() . 'network_confirm.php', array("a[aa]" => "aaa"));
-        $this->assertPattern('/Request method.*?<dd>POST<\/dd>/');
-        $this->assertText('a=[aa=[aaa]]');
-
-        $this->post($this->samples() . 'network_confirm.php', array("a[aa][aaa]" => "aaaa"));
-        $this->assertPattern('/Request method.*?<dd>POST<\/dd>/');
-        $this->assertText('a=[aa=[aaa=[aaaa]]]');
-
-        $this->post($this->samples() . 'network_confirm.php', array("a" => array("aa" => "aaa")));
-        $this->assertPattern('/Request method.*?<dd>POST<\/dd>/');
-        $this->assertText('a=[aa=[aaa]]');
-
-        $this->post($this->samples() . 'network_confirm.php', array("a" => array("aa" => array("aaa" => "aaaa"))));
-        $this->assertPattern('/Request method.*?<dd>POST<\/dd>/');
-        $this->assertText('a=[aa=[aaa=[aaaa]]]');
-    }
-
-    function testRelativeGet() {
-        $this->get($this->samples() . 'link_confirm.php');
-        $this->assertTrue($this->get('network_confirm.php'));
-        $this->assertText('target for the SimpleTest');
-    }
-    
-    function testRelativePost() {
-        $this->post($this->samples() . 'link_confirm.php');
-        $this->assertTrue($this->post('network_confirm.php'));
-        $this->assertText('target for the SimpleTest');
-    }
-}
-
-class TestOfLinkFollowing extends SimpleTestAcceptanceTest {
-    function setUp() {
-        $this->addHeader('User-Agent: SimpleTest ' . SimpleTest::getVersion());
-    }
-    
-    function testLinkAssertions() {
-        $this->get($this->samples() . 'link_confirm.php');
-        $this->assertLink('Absolute', $this->samples() . 'network_confirm.php');
-        $this->assertLink('Absolute', new PatternExpectation('/confirm/'));
-        $this->assertClickable('Absolute');
-    }
-    
-    function testAbsoluteLinkFollowing() {
-        $this->get($this->samples() . 'link_confirm.php');
-        $this->assertTrue($this->clickLink('Absolute'));
-        $this->assertText('target for the SimpleTest');
-    }
-    
-    function testRelativeLinkFollowing() {
-        $this->get($this->samples() . 'link_confirm.php');
-        $this->assertTrue($this->clickLink('Relative'));
-        $this->assertText('target for the SimpleTest');
-    }
-    
-    function testLinkIdFollowing() {
-        $this->get($this->samples() . 'link_confirm.php');
-        $this->assertLinkById(1);
-        $this->assertTrue($this->clickLinkById(1));
-        $this->assertText('target for the SimpleTest');
-    }
-    
-    function testAbsoluteUrlBehavesAbsolutely() {
-        $this->get($this->samples() . 'link_confirm.php');
-        $this->get('http://www.lastcraft.com');
-        $this->assertText('No guarantee of quality is given or even intended');
-    }
-    
-    function testRelativeUrlRespectsBaseTag() {
-        $this->get($this->samples() . 'base_tag/base_link.html');
-        $this->click('Back to test pages');
-        $this->assertTitle('Simple test target file');
-    }
-}
-
-class TestOfLivePageLinkingWithMinimalLinks extends SimpleTestAcceptanceTest {
-    function setUp() {
-        $this->addHeader('User-Agent: SimpleTest ' . SimpleTest::getVersion());
-    }
-    
-    function testClickToExplicitelyNamedSelfReturns() {
-        $this->get($this->samples() . 'front_controller_style/a_page.php');
-        $this->assertEqual($this->getUrl(), $this->samples() . 'front_controller_style/a_page.php');
-        $this->assertTitle('Simple test page with links');
-        $this->assertLink('Self');
-        $this->clickLink('Self');
-        $this->assertTitle('Simple test page with links');
-    }
-    
-    function testClickToMissingPageReturnsToSamePage() {
-        $this->get($this->samples() . 'front_controller_style/a_page.php');
-        $this->clickLink('No page');
-        $this->assertTitle('Simple test page with links');
-        $this->assertText('[action=no_page]');
-    }
-    
-    function testClickToBareActionReturnsToSamePage() {
-        $this->get($this->samples() . 'front_controller_style/a_page.php');
-        $this->clickLink('Bare action');
-        $this->assertTitle('Simple test page with links');
-        $this->assertText('[action=]');
-    }
-    
-    function testClickToSingleQuestionMarkReturnsToSamePage() {
-        $this->get($this->samples() . 'front_controller_style/a_page.php');
-        $this->clickLink('Empty query');
-        $this->assertTitle('Simple test page with links');
-    }
-    
-    function testClickToEmptyStringReturnsToSamePage() {
-        $this->get($this->samples() . 'front_controller_style/a_page.php');
-        $this->clickLink('Empty link');
-        $this->assertTitle('Simple test page with links');
-    }
-    
-    function testClickToSingleDotGoesToCurrentDirectory() {
-        $this->get($this->samples() . 'front_controller_style/a_page.php');
-        $this->clickLink('Current directory');
-        $this->assertTitle(
-                'Simple test front controller',
-                '%s -> index.php needs to be set as a default web server home page');
-    }
-    
-    function testClickBackADirectoryLevel() {
-        $this->get($this->samples() . 'front_controller_style/');
-        $this->clickLink('Down one');
-        $this->assertPattern('|Index of .*?/test|i');
-    }
-}
-
-class TestOfLiveFrontControllerEmulation extends SimpleTestAcceptanceTest {
-    function setUp() {
-        $this->addHeader('User-Agent: SimpleTest ' . SimpleTest::getVersion());
-    }
-    
-    function testJumpToNamedPage() {
-        $this->get($this->samples() . 'front_controller_style/');
-        $this->assertText('Simple test front controller');
-        $this->clickLink('Index');
-        $this->assertResponse(200);
-        $this->assertText('[action=index]');
-    }
-    
-    function testJumpToUnnamedPage() {
-        $this->get($this->samples() . 'front_controller_style/');
-        $this->clickLink('No page');
-        $this->assertResponse(200);
-        $this->assertText('Simple test front controller');
-        $this->assertText('[action=no_page]');
-    }
-    
-    function testJumpToUnnamedPageWithBareParameter() {
-        $this->get($this->samples() . 'front_controller_style/');
-        $this->clickLink('Bare action');
-        $this->assertResponse(200);
-        $this->assertText('Simple test front controller');
-        $this->assertText('[action=]');
-    }
-    
-    function testJumpToUnnamedPageWithEmptyQuery() {
-        $this->get($this->samples() . 'front_controller_style/');
-        $this->clickLink('Empty query');
-        $this->assertResponse(200);
-        $this->assertPattern('/Simple test front controller/');
-        $this->assertPattern('/raw get data.*?\[\].*?get data/si');
-    }
-    
-    function testJumpToUnnamedPageWithEmptyLink() {
-        $this->get($this->samples() . 'front_controller_style/');
-        $this->clickLink('Empty link');
-        $this->assertResponse(200);
-        $this->assertPattern('/Simple test front controller/');
-        $this->assertPattern('/raw get data.*?\[\].*?get data/si');
-    }
-    
-    function testJumpBackADirectoryLevel() {
-        $this->get($this->samples() . 'front_controller_style/');
-        $this->clickLink('Down one');
-        $this->assertPattern('|Index of .*?/test|');
-    }
-    
-    function testSubmitToNamedPage() {
-        $this->get($this->samples() . 'front_controller_style/');
-        $this->assertText('Simple test front controller');
-        $this->clickSubmit('Index');
-        $this->assertResponse(200);
-        $this->assertText('[action=Index]');
-    }
-    
-    function testSubmitToSameDirectory() {
-        $this->get($this->samples() . 'front_controller_style/index.php');
-        $this->clickSubmit('Same directory');
-        $this->assertResponse(200);
-        $this->assertText('[action=Same+directory]');
-    }
-    
-    function testSubmitToEmptyAction() {
-        $this->get($this->samples() . 'front_controller_style/index.php');
-        $this->clickSubmit('Empty action');
-        $this->assertResponse(200);
-        $this->assertText('[action=Empty+action]');
-    }
-    
-    function testSubmitToNoAction() {
-        $this->get($this->samples() . 'front_controller_style/index.php');
-        $this->clickSubmit('No action');
-        $this->assertResponse(200);
-        $this->assertText('[action=No+action]');
-    }
-    
-    function testSubmitBackADirectoryLevel() {
-        $this->get($this->samples() . 'front_controller_style/');
-        $this->clickSubmit('Down one');
-        $this->assertPattern('|Index of .*?/test|');
-    }
-    
-    function testSubmitToNamedPageWithMixedPostAndGet() {
-        $this->get($this->samples() . 'front_controller_style/?a=A');
-        $this->assertText('Simple test front controller');
-        $this->clickSubmit('Index post');
-        $this->assertText('action=[Index post]');
-        $this->assertNoText('[a=A]');
-    }
-    
-    function testSubmitToSameDirectoryMixedPostAndGet() {
-        $this->get($this->samples() . 'front_controller_style/index.php?a=A');
-        $this->clickSubmit('Same directory post');
-        $this->assertText('action=[Same directory post]');
-        $this->assertNoText('[a=A]');
-    }
-    
-    function testSubmitToEmptyActionMixedPostAndGet() {
-        $this->get($this->samples() . 'front_controller_style/index.php?a=A');
-        $this->clickSubmit('Empty action post');
-        $this->assertText('action=[Empty action post]');
-        $this->assertText('[a=A]');
-    }
-    
-    function testSubmitToNoActionMixedPostAndGet() {
-        $this->get($this->samples() . 'front_controller_style/index.php?a=A');
-        $this->clickSubmit('No action post');
-        $this->assertText('action=[No action post]');
-        $this->assertText('[a=A]');
-    }
-}
-
-class TestOfLiveHeaders extends SimpleTestAcceptanceTest {
-    function setUp() {
-        $this->addHeader('User-Agent: SimpleTest ' . SimpleTest::getVersion());
-    }
-    
-    function testConfirmingHeaderExistence() {
-        $this->get('http://www.lastcraft.com/');
-        $this->assertHeader('content-type');
-        $this->assertHeader('content-type', 'text/html');
-        $this->assertHeader('content-type', new PatternExpectation('/HTML/i'));
-        $this->assertNoHeader('WWW-Authenticate');
-    }
-}
- 
-class TestOfLiveRedirects extends SimpleTestAcceptanceTest {
-    function setUp() {
-        $this->addHeader('User-Agent: SimpleTest ' . SimpleTest::getVersion());
-    }
-    
-    function testNoRedirects() {
-        $this->setMaximumRedirects(0);
-        $this->get($this->samples() . 'redirect.php');
-        $this->assertTitle('Redirection test');
-    }
-    
-    function testRedirects() {
-        $this->setMaximumRedirects(1);
-        $this->get($this->samples() . 'redirect.php');
-        $this->assertTitle('Simple test target file');
-    }
-    
-    function testRedirectLosesGetData() {
-        $this->get($this->samples() . 'redirect.php', array('a' => 'aaa'));
-        $this->assertNoText('a=[aaa]');
-    }
-    
-    function testRedirectKeepsExtraRequestDataOfItsOwn() {
-        $this->get($this->samples() . 'redirect.php');
-        $this->assertText('r=[rrr]');
-    }
-    
-    function testRedirectLosesPostData() {
-        $this->post($this->samples() . 'redirect.php', array('a' => 'aaa'));
-        $this->assertTitle('Simple test target file');
-        $this->assertNoText('a=[aaa]');
-    }
-    
-    function testRedirectWithBaseUrlChange() {
-        $this->get($this->samples() . 'base_change_redirect.php');
-        $this->assertTitle('Simple test target file in folder');
-        $this->get($this->samples() . 'path/base_change_redirect.php');
-        $this->assertTitle('Simple test target file');
-    }
-    
-    function testRedirectWithDoubleBaseUrlChange() {
-        $this->get($this->samples() . 'double_base_change_redirect.php');
-        $this->assertTitle('Simple test target file');
-    }
-}
-
-class TestOfLiveCookies extends SimpleTestAcceptanceTest {
-    function setUp() {
-        $this->addHeader('User-Agent: SimpleTest ' . SimpleTest::getVersion());
-    }
-    
-    function here() {
-        return new SimpleUrl($this->samples());
-    }
-    
-    function thisHost() {
-        $here = $this->here();
-        return $here->getHost();
-    }
-    
-    function thisPath() {
-        $here = $this->here();
-        return $here->getPath();
-    }
-    
-    function testCookieSettingAndAssertions() {
-        $this->setCookie('a', 'Test cookie a');
-        $this->setCookie('b', 'Test cookie b', $this->thisHost());
-        $this->setCookie('c', 'Test cookie c', $this->thisHost(), $this->thisPath());
-        $this->get($this->samples() . 'network_confirm.php');
-        $this->assertText('Test cookie a');
-        $this->assertText('Test cookie b');
-        $this->assertText('Test cookie c');
-        $this->assertCookie('a');
-        $this->assertCookie('b', 'Test cookie b');
-        $this->assertTrue($this->getCookie('c') == 'Test cookie c');
-    }
-    
-    function testNoCookieSetWhenCookiesDisabled() {
-        $this->setCookie('a', 'Test cookie a');
-        $this->ignoreCookies();
-        $this->get($this->samples() . 'network_confirm.php');
-        $this->assertNoText('Test cookie a');
-    }
-    
-    function testCookieReading() {
-        $this->get($this->samples() . 'set_cookies.php');
-        $this->assertCookie('session_cookie', 'A');
-        $this->assertCookie('short_cookie', 'B');
-        $this->assertCookie('day_cookie', 'C');
-    }
-     
-    function testNoCookie() {
-        $this->assertNoCookie('aRandomCookie');
-    }
-
-    function testNoCookieReadingWhenCookiesDisabled() {
-        $this->ignoreCookies();
-        $this->get($this->samples() . 'set_cookies.php');
-        $this->assertNoCookie('session_cookie');
-        $this->assertNoCookie('short_cookie');
-        $this->assertNoCookie('day_cookie');
-    }
-   
-    function testCookiePatternAssertions() {
-        $this->get($this->samples() . 'set_cookies.php');
-        $this->assertCookie('session_cookie', new PatternExpectation('/a/i'));
-    }
-    
-    function testTemporaryCookieExpiry() {
-        $this->get($this->samples() . 'set_cookies.php');
-        $this->restart();
-        $this->assertNoCookie('session_cookie');
-        $this->assertCookie('day_cookie', 'C');
-    }
-    
-    function testTimedCookieExpiryWith100SecondMargin() {
-        $this->get($this->samples() . 'set_cookies.php');
-        $this->ageCookies(3600);
-        $this->restart(time() + 100);
-        $this->assertNoCookie('session_cookie');
-        $this->assertNoCookie('hour_cookie');
-        $this->assertCookie('day_cookie', 'C');
-    }
-    
-    function testNoClockOverDriftBy100Seconds() {
-        $this->get($this->samples() . 'set_cookies.php');
-        $this->restart(time() + 200);
-        $this->assertNoCookie(
-                'short_cookie',
-                '%s -> Please check your computer clock setting if you are not using NTP');
-    }
-    
-    function testNoClockUnderDriftBy100Seconds() {
-        $this->get($this->samples() . 'set_cookies.php');
-        $this->restart(time() + 0);
-        $this->assertCookie(
-                'short_cookie',
-                'B',
-                '%s -> Please check your computer clock setting if you are not using NTP');
-    }
-    
-    function testCookiePath() {
-        $this->get($this->samples() . 'set_cookies.php');
-        $this->assertNoCookie('path_cookie', 'D');
-        $this->get('./path/show_cookies.php');
-        $this->assertPattern('/path_cookie/');
-        $this->assertCookie('path_cookie', 'D');
-    }
-}
-
-class LiveTestOfForms extends SimpleTestAcceptanceTest {
-    function setUp() {
-        $this->addHeader('User-Agent: SimpleTest ' . SimpleTest::getVersion());
-    }
-    
-    function testSimpleSubmit() {
-        $this->get($this->samples() . 'form.html');
-        $this->assertTrue($this->clickSubmit('Go!'));
-        $this->assertPattern('/Request method.*?<dd>POST<\/dd>/');
-        $this->assertText('go=[Go!]');
-    }
-    
-    function testDefaultFormValues() {
-        $this->get($this->samples() . 'form.html');
-        $this->assertFieldByName('a', '');
-        $this->assertFieldByName('b', 'Default text');
-        $this->assertFieldByName('c', '');
-        $this->assertFieldByName('d', 'd1');
-        $this->assertFieldByName('e', false);
-        $this->assertFieldByName('f', 'on');
-        $this->assertFieldByName('g', 'g3');
-        $this->assertFieldByName('h', 2);
-        $this->assertFieldByName('go', 'Go!');
-        $this->assertClickable('Go!');
-        $this->assertSubmit('Go!');
-        $this->assertTrue($this->clickSubmit('Go!'));
-        $this->assertText('go=[Go!]');
-        $this->assertText('a=[]');
-        $this->assertText('b=[Default text]');
-        $this->assertText('c=[]');
-        $this->assertText('d=[d1]');
-        $this->assertNoText('e=[');
-        $this->assertText('f=[on]');
-        $this->assertText('g=[g3]');
-    }
-    
-    function testFormSubmissionByButtonLabel() {
-        $this->get($this->samples() . 'form.html');
-        $this->setFieldByName('a', 'aaa');
-        $this->setFieldByName('b', 'bbb');
-        $this->setFieldByName('c', 'ccc');
-        $this->setFieldByName('d', 'D2');
-        $this->setFieldByName('e', 'on');
-        $this->setFieldByName('f', false);
-        $this->setFieldByName('g', 'g2');
-        $this->setFieldByName('h', 1);
-        $this->assertTrue($this->clickSubmit('Go!'));
-        $this->assertText('a=[aaa]');
-        $this->assertText('b=[bbb]');
-        $this->assertText('c=[ccc]');
-        $this->assertText('d=[d2]');
-        $this->assertText('e=[on]');
-        $this->assertNoText('f=[');
-        $this->assertText('g=[g2]');
-    }
-    
-    function testAdditionalFormValues() {
-        $this->get($this->samples() . 'form.html');
-        $this->assertTrue($this->clickSubmit('Go!', array('add' => 'A')));
-        $this->assertText('go=[Go!]');
-        $this->assertText('add=[A]');
-    }
-    
-    function testFormSubmissionByName() {
-        $this->get($this->samples() . 'form.html');
-        $this->setFieldByName('a', 'A');
-        $this->assertTrue($this->clickSubmitByName('go'));
-        $this->assertText('a=[A]');
-    }
-    
-    function testFormSubmissionByNameAndAdditionalParameters() {
-        $this->get($this->samples() . 'form.html');
-        $this->assertTrue($this->clickSubmitByName('go', array('add' => 'A')));
-        $this->assertText('go=[Go!]');
-        $this->assertText('add=[A]');
-    }
-    
-    function testFormSubmissionBySubmitButtonLabeledSubmit() {
-        $this->get($this->samples() . 'form.html');
-        $this->assertTrue($this->clickSubmitByName('test'));
-        $this->assertText('test=[Submit]');
-    }
-    
-    function testFormSubmissionWithIds() {
-        $this->get($this->samples() . 'form.html');
-        $this->assertFieldById(1, '');
-        $this->assertFieldById(2, 'Default text');
-        $this->assertFieldById(3, '');
-        $this->assertFieldById(4, 'd1');
-        $this->assertFieldById(5, false);
-        $this->assertFieldById(6, 'on');
-        $this->assertFieldById(8, 'g3');
-        $this->assertFieldById(11, 2);
-        $this->setFieldById(1, 'aaa');
-        $this->setFieldById(2, 'bbb');
-        $this->setFieldById(3, 'ccc');
-        $this->setFieldById(4, 'D2');
-        $this->setFieldById(5, 'on');
-        $this->setFieldById(6, false);
-        $this->setFieldById(8, 'g2');
-        $this->setFieldById(11, 'H1');
-        $this->assertTrue($this->clickSubmitById(99));
-        $this->assertText('a=[aaa]');
-        $this->assertText('b=[bbb]');
-        $this->assertText('c=[ccc]');
-        $this->assertText('d=[d2]');
-        $this->assertText('e=[on]');
-        $this->assertNoText('f=[');
-        $this->assertText('g=[g2]');
-        $this->assertText('h=[1]');
-        $this->assertText('go=[Go!]');
-    }
-    
-    function testFormSubmissionWithLabels() {
-        $this->get($this->samples() . 'form.html');
-        $this->assertField('Text A', '');
-        $this->assertField('Text B', 'Default text');
-        $this->assertField('Text area C', '');
-        $this->assertField('Selection D', 'd1');
-        $this->assertField('Checkbox E', false);
-        $this->assertField('Checkbox F', 'on');
-        $this->assertField('3', 'g3');
-        $this->assertField('Selection H', 2);
-        $this->setField('Text A', 'aaa');
-        $this->setField('Text B', 'bbb');
-        $this->setField('Text area C', 'ccc');
-        $this->setField('Selection D', 'D2');
-        $this->setField('Checkbox E', 'on');
-        $this->setField('Checkbox F', false);
-        $this->setField('2', 'g2');
-        $this->setField('Selection H', 'H1');
-        $this->clickSubmit('Go!');
-        $this->assertText('a=[aaa]');
-        $this->assertText('b=[bbb]');
-        $this->assertText('c=[ccc]');
-        $this->assertText('d=[d2]');
-        $this->assertText('e=[on]');
-        $this->assertNoText('f=[');
-        $this->assertText('g=[g2]');
-        $this->assertText('h=[1]');
-        $this->assertText('go=[Go!]');
-    }
-    
-    function testSettingCheckboxWithBooleanTrueSetsUnderlyingValue() {
-        $this->get($this->samples() . 'form.html');
-        $this->setField('Checkbox E', true);
-        $this->assertField('Checkbox E', 'on');
-        $this->clickSubmit('Go!');
-        $this->assertText('e=[on]');
-    }
-    
-    function testFormSubmissionWithMixedPostAndGet() {
-        $this->get($this->samples() . 'form_with_mixed_post_and_get.html');
-        $this->setField('Text A', 'Hello');
-        $this->assertTrue($this->clickSubmit('Go!'));
-        $this->assertText('a=[Hello]');
-        $this->assertText('x=[X]');
-        $this->assertText('y=[Y]');
-    }
-    
-    function testFormSubmissionWithMixedPostAndEncodedGet() {
-        $this->get($this->samples() . 'form_with_mixed_post_and_get.html');
-        $this->setField('Text B', 'Hello');
-        $this->assertTrue($this->clickSubmit('Go encoded!'));
-        $this->assertText('b=[Hello]');
-        $this->assertText('x=[X]');
-        $this->assertText('y=[Y]');
-    }
-    
-    function testFormSubmissionWithoutAction() {
-        $this->get($this->samples() . 'form_without_action.php?test=test');
-        $this->assertText('_GET : [test]');
-        $this->assertTrue($this->clickSubmit('Submit Post With Empty Action'));
-        $this->assertText('_GET : [test]');
-        $this->assertText('_POST : [test]');
-    }
-
-    function testImageSubmissionByLabel() {
-        $this->get($this->samples() . 'form.html');
-        $this->assertImage('Image go!');
-        $this->assertTrue($this->clickImage('Image go!', 10, 12));
-        $this->assertText('go_x=[10]');
-        $this->assertText('go_y=[12]');
-    }
-    
-    function testImageSubmissionByLabelWithAdditionalParameters() {
-        $this->get($this->samples() . 'form.html');
-        $this->assertTrue($this->clickImage('Image go!', 10, 12, array('add' => 'A')));
-        $this->assertText('add=[A]');
-    }
-    
-    function testImageSubmissionByName() {
-        $this->get($this->samples() . 'form.html');
-        $this->assertTrue($this->clickImageByName('go', 10, 12));
-        $this->assertText('go_x=[10]');
-        $this->assertText('go_y=[12]');
-    }
-    
-    function testImageSubmissionById() {
-        $this->get($this->samples() . 'form.html');
-        $this->assertTrue($this->clickImageById(97, 10, 12));
-        $this->assertText('go_x=[10]');
-        $this->assertText('go_y=[12]');
-    }
-    
-    function testButtonSubmissionByLabel() {
-        $this->get($this->samples() . 'form.html');
-        $this->assertTrue($this->clickSubmit('Button go!', 10, 12));
-        $this->assertPattern('/go=\[ButtonGo\]/s');
-    }
-    
-    function testNamelessSubmitSendsNoValue() {
-        $this->get($this->samples() . 'form_with_unnamed_submit.html');
-        $this->click('Go!');
-        $this->assertNoText('Go!');
-        $this->assertNoText('submit');
-    }
-    
-    function testNamelessImageSendsXAndYValues() {
-        $this->get($this->samples() . 'form_with_unnamed_submit.html');
-        $this->clickImage('Image go!', 4, 5);
-        $this->assertNoText('ImageGo');
-        $this->assertText('x=[4]');
-        $this->assertText('y=[5]');
-    }
-    
-    function testNamelessButtonSendsNoValue() {
-        $this->get($this->samples() . 'form_with_unnamed_submit.html');
-        $this->click('Button Go!');
-        $this->assertNoText('ButtonGo');
-    }
-    
-    function testSelfSubmit() {
-        $this->get($this->samples() . 'self_form.php');
-        $this->assertNoText('[Submitted]');
-        $this->assertNoText('[Wrong form]');
-        $this->assertTrue($this->clickSubmit());
-        $this->assertText('[Submitted]');
-        $this->assertNoText('[Wrong form]');
-        $this->assertTitle('Test of form self submission');
-    }
-    
-    function testSelfSubmitWithParameters() {
-        $this->get($this->samples() . 'self_form.php');
-        $this->setFieldByName('visible', 'Resent');
-        $this->assertTrue($this->clickSubmit());
-        $this->assertText('[Resent]');
-    }
-    
-    function testSettingOfBlankOption() {
-        $this->get($this->samples() . 'form.html');
-        $this->assertTrue($this->setFieldByName('d', ''));
-        $this->clickSubmit('Go!');
-        $this->assertText('d=[]');
-    }
-    
-    function testAssertingFieldValueWithPattern() {
-        $this->get($this->samples() . 'form.html');
-        $this->setField('c', 'A very long string');
-        $this->assertField('c', new PatternExpectation('/very long/'));
-    }
-    
-    function testSendingMultipartFormDataEncodedForm() {
-        $this->get($this->samples() . 'form_data_encoded_form.html');
-        $this->assertField('Text A', '');
-        $this->assertField('Text B', 'Default text');
-        $this->assertField('Text area C', '');
-        $this->assertField('Selection D', 'd1');
-        $this->assertField('Checkbox E', false);
-        $this->assertField('Checkbox F', 'on');
-        $this->assertField('3', 'g3');
-        $this->assertField('Selection H', 2);
-        $this->setField('Text A', 'aaa');
-        $this->setField('Text B', 'bbb');
-        $this->setField('Text area C', 'ccc');
-        $this->setField('Selection D', 'D2');
-        $this->setField('Checkbox E', 'on');
-        $this->setField('Checkbox F', false);
-        $this->setField('2', 'g2');
-        $this->setField('Selection H', 'H1');
-        $this->assertTrue($this->clickSubmit('Go!'));
-        $this->assertText('a=[aaa]');
-        $this->assertText('b=[bbb]');
-        $this->assertText('c=[ccc]');
-        $this->assertText('d=[d2]');
-        $this->assertText('e=[on]');
-        $this->assertNoText('f=[');
-        $this->assertText('g=[g2]');
-        $this->assertText('h=[1]');
-        $this->assertText('go=[Go!]');
-    }
-    
-    function testSettingVariousBlanksInFields() {
-        $this->get($this->samples() . 'form_with_false_defaults.html');
-        $this->assertField('Text A', '');
-        $this->setField('Text A', '0');
-        $this->assertField('Text A', '0');
-        $this->assertField('Text area B', '');
-        $this->setField('Text area B', '0');
-        $this->assertField('Text area B', '0');
-        $this->assertField('Text area C', "                ");
-        $this->assertField('Selection D', '');
-        $this->setField('Selection D', 'D2');
-        $this->assertField('Selection D', 'D2');
-        $this->setField('Selection D', 'D3');
-        $this->assertField('Selection D', '0');
-        $this->setField('Selection D', 'D4');
-        $this->assertField('Selection D', '?');
-        $this->assertField('Checkbox E', '');
-        $this->assertField('Checkbox F', 'on');
-        $this->assertField('Checkbox G', '0');
-        $this->assertField('Checkbox H', '?');
-        $this->assertFieldByName('i', 'on');
-        $this->setFieldByName('i', '');
-        $this->assertFieldByName('i', '');
-        $this->setFieldByName('i', '0');
-        $this->assertFieldByName('i', '0');
-        $this->setFieldByName('i', '?');
-        $this->assertFieldByName('i', '?');
-    }
-    
-    function testSubmissionOfBlankFields() {
-        $this->get($this->samples() . 'form_with_false_defaults.html');
-        $this->setField('Text A', '');
-        $this->setField('Text area B', '');
-        $this->setFieldByName('i', '');
-        $this->click('Go!');
-        $this->assertText('a=[]');
-        $this->assertText('b=[]');
-        $this->assertPattern('/c=\[                \]/');
-        $this->assertText('d=[]');
-        $this->assertText('e=[]');
-        $this->assertText('i=[]');
-    }
-    
-    function testSubmissionOfEmptyValues() {
-        $this->get($this->samples() . 'form_with_false_defaults.html');
-        $this->setField('Selection D', 'D2');
-        $this->click('Go!');
-        $this->assertText('a=[]');
-        $this->assertText('b=[]');
-        $this->assertText('d=[D2]');
-        $this->assertText('f=[on]');
-        $this->assertText('i=[on]');
-    }
-    
-    function testSubmissionOfZeroes() {
-        $this->get($this->samples() . 'form_with_false_defaults.html');
-        $this->setField('Text A', '0');
-        $this->setField('Text area B', '0');
-        $this->setField('Selection D', 'D3');
-        $this->setFieldByName('i', '0');
-        $this->click('Go!');
-        $this->assertText('a=[0]');
-        $this->assertText('b=[0]');
-        $this->assertText('d=[0]');
-        $this->assertText('g=[0]');
-        $this->assertText('i=[0]');
-    }
-    
-    function testSubmissionOfQuestionMarks() {
-        $this->get($this->samples() . 'form_with_false_defaults.html');
-        $this->setField('Text A', '?');
-        $this->setField('Text area B', '?');
-        $this->setField('Selection D', 'D4');
-        $this->setFieldByName('i', '?');
-        $this->click('Go!');
-        $this->assertText('a=[?]');
-        $this->assertText('b=[?]');
-        $this->assertText('d=[?]');
-        $this->assertText('h=[?]');
-        $this->assertText('i=[?]');
-    }
-
-    function testSubmissionOfHtmlEncodedValues() {
-        $this->get($this->samples() . 'form_with_tricky_defaults.html');
-        $this->assertField('Text A', '&\'"<>');
-        $this->assertField('Text B', '"');
-        $this->assertField('Text area C', '&\'"<>');
-        $this->assertField('Selection D', "'");
-        $this->assertField('Checkbox E', '&\'"<>');
-        $this->assertField('Checkbox F', false);
-        $this->assertFieldByname('i', "'");
-        $this->click('Go!');
-        $this->assertText('a=[&\'"<>, "]');
-        $this->assertText('c=[&\'"<>]');
-        $this->assertText("d=[']");
-        $this->assertText('e=[&\'"<>]');
-        $this->assertText("i=[']");
-    }
-    
-    function testFormActionRespectsBaseTag() {
-        $this->get($this->samples() . 'base_tag/form.html');
-        $this->assertTrue($this->clickSubmit('Go!'));
-        $this->assertText('go=[Go!]');
-        $this->assertText('a=[]');
-    }
-}
-
-class TestOfLiveMultiValueWidgets extends SimpleTestAcceptanceTest {
-    function setUp() {
-        $this->addHeader('User-Agent: SimpleTest ' . SimpleTest::getVersion());
-    }
-    
-    function testDefaultFormValueSubmission() {
-        $this->get($this->samples() . 'multiple_widget_form.html');
-        $this->assertFieldByName('a', array('a2', 'a3'));
-        $this->assertFieldByName('b', array('b2', 'b3'));
-        $this->assertFieldByName('c[]', array('c2', 'c3'));
-        $this->assertFieldByName('d', array('2', '3'));
-        $this->assertFieldByName('e', array('2', '3'));
-        $this->assertTrue($this->clickSubmit('Go!'));
-        $this->assertText('a=[a2, a3]');
-        $this->assertText('b=[b2, b3]');
-        $this->assertText('c=[c2, c3]');
-        $this->assertText('d=[2, 3]');
-        $this->assertText('e=[2, 3]');
-    }
-    
-    function testSubmittingMultipleValues() {
-        $this->get($this->samples() . 'multiple_widget_form.html');
-        $this->setFieldByName('a', array('a1', 'a4'));
-        $this->assertFieldByName('a', array('a1', 'a4'));
-        $this->assertFieldByName('a', array('a4', 'a1'));
-        $this->setFieldByName('b', array('b1', 'b4'));
-        $this->assertFieldByName('b', array('b1', 'b4'));
-        $this->setFieldByName('c[]', array('c1', 'c4'));
-        $this->assertField('c[]', array('c1', 'c4'));
-        $this->setFieldByName('d', array('1', '4'));
-        $this->assertField('d', array('1', '4'));
-        $this->setFieldByName('e', array('e1', 'e4'));
-        $this->assertField('e', array('1', '4'));
-        $this->assertTrue($this->clickSubmit('Go!'));
-        $this->assertText('a=[a1, a4]');
-        $this->assertText('b=[b1, b4]');
-        $this->assertText('c=[c1, c4]');
-        $this->assertText('d=[1, 4]');
-        $this->assertText('e=[1, 4]');
-    }
-    
-    function testSettingByOptionValue() {
-        $this->get($this->samples() . 'multiple_widget_form.html');
-        $this->setFieldByName('d', array('1', '4'));
-        $this->assertField('d', array('1', '4'));
-        $this->assertTrue($this->clickSubmit('Go!'));
-        $this->assertText('d=[1, 4]');
-    }
-      
-    function testSubmittingMultipleValuesByLabel() {
-        $this->get($this->samples() . 'multiple_widget_form.html');
-        $this->setField('Multiple selection A', array('a1', 'a4'));
-        $this->assertField('Multiple selection A', array('a1', 'a4'));
-        $this->assertField('Multiple selection A', array('a4', 'a1'));
-        $this->setField('multiple selection C', array('c1', 'c4'));
-        $this->assertField('multiple selection C', array('c1', 'c4'));
-        $this->assertTrue($this->clickSubmit('Go!'));
-        $this->assertText('a=[a1, a4]');
-        $this->assertText('c=[c1, c4]');
-    }
-  
-    function testSavantStyleHiddenFieldDefaults() {
-        $this->get($this->samples() . 'savant_style_form.html');
-        $this->assertFieldByName('a', array('a0'));
-        $this->assertFieldByName('b', array('b0'));
-        $this->assertTrue($this->clickSubmit('Go!'));
-        $this->assertText('a=[a0]');
-        $this->assertText('b=[b0]');
-    }
-    
-    function testSavantStyleHiddenDefaultsAreOverridden() {
-        $this->get($this->samples() . 'savant_style_form.html');
-        $this->assertTrue($this->setFieldByName('a', array('a1')));
-        $this->assertTrue($this->setFieldByName('b', 'b1'));
-        $this->assertTrue($this->clickSubmit('Go!'));
-        $this->assertText('a=[a1]');
-        $this->assertText('b=[b1]');
-    }
-    
-    function testSavantStyleFormSettingById() {
-        $this->get($this->samples() . 'savant_style_form.html');
-        $this->assertFieldById(1, array('a0'));
-        $this->assertFieldById(4, array('b0'));
-        $this->assertTrue($this->setFieldById(2, 'a1'));
-        $this->assertTrue($this->setFieldById(5, 'b1'));
-        $this->assertTrue($this->clickSubmitById(99));
-        $this->assertText('a=[a1]');
-        $this->assertText('b=[b1]');
-    }
-}
-
-class TestOfFileUploads extends SimpleTestAcceptanceTest {
-    function setUp() {
-        $this->addHeader('User-Agent: SimpleTest ' . SimpleTest::getVersion());
-    }
-
-    function testSingleFileUpload() {
-        $this->get($this->samples() . 'upload_form.html');
-        $this->assertTrue($this->setField('Content:',
-                dirname(__FILE__) . '/support/upload_sample.txt'));
-        $this->assertField('Content:', dirname(__FILE__) . '/support/upload_sample.txt');
-        $this->click('Go!');
-        $this->assertText('Sample for testing file upload');
-    }
-    
-    function testMultipleFileUpload() {
-        $this->get($this->samples() . 'upload_form.html');
-        $this->assertTrue($this->setField('Content:',
-                dirname(__FILE__) . '/support/upload_sample.txt'));
-        $this->assertTrue($this->setField('Supplemental:',
-                dirname(__FILE__) . '/support/supplementary_upload_sample.txt'));
-        $this->assertField('Supplemental:',
-                dirname(__FILE__) . '/support/supplementary_upload_sample.txt');
-        $this->click('Go!');
-        $this->assertText('Sample for testing file upload');
-        $this->assertText('Some more text content');
-    }
-    
-    function testBinaryFileUpload() {
-        $this->get($this->samples() . 'upload_form.html');
-        $this->assertTrue($this->setField('Content:',
-                dirname(__FILE__) . '/support/latin1_sample'));
-        $this->click('Go!');
-        $this->assertText(
-                implode('', file(dirname(__FILE__) . '/support/latin1_sample')));
-    }
-}
-
-class TestOfLiveHistoryNavigation extends SimpleTestAcceptanceTest {        
-    function setUp() {
-        $this->addHeader('User-Agent: SimpleTest ' . SimpleTest::getVersion());
-    }
-    
-    function testRetry() {
-        $this->get($this->samples() . 'cookie_based_counter.php');
-        $this->assertPattern('/count: 1/i');
-        $this->retry();
-        $this->assertPattern('/count: 2/i');
-        $this->retry();
-        $this->assertPattern('/count: 3/i');
-    }
-    
-    function testOfBackButton() {
-        $this->get($this->samples() . '1.html');
-        $this->clickLink('2');
-        $this->assertTitle('2');
-        $this->assertTrue($this->back());
-        $this->assertTitle('1');
-        $this->assertTrue($this->forward());
-        $this->assertTitle('2');
-        $this->assertFalse($this->forward());
-    }
-    
-    function testGetRetryResubmitsData() {
-        $this->assertTrue($this->get(
-                $this->samples() . 'network_confirm.php?a=aaa'));
-        $this->assertPattern('/Request method.*?<dd>GET<\/dd>/');
-        $this->assertText('a=[aaa]');
-        $this->retry();
-        $this->assertPattern('/Request method.*?<dd>GET<\/dd>/');
-        $this->assertText('a=[aaa]');
-    }
-    
-    function testGetRetryResubmitsExtraData() {
-        $this->assertTrue($this->get(
-                $this->samples() . 'network_confirm.php',
-                array('a' => 'aaa')));
-        $this->assertPattern('/Request method.*?<dd>GET<\/dd>/');
-        $this->assertText('a=[aaa]');
-        $this->retry();
-        $this->assertPattern('/Request method.*?<dd>GET<\/dd>/');
-        $this->assertText('a=[aaa]');
-    }
-    
-    function testPostRetryResubmitsData() {
-        $this->assertTrue($this->post(
-                $this->samples() . 'network_confirm.php',
-                array('a' => 'aaa')));
-        $this->assertPattern('/Request method.*?<dd>POST<\/dd>/');
-        $this->assertText('a=[aaa]');
-        $this->retry();
-        $this->assertPattern('/Request method.*?<dd>POST<\/dd>/');
-        $this->assertText('a=[aaa]');
-    }
-    
-    function testGetRetryResubmitsRepeatedData() {
-        $this->assertTrue($this->get(
-                $this->samples() . 'network_confirm.php?a=1&a=2'));
-        $this->assertPattern('/Request method.*?<dd>GET<\/dd>/');
-        $this->assertText('a=[1, 2]');
-        $this->retry();
-        $this->assertPattern('/Request method.*?<dd>GET<\/dd>/');
-        $this->assertText('a=[1, 2]');
-    }
-}
-
-class TestOfLiveAuthentication extends SimpleTestAcceptanceTest {
-    function setUp() {
-        $this->addHeader('User-Agent: SimpleTest ' . SimpleTest::getVersion());
-    }
-    
-    function testChallengeFromProtectedPage() {
-        $this->get($this->samples() . 'protected/');
-        $this->assertResponse(401);
-        $this->assertAuthentication('Basic');
-        $this->assertRealm('SimpleTest basic authentication');
-        $this->assertRealm(new PatternExpectation('/simpletest/i'));
-        $this->authenticate('test', 'secret');
-        $this->assertResponse(200);
-        $this->retry();
-        $this->assertResponse(200);
-    }
-    
-    function testTrailingSlashImpliedWithinRealm() {
-        $this->get($this->samples() . 'protected/');
-        $this->authenticate('test', 'secret');
-        $this->assertResponse(200);
-        $this->get($this->samples() . 'protected');
-        $this->assertResponse(200);
-    }
-    
-    function testTrailingSlashImpliedSettingRealm() {
-        $this->get($this->samples() . 'protected');
-        $this->authenticate('test', 'secret');
-        $this->assertResponse(200);
-        $this->get($this->samples() . 'protected/');
-        $this->assertResponse(200);
-    }
-    
-    function testEncodedAuthenticationFetchesPage() {
-        $this->get('http://test:secret@www.lastcraft.com/test/protected/');
-        $this->assertResponse(200);
-    }
-
-    function testEncodedAuthenticationFetchesPageAfterTrailingSlashRedirect() {
-        $this->get('http://test:secret@www.lastcraft.com/test/protected');
-        $this->assertResponse(200);
-    }
-
-    function testRealmExtendsToWholeDirectory() {
-        $this->get($this->samples() . 'protected/1.html');
-        $this->authenticate('test', 'secret');
-        $this->clickLink('2');
-        $this->assertResponse(200);
-        $this->clickLink('3');
-        $this->assertResponse(200);
-    }
-    
-    function testRedirectKeepsAuthentication() {
-        $this->get($this->samples() . 'protected/local_redirect.php');
-        $this->authenticate('test', 'secret');
-        $this->assertTitle('Simple test target file');
-    }
-    
-    function testRedirectKeepsEncodedAuthentication() {
-        $this->get('http://test:secret@www.lastcraft.com/test/protected/local_redirect.php');
-        $this->assertResponse(200);
-        $this->assertTitle('Simple test target file');
-    }
-    
-    function testSessionRestartLosesAuthentication() {
-        $this->get($this->samples() . 'protected/');
-        $this->authenticate('test', 'secret');
-        $this->assertResponse(200);
-        $this->restart();
-        $this->get($this->samples() . 'protected/');
-        $this->assertResponse(401);
-    }
-}
-
-class TestOfLoadingFrames extends SimpleTestAcceptanceTest {
-    function setUp() {
-        $this->addHeader('User-Agent: SimpleTest ' . SimpleTest::getVersion());
-    }
-    
-    function testNoFramesContentWhenFramesDisabled() {
-        $this->ignoreFrames();
-        $this->get($this->samples() . 'one_page_frameset.html');
-        $this->assertTitle('Frameset for testing of SimpleTest');
-        $this->assertText('This content is for no frames only');
-    }
-    
-    function testPatternMatchCanReadTheOnlyFrame() {
-        $this->get($this->samples() . 'one_page_frameset.html');
-        $this->assertText('A target for the SimpleTest test suite');
-        $this->assertNoText('This content is for no frames only');
-    }
-    
-    function testMessyFramesetResponsesByName() {
-        $this->assertTrue($this->get(
-                $this->samples() . 'messy_frameset.html'));
-        $this->assertTitle('Frameset for testing of SimpleTest');
-        
-        $this->assertTrue($this->setFrameFocus('Front controller'));
-        $this->assertResponse(200);
-        $this->assertText('Simple test front controller');
-        
-        $this->assertTrue($this->setFrameFocus('One'));
-        $this->assertResponse(200);
-        $this->assertLink('2');
-        
-        $this->assertTrue($this->setFrameFocus('Frame links'));
-        $this->assertResponse(200);
-        $this->assertLink('Set one to 2');
-        
-        $this->assertTrue($this->setFrameFocus('Counter'));
-        $this->assertResponse(200);
-        $this->assertText('Count: 1');
-        
-        $this->assertTrue($this->setFrameFocus('Redirected'));
-        $this->assertResponse(200);
-        $this->assertText('r=rrr');
-        
-        $this->assertTrue($this->setFrameFocus('Protected'));
-        $this->assertResponse(401);
-        
-        $this->assertTrue($this->setFrameFocus('Protected redirect'));
-        $this->assertResponse(401);
-        
-        $this->assertTrue($this->setFrameFocusByIndex(1));
-        $this->assertResponse(200);
-        $this->assertText('Simple test front controller');
-        
-        $this->assertTrue($this->setFrameFocusByIndex(2));
-        $this->assertResponse(200);
-        $this->assertLink('2');
-        
-        $this->assertTrue($this->setFrameFocusByIndex(3));
-        $this->assertResponse(200);
-        $this->assertLink('Set one to 2');
-        
-        $this->assertTrue($this->setFrameFocusByIndex(4));
-        $this->assertResponse(200);
-        $this->assertText('Count: 1');
-        
-        $this->assertTrue($this->setFrameFocusByIndex(5));
-        $this->assertResponse(200);
-        $this->assertText('r=rrr');
-        
-        $this->assertTrue($this->setFrameFocusByIndex(6));
-        $this->assertResponse(401);
-        
-        $this->assertTrue($this->setFrameFocusByIndex(7));
-    }
-    
-    function testReloadingFramesetPage() {
-        $this->get($this->samples() . 'messy_frameset.html');
-        $this->assertText('Count: 1');
-        $this->retry();
-        $this->assertText('Count: 2');
-        $this->retry();
-        $this->assertText('Count: 3');
-    }
-    
-    function testReloadingSingleFrameWithCookieCounter() {
-        $this->get($this->samples() . 'counting_frameset.html');
-        $this->setFrameFocus('a');
-        $this->assertText('Count: 1');
-        $this->setFrameFocus('b');
-        $this->assertText('Count: 2');
-        
-        $this->setFrameFocus('a');
-        $this->retry();
-        $this->assertText('Count: 3');
-        $this->retry();
-        $this->assertText('Count: 4');
-        $this->setFrameFocus('b');
-        $this->assertText('Count: 2');
-    }
-    
-    function testReloadingFrameWhenUnfocusedReloadsWholeFrameset() {
-        $this->get($this->samples() . 'counting_frameset.html');
-        $this->setFrameFocus('a');
-        $this->assertText('Count: 1');
-        $this->setFrameFocus('b');
-        $this->assertText('Count: 2');
-        
-        $this->clearFrameFocus('a');
-        $this->retry();
-        
-        $this->assertTitle('Frameset for testing of SimpleTest');
-        $this->setFrameFocus('a');
-        $this->assertText('Count: 3');
-        $this->setFrameFocus('b');
-        $this->assertText('Count: 4');
-    }
-    
-    function testClickingNormalLinkReplacesJustThatFrame() {
-        $this->get($this->samples() . 'messy_frameset.html');
-        $this->clickLink('2');
-        $this->assertLink('3');
-        $this->assertText('Simple test front controller');
-    }
-    
-    function testJumpToNamedPageReplacesJustThatFrame() {
-        $this->get($this->samples() . 'messy_frameset.html');
-        $this->assertPattern('/Simple test front controller/');
-        $this->clickLink('Index');
-        $this->assertResponse(200);
-        $this->assertText('[action=index]');
-        $this->assertText('Count: 1');
-    }
-    
-    function testJumpToUnnamedPageReplacesJustThatFrame() {
-        $this->get($this->samples() . 'messy_frameset.html');
-        $this->clickLink('No page');
-        $this->assertResponse(200);
-        $this->assertText('Simple test front controller');
-        $this->assertText('[action=no_page]');
-        $this->assertText('Count: 1');
-    }
-    
-    function testJumpToUnnamedPageWithBareParameterReplacesJustThatFrame() {
-        $this->get($this->samples() . 'messy_frameset.html');
-        $this->clickLink('Bare action');
-        $this->assertResponse(200);
-        $this->assertText('Simple test front controller');
-        $this->assertText('[action=]');
-        $this->assertText('Count: 1');
-    }
-    
-    function testJumpToUnnamedPageWithEmptyQueryReplacesJustThatFrame() {
-        $this->get($this->samples() . 'messy_frameset.html');
-        $this->clickLink('Empty query');
-        $this->assertResponse(200);
-        $this->assertPattern('/Simple test front controller/');
-        $this->assertPattern('/raw get data.*?\[\].*?get data/si');
-        $this->assertPattern('/Count: 1/');
-    }
-    
-    function testJumpToUnnamedPageWithEmptyLinkReplacesJustThatFrame() {
-        $this->get($this->samples() . 'messy_frameset.html');
-        $this->clickLink('Empty link');
-        $this->assertResponse(200);
-        $this->assertPattern('/Simple test front controller/');
-        $this->assertPattern('/raw get data.*?\[\].*?get data/si');
-        $this->assertPattern('/Count: 1/');
-    }
-    
-    function testJumpBackADirectoryLevelReplacesJustThatFrame() {
-        $this->get($this->samples() . 'messy_frameset.html');
-        $this->clickLink('Down one');
-        $this->assertPattern('/index of .*\/test/i');
-        $this->assertPattern('/Count: 1/');
-    }
-    
-    function testSubmitToNamedPageReplacesJustThatFrame() {
-        $this->get($this->samples() . 'messy_frameset.html');
-        $this->assertPattern('/Simple test front controller/');
-        $this->clickSubmit('Index');
-        $this->assertResponse(200);
-        $this->assertText('[action=Index]');
-        $this->assertText('Count: 1');
-    }
-    
-    function testSubmitToSameDirectoryReplacesJustThatFrame() {
-        $this->get($this->samples() . 'messy_frameset.html');
-        $this->clickSubmit('Same directory');
-        $this->assertResponse(200);
-        $this->assertText('[action=Same+directory]');
-        $this->assertText('Count: 1');
-    }
-    
-    function testSubmitToEmptyActionReplacesJustThatFrame() {
-        $this->get($this->samples() . 'messy_frameset.html');
-        $this->clickSubmit('Empty action');
-        $this->assertResponse(200);
-        $this->assertText('[action=Empty+action]');
-        $this->assertText('Count: 1');
-    }
-    
-    function testSubmitToNoActionReplacesJustThatFrame() {
-        $this->get($this->samples() . 'messy_frameset.html');
-        $this->clickSubmit('No action');
-        $this->assertResponse(200);
-        $this->assertText('[action=No+action]');
-        $this->assertText('Count: 1');
-    }
-    
-    function testSubmitBackADirectoryLevelReplacesJustThatFrame() {
-        $this->get($this->samples() . 'messy_frameset.html');
-        $this->clickSubmit('Down one');
-        $this->assertPattern('/index of .*\/test/i');
-        $this->assertPattern('/Count: 1/');
-    }
-    
-    function testTopLinkExitsFrameset() {
-        $this->get($this->samples() . 'messy_frameset.html');
-        $this->clickLink('Exit the frameset');
-        $this->assertTitle('Simple test target file');
-    }
-    
-    function testLinkInOnePageCanLoadAnother() {
-        $this->get($this->samples() . 'messy_frameset.html');
-        $this->assertNoLink('3');
-        $this->clickLink('Set one to 2');
-        $this->assertLink('3');
-        $this->assertNoLink('2');
-        $this->assertTitle('Frameset for testing of SimpleTest');
-    }
-    
-    function testFrameWithRelativeLinksRespectsBaseTagForThatPage() {
-        $this->get($this->samples() . 'base_tag/frameset.html');
-        $this->click('Back to test pages');
-        $this->assertTitle('Frameset for testing of SimpleTest');
-        $this->assertText('A target for the SimpleTest test suite');
-    }
-    
-    function testRelativeLinkInFrameIsNotAffectedByFramesetBaseTag() {
-        $this->get($this->samples() . 'base_tag/frameset_with_base_tag.html');
-        $this->assertText('This is page 1');
-        $this->click('To page 2');
-        $this->assertTitle('Frameset for testing of SimpleTest');
-        $this->assertText('This is page 2');
-    }
-}
-
-class TestOfFrameAuthentication extends SimpleTestAcceptanceTest {
-    function setUp() {
-        $this->addHeader('User-Agent: SimpleTest ' . SimpleTest::getVersion());
-    }
-    
-    function testUnauthenticatedFrameSendsChallenge() {
-        $this->get($this->samples() . 'protected/');
-        $this->setFrameFocus('Protected');
-        $this->assertAuthentication('Basic');
-        $this->assertRealm('SimpleTest basic authentication');
-        $this->assertResponse(401);
-    }
-    
-    function testCanReadFrameFromAlreadyAuthenticatedRealm() {
-        $this->get($this->samples() . 'protected/');
-        $this->authenticate('test', 'secret');
-        $this->get($this->samples() . 'messy_frameset.html');
-        $this->setFrameFocus('Protected');
-        $this->assertResponse(200);
-        $this->assertText('A target for the SimpleTest test suite');
-    }
-    
-    function testCanAuthenticateFrame() {
-        $this->get($this->samples() . 'messy_frameset.html');
-        $this->setFrameFocus('Protected');
-        $this->authenticate('test', 'secret');
-        $this->assertResponse(200);
-        $this->assertText('A target for the SimpleTest test suite');
-        $this->clearFrameFocus();
-        $this->assertText('Count: 1');
-    }
-    
-    function testCanAuthenticateRedirectedFrame() {
-        $this->get($this->samples() . 'messy_frameset.html');
-        $this->setFrameFocus('Protected redirect');
-        $this->assertResponse(401);
-        $this->authenticate('test', 'secret');
-        $this->assertResponse(200);
-        $this->assertText('A target for the SimpleTest test suite');
-        $this->clearFrameFocus();
-        $this->assertText('Count: 1');
-    }
-}
-
-class TestOfNestedFrames extends SimpleTestAcceptanceTest {
-    function setUp() {
-        $this->addHeader('User-Agent: SimpleTest ' . SimpleTest::getVersion());
-    }
-    
-    function testCanNavigateToSpecificContent() {
-        $this->get($this->samples() . 'nested_frameset.html');
-        $this->assertTitle('Nested frameset for testing of SimpleTest');
-        
-        $this->assertPattern('/This is frame A/');
-        $this->assertPattern('/This is frame B/');
-        $this->assertPattern('/Simple test front controller/');
-        $this->assertLink('2');
-        $this->assertLink('Set one to 2');
-        $this->assertPattern('/Count: 1/');
-        $this->assertPattern('/r=rrr/');
-        
-        $this->setFrameFocus('pair');
-        $this->assertPattern('/This is frame A/');
-        $this->assertPattern('/This is frame B/');
-        $this->assertNoPattern('/Simple test front controller/');
-        $this->assertNoLink('2');
-        
-        $this->setFrameFocus('aaa');
-        $this->assertPattern('/This is frame A/');
-        $this->assertNoPattern('/This is frame B/');
-        
-        $this->clearFrameFocus();
-        $this->assertResponse(200);
-        $this->setFrameFocus('messy');
-        $this->assertResponse(200);
-        $this->setFrameFocus('Front controller');
-        $this->assertResponse(200);
-        $this->assertPattern('/Simple test front controller/');
-        $this->assertNoLink('2');
-    }
-    
-    function testReloadingFramesetPage() {
-        $this->get($this->samples() . 'nested_frameset.html');
-        $this->assertPattern('/Count: 1/');
-        $this->retry();
-        $this->assertPattern('/Count: 2/');
-        $this->retry();
-        $this->assertPattern('/Count: 3/');
-    }
-    
-    function testRetryingNestedPageOnlyRetriesThatSet() {
-        $this->get($this->samples() . 'nested_frameset.html');
-        $this->assertPattern('/Count: 1/');
-        $this->setFrameFocus('messy');
-        $this->retry();
-        $this->assertPattern('/Count: 2/');
-        $this->setFrameFocus('Counter');
-        $this->retry();
-        $this->assertPattern('/Count: 3/');
-        
-        $this->clearFrameFocus();
-        $this->setFrameFocus('messy');
-        $this->setFrameFocus('Front controller');
-        $this->retry();
-        
-        $this->clearFrameFocus();
-        $this->assertPattern('/Count: 3/');
-    }
-    
-    function testAuthenticatingNestedPage() {
-        $this->get($this->samples() . 'nested_frameset.html');
-        $this->setFrameFocus('messy');
-        $this->setFrameFocus('Protected');
-        $this->assertAuthentication('Basic');
-        $this->assertRealm('SimpleTest basic authentication');
-        $this->assertResponse(401);
-        
-        $this->authenticate('test', 'secret');
-        $this->assertResponse(200);
-        $this->assertPattern('/A target for the SimpleTest test suite/');
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

@@ -1,72 +1,47 @@
-<?php
-
-/*
- * This file is part of the Monolog package.
- *
- * (c) Jordi Boggiano <j.boggiano@seld.be>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Monolog\Handler;
-
-use Monolog\Formatter\JsonFormatter;
-use Monolog\Logger;
-
-/**
- * CouchDB handler
- *
- * @author Markus Bachmann <markus.bachmann@bachi.biz>
- */
-class CouchDBHandler extends AbstractProcessingHandler
-{
-    private $options;
-
-    public function __construct(array $options = array(), $level = Logger::DEBUG, $bubble = true)
-    {
-        $this->options = array_merge(array(
-            'host'     => 'localhost',
-            'port'     => 5984,
-            'dbname'   => 'logger',
-            'username' => null,
-            'password' => null,
-        ), $options);
-
-        parent::__construct($level, $bubble);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    protected function write(array $record)
-    {
-        $basicAuth = null;
-        if ($this->options['username']) {
-            $basicAuth = sprintf('%s:%s@', $this->options['username'], $this->options['password']);
-        }
-
-        $url = 'http://'.$basicAuth.$this->options['host'].':'.$this->options['port'].'/'.$this->options['dbname'];
-        $context = stream_context_create(array(
-            'http' => array(
-                'method'        => 'POST',
-                'content'       => $record['formatted'],
-                'ignore_errors' => true,
-                'max_redirects' => 0,
-                'header'        => 'Content-type: application/json',
-            )
-        ));
-
-        if (false === @file_get_contents($url, null, $context)) {
-            throw new \RuntimeException(sprintf('Could not connect to %s', $url));
-        }
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    protected function getDefaultFormatter()
-    {
-        return new JsonFormatter();
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

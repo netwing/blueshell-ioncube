@@ -1,188 +1,95 @@
-<?php
-require_once('ValidatorTestModel.php');
-
-class CUrlValidatorTest extends CTestCase
-{
-	public function testEmpty()
-	{
-		$model = new ValidatorTestModel('CUrlValidatorTest');
-		$model->validate(array('url'));
-		$this->assertArrayHasKey('url', $model->getErrors());
-	}
-
-	public function testArbitraryUrl()
-	{
-		$urlValidator = new CUrlValidator();
-		$url = 'http://testing-arbitrary-domain.com/';
-		$result = $urlValidator->validateValue($url);
-		$this->assertEquals($url, $result);
-	}
-
-	public function providerIDNUrl()
-	{
-		return array(
-			// IDN validation enabled
-			array('http://президент.рф/', true, 'http://президент.рф/'),
-			array('http://bücher.de/?get=param', true, 'http://bücher.de/?get=param'),
-			array('http://检查域.cn/', true, 'http://检查域.cn/'),
-			array('http://mañana.com/', true, 'http://mañana.com/'),
-			array('http://☃-⌘.com/', true, 'http://☃-⌘.com/'),
-			array('http://google.com/', true, 'http://google.com/'),
-			array('http://www.yiiframework.com/forum/', true, 'http://www.yiiframework.com/forum/'),
-			array('https://www.yiiframework.com/extensions/', true, 'https://www.yiiframework.com/extensions/'),
-			array('ftp://www.yiiframework.com/', true, false),
-			array('www.yiiframework.com', true, false),
-
-			// IDN validation disabled
-			array('http://президент.рф/', false, false),
-			array('http://bücher.de/?get=param', false, false),
-			array('http://检查域.cn/', false, false),
-			array('http://mañana.com/', false, false),
-			array('http://☃-⌘.com/', false, false),
-			array('http://google.com/', false, 'http://google.com/'),
-			array('http://www.yiiframework.com/forum/', false, 'http://www.yiiframework.com/forum/'),
-			array('https://www.yiiframework.com/extensions/', false, 'https://www.yiiframework.com/extensions/'),
-			array('ftp://www.yiiframework.com/', false, false),
-			array('www.yiiframework.com', false, false),
-		);
-	}
-
-	/**
-	 * @dataProvider providerIDNUrl
-	 *
-	 * @param string $url
-	 * @param boolean $validateIDN
-	 * @param string $assertion
-	 */
-	public function testIDNUrl($url, $validateIDN, $assertion)
-	{
-		$urlValidator = new CUrlValidator();
-		$urlValidator->validateIDN = $validateIDN;
-		$result = $urlValidator->validateValue($url);
-		$this->assertEquals($assertion, $result);
-	}
-
-	public function providerValidSchemes()
-	{
-		return array(
-			array('ftp://yiiframework.com/', array('ftp', 'http', 'https'), 'ftp://yiiframework.com/'),
-			array('ftp://yiiframework.com/', array('http', 'https'), false),
-			array('ftp://yiiframework.com/', array('ftp'), 'ftp://yiiframework.com/'),
-
-			array('that-s-not-an-url-at-all', array('ftp', 'http', 'https'), false),
-			array('that-s-not-an-url-at-all', array(), false),
-			array('ftp://that-s-not-an-url-at-all', array('ftp'), false),
-
-			array('http://☹.com/', array('ftp'), false),
-			array('http://☹.com/', array('rsync'), false),
-			array('http://☹.com/', array('http', 'https'), false),
-
-			array('rsync://gentoo.org:873/distfiles/', array('rsync', 'http', 'https'), 'rsync://gentoo.org:873/distfiles/'),
-			array('rsync://gentoo.org:873/distfiles/', array('http', 'https'), false),
-			array('rsync://gentoo.org:873/distfiles/', array('rsync'), 'rsync://gentoo.org:873/distfiles/'),
-		);
-	}
-
-	/**
-	 * @dataProvider providerValidSchemes
-	 *
-	 * @param string $url
-	 * @param array $validSchemes
-	 * @param string $assertion
-	 */
-	public function testValidSchemes($url, $validSchemes, $assertion)
-	{
-		$urlValidator = new CUrlValidator();
-		$urlValidator->validSchemes = $validSchemes;
-		$result = $urlValidator->validateValue($url);
-		$this->assertEquals($assertion, $result);
-	}
-
-	public function providerDefaultScheme()
-	{
-		return array(
-			array('https://yiiframework.com/?get=param', null, 'https://yiiframework.com/?get=param'),
-			array('ftp://yiiframework.com/?get=param', null, false),
-			array('yiiframework.com/?get=param', null, false),
-			array('that-s-not-an-url-at-all', null, false),
-
-			array('https://yiiframework.com/?get=param', 'http', 'https://yiiframework.com/?get=param'),
-			array('ftp://yiiframework.com/?get=param', 'http', false),
-			array('yiiframework.com/?get=param', 'http', 'http://yiiframework.com/?get=param'),
-			array('that-s-not-an-url-at-all', 'http', false),
-
-			array('https://yiiframework.com/?get=param', 'ftp', 'https://yiiframework.com/?get=param'),
-			array('ftp://yiiframework.com/?get=param', 'ftp', false),
-			array('yiiframework.com/?get=param', 'ftp', false),
-			array('that-s-not-an-url-at-all', 'ftp', false),
-		);
-	}
-
-	/**
-	 * @dataProvider providerDefaultScheme
-	 *
-	 * @param string $url
-	 * @param array $defaultScheme
-	 * @param string $assertion
-	 */
-	public function testDefaultScheme($url, $defaultScheme, $assertion)
-	{
-		$urlValidator = new CUrlValidator();
-		$urlValidator->defaultScheme = $defaultScheme;
-		$result = $urlValidator->validateValue($url);
-		$this->assertEquals($assertion, $result);
-	}
-
-
-	public function providerAllowEmpty()
-	{
-		return array(
-			array('https://yiiframework.com/?get=param', false, 'https://yiiframework.com/?get=param'),
-			array('ftp://yiiframework.com/?get=param', false, false),
-			array('yiiframework.com/?get=param', false, false),
-			array('that-s-not-an-url-at-all', false, false),
-			array('http://☹.com/', false, false),
-			array('rsync://gentoo.org:873/distfiles/', false, false),
-			array('https://gentoo.org:8080/distfiles/', false, 'https://gentoo.org:8080/distfiles/'),
-			array(' ', false, false),
-			array('', false, false),
-
-			array('https://yiiframework.com/?get=param', true, 'https://yiiframework.com/?get=param'),
-			array('ftp://yiiframework.com/?get=param', true, false),
-			array('yiiframework.com/?get=param', true, false),
-			array('that-s-not-an-url-at-all', true, false),
-			array('http://☹.com/', true, false),
-			array('rsync://gentoo.org:873/distfiles/', true, false),
-			array('https://gentoo.org:8080/distfiles/', true, 'https://gentoo.org:8080/distfiles/'),
-			array(' ', true, false),
-			array('', true, ''),
-		);
-	}
-
-	/**
-	 * @dataProvider providerAllowEmpty
-	 *
-	 * @param string $url
-	 * @param array $allowEmpty
-	 * @param string $assertion
-	 */
-	public function testAllowEmpty($url, $allowEmpty, $assertion)
-	{
-		$urlValidator = new CUrlValidator();
-		$urlValidator->allowEmpty = $allowEmpty;
-		$result = $urlValidator->validateValue($url);
-		$this->assertEquals($assertion, $result);
-	}
-
-	/**
-	 * https://github.com/yiisoft/yii/issues/1955
-	 */
-	public function testArrayValue()
-	{
-		$model=new ValidatorTestModel('CUrlValidatorTest');
-		$model->url=array('http://yiiframework.com/');
-		$model->validate(array('url'));
-		$this->assertTrue($model->hasErrors('url'));
-		$this->assertEquals(array('Url is not a valid URL.'),$model->getErrors('url'));
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPwIgC2FB88aKXcwb09rX2Bdt9H/inblCyxUiCaRQOnuL2eRereB7w6RF4Ty/N94UT1gpHXR5
+5P/hmbJoRpb8kNTUoIG34U/G8z29fH5UbEj+j+HO6pUJ9dm+PXUsfUNFYnPotXqKxGIwShRSyBNO
+KPFLz6y27nOdH/lQgiP/NljZmEBsG51Id0VuAfTflscXSz4k07I+AIhZYyILPrdE2AVhy9FYSTrl
+j7m/e0Q8QOOfJUdfQDTchr4euJltSAgiccy4GDnfT0bat0PGJWP+D4C0RiZm0JnqlVLjxKEXSuz1
+wMhFhDMKWAOHVhEpWhsI5+xJ1Njiiu5SiZ6S8LVzpIf261YhaZu8Zt7sUhlaL2RoYabVPrAwnxLY
+rqFmfaXd2vP1t9g5u/FxZ1UmnuthgzSemeu6H7aqNk82ITEhtJv2fZdWh7LbNWTd20KSapcbmT1b
++d12vpxeKMDY4eGvLW+PPiUMFUL9NvfDbbt7jhbCyQDgM4CiKJZDSb6NulHTvjBQVwH0adnXlly3
+lv3Dt/HVfM1FKfIOQq4Oc7syrCSYMXmzReIMzCq5WgfqDwCLHbW4m8M4/89XCLEgtnoF2NxKgeOW
+tdfUmP8p7Fk/5cEsHbdLyAzNyKoDbZjY1ok3x4ToC3TudsFR28G2enLwHm4tNXtomODebt6r+/U2
+DK1Vu9ccgkT8XtoNKMCYoTaRzn9Vu2LxUYs0ni9i3ktBqfeuVTzzCU1DOJuNyvqQ8oftmPVM5OgB
+ajsEUTIZvSgRa2y52/59LOgFLsIMBSUd0o2iD558rdRjVRBsKmUeUkrj0ZM6zvgJ6rbdpqPTXxjJ
+7d1cTULqY3Dfod22OnN64Gt6mv4qmq8+NECK19F2Nw090Nd+jy4AzVOLhId+4jQkBUwp6mwg+Jas
+8x6MjNko23kZlDDdxTN8dlQqc1Tdiu86sVAK7m71LFZ3w1QxdLUWOrgLyAZiR0nRSAGeJuXbzNe6
+VkTIf6JvPd1ue+MKT0fXtNJR7POfdebUtzOh1VjYhhv/1NLnoC2j37WgKEFKX7PLN/+Pc2ozjv/K
+O2U3Dae2Y5u3VCptcKSvWcHOHmGJIAoNFID4phiUiBwXypxbRkaTqVrvQa+Crzgg9eejQCb0bP9L
+mtgUu1Oj84SEpFQiqCi7a8LtKFIAMD1USXPH9FV8lDwoUN7iy1f1lME4PRwRDMfO3yNMil3gz7D/
+jp7JZ2Yha1xb6rH3fsKzb01o8T9ODth7iLanqS1PbIszcSs4Y+DQBuYdJtAZP6Xtsmwt+C0b67Ne
+AHLOC1+USaKNoJMVksIn3tYXIP0Nok0vRWZuqkr0pbq5eOG30gPT+mHAUUnScBs14BBpirmN0nWK
+0SvM5VZm2IQ0eMsVAfErZhpOncPui4K86aIwYqm3xbc5AFfJSzv6Wq62f7D1Xbf5YIRXvsllpIRe
+f6fm9igEgyNtpxs2mxsrq5PXAiZ+kvPIBROYDuX8PnIRQ+tPv465d4i0UTXaZYCxSlJ5bQZDRnTA
+d84Tm3spQ3ODuHhmQdnpjkCuu2A8Ql3oXGv/2+O4SvugM9mqra+AdufC6bc5RotaQdgxfwLbUq12
+nlxINXywYCqGx5xSZ6CmDXiExUjb4Pw0MsmEMu/a0BXaCR6iyGn5IsraW0XWtKyGFUdQNNqmTQ/0
+VqKYEhnOU1POBsqtxbT7RchZLQn5Td0VKGtiNEwfEAlpMgFBi/O+4zaC3orJCP7PVwKuPPPSww+I
+GOQLNJf8JVU/EgHUEz40BsI7J/emwkkEOqb4yn2NlojFmPeDv6O05zVRqmYupSkfpD5CaOiZXdp7
+pGV3aEzzqPBJt//hccoO0pxVuIwYyGE5YDw/t5SmTwUrl6vYTxE0zcMxauArHK0zvEIAxrjkROiI
+1sSVkx3RNm8AcuZkvWlsDA24FQlQq0SOw5rGb1SDpCQnoUx+22IrFweWhgRbQFg24gQdGXOFd2Fv
+SzIB2VGrYbrNO5eG2Kos3d13KREgY3Pof7/uALljIGOVT4AdsGnufSfO3vNlnWpCRV+hWYbir6bo
+y326ajlgMZ+1D6TVdvASfksnmD9j1pHQ5DJfqbVbmymqR6/YoXN64EEOkt1Y7UfFCZhhz8NE8B6+
+H5J5X0KG5C0svi/Jj0mkkAjwRVSOInh2xHpBzaMzGc7CHX4G5ZHRZsG2aErP6fmsFUaYEkrZvELY
+vkBrnDvTQAUo6NncNrLthqbCyqGU5nQZtwjtGP6e+B0UaWIFVX0jbgpNuZ8rhCft6bSow1Lul+Ty
+DfZL3b07l9cRc6K3wMH2jp0aouFjmFkO3VEIAOesQvfwxeKFescau1c5Q+qH467VzDSOav3kuVgY
+WeqCIs6cC8Ept3j38UO/odF1ZKr9/wNcYg8UNERywQBH+broMWzQxybEOQ+hmntanlCRmuCb+7Mj
+mxhnGSByEZFkFHyu3MAYiuMaCVxR7C3wamjbnfuzJBqT4d+Cjz+vmUbzqUycdARsZelOtztf4QEV
+KGWWzNEgNe6YFsMpUBKT0sdrwAkHuGQs2WcmLLKwhdfZD+UEZVpZlVKwlVzZ8wjZYgB0T/H4XQF/
+oKEGyL+9qrEQeL729L0FUGRKfWLBIMt9rdvuTw7MFtP/rqWC5tvvsuDLiAs52ZImKwhqtG9oBhm7
+cf+cn5OZdtLYI4mEl+Mbi3Dp0JISAQcsMu6fjO2psdf6zNps/7Njiy3fS8pLR8Han2l/0sYepEmx
+sefkjav/X4VYE592NraZ1akRiK4oopqZpC0T9nfHJ1xbJSAW8zLLhROtAE8S79iCGgnnThL8EMU7
+GgfGrmUa7J3k4wFOuzPftifZ5r4nWFaAwywPKRMGKVitJfMhdSll+71umVSlc6DrQSlCMgJZmgyj
+DGqxlXAo998wULzx/dnTpfsGCxtQzkrRVL0VKO9W73s59FlY2sH1lKh2nZed0moSnoJ6oyWHY3lL
+k1tL8oJ8ExRlVgEvZ4GjfpKaZC06vXnvuQV8GXWHID39etNMyvAVeJc8FSDNP5Kq/1U1WLaL91Pu
+m4vsKSUUzqA2FWUF9QEC2ZeDItM18+Jbq09q1/jtl2wY3tC/ztNc6RWgDJtkVRMqRA9nC7ASHvzn
+SsM1EGZg/v0PDdKfO6Sv/B/KrCAr00a1DheW7yDcMZGi1eEBHDRERJSg9VzNXJZRN2JdxFjtZqxp
+uTkyrgitl7pfaS+NFaDkupiBrGULMep+hE6O0mGhwxRLPkXtLpagwvnmMyfcUjMh4PjDVmM6Em9j
+qy5wmDHMcoE+++MXvKGlyKug5GT9XGiDbhllvpL1yqTqhtTP6KE04Ct3StWAwQ2FRXzZX00186lu
+JZBYqzxOIKo9UBoUpsJO4efwVPOShTw3OcaQLmzBmghZ4mpl+g37jbWEDm/a3+X3BHNtucyA/+Rp
+KHb13/dbgHm6qgaEE/q1APGG3zKZbiT50qP4lrzA0T+10489llpd7R6tFL+seLi8/EnhQdUIMbuk
+VqIHMnkDkTkCpPrkzDYVXnbgLkUZZGgmEwuaHrWa41emKMlsvA88ZbV1de8SSFYUx2XbWfenYeFo
+ZvwA5QLTmmO4d2JtcXWDfWg1RGwn7zaDQwtRJciu4ZcRdgncIbJtabLWW5zVWjFdXYx0VF8ShjJa
+CfVtYlK+xsqD++hW/ulOcxcgZZ9T1Pde2h/4b5cOEv/r7p2CDEoTgdRpDb0XMucu+xeV0O+StekS
+j9CruF0kIFkjWHgIjPkbL0CesBHRe1EcctM/e8xEgZXaZ6vXy5EjmiXiwZEHW8iVl3vu5Vtrt47v
+Ip2MFgp2CQfJDWhpM7xRlwNQ4qEFhw+RdgRJfG4PYLfOyo49xu5qoRBqRMEVuqFfg9C19C4drz4s
+HRSboH67fqAjiEBexKMfbMW+93AWX2nn+wVfu9t9ijyjbLHqHHNwy5s92I5TSwFfjad+rd61iT+Z
+0dGUK6Zq0FywnYZhtgM5JV0jkFXSLkS/oC0o6BsVX4PqyGGfVnVR8EiUIamcrGELj4K28lB5Utex
+akVQroLcTWy7TABE/yvz46l0jBDMYGeC+0wMzRphim9w1ojFXr9CjgALkzll3WQydGPEXxUtQ6pz
+KwzB0MnZ/pQbKGz3oLFUANy8Idj1ICCGBuAaJD5xUCbQIo5G3JVfc/LEeFkksfaHtDaW3d/3n4Yp
+n5F7j3Y9+QtLA/0RPzjqRmi9+qA/4eLyr48hBixU+QjhVmF1cUnf4XZdIs03t79P4VY5kAoj5aDz
+G33E2x7NP/5XfD9UgSWRFQCRdpr4vZ461Dwb+RJ04PhaOSNU0CAGubknCke2FbZxYLlCoWKpDZBI
+f7702L36zaWm/+XmnQ9XnSTGo8LAZ6FUdFV7p5bk58oOrNxkiqX72eE9XqWAUe/mIj0rX/qqsPn3
+WrqNTuxHMoRX7otP4lzSHp9cAbU52JLCio9Xhc5oLeyuIJF/OcR4C0Er2jqTYd8wdDK/IchJ0xA/
+tU4RopND6iXHpDOmO5vFiPmTwxnfrMb8qlZ6vws7nChOwLGrJ15Bn0xSimnIW4KotzQW0/bBZYH5
+0HnOxBC97dnz0jdG4MCFCLp6ce/P9gwzBObD4g9hvAvqbmi5qtnGiAaoBYt8bQ3cjqBZYZ5PHAEc
+hl7aKuyxAcqJDYW+LO7guzOTKyYx+Hf0f6lXCZGRkkjGpjxqiGcNEb4dNWzOMS9T5J79wtXSHatO
+XQbNkI+fdJyRi0ensi/72ST6z9y5OdRJmF/6D7OFFlS/6k/3IFEWKqHd5226PHm+vbE8HUtlmUMk
+JuPdv4gTI/z9BedON3dV+0tSDNbgJIXJ2MuuWrPBe1aXvdIpzI37dunFNMTAOBMcDqkhHgTHBrOF
+u32F6x/451xWeBlVowxkEFlM+G+jaBaZOh8MJ2hXIU7BdMtIvGe2X8/khv1jlY3IbiA/rmniMrCl
+bJ4FDBaSp/SaKzzdPjlpU1V9dETbt9mSas/YP4iCKENREHoS6hPe0HWB92kgnJlk1h+F1RXl7Gdy
+5sJT2nJ/qRDlxLrAlmIzAnPZ66QsB6tXYlxP1kEeDTDQY6p+mm5cx/cEr+G/dDxgog3Meu3pA+YM
+m9vuzuC+8qST4tktItR16zlWoRURqoe5k6NwTLl9LQx2i/51ffM9RhXLVvIwm5UMZnSp/YLWz9D1
+eIics++GOIFRz+VRgtsB02mM11RpYbvk+XI4JmyJ2E0E37TtW6QCy+rgHnteIhOnl6e5soYihE7e
+RSMqtFzekfBq1eoddCpzcZU1mCKd8A0tb2gKrpdNvq+V3dkEDAXcapJo00qib6STkPLoFNYbXgyr
+qttf3A/8DtFxOoLV+kpqEIff3/WxmLXtSgcXu2lzVF21qmG4o6y6KOGIVXlyx6r8EftRXBQn9QhY
+XmoN5mH8xUCgaMlW4iAU6pettalhkvdZrZvAzbWhSYCA7EYl0OrwzQqAbu6SDoI8jeenXLOKJ5Ao
+mgxPBUsWhWzndw2zIQ1fGpPPJF1oSQ/w9AjQOf3+h+F2Uo1RrXkCBZ/X3+Iir4B6XryoUbwS9iv0
+3BcugAuw7Q9DfNoo/ZgXNnOC+61mk2aatQ8RmeopWs1QpbwUa3241IxTyX4EyK7XgTkM6muunH/B
+e75LklCCLMaofHLkm5OI98YnUHfFj2ZyZhmCI6e9m0nO4hsy8FEWzXo8A8a3hYjS1z9ugagEXuU7
+TskgnxVwXHNIAhAr7V3U+XJQup+pUJbKwI9a+Ti1cApJa7vJg7EuOrJOlKIcLCnuoPtRW2Tpye+p
+/rLm4B+BR8ZHw6qtncVJ+bjO3qva8pWQ3TqTigJlajlGvANYBTKFDBizHzA+JomObXcb2p/plMQx
+decM13SHusbb9/cYBrdFa/rrAWQxXgIAMHd5I6QDm7t8PjK888hNwFZe0nJv4SW1/x5hnIbAVEej
+tUQa7bGVUgd2HJfKFvsrkgCnH94kUNVd8Q5KOwvt5BuWVsOCsqQxnbV0tSnK4fmJq3tyimrpAvdC
+b4v3aw3wi8UvnOsPzYh8FWzsbd2TptB+iNDqWesAY+R6VQ8Rt2Nv+1ObbC/a/+uiq18Rckzl7g40
+HegIG9aLgSvsSma9iNrEQSMsxw7lPM5R+k+O5Lb9kEkdGP/mNo6f471Pi8F4zeMnlmGENX9TrBD/
+6ZLMyoYjRLeBNB4Pdm9z2zP+NRTn2Ww+Ijmb6VzaLLZN2zSgB+UYgwn6NiqjizAu6cf/YVdL8Jef
+We9ec2jLDo0iEjjsj+whxcQFmDimtk6eDpsaFrqEn0Y5Sq3d26NDle4QvuqS4BGJ76qJDb5D5ad4
+Fbo8qo/z/ZPeprsNLkG5NAWn7V62yWdxfWMpq/IwNhZI7PaizPkuVD9gYifnNGDzsgoKKC6ET5M7
+g2XmqMrZAAGHtjT0/eCFwrXhI6LcExBmGTqRxbpX2+1LbO7b+f8SVoDjGOXW/pYhQigvFOqgZUMO
+bShY+7FGOoB99DU1B9KF6X7449ZzS4Kztxom91b7Iv8YvQ/vN6orlaRGBnOQ86GkVtKdAhZRLpLp
+n9wiC7lsFxjM1EpOZhv/2UTOHbPN4B9uVfD/C1bYkgOcf9Jiaj3sQcZA49H3+Tkv3hD+QuVgqfp6
+2jntByzYH84NDAYDcIfngIFxgFYBHbRsZAEFiDnDjzu24EwQyCYdmAcmA/Lrl7gmgVqIr0SzS10k
+BzyNwhgHfTAW4m3mEJTqVhF+13TsUzgAL7n4XZP/wrrrAXwB4xSRn8HuQiSSNTSnUyx3gJNl+N7A
+BcwKhEig34SxhgSony0rYq/syieC4Hy/65QJ17mQjsekBAUkkDFRMW03kQYu+LUYefz/0xqD7fgS
+RGaVosFw/iBSc6oFcx9HYufLUgYBbK0IijlBKLgffpZX41Cwz9fXAOUWNDJujnsOLQIgqoHu6qNV
+ud1isoUaqYZ1GQXbzsYOouF5VBer9lHcosaz7k/iNXL4K0UEnR4rlh5a

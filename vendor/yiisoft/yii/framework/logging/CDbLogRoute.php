@@ -1,139 +1,68 @@
-<?php
-/**
- * CDbLogRoute class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-
-/**
- * CDbLogRoute stores log messages in a database table.
- *
- * To specify the database table for storing log messages, set {@link logTableName} as
- * the name of the table and specify {@link connectionID} to be the ID of a {@link CDbConnection}
- * application component. If they are not set, a SQLite3 database named 'log-YiiVersion.db' will be created
- * and used under the application runtime directory.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.logging
- * @since 1.0
- */
-class CDbLogRoute extends CLogRoute
-{
-	/**
-	 * @var string the ID of CDbConnection application component. If not set, a SQLite database
-	 * will be automatically created and used. The SQLite database file is
-	 * <code>protected/runtime/log-YiiVersion.db</code>.
-	 */
-	public $connectionID;
-	/**
-	 * @var string the name of the DB table that stores log content. Defaults to 'YiiLog'.
-	 * If {@link autoCreateLogTable} is false and you want to create the DB table manually by yourself,
-	 * you need to make sure the DB table is of the following structure:
-	 * <pre>
-	 *  (
-	 *		id       INTEGER NOT NULL PRIMARY KEY,
-	 *		level    VARCHAR(128),
-	 *		category VARCHAR(128),
-	 *		logtime  INTEGER,
-	 *		message  TEXT
-	 *   )
-	 * </pre>
-	 * Note, the 'id' column must be created as an auto-incremental column.
-	 * In MySQL, this means it should be <code>id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY</code>;
-	 * In PostgreSQL, it is <code>id SERIAL PRIMARY KEY</code>.
-	 * @see autoCreateLogTable
-	 */
-	public $logTableName='YiiLog';
-	/**
-	 * @var boolean whether the log DB table should be automatically created if not exists. Defaults to true.
-	 * @see logTableName
-	 */
-	public $autoCreateLogTable=true;
-	/**
-	 * @var CDbConnection the DB connection instance
-	 */
-	private $_db;
-
-	/**
-	 * Initializes the route.
-	 * This method is invoked after the route is created by the route manager.
-	 */
-	public function init()
-	{
-		parent::init();
-
-		if($this->autoCreateLogTable)
-		{
-			$db=$this->getDbConnection();
-			try
-			{
-				$db->createCommand()->delete($this->logTableName,'0=1');
-			}
-			catch(Exception $e)
-			{
-				$this->createLogTable($db,$this->logTableName);
-			}
-		}
-	}
-
-	/**
-	 * Creates the DB table for storing log messages.
-	 * @param CDbConnection $db the database connection
-	 * @param string $tableName the name of the table to be created
-	 */
-	protected function createLogTable($db,$tableName)
-	{
-		$db->createCommand()->createTable($tableName, array(
-			'id'=>'pk',
-			'level'=>'varchar(128)',
-			'category'=>'varchar(128)',
-			'logtime'=>'integer',
-			'message'=>'text',
-		));
-	}
-
-	/**
-	 * @return CDbConnection the DB connection instance
-	 * @throws CException if {@link connectionID} does not point to a valid application component.
-	 */
-	protected function getDbConnection()
-	{
-		if($this->_db!==null)
-			return $this->_db;
-		elseif(($id=$this->connectionID)!==null)
-		{
-			if(($this->_db=Yii::app()->getComponent($id)) instanceof CDbConnection)
-				return $this->_db;
-			else
-				throw new CException(Yii::t('yii','CDbLogRoute.connectionID "{id}" does not point to a valid CDbConnection application component.',
-					array('{id}'=>$id)));
-		}
-		else
-		{
-			$dbFile=Yii::app()->getRuntimePath().DIRECTORY_SEPARATOR.'log-'.Yii::getVersion().'.db';
-			return $this->_db=new CDbConnection('sqlite:'.$dbFile);
-		}
-	}
-
-	/**
-	 * Stores log messages into database.
-	 * @param array $logs list of log messages
-	 */
-	protected function processLogs($logs)
-	{
-		$command=$this->getDbConnection()->createCommand();
-		foreach($logs as $log)
-		{
-			$command->insert($this->logTableName,array(
-				'level'=>$log[1],
-				'category'=>$log[2],
-				'logtime'=>(int)$log[3],
-				'message'=>$log[0],
-			));
-		}
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

@@ -1,603 +1,295 @@
-<?php
-/**
- * CDbAuthManager class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CDbAuthManager represents an authorization manager that stores authorization information in database.
- *
- * The database connection is specified by {@link connectionID}. And the database schema
- * should be as described in "framework/web/auth/*.sql". You may change the names of
- * the three tables used to store the authorization data by setting {@link itemTable},
- * {@link itemChildTable} and {@link assignmentTable}.
- *
- * @property array $authItems The authorization items of the specific type.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.web.auth
- * @since 1.0
- */
-class CDbAuthManager extends CAuthManager
-{
-	/**
-	 * @var string the ID of the {@link CDbConnection} application component. Defaults to 'db'.
-	 * The database must have the tables as declared in "framework/web/auth/*.sql".
-	 */
-	public $connectionID='db';
-	/**
-	 * @var string the name of the table storing authorization items. Defaults to 'AuthItem'.
-	 */
-	public $itemTable='AuthItem';
-	/**
-	 * @var string the name of the table storing authorization item hierarchy. Defaults to 'AuthItemChild'.
-	 */
-	public $itemChildTable='AuthItemChild';
-	/**
-	 * @var string the name of the table storing authorization item assignments. Defaults to 'AuthAssignment'.
-	 */
-	public $assignmentTable='AuthAssignment';
-	/**
-	 * @var CDbConnection the database connection. By default, this is initialized
-	 * automatically as the application component whose ID is indicated as {@link connectionID}.
-	 */
-	public $db;
-
-	private $_usingSqlite;
-
-	/**
-	 * Initializes the application component.
-	 * This method overrides the parent implementation by establishing the database connection.
-	 */
-	public function init()
-	{
-		parent::init();
-		$this->_usingSqlite=!strncmp($this->getDbConnection()->getDriverName(),'sqlite',6);
-	}
-
-	/**
-	 * Performs access check for the specified user.
-	 * @param string $itemName the name of the operation that need access check
-	 * @param mixed $userId the user ID. This should can be either an integer and a string representing
-	 * the unique identifier of a user. See {@link IWebUser::getId}.
-	 * @param array $params name-value pairs that would be passed to biz rules associated
-	 * with the tasks and roles assigned to the user.
-	 * Since version 1.1.11 a param with name 'userId' is added to this array, which holds the value of <code>$userId</code>.
-	 * @return boolean whether the operations can be performed by the user.
-	 */
-	public function checkAccess($itemName,$userId,$params=array())
-	{
-		$assignments=$this->getAuthAssignments($userId);
-		return $this->checkAccessRecursive($itemName,$userId,$params,$assignments);
-	}
-
-	/**
-	 * Performs access check for the specified user.
-	 * This method is internally called by {@link checkAccess}.
-	 * @param string $itemName the name of the operation that need access check
-	 * @param mixed $userId the user ID. This should can be either an integer and a string representing
-	 * the unique identifier of a user. See {@link IWebUser::getId}.
-	 * @param array $params name-value pairs that would be passed to biz rules associated
-	 * with the tasks and roles assigned to the user.
-	 * Since version 1.1.11 a param with name 'userId' is added to this array, which holds the value of <code>$userId</code>.
-	 * @param array $assignments the assignments to the specified user
-	 * @return boolean whether the operations can be performed by the user.
-	 * @since 1.1.3
-	 */
-	protected function checkAccessRecursive($itemName,$userId,$params,$assignments)
-	{
-		if(($item=$this->getAuthItem($itemName))===null)
-			return false;
-		Yii::trace('Checking permission "'.$item->getName().'"','system.web.auth.CDbAuthManager');
-		if(!isset($params['userId']))
-		    $params['userId'] = $userId;
-		if($this->executeBizRule($item->getBizRule(),$params,$item->getData()))
-		{
-			if(in_array($itemName,$this->defaultRoles))
-				return true;
-			if(isset($assignments[$itemName]))
-			{
-				$assignment=$assignments[$itemName];
-				if($this->executeBizRule($assignment->getBizRule(),$params,$assignment->getData()))
-					return true;
-			}
-			$parents=$this->db->createCommand()
-				->select('parent')
-				->from($this->itemChildTable)
-				->where('child=:name', array(':name'=>$itemName))
-				->queryColumn();
-			foreach($parents as $parent)
-			{
-				if($this->checkAccessRecursive($parent,$userId,$params,$assignments))
-					return true;
-			}
-		}
-		return false;
-	}
-
-	/**
-	 * Adds an item as a child of another item.
-	 * @param string $itemName the parent item name
-	 * @param string $childName the child item name
-	 * @return boolean whether the item is added successfully
-	 * @throws CException if either parent or child doesn't exist or if a loop has been detected.
-	 */
-	public function addItemChild($itemName,$childName)
-	{
-		if($itemName===$childName)
-			throw new CException(Yii::t('yii','Cannot add "{name}" as a child of itself.',
-					array('{name}'=>$itemName)));
-
-		$rows=$this->db->createCommand()
-			->select()
-			->from($this->itemTable)
-			->where('name=:name1 OR name=:name2', array(
-				':name1'=>$itemName,
-				':name2'=>$childName
-			))
-			->queryAll();
-
-		if(count($rows)==2)
-		{
-			if($rows[0]['name']===$itemName)
-			{
-				$parentType=$rows[0]['type'];
-				$childType=$rows[1]['type'];
-			}
-			else
-			{
-				$childType=$rows[0]['type'];
-				$parentType=$rows[1]['type'];
-			}
-			$this->checkItemChildType($parentType,$childType);
-			if($this->detectLoop($itemName,$childName))
-				throw new CException(Yii::t('yii','Cannot add "{child}" as a child of "{name}". A loop has been detected.',
-					array('{child}'=>$childName,'{name}'=>$itemName)));
-
-			$this->db->createCommand()
-				->insert($this->itemChildTable, array(
-					'parent'=>$itemName,
-					'child'=>$childName,
-				));
-
-			return true;
-		}
-		else
-			throw new CException(Yii::t('yii','Either "{parent}" or "{child}" does not exist.',array('{child}'=>$childName,'{parent}'=>$itemName)));
-	}
-
-	/**
-	 * Removes a child from its parent.
-	 * Note, the child item is not deleted. Only the parent-child relationship is removed.
-	 * @param string $itemName the parent item name
-	 * @param string $childName the child item name
-	 * @return boolean whether the removal is successful
-	 */
-	public function removeItemChild($itemName,$childName)
-	{
-		return $this->db->createCommand()
-			->delete($this->itemChildTable, 'parent=:parent AND child=:child', array(
-				':parent'=>$itemName,
-				':child'=>$childName
-			)) > 0;
-	}
-
-	/**
-	 * Returns a value indicating whether a child exists within a parent.
-	 * @param string $itemName the parent item name
-	 * @param string $childName the child item name
-	 * @return boolean whether the child exists
-	 */
-	public function hasItemChild($itemName,$childName)
-	{
-		return $this->db->createCommand()
-			->select('parent')
-			->from($this->itemChildTable)
-			->where('parent=:parent AND child=:child', array(
-				':parent'=>$itemName,
-				':child'=>$childName))
-			->queryScalar() !== false;
-	}
-
-	/**
-	 * Returns the children of the specified item.
-	 * @param mixed $names the parent item name. This can be either a string or an array.
-	 * The latter represents a list of item names.
-	 * @return array all child items of the parent
-	 */
-	public function getItemChildren($names)
-	{
-		if(is_string($names))
-			$condition='parent='.$this->db->quoteValue($names);
-		elseif(is_array($names) && $names!==array())
-		{
-			foreach($names as &$name)
-				$name=$this->db->quoteValue($name);
-			$condition='parent IN ('.implode(', ',$names).')';
-		}
-
-		$rows=$this->db->createCommand()
-			->select('name, type, description, bizrule, data')
-			->from(array(
-				$this->itemTable,
-				$this->itemChildTable
-			))
-			->where($condition.' AND name=child')
-			->queryAll();
-
-		$children=array();
-		foreach($rows as $row)
-		{
-			if(($data=@unserialize($row['data']))===false)
-				$data=null;
-			$children[$row['name']]=new CAuthItem($this,$row['name'],$row['type'],$row['description'],$row['bizrule'],$data);
-		}
-		return $children;
-	}
-
-	/**
-	 * Assigns an authorization item to a user.
-	 * @param string $itemName the item name
-	 * @param mixed $userId the user ID (see {@link IWebUser::getId})
-	 * @param string $bizRule the business rule to be executed when {@link checkAccess} is called
-	 * for this particular authorization item.
-	 * @param mixed $data additional data associated with this assignment
-	 * @return CAuthAssignment the authorization assignment information.
-	 * @throws CException if the item does not exist or if the item has already been assigned to the user
-	 */
-	public function assign($itemName,$userId,$bizRule=null,$data=null)
-	{
-		if($this->usingSqlite() && $this->getAuthItem($itemName)===null)
-			throw new CException(Yii::t('yii','The item "{name}" does not exist.',array('{name}'=>$itemName)));
-
-		$this->db->createCommand()
-			->insert($this->assignmentTable, array(
-				'itemname'=>$itemName,
-				'userid'=>$userId,
-				'bizrule'=>$bizRule,
-				'data'=>serialize($data)
-			));
-		return new CAuthAssignment($this,$itemName,$userId,$bizRule,$data);
-	}
-
-	/**
-	 * Revokes an authorization assignment from a user.
-	 * @param string $itemName the item name
-	 * @param mixed $userId the user ID (see {@link IWebUser::getId})
-	 * @return boolean whether removal is successful
-	 */
-	public function revoke($itemName,$userId)
-	{
-		return $this->db->createCommand()
-			->delete($this->assignmentTable, 'itemname=:itemname AND userid=:userid', array(
-				':itemname'=>$itemName,
-				':userid'=>$userId
-			)) > 0;
-	}
-
-	/**
-	 * Returns a value indicating whether the item has been assigned to the user.
-	 * @param string $itemName the item name
-	 * @param mixed $userId the user ID (see {@link IWebUser::getId})
-	 * @return boolean whether the item has been assigned to the user.
-	 */
-	public function isAssigned($itemName,$userId)
-	{
-		return $this->db->createCommand()
-			->select('itemname')
-			->from($this->assignmentTable)
-			->where('itemname=:itemname AND userid=:userid', array(
-				':itemname'=>$itemName,
-				':userid'=>$userId))
-			->queryScalar() !== false;
-	}
-
-	/**
-	 * Returns the item assignment information.
-	 * @param string $itemName the item name
-	 * @param mixed $userId the user ID (see {@link IWebUser::getId})
-	 * @return CAuthAssignment the item assignment information. Null is returned if
-	 * the item is not assigned to the user.
-	 */
-	public function getAuthAssignment($itemName,$userId)
-	{
-		$row=$this->db->createCommand()
-			->select()
-			->from($this->assignmentTable)
-			->where('itemname=:itemname AND userid=:userid', array(
-				':itemname'=>$itemName,
-				':userid'=>$userId))
-			->queryRow();
-		if($row!==false)
-		{
-			if(($data=@unserialize($row['data']))===false)
-				$data=null;
-			return new CAuthAssignment($this,$row['itemname'],$row['userid'],$row['bizrule'],$data);
-		}
-		else
-			return null;
-	}
-
-	/**
-	 * Returns the item assignments for the specified user.
-	 * @param mixed $userId the user ID (see {@link IWebUser::getId})
-	 * @return array the item assignment information for the user. An empty array will be
-	 * returned if there is no item assigned to the user.
-	 */
-	public function getAuthAssignments($userId)
-	{
-		$rows=$this->db->createCommand()
-			->select()
-			->from($this->assignmentTable)
-			->where('userid=:userid', array(':userid'=>$userId))
-			->queryAll();
-		$assignments=array();
-		foreach($rows as $row)
-		{
-			if(($data=@unserialize($row['data']))===false)
-				$data=null;
-			$assignments[$row['itemname']]=new CAuthAssignment($this,$row['itemname'],$row['userid'],$row['bizrule'],$data);
-		}
-		return $assignments;
-	}
-
-	/**
-	 * Saves the changes to an authorization assignment.
-	 * @param CAuthAssignment $assignment the assignment that has been changed.
-	 */
-	public function saveAuthAssignment($assignment)
-	{
-		$this->db->createCommand()
-			->update($this->assignmentTable, array(
-				'bizrule'=>$assignment->getBizRule(),
-				'data'=>serialize($assignment->getData()),
-			), 'itemname=:itemname AND userid=:userid', array(
-				'itemname'=>$assignment->getItemName(),
-				'userid'=>$assignment->getUserId()
-			));
-	}
-
-	/**
-	 * Returns the authorization items of the specific type and user.
-	 * @param integer $type the item type (0: operation, 1: task, 2: role). Defaults to null,
-	 * meaning returning all items regardless of their type.
-	 * @param mixed $userId the user ID. Defaults to null, meaning returning all items even if
-	 * they are not assigned to a user.
-	 * @return array the authorization items of the specific type.
-	 */
-	public function getAuthItems($type=null,$userId=null)
-	{
-		if($type===null && $userId===null)
-		{
-			$command=$this->db->createCommand()
-				->select()
-				->from($this->itemTable);
-		}
-		elseif($userId===null)
-		{
-			$command=$this->db->createCommand()
-				->select()
-				->from($this->itemTable)
-				->where('type=:type', array(':type'=>$type));
-		}
-		elseif($type===null)
-		{
-			$command=$this->db->createCommand()
-				->select('name,type,description,t1.bizrule,t1.data')
-				->from(array(
-					$this->itemTable.' t1',
-					$this->assignmentTable.' t2'
-				))
-				->where('name=itemname AND userid=:userid', array(':userid'=>$userId));
-		}
-		else
-		{
-			$command=$this->db->createCommand()
-				->select('name,type,description,t1.bizrule,t1.data')
-				->from(array(
-					$this->itemTable.' t1',
-					$this->assignmentTable.' t2'
-				))
-				->where('name=itemname AND type=:type AND userid=:userid', array(
-					':type'=>$type,
-					':userid'=>$userId
-				));
-		}
-		$items=array();
-		foreach($command->queryAll() as $row)
-		{
-			if(($data=@unserialize($row['data']))===false)
-				$data=null;
-			$items[$row['name']]=new CAuthItem($this,$row['name'],$row['type'],$row['description'],$row['bizrule'],$data);
-		}
-		return $items;
-	}
-
-	/**
-	 * Creates an authorization item.
-	 * An authorization item represents an action permission (e.g. creating a post).
-	 * It has three types: operation, task and role.
-	 * Authorization items form a hierarchy. Higher level items inheirt permissions representing
-	 * by lower level items.
-	 * @param string $name the item name. This must be a unique identifier.
-	 * @param integer $type the item type (0: operation, 1: task, 2: role).
-	 * @param string $description description of the item
-	 * @param string $bizRule business rule associated with the item. This is a piece of
-	 * PHP code that will be executed when {@link checkAccess} is called for the item.
-	 * @param mixed $data additional data associated with the item.
-	 * @return CAuthItem the authorization item
-	 * @throws CException if an item with the same name already exists
-	 */
-	public function createAuthItem($name,$type,$description='',$bizRule=null,$data=null)
-	{
-		$this->db->createCommand()
-			->insert($this->itemTable, array(
-				'name'=>$name,
-				'type'=>$type,
-				'description'=>$description,
-				'bizrule'=>$bizRule,
-				'data'=>serialize($data)
-			));
-		return new CAuthItem($this,$name,$type,$description,$bizRule,$data);
-	}
-
-	/**
-	 * Removes the specified authorization item.
-	 * @param string $name the name of the item to be removed
-	 * @return boolean whether the item exists in the storage and has been removed
-	 */
-	public function removeAuthItem($name)
-	{
-		if($this->usingSqlite())
-		{
-			$this->db->createCommand()
-				->delete($this->itemChildTable, 'parent=:name1 OR child=:name2', array(
-					':name1'=>$name,
-					':name2'=>$name
-			));
-			$this->db->createCommand()
-				->delete($this->assignmentTable, 'itemname=:name', array(
-					':name'=>$name,
-			));
-		}
-
-		return $this->db->createCommand()
-			->delete($this->itemTable, 'name=:name', array(
-				':name'=>$name
-			)) > 0;
-	}
-
-	/**
-	 * Returns the authorization item with the specified name.
-	 * @param string $name the name of the item
-	 * @return CAuthItem the authorization item. Null if the item cannot be found.
-	 */
-	public function getAuthItem($name)
-	{
-		$row=$this->db->createCommand()
-			->select()
-			->from($this->itemTable)
-			->where('name=:name', array(':name'=>$name))
-			->queryRow();
-
-		if($row!==false)
-		{
-			if(($data=@unserialize($row['data']))===false)
-				$data=null;
-			return new CAuthItem($this,$row['name'],$row['type'],$row['description'],$row['bizrule'],$data);
-		}
-		else
-			return null;
-	}
-
-	/**
-	 * Saves an authorization item to persistent storage.
-	 * @param CAuthItem $item the item to be saved.
-	 * @param string $oldName the old item name. If null, it means the item name is not changed.
-	 */
-	public function saveAuthItem($item,$oldName=null)
-	{
-		if($this->usingSqlite() && $oldName!==null && $item->getName()!==$oldName)
-		{
-			$this->db->createCommand()
-				->update($this->itemChildTable, array(
-					'parent'=>$item->getName(),
-				), 'parent=:whereName', array(
-					':whereName'=>$oldName,
-				));
-			$this->db->createCommand()
-				->update($this->itemChildTable, array(
-					'child'=>$item->getName(),
-				), 'child=:whereName', array(
-					':whereName'=>$oldName,
-				));
-			$this->db->createCommand()
-				->update($this->assignmentTable, array(
-					'itemname'=>$item->getName(),
-				), 'itemname=:whereName', array(
-					':whereName'=>$oldName,
-				));
-		}
-
-		$this->db->createCommand()
-			->update($this->itemTable, array(
-				'name'=>$item->getName(),
-				'type'=>$item->getType(),
-				'description'=>$item->getDescription(),
-				'bizrule'=>$item->getBizRule(),
-				'data'=>serialize($item->getData()),
-			), 'name=:whereName', array(
-				':whereName'=>$oldName===null?$item->getName():$oldName,
-			));
-	}
-
-	/**
-	 * Saves the authorization data to persistent storage.
-	 */
-	public function save()
-	{
-	}
-
-	/**
-	 * Removes all authorization data.
-	 */
-	public function clearAll()
-	{
-		$this->clearAuthAssignments();
-		$this->db->createCommand()->delete($this->itemChildTable);
-		$this->db->createCommand()->delete($this->itemTable);
-	}
-
-	/**
-	 * Removes all authorization assignments.
-	 */
-	public function clearAuthAssignments()
-	{
-		$this->db->createCommand()->delete($this->assignmentTable);
-	}
-
-	/**
-	 * Checks whether there is a loop in the authorization item hierarchy.
-	 * @param string $itemName parent item name
-	 * @param string $childName the name of the child item that is to be added to the hierarchy
-	 * @return boolean whether a loop exists
-	 */
-	protected function detectLoop($itemName,$childName)
-	{
-		if($childName===$itemName)
-			return true;
-		foreach($this->getItemChildren($childName) as $child)
-		{
-			if($this->detectLoop($itemName,$child->getName()))
-				return true;
-		}
-		return false;
-	}
-
-	/**
-	 * @return CDbConnection the DB connection instance
-	 * @throws CException if {@link connectionID} does not point to a valid application component.
-	 */
-	protected function getDbConnection()
-	{
-		if($this->db!==null)
-			return $this->db;
-		elseif(($this->db=Yii::app()->getComponent($this->connectionID)) instanceof CDbConnection)
-			return $this->db;
-		else
-			throw new CException(Yii::t('yii','CDbAuthManager.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.',
-				array('{id}'=>$this->connectionID)));
-	}
-
-	/**
-	 * @return boolean whether the database is a SQLite database
-	 */
-	protected function usingSqlite()
-	{
-		return $this->_usingSqlite;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

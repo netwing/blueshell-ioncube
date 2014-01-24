@@ -1,560 +1,428 @@
-<?php
-
-Yii::import('system.db.CDbConnection');
-Yii::import('system.db.ar.CActiveRecord');
-
-require_once(dirname(__FILE__).'/../data/models.php');
-
-class CActiveRecordEventWrappersTest extends CTestCase
-{
-	private $_connection;
-
-	public function setUp()
-	{
-		if(!extension_loaded('pdo') || !extension_loaded('pdo_sqlite'))
-			$this->markTestSkipped('PDO and SQLite extensions are required.');
-
-		$this->_connection=new CDbConnection('sqlite::memory:');
-		$this->_connection->active=true;
-		$this->_connection->pdoInstance->exec(file_get_contents(dirname(__FILE__).'/../data/sqlite.sql'));
-		CActiveRecord::$db=$this->_connection;
-
-		// reset models
-		UserWithWrappers::clearCounters();
-		UserWithWrappers::setBeforeFindCriteria(null);
-		PostWithWrappers::clearCounters();
-		PostWithWrappers::setBeforeFindCriteria(null);
-		CommentWithWrappers::clearCounters();
-	}
-
-	public function tearDown()
-	{
-		$this->_connection->active=false;
-	}
-
-	/**
-	 * provides different db critieras to test beforeFind criteria modification
-	 * @return array (db critiera, expected records, column assertations)
-	 */
-	public function userCriteriaProvider()
-	{
-		return array(
-			array(new CDbCriteria(array('limit'=>1)), 1, array()),
-			array(new CDbCriteria(array('select'=>"'MisterX' AS username")), 4, array('username'=>'MisterX')),
-			array(new CDbCriteria(array('with'=>'posts')), 4, array()),
-		);
-	}
-
-	/**
-	 * provides different db critieras to test beforeFind criteria modification
-	 * @return array (db critiera, expected records, column assertations)
-	 */
-	public function postCriteriaProvider()
-	{
-		return array(
-			array('', 3, array()),
-			array(new CDbCriteria(array('select'=>"'changedTitle' AS title")), 3, array('title'=>'changedTitle')),
-			array(new CDbCriteria(array('condition'=>"title='post 2'")), 1, array()),
-			array(new CDbCriteria(array('with'=>'comments')), 3, array()),
-			array(new CDbCriteria(array('scopes'=>'rename')), 3, array('title'=>'renamed post')),
-		);
-	}
-
-	/**
-	 * provides different db critieras to test beforeFind criteria modification
-	 * @return array (db critiera, expected records, column assertations)
-	 */
-	public function postCriteriaProviderLazy()
-	{
-		return array_merge($this->postCriteriaProvider(), array(
-			array(new CDbCriteria(array('limit'=>1)), 1, array()),
-		));
-	}
-
-	/**
-	 * Check whether criteria given by dataprovider has been applied
-	 * @param array $records
-	 * @param CDbCriteria $criteria
-	 * @param integer $count
-	 * @param array $assertations
-	 */
-	public function assertCriteriaApplied($records, $criteria, $count, $assertations)
-	{
-		$this->assertEquals($count, count($records));
-		foreach($assertations as $attribute => $value) {
-			foreach($records as $record) {
-				$this->assertEquals($value, $record->{$attribute});
-			}
-		}
-		if (!empty($criteria))
-		{
-			$with = (array)$criteria->with;
-			foreach($with as $relation) {
-				foreach($records as $record) {
-					$this->assertTrue($record->hasRelated($relation), 'relation should have been loaded due to with in criteria');
-				}
-			}
-		}
-	}
-
-	/**
-	 * tests number of calls to beforeFind() on normal find*() method call
-	 */
-	public function testBeforeFind()
-	{
-		UserWithWrappers::model()->find();
-		$this->assertEquals(UserWithWrappers::getCounter('beforeFind'),1);
-
-		UserWithWrappers::model()->findByAttributes(array('username'=>'user1'));
-		$this->assertEquals(UserWithWrappers::getCounter('beforeFind'),1);
-
-		UserWithWrappers::model()->findByPk(1);
-		$this->assertEquals(UserWithWrappers::getCounter('beforeFind'),1);
-
-		UserWithWrappers::model()->findBySql('SELECT * FROM users');
-		$this->assertEquals(UserWithWrappers::getCounter('beforeFind'),1);
-
-		UserWithWrappers::model()->findAll();
-		$this->assertEquals(UserWithWrappers::getCounter('beforeFind'),1);
-
-		UserWithWrappers::model()->findAllByAttributes(array('username'=>'user1'));
-		$this->assertEquals(UserWithWrappers::getCounter('beforeFind'),1);
-
-		UserWithWrappers::model()->findAllByPk(1);
-		$this->assertEquals(UserWithWrappers::getCounter('beforeFind'),1);
-
-		UserWithWrappers::model()->findAllBySql('SELECT * FROM users');
-		$this->assertEquals(UserWithWrappers::getCounter('beforeFind'),1);
-
-		// test for query with no result
-		$this->assertEmpty(UserWithWrappers::model()->find('1=0'));
-		$this->assertEquals(UserWithWrappers::getCounter('beforeFind'),1);
-
-		$this->assertEmpty(UserWithWrappers::model()->findByAttributes(array('username'=>'notExistingUser')));
-		$this->assertEquals(UserWithWrappers::getCounter('beforeFind'),1);
-
-		$this->assertEmpty(UserWithWrappers::model()->findByPk(1000));
-		$this->assertEquals(UserWithWrappers::getCounter('beforeFind'),1);
-
-		$this->assertEmpty(UserWithWrappers::model()->findBySql('SELECT * FROM users WHERE 1=0'));
-		$this->assertEquals(UserWithWrappers::getCounter('beforeFind'),1);
-
-		$this->assertEmpty(UserWithWrappers::model()->findAll('1=0'));
-		$this->assertEquals(UserWithWrappers::getCounter('beforeFind'),1);
-
-		$this->assertEmpty(UserWithWrappers::model()->findAllByAttributes(array('username'=>'notExistingUser')));
-		$this->assertEquals(UserWithWrappers::getCounter('beforeFind'),1);
-
-		$this->assertEmpty(UserWithWrappers::model()->findAllByPk(array(1000,1001)));
-		$this->assertEquals(UserWithWrappers::getCounter('beforeFind'),1);
-
-		$this->assertEmpty(UserWithWrappers::model()->findAllBySql('SELECT * FROM users WHERE 1=0'));
-		$this->assertEquals(UserWithWrappers::getCounter('beforeFind'),1);
-
-	}
-
-	/**
-	 * setting select in beforeFind should not effect select on stat relation
-	 * https://github.com/yiisoft/yii/issues/1381
-	 */
-	public function testBeforeFindStatSelect()
-	{
-		PostWithWrappers::setBeforeFindCriteria(new CDbCriteria(array(
-			'select' => 'id, content',
-		)));
-
-		$user1 = UserWithWrappers::model()->findByPk(1);
-		$this->assertEquals(1, $user1->postCount);
-
-		$user2 = UserWithWrappers::model()->findByPk(2);
-		$this->assertEquals(3, $user2->postCount);
-	}
-
-	/**
-	 * tests if criteria modification in beforeFind() applies on normal find*() method call
-	 * @dataProvider userCriteriaProvider
-	 */
-	public function testBeforeFindCriteriaModification($criteria, $count, $assertations)
-	{
-		UserWithWrappers::setBeforeFindCriteria($criteria);
-
-		$user = UserWithWrappers::model()->find();
-		$this->assertCriteriaApplied(array($user), $criteria, 1, $assertations);
-
-		$user = UserWithWrappers::model()->findByAttributes(array('username'=>'user1'));
-		$this->assertCriteriaApplied(array($user), $criteria, 1, $assertations);
-
-		$user = UserWithWrappers::model()->findByPk(1);
-		$this->assertCriteriaApplied(array($user), $criteria, 1, $assertations);
-
-		$user = UserWithWrappers::model()->findBySql('SELECT * FROM users');
-		$this->assertCriteriaApplied(array($user), $criteria, 1, array());
-
-		$users = UserWithWrappers::model()->findAll();
-		$this->assertCriteriaApplied($users, $criteria, $count, $assertations);
-
-		$users = UserWithWrappers::model()->findAllByAttributes(array('username'=>array('user1','user2','user3','user4')));
-		$this->assertCriteriaApplied($users, $criteria, $count, $assertations);
-
-		$users = UserWithWrappers::model()->findAllByPk(array(1,2,3,4));
-		$this->assertCriteriaApplied($users, $criteria, $count, $assertations);
-
-		$users = UserWithWrappers::model()->findAllBySql('SELECT * FROM users');
-		$this->assertCriteriaApplied($users, $criteria, 4, array());
-	}
-
-	/**
-	 * tests number of calls to beforeFind() on normal find*() method call with eager loading of relations
-	 */
-	public function testBeforeFindRelationalEager()
-	{
-		UserWithWrappers::model()->with('posts.comments')->find();
-		$this->assertEquals(UserWithWrappers::getCounter('beforeFind'),1);
-		$this->assertEquals(PostWithWrappers::getCounter('beforeFind'),1);
-		$this->assertEquals(CommentWithWrappers::getCounter('beforeFind'),1);
-
-		UserWithWrappers::model()->with('posts.comments')->findByAttributes(array('username'=>'user1'));
-		$this->assertEquals(UserWithWrappers::getCounter('beforeFind'),1);
-		$this->assertEquals(PostWithWrappers::getCounter('beforeFind'),1);
-		$this->assertEquals(CommentWithWrappers::getCounter('beforeFind'),1);
-
-		UserWithWrappers::model()->with('posts.comments')->findByPk(1);
-		$this->assertEquals(UserWithWrappers::getCounter('beforeFind'),1);
-		$this->assertEquals(PostWithWrappers::getCounter('beforeFind'),1);
-		$this->assertEquals(CommentWithWrappers::getCounter('beforeFind'),1);
-
-		UserWithWrappers::model()->with('posts.comments')->findBySql('SELECT * FROM users');
-		$this->assertEquals(UserWithWrappers::getCounter('beforeFind'),1);
-		$this->assertEquals(PostWithWrappers::getCounter('beforeFind'),1);
-		$this->assertEquals(CommentWithWrappers::getCounter('beforeFind'),1);
-
-		UserWithWrappers::model()->with('posts.comments')->findAll();
-		$this->assertEquals(UserWithWrappers::getCounter('beforeFind'),1);
-		$this->assertEquals(PostWithWrappers::getCounter('beforeFind'),1);
-		$this->assertEquals(CommentWithWrappers::getCounter('beforeFind'),1);
-
-		UserWithWrappers::model()->with('posts.comments')->findAllByAttributes(array('username'=>'user1'));
-		$this->assertEquals(UserWithWrappers::getCounter('beforeFind'),1);
-		$this->assertEquals(PostWithWrappers::getCounter('beforeFind'),1);
-		$this->assertEquals(CommentWithWrappers::getCounter('beforeFind'),1);
-
-		UserWithWrappers::model()->with('posts.comments')->findAllByPk(1);
-		$this->assertEquals(UserWithWrappers::getCounter('beforeFind'),1);
-		$this->assertEquals(PostWithWrappers::getCounter('beforeFind'),1);
-		$this->assertEquals(CommentWithWrappers::getCounter('beforeFind'),1);
-
-		UserWithWrappers::model()->with('posts.comments')->findAllBySql('SELECT * FROM users');
-		$this->assertEquals(UserWithWrappers::getCounter('beforeFind'),1);
-		$this->assertEquals(PostWithWrappers::getCounter('beforeFind'),1);
-		$this->assertEquals(CommentWithWrappers::getCounter('beforeFind'),1);
-
-		// test for query with no result
-		$this->assertEmpty(UserWithWrappers::model()->with('posts.comments')->find('1=0'));
-		$this->assertEquals(UserWithWrappers::getCounter('beforeFind'),1);
-		$this->assertEquals(PostWithWrappers::getCounter('beforeFind'),1);
-		$this->assertEquals(CommentWithWrappers::getCounter('beforeFind'),1);
-
-		$this->assertEmpty(UserWithWrappers::model()->with('posts.comments')->findByAttributes(array('username'=>'notExistingUser')));
-		$this->assertEquals(UserWithWrappers::getCounter('beforeFind'),1);
-		$this->assertEquals(PostWithWrappers::getCounter('beforeFind'),1);
-		$this->assertEquals(CommentWithWrappers::getCounter('beforeFind'),1);
-
-		$this->assertEmpty(UserWithWrappers::model()->with('posts.comments')->findByPk(1000));
-		$this->assertEquals(UserWithWrappers::getCounter('beforeFind'),1);
-		$this->assertEquals(PostWithWrappers::getCounter('beforeFind'),1);
-		$this->assertEquals(CommentWithWrappers::getCounter('beforeFind'),1);
-
-		$this->assertEmpty(UserWithWrappers::model()->with('posts.comments')->findBySql('SELECT * FROM users WHERE id=1000'));
-		$this->assertEquals(UserWithWrappers::getCounter('beforeFind'),1);
-		$this->assertEquals(PostWithWrappers::getCounter('beforeFind'),1);
-		$this->assertEquals(CommentWithWrappers::getCounter('beforeFind'),1);
-
-		$this->assertEmpty(UserWithWrappers::model()->with('posts.comments')->findAll('1=0'));
-		$this->assertEquals(UserWithWrappers::getCounter('beforeFind'),1);
-		$this->assertEquals(PostWithWrappers::getCounter('beforeFind'),1);
-		$this->assertEquals(CommentWithWrappers::getCounter('beforeFind'),1);
-
-		$this->assertEmpty(UserWithWrappers::model()->with('posts.comments')->findAllByAttributes(array('username'=>'notExistingUser')));
-		$this->assertEquals(UserWithWrappers::getCounter('beforeFind'),1);
-		$this->assertEquals(PostWithWrappers::getCounter('beforeFind'),1);
-		$this->assertEquals(CommentWithWrappers::getCounter('beforeFind'),1);
-
-		$this->assertEmpty(UserWithWrappers::model()->with('posts.comments')->findAllByPk(array(1000, 1001)));
-		$this->assertEquals(UserWithWrappers::getCounter('beforeFind'),1);
-		$this->assertEquals(PostWithWrappers::getCounter('beforeFind'),1);
-		$this->assertEquals(CommentWithWrappers::getCounter('beforeFind'),1);
-
-		$this->assertEmpty(UserWithWrappers::model()->with('posts.comments')->findAllBySql('SELECT * FROM users WHERE 1=0'));
-		$this->assertEquals(UserWithWrappers::getCounter('beforeFind'),1);
-		$this->assertEquals(PostWithWrappers::getCounter('beforeFind'),1);
-		$this->assertEquals(CommentWithWrappers::getCounter('beforeFind'),1);
-	}
-
-	/**
-	 * tests if criteria modification in beforeFind() applies when model is loaded eager via relation
-	 * @dataProvider postCriteriaProvider
-	 */
-	public function testBeforeFindRelationalEagerCriteriaModification($criteria, $count, $assertations)
-	{
-		PostWithWrappers::setBeforeFindCriteria($criteria);
-
-		$user = UserWithWrappers::model()->with('posts.comments')->find('t.id=2');
-		$this->assertTrue($user->hasRelated('posts'));
-		$this->assertCriteriaApplied($user->posts, $criteria, $count, $assertations);
-
-		$user = UserWithWrappers::model()->with('posts.comments')->findByAttributes(array('username'=>'user2'));
-		$this->assertTrue($user->hasRelated('posts'));
-		$this->assertCriteriaApplied($user->posts, $criteria, $count, $assertations);
-
-		$user = UserWithWrappers::model()->with('posts.comments')->findByPk(2);
-		$this->assertTrue($user->hasRelated('posts'));
-		$this->assertCriteriaApplied($user->posts, $criteria, $count, $assertations);
-
-		$user = UserWithWrappers::model()->with('posts.comments')->findBySql('SELECT * FROM users WHERE id=2');
-		$this->assertTrue($user->hasRelated('posts'));
-		$this->assertCriteriaApplied($user->posts, $criteria, $count, $assertations);
-
-		$users = UserWithWrappers::model()->with('posts.comments')->findAll('t.id=2');
-		$user = reset($users);
-		$this->assertTrue($user->hasRelated('posts'));
-		$this->assertCriteriaApplied($user->posts, $criteria, $count, $assertations);
-
-		$users = UserWithWrappers::model()->with('posts.comments')->findAllByAttributes(array('username'=>'user2'));
-		$user = reset($users);
-		$this->assertTrue($user->hasRelated('posts'));
-		$this->assertCriteriaApplied($user->posts, $criteria, $count, $assertations);
-
-		$users = UserWithWrappers::model()->with('posts.comments')->findAllByPk(2);
-		$user = reset($users);
-		$this->assertTrue($user->hasRelated('posts'));
-		$this->assertCriteriaApplied($user->posts, $criteria, $count, $assertations);
-
-		$users = UserWithWrappers::model()->with('posts.comments')->findAllBySql('SELECT * FROM users WHERE id=2');
-		$user = reset($users);
-		$this->assertTrue($user->hasRelated('posts'));
-		$this->assertCriteriaApplied($user->posts, $criteria, $count, $assertations);
-	}
-
-	/**
-	 * tests number of calls to beforeFind() on normal find*() method call with lazy loading of relations
-	 */
-	public function testBeforeFindRelationalLazy()
-	{
-		$user=UserWithWrappers::model()->find();
-		$this->assertEquals(UserWithWrappers::getCounter('beforeFind'),1);
-		$user->posts;
-		$this->assertEquals(UserWithWrappers::getCounter('beforeFind'),0);
-		$this->assertEquals(PostWithWrappers::getCounter('beforeFind'),1);
-
-		$user=UserWithWrappers::model()->find();
-		$this->assertEquals(UserWithWrappers::getCounter('beforeFind'),1);
-		$user->posts(array('with'=>'comments'));
-		$this->assertEquals(UserWithWrappers::getCounter('beforeFind'),0);
-		$this->assertEquals(PostWithWrappers::getCounter('beforeFind'),1);
-		$this->assertEquals(CommentWithWrappers::getCounter('beforeFind'),1);
-	}
-
-	/**
-	 * tests if criteria modification in beforeFind() applies when model is loaded lazy via relation
-	 * @dataProvider postCriteriaProviderLazy
-	 */
-	public function testBeforeFindRelationalLazyCriteriaModification($criteria, $count, $assertations)
-	{
-		PostWithWrappers::setBeforeFindCriteria($criteria);
-
-		$user=UserWithWrappers::model()->findByPk(2);
-		$posts = $user->posts;
-		$this->assertCriteriaApplied($posts, $criteria, $count, $assertations);
-
-		$user=UserWithWrappers::model()->findByPk(2);
-		$posts = $user->posts(array('with'=>'comments'));
-		$this->assertCriteriaApplied($posts, $criteria, $count, $assertations);
-		foreach($posts as $post) {
-			$this->assertTrue($post->hasRelated('comments'));
-		}
-	}
-
-	/**
-	 * tests if criteria modification in beforeFind() does not overide scopes defined by already applied criteria
-	 * @dataProvider postCriteriaProviderLazy
-	 */
-	public function testBeforeFindRelationalLazyCriteriaScopes($criteria, $count, $assertations)
-	{
-		PostWithWrappers::setBeforeFindCriteria($criteria);
-
-		$user=UserWithWrappers::model()->findByPk(2);
-		$posts = $user->postsWithScope;
-		$this->assertCriteriaApplied($posts, $criteria, $count, $assertations);
-		foreach($posts as $post) {
-			$this->assertEquals('replaced content', $post->content);
-		}
-
-		$user=UserWithWrappers::model()->findByPk(2);
-		$posts = $user->posts(array('with'=>'comments','scopes'=>array('replaceContent')));
-		$this->assertCriteriaApplied($posts, $criteria, $count, $assertations);
-		foreach($posts as $post) {
-			$this->assertTrue($post->hasRelated('comments'));
-			$this->assertEquals('replaced content', $post->content);
-		}
-	}
-
-	/**
-	 * tests number of calls to afterFind() on normal find*() method call
-	 */
-	public function testAfterFind()
-	{
-		UserWithWrappers::model()->find();
-		$this->assertEquals(UserWithWrappers::getCounter('afterFind'),1);
-
-		UserWithWrappers::model()->findByAttributes(array('username'=>'user1'));
-		$this->assertEquals(UserWithWrappers::getCounter('afterFind'),1);
-
-		UserWithWrappers::model()->findByPk(1);
-		$this->assertEquals(UserWithWrappers::getCounter('afterFind'),1);
-
-		UserWithWrappers::model()->findBySql('SELECT * FROM users');
-		$this->assertEquals(UserWithWrappers::getCounter('afterFind'),1);
-
-		UserWithWrappers::model()->findAll();
-		$this->assertEquals(UserWithWrappers::getCounter('afterFind'),4);
-
-		UserWithWrappers::model()->findAllByAttributes(array('username'=>'user1'));
-		$this->assertEquals(UserWithWrappers::getCounter('afterFind'),1);
-
-		UserWithWrappers::model()->findAllByPk(1);
-		$this->assertEquals(UserWithWrappers::getCounter('afterFind'),1);
-
-		UserWithWrappers::model()->findAllBySql('SELECT * FROM users');
-		$this->assertEquals(UserWithWrappers::getCounter('afterFind'),4);
-
-		// test for query with no result
-		UserWithWrappers::model()->find('1=0');
-		$this->assertEquals(UserWithWrappers::getCounter('afterFind'),0);
-
-		UserWithWrappers::model()->findByAttributes(array('username'=>'notExistingUser'));
-		$this->assertEquals(UserWithWrappers::getCounter('afterFind'),0);
-
-		UserWithWrappers::model()->findByPk(1000);
-		$this->assertEquals(UserWithWrappers::getCounter('afterFind'),0);
-
-		UserWithWrappers::model()->findBySql('SELECT * FROM users WHERE 1=0');
-		$this->assertEquals(UserWithWrappers::getCounter('afterFind'),0);
-
-		UserWithWrappers::model()->findAll('1=0');
-		$this->assertEquals(UserWithWrappers::getCounter('afterFind'),0);
-
-		UserWithWrappers::model()->findAllByAttributes(array('username'=>'notExistingUser'));
-		$this->assertEquals(UserWithWrappers::getCounter('afterFind'),0);
-
-		UserWithWrappers::model()->findAllByPk(array(1000,1001));
-		$this->assertEquals(UserWithWrappers::getCounter('afterFind'),0);
-
-		UserWithWrappers::model()->findAllBySql('SELECT * FROM users WHERE 1=0');
-		$this->assertEquals(UserWithWrappers::getCounter('afterFind'),0);
-	}
-
-	/**
-	 * tests number of calls to afterFind() on normal find*() method call with eager loding of relations
-	 */
-	public function testAfterFindRelational()
-	{
-		UserWithWrappers::model()->with('posts.comments')->find();
-		$this->assertEquals(UserWithWrappers::getCounter('afterFind'),4);
-		$this->assertEquals(PostWithWrappers::getCounter('afterFind'),5);
-		$this->assertEquals(CommentWithWrappers::getCounter('afterFind'),10);
-
-		UserWithWrappers::model()->with('posts.comments')->findByAttributes(array('username'=>'user2'));
-		$this->assertEquals(UserWithWrappers::getCounter('afterFind'),1);
-		$this->assertEquals(PostWithWrappers::getCounter('afterFind'),3);
-		$this->assertEquals(CommentWithWrappers::getCounter('afterFind'),6);
-
-		UserWithWrappers::model()->with('posts.comments')->findByPk(2);
-		$this->assertEquals(UserWithWrappers::getCounter('afterFind'),1);
-		$this->assertEquals(PostWithWrappers::getCounter('afterFind'),3);
-		$this->assertEquals(CommentWithWrappers::getCounter('afterFind'),6);
-
-		UserWithWrappers::model()->with('posts.comments')->findBySql('SELECT * FROM users WHERE id=2');
-		$this->assertEquals(UserWithWrappers::getCounter('afterFind'),1);
-		$this->assertEquals(PostWithWrappers::getCounter('afterFind'),3);
-		$this->assertEquals(CommentWithWrappers::getCounter('afterFind'),6);
-
-		UserWithWrappers::model()->with('posts.comments')->findAll();
-		$this->assertEquals(UserWithWrappers::getCounter('afterFind'),4);
-		$this->assertEquals(PostWithWrappers::getCounter('afterFind'),5);
-		$this->assertEquals(CommentWithWrappers::getCounter('afterFind'),10);
-
-		UserWithWrappers::model()->with('posts.comments')->findAllByAttributes(array('username'=>'user2'));
-		$this->assertEquals(UserWithWrappers::getCounter('afterFind'),1);
-		$this->assertEquals(PostWithWrappers::getCounter('afterFind'),3);
-		$this->assertEquals(CommentWithWrappers::getCounter('afterFind'),6);
-
-		UserWithWrappers::model()->with('posts.comments')->findAllByPk(2);
-		$this->assertEquals(UserWithWrappers::getCounter('afterFind'),1);
-		$this->assertEquals(PostWithWrappers::getCounter('afterFind'),3);
-		$this->assertEquals(CommentWithWrappers::getCounter('afterFind'),6);
-
-		UserWithWrappers::model()->with('posts.comments')->findAllBySql('SELECT * FROM users');
-		$this->assertEquals(UserWithWrappers::getCounter('afterFind'),4);
-		$this->assertEquals(PostWithWrappers::getCounter('afterFind'),5);
-		$this->assertEquals(CommentWithWrappers::getCounter('afterFind'),10);
-
-		// test for query with no result
-		UserWithWrappers::model()->with('posts.comments')->find('1=0');
-		$this->assertEquals(UserWithWrappers::getCounter('afterFind'),0);
-		$this->assertEquals(PostWithWrappers::getCounter('afterFind'),0);
-		$this->assertEquals(CommentWithWrappers::getCounter('afterFind'),0);
-
-		UserWithWrappers::model()->with('posts.comments')->findByAttributes(array('username'=>'notExistingUser'));
-		$this->assertEquals(UserWithWrappers::getCounter('afterFind'),0);
-		$this->assertEquals(PostWithWrappers::getCounter('afterFind'),0);
-		$this->assertEquals(CommentWithWrappers::getCounter('afterFind'),0);
-
-		UserWithWrappers::model()->with('posts.comments')->findByPk(1000);
-		$this->assertEquals(UserWithWrappers::getCounter('afterFind'),0);
-		$this->assertEquals(PostWithWrappers::getCounter('afterFind'),0);
-		$this->assertEquals(CommentWithWrappers::getCounter('afterFind'),0);
-
-		UserWithWrappers::model()->with('posts.comments')->findBySql('SELECT * FROM users WHERE id=1000');
-		$this->assertEquals(UserWithWrappers::getCounter('afterFind'),0);
-		$this->assertEquals(PostWithWrappers::getCounter('afterFind'),0);
-		$this->assertEquals(CommentWithWrappers::getCounter('afterFind'),0);
-
-		UserWithWrappers::model()->with('posts.comments')->findAll('1=0');
-		$this->assertEquals(UserWithWrappers::getCounter('afterFind'),0);
-		$this->assertEquals(PostWithWrappers::getCounter('afterFind'),0);
-		$this->assertEquals(CommentWithWrappers::getCounter('afterFind'),0);
-
-		UserWithWrappers::model()->with('posts.comments')->findAllByAttributes(array('username'=>'notExistingUser'));
-		$this->assertEquals(UserWithWrappers::getCounter('afterFind'),0);
-		$this->assertEquals(PostWithWrappers::getCounter('afterFind'),0);
-		$this->assertEquals(CommentWithWrappers::getCounter('afterFind'),0);
-
-		UserWithWrappers::model()->with('posts.comments')->findAllByPk(array(1000, 1001));
-		$this->assertEquals(UserWithWrappers::getCounter('afterFind'),0);
-		$this->assertEquals(PostWithWrappers::getCounter('afterFind'),0);
-		$this->assertEquals(CommentWithWrappers::getCounter('afterFind'),0);
-
-		UserWithWrappers::model()->with('posts.comments')->findAllBySql('SELECT * FROM users WHERE 1=0');
-		$this->assertEquals(UserWithWrappers::getCounter('afterFind'),0);
-		$this->assertEquals(PostWithWrappers::getCounter('afterFind'),0);
-		$this->assertEquals(CommentWithWrappers::getCounter('afterFind'),0);
-	}
-
-	/**
-	 * CActiveRecord::getRelated doesn't call afterFind() with `through` relation
-	 * https://github.com/yiisoft/yii/issues/591
-	 */
-	public function testIssue591()
-	{
-		UserWithWrappers::model()->with('comments')->findByPk(1);
-		$this->assertEquals(UserWithWrappers::getCounter('afterFind'),1);
-		$this->assertEquals(PostWithWrappers::getCounter('afterFind'),0);
-		$this->assertEquals(CommentWithWrappers::getCounter('afterFind'),3);
-
-		$user = UserWithWrappers::model()->findByPk(1);
-		$user->comments;
-		$this->assertEquals(UserWithWrappers::getCounter('afterFind'),1);
-		$this->assertEquals(PostWithWrappers::getCounter('afterFind'),0);
-		$this->assertEquals(CommentWithWrappers::getCounter('afterFind'),3);
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

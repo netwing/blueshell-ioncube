@@ -1,68 +1,36 @@
-<?php
-
-namespace Guzzle\Service;
-
-use Guzzle\Common\FromConfigInterface;
-use Guzzle\Common\Exception\InvalidArgumentException;
-use Guzzle\Http\ClientInterface as HttpClientInterface;
-use Guzzle\Service\Exception\CommandTransferException;
-use Guzzle\Service\Command\CommandInterface;
-use Guzzle\Service\Description\ServiceDescriptionInterface;
-use Guzzle\Service\Resource\ResourceIteratorInterface;
-
-/**
- * Client interface for executing commands on a web service.
- */
-interface ClientInterface extends HttpClientInterface, FromConfigInterface
-{
-    /**
-     * Get a command by name. First, the client will see if it has a service description and if the service description
-     * defines a command by the supplied name. If no dynamic command is found, the client will look for a concrete
-     * command class exists matching the name supplied. If neither are found, an InvalidArgumentException is thrown.
-     *
-     * @param string $name Name of the command to retrieve
-     * @param array  $args Arguments to pass to the command
-     *
-     * @return CommandInterface
-     * @throws InvalidArgumentException if no command can be found by name
-     */
-    public function getCommand($name, array $args = array());
-
-    /**
-     * Execute one or more commands
-     *
-     * @param CommandInterface|array|Traversable $command Command, array of commands or Traversable object containing commands to execute
-     *
-     * @return mixed Returns the result of the executed command or an array of commands if executing multiple commands
-     * @throws InvalidArgumentException if an invalid command is passed
-     * @throws CommandTransferException if an exception is encountered when transferring multiple commands
-     */
-    public function execute($command);
-
-    /**
-     * Set the service description of the client
-     *
-     * @param ServiceDescriptionInterface $service Service description
-     *
-     * @return ClientInterface
-     */
-    public function setDescription(ServiceDescriptionInterface $service);
-
-    /**
-     * Get the service description of the client
-     *
-     * @return ServiceDescriptionInterface|null
-     */
-    public function getDescription();
-
-    /**
-     * Get a resource iterator from the client.
-     *
-     * @param string|CommandInterface $command         Command class or command name.
-     * @param array                   $commandOptions  Command options used when creating commands.
-     * @param array                   $iteratorOptions Iterator options passed to the iterator when it is instantiated.
-     *
-     * @return ResourceIteratorInterface
-     */
-    public function getIterator($command, array $commandOptions = null, array $iteratorOptions = array());
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+90==

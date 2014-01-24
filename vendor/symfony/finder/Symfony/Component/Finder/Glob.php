@@ -1,103 +1,49 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\Finder;
-
-/**
- * Glob matches globbing patterns against text.
- *
- *   if match_glob("foo.*", "foo.bar") echo "matched\n";
- *
- * // prints foo.bar and foo.baz
- * $regex = glob_to_regex("foo.*");
- * for (array('foo.bar', 'foo.baz', 'foo', 'bar') as $t)
- * {
- *   if (/$regex/) echo "matched: $car\n";
- * }
- *
- * Glob implements glob(3) style matching that can be used to match
- * against text, rather than fetching names from a filesystem.
- *
- * Based on the Perl Text::Glob module.
- *
- * @author Fabien Potencier <fabien@symfony.com> PHP port
- * @author     Richard Clamp <richardc@unixbeard.net> Perl version
- * @copyright  2004-2005 Fabien Potencier <fabien@symfony.com>
- * @copyright  2002 Richard Clamp <richardc@unixbeard.net>
- */
-class Glob
-{
-    /**
-     * Returns a regexp which is the equivalent of the glob pattern.
-     *
-     * @param string  $glob                The glob pattern
-     * @param Boolean $strictLeadingDot
-     * @param Boolean $strictWildcardSlash
-     *
-     * @return string regex The regexp
-     */
-    public static function toRegex($glob, $strictLeadingDot = true, $strictWildcardSlash = true)
-    {
-        $firstByte = true;
-        $escaping = false;
-        $inCurlies = 0;
-        $regex = '';
-        $sizeGlob = strlen($glob);
-        for ($i = 0; $i < $sizeGlob; $i++) {
-            $car = $glob[$i];
-            if ($firstByte) {
-                if ($strictLeadingDot && '.' !== $car) {
-                    $regex .= '(?=[^\.])';
-                }
-
-                $firstByte = false;
-            }
-
-            if ('/' === $car) {
-                $firstByte = true;
-            }
-
-            if ('.' === $car || '(' === $car || ')' === $car || '|' === $car || '+' === $car || '^' === $car || '$' === $car) {
-                $regex .= "\\$car";
-            } elseif ('*' === $car) {
-                $regex .= $escaping ? '\\*' : ($strictWildcardSlash ? '[^/]*' : '.*');
-            } elseif ('?' === $car) {
-                $regex .= $escaping ? '\\?' : ($strictWildcardSlash ? '[^/]' : '.');
-            } elseif ('{' === $car) {
-                $regex .= $escaping ? '\\{' : '(';
-                if (!$escaping) {
-                    ++$inCurlies;
-                }
-            } elseif ('}' === $car && $inCurlies) {
-                $regex .= $escaping ? '}' : ')';
-                if (!$escaping) {
-                    --$inCurlies;
-                }
-            } elseif (',' === $car && $inCurlies) {
-                $regex .= $escaping ? ',' : '|';
-            } elseif ('\\' === $car) {
-                if ($escaping) {
-                    $regex .= '\\\\';
-                    $escaping = false;
-                } else {
-                    $escaping = true;
-                }
-
-                continue;
-            } else {
-                $regex .= $car;
-            }
-            $escaping = false;
-        }
-
-        return '#^'.$regex.'$#';
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

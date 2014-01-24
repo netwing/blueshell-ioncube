@@ -1,72 +1,35 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta http-equiv="content-language" content="en"/>
-<link rel="stylesheet" type="text/css" href="css/main.css" />
-<title>Yii配置需求检查</title>
-</head>
-
-<body>
-<div id="page">
-
-<div id="header">
-<h1>Yii配置需求检查</h1>
-</div><!-- header-->
-
-<div id="content">
-<h2>检查内容</h2>
-<p>
-本网页用于确认您的服务器配置是否能满足运行<a href="http://www.yiiframework.com/">Yii</a> Web应用的要求。它将检查服务器所运行的PHP版本，查看是否安装了合适的PHP扩展模块，以及确认php.ini文件是否正确设置。
-</p>
-
-<h2>检查结果</h2>
-<p>
-<?php if($result>0): ?>
-恭喜！您的服务器配置完全符合Yii的要求。
-<?php elseif($result<0): ?>
-您的服务器配置符合Yii的最低要求。如果您需要使用特定的功能，请关注如下警告。
-<?php else: ?>
-您的服务器配置未能满足Yii的要求。
-<?php endif; ?>
-</p>
-
-<h2>具体结果</h2>
-
-<table class="result">
-<tr><th>项目名称</th><th>结果</th><th>使用者</th><th>备注</th></tr>
-<?php foreach($requirements as $requirement): ?>
-<tr>
-	<td>
-	<?php echo $requirement[0]; ?>
-	</td>
-	<td class="<?php echo $requirement[2] ? 'passed' : ($requirement[1] ? 'failed' : 'warning'); ?>">
-	<?php echo $requirement[2] ? '通过' : '未通过'; ?>
-	</td>
-	<td>
-	<?php echo $requirement[3]; ?>
-	</td>
-	<td>
-	<?php echo $requirement[4]; ?>
-	</td>
-</tr>
-<?php endforeach; ?>
-</table>
-
-<table>
-<tr>
-<td class="passed">&nbsp;</td><td>通过</td>
-<td class="failed">&nbsp;</td><td>未通过</td>
-<td class="warning">&nbsp;</td><td>警告</td>
-</tr>
-</table>
-
-</div><!-- content -->
-
-<div id="footer">
-<?php echo $serverInfo; ?>
-</div><!-- footer -->
-
-</div><!-- page -->
-</body>
-</html>
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+LEqj+bn5LmyUqWjOsWlCRZWPelDoLIkiR1XJEG==

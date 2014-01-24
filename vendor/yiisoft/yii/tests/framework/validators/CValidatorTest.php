@@ -1,66 +1,41 @@
-<?php
-
-require_once 'ModelMock.php';
-require_once 'ScenariosTestModel.php';
-
-class CValidatorTest extends CTestCase
-{
-	public function test()
-	{
-
-	}
-
-	public function testScenarios()
-	{
-		// scenario1
-		// fields should be validated: title, firstName, lastName, nickName, patronymic, nickName, login
-		$scenario1TestModel=new ScenariosTestModel('scenario1');
-		$scenario1TestModel->validate();
-
-		$errors=$scenario1TestModel->getErrors();
-		$this->assertEquals(6, count($errors));
-		$this->assertArrayHasKey('title', $errors);
-		$this->assertArrayHasKey('firstName', $errors);
-		$this->assertArrayHasKey('lastName', $errors);
-		$this->assertArrayHasKey('nickName', $errors);
-		$this->assertArrayHasKey('patronymic', $errors);
-		$this->assertArrayHasKey('login', $errors);
-
-
-		// scenario2
-		// fields should be validated: firstName, lastName, patronymic, login, birthday
-		$scenario2TestModel=new ScenariosTestModel('scenario2');
-		$scenario2TestModel->validate();
-
-		$errors=$scenario2TestModel->getErrors();
-		$this->assertEquals(5, count($errors));
-		$this->assertArrayHasKey('firstName', $errors);
-		$this->assertArrayHasKey('lastName', $errors);
-		$this->assertArrayHasKey('patronymic', $errors);
-		$this->assertArrayHasKey('login', $errors);
-		$this->assertArrayHasKey('birthday', $errors);
-
-
-		// scenario3
-		// fields should be validated: lastName, patronymic, nickName, login
-		$scenario3TestModel=new ScenariosTestModel('scenario3');
-		$scenario3TestModel->validate();
-
-		$errors=$scenario3TestModel->getErrors();
-		$this->assertEquals(4, count($errors));
-		$this->assertArrayHasKey('lastName', $errors);
-		$this->assertArrayHasKey('patronymic', $errors);
-		$this->assertArrayHasKey('nickName', $errors);
-		$this->assertArrayHasKey('login', $errors);
-
-
-		// scenario4
-		// fields should be validated: login
-		$scenario4TestModel=new ScenariosTestModel('scenario4');
-		$scenario4TestModel->validate();
-
-		$errors=$scenario4TestModel->getErrors();
-		$this->assertEquals(1, count($errors));
-		$this->assertArrayHasKey('login', $errors);
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

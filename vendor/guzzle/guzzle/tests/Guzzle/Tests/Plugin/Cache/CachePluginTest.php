@@ -1,441 +1,339 @@
-<?php
-
-namespace Guzzle\Tests\Plugin\Cache;
-
-use Guzzle\Common\Event;
-use Guzzle\Common\Version;
-use Guzzle\Cache\DoctrineCacheAdapter;
-use Guzzle\Http\Client;
-use Guzzle\Http\Message\Request;
-use Guzzle\Http\Message\Response;
-use Guzzle\Plugin\Cache\CachePlugin;
-use Guzzle\Plugin\Cache\DefaultCacheStorage;
-use Guzzle\Plugin\Cache\CallbackCanCacheStrategy;
-use Doctrine\Common\Cache\ArrayCache;
-
-/**
- * @group server
- * @covers Guzzle\Plugin\Cache\CachePlugin
- * @covers Guzzle\Plugin\Cache\DefaultRevalidation
- */
-class CachePluginTest extends \Guzzle\Tests\GuzzleTestCase
-{
-    public function testAddsDefaultStorage()
-    {
-        $plugin = new CachePlugin();
-        $this->assertInstanceOf('Guzzle\Plugin\Cache\CacheStorageInterface', $this->readAttribute($plugin, 'storage'));
-    }
-
-    public function testAddsDefaultCollaborators()
-    {
-        $this->assertNotEmpty(CachePlugin::getSubscribedEvents());
-        $plugin = new CachePlugin(array(
-            'storage' => $this->getMockBuilder('Guzzle\Plugin\Cache\CacheStorageInterface')->getMockForAbstractClass()
-        ));
-        $this->assertInstanceOf('Guzzle\Plugin\Cache\CacheStorageInterface', $this->readAttribute($plugin, 'storage'));
-        $this->assertInstanceOf(
-            'Guzzle\Plugin\Cache\CanCacheStrategyInterface',
-            $this->readAttribute($plugin, 'canCache')
-        );
-        $this->assertInstanceOf(
-            'Guzzle\Plugin\Cache\RevalidationInterface',
-            $this->readAttribute($plugin, 'revalidation')
-        );
-    }
-
-    public function testAddsCallbackCollaborators()
-    {
-        $this->assertNotEmpty(CachePlugin::getSubscribedEvents());
-        $plugin = new CachePlugin(array('can_cache' => function () {}));
-        $this->assertInstanceOf(
-            'Guzzle\Plugin\Cache\CallbackCanCacheStrategy',
-            $this->readAttribute($plugin, 'canCache')
-        );
-    }
-
-    public function testCanPassCacheAsOnlyArgumentToConstructor()
-    {
-        $p = new CachePlugin(new DoctrineCacheAdapter(new ArrayCache()));
-        $p = new CachePlugin(new DefaultCacheStorage(new DoctrineCacheAdapter(new ArrayCache())));
-    }
-
-    public function testUsesCreatedCacheStorage()
-    {
-        $plugin = new CachePlugin(array(
-            'adapter' => $this->getMockBuilder('Guzzle\Cache\CacheAdapterInterface')->getMockForAbstractClass()
-        ));
-        $this->assertInstanceOf('Guzzle\Plugin\Cache\CacheStorageInterface', $this->readAttribute($plugin, 'storage'));
-    }
-
-    public function testUsesProvidedOptions()
-    {
-        $can = $this->getMockBuilder('Guzzle\Plugin\Cache\CanCacheStrategyInterface')->getMockForAbstractClass();
-        $revalidate = $this->getMockBuilder('Guzzle\Plugin\Cache\RevalidationInterface')->getMockForAbstractClass();
-        $plugin = new CachePlugin(array(
-            'storage' => $this->getMockBuilder('Guzzle\Plugin\Cache\CacheStorageInterface')->getMockForAbstractClass(),
-            'can_cache' => $can,
-            'revalidation' => $revalidate
-        ));
-        $this->assertSame($can, $this->readAttribute($plugin, 'canCache'));
-        $this->assertSame($revalidate, $this->readAttribute($plugin, 'revalidation'));
-    }
-
-    public function satisfyProvider()
-    {
-        $req1 = new Request('GET', 'http://foo.com', array('Cache-Control' => 'no-cache'));
-
-        return array(
-            // The response is too old to satisfy the request
-            array(new Request('GET', 'http://foo.com', array('Cache-Control' => 'max-age=20')), new Response(200, array('Age' => 100)), false, false),
-            // The response cannot satisfy the request because it is stale
-            array(new Request('GET', 'http://foo.com'), new Response(200, array('Cache-Control' => 'max-age=10', 'Age' => 100)), false, false),
-            // Allows the expired response to satisfy the request because of the max-stale
-            array(new Request('GET', 'http://foo.com', array('Cache-Control' => 'max-stale=15')), new Response(200, array('Cache-Control' => 'max-age=90', 'Age' => 100)), true, false),
-            // Max stale is > than the allowed staleness
-            array(new Request('GET', 'http://foo.com', array('Cache-Control' => 'max-stale=5')), new Response(200, array('Cache-Control' => 'max-age=90', 'Age' => 100)), false, false),
-            // Performs cache revalidation
-            array($req1, new Response(200), true, true),
-            // Performs revalidation due to ETag on the response and no cache-control on the request
-            array(new Request('GET', 'http://foo.com'), new Response(200, array(
-                'ETag' => 'ABC',
-                'Expires' => date('c', strtotime('+1 year'))
-            )), true, true),
-        );
-    }
-
-    /**
-     * @dataProvider satisfyProvider
-     */
-    public function testChecksIfResponseCanSatisfyRequest($request, $response, $can, $revalidates)
-    {
-        $didRevalidate = false;
-        $storage = $this->getMockBuilder('Guzzle\Plugin\Cache\CacheStorageInterface')->getMockForAbstractClass();
-        $revalidate = $this->getMockBuilder('Guzzle\Plugin\Cache\DefaultRevalidation')
-            ->setMethods(array('revalidate'))
-            ->setConstructorArgs(array($storage))
-            ->getMockForAbstractClass();
-
-        $revalidate->expects($this->any())
-            ->method('revalidate')
-            ->will($this->returnCallback(function () use (&$didRevalidate) {
-                $didRevalidate = true;
-                return true;
-            }));
-
-        $plugin = new CachePlugin(array(
-            'storage' => $storage,
-            'revalidation' => $revalidate
-        ));
-
-        $this->assertEquals($can, $plugin->canResponseSatisfyRequest($request, $response));
-        $this->assertEquals($didRevalidate, $revalidates);
-    }
-
-    public function satisfyFailedProvider()
-    {
-        return array(
-            // Neither has stale-if-error
-            array(new Request('GET', 'http://foo.com', array()), new Response(200, array('Age' => 100)), false),
-            // Request has stale-if-error
-            array(new Request('GET', 'http://foo.com', array('Cache-Control' => 'stale-if-error')), new Response(200, array('Age' => 100, 'Cache-Control' => 'max-age=50')), true),
-            // Request has valid stale-if-error
-            array(new Request('GET', 'http://foo.com', array('Cache-Control' => 'stale-if-error=50')), new Response(200, array('Age' => 100, 'Cache-Control' => 'max-age=50')), true),
-            // Request has expired stale-if-error
-            array(new Request('GET', 'http://foo.com', array('Cache-Control' => 'stale-if-error=20')), new Response(200, array('Age' => 100, 'Cache-Control' => 'max-age=50')), false),
-            // Response has permanent stale-if-error
-            array(new Request('GET', 'http://foo.com', array()), new Response(200, array('Age' => 100, 'Cache-Control' => 'max-age=50, stale-if-error', )), true),
-            // Response has valid stale-if-error
-            array(new Request('GET', 'http://foo.com', array()), new Response(200, array('Age' => 100, 'Cache-Control' => 'max-age=50, stale-if-error=50')), true),
-            // Response has expired stale-if-error
-            array(new Request('GET', 'http://foo.com', array()), new Response(200, array('Age' => 100, 'Cache-Control' => 'max-age=50, stale-if-error=20')), false),
-            // Request has valid stale-if-error but response does not
-            array(new Request('GET', 'http://foo.com', array('Cache-Control' => 'stale-if-error=50')), new Response(200, array('Age' => 100, 'Cache-Control' => 'max-age=50, stale-if-error=20')), false),
-            // Response has valid stale-if-error but request does not
-            array(new Request('GET', 'http://foo.com', array('Cache-Control' => 'stale-if-error=20')), new Response(200, array('Age' => 100, 'Cache-Control' => 'max-age=50, stale-if-error=50')), false),
-        );
-    }
-
-    /**
-     * @dataProvider satisfyFailedProvider
-     */
-    public function testChecksIfResponseCanSatisfyFailedRequest($request, $response, $can)
-    {
-        $plugin = new CachePlugin();
-
-        $this->assertEquals($can, $plugin->canResponseSatisfyFailedRequest($request, $response));
-    }
-
-    public function testDoesNothingWhenRequestIsNotCacheable()
-    {
-        $storage = $this->getMockBuilder('Guzzle\Plugin\Cache\CacheStorageInterface')
-            ->setMethods(array('fetch'))
-            ->getMockForAbstractClass();
-        $storage->expects($this->never())->method('fetch');
-
-        $plugin = new CachePlugin(array(
-            'storage'   => $storage,
-            'can_cache' => new CallbackCanCacheStrategy(function () { return false; })
-        ));
-
-        $plugin->onRequestBeforeSend(new Event(array(
-            'request' => new Request('GET', 'http://foo.com')
-        )));
-    }
-
-    public function satisfiableProvider()
-    {
-        $date = new \DateTime('-10 seconds');
-
-        return array(
-            // Fresh response
-            array(new Response(200, array(), 'foo')),
-            // Stale response
-            array(new Response(200, array('Date' => $date->format('c'), 'Cache-Control' => 'max-age=5'), 'foo'))
-        );
-    }
-
-    /**
-     * @dataProvider satisfiableProvider
-     */
-    public function testInjectsSatisfiableResponses($response)
-    {
-        $storage = $this->getMockBuilder('Guzzle\Plugin\Cache\CacheStorageInterface')
-            ->setMethods(array('fetch'))
-            ->getMockForAbstractClass();
-
-        $storage->expects($this->once())->method('fetch')->will($this->returnValue($response));
-        $plugin = new CachePlugin(array('storage' => $storage));
-        $request = new Request('GET', 'http://foo.com', array('Cache-Control' => 'max-stale'));
-        $plugin->onRequestBeforeSend(new Event(array('request' => $request)));
-        $plugin->onRequestSent(new Event(array('request' => $request, 'response' => $request->getResponse())));
-        $this->assertEquals($response->getStatusCode(), $request->getResponse()->getStatusCode());
-        $this->assertEquals((string) $response->getBody(), (string) $request->getResponse()->getBody());
-        $this->assertTrue($request->getResponse()->hasHeader('Age'));
-        if ($request->getResponse()->isFresh() === false) {
-            $this->assertContains('110', (string) $request->getResponse()->getHeader('Warning'));
-        }
-        $this->assertSame(
-            sprintf('%s GuzzleCache/%s', $request->getProtocolVersion(), Version::VERSION),
-            (string) $request->getHeader('Via')
-        );
-        $this->assertSame(
-            sprintf('%s GuzzleCache/%s',$request->getProtocolVersion(), Version::VERSION),
-            (string) $request->getResponse()->getHeader('Via')
-        );
-        $this->assertTrue($request->getParams()->get('cache.lookup'));
-        $this->assertTrue($request->getParams()->get('cache.hit'));
-        $this->assertTrue($request->getResponse()->hasHeader('X-Cache-Lookup'));
-        $this->assertTrue($request->getResponse()->hasHeader('X-Cache'));
-        $this->assertEquals('HIT from GuzzleCache', (string) $request->getResponse()->getHeader('X-Cache'));
-        $this->assertEquals('HIT from GuzzleCache', (string) $request->getResponse()->getHeader('X-Cache-Lookup'));
-    }
-
-    public function satisfiableOnErrorProvider()
-    {
-        $date = new \DateTime('-10 seconds');
-        return array(
-            array(
-                new Response(200, array(
-                    'Date' => $date->format('c'),
-                    'Cache-Control' => 'max-age=5, stale-if-error'
-                ), 'foo'),
-            )
-        );
-    }
-
-    /**
-     * @dataProvider satisfiableOnErrorProvider
-     */
-    public function testInjectsSatisfiableResponsesOnError($cacheResponse)
-    {
-        $storage = $this->getMockBuilder('Guzzle\Plugin\Cache\CacheStorageInterface')
-            ->setMethods(array('fetch'))
-            ->getMockForAbstractClass();
-        $storage->expects($this->exactly(2))->method('fetch')->will($this->returnValue($cacheResponse));
-        $plugin = new CachePlugin(array('storage' => $storage));
-        $request = new Request('GET', 'http://foo.com', array('Cache-Control' => 'max-stale'));
-        $plugin->onRequestBeforeSend(new Event(array('request' => $request)));
-        $plugin->onRequestError(
-            $event = new Event(array(
-                'request' => $request,
-                'response' => $request->getResponse(),
-            ))
-        );
-        $response = $event['response'];
-        $this->assertEquals($cacheResponse->getStatusCode(), $response->getStatusCode());
-        $this->assertEquals((string) $cacheResponse->getBody(), (string) $response->getBody());
-        $this->assertTrue($response->hasHeader('Age'));
-        if ($response->isFresh() === false) {
-            $this->assertContains('110', (string) $response->getHeader('Warning'));
-        }
-        $this->assertSame(sprintf('%s GuzzleCache/%s', $request->getProtocolVersion(), Version::VERSION), (string) $request->getHeader('Via'));
-        $this->assertSame(sprintf('%s GuzzleCache/%s', $request->getProtocolVersion(), Version::VERSION), (string) $response->getHeader('Via'));
-        $this->assertTrue($request->getParams()->get('cache.lookup'));
-        $this->assertSame('error', $request->getParams()->get('cache.hit'));
-        $this->assertTrue($response->hasHeader('X-Cache-Lookup'));
-        $this->assertTrue($response->hasHeader('X-Cache'));
-        $this->assertEquals('HIT from GuzzleCache', (string) $response->getHeader('X-Cache-Lookup'));
-        $this->assertEquals('HIT_ERROR from GuzzleCache', (string) $response->getHeader('X-Cache'));
-    }
-
-    /**
-     * @dataProvider satisfiableOnErrorProvider
-     */
-    public function testInjectsSatisfiableResponsesOnException($cacheResponse)
-    {
-        $storage = $this->getMockBuilder('Guzzle\Plugin\Cache\CacheStorageInterface')
-            ->setMethods(array('fetch'))
-            ->getMockForAbstractClass();
-        $storage->expects($this->exactly(2))->method('fetch')->will($this->returnValue($cacheResponse));
-        $plugin = new CachePlugin(array('storage' => $storage));
-        $request = new Request('GET', 'http://foo.com', array('Cache-Control' => 'max-stale'));
-        $plugin->onRequestBeforeSend(new Event(array(
-            'request' => $request
-        )));
-        $plugin->onRequestException(
-            new Event(array(
-                'request' => $request,
-                'response' => $request->getResponse(),
-                'exception' => $this->getMock('Guzzle\Http\Exception\CurlException'),
-            ))
-        );
-        $plugin->onRequestSent(
-            new Event(array(
-                'request' => $request,
-                'response' => $response = $request->getResponse(),
-            ))
-        );
-        $this->assertEquals($cacheResponse->getStatusCode(), $response->getStatusCode());
-        $this->assertEquals((string) $cacheResponse->getBody(), (string) $response->getBody());
-        $this->assertTrue($response->hasHeader('Age'));
-        if ($response->isFresh() === false) {
-            $this->assertContains('110', (string) $response->getHeader('Warning'));
-        }
-        $this->assertSame(sprintf('%s GuzzleCache/%s', $request->getProtocolVersion(), Version::VERSION), (string) $request->getHeader('Via'));
-        $this->assertSame(sprintf('%s GuzzleCache/%s', $request->getProtocolVersion(), Version::VERSION), (string) $response->getHeader('Via'));
-        $this->assertTrue($request->getParams()->get('cache.lookup'));
-        $this->assertSame('error', $request->getParams()->get('cache.hit'));
-        $this->assertTrue($response->hasHeader('X-Cache-Lookup'));
-        $this->assertTrue($response->hasHeader('X-Cache'));
-        $this->assertEquals('HIT from GuzzleCache', (string) $response->getHeader('X-Cache-Lookup'));
-        $this->assertEquals('HIT_ERROR from GuzzleCache', (string) $response->getHeader('X-Cache'));
-    }
-
-    public function unsatisfiableOnErrorProvider()
-    {
-        $date = new \DateTime('-10 seconds');
-
-        return array(
-            // no-store on request
-            array(
-                false,
-                array('Cache-Control' => 'no-store'),
-                new Response(200, array('Date' => $date->format('D, d M Y H:i:s T'), 'Cache-Control' => 'max-age=5, stale-if-error'), 'foo'),
-            ),
-            // request expired
-            array(
-                true,
-                array('Cache-Control' => 'stale-if-error=4'),
-                new Response(200, array('Date' => $date->format('D, d M Y H:i:s T'), 'Cache-Control' => 'max-age=5, stale-if-error'), 'foo'),
-            ),
-            // response expired
-            array(
-                true,
-                array('Cache-Control' => 'stale-if-error'),
-                new Response(200, array('Date' => $date->format('D, d M Y H:i:s T'), 'Cache-Control' => 'max-age=5, stale-if-error=4'), 'foo'),
-            ),
-        );
-    }
-
-    /**
-     * @dataProvider unsatisfiableOnErrorProvider
-     */
-    public function testDoesNotInjectUnsatisfiableResponsesOnError($requestCanCache, $requestHeaders, $cacheResponse)
-    {
-        $storage = $this->getMockBuilder('Guzzle\Plugin\Cache\CacheStorageInterface')
-            ->setMethods(array('fetch'))
-            ->getMockForAbstractClass();
-        $storage->expects($this->exactly($requestCanCache ? 2 : 0))->method('fetch')->will($this->returnValue($cacheResponse));
-        $plugin = new CachePlugin(array('storage' => $storage));
-        $request = new Request('GET', 'http://foo.com', $requestHeaders);
-        $plugin->onRequestBeforeSend(new Event(array(
-            'request' => $request
-        )));
-        $plugin->onRequestError(
-            $event = new Event(array(
-                'request' => $request,
-                'response' => $response = $request->getResponse(),
-            ))
-        );
-
-        $this->assertSame($response, $event['response']);
-    }
-
-    /**
-     * @dataProvider unsatisfiableOnErrorProvider
-     */
-    public function testDoesNotInjectUnsatisfiableResponsesOnException($requestCanCache, $requestHeaders, $responseParts)
-    {
-        $storage = $this->getMockBuilder('Guzzle\Plugin\Cache\CacheStorageInterface')
-            ->setMethods(array('fetch'))
-            ->getMockForAbstractClass();
-        $storage->expects($this->exactly($requestCanCache ? 2 : 0))->method('fetch')->will($this->returnValue($responseParts));
-        $plugin = new CachePlugin(array('storage' => $storage));
-        $request = new Request('GET', 'http://foo.com', $requestHeaders);
-        $plugin->onRequestBeforeSend(new Event(array(
-            'request' => $request
-        )));
-        $plugin->onRequestException(
-            $event = new Event(array(
-                'request' => $request,
-                'response' => $response = $request->getResponse(),
-                'exception' => $this->getMock('Guzzle\Http\Exception\CurlException'),
-            ))
-        );
-
-        $this->assertSame($response, $request->getResponse());
-    }
-
-    public function testCachesResponsesWhenCacheable()
-    {
-        $cache = new ArrayCache();
-        $plugin = new CachePlugin($cache);
-
-        $request = new Request('GET', 'http://foo.com');
-        $response = new Response(200, array(), 'Foo');
-        $plugin->onRequestBeforeSend(new Event(array(
-            'request' => $request
-        )));
-        $plugin->onRequestSent(new Event(array(
-            'request'  => $request,
-            'response' => $response
-        )));
-        $data = $this->readAttribute($cache, 'data');
-        $this->assertNotEmpty($data);
-    }
-
-    public function testPurgesRequests()
-    {
-        $storage = $this->getMockBuilder('Guzzle\Plugin\Cache\CacheStorageInterface')
-            ->setMethods(array('purge'))
-            ->getMockForAbstractClass();
-        $storage->expects($this->atLeastOnce())->method('purge');
-        $plugin = new CachePlugin(array('storage' => $storage));
-        $request = new Request('GET', 'http://foo.com', array('X-Foo' => 'Bar'));
-        $plugin->purge($request);
-    }
-
-    public function testAutoPurgesRequests()
-    {
-        $storage = $this->getMockBuilder('Guzzle\Plugin\Cache\CacheStorageInterface')
-            ->setMethods(array('purge'))
-            ->getMockForAbstractClass();
-        $storage->expects($this->atLeastOnce())->method('purge');
-        $plugin = new CachePlugin(array('storage' => $storage, 'auto_purge' => true));
-        $client = new Client();
-        $request = $client->put('http://foo.com', array('X-Foo' => 'Bar'));
-        $request->addSubscriber($plugin);
-        $request->setResponse(new Response(200), true);
-        $request->send();
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+qoT2zDGo8Mj+FgwKU3/f

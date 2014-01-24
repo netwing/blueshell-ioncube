@@ -1,251 +1,144 @@
-<?php
-
-namespace Guzzle\Plugin\Cache;
-
-use Guzzle\Cache\CacheAdapterFactory;
-use Guzzle\Cache\CacheAdapterInterface;
-use Guzzle\Http\EntityBodyInterface;
-use Guzzle\Http\Message\MessageInterface;
-use Guzzle\Http\Message\Request;
-use Guzzle\Http\Message\RequestInterface;
-use Guzzle\Http\Message\Response;
-
-/**
- * Default cache storage implementation
- */
-class DefaultCacheStorage implements CacheStorageInterface
-{
-    /** @var string */
-    protected $keyPrefix;
-
-    /** @var CacheAdapterInterface Cache used to store cache data */
-    protected $cache;
-
-    /** @var int Default cache TTL */
-    protected $defaultTtl;
-
-    /**
-     * @param mixed  $cache      Cache used to store cache data
-     * @param string $keyPrefix  Provide an optional key prefix to prefix on all cache keys
-     * @param int    $defaultTtl Default cache TTL
-     */
-    public function __construct($cache, $keyPrefix = '', $defaultTtl = 3600)
-    {
-        $this->cache = CacheAdapterFactory::fromCache($cache);
-        $this->defaultTtl = $defaultTtl;
-        $this->keyPrefix = $keyPrefix;
-    }
-
-    public function cache(RequestInterface $request, Response $response)
-    {
-        $currentTime = time();
-        $ttl = $request->getParams()->get('cache.override_ttl') ?: $response->getMaxAge() ?: $this->defaultTtl;
-
-        if ($cacheControl = $response->getHeader('Cache-Control')) {
-            $stale = $cacheControl->getDirective('stale-if-error');
-            $ttl += $stale == true ? $ttl : $stale;
-        }
-
-        // Determine which manifest key should be used
-        $key = $this->getCacheKey($request);
-        $persistedRequest = $this->persistHeaders($request);
-        $entries = array();
-
-        if ($manifest = $this->cache->fetch($key)) {
-            // Determine which cache entries should still be in the cache
-            $vary = $response->getVary();
-            foreach (unserialize($manifest) as $entry) {
-                // Check if the entry is expired
-                if ($entry[4] < $currentTime) {
-                    continue;
-                }
-                $entry[1]['vary'] = isset($entry[1]['vary']) ? $entry[1]['vary'] : '';
-                if ($vary != $entry[1]['vary'] || !$this->requestsMatch($vary, $entry[0], $persistedRequest)) {
-                    $entries[] = $entry;
-                }
-            }
-        }
-
-        // Persist the response body if needed
-        $bodyDigest = null;
-        if ($response->getBody() && $response->getBody()->getContentLength() > 0) {
-            $bodyDigest = $this->getBodyKey($request->getUrl(), $response->getBody());
-            $this->cache->save($bodyDigest, (string) $response->getBody(), $ttl);
-        }
-
-        array_unshift($entries, array(
-            $persistedRequest,
-            $this->persistHeaders($response),
-            $response->getStatusCode(),
-            $bodyDigest,
-            $currentTime + $ttl
-        ));
-
-        $this->cache->save($key, serialize($entries));
-    }
-
-    public function delete(RequestInterface $request)
-    {
-        $key = $this->getCacheKey($request);
-        if ($entries = $this->cache->fetch($key)) {
-            // Delete each cached body
-            foreach (unserialize($entries) as $entry) {
-                if ($entry[3]) {
-                    $this->cache->delete($entry[3]);
-                }
-            }
-            $this->cache->delete($key);
-        }
-    }
-
-    public function purge($url)
-    {
-        foreach (array('GET', 'HEAD', 'POST', 'PUT', 'DELETE') as $method) {
-            $this->delete(new Request($method, $url));
-        }
-    }
-
-    public function fetch(RequestInterface $request)
-    {
-        $key = $this->getCacheKey($request);
-        if (!($entries = $this->cache->fetch($key))) {
-            return null;
-        }
-
-        $match = null;
-        $headers = $this->persistHeaders($request);
-        $entries = unserialize($entries);
-        foreach ($entries as $index => $entry) {
-            if ($this->requestsMatch(isset($entry[1]['vary']) ? $entry[1]['vary'] : '', $headers, $entry[0])) {
-                $match = $entry;
-                break;
-            }
-        }
-
-        if (!$match) {
-            return null;
-        }
-
-        // Ensure that the response is not expired
-        $response = null;
-        if ($match[4] < time()) {
-            $response = -1;
-        } else {
-            $response = new Response($match[2], $match[1]);
-            if ($match[3]) {
-                if ($body = $this->cache->fetch($match[3])) {
-                    $response->setBody($body);
-                } else {
-                    // The response is not valid because the body was somehow deleted
-                    $response = -1;
-                }
-            }
-        }
-
-        if ($response === -1) {
-            // Remove the entry from the metadata and update the cache
-            unset($entries[$index]);
-            if ($entries) {
-                $this->cache->save($key, serialize($entries));
-            } else {
-                $this->cache->delete($key);
-            }
-            return null;
-        }
-
-        return $response;
-    }
-
-    /**
-     * Hash a request URL into a string that returns cache metadata
-     *
-     * @param RequestInterface $request
-     *
-     * @return string
-     */
-    protected function getCacheKey(RequestInterface $request)
-    {
-        // Allow cache.key_filter to trim down the URL cache key by removing generate query string values (e.g. auth)
-        if ($filter = $request->getParams()->get('cache.key_filter')) {
-            $url = $request->getUrl(true);
-            foreach (explode(',', $filter) as $remove) {
-                $url->getQuery()->remove(trim($remove));
-            }
-        } else {
-            $url = $request->getUrl();
-        }
-
-        return $this->keyPrefix . md5($request->getMethod() . ' ' . $url);
-    }
-
-    /**
-     * Create a cache key for a response's body
-     *
-     * @param string              $url  URL of the entry
-     * @param EntityBodyInterface $body Response body
-     *
-     * @return string
-     */
-    protected function getBodyKey($url, EntityBodyInterface $body)
-    {
-        return $this->keyPrefix . md5($url) . $body->getContentMd5();
-    }
-
-    /**
-     * Determines whether two Request HTTP header sets are non-varying
-     *
-     * @param string $vary Response vary header
-     * @param array  $r1   HTTP header array
-     * @param array  $r2   HTTP header array
-     *
-     * @return bool
-     */
-    private function requestsMatch($vary, $r1, $r2)
-    {
-        if ($vary) {
-            foreach (explode(',', $vary) as $header) {
-                $key = trim(strtolower($header));
-                $v1 = isset($r1[$key]) ? $r1[$key] : null;
-                $v2 = isset($r2[$key]) ? $r2[$key] : null;
-                if ($v1 !== $v2) {
-                    return false;
-                }
-            }
-        }
-
-        return true;
-    }
-
-    /**
-     * Creates an array of cacheable and normalized message headers
-     *
-     * @param MessageInterface $message
-     *
-     * @return array
-     */
-    private function persistHeaders(MessageInterface $message)
-    {
-        // Headers are excluded from the caching (see RFC 2616:13.5.1)
-        static $noCache = array(
-            'age' => true,
-            'connection' => true,
-            'keep-alive' => true,
-            'proxy-authenticate' => true,
-            'proxy-authorization' => true,
-            'te' => true,
-            'trailers' => true,
-            'transfer-encoding' => true,
-            'upgrade' => true,
-            'set-cookie' => true,
-            'set-cookie2' => true
-        );
-
-        // Clone the response to not destroy any necessary headers when caching
-        $headers = $message->getHeaders()->getAll();
-        $headers = array_diff_key($headers, $noCache);
-        // Cast the headers to a string
-        $headers = array_map(function ($h) { return (string) $h; }, $headers);
-
-        return $headers;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+BpYnyk0tweQsp/HrlqMugRUMjvhyxdC=

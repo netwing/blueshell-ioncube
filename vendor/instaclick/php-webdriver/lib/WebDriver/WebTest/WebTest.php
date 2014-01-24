@@ -1,376 +1,158 @@
-<?php
-/**
- * Copyright 2011-2013 Anthon Pang. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- * @package WebDriver
- *
- * @author Anthon Pang <apang@softwaredevelopment.ca>
- */
-
-namespace WebDriver\WebTest;
-
-use WebDriver\WebDriver;
-use WebDriver\Exception as WebDriverException;
-
-/**
- * WebDriver\WebTest\WebTest class - test runner
- *
- * WebDriver-based web test runner, outputting results in TAP format.
- *
- * @package WebDriver
- *
- * @link    http://testanything.org/wiki/index.php/TAP_version_13_specification
- */
-class WebTest
-{
-    /**
-     * List of magic methods
-     *
-     * @var array
-     */
-    private static $magicMethods = array(
-        '__construct',
-        '__destruct',
-        '__call',
-        '__callStatic',
-        '__get',
-        '__set',
-        '__isset',
-        '__unset',
-        '__sleep',
-        '__wakeup',
-        '__toString',
-        '__invoke',
-        '__set_state',
-        '__clone',
-    );
-
-    /**
-     * Error handler to instead throw exceptions
-     *
-     * @param integer $errno   Error number
-     * @param string  $errstr  Error string
-     * @param string  $errfile Source file of error
-     * @param integer $errline Line number in source file
-     *
-     * @throws \ErrorException
-     */
-    static public function exception_error_handler($errno, $errstr, $errfile, $errline)
-    {
-        throw new \ErrorException($errstr, $errno, 0, $errfile, $errline);
-    }
-
-    /**
-     * Assertion handler to instead throw exceptions
-     *
-     * @param string  $file Source file
-     * @param integer $line Line number
-     * @param string  $code Error code
-     *
-     * @throws \WebDriver\Exception\WebTestAssertion
-     */
-    static public function assert_handler($file, $line, $code)
-    {
-        throw WebDriverException::factory(WebDriverException::WEBTEST_ASSERTION, "assertion failed: $file:$line: $code");
-    }
-
-    /**
-     * Get classes declared in the target file
-     *
-     * @param string $file File name
-     *
-     * @return array Array of class names
-     */
-    public function getClasses($file)
-    {
-        $classes = get_declared_classes();
-
-        include_once($file);
-
-        return array_diff(get_declared_classes(), $classes);
-    }
-
-    /**
-     * Dump comment block
-     *
-     * Note: Reflection extension expects phpdocs style comments
-     *
-     * @param string $comment
-     */
-    public function dumpComment($comment)
-    {
-        if ($comment) {
-            $lines = preg_replace(
-                array('~^\s*/[*]+\s*~', '~^\s*[*]+/?\s*~'),
-                '# ',
-                explode("\n", trim($comment))
-            );
-
-            echo implode("\n", $lines) . "\n";
-        }
-    }
-
-    /**
-     * Dump diagnostic block (YAML format)
-     *
-     * @param mixed $diagnostic
-     */
-    public function dumpDiagnostic($diagnostic)
-    {
-        if ($diagnostic) {
-            if (function_exists('yaml_emit')) {
-                $diagnostic = trim(yaml_emit($diagnostic));
-            } else {
-                $diagnostic = "---\n" . trim($diagnostic) . "\n...";
-            }
-
-            if (is_string($diagnostic)) {
-                $lines = explode("\n", $diagnostic);
-                $lines = preg_replace('/^/', '  ', $lines);
-                echo implode("\n", $lines) . "\n";
-            }
-        }
-    }
-
-    /**
-     * Parse TODO/SKIP directives (if any) from comment block
-     *
-     * @param string $comment Comment
-     *
-     * @return string|null
-     */
-    public function getDirective($comment)
-    {
-        if ($comment) {
-            if (preg_match('~\b(SKIP|TODO)(\s+([\S \t]+))?~', $comment, $matches)) {
-                return $matches[0];
-            }
-        }
-
-        return null;
-    }
-
-    /**
-     * Is this a testable method?
-     *
-     * @param string            $className        Class name
-     * @param \ReflectionMethod $reflectionMethod Reflection method
-     *
-     * @return boolean False if method should not be counted
-     */
-    protected function isTestableMethod($className, $reflectionMethod)
-    {
-        $method    = $reflectionMethod->getName();
-        $modifiers = $reflectionMethod->getModifiers();
-
-        if ($method === $className
-            || $modifiers !== \ReflectionMethod::IS_PUBLIC
-            || in_array($method, self::$magicMethods)
-        ) {
-            return false;
-        }
-
-        return true;
-    }
-
-    /**
-     * Run tests
-     *
-     * @param string $file File
-     *
-     * @return boolean True if success; false otherwise
-     */
-    public function runTests($file)
-    {
-        $webdriver = new WebDriver();
-        $session   = $webdriver->session();
-        $classes   = $this->getClasses($file);
-        $success   = true;
-
-        /*
-         * count the number of testable methods
-         */
-        $totalMethods = 0;
-
-        foreach ($classes as $class) {
-            $parents = class_parents($class, false);
-
-            if ($parents && in_array('WebDriver\WebTest\Script', $parents)) {
-                $reflectionClass   = new \ReflectionClass($class);
-                $reflectionMethods = $reflectionClass->getMethods();
-
-                foreach ($reflectionMethods as $reflectionMethod) {
-                    if ($this->isTestableMethod($class, $reflectionMethod)) {
-                        $totalMethods++;
-                    }
-                }
-            }
-        }
-
-        if ($totalMethods) {
-            $i = 0;
-            echo "1..$totalMethods\n";
-
-            foreach ($classes as $class) {
-                $parents = class_parents($class, false);
-
-                if ($parents && in_array('WebDriver\WebTest\Script', $parents)) {
-                    $class = '\\' . $class;
-
-                    $objectUnderTest = new $class($session);
-
-                    $reflectionClass = new \ReflectionClass($class);
-
-                    $comment = $reflectionClass->getDocComment();
-                    $this->dumpComment($comment);
-
-                    $reflectionMethods = $reflectionClass->getMethods();
-
-                    foreach ($reflectionMethods as $reflectionMethod) {
-                        if (!$this->isTestableMethod($class, $reflectionMethod)) {
-                            continue;
-                        }
-
-                        $comment = $reflectionMethod->getDocComment();
-                        $this->dumpComment($comment);
-
-                        $directive = $this->getDirective($comment);
-
-                        $description = $method;
-                        $reflectionParameters = $reflectionMethod->getParameters();
-
-                        foreach ($reflectionParameters as $reflectionParameter) {
-                            if ($reflectionParameter->getName() === 'description'
-                                && $reflectionParameter->isDefaultValueAvailable()
-                            ) {
-                                $defaultValue = $reflectionParameter->getDefaultValue();
-
-                                if (is_string($defaultValue)) {
-                                    $description = $defaultValue;
-                                    break;
-                                }
-                            }
-                        }
-
-                        $diagnostic = null;
-                        $rc = false;
-                        $i++;
-
-                        try {
-                            $objectUnderTest->$method();
-                            $rc = true;
-                        } catch (WebDriverException\Curl $e) {
-                            $success = false;
-                            echo 'Bail out! ' . $e->getMessage() . "\n";
-                            break 2;
-                        } catch (\Exception $e) {
-                            $success    = false;
-                            $diagnostic = $e->getMessage();
-
-                            // @todo check driver capability for screenshot
-
-                            $screenshot = $session->screenshot();
-
-                            if (!empty($screenshot)) {
-                                $imageName = basename($file) . ".$i.png";
-                                file_put_contents($imageName, base64_decode($screenshot));
-                            }
-                        }
-
-                        echo ($rc ? 'ok' : 'not ok') . " $i - $description" . ($directive ? " # $directive" : '') . "\n";
-
-                        $this->dumpDiagnostic($diagnostic);
-                    }
-
-                    unset($objectUnderTest);
-                }
-            }
-        } else {
-            echo "0..0\n";
-        }
-
-        if ($session) {
-            $session->close();
-        }
-
-        return $success;
-    }
-
-    /**
-     * Main dispatch routine
-     *
-     * @param integer $argc number of arguments
-     * @param array   $argv arguments
-     *
-     * @return boolean True if success; false otherwise
-     */
-    static public function main($argc, $argv)
-    {
-        set_error_handler(array('WebDriver\WebTest\WebTest', 'exception_error_handler'));
-
-        assert_options(ASSERT_ACTIVE, 1);
-        assert_options(ASSERT_WARNING, 0);
-        assert_options(ASSERT_CALLBACK, array('WebDriver\WebTest\WebTest', 'assert_handler'));
-
-        /*
-         * parse command line options
-         */
-        if ($argc === 1) {
-            $argc++;
-            array_push($argv, '-h');
-        }
-
-        for ($i = 1; $i < $argc; $i++) {
-            $opt = $argv[$i];
-            $optValue = '';
-
-            if (preg_match('~([-]+[^=]+)=(.+)~', $opt, $matches)) {
-                $opt = $matches[1];
-                $optValue = $matches[2];
-            }
-
-            switch ($opt) {
-                case '-h':
-                case '--help':
-                    echo $argv[0] . " [-d directory] [--tap] [--xml] [--disable-screenshot] test.php\n";
-                    exit(1);
-
-                case '-d':
-                case '--output-directory':
-
-                case '--format':
-                case '--tap':
-                case '--xml':
-
-                case '--disable-screenshot':
-
-                default:
-            }
-        }
-
-        echo "TAP version 13\n";
-
-        $success = false;
-
-        try {
-            $webtest = new self;
-            $success = $webtest->runTests($argv[1]);
-        } catch (\Exception $e) {
-            echo 'Bail out! ' . $e->getMessage() . "\n";
-        }
-
-        return $success;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

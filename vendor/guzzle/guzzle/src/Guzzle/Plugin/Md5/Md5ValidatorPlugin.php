@@ -1,89 +1,55 @@
-<?php
-
-namespace Guzzle\Plugin\Md5;
-
-use Guzzle\Common\Event;
-use Guzzle\Common\Exception\UnexpectedValueException;
-use Guzzle\Http\Message\Response;
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-
-/**
- * Ensures that an the MD5 hash of an entity body matches the Content-MD5
- * header (if set) of an HTTP response.  An exception is thrown if the
- * calculated MD5 does not match the expected MD5.
- */
-class Md5ValidatorPlugin implements EventSubscriberInterface
-{
-    /** @var int Maximum Content-Length in bytes to validate */
-    protected $contentLengthCutoff;
-
-    /** @var bool Whether or not to compare when a Content-Encoding is present */
-    protected $contentEncoded;
-
-    /**
-     * @param bool     $contentEncoded      Calculating the MD5 hash of an entity body where a Content-Encoding was
-     *                                      applied is a more expensive comparison because the entity body will need to
-     *                                      be compressed in order to get the correct hash.  Set to FALSE to not
-     *                                      validate the MD5 hash of an entity body with an applied Content-Encoding.
-     * @param bool|int $contentLengthCutoff Maximum Content-Length (bytes) in which a MD5 hash will be validated. Any
-     *                                      response with a Content-Length greater than this value will not be validated
-     *                                      because it will be deemed too memory intensive.
-     */
-    public function __construct($contentEncoded = true, $contentLengthCutoff = false)
-    {
-        $this->contentLengthCutoff = $contentLengthCutoff;
-        $this->contentEncoded = $contentEncoded;
-    }
-
-    public static function getSubscribedEvents()
-    {
-        return array('request.complete' => array('onRequestComplete', 255));
-    }
-
-    /**
-     * {@inheritdoc}
-     * @throws UnexpectedValueException
-     */
-    public function onRequestComplete(Event $event)
-    {
-        $response = $event['response'];
-
-        if (!$contentMd5 = $response->getContentMd5()) {
-            return;
-        }
-
-        $contentEncoding = $response->getContentEncoding();
-        if ($contentEncoding && !$this->contentEncoded) {
-            return false;
-        }
-
-        // Make sure that the size of the request is under the cutoff size
-        if ($this->contentLengthCutoff) {
-            $size = $response->getContentLength() ?: $response->getBody()->getSize();
-            if (!$size || $size > $this->contentLengthCutoff) {
-                return;
-            }
-        }
-
-        if (!$contentEncoding) {
-            $hash = $response->getBody()->getContentMd5();
-        } elseif ($contentEncoding == 'gzip') {
-            $response->getBody()->compress('zlib.deflate');
-            $hash = $response->getBody()->getContentMd5();
-            $response->getBody()->uncompress();
-        } elseif ($contentEncoding == 'compress') {
-            $response->getBody()->compress('bzip2.compress');
-            $hash = $response->getBody()->getContentMd5();
-            $response->getBody()->uncompress();
-        } else {
-            return;
-        }
-
-        if ($contentMd5 !== $hash) {
-            throw new UnexpectedValueException(
-                "The response entity body may have been modified over the wire.  The Content-MD5 "
-                . "received ({$contentMd5}) did not match the calculated MD5 hash ({$hash})."
-            );
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+cwl7CZh0

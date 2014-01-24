@@ -1,285 +1,114 @@
-<?php
-/**
- * PEAR_Sniffs_NamingConventions_ValidFunctionNameSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-if (class_exists('PHP_CodeSniffer_Standards_AbstractScopeSniff', true) === false) {
-    throw new PHP_CodeSniffer_Exception('Class PHP_CodeSniffer_Standards_AbstractScopeSniff not found');
-}
-
-/**
- * PEAR_Sniffs_NamingConventions_ValidFunctionNameSniff.
- *
- * Ensures method names are correct depending on whether they are public
- * or private, and that functions are named correctly.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class PEAR_Sniffs_NamingConventions_ValidFunctionNameSniff extends PHP_CodeSniffer_Standards_AbstractScopeSniff
-{
-
-    /**
-     * A list of all PHP magic methods.
-     *
-     * @var array
-     */
-    protected $magicMethods = array(
-                               'construct',
-                               'destruct',
-                               'call',
-                               'callstatic',
-                               'get',
-                               'set',
-                               'isset',
-                               'unset',
-                               'sleep',
-                               'wakeup',
-                               'tostring',
-                               'set_state',
-                               'clone',
-                               'invoke',
-                               'call',
-                              );
-
-    /**
-     * A list of all PHP magic functions.
-     *
-     * @var array
-     */
-    protected $magicFunctions = array('autoload');
-
-
-    /**
-     * Constructs a PEAR_Sniffs_NamingConventions_ValidFunctionNameSniff.
-     */
-    public function __construct()
-    {
-        parent::__construct(array(T_CLASS, T_INTERFACE, T_TRAIT), array(T_FUNCTION), true);
-
-    }//end __construct()
-
-
-    /**
-     * Processes the tokens within the scope.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being processed.
-     * @param int                  $stackPtr  The position where this token was
-     *                                        found.
-     * @param int                  $currScope The position of the current scope.
-     *
-     * @return void
-     */
-    protected function processTokenWithinScope(PHP_CodeSniffer_File $phpcsFile, $stackPtr, $currScope)
-    {
-        $methodName = $phpcsFile->getDeclarationName($stackPtr);
-        if ($methodName === null) {
-            // Ignore closures.
-            return;
-        }
-
-        $className = $phpcsFile->getDeclarationName($currScope);
-        $errorData = array($className.'::'.$methodName);
-
-        // Is this a magic method. i.e., is prefixed with "__" ?
-        if (preg_match('|^__|', $methodName) !== 0) {
-            $magicPart = strtolower(substr($methodName, 2));
-            if (in_array($magicPart, $this->magicMethods) === false) {
-                 $error = 'Method name "%s" is invalid; only PHP magic methods should be prefixed with a double underscore';
-                 $phpcsFile->addError($error, $stackPtr, 'MethodDoubleUnderscore', $errorData);
-            }
-
-            return;
-        }
-
-        // PHP4 constructors are allowed to break our rules.
-        if ($methodName === $className) {
-            return;
-        }
-
-        // PHP4 destructors are allowed to break our rules.
-        if ($methodName === '_'.$className) {
-            return;
-        }
-
-        $methodProps    = $phpcsFile->getMethodProperties($stackPtr);
-        $isPublic       = ($methodProps['scope'] === 'private') ? false : true;
-        $scope          = $methodProps['scope'];
-        $scopeSpecified = $methodProps['scope_specified'];
-
-        // If it's a private method, it must have an underscore on the front.
-        if ($isPublic === false && $methodName{0} !== '_') {
-            $error = 'Private method name "%s" must be prefixed with an underscore';
-            $phpcsFile->addError($error, $stackPtr, 'PrivateNoUnderscore', $errorData);
-            return;
-        }
-
-        // If it's not a private method, it must not have an underscore on the front.
-        if ($isPublic === true && $scopeSpecified === true && $methodName{0} === '_') {
-            $error = '%s method name "%s" must not be prefixed with an underscore';
-            $data  = array(
-                      ucfirst($scope),
-                      $errorData[0],
-                     );
-            $phpcsFile->addError($error, $stackPtr, 'PublicUnderscore', $data);
-            return;
-        }
-
-        // If the scope was specified on the method, then the method must be
-        // camel caps and an underscore should be checked for. If it wasn't
-        // specified, treat it like a public method and remove the underscore
-        // prefix if there is one because we cant determine if it is private or
-        // public.
-        $testMethodName = $methodName;
-        if ($scopeSpecified === false && $methodName{0} === '_') {
-            $testMethodName = substr($methodName, 1);
-        }
-
-        if (PHP_CodeSniffer::isCamelCaps($testMethodName, false, $isPublic, false) === false) {
-            if ($scopeSpecified === true) {
-                $error = '%s method name "%s" is not in camel caps format';
-                $data  = array(
-                          ucfirst($scope),
-                          $errorData[0],
-                         );
-                $phpcsFile->addError($error, $stackPtr, 'ScopeNotCamelCaps', $data);
-            } else {
-                $error = 'Method name "%s" is not in camel caps format';
-                $phpcsFile->addError($error, $stackPtr, 'NotCamelCaps', $errorData);
-            }
-
-            return;
-        }
-
-    }//end processTokenWithinScope()
-
-
-    /**
-     * Processes the tokens outside the scope.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being processed.
-     * @param int                  $stackPtr  The position where this token was
-     *                                        found.
-     *
-     * @return void
-     */
-    protected function processTokenOutsideScope(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $functionName = $phpcsFile->getDeclarationName($stackPtr);
-        if ($functionName === null) {
-            // Ignore closures.
-            return;
-        }
-
-        $errorData = array($functionName);
-
-        // Is this a magic function. i.e., it is prefixed with "__".
-        if (preg_match('|^__|', $functionName) !== 0) {
-            $magicPart = strtolower(substr($functionName, 2));
-            if (in_array($magicPart, $this->magicFunctions) === false) {
-                 $error = 'Function name "%s" is invalid; only PHP magic methods should be prefixed with a double underscore';
-                 $phpcsFile->addError($error, $stackPtr, 'FunctionDoubleUnderscore', $errorData);
-            }
-
-            return;
-        }
-
-        // Function names can be in two parts; the package name and
-        // the function name.
-        $packagePart   = '';
-        $camelCapsPart = '';
-        $underscorePos = strrpos($functionName, '_');
-        if ($underscorePos === false) {
-            $camelCapsPart = $functionName;
-        } else {
-            $packagePart   = substr($functionName, 0, $underscorePos);
-            $camelCapsPart = substr($functionName, ($underscorePos + 1));
-
-            // We don't care about _'s on the front.
-            $packagePart = ltrim($packagePart, '_');
-        }
-
-        // If it has a package part, make sure the first letter is a capital.
-        if ($packagePart !== '') {
-            if ($functionName{0} === '_') {
-                $error = 'Function name "%s" is invalid; only private methods should be prefixed with an underscore';
-                $phpcsFile->addError($error, $stackPtr, 'FunctionUnderscore', $errorData);
-                return;
-            }
-
-            if ($functionName{0} !== strtoupper($functionName{0})) {
-                $error = 'Function name "%s" is prefixed with a package name but does not begin with a capital letter';
-                $phpcsFile->addError($error, $stackPtr, 'FunctionNoCapital', $errorData);
-                return;
-            }
-        }
-
-        // If it doesn't have a camel caps part, it's not valid.
-        if (trim($camelCapsPart) === '') {
-            $error = 'Function name "%s" is not valid; name appears incomplete';
-            $phpcsFile->addError($error, $stackPtr, 'FunctionInvalid', $errorData);
-            return;
-        }
-
-        $validName        = true;
-        $newPackagePart   = $packagePart;
-        $newCamelCapsPart = $camelCapsPart;
-
-        // Every function must have a camel caps part, so check that first.
-        if (PHP_CodeSniffer::isCamelCaps($camelCapsPart, false, true, false) === false) {
-            $validName        = false;
-            $newCamelCapsPart = strtolower($camelCapsPart{0}).substr($camelCapsPart, 1);
-        }
-
-        if ($packagePart !== '') {
-            // Check that each new word starts with a capital.
-            $nameBits = explode('_', $packagePart);
-            foreach ($nameBits as $bit) {
-                if ($bit{0} !== strtoupper($bit{0})) {
-                    $newPackagePart = '';
-                    foreach ($nameBits as $bit) {
-                        $newPackagePart .= strtoupper($bit{0}).substr($bit, 1).'_';
-                    }
-
-                    $validName = false;
-                    break;
-                }
-            }
-        }
-
-        if ($validName === false) {
-            $newName = rtrim($newPackagePart, '_').'_'.$newCamelCapsPart;
-            if ($newPackagePart === '') {
-                $newName = $newCamelCapsPart;
-            } else {
-                $newName = rtrim($newPackagePart, '_').'_'.$newCamelCapsPart;
-            }
-
-            $error  = 'Function name "%s" is invalid; consider "%s" instead';
-            $data   = $errorData;
-            $data[] = $newName;
-            $phpcsFile->addError($error, $stackPtr, 'FunctionNameInvalid', $data);
-        }
-
-    }//end processTokenOutsideScope()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

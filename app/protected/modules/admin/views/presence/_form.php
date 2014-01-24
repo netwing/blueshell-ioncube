@@ -1,80 +1,49 @@
-<?php
-/* @var $this PresenceController */
-/* @var $model Presence */
-/* @var $form CActiveForm */
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
-
-<div class="form">
-
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'presence-form',
-	// Please note: When you enable ajax validation, make sure the corresponding
-	// controller action is handling ajax validation correctly.
-	// There is a call to performAjaxValidation() commented in generated controller code.
-	// See class documentation of CActiveForm for details on this.
-    'enableClientValidation'=>false,
-    'enableAjaxValidation'=>true,
-    'htmlOptions'=>array('class'=>'form-horizontal well'),
-    'errorMessageCssClass' => 'text-danger'
-)); ?>
-
-	<p class="help-block"><?php echo Yii::t('app', 'Fields with <span class="required">*</span> are required.'); ?>
-</p>
-
-	<?php echo $form->errorSummary($model, null, null, array('class' => 'text-danger')); ?>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'presenza_posto_barca', array('class' => 'col-lg-2 control-label')); ?>
-        <div class="col-lg-10">
-        <?php echo $form->textField($model, 'presenza_posto_barca', array('class' => 'form-control')); ?>
-        <?php echo $form->error($model,'presenza_posto_barca'); ?>
-        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'presenza_cliente', array('class' => 'col-lg-2 control-label')); ?>
-        <div class="col-lg-10">
-        <?php echo $form->textField($model, 'presenza_cliente', array('class' => 'form-control')); ?>
-        <?php echo $form->error($model,'presenza_cliente'); ?>
-        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'presenza_barca', array('class' => 'col-lg-2 control-label')); ?>
-        <div class="col-lg-10">
-        <?php echo $form->textField($model, 'presenza_barca', array('class' => 'form-control')); ?>
-        <?php echo $form->error($model,'presenza_barca'); ?>
-        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'presenza_arrivo', array('class' => 'col-lg-2 control-label')); ?>
-        <div class="col-lg-10">
-        <?php echo $form->textField($model, 'presenza_arrivo', array('class' => 'form-control')); ?>
-        <?php echo $form->error($model,'presenza_arrivo'); ?>
-        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'presenza_partenza', array('class' => 'col-lg-2 control-label')); ?>
-        <div class="col-lg-10">
-        <?php echo $form->textField($model, 'presenza_partenza', array('class' => 'form-control')); ?>
-        <?php echo $form->error($model,'presenza_partenza'); ?>
-        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="col-lg-offset-2 col-lg-10">
-            <button type="reset" class="btn btn-warning">Reset</button>
-            <button type="submit" class="btn btn-primary"><?php echo ($model->isNewRecord) ? Yii::t('app', 'Create') : Yii::t('app', 'Save'); ?></button>
-        </div>
-    </div>
-
-<?php $this->endWidget(); ?>
-
-</div><!-- form -->
+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

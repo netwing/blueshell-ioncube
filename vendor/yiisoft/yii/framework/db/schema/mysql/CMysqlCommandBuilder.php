@@ -1,43 +1,32 @@
-<?php
-/**
- * CMysqlCommandBuilder class file.
- *
- * @author Carsten Brandt <mail@cebe.cc>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CMysqlCommandBuilder provides basic methods to create query commands for tables.
- *
- * @author Carsten Brandt <mail@cebe.cc>
- * @package system.db.schema.mysql
- * @since 1.1.13
- */
-class CMysqlCommandBuilder extends CDbCommandBuilder
-{
-	/**
-	 * Alters the SQL to apply JOIN clause.
-	 * This method handles the mysql specific syntax where JOIN has to come before SET in UPDATE statement
-	 * and for DELETE where JOIN has to be after FROM part.
-	 * @param string $sql the SQL statement to be altered
-	 * @param string $join the JOIN clause (starting with join type, such as INNER JOIN)
-	 * @return string the altered SQL statement
-	 */
-	public function applyJoin($sql,$join)
-	{
-		if($join=='')
-			return $sql;
-
-		if(strpos($sql,'UPDATE')===0 && ($pos=strpos($sql,'SET'))!==false)
-			return substr($sql,0,$pos).$join.' '.substr($sql,$pos);
-		elseif(strpos($sql,'DELETE FROM ')===0)
-		{
-			$tableName=substr($sql,12);
-			return "DELETE {$tableName} FROM {$tableName} ".$join;
-		}
-		else
-			return $sql.' '.$join;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+8iaazddlLvBqlJ3zSsYjrgjNAW==

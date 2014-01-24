@@ -1,85 +1,35 @@
-<?php
-
-/*
- * This file is part of the Monolog package.
- *
- * (c) Jordi Boggiano <j.boggiano@seld.be>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Monolog\Formatter;
-
-use Elastica\Document;
-
-/**
- * Format a log message into an Elastica Document
- *
- * @author Jelle Vink <jelle.vink@gmail.com>
- */
-class ElasticaFormatter extends NormalizerFormatter
-{
-    /**
-     * @var string Elastic search index name
-     */
-    protected $index;
-
-    /**
-     * @var string Elastic search document type
-     */
-    protected $type;
-
-    /**
-     * @param string $index Elastic Search index name
-     * @param string $type  Elastic Search document type
-     */
-    public function __construct($index, $type)
-    {
-        parent::__construct(\DateTime::ISO8601);
-        $this->index = $index;
-        $this->type = $type;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function format(array $record)
-    {
-        $record = parent::format($record);
-        return $this->getDocument($record);
-    }
-
-    /**
-     * Getter index
-     * @return string
-     */
-    public function getIndex()
-    {
-        return $this->index;
-    }
-
-    /**
-     * Getter type
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * Convert a log message into an Elastica Document
-     *
-     * @param array  $record Log message
-     * @return Document
-     */
-    protected function getDocument($record)
-    {
-        $document = new Document();
-        $document->setData($record);
-        $document->setType($this->type);
-        $document->setIndex($this->index);
-        return $document;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

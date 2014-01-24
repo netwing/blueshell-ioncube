@@ -1,169 +1,96 @@
-<?php
-/**
-* Smarty PHPunit tests of modifier
-*
-* @package PHPunit
-* @author Rodney Rehm
-*/
-
-/**
-* class for modifier tests
-*/
-class PluginFunctionMailtoTests extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $this->smarty = SmartyTests::$smarty;
-        SmartyTests::init();
-    }
-
-    static function isRunnable()
-    {
-        return true;
-    }
-
-    public function testDefault()
-    {
-        $result = '<a href="mailto:me@example.com" >me@example.com</a>';
-        $tpl = $this->smarty->createTemplate('eval:{mailto address="me@example.com"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testDefaultWithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $result = '<a href="mailto:me@example.com" >me@example.com</a>';
-        $tpl = $this->smarty->createTemplate('eval:{mailto address="me@example.com"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-        Smarty::$_MBSTRING = true;
-    }
-
-    public function testText()
-    {
-        $result = '<a href="mailto:me@example.com" >send me some mail</a>';
-        $tpl = $this->smarty->createTemplate('eval:{mailto address="me@example.com" text="send me some mail"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testTextWithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $result = '<a href="mailto:me@example.com" >send me some mail</a>';
-        $tpl = $this->smarty->createTemplate('eval:{mailto address="me@example.com" text="send me some mail"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-        Smarty::$_MBSTRING = true;
-    }
-
-    public function testEncodeJavascript()
-    {
-        $result = '<script type="text/javascript">eval(unescape(\'%64%6f%63%75%6d%65%6e%74%2e%77%72%69%74%65%28%27%3c%61%20%68%72%65%66%3d%22%6d%61%69%6c%74%6f%3a%6d%65%40%65%78%61%6d%70%6c%65%2e%63%6f%6d%22%20%3e%6d%65%40%65%78%61%6d%70%6c%65%2e%63%6f%6d%3c%2f%61%3e%27%29%3b\'))</script>';
-        $tpl = $this->smarty->createTemplate('eval:{mailto address="me@example.com" encode="javascript"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testEncodeJavascriptWithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $result = '<script type="text/javascript">eval(unescape(\'%64%6f%63%75%6d%65%6e%74%2e%77%72%69%74%65%28%27%3c%61%20%68%72%65%66%3d%22%6d%61%69%6c%74%6f%3a%6d%65%40%65%78%61%6d%70%6c%65%2e%63%6f%6d%22%20%3e%6d%65%40%65%78%61%6d%70%6c%65%2e%63%6f%6d%3c%2f%61%3e%27%29%3b\'))</script>';
-        $tpl = $this->smarty->createTemplate('eval:{mailto address="me@example.com" encode="javascript"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-        Smarty::$_MBSTRING = true;
-    }
-
-    public function testEncodeJavascriptCharcode()
-    {
-        $result = "<script type=\"text/javascript\" language=\"javascript\">\n{document.write(String.fromCharCode(60,97,32,104,114,101,102,61,34,109,97,105,108,116,111,58,109,101,64,101,120,97,109,112,108,101,46,99,111,109,34,32,62,109,101,64,101,120,97,109,112,108,101,46,99,111,109,60,47,97,62))}\n</script>\n";
-        $tpl = $this->smarty->createTemplate('eval:{mailto address="me@example.com" encode="javascript_charcode"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testEncodeJavascriptCharcodeWithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $result = "<script type=\"text/javascript\" language=\"javascript\">\n{document.write(String.fromCharCode(60,97,32,104,114,101,102,61,34,109,97,105,108,116,111,58,109,101,64,101,120,97,109,112,108,101,46,99,111,109,34,32,62,109,101,64,101,120,97,109,112,108,101,46,99,111,109,60,47,97,62))}\n</script>\n";
-        $tpl = $this->smarty->createTemplate('eval:{mailto address="me@example.com" encode="javascript_charcode"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-        Smarty::$_MBSTRING = true;
-    }
-
-    public function testEncodeHex()
-    {
-        $result = '<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;%6d%65@%65%78%61%6d%70%6c%65.%63%6f%6d" >&#x6d;&#x65;&#x40;&#x65;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#x65;&#x2e;&#x63;&#x6f;&#x6d;</a>';
-        $tpl = $this->smarty->createTemplate('eval:{mailto address="me@example.com" encode="hex"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testEncodeHexWithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $result = '<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;%6d%65@%65%78%61%6d%70%6c%65.%63%6f%6d" >&#x6d;&#x65;&#x40;&#x65;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#x65;&#x2e;&#x63;&#x6f;&#x6d;</a>';
-        $tpl = $this->smarty->createTemplate('eval:{mailto address="me@example.com" encode="hex"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-        Smarty::$_MBSTRING = true;
-    }
-
-    public function testSubject()
-    {
-        $result = '<a href="mailto:me@example.com?subject=Hello%20to%20you%21" >me@example.com</a>';
-        $tpl = $this->smarty->createTemplate('eval:{mailto address="me@example.com" subject="Hello to you!"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testSubjectWithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $result = '<a href="mailto:me@example.com?subject=Hello%20to%20you%21" >me@example.com</a>';
-        $tpl = $this->smarty->createTemplate('eval:{mailto address="me@example.com" subject="Hello to you!"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-        Smarty::$_MBSTRING = true;
-    }
-
-    public function testCc()
-    {
-        $result = '<a href="mailto:me@example.com?cc=you@example.com,they@example.com" >me@example.com</a>';
-        $tpl = $this->smarty->createTemplate('eval:{mailto address="me@example.com" cc="you@example.com,they@example.com"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testCcWithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $result = '<a href="mailto:me@example.com?cc=you@example.com,they@example.com" >me@example.com</a>';
-        $tpl = $this->smarty->createTemplate('eval:{mailto address="me@example.com" cc="you@example.com,they@example.com"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-        Smarty::$_MBSTRING = true;
-    }
-
-    public function testExtra()
-    {
-        $result = '<a href="mailto:me@example.com" class="email">me@example.com</a>';
-        $tpl = $this->smarty->createTemplate('eval:{mailto address="me@example.com" extra=\'class="email"\'}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testExtraWithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $result = '<a href="mailto:me@example.com" class="email">me@example.com</a>';
-        $tpl = $this->smarty->createTemplate('eval:{mailto address="me@example.com" extra=\'class="email"\'}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-        Smarty::$_MBSTRING = true;
-    }
-
-    public function testUmlauts()
-    {
-        $result = '<a href="mailto:me+smtpext@example.com?cc=you@example.com,they@example.com&subject=h%C3%A4llo%20w%C3%B6rld" >me+smtpext@example.com</a>';
-        $tpl = $this->smarty->createTemplate('eval:{mailto address="me+smtpext@example.com" cc="you@example.com,they@example.com" subject="hällo wörld"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testUmlautsWithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $result = '<a href="mailto:me+smtpext@example.com?cc=you@example.com,they@example.com&subject=h%C3%A4llo%20w%C3%B6rld" >me+smtpext@example.com</a>';
-        $tpl = $this->smarty->createTemplate('eval:{mailto address="me+smtpext@example.com" cc="you@example.com,they@example.com" subject="hällo wörld"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-        Smarty::$_MBSTRING = true;
-    }
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

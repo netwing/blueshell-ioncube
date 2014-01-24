@@ -1,119 +1,73 @@
-<?php
-/* @var $this ContractTypeController */
-/* @var $model ContractType */
-
-$this->pageTitle = Yii::t('app', 'Contact us');
-$this->breadcrumbs=array(
-	'Contact',
-);
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
-
-<?php 
-$this->beginClip('sidebar2'); 
-$this->beginWidget('zii.widgets.CPortlet', array(
-    'title' => '<strong>' . Yii::t('app', 'HELP US TO IMPROVE!') . '</strong>',
-    'htmlOptions' => array('class' => 'panel panel-default'),
-    'decorationCssClass' => 'panel-heading',
-    'titleCssClass' => 'panel-title',
-    'contentCssClass' => 'panel-body',
-)); ?>
-<p><?php echo Yii::t('app', "Our development team is always very responsive to requests that our clients ask us during use in order to continuously improve BlueShell and thus improve the management of your port."); ?></p>
-<p><?php echo Yii::t('app', "We have always based the development of this software by listening to the demands of direct operators of ports and treasure in the development of new functionality in order to enrich more and more functions BlueShell, giving the opportunity to our customers to use a tool more and more dedicated to their needs."); ?>
-<p><?php echo Yii::t('app', "If you'd like to report a request for a new feature or a change to an existing function, or you want to recommend to our team what features might be useful in our software, please fill out the form to the left."); ?>
-
-<p><?php echo Yii::t('app', "Our development team will evaluate the request in order to be able to implement BlueShell."); ?></p>
-
-<?php
-$this->endWidget();
-$this->endClip();
-?>
-<div class="form">
-
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'contract-type-form',
-	// Please note: When you enable ajax validation, make sure the corresponding
-	// controller action is handling ajax validation correctly.
-	// There is a call to performAjaxValidation() commented in generated controller code.
-	// See class documentation of CActiveForm for details on this.
-	'enableClientValidation'=>true,
-	'clientOptions'=>array(
-		'validateOnSubmit'=>true,
-	),
-    'htmlOptions'=>array('class'=>'form-horizontal well'),
-    'errorMessageCssClass' => 'text-danger'
-)); ?>
-
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
-	<?php echo $form->errorSummary($model); ?>
-
-    <div class="form-group">
-		<?php echo $form->labelEx($model,'name',  array('class' => 'col-lg-2 control-label')); ?>
-		<div class="col-lg-10">
-		<?php echo $form->textField($model,'name', array('class' => 'form-control')); ?>
-		<?php echo $form->error($model,'name'); ?>
-		</div>
-	</div>
-
-    <div class="form-group">
-		<?php echo $form->labelEx($model,'email',  array('class' => 'col-lg-2 control-label')); ?>
-		<div class="col-lg-10">
-		<?php echo $form->textField($model,'email', array('class' => 'form-control')); ?>
-		<?php echo $form->error($model,'email'); ?>
-		</div>
-	</div>
-
-    <div class="form-group">
-		<?php echo $form->labelEx($model,'subject',  array('class' => 'col-lg-2 control-label')); ?>
-		<div class="col-lg-10">
-		<?php echo $form->textField($model,'subject', array('class' => 'form-control', 'size'=>60,'maxlength'=>128)); ?>
-		<?php echo $form->error($model,'subject'); ?>
-		</div>
-	</div>
-
-    <div class="form-group">
-		<?php echo $form->labelEx($model,'body',  array('class' => 'col-lg-2 control-label')); ?>
-		<div class="col-lg-10">
-		<?php echo $form->textArea($model,'body',array('rows'=>6, 'cols'=>50, 'class' => 'form-control',)); ?>
-		<?php echo $form->error($model,'body'); ?>
-		</div>
-	</div>
-
-    <div class="form-group">
-        <div class="col-lg-offset-2 col-lg-10">
-            <div id="myDropZone" class="dropzone">
-                <p><?php echo Yii::t('app', 'Drop here files'); ?></p>
-            </div>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="col-lg-offset-2 col-lg-10">
-			<button type="submit" class="btn btn-primary"><?php echo Yii::t('app', 'Submit'); ?></button>
-        </div>
-    </div>
-
-<?php $this->endWidget(); ?>
-
-</div><!-- form -->
-
-
-<?php Yii::app()->clientScript->registerCssFile('../css/dropzone.css'); ?>
-<?php Yii::app()->clientScript->registerScriptFile('../bower_components/dropzone/downloads/dropzone.js'); ?>
-
-
-<?php Yii::app()->clientScript->registerScript("dropzone-init", '
-Dropzone.autoDiscover = false;
-$("div#myDropZone").dropzone({ 
-    init: function() {
-        this.on("removedfile", function(file) { 
-            $.get( "' . $this->createUrl('/site/contact') . '", { delete: file.name } );
-        });
-    },
-    url: "' . $this->createUrl("/site/contact") . '", 
-    paramName: "file",
-    addRemoveLinks: true,
-});
-
-', CClientScript::POS_READY); ?>
+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
+e7/pNop3bVsF/Sv0m74i3nolXa0GtG==

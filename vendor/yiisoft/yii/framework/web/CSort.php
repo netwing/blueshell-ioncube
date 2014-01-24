@@ -1,472 +1,203 @@
-<?php
-/**
- * CSort class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CSort represents information relevant to sorting.
- *
- * When data needs to be sorted according to one or several attributes,
- * we can use CSort to represent the sorting information and generate
- * appropriate hyperlinks that can lead to sort actions.
- *
- * CSort is designed to be used together with {@link CActiveRecord}.
- * When creating a CSort instance, you need to specify {@link modelClass}.
- * You can use CSort to generate hyperlinks by calling {@link link}.
- * You can also use CSort to modify a {@link CDbCriteria} instance by calling {@link applyOrder} so that
- * it can cause the query results to be sorted according to the specified
- * attributes.
- *
- * In order to prevent SQL injection attacks, CSort ensures that only valid model attributes
- * can be sorted. This is determined based on {@link modelClass} and {@link attributes}.
- * When {@link attributes} is not set, all attributes belonging to {@link modelClass}
- * can be sorted. When {@link attributes} is set, only those attributes declared in the property
- * can be sorted.
- *
- * By configuring {@link attributes}, one can perform more complex sorts that may
- * consist of things like compound attributes (e.g. sort based on the combination of
- * first name and last name of users).
- *
- * The property {@link attributes} should be an array of key-value pairs, where the keys
- * represent the attribute names, while the values represent the virtual attribute definitions.
- * For more details, please check the documentation about {@link attributes}.
- *
- * @property string $orderBy The order-by columns represented by this sort object.
- * This can be put in the ORDER BY clause of a SQL statement.
- * @property array $directions Sort directions indexed by attribute names.
- * The sort direction. Can be either CSort::SORT_ASC for ascending order or
- * CSort::SORT_DESC for descending order.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.web
- */
-class CSort extends CComponent
-{
-	/**
-	 * Sort ascending
-	 * @since 1.1.10
-	 */
-	const SORT_ASC = false;
-
-	/**
-	 * Sort descending
-	 * @since 1.1.10
-	 */
-	const SORT_DESC = true;
-
-	/**
-	 * @var boolean whether the sorting can be applied to multiple attributes simultaneously.
-	 * Defaults to false, which means each time the data can only be sorted by one attribute.
-	 */
-	public $multiSort=false;
-	/**
-	 * @var string the name of the model class whose attributes can be sorted.
-	 * The model class must be a child class of {@link CActiveRecord}.
-	 */
-	public $modelClass;
-	/**
-	 * @var array list of attributes that are allowed to be sorted.
-	 * For example, array('user_id','create_time') would specify that only 'user_id'
-	 * and 'create_time' of the model {@link modelClass} can be sorted.
-	 * By default, this property is an empty array, which means all attributes in
-	 * {@link modelClass} are allowed to be sorted.
-	 *
-	 * This property can also be used to specify complex sorting. To do so,
-	 * a virtual attribute can be declared in terms of a key-value pair in the array.
-	 * The key refers to the name of the virtual attribute that may appear in the sort request,
-	 * while the value specifies the definition of the virtual attribute.
-	 *
-	 * In the simple case, a key-value pair can be like <code>'user'=>'user_id'</code>
-	 * where 'user' is the name of the virtual attribute while 'user_id' means the virtual
-	 * attribute is the 'user_id' attribute in the {@link modelClass}.
-	 *
-	 * A more flexible way is to specify the key-value pair as
-	 * <pre>
-	 * 'user'=>array(
-	 *     'asc'=>'first_name, last_name',
-	 *     'desc'=>'first_name DESC, last_name DESC',
-	 *     'label'=>'Name'
-	 * )
-	 * </pre>
-	 * where 'user' is the name of the virtual attribute that specifies the full name of user
-	 * (a compound attribute consisting of first name and last name of user). In this case,
-	 * we have to use an array to define the virtual attribute with three elements: 'asc',
-	 * 'desc' and 'label'.
-	 *
-	 * The above approach can also be used to declare virtual attributes that consist of relational
-	 * attributes. For example,
-	 * <pre>
-	 * 'price'=>array(
-	 *     'asc'=>'item.price',
-	 *     'desc'=>'item.price DESC',
-	 *     'label'=>'Item Price'
-	 * )
-	 * </pre>
-	 *
-	 * Note, the attribute name should not contain '-' or '.' characters because
-	 * they are used as {@link separators}.
-	 *
-	 * Starting from version 1.1.3, an additional option named 'default' can be used in the virtual attribute
-	 * declaration. This option specifies whether an attribute should be sorted in ascending or descending
-	 * order upon user clicking the corresponding sort hyperlink if it is not currently sorted. The valid
-	 * option values include 'asc' (default) and 'desc'. For example,
-	 * <pre>
-	 * 'price'=>array(
-	 *     'asc'=>'item.price',
-	 *     'desc'=>'item.price DESC',
-	 *     'label'=>'Item Price',
-	 *     'default'=>'desc',
-	 * )
-	 * </pre>
-	 *
-	 * Also starting from version 1.1.3, you can include a star ('*') element in this property so that
-	 * all model attributes are available for sorting, in addition to those virtual attributes. For example,
-	 * <pre>
-	 * 'attributes'=>array(
-	 *     'price'=>array(
-	 *         'asc'=>'item.price',
-	 *         'desc'=>'item.price DESC',
-	 *         'label'=>'Item Price',
-	 *         'default'=>'desc',
-	 *     ),
-	 *     '*',
-	 * )
-	 * </pre>
-	 * Note that when a name appears as both a model attribute and a virtual attribute, the position of
-	 * the star element in the array determines which one takes precedence. In particular, if the star
-	 * element is the first element in the array, the model attribute takes precedence; and if the star
-	 * element is the last one, the virtual attribute takes precedence.
-	 */
-	public $attributes=array();
-	/**
-	 * @var string the name of the GET parameter that specifies which attributes to be sorted
-	 * in which direction. Defaults to 'sort'.
-	 */
-	public $sortVar='sort';
-	/**
-	 * @var string the tag appeared in the GET parameter that indicates the attribute should be sorted
-	 * in descending order. Defaults to 'desc'.
-	 */
-	public $descTag='desc';
-	/**
-	 * @var mixed the default order that should be applied to the query criteria when
-	 * the current request does not specify any sort. For example, 'name, create_time DESC' or
-	 * 'UPPER(name)'.
-	 *
-	 * Starting from version 1.1.3, you can also specify the default order using an array.
-	 * The array keys could be attribute names or virtual attribute names as declared in {@link attributes},
-	 * and the array values indicate whether the sorting of the corresponding attributes should
-	 * be in descending order. For example,
-	 * <pre>
-	 * 'defaultOrder'=>array(
-	 *     'price'=>CSort::SORT_DESC,
-	 * )
-	 * </pre>
-	 * `SORT_DESC` and `SORT_ASC` are available since 1.1.10. In earlier Yii versions you should use
-	 * `true` and `false` respectively.
-	 *
-	 * Please note when using array to specify the default order, the corresponding attributes
-	 * will be put into {@link directions} and thus affect how the sort links are rendered
-	 * (e.g. an arrow may be displayed next to the currently active sort link).
-	 */
-	public $defaultOrder;
-	/**
-	 * @var string the route (controller ID and action ID) for generating the sorted contents.
-	 * Defaults to empty string, meaning using the currently requested route.
-	 */
-	public $route='';
-	/**
-	 * @var array separators used in the generated URL. This must be an array consisting of
-	 * two elements. The first element specifies the character separating different
-	 * attributes, while the second element specifies the character separating attribute name
-	 * and the corresponding sort direction. Defaults to array('-','.').
-	 */
-	public $separators=array('-','.');
-	/**
-	 * @var array the additional GET parameters (name=>value) that should be used when generating sort URLs.
-	 * Defaults to null, meaning using the currently available GET parameters.
-	 */
-	public $params;
-
-	private $_directions;
-
-	/**
-	 * Constructor.
-	 * @param string $modelClass the class name of data models that need to be sorted.
-	 * This should be a child class of {@link CActiveRecord}.
-	 */
-	public function __construct($modelClass=null)
-	{
-		$this->modelClass=$modelClass;
-	}
-
-	/**
-	 * Modifies the query criteria by changing its {@link CDbCriteria::order} property.
-	 * This method will use {@link directions} to determine which columns need to be sorted.
-	 * They will be put in the ORDER BY clause. If the criteria already has non-empty {@link CDbCriteria::order} value,
-	 * the new value will be appended to it.
-	 * @param CDbCriteria $criteria the query criteria
-	 */
-	public function applyOrder($criteria)
-	{
-		$order=$this->getOrderBy($criteria);
-		if(!empty($order))
-		{
-			if(!empty($criteria->order))
-				$criteria->order.=', ';
-			$criteria->order.=$order;
-		}
-	}
-
-	/**
-	 * @param CDbCriteria $criteria the query criteria
-	 * @return string the order-by columns represented by this sort object.
-	 * This can be put in the ORDER BY clause of a SQL statement.
-	 * @since 1.1.0
-	 */
-	public function getOrderBy($criteria=null)
-	{
-		$directions=$this->getDirections();
-		if(empty($directions))
-			return is_string($this->defaultOrder) ? $this->defaultOrder : '';
-		else
-		{
-			if($this->modelClass!==null)
-				$schema=$this->getModel($this->modelClass)->getDbConnection()->getSchema();
-			$orders=array();
-			foreach($directions as $attribute=>$descending)
-			{
-				$definition=$this->resolveAttribute($attribute);
-				if(is_array($definition))
-				{
-					if($descending)
-						$orders[]=isset($definition['desc']) ? $definition['desc'] : $attribute.' DESC';
-					else
-						$orders[]=isset($definition['asc']) ? $definition['asc'] : $attribute;
-				}
-				elseif($definition!==false)
-				{
-					$attribute=$definition;
-					if(isset($schema))
-					{
-						if(($pos=strpos($attribute,'.'))!==false)
-							$attribute=$schema->quoteTableName(substr($attribute,0,$pos)).'.'.$schema->quoteColumnName(substr($attribute,$pos+1));
-						else
-							$attribute=($criteria===null || $criteria->alias===null ? $this->getModel($this->modelClass)->getTableAlias(true) : $schema->quoteTableName($criteria->alias)).'.'.$schema->quoteColumnName($attribute);
-					}
-					$orders[]=$descending?$attribute.' DESC':$attribute;
-				}
-			}
-			return implode(', ',$orders);
-		}
-	}
-
-	/**
-	 * Generates a hyperlink that can be clicked to cause sorting.
-	 * @param string $attribute the attribute name. This must be the actual attribute name, not alias.
-	 * If it is an attribute of a related AR object, the name should be prefixed with
-	 * the relation name (e.g. 'author.name', where 'author' is the relation name).
-	 * @param string $label the link label. If null, the label will be determined according
-	 * to the attribute (see {@link resolveLabel}).
-	 * @param array $htmlOptions additional HTML attributes for the hyperlink tag
-	 * @return string the generated hyperlink
-	 */
-	public function link($attribute,$label=null,$htmlOptions=array())
-	{
-		if($label===null)
-			$label=$this->resolveLabel($attribute);
-		if(($definition=$this->resolveAttribute($attribute))===false)
-			return $label;
-		$directions=$this->getDirections();
-		if(isset($directions[$attribute]))
-		{
-			$class=$directions[$attribute] ? 'desc' : 'asc';
-			if(isset($htmlOptions['class']))
-				$htmlOptions['class'].=' '.$class;
-			else
-				$htmlOptions['class']=$class;
-			$descending=!$directions[$attribute];
-			unset($directions[$attribute]);
-		}
-		elseif(is_array($definition) && isset($definition['default']))
-			$descending=$definition['default']==='desc';
-		else
-			$descending=false;
-
-		if($this->multiSort)
-			$directions=array_merge(array($attribute=>$descending),$directions);
-		else
-			$directions=array($attribute=>$descending);
-
-		$url=$this->createUrl(Yii::app()->getController(),$directions);
-
-		return $this->createLink($attribute,$label,$url,$htmlOptions);
-	}
-
-	/**
-	 * Resolves the attribute label for the specified attribute.
-	 * This will invoke {@link CActiveRecord::getAttributeLabel} to determine what label to use.
-	 * If the attribute refers to a virtual attribute declared in {@link attributes},
-	 * then the label given in the {@link attributes} will be returned instead.
-	 * @param string $attribute the attribute name.
-	 * @return string the attribute label
-	 */
-	public function resolveLabel($attribute)
-	{
-		$definition=$this->resolveAttribute($attribute);
-		if(is_array($definition))
-		{
-			if(isset($definition['label']))
-				return $definition['label'];
-		}
-		elseif(is_string($definition))
-			$attribute=$definition;
-		if($this->modelClass!==null)
-			return $this->getModel($this->modelClass)->getAttributeLabel($attribute);
-		else
-			return $attribute;
-	}
-
-	/**
-	 * Returns the currently requested sort information.
-	 * @return array sort directions indexed by attribute names.
-	 * Sort direction can be either CSort::SORT_ASC for ascending order or
-	 * CSort::SORT_DESC for descending order.
-	 */
-	public function getDirections()
-	{
-		if($this->_directions===null)
-		{
-			$this->_directions=array();
-			if(isset($_GET[$this->sortVar]) && is_string($_GET[$this->sortVar]))
-			{
-				$attributes=explode($this->separators[0],$_GET[$this->sortVar]);
-				foreach($attributes as $attribute)
-				{
-					if(($pos=strrpos($attribute,$this->separators[1]))!==false)
-					{
-						$descending=substr($attribute,$pos+1)===$this->descTag;
-						if($descending)
-							$attribute=substr($attribute,0,$pos);
-					}
-					else
-						$descending=false;
-
-					if(($this->resolveAttribute($attribute))!==false)
-					{
-						$this->_directions[$attribute]=$descending;
-						if(!$this->multiSort)
-							return $this->_directions;
-					}
-				}
-			}
-			if($this->_directions===array() && is_array($this->defaultOrder))
-				$this->_directions=$this->defaultOrder;
-		}
-		return $this->_directions;
-	}
-
-	/**
-	 * Returns the sort direction of the specified attribute in the current request.
-	 * @param string $attribute the attribute name
-	 * @return mixed Sort direction of the attribute. Can be either CSort::SORT_ASC
-	 * for ascending order or CSort::SORT_DESC for descending order. Value is null
-	 * if the attribute doesn't need to be sorted.
-	 */
-	public function getDirection($attribute)
-	{
-		$this->getDirections();
-		return isset($this->_directions[$attribute]) ? $this->_directions[$attribute] : null;
-	}
-
-	/**
-	 * Creates a URL that can lead to generating sorted data.
-	 * @param CController $controller the controller that will be used to create the URL.
-	 * @param array $directions the sort directions indexed by attribute names.
-	 * The sort direction can be either CSort::SORT_ASC for ascending order or
-	 * CSort::SORT_DESC for descending order.
-	 * @return string the URL for sorting
-	 */
-	public function createUrl($controller,$directions)
-	{
-		$sorts=array();
-		foreach($directions as $attribute=>$descending)
-			$sorts[]=$descending ? $attribute.$this->separators[1].$this->descTag : $attribute;
-		$params=$this->params===null ? $_GET : $this->params;
-		$params[$this->sortVar]=implode($this->separators[0],$sorts);
-		return $controller->createUrl($this->route,$params);
-	}
-
-	/**
-	 * Returns the real definition of an attribute given its name.
-	 *
-	 * The resolution is based on {@link attributes} and {@link CActiveRecord::attributeNames}.
-	 * <ul>
-	 * <li>When {@link attributes} is an empty array, if the name refers to an attribute of {@link modelClass},
-	 * then the name is returned back.</li>
-	 * <li>When {@link attributes} is not empty, if the name refers to an attribute declared in {@link attributes},
-	 * then the corresponding virtual attribute definition is returned. Starting from version 1.1.3, if {@link attributes}
-	 * contains a star ('*') element, the name will also be used to match against all model attributes.</li>
-	 * <li>In all other cases, false is returned, meaning the name does not refer to a valid attribute.</li>
-	 * </ul>
-	 * @param string $attribute the attribute name that the user requests to sort on
-	 * @return mixed the attribute name or the virtual attribute definition. False if the attribute cannot be sorted.
-	 */
-	public function resolveAttribute($attribute)
-	{
-		if($this->attributes!==array())
-			$attributes=$this->attributes;
-		elseif($this->modelClass!==null)
-			$attributes=$this->getModel($this->modelClass)->attributeNames();
-		else
-			return false;
-		foreach($attributes as $name=>$definition)
-		{
-			if(is_string($name))
-			{
-				if($name===$attribute)
-					return $definition;
-			}
-			elseif($definition==='*')
-			{
-				if($this->modelClass!==null && $this->getModel($this->modelClass)->hasAttribute($attribute))
-					return $attribute;
-			}
-			elseif($definition===$attribute)
-				return $attribute;
-		}
-		return false;
-	}
-
-	/**
-	 * Given active record class name returns new model instance.
-	 *
-	 * @param string $className active record class name.
-	 * @return CActiveRecord active record model instance.
-	 *
-	 * @since 1.1.14
-	 */
-	protected function getModel($className)
-	{
-		return CActiveRecord::model($className);
-	}
-
-	/**
-	 * Creates a hyperlink based on the given label and URL.
-	 * You may override this method to customize the link generation.
-	 * @param string $attribute the name of the attribute that this link is for
-	 * @param string $label the label of the hyperlink
-	 * @param string $url the URL
-	 * @param array $htmlOptions additional HTML options
-	 * @return string the generated hyperlink
-	 */
-	protected function createLink($attribute,$label,$url,$htmlOptions)
-	{
-		return CHtml::link($label,$url,$htmlOptions);
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

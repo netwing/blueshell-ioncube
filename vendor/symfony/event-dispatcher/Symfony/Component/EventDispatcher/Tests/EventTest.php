@@ -1,84 +1,42 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\EventDispatcher\Tests;
-
-use Symfony\Component\EventDispatcher\Event;
-use Symfony\Component\EventDispatcher\EventDispatcher;
-
-/**
- * Test class for Event.
- */
-class EventTest extends \PHPUnit_Framework_TestCase
-{
-    /**
-     * @var \Symfony\Component\EventDispatcher\Event
-     */
-    protected $event;
-
-    /**
-     * @var \Symfony\Component\EventDispatcher\EventDispatcher
-     */
-    protected $dispatcher;
-
-    /**
-     * Sets up the fixture, for example, opens a network connection.
-     * This method is called before a test is executed.
-     */
-    protected function setUp()
-    {
-        $this->event = new Event();
-        $this->dispatcher = new EventDispatcher();
-    }
-
-    /**
-     * Tears down the fixture, for example, closes a network connection.
-     * This method is called after a test is executed.
-     */
-    protected function tearDown()
-    {
-        $this->event = null;
-        $this->dispatcher = null;
-    }
-
-    public function testIsPropagationStopped()
-    {
-        $this->assertFalse($this->event->isPropagationStopped());
-    }
-
-    public function testStopPropagationAndIsPropagationStopped()
-    {
-        $this->event->stopPropagation();
-        $this->assertTrue($this->event->isPropagationStopped());
-    }
-
-    public function testSetDispatcher()
-    {
-        $this->event->setDispatcher($this->dispatcher);
-        $this->assertSame($this->dispatcher, $this->event->getDispatcher());
-    }
-
-    public function testGetDispatcher()
-    {
-        $this->assertNull($this->event->getDispatcher());
-    }
-
-    public function testGetName()
-    {
-        $this->assertNull($this->event->getName());
-    }
-
-    public function testSetName()
-    {
-        $this->event->setName('foo');
-        $this->assertEquals('foo', $this->event->getName());
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+38OMn5F293NREl2d/DHvMm==

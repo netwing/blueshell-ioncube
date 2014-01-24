@@ -1,89 +1,54 @@
-<?php
-/* @var $this ContractTypeController */
-/* @var $model ContractType */
-/* @var $form CActiveForm */
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
-
-<div class="wide form">
-
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'action'=>Yii::app()->createUrl($this->route),
-	'method'=>'get',
-    'htmlOptions'=>array('class'=>'form-horizontal well'),
-)); ?>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'contratto_tipo_id', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
-        <?php echo $form->textField($model, 'contratto_tipo_id', array('class' => 'form-control')); ?>        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'contratto_tipo_nome', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
-        <?php echo $form->textField($model, 'contratto_tipo_nome', array('class' => 'form-control')); ?>        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'color', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
-        <?php echo $form->textField($model, 'color', array('class' => 'form-control')); ?>        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'prefix', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
-        <?php echo $form->textField($model, 'prefix', array('class' => 'form-control')); ?>        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'rent', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
-        <?php echo $form->textField($model, 'rent', array('class' => 'form-control')); ?>        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'transit', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
-        <?php echo $form->textField($model, 'transit', array('class' => 'form-control')); ?>        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'sell', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
-        <?php echo $form->textField($model, 'sell', array('class' => 'form-control')); ?>        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'option', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
-        <?php echo $form->textField($model, 'option', array('class' => 'form-control')); ?>        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'manage', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
-        <?php echo $form->textField($model, 'manage', array('class' => 'form-control')); ?>        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'reservation', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
-        <?php echo $form->textField($model, 'reservation', array('class' => 'form-control')); ?>        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'sort_order', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
-        <?php echo $form->textField($model, 'sort_order', array('class' => 'form-control')); ?>        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'create_time', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
-        <?php echo $form->textField($model, 'create_time', array('class' => 'form-control')); ?>        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'update_time', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
-        <?php echo $form->textField($model, 'update_time', array('class' => 'form-control')); ?>        </div>
-    </div>
-
-
-    <div class="form-group">
-        <div class="col-lg-offset-2 col-lg-4">
-            <button type="submit" class="btn btn-primary"><?php echo Yii::t('app', 'Search'); ?></button>
-        </div>
-    </div>
-
-<?php $this->endWidget(); ?>
-
-</div><!-- search-form -->
+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
+f2sMqW==

@@ -1,117 +1,51 @@
-<?php
-/**
- * CMarkdown class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CMarkdown converts the captured content from markdown syntax to HTML code.
- *
- * CMarkdown can be used as either a widget or a filter. It is a wrapper of {@link CMarkdownParser}.
- * CMarkdown adds an additional option {@link purifyOutput} which can be set true
- * so that the converted HTML code is purified before being displayed.
- *
- * For details about the markdown syntax, please check the following:
- * <ul>
- * <li>{@link http://daringfireball.net/projects/markdown/syntax official markdown syntax}</li>
- * <li>{@link http://michelf.com/projects/php-markdown/extra/ markdown extra syntax}</li>
- * <li>{@link CMarkdownParser markdown with syntax highlighting}</li>
- * </ul>
- *
- * @property CMarkdownParser $markdownParser The parser instance.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.web.widgets
- * @since 1.0
- */
-class CMarkdown extends COutputProcessor
-{
-	/**
-	 * @var mixed the CSS file used for the widget. Defaults to null, meaning
-	 * using the default CSS file included together with the widget.
-	 * If false, no CSS file will be used. Otherwise, the specified CSS file
-	 * will be included when using this widget.
-	 */
-	public $cssFile;
-	/**
-	 * @var boolean whether to use {@link CHtmlPurifier} to purify the generated HTML code. Defaults to false.
-	 */
-	public $purifyOutput=false;
-
-	private $_parser;
-
-	/**
-	 * Processes the captured output.
-     * This method converts the content in markdown syntax to HTML code.
-     * If {@link purifyOutput} is true, the HTML code will also be purified.
-	 * @param string $output the captured output to be processed
-	 * @see convert
-	 */
-	public function processOutput($output)
-	{
-		$output=$this->transform($output);
-		if($this->purifyOutput)
-		{
-			$purifier=new CHtmlPurifier;
-			$output=$purifier->purify($output);
-		}
-		parent::processOutput($output);
-	}
-
-	/**
-	 * Converts the content in markdown syntax to HTML code.
-	 * This method uses {@link CMarkdownParser} to do the conversion.
-	 * @param string $output the content to be converted
-	 * @return string the converted content
-	 */
-	public function transform($output)
-	{
-		$this->registerClientScript();
-		return $this->getMarkdownParser()->transform($output);
-	}
-
-	/**
-	 * Registers the needed CSS and JavaScript.
-	 */
-	public function registerClientScript()
-	{
-		if($this->cssFile!==false)
-			self::registerCssFile($this->cssFile);
-	}
-
-	/**
-	 * Registers the needed CSS file.
-	 * @param string $url the CSS URL. If null, a default CSS URL will be used.
-	 */
-	public static function registerCssFile($url=null)
-	{
-		CTextHighlighter::registerCssFile($url);
-	}
-
-	/**
-	 * Returns the markdown parser instance.
-	 * This method calls {@link createMarkdownParser} to create the parser instance.
-	 * Call this method multipe times will only return the same instance.
-	 * @return CMarkdownParser the parser instance
-	 */
-	public function getMarkdownParser()
-	{
-		if($this->_parser===null)
-			$this->_parser=$this->createMarkdownParser();
-		return $this->_parser;
-	}
-
-	/**
-	 * Creates a markdown parser.
-	 * By default, this method creates a {@link CMarkdownParser} instance.
-	 * @return CMarkdownParser the markdown parser.
-	 */
-	protected function createMarkdownParser()
-	{
-		return new CMarkdownParser;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

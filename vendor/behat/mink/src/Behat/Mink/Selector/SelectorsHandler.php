@@ -1,129 +1,59 @@
-<?php
-
-namespace Behat\Mink\Selector;
-
-use Behat\Mink\Selector\SelectorInterface;
-
-/*
- * This file is part of the Behat\Mink.
- * (c) Konstantin Kudryashov <ever.zet@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-/**
- * Selectors handler.
- *
- * @author Konstantin Kudryashov <ever.zet@gmail.com>
- */
-class SelectorsHandler
-{
-    private $selectors;
-
-    /**
-     * Initializes selectors handler.
-     *
-     * @param array $selectors default selectors to register
-     */
-    public function __construct(array $selectors = array())
-    {
-        $this->registerSelector('named',    new NamedSelector());
-        $this->registerSelector('css',      new CssSelector());
-
-        foreach ($selectors as $name => $selector) {
-            $this->registerSelector($name, $selector);
-        }
-    }
-
-    /**
-     * Registers new selector engine with specified name.
-     *
-     * @param string            $name     selector engine name
-     * @param SelectorInterface $selector selector engine instance
-     */
-    public function registerSelector($name, SelectorInterface $selector)
-    {
-        $this->selectors[$name] = $selector;
-    }
-
-    /**
-     * Checks whether selector with specified name is registered on handler.
-     *
-     * @param string $name selector engine name
-     *
-     * @return Boolean
-     */
-    public function isSelectorRegistered($name)
-    {
-        return isset($this->selectors[$name]);
-    }
-
-    /**
-     * Returns selector engine with specified name.
-     *
-     * @param string $name selector engine name
-     *
-     * @return SelectorInterface
-     *
-     * @throws \InvalidArgumentException
-     */
-    public function getSelector($name)
-    {
-        if (!$this->isSelectorRegistered($name)) {
-            throw new \InvalidArgumentException("Selector \"$name\" is not registered.");
-        }
-
-        return $this->selectors[$name];
-    }
-
-    /**
-     * Translates selector with specified name to XPath.
-     *
-     * @param string $selector selector engine name (registered)
-     * @param string $locator  selector locator
-     *
-     * @return string
-     */
-    public function selectorToXpath($selector, $locator)
-    {
-        if ('xpath' === $selector) {
-            return $locator;
-        }
-
-        return $this->getSelector($selector)->translateToXPath($locator);
-    }
-
-    /**
-     * Translates string to XPath literal.
-     *
-     * @param string $s
-     *
-     * @return string
-     */
-    public function xpathLiteral($s)
-    {
-        if (false === strpos($s, "'")) {
-            return sprintf("'%s'", $s);
-        }
-
-        if (false === strpos($s, '"')) {
-            return sprintf('"%s"', $s);
-        }
-
-        $string = $s;
-        $parts = array();
-        while (true) {
-            if (false !== $pos = strpos($string, "'")) {
-                $parts[] = sprintf("'%s'", substr($string, 0, $pos));
-                $parts[] = "\"'\"";
-                $string = substr($string, $pos + 1);
-            } else {
-                $parts[] = "'$string'";
-                break;
-            }
-        }
-
-        return sprintf("concat(%s)", implode($parts, ','));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPt3P5/AtYEp5MXM2qRqCYorlXTwDxrDJkUekrSe2dkxtsi7BajqQpjXJuUK0VOusaBzGPxHX
+HPteDZ4drEocnIR0RjT9OSweKeXzaXYD6j+B0lynGqT3yoXFcS4mGh20WO1x0bYAyIthrziAdBNP
+IaKj9kBeH9ZOJwL1rODBCNMr2d9XCkjbnbCm1H8dSH31VWYEs1bNWm/RpKN2DH6UJefOsCeRV0G6
+muQmcpjbTyNYAmRN9y2DhgzHAE4xzt2gh9fl143SQNHFOmcTY0czS8RLZtbWEGQ/Il+8Ted2vd4P
+ZFxSkqKx5Ua51w58mwKncwYBrqICeRtthODIEyvwAzGEZnvqvmKbr0QX4QaDojReBLJbzbp+QwUe
+Fx4v1tmZphOHO0G6XWAZoIAAJod1RqEg6FlyLnq5Kw7tynJ5R6cmGjOHTX60edtRZ+WYV80JGcCk
+0oLGqvoeR7c0/6zgRANgUkChwyr5tmiU0SHk8X7m5hn1TXGu7OOsHmXxQRNmqrR8yVQ6T+KYiu6/
+y2dlmUDbYxeAQrqaWPC5dlS4VIJBwM+gkA7967vfqTyD2c1HbrgOjAyE1pL0QGhnkrkOt/xy/kxI
+pZWrp9Oo3uh8GHSBQZkyXnD8xiGtAHXdyuXe3t1QcSZ+CqCa6hhYaDEsXwkaNEtCuuwqFh1OWXua
+Iw0ttv3sb+qzfpk347qa+DSE8Zjo5ZQysz3MiRbTyqBEMFXFQ/lByoF9vca2kTjvU8lbmJ9jts22
+o9O+AYTJVcopRwtTtRn9heAbdSUk5Nx18dRt6ox5FePnHtLWlKOztoT1okEE01lPCuFWRyiw/aV+
+t992/cd1uj9tOdSxp/CEBXxbjxB9qOkbr+SOBhYBFPb9AhNEUQFQpTKZUbeBeMuUXjRL9/JKCEs4
+SF2Zew8cdNzSBNc/X498aM/W+F3P64/wpN8vUTaG5x0ZUF5kVIOFlCVnCJXAbGhVp99TgqoR8Iq+
+MG0My1wXhol0X20cbCIcvVopki+zfokud63z36GmCG357pbiRrt1T6/wWR/etJsAAnWKU6/UQ/wv
+js5+ZOcDGLyh+eIL9BK9DuVSSxP8R/nNMxUQTr909V4v00QqQzN0+sOIHrpVE5PpHB5guP/m4mwQ
+2jZR+YaXAgB1GgCscfFWKOMa+CftRrkz76A1J08c3A/pC0KIGePkbDxYnpGkSNaTg3ZBWWv+z6eR
+AegNcvQMPmgPGdKUQu970ASiADKlrFcPR/h/Ooiok6c1ECxLMAH5V/RXYv7VxiHdw094tV7bjldj
+df/f1HWW7h0gK90xEO/4BmcBWNTXc8w6o/C925wgh/fUgrQFEl+ZcUerOU+GfzpoE60VzDcBrDjZ
+J/X6MRHy0GGxc/SxnrS3il95qPKiiqPFG/Yk1n0vGqazsCUomahGSCaZ++pP+ULS1ZYQYRHmiPQS
+NKwDn8MFa4BqXOdrTFGhBpCe8mz1rn8lEE4LMJEPjwquAJ1hgH462qwhxVHHNX22ApRv8joHAt1b
+vTMQ0l37L+MKhDnHfbVv7+nr1Yvimpzxi05iTEo5Ra8+d7be+nKl7PU+prlwmNVIynuIRtapcL5v
+JUgUihcZUz0Sa6lGo6huQhQM4GK6eaya78N7p9F0urj2/s7UJqXMuXsvtEl67cM2/bGHn4x7rcPD
+GDKabPTrIQzRLYA59CCL8CLAFeSi4Ufk6I2lrsUH+HM2xWeiN0AgKtx1mJ9bRv70W7vHZd/Ivv0n
+OpZjI8ULwYxO7FTgZ2rG6Jba6CsvTxZO4H+ueQeQL48LQF9dftpvc+G3aYVG5AJr1kt6aJvE8ma3
+CaBaMVgvOFScwTTX98syTrhdoYGdG5Yzz9JTL+tgY4NwBZzMiyUgAPu2aWCnEWnQEhIquoQayfQP
+bDIW2xDhbuFJ1B5eBsaG11S6BCh0KHdSA7yXZmgtk806BBBjoJ56XUlIYrAeUIWcQleuCUR9JQz6
+YxrCEKxk+IISFqDtPakt5ydVWqaM5Hx5A0VOXy/GMyu6GLtlHNDwopx9vL+vEtbeElE5W6D8WlEF
+ygkcHge7j4/3ChgcmMW4xyHUMbmVkVdqT5N4n+GMFXdK/HhZHP7YgKA5Lc3hfPpBP0BWNumhAoIK
+QfiAaQWgw8Yp9njMz/bj9E35FtMUsAYsyKkBJD3/h8UkBJOpehwofoyDd+yswBFlXVzN3esm6z4J
+bOJWhA/ryD6KW3qBdXGQH9TdXa5bQaECsJvWSZt9h2rOHWMJcQDOsU5dOzbdUIfBmhqtrT9rJgbf
+5hIVP0P5fUZFiqcbNdDBNlejK17pgs4C1Yal010eLA6L5skcdlIsFmXb9n2HNF/xBgxtPPlqpT49
+tuP9x7DUMZq5P+nQ0S23EhWrAFzw5HH4M//t0cXuwkfCSK/ky01D75a8i+/NlDtRChqQhd7OD/1z
+BMxb4pLpVAi8peWUM3MkMpsMnvFPt/U8add9KAb7gl96q6+xysqT4epbZS9KAXYt49aSNJIJudcm
+cE2650gN5F8JfsXgXoKXbFLMHIuEWlnVCOe+PgE4RzsK2cW+4PgSRNme6ys6BiEO3IwhXmUoChz4
+xVWlZDJD2Z2cjZh4a5yHPS3zE7cJ3vwwBdLmg9gO5/Ed08ZCsFnE7oaOd43NJlobr7cEXKutx1Dj
+Gxt1H1ESgRkMZdGjR7cPeiDQYOFnWCgY83LsalyiSk7q4Qs1XNqXMsG0SFpChCug9DCblEMehi/a
+916kJ1VvQLrZ6NihqdAgCdJCI6mbzsNJ1oV2iuhE4xb17Y0TbBNaDJeARNwCZx2b/eFfn34fi/Wd
+A965r5wO2vMgxPHEADB7Z4dEf6FnTx4QD1MB12CftA6MSKqSerTkX3tb7gISOt+OkFlvigry0ic0
+0KpeSDOvqmkGY/YRUKGoV4PDj37GMkYg7xddTkUZX7l2QGquHQmKIz8Ot4sDRywVceSZFxXJEr9q
+5DeYKop/oErOrEn9FbRsVicWJJHW8xkopXIzKoksxJtCURKw1otqMmkw0buFB9Co6HTQuWlWQUis
+Epk8gntm5nKTjGQRGiJIxfbmR0YCR3/uYNpXudl/w7pVYAeaIOd+7Y57ttUjGKRfrYslYRgwSKck
+sHGviP7dIk3awQRVvlUSero2/P7AwsNkXjZBC6bWNIUhX7EXdmlHiK8I0sIj1f1ok9Q9JK8chYjQ
+EOBulJUeDR3xW6o0JqQ8lgBeiTZWPQjPk5pQEcmqZry0ho3Xto0K8hHqi/VawFz8HkthxLwOrPLB
+1TMPBZSADhgxkcT+jgDbn8jg817AppQ9/di5Ykf/rllWky9ogPAQ8oHx1virms65LxdQUgpBBc7E
+Uoy4oMeV6NbqDwqfYsboZ4Ttf5XSDYR8tJN5A1yrXRY+x8CIhlmj/9OH0pI8tVk8Yo6DrcwAH9FQ
+GzA2vBt/FIyJt6Yxl8yY6OPlSl1WZTHd7fcCAxdZgX/DAGgIvbQ8KWFnxuZL6VwVn6ZJdRng9C69
+DLvuoxUV9+VsSFHxwbZSdkjiq/1xzeMA89pumEU7yQ127VXSybezUgh3MC+t754mkfml898Lz1nE
+9DuP2Lkwz8HG3E8K8vz/JY+04JVdTVwv5gtyo3iEAG4GLmy4lSqk/LkWqM4oX7ZdiTA8ymPq0Wwq
++pv8VT+XIoNipM9ldh0cJLqMjcAaKUwEwP7BL0D2b2XgliXqU65YSpY3FXqiSCCUKgJIJix3zqZg
+nNb7/zduSsmDQ9DLLHImOSoXX8rRFhLvP3avrjmcjR8M/TRGuge7rzuzJYSRvZgT05i2RBDSB+E0
+cr+I265QdPlccK5CQMO3wYT5p96iE+a1DSzm4m/Vmi7f0Q9bzhogaBpIce6lsjxEUtYfySkAO7ho
+qbnmMlGGahn+5XrhcJb1/Su687xQ++dqxcLhQILOG3I7uBEh/CFSpAh3+LpnGilv0Eo/SZji4Dcd
+ddq6iBOCrKPa+2U2ycBIYDQ/nrBmAbLZw76NzZOJ7M4VQGbEwxnYteGCiF2xBbBDTbj9jqmkxoGr
+jQLijMUhj46gbzYP/Jt1mrCHRUy6MdEYtWRH088fX8rITGsV0I85QBbTONuc0sdcz3MP13z6Imcf
+nngMEZi1V11HsK6pE8D5xXm+30tClE4P8WkH4fQPwtbYmgeptaVO/LAHHkEcoKmg3Ukf9qkbce88
+aFNAEggJTHDLAYuGm82efit9vZgmGq4jO6GqoASfanZ0lewygQW=

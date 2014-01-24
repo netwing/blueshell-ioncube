@@ -1,105 +1,61 @@
-<?php
-
-namespace Guzzle\Http;
-
-/**
- * EntityBody decorator used to return only a subset of an entity body
- */
-class ReadLimitEntityBody extends AbstractEntityBodyDecorator
-{
-    /** @var int Limit the number of bytes that can be read */
-    protected $limit;
-
-    /** @var int Offset to start reading from */
-    protected $offset;
-
-    /**
-     * @param EntityBodyInterface $body   Body to wrap
-     * @param int                 $limit  Total number of bytes to allow to be read from the stream
-     * @param int                 $offset Position to seek to before reading (only works on seekable streams)
-     */
-    public function __construct(EntityBodyInterface $body, $limit, $offset = 0)
-    {
-        parent::__construct($body);
-        $this->setLimit($limit)->setOffset($offset);
-    }
-
-    /**
-     * Returns only a subset of the decorated entity body when cast as a string
-     * {@inheritdoc}
-     */
-    public function __toString()
-    {
-        return substr((string) $this->body, $this->offset, $this->limit) ?: '';
-    }
-
-    public function isConsumed()
-    {
-        return (($this->offset + $this->limit) - $this->body->ftell()) <= 0;
-    }
-
-    /**
-     * Returns the Content-Length of the limited subset of data
-     * {@inheritdoc}
-     */
-    public function getContentLength()
-    {
-        $length = $this->body->getContentLength();
-
-        return $length === false
-            ? $this->limit
-            : min($this->limit, min($length, $this->offset + $this->limit) - $this->offset);
-    }
-
-    /**
-     * Allow for a bounded seek on the read limited entity body
-     * {@inheritdoc}
-     */
-    public function seek($offset, $whence = SEEK_SET)
-    {
-        return $whence === SEEK_SET
-            ? $this->body->seek(max($this->offset, min($this->offset + $this->limit, $offset)))
-            : false;
-    }
-
-    /**
-     * Set the offset to start limiting from
-     *
-     * @param int $offset Offset to seek to and begin byte limiting from
-     *
-     * @return self
-     */
-    public function setOffset($offset)
-    {
-        $this->body->seek($offset);
-        $this->offset = $offset;
-
-        return $this;
-    }
-
-    /**
-     * Set the limit of bytes that the decorator allows to be read from the stream
-     *
-     * @param int $limit Total number of bytes to allow to be read from the stream
-     *
-     * @return self
-     */
-    public function setLimit($limit)
-    {
-        $this->limit = $limit;
-
-        return $this;
-    }
-
-    public function read($length)
-    {
-        // Check if the current position is less than the total allowed bytes + original offset
-        $remaining = ($this->offset + $this->limit) - $this->body->ftell();
-        if ($remaining > 0) {
-            // Only return the amount of requested data, ensuring that the byte limit is not exceeded
-            return $this->body->read(min($remaining, $length));
-        } else {
-            return false;
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+AhjOEVebhRnhvJ+K

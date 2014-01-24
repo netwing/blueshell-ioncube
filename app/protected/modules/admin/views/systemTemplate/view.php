@@ -1,35 +1,30 @@
-<?php
-/* @var $this SystemTemplateController */
-/* @var $model SystemTemplate */
-
-$this->pageTitle = Yii::t('app', 'Update System Templates');
-
-$this->breadcrumbs=array(
-	'System Templates'=>array('index'),
-	$model->name,
-);
-
-$this->menu=array(
-	array('label'=>Yii::t('app', 'Manage SystemTemplate'), 'url'=>array('admin')),
-	array('label'=>Yii::t('app', 'Copy SystemTemplate'), 'url'=>array('copy', 'id'=>$model->id, 'language' => $model->language)),
-	array('label'=>Yii::t('app', 'Update SystemTemplate'), 'url'=>array('update', 'id'=>$model->id, 'language' => $model->language)),
-	array('label'=>Yii::t('app', 'Delete SystemTemplate'), 
-		  'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id, 'language' => $model->language),'confirm'=>'Are you sure you want to delete this item?'),
-		  'visible' => ($model->language != "en"),
-	),
-
-);
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
-
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'id',
-		'name',
-		'description',
-		'text_content',
-		'html_content',
-		'create_time',
-		'update_time',
-	),
-)); ?>
+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

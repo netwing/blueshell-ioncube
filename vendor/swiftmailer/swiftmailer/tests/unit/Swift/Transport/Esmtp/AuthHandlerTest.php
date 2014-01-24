@@ -1,157 +1,100 @@
-<?php
-
-require_once 'Swift/Tests/SwiftUnitTestCase.php';
-require_once 'Swift/Transport/Esmtp/AuthHandler.php';
-require_once 'Swift/Transport/Esmtp/Authenticator.php';
-require_once 'Swift/Transport/SmtpAgent.php';
-
-class Swift_Transport_Esmtp_AuthHandlerTest
-    extends Swift_Tests_SwiftUnitTestCase
-{
-    private $_agent;
-
-    public function setUp()
-    {
-        $this->_agent = $this->_mock('Swift_Transport_SmtpAgent');
-    }
-
-    public function testKeywordIsAuth()
-    {
-        $auth = $this->_createHandler(array());
-        $this->assertEqual('AUTH', $auth->getHandledKeyword());
-    }
-
-    public function testUsernameCanBeSetAndFetched()
-    {
-        $auth = $this->_createHandler(array());
-        $auth->setUsername('jack');
-        $this->assertEqual('jack', $auth->getUsername());
-    }
-
-    public function testPasswordCanBeSetAndFetched()
-    {
-        $auth = $this->_createHandler(array());
-        $auth->setPassword('pass');
-        $this->assertEqual('pass', $auth->getPassword());
-    }
-
-    public function testAuthModeCanBeSetAndFetched()
-    {
-        $auth = $this->_createHandler(array());
-        $auth->setAuthMode('PLAIN');
-        $this->assertEqual('PLAIN', $auth->getAuthMode());
-    }
-
-    public function testMixinMethods()
-    {
-        $auth = $this->_createHandler(array());
-        $mixins = $auth->exposeMixinMethods();
-        $this->assertTrue(in_array('getUsername', $mixins),
-            '%s: getUsername() should be accessible via mixin'
-            );
-        $this->assertTrue(in_array('setUsername', $mixins),
-            '%s: setUsername() should be accessible via mixin'
-            );
-        $this->assertTrue(in_array('getPassword', $mixins),
-            '%s: getPassword() should be accessible via mixin'
-            );
-        $this->assertTrue(in_array('setPassword', $mixins),
-            '%s: setPassword() should be accessible via mixin'
-            );
-        $this->assertTrue(in_array('setAuthMode', $mixins),
-            '%s: setAuthMode() should be accessible via mixin'
-            );
-        $this->assertTrue(in_array('getAuthMode', $mixins),
-            '%s: getAuthMode() should be accessible via mixin'
-            );
-    }
-
-    public function testAuthenticatorsAreCalledAccordingToParamsAfterEhlo()
-    {
-        $a1 = $this->_createMockAuthenticator('PLAIN');
-        $a2 = $this->_createMockAuthenticator('LOGIN');
-
-        $this->_checking(Expectations::create()
-            -> never($a1)->authenticate($this->_agent, 'jack', 'pass')
-            -> one($a2)->authenticate($this->_agent, 'jack', 'pass') -> returns(true)
-            );
-
-        $auth = $this->_createHandler(array($a1, $a2));
-        $auth->setUsername('jack');
-        $auth->setPassword('pass');
-
-        $auth->setKeywordParams(array('CRAM-MD5', 'LOGIN'));
-        $auth->afterEhlo($this->_agent);
-    }
-
-    public function testAuthenticatorsAreNotUsedIfNoUsernameSet()
-    {
-        $a1 = $this->_createMockAuthenticator('PLAIN');
-        $a2 = $this->_createMockAuthenticator('LOGIN');
-
-        $this->_checking(Expectations::create()
-            -> never($a1)->authenticate($this->_agent, 'jack', 'pass')
-            -> never($a2)->authenticate($this->_agent, 'jack', 'pass') -> returns(true)
-            );
-
-        $auth = $this->_createHandler(array($a1, $a2));
-
-        $auth->setKeywordParams(array('CRAM-MD5', 'LOGIN'));
-        $auth->afterEhlo($this->_agent);
-    }
-
-    public function testSeveralAuthenticatorsAreTriedIfNeeded()
-    {
-        $a1 = $this->_createMockAuthenticator('PLAIN');
-        $a2 = $this->_createMockAuthenticator('LOGIN');
-
-        $this->_checking(Expectations::create()
-            -> one($a1)->authenticate($this->_agent, 'jack', 'pass') -> returns(false)
-            -> one($a2)->authenticate($this->_agent, 'jack', 'pass') -> returns(true)
-            );
-
-        $auth = $this->_createHandler(array($a1, $a2));
-        $auth->setUsername('jack');
-        $auth->setPassword('pass');
-
-        $auth->setKeywordParams(array('PLAIN', 'LOGIN'));
-        $auth->afterEhlo($this->_agent);
-    }
-
-    public function testFirstAuthenticatorToPassBreaksChain()
-    {
-        $a1 = $this->_createMockAuthenticator('PLAIN');
-        $a2 = $this->_createMockAuthenticator('LOGIN');
-        $a3 = $this->_createMockAuthenticator('CRAM-MD5');
-
-        $this->_checking(Expectations::create()
-            -> one($a1)->authenticate($this->_agent, 'jack', 'pass') -> returns(false)
-            -> one($a2)->authenticate($this->_agent, 'jack', 'pass') -> returns(true)
-            -> never($a3)->authenticate($this->_agent, 'jack', 'pass')
-            );
-
-        $auth = $this->_createHandler(array($a1, $a2));
-        $auth->setUsername('jack');
-        $auth->setPassword('pass');
-
-        $auth->setKeywordParams(array('PLAIN', 'LOGIN', 'CRAM-MD5'));
-        $auth->afterEhlo($this->_agent);
-    }
-
-    // -- Private helpers
-
-    private function _createHandler($authenticators)
-    {
-        return new Swift_Transport_Esmtp_AuthHandler($authenticators);
-    }
-
-    private function _createMockAuthenticator($type)
-    {
-        $authenticator = $this->_mock('Swift_Transport_Esmtp_Authenticator');
-        $this->_checking(Expectations::create()
-            -> ignoring($authenticator)->getAuthKeyword() -> returns($type)
-            );
-
-        return $authenticator;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

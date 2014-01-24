@@ -1,306 +1,241 @@
-<?php
-// Funzioni per CPAINT/Ajax
-require_once('config.inc.php');
-//error_reporting("E_ALL");
-// Libreria CPAINT
-require_once('cpaint/cpaint2.inc.php');
-$cp=new cpaint();
-
-function cliente_cerca($where='')
-{
-	global $sql;
-	global $cp;
-	$where=htmlentities(utf8_decode($where));
-	$res=$sql->select_query("SELECT cliente_id,cliente_nominativo FROM blue_clienti WHERE cliente_nominativo LIKE '%".$where."%' ORDER BY cliente_nominativo ASC LIMIT 0,50");
-	$record=&$cp->add_node('record');
-	$record->set_data($sql->select_num_rows);
-	$query=&$cp->add_node('query');
-	$query->set_data($where);
-	
-	while ($row=mysql_fetch_array($res))
-	{
-		$id=&$cp->add_node('clienteid');
-		$id->set_data($row['cliente_id']);
-		$nominativo=&$cp->add_node('clientenominativo');
-		$nominativo->set_data(utf8_encode(html_entity_decode($row['cliente_nominativo'])));
-	}
-	
-}
-$cp->register('cliente_cerca');
-//cliente_cerca('benad');
-
-function barca_cerca($proprietario='')
-{
-	global $sql;
-	global $cp;
-//	echo "SELECT barca_id,barca_nome FROM blue_barche WHERE barca_proprietario='".$proprietario."' ORDER BY barca_nome ASC";
-	$res=$sql->select_query("SELECT barca_id,barca_nome FROM blue_barche WHERE barca_proprietario='".$proprietario."' ORDER BY barca_nome ASC");
-	$record=&$cp->add_node('record');
-	$record->set_data($sql->select_num_rows);
-	$id=&$cp->add_node('barcaid');
-	$id->set_data('0');
-	$nominativo=&$cp->add_node('barcanome');
-	$nominativo->set_data('Non Disponibile o Non Necessaria');
-	while ($row=mysql_fetch_array($res))
-	{
-		$id=&$cp->add_node('barcaid');
-		$id->set_data($row['barca_id']);
-		$nominativo=&$cp->add_node('barcanome');
-		$nominativo->set_data($row['barca_nome']);
-	}
-	
-}
-$cp->register('barca_cerca');
-//barca_cerca(1);
-
-function caricapostibarca($dimensioni)
-{
-	global $sql;
-	global $cp;
-	// Carichiamo tutti i posti barca di quel pontile
-	$res=$sql->select_query("SELECT posto_barca_id,pontile_codice,posto_barca_numero FROM blue_posti_barca,blue_pontili WHERE pontile_id=posto_barca_pontile AND posto_barca_dimensioni='".$dimensioni."' AND posto_barca_disponibile='1' ORDER BY posto_barca_pontile ASC, posto_barca_numero ASC");
-	$record=&$cp->add_node('record');
-	$record->set_data($sql->select_num_rows);
-	while ($row=mysql_fetch_array($res))
-	{
-		$id=&$cp->add_node('postobarcaid');
-		$id->set_data($row['posto_barca_id']);
-		$nominativo=&$cp->add_node('postobarca');
-		$nominativo->set_data($row['pontile_codice'].$row['posto_barca_numero']);
-	}
-}
-$cp->register('caricapostibarca');
-//caricapostibarca(10,'','');
-
-function caricacostipostobarca($dimensioni)
-{
-	global $sql;
-	global $cp;
-	$anno_attuale=date('Y',time());
-	$res=$sql->select_query("SELECT	costo_giornaliero,costo_e1,costo_e2,costo_em,costo_es,costo_i1,costo_i2,costo_im,costo_is,costo_annuale FROM blue_listini_posti_barca WHERE listino_posto_barca_dimensione='".$dimensioni."' AND listino_posto_barca_anno='".$anno_attuale."'");
-	$record=&$cp->add_node('record');
-	$record->set_data(10);
-	$row=mysql_fetch_array($res);
-	$id=&$cp->add_node('costo1');
-	$id->set_data($row['costo_giornaliero']);
-	$nominativo=&$cp->add_node('etichettacosto1');
-	$nominativo->set_data('Giornaliero - '.$row['costo_giornaliero']);
-	$id=&$cp->add_node('costo1');
-	$id->set_data($row['costo_e1']);
-	$nominativo=&$cp->add_node('etichettacosto1');
-	$nominativo->set_data('1 Settimana Estiva - '.$row['costo_e1']);
-	$id=&$cp->add_node('costo1');
-	$id->set_data($row['costo_e2']);
-	$nominativo=&$cp->add_node('etichettacosto1');
-	$nominativo->set_data('2 Settimane Estive - '.$row['costo_e2']);
-	$id=&$cp->add_node('costo1');
-	$id->set_data($row['costo_em']);
-	$nominativo=&$cp->add_node('etichettacosto1');
-	$nominativo->set_data('Mese Estivo - '.$row['costo_em']);
-	$id=&$cp->add_node('costo1');
-	$id->set_data($row['costo_es']);
-	$nominativo=&$cp->add_node('etichettacosto1');
-	$nominativo->set_data('Stagione Estiva - '.$row['costo_es']);
-	$id=&$cp->add_node('costo1');
-	$id->set_data($row['costo_i1']);
-	$nominativo=&$cp->add_node('etichettacosto1');
-	$nominativo->set_data('1 Settimana Invernale - '.$row['costo_i1']);
-	$id=&$cp->add_node('costo1');
-	$id->set_data($row['costo_i2']);
-	$nominativo=&$cp->add_node('etichettacosto1');
-	$nominativo->set_data('2 Settimane Invernali - '.$row['costo_i2']);
-	$id=&$cp->add_node('costo1');
-	$id->set_data($row['costo_im']);
-	$nominativo=&$cp->add_node('etichettacosto1');
-	$nominativo->set_data('Mese Invernale - '.$row['costo_im']);
-	$id=&$cp->add_node('costo1');
-	$id->set_data($row['costo_is']);
-	$nominativo=&$cp->add_node('etichettacosto1');
-	$nominativo->set_data('Stagione Invernale - '.$row['costo_is']);
-	$id=&$cp->add_node('costo1');
-	$id->set_data($row['costo_annuale']);
-	$nominativo=&$cp->add_node('etichettacosto1');
-	$nominativo->set_data('Annuale - '.$row['costo_annuale']);
-	$anno_successivo=$anno_attuale+1;
-	$res=$sql->select_query("SELECT	costo_giornaliero,costo_e1,costo_e2,costo_em,costo_es,costo_i1,costo_i2,costo_im,costo_is,costo_annuale FROM blue_listini_posti_barca WHERE listino_posto_barca_dimensione='".$dimensioni."' AND listino_posto_barca_anno='".$anno_successivo."'");
-	$row=mysql_fetch_array($res);
-	$id=&$cp->add_node('costo2');
-	$id->set_data($row['costo_giornaliero']);
-	$nominativo=&$cp->add_node('etichettacosto2');
-	$nominativo->set_data('Giornaliero - '.$row['costo_giornaliero']);
-	$id=&$cp->add_node('costo2');
-	$id->set_data($row['costo_e1']);
-	$nominativo=&$cp->add_node('etichettacosto2');
-	$nominativo->set_data('1 Settimana Estiva - '.$row['costo_e1']);
-	$id=&$cp->add_node('costo2');
-	$id->set_data($row['costo_e2']);
-	$nominativo=&$cp->add_node('etichettacosto2');
-	$nominativo->set_data('2 Settimane Estive - '.$row['costo_e2']);
-	$id=&$cp->add_node('costo2');
-	$id->set_data($row['costo_em']);
-	$nominativo=&$cp->add_node('etichettacosto2');
-	$nominativo->set_data('Mese Estivo - '.$row['costo_em']);
-	$id=&$cp->add_node('costo2');
-	$id->set_data($row['costo_es']);
-	$nominativo=&$cp->add_node('etichettacosto2');
-	$nominativo->set_data('Stagione Estiva - '.$row['costo_es']);
-	$id=&$cp->add_node('costo2');
-	$id->set_data($row['costo_i1']);
-	$nominativo=&$cp->add_node('etichettacosto2');
-	$nominativo->set_data('1 Settimana Invernale - '.$row['costo_i1']);
-	$id=&$cp->add_node('costo2');
-	$id->set_data($row['costo_i2']);
-	$nominativo=&$cp->add_node('etichettacosto2');
-	$nominativo->set_data('2 Settimane Invernali - '.$row['costo_i2']);
-	$id=&$cp->add_node('costo2');
-	$id->set_data($row['costo_im']);
-	$nominativo=&$cp->add_node('etichettacosto2');
-	$nominativo->set_data('Mese Invernale - '.$row['costo_im']);
-	$id=&$cp->add_node('costo2');
-	$id->set_data($row['costo_is']);
-	$nominativo=&$cp->add_node('etichettacosto2');
-	$nominativo->set_data('Stagione Invernale - '.$row['costo_is']);
-	$id=&$cp->add_node('costo2');
-	$id->set_data($row['costo_annuale']);
-	$nominativo=&$cp->add_node('etichettacosto2');
-	$nominativo->set_data('Annuale - '.$row['costo_annuale']);	
-}
-$cp->register('caricacostipostobarca');
-
-function calcola($prezzo_listino,$iva,$sconto)
-{
-	global $cp;
-	$prezzo_listino=str_replace(',','.',$prezzo_listino);
-	// Se l'IVA e' compresa nella cifra inserita, eseguiamo lo scorporo
-	if ($iva=='compresa')
-	{
-		$imposta=round($prezzo_listino/121*21,2);
-		$totale=$prezzo_listino;
-		$imponibile=$totale-$imposta;
-	}
-	// Se l'IVA e' esclusa dalla cifra, la calcoliamo e la aggiungiamo
-	elseif ($iva=='esclusa')
-	{
-		$imposta=round($prezzo_listino/100*21,2);
-		$imponibile=$prezzo_listino;
-		$totale=$prezzo_listino+$imposta;		
-	}
-	// Se l'IVA e' esente, non la consideriamo e teniamo imponibile e totale uguali al prezzo di listino ed imposta a zero
-	elseif ($iva='esente')
-	{
-		$imponibile=$prezzo_listino;
-		$imposta=0;
-		$totale=$prezzo_listino;	
-	}
-	$imponibile_scontato=$imponibile;
-	$imposta_scontata=$imposta;
-	$totale_scontato=$totale;
-	if ($sconto>0)
-	{
-		$imponibile_scontato=$imponibile-round($imponibile/100*$sconto,2);
-		$imposta_scontata=$imposta-round($imposta/100*$sconto,2);
-		$totale_scontato=$totale-round($totale/100*$sconto,2);
-	}
-	$nodo1=&$cp->add_node('prezzolistino');
-	$nodo1->set_data(number_format($prezzo_listino,2,'.',''));
-	$nodo2=&$cp->add_node('imponibile');
-	$nodo2->set_data(number_format($imponibile,2,'.',''));
-	$nodo3=&$cp->add_node('imposta');
-	$nodo3->set_data(number_format($imposta,2,'.',''));
-	$nodo4=&$cp->add_node('totale');
-	$nodo4->set_data(number_format($totale,2,'.',''));
-	$nodo5=&$cp->add_node('imponibilescontato');
-	$nodo5->set_data(number_format($imponibile_scontato,2,'.',''));
-	$nodo6=&$cp->add_node('impostascontata');
-	$nodo6->set_data(number_format($imposta_scontata,2,'.',''));
-	$nodo7=&$cp->add_node('totalescontato');
-	$nodo7->set_data(number_format($totale_scontato,2,'.',''));
-}
-$cp->register('calcola');
-
-function caricainfopostobarca($pb,$inizio,$fine)
-{
-	global $sql;
-	global $cp;
-	/* Parte per caricare il proprietario ed il gestore */
-	$res=$sql->select_query("SELECT posto_barca_proprietario,posto_barca_proprietario_data,posto_barca_gestore,posto_barca_gestore_data,posto_barca_gestore_data_fine FROM blue_posti_barca WHERE posto_barca_id='".$pb."'");
-	$proprietario_data=$sql->data_ita(mysql_result($res,0,'posto_barca_proprietario_data'));
-	$prop_id=mysql_result($res,0,'posto_barca_proprietario');
-	$prop=$sql->select_query("SELECT cliente_nominativo FROM blue_clienti WHERE cliente_id='".$prop_id."'");
-	$proprietario=mysql_result($prop,0,'cliente_nominativo');
-	$nodo1=&$cp->add_node('proprietario');
-	$nodo1->set_data("PROPRIETARIO<br /> <strong>".$proprietario."</strong> dal <strong>".$proprietario_data[0]."</strong>");
-	$gest_dal=$sql->data_ita(mysql_result($res,0,'posto_barca_gestore_data'));
-	$gest_al=$sql->data_ita(mysql_result($res,0,'posto_barca_gestore_data_fine'));
-	$gest_id=mysql_result($res,0,'posto_barca_gestore');
-	$gest=$sql->select_query("SELECT cliente_nominativo FROM blue_clienti WHERE cliente_id='".$gest_id."'");
-	$gestore=mysql_result($gest,0,'cliente_nominativo');
-	$nodo2=&$cp->add_node('gestore');
-	$nodo2->set_data("GESTORE<br /> <strong>".$gestore."</strong> dal <strong>".$gest_dal[0]."</strong> al <strong>".$gest_al[0]."</strong>");
-	/* Fine parte relativa al proprietario e gestore */
-	
-	/* Parte relativa ad eventuali contratti Affitto/Transito/Prenotazione nel periodo */
-	$query="SELECT contratto_id FROM blue_contratti WHERE contratto_posto_barca='".$pb."' AND (contratto_tipo=1 OR contratto_tipo=4 OR contratto_tipo=11) AND (contratto_inizio<='".$fine."' AND contratto_fine>='".$inizio."')";
-	$q=&$cp->add_node('query');
-	$q->set_data($query);
-	$res=$sql->select_query("SELECT contratto_id,contratto_anagrafica2,contratto_inizio,contratto_fine,contratto_tipo FROM blue_contratti WHERE contratto_posto_barca='".$pb."' AND (contratto_tipo=1 OR contratto_tipo=4 OR contratto_tipo=11) AND (contratto_inizio<='".$fine."' AND contratto_fine>='".$inizio."')");
-	$contratti='';
-	while ($r=mysql_fetch_array($res))
-	{
-		$dal=$sql->data_ita($r['contratto_inizio']);
-		$al=$sql->data_ita($r['contratto_fine']);
-		$rescli=$sql->select_query("SELECT cliente_nominativo FROM blue_clienti WHERE cliente_id='".$r['contratto_anagrafica2']."'");
-		$cli=mysql_result($rescli,0,'cliente_nominativo');
-		$id=&$cp->add_node('contratto');
-		$id->set_data("AFFITTO/TRANSITO ATTUALE<br /><a href=\"riepilogo.php?id=".$r['contratto_id']."\">".$cli."</a> (".$dal[0]." - ".$al[0].")<br />");
-	}
-	/* Fine parte relativa ai contratti rompiscatole nel periodo */
-}
-$cp->register('caricainfopostobarca');
-//caricainfopostobarca(1344);
-
-function calcola2($listino,$sconto,$imponibile,$iva,$totale)
-{
-	global $cp;
-	$listino=str_replace(',','.',$listino);
-	$imponibile=str_replace(',','.',$imponibile);
-	$totale=str_replace(',','.',$totale);
-	// Se il prezzo di listino viene passato
-	if ($listino<>0 and $listino!='')
-	{
-		// Il totale fattura è il prezzo di listino con applicato lo sconto
-		$totale=$listino-($listino/100*$sconto);
-		// L'imponibile è il totale scorporato dell'iva
-		$imponibile=$totale*100/(100+$iva);
-	}
-	// Altrimenti, se viene passato almeno l'imponibile
-	elseif ($imponibile<>0 and $imponibile!='')
-	{
-		// Il totale è l'imponibile + l'iva
-		$totale=$imponibile+($imponibile/100*$iva);
-		// Il listino è il totale + l'eventuale sconto
-		$listino=$totale+($totale/100*$sconto);
-	}
-	// Altrimenti, se viene passato almeno il totale
-	elseif ($totale<>0 and $totale!='')
-	{
-		// Il listino è il totale + l'eventuale sconto
-		$listino=$totale+($totale/100*$sconto);
-		// L'imponibile è il totale scorporato dall'iva
-		$imponibile=$totale*100/(100+$iva);
-	}
-	$nodo1=&$cp->add_node('listino');
-	$nodo1->set_data(number_format($listino,2,",",""));	
-	$nodo2=&$cp->add_node('imponibile');
-	$nodo2->set_data(number_format($imponibile,2,",",""));
-	$nodo2b=&$cp->add_node('iva');
-	$nodo2b->set_data(number_format($totale-$imponibile,2,",",""));		
-	$nodo3=&$cp->add_node('totale');
-	$nodo3->set_data(number_format($totale,2,",",""));
-}
-$cp->register('calcola2');
-//calcola2(0,0,0,20,-1200);
-
-$cp->start();
-$cp->return_data();
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

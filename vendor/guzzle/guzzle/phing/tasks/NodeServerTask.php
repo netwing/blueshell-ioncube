@@ -1,118 +1,63 @@
-<?php
-/**
- * Phing task for node server checking
- *
- * @copyright 2012 Clay Loveless <clay@php.net>
- * @license   http://claylo.mit-license.org/2012/ MIT License
- */
-
-require_once 'phing/Task.php';
-
-class NodeServerTask extends Task
-{
-    protected $cmd = null;
-    protected $action = 'start';
-    protected $serverfile = 'tests/Guzzle/Tests/Http/server.js';
-
-    /**
-     * The setter for the start command
-     *
-     * @param string $str How to start the node server
-     */
-    public function setCmd($str)
-    {
-        $this->cmd = $str;
-    }
-
-    public function getCmd()
-    {
-        return $this->cmd;
-    }
-
-    /**
-     * The setter for the action
-     *
-     * @param string $str Start up or shutdown
-     */
-    public function setAction($str)
-    {
-        $this->action = $str;
-    }
-    public function getAction()
-    {
-        return $this->action;
-    }
-
-    public function main()
-    {
-        $cmd = $this->getCmd();
-        $action = $this->getAction();
-
-        if (empty($cmd)) {
-            throw new BuildException('"cmd" is a required parameter');
-        }
-
-        if ($action == 'start') {
-            $this->startServer();
-        } else {
-            $this->stopServer();
-        }
-    }
-
-    protected function startServer()
-    {
-        chdir(__DIR__ . '/../..');
-        $serverfile = $this->serverfile;
-        $cmd = $this->getCmd();
-
-        // resolve $HOME directory
-        if ($cmd[0] == '~') {
-            $cmd = $_ENV["HOME"] . substr($cmd, 1);
-        }
-
-        $fp = @fsockopen('127.0.0.1', 8124, $errno, $errstr, 1);
-        if (! $fp) {
-            // need to start node server
-            $cmd = escapeshellcmd($cmd . ' ' . $serverfile);
-            $this->log('starting node test server with '.$cmd);
-            exec($cmd . ' &> /dev/null &');
-            sleep(2);
-            $fp = @fsockopen('127.0.0.1', 8124, $errno, $errstr, 1);
-        }
-
-        // test it again
-        if (! $fp) {
-            $this->log('could not start node server');
-        } else {
-            fclose($fp);
-            $this->log('node test server running');
-        }
-    }
-
-    protected function stopServer()
-    {
-        exec('ps axo "pid,command"', $out);
-        $nodeproc = false;
-        foreach ($out as $proc) {
-            if (strpos($proc, $this->serverfile) !== false) {
-                $nodeproc = $proc;
-                break;
-            }
-        }
-
-        if ($nodeproc) {
-            $proc = trim($nodeproc);
-            $space = strpos($proc, ' ');
-            $pid = substr($proc, 0, $space);
-
-            $killed = posix_kill($pid, 9);
-            if ($killed) {
-                $this->log('test server stopped');
-            } else {
-                $this->log('test server appears immortal');
-            }
-        } else {
-            $this->log('could not find test server in process list');
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+FgWbBuPt

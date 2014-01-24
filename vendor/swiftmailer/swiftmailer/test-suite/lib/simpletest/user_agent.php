@@ -1,328 +1,144 @@
-<?php
-/**
- *  Base include file for SimpleTest
- *  @package    SimpleTest
- *  @subpackage WebTester
- *  @version    $Id: user_agent.php 1787 2008-04-26 20:35:39Z pp11 $
- */
-
-/**#@+
- *  include other SimpleTest class files
- */
-require_once(dirname(__FILE__) . '/cookies.php');
-require_once(dirname(__FILE__) . '/http.php');
-require_once(dirname(__FILE__) . '/encoding.php');
-require_once(dirname(__FILE__) . '/authentication.php');
-/**#@-*/
-
-if (! defined('DEFAULT_MAX_REDIRECTS')) {
-    define('DEFAULT_MAX_REDIRECTS', 3);
-}
-if (! defined('DEFAULT_CONNECTION_TIMEOUT')) {
-    define('DEFAULT_CONNECTION_TIMEOUT', 15);
-}
-
-/**
- *    Fetches web pages whilst keeping track of
- *    cookies and authentication.
- *    @package SimpleTest
- *    @subpackage WebTester
- */
-class SimpleUserAgent {
-    private $cookie_jar;
-    private $cookies_enabled = true;
-    private $authenticator;
-    private $max_redirects = DEFAULT_MAX_REDIRECTS;
-    private $proxy = false;
-    private $proxy_username = false;
-    private $proxy_password = false;
-    private $connection_timeout = DEFAULT_CONNECTION_TIMEOUT;
-    private $additional_headers = array();
-    
-    /**
-     *    Starts with no cookies, realms or proxies.
-     *    @access public
-     */
-    function __construct() {
-        $this->cookie_jar = new SimpleCookieJar();
-        $this->authenticator = new SimpleAuthenticator();
-    }
-    
-    /**
-     *    Removes expired and temporary cookies as if
-     *    the browser was closed and re-opened. Authorisation
-     *    has to be obtained again as well.
-     *    @param string/integer $date   Time when session restarted.
-     *                                  If omitted then all persistent
-     *                                  cookies are kept.
-     *    @access public
-     */
-    function restart($date = false) {
-        $this->cookie_jar->restartSession($date);
-        $this->authenticator->restartSession();
-    }
-    
-    /**
-     *    Adds a header to every fetch.
-     *    @param string $header       Header line to add to every
-     *                                request until cleared.
-     *    @access public
-     */
-    function addHeader($header) {
-        $this->additional_headers[] = $header;
-    }
-    
-    /**
-     *    Ages the cookies by the specified time.
-     *    @param integer $interval    Amount in seconds.
-     *    @access public
-     */
-    function ageCookies($interval) {
-        $this->cookie_jar->agePrematurely($interval);
-    }
-    
-    /**
-     *    Sets an additional cookie. If a cookie has
-     *    the same name and path it is replaced.
-     *    @param string $name            Cookie key.
-     *    @param string $value           Value of cookie.
-     *    @param string $host            Host upon which the cookie is valid.
-     *    @param string $path            Cookie path if not host wide.
-     *    @param string $expiry          Expiry date.
-     *    @access public
-     */
-    function setCookie($name, $value, $host = false, $path = '/', $expiry = false) {
-        $this->cookie_jar->setCookie($name, $value, $host, $path, $expiry);
-    }
-    
-    /**
-     *    Reads the most specific cookie value from the
-     *    browser cookies.
-     *    @param string $host        Host to search.
-     *    @param string $path        Applicable path.
-     *    @param string $name        Name of cookie to read.
-     *    @return string             False if not present, else the
-     *                               value as a string.
-     *    @access public
-     */
-    function getCookieValue($host, $path, $name) {
-        return $this->cookie_jar->getCookieValue($host, $path, $name);
-    }
-    
-    /**
-     *    Reads the current cookies within the base URL.
-     *    @param string $name     Key of cookie to find.
-     *    @param SimpleUrl $base  Base URL to search from.
-     *    @return string/boolean  Null if there is no base URL, false
-     *                            if the cookie is not set.
-     *    @access public
-     */
-    function getBaseCookieValue($name, $base) {
-        if (! $base) {
-            return null;
-        }
-        return $this->getCookieValue($base->getHost(), $base->getPath(), $name);
-    }
-    
-    /**
-     *    Switches off cookie sending and recieving.
-     *    @access public
-     */
-    function ignoreCookies() {
-        $this->cookies_enabled = false;
-    }
-    
-    /**
-     *    Switches back on the cookie sending and recieving.
-     *    @access public
-     */
-    function useCookies() {
-        $this->cookies_enabled = true;
-    }
-    
-    /**
-     *    Sets the socket timeout for opening a connection.
-     *    @param integer $timeout      Maximum time in seconds.
-     *    @access public
-     */
-    function setConnectionTimeout($timeout) {
-        $this->connection_timeout = $timeout;
-    }
-    
-    /**
-     *    Sets the maximum number of redirects before
-     *    a page will be loaded anyway.
-     *    @param integer $max        Most hops allowed.
-     *    @access public
-     */
-    function setMaximumRedirects($max) {
-        $this->max_redirects = $max;
-    }
-    
-    /**
-     *    Sets proxy to use on all requests for when
-     *    testing from behind a firewall. Set URL
-     *    to false to disable.
-     *    @param string $proxy        Proxy URL.
-     *    @param string $username     Proxy username for authentication.
-     *    @param string $password     Proxy password for authentication.
-     *    @access public
-     */
-    function useProxy($proxy, $username, $password) {
-        if (! $proxy) {
-            $this->proxy = false;
-            return;
-        }
-        if ((strncmp($proxy, 'http://', 7) != 0) && (strncmp($proxy, 'https://', 8) != 0)) {
-            $proxy = 'http://'. $proxy;
-        }
-        $this->proxy = new SimpleUrl($proxy);
-        $this->proxy_username = $username;
-        $this->proxy_password = $password;
-    }
-    
-    /**
-     *    Test to see if the redirect limit is passed.
-     *    @param integer $redirects        Count so far.
-     *    @return boolean                  True if over.
-     *    @access private
-     */
-    protected function isTooManyRedirects($redirects) {
-        return ($redirects > $this->max_redirects);
-    }
-    
-    /**
-     *    Sets the identity for the current realm.
-     *    @param string $host        Host to which realm applies.
-     *    @param string $realm       Full name of realm.
-     *    @param string $username    Username for realm.
-     *    @param string $password    Password for realm.
-     *    @access public
-     */
-    function setIdentity($host, $realm, $username, $password) {
-        $this->authenticator->setIdentityForRealm($host, $realm, $username, $password);
-    }
-    
-    /**
-     *    Fetches a URL as a response object. Will keep trying if redirected.
-     *    It will also collect authentication realm information.
-     *    @param string/SimpleUrl $url      Target to fetch.
-     *    @param SimpleEncoding $encoding   Additional parameters for request.
-     *    @return SimpleHttpResponse        Hopefully the target page.
-     *    @access public
-     */
-    function fetchResponse($url, $encoding) {
-        if ($encoding->getMethod() != 'POST') {
-            $url->addRequestParameters($encoding);
-            $encoding->clear();
-        }
-        $response = $this->fetchWhileRedirected($url, $encoding);
-        if ($headers = $response->getHeaders()) {
-            if ($headers->isChallenge()) {
-                $this->authenticator->addRealm(
-                        $url,
-                        $headers->getAuthentication(),
-                        $headers->getRealm());
-            }
-        }
-        return $response;
-    }
-    
-    /**
-     *    Fetches the page until no longer redirected or
-     *    until the redirect limit runs out.
-     *    @param SimpleUrl $url                  Target to fetch.
-     *    @param SimpelFormEncoding $encoding    Additional parameters for request.
-     *    @return SimpleHttpResponse             Hopefully the target page.
-     *    @access private
-     */
-    protected function fetchWhileRedirected($url, $encoding) {
-        $redirects = 0;
-        do {
-            $response = $this->fetch($url, $encoding);
-            if ($response->isError()) {
-                return $response;
-            }
-            $headers = $response->getHeaders();
-            $location = new SimpleUrl($headers->getLocation());
-            $url = $location->makeAbsolute($url);
-            if ($this->cookies_enabled) {
-                $headers->writeCookiesToJar($this->cookie_jar, $url);
-            }
-            if (! $headers->isRedirect()) {
-                break;
-            }
-            $encoding = new SimpleGetEncoding();
-        } while (! $this->isTooManyRedirects(++$redirects));
-        return $response;
-    }
-    
-    /**
-     *    Actually make the web request.
-     *    @param SimpleUrl $url                   Target to fetch.
-     *    @param SimpleFormEncoding $encoding     Additional parameters for request.
-     *    @return SimpleHttpResponse              Headers and hopefully content.
-     *    @access protected
-     */
-    protected function fetch($url, $encoding) {
-        $request = $this->createRequest($url, $encoding);
-        return $request->fetch($this->connection_timeout);
-    }
-    
-    /**
-     *    Creates a full page request.
-     *    @param SimpleUrl $url                 Target to fetch as url object.
-     *    @param SimpleFormEncoding $encoding   POST/GET parameters.
-     *    @return SimpleHttpRequest             New request.
-     *    @access private
-     */
-    protected function createRequest($url, $encoding) {
-        $request = $this->createHttpRequest($url, $encoding);
-        $this->addAdditionalHeaders($request);
-        if ($this->cookies_enabled) {
-            $request->readCookiesFromJar($this->cookie_jar, $url);
-        }
-        $this->authenticator->addHeaders($request, $url);
-        return $request;
-    }
-    
-    /**
-     *    Builds the appropriate HTTP request object.
-     *    @param SimpleUrl $url                  Target to fetch as url object.
-     *    @param SimpleFormEncoding $parameters  POST/GET parameters.
-     *    @return SimpleHttpRequest              New request object.
-     *    @access protected
-     */
-    protected function createHttpRequest($url, $encoding) {
-        return new SimpleHttpRequest($this->createRoute($url), $encoding);
-    }
-    
-    /**
-     *    Sets up either a direct route or via a proxy.
-     *    @param SimpleUrl $url   Target to fetch as url object.
-     *    @return SimpleRoute     Route to take to fetch URL.
-     *    @access protected
-     */
-    protected function createRoute($url) {
-        if ($this->proxy) {
-            return new SimpleProxyRoute(
-                    $url,
-                    $this->proxy,
-                    $this->proxy_username,
-                    $this->proxy_password);
-        }
-        return new SimpleRoute($url);
-    }
-    
-    /**
-     *    Adds additional manual headers.
-     *    @param SimpleHttpRequest $request    Outgoing request.
-     *    @access private
-     */
-    protected function addAdditionalHeaders(&$request) {
-        foreach ($this->additional_headers as $header) {
-            $request->addHeaderLine($header);
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

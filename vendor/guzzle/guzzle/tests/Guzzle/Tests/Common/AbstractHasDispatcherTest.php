@@ -1,63 +1,50 @@
-<?php
-
-namespace Guzzle\Tests\Common;
-
-use Guzzle\Common\Event;
-use Guzzle\Common\AbstractHasDispatcher;
-use Symfony\Component\EventDispatcher\EventDispatcher;
-
-/**
- * @covers Guzzle\Common\AbstractHasDispatcher
- */
-class AbstractHasAdapterTest extends \Guzzle\Tests\GuzzleTestCase
-{
-    public function testDoesNotRequireRegisteredEvents()
-    {
-        $this->assertEquals(array(), AbstractHasDispatcher::getAllEvents());
-    }
-
-    public function testAllowsDispatcherToBeInjected()
-    {
-        $d = new EventDispatcher();
-        $mock = $this->getMockForAbstractClass('Guzzle\Common\AbstractHasDispatcher');
-        $this->assertSame($mock, $mock->setEventDispatcher($d));
-        $this->assertSame($d, $mock->getEventDispatcher());
-    }
-
-    public function testCreatesDefaultEventDispatcherIfNeeded()
-    {
-        $mock = $this->getMockForAbstractClass('Guzzle\Common\AbstractHasDispatcher');
-        $this->assertInstanceOf('Symfony\Component\EventDispatcher\EventDispatcher', $mock->getEventDispatcher());
-    }
-
-    public function testHelperDispatchesEvents()
-    {
-        $data = array();
-        $mock = $this->getMockForAbstractClass('Guzzle\Common\AbstractHasDispatcher');
-        $mock->getEventDispatcher()->addListener('test', function(Event $e) use (&$data) {
-            $data = $e->getIterator()->getArrayCopy();
-        });
-        $mock->dispatch('test', array(
-            'param' => 'abc'
-        ));
-        $this->assertEquals(array(
-            'param' => 'abc',
-        ), $data);
-    }
-
-    public function testHelperAttachesSubscribers()
-    {
-        $mock = $this->getMockForAbstractClass('Guzzle\Common\AbstractHasDispatcher');
-        $subscriber = $this->getMockForAbstractClass('Symfony\Component\EventDispatcher\EventSubscriberInterface');
-
-        $dispatcher = $this->getMockBuilder('Symfony\Component\EventDispatcher\EventDispatcher')
-            ->setMethods(array('addSubscriber'))
-            ->getMock();
-
-        $dispatcher->expects($this->once())
-            ->method('addSubscriber');
-
-        $mock->setEventDispatcher($dispatcher);
-        $mock->addSubscriber($subscriber);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+TKoveqTwx6jMe0EZXKK=

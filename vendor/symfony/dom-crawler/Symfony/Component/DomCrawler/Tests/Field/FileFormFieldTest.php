@@ -1,115 +1,87 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\DomCrawler\Tests\Field;
-
-use Symfony\Component\DomCrawler\Field\FileFormField;
-
-class FileFormFieldTest extends FormFieldTestCase
-{
-    public function testInitialize()
-    {
-        $node = $this->createNode('input', '', array('type' => 'file'));
-        $field = new FileFormField($node);
-
-        $this->assertEquals(array('name' => '', 'type' => '', 'tmp_name' => '', 'error' => UPLOAD_ERR_NO_FILE, 'size' => 0), $field->getValue(), '->initialize() sets the value of the field to no file uploaded');
-
-        $node = $this->createNode('textarea', '');
-        try {
-            $field = new FileFormField($node);
-            $this->fail('->initialize() throws a \LogicException if the node is not an input field');
-        } catch (\LogicException $e) {
-            $this->assertTrue(true, '->initialize() throws a \LogicException if the node is not an input field');
-        }
-
-        $node = $this->createNode('input', '', array('type' => 'text'));
-        try {
-            $field = new FileFormField($node);
-            $this->fail('->initialize() throws a \LogicException if the node is not a file input field');
-        } catch (\LogicException $e) {
-            $this->assertTrue(true, '->initialize() throws a \LogicException if the node is not a file input field');
-        }
-    }
-
-    /**
-     * @dataProvider getSetValueMethods
-     */
-    public function testSetValue($method)
-    {
-        $node = $this->createNode('input', '', array('type' => 'file'));
-        $field = new FileFormField($node);
-
-        $field->$method(null);
-        $this->assertEquals(array('name' => '', 'type' => '', 'tmp_name' => '', 'error' => UPLOAD_ERR_NO_FILE, 'size' => 0), $field->getValue(), "->$method() clears the uploaded file if the value is null");
-
-        $field->$method(__FILE__);
-        $value = $field->getValue();
-
-        $this->assertEquals(basename(__FILE__), $value['name'], "->$method() sets the name of the file field");
-        $this->assertEquals('', $value['type'], "->$method() sets the type of the file field");
-        $this->assertInternalType('string', $value['tmp_name'], "->$method() sets the tmp_name of the file field");
-        $this->assertFileExists($value['tmp_name'], "->$method() creates a copy of the file at the tmp_name path");
-        $this->assertEquals(0, $value['error'], "->$method() sets the error of the file field");
-        $this->assertEquals(filesize(__FILE__), $value['size'], "->$method() sets the size of the file field");
-
-        $origInfo = pathinfo(__FILE__);
-        $tmpInfo = pathinfo($value['tmp_name']);
-        $this->assertEquals(
-            $origInfo['extension'],
-            $tmpInfo['extension'],
-            "->$method() keeps the same file extension in the tmp_name copy"
-        );
-
-        $field->$method(__DIR__.'/../Fixtures/no-extension');
-        $value = $field->getValue();
-
-        $this->assertArrayNotHasKey(
-            'extension',
-            pathinfo($value['tmp_name']),
-            "->$method() does not add a file extension in the tmp_name copy"
-        );
-    }
-
-    public function getSetValueMethods()
-    {
-        return array(
-            array('setValue'),
-            array('upload'),
-        );
-    }
-
-    public function testSetErrorCode()
-    {
-        $node = $this->createNode('input', '', array('type' => 'file'));
-        $field = new FileFormField($node);
-
-        $field->setErrorCode(UPLOAD_ERR_FORM_SIZE);
-        $value = $field->getValue();
-        $this->assertEquals(UPLOAD_ERR_FORM_SIZE, $value['error'], '->setErrorCode() sets the file input field error code');
-
-        try {
-            $field->setErrorCode('foobar');
-            $this->fail('->setErrorCode() throws a \InvalidArgumentException if the error code is not valid');
-        } catch (\InvalidArgumentException $e) {
-            $this->assertTrue(true, '->setErrorCode() throws a \InvalidArgumentException if the error code is not valid');
-        }
-    }
-
-    public function testSetRawFilePath()
-    {
-        $node = $this->createNode('input', '', array('type' => 'file'));
-        $field = new FileFormField($node);
-        $field->setFilePath(__FILE__);
-
-        $this->assertEquals(__FILE__, $field->getValue());
-    }
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

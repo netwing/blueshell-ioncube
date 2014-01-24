@@ -1,547 +1,221 @@
-<?php
-/**
- * CModule class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CModule is the base class for module and application classes.
- *
- * CModule mainly manages application components and sub-modules.
- *
- * @property string $id The module ID.
- * @property string $basePath The root directory of the module. Defaults to the directory containing the module class.
- * @property CAttributeCollection $params The list of user-defined parameters.
- * @property string $modulePath The directory that contains the application modules. Defaults to the 'modules' subdirectory of {@link basePath}.
- * @property CModule $parentModule The parent module. Null if this module does not have a parent.
- * @property array $modules The configuration of the currently installed modules (module ID => configuration).
- * @property array $components The application components (indexed by their IDs).
- * @property array $import List of aliases to be imported.
- * @property array $aliases List of aliases to be defined. The array keys are root aliases,
- * while the array values are paths or aliases corresponding to the root aliases.
- * For example,
- * <pre>
- * array(
- *    'models'=>'application.models',              // an existing alias
- *    'extensions'=>'application.extensions',      // an existing alias
- *    'backend'=>dirname(__FILE__).'/../backend',  // a directory
- * )
- * </pre>.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.base
- */
-abstract class CModule extends CComponent
-{
-	/**
-	 * @var array the IDs of the application components that should be preloaded.
-	 */
-	public $preload=array();
-	/**
-	 * @var array the behaviors that should be attached to the module.
-	 * The behaviors will be attached to the module when {@link init} is called.
-	 * Please refer to {@link CModel::behaviors} on how to specify the value of this property.
-	 */
-	public $behaviors=array();
-
-	private $_id;
-	private $_parentModule;
-	private $_basePath;
-	private $_modulePath;
-	private $_params;
-	private $_modules=array();
-	private $_moduleConfig=array();
-	private $_components=array();
-	private $_componentConfig=array();
-
-
-	/**
-	 * Constructor.
-	 * @param string $id the ID of this module
-	 * @param CModule $parent the parent module (if any)
-	 * @param mixed $config the module configuration. It can be either an array or
-	 * the path of a PHP file returning the configuration array.
-	 */
-	public function __construct($id,$parent,$config=null)
-	{
-		$this->_id=$id;
-		$this->_parentModule=$parent;
-
-		// set basePath at early as possible to avoid trouble
-		if(is_string($config))
-			$config=require($config);
-		if(isset($config['basePath']))
-		{
-			$this->setBasePath($config['basePath']);
-			unset($config['basePath']);
-		}
-		Yii::setPathOfAlias($id,$this->getBasePath());
-
-		$this->preinit();
-
-		$this->configure($config);
-		$this->attachBehaviors($this->behaviors);
-		$this->preloadComponents();
-
-		$this->init();
-	}
-
-	/**
-	 * Getter magic method.
-	 * This method is overridden to support accessing application components
-	 * like reading module properties.
-	 * @param string $name application component or property name
-	 * @return mixed the named property value
-	 */
-	public function __get($name)
-	{
-		if($this->hasComponent($name))
-			return $this->getComponent($name);
-		else
-			return parent::__get($name);
-	}
-
-	/**
-	 * Checks if a property value is null.
-	 * This method overrides the parent implementation by checking
-	 * if the named application component is loaded.
-	 * @param string $name the property name or the event name
-	 * @return boolean whether the property value is null
-	 */
-	public function __isset($name)
-	{
-		if($this->hasComponent($name))
-			return $this->getComponent($name)!==null;
-		else
-			return parent::__isset($name);
-	}
-
-	/**
-	 * Returns the module ID.
-	 * @return string the module ID.
-	 */
-	public function getId()
-	{
-		return $this->_id;
-	}
-
-	/**
-	 * Sets the module ID.
-	 * @param string $id the module ID
-	 */
-	public function setId($id)
-	{
-		$this->_id=$id;
-	}
-
-	/**
-	 * Returns the root directory of the module.
-	 * @return string the root directory of the module. Defaults to the directory containing the module class.
-	 */
-	public function getBasePath()
-	{
-		if($this->_basePath===null)
-		{
-			$class=new ReflectionClass(get_class($this));
-			$this->_basePath=dirname($class->getFileName());
-		}
-		return $this->_basePath;
-	}
-
-	/**
-	 * Sets the root directory of the module.
-	 * This method can only be invoked at the beginning of the constructor.
-	 * @param string $path the root directory of the module.
-	 * @throws CException if the directory does not exist.
-	 */
-	public function setBasePath($path)
-	{
-		if(($this->_basePath=realpath($path))===false || !is_dir($this->_basePath))
-			throw new CException(Yii::t('yii','Base path "{path}" is not a valid directory.',
-				array('{path}'=>$path)));
-	}
-
-	/**
-	 * Returns user-defined parameters.
-	 * @return CAttributeCollection the list of user-defined parameters
-	 */
-	public function getParams()
-	{
-		if($this->_params!==null)
-			return $this->_params;
-		else
-		{
-			$this->_params=new CAttributeCollection;
-			$this->_params->caseSensitive=true;
-			return $this->_params;
-		}
-	}
-
-	/**
-	 * Sets user-defined parameters.
-	 * @param array $value user-defined parameters. This should be in name-value pairs.
-	 */
-	public function setParams($value)
-	{
-		$params=$this->getParams();
-		foreach($value as $k=>$v)
-			$params->add($k,$v);
-	}
-
-	/**
-	 * Returns the directory that contains the application modules.
-	 * @return string the directory that contains the application modules. Defaults to the 'modules' subdirectory of {@link basePath}.
-	 */
-	public function getModulePath()
-	{
-		if($this->_modulePath!==null)
-			return $this->_modulePath;
-		else
-			return $this->_modulePath=$this->getBasePath().DIRECTORY_SEPARATOR.'modules';
-	}
-
-	/**
-	 * Sets the directory that contains the application modules.
-	 * @param string $value the directory that contains the application modules.
-	 * @throws CException if the directory is invalid
-	 */
-	public function setModulePath($value)
-	{
-		if(($this->_modulePath=realpath($value))===false || !is_dir($this->_modulePath))
-			throw new CException(Yii::t('yii','The module path "{path}" is not a valid directory.',
-				array('{path}'=>$value)));
-	}
-
-	/**
-	 * Sets the aliases that are used in the module.
-	 * @param array $aliases list of aliases to be imported
-	 */
-	public function setImport($aliases)
-	{
-		foreach($aliases as $alias)
-			Yii::import($alias);
-	}
-
-	/**
-	 * Defines the root aliases.
-	 * @param array $mappings list of aliases to be defined. The array keys are root aliases,
-	 * while the array values are paths or aliases corresponding to the root aliases.
-	 * For example,
-	 * <pre>
-	 * array(
-	 *    'models'=>'application.models',              // an existing alias
-	 *    'extensions'=>'application.extensions',      // an existing alias
-	 *    'backend'=>dirname(__FILE__).'/../backend',  // a directory
-	 * )
-	 * </pre>
-	 */
-	public function setAliases($mappings)
-	{
-		foreach($mappings as $name=>$alias)
-		{
-			if(($path=Yii::getPathOfAlias($alias))!==false)
-				Yii::setPathOfAlias($name,$path);
-			else
-				Yii::setPathOfAlias($name,$alias);
-		}
-	}
-
-	/**
-	 * Returns the parent module.
-	 * @return CModule the parent module. Null if this module does not have a parent.
-	 */
-	public function getParentModule()
-	{
-		return $this->_parentModule;
-	}
-
-	/**
-	 * Retrieves the named application module.
-	 * The module has to be declared in {@link modules}. A new instance will be created
-	 * when calling this method with the given ID for the first time.
-	 * @param string $id application module ID (case-sensitive)
-	 * @return CModule the module instance, null if the module is disabled or does not exist.
-	 */
-	public function getModule($id)
-	{
-		if(isset($this->_modules[$id]) || array_key_exists($id,$this->_modules))
-			return $this->_modules[$id];
-		elseif(isset($this->_moduleConfig[$id]))
-		{
-			$config=$this->_moduleConfig[$id];
-			if(!isset($config['enabled']) || $config['enabled'])
-			{
-				Yii::trace("Loading \"$id\" module",'system.base.CModule');
-				$class=$config['class'];
-				unset($config['class'], $config['enabled']);
-				if($this===Yii::app())
-					$module=Yii::createComponent($class,$id,null,$config);
-				else
-					$module=Yii::createComponent($class,$this->getId().'/'.$id,$this,$config);
-				return $this->_modules[$id]=$module;
-			}
-		}
-	}
-
-	/**
-	 * Returns a value indicating whether the specified module is installed.
-	 * @param string $id the module ID
-	 * @return boolean whether the specified module is installed.
-	 * @since 1.1.2
-	 */
-	public function hasModule($id)
-	{
-		return isset($this->_moduleConfig[$id]) || isset($this->_modules[$id]);
-	}
-
-	/**
-	 * Returns the configuration of the currently installed modules.
-	 * @return array the configuration of the currently installed modules (module ID => configuration)
-	 */
-	public function getModules()
-	{
-		return $this->_moduleConfig;
-	}
-
-	/**
-	 * Configures the sub-modules of this module.
-	 *
-	 * Call this method to declare sub-modules and configure them with their initial property values.
-	 * The parameter should be an array of module configurations. Each array element represents a single module,
-	 * which can be either a string representing the module ID or an ID-configuration pair representing
-	 * a module with the specified ID and the initial property values.
-	 *
-	 * For example, the following array declares two modules:
-	 * <pre>
-	 * array(
-	 *     'admin',                // a single module ID
-	 *     'payment'=>array(       // ID-configuration pair
-	 *         'server'=>'paymentserver.com',
-	 *     ),
-	 * )
-	 * </pre>
-	 *
-	 * By default, the module class is determined using the expression <code>ucfirst($moduleID).'Module'</code>.
-	 * And the class file is located under <code>modules/$moduleID</code>.
-	 * You may override this default by explicitly specifying the 'class' option in the configuration.
-	 *
-	 * You may also enable or disable a module by specifying the 'enabled' option in the configuration.
-	 *
-	 * @param array $modules module configurations.
-	 */
-	public function setModules($modules)
-	{
-		foreach($modules as $id=>$module)
-		{
-			if(is_int($id))
-			{
-				$id=$module;
-				$module=array();
-			}
-			if(!isset($module['class']))
-			{
-				Yii::setPathOfAlias($id,$this->getModulePath().DIRECTORY_SEPARATOR.$id);
-				$module['class']=$id.'.'.ucfirst($id).'Module';
-			}
-
-			if(isset($this->_moduleConfig[$id]))
-				$this->_moduleConfig[$id]=CMap::mergeArray($this->_moduleConfig[$id],$module);
-			else
-				$this->_moduleConfig[$id]=$module;
-		}
-	}
-
-	/**
-	 * Checks whether the named component exists.
-	 * @param string $id application component ID
-	 * @return boolean whether the named application component exists (including both loaded and disabled.)
-	 */
-	public function hasComponent($id)
-	{
-		return isset($this->_components[$id]) || isset($this->_componentConfig[$id]);
-	}
-
-	/**
-	 * Retrieves the named application component.
-	 * @param string $id application component ID (case-sensitive)
-	 * @param boolean $createIfNull whether to create the component if it doesn't exist yet.
-	 * @return IApplicationComponent the application component instance, null if the application component is disabled or does not exist.
-	 * @see hasComponent
-	 */
-	public function getComponent($id,$createIfNull=true)
-	{
-		if(isset($this->_components[$id]))
-			return $this->_components[$id];
-		elseif(isset($this->_componentConfig[$id]) && $createIfNull)
-		{
-			$config=$this->_componentConfig[$id];
-			if(!isset($config['enabled']) || $config['enabled'])
-			{
-				Yii::trace("Loading \"$id\" application component",'system.CModule');
-				unset($config['enabled']);
-				$component=Yii::createComponent($config);
-				$component->init();
-				return $this->_components[$id]=$component;
-			}
-		}
-	}
-
-	/**
-	 * Puts a component under the management of the module.
-	 * The component will be initialized by calling its {@link CApplicationComponent::init() init()}
-	 * method if it has not done so.
-	 * @param string $id component ID
-	 * @param array|IApplicationComponent $component application component
-	 * (either configuration array or instance). If this parameter is null,
-	 * component will be unloaded from the module.
-	 * @param boolean $merge whether to merge the new component configuration
-	 * with the existing one. Defaults to true, meaning the previously registered
-	 * component configuration with the same ID will be merged with the new configuration.
-	 * If set to false, the existing configuration will be replaced completely.
-	 * This parameter is available since 1.1.13.
-	 */
-	public function setComponent($id,$component,$merge=true)
-	{
-		if($component===null)
-		{
-			unset($this->_components[$id]);
-			return;
-		}
-		elseif($component instanceof IApplicationComponent)
-		{
-			$this->_components[$id]=$component;
-
-			if(!$component->getIsInitialized())
-				$component->init();
-
-			return;
-		}
-		elseif(isset($this->_components[$id]))
-		{
-			if(isset($component['class']) && get_class($this->_components[$id])!==$component['class'])
-			{
-				unset($this->_components[$id]);
-				$this->_componentConfig[$id]=$component; //we should ignore merge here
-				return;
-			}
-
-			foreach($component as $key=>$value)
-			{
-				if($key!=='class')
-					$this->_components[$id]->$key=$value;
-			}
-		}
-		elseif(isset($this->_componentConfig[$id]['class'],$component['class'])
-			&& $this->_componentConfig[$id]['class']!==$component['class'])
-		{
-			$this->_componentConfig[$id]=$component; //we should ignore merge here
-			return;
-		}
-
-		if(isset($this->_componentConfig[$id]) && $merge)
-			$this->_componentConfig[$id]=CMap::mergeArray($this->_componentConfig[$id],$component);
-		else
-			$this->_componentConfig[$id]=$component;
-	}
-
-	/**
-	 * Returns the application components.
-	 * @param boolean $loadedOnly whether to return the loaded components only. If this is set false,
-	 * then all components specified in the configuration will be returned, whether they are loaded or not.
-	 * Loaded components will be returned as objects, while unloaded components as configuration arrays.
-	 * This parameter has been available since version 1.1.3.
-	 * @return array the application components (indexed by their IDs)
-	 */
-	public function getComponents($loadedOnly=true)
-	{
-		if($loadedOnly)
-			return $this->_components;
-		else
-			return array_merge($this->_componentConfig, $this->_components);
-	}
-
-	/**
-	 * Sets the application components.
-	 *
-	 * When a configuration is used to specify a component, it should consist of
-	 * the component's initial property values (name-value pairs). Additionally,
-	 * a component can be enabled (default) or disabled by specifying the 'enabled' value
-	 * in the configuration.
-	 *
-	 * If a configuration is specified with an ID that is the same as an existing
-	 * component or configuration, the existing one will be replaced silently.
-	 *
-	 * The following is the configuration for two components:
-	 * <pre>
-	 * array(
-	 *     'db'=>array(
-	 *         'class'=>'CDbConnection',
-	 *         'connectionString'=>'sqlite:path/to/file.db',
-	 *     ),
-	 *     'cache'=>array(
-	 *         'class'=>'CDbCache',
-	 *         'connectionID'=>'db',
-	 *         'enabled'=>!YII_DEBUG,  // enable caching in non-debug mode
-	 *     ),
-	 * )
-	 * </pre>
-	 *
-	 * @param array $components application components(id=>component configuration or instances)
-	 * @param boolean $merge whether to merge the new component configuration with the existing one.
-	 * Defaults to true, meaning the previously registered component configuration of the same ID
-	 * will be merged with the new configuration. If false, the existing configuration will be replaced completely.
-	 */
-	public function setComponents($components,$merge=true)
-	{
-		foreach($components as $id=>$component)
-			$this->setComponent($id,$component,$merge);
-	}
-
-	/**
-	 * Configures the module with the specified configuration.
-	 * @param array $config the configuration array
-	 */
-	public function configure($config)
-	{
-		if(is_array($config))
-		{
-			foreach($config as $key=>$value)
-				$this->$key=$value;
-		}
-	}
-
-	/**
-	 * Loads static application components.
-	 */
-	protected function preloadComponents()
-	{
-		foreach($this->preload as $id)
-			$this->getComponent($id);
-	}
-
-	/**
-	 * Preinitializes the module.
-	 * This method is called at the beginning of the module constructor.
-	 * You may override this method to do some customized preinitialization work.
-	 * Note that at this moment, the module is not configured yet.
-	 * @see init
-	 */
-	protected function preinit()
-	{
-	}
-
-	/**
-	 * Initializes the module.
-	 * This method is called at the end of the module constructor.
-	 * Note that at this moment, the module has been configured, the behaviors
-	 * have been attached and the application components have been registered.
-	 * @see preinit
-	 */
-	protected function init()
-	{
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+AA0+vlOISzO0zqHutwiPnuGt

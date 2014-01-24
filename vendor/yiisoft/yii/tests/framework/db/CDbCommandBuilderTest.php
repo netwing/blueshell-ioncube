@@ -1,206 +1,123 @@
-<?php
-
-Yii::import('system.db.CDbConnection');
-Yii::import('system.db.schema.mysql.CMysqlSchema');
-
-class CDbCommandBuilderTest extends CTestCase
-{
-	/**
-	 * @var CDbConnection
-	 */
-	private $db;
-
-	public function setUp()
-	{
-		if(!extension_loaded('pdo') || !extension_loaded('pdo_mysql'))
-			$this->markTestSkipped('PDO and MySQL extensions are required.');
-
-		$this->db=new CDbConnection('mysql:host=127.0.0.1;dbname=yii','test','test');
-		$this->db->charset='UTF8';
-		$this->db->enableParamLogging=true;
-		try
-		{
-			$this->db->active=true;
-		}
-		catch(Exception $e)
-		{
-			$schemaFile=realpath(dirname(__FILE__).'/data/mysql.sql');
-			$this->markTestSkipped("Please read $schemaFile for details on setting up the test environment for MySQL test case.");
-		}
-
-		$tables=array('comments','post_category','posts','categories','profiles','users','items','orders','types');
-		foreach($tables as $table)
-			$this->db->createCommand("DROP TABLE IF EXISTS $table CASCADE")->execute();
-
-		$sqls=file_get_contents(dirname(__FILE__).'/data/mysql.sql');
-		foreach(explode(';',$sqls) as $sql)
-		{
-			if(trim($sql)!=='')
-				$this->db->createCommand($sql)->execute();
-		}
-	}
-
-	public function tearDown()
-	{
-		$this->db->active=false;
-	}
-
-	public function testIssue1407_1()
-	{
-		// :parameter1 and :parameter2 should be removed inside CDbCommandBuilder::createCountCommand()
-		$tableSchema=$this->db->getSchema()->getTable('users');
-		$builder=$this->db->getSchema()->getCommandBuilder();
-
-		$criteria1=new CDbCriteria();
-		$criteria1->select=array('t.*',':parameter1 AS test');
-		$criteria1->params[':parameter1']='testingValue';
-		$criteria1->order='IF (t.username=:parameter2,t.username,t.email) DESC';
-		$criteria1->params[':parameter2']='user2';
-		$criteria1->addCondition('t.email LIKE :parameter4');
-		$criteria1->params[':parameter4']='email%';
-		$criteria1->addInCondition('t.id',array(1,2,3));
-
-		$criteria2=clone $criteria1;
-
-		$this->assertEquals(3,$builder->createCountCommand($tableSchema,$criteria1)->queryScalar());
-
-		$result=$builder->createFindCommand($tableSchema,$criteria2)->queryAll();
-		$this->assertCount(3,$result);
-		$this->assertEquals(array(
-			array(
-				'id'=>'2',
-				'username'=>'user2',
-				'email'=>'email2',
-				'test'=>'testingValue',
-				'password'=>'pass2',
-			),
-			array(
-				'id'=>'3',
-				'username'=>'user3',
-				'email'=>'email3',
-				'test'=>'testingValue',
-				'password'=>'pass3',
-			),
-			array(
-				'id'=>'1',
-				'username'=>'user1',
-				'email'=>'email1',
-				'test'=>'testingValue',
-				'password'=>'pass1',
-			),
-		),$result);
-	}
-
-	public function testIssue1407_2()
-	{
-		// :parameter1 is not used in SQL, thus exception should be thrown
-		$tableSchema=$this->db->getSchema()->getTable('users');
-		$builder=$this->db->getSchema()->getCommandBuilder();
-
-		$criteria=new CDbCriteria();
-		$criteria->select=array('t.*');
-		$criteria->params[':parameter1']='testingValue';
-		$criteria->order='IF (t.username=:parameter2,t.username,t.email) DESC';
-		$criteria->params[':parameter2']='user2';
-		$criteria->addCondition('t.email LIKE :parameter4');
-		$criteria->params[':parameter4']='email%';
-		$criteria->addInCondition('t.id',array(1,2,3));
-
-		$this->setExpectedException('CDbException');
-		$builder->createCountCommand($tableSchema,$criteria)->queryScalar();
-	}
-
-	public function testIssue1407_3()
-	{
-		// :parameter2 is not used in SQL, thus exception should be thrown
-		$tableSchema=$this->db->getSchema()->getTable('users');
-		$builder=$this->db->getSchema()->getCommandBuilder();
-
-		$criteria=new CDbCriteria();
-		$criteria->select=array('t.*',':parameter1 AS test');
-		$criteria->params[':parameter1']='testingValue';
-		$criteria->order='IF (t.username="user2",t.username,t.email) DESC';
-		$criteria->params[':parameter2']='user2';
-		$criteria->addCondition('t.email LIKE :parameter4');
-		$criteria->params[':parameter4']='email%';
-		$criteria->addInCondition('t.id',array(1,2,3));
-
-		$this->setExpectedException('CDbException');
-		$builder->createCountCommand($tableSchema,$criteria)->queryScalar();
-	}
-
-	public function testIssue1407_4()
-	{
-		// both :parameter1 and :parameter2 are not used in SQL, thus exception should be thrown
-		$tableSchema=$this->db->getSchema()->getTable('users');
-		$builder=$this->db->getSchema()->getCommandBuilder();
-
-		$criteria=new CDbCriteria();
-		$criteria->select=array('t.*');
-		$criteria->params[':parameter1']='testingValue';
-		$criteria->order='IF (t.username="user2",t.username,t.email) DESC';
-		$criteria->params[':parameter2']='user2';
-		$criteria->addCondition('t.email LIKE :parameter4');
-		$criteria->params[':parameter4']='email%';
-		$criteria->addInCondition('t.id',array(1,2,3));
-
-		$this->setExpectedException('CDbException');
-		$builder->createCountCommand($tableSchema,$criteria)->queryScalar();
-	}
-
-	public function testIssue1407_5()
-	{
-		// :parameter3 is not used
-		$tableSchema=$this->db->getSchema()->getTable('users');
-		$builder=$this->db->getSchema()->getCommandBuilder();
-
-		$criteria=new CDbCriteria();
-		$criteria->select=array('t.*',':parameter1 AS test');
-		$criteria->params[':parameter1']='testingValue';
-		$criteria->order='IF (t.username=:parameter2,t.username,t.email) DESC';
-		$criteria->params[':parameter2']='user2';
-		$criteria->params[':parameter3']='parameter3Value';
-		$criteria->addCondition('t.email LIKE :parameter4');
-		$criteria->params[':parameter4']='email%';
-		$criteria->addInCondition('t.id',array(1,2,3));
-
-		$this->setExpectedException('CDbException');
-		$builder->createCountCommand($tableSchema,$criteria)->queryScalar();
-	}
-
-	public function testMultipleInsert()
-	{
-		$builder=$this->db->getSchema()->getCommandBuilder();
-		$tableName='types';
-		$data=array(
-			array(
-				'int_col'=>1,
-				'char_col'=>'char_col_1',
-				'char_col2'=>'char_col_2_1',
-				'float_col'=>1.1,
-				'bool_col'=>true,
-			),
-			array(
-				'int_col'=>2,
-				'char_col'=>'char_col_2',
-				'float_col'=>2.2,
-				'bool_col'=>false,
-			),
-		);
-		$command=$builder->createMultipleInsertCommand($tableName,$data);
-		$command->execute();
-
-		$rows=$builder->dbConnection->createCommand('SELECT * FROM '.$builder->dbConnection->quoteTableName($tableName))->queryAll();
-
-		$this->assertEquals(count($data),count($rows),'Records count miss matches!');
-		foreach($rows as $rowIndex=>$row)
-			foreach($row as $columnName=>$value)
-			{
-				$columnIndex=array_search($columnName,$data[$rowIndex],true);
-				if($columnIndex==false)
-					continue;
-				$expectedValue=$data[$rowIndex][$columnIndex];
-				$this->assertTrue($expectedValue==$value,"Value for column '{$columnName}' incorrect!");
-			}
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

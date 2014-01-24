@@ -1,102 +1,60 @@
-<?php
-
-/*
- * This file is part of the Monolog package.
- *
- * (c) Jordi Boggiano <j.boggiano@seld.be>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Monolog\Handler;
-
-use Monolog\TestCase;
-use Monolog\Logger;
-use Psr\Log\LogLevel;
-
-class NewRelicHandlerTest extends TestCase
-{
-    public static $appname;
-
-    public function setUp()
-    {
-        $this::$appname = null;
-    }
-
-    /**
-     * @expectedException Monolog\Handler\MissingExtensionException
-     */
-    public function testThehandlerThrowsAnExceptionIfTheNRExtensionIsNotLoaded()
-    {
-        $handler = new StubNewRelicHandlerWithoutExtension();
-        $handler->handle($this->getRecord(Logger::ERROR));
-    }
-
-    public function testThehandlerCanHandleTheRecord()
-    {
-        $handler = new StubNewRelicHandler();
-        $handler->handle($this->getRecord(Logger::ERROR));
-    }
-
-    public function testThehandlerCanAddParamsToTheNewRelicTrace()
-    {
-        $handler = new StubNewRelicHandler();
-        $handler->handle($this->getRecord(Logger::ERROR, 'log message', array('a' => 'b')));
-    }
-
-    public function testTheAppNameIsNullByDefault()
-    {
-        $handler = new StubNewRelicHandler();
-        $handler->handle($this->getRecord(Logger::ERROR, 'log message'));
-
-        $this->assertEquals(null, $this::$appname);
-    }
-
-    public function testTheAppNameCanBeInjectedFromtheConstructor()
-    {
-        $handler = new StubNewRelicHandler(LogLevel::ALERT, false, 'myAppName');
-        $handler->handle($this->getRecord(Logger::ERROR, 'log message'));
-
-        $this->assertEquals('myAppName', $this::$appname);
-    }
-
-    public function testTheAppNameCanBeOverriddenFromEachLog()
-    {
-        $handler = new StubNewRelicHandler(LogLevel::ALERT, false, 'myAppName');
-        $handler->handle($this->getRecord(Logger::ERROR, 'log message', array('appname' => 'logAppName')));
-
-        $this->assertEquals('logAppName', $this::$appname);
-    }
-}
-
-class StubNewRelicHandlerWithoutExtension extends NewRelicHandler
-{
-    protected function isNewRelicEnabled()
-    {
-        return false;
-    }
-}
-
-class StubNewRelicHandler extends NewRelicHandler
-{
-    protected function isNewRelicEnabled()
-    {
-        return true;
-    }
-}
-
-function newrelic_notice_error()
-{
-    return true;
-}
-
-function newrelic_set_appname($appname)
-{
-    return NewRelicHandlerTest::$appname = $appname;
-}
-
-function newrelic_add_custom_parameter()
-{
-    return true;
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+ABV/hRapOW==

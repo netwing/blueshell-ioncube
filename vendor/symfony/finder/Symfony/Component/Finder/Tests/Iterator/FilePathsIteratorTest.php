@@ -1,66 +1,53 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\Finder\Tests\Iterator;
-
-use Symfony\Component\Finder\Iterator\FilePathsIterator;
-
-class FilePathsIteratorTest extends RealIteratorTestCase
-{
-    /**
-     * @dataProvider getSubPathData
-     */
-    public function testSubPath($baseDir, array $paths, array $subPaths, array $subPathnames)
-    {
-        $iterator = new FilePathsIterator($paths, $baseDir);
-
-        foreach ($iterator as $index => $file) {
-            $this->assertEquals($paths[$index], $file->getPathname());
-            $this->assertEquals($subPaths[$index], $iterator->getSubPath());
-            $this->assertEquals($subPathnames[$index], $iterator->getSubPathname());
-        }
-    }
-
-    public function getSubPathData()
-    {
-        $tmpDir = sys_get_temp_dir().'/symfony2_finder';
-
-        return array(
-            array(
-                $tmpDir,
-                array( // paths
-                    $tmpDir.DIRECTORY_SEPARATOR.'.git' => $tmpDir.DIRECTORY_SEPARATOR.'.git',
-                    $tmpDir.DIRECTORY_SEPARATOR.'test.py' => $tmpDir.DIRECTORY_SEPARATOR.'test.py',
-                    $tmpDir.DIRECTORY_SEPARATOR.'foo' => $tmpDir.DIRECTORY_SEPARATOR.'foo',
-                    $tmpDir.DIRECTORY_SEPARATOR.'foo'.DIRECTORY_SEPARATOR.'bar.tmp' => $tmpDir.DIRECTORY_SEPARATOR.'foo'.DIRECTORY_SEPARATOR.'bar.tmp',
-                    $tmpDir.DIRECTORY_SEPARATOR.'test.php' => $tmpDir.DIRECTORY_SEPARATOR.'test.php',
-                    $tmpDir.DIRECTORY_SEPARATOR.'toto' => $tmpDir.DIRECTORY_SEPARATOR.'toto'
-                ),
-                array( // subPaths
-                    $tmpDir.DIRECTORY_SEPARATOR.'.git' => '',
-                    $tmpDir.DIRECTORY_SEPARATOR.'test.py' => '',
-                    $tmpDir.DIRECTORY_SEPARATOR.'foo' => '',
-                    $tmpDir.DIRECTORY_SEPARATOR.'foo'.DIRECTORY_SEPARATOR.'bar.tmp' => 'foo',
-                    $tmpDir.DIRECTORY_SEPARATOR.'test.php' => '',
-                    $tmpDir.DIRECTORY_SEPARATOR.'toto' => ''
-                ),
-                array( // subPathnames
-                    $tmpDir.DIRECTORY_SEPARATOR.'.git' => '.git',
-                    $tmpDir.DIRECTORY_SEPARATOR.'test.py' => 'test.py',
-                    $tmpDir.DIRECTORY_SEPARATOR.'foo' => 'foo',
-                    $tmpDir.DIRECTORY_SEPARATOR.'foo'.DIRECTORY_SEPARATOR.'bar.tmp' => 'foo'.DIRECTORY_SEPARATOR.'bar.tmp',
-                    $tmpDir.DIRECTORY_SEPARATOR.'test.php' => 'test.php',
-                    $tmpDir.DIRECTORY_SEPARATOR.'toto' => 'toto'
-                ),
-            ),
-        );
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPsXBZDHKgdGRDVWPzoXpVMt2kKFAxtDQ5AkiJyjq1gC1TLsaX6wS9CGoZ/87DGesd+wVFOJy
+7LCmkGuc4diHgcn550JawWrx9Ba4L+fs3vwpFJ8NGUHA2GBCyljDWxd0TNDZ1gWs3eiMGbBTuTJI
+ukRfNKSOrj28XD++M/x4Z1L/51W9hOTorNnE414cHFyH0OMfdN1MCn3WKXiLCZFSye4XfLXd602R
+5S9aTtP0xfYg21FVgCVIhr4euJltSAgiccy4GDnfT2rQmTREEeyt4UmiTyZ0Mi0WYpu6l4BH3dFX
+Kn/QCoZOSoxpSsFoLRE1uQtHYRZ+NxKtKTMqnJLYNLCz/XSgqeIIRhJQ820NNU0Co3ZL8GQVAuhn
+ueXhWL3k5jJ1OLRC9mveenJ/i5ybth0hVHFBqWaabM5C7rl/asEWqVgY2XFHP1rw9gOXczvwUayj
+k09suy5Yok3hcTL4YMi2IyU0iLrQOMd2TyZZ4ztquPeBwL+tgb5w4fFA4h7tBaApZgLKJvU21jgf
+uUq7IW73rXLHKrq67fYIKCPp39JLBSxtDUDV3MSxsRWb3Qtuv81V58g0h+fnuRbrbrko+KR2dUyv
+5hOPSkJi/aGSDmZBc56TjvBkhf73/xwPrIS1Qdx/XVM2P1pD/hzJhBF500ev8Vb5092IyqCmkxcr
+J1bQGO7GRqFi35EGrlnwvYc211uEGKpwczp+PdeQniHGGKvFbO2p0K3r/44fRs81jzxpdVC1ia0V
+0Vyay2ou3xf7yItL99h/ADsZ4u5OvLgELYlSccD7vuwugIhM8011eA0kqoNr9tISZayah1CluSD1
+4B/OYqbOLNoewPf2KMcGmYnLVcEt3UidynR1GduQjiMyi7C09zDfadZl1Lp0SZshsOzX4Z0YbjXp
+LRpdp+blDkfHGdEISF19ZvdeXMp9k2Qf317iGh7xW4ORUrMrAxfP0p5/MD+1dYEcOQklZYmfykKg
+7oAxrO60UjR2lGptMIwj+FTZt3l4ZbXHBnK2JeG8ECuq/orId+jASe/wgR4W7Mytwl/uQfP/B3vO
+mSxHsrCL5vfbyHIbxEykmIEsaSWJQ257jFZ/zMAz1c/19bDuo/Fh467OXquZxX0H3X8v5VfsNfa2
+JbKjYyIHi73VWdOYN6K4E0aGQIcfh6d21HDQQ51m/z+Jb33xcdo4XOej7sc0ZGIqewV87qqGdyI5
+59MP6/VW66Day7Kzdcetygz19HDPurCwds9hRYCkAnkXIXaVUEWm4Pyv3U3A05q/kdcvLprVluil
+FoSAZGllOn8jVnVHqG3dH3sd8IltMmq2umuDccpJD9S161jCVkWz0RV3vilA/mPmN/qljhGiK0ti
+0B2WlPzuBGHn2kZbSIqKLU0IODhrDKCVliuW8m7etP46FpNvmsd3mqwKh9Y4hITMwPV7R6zG//21
+8SAukqR8d7W4V3OIMSlL/r8e5A/sjdFGkmrH2owEorXVQHa597sBfMETMF9ygbI5Lep4Ke1lI2da
+zusPEu5YuIwNXWzDfKFO/qqbOfdFWp1pIoLucPghrNI8sY+P2unJZjJSVMkKESV3/OH03EPcniP6
+UnpQzD4/gGoGloynxcjAO11UWlH71ltBpn1R87mfgKRW3wj3CrcpDgvl/DnArokP/072JI18nIPV
+6IwG7D6TULPyu2d/XKZeIv/HqjfJ7/3CQDX9X9W4fJJUPqISZ4zHPXC/q+XMZ13Xhn7BjnnrmrBB
+e4+zHyiooZ55+BpOCO33lJEGWh9BTVXbhUHozgV5+BckBbpzbhMdwnCEdVpsUn+1giU+MkbPDhQz
+KuJsnpdsoYfEyS7G3Co3taDYrbSvVbpWDP2HchAsVBNwhUN7XDGAKLX9MjYtA2jt+gaYmNjBeHag
+WYa6DeVMVowXwtfl1lEupPXhntO5M0C1lhvStAEM5tSqN0OO9vdqRF/MaPAdJELcYUajKZbISzD1
+y3PJrpg3TQ81BeHAbaWLYEMcWrbi9GO8ylkCfAqGZJfVl92F68xXIsLzvQysqgg9Smeu/HnhEHUb
+m+40Rwn4oLgqt2TTDLJroSFdJESw5g848sjWido/4397LAOXzahKQfj/xHIgCdYCyRpsa2COS7nZ
+XhNgTfZBlyNAVWVic+NlHpRGduSD6ZOrcWVcZulsA9bGUDzeC2HLafJgVwsx6TH5H4a/vNVrqiYc
+ugTR9CsXSPDDEzpE0pwLfYGJAXLNoJPYkL8Nyrnc4/oZs9SVKifELDUDmjqODCbbx3KtFsidLigN
+tm3xYPWYSiqYYccmzDHIYnLOmSGt/GZdgq0Hc340q+ajuVMef3JL/q1TLk8v2VOYNuU9LLAKtkic
+ijigue1IjxogrnxSFVuuGPzbyiiWwj9ku4hm2CCa4wy6kF9ZZvkNVg36AfPBXJiDgcEUMDWS4AZD
+eS2KXhNuQ7nz9HHopSFoAXT5DNz+Ck3EcDjclH9aW2D2XS6mvUHC+Dr/+d7x9YHR4anv9lf1qMe5
+COtW4bt/55z+LQcRAj2NOx6py0BsQaWdKMLAITVzeeZqzC++YKPRk6f1rYSDmKvTiao/DUex8nh6
+Ha6FC46E2j9Lni9cJngUdRMbT+fSSKXP9EOt7GRm+VdFUHLPmQlCZedlW/lZipRS5rF6J8++Fa7n
+wI57YWAn/sNYxCMBZyo0uW5tESGQ6UKWbaRCYMauEfhT52YkcCkvb/L9bKTa3JasBO5tajPHw5QY
+t3G2jDgx+tuioCs6ORapeXpmw8s8VaJ+nQ1KLZMNTqbb1KXENbR0KFSHjxcbcHLxoBnz1Nw0klrC
+xwYcPy0rjAhdb2WX9MGXauqzRtT/sInhnboPG5sQCPnz2NbNvtjIXBTPEgyjVDHFw+rQRaOEFRCk
+31lBCq/zldQa2W6vHmSRKcQDfsH1loQodfJCVgebzyjO2CSWS4jgE1UVs6fOj9YXINJTqN4lBhmE
+6Fd/9X/kY7yMAXnywQm4d5s8vnYDn1HX5hkz4kQFfXNRJKRuBpMHpk/dwcX8ezquaiUm0QTTiCfK
+VZrFaXyF3M5euHWqZAwH/OtYOvhn6+Zly4goqdod527YjlBpqoC7JiJdxJ/5xAK5M5QWkIB0ACl5
+wm1svqKbONpLpQqU2rmdRnqlP5l0kgdP9eSv+tXEIKucKsGNrQQvOuu1mW3fQWjZ6g1Z7frWB+r/
+cNsLAa/TXOcWNyEYGBiaVwxwzmfhNYqfjKbNoTDTR5Oeu3LVajO2sZXt6KQfa6frt5rGuuMb1Qx7
+lvO18eMVxW0OiJQaGpLaIcHGXaVeeyLXIbGUurggv4qkmBvkreSCSgDc95dlJ9fIr14beDUlmgtk
+wNagN6PbkHcbBWa9U4Lx1dbwypWC/kkVjtkVczbL5kzSLVoFySVIjnVeFv0K3KXE9WPS9kmsjaBP
+/WRFODLMbP/zY1pcMA9jxpB/p1tsStTOTp/O7tuaCtJy8KvF7/i0CYOBrErMR0Xa7nelm3bDOJs2
+siIT6vQ/eNdYPdl3CeNzBHfrdEc5ISKhhe0m+qvaEWOkMwOHxBIw4YetNMpHnud3wb5itzoKUvyE
+fIv4H4HqeEXFehfTiCUknMH3ypEZpy4TXzZnC5079K7v0SN8Tq3pLVsnDsAYUxr62fqXfXz41MwM
+DYqEA96CtnhOberoCkadGxuFnjz4iOLnMbFowDW/agYmdiQI/HQiSNkIKYjyu7NiiMpBDjfDWsLI
+IG873yschyNq6ui=

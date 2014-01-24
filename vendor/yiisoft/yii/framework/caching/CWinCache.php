@@ -1,108 +1,51 @@
-<?php
-/**
- * CWinCache class file
- *
- * @author Alexander Makarov <sam@rmcreative.ru>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CWinCache implements a cache application component based on {@link http://www.iis.net/expand/wincacheforphp WinCache}.
- *
- * To use this application component, the WinCache PHP extension must be loaded.
- *
- * See {@link CCache} manual for common cache operations that are supported by CWinCache.
- *
- * @author Alexander Makarov <sam@rmcreative.ru>
- * @package system.caching
- * @since 1.1.2
- */
-class CWinCache extends CCache {
-	/**
-	 * Initializes this application component.
-	 * This method is required by the {@link IApplicationComponent} interface.
-	 * It checks the availability of WinCache extension and WinCache user cache.
-	 * @throws CException if WinCache extension is not loaded or user cache is disabled
-	 */
-	public function init()
-	{
-		parent::init();
-		if(!extension_loaded('wincache'))
-			throw new CException(Yii::t('yii', 'CWinCache requires PHP wincache extension to be loaded.'));
-		if(!ini_get('wincache.ucenabled'))
-			throw new CException(Yii::t('yii', 'CWinCache user cache is disabled. Please set wincache.ucenabled to On in your php.ini.'));
-	}
-
-	/**
-	 * Retrieves a value from cache with a specified key.
-	 * This is the implementation of the method declared in the parent class.
-	 * @param string $key a unique key identifying the cached value
-	 * @return string|boolean the value stored in cache, false if the value is not in the cache or expired.
-	 */
-	protected function getValue($key)
-	{
-		return wincache_ucache_get($key);
-	}
-
-	/**
-	 * Retrieves multiple values from cache with the specified keys.
-	 * @param array $keys a list of keys identifying the cached values
-	 * @return array a list of cached values indexed by the keys
-	 */
-	protected function getValues($keys)
-	{
-		return wincache_ucache_get($keys);
-	}
-
-	/**
-	 * Stores a value identified by a key in cache.
-	 * This is the implementation of the method declared in the parent class.
-	 *
-	 * @param string $key the key identifying the value to be cached
-	 * @param string $value the value to be cached
-	 * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
-	 * @return boolean true if the value is successfully stored into cache, false otherwise
-	 */
-	protected function setValue($key,$value,$expire)
-	{
-		return wincache_ucache_set($key,$value,$expire);
-	}
-
-	/**
-	 * Stores a value identified by a key into cache if the cache does not contain this key.
-	 * This is the implementation of the method declared in the parent class.
-	 *
-	 * @param string $key the key identifying the value to be cached
-	 * @param string $value the value to be cached
-	 * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
-	 * @return boolean true if the value is successfully stored into cache, false otherwise
-	 */
-	protected function addValue($key,$value,$expire)
-	{
-		return wincache_ucache_add($key,$value,$expire);
-	}
-
-	/**
-	 * Deletes a value with the specified key from cache
-	 * This is the implementation of the method declared in the parent class.
-	 * @param string $key the key of the value to be deleted
-	 * @return boolean if no error happens during deletion
-	 */
-	protected function deleteValue($key)
-	{
-		return wincache_ucache_delete($key);
-	}
-
-	/**
-	 * Deletes all values from cache.
-	 * This is the implementation of the method declared in the parent class.
-	 * @return boolean whether the flush operation was successful.
-	 * @since 1.1.5
-	 */
-	protected function flushValues()
-	{
-		return wincache_ucache_clear();
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

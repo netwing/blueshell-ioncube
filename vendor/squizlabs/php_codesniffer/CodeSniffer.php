@@ -1,2180 +1,803 @@
-<?php
-/**
- * PHP_CodeSniffer tokenises PHP code and detects violations of a
- * defined set of coding standards.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-spl_autoload_register(array('PHP_CodeSniffer', 'autoload'));
-
-if (class_exists('PHP_CodeSniffer_Exception', true) === false) {
-    throw new Exception('Class PHP_CodeSniffer_Exception not found');
-}
-
-if (class_exists('PHP_CodeSniffer_File', true) === false) {
-    throw new PHP_CodeSniffer_Exception('Class PHP_CodeSniffer_File not found');
-}
-
-if (class_exists('PHP_CodeSniffer_Tokens', true) === false) {
-    throw new PHP_CodeSniffer_Exception('Class PHP_CodeSniffer_Tokens not found');
-}
-
-if (class_exists('PHP_CodeSniffer_CLI', true) === false) {
-    throw new PHP_CodeSniffer_Exception('Class PHP_CodeSniffer_CLI not found');
-}
-
-if (interface_exists('PHP_CodeSniffer_Sniff', true) === false) {
-    throw new PHP_CodeSniffer_Exception('Interface PHP_CodeSniffer_Sniff not found');
-}
-
-/**
- * PHP_CodeSniffer tokenises PHP code and detects violations of a
- * defined set of coding standards.
- *
- * Standards are specified by classes that implement the PHP_CodeSniffer_Sniff
- * interface. A sniff registers what token types it wishes to listen for, then
- * PHP_CodeSniffer encounters that token, the sniff is invoked and passed
- * information about where the token was found in the stack, and the token stack
- * itself.
- *
- * Sniff files and their containing class must be prefixed with Sniff, and
- * have an extension of .php.
- *
- * Multiple PHP_CodeSniffer operations can be performed by re-calling the
- * process function with different parameters.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class PHP_CodeSniffer
-{
-
-    /**
-     * The current version.
-     *
-     * @var string
-     */
-    const VERSION = '1.5.1';
-
-    /**
-     * Package stability; either stable or beta.
-     *
-     * @var string
-     */
-    const STABILITY = 'stable';
-
-    /**
-     * The file or directory that is currently being processed.
-     *
-     * @var string
-     */
-    protected $file = '';
-
-    /**
-     * A cache of different token types, resolved into arrays.
-     *
-     * @var array()
-     * @see standardiseToken()
-     */
-    private static $_resolveTokenCache = array();
-
-    /**
-     * The directories that the processed rulesets are in.
-     *
-     * This is declared static because it is also used in the
-     * autoloader to look for sniffs outside the PHPCS install.
-     * This way, standards designed to be installed inside PHPCS can
-     * also be used from outside the PHPCS Standards directory.
-     *
-     * @var string
-     */
-    protected static $rulesetDirs = array();
-
-    /**
-     * The CLI object controlling the run.
-     *
-     * @var PHP_CodeSniffer_CLI
-     */
-    public $cli = null;
-
-    /**
-     * The Reporting object controlling report generation.
-     *
-     * @var PHP_CodeSniffer_Reporting
-     */
-    public $reporting = null;
-
-    /**
-     * An array of sniff objects that are being used to check files.
-     *
-     * @var array(PHP_CodeSniffer_Sniff)
-     */
-    protected $listeners = array();
-
-    /**
-     * An array of sniffs that are being used to check files.
-     *
-     * @var array(string)
-     */
-    protected $sniffs = array();
-
-    /**
-     * The listeners array, indexed by token type.
-     *
-     * @var array
-     */
-    private $_tokenListeners = array();
-
-    /**
-     * An array of rules from the ruleset.xml file.
-     *
-     * It may be empty, indicating that the ruleset does not override
-     * any of the default sniff settings.
-     *
-     * @var array
-     */
-    protected $ruleset = array();
-
-    /**
-     * An array of patterns to use for skipping files.
-     *
-     * @var array
-     */
-    protected $ignorePatterns = array();
-
-    /**
-     * An array of extensions for files we will check.
-     *
-     * @var array
-     */
-    public $allowedFileExtensions = array(
-                                     'php' => 'PHP',
-                                     'inc' => 'PHP',
-                                     'js'  => 'JS',
-                                     'css' => 'CSS',
-                                    );
-
-    /**
-     * An array of variable types for param/var we will check.
-     *
-     * @var array(string)
-     */
-    public static $allowedTypes = array(
-                                   'array',
-                                   'boolean',
-                                   'float',
-                                   'integer',
-                                   'mixed',
-                                   'object',
-                                   'string',
-                                   'resource',
-                                   'callable',
-                                  );
-
-
-    /**
-     * Constructs a PHP_CodeSniffer object.
-     *
-     * @param int    $verbosity   The verbosity level.
-     *                            1: Print progress information.
-     *                            2: Print tokenizer debug information.
-     *                            3: Print sniff debug information.
-     * @param int    $tabWidth    The number of spaces each tab represents.
-     *                            If greater than zero, tabs will be replaced
-     *                            by spaces before testing each file.
-     * @param string $encoding    The charset of the sniffed files.
-     *                            This is important for some reports that output
-     *                            with utf-8 encoding as you don't want it double
-     *                            encoding messages.
-     * @param bool   $interactive If TRUE, will stop after each file with errors
-     *                            and wait for user input.
-     *
-     * @see process()
-     */
-    public function __construct(
-        $verbosity=0,
-        $tabWidth=0,
-        $encoding='iso-8859-1',
-        $interactive=false
-    ) {
-        if (defined('PHP_CODESNIFFER_VERBOSITY') === false) {
-            define('PHP_CODESNIFFER_VERBOSITY', $verbosity);
-        }
-
-        if (defined('PHP_CODESNIFFER_TAB_WIDTH') === false) {
-            define('PHP_CODESNIFFER_TAB_WIDTH', $tabWidth);
-        }
-
-        if (defined('PHP_CODESNIFFER_ENCODING') === false) {
-            define('PHP_CODESNIFFER_ENCODING', $encoding);
-        }
-
-        if (defined('PHP_CODESNIFFER_INTERACTIVE') === false) {
-            define('PHP_CODESNIFFER_INTERACTIVE', $interactive);
-        }
-
-        if (defined('PHPCS_DEFAULT_ERROR_SEV') === false) {
-            define('PHPCS_DEFAULT_ERROR_SEV', 5);
-        }
-
-        if (defined('PHPCS_DEFAULT_WARN_SEV') === false) {
-            define('PHPCS_DEFAULT_WARN_SEV', 5);
-        }
-
-        // Set default CLI object in case someone is running us
-        // without using the command line script.
-        $this->cli = new PHP_CodeSniffer_CLI();
-        $this->cli->errorSeverity   = PHPCS_DEFAULT_ERROR_SEV;
-        $this->cli->warningSeverity = PHPCS_DEFAULT_WARN_SEV;
-        $this->cli->dieOnUnknownArg = false;
-
-        $this->reporting = new PHP_CodeSniffer_Reporting();
-
-    }//end __construct()
-
-
-    /**
-     * Autoload static method for loading classes and interfaces.
-     *
-     * @param string $className The name of the class or interface.
-     *
-     * @return void
-     */
-    public static function autoload($className)
-    {
-        if (substr($className, 0, 4) === 'PHP_') {
-            $newClassName = substr($className, 4);
-        } else {
-            $newClassName = $className;
-        }
-
-        $path = str_replace(array('_', '\\'), '/', $newClassName).'.php';
-
-        if (is_file(dirname(__FILE__).'/'.$path) === true) {
-            // Check standard file locations based on class name.
-            include dirname(__FILE__).'/'.$path;
-        } else if (is_file(dirname(__FILE__).'/CodeSniffer/Standards/'.$path) === true) {
-            // Check for included sniffs.
-            include dirname(__FILE__).'/CodeSniffer/Standards/'.$path;
-        } else {
-            // Check standard file locations based on the loaded rulesets.
-            foreach (self::$rulesetDirs as $rulesetDir) {
-                if (is_file(dirname($rulesetDir).'/'.$path) === true) {
-                    include_once dirname($rulesetDir).'/'.$path;
-                    return;
-                }
-            }
-
-            // Everything else.
-            @include $path;
-        }
-
-    }//end autoload()
-
-
-    /**
-     * Sets an array of file extensions that we will allow checking of.
-     *
-     * If the extension is one of the defaults, a specific tokenizer
-     * will be used. Otherwise, the PHP tokenizer will be used for
-     * all extensions passed.
-     *
-     * @param array $extensions An array of file extensions.
-     *
-     * @return void
-     */
-    public function setAllowedFileExtensions(array $extensions)
-    {
-        $newExtensions = array();
-        foreach ($extensions as $ext) {
-            if (isset($this->allowedFileExtensions[$ext]) === true) {
-                $newExtensions[$ext] = $this->allowedFileExtensions[$ext];
-            } else {
-                $newExtensions[$ext] = 'PHP';
-            }
-        }
-
-        $this->allowedFileExtensions = $newExtensions;
-
-    }//end setAllowedFileExtensions()
-
-
-    /**
-     * Sets an array of ignore patterns that we use to skip files and folders.
-     *
-     * Patterns are not case sensitive.
-     *
-     * @param array $patterns An array of ignore patterns. The pattern is the key
-     *                        and the value is either "absolute" or "relative",
-     *                        depending on how the pattern should be applied to a
-     *                        file path.
-     *
-     * @return void
-     */
-    public function setIgnorePatterns(array $patterns)
-    {
-        $this->ignorePatterns = $patterns;
-
-    }//end setIgnorePatterns()
-
-
-    /**
-     * Gets the array of ignore patterns.
-     *
-     * Optionally takes a listener to get ignore patterns specified
-     * for that sniff only.
-     *
-     * @param string $listener The listener to get patterns for. If NULL, all
-     *                         patterns are returned.
-     *
-     * @return array
-     */
-    public function getIgnorePatterns($listener=null)
-    {
-        if ($listener === null) {
-            return $this->ignorePatterns;
-        }
-
-        if (isset($this->ignorePatterns[$listener]) === true) {
-            return $this->ignorePatterns[$listener];
-        }
-
-        return array();
-
-    }//end getIgnorePatterns()
-
-
-    /**
-     * Sets the internal CLI object.
-     *
-     * @param object $cli The CLI object controlling the run.
-     *
-     * @return void
-     */
-    public function setCli($cli)
-    {
-        $this->cli = $cli;
-
-    }//end setCli()
-
-
-    /**
-     * Processes the files/directories that PHP_CodeSniffer was constructed with.
-     *
-     * @param string|array $files        The files and directories to process. For
-     *                                   directories, each sub directory will also
-     *                                   be traversed for source files.
-     * @param string|array $standards    The set of code sniffs we are testing
-     *                                   against.
-     * @param array        $restrictions The sniff codes to restrict the
-     *                                   violations to.
-     * @param boolean      $local        If true, don't recurse into directories.
-     *
-     * @return void
-     * @throws PHP_CodeSniffer_Exception If files or standard are invalid.
-     */
-    public function process($files, $standards, array $restrictions=array(), $local=false)
-    {
-        if (is_array($files) === false) {
-            $files = array($files);
-        }
-
-        if (is_array($standards) === false) {
-            $standards = array($standards);
-        }
-
-        // Reset the members.
-        $this->listeners       = array();
-        $this->sniffs          = array();
-        $this->ruleset         = array();
-        $this->_tokenListeners = array();
-        self::$rulesetDirs     = array();
-
-        // Ensure this option is enabled or else line endings will not always
-        // be detected properly for files created on a Mac with the /r line ending.
-        ini_set('auto_detect_line_endings', true);
-
-        $sniffs = array();
-        foreach ($standards as $standard) {
-            $installed = $this->getInstalledStandardPath($standard);
-            if ($installed !== null) {
-                $standard = $installed;
-            } else if (is_dir($standard) === true
-                && is_file(realpath($standard.'/ruleset.xml')) === true
-            ) {
-                $standard = realpath($standard.'/ruleset.xml');
-            }
-
-            if (PHP_CODESNIFFER_VERBOSITY === 1) {
-                $ruleset = simplexml_load_file($standard);
-                if ($ruleset !== false) {
-                    $standardName = (string) $ruleset['name'];
-                }
-
-                echo "Registering sniffs in the $standardName standard... ";
-                if (count($standards) > 1 || PHP_CODESNIFFER_VERBOSITY > 2) {
-                    echo PHP_EOL;
-                }
-            }
-
-            $sniffs = array_merge($sniffs, $this->processRuleset($standard));
-        }//end foreach
-
-        $sniffRestrictions = array();
-        foreach ($restrictions as $sniffCode) {
-            $parts = explode('.', strtolower($sniffCode));
-            $sniffRestrictions[] = $parts[0].'_sniffs_'.$parts[1].'_'.$parts[2].'sniff';
-        }
-
-        $this->registerSniffs($sniffs, $sniffRestrictions);
-        $this->populateTokenListeners();
-
-        if (PHP_CODESNIFFER_VERBOSITY === 1) {
-            $numSniffs = count($this->sniffs);
-            echo "DONE ($numSniffs sniffs registered)".PHP_EOL;
-        }
-
-        // The SVN pre-commit calls process() to init the sniffs
-        // and ruleset so there may not be any files to process.
-        // But this has to come after that initial setup.
-        if (empty($files) === true) {
-            return;
-        }
-
-        $cliValues    = $this->cli->getCommandLineValues();
-        $showProgress = $cliValues['showProgress'];
-
-        if (PHP_CODESNIFFER_VERBOSITY > 0) {
-            echo 'Creating file list... ';
-        }
-
-        $todo     = $this->getFilesToProcess($files, $local);
-        $numFiles = count($todo);
-
-        if (PHP_CODESNIFFER_VERBOSITY > 0) {
-            echo "DONE ($numFiles files in queue)".PHP_EOL;
-        }
-
-        $numProcessed = 0;
-        $dots         = 0;
-        $maxLength    = strlen($numFiles);
-        $lastDir      = '';
-        foreach ($todo as $file) {
-            $this->file = $file;
-            $currDir = dirname($file);
-            if ($lastDir !== $currDir) {
-                if (PHP_CODESNIFFER_VERBOSITY > 0) {
-                    echo 'Changing into directory '.$currDir.PHP_EOL;
-                }
-
-                $lastDir = $currDir;
-            }
-
-            $phpcsFile = $this->processFile($file, null, $restrictions);
-            $numProcessed++;
-
-            if (PHP_CODESNIFFER_VERBOSITY > 0
-                || PHP_CODESNIFFER_INTERACTIVE === true
-                || $showProgress === false
-            ) {
-                continue;
-            }
-
-            // Show progress information.
-            if ($phpcsFile === null) {
-                echo 'S';
-            } else {
-                $errors   = $phpcsFile->getErrorCount();
-                $warnings = $phpcsFile->getWarningCount();
-                if ($errors > 0) {
-                    echo 'E';
-                } else if ($warnings > 0) {
-                    echo 'W';
-                } else {
-                    echo '.';
-                }
-            }
-
-            $dots++;
-            if ($dots === 60) {
-                $padding = ($maxLength - strlen($numProcessed));
-                echo str_repeat(' ', $padding);
-                $percent = round($numProcessed / $numFiles * 100);
-                echo " $numProcessed / $numFiles ($percent%)".PHP_EOL;
-                $dots = 0;
-            }
-        }//end foreach
-
-        if (PHP_CODESNIFFER_VERBOSITY === 0
-            && PHP_CODESNIFFER_INTERACTIVE === false
-            && $showProgress === true
-        ) {
-            echo PHP_EOL.PHP_EOL;
-        }
-
-    }//end process()
-
-
-    /**
-     * Processes a single ruleset and returns a list of the sniffs it represents.
-     *
-     * Rules founds within the ruleset are processed immediately, but sniff classes
-     * are not registered by this method.
-     *
-     * @param string $rulesetPath The path to a ruleset XML file.
-     * @param int    $depth       How many nested processing steps we are in. This
-     *                            is only used for debug output.
-     *
-     * @return array
-     * @throws PHP_CodeSniffer_Exception If the ruleset path is invalid.
-     */
-    public function processRuleset($rulesetPath, $depth=0)
-    {
-        $rulesetPath = realpath($rulesetPath);
-        if (PHP_CODESNIFFER_VERBOSITY > 1) {
-            echo str_repeat("\t", $depth);
-            echo "Processing ruleset $rulesetPath".PHP_EOL;
-        }
-
-        $ruleset = simplexml_load_file($rulesetPath);
-        if ($ruleset === false) {
-            throw new PHP_CodeSniffer_Exception("Ruleset $rulesetPath is not valid");
-        }
-
-        $ownSniffs      = array();
-        $includedSniffs = array();
-        $excludedSniffs = array();
-
-        $rulesetDir          = dirname($rulesetPath);
-        self::$rulesetDirs[] = $rulesetDir;
-
-        if (is_dir($rulesetDir.'/Sniffs') === true) {
-            if (PHP_CODESNIFFER_VERBOSITY > 1) {
-                echo str_repeat("\t", $depth);
-                echo "\tAdding sniff files from \"/.../".basename($rulesetDir)."/Sniffs/\" directory".PHP_EOL;
-            }
-
-            $ownSniffs = $this->_expandSniffDirectory($rulesetDir.'/Sniffs', $depth);
-        }
-
-        foreach ($ruleset->rule as $rule) {
-            if (isset($rule['ref']) === false) {
-                continue;
-            }
-
-            if (PHP_CODESNIFFER_VERBOSITY > 1) {
-                echo str_repeat("\t", $depth);
-                echo "\tProcessing rule \"".$rule['ref'].'"'.PHP_EOL;
-            }
-
-            $includedSniffs = array_merge(
-                $includedSniffs,
-                $this->_expandRulesetReference($rule['ref'], $rulesetDir, $depth)
-            );
-
-            if (isset($rule->exclude) === true) {
-                foreach ($rule->exclude as $exclude) {
-                    if (PHP_CODESNIFFER_VERBOSITY > 1) {
-                        echo str_repeat("\t", $depth);
-                        echo "\t\tExcluding rule \"".$exclude['name'].'"'.PHP_EOL;
-                    }
-
-                    // Check if a single code is being excluded, which is a shortcut
-                    // for setting the severity of the message to 0.
-                    $parts = explode('.', $exclude['name']);
-                    if (count($parts) === 4) {
-                        $this->ruleset[(string) $exclude['name']]['severity'] = 0;
-                        if (PHP_CODESNIFFER_VERBOSITY > 1) {
-                            echo str_repeat("\t", $depth);
-                            echo "\t\t=> severity set to 0".PHP_EOL;
-                        }
-                    } else {
-                        $excludedSniffs = array_merge(
-                            $excludedSniffs,
-                            $this->_expandRulesetReference($exclude['name'], $rulesetDir, ($depth + 1))
-                        );
-                    }
-                }//end foreach
-            }//end if
-
-            $this->_processRule($rule, $depth);
-        }//end foreach
-
-        // Process custom ignore pattern rules.
-        foreach ($ruleset->{'config'} as $config) {
-            $this->setConfigData((string) $config['name'], (string) $config['value'], true);
-            if (PHP_CODESNIFFER_VERBOSITY > 1) {
-                echo str_repeat("\t", $depth);
-                echo "\t=> set config value ".(string) $config['name'].': '.(string) $config['value'].PHP_EOL;
-            }
-        }
-
-        // Process custom ignore pattern rules.
-        foreach ($ruleset->{'exclude-pattern'} as $pattern) {
-            if (isset($pattern['type']) === false) {
-                $pattern['type'] = 'absolute';
-            }
-
-            $this->ignorePatterns[(string) $pattern] = (string) $pattern['type'];
-            if (PHP_CODESNIFFER_VERBOSITY > 1) {
-                echo str_repeat("\t", $depth);
-                echo "\t=> added global ".(string) $pattern['type'].' ignore pattern: '.(string) $pattern.PHP_EOL;
-            }
-        }
-
-        $includedSniffs = array_unique(array_merge($ownSniffs, $includedSniffs));
-        $excludedSniffs = array_unique($excludedSniffs);
-
-        if (PHP_CODESNIFFER_VERBOSITY > 1) {
-            $included = count($includedSniffs);
-            $excluded = count($excludedSniffs);
-            echo str_repeat("\t", $depth);
-            echo "=> Ruleset processing complete; included $included sniffs and excluded $excluded".PHP_EOL;
-        }
-
-        // Merge our own sniff list with our externally included
-        // sniff list, but filter out any excluded sniffs.
-        $files = array();
-        foreach ($includedSniffs as $sniff) {
-            if (in_array($sniff, $excludedSniffs) === true) {
-                continue;
-            } else {
-                $files[] = realpath($sniff);
-            }
-        }
-
-        return $files;
-
-    }//end processRuleset()
-
-
-    /**
-     * Expands a directory into a list of sniff files within.
-     *
-     * @param string $directory The path to a directory.
-     * @param int    $depth     How many nested processing steps we are in. This
-     *                          is only used for debug output.
-     *
-     * @return array
-     */
-    private function _expandSniffDirectory($directory, $depth=0)
-    {
-        $sniffs = array();
-
-        if (defined('RecursiveDirectoryIterator::FOLLOW_SYMLINKS') === true) {
-            $rdi = new RecursiveDirectoryIterator($directory, RecursiveDirectoryIterator::FOLLOW_SYMLINKS);
-        } else {
-            $rdi = new RecursiveDirectoryIterator($directory);
-        }
-
-        $di = new RecursiveIteratorIterator($rdi, 0, RecursiveIteratorIterator::CATCH_GET_CHILD);
-
-        foreach ($di as $file) {
-            $fileName = $file->getFilename();
-
-            // Skip hidden files.
-            if (substr($fileName, 0, 1) === '.') {
-                continue;
-            }
-
-            // We are only interested in PHP and sniff files.
-            $fileParts = explode('.', $fileName);
-            if (array_pop($fileParts) !== 'php') {
-                continue;
-            }
-
-            $basename = basename($fileName, '.php');
-            if (substr($basename, -5) !== 'Sniff') {
-                continue;
-            }
-
-            $path = $file->getPathname();
-            if (PHP_CODESNIFFER_VERBOSITY > 1) {
-                echo str_repeat("\t", $depth);
-                echo "\t\t=> $path".PHP_EOL;
-            }
-
-            $sniffs[] = $path;
-        }//end foreach
-
-        return $sniffs;
-
-    }//end _expandSniffDirectory()
-
-
-    /**
-     * Expands a ruleset reference into a list of sniff files.
-     *
-     * @param string $ref        The reference from the ruleset XML file.
-     * @param string $rulesetDir The directory of the ruleset XML file, used to
-     *                           evaluate relative paths.
-     * @param int    $depth      How many nested processing steps we are in. This
-     *                           is only used for debug output.
-     *
-     * @return array
-     * @throws PHP_CodeSniffer_Exception If the reference is invalid.
-     */
-    private function _expandRulesetReference($ref, $rulesetDir, $depth=0)
-    {
-        // Ignore internal sniffs codes as they are used to only
-        // hide and change internal messages.
-        if (substr($ref, 0, 9) === 'Internal.') {
-            if (PHP_CODESNIFFER_VERBOSITY > 1) {
-                echo str_repeat("\t", $depth);
-                echo "\t\t* ignoring internal sniff code *".PHP_EOL;
-            }
-
-            return array();
-        }
-
-        // As sniffs can't begin with a full stop, assume references in
-        // this format are relative paths and attempt to convert them
-        // to absolute paths. If this fails, let the reference run through
-        // the normal checks and have it fail as normal.
-        if (substr($ref, 0, 1) === '.') {
-            $realpath   = realpath($rulesetDir.'/'.$ref);
-            if ($realpath !== false) {
-                $ref = $realpath;
-                if (PHP_CODESNIFFER_VERBOSITY > 1) {
-                    echo str_repeat("\t", $depth);
-                    echo "\t\t=> $ref".PHP_EOL;
-                }
-            }
-        }
-
-        if (is_dir($ref) === false && is_file($ref) === false) {
-            // See if this is a whole standard being referenced.
-            $path = $this->getInstalledStandardPath($ref);
-            if ($path !== null) {
-                $ref = $path;
-                if (PHP_CODESNIFFER_VERBOSITY > 1) {
-                    echo str_repeat("\t", $depth);
-                    echo "\t\t=> $ref".PHP_EOL;
-                }
-            } else {
-                // Work out the sniff path.
-                $sepPos = strpos($ref, DIRECTORY_SEPARATOR);
-                if ($sepPos !== false) {
-                    $stdName = substr($ref, 0, $sepPos);
-                    $path    = substr($ref, $sepPos);
-                } else {
-                    $parts   = explode('.', $ref);
-                    $stdName = $parts[0];
-                    if (count($parts) === 1) {
-                        // A whole standard?
-                        $path = '';
-                    } else if (count($parts) === 2) {
-                        // A directory of sniffs?
-                        $path = '/Sniffs/'.$parts[1];
-                    } else {
-                        // A single sniff?
-                        $path = '/Sniffs/'.$parts[1].'/'.$parts[2].'Sniff.php';
-                    }
-                }
-
-                $newRef  = false;
-                $stdPath = $this->getInstalledStandardPath($stdName);
-                if ($stdPath !== null && $path !== '') {
-                    $newRef = realpath(dirname($stdPath).$path);
-                }
-
-                if ($newRef === false) {
-                    // The sniff is not locally installed, so check if it is being
-                    // referenced as a remote sniff outside the install. We do this
-                    // by looking through all directories where we have found ruleset
-                    // files before, looking for ones for this particular standard,
-                    // and seeing if it is in there.
-                    foreach (self::$rulesetDirs as $dir) {
-                        if (basename($dir) !== $stdName) {
-                            continue;
-                        }
-
-                        $newRef = realpath($dir.$path);
-                        
-                        if ($newRef !== false) {
-                            $ref = $newRef;
-                        }
-                    }
-                } else {
-                    $ref = $newRef;
-                }
-
-                if (PHP_CODESNIFFER_VERBOSITY > 1) {
-                    echo str_repeat("\t", $depth);
-                    echo "\t\t=> $ref".PHP_EOL;
-                }
-            }//end if
-        }//end if
-
-        if (is_dir($ref) === true) {
-            if (is_file($ref.'/ruleset.xml') === true) {
-                // We are referencing an external coding standard.
-                if (PHP_CODESNIFFER_VERBOSITY > 1) {
-                    echo str_repeat("\t", $depth);
-                    echo "\t\t* rule is referencing a standard using directory name; processing *".PHP_EOL;
-                }
-
-                return $this->processRuleset($ref.'/ruleset.xml', ($depth + 2));
-            } else {
-                // We are referencing a whole directory of sniffs.
-                if (PHP_CODESNIFFER_VERBOSITY > 1) {
-                    echo str_repeat("\t", $depth);
-                    echo "\t\t* rule is referencing a directory of sniffs *".PHP_EOL;
-                    echo str_repeat("\t", $depth);
-                    echo "\t\tAdding sniff files from directory".PHP_EOL;
-                }
-
-                return $this->_expandSniffDirectory($ref, ($depth + 1));
-            }
-        } else {
-            if (is_file($ref) === false) {
-                $error = "Referenced sniff \"$ref\" does not exist";
-                throw new PHP_CodeSniffer_Exception($error);
-            }
-
-            if (substr($ref, -9) === 'Sniff.php') {
-                // A single sniff.
-                return array($ref);
-            } else {
-                // Assume an external ruleset.xml file.
-                if (PHP_CODESNIFFER_VERBOSITY > 1) {
-                    echo str_repeat("\t", $depth);
-                    echo "\t\t* rule is referencing a standard using ruleset path; processing *".PHP_EOL;
-                }
-
-                return $this->processRuleset($ref, ($depth + 2));
-            }
-        }//end if
-
-    }//end _expandRulesetReference()
-
-
-    /**
-     * Processes a rule from a ruleset XML file, overriding built-in defaults.
-     *
-     * @param SimpleXMLElement $rule  The rule object from a ruleset XML file.
-     * @param int              $depth How many nested processing steps we are in.
-     *                                This is only used for debug output.
-     *
-     * @return void
-     */
-    private function _processRule($rule, $depth=0)
-    {
-        $code = (string) $rule['ref'];
-
-        // Custom severity.
-        if (isset($rule->severity) === true) {
-            if (isset($this->ruleset[$code]) === false) {
-                $this->ruleset[$code] = array();
-            }
-
-            $this->ruleset[$code]['severity'] = (int) $rule->severity;
-            if (PHP_CODESNIFFER_VERBOSITY > 1) {
-                echo str_repeat("\t", $depth);
-                echo "\t\t=> severity set to ".(int) $rule->severity.PHP_EOL;
-            }
-        }
-
-        // Custom message type.
-        if (isset($rule->type) === true) {
-            if (isset($this->ruleset[$code]) === false) {
-                $this->ruleset[$code] = array();
-            }
-
-            $this->ruleset[$code]['type'] = (string) $rule->type;
-            if (PHP_CODESNIFFER_VERBOSITY > 1) {
-                echo str_repeat("\t", $depth);
-                echo "\t\t=> message type set to ".(string) $rule->type.PHP_EOL;
-            }
-        }
-
-        // Custom message.
-        if (isset($rule->message) === true) {
-            if (isset($this->ruleset[$code]) === false) {
-                $this->ruleset[$code] = array();
-            }
-
-            $this->ruleset[$code]['message'] = (string) $rule->message;
-            if (PHP_CODESNIFFER_VERBOSITY > 1) {
-                echo str_repeat("\t", $depth);
-                echo "\t\t=> message set to ".(string) $rule->message.PHP_EOL;
-            }
-        }
-
-        // Custom properties.
-        if (isset($rule->properties) === true) {
-            foreach ($rule->properties->property as $prop) {
-                if (isset($this->ruleset[$code]) === false) {
-                    $this->ruleset[$code] = array(
-                                             'properties' => array(),
-                                            );
-                } else if (isset($this->ruleset[$code]['properties']) === false) {
-                    $this->ruleset[$code]['properties'] = array();
-                }
-
-                $name = (string) $prop['name'];
-                if (isset($prop['type']) === true
-                    && (string) $prop['type'] === 'array'
-                ) {
-                    $value = (string) $prop['value'];
-                    $this->ruleset[$code]['properties'][$name] = explode(',', $value);
-                    if (PHP_CODESNIFFER_VERBOSITY > 1) {
-                        echo str_repeat("\t", $depth);
-                        echo "\t\t=> array property \"$name\" set to \"$value\"".PHP_EOL;
-                    }
-                } else {
-                    $this->ruleset[$code]['properties'][$name] = (string) $prop['value'];
-                    if (PHP_CODESNIFFER_VERBOSITY > 1) {
-                        echo str_repeat("\t", $depth);
-                        echo "\t\t=> property \"$name\" set to \"".(string) $prop['value'].'"'.PHP_EOL;
-                    }
-                }
-            }//end foreach
-        }//end if
-
-        // Ignore patterns.
-        foreach ($rule->{'exclude-pattern'} as $pattern) {
-            if (isset($this->ignorePatterns[$code]) === false) {
-                $this->ignorePatterns[$code] = array();
-            }
-
-            if (isset($pattern['type']) === false) {
-                $pattern['type'] = 'absolute';
-            }
-
-            $this->ignorePatterns[$code][(string) $pattern] = (string) $pattern['type'];
-            if (PHP_CODESNIFFER_VERBOSITY > 1) {
-                echo str_repeat("\t", $depth);
-                echo "\t\t=> added sniff-specific ".(string) $pattern['type'].' ignore pattern: '.(string) $pattern.PHP_EOL;
-            }
-        }
-
-    }//end _processRule()
-
-
-    /**
-     * Loads and stores sniffs objects used for sniffing files.
-     *
-     * @param array $files        Paths to the sniff files to register.
-     * @param array $restrictions The sniff class names to restrict the allowed
-     *                            listeners to.
-     *
-     * @return void
-     */
-    public function registerSniffs($files, $restrictions)
-    {
-        $listeners = array();
-
-        foreach ($files as $file) {
-            // Work out where the position of /StandardName/Sniffs/... is
-            // so we can determine what the class will be called.
-            $sniffPos = strrpos($file, DIRECTORY_SEPARATOR.'Sniffs'.DIRECTORY_SEPARATOR);
-            if ($sniffPos === false) {
-                continue;
-            }
-
-            $slashPos = strrpos(substr($file, 0, $sniffPos), DIRECTORY_SEPARATOR);
-            if ($slashPos === false) {
-                continue;
-            }
-
-            $className = substr($file, ($slashPos + 1));
-            $className = substr($className, 0, -4);
-            $className = str_replace(DIRECTORY_SEPARATOR, '_', $className);
-
-            // If they have specified a list of sniffs to restrict to, check
-            // to see if this sniff is allowed.
-            if (empty($restrictions) === false
-                && in_array(strtolower($className), $restrictions) === false
-            ) {
-                continue;
-            }
-
-            include_once $file;
-
-            // Support the use of PHP namespaces. If the class name we included
-            // contains namespace separators instead of underscores, use this as the
-            // class name from now on.
-            $classNameNS = str_replace('_', '\\', $className);
-            if (class_exists($classNameNS, false) === true) {
-                $className = $classNameNS;
-            }
-
-            $listeners[$className] = $className;
-
-            if (PHP_CODESNIFFER_VERBOSITY > 2) {
-                echo "Registered $className".PHP_EOL;
-            }
-        }//end foreach
-
-        $this->sniffs = $listeners;
-
-    }//end registerSniffs()
-
-
-    /**
-     * Populates the array of PHP_CodeSniffer_Sniff's for this file.
-     *
-     * @return void
-     * @throws PHP_CodeSniffer_Exception If sniff registration fails.
-     */
-    public function populateTokenListeners()
-    {
-        // Construct a list of listeners indexed by token being listened for.
-        $this->_tokenListeners = array();
-
-        foreach ($this->sniffs as $listenerClass) {
-            // Work out the internal code for this sniff. Detect usage of namespace
-            // separators instead of underscores to support PHP namespaces.
-            if (strstr($listenerClass, '\\') === false) {
-                $parts = explode('_', $listenerClass);
-            } else {
-                $parts = explode('\\', $listenerClass);
-            }
-
-            $code = $parts[0].'.'.$parts[2].'.'.$parts[3];
-            $code = substr($code, 0, -5);
-
-            $this->listeners[$listenerClass] = new $listenerClass();
-
-            // Set custom properties.
-            if (isset($this->ruleset[$code]['properties']) === true) {
-                foreach ($this->ruleset[$code]['properties'] as $name => $value) {
-                    $this->setSniffProperty($listenerClass, $name, $value);
-                }
-            }
-
-            $tokenizers = array('PHP');
-            $vars       = get_class_vars($listenerClass);
-            if (isset($vars['supportedTokenizers']) === true) {
-                $tokenizers = $vars['supportedTokenizers'];
-            }
-
-            $tokens = $this->listeners[$listenerClass]->register();
-            if (is_array($tokens) === false) {
-                $msg = "Sniff $listenerClass register() method must return an array";
-                throw new PHP_CodeSniffer_Exception($msg);
-            }
-
-            foreach ($tokens as $token) {
-                if (isset($this->_tokenListeners[$token]) === false) {
-                    $this->_tokenListeners[$token] = array();
-                }
-
-                if (in_array($this->listeners[$listenerClass], $this->_tokenListeners[$token], true) === false) {
-                    $this->_tokenListeners[$token][] = array(
-                                                        'listener'   => $this->listeners[$listenerClass],
-                                                        'class'      => $listenerClass,
-                                                        'tokenizers' => $tokenizers,
-                                                       );
-                }
-            }
-        }//end foreach
-
-    }//end populateTokenListeners()
-
-
-    /**
-     * Set a single property for a sniff.
-     *
-     * @param string $listenerClass The class name of the sniff.
-     * @param string $name          The name of the property to change.
-     * @param string $value         The new value of the property.
-     *
-     * @return void
-     */
-    public function setSniffProperty($listenerClass, $name, $value)
-    {
-        // Setting a property for a sniff we are not using.
-        if (isset($this->listeners[$listenerClass]) === false) {
-            return;
-        }
-
-        $name = trim($name);
-        if (is_string($value) === true) {
-            $value = trim($value);
-        }
-
-        // Special case for booleans.
-        if ($value === 'true') {
-            $value = true;
-        } else if ($value === 'false') {
-            $value = false;
-        }
-
-        $this->listeners[$listenerClass]->$name = $value;
-
-    }//end setSniffProperty()
-
-
-    /**
-     * Get a list of files that will be processed.
-     *
-     * If passed directories, this method will find all files within them.
-     * The method will also perform file extension and ignore pattern filtering.
-     *
-     * @param string  $paths A list of file or directory paths to process.
-     * @param boolean $local If true, only process 1 level of files in directories
-     *
-     * @return array
-     * @throws Exception If there was an error opening a directory.
-     * @see    shouldProcessFile()
-     */
-    public function getFilesToProcess($paths, $local=false)
-    {
-        $files = array();
-
-        foreach ($paths as $path) {
-            if (is_dir($path) === true) {
-                if ($local === true) {
-                    $di = new DirectoryIterator($path);
-                } else {
-                    $di = new RecursiveIteratorIterator(
-                        new RecursiveDirectoryIterator($path),
-                        0,
-                        RecursiveIteratorIterator::CATCH_GET_CHILD
-                    );
-                }
-
-                foreach ($di as $file) {
-                    // Check if the file exists after all symlinks are resolved.
-                    $filePath = realpath($file->getPathname());
-                    if ($filePath === false) {
-                        continue;
-                    }
-
-                    if (is_dir($filePath) === true) {
-                        continue;
-                    }
-
-                    if ($this->shouldProcessFile($file->getPathname(), $path) === false) {
-                        continue;
-                    }
-
-                    $files[] = $file->getPathname();
-                }//end foreach
-            } else {
-                if ($this->shouldIgnoreFile($path, dirname($path)) === true) {
-                    continue;
-                }
-
-                $files[] = $path;
-            }//end if
-        }//end foreach
-
-        return $files;
-
-    }//end getFilesToProcess()
-
-
-    /**
-     * Checks filtering rules to see if a file should be checked.
-     *
-     * Checks both file extension filters and path ignore filters.
-     *
-     * @param string $path    The path to the file being checked.
-     * @param string $basedir The directory to use for relative path checks.
-     *
-     * @return bool
-     */
-    public function shouldProcessFile($path, $basedir)
-    {
-        // Check that the file's extension is one we are checking.
-        // We are strict about checking the extension and we don't
-        // let files through with no extension or that start with a dot.
-        $fileName  = basename($path);
-        $fileParts = explode('.', $fileName);
-        if ($fileParts[0] === $fileName || $fileParts[0] === '') {
-            return false;
-        }
-
-        // Checking multi-part file extensions, so need to create a
-        // complete extension list and make sure one is allowed.
-        $extensions = array();
-        array_shift($fileParts);
-        foreach ($fileParts as $part) {
-            $extensions[implode('.', $fileParts)] = 1;
-            array_shift($fileParts);
-        }
-
-        $matches = array_intersect_key($extensions, $this->allowedFileExtensions);
-        if (empty($matches) === true) {
-            return false;
-        }
-
-        // If the file's path matches one of our ignore patterns, skip it.
-        if ($this->shouldIgnoreFile($path, $basedir) === true) {
-            return false;
-        }
-
-        return true;
-
-    }//end shouldProcessFile()
-
-
-    /**
-     * Checks filtering rules to see if a file should be ignored.
-     *
-     * @param string $path    The path to the file being checked.
-     * @param string $basedir The directory to use for relative path checks.
-     *
-     * @return bool
-     */
-    public function shouldIgnoreFile($path, $basedir)
-    {
-        $relativePath = $path;
-        if (strpos($path, $basedir) === 0) {
-            // The +1 cuts off the directory separator as well.
-            $relativePath = substr($path, (strlen($basedir) + 1));
-        }
-
-        foreach ($this->ignorePatterns as $pattern => $type) {
-            if (is_array($pattern) === true) {
-                // A sniff specific ignore pattern.
-                continue;
-            }
-
-            // Maintains backwards compatibility in case the ignore pattern does
-            // not have a relative/absolute value.
-            if (is_int($pattern) === true) {
-                $pattern = $type;
-                $type    = 'absolute';
-            }
-
-            $replacements = array(
-                             '\\,' => ',',
-                             '*'   => '.*',
-                            );
-
-            // We assume a / directory separator, as do the exclude rules
-            // most developers write, so we need a special case for any system
-            // that is different.
-            if (DIRECTORY_SEPARATOR === '\\') {
-                $replacements['/'] = '\\\\';
-            }
-
-            $pattern = strtr($pattern, $replacements);
-
-            if ($type === 'relative') {
-                $testPath = $relativePath;
-            } else {
-                $testPath = $path;
-            }
-
-            if (preg_match("|{$pattern}|i", $testPath) === 1) {
-                return true;
-            }
-        }//end foreach
-
-        return false;
-
-    }//end shouldIgnoreFile()
-
-
-    /**
-     * Run the code sniffs over a single given file.
-     *
-     * Processes the file and runs the PHP_CodeSniffer sniffs to verify that it
-     * conforms with the standard. Returns the processed file object, or NULL
-     * if no file was processed due to error.
-     *
-     * @param string $file         The file to process.
-     * @param string $contents     The contents to parse. If NULL, the content
-     *                             is taken from the file system.
-     * @param array  $restrictions The sniff codes to restrict the
-     *                             violations to.
-     *
-     * @return PHP_CodeSniffer_File
-     * @throws PHP_CodeSniffer_Exception If the file could not be processed.
-     * @see    _processFile()
-     */
-    public function processFile($file, $contents=null, $restrictions=array())
-    {
-        if ($contents === null && file_exists($file) === false) {
-            throw new PHP_CodeSniffer_Exception("Source file $file does not exist");
-        }
-
-        $filePath = realpath($file);
-        if ($filePath === false) {
-            $filePath = $file;
-        }
-
-        // Before we go and spend time tokenizing this file, just check
-        // to see if there is a tag up top to indicate that the whole
-        // file should be ignored. It must be on one of the first two lines.
-        $firstContent = $contents;
-        if ($contents === null && is_readable($filePath) === true) {
-            $handle = fopen($filePath, 'r');
-            if ($handle !== false) {
-                $firstContent  = fgets($handle);
-                $firstContent .= fgets($handle);
-                fclose($handle);
-
-                if (strpos($firstContent, '@codingStandardsIgnoreFile') !== false) {
-                    // We are ignoring the whole file.
-                    if (PHP_CODESNIFFER_VERBOSITY > 0) {
-                        echo 'Ignoring '.basename($filePath).PHP_EOL;
-                    }
-
-                    return null;
-                }
-            }
-        }//end if
-
-        try {
-            $phpcsFile = $this->_processFile($file, $contents, $restrictions);
-        } catch (Exception $e) {
-            $trace = $e->getTrace();
-
-            $filename = $trace[0]['args'][0];
-            if (is_object($filename) === true
-                && get_class($filename) === 'PHP_CodeSniffer_File'
-            ) {
-                $filename = $filename->getFilename();
-            } else if (is_numeric($filename) === true) {
-                // See if we can find the PHP_CodeSniffer_File object.
-                foreach ($trace as $data) {
-                    if (isset($data['args'][0]) === true
-                        && ($data['args'][0] instanceof PHP_CodeSniffer_File) === true
-                    ) {
-                        $filename = $data['args'][0]->getFilename();
-                    }
-                }
-            } else if (is_string($filename) === false) {
-                $filename = (string) $filename;
-            }
-
-            $error = 'An error occurred during processing; checking has been aborted. The error message was: '.$e->getMessage();
-
-            $phpcsFile = new PHP_CodeSniffer_File(
-                $filename,
-                $this->_tokenListeners,
-                $this->allowedFileExtensions,
-                $this->ruleset,
-                $restrictions,
-                $this
-            );
-
-            $phpcsFile->addError($error, null);
-        }//end try
-
-        $cliValues = $this->cli->getCommandLineValues();
-
-        if (PHP_CODESNIFFER_INTERACTIVE === false) {
-            // Cache the report data for this file so we can unset it to save memory.
-            $this->reporting->cacheFileReport($phpcsFile, $cliValues);
-            return $phpcsFile;
-        }
-
-        /*
-            Running interactively.
-            Print the error report for the current file and then wait for user input.
-        */
-
-        // Get current violations and then clear the list to make sure
-        // we only print violations for a single file each time.
-        $numErrors = null;
-        while ($numErrors !== 0) {
-            $numErrors = ($phpcsFile->getErrorCount() + $phpcsFile->getWarningCount());
-            if ($numErrors === 0) {
-                continue;
-            }
-
-            $reportClass = $this->reporting->factory('full');
-            $reportData  = $this->reporting->prepareFileReport($phpcsFile);
-            $reportClass->generateFileReport($reportData, $cliValues['showSources'], $cliValues['reportWidth']);
-
-            echo '<ENTER> to recheck, [s] to skip or [q] to quit : ';
-            $input = fgets(STDIN);
-            $input = trim($input);
-
-            switch ($input) {
-            case 's':
-                break(2);
-            case 'q':
-                exit(0);
-                break;
-            default:
-                // Repopulate the sniffs because some of them save their state
-                // and only clear it when the file changes, but we are rechecking
-                // the same file.
-                $this->populateTokenListeners();
-                $phpcsFile = $this->_processFile($file, $contents, $restrictions);
-                break;
-            }
-        }//end while
-
-        return $phpcsFile;
-
-    }//end processFile()
-
-
-    /**
-     * Process the sniffs for a single file.
-     *
-     * Does raw processing only. No interactive support or error checking.
-     *
-     * @param string $file         The file to process.
-     * @param string $contents     The contents to parse. If NULL, the content
-     *                             is taken from the file system.
-     * @param array  $restrictions The sniff codes to restrict the
-     *                             violations to.
-     *
-     * @return PHP_CodeSniffer_File
-     * @see    processFile()
-     */
-    private function _processFile($file, $contents, $restrictions)
-    {
-        if (PHP_CODESNIFFER_VERBOSITY > 0) {
-            $startTime = time();
-            echo 'Processing '.basename($file).' ';
-            if (PHP_CODESNIFFER_VERBOSITY > 1) {
-                echo PHP_EOL;
-            }
-        }
-
-        $phpcsFile = new PHP_CodeSniffer_File(
-            $file,
-            $this->_tokenListeners,
-            $this->allowedFileExtensions,
-            $this->ruleset,
-            $restrictions,
-            $this
-        );
-
-        $phpcsFile->start($contents);
-        $phpcsFile->cleanUp();
-
-        if (PHP_CODESNIFFER_VERBOSITY > 0) {
-            $timeTaken = (time() - $startTime);
-            if ($timeTaken === 0) {
-                echo 'DONE in < 1 second';
-            } else if ($timeTaken === 1) {
-                echo 'DONE in 1 second';
-            } else {
-                echo "DONE in $timeTaken seconds";
-            }
-
-            $errors   = $phpcsFile->getErrorCount();
-            $warnings = $phpcsFile->getWarningCount();
-            echo " ($errors errors, $warnings warnings)".PHP_EOL;
-        }
-
-        return $phpcsFile;
-
-    }//end _processFile()
-
-
-    /**
-     * Generates documentation for a coding standard.
-     *
-     * @param string $standard  The standard to generate docs for
-     * @param array  $sniffs    A list of sniffs to limit the docs to.
-     * @param string $generator The name of the generator class to use.
-     *
-     * @return void
-     */
-    public function generateDocs($standard, array $sniffs=array(), $generator='Text')
-    {
-        if (class_exists('PHP_CodeSniffer_DocGenerators_'.$generator, true) === false) {
-            throw new PHP_CodeSniffer_Exception('Class PHP_CodeSniffer_DocGenerators_'.$generator.' not found');
-        }
-
-        $class     = "PHP_CodeSniffer_DocGenerators_$generator";
-        $generator = new $class($standard, $sniffs);
-
-        $generator->generate();
-
-    }//end generateDocs()
-
-
-    /**
-     * Gets the array of PHP_CodeSniffer_Sniff's.
-     *
-     * @return array(PHP_CodeSniffer_Sniff)
-     */
-    public function getSniffs()
-    {
-        return $this->listeners;
-
-    }//end getSniffs()
-
-
-    /**
-     * Gets the array of PHP_CodeSniffer_Sniff's indexed by token type.
-     *
-     * @return array()
-     */
-    public function getTokenSniffs()
-    {
-        return $this->_tokenListeners;
-
-    }//end getTokenSniffs()
-
-
-    /**
-     * Takes a token produced from <code>token_get_all()</code> and produces a
-     * more uniform token.
-     *
-     * Note that this method also resolves T_STRING tokens into more discrete
-     * types, therefore there is no need to call resolveTstringToken()
-     *
-     * @param string|array $token The token to convert.
-     *
-     * @return array The new token.
-     */
-    public static function standardiseToken($token)
-    {
-        if (is_array($token) === false) {
-            if (isset(self::$_resolveTokenCache[$token]) === true) {
-                $newToken = self::$_resolveTokenCache[$token];
-            } else {
-                $newToken = self::resolveSimpleToken($token);
-            }
-        } else {
-            switch ($token[0]) {
-            case T_STRING:
-                // Some T_STRING tokens can be more specific.
-                $tokenType = strtolower($token[1]);
-                if (isset(self::$_resolveTokenCache[$tokenType]) === true) {
-                    $newToken = self::$_resolveTokenCache[$tokenType];
-                } else {
-                    $newToken = self::resolveTstringToken($tokenType);
-                }
-
-                break;
-            case T_CURLY_OPEN:
-                $newToken = array(
-                             'code' => T_OPEN_CURLY_BRACKET,
-                             'type' => 'T_OPEN_CURLY_BRACKET',
-                            );
-                break;
-            default:
-                $newToken = array(
-                             'code' => $token[0],
-                             'type' => token_name($token[0]),
-                            );
-                break;
-            }//end switch
-
-            $newToken['content'] = $token[1];
-        }//end if
-
-        return $newToken;
-
-    }//end standardiseToken()
-
-
-    /**
-     * Converts T_STRING tokens into more usable token names.
-     *
-     * The token should be produced using the token_get_all() function.
-     * Currently, not all T_STRING tokens are converted.
-     *
-     * @param string $token The T_STRING token to convert as constructed
-     *                      by token_get_all().
-     *
-     * @return array The new token.
-     */
-    public static function resolveTstringToken($token)
-    {
-        $newToken = array();
-        switch ($token) {
-        case 'false':
-            $newToken['type'] = 'T_FALSE';
-            break;
-        case 'true':
-            $newToken['type'] = 'T_TRUE';
-            break;
-        case 'null':
-            $newToken['type'] = 'T_NULL';
-            break;
-        case 'self':
-            $newToken['type'] = 'T_SELF';
-            break;
-        case 'parent':
-            $newToken['type'] = 'T_PARENT';
-            break;
-        default:
-            $newToken['type'] = 'T_STRING';
-            break;
-        }
-
-        $newToken['code'] = constant($newToken['type']);
-
-        self::$_resolveTokenCache[$token] = $newToken;
-        return $newToken;
-
-    }//end resolveTstringToken()
-
-
-    /**
-     * Converts simple tokens into a format that conforms to complex tokens
-     * produced by token_get_all().
-     *
-     * Simple tokens are tokens that are not in array form when produced from
-     * token_get_all().
-     *
-     * @param string $token The simple token to convert.
-     *
-     * @return array The new token in array format.
-     */
-    public static function resolveSimpleToken($token)
-    {
-        $newToken = array();
-
-        switch ($token) {
-        case '{':
-            $newToken['type'] = 'T_OPEN_CURLY_BRACKET';
-            break;
-        case '}':
-            $newToken['type'] = 'T_CLOSE_CURLY_BRACKET';
-            break;
-        case '[':
-            $newToken['type'] = 'T_OPEN_SQUARE_BRACKET';
-            break;
-        case ']':
-            $newToken['type'] = 'T_CLOSE_SQUARE_BRACKET';
-            break;
-        case '(':
-            $newToken['type'] = 'T_OPEN_PARENTHESIS';
-            break;
-        case ')':
-            $newToken['type'] = 'T_CLOSE_PARENTHESIS';
-            break;
-        case ':':
-            $newToken['type'] = 'T_COLON';
-            break;
-        case '.':
-            $newToken['type'] = 'T_STRING_CONCAT';
-            break;
-        case '?':
-            $newToken['type'] = 'T_INLINE_THEN';
-            break;
-        case ';':
-            $newToken['type'] = 'T_SEMICOLON';
-            break;
-        case '=':
-            $newToken['type'] = 'T_EQUAL';
-            break;
-        case '*':
-            $newToken['type'] = 'T_MULTIPLY';
-            break;
-        case '/':
-            $newToken['type'] = 'T_DIVIDE';
-            break;
-        case '+':
-            $newToken['type'] = 'T_PLUS';
-            break;
-        case '-':
-            $newToken['type'] = 'T_MINUS';
-            break;
-        case '%':
-            $newToken['type'] = 'T_MODULUS';
-            break;
-        case '^':
-            $newToken['type'] = 'T_POWER';
-            break;
-        case '&':
-            $newToken['type'] = 'T_BITWISE_AND';
-            break;
-        case '|':
-            $newToken['type'] = 'T_BITWISE_OR';
-            break;
-        case '<':
-            $newToken['type'] = 'T_LESS_THAN';
-            break;
-        case '>':
-            $newToken['type'] = 'T_GREATER_THAN';
-            break;
-        case '!':
-            $newToken['type'] = 'T_BOOLEAN_NOT';
-            break;
-        case ',':
-            $newToken['type'] = 'T_COMMA';
-            break;
-        case '@':
-            $newToken['type'] = 'T_ASPERAND';
-            break;
-        case '$':
-            $newToken['type'] = 'T_DOLLAR';
-            break;
-        case '`':
-            $newToken['type'] = 'T_BACKTICK';
-            break;
-        default:
-            $newToken['type'] = 'T_NONE';
-            break;
-        }//end switch
-
-        $newToken['code']    = constant($newToken['type']);
-        $newToken['content'] = $token;
-
-        self::$_resolveTokenCache[$token] = $newToken;
-        return $newToken;
-
-    }//end resolveSimpleToken()
-
-
-    /**
-     * Returns true if the specified string is in the camel caps format.
-     *
-     * @param string  $string      The string the verify.
-     * @param boolean $classFormat If true, check to see if the string is in the
-     *                             class format. Class format strings must start
-     *                             with a capital letter and contain no
-     *                             underscores.
-     * @param boolean $public      If true, the first character in the string
-     *                             must be an a-z character. If false, the
-     *                             character must be an underscore. This
-     *                             argument is only applicable if $classFormat
-     *                             is false.
-     * @param boolean $strict      If true, the string must not have two capital
-     *                             letters next to each other. If false, a
-     *                             relaxed camel caps policy is used to allow
-     *                             for acronyms.
-     *
-     * @return boolean
-     */
-    public static function isCamelCaps(
-        $string,
-        $classFormat=false,
-        $public=true,
-        $strict=true
-    ) {
-        // Check the first character first.
-        if ($classFormat === false) {
-            $legalFirstChar = '';
-            if ($public === false) {
-                $legalFirstChar = '[_]';
-            }
-
-            if ($strict === false) {
-                // Can either start with a lowercase letter, or multiple uppercase
-                // in a row, representing an acronym.
-                $legalFirstChar .= '([A-Z]{2,}|[a-z])';
-            } else {
-                $legalFirstChar .= '[a-z]';
-            }
-        } else {
-            $legalFirstChar = '[A-Z]';
-        }
-
-        if (preg_match("/^$legalFirstChar/", $string) === 0) {
-            return false;
-        }
-
-        // Check that the name only contains legal characters.
-        $legalChars = 'a-zA-Z0-9';
-        if (preg_match("|[^$legalChars]|", substr($string, 1)) > 0) {
-            return false;
-        }
-
-        if ($strict === true) {
-            // Check that there are not two capital letters next to each other.
-            $length          = strlen($string);
-            $lastCharWasCaps = $classFormat;
-
-            for ($i = 1; $i < $length; $i++) {
-                $ascii = ord($string{$i});
-                if ($ascii >= 48 && $ascii <= 57) {
-                    // The character is a number, so it cant be a capital.
-                    $isCaps = false;
-                } else {
-                    if (strtoupper($string{$i}) === $string{$i}) {
-                        $isCaps = true;
-                    } else {
-                        $isCaps = false;
-                    }
-                }
-
-                if ($isCaps === true && $lastCharWasCaps === true) {
-                    return false;
-                }
-
-                $lastCharWasCaps = $isCaps;
-            }
-        }//end if
-
-        return true;
-
-    }//end isCamelCaps()
-
-
-    /**
-     * Returns true if the specified string is in the underscore caps format.
-     *
-     * @param string $string The string to verify.
-     *
-     * @return boolean
-     */
-    public static function isUnderscoreName($string)
-    {
-        // If there are space in the name, it can't be valid.
-        if (strpos($string, ' ') !== false) {
-            return false;
-        }
-
-        $validName = true;
-        $nameBits  = explode('_', $string);
-
-        if (preg_match('|^[A-Z]|', $string) === 0) {
-            // Name does not begin with a capital letter.
-            $validName = false;
-        } else {
-            foreach ($nameBits as $bit) {
-                if ($bit === '') {
-                    continue;
-                }
-
-                if ($bit{0} !== strtoupper($bit{0})) {
-                    $validName = false;
-                    break;
-                }
-            }
-        }
-
-        return $validName;
-
-    }//end isUnderscoreName()
-
-
-    /**
-     * Returns a valid variable type for param/var tag.
-     *
-     * If type is not one of the standard type, it must be a custom type.
-     * Returns the correct type name suggestion if type name is invalid.
-     *
-     * @param string $varType The variable type to process.
-     *
-     * @return string
-     */
-    public static function suggestType($varType)
-    {
-        if ($varType === '') {
-            return '';
-        }
-
-        if (in_array($varType, self::$allowedTypes) === true) {
-            return $varType;
-        } else {
-            $lowerVarType = strtolower($varType);
-            switch ($lowerVarType) {
-            case 'bool':
-                return 'boolean';
-            case 'double':
-            case 'real':
-                return 'float';
-            case 'int':
-                return 'integer';
-            case 'array()':
-                return 'array';
-            }//end switch
-
-            if (strpos($lowerVarType, 'array(') !== false) {
-                // Valid array declaration:
-                // array, array(type), array(type1 => type2).
-                $matches = array();
-                $pattern = '/^array\(\s*([^\s^=^>]*)(\s*=>\s*(.*))?\s*\)/i';
-                if (preg_match($pattern, $varType, $matches) !== 0) {
-                    $type1 = '';
-                    if (isset($matches[1]) === true) {
-                        $type1 = $matches[1];
-                    }
-
-                    $type2 = '';
-                    if (isset($matches[3]) === true) {
-                        $type2 = $matches[3];
-                    }
-
-                    $type1 = self::suggestType($type1);
-                    $type2 = self::suggestType($type2);
-                    if ($type2 !== '') {
-                        $type2 = ' => '.$type2;
-                    }
-
-                    return "array($type1$type2)";
-                } else {
-                    return 'array';
-                }//end if
-            } else if (in_array($lowerVarType, self::$allowedTypes) === true) {
-                // A valid type, but not lower cased.
-                return $lowerVarType;
-            } else {
-                // Must be a custom type name.
-                return $varType;
-            }//end if
-        }//end if
-
-    }//end suggestType()
-
-
-    /**
-     * Get a list of all coding standards installed.
-     *
-     * Coding standards are directories located in the
-     * CodeSniffer/Standards directory. Valid coding standards
-     * include a Sniffs subdirectory.
-     *
-     * @param boolean $includeGeneric If true, the special "Generic"
-     *                                coding standard will be included
-     *                                if installed.
-     * @param string  $standardsDir   A specific directory to look for standards
-     *                                in. If not specified, PHP_CodeSniffer will
-     *                                look in its default locations.
-     *
-     * @return array
-     * @see isInstalledStandard()
-     */
-    public static function getInstalledStandards(
-        $includeGeneric=false,
-        $standardsDir=''
-    ) {
-        $installedStandards = array();
-
-        if ($standardsDir === '') {
-            $installedPaths = array(dirname(__FILE__).'/CodeSniffer/Standards');
-            $configPaths    = PHP_CodeSniffer::getConfigData('installed_paths');
-            if ($configPaths !== null) {
-                $installedPaths = array_merge($installedPaths, explode(',', $configPaths));
-            }
-        } else {
-            $installedPaths = array($standardsDir);
-        }
-
-        foreach ($installedPaths as $standardsDir) {
-            $di = new DirectoryIterator($standardsDir);
-            foreach ($di as $file) {
-                if ($file->isDir() === true && $file->isDot() === false) {
-                    $filename = $file->getFilename();
-
-                    // Ignore the special "Generic" standard.
-                    if ($includeGeneric === false && $filename === 'Generic') {
-                        continue;
-                    }
-
-                    // Valid coding standard dirs include a standard class.
-                    $csFile = $file->getPathname().'/ruleset.xml';
-                    if (is_file($csFile) === true) {
-                        // We found a coding standard directory.
-                        $installedStandards[] = $filename;
-                    }
-                }
-            }
-        }//end foreach
-
-        return $installedStandards;
-
-    }//end getInstalledStandards()
-
-
-    /**
-     * Determine if a standard is installed.
-     *
-     * Coding standards are directories located in the
-     * CodeSniffer/Standards directory. Valid coding standards
-     * include a ruleset.xml file.
-     *
-     * @param string $standard The name of the coding standard.
-     *
-     * @return boolean
-     * @see getInstalledStandards()
-     */
-    public static function isInstalledStandard($standard)
-    {
-        $path = self::getInstalledStandardPath($standard);
-        if ($path !== null) {
-            return true;
-        } else {
-            // This could be a custom standard, installed outside our
-            // standards directory.
-            $ruleset = rtrim($standard, ' /\\').DIRECTORY_SEPARATOR.'ruleset.xml';
-            if (is_file($ruleset) === true) {
-                return true;
-            }
-
-            // Might also be an actual ruleset file itself.
-            // If it has an XML extension, let's at least try it.
-            if (is_file($standard) === true
-                && substr(strtolower($standard), -4) === '.xml'
-            ) {
-                return true;
-            }
-        }
-
-        return false;
-
-    }//end isInstalledStandard()
-
-
-    /**
-     * Return the path of an installed coding standard.
-     *
-     * Coding standards are directories located in the
-     * CodeSniffer/Standards directory. Valid coding standards
-     * include a ruleset.xml file.
-     *
-     * @param string $standard The name of the coding standard.
-     *
-     * @return string|null
-     */
-    public static function getInstalledStandardPath($standard)
-    {
-        $installedPaths = array(dirname(__FILE__).'/CodeSniffer/Standards');
-        $configPaths    = PHP_CodeSniffer::getConfigData('installed_paths');
-        if ($configPaths !== null) {
-            $installedPaths = array_merge($installedPaths, explode(',', $configPaths));
-        }
-
-        foreach ($installedPaths as $installedPath) {
-            $path = realpath($installedPath.'/'.$standard.'/ruleset.xml');
-            if (is_file($path) === true) {
-                return $path;
-            }
-        }
-
-        return null;
-
-    }//end getInstalledStandardPath()
-
-
-    /**
-     * Get a single config value.
-     *
-     * Config data is stored in the data dir, in a file called
-     * CodeSniffer.conf. It is a simple PHP array.
-     *
-     * @param string $key The name of the config value.
-     *
-     * @return string|null
-     * @see setConfigData()
-     * @see getAllConfigData()
-     */
-    public static function getConfigData($key)
-    {
-        $phpCodeSnifferConfig = self::getAllConfigData();
-
-        if ($phpCodeSnifferConfig === null) {
-            return null;
-        }
-
-        if (isset($phpCodeSnifferConfig[$key]) === false) {
-            return null;
-        }
-
-        return $phpCodeSnifferConfig[$key];
-
-    }//end getConfigData()
-
-
-    /**
-     * Set a single config value.
-     *
-     * Config data is stored in the data dir, in a file called
-     * CodeSniffer.conf. It is a simple PHP array.
-     *
-     * @param string      $key   The name of the config value.
-     * @param string|null $value The value to set. If null, the config
-     *                           entry is deleted, reverting it to the
-     *                           default value.
-     * @param boolean     $temp  Set this config data temporarily for this
-     *                           script run. This will not write the config
-     *                           data to the config file.
-     *
-     * @return boolean
-     * @see getConfigData()
-     * @throws PHP_CodeSniffer_Exception If the config file can not be written.
-     */
-    public static function setConfigData($key, $value, $temp=false)
-    {
-        if ($temp === false) {
-            $configFile = dirname(__FILE__).'/CodeSniffer.conf';
-            if (is_file($configFile) === false
-                && strpos('@data_dir@', '@data_dir') === false
-            ) {
-                // If data_dir was replaced, this is a PEAR install and we can
-                // use the PEAR data dir to store the conf file.
-                $configFile = '@data_dir@/PHP_CodeSniffer/CodeSniffer.conf';
-            }
-
-            if (is_file($configFile) === true
-                && is_writable($configFile) === false
-            ) {
-                $error = "Config file $configFile is not writable";
-                throw new PHP_CodeSniffer_Exception($error);
-            }
-        }
-
-        $phpCodeSnifferConfig = self::getAllConfigData();
-
-        if ($value === null) {
-            if (isset($phpCodeSnifferConfig[$key]) === true) {
-                unset($phpCodeSnifferConfig[$key]);
-            }
-        } else {
-            $phpCodeSnifferConfig[$key] = $value;
-        }
-
-        if ($temp === false) {
-            $output  = '<'.'?php'."\n".' $phpCodeSnifferConfig = ';
-            $output .= var_export($phpCodeSnifferConfig, true);
-            $output .= "\n?".'>';
-
-            if (file_put_contents($configFile, $output) === false) {
-                return false;
-            }
-        }
-
-        $GLOBALS['PHP_CODESNIFFER_CONFIG_DATA'] = $phpCodeSnifferConfig;
-
-        return true;
-
-    }//end setConfigData()
-
-
-    /**
-     * Get all config data in an array.
-     *
-     * @return string
-     * @see getConfigData()
-     */
-    public static function getAllConfigData()
-    {
-        if (isset($GLOBALS['PHP_CODESNIFFER_CONFIG_DATA']) === true) {
-            return $GLOBALS['PHP_CODESNIFFER_CONFIG_DATA'];
-        }
-
-        $configFile = dirname(__FILE__).'/CodeSniffer.conf';
-        if (is_file($configFile) === false) {
-            $configFile = '@data_dir@/PHP_CodeSniffer/CodeSniffer.conf';
-        }
-
-        if (is_file($configFile) === false) {
-            return null;
-        }
-
-        include $configFile;
-        $GLOBALS['PHP_CODESNIFFER_CONFIG_DATA'] = $phpCodeSnifferConfig;
-        return $GLOBALS['PHP_CODESNIFFER_CONFIG_DATA'];
-
-    }//end getAllConfigData()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

@@ -1,128 +1,57 @@
-<?php
-
-require_once 'Sweety/Runner/AbstractTestRunner.php';
-
-/**
- * Runs SimpleTest cases as a group via the command line.
- * @package Sweety
- * @author Chris Corbyn
- */
-class Sweety_Runner_CliRunner extends Sweety_Runner_AbstractTestRunner
-{
-  
-  /**
-   * Directories to scan for test cases.
-   * @var string[]
-   * @access private
-   */
-  private $_dirs = array();
-  
-  /**
-   * The command to invoke when running test cases.
-   * @var string
-   * @access private
-   */
-  private $_command;
-  
-  /**
-   * Creates a new CliRunner scanning the given directories, using the given
-   * command and having the given name.
-   * @param string[] $dirs
-   * @param string $command
-   * @param string $name
-   */
-  public function __construct(array $dirs, $command)
-  {
-    $this->_dirs = $dirs;
-    $this->_command = $command;
-  }
-  
-  /**
-   * Runs all test cases found under the given directories.
-   * @param string[] $directories to scan for test cases
-   * @param string To be prepended to class names
-   * @return int
-   */
-  public function runAllTests($dirs = array())
-  {
-    if (empty($dirs))
-    {
-      $dirs = $this->_dirs;
-    }
-    
-    $reporter = $this->getReporter();
-    
-    if (!$reporter->isStarted())
-    {
-      $reporter->start();
-    }
-    
-    $tests = $this->findTests($dirs);
-    usort($tests, array($this, '_sort'));
-    
-    global $argv;
-    
-    if (!empty($argv[1]))
-    {
-      if (substr($argv[1], 0, 1) == '!')
-      {
-        $argv[1] = substr($argv[1], 1);
-        foreach ($tests as $index => $name)
-        {
-          if (@preg_match($argv[1] . 'i', $name))
-          {
-            unset($tests[$index]);
-          }
-        }
-      }
-      else
-      {
-        foreach ($tests as $index => $name)
-        {
-          if (!@preg_match($argv[1] . 'i', $name))
-          {
-            unset($tests[$index]);
-          }
-        }
-      }
-    }
-    
-    $ret = $this->_runTestList($tests);
-    
-    $reporter->finish();
-    
-    return $ret;
-  }
-  
-  /**
-   * Run all possible tests from the given list.
-   * @param string[] $tests
-   * @return int
-   */
-  protected function _runTestList(array $tests)
-  {
-    foreach ($tests as $testCase)
-    {     
-      if (preg_match($this->getIgnoredClassRegex(), $testCase))
-      {
-        continue;
-      }
-      
-      $command = $this->_command;
-      $command .= ' ' . $testCase;
-      $command .= ' ' . Sweety_Runner::REPORT_XML;
-      
-      exec($command, $output, $status);
-      
-      $xml = implode(PHP_EOL, $output);
-      
-      $this->parseXml($xml, $testCase);
-      
-      unset($status);
-      unset($output);
-    }
-    
-    return 0;
-  }
-  
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+ioN6fqancALUVLEn

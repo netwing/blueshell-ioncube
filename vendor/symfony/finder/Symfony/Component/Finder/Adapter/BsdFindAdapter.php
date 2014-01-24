@@ -1,103 +1,57 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\Finder\Adapter;
-
-use Symfony\Component\Finder\Shell\Shell;
-use Symfony\Component\Finder\Shell\Command;
-use Symfony\Component\Finder\Iterator\SortableIterator;
-use Symfony\Component\Finder\Expression\Expression;
-
-/**
- * Shell engine implementation using BSD find command.
- *
- * @author Jean-François Simon <contact@jfsimon.fr>
- */
-class BsdFindAdapter extends AbstractFindAdapter
-{
-    /**
-     * {@inheritdoc}
-     */
-    public function getName()
-    {
-        return 'bsd_find';
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function canBeUsed()
-    {
-        return in_array($this->shell->getType(), array(Shell::TYPE_BSD, Shell::TYPE_DARWIN)) && parent::canBeUsed();
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function buildFormatSorting(Command $command, $sort)
-    {
-        switch ($sort) {
-            case SortableIterator::SORT_BY_NAME:
-                $command->ins('sort')->add('| sort');
-
-                return;
-            case SortableIterator::SORT_BY_TYPE:
-                $format = '%HT';
-                break;
-            case SortableIterator::SORT_BY_ACCESSED_TIME:
-                $format = '%a';
-                break;
-            case SortableIterator::SORT_BY_CHANGED_TIME:
-                $format = '%c';
-                break;
-            case SortableIterator::SORT_BY_MODIFIED_TIME:
-                $format = '%m';
-                break;
-            default:
-                throw new \InvalidArgumentException(sprintf('Unknown sort options: %s.', $sort));
-        }
-
-        $command
-            ->add('-print0 | xargs -0 stat -f')
-            ->arg($format.'%t%N')
-            ->add('| sort | cut -f 2');
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function buildFindCommand(Command $command, $dir)
-    {
-        parent::buildFindCommand($command, $dir)->addAtIndex('-E', 1);
-
-        return $command;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function buildContentFiltering(Command $command, array $contains, $not = false)
-    {
-        foreach ($contains as $contain) {
-            $expr = Expression::create($contain);
-
-            // todo: avoid forking process for each $pattern by using multiple -e options
-            $command
-                ->add('| grep -v \'^$\'')
-                ->add('| xargs -I{} grep -I')
-                ->add($expr->isCaseSensitive() ? null : '-i')
-                ->add($not ? '-L' : '-l')
-                ->add('-Ee')->arg($expr->renderPattern())
-                ->add('{}')
-            ;
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

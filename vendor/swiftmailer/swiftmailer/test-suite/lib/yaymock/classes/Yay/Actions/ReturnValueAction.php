@@ -1,100 +1,47 @@
-<?php
-
-/*
- This program is free software: you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation, either version 3 of the License, or
- (at your option) any later version.
- 
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
-
- You should have received a copy of the GNU General Public License
- along with this program.  If not, see <http://www.gnu.org/licenses/>.
- 
- */
- 
-//require 'Yay/Action.php';
-
-/**
- * An Action which returns a specified value.
- * @author Chris Corbyn <chris@w3style.co.uk>
- * @package Yay
- */
-class Yay_Actions_ReturnValueAction implements Yay_Action
-{
-  
-  /**
-   * The value to return.
-   * @var mixed
-   * @access private
-   */
-  private $_value;
-  
-  /**
-   * Create a new ReturnValueAction for $value.
-   * @param mixed $value
-   */
-  public function __construct($value)
-  {
-    $this->_value = $value;
-  }
-  
-  /**
-   * Mimmick the method Invocation and return a value.
-   * @param Yay_Invocation $invocation
-   * @return mixed
-   */
-  public function &invoke(Yay_Invocation $invocation)
-  {
-    $value = $this->_value;
-    return $value;
-  }
-  
-  /**
-   * Describe this Expectation to $description.
-   * @param Yay_Description $description
-   */
-  public function describeTo(Yay_Description $description)
-  {
-    $description->appendText(sprintf(' Returns %s;', $this->_describeValue('%s [%s]')));
-  }
-  
-  private function _describeValue($format)
-  {
-    $description = '';
-    $value = $this->_value;
-    if (is_int($value))
-    {
-      $description = sprintf($format, 'int', $value);
-    }
-    elseif (is_float($value))
-    {
-      $description = sprintf($format, 'float', preg_replace('/^(.{8}).+/', '$1..', $value));
-    }
-    elseif (is_numeric($value))
-    {
-      $description = sprintf($format, 'number', preg_replace('/^(.{8}).+/', '$1..', $value));
-    }
-    elseif (is_string($value))
-    {
-      $description = sprintf($format, 'string', preg_replace('/^(.{8}).+/', '$1..', $value));
-    }
-    elseif (is_object($value))
-    {
-      $description = sprintf($format, 'object', get_class($value));
-    }
-    elseif (is_array($value))
-    {
-      $description = sprintf($format, 'array', count($value) . ' items');
-    }
-    else
-    {
-      $description = sprintf($format, gettype($value), preg_replace('/^(.{8}).+/', '$1..', (string) $value));
-    }
-    return $description;
-  }
-  
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

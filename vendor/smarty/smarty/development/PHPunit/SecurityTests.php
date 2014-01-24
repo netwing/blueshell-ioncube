@@ -1,360 +1,168 @@
-<?php
-/**
-* Smarty PHPunit tests for security
-*
-* @package PHPunit
-* @author Uwe Tews
-*/
-
-/**
-* class for security test
-*/
-class SecurityTests extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $this->smarty = SmartyTests::$smarty;
-        $this->smartyBC = SmartyTests::$smartyBC;
-        SmartyTests::init();
-        $this->smarty->force_compile = true;
-        $this->smartyBC->force_compile = true;
-        $this->smarty->clearCompiledTemplate();
-        $this->smarty->clearAllCache();
-    }
-
-    static function isRunnable()
-    {
-        return true;
-    }
-
-    /**
-    * test that security is loaded
-    */
-    public function testSecurityLoaded()
-    {
-        $this->assertTrue(is_object($this->smarty->security_policy));
-    }
-
-    /**
-    * test trusted PHP function
-    */
-    public function testTrustedPHPFunction()
-    {
-        $this->assertEquals("5", $this->smarty->fetch('eval:{assign var=foo value=[1,2,3,4,5]}{count($foo)}'));
-    }
-
-    /**
-    * test not trusted PHP function
-    */
-    public function testNotTrustedPHPFunction()
-    {
-        $this->smarty->security_policy->php_functions = array('null');
-        try {
-            $this->smarty->fetch('eval:{assign var=foo value=[1,2,3,4,5]}{count($foo)}');
-        } catch (Exception $e) {
-            $this->assertContains(htmlentities("PHP function 'count' not allowed by security setting"), $e->getMessage());
-
-            return;
-        }
-        $this->fail('Exception for not trusted modifier has not been raised.');
-    }
-
-    /**
-    * test not trusted PHP function at disabled security
-    */
-    public function testDisabledTrustedPHPFunction()
-    {
-        $this->smarty->security_policy->php_functions = array('null');
-        $this->smarty->disableSecurity();
-        $this->assertEquals("5", $this->smarty->fetch('eval:{assign var=foo value=[1,2,3,4,5]}{count($foo)}'));
-    }
-
-    /**
-    * test trusted modifier
-    */
-    public function testTrustedModifier()
-    {
-        $this->assertEquals("5", $this->smarty->fetch('eval:{assign var=foo value=[1,2,3,4,5]}{$foo|@count}'));
-    }
-
-    /**
-    * test not trusted modifier
-    */
-    public function testNotTrustedModifier()
-    {
-        $this->smarty->security_policy->php_modifiers = array('null');
-        try {
-            $this->smarty->fetch('eval:{assign var=foo value=[1,2,3,4,5]}{$foo|@count}');
-        } catch (Exception $e) {
-            $this->assertContains(htmlentities("modifier 'count' not allowed by security setting"), $e->getMessage());
-
-            return;
-        }
-        $this->fail('Exception for not trusted modifier has not been raised.');
-    }
-
-    /**
-    * test not trusted modifier at disabled security
-    */
-    public function testDisabledTrustedModifier()
-    {
-        $this->smarty->security_policy->php_modifiers = array('null');
-        $this->smarty->disableSecurity();
-        $this->assertEquals("5", $this->smarty->fetch('eval:{assign var=foo value=[1,2,3,4,5]}{$foo|@count}'));
-    }
-
-    /**
-    * test allowed tags
-    */
-    public function testAllowedTags1()
-    {
-        $this->smarty->security_policy->allowed_tags = array('counter');
-        $this->assertEquals("1", $this->smarty->fetch('eval:{counter start=1}'));
-    }
-
-    /**
-    * test not allowed tag
-    */
-    public function testNotAllowedTags2()
-    {
-        $this->smarty->security_policy->allowed_tags = array('counter');
-        try {
-            $this->smarty->fetch('eval:{counter}{cycle values="1,2"}');
-        } catch (Exception $e) {
-            $this->assertContains(htmlentities("tag 'cycle' not allowed by security setting"), $e->getMessage());
-
-            return;
-        }
-        $this->fail('Exception for not allowed tag has not been raised.');
-    }
-
-    /**
-    * test disabled tag
-    */
-    public function testDisabledTags()
-    {
-        $this->smarty->security_policy->disabled_tags = array('cycle');
-        try {
-            $this->smarty->fetch('eval:{counter}{cycle values="1,2"}');
-        } catch (Exception $e) {
-            $this->assertContains(htmlentities("tag 'cycle' disabled by security setting"), $e->getMessage());
-
-            return;
-        }
-        $this->fail('Exception for disabled tag has not been raised.');
-    }
-
-    /**
-    * test allowed modifier
-    */
-    public function testAllowedModifier1()
-    {
-        $this->smarty->security_policy->allowed_modifiers = array('capitalize');
-        $this->assertEquals("Hello World", $this->smarty->fetch('eval:{"hello world"|capitalize}'));
-    }
-    public function testAllowedModifier2()
-    {
-        $this->smarty->security_policy->allowed_modifiers = array('upper');
-        $this->assertEquals("HELLO WORLD", $this->smarty->fetch('eval:{"hello world"|upper}'));
-    }
-
-    /**
-    * test not allowed modifier
-    */
-    public function testNotAllowedModifier()
-    {
-        $this->smarty->security_policy->allowed_modifiers = array('upper');
-        try {
-            $this->smarty->fetch('eval:{"hello"|upper}{"world"|lower}');
-        } catch (Exception $e) {
-            $this->assertContains(htmlentities("modifier 'lower' not allowed by security setting"), $e->getMessage());
-
-            return;
-        }
-        $this->fail('Exception for not allowed tag has not been raised.');
-    }
-
-    /**
-    * test disabled modifier
-    */
-    public function testDisabledModifier()
-    {
-        $this->smarty->security_policy->disabled_modifiers = array('lower');
-        try {
-            $this->smarty->fetch('eval:{"hello"|upper}{"world"|lower}');
-        } catch (Exception $e) {
-            $this->assertContains(htmlentities("modifier 'lower' disabled by security setting"), $e->getMessage());
-
-            return;
-        }
-        $this->fail('Exception for disabled tag has not been raised.');
-    }
-
-    /**
-    * test Smarty::PHP_QUOTE
-    */
-    public function testSmartyPhpQuote()
-    {
-        $this->smarty->security_policy->php_handling = Smarty::PHP_QUOTE;
-        $this->assertEquals('&lt;?php echo "hello world"; ?&gt;', $this->smarty->fetch('eval:<?php echo "hello world"; ?>'));
-    }
-    public function testSmartyPhpQuoteAsp()
-    {
-        $this->smarty->security_policy->php_handling = Smarty::PHP_QUOTE;
-        $this->assertEquals('&lt;% echo "hello world"; %&gt;', $this->smarty->fetch('eval:<% echo "hello world"; %>'));
-    }
-
-    /**
-    * test Smarty::PHP_REMOVE
-    */
-    public function testSmartyPhpRemove()
-    {
-        $this->smarty->security_policy->php_handling = Smarty::PHP_REMOVE;
-        $this->assertEquals(' echo "hello world"; ', $this->smarty->fetch('eval:<?php echo "hello world"; ?>'));
-    }
-    public function testSmartyPhpRemoveAsp()
-    {
-        $this->smarty->security_policy->php_handling = Smarty::PHP_REMOVE;
-        $this->assertEquals(' echo "hello world"; ', $this->smarty->fetch('eval:<% echo "hello world"; %>'));
-    }
-
-    /**
-    * test Smarty::PHP_ALLOW
-    */
-    public function testSmartyPhpAllow()
-    {
-        $this->smartyBC->security_policy->php_handling = Smarty::PHP_ALLOW;
-        $this->assertEquals('hello world', $this->smartyBC->fetch('eval:<?php echo "hello world"; ?>'));
-    }
-    public function testSmartyPhpAllowAsp()
-    {
-        // NOTE: asp_tags cannot be changed by ini_set()
-        if (!ini_get('asp_tags')) {
-            $this->fail( 'asp_tags are disabled' );
-        }
-        $this->smartyBC->security_policy->php_handling = Smarty::PHP_ALLOW;
-        $this->assertEquals('hello world', $this->smartyBC->fetch('eval:<% echo "hello world"; %>'));
-    }
-
-    /**
-    * test standard directory
-    */
-    public function testStandardDirectory()
-    {
-        $content = $this->smarty->fetch('eval:{include file="helloworld.tpl"}');
-        $this->assertEquals("hello world", $content);
-    }
-
-    /**
-    * test trusted directory
-    */
-    public function testTrustedDirectory()
-    {
-        $this->smarty->security_policy->secure_dir = array('.' . DIRECTORY_SEPARATOR . 'templates_2' . DIRECTORY_SEPARATOR);
-        $this->assertEquals("hello world", $this->smarty->fetch('eval:{include file="templates_2/hello.tpl"}'));
-    }
-
-    /**
-    * test not trusted directory
-    */
-    public function testNotTrustedDirectory()
-    {
-        $this->smarty->security_policy->secure_dir = array('.' . DIRECTORY_SEPARATOR . 'templates_3' . DIRECTORY_SEPARATOR);
-        try {
-            $this->smarty->fetch('eval:{include file="templates_2/hello.tpl"}');
-        } catch (Exception $e) {
-            $this->assertContains("/PHPunit/templates_2/hello.tpl' not allowed by security setting", str_replace('\\','/',$e->getMessage()));
-
-            return;
-        }
-        $this->fail('Exception for not trusted directory has not been raised.');
-    }
-
-    /**
-    * test disabled security for not trusted dir
-    */
-    public function testDisabledTrustedDirectory()
-    {
-        $this->smarty->disableSecurity();
-        $this->assertEquals("hello world", $this->smarty->fetch('eval:{include file="templates_2/hello.tpl"}'));
-    }
-
-        /**
-    * test trusted static class
-    */
-    public function testTrustedStaticClass()
-    {
-        $this->smarty->security_policy->static_classes = array('mysecuritystaticclass');
-        $tpl = $this->smarty->createTemplate('eval:{mysecuritystaticclass::square(5)}');
-        $this->assertEquals('25', $this->smarty->fetch($tpl));
-    }
-
-    /**
-    * test not trusted PHP function
-    */
-    public function testNotTrustedStaticClass()
-    {
-        $this->smarty->security_policy->static_classes = array('null');
-        try {
-            $this->smarty->fetch('eval:{mysecuritystaticclass::square(5)}');
-        } catch (Exception $e) {
-            $this->assertContains(htmlentities("access to static class 'mysecuritystaticclass' not allowed by security setting"), $e->getMessage());
-
-            return;
-        }
-        $this->fail('Exception for not trusted static class has not been raised.');
-    }
-
-    public function testChangedTrustedDirectory()
-    {
-        $this->smarty->security_policy->secure_dir = array(
-            '.' . DS . 'templates_2' . DS,
-        );
-        $this->assertEquals("hello world", $this->smarty->fetch('eval:{include file="templates_2/hello.tpl"}'));
-
-        $this->smarty->security_policy->secure_dir = array(
-            '.' . DS . 'templates_2' . DS,
-            '.' . DS . 'templates_3' . DS,
-        );
-        $this->assertEquals("templates_3", $this->smarty->fetch('eval:{include file="templates_3/dirname.tpl"}'));
-    }
-
-    public function testTrustedUri()
-    {
-        $this->smarty->security_policy->trusted_uri = array(
-            '#^http://.+smarty\.net$#i'
-        );
-
-        try {
-            $this->smarty->fetch('eval:{fetch file="http://www.smarty.net/foo.bar"}');
-        } catch (SmartyException $e) {
-            $this->assertNotContains(htmlentities("not allowed by security setting"), $e->getMessage());
-        }
-
-        try {
-            $this->smarty->fetch('eval:{fetch file="https://www.smarty.net/foo.bar"}');
-            $this->fail("Exception for unknown resource not thrown (protocol)");
-        } catch (SmartyException $e) {
-            $this->assertContains(htmlentities("not allowed by security setting"), $e->getMessage());
-        }
-
-        try {
-            $this->smarty->fetch('eval:{fetch file="http://www.smarty.com/foo.bar"}');
-            $this->fail("Exception for unknown resource not thrown (domain)");
-        } catch (SmartyException $e) {
-            $this->assertContains(htmlentities("not allowed by security setting"), $e->getMessage());
-        }
-    }
-
-}
-
-class mysecuritystaticclass
-{
-    const STATIC_CONSTANT_VALUE = 3;
-    static $static_var = 5;
-
-    static function square($i)
-    {
-        return $i*$i;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+3ub3ZvKEVZMwQ6T7imzjOBrWAh4fiOG0

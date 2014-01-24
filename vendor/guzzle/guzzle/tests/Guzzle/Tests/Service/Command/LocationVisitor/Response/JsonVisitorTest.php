@@ -1,137 +1,81 @@
-<?php
-
-namespace Guzzle\Tests\Service\Command\LocationVisitor\Response;
-
-use Guzzle\Service\Description\Parameter;
-use Guzzle\Http\Message\Response;
-use Guzzle\Service\Command\LocationVisitor\Response\JsonVisitor as Visitor;
-
-/**
- * @covers Guzzle\Service\Command\LocationVisitor\Response\JsonVisitor
- */
-class JsonVisitorTest extends AbstractResponseVisitorTest
-{
-    public function testBeforeMethodParsesXml()
-    {
-        $visitor = new Visitor();
-        $command = $this->getMockBuilder('Guzzle\Service\Command\AbstractCommand')
-            ->setMethods(array('getResponse'))
-            ->getMockForAbstractClass();
-        $command->expects($this->once())
-            ->method('getResponse')
-            ->will($this->returnValue(new Response(200, null, '{"foo":"bar"}')));
-        $result = array();
-        $visitor->before($command, $result);
-        $this->assertEquals(array('foo' => 'bar'), $result);
-    }
-
-    public function testVisitsLocation()
-    {
-        $visitor = new Visitor();
-        $param = new Parameter(array(
-            'name' => 'foo',
-            'type' => 'array',
-            'items' => array(
-                'filters' => 'strtoupper',
-                'type'    => 'string'
-            )
-        ));
-        $this->value = array('foo' => array('a', 'b', 'c'));
-        $visitor->visit($this->command, $this->response, $param, $this->value);
-        $this->assertEquals(array('A', 'B', 'C'), $this->value['foo']);
-    }
-
-    public function testRenamesTopLevelValues()
-    {
-        $visitor = new Visitor();
-        $param = new Parameter(array(
-            'name'   => 'foo',
-            'sentAs' => 'Baz',
-            'type'   => 'string',
-        ));
-        $this->value = array('Baz' => 'test');
-        $visitor->visit($this->command, $this->response, $param, $this->value);
-        $this->assertEquals(array('foo' => 'test'), $this->value);
-    }
-
-    public function testRenamesDoesNotFailForNonExistentKey()
-    {
-        $visitor = new Visitor();
-        $param = new Parameter(array(
-            'name'          => 'foo',
-            'type'          => 'object',
-            'properties'    => array(
-                'bar' => array(
-                    'name'      => 'bar',
-                    'sentAs'    => 'baz',
-                ),
-            ),
-        ));
-        $this->value = array('foo' => array('unknown' => 'Unknown'));
-        $visitor->visit($this->command, $this->response, $param, $this->value);
-        $this->assertEquals(array('foo' => array('unknown' => 'Unknown')), $this->value);
-    }
-
-    public function testTraversesObjectsAndAppliesFilters()
-    {
-        $visitor = new Visitor();
-        $param = new Parameter(array(
-            'name' => 'foo',
-            'type' => 'object',
-            'properties' => array(
-                'foo' => array('filters' => 'strtoupper'),
-                'bar' => array('filters' => 'strtolower')
-            )
-        ));
-        $this->value = array('foo' => array('foo' => 'hello', 'bar' => 'THERE'));
-        $visitor->visit($this->command, $this->response, $param, $this->value);
-        $this->assertEquals(array('foo' => 'HELLO', 'bar' => 'there'), $this->value['foo']);
-    }
-
-    /**
-     * @group issue-399
-     * @link  https://github.com/guzzle/guzzle/issues/399
-     */
-    public function testDiscardingUnknownProperties()
-    {
-        $visitor = new Visitor();
-        $param = new Parameter(array(
-            'name'                 => 'foo',
-            'type'                 => 'object',
-            'additionalProperties' => false,
-            'properties'           => array(
-                'bar' => array(
-                    'type' => 'string',
-                    'name' => 'bar',
-                ),
-            ),
-        ));
-        $this->value = array('foo' => array('bar' => 15, 'unknown' => 'Unknown'));
-        $visitor->visit($this->command, $this->response, $param, $this->value);
-        $this->assertEquals(array('foo' => array('bar' => 15)), $this->value);
-    }
-
-    /**
-     * @group issue-399
-     * @link  https://github.com/guzzle/guzzle/issues/399
-     */
-    public function testDiscardingUnknownPropertiesWithAliasing()
-    {
-        $visitor = new Visitor();
-        $param = new Parameter(array(
-            'name'                 => 'foo',
-            'type'                 => 'object',
-            'additionalProperties' => false,
-            'properties'           => array(
-                'bar' => array(
-                    'name'   => 'bar',
-                    'sentAs' => 'baz',
-                ),
-            ),
-        ));
-        $this->value = array('foo' => array('baz' => 15, 'unknown' => 'Unknown'));
-        $visitor->visit($this->command, $this->response, $param, $this->value);
-        $this->assertEquals(array('foo' => array('bar' => 15)), $this->value);
-    }
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+M6wMn44Sk5Is0ZGX1m==

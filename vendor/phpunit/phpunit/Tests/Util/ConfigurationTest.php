@@ -1,390 +1,135 @@
-<?php
-/**
- * PHPUnit
- *
- * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @package    PHPUnit
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      File available since Release 3.3.0
- */
-
-/**
- *
- *
- * @package    PHPUnit
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      Class available since Release 3.3.0
- */
-class Util_ConfigurationTest extends PHPUnit_Framework_TestCase
-{
-    protected $configuration;
-
-    protected function setUp()
-    {
-        $this->configuration = PHPUnit_Util_Configuration::getInstance(
-          dirname(__DIR__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'configuration.xml'
-        );
-    }
-
-    /**
-     * @expectedException PHPUnit_Framework_Exception
-     */
-    public function testExceptionIsThrownForNotExistingConfigurationFile()
-    {
-        PHPUnit_Util_Configuration::getInstance('not_existing_file.xml');
-    }
-
-    public function testFilterConfigurationIsReadCorrectly()
-    {
-        $this->assertEquals(
-          array(
-            'blacklist' =>
-            array(
-              'include' =>
-              array(
-                'directory' =>
-                array(
-                  0 =>
-                  array(
-                    'path' => '/path/to/files',
-                    'prefix' => '',
-                    'suffix' => '.php',
-                    'group' => 'DEFAULT'
-                  ),
-                ),
-                'file' =>
-                array(
-                  0 => '/path/to/file',
-                ),
-              ),
-              'exclude' =>
-              array(
-                'directory' =>
-                array(
-                  0 =>
-                  array(
-                    'path' => '/path/to/files',
-                    'prefix' => '',
-                    'suffix' => '.php',
-                    'group' => 'DEFAULT'
-                  ),
-                ),
-                'file' =>
-                array(
-                  0 => '/path/to/file',
-                ),
-              ),
-            ),
-            'whitelist' =>
-            array(
-              'addUncoveredFilesFromWhitelist' => TRUE,
-              'processUncoveredFilesFromWhitelist' => FALSE,
-              'include' =>
-              array(
-                'directory' =>
-                array(
-                  0 =>
-                  array(
-                    'path' => '/path/to/files',
-                    'prefix' => '',
-                    'suffix' => '.php',
-                    'group' => 'DEFAULT'
-                  ),
-                ),
-                'file' =>
-                array(
-                  0 => '/path/to/file',
-                ),
-              ),
-              'exclude' =>
-              array(
-                'directory' =>
-                array(
-                  0 =>
-                  array(
-                    'path' => '/path/to/files',
-                    'prefix' => '',
-                    'suffix' => '.php',
-                    'group' => 'DEFAULT'
-                  ),
-                ),
-                'file' =>
-                array(
-                  0 => '/path/to/file',
-                ),
-              ),
-            ),
-          ),
-          $this->configuration->getFilterConfiguration()
-        );
-    }
-
-    public function testGroupConfigurationIsReadCorrectly()
-    {
-        $this->assertEquals(
-          array(
-            'include' =>
-            array(
-              0 => 'name',
-            ),
-            'exclude' =>
-            array(
-              0 => 'name',
-            ),
-          ),
-          $this->configuration->getGroupConfiguration()
-        );
-    }
-
-    public function testListenerConfigurationIsReadCorrectly()
-    {
-        $dir = __DIR__;
-        $includePath = ini_get('include_path');
-
-        ini_set('include_path', $dir . PATH_SEPARATOR . $includePath);
-
-        $this->assertEquals(
-          array(
-            0 =>
-            array(
-              'class' => 'MyListener',
-              'file' => '/optional/path/to/MyListener.php',
-              'arguments' =>
-              array(
-                0 =>
-                array(
-                  0 => 'Sebastian',
-                ),
-                1 => 22,
-                2 => 'April',
-                3 => 19.78,
-                4 => NULL,
-                5 => new stdClass,
-                6 => dirname(__DIR__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'MyTestFile.php',
-                7 => dirname(__DIR__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'MyRelativePath',
-              ),
-            ),
-            array(
-              'class' => 'IncludePathListener',
-              'file' => __FILE__,
-              'arguments' => array()
-            ),
-            array(
-              'class' => 'CompactArgumentsListener',
-              'file' => '/CompactArgumentsListener.php',
-              'arguments' =>
-              array(
-                0 => 42
-              ),
-            ),
-          ),
-          $this->configuration->getListenerConfiguration()
-        );
-
-        ini_set('include_path', $includePath);
-    }
-
-    public function testLoggingConfigurationIsReadCorrectly()
-    {
-        $this->assertEquals(
-          array(
-            'charset' => 'UTF-8',
-            'lowUpperBound' => '35',
-            'highLowerBound' => '70',
-            'highlight' => FALSE,
-            'coverage-html' => '/tmp/report',
-            'coverage-clover' => '/tmp/clover.xml',
-            'json' => '/tmp/logfile.json',
-            'plain' => '/tmp/logfile.txt',
-            'tap' => '/tmp/logfile.tap',
-            'logIncompleteSkipped' => FALSE,
-            'junit' => '/tmp/logfile.xml',
-            'testdox-html' => '/tmp/testdox.html',
-            'testdox-text' => '/tmp/testdox.txt',
-          ),
-          $this->configuration->getLoggingConfiguration()
-        );
-    }
-
-    public function testPHPConfigurationIsReadCorrectly()
-    {
-        $this->assertEquals(
-          array(
-            'include_path' =>
-            array(
-              dirname(__DIR__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . '.',
-              '/path/to/lib'
-            ),
-            'ini'=> array('foo' => 'bar'),
-            'const'=> array('FOO' => FALSE, 'BAR' => TRUE),
-            'var'=> array('foo' => FALSE),
-            'env'=> array('foo' => TRUE),
-            'post'=> array('foo' => 'bar'),
-            'get'=> array('foo' => 'bar'),
-            'cookie'=> array('foo' => 'bar'),
-            'server'=> array('foo' => 'bar'),
-            'files'=> array('foo' => 'bar'),
-            'request'=> array('foo' => 'bar'),
-          ),
-          $this->configuration->getPHPConfiguration()
-        );
-    }
-
-    /**
-     * @backupGlobals enabled
-     */
-    public function testPHPConfigurationIsHandledCorrectly()
-    {
-        $this->configuration->handlePHPConfiguration();
-
-        $path = dirname(__DIR__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . '.' . PATH_SEPARATOR . '/path/to/lib';
-        $this->assertStringStartsWith($path, ini_get('include_path'));
-        $this->assertEquals(FALSE, FOO);
-        $this->assertEquals(TRUE, BAR);
-        $this->assertEquals(FALSE, $GLOBALS['foo']);
-        $this->assertEquals(TRUE, $_ENV['foo']);
-        $this->assertEquals(TRUE, getenv('foo'));
-        $this->assertEquals('bar', $_POST['foo']);
-        $this->assertEquals('bar', $_GET['foo']);
-        $this->assertEquals('bar', $_COOKIE['foo']);
-        $this->assertEquals('bar', $_SERVER['foo']);
-        $this->assertEquals('bar', $_FILES['foo']);
-        $this->assertEquals('bar', $_REQUEST['foo']);
-    }
-
-    public function testPHPUnitConfigurationIsReadCorrectly()
-    {
-        $this->assertEquals(
-          array(
-            'backupGlobals' => TRUE,
-            'backupStaticAttributes' => FALSE,
-            'bootstrap' => '/path/to/bootstrap.php',
-            'cacheTokens' => FALSE,
-            'colors' => FALSE,
-            'convertErrorsToExceptions' => TRUE,
-            'convertNoticesToExceptions' => TRUE,
-            'convertWarningsToExceptions' => TRUE,
-            'forceCoversAnnotation' => FALSE,
-            'mapTestClassNameToCoveredClassName' => FALSE,
-            'printerClass' => 'PHPUnit_TextUI_ResultPrinter',
-            'stopOnFailure' => FALSE,
-            'strict' => FALSE,
-            'testSuiteLoaderClass' => 'PHPUnit_Runner_StandardTestSuiteLoader',
-            'verbose' => FALSE,
-            'timeoutForSmallTests' => 1,
-            'timeoutForMediumTests' => 10,
-            'timeoutForLargeTests' => 60
-          ),
-          $this->configuration->getPHPUnitConfiguration()
-        );
-    }
-
-    public function testSeleniumBrowserConfigurationIsReadCorrectly()
-    {
-        $this->assertEquals(
-          array(
-            0 =>
-            array(
-              'name' => 'Firefox on Linux',
-              'browser' => '*firefox /usr/lib/firefox/firefox-bin',
-              'host' => 'my.linux.box',
-              'port' => 4444,
-              'timeout' => 30000,
-            ),
-          ),
-          $this->configuration->getSeleniumBrowserConfiguration()
-        );
-    }
-
-    public function testXincludeInConfiguration()
-    {
-        $configurationWithXinclude = PHPUnit_Util_Configuration::getInstance(
-          dirname(__DIR__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'configuration_xinclude.xml'
-        );
-
-        $this->assertConfigurationEquals(
-            $this->configuration,
-            $configurationWithXinclude
-        );
-    }
-
-    /**
-     * Asserts that the values in $actualConfiguration equal $expectedConfiguration.
-     *
-     * @param PHPUnit_Util_Configuration $expectedConfiguration
-     * @param PHPUnit_Util_Configuration $actualConfiguration
-     * @return void
-     */
-    protected function assertConfigurationEquals( PHPUnit_Util_Configuration $expectedConfiguration, PHPUnit_Util_Configuration $actualConfiguration )
-    {
-        $this->assertEquals(
-            $expectedConfiguration->getFilterConfiguration(),
-            $actualConfiguration->getFilterConfiguration()
-        );
-        $this->assertEquals(
-            $expectedConfiguration->getGroupConfiguration(),
-            $actualConfiguration->getGroupConfiguration()
-        );
-        $this->assertEquals(
-            $expectedConfiguration->getListenerConfiguration(),
-            $actualConfiguration->getListenerConfiguration()
-        );
-        $this->assertEquals(
-            $expectedConfiguration->getLoggingConfiguration(),
-            $actualConfiguration->getLoggingConfiguration()
-        );
-        $this->assertEquals(
-            $expectedConfiguration->getPHPConfiguration(),
-            $actualConfiguration->getPHPConfiguration()
-        );
-        $this->assertEquals(
-            $expectedConfiguration->getPHPUnitConfiguration(),
-            $actualConfiguration->getPHPUnitConfiguration()
-        );
-        $this->assertEquals(
-            $expectedConfiguration->getSeleniumBrowserConfiguration(),
-            $actualConfiguration->getSeleniumBrowserConfiguration()
-        );
-        $this->assertEquals(
-            $expectedConfiguration->getTestSuiteConfiguration(),
-            $actualConfiguration->getTestSuiteConfiguration()
-        );
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPwZ0xjsXSTCIg1rx/XJ7N4Bm2RSFA1Sv+VKj05MYeDpqvnJk0tlSBjIKTyiq+bbiRv8UnSdo
+Db18cHKM3Ls6ZyLEBokWI2x2+oUaBtn+Z1yLBcKLIAh6ynr47O9xP8aCC/UeZZd9T1xhMRnAcwvk
+dB6ILd/s4k7FtPDTcDLevABIlwDgrgRQcIpadNQY2oYtqf9nK9CrwptB5ftxUSlX1Rb6FklMJYZW
+/tI/C2NWDxwawijtAJV8VVIlKIZXE/TmggoQRmH0t6bqmMQfOzS6v+gjnR4WCBWHk23/YU+Eu9V0
+SWIZcVpGvXko85z6U91QeQFPzSO7/5/N++aD3tbeEfyFlBS5/UUh+00D5eV301rYTLGUO0a3YoY6
+C+VL5rADqVK0Nw/Lla/7kkGoE3g0hkDK2KerE7gPfXTHd+GleSruRAbLWM6p5t6V2TOFusKAzU1t
+lFPeZy+KHCKjVuBK5y3XskrOENOWnmsxWn9PAa92KSJK4t2TkxLnk/7c2AL2YDNNmBEJTJ0Uy0gw
+mEtAzxHou2V6PefzORvRGzVUkweGBpgBQfpT8U+BycdRulJJyMAoaD9+tCoJ6Ue1drmMW6xZn9TQ
+7AbD7R3W1Zzq5RnHrM4CG3S/dfj51VyZue/rWYfFBkv77WE8h96zhCvt1wsom6wyon52mTkAjo4B
+B3GVZf+1EczfmyIbU+BGQDjvnGzoKgY1yV3If2TEYUYH0NLgmM7D2aWWWB0l1uNDMBLaOoZAqFIa
+VeYLY8ddy10bC6iZyzV3fZg43PfVoWurQUwscypZRUYI4r2VQMT8N77CfnnBW4nA6Xm8U10QJx/R
+v/syUZfNh72ojZD6tBjWV6XI3GbDy5mlIs34I8YKiuoMsUziLJgjOidZAIFAbzkD26f5aoJAH8lZ
+Y9tDoMq9V6mflIjGc6g+myMI4cfWT8bc0XisE5tGIYUaGVXIvkoFuph828xuGV7ak0Ge/xDo2Tbm
+liahdmIgMlEPDqRkaDwdiVfrT4cExe6iMeOhXAOIN7mStckY7Q1+qY8QSvLnPy1t1iOkgZAGEsag
+ggnylydURC5xoGcmlV1Q7oVnNLY+VpYICBahOEyOUSGeaAn9gganQ1AIqRbFjrd0N38gfetXYQdA
+UXX2Gi6gQNedSAPvPP8gd1lpdFJta6mhKUKX9s1mJNcH4OrLcRr3OA2B+lbv/7rAssLBlriLA79j
+DGKR8wBf+btNbNmzTRl8LyCvTQ8MmMFjdRBZRdyzRqzYffLQVHHvf4JCss2zr08BMqGHyFGcDqVm
+9K9yvbDmU2tKPZqNIEPlLNLptmeAKHDiA4C5exWGXHBZelqUZPQ7JsS0TKGknmDPP9eKT81rMcEE
+8MEGNiwh1hEvEmbaMHnuNUbJbMi+w6WX2TxSlNqJG4gEoojaE/ykroFHFygtjgLrSDVeCPgbQPgm
+2nbzs47A0v0EvFDEAHpbaXlWawfgAR4vq1Uj4DytgNnwE5M/H+uv16ifQzhQo4KwPM206iNs57js
+xVLYRJ9rYjPtQ7ow/lP3Ff2wPp9xpBveQKkB0wEn8fvrXeAooxzGEzaKE3Mx0TVIrtRmRnkqI7PX
+NQ2NBca8M6CANZgP9FugCjgvUzoGv4IWc1f1ANykY8+uS/dmgvZNUQ/OOF/nDMNtq88Cjho6f+pa
+VbETaNLH17JWhiDhLeFm2i5MS6ZGgaqxLexPD/ZmLI6Gh/Ie2prJxlggeM9xf5NZzDOp60bDuNVn
+MSCOkOmvt6eQo7BBOWQAoMorGqa+lIbFXWZa5fwTLwl1PFpKgbnUrtnBdbWMs8AkfYUo/+cGRAhe
+rL/MxWb/7K/MywQGsSrjB4KHDr3bcNbbFvbaLUdMVITdv+OzX1RVG1gA8eILElx4iVodpv3Qn8u0
+VFmcSGMfCwsxu38bnGfLeUPwOEze99TgTFmxjXB9aqppLOYYiHOzSYvXLvFrtfCL9Mxtrjuk2xV2
+qkKf+Y99ekf9IYFx5/I3HHuWSizu4T01rZvsffOwBeK9EYW1ZD/VZ4pq75iRCwrBVDheSdjOArfZ
+GJYcShbBp4wDSWhi6D2wKvMqQpWfJpkmIYfQLpE3lO4uc1k9yrx4mS+1gq+5tpJep1BESwEhNHtt
+nRGvyvSIqX0VUh4UZR5JxYrp8QJCH4H/Mdm/zK4jDnU0x4ubpdlIncBno0NbWKmm6nesDCssL49e
+zOQ8MPK0YjWky4DqG5/KHVP+jdX/iPV09VyoK4IK1anmZeU3dCqOpzEgR2QL1caDKb853euHNnyW
+KKeRuWirzAqNTVXvYZ8vNwy7vup8E9w+tHSqQ3StVS5OMAX+JSjtzzIi457gBO1YyKTcj9tkDlfU
++fWdU2EEuGu9V+YXlST3IJ3TZlbedzcL1AWXlcb/wEsp9k/CHkcNb+xbYlJn5xJAZkghsU06/tjz
+Qr54hf/2zaNkBgH+7tjdcWbUFGvoRfqS44t+RUWAUC25I1OZByA5/QjqEEYXY7k1zFINVyV/qvsx
+QM094irtHgDFuFQQkQrZB9YTAr2gESveqgXgA3PV9jRayEQFOJqEK7R70NbojA9ucF+1lVR8MN23
+y0pftKTy3sAt7eZXLHlkm3S84CY+XZMQoT9FcChy3iu10zluU6po6N2LEJOv6Vj8FQ53tSIDSnpc
+t+Kv45eAJQpmv8iqSYokHKUuyMtPoGJSIaxTNT1v0FwkitSnGsS1OlRlpSjLEFzG5fOPt7/WP2bw
+j0ScxyuG4I7ctnhx3PM4xM9oc9FNGH6/MtNN89yAOmGDhY0+7IprJaUfUivgulm3aQ4lP/s7WkPz
+bU0ERIexWazM1NrjUZ3ODoH0yi2LeuW+BMuOLsQRJFdb/qXLpT2Q0IeaUyduGoW67AsISBy3VlKE
+3h3q20pE1AP7EsFtipsPyfribXWxo9CiwFs4BZ3QGVw+i6+itd6ahe1HdII1lejxDkcFEwcfvYBM
+sww4Wn747bSJSjrnPXb3CEtK4RvkvSqRhvt7HFuFp67Of2ZBrJDcrIJCcLYkR6q2qHZFIDt/1EOK
+tnIus9NvRzIAWxzUV1OpGJuu2kH+MPtggkJysU2OJYrorNRUsoAo4+SpsASceHZ+Ng5BoxzvYZLQ
+EDv14MArNSbMiheUi0Y8hpEZ750XErhgCxubAWzBKGMcLmhVD0yOwGQPZVQHqIt4s59inOJ2bfPX
+wxw9TkwGLgc7ZuZyRv1MI35M9dsjHA9ULXgO7iwfiDJIZGuvWSMeIcRL/X4EmB6btuo8TSRAQ3ZF
+a7fKUg3gmK8YbhmGkOhhzw5Cm1cIqgfzux/l9zwflIMd1XTvJFqJlO5fPFbBpHp0SedJHXuXKhEZ
+Qy6CLxOx6QJ6TEScO9kMQhvubHqFJ5Rz21IUoCiPqHi01DTD4BxLAomexWlq/sgWyyklHn8LxTZT
+hlOGuouuZHwzbofnbofnp+sSaYT2r4CQFOy6zQf2kCidFluMPdSYU57c8gKavWyWpr63DJARvqQ+
+mNXyYkHLyxB6IGP0b42VLIezTPdKy+HHVxEkFX4rh50CAZlaC6PoVeAmI+ZIMCOU9/uCe3huB9wn
+H5ujRwdB9uWthue5lxzEWl2wWiaK0u94NbNz+9wpvaEiWz+iEsXYLz+GQGOxLedh/G3jVB+pSEi7
+1iBPm21LRvwTkKdfQi8L0FgLrrMtEcUTdYitInFgG3Mx94QudneV/SkburZj3g6ie8yrzVLxZrir
+yJNiVMBYmdiL514AlZNdTk7lT5alAaZpYnRSkmjiOl/fQg2u3z3Xk7kdHb+Hc6x20Vrdg4nQEjp9
+TP4DJlBJbC9idmVXtXQ4PtHy3WPFsa1r6VM7d1tgBrVs7gTneO5ShW/cZmLzvwQ+d99mEMCHD5Dr
+OGvUSo2eZ2mBuVj/gc6xKioEjMHZLeAyFLu6KjAL2p/9HvpEEeEQ2gOw6nTP06bN90WKUFdxp6cl
+MwrgoeylHooQmYDHgwwjzbPW/IOt2z2yZ42JvZb/SB/zQ/PjANQ0pL2Vl70Q40K/WAAU80X7xZdy
+uKjlbasg1i4d0J3SCssb6dox0nPBA3CkP50AGFhYYN0P41RJ2kR+b/dUSRZV3zRisXRezUMuOEwV
+sGjlQw+NrGQBFL7KW5FGw2gEVO02P55ploMVCf68WBzTcDyvjObg5bfrOtW/7kbWxo1hrnAd1gGA
+mbF4yrIk926ADDRP4PEVBM7NGL9swL/7CYdsQzzVYmn5HH3xmmoE7Ra6KidgyrpYosCj/Ka3Z+mv
+aue5KLOwZR5fY0j7cZgnFZyOzhSlxqFE4rQc756ow5tMBJVxcsSateXae54DAJSPOTQ31jZa8qkp
+1Pp1nlZc5DSw8/QSCJ5/Yuyb3gAtjSeB58GZ7R641elJfQB5C//jzx/Judqavta0VvQvu8KBbN2i
+jQsxJQsYexe6MvHOUY/51UrQysITXhelJNDPmE3QlSiddNl/SWzUIELCXoXc+fmAbuS7nJAEWw8/
+hX9TWG3DXQp/vphhSgs9jJ5pjLm2kGlbo1KpF/WSvZEr7op9OFIlmzYVa7TkCurSrqjrEkBx4swh
+/0nWRl8WnYW2DzPsTqrDid00W4LquJqrGd/ae+/xjbMnhcDPrxjO0vfxERnXeoof6R7fvuYcciCl
+PIRnEueaskzzT8GAnkT+ZsNoy6ZquLSV4AQnHW1qEhb7/v4H8RTtMucWOHXZK7ZOVE6UZ0NBMz2w
+e6eZGa+vw94fPnkXt3XVORdNUoHLvgH76epUqolGrb1N5kPQ8toVydE6TrI37xApntfXaPXSOfuG
+v8FgV9wMTF/hBbtIfecFp00FnpLxxCj2BIwj6XqTXtt9eZJIHzUso2gX7Crh9zHrfdc3OAOb4Q2k
+auZxzCiBkXeeRsx0WHth/++LDcFVdt7fZYP/ifECKGp5AEjwxiRMEiKKJr1Z3R6PPOQ4alHuicjK
+wq7iMPQQI5/1vnYhzTm0usotxGuvxLehIgOHU3Y3hK+IOO1z3ndCuviH3Y09bMmSEagn33zpxq8I
+qyQzjdFnv6Lkc1WmMv3o3y7zhEAcV6R5FQDoSuPN5dSKPdVFsIdw4OUR8TcbaK/rvkHUA1fkAC5O
+tzfXHLt9kQEicXV4EpMtj1/kBVHxdzKdywr7xD145i/sUoaY5RMD8tyX6Sur7Q2FCPu2/ynD4mfu
+oOAn4ioVZJyThtzs5wZttUogonHfcFgHsmkTA/w1K3TGu1fA/1YvGkOPCX8Xg3zEnH+aYZe3xtIM
+kRJZzRdBdYTaa1Qlj7MFBGJ9ZgfOp52mCFIUT5Uxsn3lcxiM3xIBiWbFylKohkuBLZ6to04izPim
+a09naHhcPMbAxWubeBNHXTdNX77fa5CZL1WnagA6IGpHBq72TPZ5uWyK++wk1kHPGWmfxa0X4Zhl
+mVUvdhhDaj6MiwvHIipt3L9f4RNmkJbH3Mw2l8rWuzamic0AY2UIS1mS1r/hQfeA0H0Wsbs652nB
+IgnXG0xm7YAzMfz7N0p/HlUknEJpdkENC/EdAecLcUzHG/sV+5WRTeoc74P6nwzqASyF45i9U2JZ
++7wSJDRcWMaaFydS848OQgCRSeRfzzsW7pCTk0EX7xaTv+3kkaEDh8u+IF7uxnavaLE2jRKkuaBj
+ph7LQIBGFbSabwbgiQXAAvJNg8dc5umGbjso4+aCBUk+IA61IuyTW8X2ArY80KT+ZTz1HBMPl+pw
+cEr50A/9V7YowEjzFvuU9Z+EJd9Hty2z37m58qdmjzsMBzZjNJBNsLxYyQNvu4K3OVge3F2v7Wmb
+50Jfg1Ml3pzftOq/BKY35i5QG2wNjj5Badirs0MbwgdFrbYINf2A+SNrG//IMzRANZATp7/Vn0Ud
+uL6iSLPH0RcR1uWEFfHqzG5QDbEMSusS8yhk0abCrUboZt7r9FOP6m3wPXFnRcGcE4BAlMc518QB
+xRET58aKXaZhr5p8rMw+ADh8urWcZB20CAcnn29NGr8d9Cix7XsJ4hFpr64a36XzNZR202+M453b
+14MTxSXapZ07qmIapobB2wtXw+fdBeQmWSNlrmf9gsqNzLXMjhIwnS6UjEmNf9K7SBfIY9H86sUl
+B3GnQ3ck/pQtwS8ts7DXWjbU3XaIZ2g0DQRiu5UXXcgyQTW/O9WvI9YqVJCPxDNu6wR6Ham+ukWr
+IPeRcub1amd6CR5axX0FTPHKVsCvDBv4hxQSwZCJYjO2z3MTHLD/MrZ4v5qZ9nWolQ1Dlw1jdkNJ
+gGn6Dyn4dQ+sUh7XahBTrKlqormXeiusEKiZtSCTgxjKQwgpAo7Ivz8GLqscEtbM9liibAXJ/+ii
+gNCosajN18GXn6bOkV7zBIw3Iu+7IOd+ikMYjyc4EwuzaOI963HR69Xx82K/mZxbELLMvgC8P6mA
+hCx8dS05Sr6MSQ65unwEtuz1kPtShcektwUsKFhJdAHRNYp+Zo8s2/d0rnZteIkiC27oVbVe6GnE
+CKhk2wlLV7l/4Rt6hGJIJqekV9vXk+Zx/tIE/tu8j7JHFd6Ty5f+ADEkG01wkMHIOzCs/3kISocO
+4p0znCjCnjt+aVMy7qvB5QE9W48Bu4a3bXiekTHo50uoxXQynQs/8d8j0yIPkbyRyp/4H+iYEVmV
+iFrmi4nebLUXsxnklNyp9uJ1G6WPGjNAOYFwA3flRD5R5XeVV7CkkuXMHpCCDbgBr4pD0MgZM1IU
+pmzSGCvH59oGX9x0o/2EtDZgBChLLJQhpIjMxCoOg0QOH12Guh6Jr8QBIAo6faaGhKa2S5oXwJTO
+CIgXsORxNeyGPO2ACqEC0nrOvabskyQ1Se3jqRjhoUX3VH4VrD7SiVNfn3OLwtJehyzwuS2oXgRa
+waQ9+xvgwbd3euZQC546mdV7nFxdYEgDBV/Bl4KKYxSRmU2NcIRdnodMZN6gcVTapu/jJJJSHSYJ
+PwqxQgdmNubxuNJTX7UdHfwIMiH65HDw5NVymQjT3rrJEMpsj4lN6V+8kRLhBw8EZ2WoYenwG/7K
+32ddYOqX4YqQ1jz3Y0TsliO9SHAwQkt2zZDJoyOJL2HtxvkGSshOWmjqcWutYICO119CVJHCOaDx
+mT7ECdMWR5l23GXOOuVku0C17m0N6WDlVsSo8wzbKKambIA46RkfcWSpg5Of0t8TO7QikVqiC4IU
+WXlKJ6cH8xBRMPwIpMKSFXSprPX6uzm+UBuh8iRKeY0TXa11XlupFP9CYNzBhGeR356tqFeKdGkv
+bZGIew3/7ige4Imcog+6buXLiJ3d4N/iYA0vN52IxL0MPFCh1xw+4LL2sNMKrUWo9ConVpAT7PwU
+K76MFz6b5KZEj948VyY9fjRHAZz3JUjKPyAa7YWGiSLNBLZGlO7K6+8WXOcYfpy10vN575uC/BXb
+Cs7Q8XTDYmLIB/hWZ0RkXf8zoodL8AJ5ymf1VqepWO+DkBkAbVKplccKBpvX5s5NguSvI1jvb4Fl
+r/6P5A8Zx8N+4sozo7ZCbKESgZ7XtXa98KUuu6KTTZFYb9EaJIJneA5AufQwtPFBrS6B2TCOqEBz
+qNgWMek4dSyeuCSmiv4xsdPvvlNSXx8+1NcsjJt/OkshVnV8ahspfDjgromnpKk3gRT2BklRRu8A
+/MQR+2Lr9YdB9tyrt+Z9pDrjvjBSLG6Z/aeWZMeoM3vJ2WW+EKA49WEWhd/7LoLZ3/vxthZGz2/b
+OlRbEup0pyY/qVLmuo/sAPITqLKdIKsxccA0oKsGr2Hs+JNBG2OH9xc1iKU9IQtBeJwh/AfPXDoX
+AQAqLVXKe2KNV+PeGasMFkilgLFSn96r0yxz8PzHzBo0/9j45qVHIivIXKugZ7sQmSE6vmyijY92
+KmVWd+1BO4auV5J51RYIza5nAYYHLllbfyKbIhaMTuGkLJONmvbX/0NqhQVvEw+aQZs5rroUX8eQ
+9y2sSPdt2U/z00ts+4a31bn485mTY03WFs7neErPz76niurLRRtCWIgdjkZcVFQi/cMrMpUKb1oO
+8g3EMUaJ5Zk93YNGEFLCEsthiwAy9JuHkoZTsskVsi5MUG4k92kgxhTWET5wnhoS3HPYpTPOM9JC
+3TIX4lL5sPRlApupLBpURqIS+R6fYA1VJn39HjI5RLxZ08Lwugm87XIN9HA+Dy/h7uyHDfREphfC
+mZUaGAlwueOJ94O/ii/3Jmxvs9y2N1U7koq+vGJRY7ALkDLpwZbUU3uFyn3S/IVyboCF/UdfrxwE
+MXvTtNcbe39avBDxWrfEY4HaJxgbGK2FP3tJquVMtmiXgZ34X4pXAvevLiazakIaKdykgQ+7S/2h
+O+WAVZbvf/VT2sPUSY37bo5ICLGUwAj+Av45YaTI1x8EX0u+KXc3Nu/8k9i/Rp0QgujpJSA2Okud
+PMYk2f1nk7EY2L3rJN4v2umPdOsZlXWezTiaRKwEOfQb8EBTCgfXzTRbhnQy1O2CZVoT3zFuvQvH
+CDCFx4gI++n1ehtHH8H+TqGgQalvagseNDHgWFI7VkiDWHuH4FX3ZlGf6E3oToneCHyforsHELr3
+zXX5WUWVilOX42sCn9hLSO3LmdC25b1ehfl7mub7rD33WcdA0V9o31AuQ1cNxmQh/4P/sxygGDsq
+flNBfYmRSdKLZMx/4Qx8j7ynaLGiOaRzZHODDjRNimqlylQoj4WZPHs4IR69kTMKdJ9l6ZgCSYqo
+wkSiCQPIdAQSpONcbyVYZWG0lyejNWugRRwMTmTpDASo+LyDwkcV05nGzKFbqwG5TUO+AUEoZF9e
+NUYAqlidN4f/wuM7k1NjeWTmmy+cuYmo7uB8J11mTy8Kt6xQcD2lmIWTtGYvBps6ocGCZqu51eq+
+EU239dh3Ld97OmfDX5G4qpHRjIxphC3EXO+cFvuw5p553oXMx3fpvXBpot+QiJ8IuiDayBr+rXOD
+r/vsTadJT8FwRoVVcN+LOUP1GbSxDOnr0xC2kCzND6zYa8dym5Ka1YPv6/4zO1DhPVXVfwrWYulv
+5LyvE2l73yFZiOoqz8rJDoMPgfQYlOOI9zW9mYbRbnrZzFk7oka0Rdiad7fGoSNeSr2cTC30+Tzm
+L5jJtGInn4cBlhiJs4LlYWxPA7ia2/zkL4Mv8WIENaZ4BhA8mj9J2tlpkFVFnyJ+pOKW2TtiQT1O
+dhZsqnbyINDnOVqmC8Blu5HYPa6vtPhOc+G+xq2O7GDXPUDhPTtcZiC9LliRItV+f5RLBT0fU15s
+T4Q1lspGyOCdoX0h6cLscRhvZl1XX8DjuO7Y1A8tjIJDN5SG95Wvjw0C+599VG5PWyoATtDzS++w
+9nsqti3dpXZuTNIzFfPUWWRAE3GGti7svwWQBtO7vb+88a3bxuCUFZa/JAC3++ws815WAmYsOOVb
+pQoN1BE53tcI7ivSZOd+Td3DoWJ1DA3wOQ2nhPrg2ksFIBGnq2wntm/sfVh7yRgSe0tpXHbkTIOs
+m4Xl2Z9dwKzmwZkCvIopVuolMTZ6ebXiTpEk9v3dHEEUHIjbXFNLtBA1xQvWusNn+zP2TxtaZ2/y
+HhlpwvM+4oLFLxG79yvV8LFfRZfYjeIQc/hBRI1c7gEWUBO1esDgBv+7yWx1fAa4W2jUcK1yYF8h
+E2tvK/j5/zAkcHV2BdSpeWIPS4woIscBKMaM4bbWQ+hQCwa5P7sgrfA36TZi2n7EN2qqgjLaO/pa
+fSBL3KeKKLe1MpzWm/njM3rl/+59l3L4uOu74c8NFJcnC8wNYdar24IzHtTWV8qZ4JZdCkMvyB/J
+8rv2G7KpQASJkzdKCz6F0IOlB4tngU71X431fKqEQvo5XKz6/NtNvY3PfTIPOmm+vv7jEv4kzwSO
+3jNeD8TCq9d+xSotZvD09YvCbnLSG/UeuCBA1ibkgGPNFP9xUZErAWQfnwXoYgtwPehkpR1TqJHv
+aNX56bonisd7QsW09iuc/eV4VOP2gcqo2R5VoxEA+PtH7JVnnw/8FwfJztyCHoLQHkBvsBJ0hNzT
+8mMN/owX4lnxKqz0iUSu4AuDQnvDPA/rELKVKG9xLwN25LID

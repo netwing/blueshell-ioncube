@@ -1,98 +1,73 @@
-<?php $form = $this->beginWidget('CActiveForm', array(
-    'id'=>'user-form',
-    'enableClientValidation'=>false,
-    'enableAjaxValidation'=>true,
-    'htmlOptions'=>array('class'=>'form-horizontal well'),
-    'errorMessageCssClass' => 'text-danger'
-)); ?>
-
-<p class="help-block">Fields with <span class="required">*</span> are required.</p>
-
-<?php echo $form->errorSummary($model, null, null, array('class' => 'text-danger')); ?>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model,'name', array('class' => 'col-lg-2 control-label')); ?>
-        <div class="col-lg-10">
-        <?php echo $form->textField($model,'name', array('class' => 'form-control')); ?>
-        <?php echo $form->error($model,'name'); ?>
-        <p class="help-block"><?php echo Yii::t('form', 'The name for this user'); ?></p>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model,'username', array('class' => 'col-lg-2 control-label')); ?>
-        <div class="col-lg-10">
-        <?php if ($model->isNewRecord): ?>
-            <?php echo $form->textField($model,'username', array('class' => 'form-control')); ?>
-            <?php echo $form->error($model,'username'); ?>
-            <p class="help-block"><?php echo Yii::t('form', 'The login name for this user'); ?></p>
-        <?php else: ?>
-            <?php echo $form->textField($model,'username', array('class' => 'form-control', 'disabled' => 'disabled')); ?>
-            <?php echo $form->error($model,'username'); ?>
-            <p class="help-block"><?php echo Yii::t('form', 'Username cannot be changed'); ?></p>
-        <?php endif; ?>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model,'password', array('class' => 'col-lg-2 control-label')); ?>
-        <div class="col-lg-10">
-        <?php if ($model->isNewRecord): ?>
-            <?php echo $form->passwordField($model,'password', array('class' => 'form-control')); ?>
-            <?php echo $form->error($model,'password'); ?>
-            <p class="help-block"><?php echo Yii::t('form', 'The login password for this user'); ?></p>
-        <?php else: ?>
-            <?php echo $form->passwordField($model,'password', array('class' => 'form-control disabled')); ?>
-            <?php echo $form->error($model,'password'); ?>
-            <p class="help-block"><?php echo Yii::t('form', 'Insert a new password or leave empty for no change'); ?></p>
-        <?php endif; ?>
-        </div>
-    </div>
-
-    <?php
-    $roles = Yii::app()->authManager->roles;
-    $my_roles = array();
-    foreach ($roles as $k => $v) {
-        $my_roles[$v->name] = $v->name . ": " . $v->description;
-    }
-    ?>
-    <div class="form-group">
-        <?php echo $form->labelEx($model,'role', array('class' => 'col-lg-2 control-label')); ?>
-        <div class="col-lg-10">
-        <?php if ($model->isNewRecord or $model->username != 'administrator'): ?>
-            <?php echo $form->dropDownList($model, 'role', $my_roles, array(
-                'class' =>  'form-control',
-                'maxlength'=>255,
-                'multiple' => 'multiple',
-            )); ?>
-            <?php echo $form->error($model,'role'); ?>
-            <p class="help-block"><?php echo Yii::t('form', "Select one or more roles for this user."); ?></p>
-        <?php else: ?>
-            <?php echo $form->dropDownList($model, 'role', $my_roles, array(
-                'maxlength'=>255,
-                'multiple' => 'multiple',
-                'disabled'  => 'disabled',
-            )); ?>
-            <?php echo $form->error($model,'role'); ?>
-            <p class="help-block"><?php echo Yii::t('form', "Role for 'administrator' cannot be changed."); ?></p>
-        <?php endif; ?>
-        </div>
-    </div>
-
-    <?php Yii::app()->select2->register(); ?>
-    <?php Yii::app()->clientScript->registerScript('mount_script', 
-    '$("#User_role").select2({
-        asDropDownList: true, 
-        placeholder: "' . Yii::t('form', 'Type or select roles for this user.') . '",
-        tokenSeparators: [",", " "]
-    });', CClientScript::POS_READY); ?>
-
-
-    <div class="form-group">
-        <div class="col-lg-offset-2 col-lg-10">
-            <button type="reset" class="btn btn-warning"><?php echo Yii::t('form', 'Reset'); ?></button>
-            <button type="submit" class="btn btn-primary"><?php echo Yii::t('form', 'Submit'); ?></button>
-        </div>
-    </div>
-
-<?php $this->endWidget(); ?>
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

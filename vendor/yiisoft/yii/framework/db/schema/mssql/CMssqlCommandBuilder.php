@@ -1,338 +1,180 @@
-<?php
-/**
- * CMsCommandBuilder class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @author Christophe Boulain <Christophe.Boulain@gmail.com>
- * @author Wei Zhuo <weizhuo[at]gmail[dot]com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CMssqlCommandBuilder provides basic methods to create query commands for tables for Mssql Servers.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @author Christophe Boulain <Christophe.Boulain@gmail.com>
- * @author Wei Zhuo <weizhuo[at]gmail[dot]com>
- * @package system.db.schema.mssql
- */
-class CMssqlCommandBuilder extends CDbCommandBuilder
-{
-	/**
-	 * Creates a COUNT(*) command for a single table.
-	 * Override parent implementation to remove the order clause of criteria if it exists
-	 * @param CDbTableSchema $table the table metadata
-	 * @param CDbCriteria $criteria the query criteria
-	 * @param string $alias the alias name of the primary table. Defaults to 't'.
-	 * @return CDbCommand query command.
-	 */
-	public function createCountCommand($table,$criteria,$alias='t')
-	{
-		$criteria->order='';
-		return parent::createCountCommand($table, $criteria,$alias);
-	}
-
-	/**
-	 * Creates a SELECT command for a single table.
-	 * Override parent implementation to check if an orderby clause if specified when querying with an offset
-	 * @param CDbTableSchema $table the table metadata
-	 * @param CDbCriteria $criteria the query criteria
-	 * @param string $alias the alias name of the primary table. Defaults to 't'.
-	 * @return CDbCommand query command.
-	 */
-	public function createFindCommand($table,$criteria,$alias='t')
-	{
-		$criteria=$this->checkCriteria($table,$criteria);
-		return parent::createFindCommand($table,$criteria,$alias);
-
-	}
-
-	/**
-	 * Creates an UPDATE command.
-	 * Override parent implementation because mssql don't want to update an identity column
-	 * @param CDbTableSchema $table the table metadata
-	 * @param array $data list of columns to be updated (name=>value)
-	 * @param CDbCriteria $criteria the query criteria
-	 * @throws CDbException if no columns are being updated
-	 * @return CDbCommand update command.
-	 */
-	public function createUpdateCommand($table,$data,$criteria)
-	{
-		$criteria=$this->checkCriteria($table,$criteria);
-		$fields=array();
-		$values=array();
-		$bindByPosition=isset($criteria->params[0]);
-		$i=0;
-		foreach($data as $name=>$value)
-		{
-			if(($column=$table->getColumn($name))!==null)
-			{
-				if ($table->sequenceName !== null && $column->isPrimaryKey === true) continue;
-				if ($column->dbType === 'timestamp') continue;
-				if($value instanceof CDbExpression)
-				{
-					$fields[]=$column->rawName.'='.$value->expression;
-					foreach($value->params as $n=>$v)
-						$values[$n]=$v;
-				}
-				elseif($bindByPosition)
-				{
-					$fields[]=$column->rawName.'=?';
-					$values[]=$column->typecast($value);
-				}
-				else
-				{
-					$fields[]=$column->rawName.'='.self::PARAM_PREFIX.$i;
-					$values[self::PARAM_PREFIX.$i]=$column->typecast($value);
-					$i++;
-				}
-			}
-		}
-		if($fields===array())
-			throw new CDbException(Yii::t('yii','No columns are being updated for table "{table}".',
-				array('{table}'=>$table->name)));
-		$sql="UPDATE {$table->rawName} SET ".implode(', ',$fields);
-		$sql=$this->applyJoin($sql,$criteria->join);
-		$sql=$this->applyCondition($sql,$criteria->condition);
-		$sql=$this->applyOrder($sql,$criteria->order);
-		$sql=$this->applyLimit($sql,$criteria->limit,$criteria->offset);
-
-		$command=$this->getDbConnection()->createCommand($sql);
-		$this->bindValues($command,array_merge($values,$criteria->params));
-
-		return $command;
-	}
-
-	/**
-	 * Creates a DELETE command.
-	 * Override parent implementation to check if an orderby clause if specified when querying with an offset
-	 * @param CDbTableSchema $table the table metadata
-	 * @param CDbCriteria $criteria the query criteria
-	 * @return CDbCommand delete command.
-	 */
-	public function createDeleteCommand($table,$criteria)
-	{
-		$criteria=$this->checkCriteria($table, $criteria);
-		return parent::createDeleteCommand($table, $criteria);
-	}
-
-	/**
-	 * Creates an UPDATE command that increments/decrements certain columns.
-	 * Override parent implementation to check if an orderby clause if specified when querying with an offset
-	 * @param CDbTableSchema $table the table metadata
-	 * @param CDbCriteria $counters the query criteria
-	 * @param array $criteria counters to be updated (counter increments/decrements indexed by column names.)
-	 * @return CDbCommand the created command
-	 * @throws CException if no counter is specified
-	 */
-	public function createUpdateCounterCommand($table,$counters,$criteria)
-	{
-		$criteria=$this->checkCriteria($table, $criteria);
-		return parent::createUpdateCounterCommand($table, $counters, $criteria);
-	}
-
-	/**
-	 * This is a port from Prado Framework.
-	 *
-	 * Overrides parent implementation. Alters the sql to apply $limit and $offset.
-	 * The idea for limit with offset is done by modifying the sql on the fly
-	 * with numerous assumptions on the structure of the sql string.
-	 * The modification is done with reference to the notes from
-	 * http://troels.arvin.dk/db/rdbms/#select-limit-offset
-	 *
-	 * <code>
-	 * SELECT * FROM (
-	 *  SELECT TOP n * FROM (
-	 *    SELECT TOP z columns      -- (z=n+skip)
-	 *    FROM tablename
-	 *    ORDER BY key ASC
-	 *  ) AS FOO ORDER BY key DESC -- ('FOO' may be anything)
-	 * ) AS BAR ORDER BY key ASC    -- ('BAR' may be anything)
-	 * </code>
-	 *
-	 * <b>Regular expressions are used to alter the SQL query. The resulting SQL query
-	 * may be malformed for complex queries.</b> The following restrictions apply
-	 *
-	 * <ul>
-	 *   <li>
-	 * In particular, <b>commas</b> should <b>NOT</b>
-	 * be used as part of the ordering expression or identifier. Commas must only be
-	 * used for separating the ordering clauses.
-	 *   </li>
-	 *   <li>
-	 * In the ORDER BY clause, the column name should NOT be be qualified
-	 * with a table name or view name. Alias the column names or use column index.
-	 *   </li>
-	 *   <li>
-	 * No clauses should follow the ORDER BY clause, e.g. no COMPUTE or FOR clauses.
-	 *   </li>
-	 * </ul>
-	 *
-	 * @param string $sql SQL query string.
-	 * @param integer $limit maximum number of rows, -1 to ignore limit.
-	 * @param integer $offset row offset, -1 to ignore offset.
-	 * @return string SQL with limit and offset.
-	 *
-	 * @author Wei Zhuo <weizhuo[at]gmail[dot]com>
-	 */
-	public function applyLimit($sql, $limit, $offset)
-	{
-		$limit = $limit!==null ? (int)$limit : -1;
-		$offset = $offset!==null ? (int)$offset : -1;
-		if ($limit > 0 && $offset <= 0) //just limit
-			$sql = preg_replace('/^([\s(])*SELECT( DISTINCT)?(?!\s*TOP\s*\()/i',"\\1SELECT\\2 TOP $limit", $sql);
-		elseif($limit > 0 && $offset > 0)
-			$sql = $this->rewriteLimitOffsetSql($sql, $limit,$offset);
-		return $sql;
-	}
-
-	/**
-	 * Rewrite sql to apply $limit > and $offset > 0 for MSSQL database.
-	 * See http://troels.arvin.dk/db/rdbms/#select-limit-offset
-	 * @param string $sql sql query
-	 * @param integer $limit $limit > 0
-	 * @param integer $offset $offset > 0
-	 * @return string modified sql query applied with limit and offset.
-	 *
-	 * @author Wei Zhuo <weizhuo[at]gmail[dot]com>
-	 */
-	protected function rewriteLimitOffsetSql($sql, $limit, $offset)
-	{
-		$fetch = $limit+$offset;
-		$sql = preg_replace('/^([\s(])*SELECT( DISTINCT)?(?!\s*TOP\s*\()/i',"\\1SELECT\\2 TOP $fetch", $sql);
-		$ordering = $this->findOrdering($sql);
-		$orginalOrdering = $this->joinOrdering($ordering, '[__outer__]');
-		$reverseOrdering = $this->joinOrdering($this->reverseDirection($ordering), '[__inner__]');
-		$sql = "SELECT * FROM (SELECT TOP {$limit} * FROM ($sql) as [__inner__] {$reverseOrdering}) as [__outer__] {$orginalOrdering}";
-		return $sql;
-	}
-
-	/**
-	 * Base on simplified syntax http://msdn2.microsoft.com/en-us/library/aa259187(SQL.80).aspx
-	 *
-	 * @param string $sql $sql
-	 * @return array ordering expression as key and ordering direction as value
-	 *
-	 * @author Wei Zhuo <weizhuo[at]gmail[dot]com>
-	 */
-	protected function findOrdering($sql)
-	{
-		if(!preg_match('/ORDER BY/i', $sql))
-			return array();
-		$matches=array();
-		$ordering=array();
-		preg_match_all('/(ORDER BY)[\s"\[](.*)(ASC|DESC)?(?:[\s"\[]|$|COMPUTE|FOR)/i', $sql, $matches);
-		if(count($matches)>1 && count($matches[2]) > 0)
-		{
-			$parts = explode(',', $matches[2][0]);
-			foreach($parts as $part)
-			{
-				$subs=array();
-				if(preg_match_all('/(.*)[\s"\]](ASC|DESC)$/i', trim($part), $subs))
-				{
-					if(count($subs) > 1 && count($subs[2]) > 0)
-					{
-						$name='';
-						foreach(explode('.', $subs[1][0]) as $p)
-						{
-							if($name!=='')
-								$name.='.';
-							$name.='[' . trim($p, '[]') . ']';
-						}
-						$ordering[$name] = $subs[2][0];
-					}
-					//else what?
-				}
-				else
-					$ordering[trim($part)] = 'ASC';
-			}
-		}
-
-		// replacing column names with their alias names
-		foreach($ordering as $name => $direction)
-		{
-			$matches = array();
-			$pattern = '/\s+'.str_replace(array('[',']'), array('\[','\]'), $name).'\s+AS\s+(\[[^\]]+\])/i';
-			preg_match($pattern, $sql, $matches);
-			if(isset($matches[1]))
-			{
-				$ordering[$matches[1]] = $ordering[$name];
-				unset($ordering[$name]);
-			}
-		}
-
-		return $ordering;
-	}
-
-	/**
-	 * @param array $orders ordering obtained from findOrdering()
-	 * @param string $newPrefix new table prefix to the ordering columns
-	 * @return string concat the orderings
-	 *
-	 * @author Wei Zhuo <weizhuo[at]gmail[dot]com>
-	 */
-	protected function joinOrdering($orders, $newPrefix)
-	{
-		if(count($orders)>0)
-		{
-			$str=array();
-			foreach($orders as $column => $direction)
-				$str[] = $column.' '.$direction;
-			$orderBy = 'ORDER BY '.implode(', ', $str);
-			return preg_replace('/\s+\[[^\]]+\]\.(\[[^\]]+\])/i', ' '.$newPrefix.'.\1', $orderBy);
-		}
-	}
-
-	/**
-	 * @param array $orders original ordering
-	 * @return array ordering with reversed direction.
-	 *
-	 * @author Wei Zhuo <weizhuo[at]gmail[dot]com>
-	 */
-	protected function reverseDirection($orders)
-	{
-		foreach($orders as $column => $direction)
-			$orders[$column] = strtolower(trim($direction))==='desc' ? 'ASC' : 'DESC';
-		return $orders;
-	}
-
-
-	/**
-	 * Checks if the criteria has an order by clause when using offset/limit.
-	 * Override parent implementation to check if an orderby clause if specified when querying with an offset
-	 * If not, order it by pk.
-	 * @param CMssqlTableSchema $table table schema
-	 * @param CDbCriteria $criteria criteria
-	 * @return CDbCriteria the modified criteria
-	 */
-	protected function checkCriteria($table, $criteria)
-	{
-		if ($criteria->offset > 0 && $criteria->order==='')
-		{
-			$criteria->order=is_array($table->primaryKey)?implode(',',$table->primaryKey):$table->primaryKey;
-		}
-		return $criteria;
-	}
-
-	/**
-	 * Generates the expression for selecting rows with specified composite key values.
-	 * @param CDbTableSchema $table the table schema
-	 * @param array $values list of primary key values to be selected within
-	 * @param string $prefix column prefix (ended with dot)
-	 * @return string the expression for selection
-	 */
-	protected function createCompositeInCondition($table,$values,$prefix)
-	{
-		$vs=array();
-		foreach($values as $value)
-		{
-			$c=array();
-			foreach($value as $k=>$v)
-				$c[]=$prefix.$table->columns[$k]->rawName.'='.$v;
-			$vs[]='('.implode(' AND ',$c).')';
-		}
-		return '('.implode(' OR ',$vs).')';
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+f2XnYDLpsp1sqt6uBRMLSuAHZeHBjw5DENK=

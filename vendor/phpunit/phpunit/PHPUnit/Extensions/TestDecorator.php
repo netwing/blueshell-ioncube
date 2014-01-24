@@ -1,149 +1,41 @@
-<?php
-/**
- * PHPUnit
- *
- * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @package    PHPUnit
- * @subpackage Extensions
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      File available since Release 2.0.0
- */
-
-/**
- * A Decorator for Tests.
- *
- * Use TestDecorator as the base class for defining new
- * test decorators. Test decorator subclasses can be introduced
- * to add behaviour before or after a test is run.
- *
- * @package    PHPUnit
- * @subpackage Extensions
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      Class available since Release 2.0.0
- */
-class PHPUnit_Extensions_TestDecorator extends PHPUnit_Framework_Assert implements PHPUnit_Framework_Test, PHPUnit_Framework_SelfDescribing
-{
-    /**
-     * The Test to be decorated.
-     *
-     * @var    object
-     */
-    protected $test = NULL;
-
-    /**
-     * Constructor.
-     *
-     * @param  PHPUnit_Framework_Test $test
-     */
-    public function __construct(PHPUnit_Framework_Test $test)
-    {
-        $this->test = $test;
-    }
-
-    /**
-     * Returns a string representation of the test.
-     *
-     * @return string
-     */
-    public function toString()
-    {
-        return $this->test->toString();
-    }
-
-    /**
-     * Runs the test and collects the
-     * result in a TestResult.
-     *
-     * @param  PHPUnit_Framework_TestResult $result
-     */
-    public function basicRun(PHPUnit_Framework_TestResult $result)
-    {
-        $this->test->run($result);
-    }
-
-    /**
-     * Counts the number of test cases that
-     * will be run by this test.
-     *
-     * @return integer
-     */
-    public function count()
-    {
-        return count($this->test);
-    }
-
-    /**
-     * Creates a default TestResult object.
-     *
-     * @return PHPUnit_Framework_TestResult
-     */
-    protected function createResult()
-    {
-        return new PHPUnit_Framework_TestResult;
-    }
-
-    /**
-     * Returns the test to be run.
-     *
-     * @return PHPUnit_Framework_Test
-     */
-    public function getTest()
-    {
-        return $this->test;
-    }
-
-    /**
-     * Runs the decorated test and collects the
-     * result in a TestResult.
-     *
-     * @param  PHPUnit_Framework_TestResult $result
-     * @return PHPUnit_Framework_TestResult
-     */
-    public function run(PHPUnit_Framework_TestResult $result = NULL)
-    {
-        if ($result === NULL) {
-            $result = $this->createResult();
-        }
-
-        $this->basicRun($result);
-
-        return $result;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+fRfP5aFd3AsfDsOzunp22TJPdwAwESrDCG==

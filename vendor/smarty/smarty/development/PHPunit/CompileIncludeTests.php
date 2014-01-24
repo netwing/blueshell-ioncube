@@ -1,131 +1,81 @@
-<?php
-/**
-* Smarty PHPunit tests compilation of the {include} tag
-*
-* @package PHPunit
-* @author Uwe Tews
-*/
-
-/**
-* class for {include} tests
-*/
-class CompileIncludeTests extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $this->smarty = SmartyTests::$smarty;
-        SmartyTests::init();
-        $this->smarty->force_compile = true;
-    }
-
-    static function isRunnable()
-    {
-        return true;
-    }
-
-    /**
-    * test standard output
-    */
-    public function testIncludeStandard()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{include file="helloworld.tpl"}');
-        $content = $this->smarty->fetch($tpl);
-        $this->assertEquals("hello world", $content);
-    }
-    /**
-    * Test that assign attribute does not create standard output
-    */
-    public function testIncludeAssign1()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{include file="helloworld.tpl" assign=foo}');
-        $this->assertEquals("", $this->smarty->fetch($tpl));
-    }
-    /**
-    * Test that assign attribute does load variable
-    */
-    public function testIncludeAssign2()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{assign var=foo value=bar}{include file="helloworld.tpl" assign=foo}{$foo}');
-        $this->assertEquals("hello world", $this->smarty->fetch($tpl));
-    }
-    /**
-    * Test passing local vars
-    */
-    public function testIncludePassVars()
-    {
-        $tpl = $this->smarty->createTemplate("eval:{include file='eval:{\$myvar1}{\$myvar2}' myvar1=1 myvar2=2}");
-        $this->assertEquals("12", $this->smarty->fetch($tpl));
-    }
-    /**
-    * Test local scope
-    */
-    public function testIncludeLocalScope()
-    {
-        $this->smarty->assign('foo',1);
-        $tpl = $this->smarty->createTemplate('eval: befor include {$foo} {include file=\'eval:{$foo=2} in include {$foo}\'} after include {$foo}', null, null, $this->smarty);
-        $content = $this->smarty->fetch($tpl);
-        $this->assertContains('befor include 1', $content);
-        $this->assertContains('in include 2', $content);
-        $this->assertContains('after include 1', $content);
-    }
-    /**
-    * Test  parent scope
-    */
-    public function testIncludeParentScope()
-    {
-        $this->smarty->assign('foo',1);
-        $tpl = $this->smarty->createTemplate('eval: befor include {$foo} {include file=\'eval:{$foo=2} in include {$foo}\' scope = parent} after include {$foo}', null, null, $this->smarty);
-        $content = $this->smarty->fetch($tpl);
-        $content2 = $this->smarty->fetch('eval: root value {$foo}' );
-        $this->assertContains('befor include 1', $content);
-        $this->assertContains('in include 2', $content);
-        $this->assertContains('after include 2', $content);
-        $this->assertContains('root value 1', $content2);
-    }
-    /**
-    * Test  root scope
-    */
-    public function testIncludeRootScope()
-    {
-         $this->smarty->error_reporting  = error_reporting() & ~(E_NOTICE|E_USER_NOTICE);
-        $this->smarty->assign('foo',1);
-        $tpl = $this->smarty->createTemplate('eval: befor include {$foo} {include file=\'eval:{$foo=2} in include {$foo}\' scope = root} after include {$foo}');
-        $content = $this->smarty->fetch($tpl);
-        $content2 = $this->smarty->fetch('eval: smarty value {$foo}' );
-        $this->assertNotContains('befor include 1', $content);
-        $this->assertContains('in include 2', $content);
-        $this->assertContains('after include 2', $content);
-        $this->assertContains('smarty value 1', $content2);
-    }
-    /**
-    * Test  root scope
-    */
-    public function testIncludeRootScope2()
-    {
-        $this->smarty->assign('foo',1);
-        $tpl = $this->smarty->createTemplate('eval: befor include {$foo} {include file=\'eval:{$foo=2} in include {$foo}\' scope = root} after include {$foo}', null, null, $this->smarty);
-        $content = $this->smarty->fetch($tpl);
-        $content2 = $this->smarty->fetch('eval: smarty value {$foo}' );
-        $this->assertContains('befor include 1', $content);
-        $this->assertContains('in include 2', $content);
-        $this->assertContains('after include 1', $content);
-        $this->assertContains('smarty value 2', $content2);
-    }
-    /**
-    * Test  recursive includes
-    */
-    public function testRecursiveIncludes1()
-    {
-        $this->smarty->assign('foo',1);
-        $this->smarty->assign('bar','bar');
-        $content = $this->smarty->fetch('test_recursive_includes.tpl');
-        $this->assertContains("before 1 bar<br>\nbefore 2 bar<br>\nbefore 3 bar<br>\nafter 3 bar<br>\nafter 2 bar<br>\nafter 1 bar<br>", $content);
-    }
-    public function testRecursiveIncludes2()
-    {
-        $this->smarty->assign('foo',1);
-        $this->smarty->assign('bar','bar');
-        $content = $this->smarty->fetch('test_recursive_includes2.tpl');
-        $this->assertContains("before 1 bar<br>\nbefore 3 bar<br>\nbefore 5 bar<br>\nafter 5 bar<br>\nafter 3 bar<br>\nafter 1 bar<br>", $content);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPwrtwjZmqEuVcRv/+sM8L3rx3yhmcnoABCT44ldvT74Ti86tVtDOHOkRk8MDtCCp/MrlqH11
+YR/nekMb9cM+Q3FrRK63zxu8ieMM01io0m5fMBBFoQyxd3a9CyfRlbVAFx5pVjQzOARdl5MWP5L6
+KLBVyU7x1G6E0l56y/9t0Fgy/2YHqtNuhU6zNlNpKKH1ECf3qWOwXKCjaJTBgumKOQudbiFxVYsU
+gfAbSgSd9t7ueSazAtCV2mslKIZXE/TmggoQRmH0t6bqgMP9eMO91NZatVF5s8F8lruDoWZ777bU
+/VLzC4SOp9v86BHMH2cFULTkC3vEVPuT88dqNVD3RRC57TjCVref4Le0rUrZkJ5HhjAuPmanqg7w
+XlfD8W33u1uP2+a7e1cXNffgwr4ANCPSMtAotDzDCaxkEiSJM/7qar5sIggifL+A8WRgm+8cP++B
+11U21xq25LnqhHDP6YcOOOXP6W0tuapUz6wmFWI2BfiqmSQ68TQM1kJ+NdB6rGijd7p3e5qtI3X6
+byo7eNJ/cVAh7bmnbGoeuYy+byMO+maxcHEV/0tvukCmiMFsKlqi5KMRX2LL64Hh6G5VtiVFejns
+NBuIv27f+VK9cD1GFgDlbLX3xkJiKpi0DQ0k0LiW/v78hKz5prguMBtCtyRgf3zpLFGcQJaKpG2P
+ICJ8o1P0cCjj+Z4K73rbpCKZxkjRdmqA/dBl9gSYqxA0ZufthD7nmWrqelMfHH0wi6k1QJP8pGWN
+gx7INKaxFNhy6uOxmOl3uYT43KFYYUC2tLhN/3KOYmNlMSmvfMMm2Iz7Krr8IpDDKC1Be0W595Kk
+OUOoG71tlPIuLyet7mjNhaD2TNNPdrJJL5iYuIS8/WwqTMhPAx0GK2zSXR21ciQzKLlelLXXSSlZ
+6/3IdQAoyrUpyw2166LGQaggHuIAzTmfzhPzBg62O6ZCwoeQ7XZknmXy8/ld8yhYkc5WiwFrtg6Q
+MXQbiFTSU6S4AAUuv/oG3D+Q5bEVK33lOu8SUtA/chPbxBbccpBv3BrkcUMlz+9fFUxzLsx80wU3
+jgNJ6SinWH6HXXu8vQuoQagaLqmhm7Xd/Vi8qmKcNbWZko4KKpTPZxZWRT3icKFYvm7O8vmAXBrB
+LXx0hD7VvWmBgPj4/FhFIf04/TvqkCo7jDEtGKNAjCp3GSJdYC0qIRsDEPUl8M6hl2OD0vtrbaup
+MH6WAAO04nvaA4PuZUIuBX5y4oi80xWoLPdBiiuTqjySDpy0xLcnGbpsgmz4mKme5ztrjOgnuvEo
+Fx1Bm97zaNoGJgtQ72u7KD8QVWikkbGtyqvCj/3HP7wbHlzQ3Oj6+220V4fOJmdv0XGlGZJIZD+j
+a6vURbCs1aY+FOC3MkkWdZqkb7U7WRir40jXOveeRpPo/kcU12BLcDBGEwjY+aIfEK5UQP5jdYyC
+sirG7LTRpx0cLjSKICjjEAVr9IafJXDn8O2ZDyLpEk5gcjv/EoMB9EyGtJ/PiQ5BPr/d3tHdZMEC
+1YA+l3eM9Yvt3y9q7Dy6inNtAfysqD5Klc7V1kx7Mc3AOWJUXnWJfdO6eMUCgXo1z4lgAk2InBPd
+4mNCCMOYzAoc9j1urllTXABKxqiax0M9shyh53SKVgJtLMGGYKeKPp5N+j2vgcjJsABPFiUrcVg9
+SsIJ5sq61wAYmZk/uvI6YqxtsPjd4B1QVZw6f5n0cn/DpDW3W+CfEUgLtylC/rfMWSUPTLRO95Ra
+B4DlMCvPoh2iOfVap+h+oa+UIG7ICJEXIA5Xrsr11Uz3xlrzKNKLFUNemgJG0r7f/DevamF360QE
+1+WrHTIuJjfZrKdNDDlL6CW9bYho2efj76NhAlPLJmj3HRg1xaK6pOS399CH7XfQFYYF1zWvpmgn
+gBVrPCDPdvKe40vlilBCYwY7WU/66lEC1ujrGDGpwNb2JuX1JdvXDPWSBseYJ29Udk4Pr2Px1kEr
+y7MU4y+traNb4HxtdX+4oMOAlQJljizjfMiFIJyAG0ZfxnEIQXh/nMIx0LBql++BkTOTiG4bYWaz
+6Jb7FITONmhEa7YRuzIZV/NNcpf/z+NpGkVSu2BMqAJaDDQ38QedPAuVsB6NP/pk/bJN3zKWvSu4
+pITirR81XKDpcVua2ji05LXoETE9QUbwi9ug0xm4EayeOvmXvsuCbr/QFQMZxnxc+z2skJA1tLqA
+xdDtVz2xL9kxFx516vn0WAVteWSfMRiYggOuMNGSXTNyOiM2ZLBEVOrDS/JD2P9V7JvPjNP0tFij
+OTyhwQmXo1r1PBcKFnj0BL5vauagGvuYqvwxfNTWbp/vc4stuN844ihNs8dUQuIuLR2DjkXA7FcB
+VL3prfjNEkl+233678ONoZL6bBd4cwlwC03VQjsFk/w447jmTMBSTK5khdm3HMiwor/lQgQtDeO3
++G28pY5BSyu6YR2nPp1lT3QHFwW36mT1q6ihzrjL223fwjihNNbYroIfaDApt+hVsKixyl1QNszG
+ro9YdQEO9QKRwpGUlGp70YZ0M+5gOMXRWP5z2ie1q3/QH7U/RQITD3idWPP0lfNvoQ0rugUMo70a
+e8jed1SszfGUIbfDw9Legz5RMIN2EM4IcvHWJ+Ap+9YEvmn+GPBPt0ebKerkWc/39e0TXc09o0bl
+wssVHBFtJJarvOBRwc6nHxmu8cthah4AqNWN85krz7xLQBJAK7RGNvuduANGtOdSL8S+867BRLFj
+jmPjT8uAPZwWG7kdtizdUKLu/lQrDW8dKb7hdgmStgo97Vaznto7Fmha4zXgPEj6pyA8r69Xf1X1
+T38SHtkQz0oiLr+KHuBEjS10iJV2GoSzzYDyWKhJym5NdqmlNyzmGWTbOOYg0FgQeoVIGIfcu5u/
+mu5lakg0Zwn2iFkc5k7pM8R9uoks1ML8A1quM3I6dGqd/7oyje5u5NylNqowtTUD0P65CwVIXKN+
+f/jYiExfN/cFB+ZO44FZtdcUnRzogGkvLDp6Fy0qZPpQeSaK5ZjTpL0+NGby754RfpUQBb6cE76W
+Vz0oeQhQkCGzPRIekc63m6v81yMRdJhGiat/Bhvh14zEzaFHHHct7TxZdh4YP1lg8HPza027Fw1P
+yId6ug1thirgByrtZbTAAAQa0YOLN8fFZ0sKb9VnzIj28MBhOYZ8WWC2MYFfUSYBDToPjTzZVX4p
+YtBTtg9UH5qTOmFwW9QPyjc1XaBDfAXqEzcmVlu5z9bhb+sUwwFmV5O+RevAWbdMSeL89pEix1gg
+8z/Dkwtt7QJkvSghchBMs1rWTShptaZx44Raifn/0AqJHesL1Ov+QawP+dDivtKdgcrLw7m1TT0B
+ijDGpKa01hWkSn6B34Arlv2NFUfFmygLCY3rUU0PDYB/WkwYJXOUXOvlAvhzelsxh1d8PyOvOy4U
+6gBJUO8e5vdsFIj/4pgNFiM+6tcv908zlzK94ihaW/iGNr+Wm0yNpINl30aNwNPTJC0Hr9NZHxRC
+Ee9tTFFMl8FzVVmB3QUb6nUxlK72qJVOXC3sgAJ9/Mcen7hTAwFYeylxz6m7RxaJ7I6u3E5H3HH5
+VdvTmChh44lPBiPGZ6ftdau9lpeh4zr5PaQo3VynHqRKfqHo2/CM5/lSzhbHbVjr3CVOzmmCBFO8
+kq26oCbKCCasDSjdZYrdV36ShWubWrDkFO+aDYpZsDouHrpM7HWVEk3KPS4TKTCxhL6rABLJUqpo
+1+DIXN5tbvVXvXio3m6laDB/Mlk+o617x8UeZ/q/B1pwA8lmloLSQbxlB+5F5qMArMrrA/dyaQ0A
+ajxngwdqqy85AxYDkcHUL0CAdpLkBSVBDZqEO67sZp9USSzv9hgdHx+nnoDJ0a06EpFudoPQSyhU
+ODzYc7cld7vu38wbKgG75wsL9cIEHabmsoKVkt+qOAIP9dZCJGcpJ3H+TBZblh37d0eaN2dl3tLt
+fjBjSwVLcDfh8nmp0Hp1IjTFUWF26IvMSPZgbiY3AbD5kzGTD/YYoA6LnDDay7Ay9SF6ZAgheTke
+6a8GUPwycto4Ep65NsqY66ghPMxYa2Sf2kKppTmUVik4Zs++OBnlNTCiWaIwOkMSIQr+fAfIXuu0
+iZGfnavfw3rSW8lnRlzxyieqB4EBtrCf2QprJJMCT4xe7vNmMUjyz0ydJ/ar+VDSpCBFdHA6Gur4
+vEE5QPpIh9L7+49V6UfQRxWJrZv0vPGmS6NdAo9Ji0ozWCEw0c+jncVPW9oTYn0ohj9SCZWW06Qx
++VQ0kx09xO3ee17/91Fg4g8SNinNtgqNPpeWHf70LMVyOk+2kNsRfpkG03fle2kCZXMcSh5lbvdm
+y0OvDO+jZ2S9ypL6m6LL8QQlSzYA5hFBLx+JLalxhlmOcS+mmEbnNgxznNqVM1vhWOx7Bybu+HmY
+qC+Cgg/6bL5EGYwPlQY4l4P7/yH5kuDHO2IxOqGu130JYzv45rwDyNxNUsmLF/HDXz1QN/jbH90j
+B8IQ8B5mvkjpri7TrbK8UOumZm2Rynt/M9GsoX5h0YuSB/MqVKe/ZEKdMyZk+Zasdeo7Ec4QdmGc
+CvyrmGW37FrQnsfigtu39jrqV8MDsKB09lFCJu1yDLr5dGb0oBARfqoI87COlazykH5NgCeAYLQI
+g3JmflDfbZt6hOjm4j4n61Na5OgMyYSvba1dOiQURSBXu60SxbgN4j5Y75pQccaH7eV0RItLgV59
+QAMIl/sM4x56ANgeK6jgl6o6Hjsz9TAibBCkqpIx3i2Hurp0GhN+4hwoulapQieN/L30O/WOg3ix
+nzDdIqFfcpictDecK3/O0MXTcbwgvtElCM1w+tqMdXrbCmKuD4lAbXM8MPt5EWajmFkOLHHmbweJ
+Zc2dzu6VvjutxVr3dJN0vbKw9dni0uqQCk6WJQWHyVSp0FmoNyEjusr/bVnxtd4rHyqK22WsEwJ0
+mn3oeN5Zyspf6KzsP6LoektIDnZMFZdkWop3E2O5fknq8gTNnRFnjndxczLHYt+zZ4hSwVpqXqGQ
+OAkTmMDafPgg6SVRgss1xxfumrlb4GjO7Am5zsYdqfjf/IErnX0gnqs30TfnKQ/kZmlerMOL2m+2
+8ap6O9WT3Wd6qr1vr7jYNTABMcJDgPUatr4alTlVKEOBgy1IDGEpm8eeOY5yGsWvVaGpiFd0gSLw
+yznhMCJPG9F/xCzJR7NQP1rN+Ys3uni7Yh/odLoBNLEjbLU65fKzYKBbzu3QXB0lj4zdu/24JiiP
+ySXZzSfgRnSPk+0SbvVwzELwXTzH9Z1djikc5WAoszBngaI0xJcF1TSu2RUhDBt6bbAge5TLgNm2
+VPMuAfZ+wTijlUBQ8ZEybJsEgWcbzGi+nSvyC8tDJJ5nrMUDS22PjPHWPhgS4k7Vct0I9C3JgoA5
+tE96sBIPeRzJ5AEYcbph1ffJ9HNQDgRMd/ndsFmpmXiCYPpksoX1ofNR19Hjk7sXAL1oM0qE9sCe
+0O+/1nOOV4PTY8RuBpQ3U+G9rwBvoS6j6Fa553Ai8vc5A2lN8P/aW1C1+V/nZeorWZAhDyh+KuSI
+y7eMDEwzcPNtJQJiaBxXijkUeatBMvIrHeEdcdqhN1kgtDB5IkqveCX9eU7LfmBngXWqkL/lehit
+jqfg14hAcLVyBm+D4S+nEwdS5o4EHt/4SvttfxLuNqK3wjKOZ21JWfxY/2IG8wEAqvxwxpILaslF
+Q3T34tusx27u+BlRH1IEDbeNEPkw5H2P0rDLT5tQY8rn3+HFDihxzNz8nOPTL4ZcuredbKpNht78
+qIjroEOqW0CQfNwi6lRzyotNWCkwuaMdJ8mME4+hOr8kmqJ9SkGU9nAE8TFpyd7xJLn9d3GnqjqR
+RKMxGDC9AcBM6kPggjM2rDHiAuXB5vB9Qb73WApo1EsFXABWVDSP7GvDwEj+77I44hMa9NpZ

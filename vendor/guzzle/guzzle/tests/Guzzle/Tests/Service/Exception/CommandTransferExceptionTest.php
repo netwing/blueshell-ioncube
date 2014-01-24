@@ -1,66 +1,62 @@
-<?php
-
-namespace Guzzle\Tests\Service\Exception;
-
-use Guzzle\Http\Exception\MultiTransferException;
-use Guzzle\Http\Message\Request;
-use Guzzle\Service\Exception\CommandTransferException;
-use Guzzle\Tests\Service\Mock\Command\MockCommand;
-
-/**
- * @covers Guzzle\Service\Exception\CommandTransferException
- */
-class CommandTransferExceptionTest extends \Guzzle\Tests\GuzzleTestCase
-{
-    public function testStoresCommands()
-    {
-        $c1 = new MockCommand();
-        $c2 = new MockCommand();
-        $e = new CommandTransferException('Test');
-        $e->addSuccessfulCommand($c1)->addFailedCommand($c2);
-        $this->assertSame(array($c1), $e->getSuccessfulCommands());
-        $this->assertSame(array($c2), $e->getFailedCommands());
-        $this->assertSame(array($c1, $c2), $e->getAllCommands());
-    }
-
-    public function testConvertsMultiExceptionIntoCommandTransfer()
-    {
-        $r1 = new Request('GET', 'http://foo.com');
-        $r2 = new Request('GET', 'http://foobaz.com');
-        $e = new MultiTransferException('Test', 123);
-        $e->addSuccessfulRequest($r1)->addFailedRequest($r2);
-        $ce = CommandTransferException::fromMultiTransferException($e);
-
-        $this->assertInstanceOf('Guzzle\Service\Exception\CommandTransferException', $ce);
-        $this->assertEquals('Test', $ce->getMessage());
-        $this->assertEquals(123, $ce->getCode());
-        $this->assertSame(array($r1), $ce->getSuccessfulRequests());
-        $this->assertSame(array($r2), $ce->getFailedRequests());
-    }
-
-    public function testCanRetrieveExceptionForCommand()
-    {
-        $r1 = new Request('GET', 'http://foo.com');
-        $e1 = new \Exception('foo');
-        $c1 = $this->getMockBuilder('Guzzle\Tests\Service\Mock\Command\MockCommand')
-            ->setMethods(array('getRequest'))
-            ->getMock();
-        $c1->expects($this->once())->method('getRequest')->will($this->returnValue($r1));
-
-        $e = new MultiTransferException('Test', 123);
-        $e->addFailedRequestWithException($r1, $e1);
-        $ce = CommandTransferException::fromMultiTransferException($e);
-        $ce->addFailedCommand($c1);
-
-        $this->assertSame($e1, $ce->getExceptionForFailedCommand($c1));
-    }
-
-    public function testAddsNonRequestExceptions()
-    {
-        $e = new MultiTransferException();
-        $e->add(new \Exception('bar'));
-        $e->addFailedRequestWithException(new Request('GET', 'http://www.foo.com'), new \Exception('foo'));
-        $ce = CommandTransferException::fromMultiTransferException($e);
-        $this->assertEquals(2, count($ce));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

@@ -1,61 +1,90 @@
-<?php
-require_once("config.inc.php");
-$blue->autentica_utente("anagrafica","W");
-if (!array_key_exists("id",$_GET))
-{
-	header("Location:index.php");
-}
-$elenco_nazioni=$blue->elenco_nazioni();
-$key_elenco_nazioni=array_keys($elenco_nazioni);
-$form->campi_testo=array("cliente_nominativo","cliente_nome","cliente_cognome","cliente_indirizzo","cliente_cap","cliente_citta","cliente_provincia","cliente_codice_fiscale","cliente_partita_iva","cliente_telefono1","cliente_telefono2","cliente_telefono3","cliente_email","cliente_numero_documento","cliente_note","cliente_luogo_nascita");
-$form->campi_numero=array("cliente_telefono1","cliente_telefono2","cliente_telefono3");
-$form->campi_lista=array("country"=>$key_elenco_nazioni,"cliente_documento"=>array("CdI","Patente","Patente Nautica","Passaporto"),"cliente_tipo_telefono1"=>array("Abitazione","Cellulare","Ufficio","Fax"),"cliente_tipo_telefono2"=>array("Abitazione","Cellulare","Ufficio","Fax"),"cliente_tipo_telefono3"=>array("Abitazione","Cellulare","Ufficio","Fax"));
-$form->campi_obbligatori=array("cliente_nominativo","cliente_telefono1");
-
-$select_cliente="SELECT cliente_id,cliente_nominativo,cliente_nome,cliente_cognome,cliente_data_nascita,cliente_luogo_nascita,cliente_indirizzo,cliente_citta,cliente_cap,cliente_provincia,country,cliente_telefono1,cliente_tipo_telefono1,cliente_telefono2,cliente_tipo_telefono2,cliente_telefono3,cliente_tipo_telefono3,cliente_email,cliente_codice_fiscale,cliente_partita_iva,cliente_documento,cliente_numero_documento,cliente_rifiuta_comunicazioni,cliente_note FROM ".$tabelle['clienti']." WHERE cliente_id='".$_GET['id']."'";
-$result_cliente=$sql->select_query($select_cliente);
-$row_cliente=mysql_fetch_array($result_cliente);
-// $nascita=explode("-",$row_cliente['cliente_data_nascita']);
-$default_nazione_cliente="country_".$row_cliente['country'];
-$default_documento_cliente="cliente_documento_".$row_cliente['cliente_documento'];
-$default_tipo_telefono1="cliente_tipo_telefono1_".$row_cliente['cliente_tipo_telefono1'];
-$default_tipo_telefono2="cliente_tipo_telefono2_".$row_cliente['cliente_tipo_telefono2'];
-$default_tipo_telefono3="cliente_tipo_telefono3_".$row_cliente['cliente_tipo_telefono3'];
-$form->valori_default=array("cliente_nominativo"=>$row_cliente['cliente_nominativo'],"cliente_nome"=>$row_cliente['cliente_nome'],"cliente_cognome"=>$row_cliente['cliente_cognome'],"cliente_luogo_nascita"=>$row_cliente['cliente_luogo_nascita'],"cliente_data_nascita" => $row_cliente['cliente_data_nascita'], "cliente_indirizzo"=>$row_cliente['cliente_indirizzo'],"cliente_citta"=>$row_cliente['cliente_citta'],"cliente_cap"=>$row_cliente['cliente_cap'],"cliente_provincia"=>$row_cliente['cliente_provincia'],$default_nazione_cliente=>"selected=\"selected\"","cliente_telefono1"=>$row_cliente['cliente_telefono1'],$default_tipo_telefono1=>"selected=\"selected\"","cliente_telefono2"=>$row_cliente['cliente_telefono2'],$default_tipo_telefono2=>"selected=\"selected\"","cliente_telefono3"=>$row_cliente['cliente_telefono3'],$default_tipo_telefono3=>"selected=\"selected\"","cliente_email"=>$row_cliente['cliente_email'],"cliente_codice_fiscale"=>$row_cliente['cliente_codice_fiscale'],"cliente_partita_iva"=>$row_cliente['cliente_partita_iva'],$default_documento_cliente=>"selected=\"selected\"","cliente_numero_documento"=>$row_cliente['cliente_numero_documento'],"cliente_note"=>$row_cliente['cliente_note']);
-$form->inizializza();
-if (count($_POST)>0)
-{
-	$form->verifica();
-	if ($form->errore_form===false) {
-		$cliente_note = "";
-		foreach ($_POST as $k=>$v)
-		{
-			$$k=$sql->pulisci($v);
-		}
-		$cliente_nome=ucwords(strtolower($cliente_nome));
-		$cliente_cognome=ucwords(strtolower($cliente_cognome));
-		$cliente_codice_fiscale=strtoupper($cliente_codice_fiscale);
-		$cliente_partita_iva=strtoupper($cliente_partita_iva);
-		$cliente_rifiuta_comunicazioni='0';
-		if (array_key_exists('cliente_rifiuta_comunicazioni',$_POST)) {
-			$cliente_rifiuta_comunicazioni='1';
-		}
-		$update="UPDATE ".$tabelle['clienti']." SET cliente_nominativo='".$cliente_nominativo."',cliente_nome='".$cliente_nome."',cliente_cognome='".$cliente_cognome."',cliente_luogo_nascita='".$cliente_luogo_nascita."',cliente_data_nascita='".$cliente_data_nascita."',cliente_indirizzo='".$cliente_indirizzo."',cliente_citta='".$cliente_citta."',cliente_cap='".$cliente_cap."',cliente_provincia='".$cliente_provincia."',cliente_telefono1='".$cliente_telefono1."',cliente_tipo_telefono1='".$cliente_tipo_telefono1."',cliente_telefono2='".$cliente_telefono2."',cliente_tipo_telefono2='".$cliente_tipo_telefono2."',cliente_telefono3='".$cliente_telefono3."',cliente_tipo_telefono3='".$cliente_tipo_telefono3."',cliente_email='".$cliente_email."',cliente_codice_fiscale='".$cliente_codice_fiscale."',cliente_partita_iva='".$cliente_partita_iva."',cliente_documento='".$cliente_documento."',cliente_numero_documento='".$cliente_numero_documento."',cliente_rifiuta_comunicazioni='".$cliente_rifiuta_comunicazioni."',cliente_note='".$cliente_note."' WHERE cliente_id='".$cliente_id."'";
-		$result = $sql->update_query($update);
-
-		if ($result) {
-			Yii::app()->user->setFlash("success", Yii::t('app', 'Client updated successfully.'));
-		} else {
-			Yii::app()->user->setFlash("danger", Yii::t('app', 'An error occured.'));
-			header("Location:clienti.php");
-			exit;
-		}
-
-		header("Location:clienti.php");
-		exit;
-		# Fine della procedura di update
-	}
-}
-
-$action = "cliente_modifica.php?id=" . intval($_GET['id']);
-require_once "views/client/update.php";
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

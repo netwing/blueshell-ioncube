@@ -1,140 +1,55 @@
-
-<?php
-/* @var $this CustomerController */
-/* @var $model Customer */
-
-$this->pageTitle = Yii::t('app', 'Manage Customers');
-
-$this->breadcrumbs=array(
-	'Customers'=>array('index'),
-	'Manage',
-);
-
-$this->menu=array(
-	array('label' => Yii::t('app', 'Manage Customer'), 'url'=>array('admin')),
-	array('label' => Yii::t('app', 'Create Customer'), 'url'=>array('create')),
-);
-
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#customer-grid').yiiGridView('update', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
-
-<p>
-<?php echo Yii::t('app', 'You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.'); ?></p>
-
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button btn btn-default')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
-
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'customer-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'rowCssClass'   => array(),
-	'itemsCssClass' => 'table table-hover table-bordered',
-	'pagerCssClass'     => "col-md-12 text-right",
-	'pager'             => array(
-	    'header'                => '',
-	    'internalPageCssClass'  => '',
-	    'firstPageCssClass'     => '',
-	    'lastPageCssClass'      => '',
-	    'selectedPageCssClass'  => 'active',
-	    'htmlOptions'   => array(
-	        'class'     => 'pagination pagination-sm',
-	    )
-	),
-	'columns'=>array(
-		'cliente_nominativo',
-		'cliente_tipo',
-		'cliente_nome',
-		'cliente_cognome',
-        'cliente_telefono1',
-		/*
-        'cliente_data_nascita',
-		'cliente_luogo_nascita',
-		'cliente_indirizzo',
-		'cliente_citta',
-		'cliente_cap',
-		'cliente_provincia',
-		'cliente_nazione',
-		'cliente_tipo_telefono1',
-		'cliente_telefono2',
-		'cliente_tipo_telefono2',
-		'cliente_telefono3',
-		'cliente_tipo_telefono3',
-		'cliente_email',
-		'cliente_codice_fiscale',
-		'cliente_partita_iva',
-		'cliente_documento',
-		'cliente_numero_documento',
-		'cliente_rifiuta_comunicazioni',
-		'cliente_note',
-		'data_inserimento_cliente',
-		*/
-    // Show a column with 3 icons as buttons
-    array(
-        'class'         => 'zii.widgets.grid.CButtonColumn',
-        'htmlOptions'   => array('style' => 'white-space: nowrap'),
-        'afterDelete'   => 'function(link,success,data) { if (success && data) alert(data); }',
-        'template'      => '{view} {update} {delete} {detail}',
-        'buttons'       => array(
-            'view'      => array(
-                'options'       => array('rel' => 'tooltip', 'data-toggle' => 'tooltip', 'title' => Yii::t('app', 'View')),
-                'label'         => '<i class="fa fa-eye"></i>',
-                'imageUrl'      => false,
-            ),
-            'update'      => array(
-                'options'       => array('rel' => 'tooltip', 'data-toggle' => 'tooltip', 'title' => Yii::t('app', 'Update')),
-                'label'         => '<i class="fa fa-pencil"></i>',
-                'imageUrl'      => false,
-            ),
-            'delete'      => array(
-                'options'       => array('rel' => 'tooltip', 'data-toggle' => 'tooltip', 'title' => Yii::t('app', 'Delete')),
-                'label'         => '<i class="fa fa-times"></i>',
-                'imageUrl'      => false,
-            ),
-            'detail'      => array(
-                'options'       => array('rel' => 'tooltip', 'data-toggle' => 'tooltip', 'title' => Yii::t('app', 'Details')),
-                'label'         => '<i class="fa fa-file-text"></i>',
-                'imageUrl'      => false,
-                'url'           => 'Yii::app()->createUrl("/admin/customer/detail", array("id" => $data->cliente_id))',
-                // 'visible'       => '($data->orderDetail)',
-            ),
-        )
-    ),
-    /*
-    // Show a column with dropdown actions
-    array( 'header'=>'Action', 'type'=>'raw',
-        'value'=>'\'
-            <div class="btn-group">
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                Action <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="\' . Yii::app()->createUrl("/admin/user/update", array("id" => $data->id)) . \'">Edit \' . $data->id . \'</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-              </ul>
-            </div>
-            \'', 
-        ),    
-    */
-	),
-)); ?>
-
+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

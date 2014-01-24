@@ -1,83 +1,59 @@
-<?php
-
-namespace Guzzle\Tests\Batch;
-
-use Guzzle\Batch\BatchCommandTransfer;
-use Guzzle\Service\Client;
-use Guzzle\Tests\Service\Mock\Command\MockCommand as Mc;
-
-/**
- * @covers Guzzle\Batch\BatchCommandTransfer
- */
-class BatchCommandTransferTest extends \Guzzle\Tests\GuzzleTestCase
-{
-    public function testCreatesBatchesBasedOnClient()
-    {
-        $client1 = new Client('http://www.example.com');
-        $client2 = new Client('http://www.example.com');
-
-        $commands = array(new Mc(), new Mc(), new Mc(), new Mc(), new Mc());
-
-        $queue = new \SplQueue();
-        foreach ($commands as $i => $command) {
-            if ($i % 2) {
-                $command->setClient($client1);
-            } else {
-                $command->setClient($client2);
-            }
-            $queue[] = $command;
-        }
-
-        $batch = new BatchCommandTransfer(2);
-        $this->assertEquals(array(
-            array($commands[0], $commands[2]),
-            array($commands[4]),
-            array($commands[1], $commands[3])
-        ), $batch->createBatches($queue));
-    }
-
-    /**
-     * @expectedException Guzzle\Common\Exception\InvalidArgumentException
-     */
-    public function testEnsuresAllItemsAreCommands()
-    {
-        $queue = new \SplQueue();
-        $queue[] = 'foo';
-        $batch = new BatchCommandTransfer(2);
-        $batch->createBatches($queue);
-    }
-
-    public function testTransfersBatches()
-    {
-        $client = $this->getMockBuilder('Guzzle\Service\Client')
-            ->setMethods(array('send'))
-            ->getMock();
-        $client->expects($this->once())
-            ->method('send');
-        $command = new Mc();
-        $command->setClient($client);
-        $batch = new BatchCommandTransfer(2);
-        $batch->transfer(array($command));
-    }
-
-    public function testDoesNotTransfersEmptyBatches()
-    {
-        $batch = new BatchCommandTransfer(2);
-        $batch->transfer(array());
-    }
-
-    /**
-     * @expectedException Guzzle\Service\Exception\InconsistentClientTransferException
-     */
-    public function testEnsuresAllCommandsUseTheSameClient()
-    {
-        $batch = new BatchCommandTransfer(2);
-        $client1 = new Client('http://www.example.com');
-        $client2 = new Client('http://www.example.com');
-        $command1 = new Mc();
-        $command1->setClient($client1);
-        $command2 = new Mc();
-        $command2->setClient($client2);
-        $batch->transfer(array($command1, $command2));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+C3BZdjvDBG0uOALWim31

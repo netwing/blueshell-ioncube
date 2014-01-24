@@ -1,801 +1,270 @@
-<?php
-/**
- * PHP_CodeCoverage
- *
- * Copyright (c) 2009-2013, Sebastian Bergmann <sebastian@phpunit.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @category   PHP
- * @package    CodeCoverage
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://github.com/sebastianbergmann/php-code-coverage
- * @since      File available since Release 1.0.0
- */
-
-// @codeCoverageIgnoreStart
-// @codingStandardsIgnoreStart
-/**
- * @SuppressWarnings(PHPMD)
- */
-if (!function_exists('trait_exists')) {
-    function trait_exists($name)
-    {
-        return FALSE;
-    }
-}
-// @codingStandardsIgnoreEnd
-// @codeCoverageIgnoreEnd
-
-/**
- * Provides collection functionality for PHP code coverage information.
- *
- * @category   PHP
- * @package    CodeCoverage
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://github.com/sebastianbergmann/php-code-coverage
- * @since      Class available since Release 1.0.0
- */
-class PHP_CodeCoverage
-{
-    /**
-     * @var PHP_CodeCoverage_Driver
-     */
-    protected $driver;
-
-    /**
-     * @var PHP_CodeCoverage_Filter
-     */
-    protected $filter;
-
-    /**
-     * @var boolean
-     */
-    protected $cacheTokens = FALSE;
-
-    /**
-     * @var boolean
-     */
-    protected $forceCoversAnnotation = FALSE;
-
-    /**
-     * @var boolean
-     */
-    protected $mapTestClassNameToCoveredClassName = FALSE;
-
-    /**
-     * @var boolean
-     */
-    protected $addUncoveredFilesFromWhitelist = TRUE;
-
-    /**
-     * @var boolean
-     */
-    protected $processUncoveredFilesFromWhitelist = FALSE;
-
-    /**
-     * @var mixed
-     */
-    protected $currentId;
-
-    /**
-     * Code coverage data.
-     *
-     * @var array
-     */
-    protected $data = array();
-
-    /**
-     * Test data.
-     *
-     * @var array
-     */
-    protected $tests = array();
-
-    /**
-     * Constructor.
-     *
-     * @param PHP_CodeCoverage_Driver $driver
-     * @param PHP_CodeCoverage_Filter $filter
-     */
-    public function __construct(PHP_CodeCoverage_Driver $driver = NULL, PHP_CodeCoverage_Filter $filter = NULL)
-    {
-        if ($driver === NULL) {
-            $driver = new PHP_CodeCoverage_Driver_Xdebug;
-        }
-
-        if ($filter === NULL) {
-            $filter = new PHP_CodeCoverage_Filter;
-        }
-
-        $this->driver = $driver;
-        $this->filter = $filter;
-    }
-
-    /**
-     * Returns the PHP_CodeCoverage_Report_Node_* object graph
-     * for this PHP_CodeCoverage object.
-     *
-     * @return PHP_CodeCoverage_Report_Node_Directory
-     * @since  Method available since Release 1.1.0
-     */
-    public function getReport()
-    {
-        $factory = new PHP_CodeCoverage_Report_Factory;
-
-        return $factory->create($this);
-    }
-
-    /**
-     * Clears collected code coverage data.
-     */
-    public function clear()
-    {
-        $this->currentId = NULL;
-        $this->data      = array();
-        $this->tests     = array();
-    }
-
-    /**
-     * Returns the PHP_CodeCoverage_Filter used.
-     *
-     * @return PHP_CodeCoverage_Filter
-     */
-    public function filter()
-    {
-        return $this->filter;
-    }
-
-    /**
-     * Returns the collected code coverage data.
-     *
-     * @return array
-     * @since  Method available since Release 1.1.0
-     */
-    public function getData()
-    {
-        if ($this->addUncoveredFilesFromWhitelist) {
-            $this->addUncoveredFilesFromWhitelist();
-        }
-
-        // We need to apply the blacklist filter a second time
-        // when no whitelist is used.
-        if (!$this->filter->hasWhitelist()) {
-            $this->applyListsFilter($this->data);
-        }
-
-        return $this->data;
-    }
-
-    /**
-     * Returns the test data.
-     *
-     * @return array
-     * @since  Method available since Release 1.1.0
-     */
-    public function getTests()
-    {
-        return $this->tests;
-    }
-
-    /**
-     * Start collection of code coverage information.
-     *
-     * @param  mixed   $id
-     * @param  boolean $clear
-     * @throws PHP_CodeCoverage_Exception
-     */
-    public function start($id, $clear = FALSE)
-    {
-        if (!is_bool($clear)) {
-            throw PHP_CodeCoverage_Util_InvalidArgumentHelper::factory(
-              1, 'boolean'
-            );
-        }
-
-        if ($clear) {
-            $this->clear();
-        }
-
-        $this->currentId = $id;
-
-        $this->driver->start();
-    }
-
-    /**
-     * Stop collection of code coverage information.
-     *
-     * @param  boolean $append
-     * @return array
-     * @throws PHP_CodeCoverage_Exception
-     */
-    public function stop($append = TRUE)
-    {
-        if (!is_bool($append)) {
-            throw PHP_CodeCoverage_Util_InvalidArgumentHelper::factory(
-              1, 'boolean'
-            );
-        }
-
-        $data = $this->driver->stop();
-        $this->append($data, NULL, $append);
-
-        $this->currentId = NULL;
-
-        return $data;
-    }
-
-    /**
-     * Appends code coverage data.
-     *
-     * @param array   $data
-     * @param mixed   $id
-     * @param boolean $append
-     */
-    public function append(array $data, $id = NULL, $append = TRUE)
-    {
-        if ($id === NULL) {
-            $id = $this->currentId;
-        }
-
-        if ($id === NULL) {
-            throw new PHP_CodeCoverage_Exception;
-        }
-
-        $this->applyListsFilter($data);
-        $this->initializeFilesThatAreSeenTheFirstTime($data);
-
-        if (!$append) {
-            return;
-        }
-
-        if ($id != 'UNCOVERED_FILES_FROM_WHITELIST') {
-            $this->applyCoversAnnotationFilter($data, $id);
-        }
-
-        if (empty($data)) {
-            return;
-        }
-
-        $status = NULL;
-
-        if ($id instanceof PHPUnit_Framework_TestCase) {
-            $status = $id->getStatus();
-            $id     = get_class($id) . '::' . $id->getName();
-        }
-
-        else if ($id instanceof PHPUnit_Extensions_PhptTestCase) {
-            $id = $id->getName();
-        }
-
-        $this->tests[$id] = $status;
-
-        foreach ($data as $file => $lines) {
-            if (!$this->filter->isFile($file)) {
-                continue;
-            }
-
-            foreach ($lines as $k => $v) {
-                if ($v == 1) {
-                    $this->data[$file][$k][] = $id;
-                }
-            }
-        }
-    }
-
-    /**
-     * Merges the data from another instance of PHP_CodeCoverage.
-     *
-     * @param PHP_CodeCoverage $that
-     */
-    public function merge(PHP_CodeCoverage $that)
-    {
-        foreach ($that->data as $file => $lines) {
-            if (!isset($this->data[$file])) {
-                if (!$this->filter->isFiltered($file)) {
-                    $this->data[$file] = $lines;
-                }
-
-                continue;
-            }
-
-            foreach ($lines as $line => $data) {
-                if ($data !== NULL) {
-                    if (!isset($this->data[$file][$line])) {
-                        $this->data[$file][$line] = $data;
-                    } else {
-                        $this->data[$file][$line] = array_unique(
-                          array_merge($this->data[$file][$line], $data)
-                        );
-                    }
-                }
-            }
-        }
-
-        $this->tests = array_merge($this->tests, $that->getTests());
-    }
-
-    /**
-     * @param  boolean $flag
-     * @throws PHP_CodeCoverage_Exception
-     * @since  Method available since Release 1.1.0
-     */
-    public function setCacheTokens($flag)
-    {
-        if (!is_bool($flag)) {
-            throw PHP_CodeCoverage_Util_InvalidArgumentHelper::factory(
-              1, 'boolean'
-            );
-        }
-
-        $this->cacheTokens = $flag;
-    }
-
-    /**
-     * @param boolean $flag
-     * @since Method available since Release 1.1.0
-     */
-    public function getCacheTokens()
-    {
-        return $this->cacheTokens;
-    }
-
-    /**
-     * @param  boolean $flag
-     * @throws PHP_CodeCoverage_Exception
-     */
-    public function setForceCoversAnnotation($flag)
-    {
-        if (!is_bool($flag)) {
-            throw PHP_CodeCoverage_Util_InvalidArgumentHelper::factory(
-              1, 'boolean'
-            );
-        }
-
-        $this->forceCoversAnnotation = $flag;
-    }
-
-    /**
-     * @param  boolean $flag
-     * @throws PHP_CodeCoverage_Exception
-     */
-    public function setMapTestClassNameToCoveredClassName($flag)
-    {
-        if (!is_bool($flag)) {
-            throw PHP_CodeCoverage_Util_InvalidArgumentHelper::factory(
-              1, 'boolean'
-            );
-        }
-
-        $this->mapTestClassNameToCoveredClassName = $flag;
-    }
-
-    /**
-     * @param  boolean $flag
-     * @throws PHP_CodeCoverage_Exception
-     */
-    public function setAddUncoveredFilesFromWhitelist($flag)
-    {
-        if (!is_bool($flag)) {
-            throw PHP_CodeCoverage_Util_InvalidArgumentHelper::factory(
-              1, 'boolean'
-            );
-        }
-
-        $this->addUncoveredFilesFromWhitelist = $flag;
-    }
-
-    /**
-     * @param  boolean $flag
-     * @throws PHP_CodeCoverage_Exception
-     */
-    public function setProcessUncoveredFilesFromWhitelist($flag)
-    {
-        if (!is_bool($flag)) {
-            throw PHP_CodeCoverage_Util_InvalidArgumentHelper::factory(
-              1, 'boolean'
-            );
-        }
-
-        $this->processUncoveredFilesFromWhitelist = $flag;
-    }
-
-    /**
-     * Applies the @covers annotation filtering.
-     *
-     * @param array $data
-     * @param mixed $id
-     */
-    protected function applyCoversAnnotationFilter(&$data, $id)
-    {
-        if ($id instanceof PHPUnit_Framework_TestCase) {
-            $testClassName    = get_class($id);
-            $linesToBeCovered = $this->getLinesToBeCovered(
-              $testClassName, $id->getName()
-            );
-
-            if ($linesToBeCovered === FALSE) {
-                $data = array();
-                return;
-            }
-
-            if ($this->mapTestClassNameToCoveredClassName &&
-                empty($linesToBeCovered)) {
-                $testedClass = substr($testClassName, 0, -4);
-
-                if (class_exists($testedClass)) {
-                    $class = new ReflectionClass($testedClass);
-
-                    $linesToBeCovered = array(
-                      $class->getFileName() => range(
-                        $class->getStartLine(), $class->getEndLine()
-                      )
-                    );
-                }
-            }
-        } else {
-            $linesToBeCovered = array();
-        }
-
-        if (!empty($linesToBeCovered)) {
-            $data = array_intersect_key($data, $linesToBeCovered);
-
-            foreach (array_keys($data) as $filename) {
-                $data[$filename] = array_intersect_key(
-                  $data[$filename], array_flip($linesToBeCovered[$filename])
-                );
-            }
-        }
-
-        else if ($this->forceCoversAnnotation) {
-            $data = array();
-        }
-    }
-
-    /**
-     * Applies the blacklist/whitelist filtering.
-     *
-     * @param array $data
-     */
-    protected function applyListsFilter(&$data)
-    {
-        foreach (array_keys($data) as $filename) {
-            if ($this->filter->isFiltered($filename)) {
-                unset($data[$filename]);
-            }
-        }
-    }
-
-    /**
-     * @since Method available since Release 1.1.0
-     */
-    protected function initializeFilesThatAreSeenTheFirstTime($data)
-    {
-        foreach ($data as $file => $lines) {
-            if ($this->filter->isFile($file) && !isset($this->data[$file])) {
-                $this->data[$file] = array();
-
-                foreach ($lines as $k => $v) {
-                    $this->data[$file][$k] = $v == -2 ? NULL : array();
-                }
-            }
-        }
-    }
-
-    /**
-     * Processes whitelisted files that are not covered.
-     */
-    protected function addUncoveredFilesFromWhitelist()
-    {
-        $data           = array();
-        $uncoveredFiles = array_diff(
-          $this->filter->getWhitelist(), array_keys($this->data)
-        );
-
-        foreach ($uncoveredFiles as $uncoveredFile) {
-            if (!file_exists($uncoveredFile)) {
-                continue;
-            }
-
-            if ($this->processUncoveredFilesFromWhitelist) {
-                $this->processUncoveredFileFromWhitelist(
-                  $uncoveredFile, $data, $uncoveredFiles
-                );
-            } else {
-                $data[$uncoveredFile] = array();
-
-                $lines = count(file($uncoveredFile));
-
-                for ($i = 1; $i <= $lines; $i++) {
-                    $data[$uncoveredFile][$i] = -1;
-                }
-            }
-        }
-
-        $this->append($data, 'UNCOVERED_FILES_FROM_WHITELIST');
-    }
-
-    /**
-     * @param string $uncoveredFile
-     * @param array  $data
-     * @param array  $uncoveredFiles
-     */
-    protected function processUncoveredFileFromWhitelist($uncoveredFile, array &$data, array $uncoveredFiles)
-    {
-        $this->driver->start();
-        include_once $uncoveredFile;
-        $coverage = $this->driver->stop();
-
-        foreach ($coverage as $file => $fileCoverage) {
-            if (!isset($data[$file]) &&
-                in_array($file, $uncoveredFiles)) {
-                foreach (array_keys($fileCoverage) as $key) {
-                    if ($fileCoverage[$key] == 1) {
-                        $fileCoverage[$key] = -1;
-                    }
-                }
-
-                $data[$file] = $fileCoverage;
-            }
-        }
-    }
-
-    /**
-     * Returns the files and lines a test method wants to cover.
-     *
-     * @param  string $className
-     * @param  string $methodName
-     * @return array
-     * @since  Method available since Release 1.2.0
-     */
-    protected function getLinesToBeCovered($className, $methodName)
-    {
-        $codeToCoverList = array();
-        $result          = array();
-
-        // @codeCoverageIgnoreStart
-        if (($pos = strpos($methodName, ' ')) !== FALSE) {
-            $methodName = substr($methodName, 0, $pos);
-        }
-        // @codeCoverageIgnoreEnd
-
-        $class = new ReflectionClass($className);
-
-        try {
-            $method = new ReflectionMethod($className, $methodName);
-        }
-
-        catch (ReflectionException $e) {
-            return array();
-        }
-
-        $docComment = substr($class->getDocComment(), 3, -2) . PHP_EOL . substr($method->getDocComment(), 3, -2);
-
-        $templateMethods = array(
-          'setUp', 'assertPreConditions', 'assertPostConditions', 'tearDown'
-        );
-
-        foreach ($templateMethods as $templateMethod) {
-            if ($class->hasMethod($templateMethod)) {
-                $reflector   = $class->getMethod($templateMethod);
-                $docComment .= PHP_EOL . substr($reflector->getDocComment(), 3, -2);
-                unset($reflector);
-            }
-        }
-
-        if (strpos($docComment, '@coversNothing') !== FALSE) {
-            return FALSE;
-        }
-
-        $classShortcut = preg_match_all(
-          '(@coversDefaultClass\s+(?P<coveredClass>[^\s]++)\s*$)m',
-          $class->getDocComment(),
-          $matches
-        );
-
-        if ($classShortcut) {
-            if ($classShortcut > 1) {
-                throw new PHP_CodeCoverage_Exception(
-                  sprintf(
-                    'More than one @coversClass annotation in class or interface "%s".',
-                    $className
-                  )
-                );
-            }
-
-            $classShortcut = $matches['coveredClass'][0];
-        }
-
-        $match = preg_match_all(
-          '(@covers\s+(?P<coveredElement>[^\s()]++)[\s()]*$)m',
-          $docComment,
-          $matches
-        );
-
-        if ($match) {
-            foreach ($matches['coveredElement'] as $coveredElement) {
-                if ($classShortcut && strncmp($coveredElement, '::', 2) === 0) {
-                    $coveredElement = $classShortcut . $coveredElement;
-                }
-
-                $codeToCoverList = array_merge(
-                  $codeToCoverList,
-                  $this->resolveCoversToReflectionObjects($coveredElement)
-                );
-            }
-
-            foreach ($codeToCoverList as $codeToCover) {
-                $fileName = $codeToCover->getFileName();
-
-                if (!isset($result[$fileName])) {
-                    $result[$fileName] = array();
-                }
-
-                $result[$fileName] = array_unique(
-                  array_merge(
-                    $result[$fileName],
-                    range(
-                      $codeToCover->getStartLine(), $codeToCover->getEndLine()
-                    )
-                  )
-                );
-            }
-        }
-
-        return $result;
-    }
-
-    /**
-     * @param  string $coveredElement
-     * @return array
-     * @since  Method available since Release 1.2.0
-     */
-    protected function resolveCoversToReflectionObjects($coveredElement)
-    {
-        $codeToCoverList = array();
-
-        if (strpos($coveredElement, '::') !== FALSE) {
-            list($className, $methodName) = explode('::', $coveredElement);
-
-            if (isset($methodName[0]) && $methodName[0] == '<') {
-                $classes = array($className);
-
-                foreach ($classes as $className) {
-                    if (!class_exists($className) &&
-                        !interface_exists($className)) {
-                        throw new PHP_CodeCoverage_Exception(
-                          sprintf(
-                            'Trying to @cover not existing class or ' .
-                            'interface "%s".',
-                            $className
-                          )
-                        );
-                    }
-
-                    $class   = new ReflectionClass($className);
-                    $methods = $class->getMethods();
-                    $inverse = isset($methodName[1]) && $methodName[1] == '!';
-
-                    if (strpos($methodName, 'protected')) {
-                        $visibility = 'isProtected';
-                    }
-
-                    else if (strpos($methodName, 'private')) {
-                        $visibility = 'isPrivate';
-                    }
-
-                    else if (strpos($methodName, 'public')) {
-                        $visibility = 'isPublic';
-                    }
-
-                    foreach ($methods as $method) {
-                        if ($inverse && !$method->$visibility()) {
-                            $codeToCoverList[] = $method;
-                        }
-
-                        else if (!$inverse && $method->$visibility()) {
-                            $codeToCoverList[] = $method;
-                        }
-                    }
-                }
-            } else {
-                $classes = array($className);
-
-                foreach ($classes as $className) {
-                    if ($className == '' && function_exists($methodName)) {
-                        $codeToCoverList[] = new ReflectionFunction(
-                          $methodName
-                        );
-                    } else {
-                        if (!((class_exists($className) ||
-                               interface_exists($className) ||
-                               trait_exists($className)) &&
-                              method_exists($className, $methodName))) {
-                            throw new PHP_CodeCoverage_Exception(
-                              sprintf(
-                                'Trying to @cover not existing method "%s::%s".',
-                                $className,
-                                $methodName
-                              )
-                            );
-                        }
-
-                        $codeToCoverList[] = new ReflectionMethod(
-                          $className, $methodName
-                        );
-                    }
-                }
-            }
-        } else {
-            $extended = FALSE;
-
-            if (strpos($coveredElement, '<extended>') !== FALSE) {
-                $coveredElement = str_replace(
-                  '<extended>', '', $coveredElement
-                );
-
-                $extended = TRUE;
-            }
-
-            $classes = array($coveredElement);
-
-            if ($extended) {
-                $classes = array_merge(
-                  $classes,
-                  class_implements($coveredElement),
-                  class_parents($coveredElement)
-                );
-            }
-
-            foreach ($classes as $className) {
-                if (!class_exists($className) &&
-                    !interface_exists($className) &&
-                    !trait_exists($className)) {
-                    throw new PHP_CodeCoverage_Exception(
-                      sprintf(
-                        'Trying to @cover not existing class or ' .
-                        'interface "%s".',
-                        $className
-                      )
-                    );
-                }
-
-                $codeToCoverList[] = new ReflectionClass($className);
-            }
-        }
-
-        return $codeToCoverList;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

@@ -1,283 +1,148 @@
-<?php
-
-/*
- * This file is part of the Monolog package.
- *
- * (c) Jordi Boggiano <j.boggiano@seld.be>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Monolog\Handler;
-
-use Monolog\TestCase;
-use Monolog\Logger;
-
-/**
- * @author Pablo de Leon Belloc <pablolb@gmail.com>
- */
-class SocketHandlerTest extends TestCase
-{
-    /**
-     * @var Monolog\Handler\SocketHandler
-     */
-    private $handler;
-
-    /**
-     * @var resource
-     */
-    private $res;
-
-    /**
-     * @expectedException UnexpectedValueException
-     */
-    public function testInvalidHostname()
-    {
-        $this->createHandler('garbage://here');
-        $this->writeRecord('data');
-    }
-
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testBadConnectionTimeout()
-    {
-        $this->createHandler('localhost:1234');
-        $this->handler->setConnectionTimeout(-1);
-    }
-
-    public function testSetConnectionTimeout()
-    {
-        $this->createHandler('localhost:1234');
-        $this->handler->setConnectionTimeout(10.1);
-        $this->assertEquals(10.1, $this->handler->getConnectionTimeout());
-    }
-
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testBadTimeout()
-    {
-        $this->createHandler('localhost:1234');
-        $this->handler->setTimeout(-1);
-    }
-
-    public function testSetTimeout()
-    {
-        $this->createHandler('localhost:1234');
-        $this->handler->setTimeout(10.25);
-        $this->assertEquals(10.25, $this->handler->getTimeout());
-    }
-
-    public function testSetConnectionString()
-    {
-        $this->createHandler('tcp://localhost:9090');
-        $this->assertEquals('tcp://localhost:9090', $this->handler->getConnectionString());
-    }
-
-    /**
-     * @expectedException UnexpectedValueException
-     */
-    public function testExceptionIsThrownOnFsockopenError()
-    {
-        $this->setMockHandler(array('fsockopen'));
-        $this->handler->expects($this->once())
-            ->method('fsockopen')
-            ->will($this->returnValue(false));
-        $this->writeRecord('Hello world');
-    }
-
-    /**
-     * @expectedException UnexpectedValueException
-     */
-    public function testExceptionIsThrownOnPfsockopenError()
-    {
-        $this->setMockHandler(array('pfsockopen'));
-        $this->handler->expects($this->once())
-            ->method('pfsockopen')
-            ->will($this->returnValue(false));
-        $this->handler->setPersistent(true);
-        $this->writeRecord('Hello world');
-    }
-
-    /**
-     * @expectedException UnexpectedValueException
-     */
-    public function testExceptionIsThrownIfCannotSetTimeout()
-    {
-        $this->setMockHandler(array('streamSetTimeout'));
-        $this->handler->expects($this->once())
-            ->method('streamSetTimeout')
-            ->will($this->returnValue(false));
-        $this->writeRecord('Hello world');
-    }
-
-    /**
-     * @expectedException RuntimeException
-     */
-    public function testWriteFailsOnIfFwriteReturnsFalse()
-    {
-        $this->setMockHandler(array('fwrite'));
-
-        $callback = function($arg) {
-            $map = array(
-                'Hello world' => 6,
-                'world' => false,
-            );
-
-            return $map[$arg];
-        };
-
-        $this->handler->expects($this->exactly(2))
-            ->method('fwrite')
-            ->will($this->returnCallback($callback));
-
-        $this->writeRecord('Hello world');
-    }
-
-    /**
-     * @expectedException RuntimeException
-     */
-    public function testWriteFailsIfStreamTimesOut()
-    {
-        $this->setMockHandler(array('fwrite', 'streamGetMetadata'));
-
-        $callback = function($arg) {
-            $map = array(
-                'Hello world' => 6,
-                'world' => 5,
-            );
-
-            return $map[$arg];
-        };
-
-        $this->handler->expects($this->exactly(1))
-            ->method('fwrite')
-            ->will($this->returnCallback($callback));
-        $this->handler->expects($this->exactly(1))
-            ->method('streamGetMetadata')
-            ->will($this->returnValue(array('timed_out' => true)));
-
-        $this->writeRecord('Hello world');
-    }
-
-    /**
-     * @expectedException RuntimeException
-     */
-    public function testWriteFailsOnIncompleteWrite()
-    {
-        $this->setMockHandler(array('fwrite', 'streamGetMetadata'));
-
-        $res = $this->res;
-        $callback = function($string) use ($res) {
-            fclose($res);
-
-            return strlen('Hello');
-        };
-
-        $this->handler->expects($this->exactly(1))
-            ->method('fwrite')
-            ->will($this->returnCallback($callback));
-        $this->handler->expects($this->exactly(1))
-            ->method('streamGetMetadata')
-            ->will($this->returnValue(array('timed_out' => false)));
-
-        $this->writeRecord('Hello world');
-    }
-
-    public function testWriteWithMemoryFile()
-    {
-        $this->setMockHandler();
-        $this->writeRecord('test1');
-        $this->writeRecord('test2');
-        $this->writeRecord('test3');
-        fseek($this->res, 0);
-        $this->assertEquals('test1test2test3', fread($this->res, 1024));
-    }
-
-    public function testWriteWithMock()
-    {
-        $this->setMockHandler(array('fwrite'));
-
-        $callback = function($arg) {
-            $map = array(
-                'Hello world' => 6,
-                'world' => 5,
-            );
-
-            return $map[$arg];
-        };
-
-        $this->handler->expects($this->exactly(2))
-            ->method('fwrite')
-            ->will($this->returnCallback($callback));
-
-        $this->writeRecord('Hello world');
-    }
-
-    public function testClose()
-    {
-        $this->setMockHandler();
-        $this->writeRecord('Hello world');
-        $this->assertInternalType('resource', $this->res);
-        $this->handler->close();
-        $this->assertFalse(is_resource($this->res), "Expected resource to be closed after closing handler");
-    }
-
-    public function testCloseDoesNotClosePersistentSocket()
-    {
-        $this->setMockHandler();
-        $this->handler->setPersistent(true);
-        $this->writeRecord('Hello world');
-        $this->assertTrue(is_resource($this->res));
-        $this->handler->close();
-        $this->assertTrue(is_resource($this->res));
-    }
-
-    private function createHandler($connectionString)
-    {
-        $this->handler = new SocketHandler($connectionString);
-        $this->handler->setFormatter($this->getIdentityFormatter());
-    }
-
-    private function writeRecord($string)
-    {
-        $this->handler->handle($this->getRecord(Logger::WARNING, $string));
-    }
-
-    private function setMockHandler(array $methods = array())
-    {
-        $this->res = fopen('php://memory', 'a');
-
-        $defaultMethods = array('fsockopen', 'pfsockopen', 'streamSetTimeout');
-        $newMethods = array_diff($methods, $defaultMethods);
-
-        $finalMethods = array_merge($defaultMethods, $newMethods);
-
-        $this->handler = $this->getMock(
-            '\Monolog\Handler\SocketHandler', $finalMethods, array('localhost:1234')
-        );
-
-        if (!in_array('fsockopen', $methods)) {
-            $this->handler->expects($this->any())
-                ->method('fsockopen')
-                ->will($this->returnValue($this->res));
-        }
-
-        if (!in_array('pfsockopen', $methods)) {
-            $this->handler->expects($this->any())
-                ->method('pfsockopen')
-                ->will($this->returnValue($this->res));
-        }
-
-        if (!in_array('streamSetTimeout', $methods)) {
-            $this->handler->expects($this->any())
-                ->method('streamSetTimeout')
-                ->will($this->returnValue(true));
-        }
-
-        $this->handler->setFormatter($this->getIdentityFormatter());
-    }
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

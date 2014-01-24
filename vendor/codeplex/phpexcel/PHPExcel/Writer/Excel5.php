@@ -1,961 +1,419 @@
-<?php
-/**
- * PHPExcel
- *
- * Copyright (c) 2006 - 2012 PHPExcel
- *
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation; either
- * version 2.1 of the License, or (at your option) any later version.
- *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
- *
- * @category   PHPExcel
- * @package    PHPExcel_Writer_Excel5
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- * @license	http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
- * @version	1.7.8, 2012-10-12
- */
-
-
-/**
- * PHPExcel_Writer_Excel5
- *
- * @category   PHPExcel
- * @package    PHPExcel_Writer_Excel5
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- */
-class PHPExcel_Writer_Excel5 implements PHPExcel_Writer_IWriter
-{
-	/**
-	 * Pre-calculate formulas
-	 *
-	 * @var boolean
-	 */
-	private $_preCalculateFormulas	= true;
-
-	/**
-	 * PHPExcel object
-	 *
-	 * @var PHPExcel
-	 */
-	private $_phpExcel;
-
-	/**
-	 * Total number of shared strings in workbook
-	 *
-	 * @var int
-	 */
-	private $_str_total		= 0;
-
-	/**
-	 * Number of unique shared strings in workbook
-	 *
-	 * @var int
-	 */
-	private $_str_unique	= 0;
-
-	/**
-	 * Array of unique shared strings in workbook
-	 *
-	 * @var array
-	 */
-	private $_str_table		= array();
-
-	/**
-	 * Color cache. Mapping between RGB value and color index.
-	 *
-	 * @var array
-	 */
-	private $_colors;
-
-	/**
-	 * Formula parser
-	 *
-	 * @var PHPExcel_Writer_Excel5_Parser
-	 */
-	private $_parser;
-
-	/**
-	 * Identifier clusters for drawings. Used in MSODRAWINGGROUP record.
-	 *
-	 * @var array
-	 */
-	private $_IDCLs;
-
-	/**
-	 * Basic OLE object summary information
-	 *
-	 * @var array
-	 */
-	private $_summaryInformation;
-
-	/**
-	 * Extended OLE object document summary information
-	 *
-	 * @var array
-	 */
-	private $_documentSummaryInformation;
-
-	/**
-	 * Create a new PHPExcel_Writer_Excel5
-	 *
-	 * @param	PHPExcel	$phpExcel	PHPExcel object
-	 */
-	public function __construct(PHPExcel $phpExcel) {
-		$this->_phpExcel	= $phpExcel;
-
-		$this->_parser		= new PHPExcel_Writer_Excel5_Parser();
-	}
-
-	/**
-	 * Save PHPExcel to file
-	 *
-	 * @param	string		$pFilename
-	 * @throws	Exception
-	 */
-	public function save($pFilename = null) {
-
-		// garbage collect
-		$this->_phpExcel->garbageCollect();
-
-		$saveDebugLog = PHPExcel_Calculation::getInstance()->writeDebugLog;
-		PHPExcel_Calculation::getInstance()->writeDebugLog = false;
-		$saveDateReturnType = PHPExcel_Calculation_Functions::getReturnDateType();
-		PHPExcel_Calculation_Functions::setReturnDateType(PHPExcel_Calculation_Functions::RETURNDATE_EXCEL);
-
-		// initialize colors array
-		$this->_colors          = array();
-
-		// Initialise workbook writer
-		$this->_writerWorkbook = new PHPExcel_Writer_Excel5_Workbook($this->_phpExcel,
-																	 $this->_str_total, $this->_str_unique, $this->_str_table,
-																	 $this->_colors, $this->_parser);
-
-		// Initialise worksheet writers
-		$countSheets = $this->_phpExcel->getSheetCount();
-		for ($i = 0; $i < $countSheets; ++$i) {
-			$this->_writerWorksheets[$i] = new PHPExcel_Writer_Excel5_Worksheet($this->_str_total, $this->_str_unique,
-																			   $this->_str_table, $this->_colors,
-																			   $this->_parser,
-																			   $this->_preCalculateFormulas,
-																			   $this->_phpExcel->getSheet($i));
-		}
-
-		// build Escher objects. Escher objects for workbooks needs to be build before Escher object for workbook.
-		$this->_buildWorksheetEschers();
-		$this->_buildWorkbookEscher();
-
-		// add 15 identical cell style Xfs
-		// for now, we use the first cellXf instead of cellStyleXf
-		$cellXfCollection = $this->_phpExcel->getCellXfCollection();
-		for ($i = 0; $i < 15; ++$i) {
-			$this->_writerWorkbook->addXfWriter($cellXfCollection[0], true);
-		}
-
-		// add all the cell Xfs
-		foreach ($this->_phpExcel->getCellXfCollection() as $style) {
-			$this->_writerWorkbook->addXfWriter($style, false);
-		}
-
-		// add fonts from rich text eleemnts
-		for ($i = 0; $i < $countSheets; ++$i) {
-			foreach ($this->_writerWorksheets[$i]->_phpSheet->getCellCollection() as $cellID) {
-				$cell = $this->_writerWorksheets[$i]->_phpSheet->getCell($cellID);
-				$cVal = $cell->getValue();
-				if ($cVal instanceof PHPExcel_RichText) {
-					$elements = $cVal->getRichTextElements();
-					foreach ($elements as $element) {
-						if ($element instanceof PHPExcel_RichText_Run) {
-							$font = $element->getFont();
-							$this->_writerWorksheets[$i]->_fntHashIndex[$font->getHashCode()] = $this->_writerWorkbook->_addFont($font);
-						}
-					}
-				}
-			}
-		}
-
-		// initialize OLE file
-		$workbookStreamName = 'Workbook';
-		$OLE = new PHPExcel_Shared_OLE_PPS_File(PHPExcel_Shared_OLE::Asc2Ucs($workbookStreamName));
-
-		// Write the worksheet streams before the global workbook stream,
-		// because the byte sizes of these are needed in the global workbook stream
-		$worksheetSizes = array();
-		for ($i = 0; $i < $countSheets; ++$i) {
-			$this->_writerWorksheets[$i]->close();
-			$worksheetSizes[] = $this->_writerWorksheets[$i]->_datasize;
-		}
-
-		// add binary data for global workbook stream
-		$OLE->append( $this->_writerWorkbook->writeWorkbook($worksheetSizes) );
-
-		// add binary data for sheet streams
-		for ($i = 0; $i < $countSheets; ++$i) {
-			$OLE->append($this->_writerWorksheets[$i]->getData());
-		}
-
-		$this->_documentSummaryInformation = $this->_writeDocumentSummaryInformation();
-		// initialize OLE Document Summary Information
-		if(isset($this->_documentSummaryInformation) && !empty($this->_documentSummaryInformation)){
-			$OLE_DocumentSummaryInformation = new PHPExcel_Shared_OLE_PPS_File(PHPExcel_Shared_OLE::Asc2Ucs(chr(5) . 'DocumentSummaryInformation'));
-			$OLE_DocumentSummaryInformation->append($this->_documentSummaryInformation);
-		}
-
-		$this->_summaryInformation = $this->_writeSummaryInformation();
-		// initialize OLE Summary Information
-		if(isset($this->_summaryInformation) && !empty($this->_summaryInformation)){
-		  $OLE_SummaryInformation = new PHPExcel_Shared_OLE_PPS_File(PHPExcel_Shared_OLE::Asc2Ucs(chr(5) . 'SummaryInformation'));
-		  $OLE_SummaryInformation->append($this->_summaryInformation);
-		}
-
-		// define OLE Parts
-		$arrRootData = array($OLE);
-		// initialize OLE Properties file
-		if(isset($OLE_SummaryInformation)){
-			$arrRootData[] = $OLE_SummaryInformation;
-		}
-		// initialize OLE Extended Properties file
-		if(isset($OLE_DocumentSummaryInformation)){
-			$arrRootData[] = $OLE_DocumentSummaryInformation;
-		}
-
-		$root = new PHPExcel_Shared_OLE_PPS_Root(time(), time(), $arrRootData);
-		// save the OLE file
-		$res = $root->save($pFilename);
-
-		PHPExcel_Calculation_Functions::setReturnDateType($saveDateReturnType);
-		PHPExcel_Calculation::getInstance()->writeDebugLog = $saveDebugLog;
-	}
-
-	/**
-	 * Set temporary storage directory
-	 *
-	 * @deprecated
-	 * @param	string	$pValue		Temporary storage directory
-	 * @throws	Exception	Exception when directory does not exist
-	 * @return PHPExcel_Writer_Excel5
-	 */
-	public function setTempDir($pValue = '') {
-		return $this;
-	}
-
-	/**
-	 * Get Pre-Calculate Formulas
-	 *
-	 * @return boolean
-	 */
-	public function getPreCalculateFormulas() {
-		return $this->_preCalculateFormulas;
-	}
-
-	/**
-	 * Set Pre-Calculate Formulas
-	 *
-	 * @param boolean $pValue	Pre-Calculate Formulas?
-	 */
-	public function setPreCalculateFormulas($pValue = true) {
-		$this->_preCalculateFormulas = $pValue;
-	}
-
-	/**
-	 * Build the Worksheet Escher objects
-	 *
-	 */
-	private function _buildWorksheetEschers()
-	{
-		// 1-based index to BstoreContainer
-		$blipIndex = 0;
-		$lastReducedSpId = 0;
-		$lastSpId = 0;
-
-		foreach ($this->_phpExcel->getAllsheets() as $sheet) {
-			// sheet index
-			$sheetIndex = $sheet->getParent()->getIndex($sheet);
-
-			$escher = null;
-
-			// check if there are any shapes for this sheet
-			$filterRange = $sheet->getAutoFilter()->getRange();
-			if (count($sheet->getDrawingCollection()) == 0 && empty($filterRange)) {
-				continue;
-			}
-
-			// create intermediate Escher object
-			$escher = new PHPExcel_Shared_Escher();
-
-			// dgContainer
-			$dgContainer = new PHPExcel_Shared_Escher_DgContainer();
-
-			// set the drawing index (we use sheet index + 1)
-			$dgId = $sheet->getParent()->getIndex($sheet) + 1;
-			$dgContainer->setDgId($dgId);
-			$escher->setDgContainer($dgContainer);
-
-			// spgrContainer
-			$spgrContainer = new PHPExcel_Shared_Escher_DgContainer_SpgrContainer();
-			$dgContainer->setSpgrContainer($spgrContainer);
-
-			// add one shape which is the group shape
-			$spContainer = new PHPExcel_Shared_Escher_DgContainer_SpgrContainer_SpContainer();
-			$spContainer->setSpgr(true);
-			$spContainer->setSpType(0);
-			$spContainer->setSpId(($sheet->getParent()->getIndex($sheet) + 1) << 10);
-			$spgrContainer->addChild($spContainer);
-
-			// add the shapes
-
-			$countShapes[$sheetIndex] = 0; // count number of shapes (minus group shape), in sheet
-
-			foreach ($sheet->getDrawingCollection() as $drawing) {
-				++$blipIndex;
-
-				++$countShapes[$sheetIndex];
-
-				// add the shape
-				$spContainer = new PHPExcel_Shared_Escher_DgContainer_SpgrContainer_SpContainer();
-
-				// set the shape type
-				$spContainer->setSpType(0x004B);
-				// set the shape flag
-				$spContainer->setSpFlag(0x02);
-
-				// set the shape index (we combine 1-based sheet index and $countShapes to create unique shape index)
-				$reducedSpId = $countShapes[$sheetIndex];
-				$spId = $reducedSpId
-					| ($sheet->getParent()->getIndex($sheet) + 1) << 10;
-				$spContainer->setSpId($spId);
-
-				// keep track of last reducedSpId
-				$lastReducedSpId = $reducedSpId;
-
-				// keep track of last spId
-				$lastSpId = $spId;
-
-				// set the BLIP index
-				$spContainer->setOPT(0x4104, $blipIndex);
-
-				// set coordinates and offsets, client anchor
-				$coordinates = $drawing->getCoordinates();
-				$offsetX = $drawing->getOffsetX();
-				$offsetY = $drawing->getOffsetY();
-				$width = $drawing->getWidth();
-				$height = $drawing->getHeight();
-
-				$twoAnchor = PHPExcel_Shared_Excel5::oneAnchor2twoAnchor($sheet, $coordinates, $offsetX, $offsetY, $width, $height);
-
-				$spContainer->setStartCoordinates($twoAnchor['startCoordinates']);
-				$spContainer->setStartOffsetX($twoAnchor['startOffsetX']);
-				$spContainer->setStartOffsetY($twoAnchor['startOffsetY']);
-				$spContainer->setEndCoordinates($twoAnchor['endCoordinates']);
-				$spContainer->setEndOffsetX($twoAnchor['endOffsetX']);
-				$spContainer->setEndOffsetY($twoAnchor['endOffsetY']);
-
-				$spgrContainer->addChild($spContainer);
-			}
-
-			// AutoFilters
-			if(!empty($filterRange)){
-				$rangeBounds = PHPExcel_Cell::rangeBoundaries($filterRange);
-				$iNumColStart = $rangeBounds[0][0];
-				$iNumColEnd = $rangeBounds[1][0];
-
-				$iInc = $iNumColStart;
-				while($iInc <= $iNumColEnd){
-					++$countShapes[$sheetIndex];
-
-					// create an Drawing Object for the dropdown
-					$oDrawing  = new PHPExcel_Worksheet_BaseDrawing();
-					// get the coordinates of drawing
-					$cDrawing   = PHPExcel_Cell::stringFromColumnIndex($iInc - 1) . $rangeBounds[0][1];
-					$oDrawing->setCoordinates($cDrawing);
-					$oDrawing->setWorksheet($sheet);
-
-					// add the shape
-					$spContainer = new PHPExcel_Shared_Escher_DgContainer_SpgrContainer_SpContainer();
-					// set the shape type
-					$spContainer->setSpType(0x00C9);
-					// set the shape flag
-					$spContainer->setSpFlag(0x01);
-
-					// set the shape index (we combine 1-based sheet index and $countShapes to create unique shape index)
-					$reducedSpId = $countShapes[$sheetIndex];
-					$spId = $reducedSpId
-						| ($sheet->getParent()->getIndex($sheet) + 1) << 10;
-					$spContainer->setSpId($spId);
-
-					// keep track of last reducedSpId
-					$lastReducedSpId = $reducedSpId;
-
-					// keep track of last spId
-					$lastSpId = $spId;
-
-					$spContainer->setOPT(0x007F, 0x01040104); // Protection -> fLockAgainstGrouping
-					$spContainer->setOPT(0x00BF, 0x00080008); // Text -> fFitTextToShape
-					$spContainer->setOPT(0x01BF, 0x00010000); // Fill Style -> fNoFillHitTest
-					$spContainer->setOPT(0x01FF, 0x00080000); // Line Style -> fNoLineDrawDash
-					$spContainer->setOPT(0x03BF, 0x000A0000); // Group Shape -> fPrint
-
-					// set coordinates and offsets, client anchor
-					$endCoordinates = PHPExcel_Cell::stringFromColumnIndex(PHPExcel_Cell::stringFromColumnIndex($iInc - 1));
-					$endCoordinates .= $rangeBounds[0][1] + 1;
-
-					$spContainer->setStartCoordinates($cDrawing);
-					$spContainer->setStartOffsetX(0);
-					$spContainer->setStartOffsetY(0);
-					$spContainer->setEndCoordinates($endCoordinates);
-					$spContainer->setEndOffsetX(0);
-					$spContainer->setEndOffsetY(0);
-
-					$spgrContainer->addChild($spContainer);
-					$iInc++;
-				}
-			}
-
-			// identifier clusters, used for workbook Escher object
-			$this->_IDCLs[$dgId] = $lastReducedSpId;
-
-			// set last shape index
-			$dgContainer->setLastSpId($lastSpId);
-
-			// set the Escher object
-			$this->_writerWorksheets[$sheetIndex]->setEscher($escher);
-		}
-	}
-
-	/**
-	 * Build the Escher object corresponding to the MSODRAWINGGROUP record
-	 */
-	private function _buildWorkbookEscher()
-	{
-		$escher = null;
-
-		// any drawings in this workbook?
-		$found = false;
-		foreach ($this->_phpExcel->getAllSheets() as $sheet) {
-			if (count($sheet->getDrawingCollection()) > 0) {
-				$found = true;
-				break;
-			}
-		}
-
-		// nothing to do if there are no drawings
-		if (!$found) {
-			return;
-		}
-
-		// if we reach here, then there are drawings in the workbook
-		$escher = new PHPExcel_Shared_Escher();
-
-		// dggContainer
-		$dggContainer = new PHPExcel_Shared_Escher_DggContainer();
-		$escher->setDggContainer($dggContainer);
-
-		// set IDCLs (identifier clusters)
-		$dggContainer->setIDCLs($this->_IDCLs);
-
-		// this loop is for determining maximum shape identifier of all drawing
-		$spIdMax = 0;
-		$totalCountShapes = 0;
-		$countDrawings = 0;
-
-		foreach ($this->_phpExcel->getAllsheets() as $sheet) {
-			$sheetCountShapes = 0; // count number of shapes (minus group shape), in sheet
-
-			if (count($sheet->getDrawingCollection()) > 0) {
-				++$countDrawings;
-
-				foreach ($sheet->getDrawingCollection() as $drawing) {
-					++$sheetCountShapes;
-					++$totalCountShapes;
-
-					$spId = $sheetCountShapes
-						| ($this->_phpExcel->getIndex($sheet) + 1) << 10;
-					$spIdMax = max($spId, $spIdMax);
-				}
-			}
-		}
-
-		$dggContainer->setSpIdMax($spIdMax + 1);
-		$dggContainer->setCDgSaved($countDrawings);
-		$dggContainer->setCSpSaved($totalCountShapes + $countDrawings); // total number of shapes incl. one group shapes per drawing
-
-		// bstoreContainer
-		$bstoreContainer = new PHPExcel_Shared_Escher_DggContainer_BstoreContainer();
-		$dggContainer->setBstoreContainer($bstoreContainer);
-
-		// the BSE's (all the images)
-		foreach ($this->_phpExcel->getAllsheets() as $sheet) {
-			foreach ($sheet->getDrawingCollection() as $drawing) {
-				if ($drawing instanceof PHPExcel_Worksheet_Drawing) {
-
-					$filename = $drawing->getPath();
-
-					list($imagesx, $imagesy, $imageFormat) = getimagesize($filename);
-
-					switch ($imageFormat) {
-
-					case 1: // GIF, not supported by BIFF8, we convert to PNG
-						$blipType = PHPExcel_Shared_Escher_DggContainer_BstoreContainer_BSE::BLIPTYPE_PNG;
-						ob_start();
-						imagepng(imagecreatefromgif($filename));
-						$blipData = ob_get_contents();
-						ob_end_clean();
-						break;
-
-					case 2: // JPEG
-						$blipType = PHPExcel_Shared_Escher_DggContainer_BstoreContainer_BSE::BLIPTYPE_JPEG;
-						$blipData = file_get_contents($filename);
-						break;
-
-					case 3: // PNG
-						$blipType = PHPExcel_Shared_Escher_DggContainer_BstoreContainer_BSE::BLIPTYPE_PNG;
-						$blipData = file_get_contents($filename);
-						break;
-
-					case 6: // Windows DIB (BMP), we convert to PNG
-						$blipType = PHPExcel_Shared_Escher_DggContainer_BstoreContainer_BSE::BLIPTYPE_PNG;
-						ob_start();
-						imagepng(PHPExcel_Shared_Drawing::imagecreatefrombmp($filename));
-						$blipData = ob_get_contents();
-						ob_end_clean();
-						break;
-
-					default: continue 2;
-
-					}
-
-					$blip = new PHPExcel_Shared_Escher_DggContainer_BstoreContainer_BSE_Blip();
-					$blip->setData($blipData);
-
-					$BSE = new PHPExcel_Shared_Escher_DggContainer_BstoreContainer_BSE();
-					$BSE->setBlipType($blipType);
-					$BSE->setBlip($blip);
-
-					$bstoreContainer->addBSE($BSE);
-
-				} else if ($drawing instanceof PHPExcel_Worksheet_MemoryDrawing) {
-
-					switch ($drawing->getRenderingFunction()) {
-
-					case PHPExcel_Worksheet_MemoryDrawing::RENDERING_JPEG:
-						$blipType = PHPExcel_Shared_Escher_DggContainer_BstoreContainer_BSE::BLIPTYPE_JPEG;
-						$renderingFunction = 'imagejpeg';
-						break;
-
-					case PHPExcel_Worksheet_MemoryDrawing::RENDERING_GIF:
-					case PHPExcel_Worksheet_MemoryDrawing::RENDERING_PNG:
-					case PHPExcel_Worksheet_MemoryDrawing::RENDERING_DEFAULT:
-						$blipType = PHPExcel_Shared_Escher_DggContainer_BstoreContainer_BSE::BLIPTYPE_PNG;
-						$renderingFunction = 'imagepng';
-						break;
-
-					}
-
-					ob_start();
-					call_user_func($renderingFunction, $drawing->getImageResource());
-					$blipData = ob_get_contents();
-					ob_end_clean();
-
-					$blip = new PHPExcel_Shared_Escher_DggContainer_BstoreContainer_BSE_Blip();
-					$blip->setData($blipData);
-
-					$BSE = new PHPExcel_Shared_Escher_DggContainer_BstoreContainer_BSE();
-					$BSE->setBlipType($blipType);
-					$BSE->setBlip($blip);
-
-					$bstoreContainer->addBSE($BSE);
-				}
-			}
-		}
-
-		// Set the Escher object
-		$this->_writerWorkbook->setEscher($escher);
-	}
-
-	/**
-	 * Build the OLE Part for DocumentSummary Information
-	 * @return string
-	 */
-	private function _writeDocumentSummaryInformation(){
-
-		// offset: 0; size: 2; must be 0xFE 0xFF (UTF-16 LE byte order mark)
-		$data = pack('v', 0xFFFE);
-		// offset: 2; size: 2;
-		$data .= pack('v', 0x0000);
-		// offset: 4; size: 2; OS version
-		$data .= pack('v', 0x0106);
-		// offset: 6; size: 2; OS indicator
-		$data .= pack('v', 0x0002);
-		// offset: 8; size: 16
-		$data .= pack('VVVV', 0x00, 0x00, 0x00, 0x00);
-		// offset: 24; size: 4; section count
-		$data .= pack('V', 0x0001);
-
-		// offset: 28; size: 16; first section's class id: 02 d5 cd d5 9c 2e 1b 10 93 97 08 00 2b 2c f9 ae
-		$data .= pack('vvvvvvvv', 0xD502, 0xD5CD, 0x2E9C, 0x101B, 0x9793, 0x0008, 0x2C2B, 0xAEF9);
-		// offset: 44; size: 4; offset of the start
-		$data .= pack('V', 0x30);
-
-		// SECTION
-		$dataSection = array();
-		$dataSection_NumProps = 0;
-		$dataSection_Summary = '';
-		$dataSection_Content = '';
-
-		// GKPIDDSI_CODEPAGE: CodePage
-		$dataSection[] = array('summary'=> array('pack' => 'V', 'data' => 0x01),
-							   'offset' => array('pack' => 'V'),
-							   'type' 	=> array('pack' => 'V', 'data' => 0x02), // 2 byte signed integer
-							   'data'	=> array('data' => 1252));
-		$dataSection_NumProps++;
-
-		// GKPIDDSI_CATEGORY : Category
-		if($this->_phpExcel->getProperties()->getCategory()){
-			$dataProp = $this->_phpExcel->getProperties()->getCategory();
-			$dataProp = 'Test result file';
-			$dataSection[] = array('summary'=> array('pack' => 'V', 'data' => 0x02),
-								   'offset' => array('pack' => 'V'),
-								   'type' 	=> array('pack' => 'V', 'data' => 0x1E),
-								   'data'	=> array('data' => $dataProp, 'length' => strlen($dataProp)));
-			$dataSection_NumProps++;
-		}
-		// GKPIDDSI_VERSION :Version of the application that wrote the property storage
-		$dataSection[] = array('summary'=> array('pack' => 'V', 'data' => 0x17),
-							   'offset' => array('pack' => 'V'),
-							   'type' 	=> array('pack' => 'V', 'data' => 0x03),
-							   'data'	=> array('pack' => 'V', 'data' => 0x000C0000));
-		$dataSection_NumProps++;
-		// GKPIDDSI_SCALE : FALSE
-		$dataSection[] = array('summary'=> array('pack' => 'V', 'data' => 0x0B),
-							   'offset' => array('pack' => 'V'),
-							   'type' 	=> array('pack' => 'V', 'data' => 0x0B),
-							   'data'	=> array('data' => false));
-		$dataSection_NumProps++;
-		// GKPIDDSI_LINKSDIRTY : True if any of the values for the linked properties have changed outside of the application
-		$dataSection[] = array('summary'=> array('pack' => 'V', 'data' => 0x10),
-							   'offset' => array('pack' => 'V'),
-							   'type' 	=> array('pack' => 'V', 'data' => 0x0B),
-							   'data'	=> array('data' => false));
-		$dataSection_NumProps++;
-		// GKPIDDSI_SHAREDOC : FALSE
-		$dataSection[] = array('summary'=> array('pack' => 'V', 'data' => 0x13),
-							   'offset' => array('pack' => 'V'),
-							   'type' 	=> array('pack' => 'V', 'data' => 0x0B),
-							   'data'	=> array('data' => false));
-		$dataSection_NumProps++;
-		// GKPIDDSI_HYPERLINKSCHANGED : True if any of the values for the _PID_LINKS (hyperlink text) have changed outside of the application
-		$dataSection[] = array('summary'=> array('pack' => 'V', 'data' => 0x16),
-							   'offset' => array('pack' => 'V'),
-							   'type' 	=> array('pack' => 'V', 'data' => 0x0B),
-							   'data'	=> array('data' => false));
-		$dataSection_NumProps++;
-
-		// GKPIDDSI_DOCSPARTS
-		// MS-OSHARED p75 (2.3.3.2.2.1)
-		// Structure is VtVecUnalignedLpstrValue (2.3.3.1.9)
-		// cElements
-		$dataProp = pack('v', 0x0001);
-		$dataProp .= pack('v', 0x0000);
-		// array of UnalignedLpstr
-		  // cch
-		  $dataProp .= pack('v', 0x000A);
-		  $dataProp .= pack('v', 0x0000);
-		  // value
-		  $dataProp .= 'Worksheet'.chr(0);
-
-		$dataSection[] = array('summary'=> array('pack' => 'V', 'data' => 0x0D),
-							   'offset' => array('pack' => 'V'),
-							   'type' 	=> array('pack' => 'V', 'data' => 0x101E),
-							   'data'	=> array('data' => $dataProp, 'length' => strlen($dataProp)));
-		$dataSection_NumProps++;
-
-		// GKPIDDSI_HEADINGPAIR
-		// VtVecHeadingPairValue
-		  // cElements
-		  $dataProp = pack('v', 0x0002);
-		  $dataProp .= pack('v', 0x0000);
-		  // Array of vtHeadingPair
-		    // vtUnalignedString - headingString
-		      // stringType
-		      $dataProp .= pack('v', 0x001E);
-		      // padding
-		      $dataProp .= pack('v', 0x0000);
-		      // UnalignedLpstr
-		        // cch
-		        $dataProp .= pack('v', 0x0013);
-		        $dataProp .= pack('v', 0x0000);
-		        // value
-		        $dataProp .= 'Feuilles de calcul';
-		    // vtUnalignedString - headingParts
-		      // wType : 0x0003 = 32 bit signed integer
-		      $dataProp .= pack('v', 0x0300);
-		      // padding
-		      $dataProp .= pack('v', 0x0000);
-		      // value
-		      $dataProp .= pack('v', 0x0100);
-		      $dataProp .= pack('v', 0x0000);
-			  $dataProp .= pack('v', 0x0000);
-		      $dataProp .= pack('v', 0x0000);
-
-        $dataSection[] = array('summary'=> array('pack' => 'V', 'data' => 0x0C),
-        					   'offset' => array('pack' => 'V'),
-        					   'type' 	=> array('pack' => 'V', 'data' => 0x100C),
-        					   'data'	=> array('data' => $dataProp, 'length' => strlen($dataProp)));
-        $dataSection_NumProps++;
-
-		// 		4 	Section Length
-		//		4 	Property count
-		//		8 * $dataSection_NumProps (8 =  ID (4) + OffSet(4))
-		$dataSection_Content_Offset = 8 + $dataSection_NumProps * 8;
-		foreach ($dataSection as $dataProp){
-			// Summary
-			$dataSection_Summary .= pack($dataProp['summary']['pack'], $dataProp['summary']['data']);
-			// Offset
-			$dataSection_Summary .= pack($dataProp['offset']['pack'], $dataSection_Content_Offset);
-			// DataType
-			$dataSection_Content .= pack($dataProp['type']['pack'], $dataProp['type']['data']);
-			// Data
-			if($dataProp['type']['data'] == 0x02){ // 2 byte signed integer
-				$dataSection_Content .= pack('V', $dataProp['data']['data']);
-
-				$dataSection_Content_Offset += 4 + 4;
-			}
-			elseif($dataProp['type']['data'] == 0x03){ // 4 byte signed integer
-				$dataSection_Content .= pack('V', $dataProp['data']['data']);
-
-				$dataSection_Content_Offset += 4 + 4;
-			}
-			elseif($dataProp['type']['data'] == 0x0B){ // Boolean
-				if($dataProp['data']['data'] == false){
-					$dataSection_Content .= pack('V', 0x0000);
-				} else {
-					$dataSection_Content .= pack('V', 0x0001);
-				}
-				$dataSection_Content_Offset += 4 + 4;
-			}
-			elseif($dataProp['type']['data'] == 0x1E){ // null-terminated string prepended by dword string length
-				// Null-terminated string
-				$dataProp['data']['data'] .= chr(0);
-				$dataProp['data']['length'] += 1;
-				// Complete the string with null string for being a %4
-				$dataProp['data']['length'] = $dataProp['data']['length'] + ((4 - $dataProp['data']['length'] % 4)==4 ? 0 : (4 - $dataProp['data']['length'] % 4));
-				$dataProp['data']['data'] = str_pad($dataProp['data']['data'], $dataProp['data']['length'], chr(0), STR_PAD_RIGHT);
-
-				$dataSection_Content .= pack('V', $dataProp['data']['length']);
-				$dataSection_Content .= $dataProp['data']['data'];
-
-				$dataSection_Content_Offset += 4 + 4 + strlen($dataProp['data']['data']);
-			}
-			elseif($dataProp['type']['data'] == 0x40){ // Filetime (64-bit value representing the number of 100-nanosecond intervals since January 1, 1601)
-				$dataSection_Content .= $dataProp['data']['data'];
-
-				$dataSection_Content_Offset += 4 + 8;
-			}
-			else {
-				// Data Type Not Used at the moment
-				$dataSection_Content .= $dataProp['data']['data'];
-
-				$dataSection_Content_Offset += 4 + $dataProp['data']['length'];
-			}
-		}
-		// Now $dataSection_Content_Offset contains the size of the content
-
-		// section header
-		// offset: $secOffset; size: 4; section length
-		// 		+ x  Size of the content (summary + content)
-		$data .= pack('V', $dataSection_Content_Offset);
-		// offset: $secOffset+4; size: 4; property count
-		$data .= pack('V', $dataSection_NumProps);
-		// Section Summary
-		$data .= $dataSection_Summary;
-		// Section Content
-		$data .= $dataSection_Content;
-
-		return $data;
-	}
-
-	/**
-	 * Build the OLE Part for Summary Information
-	 * @return string
-	 */
-	private function _writeSummaryInformation(){
-		// offset: 0; size: 2; must be 0xFE 0xFF (UTF-16 LE byte order mark)
-		$data = pack('v', 0xFFFE);
-		// offset: 2; size: 2;
-		$data .= pack('v', 0x0000);
-		// offset: 4; size: 2; OS version
-		$data .= pack('v', 0x0106);
-		// offset: 6; size: 2; OS indicator
-		$data .= pack('v', 0x0002);
-		// offset: 8; size: 16
-		$data .= pack('VVVV', 0x00, 0x00, 0x00, 0x00);
-		// offset: 24; size: 4; section count
-		$data .= pack('V', 0x0001);
-
-		// offset: 28; size: 16; first section's class id: e0 85 9f f2 f9 4f 68 10 ab 91 08 00 2b 27 b3 d9
-		$data .= pack('vvvvvvvv', 0x85E0, 0xF29F, 0x4FF9, 0x1068, 0x91AB, 0x0008, 0x272B, 0xD9B3);
-		// offset: 44; size: 4; offset of the start
-		$data .= pack('V', 0x30);
-
-		// SECTION
-		$dataSection = array();
-		$dataSection_NumProps = 0;
-		$dataSection_Summary = '';
-		$dataSection_Content = '';
-
-		// CodePage : CP-1252
-		$dataSection[] = array('summary'=> array('pack' => 'V', 'data' => 0x01),
-							   'offset' => array('pack' => 'V'),
-							   'type' 	=> array('pack' => 'V', 'data' => 0x02), // 2 byte signed integer
-							   'data'	=> array('data' => 1252));
-		$dataSection_NumProps++;
-
-		//	Title
-		if($this->_phpExcel->getProperties()->getTitle()){
-			$dataProp = $this->_phpExcel->getProperties()->getTitle();
-			$dataSection[] = array('summary'=> array('pack' => 'V', 'data' => 0x02),
-								   'offset' => array('pack' => 'V'),
-								   'type' 	=> array('pack' => 'V', 'data' => 0x1E), // null-terminated string prepended by dword string length
-								   'data'	=> array('data' => $dataProp, 'length' => strlen($dataProp)));
-			$dataSection_NumProps++;
-		}
-		//	Subject
-		if($this->_phpExcel->getProperties()->getSubject()){
-			$dataProp = $this->_phpExcel->getProperties()->getSubject();
-			$dataSection[] = array('summary'=> array('pack' => 'V', 'data' => 0x03),
-								   'offset' => array('pack' => 'V'),
-								   'type' 	=> array('pack' => 'V', 'data' => 0x1E), // null-terminated string prepended by dword string length
-								   'data'	=> array('data' => $dataProp, 'length' => strlen($dataProp)));
-			$dataSection_NumProps++;
-		}
-		//	Author (Creator)
-		if($this->_phpExcel->getProperties()->getCreator()){
-			$dataProp = $this->_phpExcel->getProperties()->getCreator();
-			$dataSection[] = array('summary'=> array('pack' => 'V', 'data' => 0x04),
-								   'offset' => array('pack' => 'V'),
-								   'type' 	=> array('pack' => 'V', 'data' => 0x1E), // null-terminated string prepended by dword string length
-								   'data'	=> array('data' => $dataProp, 'length' => strlen($dataProp)));
-			$dataSection_NumProps++;
-		}
-		//	Keywords
-		if($this->_phpExcel->getProperties()->getKeywords()){
-			$dataProp = $this->_phpExcel->getProperties()->getKeywords();
-			$dataSection[] = array('summary'=> array('pack' => 'V', 'data' => 0x05),
-								   'offset' => array('pack' => 'V'),
-								   'type' 	=> array('pack' => 'V', 'data' => 0x1E), // null-terminated string prepended by dword string length
-								   'data'	=> array('data' => $dataProp, 'length' => strlen($dataProp)));
-			$dataSection_NumProps++;
-		}
-		//	Comments (Description)
-		if($this->_phpExcel->getProperties()->getDescription()){
-			$dataProp = $this->_phpExcel->getProperties()->getDescription();
-			$dataSection[] = array('summary'=> array('pack' => 'V', 'data' => 0x06),
-								   'offset' => array('pack' => 'V'),
-								   'type' 	=> array('pack' => 'V', 'data' => 0x1E), // null-terminated string prepended by dword string length
-								   'data'	=> array('data' => $dataProp, 'length' => strlen($dataProp)));
-			$dataSection_NumProps++;
-		}
-		//	Last Saved By (LastModifiedBy)
-		if($this->_phpExcel->getProperties()->getLastModifiedBy()){
-			$dataProp = $this->_phpExcel->getProperties()->getLastModifiedBy();
-			$dataSection[] = array('summary'=> array('pack' => 'V', 'data' => 0x08),
-								   'offset' => array('pack' => 'V'),
-								   'type' 	=> array('pack' => 'V', 'data' => 0x1E), // null-terminated string prepended by dword string length
-								   'data'	=> array('data' => $dataProp, 'length' => strlen($dataProp)));
-			$dataSection_NumProps++;
-		}
-		//	Created Date/Time
-		if($this->_phpExcel->getProperties()->getCreated()){
-			$dataProp = $this->_phpExcel->getProperties()->getCreated();
-			$dataSection[] = array('summary'=> array('pack' => 'V', 'data' => 0x0C),
-								   'offset' => array('pack' => 'V'),
-								   'type' 	=> array('pack' => 'V', 'data' => 0x40), // Filetime (64-bit value representing the number of 100-nanosecond intervals since January 1, 1601)
-								   'data'	=> array('data' => PHPExcel_Shared_OLE::LocalDate2OLE($dataProp)));
-			$dataSection_NumProps++;
-		}
-		//	Modified Date/Time
-		if($this->_phpExcel->getProperties()->getModified()){
-			$dataProp = $this->_phpExcel->getProperties()->getModified();
-			$dataSection[] = array('summary'=> array('pack' => 'V', 'data' => 0x0D),
-								   'offset' => array('pack' => 'V'),
-								   'type' 	=> array('pack' => 'V', 'data' => 0x40), // Filetime (64-bit value representing the number of 100-nanosecond intervals since January 1, 1601)
-								   'data'	=> array('data' => PHPExcel_Shared_OLE::LocalDate2OLE($dataProp)));
-			$dataSection_NumProps++;
-		}
-		//	Security
-		$dataSection[] = array('summary'=> array('pack' => 'V', 'data' => 0x13),
-							   'offset' => array('pack' => 'V'),
-							   'type' 	=> array('pack' => 'V', 'data' => 0x03), // 4 byte signed integer
-							   'data'	=> array('data' => 0x00));
-		$dataSection_NumProps++;
-
-
-		// 		4 	Section Length
-		//		4 	Property count
-		//		8 * $dataSection_NumProps (8 =  ID (4) + OffSet(4))
-		$dataSection_Content_Offset = 8 + $dataSection_NumProps * 8;
-		foreach ($dataSection as $dataProp){
-			// Summary
-			$dataSection_Summary .= pack($dataProp['summary']['pack'], $dataProp['summary']['data']);
-			// Offset
-			$dataSection_Summary .= pack($dataProp['offset']['pack'], $dataSection_Content_Offset);
-			// DataType
-			$dataSection_Content .= pack($dataProp['type']['pack'], $dataProp['type']['data']);
-			// Data
-			if($dataProp['type']['data'] == 0x02){ // 2 byte signed integer
-				$dataSection_Content .= pack('V', $dataProp['data']['data']);
-
-				$dataSection_Content_Offset += 4 + 4;
-			}
-			elseif($dataProp['type']['data'] == 0x03){ // 4 byte signed integer
-				$dataSection_Content .= pack('V', $dataProp['data']['data']);
-
-				$dataSection_Content_Offset += 4 + 4;
-			}
-			elseif($dataProp['type']['data'] == 0x1E){ // null-terminated string prepended by dword string length
-				// Null-terminated string
-				$dataProp['data']['data'] .= chr(0);
-				$dataProp['data']['length'] += 1;
-				// Complete the string with null string for being a %4
-				$dataProp['data']['length'] = $dataProp['data']['length'] + ((4 - $dataProp['data']['length'] % 4)==4 ? 0 : (4 - $dataProp['data']['length'] % 4));
-				$dataProp['data']['data'] = str_pad($dataProp['data']['data'], $dataProp['data']['length'], chr(0), STR_PAD_RIGHT);
-
-				$dataSection_Content .= pack('V', $dataProp['data']['length']);
-				$dataSection_Content .= $dataProp['data']['data'];
-
-				$dataSection_Content_Offset += 4 + 4 + strlen($dataProp['data']['data']);
-			}
-			elseif($dataProp['type']['data'] == 0x40){ // Filetime (64-bit value representing the number of 100-nanosecond intervals since January 1, 1601)
-				$dataSection_Content .= $dataProp['data']['data'];
-
-				$dataSection_Content_Offset += 4 + 8;
-			}
-			else {
-				// Data Type Not Used at the moment
-			}
-		}
-		// Now $dataSection_Content_Offset contains the size of the content
-
-		// section header
-		// offset: $secOffset; size: 4; section length
-		// 		+ x  Size of the content (summary + content)
-		$data .= pack('V', $dataSection_Content_Offset);
-		// offset: $secOffset+4; size: 4; property count
-		$data .= pack('V', $dataSection_NumProps);
-		// Section Summary
-		$data .= $dataSection_Summary;
-		// Section Content
-		$data .= $dataSection_Content;
-
-		return $data;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

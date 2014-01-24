@@ -1,138 +1,71 @@
-<?php
-
-namespace Behat\Mink\Compiler;
-
-use Symfony\Component\Finder\Finder;
-
-/*
- * This file is part of the Behat\Mink.
- * (c) Konstantin Kudryashov <ever.zet@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-/**
- * behat.phar package compiler.
- *
- * @author      Konstantin Kudryashov <ever.zet@gmail.com>
- */
-class PharCompiler
-{
-    /**
-     * Behat lib directory.
-     *
-     * @var     string
-     */
-    private $libPath;
-
-    /**
-     * Initializes compiler.
-     */
-    public function __construct()
-    {
-        $this->libPath = realpath(__DIR__ . '/../../../../');
-    }
-
-    /**
-     * Compiles phar archive.
-     *
-     * @param string $version
-     */
-    public function compile($version)
-    {
-        if (file_exists($package = "mink-$version.phar")) {
-            unlink($package);
-        }
-
-        // create phar
-        $phar = new \Phar($package, 0, 'mink.phar');
-        $phar->setSignatureAlgorithm(\Phar::SHA1);
-        $phar->startBuffering();
-
-        $finder = new Finder();
-        $finder->files()
-            ->ignoreVCS(true)
-            ->name('*.php')
-            ->name('*.xliff')
-            ->name('*.xml')
-            ->name('*.js')
-            ->name('*.feature')
-            ->name('LICENSE')
-            ->name('LICENSE.txt')
-            ->notName('test')
-            ->notName('tests')
-            ->exclude(array(
-                'Compiler',
-                'finder',
-                'test',
-                'tests',
-                'vendor',
-            ))
-            ->in($this->libPath . '/src')
-            ->in($this->libPath . '/vendor/symfony')
-            ->in($this->libPath . '/vendor/composer')
-            ->in($this->libPath . '/vendor/alexandresalome')
-            ->in($this->libPath . '/vendor/behat')
-            ->in($this->libPath . '/vendor/fabpot')
-            ->in($this->libPath . '/vendor/kriswallsmith')
-            ->in($this->libPath . '/vendor/guzzle')
-            ->in($this->libPath . '/vendor/instaclick')
-        ;
-
-        foreach ($finder as $file) {
-            if (!$file instanceof \SplFileInfo) {
-                $file = new \SplFileInfo($file);
-            }
-
-            $this->addFileToPhar($file, $phar);
-        }
-        $this->addFileToPhar(new \SplFileInfo('vendor/autoload.php'), $phar);
-
-        // stub
-        $phar->setStub($this->getStub($version));
-        $phar->stopBuffering();
-
-        unset($phar);
-    }
-
-    /**
-     * Adds a file to phar archive.
-     *
-     * @param SplFileInfo $file file info
-     * @param Phar        $phar phar packager
-     */
-    protected function addFileToPhar(\SplFileInfo $file, \Phar $phar)
-    {
-        $path = str_replace($this->libPath . '/', '', $file->getRealPath());
-        $phar->addFromString($path, file_get_contents($file));
-    }
-
-    /**
-     * Returns autoloader stub.
-     *
-     * @param string $version
-     *
-     * @return string
-     */
-    protected function getStub($version)
-    {
-        return sprintf(<<<'EOF'
-<?php
-
-/*
- * This file is part of the Behat\Mink.
- * (c) Konstantin Kudryashov <ever.zet@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-Phar::mapPhar('mink.phar');
-require_once 'phar://mink.phar/vendor/autoload.php';
-
-__HALT_COMPILER();
-EOF
-        , $version);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

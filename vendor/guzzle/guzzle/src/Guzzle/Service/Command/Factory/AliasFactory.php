@@ -1,39 +1,29 @@
-<?php
-
-namespace Guzzle\Service\Command\Factory;
-
-use Guzzle\Common\Exception\InvalidArgumentException;
-use Guzzle\Service\ClientInterface;
-
-/**
- * Command factory used when you need to provide aliases to commands
- */
-class AliasFactory implements FactoryInterface
-{
-    /** @var array Associative array mapping command aliases to the aliased command */
-    protected $aliases;
-
-    /** @var ClientInterface Client used to retry using aliases */
-    protected $client;
-
-    /**
-     * @param ClientInterface $client  Client used to retry with the alias
-     * @param array           $aliases Associative array mapping aliases to the alias
-     */
-    public function __construct(ClientInterface $client, array $aliases)
-    {
-        $this->client = $client;
-        $this->aliases = $aliases;
-    }
-
-    public function factory($name, array $args = array())
-    {
-        if (isset($this->aliases[$name])) {
-            try {
-                return $this->client->getCommand($this->aliases[$name], $args);
-            } catch (InvalidArgumentException $e) {
-                return null;
-            }
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPxAiWDMsTtaQMneLzayCypYoXhX4fE+lHS6My4OU+sf871e9T0tvMRVoRpJTf0VFmzQlOKK8
+ixgKc2M7FboXN6zwcOojhOVB7JUauucOaKd3x68DHwVfrsLVZccRM8Kw+/uJkS5YuebjYz41F+Wr
+uHHgDkUiyIbzsoqs8bfOIoTUOPSLePUd3pMfJgEw6NCmJaFXnvEqfIBsVVgxhuQCec3Wg4FDhCi3
+mPVSRAwhj5KYf1LRjHlEYQzHAE4xzt2gh9fl143SQNJnP6T6GDycy28+yItO5S/0VetjcoM0dz49
+uRwamSnmgt40lzDiDzLjq2cJKi+2eh+d8rdW+U1WAqmBU0xP4ero0xAcLFP7eJbVlrIUryRnPucx
+VM0oCOr4ejB9TYAXPLTjHOXlh0eGXpXjQ3Koc4T/mt8no9L8d7Q7sHkOSKLSD2QrNXZY3KpIDsT5
+eynwZQuSRFZDvB+onrvAYop2zRAUX4uxK3s/SR28wBNdd/I+Pz5knHcEDUfhHb8DBCbcbTLVKwIb
+WWiq7/PD47Vc+XVy7bcBZrSP/xWOISvE2SkEa1irYW1gbdAsA+H4lbB19qs+OENdx25/sMyRQRk7
+IKiEIF8cOlYw+LQaeEx+9BrmWCsmmg10p1LJCLoktGJO2g9K9sd1PBDV0svZtKHQq9hR4Vp0ivgS
+szzowHurDZ7nyFB9HFRPOAoT8kcJK65wsVB0IQhSGcoME8wXe/8FHQ/qU4moXSYysCcStqXDOqdJ
+Py/zcw8VusDzkzLjvT8PUjiAfTMO8+DUOrCfSi9LwBE8JV0rGrsq+gjnhUDPHB3GIeiF9ZI9Vsrq
+NTsLB712AjQ81zc+GlNHLP90eUev/zB938LELpDJY9Q1bKvImLgfHsRmKJ7RMNSqGxePFGx0BwYp
+uj/67A9SbK48E5s+GxizecCN6AmLU5gVo00nAgt4kRmS0kPzqOMJBJS6uThiTTzFqRN0+5JXkM7m
+qmFvA6v2rON+pp6/sqagmu/VPP3M/ChnN36AuB0UycNG9sl3KSJcVK2IrPmEtUDbhQdw/PcnX5+k
+YO0eWMPU6mqaRNlgsrRFZXuRlBcNLgdCvxxobXAnOZf3/tvUCuu6iDrlHzQW7U8ZXeCPV8jkvfZp
+eNAfXcggFsBCKAOD+u1GEr3igNPqan+7idP9mNM6+pq7PYapi2oT5x7mfSLEsra8Qs8bYHogGmtY
+l1stU8KCgNANzFmAVUG5vmKwYWSVUDCUID05l/itsjB1y/1IMys/hsBJZHs38iKt7n7akiHEoi1m
+mJhcHxMZBNYkKrFVhQXWoowOteY9BXzqHkWPoPJZSePB9sLd9NDK6Jzu0XwoI6fslSlW0E4cfAwc
+0G1llTQm0+q3kCcY8w3PbqWM4XD65G6t4r5VI+Bngt4xv1kXwQ8oC1WPgv/YGutRx6gOk9Up3jI0
+FdJz7j0HGW6KKlm3fTL2say5m4K6077Zgru9TOO0MGn/7/C81kp5XPH6YxZs0fTWe54pYm/mUrIN
+CUIcIjvCjfNNEpeJ0b1SXjPuaHt/AX7v0/Gw/nTvsqq+qVYPCm641mUwS+c2c3C8qdD2zZP630VF
+iiTqhvs8OZvr5nr0m0A7XdkmDC8dEFOPlUyiRwIVuSiQb/kozrKavsH/AgupNJI5ZvWUdJQmw2Bv
+/vEz4ZdnO707FKDuDXcZbMvNRUuKpFqzsm1+xF+AqxZnc4efbXMagYNihbksk5BNgWTuWA++zntD
+ZBHYpKpynNGiGvY2TbabtsUR025Z9NYv1FJLJrA5VE0Shmk2VOWmNhXcwrYhnuuCD1lfdXEsOtMU
+bybcJ4EhkslSwZPfbbGmZZDjaV7mPRgcp1zV5gKoeJ5Va/rat8iNJtFLuT/ctfRvS1cNeq9rDe9l
+PIPHxIFw49x81PVVszoPcR20j5Hdlxm=

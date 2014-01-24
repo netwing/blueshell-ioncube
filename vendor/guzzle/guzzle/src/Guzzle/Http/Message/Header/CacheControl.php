@@ -1,121 +1,53 @@
-<?php
-
-namespace Guzzle\Http\Message\Header;
-
-use Guzzle\Http\Message\Header;
-
-/**
- * Provides helpful functionality for Cache-Control headers
- */
-class CacheControl extends Header
-{
-    /** @var array */
-    protected $directives;
-
-    public function add($value)
-    {
-        parent::add($value);
-        $this->directives = null;
-    }
-
-    public function removeValue($searchValue)
-    {
-        parent::removeValue($searchValue);
-        $this->directives = null;
-    }
-
-    /**
-     * Check if a specific cache control directive exists
-     *
-     * @param string $param Directive to retrieve
-     *
-     * @return bool
-     */
-    public function hasDirective($param)
-    {
-        $directives = $this->getDirectives();
-
-        return isset($directives[$param]);
-    }
-
-    /**
-     * Get a specific cache control directive
-     *
-     * @param string $param Directive to retrieve
-     *
-     * @return string|bool|null
-     */
-    public function getDirective($param)
-    {
-        $directives = $this->getDirectives();
-
-        return isset($directives[$param]) ? $directives[$param] : null;
-    }
-
-    /**
-     * Add a cache control directive
-     *
-     * @param string $param Directive to add
-     * @param string $value Value to set
-     *
-     * @return self
-     */
-    public function addDirective($param, $value)
-    {
-        $directives = $this->getDirectives();
-        $directives[$param] = $value;
-        $this->updateFromDirectives($directives);
-
-        return $this;
-    }
-
-    /**
-     * Remove a cache control directive by name
-     *
-     * @param string $param Directive to remove
-     *
-     * @return self
-     */
-    public function removeDirective($param)
-    {
-        $directives = $this->getDirectives();
-        unset($directives[$param]);
-        $this->updateFromDirectives($directives);
-
-        return $this;
-    }
-
-    /**
-     * Get an associative array of cache control directives
-     *
-     * @return array
-     */
-    public function getDirectives()
-    {
-        if ($this->directives === null) {
-            $this->directives = array();
-            foreach ($this->parseParams() as $collection) {
-                foreach ($collection as $key => $value) {
-                    $this->directives[$key] = $value === '' ? true : $value;
-                }
-            }
-        }
-
-        return $this->directives;
-    }
-
-    /**
-     * Updates the header value based on the parsed directives
-     *
-     * @param array $directives Array of cache control directives
-     */
-    protected function updateFromDirectives(array $directives)
-    {
-        $this->directives = $directives;
-        $this->values = array();
-
-        foreach ($directives as $key => $value) {
-            $this->values[] = $value === true ? $key : "{$key}={$value}";
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

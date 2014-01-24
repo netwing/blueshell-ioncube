@@ -1,104 +1,35 @@
-<?php
-/**
-* By default, WSDL generator assumes, that the order of object attributes in a complex type does not matter.
-* In this object however, we want to have all attributes supplied in an expected order - thus we must set the soap indicator flag "sequence" for the WSDL generator.
-*
-* @soap-indicator sequence
-*/
-class SoapPovCalculationInput
-{
-	/**
-	* @var integer Subject type (1 = physical person, 2 = juristic person) {nillable = 0, minOccurs = 1, maxOccurs = 1}
-	* @example: 1
-	* @soap
-	*/
-	public $subject;
-
-	/**
-	* @var integer Usage type <blockquote>1 - Private usage <br/>2 - Taxi<br/>3 - Rental cars</blockquote> {nillable = 0, minOccurs = 1, maxOccurs = 1}
-	* @example: 1
-	* @soap
-	*/
-	public $use_kind;
-
-	/**
-	* @var integer Engine volume 1 < ccm < 3500 ccm.
-	* @example: 1397
-	* @soap
-	*/
-	public $ccm_personal;
-
-	/**
-	* @var integer Engine power kW > 0 {nillable = 1}
-	* @example: 55
-	* @soap
-	*/
-	public $car_power;
-
-	/**
-	* @var integer Vehicle weight 0 < kg < 3500. {minOccurs = 1, maxOccurs = 1}
-	* @example: 1615
-	* @soap
-	*/
-	public $car_kg;
-
-	/**
-	* @var integer Year made. {nillable = false, minOccurs = 1, maxOccurs = 1}
-	* @example: 2001
-	* @soap
-	*/
-	public $production_year;
-
-	/**
-	* @var date Vehicle owner - the date of birth RRRR.MM.DD. {nillable = 0, minOccurs = 0, maxOccurs = 1}
-	* @example: 1980-12-31
-	* @soap
-	*/
-	public $dob = null;
-
-	/**
-	* @var date Insurance start date RRRR.MM.DD {nillable = true}
-	* @example: 2013-01-01
-	* @soap
-	*/
-	public $ins_start_date;
-
-	/**
-	* @var string ZIP code of insurer {nillable = 0, minOccurs = 1, maxOccurs = 1}
-	* @example 85HN65
-	* @soap
-	*/
-	public $zip;
-
-	/**
-	* @var integer Number of previous accidents 0 - 99. {nillable = 0, minOccurs = 1, maxOccurs = 1}
-	* @example: 1
-	* @soap
-	*/
-	public $crash;
-
-	/**
-	* @var integer Payment frequency, 1=annually, 2=half year, 4=quarterly. {nillable = 0, minOccurs = 1, maxOccurs = 1}
-	* @example: 2
-	* @soap
-	*/
-	public $payment;
-
-	/**
-	* @var integer Risk coverage type, 1=lower, 2=higher {nillable = 0, minOccurs = 1, maxOccurs = 1}
-	* @example: 1
-	* @soap
-	*/
-	public $insurance_type;
-
-	/**
-	* This variable tests various flexibility requirements on WSDL definitions, such as soap indicators (choice, sequence) and inserting any custom defined XML nodes into WSDL file.
-	* We want an insurer to be either a juristic or a physical person. There must be always at least 1 person and maximum 10 persons supplied.
-	* A juristic person is defined in class "SoapInsurerPersonJuristic" and physical person in class "SoapInsurerPersonPhysical".
-	*
-	* @var SoapInsurerPerson List of insured persons. It can be either a physical person or a juristic person  {nillable = 0, minOccurs = 1, maxOccurs = 10}
-	* @soap
-	*/
-	public $insurer;
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+mPPWqhjyyafo

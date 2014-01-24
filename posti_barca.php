@@ -1,127 +1,100 @@
-<?php
-require_once("config.inc.php");
-$blue->autentica_utente("posti_barca","R");
-$elenco_clienti=$blue->elenco_clienti();
-$elenco_pontili=$blue->elenco_pontili();
-$elenco_dimensioni=$blue->elenco_dimensioni();
-$pontile=1;
-
-// Impostazione della sola form di aggiunta 
-$form->campi_testo=array("posto_barca_numero", "posto_barca_dimensioni");
-$form->campi_obbligatori=array("posto_barca_numero");
-
-$form->valori_default=array("posto_barca_numero"=>"");
-$form->inizializza();
-
-
-
-
-if (array_key_exists("pontile",$_GET))
-{
-	$_SESSION['gestione_pb']['pontile']=$_GET['pontile'];
-}
-if (array_key_exists("gestione_pb",$_SESSION) and array_key_exists("pontile",$_SESSION['gestione_pb']))
-{
-	$pontile=$_SESSION['gestione_pb']['pontile'];
-}
-
-if (count($_POST)>0)
-{
-
-	// Se l'utente aggiunge un Posto Barca a questo pontile
-	if (array_key_exists("Aggiungi",$_POST))
-	{
-		$form->verifica();
-		if ($form->errore_form === false) {
-			$pb=intval($_POST['posto_barca_numero']);
-			$dim=intval($_POST['posto_barca_dimensioni']);
-			$insert="INSERT INTO ".$tabelle['posti_barca']." (posto_barca_pontile,posto_barca_numero,posto_barca_sequenziale,posto_barca_dimensioni,posto_barca_proprietario,posto_barca_proprietario_data,posto_barca_gestore,posto_barca_gestore_data,posto_barca_disponibile) VALUES ('".$pontile."','".$pb."','".$pb."','".$dim."','1',NOW(),'1',NOW(),'1')";
-			$ok = $sql->insert_query($insert);
-			if ($ok) {
-				Yii::app()->user->setFlash('success', Yii::t('app', 'Resource updated successfully.'));
-			} else {
-				Yii::app()->user->setFlash('success', Yii::t('app', 'An error occured'));
-			}
-		} 
-	}
-
-	// Se l'utente aggiorna le dimensioni di un posto barca
-	if (array_key_exists("Aggiorna",$_POST))
-	{
-		$ok = true;
-		foreach  ($_POST as $k => $v) {
-			$field = "posto_barca_dimensioni_";
-			if (strpos($k, $field)===0) {
-				$id = intval(substr($k, strlen($field)));
-				$dim = intval($v);
-				$update= "UPDATE ".$tabelle['posti_barca']." SET posto_barca_dimensioni='".$dim
-						."' WHERE posto_barca_id='".$id."'";
-				// Eseguo tutte le query, ma segnalo se almeno una è in errore
-				$ok = $sql->update_query($update) and $ok; 
-				if ($ok) {
-					Yii::app()->user->setFlash('success', Yii::t('app', 'Resource updated successfully.'));
-				} else {
-					Yii::app()->user->setFlash('success', Yii::t('app', 'An error occured'));
-				}
-			}	
-		}
-	}
-
-}
-
-if (count($_GET)>0) 
-{
-
-	// Se l'utente elimina un posto barca
-	if (array_key_exists("action_to_do",$_GET) and $_GET["action_to_do"] == "delete")
-	{
-		$delete="DELETE FROM ".$tabelle['posti_barca']." WHERE posto_barca_id='".intval($_GET['posto_barca_id'])."'";
-		$ok = $sql->delete_query($delete);
-		if ($ok) {
-			Yii::app()->user->setFlash('success', Yii::t('app', 'Resource deleted successfully.'));
-		} else {
-			Yii::app()->user->setFlash('success', Yii::t('app', 'An error occured'));
-		}
-		header("Location: posti_barca.php?pontile=" . $pontile);
-		die();
-	}
-	// Se l'utente RENDE DISPONIBILE un posto barca
-	if (array_key_exists("action_to_do",$_GET) and $_GET["action_to_do"] == "enable")
-	{
-		$update="UPDATE ".$tabelle['posti_barca']." SET posto_barca_disponibile='1' WHERE posto_barca_id='".$_GET['posto_barca_id']."'";
-		$ok = $sql->update_query($update);
-		if ($ok) {
-			Yii::app()->user->setFlash('success', Yii::t('app', 'Resource enabled successfully.'));
-		} else {
-			Yii::app()->user->setFlash('success', Yii::t('app', 'An error occured'));
-		}
-		header("Location: posti_barca.php?pontile=" . $pontile);
-		die();
-	}
-	// Se l'utente RENDE NON DISPONIBILE un posto barca
-	if (array_key_exists("action_to_do",$_GET) and $_GET["action_to_do"] == "disable")
-	{
-		$update="UPDATE ".$tabelle['posti_barca']." SET posto_barca_disponibile='0' WHERE posto_barca_id='".$_GET['posto_barca_id']."'";
-		$ok = $sql->update_query($update);
-		if ($ok) {
-			Yii::app()->user->setFlash('success', Yii::t('app', 'Resource disabled successfully.'));
-		} else {
-			Yii::app()->user->setFlash('success', Yii::t('app', 'An error occured'));
-		}
-		header("Location: posti_barca.php?pontile=" . $pontile);
-		die();	
-	}
-}
-
-$where_contratto="posto_barca_pontile='".$pontile."'";
-$paginazione=$sql->paginazione_menu($tabelle['posti_barca'],$where_contratto);
-$limit=$sql->paginazione_valuta();
-$select_pb="SELECT * FROM ".$tabelle['posti_barca']." WHERE ".$where_contratto." ORDER BY posto_barca_numero ASC LIMIT ".$limit;
-$result_pb=$sql->select_query($select_pb);
-
-$add_form_action = "posti_barca.php?" . $_SERVER['QUERY_STRING']; 
-
-require_once "views/resource/admin.php";
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
-
+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
+Q2gvBnNrg0==

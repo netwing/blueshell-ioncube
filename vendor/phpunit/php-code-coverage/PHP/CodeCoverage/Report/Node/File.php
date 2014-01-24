@@ -1,721 +1,211 @@
-<?php
-/**
- * PHP_CodeCoverage
- *
- * Copyright (c) 2009-2013, Sebastian Bergmann <sebastian@phpunit.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @category   PHP
- * @package    CodeCoverage
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://github.com/sebastianbergmann/php-code-coverage
- * @since      File available since Release 1.1.0
- */
-
-/**
- * Represents a file in the code coverage information tree.
- *
- * @category   PHP
- * @package    CodeCoverage
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://github.com/sebastianbergmann/php-code-coverage
- * @since      Class available since Release 1.1.0
- */
-class PHP_CodeCoverage_Report_Node_File extends PHP_CodeCoverage_Report_Node
-{
-    /**
-     * @var array
-     */
-    protected $coverageData;
-
-    /**
-     * @var array
-     */
-    protected $testData;
-
-    /**
-     * @var array
-     */
-    protected $ignoredLines;
-
-    /**
-     * @var integer
-     */
-    protected $numExecutableLines = 0;
-
-    /**
-     * @var integer
-     */
-    protected $numExecutedLines = 0;
-
-    /**
-     * @var array
-     */
-    protected $classes = array();
-
-    /**
-     * @var array
-     */
-    protected $traits = array();
-
-    /**
-     * @var array
-     */
-    protected $functions = array();
-
-    /**
-     * @var array
-     */
-    protected $linesOfCode = array();
-
-    /**
-     * @var integer
-     */
-    protected $numTestedTraits = 0;
-
-    /**
-     * @var integer
-     */
-    protected $numTestedClasses = 0;
-
-    /**
-     * @var integer
-     */
-    protected $numMethods = NULL;
-
-    /**
-     * @var integer
-     */
-    protected $numTestedMethods = NULL;
-
-    /**
-     * @var integer
-     */
-    protected $numTestedFunctions = NULL;
-
-    /**
-     * @var array
-     */
-    protected $startLines = array();
-
-    /**
-     * @var array
-     */
-    protected $endLines = array();
-
-    /**
-     * @var boolean
-     */
-    protected $cacheTokens;
-
-    /**
-     * Constructor.
-     *
-     * @param  string                       $name
-     * @param  PHP_CodeCoverage_Report_Node $parent
-     * @param  array                        $coverageData
-     * @param  array                        $testData
-     * @param  boolean                      $cacheTokens
-     * @throws PHP_CodeCoverage_Exception
-     */
-    public function __construct($name, PHP_CodeCoverage_Report_Node $parent, array $coverageData, array $testData, $cacheTokens)
-    {
-        if (!is_bool($cacheTokens)) {
-            throw PHP_CodeCoverage_Util_InvalidArgumentHelper::factory(
-              1, 'boolean'
-            );
-        }
-
-        parent::__construct($name, $parent);
-
-        $this->coverageData = $coverageData;
-        $this->testData     = $testData;
-        $this->ignoredLines = PHP_CodeCoverage_Util::getLinesToBeIgnored(
-                                $this->getPath(), $cacheTokens
-                              );
-        $this->cacheTokens  = $cacheTokens;
-
-        $this->calculateStatistics();
-    }
-
-    /**
-     * Returns the number of files in/under this node.
-     *
-     * @return integer
-     */
-    public function count()
-    {
-        return 1;
-    }
-
-    /**
-     * Returns the code coverage data of this node.
-     *
-     * @return array
-     */
-    public function getCoverageData()
-    {
-        return $this->coverageData;
-    }
-
-    /**
-     * Returns the test data of this node.
-     *
-     * @return array
-     */
-    public function getTestData()
-    {
-        return $this->testData;
-    }
-
-    /**
-     * @return array
-     */
-    public function getIgnoredLines()
-    {
-        return $this->ignoredLines;
-    }
-
-    /**
-     * Returns the classes of this node.
-     *
-     * @return array
-     */
-    public function getClasses()
-    {
-        return $this->classes;
-    }
-
-    /**
-     * Returns the traits of this node.
-     *
-     * @return array
-     */
-    public function getTraits()
-    {
-        return $this->traits;
-    }
-
-    /**
-     * Returns the functions of this node.
-     *
-     * @return array
-     */
-    public function getFunctions()
-    {
-        return $this->functions;
-    }
-
-    /**
-     * Returns the LOC/CLOC/NCLOC of this node.
-     *
-     * @return array
-     */
-    public function getLinesOfCode()
-    {
-        return $this->linesOfCode;
-    }
-
-    /**
-     * Returns the number of executable lines.
-     *
-     * @return integer
-     */
-    public function getNumExecutableLines()
-    {
-        return $this->numExecutableLines;
-    }
-
-    /**
-     * Returns the number of executed lines.
-     *
-     * @return integer
-     */
-    public function getNumExecutedLines()
-    {
-        return $this->numExecutedLines;
-    }
-
-    /**
-     * Returns the number of classes.
-     *
-     * @return integer
-     */
-    public function getNumClasses()
-    {
-        return count($this->classes);
-    }
-
-    /**
-     * Returns the number of tested classes.
-     *
-     * @return integer
-     */
-    public function getNumTestedClasses()
-    {
-        return $this->numTestedClasses;
-    }
-
-    /**
-     * Returns the number of traits.
-     *
-     * @return integer
-     */
-    public function getNumTraits()
-    {
-        return count($this->traits);
-    }
-
-    /**
-     * Returns the number of tested traits.
-     *
-     * @return integer
-     */
-    public function getNumTestedTraits()
-    {
-        return $this->numTestedTraits;
-    }
-
-    /**
-     * Returns the number of methods.
-     *
-     * @return integer
-     */
-    public function getNumMethods()
-    {
-        if ($this->numMethods === NULL) {
-            $this->numMethods = 0;
-
-            foreach ($this->classes as $class) {
-                foreach ($class['methods'] as $method) {
-                    if ($method['executableLines'] > 0) {
-                        $this->numMethods++;
-                    }
-                }
-            }
-
-            foreach ($this->traits as $trait) {
-                foreach ($trait['methods'] as $method) {
-                    if ($method['executableLines'] > 0) {
-                        $this->numMethods++;
-                    }
-                }
-            }
-        }
-
-        return $this->numMethods;
-    }
-
-    /**
-     * Returns the number of tested methods.
-     *
-     * @return integer
-     */
-    public function getNumTestedMethods()
-    {
-        if ($this->numTestedMethods === NULL) {
-            $this->numTestedMethods = 0;
-
-            foreach ($this->classes as $class) {
-                foreach ($class['methods'] as $method) {
-                    if ($method['executableLines'] > 0 &&
-                        $method['coverage'] == 100) {
-                        $this->numTestedMethods++;
-                    }
-                }
-            }
-
-            foreach ($this->traits as $trait) {
-                foreach ($trait['methods'] as $method) {
-                    if ($method['executableLines'] > 0 &&
-                        $method['coverage'] == 100) {
-                        $this->numTestedMethods++;
-                    }
-                }
-            }
-        }
-
-        return $this->numTestedMethods;
-    }
-
-    /**
-     * Returns the number of functions.
-     *
-     * @return integer
-     */
-    public function getNumFunctions()
-    {
-        return count($this->functions);
-    }
-
-    /**
-     * Returns the number of tested functions.
-     *
-     * @return integer
-     */
-    public function getNumTestedFunctions()
-    {
-        if ($this->numTestedFunctions === NULL) {
-            $this->numTestedFunctions = 0;
-
-            foreach ($this->functions as $function) {
-                if ($function['executableLines'] > 0 &&
-                    $function['coverage'] == 100) {
-                    $this->numTestedFunctions++;
-                }
-            }
-        }
-
-        return $this->numTestedFunctions;
-    }
-
-    /**
-     * Calculates coverage statistics for the file.
-     */
-    protected function calculateStatistics()
-    {
-        if ($this->cacheTokens) {
-            $tokens = PHP_Token_Stream_CachingFactory::get($this->getPath());
-        } else {
-            $tokens = new PHP_Token_Stream($this->getPath());
-        }
-
-        $this->processClasses($tokens);
-        $this->processTraits($tokens);
-        $this->processFunctions($tokens);
-        $this->linesOfCode = $tokens->getLinesOfCode();
-        unset($tokens);
-
-        for ($lineNumber = 1; $lineNumber <= $this->linesOfCode['loc']; $lineNumber++) {
-            if (isset($this->startLines[$lineNumber])) {
-                // Start line of a class.
-                if (isset($this->startLines[$lineNumber]['className'])) {
-                    $currentClass = &$this->startLines[$lineNumber];
-                }
-
-                // Start line of a trait.
-                else if (isset($this->startLines[$lineNumber]['traitName'])) {
-                    $currentTrait = &$this->startLines[$lineNumber];
-                }
-
-                // Start line of a method.
-                else if (isset($this->startLines[$lineNumber]['methodName'])) {
-                    $currentMethod = &$this->startLines[$lineNumber];
-                }
-
-                // Start line of a function.
-                else if (isset($this->startLines[$lineNumber]['functionName'])) {
-                    $currentFunction = &$this->startLines[$lineNumber];
-                }
-            }
-
-            if (!isset($this->ignoredLines[$lineNumber]) &&
-                isset($this->coverageData[$lineNumber]) &&
-                $this->coverageData[$lineNumber] !== NULL) {
-                if (isset($currentClass)) {
-                    $currentClass['executableLines']++;
-                }
-
-                if (isset($currentTrait)) {
-                    $currentTrait['executableLines']++;
-                }
-
-                if (isset($currentMethod)) {
-                    $currentMethod['executableLines']++;
-                }
-
-                if (isset($currentFunction)) {
-                    $currentFunction['executableLines']++;
-                }
-
-                $this->numExecutableLines++;
-
-                if (count($this->coverageData[$lineNumber]) > 0 ||
-                    isset($this->ignoredLines[$lineNumber])) {
-                    if (isset($currentClass)) {
-                        $currentClass['executedLines']++;
-                    }
-
-                    if (isset($currentTrait)) {
-                        $currentTrait['executedLines']++;
-                    }
-
-                    if (isset($currentMethod)) {
-                        $currentMethod['executedLines']++;
-                    }
-
-                    if (isset($currentFunction)) {
-                        $currentFunction['executedLines']++;
-                    }
-
-                    $this->numExecutedLines++;
-                }
-            }
-
-            if (isset($this->endLines[$lineNumber])) {
-                // End line of a class.
-                if (isset($this->endLines[$lineNumber]['className'])) {
-                    unset($currentClass);
-                }
-
-                // End line of a trait.
-                else if (isset($this->endLines[$lineNumber]['traitName'])) {
-                    unset($currentTrait);
-                }
-
-                // End line of a method.
-                else if (isset($this->endLines[$lineNumber]['methodName'])) {
-                    unset($currentMethod);
-                }
-
-                // End line of a function.
-                else if (isset($this->endLines[$lineNumber]['functionName'])) {
-                    unset($currentFunction);
-                }
-            }
-        }
-
-        foreach ($this->traits as &$trait) {
-            foreach ($trait['methods'] as &$method) {
-                if ($method['executableLines'] > 0) {
-                    $method['coverage'] = ($method['executedLines'] /
-                                           $method['executableLines']) * 100;
-                } else {
-                    $method['coverage'] = 100;
-                }
-
-                $method['crap'] = $this->crap(
-                  $method['ccn'], $method['coverage']
-                );
-
-                $trait['ccn'] += $method['ccn'];
-            }
-
-            if ($trait['executableLines'] > 0) {
-                $trait['coverage'] = ($trait['executedLines'] /
-                                      $trait['executableLines']) * 100;
-            } else {
-                $trait['coverage'] = 100;
-            }
-
-            if ($trait['coverage'] == 100) {
-                $this->numTestedClasses++;
-            }
-
-            $trait['crap'] = $this->crap(
-              $trait['ccn'], $trait['coverage']
-            );
-        }
-
-        foreach ($this->classes as &$class) {
-            foreach ($class['methods'] as &$method) {
-                if ($method['executableLines'] > 0) {
-                    $method['coverage'] = ($method['executedLines'] /
-                                           $method['executableLines']) * 100;
-                } else {
-                    $method['coverage'] = 100;
-                }
-
-                $method['crap'] = $this->crap(
-                  $method['ccn'], $method['coverage']
-                );
-
-                $class['ccn'] += $method['ccn'];
-            }
-
-            if ($class['executableLines'] > 0) {
-                $class['coverage'] = ($class['executedLines'] /
-                                      $class['executableLines']) * 100;
-            } else {
-                $class['coverage'] = 100;
-            }
-
-            if ($class['coverage'] == 100) {
-                $this->numTestedClasses++;
-            }
-
-            $class['crap'] = $this->crap(
-              $class['ccn'], $class['coverage']
-            );
-        }
-    }
-
-    /**
-     * @param PHP_Token_Stream $tokens
-     */
-    protected function processClasses(PHP_Token_Stream $tokens)
-    {
-        $classes = $tokens->getClasses();
-        unset($tokens);
-
-        $link = $this->getId() . '.html#';
-
-        foreach ($classes as $className => $class) {
-            $this->classes[$className] = array(
-              'className'       => $className,
-              'methods'         => array(),
-              'startLine'       => $class['startLine'],
-              'executableLines' => 0,
-              'executedLines'   => 0,
-              'ccn'             => 0,
-              'coverage'        => 0,
-              'crap'            => 0,
-              'package'         => $class['package'],
-              'link'            => $link . $class['startLine']
-            );
-
-            $this->startLines[$class['startLine']] = &$this->classes[$className];
-            $this->endLines[$class['endLine']]     = &$this->classes[$className];
-
-            foreach ($class['methods'] as $methodName => $method) {
-                $this->classes[$className]['methods'][$methodName] = array(
-                  'methodName'      => $methodName,
-                  'signature'       => $method['signature'],
-                  'startLine'       => $method['startLine'],
-                  'endLine'         => $method['endLine'],
-                  'executableLines' => 0,
-                  'executedLines'   => 0,
-                  'ccn'             => $method['ccn'],
-                  'coverage'        => 0,
-                  'crap'            => 0,
-                  'link'            => $link . $method['startLine']
-                );
-
-                $this->startLines[$method['startLine']] = &$this->classes[$className]['methods'][$methodName];
-                $this->endLines[$method['endLine']]     = &$this->classes[$className]['methods'][$methodName];
-            }
-        }
-    }
-
-    /**
-     * @param PHP_Token_Stream $tokens
-     */
-    protected function processTraits(PHP_Token_Stream $tokens)
-    {
-        $traits = $tokens->getTraits();
-        unset($tokens);
-
-        $link = $this->getId() . '.html#';
-
-        foreach ($traits as $traitName => $trait) {
-            $this->traits[$traitName] = array(
-              'traitName'       => $traitName,
-              'methods'         => array(),
-              'startLine'       => $trait['startLine'],
-              'executableLines' => 0,
-              'executedLines'   => 0,
-              'ccn'             => 0,
-              'coverage'        => 0,
-              'crap'            => 0,
-              'package'         => $trait['package'],
-              'link'            => $link . $trait['startLine']
-            );
-
-            $this->startLines[$trait['startLine']] = &$this->traits[$traitName];
-            $this->endLines[$trait['endLine']]     = &$this->traits[$traitName];
-
-            foreach ($trait['methods'] as $methodName => $method) {
-                $this->traits[$traitName]['methods'][$methodName] = array(
-                  'methodName'      => $methodName,
-                  'signature'       => $method['signature'],
-                  'startLine'       => $method['startLine'],
-                  'endLine'         => $method['endLine'],
-                  'executableLines' => 0,
-                  'executedLines'   => 0,
-                  'ccn'             => $method['ccn'],
-                  'coverage'        => 0,
-                  'crap'            => 0,
-                  'link'            => $link . $method['startLine']
-                );
-
-                $this->startLines[$method['startLine']] = &$this->traits[$traitName]['methods'][$methodName];
-                $this->endLines[$method['endLine']]     = &$this->traits[$traitName]['methods'][$methodName];
-            }
-        }
-    }
-
-    /**
-     * @param PHP_Token_Stream $tokens
-     */
-    protected function processFunctions(PHP_Token_Stream $tokens)
-    {
-        $functions = $tokens->getFunctions();
-        unset($tokens);
-
-        $link = $this->getId() . '.html#';
-
-        foreach ($functions as $functionName => $function) {
-            $this->functions[$functionName] = array(
-              'functionName'    => $functionName,
-              'signature'       => $function['signature'],
-              'startLine'       => $function['startLine'],
-              'executableLines' => 0,
-              'executedLines'   => 0,
-              'ccn'             => $function['ccn'],
-              'coverage'        => 0,
-              'crap'            => 0,
-              'link'            => $link . $function['startLine']
-            );
-
-            $this->startLines[$function['startLine']] = &$this->functions[$functionName];
-            $this->endLines[$function['endLine']]     = &$this->functions[$functionName];
-        }
-    }
-
-    /**
-     * Calculates the Change Risk Anti-Patterns (CRAP) index for a unit of code
-     * based on its cyclomatic complexity and percentage of code coverage.
-     *
-     * @param  integer $ccn
-     * @param  float   $coverage
-     * @return string
-     * @since  Method available since Release 1.2.0
-     */
-    protected function crap($ccn, $coverage)
-    {
-        if ($coverage == 0) {
-            return (string)pow($ccn, 2) + $ccn;
-        }
-
-        if ($coverage >= 95) {
-            return (string)$ccn;
-        }
-
-        return sprintf(
-          '%01.2F', pow($ccn, 2) * pow(1 - $coverage/100, 3) + $ccn
-        );
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

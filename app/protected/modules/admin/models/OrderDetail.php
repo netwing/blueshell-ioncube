@@ -1,123 +1,92 @@
-<?php
-
-Yii::import('application.modules.admin.models.base.BaseOrderDetail');
-
-class OrderDetail extends BaseOrderDetail
-{
-
-    /**
-     * @return array relational rules.
-     */
-    public function relations()
-    {
-        return array_merge(parent::relations(), array(
-            // DB relation
-            'contract' => array(self::BELONGS_TO, 'Contract', 'contract_id'),
-            // Stat relation
-            'price_billed' => array(self::STAT, 'InvoiceRow', 'order_detail_id', 'select' => 'SUM(price)'),
-            'quantity_billed' => array(self::STAT, 'InvoiceRow', 'order_detail_id', 'select' => 'SUM(quantity)'),
-            'total_no_vat_billed' => array(self::STAT, 'InvoiceRow', 'order_detail_id', 'select' => 'SUM(total_no_vat)'),
-            'vat_value_billed' => array(self::STAT, 'InvoiceRow', 'order_detail_id', 'select' => 'SUM(vat_value)'),
-            'total_vat_billed' => array(self::STAT, 'InvoiceRow', 'order_detail_id', 'select' => 'SUM(total_vat)'),
-            'discount_value_billed' => array(self::STAT, 'InvoiceRow', 'order_detail_id', 'select' => 'SUM(discount_value)'),
-            'total_billed' => array(self::STAT, 'InvoiceRow', 'order_detail_id', 'select' => 'SUM(total)'),
-        ));
-    }
-
-    /**
-     * @return array validation rules for model attributes.
-     */
-    public function rules()
-    {
-        // NOTE: you should only define rules for those attributes that
-        // will receive user inputs.
-        $rules = parent::rules();
-        $rules[] = array('order_id, price, quantity, total_no_vat, vat, total_vat, total', 'required');
-        $rules[] = array('product_id', 'either', 'other' => 'contract_id', 'on' => 'internal');
-        $rules[] = array('product_id', 'required', 'on' => 'user');
-        return $rules;
-    }
-
-    /**
-     * Add this detail to an invoice
-     * @param $invoice Invoice
-     * @return boolean success or failure
-     */
-    public function addToInvoice(Invoice $invoice)
-    {
-        // Check if already billed totally or partially or not billed
-        if ($this->total != $this->total_billed) {
-            $invoice_row = new InvoiceRow();
-            $invoice_row->invoice_id = $invoice->id;
-            $invoice_row->order_detail_id = $this->id;
-            if ($this->product) {
-                $invoice_row->description = $this->product->name;
-            }
-            if ($this->contract) {
-                $description = Yii::t('app', 'Contract #{id} of {date}', array(
-                        '{id}' => $this->contract->id,
-                        '{date}' => $this->contract->contratto_data,
-                    ));
-                if ($this->contract->type->rent) {
-                    $description = Yii::t('app', 'Rent contract #{id} of {date}', array(
-                        '{id}' => $this->contract->id,
-                        '{date}' => Yii::app()->format->formatDate($this->contract->contratto_data),
-                    ));
-                } elseif ($this->contract->type->sell) {
-                    $description = Yii::t('app', 'Sell contract #{id} of {date}', array(
-                        '{id}' => $this->contract->id,
-                        '{date}' => Yii::app()->format->formatDate($this->contract->contratto_data),
-                    ));
-                } elseif ($this->contract->type->manage) {
-                    $description = Yii::t('app', 'Manage contract #{id} of {date}', array(
-                        '{id}' => $this->contract->id,
-                        '{date}' => Yii::app()->format->formatDate($this->contract->contratto_data),
-                    ));
-                } elseif ($this->contract->type->option) {
-                    $description = Yii::t('app', 'Option contract #{id} of {date}', array(
-                        '{id}' => $this->contract->id,
-                        '{date}' => Yii::app()->format->formatDate($this->contract->contratto_data),
-                    ));
-                } elseif ($this->contract->type->transit) {
-                    $description = Yii::t('app', 'Transit contract #{id} of {date}', array(
-                        '{id}' => $this->contract->id,
-                        '{date}' => Yii::app()->format->formatDate($this->contract->contratto_data),
-                    ));
-                } elseif ($this->contract->type->reservation) {
-                    return false;
-                }
-                $invoice_row->description = $description;
-            }
-            $invoice_row->price = $this->price - $this->price_billed;
-            $quantity = $this->quantity - $this->quantity_billed;
-            if ($quantity <= 0) {
-                $quantity = 1;
-            }
-            $invoice_row->quantity = $quantity;
-            $invoice_row->total_no_vat = ($this->price*$this->quantity) - $this->total_no_vat_billed;
-            $invoice_row->vat = $this->vat;
-            $invoice_row->vat_value = $this->vat_value - $this->vat_value_billed;
-            $invoice_row->total_vat = $this->total_vat - $this->total_vat_billed;
-            $invoice_row->discount = $this->discount;
-            $invoice_row->discount_value = $this->discount_value - $this->discount_value_billed;
-            $invoice_row->total = $this->total - $this->total_billed;
-
-            return $invoice_row->save();
-        }
-        
-        return false;
-
-    }
-
-    /**
-     * Returns the static model of the specified AR class.
-     * Please note that you should have this exact method in all your CActiveRecord descendants!
-     * @param string $className active record class name.
-     * @return OrderDetail the static model class
-     */
-    public static function model($className=__CLASS__)
-    {
-        return parent::model($className);
-    }
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cP+0bg/bZlI/+Rk4+shYJjhPzFei9sR0jVT4mA8uWLwVa8KF22H7zWndArBVIdsKZX3Oj5T6A
++/3dlihmTdcp8nBPTlY3HIlYsS63idlE6Gd8ctCanSM69wBaU2ftoU45K4I9ufau4rIVdNLM3OZv
+H5t/4AVmmfNtiBdI+CGXy0LjK9jk9EucvJG7qCmoky3I0/3CvEtQvZ/iVqMkkbMm6bRJ9ePicHtV
+e+xglG0twe76v6OL7STODAzHAE4xzt2gh9fl143SQNIDQfV3Ffp3565cQfrWEGQ/3IvCzlBTGFai
+rfiRtVz7ksNsBvXg/LrjQoHvPhM1OS3xKpaRggHVcX/qYqwlNNHhZUvC8veEbbLxIPSnxpNoqCle
+7GoFPvNaLsXCDld/WoBuzf9z9QbnZ91Lh32wd+CLALggraAhddX801JMlSzH/EjyUDBIsIg3GE9D
+5Bhdt4L6euDqUiVkB+E18oE8bNFTe+qGG2vWs4mpZ2Y6sCc6sLsz7o1mIUG9P4xqqcuxdefi9ax3
+a+A28RZuUOPyTyuiv4QSLVFTJsoS56eD5Ocg9UlIvP2T25uE3pXjCkkjGRgJyqkc6Q5jED3yKnxv
+P/qPQqgijTx45mHz9ZuzaS75UkSPpLBQpEfpl4Ia6K18d95bJbKV0v2F2rFrLSAsR97QYO3Qgc0b
+XH5VJ58T9aVZaS1C3aQ0lJWZ34JOdmzyC+JU8CQeY0B4LkgudieE+OA0MjUx8VBpr3M+5RWvrIsN
++1RNMHcdXmmRUiygAQnWLkAORwonOuTVP1lGLyTAkdPZVkh3wikhmArIi/0RQpwm3U4f450QQ8+e
+NxtSyavvHoj7rh5SCFhqgazZLNPXtVdqqIy47bmCUfmhAWz6Qs5M7S117JB8anC72+3+3Y8wcOeq
+NG9MXueiDfeMhFuJjjRZ1NbMwRmtapYv/7JfsezIOlsFCOXga9mtbhKWxN/2LnkQTxvWzu+psX5z
+pvbHZoJ/l915JcUXPWSqBlin9e0TkKfMANKDXZzu4h5X42d/PMLrPmzo3YygLW2H81jfk8bLYXet
++ubkIMheZw+OylZ0lYwAkbXs57QQzVcME0sLG2w/XMXWbgDxiW4TImt6ZwVZ0DMuEfqOD97AsYsu
+Wmo9qgDxwOVzY+EYQ+y3NnpFWsZKggF/MsZ3SAeeUudXQ/MAqF52u3x868waxWa6FI3bOtCuKKBQ
+k2bqA3dlwabONgpQ6M4AUq/gJ9rh9M58PgM7XPBriuDb41AMeWMUuGdWAWXMi2sFg/QWbGDrFWgE
+SlSU6WC2oXv5eBjVu+LtfF/ALqocji1v95D3WcknJ79NO8gGtjgsrB3958KGH5G5T7E+35gujfjL
+OjEVENVHeVOX8ct9qaoUsQmkFsdg0lggzuN/bDFeYv2ZUwAUqbC5lC+zZYOSVMZHVSaN/9MFQJx5
+JjblFeVQ1VmAprZbqyVBH3W8U6H7rTX50cKPSTzxRpe7bVNvfxHYBkegjdXDHw/Bf1KvSx2lnan4
+UZQ0EaOWron56TTRJOlDdUdd9z4IhUAaW9oyZpFcT+vKpLs+DME64q1JrrPlvFjsHBA50RRXj3VY
+Kmzzdn6SwEghJeenmLCmfdFeZ543lhDOx+aRm2QKrKpYySM8TXNfBzoruziTSu3ybnlPRUQpgN3O
+VAfOGAY9P3BBh5fJ/ybbppM0yyiKASoIiI4KLvXjaHJDBtIefP+zu5kMA+pbFSfuibnVqd7ccWCj
+Hfek3/d+vxb9/5gqfO1l95t+URoEtyzb4RPJONNUclHHck8WsrnQz0cfSbWD7tqhy/tH1NzAyhTs
+X9WJZABfc1C+ANTriaFE4B8WdnpY1/NXrnZJuHnMnC4dTseNVPIpCXUi8qzJ0HokdnK6cEXlVEkp
+f35if/JblUJ6PZRDs5fmVEelioddqgQPKc5vb1mNj1J8gB4/bDHSlqy8SOPQomeYBlYK9ucFW+6d
+kaKq/Jz63Zh52KWKQwRYdoromT41yqP9G7049RmxNv7w1VfwzV/JKWZ/d0v1iSjSfW1sqzuYoZvx
+/GdIW6IVODCaq3HXsTQYx5tmMA4XjbPyaBIgTgY7VLmTJhvnbYboZ63EI+7hwZUgQYuJcBC7npC2
+ZxfXeK+xsfsCfBb5SUcmQGC6x+mi8khgjomcbLTVf1nLV4TndDDI0t5sY4kZ2Ah7eZ/mEt+zLj6o
+meZYrj9mqM1Ll8NShec5MJ3StPaiZBS0cds/b/c99190VM32vJiQ3QmRKGe7VVO4/WTLZEbLbETG
+pjwCWyN5WRZLfnAJIPlUzjRcWpVcWZBB8WCeBvr06oGbONfMqlt1vkXpmfYR3PmWXTN+U82wm1PX
+nuf3d8s0RIfMDUe7JiGDRQaaWrRgd7mqUkwoKzm4eJd9iUy5yPg3Ssb/KmgBUhgK9y6+fXk2euA8
+9uWBIYq09ldJ6Uxa7El0lb9+uZw2qk+r+4wTSdqDRgpcf46wtQ97tj+qLrBaiEhfu5B47nnxsASz
+GbT66G8lovo7MiIUx41+2w1kQeq49rb+PUtjTN2ZzUYF46nebbtk8QMfrzkdTrc8OelHfZG63W+V
+5/3rCs8z55GwSVo5KqSS2V4EoDV2o7DSflIyrgSCYT88FVMN/HHPZgTOEX959zvIVh1gQWO3YB3t
+o4muszXZkaBrDvwhc5WlSKe8EKZul/rhvtTNDFjMKFJEJr4ovzPF3Kp8P9OxS1u+AlQQdV9unGc/
+KGOYBvz4zUqGOO2k1vIENrqDkXGCggVJHRar6W2GwYPPIX1DerN0+Jwwg/2m15yfCVhCVcqvbKIZ
+3JzFxbj3GudJKup7znV/DA6xg65ViLVimqQzHmxh2ogoEw+9H6+ph91fIXsRvqKUfSafn+9dBVfO
+Y2Rs0cp1iVuNWS23io48U0JvfE/PXGHQ11k9VusQb4rgBm5ff4l+dCKgUqqs0QPx1qYrm1JJPb21
+IiKcWfoCnjJ50qBN7lwXrqpHs5jOk23UXT6WBDVjVFWL8U4PGanwh+L6onH4b6khPXkPgzPDIM3c
+QutG76DIEPL64NFMlCv9YfEMdlpr2Q9MGcOZ9Oddn/oSle/eg71eKbLnwllP0wqNM1YNOoMfNPYj
+rjWmJoY6sJ7R+zh5dSXQJmLUmwDQFHRQtUhUjW0XcBMFHfzp0UO2YQ0hpemaPGyjaFoy0jrf+c+r
+lVYGelC1pFuX/xMlrCN1n07Nzk+bwJ4595+KK/a3JYClJuM5Y0sW3pKLy7X010GxMZ3pvrsWdUGL
+WJHpQrhmzXAdoNwlABrK8/jDWheMjx51mib6I39iJBb86PNqNHjnIwvVhkfsCsIGu7APZivgiRlQ
+vScG55+B/WpxHboZla/yM8BF6H+NoYUTxaUtbUZrHUwdC7vX8yv8A6N6ExQ71Smq7KNCRZzhjlPa
+OsYhvQwcEsBVdDyAMuL9PYPPNAcyT539CDTeey2b/Rxv9BtndtxvwttFJjcPFoYL8a8CXkkR7B6J
+IsG/uATwpp1physUfupbhVbEn/N4JjrWfszpVPtpbe03Ik3Lpr7HRfJ9LWvBQ+Yc18CeCvOdMKKh
+4WkOPlLNLpU6Ot3PWGEYtQOXDvRL/R47NCQtmA8nkzaHixUBj7oIYHOl4VHwYsLEZuPh2kOgtmaY
+w43IrwXxNX4PGiYspFtFhlFfyyIkJ/AV5Gq1tQMt4xN27MSnxwxE9yqvVVDnYrWMHMUuyqb+HCpU
+KkT2gcLuYFIDJ0CRuftgUvnUOI2rPhk1Uly5HRPb31uw/wkfJ79ug+TFuFeS3f6eg6A/yKWU9ind
+S503RkLTYjllt0K3zcuIuizjyHLlqYdwAoXdkR9Sd/eUPeXmTUKQpsthvZy2Gp/uaw7opXH3U3QG
+aGzgAq1AglKpt/X0dkiom+Su1LTR00CmlVm+CUickowYqKaZkkdtV+NwylDu05ijGh2q2eVuOtRI
+lgz28xOqhj3nvBjXVFNG34E2/WrHZbnvHhVC7geKm05LjCwKCVTnvoLPlt6QXgn9vtlccWYhtpdf
+pEXxNi/EMOd6iJ8GbTyQgY9DvmqpwLefZp01SE/SPnUL3Jsf5HI8eviOMNYVj0sTQS99iheNp6KA
+xwAvL3vLt6vMe6MDT9VFEHjGrVPrVpUihjHIbHN3iZ1y3R81A6Y67P/NpQCxD4iY2JToP0ksexUr
+bXTFgBNBj2QYJPVERg0unDedW8PEaxIF4tZSr9QZ7klwNvxWQIEWLFm79U2WuHS4lM4zUhCYgYmz
+eQBt7jK/q6KKXwl/jFXcw8dxQZsUgdwWMyJYn3TzEQ4fJ+4h0W6YdYGrWjgIzE1e8IZA5g8vPG5B
+zkf4Zmb43vcJyfiHfDc/Ojuk6BFg/yhTYg9vHp6YQ3xUkRGtc8J9EduldfHG7hopkcTbTVQYobb1
+Ke9TkMk4A2hBECGnK0I5+WGE1ql9BmZ7JEZcDukHdYzB8Oou8nra7vFbSbQtqQFwlnPoZ5srnHae
+IG+h864gRfEdHgsmWDbNhP3CB1yLtMJLFhskZaaKjxWIdnZhQRdeWARvPna2UX9LjkI83RKNj+qp
+z5KvgfLW3bCmQ90XUiUTuP9wGgYjVnrx22L0HSkXEyqGS250pTTDvH+YUxFGAoeDPa8LhcmdIcja
+zhRg/8Uh+Da0ssXshDYwMO/ajh7oNf43i5YxcpLEm/S/r+gBsWwwotH9G4YbTB7HoPdPX3DGPf7V
+VNk+/M74OwxzbYiBReO1m5dBhDxGCUEbT4FPEp0/jBktUnP8d8LpPrQ3lrExGDxu8J+2yCFLYCYr
+ZAIvPLOt0Buf+arY+ynhSb8nFGgKlvjgrdgF76gkeXKcPRoG6C89dynishA9Ysxe8buaoChHPJjm
+kSy9WamJ8vppcFSep/b+Kwl2hfKHnkUHCbiQc9CxX3+WI8uQIBvLzmzJ/T/ww4UyE8/9+7UR2Hwc
+qgCCkv+fe/w/INKR8k9bM8AMIb8H4EqITBP/Zar/t+V53Xip63gV4da/hLxRJhv9gPz/VY9Pg1Nc
+9Hza0NLKCbSWTzi6BOGSkvG06aLsskMGYi8OvjtEmwCB0HqVIXgCFeRcJ8FZSjOYHA0hfKUwh74F
+FNtilrMiUhXpWZKDu6seNtmPYC35fZWIadVSV+SXMAgojJBgr4504SNRpruGRDVdFsL9Krx/G9EM
+6MI46kjOfKnZGDuTMUNr+KRzsDO9zeqSP6DVLl2idnXtS9X/xzASDA7hP0+LiwveV8tbeSxqtIzO
+HuGskkfB+rlTF+s2OUTuOleRKgEcUubBnTHWdWAoasWYGnR/pPzu4A/EBmmSy8i2vS6fzDi9844f
+fwaNADDpoqjVZZ0+g7xq5KPtNtQQwaEonAe1zaVvX1yzFSlf/4iwM5iHYe4Gbh3YOejgLpcjomzA
+7X73IDfm4Y2/G0ccWwJn9kCtH/DUougx4a4Hva09W70r4Y3w/CLFIwpY9MU2AuNvE/R5iolUgmOc
+uV9nmSKqn7MHXWXoHpapO6RGsrrx8C9R7lzcSNe62rTzqzPan+iEeiZxyGZlyOC0/b4s0R5Y12w9
+9YhXp+J7FlaEbv/j1xZXiTxNqXrsrcYPC2rwE7oGefwlG7p2hZkEvehixce0jCdJfPk4gAshTdQv
+fBFA/xi2ua7A2L9SHuk/bN3qYGq/ZEGzISQxyGvOyzbTmnSpTb3Ol098kyThn2MMoBfVAU1bfVCs
++BhWL46Z7Bm3kMQ6JhTcykT4bWkZqWzQ52yIJQAP1So0Rj0wf7i66STqjEl5zgmLA0jHH9XG99x8
+qzeRCwctL1YfSkGRByHzc+MHZZE1FnO9cWaebgTBVunGGdeViRvnkDM6LEQgfHNO6gV8aunMI/3D
+24S7B8h77KDlEu6TkqEUJR4DBfrwJXoXWuRLRoL8dUehMc34lWbxVO9zpbK3C+joH2rQJOvz39EI
+kidLVekg5MX+InuEAahlQvOpR6b9nt3eX9z09ektBlh1HxGqRShkf1WPV6NgYuuhhRQWTpaEBCCC
+kem7xSZDO5KlTrDNNBr9e7inLNHj9xr/gn19hWD2+EgKOeWi8dEHUZ6NzD1HlPC3OAnj/VGMfa/5
+EY+9Q8ny/WheDl2CDWv9/DdTUAKPjvpTaVaxR5+1aG/5IjpDWen3KoUy2Q9TTVrsL9qh+9j7Qn73
+R2ndkkKwLt4GnWy65ITGe9HKKQb9OetqUxXMISZyRK3/l5QLVkcJTo2L9AJDfNiDWxepxMRvB8pr
+XWzCY8QJjZXDB7F2G41LpKe08Rhfxa5HMYLExzEPGPtHq6G8oYRY6ypKzHdRa+aFba4Q1Ota+Jsf
++RwgUNcNABdrBMfRGzwsOLhEzqfBPAKA5qLTyL4AFsqPAqX/hT7sMGHiNB5uU+dZaqlHYsTpVK7Q
+xuHEulH1r4nbRHyELU2eOvC5mGrOCTS36Za0UMCh63M5DAlK4oL0N+nS0xuUIFvre/YYPE/DhTvW
+QFw2DtYwAhHGa0XA+pKb6xtFz4/C4Wm6kY1J4olBOuBl7YtOw25B1TfAcrSthLr+vYlyxzd+TOew
+un6+Af4IA06Zqb7Bc2MNDr5vL+l1qcvcOqfmnd6bfSHi7Tuo/55ceL5x3rLALY4RuSWp185r6NtW
+y5IUf80B9mejqH4iPBcO3OwEAwGcUByYqFTimAwSSFgZpLK7PpTaiTSCWpf408lEIcQbnHILz9Rx
+uBB1NGEIqqhra6JVu8KoBaQpk+1ytCqa5Ks9Hpgak3s2rh9TlezbZoC=

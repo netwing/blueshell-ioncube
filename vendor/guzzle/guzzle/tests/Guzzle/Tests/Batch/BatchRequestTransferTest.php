@@ -1,80 +1,53 @@
-<?php
-
-namespace Guzzle\Tests\Batch;
-
-use Guzzle\Batch\BatchRequestTransfer;
-use Guzzle\Http\Client;
-use Guzzle\Http\Curl\CurlMulti;
-
-/**
- * @covers Guzzle\Batch\BatchRequestTransfer
- */
-class BatchRequestTransferTest extends \Guzzle\Tests\GuzzleTestCase
-{
-    public function testCreatesBatchesBasedOnCurlMultiHandles()
-    {
-        $client1 = new Client('http://www.example.com');
-        $client1->setCurlMulti(new CurlMulti());
-
-        $client2 = new Client('http://www.example.com');
-        $client2->setCurlMulti(new CurlMulti());
-
-        $request1 = $client1->get();
-        $request2 = $client2->get();
-        $request3 = $client1->get();
-        $request4 = $client2->get();
-        $request5 = $client1->get();
-
-        $queue = new \SplQueue();
-        $queue[] = $request1;
-        $queue[] = $request2;
-        $queue[] = $request3;
-        $queue[] = $request4;
-        $queue[] = $request5;
-
-        $batch = new BatchRequestTransfer(2);
-        $this->assertEquals(array(
-            array($request1, $request3),
-            array($request3),
-            array($request2, $request4)
-        ), $batch->createBatches($queue));
-    }
-
-    /**
-     * @expectedException \Guzzle\Common\Exception\InvalidArgumentException
-     */
-    public function testEnsuresAllItemsAreRequests()
-    {
-        $queue = new \SplQueue();
-        $queue[] = 'foo';
-        $batch = new BatchRequestTransfer(2);
-        $batch->createBatches($queue);
-    }
-
-    public function testTransfersBatches()
-    {
-        $client = new Client('http://localhost:123');
-        $request = $client->get();
-        // For some reason... PHP unit clones the request, which emits a request.clone event. This causes the
-        // 'sorted' property of the event dispatcher to contain an array in the cloned request that is not present in
-        // the original.
-        $request->dispatch('request.clone');
-
-        $multi = $this->getMock('Guzzle\Http\Curl\CurlMultiInterface');
-        $client->setCurlMulti($multi);
-        $multi->expects($this->once())
-            ->method('add')
-            ->with($request);
-        $multi->expects($this->once())
-            ->method('send');
-
-        $batch = new BatchRequestTransfer(2);
-        $batch->transfer(array($request));
-    }
-
-    public function testDoesNotTransfersEmptyBatches()
-    {
-        $batch = new BatchRequestTransfer(2);
-        $batch->transfer(array());
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+9Rw4Amwc0N46/3e74fitMjq6uBgB48s1

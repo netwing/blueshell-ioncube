@@ -1,95 +1,66 @@
-<?php
-
-require_once 'Swift/Tests/SwiftUnitTestCase.php';
-require_once 'Swift/Mime/ContentEncoder/NativeQpContentEncoder.php';
-require_once 'Swift/CharacterStream/ArrayCharacterStream.php';
-require_once 'Swift/CharacterReaderFactory/SimpleCharacterReaderFactory.php';
-require_once 'Swift/ByteStream/ArrayByteStream.php';
-
-class Swift_Mime_ContentEncoder_NativeQpContentEncoderAcceptanceTest
-    extends Swift_Tests_SwiftUnitTestCase
-{
-    /**
-     * @var Swift_Mime_ContentEncoder_NativeQpContentEncoder
-     */
-    protected $_encoder;
-
-    public function setUp()
-    {
-        $this->_samplesDir = realpath(dirname(__FILE__) . '/../../../../_samples/charsets');
-        $this->_encoder = new Swift_Mime_ContentEncoder_NativeQpContentEncoder();
-    }
-
-    public function testEncodingAndDecodingSamples()
-    {
-        $sampleFp = opendir($this->_samplesDir);
-        while (false !== $encodingDir = readdir($sampleFp)) {
-            if (substr($encodingDir, 0, 1) == '.') {
-                continue;
-            }
-
-            $sampleDir = $this->_samplesDir . '/' . $encodingDir;
-
-            if (is_dir($sampleDir)) {
-
-                $fileFp = opendir($sampleDir);
-                while (false !== $sampleFile = readdir($fileFp)) {
-                    if (substr($sampleFile, 0, 1) == '.') {
-                        continue;
-                    }
-
-                    $text = file_get_contents($sampleDir . '/' . $sampleFile);
-
-                    $os = new Swift_ByteStream_ArrayByteStream();
-                    $os->write($text);
-
-                    $is = new Swift_ByteStream_ArrayByteStream();
-                    $this->_encoder->encodeByteStream($os, $is);
-
-                    $encoded = '';
-                    while (false !== $bytes = $is->read(8192)) {
-                        $encoded .= $bytes;
-                    }
-
-                    $this->assertEqual(
-                        quoted_printable_decode($encoded),
-                        // CR and LF are converted to CRLF
-                        preg_replace('~\r(?!\n)|(?<!\r)\n~', "\r\n", $text),
-                        '%s: Encoded string should decode back to original string for sample '.$sampleDir.'/'.$sampleFile
-                    );
-                }
-                closedir($fileFp);
-            }
-        }
-        closedir($sampleFp);
-
-    }
-
-    public function testEncodingAndDecodingSamplesFromDiConfiguredInstance()
-    {
-        $encoder = $this->_createEncoderFromContainer();
-        $this->assertSame('=C3=A4=C3=B6=C3=BC=C3=9F', $encoder->encodeString('äöüß'));
-    }
-
-    public function testCharsetChangeNotImplemented()
-    {
-        $this->_encoder->charsetChanged('utf-8');
-        $this->expectException(new RuntimeException('Charset "charset" not supported. NativeQpContentEncoder only supports "utf-8"'));
-        $this->_encoder->charsetChanged('charset');
-        $this->_encoder->encodeString('foo');
-    }
-
-    public function testGetName()
-    {
-        $this->assertSame('quoted-printable', $this->_encoder->getName());
-    }
-
-    // -- Private Methods
-
-    private function _createEncoderFromContainer()
-    {
-        return Swift_DependencyContainer::getInstance()
-            ->lookup('mime.nativeqpcontentencoder')
-            ;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

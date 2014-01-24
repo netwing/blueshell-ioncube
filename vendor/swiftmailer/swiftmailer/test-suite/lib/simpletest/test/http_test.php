@@ -1,424 +1,280 @@
-<?php
-// $Id: http_test.php 1782 2008-04-25 17:09:06Z pp11 $
-require_once(dirname(__FILE__) . '/../autorun.php');
-require_once(dirname(__FILE__) . '/../encoding.php');
-require_once(dirname(__FILE__) . '/../http.php');
-require_once(dirname(__FILE__) . '/../socket.php');
-require_once(dirname(__FILE__) . '/../cookies.php');
-Mock::generate('SimpleSocket');
-Mock::generate('SimpleCookieJar');
-Mock::generate('SimpleRoute');
-Mock::generatePartial(
-		'SimpleRoute',
-		'PartialSimpleRoute',
-        array('createSocket'));
-Mock::generatePartial(
-        'SimpleProxyRoute',
-        'PartialSimpleProxyRoute',
-        array('createSocket'));
-
-class TestOfDirectRoute extends UnitTestCase {
-    
-    function testDefaultGetRequest() {
-        $socket = new MockSimpleSocket();
-        $socket->expectAt(0, 'write', array("GET /here.html HTTP/1.0\r\n"));
-        $socket->expectAt(1, 'write', array("Host: a.valid.host\r\n"));
-        $socket->expectAt(2, 'write', array("Connection: close\r\n"));
-        $socket->expectCallCount('write', 3);
-        $route = new PartialSimpleRoute();
-        $route->setReturnReference('createSocket', $socket);
-        $route->__construct(new SimpleUrl('http://a.valid.host/here.html'));
-        $this->assertSame($route->createConnection('GET', 15), $socket);
-    }
-    
-    function testDefaultPostRequest() {
-        $socket = new MockSimpleSocket();
-        $socket->expectAt(0, 'write', array("POST /here.html HTTP/1.0\r\n"));
-        $socket->expectAt(1, 'write', array("Host: a.valid.host\r\n"));
-        $socket->expectAt(2, 'write', array("Connection: close\r\n"));
-        $socket->expectCallCount('write', 3);
-        
-        $route = new PartialSimpleRoute();
-        $route->setReturnReference('createSocket', $socket);
-        $route->__construct(new SimpleUrl('http://a.valid.host/here.html'));
-        
-        $route->createConnection('POST', 15);
-    }
-    
-    function testGetWithPort() {
-        $socket = new MockSimpleSocket();
-        $socket->expectAt(0, 'write', array("GET /here.html HTTP/1.0\r\n"));
-        $socket->expectAt(1, 'write', array("Host: a.valid.host:81\r\n"));
-        $socket->expectAt(2, 'write', array("Connection: close\r\n"));
-        $socket->expectCallCount('write', 3);
-        
-        $route = new PartialSimpleRoute();
-        $route->setReturnReference('createSocket', $socket);
-        $route->__construct(new SimpleUrl('http://a.valid.host:81/here.html'));
-        
-        $route->createConnection('GET', 15);
-    }
-    
-    function testGetWithParameters() {
-        $socket = new MockSimpleSocket();
-        $socket->expectAt(0, 'write', array("GET /here.html?a=1&b=2 HTTP/1.0\r\n"));
-        $socket->expectAt(1, 'write', array("Host: a.valid.host\r\n"));
-        $socket->expectAt(2, 'write', array("Connection: close\r\n"));
-        $socket->expectCallCount('write', 3);
-        
-        $route = new PartialSimpleRoute();
-        $route->setReturnReference('createSocket', $socket);
-        $route->__construct(new SimpleUrl('http://a.valid.host/here.html?a=1&b=2'));
-        
-        $route->createConnection('GET', 15);
-    }
-}
-
-class TestOfProxyRoute extends UnitTestCase {
-    
-    function testDefaultGet() {
-        $socket = new MockSimpleSocket();
-        $socket->expectAt(0, 'write', array("GET http://a.valid.host/here.html HTTP/1.0\r\n"));
-        $socket->expectAt(1, 'write', array("Host: my-proxy:8080\r\n"));
-        $socket->expectAt(2, 'write', array("Connection: close\r\n"));
-        $socket->expectCallCount('write', 3);
-        
-        $route = new PartialSimpleProxyRoute();
-        $route->setReturnReference('createSocket', $socket);
-        $route->__construct(
-                new SimpleUrl('http://a.valid.host/here.html'),
-                new SimpleUrl('http://my-proxy'));
-        $route->createConnection('GET', 15);
-    }
-    
-    function testDefaultPost() {
-        $socket = new MockSimpleSocket();
-        $socket->expectAt(0, 'write', array("POST http://a.valid.host/here.html HTTP/1.0\r\n"));
-        $socket->expectAt(1, 'write', array("Host: my-proxy:8080\r\n"));
-        $socket->expectAt(2, 'write', array("Connection: close\r\n"));
-        $socket->expectCallCount('write', 3);
-        
-        $route = new PartialSimpleProxyRoute();
-        $route->setReturnReference('createSocket', $socket);
-        $route->__construct(
-                new SimpleUrl('http://a.valid.host/here.html'),
-                new SimpleUrl('http://my-proxy'));
-        $route->createConnection('POST', 15);
-    }
-    
-    function testGetWithPort() {
-        $socket = new MockSimpleSocket();
-        $socket->expectAt(0, 'write', array("GET http://a.valid.host:81/here.html HTTP/1.0\r\n"));
-        $socket->expectAt(1, 'write', array("Host: my-proxy:8081\r\n"));
-        $socket->expectAt(2, 'write', array("Connection: close\r\n"));
-        $socket->expectCallCount('write', 3);
-        
-        $route = new PartialSimpleProxyRoute();
-        $route->setReturnReference('createSocket', $socket);
-        $route->__construct(
-                new SimpleUrl('http://a.valid.host:81/here.html'),
-                new SimpleUrl('http://my-proxy:8081'));
-        $route->createConnection('GET', 15);
-    }
-    
-    function testGetWithParameters() {
-        $socket = new MockSimpleSocket();
-        $socket->expectAt(0, 'write', array("GET http://a.valid.host/here.html?a=1&b=2 HTTP/1.0\r\n"));
-        $socket->expectAt(1, 'write', array("Host: my-proxy:8080\r\n"));
-        $socket->expectAt(2, 'write', array("Connection: close\r\n"));
-        $socket->expectCallCount('write', 3);
-        
-        $route = new PartialSimpleProxyRoute();
-        $route->setReturnReference('createSocket', $socket);
-        $route->__construct(
-                new SimpleUrl('http://a.valid.host/here.html?a=1&b=2'),
-                new SimpleUrl('http://my-proxy'));
-        $route->createConnection('GET', 15);
-    }
-    
-    function testGetWithAuthentication() {
-        $encoded = base64_encode('Me:Secret');
-
-        $socket = new MockSimpleSocket();
-        $socket->expectAt(0, 'write', array("GET http://a.valid.host/here.html HTTP/1.0\r\n"));
-        $socket->expectAt(1, 'write', array("Host: my-proxy:8080\r\n"));
-        $socket->expectAt(2, 'write', array("Proxy-Authorization: Basic $encoded\r\n"));
-        $socket->expectAt(3, 'write', array("Connection: close\r\n"));
-        $socket->expectCallCount('write', 4);
-        
-        $route = new PartialSimpleProxyRoute();
-        $route->setReturnReference('createSocket', $socket);
-        $route->__construct(
-                new SimpleUrl('http://a.valid.host/here.html'),
-                new SimpleUrl('http://my-proxy'),
-                'Me',
-                'Secret');
-        $route->createConnection('GET', 15);
-    }
-}
-
-class TestOfHttpRequest extends UnitTestCase {
-    
-    function testReadingBadConnection() {
-        $socket = new MockSimpleSocket();
-        $route = new MockSimpleRoute();
-        $route->setReturnReference('createConnection', $socket);
-        $request = new SimpleHttpRequest($route, new SimpleGetEncoding());
-        $reponse = $request->fetch(15);
-        $this->assertTrue($reponse->isError());
-    }
-    
-    function testReadingGoodConnection() {
-        $socket = new MockSimpleSocket();
-        $socket->expectOnce('write', array("\r\n"));
-        
-        $route = new MockSimpleRoute();
-        $route->setReturnReference('createConnection', $socket);
-        $route->expect('createConnection', array('GET', 15));
-        
-        $request = new SimpleHttpRequest($route, new SimpleGetEncoding());
-        $this->assertIsA($request->fetch(15), 'SimpleHttpResponse');
-    }
-    
-    function testWritingAdditionalHeaders() {
-        $socket = new MockSimpleSocket();
-        $socket->expectAt(0, 'write', array("My: stuff\r\n"));
-        $socket->expectAt(1, 'write', array("\r\n"));
-        $socket->expectCallCount('write', 2);
-        
-        $route = new MockSimpleRoute();
-        $route->setReturnReference('createConnection', $socket);
-        
-        $request = new SimpleHttpRequest($route, new SimpleGetEncoding());
-        $request->addHeaderLine('My: stuff');
-        $request->fetch(15);
-    }
-    
-    function testCookieWriting() {
-        $socket = new MockSimpleSocket();
-        $socket->expectAt(0, 'write', array("Cookie: a=A\r\n"));
-        $socket->expectAt(1, 'write', array("\r\n"));
-        $socket->expectCallCount('write', 2);
-        
-        $route = new MockSimpleRoute();
-        $route->setReturnReference('createConnection', $socket);
-        
-        $jar = new SimpleCookieJar();
-        $jar->setCookie('a', 'A');
-        
-        $request = new SimpleHttpRequest($route, new SimpleGetEncoding());
-        $request->readCookiesFromJar($jar, new SimpleUrl('/'));
-        $this->assertIsA($request->fetch(15), 'SimpleHttpResponse');
-    }
-    
-    function testMultipleCookieWriting() {
-        $socket = new MockSimpleSocket();
-        $socket->expectAt(0, 'write', array("Cookie: a=A;b=B\r\n"));
-        
-        $route = new MockSimpleRoute();
-        $route->setReturnReference('createConnection', $socket);
-        
-        $jar = new SimpleCookieJar();
-        $jar->setCookie('a', 'A');
-        $jar->setCookie('b', 'B');
-        
-        $request = new SimpleHttpRequest($route, new SimpleGetEncoding());
-        $request->readCookiesFromJar($jar, new SimpleUrl('/'));
-        $request->fetch(15);
-    }
-}
-
-class TestOfHttpPostRequest extends UnitTestCase {
-    
-    function testReadingBadConnectionCausesErrorBecauseOfDeadSocket() {
-        $socket = new MockSimpleSocket();
-        $route = new MockSimpleRoute();
-        $route->setReturnReference('createConnection', $socket);
-        $request = new SimpleHttpRequest($route, new SimplePostEncoding());
-        $reponse = $request->fetch(15);
-        $this->assertTrue($reponse->isError());
-    }
-    
-    function testReadingGoodConnection() {
-        $socket = new MockSimpleSocket();
-        $socket->expectAt(0, 'write', array("Content-Length: 0\r\n"));
-        $socket->expectAt(1, 'write', array("Content-Type: application/x-www-form-urlencoded\r\n"));
-        $socket->expectAt(2, 'write', array("\r\n"));
-        $socket->expectAt(3, 'write', array(""));
-        
-        $route = new MockSimpleRoute();
-        $route->setReturnReference('createConnection', $socket);
-        $route->expect('createConnection', array('POST', 15));
-        
-        $request = new SimpleHttpRequest($route, new SimplePostEncoding());
-        $this->assertIsA($request->fetch(15), 'SimpleHttpResponse');
-    }
-    
-    function testContentHeadersCalculated() {
-        $socket = new MockSimpleSocket();
-        $socket->expectAt(0, 'write', array("Content-Length: 3\r\n"));
-        $socket->expectAt(1, 'write', array("Content-Type: application/x-www-form-urlencoded\r\n"));
-        $socket->expectAt(2, 'write', array("\r\n"));
-        $socket->expectAt(3, 'write', array("a=A"));
-        
-        $route = new MockSimpleRoute();
-        $route->setReturnReference('createConnection', $socket);
-        $route->expect('createConnection', array('POST', 15));
-        
-        $request = new SimpleHttpRequest(
-                $route,
-                new SimplePostEncoding(array('a' => 'A')));
-        $this->assertIsA($request->fetch(15), 'SimpleHttpResponse');
-    }
-}
-    
-class TestOfHttpHeaders extends UnitTestCase {
-    
-    function testParseBasicHeaders() {
-        $headers = new SimpleHttpHeaders(
-                "HTTP/1.1 200 OK\r\n" .
-                "Date: Mon, 18 Nov 2002 15:50:29 GMT\r\n" .
-                "Content-Type: text/plain\r\n" .
-                "Server: Apache/1.3.24 (Win32) PHP/4.2.3\r\n" .
-                "Connection: close");
-        $this->assertIdentical($headers->getHttpVersion(), "1.1");
-        $this->assertIdentical($headers->getResponseCode(), 200);
-        $this->assertEqual($headers->getMimeType(), "text/plain");
-    }
-    
-    function testNonStandardResponseHeader() {
-        $headers = new SimpleHttpHeaders(
-                "HTTP/1.1 302 (HTTP-Version SP Status-Code CRLF)\r\n" .
-                "Connection: close");
-        $this->assertIdentical($headers->getResponseCode(), 302);
-    }
-    
-    function testCanParseMultipleCookies() {
-        $jar = new MockSimpleCookieJar();
-        $jar->expectAt(0, 'setCookie', array('a', 'aaa', 'host', '/here/', 'Wed, 25 Dec 2002 04:24:20 GMT'));
-        $jar->expectAt(1, 'setCookie', array('b', 'bbb', 'host', '/', false));
-
-        $headers = new SimpleHttpHeaders(
-                "HTTP/1.1 200 OK\r\n" .
-                "Date: Mon, 18 Nov 2002 15:50:29 GMT\r\n" .
-                "Content-Type: text/plain\r\n" .
-                "Server: Apache/1.3.24 (Win32) PHP/4.2.3\r\n" .
-                "Set-Cookie: a=aaa; expires=Wed, 25-Dec-02 04:24:20 GMT; path=/here/\r\n" .
-                "Set-Cookie: b=bbb\r\n" .
-                "Connection: close");
-        $headers->writeCookiesToJar($jar, new SimpleUrl('http://host'));
-    }
-    
-    function testCanRecogniseRedirect() {
-        $headers = new SimpleHttpHeaders("HTTP/1.1 301 OK\r\n" .
-                "Content-Type: text/plain\r\n" .
-                "Content-Length: 0\r\n" .
-                "Location: http://www.somewhere-else.com/\r\n" .
-                "Connection: close");
-        $this->assertIdentical($headers->getResponseCode(), 301);
-        $this->assertEqual($headers->getLocation(), "http://www.somewhere-else.com/");
-        $this->assertTrue($headers->isRedirect());
-    }
-    
-    function testCanParseChallenge() {
-        $headers = new SimpleHttpHeaders("HTTP/1.1 401 Authorization required\r\n" .
-                "Content-Type: text/plain\r\n" .
-                "Connection: close\r\n" .
-                "WWW-Authenticate: Basic realm=\"Somewhere\"");
-        $this->assertEqual($headers->getAuthentication(), 'Basic');
-        $this->assertEqual($headers->getRealm(), 'Somewhere');
-        $this->assertTrue($headers->isChallenge());
-    }
-}
-
-class TestOfHttpResponse extends UnitTestCase {
-    
-    function testBadRequest() {
-        $socket = new MockSimpleSocket();
-        $socket->setReturnValue('getSent', '');
-
-        $response = new SimpleHttpResponse($socket, new SimpleUrl('here'), new SimpleGetEncoding());
-        $this->assertTrue($response->isError());
-        $this->assertPattern('/Nothing fetched/', $response->getError());
-        $this->assertIdentical($response->getContent(), false);
-        $this->assertIdentical($response->getSent(), '');
-    }
-    
-    function testBadSocketDuringResponse() {
-        $socket = new MockSimpleSocket();
-        $socket->setReturnValueAt(0, "read", "HTTP/1.1 200 OK\r\n");
-        $socket->setReturnValueAt(1, "read", "Date: Mon, 18 Nov 2002 15:50:29 GMT\r\n");
-        $socket->setReturnValue("read", "");
-        $socket->setReturnValue('getSent', 'HTTP/1.1 ...');
-
-        $response = new SimpleHttpResponse($socket, new SimpleUrl('here'), new SimpleGetEncoding());
-        $this->assertTrue($response->isError());
-        $this->assertEqual($response->getContent(), '');
-        $this->assertEqual($response->getSent(), 'HTTP/1.1 ...');
-    }
-    
-    function testIncompleteHeader() {
-        $socket = new MockSimpleSocket();
-        $socket->setReturnValueAt(0, "read", "HTTP/1.1 200 OK\r\n");
-        $socket->setReturnValueAt(1, "read", "Date: Mon, 18 Nov 2002 15:50:29 GMT\r\n");
-        $socket->setReturnValueAt(2, "read", "Content-Type: text/plain\r\n");
-        $socket->setReturnValue("read", "");
-        
-        $response = new SimpleHttpResponse($socket, new SimpleUrl('here'), new SimpleGetEncoding());
-        $this->assertTrue($response->isError());
-        $this->assertEqual($response->getContent(), "");
-    }
-    
-    function testParseOfResponseHeadersWhenChunked() {
-        $socket = new MockSimpleSocket();
-        $socket->setReturnValueAt(0, "read", "HTTP/1.1 200 OK\r\nDate: Mon, 18 Nov 2002 15:50:29 GMT\r\n");
-        $socket->setReturnValueAt(1, "read", "Content-Type: text/plain\r\n");
-        $socket->setReturnValueAt(2, "read", "Server: Apache/1.3.24 (Win32) PHP/4.2.3\r\nConne");
-        $socket->setReturnValueAt(3, "read", "ction: close\r\n\r\nthis is a test file\n");
-        $socket->setReturnValueAt(4, "read", "with two lines in it\n");
-        $socket->setReturnValue("read", "");
-        
-        $response = new SimpleHttpResponse($socket, new SimpleUrl('here'), new SimpleGetEncoding());
-        $this->assertFalse($response->isError());
-        $this->assertEqual(
-                $response->getContent(),
-                "this is a test file\nwith two lines in it\n");
-        $headers = $response->getHeaders();
-        $this->assertIdentical($headers->getHttpVersion(), "1.1");
-        $this->assertIdentical($headers->getResponseCode(), 200);
-        $this->assertEqual($headers->getMimeType(), "text/plain");
-        $this->assertFalse($headers->isRedirect());
-        $this->assertFalse($headers->getLocation());
-    }
-    
-    function testRedirect() {
-        $socket = new MockSimpleSocket();
-        $socket->setReturnValueAt(0, "read", "HTTP/1.1 301 OK\r\n");
-        $socket->setReturnValueAt(1, "read", "Content-Type: text/plain\r\n");
-        $socket->setReturnValueAt(2, "read", "Location: http://www.somewhere-else.com/\r\n");
-        $socket->setReturnValueAt(3, "read", "Connection: close\r\n");
-        $socket->setReturnValueAt(4, "read", "\r\n");
-        $socket->setReturnValue("read", "");
-        
-        $response = new SimpleHttpResponse($socket, new SimpleUrl('here'), new SimpleGetEncoding());
-        $headers = $response->getHeaders();
-        $this->assertTrue($headers->isRedirect());
-        $this->assertEqual($headers->getLocation(), "http://www.somewhere-else.com/");
-    }
-    
-    function testRedirectWithPort() {
-        $socket = new MockSimpleSocket();
-        $socket->setReturnValueAt(0, "read", "HTTP/1.1 301 OK\r\n");
-        $socket->setReturnValueAt(1, "read", "Content-Type: text/plain\r\n");
-        $socket->setReturnValueAt(2, "read", "Location: http://www.somewhere-else.com:80/\r\n");
-        $socket->setReturnValueAt(3, "read", "Connection: close\r\n");
-        $socket->setReturnValueAt(4, "read", "\r\n");
-        $socket->setReturnValue("read", "");
-        
-        $response = new SimpleHttpResponse($socket, new SimpleUrl('here'), new SimpleGetEncoding());
-        $headers = $response->getHeaders();
-        $this->assertTrue($headers->isRedirect());
-        $this->assertEqual($headers->getLocation(), "http://www.somewhere-else.com:80/");
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+t0CVKyO+U/YOWvT93st8y1yl9C4Jlpv0e/q=

@@ -1,88 +1,44 @@
-<?php
-/**
- * Ensures that strings are not joined using array.join().
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer_MySource
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Ensures that strings are not joined using array.join().
- *
- * @category  PHP
- * @package   PHP_CodeSniffer_MySource
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class MySource_Sniffs_Strings_JoinStringsSniff implements PHP_CodeSniffer_Sniff
-{
-
-    /**
-     * A list of tokenizers this sniff supports.
-     *
-     * @var array
-     */
-    public $supportedTokenizers = array('JS');
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        return array(T_STRING);
-
-    }//end register()
-
-
-    /**
-     * Processes this test, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param integer              $stackPtr  The position of the current token
-     *                                        in the stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-
-        if ($tokens[$stackPtr]['content'] !== 'join') {
-            return;
-        }
-
-        $prev = $phpcsFile->findPrevious(PHP_CodeSniffer_Tokens::$emptyTokens, ($stackPtr - 1), null, true);
-        if ($tokens[$prev]['code'] !== T_OBJECT_OPERATOR) {
-            return;
-        }
-
-        $prev = $phpcsFile->findPrevious(PHP_CodeSniffer_Tokens::$emptyTokens, ($prev - 1), null, true);
-        if ($tokens[$prev]['code'] === T_CLOSE_SQUARE_BRACKET) {
-            $opener = $tokens[$prev]['bracket_opener'];
-            if ($tokens[($opener - 1)]['code'] !== T_STRING) {
-                // This means the array is declared inline, like x = [a,b,c].join()
-                // and not elsewhere, like x = y[a].join()
-                // The first is not allowed while the second is.
-                $error = 'Joining strings using inline arrays is not allowed; use the + operator instead';
-                $phpcsFile->addError($error, $stackPtr, 'ArrayNotAllowed');
-            }
-        }
-
-    }//end process()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+uOXH01yczvla0nouG0O9Fm==

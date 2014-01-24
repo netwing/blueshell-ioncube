@@ -1,31 +1,36 @@
-<?php
-
-namespace Guzzle\Tests\Plugin\Backoff;
-
-use Guzzle\Plugin\Backoff\CallbackBackoffStrategy;
-
-/**
- * @covers Guzzle\Plugin\Backoff\CallbackBackoffStrategy
- */
-class CallbackBackoffStrategyTest extends \Guzzle\Tests\GuzzleTestCase
-{
-    /**
-     * @expectedException Guzzle\Common\Exception\InvalidArgumentException
-     */
-    public function testEnsuresIsCallable()
-    {
-        $strategy = new CallbackBackoffStrategy(new \stdClass(), true);
-    }
-
-    public function testRetriesWithCallable()
-    {
-        $request = $this->getMock('Guzzle\Http\Message\Request', array(), array(), '', false);
-        $strategy = new CallbackBackoffStrategy(function () { return 10; }, true);
-        $this->assertTrue($strategy->makesDecision());
-        $this->assertEquals(10, $strategy->getBackoffPeriod(0, $request));
-        // Ensure it chains correctly when null is returned
-        $strategy = new CallbackBackoffStrategy(function () { return null; }, false);
-        $this->assertFalse($strategy->makesDecision());
-        $this->assertFalse($strategy->getBackoffPeriod(0, $request));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+e47kggZi3wbd

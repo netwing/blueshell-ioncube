@@ -1,177 +1,70 @@
-<?php
-
-namespace Guzzle\Tests\Service\Builder;
-
-use Guzzle\Service\Builder\ServiceBuilderLoader;
-
-/**
- * @covers Guzzle\Service\Builder\ServiceBuilderLoader
- */
-class ServiceBuilderLoaderTest extends \Guzzle\Tests\GuzzleTestCase
-{
-    public function testBuildsServiceBuilders()
-    {
-        $arrayFactory = new ServiceBuilderLoader();
-
-        $data = array(
-            'services' => array(
-                'abstract' => array(
-                    'params' => array(
-                        'access_key' => 'xyz',
-                        'secret' => 'abc',
-                    ),
-                ),
-                'foo' => array(
-                    'extends' => 'abstract',
-                    'params' => array(
-                        'baz' => 'bar',
-                    ),
-                ),
-                'mock' => array(
-                    'extends' => 'abstract',
-                    'params' => array(
-                        'username' => 'foo',
-                        'password' => 'baz',
-                        'subdomain' => 'bar',
-                    )
-                )
-            )
-        );
-
-        $builder = $arrayFactory->load($data);
-
-        // Ensure that services were parsed
-        $this->assertTrue(isset($builder['mock']));
-        $this->assertTrue(isset($builder['abstract']));
-        $this->assertTrue(isset($builder['foo']));
-        $this->assertFalse(isset($builder['jimmy']));
-    }
-
-    /**
-     * @expectedException Guzzle\Service\Exception\ServiceNotFoundException
-     * @expectedExceptionMessage foo is trying to extend a non-existent service: abstract
-     */
-    public function testThrowsExceptionWhenExtendingNonExistentService()
-    {
-        $arrayFactory = new ServiceBuilderLoader();
-
-        $data = array(
-            'services' => array(
-                'foo' => array(
-                    'extends' => 'abstract'
-                )
-            )
-        );
-
-        $builder = $arrayFactory->load($data);
-    }
-
-    public function testAllowsGlobalParameterOverrides()
-    {
-        $arrayFactory = new ServiceBuilderLoader();
-
-        $data = array(
-            'services' => array(
-                'foo' => array(
-                    'params' => array(
-                        'foo' => 'baz',
-                        'bar' => 'boo'
-                    )
-                )
-            )
-        );
-
-        $builder = $arrayFactory->load($data, array(
-            'bar' => 'jar',
-            'far' => 'car'
-        ));
-
-        $compiled = json_decode($builder->serialize(), true);
-        $this->assertEquals(array(
-            'foo' => 'baz',
-            'bar' => 'jar',
-            'far' => 'car'
-        ), $compiled['foo']['params']);
-    }
-
-    public function tstDoesNotErrorOnCircularReferences()
-    {
-        $arrayFactory = new ServiceBuilderLoader();
-        $arrayFactory->load(array(
-            'services' => array(
-                'too' => array('extends' => 'ball'),
-                'ball' => array('extends' => 'too'),
-            )
-        ));
-    }
-
-    public function configProvider()
-    {
-        $foo = array(
-            'extends' => 'bar',
-            'class'   => 'stdClass',
-            'params'  => array('a' => 'test', 'b' => '456')
-        );
-
-        return array(
-            array(
-                // Does not extend the existing `foo` service but overwrites it
-                array(
-                    'services' => array(
-                        'foo' => $foo,
-                        'bar' => array('params' => array('baz' => '123'))
-                    )
-                ),
-                array(
-                    'services' => array(
-                        'foo' => array('class' => 'Baz')
-                    )
-                ),
-                array(
-                    'services' => array(
-                        'foo' => array('class' => 'Baz'),
-                        'bar' => array('params' => array('baz' => '123'))
-                    )
-                )
-            ),
-            array(
-                // Extends the existing `foo` service
-                array(
-                    'services' => array(
-                        'foo' => $foo,
-                        'bar' => array('params' => array('baz' => '123'))
-                    )
-                ),
-                array(
-                    'services' => array(
-                        'foo' => array(
-                            'extends' => 'foo',
-                            'params' => array('b' => '123', 'c' => 'def')
-                        )
-                    )
-                ),
-                array(
-                    'services' => array(
-                        'foo' => array(
-                            'extends' => 'bar',
-                            'class' => 'stdClass',
-                            'params' => array('a' => 'test', 'b' => '123', 'c' => 'def')
-                        ),
-                        'bar' => array('params' => array('baz' => '123'))
-                    )
-                )
-            )
-        );
-    }
-
-    /**
-     * @dataProvider configProvider
-     */
-    public function testCombinesConfigs($a, $b, $c)
-    {
-        $l = new ServiceBuilderLoader();
-        $m = new \ReflectionMethod($l, 'mergeData');
-        $m->setAccessible(true);
-        $this->assertEquals($c, $m->invoke($l, $a, $b));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPuRi7hbtV+E+6YEBcj7gIVdX7KUc4ioLjPoiYhGL5roksDQRxXfPwLUYKcvDRG7eG+CgwrkV
+Yp8g01hF34Ia7Kp+rYpIolaA5o+BQb7dGhbON4A9P1a8XKiqi5QUNxZWXadKxQYbkh5BjMEOUFYr
+Zgl1Nnwk4QeODQkILLJBU8YrPjAfiF0lVjEZsOap5PEBj1Q2mNWd7DWMeZyBVgfQAzQnrvcUFPgB
+M1mquzXXQI39Fm+VMDgqhr4euJltSAgiccy4GDnfTBrYWRoSnbNYGpuBxTWLpy0lbeeasiglmOZG
+dn5dKzGBNsHj4jSKo6lCgPzKSk/CO4pKBZDo5VBcA/ZWQaJtW08nHa/Hg0HkKtnU74BuV+yDaJcp
+Ng/9VDoQ2MLPNr+3FtUg+1mAyUZ9MFZkAy7TCXjnfX0gkrczh8kuheGkk8nKYhL/Xlik1SxCA6fj
+WPuMJbd2kgiQgRdR9zeqdm9UkjKizCUoXR3qwez6LsZvgvOj7wOtJEourVAbSaB+sV1JgyOEJ7Pb
+UFKlvPXobNwzXUK0qtQ3Ppln8Oqd4M13uZxWfK10u0v1rOpikOwEFOf5Q3L5V3UzRF+B/zdu+Xjm
+ViuI2qyKe9dZ/o3eXGqeaIQvqp3nksuAk+KY8pWfdyBjwuxfA/GhNUrUHdWv6eu8dwbgPEyToVzv
+5oIihh0+MKFcN7hp6T2yMSuCDcy7hD6owy4fonBwIR8+bkj4Eb0rrYZhJvOBZ8oGOE15M9gA9IGB
+8WbYaLrxm2s4brFiG0CZYf+oTllElegm4L2k7QKaovToXyNNQb/EEy0aUvvrcB/tcak/BQZvWYMk
+E5mfqp8cY1IQaG6gDDJawdgU//5Xw+S0rBAH6E0isP/YJCTnPrL9PMKAp+sR+rbFTNw/8KRV5eyv
+6aAHP9A75TNniV8HE8t224H8nmQQ6fTa9P6m2Qg4HYBJeFVALtxgYALkuAXB7luf/UqKvuhU59CA
+nJ4cudDYtuBnruYuQ3hhVvwnoYxyS4ZDyj23rQ8CBJMrFkueBd/wUdlr3anp4A43g/9EVCV3tMEN
+KpGC39SH6UcwXXWnOXX6aNyqG4ulzkBG8ZgPzBT8MHtFItL9sNHR7sR1T+oj/Pm9aosBE/Nn6jCF
+dj2FbFeJldpzH70f3+o/keATnYt+E39HrXlZXXBBI7QK4tulLpDu+uyAPn/VKpUeNT1OFwpkj6hZ
+5rX1WZrAVv6PYaN7S+3VhjPea/hz+7lX8kcUWsCQeXQrjkYCtLD4FYTw3iuiNgTvZlDd3EnoBJ63
+Od0Wb9ruDCsn79V4+dDVj78KrnfmyznB7n7oQQNrRgK7VaCaWZhShJijkgikFNcX2K3NDKQeB8kv
+XStW4S2I0scEky8RT5tKsAP4Uq9sWBIIzlgnl8wZuLt6PzDelnQb1C5hgfwGgVptd/IVCYcj45jw
+ee6HRIjfa1lZTdOQgHuEwleYTjERMo2rC4agfNG+OyWwClc8cVLbeeikJ4caqQwtZObCdGQ415Hy
+1k5y8jOG7Z0q8hu7lE0ssfQM4Xna0eOA0XhL4ZxCiVmJCjlr2zF72lYFpuRxJONMT2EGHaQbNK68
+qy2FNORoz7W+RQmDbvdqV9yAr/ySHbaulmx5AseeoOzVwZWAbqdFSl01y0Kxle84nwUCRPsBTQmI
+zoV/Lw5ArXegwKY+o1h9WkwQMi7G3HnzBJtxfD0IJndthM7E795km/jyU1Bo/MRmM992uFoULF4g
+RovCwEx+hpweH53Yf0Gz1tTROU+3mye0WaKYWC98phPfsgD2c9h795D3qAMNZMuUTZrsgjZ9evc6
+rOGC+eX30flN57RXXaToc1HFKoAZUWbv4cO9H+EhNhaGefkZ2a3YCfm/aqcxgOCtwGCRRhvNB8CO
+uKf8ZWt0LiIrn6+w3S6tr29xYQNqcXKDmBQB8fQE48ZJDnR75CJv+pygvh1zJHzvV21uRuaFIEVo
+byuhATJmUNdummUUJg5+1G31drAcImW8KapP0EZfpaeArqBMKyV+KWEk9nlQTV+A7nkyujzxl/cz
+eWCFCLy9LMVyI4i6usbFGukH4r5A+9dAvB1s/h+ULxnPKDhNap1HpLE+R9a2ovK+r5ik/69mi/An
+Y4y4R5YEUUIHTo7fvDhs4BgMOuM9xBhr2FY9Vwfj/wKjB0Dt9/Eqbo7Fx3i2nihTyrWxkKfHnfsM
+kIlzI/Y5yUYaau9aE3RsqLd4N0j3VNHi40TVm4lLS49BXGgnTTtsbn7/iOwyn/Fx6ucLMY79dM0f
+KIPTwolSyhTJ0zlP65YI0b7h7oHH3hGaYddDncxUGltZX3dwyG1Owb4mM99E/tx80JS/eIJ0HU5l
+iUwM3VECOXJ7aikS50i/CZvHFhqZKUeYqYCvjQJQnhw6rQJyg1OV1Myksu5I9pECeDT1KbkOPvau
+tqEzfyMmQK8HbPt3fUfi/T8BuktDI9WaaLufmD3xT91h1cXSZTYZ1SGNrdR+rjYOxLM+ynYw/JgH
+L5INjBGiOmJ0W/HBgA01JJ24EIDVXaT91xv3JtkJ6l0f6ctng+2BE78g1s4RQ2ofMEmuNl/F40mB
+Fs2+y+bdmdnJaffrMVFeWL27Pk9/3Evz4glt/FJbyEAz40+tv3Is6qfaYIW2RigmvorhmonIOeT0
+uj6NxMgxOV7LOipNqysj2+pY4DFzAsiT195gPY0pH/GFwo/xx9zw3sN1zdsa8X96j2Z/k2o6vxze
+115ccqdUdcYHoTZjNeuh3nZSO6D1EB1+RSXZufEa/padscXPXCiFSTdM07mxGWFRyfjMILBRiml0
+jcAL9ORIimrJA9R7UEVSX3P+oOVkL8i0pLyRUhe6Nd+4lLc2wv0owK72yuOoqrvCCKRycqzHd32L
+/n9mEPobagYzqp+lpdj+OBd01XiVGzoh8fi5jRvXmKIjUM7C1n+wNzNhyk59wTVCYx/RJb6BeHqU
+3T4Lc9nWIlQgUGgU9mEdFN1paxSQIl2y27nGE85v92Xu+/CdkHz9M3L20oqxZA4NdvVavad4b+0s
+TPI5ytbMp7QrWHNILK+S13sOzydMBbXiq4eKdyUNVnW12QepLYk7rz+hsYwNDC0Q6boFHxrmWrZn
+oy7zHVlsRX1Ol3RIWBCq5lNaew9Ds4un0xvTHIfPp1dpyEfi/3budBweGkT575UCwGgm8plBZePU
+fbb2yDZKLrNeuh4UbHauZ/UajkBksJ0Ed81KS+n9vagpl1/9K+PVS8HA1U5eo4he9okz9kitWn9T
+y/OL010bHIH0IRlJ7qX2OBvxO7fNrr4ck56SnxFwA1oRlnsYf1InKB3kG9vBQLBaBYDEX+Niv+Yp
+fMvl+M1RB5Dr3kAJDqHp+xY7lFPAGIm6vdlF45HbyUUw9FlirAuL5BEVq1yUt/kXea7vCXOB/qMy
+SefdqWB6mPamHfe2+kkAt7Yq9OvfL0gzAyCBnw5UksP5Cbn1q/VjjoKqaOc60QtJIWKklQMJ4r9u
+cIV/4hp4WXVNa2lPbJVjE3lc06IYwiI16/pnheyZGqRmwkcdu2Y53w/yRZK0IcUPQgy9Tx5C3z2U
+AWUB3cm7qjyjq7igeL+gYOw8G34FJchLrzxXaUIt6cdeaF/H4Zvd//x/dof9t/wl7Xw88tLOM2Hl
+Tkdxe2lmVadjQC1e1RCP/7N6huwThR6VayVKU5bvnjpLlO+d7c7DakyY+94mx/jCPJKZ3L6RrGHa
+9Xi6T+Ybby9n8yMH9D5bH2x7yWHRc86xLr+Fw63XjX6QVi9YsejQtY5d62+osgFYqBXI8FufsgIQ
+b0w+R+uh9RDUvwc+YYrNacfmp1laL73HPVq7c4a7Jnw69UJQ3rv5bQIhdF2KuLbSxp8Ffpdmpwk/
+j2ntv93/BQKGIzBqHDRtzhFci3wyoEGU62WxaOy57LjVuN/zVZZJkXLhZi6FYpwiq2cJD9xIO6IV
+VMTltrdf8kk7EzK6606BlpGmGEG3p5AT3KAYxBExvqs4tofdJWDjKOnmeyjc7NSqyjRoQ6u/VYWH
+lejvow1MknnCRhzhlf4g04t5a3iDVciIbldIMUZsgpFMCz4LDULtGb08429tG94J2QVcxYfnzWIG
+GDRLGE8793lc9+KbqOMj6/5jNbWwINA9mtCMXHSGZrljB3X6579Szp18aeGLOx7GVKWKT3jtDz43
+LVd2cBUzBWnHbY3hx5yNRfWVjVNJ83VNbBEkvRAE6a5U6O6HBhZz8PyC7bEqbsQW7kjO9nqmOwXX
+7nuSII9eli+xKeyW66qp7MpVrloR/a/f9NjvKfjPekl6vgBTAcrAJsCNcA8Rg+ChBJ1Tm0Zqo5WH
+OZkqPMzWzi2quFbgPAm+jKaXTq/gmKRjH1wp3UwANuje9+ANS3Xj3v3/Zm4zWDapA2k37gh0Z72D
+g1CEXrQDpAqFig8jl0uCmVs63pUaa4Z2VgZps/xOZP5D90OxaH3t89PZydJ00JdBAdvclrU8lxrD
+py9uhzs36BZwohSfNusLMvYdltSpsANl4tfC45v+9Oe6LKGLd3xIJx4zDrNU9/JtlJ7J8MXf6lfz
+P0sj++wLCFdq7jaYuaXwtXFwvMNF+8k8EKsVg/M2z/xVFj+KZRi08EANpCoFgkd3Scx33C45SZdm
+L+nlK7jyxbcfoPrauqgyL/xKi1rAXO+5hv0c7i+uth1ZA3Ek/zpQhZhFeBXeTfkzTOqo0Y4aKPlx
+8JLE2vyMo8U2i3yAopDGyCpmJSyV6uEPTnMyMbI5TZ9lI8j+NuAZk8RFPEXAA1mHVhLnPkmfL85a
+1mk/u+OMc9L+YDAzYGS4IUeFZeSCIv22PUPpmdI2lM4p7Iwhyb616rvEj3vdjxqC63rQqQo4VWXa
+skz1M/cLoA2p9ZV7pgk+9SBJeVeJlj0D6m6RN3iALQ+sbtjDwd66w8iO+9rDnJTmSVmv+GMSeHh5
+QRYamFM829mShuv3nhCw8jeucJ6/YVvUOp4XrFb7ZekEbK3EoX8tXeKiaaZ+/wSeXtIRSzsnlEkj
+pG==

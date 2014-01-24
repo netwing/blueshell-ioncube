@@ -1,132 +1,72 @@
-<?php
-/**
- * CTypeValidator class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CTypeValidator verifies if the attribute is of the type specified by {@link type}.
- *
- * The following data types are supported:
- * <ul>
- * <li><b>integer</b> A 32-bit signed integer data type.</li>
- * <li><b>float</b> A double-precision floating point number data type.</li>
- * <li><b>string</b> A string data type.</li>
- * <li><b>array</b> An array value. </li>
- * <li><b>date</b> A date data type.</li>
- * <li><b>time</b> A time data type.</li>
- * <li><b>datetime</b> A date and time data type.</li>
- * </ul>
- *
- * For <b>date</b> type, the property {@link dateFormat}
- * will be used to determine how to parse the date string. If the given date
- * value doesn't follow the format, the attribute is considered as invalid.
- *
- * Starting from version 1.1.7, we have a dedicated date validator {@link CDateValidator}.
- * Please consider using this validator to validate a date-typed value.
- *
- * When using the {@link message} property to define a custom error message, the message
- * may contain additional placeholders that will be replaced with the actual content. In addition
- * to the "{attribute}" placeholder, recognized by all validators (see {@link CValidator}),
- * CTypeValidator allows for the following placeholders to be specified:
- * <ul>
- * <li>{type}: replaced with data type the attribute should be {@link type}.</li>
- * </ul>
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.validators
- * @since 1.0
- */
-class CTypeValidator extends CValidator
-{
-	/**
-	 * @var string the data type that the attribute should be. Defaults to 'string'.
-	 * Valid values include 'string', 'integer', 'float', 'array', 'date', 'time' and 'datetime'.
-	 */
-	public $type='string';
-	/**
-	 * @var string the format pattern that the date value should follow. Defaults to 'MM/dd/yyyy'.
-	 * Please see {@link CDateTimeParser} for details about how to specify a date format.
-	 * This property is effective only when {@link type} is 'date'.
-	 */
-	public $dateFormat='MM/dd/yyyy';
-	/**
-	 * @var string the format pattern that the time value should follow. Defaults to 'hh:mm'.
-	 * Please see {@link CDateTimeParser} for details about how to specify a time format.
-	 * This property is effective only when {@link type} is 'time'.
-	 */
-	public $timeFormat='hh:mm';
-	/**
-	 * @var string the format pattern that the datetime value should follow. Defaults to 'MM/dd/yyyy hh:mm'.
-	 * Please see {@link CDateTimeParser} for details about how to specify a datetime format.
-	 * This property is effective only when {@link type} is 'datetime'.
-	 */
-	public $datetimeFormat='MM/dd/yyyy hh:mm';
-	/**
-	 * @var boolean whether the attribute value can be null or empty. Defaults to true,
-	 * meaning that if the attribute is empty, it is considered valid.
-	 */
-	public $allowEmpty=true;
-
-	/**
-	 * @var boolean whether the actual PHP type of attribute value should be checked.
-	 * Defaults to false, meaning that correctly formatted strings are accepted for
-	 * integer and float validators.
-	 *
-	 * @since 1.1.13
-	 */
-	public $strict=false;
-
-	/**
-	 * Validates the attribute of the object.
-	 * If there is any error, the error message is added to the object.
-	 * @param CModel $object the object being validated
-	 * @param string $attribute the attribute being validated
-	 */
-	protected function validateAttribute($object,$attribute)
-	{
-		$value=$object->$attribute;
-		if($this->allowEmpty && $this->isEmpty($value))
-			return;
-
-		if(!$this->validateValue($value))
-		{
-			$message=$this->message!==null?$this->message : Yii::t('yii','{attribute} must be {type}.');
-			$this->addError($object,$attribute,$message,array('{type}'=>$this->type));
-		}
-	}
-
-	/**
-	 * Validates a static value.
-	 * Note that this method does not respect {@link allowEmpty} property.
-	 * This method is provided so that you can call it directly without going through the model validation rule mechanism.
-	 * @param mixed $value the value to be validated
-	 * @return boolean whether the value is valid
-	 * @since 1.1.13
-	 */
-	public function validateValue($value)
-	{
-		$type=$this->type==='float' ? 'double' : $this->type;
-		if($type===gettype($value))
-			return true;
-		elseif($this->strict || is_array($value) || is_object($value) || is_resource($value) || is_bool($value))
-			return false;
-
-		if($type==='integer')
-			return (boolean)preg_match('/^[-+]?[0-9]+$/',trim($value));
-		elseif($type==='double')
-			return (boolean)preg_match('/^[-+]?([0-9]*\.)?[0-9]+([eE][-+]?[0-9]+)?$/',trim($value));
-		elseif($type==='date')
-			return CDateTimeParser::parse($value,$this->dateFormat,array('month'=>1,'day'=>1,'hour'=>0,'minute'=>0,'second'=>0))!==false;
-		elseif($type==='time')
-			return CDateTimeParser::parse($value,$this->timeFormat)!==false;
-		elseif($type==='datetime')
-			return CDateTimeParser::parse($value,$this->datetimeFormat, array('month'=>1,'day'=>1,'hour'=>0,'minute'=>0,'second'=>0))!==false;
-
-		return false;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

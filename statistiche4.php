@@ -1,75 +1,59 @@
-<?php
-require_once("config.inc.php");
-$anni=$blue->presenze_anni();
-$anno=2005;
-if (array_key_exists('anno',$_POST))
-{
-	$anno=$_POST['anno'];
-}
-$selpro="SELECT cliente_provincia,provincia_nome FROM blue_clienti,blue_province,blue_presenze WHERE provincia_sigla=cliente_provincia AND cliente_id=presenza_cliente AND (LEFT(presenza_arrivo,4)='".$anno."' OR LEFT(presenza_partenza,4)='".$anno."') GROUP BY cliente_provincia";
-$respro=$sql->select_query($selpro);
-$stat1=array();
-$x=0;
-while ($row=mysql_fetch_array($respro))
-{
-	$stat1[$row['cliente_provincia']]=array('provincia'=>$row['provincia_nome'],1=>0,2=>0,3=>0,4=>0,5=>0,6=>0,7=>0,8=>0,9=>0,10=>0,11=>0,12=>0,'tot'=>0);
-	$selcon="SELECT presenza_arrivo,presenza_partenza FROM blue_presenze,blue_clienti WHERE presenza_cliente=cliente_id AND cliente_provincia='".$row['cliente_provincia']."' AND (LEFT(presenza_arrivo,4)='".$anno."' OR LEFT(presenza_partenza,4)='".$anno."')"; // AND (presenza_partenza>'0000-00-00' AND presenza_arrivo>'0000-00-00')";
-	$rescon=$sql->select_query($selcon);
-	while ($rowcon=mysql_fetch_array($rescon))
-	{
-		for ($i=1;$i<=12;$i++)
-		{
-			if (strlen($i)==1)
-			{
-				$j="0".$i;
-			}
-			else
-			{
-				$j=$i;
-			}
-			$gg=date('t',time(12,0,0,$i)); // giorni del mese
-			$im=$anno."-".$j."-01"; // Data di inizio mese
-			$fm=$anno."-".$j."-".$gg; // Data di fine mese
-			$ic=$rowcon['presenza_arrivo']; // Data di inizio contratto
-			if ($ic=='0000-00-00')
-			{
-				$ic=date("Y-m-d",time());
-			}
-			$fc=$rowcon['presenza_partenza']; // Data di fine contratto
-			if ($fc=='0000-00-00')
-			{
-				$fc=date("Y-m-d",time());
-			}
-			//Se inizia e finisce all'interno del mese attuale			
-			if ($ic>=$im AND $fc<=$fm)
-			{
-				$addgg=intval((strtotime($fc)-strtotime($ic))/86400);
-				$stat1[$row['cliente_provincia']][$i]+=$addgg;
-				$stat1[$row['cliente_provincia']]['tot']+=$addgg;
-			}
-			//Se inizia nel mese attuale ma finisce oltre
-			elseif ($ic>=$im AND $ic<=$fm AND $fc>=$fm)
-			{
-				$addgg=intval((strtotime($fm)-strtotime($ic))/86400);
-				$stat1[$row['cliente_provincia']][$i]+=$addgg;
-				$stat1[$row['cliente_provincia']]['tot']+=$addgg;
-			}
-			//Se inizia prima del mese attuale ma finisce in questo mese
-			elseif ($ic<=$im AND $fc<=$fm AND $fc>=$im)
-			{
-				$addgg=intval((strtotime($fc)-strtotime($im))/86400);
-				$stat1[$row['cliente_provincia']][$i]+=$addgg;
-				$stat1[$row['cliente_provincia']]['tot']+=$addgg;
-			}
-			//Se il contratto inizia e finisce oltre il mese attuale
-			elseif($ic<=$im AND $fc>=$fm)
-			{
-				$stat1[$row['cliente_provincia']][$i]+=$gg;
-				$stat1[$row['cliente_provincia']]['tot']+=$gg;
-			}
-		}
-	}
-}
-
-
-require_once "views/stats/stats4.php";
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

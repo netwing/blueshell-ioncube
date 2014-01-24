@@ -1,59 +1,62 @@
-<?php
-require_once("config.inc.php");
-$blue->autentica_utente("fatture","R");
-// $elenco_clienti=$blue->elenco_clienti();
-$pn_anno=date("Y",time());
-$pn_mese=date("m",time());
-
-// Elminare un record di prima nota
-if (array_key_exists('delete', $_GET)) {
-    
-    $id = intval($_GET['delete']);
-    $delete = "DELETE FROM " . $tabelle['prima_nota'] . " WHERE prima_nota_id='" . $id . "'";
-    $result = $sql->delete_query($delete);
-    header("Location: prima_nota.php");
-    exit();
-}
-
-$select_anni="SELECT LEFT(prima_nota_data,4) AS anno FROM ".$tabelle['prima_nota']." WHERE LEFT(prima_nota_data,4)<>'0000' GROUP BY LEFT(prima_nota_data,4)";
-$result_anni=$sql->select_query($select_anni);
-$anni = array();
-while ($row_anni=mysql_fetch_array($result_anni)) {
-    $anni[] = "<li role=\"presentation\"><a href=\"prima_nota.php?anno=".$row_anni['anno']."\">".$row_anni['anno']."</a></li>";
-}
-
-$elenco_mesi=array("01"=>"Gen","02"=>"Feb","03"=>"Mar","04"=>"Apr","05"=>"Mag","06"=>"Giu","07"=>"Lug","08"=>"Ago","09"=>"Set","10"=>"Ott","11"=>"Nov","12"=>"Dec");
-$mesi = array();
-foreach ($elenco_mesi as $k=>$v) {
-	$mesi[] = "<li role=\"presentation\"><a href=\"prima_nota.php?mese=".$k."\">".$v."</a></li>";
-}
-
-if (array_key_exists("anno",$_GET))
-{
-	$_SESSION['gestione_prima_nota']['fattura_anno']=$_GET['anno'];
-}
-if (array_key_exists("gestione_prima_nota",$_SESSION) and array_key_exists("fattura_anno",$_SESSION['gestione_prima_nota']))
-{
-	$pn_anno=$_SESSION['gestione_prima_nota']['fattura_anno'];
-}
-if (array_key_exists("mese",$_GET))
-{
-	$_SESSION['gestione_prima_nota']['fattura_mese']=$_GET['mese'];
-}
-if (array_key_exists("gestione_prima_nota",$_SESSION) and array_key_exists("fattura_mese",$_SESSION['gestione_prima_nota']))
-{
-	$pn_mese=$_SESSION['gestione_prima_nota']['fattura_mese'];
-}
-$periodo = $pn_anno."-".$pn_mese;
-$where_pn = "prima_nota_data LIKE '".$periodo."%'";
-$paginazione = $sql->paginazione_menu($tabelle['prima_nota'], $where_pn);
-$limit = $sql->paginazione_valuta();
-$select_pn = "SELECT * FROM " . $tabelle['prima_nota'] . " WHERE " . $where_pn . " ORDER BY prima_nota_data ASC LIMIT " . $limit;
-$result_pn = $sql->select_query($select_pn);
-
-// Calcolare i totali del mese
-$select_totali_pn = "SELECT SUM(prima_nota_entrata) AS somma_entrata, SUM(prima_nota_uscita) AS somma_uscita FROM " . $tabelle['prima_nota'] . " WHERE " . $where_pn;
-$result_totali_pn = $sql->select_query($select_totali_pn);
-
-require_once "views/transactions/admin.php";
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

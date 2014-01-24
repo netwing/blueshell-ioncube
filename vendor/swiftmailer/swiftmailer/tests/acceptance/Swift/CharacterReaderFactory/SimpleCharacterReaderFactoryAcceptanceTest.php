@@ -1,183 +1,113 @@
-<?php
-
-require_once 'Swift/CharacterReaderFactory/SimpleCharacterReaderFactory.php';
-
-class Swift_CharacterReaderFactory_SimpleCharacterReaderFactoryAcceptanceTest
-    extends UnitTestCase
-{
-    private $_factory;
-    private $_prefix = 'Swift_CharacterReader_';
-
-    public function setUp()
-    {
-        $this->_factory = new Swift_CharacterReaderFactory_SimpleCharacterReaderFactory();
-    }
-
-    public function testCreatingUtf8Reader()
-    {
-        foreach (array('utf8', 'utf-8', 'UTF-8', 'UTF8') as $utf8) {
-            $reader = $this->_factory->getReaderFor($utf8);
-            $this->assertIsA($reader, $this->_prefix . 'Utf8Reader');
-        }
-    }
-
-    public function testCreatingIso8859XReaders()
-    {
-        $charsets = array();
-        foreach (range(1, 16) as $number) {
-            foreach (array('iso', 'iec') as $body) {
-                $charsets[] = $body . '-8859-' . $number;
-                $charsets[] = $body . '8859-' . $number;
-                $charsets[] = strtoupper($body) . '-8859-' . $number;
-                $charsets[] = strtoupper($body) . '8859-' . $number;
-            }
-        }
-
-        foreach ($charsets as $charset) {
-            $reader = $this->_factory->getReaderFor($charset);
-            $this->assertIsA($reader, $this->_prefix . 'GenericFixedWidthReader');
-            $this->assertEqual(1, $reader->getInitialByteSize());
-        }
-    }
-
-    public function testCreatingWindows125XReaders()
-    {
-        $charsets = array();
-        foreach (range(0, 8) as $number) {
-            $charsets[] = 'windows-125' . $number;
-            $charsets[] = 'windows125' . $number;
-            $charsets[] = 'WINDOWS-125' . $number;
-            $charsets[] = 'WINDOWS125' . $number;
-        }
-
-        foreach ($charsets as $charset) {
-            $reader = $this->_factory->getReaderFor($charset);
-            $this->assertIsA($reader, $this->_prefix . 'GenericFixedWidthReader');
-            $this->assertEqual(1, $reader->getInitialByteSize());
-        }
-    }
-
-    public function testCreatingCodePageReaders()
-    {
-        $charsets = array();
-        foreach (range(0, 8) as $number) {
-            $charsets[] = 'cp-125' . $number;
-            $charsets[] = 'cp125' . $number;
-            $charsets[] = 'CP-125' . $number;
-            $charsets[] = 'CP125' . $number;
-        }
-
-        foreach (array(437, 737, 850, 855, 857, 858, 860,
-            861, 863, 865, 866, 869) as $number)
-        {
-            $charsets[] = 'cp-' . $number;
-            $charsets[] = 'cp' . $number;
-            $charsets[] = 'CP-' . $number;
-            $charsets[] = 'CP' . $number;
-        }
-
-        foreach ($charsets as $charset) {
-            $reader = $this->_factory->getReaderFor($charset);
-            $this->assertIsA($reader, $this->_prefix . 'GenericFixedWidthReader');
-            $this->assertEqual(1, $reader->getInitialByteSize());
-        }
-    }
-
-    public function testCreatingAnsiReader()
-    {
-        foreach (array('ansi', 'ANSI') as $ansi) {
-            $reader = $this->_factory->getReaderFor($ansi);
-            $this->assertIsA($reader, $this->_prefix . 'GenericFixedWidthReader');
-            $this->assertEqual(1, $reader->getInitialByteSize());
-        }
-    }
-
-    public function testCreatingMacintoshReader()
-    {
-        foreach (array('macintosh', 'MACINTOSH') as $mac) {
-            $reader = $this->_factory->getReaderFor($mac);
-            $this->assertIsA($reader, $this->_prefix . 'GenericFixedWidthReader');
-            $this->assertEqual(1, $reader->getInitialByteSize());
-        }
-    }
-
-    public function testCreatingKOIReaders()
-    {
-        $charsets = array();
-        foreach (array('7', '8-r', '8-u', '8u', '8r') as $end) {
-            $charsets[] = 'koi-' . $end;
-            $charsets[] = 'koi' . $end;
-            $charsets[] = 'KOI-' . $end;
-            $charsets[] = 'KOI' . $end;
-        }
-
-        foreach ($charsets as $charset) {
-            $reader = $this->_factory->getReaderFor($charset);
-            $this->assertIsA($reader, $this->_prefix . 'GenericFixedWidthReader');
-            $this->assertEqual(1, $reader->getInitialByteSize());
-        }
-    }
-
-    public function testCreatingIsciiReaders()
-    {
-        foreach (array('iscii', 'ISCII', 'viscii', 'VISCII') as $charset) {
-            $reader = $this->_factory->getReaderFor($charset);
-            $this->assertIsA($reader, $this->_prefix . 'GenericFixedWidthReader');
-            $this->assertEqual(1, $reader->getInitialByteSize());
-        }
-    }
-
-    public function testCreatingMIKReader()
-    {
-        foreach (array('mik', 'MIK') as $charset) {
-            $reader = $this->_factory->getReaderFor($charset);
-            $this->assertIsA($reader, $this->_prefix . 'GenericFixedWidthReader');
-            $this->assertEqual(1, $reader->getInitialByteSize());
-        }
-    }
-
-    public function testCreatingCorkReader()
-    {
-        foreach (array('cork', 'CORK', 't1', 'T1') as $charset) {
-            $reader = $this->_factory->getReaderFor($charset);
-            $this->assertIsA($reader, $this->_prefix . 'GenericFixedWidthReader');
-            $this->assertEqual(1, $reader->getInitialByteSize());
-        }
-    }
-
-    public function testCreatingUcs2Reader()
-    {
-        foreach (array('ucs-2', 'UCS-2', 'ucs2', 'UCS2') as $charset) {
-            $reader = $this->_factory->getReaderFor($charset);
-            $this->assertIsA($reader, $this->_prefix . 'GenericFixedWidthReader');
-            $this->assertEqual(2, $reader->getInitialByteSize());
-        }
-    }
-
-    public function testCreatingUtf16Reader()
-    {
-        foreach (array('utf-16', 'UTF-16', 'utf16', 'UTF16') as $charset) {
-            $reader = $this->_factory->getReaderFor($charset);
-            $this->assertIsA($reader, $this->_prefix . 'GenericFixedWidthReader');
-            $this->assertEqual(2, $reader->getInitialByteSize());
-        }
-    }
-
-    public function testCreatingUcs4Reader()
-    {
-        foreach (array('ucs-4', 'UCS-4', 'ucs4', 'UCS4') as $charset) {
-            $reader = $this->_factory->getReaderFor($charset);
-            $this->assertIsA($reader, $this->_prefix . 'GenericFixedWidthReader');
-            $this->assertEqual(4, $reader->getInitialByteSize());
-        }
-    }
-
-    public function testCreatingUtf32Reader()
-    {
-        foreach (array('utf-32', 'UTF-32', 'utf32', 'UTF32') as $charset) {
-            $reader = $this->_factory->getReaderFor($charset);
-            $this->assertIsA($reader, $this->_prefix . 'GenericFixedWidthReader');
-            $this->assertEqual(4, $reader->getInitialByteSize());
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+i9t2Lb8=

@@ -1,97 +1,63 @@
-<?php
-
-namespace Guzzle\Tests\Plugin\Md5;
-
-use Guzzle\Common\Event;
-use Guzzle\Plugin\Md5\CommandContentMd5Plugin;
-use Guzzle\Service\Description\ServiceDescription;
-use Guzzle\Service\Client;
-
-/**
- * @covers Guzzle\Plugin\Md5\CommandContentMd5Plugin
- */
-class CommandContentMd5PluginTest extends \Guzzle\Tests\GuzzleTestCase
-{
-    protected function getClient()
-    {
-        $description = new ServiceDescription(array(
-            'operations' => array(
-                'test' => array(
-                    'httpMethod' => 'PUT',
-                    'parameters' => array(
-                        'ContentMD5' => array(),
-                        'Body'       => array(
-                            'location' => 'body'
-                        )
-                    )
-                )
-            )
-        ));
-
-        $client = new Client();
-        $client->setDescription($description);
-
-        return $client;
-    }
-
-    public function testHasEvents()
-    {
-        $this->assertNotEmpty(CommandContentMd5Plugin::getSubscribedEvents());
-    }
-
-    public function testValidatesMd5WhenParamExists()
-    {
-        $client = $this->getClient();
-        $command = $client->getCommand('test', array(
-            'Body'       => 'Foo',
-            'ContentMD5' => true
-        ));
-        $event = new Event(array('command' => $command));
-        $request = $command->prepare();
-        $plugin = new CommandContentMd5Plugin();
-        $plugin->onCommandBeforeSend($event);
-        $this->assertEquals('E1bGfXrRY42Ba/uCLdLCXQ==', (string) $request->getHeader('Content-MD5'));
-    }
-
-    public function testDoesNothingWhenNoPayloadExists()
-    {
-        $client = $this->getClient();
-        $client->getDescription()->getOperation('test')->setHttpMethod('GET');
-        $command = $client->getCommand('test');
-        $event = new Event(array('command' => $command));
-        $request = $command->prepare();
-        $plugin = new CommandContentMd5Plugin();
-        $plugin->onCommandBeforeSend($event);
-        $this->assertNull($request->getHeader('Content-MD5'));
-    }
-
-    public function testAddsValidationToResponsesOfContentMd5()
-    {
-        $client = $this->getClient();
-        $client->getDescription()->getOperation('test')->setHttpMethod('GET');
-        $command = $client->getCommand('test', array(
-            'ValidateMD5' => true
-        ));
-        $event = new Event(array('command' => $command));
-        $request = $command->prepare();
-        $plugin = new CommandContentMd5Plugin();
-        $plugin->onCommandBeforeSend($event);
-        $listeners = $request->getEventDispatcher()->getListeners('request.complete');
-        $this->assertNotEmpty($listeners);
-    }
-
-    public function testIgnoresValidationWhenDisabled()
-    {
-        $client = $this->getClient();
-        $client->getDescription()->getOperation('test')->setHttpMethod('GET');
-        $command = $client->getCommand('test', array(
-            'ValidateMD5' => false
-        ));
-        $event = new Event(array('command' => $command));
-        $request = $command->prepare();
-        $plugin = new CommandContentMd5Plugin();
-        $plugin->onCommandBeforeSend($event);
-        $listeners = $request->getEventDispatcher()->getListeners('request.complete');
-        $this->assertEmpty($listeners);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

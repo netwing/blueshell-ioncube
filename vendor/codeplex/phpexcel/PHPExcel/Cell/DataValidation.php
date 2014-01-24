@@ -1,474 +1,100 @@
-<?php
-/**
- * PHPExcel
- *
- * Copyright (c) 2006 - 2012 PHPExcel
- *
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation; either
- * version 2.1 of the License, or (at your option) any later version.
- *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
- *
- * @category   PHPExcel
- * @package    PHPExcel_Cell
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
- * @version    1.7.8, 2012-10-12
- */
-
-
-/**
- * PHPExcel_Cell_DataValidation
- *
- * @category   PHPExcel
- * @package    PHPExcel_Cell
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- */
-class PHPExcel_Cell_DataValidation
-{
-	/* Data validation types */
-	const TYPE_NONE			= 'none';
-	const TYPE_CUSTOM		= 'custom';
-	const TYPE_DATE			= 'date';
-	const TYPE_DECIMAL		= 'decimal';
-	const TYPE_LIST			= 'list';
-	const TYPE_TEXTLENGTH	= 'textLength';
-	const TYPE_TIME			= 'time';
-	const TYPE_WHOLE		= 'whole';
-
-	/* Data validation error styles */
-	const STYLE_STOP		= 'stop';
-	const STYLE_WARNING		= 'warning';
-	const STYLE_INFORMATION	= 'information';
-
-	/* Data validation operators */
-	const OPERATOR_BETWEEN				= 'between';
-	const OPERATOR_EQUAL				= 'equal';
-	const OPERATOR_GREATERTHAN			= 'greaterThan';
-	const OPERATOR_GREATERTHANOREQUAL	= 'greaterThanOrEqual';
-	const OPERATOR_LESSTHAN				= 'lessThan';
-	const OPERATOR_LESSTHANOREQUAL		= 'lessThanOrEqual';
-	const OPERATOR_NOTBETWEEN			= 'notBetween';
-	const OPERATOR_NOTEQUAL				= 'notEqual';
-
-    /**
-     * Formula 1
-     *
-     * @var string
-     */
-    private $_formula1;
-
-    /**
-     * Formula 2
-     *
-     * @var string
-     */
-    private $_formula2;
-
-    /**
-     * Type
-     *
-     * @var string
-     */
-    private $_type = PHPExcel_Cell_DataValidation::TYPE_NONE;
-
-    /**
-     * Error style
-     *
-     * @var string
-     */
-    private $_errorStyle = PHPExcel_Cell_DataValidation::STYLE_STOP;
-
-    /**
-     * Operator
-     *
-     * @var string
-     */
-    private $_operator;
-
-    /**
-     * Allow Blank
-     *
-     * @var boolean
-     */
-    private $_allowBlank;
-
-    /**
-     * Show DropDown
-     *
-     * @var boolean
-     */
-    private $_showDropDown;
-
-    /**
-     * Show InputMessage
-     *
-     * @var boolean
-     */
-    private $_showInputMessage;
-
-    /**
-     * Show ErrorMessage
-     *
-     * @var boolean
-     */
-    private $_showErrorMessage;
-
-    /**
-     * Error title
-     *
-     * @var string
-     */
-    private $_errorTitle;
-
-    /**
-     * Error
-     *
-     * @var string
-     */
-    private $_error;
-
-    /**
-     * Prompt title
-     *
-     * @var string
-     */
-    private $_promptTitle;
-
-    /**
-     * Prompt
-     *
-     * @var string
-     */
-    private $_prompt;
-
-    /**
-     * Create a new PHPExcel_Cell_DataValidation
-     *
-     * @throws	Exception
-     */
-    public function __construct()
-    {
-    	// Initialise member variables
-		$this->_formula1 			= '';
-		$this->_formula2 			= '';
-		$this->_type 				= PHPExcel_Cell_DataValidation::TYPE_NONE;
-		$this->_errorStyle 			= PHPExcel_Cell_DataValidation::STYLE_STOP;
-		$this->_operator 			= '';
-		$this->_allowBlank 			= false;
-		$this->_showDropDown 		= false;
-		$this->_showInputMessage 	= false;
-		$this->_showErrorMessage 	= false;
-		$this->_errorTitle 			= '';
-		$this->_error 				= '';
-		$this->_promptTitle 		= '';
-		$this->_prompt 				= '';
-    }
-
-	/**
-	 * Get Formula 1
-	 *
-	 * @return string
-	 */
-	public function getFormula1() {
-		return $this->_formula1;
-	}
-
-	/**
-	 * Set Formula 1
-	 *
-	 * @param	string	$value
-	 * @return PHPExcel_Cell_DataValidation
-	 */
-	public function setFormula1($value = '') {
-		$this->_formula1 = $value;
-		return $this;
-	}
-
-	/**
-	 * Get Formula 2
-	 *
-	 * @return string
-	 */
-	public function getFormula2() {
-		return $this->_formula2;
-	}
-
-	/**
-	 * Set Formula 2
-	 *
-	 * @param	string	$value
-	 * @return PHPExcel_Cell_DataValidation
-	 */
-	public function setFormula2($value = '') {
-		$this->_formula2 = $value;
-		return $this;
-	}
-
-	/**
-	 * Get Type
-	 *
-	 * @return string
-	 */
-	public function getType() {
-		return $this->_type;
-	}
-
-	/**
-	 * Set Type
-	 *
-	 * @param	string	$value
-	 * @return PHPExcel_Cell_DataValidation
-	 */
-	public function setType($value = PHPExcel_Cell_DataValidation::TYPE_NONE) {
-		$this->_type = $value;
-		return $this;
-	}
-
-	/**
-	 * Get Error style
-	 *
-	 * @return string
-	 */
-	public function getErrorStyle() {
-		return $this->_errorStyle;
-	}
-
-	/**
-	 * Set Error style
-	 *
-	 * @param	string	$value
-	 * @return PHPExcel_Cell_DataValidation
-	 */
-	public function setErrorStyle($value = PHPExcel_Cell_DataValidation::STYLE_STOP) {
-		$this->_errorStyle = $value;
-		return $this;
-	}
-
-	/**
-	 * Get Operator
-	 *
-	 * @return string
-	 */
-	public function getOperator() {
-		return $this->_operator;
-	}
-
-	/**
-	 * Set Operator
-	 *
-	 * @param	string	$value
-	 * @return PHPExcel_Cell_DataValidation
-	 */
-	public function setOperator($value = '') {
-		$this->_operator = $value;
-		return $this;
-	}
-
-	/**
-	 * Get Allow Blank
-	 *
-	 * @return boolean
-	 */
-	public function getAllowBlank() {
-		return $this->_allowBlank;
-	}
-
-	/**
-	 * Set Allow Blank
-	 *
-	 * @param	boolean	$value
-	 * @return PHPExcel_Cell_DataValidation
-	 */
-	public function setAllowBlank($value = false) {
-		$this->_allowBlank = $value;
-		return $this;
-	}
-
-	/**
-	 * Get Show DropDown
-	 *
-	 * @return boolean
-	 */
-	public function getShowDropDown() {
-		return $this->_showDropDown;
-	}
-
-	/**
-	 * Set Show DropDown
-	 *
-	 * @param	boolean	$value
-	 * @return PHPExcel_Cell_DataValidation
-	 */
-	public function setShowDropDown($value = false) {
-		$this->_showDropDown = $value;
-		return $this;
-	}
-
-	/**
-	 * Get Show InputMessage
-	 *
-	 * @return boolean
-	 */
-	public function getShowInputMessage() {
-		return $this->_showInputMessage;
-	}
-
-	/**
-	 * Set Show InputMessage
-	 *
-	 * @param	boolean	$value
-	 * @return PHPExcel_Cell_DataValidation
-	 */
-	public function setShowInputMessage($value = false) {
-		$this->_showInputMessage = $value;
-		return $this;
-	}
-
-	/**
-	 * Get Show ErrorMessage
-	 *
-	 * @return boolean
-	 */
-	public function getShowErrorMessage() {
-		return $this->_showErrorMessage;
-	}
-
-	/**
-	 * Set Show ErrorMessage
-	 *
-	 * @param	boolean	$value
-	 * @return PHPExcel_Cell_DataValidation
-	 */
-	public function setShowErrorMessage($value = false) {
-		$this->_showErrorMessage = $value;
-		return $this;
-	}
-
-	/**
-	 * Get Error title
-	 *
-	 * @return string
-	 */
-	public function getErrorTitle() {
-		return $this->_errorTitle;
-	}
-
-	/**
-	 * Set Error title
-	 *
-	 * @param	string	$value
-	 * @return PHPExcel_Cell_DataValidation
-	 */
-	public function setErrorTitle($value = '') {
-		$this->_errorTitle = $value;
-		return $this;
-	}
-
-	/**
-	 * Get Error
-	 *
-	 * @return string
-	 */
-	public function getError() {
-		return $this->_error;
-	}
-
-	/**
-	 * Set Error
-	 *
-	 * @param	string	$value
-	 * @return PHPExcel_Cell_DataValidation
-	 */
-	public function setError($value = '') {
-		$this->_error = $value;
-		return $this;
-	}
-
-	/**
-	 * Get Prompt title
-	 *
-	 * @return string
-	 */
-	public function getPromptTitle() {
-		return $this->_promptTitle;
-	}
-
-	/**
-	 * Set Prompt title
-	 *
-	 * @param	string	$value
-	 * @return PHPExcel_Cell_DataValidation
-	 */
-	public function setPromptTitle($value = '') {
-		$this->_promptTitle = $value;
-		return $this;
-	}
-
-	/**
-	 * Get Prompt
-	 *
-	 * @return string
-	 */
-	public function getPrompt() {
-		return $this->_prompt;
-	}
-
-	/**
-	 * Set Prompt
-	 *
-	 * @param	string	$value
-	 * @return PHPExcel_Cell_DataValidation
-	 */
-	public function setPrompt($value = '') {
-		$this->_prompt = $value;
-		return $this;
-	}
-
-	/**
-	 * Get hash code
-	 *
-	 * @return string	Hash code
-	 */
-	public function getHashCode() {
-    	return md5(
-    		  $this->_formula1
-    		. $this->_formula2
-    		. $this->_type = PHPExcel_Cell_DataValidation::TYPE_NONE
-    		. $this->_errorStyle = PHPExcel_Cell_DataValidation::STYLE_STOP
-    		. $this->_operator
-    		. ($this->_allowBlank ? 't' : 'f')
-    		. ($this->_showDropDown ? 't' : 'f')
-    		. ($this->_showInputMessage ? 't' : 'f')
-    		. ($this->_showErrorMessage ? 't' : 'f')
-    		. $this->_errorTitle
-    		. $this->_error
-    		. $this->_promptTitle
-    		. $this->_prompt
-    		. __CLASS__
-    	);
-    }
-
-	/**
-	 * Implement PHP __clone to create a deep clone, not just a shallow copy.
-	 */
-	public function __clone() {
-		$vars = get_object_vars($this);
-		foreach ($vars as $key => $value) {
-			if (is_object($value)) {
-				$this->$key = clone $value;
-			} else {
-				$this->$key = $value;
-			}
-		}
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+k6R/hCpl

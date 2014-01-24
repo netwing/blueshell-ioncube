@@ -1,64 +1,31 @@
-<?php
-/**
- * Generic_Sniffs_Files_OneClassPerFileSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Andy Grunwald <andygrunwald@gmail.com>
- * @copyright 2010 Andy Grunwald
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Checks that only one class is declared per file.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Andy Grunwald <andygrunwald@gmail.com>
- * @copyright 2010 Andy Grunwald
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class Generic_Sniffs_Files_OneClassPerFileSniff implements PHP_CodeSniffer_Sniff
-{
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        return array(T_CLASS);
-
-    }//end register()
-
-
-    /**
-     * Processes this sniff, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token in
-     *                                        the stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $nextClass = $phpcsFile->findNext($this->register(), ($stackPtr + 1));
-        if ($nextClass !== false) {
-            $error = 'Only one class is allowed in a file';
-            $phpcsFile->addError($error, $nextClass, 'MultipleFound');
-        }
-
-    }//end process()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+HR+cPpkD/XQsLiDPMpjhDUvuRW86gmnK+CyaDEP6df4UHFJvtXpoEiKhCq6e9cLGGull/e5L/0G9
+pRInioVB/m8UVytffy4ptX+IZynLs/9hOUYEBZTi37BhtAUYB6BC/3TOGQrb9Z8SMh8KkPS1S//o
+BE6zN5BWmIEfHITCROZc02wQpVgLIwOzPjWksB+KyPZZYLmfdjuwjUWB1knicwH2gFFvj4BDsIbZ
+8BeYGujhPGHAIgDjAYdziwzHAE4xzt2gh9fl143SQNIsOvwp+i06cV9u1LbekDZdNJ1FK1Jboftv
+a+Yq6OMZ21zmFyqTFllo7gN91wg7UBNJb2lAgMNxYjaZYjU/cy+Y1joTTb5OrnajqLYmnOXPv9/I
+/xnhoJQv2wqYqs408lNtrbbZzQtCx9Qy+6FODVX6RCkNlH+I70MSljjAXYi5D2yY8SvtNN1yS7xO
+4twGz/oeCVf5CWIAkn5otUGzB97S8shZ+e3Y3yWSLJuj6weOljyCOqUThr6HxJ9nY6OqOnjj1Y6o
+FXaE5/2+S9ksBzTJwd5VV6UxCnj0EQIp3hW8TUhqggMrvLJmzx5b2JWgDfphaO3BaoJSob3KG3ZW
+PZ/tANgY6y2WuTC1zll2Wp8k2kJxEEx3xJE97f5q7BNReSOMCjWN0vcBx8eJwkysrHxvh4+ji2oY
+fKQKNW7YbKR2DCnGjkzF7kdd3G/Q9F6CS/ZMnaNZypQXIIu33Cdo3DYyadz779LWwc+Mi1CKaUEk
+kzzKabAKt9MqFP+O0cc30y8eILFOosf7WAT2hJxdCbH8Ft3S/Lbm7eKsqepQvx2dTIFmqRmDv6Fj
+U7eX/DRaezAQiz+/YVo1K//+vjV28bVjkh45euEl9VYqRdPWE8p+h8YuNDkyrQrEGTnej8izqLES
+OMbtVFuTVwmca8XHUFBJZSJmgquqkilExxjcW1KiYK9essHYy657yUTjGBljiBdf0kQr9prC89oQ
+7z3JOdJ/42zVMDIBjNQmnNfyvDQXuKLGccgO5IYEpxOE0zfdN4tDlSOnBe8CJZ6o8tPvhIq9E1jX
+1FhWPxIEG/dttrduYIXp5WN/K8vrPQfdwNT2qzObI6vpBS3NNKWx9/Ra2OEi16nxhVcegiHRVqM5
+PqvQEf5U2mIo1IdyEqG0OHrgYMpJ53hT43y5xOvB6KsdDSomwVv33mY31j4edAVeDQuAmqeakN5c
+nRtPCXXA/XC7+7ABDi81fOwtWfg9g/G9UodblYo8a5gLd+eY+m2q9JsR6nymJ0Kpo6eXjBBS7suJ
+QluKV4m81FnQIUB0izk0clsyYE8tU9fHweA4v0CVtJkaF/+Sf3vE0nH8dtVzl+EtvIKhZBCK+6ch
+Zf35AWFWE5KcN+t2pBccp/PD2qSNn6GAiaTP2kIsTqNd1EZKl45CP7/DwiyVi6YzvI+8oByfqvIm
+Hx63vCDZMqLTeXql+s/nVGWWsywLoMhrTIlj5FnpS61eu6kEQJ+XNqJzqaOVT4T8+bFnkTajtrzo
+tt8Ks9BLg2kTYluggP0wjfPQilQSvDtl83bbv331sdpEzXUXIxWSP4ORCC+7xRrZEkJ+Qf/vyWyU
+VFqgzznPZyYJYecJJIRgTmQppXfUiGtJepfGRX9OHxyO6Ap8cJkRDYTngpihENnoYzWC3clghBkP
+/9przL5U46jUN2I3+rPX2+tmBg5dNbpUUr4/tNnpdzO18pWh5kZRl2mDGs2vBLm0vYV5tJfJBWgu
+zeJvljCqMRzKcMie7VMfGTBGJpH8BJ4NxTikVVzPn0hPaSO6UIpX9gkhMPzkIxMguHwaW1KTgu3R
+sHS31W0vWCna/mGPvaU/q+AMWsregtCGt/gidTAfKd+/1UppCBF+Ehm2IOvpYDpHjHDUxtXD3Xv6
+zK9L9gbl4JFmBs840az4VkR8EsJKlbI4odTmjk8eK/8DYO24R6PvuZMZ9Vg6mo8VG93AsbExBrJw
+Lq6SoYsLAHTN4dRVc2mB8OkW1GAfueABI1GMDdRyW82EH+qs2Mlz8looo8FroLmm6RJShU5ZjFYQ
+hSXNr1b9oDFqZP1pIqA0zOj8dSmYzb6pMHqSVEqAjil5mPZU6ug2e1cm0d8=

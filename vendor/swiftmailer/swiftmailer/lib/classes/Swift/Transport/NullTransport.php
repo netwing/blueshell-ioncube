@@ -1,88 +1,40 @@
-<?php
-
-/*
- * This file is part of SwiftMailer.
- * (c) 2009 Fabien Potencier <fabien.potencier@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-/**
- * Pretends messages have been sent, but just ignores them.
- *
- * @package Swift
- * @author  Fabien Potencier
- */
-class Swift_Transport_NullTransport implements Swift_Transport
-{
-    /** The event dispatcher from the plugin API */
-    private $_eventDispatcher;
-
-    /**
-     * Constructor.
-     */
-    public function __construct(Swift_Events_EventDispatcher $eventDispatcher)
-    {
-        $this->_eventDispatcher = $eventDispatcher;
-    }
-
-    /**
-     * Tests if this Transport mechanism has started.
-     *
-     * @return boolean
-     */
-    public function isStarted()
-    {
-        return true;
-    }
-
-    /**
-     * Starts this Transport mechanism.
-     */
-    public function start()
-    {
-    }
-
-    /**
-     * Stops this Transport mechanism.
-     */
-    public function stop()
-    {
-    }
-
-    /**
-     * Sends the given message.
-     *
-     * @param Swift_Mime_Message $message
-     * @param string[]           $failedRecipients An array of failures by-reference
-     *
-     * @return integer The number of sent emails
-     */
-    public function send(Swift_Mime_Message $message, &$failedRecipients = null)
-    {
-        if ($evt = $this->_eventDispatcher->createSendEvent($this, $message)) {
-            $this->_eventDispatcher->dispatchEvent($evt, 'beforeSendPerformed');
-            if ($evt->bubbleCancelled()) {
-                return 0;
-            }
-        }
-
-        if ($evt) {
-            $evt->setResult(Swift_Events_SendEvent::RESULT_SUCCESS);
-            $this->_eventDispatcher->dispatchEvent($evt, 'sendPerformed');
-        }
-
-        return 0;
-    }
-
-    /**
-     * Register a plugin.
-     *
-     * @param Swift_Events_EventListener $plugin
-     */
-    public function registerPlugin(Swift_Events_EventListener $plugin)
-    {
-        $this->_eventDispatcher->bindEventListener($plugin);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+7eStLG==

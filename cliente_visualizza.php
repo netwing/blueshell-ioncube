@@ -1,42 +1,43 @@
-<?php
-require_once("config.inc.php");
-$blue->autentica_utente("anagrafica","R");
-$elenco_nazioni=$blue->elenco_nazioni();
-if (!array_key_exists("id",$_GET))
-{
-	header("Location:index.php");
-}
-$select_cliente="SELECT * FROM ".$tabelle['clienti']." WHERE cliente_id='".$_GET['id']."'";
-$result_cliente=$sql->select_query($select_cliente);
-$row_cliente=mysql_fetch_array($result_cliente);
-# Carichiamo i dati del cliente
-
-$select_barca="SELECT barca_id,barca_nome, barca_lunghezza FROM ".$tabelle['barche']." WHERE barca_proprietario='".$_GET['id']."'";
-$result_barca=$sql->select_query($select_barca);
-# Carichiamo i dati sulle imbarcazioni
-
-if (array_key_exists("delfat",$_GET))
-{
-	$delete="DELETE FROM ".$tabelle['fatture']." WHERE fattura_id='".$_GET['delfat']."'";
-	$sql->delete_query($delete);
-	$delete="DELETE FROM ".$tabelle['fatture_righe']." WHERE fattura_riga_fattura_id='".$_GET['id']."'";
-	$sql->delete_query($delete);
-}
-# Se viene passato un parametro delfat, la fattura in questione viene cancellata
-
-if (array_key_exists("delnota",$_GET))
-{
-	$delete="DELETE FROM ".$tabelle['clienti_note']." WHERE cliente_nota_id='".$_GET['delnota']."'";
-	$sql->delete_query($delete);
-}
-// Se viene passato un parametro delnota, la nota in questione viene cancellata
-
-$select_fatture="SELECT fattura_id,fattura_numero,fattura_data FROM ".$tabelle['fatture']." WHERE fattura_cliente_id='".$_GET['id']."' ORDER BY fattura_data ASC";
-$result_fatture=$sql->select_query($select_fatture);
-# Carichiamo le fatture emesse per il cliente
-
-$select_note="SELECT cliente_nota_id,cliente_nota_data,cliente_nota_contenuto,cliente_nota_attiva FROM ".$tabelle['clienti_note']." WHERE cliente_nota_cliente_id='".$_GET['id']."'";
-$result_note=$sql->select_query($select_note);
-# Carichiamo le note inserite per quel cliente
-
-require_once "views/client/view.php";
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

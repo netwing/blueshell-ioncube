@@ -1,579 +1,166 @@
-<?php
-
-/*
- * This file is part of the Monolog package.
- *
- * (c) Jordi Boggiano <j.boggiano@seld.be>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Monolog;
-
-use Monolog\Handler\HandlerInterface;
-use Monolog\Handler\StreamHandler;
-use Psr\Log\LoggerInterface;
-use Psr\Log\InvalidArgumentException;
-
-/**
- * Monolog log channel
- *
- * It contains a stack of Handlers and a stack of Processors,
- * and uses them to store records that are added to it.
- *
- * @author Jordi Boggiano <j.boggiano@seld.be>
- */
-class Logger implements LoggerInterface
-{
-    /**
-     * Detailed debug information
-     */
-    const DEBUG = 100;
-
-    /**
-     * Interesting events
-     *
-     * Examples: User logs in, SQL logs.
-     */
-    const INFO = 200;
-
-    /**
-     * Uncommon events
-     */
-    const NOTICE = 250;
-
-    /**
-     * Exceptional occurrences that are not errors
-     *
-     * Examples: Use of deprecated APIs, poor use of an API,
-     * undesirable things that are not necessarily wrong.
-     */
-    const WARNING = 300;
-
-    /**
-     * Runtime errors
-     */
-    const ERROR = 400;
-
-    /**
-     * Critical conditions
-     *
-     * Example: Application component unavailable, unexpected exception.
-     */
-    const CRITICAL = 500;
-
-    /**
-     * Action must be taken immediately
-     *
-     * Example: Entire website down, database unavailable, etc.
-     * This should trigger the SMS alerts and wake you up.
-     */
-    const ALERT = 550;
-
-    /**
-     * Urgent alert.
-     */
-    const EMERGENCY = 600;
-
-    /**
-     * Monolog API version
-     *
-     * This is only bumped when API breaks are done and should
-     * follow the major version of the library
-     *
-     * @var int
-     */
-    const API = 1;
-
-    /**
-     * Logging levels from syslog protocol defined in RFC 5424
-     *
-     * @var array $levels Logging levels
-     */
-    protected static $levels = array(
-        100 => 'DEBUG',
-        200 => 'INFO',
-        250 => 'NOTICE',
-        300 => 'WARNING',
-        400 => 'ERROR',
-        500 => 'CRITICAL',
-        550 => 'ALERT',
-        600 => 'EMERGENCY',
-    );
-
-    /**
-     * @var DateTimeZone
-     */
-    protected static $timezone;
-
-    protected $name;
-
-    /**
-     * The handler stack
-     *
-     * @var array of Monolog\Handler\HandlerInterface
-     */
-    protected $handlers;
-
-    /**
-     * Processors that will process all log records
-     *
-     * To process records of a single handler instead, add the processor on that specific handler
-     *
-     * @var array of callables
-     */
-    protected $processors;
-
-    /**
-     * @param string $name       The logging channel
-     * @param array  $handlers   Optional stack of handlers, the first one in the array is called first, etc.
-     * @param array  $processors Optional array of processors
-     */
-    public function __construct($name, array $handlers = array(), array $processors = array())
-    {
-        $this->name = $name;
-        $this->handlers = $handlers;
-        $this->processors = $processors;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Pushes a handler on to the stack.
-     *
-     * @param HandlerInterface $handler
-     */
-    public function pushHandler(HandlerInterface $handler)
-    {
-        array_unshift($this->handlers, $handler);
-    }
-
-    /**
-     * Pops a handler from the stack
-     *
-     * @return HandlerInterface
-     */
-    public function popHandler()
-    {
-        if (!$this->handlers) {
-            throw new \LogicException('You tried to pop from an empty handler stack.');
-        }
-
-        return array_shift($this->handlers);
-    }
-
-    /**
-     * Adds a processor on to the stack.
-     *
-     * @param callable $callback
-     */
-    public function pushProcessor($callback)
-    {
-        if (!is_callable($callback)) {
-            throw new \InvalidArgumentException('Processors must be valid callables (callback or object with an __invoke method), '.var_export($callback, true).' given');
-        }
-        array_unshift($this->processors, $callback);
-    }
-
-    /**
-     * Removes the processor on top of the stack and returns it.
-     *
-     * @return callable
-     */
-    public function popProcessor()
-    {
-        if (!$this->processors) {
-            throw new \LogicException('You tried to pop from an empty processor stack.');
-        }
-
-        return array_shift($this->processors);
-    }
-
-    /**
-     * Adds a log record.
-     *
-     * @param  integer $level   The logging level
-     * @param  string  $message The log message
-     * @param  array   $context The log context
-     * @return Boolean Whether the record has been processed
-     */
-    public function addRecord($level, $message, array $context = array())
-    {
-        if (!$this->handlers) {
-            $this->pushHandler(new StreamHandler('php://stderr', static::DEBUG));
-        }
-
-        if (!static::$timezone) {
-            static::$timezone = new \DateTimeZone(date_default_timezone_get() ?: 'UTC');
-        }
-
-        $record = array(
-            'message' => (string) $message,
-            'context' => $context,
-            'level' => $level,
-            'level_name' => static::getLevelName($level),
-            'channel' => $this->name,
-            'datetime' => \DateTime::createFromFormat('U.u', sprintf('%.6F', microtime(true)), static::$timezone)->setTimezone(static::$timezone),
-            'extra' => array(),
-        );
-        // check if any handler will handle this message
-        $handlerKey = null;
-        foreach ($this->handlers as $key => $handler) {
-            if ($handler->isHandling($record)) {
-                $handlerKey = $key;
-                break;
-            }
-        }
-        // none found
-        if (null === $handlerKey) {
-            return false;
-        }
-
-        // found at least one, process message and dispatch it
-        foreach ($this->processors as $processor) {
-            $record = call_user_func($processor, $record);
-        }
-        while (isset($this->handlers[$handlerKey]) &&
-            false === $this->handlers[$handlerKey]->handle($record)) {
-            $handlerKey++;
-        }
-
-        return true;
-    }
-
-    /**
-     * Adds a log record at the DEBUG level.
-     *
-     * @param  string  $message The log message
-     * @param  array   $context The log context
-     * @return Boolean Whether the record has been processed
-     */
-    public function addDebug($message, array $context = array())
-    {
-        return $this->addRecord(static::DEBUG, $message, $context);
-    }
-
-    /**
-     * Adds a log record at the INFO level.
-     *
-     * @param  string  $message The log message
-     * @param  array   $context The log context
-     * @return Boolean Whether the record has been processed
-     */
-    public function addInfo($message, array $context = array())
-    {
-        return $this->addRecord(static::INFO, $message, $context);
-    }
-
-    /**
-     * Adds a log record at the NOTICE level.
-     *
-     * @param  string  $message The log message
-     * @param  array   $context The log context
-     * @return Boolean Whether the record has been processed
-     */
-    public function addNotice($message, array $context = array())
-    {
-        return $this->addRecord(static::NOTICE, $message, $context);
-    }
-
-    /**
-     * Adds a log record at the WARNING level.
-     *
-     * @param  string  $message The log message
-     * @param  array   $context The log context
-     * @return Boolean Whether the record has been processed
-     */
-    public function addWarning($message, array $context = array())
-    {
-        return $this->addRecord(static::WARNING, $message, $context);
-    }
-
-    /**
-     * Adds a log record at the ERROR level.
-     *
-     * @param  string  $message The log message
-     * @param  array   $context The log context
-     * @return Boolean Whether the record has been processed
-     */
-    public function addError($message, array $context = array())
-    {
-        return $this->addRecord(static::ERROR, $message, $context);
-    }
-
-    /**
-     * Adds a log record at the CRITICAL level.
-     *
-     * @param  string  $message The log message
-     * @param  array   $context The log context
-     * @return Boolean Whether the record has been processed
-     */
-    public function addCritical($message, array $context = array())
-    {
-        return $this->addRecord(static::CRITICAL, $message, $context);
-    }
-
-    /**
-     * Adds a log record at the ALERT level.
-     *
-     * @param  string  $message The log message
-     * @param  array   $context The log context
-     * @return Boolean Whether the record has been processed
-     */
-    public function addAlert($message, array $context = array())
-    {
-        return $this->addRecord(static::ALERT, $message, $context);
-    }
-
-    /**
-     * Adds a log record at the EMERGENCY level.
-     *
-     * @param  string  $message The log message
-     * @param  array   $context The log context
-     * @return Boolean Whether the record has been processed
-     */
-    public function addEmergency($message, array $context = array())
-    {
-      return $this->addRecord(static::EMERGENCY, $message, $context);
-    }
-
-    /**
-     * Gets all supported logging levels.
-     *
-     * @return array Assoc array with human-readable level names => level codes.
-     */
-    public static function getLevels()
-    {
-        return array_flip(static::$levels);
-    }
-
-    /**
-     * Gets the name of the logging level.
-     *
-     * @param  integer $level
-     * @return string
-     */
-    public static function getLevelName($level)
-    {
-        if (!isset(static::$levels[$level])) {
-            throw new InvalidArgumentException('Level "'.$level.'" is not defined, use one of: '.implode(', ', array_keys(static::$levels)));
-        }
-
-        return static::$levels[$level];
-    }
-
-    /**
-     * Checks whether the Logger has a handler that listens on the given level
-     *
-     * @param  integer $level
-     * @return Boolean
-     */
-    public function isHandling($level)
-    {
-        $record = array(
-            'level' => $level,
-        );
-
-        foreach ($this->handlers as $handler) {
-            if ($handler->isHandling($record)) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    /**
-     * Adds a log record at an arbitrary level.
-     *
-     * This method allows for compatibility with common interfaces.
-     *
-     * @param  mixed   $level   The log level
-     * @param  string  $message The log message
-     * @param  array   $context The log context
-     * @return Boolean Whether the record has been processed
-     */
-    public function log($level, $message, array $context = array())
-    {
-        if (is_string($level) && defined(__CLASS__.'::'.strtoupper($level))) {
-            $level = constant(__CLASS__.'::'.strtoupper($level));
-        }
-
-        return $this->addRecord($level, $message, $context);
-    }
-
-    /**
-     * Adds a log record at the DEBUG level.
-     *
-     * This method allows for compatibility with common interfaces.
-     *
-     * @param  string  $message The log message
-     * @param  array   $context The log context
-     * @return Boolean Whether the record has been processed
-     */
-    public function debug($message, array $context = array())
-    {
-        return $this->addRecord(static::DEBUG, $message, $context);
-    }
-
-    /**
-     * Adds a log record at the INFO level.
-     *
-     * This method allows for compatibility with common interfaces.
-     *
-     * @param  string  $message The log message
-     * @param  array   $context The log context
-     * @return Boolean Whether the record has been processed
-     */
-    public function info($message, array $context = array())
-    {
-        return $this->addRecord(static::INFO, $message, $context);
-    }
-
-    /**
-     * Adds a log record at the INFO level.
-     *
-     * This method allows for compatibility with common interfaces.
-     *
-     * @param  string  $message The log message
-     * @param  array   $context The log context
-     * @return Boolean Whether the record has been processed
-     */
-    public function notice($message, array $context = array())
-    {
-        return $this->addRecord(static::NOTICE, $message, $context);
-    }
-
-    /**
-     * Adds a log record at the WARNING level.
-     *
-     * This method allows for compatibility with common interfaces.
-     *
-     * @param  string  $message The log message
-     * @param  array   $context The log context
-     * @return Boolean Whether the record has been processed
-     */
-    public function warn($message, array $context = array())
-    {
-        return $this->addRecord(static::WARNING, $message, $context);
-    }
-
-    /**
-     * Adds a log record at the WARNING level.
-     *
-     * This method allows for compatibility with common interfaces.
-     *
-     * @param  string  $message The log message
-     * @param  array   $context The log context
-     * @return Boolean Whether the record has been processed
-     */
-    public function warning($message, array $context = array())
-    {
-        return $this->addRecord(static::WARNING, $message, $context);
-    }
-
-    /**
-     * Adds a log record at the ERROR level.
-     *
-     * This method allows for compatibility with common interfaces.
-     *
-     * @param  string  $message The log message
-     * @param  array   $context The log context
-     * @return Boolean Whether the record has been processed
-     */
-    public function err($message, array $context = array())
-    {
-        return $this->addRecord(static::ERROR, $message, $context);
-    }
-
-    /**
-     * Adds a log record at the ERROR level.
-     *
-     * This method allows for compatibility with common interfaces.
-     *
-     * @param  string  $message The log message
-     * @param  array   $context The log context
-     * @return Boolean Whether the record has been processed
-     */
-    public function error($message, array $context = array())
-    {
-        return $this->addRecord(static::ERROR, $message, $context);
-    }
-
-    /**
-     * Adds a log record at the CRITICAL level.
-     *
-     * This method allows for compatibility with common interfaces.
-     *
-     * @param  string  $message The log message
-     * @param  array   $context The log context
-     * @return Boolean Whether the record has been processed
-     */
-    public function crit($message, array $context = array())
-    {
-        return $this->addRecord(static::CRITICAL, $message, $context);
-    }
-
-    /**
-     * Adds a log record at the CRITICAL level.
-     *
-     * This method allows for compatibility with common interfaces.
-     *
-     * @param  string  $message The log message
-     * @param  array   $context The log context
-     * @return Boolean Whether the record has been processed
-     */
-    public function critical($message, array $context = array())
-    {
-        return $this->addRecord(static::CRITICAL, $message, $context);
-    }
-
-    /**
-     * Adds a log record at the ALERT level.
-     *
-     * This method allows for compatibility with common interfaces.
-     *
-     * @param  string  $message The log message
-     * @param  array   $context The log context
-     * @return Boolean Whether the record has been processed
-     */
-    public function alert($message, array $context = array())
-    {
-        return $this->addRecord(static::ALERT, $message, $context);
-    }
-
-    /**
-     * Adds a log record at the EMERGENCY level.
-     *
-     * This method allows for compatibility with common interfaces.
-     *
-     * @param  string  $message The log message
-     * @param  array   $context The log context
-     * @return Boolean Whether the record has been processed
-     */
-    public function emerg($message, array $context = array())
-    {
-        return $this->addRecord(static::EMERGENCY, $message, $context);
-    }
-
-    /**
-     * Adds a log record at the EMERGENCY level.
-     *
-     * This method allows for compatibility with common interfaces.
-     *
-     * @param  string  $message The log message
-     * @param  array   $context The log context
-     * @return Boolean Whether the record has been processed
-     */
-    public function emergency($message, array $context = array())
-    {
-        return $this->addRecord(static::EMERGENCY, $message, $context);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+sbAU51catyXPxYpjDQloShDn

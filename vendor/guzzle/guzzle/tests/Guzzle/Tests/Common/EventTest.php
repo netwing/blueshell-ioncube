@@ -1,62 +1,39 @@
-<?php
-
-namespace Guzzle\Tests\Common;
-
-use Guzzle\Common\Event;
-
-/**
- * @covers Guzzle\Common\Event
- */
-class EventTest extends \Guzzle\Tests\GuzzleTestCase
-{
-    /**
-     * @return Event
-     */
-    private function getEvent()
-    {
-        return new Event(array(
-            'test'  => '123',
-            'other' => '456',
-            'event' => 'test.notify'
-        ));
-    }
-
-    public function testAllowsParameterInjection()
-    {
-        $event = new Event(array(
-            'test' => '123'
-        ));
-        $this->assertEquals('123', $event['test']);
-    }
-
-    public function testImplementsArrayAccess()
-    {
-        $event = $this->getEvent();
-        $this->assertEquals('123', $event['test']);
-        $this->assertNull($event['foobar']);
-
-        $this->assertTrue($event->offsetExists('test'));
-        $this->assertFalse($event->offsetExists('foobar'));
-
-        unset($event['test']);
-        $this->assertFalse($event->offsetExists('test'));
-
-        $event['test'] = 'new';
-        $this->assertEquals('new', $event['test']);
-    }
-
-    public function testImplementsIteratorAggregate()
-    {
-        $event = $this->getEvent();
-        $this->assertInstanceOf('ArrayIterator', $event->getIterator());
-    }
-
-    public function testConvertsToArray()
-    {
-        $this->assertEquals(array(
-            'test'  => '123',
-            'other' => '456',
-            'event' => 'test.notify'
-        ), $this->getEvent()->toArray());
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+Y9ReSoy0GQOOCmdQLRmqacQw

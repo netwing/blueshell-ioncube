@@ -1,469 +1,242 @@
-<?php
-
-namespace Test\Behat\Mink\Element;
-
-use Behat\Mink\Element\DocumentElement;
-
-require_once 'ElementTest.php';
-
-/**
- * @group unittest
- */
-class DocumentElementTest extends ElementTest
-{
-    private $session;
-    private $document;
-
-    protected function setUp()
-    {
-        $this->session  = $this->getSessionWithMockedDriver();
-        $this->document = new DocumentElement($this->session);
-    }
-
-    public function testGetSession()
-    {
-        $this->assertEquals($this->session, $this->document->getSession());
-    }
-
-    public function testFindAll()
-    {
-        $this->session->getDriver()
-            ->expects($this->exactly(2))
-            ->method('find')
-            ->with('//html/h3[a]')
-            ->will($this->onConsecutiveCalls(array(2, 3, 4), array(1, 2), array()));
-
-        $this->assertEquals(3, count($this->document->findAll('xpath', $xpath = 'h3[a]')));
-
-        $selector = $this->getMockBuilder('Behat\Mink\Selector\SelectorInterface')->getMock();
-        $selector
-            ->expects($this->once())
-            ->method('translateToXPath')
-            ->with($css = 'h3 > a')
-            ->will($this->returnValue($xpath));
-
-        $this->session->getSelectorsHandler()->registerSelector('css', $selector);
-        $this->assertEquals(2, count($this->document->findAll('css', $css)));
-    }
-
-    public function testFind()
-    {
-        $this->session->getDriver()
-            ->expects($this->exactly(3))
-            ->method('find')
-            ->with('//html/h3[a]')
-            ->will($this->onConsecutiveCalls(array(2, 3, 4), array(1, 2), array()));
-
-        $this->assertEquals(2, $this->document->find('xpath', $xpath = 'h3[a]'));
-
-        $selector = $this->getMockBuilder('Behat\Mink\Selector\SelectorInterface')->getMock();
-        $selector
-            ->expects($this->once())
-            ->method('translateToXPath')
-            ->with($css = 'h3 > a')
-            ->will($this->returnValue($xpath));
-
-        $this->session->getSelectorsHandler()->registerSelector('css', $selector);
-        $this->assertEquals(1, $this->document->find('css', $css));
-
-        $this->assertNull($this->document->find('xpath', $xpath));
-    }
-
-    public function testFindField()
-    {
-        $xpath = <<<XPATH
-//html/.//*[self::input | self::textarea | self::select][not(./@type = 'submit' or ./@type = 'image' or ./@type = 'hidden')][(((./@id = 'some field' or ./@name = 'some field') or ./@id = //label[contains(normalize-space(string(.)), 'some field')]/@for) or ./@placeholder = 'some field')] | .//label[contains(normalize-space(string(.)), 'some field')]//.//*[self::input | self::textarea | self::select][not(./@type = 'submit' or ./@type = 'image' or ./@type = 'hidden')]
-XPATH;
-
-        $this->session->getDriver()
-            ->expects($this->exactly(2))
-            ->method('find')
-            ->with($xpath)
-            ->will($this->onConsecutiveCalls(array('field1', 'field2', 'field3'), array()));
-
-        $this->assertEquals('field1', $this->document->findField('some field'));
-        $this->assertEquals(null, $this->document->findField('some field'));
-    }
-
-    public function testFindLink()
-    {
-        $xpath = <<<XPATH
-//html/.//a[./@href][(((./@id = 'some link' or contains(normalize-space(string(.)), 'some link')) or contains(./@title, 'some link') or contains(./@rel, 'some link')) or .//img[contains(./@alt, 'some link')])] | .//*[./@role = 'link'][((./@id = 'some link' or contains(./@value, 'some link')) or contains(./@title, 'some link') or contains(normalize-space(string(.)), 'some link'))]
-XPATH;
-
-        $this->session->getDriver()
-            ->expects($this->exactly(2))
-            ->method('find')
-            ->with($xpath)
-            ->will($this->onConsecutiveCalls(array('link1', 'link2', 'link3'), array()));
-
-        $this->assertEquals('link1', $this->document->findLink('some link'));
-        $this->assertEquals(null, $this->document->findLink('some link'));
-    }
-
-    public function testFindButton()
-    {
-        $xpath = <<<XPATH
-//html/.//input[./@type = 'submit' or ./@type = 'image' or ./@type = 'button'][(((./@id = 'some button' or ./@name = 'some button') or contains(./@value, 'some button')) or contains(./@title, 'some button'))] | .//input[./@type = 'image'][contains(./@alt, 'some button')] | .//button[((((./@id = 'some button' or ./@name = 'some button') or contains(./@value, 'some button')) or contains(normalize-space(string(.)), 'some button')) or contains(./@title, 'some button'))] | .//input[./@type = 'image'][contains(./@alt, 'some button')] | .//*[./@role = 'button'][(((./@id = 'some button' or ./@name = 'some button') or contains(./@value, 'some button')) or contains(./@title, 'some button') or contains(normalize-space(string(.)), 'some button'))]
-XPATH;
-
-        $this->session->getDriver()
-            ->expects($this->exactly(2))
-            ->method('find')
-            ->with($xpath)
-            ->will($this->onConsecutiveCalls(array('button1', 'button2', 'button3'), array()));
-
-        $this->assertEquals('button1', $this->document->findButton('some button'));
-        $this->assertEquals(null, $this->document->findButton('some button'));
-    }
-
-    public function testFindById()
-    {
-        $xpath = <<<XPATH
-//html//*[@id='some-item-2']
-XPATH;
-
-        $this->session->getDriver()
-            ->expects($this->exactly(2))
-            ->method('find')
-            ->with($xpath)
-            ->will($this->onConsecutiveCalls(array('id2', 'id3'), array()));
-
-        $this->assertEquals('id2', $this->document->findById('some-item-2'));
-        $this->assertEquals(null, $this->document->findById('some-item-2'));
-    }
-
-    public function testHasSelector()
-    {
-        $this->session->getDriver()
-            ->expects($this->exactly(2))
-            ->method('find')
-            ->with('//html/some xpath')
-            ->will($this->onConsecutiveCalls(array('id2', 'id3'), array()));
-
-        $this->assertTrue($this->document->has('xpath', 'some xpath'));
-        $this->assertFalse($this->document->has('xpath', 'some xpath'));
-    }
-
-    public function testHasContent()
-    {
-        $xpath = <<<XPATH
-//html/./descendant-or-self::*[contains(normalize-space(.), 'some content')]
-XPATH;
-
-        $this->session->getDriver()
-            ->expects($this->exactly(2))
-            ->method('find')
-            ->with($xpath)
-            ->will($this->onConsecutiveCalls(array('item1', 'item2'), array()));
-
-        $this->assertTrue($this->document->hasContent('some content'));
-        $this->assertFalse($this->document->hasContent('some content'));
-    }
-
-    public function testHasLink()
-    {
-        $xpath = <<<XPATH
-//html/.//a[./@href][(((./@id = 'some link' or contains(normalize-space(string(.)), 'some link')) or contains(./@title, 'some link') or contains(./@rel, 'some link')) or .//img[contains(./@alt, 'some link')])] | .//*[./@role = 'link'][((./@id = 'some link' or contains(./@value, 'some link')) or contains(./@title, 'some link') or contains(normalize-space(string(.)), 'some link'))]
-XPATH;
-
-        $this->session->getDriver()
-            ->expects($this->exactly(2))
-            ->method('find')
-            ->with($xpath)
-            ->will($this->onConsecutiveCalls(array('link1', 'link2', 'link3'), array()));
-
-        $this->assertTrue($this->document->hasLink('some link'));
-        $this->assertFalse($this->document->hasLink('some link'));
-    }
-
-    public function testHasButton()
-    {
-        $xpath = <<<XPATH
-//html/.//input[./@type = 'submit' or ./@type = 'image' or ./@type = 'button'][(((./@id = 'some button' or ./@name = 'some button') or contains(./@value, 'some button')) or contains(./@title, 'some button'))] | .//input[./@type = 'image'][contains(./@alt, 'some button')] | .//button[((((./@id = 'some button' or ./@name = 'some button') or contains(./@value, 'some button')) or contains(normalize-space(string(.)), 'some button')) or contains(./@title, 'some button'))] | .//input[./@type = 'image'][contains(./@alt, 'some button')] | .//*[./@role = 'button'][(((./@id = 'some button' or ./@name = 'some button') or contains(./@value, 'some button')) or contains(./@title, 'some button') or contains(normalize-space(string(.)), 'some button'))]
-XPATH;
-
-        $this->session->getDriver()
-            ->expects($this->exactly(2))
-            ->method('find')
-            ->with($xpath)
-            ->will($this->onConsecutiveCalls(array('button1', 'button2', 'button3'), array()));
-
-        $this->assertTrue($this->document->hasButton('some button'));
-        $this->assertFalse($this->document->hasButton('some button'));
-    }
-
-    public function testHasField()
-    {
-        $xpath = <<<XPATH
-//html/.//*[self::input | self::textarea | self::select][not(./@type = 'submit' or ./@type = 'image' or ./@type = 'hidden')][(((./@id = 'some field' or ./@name = 'some field') or ./@id = //label[contains(normalize-space(string(.)), 'some field')]/@for) or ./@placeholder = 'some field')] | .//label[contains(normalize-space(string(.)), 'some field')]//.//*[self::input | self::textarea | self::select][not(./@type = 'submit' or ./@type = 'image' or ./@type = 'hidden')]
-XPATH;
-
-        $this->session->getDriver()
-            ->expects($this->exactly(2))
-            ->method('find')
-            ->with($xpath)
-            ->will($this->onConsecutiveCalls(array('field1', 'field2', 'field3'), array()));
-
-        $this->assertTrue($this->document->hasField('some field'));
-        $this->assertFalse($this->document->hasField('some field'));
-    }
-
-    public function testHasCheckedField()
-    {
-        $xpath = <<<XPATH
-//html/.//*[self::input | self::textarea | self::select][not(./@type = 'submit' or ./@type = 'image' or ./@type = 'hidden')][(((./@id = 'some checkbox' or ./@name = 'some checkbox') or ./@id = //label[contains(normalize-space(string(.)), 'some checkbox')]/@for) or ./@placeholder = 'some checkbox')] | .//label[contains(normalize-space(string(.)), 'some checkbox')]//.//*[self::input | self::textarea | self::select][not(./@type = 'submit' or ./@type = 'image' or ./@type = 'hidden')]
-XPATH;
-        $checkbox = $this->getMockBuilder('Behat\Mink\Element\NodeElement')
-            ->disableOriginalConstructor()
-            ->getMock();
-        $checkbox
-            ->expects($this->exactly(2))
-            ->method('isChecked')
-            ->will($this->onConsecutiveCalls(true, false));
-
-        $this->session->getDriver()
-            ->expects($this->exactly(3))
-            ->method('find')
-            ->with($xpath)
-            ->will($this->onConsecutiveCalls(array($checkbox), array(), array($checkbox)));
-
-        $this->assertTrue($this->document->hasCheckedField('some checkbox'));
-        $this->assertFalse($this->document->hasCheckedField('some checkbox'));
-        $this->assertFalse($this->document->hasCheckedField('some checkbox'));
-    }
-
-    public function testHasUncheckedField()
-    {
-        $xpath = <<<XPATH
-//html/.//*[self::input | self::textarea | self::select][not(./@type = 'submit' or ./@type = 'image' or ./@type = 'hidden')][(((./@id = 'some checkbox' or ./@name = 'some checkbox') or ./@id = //label[contains(normalize-space(string(.)), 'some checkbox')]/@for) or ./@placeholder = 'some checkbox')] | .//label[contains(normalize-space(string(.)), 'some checkbox')]//.//*[self::input | self::textarea | self::select][not(./@type = 'submit' or ./@type = 'image' or ./@type = 'hidden')]
-XPATH;
-        $checkbox = $this->getMockBuilder('Behat\Mink\Element\NodeElement')
-            ->disableOriginalConstructor()
-            ->getMock();
-        $checkbox
-            ->expects($this->exactly(2))
-            ->method('isChecked')
-            ->will($this->onConsecutiveCalls(true, false));
-
-        $this->session->getDriver()
-            ->expects($this->exactly(3))
-            ->method('find')
-            ->with($xpath)
-            ->will($this->onConsecutiveCalls(array($checkbox), array(), array($checkbox)));
-
-        $this->assertFalse($this->document->hasUncheckedField('some checkbox'));
-        $this->assertFalse($this->document->hasUncheckedField('some checkbox'));
-        $this->assertTrue($this->document->hasUncheckedField('some checkbox'));
-    }
-
-    public function testHasSelect()
-    {
-        $xpath = <<<XPATH
-//html/.//select[(((./@id = 'some select field' or ./@name = 'some select field') or ./@id = //label[contains(normalize-space(string(.)), 'some select field')]/@for) or ./@placeholder = 'some select field')] | .//label[contains(normalize-space(string(.)), 'some select field')]//.//select
-XPATH;
-
-        $this->session->getDriver()
-            ->expects($this->exactly(2))
-            ->method('find')
-            ->with($xpath)
-            ->will($this->onConsecutiveCalls(array('select'), array()));
-
-        $this->assertTrue($this->document->hasSelect('some select field'));
-        $this->assertFalse($this->document->hasSelect('some select field'));
-    }
-
-    public function testHasTable()
-    {
-        $xpath = <<<XPATH
-//html/.//table[(./@id = 'some table' or contains(.//caption, 'some table'))]
-XPATH;
-
-        $this->session->getDriver()
-            ->expects($this->exactly(2))
-            ->method('find')
-            ->with($xpath)
-            ->will($this->onConsecutiveCalls(array('table'), array()));
-
-        $this->assertTrue($this->document->hasTable('some table'));
-        $this->assertFalse($this->document->hasTable('some table'));
-    }
-
-    public function testClickLink()
-    {
-        $xpath = <<<XPATH
-//html/.//a[./@href][(((./@id = 'some link' or contains(normalize-space(string(.)), 'some link')) or contains(./@title, 'some link')) or .//img[contains(./@alt, 'some link')])]
-XPATH;
-
-        $node = $this->getMockBuilder('Behat\Mink\Element\NodeElement')
-            ->disableOriginalConstructor()
-            ->getMock();
-        $node
-            ->expects($this->once())
-            ->method('click');
-        $this->session->getDriver()
-            ->expects($this->exactly(2))
-            ->method('find')
-            ->will($this->onConsecutiveCalls(array($node), array()));
-
-        $this->document->clickLink('some link');
-        $this->setExpectedException('Behat\Mink\Exception\ElementNotFoundException');
-        $this->document->clickLink('some link');
-    }
-
-    public function testClickButton()
-    {
-        $xpath = <<<XPATH
-//html/.//input[./@type = 'submit' or ./@type = 'image' or ./@type = 'button'][((./@id = 'some button' or contains(./@value, 'some button')) or contains(./@title, 'some button'))] | .//input[./@type = 'image'][contains(./@alt, 'some button')] | .//button[(((./@id = 'some button' or contains(./@value, 'some button')) or contains(normalize-space(string(.)), 'some button')) or contains(./@title, 'some button'))] | .//input[./@type = 'image'][contains(./@alt, 'some button')]
-XPATH;
-
-        $node = $this->getMockBuilder('Behat\Mink\Element\NodeElement')
-            ->disableOriginalConstructor()
-            ->getMock();
-        $node
-            ->expects($this->once())
-            ->method('press');
-        $this->session->getDriver()
-            ->expects($this->exactly(2))
-            ->method('find')
-            ->will($this->onConsecutiveCalls(array($node), array()));
-
-        $this->document->pressButton('some button');
-        $this->setExpectedException('Behat\Mink\Exception\ElementNotFoundException');
-        $this->document->pressButton('some button');
-    }
-
-    public function testFillField()
-    {
-        $xpath = <<<XPATH
-.//*[self::input | self::textarea | self::select][not(./@type = 'submit' or ./@type = 'image' or ./@type = 'hidden')][(((./@id = 'some field' or ./@name = 'some field') or ./@id = //label[contains(normalize-space(string(.)), 'some field')]/@for) or ./@placeholder = 'some field')] | .//label[contains(normalize-space(string(.)), 'some field')]//.//*[self::input | self::textarea | self::select][not(./@type = 'submit' or ./@type = 'image' or ./@type = 'hidden')]
-XPATH;
-
-        $node = $this->getMockBuilder('Behat\Mink\Element\NodeElement')
-            ->disableOriginalConstructor()
-            ->getMock();
-        $node
-            ->expects($this->once())
-            ->method('setValue')
-            ->with('some val');
-        $this->session->getDriver()
-            ->expects($this->exactly(2))
-            ->method('find')
-            ->will($this->onConsecutiveCalls(array($node), array()));
-
-        $this->document->fillField('some field', 'some val');
-        $this->setExpectedException('Behat\Mink\Exception\ElementNotFoundException');
-        $this->document->fillField('some field', 'some val');
-    }
-
-    public function testCheckField()
-    {
-        $xpath = <<<XPATH
-.//*[self::input | self::textarea | self::select][not(./@type = 'submit' or ./@type = 'image' or ./@type = 'hidden')][(((./@id = 'some field' or ./@name = 'some field') or ./@id = //label[contains(normalize-space(string(.)), 'some field')]/@for) or ./@placeholder = 'some field')] | .//label[contains(normalize-space(string(.)), 'some field')]//.//*[self::input | self::textarea | self::select][not(./@type = 'submit' or ./@type = 'image' or ./@type = 'hidden')]
-XPATH;
-
-        $node = $this->getMockBuilder('Behat\Mink\Element\NodeElement')
-            ->disableOriginalConstructor()
-            ->getMock();
-        $node
-            ->expects($this->once())
-            ->method('check');
-        $this->session->getDriver()
-            ->expects($this->exactly(2))
-            ->method('find')
-            ->will($this->onConsecutiveCalls(array($node), array()));
-
-        $this->document->checkField('some field');
-        $this->setExpectedException('Behat\Mink\Exception\ElementNotFoundException');
-        $this->document->checkField('some field');
-    }
-
-    public function testUncheckField()
-    {
-        $xpath = <<<XPATH
-.//*[self::input | self::textarea | self::select][not(./@type = 'submit' or ./@type = 'image' or ./@type = 'hidden')][(((./@id = 'some field' or ./@name = 'some field') or ./@id = //label[contains(normalize-space(string(.)), 'some field')]/@for) or ./@placeholder = 'some field')] | .//label[contains(normalize-space(string(.)), 'some field')]//.//*[self::input | self::textarea | self::select][not(./@type = 'submit' or ./@type = 'image' or ./@type = 'hidden')]
-XPATH;
-
-        $node = $this->getMockBuilder('Behat\Mink\Element\NodeElement')
-            ->disableOriginalConstructor()
-            ->getMock();
-        $node
-            ->expects($this->once())
-            ->method('uncheck');
-        $this->session->getDriver()
-            ->expects($this->exactly(2))
-            ->method('find')
-            ->will($this->onConsecutiveCalls(array($node), array()));
-
-        $this->document->uncheckField('some field');
-        $this->setExpectedException('Behat\Mink\Exception\ElementNotFoundException');
-        $this->document->uncheckField('some field');
-    }
-
-    public function testSelectField()
-    {
-        $xpath = <<<XPATH
-.//*[self::input | self::textarea | self::select][not(./@type = 'submit' or ./@type = 'image' or ./@type = 'hidden')][(((./@id = 'some field' or ./@name = 'some field') or ./@id = //label[contains(normalize-space(string(.)), 'some field')]/@for) or ./@placeholder = 'some field')] | .//label[contains(normalize-space(string(.)), 'some field')]//.//*[self::input | self::textarea | self::select][not(./@type = 'submit' or ./@type = 'image' or ./@type = 'hidden')]
-XPATH;
-
-        $node = $this->getMockBuilder('Behat\Mink\Element\NodeElement')
-            ->disableOriginalConstructor()
-            ->getMock();
-        $node
-            ->expects($this->once())
-            ->method('selectOption')
-            ->with('option2');
-        $this->session->getDriver()
-            ->expects($this->exactly(2))
-            ->method('find')
-            ->will($this->onConsecutiveCalls(array($node), array()));
-
-        $this->document->selectFieldOption('some field', 'option2');
-        $this->setExpectedException('Behat\Mink\Exception\ElementNotFoundException');
-        $this->document->selectFieldOption('some field', 'option2');
-    }
-
-    public function testAttachFileToField()
-    {
-        $xpath = <<<XPATH
-.//*[self::input | self::textarea | self::select][not(./@type = 'submit' or ./@type = 'image' or ./@type = 'hidden')][(((./@id = 'some field' or ./@name = 'some field') or ./@id = //label[contains(normalize-space(string(.)), 'some field')]/@for) or ./@placeholder = 'some field')] | .//label[contains(normalize-space(string(.)), 'some field')]//.//*[self::input | self::textarea | self::select][not(./@type = 'submit' or ./@type = 'image' or ./@type = 'hidden')]
-XPATH;
-
-        $node = $this->getMockBuilder('Behat\Mink\Element\NodeElement')
-            ->disableOriginalConstructor()
-            ->getMock();
-        $node
-            ->expects($this->once())
-            ->method('attachFile')
-            ->with('/path/to/file');
-        $this->session->getDriver()
-            ->expects($this->exactly(2))
-            ->method('find')
-            ->will($this->onConsecutiveCalls(array($node), array()));
-
-        $this->document->attachFileToField('some field', '/path/to/file');
-        $this->setExpectedException('Behat\Mink\Exception\ElementNotFoundException');
-        $this->document->attachFileToField('some field', '/path/to/file');
-    }
-
-    public function testGetContent()
-    {
-        $this->session->getDriver()
-            ->expects($this->once())
-            ->method('getContent')
-            ->will($this->returnValue($ret = 'page content'));
-
-        $this->assertEquals($ret, $this->document->getContent());
-    }
-
-    public function testGetText()
-    {
-        $this->session->getDriver()
-            ->expects($this->once())
-            ->method('getText')
-            ->with('//html')
-            ->will($this->returnValue('val1'));
-
-        $this->assertEquals('val1', $this->document->getText());
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+km6hWuWflIRaIo+In3OxNax4fcpk45G=

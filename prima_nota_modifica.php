@@ -1,75 +1,58 @@
-<?php
-require_once("config.inc.php");
-$blue->autentica_utente("fatture","W");
-
-$form->campi_testo = array("prima_nota_descrizione",
-                         "prima_nota_data",
-                         "prima_nota_categoria",
-                         "prima_nota_mezzo_scambio"
-                         );
-$form->campi_numero = array("prima_nota_entrata", "prima_nota_uscita");
-
-$form->campi_obbligatori=array("prima_nota_descrizione");
-
-// Se siamo in POST
-if (count($_POST) > 0) {
-
-	$form->verifica();
-	if ($form->errore_form === false)
-	{
-		foreach ($_POST as $k=>$v)
-		{
-			$$k=$sql->pulisci($v);
-		}
-		
-        if (array_key_exists("id", $_GET))
-		{
-            
-            $update = "UPDATE " . $tabelle['prima_nota'] . " SET prima_nota_descrizione='" . $prima_nota_descrizione . "', prima_nota_entrata='" . $prima_nota_entrata . "', prima_nota_uscita='" . $prima_nota_uscita . "', prima_nota_categoria='" . $prima_nota_categoria . "', prima_nota_mezzo_scambio='" . $prima_nota_mezzo_scambio . "' WHERE prima_nota_id='" . intval($_GET['id']) . "'";
-            $sql->update_query($update);
-            
-		} else {
-            
-            $insert = "INSERT INTO " . $tabelle['prima_nota'] . " (prima_nota_descrizione, prima_nota_data, prima_nota_entrata, prima_nota_uscita, prima_nota_categoria, prima_nota_mezzo_scambio) VALUES ('" . $prima_nota_descrizione . "', '" . $prima_nota_data . "', '" . $prima_nota_entrata . "', '" . $prima_nota_uscita . "', '" . $prima_nota_categoria . "', '" . $prima_nota_mezzo_scambio . "')";
-            $sql->insert_query($insert);
-            
-        }
-        header("Location:prima_nota.php");
-        exit;
-	}
-}
-
-if (array_key_exists('id', $_GET)) {
-    
-    $select = "SELECT * FROM " . $tabelle['prima_nota'] . " WHERE prima_nota_id='" . intval($_GET['id']) . "'";
-    $result = $sql->select_query($select);
-    $row = mysql_fetch_array($result);
-    
-    $prima_nota_data = $row['prima_nota_data'];
-    
-    $form->valori_default = array("prima_nota_descrizione" => $row['prima_nota_descrizione'],
-                                  "prima_nota_data" => $row['prima_nota_data'],
-                                  "prima_nota_entrata" => $row['prima_nota_entrata'],
-                                  "prima_nota_uscita" => $row['prima_nota_uscita'],
-                                  "prima_nota_categoria" => $row['prima_nota_categoria'],
-                                  "prima_nota_mezzo_scambio" => $row['prima_nota_mezzo_scambio'],
-                            );
-    
-} else {
-
-    $data = strftime("%Y-%m-%d", time());
-    $prima_nota_data = $data;
-    
-}
-
-$form->inizializza();
-
-// Caricare elenco delle prime note
-$select_pn = "SELECT * FROM " . $tabelle['prima_nota'] . " WHERE prima_nota_data=DATE(NOW()) ORDER BY prima_nota_data DESC, prima_nota_id DESC";
-$result_pn = $sql->select_query($select_pn);
-
-// Calcolare i totali del mese
-$select_totali_pn = "SELECT SUM(prima_nota_entrata) AS somma_entrata, SUM(prima_nota_uscita) AS somma_uscita FROM " . $tabelle['prima_nota'] . " WHERE prima_nota_data=NOW() ORDER BY prima_nota_data DESC, prima_nota_id DESC";
-$result_totali_pn = $sql->select_query($select_totali_pn);
-
-require_once "views/transactions/update.php";
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+dr+LLVRQlAWQ7kvFTgfydale

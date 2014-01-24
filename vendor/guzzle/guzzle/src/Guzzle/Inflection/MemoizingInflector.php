@@ -1,70 +1,43 @@
-<?php
-
-namespace Guzzle\Inflection;
-
-/**
- * Decorator used to add memoization to previously inflected words
- */
-class MemoizingInflector implements InflectorInterface
-{
-    /** @var array Array of cached inflections */
-    protected $cache = array(
-        'snake' => array(),
-        'camel' => array()
-    );
-
-    /** @var int Max entries per cache */
-    protected $maxCacheSize;
-
-    /** @var InflectorInterface Decorated inflector */
-    protected $decoratedInflector;
-
-    /**
-     * @param InflectorInterface $inflector    Inflector being decorated
-     * @param int                $maxCacheSize Maximum number of cached items to hold per cache
-     */
-    public function __construct(InflectorInterface $inflector, $maxCacheSize = 500)
-    {
-        $this->decoratedInflector = $inflector;
-        $this->maxCacheSize = $maxCacheSize;
-    }
-
-    public function snake($word)
-    {
-        if (!isset($this->cache['snake'][$word])) {
-            $this->pruneCache('snake');
-            $this->cache['snake'][$word] = $this->decoratedInflector->snake($word);
-        }
-
-        return $this->cache['snake'][$word];
-    }
-
-    /**
-     * Converts strings from snake_case to upper CamelCase
-     *
-     * @param string $word Value to convert into upper CamelCase
-     *
-     * @return string
-     */
-    public function camel($word)
-    {
-        if (!isset($this->cache['camel'][$word])) {
-            $this->pruneCache('camel');
-            $this->cache['camel'][$word] = $this->decoratedInflector->camel($word);
-        }
-
-        return $this->cache['camel'][$word];
-    }
-
-    /**
-     * Prune one of the named caches by removing 20% of the cache if it is full
-     *
-     * @param string $cache Type of cache to prune
-     */
-    protected function pruneCache($cache)
-    {
-        if (count($this->cache[$cache]) == $this->maxCacheSize) {
-            $this->cache[$cache] = array_slice($this->cache[$cache], $this->maxCacheSize * 0.2);
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+HbWBWbmb0n1Z4CNL89lPVgOBLgu1rFpS

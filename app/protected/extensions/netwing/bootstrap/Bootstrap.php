@@ -1,199 +1,98 @@
-<?php
-/**
- * Bootstrap class file.
- * @author Christoffer Niska <christoffer.niska@gmail.com>
- * @copyright Copyright &copy; Christoffer Niska 2013-
- * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
- * @package bootstrap.components
- * @version 1.0.0
- */
-
-/**
- * Bootstrap API component.
- */
-class Bootstrap extends CApplicationComponent
-{
-    // Bootstrap plugins
-    const PLUGIN_AFFIX = 'affix';
-    const PLUGIN_ALERT = 'alert';
-    const PLUGIN_BUTTON = 'button';
-    const PLUGIN_CAROUSEL = 'carousel';
-    const PLUGIN_COLLAPSE = 'collapse';
-    const PLUGIN_DROPDOWN = 'dropdown';
-    const PLUGIN_MODAL = 'modal';
-    const PLUGIN_POPOVER = 'popover';
-    const PLUGIN_SCROLLSPY = 'scrollspy';
-    const PLUGIN_TAB = 'tab';
-    const PLUGIN_TOOLTIP = 'tooltip';
-    const PLUGIN_TRANSITION = 'transition';
-    const PLUGIN_TYPEAHEAD = 'typeahead';
-        /**
-     * @var int static counter, used for determining script identifiers
-     */
-    public static $counter = 0;
-
-    /**
-     * @var bool whether we should copy the asset file or directory even if it is already published before.
-     */
-    public $forceCopyAssets = false;
-
-    private $_assetsUrl;
-
-    /**
-     * Registers the Bootstrap CSS.
-     * @param string $url the URL to the CSS file to register.
-     */
-    public function registerCoreCss($url = null)
-    {
-        $fileName = YII_DEBUG ? 'bootstrap.css' : 'bootstrap.min.css';
-        $url = $this->getAssetsUrl() . '/css/' . $fileName;
-        // If we have a theme from bootswatch, publish his assets and return url of bootstrap.css or bootstrap.min.css
-        if (isset(Yii::app()->theme)) {
-            if (Yii::app()->theme->name !== 'classic') {
-                $assetsPath = Yii::getPathOfAlias('bower.bootswatch.' . Yii::app()->theme->name);
-                if (file_exists($assetsPath)) {
-                    $fileName = YII_DEBUG ? 'bootstrap.css' : 'bootstrap.min.css';
-                    $assetsPath = Yii::app()->assetManager->publish($assetsPath . DIRECTORY_SEPARATOR . $fileName, false, -1, $this->forceCopyAssets);
-                    $url = $assetsPath;
-                }
-            }
-        }
-        Yii::app()->clientScript->registerCssFile($url);
-    }
-
-    /**
-     * Registers all Bootstrap CSS files.
-     */
-    public function registerAllCss()
-    {
-        $this->registerCoreCss();
-    }
-
-    /**
-     * Registers jQuery and Bootstrap JavaScript.
-     * @param string $url the URL to the JavaScript file to register.
-     * @param int $position the position of the JavaScript code.
-     */
-    public function registerCoreScripts($url = null, $position = CClientScript::POS_END)
-    {
-        if ($url === null) {
-            $fileName = YII_DEBUG ? 'bootstrap.js' : 'bootstrap.min.js';
-            $url = $this->getAssetsUrl() . '/js/' . $fileName;
-        }
-        /** @var CClientScript $cs */
-        $cs = Yii::app()->getClientScript();
-        $cs->registerCoreScript('jquery');
-        $cs->registerScriptFile($url, $position);
-    }
-
-    /**
-     * Registers the Tooltip and Popover plugins.
-     */
-    public function registerTooltipAndPopover()
-    {
-        $this->registerPopover();
-        $this->registerTooltip();
-    }
-
-    /**
-     * Registers all Bootstrap JavaScript files.
-     */
-    public function registerAllScripts()
-    {
-        $this->registerCoreScripts();
-        $this->registerTooltipAndPopover();
-    }
-
-    /**
-     * Registers all assets.
-     */
-    public function register()
-    {
-        $this->registerAllCss();
-        $this->registerAllScripts();
-    }
-
-    /**
-     * Registers the Bootstrap Popover plugin.
-     * @param string $selector the CSS selector.
-     * @param array $options the JavaScript options for the plugin.
-     * @see http://twitter.github.com/bootstrap/javascript.html#popover
-     */
-    public function registerPopover($selector = 'body', $options = array())
-    {
-        if (!isset($options['selector'])) {
-            $options['selector'] = 'a[rel=popover]';
-        }
-        $this->registerPlugin(self::PLUGIN_POPOVER, $selector, $options, CClientScript::POS_READY);
-    }
-
-    /**
-     * Registers the Bootstrap Tooltip plugin.
-     * @param string $selector the CSS selector.
-     * @param array $options the JavaScript options for the plugin.
-     * @see http://twitter.github.com/bootstrap/javascript.html#tooltip
-     */
-    public function registerTooltip($selector = 'body', $options = array())
-    {
-        if (!isset($options['selector'])) {
-            $options['selector'] = 'a[rel=tooltip]';
-        }
-        $this->registerPlugin(self::PLUGIN_TOOLTIP, $selector, $options, CClientScript::POS_READY);
-    }
-
-    /**
-     * Registers a specific Bootstrap plugin using the given selector and options.
-     * @param string $name the plugin name.
-     * @param string $selector the CSS selector.
-     * @param array $options the JavaScript options for the plugin.
-     * @param int $position the position of the JavaScript code.
-     */
-    public function registerPlugin($name, $selector, $options = array(), $position = CClientScript::POS_END)
-    {
-        $options = !empty($options) ? CJavaScript::encode($options) : '';
-        $script = "jQuery('{$selector}').{$name}({$options});";
-        $id = __CLASS__ . '#Plugin' . self::$counter++;
-        Yii::app()->clientScript->registerScript($id, $script, $position);
-    }
-
-    /**
-     * Registers events using the given selector.
-     * @param string $selector the CSS selector.
-     * @param string[] $events the JavaScript event configuration (name=>handler).
-     * @param int $position the position of the JavaScript code.
-     */
-    public function registerEvents($selector, $events, $position = CClientScript::POS_END)
-    {
-        if (empty($events)) {
-            return;
-        }
-
-        $script = '';
-        foreach ($events as $name => $handler) {
-            $handler = ($handler instanceof CJavaScriptExpression)
-                ? $handler
-                : new CJavaScriptExpression($handler);
-
-            $script .= "jQuery('{$selector}').on('{$name}', {$handler});";
-        }
-        $id = __CLASS__ . '#Events' . self::$counter++;
-        Yii::app()->clientScript->registerScript($id, $script, $position);
-    }
-
-    /**
-     * Returns the url to the published assets folder.
-     * @return string the url.
-     */
-    protected function getAssetsUrl()
-    {
-        if (isset($this->_assetsUrl)) {
-            return $this->_assetsUrl;
-        } else {
-            // Publish bootstrap assets
-            $assetsPath = Yii::getPathOfAlias('bower.bootstrap.dist');
-            $assetsUrl = Yii::app()->assetManager->publish($assetsPath, false, -1, $this->forceCopyAssets);
-            return $this->_assetsUrl = $assetsUrl;
-        }
-    }
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

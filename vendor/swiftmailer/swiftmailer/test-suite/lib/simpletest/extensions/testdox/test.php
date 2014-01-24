@@ -1,107 +1,71 @@
-<?php
-// $Id: test.php 1748 2008-04-14 01:50:41Z lastcraft $
-require_once dirname(__FILE__) . '/../../autorun.php';
-require_once dirname(__FILE__) . '/../testdox.php';
-
-// uncomment to see test dox in action
-//SimpleTest::prefer(new TestDoxReporter());
-
-class TestOfTestDoxReporter extends UnitTestCase
-{
-    function testIsAnInstanceOfSimpleScorerAndReporter() {
-        $dox = new TestDoxReporter();
-        $this->assertIsA($dox, 'SimpleScorer');
-        $this->assertIsA($dox, 'SimpleReporter');
-    }
-
-    function testOutputsNameOfTestCase() {
-        $dox = new TestDoxReporter();
-        ob_start();
-        $dox->paintCaseStart('TestOfTestDoxReporter');
-        $buffer = ob_get_clean();
-        $this->assertPattern('/^TestDoxReporter/', $buffer);
-    }
-
-    function testOutputOfTestCaseNameFilteredByConstructParameter() {
-        $dox = new TestDoxReporter('/^(.*)Test$/');
-        ob_start();
-        $dox->paintCaseStart('SomeGreatWidgetTest');
-        $buffer = ob_get_clean();
-        $this->assertPattern('/^SomeGreatWidget/', $buffer);
-    }
-
-    function testIfTest_case_patternIsEmptyAssumeEverythingMatches() {
-        $dox = new TestDoxReporter('');
-        ob_start();
-        $dox->paintCaseStart('TestOfTestDoxReporter');
-        $buffer = ob_get_clean();
-        $this->assertPattern('/^TestOfTestDoxReporter/', $buffer);
-    }
-
-    function testEmptyLineInsertedWhenCaseEnds() {
-        $dox = new TestDoxReporter();
-        ob_start();
-        $dox->paintCaseEnd('TestOfTestDoxReporter');
-        $buffer = ob_get_clean();
-        $this->assertEqual("\n", $buffer);
-    }
-
-    function testPaintsTestMethodInTestDoxFormat() {
-        $dox = new TestDoxReporter();
-        ob_start();
-        $dox->paintMethodStart('testSomeGreatTestCase');
-        $buffer = ob_get_clean();
-        $this->assertEqual("- some great test case", $buffer);
-        unset($buffer);
-
-        $random = rand(100, 200);
-        ob_start();
-        $dox->paintMethodStart("testRandomNumberIs{$random}");
-        $buffer = ob_get_clean();
-        $this->assertEqual("- random number is {$random}", $buffer);
-    }
-
-    function testDoesNotOutputAnythingOnNoneTestMethods() {
-        $dox = new TestDoxReporter();
-        ob_start();
-        $dox->paintMethodStart('nonMatchingMethod');
-        $buffer = ob_get_clean();
-        $this->assertEqual('', $buffer);
-    }
-
-    function testPaintMethodAddLineBreak() {
-        $dox = new TestDoxReporter();
-        ob_start();
-        $dox->paintMethodEnd('someMethod');
-        $buffer = ob_get_clean();
-        $this->assertEqual("\n", $buffer);
-    }
-
-    function testProperlySpacesSingleLettersInMethodName() {
-        $dox = new TestDoxReporter();
-        ob_start();
-        $dox->paintMethodStart('testAVerySimpleAgainAVerySimpleMethod');
-        $buffer = ob_get_clean();
-        $this->assertEqual('- a very simple again a very simple method', $buffer);
-    }
-
-    function testOnFailureThisPrintsFailureNotice() {
-        $dox = new TestDoxReporter();
-        ob_start();
-        $dox->paintFail('');
-        $buffer = ob_get_clean();
-        $this->assertEqual(' [FAILED]', $buffer);
-    }
-
-    function testWhenMatchingMethodNamesTestPrefixIsCaseInsensitive() {
-        $dox = new TestDoxReporter();
-        ob_start();
-        $dox->paintMethodStart('TESTSupportsAllUppercaseTestPrefixEvenThoughIDoNotKnowWhyYouWouldDoThat');
-        $buffer = ob_get_clean();
-        $this->assertEqual(
-            '- supports all uppercase test prefix even though i do not know why you would do that',
-            $buffer
-        );
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

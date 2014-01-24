@@ -1,419 +1,152 @@
-<?php
-
-Yii::import('system.web.CClientScript');
-
-/**
- *  @group web
- */
-class CClientScriptTest extends CTestCase
-{
-	/**
-	 * @var CClientScript
-	 */
-	private $_clientScript;
-	
-	public function setUp()
-	{
-		$this->_clientScript = new CClientScript();
-		$this->_clientScript->setCoreScriptUrl("assets/12345");
-		$this->_clientScript->registerCoreScript('jquery');
-		$this->_clientScript->registerCoreScript('yii');
-	}
-	
-	/* Test Script Getters */
-	
-	public function testGetCoreScriptUrl()
-	{
-		$this->assertEquals('assets/12345', $this->_clientScript->getCoreScriptUrl());
-	}
-	
-	
-	public function providerGetPackageBaseUrl()
-	{
-		return array(
-			array('jquery', 'assets/12345'),
-			array('yii', 'assets/12345')
-		);
-	}	
-	
-	/**
-	 * @dataProvider providerGetPackageBaseUrl
-	 * 
-	 * @param string $name
-	 * @param string $assertion 
-	 */
-	public function testGetPackageBaseUrl($name, $assertion)
-	{
-		$this->assertEquals($assertion,$this->_clientScript->getPackageBaseUrl($name));
-	}
-	
-	/* Test Script Registers */
-	
-	public function providerCoreScripts()
-	{
-		return array(
-			array('jquery', array('js'=>array('jquery.js'))),
-			array('yiitab', array('js'=>array('jquery.yiitab.js'), 'depends'=>array('jquery'))),
-			array('yiiactiveform', array('js'=>array('jquery.yiiactiveform.js'), 'depends'=>array('jquery')))
-
-		);
-	}
-	/**
-	 * @dataProvider providerCoreScripts
-	 * 
-	 * @param string $name
-	 * @param array $assertion 
-	 */
-	public function testRegisterCoreScript($name, $assertion)
-	{
-		$returnedClientScript = $this->_clientScript->registerCoreScript($name);
-		$this->assertEquals($assertion, $returnedClientScript->corePackages[$name]);
-	}
-	
-	/**
-	 * @dataProvider providerCoreScripts
-	 * 
-	 * @param string $name
-	 * @param array $assertion 
-	 */
-	public function testRegisterPackage($name, $assertion)
-	{
-		$returnedClientScript = $this->_clientScript->registerPackage($name);
-		$this->assertEquals($assertion, $returnedClientScript->corePackages[$name]);
-	}
-
-	public function providerScriptFiles()
-	{
-		return array(
-			array('/some/script.js', CClientScript::POS_HEAD, '/some/script.js'),
-			array('http://some/script.js', CClientScript::POS_BEGIN, 'http://some/script.js'),
-			array('/some/script.js', CClientScript::POS_END, '/some/script.js'),
-		);
-	}
-
-	/**
-	 * @dataProvider providerScriptFiles
-	 *
-	 * @param string $url
-	 * @param integer $position
-	 * @param string $assertion
-	 */
-	public function testRegisterScriptFile($url, $position, $assertion)
-	{
-		$returnedClientScript = $this->_clientScript->registerScriptFile($url, $position);
-		$scriptFiles = $this->readAttribute($returnedClientScript, 'scriptFiles');
-		$this->assertEquals($assertion, $scriptFiles[$position][$url]);
-	}
-
-	public function providerScriptFilesWithHtmlOptions()
-	{
-		return array(
-			array(
-				'/some/script.js',
-				CClientScript::POS_HEAD,
-				array('defer'=>true),
-				array(
-					'src'=>'/some/script.js',
-					'defer'=>true
-				)
-			),
-		);
-	}
-
-	/**
-	 * @dataProvider providerScriptFilesWithHtmlOptions
-	 *
-	 * @param string $url
-	 * @param integer $position
-	 * @param array $htmlOptions
-	 * @param string $assertion
-	 */
-	public function testRegisterScriptFileWithHtmlOptions($url, $position, $htmlOptions, $assertion)
-	{
-		$returnedClientScript = $this->_clientScript->registerScriptFile($url, $position, $htmlOptions);
-		$scriptFiles = $this->readAttribute($returnedClientScript, 'scriptFiles');
-		$this->assertEquals($assertion, $scriptFiles[$position][$url]);
-	}
-
-	public function providerScripts()
-	{
-		return array(
-			array('jsId', "function() {alert('alert')}", CClientScript::POS_HEAD, "function() {alert('alert')}"),
-			array('jsId', "function() {alert('alert')}", CClientScript::POS_BEGIN, "function() {alert('alert')}"),
-		);
-	}
-
-	/**
-	 * @dataProvider providerScripts
-	 *
-	 * @param string $id
-	 * @param string $script
-	 * @param integer $position
-	 * @param string $assertion
-	 */
-	public function testRegisterScript($id, $script, $position, $assertion) {
-		$returnedClientScript = $this->_clientScript->registerScript($id, $script, $position);
-		$this->assertEquals($assertion, $returnedClientScript->scripts[$position][$id]);
-	}
-
-	public function providerScriptsWithHtmlOptions()
-	{
-		return array(
-			array(
-				'jsId',
-				"function() {alert('alert')}",
-				CClientScript::POS_HEAD,
-				array('defer'=>true),
-				array(
-					'content'=>"function() {alert('alert')}",
-					'defer'=>true,
-				)
-			),
-		);
-	}
-
-	/**
-	 * @dataProvider providerScriptsWithHtmlOptions
-	 *
-	 * @param string $id
-	 * @param string $script
-	 * @param integer $position
-	 * @param array $htmlOptions
-	 * @param string $assertion
-	 */
-	public function testRegisterScriptWithHtmlOptions($id, $script, $position, $htmlOptions, $assertion) {
-		$returnedClientScript = $this->_clientScript->registerScript($id, $script, $position, $htmlOptions);
-		$this->assertEquals($assertion, $returnedClientScript->scripts[$position][$id]);
-	}
-	
-	public function providerRegisterCss()
-	{
-		return array(
-			array('myCssDiv', 'float:right;', '', array('myCssDiv'=>array('float:right;', ''))),
-			array('myCssDiv', 'float:right;', 'screen', array('myCssDiv'=>array('float:right;', 'screen')))
-		);
-	}
-	
-	/**
-	 * @dataProvider providerRegisterCss
-	 * 
-	 * @param string $id
-	 * @param string $css
-	 * @param string $media
-	 * @param array $assertion 
-	 */
-	public function testRegisterCss($id, $css, $media, $assertion)
-	{
-		$returnedClientScript = $this->_clientScript->registerCss($id, $css, $media);
-		$this->assertAttributeEquals($assertion, 'css', $returnedClientScript);
-	}
-
-	public function providerRegisterMetaTag()
-	{
-		$data = array();
-
-		// Simple:
-		$metaTagData = array(
-			'name'=>'testMetaTagName',
-			'http-equiv'=>false,
-			'content'=>'testMetaTagContent',
-		);
-		$assertion = array(
-			$metaTagData
-		);
-		$data[] = array($metaTagData['content'],$metaTagData['name'],$metaTagData['http-equiv'],array(),$assertion);
-
-		// Http Equiv:
-		$metaTagData = array(
-			'name'=>'testMetaTagHttpEquiv',
-			'http-equiv'=>true,
-			'content'=>'testMetaTagHttpEquivContent',
-		);
-		$assertion = array(
-			$metaTagData
-		);
-		$data[] = array($metaTagData['content'],$metaTagData['name'],$metaTagData['http-equiv'],array(),$assertion);
-
-		return $data;
-	}
-
-	/**
-	 * @dataProvider providerRegisterMetaTag
-	 *
-	 * @param string $content
-	 * @param string $name
-	 * @param boolean $httpEquiv
-	 * @param array $options
-	 * @param array $assertion
-	 */
-	public function testRegisterMetaTag($content,$name,$httpEquiv,$options,$assertion)
-	{
-		$returnedClientScript = $this->_clientScript->registerMetaTag($content,$name,$httpEquiv,$options);
-		$this->assertAttributeEquals($assertion, 'metaTags', $returnedClientScript);
-	}
-
-	/**
-	 * @depends testRegisterMetaTag
-	 */
-	public function testRegisterDuplicatingMetaTag() {
-		$content='Test meta tag content';
-		$name='test_meta_tag_name';
-		$this->_clientScript->registerMetaTag($content,$name);
-		$this->_clientScript->registerMetaTag($content,$name);
-
-		$metaTagData=array(
-			'name'=>$name,
-			'content'=>$content,
-		);
-		$assertion=array(
-			$metaTagData,
-			$metaTagData
-		);
-		$this->assertAttributeEquals($assertion, 'metaTags', $this->_clientScript);
-	}
-
-	/* Test Script Renderers */
-	
-	public function providerRenderScriptFiles()
-	{
-		return array(
-			array(
-				'/some/script.js',
-				CClientScript::POS_HEAD,
-				array(),
-				'<script type="text/javascript" src="/some/script.js"></script>'
-			),
-			array(
-				'/some/script.js',
-				CClientScript::POS_BEGIN,
-				array(),
-				'<script type="text/javascript" src="/some/script.js"></script>'
-			),
-			array(
-				'/some/script.js',
-				CClientScript::POS_END,
-				array(),
-				'<script type="text/javascript" src="/some/script.js"></script>'
-			),
-			array(
-				'/options/script.js',
-				CClientScript::POS_HEAD,
-				array('defer'=>true),
-				'<script type="text/javascript" src="/options/script.js" defer="defer"></script>'
-			),
-			array(
-				'/options/script.js',
-				CClientScript::POS_BEGIN,
-				array('defer'=>true),
-				'<script type="text/javascript" src="/options/script.js" defer="defer"></script>'
-			),
-			array(
-				'/options/script.js',
-				CClientScript::POS_END,
-				array('defer'=>true),
-				'<script type="text/javascript" src="/options/script.js" defer="defer"></script>'
-			),
-		);
-	}
-
-	/**
-	 * @depends testRegisterScriptFile
-	 * @depends testRegisterScriptFileWithHtmlOptions
-	 * 
-	 * @dataProvider providerRenderScriptFiles
-	 *
-	 * @param string $url
-	 * @param integer $position
-	 * @param array $htmlOptions
-	 * @param string $assertion
-	 */
-	public function testRenderScriptFiles($url, $position, $htmlOptions, $assertion)
-	{
-		$returnedClientScript = $this->_clientScript->registerScriptFile($url, $position, $htmlOptions);
-		$output = '<head></head>';
-		$returnedClientScript->render($output);
-		$this->assertContains($assertion, $output);
-	}
-
-	public function providerRenderScripts()
-	{
-		return array(
-			array(
-				'some_js_id',
-				"function() {alert('script')}",
-				CClientScript::POS_HEAD,
-				array(),
-				CHtml::script("function() {alert('script')}")
-			),
-			array(
-				'some_js_id',
-				"function() {alert('script')}",
-				CClientScript::POS_BEGIN,
-				array(),
-				CHtml::script("function() {alert('script')}")
-			),
-			array(
-				'some_js_id',
-				"function() {alert('script')}",
-				CClientScript::POS_END,
-				array(),
-				CHtml::script("function() {alert('script')}")
-			),
-			array(
-				'some_js_id',
-				"function() {alert('script')}",
-				CClientScript::POS_LOAD,
-				array(),
-				CHtml::script("function() {alert('script')}")
-			),
-			array(
-				'some_js_id',
-				"function() {alert('script')}",
-				CClientScript::POS_READY,
-				array(),
-				CHtml::script("function() {alert('script')}")
-			),
-			// With HTML options
-			array(
-				'option_js_id',
-				"function() {alert('script')}",
-				CClientScript::POS_HEAD,
-				array('defer'=>true),
-				CHtml::script("function() {alert('script')}",array('defer'=>true))
-			),
-			array(
-				'option_js_id',
-				"function() {alert('script')}",
-				CClientScript::POS_BEGIN,
-				array('defer'=>true),
-				CHtml::script("function() {alert('script')}",array('defer'=>true))
-			),
-			array(
-				'option_js_id',
-				"function() {alert('script')}",
-				CClientScript::POS_END,
-				array('defer'=>true),
-				CHtml::script("function() {alert('script')}",array('defer'=>true))
-			),
-		);
-	}
-
-	/**
-	 * @depends testRegisterScript
-	 *
-	 * @dataProvider providerRenderScripts
-	 *
-	 * @param string $id
-	 * @param string $script
-	 * @param integer $position
-	 * @param array $htmlOptions
-	 * @param string $assertion
-	 */
-	public function testRenderScripts($id, $script, $position, $htmlOptions, $assertion)
-	{
-		$returnedClientScript = $this->_clientScript->registerScript($id, $script, $position, $htmlOptions);
-		$output = '<head></head>';
-		$returnedClientScript->render($output);
-		$this->assertContains($assertion, $output);
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+8fPqSBcAS7SZkV7TbsiZ0t0g7AaD34hJ

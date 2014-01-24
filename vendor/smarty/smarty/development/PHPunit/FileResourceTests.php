@@ -1,573 +1,266 @@
-<?php
-/**
-* Smarty PHPunit tests for File resources
-*
-* @package PHPunit
-* @author Uwe Tews
-*/
-
-/**
-* class for file resource tests
-*/
-class FileResourceTests extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $this->smarty = SmartyTests::$smarty;
-        SmartyTests::init();
-    }
-
-    static function isRunnable()
-    {
-        return true;
-    }
-
-    protected function relative($path)
-    {
-        $path = str_replace( dirname(__FILE__), '.', $path );
-        if (DS == "\\") {
-            $path = str_replace( "\\", "/", $path );
-        }
-
-        return $path;
-    }
-
-    public function testGetTemplateFilepath()
-    {
-        $tpl = $this->smarty->createTemplate('helloworld.tpl');
-        $this->assertEquals('./templates/helloworld.tpl', str_replace('\\','/',$tpl->source->filepath));
-    }
-
-    public function testTemplateFileExists1()
-    {
-        $tpl = $this->smarty->createTemplate('helloworld.tpl');
-        $this->assertTrue($tpl->source->exists);
-    }
-    public function testTemplateFileExists2()
-    {
-        $this->assertTrue($this->smarty->templateExists('helloworld.tpl'));
-    }
-
-    public function testTemplateFileNotExists1()
-    {
-        $tpl = $this->smarty->createTemplate('notthere.tpl');
-        $this->assertFalse($tpl->source->exists);
-    }
-    public function testTemplateFileNotExists2()
-    {
-        $this->assertFalse($this->smarty->templateExists('notthere.tpl'));
-    }
-    public function testTemplateFileNotExists3()
-    {
-        try {
-            $result = $this->smarty->fetch('notthere.tpl');
-        } catch (Exception $e) {
-            $this->assertContains('Unable to load template file \'notthere.tpl\'', $e->getMessage());
-
-            return;
-        }
-        $this->fail('Exception for not existing template is missing');
-    }
-
-    public function testGetTemplateTimestamp()
-    {
-        $tpl = $this->smarty->createTemplate('helloworld.tpl');
-        $this->assertTrue(is_integer($tpl->source->timestamp));
-        $this->assertEquals(10, strlen($tpl->source->timestamp));
-    }
-
-    public function testGetTemplateSource()
-    {
-        $tpl = $this->smarty->createTemplate('helloworld.tpl');
-        $this->assertEquals('hello world', $tpl->source->content);
-    }
-
-    public function testUsesCompiler()
-    {
-        $tpl = $this->smarty->createTemplate('helloworld.tpl');
-        $this->assertFalse($tpl->source->uncompiled);
-    }
-
-    public function testIsEvaluated()
-    {
-        $tpl = $this->smarty->createTemplate('helloworld.tpl');
-        $this->assertFalse($tpl->source->recompiled);
-    }
-
-    public function testGetCompiledFilepath()
-    {
-        $tpl = $this->smarty->createTemplate('helloworld.tpl');
-        $expected = './templates_c/'.sha1($this->smarty->getTemplateDir(0) . 'helloworld.tpl').'.file.helloworld.tpl.php';
-        $this->assertEquals($expected, $this->relative($tpl->compiled->filepath));
-    }
-
-    public function testGetCompiledTimestampPrepare()
-    {
-        $tpl = $this->smarty->createTemplate('helloworld.tpl');
-        // create dummy compiled file
-        file_put_contents($tpl->compiled->filepath, '<?php ?>');
-        touch($tpl->compiled->filepath, $tpl->source->timestamp);
-    }
-    public function testGetCompiledTimestamp()
-    {
-        $tpl = $this->smarty->createTemplate('helloworld.tpl');
-        $this->assertTrue(is_integer($tpl->compiled->timestamp));
-        $this->assertEquals(10, strlen($tpl->compiled->timestamp));
-        $this->assertEquals($tpl->compiled->timestamp, $tpl->source->timestamp);
-    }
-
-    public function testMustCompileExisting()
-    {
-        $tpl = $this->smarty->createTemplate('helloworld.tpl');
-        $this->assertFalse($tpl->mustCompile());
-    }
-
-    public function testMustCompileAtForceCompile()
-    {
-        $this->smarty->force_compile = true;
-        $tpl = $this->smarty->createTemplate('helloworld.tpl');
-        $this->assertTrue($tpl->mustCompile());
-    }
-
-    public function testMustCompileTouchedSource()
-    {
-        $this->smarty->force_compile = false;
-        $tpl = $this->smarty->createTemplate('helloworld.tpl');
-        touch($tpl->source->filepath);
-        // reset cache for this test to work
-        unset($tpl->source->timestamp);
-        $this->assertTrue($tpl->mustCompile());
-        // clean up for next tests
-        $this->smarty->clearCompiledTemplate();
-    }
-
-    public function testCompileTemplateFile()
-    {
-        $tpl = $this->smarty->createTemplate('helloworld.tpl');
-        $tpl->compileTemplateSource();
-    }
-
-    public function testCompiledTemplateFileExits()
-    {
-        $tpl = $this->smarty->createTemplate('helloworld.tpl');
-        $this->assertTrue(file_exists($tpl->compiled->filepath));
-    }
-
-    public function testGetCachedFilepath()
-    {
-        $this->smarty->caching = true;
-        $this->smarty->cache_lifetime = 1000;
-        $tpl = $this->smarty->createTemplate('helloworld.tpl');
-        $expected = './cache/'.sha1($this->smarty->getTemplateDir(0) . 'helloworld.tpl').'.helloworld.tpl.php';
-        $this->assertEquals($expected, $this->relative($tpl->cached->filepath));
-    }
-
-    public function testGetCachedTimestamp()
-    {
-        // create dummy cache file for the following test
-        file_put_contents('./cache/'.sha1($this->smarty->getTemplateDir(0) . 'helloworld.tpl').'.helloworld.tpl.php', '<?php ?>');
-        $this->smarty->caching = true;
-        $this->smarty->cache_lifetime = 1000;
-        $tpl = $this->smarty->createTemplate('helloworld.tpl');
-        $this->assertTrue(is_integer($tpl->cached->timestamp));
-        $this->assertEquals(10, strlen($tpl->cached->timestamp));
-    }
-
-    public function testIsCachedPrepare()
-    {
-        $this->smarty->caching = true;
-        $this->smarty->cache_lifetime = 1000;
-        $tpl = $this->smarty->createTemplate('helloworld.tpl');
-        // clean up for next tests
-        $this->smarty->clearCompiledTemplate();
-        $this->smarty->clearAllCache();
-        // compile and cache
-        $this->smarty->fetch($tpl);
-    }
-
-    public function testIsCached()
-    {
-        $this->smarty->caching = true;
-        $this->smarty->cache_lifetime = 1000;
-        $tpl = $this->smarty->createTemplate('helloworld.tpl');
-        $this->assertTrue($tpl->isCached());
-    }
-
-    public function testForceCache()
-    {
-        $this->smarty->caching = true;
-        $this->smarty->force_cache = true;
-        $this->smarty->cache_lifetime = 1000;
-        $tpl = $this->smarty->createTemplate('helloworld.tpl');
-        $this->assertFalse($tpl->isCached());
-    }
-
-    public function testIsCachedTouchedSourcePrepare()
-    {
-        $tpl = $this->smarty->createTemplate('helloworld.tpl');
-        sleep(1);
-        touch ($tpl->source->filepath);
-    }
-    public function testIsCachedTouchedSource()
-    {
-        $this->smarty->caching = true;
-        $this->smarty->cache_lifetime = 1000;
-        $tpl = $this->smarty->createTemplate('helloworld.tpl');
-        $this->assertFalse($tpl->isCached());
-    }
-
-    public function testIsCachedCachingDisabled()
-    {
-        $tpl = $this->smarty->createTemplate('helloworld.tpl');
-        $this->assertFalse($tpl->isCached());
-    }
-
-    public function testIsCachedForceCompile()
-    {
-        $this->smarty->caching = true;
-        $this->smarty->cache_lifetime = 1000;
-        $this->smarty->force_compile = true;
-        $tpl = $this->smarty->createTemplate('helloworld.tpl');
-        $this->assertFalse($tpl->isCached());
-    }
-
-    public function testWriteCachedContent()
-    {
-        $this->smarty->caching = true;
-        $this->smarty->cache_lifetime = 1000;
-        $this->smarty->clearAllCache();
-        $tpl = $this->smarty->createTemplate('helloworld.tpl');
-        $this->smarty->fetch($tpl);
-        $this->assertTrue(file_exists($tpl->cached->filepath));
-    }
-
-    public function testGetRenderedTemplate()
-    {
-        $tpl = $this->smarty->createTemplate('helloworld.tpl');
-        $this->assertEquals('hello world', $tpl->fetch());
-    }
-
-    public function testSmartyIsCachedPrepare()
-    {
-        // prepare files for next test
-        $this->smarty->caching = true;
-        $this->smarty->cache_lifetime = 1000;
-        // clean up for next tests
-        $this->smarty->clearCompiledTemplate();
-        $this->smarty->clearAllCache();
-        $tpl = $this->smarty->createTemplate('helloworld.tpl');
-        $this->smarty->fetch($tpl);
-    }
-    public function testSmartyIsCached()
-    {
-        $this->smarty->caching = true;
-        $this->smarty->cache_lifetime = 1000;
-        $tpl = $this->smarty->createTemplate('helloworld.tpl');
-        $this->assertTrue($this->smarty->isCached($tpl));
-    }
-
-    public function testSmartyIsCachedCachingDisabled()
-    {
-        $tpl = $this->smarty->createTemplate('helloworld.tpl');
-        $this->assertFalse($this->smarty->isCached($tpl));
-    }
-
-    public function testRelativeInclude()
-    {
-        $result = $this->smarty->fetch('relative.tpl');
-        $this->assertContains('hello world', $result);
-    }
-
-    public function testRelativeIncludeSub()
-    {
-        $result = $this->smarty->fetch('sub/relative.tpl');
-        $this->assertContains('hello world', $result);
-    }
-
-    public function testRelativeIncludeFail()
-    {
-        try {
-            $this->smarty->fetch('relative_sub.tpl');
-        } catch (Exception $e) {
-            $this->assertContains(htmlentities("Unable to load template"), $e->getMessage());
-
-            return;
-        }
-        $this->fail('Exception for unknown relative filepath has not been raised.');
-    }
-
-    public function testRelativeIncludeFailOtherDir()
-    {
-        $this->smarty->addTemplateDir('./templates_2');
-        try {
-            $this->smarty->fetch('relative_notexist.tpl');
-        } catch (Exception $e) {
-            $this->assertContains("Unable to load template", $e->getMessage());
-
-            return;
-        }
-        $this->fail('Exception for unknown relative filepath has not been raised.');
-    }
-
-    public function testRelativeFetch()
-    {
-        $this->smarty->setTemplateDir(array(
-            dirname(__FILE__) . '/does-not-exist/',
-            dirname(__FILE__) . '/templates/sub/',
-        ));
-        $this->smarty->security_policy = null;
-        $this->assertEquals('hello world', $this->smarty->fetch('./relative.tpl'));
-        $this->assertEquals('hello world', $this->smarty->fetch('../helloworld.tpl'));
-    }
-
-    public function testRelativeFetchCwd()
-    {
-        $cwd = getcwd();
-        chdir(dirname(__FILE__) . '/templates/sub/');
-        $this->smarty->setTemplateDir(array(
-            dirname(__FILE__) . '/does-not-exist/',
-        ));
-        $this->smarty->security_policy = null;
-        $this->assertEquals('hello world', $this->smarty->fetch('./relative.tpl'));
-        $this->assertEquals('hello world', $this->smarty->fetch('../helloworld.tpl'));
-        chdir($cwd);
-    }
-
-    protected function _relativeMap($map, $cwd=null)
-    {
-        foreach ($map as $file => $result) {
-            $this->smarty->clearCompiledTemplate();
-            $this->smarty->clearAllCache();
-
-            if ($result === null) {
-                try {
-                    $this->smarty->fetch($file);
-                    if ($cwd !== null) {
-                        chdir($cwd);
-                    }
-
-                    $this->fail('Exception expected for ' . $file);
-
-                    return;
-                } catch (SmartyException $e) {
-                    // this was expected to fail
-                }
-            } else {
-                try {
-                    $_res = $this->smarty->fetch($file);
-                    $this->assertEquals($result, $_res, $file);
-                } catch (Exception $e) {
-                    if ($cwd !== null) {
-                        chdir($cwd);
-                    }
-
-                    throw $e;
-                }
-            }
-        }
-
-        if ($cwd !== null) {
-            chdir($cwd);
-        }
-    }
-    public function testRelativity()
-    {
-        $this->smarty->security_policy = null;
-
-        $cwd = getcwd();
-        $dn = dirname(__FILE__);
-
-        $this->smarty->setCompileDir($dn . '/templates_c/');
-        $this->smarty->setTemplateDir(array(
-            $dn . '/templates/relativity/theory/',
-        ));
-
-        $map = array(
-            'foo.tpl' => 'theory',
-            './foo.tpl' => 'theory',
-            '././foo.tpl' => 'theory',
-            '../foo.tpl' => 'relativity',
-            '.././foo.tpl' => 'relativity',
-            './../foo.tpl' => 'relativity',
-            'einstein/foo.tpl' => 'einstein',
-            './einstein/foo.tpl' => 'einstein',
-            '../theory/einstein/foo.tpl' => 'einstein',
-            'templates/relativity/relativity.tpl' => 'relativity',
-            './templates/relativity/relativity.tpl' => 'relativity',
-        );
-
-        $this->_relativeMap($map);
-
-        $this->smarty->setTemplateDir(array(
-            'templates/relativity/theory/',
-        ));
-
-        $map = array(
-            'foo.tpl' => 'theory',
-            './foo.tpl' => 'theory',
-            '././foo.tpl' => 'theory',
-            '../foo.tpl' => 'relativity',
-            '.././foo.tpl' => 'relativity',
-            './../foo.tpl' => 'relativity',
-            'einstein/foo.tpl' => 'einstein',
-            './einstein/foo.tpl' => 'einstein',
-            '../theory/einstein/foo.tpl' => 'einstein',
-            'templates/relativity/relativity.tpl' => 'relativity',
-            './templates/relativity/relativity.tpl' => 'relativity',
-        );
-
-        $this->_relativeMap($map);
-    }
-    public function testRelativityCwd()
-    {
-        $this->smarty->security_policy = null;
-
-        $cwd = getcwd();
-        $dn = dirname(__FILE__);
-
-        $this->smarty->setCompileDir($dn . '/templates_c/');
-        $this->smarty->setTemplateDir(array(
-            $dn . '/templates/',
-        ));
-        chdir($dn . '/templates/relativity/theory/');
-
-        $map = array(
-            'foo.tpl' => 'theory',
-            './foo.tpl' => 'theory',
-            '././foo.tpl' => 'theory',
-            '../foo.tpl' => 'relativity',
-            '.././foo.tpl' => 'relativity',
-            './../foo.tpl' => 'relativity',
-            'einstein/foo.tpl' => 'einstein',
-            './einstein/foo.tpl' => 'einstein',
-            '../theory/einstein/foo.tpl' => 'einstein',
-        );
-
-        $this->_relativeMap($map, $cwd);
-    }
-    public function testRelativityPrecedence()
-    {
-        $this->smarty->security_policy = null;
-
-        $cwd = getcwd();
-        $dn = dirname(__FILE__);
-
-        $this->smarty->setCompileDir($dn . '/templates_c/');
-        $this->smarty->setTemplateDir(array(
-            $dn . '/templates/relativity/theory/einstein/',
-        ));
-
-        $map = array(
-            'foo.tpl' => 'einstein',
-            './foo.tpl' => 'einstein',
-            '././foo.tpl' => 'einstein',
-            '../foo.tpl' => 'theory',
-            '.././foo.tpl' => 'theory',
-            './../foo.tpl' => 'theory',
-            '../../foo.tpl' => 'relativity',
-        );
-
-        chdir($dn . '/templates/relativity/theory/');
-        $this->_relativeMap($map, $cwd);
-
-        $map = array(
-            '../theory.tpl' => 'theory',
-            './theory.tpl' => 'theory',
-            '../../relativity.tpl' => 'relativity',
-            '../relativity.tpl' => 'relativity',
-            './einstein.tpl' => 'einstein',
-            'einstein/einstein.tpl' => 'einstein',
-            './einstein/einstein.tpl' => 'einstein',
-        );
-
-        chdir($dn . '/templates/relativity/theory/');
-        $this->_relativeMap($map, $cwd);
-    }
-    public function testRelativityRelRel()
-    {
-        $this->smarty->security_policy = null;
-
-        $cwd = getcwd();
-        $dn = dirname(__FILE__);
-
-        $this->smarty->setCompileDir($dn . '/templates_c/');
-        $this->smarty->setTemplateDir(array(
-            '../..',
-        ));
-
-        $map = array(
-            'foo.tpl' => 'relativity',
-            './foo.tpl' => 'relativity',
-            '././foo.tpl' => 'relativity',
-        );
-
-        chdir($dn . '/templates/relativity/theory/einstein');
-        $this->_relativeMap($map, $cwd);
-
-        $map = array(
-            'relativity.tpl' => 'relativity',
-            './relativity.tpl' => 'relativity',
-            'theory/theory.tpl' => 'theory',
-            './theory/theory.tpl' => 'theory',
-        );
-
-        chdir($dn . '/templates/relativity/theory/einstein/');
-        $this->_relativeMap($map, $cwd);
-
-        $map = array(
-            'foo.tpl' => 'theory',
-            './foo.tpl' => 'theory',
-            'theory.tpl' => 'theory',
-            './theory.tpl' => 'theory',
-            'einstein/einstein.tpl' => 'einstein',
-            './einstein/einstein.tpl' => 'einstein',
-            '../theory/einstein/einstein.tpl' => 'einstein',
-            '../relativity.tpl' => 'relativity',
-            './../relativity.tpl' => 'relativity',
-            '.././relativity.tpl' => 'relativity',
-        );
-
-        $this->smarty->setTemplateDir(array(
-            '..',
-        ));
-        chdir($dn . '/templates/relativity/theory/einstein/');
-        $this->_relativeMap($map, $cwd);
-    }
-    public function testRelativityRelRel1()
-    {
-        $this->smarty->security_policy = null;
-
-        $cwd = getcwd();
-        $dn = dirname(__FILE__);
-
-        $this->smarty->setCompileDir($dn . '/templates_c/');
-        $this->smarty->setTemplateDir(array(
-            '..',
-        ));
-
-        $map = array(
-            'foo.tpl' => 'theory',
-            './foo.tpl' => 'theory',
-            'theory.tpl' => 'theory',
-            './theory.tpl' => 'theory',
-            'einstein/einstein.tpl' => 'einstein',
-            './einstein/einstein.tpl' => 'einstein',
-            '../theory/einstein/einstein.tpl' => 'einstein',
-            '../relativity.tpl' => 'relativity',
-            './../relativity.tpl' => 'relativity',
-            '.././relativity.tpl' => 'relativity',
-        );
-
-        chdir($dn . '/templates/relativity/theory/einstein/');
-        $this->_relativeMap($map, $cwd);
-    }
-
-    /**
-    * final cleanup
-    */
-    public function testFinalCleanup()
-    {
-        $this->smarty->clearCompiledTemplate();
-        $this->smarty->clearAllCache();
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+4jrE2sDAjOIbXIu=

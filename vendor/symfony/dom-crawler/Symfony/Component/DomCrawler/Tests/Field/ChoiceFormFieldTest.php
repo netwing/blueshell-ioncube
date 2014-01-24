@@ -1,344 +1,236 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\DomCrawler\Tests\Field;
-
-use Symfony\Component\DomCrawler\Field\ChoiceFormField;
-
-class ChoiceFormFieldTest extends FormFieldTestCase
-{
-    public function testInitialize()
-    {
-        $node = $this->createNode('textarea', '');
-        try {
-            $field = new ChoiceFormField($node);
-            $this->fail('->initialize() throws a \LogicException if the node is not an input or a select');
-        } catch (\LogicException $e) {
-            $this->assertTrue(true, '->initialize() throws a \LogicException if the node is not an input or a select');
-        }
-
-        $node = $this->createNode('input', '', array('type' => 'text'));
-        try {
-            $field = new ChoiceFormField($node);
-            $this->fail('->initialize() throws a \LogicException if the node is an input with a type different from checkbox or radio');
-        } catch (\LogicException $e) {
-            $this->assertTrue(true, '->initialize() throws a \LogicException if the node is an input with a type different from checkbox or radio');
-        }
-    }
-
-    public function testGetType()
-    {
-        $node = $this->createNode('input', '', array('type' => 'radio', 'name' => 'name', 'value' => 'foo'));
-        $field = new ChoiceFormField($node);
-
-        $this->assertEquals('radio', $field->getType(), '->getType() returns radio for radio buttons');
-
-        $node = $this->createNode('input', '', array('type' => 'checkbox', 'name' => 'name', 'value' => 'foo'));
-        $field = new ChoiceFormField($node);
-
-        $this->assertEquals('checkbox', $field->getType(), '->getType() returns radio for a checkbox');
-
-        $node = $this->createNode('select', '');
-        $field = new ChoiceFormField($node);
-
-        $this->assertEquals('select', $field->getType(), '->getType() returns radio for a select');
-    }
-
-    public function testIsMultiple()
-    {
-        $node = $this->createNode('input', '', array('type' => 'radio', 'name' => 'name', 'value' => 'foo'));
-        $field = new ChoiceFormField($node);
-
-        $this->assertFalse($field->isMultiple(), '->isMultiple() returns false for radio buttons');
-
-        $node = $this->createNode('input', '', array('type' => 'checkbox', 'name' => 'name', 'value' => 'foo'));
-        $field = new ChoiceFormField($node);
-
-        $this->assertFalse($field->isMultiple(), '->isMultiple() returns false for checkboxes');
-
-        $node = $this->createNode('select', '');
-        $field = new ChoiceFormField($node);
-
-        $this->assertFalse($field->isMultiple(), '->isMultiple() returns false for selects without the multiple attribute');
-
-        $node = $this->createNode('select', '', array('multiple' => 'multiple'));
-        $field = new ChoiceFormField($node);
-
-        $this->assertTrue($field->isMultiple(), '->isMultiple() returns true for selects with the multiple attribute');
-    }
-
-    public function testSelects()
-    {
-        $node = $this->createSelectNode(array('foo' => false, 'bar' => false));
-        $field = new ChoiceFormField($node);
-
-        $this->assertTrue($field->hasValue(), '->hasValue() returns true for selects');
-        $this->assertEquals('foo', $field->getValue(), '->getValue() returns the first option if none are selected');
-        $this->assertFalse($field->isMultiple(), '->isMultiple() returns false when no multiple attribute is defined');
-
-        $node = $this->createSelectNode(array('foo' => false, 'bar' => true));
-        $field = new ChoiceFormField($node);
-
-        $this->assertEquals('bar', $field->getValue(), '->getValue() returns the selected option');
-
-        $field->setValue('foo');
-        $this->assertEquals('foo', $field->getValue(), '->setValue() changes the selected option');
-
-        try {
-            $field->setValue('foobar');
-            $this->fail('->setValue() throws an \InvalidArgumentException if the value is not one of the selected options');
-        } catch (\InvalidArgumentException $e) {
-            $this->assertTrue(true, '->setValue() throws an \InvalidArgumentException if the value is not one of the selected options');
-        }
-
-        try {
-            $field->setValue(array('foobar'));
-            $this->fail('->setValue() throws an \InvalidArgumentException if the value is an array');
-        } catch (\InvalidArgumentException $e) {
-            $this->assertTrue(true, '->setValue() throws an \InvalidArgumentException if the value is an array');
-        }
-    }
-
-    public function testMultipleSelects()
-    {
-        $node = $this->createSelectNode(array('foo' => false, 'bar' => false), array('multiple' => 'multiple'));
-        $field = new ChoiceFormField($node);
-
-        $this->assertEquals(array(), $field->getValue(), '->setValue() returns an empty array if multiple is true and no option is selected');
-
-        $field->setValue('foo');
-        $this->assertEquals(array('foo'), $field->getValue(), '->setValue() returns an array of options if multiple is true');
-
-        $field->setValue('bar');
-        $this->assertEquals(array('bar'), $field->getValue(), '->setValue() returns an array of options if multiple is true');
-
-        $field->setValue(array('foo', 'bar'));
-        $this->assertEquals(array('foo', 'bar'), $field->getValue(), '->setValue() returns an array of options if multiple is true');
-
-        $node = $this->createSelectNode(array('foo' => true, 'bar' => true), array('multiple' => 'multiple'));
-        $field = new ChoiceFormField($node);
-
-        $this->assertEquals(array('foo', 'bar'), $field->getValue(), '->getValue() returns the selected options');
-
-        try {
-            $field->setValue(array('foobar'));
-            $this->fail('->setValue() throws an \InvalidArgumentException if the value is not one of the options');
-        } catch (\InvalidArgumentException $e) {
-            $this->assertTrue(true, '->setValue() throws an \InvalidArgumentException if the value is not one of the options');
-        }
-    }
-
-    public function testRadioButtons()
-    {
-        $node = $this->createNode('input', '', array('type' => 'radio', 'name' => 'name', 'value' => 'foo'));
-        $field = new ChoiceFormField($node);
-        $node = $this->createNode('input', '', array('type' => 'radio', 'name' => 'name', 'value' => 'bar'));
-        $field->addChoice($node);
-
-        $this->assertFalse($field->hasValue(), '->hasValue() returns false when no radio button is selected');
-        $this->assertNull($field->getValue(), '->getValue() returns null if no radio button is selected');
-        $this->assertFalse($field->isMultiple(), '->isMultiple() returns false for radio buttons');
-
-        $node = $this->createNode('input', '', array('type' => 'radio', 'name' => 'name', 'value' => 'foo'));
-        $field = new ChoiceFormField($node);
-        $node = $this->createNode('input', '', array('type' => 'radio', 'name' => 'name', 'value' => 'bar', 'checked' => 'checked'));
-        $field->addChoice($node);
-
-        $this->assertTrue($field->hasValue(), '->hasValue() returns true when a radio button is selected');
-        $this->assertEquals('bar', $field->getValue(), '->getValue() returns the value attribute of the selected radio button');
-
-        $field->setValue('foo');
-        $this->assertEquals('foo', $field->getValue(), '->setValue() changes the selected radio button');
-
-        try {
-            $field->setValue('foobar');
-            $this->fail('->setValue() throws an \InvalidArgumentException if the value is not one of the radio button values');
-        } catch (\InvalidArgumentException $e) {
-            $this->assertTrue(true, '->setValue() throws an \InvalidArgumentException if the value is not one of the radio button values');
-        }
-    }
-
-    public function testRadioButtonIsDisabled()
-    {
-        $node = $this->createNode('input', '', array('type' => 'radio', 'name' => 'name', 'value' => 'foo', 'disabled' => 'disabled'));
-        $field = new ChoiceFormField($node);
-        $node = $this->createNode('input', '', array('type' => 'radio', 'name' => 'name', 'value' => 'bar'));
-        $field->addChoice($node);
-
-        $field->select('foo');
-        $this->assertEquals('foo', $field->getValue(), '->getValue() returns the value attribute of the selected radio button');
-        $this->assertTrue($field->isDisabled());
-
-        $field->select('bar');
-        $this->assertEquals('bar', $field->getValue(), '->getValue() returns the value attribute of the selected radio button');
-        $this->assertFalse($field->isDisabled());
-    }
-
-    public function testCheckboxes()
-    {
-        $node = $this->createNode('input', '', array('type' => 'checkbox', 'name' => 'name'));
-        $field = new ChoiceFormField($node);
-
-        $this->assertFalse($field->hasValue(), '->hasValue() returns false when the checkbox is not checked');
-        $this->assertNull($field->getValue(), '->getValue() returns null if the checkbox is not checked');
-        $this->assertFalse($field->isMultiple(), '->hasValue() returns false for checkboxes');
-        try {
-            $field->addChoice(new \DOMNode());
-            $this->fail('->addChoice() throws a \LogicException for checkboxes');
-        } catch (\LogicException $e) {
-            $this->assertTrue(true, '->initialize() throws a \LogicException for checkboxes');
-        }
-
-        $node = $this->createNode('input', '', array('type' => 'checkbox', 'name' => 'name', 'checked' => 'checked'));
-        $field = new ChoiceFormField($node);
-
-        $this->assertTrue($field->hasValue(), '->hasValue() returns true when the checkbox is checked');
-        $this->assertEquals('1', $field->getValue(), '->getValue() returns 1 if the checkbox is checked and has no value attribute');
-
-        $node = $this->createNode('input', '', array('type' => 'checkbox', 'name' => 'name', 'checked' => 'checked', 'value' => 'foo'));
-        $field = new ChoiceFormField($node);
-
-        $this->assertEquals('foo', $field->getValue(), '->getValue() returns the value attribute if the checkbox is checked');
-
-        $node = $this->createNode('input', '', array('type' => 'checkbox', 'name' => 'name', 'checked' => 'checked', 'value' => 'foo'));
-        $field = new ChoiceFormField($node);
-
-        $field->setValue(false);
-        $this->assertNull($field->getValue(), '->setValue() unchecks the checkbox is value is false');
-
-        $field->setValue(true);
-        $this->assertEquals('foo', $field->getValue(), '->setValue() checks the checkbox is value is true');
-
-        try {
-            $field->setValue('bar');
-            $this->fail('->setValue() throws an \InvalidArgumentException if the value is not one from the value attribute');
-        } catch (\InvalidArgumentException $e) {
-            $this->assertTrue(true, '->setValue() throws an \InvalidArgumentException if the value is not one from the value attribute');
-        }
-    }
-
-    public function testTick()
-    {
-        $node = $this->createSelectNode(array('foo' => false, 'bar' => false));
-        $field = new ChoiceFormField($node);
-
-        try {
-            $field->tick();
-            $this->fail('->tick() throws a \LogicException for select boxes');
-        } catch (\LogicException $e) {
-            $this->assertTrue(true, '->tick() throws a \LogicException for select boxes');
-        }
-
-        $node = $this->createNode('input', '', array('type' => 'checkbox', 'name' => 'name'));
-        $field = new ChoiceFormField($node);
-        $field->tick();
-        $this->assertEquals(1, $field->getValue(), '->tick() ticks checkboxes');
-    }
-
-    public function testUntick()
-    {
-        $node = $this->createSelectNode(array('foo' => false, 'bar' => false));
-        $field = new ChoiceFormField($node);
-
-        try {
-            $field->untick();
-            $this->fail('->untick() throws a \LogicException for select boxes');
-        } catch (\LogicException $e) {
-            $this->assertTrue(true, '->untick() throws a \LogicException for select boxes');
-        }
-
-        $node = $this->createNode('input', '', array('type' => 'checkbox', 'name' => 'name', 'checked' => 'checked'));
-        $field = new ChoiceFormField($node);
-        $field->untick();
-        $this->assertNull($field->getValue(), '->untick() unticks checkboxes');
-    }
-
-    public function testSelect()
-    {
-        $node = $this->createNode('input', '', array('type' => 'checkbox', 'name' => 'name', 'checked' => 'checked'));
-        $field = new ChoiceFormField($node);
-        $field->select(true);
-        $this->assertEquals(1, $field->getValue(), '->select() changes the value of the field');
-        $field->select(false);
-        $this->assertNull($field->getValue(), '->select() changes the value of the field');
-
-        $node = $this->createSelectNode(array('foo' => false, 'bar' => false));
-        $field = new ChoiceFormField($node);
-        $field->select('foo');
-        $this->assertEquals('foo', $field->getValue(), '->select() changes the selected option');
-    }
-
-    public function testOptionWithNoValue()
-    {
-        $node = $this->createSelectNodeWithEmptyOption(array('foo' => false, 'bar' => false));
-        $field = new ChoiceFormField($node);
-        $field->select('foo');
-        $this->assertEquals('foo', $field->getValue(), '->select() changes the selected option');
-    }
-
-    public function testDisableValidation()
-    {
-        $node = $this->createSelectNode(array('foo' => false, 'bar' => false));
-        $field = new ChoiceFormField($node);
-        $field->disableValidation();
-        $field->setValue('foobar');
-        $this->assertEquals('foobar', $field->getValue(), '->disableValidation() allows to set a value which is not in the selected options.');
-
-        $node = $this->createSelectNode(array('foo' => false, 'bar' => false), array('multiple' => 'multiple'));
-        $field = new ChoiceFormField($node);
-        $field->disableValidation();
-        $field->setValue(array('foobar'));
-        $this->assertEquals(array('foobar'), $field->getValue(), '->disableValidation() allows to set a value which is not in the selected options.');
-    }
-
-    protected function createSelectNode($options, $attributes = array())
-    {
-        $document = new \DOMDocument();
-        $node = $document->createElement('select');
-
-        foreach ($attributes as $name => $value) {
-            $node->setAttribute($name, $value);
-        }
-        $node->setAttribute('name', 'name');
-
-        foreach ($options as $value => $selected) {
-            $option = $document->createElement('option', $value);
-            $option->setAttribute('value', $value);
-            if ($selected) {
-                $option->setAttribute('selected', 'selected');
-            }
-            $node->appendChild($option);
-        }
-
-        return $node;
-    }
-
-    protected function createSelectNodeWithEmptyOption($options, $attributes = array())
-    {
-        $document = new \DOMDocument();
-        $node = $document->createElement('select');
-
-        foreach ($attributes as $name => $value) {
-            $node->setAttribute($name, $value);
-        }
-        $node->setAttribute('name', 'name');
-
-        foreach ($options as $value => $selected) {
-            $option = $document->createElement('option', $value);
-            if ($selected) {
-                $option->setAttribute('selected', 'selected');
-            }
-            $node->appendChild($option);
-        }
-
-        return $node;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+NAT9DjWP

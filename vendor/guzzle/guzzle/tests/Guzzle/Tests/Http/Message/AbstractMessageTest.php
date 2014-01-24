@@ -1,136 +1,101 @@
-<?php
-
-namespace Guzzle\Tests\Http\Message;
-
-use Guzzle\Http\Message\Header;
-use Guzzle\Http\Message\Request;
-use Guzzle\Common\Collection;
-
-/**
- * @covers Guzzle\Http\Message\AbstractMessage
- */
-class AbstractMessageTest extends \Guzzle\Tests\GuzzleTestCase
-{
-    /** @var Request Request object */
-    private $request;
-
-    /** @var AbstractMessage */
-    private $mock;
-
-    public function setUp()
-    {
-        parent::setUp();
-        $this->mock = $this->getMockForAbstractClass('Guzzle\Http\Message\AbstractMessage');
-    }
-
-    public function tearDown()
-    {
-        $this->mock = $this->request = null;
-    }
-
-    public function testGetParams()
-    {
-        $request = new Request('GET', 'http://example.com');
-        $this->assertInstanceOf('Guzzle\\Common\\Collection', $request->getParams());
-    }
-
-    public function testAddHeaders()
-    {
-        $this->mock->setHeader('A', 'B');
-
-        $this->assertEquals($this->mock, $this->mock->addHeaders(array(
-            'X-Data' => '123'
-        )));
-
-        $this->assertTrue($this->mock->hasHeader('X-Data') !== false);
-        $this->assertTrue($this->mock->hasHeader('A') !== false);
-    }
-
-    public function testAllowsHeaderToSetAsHeader()
-    {
-        $h = new Header('A', 'B');
-        $this->mock->setHeader('A', $h);
-        $this->assertSame($h, $this->mock->getHeader('A'));
-    }
-
-    public function testGetHeader()
-    {
-        $this->mock->setHeader('Test', '123');
-        $this->assertEquals('123', $this->mock->getHeader('Test'));
-    }
-
-    public function testGetHeaders()
-    {
-        $this->assertSame($this->mock, $this->mock->setHeaders(array('a' => 'b', 'c' => 'd')));
-        $h = $this->mock->getHeaders();
-        $this->assertArrayHasKey('a', $h->toArray());
-        $this->assertArrayHasKey('c', $h->toArray());
-        $this->assertInstanceOf('Guzzle\Http\Message\Header\HeaderInterface', $h->get('a'));
-        $this->assertInstanceOf('Guzzle\Http\Message\Header\HeaderInterface', $h->get('c'));
-    }
-
-    public function testGetHeaderLinesUsesGlue()
-    {
-        $this->mock->setHeaders(array('a' => 'b', 'c' => 'd'));
-        $this->mock->addHeader('a', 'e');
-        $this->mock->getHeader('a')->setGlue('!');
-        $this->assertEquals(array(
-            'a: b! e',
-            'c: d'
-        ), $this->mock->getHeaderLines());
-    }
-
-    public function testHasHeader()
-    {
-        $this->assertFalse($this->mock->hasHeader('Foo'));
-        $this->mock->setHeader('Foo', 'Bar');
-        $this->assertEquals(true, $this->mock->hasHeader('Foo'));
-        $this->mock->setHeader('foo', 'yoo');
-        $this->assertEquals(true, $this->mock->hasHeader('Foo'));
-        $this->assertEquals(true, $this->mock->hasHeader('foo'));
-        $this->assertEquals(false, $this->mock->hasHeader('bar'));
-    }
-
-    public function testRemoveHeader()
-    {
-        $this->mock->setHeader('Foo', 'Bar');
-        $this->assertEquals(true, $this->mock->hasHeader('Foo'));
-        $this->mock->removeHeader('Foo');
-        $this->assertFalse($this->mock->hasHeader('Foo'));
-    }
-
-    public function testReturnsNullWhenHeaderIsNotFound()
-    {
-        $this->assertNull($this->mock->getHeader('foo'));
-    }
-
-    public function testAddingHeadersPreservesOriginalHeaderCase()
-    {
-        $this->mock->addHeaders(array(
-            'test' => '123',
-            'Test' => 'abc'
-        ));
-        $this->mock->addHeader('test', '456');
-        $this->mock->addHeader('test', '789');
-
-        $header = $this->mock->getHeader('test');
-        $this->assertContains('123', $header->toArray());
-        $this->assertContains('456', $header->toArray());
-        $this->assertContains('789', $header->toArray());
-        $this->assertContains('abc', $header->toArray());
-    }
-
-    public function testCanStoreEmptyHeaders()
-    {
-        $this->mock->setHeader('Content-Length', 0);
-        $this->assertTrue($this->mock->hasHeader('Content-Length'));
-        $this->assertEquals(0, (string) $this->mock->getHeader('Content-Length'));
-    }
-
-    public function testCanSetCustomHeaderFactory()
-    {
-        $f = new Header\HeaderFactory();
-        $this->mock->setHeaderFactory($f);
-        $this->assertSame($f, $this->readAttribute($this->mock, 'headerFactory'));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+HFmNRnikARjQjzTNR1S=

@@ -1,60 +1,45 @@
-<?php
-
-namespace Tests\Behat\Mink\Selector;
-
-use Behat\Mink\Selector\SelectorsHandler;
-
-/**
- * @group unittest
- */
-class SelectorsHandlerTest extends \PHPUnit_Framework_TestCase
-{
-    public function testRegisterSelector()
-    {
-        $selector   = $this->getMockBuilder('Behat\Mink\Selector\SelectorInterface')->getMock();
-        $handler    = new SelectorsHandler();
-
-        $this->assertFalse($handler->isSelectorRegistered('custom'));
-
-        $handler->registerSelector('custom', $selector);
-
-        $this->assertTrue($handler->isSelectorRegistered('custom'));
-        $this->assertSame($selector, $handler->getSelector('custom'));
-    }
-
-    public function testSelectorToXpath()
-    {
-        $selector   = $this->getMockBuilder('Behat\Mink\Selector\SelectorInterface')->getMock();
-        $handler    = new SelectorsHandler();
-
-        $handler->registerSelector('custom_selector', $selector);
-
-        $selector
-            ->expects($this->once())
-            ->method('translateToXPath')
-            ->with($locator = 'some[locator]')
-            ->will($this->returnValue($ret = '[]some[]locator'));
-
-        $this->assertEquals($ret, $handler->selectorToXpath('custom_selector', $locator));
-
-        $this->setExpectedException('InvalidArgumentException');
-        $handler->selectorToXpath('undefined', 'asd');
-    }
-
-    public function testXpathLiteral()
-    {
-        $handler = new SelectorsHandler();
-
-        $this->assertEquals("'some simple string'", $handler->xpathLiteral('some simple string'));
-        $this->assertEquals(
-            "'some \"d-brackets\" string'", $handler->xpathLiteral('some "d-brackets" string')
-        );
-        $this->assertEquals(
-            "\"some 's-brackets' string\"", $handler->xpathLiteral('some \'s-brackets\' string')
-        );
-        $this->assertEquals(
-            'concat(\'some \',"\'",\'s-brackets\',"\'",\' and "d-brackets" string\')',
-            $handler->xpathLiteral('some \'s-brackets\' and "d-brackets" string')
-        );
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

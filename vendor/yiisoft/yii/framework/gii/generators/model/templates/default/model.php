@@ -1,163 +1,63 @@
-<?php
-/**
- * This is the template for generating the model class of a specified table.
- * - $this: the ModelCode object
- * - $tableName: the table name for this class (prefix is already removed if necessary)
- * - $modelClass: the model class name
- * - $columns: list of table columns (name=>CDbColumnSchema)
- * - $labels: list of attribute labels (name=>label)
- * - $rules: list of validation rules
- * - $relations: list of relations (name=>relation declaration)
- */
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
-<?php echo "<?php\n"; ?>
-
-/**
- * This is the model class for table "<?php echo $tableName; ?>".
- *
- * The followings are the available columns in table '<?php echo $tableName; ?>':
-<?php foreach($columns as $column): ?>
- * @property <?php echo $column->type.' $'.$column->name."\n"; ?>
-<?php endforeach; ?>
-<?php if(!empty($relations)): ?>
- *
- * The followings are the available model relations:
-<?php foreach($relations as $name=>$relation): ?>
- * @property <?php
-	if (preg_match("~^array\(self::([^,]+), '([^']+)', '([^']+)'\)$~", $relation, $matches))
-    {
-        $relationType = $matches[1];
-        $relationModel = $matches[2];
-
-        switch($relationType){
-            case 'HAS_ONE':
-                echo $relationModel.' $'.$name."\n";
-            break;
-            case 'BELONGS_TO':
-                echo $relationModel.' $'.$name."\n";
-            break;
-            case 'HAS_MANY':
-                echo $relationModel.'[] $'.$name."\n";
-            break;
-            case 'MANY_MANY':
-                echo $relationModel.'[] $'.$name."\n";
-            break;
-            default:
-                echo 'mixed $'.$name."\n";
-        }
-	}
-    ?>
-<?php endforeach; ?>
-<?php endif; ?>
- */
-class <?php echo $modelClass; ?> extends <?php echo $this->baseClass."\n"; ?>
-{
-	/**
-	 * @return string the associated database table name
-	 */
-	public function tableName()
-	{
-		return '<?php echo $tableName; ?>';
-	}
-
-	/**
-	 * @return array validation rules for model attributes.
-	 */
-	public function rules()
-	{
-		// NOTE: you should only define rules for those attributes that
-		// will receive user inputs.
-		return array(
-<?php foreach($rules as $rule): ?>
-			<?php echo $rule.",\n"; ?>
-<?php endforeach; ?>
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
-			array('<?php echo implode(', ', array_keys($columns)); ?>', 'safe', 'on'=>'search'),
-		);
-	}
-
-	/**
-	 * @return array relational rules.
-	 */
-	public function relations()
-	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
-		return array(
-<?php foreach($relations as $name=>$relation): ?>
-			<?php echo "'$name' => $relation,\n"; ?>
-<?php endforeach; ?>
-		);
-	}
-
-	/**
-	 * @return array customized attribute labels (name=>label)
-	 */
-	public function attributeLabels()
-	{
-		return array(
-<?php foreach($labels as $name=>$label): ?>
-			<?php echo "'$name' => '$label',\n"; ?>
-<?php endforeach; ?>
-		);
-	}
-
-	/**
-	 * Retrieves a list of models based on the current search/filter conditions.
-	 *
-	 * Typical usecase:
-	 * - Initialize the model fields with values from filter form.
-	 * - Execute this method to get CActiveDataProvider instance which will filter
-	 * models according to data in model fields.
-	 * - Pass data provider to CGridView, CListView or any similar widget.
-	 *
-	 * @return CActiveDataProvider the data provider that can return the models
-	 * based on the search/filter conditions.
-	 */
-	public function search()
-	{
-		// @todo Please modify the following code to remove attributes that should not be searched.
-
-		$criteria=new CDbCriteria;
-
-<?php
-foreach($columns as $name=>$column)
-{
-	if($column->type==='string')
-	{
-		echo "\t\t\$criteria->compare('$name',\$this->$name,true);\n";
-	}
-	else
-	{
-		echo "\t\t\$criteria->compare('$name',\$this->$name);\n";
-	}
-}
-?>
-
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
-	}
-
-<?php if($connectionId!='db'):?>
-	/**
-	 * @return CDbConnection the database connection used for this class
-	 */
-	public function getDbConnection()
-	{
-		return Yii::app()-><?php echo $connectionId ?>;
-	}
-
-<?php endif?>
-	/**
-	 * Returns the static model of the specified AR class.
-	 * Please note that you should have this exact method in all your CActiveRecord descendants!
-	 * @param string $className active record class name.
-	 * @return <?php echo $modelClass; ?> the static model class
-	 */
-	public static function model($className=__CLASS__)
-	{
-		return parent::model($className);
-	}
-}
+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

@@ -1,71 +1,34 @@
-<?php
-
-/*
- * This file is part of SwiftMailer.
- * (c) 2004-2009 Chris Corbyn
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-/**
- * An embedded file, in a multipart message.
- *
- * @package    Swift
- * @subpackage Mime
- * @author     Chris Corbyn
- */
-class Swift_EmbeddedFile extends Swift_Mime_EmbeddedFile
-{
-    /**
-     * Create a new EmbeddedFile.
-     *
-     * Details may be optionally provided to the constructor.
-     *
-     * @param string|Swift_OutputByteStream $data
-     * @param string                        $filename
-     * @param string                        $contentType
-     */
-    public function __construct($data = null, $filename = null, $contentType = null)
-    {
-        call_user_func_array(
-            array($this, 'Swift_Mime_EmbeddedFile::__construct'),
-            Swift_DependencyContainer::getInstance()
-                ->createDependenciesFor('mime.embeddedfile')
-            );
-
-        $this->setBody($data);
-        $this->setFilename($filename);
-        if ($contentType) {
-            $this->setContentType($contentType);
-        }
-    }
-
-    /**
-     * Create a new EmbeddedFile.
-     *
-     * @param string|Swift_OutputByteStream $data
-     * @param string                        $filename
-     * @param string                        $contentType
-     *
-     * @return Swift_Mime_EmbeddedFile
-     */
-    public static function newInstance($data = null, $filename = null, $contentType = null)
-    {
-        return new self($data, $filename, $contentType);
-    }
-
-    /**
-     * Create a new EmbeddedFile from a filesystem path.
-     *
-     * @param string $path
-     *
-     * @return Swift_Mime_EmbeddedFile
-     */
-    public static function fromPath($path)
-    {
-        return self::newInstance()->setFile(
-            new Swift_ByteStream_FileByteStream($path)
-            );
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

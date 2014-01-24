@@ -1,76 +1,46 @@
-<?php
-class FailureTest extends PHPUnit_Framework_TestCase
-{
-    public function testAssertArrayEqualsArray()
-    {
-        $this->assertEquals(array(1), array(2), 'message');
-    }
-
-    public function testAssertIntegerEqualsInteger()
-    {
-        $this->assertEquals(1, 2, 'message');
-    }
-
-    public function testAssertObjectEqualsObject()
-    {
-        $a = new StdClass;
-        $a->foo = 'bar';
-
-        $b = new StdClass;
-        $b->bar = 'foo';
-
-        $this->assertEquals($a, $b, 'message');
-    }
-
-    public function testAssertNullEqualsString()
-    {
-        $this->assertEquals(NULL, 'bar', 'message');
-    }
-
-    public function testAssertStringEqualsString()
-    {
-        $this->assertEquals('foo', 'bar', 'message');
-    }
-
-    public function testAssertTextEqualsText()
-    {
-        $this->assertEquals("foo\nbar\n", "foo\nbaz\n", 'message');
-    }
-
-    public function testAssertStringMatchesFormat()
-    {
-        $this->assertStringMatchesFormat('*%s*', '**', 'message');
-    }
-
-    public function testAssertNumericEqualsNumeric()
-    {
-        $this->assertEquals(1, 2, 'message');
-    }
-
-    public function testAssertTextSameText()
-    {
-        $this->assertSame('foo', 'bar', 'message');
-    }
-
-    public function testAssertObjectSameObject()
-    {
-        $this->assertSame(new StdClass, new StdClass, 'message');
-    }
-
-    public function testAssertObjectSameNull()
-    {
-        $this->assertSame(new StdClass, NULL, 'message');
-    }
-
-    public function testAssertFloatSameFloat()
-    {
-        $this->assertSame(1.0, 1.5, 'message');
-    }
-
-    // Note that due to the implementation of this assertion it counts as 2 asserts
-    public function testAssertStringMatchesFormatFile()
-    {
-        $this->assertStringMatchesFormatFile(__DIR__ . '/expectedFileFormat.txt', '...BAR...');
-    }
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+TBJvf8qgi8C=

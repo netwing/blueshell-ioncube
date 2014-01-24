@@ -1,159 +1,81 @@
-<?php
-/**
-* Smarty PHPunit tests of modifier
-*
-* @package PHPunit
-* @author Rodney Rehm
-*/
-
-/**
-* class for modifier tests
-*/
-class PluginModifierWordwrapTests extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $this->smarty = SmartyTests::$smarty;
-        SmartyTests::init();
-    }
-
-    static function isRunnable()
-    {
-        return true;
-    }
-
-    public function testDefault()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{"Blind woman gets new kidney from dad she hasn\'t seen in years."|wordwrap}');
-        $this->assertEquals("Blind woman gets new kidney from dad she hasn't seen in years.", $this->smarty->fetch($tpl));
-    }
-
-    public function testDefaultWithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $tpl = $this->smarty->createTemplate('eval:{"Blind woman gets new kidney from dad she hasn\'t seen in years."|wordwrap}');
-        $this->assertEquals("Blind woman gets new kidney from dad she hasn't seen in years.", $this->smarty->fetch($tpl));
-        Smarty::$_MBSTRING = true;
-    }
-
-    public function testDefaultUmlauts()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{"äöüßñ woman ñsä new kidney from dad she hasn\'t seen in years."|wordwrap:30}');
-        $this->assertEquals("äöüßñ woman ñsä new kidney\nfrom dad she hasn't seen in\nyears.", $this->smarty->fetch($tpl));
-    }
-
-    public function testLength()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{"Blind woman gets new kidney from dad she hasn\'t seen in years."|wordwrap:30}');
-        $this->assertEquals("Blind woman gets new kidney\nfrom dad she hasn't seen in\nyears.", $this->smarty->fetch($tpl));
-    }
-
-    public function testLengthWithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $tpl = $this->smarty->createTemplate('eval:{"Blind woman gets new kidney from dad she hasn\'t seen in years."|wordwrap:30}');
-        $this->assertEquals("Blind woman gets new kidney\nfrom dad she hasn't seen in\nyears.", $this->smarty->fetch($tpl));
-        Smarty::$_MBSTRING = true;
-    }
-
-    public function testBreak()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{"Blind woman gets new kidney from dad she hasn\'t seen in years."|wordwrap:30:"<br />\n"}');
-        $this->assertEquals("Blind woman gets new kidney<br />\nfrom dad she hasn't seen in<br />\nyears.", $this->smarty->fetch($tpl));
-    }
-
-    public function testBreakWithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $tpl = $this->smarty->createTemplate('eval:{"Blind woman gets new kidney from dad she hasn\'t seen in years."|wordwrap:30:"<br />\n"}');
-        $this->assertEquals("Blind woman gets new kidney<br />\nfrom dad she hasn't seen in<br />\nyears.", $this->smarty->fetch($tpl));
-        Smarty::$_MBSTRING = true;
-    }
-
-    public function testLong()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{"Blind woman withaverylongandunpronoucablenameorso gets new kidney from dad she hasn\'t seen in years."|wordwrap:26:"\n"}');
-        $this->assertEquals("Blind woman\nwithaverylongandunpronoucablenameorso\ngets new kidney from dad\nshe hasn't seen in years.", $this->smarty->fetch($tpl));
-    }
-
-    public function testLongWithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $tpl = $this->smarty->createTemplate('eval:{"Blind woman withaverylongandunpronoucablenameorso gets new kidney from dad she hasn\'t seen in years."|wordwrap:26:"\n"}');
-        $this->assertEquals("Blind woman\nwithaverylongandunpronoucablenameorso\ngets new kidney from dad\nshe hasn't seen in years.", $this->smarty->fetch($tpl));
-        Smarty::$_MBSTRING = true;
-    }
-
-    public function testLongUmlauts()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{"äöüßñ woman ñsääöüßñameorsoäöüßñäöüßñäöüßñäöüßñßñ gets new kidney from dad she hasn\'t seen in years."|wordwrap:26}');
-        $this->assertEquals("äöüßñ woman\nñsääöüßñameorsoäöüßñäöüßñäöüßñäöüßñßñ\ngets new kidney from dad\nshe hasn't seen in years.", $this->smarty->fetch($tpl));
-    }
-
-    public function testLongCut()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{"Blind woman withaverylongandunpronoucablenameorso gets new kidney from dad she hasn\'t seen in years."|wordwrap:26:"\n":true}');
-        $this->assertEquals("Blind woman\nwithaverylongandunpronouca\nblenameorso gets new\nkidney from dad she hasn't\nseen in years.", $this->smarty->fetch($tpl));
-    }
-
-    public function testLongCutWithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $tpl = $this->smarty->createTemplate('eval:{"Blind woman withaverylongandunpronoucablenameorso gets new kidney from dad she hasn\'t seen in years."|wordwrap:26:"\n":true}');
-        $this->assertEquals("Blind woman\nwithaverylongandunpronouca\nblenameorso gets new\nkidney from dad she hasn't\nseen in years.", $this->smarty->fetch($tpl));
-        Smarty::$_MBSTRING = true;
-    }
-
-    public function testLongCutUmlauts()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{"äöüßñ woman ñsääöüßñameorsoäöüßñäöüßñäöüßñäöüßñßñ gets new kidney from dad she hasn\'t seen in years."|wordwrap:26:"\n":true}');
-        $this->assertEquals("äöüßñ woman\nñsääöüßñameorsoäöüßñäöüßñä\nöüßñäöüßñßñ gets new\nkidney from dad she hasn't\nseen in years.", $this->smarty->fetch($tpl));
-    }
-
-    public function testLinebreaks()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{"Blind woman\ngets new kidney from dad she hasn\'t seen in years."|wordwrap:30}');
-        $this->assertEquals("Blind woman\ngets new kidney from dad she\nhasn't seen in years.", $this->smarty->fetch($tpl));
-    }
-
-    public function testLinebreaksWithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $tpl = $this->smarty->createTemplate('eval:{"Blind woman\ngets new kidney from dad she hasn\'t seen in years."|wordwrap:30}');
-        $this->assertEquals("Blind woman\ngets new kidney from dad she\nhasn't seen in years.", $this->smarty->fetch($tpl));
-        Smarty::$_MBSTRING = true;
-    }
-
-    public function testLinebreaks2()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{"Blind woman
-            gets
-            new kidney from dad she hasn\'t seen in years."|wordwrap:30}');
-        $this->assertEquals("Blind woman
-            gets
-            new kidney from\ndad she hasn't seen in years.", $this->smarty->fetch($tpl));
-    }
-
-    public function testLinebreaks2WithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $tpl = $this->smarty->createTemplate('eval:{"Blind woman
-            gets
-            new kidney from dad she hasn\'t seen in years."|wordwrap:30}');
-        $this->assertEquals("Blind woman
-            gets
-            new kidney from\ndad she hasn't seen in years.", $this->smarty->fetch($tpl));
-        Smarty::$_MBSTRING = true;
-    }
-
-    /*
-    public function testUnicodeSpaces()
-    {
-        // Some Unicode Spaces
-        $string = "&#8199;hello      spaced&#8196; &#8239;  &#8197;&#8199;  words  ";
-        $string = mb_convert_encoding($string, 'UTF-8', "HTML-ENTITIES");
-        $tpl = $this->smarty->createTemplate('eval:{"' . $string . '"|strip}');
-        $this->assertEquals(" hello spaced words ", $this->smarty->fetch($tpl));
-    }
-    */
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+wiTojgWCVYwbnqX0uG==

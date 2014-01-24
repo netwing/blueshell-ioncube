@@ -1,136 +1,58 @@
-<?php
-/**
- * Squiz_Sniffs_Strings_DoubleQuoteUsageSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Squiz_Sniffs_Strings_DoubleQuoteUsageSniff.
- *
- * Makes sure that any use of Double Quotes ("") are warranted.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class Squiz_Sniffs_Strings_DoubleQuoteUsageSniff implements PHP_CodeSniffer_Sniff
-{
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        return array(
-                T_CONSTANT_ENCAPSED_STRING,
-                T_DOUBLE_QUOTED_STRING,
-               );
-
-    }//end register()
-
-
-    /**
-     * Processes this test, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token
-     *                                        in the stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-
-        // We are only interested in the first token in a multi-line string.
-        if ($tokens[$stackPtr]['code'] === $tokens[($stackPtr - 1)]['code']) {
-            return;
-        }
-
-        $workingString = $tokens[$stackPtr]['content'];
-        $i = ($stackPtr + 1);
-        while ($tokens[$i]['code'] === $tokens[$stackPtr]['code']) {
-            $workingString .= $tokens[$i]['content'];
-            $i++;
-        }
-
-        // Check if it's a double quoted string.
-        if (strpos($workingString, '"') === false) {
-            return;
-        }
-
-        // Make sure it's not a part of a string started in a previous line.
-        // If it is, then we have already checked it.
-        if ($workingString[0] !== '"') {
-            return;
-        }
-
-        // The use of variables in double quoted strings is not allowed.
-        if ($tokens[$stackPtr]['code'] === T_DOUBLE_QUOTED_STRING) {
-            $stringTokens = token_get_all('<?php '.$workingString);
-            foreach ($stringTokens as $token) {
-                if (is_array($token) === true && $token[0] === T_VARIABLE) {
-                    $error = 'Variable "%s" not allowed in double quoted string; use concatenation instead';
-                    $data  = array($token[1]);
-                    $phpcsFile->addError($error, $stackPtr, 'ContainsVar', $data);
-                }
-            }
-
-            return;
-        }//end if
-
-        // Work through the following tokens, in case this string is stretched
-        // over multiple Lines.
-        for ($i = ($stackPtr + 1); $i < $phpcsFile->numTokens; $i++) {
-            if ($tokens[$i]['type'] !== 'T_CONSTANT_ENCAPSED_STRING') {
-                break;
-            }
-
-            $workingString .= $tokens[$i]['content'];
-        }
-
-        $allowedChars = array(
-                         '\0',
-                         '\n',
-                         '\r',
-                         '\f',
-                         '\t',
-                         '\v',
-                         '\x',
-                         '\b',
-                         '\'',
-                        );
-
-        foreach ($allowedChars as $testChar) {
-            if (strpos($workingString, $testChar) !== false) {
-                return;
-            }
-        }
-
-        $error = 'String %s does not require double quotes; use single quotes instead';
-        $data  = array($workingString);
-        $phpcsFile->addError($error, $stackPtr, 'NotRequired', $data);
-
-    }//end process()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

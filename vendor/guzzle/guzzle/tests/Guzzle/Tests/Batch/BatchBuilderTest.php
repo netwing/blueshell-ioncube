@@ -1,86 +1,55 @@
-<?php
-
-namespace Guzzle\Tests\Batch;
-
-use Guzzle\Batch\BatchBuilder;
-
-/**
- * @covers Guzzle\Batch\BatchBuilder
- */
-class BatchBuilderTest extends \Guzzle\Tests\GuzzleTestCase
-{
-    private function getMockTransfer()
-    {
-        return $this->getMock('Guzzle\Batch\BatchTransferInterface');
-    }
-
-    private function getMockDivisor()
-    {
-        return $this->getMock('Guzzle\Batch\BatchDivisorInterface');
-    }
-
-    private function getMockBatchBuilder()
-    {
-        return BatchBuilder::factory()
-            ->transferWith($this->getMockTransfer())
-            ->createBatchesWith($this->getMockDivisor());
-    }
-
-    public function testFactoryCreatesInstance()
-    {
-        $builder = BatchBuilder::factory();
-        $this->assertInstanceOf('Guzzle\Batch\BatchBuilder', $builder);
-    }
-
-    public function testAddsAutoFlush()
-    {
-        $batch = $this->getMockBatchBuilder()->autoFlushAt(10)->build();
-        $this->assertInstanceOf('Guzzle\Batch\FlushingBatch', $batch);
-    }
-
-    public function testAddsExceptionBuffering()
-    {
-        $batch = $this->getMockBatchBuilder()->bufferExceptions()->build();
-        $this->assertInstanceOf('Guzzle\Batch\ExceptionBufferingBatch', $batch);
-    }
-
-    public function testAddHistory()
-    {
-        $batch = $this->getMockBatchBuilder()->keepHistory()->build();
-        $this->assertInstanceOf('Guzzle\Batch\HistoryBatch', $batch);
-    }
-
-    public function testAddsNotify()
-    {
-        $batch = $this->getMockBatchBuilder()->notify(function() {})->build();
-        $this->assertInstanceOf('Guzzle\Batch\NotifyingBatch', $batch);
-    }
-
-    /**
-     * @expectedException Guzzle\Common\Exception\RuntimeException
-     */
-    public function testTransferStrategyMustBeSet()
-    {
-        $batch = BatchBuilder::factory()->createBatchesWith($this->getMockDivisor())->build();
-    }
-
-    /**
-     * @expectedException Guzzle\Common\Exception\RuntimeException
-     */
-    public function testDivisorStrategyMustBeSet()
-    {
-        $batch = BatchBuilder::factory()->transferWith($this->getMockTransfer())->build();
-    }
-
-    public function testTransfersRequests()
-    {
-        $batch = BatchBuilder::factory()->transferRequests(10)->build();
-        $this->assertInstanceOf('Guzzle\Batch\BatchRequestTransfer', $this->readAttribute($batch, 'transferStrategy'));
-    }
-
-    public function testTransfersCommands()
-    {
-        $batch = BatchBuilder::factory()->transferCommands(10)->build();
-        $this->assertInstanceOf('Guzzle\Batch\BatchCommandTransfer', $this->readAttribute($batch, 'transferStrategy'));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+jjt/g280

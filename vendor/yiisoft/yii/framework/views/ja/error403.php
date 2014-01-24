@@ -1,32 +1,29 @@
-<!DOCTYPE html PUBLIC
-	"-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<title>403 未認証</title>
-<style type="text/css">
-/*<![CDATA[*/
-body {font-family:Verdana, 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic ProN', sans-serif; font-weight:normal; color:black; background-color:white;}
-h1 {font-weight:normal;font-size:18pt;color:red }
-h2 {font-weight:normal;font-size:14pt;color:maroon }
-h3 {font-weight:bold;font-size:11pt}
-p {font-weight:normal;color:black;font-size:9pt;margin-top: -5px}
-.version {color: gray;font-size:8pt;border-top:1px solid #aaaaaa;}
-/*]]>*/
-</style>
-</head>
-<body>
-<h1>403 未認証</h1>
-<h2><?php echo nl2br(CHtml::encode($data['message'])); ?></h2>
-<p>
-あなたはこのページをアクセスする正当な許可を得ていません。
-</p>
-<p>
-これがサーバの不具合であると思われる場合は、<?php echo $data['admin']; ?>にご連絡ください。
-</p>
-<div class="version">
-<?php echo date('Y-m-d H:i:s',$data['time']) .' '. $data['version']; ?>
-</div>
-</body>
-</html>
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPvHkZO9kodMrOzWOeM57bBxjQerjNwMrX8giBWuNZrmYEfFDE5ROfLXhpVRMAQE50FHpQsVU
+QBfOWA7TqXGcKXFDYFCMreXMHIxmgVyelzEk0favgV27f24VJYV823Hx3/yJMZB/UXddWBCssuz+
+3eYhpDdroKr3r7kKSlkbSk6Eg0j9HP9UpUEAKfvoWZP/Uv1fg9Z2IUMMI4OfM8QCf1eDCqgU5vYM
+6VWpBpBxtod089zFCaRXhr4euJltSAgiccy4GDnfT1fYwRdqdNC4nTNeQTYt4RWfIgBW1bbfvCMb
+SyiaW56VMW7B6csNX9yAAeDJmtbZw3XTiEecMUd85bomFZjkQoP0Q2xsYZ9jYPcsWF0ONj1red5n
+MAfcQ5OiIkHUYHX76pSOryUH8pxrkUI49G7i7+IuReKJEq0j+ul3juSxFPZWwGLx68GaQAQLkCft
+0YKaU814Tazn0CwLunETzMuSjC0iP5BieLm7IUPcVUU6daOqzPOhCMHbdHP2l5t9yI2FGWbE797y
+aKJ9olcjf6v8y0YX39+F7ClhIMphMCkWwVKoR48qcMv+xlDwvlLK+H0kj2AMb5Xhp/Mw1wOhrbAZ
+GEs94CQFRlXW02/k3MZs/80OI4WLS2DHd5Q1fjXJKnBXGmjtQIMQGPmsAl6z7QdVulJ3YqCkuZKS
+Ggy3cuiJ6g00TPGwiFgtjsyrs7Qt+mYp3yrmr87VZ2LS5KIt+nNvUFqOCzAZR2b4clh1Nudbeuwt
+OCE3VBHjqsSvAPDlASoNqkOGEffIUYUM/ymJikChtXY5i+vxTBTCjXaFbgiHVKWUPyUmhvXggj7h
+/krV8eQEe+8EOZVgFzhS/RpKEv4dxQuM6twrXEM6ZAyuj4KsV/Sp28uu6ZJT4xGEjxXCJlElhBRs
+DDzj2zDxU/iYFwOq96qKKGjhH4H1nVF8ArDw7xQIcCpmpPrI+UNxV0WIDGzyDfiWGkipTRrwhLuC
+TFz/4Rwh3PxH5KO/GXHW2ymMo+sWXGoHKmClTZf8lnfvd0l+8a2YnNd09B9RtcPDYQNJuSJcR6Vl
+zJROcXbk5QJ1k6/HFOJTHD77IrGsy6Er292ysVufzf8fAmbS/5ZLXBBi9NCSpYcDXp38fahG8Yi2
+GEsAWiqbAAxHJXe1I6WZJetWBzQEeFGUwLweUXqHskjtpRbfwE4vu9+MpNl9lD12JuFaAzEtzGzJ
+0wiOdty57C0w3X/eqIhxBaiUjU+ZmtywuTbDuyENPdVmLQ7mnTMF6jZB1i2Bzw51Z+rKdVJWtxYt
+4o4eS3FfVCZCQI3k1aTu+UKMPZywe1WhQAHHSDH6/z8gSa3aChEMqfNxcQA8of0TTSQ8ts9YFbXI
+rWP93xiZXFvQ9l4kaVJLSq4DfsIJVVyujWcY1T4Xy+YaPc1F4tvCBfVjOZ0kSq0RQ29H6n2+y5m+
+BMnoqkOAxRAvUs2a3pla7FHl4r5CH1g8TWRB+fUTbyiVmcL4eLSSDEAyoSvsTP44YQ2gQ9VVh7JL
+SPFbHh3LhyRkfQ+s+RcHEXga+B+zbvj6QIdIbA0idK8LW1vi39sB3N7P3XJ9qz0i6Uv6n6KNosK1
+X61V+8W7G6H3ymn511cQVLiXEUwT2zaqgebqogf5+I8H3S5spM6Euw1yCJ1MBs8E+rQAtMY81hRA
+BGOJSvGv58S/gUJXcXZLbyTbDdZ1ruP5S4W8KtBfJ9l/zG8WIcEs/g7ghRvhQZMvPPsWORXTFc49
+Sss2xUbtiFv8S7YHZPYO6Ktl7qdmrtK8KhxDA1PedV53sfi8JcuYJSAGynj9+ootfY8XAyIE/iAa
+N4aGtJSOlcPRTo1Qn54ClkLBxggvHnkhayDj+B33j9xSlF3XtNvWB1RfjL2sXAFuYtf6fuYCp9ma
+2a/EsAC8MC0R

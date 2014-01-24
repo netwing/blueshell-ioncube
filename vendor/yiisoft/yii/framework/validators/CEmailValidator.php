@@ -1,204 +1,115 @@
-<?php
-/**
- * CEmailValidator class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CEmailValidator validates that the attribute value is a valid email address.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.validators
- * @since 1.0
- */
-class CEmailValidator extends CValidator
-{
-	/**
-	 * @var string the regular expression used to validate the attribute value.
-	 * @see http://www.regular-expressions.info/email.html
-	 */
-	public $pattern='/^[a-zA-Z0-9!#$%&\'*+\\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&\'*+\\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/';
-	/**
-	 * @var string the regular expression used to validate email addresses with the name part.
-	 * This property is used only when {@link allowName} is true.
-	 * @see allowName
-	 */
-	public $fullPattern='/^[^@]*<[a-zA-Z0-9!#$%&\'*+\\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&\'*+\\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?>$/';
-	/**
-	 * @var boolean whether to allow name in the email address (e.g. "Qiang Xue <qiang.xue@gmail.com>"). Defaults to false.
-	 * @see fullPattern
-	 */
-	public $allowName=false;
-	/**
-	 * @var boolean whether to check the MX record for the email address.
-	 * Defaults to false. To enable it, you need to make sure the PHP function 'checkdnsrr'
-	 * exists in your PHP installation.
-	 * Please note that this check may fail due to temporary problems even if email is deliverable.
-	 */
-	public $checkMX=false;
-	/**
-	 * @var boolean whether to check port 25 for the email address.
-	 * Defaults to false. To enable it, ensure that the PHP functions 'dns_get_record' and
-	 * 'fsockopen' are available in your PHP installation.
-	 * Please note that this check may fail due to temporary problems even if email is deliverable.
-	 */
-	public $checkPort=false;
-	/**
-	 * @var boolean whether the attribute value can be null or empty. Defaults to true,
-	 * meaning that if the attribute is empty, it is considered valid.
-	 */
-	public $allowEmpty=true;
-	/**
-	 * @var boolean whether validation process should care about IDN (internationalized domain names). Default
-	 * value is false which means that validation of emails containing IDN will always fail.
-	 * @since 1.1.13
-	 */
-	public $validateIDN=false;
-
-	/**
-	 * Validates the attribute of the object.
-	 * If there is any error, the error message is added to the object.
-	 * @param CModel $object the object being validated
-	 * @param string $attribute the attribute being validated
-	 */
-	protected function validateAttribute($object,$attribute)
-	{
-		$value=$object->$attribute;
-		if($this->allowEmpty && $this->isEmpty($value))
-			return;
-		if(!$this->validateValue($value))
-		{
-			$message=$this->message!==null?$this->message:Yii::t('yii','{attribute} is not a valid email address.');
-			$this->addError($object,$attribute,$message);
-		}
-	}
-
-	/**
-	 * Validates a static value to see if it is a valid email.
-	 * Note that this method does not respect {@link allowEmpty} property.
-	 * This method is provided so that you can call it directly without going through the model validation rule mechanism.
-	 * @param mixed $value the value to be validated
-	 * @return boolean whether the value is a valid email
-	 * @since 1.1.1
-	 */
-	public function validateValue($value)
-	{
-		if(is_string($value) && $this->validateIDN)
-			$value=$this->encodeIDN($value);
-		// make sure string length is limited to avoid DOS attacks
-		$valid=is_string($value) && strlen($value)<=254 && (preg_match($this->pattern,$value) || $this->allowName && preg_match($this->fullPattern,$value));
-		if($valid)
-			$domain=rtrim(substr($value,strpos($value,'@')+1),'>');
-		if($valid && $this->checkMX && function_exists('checkdnsrr'))
-			$valid=checkdnsrr($domain,'MX');
-		if($valid && $this->checkPort && function_exists('fsockopen') && function_exists('dns_get_record'))
-			$valid=$this->checkMxPorts($domain);
-		return $valid;
-	}
-
-	/**
-	 * Returns the JavaScript needed for performing client-side validation.
-	 * @param CModel $object the data object being validated
-	 * @param string $attribute the name of the attribute to be validated.
-	 * @return string the client-side validation script.
-	 * @see CActiveForm::enableClientValidation
-	 * @since 1.1.7
-	 */
-	public function clientValidateAttribute($object,$attribute)
-	{
-		if($this->validateIDN)
-		{
-			Yii::app()->getClientScript()->registerCoreScript('punycode');
-			// punycode.js works only with the domains - so we have to extract it before punycoding
-			$validateIDN='
-var info = value.match(/^(.[^@]+)@(.+)$/);
-if (info)
-	value = info[1] + "@" + punycode.toASCII(info[2]);
-';
-		}
-		else
-			$validateIDN='';
-
-		$message=$this->message!==null ? $this->message : Yii::t('yii','{attribute} is not a valid email address.');
-		$message=strtr($message, array(
-			'{attribute}'=>$object->getAttributeLabel($attribute),
-		));
-
-		$condition="!value.match({$this->pattern})";
-		if($this->allowName)
-			$condition.=" && !value.match({$this->fullPattern})";
-
-		return "
-$validateIDN
-if(".($this->allowEmpty ? "jQuery.trim(value)!='' && " : '').$condition.") {
-	messages.push(".CJSON::encode($message).");
-}
-";
-	}
-
-	/**
-	 * Retrieves the list of MX records for $domain and checks if port 25
-	 * is opened on any of these.
-	 * @since 1.1.11
-	 * @param string $domain domain to be checked
-	 * @return boolean true if a reachable MX server has been found
-	 */
-	protected function checkMxPorts($domain)
-	{
-		$records=dns_get_record($domain, DNS_MX);
-		if($records===false || empty($records))
-			return false;
-		usort($records,array($this,'mxSort'));
-		foreach($records as $record)
-		{
-			$handle=@fsockopen($record['target'],25);
-			if($handle!==false)
-			{
-				fclose($handle);
-				return true;
-			}
-		}
-		return false;
-	}
-
-	/**
-	 * Determines if one MX record has higher priority as another
-	 * (i.e. 'pri' is lower). Used by {@link checkMxPorts}.
-	 * @since 1.1.11
-	 * @param mixed $a first item for comparison
-	 * @param mixed $b second item for comparison
-	 * @return boolean
-	 */
-	protected function mxSort($a, $b)
-	{
-		if($a['pri']==$b['pri'])
-			return 0;
-		return ($a['pri']<$b['pri'])?-1:1;
-	}
-
-	/**
-	 * Converts given IDN to the punycode.
-	 * @param string $value IDN to be converted.
-	 * @return string resulting punycode.
-	 * @since 1.1.13
-	 */
-	private function encodeIDN($value)
-	{
-		if(preg_match_all('/^(.*)@(.*)$/',$value,$matches))
-		{
-			if(function_exists('idn_to_ascii'))
-				$value=$matches[1][0].'@'.idn_to_ascii($matches[2][0]);
-			else
-			{
-				require_once(Yii::getPathOfAlias('system.vendors.Net_IDNA2.Net').DIRECTORY_SEPARATOR.'IDNA2.php');
-				$idna=new Net_IDNA2();
-				$value=$matches[1][0].'@'.@$idna->encode($matches[2][0]);
-			}
-		}
-		return $value;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

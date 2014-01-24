@@ -1,111 +1,77 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\Console\Tests\Input;
-
-use Symfony\Component\Console\Input\InputArgument;
-
-class InputArgumentTest extends \PHPUnit_Framework_TestCase
-{
-    public function testConstructor()
-    {
-        $argument = new InputArgument('foo');
-        $this->assertEquals('foo', $argument->getName(), '__construct() takes a name as its first argument');
-    }
-
-    public function testModes()
-    {
-        $argument = new InputArgument('foo');
-        $this->assertFalse($argument->isRequired(), '__construct() gives a "InputArgument::OPTIONAL" mode by default');
-
-        $argument = new InputArgument('foo', null);
-        $this->assertFalse($argument->isRequired(), '__construct() can take "InputArgument::OPTIONAL" as its mode');
-
-        $argument = new InputArgument('foo', InputArgument::OPTIONAL);
-        $this->assertFalse($argument->isRequired(), '__construct() can take "InputArgument::OPTIONAL" as its mode');
-
-        $argument = new InputArgument('foo', InputArgument::REQUIRED);
-        $this->assertTrue($argument->isRequired(), '__construct() can take "InputArgument::REQUIRED" as its mode');
-    }
-
-    /**
-     * @dataProvider provideInvalidModes
-     */
-    public function testInvalidModes($mode)
-    {
-        $this->setExpectedException('InvalidArgumentException', sprintf('Argument mode "%s" is not valid.', $mode));
-
-        new InputArgument('foo', $mode);
-    }
-
-    public function provideInvalidModes()
-    {
-        return array(
-            array('ANOTHER_ONE'),
-            array(-1)
-        );
-    }
-
-    public function testIsArray()
-    {
-        $argument = new InputArgument('foo', InputArgument::IS_ARRAY);
-        $this->assertTrue($argument->isArray(), '->isArray() returns true if the argument can be an array');
-        $argument = new InputArgument('foo', InputArgument::OPTIONAL | InputArgument::IS_ARRAY);
-        $this->assertTrue($argument->isArray(), '->isArray() returns true if the argument can be an array');
-        $argument = new InputArgument('foo', InputArgument::OPTIONAL);
-        $this->assertFalse($argument->isArray(), '->isArray() returns false if the argument can not be an array');
-    }
-
-    public function testGetDescription()
-    {
-        $argument = new InputArgument('foo', null, 'Some description');
-        $this->assertEquals('Some description', $argument->getDescription(), '->getDescription() return the message description');
-    }
-
-    public function testGetDefault()
-    {
-        $argument = new InputArgument('foo', InputArgument::OPTIONAL, '', 'default');
-        $this->assertEquals('default', $argument->getDefault(), '->getDefault() return the default value');
-    }
-
-    public function testSetDefault()
-    {
-        $argument = new InputArgument('foo', InputArgument::OPTIONAL, '', 'default');
-        $argument->setDefault(null);
-        $this->assertNull($argument->getDefault(), '->setDefault() can reset the default value by passing null');
-        $argument->setDefault('another');
-        $this->assertEquals('another', $argument->getDefault(), '->setDefault() changes the default value');
-
-        $argument = new InputArgument('foo', InputArgument::OPTIONAL | InputArgument::IS_ARRAY);
-        $argument->setDefault(array(1, 2));
-        $this->assertEquals(array(1, 2), $argument->getDefault(), '->setDefault() changes the default value');
-    }
-
-    /**
-     * @expectedException        \LogicException
-     * @expectedExceptionMessage Cannot set a default value except for InputArgument::OPTIONAL mode.
-     */
-    public function testSetDefaultWithRequiredArgument()
-    {
-        $argument = new InputArgument('foo', InputArgument::REQUIRED);
-        $argument->setDefault('default');
-    }
-
-    /**
-     * @expectedException        \LogicException
-     * @expectedExceptionMessage A default value for an array argument must be an array.
-     */
-    public function testSetDefaultWithArrayArgument()
-    {
-        $argument = new InputArgument('foo', InputArgument::IS_ARRAY);
-        $argument->setDefault('default');
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

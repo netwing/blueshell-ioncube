@@ -1,955 +1,340 @@
-<?php
-/**
- * CActiveForm class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CActiveForm provides a set of methods that can help to simplify the creation
- * of complex and interactive HTML forms that are associated with data models.
- *
- * The 'beginWidget' and 'endWidget' call of CActiveForm widget will render
- * the open and close form tags. Most other methods of CActiveForm are wrappers
- * of the corresponding 'active' methods in {@link CHtml}. Calling them in between
- * the 'beginWidget' and 'endWidget' calls will render text labels, input fields,
- * etc. For example, calling {@link CActiveForm::textField}
- * would generate an input field for a specified model attribute.
- *
- * What makes CActiveForm extremely useful is its support for data validation.
- * CActiveForm supports data validation at three levels:
- * <ul>
- * <li>server-side validation: the validation is performed at server side after
- * the whole page containing the form is submitted. If there is any validation error,
- * CActiveForm will render the error in the page back to user.</li>
- * <li>AJAX-based validation: when the user enters data into an input field,
- * an AJAX request is triggered which requires server-side validation. The validation
- * result is sent back in AJAX response and the input field changes its appearance
- * accordingly.</li>
- * <li>client-side validation (available since version 1.1.7):
- * when the user enters data into an input field,
- * validation is performed on the client side using JavaScript. No server contact
- * will be made, which reduces the workload on the server.</li>
- * </ul>
- *
- * All these validations share the same set of validation rules declared in
- * the associated model class. CActiveForm is designed in such a way that
- * all these validations will lead to the same user interface changes and error
- * message content.
- *
- * To ensure data validity, server-side validation is always performed.
- * By setting {@link enableAjaxValidation} to true, one can enable AJAX-based validation;
- * and by setting {@link enableClientValidation} to true, one can enable client-side validation.
- * Note that in order to make the latter two validations work, the user's browser
- * must has its JavaScript enabled. If not, only the server-side validation will
- * be performed.
- *
- * The AJAX-based validation and client-side validation may be used together
- * or separately. For example, in a user registration form, one may use AJAX-based
- * validation to check if the user has picked a unique username, and use client-side
- * validation to ensure all required fields are entered with data.
- * Because the AJAX-based validation may bring extra workload on the server,
- * if possible, one should mainly use client-side validation.
- *
- * The AJAX-based validation has a few limitations. First, it does not work
- * with file upload fields. Second, it should not be used to perform validations that
- * may cause server-side state changes. Third, it is not designed
- * to work with tabular data input for the moment.
- *
- * Support for client-side validation varies for different validators. A validator
- * will support client-side validation only if it implements {@link CValidator::clientValidateAttribute}
- * and has its {@link CValidator::enableClientValidation} property set true.
- * At this moment, the following core validators support client-side validation:
- * <ul>
- * <li>{@link CBooleanValidator}</li>
- * <li>{@link CCaptchaValidator}</li>
- * <li>{@link CCompareValidator}</li>
- * <li>{@link CEmailValidator}</li>
- * <li>{@link CNumberValidator}</li>
- * <li>{@link CRangeValidator}</li>
- * <li>{@link CRegularExpressionValidator}</li>
- * <li>{@link CRequiredValidator}</li>
- * <li>{@link CStringValidator}</li>
- * <li>{@link CUrlValidator}</li>
- * </ul>
- *
- * CActiveForm relies on CSS to customize the appearance of input fields
- * which are in different validation states. In particular, each input field
- * may be one of the four states: initial (not validated),
- * validating, error and success. To differentiate these states, CActiveForm
- * automatically assigns different CSS classes for the last three states
- * to the HTML element containing the input field.
- * By default, these CSS classes are named as 'validating', 'error' and 'success',
- * respectively. We may customize these CSS classes by configuring the
- * {@link clientOptions} property or specifying in the {@link error} method.
- *
- * The following is a piece of sample view code showing how to use CActiveForm:
- *
- * <pre>
- * <?php $form = $this->beginWidget('CActiveForm', array(
- *     'id'=>'user-form',
- *     'enableAjaxValidation'=>true,
- *     'enableClientValidation'=>true,
- *     'focus'=>array($model,'firstName'),
- * )); ?>
- *
- * <?php echo $form->errorSummary($model); ?>
- *
- * <div class="row">
- *     <?php echo $form->labelEx($model,'firstName'); ?>
- *     <?php echo $form->textField($model,'firstName'); ?>
- *     <?php echo $form->error($model,'firstName'); ?>
- * </div>
- * <div class="row">
- *     <?php echo $form->labelEx($model,'lastName'); ?>
- *     <?php echo $form->textField($model,'lastName'); ?>
- *     <?php echo $form->error($model,'lastName'); ?>
- * </div>
- *
- * <?php $this->endWidget(); ?>
- * </pre>
- *
- * To respond to the AJAX validation requests, we need the following class code:
- * <pre>
- * public function actionCreate()
- * {
- *     $model=new User;
- *     $this->performAjaxValidation($model);
- *     if(isset($_POST['User']))
- *     {
- *         $model->attributes=$_POST['User'];
- *         if($model->save())
- *             $this->redirect('index');
- *     }
- *     $this->render('create',array('model'=>$model));
- * }
- *
- * protected function performAjaxValidation($model)
- * {
- *     if(isset($_POST['ajax']) && $_POST['ajax']==='user-form')
- *     {
- *         echo CActiveForm::validate($model);
- *         Yii::app()->end();
- *     }
- * }
- * </pre>
- *
- * In the above code, if we do not enable the AJAX-based validation, we can remove
- * the <code>performAjaxValidation</code> method and its invocation.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.web.widgets
- * @since 1.1.1
- */
-class CActiveForm extends CWidget
-{
-	/**
-	 * @var mixed the form action URL (see {@link CHtml::normalizeUrl} for details about this parameter).
-	 * If not set, the current page URL is used.
-	 */
-	public $action='';
-	/**
-	 * @var string the form submission method. This should be either 'post' or 'get'.
-	 * Defaults to 'post'.
-	 */
-	public $method='post';
-	/**
-	 * @var boolean whether to generate a stateful form (See {@link CHtml::statefulForm}). Defaults to false.
-	 */
-	public $stateful=false;
-	/**
-	 * @var string the CSS class name for error messages. 
-	 * Since 1.1.14 this defaults to 'errorMessage' defined in {@link CHtml::$errorMessageCss}.
-	 * Individual {@link error} call may override this value by specifying the 'class' HTML option.
-	 */
-	public $errorMessageCssClass;
-	/**
-	 * @var array additional HTML attributes that should be rendered for the form tag.
-	 */
-	public $htmlOptions=array();
-	/**
-	 * @var array the options to be passed to the javascript validation plugin.
-	 * The following options are supported:
-	 * <ul>
-	 * <li>ajaxVar: string, the name of the parameter indicating the request is an AJAX request.
-	 * When the AJAX validation is triggered, a parameter named as this property will be sent
-	 * together with the other form data to the server. The parameter value is the form ID.
-	 * The server side can then detect who triggers the AJAX validation and react accordingly.
-	 * Defaults to 'ajax'.</li>
-	 * <li>validationUrl: string, the URL that performs the AJAX validations.
-	 * If not set, it will take the value of {@link action}.</li>
-	 * <li>validationDelay: integer, the number of milliseconds that an AJAX validation should be
-	 * delayed after an input is changed. A value 0 means the validation will be triggered immediately
-	 * when an input is changed. A value greater than 0 means changing several inputs may only
-	 * trigger a single validation if they happen fast enough, which may help reduce the server load.
-	 * Defaults to 200 (0.2 second).</li>
-	 * <li>validateOnSubmit: boolean, whether to perform AJAX validation when the form is being submitted.
-	 * If there are any validation errors, the form submission will be stopped.
-	 * Defaults to false.</li>
-	 * <li>validateOnChange: boolean, whether to trigger an AJAX validation
-	 * each time when an input's value is changed.	You may want to turn this off
-	 * if it causes too much performance impact, because each AJAX validation request
-	 * will submit the data of the whole form. Defaults to true.</li>
-	 * <li>validateOnType: boolean, whether to trigger an AJAX validation each time when the user
-	 * presses a key. When setting this property to be true, you should tune up the 'validationDelay'
-	 * option to avoid triggering too many AJAX validations. Defaults to false.</li>
-	 * <li>hideErrorMessage: boolean, whether to hide the error message even if there is an error.
-	 * Defaults to false, which means the error message will show up whenever the input has an error.</li>
-	 * <li>inputContainer: string, the jQuery selector for the HTML element containing the input field.
-	 * During the validation process, CActiveForm will set different CSS class for the container element
-	 * to indicate the state change. If not set, it means the closest 'div' element that contains the input field.</li>
-	 * <li>errorCssClass: string, the CSS class to be assigned to the container whose associated input
-	 * has AJAX validation error. Defaults to 'error'.</li>
-	 * <li>successCssClass: string, the CSS class to be assigned to the container whose associated input
-	 * passes AJAX validation without any error. Defaults to 'success'.</li>
-	 * <li>validatingCssClass: string, the CSS class to be assigned to the container whose associated input
-	 * is currently being validated via AJAX. Defaults to 'validating'.</li>
-	 * <li>errorMessageCssClass: string, the CSS class assigned to the error messages returned
-	 * by AJAX validations. Defaults to 'errorMessage'.</li>
-	 * <li>beforeValidate: function, the function that will be invoked before performing ajax-based validation
-	 * triggered by form submission action (available only when validateOnSubmit is set true).
-	 * The expected function signature should be <code>beforeValidate(form) {...}</code>, where 'form' is
-	 * the jquery representation of the form object. If the return value of this function is NOT true, the validation
-	 * will be cancelled.
-	 *
-	 * Note that because this option refers to a js function, you should wrap the value with {@link CJavaScriptExpression} to prevent it
-	 * from being encoded as a string. This option has been available since version 1.1.3.</li>
-	 * <li>afterValidate: function, the function that will be invoked after performing ajax-based validation
-	 * triggered by form submission action (available only when validateOnSubmit is set true).
-	 * The expected function signature should be <code>afterValidate(form, data, hasError) {...}</code>, where 'form' is
-	 * the jquery representation of the form object; 'data' is the JSON response from the server-side validation; 'hasError'
-	 * is a boolean value indicating whether there is any validation error. If the return value of this function is NOT true,
-	 * the normal form submission will be cancelled.
-	 *
-	 * Note that because this option refers to a js function, you should wrap the value with {@link CJavaScriptExpression} to prevent it
-	 * from being encoded as a string. This option has been available since version 1.1.3.</li>
-	 * <li>beforeValidateAttribute: function, the function that will be invoked before performing ajax-based validation
-	 * triggered by a single attribute input change. The expected function signature should be
-	 * <code>beforeValidateAttribute(form, attribute) {...}</code>, where 'form' is the jquery representation of the form object
-	 * and 'attribute' refers to the js options for the triggering attribute (see {@link error}).
-	 * If the return value of this function is NOT true, the validation will be cancelled.
-	 *
-	 * Note that because this option refers to a js function, you should wrap the value with {@link CJavaScriptExpression} to prevent it
-	 * from being encoded as a string. This option has been available since version 1.1.3.</li>
-	 * <li>afterValidateAttribute: function, the function that will be invoked after performing ajax-based validation
-	 * triggered by a single attribute input change. The expected function signature should be
-	 * <code>afterValidateAttribute(form, attribute, data, hasError) {...}</code>, where 'form' is the jquery
-	 * representation of the form object; 'attribute' refers to the js options for the triggering attribute (see {@link error});
-	 * 'data' is the JSON response from the server-side validation; 'hasError' is a boolean value indicating whether
-	 * there is any validation error.
-	 *
-	 * Note that because this option refers to a js function, you should wrap the value with {@link CJavaScriptExpression} to prevent it
-	 * from being encoded as a string. This option has been available since version 1.1.3.</li>
-	 * </ul>
-	 *
-	 * Some of the above options may be overridden in individual calls of {@link error()}.
-	 * They include: validationDelay, validateOnChange, validateOnType, hideErrorMessage,
-	 * inputContainer, errorCssClass, successCssClass, validatingCssClass, beforeValidateAttribute, afterValidateAttribute.
-	 */
-	public $clientOptions=array();
-	/**
-	 * @var boolean whether to enable data validation via AJAX. Defaults to false.
-	 * When this property is set true, you should respond to the AJAX validation request on the server side as shown below:
-	 * <pre>
-	 * public function actionCreate()
-	 * {
-	 *     $model=new User;
-	 *     if(isset($_POST['ajax']) && $_POST['ajax']==='user-form')
-	 *     {
-	 *         echo CActiveForm::validate($model);
-	 *         Yii::app()->end();
-	 *     }
-	 *     ......
-	 * }
-	 * </pre>
-	 */
-	public $enableAjaxValidation=false;
-	/**
-	 * @var boolean whether to enable client-side data validation. Defaults to false.
-	 *
-	 * When this property is set true, client-side validation will be performed by validators
-	 * that support it (see {@link CValidator::enableClientValidation} and {@link CValidator::clientValidateAttribute}).
-	 *
-	 * @see error
-	 * @since 1.1.7
-	 */
-	public $enableClientValidation=false;
-
-	/**
-	 * @var mixed form element to get initial input focus on page load.
-	 *
-	 * Defaults to null meaning no input field has a focus.
-	 * If set as array, first element should be model and second element should be the attribute.
-	 * If set as string any jQuery selector can be used
-	 *
-	 * Example - set input focus on page load to:
-	 * <ul>
-	 * <li>'focus'=>array($model,'username') - $model->username input filed</li>
-	 * <li>'focus'=>'#'.CHtml::activeId($model,'username') - $model->username input field</li>
-	 * <li>'focus'=>'#LoginForm_username' - input field with ID LoginForm_username</li>
-	 * <li>'focus'=>'input[type="text"]:first' - first input element of type text</li>
-	 * <li>'focus'=>'input:visible:enabled:first' - first visible and enabled input element</li>
-	 * <li>'focus'=>'input:text[value=""]:first' - first empty input</li>
-	 * </ul>
-	 *
-	 * @since 1.1.4
-	 */
-	public $focus;
-	/**
-	 * @var array the javascript options for model attributes (input ID => options)
-	 * @see error
-	 * @since 1.1.7
-	 */
-	protected $attributes=array();
-	/**
-	 * @var string the ID of the container element for error summary
-	 * @see errorSummary
-	 * @since 1.1.7
-	 */
-	protected $summaryID;
-	/**
-	 * @var string[] attribute IDs to be used to display error summary.
-	 * @since 1.1.14
-	 */
-	private $_summaryAttributes=array();
-
-	/**
-	 * Initializes the widget.
-	 * This renders the form open tag.
-	 */
-	public function init()
-	{
-		if(!isset($this->htmlOptions['id']))
-			$this->htmlOptions['id']=$this->id;
-		else
-			$this->id=$this->htmlOptions['id'];
-
-		if($this->stateful)
-			echo CHtml::statefulForm($this->action, $this->method, $this->htmlOptions);
-		else
-			echo CHtml::beginForm($this->action, $this->method, $this->htmlOptions);
-			
-		if($this->errorMessageCssClass===null)
-			$this->errorMessageCssClass=CHtml::$errorMessageCss;
-	}
-
-	/**
-	 * Runs the widget.
-	 * This registers the necessary javascript code and renders the form close tag.
-	 */
-	public function run()
-	{
-		if(is_array($this->focus))
-			$this->focus="#".CHtml::activeId($this->focus[0],$this->focus[1]);
-
-		echo CHtml::endForm();
-		$cs=Yii::app()->clientScript;
-		if(!$this->enableAjaxValidation && !$this->enableClientValidation || empty($this->attributes))
-		{
-			if($this->focus!==null)
-			{
-				$cs->registerCoreScript('jquery');
-				$cs->registerScript('CActiveForm#focus',"
-					if(!window.location.hash)
-						jQuery('".$this->focus."').focus();
-				");
-			}
-			return;
-		}
-
-		$options=$this->clientOptions;
-		if(isset($this->clientOptions['validationUrl']) && is_array($this->clientOptions['validationUrl']))
-			$options['validationUrl']=CHtml::normalizeUrl($this->clientOptions['validationUrl']);
-
-		foreach($this->_summaryAttributes as $attribute)
-			$this->attributes[$attribute]['summary']=true;
-		$options['attributes']=array_values($this->attributes);
-
-		if($this->summaryID!==null)
-			$options['summaryID']=$this->summaryID;
-
-		if($this->focus!==null)
-			$options['focus']=$this->focus;
-
-		if(!empty(CHtml::$errorCss))
-			$options['errorCss']=CHtml::$errorCss;
-
-		$options=CJavaScript::encode($options);
-		$cs->registerCoreScript('yiiactiveform');
-		$id=$this->id;
-		$cs->registerScript(__CLASS__.'#'.$id,"jQuery('#$id').yiiactiveform($options);");
-	}
-
-	/**
-	 * Displays the first validation error for a model attribute.
-	 * This is similar to {@link CHtml::error} except that it registers the model attribute
-	 * so that if its value is changed by users, an AJAX validation may be triggered.
-	 * @param CModel $model the data model
-	 * @param string $attribute the attribute name
-	 * @param array $htmlOptions additional HTML attributes to be rendered in the container div tag.
-	 * Besides all those options available in {@link CHtml::error}, the following options are recognized in addition:
-	 * <ul>
-	 * <li>validationDelay</li>
-	 * <li>validateOnChange</li>
-	 * <li>validateOnType</li>
-	 * <li>hideErrorMessage</li>
-	 * <li>inputContainer</li>
-	 * <li>errorCssClass</li>
-	 * <li>successCssClass</li>
-	 * <li>validatingCssClass</li>
-	 * <li>beforeValidateAttribute</li>
-	 * <li>afterValidateAttribute</li>
-	 * </ul>
-	 * These options override the corresponding options as declared in {@link options} for this
-	 * particular model attribute. For more details about these options, please refer to {@link clientOptions}.
-	 * Note that these options are only used when {@link enableAjaxValidation} or {@link enableClientValidation}
-	 * is set true.
-	 * <ul>
-	 * <li>inputID</li>
-	 * </ul>
-	 * When an CActiveForm input field uses a custom ID, for ajax/client validation to work properly 
-	 * inputID should be set to the same ID
-	 * 
-	 * Example:
-	 * <pre>
-	 * <div class="form-element">
-	 *    <?php echo $form->labelEx($model,'attribute'); ?>
-	 *    <?php echo $form->textField($model,'attribute', array('id'=>'custom-id')); ?>
-	 *    <?php echo $form->error($model,'attribute',array('inputID'=>'custom-id')); ?>
-	 * </div>
-	 * </pre>
-	 * 
-	 * When client-side validation is enabled, an option named "clientValidation" is also recognized.
-	 * This option should take a piece of JavaScript code to perform client-side validation. In the code,
-	 * the variables are predefined:
-	 * <ul>
-	 * <li>value: the current input value associated with this attribute.</li>
-	 * <li>messages: an array that may be appended with new error messages for the attribute.</li>
-	 * <li>attribute: a data structure keeping all client-side options for the attribute</li>
-	 * </ul>
-	 * This should NOT be a function but just the code, Yii will enclose the code you provide inside the
-	 * actual JS function.
-	 * @param boolean $enableAjaxValidation whether to enable AJAX validation for the specified attribute.
-	 * Note that in order to enable AJAX validation, both {@link enableAjaxValidation} and this parameter
-	 * must be true.
-	 * @param boolean $enableClientValidation whether to enable client-side validation for the specified attribute.
-	 * Note that in order to enable client-side validation, both {@link enableClientValidation} and this parameter
-	 * must be true. This parameter has been available since version 1.1.7.
-	 * @return string the validation result (error display or success message).
-	 * @see CHtml::error
-	 */
-	public function error($model,$attribute,$htmlOptions=array(),$enableAjaxValidation=true,$enableClientValidation=true)
-	{
-		if(!$this->enableAjaxValidation)
-			$enableAjaxValidation=false;
-		if(!$this->enableClientValidation)
-			$enableClientValidation=false;
-
-		if(!isset($htmlOptions['class']))
-			$htmlOptions['class']=$this->errorMessageCssClass;
-
-		if(!$enableAjaxValidation && !$enableClientValidation)
-			return CHtml::error($model,$attribute,$htmlOptions);
-
-		$id=CHtml::activeId($model,$attribute);
-		$inputID=isset($htmlOptions['inputID']) ? $htmlOptions['inputID'] : $id;
-		unset($htmlOptions['inputID']);
-		if(!isset($htmlOptions['id']))
-			$htmlOptions['id']=$inputID.'_em_';
-
-		$option=array(
-			'id'=>$id,
-			'inputID'=>$inputID,
-			'errorID'=>$htmlOptions['id'],
-			'model'=>get_class($model),
-			'name'=>$attribute,
-			'enableAjaxValidation'=>$enableAjaxValidation,
-		);
-
-		$optionNames=array(
-			'validationDelay',
-			'validateOnChange',
-			'validateOnType',
-			'hideErrorMessage',
-			'inputContainer',
-			'errorCssClass',
-			'successCssClass',
-			'validatingCssClass',
-			'beforeValidateAttribute',
-			'afterValidateAttribute',
-		);
-		foreach($optionNames as $name)
-		{
-			if(isset($htmlOptions[$name]))
-			{
-				$option[$name]=$htmlOptions[$name];
-				unset($htmlOptions[$name]);
-			}
-		}
-		if($model instanceof CActiveRecord && !$model->isNewRecord)
-			$option['status']=1;
-
-		if($enableClientValidation)
-		{
-			$validators=isset($htmlOptions['clientValidation']) ? array($htmlOptions['clientValidation']) : array();
-			unset($htmlOptions['clientValidation']);
-
-			$attributeName = $attribute;
-			if(($pos=strrpos($attribute,']'))!==false && $pos!==strlen($attribute)-1) // e.g. [a]name
-			{
-				$attributeName=substr($attribute,$pos+1);
-			}
-
-			foreach($model->getValidators($attributeName) as $validator)
-			{
-				if($validator->enableClientValidation)
-				{
-					if(($js=$validator->clientValidateAttribute($model,$attributeName))!='')
-						$validators[]=$js;
-				}
-			}
-			if($validators!==array())
-				$option['clientValidation']=new CJavaScriptExpression("function(value, messages, attribute) {\n".implode("\n",$validators)."\n}");
-		}
-
-		$html=CHtml::error($model,$attribute,$htmlOptions);
-		if($html==='')
-		{
-			if(isset($htmlOptions['style']))
-				$htmlOptions['style']=rtrim($htmlOptions['style'],';').';display:none';
-			else
-				$htmlOptions['style']='display:none';
-			$html=CHtml::tag(CHtml::$errorContainerTag,$htmlOptions,'');
-		}
-
-		$this->attributes[$inputID]=$option;
-		return $html;
-	}
-
-	/**
-	 * Displays a summary of validation errors for one or several models.
-	 * This method is very similar to {@link CHtml::errorSummary} except that it also works
-	 * when AJAX validation is performed.
-	 * @param mixed $models the models whose input errors are to be displayed. This can be either
-	 * a single model or an array of models.
-	 * @param string $header a piece of HTML code that appears in front of the errors
-	 * @param string $footer a piece of HTML code that appears at the end of the errors
-	 * @param array $htmlOptions additional HTML attributes to be rendered in the container div tag.
-	 * @return string the error summary. Empty if no errors are found.
-	 * @see CHtml::errorSummary
-	 */
-	public function errorSummary($models,$header=null,$footer=null,$htmlOptions=array())
-	{
-		if(!$this->enableAjaxValidation && !$this->enableClientValidation)
-			return CHtml::errorSummary($models,$header,$footer,$htmlOptions);
-
-		if(!isset($htmlOptions['id']))
-			$htmlOptions['id']=$this->id.'_es_';
-		$html=CHtml::errorSummary($models,$header,$footer,$htmlOptions);
-		if($html==='')
-		{
-			if($header===null)
-				$header='<p>'.Yii::t('yii','Please fix the following input errors:').'</p>';
-			if(!isset($htmlOptions['class']))
-				$htmlOptions['class']=CHtml::$errorSummaryCss;
-			$htmlOptions['style']=isset($htmlOptions['style']) ? rtrim($htmlOptions['style'],';').';display:none' : 'display:none';
-			$html=CHtml::tag('div',$htmlOptions,$header."\n<ul><li>dummy</li></ul>".$footer);
-		}
-
-		$this->summaryID=$htmlOptions['id'];
-		foreach(is_array($models) ? $models : array($models) as $model)
-			foreach($model->getSafeAttributeNames() as $attribute)
-				$this->_summaryAttributes[]=CHtml::activeId($model,$attribute);
-
-		return $html;
-	}
-
-	/**
-	 * Renders an HTML label for a model attribute.
-	 * This method is a wrapper of {@link CHtml::activeLabel}.
-	 * Please check {@link CHtml::activeLabel} for detailed information
-	 * about the parameters for this method.
-	 * @param CModel $model the data model
-	 * @param string $attribute the attribute
-	 * @param array $htmlOptions additional HTML attributes.
-	 * @return string the generated label tag
-	 */
-	public function label($model,$attribute,$htmlOptions=array())
-	{
-		return CHtml::activeLabel($model,$attribute,$htmlOptions);
-	}
-
-	/**
-	 * Renders an HTML label for a model attribute.
-	 * This method is a wrapper of {@link CHtml::activeLabelEx}.
-	 * Please check {@link CHtml::activeLabelEx} for detailed information
-	 * about the parameters for this method.
-	 * @param CModel $model the data model
-	 * @param string $attribute the attribute
-	 * @param array $htmlOptions additional HTML attributes.
-	 * @return string the generated label tag
-	 */
-	public function labelEx($model,$attribute,$htmlOptions=array())
-	{
-		return CHtml::activeLabelEx($model,$attribute,$htmlOptions);
-	}
-
-	/**
-	 * Renders a url field for a model attribute.
-	 * This method is a wrapper of {@link CHtml::activeUrlField}.
-	 * Please check {@link CHtml::activeUrlField} for detailed information
-	 * about the parameters for this method.
-	 * @param CModel $model the data model
-	 * @param string $attribute the attribute
-	 * @param array $htmlOptions additional HTML attributes.
-	 * @return string the generated input field
-	 * @since 1.1.11
-	 */
-	public function urlField($model,$attribute,$htmlOptions=array())
-	{
-		return CHtml::activeUrlField($model,$attribute,$htmlOptions);
-	}
-
-	/**
-	 * Renders an email field for a model attribute.
-	 * This method is a wrapper of {@link CHtml::activeEmailField}.
-	 * Please check {@link CHtml::activeEmailField} for detailed information
-	 * about the parameters for this method.
-	 * @param CModel $model the data model
-	 * @param string $attribute the attribute
-	 * @param array $htmlOptions additional HTML attributes.
-	 * @return string the generated input field
-	 * @since 1.1.11
-	 */
-	public function emailField($model,$attribute,$htmlOptions=array())
-	{
-		return CHtml::activeEmailField($model,$attribute,$htmlOptions);
-	}
-
-	/**
-	 * Renders a number field for a model attribute.
-	 * This method is a wrapper of {@link CHtml::activeNumberField}.
-	 * Please check {@link CHtml::activeNumberField} for detailed information
-	 * about the parameters for this method.
-	 * @param CModel $model the data model
-	 * @param string $attribute the attribute
-	 * @param array $htmlOptions additional HTML attributes.
-	 * @return string the generated input field
-	 * @since 1.1.11
-	 */
-	public function numberField($model,$attribute,$htmlOptions=array())
-	{
-		return CHtml::activeNumberField($model,$attribute,$htmlOptions);
-	}
-
-	/**
-	 * Generates a range field for a model attribute.
-	 * This method is a wrapper of {@link CHtml::activeRangeField}.
-	 * Please check {@link CHtml::activeRangeField} for detailed information
-	 * about the parameters for this method.
-	 * @param CModel $model the data model
-	 * @param string $attribute the attribute
-	 * @param array $htmlOptions additional HTML attributes.
-	 * @return string the generated input field
-	 * @since 1.1.11
-	 */
-	public function rangeField($model,$attribute,$htmlOptions=array())
-	{
-		return CHtml::activeRangeField($model,$attribute,$htmlOptions);
-	}
-
-	/**
-	 * Renders a date field for a model attribute.
-	 * This method is a wrapper of {@link CHtml::activeDateField}.
-	 * Please check {@link CHtml::activeDateField} for detailed information
-	 * about the parameters for this method.
-	 * @param CModel $model the data model
-	 * @param string $attribute the attribute
-	 * @param array $htmlOptions additional HTML attributes.
-	 * @return string the generated input field
-	 * @since 1.1.11
-	 */
-	public function dateField($model,$attribute,$htmlOptions=array())
-	{
-		return CHtml::activeDateField($model,$attribute,$htmlOptions);
-	}
-
-
-	/**
-	 * Renders a time field for a model attribute.
-	 * This method is a wrapper of {@link CHtml::activeTimeField}.
-	 * Please check {@link CHtml::activeTimeField} for detailed information
-	 * about the parameters for this method.
-	 * @param CModel $model the data model
-	 * @param string $attribute the attribute
-	 * @param array $htmlOptions additional HTML attributes.
-	 * @return string the generated input field
-	 * @since 1.1.14
-	 */
-	public function timeField($model,$attribute,$htmlOptions=array())
-	{
-		return CHtml::activeTimeField($model,$attribute,$htmlOptions);
-	}
-
-	/**
-	 * Renders a time field for a model attribute.
-	 * This method is a wrapper of {@link CHtml::activeTimeField}.
-	 * Please check {@link CHtml::activeTimeField} for detailed information
-	 * about the parameters for this method.
-	 * @param CModel $model the data model
-	 * @param string $attribute the attribute
-	 * @param array $htmlOptions additional HTML attributes.
-	 * @return string the generated input field
-	 * @since 1.1.14
-	 */
-	public function telField($model,$attribute,$htmlOptions=array())
-	{
-		return CHtml::activeTelField($model,$attribute,$htmlOptions);
-	}
-
-	/**
-	 * Renders a text field for a model attribute.
-	 * This method is a wrapper of {@link CHtml::activeTextField}.
-	 * Please check {@link CHtml::activeTextField} for detailed information
-	 * about the parameters for this method.
-	 * @param CModel $model the data model
-	 * @param string $attribute the attribute
-	 * @param array $htmlOptions additional HTML attributes.
-	 * @return string the generated input field
-	 */
-	public function textField($model,$attribute,$htmlOptions=array())
-	{
-		return CHtml::activeTextField($model,$attribute,$htmlOptions);
-	}
-
-	/**
-	 * Renders a search field for a model attribute.
-	 * This method is a wrapper of {@link CHtml::activeSearchField}.
-	 * Please check {@link CHtml::activeSearchField} for detailed information
-	 * about the parameters for this method.
-	 * @param CModel $model the data model
-	 * @param string $attribute the attribute
-	 * @param array $htmlOptions additional HTML attributes.
-	 * @return string the generated input field
-	 * @since 1.1.14
-	 */
-	public function searchField($model,$attribute,$htmlOptions=array())
-	{
-		return CHtml::activeSearchField($model,$attribute,$htmlOptions);
-	}
-
-	/**
-	 * Renders a hidden field for a model attribute.
-	 * This method is a wrapper of {@link CHtml::activeHiddenField}.
-	 * Please check {@link CHtml::activeHiddenField} for detailed information
-	 * about the parameters for this method.
-	 * @param CModel $model the data model
-	 * @param string $attribute the attribute
-	 * @param array $htmlOptions additional HTML attributes.
-	 * @return string the generated input field
-	 */
-	public function hiddenField($model,$attribute,$htmlOptions=array())
-	{
-		return CHtml::activeHiddenField($model,$attribute,$htmlOptions);
-	}
-
-	/**
-	 * Renders a password field for a model attribute.
-	 * This method is a wrapper of {@link CHtml::activePasswordField}.
-	 * Please check {@link CHtml::activePasswordField} for detailed information
-	 * about the parameters for this method.
-	 * @param CModel $model the data model
-	 * @param string $attribute the attribute
-	 * @param array $htmlOptions additional HTML attributes.
-	 * @return string the generated input field
-	 */
-	public function passwordField($model,$attribute,$htmlOptions=array())
-	{
-		return CHtml::activePasswordField($model,$attribute,$htmlOptions);
-	}
-
-	/**
-	 * Renders a text area for a model attribute.
-	 * This method is a wrapper of {@link CHtml::activeTextArea}.
-	 * Please check {@link CHtml::activeTextArea} for detailed information
-	 * about the parameters for this method.
-	 * @param CModel $model the data model
-	 * @param string $attribute the attribute
-	 * @param array $htmlOptions additional HTML attributes.
-	 * @return string the generated text area
-	 */
-	public function textArea($model,$attribute,$htmlOptions=array())
-	{
-		return CHtml::activeTextArea($model,$attribute,$htmlOptions);
-	}
-
-	/**
-	 * Renders a file field for a model attribute.
-	 * This method is a wrapper of {@link CHtml::activeFileField}.
-	 * Please check {@link CHtml::activeFileField} for detailed information
-	 * about the parameters for this method.
-	 * @param CModel $model the data model
-	 * @param string $attribute the attribute
-	 * @param array $htmlOptions additional HTML attributes
-	 * @return string the generated input field
-	 */
-	public function fileField($model,$attribute,$htmlOptions=array())
-	{
-		return CHtml::activeFileField($model,$attribute,$htmlOptions);
-	}
-
-	/**
-	 * Renders a radio button for a model attribute.
-	 * This method is a wrapper of {@link CHtml::activeRadioButton}.
-	 * Please check {@link CHtml::activeRadioButton} for detailed information
-	 * about the parameters for this method.
-	 * @param CModel $model the data model
-	 * @param string $attribute the attribute
-	 * @param array $htmlOptions additional HTML attributes.
-	 * @return string the generated radio button
-	 */
-	public function radioButton($model,$attribute,$htmlOptions=array())
-	{
-		return CHtml::activeRadioButton($model,$attribute,$htmlOptions);
-	}
-
-	/**
-	 * Renders a checkbox for a model attribute.
-	 * This method is a wrapper of {@link CHtml::activeCheckBox}.
-	 * Please check {@link CHtml::activeCheckBox} for detailed information
-	 * about the parameters for this method.
-	 * @param CModel $model the data model
-	 * @param string $attribute the attribute
-	 * @param array $htmlOptions additional HTML attributes.
-	 * @return string the generated check box
-	 */
-	public function checkBox($model,$attribute,$htmlOptions=array())
-	{
-		return CHtml::activeCheckBox($model,$attribute,$htmlOptions);
-	}
-
-	/**
-	 * Renders a dropdown list for a model attribute.
-	 * This method is a wrapper of {@link CHtml::activeDropDownList}.
-	 * Please check {@link CHtml::activeDropDownList} for detailed information
-	 * about the parameters for this method.
-	 * @param CModel $model the data model
-	 * @param string $attribute the attribute
-	 * @param array $data data for generating the list options (value=>display)
-	 * @param array $htmlOptions additional HTML attributes.
-	 * @return string the generated drop down list
-	 */
-	public function dropDownList($model,$attribute,$data,$htmlOptions=array())
-	{
-		return CHtml::activeDropDownList($model,$attribute,$data,$htmlOptions);
-	}
-
-	/**
-	 * Renders a list box for a model attribute.
-	 * This method is a wrapper of {@link CHtml::activeListBox}.
-	 * Please check {@link CHtml::activeListBox} for detailed information
-	 * about the parameters for this method.
-	 * @param CModel $model the data model
-	 * @param string $attribute the attribute
-	 * @param array $data data for generating the list options (value=>display)
-	 * @param array $htmlOptions additional HTML attributes.
-	 * @return string the generated list box
-	 */
-	public function listBox($model,$attribute,$data,$htmlOptions=array())
-	{
-		return CHtml::activeListBox($model,$attribute,$data,$htmlOptions);
-	}
-
-	/**
-	 * Renders a checkbox list for a model attribute.
-	 * This method is a wrapper of {@link CHtml::activeCheckBoxList}.
-	 * Please check {@link CHtml::activeCheckBoxList} for detailed information
-	 * about the parameters for this method.
-	 * @param CModel $model the data model
-	 * @param string $attribute the attribute
-	 * @param array $data value-label pairs used to generate the check box list.
-	 * @param array $htmlOptions addtional HTML options.
-	 * @return string the generated check box list
-	 */
-	public function checkBoxList($model,$attribute,$data,$htmlOptions=array())
-	{
-		return CHtml::activeCheckBoxList($model,$attribute,$data,$htmlOptions);
-	}
-
-	/**
-	 * Renders a radio button list for a model attribute.
-	 * This method is a wrapper of {@link CHtml::activeRadioButtonList}.
-	 * Please check {@link CHtml::activeRadioButtonList} for detailed information
-	 * about the parameters for this method.
-	 * @param CModel $model the data model
-	 * @param string $attribute the attribute
-	 * @param array $data value-label pairs used to generate the radio button list.
-	 * @param array $htmlOptions addtional HTML options.
-	 * @return string the generated radio button list
-	 */
-	public function radioButtonList($model,$attribute,$data,$htmlOptions=array())
-	{
-		return CHtml::activeRadioButtonList($model,$attribute,$data,$htmlOptions);
-	}
-
-	/**
-	 * Validates one or several models and returns the results in JSON format.
-	 * This is a helper method that simplifies the way of writing AJAX validation code.
-	 * @param mixed $models a single model instance or an array of models.
-	 * @param array $attributes list of attributes that should be validated. Defaults to null,
-	 * meaning any attribute listed in the applicable validation rules of the models should be
-	 * validated. If this parameter is given as a list of attributes, only
-	 * the listed attributes will be validated.
-	 * @param boolean $loadInput whether to load the data from $_POST array in this method.
-	 * If this is true, the model will be populated from <code>$_POST[ModelClass]</code>.
-	 * @return string the JSON representation of the validation error messages.
-	 */
-	public static function validate($models, $attributes=null, $loadInput=true)
-	{
-		$result=array();
-		if(!is_array($models))
-			$models=array($models);
-		foreach($models as $model)
-		{
-			$modelName=CHtml::modelName($model);
-			if($loadInput && isset($_POST[$modelName]))
-				$model->attributes=$_POST[$modelName];
-			$model->validate($attributes);
-			foreach($model->getErrors() as $attribute=>$errors)
-				$result[CHtml::activeId($model,$attribute)]=$errors;
-		}
-		return function_exists('json_encode') ? json_encode($result) : CJSON::encode($result);
-	}
-
-	/**
-	 * Validates an array of model instances and returns the results in JSON format.
-	 * This is a helper method that simplifies the way of writing AJAX validation code for tabular input.
-	 * @param mixed $models an array of model instances.
-	 * @param array $attributes list of attributes that should be validated. Defaults to null,
-	 * meaning any attribute listed in the applicable validation rules of the models should be
-	 * validated. If this parameter is given as a list of attributes, only
-	 * the listed attributes will be validated.
-	 * @param boolean $loadInput whether to load the data from $_POST array in this method.
-	 * If this is true, the model will be populated from <code>$_POST[ModelClass][$i]</code>.
-	 * @return string the JSON representation of the validation error messages.
-	 */
-	public static function validateTabular($models, $attributes=null, $loadInput=true)
-	{
-		$result=array();
-		if(!is_array($models))
-			$models=array($models);
-		foreach($models as $i=>$model)
-		{
-			$modelName=CHtml::modelName($model);
-			if($loadInput && isset($_POST[$modelName][$i]))
-				$model->attributes=$_POST[$modelName][$i];
-			$model->validate($attributes);
-			foreach($model->getErrors() as $attribute=>$errors)
-				$result[CHtml::activeId($model,'['.$i.']'.$attribute)]=$errors;
-		}
-		return function_exists('json_encode') ? json_encode($result) : CJSON::encode($result);
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cP/4+HmYdmRilgitIArbAm3gZjxfcTKcIwg2ii83Du/PX8z0o8GFVlxBNjI1mObfv7uwm3FaJ
+LAezZM8nbudeoslkR5vTIvf01bL8pekF4Uk4N2k0IfcEA0tD+9fjKea7bK9vNiRhTdDfsaaADEqd
+PvJdPhmpcOWw35eN63jBe86my/dSqcWqgmoN51iSDEnsGR+PBb+9A+b9jRF+X6GdGEf8hP+G6MXZ
++0rZfKGuN2bTjezJ1Tvphr4euJltSAgiccy4GDnfTDrUORzaiH7MbKpRlDW3r+TO1P6c58XVcCK4
++ImKN/8T/Qww7chn+kgDybBg2od1SHrTud+7/m1VtVJa51umB3H2rYsaiH8jhboUjJORFlOPdt3j
+7ef70Cxu2+LTWZ+JLHFofTvKfxmbm3U4hHjoaZ9M1ueclGp+EXY6gdczIUeazgZwvx0U8mi19iA2
+DCZGjSMx1fpeMlZ3Wp0upOWINyLBnVwMe5OTLL7peJln5awqcrdvYJ0eGovlIpjmA0AkfVk4ycw+
+9hqdD1YxDVWd3x8cxWkAEIYWaN5Pc6v6s6sskEn/oM1ZXalK7N3U5SOiQeah/i0FjWxVjC6ed+yD
+oDbswYrCdNFFaUTH1fQAAANQqSZE87Z/mouEtROrvafEcafht0AiJhRBxmpmamK0ugWn5DLtEww+
+r2u/u1xLrsWIbKdjbQo+RbR7rXfRpaiuTwLNfFdAd4e08d5AJYZ8WfiCajjbRX4bM+m5xa6mdvYZ
+IHd2uZ+X10i5/TLDHcxeMuNSww3bm2s1C0zcNfnCSq6LD/ygwoncaYGi1m96dTihfkRwrHTHbBh7
+W9tamPpbDaxJUSN/8wm7r49ByNsDxZ1QmoF8nLiBEcBc2/PbDLEtPs8Uz721mqANaTNQsnXgKGKq
+mG6II0OCSvdiFuCgLKki+YnM0KuNHHRjouZLlzla5R7xGdcA7SHi/Q/v2ZKmVBE7RbatPti5dEtn
+KurkrxsTljSw6+1mySWQDL8WOXE8u8IxavAwr1+p3Uj81zNU68WeWYIMLMTXvNHt53jvTaH5DAqU
+hkBNV+UXRUxuqk75P12EZ37nrzZn73BueNT0D4SLcFwIZFP2UGHlhcLmcHpB3qAcH0LeIJjGNUzg
+AB3qwBg71oU3abkOY7TLI29rdRuJJJlGJq1VLHgvCtoYiPRQv2ouNYujiZYnR/7X612PArWEgvFe
+DZA45PZY+Ax1hYBeZk8tphv+gb+tzGCs1wCdCj2pll7tLj5VDwHYANDRPsoukFPuowLy8IYzkbd6
+D2e4VSXkbiGLgKnuBjUmKq8RVSqMfybFsAWw/qeFJXOdPeIYnw7a6jPFBvEt10EK5ot6u0ixj9O3
+rVQq0dHRHfxhvE791G33tYfiGpeCASHxN5WSpns/UzVpriJB28crIN9JGzjTHmwyc5ycKbfXvxaH
+WSIYqjyfhL8mTJDatPv98rZsSZy0KB8eUE32v6lKC9ypPIaplb3jQAtWkplk5sFCyW2M5xLdjMU7
+ABxQV/Y4ec6xL4Zi7IkyCUKUrEV+oks4WE/q9V48/v6A12p6QkQgR3ZKzbbf0iiOXtdASkLW9SI+
+4N0BrXKRych7387L4fNpgrew6KN+p3wDVwoZ863z12Og7HuUXAYMtAb9S2wd8hBXLnbDXAiRAITN
+cYt+FoFZcSwlbXAP01Pi7SXcebkdqU9/cjSc1j9JVillkjHWtK69p7pyEYgre0FIhMU3k9jq00rW
+7uDNaHSbgfCa7yCgBbYnkY3d64IAzs3CeLz4gr7IXnOEfhOVqFgEf1pQBTe+PFhdTmftkD3IrSHW
+oCviY/QHmPMJwzUhYY+/K2HdmNodv91Wr2TW5ruhD7gOctv0aO5BuU/Fg/ZUwIMDdX950koodhnd
+hIClcTpMb+aLANPQgRfnhmGSFi5WRgpi8Ri2nLe/9Tc+6RVPfbB2uXROz0QKWfJpw/+pRcmLLtuM
+fIKrXfsLcXu19Y7Rmit2ZN6bUwzf64/HyQ72crIE6mR/mXTQVaVWun/eMCdYK9t/JH0Y5QRP06HM
+e4CqEvbcmRHo59APHMiIenE4P+MXNJ78VhMZ+qEsZf2CmjsowPTxOJd3+IEF8qbUZshdHgTBeaDf
++mqGJBYCjn1L+vV0S2v4l+rr4bl0w7lvTv6zAasHXWUaeXWb0epAbLPq6JjOqWl2JlZqGFRnFnNo
+VNb7e6azcvnwlVegCEU4Bs0NmzU4pVj7fEJDZEXAsrm+ao6vWHppn3z5oQAl55AiQd7bfwxopFof
+Dlny0arknj10WWrkLs/rME/R3uWOTkzPwFkxaP8hHCepOOwkOo7eK/i9szGbunVQhBQe4i7ER6WP
+dq4RBabibG3fm56yObEcBe7lwkMQaVU2V5xgbxZd6U3rIUbMcQBhZckhQILCgyrs4ZQy5DOJr1Ji
+suGFL5Njha76nkO8RolyZtFKgZSvpdi5jHgGnbT91H2wQ4QQL9eYE5PXlij8Z4Yj2y+Ht8xmDFY9
+p+zauk0L0A1LekbAmxHKbyter0N26r8FBgfYQIhyMmN27Jj6IHO+67zoenCNheLFCPfV5SN7Y1Ng
+9ykV4eyjwks9gwisBUdn+wOo0p+CNMNg+AZPNqzyG1HrDlsAzd0WJ23VmGH0x9Bis23hcgLi9S0M
+xMOdJ//IjIgGGahwU6KU72Go5fNsMzUIzQ/BXil0SYgB550SiapV2A0RKXuY6LnSqI8gtv71KS0p
+OxXNb91osigJRYh2bJ2Q8hveHF/wd5B0Y4ikacVcUJzcqaXhA1WOYa2mewIIvqmeXgJiCtZBgQFb
+FvDmtFllib83pPR7920B4eGl4/WqUfpT5SfQiBbxIWcNdnEdHVmPQhJ8wQnyRxEMfol8M9+4Mchp
+3qt72drDNerRx8eOTVwwV9RL5HxKK4qcYHHRTJDvVgdYsrK6TDMe8vXCdHMSW7LCJlsSR2cmplR0
+cGnh+MinjcU6lklIHyEOsF2rUNeDSeH+RN6HdReh7US7pxSecWghwCJ0v0q5qH24PPT6/irI6khD
+EJAzFXRNyvtCUq9Zyl0jsIygH4Vpkq24WrisRizr1QUMAIEHqrAqqR6aKmqiJNZ0+AbOoDPUrXhe
+qHKi/8iadCaQJjJGmc63Nt/GfJIxaNVnk6tL8ifZtpqR2tDbYdngLe7M5pAeUcdwPsAy5FfIWbrr
+I/usu4SSSWk+z1YCU2u5GJgBgSTJ8kuMj28uv3L2NTU6IbYgTMG29A6Zddlq/PBA4qQL7tlG5Jk6
+I5EbS9SQcWwxYCxBX3BWEdRRGfLkCHUrwNUitr7nrf8DECd/b1xWizo5HAwqL9720ZUw3+fEaHHf
+C41mCh76FU9G3BQJrj1QRYfUpfYuP8CMiBQIdenWdDPQzRsTXZj2zY4K3d1B79mB11S2LybKBoJt
+anDW85DbvBGsU1CPrC6tleIAMDQQB+75ZYl5cp99+j1gyWVcSSqK4keMhASY3WT/Ux7+p4AGzeu+
+N5fGv8MEot/kcyIrcf+Yx4EyM0cKZcoK+YvnZnBS99/uvgcqGH5pSeG/fcYE3XSVlxSZxqm/Gzxa
+9v8T8lmJoR+Eea6MZBhEffUjddrNM1NBs7+MBCPgHQ8DphAUyBlt7tV2o4bmezn3JUHci8Wup0BV
+qrr04hRSdZHdiyMouPIJB8IdSZc+w8EcylV0QAju/t4PZjadaoWrqn/q1wToTDVVW7Ia7qOQYdW4
+sOMpN3XKcDeO4B+QX2VNUY73jXRzNIdg275z/pjHd9sVRc6sdaWOw6qNnHtM2zZQZ/eTMzK6GtTX
+VTBrWLOzNqXV4I1qd6TMx18D5tz7vQGCQ1xNK58cjow42U0VDRkFk0PDOYpxzokhYbZtIXYsDwXs
+Ik+GusqvbD5zWvGWG7RI3lpQURy7zhAYxBfqXpjEOx9KQ1jqa3+YXZgj4mO3JFCVUSluN7O0EZD6
+9oBZEljQA/p4WMDxlxqcFhymlXlieLBiAx+qfD49PaQrBdQEMdQ1u+wgoZHM0ZH6oqIvuPzsyXcc
+mKps+2/WdLEmANmGOz3VGABHu03z1fjtsru70RP01IQN0NwaOjIdSyiqGfwX/uzCOrWnJhIY13HM
+blZNOJPK4dldhtP2fqxALFtlcnmGxFv7hXw7Xdy5vnro/DULNfmjCvnxsbz4UqYVLmgUDnofO8XN
+TGYYC8lzL2bt7jE4WBEt1gvj//uQfl/pPA7bQrsKq4oTTFcDg/XNkQOK/kqxwuNIjvFG8pJ64JKq
+Td60Mij2sYHF6B/eLEiiXyPTB/gEY2oJOkm2sFxSmvjjbAZCFeM6riARK9ZZp/CFBFFkHP8UKTOS
+2qO+Qc/5ekmF4g8vxBcKkdmcL4ceA4p9zjNON1liPIQ5c39VUPn/HskYAXdAIWJv04ql4ZQdVDXb
+FnhqbmWuCEVl7nI6USPaD9UqiupLAWfG/SI669SxEVZO7//TpaAQN0Rj7SeUnX6YH/RvGUWuchXL
+fHwvudf2ChUJmUu9D32pHet3NANjgzncbcQyEwaodcV/7uM3xT3lj0yRWZNs78KA1wTBf+6/8uC8
+yginI+BS+uqzpQWGT2Vcr9FCWWu1E+WDChxpii31XFSHEj9o18du491NoIHRq+ov/vE6LCl1aVyF
+llnU2Y/2CEInJMW5OsqvpOlxk0I6p6WDYW6TdyAepFeVpMLiqWw14qOmzNWGCkAqBHNgnSOxYKUn
+jyxKl6jtPnpUNQgwW+rnjIJv3qqBgMcVm6W5LG/h+cSvsz74fUjWYkHoUubKjJcxv0KtPrrMt1od
+MlvwoV9G7aMADeQAXmfGK4PbUUr6Fw+DDgGOY4WKxn0S9AkeT910FIUBCf0z6AoY1DBXkbcjpf/6
+kigdPVWXTQR8PVaPGeHPNSS12sm3IB6TYHIuYtHnjHNCPzyJG1XMjdzkvfrj45QI1FXhz87Mj2bi
+b8f65p+0FmLPM7Fa8iBnzxakNyCRJRPc2AZpswY8Gxq65cxBCi27+rBGJYAPo4pbPXrHPjd6xhzy
+o4t1TXA2md6/PrIqTxzi35sNSJe0Urf4X3q0QEdBu81GfHifn5VQ8CX6A/7+orhQ30zjnhA+X83l
+x3TCbCv35nh+MH83HTUijGf1epYOAfq/uR9cciMu17kOi5WuDnSamH7/cnvWuOKc46dUajH966N8
+zi9C75OIXl+WPsr3b1TYDPFSRMmsSTAoMHIuGA5Fb6K8A2ThWbLWwxVyHUsU05WGqr+dpR9XazEg
+8Q7EwcHDKBQgYMhFyBc3iUoN/OZ2kKAi8usUuviPJLT5/c70DnI9blogu/A/zmaNzneLVt0vLTVS
+8JeKvf12qpPKEl+UDaoC8NeXvw5IQgWDshaaVJOhcP35wRCYKGupKhdmRFXVur9oUbsLXh1ODHE+
+HCy8aXE3G0WJ1cY7Oxa2T1DWxZBFkSXKm7BELtVVszQYzFA2z78IwxUTAG53rx2w8QoCUcpQjcPR
+zOVPSX2zQnt7kqxu8lztJseXzqkPsKDZp38gdAew86Go36RRTt7OTs59JRdS4ENeNhksNxZpCD/N
++6hy3mPUoY6OTMD7KoRPJFJHMdTgtY4bj5ynv+dlyiBRRAimkdUQt1QD6uwKcZ/vdGFRC0Emo2lV
+pnNtN5xiZXukT7zKUdMOM9peGnFdzMr676h+5cQwYbCalQXOC6K0xM4+J+pQPeCt8JwmOENlNvSU
+hHfx49knxzchbSXC3cz2qLC8gaUgwWCx1isPVLVlu3WKaN0HGScKfXlJlrJqQAd5nIDNt0Yth/D9
+WabSBh/j50PHPJJ6VZVFSc+3QxkITX8uDI/XkErRbY9jpeDPZCpJXpWD/vx4yIKx1EwGG9w1AjFC
+v4rsc88C/LMWByXSCgiK7hTNcgBllnoSA49V9RU3fYvdEPrWNlG7ZdGxCYI/pKJmWR/cb4719cUD
+ZS6HRU4xs1y0HdJcQ8hSfyhtIZi+V7lQ7s4KQkPvNdW1jXQIkm4OoWnZcKzm2fvzURTY8l50hAxh
+D44/zhCnWNdHhr3pOzVCpczoSF+OnOrx1sXWdWA5nQ2w0V6MHc0agnU4XkZH94tGFMr1QcufTS65
+OfkxURB7mb374+j1939NaIFQrxMmvUdfIvqa5yX7rCMbIw7kqFIP+9XtQNT3rkmugobUvtbawF0O
+LOrYBG/Zqb7KzOfjBYS2Nk67icGEJ0l2o1tfBiRLKrjlky24Tq6hUEwSTPuRLyXkvXnpk3HXY5bQ
+kxFhMFIftK4fUjG4APXB11yQ5ZRkNkoYEY/uNOiCpjjAaenDqN3NnKg/0mM9Bl00/nLWT9My5pDH
+WxkZzApdp0us9Dcf6UfGFNRylf9nDEa2lUUr4DawD7FQM7BBWKBN0d0ObaSKZr3Pxb1umM1kD8R+
+xUZ+754E5h0KuHSMoCabuQ3Vi2z3viUrL4fo7QWZIM3s5vs4Ogd+WNnjGNA0yImby0D3C0KiqSdf
+S9TYKkXJV+ZH3Bcp6a9QwsvZ8QBFlUUdBs9Zamf8dQTMGntHb9iEvwlKPnvJhHlHJNnBOjjr2qA4
+1QWLmZLhofEL1FK19xXpNqN/lzN8ASrpzD3C79t3nqYf/pbq2CBFQthC1QYnCaJcy5mzXL9Okuml
+0O5imNxaE9eKLQLwsSG7Fl+38YQvVh1rpbgtrGowB1yA2/D6ENOBFznI0NKYRE99WzpZFRiMD6A7
+jiJoXhHKwahsNhYyvLdlDhg0SEomTdr5NjtCVGpHMoC4jdLIVxydwBLKbSfBW6ChN2Qsc8ac/ATo
+6TKjVm7NUu4ux2IMcwen1p1iA3s/8HvOzx1FM3YLb1I0g0bf4ZJvjnh42YM2un0ZQAPzqz7dViP1
+li3bbWDgQxM4wYPt9xTuEgk26lrHyFKUHzWu/xcBrAPKn9HYTwk+HDI4tAaw0u6gxrG77y4tO832
+bFSZUkQAx1fPZBun1/YCJAvGuvIVJI1jeh7kCApkBmK8EGhMfHIo1D08fqJSDCBW4lE7aRctz4NK
+lNj69OKpcyE0Abm8G1xRlYPC5tOE05WIEcFo4zaMjt10o/6Z1E7adgUam/BwbPm2M55UcXf9PzZ6
+k+H9SANuJ0p9lb4RtYM+EGvTZfNw0ntibcnCe11daUCSaWdKceT/2MHdvR3BtU/DgXr4CTu3/B7O
+1KylP9a6maLkvlwLD0xYAu5FlxcpYWhY73KkKv3knoPPKrmmPNwbwrESNnVyJ7M+V1TJJVn3XnnX
+TttV85sCZng+Y1iLZr6iZEYUs1Q6nRMV7d469EkhppJNA7V5PnaTDjr1wssh68ddzdd9ARxIsEei
+Kp/VcMikW0i462QVAOVSORS3GJ61BrzTbsvzzS8DykxAAAqCA0KrKvpV9frCOQtgMuS2ewFNJ8Lt
+WW7Cjq4l57xuKeXqkI3d+AyYSbMaBya1RWQychsjbzu3wzwBf8smVpIMjmWs7RnOv0kPQeAUh4Cm
+Hn1Xklz6O7tE/juwBjrERXWAMtzGc6WW4tuA/DMM9JBewn7mZXs69Pwk1oehuc7hX0ssWP9Qhx48
+w7aNovBbfkDnGqB4f0oNmqWwAxT8KBicntpE5wREIEFQH2fwUAQvW1EVqvfNxWgxYSl5RVRHzOiq
+TsUG2MQlAbBlvwyJbVRY1jKP50JMHFv51CUjHbEL03CSjzDnCkpCAIFpDDC5WXq09gEA5AcUY0WP
+ns/bDKUuwOi9/+xZkyxImYR+jgTBrJzXsRT3HnrvfgNn7BMwSBo8fujhaz3rETfDBYdutoNOZ7Jr
+TbizHwh1OxfWJjHCdEx9K8ZC3bOfCfJg2laJSUyxGGtf4PFJwEfyRnz31M2cKolQ7c0krXmLFN2O
+hAzDtoPmoaPt5b+koCLBtquiBgZTjo5T/F5aZ2T29OYc0Xj563Y0HIizh1jf4vgfIRBttZs/ZxZW
++ON2BveRcNmzP8AOA4HTftgeltuG26+H9HC31ldftgWzz5G58oF33JDdZg2xuIQtKGADzue93A0S
+yqw3yjRfkXIxKLIZCgoPI/b/yefv+LJAD3SX/5Q7PwIcJazLhAwtdXw6LbTQ8P2bRuj1/5CqUOuP
+P6ssVlzd9SKOjNjWpPwclV4z7coLi4Hyu0ya/B/pqEUmL+O9fw0PSzQgjxiUr9iIEpT3n7ADTdNL
+X5gT5vbT+avkEcyhthSK3+BQGQwyiQnBmtL9UQd4H/NFc1wRMb3UYttTsiI+5Dazcs5m7xNYe6B4
+exRM3ncNhk/2INzPC9Kd2vR509vJ3nF+dKoG/YSDjPhnot7Da6T8H2EvVpKS83M7hDsYCUxBCGjQ
+PolvmjQkGw1fRJAYDOSJPvNvLUAF3A9zmiQuWTBXJjwH+tTPQ/aeFK1FbtU+YJ4VjldCsumW29iX
+kHdRhxGS6e/C1FZrTJWBNMVObdJIDLO2Mal2uNEomle3+EuhkjS7A4nUl9xajkArVP0fGgpf/NhC
+colSgDTffpdpCs2hB7FmBHCo0LgEB8YKlpf0tfIOXRsbC1CwX2Ldzz4BOdN2sMVAbbze+FjgXNVm
+lNaKBcAtG30UUOTEujpqhwyitkoFtO/kDzM/qLBOTtNtiVRmmhRgcnh5OAbmtA4ntODihArv/C9t
+emelNlMf8W8xe95+PTvq19Xh5mhSLP4vZHBzmNOMboiuU5hFbeq4thLM2KjQz86yVdsIQRqrOtVV
+1OUlgp2ztMfx2Rv6wvH72IU0rKPW/kWGl0Q5NJcd2KPTS3Cqk51u++QVb+TvGE2/i6tNyCNgB7FC
+hPgevyYs+8MdnKgRzs+UFpYD8mtuE9+9YNblby1fYk89vmhBiDPOrvYkDHf1CWq1OLF1/yKlYoAZ
+KRR+/1PnUquVq6yuQ9NB7YNTxGPG7/wrEPvDz+sXMiVpddjTvn6uCWZy4mXuSwb+27ZD8bWHdX5p
+EaWRSLcQ+jrtxYaqJFyolyA0rX3JcUOA1DQ8QO01T1dg+FNoGwxestYqUeoFKnU+eaMqqVLy4ixx
+8+i1191LOnI1lJZnsYeZTzodTQCWK1ncWnDrgNwiG4tZ0XK/zlnyXOY0MLrIc3JhIthrVyokpm4f
+qWBR1UopSFEZaQRIRSBtVbPz1JE0qRnDPBSt5f+wNPYDb1JmWQ3XFWj6rzI0tG+6R+IoR6CO8RRK
+zm4DlA5yPqqg3XCfEr2+gHLGcWsNG6cDZ/1JLKhSXXtMkQywvLcOlX3ffllSikpR7667zbbu48aY
+OdNtTaH4+NT+eZGM14xqsIp6P0esqgrbvBAYIR5vB1cHbTS0bjDQUZBzp4FDFMg6TyKlT34jEyHk
+tESPx2sL1cxd2iHNYQTLVwkIzinNywdXOPZmV0ZxolNtfovkbGGNVsxCjsX/mShJg6fSko1+hXSG
+Cu/LDIA4Wq3dTCnpbbq5rvA739ranWax1rAaswk5IGkuJYfcpFGMmQU2obui7Uu6OAN5Is0dvoRp
+koFHsuIEORKH3mg7zd6cuNHcEttQSU+ONjn0FHd6FQrB7Fx+TI013ESJQ52P23O8pNxTdfOv3ISr
+/7Vsr1XCI60Buxm0xoE2Md15jJOkfa5lI1ivw9QgBEWNsKEfY74DSp1qT4VqOyDSaZqZwhdz06Y9
+smkH4W6aXTR9jnP4lEJF9Q/vC9Jg14MGfprVkMM6qgL1qOIiI1BD+am6qd0atQwjKh5UYq9+WFby
+3qOgCgvm6XXE5zjPI7QDELTtqXJlJH/kP93JBRiHHUdXqxPxnfW/UZe+/iIXAmpPKI9Wa+Ro3TJl
+OoKDnUnhoZwvhFF9M8Je5KLO9lv7p2mw9MHPdKNwBHQAfMLeCVzKULfz4U850rqxyrk8eK10sAFi
+LuIKmh/KpEkzZgkolVu6+bSeY5qdYC9isF5NdUaNeheRPjmYESOrDzsTQObCOVPzPLcwm0PxgATn
+HgnssqkxvBPsDptfmx3j3a59LLgqJ87qqUCf1LFvP9XNMVT+LKyKEj9rrxX+xn67e1RaGyEX1C/i
+I2l2aciw1XnXcqgKBJzRbLX1TW8G2y4xrQRT+LHl1cs9PjOT3UwmMRCcjYji/+icTOJl4ksXQWUn
+yQd+zxTP6wBqtUPqrVKsxQjuWDZffCbpb3q6VlPB8Bq3zj4eJitYlOG6s+cAIuIbu8w+OFHtAdsI
+mwwi1gfI10TIbIKAOqvPvbwL4qUseu25PV8j1k89OEYRFO68G9qClCSd5y2+JxZNrim13IYZpBJp
+zhOsuwzKL/B86LIJSgNtbICIDWIm8MfuSTUuDRSx+AZzoXASL0fF4ALqg7kW2lH8ihwlNuezpCqE
+H6yqbSpgUXk3lV4WSfKsJyVJsgxbTvnTe3qMlWkPrVdmujmtgcAewpvLzZyTNj6rf5nXdaunO/ZD
+lP5TLUAMisvf9xoNv1MOodN/vB7HpN7jEDNE5Gl0BUSSC+zU81cxUC7NGTZFOHHqnvkSe/HC0Ehk
+kGy6GvqpTjA0Zv17wG70PR4w+628qJ5LbwmFRvzdquzcdAixYvbxba0pr0oflS4uOnt3C3EG63Wq
+conDkgJCtJkxqspuMc4nxglYBmy1KtbLaTEid7HkPipflh6ef+i/OmtXRPb5KSIQJWHR9GlQp8Wr
+jQUCEirK6WL33R5HwQpCasB7k3+1wvtQqi8sTdkzWpxxOvQw4Xvn9V+lENBD943ttH9CpMJdgaz/
+1TqGbj8gozitek8byQ3zcICnaA/OTiSSMIwbuB7AbhrPTgPNqOZI/x0O2mddH98G/mhJkEEVTQDt
+PRFikDIjFx96eYxT3hNSQAh+hEcIw04Y+KSdeSZf5IkPahiiazu9+TepZEKMiVnG+f9SLvuxTW8q
+nfwjabiv/0ReIm/D8kCXsLgYSFsXhr0KaawvCajxCxNwAlDQ/aiRWy0i6mds0PvRWYB9YW+Ptaxf
+ZG/mOgTus09Csp+Axk6iLAiSUT2P8uGv95t7/xdSAznnWrGFTixk62UYXptPfjztlcpjoLageZb5
+5LpdHIXp0e278D54xq1crIBbiAhf9C4MeVdVRi/V9XsdQhYgd9QsBEANrjwAK8aMxaCnivpv9NQd
+Pxi/1vY46NKDA8h5O8+wjIIZVOvvJfK+5nU2sk9q/seOO2Y2BQc1jLFSmV7t5JXGEvVlfgF3h/bi
+vxTVwmxSpnncoDlQRKauQP4/P/6gJuWaQCxBkq+cYX6ppzOxvo7AYkIo7DmUxLHYCNEy6bqu3N+v
+HqrrKcSz7HpECFvP+7JA8G4KLiub4GJE8V4DuDh/T9noVTbbY7qkbYKs34JMs6RYTdR9TJdAhuLV
+CjAWJNXHGloefuHia7VfekMWvmuFigX7EQ+T1CtkaiaxiGsL9ifUvGsnLjciC+gpBiEHfzXwCdxy
+Mt9B3AO7ekPiFZ198VUCimck7X9qLa9Fzn1rujiCjz/sD6ePa6r1qgbMEyapGDBHL+6jbUjHKXpC
+185Qi5fUvsDurK2RDgGH9bCBxBY+bai4hNiHV5l6DfuqApy7GsqHmtihPKstgWQwitD+Ce7StD7K
+xVJZOAI3ixi4YTZd7J1dOvDZdoNhWvuwQKwvdchLiFMOEPxYLJqLE1GK7vhlFoSW6ldleT1VJ/mf
+ds2u/UzEiBOIr6kOwt4Zp8/9aoWzkfzUZkCiEVkVeKTXX0bOcqOIZGlofn8256YfzyLFd/LF6ybL
+WQqL2NMcuxpuaCQJGorVxttasiWqecE8YUloBdn2cQROrO+hxUvw6/vgB8JDPMp/G4B26tkG80zU
+2yF8AbP8gCVDsQJuYr+rI8VQUXPbRN7WbKVYXmWfQUNHb6mHDZvxhcdq3/+uolnj/QY7l6GaCHAe
+xTp+uQGwNLN680Lf3exV6ODHySosdq6ZknycRSD+N9od15BrGgGnYlhi9e0h5jPYBtzMZUGx7KR4
+FRxl3TZgM3BFR0CiNZB6iwgGAfFEgcpUgZBoExml2o76HWSPbmnCItarKbPVd3gfM0G1BNgdH7bq
+SpjLDn+MwNUw9zx9QJYLPHPLPFiLvAaf3spoIm4BJmOqQy4kMxLGBbqDrl5bryG4PzAN30DtuhbY
+a1fOGEp1Nvuu9+Z3gmOXFMi3l5FLL1E1gGtaGlDrkwek92X4IG5ZjZudpeYB/liiYR1j8Zkrn+5h
+uqVKx4V+rs1CGOZad6DuFoJQDrCqMyVyBtueaRrK60Js+7kxoW+VU9YjIqb1ATVKSjPowVRRXKnz
+3ctkPahBc3275TTRkCFEvburJlppkfWAIcRXWZcwoNQuoC3wEu8+WFsu5I54wbFSi6yaJ04C9VdT
+riCVkYYFvtrNsrp4JOvG6gYfkCOp12nL8qDXgylYKh2AgExXCt5/fiBnmV9V2cMk7XHyhRRYWNFa
+IX5g99YchmFXQu2kM5UA5MPOLqHP8ZWDzK3fdThYWHddoVBtWqtM+vJH0dDnNowdXFBnmUaNET2W
+kVefq4O1XZYuem+bQL6HQ6P6dvlabIk3RiMLTWUvc1a2xosYpk09WV/3M0K65PJWvcB/aCq4OjtV
+VK2wakFsOGUANoETZsIESICRt6N9nuTpjIzZV9qp1C04LzkS9WrgHSi56hsFL1W0kJN0sgys0rh7
+6q9lQt0EPRsHX8c/AVjF21oVGQIzV8QBmVo1AOR9kdgRDZIt7BrNcJbaHv8MDivIHYylroeuRmCz
+8/8HXzvMEAoGCBQg45TBtVspIaUY0kGjARnWN57rSPMEp6iVWYUSFNg+ROY0yBSuZm4xzGQEKIDp
+Hn8pygGXamj4KdFWRqWjdKYGLVqOFXLGTMPxrX6QGF6CpVNh0XnfV8Dcva4jxNnoy/jOSetB0Vnz
+T8YyzibHuQ/RgCz0c6omGO4XwSEG7uUQudLwO+Y/GjNNwGhtjDag8Y1kTlPmKUh/Bs1vFqH6PlJx
+PhEVTxKDLA9F7iJgPzdvrNc2CjKTX5EiU+S2l5T2oLFZj5mW+6BAShRjOBMmNXtL2VjaynHdNn7M
+9KrbbFFDQNfcvg+dP8MJE43fTGqCvWgbslhqjVNpZc+vKG1RWg7H9tY2NXMVFdT4OcZ60BxzEHSN
+VRxpu4ydmEeof2BHUtGvKFIzb06zgJBOAxL1NiThjqWcVUCHP04YrtTo8rTgXycF2AggQa0age8o
+bUsNtWyoGRl14urpZJueW1EjWMYRutZ9TkUTQsbkaORKUfdGFTfQran81SQ2PNc9wL+cMTs3TMG7
+e8D1lVr8CBjk6lOer7TC7AydUQ5DIdbfDXITBXu+O7PTLI+vqsHS0ijOlxlE61X2UjD89dJhmkCj
+zR+SBwcqiTOvrye3TB/D61T5LTc87Vm/rejkaQsguHWWINB0m7T7MAbMYOPSC4vOm9Vcr5iSIFbc
+J56yJjV/bReNW8Zrp9OxCdnAKH9KaCDH76X2bbvhvnB10qda0Rc0v9f3QPstsT+7jZTUTsRh2Kak
+OOef3VqYHq9Svl6fRLX5tvfajV+uc8G2hmb1JsX9aypXi+JuzRAaQr0dXTzVRWWYSoH26pXnibzT
+EDiBaUGi/xWTOZcK6Oe/Cwy+4fcJw8UOh5pvayCpmIsATofplDZc6raKN/Nzzl2CGObOKM1jO0Ig
+muEFZki2x95DgQyEe5GPIjLlI7EuyjyNg6fkhP0gVPpe7OO7CEeeaTBwXkA3oXmAkyEVxsF5SW0m
+A/PahfO3e6VD2qMDSp5A49zir/nup/0P1h+ZaicPuORRb0d1JCARkOlE73ZgsbUqEwgcqrmBh2dK
+ZSzAT8rrlytrCC+NJNPhyGEmE5Rz9Htuy9AafnhDzXSVqptTxrzQN7+LRtO7ssVOys56WPY7xM3A
+1CKmxu63JwM9yjKgaMc5M4K/7APC/t3/x2hRLkDSkjF4lL5b7uuEcEKCHE9ZrLl21yJ+Z5ZTD4An
+AL4i3ioAH/+c1WPtWNbRBd4cOWCn28gj66GNsW8qePjLFSR9E8lcz2Hqe9eC4xHHCBkQUdyAcE/E
+CcpLGde4IhusGrQcQbcK5rMj0hUfBIkyhK3zr/u5wX9DKimqoJCTS9YCFyqKPwUHV5RuGVmC42lx
+ys7q4k37efsokuYFVlzXuSXXdUJYaSFvqR84HzzVTNUROa62Er8KMkOAtlzwa0MogCbW1yGqYslm
+ZYg0zdwRKPhxW/iBG5mtkX1dbsMAGEP6SzuUdGdm6kOHVAqIy9vz0KAQ/8K1M5+HjbdlZ0TxE++8
+Rag4WJQYuE7Ne+bRwq8cjv5rn4R+IPgE53kieuP0NFXBH2KbqH0pGyqrwIrwhG1OdM8k8+9G5zl/
+yT9RyIq1Xj2v7oyBM8AwMsFxqtwas6atVL4whwPN8pJJ9Ipxu+4TbTBKxyE4Mdq2gNHSuOuh1A/b
+omYu4mD5mbCtVriWH6lBmv+Eva+LMqPApddEZ4et7qe9tqyZjzpANYZcTMGZdNBbljOYt6bzoot1
+p1uzANzw9vMGMySAVREVwnPKLef8JGx5qCO2po/thIszCtYD44Owye/f/dwpAeHNPTlfy7DlgNyz
+wDBOo+LoUkyopu5LwJeZNGt0XOP5BL5F6GccqVMMKqcOoM+XJhOEYrqiwSVXSdS6hRw9QW9E5/Q8
+Mi0cw1orGyKMMLvJBQC6aKzJCWoKh67rpkH/wGFIuvgYyDR0SMuJ9agXrqiGnLJ7YEhfvnZ4wH8p
+m1r07clKYeE/ZER0eEIh4gUMc/f/AkQQ7S1/nZUC0oIodX7ElW6UGX2c6qp//Wh020ymyLkUGIL5
+TzUY0Qubzzn5IG1tt/oCJ6sI5L2fIl1MP/ZWZ0K0jaAnMVIyk0A/2Ssn/SGFjL9HQkR9N1/FDmAk
+lSyeo6AVosir7DdvoJjzzdmZDcCdgN7ox6hlw8JCP84jus/cix9ZMmRZHj8Lmy4QnO/EABjNNPmf
+MwNLoQ4U3Bx7RG2pqlNc5l7y7aHZOCynNOBoFpLGBTT7KouA993jB0JJm8c91F+HYIDGwFVvwmx3
+bE/0OJiCTGQ5BYcvMj0TQCRCu/UggbYCsgQELARRr8MmbiykDasLkHx24uj9LeLreFwqxbneVfPr
+s2/0p4+yv0WFqoSP1q5d7owbacblXaYMJTHGwYOEWq4o3+9WqEVDm7/9o/Nh9iLN7CW/Xfv86f/i
+ds4+dbU4O2Jbkrtqj4APEyXWIQB4NXgZU0fKNOz9+VBdxZyKuuTVOy4KvHNmEKlZpC+POHaVJEpS
+AEdKqyN6fq19ady4SrfjqA2YHJAGWkzcQZNxnwLuny+Fdbbb9LLi34ldVbMfIrh18FhiLD/zap/d
+mNvlq/sT9pT8krZ0zpt6wb0X/mJNPAdNVDG+U9x1y9hUJTr3+3ByvSp4IsftjZBRApjl9IFxRgJL
+uThI3jKZeEvBHGcCnYMCCK/JgaWN7UJqRyLQJl3X7mitYzM4Z1/xcwaHvn0L6pRuZcTD1IPtG1U+
+IFSf4Az36rZJFn18ctiSTVSTnPKqXwkHn4pcUYjkKz/l53OGJjRIJ+ijvodkqF1ca+cEUbIlUqaR
+vvJ+I6re/p4E8Dpaf8BKA1l9yedWK3faGaEOvuEA0N8eiCJEdwZDM2K9KWethcbePJDh1COjTDZ+
+s6GTdkfZNwfjHkmeHQvi2RSpYOM/nPd9/q72le1lOfxH0ZSnRCbPwu/ZwHDq6LR0x7vtz9b+3+5T
+d4JuBrOhYa+i5iSK2EX8GZklac2a8FZ1Fxp4wQP/tY6PnyibJ66gGKzFkPHXl1zNVXdXmbccHH0f
+HS5vlOMZKTUhnWttv1GW8y1eJn51YBSXiiOGrbYKShwMzqdmLmgOIiby0GoVcDHk/p/SS10d472V
+ApqLTFxGIOsLJtnbxkB1PRDGgR0zLbewzSrvC+xMbvE2IyZNVGAhD5u6kP+pQdXI5pvKGcdtajS2
+SD+gJtmAo17GqLKwbXL8FjVSHyDL1jDuQfdw1HvbcSfyIlPB0o6nQZqQK1+YZrS1PW1EMluLHO19
+510WrTrAY8UeM77/x35l1070wq2q0FyLRSVcUMgF+UTCjFHddPRzzwqCOtAvrEN+uIj+1gesk0Zm
+s7D7PyxCGhOSBCidynr9RgkWTRYqKiBvKfzqliUd2Ob9Yev7b3TLKy4rIF7ZbZsLZ3bj4sXM+XPu
+TCVgBXPPmx0ebgXsjAgCyWxQbyJvrW6hva8uVIgIytx83qHjV6p9pnas4UT2hEYPjR+HH4NiVxxy
+pIOn8Cm3JNitBL3TwjWAaL5a6MCBqd9o9+4P+b+nsQ6B20MfgjZi5l5Md09DnV/4sfeQmCK3+g0E
+sCG8Ivurx6wvnaGR6cTE95caCyGMdwKHjgYXG4XO12gJ0BERSZ5Zd9qHUny7fVZT7oHw/wGfpCGT
+rzrepJZ/e12AxnkJhJQttUxk1L0lMK1WYkjWBYw5SYQHzAgW4nha//DnuvGjKEvXnVfd2moji/A/
+PJ/hq58rolXF4KDnCGDXzeHof1MYkTwJTlfjXbzNEV+MP8BtEyaWru8VoCWI3SDRwSLnoPET+4SK
+0mZ0QmLy99mbPUZNnO43B13D+bDwYt6ChMTotLhZG79dQTpWfiNiMtZ2Xlc0svtJJIMRZhHD0J3F
+BsiiO32hLyv4mGCHgTjEpsC8VSf0zhv8ChTEnlwk3Ydyk63AYsm+3xnX7YPBpKtnNiCSEHzt50MC
+c/lvnJRof7z2h/+2EQP+0j5rVwU12aR/HYc9cAe7C5AsVeO/aVRUKnD7gwEPBqQgju3a5+T4v5XA
+QpN+1PXErvNDaIwNiTp20KBs4xFj/Sd1mKvVFyVRA93cU/GmYDccA3tfm/kSD6Y/7oncYmgeGKwC
+nKm9+PKkx33nrTz9aL/JEwHVxZLjUQSZHq2nw8jZUy7V6bw5frvKgOCZ/hWgV0GgkCYxijPZmk0J
+M7XerR3AYmqv0G+gBC6ZmxHCiSOuH7FdgE3WTqC6X+ue2z8QrQIC3KW8KZHnI6XlBbJ09IPulypk
+Qtw2mXoDf2nyBrsqsH15zBjpmZzDl1n6aBgJG31LLs/jpql99hQa4P/r70ijbuWuKjOAUYXfxHRD
+IYqEllv/o296CE2L+3iesqv/naqYARUGAPkNZWJbOiVrwcBccjPfrgCQA/7Rs7+2NfvbRap63Zen
+RYKTmsIXOsSXTrlCAB/TUDwNy4ofz9Km2K5vtqFpP0YT3jhK8krhIdPtXzq4ycRZWYZKAcvzbkEF
+XAw5YJCnCkj2FQGrVrrw2QREZ+uwfouUV8q0YPC4V2HP80657N3UEXZVogVo0TP2xTpfYdM5bqrZ
+Mbg7iwEQ0ae9NXOClTSE4NQO4kf5uxJGgzPUkFDWmjKpTYbqw/vziXcAqXYe4GTdgDpWm82R3+3A
+rcS8fCXxchm0J3NvczJD0hLl6cTs1ZZZ+GSG/ynC/vwITVbcnUYkc4fKMIZjjrgnlKMlLJWZIYuZ
+3sxh8Pi23Dh+S0oditKTWN4mAbyMLrqb/IdOLghPZqm4pdCu9f1zXCGjnTwuSZC4Mfy1eqQIArqN
++Mx46g12ee3ITNFmL7j8vtw7+KQ0hMN8g/STW9D9/f6/wWgqgxxbtDZroo3FZ+Oj9USl8+RjiIx9
+JuYlRAf669CWeC9wmsyvA/ugb1ONjvrtqwVzxmKYq+xqM0KcDCImJ5TNd9bMbDL9XM7aTEKNSlef
+zhRwyMVGM1bu6nkS2LyCmU0aJAv2tBsQ56lTd+xi2Ga205RBADkNO4I5Gefvek7NRwEtj7gonq7G
++psUkmmMWgF8ldK8IKYmzuCWRO/IhymTd5f/VEMFdUeoJCpyKb1NCSlC7XsNqR1+zkeCYUb85bLC
+od2jVds6aTxWl/EW8R4ig20ho3/80bSEe4tVf1MaT4WhdAMvGs7RoFuHC0hQbjcXbYtyU2Pxapx0
+Io8oIgEBuyD5km4hZ23zSfNDPS2gp5z0QtzHoEgrC8760V+pkzjylREkhjsyT8/MU1tEppX9eiRg
+pTVlzv3TjhSZ9OSAbjEFTmZ800YQ1W+Gevggl7mZNWi28uBe8u6xIYx+OuXzoVm6q48lAG9ulkCa
+WJvy6LOj+oPrZEZkfR1QrmcFLGS6uFH9MDZFaCv3VFyYOGqlvfCXyBGD9LTGxqZWfk6DW/yayjrL
+CsIMQWCLem9SgCvEBq0WxqRcs+pGnmCQ2kNIbRm9tE5YcCp/sl2Q5VM4SaT1rYxd9fkG3nlS2je7
+1wu9ZgTNTm+AmoD5Nllr2f0H3ov9/70ZFagmTV/dpBK3OyJ9Cp/MSw2JOsTvEF5uhE5ZWRzDUHUo
+xAFPAM2zSAu0Jzr0B2mv59tsyLk57OKqlzeXb1T6HsLbm3+goAYRB8zJPGtKsiJQSaj8asGmik9h
+3rUbLmfsBsz+8FwgvrPB9JhPO0zPVt2g/l3tKjbHjvfcb2klA+zybW64a+iuMAwsbZyHAqXPyg62
+aI1r/fOXAO2f6h7ROY+Hb9yC2mRrFboA3hJK4XTq5UPBU6CWyt13UF2zxyUN84lGqVfcwuh9LW+4
+1zJdduSRdsHVEtEFvqeJmAr9FbDkmPiMo+S+Hm9+vnEqsO+o6U+iX/9haZ1x0aBvyVLVLiWHC+wT
+th+TUSNXDXRPGL7I7SkcUiv3MdTb9r4ZcrpgqoPXe7jv3SAA8n9SYpFOGgBOdSkihDNxQ27rGftJ
+IV+b+bsq1w0Pqo3osl5C4Dvrvvw4hepoYFxCGGEughdZ8fnp86cErbANDbz/mU7twjQk3KRH1sEN
+FNnQaFzyfiIGBkJwlCoePBE75VVY4K/IVkNgXtrubO1S/yfeA4va1zzGZOLYPz97jxc/ARv3riJ2
+Xn5fbl6TKm17nO0kC9a5oI8uZrHJce3eAbtz4vuYjpQBJK7XYLIztq2NdR6tdOAfdpsS/XNtADUl
+YtLCPz5QDwlRcrTAevkeecGlvcm75yMswch2Kb2KoDsYAkQWwts7mlwDYiTkTrW9kk1Gu7Kl+RPx
+XvPuA48fxu95RHXJckL3pp76B/6E7L6fbPGNSyEiqNG4q/vzZrmcXK1xJGjsHMz4Ytrr+I9PqNfO
+O93Ey3sBZeEPDPaj0n4l1xNYg12rsEwCl/yno8ap8xEFzbSgpeotypdqTFnwIHGgWMO0Me8jN2wy
+NQ6DzZB/g0U/Lfsbq/Jdejs3rcvJDJ1kTlRz1yh0sM9MhzOpW3VYS4409JXw446RrRMrepk0+JOR
+VATfrgfrB/TfWR3EAoH+2LHtdXl9J+A4/qhP7nVWfL6Bsy6yfpJgBXnXyJRkVuqea872Sj9CTGNp
+dqkA7N8CX+T/Y8AvLJZbIl2e+ilE0Cd0w3+bUAJrXvuKgIAvY8UMdICOgYT5qAI4ZH9FaBuYOu5k
+CzZ4UQ/sqxlXVl+wZc8Z1T/pHBihybn/sWhbl/kfWiA5C3e9plxLs48s8bXm1NSnPQKVW0/hLTQR
+iX3PCAF+VfK+RuFNY2cv83Xjho3z1m7PVNec49OLVOcwPFzvH4z4wxyzelSYN+uuegOfZlaYWd0T
+9DiQ0ZvT1aL6URqao0zgsHvRtW+eObO0GL7IvJw4NfniYJ4rsSvzvsvbXjIZTVdBgNaD4lO0lqzZ
+h/8xat1P8Zsopk5TgxX+TQND7LcCvYYnJU/xi8PLXCOUoyFN/qP6uPCfUoNRYnDuOQ8aGfT5pn4+
+WGz4pDHd9odd4eGA6VklfCqH0P11mt1tNyxxXY4SHY+zxEq8R8Ulc+bQU+nLmE2oHa6IK5XhoIZC
+Z30S3v+6P6tE2SfkcQlqucJO5z8VtrI+gAcjrimD13WfvC7YEdDI5AtWnf+hO7MLLAdyfIvzzUKv
+a6dZD+fmWHFkGCRXn7eaGEr7b997bwLXlqcE/XIEvz+ciwf+WMmeSrfBZHMAROzsp5HdNyBKVc1H
+nyuXrRiKjdbgf53ZbHWDvkPV+Yp1sqZy7xa5EoWT/YktMAuluzoTFYTHoHvbAROVrM1P0ZHhbYtU
+gQk0jxxTwsZm5tv3TeQwJZ1xhvsB/f1UFNrSNdNUoHV/OGdbn2KQhrbIBs3kR8YrmW0IIXsjQCI+
+mH1iuR3Bb3+cligViulgRycP1IingRxTVPxpVsgPm49ZpBQqsB6skYalGBNLevXbt102g4n1jjlW
+XphDkx5SqmbVOcEhTe3R9VCotE4nAR8o+ER/49w9BJytMvsZJaB/A0fS/xke98t2j2/PKAwojNF7
+IX+xFNj1jhCJ/39l7LGaZAGANOYl5YiS10p29/5vsUp1qMJWp91OxVotFyQyaiAT3PWMmNNgnuJC
+WMzuEFTSdO294ewEF+kvMT10WlphwQFnjsILTJGHSaEm5Kyxee9fj8Bn91YLLS52z2qSXjlyB874
+PgiJ3/urto/p4N3VdL17SE1SRNZIquH5BkHKG9Zc0ZHFPd3HC7h1fE0MjRYhUdQXnT9cnWAeZlnH
+BxDkUbiHJfYzfG9q51QgJQpO7v4eX6w0iURuRLLskzbbVaclzyKFRZ/chGTIrFizXvn7yisnVXoM
+98RL6NbmudzJAlzelgETpslqvl7VGtu7ax0CufvywUuCPCZLtWFWFJHlePTftoEWaT3RRYcxsT3F
+wgfV4niCw0+jPCju+oSrXk2u4y8qx4W3apF57uPdFwsxZ4XHH6I1uX6VeZF2FNnbYH26P51uakzY
+M1mol7L/Gj0WArC1AC0w77BK9IcyX41HJdgSQWCJ4OanKyrKpUcEWy7IETENXlUpblVcKkGF9JBJ
+ZL7sq9SO3ro1QZ80JexdAkAD/+Jg8sHDe+Ql70poCxWQKsgJZa5eMegf2QJFdbW1aE9ANJeoz0U5
+bfrsVpyCCod0Avygo5+SvUS4utRHX6YJfdEEws1oUq6rLcgFW8ez/s593CxkictPKpJ+LmV5VGY0
+/jCln0y1bNka7guhzf5C/x1KDBTR8VNXi8PtlpDPcW2Sx9BK5wFtxKNZc2g+uZDNT40xrDi41J4H
+It2ieQbruMm8QZHqofQlGz3J9nsz2NN5mtxXmlDwvwr6hqZ3X/KLX4MBMLx3R3VQ0XLCdBuVoBD1
+UH9auEBg8qpXCIdFpBPA8Z+ddNQOHPXdGE/KNLUflTRC38xrzYL1V8+Enger8BVRf45dckA3iXVQ
+NZ3V+zzMpSCC1psYfoOX/uJCvg7NDA8cEA4EYoMPK5BaEEyutb9NAGKUjjp2VphzuFokdKiWShYf
+81FZ7YfjMGy7Wo5Dgb1HZUqngj4F3NMPhQHEL4dYoa+B47FsS1lt/Ocl3AuQe3vnHFOKYDz5rgmO
+jcH7RtWGDbxnN0tHnrDWPxHBJx71vr2LXcVgfhlFJEE1KdMnlTcWzHQXvgA5qiAmVus4CO5hvL0Y
+9Wdw44BkMCzxMyzCo4cymuSGCdvzo5SswGK1hAYg8D2wjNxjP7xpN5YH4hnL14XfjN91bK4jMVJd
+WtJzqSSkYzxJV1H9tDxeeaN8CU9YGE7CuYTQb9NOr7QlG5syKjUon2HqQ1K9RplaFJjrhgZvyuiI
+AN5Z6uhe7hgTaB7fP9941Axhs5e1zxrMtYvXafXM9scZAj0H00DD2O6Y0YdNQGXYHyfRJ/kby9cs
+CtXLVFhsSEns4+xMjIbO2mDyG+uBNj2TZg8Fc889R5nSttkw5ti8F/M8jl7cTNXK9a02IWDwVtb5
+vGpsXunk1Gm8yK9lgwhhiOosrkb8L8uQXt02uvySIQwvKwsXxDETAGp/7NSPQFMpOozYrD/IEiGs
+p+QDfqxVIk9Mq8pX0tY7orIdzd/KLCxvbxggWWMCWcHx0yNCR7dYOvAYmEwxNeUivVRK/Ef+aE75
+G0dKERPa9M7ESygva7R+25bkx+p/AcdwLbz1gTmUVDz8o7zwGjP2KOWj7pTCAMFbWHA7o1Dhd6d6
+KpgzB+AKIVLYRl9VWT0q3L7iurO7FtjtNNNGTDr8vrR2UoQimGCsAMElMqMQl+Llrx6tAFV5pAmU
+Asn4gbmHkJkzQkGdcuIHraJUhc/8tAVUS50Tp8VOg3QFWtXXlucF1AU6bVlhHqCwzbwAmN5omvi0
+8ByRYjX2K9cwAMwlYLJICamIVgGVaZHFS0DKNiUp6QwU1DLXOMCjReO7pfwCMojZPb+/vsOdjxSl
+wgNwCuLga4U87AmNOStbT8oMXHjlcuCOG+lOCaKaMXGrM7be5EsCaUTbyQmZ7qYMEZvs8xnPjjhJ
+lyaahky9N8Kns+tnoHXg9cjex8NZz+gpgshMoSvxr0XGJFLBPMmTzMuNrm5864BnLS8UkUQVGBE4
+GI3WVLxeJUIhzdDC/ib/5Xwm37b6eywAv+5fIuXn0UeOPO6r97KgZ19LlKyBdpY6H9mCoZ/BNT7T
+V8GYxgUwPqwLCnUAi3L1c9h6HXunZUfcajJ4PPfCCrkHD3rqTfiuz7nmSJ+9NsBNT/n/7uR3ogFW
+Z+R2nYNOOujdyF5wGF5rD4iCf71nKq66x4vt7fFN5aO/UwWuXcv4GDI4Bd0FY5oIx2OhB8SAHnRR
+dqC6a1fo2WsRqJejSaKoDtcIatvDOoe83A/yYMIL7midRyBAoz1I7pYNKe3UIAzr1Y1j5CQdqhLr
+4qRMcPw9EuJknUaYAKTcGd1v0+meGqqmOJNd9Gy0Nu/nBBWT+9kopG0rZgipBrcC3HIVZq9TMz8u
+yYhu0U5PWge3bHnJwTkKn4sLigMQqvTBhqnkKI8CjYqh9To52/eMinlW/demT/0VfZyJTyjOVaIy
+2HB+6aa8X0/tyQONuCuEyq2d4o/Islua7ItWu+46E/FYx8ilFHU1wOeEAKinCSk8w8GWKxlSZRVK
+PRs2UJG/wX/o52k0NXgL7rjDZ6xF9dPPSva3NZYp3u+bof3aVAzl7DPS5uSWZ5uHHvolh0YdvFFz
+jwelCP3QdcQgV3HlWC8sMlSRRRMVoMc7bCAdIIxbyz4DtKDCI1wRSYaYL0rsl2ef3jUKVD6QZdiX
+YTYGmD3qX2om2tqLyAT344aZFW//ToocqUQo8Ji5rMD2dJYCfQKUbxF0coqEkRVfXZ4VW26hDnDs
+pDtjynDbeUM7/4+hwLn2It/HXFRSx+i3ZNfJVX8jXMezYgNeGPLFYwm+wfFGpMwnLEDFQgkfrC+B
+2EasU+kbzG6cCWF5XkQZ1H4wDHkB4GP56og1dPIC0T7bVR4flJkI/8b0VL7ZRoypR/FP1d9rJTaz
+Y+B/p8wJNC8QpnXywxNtDa1lzrNQ9/lX3abLSxFyD1zHGxpB0//yJoHqvHFTbFTkMxf4CB4+LtxT
+WIoYHTV99hTTDjvSyKkX7r5JOgSXXFy9/b4DpW4ucHmdTXLtgbgZ6xr6g8g5R7nW4/ycm/BN1Jyc
+a1rNIIWICb6Am5tze0l9U/TJfrwadmxYisONXk1HpwGGhLOxEk8v0xKaT+jzoY0khG+eZT+R9mjY
+CM6m8rlstRb8dRb4mQzrJinlo4H1h7KbNxJb6CuND3r3fsK4USTkQruwfGBenMB1l89Fox3qZX0N
+z+GGdWnwFbud5XVW6wM2UUwOU5zFPIPwkSakdMO6yOri7RO70yB9PScVC2fHJzBl2+fnq6SNjBn/
+TlgACEjlucwzwbh5QR6tN14OsnnSoOtrZgIX4nzo7YRgiyBckTo6W+72aqd6KYpm1IvFKSiPbZeZ
+wmN1ZtDJdQdw5Hr0Yd0mi8uCw/iGcV/jorm/uUwvprl2uobLSk4cK+FrU1F4hOfUZw9s6mTdqJI0
+/E5NHCXBUzQXk8bqWCQYWq9HIk+qMjrMpmg/cKumPQjExRpJWJ5cjOEFBzE/jiVGHIUSTK3cXTHs
+XwF8AXt/2ANpEjX9Mr3ukB8aJ2sRJGbLgIrhelwK57kFvzRKkLhAKm/Af3DooHNV0w1oa9FV3OtX
+7wKN/P3BGGahLi3GrqNjpLk1h69RW0ALlOguixCU3CRgtgq2sXgeLM44ypu2gIJNZcsmTM8xodVK
+kZRbk9UdsZ35BK+WtIJ5QgLEuiYnT98fKyeKUWXbR2m/NT3KWCIPpIbyLRA1gZummRhtq+CZxIvf
+OPC1l1b6OaxM3TtcwLPlsBmfSfnfsGbO6YuhJDVAHKq9Svl6A+WOz2hQ3inf9qafSyM+ck5GAI5f
+3eD/Ep7nb/jQfPRe5iqlWa7xyOoc13TEKDqTTHyvp7zVo4EMeNx5kZl8XAJoONO8ZhWSbOVD/U0N
+VS6Wmd24TJbr1rtr2AC5sYPBZUlEtNhk6htDLjYAWtA/47S3eDdXxivbC99D/oJcTOovK6Wtop+W
+JmYBgnepjQ9zg5+4/QMdiQw8tUc3Z3VJfRuIkS+iveTlsUhYk3enZNJ7g12xXsle9NJvXgAJFzHv
+gpjvvcBNIQ7RksEeDcwWmXUge3ulF+S23vezDto9Jhu8OnrbwNt5wjP2O1K8Bwm5gEy9+AKPoWt/
+1uWCFNOcEAcekxgnjgyKpqspXbbPE8TaEOu5URra53MzKlgPcz6KYrHe+WhFgfl47rKZXxRYEvLU
+37AwoBBJRxUTyIuAPTtL1OFljMelTKLOvZSOv7eWeMyGM5V9LYG8u4UR9veHR8qXXs3jZmgCJVwW
+08Q+LxTPejfQeJ+MxtzQBeEQ7v9/R7Z8D4nNPegi6UFHkdYUPlds5BFRMX5iTJggdmKlZXrV40TG
+ID+lUFU4jV0Ehuin5YUVyX0lKWF3lVP9onnzGeu8XyQcUooj/61fZnCmWYDrW/zodTmpzZ7krBPa
+CGO3SK83sn91/x+TvGpLku3RnHveDeG5qFhsQMlryK0nwTbGCyB+1gMpjQljbPhU2JVEd8FXkep/
+miQ0LK8i4+v49RrQr0El041zWgvtRhQstjB+nwwISrfQ5S6N5XuI+BpU893WfJAuv+BMUI4Lbxtr
+5SxJfH8HVevPw/8VSa3SEcbQS26+xwxEntz4LdBD1ZO3GjtAAwHrvNl++6wHWQyNqpc8ULQZk88C
+PfOM7FAshdIA0o2QqP11HFaD9bEBoXEbpY+tBn6sDcVLiTuVE+/foVg5edHjIiV61+DVbwbUzB0t
+xtj7a8iDtatP70BxtxOeZPasAk8h/hR1il5ngpBb1e98ByBYe1b0OuLX6QjRxBqMgLu5o8ZPnDx+
+vEseTh3qt3ODAdEiGQ8UN4S6itwAazF/0Pje90br3o6/UTShJehnADjHZxyjmvdOFpegNm8mHFip
+VVxR/i05L2W3DcBOklvszBDAWaCdilPHO2y7wTczoaREnG+iB77oEAs58fUAyRWneZ4Ydp1bEAvC
+I4g3pjDyROOlM1LLulE6RsJOYpcm+caFzoJJUTZUFSCzT/dgimtITwy6BHcKbEXuiJen1xqLXRnE
+IXvn4BlVesW3tn06GKMTLq5Zd5L1Hmzki6LhcQCJriF+TVTfb/Fw9FP3jJbvRb97QGL06RGYsny7
+oNYuIxycoykGusThTzXB6Hv1Rl4xxsmKjBEKkAwNAPuT+DpQIX7rYxMvLUikeOiEj0DgR3gEy4Br
+BJslr3FJdIqJMlGXC5XKPgJT6TG00KJ5I34tHXLnOxBILJItBwvBI6aCjmj3ynhxeEd19utCWPhv
+TGfL4DE1aQgvYJxzdId6/x3YgZGhxV2FzISiZK1EykBHgzKxg4vt0kJLpxM0b7drkJ9vXzUBQ5XE
+U/Wi4UPVHfjEksBuQqRowFVlvHPCUy/xxfZu35ADfVQKZdM9xlfA2mMYx32kX07gdaSbMli+zIxo
+Je8SIjQrYh3VFUfR7WOdzyIUx0hv0lP3d8teHjPGODUjl9dpZbK=

@@ -1,329 +1,198 @@
-<?php
-
-namespace Guzzle\Tests\Plugin\Oauth;
-
-use Guzzle\Http\Message\RequestFactory;
-use Guzzle\Plugin\Oauth\OauthPlugin;
-use Guzzle\Common\Event;
-
-/**
- * @covers Guzzle\Plugin\Oauth\OauthPlugin
- */
-class OauthPluginTest extends \Guzzle\Tests\GuzzleTestCase
-{
-    const TIMESTAMP = '1327274290';
-    const NONCE = 'e7aa11195ca58349bec8b5ebe351d3497eb9e603';
-
-    protected $config = array(
-        'consumer_key'    => 'foo',
-        'consumer_secret' => 'bar',
-        'token'           => 'count',
-        'token_secret'    => 'dracula'
-    );
-
-    protected function getRequest()
-    {
-        return RequestFactory::getInstance()->create('POST', 'http://www.test.com/path?a=b&c=d', null, array(
-            'e' => 'f'
-        ));
-    }
-
-    public function testSubscribesToEvents()
-    {
-        $events = OauthPlugin::getSubscribedEvents();
-        $this->assertArrayHasKey('request.before_send', $events);
-    }
-
-    public function testAcceptsConfigurationData()
-    {
-        $p = new OauthPlugin($this->config);
-
-        // Access the config object
-        $class = new \ReflectionClass($p);
-        $property = $class->getProperty('config');
-        $property->setAccessible(true);
-        $config = $property->getValue($p);
-
-        $this->assertEquals('foo', $config['consumer_key']);
-        $this->assertEquals('bar', $config['consumer_secret']);
-        $this->assertEquals('count', $config['token']);
-        $this->assertEquals('dracula', $config['token_secret']);
-        $this->assertEquals('1.0', $config['version']);
-        $this->assertEquals('HMAC-SHA1', $config['signature_method']);
-        $this->assertEquals('header', $config['request_method']);
-    }
-
-    public function testCreatesStringToSignFromPostRequest()
-    {
-        $p = new OauthPlugin($this->config);
-        $request = $this->getRequest();
-        $signString = $p->getStringToSign($request, self::TIMESTAMP, self::NONCE);
-
-        $this->assertContains('&e=f', rawurldecode($signString));
-
-        $expectedSignString =
-            // Method and URL
-            'POST&http%3A%2F%2Fwww.test.com%2Fpath' .
-            // Sorted parameters from query string and body
-            '&a%3Db%26c%3Dd%26e%3Df%26oauth_consumer_key%3Dfoo' .
-            '%26oauth_nonce%3De7aa11195ca58349bec8b5ebe351d3497eb9e603%26' .
-            'oauth_signature_method%3DHMAC-SHA1' .
-            '%26oauth_timestamp%3D' . self::TIMESTAMP . '%26oauth_token%3Dcount%26oauth_version%3D1.0';
-
-        $this->assertEquals($expectedSignString, $signString);
-    }
-
-    public function testCreatesStringToSignIgnoringPostFields()
-    {
-        $config = $this->config;
-        $config['disable_post_params'] = true;
-        $p = new OauthPlugin($config);
-        $request = $this->getRequest();
-        $sts = rawurldecode($p->getStringToSign($request, self::TIMESTAMP, self::NONCE));
-        $this->assertNotContains('&e=f', $sts);
-    }
-
-    public function testCreatesStringToSignFromPostRequestWithCustomContentType()
-    {
-        $p = new OauthPlugin($this->config);
-        $request = $this->getRequest();
-        $request->setHeader('Content-Type', 'Foo');
-        $this->assertEquals(
-            // Method and URL
-            'POST&http%3A%2F%2Fwww.test.com%2Fpath' .
-            // Sorted parameters from query string and body
-            '&a%3Db%26c%3Dd%26oauth_consumer_key%3Dfoo' .
-            '%26oauth_nonce%3D'. self::NONCE .'%26' .
-            'oauth_signature_method%3DHMAC-SHA1' .
-            '%26oauth_timestamp%3D' . self::TIMESTAMP . '%26oauth_token%3Dcount%26oauth_version%3D1.0',
-            $p->getStringToSign($request, self::TIMESTAMP, self::NONCE)
-        );
-    }
-
-    /**
-     * @depends testCreatesStringToSignFromPostRequest
-     */
-    public function testConvertsBooleansToStrings()
-    {
-        $p = new OauthPlugin($this->config);
-        $request = $this->getRequest();
-        $request->getQuery()->set('a', true);
-        $request->getQuery()->set('c', false);
-        $this->assertContains('&a%3Dtrue%26c%3Dfalse', $p->getStringToSign($request, self::TIMESTAMP, self::NONCE));
-    }
-
-    public function testCreatesStringToSignFromPostRequestWithNullValues()
-    {
-        $config = array(
-            'consumer_key'    => 'foo',
-            'consumer_secret' => 'bar',
-            'token'           => null,
-            'token_secret'    => 'dracula'
-        );
-
-        $p          = new OauthPlugin($config);
-        $request    = $this->getRequest();
-        $signString = $p->getStringToSign($request, self::TIMESTAMP, self::NONCE);
-
-        $this->assertContains('&e=f', rawurldecode($signString));
-
-        $expectedSignString = // Method and URL
-                'POST&http%3A%2F%2Fwww.test.com%2Fpath' .
-                // Sorted parameters from query string and body
-                '&a%3Db%26c%3Dd%26e%3Df%26oauth_consumer_key%3Dfoo' .
-                '%26oauth_nonce%3De7aa11195ca58349bec8b5ebe351d3497eb9e603%26' .
-                'oauth_signature_method%3DHMAC-SHA1' .
-                '%26oauth_timestamp%3D' . self::TIMESTAMP . '%26oauth_version%3D1.0';
-
-        $this->assertEquals($expectedSignString, $signString);
-    }
-
-    /**
-     * @depends testCreatesStringToSignFromPostRequest
-     */
-    public function testMultiDimensionalArray()
-    {
-        $p = new OauthPlugin($this->config);
-        $request = $this->getRequest();
-        $request->getQuery()->set('a', array('b' => array('e' => 'f', 'c' => 'd')));
-        $this->assertContains('a%255Bb%255D%255Bc%255D%3Dd%26a%255Bb%255D%255Be%255D%3Df%26c%3Dd%26e%3Df%26', $p->getStringToSign($request, self::TIMESTAMP, self::NONCE));
-    }
-
-    /**
-     * @depends testCreatesStringToSignFromPostRequest
-     */
-    public function testSignsStrings()
-    {
-        $p = new OauthPlugin(array_merge($this->config, array(
-            'signature_callback' => function($string, $key) {
-                return "_{$string}|{$key}_";
-            }
-        )));
-        $request = $this->getRequest();
-        $sig = $p->getSignature($request, self::TIMESTAMP, self::NONCE);
-        $this->assertEquals(
-            '_POST&http%3A%2F%2Fwww.test.com%2Fpath&a%3Db%26c%3Dd%26e%3Df%26oauth_consumer_key%3Dfoo' .
-            '%26oauth_nonce%3D'. self::NONCE .'%26oauth_signature_method%3DHMAC-SHA1' .
-            '%26oauth_timestamp%3D' . self::TIMESTAMP . '%26oauth_token%3Dcount%26oauth_version%3D1.0|' .
-            'bar&dracula_',
-            base64_decode($sig)
-        );
-    }
-
-    /**
-     * Test that the Oauth is signed correctly and that extra strings haven't been added
-     * to the authorization header.
-     */
-    public function testSignsOauthRequests()
-    {
-        $p = new OauthPlugin($this->config);
-        $event = new Event(array(
-            'request' => $this->getRequest(),
-            'timestamp' => self::TIMESTAMP
-        ));
-        $params = $p->onRequestBeforeSend($event);
-
-        $this->assertTrue($event['request']->hasHeader('Authorization'));
-
-        $authorizationHeader = (string)$event['request']->getHeader('Authorization');
-
-        $this->assertStringStartsWith('OAuth ', $authorizationHeader);
-
-        $stringsToCheck = array(
-            'oauth_consumer_key="foo"',
-            'oauth_nonce="'.urlencode($params['oauth_nonce']).'"',
-            'oauth_signature="'.urlencode($params['oauth_signature']).'"',
-            'oauth_signature_method="HMAC-SHA1"',
-            'oauth_timestamp="' . self::TIMESTAMP . '"',
-            'oauth_token="count"',
-            'oauth_version="1.0"',
-        );
-
-        $totalLength = strlen('OAuth ');
-
-        //Separator is not used before first parameter.
-        $separator = '';
-
-        foreach ($stringsToCheck as $stringToCheck) {
-            $this->assertContains($stringToCheck, $authorizationHeader);
-            $totalLength += strlen($separator);
-            $totalLength += strlen($stringToCheck);
-            $separator = ', ';
-        }
-
-        // Technically this test is not universally valid. It would be allowable to have extra \n characters
-        // in the Authorization header. However Guzzle does not do this, so we just perform a simple check
-        // on length to validate the Authorization header is composed of only the strings above.
-        $this->assertEquals($totalLength, strlen($authorizationHeader), 'Authorization has extra characters i.e. contains extra elements compared to stringsToCheck.');
-    }
-
-    public function testSignsOauthQueryStringRequest()
-    {
-        $config = array_merge(
-            $this->config,
-            array('request_method' => OauthPlugin::REQUEST_METHOD_QUERY)
-        );
-
-        $p = new OauthPlugin($config);
-        $event = new Event(array(
-            'request' => $this->getRequest(),
-            'timestamp' => self::TIMESTAMP
-        ));
-        $params = $p->onRequestBeforeSend($event);
-
-        $this->assertFalse($event['request']->hasHeader('Authorization'));
-
-        $stringsToCheck = array(
-            'a=b',
-            'c=d',
-            'oauth_consumer_key=foo',
-            'oauth_nonce='.urlencode($params['oauth_nonce']),
-            'oauth_signature='.urlencode($params['oauth_signature']),
-            'oauth_signature_method=HMAC-SHA1',
-            'oauth_timestamp='.self::TIMESTAMP,
-            'oauth_token=count',
-            'oauth_version=1.0',
-        );
-
-        $queryString = (string) $event['request']->getQuery();
-
-        $totalLength = strlen('?');
-
-        //Separator is not used before first parameter.
-        $separator = '';
-
-        foreach ($stringsToCheck as $stringToCheck) {
-            $this->assertContains($stringToCheck, $queryString);
-            $totalLength += strlen($separator);
-            $totalLength += strlen($stringToCheck);
-            $separator = '&';
-        }
-
-        // Removes the last query string separator '&'
-        $totalLength -= 1;
-
-        $this->assertEquals($totalLength, strlen($queryString), 'Query string has extra characters i.e. contains extra elements compared to stringsToCheck.');
-    }
-
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testInvalidArgumentExceptionOnMethodError()
-    {
-        $config = array_merge(
-            $this->config,
-            array('request_method' => 'FakeMethod')
-        );
-
-        $p = new OauthPlugin($config);
-        $event = new Event(array(
-            'request' => $this->getRequest(),
-            'timestamp' => self::TIMESTAMP
-        ));
-
-        $p->onRequestBeforeSend($event);
-    }
-
-    public function testDoesNotAddFalseyValuesToAuthorization()
-    {
-        unset($this->config['token']);
-        $p = new OauthPlugin($this->config);
-        $event = new Event(array('request' => $this->getRequest(), 'timestamp' => self::TIMESTAMP));
-        $p->onRequestBeforeSend($event);
-        $this->assertTrue($event['request']->hasHeader('Authorization'));
-        $this->assertNotContains('oauth_token=', (string) $event['request']->getHeader('Authorization'));
-    }
-
-    public function testOptionalOauthParametersAreNotAutomaticallyAdded()
-    {
-        // The only required Oauth parameters are the consumer key and secret. That is enough credentials
-        // for signing oauth requests.
-         $config = array(
-            'consumer_key'    => 'foo',
-            'consumer_secret' => 'bar',
-        );
-
-        $plugin = new OauthPlugin($config);
-        $event = new Event(array(
-            'request' => $this->getRequest(),
-            'timestamp' => self::TIMESTAMP
-        ));
-
-        $timestamp = $plugin->getTimestamp($event);
-        $request = $event['request'];
-        $nonce = $plugin->generateNonce($request);
-
-        $paramsToSign = $plugin->getParamsToSign($request, $timestamp, $nonce);
-
-        $optionalParams = array(
-            'callback'      => 'oauth_callback',
-            'token'         => 'oauth_token',
-            'verifier'      => 'oauth_verifier',
-            'token_secret'  => 'token_secret'
-        );
-
-        foreach ($optionalParams as $optionName => $oauthName) {
-            $this->assertArrayNotHasKey($oauthName, $paramsToSign, "Optional Oauth param '$oauthName' was not set via config variable '$optionName', but it is listed in getParamsToSign().");
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

@@ -1,59 +1,32 @@
-<?php
-
-/*
- * This file is part of SwiftMailer.
- * (c) 2004-2009 Chris Corbyn
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-/**
- * Sends Messages over SMTP with ESMTP support.
- *
- * @package    Swift
- * @subpackage Transport
- * @author     Chris Corbyn
- * @method Swift_SmtpTransport setUsername(string $username) Set the username to authenticate with.
- * @method string              getUsername()                 Get the username to authenticate with.
- * @method Swift_SmtpTransport setPassword(string $password) Set the password to authenticate with.
- * @method string              getPassword()                 Get the password to authenticate with.
- * @method Swift_SmtpTransport setAuthMode(string $mode)     Set the auth mode to use to authenticate.
- * @method string              getAuthMode()                 Get the auth mode to use to authenticate.
- */
-class Swift_SmtpTransport extends Swift_Transport_EsmtpTransport
-{
-    /**
-     * Create a new SmtpTransport, optionally with $host, $port and $security.
-     *
-     * @param string  $host
-     * @param integer $port
-     * @param string  $security
-     */
-    public function __construct($host = 'localhost', $port = 25, $security = null)
-    {
-        call_user_func_array(
-            array($this, 'Swift_Transport_EsmtpTransport::__construct'),
-            Swift_DependencyContainer::getInstance()
-                ->createDependenciesFor('transport.smtp')
-            );
-
-        $this->setHost($host);
-        $this->setPort($port);
-        $this->setEncryption($security);
-    }
-
-    /**
-     * Create a new SmtpTransport instance.
-     *
-     * @param string  $host
-     * @param integer $port
-     * @param string  $security
-     *
-     * @return Swift_SmtpTransport
-     */
-    public static function newInstance($host = 'localhost', $port = 25, $security = null)
-    {
-        return new self($host, $port, $security);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+xp6Ckp0r/1KkWNdGLbUIsHSJfacsV38=

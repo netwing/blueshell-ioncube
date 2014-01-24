@@ -1,120 +1,75 @@
-<?php
-
-require_once 'Swift/Tests/SwiftUnitTestCase.php';
-require_once 'Swift/Plugins/ReporterPlugin.php';
-require_once 'Swift/Plugins/Reporter.php';
-require_once 'Swift/Mime/Message.php';
-require_once 'Swift/Events/SendEvent.php';
-
-class Swift_Plugins_ReporterPluginTest extends Swift_Tests_SwiftUnitTestCase
-{
-    public function testReportingPasses()
-    {
-        $message = $this->_createMessage();
-        $evt = $this->_createSendEvent();
-        $reporter = $this->_createReporter();
-
-        $this->_checking(Expectations::create()
-            -> allowing($message)->getTo() -> returns(array('foo@bar.tld' => 'Foo'))
-            -> allowing($evt)->getMessage() -> returns($message)
-            -> allowing($evt)->getFailedRecipients() -> returns(array())
-            -> one($reporter)->notify($message, 'foo@bar.tld', Swift_Plugins_Reporter::RESULT_PASS)
-            -> ignoring($message)
-            -> ignoring($evt)
-            );
-
-        $plugin = new Swift_Plugins_ReporterPlugin($reporter);
-        $plugin->sendPerformed($evt);
-    }
-
-    public function testReportingFailedTo()
-    {
-        $message = $this->_createMessage();
-        $evt = $this->_createSendEvent();
-        $reporter = $this->_createReporter();
-
-        $this->_checking(Expectations::create()
-            -> allowing($message)->getTo() -> returns(array(
-                'foo@bar.tld' => 'Foo', 'zip@button' => 'Zip'
-                ))
-            -> allowing($evt)->getMessage() -> returns($message)
-            -> allowing($evt)->getFailedRecipients() -> returns(array('zip@button'))
-            -> one($reporter)->notify($message, 'foo@bar.tld', Swift_Plugins_Reporter::RESULT_PASS)
-            -> one($reporter)->notify($message, 'zip@button', Swift_Plugins_Reporter::RESULT_FAIL)
-            -> ignoring($message)
-            -> ignoring($evt)
-            );
-
-        $plugin = new Swift_Plugins_ReporterPlugin($reporter);
-        $plugin->sendPerformed($evt);
-    }
-
-    public function testReportingFailedCc()
-    {
-        $message = $this->_createMessage();
-        $evt = $this->_createSendEvent();
-        $reporter = $this->_createReporter();
-
-        $this->_checking(Expectations::create()
-            -> allowing($message)->getTo() -> returns(array(
-                'foo@bar.tld' => 'Foo'
-                ))
-            -> allowing($message)->getCc() -> returns(array(
-                'zip@button' => 'Zip', 'test@test.com' => 'Test'
-                ))
-            -> allowing($evt)->getMessage() -> returns($message)
-            -> allowing($evt)->getFailedRecipients() -> returns(array('zip@button'))
-            -> one($reporter)->notify($message, 'foo@bar.tld', Swift_Plugins_Reporter::RESULT_PASS)
-            -> one($reporter)->notify($message, 'zip@button', Swift_Plugins_Reporter::RESULT_FAIL)
-            -> one($reporter)->notify($message, 'test@test.com', Swift_Plugins_Reporter::RESULT_PASS)
-            -> ignoring($message)
-            -> ignoring($evt)
-            );
-
-        $plugin = new Swift_Plugins_ReporterPlugin($reporter);
-        $plugin->sendPerformed($evt);
-    }
-
-    public function testReportingFailedBcc()
-    {
-        $message = $this->_createMessage();
-        $evt = $this->_createSendEvent();
-        $reporter = $this->_createReporter();
-
-        $this->_checking(Expectations::create()
-            -> allowing($message)->getTo() -> returns(array(
-                'foo@bar.tld' => 'Foo'
-                ))
-            -> allowing($message)->getBcc() -> returns(array(
-                'zip@button' => 'Zip', 'test@test.com' => 'Test'
-                ))
-            -> allowing($evt)->getMessage() -> returns($message)
-            -> allowing($evt)->getFailedRecipients() -> returns(array('zip@button'))
-            -> one($reporter)->notify($message, 'foo@bar.tld', Swift_Plugins_Reporter::RESULT_PASS)
-            -> one($reporter)->notify($message, 'zip@button', Swift_Plugins_Reporter::RESULT_FAIL)
-            -> one($reporter)->notify($message, 'test@test.com', Swift_Plugins_Reporter::RESULT_PASS)
-            -> ignoring($message)
-            -> ignoring($evt)
-            );
-
-        $plugin = new Swift_Plugins_ReporterPlugin($reporter);
-        $plugin->sendPerformed($evt);
-    }
-
-    // -- Creation Methods
-
-    private function _createMessage()
-    {
-        return $this->_mock('Swift_Mime_Message');
-    }
-
-    private function _createSendEvent()
-    {
-        return $this->_mock('Swift_Events_SendEvent');
-    }
-
-    private function _createReporter()
-    {
-        return $this->_mock('Swift_Plugins_Reporter');
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

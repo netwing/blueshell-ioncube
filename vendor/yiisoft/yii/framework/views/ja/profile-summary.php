@@ -1,41 +1,36 @@
-<!-- start profiling summary -->
-<table class="yiiLog" width="100%" cellpadding="2" style="border-spacing:1px;font:11px VVerdana, 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic ProN', sans-serif;background:#EEEEEE;color:#666666;">
-	<tr>
-		<th style="background:black;color:white;" colspan="6">
-			プロファイリング概要レポート
-			(時間: <?php echo sprintf('%0.5f',Yii::getLogger()->getExecutionTime()); ?>s,
-			メモリ: <?php echo number_format(Yii::getLogger()->getMemoryUsage()/1024); ?>KB)
-		</th>
-	</tr>
-	<tr style="background-color: #ccc;">
-	    <th>プロシージャ</th>
-		<th>回数</th>
-		<th>合計 (s)</th>
-		<th>平均 (s)</th>
-		<th>最小 (s)</th>
-		<th>最大 (s)</th>
-	</tr>
-<?php
-foreach($data as $index=>$entry)
-{
-	$color=($index%2)?'#F5F5F5':'#FFFFFF';
-	$proc=CHtml::encode($entry[0]);
-	$min=sprintf('%0.5f',$entry[2]);
-	$max=sprintf('%0.5f',$entry[3]);
-	$total=sprintf('%0.5f',$entry[4]);
-	$average=sprintf('%0.5f',$entry[4]/$entry[1]);
-
-	echo <<<EOD
-	<tr style="background:{$color}">
-		<td>{$proc}</td>
-		<td align="center">{$entry[1]}</td>
-		<td align="center">{$total}</td>
-		<td align="center">{$average}</td>
-		<td align="center">{$min}</td>
-		<td align="center">{$max}</td>
-	</tr>
-EOD;
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
-</table>
-<!-- end of profiling summary -->
+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

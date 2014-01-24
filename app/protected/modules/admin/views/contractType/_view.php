@@ -1,54 +1,29 @@
-<?php
-/* @var $this ContractTypeController */
-/* @var $data ContractType */
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
-
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h3 class="panel-title">
-            <?php echo CHtml::link(CHtml::encode($data->contratto_tipo_id), array('view','id'=>$data->contratto_tipo_id)); ?>
-        </h3>
-    </div>
-    <div class="panel-body">
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('contratto_tipo_nome')); ?>:</b>
-	<?php echo CHtml::encode($data->contratto_tipo_nome); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('color')); ?>:</b>
-	<?php echo CHtml::encode($data->color); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('prefix')); ?>:</b>
-	<?php echo CHtml::encode($data->prefix); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('rent')); ?>:</b>
-	<?php echo CHtml::encode($data->rent); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('transit')); ?>:</b>
-	<?php echo CHtml::encode($data->transit); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('sell')); ?>:</b>
-	<?php echo CHtml::encode($data->sell); ?><br />
-
-	<?php /*
-	<b><?php echo CHtml::encode($data->getAttributeLabel('option')); ?>:</b>
-	<?php echo CHtml::encode($data->option); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('manage')); ?>:</b>
-	<?php echo CHtml::encode($data->manage); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('reservation')); ?>:</b>
-	<?php echo CHtml::encode($data->reservation); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('sort_order')); ?>:</b>
-	<?php echo CHtml::encode($data->sort_order); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('create_time')); ?>:</b>
-	<?php echo CHtml::encode($data->create_time); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('update_time')); ?>:</b>
-	<?php echo CHtml::encode($data->update_time); ?><br />
-
-	*/ ?>
-    </div>
-</div>
-
+HR+cPo4W1HxJ2FvHlfQGFKFyRHa108nDFxzTNFUQFU3X5KZYe+5gIYSqemqPblfWLSoeGabhthbQ
+MzWYcQwbzME1gfbbu1dA0wrssqrJavoJ8XznFHXAbP87DQN+CcHKc79XQ0ge5qcPQ1BTdbK4fkVS
+tALtpU/EJR0dI10GrhY8K1p28XcxUjkjarB+Ksn1PPn2ZE4M2vc5iWP/jD2SqBKFce29tr4RCj7Y
+URDRp0JmRC5w/Pa0o8iHPAzHAE4xzt2gh9fl143SQNHhN/qrP5BkVk1LidLWEGQ/H/zi6PTgayuf
+zjzwoftE+WdCdwzZd/LGQt0S3+9kH3DcOwjRK+itKIMilIs1epHIVeKJ746Lai4ZWFqB9UV1qM93
+iaQG6wxwL7vATpxbjEXBtKn6Uyw9bBEJ8KdY99XYnKCHXoOlikkcUTJhTCdCfmyzzpDOHXx6iDx2
+VBNyCrzx9tG6TtVmdLaF1P5mUp4DoLkIC3FiJilUS7UeSN7E4xNsciORQQT8xQVEMUO+VZSMlHLk
+AxYJA1S9KomTEV2I7oqZxjc0uM44qxTqqPKHtAcNsEmar1j9ShDXEki0/DCHfaggRw9VZikJofy6
+dtTJw+Q6MflHHv/cROBmble3BeHNOll5Rv/Z2Ec5Jymh0IwnLZ+LYs17qbhCKT6biySin0ekL+gu
+KV4RaQ8zaU3SaBdjCzrzD+0NTlUileLNBoVYcbeD9l9wXmy6fxsdPQ3TpiEJqY4GJVq1QhU4ueYh
+XnmhjOOsboC6V7QUSrZeE6t0yob1Aqk0wcf6RHaOq8t7TB4VGJXkpX9qjWa5R9sPBxdn24KlGMoc
+hjHvAetH0m21q45eULa6O2cIl1SILWRXdVullkmZK2mjmvxdw0T9peLp4NOiYBLwFk9eu77RdSiw
+5NIY9eISkzrf7HqswD1igqOXROc6QXWVb5n4JMIxpB+nq5XvQncmNejS3C/6nYDthc++WFsdWcaP
+hSriI7qesUMO1d8g5+Eu0S2GEzyf7MN2S8bETImn/VGRrIqMqhW7ECOSLFPM0LRLDbhiCgcmjL9a
+q925sSit6PsaCGHLjv7ugvL6TBXVNUtJZrTjlvhuiUADw7hSCsAQ2ProddnZI+RVCHOZGhYcwkSe
+Hn1sx0ehNOZNtQjwwg2+puSkErH++c5RCmB6fca8GV9xCWyer/3koAKXl66M6pcqoNPlzMfzgsTV
+3zPwIEpTIAfl9iyzkz7tStPl9D0RXqlq0c919e4BIB3B5EvIs0M9K+y9v8YISPfdqZkf7Iwd+prv
+3YPRaB4oMl3Hg0fFky9bu47NJkc6nOmYkPZ99nj2shMw4F+pn3Lb8tuwPCj1wPmD/86agAd1EUfI
+0BAk8D7zQ/BNzIKMm/9Vj98RAr40QFiAPHuMvtJqBql3c+AaPd8Vw/3pa0+QRQ9NqFwcEwGO+TZM
+MyukOP/ZAyP+Cv3YvmxgzxgGT5CKNj4hA0otplifCbz0A9byIycGmV0dyXL8t7dAEKGgAXbZZj+P
+2HxIr9r0fbo/3s7MGxW1ZWFyP0xpuYlMB/JhQA++s7PJWDWl2ENqcK3MAGAAGZDH2CEupnjJ+k7W
+9uwkckVlKHEkTgxunUFKPOs1RjSPgu7pAABT8khvmhMuJEFrHKWMYjL2tcJj6lpoYsmTQTxi5jpF
+IY/SqSq9mC70Sc0YOQFAnu8Iv/id/Uvsn8XUQSApvldafUfSVuXOOwuBe4dK61HPHpBnQ+w4vt7V
+os+s1RhsDbUtWRIC9XYoG18qR8kDXhuhKgu/Cfme05sJr4uiWEy9jwBOFPQw1cq4yT1dUgyYA+Dc
+tJbP7P1I3zF1Pd2qFvrCcz0XpjBYb7C36Cc1a9IIFiU2GoK9+JeE5BRkjGXyb2C+HWjBn0U39R+7
+8z/rbrWIlYvYYavIdSBGwfrvi6L/o/E4uvC6sgslQz05

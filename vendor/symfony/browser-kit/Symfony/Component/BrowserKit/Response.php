@@ -1,138 +1,58 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\BrowserKit;
-
-/**
- * Response object.
- *
- * @author Fabien Potencier <fabien@symfony.com>
- *
- * @api
- */
-class Response
-{
-    protected $content;
-    protected $status;
-    protected $headers;
-
-    /**
-     * Constructor.
-     *
-     * The headers array is a set of key/value pairs. If a header is present multiple times
-     * then the value is an array of all the values.
-     *
-     * @param string  $content The content of the response
-     * @param integer $status  The response status code
-     * @param array   $headers An array of headers
-     *
-     * @api
-     */
-    public function __construct($content = '', $status = 200, array $headers = array())
-    {
-        $this->content = $content;
-        $this->status  = $status;
-        $this->headers = $headers;
-    }
-
-    /**
-     * Converts the response object to string containing all headers and the response content.
-     *
-     * @return string The response with headers and content
-     */
-    public function __toString()
-    {
-        $headers = '';
-        foreach ($this->headers as $name => $value) {
-            if (is_string($value)) {
-                $headers .= $this->buildHeader($name, $value);
-            } else {
-                foreach ($value as $headerValue) {
-                    $headers .= $this->buildHeader($name, $headerValue);
-                }
-            }
-        }
-
-        return $headers."\n".$this->content;
-    }
-
-    /**
-     * Returns the build header line.
-     *
-     * @param string $name  The header name
-     * @param string $value The header value
-     *
-     * @return string The built header line
-     */
-    protected function buildHeader($name, $value)
-    {
-        return sprintf("%s: %s\n", $name, $value);
-    }
-
-    /**
-     * Gets the response content.
-     *
-     * @return string The response content
-     *
-     * @api
-     */
-    public function getContent()
-    {
-        return $this->content;
-    }
-
-    /**
-     * Gets the response status code.
-     *
-     * @return integer The response status code
-     *
-     * @api
-     */
-    public function getStatus()
-    {
-        return $this->status;
-    }
-
-    /**
-     * Gets the response headers.
-     *
-     * @return array The response headers
-     *
-     * @api
-     */
-    public function getHeaders()
-    {
-        return $this->headers;
-    }
-
-    /**
-     * Gets a response header.
-     *
-     * @param string  $header The header name
-     * @param Boolean $first  Whether to return the first value or all header values
-     *
-     * @return string|array The first header value if $first is true, an array of values otherwise
-     */
-    public function getHeader($header, $first = true)
-    {
-        foreach ($this->headers as $key => $value) {
-            if (str_replace('-', '_', strtolower($key)) == str_replace('-', '_', strtolower($header))) {
-                if ($first) {
-                    return is_array($value) ? (count($value) ? $value[0] : '') : $value;
-                }
-
-                return is_array($value) ? $value : array($value);
-            }
-        }
-
-        return $first ? null : array();
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

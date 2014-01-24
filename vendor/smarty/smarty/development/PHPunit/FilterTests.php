@@ -1,154 +1,92 @@
-<?php
-/**
- * Smarty PHPunit tests of filter
- *
- * @package PHPunit
- * @author Uwe Tews
- */
-
-/**
- * class for filter tests
- */
-class FilterTests extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $this->smarty = SmartyTests::$smarty;
-        $this->smartyBC = SmartyTests::$smartyBC;
-        SmartyTests::init();
-    }
-
-    static function isRunnable()
-    {
-        return true;
-    }
-
-    /**
-     * test autoload output filter
-     */
-    public function testAutoloadOutputFilter()
-    {
-        $this->smarty->autoload_filters['output'] = 'trimwhitespace';
-        $tpl = $this->smarty->createTemplate('eval:{"    <br>hello world"}');
-        $this->assertEquals("<br>hello world", $this->smarty->fetch($tpl));
-    }
-    /**
-     * test autoload variable filter
-     */
-    public function testAutoloadVariableFilter()
-    {
-        $this->smarty->autoload_filters['variable'] = 'htmlspecialchars';
-        $tpl = $this->smarty->createTemplate('eval:{"<test>"}');
-        $this->assertEquals("&lt;test&gt;", $this->smarty->fetch($tpl));
-    }
-    /**
-     * test loaded filter
-     */
-    public function testLoadedOutputFilter()
-    {
-        $this->smarty->loadFilter(Smarty::FILTER_OUTPUT, 'trimwhitespace');
-        $tpl = $this->smarty->createTemplate('eval:{"    <br>hello world"}');
-        $this->assertEquals("<br>hello world", $this->smarty->fetch($tpl));
-    }
-    public function testLoadedOutputFilterWrapper()
-    {
-        $this->smartyBC->load_filter(Smarty::FILTER_OUTPUT, 'trimwhitespace');
-        $tpl = $this->smartyBC->createTemplate('eval:{"    <br>hello world"}');
-        $this->assertEquals("<br>hello world", $this->smartyBC->fetch($tpl));
-    }
-    /**
-     * test registered output filter
-     */
-    public function testRegisteredOutputFilter()
-    {
-        $this->smarty->registerFilter(Smarty::FILTER_OUTPUT,'myoutputfilter');
-        $tpl = $this->smarty->createTemplate('eval:{"hello   world"}');
-        $this->assertEquals("hello world", $this->smarty->fetch($tpl));
-    }
-    public function testRegisteredOutputFilterWrapper()
-    {
-        $this->smartyBC->register_outputfilter('myoutputfilter');
-        $tpl = $this->smartyBC->createTemplate('eval:{"hello   world"}');
-        $this->assertEquals("hello world", $this->smartyBC->fetch($tpl));
-    }
-    /**
-     * test registered pre filter
-     */
-    public function testRegisteredPreFilter()
-    {
-        function myprefilter($input)
-        {
-            return '{$foo}' . $input;
-        }
-        $this->smarty->registerFilter(Smarty::FILTER_PRE,'myprefilter');
-        $tpl = $this->smarty->createTemplate('eval:{" hello world"}');
-        $tpl->assign('foo', 'bar');
-        $this->assertEquals("bar hello world", $this->smarty->fetch($tpl));
-    }
-    /**
-     * test registered pre filter class
-     */
-    public function testRegisteredPreFilterClass()
-    {
-        $this->smarty->registerFilter(Smarty::FILTER_PRE,array('myprefilterclass', 'myprefilter'));
-        $tpl = $this->smarty->createTemplate('eval:{" hello world"}');
-        $tpl->assign('foo', 'bar');
-        $this->assertEquals("bar hello world", $this->smarty->fetch($tpl));
-    }
-    /**
-     * test registered post filter
-     */
-    public function testRegisteredPostFilter()
-    {
-        function mypostfilter($input)
-        {
-            return '{$foo}' . $input;
-        }
-        $this->smarty->registerFilter(Smarty::FILTER_POST,'mypostfilter');
-        $tpl = $this->smarty->createTemplate('eval:{" hello world"}');
-        $tpl->assign('foo', 'bar');
-        $this->assertEquals('{$foo} hello world', $this->smarty->fetch($tpl));
-    }
-    /**
-     * test variable filter
-     */
-    public function testLoadedVariableFilter()
-    {
-        $this->smarty->loadFilter("variable", "htmlspecialchars");
-        $tpl = $this->smarty->createTemplate('eval:{$foo}');
-        $tpl->assign('foo', '<?php ?>');
-        $this->assertEquals('&lt;?php ?&gt;', $this->smarty->fetch($tpl));
-    }
-   /**
-     * test registered post filter
-     */
-    public function testRegisteredVariableFilter2()
-    {
-        $var = new VarFilter();
-        
-        $this->smarty->registerFilter(Smarty::FILTER_VARIABLE,array($var, 'variablefilter'));
-        $tpl = $this->smarty->createTemplate('string:{$foo}');
-        $tpl->assign('foo', 'bar');
-        $this->assertEquals('var{$foo}bar', $this->smarty->fetch($tpl));
-    }
-}
-
-Class VarFilter {
-         function variablefilter($input, $smarty)
-        {
-            return 'var{$foo}' . $input;
-        }   
-}
-
-function myoutputfilter($input)
-{
-    return str_replace('   ', ' ', $input);
-}
-
- class myprefilterclass
- {
-    static function myprefilter($input)
-    {
-        return '{$foo}' . $input;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+gm==

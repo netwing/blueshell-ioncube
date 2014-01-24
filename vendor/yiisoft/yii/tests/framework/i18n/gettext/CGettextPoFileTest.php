@@ -1,34 +1,42 @@
-<?php
-
-class CGettextPoFileTest extends CTestCase
-{
-	public function testLoad()
-	{
-		$poFile=new CGettextPoFile();
-		$poFilePath=dirname(__FILE__).'/../data/ru/test.po';
-		$context1=$poFile->load($poFilePath,'context1');
-		$context2=$poFile->load($poFilePath,'context2');
-
-		// item count
-		$this->assertCount(4,$context1);
-		$this->assertCount(2,$context2);
-
-		// original messages
-		$this->assertArrayHasKey("Missing\n\r\t\"translation.",$context1);
-		$this->assertArrayHasKey("Aliquam tempus elit vel purus molestie placerat. In sollicitudin tincidunt\naliquet. Integer tincidunt gravida tempor. In convallis blandit dui vel malesuada.\nNunc vel sapien nunc, a pretium nulla.",$context1);
-		$this->assertArrayHasKey("String number two.",$context1);
-		$this->assertArrayHasKey("Nunc vel sapien nunc, a pretium nulla.\nPellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",$context1);
-
-		$this->assertArrayHasKey("\n\nThe other context.\n",$context2);
-		$this->assertArrayHasKey("test1\\\ntest2\n\\\\\ntest3",$context2);
-
-		// translated messages
-		$this->assertTrue(in_array("\n\r\t\"",$context1));
-		$this->assertTrue(in_array("Олицетворение однократно. Представленный лексико-семантический анализ является\nпсихолингвистическим в своей основе, но механизм сочленений полидисперсен. Впечатление\nоднократно. Различное расположение выбирает сюжетный механизм сочленений.",$context1));
-		$this->assertTrue(in_array('Строка номер два.',$context1));
-		$this->assertTrue(in_array('Короткий перевод.',$context1));
-
-		$this->assertTrue(in_array("\n\nДругой контекст.\n",$context2));
-		$this->assertTrue(in_array("тест1\\\nтест2\n\\\\\nтест3",$context2));
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+e6G=

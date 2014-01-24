@@ -1,203 +1,90 @@
-<?php
-
-require_once 'Sweety/Reporter.php';
-require_once 'Sweety/Reporter/CliTestCaseReporter.php';
-
-/**
- * The reporter used in command line reporting.
- * @package Sweety
- * @author Chris Corbyn
- */
-class Sweety_Reporter_CliReporter implements Sweety_Reporter
-{
-  
-  /**
-   * True if this repoter is running.
-   * @var boolean
-   * @access private
-   */
-  private $_started = false;
-  
-  /**
-   * The name to show this report as.
-   * @var string
-   * @access private
-   */
-  private $_name;
-  
-  /**
-   * Aggregate scores from tests run.
-   * @var int[]
-   */
-  private $_aggregates = array();
-  
-  /**
-   * Creates a new CliReporter.
-   */
-  public function __construct($name)
-  {
-    $this->_name = $name;
-    $this->_aggregates = array(
-      'cases' => 0,
-      'run' => 0,
-      'passes' => 0,
-      'fails' => 0,
-      'exceptions' => 0
-      );
-  }
-  
-  /**
-   * Used so test case reporters can notify this reporter when they've completed.
-   * @param string $testCase
-   */
-  public function notifyEnded($testCase)
-  {
-    $this->_aggregates['run']++;
-  }
-  
-  /**
-   * Get the reporter used to report on this specific test case.
-   * @param string $testCase
-   * @return Sweety_Reporter
-   */
-  public function getReporterFor($testCase)
-  {
-    $this->_aggregates['cases']++;
-    
-    $reporter = new Sweety_Reporter_CliTestCaseReporter($testCase, $this);
-    return $reporter;
-  }
-  
-  /**
-   * Returns true if start() has been invoked.
-   * @return boolean
-   */
-  public function isStarted()
-  {
-    return $this->_started;
-  }
-  
-  /**
-   * Start reporting.
-   */
-  public function start()
-  {
-    $this->_started = true;
-    echo $this->_name . PHP_EOL;
-  }
-  
-  /**
-   * Report a skipped test case.
-   * @param string $message
-   * @param string $path
-   */
-  public function reportSkip($message, $path)
-  {
-    echo "  \033[34m\033[1m\033[4mSkip\033[0m:";
-    $messageLines = explode(PHP_EOL, wordwrap($message, 74, PHP_EOL));
-    foreach ($messageLines as $line)
-    {
-      echo '  ' . $line . PHP_EOL;
-    }
-    echo '    in: ' . $path . PHP_EOL;
-  }
-  
-  /**
-   * Report a passing assertion.
-   * @param string $message
-   * @param string $path
-   */
-  public function reportPass($message, $path)
-  {
-    $this->_aggregates['passes']++;
-  }
-  
-  /**
-   * Report a failing assertion.
-   * @param string $message
-   * @param string $path
-   */
-  public function reportFail($message, $path)
-  {
-    $this->_aggregates['fails']++;
-    
-    echo "\033[31m" . $this->_aggregates['fails'] . ') ';
-    echo $message . "\033[0m" . PHP_EOL;
-    echo '    in: ' . $path . PHP_EOL;
-  }
-  
-  /**
-   * Report an unexpected exception.
-   * @param string $message
-   * @param string $path
-   */
-  public function reportException($message, $path)
-  {
-    $this->_aggregates['exceptions']++;
-    
-    echo "\033[31m\033[1mException" . $this->_aggregates['exceptions'] . "\033[0m!" . PHP_EOL;
-    echo "\033[1m" . $message . "\033[0m" . PHP_EOL;
-    echo '    in ' . $path . PHP_EOL;
-  }
-  
-  /**
-   * Report output from something like a dump().
-   * @param string $output
-   * @param string $path
-   */
-  public function reportOutput($output, $path)
-  {
-    if (preg_match('/^\{image @ (.*?)\}$/D', $output, $matches))
-    {
-      echo "  \033[33mSmoke Test\033[0m" . PHP_EOL;
-      echo '  Compare email sent with image @ ' . $matches[1] . PHP_EOL;
-    }
-    else
-    {
-      echo '--------------------' . PHP_EOL;
-      echo $output . PHP_EOL;
-      echo '--------------------' . PHP_EOL;
-    }
-  }
-  
-  /**
-   * End reporting.
-   */
-  public function finish()
-  {
-    $this->_started = false;
-    
-    $incomplete = $this->_aggregates['cases'] - $this->_aggregates['run'];
-    
-    if ($incomplete)
-    {
-      echo '**********************' . PHP_EOL;
-      echo $incomplete . ' test case(s) did not complete.' . PHP_EOL .
-        'This may be because invalid XML was output during the test run' . PHP_EOL .
-        'and/or because an error occured.' . PHP_EOL .
-        'Try running the tests separately for more detail.' . PHP_EOL;
-      echo '**********************' . PHP_EOL;
-    }
-    
-    $success = (!$this->_aggregates['fails'] && !$this->_aggregates['exceptions']
-      && $this->_aggregates['cases'] == $this->_aggregates['run']);
-    
-    if ($success)
-    {
-      echo "\033[32m\033[1mOK\033[0m" . PHP_EOL;
-    }
-    else
-    {
-      echo "\033[31m\033[1mFAILURES!!!\033[0m" . PHP_EOL;
-    }
-    
-    echo 'Test cases run: ';
-    echo $this->_aggregates['run'] . '/' . $this->_aggregates['cases'] . ', ';
-    echo 'Passes: ' . $this->_aggregates['passes'] . ', ';
-    echo 'Failures: ' . $this->_aggregates['fails'] . ', ';
-    echo 'Exceptions: '. $this->_aggregates['exceptions'] . PHP_EOL;
-    
-    exit((int) !$success);
-  }
-  
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

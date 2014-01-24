@@ -1,70 +1,33 @@
-<?php
-/*
- * This file is part of SwiftMailer.
- * (c) 2009 Fabien Potencier
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-/**
- * Replaces the sender of a message.
- *
- * @package    Swift
- * @subpackage Plugins
- * @author     Arjen Brouwer
- */
-class Swift_Plugins_ImpersonatePlugin implements Swift_Events_SendListener
-{
-    /**
-     * The sender to impersonate.
-     *
-     * @var String
-     */
-    private $_sender;
-
-    /**
-     * Create a new ImpersonatePlugin to impersonate $sender.
-     *
-     * @param string $sender address
-     */
-    public function __construct($sender)
-    {
-        $this->_sender = $sender;
-    }
-
-    /**
-     * Invoked immediately before the Message is sent.
-     *
-     * @param Swift_Events_SendEvent $evt
-     */
-    public function beforeSendPerformed(Swift_Events_SendEvent $evt)
-    {
-        $message = $evt->getMessage();
-        $headers = $message->getHeaders();
-
-        // save current recipients
-        $headers->addPathHeader('X-Swift-Return-Path', $message->getReturnPath());
-
-        // replace them with the one to send to
-        $message->setReturnPath($this->_sender);
-    }
-
-    /**
-     * Invoked immediately after the Message is sent.
-     *
-     * @param Swift_Events_SendEvent $evt
-     */
-    public function sendPerformed(Swift_Events_SendEvent $evt)
-    {
-        $message = $evt->getMessage();
-
-        // restore original headers
-        $headers = $message->getHeaders();
-
-        if ($headers->has('X-Swift-Return-Path')) {
-                $message->setReturnPath($headers->get('X-Swift-Return-Path')->getAddress());
-                $headers->removeAll('X-Swift-Return-Path');
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

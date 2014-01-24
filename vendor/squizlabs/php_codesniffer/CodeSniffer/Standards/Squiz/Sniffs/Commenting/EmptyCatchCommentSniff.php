@@ -1,73 +1,36 @@
-<?php
-/**
- * Squiz_Sniffs_Commenting_EmptyCatchCommentSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Squiz_Sniffs_Commenting_EmptyCatchCommentSniff.
- *
- * Checks for empty Catch clause. Catch clause must at least have comment
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class Squiz_Sniffs_Commenting_EmptyCatchCommentSniff implements PHP_CodeSniffer_Sniff
-{
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        return array(T_CATCH);
-
-    }//end register()
-
-
-    /**
-     * Processes this test, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile All the tokens found in the document.
-     * @param int                  $stackPtr  The position of the current token in the
-     *                                        stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-
-        $scopeStart   = $tokens[$stackPtr]['scope_opener'];
-        $firstContent = $phpcsFile->findNext(T_WHITESPACE, ($scopeStart + 1), $tokens[$stackPtr]['scope_closer'], true);
-
-        if ($firstContent === false) {
-            $error = 'Empty CATCH statement must have a comment to explain why the exception is not handled';
-            $phpcsFile->addError($error, $scopeStart, 'Missing');
-        }
-
-    }//end process()
-
-
-}//end class
-
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+7slKwJguCo9te0==

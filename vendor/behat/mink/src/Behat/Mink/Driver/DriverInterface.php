@@ -1,377 +1,101 @@
-<?php
-
-namespace Behat\Mink\Driver;
-
-use Behat\Mink\Session;
-
-/*
- * This file is part of the Behat\Mink.
- * (c) Konstantin Kudryashov <ever.zet@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-/**
- * Driver interface.
- *
- * @author Konstantin Kudryashov <ever.zet@gmail.com>
- */
-interface DriverInterface
-{
-    /**
-     * Sets driver's current session.
-     *
-     * @param Session $session
-     */
-    public function setSession(Session $session);
-
-    /**
-     * Starts driver.
-     */
-    public function start();
-
-    /**
-     * Checks whether driver is started.
-     *
-     * @return Boolean
-     */
-    public function isStarted();
-
-    /**
-     * Stops driver.
-     */
-    public function stop();
-
-    /**
-     * Resets driver.
-     */
-    public function reset();
-
-    /**
-     * Visit specified URL.
-     *
-     * @param string $url url of the page
-     */
-    public function visit($url);
-
-    /**
-     * Returns current URL address.
-     *
-     * @return string
-     */
-    public function getCurrentUrl();
-
-    /**
-     * Reloads current page.
-     */
-    public function reload();
-
-    /**
-     * Moves browser forward 1 page.
-     */
-    public function forward();
-
-    /**
-     * Moves browser backward 1 page.
-     */
-    public function back();
-
-    /**
-     * Sets HTTP Basic authentication parameters
-     *
-     * @param string|Boolean $user     user name or false to disable authentication
-     * @param string         $password password
-     */
-    public function setBasicAuth($user, $password);
-
-    /**
-     * Switches to specific browser window.
-     *
-     * @param string $name window name (null for switching back to main window)
-     */
-    public function switchToWindow($name = null);
-
-    /**
-     * Switches to specific iFrame.
-     *
-     * @param string $name iframe name (null for switching back)
-     */
-    public function switchToIFrame($name = null);
-
-    /**
-     * Sets specific request header on client.
-     *
-     * @param string $name
-     * @param string $value
-     */
-    public function setRequestHeader($name, $value);
-
-    /**
-     * Returns last response headers.
-     *
-     * @return array
-     */
-    public function getResponseHeaders();
-
-    /**
-     * Sets cookie.
-     *
-     * @param string $name
-     * @param string $value
-     */
-    public function setCookie($name, $value = null);
-
-    /**
-     * Returns cookie by name.
-     *
-     * @param string $name
-     *
-     * @return string|null
-     */
-    public function getCookie($name);
-
-    /**
-     * Returns last response status code.
-     *
-     * @return integer
-     */
-    public function getStatusCode();
-
-    /**
-     * Returns last response content.
-     *
-     * @return string
-     */
-    public function getContent();
-
-    /**
-     * Capture a screenshot of the current window.
-     *
-     * @return  string  screenshot of MIME type image/* depending 
-     *   on driver (e.g., image/png, image/jpeg)
-     */
-    public function getScreenshot();
-
-    /**
-     * Finds elements with specified XPath query.
-     *
-     * @param string $xpath
-     *
-     * @return array array of NodeElements
-     */
-    public function find($xpath);
-
-    /**
-     * Returns element's tag name by it's XPath query.
-     *
-     * @param string $xpath
-     *
-     * @return string
-     */
-    public function getTagName($xpath);
-
-    /**
-     * Returns element's text by it's XPath query.
-     *
-     * @param string $xpath
-     *
-     * @return string
-     */
-    public function getText($xpath);
-
-    /**
-     * Returns element's html by it's XPath query.
-     *
-     * @param string $xpath
-     *
-     * @return string
-     */
-    public function getHtml($xpath);
-
-    /**
-     * Returns element's attribute by it's XPath query.
-     *
-     * @param string $xpath
-     * @param string $name
-     *
-     * @return mixed
-     */
-    public function getAttribute($xpath, $name);
-
-    /**
-     * Returns element's value by it's XPath query.
-     *
-     * @param string $xpath
-     *
-     * @return mixed
-     */
-    public function getValue($xpath);
-
-    /**
-     * Sets element's value by it's XPath query.
-     *
-     * @param string $xpath
-     * @param string $value
-     */
-    public function setValue($xpath, $value);
-
-    /**
-     * Checks checkbox by it's XPath query.
-     *
-     * @param string $xpath
-     */
-    public function check($xpath);
-
-    /**
-     * Unchecks checkbox by it's XPath query.
-     *
-     * @param string $xpath
-     */
-    public function uncheck($xpath);
-
-    /**
-     * Checks whether checkbox checked located by it's XPath query.
-     *
-     * @param string $xpath
-     *
-     * @return Boolean
-     */
-    public function isChecked($xpath);
-
-    /**
-     * Selects option from select field located by it's XPath query.
-     *
-     * @param string  $xpath
-     * @param string  $value
-     * @param Boolean $multiple
-     */
-    public function selectOption($xpath, $value, $multiple = false);
-
-    /**
-     * Clicks button or link located by it's XPath query.
-     *
-     * @param string $xpath
-     */
-    public function click($xpath);
-
-    /**
-     * Double-clicks button or link located by it's XPath query.
-     *
-     * @param string $xpath
-     */
-    public function doubleClick($xpath);
-
-    /**
-     * Right-clicks button or link located by it's XPath query.
-     *
-     * @param string $xpath
-     */
-    public function rightClick($xpath);
-
-    /**
-     * Attaches file path to file field located by it's XPath query.
-     *
-     * @param string $xpath
-     * @param string $path
-     */
-    public function attachFile($xpath, $path);
-
-    /**
-     * Checks whether element visible located by it's XPath query.
-     *
-     * @param string $xpath
-     *
-     * @return Boolean
-     */
-    public function isVisible($xpath);
-
-    /**
-     * Simulates a mouse over on the element.
-     *
-     * @param string $xpath
-     */
-    public function mouseOver($xpath);
-
-    /**
-     * Brings focus to element.
-     *
-     * @param string $xpath
-     */
-    public function focus($xpath);
-
-    /**
-     * Removes focus from element.
-     *
-     * @param string $xpath
-     */
-    public function blur($xpath);
-
-    /**
-     * Presses specific keyboard key.
-     *
-     * @param string $xpath
-     * @param mixed  $char     could be either char ('b') or char-code (98)
-     * @param string $modifier keyboard modifier (could be 'ctrl', 'alt', 'shift' or 'meta')
-     */
-    public function keyPress($xpath, $char, $modifier = null);
-
-    /**
-     * Pressed down specific keyboard key.
-     *
-     * @param string $xpath
-     * @param mixed  $char     could be either char ('b') or char-code (98)
-     * @param string $modifier keyboard modifier (could be 'ctrl', 'alt', 'shift' or 'meta')
-     */
-    public function keyDown($xpath, $char, $modifier = null);
-
-    /**
-     * Pressed up specific keyboard key.
-     *
-     * @param string $xpath
-     * @param mixed  $char     could be either char ('b') or char-code (98)
-     * @param string $modifier keyboard modifier (could be 'ctrl', 'alt', 'shift' or 'meta')
-     */
-    public function keyUp($xpath, $char, $modifier = null);
-
-    /**
-     * Drag one element onto another.
-     *
-     * @param string $sourceXpath
-     * @param string $destinationXpath
-     */
-    public function dragTo($sourceXpath, $destinationXpath);
-
-    /**
-     * Executes JS script.
-     *
-     * @param string $script
-     */
-    public function executeScript($script);
-
-    /**
-     * Evaluates JS script.
-     *
-     * @param string $script
-     *
-     * @return mixed
-     */
-    public function evaluateScript($script);
-
-    /**
-     * Waits some time or until JS condition turns true.
-     *
-     * @param integer $time      time in milliseconds
-     * @param string  $condition JS condition
-     */
-    public function wait($time, $condition);
-
-    /**
-     * Set the dimensions of the window.
-     *
-     * @param integer $width set the window width, measured in pixels
-     * @param integer $height set the window height, measured in pixels
-     * @param string $name window name (null for the main window)
-     */
-    public function resizeWindow($width, $height, $name = null);
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+rg3Hi95RS+W=

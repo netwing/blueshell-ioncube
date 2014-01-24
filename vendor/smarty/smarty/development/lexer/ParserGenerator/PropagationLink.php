@@ -1,117 +1,33 @@
-<?php
-/**
- * PHP_ParserGenerator, a php 5 parser generator.
- *
- * This is a direct port of the Lemon parser generator, found at
- * {@link http://www.hwaci.com/sw/lemon/}
- *
- * PHP version 5
- *
- * LICENSE:
- *
- * Copyright (c) 2006, Gregory Beaver <cellog@php.net>
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *     * Redistributions of source code must retain the above copyright
- *       notice, this list of conditions and the following disclaimer.
- *     * Redistributions in binary form must reproduce the above copyright
- *       notice, this list of conditions and the following disclaimer in
- *       the documentation and/or other materials provided with the distribution.
- *     * Neither the name of the PHP_ParserGenerator nor the names of its
- *       contributors may be used to endorse or promote products derived
- *       from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
- * IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
- * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
- * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
- * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
- * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
- * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
- * PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
- * OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
- * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
- * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- *
- * @category   php
- * @package    PHP_ParserGenerator
- * @author     Gregory Beaver <cellog@php.net>
- * @copyright  2006 Gregory Beaver
- * @license    http://www.opensource.org/licenses/bsd-license.php New BSD License
- * @version    CVS: $Id: PropagationLink.php,v 1.1 2006/07/18 00:53:10 cellog Exp $
- * @since      File available since Release 0.1.0
- */
-/**
- * A followset propagation link indicates that the contents of one
- * configuration followset should be propagated to another whenever
- * the first changes.
- *
- * @package    PHP_ParserGenerator
- * @author     Gregory Beaver <cellog@php.net>
- * @copyright  2006 Gregory Beaver
- * @license    http://www.opensource.org/licenses/bsd-license.php New BSD License
- * @version    0.1.5
- * @since      Class available since Release 0.1.0
- */
-
-class PHP_ParserGenerator_PropagationLink
-{
-    /**
-     * The configuration that defines this propagation link
-     * @var PHP_ParserGenerator_Config
-     */
-    public $cfp;
-    /**
-     * The next propagation link
-     * @var PHP_ParserGenerator_PropagationLink|0
-     */
-    public $next = 0;
-
-    /**
-     * Add a propagation link to the current list
-     *
-     * This prepends the configuration passed in to the first parameter
-     * which is either 0 or a PHP_ParserGenerator_PropagationLink defining
-     * an existing list.
-     * @param PHP_ParserGenerator_PropagationLink|null
-     * @param PHP_ParserGenerator_Config
-     */
-    public static function Plink_add(&$plpp, PHP_ParserGenerator_Config $cfp)
-    {
-        $new = new PHP_ParserGenerator_PropagationLink;
-        $new->next = $plpp;
-        $plpp = $new;
-        $new->cfp = $cfp;
-    }
-
-    /**
-     * Transfer every propagation link on the list "from" to the list "to"
-     */
-    public static function Plink_copy(PHP_ParserGenerator_PropagationLink &$to,
-                               PHP_ParserGenerator_PropagationLink $from)
-    {
-        while ($from) {
-            $nextpl = $from->next;
-            $from->next = $to;
-            $to = $from;
-            $from = $nextpl;
-        }
-    }
-
-    /**
-     * Delete every propagation link on the list
-     * @param PHP_ParserGenerator_PropagationLink|0
-     */
-    public static function Plink_delete($plp)
-    {
-        while ($plp) {
-            $nextpl = $plp->next;
-            $plp->next = 0;
-            $plp = $nextpl;
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+D2M+ertQIYlqxqpsmLOcU0nxrSUucDlJUW==

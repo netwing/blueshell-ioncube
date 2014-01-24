@@ -1,204 +1,68 @@
-<?php
-
-/*
- * This file is part of SwiftMailer.
- * (c) 2004-2009 Chris Corbyn
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-/**
- * Throttles the rate at which emails are sent.
- *
- * @package    Swift
- * @subpackage Plugins
- * @author     Chris Corbyn
- */
-class Swift_Plugins_ThrottlerPlugin extends Swift_Plugins_BandwidthMonitorPlugin implements Swift_Plugins_Sleeper, Swift_Plugins_Timer
-{
-    /** Flag for throttling in bytes per minute */
-    const BYTES_PER_MINUTE = 0x01;
-
-    /** Flag for throttling in emails per second (Amazon SES) */
-    const MESSAGES_PER_SECOND = 0x11;
-
-    /** Flag for throttling in emails per minute */
-    const MESSAGES_PER_MINUTE = 0x10;
-
-    /**
-     * The Sleeper instance for sleeping.
-     *
-     * @var Swift_Plugins_Sleeper
-     */
-    private $_sleeper;
-
-    /**
-     * The Timer instance which provides the timestamp.
-     *
-     * @var Swift_Plugins_Timer
-     */
-    private $_timer;
-
-    /**
-     * The time at which the first email was sent.
-     *
-     * @var int
-     */
-    private $_start;
-
-    /**
-     * The rate at which messages should be sent.
-     *
-     * @var int
-     */
-    private $_rate;
-
-    /**
-     * The mode for throttling.
-     *
-     * This is {@link BYTES_PER_MINUTE} or {@link MESSAGES_PER_MINUTE}
-     *
-     * @var int
-     */
-    private $_mode;
-
-    /**
-     * An internal counter of the number of messages sent.
-     *
-     * @var int
-     */
-    private $_messages = 0;
-
-    /**
-     * Create a new ThrottlerPlugin.
-     *
-     * @param integer               $rate
-     * @param integer               $mode,   defaults to {@link BYTES_PER_MINUTE}
-     * @param Swift_Plugins_Sleeper $sleeper (only needed in testing)
-     * @param Swift_Plugins_Timer   $timer   (only needed in testing)
-     */
-    public function __construct($rate, $mode = self::BYTES_PER_MINUTE, Swift_Plugins_Sleeper $sleeper = null, Swift_Plugins_Timer $timer = null)
-    {
-        $this->_rate = $rate;
-        $this->_mode = $mode;
-        $this->_sleeper = $sleeper;
-        $this->_timer = $timer;
-    }
-
-    /**
-     * Invoked immediately before the Message is sent.
-     *
-     * @param Swift_Events_SendEvent $evt
-     */
-    public function beforeSendPerformed(Swift_Events_SendEvent $evt)
-    {
-        $time = $this->getTimestamp();
-        if (!isset($this->_start)) {
-            $this->_start = $time;
-        }
-        $duration = $time - $this->_start;
-
-        switch($this->_mode) {
-            case self::BYTES_PER_MINUTE :
-                $sleep = $this->_throttleBytesPerMinute($duration);
-                break;
-            case self::MESSAGES_PER_SECOND :
-                $sleep = $this->_throttleMessagesPerSecond($duration);
-                break;
-            case self::MESSAGES_PER_MINUTE :
-                $sleep = $this->_throttleMessagesPerMinute($duration);
-                break;
-            default :
-                $sleep = 0;
-                break;
-        }
-
-        if ($sleep > 0) {
-            $this->sleep($sleep);
-        }
-    }
-
-    /**
-     * Invoked when a Message is sent.
-     *
-     * @param Swift_Events_SendEvent $evt
-     */
-    public function sendPerformed(Swift_Events_SendEvent $evt)
-    {
-        parent::sendPerformed($evt);
-        ++$this->_messages;
-    }
-
-    /**
-     * Sleep for $seconds.
-     *
-     * @param integer $seconds
-     */
-    public function sleep($seconds)
-    {
-        if (isset($this->_sleeper)) {
-            $this->_sleeper->sleep($seconds);
-        } else {
-            sleep($seconds);
-        }
-    }
-
-    /**
-     * Get the current UNIX timestamp.
-     *
-     * @return int
-     */
-    public function getTimestamp()
-    {
-        if (isset($this->_timer)) {
-            return $this->_timer->getTimestamp();
-        } else {
-            return time();
-        }
-    }
-
-    // -- Private methods
-
-    /**
-     * Get a number of seconds to sleep for.
-     *
-     * @param integer $timePassed
-     *
-     * @return int
-     */
-    private function _throttleBytesPerMinute($timePassed)
-    {
-        $expectedDuration = $this->getBytesOut() / ($this->_rate / 60);
-
-        return (int) ceil($expectedDuration - $timePassed);
-    }
-
-    /**
-     * Get a number of seconds to sleep for.
-     *
-     * @param int $timePassed
-     *
-     * @return int
-     */
-    private function _throttleMessagesPerSecond($timePassed)
-    {
-        $expectedDuration = $this->_messages / ($this->_rate);
-
-        return (int) ceil($expectedDuration - $timePassed);
-    }
-
-    /**
-     * Get a number of seconds to sleep for.
-     *
-     * @param integer $timePassed
-     *
-     * @return int
-     */
-    private function _throttleMessagesPerMinute($timePassed)
-    {
-        $expectedDuration = $this->_messages / ($this->_rate / 60);
-
-        return (int) ceil($expectedDuration - $timePassed);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

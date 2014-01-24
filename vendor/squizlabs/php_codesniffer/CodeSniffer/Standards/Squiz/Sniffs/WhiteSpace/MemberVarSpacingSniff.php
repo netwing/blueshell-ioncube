@@ -1,120 +1,54 @@
-<?php
-/**
- * Verifies that class members are spaced correctly.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-if (class_exists('PHP_CodeSniffer_Standards_AbstractVariableSniff', true) === false) {
-    throw new PHP_CodeSniffer_Exception('Class PHP_CodeSniffer_Standards_AbstractVariableSniff not found');
-}
-
-/**
- * Verifies that class members are spaced correctly.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class Squiz_Sniffs_WhiteSpace_MemberVarSpacingSniff extends PHP_CodeSniffer_Standards_AbstractVariableSniff
-{
-
-
-    /**
-     * Processes the function tokens within the class.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file where this token was found.
-     * @param int                  $stackPtr  The position where the token was found.
-     *
-     * @return void
-     */
-    protected function processMemberVar(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-
-        // There needs to be 1 blank line before the var, not counting comments.
-        $prevLineToken = null;
-        for ($i = ($stackPtr - 1); $i > 0; $i--) {
-            if (in_array($tokens[$i]['code'], PHP_CodeSniffer_Tokens::$commentTokens) === true) {
-                // Skip comments.
-                continue;
-            } else if (strpos($tokens[$i]['content'], $phpcsFile->eolChar) === false) {
-                // Not the end of the line.
-                continue;
-            } else {
-                // If this is a WHITESPACE token, and the token right before
-                // it is a DOC_COMMENT, then it is just the newline after the
-                // member var's comment, and can be skipped.
-                if ($tokens[$i]['code'] === T_WHITESPACE && in_array($tokens[($i - 1)]['code'], PHP_CodeSniffer_Tokens::$commentTokens) === true) {
-                    continue;
-                }
-
-                $prevLineToken = $i;
-                break;
-            }
-        }
-
-        if (is_null($prevLineToken) === true) {
-            // Never found the previous line, which means
-            // there are 0 blank lines before the member var.
-            $foundLines = 0;
-        } else {
-            $prevContent = $phpcsFile->findPrevious(array(T_WHITESPACE, T_DOC_COMMENT), $prevLineToken, null, true);
-            $foundLines  = ($tokens[$prevLineToken]['line'] - $tokens[$prevContent]['line']);
-        }//end if
-
-        if ($foundLines !== 1) {
-            $error = 'Expected 1 blank line before member var; %s found';
-            $data  = array($foundLines);
-            $phpcsFile->addError($error, $stackPtr, 'After', $data);
-        }
-
-    }//end processMemberVar()
-
-
-    /**
-     * Processes normal variables.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file where this token was found.
-     * @param int                  $stackPtr  The position where the token was found.
-     *
-     * @return void
-     */
-    protected function processVariable(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        // We don't care about normal variables.
-
-    }//end processVariable()
-
-
-    /**
-     * Processes variables in double quoted strings.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file where this token was found.
-     * @param int                  $stackPtr  The position where the token was found.
-     *
-     * @return void
-     */
-    protected function processVariableInString(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        // We don't care about normal variables.
-
-    }//end processVariableInString()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+D3MY35AZkdOXfoC=

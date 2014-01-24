@@ -1,171 +1,66 @@
-<?php
-
-/*
- * This file is part of SwiftMailer.
- * (c) 2004-2009 Chris Corbyn
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-/**
- * Redundantly and rotationally uses several Transports when sending.
- *
- * @package    Swift
- * @subpackage Transport
- * @author     Chris Corbyn
- */
-class Swift_Transport_LoadBalancedTransport implements Swift_Transport
-{
-    /**
-     * Transports which are deemed useless.
-     *
-     * @var Swift_Transport[]
-     */
-    private $_deadTransports = array();
-
-    /**
-     * The Transports which are used in rotation.
-     *
-     * @var Swift_Transport[]
-     */
-    protected $_transports = array();
-
-    /**
-     * Creates a new LoadBalancedTransport.
-     */
-    public function __construct()
-    {
-    }
-
-    /**
-     * Set $transports to delegate to.
-     *
-     * @param Swift_Transport[] $transports
-     */
-    public function setTransports(array $transports)
-    {
-        $this->_transports = $transports;
-        $this->_deadTransports = array();
-    }
-
-    /**
-     * Get $transports to delegate to.
-     *
-     * @return Swift_Transport[]
-     */
-    public function getTransports()
-    {
-        return array_merge($this->_transports, $this->_deadTransports);
-    }
-
-    /**
-     * Test if this Transport mechanism has started.
-     *
-     * @return boolean
-     */
-    public function isStarted()
-    {
-        return count($this->_transports) > 0;
-    }
-
-    /**
-     * Start this Transport mechanism.
-     */
-    public function start()
-    {
-        $this->_transports = array_merge($this->_transports, $this->_deadTransports);
-    }
-
-    /**
-     * Stop this Transport mechanism.
-     */
-    public function stop()
-    {
-        foreach ($this->_transports as $transport) {
-            $transport->stop();
-        }
-    }
-
-    /**
-     * Send the given Message.
-     *
-     * Recipient/sender data will be retrieved from the Message API.
-     * The return value is the number of recipients who were accepted for delivery.
-     *
-     * @param Swift_Mime_Message $message
-     * @param string[]           $failedRecipients An array of failures by-reference
-     *
-     * @return int
-     */
-    public function send(Swift_Mime_Message $message, &$failedRecipients = null)
-    {
-        $maxTransports = count($this->_transports);
-        $sent = 0;
-
-        for ($i = 0; $i < $maxTransports
-            && $transport = $this->_getNextTransport(); ++$i)
-        {
-            try {
-                if (!$transport->isStarted()) {
-                    $transport->start();
-                }
-                if ($sent = $transport->send($message, $failedRecipients)) {
-                    break;
-                }
-            } catch (Swift_TransportException $e) {
-                $this->_killCurrentTransport();
-            }
-        }
-
-        if (count($this->_transports) == 0) {
-            throw new Swift_TransportException(
-                'All Transports in LoadBalancedTransport failed, or no Transports available'
-                );
-        }
-
-        return $sent;
-    }
-
-    /**
-     * Register a plugin.
-     *
-     * @param Swift_Events_EventListener $plugin
-     */
-    public function registerPlugin(Swift_Events_EventListener $plugin)
-    {
-        foreach ($this->_transports as $transport) {
-            $transport->registerPlugin($plugin);
-        }
-    }
-
-    // -- Protected methods
-
-    /**
-     * Rotates the transport list around and returns the first instance.
-     *
-     * @return Swift_Transport
-     */
-    protected function _getNextTransport()
-    {
-        if ($next = array_shift($this->_transports)) {
-            $this->_transports[] = $next;
-        }
-
-        return $next;
-    }
-
-    /**
-     * Tag the currently used (top of stack) transport as dead/useless.
-     */
-    protected function _killCurrentTransport()
-    {
-        if ($transport = array_pop($this->_transports)) {
-            try {
-                $transport->stop();
-            } catch (Exception $e) {
-            }
-            $this->_deadTransports[] = $transport;
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

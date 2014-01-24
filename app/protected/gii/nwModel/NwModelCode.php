@@ -1,83 +1,65 @@
-<?php
-
-Yii::import('system.gii.generators.model.ModelCode');
-
-class NwModelCode extends ModelCode
-{
-    public $baseModelPath;
-
-    public $baseModelClass;
-
-    /**
-     * Lists the template files.
-     * #MethodTracker
-     * This method is based on {@link ModelCode::requiredTemplates}, from version 1.1.7 (r3135). Changes:
-     * <ul>
-     * <li>Includes the base model.</li>
-     * </ul>
-     * @return array A list of required template filenames.
-     */
-    public function requiredTemplates() {
-        $array = parent::requiredTemplates();
-        $array[] = "base" . DIRECTORY_SEPARATOR . "model.php";
-        return $array;
-    }
-
-    public function prepare()
-    {
-        if (($pos = strrpos($this->tableName, '.')) !== false) {
-            $schema = substr($this->tableName, 0, $pos);
-            $tableName = substr($this->tableName, $pos + 1);
-        } else {
-            $schema = '';
-            $tableName = $this->tableName;
-        }
-        if ($tableName[strlen($tableName) - 1] === '*') {
-            $tables = Yii::app()->db->schema->getTables($schema);
-            if ($this->tablePrefix != '') {
-                foreach ($tables as $i => $table) {
-                    if (strpos($table->name, $this->tablePrefix) !== 0)
-                        unset($tables[$i]);
-                }
-            }
-        }
-        else {
-            $tables=array($this->getTableSchema($this->tableName));
-        }
-
-        $this->files = array();
-        $templatePath = $this->templatePath;
-
-        $this->relations = $this->generateRelations();
-
-        foreach ($tables as $table) {
-            $tableName = $this->removePrefix($table->name);
-            $className = $this->generateClassName($table->name);
-
-            $params = array(
-                'tableName'=>$schema==='' ? $tableName : $schema.'.'.$tableName,
-                'modelClass'=>$className,
-                'columns'=>$table->columns,
-                'labels'=>$this->generateLabels($table),
-                'rules'=>$this->generateRules($table),
-                'relations'=>isset($this->relations[$className]) ? $this->relations[$className] : array(),
-                'connectionId'=>$this->connectionId,
-            );
-
-            // Setup base model information.
-            $this->baseModelPath = $this->modelPath . '.base';
-            $this->baseModelClass = 'Base' . $className;
-            // Generate the model.
-            $this->files[] = new CCodeFile(
-                            Yii::getPathOfAlias($this->modelPath . '.' . $className) . '.php',
-                            $this->render($templatePath . DIRECTORY_SEPARATOR . 'model.php', $params)
-            );
-            // Generate the base model.
-            $this->files[] = new CCodeFile(
-                            Yii::getPathOfAlias($this->baseModelPath . '.' . $this->baseModelClass) . '.php',
-                            $this->render($templatePath . DIRECTORY_SEPARATOR . 'base' . DIRECTORY_SEPARATOR . 'model.php', $params)
-            );
-        }
-    }
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+aILj4xpvOQN2

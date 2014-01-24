@@ -1,255 +1,127 @@
-<?php
-
-namespace Guzzle\Service\Command\LocationVisitor\Request;
-
-use Guzzle\Http\Message\RequestInterface;
-use Guzzle\Service\Command\CommandInterface;
-use Guzzle\Service\Description\Operation;
-use Guzzle\Service\Description\Parameter;
-
-/**
- * Location visitor used to serialize XML bodies
- */
-class XmlVisitor extends AbstractRequestVisitor
-{
-    /** @var \SplObjectStorage Data object for persisting XML data */
-    protected $data;
-
-    /** @var \XMLWriter XML writer resource */
-    protected $writer;
-
-    /** @var bool Content-Type header added when XML is found */
-    protected $contentType = 'application/xml';
-
-    public function __construct()
-    {
-        $this->data = new \SplObjectStorage();
-    }
-
-    /**
-     * Change the content-type header that is added when XML is found
-     *
-     * @param string $header Header to set when XML is found
-     *
-     * @return self
-     */
-    public function setContentTypeHeader($header)
-    {
-        $this->contentType = $header;
-
-        return $this;
-    }
-
-    public function visit(CommandInterface $command, RequestInterface $request, Parameter $param, $value)
-    {
-        $xml = isset($this->data[$command])
-            ? $this->data[$command]
-            : $this->createRootElement($param->getParent());
-        $this->addXml($xml, $param, $value);
-
-        $this->data[$command] = $xml;
-    }
-
-    public function after(CommandInterface $command, RequestInterface $request)
-    {
-        $xml = null;
-
-        // If data was found that needs to be serialized, then do so
-        if (isset($this->data[$command])) {
-            $xml = $this->finishDocument($this->writer);
-            unset($this->data[$command]);
-        } else {
-            // Check if XML should always be sent for the command
-            $operation = $command->getOperation();
-            if ($operation->getData('xmlAllowEmpty')) {
-                $xmlWriter = $this->createRootElement($operation);
-                $xml = $this->finishDocument($xmlWriter);
-            }
-        }
-
-        if ($xml) {
-            // Don't overwrite the Content-Type if one is set
-            if ($this->contentType && !$request->hasHeader('Content-Type')) {
-                $request->setHeader('Content-Type', $this->contentType);
-            }
-            $request->setBody($xml);
-        }
-    }
-
-    /**
-     * Create the root XML element to use with a request
-     *
-     * @param Operation $operation Operation object
-     *
-     * @return \XMLWriter
-     */
-    protected function createRootElement(Operation $operation)
-    {
-        static $defaultRoot = array('name' => 'Request');
-        // If no root element was specified, then just wrap the XML in 'Request'
-        $root = $operation->getData('xmlRoot') ?: $defaultRoot;
-        // Allow the XML declaration to be customized with xmlEncoding
-        $encoding = $operation->getData('xmlEncoding');
-
-        $xmlWriter = $this->startDocument($encoding);
-
-        $xmlWriter->startElement($root['name']);
-        // Create the wrapping element with no namespaces if no namespaces were present
-        if (!empty($root['namespaces'])) {
-            // Create the wrapping element with an array of one or more namespaces
-            foreach ((array) $root['namespaces'] as $prefix => $uri) {
-                $nsLabel = 'xmlns';
-                if (!is_numeric($prefix)) {
-                    $nsLabel .= ':'.$prefix;
-                }
-                $xmlWriter->writeAttribute($nsLabel, $uri);
-            }
-        }
-        return $xmlWriter;
-    }
-
-    /**
-     * Recursively build the XML body
-     *
-     * @param \XMLWriter $xmlWriter XML to modify
-     * @param Parameter  $param     API Parameter
-     * @param mixed      $value     Value to add
-     */
-    protected function addXml(\XMLWriter $xmlWriter, Parameter $param, $value)
-    {
-        if ($value === null) {
-            return;
-        }
-
-        $value = $param->filter($value);
-        $type = $param->getType();
-        $name = $param->getWireName();
-        $prefix = null;
-        $namespace = $param->getData('xmlNamespace');
-        if (false !== strpos($name, ':')) {
-            list($prefix, $name) = explode(':', $name, 2);
-        }
-
-        if ($type == 'object' || $type == 'array') {
-            if (!$param->getData('xmlFlattened')) {
-                $xmlWriter->startElementNS(null, $name, $namespace);
-            }
-            if ($param->getType() == 'array') {
-                $this->addXmlArray($xmlWriter, $param, $value);
-            } elseif ($param->getType() == 'object') {
-                $this->addXmlObject($xmlWriter, $param, $value);
-            }
-            if (!$param->getData('xmlFlattened')) {
-                $xmlWriter->endElement();
-            }
-            return;
-        }
-        if ($param->getData('xmlAttribute')) {
-            $this->writeAttribute($xmlWriter, $prefix, $name, $namespace, $value);
-        } else {
-            $this->writeElement($xmlWriter, $prefix, $name, $namespace, $value);
-        }
-    }
-
-    /**
-     * Write an attribute with namespace if used
-     *
-     * @param  \XMLWriter $xmlWriter XMLWriter instance
-     * @param  string     $prefix    Namespace prefix if any
-     * @param  string     $name      Attribute name
-     * @param  string     $namespace The uri of the namespace
-     * @param  string     $value     The attribute content
-     */
-    protected function writeAttribute($xmlWriter, $prefix, $name, $namespace, $value)
-    {
-        if (empty($namespace)) {
-            $xmlWriter->writeAttribute($name, $value);
-        } else {
-            $xmlWriter->writeAttributeNS($prefix, $name, $namespace, $value);
-        }
-    }
-
-    /**
-     * Write an element with namespace if used
-     *
-     * @param  \XMLWriter $xmlWriter XML writer resource
-     * @param  string     $prefix    Namespace prefix if any
-     * @param  string     $name      Element name
-     * @param  string     $namespace The uri of the namespace
-     * @param  string     $value     The element content
-     */
-    protected function writeElement(\XMLWriter $xmlWriter, $prefix, $name, $namespace, $value)
-    {
-        $xmlWriter->startElementNS($prefix, $name, $namespace);
-        if (strpbrk($value, '<>&')) {
-            $xmlWriter->writeCData($value);
-        } else {
-            $xmlWriter->writeRaw($value);
-        }
-        $xmlWriter->endElement();
-    }
-
-    /**
-     * Create a new xml writier and start a document
-     *
-     * @param  string $encoding document encoding
-     *
-     * @return \XMLWriter the writer resource
-     */
-    protected function startDocument($encoding)
-    {
-        $this->writer = new \XMLWriter();
-        $this->writer->openMemory();
-        $this->writer->startDocument('1.0', $encoding);
-
-        return $this->writer;
-    }
-
-    /**
-     * End the document and return the output
-     *
-     * @param \XMLWriter $xmlWriter
-     *
-     * @return \string the writer resource
-     */
-    protected function finishDocument($xmlWriter)
-    {
-        $xmlWriter->endDocument();
-
-        return $xmlWriter->outputMemory();
-    }
-
-    /**
-     * Add an array to the XML
-     */
-    protected function addXmlArray(\XMLWriter $xmlWriter, Parameter $param, &$value)
-    {
-        if ($items = $param->getItems()) {
-            foreach ($value as $v) {
-                $this->addXml($xmlWriter, $items, $v);
-            }
-        }
-    }
-
-    /**
-     * Add an object to the XML
-     */
-    protected function addXmlObject(\XMLWriter $xmlWriter, Parameter $param, &$value)
-    {
-        $noAttributes = array();
-        // add values which have attriutes
-        foreach ($value as $name => $v) {
-            if ($property = $param->getProperty($name)) {
-                if ($property->getData('xmlAttribute')) {
-                    $this->addXml($xmlWriter, $property, $v);
-                } else {
-                    $noAttributes[] = array('value' => $v, 'property' => $property);
-                }
-            }
-        }
-        // now add values with no attributes
-        foreach ($noAttributes as $element) {
-            $this->addXml($xmlWriter, $element['property'], $element['value']);
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+w2xuLG==

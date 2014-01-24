@@ -1,81 +1,41 @@
-<?php
-/**
-* Smarty PHPunit tests for tag attributes
-*
-* @package PHPunit
-* @author Uwe Tews
-*/
-
-/**
-* class for tag attribute tests
-*/
-class AttributeTests extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $this->smarty = SmartyTests::$smarty;
-        SmartyTests::init();
-    }
-
-    static function isRunnable()
-    {
-        return true;
-    }
-
-    /**
-    * test required attribute
-    */
-    public function testRequiredAttributeVar()
-    {
-        try {
-            $this->smarty->fetch('string:{assign value=1}');
-        } catch (Exception $e) {
-            $this->assertContains('missing "var" attribute', $e->getMessage());
-
-            return;
-        }
-        $this->fail('Exception for required attribute "var" has not been raised.');
-    }
-    /**
-    * test unexspected attribute
-    */
-    public function testUnexpectedAttribute()
-    {
-        try {
-            $this->smarty->fetch('string:{assign var=foo value=1 bar=2}');
-        } catch (Exception $e) {
-            $this->assertContains('unexpected "bar" attribute', $e->getMessage());
-
-            return;
-        }
-        $this->fail('Exception for unexpected attribute "bar" has not been raised.');
-    }
-    /**
-    * test illegal option value
-    */
-    public function testIllegalOptionValue()
-    {
-        try {
-            $this->smarty->fetch('string:{assign var=foo value=1 nocache=buh}');
-        } catch (Exception $e) {
-            $this->assertContains(htmlentities('illegal value of option flag'), $e->getMessage());
-
-            return;
-        }
-        $this->fail('Exception for illegal value of option flag has not been raised.');
-    }
-    /**
-    * test too many shorthands
-    */
-    public function testTooManyShorthands()
-    {
-        try {
-            $this->smarty->fetch('string:{assign foo 1 2}');
-        } catch (Exception $e) {
-            $this->assertContains('too many shorthand attributes', $e->getMessage());
-
-            return;
-        }
-        $this->fail('Exception for too many shorthand attributes has not been raised.');
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

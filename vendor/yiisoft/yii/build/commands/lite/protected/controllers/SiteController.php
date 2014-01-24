@@ -1,57 +1,34 @@
-<?php
-
-class SiteController extends CController
-{
-	/**
-	 * Declares class-based actions.
-	 */
-	public function actions()
-	{
-		return array(
-			// captcha action renders the CAPTCHA image
-			'captcha'=>array(
-				'class'=>'CCaptchaAction',
-				'backColor'=>0xEBF4FB,
-			),
-		);
-	}
-
-	/**
-	 * This is the default 'index' action that is invoked
-	 * when an action is not explicitly requested by users.
-	 */
-	public function actionIndex()
-	{
-		// renders the view file 'protected/views/site/index.php'
-		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('index');
-	}
-
-	/**
-	 * Displays a login form to login a user.
-	 */
-	public function actionLogin()
-	{
-		$user=new LoginForm;
-		if(Yii::app()->request->isPostRequest)
-		{
-			// collect user input data
-			if(isset($_POST['LoginForm']))
-				$user->setAttributes($_POST['LoginForm']);
-			// validate user input and redirect to previous page if valid
-			if($user->validate())
-				$this->redirect(Yii::app()->user->returnUrl);
-		}
-		// display the login form
-		$this->render('login',array('user'=>$user));
-	}
-
-	/**
-	 * Logout the current user and redirect to homepage.
-	 */
-	public function actionLogout()
-	{
-		Yii::app()->user->logout();
-		$this->redirect(Yii::app()->homeUrl);
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+NqDCKglgwSHB

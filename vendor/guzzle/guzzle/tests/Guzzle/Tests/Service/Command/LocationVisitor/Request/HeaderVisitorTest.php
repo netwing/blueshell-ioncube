@@ -1,48 +1,45 @@
-<?php
-
-namespace Guzzle\Tests\Service\Command\LocationVisitor\Request;
-
-use Guzzle\Service\Description\Parameter;
-use Guzzle\Service\Command\LocationVisitor\Request\HeaderVisitor as Visitor;
-
-/**
- * @covers Guzzle\Service\Command\LocationVisitor\Request\HeaderVisitor
- */
-class HeaderVisitorTest extends AbstractVisitorTestCase
-{
-    /**
-     * @expectedException \Guzzle\Common\Exception\InvalidArgumentException
-     */
-    public function testValidatesHeaderMapsAreArrays()
-    {
-        $visitor = new Visitor();
-        $param = $this->getNestedCommand('header')->getParam('foo')->setSentAs('test');
-        $param->setAdditionalProperties(new Parameter(array()));
-        $visitor->visit($this->command, $this->request, $param, 'test');
-    }
-
-    public function testVisitsLocation()
-    {
-        $visitor = new Visitor();
-        $param = $this->getNestedCommand('header')->getParam('foo')->setSentAs('test');
-        $param->setAdditionalProperties(false);
-        $visitor->visit($this->command, $this->request, $param, '123');
-        $this->assertEquals('123', (string) $this->request->getHeader('test'));
-    }
-
-    public function testVisitsMappedPrefixHeaders()
-    {
-        $visitor = new Visitor();
-        $param = $this->getNestedCommand('header')->getParam('foo')->setSentAs('test');
-        $param->setSentAs('x-foo-');
-        $param->setAdditionalProperties(new Parameter(array(
-            'type' => 'string'
-        )));
-        $visitor->visit($this->command, $this->request, $param, array(
-            'bar' => 'test',
-            'baz' => '123'
-        ));
-        $this->assertEquals('test', (string) $this->request->getHeader('x-foo-bar'));
-        $this->assertEquals('123', (string) $this->request->getHeader('x-foo-baz'));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPmSTyb5eviPcOQndSWn3yKmLxL/KXmj2GlvlJrwfAE4nUj7ku762cdsS8EFdbTJ/lGn2yeN6
+Q8npn0o7ZwB+oJELLFFvr/fpGClkXjkfNVUmwGJvtUl6uszxxLSHTuYDUeSucX0pNmlTTrVVDp9Y
+0pQ8P0AGHsJ1DCfPUaPPCVwbXv0kx4K2NRXgbZj8UaJ18on5sOQ7oy2x8k66YGYlT8zEIhbHGTAe
+QkJU3QqbqfjkOH44NIZIBQzHAE4xzt2gh9fl143SQOW1T5HbttfhqPFVznwPHjWLpy0TPcedv0O3
+AndrV3xF26F6IfNOu6kIZGplT0QXM+uZZb+8v4DW/1AvewtgozEumBF9mF5HhtH57nJnnZUD97qj
+E2JZzq0T0QHwARS+np9xPYwKIvvIHxNrv/fBH55jR78f5mQl034oOvtN6fZrDQUCmt+PpC+5HDbN
+NhqtA7y6JsF8d4Ez3iJJO+2F0R+dRbwMGXtCWtJmGqfKuD5EDvVuILfY0rwGhLbhURCl/jXR80t2
+zygDPsn9XjOlGDNpoXaWWCu8NiJ8km6GZE9I8sFJcXUQvYiDmoWwnyWXqZySUwHii6YV/jlH7TG+
+IcQb71Efesc+NwvlhaeJ34sGEa9u834cv07/Sewz10wqDSFeMbCDySZmByFPjoQkw7aktvH2m6es
+Xc22an+f9YqKTN6NhXeuRUnXznLh0L0BFfL1dqNjCtBCfYlOVMEFCKq2a0S4i0mpdvN1tg1SaZhC
+RRp8Ku+bs0WuX1zumJt0DItSz6yHwyDagSs4mM9iKiFHvUFSpsYrUCYtRelFV3D8EejHXkTAxZ/v
+aJ3AWOwmTZbyfzGpecni/LOhW1aa+krrwUwZt3aVMAzxScvMZtwyxJ+j9tflmgvN5fdnXnTNHYrN
+5OiftdhlYKx1kOS9JCAy7M/uLHBqdMubQ6ytN3ERyELCvawYsEXm9nkCRoVS+DRP/e/8/XPu5Vys
+HZ5dthLI9UY36KVgxEqV14d03yaC1sp1sZhTfZ2LdT4UG2YI9bLxCMI898hDU0nzcTeVnLRuU5+c
+P4GAyGk02Ki7RZfFoYvo7SA4CIeBCq6FBTmTKunfNWMUcO6tUHuYSLkJNIMC9PMDWTmxt8RXYVej
+KXmLiCT2mmaDe4+GBt7n0sjbchWq6hU19b1Y5u/gQmCJEO+SD67mvb0KMtLoeM10pik/ls997H+L
+97cgQQjOKrsNBlgaxcyuayhGeDjPWWgaFkqAJM1bzj2+zHbQl9ps+htG/qYgFIbgkXXze7U5kxE8
+jK8HKjeRfK5rUdhvDSecIVb1M+9ZWrWpJ5aqV1atBGqOjzLzWOf4UON9ABA9AkelqlRB4ZxqZRwU
+cN8xr85sn8O719fE6Qfw6igf/DVLpNPAsE6ndiu9CPQiuwi65N+pazIWibpY0pyC5/4zxCpM4S3Y
+MiG8chz3P9ZwOR9Z0t7P129wYC25FcJvSDHQFG+U5d/DecvAhekK0Go2JK1yP16mIgxwI4DW2aIg
+DSx7p5xXsf0ZO4P3bX1rzhJAkmL4OmZrXEFXbmkW/4XUWVXn9D1XqeBMf6h8YPTdbwwXVRg1Jaeg
+6BeXH6PoQBdmohdcZy5tU+knkoYJJHXbyTI1J8TiqLwbKanwJTgOdgdBm18NOJu3KEoEhHVSq08M
+BNIMcQALo/YboJMJ3Tb5ZanLc4XwzQJwqZkBFqVVTvvSMa8Ea+O0SrkN8eMYf5x1uwOUSEB2+lcf
+aTN8GUD0khyi9euqPUYQNhEkf99BdngXz2lgs1d1rqdmuBlnidkEIBlhTnVHODBcKjq1TMPbpjJg
+8iYCxs5N6awhuyjTNx0Djgnfhsm9syUJ29dC+J4ugmKpIk9GD0jHb0eiQ4W5r2x1Pr5thcT4bG+V
+1rJQ9NT5tt8C/JXv0VwlRLKTfwe3RWPej9gtDMSPnumQKjOK+2XsQLYprFWlSvmf0q+E6QavAvME
+JDCbCBHENmAPE51yV232whh1AyUKD76oenHIPCP06Hp48b3+sp0Mfr/uLveVONghi3zNXCxOaWeA
+xjm39KKNK1g3ewt7R67gSXXYGlnmtkEcBBEU2tZsdvT642s7zRF4L0a5f0UBi2QgCOJzrQao0hS5
+1O9Y5QvXHwmGiup9gwl+vxOiwuvqKn8DSTNxmeApiHzzpdppGI4AuxwPcPFOTBon4lv7EEwXWT/d
+7eTW8jJQ2tQHKAKFsuM1vjdHusNK+Hy40kMbyVieC1dmqs6r8JZUPVlRZvaucxn0aGjaqtYt97Zp
+TFnTnWQtlG+aWWsKI0PmAlrJKmql2VWOj6WwAFn9PQ5n14N1bPelKHRcRMQQYAqd9kQ4FbN0Btv9
+xLlmhVoM0ZKKwGOkES+Cb8P+Q51FKV8Glv+qNpvrIufTkN68UKw55VkW7Phg2SXO2FSH3mhDYsKT
+XvaCguds7h4YkoKwy7Yc9SFwDcgCKvbCDMmYHHf3FcQPfRU8kZ1Qzd9ot8j+uHeSmpeUs/DFmjXx
+WN0RrZ8x3FxvwdGuiK9v6GE2Yy90NlQoTawf1JvaV1eeH+quBpeMtABagTMTxduTu7flI94X2xhE
+Gn47UnrXywB0u+f6wmkg89zKAMAddtD5iMc7Nbnil8zbNbQdpnCcfEgopXKoTO2KsWMjXwkCK9F5
+1BpWLaUfP4dVUBP9TsnKb9iG5JXah2zqTVcHf5apF+XKI9vOxi6l3q0bT9E5W82NwXgyqxewBc4/
+SRC/8RaO0cLPZUZyWtRcZ0QDiGgWoe2T1wPjT+0kNrJnRv/iirEkKwi1yQVGhxxc2GQYILSNVJxL
+5kkTElwDroMH27cLQgy9zsVmpBQDWYLRd/uCSOJ3jXf4NMHVPedkA+r8hvBEcAu//emoy7sCMjae
+/XMqW3Jl+2+6MTf6UjjjsQ4gkf2kry7WHKIiQicTwhuzvHn41GV0MSMq/jgi2qsm3t3i9AiEOmjc
+YEBUAhKVHcsApnxliKUeRJKhzVouXszOCl4uTwg8VKF5HEhrVEOewTyrhXNGsYb5CAidZjv35fim
+PzOa2ElVA+BKbUX7qOGaSV9M32XvXmGCq0Z8bPI6SPN4peLtlfVWMerOKXF8zFFVWvKJtOpP43HV
+yKvnhYaDesW=

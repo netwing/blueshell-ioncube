@@ -1,75 +1,56 @@
-<?php
-
-require_once 'Swift/Tests/SwiftUnitTestCase.php';
-
-class Swift_Bug35Test extends Swift_Tests_SwiftUnitTestCase
-{
-    public function setUp()
-    {
-        Swift_Preferences::getInstance()->setCharset('utf-8');
-    }
-
-    public function testHTMLPartAppearsLastEvenWhenAttachmentsAdded()
-    {
-        $message = Swift_Message::newInstance();
-        $message->setCharset('utf-8');
-        $message->setSubject('test subject');
-        $message->addPart('plain part', 'text/plain');
-
-        $attachment = Swift_Attachment::newInstance('<data>', 'image.gif', 'image/gif');
-        $message->attach($attachment);
-
-        $message->setBody('HTML part', 'text/html');
-
-        $message->setTo(array('user@domain.tld' => 'User'));
-
-        $message->setFrom(array('other@domain.tld' => 'Other'));
-        $message->setSender(array('other@domain.tld' => 'Other'));
-
-        $id = $message->getId();
-        $date = preg_quote(date('r', $message->getDate()), '~');
-        $boundary = $message->getBoundary();
-
-        $this->assertPattern(
-        '~^' .
-        'Sender: Other <other@domain.tld>' . "\r\n" .
-        'Message-ID: <' . $id . '>' . "\r\n" .
-        'Date: ' . $date . "\r\n" .
-        'Subject: test subject' . "\r\n" .
-        'From: Other <other@domain.tld>' . "\r\n" .
-        'To: User <user@domain.tld>' . "\r\n" .
-        'MIME-Version: 1.0' . "\r\n" .
-        'Content-Type: multipart/mixed;' . "\r\n" .
-        ' boundary="' . $boundary . '"' . "\r\n" .
-        "\r\n\r\n" .
-        '--' . $boundary . "\r\n" .
-        'Content-Type: multipart/alternative;' . "\r\n" .
-        ' boundary="(.*?)"' . "\r\n" .
-        "\r\n\r\n" .
-        '--\\1' . "\r\n" .
-        'Content-Type: text/plain; charset=utf-8' . "\r\n" .
-        'Content-Transfer-Encoding: quoted-printable' . "\r\n" .
-        "\r\n" .
-        'plain part' .
-        "\r\n\r\n" .
-        '--\\1' . "\r\n" .
-        'Content-Type: text/html; charset=utf-8' . "\r\n" .
-        'Content-Transfer-Encoding: quoted-printable' . "\r\n" .
-        "\r\n" .
-        'HTML part' .
-        "\r\n\r\n" .
-        '--\\1--' . "\r\n" .
-        "\r\n\r\n" .
-        '--' . $boundary . "\r\n" .
-        'Content-Type: image/gif; name=image.gif' . "\r\n" .
-        'Content-Transfer-Encoding: base64' . "\r\n" .
-        'Content-Disposition: attachment; filename=image.gif' . "\r\n" .
-        "\r\n" .
-        preg_quote(base64_encode('<data>'), '~') .
-        "\r\n\r\n" .
-        '--' . $boundary . '--' . "\r\n" .
-        '$~D',
-        $message->toString()
-        );
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

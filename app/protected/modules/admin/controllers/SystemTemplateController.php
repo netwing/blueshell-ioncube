@@ -1,257 +1,128 @@
-<?php
-
-class SystemTemplateController extends Controller
-{
-	/**
-	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
-	 * using two-column layout. See 'protected/views/layouts/column2.php'.
-	 */
-	public $layout='//layouts/column2';
-
-	/**
-	 * @var string the detault page title
-	 */
-	public $pageTitle = 'systemTemplate';
-
-	/**
-	 * @return array action filters
-	 */
-	public function filters()
-	{
-		return array(
-			'accessControl', // perform access control for CRUD operations
-		);
-	}
-
-	/**
-	 * Specifies the access control rules.
-	 * This method is used by the 'accessControl' filter.
-	 * @return array access control rules
-	 */
-	public function accessRules()
-	{
-		// RBAC access control
-        return array(
-            array('allow', 'actions' => array('index', 'view', 'admin', 'preview'), 'roles' => array('admin:systemTemplate:read')),
-            array('allow', 'actions' => array('create', 'copy'), 'roles' => array('admin:systemTemplate:create')),
-            array('allow', 'actions' => array('update'), 'roles' => array('admin:systemTemplate:update')),
-            array('allow', 'actions' => array('delete'), 'roles' => array('admin:systemTemplate:delete')),
-            array('deny', 'users'=>array('*')),
-        );
-
-	}
-
-	/**
-	 * Displays a particular model.
-	 * @param integer $id the ID of the model to be displayed
-	 */
-	public function actionView($id, $language)
-	{
-		$this->render('view',array(
-			'model'=>$this->loadModel($id, $language),
-		));
-	}
-
-	/**
-	 * Displays a particular model as a preview
-	 * @param integer $id the ID of the model to be displayed
-	 */
-	public function actionPreview($id, $language)
-	{
-		if ($id == 'PRINT_ORDER') {
-			// Load last order
-			$order = Order::model()->find(array('order'=>'id DESC'));
-			if (!$order) {
-				Yii::app()->user->setFlash('warning', 'No order found for show the template.');
-				$this->redirect(array('/admin/order/admin'));
-			}
-			// Redirect user
-			$this->redirect(array("/admin/order/print", 'id' => $order->id, 'output' => 'I'));
-		} elseif ($id == 'PRINT_INVOICE') {
-			// Load last invoice
-			$invoice = Invoice::model()->find(array('order'=>'id DESC'));
-			if (!$invoice) {
-				Yii::app()->user->setFlash('warning', 'No invoice found for show the template.');
-				$this->redirect(array('/admin/invoice/admin'));
-			}
-			// Redirect user
-			$this->redirect(array("/admin/invoice/print", 'id' => $invoice->id, 'output' => 'I'));
-		} else {
-			throw new CHttpException(404,'The requested page does not exist.');
-		}
-	}
-
-	/**
-	 * Creates a new model.
-	 * If creation is successful, the browser will be redirected to the 'view' page.
-	 */
-	public function actionCreate()
-	{
-		$this->layout = "//layouts/column1";
-
-		$model=new SystemTemplate;
-
-		// Uncomment the following line if AJAX validation is needed
-		$this->performAjaxValidation($model);
-
-		if(isset($_POST['SystemTemplate'])) {
-			$model->attributes=$_POST['SystemTemplate'];
-			if($model->save()) {
-				Yii::app()->user->setFlash('success', Yii::t('app', "Item has been saved."));
-				$this->redirect(array('update', 'id' => $model->id, 'language' => $model->language));
-			}
-		}
-
-		$this->render('create',array(
-			'model'=>$model,
-		));
-	}
-
-	/**
-	 * Updates a particular model.
-	 * If update is successful, the browser will be redirected to the 'view' page.
-	 * @param integer $id the ID of the model to be updated
-	 */
-	public function actionUpdate($id, $language)
-	{
-		$this->layout = "//layouts/column1";
-		
-		$model=$this->loadModel($id, $language);
-
-		// Uncomment the following line if AJAX validation is needed
-		$this->performAjaxValidation($model);
-
-		if(isset($_POST['SystemTemplate'])) {
-			$model->attributes=$_POST['SystemTemplate'];
-			if($model->save()) {
-				Yii::app()->user->setFlash('success', Yii::t('app', "Item has been saved."));
-				$this->redirect(array('update', 'id' => $model->id, 'language' => $model->language));
-			}
-		}
-
-		$this->render('update',array(
-			'model'=>$model,
-		));
-	}
-
-	/**
-	 * Copy a model
-	 * @param integer $id the ID of the model to be updated
-	 */
-	public function actionCopy($id, $language)
-	{
-		$this->layout = "//layouts/column1";
-
-		$model = $this->loadModel($id, $language);
-		$model->language = null;
-		$model->setIsNewRecord(true);
-
-		/*
-		$model = new SystemTemplate();
-		$model->id = $original->id;
-		$model->text_content = $original->text_content;
-		$model->html_content = $original->html_content;
-		*/
-
-		// Uncomment the following line if AJAX validation is needed
-		$this->performAjaxValidation($model);
-
-		if(isset($_POST['SystemTemplate']))
-		{
-			$model->attributes=$_POST['SystemTemplate'];
-			if($model->save()) {
-				Yii::app()->user->setFlash('success', Yii::t('app', "Item has been saved."));
-				$this->redirect(array('update', 'id' => $model->id, 'language' => $model->language));
-			}
-		}
-
-		// List of all allowed languages
-		$languages = ELanguagePicker::getSimpleLanguageList();
-		// List of languages that already exist for this model
-		$exists = CHtml::listData(SystemTemplate::model()->findAllByAttributes(array('id' => $id)), 'language', 'language');
-		foreach ($languages as $k => $v) {
-			if (array_key_exists($k, $exists)) {
-				unset($languages[$k]);
-			}
-		}
-		if (count($languages) <= 0) {
-			Yii::app()->user->setFlash('warning', Yii::t('app', "No more languages available for this template, edit one of existings or delete them."));
-			$this->redirect(array('admin'));
-		}
-
-		$this->render('copy',array(
-			'model'=>$model,
-			'languages' => $languages,
-		));
-	}
-
-	/**
-	 * Deletes a particular model.
-	 * If deletion is successful, the browser will be redirected to the 'admin' page.
-	 * @param integer $id the ID of the model to be deleted
-	 */
-	public function actionDelete($id, $language)
-	{
-		$this->loadModel($id, $language)->delete();
-
-		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-	}
-
-	/**
-	 * Lists all models.
-	 */
-	public function actionIndex()
-	{
-		$this->redirect(array('admin'));
-		$dataProvider=new CActiveDataProvider('SystemTemplate');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
-	}
-
-	/**
-	 * Manages all models.
-	 */
-	public function actionAdmin()
-	{
-		$model=new SystemTemplate('search');
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['SystemTemplate']))
-			$model->attributes=$_GET['SystemTemplate'];
-
-		$this->render('admin',array(
-			'model'=>$model,
-		));
-	}
-
-	/**
-	 * Returns the data model based on the primary key given in the GET variable.
-	 * If the data model is not found, an HTTP exception will be raised.
-	 * @param integer $id the ID of the model to be loaded
-	 * @return SystemTemplate the loaded model
-	 * @throws CHttpException
-	 */
-	public function loadModel($id, $language)
-	{
-		$model=SystemTemplate::model()->findByPk(array('id' => $id, 'language' => $language));
-		if($model===null) {
-			throw new CHttpException(404,'The requested page does not exist.');
-		}
-		return $model;
-	}
-
-	/**
-	 * Performs the AJAX validation.
-	 * @param SystemTemplate $model the model to be validated
-	 */
-	protected function performAjaxValidation($model)
-	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='system-template-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

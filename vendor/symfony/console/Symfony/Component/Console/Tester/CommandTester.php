@@ -1,132 +1,57 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\Console\Tester;
-
-use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Input\ArrayInput;
-use Symfony\Component\Console\Output\StreamOutput;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
-
-/**
- * Eases the testing of console commands.
- *
- * @author Fabien Potencier <fabien@symfony.com>
- */
-class CommandTester
-{
-    private $command;
-    private $input;
-    private $output;
-    private $statusCode;
-
-    /**
-     * Constructor.
-     *
-     * @param Command $command A Command instance to test.
-     */
-    public function __construct(Command $command)
-    {
-        $this->command = $command;
-    }
-
-    /**
-     * Executes the command.
-     *
-     * Available options:
-     *
-     *  * interactive: Sets the input interactive flag
-     *  * decorated:   Sets the output decorated flag
-     *  * verbosity:   Sets the output verbosity flag
-     *
-     * @param array $input   An array of arguments and options
-     * @param array $options An array of options
-     *
-     * @return integer The command exit code
-     */
-    public function execute(array $input, array $options = array())
-    {
-        // set the command name automatically if the application requires
-        // this argument and no command name was passed
-        if (!isset($input['command'])
-            && (null !== $application = $this->command->getApplication())
-            && $application->getDefinition()->hasArgument('command')
-        ) {
-            $input['command'] = $this->command->getName();
-        }
-
-        $this->input = new ArrayInput($input);
-        if (isset($options['interactive'])) {
-            $this->input->setInteractive($options['interactive']);
-        }
-
-        $this->output = new StreamOutput(fopen('php://memory', 'w', false));
-        if (isset($options['decorated'])) {
-            $this->output->setDecorated($options['decorated']);
-        }
-        if (isset($options['verbosity'])) {
-            $this->output->setVerbosity($options['verbosity']);
-        }
-
-        return $this->statusCode = $this->command->run($this->input, $this->output);
-    }
-
-    /**
-     * Gets the display returned by the last execution of the command.
-     *
-     * @param Boolean $normalize Whether to normalize end of lines to \n or not
-     *
-     * @return string The display
-     */
-    public function getDisplay($normalize = false)
-    {
-        rewind($this->output->getStream());
-
-        $display = stream_get_contents($this->output->getStream());
-
-        if ($normalize) {
-            $display = str_replace(PHP_EOL, "\n", $display);
-        }
-
-        return $display;
-    }
-
-    /**
-     * Gets the input instance used by the last execution of the command.
-     *
-     * @return InputInterface The current input instance
-     */
-    public function getInput()
-    {
-        return $this->input;
-    }
-
-    /**
-     * Gets the output instance used by the last execution of the command.
-     *
-     * @return OutputInterface The current output instance
-     */
-    public function getOutput()
-    {
-        return $this->output;
-    }
-
-    /**
-     * Gets the status code returned by the last execution of the application.
-     *
-     * @return integer The status code
-     */
-    public function getStatusCode()
-    {
-        return $this->statusCode;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

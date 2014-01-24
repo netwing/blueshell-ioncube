@@ -1,990 +1,399 @@
-<?php
-/**
- * CApplication class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CApplication is the base class for all application classes.
- *
- * An application serves as the global context that the user request
- * is being processed. It manages a set of application components that
- * provide specific functionalities to the whole application.
- *
- * The core application components provided by CApplication are the following:
- * <ul>
- * <li>{@link getErrorHandler errorHandler}: handles PHP errors and
- *   uncaught exceptions. This application component is dynamically loaded when needed.</li>
- * <li>{@link getSecurityManager securityManager}: provides security-related
- *   services, such as hashing, encryption. This application component is dynamically
- *   loaded when needed.</li>
- * <li>{@link getStatePersister statePersister}: provides global state
- *   persistence method. This application component is dynamically loaded when needed.</li>
- * <li>{@link getCache cache}: provides caching feature. This application component is
- *   disabled by default.</li>
- * <li>{@link getMessages messages}: provides the message source for translating
- *   application messages. This application component is dynamically loaded when needed.</li>
- * <li>{@link getCoreMessages coreMessages}: provides the message source for translating
- *   Yii framework messages. This application component is dynamically loaded when needed.</li>
- * <li>{@link getUrlManager urlManager}: provides URL construction as well as parsing functionality.
- *   This application component is dynamically loaded when needed.</li>
- * <li>{@link getRequest request}: represents the current HTTP request by encapsulating
- *   the $_SERVER variable and managing cookies sent from and sent to the user.
- *   This application component is dynamically loaded when needed.</li>
- * <li>{@link getFormat format}: provides a set of commonly used data formatting methods.
- *   This application component is dynamically loaded when needed.</li>
- * </ul>
- *
- * CApplication will undergo the following lifecycles when processing a user request:
- * <ol>
- * <li>load application configuration;</li>
- * <li>set up class autoloader and error handling;</li>
- * <li>load static application components;</li>
- * <li>{@link onBeginRequest}: preprocess the user request;</li>
- * <li>{@link processRequest}: process the user request;</li>
- * <li>{@link onEndRequest}: postprocess the user request;</li>
- * </ol>
- *
- * Starting from lifecycle 3, if a PHP error or an uncaught exception occurs,
- * the application will switch to its error handling logic and jump to step 6 afterwards.
- *
- * @property string $id The unique identifier for the application.
- * @property string $basePath The root directory of the application. Defaults to 'protected'.
- * @property string $runtimePath The directory that stores runtime files. Defaults to 'protected/runtime'.
- * @property string $extensionPath The directory that contains all extensions. Defaults to the 'extensions' directory under 'protected'.
- * @property string $language The language that the user is using and the application should be targeted to.
- * Defaults to the {@link sourceLanguage source language}.
- * @property string $timeZone The time zone used by this application.
- * @property CLocale $locale The locale instance.
- * @property string $localeDataPath The directory that contains the locale data. It defaults to 'framework/i18n/data'.
- * @property CNumberFormatter $numberFormatter The locale-dependent number formatter.
- * The current {@link getLocale application locale} will be used.
- * @property CDateFormatter $dateFormatter The locale-dependent date formatter.
- * The current {@link getLocale application locale} will be used.
- * @property CDbConnection $db The database connection.
- * @property CErrorHandler $errorHandler The error handler application component.
- * @property CSecurityManager $securityManager The security manager application component.
- * @property CStatePersister $statePersister The state persister application component.
- * @property CCache $cache The cache application component. Null if the component is not enabled.
- * @property CPhpMessageSource $coreMessages The core message translations.
- * @property CMessageSource $messages The application message translations.
- * @property CHttpRequest $request The request component.
- * @property CUrlManager $urlManager The URL manager component.
- * @property CController $controller The currently active controller. Null is returned in this base class.
- * @property string $baseUrl The relative URL for the application.
- * @property string $homeUrl The homepage URL.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.base
- * @since 1.0
- */
-abstract class CApplication extends CModule
-{
-	/**
-	 * @var string the application name. Defaults to 'My Application'.
-	 */
-	public $name='My Application';
-	/**
-	 * @var string the charset currently used for the application. Defaults to 'UTF-8'.
-	 */
-	public $charset='UTF-8';
-	/**
-	 * @var string the language that the application is written in. This mainly refers to
-	 * the language that the messages and view files are in. Defaults to 'en_us' (US English).
-	 */
-	public $sourceLanguage='en_us';
-
-	private $_id;
-	private $_basePath;
-	private $_runtimePath;
-	private $_extensionPath;
-	private $_globalState;
-	private $_stateChanged;
-	private $_ended=false;
-	private $_language;
-	private $_homeUrl;
-
-	/**
-	 * Processes the request.
-	 * This is the place where the actual request processing work is done.
-	 * Derived classes should override this method.
-	 */
-	abstract public function processRequest();
-
-	/**
-	 * Constructor.
-	 * @param mixed $config application configuration.
-	 * If a string, it is treated as the path of the file that contains the configuration;
-	 * If an array, it is the actual configuration information.
-	 * Please make sure you specify the {@link getBasePath basePath} property in the configuration,
-	 * which should point to the directory containing all application logic, template and data.
-	 * If not, the directory will be defaulted to 'protected'.
-	 */
-	public function __construct($config=null)
-	{
-		Yii::setApplication($this);
-
-		// set basePath at early as possible to avoid trouble
-		if(is_string($config))
-			$config=require($config);
-		if(isset($config['basePath']))
-		{
-			$this->setBasePath($config['basePath']);
-			unset($config['basePath']);
-		}
-		else
-			$this->setBasePath('protected');
-		Yii::setPathOfAlias('application',$this->getBasePath());
-		Yii::setPathOfAlias('webroot',dirname($_SERVER['SCRIPT_FILENAME']));
-		if(isset($config['extensionPath']))
-		{
-			$this->setExtensionPath($config['extensionPath']);
-			unset($config['extensionPath']);
-		}
-		else
-			Yii::setPathOfAlias('ext',$this->getBasePath().DIRECTORY_SEPARATOR.'extensions');
-		if(isset($config['aliases']))
-		{
-			$this->setAliases($config['aliases']);
-			unset($config['aliases']);
-		}
-
-		$this->preinit();
-
-		$this->initSystemHandlers();
-		$this->registerCoreComponents();
-
-		$this->configure($config);
-		$this->attachBehaviors($this->behaviors);
-		$this->preloadComponents();
-
-		$this->init();
-	}
-
-
-	/**
-	 * Runs the application.
-	 * This method loads static application components. Derived classes usually overrides this
-	 * method to do more application-specific tasks.
-	 * Remember to call the parent implementation so that static application components are loaded.
-	 */
-	public function run()
-	{
-		if($this->hasEventHandler('onBeginRequest'))
-			$this->onBeginRequest(new CEvent($this));
-		register_shutdown_function(array($this,'end'),0,false);
-		$this->processRequest();
-		if($this->hasEventHandler('onEndRequest'))
-			$this->onEndRequest(new CEvent($this));
-	}
-
-	/**
-	 * Terminates the application.
-	 * This method replaces PHP's exit() function by calling
-	 * {@link onEndRequest} before exiting.
-	 * @param integer $status exit status (value 0 means normal exit while other values mean abnormal exit).
-	 * @param boolean $exit whether to exit the current request. This parameter has been available since version 1.1.5.
-	 * It defaults to true, meaning the PHP's exit() function will be called at the end of this method.
-	 */
-	public function end($status=0,$exit=true)
-	{
-		if($this->hasEventHandler('onEndRequest'))
-			$this->onEndRequest(new CEvent($this));
-		if($exit)
-			exit($status);
-	}
-
-	/**
-	 * Raised right BEFORE the application processes the request.
-	 * @param CEvent $event the event parameter
-	 */
-	public function onBeginRequest($event)
-	{
-		$this->raiseEvent('onBeginRequest',$event);
-	}
-
-	/**
-	 * Raised right AFTER the application processes the request.
-	 * @param CEvent $event the event parameter
-	 */
-	public function onEndRequest($event)
-	{
-		if(!$this->_ended)
-		{
-			$this->_ended=true;
-			$this->raiseEvent('onEndRequest',$event);
-		}
-	}
-
-	/**
-	 * Returns the unique identifier for the application.
-	 * @return string the unique identifier for the application.
-	 */
-	public function getId()
-	{
-		if($this->_id!==null)
-			return $this->_id;
-		else
-			return $this->_id=sprintf('%x',crc32($this->getBasePath().$this->name));
-	}
-
-	/**
-	 * Sets the unique identifier for the application.
-	 * @param string $id the unique identifier for the application.
-	 */
-	public function setId($id)
-	{
-		$this->_id=$id;
-	}
-
-	/**
-	 * Returns the root path of the application.
-	 * @return string the root directory of the application. Defaults to 'protected'.
-	 */
-	public function getBasePath()
-	{
-		return $this->_basePath;
-	}
-
-	/**
-	 * Sets the root directory of the application.
-	 * This method can only be invoked at the begin of the constructor.
-	 * @param string $path the root directory of the application.
-	 * @throws CException if the directory does not exist.
-	 */
-	public function setBasePath($path)
-	{
-		if(($this->_basePath=realpath($path))===false || !is_dir($this->_basePath))
-			throw new CException(Yii::t('yii','Application base path "{path}" is not a valid directory.',
-				array('{path}'=>$path)));
-	}
-
-	/**
-	 * Returns the directory that stores runtime files.
-	 * @return string the directory that stores runtime files. Defaults to 'protected/runtime'.
-	 */
-	public function getRuntimePath()
-	{
-		if($this->_runtimePath!==null)
-			return $this->_runtimePath;
-		else
-		{
-			$this->setRuntimePath($this->getBasePath().DIRECTORY_SEPARATOR.'runtime');
-			return $this->_runtimePath;
-		}
-	}
-
-	/**
-	 * Sets the directory that stores runtime files.
-	 * @param string $path the directory that stores runtime files.
-	 * @throws CException if the directory does not exist or is not writable
-	 */
-	public function setRuntimePath($path)
-	{
-		if(($runtimePath=realpath($path))===false || !is_dir($runtimePath) || !is_writable($runtimePath))
-			throw new CException(Yii::t('yii','Application runtime path "{path}" is not valid. Please make sure it is a directory writable by the Web server process.',
-				array('{path}'=>$path)));
-		$this->_runtimePath=$runtimePath;
-	}
-
-	/**
-	 * Returns the root directory that holds all third-party extensions.
-	 * @return string the directory that contains all extensions. Defaults to the 'extensions' directory under 'protected'.
-	 */
-	public function getExtensionPath()
-	{
-		return Yii::getPathOfAlias('ext');
-	}
-
-	/**
-	 * Sets the root directory that holds all third-party extensions.
-	 * @param string $path the directory that contains all third-party extensions.
-	 * @throws CException if the directory does not exist
-	 */
-	public function setExtensionPath($path)
-	{
-		if(($extensionPath=realpath($path))===false || !is_dir($extensionPath))
-			throw new CException(Yii::t('yii','Extension path "{path}" does not exist.',
-				array('{path}'=>$path)));
-		Yii::setPathOfAlias('ext',$extensionPath);
-	}
-
-	/**
-	 * Returns the language that the user is using and the application should be targeted to.
-	 * @return string the language that the user is using and the application should be targeted to.
-	 * Defaults to the {@link sourceLanguage source language}.
-	 */
-	public function getLanguage()
-	{
-		return $this->_language===null ? $this->sourceLanguage : $this->_language;
-	}
-
-	/**
-	 * Specifies which language the application is targeted to.
-	 *
-	 * This is the language that the application displays to end users.
-	 * If set null, it uses the {@link sourceLanguage source language}.
-	 *
-	 * Unless your application needs to support multiple languages, you should always
-	 * set this language to null to maximize the application's performance.
-	 * @param string $language the user language (e.g. 'en_US', 'zh_CN').
-	 * If it is null, the {@link sourceLanguage} will be used.
-	 */
-	public function setLanguage($language)
-	{
-		$this->_language=$language;
-	}
-
-	/**
-	 * Returns the time zone used by this application.
-	 * This is a simple wrapper of PHP function date_default_timezone_get().
-	 * @return string the time zone used by this application.
-	 * @see http://php.net/manual/en/function.date-default-timezone-get.php
-	 */
-	public function getTimeZone()
-	{
-		return date_default_timezone_get();
-	}
-
-	/**
-	 * Sets the time zone used by this application.
-	 * This is a simple wrapper of PHP function date_default_timezone_set().
-	 * @param string $value the time zone used by this application.
-	 * @see http://php.net/manual/en/function.date-default-timezone-set.php
-	 */
-	public function setTimeZone($value)
-	{
-		date_default_timezone_set($value);
-	}
-
-	/**
-	 * Returns the localized version of a specified file.
-	 *
-	 * The searching is based on the specified language code. In particular,
-	 * a file with the same name will be looked for under the subdirectory
-	 * named as the locale ID. For example, given the file "path/to/view.php"
-	 * and locale ID "zh_cn", the localized file will be looked for as
-	 * "path/to/zh_cn/view.php". If the file is not found, the original file
-	 * will be returned.
-	 *
-	 * For consistency, it is recommended that the locale ID is given
-	 * in lower case and in the format of LanguageID_RegionID (e.g. "en_us").
-	 *
-	 * @param string $srcFile the original file
-	 * @param string $srcLanguage the language that the original file is in. If null, the application {@link sourceLanguage source language} is used.
-	 * @param string $language the desired language that the file should be localized to. If null, the {@link getLanguage application language} will be used.
-	 * @return string the matching localized file. The original file is returned if no localized version is found
-	 * or if source language is the same as the desired language.
-	 */
-	public function findLocalizedFile($srcFile,$srcLanguage=null,$language=null)
-	{
-		if($srcLanguage===null)
-			$srcLanguage=$this->sourceLanguage;
-		if($language===null)
-			$language=$this->getLanguage();
-		if($language===$srcLanguage)
-			return $srcFile;
-		$desiredFile=dirname($srcFile).DIRECTORY_SEPARATOR.$language.DIRECTORY_SEPARATOR.basename($srcFile);
-		return is_file($desiredFile) ? $desiredFile : $srcFile;
-	}
-
-	/**
-	 * Returns the locale instance.
-	 * @param string $localeID the locale ID (e.g. en_US). If null, the {@link getLanguage application language ID} will be used.
-	 * @return CLocale the locale instance
-	 */
-	public function getLocale($localeID=null)
-	{
-		return CLocale::getInstance($localeID===null?$this->getLanguage():$localeID);
-	}
-
-	/**
-	 * Returns the directory that contains the locale data.
-	 * @return string the directory that contains the locale data. It defaults to 'framework/i18n/data'.
-	 * @since 1.1.0
-	 */
-	public function getLocaleDataPath()
-	{
-		return CLocale::$dataPath===null ? Yii::getPathOfAlias('system.i18n.data') : CLocale::$dataPath;
-	}
-
-	/**
-	 * Sets the directory that contains the locale data.
-	 * @param string $value the directory that contains the locale data.
-	 * @since 1.1.0
-	 */
-	public function setLocaleDataPath($value)
-	{
-		CLocale::$dataPath=$value;
-	}
-
-	/**
-	 * @return CNumberFormatter the locale-dependent number formatter.
-	 * The current {@link getLocale application locale} will be used.
-	 */
-	public function getNumberFormatter()
-	{
-		return $this->getLocale()->getNumberFormatter();
-	}
-
-	/**
-	 * Returns the locale-dependent date formatter.
-	 * @return CDateFormatter the locale-dependent date formatter.
-	 * The current {@link getLocale application locale} will be used.
-	 */
-	public function getDateFormatter()
-	{
-		return $this->getLocale()->getDateFormatter();
-	}
-
-	/**
-	 * Returns the database connection component.
-	 * @return CDbConnection the database connection
-	 */
-	public function getDb()
-	{
-		return $this->getComponent('db');
-	}
-
-	/**
-	 * Returns the error handler component.
-	 * @return CErrorHandler the error handler application component.
-	 */
-	public function getErrorHandler()
-	{
-		return $this->getComponent('errorHandler');
-	}
-
-	/**
-	 * Returns the security manager component.
-	 * @return CSecurityManager the security manager application component.
-	 */
-	public function getSecurityManager()
-	{
-		return $this->getComponent('securityManager');
-	}
-
-	/**
-	 * Returns the state persister component.
-	 * @return CStatePersister the state persister application component.
-	 */
-	public function getStatePersister()
-	{
-		return $this->getComponent('statePersister');
-	}
-
-	/**
-	 * Returns the cache component.
-	 * @return CCache the cache application component. Null if the component is not enabled.
-	 */
-	public function getCache()
-	{
-		return $this->getComponent('cache');
-	}
-
-	/**
-	 * Returns the core message translations component.
-	 * @return CPhpMessageSource the core message translations
-	 */
-	public function getCoreMessages()
-	{
-		return $this->getComponent('coreMessages');
-	}
-
-	/**
-	 * Returns the application message translations component.
-	 * @return CMessageSource the application message translations
-	 */
-	public function getMessages()
-	{
-		return $this->getComponent('messages');
-	}
-
-	/**
-	 * Returns the request component.
-	 * @return CHttpRequest the request component
-	 */
-	public function getRequest()
-	{
-		return $this->getComponent('request');
-	}
-
-	/**
-	 * Returns the URL manager component.
-	 * @return CUrlManager the URL manager component
-	 */
-	public function getUrlManager()
-	{
-		return $this->getComponent('urlManager');
-	}
-
-	/**
-	 * @return CController the currently active controller. Null is returned in this base class.
-	 * @since 1.1.8
-	 */
-	public function getController()
-	{
-		return null;
-	}
-
-	/**
-	 * Creates a relative URL based on the given controller and action information.
-	 * @param string $route the URL route. This should be in the format of 'ControllerID/ActionID'.
-	 * @param array $params additional GET parameters (name=>value). Both the name and value will be URL-encoded.
-	 * @param string $ampersand the token separating name-value pairs in the URL.
-	 * @return string the constructed URL
-	 */
-	public function createUrl($route,$params=array(),$ampersand='&')
-	{
-		return $this->getUrlManager()->createUrl($route,$params,$ampersand);
-	}
-
-	/**
-	 * Creates an absolute URL based on the given controller and action information.
-	 * @param string $route the URL route. This should be in the format of 'ControllerID/ActionID'.
-	 * @param array $params additional GET parameters (name=>value). Both the name and value will be URL-encoded.
-	 * @param string $schema schema to use (e.g. http, https). If empty, the schema used for the current request will be used.
-	 * @param string $ampersand the token separating name-value pairs in the URL.
-	 * @return string the constructed URL
-	 */
-	public function createAbsoluteUrl($route,$params=array(),$schema='',$ampersand='&')
-	{
-		$url=$this->createUrl($route,$params,$ampersand);
-		if(strpos($url,'http')===0)
-			return $url;
-		else
-			return $this->getRequest()->getHostInfo($schema).$url;
-	}
-
-	/**
-	 * Returns the relative URL for the application.
-	 * This is a shortcut method to {@link CHttpRequest::getBaseUrl()}.
-	 * @param boolean $absolute whether to return an absolute URL. Defaults to false, meaning returning a relative one.
-	 * @return string the relative URL for the application
-	 * @see CHttpRequest::getBaseUrl()
-	 */
-	public function getBaseUrl($absolute=false)
-	{
-		return $this->getRequest()->getBaseUrl($absolute);
-	}
-
-	/**
-	 * @return string the homepage URL
-	 */
-	public function getHomeUrl()
-	{
-		if($this->_homeUrl===null)
-		{
-			if($this->getUrlManager()->showScriptName)
-				return $this->getRequest()->getScriptUrl();
-			else
-				return $this->getRequest()->getBaseUrl().'/';
-		}
-		else
-			return $this->_homeUrl;
-	}
-
-	/**
-	 * @param string $value the homepage URL
-	 */
-	public function setHomeUrl($value)
-	{
-		$this->_homeUrl=$value;
-	}
-
-	/**
-	 * Returns a global value.
-	 *
-	 * A global value is one that is persistent across users sessions and requests.
-	 * @param string $key the name of the value to be returned
-	 * @param mixed $defaultValue the default value. If the named global value is not found, this will be returned instead.
-	 * @return mixed the named global value
-	 * @see setGlobalState
-	 */
-	public function getGlobalState($key,$defaultValue=null)
-	{
-		if($this->_globalState===null)
-			$this->loadGlobalState();
-		if(isset($this->_globalState[$key]))
-			return $this->_globalState[$key];
-		else
-			return $defaultValue;
-	}
-
-	/**
-	 * Sets a global value.
-	 *
-	 * A global value is one that is persistent across users sessions and requests.
-	 * Make sure that the value is serializable and unserializable.
-	 * @param string $key the name of the value to be saved
-	 * @param mixed $value the global value to be saved. It must be serializable.
-	 * @param mixed $defaultValue the default value. If the named global value is the same as this value, it will be cleared from the current storage.
-	 * @see getGlobalState
-	 */
-	public function setGlobalState($key,$value,$defaultValue=null)
-	{
-		if($this->_globalState===null)
-			$this->loadGlobalState();
-
-		$changed=$this->_stateChanged;
-		if($value===$defaultValue)
-		{
-			if(isset($this->_globalState[$key]))
-			{
-				unset($this->_globalState[$key]);
-				$this->_stateChanged=true;
-			}
-		}
-		elseif(!isset($this->_globalState[$key]) || $this->_globalState[$key]!==$value)
-		{
-			$this->_globalState[$key]=$value;
-			$this->_stateChanged=true;
-		}
-
-		if($this->_stateChanged!==$changed)
-			$this->attachEventHandler('onEndRequest',array($this,'saveGlobalState'));
-	}
-
-	/**
-	 * Clears a global value.
-	 *
-	 * The value cleared will no longer be available in this request and the following requests.
-	 * @param string $key the name of the value to be cleared
-	 */
-	public function clearGlobalState($key)
-	{
-		$this->setGlobalState($key,true,true);
-	}
-
-	/**
-	 * Loads the global state data from persistent storage.
-	 * @see getStatePersister
-	 * @throws CException if the state persister is not available
-	 */
-	public function loadGlobalState()
-	{
-		$persister=$this->getStatePersister();
-		if(($this->_globalState=$persister->load())===null)
-			$this->_globalState=array();
-		$this->_stateChanged=false;
-		$this->detachEventHandler('onEndRequest',array($this,'saveGlobalState'));
-	}
-
-	/**
-	 * Saves the global state data into persistent storage.
-	 * @see getStatePersister
-	 * @throws CException if the state persister is not available
-	 */
-	public function saveGlobalState()
-	{
-		if($this->_stateChanged)
-		{
-			$this->_stateChanged=false;
-			$this->detachEventHandler('onEndRequest',array($this,'saveGlobalState'));
-			$this->getStatePersister()->save($this->_globalState);
-		}
-	}
-
-	/**
-	 * Handles uncaught PHP exceptions.
-	 *
-	 * This method is implemented as a PHP exception handler. It requires
-	 * that constant YII_ENABLE_EXCEPTION_HANDLER be defined true.
-	 *
-	 * This method will first raise an {@link onException} event.
-	 * If the exception is not handled by any event handler, it will call
-	 * {@link getErrorHandler errorHandler} to process the exception.
-	 *
-	 * The application will be terminated by this method.
-	 *
-	 * @param Exception $exception exception that is not caught
-	 */
-	public function handleException($exception)
-	{
-		// disable error capturing to avoid recursive errors
-		restore_error_handler();
-		restore_exception_handler();
-
-		$category='exception.'.get_class($exception);
-		if($exception instanceof CHttpException)
-			$category.='.'.$exception->statusCode;
-		// php <5.2 doesn't support string conversion auto-magically
-		$message=$exception->__toString();
-		if(isset($_SERVER['REQUEST_URI']))
-			$message.="\nREQUEST_URI=".$_SERVER['REQUEST_URI'];
-		if(isset($_SERVER['HTTP_REFERER']))
-			$message.="\nHTTP_REFERER=".$_SERVER['HTTP_REFERER'];
-		$message.="\n---";
-		Yii::log($message,CLogger::LEVEL_ERROR,$category);
-
-		try
-		{
-			$event=new CExceptionEvent($this,$exception);
-			$this->onException($event);
-			if(!$event->handled)
-			{
-				// try an error handler
-				if(($handler=$this->getErrorHandler())!==null)
-					$handler->handle($event);
-				else
-					$this->displayException($exception);
-			}
-		}
-		catch(Exception $e)
-		{
-			$this->displayException($e);
-		}
-
-		try
-		{
-			$this->end(1);
-		}
-		catch(Exception $e)
-		{
-			// use the most primitive way to log error
-			$msg = get_class($e).': '.$e->getMessage().' ('.$e->getFile().':'.$e->getLine().")\n";
-			$msg .= $e->getTraceAsString()."\n";
-			$msg .= "Previous exception:\n";
-			$msg .= get_class($exception).': '.$exception->getMessage().' ('.$exception->getFile().':'.$exception->getLine().")\n";
-			$msg .= $exception->getTraceAsString()."\n";
-			$msg .= '$_SERVER='.var_export($_SERVER,true);
-			error_log($msg);
-			exit(1);
-		}
-	}
-
-	/**
-	 * Handles PHP execution errors such as warnings, notices.
-	 *
-	 * This method is implemented as a PHP error handler. It requires
-	 * that constant YII_ENABLE_ERROR_HANDLER be defined true.
-	 *
-	 * This method will first raise an {@link onError} event.
-	 * If the error is not handled by any event handler, it will call
-	 * {@link getErrorHandler errorHandler} to process the error.
-	 *
-	 * The application will be terminated by this method.
-	 *
-	 * @param integer $code the level of the error raised
-	 * @param string $message the error message
-	 * @param string $file the filename that the error was raised in
-	 * @param integer $line the line number the error was raised at
-	 */
-	public function handleError($code,$message,$file,$line)
-	{
-		if($code & error_reporting())
-		{
-			// disable error capturing to avoid recursive errors
-			restore_error_handler();
-			restore_exception_handler();
-
-			$log="$message ($file:$line)\nStack trace:\n";
-			$trace=debug_backtrace();
-			// skip the first 3 stacks as they do not tell the error position
-			if(count($trace)>3)
-				$trace=array_slice($trace,3);
-			foreach($trace as $i=>$t)
-			{
-				if(!isset($t['file']))
-					$t['file']='unknown';
-				if(!isset($t['line']))
-					$t['line']=0;
-				if(!isset($t['function']))
-					$t['function']='unknown';
-				$log.="#$i {$t['file']}({$t['line']}): ";
-				if(isset($t['object']) && is_object($t['object']))
-					$log.=get_class($t['object']).'->';
-				$log.="{$t['function']}()\n";
-			}
-			if(isset($_SERVER['REQUEST_URI']))
-				$log.='REQUEST_URI='.$_SERVER['REQUEST_URI'];
-			Yii::log($log,CLogger::LEVEL_ERROR,'php');
-
-			try
-			{
-				Yii::import('CErrorEvent',true);
-				$event=new CErrorEvent($this,$code,$message,$file,$line);
-				$this->onError($event);
-				if(!$event->handled)
-				{
-					// try an error handler
-					if(($handler=$this->getErrorHandler())!==null)
-						$handler->handle($event);
-					else
-						$this->displayError($code,$message,$file,$line);
-				}
-			}
-			catch(Exception $e)
-			{
-				$this->displayException($e);
-			}
-
-			try
-			{
-				$this->end(1);
-			}
-			catch(Exception $e)
-			{
-				// use the most primitive way to log error
-				$msg = get_class($e).': '.$e->getMessage().' ('.$e->getFile().':'.$e->getLine().")\n";
-				$msg .= $e->getTraceAsString()."\n";
-				$msg .= "Previous error:\n";
-				$msg .= $log."\n";
-				$msg .= '$_SERVER='.var_export($_SERVER,true);
-				error_log($msg);
-				exit(1);
-			}
-		}
-	}
-
-	/**
-	 * Raised when an uncaught PHP exception occurs.
-	 *
-	 * An event handler can set the {@link CExceptionEvent::handled handled}
-	 * property of the event parameter to be true to indicate no further error
-	 * handling is needed. Otherwise, the {@link getErrorHandler errorHandler}
-	 * application component will continue processing the error.
-	 *
-	 * @param CExceptionEvent $event event parameter
-	 */
-	public function onException($event)
-	{
-		$this->raiseEvent('onException',$event);
-	}
-
-	/**
-	 * Raised when a PHP execution error occurs.
-	 *
-	 * An event handler can set the {@link CErrorEvent::handled handled}
-	 * property of the event parameter to be true to indicate no further error
-	 * handling is needed. Otherwise, the {@link getErrorHandler errorHandler}
-	 * application component will continue processing the error.
-	 *
-	 * @param CErrorEvent $event event parameter
-	 */
-	public function onError($event)
-	{
-		$this->raiseEvent('onError',$event);
-	}
-
-	/**
-	 * Displays the captured PHP error.
-	 * This method displays the error in HTML when there is
-	 * no active error handler.
-	 * @param integer $code error code
-	 * @param string $message error message
-	 * @param string $file error file
-	 * @param string $line error line
-	 */
-	public function displayError($code,$message,$file,$line)
-	{
-		if(YII_DEBUG)
-		{
-			echo "<h1>PHP Error [$code]</h1>\n";
-			echo "<p>$message ($file:$line)</p>\n";
-			echo '<pre>';
-
-			$trace=debug_backtrace();
-			// skip the first 3 stacks as they do not tell the error position
-			if(count($trace)>3)
-				$trace=array_slice($trace,3);
-			foreach($trace as $i=>$t)
-			{
-				if(!isset($t['file']))
-					$t['file']='unknown';
-				if(!isset($t['line']))
-					$t['line']=0;
-				if(!isset($t['function']))
-					$t['function']='unknown';
-				echo "#$i {$t['file']}({$t['line']}): ";
-				if(isset($t['object']) && is_object($t['object']))
-					echo get_class($t['object']).'->';
-				echo "{$t['function']}()\n";
-			}
-
-			echo '</pre>';
-		}
-		else
-		{
-			echo "<h1>PHP Error [$code]</h1>\n";
-			echo "<p>$message</p>\n";
-		}
-	}
-
-	/**
-	 * Displays the uncaught PHP exception.
-	 * This method displays the exception in HTML when there is
-	 * no active error handler.
-	 * @param Exception $exception the uncaught exception
-	 */
-	public function displayException($exception)
-	{
-		if(YII_DEBUG)
-		{
-			echo '<h1>'.get_class($exception)."</h1>\n";
-			echo '<p>'.$exception->getMessage().' ('.$exception->getFile().':'.$exception->getLine().')</p>';
-			echo '<pre>'.$exception->getTraceAsString().'</pre>';
-		}
-		else
-		{
-			echo '<h1>'.get_class($exception)."</h1>\n";
-			echo '<p>'.$exception->getMessage().'</p>';
-		}
-	}
-
-	/**
-	 * Initializes the class autoloader and error handlers.
-	 */
-	protected function initSystemHandlers()
-	{
-		if(YII_ENABLE_EXCEPTION_HANDLER)
-			set_exception_handler(array($this,'handleException'));
-		if(YII_ENABLE_ERROR_HANDLER)
-			set_error_handler(array($this,'handleError'),error_reporting());
-	}
-
-	/**
-	 * Registers the core application components.
-	 * @see setComponents
-	 */
-	protected function registerCoreComponents()
-	{
-		$components=array(
-			'coreMessages'=>array(
-				'class'=>'CPhpMessageSource',
-				'language'=>'en_us',
-				'basePath'=>YII_PATH.DIRECTORY_SEPARATOR.'messages',
-			),
-			'db'=>array(
-				'class'=>'CDbConnection',
-			),
-			'messages'=>array(
-				'class'=>'CPhpMessageSource',
-			),
-			'errorHandler'=>array(
-				'class'=>'CErrorHandler',
-			),
-			'securityManager'=>array(
-				'class'=>'CSecurityManager',
-			),
-			'statePersister'=>array(
-				'class'=>'CStatePersister',
-			),
-			'urlManager'=>array(
-				'class'=>'CUrlManager',
-			),
-			'request'=>array(
-				'class'=>'CHttpRequest',
-			),
-			'format'=>array(
-				'class'=>'CFormatter',
-			),
-		);
-
-		$this->setComponents($components);
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+cnpkuZ8rNnQarzdkAREOS2HeWbFwfUy8YbW=

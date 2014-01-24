@@ -1,231 +1,81 @@
-<?php
-/**
- * Squiz_Sniffs_WhiteSpace_SuperfluousWhitespaceSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Squiz_Sniffs_WhiteSpace_SuperfluousWhitespaceSniff.
- *
- * Checks that no whitespace proceeds the first content of the file, exists
- * after the last content of the file, resides after content on any line, or
- * are two empty lines in functions.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class Squiz_Sniffs_WhiteSpace_SuperfluousWhitespaceSniff implements PHP_CodeSniffer_Sniff
-{
-
-    /**
-     * A list of tokenizers this sniff supports.
-     *
-     * @var array
-     */
-    public $supportedTokenizers = array(
-                                   'PHP',
-                                   'JS',
-                                   'CSS',
-                                  );
-
-    /**
-     * If TRUE, whitespace rules are not checked for blank lines.
-     *
-     * Blank lines are those that contain only whitespace.
-     *
-     * @var boolean
-     */
-    public $ignoreBlankLines = false;
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        return array(
-                T_OPEN_TAG,
-                T_CLOSE_TAG,
-                T_WHITESPACE,
-                T_COMMENT,
-               );
-
-    }//end register()
-
-
-    /**
-     * Processes this sniff, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token in the
-     *                                        stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-
-        if ($tokens[$stackPtr]['code'] === T_OPEN_TAG) {
-
-            /*
-                Check for start of file whitespace.
-            */
-
-            if ($phpcsFile->tokenizerType !== 'PHP') {
-                // The first token is always the open tag inserted when tokenizsed
-                // and the second token is always the first piece of content in
-                // the file. If the second token is whitespace, there was
-                // whitespace at the start of the file.
-                if ($tokens[($stackPtr + 1)]['code'] !== T_WHITESPACE) {
-                    return;
-                }
-            } else {
-                // If its the first token, then there is no space.
-                if ($stackPtr === 0) {
-                    return;
-                }
-
-                for ($i = ($stackPtr - 1); $i >= 0; $i--) {
-                    // If we find something that isn't inline html then there is something previous in the file.
-                    if ($tokens[$i]['type'] !== 'T_INLINE_HTML') {
-                        return;
-                    }
-
-                    // If we have ended up with inline html make sure it isn't just whitespace.
-                    $tokenContent = trim($tokens[$i]['content']);
-                    if ($tokenContent !== '') {
-                        return;
-                    }
-                }
-            }//end if
-
-            $phpcsFile->addError('Additional whitespace found at start of file', $stackPtr, 'StartFile');
-
-        } else if ($tokens[$stackPtr]['code'] === T_CLOSE_TAG) {
-
-            /*
-                Check for end of file whitespace.
-            */
-
-            if ($phpcsFile->tokenizerType === 'JS') {
-                // The last token is always the close tag inserted when tokenized
-                // and the second last token is always the last piece of content in
-                // the file. If the second last token is whitespace, there was
-                // whitespace at the end of the file.
-                $stackPtr--;
-            } else if ($phpcsFile->tokenizerType === 'CSS') {
-                // The last two tokens are always the close tag and whitespace
-                // inserted when tokenizsed and the third last token is always the
-                // last piece of content in the file. If the third last token is
-                // whitespace, there was whitespace at the end of the file.
-                $stackPtr -= 2;
-            }
-
-            if ($phpcsFile->tokenizerType === 'PHP') {
-                if (isset($tokens[($stackPtr + 1)]) === false) {
-                    // The close PHP token is the last in the file.
-                    return;
-                }
-
-                for ($i = ($stackPtr + 1); $i < $phpcsFile->numTokens; $i++) {
-                    // If we find something that isn't inline html then there
-                    // is more to the file.
-                    if ($tokens[$i]['type'] !== 'T_INLINE_HTML') {
-                        return;
-                    }
-
-                    // If we have ended up with inline html make sure it
-                    // isn't just whitespace.
-                    $tokenContent = trim($tokens[$i]['content']);
-                    if (empty($tokenContent) === false) {
-                        return;
-                    }
-                }
-            } else {
-                // The pointer is now looking at the last content in the file and
-                // not the fake PHP end tag the tokenizer inserted.
-                if ($tokens[$stackPtr]['code'] !== T_WHITESPACE) {
-                    return;
-                }
-
-                // Allow a single newline at the end of the last line in the file.
-                if ($tokens[($stackPtr - 1)]['code'] !== T_WHITESPACE
-                    && $tokens[$stackPtr]['content'] === $phpcsFile->eolChar
-                ) {
-                    return;
-                }
-
-            }
-
-            $phpcsFile->addError('Additional whitespace found at end of file', $stackPtr, 'EndFile');
-
-        } else {
-
-            /*
-                Check for end of line whitespace.
-            */
-
-            // Ignore whitespace that is not at the end of a line.
-            if (strpos($tokens[$stackPtr]['content'], $phpcsFile->eolChar) === false) {
-                return;
-            }
-
-            // Ignore blank lines if required.
-            if ($this->ignoreBlankLines === true
-                && $tokens[($stackPtr - 1)]['line'] !== $tokens[$stackPtr]['line']
-            ) {
-                return;
-            }
-
-            $tokenContent = rtrim($tokens[$stackPtr]['content'], $phpcsFile->eolChar);
-            if (empty($tokenContent) === false) {
-                if (preg_match('|^.*\s+$|', $tokenContent) !== 0) {
-                    $phpcsFile->addError('Whitespace found at end of line', $stackPtr, 'EndLine');
-                }
-            }
-
-            /*
-                Check for multiple blanks lines in a function.
-            */
-
-            if ($phpcsFile->hasCondition($stackPtr, T_FUNCTION) === true) {
-                if ($tokens[($stackPtr - 1)]['line'] < $tokens[$stackPtr]['line'] && $tokens[($stackPtr - 2)]['line'] === $tokens[($stackPtr - 1)]['line']) {
-                    // This is an empty line and the line before this one is not
-                    //  empty, so this could be the start of a multiple empty
-                    // line block.
-                    $next  = $phpcsFile->findNext(T_WHITESPACE, $stackPtr, null, true);
-                    $lines = $tokens[$next]['line'] - $tokens[$stackPtr]['line'];
-                    if ($lines > 1) {
-                        $error = 'Functions must not contain multiple empty lines in a row; found %s empty lines';
-                        $data  = array($lines);
-                        $phpcsFile->addError($error, $stackPtr, 'EmptyLines', $data);
-                    }
-                }
-            }
-
-        }//end if
-
-    }//end process()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+mEMEZiFzt0y6CB3klfpgcSJJimanH4K=

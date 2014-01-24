@@ -1,248 +1,68 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/**
- * CodeIgniter
- *
- * An open source application development framework for PHP 5.1.6 or newer
- *
- * @package		CodeIgniter
- * @author		ExpressionEngine Dev Team
- * @copyright	Copyright (c) 2008 - 2011, EllisLab, Inc.
- * @license		http://codeigniter.com/user_guide/license.html
- * @link		http://codeigniter.com
- * @since		Version 1.0
- * @filesource
- */
-
-// ------------------------------------------------------------------------
-
-/**
- * CodeIgniter Hooks Class
- *
- * Provides a mechanism to extend the base system without hacking.
- *
- * @package		CodeIgniter
- * @subpackage	Libraries
- * @category	Libraries
- * @author		ExpressionEngine Dev Team
- * @link		http://codeigniter.com/user_guide/libraries/encryption.html
- */
-class CI_Hooks {
-
-	/**
-	 * Determines wether hooks are enabled
-	 *
-	 * @var bool
-	 */
-	var $enabled		= FALSE;
-	/**
-	 * List of all hooks set in config/hooks.php
-	 *
-	 * @var array
-	 */
-	var $hooks			= array();
-	/**
-	 * Determines wether hook is in progress, used to prevent infinte loops
-	 *
-	 * @var bool
-	 */
-	var $in_progress	= FALSE;
-
-	/**
-	 * Constructor
-	 *
-	 */
-	function __construct()
-	{
-		$this->_initialize();
-		log_message('debug', "Hooks Class Initialized");
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * Initialize the Hooks Preferences
-	 *
-	 * @access	private
-	 * @return	void
-	 */
-	function _initialize()
-	{
-		$CFG =& load_class('Config', 'core');
-
-		// If hooks are not enabled in the config file
-		// there is nothing else to do
-
-		if ($CFG->item('enable_hooks') == FALSE)
-		{
-			return;
-		}
-
-		// Grab the "hooks" definition file.
-		// If there are no hooks, we're done.
-
-		if (defined('ENVIRONMENT') AND is_file(APPPATH.'config/'.ENVIRONMENT.'/hooks.php'))
-		{
-		    include(APPPATH.'config/'.ENVIRONMENT.'/hooks.php');
-		}
-		elseif (is_file(APPPATH.'config/hooks.php'))
-		{
-			include(APPPATH.'config/hooks.php');
-		}
-
-
-		if ( ! isset($hook) OR ! is_array($hook))
-		{
-			return;
-		}
-
-		$this->hooks =& $hook;
-		$this->enabled = TRUE;
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * Call Hook
-	 *
-	 * Calls a particular hook
-	 *
-	 * @access	private
-	 * @param	string	the hook name
-	 * @return	mixed
-	 */
-	function _call_hook($which = '')
-	{
-		if ( ! $this->enabled OR ! isset($this->hooks[$which]))
-		{
-			return FALSE;
-		}
-
-		if (isset($this->hooks[$which][0]) AND is_array($this->hooks[$which][0]))
-		{
-			foreach ($this->hooks[$which] as $val)
-			{
-				$this->_run_hook($val);
-			}
-		}
-		else
-		{
-			$this->_run_hook($this->hooks[$which]);
-		}
-
-		return TRUE;
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * Run Hook
-	 *
-	 * Runs a particular hook
-	 *
-	 * @access	private
-	 * @param	array	the hook details
-	 * @return	bool
-	 */
-	function _run_hook($data)
-	{
-		if ( ! is_array($data))
-		{
-			return FALSE;
-		}
-
-		// -----------------------------------
-		// Safety - Prevents run-away loops
-		// -----------------------------------
-
-		// If the script being called happens to have the same
-		// hook call within it a loop can happen
-
-		if ($this->in_progress == TRUE)
-		{
-			return;
-		}
-
-		// -----------------------------------
-		// Set file path
-		// -----------------------------------
-
-		if ( ! isset($data['filepath']) OR ! isset($data['filename']))
-		{
-			return FALSE;
-		}
-
-		$filepath = APPPATH.$data['filepath'].'/'.$data['filename'];
-
-		if ( ! file_exists($filepath))
-		{
-			return FALSE;
-		}
-
-		// -----------------------------------
-		// Set class/function name
-		// -----------------------------------
-
-		$class		= FALSE;
-		$function	= FALSE;
-		$params		= '';
-
-		if (isset($data['class']) AND $data['class'] != '')
-		{
-			$class = $data['class'];
-		}
-
-		if (isset($data['function']))
-		{
-			$function = $data['function'];
-		}
-
-		if (isset($data['params']))
-		{
-			$params = $data['params'];
-		}
-
-		if ($class === FALSE AND $function === FALSE)
-		{
-			return FALSE;
-		}
-
-		// -----------------------------------
-		// Set the in_progress flag
-		// -----------------------------------
-
-		$this->in_progress = TRUE;
-
-		// -----------------------------------
-		// Call the requested class and/or function
-		// -----------------------------------
-
-		if ($class !== FALSE)
-		{
-			if ( ! class_exists($class))
-			{
-				require($filepath);
-			}
-
-			$HOOK = new $class;
-			$HOOK->$function($params);
-		}
-		else
-		{
-			if ( ! function_exists($function))
-			{
-				require($filepath);
-			}
-
-			$function($params);
-		}
-
-		$this->in_progress = FALSE;
-		return TRUE;
-	}
-
-}
-
-// END CI_Hooks class
-
-/* End of file Hooks.php */
-/* Location: ./system/core/Hooks.php */
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

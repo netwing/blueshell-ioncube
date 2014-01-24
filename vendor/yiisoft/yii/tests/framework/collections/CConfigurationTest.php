@@ -1,91 +1,60 @@
-<?php
-
-Yii::import('system.collections.CConfiguration');
-
-class MyClass extends CComponent
-{
-	public $param1;
-	private $_param2;
-	public $param3;
-	private $_object;
-	public $backquote;
-
-	public function getParam2()
-	{
-		return $this->_param2;
-	}
-
-	public function setParam2($value)
-	{
-		$this->_param2=$value;
-	}
-
-	public function getObject()
-	{
-		if($this->_object===null)
-			$this->_object=new MyClass;
-		return $this->_object;
-	}
-}
-
-class CConfigurationTest extends CTestCase
-{
-	public $configFile;
-
-	public function setUp()
-	{
-		$this->configFile=dirname(__FILE__).'/data/config.php';
-	}
-
-	public function tearDown()
-	{
-	}
-
-	public function testLoadFromFile()
-	{
-		$config=new CConfiguration;
-		$this->assertTrue($config->toArray()===array());
-		$config->loadFromFile($this->configFile);
-		$data=include($this->configFile);
-		$this->assertTrue($config->toArray()===$data);
-	}
-
-	public function testSaveAsString()
-	{
-		$config=new CConfiguration($this->configFile);
-		$str=$config->saveAsString();
-		eval("\$data=$str;");
-		$this->assertTrue($config->toArray()===$data);
-	}
-
-	public function testApplyTo()
-	{
-		$config=new CConfiguration($this->configFile);
-		$object=new MyClass;
-		$config->applyTo($object);
-		$this->assertTrue($object->param1==='value1');
-		$this->assertTrue($object->param2===false);
-		$this->assertTrue($object->param3===123);
-		$this->assertTrue($object->backquote==="\\back'quote'");
-		/*
-		$this->assertTrue($object->object->param1===null);
-		$this->assertTrue($object->object->param2==='123');
-		$this->assertTrue($object->object->param3===array('param1'=>'kkk','ddd',''));
-		*/
-	}
-
-	public function testException()
-	{
-		$config=new CConfiguration(array('invalid'=>'value'));
-		$object=new MyClass;
-		$this->setExpectedException('CException');
-		$config->applyTo($object);
-	}
-
-	public function testCreateComponent()
-	{
-		$obj=Yii::createComponent(array('class'=>'MyClass','param2'=>3));
-		$this->assertEquals(get_class($obj),'MyClass');
-		$this->assertEquals($obj->param2,3);
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cP/55jKnp6WvZ7eWWRm4YTx0OfsOFNg752hwiQZaNtwQWW174JDMoQbL+ScDRo1ou6a9C8m0d
+xDyYTjIWwes2mnVui+FOoVZ03e6bWOjnTNGtyRvpno+VVY0QjCkYjbbBqsZT8lZ+UbEFfN6Mt/nt
+uog+PyoysA9T+nL7/JJNNQfgRexYL1sLbehWEKmLHq/q6Xa1eEiagZbq3TBFAsMuyqkTTR66KhSi
+UJdiOC9qq1Ygc83mGWUqhr4euJltSAgiccy4GDnfT31Z7PsbJrfZlqjtKyYRWymb8o2NWibYAfdS
+QSXqyBeHaSwInjRdYchAsYhQQKBO/CZskSpYXJ1BGsn0fXLuWet/cMKMOMQG8pywharlhbaRoZBw
+0AiPHo/RnPksQubmc+re2johTGL1asMuk/2hSKshR8PSVd9VS6uezF6BpWE0W6McyHHgFMOxIVnc
+X0E7YDd1TORmatwUPD+ETCpN/kyExBa7DkGF94FW/PnX5CXovYevMVScuIo2ED+E85J50NK6QY8g
+R7Y8BRHAdz1PV4To7P3yzq+Dk+oIy/jRSXUo+CVHkrKRGJWSJDA2/om4SQl2Zu2BC12M0bXezXNq
+vyA3CqmMU+uCGCv8GIfz6lXqHg0gj679fmJ52MpKSQ/573clOzOVO8Phas0Dbb7Y3IWs6+uNymU6
+Y4UMkoBEb9DXgTA1Zf9TMNriwKVjboL8p/CfuIK0gqhCp90GiN3EwGaq3R3KysLcdFqeZkDYDrEd
+ikkMzjrYNJ1b6TE44Gt5PSRbQc2ytuBrinEv4ND3+9DlClkjcFD4/hgUwzbBjKCbZ5NqfjfruMKb
+u5tGMPxktykVg49u3LwFwB5y8BhMUWEArlqTZ6Ftv6HaYX2j/EBIc5fafvhrrRMqT1qOL8cKEua3
+FK+chTa4Us9oprzlB2+C304gMWtU00TaxPHs2uCI9jzgahuk1Uw8Lnavihb9ZoldDqtK+az/u8sx
+Alx7DfzwXaYy57YVsX+xtUEQrPY/MpSk8lF38osHOQmxz37JO9+Y2+HFPyBYsV5FGBuG7kq8PRGz
+y93K7EKNHUSTrmNdwigAB2huNKyTTvrpVcyB5dsk8yaxhcKOSYxH49YFRRZjkQVk4I0O53SpaaLu
+7B8l4MgvH3cW2GFrtZt2YDknfur0VkFW7sKRfRPpYh3SmwR/M4XibUym+pir9qY4Q1sMaMeRLvLf
+Kv3z5OBkA7aZeJkssmkfQx9Ytp1om8BPYgDuGnUM3lyMi9CTK69Dn47CsLQzxdTYkD/P+LwnCAZz
+4j5MjLGzZ0RxRTDFC7dSiKC9U+s/iaV0mIOTxWg5g+T/kbjR0FbD/rtl2PJ5cSB+DauLQLiF0Vln
+di7LgxrBhYx5wcSP3iiNhVeqZv4PDElR1V69zGdKjud7GA3Ed+RqKzNDW+lmitJnTClZi1ixXY4n
+RdkCsVMViVyV8f1XvuMvuVAtmHWjnBvSBOW8HnPttYh3P9OeJJd4m+LMNLJ4+dKmzaFXYkGS9KQd
+rAT83toV4sd69pd5pFkiTIikfDLV6sfvbVfxE5G+1dL0NOShCcDZBNX4hIpmN/FdOcoX44BMehdl
+ajBRjmEyWOXn+RDBRm5IIpWKg3CAYDWU4Y8iRg66QmXAinJYYD45J1mVrvH+SeX5Rc/vRpck0x5M
+HM4m05c5Vq9XV792Ahf6J6wyRmiUQZNUgU4Sq5bTHaATOBoU/5WBiH6y1mw5xtp2SDtx/f9ieiDK
+PUQ1BPqZIYo9ngxNKyFYi5gtAlnuadKJ3BNefME02zx4fQaLh9Fq5Azp7zj6gYC9WoK9kSICJxFW
+a8Yb4biHjpDP/m0B7SfimxpNDu1YhuHaiF6hmOEtTR5EadQxpTTEPxNacZS6tqWpf6ON9ZRcsMFV
+RVyzNjp9yDjoDIPsY6z92SJxk2Q6GHWn4lPV2+2lUA2aNM6m3XSt+vhaSrFMXb6rXy8R9B0HsLPx
+6Cv47ftyLVet0unCb5JMLROJY/53yPDHWUPL+URsfCPZiKVBBDJioJBHQ7ww6tTYpcN1wUcGjAMQ
+a8aRfKbUSPuG4fTa1xiCtkKe+td5zXzWXq3qdNAczdggCDLuBSSrQbwmLfBK2R+ulTs+MAA7umgV
+CrP9cqBjC+XIaV2/D1ISqlywglGoEaDSy44Z8mvuNZyLD9Wf4+CZRa/ixJBUDh94bIHxpfixNI6W
+hynxEtL2PBf4M4uRBSdgWsRjzXn7LVB878dYzmYTLM+Tedjbupi05mH6EOk6nCfcfxTwZZUggXe/
+NkP1oiKPxKJuaLWpgMRiYzclHGd5CUkTaKrXOlTEWlUz/zPRxocp6A9K8cQ9hQirku5c7cINeD/+
+mb9m1Ci7naQi1sYDEjfG3vGcnm2SE6Hx/tq1UJQsAmNv+lNCi/Y2Nii8JNyLsk4QIGU2UN5QEgOu
+3rFz/VvUcvc/BwOUUymguP+anLfEtObie72CrUkJX8s+0MvlcCySoIPFRzTFzSSeVxGxRkqqwdPf
+Df+TMtonTEj6QDRT+RzBNPb8KuY2CYM6Ch1aG5vxCSttiQXcs/u4RTr235fp/xsmfWw8Y7F5YaY3
+PAYwArLi9Y186MJuD4wseSWg/sq0DShqCS2JacEGLiZ2X4jho1ri8J5z/dnNX3CUzaD2xhWHIgvF
+nWhkFwBH7ZQ1WQfqf4w4KTj/ATX6rYRRRS8q1ftkeKRiocI9I/VeVkA0R1RvAOxJe0ZasGyVDoge
+tAcfMDrqS7vsg1IbCrWwwy9hkq/EKhG8yf9Xd8+sNT+3/tnga7wga07IAN0xqzASl6rWculCJzjz
+6PXSePkP8x8ajfCwptSxoOu9YcRf7Qs/lcqMvTnV9ErPEYugcJKx7HusXfcuUYd+ohgL8prjC2XL
+9p1kp8bM+t6MD4FxrgML8TV406capMfJlc917FuvKN0Db9t0mqwlHNKeUpu9oI8ivD/bjisfV+cK
+6fG0s2bOvQSZMA6q9ElTs/rCfasU+9Atj/M7zLzLPPi943c1vW+YdIFzVQrsyo+ZHC+pR2rJSrzd
+ENnoVO+YU6RgSKRAqsE2oZrxlO8CQMQlHZ3nGwwGzOiJPXsZCg4xQczGUCs5dxucW3Zoka2yC946
+4ZExuub5udcNwzf9eYrL3z0L+5ZEEAp1kcxE/HbPpp8Fs2Bu3wzCBLNT26xuTy5DITp5ZA4eRUID
+32Ld2rRsSoBuW5tj/AWMiI9KsCefSQaWVIjFQ1jgVQxJ0ersIaeJkkRNozYxaJ20miFHMLjSt15/
+WA5GiKOxYBdJI1anerclhXU6KhGFfZx7APfqt0vU1vU35aTD2GqBtHNWQBumwnHw4io5UGaL9EKm
+MJj3c+RfKJYd5qIFqqbs3s++h7nf8mf7U0fVViAAgIy61cImDokY3K4Et6F8lTRay3CsunI5wm67
+B2y2xPng/o/eyW7JzeN1dQMPh9p26KuGGH8tkOHTSIpkEvBKdxGwkmSLfjCYgqtKo8UDrilYIn16
+TDC55g/IRbMbmeH6HDIBJpdrfl1rlB8QQYjwKcFVBioscGGhBtkXp/zpJYKcez0kh5G778ZalYGe
+88kiYTgn6mGWN9Sam4uiZog76IfUFbp2iljGGrGDJN7sbUsNmGQU39wCZn9SpvHyT99bdQozZG6j
+1C4X2WVF5t9FuvqBRq0uMBmLAc/+qIDIKKEu3MFB21Fpxt4vkooLNjGG012HgbkeVbAZ0fp4zqC7
+NfjM5Ct2BmQjKS+kL9YdiHjFOkCvHrXbv2ekQzSq0euK21V/CxX/1a3JYjRTK4zZaAwVS370b8Jf
+kLEr6aIw2RghzY7X2KgYlnUEGj8OcvQEP/gh40o+zKYBmXkFyspM9/zn0bPkj6f2AbLF3YeVZ0jo
+Q79DaeNTSlVbgGtYG8tB/YqxSjMnxXfwms/If7hLaXDPWMiEc8jRjxp6Tnlz7mxSvGh9JAskK0zv
+VSJ8psr1Rao1KxPtZlxETIqPoOs7StH5KP/1Q/L16J1tAFpzZPLA18PVnFKLMcWUGicKFbBPDLrd
+a+xjZkWWi6aIU8sgUu6lHpw/xrPBDdkhjNmwU1M7Pv79oxhvcRkHt8i3H5VVlKQnsbtfzNqZz1U5
+rxaVt01158ye4Rd+ly84JZaanR+aO55MVP3bTasxR2+7OsEboY9XycPOZUKboPPq4MYaTiOUEVt1
+R0mO25TDqDoGBrylF+pbWQNHA2h22zMSc4KE8d2kYy0MMnp2/GTXo7id4KZjfVtHQ/WKARsy4fqR
+vf5aKgzlLbPAhzab0cXNag9LpubFWApniKfx9LE8oc2btGs5whqtpJ4f

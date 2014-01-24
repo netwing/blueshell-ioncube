@@ -1,689 +1,273 @@
-<?php
-/**
- * This file contains the foundation classes for component-based and event-driven programming.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CComponent is the base class for all components.
- *
- * CComponent implements the protocol of defining, using properties and events.
- *
- * A property is defined by a getter method, and/or a setter method.
- * Properties can be accessed in the way like accessing normal object members.
- * Reading or writing a property will cause the invocation of the corresponding
- * getter or setter method, e.g
- * <pre>
- * $a=$component->text;     // equivalent to $a=$component->getText();
- * $component->text='abc';  // equivalent to $component->setText('abc');
- * </pre>
- * The signatures of getter and setter methods are as follows,
- * <pre>
- * // getter, defines a readable property 'text'
- * public function getText() { ... }
- * // setter, defines a writable property 'text' with $value to be set to the property
- * public function setText($value) { ... }
- * </pre>
- *
- * An event is defined by the presence of a method whose name starts with 'on'.
- * The event name is the method name. When an event is raised, functions
- * (called event handlers) attached to the event will be invoked automatically.
- *
- * An event can be raised by calling {@link raiseEvent} method, upon which
- * the attached event handlers will be invoked automatically in the order they
- * are attached to the event. Event handlers must have the following signature,
- * <pre>
- * function eventHandler($event) { ... }
- * </pre>
- * where $event includes parameters associated with the event.
- *
- * To attach an event handler to an event, see {@link attachEventHandler}.
- * You can also use the following syntax:
- * <pre>
- * $component->onClick=$callback;    // or $component->onClick->add($callback);
- * </pre>
- * where $callback refers to a valid PHP callback. Below we show some callback examples:
- * <pre>
- * 'handleOnClick'                   // handleOnClick() is a global function
- * array($object,'handleOnClick')    // using $object->handleOnClick()
- * array('Page','handleOnClick')     // using Page::handleOnClick()
- * </pre>
- *
- * To raise an event, use {@link raiseEvent}. The on-method defining an event is
- * commonly written like the following:
- * <pre>
- * public function onClick($event)
- * {
- *     $this->raiseEvent('onClick',$event);
- * }
- * </pre>
- * where <code>$event</code> is an instance of {@link CEvent} or its child class.
- * One can then raise the event by calling the on-method instead of {@link raiseEvent} directly.
- *
- * Both property names and event names are case-insensitive.
- *
- * CComponent supports behaviors. A behavior is an
- * instance of {@link IBehavior} which is attached to a component. The methods of
- * the behavior can be invoked as if they belong to the component. Multiple behaviors
- * can be attached to the same component.
- *
- * To attach a behavior to a component, call {@link attachBehavior}; and to detach the behavior
- * from the component, call {@link detachBehavior}.
- *
- * A behavior can be temporarily enabled or disabled by calling {@link enableBehavior}
- * or {@link disableBehavior}, respectively. When disabled, the behavior methods cannot
- * be invoked via the component.
- *
- * Starting from version 1.1.0, a behavior's properties (either its public member variables or
- * its properties defined via getters and/or setters) can be accessed through the component it
- * is attached to.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.base
- * @since 1.0
- */
-class CComponent
-{
-	private $_e;
-	private $_m;
-
-	/**
-	 * Returns a property value, an event handler list or a behavior based on its name.
-	 * Do not call this method. This is a PHP magic method that we override
-	 * to allow using the following syntax to read a property or obtain event handlers:
-	 * <pre>
-	 * $value=$component->propertyName;
-	 * $handlers=$component->eventName;
-	 * </pre>
-	 * @param string $name the property name or event name
-	 * @return mixed the property value, event handlers attached to the event, or the named behavior
-	 * @throws CException if the property or event is not defined
-	 * @see __set
-	 */
-	public function __get($name)
-	{
-		$getter='get'.$name;
-		if(method_exists($this,$getter))
-			return $this->$getter();
-		elseif(strncasecmp($name,'on',2)===0 && method_exists($this,$name))
-		{
-			// duplicating getEventHandlers() here for performance
-			$name=strtolower($name);
-			if(!isset($this->_e[$name]))
-				$this->_e[$name]=new CList;
-			return $this->_e[$name];
-		}
-		elseif(isset($this->_m[$name]))
-			return $this->_m[$name];
-		elseif(is_array($this->_m))
-		{
-			foreach($this->_m as $object)
-			{
-				if($object->getEnabled() && (property_exists($object,$name) || $object->canGetProperty($name)))
-					return $object->$name;
-			}
-		}
-		throw new CException(Yii::t('yii','Property "{class}.{property}" is not defined.',
-			array('{class}'=>get_class($this), '{property}'=>$name)));
-	}
-
-	/**
-	 * Sets value of a component property.
-	 * Do not call this method. This is a PHP magic method that we override
-	 * to allow using the following syntax to set a property or attach an event handler
-	 * <pre>
-	 * $this->propertyName=$value;
-	 * $this->eventName=$callback;
-	 * </pre>
-	 * @param string $name the property name or the event name
-	 * @param mixed $value the property value or callback
-	 * @return mixed
-	 * @throws CException if the property/event is not defined or the property is read only.
-	 * @see __get
-	 */
-	public function __set($name,$value)
-	{
-		$setter='set'.$name;
-		if(method_exists($this,$setter))
-			return $this->$setter($value);
-		elseif(strncasecmp($name,'on',2)===0 && method_exists($this,$name))
-		{
-			// duplicating getEventHandlers() here for performance
-			$name=strtolower($name);
-			if(!isset($this->_e[$name]))
-				$this->_e[$name]=new CList;
-			return $this->_e[$name]->add($value);
-		}
-		elseif(is_array($this->_m))
-		{
-			foreach($this->_m as $object)
-			{
-				if($object->getEnabled() && (property_exists($object,$name) || $object->canSetProperty($name)))
-					return $object->$name=$value;
-			}
-		}
-		if(method_exists($this,'get'.$name))
-			throw new CException(Yii::t('yii','Property "{class}.{property}" is read only.',
-				array('{class}'=>get_class($this), '{property}'=>$name)));
-		else
-			throw new CException(Yii::t('yii','Property "{class}.{property}" is not defined.',
-				array('{class}'=>get_class($this), '{property}'=>$name)));
-	}
-
-	/**
-	 * Checks if a property value is null.
-	 * Do not call this method. This is a PHP magic method that we override
-	 * to allow using isset() to detect if a component property is set or not.
-	 * @param string $name the property name or the event name
-	 * @return boolean
-	 */
-	public function __isset($name)
-	{
-		$getter='get'.$name;
-		if(method_exists($this,$getter))
-			return $this->$getter()!==null;
-		elseif(strncasecmp($name,'on',2)===0 && method_exists($this,$name))
-		{
-			$name=strtolower($name);
-			return isset($this->_e[$name]) && $this->_e[$name]->getCount();
-		}
-		elseif(is_array($this->_m))
-		{
- 			if(isset($this->_m[$name]))
- 				return true;
-			foreach($this->_m as $object)
-			{
-				if($object->getEnabled() && (property_exists($object,$name) || $object->canGetProperty($name)))
-					return $object->$name!==null;
-			}
-		}
-		return false;
-	}
-
-	/**
-	 * Sets a component property to be null.
-	 * Do not call this method. This is a PHP magic method that we override
-	 * to allow using unset() to set a component property to be null.
-	 * @param string $name the property name or the event name
-	 * @throws CException if the property is read only.
-	 * @return mixed
-	 */
-	public function __unset($name)
-	{
-		$setter='set'.$name;
-		if(method_exists($this,$setter))
-			$this->$setter(null);
-		elseif(strncasecmp($name,'on',2)===0 && method_exists($this,$name))
-			unset($this->_e[strtolower($name)]);
-		elseif(is_array($this->_m))
-		{
-			if(isset($this->_m[$name]))
-				$this->detachBehavior($name);
-			else
-			{
-				foreach($this->_m as $object)
-				{
-					if($object->getEnabled())
-					{
-						if(property_exists($object,$name))
-							return $object->$name=null;
-						elseif($object->canSetProperty($name))
-							return $object->$setter(null);
-					}
-				}
-			}
-		}
-		elseif(method_exists($this,'get'.$name))
-			throw new CException(Yii::t('yii','Property "{class}.{property}" is read only.',
-				array('{class}'=>get_class($this), '{property}'=>$name)));
-	}
-
-	/**
-	 * Calls the named method which is not a class method.
-	 * Do not call this method. This is a PHP magic method that we override
-	 * to implement the behavior feature.
-	 * @param string $name the method name
-	 * @param array $parameters method parameters
-	 * @throws CException if current class and its behaviors do not have a method or closure with the given name
-	 * @return mixed the method return value
-	 */
-	public function __call($name,$parameters)
-	{
-		if($this->_m!==null)
-		{
-			foreach($this->_m as $object)
-			{
-				if($object->getEnabled() && method_exists($object,$name))
-					return call_user_func_array(array($object,$name),$parameters);
-			}
-		}
-		if(class_exists('Closure', false) && $this->canGetProperty($name) && $this->$name instanceof Closure)
-			return call_user_func_array($this->$name, $parameters);
-		throw new CException(Yii::t('yii','{class} and its behaviors do not have a method or closure named "{name}".',
-			array('{class}'=>get_class($this), '{name}'=>$name)));
-	}
-
-	/**
-	 * Returns the named behavior object.
-	 * The name 'asa' stands for 'as a'.
-	 * @param string $behavior the behavior name
-	 * @return IBehavior the behavior object, or null if the behavior does not exist
-	 */
-	public function asa($behavior)
-	{
-		return isset($this->_m[$behavior]) ? $this->_m[$behavior] : null;
-	}
-
-	/**
-	 * Attaches a list of behaviors to the component.
-	 * Each behavior is indexed by its name and should be an instance of
-	 * {@link IBehavior}, a string specifying the behavior class, or an
-	 * array of the following structure:
-	 * <pre>
-	 * array(
-	 *     'class'=>'path.to.BehaviorClass',
-	 *     'property1'=>'value1',
-	 *     'property2'=>'value2',
-	 * )
-	 * </pre>
-	 * @param array $behaviors list of behaviors to be attached to the component
-	 */
-	public function attachBehaviors($behaviors)
-	{
-		foreach($behaviors as $name=>$behavior)
-			$this->attachBehavior($name,$behavior);
-	}
-
-	/**
-	 * Detaches all behaviors from the component.
-	 */
-	public function detachBehaviors()
-	{
-		if($this->_m!==null)
-		{
-			foreach($this->_m as $name=>$behavior)
-				$this->detachBehavior($name);
-			$this->_m=null;
-		}
-	}
-
-	/**
-	 * Attaches a behavior to this component.
-	 * This method will create the behavior object based on the given
-	 * configuration. After that, the behavior object will be initialized
-	 * by calling its {@link IBehavior::attach} method.
-	 * @param string $name the behavior's name. It should uniquely identify this behavior.
-	 * @param mixed $behavior the behavior configuration. This is passed as the first
-	 * parameter to {@link YiiBase::createComponent} to create the behavior object.
-	 * You can also pass an already created behavior instance (the new behavior will replace an already created
-	 * behavior with the same name, if it exists).
-	 * @return IBehavior the behavior object
-	 */
-	public function attachBehavior($name,$behavior)
-	{
-		if(!($behavior instanceof IBehavior))
-			$behavior=Yii::createComponent($behavior);
-		$behavior->setEnabled(true);
-		$behavior->attach($this);
-		return $this->_m[$name]=$behavior;
-	}
-
-	/**
-	 * Detaches a behavior from the component.
-	 * The behavior's {@link IBehavior::detach} method will be invoked.
-	 * @param string $name the behavior's name. It uniquely identifies the behavior.
-	 * @return IBehavior the detached behavior. Null if the behavior does not exist.
-	 */
-	public function detachBehavior($name)
-	{
-		if(isset($this->_m[$name]))
-		{
-			$this->_m[$name]->detach($this);
-			$behavior=$this->_m[$name];
-			unset($this->_m[$name]);
-			return $behavior;
-		}
-	}
-
-	/**
-	 * Enables all behaviors attached to this component.
-	 */
-	public function enableBehaviors()
-	{
-		if($this->_m!==null)
-		{
-			foreach($this->_m as $behavior)
-				$behavior->setEnabled(true);
-		}
-	}
-
-	/**
-	 * Disables all behaviors attached to this component.
-	 */
-	public function disableBehaviors()
-	{
-		if($this->_m!==null)
-		{
-			foreach($this->_m as $behavior)
-				$behavior->setEnabled(false);
-		}
-	}
-
-	/**
-	 * Enables an attached behavior.
-	 * A behavior is only effective when it is enabled.
-	 * A behavior is enabled when first attached.
-	 * @param string $name the behavior's name. It uniquely identifies the behavior.
-	 */
-	public function enableBehavior($name)
-	{
-		if(isset($this->_m[$name]))
-			$this->_m[$name]->setEnabled(true);
-	}
-
-	/**
-	 * Disables an attached behavior.
-	 * A behavior is only effective when it is enabled.
-	 * @param string $name the behavior's name. It uniquely identifies the behavior.
-	 */
-	public function disableBehavior($name)
-	{
-		if(isset($this->_m[$name]))
-			$this->_m[$name]->setEnabled(false);
-	}
-
-	/**
-	 * Determines whether a property is defined.
-	 * A property is defined if there is a getter or setter method
-	 * defined in the class. Note, property names are case-insensitive.
-	 * @param string $name the property name
-	 * @return boolean whether the property is defined
-	 * @see canGetProperty
-	 * @see canSetProperty
-	 */
-	public function hasProperty($name)
-	{
-		return method_exists($this,'get'.$name) || method_exists($this,'set'.$name);
-	}
-
-	/**
-	 * Determines whether a property can be read.
-	 * A property can be read if the class has a getter method
-	 * for the property name. Note, property name is case-insensitive.
-	 * @param string $name the property name
-	 * @return boolean whether the property can be read
-	 * @see canSetProperty
-	 */
-	public function canGetProperty($name)
-	{
-		return method_exists($this,'get'.$name);
-	}
-
-	/**
-	 * Determines whether a property can be set.
-	 * A property can be written if the class has a setter method
-	 * for the property name. Note, property name is case-insensitive.
-	 * @param string $name the property name
-	 * @return boolean whether the property can be written
-	 * @see canGetProperty
-	 */
-	public function canSetProperty($name)
-	{
-		return method_exists($this,'set'.$name);
-	}
-
-	/**
-	 * Determines whether an event is defined.
-	 * An event is defined if the class has a method named like 'onXXX'.
-	 * Note, event name is case-insensitive.
-	 * @param string $name the event name
-	 * @return boolean whether an event is defined
-	 */
-	public function hasEvent($name)
-	{
-		return !strncasecmp($name,'on',2) && method_exists($this,$name);
-	}
-
-	/**
-	 * Checks whether the named event has attached handlers.
-	 * @param string $name the event name
-	 * @return boolean whether an event has been attached one or several handlers
-	 */
-	public function hasEventHandler($name)
-	{
-		$name=strtolower($name);
-		return isset($this->_e[$name]) && $this->_e[$name]->getCount()>0;
-	}
-
-	/**
-	 * Returns the list of attached event handlers for an event.
-	 * @param string $name the event name
-	 * @return CList list of attached event handlers for the event
-	 * @throws CException if the event is not defined
-	 */
-	public function getEventHandlers($name)
-	{
-		if($this->hasEvent($name))
-		{
-			$name=strtolower($name);
-			if(!isset($this->_e[$name]))
-				$this->_e[$name]=new CList;
-			return $this->_e[$name];
-		}
-		else
-			throw new CException(Yii::t('yii','Event "{class}.{event}" is not defined.',
-				array('{class}'=>get_class($this), '{event}'=>$name)));
-	}
-
-	/**
-	 * Attaches an event handler to an event.
-	 *
-	 * An event handler must be a valid PHP callback, i.e., a string referring to
-	 * a global function name, or an array containing two elements with
-	 * the first element being an object and the second element a method name
-	 * of the object.
-	 *
-	 * An event handler must be defined with the following signature,
-	 * <pre>
-	 * function handlerName($event) {}
-	 * </pre>
-	 * where $event includes parameters associated with the event.
-	 *
-	 * This is a convenient method of attaching a handler to an event.
-	 * It is equivalent to the following code:
-	 * <pre>
-	 * $component->getEventHandlers($eventName)->add($eventHandler);
-	 * </pre>
-	 *
-	 * Using {@link getEventHandlers}, one can also specify the excution order
-	 * of multiple handlers attaching to the same event. For example:
-	 * <pre>
-	 * $component->getEventHandlers($eventName)->insertAt(0,$eventHandler);
-	 * </pre>
-	 * makes the handler to be invoked first.
-	 *
-	 * @param string $name the event name
-	 * @param callback $handler the event handler
-	 * @throws CException if the event is not defined
-	 * @see detachEventHandler
-	 */
-	public function attachEventHandler($name,$handler)
-	{
-		$this->getEventHandlers($name)->add($handler);
-	}
-
-	/**
-	 * Detaches an existing event handler.
-	 * This method is the opposite of {@link attachEventHandler}.
-	 * @param string $name event name
-	 * @param callback $handler the event handler to be removed
-	 * @return boolean if the detachment process is successful
-	 * @see attachEventHandler
-	 */
-	public function detachEventHandler($name,$handler)
-	{
-		if($this->hasEventHandler($name))
-			return $this->getEventHandlers($name)->remove($handler)!==false;
-		else
-			return false;
-	}
-
-	/**
-	 * Raises an event.
-	 * This method represents the happening of an event. It invokes
-	 * all attached handlers for the event.
-	 * @param string $name the event name
-	 * @param CEvent $event the event parameter
-	 * @throws CException if the event is undefined or an event handler is invalid.
-	 */
-	public function raiseEvent($name,$event)
-	{
-		$name=strtolower($name);
-		if(isset($this->_e[$name]))
-		{
-			foreach($this->_e[$name] as $handler)
-			{
-				if(is_string($handler))
-					call_user_func($handler,$event);
-				elseif(is_callable($handler,true))
-				{
-					if(is_array($handler))
-					{
-						// an array: 0 - object, 1 - method name
-						list($object,$method)=$handler;
-						if(is_string($object))	// static method call
-							call_user_func($handler,$event);
-						elseif(method_exists($object,$method))
-							$object->$method($event);
-						else
-							throw new CException(Yii::t('yii','Event "{class}.{event}" is attached with an invalid handler "{handler}".',
-								array('{class}'=>get_class($this), '{event}'=>$name, '{handler}'=>$handler[1])));
-					}
-					else // PHP 5.3: anonymous function
-						call_user_func($handler,$event);
-				}
-				else
-					throw new CException(Yii::t('yii','Event "{class}.{event}" is attached with an invalid handler "{handler}".',
-						array('{class}'=>get_class($this), '{event}'=>$name, '{handler}'=>gettype($handler))));
-				// stop further handling if param.handled is set true
-				if(($event instanceof CEvent) && $event->handled)
-					return;
-			}
-		}
-		elseif(YII_DEBUG && !$this->hasEvent($name))
-			throw new CException(Yii::t('yii','Event "{class}.{event}" is not defined.',
-				array('{class}'=>get_class($this), '{event}'=>$name)));
-	}
-
-	/**
-	 * Evaluates a PHP expression or callback under the context of this component.
-	 *
-	 * Valid PHP callback can be class method name in the form of
-	 * array(ClassName/Object, MethodName), or anonymous function (only available in PHP 5.3.0 or above).
-	 *
-	 * If a PHP callback is used, the corresponding function/method signature should be
-	 * <pre>
-	 * function foo($param1, $param2, ..., $component) { ... }
-	 * </pre>
-	 * where the array elements in the second parameter to this method will be passed
-	 * to the callback as $param1, $param2, ...; and the last parameter will be the component itself.
-	 *
-	 * If a PHP expression is used, the second parameter will be "extracted" into PHP variables
-	 * that can be directly accessed in the expression. See {@link http://us.php.net/manual/en/function.extract.php PHP extract}
-	 * for more details. In the expression, the component object can be accessed using $this.
-	 *
-	 * A PHP expression can be any PHP code that has a value. To learn more about what an expression is,
-	 * please refer to the {@link http://www.php.net/manual/en/language.expressions.php php manual}.
-	 *
-	 * @param mixed $_expression_ a PHP expression or PHP callback to be evaluated.
-	 * @param array $_data_ additional parameters to be passed to the above expression/callback.
-	 * @return mixed the expression result
-	 * @since 1.1.0
-	 */
-	public function evaluateExpression($_expression_,$_data_=array())
-	{
-		if(is_string($_expression_))
-		{
-			extract($_data_);
-			return eval('return '.$_expression_.';');
-		}
-		else
-		{
-			$_data_[]=$this;
-			return call_user_func_array($_expression_, $_data_);
-		}
-	}
-}
-
-
-/**
- * CEvent is the base class for all event classes.
- *
- * It encapsulates the parameters associated with an event.
- * The {@link sender} property describes who raises the event.
- * And the {@link handled} property indicates if the event is handled.
- * If an event handler sets {@link handled} to true, those handlers
- * that are not invoked yet will not be invoked anymore.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.base
- * @since 1.0
- */
-class CEvent extends CComponent
-{
-	/**
-	 * @var object the sender of this event
-	 */
-	public $sender;
-	/**
-	 * @var boolean whether the event is handled. Defaults to false.
-	 * When a handler sets this true, the rest of the uninvoked event handlers will not be invoked anymore.
-	 */
-	public $handled=false;
-	/**
-	 * @var mixed additional event parameters.
-	 * @since 1.1.7
-	 */
-	public $params;
-
-	/**
-	 * Constructor.
-	 * @param mixed $sender sender of the event
-	 * @param mixed $params additional parameters for the event
-	 */
-	public function __construct($sender=null,$params=null)
-	{
-		$this->sender=$sender;
-		$this->params=$params;
-	}
-}
-
-
-/**
- * CEnumerable is the base class for all enumerable types.
- *
- * To define an enumerable type, extend CEnumberable and define string constants.
- * Each constant represents an enumerable value.
- * The constant name must be the same as the constant value.
- * For example,
- * <pre>
- * class TextAlign extends CEnumerable
- * {
- *     const Left='Left';
- *     const Right='Right';
- * }
- * </pre>
- * Then, one can use the enumerable values such as TextAlign::Left and
- * TextAlign::Right.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.base
- * @since 1.0
- */
-class CEnumerable
-{
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+ZvStKLHrCpPZHQ2VOASu9m8ZbdFxi/1REd0=

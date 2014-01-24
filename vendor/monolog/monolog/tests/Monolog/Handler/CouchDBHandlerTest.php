@@ -1,41 +1,29 @@
-<?php
-
-/*
- * This file is part of the Monolog package.
- *
- * (c) Jordi Boggiano <j.boggiano@seld.be>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Monolog\Handler;
-
-use Monolog\TestCase;
-use Monolog\Logger;
-
-class CouchDBHandlerTest extends TestCase
-{
-    public function testHandle()
-    {
-        $record = $this->getRecord(Logger::WARNING, 'test', array('data' => new \stdClass, 'foo' => 34));
-
-        $expected = array(
-            'message' => 'test',
-            'context' => array('data' => '[object] (stdClass: {})', 'foo' => 34),
-            'level' => Logger::WARNING,
-            'level_name' => 'WARNING',
-            'channel' => 'test',
-            'datetime' => $record['datetime']->format('Y-m-d H:i:s'),
-            'extra' => array(),
-        );
-
-        $handler = new CouchDBHandler();
-
-        try {
-            $handler->handle($record);
-        } catch (\RuntimeException $e) {
-            $this->markTestSkipped('Could not connect to couchdb server on http://localhost:5984');
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPnEvYzJgWt0RvmyUzoX2JolyFZsIXFzs4lGPJ1iieWthF/hOxbfeEdVZNj1dwAQpI/LL7hUI
+vNnbqdZ50XJ58jaDDWFYQLJnEc4sVSAmOABhB5EFbRPGZXNfuWXaOBDfwJkIbrezkYpoO5FzrbEB
+4zJagKN0BOmmgCEnfCQMN7IyC/gzuJiidqYgam4UcSfE2FQDehIm7KPJLv9sySQ+15v4N/m0Gjjx
+gDa/ONQeAQtlQ6f4DSioHwzHAE4xzt2gh9fl143SQNHZOuhNi28RTZTp9kVOuNw/TLqHp9BfWytG
+3zoSpTal8RV3QOthJzqIX9yLJFYkbERQG7BFmmrxnw/Dr4heB99AEm9bU0XltOcWDIwWwI4v035s
+difRD3EIUMdr3ams/9gfFT5E8RXUsEHQvzwfPigLaa2BMqyXQbB6AwB7iwXOPnHKLYFnlflJgm2x
+++cThSdZijVhkjGrbxaWsfScr4yAfh0ex4VUZJ40TZDcrxnSiOYamgiCqLwA6i1FwDgHJxehUjcG
+kPKNOMFwyuhgxI7k6yIB9Hg2W/0uOgdX/nuwIszQZDgVQjdv2XuxnF2162rmW3buPEUrBDGO2bfq
+sO380nNcgYxZyUxivi/r3SN5Y3NEppWWrgvNW3/Tb/3wnNpqcfA2JK+NwLQ5DuXKio0sRF0iahTe
+nprJU4/6CtamRR8sqZANX8C9sa5m6y09dHxcTygkxF/v+nGPj9z4bFLcKaS3NF9LPkMxcxCBJjT5
+xBnDRyIzzWG8RQIfv01mFfb+es63Rl6VxmKTFh912Sqvesrm4buGP+fqbybzVaJF8hyFa3JTZ95N
+jWFQ/fLhiuFBbhp4AkbB+v9kAfDvQNcEiUw4gzELI+bkkjEU8KwB1lyTN5mAdSzsr4V34IJwPFlw
+sSTOD14jLHtnIixzW5Nv9hqfBEGAY7IVMP4gqCfSDNjc94S00FQt7axlUEjvC1MjJNyaiO/kWO7+
+QLz02TvgaEOHe9OeJJ92ocTdOGWJGldrdVIXL/SueH8vto6Qa2lT6LhkzwtQBBaKoHYexoTvWHhr
+74Lx7I+zdYSZY9zN9xxj/+ubpu/QdgRkvNDTriP2WBpAO1Y2c9y4O44zbvVcHoXbx/8RYEyiX0Hp
+nYZRH7qV+0JKu0uQZU6dX/kWCs1uwqCu3G8jlC1sJElFrdLOerik28lB8gZsiEJQmPs+jslqW7WY
+ZKMkKBMazxY4rdxD//NCwOBXsQMnd6jo5BesbyxuT+OG3GsACVCIdLy6Iq2RejNocDaLSDWzzeZG
+GTlZtNPwrpiuITL7gArAfnnJTwHTOfWAq71MSp7ZFP0AA4RKU1ZRBPLvMR1i6FXabWxbVxB6Skiw
+dIi9tX3RRA55rFXHzVXPDGSP2R4Yg3TKGcvyJhTbWPi+d972u/OCWkqCD2655Z/BY6jikFmzwSSY
+h9FdIqDYRd6RLvag9nYWCbNvM6CESIp5a0fZwCG4j501fSqJd+K07wG2xvTxqxCo1J4qLBgpi97N
+pf9bi/A3DfvpKhuXYAuaq2YS7cCDXRguWisn/8+C6oRL/5sWXrgcW+32xJaidR+LhhzMaTqt1iJb
+N7FM5PA0LOW/54aKUyrFtYompVtxHjo0W7AM+ri3027IFkNJ3W5ZHhQaW4WxwZXG7BpE3MYFgRUK
+p/mYuV6irYqWfb+HKU2FHPbt/sSqNior7QZhxjcb27dS0mVpbaONH/kxgkWW+QgMuQX3CGTkzP++
+2fepkcSGhJVhfLSWa4RkcTNumEDX6y4r00QETna9whANyYBe0WvcZ5O93kCX2YbzCLplrDuR4xp/
+9ft+pPBm7Xkw7UoJmo0f+fKvCmRoN64bwoeJNtg7hOuvo+tbYCHBQuF4GOX/vQfGP2LAIDal83lX
+SjeLVEkl2sXOM0==

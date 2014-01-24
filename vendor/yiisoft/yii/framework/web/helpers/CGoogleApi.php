@@ -1,74 +1,46 @@
-<?php
-/**
- * CGoogleApi class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CGoogleApi provides helper methods to easily access the {@link https://developers.google.com/loader/ Google API loader}.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.web.helpers
- */
-class CGoogleApi
-{
-	/**
-	* @var string Protocol relative url to the Google API loader which allows easy access
-	* to most of the Google AJAX APIs
-	*/
-	public static $bootstrapUrl='//www.google.com/jsapi';
-
-	/**
-	 * Renders the jsapi script file.
-	 * @param string $apiKey the API key. Null if you do not have a key.
-	 * @return string the script tag that loads Google jsapi.
-	 */
-	public static function init($apiKey=null)
-	{
-		if($apiKey===null)
-			return CHtml::scriptFile(self::$bootstrapUrl);
-		else
-			return CHtml::scriptFile(self::$bootstrapUrl.'?key='.$apiKey);
-	}
-
-	/**
-	 * Loads the specified API module.
-	 * Note that you should call {@link init} first.
-	 * @param string $name the module name
-	 * @param string $version the module version
-	 * @param array $options additional js options that are to be passed to the load() function.
-	 * @return string the js code for loading the module. You can use {@link CHtml::script()}
-	 * to enclose it in a script tag.
-	 */
-	public static function load($name,$version='1',$options=array())
-	{
-		if(empty($options))
-			return "google.load(\"{$name}\",\"{$version}\");";
-		else
-			return "google.load(\"{$name}\",\"{$version}\",".CJavaScript::encode($options).");";
-	}
-
-	/**
-	 * Registers the specified API module.
-	 * This is similar to {@link load} except that it registers the loading code
-	 * with {@link CClientScript} instead of returning it.
-	 * This method also registers the jsapi script needed by the loading call.
-	 * @param string $name the module name
-	 * @param string $version the module version
-	 * @param array $options additional js options that are to be passed to the load() function.
-	 * @param string $apiKey the API key. Null if you do not have a key.
-	 */
-	public static function register($name,$version='1',$options=array(),$apiKey=null)
-	{
-		$cs=Yii::app()->getClientScript();
-		$url=$apiKey===null?self::$bootstrapUrl:self::$bootstrapUrl.'?key='.$apiKey;
-		$cs->registerScriptFile($url,CClientScript::POS_HEAD);
-
-		$js=self::load($name,$version,$options);
-		$cs->registerScript($name,$js,CClientScript::POS_HEAD);
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

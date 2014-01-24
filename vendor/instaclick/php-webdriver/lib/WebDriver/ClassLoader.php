@@ -1,85 +1,37 @@
-<?php
-/**
- * Copyright 2012-2013 Anthon Pang. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- * @package WebDriver
- *
- * @author Anthon Pang <apang@softwaredevelopment.ca>
- */
-
-namespace WebDriver;
-
-/**
- * WebDriver\ClassLoader (autoloader) class
- *
- * @package WebDriver
- */
-final class ClassLoader
-{
-    /**
-     * Load class
-     *
-     * @param string $class Class name
-     */
-    public static function loadClass($class)
-    {
-        $file = strpos($class, '\\') !== false
-            ? str_replace('\\', DIRECTORY_SEPARATOR, $class)
-            : str_replace('_', DIRECTORY_SEPARATOR, $class);
-
-        $path = dirname(__DIR__) . DIRECTORY_SEPARATOR . $file . '.php';
-
-        if (file_exists($path)) {
-            include_once $path;
-        }
-    }
-
-    /**
-     * Autoloader
-     *
-     * @param string $class Class name
-     */
-    public static function autoload($class)
-    {
-        try {
-            self::loadClass($class);
-        } catch (Exception $e) {
-        }
-    }
-}
-
-if (function_exists('spl_autoload_register')) {
-    /**
-     * use the SPL autoload stack
-     */
-    spl_autoload_register(array('WebDriver\ClassLoader', 'autoload'));
-
-    /**
-     * preserve any existing __autoload
-     */
-    if (function_exists('__autoload')) {
-        spl_autoload_register('__autoload');
-    }
-} else {
-    /**
-     * Our fallback; only one __autoload per PHP instance
-     *
-     * @param string $class Class name
-     */
-    function __autoload($class)
-    {
-        ClassLoader::autoload($class);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

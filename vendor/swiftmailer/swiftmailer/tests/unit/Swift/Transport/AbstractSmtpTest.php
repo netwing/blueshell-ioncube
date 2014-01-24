@@ -1,924 +1,466 @@
-<?php
-
-require_once 'Swift/Tests/SwiftUnitTestCase.php';
-require_once 'Swift/Transport/EsmtpHandler.php';
-require_once 'Swift/Mime/Message.php';
-require_once 'Swift/Transport/IoBuffer.php';
-
-abstract class Swift_Transport_AbstractSmtpTest
-    extends Swift_Tests_SwiftUnitTestCase
-{
-    /** Abstract test method */
-    abstract protected function _getTransport($buf);
-
-    public function testStartAccepts220ServiceGreeting()
-    {
-        /* -- RFC 2821, 4.2.
-
-     Greeting = "220 " Domain [ SP text ] CRLF
-
-     -- RFC 2822, 4.3.2.
-
-     CONNECTION ESTABLISHMENT
-         S: 220
-         E: 554
-        */
-
-        $buf = $this->_getBuffer();
-        $smtp = $this->_getTransport($buf);
-        $s = $this->_sequence('SMTP-convo');
-        $this->_checking(Expectations::create()
-            -> one($buf)->initialize() -> inSequence($s)
-            -> one($buf)->readLine(0) -> inSequence($s) -> returns("220 some.server.tld bleh\r\n")
-            );
-        $this->_finishBuffer($buf);
-        try {
-            $this->assertFalse($smtp->isStarted(), '%s: SMTP should begin non-started');
-            $smtp->start();
-            $this->assertTrue($smtp->isStarted(), '%s: start() should have started connection');
-        } catch (Exception $e) {
-            $this->fail('220 is a valid SMTP greeting and should be accepted');
-        }
-    }
-
-    public function testBadGreetingCausesException()
-    {
-        $buf = $this->_getBuffer();
-        $smtp = $this->_getTransport($buf);
-        $s = $this->_sequence('SMTP-convo');
-        $this->_checking(Expectations::create()
-            -> one($buf)->initialize() -> inSequence($s)
-            -> one($buf)->readLine(0) -> inSequence($s) -> returns("554 I'm busy\r\n")
-            );
-        $this->_finishBuffer($buf);
-        try {
-            $this->assertFalse($smtp->isStarted(), '%s: SMTP should begin non-started');
-            $smtp->start();
-            $this->fail('554 greeting indicates an error and should cause an exception');
-        } catch (Exception $e) {
-            $this->assertFalse($smtp->isStarted(), '%s: start() should have failed');
-        }
-    }
-
-    public function testStartSendsHeloToInitiate()
-    {
-        /* -- RFC 2821, 3.2.
-
-            3.2 Client Initiation
-
-         Once the server has sent the welcoming message and the client has
-         received it, the client normally sends the EHLO command to the
-         server, indicating the client's identity.  In addition to opening the
-         session, use of EHLO indicates that the client is able to process
-         service extensions and requests that the server provide a list of the
-         extensions it supports.  Older SMTP systems which are unable to
-         support service extensions and contemporary clients which do not
-         require service extensions in the mail session being initiated, MAY
-         use HELO instead of EHLO.  Servers MUST NOT return the extended
-         EHLO-style response to a HELO command.  For a particular connection
-         attempt, if the server returns a "command not recognized" response to
-         EHLO, the client SHOULD be able to fall back and send HELO.
-
-         In the EHLO command the host sending the command identifies itself;
-         the command may be interpreted as saying "Hello, I am <domain>" (and,
-         in the case of EHLO, "and I support service extension requests").
-
-       -- RFC 2281, 4.1.1.1.
-
-       ehlo            = "EHLO" SP Domain CRLF
-       helo            = "HELO" SP Domain CRLF
-
-       -- RFC 2821, 4.3.2.
-
-       EHLO or HELO
-           S: 250
-           E: 504, 550
-
-     */
-
-        $buf = $this->_getBuffer();
-        $smtp = $this->_getTransport($buf);
-        $s = $this->_sequence('SMTP-convo');
-        $this->_checking(Expectations::create()
-            -> one($buf)->initialize() -> inSequence($s)
-            -> one($buf)->readLine(0) -> inSequence($s) -> returns("220 some.server.tld bleh\r\n")
-            -> one($buf)->write(pattern('~^HELO .*?\r\n$~D')) -> inSequence($s) -> returns(1)
-            -> one($buf)->readLine(1) -> inSequence($s) -> returns('250 ServerName' . "\r\n")
-            );
-        $this->_finishBuffer($buf);
-        try {
-            $smtp->start();
-        } catch (Exception $e) {
-            $this->fail('Starting SMTP should send HELO and accept 250 response');
-        }
-    }
-
-    public function testInvalidHeloResponseCausesException()
-    {
-        $buf = $this->_getBuffer();
-        $smtp = $this->_getTransport($buf);
-        $s = $this->_sequence('SMTP-convo');
-        $this->_checking(Expectations::create()
-            -> one($buf)->initialize() -> inSequence($s)
-            -> one($buf)->readLine(0) -> inSequence($s) -> returns("220 some.server.tld bleh\r\n")
-            -> one($buf)->write(pattern('~^HELO .*?\r\n$~D')) -> inSequence($s) -> returns(1)
-            -> one($buf)->readLine(1) -> inSequence($s) -> returns('504 WTF' . "\r\n")
-            );
-        $this->_finishBuffer($buf);
-        try {
-            $this->assertFalse($smtp->isStarted(), '%s: SMTP should begin non-started');
-            $smtp->start();
-            $this->fail('Non 250 HELO response should raise Exception');
-        } catch (Exception $e) {
-            $this->assertFalse($smtp->isStarted(), '%s: SMTP start() should have failed');
-        }
-    }
-
-    public function testDomainNameIsPlacedInHelo()
-    {
-        /* -- RFC 2821, 4.1.4.
-
-       The SMTP client MUST, if possible, ensure that the domain parameter
-       to the EHLO command is a valid principal host name (not a CNAME or MX
-       name) for its host.  If this is not possible (e.g., when the client's
-       address is dynamically assigned and the client does not have an
-       obvious name), an address literal SHOULD be substituted for the
-       domain name and supplemental information provided that will assist in
-       identifying the client.
-        */
-
-        $buf = $this->_getBuffer();
-        $smtp = $this->_getTransport($buf);
-        $s = $this->_sequence('SMTP-convo');
-        $this->_checking(Expectations::create()
-            -> one($buf)->initialize() -> inSequence($s)
-            -> one($buf)->readLine(0) -> inSequence($s) -> returns("220 some.server.tld bleh\r\n")
-            -> one($buf)->write("HELO mydomain.com\r\n") -> inSequence($s) -> returns(1)
-            -> one($buf)->readLine(1) -> inSequence($s) -> returns('250 ServerName' . "\r\n")
-            );
-        $this->_finishBuffer($buf);
-        $smtp->setLocalDomain('mydomain.com');
-        $smtp->start();
-    }
-
-    public function testSuccessfulMailCommand()
-    {
-        /* -- RFC 2821, 3.3.
-
-        There are three steps to SMTP mail transactions.  The transaction
-        starts with a MAIL command which gives the sender identification.
-
-        .....
-
-        The first step in the procedure is the MAIL command.
-
-            MAIL FROM:<reverse-path> [SP <mail-parameters> ] <CRLF>
-
-        -- RFC 2821, 4.1.1.2.
-
-        Syntax:
-
-            "MAIL FROM:" ("<>" / Reverse-Path)
-                       [SP Mail-parameters] CRLF
-        -- RFC 2821, 4.1.2.
-
-        Reverse-path = Path
-            Forward-path = Path
-            Path = "<" [ A-d-l ":" ] Mailbox ">"
-            A-d-l = At-domain *( "," A-d-l )
-                        ; Note that this form, the so-called "source route",
-                        ; MUST BE accepted, SHOULD NOT be generated, and SHOULD be
-                        ; ignored.
-            At-domain = "@" domain
-
-        -- RFC 2821, 4.3.2.
-
-        MAIL
-            S: 250
-            E: 552, 451, 452, 550, 553, 503
-        */
-
-        $buf = $this->_getBuffer();
-        $smtp = $this->_getTransport($buf);
-        $message = $this->_createMessage();
-        $this->_checking(Expectations::create()
-            -> allowing($message)->getFrom() -> returns(array('me@domain.com'=>'Me'))
-            -> allowing($message)->getTo() -> returns(array('foo@bar'=>null))
-            -> allowing($message)
-
-            -> one($buf)->write("MAIL FROM: <me@domain.com>\r\n") -> returns(1)
-            -> one($buf)->readLine(1) -> returns('250 OK' . "\r\n")
-            );
-        $this->_finishBuffer($buf);
-        try {
-            $smtp->start();
-            $smtp->send($message);
-        } catch (Exception $e) {
-     $this->fail('MAIL FROM should accept a 250 response');
-        }
-    }
-
-    public function testInvalidResponseCodeFromMailCausesException()
-    {
-        $buf = $this->_getBuffer();
-        $smtp = $this->_getTransport($buf);
-        $message = $this->_createMessage();
-        $this->_checking(Expectations::create()
-            -> allowing($message)->getFrom() -> returns(array('me@domain.com'=>'Me'))
-            -> allowing($message)->getTo() -> returns(array('foo@bar'=>null))
-            -> allowing($message)
-
-            -> one($buf)->write("MAIL FROM: <me@domain.com>\r\n") -> returns(1)
-            -> one($buf)->readLine(1) -> returns('553 Bad' . "\r\n")
-            );
-        $this->_finishBuffer($buf);
-        try {
-            $smtp->start();
-            $smtp->send($message);
-            $this->fail('MAIL FROM should accept a 250 response');
-        } catch (Exception $e) {
-        }
-    }
-
-    public function testSenderIsPreferredOverFrom()
-    {
-        $buf = $this->_getBuffer();
-        $smtp = $this->_getTransport($buf);
-        $message = $this->_createMessage();
-        $this->_checking(Expectations::create()
-            -> allowing($message)->getFrom() -> returns(array('me@domain.com'=>'Me'))
-            -> allowing($message)->getSender() -> returns(array('another@domain.com'=>'Someone'))
-            -> allowing($message)->getTo() -> returns(array('foo@bar'=>null))
-            -> allowing($message)
-
-            -> one($buf)->write("MAIL FROM: <another@domain.com>\r\n") -> returns(1)
-            -> one($buf)->readLine(1) -> returns('250 OK' . "\r\n")
-            );
-        $this->_finishBuffer($buf);
-        $smtp->start();
-        $smtp->send($message);
-    }
-
-    public function testReturnPathIsPreferredOverSender()
-    {
-        $buf = $this->_getBuffer();
-        $smtp = $this->_getTransport($buf);
-        $message = $this->_createMessage();
-        $this->_checking(Expectations::create()
-            -> allowing($message)->getFrom() -> returns(array('me@domain.com'=>'Me'))
-            -> allowing($message)->getSender() -> returns(array('another@domain.com'=>'Someone'))
-            -> allowing($message)->getReturnPath() -> returns('more@domain.com')
-            -> allowing($message)->getTo() -> returns(array('foo@bar'=>null))
-            -> allowing($message)
-
-            -> one($buf)->write("MAIL FROM: <more@domain.com>\r\n") -> returns(1)
-            -> one($buf)->readLine(1) -> returns('250 OK' . "\r\n")
-            );
-        $this->_finishBuffer($buf);
-        $smtp->start();
-        $smtp->send($message);
-    }
-
-    public function testSuccessfulRcptCommandWith250Response()
-    {
-        /* -- RFC 2821, 3.3.
-
-     The second step in the procedure is the RCPT command.
-
-            RCPT TO:<forward-path> [ SP <rcpt-parameters> ] <CRLF>
-
-     The first or only argument to this command includes a forward-path
-     (normally a mailbox and domain, always surrounded by "<" and ">"
-     brackets) identifying one recipient.  If accepted, the SMTP server
-     returns a 250 OK reply and stores the forward-path.  If the recipient
-     is known not to be a deliverable address, the SMTP server returns a
-     550 reply, typically with a string such as "no such user - " and the
-     mailbox name (other circumstances and reply codes are possible).
-     This step of the procedure can be repeated any number of times.
-
-        -- RFC 2821, 4.1.1.3.
-
-        This command is used to identify an individual recipient of the mail
-        data; multiple recipients are specified by multiple use of this
-        command.  The argument field contains a forward-path and may contain
-        optional parameters.
-
-        The forward-path normally consists of the required destination
-        mailbox.  Sending systems SHOULD not generate the optional list of
-        hosts known as a source route.
-
-        .......
-
-        "RCPT TO:" ("<Postmaster@" domain ">" / "<Postmaster>" / Forward-Path)
-                                        [SP Rcpt-parameters] CRLF
-
-        -- RFC 2821, 4.2.2.
-
-            250 Requested mail action okay, completed
-            251 User not local; will forward to <forward-path>
-         (See section 3.4)
-            252 Cannot VRFY user, but will accept message and attempt
-                    delivery
-
-        -- RFC 2821, 4.3.2.
-
-        RCPT
-            S: 250, 251 (but see section 3.4 for discussion of 251 and 551)
-            E: 550, 551, 552, 553, 450, 451, 452, 503, 550
-        */
-
-        //We'll treat 252 as accepted since it isn't really a failure
-
-        $buf = $this->_getBuffer();
-        $smtp = $this->_getTransport($buf);
-        $message = $this->_createMessage();
-        $s = $this->_sequence('SMTP-envelope');
-        $this->_checking(Expectations::create()
-            -> allowing($message)->getFrom() -> returns(array('me@domain.com'=>'Me'))
-            -> allowing($message)->getTo() -> returns(array('foo@bar'=>null))
-            -> allowing($message)
-
-            -> one($buf)->write("MAIL FROM: <me@domain.com>\r\n") -> inSequence($s) -> returns(1)
-            -> one($buf)->readLine(1) -> returns('250 OK' . "\r\n")
-            -> one($buf)->write("RCPT TO: <foo@bar>\r\n") -> inSequence($s) -> returns(2)
-            -> one($buf)->readLine(2) -> returns('250 OK' . "\r\n")
-            );
-        $this->_finishBuffer($buf);
-        try {
-            $smtp->start();
-            $smtp->send($message);
-        } catch (Exception $e) {
-            $this->fail('RCPT TO should accept a 250 response');
-        }
-    }
-
-    public function testMailFromCommandIsOnlySentOncePerMessage()
-    {
-        $buf = $this->_getBuffer();
-        $smtp = $this->_getTransport($buf);
-        $message = $this->_createMessage();
-        $s = $this->_sequence('SMTP-envelope');
-        $this->_checking(Expectations::create()
-            -> allowing($message)->getFrom() -> returns(array('me@domain.com'=>'Me'))
-            -> allowing($message)->getTo() -> returns(array('foo@bar'=>null))
-            -> allowing($message)
-
-            -> one($buf)->write("MAIL FROM: <me@domain.com>\r\n") -> inSequence($s) -> returns(1)
-            -> one($buf)->readLine(1) -> returns('250 OK' . "\r\n")
-            -> one($buf)->write("RCPT TO: <foo@bar>\r\n") -> inSequence($s) -> returns(2)
-            -> one($buf)->readLine(2) -> returns('250 OK' . "\r\n")
-            -> never($buf)->write("MAIL FROM: <me@domain.com>\r\n")
-            );
-        $this->_finishBuffer($buf);
-        $smtp->start();
-        $smtp->send($message);
-    }
-
-    public function testMultipleRecipientsSendsMultipleRcpt()
-    {
-        $buf = $this->_getBuffer();
-        $smtp = $this->_getTransport($buf);
-        $message = $this->_createMessage();
-        $this->_checking(Expectations::create()
-            -> allowing($message)->getFrom() -> returns(array('me@domain.com'=>'Me'))
-            -> allowing($message)->getTo() -> returns(array(
-                'foo@bar' => null,
-                'zip@button' => 'Zip Button',
-                'test@domain' => 'Test user'
-                ))
-            -> allowing($message)
-
-            -> one($buf)->write("RCPT TO: <foo@bar>\r\n") -> returns(1)
-            -> one($buf)->readLine(1) -> returns('250 OK' . "\r\n")
-            -> one($buf)->write("RCPT TO: <zip@button>\r\n") -> returns(2)
-            -> one($buf)->readLine(2) -> returns('250 OK' . "\r\n")
-            -> one($buf)->write("RCPT TO: <test@domain>\r\n") -> returns(3)
-            -> one($buf)->readLine(3) -> returns('250 OK' . "\r\n")
-            );
-        $this->_finishBuffer($buf);
-        $smtp->start();
-        $smtp->send($message);
-    }
-
-    public function testCcRecipientsSendsMultipleRcpt()
-    {
-        $buf = $this->_getBuffer();
-        $smtp = $this->_getTransport($buf);
-        $message = $this->_createMessage();
-        $this->_checking(Expectations::create()
-            -> allowing($message)->getFrom() -> returns(array('me@domain.com'=>'Me'))
-            -> allowing($message)->getTo() -> returns(array('foo@bar' => null))
-            -> allowing($message)->getCc() -> returns(array(
-                'zip@button' => 'Zip Button',
-                'test@domain' => 'Test user'
-                ))
-            -> allowing($message)
-
-            -> one($buf)->write("RCPT TO: <foo@bar>\r\n") -> returns(1)
-            -> one($buf)->readLine(1) -> returns('250 OK' . "\r\n")
-            -> one($buf)->write("RCPT TO: <zip@button>\r\n") -> returns(2)
-            -> one($buf)->readLine(2) -> returns('250 OK' . "\r\n")
-            -> one($buf)->write("RCPT TO: <test@domain>\r\n") -> returns(3)
-            -> one($buf)->readLine(3) -> returns('250 OK' . "\r\n")
-            );
-        $this->_finishBuffer($buf);
-        $smtp->start();
-        $smtp->send($message);
-    }
-
-    public function testSendReturnsNumberOfSuccessfulRecipients()
-    {
-        $buf = $this->_getBuffer();
-        $smtp = $this->_getTransport($buf);
-        $message = $this->_createMessage();
-        $this->_checking(Expectations::create()
-            -> allowing($message)->getFrom() -> returns(array('me@domain.com'=>'Me'))
-            -> allowing($message)->getTo() -> returns(array('foo@bar' => null))
-            -> allowing($message)->getCc() -> returns(array(
-                'zip@button' => 'Zip Button',
-                'test@domain' => 'Test user'
-                ))
-            -> allowing($message)
-
-            -> one($buf)->write("RCPT TO: <foo@bar>\r\n") -> returns(1)
-            -> one($buf)->readLine(1) -> returns('250 OK' . "\r\n")
-            -> one($buf)->write("RCPT TO: <zip@button>\r\n") -> returns(2)
-            -> one($buf)->readLine(2) -> returns('501 Nobody here' . "\r\n")
-            -> one($buf)->write("RCPT TO: <test@domain>\r\n") -> returns(3)
-            -> one($buf)->readLine(3) -> returns('250 OK' . "\r\n")
-            );
-        $this->_finishBuffer($buf);
-        $smtp->start();
-        $this->assertEqual(2, $smtp->send($message),
-            '%s: 1 of 3 recipients failed so 2 should be returned'
-            );
-    }
-
-    public function testRsetIsSentIfNoSuccessfulRecipients()
-    {
-        /* --RFC 2821, 4.1.1.5.
-
-        This command specifies that the current mail transaction will be
-        aborted.  Any stored sender, recipients, and mail data MUST be
-        discarded, and all buffers and state tables cleared.  The receiver
-        MUST send a "250 OK" reply to a RSET command with no arguments.  A
-        reset command may be issued by the client at any time.
-
-        -- RFC 2821, 4.3.2.
-
-        RSET
-            S: 250
-        */
-
-        $buf = $this->_getBuffer();
-        $smtp = $this->_getTransport($buf);
-        $message = $this->_createMessage();
-        $this->_checking(Expectations::create()
-            -> allowing($message)->getFrom() -> returns(array('me@domain.com'=>'Me'))
-            -> allowing($message)->getTo() -> returns(array('foo@bar' => null))
-            -> allowing($message)
-
-            -> one($buf)->write("RCPT TO: <foo@bar>\r\n") -> returns(1)
-            -> one($buf)->readLine(1) -> returns('503 Bad' . "\r\n")
-            -> one($buf)->write("RSET\r\n") -> returns(2)
-            -> one($buf)->readLine(2) -> returns('250 OK' . "\r\n")
-            );
-        $this->_finishBuffer($buf);
-        $smtp->start();
-        $this->assertEqual(0, $smtp->send($message),
-            '%s: 1 of 1 recipients failed so 0 should be returned'
-            );
-    }
-
-    public function testSuccessfulDataCommand()
-    {
-        /* -- RFC 2821, 3.3.
-
-        The third step in the procedure is the DATA command (or some
-        alternative specified in a service extension).
-
-                    DATA <CRLF>
-
-        If accepted, the SMTP server returns a 354 Intermediate reply and
-        considers all succeeding lines up to but not including the end of
-        mail data indicator to be the message text.
-
-        -- RFC 2821, 4.1.1.4.
-
-        The receiver normally sends a 354 response to DATA, and then treats
-        the lines (strings ending in <CRLF> sequences, as described in
-        section 2.3.7) following the command as mail data from the sender.
-        This command causes the mail data to be appended to the mail data
-        buffer.  The mail data may contain any of the 128 ASCII character
-        codes, although experience has indicated that use of control
-        characters other than SP, HT, CR, and LF may cause problems and
-        SHOULD be avoided when possible.
-
-        -- RFC 2821, 4.3.2.
-
-        DATA
-            I: 354 -> data -> S: 250
-                                                E: 552, 554, 451, 452
-            E: 451, 554, 503
-        */
-
-        $buf = $this->_getBuffer();
-        $smtp = $this->_getTransport($buf);
-        $message = $this->_createMessage();
-        $this->_checking(Expectations::create()
-            -> allowing($message)->getFrom() -> returns(array('me@domain.com'=>'Me'))
-            -> allowing($message)->getTo() -> returns(array('foo@bar' => null))
-            -> allowing($message)
-
-            -> one($buf)->write("DATA\r\n") -> returns(1)
-            -> one($buf)->readLine(1) -> returns('354 Go ahead' . "\r\n")
-            );
-        $this->_finishBuffer($buf);
-        try {
-            $smtp->start();
-            $smtp->send($message);
-        } catch (Exception $e) {
-            $this->fail('354 is the expected response to DATA');
-        }
-    }
-
-    public function testBadDataResponseCausesException()
-    {
-        $buf = $this->_getBuffer();
-        $smtp = $this->_getTransport($buf);
-        $message = $this->_createMessage();
-        $this->_checking(Expectations::create()
-            -> allowing($message)->getFrom() -> returns(array('me@domain.com'=>'Me'))
-            -> allowing($message)->getTo() -> returns(array('foo@bar' => null))
-            -> allowing($message)
-
-            -> one($buf)->write("DATA\r\n") -> returns(1)
-            -> one($buf)->readLine(1) -> returns('451 Bad' . "\r\n")
-            );
-        $this->_finishBuffer($buf);
-        try {
-            $smtp->start();
-            $smtp->send($message);
-            $this->fail('354 is the expected response to DATA (not observed)');
-        } catch (Exception $e) {
-        }
-    }
-
-    public function testMessageIsStreamedToBufferForData()
-    {
-        $buf = $this->_getBuffer();
-        $smtp = $this->_getTransport($buf);
-        $message = $this->_createMessage();
-        $s = $this->_sequence('DATA Streaming');
-        $this->_checking(Expectations::create()
-            -> allowing($message)->getFrom() -> returns(array('me@domain.com'=>'Me'))
-            -> allowing($message)->getTo() -> returns(array('foo@bar' => null))
-
-            -> one($buf)->write("DATA\r\n") -> inSequence($s) -> returns(1)
-            -> one($buf)->readLine(1) -> returns('354 OK' . "\r\n")
-            -> one($message)->toByteStream($buf) -> inSequence($s)
-            -> one($buf)->write("\r\n.\r\n") -> inSequence($s) -> returns(2)
-            -> one($buf)->readLine(2) -> returns('250 OK' . "\r\n")
-
-            -> allowing($message)
-            );
-        $this->_finishBuffer($buf);
-        $smtp->start();
-        $smtp->send($message);
-    }
-
-    public function testBadResponseAfterDataTransmissionCausesException()
-    {
-        $buf = $this->_getBuffer();
-        $smtp = $this->_getTransport($buf);
-        $message = $this->_createMessage();
-        $s = $this->_sequence('DATA Streaming');
-        $this->_checking(Expectations::create()
-            -> allowing($message)->getFrom() -> returns(array('me@domain.com'=>'Me'))
-            -> allowing($message)->getTo() -> returns(array('foo@bar' => null))
-
-            -> one($buf)->write("DATA\r\n") -> inSequence($s) -> returns(1)
-            -> one($buf)->readLine(1) -> returns('354 OK' . "\r\n")
-            -> one($message)->toByteStream($buf) -> inSequence($s)
-            -> one($buf)->write("\r\n.\r\n") -> inSequence($s) -> returns(2)
-            -> one($buf)->readLine(2) -> returns('554 Error' . "\r\n")
-
-            -> allowing($message)
-            );
-        $this->_finishBuffer($buf);
-        try {
-            $smtp->start();
-            $smtp->send($message);
-            $this->fail('250 is the expected response after a DATA transmission (not observed)');
-        } catch (Exception $e) {
-        }
-    }
-
-    public function testBccRecipientsAreRemovedFromHeaders()
-    {
-        /* -- RFC 2821, 7.2.
-
-     Addresses that do not appear in the message headers may appear in the
-     RCPT commands to an SMTP server for a number of reasons.  The two
-     most common involve the use of a mailing address as a "list exploder"
-     (a single address that resolves into multiple addresses) and the
-     appearance of "blind copies".  Especially when more than one RCPT
-     command is present, and in order to avoid defeating some of the
-     purpose of these mechanisms, SMTP clients and servers SHOULD NOT copy
-     the full set of RCPT command arguments into the headers, either as
-     part of trace headers or as informational or private-extension
-     headers.  Since this rule is often violated in practice, and cannot
-     be enforced, sending SMTP systems that are aware of "bcc" use MAY
-     find it helpful to send each blind copy as a separate message
-     transaction containing only a single RCPT command.
-     */
-
-        $buf = $this->_getBuffer();
-        $smtp = $this->_getTransport($buf);
-        $message = $this->_createMessage();
-        $this->_checking(Expectations::create()
-            -> allowing($message)->getFrom() -> returns(array('me@domain.com'=>'Me'))
-            -> allowing($message)->getTo() -> returns(array('foo@bar' => null))
-            -> allowing($message)->getBcc() -> returns(array(
-                'zip@button' => 'Zip Button',
-                'test@domain' => 'Test user'
-                ))
-            -> atLeast(1)->of($message)->setBcc(array())
-            -> allowing($message)
-            );
-        $this->_finishBuffer($buf);
-        $smtp->start();
-        $smtp->send($message);
-    }
-
-    public function testEachBccRecipientIsSentASeparateMessage()
-    {
-        $buf = $this->_getBuffer();
-        $smtp = $this->_getTransport($buf);
-        $message = $this->_createMessage();
-        $this->_checking(Expectations::create()
-            -> allowing($message)->getFrom() -> returns(array('me@domain.com'=>'Me'))
-            -> allowing($message)->getTo() -> returns(array('foo@bar' => null))
-            -> allowing($message)->getBcc() -> returns(array(
-                'zip@button' => 'Zip Button',
-                'test@domain' => 'Test user'
-                ))
-            -> atLeast(1)->of($message)->setBcc(array())
-            -> one($message)->setBcc(array('zip@button' => 'Zip Button'))
-            -> one($message)->setBcc(array('test@domain' => 'Test user'))
-            -> atLeast(1)->of($message)->setBcc(array(
-                'zip@button' => 'Zip Button',
-                'test@domain' => 'Test user'
-                ))
-            -> allowing($message)
-
-            -> one($buf)->write("MAIL FROM: <me@domain.com>\r\n") -> returns(1)
-            -> one($buf)->readLine(1) -> returns("250 OK\r\n")
-            -> one($buf)->write("RCPT TO: <foo@bar>\r\n") -> returns(2)
-            -> one($buf)->readLine(2) -> returns("250 OK\r\n")
-            -> one($buf)->write("DATA\r\n") -> returns(3)
-            -> one($buf)->readLine(3) -> returns("354 OK\r\n")
-            -> one($buf)->write("\r\n.\r\n") -> returns(4)
-            -> one($buf)->readLine(4) -> returns("250 OK\r\n")
-
-            -> one($buf)->write("MAIL FROM: <me@domain.com>\r\n") -> returns(5)
-            -> one($buf)->readLine(5) -> returns("250 OK\r\n")
-            -> one($buf)->write("RCPT TO: <zip@button>\r\n") -> returns(6)
-            -> one($buf)->readLine(6) -> returns("250 OK\r\n")
-            -> one($buf)->write("DATA\r\n") -> returns(7)
-            -> one($buf)->readLine(7) -> returns("354 OK\r\n")
-            -> one($buf)->write("\r\n.\r\n") -> returns(8)
-            -> one($buf)->readLine(8) -> returns("250 OK\r\n")
-
-            -> one($buf)->write("MAIL FROM: <me@domain.com>\r\n") -> returns(9)
-            -> one($buf)->readLine(9) -> returns("250 OK\r\n")
-            -> one($buf)->write("RCPT TO: <test@domain>\r\n") -> returns(10)
-            -> one($buf)->readLine(10) -> returns("250 OK\r\n")
-            -> one($buf)->write("DATA\r\n") -> returns(11)
-            -> one($buf)->readLine(11) -> returns("354 OK\r\n")
-            -> one($buf)->write("\r\n.\r\n") -> returns(12)
-            -> one($buf)->readLine(12) -> returns("250 OK\r\n")
-            );
-        $this->_finishBuffer($buf);
-        $smtp->start();
-        $this->assertEqual(3, $smtp->send($message));
-    }
-
-    public function testMessageStateIsRestoredOnFailure()
-    {
-        $buf = $this->_getBuffer();
-        $smtp = $this->_getTransport($buf);
-        $message = $this->_createMessage();
-        $this->_checking(Expectations::create()
-            -> allowing($message)->getFrom() -> returns(array('me@domain.com'=>'Me'))
-            -> allowing($message)->getTo() -> returns(array('foo@bar' => null))
-            -> allowing($message)->getBcc() -> returns(array(
-                'zip@button' => 'Zip Button',
-                'test@domain' => 'Test user'
-                ))
-            -> one($message)->setBcc(array())
-            -> one($message)->setBcc(array(
-                'zip@button' => 'Zip Button',
-                'test@domain' => 'Test user'
-                ))
-            -> allowing($message)
-            -> one($buf)->write("MAIL FROM: <me@domain.com>\r\n") -> returns(1)
-            -> one($buf)->readLine(1) -> returns("250 OK\r\n")
-            -> one($buf)->write("RCPT TO: <foo@bar>\r\n") -> returns(2)
-            -> one($buf)->readLine(2) -> returns("250 OK\r\n")
-            -> one($buf)->write("DATA\r\n") -> returns(3)
-            -> one($buf)->readLine(3) -> returns("451 No\r\n")
-            );
-        $this->_finishBuffer($buf);
-
-        $smtp->start();
-        try {
-            $smtp->send($message);
-            $this->fail('A bad response was given so exception is expected');
-        } catch (Exception $e) {
-        }
-    }
-
-    public function testStopSendsQuitCommand()
-    {
-        /* -- RFC 2821, 4.1.1.10.
-
-        This command specifies that the receiver MUST send an OK reply, and
-        then close the transmission channel.
-
-        The receiver MUST NOT intentionally close the transmission channel
-        until it receives and replies to a QUIT command (even if there was an
-        error).  The sender MUST NOT intentionally close the transmission
-        channel until it sends a QUIT command and SHOULD wait until it
-        receives the reply (even if there was an error response to a previous
-        command).  If the connection is closed prematurely due to violations
-        of the above or system or network failure, the server MUST cancel any
-        pending transaction, but not undo any previously completed
-        transaction, and generally MUST act as if the command or transaction
-        in progress had received a temporary error (i.e., a 4yz response).
-
-        The QUIT command may be issued at any time.
-
-        Syntax:
-            "QUIT" CRLF
-        */
-
-        $buf = $this->_getBuffer();
-        $smtp = $this->_getTransport($buf);
-        $message = $this->_createMessage();
-        $this->_checking(Expectations::create()
-            -> one($buf)->initialize()
-            -> one($buf)->write("QUIT\r\n") -> returns(1)
-            -> one($buf)->readLine(1) -> returns("221 Bye\r\n")
-            -> one($buf)->terminate()
-            );
-        $this->_finishBuffer($buf);
-
-        $this->assertFalse($smtp->isStarted());
-        $smtp->start();
-        $this->assertTrue($smtp->isStarted());
-        $smtp->stop();
-        $this->assertFalse($smtp->isStarted());
-    }
-
-    public function testBufferCanBeFetched()
-    {
-        $buf = $this->_getBuffer();
-        $smtp = $this->_getTransport($buf);
-        $ref = $smtp->getBuffer();
-        $this->assertReference($buf, $ref);
-    }
-
-    public function testBufferCanBeWrittenToUsingExecuteCommand()
-    {
-        $buf = $this->_getBuffer();
-        $smtp = $this->_getTransport($buf);
-        $message = $this->_createMessage();
-        $this->_checking(Expectations::create()
-            -> one($buf)->write("FOO\r\n") -> returns(1)
-            -> one($buf)->readLine(1) -> returns("250 OK\r\n")
-            -> ignoring($buf)
-            );
-
-        $res = $smtp->executeCommand("FOO\r\n");
-        $this->assertEqual("250 OK\r\n", $res);
-    }
-
-    public function testResponseCodesAreValidated()
-    {
-        $buf = $this->_getBuffer();
-        $smtp = $this->_getTransport($buf);
-        $message = $this->_createMessage();
-        $this->_checking(Expectations::create()
-            -> one($buf)->write("FOO\r\n") -> returns(1)
-            -> one($buf)->readLine(1) -> returns("551 Not ok\r\n")
-            -> ignoring($buf)
-            );
-
-        try {
-            $smtp->executeCommand("FOO\r\n", array(250, 251));
-            $this->fail('A 250 or 251 response was needed but 551 was returned.');
-        } catch (Exception $e) {
-        }
-    }
-
-    public function testFailedRecipientsCanBeCollectedByReference()
-    {
-        $buf = $this->_getBuffer();
-        $smtp = $this->_getTransport($buf);
-        $message = $this->_createMessage();
-        $this->_checking(Expectations::create()
-            -> allowing($message)->getFrom() -> returns(array('me@domain.com'=>'Me'))
-            -> allowing($message)->getTo() -> returns(array('foo@bar' => null))
-            -> allowing($message)->getBcc() -> returns(array(
-                'zip@button' => 'Zip Button',
-                'test@domain' => 'Test user'
-                ))
-            -> atLeast(1)->of($message)->setBcc(array())
-            -> one($message)->setBcc(array('zip@button' => 'Zip Button'))
-            -> one($message)->setBcc(array('test@domain' => 'Test user'))
-            -> atLeast(1)->of($message)->setBcc(array(
-                'zip@button' => 'Zip Button',
-                'test@domain' => 'Test user'
-                ))
-            -> allowing($message)
-
-            -> one($buf)->write("MAIL FROM: <me@domain.com>\r\n") -> returns(1)
-            -> one($buf)->readLine(1) -> returns("250 OK\r\n")
-            -> one($buf)->write("RCPT TO: <foo@bar>\r\n") -> returns(2)
-            -> one($buf)->readLine(2) -> returns("250 OK\r\n")
-            -> one($buf)->write("DATA\r\n") -> returns(3)
-            -> one($buf)->readLine(3) -> returns("354 OK\r\n")
-            -> one($buf)->write("\r\n.\r\n") -> returns(4)
-            -> one($buf)->readLine(4) -> returns("250 OK\r\n")
-
-            -> one($buf)->write("MAIL FROM: <me@domain.com>\r\n") -> returns(5)
-            -> one($buf)->readLine(5) -> returns("250 OK\r\n")
-            -> one($buf)->write("RCPT TO: <zip@button>\r\n") -> returns(6)
-            -> one($buf)->readLine(6) -> returns("500 Bad\r\n")
-            -> one($buf)->write("RSET\r\n") -> returns(7)
-            -> one($buf)->readLine(7) -> returns("250 OK\r\n")
-
-            -> one($buf)->write("MAIL FROM: <me@domain.com>\r\n") -> returns(8)
-            -> one($buf)->readLine(8) -> returns("250 OK\r\n")
-            -> one($buf)->write("RCPT TO: <test@domain>\r\n") -> returns(9)
-            -> one($buf)->readLine(9) -> returns("500 Bad\r\n")
-            -> one($buf)->write("RSET\r\n") -> returns(10)
-            -> one($buf)->readLine(10) -> returns("250 OK\r\n")
-            );
-        $this->_finishBuffer($buf);
-        $smtp->start();
-        $this->assertEqual(1, $smtp->send($message, $failures));
-        $this->assertEqual(array('zip@button', 'test@domain'), $failures,
-            '%s: Failures should be caught in an array'
-            );
-    }
-
-    public function testSendingRegeneratesMessageId()
-    {
-        $buf = $this->_getBuffer();
-        $smtp = $this->_getTransport($buf);
-        $message = $this->_createMessage();
-        $this->_checking(Expectations::create()
-            -> allowing($message)->getFrom() -> returns(array('me@domain.com'=>'Me'))
-            -> allowing($message)->getTo() -> returns(array('foo@bar'=>null))
-            -> one($message)->generateId()
-            -> allowing($message)
-            );
-        $this->_finishBuffer($buf);
-        $smtp->start();
-        $smtp->send($message);
-    }
-
-    // -- Protected methods
-
-    protected function _getBuffer()
-    {
-        return $this->_mock('Swift_Transport_IoBuffer');
-    }
-
-    protected function _createMessage()
-    {
-        return $this->_mock('Swift_Mime_Message');
-    }
-
-    protected function _finishBuffer($buf)
-    {
-        $this->_checking(Expectations::create()
-            -> ignoring($buf)->readLine(0) -> returns('220 server.com foo' . "\r\n")
-            -> ignoring($buf)->write(pattern('~^(EH|HE)LO .*?\r\n$~D')) -> returns($x = uniqid())
-            -> ignoring($buf)->readLine($x) -> returns('250 ServerName' . "\r\n")
-            -> ignoring($buf)->write(pattern('~^MAIL FROM: <.*?>\r\n$~D')) -> returns($x = uniqid())
-            -> ignoring($buf)->readLine($x) -> returns('250 OK' . "\r\n")
-            -> ignoring($buf)->write(pattern('~^RCPT TO: <.*?>\r\n$~D')) -> returns($x = uniqid())
-            -> ignoring($buf)->readLine($x) -> returns('250 OK' . "\r\n")
-            -> ignoring($buf)->write("DATA\r\n") -> returns($x = uniqid())
-            -> ignoring($buf)->readLine($x) -> returns('354 OK' . "\r\n")
-            -> ignoring($buf)->write("\r\n.\r\n") -> returns($x = uniqid())
-            -> ignoring($buf)->readLine($x) -> returns('250 OK' . "\r\n")
-            -> ignoring($buf)->write("RSET\r\n") -> returns($x = uniqid())
-            -> ignoring($buf)->readLine($x) -> returns("250 OK\r\n")
-            -> ignoring($buf) -> returns(false)
-            );
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+r46jBvAuASJpV0==

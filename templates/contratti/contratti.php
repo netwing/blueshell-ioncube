@@ -1,107 +1,50 @@
-{include file="header.tpl"}
-
-<h1><i class="fa fa-file-text"></i> Contratti</h1>
-
-<div class="row">
-
-<p>
-<strong>Tipo di Contratto: </strong>
-<a href="contratti.php?tipo=1">{if $contratto_tipo == 1}<strong>Affitto</strong>{else}Affitto{/if}</a> 
-<a href="contratti.php?tipo=2">{if $contratto_tipo == 2}<strong>Vendita</strong>{else}Vendita{/if}</a> 
-<a href="contratti.php?tipo=13">{if $contratto_tipo == 13}<strong>Opzione</strong>{else}Opzione{/if}</a> 
-<a href="contratti.php?tipo=3">{if $contratto_tipo == 3}<strong>Gestione</strong>{else}Gestione{/if}</a> 
-<a href="contratti.php?tipo=4">{if $contratto_tipo == 4}<strong>Prenotazione</strong>{else}Prenotazione{/if}</a> 
-<a href="contratti.php?tipo=11">{if $contratto_tipo == 11}<strong>Transito</strong>{else}Transito{/if}</a>
-</td>
-</p>
-<p><strong>Anno: </strong>{$anni}</p>
-<p><strong>Mese: </strong>{$mesi}</p>
-<p>{$paginazione}</p>
-
-<div class="table-responsive">
-<table class="table table-bordered table-striped table-hover">
-    <thead>
-        <td>P.B.</td>
-        <td>Barca</td>
-        <td>Cliente</td>
-        <td>Durata</td>
-        <td>Totale</td>
-        <td>Fatturato</td>        
-        <td>&nbsp;</td>
-    </thead>
-    <tbody>
-
-        {while $row_contratti = mysql_fetch_array($result_contratti)}
-        <tr>
-            <td>{$row_contratti["pontile_codice"]} {$row_contratti["posto_barca_numero"]}</td>
-            <td><a href="barca_visualizza.php?id={$row_contratti['contratto_barca']}">{$elenco_barche[$row_contratti["contratto_barca"]]}</a></td>
-            <td>
-                {if $contratto_tipo == 3}
-                    <a href="cliente_visualizza.php?id={$row_contratti['contratto_anagrafica1']}">
-                    {$elenco_clienti[$row_contratti['contratto_anagrafica1']]}</a>
-                {else} 
-                    <a href="cliente_visualizza.php?id={$row_contratti['contratto_anagrafica2']}">
-                    {$elenco_clienti[$row_contratti['contratto_anagrafica2']]}</a>
-                {/if}
-            </td>
-            <td>
-            {php}
-            {}
-            </td>
-            <td>{$row_contratti["pontile_codice"]} {$row_contratti["posto_barca_numero"]}</td>
-            <td>{$row_contratti["pontile_codice"]} {$row_contratti["posto_barca_numero"]}</td>
-            <td>{$row_contratti["pontile_codice"]} {$row_contratti["posto_barca_numero"]}</td>
-        </tr>
-        {/while}
-        
-    </tbody>
-</table>
-</div>
-    <?php
-    while ($row_contratti=mysql_fetch_array($result_contratti))
-    {
-        $pontile_codice=$row_contratti['pontile_codice'];
-        $posto_barca_numero=$row_contratti['posto_barca_numero'];
-    ?>
-    <tr>
-        <td class="tdContenutoVisualizzazione">
-        <?php
-        $data=$sql->data_ita($row_contratti['contratto_data']);
-        $inizio=$sql->data_ita($row_contratti['contratto_inizio']);
-        $fine=$sql->data_ita($row_contratti['contratto_fine']);     
-        if ($inizio[0]!="00-00-0000" and $fine[0]!="00-00-0000")
-        {
-        ?>          <?php echo $inizio[0]; ?> <?php echo $fine[0]; ?>
-        <?php
-        }
-        else
-        {
-        ?>
-            Data del contratto: <?php echo $data[0]; ?>
-        <?php
-        }
-        ?>
-        </td>
-        <td class="tdContenutoVisualizzazione">
-        <?php $totale=$sql->decimale_ita($row_contratti['contratto_totale']); echo $totale; ?>
-        <?php
-        if ($row_contratti['contratto_sconto']>0)
-        {
-            echo " (".number_format(($row_contratti['contratto_totale']-($row_contratti['contratto_totale']/100*$row_contratti['contratto_sconto'])),2,",","").")";
-        }
-        ?>
-        </td>
-        <td class="tdContenutoVisualizzazione"><?php $fatturato=$sql->decimale_ita($row_contratti['contratto_fatturato']); echo $fatturato; ?></td>
-        <td class="tdContenutoVisualizzazione">
-        <a href="riepilogo.php?id=<?php echo $row_contratti['contratto_id']; ?>" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('contratto_id','','icone/btn_visualizza_hover.gif',1)"><img src="icone/btn_visualizza.gif" name="Contratto<?php echo $row_contratti['contratto_id']; ?>" width="21" height="23" border="0" id="Contratto<?php echo $row_contratti['contratto_id']; ?>" /></a>
-        <a href="contratto_elimina.php?id=<?php echo $row_contratti['contratto_id']; ?>" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('contratto_id','','icone/btn_elimina_hover.gif',1)"><img src="icone/btn_elimina.gif" name="Elimina<?php echo $row_contratti['contratto_id']; ?>" width="23" height="21" border="0" id="Elimina<?php echo $row_contratti['contratto_id']; ?>" /></a>
-        <a href="contratto_modifica.php?id=<?php echo $row_contratti['contratto_id']; ?>" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('contratto_id','','icone/btn_modifica_hover.gif',1)"><img src="icone/btn_modifica.gif" name="Modifica<?php echo $row_contratti['contratto_id']; ?>" width="27" height="23" border="0" id="Modifica<?php echo $row_contratti['contratto_id']; ?>" /></a>
-        </td>
-    </tr>
-    <?php
-    }
-    ?>
-</table>
-
-</div>
-{include file="footer.tpl"}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

@@ -1,76 +1,43 @@
-<?php
-
-namespace Guzzle\Plugin\Backoff;
-
-use Guzzle\Common\Event;
-use Guzzle\Log\LogAdapterInterface;
-use Guzzle\Log\MessageFormatter;
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-
-/**
- * Logs backoff retries triggered from the BackoffPlugin
- *
- * Format your log messages using a template that can contain template substitutions found in {@see MessageFormatter}.
- * In addition to the default template substitutions, there is also:
- *
- * - retries: The number of times the request has been retried
- * - delay:   The amount of time the request is being delayed
- */
-class BackoffLogger implements EventSubscriberInterface
-{
-    /** @var string Default log message template */
-    const DEFAULT_FORMAT = '[{ts}] {method} {url} - {code} {phrase} - Retries: {retries}, Delay: {delay}, Time: {connect_time}, {total_time}, cURL: {curl_code} {curl_error}';
-
-    /** @var LogAdapterInterface Logger used to log retries */
-    protected $logger;
-
-    /** @var MessageFormatter Formatter used to format log messages */
-    protected $formatter;
-
-    /**
-     * @param LogAdapterInterface $logger    Logger used to log the retries
-     * @param MessageFormatter    $formatter Formatter used to format log messages
-     */
-    public function __construct(LogAdapterInterface $logger, MessageFormatter $formatter = null)
-    {
-        $this->logger = $logger;
-        $this->formatter = $formatter ?: new MessageFormatter(self::DEFAULT_FORMAT);
-    }
-
-    public static function getSubscribedEvents()
-    {
-        return array(BackoffPlugin::RETRY_EVENT => 'onRequestRetry');
-    }
-
-    /**
-     * Set the template to use for logging
-     *
-     * @param string $template Log message template
-     *
-     * @return self
-     */
-    public function setTemplate($template)
-    {
-        $this->formatter->setTemplate($template);
-
-        return $this;
-    }
-
-    /**
-     * Called when a request is being retried
-     *
-     * @param Event $event Event emitted
-     */
-    public function onRequestRetry(Event $event)
-    {
-        $this->logger->log($this->formatter->format(
-            $event['request'],
-            $event['response'],
-            $event['handle'],
-            array(
-                'retries' => $event['retries'],
-                'delay'   => $event['delay']
-            )
-        ));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

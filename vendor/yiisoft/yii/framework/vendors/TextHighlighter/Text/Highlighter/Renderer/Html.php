@@ -1,454 +1,151 @@
-<?php
-/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
-/**
- * HTML renderer
- *
- * PHP versions 4 and 5
- *
- * LICENSE: This source file is subject to version 3.0 of the PHP license
- * that is available through the world-wide-web at the following URI:
- * http://www.php.net/license/3_0.txt.  If you did not receive a copy of
- * the PHP License and are unable to obtain it through the web, please
- * send a note to license@php.net so we can mail you a copy immediately.
- *
- * @category   Text
- * @package    Text_Highlighter
- * @author     Andrey Demenev <demenev@gmail.com>
- * @copyright  2004-2006 Andrey Demenev
- * @license    http://www.php.net/license/3_0.txt  PHP License
- * @version    CVS: $Id: Html.php,v 1.2 2007/06/29 06:56:34 ssttoo Exp $
- * @link       http://pear.php.net/package/Text_Highlighter
- */
-
-/**
- * @ignore
- */
-
-require_once dirname(__FILE__).'/../Renderer.php';
-require_once dirname(__FILE__).'/../Renderer/Array.php';
-
-// BC trick : only define constants if Text/Highlighter.php
-// is not yet included
-if (!defined('HL_NUMBERS_LI')) {
-    /**#@+
-     * Constant for use with $options['numbers']
-     */
-    /**
-     * use numbered list, deprecated, use HL_NUMBERS_OL instaed
-     * @deprecated
-     */
-    define ('HL_NUMBERS_LI'    ,    1);
-    /**
-     * Use 2-column table with line numbers in left column and code in  right column.
-     */
-    define ('HL_NUMBERS_TABLE'    , 2);
-    /**#@-*/
-}
-
-
-/**#@+
- * Constant for use with $options['numbers']
- */
-/**
- * Use numbered list
- */
-define ('HL_NUMBERS_OL',    1);
-/**
- * Use non-numbered list
- */
-define ('HL_NUMBERS_UL',    3);
-/**#@-*/
-
-
-/**
- * HTML renderer
- *
- * Elements of $options argument of constructor (each being optional):
- *
- * - 'numbers' - Line numbering style 0 or {@link HL_NUMBERS_TABLE}
- *               or {@link HL_NUMBERS_UL} or {@link HL_NUMBERS_OL}
- * - 'numbers_start' - starting number for numbered lines
- * - 'tabsize' - Tab size
- * - 'style_map' - Mapping of keywords to formatting rules using inline styles
- * - 'class_map' - Mapping of keywords to formatting rules using class names
- * - 'doclinks' - array that has keys "url", "target" and "elements", used for
- *                generating links to online documentation
- * - 'use_language' - class names will be prefixed with language, like "php-reserved" or "css-code"
- *
- * Example of setting documentation links:
- * $options['doclinks'] = array(
- *   'url' => 'http://php.net/%s',
- *   'target' => '_blank',
- *   'elements' => array('reserved', 'identifier')
- * );
- *
- * Example of setting class names map:
- * $options['class_map'] = array(
- *       'main'       => 'my-main',
- *       'table'      => 'my-table',
- *       'gutter'     => 'my-gutter',
- *       'brackets'   => 'my-brackets',
- *       'builtin'    => 'my-builtin',
- *       'code'       => 'my-code',
- *       'comment'    => 'my-comment',
- *       'default'    => 'my-default',
- *       'identifier' => 'my-identifier',
- *       'inlinedoc'  => 'my-inlinedoc',
- *       'inlinetags' => 'my-inlinetags',
- *       'mlcomment'  => 'my-mlcomment',
- *       'number'     => 'my-number',
- *       'quotes'     => 'my-quotes',
- *       'reserved'   => 'my-reserved',
- *       'special'    => 'my-special',
- *       'string'     => 'my-string',
- *       'url'        => 'my-url',
- *       'var'        => 'my-var',
- * );
- *
- * Example of setting styles mapping:
- * $options['style_map'] = array(
- *       'main'       => 'color: black',
- *       'table'      => 'border: 1px solid black',
- *       'gutter'     => 'background-color: yellow',
- *       'brackets'   => 'color: blue',
- *       'builtin'    => 'color: red',
- *       'code'       => 'color: green',
- *       'comment'    => 'color: orange',
- *       // ....
- * );
- *
- *
- * @author Andrey Demenev <demenev@gmail.com>
- * @category   Text
- * @package    Text_Highlighter
- * @copyright  2004-2006 Andrey Demenev
- * @license    http://www.php.net/license/3_0.txt  PHP License
- * @version    Release: 0.7.1
- * @link       http://pear.php.net/package/Text_Highlighter
- */
-
-class Text_Highlighter_Renderer_Html extends Text_Highlighter_Renderer_Array
-{
-
-    /**#@+
-     * @access private
-     */
-
-    /**
-     * Line numbering style
-     *
-     * @var integer
-     */
-    var $_numbers = 0;
-
-    /**
-     * For numberered lines - where to start
-     *
-     * @var integer
-     */
-    var $_numbers_start = 0;
-
-    /**
-     * Tab size
-     *
-     * @var integer
-     */
-    var $_tabsize = 4;
-
-    /**
-     * Highlighted code
-     *
-     * @var string
-     */
-    var $_output = '';
-
-    /**
-     * Mapping of keywords to formatting rules using inline styles
-     *
-     * @var array
-     */
-    var $_style_map = array();
-
-    /**
-     * Mapping of keywords to formatting rules using class names
-     *
-     * @var array
-     */
-    var $_class_map = array(
-        'main'       => 'hl-main',
-        'table'      => 'hl-table',
-        'gutter'     => 'hl-gutter',
-        'brackets'   => 'hl-brackets',
-        'builtin'    => 'hl-builtin',
-        'code'       => 'hl-code',
-        'comment'    => 'hl-comment',
-        'default'    => 'hl-default',
-        'identifier' => 'hl-identifier',
-        'inlinedoc'  => 'hl-inlinedoc',
-        'inlinetags' => 'hl-inlinetags',
-        'mlcomment'  => 'hl-mlcomment',
-        'number'     => 'hl-number',
-        'quotes'     => 'hl-quotes',
-        'reserved'   => 'hl-reserved',
-        'special'    => 'hl-special',
-        'string'     => 'hl-string',
-        'url'        => 'hl-url',
-        'var'        => 'hl-var',
-    );
-
-    /**
-     * Setup for links to online documentation
-     *
-     * This is an array with keys:
-     * - url, ex. http://php.net/%s
-     * - target, ex. _blank, default - no target
-     * - elements, default is <code>array('reserved', 'identifier')</code>
-     *
-     * @var array
-     */
-    var $_doclinks = array();
-
-    /**#@-*/
-
-    /**
-     * Resets renderer state
-     *
-     * @access protected
-     *
-     *
-     * Descendents of Text_Highlighter call this method from the constructor,
-     * passing $options they get as parameter.
-     */
-    function reset()
-    {
-        $this->_output = '';
-        if (isset($this->_options['numbers'])) {
-            $this->_numbers = (int)$this->_options['numbers'];
-            if ($this->_numbers != HL_NUMBERS_LI
-             && $this->_numbers != HL_NUMBERS_UL
-             && $this->_numbers != HL_NUMBERS_OL
-             && $this->_numbers != HL_NUMBERS_TABLE
-             ) {
-                $this->_numbers = 0;
-            }
-        }
-        if (isset($this->_options['tabsize'])) {
-            $this->_tabsize = $this->_options['tabsize'];
-        }
-        if (isset($this->_options['numbers_start'])) {
-            $this->_numbers_start = intval($this->_options['numbers_start']);
-        }
-        if (isset($this->_options['doclinks']) &&
-            is_array($this->_options['doclinks']) &&
-            !empty($this->_options['doclinks']['url'])
-        ) {
-
-            $this->_doclinks = $this->_options['doclinks']; // keys: url, target, elements array
-
-            if (empty($this->_options['doclinks']['elements'])) {
-                $this->_doclinks['elements'] = array('reserved', 'identifier');
-            }
-        }
-        if (isset($this->_options['style_map'])) {
-            $this->_style_map = $this->_options['style_map'];
-        }
-        if (isset($this->_options['class_map'])) {
-            $this->_class_map = array_merge($this->_class_map, $this->_options['class_map']);
-        }
-        $this->_htmlspecialchars = true;
-
-    }
-
-
-    /**
-     * Given a CSS class name, returns the class name
-     * with language name prepended, if necessary
-     *
-     * @access private
-     *
-     * @param  string $class   Token class
-     */
-    function _getFullClassName($class)
-    {
-        if (!empty($this->_options['use_language'])) {
-            $the_class = $this->_language . '-' . $class;
-        } else {
-            $the_class = $class;
-        }
-        return $the_class;
-    }
-
-    /**
-     * Signals that no more tokens are available
-     *
-     * @access public
-     */
-    function finalize()
-    {
-
-        // get parent's output
-        parent::finalize();
-        $output = parent::getOutput();
-        if(empty($output))
-        	return;
-
-        $html_output = '';
-
-        $numbers_li = false;
-
-        if (
-            $this->_numbers == HL_NUMBERS_LI ||
-            $this->_numbers == HL_NUMBERS_UL ||
-            $this->_numbers == HL_NUMBERS_OL
-           )
-        {
-            $numbers_li = true;
-        }
-
-        // loop through each class=>content pair
-        foreach ($output AS $token) {
-
-            if ($this->_enumerated) {
-                $key = false;
-                $the_class = $token[0];
-                $content = $token[1];
-            } else {
-                $key = key($token);
-                $the_class = $key;
-                $content = $token[$key];
-            }
-
-            $span = $this->_getStyling($the_class);
-            $decorated_output = $this->_decorate($content, $key);
-			//print "<pre> token = ".var_export($token, true)." -- span = " . htmlentities($span). "-- deco = ".$decorated_output."</pre>\n";
-			$html_output .= sprintf($span, $decorated_output);
-        }
-
-        // format lists
-        if (!empty($this->_numbers) && $numbers_li == true) {
-
-            //$html_output = "<pre>".$html_output."</pre>";
-            // additional whitespace for browsers that do not display
-            // empty list items correctly
-            $this->_output = '<li><pre>&nbsp;' . str_replace("\n", "</pre></li>\n<li><pre>&nbsp;", $html_output) . '</pre></li>';
-
-
-            $start = '';
-            if ($this->_numbers == HL_NUMBERS_OL && intval($this->_numbers_start) > 0)  {
-                $start = ' start="' . $this->_numbers_start . '"';
-            }
-
-            $list_tag = 'ol';
-            if ($this->_numbers == HL_NUMBERS_UL)  {
-                $list_tag = 'ul';
-            }
-
-
-            $this->_output = '<' . $list_tag . $start
-                             . ' ' . $this->_getStyling('main', false) . '>'
-                             . $this->_output . '</'. $list_tag .'>';
-
-        // render a table
-        } else if ($this->_numbers == HL_NUMBERS_TABLE) {
-
-
-            $start_number = 0;
-            if (intval($this->_numbers_start)) {
-                $start_number = $this->_numbers_start - 1;
-            }
-
-            $numbers = '';
-
-            $nlines = substr_count($html_output,"\n")+1;
-            for ($i=1; $i <= $nlines; $i++) {
-                $numbers .= ($start_number + $i) . "\n";
-            }
-            $this->_output = '<table ' . $this->_getStyling('table', false) . ' width="100%"><tr>' .
-                             '<td '. $this->_getStyling('gutter', false) .' align="right" valign="top">' .
-                             '<pre>' . $numbers . '</pre></td><td '. $this->_getStyling('main', false) .
-                             ' valign="top"><pre>' .
-                             $html_output . '</pre></td></tr></table>';
-        }
-        if (!$this->_numbers) {
-            $this->_output = '<pre>' . $html_output . '</pre>';
-        }
-        $this->_output = '<div ' . $this->_getStyling('main', false) . '>' . $this->_output . '</div>';
-    }
-
-
-    /**
-     * Provides additional formatting to a keyword
-     *
-     * @param string $content Keyword
-     * @return string Keyword with additional formatting
-     * @access public
-     *
-     */
-    function _decorate($content, $key = false)
-    {
-        // links to online documentation
-        if (!empty($this->_doclinks) &&
-            !empty($this->_doclinks['url']) &&
-            in_array($key, $this->_doclinks['elements'])
-        ) {
-
-            $link = '<a href="'. sprintf($this->_doclinks['url'], $content) . '"';
-            if (!empty($this->_doclinks['target'])) {
-                $link.= ' target="' . $this->_doclinks['target'] . '"';
-            }
-            $link .= '>';
-            $link.= $content;
-            $link.= '</a>';
-
-            $content = $link;
-
-        }
-
-        return $content;
-    }
-
-    /**
-     * Returns <code>class</code> and/or <code>style</code> attribute,
-     * optionally enclosed in a <code>span</code> tag
-     *
-     * @param string $class Class name
-     * @paran boolean $span_tag Whether or not to return styling attributes in a <code>&gt;span&lt;</code> tag
-     * @return string <code>span</code> tag or just a <code>class</code> and/or <code>style</code> attributes
-     * @access private
-     */
-    function _getStyling($class, $span_tag = true)
-    {
-        $attrib = '';
-        if (!empty($this->_style_map) &&
-            !empty($this->_style_map[$class])
-        ) {
-            $attrib = 'style="'. $this->_style_map[$class] .'"';
-        }
-        if (!empty($this->_class_map) &&
-            !empty($this->_class_map[$class])
-        ) {
-            if ($attrib) {
-                $attrib .= ' ';
-            }
-            $attrib .= 'class="'. $this->_getFullClassName($this->_class_map[$class]) .'"';
-        }
-
-        if ($span_tag) {
-            $span = '<span ' . $attrib . '>%s</span>';
-            return $span;
-        } else {
-            return $attrib;
-        }
-
-    }
-}
-
-/*
- * Local variables:
- * tab-width: 4
- * c-basic-offset: 4
- * c-hanging-comment-ender-p: nil
- * End:
- */
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+6vX3Bs9wbRRMwTbt

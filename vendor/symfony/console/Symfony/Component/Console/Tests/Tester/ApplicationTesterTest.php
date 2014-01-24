@@ -1,69 +1,60 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\Console\Tests\Tester;
-
-use Symfony\Component\Console\Application;
-use Symfony\Component\Console\Output\Output;
-use Symfony\Component\Console\Tester\ApplicationTester;
-
-class ApplicationTesterTest extends \PHPUnit_Framework_TestCase
-{
-    protected $application;
-    protected $tester;
-
-    protected function setUp()
-    {
-        $this->application = new Application();
-        $this->application->setAutoExit(false);
-        $this->application->register('foo')
-            ->addArgument('foo')
-            ->setCode(function ($input, $output) { $output->writeln('foo'); })
-        ;
-
-        $this->tester = new ApplicationTester($this->application);
-        $this->tester->run(array('command' => 'foo', 'foo' => 'bar'), array('interactive' => false, 'decorated' => false, 'verbosity' => Output::VERBOSITY_VERBOSE));
-    }
-
-    protected function tearDown()
-    {
-        $this->application = null;
-        $this->tester = null;
-    }
-
-    public function testRun()
-    {
-        $this->assertFalse($this->tester->getInput()->isInteractive(), '->execute() takes an interactive option');
-        $this->assertFalse($this->tester->getOutput()->isDecorated(), '->execute() takes a decorated option');
-        $this->assertEquals(Output::VERBOSITY_VERBOSE, $this->tester->getOutput()->getVerbosity(), '->execute() takes a verbosity option');
-    }
-
-    public function testGetInput()
-    {
-        $this->assertEquals('bar', $this->tester->getInput()->getArgument('foo'), '->getInput() returns the current input instance');
-    }
-
-    public function testGetOutput()
-    {
-        rewind($this->tester->getOutput()->getStream());
-        $this->assertEquals('foo'.PHP_EOL, stream_get_contents($this->tester->getOutput()->getStream()), '->getOutput() returns the current output instance');
-    }
-
-    public function testGetDisplay()
-    {
-        $this->assertEquals('foo'.PHP_EOL, $this->tester->getDisplay(), '->getDisplay() returns the display of the last execution');
-    }
-
-    public function testGetStatusCode()
-    {
-        $this->assertSame(0, $this->tester->getStatusCode(), '->getStatusCode() returns the status code');
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPpVXsO0KPYAtzInCetPQrVWp+hhtm6B83SKUgilMjiB7hF6XPhhL+g6XvgNoLysrQouefyox
+3XEbiuq8g+RxhwFz7AHVAEuPr9IWg4Z/lh44y0MMhH9InwqGcu+mrgefbfPXLWnF5UGqmQ/81Ld/
+HYFpalj/ugLibYCcM0X15UbZbrCuG69awqF64Ky1YGsKFOlFvRyfhn6F6c0J8+iU/tYneSsF6fyq
+Dw/EY/RrUroR4a/727JJKwzHAE4xzt2gh9fl143SQNIAPq+1aCZ8mcZ5uJZ8m5h062jVT25KJxF5
+6nTMg8Zmz/6jN4/WCFYtXa30aCmgvQ9qPr65psJbAaT5guwIc5fkEsbqMpS90Bt9wszWpvRJZsJ1
+iJ7BfWAfKbMFHjosQL5s8lxwJcuhMoZM2NcupQ+Db2Ts45c0gFha3tWKZbnCbzy8WX1FevtgtCcj
+27/v9kz64jf0VGi6WjSIsJ+kSfKBI8tXgF//KsMsICZHhSrFf2h9lLf9NPIGatoHW2fM7GJHuYYN
+QuQeiOEwNR1c/InjMvh7zh5WL0T0TQK7PVKBzW8jehnbMVZuXbRTIdKlApXynmN6lLPKnbZMGRl0
+1iDWPHeKzavYs/01SRLxihZhR42ZPjvld9TdsQ1PuovxK88ehrXm3ex6yB7X+797+7WKwuEHG1U7
+VKFs/kEcIPkgqitI7fiQZ/ZTTxdxmJvb77bZUmJD2bYG7EPqdaPaaQpNtb2nIpV1tepAZ+6LT8zE
+1iwlYCVIhSY2jqek5jSCNM5Pyo1c4lLZYEf5tCftf8WVtUZ0aaNBSHbOVd+6FayzaIdBIjA3J7Iw
+aXrp5lWKttu6VVQrUuE9mFlLfxMDM7Q9zL8WbjCJ//rlMwP8uY7PJMeLSB98cAhvOg6hVRMb+8jI
+YhcfUSWWXwej5OE5+gg7rKs7nXebJ+F4Va6m21KW1vfKZSI8V3/wTGnuqHDKph6/pjwqWqJNk9t3
+HZwWyFyI8ZUiXPD43DLbSPHLcbbIP0SHoBPNNjocRRRdLTl0rYB8hY2t/efx3U5KL5L2ci6ulz7G
+n+G/FwArEPkUeCRXP8h1pnrtYlk3OhoLs+lXMYXTjVsqW70I1JKuEfkZtN5wMQCJC5NDDYFGGt6v
+TfbYz98TMGQHnF93KphNRHxXjfjCduajLSkI4vvetVaA6AWxQYByMjkiUVuWvvrE39x/CLu/Ifef
+t8aQYxwMG61ghGHEUgyRBS59V7Mc4yEUH88CY5cnT57zNXGHGUiGxqhU2xaZ3iWsJlNZcAe3zwzf
+Jabtw1ybfpM/lGvt4gXWN/k8KPfe8X7ahu9vQc0EeK9s8Vz9qdOKRTsmyx2GukjSh0x0debPDhoF
+PLeco7ExSBrA7xu1CfM8rMdZnl4sXY/7kvfLeVivVps6+hBTfoGL7V9HyKv4AsNPuCX0clKYT5SR
++1uNnvHnx4oiCXZnaEAoK9t8A1hwJN6u8ZfITGjXp4Yk4Jxq05SfRLOIOhEGmnpvnT7fQz3e3P0H
+a2+IwOM4gNPTyzFqTVL+Iw6Pv+Ii5VbAhr7QipqcoHnJ17PEA2rAfq6QEEejeQNfRBt9dRPjpgoh
+q9qxUjGYat6uFzLMvcc8FObRZygDo8VMwEyQ3OUC3a/ZOQWM1gipKng4DLp7+EzVhZZXgUe6A2xx
+HRA80OG3jRgRlWPBEsu0goUqzMIBb+6UyGUdOaN4ovAerggpvUWpNETowKA+kzaeXh2onB2AMLIg
+IWu4Was6Irqq5/kCX8Ny2bKuI9ldj1JbmmFdDT/2A98VV85uljks+X0jCLetTIXTRG8wL2vodV1h
+FLSEKF7liGfZyOSkI8m0K/lwykgHNayiD/lOPM5dXGnmdVnuuyppWvUKC7G/XXDWmWIBllulGz1r
+jeLvsTZ6bWzvphQI8QzUwyE3ANj9iokdfBuoy55Bi4vpSFiqPzydQ+asNxOv8CxftR115cV+GQk4
+idI8flXbmu/kzWVGes+LBW1bpGHc2FL/ssfCCwOjQIuiDdxPXph/C1Zco0fy2PSpPfpHcxhABYM3
+Zz9XttKkklybPvGF94pq+/VnkDcg01bpyrAPZSsmVDRWKEMaOwRzTvxMQDa/9LfnLTVVJlT6l2PU
+Vn+41tIFQhQbyvoNxQRBAcYpCmz+j2mYhfDZL0LWPbwhTNoO9NDfoUjWWqQhSUCA0cqXcfq5rFKF
+QmkVFluDOvvRWrAMrAKFOAzVwnGvRlilqlOVAkQMI0FxbvwJejTR7S89qSecRrHsEKN3J1qwTv7S
+nwtJt8WL9+0bXf86lGrdLgi/HCO+0bw1JtJo4AZGz7zFCDG/0GXsLUgtZVY9/nK0hK4zCItD0bt1
+qSUDgUXhlmlVN894Dh/lwDoPPPbYr7MtWFYulVktWhXHVTqsG2oZJo5z8p/86Dni6lykL7PcbQaZ
+rwVtHHbf+9ZR4oBwXkc9CRQvds0SiWhwW2RtMsvC66RFON8A1X4Yr9B0vlvsXo1Veiy0y2YoDDaY
+VGcFzhHFukkhY8SG9KMyY5AIQmCVjyfCm217d0nQI1yoIkKplipRvXzeEFs8hZNTPZ/LxD6+hqba
+zfIYcQVAetXDWvDbd1JzCASiAFzFKgxlr/7S7o0FBScfbUVec/1c94UgnKqsPfguOpEOxOQe+OFm
+CCgyxyjK1IT/QNhg5HlmJ4LhSuLcsK5Vl19S5rKxi9mBc0gGzKx8IHtUolWNkYzJZyEabb+jpG12
+ApbDA2PH4IfpbbmPBPU7BbmkxbBtSGtKBet4ycAIto0gWJlsWPNi6+1uPLn6FHUM6hJ0QhMyHDvn
+89NUIO8xbchvOdoBdD3Yop1607cOUoFqihP3JF1OplMTU7woRgCz4Vd6uW/kwlcJ2WGD++lpG3Vf
+XdyWiKKocskMfhQrTgd18aRyjnuCtzQdD6RX3is+2DszyjmOBO1m5nElKVUIkHtuyoYaw/Yfp65I
+xBcCSfTtSKI8R3agCiXRZ8JfRNFcVl8Ra+iE8yZN0/urXNKrKGp0dlCSuJS3Q9Xy5qdwBF/Kb7VD
+ZrB8FadDD+wvm3RSG1vWPkPOWph/PbTDDfG9r0SoM7qW+66Q0KQxhiY1rFE0L7dSqsbyOFT2gIcx
+TnMVYeqBJccMH0h5WF37oO62Ij0pA/3/35N+/Ao93oQW6oK2poG7w+jgwIBWJsitd5b/l7TkB8lM
+2xngbLN6rjsOBxMRoFWfYTK214UWSMIRhlA5OaeCNB1rxK8i8vG3LbznxxIksf8Gbr1Am45AkkQ3
+5knpl5HjBl+24HszRABz1CvkAOtOWX17LjK8GE5eyv/CZfZON56rCOXqOAzNgLFi+lDoUNKbEKb4
+B1ib9LF/p3uqYAO8v1XRfDV/FchG81XIVpRLqsXN3z24pgYVFYzd/2BzzbG/Gh6Q8lyGrFQKjPtT
+GblUzzj5iNLAsNqgubdGyxE5ph5g07L8eHArojL6BvCjQ4a1sVBCLwh2o1yPHv6hWjtpmgIxNEi4
+zK/riKnzHdjgKWTTFsVBwceF5RFirso23Si1bsOnyzAPr0ECWj+t3l+ZtHb+qaunNabUdpDtt46H
+wK2B5JZnaju3T9yXd/HI5NZlJaAe734nYN6ov3YVvRsmWFSrLyWp7ls73DglQ2tsytMjjCjB2hV1
+gKT6E3NGH5EDqVb3k53ksDZUbpRYP/Gte9+DCylKsr1E1oy14BQi0e3oJgFJM8bc2c4YJ0kWmdEs
+Y3iISy9wIGhmrARZufriSDFL0myrPDbuafnF3yO2G12dLhil0I2ZP4LvC8OBM7N0Yz9MG14SInsP
+A9et5NKv9ruJ77kMIu1Ro2MTbWcI9865O7U+6EhALlLp2bGJVrRedOBSqW/1VzcVaG0QcuU906wB
+vRa6DuYM+lQLt5ew8GS/kKO9uzKuA0gV8igXfyCzErgxcU+bYLy5uGrca8wy/Tul2DbLaWWJM9XN
+mtEIgqieL136ZqDi8fg01bzex558HS5xZ92syH12OELFdiASdDTcjpKKKzIo4QlTwe/6EtyZENUT
+9iz8j+g2EIOj9O/e0Ai+jPAqQXXb82OhoAwNHe4ojTkibggol5MtH3auIZ7ZI8Mkg0txK9CxgN+2
+wLDGV7D6L+GbeW4Xhx1klFbhgfu+5M0L2Asi4LdoNBaZp5C9RK57HphGlSldBYQs+36Ypq2glOYB
+x7z3WeF1VieXX1o02OUV682Rj0Riet64tNR7nnQQw3RZnNAvrqB1CUgC8tW92GbPjpGmuyY/bI2x
+maGgn0jG6sMPpC+XE9NTGwwlrNxt

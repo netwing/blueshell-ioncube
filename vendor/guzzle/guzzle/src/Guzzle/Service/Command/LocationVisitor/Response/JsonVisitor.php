@@ -1,88 +1,56 @@
-<?php
-
-namespace Guzzle\Service\Command\LocationVisitor\Response;
-
-use Guzzle\Http\Message\Response;
-use Guzzle\Service\Description\Parameter;
-use Guzzle\Service\Command\CommandInterface;
-
-/**
- * Location visitor used to marshal JSON response data into a formatted array.
- *
- * Allows top level JSON parameters to be inserted into the result of a command. The top level attributes are grabbed
- * from the response's JSON data using the name value by default. Filters can be applied to parameters as they are
- * traversed. This allows data to be normalized before returning it to users (for example converting timestamps to
- * DateTime objects).
- */
-class JsonVisitor extends AbstractResponseVisitor
-{
-    public function before(CommandInterface $command, array &$result)
-    {
-        // Ensure that the result of the command is always rooted with the parsed JSON data
-        $result = $command->getResponse()->json();
-    }
-
-    public function visit(
-        CommandInterface $command,
-        Response $response,
-        Parameter $param,
-        &$value,
-        $context =  null
-    ) {
-        $name = $param->getName();
-        $key = $param->getWireName();
-        if (isset($value[$key])) {
-            $this->recursiveProcess($param, $value[$key]);
-            if ($key != $name) {
-                $value[$name] = $value[$key];
-                unset($value[$key]);
-            }
-        }
-    }
-
-    /**
-     * Recursively process a parameter while applying filters
-     *
-     * @param Parameter $param API parameter being validated
-     * @param mixed     $value Value to validate and process. The value may change during this process.
-     */
-    protected function recursiveProcess(Parameter $param, &$value)
-    {
-        if ($value === null) {
-            return;
-        }
-
-        if (is_array($value)) {
-            $type = $param->getType();
-            if ($type == 'array') {
-                foreach ($value as &$item) {
-                    $this->recursiveProcess($param->getItems(), $item);
-                }
-            } elseif ($type == 'object' && !isset($value[0])) {
-                // On the above line, we ensure that the array is associative and not numerically indexed
-                $knownProperties = array();
-                if ($properties = $param->getProperties()) {
-                    foreach ($properties as $property) {
-                        $name = $property->getName();
-                        $key = $property->getWireName();
-                        $knownProperties[$name] = 1;
-                        if (isset($value[$key])) {
-                            $this->recursiveProcess($property, $value[$key]);
-                            if ($key != $name) {
-                                $value[$name] = $value[$key];
-                                unset($value[$key]);
-                            }
-                        }
-                    }
-                }
-
-                // Remove any unknown and potentially unsafe properties
-                if ($param->getAdditionalProperties() === false) {
-                    $value = array_intersect_key($value, $knownProperties);
-                }
-            }
-        }
-
-        $value = $param->filter($value);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+30==

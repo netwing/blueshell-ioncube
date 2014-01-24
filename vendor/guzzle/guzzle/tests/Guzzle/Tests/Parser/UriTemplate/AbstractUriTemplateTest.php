@@ -1,113 +1,73 @@
-<?php
-
-namespace Guzzle\Tests\Parsers\UriTemplate;
-
-abstract class AbstractUriTemplateTest extends \Guzzle\Tests\GuzzleTestCase
-{
-    /**
-     * @return array
-     */
-    public function templateProvider()
-    {
-        $t = array();
-        $params = array(
-            'var'   => 'value',
-            'hello' => 'Hello World!',
-            'empty' => '',
-            'path'  => '/foo/bar',
-            'x'     => '1024',
-            'y'     => '768',
-            'null'  => null,
-            'list'  => array('red', 'green', 'blue'),
-            'keys'  => array(
-                "semi"  => ';',
-                "dot"   => '.',
-                "comma" => ','
-            ),
-            'empty_keys' => array(),
-        );
-
-        return array_map(function($t) use ($params) {
-            $t[] = $params;
-            return $t;
-        }, array(
-            array('foo',                 'foo'),
-            array('{var}',               'value'),
-            array('{hello}',             'Hello%20World%21'),
-            array('{+var}',              'value'),
-            array('{+hello}',            'Hello%20World!'),
-            array('{+path}/here',        '/foo/bar/here'),
-            array('here?ref={+path}',    'here?ref=/foo/bar'),
-            array('X{#var}',             'X#value'),
-            array('X{#hello}',           'X#Hello%20World!'),
-            array('map?{x,y}',           'map?1024,768'),
-            array('{x,hello,y}',         '1024,Hello%20World%21,768'),
-            array('{+x,hello,y}',        '1024,Hello%20World!,768'),
-            array('{+path,x}/here',      '/foo/bar,1024/here'),
-            array('{#x,hello,y}',        '#1024,Hello%20World!,768'),
-            array('{#path,x}/here',      '#/foo/bar,1024/here'),
-            array('X{.var}',             'X.value'),
-            array('X{.x,y}',             'X.1024.768'),
-            array('{/var}',              '/value'),
-            array('{/var,x}/here',       '/value/1024/here'),
-            array('{;x,y}',              ';x=1024;y=768'),
-            array('{;x,y,empty}',        ';x=1024;y=768;empty'),
-            array('{?x,y}',              '?x=1024&y=768'),
-            array('{?x,y,empty}',        '?x=1024&y=768&empty='),
-            array('?fixed=yes{&x}',      '?fixed=yes&x=1024'),
-            array('{&x,y,empty}',        '&x=1024&y=768&empty='),
-            array('{var:3}',             'val'),
-            array('{var:30}',            'value'),
-            array('{list}',              'red,green,blue'),
-            array('{list*}',             'red,green,blue'),
-            array('{keys}',              'semi,%3B,dot,.,comma,%2C'),
-            array('{keys*}',             'semi=%3B,dot=.,comma=%2C'),
-            array('{+path:6}/here',      '/foo/b/here'),
-            array('{+list}',             'red,green,blue'),
-            array('{+list*}',            'red,green,blue'),
-            array('{+keys}',             'semi,;,dot,.,comma,,'),
-            array('{+keys*}',            'semi=;,dot=.,comma=,'),
-            array('{#path:6}/here',      '#/foo/b/here'),
-            array('{#list}',             '#red,green,blue'),
-            array('{#list*}',            '#red,green,blue'),
-            array('{#keys}',             '#semi,;,dot,.,comma,,'),
-            array('{#keys*}',            '#semi=;,dot=.,comma=,'),
-            array('X{.var:3}',           'X.val'),
-            array('X{.list}',            'X.red,green,blue'),
-            array('X{.list*}',           'X.red.green.blue'),
-            array('X{.keys}',            'X.semi,%3B,dot,.,comma,%2C'),
-            array('X{.keys*}',           'X.semi=%3B.dot=..comma=%2C'),
-            array('{/var:1,var}',        '/v/value'),
-            array('{/list}',             '/red,green,blue'),
-            array('{/list*}',            '/red/green/blue'),
-            array('{/list*,path:4}',     '/red/green/blue/%2Ffoo'),
-            array('{/keys}',             '/semi,%3B,dot,.,comma,%2C'),
-            array('{/keys*}',            '/semi=%3B/dot=./comma=%2C'),
-            array('{;hello:5}',          ';hello=Hello'),
-            array('{;list}',             ';list=red,green,blue'),
-            array('{;list*}',            ';list=red;list=green;list=blue'),
-            array('{;keys}',             ';keys=semi,%3B,dot,.,comma,%2C'),
-            array('{;keys*}',            ';semi=%3B;dot=.;comma=%2C'),
-            array('{?var:3}',            '?var=val'),
-            array('{?list}',             '?list=red,green,blue'),
-            array('{?list*}',            '?list=red&list=green&list=blue'),
-            array('{?keys}',             '?keys=semi,%3B,dot,.,comma,%2C'),
-            array('{?keys*}',            '?semi=%3B&dot=.&comma=%2C'),
-            array('{&var:3}',            '&var=val'),
-            array('{&list}',             '&list=red,green,blue'),
-            array('{&list*}',            '&list=red&list=green&list=blue'),
-            array('{&keys}',             '&keys=semi,%3B,dot,.,comma,%2C'),
-            array('{&keys*}',            '&semi=%3B&dot=.&comma=%2C'),
-            array('{.null}',            ''),
-            array('{.null,var}',        '.value'),
-            array('X{.empty_keys*}',     'X'),
-            array('X{.empty_keys}',      'X'),
-            // Test that missing expansions are skipped
-            array('test{&missing*}',     'test'),
-            // Test that multiple expansions can be set
-            array('http://{var}/{var:2}{?keys*}', 'http://value/va?semi=%3B&dot=.&comma=%2C'),
-            // Test more complex query string stuff
-            array('http://www.test.com{+path}{?var,keys*}', 'http://www.test.com/foo/bar?var=value&semi=%3B&dot=.&comma=%2C')
-        ));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+fR6F0LxxmTLI/YkIlUeY95C=

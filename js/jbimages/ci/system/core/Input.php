@@ -1,849 +1,266 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/**
- * CodeIgniter
- *
- * An open source application development framework for PHP 5.1.6 or newer
- *
- * @package		CodeIgniter
- * @author		ExpressionEngine Dev Team
- * @copyright	Copyright (c) 2008 - 2011, EllisLab, Inc.
- * @license		http://codeigniter.com/user_guide/license.html
- * @link		http://codeigniter.com
- * @since		Version 1.0
- * @filesource
- */
-
-// ------------------------------------------------------------------------
-
-/**
- * Input Class
- *
- * Pre-processes global input data for security
- *
- * @package		CodeIgniter
- * @subpackage	Libraries
- * @category	Input
- * @author		ExpressionEngine Dev Team
- * @link		http://codeigniter.com/user_guide/libraries/input.html
- */
-class CI_Input {
-
-	/**
-	 * IP address of the current user
-	 *
-	 * @var string
-	 */
-	var $ip_address				= FALSE;
-	/**
-	 * user agent (web browser) being used by the current user
-	 *
-	 * @var string
-	 */
-	var $user_agent				= FALSE;
-	/**
-	 * If FALSE, then $_GET will be set to an empty array
-	 *
-	 * @var bool
-	 */
-	var $_allow_get_array		= TRUE;
-	/**
-	 * If TRUE, then newlines are standardized
-	 *
-	 * @var bool
-	 */
-	var $_standardize_newlines	= TRUE;
-	/**
-	 * Determines whether the XSS filter is always active when GET, POST or COOKIE data is encountered
-	 * Set automatically based on config setting
-	 *
-	 * @var bool
-	 */
-	var $_enable_xss			= FALSE;
-	/**
-	 * Enables a CSRF cookie token to be set.
-	 * Set automatically based on config setting
-	 *
-	 * @var bool
-	 */
-	var $_enable_csrf			= FALSE;
-	/**
-	 * List of all HTTP request headers
-	 *
-	 * @var array
-	 */
-	protected $headers			= array();
-
-	/**
-	 * Constructor
-	 *
-	 * Sets whether to globally enable the XSS processing
-	 * and whether to allow the $_GET array
-	 *
-	 * @return	void
-	 */
-	public function __construct()
-	{
-		log_message('debug', "Input Class Initialized");
-
-		$this->_allow_get_array	= (config_item('allow_get_array') === TRUE);
-		$this->_enable_xss		= (config_item('global_xss_filtering') === TRUE);
-		$this->_enable_csrf		= (config_item('csrf_protection') === TRUE);
-
-		global $SEC;
-		$this->security =& $SEC;
-
-		// Do we need the UTF-8 class?
-		if (UTF8_ENABLED === TRUE)
-		{
-			global $UNI;
-			$this->uni =& $UNI;
-		}
-
-		// Sanitize global arrays
-		$this->_sanitize_globals();
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * Fetch from array
-	 *
-	 * This is a helper function to retrieve values from global arrays
-	 *
-	 * @access	private
-	 * @param	array
-	 * @param	string
-	 * @param	bool
-	 * @return	string
-	 */
-	function _fetch_from_array(&$array, $index = '', $xss_clean = FALSE)
-	{
-		if ( ! isset($array[$index]))
-		{
-			return FALSE;
-		}
-
-		if ($xss_clean === TRUE)
-		{
-			return $this->security->xss_clean($array[$index]);
-		}
-
-		return $array[$index];
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	* Fetch an item from the GET array
-	*
-	* @access	public
-	* @param	string
-	* @param	bool
-	* @return	string
-	*/
-	function get($index = NULL, $xss_clean = FALSE)
-	{
-		// Check if a field has been provided
-		if ($index === NULL AND ! empty($_GET))
-		{
-			$get = array();
-
-			// loop through the full _GET array
-			foreach (array_keys($_GET) as $key)
-			{
-				$get[$key] = $this->_fetch_from_array($_GET, $key, $xss_clean);
-			}
-			return $get;
-		}
-
-		return $this->_fetch_from_array($_GET, $index, $xss_clean);
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	* Fetch an item from the POST array
-	*
-	* @access	public
-	* @param	string
-	* @param	bool
-	* @return	string
-	*/
-	function post($index = NULL, $xss_clean = FALSE)
-	{
-		// Check if a field has been provided
-		if ($index === NULL AND ! empty($_POST))
-		{
-			$post = array();
-
-			// Loop through the full _POST array and return it
-			foreach (array_keys($_POST) as $key)
-			{
-				$post[$key] = $this->_fetch_from_array($_POST, $key, $xss_clean);
-			}
-			return $post;
-		}
-
-		return $this->_fetch_from_array($_POST, $index, $xss_clean);
-	}
-
-
-	// --------------------------------------------------------------------
-
-	/**
-	* Fetch an item from either the GET array or the POST
-	*
-	* @access	public
-	* @param	string	The index key
-	* @param	bool	XSS cleaning
-	* @return	string
-	*/
-	function get_post($index = '', $xss_clean = FALSE)
-	{
-		if ( ! isset($_POST[$index]) )
-		{
-			return $this->get($index, $xss_clean);
-		}
-		else
-		{
-			return $this->post($index, $xss_clean);
-		}
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	* Fetch an item from the COOKIE array
-	*
-	* @access	public
-	* @param	string
-	* @param	bool
-	* @return	string
-	*/
-	function cookie($index = '', $xss_clean = FALSE)
-	{
-		return $this->_fetch_from_array($_COOKIE, $index, $xss_clean);
-	}
-
-	// ------------------------------------------------------------------------
-
-	/**
-	* Set cookie
-	*
-	* Accepts six parameter, or you can submit an associative
-	* array in the first parameter containing all the values.
-	*
-	* @access	public
-	* @param	mixed
-	* @param	string	the value of the cookie
-	* @param	string	the number of seconds until expiration
-	* @param	string	the cookie domain.  Usually:  .yourdomain.com
-	* @param	string	the cookie path
-	* @param	string	the cookie prefix
-	* @param	bool	true makes the cookie secure
-	* @return	void
-	*/
-	function set_cookie($name = '', $value = '', $expire = '', $domain = '', $path = '/', $prefix = '', $secure = FALSE)
-	{
-		if (is_array($name))
-		{
-			// always leave 'name' in last place, as the loop will break otherwise, due to $$item
-			foreach (array('value', 'expire', 'domain', 'path', 'prefix', 'secure', 'name') as $item)
-			{
-				if (isset($name[$item]))
-				{
-					$$item = $name[$item];
-				}
-			}
-		}
-
-		if ($prefix == '' AND config_item('cookie_prefix') != '')
-		{
-			$prefix = config_item('cookie_prefix');
-		}
-		if ($domain == '' AND config_item('cookie_domain') != '')
-		{
-			$domain = config_item('cookie_domain');
-		}
-		if ($path == '/' AND config_item('cookie_path') != '/')
-		{
-			$path = config_item('cookie_path');
-		}
-		if ($secure == FALSE AND config_item('cookie_secure') != FALSE)
-		{
-			$secure = config_item('cookie_secure');
-		}
-
-		if ( ! is_numeric($expire))
-		{
-			$expire = time() - 86500;
-		}
-		else
-		{
-			$expire = ($expire > 0) ? time() + $expire : 0;
-		}
-
-		setcookie($prefix.$name, $value, $expire, $path, $domain, $secure);
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	* Fetch an item from the SERVER array
-	*
-	* @access	public
-	* @param	string
-	* @param	bool
-	* @return	string
-	*/
-	function server($index = '', $xss_clean = FALSE)
-	{
-		return $this->_fetch_from_array($_SERVER, $index, $xss_clean);
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	* Fetch the IP Address
-	*
-	* @return	string
-	*/
-	public function ip_address()
-	{
-		if ($this->ip_address !== FALSE)
-		{
-			return $this->ip_address;
-		}
-
-		$proxy_ips = config_item('proxy_ips');
-		if ( ! empty($proxy_ips))
-		{
-			$proxy_ips = explode(',', str_replace(' ', '', $proxy_ips));
-			foreach (array('HTTP_X_FORWARDED_FOR', 'HTTP_CLIENT_IP', 'HTTP_X_CLIENT_IP', 'HTTP_X_CLUSTER_CLIENT_IP') as $header)
-			{
-				if (($spoof = $this->server($header)) !== FALSE)
-				{
-					// Some proxies typically list the whole chain of IP
-					// addresses through which the client has reached us.
-					// e.g. client_ip, proxy_ip1, proxy_ip2, etc.
-					if (strpos($spoof, ',') !== FALSE)
-					{
-						$spoof = explode(',', $spoof, 2);
-						$spoof = $spoof[0];
-					}
-
-					if ( ! $this->valid_ip($spoof))
-					{
-						$spoof = FALSE;
-					}
-					else
-					{
-						break;
-					}
-				}
-			}
-
-			$this->ip_address = ($spoof !== FALSE && in_array($_SERVER['REMOTE_ADDR'], $proxy_ips, TRUE))
-				? $spoof : $_SERVER['REMOTE_ADDR'];
-		}
-		else
-		{
-			$this->ip_address = $_SERVER['REMOTE_ADDR'];
-		}
-
-		if ( ! $this->valid_ip($this->ip_address))
-		{
-			$this->ip_address = '0.0.0.0';
-		}
-
-		return $this->ip_address;
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	* Validate IP Address
-	*
-	* @access	public
-	* @param	string
-	* @param	string	ipv4 or ipv6
-	* @return	bool
-	*/
-	public function valid_ip($ip, $which = '')
-	{
-		$which = strtolower($which);
-
-		// First check if filter_var is available
-		if (is_callable('filter_var'))
-		{
-			switch ($which) {
-				case 'ipv4':
-					$flag = FILTER_FLAG_IPV4;
-					break;
-				case 'ipv6':
-					$flag = FILTER_FLAG_IPV6;
-					break;
-				default:
-					$flag = '';
-					break;
-			}
-
-			return (bool) filter_var($ip, FILTER_VALIDATE_IP, $flag);
-		}
-
-		if ($which !== 'ipv6' && $which !== 'ipv4')
-		{
-			if (strpos($ip, ':') !== FALSE)
-			{
-				$which = 'ipv6';
-			}
-			elseif (strpos($ip, '.') !== FALSE)
-			{
-				$which = 'ipv4';
-			}
-			else
-			{
-				return FALSE;
-			}
-		}
-
-		$func = '_valid_'.$which;
-		return $this->$func($ip);
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	* Validate IPv4 Address
-	*
-	* Updated version suggested by Geert De Deckere
-	*
-	* @access	protected
-	* @param	string
-	* @return	bool
-	*/
-	protected function _valid_ipv4($ip)
-	{
-		$ip_segments = explode('.', $ip);
-
-		// Always 4 segments needed
-		if (count($ip_segments) !== 4)
-		{
-			return FALSE;
-		}
-		// IP can not start with 0
-		if ($ip_segments[0][0] == '0')
-		{
-			return FALSE;
-		}
-
-		// Check each segment
-		foreach ($ip_segments as $segment)
-		{
-			// IP segments must be digits and can not be
-			// longer than 3 digits or greater then 255
-			if ($segment == '' OR preg_match("/[^0-9]/", $segment) OR $segment > 255 OR strlen($segment) > 3)
-			{
-				return FALSE;
-			}
-		}
-
-		return TRUE;
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	* Validate IPv6 Address
-	*
-	* @access	protected
-	* @param	string
-	* @return	bool
-	*/
-	protected function _valid_ipv6($str)
-	{
-		// 8 groups, separated by :
-		// 0-ffff per group
-		// one set of consecutive 0 groups can be collapsed to ::
-
-		$groups = 8;
-		$collapsed = FALSE;
-
-		$chunks = array_filter(
-			preg_split('/(:{1,2})/', $str, NULL, PREG_SPLIT_DELIM_CAPTURE)
-		);
-
-		// Rule out easy nonsense
-		if (current($chunks) == ':' OR end($chunks) == ':')
-		{
-			return FALSE;
-		}
-
-		// PHP supports IPv4-mapped IPv6 addresses, so we'll expect those as well
-		if (strpos(end($chunks), '.') !== FALSE)
-		{
-			$ipv4 = array_pop($chunks);
-
-			if ( ! $this->_valid_ipv4($ipv4))
-			{
-				return FALSE;
-			}
-
-			$groups--;
-		}
-
-		while ($seg = array_pop($chunks))
-		{
-			if ($seg[0] == ':')
-			{
-				if (--$groups == 0)
-				{
-					return FALSE;	// too many groups
-				}
-
-				if (strlen($seg) > 2)
-				{
-					return FALSE;	// long separator
-				}
-
-				if ($seg == '::')
-				{
-					if ($collapsed)
-					{
-						return FALSE;	// multiple collapsed
-					}
-
-					$collapsed = TRUE;
-				}
-			}
-			elseif (preg_match("/[^0-9a-f]/i", $seg) OR strlen($seg) > 4)
-			{
-				return FALSE; // invalid segment
-			}
-		}
-
-		return $collapsed OR $groups == 1;
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	* User Agent
-	*
-	* @access	public
-	* @return	string
-	*/
-	function user_agent()
-	{
-		if ($this->user_agent !== FALSE)
-		{
-			return $this->user_agent;
-		}
-
-		$this->user_agent = ( ! isset($_SERVER['HTTP_USER_AGENT'])) ? FALSE : $_SERVER['HTTP_USER_AGENT'];
-
-		return $this->user_agent;
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	* Sanitize Globals
-	*
-	* This function does the following:
-	*
-	* Unsets $_GET data (if query strings are not enabled)
-	*
-	* Unsets all globals if register_globals is enabled
-	*
-	* Standardizes newline characters to \n
-	*
-	* @access	private
-	* @return	void
-	*/
-	function _sanitize_globals()
-	{
-		// It would be "wrong" to unset any of these GLOBALS.
-		$protected = array('_SERVER', '_GET', '_POST', '_FILES', '_REQUEST',
-							'_SESSION', '_ENV', 'GLOBALS', 'HTTP_RAW_POST_DATA',
-							'system_folder', 'application_folder', 'BM', 'EXT',
-							'CFG', 'URI', 'RTR', 'OUT', 'IN');
-
-		// Unset globals for securiy.
-		// This is effectively the same as register_globals = off
-		foreach (array($_GET, $_POST, $_COOKIE) as $global)
-		{
-			if ( ! is_array($global))
-			{
-				if ( ! in_array($global, $protected))
-				{
-					global $$global;
-					$$global = NULL;
-				}
-			}
-			else
-			{
-				foreach ($global as $key => $val)
-				{
-					if ( ! in_array($key, $protected))
-					{
-						global $$key;
-						$$key = NULL;
-					}
-				}
-			}
-		}
-
-		// Is $_GET data allowed? If not we'll set the $_GET to an empty array
-		if ($this->_allow_get_array == FALSE)
-		{
-			$_GET = array();
-		}
-		else
-		{
-			if (is_array($_GET) AND count($_GET) > 0)
-			{
-				foreach ($_GET as $key => $val)
-				{
-					$_GET[$this->_clean_input_keys($key)] = $this->_clean_input_data($val);
-				}
-			}
-		}
-
-		// Clean $_POST Data
-		if (is_array($_POST) AND count($_POST) > 0)
-		{
-			foreach ($_POST as $key => $val)
-			{
-				$_POST[$this->_clean_input_keys($key)] = $this->_clean_input_data($val);
-			}
-		}
-
-		// Clean $_COOKIE Data
-		if (is_array($_COOKIE) AND count($_COOKIE) > 0)
-		{
-			// Also get rid of specially treated cookies that might be set by a server
-			// or silly application, that are of no use to a CI application anyway
-			// but that when present will trip our 'Disallowed Key Characters' alarm
-			// http://www.ietf.org/rfc/rfc2109.txt
-			// note that the key names below are single quoted strings, and are not PHP variables
-			unset($_COOKIE['$Version']);
-			unset($_COOKIE['$Path']);
-			unset($_COOKIE['$Domain']);
-
-			foreach ($_COOKIE as $key => $val)
-			{
-				$_COOKIE[$this->_clean_input_keys($key)] = $this->_clean_input_data($val);
-			}
-		}
-
-		// Sanitize PHP_SELF
-		$_SERVER['PHP_SELF'] = strip_tags($_SERVER['PHP_SELF']);
-
-
-		// CSRF Protection check on HTTP requests
-		if ($this->_enable_csrf == TRUE && ! $this->is_cli_request())
-		{
-			$this->security->csrf_verify();
-		}
-
-		log_message('debug', "Global POST and COOKIE data sanitized");
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	* Clean Input Data
-	*
-	* This is a helper function. It escapes data and
-	* standardizes newline characters to \n
-	*
-	* @access	private
-	* @param	string
-	* @return	string
-	*/
-	function _clean_input_data($str)
-	{
-		if (is_array($str))
-		{
-			$new_array = array();
-			foreach ($str as $key => $val)
-			{
-				$new_array[$this->_clean_input_keys($key)] = $this->_clean_input_data($val);
-			}
-			return $new_array;
-		}
-
-		/* We strip slashes if magic quotes is on to keep things consistent
-
-		   NOTE: In PHP 5.4 get_magic_quotes_gpc() will always return 0 and
-			 it will probably not exist in future versions at all.
-		*/
-		if ( ! is_php('5.4') && get_magic_quotes_gpc())
-		{
-			$str = stripslashes($str);
-		}
-
-		// Clean UTF-8 if supported
-		if (UTF8_ENABLED === TRUE)
-		{
-			$str = $this->uni->clean_string($str);
-		}
-
-		// Remove control characters
-		$str = remove_invisible_characters($str);
-
-		// Should we filter the input data?
-		if ($this->_enable_xss === TRUE)
-		{
-			$str = $this->security->xss_clean($str);
-		}
-
-		// Standardize newlines if needed
-		if ($this->_standardize_newlines == TRUE)
-		{
-			if (strpos($str, "\r") !== FALSE)
-			{
-				$str = str_replace(array("\r\n", "\r", "\r\n\n"), PHP_EOL, $str);
-			}
-		}
-
-		return $str;
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	* Clean Keys
-	*
-	* This is a helper function. To prevent malicious users
-	* from trying to exploit keys we make sure that keys are
-	* only named with alpha-numeric text and a few other items.
-	*
-	* @access	private
-	* @param	string
-	* @return	string
-	*/
-	function _clean_input_keys($str)
-	{
-		if ( ! preg_match("/^[a-z0-9:_\/-]+$/i", $str))
-		{
-			exit('Disallowed Key Characters.');
-		}
-
-		// Clean UTF-8 if supported
-		if (UTF8_ENABLED === TRUE)
-		{
-			$str = $this->uni->clean_string($str);
-		}
-
-		return $str;
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * Request Headers
-	 *
-	 * In Apache, you can simply call apache_request_headers(), however for
-	 * people running other webservers the function is undefined.
-	 *
-	 * @param	bool XSS cleaning
-	 *
-	 * @return array
-	 */
-	public function request_headers($xss_clean = FALSE)
-	{
-		// Look at Apache go!
-		if (function_exists('apache_request_headers'))
-		{
-			$headers = apache_request_headers();
-		}
-		else
-		{
-			$headers['Content-Type'] = (isset($_SERVER['CONTENT_TYPE'])) ? $_SERVER['CONTENT_TYPE'] : @getenv('CONTENT_TYPE');
-
-			foreach ($_SERVER as $key => $val)
-			{
-				if (strncmp($key, 'HTTP_', 5) === 0)
-				{
-					$headers[substr($key, 5)] = $this->_fetch_from_array($_SERVER, $key, $xss_clean);
-				}
-			}
-		}
-
-		// take SOME_HEADER and turn it into Some-Header
-		foreach ($headers as $key => $val)
-		{
-			$key = str_replace('_', ' ', strtolower($key));
-			$key = str_replace(' ', '-', ucwords($key));
-
-			$this->headers[$key] = $val;
-		}
-
-		return $this->headers;
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * Get Request Header
-	 *
-	 * Returns the value of a single member of the headers class member
-	 *
-	 * @param 	string		array key for $this->headers
-	 * @param	boolean		XSS Clean or not
-	 * @return 	mixed		FALSE on failure, string on success
-	 */
-	public function get_request_header($index, $xss_clean = FALSE)
-	{
-		if (empty($this->headers))
-		{
-			$this->request_headers();
-		}
-
-		if ( ! isset($this->headers[$index]))
-		{
-			return FALSE;
-		}
-
-		if ($xss_clean === TRUE)
-		{
-			return $this->security->xss_clean($this->headers[$index]);
-		}
-
-		return $this->headers[$index];
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * Is ajax Request?
-	 *
-	 * Test to see if a request contains the HTTP_X_REQUESTED_WITH header
-	 *
-	 * @return 	boolean
-	 */
-	public function is_ajax_request()
-	{
-		return ($this->server('HTTP_X_REQUESTED_WITH') === 'XMLHttpRequest');
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * Is cli Request?
-	 *
-	 * Test to see if a request was made from the command line
-	 *
-	 * @return 	bool
-	 */
-	public function is_cli_request()
-	{
-		return (php_sapi_name() === 'cli' OR defined('STDIN'));
-	}
-
-}
-
-/* End of file Input.php */
-/* Location: ./system/core/Input.php */
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+HtNFBRqM4cwARWsPzR097wDAfn0e

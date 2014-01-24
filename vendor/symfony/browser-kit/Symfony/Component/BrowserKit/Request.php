@@ -1,138 +1,38 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\BrowserKit;
-
-/**
- * Request object.
- *
- * @author Fabien Potencier <fabien@symfony.com>
- *
- * @api
- */
-class Request
-{
-    protected $uri;
-    protected $method;
-    protected $parameters;
-    protected $files;
-    protected $cookies;
-    protected $server;
-    protected $content;
-
-    /**
-     * Constructor.
-     *
-     * @param string $uri        The request URI
-     * @param string $method     The HTTP method request
-     * @param array  $parameters The request parameters
-     * @param array  $files      An array of uploaded files
-     * @param array  $cookies    An array of cookies
-     * @param array  $server     An array of server parameters
-     * @param string $content    The raw body data
-     *
-     * @api
-     */
-    public function __construct($uri, $method, array $parameters = array(), array $files = array(), array $cookies = array(), array $server = array(), $content = null)
-    {
-        $this->uri = $uri;
-        $this->method = $method;
-        $this->parameters = $parameters;
-        $this->files = $files;
-        $this->cookies = $cookies;
-        $this->server = $server;
-        $this->content = $content;
-    }
-
-    /**
-     * Gets the request URI.
-     *
-     * @return string The request URI
-     *
-     * @api
-     */
-    public function getUri()
-    {
-        return $this->uri;
-    }
-
-    /**
-     * Gets the request HTTP method.
-     *
-     * @return string The request HTTP method
-     *
-     * @api
-     */
-    public function getMethod()
-    {
-        return $this->method;
-    }
-
-    /**
-     * Gets the request parameters.
-     *
-     * @return array The request parameters
-     *
-     * @api
-     */
-    public function getParameters()
-    {
-        return $this->parameters;
-    }
-
-    /**
-     * Gets the request server files.
-     *
-     * @return array The request files
-     *
-     * @api
-     */
-    public function getFiles()
-    {
-        return $this->files;
-    }
-
-    /**
-     * Gets the request cookies.
-     *
-     * @return array The request cookies
-     *
-     * @api
-     */
-    public function getCookies()
-    {
-        return $this->cookies;
-    }
-
-    /**
-     * Gets the request server parameters.
-     *
-     * @return array The request server parameters
-     *
-     * @api
-     */
-    public function getServer()
-    {
-        return $this->server;
-    }
-
-    /**
-     * Gets the request raw body data.
-     *
-     * @return string The request raw body data.
-     *
-     * @api
-     */
-    public function getContent()
-    {
-        return $this->content;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+rg2vlbVXlW==

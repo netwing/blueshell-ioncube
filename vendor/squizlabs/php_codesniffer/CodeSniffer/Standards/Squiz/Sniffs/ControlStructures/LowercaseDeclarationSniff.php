@@ -1,86 +1,39 @@
-<?php
-/**
- * Squiz_Sniffs_ControlStructures_LowercaseDeclarationSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Squiz_Sniffs_ControlStructures_LowercaseDeclarationSniff.
- *
- * Ensures all control structure keywords are lowercase.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class Squiz_Sniffs_ControlStructures_LowercaseDeclarationSniff implements PHP_CodeSniffer_Sniff
-{
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        return array(
-                T_IF,
-                T_ELSE,
-                T_ELSEIF,
-                T_FOREACH,
-                T_FOR,
-                T_DO,
-                T_SWITCH,
-                T_WHILE,
-                T_TRY,
-                T_CATCH,
-               );
-
-    }//end register()
-
-
-    /**
-     * Processes this test, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token in
-     *                                        the stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-
-        $content = $tokens[$stackPtr]['content'];
-        if ($content !== strtolower($content)) {
-            $error = '%s keyword must be lowercase; expected "%s" but found "%s"';
-            $data  = array(
-                      strtoupper($content),
-                      strtolower($content),
-                      $content,
-                     );
-            $phpcsFile->addError($error, $stackPtr, 'FoundUppercase', $data);
-        }
-
-    }//end process()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+J7W3fBPLRC7z

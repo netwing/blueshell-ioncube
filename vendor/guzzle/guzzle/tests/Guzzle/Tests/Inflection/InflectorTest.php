@@ -1,37 +1,40 @@
-<?php
-
-namespace Guzzle\Tests\Inflection;
-
-use Guzzle\Inflection\Inflector;
-
-/**
- * @covers Guzzle\Inflection\Inflector
- */
-class InflectorTest extends \Guzzle\Tests\GuzzleTestCase
-{
-    public function testReturnsDefaultInstance()
-    {
-        $this->assertSame(Inflector::getDefault(), Inflector::getDefault());
-    }
-
-    public function testSnake()
-    {
-        $this->assertEquals('camel_case', Inflector::getDefault()->snake('camelCase'));
-        $this->assertEquals('camel_case', Inflector::getDefault()->snake('CamelCase'));
-        $this->assertEquals('camel_case_words', Inflector::getDefault()->snake('CamelCaseWords'));
-        $this->assertEquals('camel_case_words', Inflector::getDefault()->snake('CamelCase_words'));
-        $this->assertEquals('test', Inflector::getDefault()->snake('test'));
-        $this->assertEquals('test', Inflector::getDefault()->snake('test'));
-        $this->assertEquals('expect100_continue', Inflector::getDefault()->snake('Expect100Continue'));
-    }
-
-    public function testCamel()
-    {
-        $this->assertEquals('CamelCase', Inflector::getDefault()->camel('camel_case'));
-        $this->assertEquals('CamelCaseWords', Inflector::getDefault()->camel('camel_case_words'));
-        $this->assertEquals('Test', Inflector::getDefault()->camel('test'));
-        $this->assertEquals('Expect100Continue', ucfirst(Inflector::getDefault()->camel('expect100_continue')));
-        // Get from cache
-        $this->assertEquals('Test', Inflector::getDefault()->camel('test', false));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+6pDDyd13ahrIHcv5nQBbenITr5e=

@@ -1,167 +1,88 @@
-<?php
-/**
- * CCodeGenerator class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CCodeGenerator is the base class for code generator classes.
- *
- * CCodeGenerator is a controller that predefines several actions for code generation purpose.
- * Derived classes mainly need to configure the {@link codeModel} property
- * override the {@link getSuccessMessage} method. The former specifies which
- * code model (extending {@link CCodeModel}) that this generator should use,
- * while the latter should return a success message to be displayed when
- * code files are successfully generated.
- *
- * @property string $pageTitle The page title.
- * @property string $viewPath The view path of the generator.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.gii
- * @since 1.1.2
- */
-class CCodeGenerator extends CController
-{
-	/**
-	 * @var string the layout to be used by the generator. Defaults to 'generator'.
-	 */
-	public $layout='generator';
-	/**
-	 * @var array a list of available code templates (name=>path)
-	 */
-	public $templates=array();
-	/**
-	 * @var string the code model class. This can be either a class name (if it can be autoloaded)
-	 * or a path alias referring to the class file.
-	 * Child classes must configure this property with a concrete value.
-	 */
-	public $codeModel;
-
-	private $_viewPath;
-
-	/**
-	 * @return string the page title
-	 */
-	public function getPageTitle()
-	{
-		return 'Gii - '.ucfirst($this->id).' Generator';
-	}
-
-	/**
-	 * The code generation action.
-	 * This is the action that displays the code generation interface.
-	 * Child classes mainly need to provide the 'index' view for collecting user parameters
-	 * for code generation.
-	 */
-	public function actionIndex()
-	{
-		$model=$this->prepare();
-		if($model->files!=array() && isset($_POST['generate'], $_POST['answers']))
-		{
-			$model->answers=$_POST['answers'];
-			$model->status=$model->save() ? CCodeModel::STATUS_SUCCESS : CCodeModel::STATUS_ERROR;
-		}
-
-		$this->render('index',array(
-			'model'=>$model,
-		));
-	}
-
-	/**
-	 * The code preview action.
-	 * This action shows up the specified generated code.
-	 * @throws CHttpException if unable to find code generated.
-	 */
-	public function actionCode()
-	{
-		$model=$this->prepare();
-		if(isset($_GET['id']) && isset($model->files[$_GET['id']]))
-		{
-			$this->renderPartial('/common/code', array(
-				'file'=>$model->files[$_GET['id']],
-			));
-		}
-		else
-			throw new CHttpException(404,'Unable to find the code you requested.');
-	}
-
-	/**
-	 * The code diff action.
-	 * This action shows up the difference between the newly generated code and the corresponding existing code.
-	 * @throws CHttpException if unable to find code generated.
-	 */
-	public function actionDiff()
-	{
-		Yii::import('gii.components.TextDiff');
-
-		$model=$this->prepare();
-		if(isset($_GET['id']) && isset($model->files[$_GET['id']]))
-		{
-			$file=$model->files[$_GET['id']];
-			if(!in_array($file->type,array('php', 'txt','js','css')))
-				$diff=false;
-			elseif($file->operation===CCodeFile::OP_OVERWRITE)
-				$diff=TextDiff::compare(file_get_contents($file->path), $file->content);
-			else
-				$diff='';
-
-			$this->renderPartial('/common/diff',array(
-				'file'=>$file,
-				'diff'=>$diff,
-			));
-		}
-		else
-			throw new CHttpException(404,'Unable to find the code you requested.');
-	}
-
-	/**
-	 * Returns the view path of the generator.
-	 * The "views" directory under the directory containing the generator class file will be returned.
-	 * @return string the view path of the generator
-	 */
-	public function getViewPath()
-	{
-		if($this->_viewPath===null)
-		{
-			$class=new ReflectionClass(get_class($this));
-			$this->_viewPath=dirname($class->getFileName()).DIRECTORY_SEPARATOR.'views';
-		}
-		return $this->_viewPath;
-	}
-
-	/**
-	 * @param string $value the view path of the generator.
-	 */
-	public function setViewPath($value)
-	{
-		$this->_viewPath=$value;
-	}
-
-	/**
-	 * Prepares the code model.
-	 */
-	protected function prepare()
-	{
-		if($this->codeModel===null)
-			throw new CException(get_class($this).'.codeModel property must be specified.');
-		$modelClass=Yii::import($this->codeModel,true);
-		$model=new $modelClass;
-		$model->loadStickyAttributes();
-		if(isset($_POST[$modelClass]))
-		{
-			$model->attributes=$_POST[$modelClass];
-			$model->status=CCodeModel::STATUS_PREVIEW;
-			if($model->validate())
-			{
-				$model->saveStickyAttributes();
-				$model->prepare();
-			}
-		}
-		return $model;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+5UXdVoP4z2roCJZ57Ve9iZ3WwnC=

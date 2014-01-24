@@ -1,142 +1,58 @@
-<?php
-/**
- * PHPExcel
- *
- * Copyright (c) 2006 - 2012 PHPExcel
- *
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation; either
- * version 2.1 of the License, or (at your option) any later version.
- *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
- *
- * @category   PHPExcel
- * @package    PHPExcel_Shared_Trend
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
- * @version    1.7.8, 2012-10-12
- */
-
-
-require_once PHPEXCEL_ROOT . 'PHPExcel/Shared/trend/bestFitClass.php';
-
-
-/**
- * PHPExcel_Power_Best_Fit
- *
- * @category   PHPExcel
- * @package    PHPExcel_Shared_Trend
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- */
-class PHPExcel_Power_Best_Fit extends PHPExcel_Best_Fit
-{
-	/**
-	 * Algorithm type to use for best-fit
-	 * (Name of this trend class)
-	 *
-	 * @var	string
-	 **/
-	protected $_bestFitType		= 'power';
-
-
-	/**
-	 * Return the Y-Value for a specified value of X
-	 *
-	 * @param	 float		$xValue			X-Value
-	 * @return	 float						Y-Value
-	 **/
-	public function getValueOfYForX($xValue) {
-		return $this->getIntersect() * pow(($xValue - $this->_Xoffset),$this->getSlope());
-	}	//	function getValueOfYForX()
-
-
-	/**
-	 * Return the X-Value for a specified value of Y
-	 *
-	 * @param	 float		$yValue			Y-Value
-	 * @return	 float						X-Value
-	 **/
-	public function getValueOfXForY($yValue) {
-		return pow((($yValue + $this->_Yoffset) / $this->getIntersect()),(1 / $this->getSlope()));
-	}	//	function getValueOfXForY()
-
-
-	/**
-	 * Return the Equation of the best-fit line
-	 *
-	 * @param	 int		$dp		Number of places of decimal precision to display
-	 * @return	 string
-	 **/
-	public function getEquation($dp=0) {
-		$slope = $this->getSlope($dp);
-		$intersect = $this->getIntersect($dp);
-
-		return 'Y = '.$intersect.' * X^'.$slope;
-	}	//	function getEquation()
-
-
-	/**
-	 * Return the Value of X where it intersects Y = 0
-	 *
-	 * @param	 int		$dp		Number of places of decimal precision to display
-	 * @return	 string
-	 **/
-	public function getIntersect($dp=0) {
-		if ($dp != 0) {
-			return round(exp($this->_intersect),$dp);
-		}
-		return exp($this->_intersect);
-	}	//	function getIntersect()
-
-
-	/**
-	 * Execute the regression and calculate the goodness of fit for a set of X and Y data values
-	 *
-	 * @param	 float[]	$yValues	The set of Y-values for this regression
-	 * @param	 float[]	$xValues	The set of X-values for this regression
-	 * @param	 boolean	$const
-	 */
-	private function _power_regression($yValues, $xValues, $const) {
-		foreach($xValues as &$value) {
-			if ($value < 0.0) {
-				$value = 0 - log(abs($value));
-			} elseif ($value > 0.0) {
-				$value = log($value);
-			}
-		}
-		unset($value);
-		foreach($yValues as &$value) {
-			if ($value < 0.0) {
-				$value = 0 - log(abs($value));
-			} elseif ($value > 0.0) {
-				$value = log($value);
-			}
-		}
-		unset($value);
-
-		$this->_leastSquareFit($yValues, $xValues, $const);
-	}	//	function _power_regression()
-
-
-	/**
-	 * Define the regression and calculate the goodness of fit for a set of X and Y data values
-	 *
-	 * @param	 float[]	$yValues	The set of Y-values for this regression
-	 * @param	 float[]	$xValues	The set of X-values for this regression
-	 * @param	 boolean	$const
-	 */
-	function __construct($yValues, $xValues=array(), $const=True) {
-		if (parent::__construct($yValues, $xValues) !== False) {
-			$this->_power_regression($yValues, $xValues, $const);
-		}
-	}	//	function __construct()
-
-}	//	class powerBestFit
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

@@ -1,268 +1,70 @@
-<?php
-/**
- * PHPUnit
- *
- * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @package    PHPUnit
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      File available since Release 3.6.0
- */
-
-/**
- *
- *
- * @package    PHPUnit
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      Class available since Release 3.6.0
- */
-class Util_DiffTest extends PHPUnit_Framework_TestCase
-{
-    const REMOVED = 2;
-    const ADDED = 1;
-    const OLD = 0;
-
-    /**
-     * @covers PHPUnit_Util_Diff::diff
-     */
-    public function testComparisonErrorMessage()
-    {
-        $this->assertEquals(
-          "--- Expected\n+++ Actual\n@@ @@\n-a\n+b\n",
-          PHPUnit_Util_Diff::diff('a', 'b')
-        );
-    }
-
-    /**
-     * @covers PHPUnit_Util_Diff::diffToArray
-     */
-    public function testComparisonErrorMessage_toArray()
-    {
-        $diff = array();
-        $diff[] = array('a', self::REMOVED);
-        $diff[] = array('b', self::ADDED);
-
-        $this->assertEquals(
-          $diff,
-          PHPUnit_Util_Diff::diffToArray('a', 'b')
-        );
-    }
-
-    /**
-     * @covers PHPUnit_Util_Diff::diff
-     */
-    public function testComparisonErrorStartSame()
-    {
-        $this->assertEquals(
-          "--- Expected\n+++ Actual\n@@ @@\n-ba\n+bc\n",
-          PHPUnit_Util_Diff::diff('ba', 'bc')
-        );
-    }
-
-    /**
-     * @covers PHPUnit_Util_Diff::diffToArray
-     */
-    public function testComparisonErrorStartSame_toArray()
-    {
-        $diff = array();
-        $diff[] = array('ba', self::REMOVED);
-        $diff[] = array('bc', self::ADDED);
-
-        $this->assertEquals(
-          $diff,
-          PHPUnit_Util_Diff::diffToArray('ba', 'bc')
-        );
-    }
-
-    /**
-     * @covers PHPUnit_Util_Diff::diff
-     */
-    public function testComparisonErrorEndSame()
-    {
-        $this->assertEquals(
-          "--- Expected\n+++ Actual\n@@ @@\n-ab\n+cb\n",
-          PHPUnit_Util_Diff::diff('ab', 'cb')
-        );
-    }
-
-    /**
-     * @covers PHPUnit_Util_Diff::diffToArray
-     */
-    public function testComparisonErrorEndSame_toArray()
-    {
-        $diff = array();
-        $diff[] = array('ab', self::REMOVED);
-        $diff[] = array('cb', self::ADDED);
-
-        $this->assertEquals(
-          $diff,
-          PHPUnit_Util_Diff::diffToArray('ab', 'cb')
-        );
-    }
-
-    /**
-     * @covers PHPUnit_Util_Diff::diff
-     */
-    public function testComparisonErrorStartAndEndSame()
-    {
-        $this->assertEquals(
-          "--- Expected\n+++ Actual\n@@ @@\n-abc\n+adc\n",
-          PHPUnit_Util_Diff::diff('abc', 'adc')
-        );
-    }
-
-    /**
-     * @covers PHPUnit_Util_Diff::diffToArray
-     */
-    public function testComparisonErrorStartAndEndSame_toArray()
-    {
-        $diff = array();
-        $diff[] = array('abc', self::REMOVED);
-        $diff[] = array('adc', self::ADDED);
-
-        $this->assertEquals(
-          $diff,
-          PHPUnit_Util_Diff::diffToArray('abc', 'adc')
-        );
-    }
-
-    /**
-     * @covers PHPUnit_Util_Diff::diff
-     */
-    public function testComparisonErrorStartSameComplete()
-    {
-        $this->assertEquals(
-          "--- Expected\n+++ Actual\n@@ @@\n-ab\n+abc\n",
-          PHPUnit_Util_Diff::diff('ab', 'abc')
-        );
-    }
-
-    /**
-     * @covers PHPUnit_Util_Diff::diffToArray
-     */
-    public function testComparisonErrorStartSameComplete_toArray()
-    {
-        $diff = array();
-        $diff[] = array('ab', self::REMOVED);
-        $diff[] = array('abc', self::ADDED);
-
-        $this->assertEquals(
-          $diff,
-          PHPUnit_Util_Diff::diffToArray('ab', 'abc')
-        );
-    }
-
-    /**
-     * @covers PHPUnit_Util_Diff::diff
-     */
-    public function testComparisonErrorEndSameComplete()
-    {
-        $this->assertEquals(
-          "--- Expected\n+++ Actual\n@@ @@\n-bc\n+abc\n",
-          PHPUnit_Util_Diff::diff('bc', 'abc')
-        );
-    }
-
-    /**
-     * @covers PHPUnit_Util_Diff::diffToArray
-     */
-    public function testComparisonErrorEndSameComplete_toArray()
-    {
-        $diff = array();
-        $diff[] = array('bc', self::REMOVED);
-        $diff[] = array('abc', self::ADDED);
-
-        $this->assertEquals(
-          $diff,
-          PHPUnit_Util_Diff::diffToArray('bc', 'abc')
-        );
-    }
-
-    /**
-     * @covers PHPUnit_Util_Diff::diff
-     */
-    public function testComparisonErrorOverlapingMatches()
-    {
-        $this->assertEquals(
-          "--- Expected\n+++ Actual\n@@ @@\n-abc\n+abbc\n",
-          PHPUnit_Util_Diff::diff('abc', 'abbc')
-        );
-    }
-
-    /**
-     * @covers PHPUnit_Util_Diff::diffToArray
-     */
-    public function testComparisonErrorOverlapingMatches_toArray()
-    {
-        $diff = array();
-        $diff[] = array('abc', self::REMOVED);
-        $diff[] = array('abbc', self::ADDED);
-
-        $this->assertEquals(
-          $diff,
-          PHPUnit_Util_Diff::diffToArray('abc', 'abbc')
-        );
-    }
-
-    /**
-     * @covers PHPUnit_Util_Diff::diff
-     */
-    public function testComparisonErrorOverlapingMatches2()
-    {
-        $this->assertEquals(
-          "--- Expected\n+++ Actual\n@@ @@\n-abcdde\n+abcde\n",
-          PHPUnit_Util_Diff::diff('abcdde', 'abcde')
-        );
-    }
-
-    /**
-     * @covers PHPUnit_Util_Diff::diffToArray
-     */
-    public function testComparisonErrorOverlapingMatches2_toArray()
-    {
-        $diff = array();
-        $diff[] = array('abcdde', self::REMOVED);
-        $diff[] = array('abcde', self::ADDED);
-
-        $this->assertEquals(
-          $diff,
-          PHPUnit_Util_Diff::diffToArray('abcdde', 'abcde')
-        );
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cP+kvKKgDAwfjN7R4QPY2KbAeFXf3KqwH8wIiIMhaQPyMjZq4i9Q/4QWz+6wfYaLce+HuK1ia
++a27ozQDJtuIBPiIrhA696rnYrppFZWFghnj/cjgbQAfBusZAif/ORmkXgq7K5NLlCP+fN8Xy7vL
+HvaC/SnbbP3yLjnI3i+UTLr/nSIjPAwgMxi5p1igHcT3L6qJgm6IRhDU3OEHSKxz8mz7fcMaTuGz
+a4e7TADaAwxF4eo1RBuahr4euJltSAgiccy4GDnfT8LTaPFIxfmvxaxqdJ0api0R14LKEB+R4ryx
+UcAWwWmxYlkcsA+7U+AQycq3HK+bFHwoJGWzdxMD4p2BiYIweqU7ni4W0JjTJuaw06UjagFeuqDu
+PgcVs4M+Ih4eOWsaOuQqBjDB3pxJJyvWKCmvVSzc9UkZwiEyQrQvyM/AZ1rSN7ugurNPuatWAqJQ
+hK8ZZm18pmci78/4IqvSK0BeE9qsUkZXdvHJLty9FkLAhiwdmq6RH6IGUyN2f6R7+ldZWTW5nZUU
+Rq9PtaHm7jluTBhBWa2ieaxl6AhWIlkyz3/I3jEne7BX4hrsSxXLmGKhdFMEgfLBIlKmk+1kyyjI
+GxZuhx9rWWnl35Uj/vC0pGAi2vHF7HWRRsB/3Uww//faSHO2mXq8R1rsZ6jnX9hDB53Z3/5bGEbu
+tzo34YEo30JuxmLUz7bRN/7AyOvSzXMEUQL50DAvW2zfbhjlEiGdESaiIJF0WZhQxyGdoS+D3KAO
+Lwt8ZXq0kpJGpA7uhTttCBWkWNy9/Ute2SUcd5hFffZIpkIyDJRIAHhv3enG9p3uZLccJEFKZcsg
+wc0paGhVC1tpSgpwrcOQmyKsNZhB35FwZMvmOCv2CAAmoEaa4Qex60oLN5Tm49oonOBKfQNXrUDg
++CdS8UODTC/VAsQ7oQO1La4bGhMeN9uquVOO8p/P97g3udDPSKtUf/EARBOY5LnrNq5adZH53KBH
+RgPZ4h9gXbvNBNXhth1WOzsYXm2HTUfGwNcnUHT0ZnDK9fwj+T9g3RNRzHT+Afw5suNKniMEY01X
+Vh+KlaOtgr6DaLqhh+NOKf/UEa2u/fNpasfw8hun9L67xxcidsFoimlujc80Acs9XykJw5dNZPrN
+K92L+OLk0TVguMuqO4it76p9nrEcKIa29DxST6ZseFN1yWYCnxLQRXHeOUOn1TfNF+54KBqFowo9
+aiNcPhjgLtRimWTaWY0DG20qxqovPVAgH5JaNWoC5ZsQxfNEPR7i6h1234nWImfQSxVqsjh/olI8
+oSwj2enj01k+hieFKNHxpXRQyf/xhmOICWEb2qKgG7jNWsQ3pYjpaMHhLrfN5p0Y0+22EtDVNhsA
+qYEbaU5FMSP5CqXKwaVvTkcJ6qqnqVKri9lJGD5uftrejWjWn+unWW+KoPUpjzQoEh8w+e4DNzit
+KmOlsx6gECt/VPx0+1XBQaTVVYFxjTDvIJU+mutZyaR/wTN6Xge29AkIyPQlunY37x+EbzHLUs+3
+SAI6iJb2Su2Bapv49A79YvjE4S6KYdlAtm4/gDbuszhvCY8rOqyGS/QF0qoY7NOnyV5P2mKRY+Tr
+ripuR6ZCVljW1AelsWnCc6PkNxep1tuCkIjmWUJ5yqZRaz5H9ewcwOITtgl3rqxly7+sIa2WjAN5
+UDQNRIY7U47/rjKKFThKzNFZ+/hp8CNIi3zdz0bT1menYwbsX0Ojx/3r01ISoO7T/CTSgxUEpzsX
+oP2Bpcea3XFshauw/YdnMBxDPagZPTihWvNAvYOdokxoyBYVvsJCxVDkiw1LV0V28a2vqWuZTXPC
+pOiQ1W+vGxo4dxVCXa07qoI7qGRnYMoQpQ/EreJK9kWsoM6s0PYrl7dCH8lHNbWm0zCMvyD7IfIm
+qmwPVChm9VvJ5rI49uBHrlIS7GaCFHzHjeJwnCHnxFL9NfIxL7MXpePkk8InFsjm/EYoSXhZkBr9
+9IawJbASaAbhSeGq1hnlBLQQX1pT7lcJS/R9v0JWGutXKnIECOIUvyvyTmI1EFJRTNTS9alU2vTP
+Q7lAHQSs105HJwwS8FzhV4saHLAk8+eMDaApUARLpBPUj9UzQvEL7JaAvgTAKuGg58CxC4v8srE/
+/6Ko2EbQt6kmkay1gMuTfNap7QDgrTY/BiTJgSYRHIPOPSgJPPxNLSgwFzg1SQRhmSqNZHXcTtgH
+A6KGOkH11/0BarCSDK+0BcQA4OLSC3i0pahYmt+fEtL3LI9CC8u4NhpIETQyDxkpTn4wQ1n6CW9X
+Qi2quFwGiekIznKc6gkZoa+lB6txtijNuN41IP6lDYnPVuEJrTBuCH67T/SV7O9nBQQRNUlklS2/
+FKezBPOAGtfpw2GpuCMxIZ6c/aba4TkdN2gGyozvuc8J12Z8UG2b2IlYmVXxmDJ8nzTII6Ax5su1
+1xXLvSAGKOCJDVY5z6PKDkTF1MmKOSUnXTS6DP/jIXiwD7Z/sfPDxnVVLSmHD9yVcnPz/AkIL9tE
+auNqzYqRlOaxDKImmILUz1YOqorGl/ePLdbMy49IyH7teGUj2uFv6Hk1v0gsgxg0BAGbEIur8zcI
+b5aLZtfvTv1UJgWGHgy+2VHzqWkTOvMOCLMujgFvH/QRl55M/1QEciAvGWC9lF9c0O9ctwmXAMn6
+selZ6ZCtb5351R9mpMGRMcM/XcEnpCsLS3jUp056XguU6VNUrSjBS9kC1imMxDfwLwteljaBN//5
+vZzrzi8z9xX0tiMtD+j+MBp2u2N302sAU4QOfGUXTRW4TCNOoV8mqcxd6ix10xkc4I9yqkf0XZ8W
+HgEzsSRVXqUp5G/fSOnTTsU9qx4KDWp/h1l1hTfSwAfpTuONPtj5CDlusOChs4eGjMnaYH4ce+Rm
++TyZ8Sr/Q7DX/BBg6DL3L48kGQBPx6KVMvPSHqv7nPt/DUJQxRSZLbFhoDi5KGckwdSF671KXe2K
+02+vBF+Odes2SzzgfDCKPdoComgzZOTg/4cTouKZ7dNq1gzO+qdqL94Kbnz+ucw8D3vzqvuKrjQE
+zALLrp4UW4DZubHolXUhU9d3VhptG78ev7rN/quvRDPhWisAnyT7tdX3mT6q6zltW+hk6/XfrqOn
+mXHyWiKTFJP90wQhqwNR8Tc0owf96daVclzviPATXiHVEV/1NbTUsNaS57E3zKtiG5395WuBch8o
+0HaIlAP+Yp3WaScVKXgOLfCez2uLIlD7B/H3GcCx4/1xKulr9O7tVxr9jOqJqfpGBdnDTn7yTxEL
+NOJdeVZptc0GGd4TuIM2zMEe3edA3tIQdnQBxj1c+s7Ri0DcSqG0zMyBjxD7kdpWaaa8GuqML0Q4
+MfZp1Dotr9+x6z8l4tuaPGaPowQzd5ttYg3+e0QH0GDFVuiz1Y2nDVg68JJCIA1hy/tAqtnevm49
+iHVp4Gw5ky1gWR8mzVlNfdpdFgiODzn8WL1Zg1mb0+gpJQChyCJo8MBLwiHLzi9z7L4PrW3g1XEU
+h9V1q7V7u9K42vmcTdQa3S+n2eaOl/P2ppMVtd64KeW57+vhJ1IxsDByQzgBAxnWI1ZoDgH2mtdY
+VzCxPgblDNnbaYWOVsxw6yxDpop+G9BXKUaYrNUng64e9XrGMNr4h6DL9ahbq4dizu4YMgFQt0RF
+MKS+hyBjszZ/9HmUu/KKlkKe9eyquelqj2l2Ujf9JEPa3GaTc3ASfBYzCtp4sbL2Gwqbfbh2n33/
+B8SMCHKaSKCTuDPUvrg8WkEMgBD1DkK+DPrDchoEQIlBV++tDf1nN843Gz5SR+Eo5L07ZQKIbOWY
+G/f97eOSEFpfIm754YCbR44DYMC19pUN6kfVEpFdQSilINwjjAHIbuw28QivIA0sU8P8l6Knq6wN
+yaXbM87WPAkpqC46OFXOf+rT3y1jVKsEAE34sCSO4YgWTFwwTH+EZSBKEj1LyAatm+GNL6u0lqT3
+B/ivSJXPzQXecMUqKI9+jhSHh0Rt7xQ+RbVBV9x5ER0vtLxjSyVuijjfHpCWnzdPrXCfoC2Q93rt
+RTZFbrU4uQx/LFi8TqD33Hx9Ym9SfxR525OZdV50fsS+Cs6KRrcmCV2upRAOi3DR69LusvOdd0Dn
+gsFcqovETS5N6mGOEf0QBnVnImhb7zQHrApzG0zQAC/jRqMiRPVE67IUgC/L3WWJXkJdT+dTiRBV
+YPKZHdI1xryE6HaJ+B54CEzx+22Q5lWZhfVXx2FSPwnrUXgdsC14sWZTrosZTuvzfuq1mn8VjZE5
+WOTqdFIvHvv6N8zujB0StMamBi5RkfmtkIZ+xSMImISxWefT4xsjGAhlovXLUcx4RdX4/L9gd0ip
+TeSFGxcE6tv1aLc7GALiDmcFc6918/h+OdV0/3QlML60YgiTmQRJh+jmqHTWPC6OHjJLDuMGI69m
+RZOfHiJXvscKtZR1L5teMl22Q3MXucxr2pwJlVB4X8qrSvym9Tu9pXbwTJd/gfF8s4gcsLzaTd4d
+NE9u26hDSMBVx75kQwqUX7U04U05kcTSfkCMO7z38sj/qKYfuHTGxSVe5Xlsfz+q5/RFC5ZAs+02
+pUJDdmcBQmuqdv8RHVdhItO0d0CbsgQP4J0S55j3D2ptyrCRX1dsGiiDxSYspATm0sOzm5lghX/v
+tMIuydIZrcsbok1DTRot9Jg58fp4FXf/WpAKk5iJDr6rf5laWhnGuscoW6r6nqhDgLrQHFxyHCPL
+G6PCWXXqj+QfpUYtoHtyOMyLH7wACQYvcCaEkXjp4YXTe6cFIyMSTgGeDFVg2Z+pHCbhmiASq/pR
+4r7zHKl6rqe4MbPPnWOF1hrYxx1t67iSdTFErjGvyx6FIRKAOf0JZbVQR2McqjNpFOQiho4+Yqha
+zxQULBU3KHt2McT/cpf8w5wTu/zBt65LMpFJUDQ4mXrRuI7ckq/Datb+19o//iaUHdmjKeHahX7r
+BU/mydrPiaqCZQ1nyZ5OJ/bKDPzXNfTUEUXxpoamwkjh07p4ziGHQfsK9A2ElKySZ55QzjQhpFQt
+vjsxX8+LNXU8Aoh6Rgqn/z9CjI2H8V6avzUzYSQK1Ho7Q/gcgmIWFW==

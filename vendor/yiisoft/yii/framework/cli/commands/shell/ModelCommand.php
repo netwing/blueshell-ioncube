@@ -1,488 +1,285 @@
-<?php
-/**
- * ModelCommand class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * ModelCommand generates a model class.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.cli.commands.shell
- * @since 1.0
- */
-class ModelCommand extends CConsoleCommand
-{
-	/**
-	 * @var string the directory that contains templates for the model command.
-	 * Defaults to null, meaning using 'framework/cli/views/shell/model'.
-	 * If you set this path and some views are missing in the directory,
-	 * the default views will be used.
-	 */
-	public $templatePath;
-	/**
-	 * @var string the directory that contains test fixtures.
-	 * Defaults to null, meaning using 'protected/tests/fixtures'.
-	 * If this is false, it means fixture file should NOT be generated.
-	 */
-	public $fixturePath;
-	/**
-	 * @var string the directory that contains unit test classes.
-	 * Defaults to null, meaning using 'protected/tests/unit'.
-	 * If this is false, it means unit test file should NOT be generated.
-	 */
-	public $unitTestPath;
-
-	private $_schema;
-	private $_relations; // where we keep table relations
-	private $_tables;
-	private $_classes;
-
-	public function getHelp()
-	{
-		return <<<EOD
-USAGE
-  model <class-name> [table-name]
-
-DESCRIPTION
-  This command generates a model class with the specified class name.
-
-PARAMETERS
- * class-name: required, model class name. By default, the generated
-   model class file will be placed under the directory aliased as
-   'application.models'. To override this default, specify the class
-   name in terms of a path alias, e.g., 'application.somewhere.ClassName'.
-
-   If the model class belongs to a module, it should be specified
-   as 'ModuleID.models.ClassName'.
-
-   If the class name ends with '*', then a model class will be generated
-   for EVERY table in the database.
-
-   If the class name contains a regular expression deliminated by slashes,
-   then a model class will be generated for those tables whose name
-   matches the regular expression. If the regular expression contains
-   sub-patterns, the first sub-pattern will be used to generate the model
-   class name.
-
- * table-name: optional, the associated database table name. If not given,
-   it is assumed to be the model class name.
-
-   Note, when the class name ends with '*', this parameter will be
-   ignored.
-
-EXAMPLES
- * Generates the Post model:
-        model Post
-
- * Generates the Post model which is associated with table 'posts':
-        model Post posts
-
- * Generates the Post model which should belong to module 'admin':
-        model admin.models.Post
-
- * Generates a model class for every table in the current database:
-        model *
-
- * Same as above, but the model class files should be generated
-   under 'protected/models2':
-        model application.models2.*
-
- * Generates a model class for every table whose name is prefixed
-   with 'tbl_' in the current database. The model class will not
-   contain the table prefix.
-        model /^tbl_(.*)$/
-
- * Same as above, but the model class files should be generated
-   under 'protected/models2':
-        model application.models2./^tbl_(.*)$/
-
-EOD;
-	}
-
-	/**
-	 * Checks if the given table is a "many to many" helper table.
-	 * Their PK has 2 fields, and both of those fields are also FK to other separate tables.
-	 * @param CDbTableSchema $table table to inspect
-	 * @return boolean true if table matches description of helper table.
-	 */
-	protected function isRelationTable($table)
-	{
-		$pk=$table->primaryKey;
-		return (count($pk) === 2 // we want 2 columns
-			&& isset($table->foreignKeys[$pk[0]]) // pk column 1 is also a foreign key
-			&& isset($table->foreignKeys[$pk[1]]) // pk column 2 is also a foreign key
-			&& $table->foreignKeys[$pk[0]][0] !== $table->foreignKeys[$pk[1]][0]); // and the foreign keys point different tables
-	}
-
-	/**
-	 * Generate code to put in ActiveRecord class's relations() function.
-	 * @return array indexed by table names, each entry contains array of php code to go in appropriate ActiveRecord class.
-	 *		Empty array is returned if database couldn't be connected.
-	 */
-	protected function generateRelations()
-	{
-		$this->_relations=array();
-		$this->_classes=array();
-		foreach($this->_schema->getTables() as $table)
-		{
-			$tableName=$table->name;
-
-			if ($this->isRelationTable($table))
-			{
-				$pks=$table->primaryKey;
-				$fks=$table->foreignKeys;
-
-				$table0=$fks[$pks[1]][0];
-				$table1=$fks[$pks[0]][0];
-				$className0=$this->getClassName($table0);
-				$className1=$this->getClassName($table1);
-
-				$unprefixedTableName=$this->removePrefix($tableName,true);
-
-				$relationName=$this->generateRelationName($table0, $table1, true);
-				$this->_relations[$className0][$relationName]="array(self::MANY_MANY, '$className1', '$unprefixedTableName($pks[0], $pks[1])')";
-
-				$relationName=$this->generateRelationName($table1, $table0, true);
-				$this->_relations[$className1][$relationName]="array(self::MANY_MANY, '$className0', '$unprefixedTableName($pks[0], $pks[1])')";
-			}
-			else
-			{
-				$this->_classes[$tableName]=$className=$this->getClassName($tableName);
-				foreach ($table->foreignKeys as $fkName => $fkEntry)
-				{
-					// Put table and key name in variables for easier reading
-					$refTable=$fkEntry[0]; // Table name that current fk references to
-					$refKey=$fkEntry[1];   // Key in that table being referenced
-					$refClassName=$this->getClassName($refTable);
-
-					// Add relation for this table
-					$relationName=$this->generateRelationName($tableName, $fkName, false);
-					$this->_relations[$className][$relationName]="array(self::BELONGS_TO, '$refClassName', '$fkName')";
-
-					// Add relation for the referenced table
-					$relationType=$table->primaryKey === $fkName ? 'HAS_ONE' : 'HAS_MANY';
-					$relationName=$this->generateRelationName($refTable, $this->removePrefix($tableName), $relationType==='HAS_MANY');
-					$this->_relations[$refClassName][$relationName]="array(self::$relationType, '$className', '$fkName')";
-				}
-			}
-		}
-	}
-
-	protected function getClassName($tableName)
-	{
-		return isset($this->_tables[$tableName]) ? $this->_tables[$tableName] : $this->generateClassName($tableName);
-	}
-
-	/**
-	 * Generates model class name based on a table name
-	 * @param string $tableName the table name
-	 * @return string the generated model class name
-	 */
-	protected function generateClassName($tableName)
-	{
-		return str_replace(' ','',
-			ucwords(
-				trim(
-					strtolower(
-						str_replace(array('-','_'),' ',
-							preg_replace('/(?<![A-Z])[A-Z]/', ' \0', $tableName))))));
-	}
-
-	/**
-	 * Generates the mapping table between table names and class names.
-	 * @param CDbSchema $schema the database schema
-	 * @param string $pattern a regular expression that may be used to filter table names
-	 */
-	protected function generateClassNames($schema,$pattern=null)
-	{
-		$this->_tables=array();
-		foreach($schema->getTableNames() as $name)
-		{
-			if($pattern===null)
-				$this->_tables[$name]=$this->generateClassName($this->removePrefix($name));
-			elseif(preg_match($pattern,$name,$matches))
-			{
-				if(count($matches)>1 && !empty($matches[1]))
-					$className=$this->generateClassName($matches[1]);
-				else
-					$className=$this->generateClassName($matches[0]);
-				$this->_tables[$name]=empty($className) ? $name : $className;
-			}
-		}
-	}
-
-	/**
-	 * Generate a name for use as a relation name (inside relations() function in a model).
-	 * @param string $tableName the name of the table to hold the relation
-	 * @param string $fkName the foreign key name
-	 * @param boolean $multiple whether the relation would contain multiple objects
-	 * @return string the generated relation name
-	 */
-	protected function generateRelationName($tableName, $fkName, $multiple)
-	{
-		if(strcasecmp(substr($fkName,-2),'id')===0 && strcasecmp($fkName,'id'))
-			$relationName=rtrim(substr($fkName, 0, -2),'_');
-		else
-			$relationName=$fkName;
-		$relationName[0]=strtolower($relationName);
-
-		$rawName=$relationName;
-		if($multiple)
-			$relationName=$this->pluralize($relationName);
-
-		$table=$this->_schema->getTable($tableName);
-		$i=0;
-		while(isset($table->columns[$relationName]))
-			$relationName=$rawName.($i++);
-		return $relationName;
-	}
-
-	/**
-	 * Execute the action.
-	 * @param array $args command line parameters specific for this command
-	 * @return integer|null non zero application exit code for help or null on success
-	 */
-	public function run($args)
-	{
-		if(!isset($args[0]))
-		{
-			echo "Error: model class name is required.\n";
-			echo $this->getHelp();
-			return 1;
-		}
-		$className=$args[0];
-
-		if(($db=Yii::app()->getDb())===null)
-		{
-			echo "Error: an active 'db' connection is required.\n";
-			echo "If you already added 'db' component in application configuration,\n";
-			echo "please quit and re-enter the yiic shell.\n";
-			return 1;
-		}
-
-		$db->active=true;
-		$this->_schema=$db->schema;
-
-		if(!preg_match('/^[\w\.\-\*]*(.*?)$/',$className,$matches))
-		{
-			echo "Error: model class name is invalid.\n";
-			return 1;
-		}
-
-		if(empty($matches[1]))  // without regular expression
-		{
-			$this->generateClassNames($this->_schema);
-			if(($pos=strrpos($className,'.'))===false)
-				$basePath=Yii::getPathOfAlias('application.models');
-			else
-			{
-				$basePath=Yii::getPathOfAlias(substr($className,0,$pos));
-				$className=substr($className,$pos+1);
-			}
-			if($className==='*') // generate all models
-				$this->generateRelations();
-			else
-			{
-				$tableName=isset($args[1])?$args[1]:$className;
-				$tableName=$this->addPrefix($tableName);
-				$this->_tables[$tableName]=$className;
-				$this->generateRelations();
-				$this->_classes=array($tableName=>$className);
-			}
-		}
-		else  // with regular expression
-		{
-			$pattern=$matches[1];
-			$pos=strrpos($className,$pattern);
-			if($pos>0)  // only regexp is given
-				$basePath=Yii::getPathOfAlias(rtrim(substr($className,0,$pos),'.'));
-			else
-				$basePath=Yii::getPathOfAlias('application.models');
-			$this->generateClassNames($this->_schema,$pattern);
-			$classes=$this->_tables;
-			$this->generateRelations();
-			$this->_classes=$classes;
-		}
-
-		if(count($this->_classes)>1)
-		{
-			$entries=array();
-			$count=0;
-			foreach($this->_classes as $tableName=>$className)
-				$entries[]=++$count.". $className ($tableName)";
-			echo "The following model classes (tables) match your criteria:\n";
-			echo implode("\n",$entries)."\n\n";
-			if(!$this->confirm("Do you want to generate the above classes?"))
-				return;
-		}
-
-		$templatePath=$this->templatePath===null?YII_PATH.'/cli/views/shell/model':$this->templatePath;
-		$fixturePath=$this->fixturePath===null?Yii::getPathOfAlias('application.tests.fixtures'):$this->fixturePath;
-		$unitTestPath=$this->unitTestPath===null?Yii::getPathOfAlias('application.tests.unit'):$this->unitTestPath;
-
-		$list=array();
-		$files=array();
-		foreach ($this->_classes as $tableName=>$className)
-		{
-			$files[$className]=$classFile=$basePath.DIRECTORY_SEPARATOR.$className.'.php';
-			$list['models/'.$className.'.php']=array(
-				'source'=>$templatePath.DIRECTORY_SEPARATOR.'model.php',
-				'target'=>$classFile,
-				'callback'=>array($this,'generateModel'),
-				'params'=>array($className,$tableName),
-			);
-			if($fixturePath!==false)
-			{
-				$list['fixtures/'.$tableName.'.php']=array(
-					'source'=>$templatePath.DIRECTORY_SEPARATOR.'fixture.php',
-					'target'=>$fixturePath.DIRECTORY_SEPARATOR.$tableName.'.php',
-					'callback'=>array($this,'generateFixture'),
-					'params'=>$this->_schema->getTable($tableName),
-				);
-			}
-			if($unitTestPath!==false)
-			{
-				$fixtureName=$this->pluralize($className);
-				$fixtureName[0]=strtolower($fixtureName);
-				$list['unit/'.$className.'Test.php']=array(
-					'source'=>$templatePath.DIRECTORY_SEPARATOR.'test.php',
-					'target'=>$unitTestPath.DIRECTORY_SEPARATOR.$className.'Test.php',
-					'callback'=>array($this,'generateTest'),
-					'params'=>array($className,$fixtureName),
-				);
-			}
-		}
-
-		$this->copyFiles($list);
-
-		foreach($files as $className=>$file)
-		{
-			if(!class_exists($className,false))
-				include_once($file);
-		}
-
-		$classes=implode(", ", $this->_classes);
-
-		echo <<<EOD
-
-The following model classes are successfully generated:
-    $classes
-
-If you have a 'db' database connection, you can test these models now with:
-    \$model={$className}::model()->find();
-    print_r(\$model);
-
-EOD;
-	}
-
-	public function generateModel($source,$params)
-	{
-		list($className,$tableName)=$params;
-		$rules=array();
-		$labels=array();
-		$relations=array();
-		if(($table=$this->_schema->getTable($tableName))!==null)
-		{
-			$required=array();
-			$integers=array();
-			$numerical=array();
-			$length=array();
-			$safe=array();
-			foreach($table->columns as $column)
-			{
-				$label=ucwords(trim(strtolower(str_replace(array('-','_'),' ',preg_replace('/(?<![A-Z])[A-Z]/', ' \0', $column->name)))));
-				$label=preg_replace('/\s+/',' ',$label);
-				if(strcasecmp(substr($label,-3),' id')===0)
-					$label=substr($label,0,-3);
-				$labels[$column->name]=$label;
-				if($column->isPrimaryKey && $table->sequenceName!==null)
-					continue;
-				$r=!$column->allowNull && $column->defaultValue===null;
-				if($r)
-					$required[]=$column->name;
-				if($column->type==='integer')
-					$integers[]=$column->name;
-				elseif($column->type==='double')
-					$numerical[]=$column->name;
-				elseif($column->type==='string' && $column->size>0)
-					$length[$column->size][]=$column->name;
-				elseif(!$column->isPrimaryKey && !$r)
-					$safe[]=$column->name;
-			}
-			if($required!==array())
-				$rules[]="array('".implode(', ',$required)."', 'required')";
-			if($integers!==array())
-				$rules[]="array('".implode(', ',$integers)."', 'numerical', 'integerOnly'=>true)";
-			if($numerical!==array())
-				$rules[]="array('".implode(', ',$numerical)."', 'numerical')";
-			if($length!==array())
-			{
-				foreach($length as $len=>$cols)
-					$rules[]="array('".implode(', ',$cols)."', 'length', 'max'=>$len)";
-			}
-			if($safe!==array())
-				$rules[]="array('".implode(', ',$safe)."', 'safe')";
-
-			if(isset($this->_relations[$className]) && is_array($this->_relations[$className]))
-				$relations=$this->_relations[$className];
-		}
-		else
-			echo "Warning: the table '$tableName' does not exist in the database.\n";
-
-		if(!is_file($source))  // fall back to default ones
-			$source=YII_PATH.'/cli/views/shell/model/'.basename($source);
-		return $this->renderFile($source,array(
-			'className'=>$className,
-			'tableName'=>$this->removePrefix($tableName,true),
-			'columns'=>isset($table) ? $table->columns : array(),
-			'rules'=>$rules,
-			'labels'=>$labels,
-			'relations'=>$relations,
-		),true);
-	}
-
-	public function generateFixture($source,$table)
-	{
-		if(!is_file($source))  // fall back to default ones
-			$source=YII_PATH.'/cli/views/shell/model/'.basename($source);
-		return $this->renderFile($source, array(
-			'table'=>$table,
-		),true);
-	}
-
-	public function generateTest($source,$params)
-	{
-		list($className,$fixtureName)=$params;
-		if(!is_file($source))  // fall back to default ones
-			$source=YII_PATH.'/cli/views/shell/model/'.basename($source);
-		return $this->renderFile($source, array(
-			'className'=>$className,
-			'fixtureName'=>$fixtureName,
-		),true);
-	}
-
-	protected function removePrefix($tableName,$addBrackets=false)
-	{
-		$tablePrefix=Yii::app()->getDb()->tablePrefix;
-		if($tablePrefix!='' && !strncmp($tableName,$tablePrefix,strlen($tablePrefix)))
-		{
-			$tableName=substr($tableName,strlen($tablePrefix));
-			if($addBrackets)
-				$tableName='{{'.$tableName.'}}';
-		}
-		return $tableName;
-	}
-
-	protected function addPrefix($tableName)
-	{
-		$tablePrefix=Yii::app()->getDb()->tablePrefix;
-		if($tablePrefix!='' && strncmp($tableName,$tablePrefix,strlen($tablePrefix)))
-			$tableName=$tablePrefix.$tableName;
-		return $tableName;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

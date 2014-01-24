@@ -1,118 +1,43 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/**
- * CodeIgniter
- *
- * An open source application development framework for PHP 5.1.6 or newer
- *
- * @package		CodeIgniter
- * @author		ExpressionEngine Dev Team
- * @copyright	Copyright (c) 2008 - 2011, EllisLab, Inc.
- * @license		http://codeigniter.com/user_guide/license.html
- * @link		http://codeigniter.com
- * @since		Version 1.0
- * @filesource
- */
-
-// ------------------------------------------------------------------------
-
-/**
- * CodeIgniter Benchmark Class
- *
- * This class enables you to mark points and calculate the time difference
- * between them.  Memory consumption can also be displayed.
- *
- * @package		CodeIgniter
- * @subpackage	Libraries
- * @category	Libraries
- * @author		ExpressionEngine Dev Team
- * @link		http://codeigniter.com/user_guide/libraries/benchmark.html
- */
-class CI_Benchmark {
-
-	/**
-	 * List of all benchmark markers and when they were added
-	 *
-	 * @var array
-	 */
-	var $marker = array();
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * Set a benchmark marker
-	 *
-	 * Multiple calls to this function can be made so that several
-	 * execution points can be timed
-	 *
-	 * @access	public
-	 * @param	string	$name	name of the marker
-	 * @return	void
-	 */
-	function mark($name)
-	{
-		$this->marker[$name] = microtime();
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * Calculates the time difference between two marked points.
-	 *
-	 * If the first parameter is empty this function instead returns the
-	 * {elapsed_time} pseudo-variable. This permits the full system
-	 * execution time to be shown in a template. The output class will
-	 * swap the real value for this variable.
-	 *
-	 * @access	public
-	 * @param	string	a particular marked point
-	 * @param	string	a particular marked point
-	 * @param	integer	the number of decimal places
-	 * @return	mixed
-	 */
-	function elapsed_time($point1 = '', $point2 = '', $decimals = 4)
-	{
-		if ($point1 == '')
-		{
-			return '{elapsed_time}';
-		}
-
-		if ( ! isset($this->marker[$point1]))
-		{
-			return '';
-		}
-
-		if ( ! isset($this->marker[$point2]))
-		{
-			$this->marker[$point2] = microtime();
-		}
-
-		list($sm, $ss) = explode(' ', $this->marker[$point1]);
-		list($em, $es) = explode(' ', $this->marker[$point2]);
-
-		return number_format(($em + $es) - ($sm + $ss), $decimals);
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * Memory Usage
-	 *
-	 * This function returns the {memory_usage} pseudo-variable.
-	 * This permits it to be put it anywhere in a template
-	 * without the memory being calculated until the end.
-	 * The output class will swap the real value for this variable.
-	 *
-	 * @access	public
-	 * @return	string
-	 */
-	function memory_usage()
-	{
-		return '{memory_usage}';
-	}
-
-}
-
-// END CI_Benchmark class
-
-/* End of file Benchmark.php */
-/* Location: ./system/core/Benchmark.php */
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+L+j+WJ1i8ie44v3x9j4VQBf4uJOW

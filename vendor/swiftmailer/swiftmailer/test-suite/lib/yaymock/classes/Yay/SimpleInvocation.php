@@ -1,163 +1,68 @@
-<?php
-
-/*
- This program is free software: you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation, either version 3 of the License, or
- (at your option) any later version.
- 
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
-
- You should have received a copy of the GNU General Public License
- along with this program.  If not, see <http://www.gnu.org/licenses/>.
- 
- */
- 
-//require 'Yay/Invocation.php';
-//require 'Yay/MockGenerator.php';
-
-/**
- * The standard implementation of the Invocation interface.
- * @author Chris Corbyn <chris@w3style.co.uk>
- * @package Yay
- */
-class Yay_SimpleInvocation implements Yay_Invocation
-{
-  
-  /**
-   * The Object on which the Inovation occurred.
-   * @var object
-   * @access private
-   */
-  private $_object;
-  
-  /**
-   * The method name invoked.
-   * @var string
-   * @access private
-   */
-  private $_method;
-  
-  /**
-   * The arguments in the Invocation.
-   * @var array
-   * @access private
-   */
-  private $_arguments;
-  
-  /**
-   * Create a new SimpleInvocation with the given details.
-   * @param object $object
-   * @param string $method
-   * @param array &$arguments
-   */
-  public function __construct($object, $method, array &$arguments)
-  {
-    $this->_object = $object;
-    //Massage __call() overloading so the interface is tested correctly
-    if ($method == '__call')
-    {
-      $method = array_shift($arguments);
-      $args =& array_shift($arguments);
-      $arguments =& $args;
-    }
-    $this->_method = $method;
-    $this->_arguments =& $arguments;
-  }
-  
-  /**
-   * Get the object which this Invocation occured on.
-   * @return object
-   */
-  public function getObject()
-  {
-    return $this->_object;
-  }
-  
-  /**
-   * Get the method name of the invoked method.
-   * @return string
-   */
-  public function getMethod()
-  {
-    return $this->_method;
-  }
-  
-  /**
-   * Get the argument list in the Invocation.
-   * @return array
-   */
-  public function &getArguments()
-  {
-    return $this->_arguments;
-  }
-  
-  /**
-   * Describe this Invocation to $description.
-   * @param Yay_Description $description
-   */
-  public function describeTo(Yay_Description $description)
-  {
-    $description->appendText(sprintf(' of %s;', $this->_getInvocationSignature()));
-  }
-  
-  // -- Private methods
-  
-  private function _getInvocationSignature()
-  {
-    $class = Yay_MockGenerator::getInstance()
-      ->reverseNamingScheme(get_class($this->_object));
-    if (!empty($this->_arguments))
-    {
-      $args = array();
-      foreach ($this->_arguments as $arg)
-      {
-        $args[] = $this->_describeArgument($arg, '%s [%s]');
-      }
-      $params = implode(', ', $args);
-    }
-    else
-    {
-      $params = '';
-    }
-    return sprintf('%s::%s(%s)', $class, $this->_method, $params);
-  }
-  
-  private function _describeArgument($arg, $format)
-  {
-    $description = '';
-    if (is_int($arg))
-    {
-      $description = sprintf($format, 'int', $arg);
-    }
-    elseif (is_float($arg))
-    {
-      $description = sprintf($format, 'float', preg_replace('/^(.{8}).+/', '$1..', $arg));
-    }
-    elseif (is_numeric($arg))
-    {
-      $description = sprintf($format, 'number', preg_replace('/^(.{8}).+/', '$1..', $arg));
-    }
-    elseif (is_string($arg))
-    {
-      $description = sprintf($format, 'string', preg_replace('/^(.{8}).+/', '$1..', $arg));
-    }
-    elseif (is_object($arg))
-    {
-      $description = sprintf($format, 'object', get_class($arg));
-    }
-    elseif (is_array($arg))
-    {
-      $description = sprintf($format, 'array', count($arg) . ' items');
-    }
-    else
-    {
-      $description = sprintf($format, gettype($arg), preg_replace('/^(.{8}).+/', '$1..', (string) $arg));
-    }
-    return $description;
-  }
-  
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPtURJ6g6IBLDIrNPIMUBk7wIv6wekN9qiCL0A1MqI/yVE61pj6MmYZO1LsAUsJSfKS0VtdQe
+Vi53oDT87Ug88RwiD1EjC0BkphW+/Crim9TEreGRnbGcevxtlAnh4vuxu0adtvH+fPc35rBql8b6
+/qBtRTsB6sCg8AVvKDPxsT0qgspz2u1YjKkCyhYK7Za9Auruu20fijHJFmQjT1Kcj2ejAG9nwS+a
+H4Wt56BirKI52rd//CssmQzHAE4xzt2gh9fl143SQNGAOdvL6CIvPbBee7dOgrr+HBr/EV8V//yr
+K5NmuJZrKPF7cnocaECs19BfxMBDN08AUM4pjA9kZ4xJrwA/wwdTz0qbAl4/5m2EH4vtmgnvwCAg
+SJb+O5ahafLhykRjW0vhPpxBzX4kOIGrFfDd4frcPgWYWvSL9g7QEEymNZNal4WpHYmw44Tff0+g
+Rtces9sO9muniK5/BwV9O8nFNaf4v/X6KdO1xbFWVo1CDc6aNgzrd2Yf3ebKNvezwSEVeASSUau0
+6Yvvztucq7qPYAU4NGqtixoj6lSz61NewFaG72WpD7/ZJQO0fSfTWsQI1yFTbTF09IwrzdriQY9+
+/D5rtXHwg+siGPOfnurYCWapYEdKwjkwGkOmZpyKeUEwZjKS7qfJZigPsWfr6kmFeqseDVlfigNu
+MWaJutCqALM+fsn49jHMyu6ZdaRAvnr83Wau8zCuq7Jcm/xUhQLPeTzS+sxOrhMJts3HrY0qR2Ur
+Lb3A/hpG/w4+RiTUMnkXstrhOmkXRgVVBctoNVjwnSODhbmdMACaAbSuQdu1LbFbR1zt2h1Rck7I
+aCeFRsE0fnrqcoVG4HKdtDdtYtxbaxZELvpOSj01kHtFXo7mTs1/T4MI8o3+X3yJ8yKISgajpOvN
+CimUZ0x13mRaNjzjWJV+Zw3MNWpKbt4vdrqAicjIgvE4Jwgdt6zAb5zbAUZRR3O5ERoTEWljURq4
+rmiFqHQWNC3vPuGoEU86+UREYxHWxt2vypMdmXZ5v8T7iR/DapiTlSsDhIttCVmVLTk+IbYV7UEp
+Q2+wrFDDx4dmGaDJeUhMZHSpMYug6U3xhZDjXUOvpoRl8ClRbhk8ZNlqfel0lHwaeYVTbFmr9wSa
+N6vzTNiVorGeHE5iXVyPUuHkIwZTRPlDyRQms8aJlW1Hxq4D5LmqE8hLPlaXRuRu3GutSt+75aq7
+ndyqhkyH7SmK4/C1G3WJkj7C7HIydAds2hKw2VZD9mp6yylO1QULwm6uO+aj27DgGLnS4ao8OEZX
+sqEfoyZUJOReRUNTvRro4FzbYKon5k+iBPuCqEF++V6D9UcqbNuR62kcaQJteLjbKCsdO7dbKyvc
+1/UiRgv3Z/bJtnbX2buC8k3XaAMOFcQFfPZRelHow0uLEdgEThZ0az5CLlmgtJxBLCDr0Sm6EMQ8
+aY/AXXP22FWxeToxJg4G5QAuXGMRHq1bj3S4fYyBN/P4YT0PRTvg/DIjfJP44Sd0jjSFBubvXcXj
+tQPXJCwV3FyuSmIQGLCw4QhrL/pA9cYZoWk7mOCaWUQVNq4O1D5bcTkvhpPZ06xgd5qjMtW2HsC0
+dDNCr4syfGzTTaC/Xph7e9sti9WLTPvj5ABSbRR0WO7hDK4KkspDveKw3HNqqiAn97Y9ygeHTO2Z
+pt31Jc6ThMLPp9ZsfESAo9Ss+nQ/4hSQvoy4b/Lg0cZ1e52q5NqjzZEwn+Ha1JMfoeGAN5cWdwND
+mEaat5UhmxSxoXJUlPwtMrOEAG+oEWGiQUfL8v8o5f0x5MpBl+okwRd/069gdxdf7bKO0zL+zXG4
+CEI7VGYCLLxzaOzZ1XaL8AFRY/BHDg52MZb6vsCO4AouX4pLEocJXkSDaopbt0hfk6AEBfCRG8IM
+7rTZG2zyrzeU08hRpqbDoQ0bj0rvEKZy5mBHqIsi3O/zxFA9VkHEbSo5lPaGUZBxXeeIzJQFLYU3
+NOt3myuqqQf+H1kK0ZMC+FLx1P0pseC1b+8NRHeAOj38sXEZh80wCNHP2+/vfvIOLSbIT54g/A/n
+4wtgDFRWcZ1sp3RR5sU9g6Euc5g8jXwGM4+NGXug6cqJ+aM09xONca6bVkI8Qp8KvbcrnEgn5xOg
+Ren+OWUyMKjToIr4SNidfKMK56AbLQPT08nrrBuAZYJGc4XOpuOYz7wR84dmfhe11+33NCU82hoB
+wPAUxuSHbKW1sClF3kzEEq9wmA038wny/QCgtjYqX/ojRrDvnuO1k7B+LfK8xOH/raPUTj8o6ufP
+e+0QhIUnLCa+arcNT5VfbzLNLlmDFLvheVad/u4iB1Dkr8DTpxdP5wbQZMZ+flWQPWergWB12Klm
+nGrsz8/OzGfcjj6RRNTBSl+WeKXG6SjTH4+KvzmYJV8L2qpWKZUtYCNjr+urminmOv199cQprAy8
+87kzqRl25K1lRY3jSGF8lD71NP2w0yg4IXTznnFDEhUo4z6YjBa4a3F7/EepZHoSDGkGSJTTNo1m
+uVhmTMPwsrPLi/ABun93bqz4W/mtIgAqhmdOD7aJMRuMJ6qoBv2Mt/q4cc2KDOjUOLo9nNVWFoGo
+9dFOgCvwnoiFoUYl1VE06xdMDI7kSueQPLagjGb0NBj04ZB+4b/Jfp/sXxz1fOqWd/aVIT5rxpCQ
+fHm+UKyTnReka0jsrLOeiJzzEo6TfD5tT5o5Ne3Ii1BlEcB5chntOb7l9hW41L6ZrBhlXCyXEsL1
+GwB25KTqw1v0QRHrjJMV3gMLPl2Cp5VCig9bElFtFOzJzOB5bD7BC4nhnk+26jiHRCjmRa89wzMv
+WTvylUtsvdFeVmw9bXnqtSksPDq5YElZwqqaAWPbthhd324Wu1W7BLOHlNg4SkLut90Fspu6Cc+D
+pfIJcrdRvGoUeXbc+QmvQwDCx2hczn7bynpMRAficUPyIgrfnwutbpXGbE30kn6AdS3gOYo/6bop
+kOsU2HhFEhgNwXIfMg25hF7lvLzcJZuhkT08E4UYUPsTuvBGEUfVFMxTSJw/n98vJSMO8AZ3HXiL
+Ww0Aov5Y10RrHOn0pJ9z0lLTaebiKc4hkxN0VLrLRl5WEjiNwdrz+RRrZImVPV1WaGuJ0cThmcNu
+BNusOk0o1UrmOO5z68OEfry12Z4wTgCg6BW3A/bYvMloydhXaiEDvSMWUIvA644wN+xMPimQdfNj
+18X6XQ/bhD9DXNGXRD036J/2hZZik2xzifFundiSrRR8mbtRk3MZzQq5fVV06N4Rv9CmAMoraTiA
+ezZrELjNDqcQ9o93w/YHsB1cGVgVoTT3J4lix37gcdl4NvXTDHQ21ductQeZaCVEuIbQUw4I1NJ4
+yyaJbOOPBKw6uAahfTjtaHca1g98inpHiMgTGR6JhWGxTmFpZygbH28CjM3x4Qh4dpDcr9ds5mSJ
+gEES3ivjMl/4KKoryM4ZwKNHFr6ZlKYY8GzFxHfKg/tlZCSX7almyKlGcVjaplgeX57OJzHYHyTJ
+CCtD8T8JlgS06HQqTujk2mQT9ho2hAkOFfZgFdw6oSPhCGGIceCwLHv7SPsIMI2lb/hF+3us4gC3
+if3JEtfKvIhdTspXLHhhGuKdkb/cMYCF5mbXV4HnAfzE9MS+CYBiuo5yOHMsg2tu+bob/4yOBipU
+RKgoksjYcrJIUR8Es4rqqqmL49EtvJ1UdAYhkPw/mjdZ9/j/xwL0R2/84AQ9VyweHSZYnyovmgvM
+U4dXLBYsMaKbVZRtGwrJmaq/Brtt1Ycs+UPQ//sXaPRG4vjd7HPW0r7AqnRVsG2V3cu+tcBDN6i/
+iJUsoLkHPOOvXpO0JlR7e5uZ+rtCSX5g3dA/YnnFpJRiX4EXMc1Z+gfErR+rFu5VA3LFja2cVD+C
+njUeZXWdhpEeBtYrx0WO9QhlnXq/0sdAn2PQPKDHpMytwe3rGaNgDQJFeVzibrqrbhbqA0mwkfKv
+1r1JA5KgS68wj+lP47re2bVj5Q4rQ3EiimJdgu+BdYav8mf9mud0K6rwiN3C8Kb/wyQ28aKrbCtr
+I/rVLYH0b6hdAjTAMFkI+NIwx2rhULXgR1y33MDEhLLcK69xPbEigIAT7oqbe1NK6rM5ytaMeeu9
+rEgSvNteIhXsO5D2jNp9Usu/rX4Ye5o1ZAt4O8uI+VT+bVMucCxZ+iXHyoLm3MUkX47I2SHbA95p
+ASrfL64CO30YC50idtxcM27yGtt2d2OzLMcPXAa8om5wR6RTJ9gB6S0UryXYRWn9xonOchToBJ6j
+4BKANfr+LxH29Z5YHMFuLqqDfriaMJrjkRjzqGUS1lS8k1csgHylFtTJ526m5Fa4wWEB1DgJs01L
+3qzZwNznmuVjwOwW4QcsJfc930OHggZ9rrxSClglLDHu/u5ujiisZrZWJDLVxVkC5UeTtBmkaGNJ
+3MzwVQhGaQp/pgqkYLK//WUrJrO+7neHe4i+WKcCqze6bB0zYVnw3ZWKAo/7sNr+vt4odTeK7wbY
+wuITNzU5UTBsIyLotj1u4nNtPjfL0CCuZjsewfVf6qD5+sULCnzfTOZoaZYlYGv2FYO7h4NN2auG
+i1lWGoHFaDuVHj7uteaAv5LbDdug2T24rGbOw/TrWLvwDk76vX/A28tCEBiZ+aKDpk4C2GHv+7nS
+dOIvMoOTzbFCDKtO9nFyy3HUa5xEVUNTBttXH1nLjXqrisvXy4GmOwxMEpciMk/iqmOwe0V1dvGK
+Ia+d0smoSM3yHRSAbLpOMn7idkrF+f3LSq09BvH36GyQAQT8Y18HxOLU65U/LJ+WHTUU4fGMss4+
+eEr4+tDAcAZ0Ic0jAYuxYmk0bDfZ2gL1icbND5iASTeg9G7audBwkS4wFTQPaJXTVg6IyRNYoqGD
+L0emaOutyDS/AFa919kcBfH37G==

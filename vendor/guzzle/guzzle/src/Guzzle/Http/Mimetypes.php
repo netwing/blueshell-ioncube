@@ -1,962 +1,183 @@
-<?php
-
-namespace Guzzle\Http;
-
-/**
- * Provides mappings of file extensions to mimetypes
- * @link http://svn.apache.org/repos/asf/httpd/httpd/branches/1.3.x/conf/mime.types
- */
-class Mimetypes
-{
-    /** @var self */
-    protected static $instance;
-
-    /** @var array Mapping of extension to mimetype */
-    protected $mimetypes = array(
-        '3dml' => 'text/vnd.in3d.3dml',
-        '3g2' => 'video/3gpp2',
-        '3gp' => 'video/3gpp',
-        '7z' => 'application/x-7z-compressed',
-        'aab' => 'application/x-authorware-bin',
-        'aac' => 'audio/x-aac',
-        'aam' => 'application/x-authorware-map',
-        'aas' => 'application/x-authorware-seg',
-        'abw' => 'application/x-abiword',
-        'ac' => 'application/pkix-attr-cert',
-        'acc' => 'application/vnd.americandynamics.acc',
-        'ace' => 'application/x-ace-compressed',
-        'acu' => 'application/vnd.acucobol',
-        'acutc' => 'application/vnd.acucorp',
-        'adp' => 'audio/adpcm',
-        'aep' => 'application/vnd.audiograph',
-        'afm' => 'application/x-font-type1',
-        'afp' => 'application/vnd.ibm.modcap',
-        'ahead' => 'application/vnd.ahead.space',
-        'ai' => 'application/postscript',
-        'aif' => 'audio/x-aiff',
-        'aifc' => 'audio/x-aiff',
-        'aiff' => 'audio/x-aiff',
-        'air' => 'application/vnd.adobe.air-application-installer-package+zip',
-        'ait' => 'application/vnd.dvb.ait',
-        'ami' => 'application/vnd.amiga.ami',
-        'apk' => 'application/vnd.android.package-archive',
-        'application' => 'application/x-ms-application',
-        'apr' => 'application/vnd.lotus-approach',
-        'asa' => 'text/plain',
-        'asax' => 'application/octet-stream',
-        'asc' => 'application/pgp-signature',
-        'ascx' => 'text/plain',
-        'asf' => 'video/x-ms-asf',
-        'ashx' => 'text/plain',
-        'asm' => 'text/x-asm',
-        'asmx' => 'text/plain',
-        'aso' => 'application/vnd.accpac.simply.aso',
-        'asp' => 'text/plain',
-        'aspx' => 'text/plain',
-        'asx' => 'video/x-ms-asf',
-        'atc' => 'application/vnd.acucorp',
-        'atom' => 'application/atom+xml',
-        'atomcat' => 'application/atomcat+xml',
-        'atomsvc' => 'application/atomsvc+xml',
-        'atx' => 'application/vnd.antix.game-component',
-        'au' => 'audio/basic',
-        'avi' => 'video/x-msvideo',
-        'aw' => 'application/applixware',
-        'axd' => 'text/plain',
-        'azf' => 'application/vnd.airzip.filesecure.azf',
-        'azs' => 'application/vnd.airzip.filesecure.azs',
-        'azw' => 'application/vnd.amazon.ebook',
-        'bat' => 'application/x-msdownload',
-        'bcpio' => 'application/x-bcpio',
-        'bdf' => 'application/x-font-bdf',
-        'bdm' => 'application/vnd.syncml.dm+wbxml',
-        'bed' => 'application/vnd.realvnc.bed',
-        'bh2' => 'application/vnd.fujitsu.oasysprs',
-        'bin' => 'application/octet-stream',
-        'bmi' => 'application/vnd.bmi',
-        'bmp' => 'image/bmp',
-        'book' => 'application/vnd.framemaker',
-        'box' => 'application/vnd.previewsystems.box',
-        'boz' => 'application/x-bzip2',
-        'bpk' => 'application/octet-stream',
-        'btif' => 'image/prs.btif',
-        'bz' => 'application/x-bzip',
-        'bz2' => 'application/x-bzip2',
-        'c' => 'text/x-c',
-        'c11amc' => 'application/vnd.cluetrust.cartomobile-config',
-        'c11amz' => 'application/vnd.cluetrust.cartomobile-config-pkg',
-        'c4d' => 'application/vnd.clonk.c4group',
-        'c4f' => 'application/vnd.clonk.c4group',
-        'c4g' => 'application/vnd.clonk.c4group',
-        'c4p' => 'application/vnd.clonk.c4group',
-        'c4u' => 'application/vnd.clonk.c4group',
-        'cab' => 'application/vnd.ms-cab-compressed',
-        'car' => 'application/vnd.curl.car',
-        'cat' => 'application/vnd.ms-pki.seccat',
-        'cc' => 'text/x-c',
-        'cct' => 'application/x-director',
-        'ccxml' => 'application/ccxml+xml',
-        'cdbcmsg' => 'application/vnd.contact.cmsg',
-        'cdf' => 'application/x-netcdf',
-        'cdkey' => 'application/vnd.mediastation.cdkey',
-        'cdmia' => 'application/cdmi-capability',
-        'cdmic' => 'application/cdmi-container',
-        'cdmid' => 'application/cdmi-domain',
-        'cdmio' => 'application/cdmi-object',
-        'cdmiq' => 'application/cdmi-queue',
-        'cdx' => 'chemical/x-cdx',
-        'cdxml' => 'application/vnd.chemdraw+xml',
-        'cdy' => 'application/vnd.cinderella',
-        'cer' => 'application/pkix-cert',
-        'cfc' => 'application/x-coldfusion',
-        'cfm' => 'application/x-coldfusion',
-        'cgm' => 'image/cgm',
-        'chat' => 'application/x-chat',
-        'chm' => 'application/vnd.ms-htmlhelp',
-        'chrt' => 'application/vnd.kde.kchart',
-        'cif' => 'chemical/x-cif',
-        'cii' => 'application/vnd.anser-web-certificate-issue-initiation',
-        'cil' => 'application/vnd.ms-artgalry',
-        'cla' => 'application/vnd.claymore',
-        'class' => 'application/java-vm',
-        'clkk' => 'application/vnd.crick.clicker.keyboard',
-        'clkp' => 'application/vnd.crick.clicker.palette',
-        'clkt' => 'application/vnd.crick.clicker.template',
-        'clkw' => 'application/vnd.crick.clicker.wordbank',
-        'clkx' => 'application/vnd.crick.clicker',
-        'clp' => 'application/x-msclip',
-        'cmc' => 'application/vnd.cosmocaller',
-        'cmdf' => 'chemical/x-cmdf',
-        'cml' => 'chemical/x-cml',
-        'cmp' => 'application/vnd.yellowriver-custom-menu',
-        'cmx' => 'image/x-cmx',
-        'cod' => 'application/vnd.rim.cod',
-        'com' => 'application/x-msdownload',
-        'conf' => 'text/plain',
-        'cpio' => 'application/x-cpio',
-        'cpp' => 'text/x-c',
-        'cpt' => 'application/mac-compactpro',
-        'crd' => 'application/x-mscardfile',
-        'crl' => 'application/pkix-crl',
-        'crt' => 'application/x-x509-ca-cert',
-        'cryptonote' => 'application/vnd.rig.cryptonote',
-        'cs' => 'text/plain',
-        'csh' => 'application/x-csh',
-        'csml' => 'chemical/x-csml',
-        'csp' => 'application/vnd.commonspace',
-        'css' => 'text/css',
-        'cst' => 'application/x-director',
-        'csv' => 'text/csv',
-        'cu' => 'application/cu-seeme',
-        'curl' => 'text/vnd.curl',
-        'cww' => 'application/prs.cww',
-        'cxt' => 'application/x-director',
-        'cxx' => 'text/x-c',
-        'dae' => 'model/vnd.collada+xml',
-        'daf' => 'application/vnd.mobius.daf',
-        'dataless' => 'application/vnd.fdsn.seed',
-        'davmount' => 'application/davmount+xml',
-        'dcr' => 'application/x-director',
-        'dcurl' => 'text/vnd.curl.dcurl',
-        'dd2' => 'application/vnd.oma.dd2+xml',
-        'ddd' => 'application/vnd.fujixerox.ddd',
-        'deb' => 'application/x-debian-package',
-        'def' => 'text/plain',
-        'deploy' => 'application/octet-stream',
-        'der' => 'application/x-x509-ca-cert',
-        'dfac' => 'application/vnd.dreamfactory',
-        'dic' => 'text/x-c',
-        'dir' => 'application/x-director',
-        'dis' => 'application/vnd.mobius.dis',
-        'dist' => 'application/octet-stream',
-        'distz' => 'application/octet-stream',
-        'djv' => 'image/vnd.djvu',
-        'djvu' => 'image/vnd.djvu',
-        'dll' => 'application/x-msdownload',
-        'dmg' => 'application/octet-stream',
-        'dms' => 'application/octet-stream',
-        'dna' => 'application/vnd.dna',
-        'doc' => 'application/msword',
-        'docm' => 'application/vnd.ms-word.document.macroenabled.12',
-        'docx' => 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-        'dot' => 'application/msword',
-        'dotm' => 'application/vnd.ms-word.template.macroenabled.12',
-        'dotx' => 'application/vnd.openxmlformats-officedocument.wordprocessingml.template',
-        'dp' => 'application/vnd.osgi.dp',
-        'dpg' => 'application/vnd.dpgraph',
-        'dra' => 'audio/vnd.dra',
-        'dsc' => 'text/prs.lines.tag',
-        'dssc' => 'application/dssc+der',
-        'dtb' => 'application/x-dtbook+xml',
-        'dtd' => 'application/xml-dtd',
-        'dts' => 'audio/vnd.dts',
-        'dtshd' => 'audio/vnd.dts.hd',
-        'dump' => 'application/octet-stream',
-        'dvi' => 'application/x-dvi',
-        'dwf' => 'model/vnd.dwf',
-        'dwg' => 'image/vnd.dwg',
-        'dxf' => 'image/vnd.dxf',
-        'dxp' => 'application/vnd.spotfire.dxp',
-        'dxr' => 'application/x-director',
-        'ecelp4800' => 'audio/vnd.nuera.ecelp4800',
-        'ecelp7470' => 'audio/vnd.nuera.ecelp7470',
-        'ecelp9600' => 'audio/vnd.nuera.ecelp9600',
-        'ecma' => 'application/ecmascript',
-        'edm' => 'application/vnd.novadigm.edm',
-        'edx' => 'application/vnd.novadigm.edx',
-        'efif' => 'application/vnd.picsel',
-        'ei6' => 'application/vnd.pg.osasli',
-        'elc' => 'application/octet-stream',
-        'eml' => 'message/rfc822',
-        'emma' => 'application/emma+xml',
-        'eol' => 'audio/vnd.digital-winds',
-        'eot' => 'application/vnd.ms-fontobject',
-        'eps' => 'application/postscript',
-        'epub' => 'application/epub+zip',
-        'es3' => 'application/vnd.eszigno3+xml',
-        'esf' => 'application/vnd.epson.esf',
-        'et3' => 'application/vnd.eszigno3+xml',
-        'etx' => 'text/x-setext',
-        'exe' => 'application/x-msdownload',
-        'exi' => 'application/exi',
-        'ext' => 'application/vnd.novadigm.ext',
-        'ez' => 'application/andrew-inset',
-        'ez2' => 'application/vnd.ezpix-album',
-        'ez3' => 'application/vnd.ezpix-package',
-        'f' => 'text/x-fortran',
-        'f4v' => 'video/x-f4v',
-        'f77' => 'text/x-fortran',
-        'f90' => 'text/x-fortran',
-        'fbs' => 'image/vnd.fastbidsheet',
-        'fcs' => 'application/vnd.isac.fcs',
-        'fdf' => 'application/vnd.fdf',
-        'fe_launch' => 'application/vnd.denovo.fcselayout-link',
-        'fg5' => 'application/vnd.fujitsu.oasysgp',
-        'fgd' => 'application/x-director',
-        'fh' => 'image/x-freehand',
-        'fh4' => 'image/x-freehand',
-        'fh5' => 'image/x-freehand',
-        'fh7' => 'image/x-freehand',
-        'fhc' => 'image/x-freehand',
-        'fig' => 'application/x-xfig',
-        'fli' => 'video/x-fli',
-        'flo' => 'application/vnd.micrografx.flo',
-        'flv' => 'video/x-flv',
-        'flw' => 'application/vnd.kde.kivio',
-        'flx' => 'text/vnd.fmi.flexstor',
-        'fly' => 'text/vnd.fly',
-        'fm' => 'application/vnd.framemaker',
-        'fnc' => 'application/vnd.frogans.fnc',
-        'for' => 'text/x-fortran',
-        'fpx' => 'image/vnd.fpx',
-        'frame' => 'application/vnd.framemaker',
-        'fsc' => 'application/vnd.fsc.weblaunch',
-        'fst' => 'image/vnd.fst',
-        'ftc' => 'application/vnd.fluxtime.clip',
-        'fti' => 'application/vnd.anser-web-funds-transfer-initiation',
-        'fvt' => 'video/vnd.fvt',
-        'fxp' => 'application/vnd.adobe.fxp',
-        'fxpl' => 'application/vnd.adobe.fxp',
-        'fzs' => 'application/vnd.fuzzysheet',
-        'g2w' => 'application/vnd.geoplan',
-        'g3' => 'image/g3fax',
-        'g3w' => 'application/vnd.geospace',
-        'gac' => 'application/vnd.groove-account',
-        'gdl' => 'model/vnd.gdl',
-        'geo' => 'application/vnd.dynageo',
-        'gex' => 'application/vnd.geometry-explorer',
-        'ggb' => 'application/vnd.geogebra.file',
-        'ggt' => 'application/vnd.geogebra.tool',
-        'ghf' => 'application/vnd.groove-help',
-        'gif' => 'image/gif',
-        'gim' => 'application/vnd.groove-identity-message',
-        'gmx' => 'application/vnd.gmx',
-        'gnumeric' => 'application/x-gnumeric',
-        'gph' => 'application/vnd.flographit',
-        'gqf' => 'application/vnd.grafeq',
-        'gqs' => 'application/vnd.grafeq',
-        'gram' => 'application/srgs',
-        'gre' => 'application/vnd.geometry-explorer',
-        'grv' => 'application/vnd.groove-injector',
-        'grxml' => 'application/srgs+xml',
-        'gsf' => 'application/x-font-ghostscript',
-        'gtar' => 'application/x-gtar',
-        'gtm' => 'application/vnd.groove-tool-message',
-        'gtw' => 'model/vnd.gtw',
-        'gv' => 'text/vnd.graphviz',
-        'gxt' => 'application/vnd.geonext',
-        'h' => 'text/x-c',
-        'h261' => 'video/h261',
-        'h263' => 'video/h263',
-        'h264' => 'video/h264',
-        'hal' => 'application/vnd.hal+xml',
-        'hbci' => 'application/vnd.hbci',
-        'hdf' => 'application/x-hdf',
-        'hh' => 'text/x-c',
-        'hlp' => 'application/winhlp',
-        'hpgl' => 'application/vnd.hp-hpgl',
-        'hpid' => 'application/vnd.hp-hpid',
-        'hps' => 'application/vnd.hp-hps',
-        'hqx' => 'application/mac-binhex40',
-        'hta' => 'application/octet-stream',
-        'htc' => 'text/html',
-        'htke' => 'application/vnd.kenameaapp',
-        'htm' => 'text/html',
-        'html' => 'text/html',
-        'hvd' => 'application/vnd.yamaha.hv-dic',
-        'hvp' => 'application/vnd.yamaha.hv-voice',
-        'hvs' => 'application/vnd.yamaha.hv-script',
-        'i2g' => 'application/vnd.intergeo',
-        'icc' => 'application/vnd.iccprofile',
-        'ice' => 'x-conference/x-cooltalk',
-        'icm' => 'application/vnd.iccprofile',
-        'ico' => 'image/x-icon',
-        'ics' => 'text/calendar',
-        'ief' => 'image/ief',
-        'ifb' => 'text/calendar',
-        'ifm' => 'application/vnd.shana.informed.formdata',
-        'iges' => 'model/iges',
-        'igl' => 'application/vnd.igloader',
-        'igm' => 'application/vnd.insors.igm',
-        'igs' => 'model/iges',
-        'igx' => 'application/vnd.micrografx.igx',
-        'iif' => 'application/vnd.shana.informed.interchange',
-        'imp' => 'application/vnd.accpac.simply.imp',
-        'ims' => 'application/vnd.ms-ims',
-        'in' => 'text/plain',
-        'ini' => 'text/plain',
-        'ipfix' => 'application/ipfix',
-        'ipk' => 'application/vnd.shana.informed.package',
-        'irm' => 'application/vnd.ibm.rights-management',
-        'irp' => 'application/vnd.irepository.package+xml',
-        'iso' => 'application/octet-stream',
-        'itp' => 'application/vnd.shana.informed.formtemplate',
-        'ivp' => 'application/vnd.immervision-ivp',
-        'ivu' => 'application/vnd.immervision-ivu',
-        'jad' => 'text/vnd.sun.j2me.app-descriptor',
-        'jam' => 'application/vnd.jam',
-        'jar' => 'application/java-archive',
-        'java' => 'text/x-java-source',
-        'jisp' => 'application/vnd.jisp',
-        'jlt' => 'application/vnd.hp-jlyt',
-        'jnlp' => 'application/x-java-jnlp-file',
-        'joda' => 'application/vnd.joost.joda-archive',
-        'jpe' => 'image/jpeg',
-        'jpeg' => 'image/jpeg',
-        'jpg' => 'image/jpeg',
-        'jpgm' => 'video/jpm',
-        'jpgv' => 'video/jpeg',
-        'jpm' => 'video/jpm',
-        'js' => 'text/javascript',
-        'json' => 'application/json',
-        'kar' => 'audio/midi',
-        'karbon' => 'application/vnd.kde.karbon',
-        'kfo' => 'application/vnd.kde.kformula',
-        'kia' => 'application/vnd.kidspiration',
-        'kml' => 'application/vnd.google-earth.kml+xml',
-        'kmz' => 'application/vnd.google-earth.kmz',
-        'kne' => 'application/vnd.kinar',
-        'knp' => 'application/vnd.kinar',
-        'kon' => 'application/vnd.kde.kontour',
-        'kpr' => 'application/vnd.kde.kpresenter',
-        'kpt' => 'application/vnd.kde.kpresenter',
-        'ksp' => 'application/vnd.kde.kspread',
-        'ktr' => 'application/vnd.kahootz',
-        'ktx' => 'image/ktx',
-        'ktz' => 'application/vnd.kahootz',
-        'kwd' => 'application/vnd.kde.kword',
-        'kwt' => 'application/vnd.kde.kword',
-        'lasxml' => 'application/vnd.las.las+xml',
-        'latex' => 'application/x-latex',
-        'lbd' => 'application/vnd.llamagraphics.life-balance.desktop',
-        'lbe' => 'application/vnd.llamagraphics.life-balance.exchange+xml',
-        'les' => 'application/vnd.hhe.lesson-player',
-        'lha' => 'application/octet-stream',
-        'link66' => 'application/vnd.route66.link66+xml',
-        'list' => 'text/plain',
-        'list3820' => 'application/vnd.ibm.modcap',
-        'listafp' => 'application/vnd.ibm.modcap',
-        'log' => 'text/plain',
-        'lostxml' => 'application/lost+xml',
-        'lrf' => 'application/octet-stream',
-        'lrm' => 'application/vnd.ms-lrm',
-        'ltf' => 'application/vnd.frogans.ltf',
-        'lvp' => 'audio/vnd.lucent.voice',
-        'lwp' => 'application/vnd.lotus-wordpro',
-        'lzh' => 'application/octet-stream',
-        'm13' => 'application/x-msmediaview',
-        'm14' => 'application/x-msmediaview',
-        'm1v' => 'video/mpeg',
-        'm21' => 'application/mp21',
-        'm2a' => 'audio/mpeg',
-        'm2v' => 'video/mpeg',
-        'm3a' => 'audio/mpeg',
-        'm3u' => 'audio/x-mpegurl',
-        'm3u8' => 'application/vnd.apple.mpegurl',
-        'm4a' => 'audio/mp4',
-        'm4u' => 'video/vnd.mpegurl',
-        'm4v' => 'video/mp4',
-        'ma' => 'application/mathematica',
-        'mads' => 'application/mads+xml',
-        'mag' => 'application/vnd.ecowin.chart',
-        'maker' => 'application/vnd.framemaker',
-        'man' => 'text/troff',
-        'mathml' => 'application/mathml+xml',
-        'mb' => 'application/mathematica',
-        'mbk' => 'application/vnd.mobius.mbk',
-        'mbox' => 'application/mbox',
-        'mc1' => 'application/vnd.medcalcdata',
-        'mcd' => 'application/vnd.mcd',
-        'mcurl' => 'text/vnd.curl.mcurl',
-        'mdb' => 'application/x-msaccess',
-        'mdi' => 'image/vnd.ms-modi',
-        'me' => 'text/troff',
-        'mesh' => 'model/mesh',
-        'meta4' => 'application/metalink4+xml',
-        'mets' => 'application/mets+xml',
-        'mfm' => 'application/vnd.mfmp',
-        'mgp' => 'application/vnd.osgeo.mapguide.package',
-        'mgz' => 'application/vnd.proteus.magazine',
-        'mid' => 'audio/midi',
-        'midi' => 'audio/midi',
-        'mif' => 'application/vnd.mif',
-        'mime' => 'message/rfc822',
-        'mj2' => 'video/mj2',
-        'mjp2' => 'video/mj2',
-        'mlp' => 'application/vnd.dolby.mlp',
-        'mmd' => 'application/vnd.chipnuts.karaoke-mmd',
-        'mmf' => 'application/vnd.smaf',
-        'mmr' => 'image/vnd.fujixerox.edmics-mmr',
-        'mny' => 'application/x-msmoney',
-        'mobi' => 'application/x-mobipocket-ebook',
-        'mods' => 'application/mods+xml',
-        'mov' => 'video/quicktime',
-        'movie' => 'video/x-sgi-movie',
-        'mp2' => 'audio/mpeg',
-        'mp21' => 'application/mp21',
-        'mp2a' => 'audio/mpeg',
-        'mp3' => 'audio/mpeg',
-        'mp4' => 'video/mp4',
-        'mp4a' => 'audio/mp4',
-        'mp4s' => 'application/mp4',
-        'mp4v' => 'video/mp4',
-        'mpc' => 'application/vnd.mophun.certificate',
-        'mpe' => 'video/mpeg',
-        'mpeg' => 'video/mpeg',
-        'mpg' => 'video/mpeg',
-        'mpg4' => 'video/mp4',
-        'mpga' => 'audio/mpeg',
-        'mpkg' => 'application/vnd.apple.installer+xml',
-        'mpm' => 'application/vnd.blueice.multipass',
-        'mpn' => 'application/vnd.mophun.application',
-        'mpp' => 'application/vnd.ms-project',
-        'mpt' => 'application/vnd.ms-project',
-        'mpy' => 'application/vnd.ibm.minipay',
-        'mqy' => 'application/vnd.mobius.mqy',
-        'mrc' => 'application/marc',
-        'mrcx' => 'application/marcxml+xml',
-        'ms' => 'text/troff',
-        'mscml' => 'application/mediaservercontrol+xml',
-        'mseed' => 'application/vnd.fdsn.mseed',
-        'mseq' => 'application/vnd.mseq',
-        'msf' => 'application/vnd.epson.msf',
-        'msh' => 'model/mesh',
-        'msi' => 'application/x-msdownload',
-        'msl' => 'application/vnd.mobius.msl',
-        'msty' => 'application/vnd.muvee.style',
-        'mts' => 'model/vnd.mts',
-        'mus' => 'application/vnd.musician',
-        'musicxml' => 'application/vnd.recordare.musicxml+xml',
-        'mvb' => 'application/x-msmediaview',
-        'mwf' => 'application/vnd.mfer',
-        'mxf' => 'application/mxf',
-        'mxl' => 'application/vnd.recordare.musicxml',
-        'mxml' => 'application/xv+xml',
-        'mxs' => 'application/vnd.triscape.mxs',
-        'mxu' => 'video/vnd.mpegurl',
-        'n-gage' => 'application/vnd.nokia.n-gage.symbian.install',
-        'n3' => 'text/n3',
-        'nb' => 'application/mathematica',
-        'nbp' => 'application/vnd.wolfram.player',
-        'nc' => 'application/x-netcdf',
-        'ncx' => 'application/x-dtbncx+xml',
-        'ngdat' => 'application/vnd.nokia.n-gage.data',
-        'nlu' => 'application/vnd.neurolanguage.nlu',
-        'nml' => 'application/vnd.enliven',
-        'nnd' => 'application/vnd.noblenet-directory',
-        'nns' => 'application/vnd.noblenet-sealer',
-        'nnw' => 'application/vnd.noblenet-web',
-        'npx' => 'image/vnd.net-fpx',
-        'nsf' => 'application/vnd.lotus-notes',
-        'oa2' => 'application/vnd.fujitsu.oasys2',
-        'oa3' => 'application/vnd.fujitsu.oasys3',
-        'oas' => 'application/vnd.fujitsu.oasys',
-        'obd' => 'application/x-msbinder',
-        'oda' => 'application/oda',
-        'odb' => 'application/vnd.oasis.opendocument.database',
-        'odc' => 'application/vnd.oasis.opendocument.chart',
-        'odf' => 'application/vnd.oasis.opendocument.formula',
-        'odft' => 'application/vnd.oasis.opendocument.formula-template',
-        'odg' => 'application/vnd.oasis.opendocument.graphics',
-        'odi' => 'application/vnd.oasis.opendocument.image',
-        'odm' => 'application/vnd.oasis.opendocument.text-master',
-        'odp' => 'application/vnd.oasis.opendocument.presentation',
-        'ods' => 'application/vnd.oasis.opendocument.spreadsheet',
-        'odt' => 'application/vnd.oasis.opendocument.text',
-        'oga' => 'audio/ogg',
-        'ogg' => 'audio/ogg',
-        'ogv' => 'video/ogg',
-        'ogx' => 'application/ogg',
-        'onepkg' => 'application/onenote',
-        'onetmp' => 'application/onenote',
-        'onetoc' => 'application/onenote',
-        'onetoc2' => 'application/onenote',
-        'opf' => 'application/oebps-package+xml',
-        'oprc' => 'application/vnd.palm',
-        'org' => 'application/vnd.lotus-organizer',
-        'osf' => 'application/vnd.yamaha.openscoreformat',
-        'osfpvg' => 'application/vnd.yamaha.openscoreformat.osfpvg+xml',
-        'otc' => 'application/vnd.oasis.opendocument.chart-template',
-        'otf' => 'application/x-font-otf',
-        'otg' => 'application/vnd.oasis.opendocument.graphics-template',
-        'oth' => 'application/vnd.oasis.opendocument.text-web',
-        'oti' => 'application/vnd.oasis.opendocument.image-template',
-        'otp' => 'application/vnd.oasis.opendocument.presentation-template',
-        'ots' => 'application/vnd.oasis.opendocument.spreadsheet-template',
-        'ott' => 'application/vnd.oasis.opendocument.text-template',
-        'oxt' => 'application/vnd.openofficeorg.extension',
-        'p' => 'text/x-pascal',
-        'p10' => 'application/pkcs10',
-        'p12' => 'application/x-pkcs12',
-        'p7b' => 'application/x-pkcs7-certificates',
-        'p7c' => 'application/pkcs7-mime',
-        'p7m' => 'application/pkcs7-mime',
-        'p7r' => 'application/x-pkcs7-certreqresp',
-        'p7s' => 'application/pkcs7-signature',
-        'p8' => 'application/pkcs8',
-        'pas' => 'text/x-pascal',
-        'paw' => 'application/vnd.pawaafile',
-        'pbd' => 'application/vnd.powerbuilder6',
-        'pbm' => 'image/x-portable-bitmap',
-        'pcf' => 'application/x-font-pcf',
-        'pcl' => 'application/vnd.hp-pcl',
-        'pclxl' => 'application/vnd.hp-pclxl',
-        'pct' => 'image/x-pict',
-        'pcurl' => 'application/vnd.curl.pcurl',
-        'pcx' => 'image/x-pcx',
-        'pdb' => 'application/vnd.palm',
-        'pdf' => 'application/pdf',
-        'pfa' => 'application/x-font-type1',
-        'pfb' => 'application/x-font-type1',
-        'pfm' => 'application/x-font-type1',
-        'pfr' => 'application/font-tdpfr',
-        'pfx' => 'application/x-pkcs12',
-        'pgm' => 'image/x-portable-graymap',
-        'pgn' => 'application/x-chess-pgn',
-        'pgp' => 'application/pgp-encrypted',
-        'php' => 'text/x-php',
-        'phps' => 'application/x-httpd-phps',
-        'pic' => 'image/x-pict',
-        'pkg' => 'application/octet-stream',
-        'pki' => 'application/pkixcmp',
-        'pkipath' => 'application/pkix-pkipath',
-        'plb' => 'application/vnd.3gpp.pic-bw-large',
-        'plc' => 'application/vnd.mobius.plc',
-        'plf' => 'application/vnd.pocketlearn',
-        'pls' => 'application/pls+xml',
-        'pml' => 'application/vnd.ctc-posml',
-        'png' => 'image/png',
-        'pnm' => 'image/x-portable-anymap',
-        'portpkg' => 'application/vnd.macports.portpkg',
-        'pot' => 'application/vnd.ms-powerpoint',
-        'potm' => 'application/vnd.ms-powerpoint.template.macroenabled.12',
-        'potx' => 'application/vnd.openxmlformats-officedocument.presentationml.template',
-        'ppam' => 'application/vnd.ms-powerpoint.addin.macroenabled.12',
-        'ppd' => 'application/vnd.cups-ppd',
-        'ppm' => 'image/x-portable-pixmap',
-        'pps' => 'application/vnd.ms-powerpoint',
-        'ppsm' => 'application/vnd.ms-powerpoint.slideshow.macroenabled.12',
-        'ppsx' => 'application/vnd.openxmlformats-officedocument.presentationml.slideshow',
-        'ppt' => 'application/vnd.ms-powerpoint',
-        'pptm' => 'application/vnd.ms-powerpoint.presentation.macroenabled.12',
-        'pptx' => 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
-        'pqa' => 'application/vnd.palm',
-        'prc' => 'application/x-mobipocket-ebook',
-        'pre' => 'application/vnd.lotus-freelance',
-        'prf' => 'application/pics-rules',
-        'ps' => 'application/postscript',
-        'psb' => 'application/vnd.3gpp.pic-bw-small',
-        'psd' => 'image/vnd.adobe.photoshop',
-        'psf' => 'application/x-font-linux-psf',
-        'pskcxml' => 'application/pskc+xml',
-        'ptid' => 'application/vnd.pvi.ptid1',
-        'pub' => 'application/x-mspublisher',
-        'pvb' => 'application/vnd.3gpp.pic-bw-var',
-        'pwn' => 'application/vnd.3m.post-it-notes',
-        'pya' => 'audio/vnd.ms-playready.media.pya',
-        'pyv' => 'video/vnd.ms-playready.media.pyv',
-        'qam' => 'application/vnd.epson.quickanime',
-        'qbo' => 'application/vnd.intu.qbo',
-        'qfx' => 'application/vnd.intu.qfx',
-        'qps' => 'application/vnd.publishare-delta-tree',
-        'qt' => 'video/quicktime',
-        'qwd' => 'application/vnd.quark.quarkxpress',
-        'qwt' => 'application/vnd.quark.quarkxpress',
-        'qxb' => 'application/vnd.quark.quarkxpress',
-        'qxd' => 'application/vnd.quark.quarkxpress',
-        'qxl' => 'application/vnd.quark.quarkxpress',
-        'qxt' => 'application/vnd.quark.quarkxpress',
-        'ra' => 'audio/x-pn-realaudio',
-        'ram' => 'audio/x-pn-realaudio',
-        'rar' => 'application/x-rar-compressed',
-        'ras' => 'image/x-cmu-raster',
-        'rb' => 'text/plain',
-        'rcprofile' => 'application/vnd.ipunplugged.rcprofile',
-        'rdf' => 'application/rdf+xml',
-        'rdz' => 'application/vnd.data-vision.rdz',
-        'rep' => 'application/vnd.businessobjects',
-        'res' => 'application/x-dtbresource+xml',
-        'resx' => 'text/xml',
-        'rgb' => 'image/x-rgb',
-        'rif' => 'application/reginfo+xml',
-        'rip' => 'audio/vnd.rip',
-        'rl' => 'application/resource-lists+xml',
-        'rlc' => 'image/vnd.fujixerox.edmics-rlc',
-        'rld' => 'application/resource-lists-diff+xml',
-        'rm' => 'application/vnd.rn-realmedia',
-        'rmi' => 'audio/midi',
-        'rmp' => 'audio/x-pn-realaudio-plugin',
-        'rms' => 'application/vnd.jcp.javame.midlet-rms',
-        'rnc' => 'application/relax-ng-compact-syntax',
-        'roff' => 'text/troff',
-        'rp9' => 'application/vnd.cloanto.rp9',
-        'rpss' => 'application/vnd.nokia.radio-presets',
-        'rpst' => 'application/vnd.nokia.radio-preset',
-        'rq' => 'application/sparql-query',
-        'rs' => 'application/rls-services+xml',
-        'rsd' => 'application/rsd+xml',
-        'rss' => 'application/rss+xml',
-        'rtf' => 'application/rtf',
-        'rtx' => 'text/richtext',
-        's' => 'text/x-asm',
-        'saf' => 'application/vnd.yamaha.smaf-audio',
-        'sbml' => 'application/sbml+xml',
-        'sc' => 'application/vnd.ibm.secure-container',
-        'scd' => 'application/x-msschedule',
-        'scm' => 'application/vnd.lotus-screencam',
-        'scq' => 'application/scvp-cv-request',
-        'scs' => 'application/scvp-cv-response',
-        'scurl' => 'text/vnd.curl.scurl',
-        'sda' => 'application/vnd.stardivision.draw',
-        'sdc' => 'application/vnd.stardivision.calc',
-        'sdd' => 'application/vnd.stardivision.impress',
-        'sdkd' => 'application/vnd.solent.sdkm+xml',
-        'sdkm' => 'application/vnd.solent.sdkm+xml',
-        'sdp' => 'application/sdp',
-        'sdw' => 'application/vnd.stardivision.writer',
-        'see' => 'application/vnd.seemail',
-        'seed' => 'application/vnd.fdsn.seed',
-        'sema' => 'application/vnd.sema',
-        'semd' => 'application/vnd.semd',
-        'semf' => 'application/vnd.semf',
-        'ser' => 'application/java-serialized-object',
-        'setpay' => 'application/set-payment-initiation',
-        'setreg' => 'application/set-registration-initiation',
-        'sfd-hdstx' => 'application/vnd.hydrostatix.sof-data',
-        'sfs' => 'application/vnd.spotfire.sfs',
-        'sgl' => 'application/vnd.stardivision.writer-global',
-        'sgm' => 'text/sgml',
-        'sgml' => 'text/sgml',
-        'sh' => 'application/x-sh',
-        'shar' => 'application/x-shar',
-        'shf' => 'application/shf+xml',
-        'sig' => 'application/pgp-signature',
-        'silo' => 'model/mesh',
-        'sis' => 'application/vnd.symbian.install',
-        'sisx' => 'application/vnd.symbian.install',
-        'sit' => 'application/x-stuffit',
-        'sitx' => 'application/x-stuffitx',
-        'skd' => 'application/vnd.koan',
-        'skm' => 'application/vnd.koan',
-        'skp' => 'application/vnd.koan',
-        'skt' => 'application/vnd.koan',
-        'sldm' => 'application/vnd.ms-powerpoint.slide.macroenabled.12',
-        'sldx' => 'application/vnd.openxmlformats-officedocument.presentationml.slide',
-        'slt' => 'application/vnd.epson.salt',
-        'sm' => 'application/vnd.stepmania.stepchart',
-        'smf' => 'application/vnd.stardivision.math',
-        'smi' => 'application/smil+xml',
-        'smil' => 'application/smil+xml',
-        'snd' => 'audio/basic',
-        'snf' => 'application/x-font-snf',
-        'so' => 'application/octet-stream',
-        'spc' => 'application/x-pkcs7-certificates',
-        'spf' => 'application/vnd.yamaha.smaf-phrase',
-        'spl' => 'application/x-futuresplash',
-        'spot' => 'text/vnd.in3d.spot',
-        'spp' => 'application/scvp-vp-response',
-        'spq' => 'application/scvp-vp-request',
-        'spx' => 'audio/ogg',
-        'src' => 'application/x-wais-source',
-        'sru' => 'application/sru+xml',
-        'srx' => 'application/sparql-results+xml',
-        'sse' => 'application/vnd.kodak-descriptor',
-        'ssf' => 'application/vnd.epson.ssf',
-        'ssml' => 'application/ssml+xml',
-        'st' => 'application/vnd.sailingtracker.track',
-        'stc' => 'application/vnd.sun.xml.calc.template',
-        'std' => 'application/vnd.sun.xml.draw.template',
-        'stf' => 'application/vnd.wt.stf',
-        'sti' => 'application/vnd.sun.xml.impress.template',
-        'stk' => 'application/hyperstudio',
-        'stl' => 'application/vnd.ms-pki.stl',
-        'str' => 'application/vnd.pg.format',
-        'stw' => 'application/vnd.sun.xml.writer.template',
-        'sub' => 'image/vnd.dvb.subtitle',
-        'sus' => 'application/vnd.sus-calendar',
-        'susp' => 'application/vnd.sus-calendar',
-        'sv4cpio' => 'application/x-sv4cpio',
-        'sv4crc' => 'application/x-sv4crc',
-        'svc' => 'application/vnd.dvb.service',
-        'svd' => 'application/vnd.svd',
-        'svg' => 'image/svg+xml',
-        'svgz' => 'image/svg+xml',
-        'swa' => 'application/x-director',
-        'swf' => 'application/x-shockwave-flash',
-        'swi' => 'application/vnd.aristanetworks.swi',
-        'sxc' => 'application/vnd.sun.xml.calc',
-        'sxd' => 'application/vnd.sun.xml.draw',
-        'sxg' => 'application/vnd.sun.xml.writer.global',
-        'sxi' => 'application/vnd.sun.xml.impress',
-        'sxm' => 'application/vnd.sun.xml.math',
-        'sxw' => 'application/vnd.sun.xml.writer',
-        't' => 'text/troff',
-        'tao' => 'application/vnd.tao.intent-module-archive',
-        'tar' => 'application/x-tar',
-        'tcap' => 'application/vnd.3gpp2.tcap',
-        'tcl' => 'application/x-tcl',
-        'teacher' => 'application/vnd.smart.teacher',
-        'tei' => 'application/tei+xml',
-        'teicorpus' => 'application/tei+xml',
-        'tex' => 'application/x-tex',
-        'texi' => 'application/x-texinfo',
-        'texinfo' => 'application/x-texinfo',
-        'text' => 'text/plain',
-        'tfi' => 'application/thraud+xml',
-        'tfm' => 'application/x-tex-tfm',
-        'thmx' => 'application/vnd.ms-officetheme',
-        'tif' => 'image/tiff',
-        'tiff' => 'image/tiff',
-        'tmo' => 'application/vnd.tmobile-livetv',
-        'torrent' => 'application/x-bittorrent',
-        'tpl' => 'application/vnd.groove-tool-template',
-        'tpt' => 'application/vnd.trid.tpt',
-        'tr' => 'text/troff',
-        'tra' => 'application/vnd.trueapp',
-        'trm' => 'application/x-msterminal',
-        'tsd' => 'application/timestamped-data',
-        'tsv' => 'text/tab-separated-values',
-        'ttc' => 'application/x-font-ttf',
-        'ttf' => 'application/x-font-ttf',
-        'ttl' => 'text/turtle',
-        'twd' => 'application/vnd.simtech-mindmapper',
-        'twds' => 'application/vnd.simtech-mindmapper',
-        'txd' => 'application/vnd.genomatix.tuxedo',
-        'txf' => 'application/vnd.mobius.txf',
-        'txt' => 'text/plain',
-        'u32' => 'application/x-authorware-bin',
-        'udeb' => 'application/x-debian-package',
-        'ufd' => 'application/vnd.ufdl',
-        'ufdl' => 'application/vnd.ufdl',
-        'umj' => 'application/vnd.umajin',
-        'unityweb' => 'application/vnd.unity',
-        'uoml' => 'application/vnd.uoml+xml',
-        'uri' => 'text/uri-list',
-        'uris' => 'text/uri-list',
-        'urls' => 'text/uri-list',
-        'ustar' => 'application/x-ustar',
-        'utz' => 'application/vnd.uiq.theme',
-        'uu' => 'text/x-uuencode',
-        'uva' => 'audio/vnd.dece.audio',
-        'uvd' => 'application/vnd.dece.data',
-        'uvf' => 'application/vnd.dece.data',
-        'uvg' => 'image/vnd.dece.graphic',
-        'uvh' => 'video/vnd.dece.hd',
-        'uvi' => 'image/vnd.dece.graphic',
-        'uvm' => 'video/vnd.dece.mobile',
-        'uvp' => 'video/vnd.dece.pd',
-        'uvs' => 'video/vnd.dece.sd',
-        'uvt' => 'application/vnd.dece.ttml+xml',
-        'uvu' => 'video/vnd.uvvu.mp4',
-        'uvv' => 'video/vnd.dece.video',
-        'uvva' => 'audio/vnd.dece.audio',
-        'uvvd' => 'application/vnd.dece.data',
-        'uvvf' => 'application/vnd.dece.data',
-        'uvvg' => 'image/vnd.dece.graphic',
-        'uvvh' => 'video/vnd.dece.hd',
-        'uvvi' => 'image/vnd.dece.graphic',
-        'uvvm' => 'video/vnd.dece.mobile',
-        'uvvp' => 'video/vnd.dece.pd',
-        'uvvs' => 'video/vnd.dece.sd',
-        'uvvt' => 'application/vnd.dece.ttml+xml',
-        'uvvu' => 'video/vnd.uvvu.mp4',
-        'uvvv' => 'video/vnd.dece.video',
-        'uvvx' => 'application/vnd.dece.unspecified',
-        'uvx' => 'application/vnd.dece.unspecified',
-        'vcd' => 'application/x-cdlink',
-        'vcf' => 'text/x-vcard',
-        'vcg' => 'application/vnd.groove-vcard',
-        'vcs' => 'text/x-vcalendar',
-        'vcx' => 'application/vnd.vcx',
-        'vis' => 'application/vnd.visionary',
-        'viv' => 'video/vnd.vivo',
-        'vor' => 'application/vnd.stardivision.writer',
-        'vox' => 'application/x-authorware-bin',
-        'vrml' => 'model/vrml',
-        'vsd' => 'application/vnd.visio',
-        'vsf' => 'application/vnd.vsf',
-        'vss' => 'application/vnd.visio',
-        'vst' => 'application/vnd.visio',
-        'vsw' => 'application/vnd.visio',
-        'vtu' => 'model/vnd.vtu',
-        'vxml' => 'application/voicexml+xml',
-        'w3d' => 'application/x-director',
-        'wad' => 'application/x-doom',
-        'wav' => 'audio/x-wav',
-        'wax' => 'audio/x-ms-wax',
-        'wbmp' => 'image/vnd.wap.wbmp',
-        'wbs' => 'application/vnd.criticaltools.wbs+xml',
-        'wbxml' => 'application/vnd.wap.wbxml',
-        'wcm' => 'application/vnd.ms-works',
-        'wdb' => 'application/vnd.ms-works',
-        'weba' => 'audio/webm',
-        'webm' => 'video/webm',
-        'webp' => 'image/webp',
-        'wg' => 'application/vnd.pmi.widget',
-        'wgt' => 'application/widget',
-        'wks' => 'application/vnd.ms-works',
-        'wm' => 'video/x-ms-wm',
-        'wma' => 'audio/x-ms-wma',
-        'wmd' => 'application/x-ms-wmd',
-        'wmf' => 'application/x-msmetafile',
-        'wml' => 'text/vnd.wap.wml',
-        'wmlc' => 'application/vnd.wap.wmlc',
-        'wmls' => 'text/vnd.wap.wmlscript',
-        'wmlsc' => 'application/vnd.wap.wmlscriptc',
-        'wmv' => 'video/x-ms-wmv',
-        'wmx' => 'video/x-ms-wmx',
-        'wmz' => 'application/x-ms-wmz',
-        'woff' => 'application/x-font-woff',
-        'wpd' => 'application/vnd.wordperfect',
-        'wpl' => 'application/vnd.ms-wpl',
-        'wps' => 'application/vnd.ms-works',
-        'wqd' => 'application/vnd.wqd',
-        'wri' => 'application/x-mswrite',
-        'wrl' => 'model/vrml',
-        'wsdl' => 'application/wsdl+xml',
-        'wspolicy' => 'application/wspolicy+xml',
-        'wtb' => 'application/vnd.webturbo',
-        'wvx' => 'video/x-ms-wvx',
-        'x32' => 'application/x-authorware-bin',
-        'x3d' => 'application/vnd.hzn-3d-crossword',
-        'xap' => 'application/x-silverlight-app',
-        'xar' => 'application/vnd.xara',
-        'xbap' => 'application/x-ms-xbap',
-        'xbd' => 'application/vnd.fujixerox.docuworks.binder',
-        'xbm' => 'image/x-xbitmap',
-        'xdf' => 'application/xcap-diff+xml',
-        'xdm' => 'application/vnd.syncml.dm+xml',
-        'xdp' => 'application/vnd.adobe.xdp+xml',
-        'xdssc' => 'application/dssc+xml',
-        'xdw' => 'application/vnd.fujixerox.docuworks',
-        'xenc' => 'application/xenc+xml',
-        'xer' => 'application/patch-ops-error+xml',
-        'xfdf' => 'application/vnd.adobe.xfdf',
-        'xfdl' => 'application/vnd.xfdl',
-        'xht' => 'application/xhtml+xml',
-        'xhtml' => 'application/xhtml+xml',
-        'xhvml' => 'application/xv+xml',
-        'xif' => 'image/vnd.xiff',
-        'xla' => 'application/vnd.ms-excel',
-        'xlam' => 'application/vnd.ms-excel.addin.macroenabled.12',
-        'xlc' => 'application/vnd.ms-excel',
-        'xlm' => 'application/vnd.ms-excel',
-        'xls' => 'application/vnd.ms-excel',
-        'xlsb' => 'application/vnd.ms-excel.sheet.binary.macroenabled.12',
-        'xlsm' => 'application/vnd.ms-excel.sheet.macroenabled.12',
-        'xlsx' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-        'xlt' => 'application/vnd.ms-excel',
-        'xltm' => 'application/vnd.ms-excel.template.macroenabled.12',
-        'xltx' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.template',
-        'xlw' => 'application/vnd.ms-excel',
-        'xml' => 'application/xml',
-        'xo' => 'application/vnd.olpc-sugar',
-        'xop' => 'application/xop+xml',
-        'xpi' => 'application/x-xpinstall',
-        'xpm' => 'image/x-xpixmap',
-        'xpr' => 'application/vnd.is-xpr',
-        'xps' => 'application/vnd.ms-xpsdocument',
-        'xpw' => 'application/vnd.intercon.formnet',
-        'xpx' => 'application/vnd.intercon.formnet',
-        'xsl' => 'application/xml',
-        'xslt' => 'application/xslt+xml',
-        'xsm' => 'application/vnd.syncml+xml',
-        'xspf' => 'application/xspf+xml',
-        'xul' => 'application/vnd.mozilla.xul+xml',
-        'xvm' => 'application/xv+xml',
-        'xvml' => 'application/xv+xml',
-        'xwd' => 'image/x-xwindowdump',
-        'xyz' => 'chemical/x-xyz',
-        'yaml' => 'text/yaml',
-        'yang' => 'application/yang',
-        'yin' => 'application/yin+xml',
-        'yml' => 'text/yaml',
-        'zaz' => 'application/vnd.zzazz.deck+xml',
-        'zip' => 'application/zip',
-        'zir' => 'application/vnd.zul',
-        'zirz' => 'application/vnd.zul',
-        'zmm' => 'application/vnd.handheld-entertainment+xml'
-    );
-
-    /**
-     * Get a singleton instance of the class
-     *
-     * @return self
-     * @codeCoverageIgnore
-     */
-    public static function getInstance()
-    {
-        if (!self::$instance) {
-            self::$instance = new self();
-        }
-
-        return self::$instance;
-    }
-
-    /**
-     * Get a mimetype value from a file extension
-     *
-     * @param string $extension File extension
-     *
-     * @return string|null
-     *
-     */
-    public function fromExtension($extension)
-    {
-        $extension = strtolower($extension);
-
-        return isset($this->mimetypes[$extension]) ? $this->mimetypes[$extension] : null;
-    }
-
-    /**
-     * Get a mimetype from a filename
-     *
-     * @param string $filename Filename to generate a mimetype from
-     *
-     * @return string|null
-     */
-    public function fromFilename($filename)
-    {
-        return $this->fromExtension(pathinfo($filename, PATHINFO_EXTENSION));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

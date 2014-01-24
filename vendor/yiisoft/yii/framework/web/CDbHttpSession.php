@@ -1,298 +1,140 @@
-<?php
-/**
- * CDbHttpSession class
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CDbHttpSession extends {@link CHttpSession} by using database as session data storage.
- *
- * CDbHttpSession stores session data in a DB table named 'YiiSession'. The table name
- * can be changed by setting {@link sessionTableName}. If the table does not exist,
- * it will be automatically created if {@link autoCreateSessionTable} is set true.
- *
- * The following is the table structure:
- *
- * <pre>
- * CREATE TABLE YiiSession
- * (
- *     id CHAR(32) PRIMARY KEY,
- *     expire INTEGER,
- *     data BLOB
- * )
- * </pre>
- * Where 'BLOB' refers to the BLOB-type of your preffered database.
- *
- * Note that if your session IDs are more than 32 characters (can be changed via
- * session.hash_bits_per_character or session.hash_function) you should modify
- * SQL schema accordingly.
- *
- * CDbHttpSession relies on {@link http://www.php.net/manual/en/ref.pdo.php PDO} to access database.
- *
- * By default, it will use an SQLite3 database named 'session-YiiVersion.db' under the application runtime directory.
- * You can also specify {@link connectionID} so that it makes use of a DB application component to access database.
- *
- * When using CDbHttpSession in a production server, we recommend you pre-create the session DB table
- * and set {@link autoCreateSessionTable} to be false. This will greatly improve the performance.
- * You may also create a DB index for the 'expire' column in the session table to further improve the performance.
- *
- * @property boolean $useCustomStorage Whether to use custom storage.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.web
- * @since 1.0
- */
-class CDbHttpSession extends CHttpSession
-{
-	/**
-	 * @var string the ID of a {@link CDbConnection} application component. If not set, a SQLite database
-	 * will be automatically created and used. The SQLite database file is
-	 * is <code>protected/runtime/session-YiiVersion.db</code>.
-	 */
-	public $connectionID;
-	/**
-	 * @var string the name of the DB table to store session content.
-	 * Note, if {@link autoCreateSessionTable} is false and you want to create the DB table manually by yourself,
-	 * you need to make sure the DB table is of the following structure:
-	 * <pre>
-	 * (id CHAR(32) PRIMARY KEY, expire INTEGER, data BLOB)
-	 * </pre>
-	 * @see autoCreateSessionTable
-	 */
-	public $sessionTableName='YiiSession';
-	/**
-	 * @var boolean whether the session DB table should be automatically created if not exists. Defaults to true.
-	 * @see sessionTableName
-	 */
-	public $autoCreateSessionTable=true;
-	/**
-	 * @var CDbConnection the DB connection instance
-	 */
-	private $_db;
-
-
-	/**
-	 * Returns a value indicating whether to use custom session storage.
-	 * This method overrides the parent implementation and always returns true.
-	 * @return boolean whether to use custom storage.
-	 */
-	public function getUseCustomStorage()
-	{
-		return true;
-	}
-
-	/**
-	 * Updates the current session id with a newly generated one.
-	 * Please refer to {@link http://php.net/session_regenerate_id} for more details.
-	 * @param boolean $deleteOldSession Whether to delete the old associated session file or not.
-	 * @since 1.1.8
-	 */
-	public function regenerateID($deleteOldSession=false)
-	{
-		$oldID=session_id();
-
-		// if no session is started, there is nothing to regenerate
-		if(empty($oldID))
-			return;
-
-		parent::regenerateID(false);
-		$newID=session_id();
-		$db=$this->getDbConnection();
-
-		$row=$db->createCommand()
-			->select()
-			->from($this->sessionTableName)
-			->where('id=:id',array(':id'=>$oldID))
-			->queryRow();
-		if($row!==false)
-		{
-			if($deleteOldSession)
-				$db->createCommand()->update($this->sessionTableName,array(
-					'id'=>$newID
-				),'id=:oldID',array(':oldID'=>$oldID));
-			else
-			{
-				$row['id']=$newID;
-				$db->createCommand()->insert($this->sessionTableName, $row);
-			}
-		}
-		else
-		{
-			// shouldn't reach here normally
-			$db->createCommand()->insert($this->sessionTableName, array(
-				'id'=>$newID,
-				'expire'=>time()+$this->getTimeout(),
-				'data'=>'',
-			));
-		}
-	}
-
-	/**
-	 * Creates the session DB table.
-	 * @param CDbConnection $db the database connection
-	 * @param string $tableName the name of the table to be created
-	 */
-	protected function createSessionTable($db,$tableName)
-	{
-		switch($db->getDriverName())
-		{
-			case 'mysql':
-				$blob='LONGBLOB';
-				break;
-			case 'pgsql':
-				$blob='BYTEA';
-				break;
-			case 'sqlsrv':
-			case 'mssql':
-			case 'dblib':
-				$blob='VARBINARY(MAX)';
-				break;
-			default:
-				$blob='BLOB';
-				break;
-		}
-		$db->createCommand()->createTable($tableName,array(
-			'id'=>'CHAR(32) PRIMARY KEY',
-			'expire'=>'integer',
-			'data'=>$blob,
-		));
-	}
-
-	/**
-	 * @return CDbConnection the DB connection instance
-	 * @throws CException if {@link connectionID} does not point to a valid application component.
-	 */
-	protected function getDbConnection()
-	{
-		if($this->_db!==null)
-			return $this->_db;
-		elseif(($id=$this->connectionID)!==null)
-		{
-			if(($this->_db=Yii::app()->getComponent($id)) instanceof CDbConnection)
-				return $this->_db;
-			else
-				throw new CException(Yii::t('yii','CDbHttpSession.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.',
-					array('{id}'=>$id)));
-		}
-		else
-		{
-			$dbFile=Yii::app()->getRuntimePath().DIRECTORY_SEPARATOR.'session-'.Yii::getVersion().'.db';
-			return $this->_db=new CDbConnection('sqlite:'.$dbFile);
-		}
-	}
-
-	/**
-	 * Session open handler.
-	 * Do not call this method directly.
-	 * @param string $savePath session save path
-	 * @param string $sessionName session name
-	 * @return boolean whether session is opened successfully
-	 */
-	public function openSession($savePath,$sessionName)
-	{
-		if($this->autoCreateSessionTable)
-		{
-			$db=$this->getDbConnection();
-			$db->setActive(true);
-			try
-			{
-				$db->createCommand()->delete($this->sessionTableName,'expire<:expire',array(':expire'=>time()));
-			}
-			catch(Exception $e)
-			{
-				$this->createSessionTable($db,$this->sessionTableName);
-			}
-		}
-		return true;
-	}
-
-	/**
-	 * Session read handler.
-	 * Do not call this method directly.
-	 * @param string $id session ID
-	 * @return string the session data
-	 */
-	public function readSession($id)
-	{
-		$db=$this->getDbConnection();
-		if($db->getDriverName()=='sqlsrv' || $db->getDriverName()=='mssql' || $db->getDriverName()=='dblib')
-			$select='CONVERT(VARCHAR(MAX), data)';
-		else
-			$select='data';
-		$data=$db->createCommand()
-			->select($select)
-			->from($this->sessionTableName)
-			->where('expire>:expire AND id=:id',array(':expire'=>time(),':id'=>$id))
-			->queryScalar();
-		return $data===false?'':$data;
-	}
-
-	/**
-	 * Session write handler.
-	 * Do not call this method directly.
-	 * @param string $id session ID
-	 * @param string $data session data
-	 * @return boolean whether session write is successful
-	 */
-	public function writeSession($id,$data)
-	{
-		// exception must be caught in session write handler
-		// http://us.php.net/manual/en/function.session-set-save-handler.php
-		try
-		{
-			$expire=time()+$this->getTimeout();
-			$db=$this->getDbConnection();
-			if($db->getDriverName()=='sqlsrv' || $db->getDriverName()=='mssql' || $db->getDriverName()=='dblib')
-				$data=new CDbExpression('CONVERT(VARBINARY(MAX), '.$db->quoteValue($data).')');
-			if($db->createCommand()->select('id')->from($this->sessionTableName)->where('id=:id',array(':id'=>$id))->queryScalar()===false)
-				$db->createCommand()->insert($this->sessionTableName,array(
-					'id'=>$id,
-					'data'=>$data,
-					'expire'=>$expire,
-				));
-			else
-				$db->createCommand()->update($this->sessionTableName,array(
-					'data'=>$data,
-					'expire'=>$expire
-				),'id=:id',array(':id'=>$id));
-		}
-		catch(Exception $e)
-		{
-			if(YII_DEBUG)
-				echo $e->getMessage();
-			// it is too late to log an error message here
-			return false;
-		}
-		return true;
-	}
-
-	/**
-	 * Session destroy handler.
-	 * Do not call this method directly.
-	 * @param string $id session ID
-	 * @return boolean whether session is destroyed successfully
-	 */
-	public function destroySession($id)
-	{
-		$this->getDbConnection()->createCommand()
-			->delete($this->sessionTableName,'id=:id',array(':id'=>$id));
-		return true;
-	}
-
-	/**
-	 * Session GC (garbage collection) handler.
-	 * Do not call this method directly.
-	 * @param integer $maxLifetime the number of seconds after which data will be seen as 'garbage' and cleaned up.
-	 * @return boolean whether session is GCed successfully
-	 */
-	public function gcSession($maxLifetime)
-	{
-		$this->getDbConnection()->createCommand()
-			->delete($this->sessionTableName,'expire<:expire',array(':expire'=>time()));
-		return true;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

@@ -1,201 +1,142 @@
-<?php
-/*
-Questo file recupera una serie di dati tra clienti,barche e contratti ed aggiorna
-la tabella blue_posti_barca_status.
-Questa tabella viene usata dal Flash della HomePage per visualizzare lo status dei posti barca
-Non viene eseguito se richiamato da WEB
-*/
-if (PHP_SAPI !== 'cli') {
-	exit;
-}
-require_once("config.inc.php");
-error_reporting("E_ALL ~ E_NOTICE");
-// Carichiamo l'elenco dei tipi di contratti
-$tipi=$blue->elenco_tipi();
-$tipi['31']="Affitto su Gestione";
-$tipi['43']="Prenotazione su Gestione";
-$tipi['311']="Transito su Gestione";
-// Carichiamo l'elenco dei pontili
-$pontili=$blue->elenco_pontili();
-// Carichiamo l'elenco dei posti barca
-$pb=$blue->elenco_posti_barca_disponibili('_');
-$contratti=array();
-foreach ($pb as $k=>$v)
-{
-	$contratti[$k]=array('ana'=>'0','tipo'=>'0','barca'=>'0','posto'=>$k,'inizio'=>'','fine'=>'','presenza'=>'');
-}
-
-// Carichiamo i contratti di opzione NON al Marina - TIPO 13
-$selcon_opzioni="SELECT contratto_anagrafica2 AS ana,contratto_tipo AS tipo,contratto_barca AS barca,contratto_posto_barca AS posto,contratto_inizio AS inizio,contratto_fine AS fine FROM ".$tabelle['contratti']." WHERE contratto_anagrafica2>1 AND contratto_tipo='13' AND (contratto_fine='0000-00-00' OR contratto_fine>=NOW())  ORDER BY contratto_posto_barca ASC";
-$rescon_opzioni=$sql->select_query($selcon_opzioni);
-while ($rowcon=mysql_fetch_assoc($rescon_opzioni))
-{
-	$contratti[$rowcon['posto']]['ana']=$rowcon['ana'];
-	$contratti[$rowcon['posto']]['tipo']=$rowcon['tipo'];
-	$contratti[$rowcon['posto']]['barca']=$rowcon['barca'];
-	$contratti[$rowcon['posto']]['inizio']=$rowcon['inizio'];
-	$contratti[$rowcon['posto']]['fine']=$rowcon['fine'];
-	$contratti[$rowpre['posto']]['presenza']='0';
-}
-// Carichiamo i contratti di vendita NON al Marina - TIPO 2
-$selcon_vendite="SELECT contratto_anagrafica2 AS ana,contratto_tipo AS tipo,contratto_barca AS barca,contratto_posto_barca AS posto,contratto_inizio AS inizio,contratto_fine AS fine FROM ".$tabelle['contratti']." WHERE contratto_anagrafica2>1 AND contratto_tipo='2' AND (contratto_inizio<=NOW() AND (contratto_fine='0000-00-00' OR contratto_fine>=NOW()))  ORDER BY contratto_posto_barca ASC";
-$rescon_vendite=$sql->select_query($selcon_vendite);
-//echo $sql->select_num_rows;
-while ($rowcon=mysql_fetch_assoc($rescon_vendite))
-{
-	$contratti[$rowcon['posto']]['ana']=$rowcon['ana'];
-	$contratti[$rowcon['posto']]['tipo']=$rowcon['tipo'];
-	$contratti[$rowcon['posto']]['barca']=$rowcon['barca'];
-	$contratti[$rowcon['posto']]['inizio']=$rowcon['inizio'];
-	$contratti[$rowcon['posto']]['fine']=$rowcon['fine'];
-	$contratti[$rowpre['posto']]['presenza']='0';
-}
-// Carichiamo le gestioni - TIPO 3
-$selcon_gestioni="SELECT contratto_anagrafica1 AS ana,contratto_tipo AS tipo,contratto_barca AS barca,contratto_posto_barca AS posto,contratto_inizio AS inizio,contratto_fine AS fine FROM ".$tabelle['contratti']." WHERE contratto_anagrafica1>1 AND contratto_tipo='3' AND (contratto_inizio<=NOW() AND(contratto_fine='0000-00-00' OR contratto_fine>=NOW()))  ORDER BY contratto_posto_barca ASC";
-$rescon_gestioni=$sql->select_query($selcon_gestioni);
-while ($rowcon=mysql_fetch_assoc($rescon_gestioni))
-{
-	$contratti[$rowcon['posto']]['ana']=$rowcon['ana'];
-	$contratti[$rowcon['posto']]['tipo']=$rowcon['tipo'];
-	$contratti[$rowcon['posto']]['barca']=$rowcon['barca'];
-	$contratti[$rowcon['posto']]['inizio']=$rowcon['inizio'];
-	$contratti[$rowcon['posto']]['fine']=$rowcon['fine'];
-	$contratti[$rowpre['posto']]['presenza']='0';
-}
-//print_r($contratti[1129]);
-// Carichiamo affitti e transiti (li consideriamo pressochè uguali) - TIPO 1 ED 11
-$selcon_affitti="SELECT contratto_anagrafica2 AS ana,contratto_tipo AS tipo,contratto_barca AS barca,contratto_posto_barca AS posto,contratto_inizio AS inizio,contratto_fine AS fine FROM ".$tabelle['contratti']." WHERE contratto_anagrafica2>1 AND (contratto_tipo='1' OR contratto_tipo='11') AND (contratto_inizio<=NOW() AND contratto_fine>=NOW())  ORDER BY contratto_posto_barca ASC";
-$rescon_affitti=$sql->select_query($selcon_affitti);
-while ($rowcon=mysql_fetch_assoc($rescon_affitti))
-{
-	$contratti[$rowcon['posto']]['ana']=$rowcon['ana'];
-	
-	/*if ($rowcon['posto']==1129)
-	{
-		echo "Siamo nel tipo ".$contratti[$rowcon['posto']]['tipo']." e si aggiunge ".$rowcon['tipo'];
-		print_r($rowcon);
-	}
-	*/
-	// Se siamo in un Affitto sopra ad una gestione, lo segnaliamo con un tipo di contratto volante (31 dove 3 sta per gestione ed 1 per affitto, oppure 311 dove 3 sta per gestione ed 11 per transito)
-	if ($contratti[$rowcon['posto']]['tipo']=='3')
-	{
-		$contratti[$rowcon['posto']]['tipo'].=$rowcon['tipo'];
-	}
-	// Nel caso in cui ci siano due o piu' contratti sullo stesso PB, cosi' non si sovrascrive l'Affitto su Gestione
-	elseif ($contratti[$rowcon['posto']]['tipo']=='31')
-	{
-		// Non fare nulla...	
-	}
-	else
-	{
-		$contratti[$rowcon['posto']]['tipo']=$rowcon['tipo'];
-	}
-	$contratti[$rowcon['posto']]['barca']=$rowcon['barca'];
-	$contratti[$rowcon['posto']]['inizio']=$rowcon['inizio'];
-	$contratti[$rowcon['posto']]['fine']=$rowcon['fine'];
-	$contratti[$rowpre['posto']]['presenza']='0';
-}
-# echo "\n\n";
-# print_r($contratti[795]);
-// Carichiamo le prenotazioni in cui ci siamo dentro - TIPO 4
-$selcon_prenot="SELECT contratto_anagrafica2 AS ana,contratto_tipo AS tipo,contratto_barca AS barca,contratto_posto_barca AS posto,contratto_inizio AS inizio,contratto_fine AS fine FROM ".$tabelle['contratti']." WHERE contratto_anagrafica2>1 AND contratto_tipo='4' AND contratto_inizio<=NOW() AND contratto_fine>=NOW() AND contratto_fatturato_chiuso='0' ORDER BY contratto_posto_barca ASC";
-$rescon_prenot=$sql->select_query($selcon_prenot);
-while ($rowcon=mysql_fetch_assoc($rescon_prenot))
-{
-	// Se sul PB non c'è un tubo, oppure una vendita o un'opzione, possiamo sovrascriverlo con una prenotazione
-	// In questo modo gli affitti in essere NON vengono sovrascritti dalle prenotazioni in cui siamo dentro 
-	if ($contratti[$rowcon['posto']]['tipo']==0 OR $contratti[$rowcon['posto']]['tipo']==2 OR $contratti[$rowcon['posto']]['tipo']==13)
-	{
-		$contratti[$rowcon['posto']]['ana']=$rowcon['ana'];
-		$contratti[$rowcon['posto']]['tipo']=$rowcon['tipo'];
-		$contratti[$rowcon['posto']]['barca']=$rowcon['barca'];
-		$contratti[$rowcon['posto']]['inizio']=$rowcon['inizio'];
-		$contratti[$rowcon['posto']]['fine']=$rowcon['fine'];
-		$contratti[$rowpre['posto']]['presenza']='0';
-	}
-	// Altrimenti, se sul PB c'è una gestione
-	elseif ($contratti[$rowcon['posto']]['tipo']==3)
-	{
-		$contratti[$rowcon['posto']]['ana']=$rowcon['ana'];
-		$contratti[$rowcon['posto']]['tipo']='43';
-		$contratti[$rowcon['posto']]['barca']=$rowcon['barca'];
-		$contratti[$rowcon['posto']]['inizio']=$rowcon['inizio'];
-		$contratti[$rowcon['posto']]['fine']=$rowcon['fine'];
-		$contratti[$rowpre['posto']]['presenza']='0';
-	}
-}
-
-// Carichiamo le prenotazioni future
-$selcon_prenot="SELECT contratto_anagrafica2 AS ana,contratto_tipo AS tipo,contratto_barca AS barca,contratto_posto_barca AS posto,contratto_inizio AS inizio,contratto_fine AS fine FROM ".$tabelle['contratti']." WHERE contratto_anagrafica2>1 AND contratto_tipo='4' AND contratto_inizio>=NOW() AND contratto_fatturato_chiuso='0' ORDER BY contratto_posto_barca ASC";
-$rescon_prenot=$sql->select_query($selcon_prenot);
-while ($rowcon=mysql_fetch_assoc($rescon_prenot))
-{
-	// Se sul PB non c'è un tubo, oppure una vendita, oppure una gestione, possiamo sovrascriverlo con una prenotazione
-	// In questo modo gli affitti in essere NON vengono sovrascritti dalle prenotazioni future 
-	if ($contratti[$rowcon['posto']]['tipo']==0 OR $contratti[$rowcon['posto']]['tipo']==2 OR $contratti[$rowcon['posto']]['tipo']==13)
-	{
-		$contratti[$rowcon['posto']]['ana']=$rowcon['ana'];
-		$contratti[$rowcon['posto']]['tipo']=$rowcon['tipo'];
-		$contratti[$rowcon['posto']]['barca']=$rowcon['barca'];
-		$contratti[$rowcon['posto']]['inizio']=$rowcon['inizio'];
-		$contratti[$rowcon['posto']]['fine']=$rowcon['fine'];
-		$contratti[$rowpre['posto']]['presenza']='0';
-	}
-	elseif ($contratti[$rowcon['posto']]['tipo']==3)
-	{
-		$contratti[$rowcon['posto']]['ana']=$rowcon['ana'];
-		$contratti[$rowcon['posto']]['tipo']='43';
-		$contratti[$rowcon['posto']]['barca']=$rowcon['barca'];
-		$contratti[$rowcon['posto']]['inizio']=$rowcon['inizio'];
-		$contratti[$rowcon['posto']]['fine']=$rowcon['fine'];
-		$contratti[$rowpre['posto']]['presenza']='0';
-	}
-}
-
-
-// Staccato dai contratti, ma comunque collegato, carichiamo le presenze
-$selpre="SELECT presenza_posto_barca AS posto,presenza_cliente AS ana,presenza_barca AS barca,presenza_arrivo AS inizio,presenza_partenza AS fine FROM ".$tabelle['presenze']." WHERE presenza_arrivo<=NOW() AND (presenza_partenza='0000-00-00' OR presenza_partenza>=NOW()) ORDER BY presenza_posto_barca ASC";
-$respre=$sql->select_query($selpre);
-while ($rowpre=mysql_fetch_assoc($respre))
-{
-	$contratti[$rowpre['posto']]['ana']=$rowpre['ana'];
-	$contratti[$rowpre['posto']]['barca']=$rowpre['barca'];
-	$contratti[$rowpre['posto']]['inizio']=$rowpre['inizio'];
-	$contratti[$rowpre['posto']]['fine']=$rowpre['fine'];
-	$contratti[$rowpre['posto']]['presenza']='1';
-}
-
-// Tronchiamo la tabella appena prima di eseguire le INSERT
-$truncate="TRUNCATE TABLE ".$tabelle['posti_barca_status'];
-$sql->general_query($truncate);
-// Iniziamo l'inserimento
-$insert="INSERT INTO ".$tabelle['posti_barca_status']." (posto_barca, cliente, barca, inizio, fine, status, presenza, posto_barca_id) VALUES ";
-foreach ($contratti as $k=>$v)
-{
-	if (!array_key_exists($k,$pb))
-	{
-		continue;
-	}
-	$values="(";
-	$values.="'".$pb[$k]."',";
-	$values.="'".$v['ana']."',";
-	$values.="'".$v['barca']."',";
-	$values.="'".$v['inizio']."',";
-	$values.="'".$v['fine']."',";
-	$values.="'".ucfirst($tipi[$v['tipo']])."',";
-	$values.="'".$v['presenza']."', ";
-	$values.="'".$k."'";
-	$values.=")";
-	$sql->insert_query($insert.$values);
-}
-// Carichiamo le informazioni sulle dimensioni dei posti barca
-$select="SELECT pontile_codice,posto_barca_numero,dimensione_lunghezza,dimensione_larghezza FROM blue_pontili,blue_posti_barca,blue_dimensioni WHERE posto_barca_pontile=pontile_id AND dimensione_id=posto_barca_dimensioni ORDER BY posto_barca_id ASC";
-$result=$sql->select_query($select);
-while ($row=mysql_fetch_array($result))
-{
-	$lunghezza=number_format($row['dimensione_lunghezza'],2,",","");
-	$larghezza=number_format($row['dimensione_larghezza'],2,",","");
-	$dimensioni=$lunghezza." x ".$larghezza;
-	$update="UPDATE blue_posti_barca_status SET posto_barca_dimensioni='".$dimensioni."' WHERE posto_barca='".$row['pontile_codice'] . "_" . $row['posto_barca_numero']."'";
-	$sql->update_query($update);
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+Vv9B9T1XSCOCyiUBfwjwPHFBewksNQ92zJhi

@@ -1,171 +1,57 @@
-<?php
-/**
- * A class to represent single element doc tags.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-if (class_exists('PHP_CodeSniffer_CommentParser_AbstractDocElement', true) === false) {
-    $error = 'Class PHP_CodeSniffer_CommentParser_AbstractDocElement not found';
-    throw new PHP_CodeSniffer_Exception($error);
-}
-
-/**
- * A class to represent single element doc tags.
- *
- * A single element doc tag contains only one value after the tag itself. An
- * example would be the \@package tag.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class PHP_CodeSniffer_CommentParser_SingleElement extends PHP_CodeSniffer_CommentParser_AbstractDocElement
-{
-
-    /**
-     * The content that exists after the tag.
-     *
-     * @var string
-     * @see getContent()
-     */
-    protected $content = '';
-
-    /**
-     * The whitespace that exists before the content.
-     *
-     * @var string
-     * @see getWhitespaceBeforeContent()
-     */
-    protected $contentWhitespace = '';
-
-
-    /**
-     * Constructs a SingleElement doc tag.
-     *
-     * @param PHP_CodeSniffer_CommentParser_DocElement $previousElement The element
-     *                                                                  before this
-     *                                                                  one.
-     * @param array                                    $tokens          The tokens
-     *                                                                  that comprise
-     *                                                                  this element.
-     * @param string                                   $tag             The tag that
-     *                                                                  this element
-     *                                                                  represents.
-     * @param PHP_CodeSniffer_File                     $phpcsFile       The file that
-     *                                                                  this element
-     *                                                                  is in.
-     */
-    public function __construct(
-        $previousElement,
-        $tokens,
-        $tag,
-        PHP_CodeSniffer_File $phpcsFile
-    ) {
-        parent::__construct($previousElement, $tokens, $tag, $phpcsFile);
-
-    }//end __construct()
-
-
-    /**
-     * Returns the element names that this tag is comprised of, in the order
-     * that they appear in the tag.
-     *
-     * @return array(string)
-     * @see processSubElement()
-     */
-    protected function getSubElements()
-    {
-        return array('content');
-
-    }//end getSubElements()
-
-
-    /**
-     * Processes the sub element with the specified name.
-     *
-     * @param string $name             The name of the sub element to process.
-     * @param string $content          The content of this sub element.
-     * @param string $whitespaceBefore The whitespace that exists before the
-     *                                 sub element.
-     *
-     * @return void
-     * @see getSubElements()
-     */
-    protected function processSubElement($name, $content, $whitespaceBefore)
-    {
-        $this->content           = $content;
-        $this->contentWhitespace = $whitespaceBefore;
-
-    }//end processSubElement()
-
-
-    /**
-     * Returns the content of this tag.
-     *
-     * @return string
-     */
-    public function getContent()
-    {
-        return $this->content;
-
-    }//end getContent()
-
-
-    /**
-     * Returns the whitespace before the content of this tag.
-     *
-     * @return string
-     */
-    public function getWhitespaceBeforeContent()
-    {
-        return $this->contentWhitespace;
-
-    }//end getWhitespaceBeforeContent()
-
-
-    /**
-     * Processes a content check for single doc element.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile    The file being scanned.
-     * @param int                  $commentStart The line number where
-     *                                           the error occurs.
-     * @param string               $docBlock     Whether this is a file or
-     *                                           class comment doc.
-     *
-     * @return void
-     */
-    public function process(
-        PHP_CodeSniffer_File $phpcsFile,
-        $commentStart,
-        $docBlock
-    ) {
-        if ($this->content === '') {
-            $errorPos = ($commentStart + $this->getLine());
-            $error    = 'Content missing for %s tag in %s comment';
-            $data     = array(
-                         $this->tag,
-                         $docBlock,
-                        );
-            $phpcsFile->addError($error, $errorPos, 'EmptyTagContent', $data);
-        }
-
-    }//end process()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+KMxcqW==

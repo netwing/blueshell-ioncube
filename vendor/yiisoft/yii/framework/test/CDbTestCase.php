@@ -1,120 +1,64 @@
-<?php
-/**
- * This file contains the CDbTestCase class.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-Yii::import('system.test.CTestCase');
-
-/**
- * CDbTestCase is the base class for test cases about DB-related features.
- *
- * CDbTestCase provides database fixture management with the help of {@link CDbFixtureManager}.
- * By declaring {@link fixtures} property, one can ensure the specified
- * tables have the expected fixture state when executing each test method.
- * In addition, CDbTestCase provides two ways to access the fixture data.
- *
- * For example, assume we declare {@link fixtures} to be:
- * <pre>
- * public $fixtures=array(
- *     'posts' => 'Post',
- *     'comments' => 'Comment',
- * );
- * </pre>
- *
- * We can access the original fixture data rows using <code>$this->posts</code>
- * <code>$this->posts['first post']</code>. We can also retrieve an ActiveRecord instance
- * corresponding to a fixture data row using <code>$this->posts('first post')</code>.
- * Note, here 'first post' refers to a key to a row in the original fixture data.
- *
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.test
- * @since 1.1
- */
-abstract class CDbTestCase extends CTestCase
-{
-	/**
-	 * @var array a list of fixtures that should be loaded before each test method executes.
-	 * The array keys are fixture names, and the array values are either AR class names
-	 * or table names. If table names, they must begin with a colon character (e.g. 'Post'
-	 * means an AR class, while ':post' means a table name).
-	 * Defaults to false, meaning fixtures will not be used at all.
-	 */
-	protected $fixtures=false;
-
-	/**
-	 * PHP magic method.
-	 * This method is overridden so that named fixture data can be accessed like a normal property.
-	 * @param string $name the property name
-	 * @throws Exception if unknown property is used
-	 * @return mixed the property value
-	 */
-	public function __get($name)
-	{
-		if(is_array($this->fixtures) && ($rows=$this->getFixtureManager()->getRows($name))!==false)
-			return $rows;
-		else
-			throw new Exception("Unknown property '$name' for class '".get_class($this)."'.");
-	}
-
-	/**
-	 * PHP magic method.
-	 * This method is overridden so that named fixture ActiveRecord instances can be accessed in terms of a method call.
-	 * @param string $name method name
-	 * @param string $params method parameters
-	 * @throws Exception if unknown method is used
-	 * @return mixed the property value
-	 */
-	public function __call($name,$params)
-	{
-		if(is_array($this->fixtures) && isset($params[0]) && ($record=$this->getFixtureManager()->getRecord($name,$params[0]))!==false)
-			return $record;
-		else
-			throw new Exception("Unknown method '$name' for class '".get_class($this)."'.");
-	}
-
-	/**
-	 * @return CDbFixtureManager the database fixture manager
-	 */
-	public function getFixtureManager()
-	{
-		return Yii::app()->getComponent('fixture');
-	}
-
-	/**
-	 * @param string $name the fixture name (the key value in {@link fixtures}).
-	 * @return array the named fixture data
-	 */
-	public function getFixtureData($name)
-	{
-		return $this->getFixtureManager()->getRows($name);
-	}
-
-	/**
-	 * @param string $name the fixture name (the key value in {@link fixtures}).
-	 * @param string $alias the alias of the fixture data row
-	 * @return CActiveRecord the ActiveRecord instance corresponding to the specified alias in the named fixture.
-	 * False is returned if there is no such fixture or the record cannot be found.
-	 */
-	public function getFixtureRecord($name,$alias)
-	{
-		return $this->getFixtureManager()->getRecord($name,$alias);
-	}
-
-	/**
-	 * Sets up the fixture before executing a test method.
-	 * If you override this method, make sure the parent implementation is invoked.
-	 * Otherwise, the database fixtures will not be managed properly.
-	 */
-	protected function setUp()
-	{
-		parent::setUp();
-		if(is_array($this->fixtures))
-			$this->getFixtureManager()->load($this->fixtures);
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

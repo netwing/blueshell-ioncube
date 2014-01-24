@@ -1,271 +1,124 @@
-<?php
-
-namespace Guzzle\Service\Description;
-
-use Guzzle\Common\Exception\InvalidArgumentException;
-use Guzzle\Common\ToArrayInterface;
-
-/**
- * A ServiceDescription stores service information based on a service document
- */
-class ServiceDescription implements ServiceDescriptionInterface, ToArrayInterface
-{
-    /** @var array Array of {@see OperationInterface} objects */
-    protected $operations = array();
-
-    /** @var array Array of API models */
-    protected $models = array();
-
-    /** @var string Name of the API */
-    protected $name;
-
-    /** @var string API version */
-    protected $apiVersion;
-
-    /** @var string Summary of the API */
-    protected $description;
-
-    /** @var array Any extra API data */
-    protected $extraData = array();
-
-    /** @var ServiceDescriptionLoader Factory used in factory method */
-    protected static $descriptionLoader;
-
-    /** @var string baseUrl/basePath */
-    protected $baseUrl;
-
-    /**
-     * {@inheritdoc}
-     * @param string|array $config  File to build or array of operation information
-     * @param array        $options Service description factory options
-     *
-     * @return self
-     */
-    public static function factory($config, array $options = array())
-    {
-        // @codeCoverageIgnoreStart
-        if (!self::$descriptionLoader) {
-            self::$descriptionLoader = new ServiceDescriptionLoader();
-        }
-        // @codeCoverageIgnoreEnd
-
-        return self::$descriptionLoader->load($config, $options);
-    }
-
-    /**
-     * @param array $config Array of configuration data
-     */
-    public function __construct(array $config = array())
-    {
-        $this->fromArray($config);
-    }
-
-    public function serialize()
-    {
-        return json_encode($this->toArray());
-    }
-
-    public function unserialize($json)
-    {
-        $this->operations = array();
-        $this->fromArray(json_decode($json, true));
-    }
-
-    public function toArray()
-    {
-        $result = array(
-            'name'        => $this->name,
-            'apiVersion'  => $this->apiVersion,
-            'baseUrl'     => $this->baseUrl,
-            'description' => $this->description
-        ) + $this->extraData;
-        $result['operations'] = array();
-        foreach ($this->getOperations() as $name => $operation) {
-            $result['operations'][$operation->getName() ?: $name] = $operation->toArray();
-        }
-        if (!empty($this->models)) {
-            $result['models'] = array();
-            foreach ($this->models as $id => $model) {
-                $result['models'][$id] = $model instanceof Parameter ? $model->toArray(): $model;
-            }
-        }
-
-        return array_filter($result);
-    }
-
-    public function getBaseUrl()
-    {
-        return $this->baseUrl;
-    }
-
-    /**
-     * Set the baseUrl of the description
-     *
-     * @param string $baseUrl Base URL of each operation
-     *
-     * @return self
-     */
-    public function setBaseUrl($baseUrl)
-    {
-        $this->baseUrl = $baseUrl;
-
-        return $this;
-    }
-
-    public function getOperations()
-    {
-        foreach (array_keys($this->operations) as $name) {
-            $this->getOperation($name);
-        }
-
-        return $this->operations;
-    }
-
-    public function hasOperation($name)
-    {
-        return isset($this->operations[$name]);
-    }
-
-    public function getOperation($name)
-    {
-        // Lazily retrieve and build operations
-        if (!isset($this->operations[$name])) {
-            return null;
-        }
-
-        if (!($this->operations[$name] instanceof Operation)) {
-            $this->operations[$name] = new Operation($this->operations[$name], $this);
-        }
-
-        return $this->operations[$name];
-    }
-
-    /**
-     * Add a operation to the service description
-     *
-     * @param OperationInterface $operation Operation to add
-     *
-     * @return self
-     */
-    public function addOperation(OperationInterface $operation)
-    {
-        $this->operations[$operation->getName()] = $operation->setServiceDescription($this);
-
-        return $this;
-    }
-
-    public function getModel($id)
-    {
-        if (!isset($this->models[$id])) {
-            return null;
-        }
-
-        if (!($this->models[$id] instanceof Parameter)) {
-            $this->models[$id] = new Parameter($this->models[$id] + array('name' => $id), $this);
-        }
-
-        return $this->models[$id];
-    }
-
-    public function getModels()
-    {
-        // Ensure all models are converted into parameter objects
-        foreach (array_keys($this->models) as $id) {
-            $this->getModel($id);
-        }
-
-        return $this->models;
-    }
-
-    public function hasModel($id)
-    {
-        return isset($this->models[$id]);
-    }
-
-    /**
-     * Add a model to the service description
-     *
-     * @param Parameter $model Model to add
-     *
-     * @return self
-     */
-    public function addModel(Parameter $model)
-    {
-        $this->models[$model->getName()] = $model;
-
-        return $this;
-    }
-
-    public function getApiVersion()
-    {
-        return $this->apiVersion;
-    }
-
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    public function getData($key)
-    {
-        return isset($this->extraData[$key]) ? $this->extraData[$key] : null;
-    }
-
-    public function setData($key, $value)
-    {
-        $this->extraData[$key] = $value;
-
-        return $this;
-    }
-
-    /**
-     * Initialize the state from an array
-     *
-     * @param array $config Configuration data
-     * @throws InvalidArgumentException
-     */
-    protected function fromArray(array $config)
-    {
-        // Keep a list of default keys used in service descriptions that is later used to determine extra data keys
-        static $defaultKeys = array('name', 'models', 'apiVersion', 'baseUrl', 'description');
-        // Pull in the default configuration values
-        foreach ($defaultKeys as $key) {
-            if (isset($config[$key])) {
-                $this->{$key} = $config[$key];
-            }
-        }
-
-        // Account for the Swagger name for Guzzle's baseUrl
-        if (isset($config['basePath'])) {
-            $this->baseUrl = $config['basePath'];
-        }
-
-        // Ensure that the models and operations properties are always arrays
-        $this->models = (array) $this->models;
-        $this->operations = (array) $this->operations;
-
-        // We want to add operations differently than adding the other properties
-        $defaultKeys[] = 'operations';
-
-        // Create operations for each operation
-        if (isset($config['operations'])) {
-            foreach ($config['operations'] as $name => $operation) {
-                if (!($operation instanceof Operation) && !is_array($operation)) {
-                    throw new InvalidArgumentException('Invalid operation in service description: '
-                        . gettype($operation));
-                }
-                $this->operations[$name] = $operation;
-            }
-        }
-
-        // Get all of the additional properties of the service description and store them in a data array
-        foreach (array_diff(array_keys($config), $defaultKeys) as $key) {
-            $this->extraData[$key] = $config[$key];
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

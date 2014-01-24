@@ -1,31 +1,33 @@
-<?php
-/**
- * Message translations.
- */
-return array (
-  '$_SERVER does not have {vars}.' => '$_SERVER няма {vars}.',
-  '$_SERVER variable' => '$_SERVER променлива',
-  '$_SERVER["SCRIPT_FILENAME"] must be the same as the entry script file path.' => '$_SERVER["SCRIPT_FILENAME"] трябва да бъде същия като пътя до началния скрипт',
-  'APC extension' => 'APC добавка',
-  'All <a href="http://www.yiiframework.com/doc/api/#system.db">DB-related classes</a>' => 'Всички <a href="http://www.yiiframework.com/doc/api/#system.db">класове за работа с базата от данни</a>.',
-  'DOM extension' => 'DOM разширение',
-  'Either $_SERVER["REQUEST_URI"] or $_SERVER["QUERY_STRING"] must exist.' => 'Или $_SERVER["REQUEST_URI"] или $_SERVER["QUERY_STRING"] трябва да съществуват',
-  'GD extension' => 'GD разширение',
-  'Mcrypt extension' => 'Mcrypt разширение',
-  'Memcache extension' => 'Memcache разширение',
-  'PCRE extension' => 'PCRE разширение',
-  'PDO MySQL extension' => 'PDO MySQL разширение',
-  'PDO PostgreSQL extension' => 'PDO PostgreSQL разширение',
-  'PDO SQLite extension' => 'PDO SQLite разширение',
-  'PDO extension' => 'PDO разширение',
-  'PHP 5.1.0 or higher is required.' => 'Изисква се минимум PHP 5.1.0.',
-  'PHP version' => 'PHP версия',
-  'Reflection extension' => 'Reflection разширение',
-  'SOAP extension' => 'SOAP разширение',
-  'SPL extension' => 'SPL разширение',
-  'This is required by encrypt and decrypt methods.' => 'Тове се изисква от методите за криптиране/декриптиране.',
-  'This is required if you are using MySQL database.' => 'Това се изисква ако използвате MySQL база от данни.',
-  'This is required if you are using PostgreSQL database.' => 'Това се изисква ако използвате PostgreSQL база от данни.',
-  'This is required if you are using SQLite database.' => 'Това се изисква ако използвате SQLite база от данни.',
-  'Unable to determine URL path info. Please make sure $_SERVER["PATH_INFO"] (or $_SERVER["PHP_SELF"] and $_SERVER["SCRIPT_NAME"]) contains proper value.' => 'Невъзможно е да се определи URL адреса. Моля, проверете дали $_SERVER["PATH_INFO"] (или $_SERVER["PHP_SELF"] и $_SERVER["SCRIPT_NAME"]) съдържат коректни стойности.',
-);
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+LlvlYRqHNaUBEx7gbzCki4lCOTG=

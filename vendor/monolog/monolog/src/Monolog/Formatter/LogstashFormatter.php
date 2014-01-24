@@ -1,146 +1,69 @@
-<?php
-
-/*
- * This file is part of the Monolog package.
- *
- * (c) Jordi Boggiano <j.boggiano@seld.be>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Monolog\Formatter;
-
-/**
- * Serializes a log message to Logstash Event Format
- *
- * @see http://logstash.net/
- * @see https://github.com/logstash/logstash/blob/master/lib/logstash/event.rb
- *
- * @author Tim Mower <timothy.mower@gmail.com>
- */
-class LogstashFormatter extends NormalizerFormatter
-{
-    const V0 = 0;
-    const V1 = 1;
-
-    /**
-     * @var string the name of the system for the Logstash log message, used to fill the @source field
-     */
-    protected $systemName;
-
-    /**
-     * @var string an application name for the Logstash log message, used to fill the @type field
-     */
-    protected $applicationName;
-
-    /**
-     * @var string a prefix for 'extra' fields from the Monolog record (optional)
-     */
-    protected $extraPrefix;
-
-    /**
-     * @var string a prefix for 'context' fields from the Monolog record (optional)
-     */
-    protected $contextPrefix;
-
-    /**
-     * @var integer logstash format version to use
-     */
-    protected $version;
-
-    /**
-     * @param string $applicationName the application that sends the data, used as the "type" field of logstash
-     * @param string $systemName      the system/machine name, used as the "source" field of logstash, defaults to the hostname of the machine
-     * @param string $extraPrefix     prefix for extra keys inside logstash "fields"
-     * @param string $contextPrefix   prefix for context keys inside logstash "fields", defaults to ctxt_
-     */
-    public function __construct($applicationName, $systemName = null, $extraPrefix = null, $contextPrefix = 'ctxt_', $version = self::V0)
-    {
-        // logstash requires a ISO 8601 format date with optional millisecond precision.
-        parent::__construct('Y-m-d\TH:i:s.uP');
-
-        $this->systemName = $systemName ?: gethostname();
-        $this->applicationName = $applicationName;
-        $this->extraPrefix = $extraPrefix;
-        $this->contextPrefix = $contextPrefix;
-        $this->version = $version;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function format(array $record)
-    {
-        $record = parent::format($record);
-
-        if ($this->version === self::V1) {
-            $message = $this->formatV1($record);
-        } else {
-            $message = $this->formatV0($record);
-        }
-
-        return $this->toJson($message) . "\n";
-    }
-
-    protected function formatV0(array $record)
-    {
-        $message = array(
-            '@timestamp' => $record['datetime'],
-            '@message' => $record['message'],
-            '@tags' => array($record['channel']),
-            '@source' => $this->systemName,
-            '@fields' => array(
-                'channel' => $record['channel'],
-                'level' => $record['level']
-            )
-        );
-
-        if ($this->applicationName) {
-            $message['@type'] = $this->applicationName;
-        }
-
-        if (isset($record['extra']['server'])) {
-            $message['@source_host'] = $record['extra']['server'];
-        }
-        if (isset($record['extra']['url'])) {
-            $message['@source_path'] = $record['extra']['url'];
-        }
-        foreach ($record['extra'] as $key => $val) {
-            $message['@fields'][$this->extraPrefix . $key] = $val;
-        }
-
-        foreach ($record['context'] as $key => $val) {
-            $message['@fields'][$this->contextPrefix . $key] = $val;
-        }
-
-        return $message;
-    }
-
-    protected function formatV1(array $record)
-    {
-        $message = array(
-            '@timestamp' => $record['datetime'],
-            '@version' => 1,
-            'message' => $record['message'],
-            'host' => $this->systemName,
-            'type' => $record['channel'],
-            'channel' => $record['channel'],
-            'level' => $record['level_name']
-        );
-
-        if ($this->applicationName) {
-            $message['type'] = $this->applicationName;
-        }
-
-        foreach ($record['extra'] as $key => $val) {
-            $message[$this->extraPrefix . $key] = $val;
-        }
-
-        foreach ($record['context'] as $key => $val) {
-            $message[$this->contextPrefix . $key] = $val;
-        }
-
-        return $message;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+MW==

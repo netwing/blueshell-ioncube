@@ -1,153 +1,69 @@
-<?php
-/**
- * CDbColumnSchema class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CDbColumnSchema class describes the column meta data of a database table.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.db.schema
- * @since 1.0
- */
-class CDbColumnSchema extends CComponent
-{
-	/**
-	 * @var string name of this column (without quotes).
-	 */
-	public $name;
-	/**
-	 * @var string raw name of this column. This is the quoted name that can be used in SQL queries.
-	 */
-	public $rawName;
-	/**
-	 * @var boolean whether this column can be null.
-	 */
-	public $allowNull;
-	/**
-	 * @var string the DB type of this column.
-	 */
-	public $dbType;
-	/**
-	 * @var string the PHP type of this column.
-	 */
-	public $type;
-	/**
-	 * @var mixed default value of this column
-	 */
-	public $defaultValue;
-	/**
-	 * @var integer size of the column.
-	 */
-	public $size;
-	/**
-	 * @var integer precision of the column data, if it is numeric.
-	 */
-	public $precision;
-	/**
-	 * @var integer scale of the column data, if it is numeric.
-	 */
-	public $scale;
-	/**
-	 * @var boolean whether this column is a primary key
-	 */
-	public $isPrimaryKey;
-	/**
-	 * @var boolean whether this column is a foreign key
-	 */
-	public $isForeignKey;
-	/**
-	 * @var boolean whether this column is auto-incremental
-	 * @since 1.1.7
-	 */
-	public $autoIncrement=false;
-	/**
-	 * @var string comment of this column. Default value is empty string which means that no comment
-	 * has been set for the column. Null value means that RDBMS does not support column comments
-	 * at all (SQLite) or comment retrieval for the active RDBMS is not yet supported by the framework.
-	 * @since 1.1.13
-	 */
-	public $comment='';
-
-	/**
-	 * Initializes the column with its DB type and default value.
-	 * This sets up the column's PHP type, size, precision, scale as well as default value.
-	 * @param string $dbType the column's DB type
-	 * @param mixed $defaultValue the default value
-	 */
-	public function init($dbType, $defaultValue)
-	{
-		$this->dbType=$dbType;
-		$this->extractType($dbType);
-		$this->extractLimit($dbType);
-		if($defaultValue!==null)
-			$this->extractDefault($defaultValue);
-	}
-
-	/**
-	 * Extracts the PHP type from DB type.
-	 * @param string $dbType DB type
-	 */
-	protected function extractType($dbType)
-	{
-		if(stripos($dbType,'int')!==false && stripos($dbType,'unsigned int')===false)
-			$this->type='integer';
-		elseif(stripos($dbType,'bool')!==false)
-			$this->type='boolean';
-		elseif(preg_match('/(real|floa|doub)/i',$dbType))
-			$this->type='double';
-		else
-			$this->type='string';
-	}
-
-	/**
-	 * Extracts size, precision and scale information from column's DB type.
-	 * @param string $dbType the column's DB type
-	 */
-	protected function extractLimit($dbType)
-	{
-		if(strpos($dbType,'(') && preg_match('/\((.*)\)/',$dbType,$matches))
-		{
-			$values=explode(',',$matches[1]);
-			$this->size=$this->precision=(int)$values[0];
-			if(isset($values[1]))
-				$this->scale=(int)$values[1];
-		}
-	}
-
-	/**
-	 * Extracts the default value for the column.
-	 * The value is typecasted to correct PHP type.
-	 * @param mixed $defaultValue the default value obtained from metadata
-	 */
-	protected function extractDefault($defaultValue)
-	{
-		$this->defaultValue=$this->typecast($defaultValue);
-	}
-
-	/**
-	 * Converts the input value to the type that this column is of.
-	 * @param mixed $value input value
-	 * @return mixed converted value
-	 */
-	public function typecast($value)
-	{
-		if(gettype($value)===$this->type || $value===null || $value instanceof CDbExpression)
-			return $value;
-		if($value==='' && $this->allowNull)
-			return $this->type==='string' ? '' : null;
-		switch($this->type)
-		{
-			case 'string': return (string)$value;
-			case 'integer': return (integer)$value;
-			case 'boolean': return (boolean)$value;
-			case 'double':
-			default: return $value;
-		}
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

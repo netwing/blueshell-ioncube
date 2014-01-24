@@ -1,118 +1,45 @@
-<?php
-
-/*
- This program is free software: you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation, either version 3 of the License, or
- (at your option) any later version.
-
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
-
- You should have received a copy of the GNU General Public License
- along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
- */
-
-//require 'Yay/Expectations/AbstractExpectation.php';
-//require 'Yay/Invocation.php';
-
-/**
- * An Expectation which allows a boundary for a number of matching Invocations.
- * @author Chris Corbyn <chris@w3style.co.uk>
- * @package Yay
- */
-class Yay_Expectations_BetweenExpectation
-  extends Yay_Expectations_AbstractExpectation
-{
-
-  /**
-   * The minimum Invocation count.
-   * @var int
-   * @access private
-   */
-  private $_min = 0;
-
-  /**
-   * The maximum Invocation count.
-   * @var int
-   * @access private
-   */
-  private $_max = 0;
-
-  /**
-   * The number of matched Invocations.
-   * @var int
-   * @access private
-   */
-  private $_matched = 0;
-
-  /**
-   * Create a new BetweenExpectation expecting between $min and $max Invocations.
-   * @param integer $n
-   */
-  public function __construct($min, $max)
-  {
-    $this->_min = $min;
-    $this->_max = $max;
-  }
-
-  /**
-   * Test if this Invocation is one that was expected by this Expectation.
-   * @param Yay_Invocation $invocation
-   * @return boolean
-   */
-  public function isExpected(Yay_Invocation $invocation)
-  {
-    return parent::isExpected($invocation) && ($this->_matched <= $this->_max);
-  }
-
-  /**
-   * Test if all conditions of the Invocation are satisfied.
-   * @return boolean
-   */
-  public function isSatisfied()
-  {
-    return ($this->_matched >= $this->_min);
-  }
-
-  /**
-   * Increment the match counter by 1.
-   * @param Yay_Invocation $invocation
-   */
-  public function notifyMatchedInvocation(Yay_Invocation $invocation)
-  {
-    $this->_matched++;
-  }
-
-  /**
-   * Describe the boundaries of how many invocations can occur.
-   * @param Yay_Description $description
-   */
-  public function describeBounds(Yay_Description $description)
-  {
-    $description->appendText(sprintf('Between %d and %d', $this->_min, $this->_max));
-  }
-
-  /**
-   * Describe the current status of this expectation.
-   * @param Yay_Description $description
-   */
-  public function describeSatisfaction(Yay_Description $description)
-  {
-    if ($this->_matched >= $this->_min)
-    {
-      $description->appendText(' already');
-    }
-    $description->appendText(
-      sprintf(
-        ' occurred %d times',
-        (($this->_matched < $this->_max)
-          ? $this->_matched
-          : $this->_max)
-      ));
-  }
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

@@ -1,126 +1,59 @@
-<?php
-/**
- * CLogRouter class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CLogRouter manages log routes that record log messages in different media.
- *
- * For example, a file log route {@link CFileLogRoute} records log messages
- * in log files. An email log route {@link CEmailLogRoute} sends log messages
- * to specific email addresses. See {@link CLogRoute} for more details about
- * different log routes.
- *
- * Log routes may be configured in application configuration like following:
- * <pre>
- * array(
- *     'preload'=>array('log'), // preload log component when app starts
- *     'components'=>array(
- *         'log'=>array(
- *             'class'=>'CLogRouter',
- *             'routes'=>array(
- *                 array(
- *                     'class'=>'CFileLogRoute',
- *                     'levels'=>'trace, info',
- *                     'categories'=>'system.*',
- *                 ),
- *                 array(
- *                     'class'=>'CEmailLogRoute',
- *                     'levels'=>'error, warning',
- *                     'emails'=>array('admin@example.com'),
- *                 ),
- *             ),
- *         ),
- *     ),
- * )
- * </pre>
- *
- * You can specify multiple routes with different filtering conditions and different
- * targets, even if the routes are of the same type.
- *
- * @property array $routes The currently initialized routes.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.logging
- * @since 1.0
- */
-class CLogRouter extends CApplicationComponent
-{
-	private $_routes=array();
-
-	/**
-	 * Initializes this application component.
-	 * This method is required by the IApplicationComponent interface.
-	 */
-	public function init()
-	{
-		parent::init();
-		foreach($this->_routes as $name=>$route)
-		{
-			$route=Yii::createComponent($route);
-			$route->init();
-			$this->_routes[$name]=$route;
-		}
-		Yii::getLogger()->attachEventHandler('onFlush',array($this,'collectLogs'));
-		Yii::app()->attachEventHandler('onEndRequest',array($this,'processLogs'));
-	}
-
-	/**
-	 * @return array the currently initialized routes
-	 */
-	public function getRoutes()
-	{
-		return new CMap($this->_routes);
-	}
-
-	/**
-	 * @param array $config list of route configurations. Each array element represents
-	 * the configuration for a single route and has the following array structure:
-	 * <ul>
-	 * <li>class: specifies the class name or alias for the route class.</li>
-	 * <li>name-value pairs: configure the initial property values of the route.</li>
-	 * </ul>
-	 */
-	public function setRoutes($config)
-	{
-		foreach($config as $name=>$route)
-			$this->_routes[$name]=$route;
-	}
-
-	/**
-	 * Collects log messages from a logger.
-	 * This method is an event handler to the {@link CLogger::onFlush} event.
-	 * @param CEvent $event event parameter
-	 */
-	public function collectLogs($event)
-	{
-		$logger=Yii::getLogger();
-		$dumpLogs=isset($event->params['dumpLogs']) && $event->params['dumpLogs'];
-		foreach($this->_routes as $route)
-		{
-			if($route->enabled)
-				$route->collectLogs($logger,$dumpLogs);
-		}
-	}
-
-	/**
-	 * Collects and processes log messages from a logger.
-	 * This method is an event handler to the {@link CApplication::onEndRequest} event.
-	 * @param CEvent $event event parameter
-	 * @since 1.1.0
-	 */
-	public function processLogs($event)
-	{
-		$logger=Yii::getLogger();
-		foreach($this->_routes as $route)
-		{
-			if($route->enabled)
-				$route->collectLogs($logger,true);
-		}
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+Dj9takq2wfVcLQ38m4q1

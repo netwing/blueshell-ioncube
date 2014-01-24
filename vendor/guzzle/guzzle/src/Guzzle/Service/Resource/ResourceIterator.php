@@ -1,254 +1,112 @@
-<?php
-
-namespace Guzzle\Service\Resource;
-
-use Guzzle\Common\AbstractHasDispatcher;
-use Guzzle\Service\Command\CommandInterface;
-
-abstract class ResourceIterator extends AbstractHasDispatcher implements ResourceIteratorInterface
-{
-    /** @var CommandInterface Command used to send requests */
-    protected $command;
-
-    /** @var CommandInterface First sent command */
-    protected $originalCommand;
-
-    /** @var array Currently loaded resources */
-    protected $resources;
-
-    /** @var int Total number of resources that have been retrieved */
-    protected $retrievedCount = 0;
-
-    /** @var int Total number of resources that have been iterated */
-    protected $iteratedCount = 0;
-
-    /** @var string NextToken/Marker for a subsequent request */
-    protected $nextToken = false;
-
-    /** @var int Maximum number of resources to fetch per request */
-    protected $pageSize;
-
-    /** @var int Maximum number of resources to retrieve in total */
-    protected $limit;
-
-    /** @var int Number of requests sent */
-    protected $requestCount = 0;
-
-    /** @var array Initial data passed to the constructor */
-    protected $data = array();
-
-    /** @var bool Whether or not the current value is known to be invalid */
-    protected $invalid;
-
-    public static function getAllEvents()
-    {
-        return array(
-            // About to issue another command to get more results
-            'resource_iterator.before_send',
-            // Issued another command to get more results
-            'resource_iterator.after_send'
-        );
-    }
-
-    /**
-     * @param CommandInterface $command Initial command used for iteration
-     * @param array            $data    Associative array of additional parameters. You may specify any number of custom
-     *     options for an iterator. Among these options, you may also specify the following values:
-     *     - limit: Attempt to limit the maximum number of resources to this amount
-     *     - page_size: Attempt to retrieve this number of resources per request
-     */
-    public function __construct(CommandInterface $command, array $data = array())
-    {
-        // Clone the command to keep track of the originating command for rewind
-        $this->originalCommand = $command;
-
-        // Parse options from the array of options
-        $this->data = $data;
-        $this->limit = array_key_exists('limit', $data) ? $data['limit'] : 0;
-        $this->pageSize = array_key_exists('page_size', $data) ? $data['page_size'] : false;
-    }
-
-    /**
-     * Get all of the resources as an array (Warning: this could issue a large number of requests)
-     *
-     * @return array
-     */
-    public function toArray()
-    {
-        return iterator_to_array($this, false);
-    }
-
-    public function setLimit($limit)
-    {
-        $this->limit = $limit;
-        $this->resetState();
-
-        return $this;
-    }
-
-    public function setPageSize($pageSize)
-    {
-        $this->pageSize = $pageSize;
-        $this->resetState();
-
-        return $this;
-    }
-
-    /**
-     * Get an option from the iterator
-     *
-     * @param string $key Key of the option to retrieve
-     *
-     * @return mixed|null Returns NULL if not set or the value if set
-     */
-    public function get($key)
-    {
-        return array_key_exists($key, $this->data) ? $this->data[$key] : null;
-    }
-
-    /**
-     * Set an option on the iterator
-     *
-     * @param string $key   Key of the option to set
-     * @param mixed  $value Value to set for the option
-     *
-     * @return ResourceIterator
-     */
-    public function set($key, $value)
-    {
-        $this->data[$key] = $value;
-
-        return $this;
-    }
-
-    public function current()
-    {
-        return $this->resources ? current($this->resources) : false;
-    }
-
-    public function key()
-    {
-        return max(0, $this->iteratedCount - 1);
-    }
-
-    public function count()
-    {
-        return $this->retrievedCount;
-    }
-
-    /**
-     * Get the total number of requests sent
-     *
-     * @return int
-     */
-    public function getRequestCount()
-    {
-        return $this->requestCount;
-    }
-
-    /**
-     * Rewind the Iterator to the first element and send the original command
-     */
-    public function rewind()
-    {
-        // Use the original command
-        $this->command = clone $this->originalCommand;
-        $this->resetState();
-        $this->next();
-    }
-
-    public function valid()
-    {
-        return !$this->invalid && (!$this->resources || $this->current() || $this->nextToken)
-            && (!$this->limit || $this->iteratedCount < $this->limit + 1);
-    }
-
-    public function next()
-    {
-        $this->iteratedCount++;
-
-        // Check if a new set of resources needs to be retrieved
-        $sendRequest = false;
-        if (!$this->resources) {
-            $sendRequest = true;
-        } else {
-            // iterate over the internal array
-            $current = next($this->resources);
-            $sendRequest = $current === false && $this->nextToken && (!$this->limit || $this->iteratedCount < $this->limit + 1);
-        }
-
-        if ($sendRequest) {
-
-            $this->dispatch('resource_iterator.before_send', array(
-                'iterator'  => $this,
-                'resources' => $this->resources
-            ));
-
-            // Get a new command object from the original command
-            $this->command = clone $this->originalCommand;
-            // Send a request and retrieve the newly loaded resources
-            $this->resources = $this->sendRequest();
-            $this->requestCount++;
-
-            // If no resources were found, then the last request was not needed
-            // and iteration must stop
-            if (empty($this->resources)) {
-                $this->invalid = true;
-            } else {
-                // Add to the number of retrieved resources
-                $this->retrievedCount += count($this->resources);
-                // Ensure that we rewind to the beginning of the array
-                reset($this->resources);
-            }
-
-            $this->dispatch('resource_iterator.after_send', array(
-                'iterator'  => $this,
-                'resources' => $this->resources
-            ));
-        }
-    }
-
-    /**
-     * Retrieve the NextToken that can be used in other iterators.
-     *
-     * @return string Returns a NextToken
-     */
-    public function getNextToken()
-    {
-        return $this->nextToken;
-    }
-
-    /**
-     * Returns the value that should be specified for the page size for a request that will maintain any hard limits,
-     * but still honor the specified pageSize if the number of items retrieved + pageSize < hard limit
-     *
-     * @return int Returns the page size of the next request.
-     */
-    protected function calculatePageSize()
-    {
-        if ($this->limit && $this->iteratedCount + $this->pageSize > $this->limit) {
-            return 1 + ($this->limit - $this->iteratedCount);
-        }
-
-        return (int) $this->pageSize;
-    }
-
-    /**
-     * Reset the internal state of the iterator without triggering a rewind()
-     */
-    protected function resetState()
-    {
-        $this->iteratedCount = 0;
-        $this->retrievedCount = 0;
-        $this->nextToken = false;
-        $this->resources = null;
-        $this->invalid = false;
-    }
-
-    /**
-     * Send a request to retrieve the next page of results. Hook for subclasses to implement.
-     *
-     * @return array Returns the newly loaded resources
-     */
-    abstract protected function sendRequest();
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

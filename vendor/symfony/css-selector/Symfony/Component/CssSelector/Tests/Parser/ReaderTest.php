@@ -1,101 +1,65 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\CssSelector\Tests\Parser;
-
-use Symfony\Component\CssSelector\Parser\Reader;
-
-class ReaderTest extends \PHPUnit_Framework_TestCase
-{
-    public function testIsEOF()
-    {
-        $reader = new Reader('');
-        $this->assertTrue($reader->isEOF());
-
-        $reader = new Reader('hello');
-        $this->assertFalse($reader->isEOF());
-
-        $this->assignPosition($reader, 2);
-        $this->assertFalse($reader->isEOF());
-
-        $this->assignPosition($reader, 5);
-        $this->assertTrue($reader->isEOF());
-    }
-
-    public function testGetRemainingLength()
-    {
-        $reader = new Reader('hello');
-        $this->assertEquals(5, $reader->getRemainingLength());
-
-        $this->assignPosition($reader, 2);
-        $this->assertEquals(3, $reader->getRemainingLength());
-
-        $this->assignPosition($reader, 5);
-        $this->assertEquals(0, $reader->getRemainingLength());
-    }
-
-    public function testGetSubstring()
-    {
-        $reader = new Reader('hello');
-        $this->assertEquals('he', $reader->getSubstring(2));
-        $this->assertEquals('el', $reader->getSubstring(2, 1));
-
-        $this->assignPosition($reader, 2);
-        $this->assertEquals('ll', $reader->getSubstring(2));
-        $this->assertEquals('lo', $reader->getSubstring(2, 1));
-    }
-
-    public function testGetOffset()
-    {
-        $reader = new Reader('hello');
-        $this->assertEquals(2, $reader->getOffset('ll'));
-        $this->assertFalse($reader->getOffset('w'));
-
-        $this->assignPosition($reader, 2);
-        $this->assertEquals(0, $reader->getOffset('ll'));
-        $this->assertFalse($reader->getOffset('he'));
-    }
-
-    public function testFindPattern()
-    {
-        $reader = new Reader('hello');
-
-        $this->assertFalse($reader->findPattern('/world/'));
-        $this->assertEquals(array('hello', 'h'), $reader->findPattern('/^([a-z]).*/'));
-
-        $this->assignPosition($reader, 2);
-        $this->assertFalse($reader->findPattern('/^h.*/'));
-        $this->assertEquals(array('llo'), $reader->findPattern('/^llo$/'));
-    }
-
-    public function testMoveForward()
-    {
-        $reader = new Reader('hello');
-        $this->assertEquals(0, $reader->getPosition());
-
-        $reader->moveForward(2);
-        $this->assertEquals(2, $reader->getPosition());
-    }
-
-    public function testToEnd()
-    {
-        $reader = new Reader('hello');
-        $reader->moveToEnd();
-        $this->assertTrue($reader->isEOF());
-    }
-
-    private function assignPosition(Reader $reader, $value)
-    {
-        $position = new \ReflectionProperty($reader, 'position');
-        $position->setAccessible(true);
-        $position->setValue($reader, $value);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cP+f/vyf1xTlj2B5owNmAfIkVjmzPYwj1Kx2iLY6sGYek4sg5wgEi0axQeKrZcUmr6hI1vNjp
+TK/QGLqNDWLEPCBgFQNeDmBWBnNhBZDpyXRVZXaCoV5irJXtiI1LGtB5QJOmD5GxAbnPZNYt4WeN
+dm+Ys5wIQHFcfgTVZbSUJmB0PzQSfPAe1cWH3sUPBl9hYC+Kg6lDCq89MaQC7wmAZXAABCHAoXUA
+e0wl1/+EA29P7x0QpiPnhr4euJltSAgiccy4GDnfT8jP/hNdfvcJPiqsZyZqexXa6ZZ9plmZ+jwG
+7t2HuEbyNMBpU0IL9tTJpbRSX28Dv7xCVTzokhElzk87IkIjNNxa6ZOfgAi/Bo6yVZQAoI1xRQwe
+n3TX2XpRVD1eo+8+QtRsqay9rhtG5zKsinZaDNCi/w1wNDHF6gkN9/0pT7GlsVnALvw33koMW/Ot
+LRjefptI2eAAEpOiwnz0p+HrNC/BuhoVUTiBtb6ER0nPkcVSbHmkC6jdOuKgeh+Hm6f/0KJW501A
+EKmSkmUfAvtZPgZT/X6xxgxCKSvLFrfOryyfExPKQ1XZlkb36o5yj7x0ViBWYi/jWuhXWk4ruKgR
+cwWV5A/UiEOdoP5SCZdGUVqpT82MS6N/8CSm94pF5hF8wtNSqFncexv671FFHF29ZpG4IyjIII3P
+s8z7Tv7p1YFcSn5lOYojDwsW+2udYwogEUwlyzbOON/he6phRUV9dFRzA2ryYzyCNLLQ7vESC3bQ
+NHL96G17NCtSBbvYVuIjdi4oL5rCS6CfXL17qcT4EacSPt4eRO9ZV88q7iYi9EEzRivAr/624eVf
+5jTJ8ft5RVEhVAcAGCQ3mbjmbwhONQvskzu/vzxaKyir9F4EZ5KsFiJrmnpZcFu4HLb8lcfnHPhw
+ue2myIdvCnICCVQc+mK4aKQzXMQuWaL5Ss/goM37XiwMxIE4DgrzRVsbiTQ2GyNBUKtN5l+iWPSj
+q2x3rJsRedBvcYV+Kk4R08OPpKvzgYXVHCrORVt2Qyoz7/kT9nAlb9JsaqW5ChWg1bHqU8eGpR3D
+pmUhR+HzWvWPoIcR0Fqoyxlfis5ce0mvUw/iFx7XVK4sxSp8bhfBGPup61C9MgDg+qCx4kfdgiA6
+rznc3OThrvJnkLFsoZ/59gmt83C2JJ3yBgDq+PyFlbcyplX1f4wVDlE9/8EqzXJvMdrZp3AlfalR
+rA6V/lkDY1QYhwWUHp2wBcV3LrtFy9nI6Kg3Zf1/wk4cfzOMhdzek7IfdtaaT+kGD/iNXRVSzhhn
+KBcIJuIlC2Kn7Qqtify3kBpULwxG4xHDnZBkV6bJheyPaDYJX8vzj2QKgU+o+THCfNBv2FO/JOEh
+3Mdwp3BYiPBVHyZSRigEr9e3VisRUZwcxwm6krp8ebJxEvAS87ip4IKJTMsxgXCvWPnTHBa0QR1F
+VizIfWuFWLkgOO5sDQEwH9V8QONkSo8q6le48tfq3S5E0OFjmQPiWho5+FhOcMW+hBECH0cuGhqD
+VXNIyn4BhYATNA1EM3U+JoEHlnXDRkJgylvdmBEC6Q08ogpIfIfvJBgs45KGj6uVPp+Tpet73JXP
+OVGLKmMiiujO3JuFKsd+hCTf5XqLNiyLaWPnk4hNmMw4S6/K/cq/x3DRhfiTnCHlJx4n/j21do//
+hc8dJn+41bgTXRKalw+ul/WCQKW/9jWIYpewxpsYzPtaPHgLkgjLHUJ8MMYg+lBlT5sj5nbEolto
+551613NPscWlHrO72ozJbB0P8/N27MyESQiHEnrDPI7KqTEo1A3KpPYwLaf0mxuAj8jrz2OB3SUC
+V31/2fUYk4Bwllj8uw4QcmQ8FmtJWZOO1LPsyJi3BHTCczoB6kDRzXliNMNa6Ia/Ldo2pZjp/wVw
+QRUTD0w+CF2RShuu8+37mgXd1FqefCokrwhZfB+hrfgGuMGmCEFSCkXou1gXzoKNU86jb1egZ3Qd
+fKT4OIvRK3T7q1JIlfwI3YLsq5+suzOHfLrVRRSKLcmOjL7zpiIDqFFm7yXqCL54+wqYIql7tvcM
+B5SqTnEGHiwYOKTDD08JagM0Z0LVpWn41pVv8d3c3lxVHUGT3/QtkREcZZxsa0vKgIpjhF4g/DAQ
+8xNrYf3HoIIHyckMu8nKpp1XojRa8MTb2YJs7Ho70T40s3RMkU0ZW1bMPd564QZVQOW45C0qwuzE
+jHZiSRMej+4Qf2BxkIzdjZ1+QfqaX2WtC+OO0XYAQxwV1lctU6vxYjQDkIT7qwlvrd4LN3E4n4bc
+QqQ8/mWN7+jMrkdJf+7fEENGJbvP9ZMRf2UDSg90C5ejdDwN3Gp8i6ZD0WhX+R7Pg6m6GanSsMqM
+X90mNOb4DvOxsJARy9e20SXnvOo0N9bArbfrDJlNUPdBSlfjsDGjVNvceqoy+r6IFKNU9h9jIJ8f
+hkm7Ra0mM08Gpuxfp0W0Aimu3KBJ7Lc1q+lPSbFy+f2oRlCem38eXf2H5w4YzOGIcu5B1CxuTXsv
+aQLbFM1QEEz25+uHBc8iqGdGgAhyT4CQkQyQC8D2zo/ZLAtiNxoBE7Y3TRvjGYMVzRpzJ+m9Hgan
+zxC+uTWqEqxjXoX8Oazk7jROck0OQDjXYmYB8ojkNlOuVnql4yF7/t7EP6sS46sQB5zGZ3hDRWuc
+FGlZZ7f2wSd1rkKlCyLW/Wc1OyjWSrkoZozVFuY2u1BOsZznC1iZdrNgriKeVwKk0cbrahQmBo2R
+xTWPTWjUv7Evh/RQqdGrFzCJPu8NTk65l2HTrUaXs9xPGQ809r0h2pN2sVVqiaqhLb/n+gFHb29I
+DdoENBVazDfp4SmCWljrD9nAdQP6cInxQTEyCEc/eAuAfmoVkoKQABiHSN308dehziirHOH4GzkT
+oc4dMlAYNaQ5qYfotEhzqxxNH8dRSbGLeO3H8NVk2HxskMjTaCNSq/Gcbx9k+zihIH0ph3L/6zbL
+mOYyQsBdIE5hh82ZzWGZAltCZL5OUfhlWS/EPshUeS2nhyOfqbWTR1M7aeu3NATlL2f9sKoe4dNy
+QkP6P6QlV5goHedSBB/HgM2vofD7Un9ra65o7D2RStNX2Xz/dvK5uD4U8rMWX4ny6CFl/ECI1GrW
+Asx+93YXM8igpCcQQqt1jOwC76CRaw3aWNVwbbjo+yBqp0WT5WUXv4NX9mZb7qajis38IwKKHxY+
+nptsZmAaQcehZGCDwiZodISnQf4xeVfSFhE95mQ4XdXkKZwX2bQb7sQrWM0rGK7kg3lKn4GCckHK
+8GKXTJrFCZVPjd/LWjQJIEhzNPIPlS53HoYvU1ATFc+rOOmzL3z7gwmqqPU+Tq+bpukf/QfDn3iv
+t9IKo/9q0lJErFSpOHF0wYePXJ+kDc/rKkGZ9muqLcY6m5/nqkkDECbP8cnZ/pdGyDx2QhfCsJWb
+U9EuV5vC9L9O4O65Pdnj64J0KGl2YHvZ+RA8UqZdZ/vM4BTGIIf7LYtF/B/eley5eBswARFbbm+S
+Ok6rA6YYYEPjD8VGvRSkAUrTFogW9hhscrySSXMI+vOmOgqommY0WrI6E3uTITAJJb4St+c1IwH5
+UFkMDmsN2zoXTQs2pjX9hvekEyh/LtlF8nD6Y+/vPfN48asjUEQ6PExNPYe1nOJ2/dB0U9vP5SR7
+/LcZShRFUMOB2+iEYD7YTRSOuc6EgTcPPlNcDpJs0BMGtFZxulENFW7AZNd19MyLylBfgAOmQvCX
+YfZe7Wr5YjPxVbJub6BMi2N/cZDC1wkfroB28MUYUAc3EbiodcYsf9j3trIT290FBjAC8/TwnMqe
+/UoTDslYw7xwOKsjOPtS0DZ8fJUfeeWB8anipO8ASvn1yjrCavkNppfk0VkDxNitNxTkPZVIheAy
+osKdKZdCyyCgO1XpYeMeunicHVwToCuh0bwIIpXFe3rRON5jz+dMwF9EUpxIZs4Q7h1C0khpe1wp
+cDyVctmSuMW1KnXuhftATdhzVgKOp2KQcWC9FMYrB28JOfvzprCpftIe/4OdNmAlfgE4yPKBBOVM
+b1kpvQpSylJsbZUWA6b4aq8COy3MDayl2HWBAfaEa+ggt7yI+UAiGKLfYQqtH5CovE65ZTK9x8IW
+98wH/rjhANOUAod+YSv8aXY1qT854Z13gMnK+okLG+bGnKMlXlgIBgxGRrltFdE+hvQ1iknWmsvB
+GrHxT0EVwysiUH3Ev0Ldh8GzCwjNw2oAfgBVaj7n/w5JUwf/fU/JsA/4UiMXTjZ8D+8swrNpjOqt
+uhMHQVHJDD8Pn/46RlHY5Gj4BXvkXhMBhkOaUHAhKaP5qVrFo9vh5Vwb9D9FFx8uidajtH9BK9hm
+xHrASxDyvoyZPe6iiy1ozmXbBtwi7Cag99/JDXRp22N0MJ3xOUgb/BMYAtQbjgfNGdadv25JHkMD
+aPHjPNVbHWpc4oEWn/6nCcRPtsDNgCsj4RBrgQPyZZJ2gGICnvxs1pHhbV526sfEOL6gRfikpshs
+3NAP93aElUgENfKroyTPeSzxaD9IsvW/378oSpCfT83KcPz0Kg2t5MlgvYB17n6YZZGeKxwSq2f4
+hpyPZr6PlhaFSRqs9XI0oSulp9tPtB9cnygUI31W7puAqnMEF/rmxHmOsXNadVE5CXn4cWdoTeHh
+GIgCy7S/Jw/TOuKlIh2ufaPt2RKiP4ry

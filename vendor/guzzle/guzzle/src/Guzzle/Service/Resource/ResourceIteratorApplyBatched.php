@@ -1,111 +1,60 @@
-<?php
-
-namespace Guzzle\Service\Resource;
-
-use Guzzle\Common\AbstractHasDispatcher;
-use Guzzle\Batch\BatchBuilder;
-use Guzzle\Batch\BatchSizeDivisor;
-use Guzzle\Batch\BatchClosureTransfer;
-use Guzzle\Common\Version;
-
-/**
- * Apply a callback to the contents of a {@see ResourceIteratorInterface}
- * @deprecated Will be removed in a future version and is no longer maintained. Use the Batch\ abstractions instead.
- * @codeCoverageIgnore
- */
-class ResourceIteratorApplyBatched extends AbstractHasDispatcher
-{
-    /** @var callable|array */
-    protected $callback;
-
-    /** @var ResourceIteratorInterface */
-    protected $iterator;
-
-    /** @var integer Total number of sent batches */
-    protected $batches = 0;
-
-    /** @var int Total number of iterated resources */
-    protected $iterated = 0;
-
-    public static function getAllEvents()
-    {
-        return array(
-            // About to send a batch of requests to the callback
-            'iterator_batch.before_batch',
-            // Finished sending a batch of requests to the callback
-            'iterator_batch.after_batch',
-            // Created the batch object
-            'iterator_batch.created_batch'
-        );
-    }
-
-    /**
-     * @param ResourceIteratorInterface $iterator Resource iterator to apply a callback to
-     * @param array|callable            $callback Callback method accepting the resource iterator
-     *                                            and an array of the iterator's current resources
-     */
-    public function __construct(ResourceIteratorInterface $iterator, $callback)
-    {
-        $this->iterator = $iterator;
-        $this->callback = $callback;
-        Version::warn(__CLASS__ . ' is deprecated');
-    }
-
-    /**
-     * Apply the callback to the contents of the resource iterator
-     *
-     * @param int $perBatch The number of records to group per batch transfer
-     *
-     * @return int Returns the number of iterated resources
-     */
-    public function apply($perBatch = 50)
-    {
-        $this->iterated = $this->batches = $batches = 0;
-        $that = $this;
-        $it = $this->iterator;
-        $callback = $this->callback;
-
-        $batch = BatchBuilder::factory()
-            ->createBatchesWith(new BatchSizeDivisor($perBatch))
-            ->transferWith(new BatchClosureTransfer(function (array $batch) use ($that, $callback, &$batches, $it) {
-                $batches++;
-                $that->dispatch('iterator_batch.before_batch', array('iterator' => $it, 'batch' => $batch));
-                call_user_func_array($callback, array($it, $batch));
-                $that->dispatch('iterator_batch.after_batch', array('iterator' => $it, 'batch' => $batch));
-            }))
-            ->autoFlushAt($perBatch)
-            ->build();
-
-        $this->dispatch('iterator_batch.created_batch', array('batch' => $batch));
-
-        foreach ($this->iterator as $resource) {
-            $this->iterated++;
-            $batch->add($resource);
-        }
-
-        $batch->flush();
-        $this->batches = $batches;
-
-        return $this->iterated;
-    }
-
-    /**
-     * Get the total number of batches sent
-     *
-     * @return int
-     */
-    public function getBatchCount()
-    {
-        return $this->batches;
-    }
-
-    /**
-     * Get the total number of iterated resources
-     *
-     * @return int
-     */
-    public function getIteratedCount()
-    {
-        return $this->iterated;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

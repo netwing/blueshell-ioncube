@@ -1,165 +1,76 @@
-<?php
-/**
- * CAuthManager class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CAuthManager is the base class for authorization manager classes.
- *
- * CAuthManager extends {@link CApplicationComponent} and implements some methods
- * that are common among authorization manager classes.
- *
- * CAuthManager together with its concrete child classes implement the Role-Based
- * Access Control (RBAC).
- *
- * The main idea is that permissions are organized as a hierarchy of
- * {@link CAuthItem authorization items}. Items on higer level inherit the permissions
- * represented by items on lower level. And roles are simply top-level authorization items
- * that may be assigned to individual users. A user is said to have a permission
- * to do something if the corresponding authorization item is inherited by one of his roles.
- *
- * Using authorization manager consists of two aspects. First, the authorization hierarchy
- * and assignments have to be established. CAuthManager and its child classes
- * provides APIs to accomplish this task. Developers may need to develop some GUI
- * so that it is more intuitive to end-users. Second, developers call {@link IAuthManager::checkAccess}
- * at appropriate places in the application code to check if the current user
- * has the needed permission for an operation.
- *
- * @property array $roles Roles (name=>CAuthItem).
- * @property array $tasks Tasks (name=>CAuthItem).
- * @property array $operations Operations (name=>CAuthItem).
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.web.auth
- * @since 1.0
- */
-abstract class CAuthManager extends CApplicationComponent implements IAuthManager
-{
-	/**
-	 * @var boolean Enable error reporting for bizRules.
-	 * @since 1.1.3
-	 */
-	public $showErrors = false;
-
-	/**
-	 * @var array list of role names that are assigned to all users implicitly.
-	 * These roles do not need to be explicitly assigned to any user.
-	 * When calling {@link checkAccess}, these roles will be checked first.
-	 * For performance reason, you should minimize the number of such roles.
-	 * A typical usage of such roles is to define an 'authenticated' role and associate
-	 * it with a biz rule which checks if the current user is authenticated.
-	 * And then declare 'authenticated' in this property so that it can be applied to
-	 * every authenticated user.
-	 */
-	public $defaultRoles=array();
-
-	/**
-	 * Creates a role.
-	 * This is a shortcut method to {@link IAuthManager::createAuthItem}.
-	 * @param string $name the item name
-	 * @param string $description the item description.
-	 * @param string $bizRule the business rule associated with this item
-	 * @param mixed $data additional data to be passed when evaluating the business rule
-	 * @return CAuthItem the authorization item
-	 */
-	public function createRole($name,$description='',$bizRule=null,$data=null)
-	{
-		return $this->createAuthItem($name,CAuthItem::TYPE_ROLE,$description,$bizRule,$data);
-	}
-
-	/**
-	 * Creates a task.
-	 * This is a shortcut method to {@link IAuthManager::createAuthItem}.
-	 * @param string $name the item name
-	 * @param string $description the item description.
-	 * @param string $bizRule the business rule associated with this item
-	 * @param mixed $data additional data to be passed when evaluating the business rule
-	 * @return CAuthItem the authorization item
-	 */
-	public function createTask($name,$description='',$bizRule=null,$data=null)
-	{
-		return $this->createAuthItem($name,CAuthItem::TYPE_TASK,$description,$bizRule,$data);
-	}
-
-	/**
-	 * Creates an operation.
-	 * This is a shortcut method to {@link IAuthManager::createAuthItem}.
-	 * @param string $name the item name
-	 * @param string $description the item description.
-	 * @param string $bizRule the business rule associated with this item
-	 * @param mixed $data additional data to be passed when evaluating the business rule
-	 * @return CAuthItem the authorization item
-	 */
-	public function createOperation($name,$description='',$bizRule=null,$data=null)
-	{
-		return $this->createAuthItem($name,CAuthItem::TYPE_OPERATION,$description,$bizRule,$data);
-	}
-
-	/**
-	 * Returns roles.
-	 * This is a shortcut method to {@link IAuthManager::getAuthItems}.
-	 * @param mixed $userId the user ID. If not null, only the roles directly assigned to the user
-	 * will be returned. Otherwise, all roles will be returned.
-	 * @return array roles (name=>CAuthItem)
-	 */
-	public function getRoles($userId=null)
-	{
-		return $this->getAuthItems(CAuthItem::TYPE_ROLE,$userId);
-	}
-
-	/**
-	 * Returns tasks.
-	 * This is a shortcut method to {@link IAuthManager::getAuthItems}.
-	 * @param mixed $userId the user ID. If not null, only the tasks directly assigned to the user
-	 * will be returned. Otherwise, all tasks will be returned.
-	 * @return array tasks (name=>CAuthItem)
-	 */
-	public function getTasks($userId=null)
-	{
-		return $this->getAuthItems(CAuthItem::TYPE_TASK,$userId);
-	}
-
-	/**
-	 * Returns operations.
-	 * This is a shortcut method to {@link IAuthManager::getAuthItems}.
-	 * @param mixed $userId the user ID. If not null, only the operations directly assigned to the user
-	 * will be returned. Otherwise, all operations will be returned.
-	 * @return array operations (name=>CAuthItem)
-	 */
-	public function getOperations($userId=null)
-	{
-		return $this->getAuthItems(CAuthItem::TYPE_OPERATION,$userId);
-	}
-
-	/**
-	 * Executes the specified business rule.
-	 * @param string $bizRule the business rule to be executed.
-	 * @param array $params parameters passed to {@link IAuthManager::checkAccess}.
-	 * @param mixed $data additional data associated with the authorization item or assignment.
-	 * @return boolean whether the business rule returns true.
-	 * If the business rule is empty, it will still return true.
-	 */
-	public function executeBizRule($bizRule,$params,$data)
-	{
-		return $bizRule==='' || $bizRule===null || ($this->showErrors ? eval($bizRule)!=0 : @eval($bizRule)!=0);
-	}
-
-	/**
-	 * Checks the item types to make sure a child can be added to a parent.
-	 * @param integer $parentType parent item type
-	 * @param integer $childType child item type
-	 * @throws CException if the item cannot be added as a child due to its incompatible type.
-	 */
-	protected function checkItemChildType($parentType,$childType)
-	{
-		static $types=array('operation','task','role');
-		if($parentType < $childType)
-			throw new CException(Yii::t('yii','Cannot add an item of type "{child}" to an item of type "{parent}".',
-				array('{child}'=>$types[$childType], '{parent}'=>$types[$parentType])));
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPweK67WTjk1/pDoDM+1xdIaRNzZLVa2ZTUDwnUiMPmvGH0YNd/oYJmDGZW4OXYPzjIzl0aO2
+9fTyJNpmdAaUUi+Fzk5fi+0axsp0VncpNnGbbbMDfoEabuzh/C+JzC2hRnBNNvwk/e5rwRCuwUpY
+IsZRb5M9aLm9gH5A0FVG8Azto0nN43zYWCchomNVC1cGoeUINbstCT6JqP7UVkQcyViRB7fcb179
+AB5/CWuI1c8UsTV10vYgrAzHAE4xzt2gh9fl143SQNG3O+XUBdC7MS/hx8/OOsTATBoOXgo5ztfZ
+qWKA8LtPh4LiIUNMSO5H6T1e7g7RuhRZ+WUxVb6u5ve2Ug/WZrEl3mLYTcjvQ1lXNWbWLzjmSfrQ
+Ncs/h6BB9ja+M+ZZw2t7Td+2HyTEX+3/SZOkpgJBzNkMY/N4ZpFJqqwEfhu4C3g0ufNI16E4zDdX
+wDEuCHCZqa5i0R5OY7WMN9V6SckjzWbzvikQJCUmnhoXd1IrZFh6zAxwzWg2+vN4E2jDfC/9kQKm
+THgQZNQ5kdyqJfGQJKATZjJan1POW+TXa2DBKqdsy9l0WJD9nlkXqj5qyNZot8pUaLNkuRkzokQ3
+hJ1MRr5m8buGOxkc2PtBhi2x6/MkeOCIJ4s0Jy7wtjlsea0HpWxF0GSWddMdKIj+tuCGUmgn2YDm
+DK3ChtP74r0cPPFGLsdjYhRt1uN+GgDHdbk/EFta+er/R//RFeXuY6F9P3gI5Nko0VggiV8kPpxC
+HetttH00o6RMxL4ec/OwsP04VfD3dAa865256cxGbVqZNhqDWEL4eH+dZ9yzV62HbmnU9EKz+pq1
+jjiUu/mG6Qsr2/MhS4Sxo9pmdycrKRRDpwUnT7HxaSFl0Sc3gvdPt7hi/KN33YfeBKDiXYG45DjK
+yNCj1M0UED6La61qmkLRpVJkmgt1TtuJXPXqYMdUwyMZTa0vnYy4eUQy+qGZUhhbf0DSDiLOZ19g
+IxBluz+uuN8xma4ZfsxMV8FLmwlf+TJ5UojxcXerCiMejEUL6xHZDe8KnLZV4RnUaGlZokXpcSbX
+tryuWFzVk18aogy7qj0FbYWiuMrLqV7XChp6nUBeCoMOegKzxuP4xJGUjAapulSpov8QNfGKyrBU
+5jEewH7hnC8kki3uSPOBYoacB5q8F+Z9Ay6qR2n9UKIcqsRQu9ORZnoVgOuoSQANgbWfmXX28tsb
+E5QOzn808S18AAemgjvowyhr0nW+dtGZ3kgOdnp/TQa5mV3tJpWJPO9Swb3yg505UwPokrEVhchj
+xtxkpEiY7ClCSfGm3V0XEfTqLp11d6TlQua5BoC5HV/soUtReDY4vDEHOwQbTzdE2QsIAtXHwUxf
+xv7B1XhP5VtxLAD6DlhBnRlbypDQHqG5ToMil2xI60DtPlG9YcCkPFrLAXJ0+cYKD9EUnW1q+z9q
+FRiPnGECNZ/BVGda6vLq5vo6Yadu8XtOTbVEEBwu4Kuq4lETIco7rwcmmEEsZ4fvc/LFFODh1MF0
+Y7WAKRKAi24h5Hd/9lueb/sKafSQ4cHunwLMSdgHbgSvWXPjdzK9GlS8g0Av0ByAcSzGhLY2hdq1
+AIao0fr0aLEdpcE6/Cm28mpqJS8J128sgoSM3I9FjiTB3lk6Gav6wmVVXnhug7ZcXdw3GL4tmqMy
+liSPjiQ1p/F1OsRDgT1aYoVEKlVKg9HFoje6+25C/bvuddm3sbU++ENpkwMsAKE4LIU9MQc/T57B
+a+wm7tpLUuKWODYg9tLSqdfx8bPxSCvFuS122nyto7BLQWH5T7G9ihI07bApdtYQh34HI1yNjeHb
+lqYJuBbUnjymwZR1n8hvVXTu5mVgm/fBPK0icDyCCz+zDaiXG4mw6iAFlN/UeNh+jsThOvGil610
+lzBWnOuQAcI3Ak8O0Yq7cGTJHM232TsD5udux+c8y78R1xShBRCAccVDy6I7M1IXsyJC7rNAqBa4
+whaASSEHbKtyrp2EJyBIZdtNC/aHG5z6phAPhhVv2vCxQ08/5tqRVW1DxRc04fDiA+HRmtlrb4U7
+wk40+1k+KbMMdJHiYOG1oYOogVzOoF7O2cK9O1mx+ggnTIMl62O6GQpow7ECcFAAIwEZTf5xREIb
+6OpGiiM9/vd8YtHHmVXo7JUz7QY/yso+Lx18JWU8DKzSGGETDViw1IK2J2clym4mrpyWAY6+YiZT
+IaWsRfm8B3ueYla559NjibK784IXD1HseW1GjlurA/Z9z0xAZA95MKR6Et9D9qOBsQI0IdPNoRgy
+Z7tNNSZtIWU0IvCp4OwK9s52awYGaaf6YcwCvMdVe3liWRNCTuoYfEfjzCJ+Nh65nBkMHpB4+uMJ
+evFppnikCKDCi0fc8ig/MvjqCBICZKhb9LxrQNkNXXfBrDCQAlUjHkoFSoxVHTnUIfY8FZRHR4Ys
+JuROC2Eom3ZvRtcEMGWdIzETx5SNgDmUyn2i6HkdZFq919U5FwungptK3+Bv+3KKYuM9pscmAhNS
+oUrEmt8uX1SAp3jPm0OsaecMkfyd8oG6bIfr2ASLUb9pmOaPoqCpLTO5awfUgfbAQ6RObq0QTEp5
+vvjZ1sDFhBr43aca5k8xwByZoyLuNOZ/2+IM/TgG1IyGcx5ds1DEGnwPFe1UHWPmOYk4p6snISAE
+mnKreHlbAtNtO7JJQRXpixtljlNOgTg9alj8rD4tAqManZCFzk4ldpA7Q/vVQ9em/rRWIyBAQFRA
+R/RCSEpVxhH646yDxB5IkePuLAx63g0EYnInaGgSRHwUfnGWvbpM/1zJGTXbfNG3FUn6ertMDhHQ
+zWf1HybSkPPjGGqhQ2jOtYwRDxXEhKC09Gk2xZydOPFS/hLaO3CEGFYE9CX7KS4/aqFiwTY9qm7E
+lqZ/c1+FdOH0Ed4FA4RDRsumdvUf3qLWmpkUHnfIy9saLyOwbn76E+HIEX+Vp7luEZBm+c91wXSg
+YnnW1dJ3kVKGOhJAuogo3taAplv69sOsRfOmxr4Js0riHZCeRJ9ZGjq6gMvyBw84IX5H3Z8ilhx5
+R/9yLigSUxB4uA0X/+WtLDNPwbt/t0MDKBBvLEm1Nyq5+WuufDE6uf/GCk5ssZrWnVAGhRmAV2fd
+oMJke7m88RQGGbPC5UB+Ut4dp3qgs7DfDTQsc4Vmt8MePdUuA9c+vhMhDKp7DXPVTgk5L8BNgaAb
+XpYZTaWoLIyrQ2BvyVstCKY+EzFhd4iEYrsj5dFmFb+4FIy45MOvH0y4h0LbyZfMUFPZjSD9+TqD
+OBGICN12y5m8+VWiIrVbhI5mNswPPd4xyiC8+8Uo7HBVDbEjoK5ue8ZkOsU16pzCWwIIDeJiiscm
+xfXG74bKRNOAXHJy/GkQRUsbKK9uWwwlTktsbjX+0Q93vol7bfG+5QrkEYk302ccBVzAYCE3RrfN
++CgpQ5ZQ6IL9RPpRxRE8Ev9MG1HsbOVg2b4pUXqcIMOnXhcOw8Hrp5DcwBzlUCiY6BQRc1+UFP+n
+6+/uc7EKWrnAsdYSUc+sV4vWCZjbIj0V01MN5Eeh2G6itHOGa5iVdT9ZGU+tIrgZ7TC18SgnwBKY
+1etWTDQOyGmpEMSqNa7c4ciLrt6T41XJMKl5CxgGnSegVsGqQJsbVNKqlvGgodSW1VX29hbp0PnD
+55VfuFpr5FARRO47lMrnuuo4koMA/09sh1/gsxKA/6sV7iriu9f6ZBvPZmbK6ezd7kJ6QliIouyx
+lfKjnj6gfDt4dS1AMtjPHj53rYGuBskPwXspfgL0wlwBddwgiaw5VSTsiKYYI5448MsbNCzAP6Rl
+SWJPgH3cYbwy/eDfc85ajU77GKIWaF/E/FmrrxSdqKWC+uQNSn4IivW7KFUuluP0NsjHsbB6CaPr
+ddiptLsXGx2A/H89H09ukjWlQbcTJalK7oW40QoWD5Z4SzCwdENQKU5pNmCFX7CWVaO1kRqsHxgi
+buZRaOM4O7YXUb4OpvSwAUTqouKzkD1E+6IoxxcJ8m7EdoFehNgmrR2zcmq/W/zJw2Kebjf8ml5Q
+adu6GB+/zLYgSgNoHtC6dTuc1JW2XVrfKaA40p0Prj3SouVRrfhHojUNEfMRDckCA7ZL8mQSRbHr
+elos3tFD6kd6LMDSshaUZVS9IMm+BLqgLGR2o0HNB/cM7PhejsRtjJerffyAYETTcwRMvPQB/8jq
+6AKIqW6YalYNXi4l7IgjavYRD7ioWDwoOa46uUKRQDksCfbxAlnosn55HnLLf/kcfrEhRANtihV5
+8Ynnb1CX7C/uCpIeHSj2x+OtUmtaO+HXAgXFlscORzeaHv61SqLiq1ckGxDWi6e9yEHKCMnpaeFL
+OxXoFv7kX8pMtykUH9I6+kVkYFyrvhBeSIqaKMZAlbt5WPhF6PCF3nbgse2A9uSYEDI1H3GwvZjP
+QKP708UuAIRL6FDGmtcdk1xZAMluQcRIA3MFbbMkW5FK95iuD7Q8Rne7gJZ2tXEw+tlOufqwi0en
+MEsINZvjCxmChhIp6ZIG/cKss6g89rV7WFrDHPh3L/O9H7ijgN6CnjqZ4a/brArIil7nghQGQtYV
+S8Xzl5G3Ie4QeW9GX0j+PzU2tqaKdWLJBEm5HU+eXo9OifqLqoTrStCGkYV1Hiqny/y4tbKk4dCW
+s+VwIELHuGHUaONVZlkD+ERBionijSMmpGXSWO1+aemxIjDDx4ybBd30gG/lREjjfftb6bCk8lTt
+DHdHN76UXKKfdqwuoZdnJU5p9oykSBfdb21yoXfR45aBdaYW1350R9nLNdhPYuSrG/k5Nc8HPXKA
+vQx2lkP0xUSjTw0Em/Svhniwao2OiMhutYr1wVdFDkRxuaNOuwkEfvP5CdcPlIPEVNYgnB1gksh3
+AcX2rhi11Qb1I1mXXUM4VIqMThREnmMrRuWmjlV4/1G7Tah/J/5BHDafOI2tfLUujhRstZzhK/PI
+hn1oR4Sml9jm2WzKKfJPadq6XC/FNvGru8wJUfBRN6b5AZrJrsZZxjH3d9tiB61gvhfMtCfNsXIq
+UtKQjGF5aaaG4YyF0bQztQME02EP20y1mu+8FKtiMQbkq7f5davzNMqmyuVE/1Gn0/O7RodnWXRC
+Wxr8CT59LuJfPLgX7XBYslBhCpT06kz9urxow6N90BHZc5+QAWwSHA+kGvlF5eN1yIaWRI91Dvhv
+Ye2I/GbJeNJqOtkVFybDY3KRaqoGHskRFtk9CMG566nqT3+4E0AxNjalau4PSFXieHew71Qr42fv
+AfntD3ubIVNZjFSYT9+k66GvyprXZlRUpb1a7hkepxKBLeansIIqqMvkOhh4x/2eyi5q+xUoiqnS
+xP22zKmE+VbFK0EY+CQAGszar+N27ZTpWU0zK0LUcpQ9wAiYXY1/AYlAN2NWHGaBV3WdZrxj/D3k
+8jaLCk2V+kQ0qktnnljUdc9VaQYPl9nTpejULxh0iqVyCFDOBvF6WC46V59S5RwnGB9EhMbgHeAb
+7Hge1eJ/QIWScGTUgkvyW47NyPVlz8H+pVNtPwSJb8QA

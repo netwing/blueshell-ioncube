@@ -1,153 +1,61 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\Console\Descriptor;
-
-use Symfony\Component\Console\Application;
-use Symfony\Component\Console\Command\Command;
-
-/**
- * @author Jean-François Simon <jeanfrancois.simon@sensiolabs.com>
- */
-class ApplicationDescription
-{
-    const GLOBAL_NAMESPACE = '_global';
-
-    /**
-     * @var Application
-     */
-    private $application;
-
-    /**
-     * @var null|string
-     */
-    private $namespace;
-
-    /**
-     * @var array
-     */
-    private $namespaces;
-
-    /**
-     * @var Command[]
-     */
-    private $commands;
-
-    /**
-     * @var Command[]
-     */
-    private $aliases;
-
-    /**
-     * Constructor.
-     *
-     * @param Application $application
-     * @param string|null $namespace
-     */
-    public function __construct(Application $application, $namespace = null)
-    {
-        $this->application = $application;
-        $this->namespace = $namespace;
-    }
-
-    /**
-     * @return array
-     */
-    public function getNamespaces()
-    {
-        if (null === $this->namespaces) {
-            $this->inspectApplication();
-        }
-
-        return $this->namespaces;
-    }
-
-    /**
-     * @return Command[]
-     */
-    public function getCommands()
-    {
-        if (null === $this->commands) {
-            $this->inspectApplication();
-        }
-
-        return $this->commands;
-    }
-
-    /**
-     * @param string $name
-     *
-     * @return Command
-     *
-     * @throws \InvalidArgumentException
-     */
-    public function getCommand($name)
-    {
-        if (!isset($this->commands[$name]) && !isset($this->aliases[$name])) {
-            throw new \InvalidArgumentException(sprintf('Command %s does not exist.', $name));
-        }
-
-        return isset($this->commands[$name]) ? $this->commands[$name] : $this->aliases[$name];
-    }
-
-    private function inspectApplication()
-    {
-        $this->commands = array();
-        $this->namespaces = array();
-
-        $all = $this->application->all($this->namespace ? $this->application->findNamespace($this->namespace) : null);
-        foreach ($this->sortCommands($all) as $namespace => $commands) {
-            $names = array();
-
-            /** @var Command $command */
-            foreach ($commands as $name => $command) {
-                if (!$command->getName()) {
-                    continue;
-                }
-
-                if ($command->getName() === $name) {
-                    $this->commands[$name] = $command;
-                } else {
-                    $this->aliases[$name] = $command;
-                }
-
-                $names[] = $name;
-            }
-
-            $this->namespaces[$namespace] = array('id' => $namespace, 'commands' => $names);
-        }
-    }
-
-    /**
-     * @param array $commands
-     *
-     * @return array
-     */
-    private function sortCommands(array $commands)
-    {
-        $namespacedCommands = array();
-        foreach ($commands as $name => $command) {
-            $key = $this->application->extractNamespace($name, 1);
-            if (!$key) {
-                $key = '_global';
-            }
-
-            $namespacedCommands[$key][$name] = $command;
-        }
-        ksort($namespacedCommands);
-
-        foreach ($namespacedCommands as &$commands) {
-            ksort($commands);
-        }
-
-        return $namespacedCommands;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

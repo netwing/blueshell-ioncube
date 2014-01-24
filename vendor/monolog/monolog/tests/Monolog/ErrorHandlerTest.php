@@ -1,31 +1,29 @@
-<?php
-
-/*
- * This file is part of the Monolog package.
- *
- * (c) Jordi Boggiano <j.boggiano@seld.be>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Monolog;
-
-use Monolog\Handler\TestHandler;
-
-class ErrorHandlerTest extends \PHPUnit_Framework_TestCase
-{
-    public function testHandleError()
-    {
-        $logger = new Logger('test', array($handler = new TestHandler));
-        $errHandler = new ErrorHandler($logger);
-
-        $errHandler->registerErrorHandler(array(E_USER_NOTICE => Logger::EMERGENCY), false);
-        trigger_error('Foo', E_USER_ERROR);
-        $this->assertCount(1, $handler->getRecords());
-        $this->assertTrue($handler->hasErrorRecords());
-        trigger_error('Foo', E_USER_NOTICE);
-        $this->assertCount(2, $handler->getRecords());
-        $this->assertTrue($handler->hasEmergencyRecords());
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

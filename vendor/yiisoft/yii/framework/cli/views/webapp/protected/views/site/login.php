@@ -1,53 +1,32 @@
-<?php
-/* @var $this SiteController */
-/* @var $model LoginForm */
-/* @var $form CActiveForm  */
-
-$this->pageTitle=Yii::app()->name . ' - Login';
-$this->breadcrumbs=array(
-	'Login',
-);
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
-
-<h1>Login</h1>
-
-<p>Please fill out the following form with your login credentials:</p>
-
-<div class="form">
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'login-form',
-	'enableClientValidation'=>true,
-	'clientOptions'=>array(
-		'validateOnSubmit'=>true,
-	),
-)); ?>
-
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'username'); ?>
-		<?php echo $form->textField($model,'username'); ?>
-		<?php echo $form->error($model,'username'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'password'); ?>
-		<?php echo $form->passwordField($model,'password'); ?>
-		<?php echo $form->error($model,'password'); ?>
-		<p class="hint">
-			Hint: You may login with <kbd>demo</kbd>/<kbd>demo</kbd> or <kbd>admin</kbd>/<kbd>admin</kbd>.
-		</p>
-	</div>
-
-	<div class="row rememberMe">
-		<?php echo $form->checkBox($model,'rememberMe'); ?>
-		<?php echo $form->label($model,'rememberMe'); ?>
-		<?php echo $form->error($model,'rememberMe'); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Login'); ?>
-	</div>
-
-<?php $this->endWidget(); ?>
-</div><!-- form -->
+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
+oFXF0mIo8lIWcPwAUMoWoRWr0G==

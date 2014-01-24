@@ -1,196 +1,93 @@
-<?php
-/**
- * Utf8Command class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * Utf8Command will help you to make sure files are encoded properly.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.build
- * @since 1.1.11
- */
-class Utf8Command extends CConsoleCommand
-{
-	public function getHelp()
-	{
-		return <<<EOD
-USAGE
-  yiic utf8 <action> <file>
-
-
-DESCRIPTION
-  This command can detect and remove UTF-8 BOM headers. It also supports
-  detection of wrong file encodings (non UTF-8).
-
-
-PARAMETERS
- * action: required, the name of the action to execute. The following
- actions are available:
-   - checkbom: checks for UTF-8 BOM header
-   - fixbom: removes UTF-8 BOM header
-   - checkencoding: checks for correct UTF-8 encoding
- * file: optional, the file to process. If not set, all (!) translation files
-   will be processed.
-EOD;
-	}
-
-
-	public function run($args)
-	{
-		if(!isset($args[0]))
-			$this->usageError("Please specify a valid action");
-		if(!in_array($args[0],array('checkbom','fixbom','checkencoding')))
-			$this->usageError("Invalid action '{$args[0]}' specified");
-		if(isset($args[1]) && !file_exists($args[1]))
-			$this->usageError("File '{$args[1]}' does not exist");
-
-
-		if('checkbom'===$args[0])
-		{
-			if(isset($args[1]))
-			{
-				if($this->checkBom($args[1]))
-					echo "UTF-8 BOM header detected";
-				else
-					echo "File seems to be clean";
-			}
-			else
-			{
-				$affectedFiles='';
-				foreach($this->findTranslationFiles() as $file)
-				{
-					if($this->checkBom($file))
-						$affectedFiles.="{$file}\r\n";
-				}
-				if(empty($affectedFiles))
-					echo "All files seem to be clean";
-				else
-					echo "Detected UTF-8 BOM header in the following files:\r\n".trim($affectedFiles);
-			}
-		}
-		elseif('fixbom'===$args[0])
-		{
-			if(isset($args[1]))
-			{
-				if(!$this->checkBom($args[1]))
-					echo "Nothing to fix, no UTF-8 BOM header detected";
-				else
-				{
-					$this->fixBom($args[1]);
-					echo "UTF-8 BOM header removed";
-				}
-			}
-			else
-			{
-				$affectedFiles='';
-				foreach($this->findTranslationFiles() as $file)
-				{
-					if($this->checkBom($file))
-					{
-						$affectedFiles.="{$file}\r\n";
-						$this->fixBom($file);
-					}
-				}
-				if(empty($affectedFiles))
-					echo "Nothing to fix, all files seem to be clean";
-				else
-					echo "Removed UTF-8 BOM header from the following files:\r\n".trim($affectedFiles);
-			}
-		}
-		elseif('checkencoding'===$args[0])
-		{
-			if(isset($args[1]))
-			{
-				if($this->checkEncoding($args[1]))
-					echo "File does have a correct UTF-8 encoding";
-				else
-					echo "Wrong encoding detected";
-			}
-			else
-			{
-				$affectedFiles='';
-				foreach($this->findTranslationFiles() as $file)
-				{
-					if(!$this->checkEncoding($file))
-						$affectedFiles.="{$file}\r\n";
-				}
-				if(empty($affectedFiles))
-					echo "All files seem to have the correct UTF-8 encoding";
-				else
-					echo "Wrong encoding of the following files detected:\r\n".trim($affectedFiles);
-			}
-		}
-	}
-
-	public function checkBom($file)
-	{
-		$data=file_get_contents($file,false,null,0,3);
-		return bin2hex($data)==='efbbbf';
-	}
-
-	public function fixBom($file)
-	{
-		$data=file_get_contents($file,false,null,3);
-		file_put_contents($file,$data);
-	}
-
-	public function checkEncoding($file)
-	{
-		$data=file_get_contents($file);
-		return preg_match('/./u',$data) && $this->is_utf8($data);
-	}
-
-	public function findTranslationFiles()
-	{
-		return CFileHelper::findFiles(
-			dirname(Yii::app()->basePath),
-			array(
-				'fileTypes' => array('txt', 'php'),
-				'exclude' => array(
-					'/index.php',
-					'/members.txt',
-					'/blog/source',
-					'/css',
-					'/framework',
-					'/guide/source',
-					'/protected',
-					'/requirements/views/source',
-					'/views/source',
-				),
-			)
-		);
-	}
-
-	/** php.net/manual/de/function.mb-detect-encoding.php#85294 */
-	public function is_utf8($str) {
-		$c=0; $b=0;
-		$bits=0;
-		$len=strlen($str);
-		for($i=0; $i<$len; $i++){
-			$c=ord($str[$i]);
-			if($c > 128){
-				if(($c >= 254)) return false;
-				elseif($c >= 252) $bits=6;
-				elseif($c >= 248) $bits=5;
-				elseif($c >= 240) $bits=4;
-				elseif($c >= 224) $bits=3;
-				elseif($c >= 192) $bits=2;
-				else return false;
-				if(($i+$bits) > $len) return false;
-				while($bits > 1){
-					$i++;
-					$b=ord($str[$i]);
-					if($b < 128 || $b > 191) return false;
-					$bits--;
-				}
-			}
-		}
-		return true;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+l0LLBEM/fdyc9wVvbL4r

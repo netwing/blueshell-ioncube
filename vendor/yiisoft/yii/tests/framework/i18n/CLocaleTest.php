@@ -1,269 +1,154 @@
-<?php
-class CLocaleTest extends CTestCase
-{
-	private $noPlurals = array(
-		'az', 'bm', 'fa', 'ig', 'hu', 'ja', 'kde', 'kea', 'ko', 'my', 'ses', 'sg',
-		'to', 'tr', 'vi', 'wo', 'yo', 'zh', 'bo', 'dz', 'id', 'jv', 'ka', 'km',
-		'kn', 'ms', 'th'
-	);
-
-	/**
-	 * Codes of locales where official guide translation exists
-	 */
-	protected $criticalLocaleCodes = array(
-		'en',
-		'bg',
-		'bs',
-		'cs',
-		'de',
-		'el',
-		'es',
-		'fr',
-		'he',
-		'hu',
-		'id',
-		'it',
-		'ja',
-		'lv',
-		'nl',
-		'no',
-		'pl',
-		'pt',
-		'ro',
-		'ru',
-		'sk',
-		'sr',
-		'sr_yu',
-		'sv',
-		'ta_in',
-		'th',
-		'tr',
-		'uk',
-		'vi',
-		'zh_cn',
-		'zh_tw',
-	);
-
-	function setUp()
-	{
-		$config = array(
-			'language' => 'en',
-		);
-
-		new TestApplication($config);
-		Yii::app()->configure($config);
-	}
-
-	function testRequiredDataExistence(){
-		foreach($this->criticalLocaleCodes as $localeCode){
-			$locale = Yii::app()->getLocale($localeCode);
-			// AM/PM
-			$this->assertNotNull($locale->getAMName(), "$localeCode: getAMName failed.");
-			$this->assertNotNull($locale->getPMName(), "$localeCode: getPMName failed.");
-
-			// currency
-			$this->assertNotNull($locale->getCurrencySymbol("USD"), "$localeCode: getCurrencySymbol USD failed.");
-			$this->assertNotNull($locale->getCurrencySymbol("EUR"), "$localeCode: getCurrencySymbol EUR failed.");
-
-			// numbers
-			$this->assertNotNull($locale->getNumberSymbol('decimal'), "$localeCode: getNumberSymbol failed.");
-			$this->assertNotNull($locale->getDecimalFormat(), "$localeCode: getDecimalFormat failed.");
-			$this->assertNotNull($locale->getCurrencyFormat(), "$localeCode: getCurrencyFormat failed.");
-			$this->assertNotNull($locale->getPercentFormat(), "$localeCode: getPercentFormat failed.");
-			$this->assertNotNull($locale->getScientificFormat(), "$localeCode: getScientificFormat failed.");
-
-			// date and time formats
-			$this->assertNotNull($locale->getMonthName(1), "$localeCode: getMonthName 1 failed.");
-			$this->assertNotNull($locale->getMonthName(12, 'abbreviated'), "$localeCode: getMonthName 12 abbreviated failed.");
-			$this->assertNotNull($locale->getMonthName(1, 'narrow', true), "$localeCode: getMonthName 1 narrow standalone failed.");
-			$this->assertEquals(12, count($locale->getMonthNames()), "$localeCode: getMonthNames failed.");
-			$this->assertNotNull($locale->getWeekDayName(0), "$localeCode: getWeekDayName failed.");
-			$this->assertNotNull($locale->getWeekDayNames(), "$localeCode: getWeekDayNames failed.");
-			$this->assertNotNull($locale->getEraName(1), "$localeCode: getEraName failed.");
-			$this->assertNotNull($locale->getDateFormat(), "$localeCode: getDateFormat failed.");
-			$this->assertNotNull($locale->getTimeFormat(), "$localeCode: getTimeFormat failed.");
-			$this->assertNotNull($locale->getDateTimeFormat(), "$localeCode: getDateTimeFormat failed.");
-
-			// ORIENTATION
-			$this->assertTrue(in_array($locale->getOrientation(), array('ltr', 'rtl')), "$localeCode: getOrientation failed.");
-
-			// plurals
-			$l = explode('_', $localeCode);
-			if(!in_array($l[0], $this->noPlurals)){
-				$pluralRules = $locale->getPluralRules();
-				$this->assertNotEmpty($pluralRules, $localeCode.": no plural rules");
-			}
-		}
-	}
-
-	public function providerGetLocaleDisplayName()
-	{
-		return array(
-			array('de','en_US','amerikanisches englisch'),
-			array('de','en','englisch'),
-			array('de_DE','en_US','amerikanisches englisch'),
-			array('de_DE','en','englisch'),
-
-			array('es_MX',null,null),
-			array('es_ES',null,null),
-
-			// https://github.com/yiisoft/yii/issues/2087
-			array('en_us','en','english'),
-			array('en_us','en_us','u.s. english'),
-			array('en_us','pt','portuguese'),
-			array('en_us','pt','portuguese'),
-			array('en_us','pt_br','brazilian portuguese'),
-			array('en_us','pt_pt','iberian portuguese'),
-		);
-	}
-
-	/**
-	 * @dataProvider providerGetLocaleDisplayName
-	 */
-	public function testGetLocaleDisplayName($ctorLocale,$methodLocale,$assertion)
-	{
-		$locale=CLocale::getInstance($ctorLocale);
-		$this->assertEquals(mb_strtolower($assertion),mb_strtolower($locale->getLocaleDisplayName($methodLocale)));
-	}
-
-	public function providerGetLanguage()
-	{
-		return array(
-			array('en','fr_FR','french'),
-			array('en','fr','french'),
-			array('en_US','fr_FR','french'),
-			array('en_US','fr','french'),
-			array('ru','de_DE','немецкий'),
-			array('ru','de','немецкий'),
-			array('ru_RU','de_DE','немецкий'),
-			array('ru_RU','de','немецкий'),
-			array('de','en_US','englisch'),
-			array('de','en','englisch'),
-			array('de','US',null),
-			array('de_DE','en_US','englisch'),
-			array('de_DE','en','englisch'),
-			array('de_DE','US',null),
-
-			array('es_MX',null,null),
-			array('es_ES',null,null),
-
-			array('ru_RU','zh-Hans-CN','китайский'),
-			array('en_US','zh-Hans-CN','chinese'),
-			array('ru_RU','zh-Hant-HK','китайский'),
-			array('en_US','zh-Hant-HK','chinese'),
-			array('ru','zh-Hant-HK','китайский'),
-			array('en','zh-Hant-HK','chinese'),
-			array('ru','CN',null),
-			array('en','CN',null),
-			array('ru','Hant',null),
-			array('en','Hant',null),
-
-			// https://github.com/yiisoft/yii/issues/2087
-			array('en_us','en','English'),
-			array('en_us','en_us','English'),
-			array('en_us','us',null),
-			array('en_us','pt','Portuguese'),
-			array('en_us','pt','Portuguese'),
-			array('en_us','pt_br','Portuguese'),
-			array('en_us','br','Breton'),
-			array('en_us','pt_pt','Portuguese'),
-		);
-	}
-
-	/**
-	 * @dataProvider providerGetLanguage
-	 */
-	public function testGetLanguage($ctorLocale,$methodLocale,$assertion)
-	{
-		$locale=CLocale::getInstance($ctorLocale);
-		$this->assertEquals(mb_strtolower($assertion),mb_strtolower($locale->getLanguage($methodLocale)));
-	}
-
-	public function providerGetScript()
-	{
-		return array(
-			array('en','fr_FR',null),
-			array('en','fr',null),
-			array('en_US','fr_FR',null),
-			array('en_US','fr',null),
-			array('ru','de_DE',null),
-			array('ru','de',null),
-			array('ru_RU','de_DE',null),
-			array('ru_RU','de',null),
-			array('de','en_US',null),
-			array('de','en',null),
-			array('de','US',null),
-			array('de_DE','en_US',null),
-			array('de_DE','en',null),
-			array('de_DE','US',null),
-
-			array('es_MX',null,null),
-			array('es_ES',null,null),
-
-			array('ru_RU','zh-Hans-CN','Упрощенный китайский'),
-			array('en_US','zh-Hans-CN','Simplified Han'),
-			array('ru_RU','zh-Hant-HK','Традиционный китайский'),
-			array('en_US','zh-Hant-HK','Traditional Han'),
-			array('ru','zh-Hant-HK','Традиционный китайский'),
-			array('en','zh-Hant-HK','Traditional Han'),
-			array('en','zh-CN',null),
-			array('en','zh-HK',null),
-		);
-	}
-
-	/**
-	 * @dataProvider providerGetScript
-	 */
-	public function testGetScript($ctorLocale,$methodLocale,$assertion)
-	{
-		$locale=CLocale::getInstance($ctorLocale);
-		$this->assertEquals($assertion,$locale->getScript($methodLocale));
-	}
-
-	public function providerGetTerritory()
-	{
-		return array(
-			array('en','fr_FR','France'),
-			array('en','fr','France'),
-			array('en_US','fr_FR','France'),
-			array('en_US','fr','France'),
-			array('ru','de_DE','Германия'),
-			array('ru','de','Германия'),
-			array('ru_RU','de_DE','Германия'),
-			array('ru_RU','de','Германия'),
-			array('de','en_US','Vereinigte Staaten'),
-			array('de','en',null),
-			array('de_DE','en_US','Vereinigte Staaten'),
-			array('de_DE','en',null),
-
-			array('es_MX',null,null),
-			array('es_ES',null,null),
-
-			array('ru_RU','zh-Hans-CN','Китай'),
-			array('en_US','zh-Hans-CN','China'),
-			array('ru_RU','zh-CN','Китай'),
-			array('en_US','zh-CN','China'),
-			array('ru_RU','Hans-CN','Китай'),
-			array('en_US','Hans-CN','China'),
-			array('ru_RU','CN','Китай'),
-			array('en_US','CN','China'),
-			array('ru_RU','zh',null),
-			array('en_US','zh',null),
-			array('ru_RU','Hans',null),
-			array('en_US','Hans',null),
-
-			array('fi_fi','se','Ruotsi'),
-			array('fi_fi','sv_se','Ruotsi'),
-			array('fi_fi','sv','El Salvador'),
-		);
-	}
-
-	/**
-	 * @dataProvider providerGetTerritory
-	 */
-	public function testGetTerritory($ctorLocale,$methodLocale,$assertion)
-	{
-		$locale=CLocale::getInstance($ctorLocale);
-		$this->assertEquals($assertion,$locale->getTerritory($methodLocale));
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

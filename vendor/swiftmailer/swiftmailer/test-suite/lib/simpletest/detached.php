@@ -1,96 +1,51 @@
-<?php
-/**
- *  base include file for SimpleTest
- *  @package    SimpleTest
- *  @subpackage UnitTester
- *  @version    $Id: detached.php 1784 2008-04-26 13:07:14Z pp11 $
- */
-
-/**#@+
- *  include other SimpleTest class files
- */
-require_once(dirname(__FILE__) . '/xml.php');
-require_once(dirname(__FILE__) . '/shell_tester.php');
-/**#@-*/
-
-/**
- *    Runs an XML formated test in a separate process.
- *    @package SimpleTest
- *    @subpackage UnitTester
- */
-class DetachedTestCase {
-    private $command;
-    private $dry_command;
-    private $size;
-
-    /**
-     *    Sets the location of the remote test.
-     *    @param string $command       Test script.
-     *    @param string $dry_command   Script for dry run.
-     *    @access public
-     */
-    function __construct($command, $dry_command = false) {
-        $this->command = $command;
-        $this->dry_command = $dry_command ? $dry_command : $command;
-        $this->size = false;
-    }
-
-    /**
-     *    Accessor for the test name for subclasses.
-     *    @return string       Name of the test.
-     *    @access public
-     */
-    function getLabel() {
-        return $this->command;
-    }
-
-    /**
-     *    Runs the top level test for this class. Currently
-     *    reads the data as a single chunk. I'll fix this
-     *    once I have added iteration to the browser.
-     *    @param SimpleReporter $reporter    Target of test results.
-     *    @returns boolean                   True if no failures.
-     *    @access public
-     */
-    function run(&$reporter) {
-        $shell = &new SimpleShell();
-        $shell->execute($this->command);
-        $parser = &$this->createParser($reporter);
-        if (! $parser->parse($shell->getOutput())) {
-            trigger_error('Cannot parse incoming XML from [' . $this->command . ']');
-            return false;
-        }
-        return true;
-    }
-
-    /**
-     *    Accessor for the number of subtests.
-     *    @return integer       Number of test cases.
-     *    @access public
-     */
-    function getSize() {
-        if ($this->size === false) {
-            $shell = &new SimpleShell();
-            $shell->execute($this->dry_command);
-            $reporter = &new SimpleReporter();
-            $parser = &$this->createParser($reporter);
-            if (! $parser->parse($shell->getOutput())) {
-                trigger_error('Cannot parse incoming XML from [' . $this->dry_command . ']');
-                return false;
-            }
-            $this->size = $reporter->getTestCaseCount();
-        }
-        return $this->size;
-    }
-
-    /**
-     *    Creates the XML parser.
-     *    @param SimpleReporter $reporter    Target of test results.
-     *    @return SimpleTestXmlListener      XML reader.
-     *    @access protected
-     */
-    protected function &createParser(&$reporter) {
-        return new SimpleTestXmlParser($reporter);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+tHSwkYozn2q=

@@ -1,93 +1,62 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\Console\Tests\Formatter;
-
-use Symfony\Component\Console\Formatter\OutputFormatterStyle;
-
-class OutputFormatterStyleTest extends \PHPUnit_Framework_TestCase
-{
-    public function testConstructor()
-    {
-        $style = new OutputFormatterStyle('green', 'black', array('bold', 'underscore'));
-        $this->assertEquals("\033[32;40;1;4mfoo\033[0m", $style->apply('foo'));
-
-        $style = new OutputFormatterStyle('red', null, array('blink'));
-        $this->assertEquals("\033[31;5mfoo\033[0m", $style->apply('foo'));
-
-        $style = new OutputFormatterStyle(null, 'white');
-        $this->assertEquals("\033[47mfoo\033[0m", $style->apply('foo'));
-    }
-
-    public function testForeground()
-    {
-        $style = new OutputFormatterStyle();
-
-        $style->setForeground('black');
-        $this->assertEquals("\033[30mfoo\033[0m", $style->apply('foo'));
-
-        $style->setForeground('blue');
-        $this->assertEquals("\033[34mfoo\033[0m", $style->apply('foo'));
-
-        $this->setExpectedException('InvalidArgumentException');
-        $style->setForeground('undefined-color');
-    }
-
-    public function testBackground()
-    {
-        $style = new OutputFormatterStyle();
-
-        $style->setBackground('black');
-        $this->assertEquals("\033[40mfoo\033[0m", $style->apply('foo'));
-
-        $style->setBackground('yellow');
-        $this->assertEquals("\033[43mfoo\033[0m", $style->apply('foo'));
-
-        $this->setExpectedException('InvalidArgumentException');
-        $style->setBackground('undefined-color');
-    }
-
-    public function testOptions()
-    {
-        $style = new OutputFormatterStyle();
-
-        $style->setOptions(array('reverse', 'conceal'));
-        $this->assertEquals("\033[7;8mfoo\033[0m", $style->apply('foo'));
-
-        $style->setOption('bold');
-        $this->assertEquals("\033[7;8;1mfoo\033[0m", $style->apply('foo'));
-
-        $style->unsetOption('reverse');
-        $this->assertEquals("\033[8;1mfoo\033[0m", $style->apply('foo'));
-
-        $style->setOption('bold');
-        $this->assertEquals("\033[8;1mfoo\033[0m", $style->apply('foo'));
-
-        $style->setOptions(array('bold'));
-        $this->assertEquals("\033[1mfoo\033[0m", $style->apply('foo'));
-
-        try {
-            $style->setOption('foo');
-            $this->fail('->setOption() throws an \InvalidArgumentException when the option does not exist in the available options');
-        } catch (\Exception $e) {
-            $this->assertInstanceOf('\InvalidArgumentException', $e, '->setOption() throws an \InvalidArgumentException when the option does not exist in the available options');
-            $this->assertContains('Invalid option specified: "foo"', $e->getMessage(), '->setOption() throws an \InvalidArgumentException when the option does not exist in the available options');
-        }
-
-        try {
-            $style->unsetOption('foo');
-            $this->fail('->unsetOption() throws an \InvalidArgumentException when the option does not exist in the available options');
-        } catch (\Exception $e) {
-            $this->assertInstanceOf('\InvalidArgumentException', $e, '->unsetOption() throws an \InvalidArgumentException when the option does not exist in the available options');
-            $this->assertContains('Invalid option specified: "foo"', $e->getMessage(), '->unsetOption() throws an \InvalidArgumentException when the option does not exist in the available options');
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+W0uh9OYOLMy0+hobxip7

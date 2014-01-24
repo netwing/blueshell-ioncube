@@ -1,99 +1,49 @@
-<?php
-/**
- * Squiz_Sniffs_Scope_StaticThisUsageSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-if (class_exists('PHP_CodeSniffer_Standards_AbstractScopeSniff', true) === false) {
-    throw new PHP_CodeSniffer_Exception('Class PHP_CodeSniffer_Standards_AbstractScopeSniff not found');
-}
-
-/**
- * Squiz_Sniffs_Scope_StaticThisUsageSniff.
- *
- * Checks for usage of "$this" in static methods, which will cause
- * runtime errors.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class Squiz_Sniffs_Scope_StaticThisUsageSniff extends PHP_CodeSniffer_Standards_AbstractScopeSniff
-{
-
-
-    /**
-     * Constructs the test with the tokens it wishes to listen for.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        parent::__construct(array(T_CLASS), array(T_FUNCTION));
-
-    }//end __construct()
-
-
-    /**
-     * Processes this test, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The current file being scanned.
-     * @param int                  $stackPtr  The position of the current token in the
-     *                                        stack passed in $tokens.
-     * @param int                  $currScope A pointer to the start of the scope.
-     *
-     * @return void
-     */
-    public function processTokenWithinScope(PHP_CodeSniffer_File $phpcsFile, $stackPtr, $currScope)
-    {
-        $tokens   = $phpcsFile->getTokens();
-        $function = $tokens[($stackPtr + 2)];
-
-        if ($function['code'] !== T_STRING) {
-            return;
-        }
-
-        $functionName = $function['content'];
-        $classOpener  = $tokens[$currScope]['scope_condition'];
-        $className    = $tokens[($classOpener + 2)]['content'];
-
-        $methodProps = $phpcsFile->getMethodProperties($stackPtr);
-
-        if ($methodProps['is_static'] === true) {
-            if (isset($tokens[$stackPtr]['scope_closer']) === false) {
-                // There is no scope opener or closer, so the function
-                // must be abstract.
-                return;
-            }
-
-            $thisUsage = $stackPtr;
-            while (($thisUsage = $phpcsFile->findNext(array(T_VARIABLE), ($thisUsage + 1), $tokens[$stackPtr]['scope_closer'], false, '$this')) !== false) {
-                if ($thisUsage === false) {
-                    return;
-                }
-
-                $error = 'Usage of "$this" in static methods will cause runtime errors';
-                $phpcsFile->addError($error, $thisUsage, 'Found');
-            }
-        }//end if
-
-    }//end processTokenWithinScope()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

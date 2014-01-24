@@ -1,106 +1,53 @@
-<?php
-
-/**
- * This is the model class for table "{{user}}".
- *
- * The followings are the available columns in table '{{user}}':
- * @property string $id
- * @property string $name
- * @property string $username
- * @property string $password
- * @property string $role
- * @property string $tstamp
- */
-class BaseUser extends CActiveRecord
-{
-	/**
-	 * @return string the associated database table name
-	 */
-	public function tableName()
-	{
-		return '{{user}}';
-	}
-
-	/**
-	 * @return array validation rules for model attributes.
-	 */
-	public function rules()
-	{
-		// NOTE: you should only define rules for those attributes that
-		// will receive user inputs.
-		return array(
-			array('tstamp', 'required'),
-			array('name, username, password, role', 'length', 'max'=>255),
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
-			array('id, name, username, password, role, tstamp', 'safe', 'on'=>'search'),
-		);
-	}
-
-	/**
-	 * @return array relational rules.
-	 */
-	public function relations()
-	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
-		return array(
-		);
-	}
-
-	/**
-	 * @return array customized attribute labels (name=>label)
-	 */
-	public function attributeLabels()
-	{
-		return array(
-			'id' => Yii::t('app', 'ID'),
-			'name' => Yii::t('app', 'Name'),
-			'username' => Yii::t('app', 'Username'),
-			'password' => Yii::t('app', 'Password'),
-			'role' => Yii::t('app', 'Role'),
-			'tstamp' => Yii::t('app', 'Tstamp'),
-		);
-	}
-
-	/**
-	 * Retrieves a list of models based on the current search/filter conditions.
-	 *
-	 * Typical usecase:
-	 * - Initialize the model fields with values from filter form.
-	 * - Execute this method to get CActiveDataProvider instance which will filter
-	 * models according to data in model fields.
-	 * - Pass data provider to CGridView, CListView or any similar widget.
-	 *
-	 * @return CActiveDataProvider the data provider that can return the models
-	 * based on the search/filter conditions.
-	 */
-	public function search()
-	{
-		// @todo Please modify the following code to remove attributes that should not be searched.
-
-		$criteria=new CDbCriteria;
-
-		$criteria->compare('id',$this->id,true);
-		$criteria->compare('name',$this->name,true);
-		$criteria->compare('username',$this->username,true);
-		$criteria->compare('password',$this->password,true);
-		$criteria->compare('role',$this->role,true);
-		$criteria->compare('tstamp',$this->tstamp,true);
-
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
-	}
-
-	/**
-	 * Returns the static model of the specified AR class.
-	 * Please note that you should have this exact method in all your CActiveRecord descendants!
-	 * @param string $className active record class name.
-	 * @return User the static model class
-	 */
-	public static function model($className=__CLASS__)
-	{
-		return parent::model($className);
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+CcBzxTZEBK9gm8UkXWjNjG==

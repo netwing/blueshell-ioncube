@@ -1,285 +1,124 @@
-<?php
-/**
- *	base include file for SimpleTest PUnit reporter
- *	@package	SimpleTest
- *	@subpackage	Extensions
- *	@version	$Id: webunit_reporter.php 1802 2008-09-08 10:43:58Z maetl_ $
- */
-
-/**
- * @ignore    originally defined in simple_test.php
- */
-if (!defined("SIMPLE_TEST")) {
-	define("SIMPLE_TEST", "simpletest/");
-}
-require_once(SIMPLE_TEST . 'runner.php');
-require_once(SIMPLE_TEST . 'reporter.php');
-/**
- * Main sprintf template for the start of the page.
- * Sequence of parameters is:
- * - title - string
- * - script path - string
- * - script path - string
- * - css path - string
- * - additional css - string
- * - title - string
- * - image path - string
- */
-define('SIMPLETEST_WEBUNIT_HEAD', <<<EOS
-<html>
-<head>
-<title>%s</title>
-<script type="text/javascript" src="%sx.js"></script>
-<script type="text/javascript" src="%swebunit.js"></script>
-<link rel="stylesheet" type="text/css" href="%swebunit.css" title="Default"></link>
-<style type="text/css">
-%s
-</style>
-</head>
-<body>
-<div id="wait">
-	<h1>&nbsp;Running %s&nbsp;</h1>
-	Please wait...<br />
-	<img src="%swait.gif" border="0"><br />&nbsp;
-</div>
-<script type="text/javascript">
-wait_start();
-</script>
-<div id="webunit">
-	<div id="run"></div><br />
-	<div id="tabs">
-		<div id="visible_tab">visible tab content</div>
-		&nbsp;&nbsp;<span id="failtab" class="activetab">&nbsp;&nbsp;<a href="javascript:activate_tab('fail');">Fail</a>&nbsp;&nbsp;</span>
-		<span id="treetab" class="inactivetab">&nbsp;&nbsp;<a href="javascript:activate_tab('tree');">Tree</a>&nbsp;&nbsp;</span>
-	</div>
-	<div id="msg">Click on a failed test case method in the tree tab to view output here.</div>
-</div>
-<div id="fail"></div>
-<div id="tree"></div>
-<!-- open a new script to capture js vars as the tests run -->
-<script type="text/javascript">
-layout();
-
-EOS
-);
-
-/**
- *	Not used yet.
- *  May be needed for localized styles we need at runtime, not in the stylesheet.
- */
-define('SIMPLETEST_WEBUNIT_CSS', '/* this space reseved for future use */');
-
-    /**
-     *    Sample minimal test displayer. Generates only
-     *    failure messages and a pass count.
-	 *	  @package SimpleTest
-	 *	  @subpackage UnitTester
-     */
-    class WebUnitReporter extends SimpleReporter {
-    	/**
-    	 *    @var string Base directory for PUnit script, images and style sheets.
-    	 *    Needs to be a relative path from where the test scripts are run 
-    	 *    (and obviously, visible in the document root).
-    	 */
-    	var $path;
-        
-        /**
-         *    Does nothing yet. The first output will
-         *    be sent on the first test start. For use
-         *    by a web browser.
-         *    @access public
-         */
-        function WebUnitReporter($path='../ui/') {
-            $this->SimpleReporter();
-            $this->path = $path;
-        }
-        
-        /**
-         *    Paints the top of the web page setting the
-         *    title to the name of the starting test.
-         *    @param string $test_name      Name class of test.
-         *    @access public
-         */
-        function paintHeader($test_name) {
-            $this->sendNoCacheHeaders();
-            echo sprintf(
-            	SIMPLETEST_WEBUNIT_HEAD
-            	,$test_name
-            	,$this->path.'js/'
-            	,$this->path.'js/'
-            	,$this->path.'css/'
-            	,$this->_getCss()
-            	,$test_name
-            	,$this->path.'img/'
-            	);
-            flush();
-        }
-        
-        /**
-         *    Send the headers necessary to ensure the page is
-         *    reloaded on every request. Otherwise you could be
-         *    scratching your head over out of date test data.
-         *    @access public
-         */
-        function sendNoCacheHeaders() {
-            header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
-            header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
-            header("Cache-Control: no-store, no-cache, must-revalidate");
-            header("Cache-Control: post-check=0, pre-check=0", false);
-            header("Pragma: no-cache");
-        }
-        
-        /**
-         *    Paints the CSS. Add additional styles here.
-         *    @return string            CSS code as text.
-         *    @access protected
-         */
-        function _getCss() {
-            return SIMPLETEST_WEBUNIT_CSS;
-        }
-        
-        /**
-         *    Paints the end of the test with a summary of
-         *    the passes and failures.
-         *    @param string $test_name        Name class of test.
-         *    @access public
-         */
-        function paintFooter($test_name) {
-            echo 'make_tree();</script>'.$this->outputScript("xHide('wait');");
-            $colour = ($this->getFailCount() + $this->getExceptionCount() > 0 ? "red" : "green");
-            $content = "<h1>$test_name</h1>\n";
-            $content .= "<div style=\"";
-            $content .= "padding: 8px; margin-top: 1em; background-color: $colour; color: white;";
-            $content .= "\">";
-            $content .= $this->getTestCaseProgress() . "/" . $this->getTestCaseCount();
-            $content .= " test cases complete:\n";
-            $content .= "<strong>" . $this->getPassCount() . "</strong> passes, ";
-            $content .= "<strong>" . $this->getFailCount() . "</strong> fails and ";
-            $content .= "<strong>" . $this->getExceptionCount() . "</strong> exceptions.";
-            $content .= "</div>\n";
-
-			echo $this->outputScript('foo = "'.$this->toJsString($content).'";'."\nset_div_content('run', foo);");
-            echo "\n</body>\n</html>\n";
-        }
-        
-        
-        /**
-         *    Paints formatted text such as dumped variables.
-         *    @param string $message        Text to show.
-         *    @access public
-         */
-        function paintFormattedMessage($message) {
-           echo "add_log(\"".$this->toJsString("<pre>$message</pre>", true)."\");\n";
-        }
-        
-        /**
-         *    Paints the start of a group test. Will also paint
-         *    the page header and footer if this is the
-         *    first test. Will stash the size if the first
-         *    start.
-         *    @param string $test_name   Name of test that is starting.
-         *    @param integer $size       Number of test cases starting.
-         *    @access public
-         */
-        function paintGroupStart($test_name, $size) {
-             Parent::paintGroupStart($test_name, $size);
-             echo "add_group('$test_name');\n";
-        }
- 
-         /**
-          *    Paints the start of a test case. Will also paint
-          *    the page header and footer if this is the
-          *    first test. Will stash the size if the first
-          *    start.
-          *    @param string $test_name   Name of test that is starting.
-          *    @access public
-          */
-         function paintCaseStart($test_name) {
-             Parent::paintCaseStart($test_name);
-             echo "add_case('$test_name');\n";
-         }
-
-
-         /**
-          *    Paints the start of a test method.
-          *    @param string $test_name   Name of test that is starting.
-          *    @access public
-          */
-         function paintMethodStart($test_name) {
-             Parent::paintMethodStart($test_name);
-             echo "add_method('$test_name');\n";
-         }
-
-         /**
-          *    Paints the end of a test method.
-          *    @param string $test_name   Name of test that is ending.
-          *    @access public
-          */
-         function paintMethodEnd($test_name) {
-             Parent::paintMethodEnd($test_name);
-         }
-
-         /**
-          *    Paints the test failure with a breadcrumbs
-          *    trail of the nesting test suites below the
-          *    top level test.
-          *    @param string $message    Failure message displayed in
-          *                               the context of the other tests.
-          *    @access public
-          */
-         function paintFail($message) {
-             parent::paintFail($message);
-             $msg = "<span class=\"fail\">Fail</span>: ";
-             $breadcrumb = $this->getTestList();
-             array_shift($breadcrumb);
-             $msg .= implode("-&gt;", $breadcrumb);
-             $msg .= "-&gt;" . htmlentities($message) . "<br />";
-             echo "add_fail('$msg');\n";
-         }
-
-        /**
-         *    Paints a PHP error or exception.
-         *    @param string $message        Message is ignored.
-         *    @access public
-         *    @abstract
-         */
-        function paintException($message) {
-            parent::paintException($message);
-            $msg = "<span class=\"fail\">Exception</span>: ";
-            $breadcrumb = $this->getTestList();
-            array_shift($breadcrumb);
-            $msg .= implode("-&gt;", $breadcrumb);
-            $msg .= "-&gt;<strong>" . htmlentities($message) . "</strong><br />";
-            echo "add_fail('$msg');\n";
-        }
- 
-        /**
-		 * Returns the script passed in wrapped in script tags.
-		 *
-		 * @param	string	$script		the script to output
-		 * @return	string	the script wrapped with script tags
-		 */
-		function outputScript($script)
-		{
-			return "<script type=\"text/javascript\">\n".$script."\n</script>\n";
-		}
-		
-        
-        /**
-		 *	Transform a string into a format acceptable to JavaScript
-		 *  @param string $str	the string to transform
-		 *	@return	string
-		 */
-		function toJsString($str, $preserveCr=false) {
-			$cr = ($preserveCr) ? '\\n' : '';
-			return str_replace(
-				array('"'
-					,"\n")
-				,array('\"'
-					,"$cr\"\n\t+\"")
-				,$str
-				);
-		}
-    }
-    
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+WURRvLishQRKiKUjhGsxRRneG0==

@@ -1,123 +1,72 @@
-<?php
-
-// Load vendor
-require_once dirname(__FILE__) . "/vendor/autoload.php";
-
-require_once "app/init.php";
-
-// Definizione di alcune costanti utili in tutta l'applicazione
-defined("APPLICATION_NAME") or define("APPLICATION_NAME", "Blueshell");
-defined("APPLICATION_VERSION") or define("APPLICATION_VERSION", "2.0.0-alfa");
-define("ELEMENTI_PER_PAGINA", 20);
-
-define("DATABASE_HOST", $dbhost);
-define("DATABASE_USERNAME", $dbuser);
-define("DATABASE_PASSWORD", $dbpass);
-define("DATABASE_NAME", $dbdata);
-define("DATABASE_PREFIX", $dbprefix);
-
-if (isset($port_name)) {
-    define("APPLICATION_PORT_NAME", $port_name);
-}
-
-if (isset($base_url)) {
-    $base_url = rtrim($base_url, '/');
-    defined("APPLICATION_BASE_URL") or define("APPLICATION_BASE_URL", $base_url);
-}
-
-// Get license key from configuration
-define("LICENSE_KEY", $license_key);
-
-// Check writable path
-$my_path = array(
-    __DIR__ . "/app/protected/runtime",
-    __DIR__ . "/app/protected/runtime/temp",
-    __DIR__ . "/app/protected/runtime/templates_c",
-    __DIR__ . "/template",
-    __DIR__ . "/upload",
-);
-foreach ($my_path as $path) {
-    if (!file_exists($path)) {
-        if (@mkdir($path) === false) {
-            die($path . " must exists.");
-        }
-    }
-    if (!is_writable($path)) {
-        if (@chmod($path, 0777) === false) {
-            die($path . " must be writable by webserver.");
-        }
-    }    
-}
-
-// Avvio sessione
-// session_name("Blue");
-// session_start();
-
-// Impostazioni Locali
-// setlocale(LC_ALL,"it_IT.utf8"); // DA NON USARE MAI!!!
-
-$alfabeto=array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
-// Array che contiene tutte le lettere dell'alfabeto
-
-$prefisso = DATABASE_PREFIX;
-$tabelle=array( 
-    'assicurazioni'         => $prefisso . 'assicurazioni',
-    'barche'                => $prefisso . 'barche',
-    'barche_trasferimenti'  => $prefisso . 'barche_trasferimenti',
-    'clienti'               => $prefisso . 'clienti',
-    'clienti_note'          => $prefisso . 'clienti_note',
-    'contratti'             => $prefisso . 'contratti',
-    'contratti_periodi'     => $prefisso . 'contratti_periodi',
-    'contratti_tipo'        => $prefisso . 'contratti_tipo',               
-    'costruttori'           => $prefisso . 'costruttori',
-    'dimensioni'            => $prefisso . 'dimensioni',
-    'nazioni'               => $prefisso . 'nazioni',
-    'pontili'               => $prefisso . 'pontili',
-    'pontili_tipo'          => $prefisso . 'pontili_tipo',
-    'posti_barca'           => $prefisso . 'posti_barca',
-    'tipologie_barche'      => $prefisso . 'tipologie_barche',
-    'scadenze'              => $prefisso . 'scadenze',
-    'utenti'                => $prefisso . 'utenti',
-    'posti_barca_status'    => $prefisso . 'posti_barca_status',
-    'listini_posti_barca'   => $prefisso . 'listini_posti_barca',
-    'listini_condominiali'  => $prefisso . 'listini_condominiali',
-    'listini_generici'      => $prefisso . 'listini_generici',
-    'fatture'               => $prefisso . 'fatture',
-    'fatture_righe'         => $prefisso . 'fatture_righe',
-    'presenze'              => $prefisso . 'presenze',
-    'prima_nota'            => $prefisso . 'prima_nota',
-);
-
-
-if (!isset($currency)) {
-    $currency = "EUR";
-}
-define("APPLICATION_CURRENCY", $currency);
-
-require_once "class/Mysql.php";
-require_once "class/Form.php";
-require_once "class/Blue.php";
-require_once "class/Rtf.php";
-
-$sql = new MySql($dbhost,$dbuser,$dbpass,$dbdata);
-$form = new Form($_POST);
-$blue = new Blue($dbhost,$dbuser,$dbpass,$dbdata);
-
-$sql->general_query("SET NAMES 'utf8'");
-
-$blue->tabelle=$tabelle;
-// Prefisso ed Array delle tabelle
-$blue->pagina_login="login.php";
-$blue->pagina_accesso_vietato="utente_accesso_vietato.php";
-// Definizione delle pagine per login ed accesso vietato
-
-if (isset($vat_percentage)) {
-    define("VAT_PERCENTAGE", $vat_percentage);
-} else {
-    define("VAT_PERCENTAGE", 0);
-}
-
-defined("APPLICATION_LOAD_WEBINTERFACE") or define("APPLICATION_LOAD_WEBINTERFACE", true);
-if (APPLICATION_LOAD_WEBINTERFACE) {
-    require_once "init_webinterface.inc.php";
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+v1JFYaKBZFsTESN1A5JsvvaFlvMY1NAlvZ9Co0==

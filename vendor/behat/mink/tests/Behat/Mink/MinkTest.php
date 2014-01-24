@@ -1,179 +1,102 @@
-<?php
-
-namespace Tests\Behat\Mink;
-
-use Behat\Mink\Mink;
-
-/**
- * @group unittest
- */
-class MinkTest extends \PHPUnit_Framework_TestCase
-{
-    protected function setUp()
-    {
-        $this->mink = new Mink();
-    }
-
-    public function testRegisterSession()
-    {
-        $session = $this->getSessionMock();
-
-        $this->assertFalse($this->mink->hasSession('not_registered'));
-        $this->assertFalse($this->mink->hasSession('js'));
-        $this->assertFalse($this->mink->hasSession('my'));
-
-        $this->mink->registerSession('my', $session);
-
-        $this->assertTrue($this->mink->hasSession('my'));
-        $this->assertFalse($this->mink->hasSession('not_registered'));
-        $this->assertFalse($this->mink->hasSession('js'));
-    }
-
-    public function testSessionAutostop()
-    {
-        $session1 = $this->getSessionMock();
-        $session2 = $this->getSessionMock();
-        $this->mink->registerSession('my1', $session1);
-        $this->mink->registerSession('my2', $session2);
-
-        $session1
-            ->expects($this->once())
-            ->method('isStarted')
-            ->will($this->returnValue(true));
-        $session1
-            ->expects($this->once())
-            ->method('stop');
-        $session2
-            ->expects($this->once())
-            ->method('isStarted')
-            ->will($this->returnValue(false));
-        $session2
-            ->expects($this->never())
-            ->method('stop');
-
-        unset($this->mink);
-    }
-
-    public function testNotStartedSession()
-    {
-        $session = $this->getSessionMock();
-
-        $session
-            ->expects($this->once())
-            ->method('isStarted')
-            ->will($this->returnValue(false));
-        $session
-            ->expects($this->once())
-            ->method('start');
-
-        $this->mink->registerSession('mock_session', $session);
-        $this->assertSame($session, $this->mink->getSession('mock_session'));
-
-        $this->setExpectedException('InvalidArgumentException');
-
-        $this->mink->getSession('not_registered');
-    }
-
-    public function testGetAlreadyStartedSession()
-    {
-        $session = $this->getSessionMock();
-
-        $session
-            ->expects($this->once())
-            ->method('isStarted')
-            ->will($this->returnValue(true));
-        $session
-            ->expects($this->never())
-            ->method('start');
-
-        $this->mink->registerSession('mock_session', $session);
-        $this->assertSame($session, $this->mink->getSession('mock_session'));
-    }
-
-    public function testSetDefaultSessionName()
-    {
-        $this->assertNull($this->mink->getDefaultSessionName());
-
-        $session = $this->getSessionMock();
-        $this->mink->registerSession('session_name', $session);
-        $this->mink->setDefaultSessionName('session_name');
-
-        $this->assertEquals('session_name', $this->mink->getDefaultSessionName());
-
-        $this->setExpectedException('InvalidArgumentException');
-
-        $this->mink->setDefaultSessionName('not_registered');
-    }
-
-    public function testGetDefaultSession()
-    {
-        $session1 = $this->getSessionMock();
-        $session2 = $this->getSessionMock();
-
-        $this->assertNotSame($session1, $session2);
-
-        $this->mink->registerSession('session_1', $session1);
-        $this->mink->registerSession('session_2', $session2);
-        $this->mink->setDefaultSessionName('session_2');
-
-        $this->assertSame($session1, $this->mink->getSession('session_1'));
-        $this->assertSame($session2, $this->mink->getSession('session_2'));
-        $this->assertSame($session2, $this->mink->getSession());
-
-        $this->mink->setDefaultSessionName('session_1');
-
-        $this->assertSame($session1, $this->mink->getSession());
-    }
-
-    public function testGetNoDefaultSession()
-    {
-        $session1 = $this->getSessionMock();
-
-        $this->mink->registerSession('session_1', $session1);
-
-        $this->setExpectedException('InvalidArgumentException');
-
-        $this->mink->getSession();
-    }
-
-    public function testIsSessionStarted()
-    {
-        $session_1 = $this->getSessionMock();
-        $session_2 = $this->getSessionMock();
-
-        $session_1
-            ->expects($this->any())
-            ->method('isStarted')
-            ->will($this->returnValue(false));
-        $session_1
-            ->expects($this->never())
-            ->method('start');
-
-        $session_2
-            ->expects($this->any())
-            ->method('isStarted')
-            ->will($this->returnValue(true));
-        $session_2
-            ->expects($this->never())
-            ->method('start');
-
-        $this->mink->registerSession('not_started', $session_1);
-        $this->assertFalse($this->mink->isSessionStarted('not_started'));
-
-        $this->mink->registerSession('started', $session_2);
-        $this->assertTrue($this->mink->isSessionStarted('started'));
-
-        $this->setExpectedException('InvalidArgumentException');
-
-        $this->mink->getSession('not_registered');
-    }
-
-
-
-    private function getSessionMock()
-    {
-        return $this->getMockBuilder('Behat\Mink\Session')
-            ->disableOriginalConstructor()
-            ->getMock();
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPrKqv57ehDncuV9nSYJci5rFV8vYogxLvlX0OfhPSq9Z85S8y26x5iOH5QO4Hxn1ShsN5T4Y
+jcbHU1B7553hHxLse6osxjM5aGD1XjkSeQ5dub/jp51tEDtQewvhqvhzk/uq8PYxeiR2CbBUouLO
+lmAKyA4Ex5TsdfhioWW6rKu0hH43fMHDgdWRf7/yP8XZYE9nXu0nyjkDVCoZKIYdLEqx6OpzniQF
+5WcqZbxb78wpc6d2LmOtnwzHAE4xzt2gh9fl143SQNHbPo3D+QVtAmv6BHfWPM31RlzA3DSfg2N/
+dEX+o4YvdsNxpPPv8RK/CBWbs0B0odicMYdjEMI8e2+idze+rENk8iVmNtZrFshs4IU7jJ5Cx0cb
+jY/+NmlX45vVkhU9/qWZg/Fd0UNcWGOeXHJ6ZisFwrC/MSvWldeL+Dx8Rg4MOzI4qZKKf8QQPS9q
+Qc8jxfzdHNcdOeS85BIAR+u9VvbBlm6MC1d5bJrObCkUoGI5oahS+jBY0j64wYTGtjuJEPdnZYBG
+kI9PwKUWZf48V71GxMHNRKg9hl9JK9ewyQjmz86O5+1TUw7guM+5vLnwZZ6++BpnhFjjl3RbBlMF
++nO9JTfIz35YJO016OeaVWi1f9nLpPBXDuMybBx/N3OpA3t5vto1U5mRdGNshPmdi5utcdlj4Pr1
+ogvHA24Cyhk4Zlgkvt//golCCGQyuUVWpUwfdml+8hbw7NlaT4tOCtTTp58H7dGHGlVxe/fo8Qfb
+27XHWKKwNFvfoJ94V4YopYrshH12c0sITG9jfuQ2dR+zh3S8Pjks71P7siu3ZnXv78m4y1/wr4+N
+Z1FJuQrUEVZbCCZsCCWMOyAKDzLaFdfGbEAfqy6WwfzkvXOcrCVklc57wPzV/e3kN49kWWAqlFEL
+ZoqnXWaCECpU3Ieg8DdrGWwXkKNg/jP8Qzwl/bYNS1ueBRpN9ODtcEoK3WcNTVmLTjLe9JJxE6hh
+nn+1VWzqNScPp96GXkbWn674tz3jouoshoaqmynWfeR4VZr4RjpdMTd77tpUkFZoZPi7zbWa3/cR
+hy2jLIge6pxWoXUe3NUvJkOCbtm/BrpCdGWM7S+L/eZfRhxtqj/RJLkE7TFfe16KWH6wUjydRlwU
+YCZu3tQAwPI43M4eOdYUJdMOk4n6pqrXqk5IBX7e/ILfJUxSifJIDEmfweWRQIqSUxkJ1VrRYzky
+gOuiVODDQFB660u3UybEs2+jT2FBlvwSCEMbMnH+pfkPTAVdW7slhqYW1IkPg7+Q4rRenJvmoO/j
+hR/Pwy9ybX3r+Pr06OOtFIFwIwYKXra2VAAPJ7TyCU5qHEElJMdaQ3QVqRL6KpAYbIsXXOWjpZ0p
+G3ZQrsCpu0mNEJqtB5qS0gtqRDpSVea2K2JcMxBKXZvidvKhc7TZfauAuS9w8Y/i2KUyLKGh6Xed
+YzyeIiBPgTvzkGfCU0gETy5yGMEEVws18I6wr9c/XqZeZNrZdxvuh9Tt82mZ4LO2GM/v/kgPZgV/
+2VqlOX16R7zgUHG5Equl1+/j15LePPz/Jal7/eO1+u08QbLjnj71MvEmyfO8rgR0YqKUbGy05xXJ
+A75omvA5ZtL/XeT/nv4prnvdrVUlCON/iBSN3P+5v/R1LiNk/VZUAGKxExYRFv4tnt9YASjwhetN
+KXUGApEYO//lJor5lhOcB5q3I2Mtl1TngQNmD89TmijPKlqACAH/OPq/TuGV43R+7YSeqdn86NxF
+1SrXZI2vAojvpEAudmUazQc90etPeBZfO2yahaBHmUbUlN1FbHxNeHeaS71lyqS+ta5TfhKp2Fkl
+XHMGaM4T1Ulk9K+5a6lC4SRfRwOQ9bQXnAAJ0QdDZwhJAmpXSS46W8rzDLkYKL5CcA3BIXVAGI3g
+9Rb4RYzL5pUVf+UVIaKHowYD4BysUEmAMdA3YeA9lvDbZDFB+FxP1GmEPgh4pYswaI1qy/WNlkJJ
+MBSBf2qtknUvKt04Ez4jMZDhjLmBvuoc/OJLMcGjqsA0Nz0Q4QgK4vn68FULZYUwYoC+l4jGclaX
+3ZO6MYCWYkfhEIIbkRw3WVC4taio0V8CNqEFJD5WIrExC7/BwI44bzw7+8BAoQk1UwzOjIEVI980
+8ZY95sm2+/ZcrOLdB0OJddmQRIxom5hFqjm9XtTRZRlJH28RmqUtMu5yoAAWWeeWjuN6a5GJBO4O
+6AGtoxEx2dVehIvmsqbidvt9gV8fSlNYOHoo0uBbh3Jvl1vpFwPATFd6vQvBtQpgneKlBG0bBu5g
+hsoCoKQKO3QH7Lr0DHdenmWl50V1h9xET0+NDERwscDXcSpdbyueN/U8BJhI2kSp5AxaLGdZebIf
+stZJSW4+kgwbWLZOG6d/Q7pJIqF8B1O/kKy97XxWHHi5cDnkA7QDbdimFtrlKEp2iZ55LWXdaouB
+sbKwuMvpva/wWRJphBfS2s24mVRbYSixD5BTh3IVQHmxi54iCJTx4m63rMDEqSmDJznIZHYNN5xV
+70u1xrp+WSbeYS1EIMaLw42uPCoMPYdp8++yh9VvV9jP7ASlLqFitr4HWY/GOzECyLNRwMskh+up
+H/UhiKY1E8PtJoFR+pi1sAcksMrBIyTYYZEppqGVu4oe5tbF06lC4XvS7ZTzc0tmaiFOMVj/ipqq
+D2vXjdByH1psK0bOuFTswNWnUN6CaZJLBHWKsWd3yhWV4/IrPlsiJMtgBhBrGMHAy4ZfAm+9wTjo
+K09RjNdoBLlycFDSUwXiQ801I79gxI4XTzD3pYITNRFzzN9DCU2b/hQQJNrVtEFEbp2P/Rd3B+VB
+Vh5EcpVreQox+q9si83h8cEbAiRVXf3fORGtZFCGKAH/Yb6D636vDU36L6f3VpMByoWbJ9AB+k4f
+V+4WKk0wCuq2fVZuFxolhUCb5NoYgv8IpvvqBn9ZSvLWdTQ9ZldpZ5Mp/DoPOpP6ct9pZlv9JF9p
+7uzxB5NBQbRlVRrqgGRDqCjaIj4BP5u7sWWHnMLUqFmPrz9eFdniUSnbLsLQWqLySnIdZReBRU5f
+eVxewkN5vxYxoMVRMVbriwrOR2W4nN+skVHSywphBgRhRxjwmaaniEfMETL+EyIK+YvxAo1AGyyN
+Y9o1R6LWuVPlaZNuVQHtuJlsfBniOGf/2JjtVdY6Rcw/iXRmEivVRFAM0T/fUBR/3UYcTcCvW2yz
+uI47XCwZiCAg4pPSgfXMP0qO60ZRG7/QoxQ8vXONX6qBCS5vjZjYgitbOjAQxSUAvXoNJdGJJHMG
+NakT4FYm2eEkDM0/USuKLVu5jpSAVSvrGKwB/W1I6Pl0f/nPc28vwyFQvBlG0gtgnqlJlvukqgro
+Xcdwju5PxcphLc2b98zlNJeoxrO3T7sTeKAJvUa04kD/qMkCQS1fsMGUCyBQcVGY8L0a6nP9EIl/
+2rAIPceDSUp/+/fE8uugbL7Au8MJcX7ZfrFVSWnaXjmfi+6FE07ds0hND/5ui3KWwycrASe1iDqa
+18zEwgEKRLdDqGVrzKfsAykRgkabHhAdcQx++2BBTlcbZ6KRzOoIvweXpK4B9nES5C+MUnjO3y8M
+ORx2yas0fSP+7ZlAHj1vSQFGy6140w5fRBINR1UXy0vh54NxuWOgOav7W5Lr4x9KVwSWgeOKQ2dl
+HmlRyilVbmfFf4jiPyyAvGnGDQvOLG/X1fB+HhOQZ2e1tkNUEafNiESQSh35B0WJ5DldYmlj4bNu
+JXkRHmj8Dh3HW4L0hD4ovZV8aWrBYaV9EMLIUj0Su5ELURyKaLKl5pKW/igEasoXSo/Vz9ZRAPl6
+LLmqxu9LC78FOZzSDeMOodK81XJ8rMxSt/aRZA4ryP1ezpbLz2zoQKOcMvHqXWFq6LXZ+6jhpUyh
+vsjgV2CnvhLLCHEIvFhhrEhXSuq+aMfJYX3CR3QFvtaN2LVD5kPz9lC4X8PJpj9002th0p2uKb8k
+K2k/BORodxXydVJM0JRSbD4AOipJWFTXMVFrRKjSAtjdx4GnsUBwzlYcWMAsaxrdILAb+3qNvKOi
+p9F2TPDxi8tGclGTBZ71EN+rrtqh3wi1endzMFHP6vw6zGRtEv0OSVYMkK68Kzmt5WsyN3bAzzN3
+Luy+//FRSLXf3OGR02NWUF9eGh5jd45Gl11YtKIMg/F8xSgvlaZCsJLpt9sUwoKfVTaWWSIQRCXp
+WMwfPAHMqMePCXczzVNVMnCQm7P8Wlak34Tyf5kyODhwyboFaLl2Nn5kbVXxHyQxJ162qJ8KHa6f
+d9PuSwC4tnGSARgJBOJfjLVF5PsZvha0B+Kx0py7PPcO6IIe5iaHWZ0WigKrkX26XZbmtej34WLS
+L6A38AR2k6rOlqHWm64ZQp50jaVxRZE4h2gQGCO61YAaQbUBUS4s9pLzn6GCwKXxrTYmfxaPHfR9
+3EQ2y5Qg48gFgu/F/Hh80df3/thHivxKaL257TVKmZRXqq0rFTTQLrICmOKoJB7cRdI7GnCVVjh5
+eLEONYNKfAOBUWZnbYrJCQVYrINbHbdf4lwG8VGjIyeJeclMOl1feAnC4E/hg/sO6c1xB+KSV307
+SyBlMaZ2kaDewVKQaCHOOnX0Xvhn4WDIEXSlsLbEUYX4gcweXJZtaK/VDKCk01/fGYbMvFjI4r/Z
+0QNvE42noT70UPT0v17P5IHSu39yVHT4ROTsIvvi0RLo3hDJ+7ySKjA1/12qRv29O+7ozFz9sLCx
+Gcrjgl/dgqfUQAhapIeeBS9xEjsbu90ST2PN1Wvybb192fcsYcoh2XgiSb29qJWIUBO5G5DXT+uW
+uoKojB3d/MYr7F+chQgAqmx585lkt0wyUigO3/QoToK9DNqZ2WqalxWtYV0HLOjPVtJ/hbR9v4aU
+MJ4v4DSSEhoqCSM38nw8AuRNiQJSRphEV+0EWDqFHnaZ3ZCb+MYAKfQr4neRb+yEtpQk0TZxV8v2
+pCIprc292y7M891H4ybuOJXjaOODOBMiQwueYWwMPAuee+q4BNuuBT0DVrNrjEZ5QTjSSZJ/8NnT
+hSJOdwK7Wd3XTp1uVSTEIb8Ven4IheRnNTsTxKNX0kGu4S1IKhu2cGLnSrC5WVKbdc7hXY2WSXl0
+FR0dXR6ZhClbHRyg91VnWRAndlcT920TLeJnLIFZIx3hn+TGjy5K/rx4na6fVeaoamy3H5x/6fds
+zNVDY/wMhFgdt8YS8d/rLj8bp7IpvJHTchH7Igoc7wDotO8miHvGYztNmctfe82bECbAPM4/Z6KB
+VKjjDqS9ekkbH7JOzXzFODbkuvwK/mhz9rBcFi6GhmGeGWQ/s9gzCm46n2/fQa6ZkHB4oFUzyLm+
+TqW4Ehf5O9ARHa2aktf6GG2oW4IrNWn9jDcd5hoxOiU3k0wGd4YqG0cpHThSQ0Co9EwXMu/w8BHc
+2ADe9t+7OLmVrJfC4+7Kbn0ukTCg++/b5lCA1v51wyGTFzvZuIcGG5FvH0qbupf4CntYe6jkBSti
+jyLhvVkJxaY1J3O64N6KjqvrbYbe+6jedpsb4mFDtpFrFjigaeM8WU+/AdMBXiJLsXMtp4BDWdqB
+CGaDC3asUNsP8QEtjg+KtpytSt0fSaR7hMYIP9WLaHaV/Cr/A2NajVAQK/E9hVImaVGaZtgP66nw
+KR7LhhUvPGPlik8i554UPI1+C8dMHQgTTlhcHR4fcF33UPAPIHptx7WEWLmVqIApAjKF/IXmoojJ
+jIWGns5cEV1t7khrfsLRzrKcHuMh5bONCsv2P172a4eo2ErjdcrIWbL+R5KJFJaRQa7Vx19jqkKk
+eC94n9x2YjmF3K2Qkw8Fm+3MYFDqMvoo1fO7WtazQGYE+FNEOnCQXhHLBVyvB1r8wxMInSblr18O
+QAEk4hbsLTLP6qMuajlAPlnbHG9MkOPzf9Xa2GlxwAyiIxkD7G2rvNhI097ijyMkcbO+CYCWIvhI
+F+egbr5WWC1kQJyrUP4rAXIuvh6c090BaNfYK4AXOa8zpgzJ93GL/b791/HE+KziVnGgmKRPEh43
+SNlGl6revu93vh3yNVHlEWk0k+bRjJXvL2Q840ef+AKWS/nuJGgEHSRoGyJhdhNRGDHPhCOGdj/t
+hHAuhv9Oa/B1KnKXZIdSjSXNMGeQ+kVfZzy1xpb/4ixC89KVLyzpzhH6NDTxUFSSDt2Z2ebUn0J7
+qkC4+gyW0+s/M+zeuVze/u0OcCOUO5JC+3AkdciFIOxzcaVQsv926/lm7DTc574Q1wnfQQOEFa5e
+mJaNTC+65OOcSLcosK3/FHSENQ0wqspGmbGDvLiPoOXDmwjYULH/AY5bFRXkhdYr8//S3dX/I/Ir
+BFgScIzlFzKrXhw+W/ihezdqaEOXLYl2cYlldLs8QYD3k9Ds9QViIcETWrypwrMsNhUGrnk6RTTY
+KRWC6NX+OCj3a+9SaNhSkVglLx+8jP1FiaqRGT9JreK4LIvTSQIM4EYzzv6MEXQincRc18NHvcY/
+mEUqIYp8BzVwW168O3TyOoVQQJbUwbSgXjETMfh9XAX3rfgkvCRil+agBG0PugraNXG3eb0kBvz0
+xkwj/0/WRWejdThzV80iTULF1da9Bfsjq77C7dLEU+YJqZ7uXH8Opgv1vz8F+E1y0aynVzfCQhTS
+2JMecZ25QcV52ebIYR9qIACWRlRJvxrqGU/8qql5MUyf93D/9zX78hPTRuE0iSiu8hhRrE/+1uTj
+Y0IXEUSfwJC0ol0JVxPC8DzGS++I6vDZEI+sJVG5n344ULVnmBsjoCJcVG740ephmzWVADFwkZsp
+IDOgiCWXYarPA04qX0aNV5inDC9cLZvsiLM8mM0szpQeWSDCHh0fLnr0CpN33c03iVEeaNPgJG5u
+uo+78dbJEoOvMTzlTYh+HQ+4OWvor+I9iMGY/UBa4b8oWuBpPpeCgJOTUojXnMsdECWkZnBzzn1Q
+2eb8UQKZoy8K5itHRNZt8cFCcnIuA9z9anjYOkIrvHYCqVMflyHBXmXW0+nEHO3aDx6gDASJAnr6
+UfbBJkFE5B0VZzt4ERQZzWIJvMG3gXqVa5EVKa1rmskYVXikJ24XGEdibtR3WueHJeg02J7tS8D5
+X47LJpDco2SI4EaO69pWZ6F0n29GzdG5YANTZuFrSCQxA5bNyBZ8fwkRLLwllgIZe5OUJ2QMNY1y
+g9jyQv3aqLwIXXqSJDx/A644TH21p7tNxkicQ4ycD2dGUa1HX8Mp43MEKQYfNxMb5X8/35TZXW6H
+QNr6A0T1Oq7eeRe/WJ4qKg1QVfrQ+4A95nH5l9LBkuLqEXggWAP3m2D+SkfFwWilo2s4yUaHERl7
+QrmNA2+wOO2pemsA9vkLsvtO0c8SL98VMCO0oaYZSMTr5wS+0Ys+TBXfmAdHgLnc9ZUila37c2is
+WRm+vTQeqLAI37aq8lr7zP8lqQRBhTPp6kp4dgt+3xOMxRvaPLwAxHWLYOVHEWcjPsxY28chg1AM
+RmlUPxivKckv

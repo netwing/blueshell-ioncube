@@ -1,36 +1,33 @@
-<?php
-
-require_once 'Swift/Transport/StreamBuffer/AbstractStreamBufferAcceptanceTest.php';
-
-class Swift_Transport_StreamBuffer_TlsSocketAcceptanceTest
-    extends Swift_Transport_StreamBuffer_AbstractStreamBufferAcceptanceTest
-{
-    public function skip()
-    {
-        $streams = stream_get_transports();
-        $this->skipIf(!in_array('tls', $streams),
-            'TLS is not configured for your system.  It is not possible to run this test'
-            );
-        $this->skipIf(!SWIFT_TLS_HOST,
-            'Cannot run test without a TLS enabled SMTP host to connect to (define ' .
-            'SWIFT_TLS_HOST in tests/acceptance.conf.php if you wish to run this test)'
-            );
-        parent::skip();
-    }
-
-    protected function _initializeBuffer()
-    {
-        $parts = explode(':', SWIFT_TLS_HOST);
-        $host = $parts[0];
-        $port = isset($parts[1]) ? $parts[1] : 25;
-
-        $this->_buffer->initialize(array(
-            'type' => Swift_Transport_IoBuffer::TYPE_SOCKET,
-            'host' => $host,
-            'port' => $port,
-            'protocol' => 'tls',
-            'blocking' => 1,
-            'timeout' => 15
-            ));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPpAZzU/gZix0vnHWp6JaJ2yBMp4kSWZYiF9vlo9E/vsmGetR6qVC4ZwLwe/VCV6quMoGT0N6
+Hvt7I8ZR8P9KtnklSkrJHRTpoagASgPmYDnWROVyc3Q4sPlgFu0lOGVfsveJw7KqXdiKq1n26x11
+LcUQAwCXnC4GOMXekorLOVEA5JcLqJjKJo+du6/73cmT8tJchO0oCTiqmoaMrbTtfAuf7o8Fh284
+sCThG3yf9xvNKzE/dNFZ2QzHAE4xzt2gh9fl143SQNH1O597wgwKBbT5aRJOjn6u6VzKSDnHj4Fq
+roPTPHuX1l1RmzaeyWVOwvnueAEWYxH/x3Zd/upnrD+sGj3Js+LxkCfD7ZNA0TS3ONHI9fWFXqpN
+XwXeJVKYX3+idXy05CMvr+Jc/OuNl7Asv1od+GKuLLJcI0X6GXomrHBtL+pXL93+lIX/KXedgxZq
+RElv3vDHdWjlni4Th8iNs8XasxI6f7vnMlRAgG6JQAVrbCcybzQEo3E96vIbvdHfTAPwv/CG9Tk0
+BQoL20NNPGjzw+GPnLhzK9Ir/pgT/sq2+KdS5s5gCPPeiwpxPhpxoTc02t5JSAyjFWJ/vexU7f+C
+qsGwINqzdWA7AOBW+vstLaZZwxKwFSYikSs6ic9onKpm2nypeUptjouXhiGA202GZDDGDJ9qebLA
+UgwwCu4n+NOKopIWFIDBY6bocKDRxmxqbXUQpmXvslc8eUjlKf61PQyG5CqhTtctK9+5X8cgapf4
+LFo4WhGGKYGfL7Mj5PU0B12+KCMymSvxDCM4Ud8ZUWf81ZBNa+M5OkFhwke2mg5YszBhFsQRsWgk
+S6cQ2IbHEwf0q85S+tH17K1VZxyJN022GcKLY7GOjqiK9AJOSeZkH0bF4FH6APs5NQ24Boiz7cwR
+BWFpRNFXfunlrtvWoM/4wTx5peOXZunf98r8HxZAb6L6sb/AGsR7cXBX5Q4Y+MTZVz1J3DXMv4wp
+f31gxiPPzag6vTD5iJjsVLtZ7aqsipaC1DHwXGqn5NDhMJfidElnsyVvs7HeJn/wX8CYQMLMBeAs
+L9SbjfxcBOIvVeBg7+eq4f9WiHO/pJyly45/In8aE5hh/NG0pMTvXZwKNUV+vlIQ/TfBJf1HC9Hu
+oEtKG//GdFsUhmc+5LnLUyoGd5zqY5rS2HGXwWUpGjog/iUow6ZWQn1t2BBt5Mxv8IR0x7jMkWFH
+eLoIt/XF2onXrl7wWd6xQESeo2mcgsdQgamOxqhL3jczEwcb5Ad+TiKOcVhDOOP6k4ygIbP2j4QS
+EWw8FRg1jsfo/ouPVmJQ130p+fxZ9KOQlE1HucAlyaFdNpaouYMQkpA+hzPqMX6PPZAYEvG20S8o
+L3kfNpLLu8m+CEBqZxLDGBm/f5eCrRn5knZI17vOlGW/zIkVQGaCXh6pdIZQ5gmsJ143YJHckB+F
+sbVQh4QUQ03mhW14/Kc/FVM/ienMaBxxXy2aJp/UW8D56vGKk2XDRn+EgrbjTlgTVrLen/0fxqjp
+23cTQiIBQUJQKcYVmBxae+x+QxE/sYBDDVi6MKxzgE/4gDyhdYxN3bMKJJe4Cx965muF4yLBXqEv
+YZqQx/XGqDsdNvGkIpasIpLCxwDJbxrBSz11rIRJgR8NU5heGtw5ZYwFpjetmC6pfGCA6bDFiIdj
+3d7eNVXTTlnN5EWQVnvfRoot5r9rx2fgUVWZMn3nreRHxyJRxvNnRtIYnGAEaaTTzX2jc349O4Pa
+Ey8L6fLsjnRs3lNLt/Jz/VxmhNzpA8wgyTgINm50aGEKw0+DHAUl5zeC4uOXxJjH1impjWDszK8v
+BMOTnh3hBoIa308TsN4C1wf5hPg/mNrFpJ2QLnf/YiV/xXlxG6CBg0howy7/E+k1cU5oJ46SGCcB
++nDXOvcyYqWP6q4L+u1kOAk/OQgoZu1jxnbCRQEjx1XK3x29eFg3YiGgtyZt2BTSXqWlfwo7/GI4
+Ev0EuRPfxgTarErtgluXgXsRUyryikTilWndRV2K+9JhS5QtxctgDMhdSrrq/bhcxQ1OEWEfVu8Z
+21PGvLbK3EiDQBZ6RugQ8PVQD0EVqeCGN1stDBjnxcS/HiYg0MSWWWh8GzvFyM6NdxSWMcF9PMag
+2tg7RNTYSeRWUmNQ8ptH2wHhc0QZXyNzRt/KYVzEHWMyE9zlaRtULQFCExrO1GITt1K8UkTGvwrY
+FIoo9ysVIm==

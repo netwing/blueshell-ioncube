@@ -1,363 +1,253 @@
-<?php
-
-// Select language
-function getLanguageList()
-{
-    $translations = array();
-    $directoryIterator = new DirectoryIterator(Yii::app()->messages->basePath);
-    foreach($directoryIterator as $item)
-
-    if($item->isDir() && !$item->isDot()) {
-
-        $language_id =  $item->getFilename();
-        $locale_display_name = ucfirst(Yii::app()->locale->getLocaleDisplayName($language_id, 'languages')) ;
-        $other_locale = Yii::app()->getLocale($language_id);
-        $other_locale_display_name =  ucfirst($other_locale->getLocaleDisplayName($language_id, "languages"));
-
-        $translations[$language_id] = "$locale_display_name - $other_locale_display_name"; 
-    }
-    return $translations;    
-}
-
-function setLanguage($cookieDays = 180)
-{
-    $language_list = getLanguageList();        
-
-    $posted_language                = Yii::app()->request->getPost('languageSelector');
-    $posted_language_is_valid       = ($posted_language !== null);
-    $posted_language_is_available   = array_key_exists($posted_language, $language_list );
-
-    // User posted a change language request
-    if($posted_language_is_valid and $posted_language_is_available){
-        Yii::app()->setLanguage($_POST['languageSelector']);
-        $cookie = new CHttpCookie('language', $_POST['languageSelector']);
-        $cookie->expire = time() + 60*60*24*$cookieDays; 
-        Yii::app()->request->cookies['language'] = $cookie;
-        $_POST = array();
-        header("Location:" . Yii::app()->user->returnUrl);
-        exit;
-    }
- 
-    // No change langauge request - Lookup into cookies
-    $cookie_language                = Yii::app()->request->cookies['language'];
-    $cookie_language_is_valid       = (isset(Yii::app()->request->cookies['language']) and is_string($cookie_language->value)) ;
-    $cookie_language_is_available   = ($cookie_language_is_valid and array_key_exists($cookie_language->value, $language_list));
-
-    // I've a valid language cookie AND language is supported
-    if( $cookie_language_is_available){
-        Yii::app()->setLanguage($cookie_language->value);
-        return;
-    }
-
-    // if we came to this point, the language is set in cookies, but doesn't exist, 
-    // so we better unset the cookie
-    if($cookie_language_is_valid){
-        unset(Yii::app()->request->cookies['language']);
-        throw new CHttpException(400, Yii::t('app', 'Invalid request. Translation don\'t exists!'));
-        Yii::app()->exit();
-    } 
-
-    // No post AND No cookie 
-    // So we set base application parameters like language
-    if (isset(Yii::app()->request)) {
-        if (isset(Yii::app()->request->preferredLanguage) and Yii::app()->request->preferredLanguage != "" ) {
-            Yii::app()->language = substr(Yii::app()->request->preferredLanguage,0,2);
-        }
-    }       
-}
-setLanguage();
-
-// Set default local key path as constant
-define("LOCAL_KEY_NAME", "blueshell_localkey.txt");
-define("LOCAL_KEY_WEB_DIRECTORY", "protected/runtime/temp");
-define("LOCAL_KEY_DIRECTORY", __DIR__ . DIRECTORY_SEPARATOR . LOCAL_KEY_WEB_DIRECTORY);
-define("LOCAL_KEY_PATH", LOCAL_KEY_DIRECTORY . DIRECTORY_SEPARATOR . LOCAL_KEY_NAME);
-if (defined('RESET_LOCAL_KEY')) {
-    if (RESET_LOCAL_KEY === true) {
-        if (file_exists(LOCAL_KEY_PATH)) {
-            unlink(LOCAL_KEY_PATH);
-        }
-    }
-}
-
-// Check if local key exists
-$local_key = false;
-if (file_exists(LOCAL_KEY_PATH)) {
-    $local_key = file_get_contents(LOCAL_KEY_PATH);
-}
-define("LOCAL_KEY", $local_key);
-
-if (PHP_SAPI !== 'cli') {
-
-    // CHECK FOR TRAVIS LICENSE OVERRIDE
-    if (LICENSE_KEY == 'a2d62a18f58381a72ee9adddf92c80326233d72d260f8bb11cc6bafb31f04bb647feb379a6eb56a2497133b08b6aa2868bb6a51675ba6d120b72569e49b0e2e7') {
-        return true;
-    }
-
-    if (LICENSE_KEY == "") {
-        $license_message1 = Yii::t('app', "License key not set");
-        $license_message2 = Yii::t('app', "Open <code>config.inc.php</code> in your web root and insert a valid license key to continue.</p>");
-        require_once "views/site/license_error.php";
-        exit;        
-    }
-
-    // Check license 
-    $results = check_license(LICENSE_KEY, LOCAL_KEY);
-    $check_license_results = $results;
-
-    if ($results["status"]=="Active") {
-        # Allow Script to Run
-        if (array_key_exists('localkey', $results)) {
-            # Save Updated Local Key to DB or File
-            $localkeydata = $results["localkey"];
-            if (!file_exists(LOCAL_KEY_DIRECTORY)) {
-                mkdir(LOCAL_KEY_DIRECTORY, 0777, true);
-                chmod(LOCAL_KEY_DIRECTORY, 0777);
-            }
-            if (!file_exists(LOCAL_KEY_PATH)) {
-                touch(LOCAL_KEY_PATH);
-                chmod(LOCAL_KEY_PATH, 0777);
-            }
-            $fp = fopen(LOCAL_KEY_PATH, "w+");
-            fwrite($fp, $localkeydata);
-            fclose($fp);
-        }
-    } else {
-        if ($results["status"]=="Invalid") {
-            # Show Invalid Message
-            $license_message1 = Yii::t('app', "The license is not valid");
-        } elseif ($results["status"]=="Expired") {
-            # Show Expired Message
-            $license_message1 = Yii::t('app', "The license has expired");
-        } elseif ($results["status"]=="Suspended") {
-            # Show Suspended Message
-            $license_message1 = Yii::t('app', "The license was suspended");
-        } else {
-            $license_message1 = Yii::t('app', "Unknown error");
-        }
-        if (array_key_exists('message', $results)) {
-            $license_message3 = $results['message'];
-        }
-        if (array_key_exists('description', $results)) {
-            $license_description1 = $results['description'];   
-        }
-        $license_message2 = Yii::t('app', "Open <code>config.inc.php</code> in your web root and insert a valid license key to continue.</p>");
-        require_once "views/site/license_error.php";
-        exit;
-    }    
-
-}
-
-// require_once "library/Smarty/libs/Smarty.class.php";
-define('SMARTY_SPL_AUTOLOAD', 0);
-// need this to avoid Smarty rely on spl autoload function,
-// this has to be done since we need the Yii autoload handler
-if (!defined('SMARTY_SPL_AUTOLOAD')) {
-    define('SMARTY_SPL_AUTOLOAD', 0);
-} elseif (SMARTY_SPL_AUTOLOAD !== 0) {
-    throw new CException('ESmartyViewRenderer cannot work with SMARTY_SPL_AUTOLOAD enabled. Set SMARTY_SPL_AUTOLOAD to 0.');
-}
-
-// including Smarty class and registering autoload handler
-require_once dirname(__FILE__) . "/vendor/smarty/smarty/distribution/libs/sysplugins/smarty_internal_data.php";
-require_once dirname(__FILE__) . "/vendor/smarty/smarty/distribution/libs/Smarty.class.php";
-
-// need this since Yii autoload handler raises an error if class is not found
-// Yii autoloader needs to be the last in the autoload chain
-spl_autoload_unregister('smartyAutoload');
-Yii::registerAutoloader('smartyAutoload'); 
-
-$smarty = new Smarty();
-
-// Assegnamento della funzione
-$smarty->compile_check = true;
-$smarty->debugging = false;
-$smarty->compile_dir = dirname(__FILE__) . "/app/protected/runtime/templates_c";
-if (!file_exists($smarty->compile_dir)) {
-    mkdir($smarty->compile_dir, 0777);
-}
-if (!is_writable($smarty->compile_dir)) {
-    chmod($smarty->compile_dir, 0777);
-}
-# Istanzazione degl'oggetti MySql, Form e Blue disponibili in ogni pagina
-
-function array_diff_keys()
-{
-    $args = func_get_args();
-    $res=$args[0];
-    if (!is_array($res))
-    {
-        return array();
-    }
-    for ($i=1;$i<count($args);$i++)
-    {
-        if (!is_array($args[$i])) {
-            continue;
-        }
-        foreach ($args[$i] as $key=>$data)
-        {
-            unset($res[$key]);
-        }
-    }
-    return $res;
-}
-# Definiamo questa funzione al posto di array_diff_assoc()
-//require_once("cpaint/cpaint.inc.php");
-//require_once('cpaint/cpaint2.inc.php');
-
-
-function check_license($licensekey, $localkey="") {
-    $whmcsurl = "http://my.netwing.it/";
-    $licensing_secret_key = "76682f743ae018364a082b2e87f2d2f5"; # Unique value, should match what is set in the product configuration for MD5 Hash Verification
-    $check_token = time().md5(mt_rand(1000000000,9999999999).$licensekey);
-    $checkdate = date("Ymd"); # Current date
-    $usersip = isset($_SERVER['SERVER_ADDR']) ? $_SERVER['SERVER_ADDR'] : $_SERVER['LOCAL_ADDR'];
-    $localkeydays = 7; # How long the local key is valid for in between remote checks
-    $allowcheckfaildays = 3; # How many days to allow after local key expiry before blocking access if connection cannot be made
-    $localkeyvalid = false;
-    $originalcheckdate = date("Ymd",time(0,0,0,date("m"),date("d")-$localkeydays,date("Y")));
-    if ($localkey) {
-        $localkey = str_replace("\n",'',$localkey); # Remove the line breaks
-        $localdata = substr($localkey,0,strlen($localkey)-32); # Extract License Data
-        $md5hash = substr($localkey,strlen($localkey)-32); # Extract MD5 Hash
-        if ($md5hash==md5($localdata.$licensing_secret_key)) {
-            $localdata = strrev($localdata); # Reverse the string
-            $md5hash = substr($localdata,0,32); # Extract MD5 Hash
-            $localdata = substr($localdata,32); # Extract License Data
-            $localdata = base64_decode($localdata);
-            $localkeyresults = unserialize($localdata);
-            $originalcheckdate = $localkeyresults["checkdate"];
-            if ($md5hash==md5($originalcheckdate.$licensing_secret_key)) {
-                $localexpiry = date("Ymd",time(0,0,0,date("m"),date("d")-$localkeydays,date("Y")));
-                if ($originalcheckdate>$localexpiry) {
-                    $localkeyvalid = true;
-                    $results = $localkeyresults;
-                    $validdomains = explode(",",$results["validdomain"]);
-                    if (!in_array($_SERVER['SERVER_NAME'], $validdomains)) {
-                        $localkeyvalid = false;
-                        $localkeyresults["status"] = "Invalid";
-                        // $results = array();
-                    }
-                    $validips = explode(",",$results["validip"]);
-                    if (!in_array($usersip, $validips)) {
-                        $localkeyvalid = false;
-                        $localkeyresults["status"] = "Invalid";
-                        // $results = array();
-                    }
-                    if ($results["validdirectory"]!=dirname(__FILE__)) {
-                        $localkeyvalid = false;
-                        $localkeyresults["status"] = "Invalid";
-                        // $results = array();
-                    }
-                }
-            }
-        }
-    }
-    if (!$localkeyvalid) {
-        $postfields["licensekey"] = $licensekey;
-        $postfields["domain"] = $_SERVER['SERVER_NAME'];
-        $postfields["ip"] = $usersip;
-        $postfields["dir"] = dirname(__FILE__);
-        if ($check_token) $postfields["check_token"] = $check_token;
-        if (function_exists("curl_exec")) {
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, $whmcsurl."modules/servers/licensing/verify.php");
-            curl_setopt($ch, CURLOPT_POST, 1);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $postfields);
-            curl_setopt($ch, CURLOPT_TIMEOUT, 30);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-            $data = curl_exec($ch);
-            curl_close($ch);
-        } else {
-            $fp = fsockopen($whmcsurl, 80, $errno, $errstr, 5);
-            if ($fp) {
-                $querystring = "";
-                foreach ($postfields AS $k=>$v) {
-                    $querystring .= "$k=".urlencode($v)."&";
-                }
-                $header="POST ".$whmcsurl."modules/servers/licensing/verify.php HTTP/1.0\r\n";
-                $header.="Host: ".$whmcsurl."\r\n";
-                $header.="Content-type: application/x-www-form-urlencoded\r\n";
-                $header.="Content-length: ".@strlen($querystring)."\r\n";
-                $header.="Connection: close\r\n\r\n";
-                $header.=$querystring;
-                $data="";
-                @stream_set_timeout($fp, 20);
-                @fputs($fp, $header);
-                $status = @socket_get_status($fp);
-                while (!@feof($fp)&&$status) {
-                    $data .= @fgets($fp, 1024);
-                    $status = @socket_get_status($fp);
-                }
-                @fclose ($fp);
-            }
-        }
-        if (!$data) {
-            $localexpiry = date("Ymd",time(0,0,0,date("m"),date("d")-($localkeydays+$allowcheckfaildays),date("Y")));
-            if ($originalcheckdate>$localexpiry) {
-                $results = $localkeyresults;
-            } else {
-                $results["status"] = "Invalid";
-                $results["description"] = "Remote Check Failed";
-                return $results;
-            }
-        } else {
-            preg_match_all('/<(.*?)>([^<]+)<\/\\1>/i', $data, $matches);
-            $results = array();
-            foreach ($matches[1] AS $k=>$v) {
-                $results[$v] = $matches[2][$k];
-            }
-        }
-        if (array_key_exists('md5hash', $results) and $results["md5hash"]) {
-            if ($results["md5hash"]!=md5($licensing_secret_key.$check_token)) {
-                $results["status"] = "Invalid";
-                $results["description"] = "MD5 Checksum Verification Failed";
-                return $results;
-            }
-        }
-        if ($results["status"]=="Active") {
-            $results["checkdate"] = $checkdate;
-            $data_encoded = serialize($results);
-            $data_encoded = base64_encode($data_encoded);
-            $data_encoded = md5($checkdate.$licensing_secret_key).$data_encoded;
-            $data_encoded = strrev($data_encoded);
-            $data_encoded = $data_encoded.md5($data_encoded.$licensing_secret_key);
-            $data_encoded = wordwrap($data_encoded,80,"\n",true);
-            $results["localkey"] = $data_encoded;
-        }
-        $results["remotecheck"] = true;
-    }
-    unset($postfields,$data,$matches,$whmcsurl,$licensing_secret_key,$checkdate,$usersip,$localkeydays,$allowcheckfaildays,$md5hash);
-    return $results;
-}
-
-
-function juiDatePicker($id, $value = null) {
-
-    $result = '';
-
-    $options = array(
-        'altField'          => '#' . $id,
-        'altFormat'         => 'yy-mm-dd',
-        'showButtonPanel'   => true,
-        'changeMonth'       => true,
-        'changeYear'        => true,
-    );
-
-    $options = CJavaScript::encode($options);
-    $js = "jQuery('#{$id}_user').datepicker($options);";
-
-    if (Yii::app()->language!='' && Yii::app()->language!='en') {
-        $result = '<script src="bower_components/jquery-ui/ui/i18n/jquery-ui-i18n.js"></script>' . PHP_EOL;
-        $js = "jQuery('#{$id}_user').datepicker(jQuery.extend({showMonthAfterYear:false},jQuery.datepicker.regional['" . Yii::app()->language . "']," . $options . "));";
-    }
-
-    // Populate
-    if ($value !== null and $value !== '0000-00-00') {
-        $js.= 'var myDate = jQuery("#' . $id . '").val(); var parsedDate = jQuery.datepicker.parseDate("yy-mm-dd", myDate); jQuery("#' . $id . '_user").datepicker("setDate", parsedDate);';
-    }
-
-    $result.= '<script type="text/javascript">$(function() { ' . $js . ' });</script>';
-
-    return $result;
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

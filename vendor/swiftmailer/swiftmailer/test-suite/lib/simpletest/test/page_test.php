@@ -1,898 +1,580 @@
-<?php
-// $Id: page_test.php 1782 2008-04-25 17:09:06Z pp11 $
-require_once(dirname(__FILE__) . '/../autorun.php');
-require_once(dirname(__FILE__) . '/../expectation.php');
-require_once(dirname(__FILE__) . '/../http.php');
-require_once(dirname(__FILE__) . '/../page.php');
-require_once(dirname(__FILE__) . '/../parser.php');
-Mock::generate('SimpleHtmlSaxParser');
-Mock::generate('SimplePage');
-Mock::generate('SimpleHttpResponse');
-Mock::generate('SimpleHttpHeaders');
-Mock::generate('SimplePageBuilder');
-Mock::generatePartial(
-        'SimplePageBuilder',
-        'PartialSimplePageBuilder',
-        array('createPage', 'createParser'));
-
-class TestOfPageBuilder extends UnitTestCase {
-
-    function testLink() {
-        $tag = new SimpleAnchorTag(array('href' => 'http://somewhere'));
-        $tag->addContent('Label');
-
-        $page = new MockSimplePage();
-        $page->expect('acceptTag', array($tag));
-        $page->expectCallCount('acceptTag', 1);
-
-        $builder = new PartialSimplePageBuilder();
-        $builder->returns('createPage', $page);
-        $builder->returns('createParser', new MockSimpleHtmlSaxParser());
-        $builder->__construct();
-
-        $builder->parse(new MockSimpleHttpResponse());
-        $this->assertTrue($builder->startElement(
-                'a',
-                array('href' => 'http://somewhere')));
-        $this->assertTrue($builder->addContent('Label'));
-        $this->assertTrue($builder->endElement('a'));
-    }
-
-    function testLinkWithId() {
-        $tag = new SimpleAnchorTag(array("href" => "http://somewhere", "id" => "44"));
-        $tag->addContent("Label");
-
-        $page = new MockSimplePage();
-        $page->expect("acceptTag", array($tag));
-        $page->expectCallCount("acceptTag", 1);
-
-        $builder = new PartialSimplePageBuilder();
-        $builder->returns('createPage', $page);
-        $builder->returns('createParser', new MockSimpleHtmlSaxParser());
-        $builder->__construct();
-
-        $builder->parse(new MockSimpleHttpResponse());
-        $this->assertTrue($builder->startElement(
-                "a",
-                array("href" => "http://somewhere", "id" => "44")));
-        $this->assertTrue($builder->addContent("Label"));
-        $this->assertTrue($builder->endElement("a"));
-    }
-
-    function testLinkExtraction() {
-        $tag = new SimpleAnchorTag(array("href" => "http://somewhere"));
-        $tag->addContent("Label");
-
-        $page = new MockSimplePage();
-        $page->expect("acceptTag", array($tag));
-        $page->expectCallCount("acceptTag", 1);
-
-        $builder = new PartialSimplePageBuilder();
-        $builder->returns('createPage', $page);
-        $builder->returns('createParser', new MockSimpleHtmlSaxParser());
-        $builder->__construct();
-
-        $builder->parse(new MockSimpleHttpResponse());
-        $this->assertTrue($builder->addContent("Starting stuff"));
-        $this->assertTrue($builder->startElement(
-                "a",
-                array("href" => "http://somewhere")));
-        $this->assertTrue($builder->addContent("Label"));
-        $this->assertTrue($builder->endElement("a"));
-        $this->assertTrue($builder->addContent("Trailing stuff"));
-    }
-
-    function testMultipleLinks() {
-        $a1 = new SimpleAnchorTag(array("href" => "http://somewhere"));
-        $a1->addContent("1");
-
-        $a2 = new SimpleAnchorTag(array("href" => "http://elsewhere"));
-        $a2->addContent("2");
-
-        $page = new MockSimplePage();
-        $page->expectAt(0, "acceptTag", array($a1));
-        $page->expectAt(1, "acceptTag", array($a2));
-        $page->expectCallCount("acceptTag", 2);
-
-        $builder = new PartialSimplePageBuilder();
-        $builder->returns('createPage', $page);
-        $builder->returns('createParser', new MockSimpleHtmlSaxParser());
-        $builder->__construct();
-
-        $builder->parse(new MockSimpleHttpResponse());
-        $builder->startElement("a", array("href" => "http://somewhere"));
-        $builder->addContent("1");
-        $builder->endElement("a");
-        $builder->addContent("Padding");
-        $builder->startElement("a", array("href" => "http://elsewhere"));
-        $builder->addContent("2");
-        $builder->endElement("a");
-    }
-
-    function testTitle() {
-        $tag = new SimpleTitleTag(array());
-        $tag->addContent("HereThere");
-
-        $page = new MockSimplePage();
-        $page->expect("acceptTag", array($tag));
-        $page->expectCallCount("acceptTag", 1);
-
-        $builder = new PartialSimplePageBuilder();
-        $builder->returns('createPage', $page);
-        $builder->returns('createParser', new MockSimpleHtmlSaxParser());
-        $builder->__construct();
-
-        $builder->parse(new MockSimpleHttpResponse());
-        $builder->startElement("title", array());
-        $builder->addContent("Here");
-        $builder->addContent("There");
-        $builder->endElement("title");
-    }
-
-    function testForm() {
-        $page = new MockSimplePage();
-        $page->expectOnce("acceptFormStart", array(new SimpleFormTag(array())));
-        $page->expectOnce("acceptFormEnd", array());
-
-        $builder = new PartialSimplePageBuilder();
-        $builder->returns('createPage', $page);
-        $builder->returns('createParser', new MockSimpleHtmlSaxParser());
-        $builder->__construct();
-
-        $builder->parse(new MockSimpleHttpResponse());
-        $builder->startElement("form", array());
-        $builder->addContent("Stuff");
-        $builder->endElement("form");
-    }
-}
-
-class TestOfPageParsing extends UnitTestCase {
-
-    function testParseMechanics() {
-        $parser = new MockSimpleHtmlSaxParser();
-        $parser->expectOnce('parse', array('stuff'));
-
-        $page = new MockSimplePage();
-        $page->expectOnce('acceptPageEnd');
-
-        $builder = new PartialSimplePageBuilder();
-        $builder->returns('createPage', $page);
-        $builder->returns('createParser', $parser);
-        $builder->__construct();
-
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getContent', 'stuff');
-        $builder->parse($response);
-    }
-}
-
-class TestOfPageInterface extends UnitTestCase {
-
-    function testInterfaceOnEmptyPage() {
-        $page = new SimplePage();
-        $this->assertEqual($page->getTransportError(), 'No page fetched yet');
-        $this->assertIdentical($page->getRaw(), false);
-        $this->assertIdentical($page->getHeaders(), false);
-        $this->assertIdentical($page->getMimeType(), false);
-        $this->assertIdentical($page->getResponseCode(), false);
-        $this->assertIdentical($page->getAuthentication(), false);
-        $this->assertIdentical($page->getRealm(), false);
-        $this->assertFalse($page->hasFrames());
-        $this->assertIdentical($page->getUrls(), array());
-        $this->assertIdentical($page->getTitle(), false);
-    }
-}
-
-class TestOfPageHeaders extends UnitTestCase {
-
-    function testUrlAccessor() {
-        $headers = new MockSimpleHttpHeaders();
-
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getHeaders', $headers);
-        $response->setReturnValue('getMethod', 'POST');
-        $response->setReturnValue('getUrl', new SimpleUrl('here'));
-        $response->setReturnValue('getRequestData', array('a' => 'A'));
-
-        $page = new SimplePage($response);
-        $this->assertEqual($page->getMethod(), 'POST');
-        $this->assertEqual($page->getUrl(), new SimpleUrl('here'));
-        $this->assertEqual($page->getRequestData(), array('a' => 'A'));
-    }
-
-    function testTransportError() {
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getError', 'Ouch');
-
-        $page = new SimplePage($response);
-        $this->assertEqual($page->getTransportError(), 'Ouch');
-    }
-
-    function testHeadersAccessor() {
-        $headers = new MockSimpleHttpHeaders();
-        $headers->setReturnValue('getRaw', 'My: Headers');
-
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getHeaders', $headers);
-
-        $page = new SimplePage($response);
-        $this->assertEqual($page->getHeaders(), 'My: Headers');
-    }
-
-    function testMimeAccessor() {
-        $headers = new MockSimpleHttpHeaders();
-        $headers->setReturnValue('getMimeType', 'text/html');
-
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getHeaders', $headers);
-
-        $page = new SimplePage($response);
-        $this->assertEqual($page->getMimeType(), 'text/html');
-    }
-
-    function testResponseAccessor() {
-        $headers = new MockSimpleHttpHeaders();
-        $headers->setReturnValue('getResponseCode', 301);
-
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getHeaders', $headers);
-
-        $page = new SimplePage($response);
-        $this->assertIdentical($page->getResponseCode(), 301);
-    }
-
-    function testAuthenticationAccessors() {
-        $headers = new MockSimpleHttpHeaders();
-        $headers->setReturnValue('getAuthentication', 'Basic');
-        $headers->setReturnValue('getRealm', 'Secret stuff');
-
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getHeaders', $headers);
-
-        $page = new SimplePage($response);
-        $this->assertEqual($page->getAuthentication(), 'Basic');
-        $this->assertEqual($page->getRealm(), 'Secret stuff');
-    }
-}
-
-class TestOfHtmlPage extends UnitTestCase {
-
-    function testRawAccessor() {
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getContent', 'Raw HTML');
-
-        $page = new SimplePage($response);
-        $this->assertEqual($page->getRaw(), 'Raw HTML');
-    }
-
-    function testTextAccessor() {
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getContent', '<b>Some</b> &quot;messy&quot; HTML');
-
-        $page = new SimplePage($response);
-        $this->assertEqual($page->getText(), 'Some "messy" HTML');
-    }
-
-    function testNoLinks() {
-        $page = new SimplePage(new MockSimpleHttpResponse());
-        $this->assertIdentical($page->getUrls(), array());
-        $this->assertIdentical($page->getUrlsByLabel('Label'), array());
-    }
-
-    function testAddAbsoluteLink() {
-        $link = new SimpleAnchorTag(array('href' => 'http://somewhere.com'));
-        $link->addContent('Label');
-        $page = new SimplePage(new MockSimpleHttpResponse());
-        $page->AcceptTag($link);
-        $this->assertEqual(
-                $page->getUrlsByLabel('Label'),
-                array(new SimpleUrl('http://somewhere.com')));
-    }
-
-    function testAddStrictRelativeLink() {
-        $link = new SimpleAnchorTag(array('href' => './somewhere.php'));
-        $link->addContent('Label');
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getUrl', new SimpleUrl('http://host/'));
-        $page = new SimplePage($response);
-        $page->AcceptTag($link);
-        $this->assertEqual(
-                $page->getUrlsByLabel('Label'),
-                array(new SimpleUrl('http://host/somewhere.php')));
-    }
-
-    function testAddBareRelativeLink() {
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getUrl', new SimpleUrl('http://host/'));
-        $page = new SimplePage($response);
-        $page->AcceptTag(new SimpleAnchorTag(array('href' => 'somewhere.php')));
-        $this->assertIdentical($page->getUrls(), array('http://host/somewhere.php'));
-    }
-
-    function testAddRelativeLinkWithBaseTag() {
-        $link = new SimpleAnchorTag(array('href' => 'somewhere.php'));
-        $link->addContent('Label');
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getUrl', new SimpleUrl('http://host/'));
-        $page = new SimplePage($response);
-        $page->AcceptTag($link);        
-        $base = new SimpleBaseTag(array('href' => 'www.lastcraft.com/stuff/'));
-        $page->AcceptTag($base);
-        $this->assertEqual(
-                $page->getUrlsByLabel('Label'),
-                array(new SimpleUrl('www.lastcraft.com/stuff/somewhere.php')));
-    }
-
-    function testAddAbsoluteLinkWithBaseTag() {
-        $link = new SimpleAnchorTag(array('href' => 'http://here.com/somewhere.php'));
-        $link->addContent('Label');
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getUrl', new SimpleUrl('http://host/'));
-        $page = new SimplePage($response);
-        $page->AcceptTag($link);        
-        $base = new SimpleBaseTag(array('href' => 'www.lastcraft.com/stuff/'));
-        $page->AcceptTag($base);
-        $this->assertEqual(
-                $page->getUrlsByLabel('Label'),
-                array(new SimpleUrl('http://here.com/somewhere.php')));
-    }
-
-    function testLinkIds() {
-        $link = new SimpleAnchorTag(array('href' => './somewhere.php', 'id' => 33));
-        $link->addContent('Label');
-
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getUrl', new SimpleUrl('http://host/'));
-
-        $page = new SimplePage($response);
-        $page->AcceptTag($link);
-
-        $this->assertEqual(
-                $page->getUrlsByLabel('Label'),
-                array(new SimpleUrl('http://host/somewhere.php')));
-        $this->assertFalse($page->getUrlById(0));
-        $this->assertEqual(
-                $page->getUrlById(33),
-                new SimpleUrl('http://host/somewhere.php'));
-    }
-
-    function testFindLinkWithNormalisation() {
-        $link = new SimpleAnchorTag(array('href' => './somewhere.php', 'id' => 33));
-        $link->addContent(' <em>Long &amp; thin</em> ');
-
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getUrl', new SimpleUrl('http://host/'));
-
-        $page = new SimplePage($response);
-        $page->AcceptTag($link);
-
-        $this->assertEqual(
-                $page->getUrlsByLabel('Long & thin'),
-                array(new SimpleUrl('http://host/somewhere.php')));
-    }
-
-    function testFindLinkWithImage() {
-        $link = new SimpleAnchorTag(array('href' => './somewhere.php', 'id' => 33));
-        $link->addContent('<img src="pic.jpg" alt="&lt;A picture&gt;">');
-
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getUrl', new SimpleUrl('http://host/'));
-
-        $page = new SimplePage($response);
-        $page->AcceptTag($link);
-
-        $this->assertEqual(
-                $page->getUrlsByLabel('<A picture>'),
-                array(new SimpleUrl('http://host/somewhere.php')));
-    }
-
-    function testTitleSetting() {
-        $title = new SimpleTitleTag(array());
-        $title->addContent('Title');
-        $page = new SimplePage(new MockSimpleHttpResponse());
-        $page->AcceptTag($title);
-        $this->assertEqual($page->getTitle(), 'Title');
-    }
-
-    function testFramesetAbsence() {
-        $url = new SimpleUrl('here');
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getUrl', $url);
-        $page = new SimplePage($response);
-        $this->assertFalse($page->hasFrames());
-        $this->assertIdentical($page->getFrameset(), false);
-    }
-
-    function testHasEmptyFrameset() {
-        $page = new SimplePage(new MockSimpleHttpResponse());
-        $page->acceptFramesetStart(new SimpleTag('frameset', array()));
-        $page->acceptFramesetEnd();
-        $this->assertTrue($page->hasFrames());
-        $this->assertIdentical($page->getFrameset(), array());
-    }
-
-    function testFramesInPage() {
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getUrl', new SimpleUrl('http://here'));
-
-        $page = new SimplePage($response);
-        $page->acceptFrame(new SimpleFrameTag(array('src' => '1.html')));
-        $page->acceptFramesetStart(new SimpleTag('frameset', array()));
-        $page->acceptFrame(new SimpleFrameTag(array('src' => '2.html')));
-        $page->acceptFrame(new SimpleFrameTag(array('src' => '3.html')));
-        $page->acceptFramesetEnd();
-        $page->acceptFrame(new SimpleFrameTag(array('src' => '4.html')));
-
-        $this->assertTrue($page->hasFrames());
-        $this->assertIdentical($page->getFrameset(), array(
-                1 => new SimpleUrl('http://here/2.html'),
-                2 => new SimpleUrl('http://here/3.html')));
-    }
-
-    function testNamedFramesInPage() {
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getUrl', new SimpleUrl('http://here'));
-
-        $page = new SimplePage($response);
-        $page->acceptFramesetStart(new SimpleTag('frameset', array()));
-        $page->acceptFrame(new SimpleFrameTag(array('src' => '1.html')));
-        $page->acceptFrame(new SimpleFrameTag(array('src' => '2.html', 'name' => 'A')));
-        $page->acceptFrame(new SimpleFrameTag(array('src' => '3.html', 'name' => 'B')));
-        $page->acceptFrame(new SimpleFrameTag(array('src' => '4.html')));
-        $page->acceptFramesetEnd();
-
-        $this->assertTrue($page->hasFrames());
-        $this->assertIdentical($page->getFrameset(), array(
-                1 => new SimpleUrl('http://here/1.html'),
-                'A' => new SimpleUrl('http://here/2.html'),
-                'B' => new SimpleUrl('http://here/3.html'),
-                4 => new SimpleUrl('http://here/4.html')));
-    }
-    
-    function testRelativeFramesRespectBaseTag() {
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getUrl', new SimpleUrl('http://here.com/'));
-        $page = new SimplePage($response);
-
-        $base = new SimpleBaseTag(array('href' => 'https://there.com/stuff/'));
-        $page->AcceptTag($base);
-
-        $page->acceptFramesetStart(new SimpleTag('frameset', array()));
-        $page->acceptFrame(new SimpleFrameTag(array('src' => '1.html')));
-        $page->acceptFramesetEnd();
-        $this->assertIdentical(
-                $page->getFrameset(),
-                array(1 => new SimpleUrl('https://there.com/stuff/1.html')));
-    }
-}
-
-class TestOfFormsCreatedFromEventStream extends UnitTestCase {
-
-    function testFormCanBeSubmitted() {
-        $page = new SimplePage(new MockSimpleHttpResponse());
-        $page->acceptFormStart(
-                new SimpleFormTag(array('method' => 'GET', 'action' => 'here.php')));
-        $page->AcceptTag(
-                new SimpleSubmitTag(array('type' => 'submit', 'name' => 's')));
-        $page->acceptFormEnd();
-        $form = &$page->getFormBySubmit(new SimpleByLabel('Submit'));
-        $this->assertEqual(
-                $form->submitButton(new SimpleByLabel('Submit')),
-                new SimpleGetEncoding(array('s' => 'Submit')));
-    }
-
-    function testInputFieldCanBeReadBack() {
-        $page = new SimplePage(new MockSimpleHttpResponse());
-        $page->acceptFormStart(
-                new SimpleFormTag(array("method" => "GET", "action" => "here.php")));
-        $page->AcceptTag(
-                new SimpleTextTag(array("type" => "text", "name" => "a", "value" => "A")));
-        $page->AcceptTag(
-                new SimpleSubmitTag(array("type" => "submit", "name" => "s")));
-        $page->acceptFormEnd();
-        $this->assertEqual($page->getField(new SimpleByName('a')), 'A');
-    }
-
-    function testInputFieldCanBeReadBackByLabel() {
-        $label = new SimpleLabelTag(array());
-        $page = new SimplePage(new MockSimpleHttpResponse());
-        $page->acceptFormStart(
-                new SimpleFormTag(array("method" => "GET", "action" => "here.php")));
-        $page->acceptLabelStart($label);
-        $label->addContent('l');
-        $page->AcceptTag(
-                new SimpleTextTag(array("type" => "text", "name" => "a", "value" => "A")));
-        $page->acceptLabelEnd();
-        $page->AcceptTag(
-                new SimpleSubmitTag(array("type" => "submit", "name" => "s")));
-        $page->acceptFormEnd();
-        $this->assertEqual($page->getField(new SimpleByLabel('l')), 'A');
-    }
-}
-
-class TestOfPageScraping extends UnitTestCase {
-
-    function parse($response) {
-        $builder = new SimplePageBuilder();
-        $page = $builder->parse($response);
-        return $page;
-    }
-
-    function testEmptyPage() {
-        $page = new SimplePage(new MockSimpleHttpResponse());
-        $this->assertIdentical($page->getUrls(), array());
-        $this->assertIdentical($page->getTitle(), false);
-    }
-
-    function testUninterestingPage() {
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getContent', '<html><body><p>Stuff</p></body></html>');
-        $page = $this->parse($response);
-        $this->assertIdentical($page->getUrls(), array());
-    }
-
-    function testLinksPage() {
-        $raw = '<html>';
-        $raw .= '<a href="there.html">There</a>';
-        $raw .= '<a href="http://there.com/that.html" id="0">That page</a>';
-        $raw .= '</html>';
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getContent', $raw);
-        $response->setReturnValue('getUrl', new SimpleUrl('http://www.here.com/a/index.html'));
-        $page = $this->parse($response);
-        $this->assertIdentical(
-                $page->getUrls(),
-                array('http://www.here.com/a/there.html', 'http://there.com/that.html'));
-        $this->assertIdentical(
-                $page->getUrlsByLabel('There'),
-                array(new SimpleUrl('http://www.here.com/a/there.html')));
-        $this->assertEqual(
-                $page->getUrlById('0'),
-                new SimpleUrl('http://there.com/that.html'));
-    }
-
-    function testTitle() {
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getContent', '<html><head><title>Me</title></head></html>');
-        $page = $this->parse($response);
-        $this->assertEqual($page->getTitle(), 'Me');
-    }
-
-    function testNastyTitle() {
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue(
-                'getContent',
-                '<html><head><Title> <b>Me&amp;Me </TITLE></b></head></html>');
-        $page = $this->parse($response);
-        $this->assertEqual($page->getTitle(), "Me&Me");
-    }
-
-    function testCompleteForm() {
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getContent',
-                '<html><head><form>' .
-                '<input type="text" name="here" value="Hello">' .
-                '</form></head></html>');
-        $page = $this->parse($response);
-        $this->assertEqual($page->getField(new SimpleByName('here')), "Hello");
-    }
-
-    function testUnclosedForm() {
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getContent',
-                '<html><head><form>' .
-                '<input type="text" name="here" value="Hello">' .
-                '</head></html>');
-        $page = $this->parse($response);
-        $this->assertEqual($page->getField(new SimpleByName('here')), "Hello");
-    }
-
-    function testEmptyFrameset() {
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue(
-                'getContent',
-                '<html><frameset></frameset></html>');
-        $page = $this->parse($response);
-        $this->assertTrue($page->hasFrames());
-        $this->assertIdentical($page->getFrameset(), array());
-    }
-
-    function testSingleFrame() {
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue(
-                'getContent',
-                '<html><frameset><frame src="a.html"></frameset></html>');
-        $response->setReturnValue('getUrl', new SimpleUrl('http://host/'));
-        $page = $this->parse($response);
-        $this->assertTrue($page->hasFrames());
-        $this->assertIdentical(
-                $page->getFrameset(),
-                array(1 => new SimpleUrl('http://host/a.html')));
-    }
-
-    function testSingleFrameInNestedFrameset() {
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getContent',
-                '<html><frameset><frameset>' .
-                '<frame src="a.html">' .
-                '</frameset></frameset></html>');
-        $response->setReturnValue('getUrl', new SimpleUrl('http://host/'));
-        $page = $this->parse($response);
-        $this->assertTrue($page->hasFrames());
-        $this->assertIdentical(
-                $page->getFrameset(),
-                array(1 => new SimpleUrl('http://host/a.html')));
-    }
-
-    function testFrameWithNoSource() {
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue(
-                'getContent',
-                '<html><frameset><frame></frameset></html>');
-        $page = $this->parse($response);
-        $this->assertTrue($page->hasFrames());
-        $this->assertIdentical($page->getFrameset(), array());
-    }
-
-    function testFramesCollectedWithNestedFramesetTags() {
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getContent',
-                '<html><frameset>' .
-                '<frame src="a.html">' .
-                '<frameset><frame src="b.html"></frameset>' .
-                '<frame src="c.html">' .
-                '</frameset></html>');
-        $response->setReturnValue('getUrl', new SimpleUrl('http://host/'));
-        $page = $this->parse($response);
-        $this->assertTrue($page->hasFrames());
-        $this->assertIdentical($page->getFrameset(), array(
-                1 => new SimpleUrl('http://host/a.html'),
-                2 => new SimpleUrl('http://host/b.html'),
-                3 => new SimpleUrl('http://host/c.html')));
-    }
-
-    function testNamedFrames() {
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getContent',
-                '<html><frameset>' .
-                '<frame src="a.html">' .
-                '<frame name="_one" src="b.html">' .
-                '<frame src="c.html">' .
-                '<frame src="d.html" name="_two">' .
-                '</frameset></html>');
-        $response->setReturnValue('getUrl', new SimpleUrl('http://host/'));
-        $page = $this->parse($response);
-        $this->assertTrue($page->hasFrames());
-        $this->assertIdentical($page->getFrameset(), array(
-                1 => new SimpleUrl('http://host/a.html'),
-                '_one' => new SimpleUrl('http://host/b.html'),
-                3 => new SimpleUrl('http://host/c.html'),
-                '_two' => new SimpleUrl('http://host/d.html')));
-    }
-
-    function testFindFormByLabel() {
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue(
-                'getContent',
-                '<html><head><form><input type="submit"></form></head></html>');
-        $page = $this->parse($response);
-        $this->assertNull($page->getFormBySubmit(new SimpleByLabel('submit')));
-        $this->assertNull($page->getFormBySubmit(new SimpleByName('submit')));
-        $this->assertIsA(
-                $page->getFormBySubmit(new SimpleByLabel('Submit')),
-                'SimpleForm');
-    }
-
-    function testConfirmSubmitAttributesAreCaseSensitive() {
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue(
-                'getContent',
-                '<html><head><FORM><INPUT TYPE="SUBMIT" NAME="S" VALUE="S"></FORM></head></html>');
-        $page = $this->parse($response);
-        $this->assertIsA(
-                $page->getFormBySubmit(new SimpleByName('S')),
-                'SimpleForm');
-        $this->assertIsA(
-                $page->getFormBySubmit(new SimpleByLabel('S')),
-                'SimpleForm');
-    }
-
-    function testFindFormByImage() {
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getContent',
-                '<html><head><form>' .
-                '<input type="image" id=100 alt="Label" name="me">' .
-                '</form></head></html>');
-        $page = $this->parse($response);
-        $this->assertIsA(
-                $page->getFormByImage(new SimpleByLabel('Label')),
-                'SimpleForm');
-        $this->assertIsA(
-                $page->getFormByImage(new SimpleByName('me')),
-                'SimpleForm');
-        $this->assertIsA(
-                $page->getFormByImage(new SimpleById(100)),
-                'SimpleForm');
-    }
-
-    function testFindFormByButtonTag() {
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getContent',
-                '<html><head><form>' .
-                '<button type="submit" name="b" value="B">BBB</button>' .
-                '</form></head></html>');
-        $page = $this->parse($response);
-        $this->assertNull($page->getFormBySubmit(new SimpleByLabel('b')));
-        $this->assertNull($page->getFormBySubmit(new SimpleByLabel('B')));
-        $this->assertIsA(
-                $page->getFormBySubmit(new SimpleByName('b')),
-                'SimpleForm');
-        $this->assertIsA(
-                $page->getFormBySubmit(new SimpleByLabel('BBB')),
-                'SimpleForm');
-    }
-
-    function testFindFormById() {
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue(
-                'getContent',
-                '<html><head><form id="55"><input type="submit"></form></head></html>');
-        $page = $this->parse($response);
-        $this->assertNull($page->getFormById(54));
-        $this->assertIsA($page->getFormById(55), 'SimpleForm');
-    }
-
-    function testReadingTextField() {
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getContent',
-                '<html><head><form>' .
-                '<input type="text" name="a">' .
-                '<input type="text" name="b" value="bbb" id=3>' .
-                '</form></head></html>');
-        $page = $this->parse($response);
-        $this->assertNull($page->getField(new SimpleByName('missing')));
-        $this->assertIdentical($page->getField(new SimpleByName('a')), '');
-        $this->assertIdentical($page->getField(new SimpleByName('b')), 'bbb');
-    }
-
-    function testReadingTextFieldIsCaseInsensitive() {
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getContent',
-                '<html><head><FORM>' .
-                '<INPUT TYPE="TEXT" NAME="a">' .
-                '<INPUT TYPE="TEXT" NAME="b" VALUE="bbb" id=3>' .
-                '</FORM></head></html>');
-        $page = $this->parse($response);
-        $this->assertNull($page->getField(new SimpleByName('missing')));
-        $this->assertIdentical($page->getField(new SimpleByName('a')), '');
-        $this->assertIdentical($page->getField(new SimpleByName('b')), 'bbb');
-    }
-
-    function testSettingTextField() {
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getContent',
-                '<html><head><form>' .
-                '<input type="text" name="a">' .
-                '<input type="text" name="b" id=3>' .
-                '<input type="submit">' .
-                '</form></head></html>');
-        $page = $this->parse($response);
-        $this->assertTrue($page->setField(new SimpleByName('a'), 'aaa'));
-        $this->assertEqual($page->getField(new SimpleByName('a')), 'aaa');
-        $this->assertTrue($page->setField(new SimpleById(3), 'bbb'));
-        $this->assertEqual($page->getField(new SimpleBYId(3)), 'bbb');
-        $this->assertFalse($page->setField(new SimpleByName('z'), 'zzz'));
-        $this->assertNull($page->getField(new SimpleByName('z')));
-    }
-
-    function testSettingTextFieldByEnclosingLabel() {
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getContent',
-                '<html><head><form>' .
-                '<label>Stuff' .
-                '<input type="text" name="a" value="A">' .
-                '</label>' .
-                '</form></head></html>');
-        $page = $this->parse($response);
-        $this->assertEqual($page->getField(new SimpleByName('a')), 'A');
-        $this->assertEqual($page->getField(new SimpleByLabel('Stuff')), 'A');
-        $this->assertTrue($page->setField(new SimpleByLabel('Stuff'), 'aaa'));
-        $this->assertEqual($page->getField(new SimpleByLabel('Stuff')), 'aaa');
-    }
-
-    function testGettingTextFieldByEnclosingLabelWithConflictingOtherFields() {
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getContent',
-                '<html><head><form>' .
-                '<label>Stuff' .
-                '<input type="text" name="a" value="A">' .
-                '</label>' .
-                '<input type="text" name="b" value="B">' .
-                '</form></head></html>');
-        $page = $this->parse($response);
-        $this->assertEqual($page->getField(new SimpleByName('a')), 'A');
-        $this->assertEqual($page->getField(new SimpleByName('b')), 'B');
-        $this->assertEqual($page->getField(new SimpleByLabel('Stuff')), 'A');
-    }
-
-    function testSettingTextFieldByExternalLabel() {
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getContent',
-                '<html><head><form>' .
-                '<label for="aaa">Stuff</label>' .
-                '<input id="aaa" type="text" name="a" value="A">' .
-                '</form></head></html>');
-        $page = $this->parse($response);
-        $this->assertEqual($page->getField(new SimpleByLabel('Stuff')), 'A');
-        $this->assertTrue($page->setField(new SimpleByLabel('Stuff'), 'aaa'));
-        $this->assertEqual($page->getField(new SimpleByLabel('Stuff')), 'aaa');
-    }
-
-    function testReadingTextArea() {
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getContent',
-                '<html><head><form>' .
-                '<textarea name="a">aaa</textarea>' .
-                '<input type="submit">' .
-                '</form></head></html>');
-        $page = $this->parse($response);
-        $this->assertEqual($page->getField(new SimpleByName('a')), 'aaa');
-    }
-
-    function testSettingTextArea() {
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getContent',
-                '<html><head><form>' .
-                '<textarea name="a">aaa</textarea>' .
-                '<input type="submit">' .
-                '</form></head></html>');
-        $page = $this->parse($response);
-        $this->assertTrue($page->setField(new SimpleByName('a'), 'AAA'));
-        $this->assertEqual($page->getField(new SimpleByName('a')), 'AAA');
-    }
-
-    function testSettingSelectionField() {
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getContent',
-                '<html><head><form>' .
-                '<select name="a">' .
-                '<option>aaa</option>' .
-                '<option selected>bbb</option>' .
-                '</select>' .
-                '<input type="submit">' .
-                '</form></head></html>');
-        $page = $this->parse($response);
-        $this->assertEqual($page->getField(new SimpleByName('a')), 'bbb');
-        $this->assertFalse($page->setField(new SimpleByName('a'), 'ccc'));
-        $this->assertTrue($page->setField(new SimpleByName('a'), 'aaa'));
-        $this->assertEqual($page->getField(new SimpleByName('a')), 'aaa');
-    }
-
-    function testSettingSelectionFieldByEnclosingLabel() {
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getContent',
-                '<html><head><form>' .
-                '<label>Stuff' .
-                '<select name="a"><option selected>A</option><option>B</option></select>' .
-                '</label>' .
-                '</form></head></html>');
-        $page = $this->parse($response);
-        $this->assertEqual($page->getField(new SimpleByLabel('Stuff')), 'A');
-        $this->assertTrue($page->setField(new SimpleByLabel('Stuff'), 'B'));
-        $this->assertEqual($page->getField(new SimpleByLabel('Stuff')), 'B');
-    }
-
-    function testSettingRadioButtonByEnclosingLabel() {
-        $response = new MockSimpleHttpResponse();
-        $response->setReturnValue('getContent',
-                '<html><head><form>' .
-                '<label>A<input type="radio" name="r" value="a" checked></label>' .
-                '<label>B<input type="radio" name="r" value="b"></label>' .
-                '</form></head></html>');
-        $page = $this->parse($response);
-        $this->assertEqual($page->getField(new SimpleByLabel('A')), 'a');
-        $this->assertTrue($page->setField(new SimpleBylabel('B'), 'b'));
-        $this->assertEqual($page->getField(new SimpleByLabel('B')), 'b');
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+pbwGLPXm26y1AAgZa0+B

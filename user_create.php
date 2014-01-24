@@ -1,38 +1,58 @@
-<?php
-require_once("config.inc.php");
-$blue->autentica_utente("preferenze","W");
-$radio_scelte=array("N","R","W");
-$form->campi_testo=array("utente_username","utente_nominativo","utente_telefono","utente_email");
-$form->campi_radiobutton=array("utente_accesso_principale"=>$radio_scelte,"utente_accesso_contratti"=>$radio_scelte,"utente_accesso_anagrafica"=>$radio_scelte,"utente_accesso_imbarcazioni"=>$radio_scelte,"utente_accesso_posti_barca"=>$radio_scelte,"utente_accesso_documenti"=>$radio_scelte,"utente_accesso_fatture"=>$radio_scelte,"utente_accesso_template"=>$radio_scelte,"utente_accesso_listini"=>$radio_scelte,"utente_accesso_preferenze"=>$radio_scelte);
-$form->valori_default=array("utente_accesso_principale_N"=>'checked="checked"',"utente_accesso_contratti_N"=>'checked="checked"',"utente_accesso_anagrafica_N"=>'checked="checked"',"utente_accesso_imbarcazioni_N"=>'checked="checked"',"utente_accesso_posti_barca_N"=>'checked="checked"',"utente_accesso_documenti_N"=>'checked="checked"',"utente_accesso_fatture_N"=>'checked="checked"',"utente_accesso_template_N"=>'checked="checked"',"utente_accesso_listini_N"=>'checked="checked"',"utente_accesso_preferenze_N"=>'checked="checked"');
-$form->campi_obbligatori=array("utente_username");
-$form->inizializza();
-
-if (count($_POST)>0) {        
-    $form->verifica();
-    if ($form->errore_form === false) {
-
-        $utente_username = $sql->pulisci($_POST['utente_username']);
-        $select = "SELECT * FROM " . $tabelle['utenti'] . " WHERE utente_username = '" . $utente_username . "'";
-        $result = $sql->select_query($select);
-        if (mysql_num_rows($result) == 0) {
-            foreach ($_POST as $k=>$v) {
-                $$k=$sql->pulisci($v);
-            }
-            $insert="INSERT INTO ".$tabelle['utenti']." (utente_username,utente_password,utente_nominativo,utente_telefono,utente_email,utente_accesso_principale,utente_accesso_contratti,utente_accesso_anagrafica,utente_accesso_imbarcazioni,utente_accesso_posti_barca,utente_accesso_fatture,utente_accesso_documenti,utente_accesso_listini,utente_accesso_template,utente_accesso_preferenze) VALUES ('".$utente_username."',MD5('".$utente_password."'),'".$utente_nominativo."','".$utente_telefono."','".$utente_email."','".$utente_accesso_principale."','".$utente_accesso_contratti."','".$utente_accesso_anagrafica."','".$utente_accesso_imbarcazioni."','".$utente_accesso_posti_barca."','".$utente_accesso_fatture."','".$utente_accesso_documenti."','".$utente_accesso_listini."','".$utente_accesso_template."','".$utente_accesso_preferenze."')";
-            $result = $sql->insert_query($insert);
-            if ($result) {
-                Yii::app()->user->setFlash('success', Yii::t('app', 'User created successfully.'));
-            } else {
-                Yii::app()->user->setFlash('success', Yii::t('app', 'An error occured.'));
-            }
-            header("Location:preferenze_utenti.php");
-            exit;
-        } else {
-            $form->add_error('utente_username', Yii::t('app', 'This username was already taken.'));
-        }  
-    }
-}
-
-$action = "user_create.php";
-require_once "views/user/create.php";
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

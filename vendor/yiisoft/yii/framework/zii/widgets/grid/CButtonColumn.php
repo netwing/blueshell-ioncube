@@ -1,349 +1,164 @@
-<?php
-/**
- * CButtonColumn class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-Yii::import('zii.widgets.grid.CGridColumn');
-
-/**
- * CButtonColumn represents a grid view column that renders one or several buttons.
- *
- * By default, it will display three buttons, "view", "update" and "delete", which triggers the corresponding
- * actions on the model of the row.
- *
- * By configuring {@link buttons} and {@link template} properties, the column can display other buttons
- * and customize the display order of the buttons.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package zii.widgets.grid
- * @since 1.1
- */
-class CButtonColumn extends CGridColumn
-{
-	/**
-	 * @var array the HTML options for the data cell tags.
-	 */
-	public $htmlOptions=array('class'=>'button-column');
-	/**
-	 * @var array the HTML options for the header cell tag.
-	 */
-	public $headerHtmlOptions=array('class'=>'button-column');
-	/**
-	 * @var array the HTML options for the footer cell tag.
-	 */
-	public $footerHtmlOptions=array('class'=>'button-column');
-	/**
-	 * @var string the template that is used to render the content in each data cell.
-	 * These default tokens are recognized: {view}, {update} and {delete}. If the {@link buttons} property
-	 * defines additional buttons, their IDs are also recognized here. For example, if a button named 'preview'
-	 * is declared in {@link buttons}, we can use the token '{preview}' here to specify where to display the button.
-	 */
-	public $template='{view} {update} {delete}';
-	/**
-	 * @var string the label for the view button. Defaults to "View".
-	 * Note that the label will not be HTML-encoded when rendering.
-	 */
-	public $viewButtonLabel;
-	/**
-	 * @var string the image URL for the view button. If not set, an integrated image will be used.
-	 * You may set this property to be false to render a text link instead.
-	 */
-	public $viewButtonImageUrl;
-	/**
-	 * @var string a PHP expression that is evaluated for every view button and whose result is used
-	 * as the URL for the view button. In this expression, you can use the following variables:
-	 * <ul>
-	 *   <li><code>$row</code> the row number (zero-based)</li>
-	 *   <li><code>$data</code> the data model for the row</li>
-	 *   <li><code>$this</code> the column object</li>
-	 * </ul>
-	 * The PHP expression will be evaluated using {@link evaluateExpression}.
-	 *
-	 * A PHP expression can be any PHP code that has a value. To learn more about what an expression is,
-	 * please refer to the {@link http://www.php.net/manual/en/language.expressions.php php manual}.
-	 */
-	public $viewButtonUrl='Yii::app()->controller->createUrl("view",array("id"=>$data->primaryKey))';
-	/**
-	 * @var array the HTML options for the view button tag.
-	 */
-	public $viewButtonOptions=array('class'=>'view');
-
-	/**
-	 * @var string the label for the update button. Defaults to "Update".
-	 * Note that the label will not be HTML-encoded when rendering.
-	 */
-	public $updateButtonLabel;
-	/**
-	 * @var string the image URL for the update button. If not set, an integrated image will be used.
-	 * You may set this property to be false to render a text link instead.
-	 */
-	public $updateButtonImageUrl;
-	/**
-	 * @var string a PHP expression that is evaluated for every update button and whose result is used
-	 * as the URL for the update button. In this expression, you can use the following variables:
-	 * <ul>
-	 *   <li><code>$row</code> the row number (zero-based)</li>
-	 *   <li><code>$data</code> the data model for the row</li>
-	 *   <li><code>$this</code> the column object</li>
-	 * </ul>
-	 * The PHP expression will be evaluated using {@link evaluateExpression}.
-	 *
-	 * A PHP expression can be any PHP code that has a value. To learn more about what an expression is,
-	 * please refer to the {@link http://www.php.net/manual/en/language.expressions.php php manual}.
-	 */
-	public $updateButtonUrl='Yii::app()->controller->createUrl("update",array("id"=>$data->primaryKey))';
-	/**
-	 * @var array the HTML options for the update button tag.
-	 */
-	public $updateButtonOptions=array('class'=>'update');
-
-	/**
-	 * @var string the label for the delete button. Defaults to "Delete".
-	 * Note that the label will not be HTML-encoded when rendering.
-	 */
-	public $deleteButtonLabel;
-	/**
-	 * @var string the image URL for the delete button. If not set, an integrated image will be used.
-	 * You may set this property to be false to render a text link instead.
-	 */
-	public $deleteButtonImageUrl;
-	/**
-	 * @var string a PHP expression that is evaluated for every delete button and whose result is used
-	 * as the URL for the delete button. In this expression, you can use the following variables:
-	 * <ul>
-	 *   <li><code>$row</code> the row number (zero-based)</li>
-	 *   <li><code>$data</code> the data model for the row</li>
-	 *   <li><code>$this</code> the column object</li>
-	 * </ul>
-	 * The PHP expression will be evaluated using {@link evaluateExpression}.
-	 *
-	 * A PHP expression can be any PHP code that has a value. To learn more about what an expression is,
-	 * please refer to the {@link http://www.php.net/manual/en/language.expressions.php php manual}.
-	 */
-	public $deleteButtonUrl='Yii::app()->controller->createUrl("delete",array("id"=>$data->primaryKey))';
-	/**
-	 * @var array the HTML options for the delete button tag.
-	 */
-	public $deleteButtonOptions=array('class'=>'delete');
-	/**
-	 * @var string the confirmation message to be displayed when delete button is clicked.
-	 * By setting this property to be false, no confirmation message will be displayed.
-	 * This property is used only if <code>$this->buttons['delete']['click']</code> is not set.
-	 */
-	public $deleteConfirmation;
-	/**
-	 * @var string a javascript function that will be invoked after the delete ajax call.
-	 * This property is used only if <code>$this->buttons['delete']['click']</code> is not set.
-	 *
-	 * The function signature is <code>function(link, success, data)</code>
-	 * <ul>
-	 * <li><code>link</code> references the delete link.</li>
-	 * <li><code>success</code> status of the ajax call, true if the ajax call was successful, false if the ajax call failed.
-	 * <li><code>data</code> the data returned by the server in case of a successful call or XHR object in case of error.
-	 * </ul>
-	 * Note that if success is true it does not mean that the delete was successful, it only means that the ajax call was successful.
-	 *
-	 * Example:
-	 * <pre>
-	 *  array(
-	 *     class'=>'CButtonColumn',
-	 *     'afterDelete'=>'function(link,success,data){ if(success) alert("Delete completed successfuly"); }',
-	 *  ),
-	 * </pre>
-	 */
-	public $afterDelete;
-	/**
-	 * @var array the configuration for buttons. Each array element specifies a single button
-	 * which has the following format:
-	 * <pre>
-	 * 'buttonID' => array(
-	 *     'label'=>'...',     // text label of the button
-	 *     'url'=>'...',       // a PHP expression for generating the URL of the button
-	 *     'imageUrl'=>'...',  // image URL of the button. If not set or false, a text link is used
-	 *     'options'=>array(...), // HTML options for the button tag
-	 *     'click'=>'...',     // a JS function to be invoked when the button is clicked
-	 *     'visible'=>'...',   // a PHP expression for determining whether the button is visible
-	 * )
-	 * </pre>
-	 *
-	 * In the PHP expression for the 'url' option and/or 'visible' option, the variable <code>$row</code>
-	 * refers to the current row number (zero-based), and <code>$data</code> refers to the data model for
-	 * the row.
-	 * The PHP expression will be evaluated using {@link evaluateExpression}.
-	 * A PHP expression can be any PHP code that has a value. To learn more about what an expression is,
-	 * please refer to the {@link http://www.php.net/manual/en/language.expressions.php php manual}.
-	 *
-	 * If the 'buttonID' is 'view', 'update' or 'delete' the options will be applied to the default buttons.
-	 *
-	 * Note that in order to display non-default buttons, the {@link template} property needs to
-	 * be configured so that the corresponding button IDs appear as tokens in the template.
-	 */
-	public $buttons=array();
-
-	/**
-	 * Initializes the column.
-	 * This method registers necessary client script for the button column.
-	 */
-	public function init()
-	{
-		$this->initDefaultButtons();
-
-		foreach($this->buttons as $id=>$button)
-		{
-			if(strpos($this->template,'{'.$id.'}')===false)
-				unset($this->buttons[$id]);
-			elseif(isset($button['click']))
-			{
-				if(!isset($button['options']['class']))
-					$this->buttons[$id]['options']['class']=$id;
-				if(!($button['click'] instanceof CJavaScriptExpression))
-					$this->buttons[$id]['click']=new CJavaScriptExpression($button['click']);
-			}
-		}
-
-		$this->registerClientScript();
-	}
-
-	/**
-	 * Initializes the default buttons (view, update and delete).
-	 */
-	protected function initDefaultButtons()
-	{
-		if($this->viewButtonLabel===null)
-			$this->viewButtonLabel=Yii::t('zii','View');
-		if($this->updateButtonLabel===null)
-			$this->updateButtonLabel=Yii::t('zii','Update');
-		if($this->deleteButtonLabel===null)
-			$this->deleteButtonLabel=Yii::t('zii','Delete');
-		if($this->viewButtonImageUrl===null)
-			$this->viewButtonImageUrl=$this->grid->baseScriptUrl.'/view.png';
-		if($this->updateButtonImageUrl===null)
-			$this->updateButtonImageUrl=$this->grid->baseScriptUrl.'/update.png';
-		if($this->deleteButtonImageUrl===null)
-			$this->deleteButtonImageUrl=$this->grid->baseScriptUrl.'/delete.png';
-		if($this->deleteConfirmation===null)
-			$this->deleteConfirmation=Yii::t('zii','Are you sure you want to delete this item?');
-
-		foreach(array('view','update','delete') as $id)
-		{
-			$button=array(
-				'label'=>$this->{$id.'ButtonLabel'},
-				'url'=>$this->{$id.'ButtonUrl'},
-				'imageUrl'=>$this->{$id.'ButtonImageUrl'},
-				'options'=>$this->{$id.'ButtonOptions'},
-			);
-			if(isset($this->buttons[$id]))
-				$this->buttons[$id]=array_merge($button,$this->buttons[$id]);
-			else
-				$this->buttons[$id]=$button;
-		}
-
-		if(!isset($this->buttons['delete']['click']))
-		{
-			if(is_string($this->deleteConfirmation))
-				$confirmation="if(!confirm(".CJavaScript::encode($this->deleteConfirmation).")) return false;";
-			else
-				$confirmation='';
-
-			if(Yii::app()->request->enableCsrfValidation)
-			{
-				$csrfTokenName = Yii::app()->request->csrfTokenName;
-				$csrfToken = Yii::app()->request->csrfToken;
-				$csrf = "\n\t\tdata:{ '$csrfTokenName':'$csrfToken' },";
-			}
-			else
-				$csrf = '';
-
-			if($this->afterDelete===null)
-				$this->afterDelete='function(){}';
-
-			$this->buttons['delete']['click']=<<<EOD
-function() {
-	$confirmation
-	var th = this,
-		afterDelete = $this->afterDelete;
-	jQuery('#{$this->grid->id}').yiiGridView('update', {
-		type: 'POST',
-		url: jQuery(this).attr('href'),$csrf
-		success: function(data) {
-			jQuery('#{$this->grid->id}').yiiGridView('update');
-			afterDelete(th, true, data);
-		},
-		error: function(XHR) {
-			return afterDelete(th, false, XHR);
-		}
-	});
-	return false;
-}
-EOD;
-		}
-	}
-
-	/**
-	 * Registers the client scripts for the button column.
-	 */
-	protected function registerClientScript()
-	{
-		$js=array();
-		foreach($this->buttons as $id=>$button)
-		{
-			if(isset($button['click']))
-			{
-				$function=CJavaScript::encode($button['click']);
-				$class=preg_replace('/\s+/','.',$button['options']['class']);
-				$js[]="jQuery(document).on('click','#{$this->grid->id} a.{$class}',$function);";
-			}
-		}
-
-		if($js!==array())
-			Yii::app()->getClientScript()->registerScript(__CLASS__.'#'.$this->id, implode("\n",$js));
-	}
-
-	/**
-	 * Renders the data cell content.
-	 * This method renders the view, update and delete buttons in the data cell.
-	 * @param integer $row the row number (zero-based)
-	 * @param mixed $data the data associated with the row
-	 */
-	protected function renderDataCellContent($row,$data)
-	{
-		$tr=array();
-		ob_start();
-		foreach($this->buttons as $id=>$button)
-		{
-			$this->renderButton($id,$button,$row,$data);
-			$tr['{'.$id.'}']=ob_get_contents();
-			ob_clean();
-		}
-		ob_end_clean();
-		echo strtr($this->template,$tr);
-	}
-
-	/**
-	 * Renders a link button.
-	 * @param string $id the ID of the button
-	 * @param array $button the button configuration which may contain 'label', 'url', 'imageUrl' and 'options' elements.
-	 * See {@link buttons} for more details.
-	 * @param integer $row the row number (zero-based)
-	 * @param mixed $data the data object associated with the row
-	 */
-	protected function renderButton($id,$button,$row,$data)
-	{
-		if (isset($button['visible']) && !$this->evaluateExpression($button['visible'],array('row'=>$row,'data'=>$data)))
-  			return;
-		$label=isset($button['label']) ? $button['label'] : $id;
-		$url=isset($button['url']) ? $this->evaluateExpression($button['url'],array('data'=>$data,'row'=>$row)) : '#';
-		$options=isset($button['options']) ? $button['options'] : array();
-		if(!isset($options['title']))
-			$options['title']=$label;
-		if(isset($button['imageUrl']) && is_string($button['imageUrl']))
-			echo CHtml::link(CHtml::image($button['imageUrl'],$label),$url,$options);
-		else
-			echo CHtml::link($label,$url,$options);
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

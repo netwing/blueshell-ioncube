@@ -1,66 +1,32 @@
-<?php
-
-namespace Guzzle\Http\Curl;
-
-/**
- * Class used for querying curl_version data
- */
-class CurlVersion
-{
-    /** @var array curl_version() information */
-    protected $version;
-
-    /** @var CurlVersion */
-    protected static $instance;
-
-    /** @var string Default user agent */
-    protected $userAgent;
-
-    /**
-     * @return CurlVersion
-     */
-    public static function getInstance()
-    {
-        if (!self::$instance) {
-            self::$instance = new self();
-        }
-
-        return self::$instance;
-    }
-
-    /**
-     * Get all of the curl_version() data
-     *
-     * @return array
-     */
-    public function getAll()
-    {
-        if (!$this->version) {
-            $this->version = curl_version();
-        }
-
-        return $this->version;
-    }
-
-    /**
-     * Get a specific type of curl information
-     *
-     * @param string $type Version information to retrieve. This value is one of:
-     *     - version_number:     cURL 24 bit version number
-     *     - version:            cURL version number, as a string
-     *     - ssl_version_number: OpenSSL 24 bit version number
-     *     - ssl_version:        OpenSSL version number, as a string
-     *     - libz_version:       zlib version number, as a string
-     *     - host:               Information about the host where cURL was built
-     *     - features:           A bitmask of the CURL_VERSION_XXX constants
-     *     - protocols:          An array of protocols names supported by cURL
-     *
-     * @return string|float|bool if the $type is found, and false if not found
-     */
-    public function get($type)
-    {
-        $version = $this->getAll();
-
-        return isset($version[$type]) ? $version[$type] : false;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

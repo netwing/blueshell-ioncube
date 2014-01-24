@@ -1,65 +1,50 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\Console\Tests\Command;
-
-use Symfony\Component\Console\Tester\CommandTester;
-use Symfony\Component\Console\Application;
-
-class ListCommandTest extends \PHPUnit_Framework_TestCase
-{
-    public function testExecuteListsCommands()
-    {
-        $application = new Application();
-        $commandTester = new CommandTester($command = $application->get('list'));
-        $commandTester->execute(array('command' => $command->getName()), array('decorated' => false));
-
-        $this->assertRegExp('/help   Displays help for a command/', $commandTester->getDisplay(), '->execute() returns a list of available commands');
-    }
-
-    public function testExecuteListsCommandsWithXmlOption()
-    {
-        $application = new Application();
-        $commandTester = new CommandTester($command = $application->get('list'));
-        $commandTester->execute(array('command' => $command->getName(), '--format' => 'xml'));
-        $this->assertRegExp('/<command id="list" name="list">/', $commandTester->getDisplay(), '->execute() returns a list of available commands in XML if --xml is passed');
-    }
-
-    public function testExecuteListsCommandsWithRawOption()
-    {
-        $application = new Application();
-        $commandTester = new CommandTester($command = $application->get('list'));
-        $commandTester->execute(array('command' => $command->getName(), '--raw' => true));
-        $output = <<<EOF
-help   Displays help for a command
-list   Lists commands
-
-EOF;
-
-        $this->assertEquals($output, $commandTester->getDisplay(true));
-    }
-
-    public function testExecuteListsCommandsWithNamespaceArgument()
-    {
-
-        require_once(realpath(__DIR__.'/../Fixtures/FooCommand.php'));
-        $application = new Application();
-        $application->add(new \FooCommand());
-        $commandTester = new CommandTester($command = $application->get('list'));
-        $commandTester->execute(array('command' => $command->getName(), 'namespace' => 'foo', '--raw' => true));
-        $output = <<<EOF
-foo:bar   The foo:bar command
-
-EOF;
-
-        $this->assertEquals($output, $commandTester->getDisplay(true));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cP+IGAZaDVAy+t2A/6ZSO88aElcDGEtIIS+btZMVfXk+V5z8EEGwdu6WP25HBKgRQOtwO9Lsd
+jzyNkC0rU7El/XwjMg7GB734KNHfC+d9nl2HtpRy3TpEkdEvArrn+jOkeZ9wICJvKFj044Nn+gPM
+R2d9RzTDCQWGYAZ35Z+z0RI2GW9b0Pw+8mm3lOKireAXrAg+D81PAQ0pmD5prjqggqB3sZ/n6arn
+WuSs75wvovcnFTHdVkk15QzHAE4xzt2gh9fl143SQNI6OUr+UVf0LOSyWXx8m5h0SuVnlZullwMW
+0S1GZIhk6mvDw6qIyFIhAfxwItSlND3Ci2U+4iNhupMCLtYVsz6UVKsSRRWQTEGzSo5SXnoNGbQs
+Dj6VmlrFE06+1rNk8BfBA0cWh2UTNPmDqE++y8Fj5p4fhEr/3W+f1ILBBkaYJEwa+2hYn2v5QJOR
+pl93SPwie727v6GjqJUJnqGw77OqcZ889LH88zl6TmwxhmkF87ABKxoTNrYDBiYuZSF+40yFJ8oe
+ufbGTOr9d2OghbJcTrbdZz6AKeGV1ZjtLx40lg+WQR9+wDXHqvlUzu329Ix0lDP0SG5pBXzi8cuP
+2cnxC4S/h5xIxNU8DrbXYFi2QwNdxaMkXMK1EqR/4UGLfQgnxcbGyvpab628OnwIoF3JU0HZkwAq
+QWDfN04dkR3xAZDAuRhYzHO5g1+RL0ubfmTil9ov9zgft62a58FiHUytmbCFFm9zRbQ6NMpcEbZs
+IGE/kimVME/agt4AI9dxuwu24TMIdbbuwQQrL7jXw+ocm+F0aNS1l22wjCOAshIYeOre7pPRLyX4
+JC4e8au3VxsqP34zLL5pqTWPGy6ypyC6MaEqAPQhzO1E7oKG5WQ9C6s5vT89EjbrrUFaLu41ZUEt
+8KAWzm6cGWw2IXiswk1nV+FKLoGlYXW65M894/XtN/Gbxd+bg9YnlVSR+TEgjhrXTq0EOZbA9ftJ
+QOXbgQZg7XKpFT+YTlP0L03TlsnpeYaUqqQXV7s4ZtyTRGq5XC6F48EvA34cbq8ZhW5bSN0Hvg0w
+dTzIzsLSGvqhgUGBScjMJ8/47BMNQQ8eWA64Gp4PvxM5PXYpAOpb3DZ3OtJ+8ucuRMrigjkiHXFr
+O0o1oj//9axZPRGEPBe9JFEFeoWrglw3YN5G1AjLL3AG4GnnNy+FlkiestLX9HljEto/tb28o55W
+CUGBt/whDg9q1NjaSWLiNZ+NZp8aye5KrqLsQLGOIlvQJJW47zb5T138rpGRGe08zUypg+nh5vlD
+i7AdRDtRXyYPDJupQojWJMKv8A3t/w1+NQF3lYP5jfd5WUi9L2caf+/JatuP74dTUx6UGp140rTv
+plGHHenqZhhh8hAR+R4hzqHJqrPRyb0nqS5i1PeH/sTP9H/GD6Vz4obN0+wj77XCjEBLitK458YP
+tq4mYETo5ObmIPc9H5JD6C4fhJlnwWk2TJ+4TPzhBvvXJFhUy+4P+0KWUQTDWh96L0/aPUV3z1iJ
+uJliU9SrSwrJRylpu58NUwnFvebv8lgEHi9MBWQLkj0x86cnTR9l6EmqNMykILx9XS12ulZZfwVB
+pbFaU3IdAX87M3kKaGWXslQAPYQ8ZlyDby8/OVhcmguoma4xbL8A4ZEB8zlBV8FeeyM9FWCGORlu
+NOyH0nYLeer/0JvNJI8Ctntf+rc3aWI0LP3fWZCPBzn2oWceKNnKZ98szAihO7PimXV8OrSr5NDs
+AVYKaG4MDMdZI+kr9/nU0iLXVYAlcPK5mSOA4TvoGRqHkFtwvY0E77NsAQxJSQPYSkJyP6QBX8Xg
+tQN66f9r/MqIxoyBOm7jeZY3hI23kMxaH7bbA6oa7oMmn6LIyf10nCUT0OR0mxm0HFFl1IZJ2RQ1
+OPTUrjZoMnfSN/jz2fyQIsqF4cXL9OMS+6qsgtEmd350ucFm+a3mPixO9c57iGueKS1EjXl38OaV
+WigfGXDfHzaxv4TxBAYqyYv7eMZdsCmccp01yFkbe5XVoZlLrGEplY0+Uwyfkg+5R3dHpKQRIX8c
+rp4aaxrQM22xCqvfh3ehywvUuynCF/l45NBMjb9X+hQ/6rr7MotVId1stgYXrlXlCIvOGCx/xIPV
+Nb9jiVGziTYlw3UuDa6F3A8LMCLBVk357zXMLctqvFSd0cER9PpolGMN4gXkMOB+1APWArFgyn5R
+wZCAfJMAJbcIcfzeYKuDXzS8JmkT+PBgLUiPN3Rk7Gd/cA857wyRQvE2O5cGDKb/chvBU6LTTXaF
+IiFKhKk0iU3rFdg47+BUTnwzmB4IRW4vGB/RGx7qiz6PTWGjpAUuMjKLc6sC1MRUs9CYrzT7ngZz
+pvhagBB3F++5BuJORanz/6/NpGtr1MNsTMXJ64onGogqHFMON392U8Bnf9H6gpeH8tDl2gWlsJq7
+ApqDvdw9pYKzg0u3onv3Y6C/8vJxgyHNT6qey7ZuGloEsC7ok0nh8FrQ0bbu/zCw6D6p5Ap7eo1d
+YghDueYRGekVRpKPmva2dPM4FfR4B9bUCXToj1B3muWDXEoOaGn+rWsjpoN/RSJCY6kW0v2TrYAR
+qxWsX5GW0jSWbqALz3By8AlIs43LeYoe8rC3v0XFaySS3ue+ICMUtUsmpAe5kyg6/DZz6P2CvBDx
+c2YwSZKQh9zNbV73/5kZzHjerpEJLsl7s6Si0QNJc6psHogmQb40ZR3sGbc0I55ujFmotsr3bGvD
+/yNLOCKSAycVQMB5l7fsNdCCWyah2oitpnXt+MJZ0MHETl/AJIAhWpJjyjFfWzbijLpIkF32mD+l
+wmc7utz8yDS5JWAvDvTjUwzd2v17Ndj5e0j+iw50bq1L6uyMVeEu1SkVbkf4sR52b/Mat+Ysp1S6
+LM3bBS2hiumveA53cR/LfnL22NH23xOFC77lNjLDnYiwcsECgnXz7DUuAwVz77JaNoXmYmw6nyaM
+nicwJouWLED6rKrNVWrtCOubrd38T+WteTYyuKRcRRYtZOzJYZqIq+s2myDifaPY7DlVUsKrPCG/
+MMmXrVbaISE6tIiqZeXiTo4R0GypiuYFNO2xg6x/2QDPr1uVI0TFQhdE5n8ljl6JzfFkwfDE9mzO
+ec1KRyxfdixDzFmpIKt03ClC+eFeG2/xZhukYOT1wXAk/5iDVB2r1arCpLxfWnV4bJQ/lY1HJyJQ
+Jm45wteY3sSlmplYZQdimDTBv36BGuXLviBT+5QSvxhl871ezjBuFZvv2wTD0jtrnOfM5AIB/p7L
+21gWD9VrlDBXnzl9/Px0S2/uKtGRJ0/Woxg5uwHB7OU5Mwu6o2Q7lfD7a9hzfVFtyWBtiMoRlNSc
+LHoozH+khIQ3qT1KLJTuVxs7ms4SUn+BSc0wT9aVXfHcruGYAb/zbP2genjInMrJMsmIzgGMM8/B
+3nD6OWKgQ0Dqy69oXAS1BV55OX0AZt8l4KMFPMvYrY4nLccuQW1WtUlcZvCL7tRbFJwfMxnADmFm
+jshV2bfgHOOfxvBxLgFmV1qzeY2lCvuxQ0==

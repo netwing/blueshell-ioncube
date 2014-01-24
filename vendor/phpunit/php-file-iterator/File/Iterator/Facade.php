@@ -1,161 +1,55 @@
-<?php
-/**
- * php-file-iterator
- *
- * Copyright (c) 2009-2013, Sebastian Bergmann <sebastian@phpunit.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @package   File
- * @author    Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright 2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
- * @license   http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @since     File available since Release 1.3.0
- */
-
-/**
- * Façade implementation that uses File_Iterator_Factory to create a
- * File_Iterator that operates on an AppendIterator that contains an
- * RecursiveDirectoryIterator for each given path. The list of unique
- * files is returned as an array.
- *
- * @author    Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright 2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
- * @license   http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @version   Release: @package_version@
- * @link      http://github.com/sebastianbergmann/php-file-iterator/tree
- * @since     Class available since Release 1.3.0
- */
-class File_Iterator_Facade
-{
-    /**
-     * @param  array|string $paths
-     * @param  array|string $suffixes
-     * @param  array|string $prefixes
-     * @param  array        $exclude
-     * @param  boolean      $commonPath
-     * @return array
-     */
-    public function getFilesAsArray($paths, $suffixes = '', $prefixes = '', array $exclude = array(), $commonPath = FALSE)
-    {
-        if (is_string($paths)) {
-            $paths = array($paths);
-        }
-
-        $factory  = new File_Iterator_Factory;
-        $iterator = $factory->getFileIterator(
-          $paths, $suffixes, $prefixes, $exclude
-        );
-
-        $files = array();
-
-        foreach ($iterator as $file) {
-            $file = $file->getRealPath();
-
-            if ($file) {
-                $files[] = $file;
-            }
-        }
-
-        foreach ($paths as $path) {
-            if (is_file($path)) {
-                $files[] = realpath($path);
-            }
-        }
-
-        $files = array_unique($files);
-        sort($files);
-
-        if ($commonPath) {
-            return array(
-              'commonPath' => $this->getCommonPath($files),
-              'files'      => $files
-            );
-        } else {
-            return $files;
-        }
-    }
-
-    /**
-     * Returns the common path of a set of files.
-     *
-     * @param  array $files
-     * @return string
-     */
-    protected function getCommonPath(array $files)
-    {
-        $count = count($files);
-
-        if ($count == 0) {
-            return '';
-        }
-
-        if ($count == 1) {
-            return dirname($files[0]) . DIRECTORY_SEPARATOR;
-        }
-
-        $_files = array();
-
-        foreach ($files as $file) {
-            $_files[] = $_fileParts = explode(DIRECTORY_SEPARATOR, $file);
-
-            if (empty($_fileParts[0])) {
-                $_fileParts[0] = DIRECTORY_SEPARATOR;
-            }
-        }
-
-        $common = '';
-        $done   = FALSE;
-        $j      = 0;
-        $count--;
-
-        while (!$done) {
-            for ($i = 0; $i < $count; $i++) {
-                if ($_files[$i][$j] != $_files[$i+1][$j]) {
-                    $done = TRUE;
-                    break;
-                }
-            }
-
-            if (!$done) {
-                $common .= $_files[0][$j];
-
-                if ($j > 0) {
-                    $common .= DIRECTORY_SEPARATOR;
-                }
-            }
-
-            $j++;
-        }
-
-        return DIRECTORY_SEPARATOR . $common;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

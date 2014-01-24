@@ -1,150 +1,81 @@
-<?php
-
-require_once 'Swift/Mime/EmbeddedFile.php';
-require_once 'Swift/Mime/Headers/UnstructuredHeader.php';
-require_once 'Swift/Mime/Headers/ParameterizedHeader.php';
-require_once 'Swift/Mime/Headers/IdentificationHeader.php';
-require_once 'Swift/Encoder/Rfc2231Encoder.php';
-require_once 'Swift/Mime/ContentEncoder/Base64ContentEncoder.php';
-require_once 'Swift/Mime/HeaderEncoder/QpHeaderEncoder.php';
-require_once 'Swift/CharacterStream/ArrayCharacterStream.php';
-require_once 'Swift/CharacterReaderFactory/SimpleCharacterReaderFactory.php';
-require_once 'Swift/KeyCache/ArrayKeyCache.php';
-require_once 'Swift/KeyCache/SimpleKeyCacheInputStream.php';
-require_once 'Swift/Mime/Grammar.php';
-
-class Swift_Mime_EmbeddedFileAcceptanceTest extends UnitTestCase
-{
-    private $_contentEncoder;
-    private $_cache;
-    private $_grammar;
-    private $_headers;
-
-    public function setUp()
-    {
-        $this->_cache = new Swift_KeyCache_ArrayKeyCache(
-            new Swift_KeyCache_SimpleKeyCacheInputStream()
-            );
-        $factory = new Swift_CharacterReaderFactory_SimpleCharacterReaderFactory();
-        $this->_contentEncoder = new Swift_Mime_ContentEncoder_Base64ContentEncoder();
-
-        $headerEncoder = new Swift_Mime_HeaderEncoder_QpHeaderEncoder(
-            new Swift_CharacterStream_ArrayCharacterStream($factory, 'utf-8')
-            );
-        $paramEncoder = new Swift_Encoder_Rfc2231Encoder(
-            new Swift_CharacterStream_ArrayCharacterStream($factory, 'utf-8')
-            );
-        $this->_grammar = new Swift_Mime_Grammar();
-        $this->_headers = new Swift_Mime_SimpleHeaderSet(
-            new Swift_Mime_SimpleHeaderFactory($headerEncoder, $paramEncoder, $this->_grammar)
-            );
-    }
-
-    public function testContentIdIsSetInHeader()
-    {
-        $file = $this->_createEmbeddedFile();
-        $file->setContentType('application/pdf');
-        $file->setId('foo@bar');
-        $this->assertEqual(
-            'Content-Type: application/pdf' . "\r\n" .
-            'Content-Transfer-Encoding: base64' . "\r\n" .
-            'Content-Disposition: inline' . "\r\n" .
-            'Content-ID: <foo@bar>' . "\r\n",
-            $file->toString()
-            );
-    }
-
-    public function testDispositionIsSetInHeader()
-    {
-        $file = $this->_createEmbeddedFile();
-        $id = $file->getId();
-        $file->setContentType('application/pdf');
-        $file->setDisposition('attachment');
-        $this->assertEqual(
-            'Content-Type: application/pdf' . "\r\n" .
-            'Content-Transfer-Encoding: base64' . "\r\n" .
-            'Content-Disposition: attachment' . "\r\n" .
-            'Content-ID: <'. $id . '>' . "\r\n",
-            $file->toString()
-            );
-    }
-
-    public function testFilenameIsSetInHeader()
-    {
-        $file = $this->_createEmbeddedFile();
-        $id = $file->getId();
-        $file->setContentType('application/pdf');
-        $file->setFilename('foo.pdf');
-        $this->assertEqual(
-            'Content-Type: application/pdf; name=foo.pdf' . "\r\n" .
-            'Content-Transfer-Encoding: base64' . "\r\n" .
-            'Content-Disposition: inline; filename=foo.pdf' . "\r\n" .
-            'Content-ID: <'. $id . '>' . "\r\n",
-            $file->toString()
-            );
-    }
-
-    public function testSizeIsSetInHeader()
-    {
-        $file = $this->_createEmbeddedFile();
-        $id = $file->getId();
-        $file->setContentType('application/pdf');
-        $file->setSize(12340);
-        $this->assertEqual(
-            'Content-Type: application/pdf' . "\r\n" .
-            'Content-Transfer-Encoding: base64' . "\r\n" .
-            'Content-Disposition: inline; size=12340' . "\r\n" .
-            'Content-ID: <'. $id . '>' . "\r\n",
-            $file->toString()
-            );
-    }
-
-    public function testMultipleParametersInHeader()
-    {
-        $file = $this->_createEmbeddedFile();
-        $id = $file->getId();
-        $file->setContentType('application/pdf');
-        $file->setFilename('foo.pdf');
-        $file->setSize(12340);
-        $this->assertEqual(
-            'Content-Type: application/pdf; name=foo.pdf' . "\r\n" .
-            'Content-Transfer-Encoding: base64' . "\r\n" .
-            'Content-Disposition: inline; filename=foo.pdf; size=12340' . "\r\n" .
-            'Content-ID: <'. $id . '>' . "\r\n",
-            $file->toString()
-            );
-    }
-
-    public function testEndToEnd()
-    {
-        $file = $this->_createEmbeddedFile();
-        $id = $file->getId();
-        $file->setContentType('application/pdf');
-        $file->setFilename('foo.pdf');
-        $file->setSize(12340);
-        $file->setBody('abcd');
-        $this->assertEqual(
-            'Content-Type: application/pdf; name=foo.pdf' . "\r\n" .
-            'Content-Transfer-Encoding: base64' . "\r\n" .
-            'Content-Disposition: inline; filename=foo.pdf; size=12340' . "\r\n" .
-            'Content-ID: <'. $id . '>' . "\r\n" .
-            "\r\n" .
-            base64_encode('abcd'),
-            $file->toString()
-            );
-    }
-
-    // -- Private helpers
-
-    protected function _createEmbeddedFile()
-    {
-        $entity = new Swift_Mime_EmbeddedFile(
-            $this->_headers,
-            $this->_contentEncoder,
-            $this->_cache,
-            $this->_grammar
-            );
-
-        return $entity;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

@@ -1,249 +1,185 @@
-<?php
-
-namespace Guzzle\Tests\Http;
-
-use Guzzle\Http\EntityBody;
-use Guzzle\Http\CachingEntityBody;
-
-/**
- * @covers Guzzle\Http\CachingEntityBody
- */
-class CachingEntityBodyTest extends \Guzzle\Tests\GuzzleTestCase
-{
-    /** @var CachingEntityBody */
-    protected $body;
-
-    /** @var EntityBody */
-    protected $decorated;
-
-    public function setUp()
-    {
-        $this->decorated = EntityBody::factory('testing');
-        $this->body = new CachingEntityBody($this->decorated);
-    }
-
-    public function testUsesRemoteSizeIfPossible()
-    {
-        $body = EntityBody::factory('test');
-        $caching = new CachingEntityBody($body);
-        $this->assertEquals(4, $caching->getSize());
-        $this->assertEquals(4, $caching->getContentLength());
-    }
-
-    /**
-     * @expectedException \Guzzle\Common\Exception\RuntimeException
-     * @expectedExceptionMessage does not support custom stream rewind
-     */
-    public function testDoesNotAllowRewindFunction()
-    {
-        $this->body->setRewindFunction(true);
-    }
-
-    /**
-     * @expectedException \Guzzle\Common\Exception\RuntimeException
-     * @expectedExceptionMessage Cannot seek to byte 10
-     */
-    public function testCannotSeekPastWhatHasBeenRead()
-    {
-        $this->body->seek(10);
-    }
-
-    /**
-     * @expectedException \Guzzle\Common\Exception\RuntimeException
-     * @expectedExceptionMessage supports only SEEK_SET and SEEK_CUR
-     */
-    public function testCannotUseSeekEnd()
-    {
-        $this->body->seek(2, SEEK_END);
-    }
-
-    public function testChangingUnderlyingStreamUpdatesSizeAndStream()
-    {
-        $size = filesize(__FILE__);
-        $s = fopen(__FILE__, 'r');
-        $this->body->setStream($s, $size);
-        $this->assertEquals($size, $this->body->getSize());
-        $this->assertEquals($size, $this->decorated->getSize());
-        $this->assertSame($s, $this->body->getStream());
-        $this->assertSame($s, $this->decorated->getStream());
-    }
-
-    public function testRewindUsesSeek()
-    {
-        $a = EntityBody::factory('foo');
-        $d = $this->getMockBuilder('Guzzle\Http\CachingEntityBody')
-            ->setMethods(array('seek'))
-            ->setConstructorArgs(array($a))
-            ->getMock();
-        $d->expects($this->once())
-            ->method('seek')
-            ->with(0)
-            ->will($this->returnValue(true));
-        $d->rewind();
-    }
-
-    public function testCanSeekToReadBytes()
-    {
-        $this->assertEquals('te', $this->body->read(2));
-        $this->body->seek(0);
-        $this->assertEquals('test', $this->body->read(4));
-        $this->assertEquals(4, $this->body->ftell());
-        $this->body->seek(2);
-        $this->assertEquals(2, $this->body->ftell());
-        $this->body->seek(2, SEEK_CUR);
-        $this->assertEquals(4, $this->body->ftell());
-        $this->assertEquals('ing', $this->body->read(3));
-    }
-
-    public function testWritesToBufferStream()
-    {
-        $this->body->read(2);
-        $this->body->write('hi');
-        $this->body->rewind();
-        $this->assertEquals('tehiing', (string) $this->body);
-    }
-
-    public function testReadLinesFromBothStreams()
-    {
-        $this->body->seek($this->body->ftell());
-        $this->body->write("test\n123\nhello\n1234567890\n");
-        $this->body->rewind();
-        $this->assertEquals("test\n", $this->body->readLine(7));
-        $this->assertEquals("123\n", $this->body->readLine(7));
-        $this->assertEquals("hello\n", $this->body->readLine(7));
-        $this->assertEquals("123456", $this->body->readLine(7));
-        $this->assertEquals("7890\n", $this->body->readLine(7));
-        // We overwrote the decorated stream, so no more data
-        $this->assertEquals('', $this->body->readLine(7));
-    }
-
-    public function testSkipsOverwrittenBytes()
-    {
-        $decorated = EntityBody::factory(
-            implode("\n", array_map(function ($n) {
-                return str_pad($n, 4, '0', STR_PAD_LEFT);
-            }, range(0, 25)))
-        );
-
-        $body = new CachingEntityBody($decorated);
-
-        $this->assertEquals("0000\n", $body->readLine());
-        $this->assertEquals("0001\n", $body->readLine());
-        // Write over part of the body yet to be read, so skip some bytes
-        $this->assertEquals(5, $body->write("TEST\n"));
-        $this->assertEquals(5, $this->readAttribute($body, 'skipReadBytes'));
-        // Read, which skips bytes, then reads
-        $this->assertEquals("0003\n", $body->readLine());
-        $this->assertEquals(0, $this->readAttribute($body, 'skipReadBytes'));
-        $this->assertEquals("0004\n", $body->readLine());
-        $this->assertEquals("0005\n", $body->readLine());
-
-        // Overwrite part of the cached body (so don't skip any bytes)
-        $body->seek(5);
-        $this->assertEquals(5, $body->write("ABCD\n"));
-        $this->assertEquals(0, $this->readAttribute($body, 'skipReadBytes'));
-        $this->assertEquals("TEST\n", $body->readLine());
-        $this->assertEquals("0003\n", $body->readLine());
-        $this->assertEquals("0004\n", $body->readLine());
-        $this->assertEquals("0005\n", $body->readLine());
-        $this->assertEquals("0006\n", $body->readLine());
-        $this->assertEquals(5, $body->write("1234\n"));
-        $this->assertEquals(5, $this->readAttribute($body, 'skipReadBytes'));
-
-        // Seek to 0 and ensure the overwritten bit is replaced
-        $body->rewind();
-        $this->assertEquals("0000\nABCD\nTEST\n0003\n0004\n0005\n0006\n1234\n0008\n0009\n", $body->read(50));
-
-        // Ensure that casting it to a string does not include the bit that was overwritten
-        $this->assertContains("0000\nABCD\nTEST\n0003\n0004\n0005\n0006\n1234\n0008\n0009\n", (string) $body);
-    }
-
-    public function testWrapsContentType()
-    {
-        $a = $this->getMockBuilder('Guzzle\Http\EntityBody')
-            ->setMethods(array('getContentType'))
-            ->setConstructorArgs(array(fopen(__FILE__, 'r')))
-            ->getMock();
-        $a->expects($this->once())
-            ->method('getContentType')
-            ->will($this->returnValue('foo'));
-        $d = new CachingEntityBody($a);
-        $this->assertEquals('foo', $d->getContentType());
-    }
-
-    public function testWrapsContentEncoding()
-    {
-        $a = $this->getMockBuilder('Guzzle\Http\EntityBody')
-            ->setMethods(array('getContentEncoding'))
-            ->setConstructorArgs(array(fopen(__FILE__, 'r')))
-            ->getMock();
-        $a->expects($this->once())
-            ->method('getContentEncoding')
-            ->will($this->returnValue('foo'));
-        $d = new CachingEntityBody($a);
-        $this->assertEquals('foo', $d->getContentEncoding());
-    }
-
-    public function testWrapsMetadata()
-    {
-        $a = $this->getMockBuilder('Guzzle\Http\EntityBody')
-            ->setMethods(array('getMetadata', 'getWrapper', 'getWrapperData', 'getStreamType', 'getUri'))
-            ->setConstructorArgs(array(fopen(__FILE__, 'r')))
-            ->getMock();
-
-        $a->expects($this->once())
-            ->method('getMetadata')
-            ->will($this->returnValue(array()));
-        // Called twice for getWrapper and getWrapperData
-        $a->expects($this->exactly(1))
-            ->method('getWrapper')
-            ->will($this->returnValue('wrapper'));
-        $a->expects($this->once())
-            ->method('getWrapperData')
-            ->will($this->returnValue(array()));
-        $a->expects($this->once())
-            ->method('getStreamType')
-            ->will($this->returnValue('baz'));
-        $a->expects($this->once())
-            ->method('getUri')
-            ->will($this->returnValue('path/to/foo'));
-
-        $d = new CachingEntityBody($a);
-        $this->assertEquals(array(), $d->getMetaData());
-        $this->assertEquals('wrapper', $d->getWrapper());
-        $this->assertEquals(array(), $d->getWrapperData());
-        $this->assertEquals('baz', $d->getStreamType());
-        $this->assertEquals('path/to/foo', $d->getUri());
-    }
-
-    public function testWrapsCustomData()
-    {
-        $a = $this->getMockBuilder('Guzzle\Http\EntityBody')
-            ->setMethods(array('getCustomData', 'setCustomData'))
-            ->setConstructorArgs(array(fopen(__FILE__, 'r')))
-            ->getMock();
-
-        $a->expects($this->exactly(1))
-            ->method('getCustomData')
-            ->with('foo')
-            ->will($this->returnValue('bar'));
-
-        $a->expects($this->exactly(1))
-            ->method('setCustomData')
-            ->with('foo', 'bar')
-            ->will($this->returnSelf());
-
-        $d = new CachingEntityBody($a);
-        $this->assertSame($d, $d->setCustomData('foo', 'bar'));
-        $this->assertEquals('bar', $d->getCustomData('foo'));
-    }
-
-    public function testClosesBothStreams()
-    {
-        $s = fopen('php://temp', 'r');
-        $a = EntityBody::factory($s);
-        $d = new CachingEntityBody($a);
-        $d->close();
-        $this->assertFalse(is_resource($s));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

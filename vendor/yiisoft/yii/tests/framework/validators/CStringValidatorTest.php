@@ -1,98 +1,63 @@
-<?php
-
-class CStringValidatorTest extends CTestCase
-{
-	public function testMin()
-	{
-		// null value
-		$model1=new ValidatorTestModel('CStringValidatorTest');
-		$model1->validate(array('string1'));
-		$this->assertTrue($model1->hasErrors('string1'));
-		$this->assertSame(array('Too short message.'),$model1->getErrors('string1'));
-
-		// 9 characters length value
-		$model2=new ValidatorTestModel('CStringValidatorTest');
-		$model2->string1='123456789';
-		$model2->validate(array('string1'));
-		$this->assertTrue($model2->hasErrors('string1'));
-		$this->assertSame(array('Too short message.'),$model2->getErrors('string1'));
-
-		// 10 characters length value
-		$model3=new ValidatorTestModel('CStringValidatorTest');
-		$model3->string1='1234567890';
-		$model3->validate(array('string1'));
-		$this->assertFalse($model3->hasErrors('string1'));
-		$this->assertNotSame(array('Too short message.'),$model3->getErrors('string1'));
-
-		// array value: https://github.com/yiisoft/yii/issues/1955
-		$model4=new ValidatorTestModel('CStringValidatorTest');
-		$model4->string1=array('1234567890');
-		$model4->validate(array('string1'));
-		$this->assertTrue($model4->hasErrors('string1'));
-	}
-
-	public function testMax()
-	{
-		// null value
-		$model1=new ValidatorTestModel('CStringValidatorTest');
-		$model1->validate(array('string2'));
-		$this->assertFalse($model1->hasErrors('string2'));
-		$this->assertNotSame(array('Too long message.'),$model1->getErrors('string2'));
-
-		// 11 characters length value
-		$model2=new ValidatorTestModel('CStringValidatorTest');
-		$model2->string2='12345678901';
-		$model2->validate(array('string2'));
-		$this->assertTrue($model2->hasErrors('string2'));
-		$this->assertSame(array('Too long message.'),$model2->getErrors('string2'));
-
-		// 10 characters length value
-		$model3=new ValidatorTestModel('CStringValidatorTest');
-		$model3->string2='1234567890';
-		$model3->validate(array('string2'));
-		$this->assertFalse($model3->hasErrors('string2'));
-		$this->assertNotSame(array('Too long message.'),$model3->getErrors('string2'));
-
-		// array value: https://github.com/yiisoft/yii/issues/1955
-		$model4=new ValidatorTestModel('CStringValidatorTest');
-		$model4->string2=array('1234567890');
-		$model4->validate(array('string2'));
-		$this->assertTrue($model4->hasErrors('string2'));
-	}
-
-	public function testIs()
-	{
-		// null value
-		$model1=new ValidatorTestModel('CStringValidatorTest');
-		$model1->validate(array('string3'));
-		$this->assertTrue($model1->hasErrors('string3'));
-		$this->assertSame(array('Error message.'),$model1->getErrors('string3'));
-
-		// 9 characters length value
-		$model2=new ValidatorTestModel('CStringValidatorTest');
-		$model2->string3='123456789';
-		$model2->validate(array('string3'));
-		$this->assertTrue($model2->hasErrors('string3'));
-		$this->assertSame(array('Error message.'),$model2->getErrors('string3'));
-		
-		// 11 characters length value
-		$model3=new ValidatorTestModel('CStringValidatorTest');
-		$model3->string3='12345678901';
-		$model3->validate(array('string3'));
-		$this->assertTrue($model3->hasErrors('string3'));
-		$this->assertSame(array('Error message.'),$model3->getErrors('string3'));
-
-		// 10 characters length value
-		$model4=new ValidatorTestModel('CStringValidatorTest');
-		$model4->string3='1234567890';
-		$model4->validate(array('string3'));
-		$this->assertFalse($model4->hasErrors('string3'));
-		$this->assertNotSame(array('Error message.'),$model4->getErrors('string3'));
-
-		// array value: https://github.com/yiisoft/yii/issues/1955
-		$model5=new ValidatorTestModel('CStringValidatorTest');
-		$model5->string3=array('1234567890');
-		$model5->validate(array('string3'));
-		$this->assertTrue($model5->hasErrors('string3'));
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPzjBd+W466JFnOOAovreBu/SHv3OCrBhUlW3Tv8fm26y9qfLp6J1VzMb/seX26gUI0W4wRKo
+riuTJyzWGApgY5cwXbTF3b2vIO7tKHsXeWgxBw5aoB/4t6Lmhw+h0K5g4Pmnav/e9iUzG6DRtf9S
+V7Vkd7udExB5aznrShimBZj+RFflEeBUjkVM24HxtIdWT+RDofjiCYN0YH9qL0chAW5Hv/r+zE+N
+ByG+iJHSntgy3NphoOW4d+olKIZXE/TmggoQRmH0t6bqxcJJ9Tep2lUPFwj2oDWLpIUyjdGXw4zV
+mNpEH87w1iI3x6MhH9clNR5nwMkbtKhZ9Q9sprKf2M8WxAXLqNiSHRUHmBTKVY2rfWrGJU6N+0zm
+5zsBCaARC1THyW5RiAEgaFfuPRXkyVOSHaaxsqxCaQIWZuHLQt/J2j9mMs9FJnKmC12ahzONrwAy
+ynqpHWcppk3f6PR5GDXA9RF+i/DVrW5LzPkxBB7adbCtcKeY2/OU10Z5eqp6DTVXEQo83JKtsKHU
+4IKiNheXCcPPBYo7cWP2ngvUrNL3QfNOp4lSe622QRJOckbW8QUKByvJPbUYkzVqC4PaAnwR+JRq
+hcy9KRaWbHiO30Md5U5kS9/f4bripBEDOFy3nyKcn3QqeOrb1z3/fk7TZqwd1pF29R7nXfuOvSjl
+PIpbMxpa6RQyDnBetRp6VhQDxcF6gKDoX+tZgx4NZDyN4mIlO5vQI/FYAXBMWlBzvAiSPcu6m7kX
+fu8M40MVv6sgpXT7RykkLEPvqQDU8p8rL7Vyhk1d/rda95G5NvcqRlY+T5sw9phNHjpl4Fnh6H13
+97XHGFGzdB5DD+sdM3M0OkAPnKzhCMhQ9NTFEDRoXpAny5b4QL1y16VITyZyIv+M94a118QsrphD
+VV4LFoDXuNDysCaRkarVqgGaeCEEZ74b0kqwEIs7Whugj0kGpkkvFozkeBbSwenEXn7sp490BFDJ
+UEZYgC9L2cLFdP+awDm2MusZMev9vSHfHOF103RHlXOU2lYkW0Luw3TcW38DqdzRxuQj5p4Wqv1x
+cE56E5OPpp69JMcZMTfj97Joiey8ZgDHIPOWX9sD9gbF0a+ri51b01ukjoUnL0ZF31AtIUSJ4TNe
+siJZqxDMVFmCdNgKib/ggIHWi5e9Os8r6ez888vYfdtXh9OsdQ0QHdc1K/aYTvXsLQJ9N5eAN5X4
+dg5tHtKnxhTg5BqkKTNwC1jcEYt6JQ0OKeb7g1pDQ7cVnq0LHoYJySEGDuXV2ZrbKf6+3zAd1j8u
+z+4mbZltf2/bAtax4V3UTty3qGOAQvZKg05ks70kKQyv20vwO8Vo7NmrLLAX8RmvqrYtOolhARGR
+yH89YnsXQCCe8nfIka1SiYbAAP1RND0AKNYnsfm7aMLFmnLSgm51w06sqc89QR7lXE/Rpjv/rrIP
+/swr9AUysX3ishzs969/dnhhQzlCq8gDdeV/lqyKM+l2pWnyJPy4p4ErDk2gfFIUJkgLA55p0Mql
+kaal4+Xb/r+/xWeNCp/hbBQCOHCN3vQpCEXAwdugCBFfsF9iooncbwsxgRZiUccG9AbaM81K63VM
+KUc0wxq/ujfjWWCO1yBh1Elwvyd/i3EPLoWQtW+1Y5TnqcF4ac1I3UGR4awZ5Eunh8ySUeZ83ReE
+1BmsMFonvbK1TQ2cKtELx56Ri3yvPT204TeJmvfTOCTdtrTnx1NbN7hYYFyGv8ntguWB9cs1r+Lo
+zfk4gdZY1C5sk60Ykr49O6DMyq9Yjyxp2MjmG+iQj1bbAq15OdNW7ETIrqS8tRdIe1J9DeFypOFL
+Hy5t4wh55IpgOLBG0lXFTLJa4C31bRoDlhmU00bBeCfJzTxanLiJUMWxoDXcYfqBKWh02cHD/QYg
+swvjnhxbDvu7703N8kbxNw18Ne2XzzLOlNVWREyN+eAoZBsZ5WOG98jd+plWT52BJfYExA6/bJSX
+lRLQQFEPjWOYOc3IixsPqokM9XnBYU5GgDfh++AOQXS2DEw3D25NnenyXbYjWcJ6sk6Y77v2V2kV
+NBkW89vJ/EydDZhgE/mG2AuXVOvCFTm7PMqBr4Y5x3T3sUu8Klx1a8Ms2Fk4wTOEKcyqXHQRwasl
+4gUlXZuMiCwD10j/WMy2fcn4WG/U9GiV3oiRtk9DTkFzco7lvViboqdSs9Ux88zEsvGJO4pK3E7Z
+syVHgeQVYyfp3zxNbTDtA13ymye8lPpVgQs1H4vNOu/bt93u0aZnHPd5El3sZe0EqLpW0hbrI4YY
+vNb1pg9pjKXDsdGDEvbUyCacE063PDonsPddK0xyNnf4QJ3tsi6hDiwQK3fRCbjFN6k8BGvNmuHu
+0E9HqYkGbKfB1C0c/uNm6z+RRdpqoc9wx0zbghAF6PlXBYN6SMqZccc5mjimQ88YuvJmVYJFh9RZ
+qpYqSgt1/Jzc4F5wH0nkqxtk8Qtwc0xTX/3sdKrIi0JHqWjhiGcTGGeqeV/JJbssPQ42YCljdVwr
+4dggxDtOb69ftiTEb98d6CurpaMP82mdEZhrny6i74Vp3czpes/FRq2A5NN3Ip7b1lcHFs3rvahN
+QNIKUM9K0oabBVjU/wovhujEeoqYs5XK2G3yEIC9cKIztvf3P76wpTxOyPNM7reqLsMXd19CD+P9
+8mFUxrJR9NbqJ4WMFNVOD0MALKJQN4mccS6hp0c8k8pv1ETi3cG1icR/pPVnf8a+yfIqgTpO4xY0
+0jcVi2zMHzX+xyTNvR4w3e4fbp+dow3zckNSuQLpXzY6T3q7gcPGOjHpyTPnNRj+2ET+/8S4EB/o
+EBreEp/SHhcIIDnOgZewi4fyFzuOmjs1VHytxXcTTLVj3IoSMPYq7OO/5eLrWF83bOwg200UwCeq
+hBeBMlBtA4DmKVOt2J+wisSEQVYQJHDPpAhx4Ekj7+gNMRCHtZI92H2y077OZnM/qbcnzevytWTd
+V9WDL0RemJEkwlFyQ8mrIEwZaw82YAuujVk8O2wpVVFM5COS8Pg9kdBf7IBGDbQRc4sefmDiyykG
+kZJXDuSs4KXSfHYb9lz3CAi9D3TWce/ZZMHmcFBDzKzZoj6WeLAmfy+RRkw2mlS4nzOnJBtF1e+G
+wnTxoTxTqecovPYi4lCdqAk3NKsyfdc2QCzQuBxXSI9Hqx5EvrCS7fH9OHlxMKUUURY7PaWq2nJs
+pdU6B59hI0aNTaQ1k4lpOy+mr6AvFop3sdXkY0hNS519+CnlA3gk7RIOX0Y2s38j25UHTnL0zeSS
+e5q+jYjt3zW+rWab0iA4tClawzn1wOn+K3Cthvl8RHngjz/oAHAvH8yXtLlo5IFxoo3lG2WSEtWz
+nFohEzgSzY885a0RXDseu/TFB6b8hyu/ZxtxYwEE7e5LpK6N6E92A5227rk5hQRPkCMl/3hvAuFz
+ZVhIkEIAk0hmsjuKQUox/dEelDeGwyQDq5KPy2YEjYZ+DtoNWOKUaZaF6M0mA4QfO2frLNc5A/tG
+FOGcPXERSJhfuCjq0iz5ckAjU0vD9dNYEv1pEq0FlsIUL3fSby2qBkyQnM4bPKNIrJHTT/SPcb1A
+vmGugPJd7fjcHNX7s4DDLoMJXuviIBUnftlW/XwhFiLIeP7XQT9CjH9ATAyQNu+ivKaVfz2YUkxG
+7Jw+KnDQuj9Esf9OyjSo4H3Ab9Fg8KXhjH+vZ/u3gUS2u59Xi6u/Jsp3n81YE70dX3d/WaF30EuR
+OHef12yeWBvpys6W4QC7Hc9kakwN+mCdc6JPgPOKTHc8ghkMwgUl03UKWsDALU4uIZ7WBzjB2ggu
+J2DoS9dWWsqw9L5ASfzSa5PnyHb0YFAck+2B+Cdyg5D3PnjjQadhHqRFi2m383Q/saqXk2OeSWdE
+bCoffbIGlfaF4z0CV5sC0Fd2xy8pudpJ4QXCMqEyAUPl5rjf3O8QPQ17lQqQYUSugGfAZZyQRAJP
+8XmCAJVcxvlFMm6Gah85Z/5ANVgIy7Ex/+1+cqEY+qWAppi27SMbwqDdgdRCVZFlNriikNy+3KBv
+u2Gjx2bmDhrdukIU+0Yf/Ly7JbE0+EXITLcDRtokVXzISzLoFVLEztQ9/vLi1hOQZXt/D4yw2hRG
+jw5RmyRN+G0f6epJ0V39Vj2SqDE555PvOfLdET4BrzEKXKHkwRgqBZy+OJ3AW5M3U6YpFuA8hiw9
+tYy+UJxfPd7wuI5yyC3JshtiHWLkaJhLorm42d+D/hbEPjL50G5ikirphyCDd/JyfSer/dvBmwMo
+MiNBGYJpuUSb/55RoEwHs9uDahvmSlZX3+Rv/0gdpbQcLNTsVAiABCTLTHBQFvj17TnSKuesfBA+
++E11IEoVwHpUE1Am4rtu9Yd/3pHjjWtdZPfGFJBDALPEzyX77Lj8Ad8b17uTMxmOuIh1KA+ckWIE
+i2P7+UaKX5MuBY699GFpWk1jerqS1olwHeOwnfXUp6wdguiZv+hUxS/y/CgkpTsLzbWPU8x+4KUW
+GVk2QNx+x1MPeGyUiB8=

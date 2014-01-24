@@ -1,57 +1,51 @@
-<?php
-
-class CHttpCookieTest extends CTestCase
-{
-	/**
-	 * @covers CHttpCookie::configure
-	 * @covers CHttpCookie::__construct
-	 */
-	public function testConfigure()
-	{
-		//covers construct
-		$cookie=new CHttpCookie('name','value');
-		$this->assertEquals('name',$cookie->name,'Constructor failure. Name should have been set there');
-		$this->assertEquals('value',$cookie->value,'Constructor failure. Value should have been set there');
-		$this->assertEquals('',$cookie->domain,'Default value for CHttpCookie::$domain has been touched');
-		$this->assertEquals(0,$cookie->expire,'Default value for CHttpCookie::$expire has been touched');
-		$this->assertEquals('/',$cookie->path,'Default value for CHttpCookie::$path has been touched');
-		$this->assertFalse($cookie->secure,'Default value for CHttpCookie::$secure has been touched');
-		$this->assertFalse($cookie->httpOnly,'Default value for CHttpCookie::$httpOnly has been touched');
-		$options=array(
-			'expire'=>123123,
-			'httpOnly'=>true,
-		);
-		// create cookie with options
-		$cookie2=new CHttpCookie('name2','value2',$options);
-		$this->assertEquals($options['expire'],$cookie2->expire,'Configure inside the Constructor has been failed');
-		$this->assertEquals($options['httpOnly'],$cookie2->httpOnly,'Configure inside the Constructor has been failed');
-		//configure afterwards
-		$cookie->configure($options);		
-		$this->assertEquals($options['expire'],$cookie->expire);
-		$this->assertEquals($options['httpOnly'],$cookie->httpOnly);
-		// Set name and value via configure (should have no effect)
-		$name=$cookie->name;
-		$cookie->configure(array('name'=>'someNewName'));
-		$this->assertEquals($name,$cookie->name);
-		$value=$cookie->value;
-		$cookie->configure(array('value'=>'someNewValue'));
-		$this->assertEquals($value,$cookie->value);
-		//new configure should not override already set configuration
-		$this->assertEquals($options['httpOnly'],$cookie->httpOnly);
-	}
-	/**
-	 * @covers CHttpCookie::__toString
-	 */
-	public function test__ToString()
-	{
-		$cookie=new CHttpCookie('name','someValue');
-		// Note on http://www.php.net/manual/en/language.oop5.magic.php#object.tostring
-		ob_start();
-		echo $cookie;
-		$this->assertEquals(ob_get_clean(),$cookie->value);
-		if(version_compare(PHP_VERSION,'5.2','>='))
-		{
-			$this->assertEquals($cookie->value,(string)$cookie);
-		}
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+afS7sMeLe5XW7+7E+KekRxZ+o3Sz

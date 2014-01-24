@@ -1,114 +1,42 @@
-<?php
-
-namespace Psr\Log;
-
-/**
- * Describes a logger instance
- *
- * The message MUST be a string or object implementing __toString().
- *
- * The message MAY contain placeholders in the form: {foo} where foo
- * will be replaced by the context data in key "foo".
- *
- * The context array can contain arbitrary data, the only assumption that
- * can be made by implementors is that if an Exception instance is given
- * to produce a stack trace, it MUST be in a key named "exception".
- *
- * See https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md
- * for the full interface specification.
- */
-interface LoggerInterface
-{
-    /**
-     * System is unusable.
-     *
-     * @param string $message
-     * @param array $context
-     * @return null
-     */
-    public function emergency($message, array $context = array());
-
-    /**
-     * Action must be taken immediately.
-     *
-     * Example: Entire website down, database unavailable, etc. This should
-     * trigger the SMS alerts and wake you up.
-     *
-     * @param string $message
-     * @param array $context
-     * @return null
-     */
-    public function alert($message, array $context = array());
-
-    /**
-     * Critical conditions.
-     *
-     * Example: Application component unavailable, unexpected exception.
-     *
-     * @param string $message
-     * @param array $context
-     * @return null
-     */
-    public function critical($message, array $context = array());
-
-    /**
-     * Runtime errors that do not require immediate action but should typically
-     * be logged and monitored.
-     *
-     * @param string $message
-     * @param array $context
-     * @return null
-     */
-    public function error($message, array $context = array());
-
-    /**
-     * Exceptional occurrences that are not errors.
-     *
-     * Example: Use of deprecated APIs, poor use of an API, undesirable things
-     * that are not necessarily wrong.
-     *
-     * @param string $message
-     * @param array $context
-     * @return null
-     */
-    public function warning($message, array $context = array());
-
-    /**
-     * Normal but significant events.
-     *
-     * @param string $message
-     * @param array $context
-     * @return null
-     */
-    public function notice($message, array $context = array());
-
-    /**
-     * Interesting events.
-     *
-     * Example: User logs in, SQL logs.
-     *
-     * @param string $message
-     * @param array $context
-     * @return null
-     */
-    public function info($message, array $context = array());
-
-    /**
-     * Detailed debug information.
-     *
-     * @param string $message
-     * @param array $context
-     * @return null
-     */
-    public function debug($message, array $context = array());
-
-    /**
-     * Logs with an arbitrary level.
-     *
-     * @param mixed $level
-     * @param string $message
-     * @param array $context
-     * @return null
-     */
-    public function log($level, $message, array $context = array());
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+8icWXdw+upA4H9kUFsofe0t0DpS=

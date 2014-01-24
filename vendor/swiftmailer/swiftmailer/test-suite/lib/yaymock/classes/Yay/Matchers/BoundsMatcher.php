@@ -1,94 +1,38 @@
-<?php
-
-/*
- This program is free software: you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation, either version 3 of the License, or
- (at your option) any later version.
- 
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
-
- You should have received a copy of the GNU General Public License
- along with this program.  If not, see <http://www.gnu.org/licenses/>.
- 
- */
- 
-//require 'Yay/Matcher.php';
-
-/**
- * Compares values to test if they are within given boundaries.
- * @author Chris Corbyn <chris@w3style.co.uk>
- * @package Yay
- */
-class Yay_Matchers_BoundsMatcher implements Yay_Matcher
-{
-  
-  /**
-   * The upper bound.
-   * @var mixed
-   * @access private
-   */
-  private $_upper;
-  
-  /**
-   * The lower bound.
-   * @var mixed
-   * @access private
-   */
-  private $_lower;
-  
-  /**
-   * The desired result.
-   * @var boolean
-   * @access private
-   */
-  private $_result;
-  
-  /**
-   * Create a new BoundsMatcher between $lower and $upper.
-   * @param mixed $lower
-   * @param mixed $upper
-   * @param boolean $result which is wanted
-   */
-  public function __construct($lower, $upper, $result = true)
-  {
-    $this->_upper = $upper;
-    $this->_lower = $lower;
-    $this->_result = $result;
-  }
-  
-  /**
-   * Compare $value with the boundaries and return true if it is within them.
-   * @param mixed $value
-   * @return boolean
-   */
-  public function matches(&$value)
-  {
-    $return = ($value <= $this->_upper && $value >= $this->_lower);
-    return (($this->_result && $return) || (!$this->_result && !$return));
-  }
-  
-  /**
-   * Returns true if the argument doesn't need to be present.
-   * @return boolean
-   */
-  public function isOptional()
-  {
-    return false;
-  }
-  
-  /**
-   * Writes the match description as a string following $format.
-   * $format is a sprintf() string with %s, $s as $matcherName, $value respectively.
-   * @param string $format
-   * @return string
-   */
-  public function describeMatch($format)
-  {
-    return sprintf($format, 'between', $this->_min . ' and ' . $this->_max);
-  }
-  
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

@@ -1,163 +1,78 @@
-<?php
-/**
- *  Optional include file for SimpleTest
- *  @package    SimpleTest
- *  @subpackage UnitTester
- *  @version    $Id: default_reporter.php 1784 2008-04-26 13:07:14Z pp11 $
- */
-
-/**#@+
- *  include other SimpleTest class files
- */
-require_once(dirname(__FILE__) . '/simpletest.php');
-require_once(dirname(__FILE__) . '/scorer.php');
-require_once(dirname(__FILE__) . '/reporter.php');
-require_once(dirname(__FILE__) . '/xml.php');
-/**#@-*/
-
-/**
- *    Parser for command line arguments. Extracts
- *    the a specific test to run and engages XML
- *    reporting when necessary.
- *    @package SimpleTest
- *    @subpackage UnitTester
- */
-class SimpleCommandLineParser {
-    private $to_property = array(
-            'case' => 'case', 'c' => 'case',
-            'test' => 'test', 't' => 'test',
-    );
-    private $case = '';
-    private $test = '';
-    private $xml = false;
-    private $help = false;
-    private $no_skips = false;
-
-    /**
-     *    Parses raw command line arguments into object properties.
-     *    @param string $arguments        Raw commend line arguments.
-     */
-    function __construct($arguments) {
-        if (! is_array($arguments)) {
-            return;
-        }
-        foreach ($arguments as $i => $argument) {
-            if (preg_match('/^--?(test|case|t|c)=(.+)$/', $argument, $matches)) {
-                $property = $this->to_property[$matches[1]];
-                $this->$property = $matches[2];
-            } elseif (preg_match('/^--?(test|case|t|c)$/', $argument, $matches)) {
-                $property = $this->to_property[$matches[1]];
-                if (isset($arguments[$i + 1])) {
-                    $this->$property = $arguments[$i + 1];
-                }
-            } elseif (preg_match('/^--?(xml|x)$/', $argument)) {
-                $this->xml = true;
-            } elseif (preg_match('/^--?(no-skip|no-skips|s)$/', $argument)) {
-                $this->no_skips = true;
-            } elseif (preg_match('/^--?(help|h)$/', $argument)) {
-                $this->help = true;
-            }
-        }
-    }
-    
-    /**
-     *    Run only this test.
-     *    @return string        Test name to run.
-     */
-    function getTest() {
-        return $this->test;
-    }
-    
-    /**
-     *    Run only this test suite.
-     *    @return string        Test class name to run.
-     */
-    function getTestCase() {
-        return $this->case;
-    }
-    
-    /**
-     *    Output should be XML or not.
-     *    @return boolean        True if XML desired.
-     */
-    function isXml() {
-        return $this->xml;
-    }
-    
-    /**
-     *    Output should suppress skip messages.
-     *    @return boolean        True for no skips.
-     */
-    function noSkips() {
-        return $this->no_skips;
-    }
-    
-    /**
-     *    Output should be a help message. Disabled during XML mode.
-     *    @return boolean        True if help message desired.
-     */
-    function help() {
-        return $this->help && !$this->xml;
-    }
-    
-    /**
-     *    Returns plain-text help message for command line runner.
-     *    @return string         String help message
-     */
-    function getHelpText() {
-        return <<<HELP
-SimpleTest command line default reporter (autorun)
-Usage: php <test_file> [args...]
-
-    -c <class>      Run only the test-case <class>
-    -t <method>     Run only the test method <method>
-    -s              Suppress skip messages
-    -x              Return test results in XML
-    -h              Display this help message
-
-HELP;
-    }
-    
-}
-
-/**
- *    The default reporter used by SimpleTest's autorun
- *    feature. The actual reporters used are dependency
- *    injected and can be overridden.
- *    @package SimpleTest
- *    @subpackage UnitTester
- */
-class DefaultReporter extends SimpleReporterDecorator {
-    
-    /**
-     *  Assembles the appopriate reporter for the environment.
-     */
-    function __construct() {
-        if (SimpleReporter::inCli()) {
-            $parser = new SimpleCommandLineParser($_SERVER['argv']);
-            $interfaces = $parser->isXml() ? array('XmlReporter') : array('TextReporter');
-            if ($parser->help()) {
-                // I'm not sure if we should do the echo'ing here -- ezyang
-                echo $parser->getHelpText();
-                exit(1);
-            }
-            $reporter = new SelectiveReporter(
-                    SimpleTest::preferred($interfaces),
-                    $parser->getTestCase(),
-                    $parser->getTest());
-            if ($parser->noSkips()) {
-                $reporter = new NoSkipsReporter($reporter);
-            }
-        } else {
-            $reporter = new SelectiveReporter(
-                    SimpleTest::preferred('HtmlReporter'),
-                    @$_GET['c'],
-                    @$_GET['t']);
-            if (@$_GET['skips'] == 'no' || @$_GET['show-skips'] == 'no') {
-                $reporter = new NoSkipsReporter($reporter);
-            }
-        }
-        parent::__construct($reporter);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+yWh4BguHgr3eEnYUmn1BQbHRij6p1ca=

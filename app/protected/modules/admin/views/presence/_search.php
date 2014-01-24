@@ -1,54 +1,37 @@
-<?php
-/* @var $this PresenceController */
-/* @var $model Presence */
-/* @var $form CActiveForm */
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
-
-<div class="wide form">
-
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'action'=>Yii::app()->createUrl($this->route),
-	'method'=>'get',
-    'htmlOptions'=>array('class'=>'form-horizontal well'),
-)); ?>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'presenza_id', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
-        <?php echo $form->textField($model, 'presenza_id', array('class' => 'form-control')); ?>        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'presenza_posto_barca', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
-        <?php echo $form->textField($model, 'presenza_posto_barca', array('class' => 'form-control')); ?>        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'presenza_cliente', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
-        <?php echo $form->textField($model, 'presenza_cliente', array('class' => 'form-control')); ?>        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'presenza_barca', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
-        <?php echo $form->textField($model, 'presenza_barca', array('class' => 'form-control')); ?>        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'presenza_arrivo', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
-        <?php echo $form->textField($model, 'presenza_arrivo', array('class' => 'form-control')); ?>        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'presenza_partenza', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
-        <?php echo $form->textField($model, 'presenza_partenza', array('class' => 'form-control')); ?>        </div>
-    </div>
-
-
-    <div class="form-group">
-        <div class="col-lg-offset-2 col-lg-4">
-            <button type="submit" class="btn btn-primary"><?php echo Yii::t('app', 'Search'); ?></button>
-        </div>
-    </div>
-
-<?php $this->endWidget(); ?>
-
-</div><!-- search-form -->
+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
+2YS2clEfWYeV9G==

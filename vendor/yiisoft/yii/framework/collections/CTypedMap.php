@@ -1,51 +1,31 @@
-<?php
-/**
- * This file contains CTypedMap class.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CTypedMap represents a map whose items are of the certain type.
- *
- * CTypedMap extends {@link CMap} by making sure that the elements to be
- * added to the list is of certain class type.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.collections
- * @since 1.0
- */
-class CTypedMap extends CMap
-{
-	private $_type;
-
-	/**
-	 * Constructor.
-	 * @param string $type class type
-	 */
-	public function __construct($type)
-	{
-		$this->_type=$type;
-	}
-
-	/**
-	 * Adds an item into the map.
-	 * This method overrides the parent implementation by
-	 * checking the item to be inserted is of certain type.
-	 * @param integer $index the specified position.
-	 * @param mixed $item new item
-	 * @throws CException If the index specified exceeds the bound,
-	 * the map is read-only or the element is not of the expected type.
-	 */
-	public function add($index,$item)
-	{
-		if($item instanceof $this->_type)
-			parent::add($index,$item);
-		else
-			throw new CException(Yii::t('yii','CTypedMap<{type}> can only hold objects of {type} class.',
-				array('{type}'=>$this->_type)));
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

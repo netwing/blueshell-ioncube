@@ -1,112 +1,54 @@
-<?php
-/**
- * CCacheHttpSession class
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-
-/**
- * CCacheHttpSession implements a session component using cache as storage medium.
- *
- * The cache being used can be any cache application component implementing {@link ICache} interface.
- * The ID of the cache application component is specified via {@link cacheID}, which defaults to 'cache'.
- *
- * Beware, by definition cache storage are volatile, which means the data stored on them
- * may be swapped out and get lost. Therefore, you must make sure the cache used by this component
- * is NOT volatile. If you want to use {@link CDbCache} as storage medium, use {@link CDbHttpSession}
- * is a better choice.
- *
- * @property boolean $useCustomStorage Whether to use custom storage.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.web
- * @since 1.0
- */
-class CCacheHttpSession extends CHttpSession
-{
-	/**
-	 * Prefix to the keys for storing cached data
-	 */
-	const CACHE_KEY_PREFIX='Yii.CCacheHttpSession.';
-	/**
-	 * @var string the ID of the cache application component. Defaults to 'cache' (the primary cache application component.)
-	 */
-	public $cacheID='cache';
-
-	/**
-	 * @var ICache the cache component
-	 */
-	private $_cache;
-
-	/**
-	 * Initializes the application component.
-	 * This method overrides the parent implementation by checking if cache is available.
-	 */
-	public function init()
-	{
-		$this->_cache=Yii::app()->getComponent($this->cacheID);
-		if(!($this->_cache instanceof ICache))
-			throw new CException(Yii::t('yii','CCacheHttpSession.cacheID is invalid. Please make sure "{id}" refers to a valid cache application component.',
-				array('{id}'=>$this->cacheID)));
-		parent::init();
-	}
-
-	/**
-	 * Returns a value indicating whether to use custom session storage.
-	 * This method overrides the parent implementation and always returns true.
-	 * @return boolean whether to use custom storage.
-	 */
-	public function getUseCustomStorage()
-	{
-		return true;
-	}
-
-	/**
-	 * Session read handler.
-	 * Do not call this method directly.
-	 * @param string $id session ID
-	 * @return string the session data
-	 */
-	public function readSession($id)
-	{
-		$data=$this->_cache->get($this->calculateKey($id));
-		return $data===false?'':$data;
-	}
-
-	/**
-	 * Session write handler.
-	 * Do not call this method directly.
-	 * @param string $id session ID
-	 * @param string $data session data
-	 * @return boolean whether session write is successful
-	 */
-	public function writeSession($id,$data)
-	{
-		return $this->_cache->set($this->calculateKey($id),$data,$this->getTimeout());
-	}
-
-	/**
-	 * Session destroy handler.
-	 * Do not call this method directly.
-	 * @param string $id session ID
-	 * @return boolean whether session is destroyed successfully
-	 */
-	public function destroySession($id)
-	{
-	    return $this->_cache->delete($this->calculateKey($id));
-	}
-
-	/**
-	 * Generates a unique key used for storing session data in cache.
-	 * @param string $id session variable name
-	 * @return string a safe cache key associated with the session variable name
-	 */
-	protected function calculateKey($id)
-	{
-	    return self::CACHE_KEY_PREFIX.$id;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+ztvhQHPSFK6Z70snjW==

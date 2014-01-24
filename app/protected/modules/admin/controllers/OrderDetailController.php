@@ -1,201 +1,88 @@
-<?php
-
-class OrderDetailController extends Controller
-{
-	/**
-	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
-	 * using two-column layout. See 'protected/views/layouts/column2.php'.
-	 */
-	public $layout='//layouts/column2';
-
-	/**
-	 * @var string the detault page title
-	 */
-	public $pageTitle = 'orderDetail';
-
-	/**
-	 * @return array action filters
-	 */
-	public function filters()
-	{
-		return array(
-			'accessControl', // perform access control for CRUD operations
-		);
-	}
-
-	/**
-	 * Specifies the access control rules.
-	 * This method is used by the 'accessControl' filter.
-	 * @return array access control rules
-	 */
-	public function accessRules()
-	{
-		// RBAC access control
-        return array(
-            array('allow', 'actions' => array('index', 'view', 'admin'), 'roles' => array('admin:order:read')),
-            array('allow', 'actions' => array('create'), 'roles' => array('admin:order:create')),
-            array('allow', 'actions' => array('update'), 'roles' => array('admin:order:update')),
-            array('allow', 'actions' => array('delete'), 'roles' => array('admin:order:delete')),
-            array('deny', 'users'=>array('*')),
-        );
-
-		// Simple access control list
-		/*
-		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
-			),
-			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
-		);
-		*/
-
-	}
-
-	/**
-	 * Displays a particular model.
-	 * @param integer $id the ID of the model to be displayed
-	 */
-	public function actionView($id)
-	{
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
-		));
-	}
-
-	/**
-	 * Creates a new model.
-	 * If creation is successful, the browser will be redirected to the 'view' page.
-	 */
-	public function actionCreate()
-	{
-		if (Yii::app()->request->getParam('orderid', null) === null) {
-			$this->redirect(array('/admin/order'));
-		}
-		$order_id = intval(Yii::app()->request->getParam('orderid'));
-		$order = Order::model()->findByPk($order_id);
-		if ($order === null) {
-			Yii::app()->user->setFlash('danger', Yii::t('app', 'The order does not exist.'));
-			$this->redirect(array('/admin/order'));	
-		}
-		$model=new OrderDetail('user');
-		$model->order_id = $order_id;
-
-		// Uncomment the following line if AJAX validation is needed
-		$this->performAjaxValidation($model);
-
-		if(isset($_POST['OrderDetail']))
-		{
-			$model->attributes=$_POST['OrderDetail'];
-			if($model->save())
-				$this->redirect(array('/admin/order/view','id'=>$order_id));
-		}
-
-		$this->render('create',array(
-			'model'=>$model,
-		));
-	}
-
-	/**
-	 * Updates a particular model.
-	 * If update is successful, the browser will be redirected to the 'view' page.
-	 * @param integer $id the ID of the model to be updated
-	 */
-	public function actionUpdate($id)
-	{
-		$model=$this->loadModel($id);
-		$model->scenario = "user";
-		
-		// Uncomment the following line if AJAX validation is needed
-		$this->performAjaxValidation($model);
-
-		if(isset($_POST['OrderDetail']))
-		{
-			$model->attributes=$_POST['OrderDetail'];
-			if($model->save())
-				$this->redirect(array('/admin/order/view','id'=>$model->order_id));
-		}
-
-		$this->render('update',array(
-			'model'=>$model,
-		));
-	}
-
-	/**
-	 * Deletes a particular model.
-	 * If deletion is successful, the browser will be redirected to the 'admin' page.
-	 * @param integer $id the ID of the model to be deleted
-	 */
-	public function actionDelete($id)
-	{
-		$this->loadModel($id)->delete();
-
-		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-	}
-
-	/**
-	 * Lists all models.
-	 */
-	public function actionIndex()
-	{
-		$dataProvider=new CActiveDataProvider('OrderDetail');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
-	}
-
-	/**
-	 * Manages all models.
-	 */
-	public function actionAdmin()
-	{
-		$model=new OrderDetail('search');
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['OrderDetail']))
-			$model->attributes=$_GET['OrderDetail'];
-
-		$this->render('admin',array(
-			'model'=>$model,
-		));
-	}
-
-	/**
-	 * Returns the data model based on the primary key given in the GET variable.
-	 * If the data model is not found, an HTTP exception will be raised.
-	 * @param integer $id the ID of the model to be loaded
-	 * @return OrderDetail the loaded model
-	 * @throws CHttpException
-	 */
-	public function loadModel($id)
-	{
-		$model=OrderDetail::model()->findByPk($id);
-		if($model===null)
-			throw new CHttpException(404,'The requested page does not exist.');
-		return $model;
-	}
-
-	/**
-	 * Performs the AJAX validation.
-	 * @param OrderDetail $model the model to be validated
-	 */
-	protected function performAjaxValidation($model)
-	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='order-detail-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

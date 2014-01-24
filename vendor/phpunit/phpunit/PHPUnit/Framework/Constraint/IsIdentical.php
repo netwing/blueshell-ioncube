@@ -1,173 +1,63 @@
-<?php
-/**
- * PHPUnit
- *
- * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @package    PHPUnit
- * @subpackage Framework_Constraint
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @author     Bernhard Schussek <bschussek@2bepublished.at>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      File available since Release 3.0.0
- */
-
-/**
- * Constraint that asserts that one value is identical to another.
- *
- * Identical check is performed with PHP's === operator, the operator is
- * explained in detail at
- * {@url http://www.php.net/manual/en/types.comparisons.php}.
- * Two values are identical if they have the same value and are of the same
- * type.
- *
- * The expected value is passed in the constructor.
- *
- * @package    PHPUnit
- * @subpackage Framework_Constraint
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @author     Bernhard Schussek <bschussek@2bepublished.at>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      Class available since Release 3.0.0
- */
-class PHPUnit_Framework_Constraint_IsIdentical extends PHPUnit_Framework_Constraint
-{
-    /**
-     * @var double
-     */
-    const EPSILON = 0.0000000001;
-
-    /**
-     * @var mixed
-     */
-    protected $value;
-
-    /**
-     * @param mixed $value
-     */
-    public function __construct($value)
-    {
-        $this->value = $value;
-    }
-
-    /**
-     * Evaluates the constraint for parameter $other
-     *
-     * If $returnResult is set to FALSE (the default), an exception is thrown
-     * in case of a failure. NULL is returned otherwise.
-     *
-     * If $returnResult is TRUE, the result of the evaluation is returned as
-     * a boolean value instead: TRUE in case of success, FALSE in case of a
-     * failure.
-     *
-     * @param  mixed $other Value or object to evaluate.
-     * @param  string $description Additional information about the test
-     * @param  bool $returnResult Whether to return a result or throw an exception
-     * @return mixed
-     * @throws PHPUnit_Framework_ExpectationFailedException
-     */
-    public function evaluate($other, $description = '', $returnResult = FALSE)
-    {
-        if (is_double($this->value) && is_double($other) &&
-            !is_infinite($this->value) && !is_infinite($other) &&
-            !is_nan($this->value) && !is_nan($other)) {
-            $success = abs($this->value - $other) < self::EPSILON;
-        }
-
-        else {
-            $success = $this->value === $other;
-        }
-
-        if ($returnResult) {
-            return $success;
-        }
-
-        if (!$success) {
-            $f = NULL;
-
-            // if both values are strings, make sure a diff is generated
-            if (is_string($this->value) && is_string($other)) {
-                $f = new PHPUnit_Framework_ComparisonFailure(
-                  $this->value,
-                  $other,
-                  $this->value,
-                  $other
-                );
-            }
-
-            $this->fail($other, $description, $f);
-        }
-    }
-
-    /**
-     * Returns the description of the failure
-     *
-     * The beginning of failure messages is "Failed asserting that" in most
-     * cases. This method should return the second part of that sentence.
-     *
-     * @param  mixed $other Evaluated value or object.
-     * @return string
-     */
-    protected function failureDescription($other)
-    {
-        if (is_object($this->value) && is_object($other)) {
-            return 'two variables reference the same object';
-        }
-
-        if (is_string($this->value) && is_string($other)) {
-            return 'two strings are identical';
-        }
-
-        return parent::failureDescription($other);
-    }
-
-    /**
-     * Returns a string representation of the constraint.
-     *
-     * @return string
-     */
-    public function toString()
-    {
-        if (is_object($this->value)) {
-            return 'is identical to an object of class "' .
-                   get_class($this->value) . '"';
-        } else {
-            return 'is identical to ' .
-                   PHPUnit_Util_Type::export($this->value);
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+yD6HIE8mCQiDiGqYFiy=

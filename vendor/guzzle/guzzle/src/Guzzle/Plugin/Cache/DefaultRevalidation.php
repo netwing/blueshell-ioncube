@@ -1,172 +1,90 @@
-<?php
-
-namespace Guzzle\Plugin\Cache;
-
-use Guzzle\Http\Message\RequestInterface;
-use Guzzle\Http\Message\Response;
-use Guzzle\Http\Exception\BadResponseException;
-
-/**
- * Default revalidation strategy
- */
-class DefaultRevalidation implements RevalidationInterface
-{
-    /** @var CacheStorageInterface Cache object storing cache data */
-    protected $storage;
-
-    /** @var CanCacheStrategyInterface */
-    protected $canCache;
-
-    /**
-     * @param CacheStorageInterface     $cache    Cache storage
-     * @param CanCacheStrategyInterface $canCache Determines if a message can be cached
-     */
-    public function __construct(CacheStorageInterface $cache, CanCacheStrategyInterface $canCache = null)
-    {
-        $this->storage = $cache;
-        $this->canCache = $canCache ?: new DefaultCanCacheStrategy();
-    }
-
-    public function revalidate(RequestInterface $request, Response $response)
-    {
-        try {
-            $revalidate = $this->createRevalidationRequest($request, $response);
-            $validateResponse = $revalidate->send();
-            if ($validateResponse->getStatusCode() == 200) {
-                return $this->handle200Response($request, $validateResponse);
-            } elseif ($validateResponse->getStatusCode() == 304) {
-                return $this->handle304Response($request, $validateResponse, $response);
-            }
-        } catch (BadResponseException $e) {
-            $this->handleBadResponse($e);
-        }
-
-        // Other exceptions encountered in the revalidation request are ignored
-        // in hopes that sending a request to the origin server will fix it
-        return false;
-    }
-
-    public function shouldRevalidate(RequestInterface $request, Response $response)
-    {
-        if ($request->getMethod() != RequestInterface::GET) {
-            return false;
-        }
-
-        $reqCache = $request->getHeader('Cache-Control');
-        $resCache = $response->getHeader('Cache-Control');
-
-        $revalidate = $request->getHeader('Pragma') == 'no-cache' ||
-            ($reqCache && ($reqCache->hasDirective('no-cache') || $reqCache->hasDirective('must-revalidate'))) ||
-            ($resCache && ($resCache->hasDirective('no-cache') || $resCache->hasDirective('must-revalidate')));
-
-        // Use the strong ETag validator if available and the response contains no Cache-Control directive
-        if (!$revalidate && !$reqCache && $response->hasHeader('ETag')) {
-            $revalidate = true;
-        }
-
-        return $revalidate;
-    }
-
-    /**
-     * Handles a bad response when attempting to revalidate
-     *
-     * @param BadResponseException $e Exception encountered
-     *
-     * @throws BadResponseException
-     */
-    protected function handleBadResponse(BadResponseException $e)
-    {
-        // 404 errors mean the resource no longer exists, so remove from
-        // cache, and prevent an additional request by throwing the exception
-        if ($e->getResponse()->getStatusCode() == 404) {
-            $this->storage->delete($e->getRequest());
-            throw $e;
-        }
-    }
-
-    /**
-     * Creates a request to use for revalidation
-     *
-     * @param RequestInterface $request  Request
-     * @param Response         $response Response to revalidate
-     *
-     * @return RequestInterface returns a revalidation request
-     */
-    protected function createRevalidationRequest(RequestInterface $request, Response $response)
-    {
-        $revalidate = clone $request;
-        $revalidate->removeHeader('Pragma')
-            ->removeHeader('Cache-Control')
-            ->setHeader('If-Modified-Since', $response->getLastModified() ?: $response->getDate());
-
-        if ($response->getEtag()) {
-            $revalidate->setHeader('If-None-Match', $response->getEtag());
-        }
-
-        // Remove any cache plugins that might be on the request to prevent infinite recursive revalidations
-        $dispatcher = $revalidate->getEventDispatcher();
-        foreach ($dispatcher->getListeners() as $eventName => $listeners) {
-            foreach ($listeners as $listener) {
-                if ($listener[0] instanceof CachePlugin) {
-                    $dispatcher->removeListener($eventName, $listener);
-                }
-            }
-        }
-
-        return $revalidate;
-    }
-
-    /**
-     * Handles a 200 response response from revalidating. The server does not support validation, so use this response.
-     *
-     * @param RequestInterface $request          Request that was sent
-     * @param Response         $validateResponse Response received
-     *
-     * @return bool Returns true if valid, false if invalid
-     */
-    protected function handle200Response(RequestInterface $request, Response $validateResponse)
-    {
-        $request->setResponse($validateResponse);
-        if ($this->canCache->canCacheResponse($validateResponse)) {
-            $this->storage->cache($request, $validateResponse);
-        }
-
-        return false;
-    }
-
-    /**
-     * Handle a 304 response and ensure that it is still valid
-     *
-     * @param RequestInterface $request          Request that was sent
-     * @param Response         $validateResponse Response received
-     * @param Response         $response         Original cached response
-     *
-     * @return bool Returns true if valid, false if invalid
-     */
-    protected function handle304Response(RequestInterface $request, Response $validateResponse, Response $response)
-    {
-        static $replaceHeaders = array('Date', 'Expires', 'Cache-Control', 'ETag', 'Last-Modified');
-
-        // Make sure that this response has the same ETag
-        if ($validateResponse->getEtag() != $response->getEtag()) {
-            return false;
-        }
-
-        // Replace cached headers with any of these headers from the
-        // origin server that might be more up to date
-        $modified = false;
-        foreach ($replaceHeaders as $name) {
-            if ($validateResponse->hasHeader($name)) {
-                $modified = true;
-                $response->setHeader($name, $validateResponse->getHeader($name));
-            }
-        }
-
-        // Store the updated response in cache
-        if ($modified && $this->canCache->canCacheResponse($response)) {
-            $this->storage->cache($request, $response);
-        }
-
-        return true;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+xqX9G7w9quiekcZtt5mo3dGU1CAyHnymnW==

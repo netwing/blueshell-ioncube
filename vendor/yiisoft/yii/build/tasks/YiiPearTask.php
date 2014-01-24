@@ -1,131 +1,62 @@
-<?php
-/**
- * YiiPearTask class file.
- *
- * @author Wei Zhuo <weizho@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-require_once 'phing/Task.php';
-require_once 'PEAR/PackageFileManager2.php';
-
-/**
- * YiiPearTask create a PEAR package for the yii framework.
- *
- * @author Wei Zhuo <weizho@gmail.com>
- * @package build.tasks
- * @since 1.0
- */
-class YiiPearTask extends Task
-{
-	private $pkgdir;
-	private $channel;
-	private $version;
-	private $state;
-	private $category;
-	private $package;
-	private $summary;
-	private $pkgdescription;
-	private $notes;
-	private $license;
-
-	function setPkgdir($value)
-	{
-		$this->pkgdir=$value;
-	}
-
-	function setChannel($value)
-	{
-		$this->channel=$value;
-	}
-
-	function setVersion($value)
-	{
-		$this->version=$value;
-	}
-
-	function setState($value)
-	{
-		$this->state=$value;
-	}
-
-	function setCategory($value)
-	{
-		$this->category=$value;
-	}
-
-	function setPackage($value)
-	{
-		$this->package=$value;
-	}
-
-	function setSummary($value)
-	{
-		$this->summary=$value;
-	}
-
-	function setPkgdescription($value)
-	{
-		$this->pkgdescription=$value;
-	}
-
-	function setNotes($value)
-	{
-		$this->notes=$value;
-	}
-
-	function setLicense($value)
-	{
-		$this->license=$value;
-	}
-
-	/**
-	 * Main entrypoint of the task
-	 */
-	function main()
-	{
-		$pkg = new PEAR_PackageFileManager2();
-
-		$e = $pkg->setOptions(array
-		(
-			'baseinstalldir'    => 'yii',
-			'packagedirectory'  => $this->pkgdir,
-			'filelistgenerator' => 'file',
-			'simpleoutput'      => true,
-			'ignore'            => array(),
-			'roles' => array('*' => 'php'),
-			)
-		);
-
-		// PEAR error checking
-		if (PEAR::isError($e))
-			die($e->getMessage());
-		$pkg->setPackage($this->package);
-		$pkg->setSummary($this->summary);
-		$pkg->setDescription($this->pkgdescription);
-		$pkg->setChannel($this->channel);
-
-		$pkg->setReleaseStability($this->state);
-		$pkg->setAPIStability($this->state);
-		$pkg->setReleaseVersion($this->version);
-		$pkg->setAPIVersion($this->version);
-
-		$pkg->setLicense($this->license);
-		$pkg->setNotes($this->notes);
-		$pkg->setPackageType('php');
-		$pkg->setPhpDep('5.1.0');
-		$pkg->setPearinstallerDep('1.4.2');
-
-		$pkg->addRelease();
-		$pkg->addMaintainer('lead','qxue','Qiang Xue','qiang.xue@gmail.com');
-
-		$test = $pkg->generateContents();
-
-		$e = $pkg->writePackageFile();
-
-		if (PEAR::isError($e))
-			echo $e->getMessage();
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+aDqpLShSVAzFI7MXjjhxM9O=

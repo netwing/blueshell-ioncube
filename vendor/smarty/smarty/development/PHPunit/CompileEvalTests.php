@@ -1,43 +1,30 @@
-<?php
-/**
-* Smarty PHPunit tests compilation of {eval} tag
-*
-* @package PHPunit
-* @author Uwe Tews
-*/
-
-/**
-* class for {eval} tag tests
-*/
-class CompileEvalTests extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $this->smarty = SmartyTests::$smarty;
-        SmartyTests::init();
-    }
-
-    static function isRunnable()
-    {
-        return true;
-    }
-
-    /**
-    * test eval tag
-    */
-    public function testEval1()
-    {
-        $tpl = $this->smarty->createTemplate("eval:{eval var='hello world'}");
-        $this->assertEquals("hello world", $this->smarty->fetch($tpl));
-    }
-    public function testEval2()
-    {
-        $tpl = $this->smarty->createTemplate("eval:{eval var='hello world' assign=foo}{\$foo}");
-        $this->assertEquals("hello world", $this->smarty->fetch($tpl));
-    }
-    public function testEval3()
-    {
-        $tpl = $this->smarty->createTemplate("eval:{eval var='hello world' assign=foo}");
-        $this->assertEquals("", $this->smarty->fetch($tpl));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+8MFx2mq2KErmxba/e2o39sa=

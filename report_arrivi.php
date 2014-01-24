@@ -1,28 +1,32 @@
-<?php
-require_once("config.inc.php");
-$blue->autentica_utente("contratti","R");
-
-$inizio_dal = date("Y-m-d", time());
-$inizio_al = date("Y-m-d", time()+(60*60*24*30));
-$pontili = $blue->elenco_pontili();
-if (array_key_exists("id", $_GET)) {
-	$pontile = intval($_GET['id']);
-} else {
-	$pontile = 0;
-}
-
-$messaggio = "";
-
-if (array_key_exists("nopb", $_GET)) {
-    Yii::app()->user->setFlash('warning', Yii::t('app', 'No enabled resources for selected group.'));
-    header("Location:report_arrivi.php?id=" . $pontile);
-    exit;
-} elseif (array_key_exists("nopr", $_GET)) {
-    Yii::app()->user->setFlash('warning', Yii::t('app', 'No arrivals for selected group and dates.'));
-    header("Location:report_arrivi.php?id=" . $pontile);
-    exit;
-} else {
-	$messaggio="";
-}
-
-require_once "views/resource/arrival_report.php";
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+n6nI/o2utfuNHG==

@@ -1,930 +1,270 @@
-<?php
-
-namespace Guzzle\Service\Description;
-
-use Guzzle\Common\Exception\InvalidArgumentException;
-
-/**
- * API parameter object used with service descriptions
- */
-class Parameter
-{
-    protected $name;
-    protected $description;
-    protected $serviceDescription;
-    protected $type;
-    protected $required;
-    protected $enum;
-    protected $pattern;
-    protected $minimum;
-    protected $maximum;
-    protected $minLength;
-    protected $maxLength;
-    protected $minItems;
-    protected $maxItems;
-    protected $default;
-    protected $static;
-    protected $instanceOf;
-    protected $filters;
-    protected $location;
-    protected $sentAs;
-    protected $data;
-    protected $properties = array();
-    protected $additionalProperties;
-    protected $items;
-    protected $parent;
-    protected $ref;
-    protected $format;
-    protected $propertiesCache = null;
-
-    /**
-     * Create a new Parameter using an associative array of data. The array can contain the following information:
-     * - name:          (string) Unique name of the parameter
-     * - type:          (string|array) Type of variable (string, number, integer, boolean, object, array, numeric,
-     *                  null, any). Types are using for validation and determining the structure of a parameter. You
-     *                  can use a union type by providing an array of simple types. If one of the union types matches
-     *                  the provided value, then the value is valid.
-     * - instanceOf:    (string) When the type is an object, you can specify the class that the object must implement
-     * - required:      (bool) Whether or not the parameter is required
-     * - default:       (mixed) Default value to use if no value is supplied
-     * - static:        (bool) Set to true to specify that the parameter value cannot be changed from the default
-     * - description:   (string) Documentation of the parameter
-     * - location:      (string) The location of a request used to apply a parameter. Custom locations can be registered
-     *                  with a command, but the defaults are uri, query, header, body, json, xml, postField, postFile.
-     * - sentAs:        (string) Specifies how the data being modeled is sent over the wire. For example, you may wish
-     *                  to include certain headers in a response model that have a normalized casing of FooBar, but the
-     *                  actual header is x-foo-bar. In this case, sentAs would be set to x-foo-bar.
-     * - filters:       (array) Array of static method names to to run a parameter value through. Each value in the
-     *                  array must be a string containing the full class path to a static method or an array of complex
-     *                  filter information. You can specify static methods of classes using the full namespace class
-     *                  name followed by '::' (e.g. Foo\Bar::baz()). Some filters require arguments in order to properly
-     *                  filter a value. For complex filters, use a hash containing a 'method' key pointing to a static
-     *                  method, and an 'args' key containing an array of positional arguments to pass to the method.
-     *                  Arguments can contain keywords that are replaced when filtering a value: '@value' is replaced
-     *                  with the value being validated, '@api' is replaced with the Parameter object.
-     * - properties:    When the type is an object, you can specify nested parameters
-     * - additionalProperties: (array) This attribute defines a schema for all properties that are not explicitly
-     *                  defined in an object type definition. If specified, the value MUST be a schema or a boolean. If
-     *                  false is provided, no additional properties are allowed beyond the properties defined in the
-     *                  schema. The default value is an empty schema which allows any value for additional properties.
-     * - items:         This attribute defines the allowed items in an instance array, and MUST be a schema or an array
-     *                  of schemas. The default value is an empty schema which allows any value for items in the
-     *                  instance array.
-     *                  When this attribute value is a schema and the instance value is an array, then all the items
-     *                  in the array MUST be valid according to the schema.
-     * - pattern:       When the type is a string, you can specify the regex pattern that a value must match
-     * - enum:          When the type is a string, you can specify a list of acceptable values
-     * - minItems:      (int) Minimum number of items allowed in an array
-     * - maxItems:      (int) Maximum number of items allowed in an array
-     * - minLength:     (int) Minimum length of a string
-     * - maxLength:     (int) Maximum length of a string
-     * - minimum:       (int) Minimum value of an integer
-     * - maximum:       (int) Maximum value of an integer
-     * - data:          (array) Any additional custom data to use when serializing, validating, etc
-     * - format:        (string) Format used to coax a value into the correct format when serializing or unserializing.
-     *                  You may specify either an array of filters OR a format, but not both.
-     *                  Supported values: date-time, date, time, timestamp, date-time-http
-     * - $ref:          (string) String referencing a service description model. The parameter is replaced by the
-     *                  schema contained in the model.
-     *
-     * @param array                       $data        Array of data as seen in service descriptions
-     * @param ServiceDescriptionInterface $description Service description used to resolve models if $ref tags are found
-     *
-     * @throws InvalidArgumentException
-     */
-    public function __construct(array $data = array(), ServiceDescriptionInterface $description = null)
-    {
-        if ($description) {
-            if (isset($data['$ref'])) {
-                if ($model = $description->getModel($data['$ref'])) {
-                    // The name of the original parameter should override the ref name if one is available
-                    $name = empty($data['name']) ? null : $data['name'];
-                    $data = $model->toArray();
-                    if ($name) {
-                        $data['name'] = $name;
-                    }
-                }
-            } elseif (isset($data['extends'])) {
-                // If this parameter extends from another parameter then start with the actual data
-                // union in the parent's data (e.g. actual supersedes parent)
-                if ($extends = $description->getModel($data['extends'])) {
-                    $data += $extends->toArray();
-                }
-            }
-        }
-
-        // Pull configuration data into the parameter
-        foreach ($data as $key => $value) {
-            $this->{$key} = $value;
-        }
-
-        $this->serviceDescription = $description;
-        $this->required = (bool) $this->required;
-        $this->data = (array) $this->data;
-
-        if ($this->filters) {
-            $this->setFilters((array) $this->filters);
-        }
-
-        if ($this->type == 'object' && $this->additionalProperties === null) {
-            $this->additionalProperties = true;
-        }
-    }
-
-    /**
-     * Convert the object to an array
-     *
-     * @return array
-     */
-    public function toArray()
-    {
-        static $checks = array('required', 'description', 'static', 'type', 'format', 'instanceOf', 'location', 'sentAs',
-            'pattern', 'minimum', 'maximum', 'minItems', 'maxItems', 'minLength', 'maxLength', 'data', 'enum',
-            'filters');
-
-        $result = array();
-
-        // Anything that is in the `Items` attribute of an array *must* include it's name if available
-        if ($this->parent instanceof self && $this->parent->getType() == 'array' && isset($this->name)) {
-            $result['name'] = $this->name;
-        }
-
-        foreach ($checks as $c) {
-            if ($value = $this->{$c}) {
-                $result[$c] = $value;
-            }
-        }
-
-        if ($this->default !== null) {
-            $result['default'] = $this->default;
-        }
-
-        if ($this->items !== null) {
-            $result['items'] = $this->getItems()->toArray();
-        }
-
-        if ($this->additionalProperties !== null) {
-            $result['additionalProperties'] = $this->getAdditionalProperties();
-            if ($result['additionalProperties'] instanceof self) {
-                $result['additionalProperties'] = $result['additionalProperties']->toArray();
-            }
-        }
-
-        if ($this->type == 'object' && $this->properties) {
-            $result['properties'] = array();
-            foreach ($this->getProperties() as $name => $property) {
-                $result['properties'][$name] = $property->toArray();
-            }
-        }
-
-        return $result;
-    }
-
-    /**
-     * Get the default or static value of the command based on a value
-     *
-     * @param string $value Value that is currently set
-     *
-     * @return mixed Returns the value, a static value if one is present, or a default value
-     */
-    public function getValue($value)
-    {
-        if ($this->static || ($this->default !== null && $value === null)) {
-            return $this->default;
-        }
-
-        return $value;
-    }
-
-    /**
-     * Run a value through the filters OR format attribute associated with the parameter
-     *
-     * @param mixed $value Value to filter
-     *
-     * @return mixed Returns the filtered value
-     */
-    public function filter($value)
-    {
-        // Formats are applied exclusively and supersed filters
-        if ($this->format) {
-            return SchemaFormatter::format($this->format, $value);
-        }
-
-        // Convert Boolean values
-        if ($this->type == 'boolean' && !is_bool($value)) {
-            $value = filter_var($value, FILTER_VALIDATE_BOOLEAN);
-        }
-
-        // Apply filters to the value
-        if ($this->filters) {
-            foreach ($this->filters as $filter) {
-                if (is_array($filter)) {
-                    // Convert complex filters that hold value place holders
-                    foreach ($filter['args'] as &$data) {
-                        if ($data == '@value') {
-                            $data = $value;
-                        } elseif ($data == '@api') {
-                            $data = $this;
-                        }
-                    }
-                    $value = call_user_func_array($filter['method'], $filter['args']);
-                } else {
-                    $value = call_user_func($filter, $value);
-                }
-            }
-        }
-
-        return $value;
-    }
-
-    /**
-     * Get the name of the parameter
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Get the key of the parameter, where sentAs will supersede name if it is set
-     *
-     * @return string
-     */
-    public function getWireName()
-    {
-        return $this->sentAs ?: $this->name;
-    }
-
-    /**
-     * Set the name of the parameter
-     *
-     * @param string $name Name to set
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get the type(s) of the parameter
-     *
-     * @return string|array
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * Set the type(s) of the parameter
-     *
-     * @param string|array $type Type of parameter or array of simple types used in a union
-     *
-     * @return self
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
-
-        return $this;
-    }
-
-    /**
-     * Get if the parameter is required
-     *
-     * @return bool
-     */
-    public function getRequired()
-    {
-        return $this->required;
-    }
-
-    /**
-     * Set if the parameter is required
-     *
-     * @param bool $isRequired Whether or not the parameter is required
-     *
-     * @return self
-     */
-    public function setRequired($isRequired)
-    {
-        $this->required = (bool) $isRequired;
-
-        return $this;
-    }
-
-    /**
-     * Get the default value of the parameter
-     *
-     * @return string|null
-     */
-    public function getDefault()
-    {
-        return $this->default;
-    }
-
-    /**
-     * Set the default value of the parameter
-     *
-     * @param string|null $default Default value to set
-     *
-     * @return self
-     */
-    public function setDefault($default)
-    {
-        $this->default = $default;
-
-        return $this;
-    }
-
-    /**
-     * Get the description of the parameter
-     *
-     * @return string|null
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    /**
-     * Set the description of the parameter
-     *
-     * @param string $description Description
-     *
-     * @return self
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-
-        return $this;
-    }
-
-    /**
-     * Get the minimum acceptable value for an integer
-     *
-     * @return int|null
-     */
-    public function getMinimum()
-    {
-        return $this->minimum;
-    }
-
-    /**
-     * Set the minimum acceptable value for an integer
-     *
-     * @param int|null $min Minimum
-     *
-     * @return self
-     */
-    public function setMinimum($min)
-    {
-        $this->minimum = $min;
-
-        return $this;
-    }
-
-    /**
-     * Get the maximum acceptable value for an integer
-     *
-     * @return int|null
-     */
-    public function getMaximum()
-    {
-        return $this->maximum;
-    }
-
-    /**
-     * Set the maximum acceptable value for an integer
-     *
-     * @param int $max Maximum
-     *
-     * @return self
-     */
-    public function setMaximum($max)
-    {
-        $this->maximum = $max;
-
-        return $this;
-    }
-
-    /**
-     * Get the minimum allowed length of a string value
-     *
-     * @return int
-     */
-    public function getMinLength()
-    {
-        return $this->minLength;
-    }
-
-    /**
-     * Set the minimum allowed length of a string value
-     *
-     * @param int|null $min Minimum
-     *
-     * @return self
-     */
-    public function setMinLength($min)
-    {
-        $this->minLength = $min;
-
-        return $this;
-    }
-
-    /**
-     * Get the maximum allowed length of a string value
-     *
-     * @return int|null
-     */
-    public function getMaxLength()
-    {
-        return $this->maxLength;
-    }
-
-    /**
-     * Set the maximum allowed length of a string value
-     *
-     * @param int $max Maximum length
-     *
-     * @return self
-     */
-    public function setMaxLength($max)
-    {
-        $this->maxLength = $max;
-
-        return $this;
-    }
-
-    /**
-     * Get the maximum allowed number of items in an array value
-     *
-     * @return int|null
-     */
-    public function getMaxItems()
-    {
-        return $this->maxItems;
-    }
-
-    /**
-     * Set the maximum allowed number of items in an array value
-     *
-     * @param int $max Maximum
-     *
-     * @return self
-     */
-    public function setMaxItems($max)
-    {
-        $this->maxItems = $max;
-
-        return $this;
-    }
-
-    /**
-     * Get the minimum allowed number of items in an array value
-     *
-     * @return int
-     */
-    public function getMinItems()
-    {
-        return $this->minItems;
-    }
-
-    /**
-     * Set the minimum allowed number of items in an array value
-     *
-     * @param int|null $min Minimum
-     *
-     * @return self
-     */
-    public function setMinItems($min)
-    {
-        $this->minItems = $min;
-
-        return $this;
-    }
-
-    /**
-     * Get the location of the parameter
-     *
-     * @return string|null
-     */
-    public function getLocation()
-    {
-        return $this->location;
-    }
-
-    /**
-     * Set the location of the parameter
-     *
-     * @param string|null $location Location of the parameter
-     *
-     * @return self
-     */
-    public function setLocation($location)
-    {
-        $this->location = $location;
-
-        return $this;
-    }
-
-    /**
-     * Get the sentAs attribute of the parameter that used with locations to sentAs an attribute when it is being
-     * applied to a location.
-     *
-     * @return string|null
-     */
-    public function getSentAs()
-    {
-        return $this->sentAs;
-    }
-
-    /**
-     * Set the sentAs attribute
-     *
-     * @param string|null $name Name of the value as it is sent over the wire
-     *
-     * @return self
-     */
-    public function setSentAs($name)
-    {
-        $this->sentAs = $name;
-
-        return $this;
-    }
-
-    /**
-     * Retrieve a known property from the parameter by name or a data property by name. When not specific name value
-     * is specified, all data properties will be returned.
-     *
-     * @param string|null $name Specify a particular property name to retrieve
-     *
-     * @return array|mixed|null
-     */
-    public function getData($name = null)
-    {
-        if (!$name) {
-            return $this->data;
-        }
-
-        if (isset($this->data[$name])) {
-            return $this->data[$name];
-        } elseif (isset($this->{$name})) {
-            return $this->{$name};
-        }
-
-        return null;
-    }
-
-    /**
-     * Set the extra data properties of the parameter or set a specific extra property
-     *
-     * @param string|array|null $nameOrData The name of a specific extra to set or an array of extras to set
-     * @param mixed|null        $data       When setting a specific extra property, specify the data to set for it
-     *
-     * @return self
-     */
-    public function setData($nameOrData, $data = null)
-    {
-        if (is_array($nameOrData)) {
-            $this->data = $nameOrData;
-        } else {
-            $this->data[$nameOrData] = $data;
-        }
-
-        return $this;
-    }
-
-    /**
-     * Get whether or not the default value can be changed
-     *
-     * @return mixed|null
-     */
-    public function getStatic()
-    {
-        return $this->static;
-    }
-
-    /**
-     * Set to true if the default value cannot be changed
-     *
-     * @param bool $static True or false
-     *
-     * @return self
-     */
-    public function setStatic($static)
-    {
-        $this->static = (bool) $static;
-
-        return $this;
-    }
-
-    /**
-     * Get an array of filters used by the parameter
-     *
-     * @return array
-     */
-    public function getFilters()
-    {
-        return $this->filters ?: array();
-    }
-
-    /**
-     * Set the array of filters used by the parameter
-     *
-     * @param array $filters Array of functions to use as filters
-     *
-     * @return self
-     */
-    public function setFilters(array $filters)
-    {
-        $this->filters = array();
-        foreach ($filters as $filter) {
-            $this->addFilter($filter);
-        }
-
-        return $this;
-    }
-
-    /**
-     * Add a filter to the parameter
-     *
-     * @param string|array $filter Method to filter the value through
-     *
-     * @return self
-     * @throws InvalidArgumentException
-     */
-    public function addFilter($filter)
-    {
-        if (is_array($filter)) {
-            if (!isset($filter['method'])) {
-                throw new InvalidArgumentException('A [method] value must be specified for each complex filter');
-            }
-        }
-
-        if (!$this->filters) {
-            $this->filters = array($filter);
-        } else {
-            $this->filters[] = $filter;
-        }
-
-        return $this;
-    }
-
-    /**
-     * Get the parent object (an {@see OperationInterface} or {@see Parameter}
-     *
-     * @return OperationInterface|Parameter|null
-     */
-    public function getParent()
-    {
-        return $this->parent;
-    }
-
-    /**
-     * Set the parent object of the parameter
-     *
-     * @param OperationInterface|Parameter|null $parent Parent container of the parameter
-     *
-     * @return self
-     */
-    public function setParent($parent)
-    {
-        $this->parent = $parent;
-
-        return $this;
-    }
-
-    /**
-     * Get the properties of the parameter
-     *
-     * @return array
-     */
-    public function getProperties()
-    {
-        if (!$this->propertiesCache) {
-            $this->propertiesCache = array();
-            foreach (array_keys($this->properties) as $name) {
-                $this->propertiesCache[$name] = $this->getProperty($name);
-            }
-        }
-
-        return $this->propertiesCache;
-    }
-
-    /**
-     * Get a specific property from the parameter
-     *
-     * @param string $name Name of the property to retrieve
-     *
-     * @return null|Parameter
-     */
-    public function getProperty($name)
-    {
-        if (!isset($this->properties[$name])) {
-            return null;
-        }
-
-        if (!($this->properties[$name] instanceof self)) {
-            $this->properties[$name]['name'] = $name;
-            $this->properties[$name] = new static($this->properties[$name], $this->serviceDescription);
-            $this->properties[$name]->setParent($this);
-        }
-
-        return $this->properties[$name];
-    }
-
-    /**
-     * Remove a property from the parameter
-     *
-     * @param string $name Name of the property to remove
-     *
-     * @return self
-     */
-    public function removeProperty($name)
-    {
-        unset($this->properties[$name]);
-        $this->propertiesCache = null;
-
-        return $this;
-    }
-
-    /**
-     * Add a property to the parameter
-     *
-     * @param Parameter $property Properties to set
-     *
-     * @return self
-     */
-    public function addProperty(Parameter $property)
-    {
-        $this->properties[$property->getName()] = $property;
-        $property->setParent($this);
-        $this->propertiesCache = null;
-
-        return $this;
-    }
-
-    /**
-     * Get the additionalProperties value of the parameter
-     *
-     * @return bool|Parameter|null
-     */
-    public function getAdditionalProperties()
-    {
-        if (is_array($this->additionalProperties)) {
-            $this->additionalProperties = new static($this->additionalProperties, $this->serviceDescription);
-            $this->additionalProperties->setParent($this);
-        }
-
-        return $this->additionalProperties;
-    }
-
-    /**
-     * Set the additionalProperties value of the parameter
-     *
-     * @param bool|Parameter|null $additional Boolean to allow any, an Parameter to specify a schema, or false to disallow
-     *
-     * @return self
-     */
-    public function setAdditionalProperties($additional)
-    {
-        $this->additionalProperties = $additional;
-
-        return $this;
-    }
-
-    /**
-     * Set the items data of the parameter
-     *
-     * @param Parameter|null $items Items to set
-     *
-     * @return self
-     */
-    public function setItems(Parameter $items = null)
-    {
-        if ($this->items = $items) {
-            $this->items->setParent($this);
-        }
-
-        return $this;
-    }
-
-    /**
-     * Get the item data of the parameter
-     *
-     * @return Parameter|null
-     */
-    public function getItems()
-    {
-        if (is_array($this->items)) {
-            $this->items = new static($this->items, $this->serviceDescription);
-            $this->items->setParent($this);
-        }
-
-        return $this->items;
-    }
-
-    /**
-     * Get the class that the parameter must implement
-     *
-     * @return null|string
-     */
-    public function getInstanceOf()
-    {
-        return $this->instanceOf;
-    }
-
-    /**
-     * Set the class that the parameter must be an instance of
-     *
-     * @param string|null $instanceOf Class or interface name
-     *
-     * @return self
-     */
-    public function setInstanceOf($instanceOf)
-    {
-        $this->instanceOf = $instanceOf;
-
-        return $this;
-    }
-
-    /**
-     * Get the enum of strings that are valid for the parameter
-     *
-     * @return array|null
-     */
-    public function getEnum()
-    {
-        return $this->enum;
-    }
-
-    /**
-     * Set the enum of strings that are valid for the parameter
-     *
-     * @param array|null $enum Array of strings or null
-     *
-     * @return self
-     */
-    public function setEnum(array $enum = null)
-    {
-        $this->enum = $enum;
-
-        return $this;
-    }
-
-    /**
-     * Get the regex pattern that must match a value when the value is a string
-     *
-     * @return string
-     */
-    public function getPattern()
-    {
-        return $this->pattern;
-    }
-
-    /**
-     * Set the regex pattern that must match a value when the value is a string
-     *
-     * @param string $pattern Regex pattern
-     *
-     * @return self
-     */
-    public function setPattern($pattern)
-    {
-        $this->pattern = $pattern;
-
-        return $this;
-    }
-
-    /**
-     * Get the format attribute of the schema
-     *
-     * @return string
-     */
-    public function getFormat()
-    {
-        return $this->format;
-    }
-
-    /**
-     * Set the format attribute of the schema
-     *
-     * @param string $format Format to set (e.g. date, date-time, timestamp, time, date-time-http)
-     *
-     * @return self
-     */
-    public function setFormat($format)
-    {
-        $this->format = $format;
-
-        return $this;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPtgJ2/M/BV3wKd2Urk+t/I+X7s8c1CFl4wYidlKSQQg1Wl7EFIFtKT3jf8p8YOd1Py4HVuLF
+eFh9ssxiII7WRmWC5w2Y4vviqgjxYyXKouzsJShYZZ6A6vN7HHu6Ii7qPKabr1MaAmHPoE7u3GZx
+pRGBGJAJgQ9wmYBAkWmUxkOHVsXp1DqkjB77q8kHWFr7bD0I+w6hCMlkgmQcQD8IHAP6Rx0JGhLs
+TT1uy+ysh7Egmsi/mEhIhr4euJltSAgiccy4GDnfTFy4PxtNzn46ovVSCjZXVhzM/oHt655vh4tR
+Z4gwaq+FfHx9s9ztbV7ih0r1Xmwiy2QTb/Y0J08LelPqvf/HIQIgM6TgYToZ1wdjzZ3ekjKjYgN/
+/JfqWTxyIddQpuGhJbQsjKMBx4nGc0KkcBRWFGgwwX7cZtqJsP8rpIO6T1lkUgih/XCxUvNx/IL8
+EmZTsttbppT+lw/TlPqzL3SoOBzOCTXUXrefaa7phHUKrmxtumpYQJB7Bm8Y2VI1y80XeHxYEpqC
+thf9sQYUQbf+plqOl7zibqk64uWDg01hk9VqIzzZ+8GzYevEuBlPiX/1DGAdioDADHz67rSKEeq9
+y7/CmDKd6X02xcTnYsJxcj3+JrWJYCIXhN3hiEr0RiTRjvNLr53Ql9W5GUjhwhDDudmue7TJlXiG
+0jOtXI7qzDCoGZTbIZe9FR12pu8sbAVwhJHm635R5thOiW+hCtB911CABGLyIdfmdPjExQwQCvmv
+Ww1k35VYUCa1ccPP+1BREQMAdhqk0osk1ko5/08WgyENZirZGQYtK04SmnOv48uL96AS/2uZqqZD
+8vUkyt1e3xz+TpLgkBloBxqKa7Ywg4Q6etKtdhaEaN1Q9ZtUa38t2b6y0pzHulSl1HFjuk1w93HP
+AOFPgoLhBUMSf8e1U72VDo7ZG9h2WeDEZoo1ZVuYKf4rj7V1H1w+8TeRGF/QzSPXhKTtHs3Pez+e
+8PkD1r4F7Ci/l09OsqrKVRhqz6R/K3EqBbBkbtdhQmaYsepz+6P/cw462AZkGoRVfOpnSd0sgxJm
+czaoFhg3SHVo1uqvlXVLQfgOqRu+ZTSjobgjSd9okXV8lOU7yY6US9BFwRy16btWJoJZ5tzTNfNe
+34+wA/iooEHfIEHp22/zmIUAKojxFIjdc6LKNEucpLxap0kHN00laxDGCqdG7tn0Qk+xpHMGNmxy
+3mzsOpF6tZevj1cvdf6/0esQv1JJZzOf3k9yw2y4XVpBXLpkzwVjyhkQGpPFQo9BETxFJKZ7oDA/
+RF6RZWg9EswrU7gNDr07YHgGABnJ844WqEi3tyi907fNWUZf4jfgEY6tZszWNjFzNyWCnwrSChHW
+j6xcpM9ouu1s2VlT1wOuNZ6gb7iQsIdqsnlSw2oe+CAfMZw8AVexUoZEyWl/2cN7OEUjJ9lpuBuM
+teZTdRdaVokCR/sFRbUPCuFU8D84WNwz4eVX0b+Wp8MLmQhS97BcXsIf9SJR7MCCQPDp9PZdG7rV
+h93Ha9rZ+bJ+sdaMDXGZWMANWqmcoTBEgBO5DeJIaoOridMeqWwgxxMRxZ5kjdVwNquFxw19nh7k
+zvnX+/RU6utHRL6FGrQpKz1Odpxpsf+3EMuVpfrSUkqzKg4YYFOjjqS1bPz7p2ASSd4jrT2GR0NH
+I5XE+z+2yJZ9FtbVMprMVJVzrjyRXdymgNYh0Ab/8VBGp70KQcVWf+Ic2ItaBB3JC/1lpOt78XXU
+s1aqFsvFnzAlK54H8/1vZWNJOTg5elgscBSS5QBmxiHrus3x8FFVZ+/rpdikHzV/3fpWJYjh3HQi
+A9WKDibJHT968EE6hr6jIfgfrS4+BddmoFGrwvKCrUTVnGSsXsj+ZdbRRXCGIQ2+SRemqbyhpCLB
+X7T8bbTVHK/oQ/1N0aor7vRJAoiABGftR9YIeCAQN/G+zxqKe+4M1KRhOC96vT4hVcm9azm9S3H6
+GgDZhrjlQAE9yJl3Z2IyN7dHuvNyOTNpuAqUK3F7edIPiKyacoXX4SMWHlO9+5N71kh+lqRmEccU
+gWb6tqemUs3Wr4s1exE6NiuzfsODeRdCfNePK9BPlvBhyAfhi2cjhp6qcCA9dCfZbiXKXKhG1uzE
+mHOPkWMZig+1FHksvAWahNAUjSiQ5AS3mBryhjUqH86Xpi5Gef20CKdYR/MnGyvlWVKYLyw1EswV
+fEp0HpaW1ojOL+mJM2lqQdAIt71Jl9StVbvp209/FGNA8JsfI92ol3WmsY4i4kxzx6ijQqgsDC1z
+wW3vU1VxP1sPp9684JbC6z712yxam93ARm4umFgs9xQ+04WoYeSIKQ/eydo8dSLZCjuF8mlNNuPW
+8mnUXp6GH3C5LBug/5imAh02yPEgeAfE8zlkqoc9t+aHlVEABkarnagDkeF/tpFm21hHFk+F5NPA
+l90O4jIZok2QbsUpo16KMccVCOqqfS49EiSP6c7KnEJmIR18mge4wkQZ6gROIepPmEitK+VHCh7G
+ZxkJitxK+CNG9ARD8QyHovbLD7pki2Qmcu2+pyMnuOiVDrEqOYc4qGin2NFTrsjKBEzT1TJQPDmg
+baEQVyeaG1u+oqN4svX6vUcvR5HkQBwsXhwOwLKL2/KndETf0zMq1KRASPHGkO9QqYsk/kLkzs/C
+c8nbYS/JnmJ+9/Cz0RBeksGzrtqvin0WYblhbYTjWQsLjQiR3u2kt7zJHyuGI3t/sy2O/5Quhu1g
+I4ImSnmT+qFXUd0uKzQ9/YrA2KPnSIAm1irMBmQ/eupV2TJ7MBlcV+qgnioRVQWdxoz2zU3F867g
+SIqMWXfoExmHXsNf12p3Vt+ucZHCs4aWSVVeI9y7vUv7b8ImrmVOvTr7EFXWck4cyadorHOS/8G0
+7uPRHwK6dbkSvP8YZFcVc23VAJ5r8CB9XcRmR2f7otXftoWo8Bps8CENCtZ6AFJ46fv/LRNxouI9
+HxqC1GmINr2DeO6C1LXeuD7jNx4K8a7FAqYTXihKahWLDC0ajiyxHTxFYJURAu8m/qY7z/NAFmfs
+NvsepGk3rqTuHcArCQG9mNDCBH66D/3a0BofAN3n4pfIsWDj5esT7+sm+zEnPFEJiKjcsVlYVAER
+7kks5tVpaFQy+LutXZFqhm7zL4QUExpCd1Pq8VYA37wxttt2Me5sQmgP9pS0If9BKU9LwyQqTdRT
+X0qvHBCRQ4a/pZgjQMj43Y2q0dSYpztKFI67Ta1BRNZ0WSyZ4wPYKfMszXbceBLwV/RoLey9Kyew
+IsjDcTNQxsPZfP1hEL5B+TJztpFocv+QnOBrqMONfK2+P9hvgBMvziBp92zB9UFZKwRywSdZw8yn
+CT5oPbzu7b6jvDWF/8D8JMpWQZ9H27ice1+uRcSw+mMTdArPmfl6vFRlXl40giD2OajT5FI/0LUQ
+YOnVMzH4WCR4/xyu0HXzdLr1cb79MDrBUqrgZBtN56bbWGuLrwuZGiZ6iLd9NSd1optCYk8DLB7L
+0DzrM/WId8qLgC3oP7jYtiPK4PsF9/KioA49QD0oGVcaiie3CiN3C88l5k2MhCnuxdb3xKMXykvd
+X1KoMxzP8YXN3s3udn5yaxMvFNXvCkLAaAnLOFGJb6Laeyvj1Y9TsOIuK5a1Hmd720WRHsTjsX5D
+xmQ1KW5FOz0AZpkgzI5UzOTgYcBIaE2zYZkKohmHa+u6gawxBtTWDzK/ljzDjpZY2uAipehxcJXe
+5qHKRUbCQTWuZzAKCC+ugcpjTPbCdrN3KV/LYYjx5XvS6gVlLhrqye8ZpcuAQpg/MA1T4qCfwgh2
+aZj3/jvZ9nPQYMdrCzRARy0XDFB/qSnUN+E+nxuo7JEz0BXNHrF97vS4928FHtsD42BZCsBI8X/e
+94Z/MHYCB7w44OZI5jpvgopU0umzj3SVoyB1yAeh/AA5Qf206qMIYtmmM7C07wWpQeDCxdKK8tip
+pBNYZOekXBYz48kY7tCqddMAgZBU/diz8y3itw/A4fOPrV/S9qVRTIYPx9IENUf7Uz0njLMx01YI
+Q/iYy2i7UJsNe/so2wswezQG4Gug7yG/SC86YbeOBx1JZ84zCkfyonBq/AnYhggR1U8hRApkTVot
+YPGb89E4HBkC6zZqYEXKkeSd2qdygsLmZZINmat4+vXOmQPtPMlTrRRCuBOPv5A1zzDJNfeORLrG
+hw82NBMVljO+EIpr8+pEMnt/pnZxGEEfJ0VevQxr5GJya0YqRjHC1U9MovatLuxcJWxl08VatAO+
+1T6vt1Tca7AsNH1xRMcLIwSPlNbV4halVD78yP87cSezj3cwfWBLw5cXXW3Gfu6jqwQt+VjzgoNM
+8i77M5QYeZe2LwO4kD+GuNd7E5L/GFwDXCKUG/6mw4nG8RpDhPt7q+8AJybHLiieS/UAUrHxPVLN
+Fj2b5ju/0/WR4skt1Iy9Q36sl/8x4vmOVUMWuzPZpHNrnh0DONOmJaKbxhRM1dcYQrqUiRE5zs/g
+zosCk3X5ODaapIcsimIdzHF3VRMts4y/ts58Xy8TKv4hn8v+bVMZlRhoBqcY5CrdWjs95vRp8h59
+98UVWv1PLet9TzIMSR2lHKln1LY0iFYDq33lI5fb/AQaecF3T48016UMla0tpo8JHzeBYW3Fd6uK
+IMjyshKYqWUO72oAg4M3ioWWl42NBrpzlTluAAxsZuSCRvM5X7VE4rdgw/8hjXc+XLUZ6K0Z2Lo0
+8Y83q5J10SVJ6UNB+iNfK+KMiEa4LXTXMD/kv/gf9JzwJf6MOKmYkq9UT5nuGDFGtGsomNsRBda7
+FypbTL0cVkr82x5F0JzpHX7/yPMZqF5I+9iXLXwhfhYHDjAhCQEq6HH8Msh/AE2m6dlFnl8w2tLt
+OFeDckTTJUDW3eB0NvwD//OnN4sfP71WNGzhKrSiHNh/7c1KBCGT5JbM3K1a3rqcH40+91GvuuJP
+v9NYO2V4FoB2+qU7eY0rXup2I/xIo2TX/ViWTKMvScPf76PfSk13pYJhhy9jAmhLfj4P+7tTRbIp
+yxAjQOyVtEB5TIyXsA5x0BTrQgHLN3Jrvi60oYv7uQzchPHge2BG1N8ih1giuRaXwGyVMxW1bMl2
+8h8HWPQgVQGX8SEzggVSv6U3XHyDrx2Z80gB/ABV3gpqeqhVzVDu/OfnbcBt4X57x52A2QfyV7CG
+ky5Y13MT3f8aNWw7dDzpOrwv6svhCWHKA9wZ46JfmVK6+OnAgtZGU74gldNRuX+Bo7W+Nzp64jb4
+iISaDZ5Y8zmGQhWp5J5yBmCvTcjf+XnQzC+poqauNI4REB23oP+8QBZbKlEPe/FVi/5UNkj35HHi
+A4SD3BbkQPNO3b1j1oWDa79YLP54HujUgcgXrYwCn2U5gOoACNmYSbonlM/eZKxMvDuRV4LRl1s6
+Q+oobWcx7fybVFzLeSi/L4eHX+2qiLgXUp3XpWDu65KtImJ9y1sHBNhMbmd8LD22344ZmhZlX/ab
+hiuHKNNrwHzU3Pvu9PmPPg90Sn3EK6F4uM+ItFrwhk8XG23NuNkGiJWxLNHHCg025NMnI8wVArtL
+d/MWcCC5g29SrxBjNlx1eZwVVNEexQwHeek/QzV60nRkS6V3GYStAyStIhi3VLV271hOkMr/wW60
+2O287fDq8IvyQNcbMdzSVACJhbwsMP/jNS660QaUav/pYkRkZt99WMH5FxtLaIC7ebMznI3yNqGD
+mT56pr9QQKd55p6yvSwlmYBcT0mnK4rfMyhbLOwWVjzIg9g8ML3lKe4S8YgjUoET7pPxVUyR77RJ
+Fb9KNN2LST1JluQW1B/u2AhYCOhNYfhG9yEc/RhCucnn5okrq+E/sc3j5Lv8VO8ILn4VdlFmmT00
+EBaaP2B/HWEqSX/91mJogW3CjrQ1WXEvaLGL87P/lr5R8rsK6e0QHf0nrIzjNpKGzCUDO4wdNGZ4
+/1GZ4yhzPxuHKxzZ31oq5e/l8BqYjR559hC7BudmPXL2eq1xUMl2RAx5vj3EzYIOPSULmD7UZ6j1
+jI8MR09QUyFNtcWIQIN9AMWOpYV/fTD/P92CIMJtL9IfwubbuPsot7XuxFjSXk4tfGhTtfA90Qd0
+T7QjYjPJswMWr5OVoGYg8pc329m3KkJ4h7Nt8GbLv2fLWaeDb1UZl/u4pPdfizTqKnK77lx+7tG5
+3uFUV7GEwnE4Y0ed1ml3GF1KHJg/cGQyI7zFBehVAZGhEL9c1HtGiJTL9CfwaDlWHTr2O2WC/ZHh
+UWWW+Jy4Ir1iMjKHkXH1xtcXq1kBydNYbrW+mR9eCVy5I+1jQ7ZdK2oDsqrDVH1O7+EEn4eZ/TvC
+JSiHcUCYhEtVhCqV7dnxlpfi8aCPNf/PCEUK/yXtIsr9fAe1sVWMd/Ha/2x6XNofoOoIQhQoybMT
+ofpyvgMU1vgHE3T3vI5XBD8TenUDt44G7e6OGRE73ipgmaBqq1kgTW7WSi3mU5bpUtQzSd11TE76
++qkOXVUb6pU0mnk7SEcIQFXFzV+dFrELFPVkPe+iRknZu0hw4yImAR7BecasDTMUyJxXl8v45rxZ
+Z+OivIUTH49ChzAQ83BBI9R5K5rGr+oc2mGkpKwFh/lCjBYHoBJr82IAJ89NwjIXo4IyMgLvERnA
+bAAJn3P3jrWEgxxb8a4iHNZTST6Ypye+7VhUpAYK2Pufm4cttdHkA7dPATbelqs2wlweNbgPWxgQ
+E1ZhEkHfLB11j5fsUTutptsELMomWwy7b2P949iuzmPKrhzq/6+Ft9IebQz7O5GJEjoewTVRixwL
+fWCvo1cF1quxGCA0ehoCltWfqStvr7IxdNFYaOifSHz4Xxe4EKDleuhfT5Ek3hoXN6lAbKc381wD
+x7IOPa8bZ+vZbbYZyhKbVLU8Z8P6JCVIoY00wvXkePvwmFg31XHKoe58sGUySEEYHFnKS3CAV1ie
+YDP0jH92kjU4iiEvGDsP0G74zgFGvmmnwlFgkc593rMLL15ZEWu7EXzOk9fsMJOqwY4hGL1S6t5h
+IZbzQ0kjOiJWEP6caGmQhfEGVCVnqgAMvEb1TDxuYGanW3KlQ0TIAZCXI+7pGJLoVzm4qw1sCLvs
+6NWZpFbjeQoui4p5h/S1IksajaBnX/EzziNUH9lKRoI287wY2dRlB1svv/zFwxGSVypCzmB4Za3O
+wif1biM7f1P2Cjl7YCkG36MV2TUPhUxicve1PhVTqplcMlfjII2b2q12fk4/8JMmncFN472gEib/
+Ndq6tYwma6pQjJefxUjmkoJi3irXjwd/QZRcX+io8ETbelaIR6qFnWLJjxn/5GcrN3zCGPyShiGJ
+TlSsh7fMWKUIiRqxlDBjG3ImyMdKENy8aH3IReJI0KIDsrVmhIwsl7x6eNxcVwOfDsewcNKJs/Qv
+3pLsWqO7hs8FzDVXV6nms0pKOLDqLMvyfZRsVPRjwGYoh/HapyrXaL6iSiol1T0tFcGIEQFHpWcB
+Sineb8ZRKx8xY6KGDhHvY9GsvE4vM+5pn2yck9w3RFnCXjkl4QOl5DCJJv21ZyYhhqjVx3EOZjfu
+CRqc29CUVVG3ru/hQK46+3PsWb5CxYMx6yw2ZUbvgHV20IweSwsPvbrt61dnBlH7LPnc9CnrlcxK
+76RUkguKXy4aU+JGzFPDgdoiUVEcHkn0XfOQ9FlJMePqUzeMg3ZaWzZwUK2I/3MPx6xnlRV68fFH
+YxST9aCFpUzLNdRO1/39PD6jGUcoLhqs3N+12pw//4+XN6HdJ1swU97K+5Aq4WW1O68JX/m0qNiB
+qmcD3Lv5T5X8zXkMSxxtQhLHQRmfWL7w93GvJtUWJITo6xE8M3JarIw6Mk+lQytRrZy9dpkN8v8t
+dE4oDfnpJ3Tjxof+sC5RHemfJdYmcdLEzCvQXYlzTi3NNsQ3YGpD3hYa1DRpoEJD9byN+2r9X0RC
+KrIuGt3ztNnLMNyZ5Xnxrnxo7z4w4+QhHclozFPavJ9XAVUInl2uegDn9E4aNCxT+OBZ+GGlca1t
+0LddncC3Z0egVAx0KPlp6hXrMriMQ1o4EixUfsY1R74to0I+ZNJk9/PD+P0sLejGAM0AnQKFHsJ0
+AXArayzeMJeVk9GFeHwfZ1cc9G3p5UtyPtW1Y8BhxgT67IXjlWLiDRuq/IjAfEcR5vxrGsLatbNL
+SzOPvdRUr0nQIbM0FbhGxdPjFt4bvD88J3Axl89lU03C01vlmFgwxkvVl+b3W3kcmMgNHY1QrBse
+4dZucGK5H2gUdpvb7ToskSjiB1Eflc0oO7TTsncMhItmDRRX3exiwwsByYmCJzBwOFnoH+qpEbdo
+Jt0s1O7B3W+a9YJRkTLLXqlfS01RMMAQVsRuIRald1dCFK+oDYRvBYmu/ZxWjKwA85JMNZ4Ifjma
+tDbPwORYHb1vplm6C+MsN8lJAARRYKeAIaGmYbYn1eQNZ+hDoiJk4HWjvVDNAH4XPbwxNDOtv31L
+ZwWfZaKmbfDCMAdAx7q/Yda9z78OQUAojpWTBOtrqb2rIqgH2f9/ga99y3NDJhLe+XT8VkksQXog
+9ThXg95T+hZFlcM0bjPMn75goz1nWeD1Fa9fAlIZxh7ipQnHjVznTUrvTSYnK/Rjx4YqLKnk21om
+5ySCQyUNA3uEgG8Rn3wZ+oj0qvBgsSvNzjZTGSfxlSWzl+4NucY145D2R8nCW7gHo0OeHPFp1jOu
+s0blfZrfN2hejK5DR2a5Nk6Gi+8XRrx2hDlxRigR+iMRSY3AFtbgEz2MoSxLFqeKKfrdJMIMxOQB
+ZtUokxrfD73z38Cuoh463EQ9pI+OaTub8SJfkd5Ig4SCmEg3xG9ye9rDrRjtO3lCptGFEIv8B0Qz
+qG17wVZU0fEZ3moPS+h2WZKu8CNdKQ0XQ/gzvsTb57YIRLQ06PKA5FRidU5TwzwRD7YICKtNdU9I
+0+WpUvAVMZkClaWLqTBOz9+WhkCOm0DkYZK27dxVGWGc0tm136jB7cADq+2VZLeunDictnzbDuH3
+mguIVGLcjymB/5aCbUQQmolGAEE38lUQcTGLyhroiM9NelfT9Bgde742MR308pNQrIxXumbj1QqE
+Y/t4DhtuSPaJ3mcx128cPJ51+feJoVqcNSSD5GrOWjWfZrsq1I9T/MQUZLdSJdLv2le0aYvqwmqa
+OCXjvtTsQWLFL1yo/2Kq5p64Q9H2vt9Xb/KZ9cxSrpaBssITyCAb1FhaisFOXfrSXTdW6DiQbnQ0
+rKzrPOd7+wQZMGIK403vSUP7eHsBV4M2k0MqfZlgAGX8w9hh/LF9iNaslIeNFUvUm4rgSA0Nq0yX
+7jkG0zDasvDaq8x+xDxSaom2AhdlZTWfWC6CjZPgVKfOCm74MmidcS5Z6vLS8H69TpqWqxOAuEj1
+LaoACla888tgspVso+C2EW/wHPa7pk8Nv9cg15JDLGwIV7WwHt0pFtUv8M5N3RwXewcwZLg3By+E
+Cb1EAOMR5fgJUUwD5JXnJPPUb9hwmnJjUYdwG7NjDDzsVWGgEO/ZtYH2Pw7sqLO1wzIVAS4FdC28
+Dh0HlXy95jaQlWCQhzdgXTAaupZzuvjq2cdUxjJJCgK5b1ytKqInkaDbOrS3z0jCKkJKAKOLOCWz
+25O59zl/OXzHlxHTcy+YJcqUGito9SWoaW0UsnOVdC7ZV2osI8mTmajj8ZJgIJBbrN/SPB4Zr9aY
+XRRLfG49WH6cE27vtQ+DDgyP/mPIa/v65+YMIKU20KT5FTnbb+xHTGi//PBo+HAP5QXblBmcYM8o
+3LXvM+UytimN13GdjE9/YKQe2R4BL3yQR08oiuU58FGLS1He4QYkuILhCLILbzBGcucSHvfQgt3v
+MiW/RmP0STMZkJ/rUmJcJG2WFsDiQAjqFrRM8w7GaL4k4n8qeAVE0pFcLNj+PzOlKJCMVmETYkj9
+pzmTRxtlzi2x8EMil0zzM+hlDwuunnM+sYicp7FYl2mkGOLwajLJzDEIejUUbvPmRC1Sic/spzO1
+Q9CB5aapgpaOgn6qj6JPgedHSRrBYFicQAVaeAIks7KObwJgQ60W8/mLX7Fi1sQVvlmO0coiRGKJ
+H2wMWw6SDy90JDDn2Bu1zIVU5Qq+M0q42og6f/Qs/tYSJ19vl3lZAstYlHwOCsU8qdWD+2+1j3rQ
+GdmFGHXlKj0WuXtgQ1l9uEUdLW1Q30lyelDRQyOdgkFncweIYcWogOXsrt/ilQ9DU5VMeRcoDe1y
+qFimb6kjS3hPLa0p9kEmnPYJIT3TBEszWnosvk6BvjXIFn2XXjKXNqpVjXDlZ4v/TsXeB8nRr203
+/X/fMezV9d2BGFW0Y5FgGzZ7GOQf7WIJJGG3vZjZ/8YIfNZ06kpQczfK0Ez7bexnyLWgnCLEQPZF
+9gTrhbLdhT89XyIQ1JslYmNaLXRQGoYG9TW/YIQ3I0rJbf7OY+HLJj+mepeLJVxnbzWnm6NfTUIR
+ieNyX9UGWsrrrc5Qiw6H8A2qn/ESbaFCLvn/p3IjveQVbxIJkKNz6kn7qIcZC1k2yUmcr4x+Darz
+z0orHSz0+6evyn5bBQaGbBglGnLoLN6evUq3ft7DjE2+9MZ88CSzZeQjeJqrQl+iG3szQ2FMOrJC
+TjbRR8E3XK3AAm/t+iMOmnV1KbEy1nyc3dOV8m1Ok/vPHGHLpVlBbGgv5RrvSy0fJ/fBNtL32ZZs
+27X8sAyjFjxXJXg4KuNJQdJqDNPEGLs6ayBA0UcPKB1ZCZNWGciz2teU6sW1TP1dmiw1/5mzdtui
+I0lh1Qmhg6UhOvwV/zAaSq28suAtHekpMEcIGHnS51Z6A/P+IALFdEgEw8zdjPl/tfeOFw4x1HbH
+XJ3e/9CMrwifN86j+nX2IfsuoTjMj/TiyyDMAPTAzCjEpsRfTyrQg+s7vFj8AAFK2wXEEeK0L5En
+o6bUqUM9z5/i6sSPcTXiZMnnz+0lBtpgTQS32n6Q245c3LdyMVpKA/SI99s/95zOLk/7rPxKwVRN
+OnX6RuDyVkfS9oxkRw/8CV9XiIwNiymK9MF/3thGb7ziC45GiKHC7T01Tewar0IiXAWdzcNH9Sjf
+4b+/vzl1vnrI2OSxM3vCXCMdJKBULYZhDPxz4gSaggg3HF/7A6iIwA8jrI+0kDbrVgaTNZ7rJ0Uj
+QSWok54tbCoyL4SK19MQqtS67IB3934gKXwTyIHA4WdNHRWTgUGkp9xlvrM7kHMDeoQZ2xXoAsBd
+wtMmkKJOc8Bks4oOsWkMKiAFvUEexFgGGjPrFrNfN4yvN7EQIo9CFxZuY8lxtmwFb4QgXCm9CC8P
+OboquLRdR2fO3yOTRaAVkN+IUiD8tkJDu2NeXKYK0F4zJbjo/hHYVuYNGL4Tfqljxael71tcLd5k
+HTewBfE4eDtTJdARvptmmUXisOi/YdHXdVZfkxqgmK8n7Pc4clgJmN+c6KIKTsefgkjVTAZvZd8+
+/xt9qDOzNSfiA4DxqvWT2ed9T/51Yda33In5EOKgzINxvTfhpYCnVOySQaDodGfyCPvJpyEugani
+BQUeghL9cUxRB5n5eje3hHc0dGe/OrO1odwCxn9KUfTuuX170qfybs79pPrVTaUGq9dixqyZPsdP
+m9N2hfWptcWCsV5R8utvdKK+r64cGi2SKIqEcgcBQ3kipAM/khKV6maL2rjkWrBclPBpjAu+NHLu
+BwxWv9RkE2x2pmVMQM+OVRTGNx4gl1LqG/djvfiIwxxjvtRLMvrwQqaRnfUjZi6UJYZBw6PIcDmt
+AcVtZ9GAoIzCjjCO8Psh3RwNd+gm8AgadtOtsgLyLx9APhSzqko98gMqDcW+wAEOGGPahgppg3Hg
+UM5IqOnzls5+iY0EHvMC8OnObEq0MLmIRcdBgohppQQKKqBWxF1A7MllLxt9TR41HyI8+370PVos
+q5GIk73A/JjjU5+dExQW0gjR9IU4AHTseeUt/WvL/OSL5dY6wCiK/K1WcbJv/uPfIEm+8/+t2fKJ
+qBWaQAkGSWEVwvQ3PDQBM6q4wx6l3XX046FHX+UXuCsUSTlbXDZbnbM0mqfn8WU8+9j7OrBXhsxB
+JbYgsTJMrkM8Yma0xfEZasvNRy4ZenoH7vg6liTHK7x5+Nd6P4lK5EPRd/tfx2fmNX910tb+YXHA
+nceEkd8NJiFABcg9Xrx6sL0/I5xKwINXFwgeOEt4ryljzJ8idM71pAJVKP1Su2O+dNl2ChQGYghz
+8YRM9hr0vqYipFrSpQ+4Zxg654uwtQzENOAiIydiEiesxCe3LaqONndSOb8sRC3G5A8dpsCkDnWP
+Y2L2CES+SvnlR2UTAoBYvGoNJqXAaze4D1FEVdYV/7iFrs+YAw1T7prjVxvRq1yd/FjgueBZFs+/
+Vq09vgXyEenCSPbT36hnYjpDJK+SW098AbytBni8LqHdtnFtq7YMcydJxd1TbdpvdTmqTTS5MwhT
+TYck2hbz/4ESmxv1i/BEy22Mg/fDrw8TIyGTtxQJr7sVRgoE3QJOLkPatL/GyHWOnSAMnyTdunsy
+P4sqLrx/nQehegsM+K1/dspnlelNzsD1bSmaH9tF92nzy+Qci5J6R2xMkBJUjv29RGWBB/Umcdt/
+4yiWLp8QnTOF4xbL31eNFkg5E7ZFjrZAv14Xo+42xCZivkq32M9S31RdtYeTtgTFc1Q/PKnKPV9x
+LLs2O268I4oMd9kKzUvn8Ri7t6VlVYoofmoT4LOPDjzIPu4oZPyujMUSoqjrteELeIeMUMU5W5fZ
+Y1jEcbo6t8mzTco1LLM2zBf4rY8fOXHazeP4Ge8+k80o9fMOU2JNgrro6zlwe1oP+ycGCm/nX+q9
+6xLmLT2VmV1A4nIMLUrBzBm/wejCNkXZ2Cv3CLDKSVKwTpjQ4sbATFD9wbQqcKBupWwzWA9xKiNq
+gVhVQ5xbXE/d/BNtlED2lzfaC7o8la7Nt/DKJEWpfvYQf/WR9pGWCAB+hg3f6K/iICwA4dy+6MOm
+asmP5uCVFj0iVARVjO8/42DHiYbBNb/crLyUcSOdIGzv0bj/nMK9tfoQVwy9HdH1HdbwQb8R90ic
+4jpKcrwO2fO0+DJKJmA1osq778Z92Xn6AGToU2gpyYzlPhyhuJB7EfTjnI5B1GI7ZW58GjH2o/gH
+TNzXAEV+DEGgRGbfK7Ti91lnvxYK5CktSTUmXeaogvZXM8NRA3yEd5pEAiLOO2eSO7JBUo998ENs
+2eK1WZxaht1Z1NsYrKFaD/k1irABZrKShgLyrVq1RjQ4ipcazySGhcJbaNrT/Ti6M6re5+sA3I40
++GELjjj44AX7nfmcMUTStkpSSIHcwM/yv8BmOQDhpDtG/Q54h9vFlsBpHdlc28FlWduzTmYZ0/9B
+54UdBhEWM+wVEQ/23TfAzYTJZoJWNuMQJL4GO1A0yZIwKQdZimsy0CQWVIg0VN2rtPzLsJF27c+I
+kzIiSoS60g+RPtRlMuUk8/Ddtf2vfM5dHXhs0bT76MvZe/QkH7QNKG7o1WqKx4X+PXUDyoulPFLi
+jyDEbSFLozGAcIMXuqemU3/0EUX2qwVpeJhJeRMvKLhDoUhs3d2mnBexpRHc/+55Qt25iTZnKLrB
+c/F21CNzQx93zXbImEFb1//aKMtvDQEKQGf/Ay5CoYrmdqG5Vch7apQ7kvJUru463a/3aBD36vyv
+l/aNadb/jv3lIqBGvHdOJzwdsgwGEt9JeX4C8wvwo8IrcBKLmqQviGWJP98L5STmeAbsxSrRmK2g
+RxO06G68bIa1cfP6gzNU4ku4TrdadAsi5oDbUydU9sk8XZHemYKnDEeN0p9M4rU2fSJ+/uABWK7k
+qYy6TuyknaHbYZRBt7mZH7QyFVOve/B6jnpWtogpLerYRK8WKwTnR+DlXM8ODHpt4Q42ovYNkIs2
+XcvY/kwGD6tQ76SlIgxhZZtteLtnA+aFakvmriYucXN1p8mGm6g5GkXO9dqfv06nViQJm//ckT5H
+OkkrrLMNW3Iyv4KSJMOT7G3pxxPFfemPJwOpiSXpt63ixutKeFbFVFrLiCFjTWEcuHTPYybz2K/2
+YzA8jNLhKYmkg47iivQ69rpcU8pzfHR98ESWcC/oh4mn68RP4ubWmOTgyriXpsQmNPLX0UaFT2X4
+myKNdnYXZugHx8z5CpON9+U/oS0Wq8QydevzZDr2YPmt0LO4Nj9rVgavCY1txMq0fiIsWQqbYMfb
+jpgidf1nfxnQPDgvsjxkO8NsRO9hLho6vND50CLhIC3oH2mC1PrFHmVW7NAyN0/sNZ6EYEPYB+1u
+HTVELxRkydN0yQNq+4VkweEIcDfU3Oo5++S9t9T8+NA6tCzL/kSPKYV0deXAB8jNe3sS8GdFI+rN
+1APENQqwGYDMU4UE+G8WPPMSv3eeDHswzrIeO27vQu8CYi9PST4xtLtsuNu4HEwjWuoue8vZ0b8L
+9kjVjmzbi0oG59NCFcRsXAR0EoIAbtsURmciGcV4MER4RRHWhtuJPAygVfL5/1ZU4HzFY6cRmqf+
+O8+F7BX7Qsc1luKJuB+A4fE924M0HqZgkvjJ/qrbxF6ouKghcOeIBgXY6Xl0iojv00+U4onRehOY
+yaCKyCnSIEN1PEVVBCASAsRAVv1MbwYbnnwvQDXF/sMd43sBSQaI8hNSuZruW0jz9O4XElmrDNLX
+qeiWjx6GKNICJkiESRR8yHAsSZ5Gz1xXhfTA8emp+b1+tqyFai2yDSzp/k0VrILHpc3ZXal+xFIN
+kFw8FZqL+rmvjS+uWTI2bXzHs/hY8nKVNOcz6qrolCv3mq7DcCcohlUI/YDWQE+BQ3Xzrmvu/4jP
+W9dvAgcRy9xVvWflpYAv4kk2BBcdg85hYOurkskE9ae/Ow1TSKwHzd/byagl5wz+1gS5RVI1anM4
+JiH5bLzg9Ou5L5YF9o/mdM3tfLHYQ9csqpK7DaYGwComllcDSNGqCQA3fQQjigvc1JxnzRUOVXZo
+k4KMdO95xEsHPnQSmyBoNAW/X6ikP6CUTuL5LEZs6oczW5BQpdxBnYfqtFFocH03Pg6d9LDMp1zl
+j7WYZFT2XbZAiH/B44FighliWoNZ3sLgUZufGsN6h6n5P0UWUQH4Q9XXwYzon6g5EUKPrFVXJSxE
+fz2b7nebYq2uXbfYHcZ7JnsHkwmlC6bTRrhV/iVNf0vE65mB08cUJOhR+vmsrFDJZmGvt1SaDam3
+Cc2hhl5N1YehT4zl1aWFjVUqREtR0j+VCMfLcFRqMIdtX36trMvY2NBLhWiS1b4OfqGC1GgJopMg
+G0WiOE2x32UZiHPMnR8gFzKo0lI1lHzGDitZ/0oLAkjk56tpg42fD/CkLnc+1i+WfFCs6B5ZAW39
+A1KhUN8ozEbIoKM8wq7jzWx7b6V8ii/YfblpibOqRidqjhAYBFQFhd7sTwnitDVV/m0XcQT+WW06
+AdQBZck/RgcXRsuIjE7bECgDunA7JzVVJ0NcWCesbFX7aILyoSXU51WX2u7dbzJey3wvh37UrKS2
+O/BGWhUSD7KSO2dy6hLkXSJWJoPiTMHxSqDRNc1X8+ue7ogZwJ9a/gDGir9gMHdAsuAYP7NU3dft
+ak5bZSYlzQ/G2Vr6sa6O32pHNaKvXVvJv+lZKps7kHy9hgkX9EA5sCdo8wDn3LzgRJ2N97xIsQ7r
+XW/FREMvRIjK/+v13iP2qXLzTwhnjF8BwrSn8q5uBWM6ZOWBgq91pp0bqbnB3q3ZUCtAKSkXlRfu
+A7X3Zt7f4fwhqWuV3gHEMX3fNCLTUdRqNRi1XIqHemgAmb9g7fO+YdPVsvuY483iqHCrK9n6jwD9
+U5rIqTPmBgWI9k4xaKZZkx+W4JIXUrwEt0omWacI/9bRXUHPFjqZg94urGS5QzocpnAcphhE9smb
+2yql8UsFAsyRixHrNfCn674Vkw11ufx5Ww3p2gOT1/AT0BgcPX80RhsjFO9WL304T4TsBxEWfBRn
+4eQIy2IsxvGTzA2KFUpMSGew+lVb5A4SyegSkclJiV9DP3REtHviQefycp6gxGadP72FeNrN+kI3
+TH/cbdHoAJkkTTY9e0r+RFXBgS53rOj13RkJcdW87uurzoVQscljpC50lCcDdjv+fO8n9hDEZyB5
+AqLVG4gn8fSh2NSmnlJCi3sg8I7wl0Q2S0FupBEVVBBTddiH7WywFuyxxJRtpSihzHqgV7PfDRDL
+apv+i5/QtB+u6f6G2tCWTPChy4mJCudr1yYOw/OYq8pXnK0mYllcUsHKbB0GYO8RBbdjlGlRYD6B
+lNvDZNe7e2N+mnyGYFdBqqxO+QmgXG5mkoFoq8MQG7/oJXaYQ4PcDOLoB38hZt3pqJ5mnTgpYDtw
++CAPj0tgVxfzKGHngZdhMr25bXru9MQrWBEvJQSM+QucOuQIcshhYtvI3R3rqkfHgVShUQFOXmB4
+p+9a7MTP2PbmnUapNXDASxECjb7ZW6H8oPO9Ljo4XODB3U8NvVzkHfkdPHv3S5mcNNGkyGiCer4Z
+1Jd8FTFuNJy+C1nI+K0MY4s5qKkFQpSnVCQ8xeuHablwyZlzEcrEhPBhHQ4we3sejeiImf463V/w
+MLysnfzQnTbIbHxYlBFSWi4vKt5Nr57UUCzrX19qdq3LYZK5dc8Nz5DpDupO51Zd5QSWqDaqMMZu
++gwFzFJ9Yt+3HIcxz75z0Eco2tIa+4xErnWSBllstV5gq8frukUi8uuuhgtJoyYccdCzH77mopuw
+0t8nYpzW+Lp6jablzGf+0mtQhoH9agElih6m/La0kVmPirRceQI6JZXhT5tQqypl8F8bFhnP+SwD
+9p7sj2D0dSfFkkY+peH8crIiwGKbCrcxkmOL0vIpAt+JnID3Q5Z4hFiWLUzyOjvF0Wx8V8h8UoDR
+kpJvMg8VuO3EQ2hHbta+J2LPdWq2lUyiVS2EByRl4vE5RpwC/l/WW5VmGenEgY1l1vWMB4U8f9SC
+lRDnKhbNAHvgu84BltoBioxUJqSPoZ87q43y5/GqYZBYs/4qs3AcL6tQzfwc4wEBYVNwGxZ6qC1d
+JB00tl9Z3CYHBSdJ2LNYOj4UFJCRwm1G64x/XCluzESJRZLj1xLA3cWPu7HSGp/Nb8i1Vj9+mqtu
+UJPVYXyau3kVQZ1fSAgz/DTsxcsxoyfbww8UU2P2AtCfPMm22acLuUIK8tNsQsisVC536DKqLgVS
+ZbaEqq6YUroIkh6H/hEsfd0gpZYubWlSXyxlmNvkjausdGUZwdwWVR7i7Unxq6i5/tkxFLPYuSdd
+OKdIm3rv0lN+IquLWHHrp4rci/F3plqbo9b3vSCIUdnHFGb9kBkqwbbqx6Etg2ulOd+RvGd1l4/1
+vHUTTVu39bEUr0YvwYp+XsfYRssxEAwPYLQDB/rwY4sYYgqsCkj5UTUs6Hxvg6yP2/4dtAscEptN
+bh2+PhU/uLZN+265dVt7VSjOoVxOkigBy9HMaQn53fSBZoqJu14EpV6CAE4+mUa/YEVfMFH8KRgz
+9SuMc+yi370kT1L1y0cXP9enVupwStaflUAQgz7E8w7ntb1/EwuposfMhh/yRhmBkLSlU3UsuRmB
+UdExvKdapeFUETMceuhJ9/PP3yEtX7Wm75z7/v6zYE9iOzkJEsOOmefaFgsrUSjkmCPKRd4isOVI
+Z/dFE+nfT9UKAJk3KCx3pLQCJih9l1wDAyyZf+oSawOJEYHa39HC0FJmi2ho6eJLb66IH43+gwIW
+/LTDmVtaLwyAT65lokSORA+Qugdl7jAKN0fT1jzQnbvOmxz1//gUVI2la7KOeiH8GaN/czv/e6bs
+hkdE9mBpP0c9A/p37aURv88d3w1Rezt9GqiNPrwlAqjx1lff9iwhpsVEhwRG4e+vcAb1ZYM77pZH
+5mYM1ELpDawKftPu6ljgwODlA7POx1ZJHUkKjeYMaWjE4GSJRCCwy6oCwlIMaYlg2XD7oS0CWQ2/
+xciPOrsaTTGJAtaJldZnlWGzNLwmBbF5DdqvMUMSFxW/pLBPCvFZqSGsOQZoyq0Pidxf8lpQ8ELr
+TCBY7nRGDgTQkvcZ1n6uURa14+YhBqIVn7jFSx0MwasUsqgNHqKNeOmPRbNIVwUWkJehEZ4aQY2n
+ocaiL0/zdH3UOMUzf4MTERyNQrEt/41WV6elW31p/Efk3YnQMrrFyQsIdCedR73UXTgisdfho+Ma
+xfXaOVGorbdScTYmvNf/Kv6cho+Gvc+P/JP6N5RI54vbTQy2QJed4+8FJpyeAu9NYf873/6K4Eox
+2DvdnWJb39GrmX91pAonxb8F+FwqSD3q11ysZfKdyE+bZrHAt+AHPrVrMTO5XHT7+x3jjlpE5K1O
+s+7/G6KVeiTRxwAJPsudQ2/rMRFmBNwTqBU61gfWHXuIbogngczxOLE9dbmSLLyAW7qQavkDgX6L
+/Cw/a8vn84DyifrGCVX/WzBVDy95V+k9UXs4L+6ugDX5iXBcyWaCIeySauZju5mESuxCoBvOWyn+
+Jlg6tBh/x21GpBATexHAJggVGEcO9xhPkR6kWKxa49plntcbbWEO2MvVJhBhBXx7EHy45gRLgdHh
+3DHXIsC4Y/E7XVqKFhIXtUUQqZQnbyLJU8P/0p8cdkOeWhGKiNT7ZZ++Z2VVS0DlSSCsmPoorWWB
+hOMpn2pu2op3NUW6D8fwSM/FAWkYCJJ4e9SllZu5f5EgpNM0Lk0LguXcROPgm0tpPrBrsb/V/HTF
+V8SwPmEdLUXb+m+gSpPpNuIkCaIGQFmOZ16hvhfjQIKuVd3H05aARNTV24X6FMJr4hYaPJvabjy8
+Xpto861dkApkQpqk8v1R0tl/j9kGDW61bbT++HInB/HKqXV/i8A3icsi22f3CmbX4+RrBPQX42dc
+ZybiuwQ4wXbFLwIPvu+y5nx4lKC9y7vPN53SuoO87tIHClMfoKC4Uob7yhICSLhjZtZTSYIi3zap
+HJuNc74rautl5KnSI7mmILiZZxKmm0AAChI2RI7I/V6nMWIXVRJdiFs2Zy2DrvRDYOFc1NSZAJIV
+8xxbonoDyehDChx6qMgr7LjuosKjJzapinwIyZVK2u3o08QDFgfz0Ho2NEjUrIHLaWaDzcKry8/6
+o4oS2yi2Sb4XZ9gMfMboEs4C4PTpeUVHKQFglaLI2S5QiciNyKsKk7f1ZcyY3objjnF/j+GVap9l
+fg0T/b1m5MA2U1UFbVnRoxN+hhiRg6a058U4I4/t6XxGHCn5/2OGXDwee8eMuNpGiXb5XSh5OomN
+YHG0qttdm6f3JGIeQVhv6CqZU/pyGuLa9AsTGGBkWn20g/xT+F/AEwH6fGqAh5mq1ceiZUpp3YlU
+PuR4slxIdwRDnbHWeK+MelZLG1fg9PzwDAEYhhKzM/8KQCKb1kMrZxKAaaS7GpBtgjq1WxRyAoLT
+CyB+0INPf/O7jR7SjvGRf1HX0u2Ypu2GdJ8/c3cXThSu2RKsVwffcXyTv4nlOf4rOZq2z3AgZFYK
+NO4iIAYuBKs7OvnUT3XTBn/S9wgxSubt8h9yKw/L80QOQ5PiLSW8vo2hHHlFRoBoB1g2/+6BLm/c
+p9Wd3fsQ2+kIObC0fhMUZCdi0bOIjXIKKquo1FohlUuTTljkBlXwt1qxyccWmahQQ/xkJxW7Sj43
+2p7Luq1vq12l/hEyrbb5prB0S2BPFWgBDxUMnSOcIDSzalGGw+JgoZXbLAbL0vEI2NNssHhy/rn8
+W59P8e89E0GGamLm599VUk2xvPd1XgHQQPRF6Dc00s8oj30Hqt4regH+7sogzRo8CYdkOdhxz2T1
+edKn4Q4vATK8bUHeAPnMq+4icFlf3NJJUE/No4XpZXaxXoBU55pQ4YB1n1xabWYdDNUFCJjqwyrX
+VM/pEqiBvIMhYcNCHXk6YEBM2ITNEKDIIZE3JR7cqGSX8y5OYJyiZ8QRwxsL+hgVv1K0YmNUBFCh
+YgrYw8smE+LhG3/UArfGjBpqNemeT9/tr4ff2opCgCN+NWDgvJR0NiVbI+6gd+4KeBsz8FHyCkrH
+AoCLiA1cXGJq/UIzlnmC23VwlxrusaW/psrBXayV8M2jJVzfDqJWuVx5qpS6o7F1V0pOA0MEP+9m
+Hte0cvTci7GcNkhYnuFV/bQRzfg1/L4Gaz00Rqz2oH5imcIt3OybMKCr1amkluIOnVubQrj6W8XF
+wz+Mzn6KCdWJEYQ2B3s7bYLbqoPiZejaQKJYkWTy+CNts2UY8BGbGfOVZT+YmsFwBBiBZ/2HFhG2
+UutxOoF1zGIKuDXr4Wg/6kOCP6aVkRYBw5iaIeDDMoaw7jPgDRX6+DjT8r+WUGCUiOt92BzBplDl
+Uzghsdq2TLTe1vBkuAKQLxU1FHa0Dy2vvi8Mwx31E4nuJ78JI6UpIwBa7+Mt

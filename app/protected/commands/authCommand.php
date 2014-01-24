@@ -1,66 +1,46 @@
-<?php
-
-class authCommand extends EConsoleCommand
-{
-    public function actionInitialize() 
-    {
-        
-        $this->printlnColor("********************************************************************************", self::FGB_WHITE);
-        $this->printlnColor("*                                                                              *", self::FGB_WHITE);
-        $this->printlnColor("*                         WRITING AUTHORIZATION RULES                          *", self::FGB_WHITE);
-        $this->printlnColor("*                                                                              *", self::FGB_WHITE);
-        $this->printlnColor("********************************************************************************", self::FGB_WHITE);        
-        $this->printlnColor("", self::FGB_WHITE);        
-        
-        $auth = Yii::app()->authManager;
-
-        // Create some roles
-        $admin = $auth->createRole('admin');
-        $staff = $auth->createRole('staff');
-        $user = $auth->createRole('user');
-        
-        // Create some tasks
-        $task1 = $auth->createTask('task1', "Un task");
-        $task2 = $auth->createTask('task2', "Un task");
-        $task3 = $auth->createTask('task3', "Un task");
-
-        // Create some operations
-        $auth->createOperation('task1_create');
-        $auth->createOperation('task1_read');
-        $auth->createOperation('task1_update');
-        $auth->createOperation('task1_delete');
-        $auth->createOperation('task2_create');
-        $auth->createOperation('task2_read');
-        $auth->createOperation('task2_update');
-        $auth->createOperation('task2_delete');
-        $auth->createOperation('task3_create');
-        $auth->createOperation('task3_read');
-        $auth->createOperation('task3_update');
-        $auth->createOperation('task3_delete');
-
-        $task1->addChild('task1_create');
-        $task1->addChild('task1_read');
-        $task1->addChild('task1_update');
-        $task1->addChild('task1_delete');
-
-        $task2->addChild('task2_create');
-        $task2->addChild('task2_read');
-        $task2->addChild('task2_update');
-        $task2->addChild('task2_delete');
-
-        $task3->addChild('task3_create');
-        $task3->addChild('task3_read');
-        $task3->addChild('task3_update');
-        $task3->addChild('task3_delete');
-
-        $user->addChild('task1');
-        $staff->addChild('task2');
-        $staff->addChild('task3');
-        $admin->addChild('user');
-        $admin->addChild('staff');
-
-        $auth->save();
-    }
-}
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+Ybu=

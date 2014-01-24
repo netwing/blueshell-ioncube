@@ -1,91 +1,48 @@
-<?php
-/**
- * PSR2_Sniffs_WhiteSpace_ControlStructureSpacingSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * PSR2_Sniffs_WhiteSpace_ControlStructureSpacingSniff.
- *
- * Checks that control structures have the correct spacing around brackets.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class PSR2_Sniffs_ControlStructures_ControlStructureSpacingSniff implements PHP_CodeSniffer_Sniff
-{
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        return array(
-                T_IF,
-                T_WHILE,
-                T_FOREACH,
-                T_FOR,
-                T_SWITCH,
-                T_DO,
-                T_ELSE,
-                T_ELSEIF,
-               );
-
-    }//end register()
-
-
-    /**
-     * Processes this test, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token
-     *                                        in the stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-
-        if (isset($tokens[$stackPtr]['parenthesis_opener']) === true) {
-            $parenOpener = $tokens[$stackPtr]['parenthesis_opener'];
-            $parenCloser = $tokens[$stackPtr]['parenthesis_closer'];
-            if ($tokens[($parenOpener + 1)]['code'] === T_WHITESPACE) {
-                $gap   = strlen($tokens[($parenOpener + 1)]['content']);
-                $error = 'Expected 0 spaces after opening bracket; %s found';
-                $data  = array($gap);
-                $phpcsFile->addError($error, ($parenOpener + 1), 'SpacingAfterOpenBrace', $data);
-            }
-
-            if ($tokens[$parenOpener]['line'] === $tokens[$parenCloser]['line']
-                && $tokens[($parenCloser - 1)]['code'] === T_WHITESPACE
-            ) {
-                $gap   = strlen($tokens[($parenCloser - 1)]['content']);
-                $error = 'Expected 0 spaces before closing bracket; %s found';
-                $data  = array($gap);
-                $phpcsFile->addError($error, ($parenCloser - 1), 'SpaceBeforeCloseBrace', $data);
-            }
-        }//end if
-
-    }//end process()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+yhJRRS9J

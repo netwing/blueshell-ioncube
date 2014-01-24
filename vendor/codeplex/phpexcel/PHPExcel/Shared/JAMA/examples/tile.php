@@ -1,78 +1,36 @@
-<?php
-
-include "../Matrix.php";
-
-/**
-* Tiling of matrix X in [rowWise by colWise] dimension. Tiling
-* creates a larger matrix than the original data X. Example, if
-* X is to be tiled in a [3 x 4] manner, then:
-*
-*     /            \
-*     | X  X  X  X |
-* C = | X  X  X  X |
-*     | X  X  X  X |
-*     \           /
-*
-* @param X Matrix
-* @param rowWise int
-* @param colWise int
-* @return Matrix
-*/
-
-function tile(&$X, $rowWise, $colWise){
-
-  $xArray = $X->getArray();
-  print_r($xArray);
-
-  $countRow    = 0;
-  $countColumn = 0;
-
-  $m = $X->getRowDimension();
-  $n = $X->getColumnDimension();
-
-  if( $rowWise<1 || $colWise<1 ){
-    die("tile : Array index is out-of-bound.");
-  }
-
-  $newRowDim = $m*$rowWise;
-  $newColDim = $n*$colWise;
-
-  $result = array();
-
-  for($i=0 ; $i<$newRowDim; ++$i) {
-
-    $holder = array();
-
-    for($j=0 ; $j<$newColDim ; ++$j) {
-
-      $holder[$j] = $xArray[$countRow][$countColumn++];
-
-      // reset the column-index to zero to avoid reference to out-of-bound index in xArray[][]
-
-      if($countColumn == $n) { $countColumn = 0; }
-
-    } // end for
-
-    ++$countRow;
-
-    // reset the row-index to zero to avoid reference to out-of-bound index in xArray[][]
-
-    if($countRow == $m) { $countRow = 0; }
-
-    $result[$i] = $holder;
-
-  } // end for
-
-  return new Matrix($result);
-
-}
-
-
-$X =array(1,2,3,4,5,6,7,8,9);
-$nRow = 3;
-$nCol = 3;
-$tiled_matrix = tile(new Matrix($X), $nRow, $nCol);
-echo "<pre>";
-print_r($tiled_matrix);
-echo "</pre>";
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

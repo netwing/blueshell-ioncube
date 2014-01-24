@@ -1,130 +1,62 @@
-<?php
-
-class CommentController extends Controller
-{
-	public $layout='column2';
-
-	/**
-	 * @var CActiveRecord the currently loaded data model instance.
-	 */
-	private $_model;
-
-	/**
-	 * @return array action filters
-	 */
-	public function filters()
-	{
-		return array(
-			'accessControl', // perform access control for CRUD operations
-		);
-	}
-
-	/**
-	 * Specifies the access control rules.
-	 * This method is used by the 'accessControl' filter.
-	 * @return array access control rules
-	 */
-	public function accessRules()
-	{
-		return array(
-			array('allow', // allow authenticated users to access all actions
-				'users'=>array('@'),
-			),
-			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
-		);
-	}
-
-	/**
-	 * Updates a particular model.
-	 * If update is successful, the browser will be redirected to the 'view' page.
-	 */
-	public function actionUpdate()
-	{
-		$model=$this->loadModel();
-		if(isset($_POST['ajax']) && $_POST['ajax']==='comment-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
-		if(isset($_POST['Comment']))
-		{
-			$model->attributes=$_POST['Comment'];
-			if($model->save())
-				$this->redirect(array('index'));
-		}
-
-		$this->render('update',array(
-			'model'=>$model,
-		));
-	}
-
-	/**
-	 * Deletes a particular model.
-	 * If deletion is successful, the browser will be redirected to the 'index' page.
-	 */
-	public function actionDelete()
-	{
-		if(Yii::app()->request->isPostRequest)
-		{
-			// we only allow deletion via POST request
-			$this->loadModel()->delete();
-
-			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-			if(!isset($_POST['ajax']))
-				$this->redirect(array('index'));
-		}
-		else
-			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
-	}
-
-	/**
-	 * Lists all models.
-	 */
-	public function actionIndex()
-	{
-		$dataProvider=new CActiveDataProvider('Comment', array(
-			'criteria'=>array(
-				'with'=>'post',
-				'order'=>'t.status, t.create_time DESC',
-			),
-		));
-
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
-	}
-
-	/**
-	 * Approves a particular comment.
-	 * If approval is successful, the browser will be redirected to the comment index page.
-	 */
-	public function actionApprove()
-	{
-		if(Yii::app()->request->isPostRequest)
-		{
-			$comment=$this->loadModel();
-			$comment->approve();
-			$this->redirect(array('index'));
-		}
-		else
-			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
-	}
-
-	/**
-	 * Returns the data model based on the primary key given in the GET variable.
-	 * If the data model is not found, an HTTP exception will be raised.
-	 */
-	public function loadModel()
-	{
-		if($this->_model===null)
-		{
-			if(isset($_GET['id']))
-				$this->_model=Comment::model()->findbyPk($_GET['id']);
-			if($this->_model===null)
-				throw new CHttpException(404,'The requested page does not exist.');
-		}
-		return $this->_model;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+KwC=

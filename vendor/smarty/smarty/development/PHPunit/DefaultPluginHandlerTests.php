@@ -1,155 +1,78 @@
-<?php
-/**
-* Smarty PHPunit tests deault plugin handler
-*
-* @package PHPunit
-* @author Uwe Tews
-*/
-
-/**
-* class for plugin handler tests
-*/
-class DefaultPluginHandlerTests extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $this->smarty = SmartyTests::$smarty;
-        SmartyTests::init();
-        $this->smarty->force_compile = true;
-        $this->smarty->disableSecurity();
-        $this->smarty->registerDefaultPluginHandler('my_plugin_handler');
-    }
-
-    static function isRunnable()
-    {
-        return true;
-    }
-
-    public function testDefaultFunctionScript()
-    {
-        $this->assertEquals("scriptfunction foo bar", $this->smarty->fetch('test_default_function_script.tpl'));
-    }
-    public function testDefaultFunctionScriptNotCachable1()
-    {
-        $this->smarty->assign('foo','foo');
-        $this->smarty->caching = 1;
-        $this->assertEquals("scriptfunction foo", $this->smarty->fetch('test_default_function_script_notcachable.tpl'));
-    }
-    public function testDefaultFunctionScriptNotCachable2()
-    {
-        $this->smarty->assign('foo','bar');
-        $this->smarty->caching = 1;
-        $this->assertEquals("scriptfunction bar", $this->smarty->fetch('test_default_function_script_notcachable.tpl'));
-    }
-
-    public function testDefaultFunctionLocal()
-    {
-        $this->assertEquals("localfunction foo bar", $this->smarty->fetch('test_default_function_local.tpl'));
-    }
-    public function testDefaultCompilerFunctionScript()
-    {
-        $this->assertEquals("scriptcompilerfunction foo bar", $this->smarty->fetch('test_default_compiler_function_script.tpl'));
-    }
-    public function testDefaultBlockScript()
-    {
-        $this->assertEquals("scriptblock foo bar", $this->smarty->fetch('test_default_block_script.tpl'));
-    }
-    public function testDefaultModifierScript()
-    {
-        $this->smarty->assign('foo','bar');
-        $this->assertEquals("scriptmodifier default bar", $this->smarty->fetch('test_default_modifier_script.tpl'));
-    }
-    public function testDefaultModifier()
-    {
-        $this->smarty->assign('foo','bar');
-        $this->assertEquals("localmodifier bar", $this->smarty->fetch('test_default_modifier.tpl'));
-    }
-    public function testDefaultModifierStaticClassMethodCaching1()
-    {
-        $this->smarty->assign('foo','bar');
-        $this->smarty->caching = 1;
-        $this->assertEquals("staticmodifier bar", $this->smarty->fetch('test_default_static_modifier.tpl'));
-    }
-    public function testDefaultModifierStaticClassMethodCaching2()
-    {
-        $this->smarty->assign('foo','bar');
-        $this->smarty->caching = 1;
-        $this->assertEquals("staticmodifier bar", $this->smarty->fetch('test_default_static_modifier.tpl'));
-    }
-
-}
-
-function my_plugin_handler ($tag, $type, $template, &$callback, &$script, &$cachable)
-{
-    switch ($type) {
-        case Smarty::PLUGIN_FUNCTION:
-            switch ($tag) {
-                case 'scriptfunction':
-                    $script = './scripts/script_function_tag.php';
-                    $callback = 'default_script_function_tag';
-
-                    return true;
-                case 'scriptfunctionnotcachable':
-                    $script = './scripts/script_function_tag.php';
-                    $callback = 'default_script_function_tag';
-                    $cachable = false;
-
-                    return true;
-                case 'localfunction':
-                    $callback = 'default_local_function_tag';
-
-                    return true;
-                default:
-                return false;
-            }
-        case Smarty::PLUGIN_COMPILER:
-            switch ($tag) {
-                case 'scriptcompilerfunction':
-                    $script = './scripts/script_compiler_function_tag.php';
-                    $callback = 'default_script_compiler_function_tag';
-
-                    return true;
-                default:
-                return false;
-            }
-        case Smarty::PLUGIN_BLOCK:
-            switch ($tag) {
-                case 'scriptblock':
-                    $script = './scripts/script_block_tag.php';
-                    $callback = 'default_script_block_tag';
-
-                    return true;
-                default:
-                return false;
-            }
-        case Smarty::PLUGIN_MODIFIER:
-            switch ($tag) {
-                case 'scriptmodifier':
-                    $script = './scripts/script_modifier.php';
-                    $callback = 'default_script_modifier';
-
-                    return true;
-                case 'mydefaultmodifier':
-                    $callback = 'default_local_modifier';
-
-                    return true;
-                case 'mydefaultstaticmodifier':
-                    $script = './scripts/script_default_static_modifier.php';
-                    $callback = array('DefModifier','default_static_modifier');
-
-                    return true;
-                default:
-                return false;
-            }
-        default:
-        return false;
-    }
- }
-function default_local_function_tag ($params, $template)
-{
-    return 'localfunction '.$params['value'];
-}
-function default_local_modifier ($input)
-{
-    return 'localmodifier '.$input;
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

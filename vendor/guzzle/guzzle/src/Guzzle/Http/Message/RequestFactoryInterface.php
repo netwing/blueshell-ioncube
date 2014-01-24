@@ -1,105 +1,54 @@
-<?php
-
-namespace Guzzle\Http\Message;
-
-use Guzzle\Common\Collection;
-use Guzzle\Http\EntityBodyInterface;
-use Guzzle\Http\Url;
-
-/**
- * Request factory used to create HTTP requests
- */
-interface RequestFactoryInterface
-{
-    const OPTIONS_NONE = 0;
-    const OPTIONS_AS_DEFAULTS = 1;
-
-    /**
-     * Create a new request based on an HTTP message
-     *
-     * @param string $message HTTP message as a string
-     *
-     * @return RequestInterface
-     */
-    public function fromMessage($message);
-
-    /**
-     * Create a request from URL parts as returned from parse_url()
-     *
-     * @param string $method HTTP method (GET, POST, PUT, HEAD, DELETE, etc)
-     *
-     * @param array $urlParts URL parts containing the same keys as parse_url()
-     *     - scheme: e.g. http
-     *     - host:   e.g. www.guzzle-project.com
-     *     - port:   e.g. 80
-     *     - user:   e.g. michael
-     *     - pass:   e.g. rocks
-     *     - path:   e.g. / OR /index.html
-     *     - query:  after the question mark ?
-     * @param array|Collection                          $headers         HTTP headers
-     * @param string|resource|array|EntityBodyInterface $body            Body to send in the request
-     * @param string                                    $protocol        Protocol (HTTP, SPYDY, etc)
-     * @param string                                    $protocolVersion 1.0, 1.1, etc
-     *
-     * @return RequestInterface
-     */
-    public function fromParts(
-        $method,
-        array $urlParts,
-        $headers = null,
-        $body = null,
-        $protocol = 'HTTP',
-        $protocolVersion = '1.1'
-    );
-
-    /**
-     * Create a new request based on the HTTP method
-     *
-     * @param string                                    $method  HTTP method (GET, POST, PUT, PATCH, HEAD, DELETE, ...)
-     * @param string|Url                                $url     HTTP URL to connect to
-     * @param array|Collection                          $headers HTTP headers
-     * @param string|resource|array|EntityBodyInterface $body    Body to send in the request
-     * @param array                                     $options Array of options to apply to the request
-     *
-     * @return RequestInterface
-     */
-    public function create($method, $url, $headers = null, $body = null, array $options = array());
-
-    /**
-     * Apply an associative array of options to the request
-     *
-     * @param RequestInterface $request Request to update
-     * @param array            $options Options to use with the request. Available options are:
-     *        "headers": Associative array of headers
-     *        "query": Associative array of query string values to add to the request
-     *        "body": Body of a request, including an EntityBody, string, or array when sending POST requests.
-     *        "auth": Array of HTTP authentication parameters to use with the request. The array must contain the
-     *            username in index [0], the password in index [2], and can optionally contain the authentication type
-     *            in index [3]. The authentication types are: "Basic", "Digest", "NTLM", "Any" (defaults to "Basic").
-     *        "cookies": Associative array of cookies
-     *        "allow_redirects": Set to false to disable redirects
-     *        "save_to": String, fopen resource, or EntityBody object used to store the body of the response
-     *        "events": Associative array mapping event names to a closure or array of (priority, closure)
-     *        "plugins": Array of plugins to add to the request
-     *        "exceptions": Set to false to disable throwing exceptions on an HTTP level error (e.g. 404, 500, etc)
-     *        "params": Set custom request data parameters on a request. (Note: these are not query string parameters)
-     *        "timeout": Float describing the timeout of the request in seconds
-     *        "connect_timeout": Float describing the number of seconds to wait while trying to connect. Use 0 to wait
-     *            indefinitely.
-     *        "verify": Set to true to enable SSL cert validation (the default), false to disable, or supply the path
-     *            to a CA bundle to enable verification using a custom certificate.
-     *        "cert": Set to a string to specify the path to a file containing a PEM formatted certificate. If a
-     *            password is required, then set an array containing the path to the PEM file followed by the the
-     *            password required for the certificate.
-     *        "ssl_key": Specify the path to a file containing a private SSL key in PEM format. If a password is
-     *            required, then set an array containing the path to the SSL key followed by the password required for
-     *            the certificate.
-     *        "proxy": Specify an HTTP proxy (e.g. "http://username:password@192.168.16.1:10")
-     *        "debug": Set to true to display all data sent over the wire
-     * @param int $flags Bitwise flags to apply when applying the options to the request. Defaults to no special
-     *                   options. `1` (OPTIONS_AS_DEFAULTS): When specified, options will only update a request when
-     *                   the value does not already exist on the request. This is only supported by "query" and
-     *                   "headers". Other bitwise options may be added in the future.
-     */
-    public function applyOptions(RequestInterface $request, array $options = array(), $flags = self::OPTIONS_NONE);
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

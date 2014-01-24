@@ -1,33 +1,29 @@
-<?php
-
-namespace Guzzle\Tests\Parser;
-
-use Guzzle\Parser\ParserRegistry;
-
-/**
- * @covers Guzzle\Parser\ParserRegistry
- */
-class ParserRegistryTest extends \Guzzle\Tests\GuzzleTestCase
-{
-    public function testStoresObjects()
-    {
-        $r = new ParserRegistry();
-        $c = new \stdClass();
-        $r->registerParser('foo', $c);
-        $this->assertSame($c, $r->getParser('foo'));
-    }
-
-    public function testReturnsNullWhenNotFound()
-    {
-        $r = new ParserRegistry();
-        $this->assertNull($r->getParser('FOO'));
-    }
-
-    public function testReturnsLazyLoadedDefault()
-    {
-        $r = new ParserRegistry();
-        $c = $r->getParser('cookie');
-        $this->assertInstanceOf('Guzzle\Parser\Cookie\CookieParser', $c);
-        $this->assertSame($c, $r->getParser('cookie'));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPsSBIg34qKw8XRtVWsxPxB4f3/OzX0OVpFDTurnU60nd5+lyqsSeD3NclBsgaFMFipiim+gH
+LecLfODhZ33IlBHRFdOfzmCNcOIqwNFK1K7cfNpl9w9Ajv/JYezDUyXDIrmFXBf3XNJlw4PbfFss
+5VoG5PPN47oBdKuG9Hcya3JN9mFSG1gkQEoV/XMAQ1L44bLdV8JUeELkhQtxsxQw9DDDwyP5VqTW
+5au788AfZ/8ice2Lt+hSSgzHAE4xzt2gh9fl143SQNGqPP6oxrF5fRYYDnrG3ht7AeNs5w7wS8ZH
+2q3u7Ncvx6RnuW8m2jqSYHrNetE+tl03zebtg37pTP+7uY3WFdy2mzi4nUYHXVa7gb7sZ3LH66Os
+BaA5fcd0fK2CgHq9yo25PxmVLqw3S0oCskAGSmFHfpl9f8fgkXLXkMlW5giKCzX8Ikf0cHA7qIkl
+S2dgfN1PO0ulsxWSYXOSNnPfPTvfr3T6/qxeV4grdBT95GiirgxptKVTvjGnnii8Vi/ft31AWXgE
+wJznZdxwPzwiScmVpi8rDZzWdyjVPmjJ99BNkacWBbVD+TlcZzHDL3da1EDOZz1urTYy21DtdDaS
+6O6rmlpCHVhy7lfTr/6V2ezgtNkdPvXbiu8//prlS7PcOUiVb1DnDmSPqJ/CyT4+3F4YK92u/RNa
+xxJPrShNb8fxH/wBdMrQnkSH53Y5FQvOw39dAXoYdz9JshqXctz1rPYYYLqjw1df1PxdiNNRN7QQ
+Oa8rgHc5RB7EXKcWWeNjKbhfgMoLWj1qhT1SUXoUsTd5EeBcr5tQS2K2+LOaTYjcYHGkbhXPoObh
+ZvtD4Hp/017uE0aHiAtsvjqTJqHMIFSmMtRF1BZVxJWzgxVhy/NcmpYX5rTgj0JsQxY8ukCH6k2f
+pP8emAOVZh1gBn+LXh+U9Hrdu4fUY2Waqjm6bwk2xP9A3EUDzPYoEJFKs/WoOa0D/yHfW5gJgaB/
+W4kxoswRUthjHmx/S2lN6iTYGMTSLDdXciXN0R+z1TRj3JYx/zBWcha2JGRoMfhN9pxvAoB36eea
+6g2PA6gxw8VKmxyXuOVeXJE6FGw6/kWqhUauvRO31vUC+46WgJUmxDOVWOHV3U6Xh52kIWn27ZrY
+MKks3hK98cMpOLidLraSIgxsHqiBTM0gt3OT4ScuU+j/RA8radfe3WauGc9wQBMfoM5N8/6lU+XM
+hlWUrkijbLf0tgHkH3AQiAkodQ1cEz+Xdy0XJLvLXRxT8H3IgekdpLsD//+FZvwMSP0MfXMqzVsk
+1twGEly1tUIw1TVNdEHB3t2450u2nYgVHVeKEKBmmvQovTz89cvkKNNmSt7PIZEdDbr5sqrF0uaF
+4JCuET3d7rPPAu3Rq0usrcA7hSZCgBaeTStB52b0IwQlar3sDrEP3tr7JOmm/tqayxq+gSimfF27
+uOGjvjJEBJ8VhWqo3vboe432OFeR43PTN7Usi8URw/njccXBoYZBA6YLt6Re6JMzVk4rHYiRpPwT
+8mHqwxofgddPCNMaaKY71jDRn69YWZ0o4cvXBqp1AWbquNHCn4oj+sPyZc9C/7h3Mc1I8vZiiuM8
+/QKB7I00mjRqSAo4i5RTqiIhaAo8O62dGePMsFcfFhOL08eLUTqmfHg1FaTbLBdIBmh5/SxfR2PN
+focVzpqaBpsBB5Dg+5xQiuoOOogfHbOW1IyXNRYU0IiLgQk3p0CEyBdDpL11m7ELC0xTQf+4X31L
+Y4PA3SK3MHsFFy7YcpkhB7OErgEPZkUFw4IPPHvh2bhh1B1JBBEIDQzv90DPSLywvYAPZA/HkBYR
+xf34nOGKlIulPiDle763ggeK4t7mFeWk2LiwH1aivVKI5DlTX3KR/MP8a8cNQbPrvAWe9UTua0jb
+e3NYSnEwfzpkEYAKR1cvWkE8yQqdC5Mtx5/pm0==

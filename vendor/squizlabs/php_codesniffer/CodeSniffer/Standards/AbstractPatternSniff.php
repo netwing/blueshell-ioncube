@@ -1,961 +1,314 @@
-<?php
-/**
- * Processes pattern strings and checks that the code conforms to the pattern.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-if (class_exists('PHP_CodeSniffer_Standards_IncorrectPatternException', true) === false) {
-    $error = 'Class PHP_CodeSniffer_Standards_IncorrectPatternException not found';
-    throw new PHP_CodeSniffer_Exception($error);
-}
-
-/**
- * Processes pattern strings and checks that the code conforms to the pattern.
- *
- * This test essentially checks that code is correctly formatted with whitespace.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-abstract class PHP_CodeSniffer_Standards_AbstractPatternSniff implements PHP_CodeSniffer_Sniff
-{
-
-    /**
-     * If true, comments will be ignored if they are found in the code.
-     *
-     * @var boolean
-     */
-    public $ignoreComments = false;
-
-    /**
-     * The current file being checked.
-     *
-     * @var string
-     */
-    protected $currFile = '';
-
-    /**
-     * The parsed patterns array.
-     *
-     * @var array
-     */
-    private $_parsedPatterns = array();
-
-    /**
-     * Tokens that this sniff wishes to process outside of the patterns.
-     *
-     * @var array(int)
-     * @see registerSupplementary()
-     * @see processSupplementary()
-     */
-    private $_supplementaryTokens = array();
-
-    /**
-     * Positions in the stack where errors have occurred.
-     *
-     * @var array()
-     */
-    private $_errorPos = array();
-
-
-    /**
-     * Constructs a PHP_CodeSniffer_Standards_AbstractPatternSniff.
-     *
-     * @param boolean $ignoreComments If true, comments will be ignored.
-     */
-    public function __construct($ignoreComments=null)
-    {
-        // This is here for backwards compatibility.
-        if ($ignoreComments !== null) {
-            $this->ignoreComments = $ignoreComments;
-        }
-
-        $this->_supplementaryTokens = $this->registerSupplementary();
-
-    }//end __construct()
-
-
-    /**
-     * Registers the tokens to listen to.
-     *
-     * Classes extending <i>AbstractPatternTest</i> should implement the
-     * <i>getPatterns()</i> method to register the patterns they wish to test.
-     *
-     * @return array(int)
-     * @see process()
-     */
-    public final function register()
-    {
-        $listenTypes = array();
-        $patterns    = $this->getPatterns();
-
-        foreach ($patterns as $pattern) {
-            $parsedPattern = $this->_parse($pattern);
-
-            // Find a token position in the pattern that we can use
-            // for a listener token.
-            $pos           = $this->_getListenerTokenPos($parsedPattern);
-            $tokenType     = $parsedPattern[$pos]['token'];
-            $listenTypes[] = $tokenType;
-
-            $patternArray = array(
-                             'listen_pos'   => $pos,
-                             'pattern'      => $parsedPattern,
-                             'pattern_code' => $pattern,
-                            );
-
-            if (isset($this->_parsedPatterns[$tokenType]) === false) {
-                $this->_parsedPatterns[$tokenType] = array();
-            }
-
-            $this->_parsedPatterns[$tokenType][] = $patternArray;
-
-        }//end foreach
-
-        return array_unique(array_merge($listenTypes, $this->_supplementaryTokens));
-
-    }//end register()
-
-
-    /**
-     * Returns the token types that the specified pattern is checking for.
-     *
-     * Returned array is in the format:
-     * <code>
-     *   array(
-     *      T_WHITESPACE => 0, // 0 is the position where the T_WHITESPACE token
-     *                         // should occur in the pattern.
-     *   );
-     * </code>
-     *
-     * @param array $pattern The parsed pattern to find the acquire the token
-     *                       types from.
-     *
-     * @return array(int => int)
-     */
-    private function _getPatternTokenTypes($pattern)
-    {
-        $tokenTypes = array();
-        foreach ($pattern as $pos => $patternInfo) {
-            if ($patternInfo['type'] === 'token') {
-                if (isset($tokenTypes[$patternInfo['token']]) === false) {
-                    $tokenTypes[$patternInfo['token']] = $pos;
-                }
-            }
-        }
-
-        return $tokenTypes;
-
-    }//end _getPatternTokenTypes()
-
-
-    /**
-     * Returns the position in the pattern that this test should register as
-     * a listener for the pattern.
-     *
-     * @param array $pattern The pattern to acquire the listener for.
-     *
-     * @return int The postition in the pattern that this test should register
-     *             as the listener.
-     * @throws PHP_CodeSniffer_Exception If we could not determine a token
-     *                                         to listen for.
-     */
-    private function _getListenerTokenPos($pattern)
-    {
-        $tokenTypes = $this->_getPatternTokenTypes($pattern);
-        $tokenCodes = array_keys($tokenTypes);
-        $token      = PHP_CodeSniffer_Tokens::getHighestWeightedToken($tokenCodes);
-
-        // If we could not get a token.
-        if ($token === false) {
-            $error = 'Could not determine a token to listen for';
-            throw new PHP_CodeSniffer_Exception($error);
-        }
-
-        return $tokenTypes[$token];
-
-    }//end _getListenerTokenPos()
-
-
-    /**
-     * Processes the test.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The PHP_CodeSniffer file where the
-     *                                        token occured.
-     * @param int                  $stackPtr  The postion in the tokens stack
-     *                                        where the listening token type was
-     *                                        found.
-     *
-     * @return void
-     * @see register()
-     */
-    public final function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $file = $phpcsFile->getFilename();
-        if ($this->currFile !== $file) {
-            // We have changed files, so clean up.
-            $this->_errorPos = array();
-            $this->currFile  = $file;
-        }
-
-        $tokens = $phpcsFile->getTokens();
-
-        if (in_array($tokens[$stackPtr]['code'], $this->_supplementaryTokens) === true) {
-            $this->processSupplementary($phpcsFile, $stackPtr);
-        }
-
-        $type = $tokens[$stackPtr]['code'];
-
-        // If the type is not set, then it must have been a token registered
-        // with registerSupplementary().
-        if (isset($this->_parsedPatterns[$type]) === false) {
-            return;
-        }
-
-        $allErrors = array();
-
-        // Loop over each pattern that is listening to the current token type
-        // that we are processing.
-        foreach ($this->_parsedPatterns[$type] as $patternInfo) {
-            // If processPattern returns false, then the pattern that we are
-            // checking the code with must not be designed to check that code.
-            $errors = $this->processPattern($patternInfo, $phpcsFile, $stackPtr);
-            if ($errors === false) {
-                // The pattern didn't match.
-                continue;
-            } else if (empty($errors) === true) {
-                // The pattern matched, but there were no errors.
-                break;
-            }
-
-            foreach ($errors as $stackPtr => $error) {
-                if (isset($this->_errorPos[$stackPtr]) === false) {
-                    $this->_errorPos[$stackPtr] = true;
-                    $allErrors[$stackPtr]       = $error;
-                }
-            }
-        }
-
-        foreach ($allErrors as $stackPtr => $error) {
-            $phpcsFile->addError($error, $stackPtr);
-        }
-
-    }//end process()
-
-
-    /**
-     * Processes the pattern and verifies the code at $stackPtr.
-     *
-     * @param array                $patternInfo Information about the pattern used
-     *                                          for checking, which includes are
-     *                                          parsed token representation of the
-     *                                          pattern.
-     * @param PHP_CodeSniffer_File $phpcsFile   The PHP_CodeSniffer file where the
-     *                                          token occured.
-     * @param int                  $stackPtr    The postion in the tokens stack where
-     *                                          the listening token type was found.
-     *
-     * @return array(errors)
-     */
-    protected function processPattern(
-        $patternInfo,
-        PHP_CodeSniffer_File $phpcsFile,
-        $stackPtr
-    ) {
-        $tokens      = $phpcsFile->getTokens();
-        $pattern     = $patternInfo['pattern'];
-        $patternCode = $patternInfo['pattern_code'];
-        $errors      = array();
-        $found       = '';
-
-        $ignoreTokens = array(T_WHITESPACE);
-        if ($this->ignoreComments === true) {
-            $ignoreTokens
-                = array_merge($ignoreTokens, PHP_CodeSniffer_Tokens::$commentTokens);
-        }
-
-        $origStackPtr = $stackPtr;
-        $hasError     = false;
-
-        if ($patternInfo['listen_pos'] > 0) {
-            $stackPtr--;
-
-            for ($i = ($patternInfo['listen_pos'] - 1); $i >= 0; $i--) {
-                if ($pattern[$i]['type'] === 'token') {
-                    if ($pattern[$i]['token'] === T_WHITESPACE) {
-                        if ($tokens[$stackPtr]['code'] === T_WHITESPACE) {
-                            $found = $tokens[$stackPtr]['content'].$found;
-                        }
-
-                        // Only check the size of the whitespace if this is not
-                        // the first token. We don't care about the size of
-                        // leading whitespace, just that there is some.
-                        if ($i !== 0) {
-                            if ($tokens[$stackPtr]['content'] !== $pattern[$i]['value']) {
-                                $hasError = true;
-                            }
-                        }
-                    } else {
-                        // Check to see if this important token is the same as the
-                        // previous important token in the pattern. If it is not,
-                        // then the pattern cannot be for this piece of code.
-                        $prev = $phpcsFile->findPrevious(
-                            $ignoreTokens,
-                            $stackPtr,
-                            null,
-                            true
-                        );
-
-                        if ($prev === false
-                            || $tokens[$prev]['code'] !== $pattern[$i]['token']
-                        ) {
-                            return false;
-                        }
-
-                        // If we skipped past some whitespace tokens, then add them
-                        // to the found string.
-                        $tokenContent = $phpcsFile->getTokensAsString(
-                            ($prev + 1),
-                            ($stackPtr - $prev - 1)
-                        );
-
-                        $found = $tokens[$prev]['content'].$tokenContent.$found;
-
-                        if (isset($pattern[($i - 1)]) === true
-                            && $pattern[($i - 1)]['type'] === 'skip'
-                        ) {
-                            $stackPtr = $prev;
-                        } else {
-                            $stackPtr = ($prev - 1);
-                        }
-                    }//end if
-                } else if ($pattern[$i]['type'] === 'skip') {
-                    // Skip to next piece of relevant code.
-                    if ($pattern[$i]['to'] === 'parenthesis_closer') {
-                        $to = 'parenthesis_opener';
-                    } else {
-                        $to = 'scope_opener';
-                    }
-
-                    // Find the previous opener.
-                    $next = $phpcsFile->findPrevious(
-                        $ignoreTokens,
-                        $stackPtr,
-                        null,
-                        true
-                    );
-
-                    if ($next === false || isset($tokens[$next][$to]) === false) {
-                        // If there was not opener, then we must be
-                        // using the wrong pattern.
-                        return false;
-                    }
-
-                    if ($to === 'parenthesis_opener') {
-                        $found = '{'.$found;
-                    } else {
-                        $found = '('.$found;
-                    }
-
-                    $found = '...'.$found;
-
-                    // Skip to the opening token.
-                    $stackPtr = ($tokens[$next][$to] - 1);
-                } else if ($pattern[$i]['type'] === 'string') {
-                    $found = 'abc';
-                } else if ($pattern[$i]['type'] === 'newline') {
-                    if ($this->ignoreComments === true
-                        && in_array($tokens[$stackPtr]['code'], PHP_CodeSniffer_Tokens::$commentTokens) === true
-                    ) {
-                        $startComment = $phpcsFile->findPrevious(
-                            PHP_CodeSniffer_Tokens::$commentTokens,
-                            ($stackPtr - 1),
-                            null,
-                            true
-                        );
-
-                        if ($tokens[$startComment]['line'] !== $tokens[($startComment + 1)]['line']) {
-                            $startComment++;
-                        }
-
-                        $tokenContent = $phpcsFile->getTokensAsString(
-                            $startComment,
-                            ($stackPtr - $startComment + 1)
-                        );
-
-                        $found    = $tokenContent.$found;
-                        $stackPtr = ($startComment - 1);
-                    }
-
-                    if ($tokens[$stackPtr]['code'] === T_WHITESPACE) {
-                        if ($tokens[$stackPtr]['content'] !== $phpcsFile->eolChar) {
-                            $found = $tokens[$stackPtr]['content'].$found;
-
-                            // This may just be an indent that comes after a newline
-                            // so check the token before to make sure. If it is a newline, we
-                            // can ignore the error here.
-                            if (($tokens[($stackPtr - 1)]['content'] !== $phpcsFile->eolChar)
-                                && ($this->ignoreComments === true && in_array($tokens[($stackPtr - 1)]['code'], PHP_CodeSniffer_Tokens::$commentTokens) === false)
-                            ) {
-                                $hasError = true;
-                            } else {
-                                $stackPtr--;
-                            }
-                        } else {
-                            $found = 'EOL'.$found;
-                        }
-                    } else {
-                        $found    = $tokens[$stackPtr]['content'].$found;
-                        $hasError = true;
-                    }
-
-                    if ($hasError === false && $pattern[($i - 1)]['type'] !== 'newline') {
-                        // Make sure they only have 1 newline.
-                        $prev = $phpcsFile->findPrevious($ignoreTokens, ($stackPtr - 1), null, true);
-                        if ($prev !== false && $tokens[$prev]['line'] !== $tokens[$stackPtr]['line']) {
-                            $hasError = true;
-                        }
-                    }
-                }//end if
-            }//end for
-        }//end if
-
-        $stackPtr          = $origStackPtr;
-        $lastAddedStackPtr = null;
-        $patternLen        = count($pattern);
-
-        for ($i = $patternInfo['listen_pos']; $i < $patternLen; $i++) {
-            if ($pattern[$i]['type'] === 'token') {
-                if ($pattern[$i]['token'] === T_WHITESPACE) {
-                    if ($this->ignoreComments === true) {
-                        // If we are ignoring comments, check to see if this current
-                        // token is a comment. If so skip it.
-                        if (in_array($tokens[$stackPtr]['code'], PHP_CodeSniffer_Tokens::$commentTokens) === true) {
-                            continue;
-                        }
-
-                        // If the next token is a comment, the we need to skip the
-                        // current token as we should allow a space before a
-                        // comment for readability.
-                        if (in_array($tokens[($stackPtr + 1)]['code'], PHP_CodeSniffer_Tokens::$commentTokens) === true) {
-                            continue;
-                        }
-                    }
-
-                    $tokenContent = '';
-                    if ($tokens[$stackPtr]['code'] === T_WHITESPACE) {
-                        if (isset($pattern[($i + 1)]) === false) {
-                            // This is the last token in the pattern, so just compare
-                            // the next token of content.
-                            $tokenContent = $tokens[$stackPtr]['content'];
-                        } else {
-                            // Get all the whitespace to the next token.
-                            $next = $phpcsFile->findNext(
-                                PHP_CodeSniffer_Tokens::$emptyTokens,
-                                $stackPtr,
-                                null,
-                                true
-                            );
-
-                            $tokenContent = $phpcsFile->getTokensAsString(
-                                $stackPtr,
-                                ($next - $stackPtr)
-                            );
-
-                            $lastAddedStackPtr = $stackPtr;
-                            $stackPtr          = $next;
-                        }
-
-                        if ($stackPtr !== $lastAddedStackPtr) {
-                            $found .= $tokenContent;
-                        }
-                    } else {
-                        if ($stackPtr !== $lastAddedStackPtr) {
-                            $found            .= $tokens[$stackPtr]['content'];
-                            $lastAddedStackPtr = $stackPtr;
-                        }
-                    }//end if
-
-                    if (isset($pattern[($i + 1)]) === true
-                        && $pattern[($i + 1)]['type'] === 'skip'
-                    ) {
-                        // The next token is a skip token, so we just need to make
-                        // sure the whitespace we found has *at least* the
-                        // whitespace required.
-                        if (strpos($tokenContent, $pattern[$i]['value']) !== 0) {
-                            $hasError = true;
-                        }
-                    } else {
-                        if ($tokenContent !== $pattern[$i]['value']) {
-                            $hasError = true;
-                        }
-                    }
-                } else {
-                    // Check to see if this important token is the same as the
-                    // next important token in the pattern. If it is not, then
-                    // the pattern cannot be for this piece of code.
-                    $next = $phpcsFile->findNext(
-                        $ignoreTokens,
-                        $stackPtr,
-                        null,
-                        true
-                    );
-
-                    if ($next === false
-                        || $tokens[$next]['code'] !== $pattern[$i]['token']
-                    ) {
-                        // The next important token did not match the pattern.
-                        return false;
-                    }
-
-                    if ($lastAddedStackPtr !== null) {
-                        if (($tokens[$next]['code'] === T_OPEN_CURLY_BRACKET
-                            || $tokens[$next]['code'] === T_CLOSE_CURLY_BRACKET)
-                            && isset($tokens[$next]['scope_condition']) === true
-                            && $tokens[$next]['scope_condition'] > $lastAddedStackPtr
-                        ) {
-                            // This is a brace, but the owner of it is after the current
-                            // token, which means it does not belong to any token in
-                            // our pattern. This means the pattern is not for us.
-                            return false;
-                        }
-
-                        if (($tokens[$next]['code'] === T_OPEN_PARENTHESIS
-                            || $tokens[$next]['code'] === T_CLOSE_PARENTHESIS)
-                            && isset($tokens[$next]['parenthesis_owner']) === true
-                            && $tokens[$next]['parenthesis_owner'] > $lastAddedStackPtr
-                        ) {
-                            // This is a bracket, but the owner of it is after the current
-                            // token, which means it does not belong to any token in
-                            // our pattern. This means the pattern is not for us.
-                            return false;
-                        }
-                    }//end if
-
-                    // If we skipped past some whitespace tokens, then add them
-                    // to the found string.
-                    if (($next - $stackPtr) > 0) {
-                        $hasComment = false;
-                        for ($j = $stackPtr; $j < $next; $j++) {
-                            $found .= $tokens[$j]['content'];
-                            if (in_array($tokens[$j]['code'], PHP_CodeSniffer_Tokens::$commentTokens) === true) {
-                                $hasComment = true;
-                            }
-                        }
-
-                        // If we are not ignoring comments, this additional
-                        // whitespace or comment is not allowed. If we are
-                        // ignoring comments, there needs to be at least one
-                        // comment for this to be allowed.
-                        if ($this->ignoreComments === false
-                            || ($this->ignoreComments === true
-                            && $hasComment === false)
-                        ) {
-                            $hasError = true;
-                        }
-
-                        // Even when ignoring comments, we are not allowed to include
-                        // newlines without the pattern specifying them, so
-                        // everything should be on the same line.
-                        if ($tokens[$next]['line'] !== $tokens[$stackPtr]['line']) {
-                            $hasError = true;
-                        }
-                    }//end if
-
-                    if ($next !== $lastAddedStackPtr) {
-                        $found            .= $tokens[$next]['content'];
-                        $lastAddedStackPtr = $next;
-                    }
-
-                    if (isset($pattern[($i + 1)]) === true
-                        && $pattern[($i + 1)]['type'] === 'skip'
-                    ) {
-                        $stackPtr = $next;
-                    } else {
-                        $stackPtr = ($next + 1);
-                    }
-                }//end if
-            } else if ($pattern[$i]['type'] === 'skip') {
-                if ($pattern[$i]['to'] === 'unknown') {
-                    $next = $phpcsFile->findNext(
-                        $pattern[($i + 1)]['token'],
-                        $stackPtr
-                    );
-
-                    if ($next === false) {
-                        // Couldn't find the next token, sowe we must
-                        // be using the wrong pattern.
-                        return false;
-                    }
-
-                    $found   .= '...';
-                    $stackPtr = $next;
-                } else {
-                    // Find the previous opener.
-                    $next = $phpcsFile->findPrevious(
-                        PHP_CodeSniffer_Tokens::$blockOpeners,
-                        $stackPtr
-                    );
-
-                    if ($next === false
-                        || isset($tokens[$next][$pattern[$i]['to']]) === false
-                    ) {
-                        // If there was not opener, then we must
-                        // be using the wrong pattern.
-                        return false;
-                    }
-
-                    $found .= '...';
-                    if ($pattern[$i]['to'] === 'parenthesis_closer') {
-                        $found .= ')';
-                    } else {
-                        $found .= '}';
-                    }
-
-                    // Skip to the closing token.
-                    $stackPtr = ($tokens[$next][$pattern[$i]['to']] + 1);
-                }//end if
-            } else if ($pattern[$i]['type'] === 'string') {
-                if ($tokens[$stackPtr]['code'] !== T_STRING) {
-                    $hasError = true;
-                }
-
-                if ($stackPtr !== $lastAddedStackPtr) {
-                    $found            .= 'abc';
-                    $lastAddedStackPtr = $stackPtr;
-                }
-
-                $stackPtr++;
-            } else if ($pattern[$i]['type'] === 'newline') {
-                // Find the next token that contains a newline character.
-                $newline = 0;
-                for ($j = $stackPtr; $j < $phpcsFile->numTokens; $j++) {
-                    if (strpos($tokens[$j]['content'], $phpcsFile->eolChar) !== false) {
-                        $newline = $j;
-                        break;
-                    }
-                }
-
-                if ($newline === 0) {
-                    // We didn't find a newline character in the rest of the file.
-                    $next     = ($phpcsFile->numTokens - 1);
-                    $hasError = true;
-                } else {
-                    if ($this->ignoreComments === false) {
-                        // The newline character cannot be part of a comment.
-                        if (in_array($tokens[$newline]['code'], PHP_CodeSniffer_Tokens::$commentTokens) === true) {
-                            $hasError = true;
-                        }
-                    }
-
-                    if ($newline === $stackPtr) {
-                        $next = ($stackPtr + 1);
-                    } else {
-                        // Check that there were no significant tokens that we
-                        // skipped over to find our newline character.
-                        $next = $phpcsFile->findNext(
-                            $ignoreTokens,
-                            $stackPtr,
-                            null,
-                            true
-                        );
-
-                        if ($next < $newline) {
-                            // We skipped a non-ignored token.
-                            $hasError = true;
-                        } else {
-                            $next = ($newline + 1);
-                        }
-                    }
-                }//end if
-
-                if ($stackPtr !== $lastAddedStackPtr) {
-                    $found .= $phpcsFile->getTokensAsString(
-                        $stackPtr,
-                        ($next - $stackPtr)
-                    );
-
-                    $diff = ($next - $stackPtr);
-                    $lastAddedStackPtr = ($next - 1);
-                }
-
-                $stackPtr = $next;
-            }//end if
-        }//end for
-
-        if ($hasError === true) {
-            $error = $this->prepareError($found, $patternCode);
-            $errors[$origStackPtr] = $error;
-        }
-
-        return $errors;
-
-    }//end processPattern()
-
-
-    /**
-     * Prepares an error for the specified patternCode.
-     *
-     * @param string $found       The actual found string in the code.
-     * @param string $patternCode The expected pattern code.
-     *
-     * @return string The error message.
-     */
-    protected function prepareError($found, $patternCode)
-    {
-        $found    = str_replace("\r\n", '\n', $found);
-        $found    = str_replace("\n", '\n', $found);
-        $found    = str_replace("\r", '\n', $found);
-        $found    = str_replace('EOL', '\n', $found);
-        $expected = str_replace('EOL', '\n', $patternCode);
-
-        $error = "Expected \"$expected\"; found \"$found\"";
-
-        return $error;
-
-    }//end prepareError()
-
-
-    /**
-     * Returns the patterns that should be checked.
-     *
-     * @return array(string)
-     */
-    protected abstract function getPatterns();
-
-
-    /**
-     * Registers any supplementary tokens that this test might wish to process.
-     *
-     * A sniff may wish to register supplementary tests when it wishes to group
-     * an arbitary validation that cannot be performed using a pattern, with
-     * other pattern tests.
-     *
-     * @return array(int)
-     * @see processSupplementary()
-     */
-    protected function registerSupplementary()
-    {
-        return array();
-
-    }//end registerSupplementary()
-
-
-     /**
-      * Processes any tokens registered with registerSupplementary().
-      *
-      * @param PHP_CodeSniffer_File $phpcsFile The PHP_CodeSniffer file where to
-      *                                        process the skip.
-      * @param int                  $stackPtr  The position in the tokens stack to
-      *                                        process.
-      *
-      * @return void
-      * @see registerSupplementary()
-      */
-    protected function processSupplementary(
-        PHP_CodeSniffer_File $phpcsFile,
-        $stackPtr
-    ) {
-
-    }//end processSupplementary()
-
-
-    /**
-     * Parses a pattern string into an array of pattern steps.
-     *
-     * @param string $pattern The pattern to parse.
-     *
-     * @return array The parsed pattern array.
-     * @see _createSkipPattern()
-     * @see _createTokenPattern()
-     */
-    private function _parse($pattern)
-    {
-        $patterns   = array();
-        $length     = strlen($pattern);
-        $lastToken  = 0;
-        $firstToken = 0;
-
-        for ($i = 0; $i < $length; $i++) {
-
-            $specialPattern = false;
-            $isLastChar     = ($i === ($length - 1));
-            $oldFirstToken  = $firstToken;
-
-            if (substr($pattern, $i, 3) === '...') {
-                // It's a skip pattern. The skip pattern requires the
-                // content of the token in the "from" position and the token
-                // to skip to.
-                $specialPattern = $this->_createSkipPattern($pattern, ($i - 1));
-                $lastToken      = ($i - $firstToken);
-                $firstToken     = ($i + 3);
-                $i              = ($i + 2);
-
-                if ($specialPattern['to'] !== 'unknown') {
-                    $firstToken++;
-                }
-            } else if (substr($pattern, $i, 3) === 'abc') {
-                $specialPattern = array('type' => 'string');
-                $lastToken      = ($i - $firstToken);
-                $firstToken     = ($i + 3);
-                $i              = ($i + 2);
-            } else if (substr($pattern, $i, 3) === 'EOL') {
-                $specialPattern = array('type' => 'newline');
-                $lastToken      = ($i - $firstToken);
-                $firstToken     = ($i + 3);
-                $i              = ($i + 2);
-            }
-
-            if ($specialPattern !== false || $isLastChar === true) {
-                // If we are at the end of the string, don't worry about a limit.
-                if ($isLastChar === true) {
-                    // Get the string from the end of the last skip pattern, if any,
-                    // to the end of the pattern string.
-                    $str = substr($pattern, $oldFirstToken);
-                } else {
-                    // Get the string from the end of the last special pattern,
-                    // if any, to the start of this special pattern.
-                    if ($lastToken === 0) {
-                        // Note that if the last special token was zero characters ago,
-                        // there will be nothing to process so we can skip this bit.
-                        // This happens if you have something like: EOL... in your pattern.
-                        $str = '';
-                    } else {
-                        $str = substr($pattern, $oldFirstToken, $lastToken);
-                    }
-                }
-
-                if ($str !== '') {
-                    $tokenPatterns = $this->_createTokenPattern($str);
-                    foreach ($tokenPatterns as $tokenPattern) {
-                        $patterns[] = $tokenPattern;
-                    }
-                }
-
-                // Make sure we don't skip the last token.
-                if ($isLastChar === false && $i === ($length - 1)) {
-                    $i--;
-                }
-            }//end if
-
-            // Add the skip pattern *after* we have processed
-            // all the tokens from the end of the last skip pattern
-            // to the start of this skip pattern.
-            if ($specialPattern !== false) {
-                $patterns[] = $specialPattern;
-            }
-        }//end for
-
-        return $patterns;
-
-    }//end _parse()
-
-
-    /**
-     * Creates a skip pattern.
-     *
-     * @param string $pattern The pattern being parsed.
-     * @param string $from    The token content that the skip pattern starts from.
-     *
-     * @return array The pattern step.
-     * @see _createTokenPattern()
-     * @see _parse()
-     */
-    private function _createSkipPattern($pattern, $from)
-    {
-        $skip = array('type' => 'skip');
-
-        $nestedParenthesis = 0;
-        $nestedBraces      = 0;
-        for ($start = $from; $start >= 0; $start--) {
-            switch ($pattern[$start]) {
-            case '(':
-                if ($nestedParenthesis === 0) {
-                    $skip['to'] = 'parenthesis_closer';
-                }
-
-                $nestedParenthesis--;
-                break;
-            case '{':
-                if ($nestedBraces === 0) {
-                    $skip['to'] = 'scope_closer';
-                }
-
-                $nestedBraces--;
-                break;
-            case '}':
-                $nestedBraces++;
-                break;
-            case ')':
-                $nestedParenthesis++;
-                break;
-            }
-
-            if (isset($skip['to']) === true) {
-                break;
-            }
-        }
-
-        if (isset($skip['to']) === false) {
-            $skip['to'] = 'unknown';
-        }
-
-        return $skip;
-
-    }//end _createSkipPattern()
-
-
-    /**
-     * Creates a token pattern.
-     *
-     * @param string $str The tokens string that the pattern should match.
-     *
-     * @return array The pattern step.
-     * @see _createSkipPattern()
-     * @see _parse()
-     */
-    private function _createTokenPattern($str)
-    {
-        // Don't add a space after the closing php tag as it will add a new
-        // whitespace token.
-        $tokens = token_get_all('<?php '.$str.'?>');
-
-        // Remove the <?php tag from the front and the end php tag from the back.
-        $tokens = array_slice($tokens, 1, (count($tokens) - 2));
-
-        foreach ($tokens as &$token) {
-            $token = PHP_CodeSniffer::standardiseToken($token);
-        }
-
-        $patterns = array();
-        foreach ($tokens as $patternInfo) {
-            $patterns[] = array(
-                           'type'  => 'token',
-                           'token' => $patternInfo['code'],
-                           'value' => $patternInfo['content'],
-                          );
-        }
-
-        return $patterns;
-
-    }//end _createTokenPattern()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+RHv9Mpl/k9tapnubHK5APJNgMR4wwHfx

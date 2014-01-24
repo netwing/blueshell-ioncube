@@ -1,206 +1,117 @@
-<?php
-
-/**
- * This is the model class for table "{{invoice}}".
- *
- * The followings are the available columns in table '{{invoice}}':
- * @property string $id
- * @property string $customer_id
- * @property string $invoice_number
- * @property string $date
- * @property string $billing_header
- * @property string $billing_address
- * @property string $billing_zip
- * @property string $billing_city
- * @property string $billing_province
- * @property string $billing_country
- * @property string $billing_tax
- * @property string $shipping_header
- * @property string $shipping_address
- * @property string $shipping_zip
- * @property string $shipping_city
- * @property string $shipping_province
- * @property string $shipping_country
- * @property string $status_id
- * @property string $type_id
- * @property string $due_date
- * @property string $date_paid
- * @property string $payment_method
- * @property string $notes
- * @property string $create_time
- * @property string $update_time
- *
- * The followings are the available model relations:
- * @property InvoiceType $type
- * @property Clienti $customer
- * @property InvoiceStatus $status
- * @property InvoiceRow[] $invoiceRows
- */
-class BaseInvoice extends CActiveRecord
-{
-	/**
-	 * @return string the associated database table name
-	 */
-	public function tableName()
-	{
-		return '{{invoice}}';
-	}
-
-	/**
-	 * @return array validation rules for model attributes.
-	 */
-	public function rules()
-	{
-		// NOTE: you should only define rules for those attributes that
-		// will receive user inputs.
-		return array(
-			array('customer_id, date, billing_header, billing_address, billing_tax, status_id, type_id', 'required'),
-			array('customer_id', 'length', 'max'=>10),
-			array('invoice_number, status_id, type_id', 'length', 'max'=>11),
-			array('billing_zip, billing_city, billing_province, billing_country, shipping_header, shipping_address, shipping_zip, shipping_city, shipping_province, shipping_country, due_date, date_paid, payment_method, notes, create_time, update_time', 'safe'),
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
-			array('id, customer_id, invoice_number, date, billing_header, billing_address, billing_zip, billing_city, billing_province, billing_country, billing_tax, shipping_header, shipping_address, shipping_zip, shipping_city, shipping_province, shipping_country, status_id, type_id, due_date, date_paid, payment_method, notes, create_time, update_time', 'safe', 'on'=>'search'),
-		);
-	}
-
-	/**
-	 * @return array relational rules.
-	 */
-	public function relations()
-	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
-		return array(
-			'type' => array(self::BELONGS_TO, 'InvoiceType', 'type_id'),
-			'customer' => array(self::BELONGS_TO, 'Clienti', 'customer_id'),
-			'status' => array(self::BELONGS_TO, 'InvoiceStatus', 'status_id'),
-			'invoiceRows' => array(self::HAS_MANY, 'InvoiceRow', 'invoice_id'),
-		);
-	}
-
-	/**
-	 * @return array customized attribute labels (name=>label)
-	 */
-	public function attributeLabels()
-	{
-		return array(
-			'id' => Yii::t('app', 'ID'),
-			'customer_id' => Yii::t('app', 'Customer'),
-			'invoice_number' => Yii::t('app', 'Invoice Number'),
-			'date' => Yii::t('app', 'Date'),
-			'billing_header' => Yii::t('app', 'Billing Header'),
-			'billing_address' => Yii::t('app', 'Billing Address'),
-			'billing_zip' => Yii::t('app', 'Billing Zip'),
-			'billing_city' => Yii::t('app', 'Billing City'),
-			'billing_province' => Yii::t('app', 'Billing Province'),
-			'billing_country' => Yii::t('app', 'Billing Country'),
-			'billing_tax' => Yii::t('app', 'Billing Tax'),
-			'shipping_header' => Yii::t('app', 'Shipping Header'),
-			'shipping_address' => Yii::t('app', 'Shipping Address'),
-			'shipping_zip' => Yii::t('app', 'Shipping Zip'),
-			'shipping_city' => Yii::t('app', 'Shipping City'),
-			'shipping_province' => Yii::t('app', 'Shipping Province'),
-			'shipping_country' => Yii::t('app', 'Shipping Country'),
-			'status_id' => Yii::t('app', 'Status'),
-			'type_id' => Yii::t('app', 'Type'),
-			'due_date' => Yii::t('app', 'Due Date'),
-			'date_paid' => Yii::t('app', 'Date Paid'),
-			'payment_method' => Yii::t('app', 'Payment Method'),
-			'notes' => Yii::t('app', 'Notes'),
-			'create_time' => Yii::t('app', 'Create Time'),
-			'update_time' => Yii::t('app', 'Update Time'),
-		);
-	}
-
-	/**
-	 * Retrieves a list of models based on the current search/filter conditions.
-	 *
-	 * Typical usecase:
-	 * - Initialize the model fields with values from filter form.
-	 * - Execute this method to get CActiveDataProvider instance which will filter
-	 * models according to data in model fields.
-	 * - Pass data provider to CGridView, CListView or any similar widget.
-	 *
-	 * @return CActiveDataProvider the data provider that can return the models
-	 * based on the search/filter conditions.
-	 */
-	public function search()
-	{
-		// @todo Please modify the following code to remove attributes that should not be searched.
-
-		$criteria=new CDbCriteria;
-
-		$criteria->compare('id',$this->id,true);
-		$criteria->compare('customer_id',$this->customer_id,true);
-		$criteria->compare('invoice_number',$this->invoice_number,true);
-		$criteria->compare('date',$this->date,true);
-		$criteria->compare('billing_header',$this->billing_header,true);
-		$criteria->compare('billing_address',$this->billing_address,true);
-		$criteria->compare('billing_zip',$this->billing_zip,true);
-		$criteria->compare('billing_city',$this->billing_city,true);
-		$criteria->compare('billing_province',$this->billing_province,true);
-		$criteria->compare('billing_country',$this->billing_country,true);
-		$criteria->compare('billing_tax',$this->billing_tax,true);
-		$criteria->compare('shipping_header',$this->shipping_header,true);
-		$criteria->compare('shipping_address',$this->shipping_address,true);
-		$criteria->compare('shipping_zip',$this->shipping_zip,true);
-		$criteria->compare('shipping_city',$this->shipping_city,true);
-		$criteria->compare('shipping_province',$this->shipping_province,true);
-		$criteria->compare('shipping_country',$this->shipping_country,true);
-		$criteria->compare('status_id',$this->status_id,true);
-		$criteria->compare('type_id',$this->type_id,true);
-		$criteria->compare('due_date',$this->due_date,true);
-		$criteria->compare('date_paid',$this->date_paid,true);
-		$criteria->compare('payment_method',$this->payment_method,true);
-		$criteria->compare('notes',$this->notes,true);
-		$criteria->compare('create_time',$this->create_time,true);
-		$criteria->compare('update_time',$this->update_time,true);
-
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
-	}
-
-	/**
-	 * Returns the static model of the specified AR class.
-	 * Please note that you should have this exact method in all your CActiveRecord descendants!
-	 * @param string $className active record class name.
-	 * @return Invoice the static model class
-	 */
-	public static function model($className=__CLASS__)
-	{
-		return parent::model($className);
-	}
-
-	/**
-	 * Behavior for timestamp
-	 */
-	public function behaviors(){
-		return array(
-			'CTimestampBehavior' => array(
-				'class' => 'zii.behaviors.CTimestampBehavior',
-				// 'createAttribute' => 'create_time',
-				// 'updateAttribute' => 'update_time',
-			)
-		);
-	}
-
-	/**
-	 * Either attributes required (one or another)
-	 * Use like this: 
-	 * array('attributes1', 'either', 'other' => 'attributes2')
-	 */ 
-	public function either($attribute_name, $params)
-	{
-	    $field1 = $this->getAttributeLabel($attribute_name);
-	    $field2 = $this->getAttributeLabel($params['other']);
-	    if (empty($this->$attribute_name) && empty($this->$params['other'])) {
-	        $this->addError(
-	        	$attribute_name, 
-	        	Yii::t('app', "Either {field1} or {field2} is required.", array('{field1}' => $field1, '{field2}' => $field2)));
-	        return false;
-	    }
-	    return true;
-	}	 
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

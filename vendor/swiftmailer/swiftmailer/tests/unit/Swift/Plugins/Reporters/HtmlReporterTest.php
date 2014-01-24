@@ -1,59 +1,41 @@
-<?php
-
-require_once 'Swift/Tests/SwiftUnitTestCase.php';
-require_once 'Swift/Plugins/Reporters/HtmlReporter.php';
-require_once 'Swift/Mime/Message.php';
-
-class Swift_Plugins_Reporters_HtmlReporterTest
-    extends Swift_Tests_SwiftUnitTestCase
-{
-    private $_html;
-    private $_message;
-
-    public function setUp()
-    {
-        $this->_html = new Swift_Plugins_Reporters_HtmlReporter();
-        $this->_message = $this->_mock('Swift_Mime_Message');
-    }
-
-    public function testReportingPass()
-    {
-        ob_start();
-        $this->_html->notify($this->_message, 'foo@bar.tld',
-            Swift_Plugins_Reporter::RESULT_PASS
-            );
-        $html = ob_get_clean();
-
-        $this->assertPattern('~ok|pass~i', $html, '%s: Reporter should indicate pass');
-        $this->assertPattern('~foo@bar\.tld~', $html, '%s: Reporter should show address');
-    }
-
-    public function testReportingFail()
-    {
-        ob_start();
-        $this->_html->notify($this->_message, 'zip@button',
-            Swift_Plugins_Reporter::RESULT_FAIL
-            );
-        $html = ob_get_clean();
-
-        $this->assertPattern('~fail~i', $html, '%s: Reporter should indicate fail');
-        $this->assertPattern('~zip@button~', $html, '%s: Reporter should show address');
-    }
-
-    public function testMultipleReports()
-    {
-        ob_start();
-        $this->_html->notify($this->_message, 'foo@bar.tld',
-            Swift_Plugins_Reporter::RESULT_PASS
-            );
-        $this->_html->notify($this->_message, 'zip@button',
-            Swift_Plugins_Reporter::RESULT_FAIL
-            );
-        $html = ob_get_clean();
-
-        $this->assertPattern('~ok|pass~i', $html, '%s: Reporter should indicate pass');
-        $this->assertPattern('~foo@bar\.tld~', $html, '%s: Reporter should show address');
-        $this->assertPattern('~fail~i', $html, '%s: Reporter should indicate fail');
-        $this->assertPattern('~zip@button~', $html, '%s: Reporter should show address');
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

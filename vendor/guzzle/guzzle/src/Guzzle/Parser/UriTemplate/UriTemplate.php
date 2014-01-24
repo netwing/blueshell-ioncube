@@ -1,243 +1,128 @@
-<?php
-
-namespace Guzzle\Parser\UriTemplate;
-
-/**
- * Expands URI templates using an array of variables
- *
- * @link http://tools.ietf.org/html/draft-gregorio-uritemplate-08
- */
-class UriTemplate implements UriTemplateInterface
-{
-    /** @var string URI template */
-    private $template;
-
-    /** @var array Variables to use in the template expansion */
-    private $variables;
-
-    /** @var string Regex used to parse expressions */
-    private static $regex = '/\{([^\}]+)\}/';
-
-    /** @var array Hash for quick operator lookups */
-    private static $operatorHash = array(
-        '+' => true, '#' => true, '.' => true, '/' => true, ';' => true, '?' => true, '&' => true
-    );
-
-    /** @var array Delimiters */
-    private static $delims = array(
-        ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', '\'', '(', ')', '*', '+', ',', ';', '='
-    );
-
-    /** @var array Percent encoded delimiters */
-    private static $delimsPct = array(
-        '%3A', '%2F', '%3F', '%23', '%5B', '%5D', '%40', '%21', '%24', '%26', '%27', '%28', '%29', '%2A', '%2B', '%2C',
-        '%3B', '%3D'
-    );
-
-    public function expand($template, array $variables)
-    {
-        // Check to ensure that the preg_* function is needed
-        if (false === strpos($template, '{')) {
-            return $template;
-        }
-
-        $this->template = $template;
-        $this->variables = $variables;
-
-        return preg_replace_callback(self::$regex, array($this, 'expandMatch'), $this->template);
-    }
-
-    /**
-     * Parse an expression into parts
-     *
-     * @param string $expression Expression to parse
-     *
-     * @return array Returns an associative array of parts
-     */
-    private function parseExpression($expression)
-    {
-        // Check for URI operators
-        $operator = '';
-
-        if (isset(self::$operatorHash[$expression[0]])) {
-            $operator = $expression[0];
-            $expression = substr($expression, 1);
-        }
-
-        $values = explode(',', $expression);
-        foreach ($values as &$value) {
-            $value = trim($value);
-            $varspec = array();
-            $substrPos = strpos($value, ':');
-            if ($substrPos) {
-                $varspec['value'] = substr($value, 0, $substrPos);
-                $varspec['modifier'] = ':';
-                $varspec['position'] = (int) substr($value, $substrPos + 1);
-            } elseif (substr($value, -1) == '*') {
-                $varspec['modifier'] = '*';
-                $varspec['value'] = substr($value, 0, -1);
-            } else {
-                $varspec['value'] = (string) $value;
-                $varspec['modifier'] = '';
-            }
-            $value = $varspec;
-        }
-
-        return array(
-            'operator' => $operator,
-            'values'   => $values
-        );
-    }
-
-    /**
-     * Process an expansion
-     *
-     * @param array $matches Matches met in the preg_replace_callback
-     *
-     * @return string Returns the replacement string
-     */
-    private function expandMatch(array $matches)
-    {
-        static $rfc1738to3986 = array(
-            '+'   => '%20',
-            '%7e' => '~'
-        );
-
-        $parsed = self::parseExpression($matches[1]);
-        $replacements = array();
-
-        $prefix = $parsed['operator'];
-        $joiner = $parsed['operator'];
-        $useQueryString = false;
-        if ($parsed['operator'] == '?') {
-            $joiner = '&';
-            $useQueryString = true;
-        } elseif ($parsed['operator'] == '&') {
-            $useQueryString = true;
-        } elseif ($parsed['operator'] == '#') {
-            $joiner = ',';
-        } elseif ($parsed['operator'] == ';') {
-            $useQueryString = true;
-        } elseif ($parsed['operator'] == '' || $parsed['operator'] == '+') {
-            $joiner = ',';
-            $prefix = '';
-        }
-
-        foreach ($parsed['values'] as $value) {
-
-            if (!array_key_exists($value['value'], $this->variables) || $this->variables[$value['value']] === null) {
-                continue;
-            }
-
-            $variable = $this->variables[$value['value']];
-            $actuallyUseQueryString = $useQueryString;
-            $expanded = '';
-
-            if (is_array($variable)) {
-
-                $isAssoc = $this->isAssoc($variable);
-                $kvp = array();
-                foreach ($variable as $key => $var) {
-
-                    if ($isAssoc) {
-                        $key = rawurlencode($key);
-                        $isNestedArray = is_array($var);
-                    } else {
-                        $isNestedArray = false;
-                    }
-
-                    if (!$isNestedArray) {
-                        $var = rawurlencode($var);
-                        if ($parsed['operator'] == '+' || $parsed['operator'] == '#') {
-                            $var = $this->decodeReserved($var);
-                        }
-                    }
-
-                    if ($value['modifier'] == '*') {
-                        if ($isAssoc) {
-                            if ($isNestedArray) {
-                                // Nested arrays must allow for deeply nested structures
-                                $var = strtr(http_build_query(array($key => $var)), $rfc1738to3986);
-                            } else {
-                                $var = $key . '=' . $var;
-                            }
-                        } elseif ($key > 0 && $actuallyUseQueryString) {
-                            $var = $value['value'] . '=' . $var;
-                        }
-                    }
-
-                    $kvp[$key] = $var;
-                }
-
-                if (empty($variable)) {
-                    $actuallyUseQueryString = false;
-                } elseif ($value['modifier'] == '*') {
-                    $expanded = implode($joiner, $kvp);
-                    if ($isAssoc) {
-                        // Don't prepend the value name when using the explode modifier with an associative array
-                        $actuallyUseQueryString = false;
-                    }
-                } else {
-                    if ($isAssoc) {
-                        // When an associative array is encountered and the explode modifier is not set, then the
-                        // result must be a comma separated list of keys followed by their respective values.
-                        foreach ($kvp as $k => &$v) {
-                            $v = $k . ',' . $v;
-                        }
-                    }
-                    $expanded = implode(',', $kvp);
-                }
-
-            } else {
-                if ($value['modifier'] == ':') {
-                    $variable = substr($variable, 0, $value['position']);
-                }
-                $expanded = rawurlencode($variable);
-                if ($parsed['operator'] == '+' || $parsed['operator'] == '#') {
-                    $expanded = $this->decodeReserved($expanded);
-                }
-            }
-
-            if ($actuallyUseQueryString) {
-                if (!$expanded && $joiner != '&') {
-                    $expanded = $value['value'];
-                } else {
-                    $expanded = $value['value'] . '=' . $expanded;
-                }
-            }
-
-            $replacements[] = $expanded;
-        }
-
-        $ret = implode($joiner, $replacements);
-        if ($ret && $prefix) {
-            return $prefix . $ret;
-        }
-
-        return $ret;
-    }
-
-    /**
-     * Determines if an array is associative
-     *
-     * @param array $array Array to check
-     *
-     * @return bool
-     */
-    private function isAssoc(array $array)
-    {
-        return (bool) count(array_filter(array_keys($array), 'is_string'));
-    }
-
-    /**
-     * Removes percent encoding on reserved characters (used with + and # modifiers)
-     *
-     * @param string $string String to fix
-     *
-     * @return string
-     */
-    private function decodeReserved($string)
-    {
-        return str_replace(self::$delimsPct, self::$delims, $string);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+xd720K7v7KOXFhYwQ1Ok

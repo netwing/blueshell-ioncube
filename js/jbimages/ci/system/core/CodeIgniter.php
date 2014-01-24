@@ -1,402 +1,108 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/**
- * CodeIgniter
- *
- * An open source application development framework for PHP 5.1.6 or newer
- *
- * @package		CodeIgniter
- * @author		ExpressionEngine Dev Team
- * @copyright	Copyright (c) 2008 - 2011, EllisLab, Inc.
- * @license		http://codeigniter.com/user_guide/license.html
- * @link		http://codeigniter.com
- * @since		Version 1.0
- * @filesource
- */
-
-// ------------------------------------------------------------------------
-
-/**
- * System Initialization File
- *
- * Loads the base classes and executes the request.
- *
- * @package		CodeIgniter
- * @subpackage	codeigniter
- * @category	Front-controller
- * @author		ExpressionEngine Dev Team
- * @link		http://codeigniter.com/user_guide/
- */
-
-/**
- * CodeIgniter Version
- *
- * @var string
- *
- */
-	define('CI_VERSION', '2.1.3');
-
-/**
- * CodeIgniter Branch (Core = TRUE, Reactor = FALSE)
- *
- * @var boolean
- *
- */
-	define('CI_CORE', FALSE);
-
-/*
- * ------------------------------------------------------
- *  Load the global functions
- * ------------------------------------------------------
- */
-	require(BASEPATH.'core/Common.php');
-
-/*
- * ------------------------------------------------------
- *  Load the framework constants
- * ------------------------------------------------------
- */
-	if (defined('ENVIRONMENT') AND file_exists(APPPATH.'config/'.ENVIRONMENT.'/constants.php'))
-	{
-		require(APPPATH.'config/'.ENVIRONMENT.'/constants.php');
-	}
-	else
-	{
-		require(APPPATH.'config/constants.php');
-	}
-
-/*
- * ------------------------------------------------------
- *  Define a custom error handler so we can log PHP errors
- * ------------------------------------------------------
- */
-	set_error_handler('_exception_handler');
-
-	if ( ! is_php('5.3'))
-	{
-		@set_magic_quotes_runtime(0); // Kill magic quotes
-	}
-
-/*
- * ------------------------------------------------------
- *  Set the subclass_prefix
- * ------------------------------------------------------
- *
- * Normally the "subclass_prefix" is set in the config file.
- * The subclass prefix allows CI to know if a core class is
- * being extended via a library in the local application
- * "libraries" folder. Since CI allows config items to be
- * overriden via data set in the main index. php file,
- * before proceeding we need to know if a subclass_prefix
- * override exists.  If so, we will set this value now,
- * before any classes are loaded
- * Note: Since the config file data is cached it doesn't
- * hurt to load it here.
- */
-	if (isset($assign_to_config['subclass_prefix']) AND $assign_to_config['subclass_prefix'] != '')
-	{
-		get_config(array('subclass_prefix' => $assign_to_config['subclass_prefix']));
-	}
-
-/*
- * ------------------------------------------------------
- *  Set a liberal script execution time limit
- * ------------------------------------------------------
- */
-	if (function_exists("set_time_limit") == TRUE AND @ini_get("safe_mode") == 0)
-	{
-		@set_time_limit(300);
-	}
-
-/*
- * ------------------------------------------------------
- *  Start the timer... tick tock tick tock...
- * ------------------------------------------------------
- */
-	$BM =& load_class('Benchmark', 'core');
-	$BM->mark('total_execution_time_start');
-	$BM->mark('loading_time:_base_classes_start');
-
-/*
- * ------------------------------------------------------
- *  Instantiate the hooks class
- * ------------------------------------------------------
- */
-	$EXT =& load_class('Hooks', 'core');
-
-/*
- * ------------------------------------------------------
- *  Is there a "pre_system" hook?
- * ------------------------------------------------------
- */
-	$EXT->_call_hook('pre_system');
-
-/*
- * ------------------------------------------------------
- *  Instantiate the config class
- * ------------------------------------------------------
- */
-	$CFG =& load_class('Config', 'core');
-
-	// Do we have any manually set config items in the index.php file?
-	if (isset($assign_to_config))
-	{
-		$CFG->_assign_to_config($assign_to_config);
-	}
-
-/*
- * ------------------------------------------------------
- *  Instantiate the UTF-8 class
- * ------------------------------------------------------
- *
- * Note: Order here is rather important as the UTF-8
- * class needs to be used very early on, but it cannot
- * properly determine if UTf-8 can be supported until
- * after the Config class is instantiated.
- *
- */
-
-	$UNI =& load_class('Utf8', 'core');
-
-/*
- * ------------------------------------------------------
- *  Instantiate the URI class
- * ------------------------------------------------------
- */
-	$URI =& load_class('URI', 'core');
-
-/*
- * ------------------------------------------------------
- *  Instantiate the routing class and set the routing
- * ------------------------------------------------------
- */
-	$RTR =& load_class('Router', 'core');
-	$RTR->_set_routing();
-
-	// Set any routing overrides that may exist in the main index file
-	if (isset($routing))
-	{
-		$RTR->_set_overrides($routing);
-	}
-
-/*
- * ------------------------------------------------------
- *  Instantiate the output class
- * ------------------------------------------------------
- */
-	$OUT =& load_class('Output', 'core');
-
-/*
- * ------------------------------------------------------
- *	Is there a valid cache file?  If so, we're done...
- * ------------------------------------------------------
- */
-	if ($EXT->_call_hook('cache_override') === FALSE)
-	{
-		if ($OUT->_display_cache($CFG, $URI) == TRUE)
-		{
-			exit;
-		}
-	}
-
-/*
- * -----------------------------------------------------
- * Load the security class for xss and csrf support
- * -----------------------------------------------------
- */
-	$SEC =& load_class('Security', 'core');
-
-/*
- * ------------------------------------------------------
- *  Load the Input class and sanitize globals
- * ------------------------------------------------------
- */
-	$IN	=& load_class('Input', 'core');
-
-/*
- * ------------------------------------------------------
- *  Load the Language class
- * ------------------------------------------------------
- */
-	$LANG =& load_class('Lang', 'core');
-
-/*
- * ------------------------------------------------------
- *  Load the app controller and local controller
- * ------------------------------------------------------
- *
- */
-	// Load the base controller class
-	require BASEPATH.'core/Controller.php';
-
-	function &get_instance()
-	{
-		return CI_Controller::get_instance();
-	}
-
-
-	if (file_exists(APPPATH.'core/'.$CFG->config['subclass_prefix'].'Controller.php'))
-	{
-		require APPPATH.'core/'.$CFG->config['subclass_prefix'].'Controller.php';
-	}
-
-	// Load the local application controller
-	// Note: The Router class automatically validates the controller path using the router->_validate_request().
-	// If this include fails it means that the default controller in the Routes.php file is not resolving to something valid.
-	if ( ! file_exists(APPPATH.'controllers/'.$RTR->fetch_directory().$RTR->fetch_class().'.php'))
-	{
-		show_error('Unable to load your default controller. Please make sure the controller specified in your Routes.php file is valid.');
-	}
-
-	include(APPPATH.'controllers/'.$RTR->fetch_directory().$RTR->fetch_class().'.php');
-
-	// Set a mark point for benchmarking
-	$BM->mark('loading_time:_base_classes_end');
-
-/*
- * ------------------------------------------------------
- *  Security check
- * ------------------------------------------------------
- *
- *  None of the functions in the app controller or the
- *  loader class can be called via the URI, nor can
- *  controller functions that begin with an underscore
- */
-	$class  = $RTR->fetch_class();
-	$method = $RTR->fetch_method();
-
-	if ( ! class_exists($class)
-		OR strncmp($method, '_', 1) == 0
-		OR in_array(strtolower($method), array_map('strtolower', get_class_methods('CI_Controller')))
-		)
-	{
-		if ( ! empty($RTR->routes['404_override']))
-		{
-			$x = explode('/', $RTR->routes['404_override']);
-			$class = $x[0];
-			$method = (isset($x[1]) ? $x[1] : 'index');
-			if ( ! class_exists($class))
-			{
-				if ( ! file_exists(APPPATH.'controllers/'.$class.'.php'))
-				{
-					show_404("{$class}/{$method}");
-				}
-
-				include_once(APPPATH.'controllers/'.$class.'.php');
-			}
-		}
-		else
-		{
-			show_404("{$class}/{$method}");
-		}
-	}
-
-/*
- * ------------------------------------------------------
- *  Is there a "pre_controller" hook?
- * ------------------------------------------------------
- */
-	$EXT->_call_hook('pre_controller');
-
-/*
- * ------------------------------------------------------
- *  Instantiate the requested controller
- * ------------------------------------------------------
- */
-	// Mark a start point so we can benchmark the controller
-	$BM->mark('controller_execution_time_( '.$class.' / '.$method.' )_start');
-
-	$CI = new $class();
-
-/*
- * ------------------------------------------------------
- *  Is there a "post_controller_constructor" hook?
- * ------------------------------------------------------
- */
-	$EXT->_call_hook('post_controller_constructor');
-
-/*
- * ------------------------------------------------------
- *  Call the requested method
- * ------------------------------------------------------
- */
-	// Is there a "remap" function? If so, we call it instead
-	if (method_exists($CI, '_remap'))
-	{
-		$CI->_remap($method, array_slice($URI->rsegments, 2));
-	}
-	else
-	{
-		// is_callable() returns TRUE on some versions of PHP 5 for private and protected
-		// methods, so we'll use this workaround for consistent behavior
-		if ( ! in_array(strtolower($method), array_map('strtolower', get_class_methods($CI))))
-		{
-			// Check and see if we are using a 404 override and use it.
-			if ( ! empty($RTR->routes['404_override']))
-			{
-				$x = explode('/', $RTR->routes['404_override']);
-				$class = $x[0];
-				$method = (isset($x[1]) ? $x[1] : 'index');
-				if ( ! class_exists($class))
-				{
-					if ( ! file_exists(APPPATH.'controllers/'.$class.'.php'))
-					{
-						show_404("{$class}/{$method}");
-					}
-
-					include_once(APPPATH.'controllers/'.$class.'.php');
-					unset($CI);
-					$CI = new $class();
-				}
-			}
-			else
-			{
-				show_404("{$class}/{$method}");
-			}
-		}
-
-		// Call the requested method.
-		// Any URI segments present (besides the class/function) will be passed to the method for convenience
-		call_user_func_array(array(&$CI, $method), array_slice($URI->rsegments, 2));
-	}
-
-
-	// Mark a benchmark end point
-	$BM->mark('controller_execution_time_( '.$class.' / '.$method.' )_end');
-
-/*
- * ------------------------------------------------------
- *  Is there a "post_controller" hook?
- * ------------------------------------------------------
- */
-	$EXT->_call_hook('post_controller');
-
-/*
- * ------------------------------------------------------
- *  Send the final rendered output to the browser
- * ------------------------------------------------------
- */
-	if ($EXT->_call_hook('display_override') === FALSE)
-	{
-		$OUT->_display();
-	}
-
-/*
- * ------------------------------------------------------
- *  Is there a "post_system" hook?
- * ------------------------------------------------------
- */
-	$EXT->_call_hook('post_system');
-
-/*
- * ------------------------------------------------------
- *  Close the DB connection if one exists
- * ------------------------------------------------------
- */
-	if (class_exists('CI_DB') AND isset($CI->db))
-	{
-		$CI->db->close();
-	}
-
-
-/* End of file CodeIgniter.php */
-/* Location: ./system/core/CodeIgniter.php */
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

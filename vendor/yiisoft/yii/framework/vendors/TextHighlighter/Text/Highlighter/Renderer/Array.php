@@ -1,199 +1,61 @@
-<?php
-/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
-/**
- * Array renderer.
- *
- * Produces an array that contains class names and content pairs.
- * The array can be enumerated or associative. Associative means
- * <code>class =&gt; content</code> pairs.
- * Based on the HTML renderer by Andrey Demenev.
- *
- * LICENSE: This source file is subject to version 3.0 of the PHP license
- * that is available through the world-wide-web at the following URI:
- * http://www.php.net/license/3_0.txt.  If you did not receive a copy of
- * the PHP License and are unable to obtain it through the web, please
- * send a note to license@php.net so we can mail you a copy immediately.
- *
- * @category   Text
- * @package    Text_Highlighter
- * @author     Stoyan Stefanov <ssttoo@gmail.com>
- * @copyright  2006 Stoyan Stefanov
- * @license    http://www.php.net/license/3_0.txt  PHP License
- * @version    CVS: $Id: Array.php,v 1.1 2007/06/03 02:37:08 ssttoo Exp $
- * @link       http://pear.php.net/package/Text_Highlighter
- */
-
-/**
- * @ignore
- */
-
-require_once dirname(__FILE__).'/../Renderer.php';
-
-/**
- * Array renderer, based on Andrey Demenev's HTML renderer.
- *
- * In addition to the options supported by the HTML renderer,
- * the following options were also introduced:
- * <ul><li>htmlspecialchars - whether or not htmlspecialchars() will
- *                            be called on the content, default TRUE</li>
- *     <li>enumerated - type of array produced, default FALSE,
- *                            meaning associative array</li>
- * </ul>
- *
- *
- * @author     Stoyan Stefanov <ssttoo@gmail.com>
- * @category   Text
- * @package    Text_Highlighter
- * @copyright  2006 Stoyan Stefanov
- * @license    http://www.php.net/license/3_0.txt  PHP License
- * @version    Release: 0.5.0
- * @link       http://pear.php.net/package/Text_Highlighter
- */
-
-class Text_Highlighter_Renderer_Array extends Text_Highlighter_Renderer
-{
-
-    /**#@+
-     * @access private
-     */
-
-    /**
-     * Tab size
-     *
-     * @var integer
-     */
-    var $_tabsize = 4;
-
-    /**
-     * Should htmlentities() will be called
-     *
-     * @var boolean
-     */
-    var $_htmlspecialchars = true;
-
-    /**
-     * Enumerated or associative array
-     *
-     * @var integer
-     */
-    var $_enumerated = false;
-
-    /**
-     * Array containing highlighting rules
-     *
-     * @var array
-     */
-    var $_output = array();
-
-    /**#@-*/
-
-    /**
-     * Preprocesses code
-     *
-     * @access public
-     *
-     * @param  string $str Code to preprocess
-     * @return string Preprocessed code
-     */
-    function preprocess($str)
-    {
-        // normalize whitespace and tabs
-        $str = str_replace("\r\n","\n", $str);
-        // some browsers refuse to display empty lines
-        $str = preg_replace('~^$~m'," ", $str);
-        $str = str_replace("\t",str_repeat(' ', $this->_tabsize), $str);
-        return rtrim($str);
-    }
-
-
-    /**
-     * Resets renderer state
-     *
-     * Descendents of Text_Highlighter call this method from the constructor,
-     * passing $options they get as parameter.
-     *
-     * @access protected
-     */
-    function reset()
-    {
-        $this->_output = array();
-        $this->_lastClass = 'default';
-        if (isset($this->_options['tabsize'])) {
-            $this->_tabsize = $this->_options['tabsize'];
-        }
-        if (isset($this->_options['htmlspecialchars'])) {
-            $this->_htmlspecialchars = $this->_options['htmlspecialchars'];
-        }
-        if (isset($this->_options['enumerated'])) {
-            $this->_enumerated = $this->_options['enumerated'];
-        }
-    }
-
-
-
-    /**
-     * Accepts next token
-     *
-     * @abstract
-     * @access public
-     * @param  string $class   Token class
-     * @param  string $content Token content
-     */
-    function acceptToken($class, $content)
-    {
-
-
-        $theClass = $this->_getFullClassName($class);
-        if ($this->_htmlspecialchars) {
-            $content = htmlspecialchars($content);
-        }
-        if ($this->_enumerated) {
-            $this->_output[] = array($class, $content);
-        } else {
-            $this->_output[][$class] = $content;
-        }
-        $this->_lastClass = $class;
-
-    }
-
-
-    /**
-     * Given a CSS class name, returns the class name
-     * with language name prepended, if necessary
-     *
-     * @access private
-     *
-     * @param  string $class   Token class
-     */
-    function _getFullClassName($class)
-    {
-        if (!empty($this->_options['use_language'])) {
-            $theClass = $this->_language . '-' . $class;
-        } else {
-            $theClass = $class;
-        }
-        return $theClass;
-    }
-
-    /**
-     * Get generated output
-     *
-     * @abstract
-     * @return array Highlighted code as an array
-     * @access public
-     */
-    function getOutput()
-    {
-        return $this->_output;
-    }
-}
-
-/*
- * Local variables:
- * tab-width: 4
- * c-basic-offset: 4
- * c-hanging-comment-ender-p: nil
- * End:
- */
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+vmAk

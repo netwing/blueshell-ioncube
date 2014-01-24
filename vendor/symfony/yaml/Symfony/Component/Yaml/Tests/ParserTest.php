@@ -1,619 +1,168 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\Yaml\Tests;
-
-use Symfony\Component\Yaml\Yaml;
-use Symfony\Component\Yaml\Parser;
-
-class ParserTest extends \PHPUnit_Framework_TestCase
-{
-    protected $parser;
-
-    protected function setUp()
-    {
-        $this->parser = new Parser();
-    }
-
-    protected function tearDown()
-    {
-        $this->parser = null;
-    }
-
-    /**
-     * @dataProvider getDataFormSpecifications
-     */
-    public function testSpecifications($file, $expected, $yaml, $comment)
-    {
-        if ('escapedCharacters' == $file) {
-            if (!function_exists('iconv') && !function_exists('mb_convert_encoding')) {
-                $this->markTestSkipped('The iconv and mbstring extensions are not available.');
-            }
-        }
-
-        $this->assertEquals($expected, var_export($this->parser->parse($yaml), true), $comment);
-    }
-
-    public function getDataFormSpecifications()
-    {
-        $parser = new Parser();
-        $path = __DIR__.'/Fixtures';
-
-        $tests = array();
-        $files = $parser->parse(file_get_contents($path.'/index.yml'));
-        foreach ($files as $file) {
-            $yamls = file_get_contents($path.'/'.$file.'.yml');
-
-            // split YAMLs documents
-            foreach (preg_split('/^---( %YAML\:1\.0)?/m', $yamls) as $yaml) {
-                if (!$yaml) {
-                    continue;
-                }
-
-                $test = $parser->parse($yaml);
-                if (isset($test['todo']) && $test['todo']) {
-                    // TODO
-                } else {
-                    $expected = var_export(eval('return '.trim($test['php']).';'), true);
-
-                    $tests[] = array($file, $expected, $test['yaml'], $test['test']);
-                }
-            }
-        }
-
-        return $tests;
-    }
-
-    public function testTabsInYaml()
-    {
-        // test tabs in YAML
-        $yamls = array(
-            "foo:\n	bar",
-            "foo:\n 	bar",
-            "foo:\n	 bar",
-            "foo:\n 	 bar",
-        );
-
-        foreach ($yamls as $yaml) {
-            try {
-                $content = $this->parser->parse($yaml);
-
-                $this->fail('YAML files must not contain tabs');
-            } catch (\Exception $e) {
-                $this->assertInstanceOf('\Exception', $e, 'YAML files must not contain tabs');
-                $this->assertEquals('A YAML file cannot contain tabs as indentation at line 2 (near "'.strpbrk($yaml, "\t").'").', $e->getMessage(), 'YAML files must not contain tabs');
-            }
-        }
-    }
-
-    public function testEndOfTheDocumentMarker()
-    {
-        $yaml = <<<EOF
---- %YAML:1.0
-foo
-...
-EOF;
-
-        $this->assertEquals('foo', $this->parser->parse($yaml));
-    }
-
-    public function getBlockChompingTests()
-    {
-        $tests = array();
-
-        $yaml = <<<'EOF'
-foo: |-
-    one
-    two
-bar: |-
-    one
-    two
-
-EOF;
-        $expected = array(
-            'foo' => "one\ntwo",
-            'bar' => "one\ntwo",
-        );
-        $tests['Literal block chomping strip with single trailing newline'] = array($expected, $yaml);
-
-        $yaml = <<<'EOF'
-foo: |-
-    one
-    two
-
-bar: |-
-    one
-    two
-
-
-EOF;
-        $expected = array(
-            'foo' => "one\ntwo",
-            'bar' => "one\ntwo",
-        );
-        $tests['Literal block chomping strip with multiple trailing newlines'] = array($expected, $yaml);
-
-        $yaml = <<<'EOF'
-foo: |-
-    one
-    two
-bar: |-
-    one
-    two
-EOF;
-        $expected = array(
-            'foo' => "one\ntwo",
-            'bar' => "one\ntwo",
-        );
-        $tests['Literal block chomping strip without trailing newline'] = array($expected, $yaml);
-
-        $yaml = <<<'EOF'
-foo: |
-    one
-    two
-bar: |
-    one
-    two
-
-EOF;
-        $expected = array(
-            'foo' => "one\ntwo\n",
-            'bar' => "one\ntwo\n",
-        );
-        $tests['Literal block chomping clip with single trailing newline'] = array($expected, $yaml);
-
-        $yaml = <<<'EOF'
-foo: |
-    one
-    two
-
-bar: |
-    one
-    two
-
-
-EOF;
-        $expected = array(
-            'foo' => "one\ntwo\n",
-            'bar' => "one\ntwo\n",
-        );
-        $tests['Literal block chomping clip with multiple trailing newlines'] = array($expected, $yaml);
-
-        $yaml = <<<'EOF'
-foo: |
-    one
-    two
-bar: |
-    one
-    two
-EOF;
-        $expected = array(
-            'foo' => "one\ntwo\n",
-            'bar' => "one\ntwo",
-        );
-        $tests['Literal block chomping clip without trailing newline'] = array($expected, $yaml);
-
-        $yaml = <<<'EOF'
-foo: |+
-    one
-    two
-bar: |+
-    one
-    two
-
-EOF;
-        $expected = array(
-            'foo' => "one\ntwo\n",
-            'bar' => "one\ntwo\n",
-        );
-        $tests['Literal block chomping keep with single trailing newline'] = array($expected, $yaml);
-
-        $yaml = <<<'EOF'
-foo: |+
-    one
-    two
-
-bar: |+
-    one
-    two
-
-
-EOF;
-        $expected = array(
-            'foo' => "one\ntwo\n\n",
-            'bar' => "one\ntwo\n\n",
-        );
-        $tests['Literal block chomping keep with multiple trailing newlines'] = array($expected, $yaml);
-
-        $yaml = <<<'EOF'
-foo: |+
-    one
-    two
-bar: |+
-    one
-    two
-EOF;
-        $expected = array(
-            'foo' => "one\ntwo\n",
-            'bar' => "one\ntwo",
-        );
-        $tests['Literal block chomping keep without trailing newline'] = array($expected, $yaml);
-
-        $yaml = <<<'EOF'
-foo: >-
-    one
-    two
-bar: >-
-    one
-    two
-
-EOF;
-        $expected = array(
-            'foo' => "one two",
-            'bar' => "one two",
-        );
-        $tests['Folded block chomping strip with single trailing newline'] = array($expected, $yaml);
-
-        $yaml = <<<'EOF'
-foo: >-
-    one
-    two
-
-bar: >-
-    one
-    two
-
-
-EOF;
-        $expected = array(
-            'foo' => "one two",
-            'bar' => "one two",
-        );
-        $tests['Folded block chomping strip with multiple trailing newlines'] = array($expected, $yaml);
-
-        $yaml = <<<'EOF'
-foo: >-
-    one
-    two
-bar: >-
-    one
-    two
-EOF;
-        $expected = array(
-            'foo' => "one two",
-            'bar' => "one two",
-        );
-        $tests['Folded block chomping strip without trailing newline'] = array($expected, $yaml);
-
-        $yaml = <<<'EOF'
-foo: >
-    one
-    two
-bar: >
-    one
-    two
-
-EOF;
-        $expected = array(
-            'foo' => "one two\n",
-            'bar' => "one two\n",
-        );
-        $tests['Folded block chomping clip with single trailing newline'] = array($expected, $yaml);
-
-        $yaml = <<<'EOF'
-foo: >
-    one
-    two
-
-bar: >
-    one
-    two
-
-
-EOF;
-        $expected = array(
-            'foo' => "one two\n",
-            'bar' => "one two\n",
-        );
-        $tests['Folded block chomping clip with multiple trailing newlines'] = array($expected, $yaml);
-
-        $yaml = <<<'EOF'
-foo: >
-    one
-    two
-bar: >
-    one
-    two
-EOF;
-        $expected = array(
-            'foo' => "one two\n",
-            'bar' => "one two",
-        );
-        $tests['Folded block chomping clip without trailing newline'] = array($expected, $yaml);
-
-        $yaml = <<<'EOF'
-foo: >+
-    one
-    two
-bar: >+
-    one
-    two
-
-EOF;
-        $expected = array(
-            'foo' => "one two\n",
-            'bar' => "one two\n",
-        );
-        $tests['Folded block chomping keep with single trailing newline'] = array($expected, $yaml);
-
-        $yaml = <<<'EOF'
-foo: >+
-    one
-    two
-
-bar: >+
-    one
-    two
-
-
-EOF;
-        $expected = array(
-            'foo' => "one two\n\n",
-            'bar' => "one two\n\n",
-        );
-        $tests['Folded block chomping keep with multiple trailing newlines'] = array($expected, $yaml);
-
-        $yaml = <<<'EOF'
-foo: >+
-    one
-    two
-bar: >+
-    one
-    two
-EOF;
-        $expected = array(
-            'foo' => "one two\n",
-            'bar' => "one two",
-        );
-        $tests['Folded block chomping keep without trailing newline'] = array($expected, $yaml);
-
-        return $tests;
-    }
-
-    /**
-     * @dataProvider getBlockChompingTests
-     */
-    public function testBlockChomping($expected, $yaml)
-    {
-        $this->assertSame($expected, $this->parser->parse($yaml));
-    }
-
-    /**
-     * Regression test for issue #7989.
-     *
-     * @see https://github.com/symfony/symfony/issues/7989
-     */
-    public function testBlockLiteralWithLeadingNewlines()
-    {
-        $yaml = <<<'EOF'
-foo: |-
-
-
-    bar
-
-EOF;
-        $expected = array(
-            'foo' => "\n\nbar"
-        );
-
-        $this->assertSame($expected, $this->parser->parse($yaml));
-    }
-
-    public function testObjectSupportEnabled()
-    {
-        $input = <<<EOF
-foo: !!php/object:O:30:"Symfony\Component\Yaml\Tests\B":1:{s:1:"b";s:3:"foo";}
-bar: 1
-EOF;
-        $this->assertEquals(array('foo' => new B(), 'bar' => 1), $this->parser->parse($input, false, true), '->parse() is able to parse objects');
-    }
-
-    public function testObjectSupportDisabledButNoExceptions()
-    {
-        $input = <<<EOF
-foo: !!php/object:O:30:"Symfony\Tests\Component\Yaml\B":1:{s:1:"b";s:3:"foo";}
-bar: 1
-EOF;
-
-        $this->assertEquals(array('foo' => null, 'bar' => 1), $this->parser->parse($input), '->parse() does not parse objects');
-    }
-
-    /**
-     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
-     */
-    public function testObjectsSupportDisabledWithExceptions()
-    {
-        $this->parser->parse('foo: !!php/object:O:30:"Symfony\Tests\Component\Yaml\B":1:{s:1:"b";s:3:"foo";}', true, false);
-    }
-
-    public function testNonUtf8Exception()
-    {
-        if (!function_exists('mb_detect_encoding') || !function_exists('iconv')) {
-            $this->markTestSkipped('Exceptions for non-utf8 charsets require the mb_detect_encoding() and iconv() functions.');
-
-            return;
-        }
-
-        $yamls = array(
-            iconv("UTF-8", "ISO-8859-1", "foo: 'äöüß'"),
-            iconv("UTF-8", "ISO-8859-15", "euro: '€'"),
-            iconv("UTF-8", "CP1252", "cp1252: '©ÉÇáñ'")
-        );
-
-        foreach ($yamls as $yaml) {
-            try {
-                $this->parser->parse($yaml);
-
-                $this->fail('charsets other than UTF-8 are rejected.');
-            } catch (\Exception $e) {
-                 $this->assertInstanceOf('Symfony\Component\Yaml\Exception\ParseException', $e, 'charsets other than UTF-8 are rejected.');
-            }
-        }
-    }
-
-    /**
-     *
-     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
-     *
-     */
-    public function testUnindentedCollectionException()
-    {
-        $yaml = <<<EOF
-
-collection:
--item1
--item2
--item3
-
-EOF;
-
-        $this->parser->parse($yaml);
-    }
-
-    /**
-     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
-     */
-    public function testSequenceInAMapping()
-    {
-        Yaml::parse(<<<EOF
-yaml:
-  hash: me
-  - array stuff
-EOF
-        );
-    }
-
-    /**
-     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
-     */
-    public function testMappingInASequence()
-    {
-        Yaml::parse(<<<EOF
-yaml:
-  - array stuff
-  hash: me
-EOF
-        );
-    }
-
-    public function testEmptyValue()
-    {
-        $input = <<<EOF
-hash:
-EOF;
-
-        $this->assertEquals(array('hash' => null), Yaml::parse($input));
-    }
-
-    public function testStringBlockWithComments()
-    {
-        $this->assertEquals(array('content' => <<<EOT
-# comment 1
-header
-
-    # comment 2
-    <body>
-        <h1>title</h1>
-    </body>
-
-footer # comment3
-EOT
-        ), Yaml::parse(<<<EOF
-content: |
-    # comment 1
-    header
-
-        # comment 2
-        <body>
-            <h1>title</h1>
-        </body>
-
-    footer # comment3
-EOF
-        ));
-    }
-
-    public function testFoldedStringBlockWithComments()
-    {
-        $this->assertEquals(array(array('content' => <<<EOT
-# comment 1
-header
-
-    # comment 2
-    <body>
-        <h1>title</h1>
-    </body>
-
-footer # comment3
-EOT
-        )), Yaml::parse(<<<EOF
--
-    content: |
-        # comment 1
-        header
-
-            # comment 2
-            <body>
-                <h1>title</h1>
-            </body>
-
-        footer # comment3
-EOF
-        ));
-    }
-
-    public function testNestedFoldedStringBlockWithComments()
-    {
-        $this->assertEquals(array(array(
-            'title'   => 'some title',
-            'content' => <<<EOT
-# comment 1
-header
-
-    # comment 2
-    <body>
-        <h1>title</h1>
-    </body>
-
-footer # comment3
-EOT
-        )), Yaml::parse(<<<EOF
--
-    title: some title
-    content: |
-        # comment 1
-        header
-
-            # comment 2
-            <body>
-                <h1>title</h1>
-            </body>
-
-        footer # comment3
-EOF
-        ));
-    }
-}
-
-class B
-{
-    public $b = 'foo';
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

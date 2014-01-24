@@ -1,3811 +1,1357 @@
-<?php
-/**
- * PHPExcel
- *
- * Copyright (c) 2006 - 2012 PHPExcel
- *
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation; either
- * version 2.1 of the License, or (at your option) any later version.
- *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
- *
- * @category   PHPExcel
- * @package    PHPExcel_Calculation
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- * @license	http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
- * @version	1.7.8, 2012-10-12
- */
-
-
-/** PHPExcel root directory */
-if (!defined('PHPEXCEL_ROOT')) {
-	/**
-	 * @ignore
-	 */
-	define('PHPEXCEL_ROOT', dirname(__FILE__) . '/../');
-	require(PHPEXCEL_ROOT . 'PHPExcel/Autoloader.php');
-}
-
-
-if (!defined('CALCULATION_REGEXP_CELLREF')) {
-	//	Test for support of \P (multibyte options) in PCRE
-	if(defined('PREG_BAD_UTF8_ERROR')) {
-		//	Cell reference (cell or range of cells, with or without a sheet reference)
-		define('CALCULATION_REGEXP_CELLREF','((([^\s,!&%^\/\*\+<>=-]*)|(\'[^\']*\')|(\"[^\"]*\"))!)?\$?([a-z]{1,3})\$?(\d{1,7})');
-		//	Named Range of cells
-		define('CALCULATION_REGEXP_NAMEDRANGE','((([^\s,!&%^\/\*\+<>=-]*)|(\'[^\']*\')|(\"[^\"]*\"))!)?([_A-Z][_A-Z0-9\.]*)');
-	} else {
-		//	Cell reference (cell or range of cells, with or without a sheet reference)
-		define('CALCULATION_REGEXP_CELLREF','(((\w*)|(\'[^\']*\')|(\"[^\"]*\"))!)?\$?([a-z]{1,3})\$?(\d+)');
-		//	Named Range of cells
-		define('CALCULATION_REGEXP_NAMEDRANGE','(((\w*)|(\'.*\')|(\".*\"))!)?([_A-Z][_A-Z0-9\.]*)');
-	}
-}
-
-
-/**
- * PHPExcel_Calculation (Singleton)
- *
- * @category	PHPExcel
- * @package		PHPExcel_Calculation
- * @copyright	Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- */
-class PHPExcel_Calculation {
-
-	/** Constants				*/
-	/** Regular Expressions		*/
-	//	Numeric operand
-	const CALCULATION_REGEXP_NUMBER		= '[-+]?\d*\.?\d+(e[-+]?\d+)?';
-	//	String operand
-	const CALCULATION_REGEXP_STRING		= '"(?:[^"]|"")*"';
-	//	Opening bracket
-	const CALCULATION_REGEXP_OPENBRACE	= '\(';
-	//	Function (allow for the old @ symbol that could be used to prefix a function, but we'll ignore it)
-	const CALCULATION_REGEXP_FUNCTION	= '@?([A-Z][A-Z0-9\.]*)[\s]*\(';
-	//	Cell reference (cell or range of cells, with or without a sheet reference)
-	const CALCULATION_REGEXP_CELLREF	= CALCULATION_REGEXP_CELLREF;
-	//	Named Range of cells
-	const CALCULATION_REGEXP_NAMEDRANGE	= CALCULATION_REGEXP_NAMEDRANGE;
-	//	Error
-	const CALCULATION_REGEXP_ERROR		= '\#[A-Z][A-Z0_\/]*[!\?]?';
-
-
-	/** constants */
-	const RETURN_ARRAY_AS_ERROR = 'error';
-	const RETURN_ARRAY_AS_VALUE = 'value';
-	const RETURN_ARRAY_AS_ARRAY = 'array';
-
-	private static $returnArrayAsType	= self::RETURN_ARRAY_AS_VALUE;
-
-
-	/**
-	 * Instance of this class
-	 *
-	 * @access	private
-	 * @var PHPExcel_Calculation
-	 */
-	private static $_instance;
-
-
-	/**
-	 * Calculation cache
-	 *
-	 * @access	private
-	 * @var array
-	 */
-	private static $_calculationCache = array ();
-
-
-	/**
-	 * Calculation cache enabled
-	 *
-	 * @access	private
-	 * @var boolean
-	 */
-	private static $_calculationCacheEnabled = true;
-
-
-	/**
-	 * Calculation cache expiration time
-	 *
-	 * @access	private
-	 * @var float
-	 */
-	private static $_calculationCacheExpirationTime = 15;
-
-
-	/**
-	 * List of operators that can be used within formulae
-	 * The true/false value indicates whether it is a binary operator or a unary operator
-	 *
-	 * @access	private
-	 * @var array
-	 */
-	private static $_operators			= array('+' => true,	'-' => true,	'*' => true,	'/' => true,
-												'^' => true,	'&' => true,	'%' => false,	'~' => false,
-												'>' => true,	'<' => true,	'=' => true,	'>=' => true,
-												'<=' => true,	'<>' => true,	'|' => true,	':' => true
-											   );
-
-
-	/**
-	 * List of binary operators (those that expect two operands)
-	 *
-	 * @access	private
-	 * @var array
-	 */
-	private static $_binaryOperators	= array('+' => true,	'-' => true,	'*' => true,	'/' => true,
-												'^' => true,	'&' => true,	'>' => true,	'<' => true,
-												'=' => true,	'>=' => true,	'<=' => true,	'<>' => true,
-												'|' => true,	':' => true
-											   );
-
-	/**
-	 * Flag to determine how formula errors should be handled
-	 *		If true, then a user error will be triggered
-	 *		If false, then an exception will be thrown
-	 *
-	 * @access	public
-	 * @var boolean
-	 *
-	 */
-	public $suppressFormulaErrors = false;
-
-	/**
-	 * Error message for any error that was raised/thrown by the calculation engine
-	 *
-	 * @access	public
-	 * @var string
-	 *
-	 */
-	public $formulaError = null;
-
-	/**
-	 * Flag to determine whether a debug log should be generated by the calculation engine
-	 *		If true, then a debug log will be generated
-	 *		If false, then a debug log will not be generated
-	 *
-	 * @access	public
-	 * @var boolean
-	 *
-	 */
-	public $writeDebugLog = false;
-
-	/**
-	 * Flag to determine whether a debug log should be echoed by the calculation engine
-	 *		If true, then a debug log will be echoed
-	 *		If false, then a debug log will not be echoed
-	 * A debug log can only be echoed if it is generated
-	 *
-	 * @access	public
-	 * @var boolean
-	 *
-	 */
-	public $echoDebugLog = false;
-
-
-	/**
-	 * An array of the nested cell references accessed by the calculation engine, used for the debug log
-	 *
-	 * @access	private
-	 * @var array of string
-	 *
-	 */
-	private $debugLogStack = array();
-
-	/**
-	 * The debug log generated by the calculation engine
-	 *
-	 * @access	public
-	 * @var array of string
-	 *
-	 */
-	public $debugLog = array();
-	private $_cyclicFormulaCount = 0;
-	private $_cyclicFormulaCell = '';
-	public $cyclicFormulaCount = 0;
-
-
-	private $_savedPrecision	= 12;
-
-
-	private static $_localeLanguage = 'en_us';					//	US English	(default locale)
-	private static $_validLocaleLanguages = array(	'en'		//	English		(default language)
-												 );
-	private static $_localeArgumentSeparator = ',';
-	private static $_localeFunctions = array();
-	public static $_localeBoolean = array(	'TRUE'	=> 'TRUE',
-											'FALSE'	=> 'FALSE',
-											'NULL'	=> 'NULL'
-										  );
-
-
-	//	Constant conversion from text name/value to actual (datatyped) value
-	private static $_ExcelConstants = array('TRUE'	=> true,
-											'FALSE'	=> false,
-											'NULL'	=> null
-										   );
-
-	//	PHPExcel functions
-	private static $_PHPExcelFunctions = array(	// PHPExcel functions
-				'ABS'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'abs',
-												 'argumentCount'	=>	'1'
-												),
-				'ACCRINT'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::ACCRINT',
-												 'argumentCount'	=>	'4-7'
-												),
-				'ACCRINTM'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::ACCRINTM',
-												 'argumentCount'	=>	'3-5'
-												),
-				'ACOS'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'acos',
-												 'argumentCount'	=>	'1'
-												),
-				'ACOSH'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'acosh',
-												 'argumentCount'	=>	'1'
-												),
-				'ADDRESS'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_LOOKUP_AND_REFERENCE,
-												 'functionCall'		=>	'PHPExcel_Calculation_LookupRef::CELL_ADDRESS',
-												 'argumentCount'	=>	'2-5'
-												),
-				'AMORDEGRC'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::AMORDEGRC',
-												 'argumentCount'	=>	'6,7'
-												),
-				'AMORLINC'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::AMORLINC',
-												 'argumentCount'	=>	'6,7'
-												),
-				'AND'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_LOGICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Logical::LOGICAL_AND',
-												 'argumentCount'	=>	'1+'
-												),
-				'AREAS'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_LOOKUP_AND_REFERENCE,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'1'
-												),
-				'ASC'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_TEXT_AND_DATA,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'1'
-												),
-				'ASIN'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'asin',
-												 'argumentCount'	=>	'1'
-												),
-				'ASINH'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'asinh',
-												 'argumentCount'	=>	'1'
-												),
-				'ATAN'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'atan',
-												 'argumentCount'	=>	'1'
-												),
-				'ATAN2'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::ATAN2',
-												 'argumentCount'	=>	'2'
-												),
-				'ATANH'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'atanh',
-												 'argumentCount'	=>	'1'
-												),
-				'AVEDEV'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::AVEDEV',
-												 'argumentCount'	=>	'1+'
-												),
-				'AVERAGE'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::AVERAGE',
-												 'argumentCount'	=>	'1+'
-												),
-				'AVERAGEA'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::AVERAGEA',
-												 'argumentCount'	=>	'1+'
-												),
-				'AVERAGEIF'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::AVERAGEIF',
-												 'argumentCount'	=>	'2,3'
-												),
-				'AVERAGEIFS'			=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'3+'
-												),
-				'BAHTTEXT'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_TEXT_AND_DATA,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'1'
-												),
-				'BESSELI'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::BESSELI',
-												 'argumentCount'	=>	'2'
-												),
-				'BESSELJ'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::BESSELJ',
-												 'argumentCount'	=>	'2'
-												),
-				'BESSELK'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::BESSELK',
-												 'argumentCount'	=>	'2'
-												),
-				'BESSELY'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::BESSELY',
-												 'argumentCount'	=>	'2'
-												),
-				'BETADIST'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::BETADIST',
-												 'argumentCount'	=>	'3-5'
-												),
-				'BETAINV'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::BETAINV',
-												 'argumentCount'	=>	'3-5'
-												),
-				'BIN2DEC'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::BINTODEC',
-												 'argumentCount'	=>	'1'
-												),
-				'BIN2HEX'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::BINTOHEX',
-												 'argumentCount'	=>	'1,2'
-												),
-				'BIN2OCT'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::BINTOOCT',
-												 'argumentCount'	=>	'1,2'
-												),
-				'BINOMDIST'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::BINOMDIST',
-												 'argumentCount'	=>	'4'
-												),
-				'CEILING'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::CEILING',
-												 'argumentCount'	=>	'2'
-												),
-				'CELL'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_INFORMATION,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'1,2'
-												),
-				'CHAR'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_TEXT_AND_DATA,
-												 'functionCall'		=>	'PHPExcel_Calculation_TextData::CHARACTER',
-												 'argumentCount'	=>	'1'
-												),
-				'CHIDIST'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::CHIDIST',
-												 'argumentCount'	=>	'2'
-												),
-				'CHIINV'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::CHIINV',
-												 'argumentCount'	=>	'2'
-												),
-				'CHITEST'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'2'
-												),
-				'CHOOSE'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_LOOKUP_AND_REFERENCE,
-												 'functionCall'		=>	'PHPExcel_Calculation_LookupRef::CHOOSE',
-												 'argumentCount'	=>	'2+'
-												),
-				'CLEAN'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_TEXT_AND_DATA,
-												 'functionCall'		=>	'PHPExcel_Calculation_TextData::TRIMNONPRINTABLE',
-												 'argumentCount'	=>	'1'
-												),
-				'CODE'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_TEXT_AND_DATA,
-												 'functionCall'		=>	'PHPExcel_Calculation_TextData::ASCIICODE',
-												 'argumentCount'	=>	'1'
-												),
-				'COLUMN'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_LOOKUP_AND_REFERENCE,
-												 'functionCall'		=>	'PHPExcel_Calculation_LookupRef::COLUMN',
-												 'argumentCount'	=>	'-1',
-												 'passByReference'	=>	array(true)
-												),
-				'COLUMNS'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_LOOKUP_AND_REFERENCE,
-												 'functionCall'		=>	'PHPExcel_Calculation_LookupRef::COLUMNS',
-												 'argumentCount'	=>	'1'
-												),
-				'COMBIN'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::COMBIN',
-												 'argumentCount'	=>	'2'
-												),
-				'COMPLEX'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::COMPLEX',
-												 'argumentCount'	=>	'2,3'
-												),
-				'CONCATENATE'			=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_TEXT_AND_DATA,
-												 'functionCall'		=>	'PHPExcel_Calculation_TextData::CONCATENATE',
-												 'argumentCount'	=>	'1+'
-												),
-				'CONFIDENCE'			=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::CONFIDENCE',
-												 'argumentCount'	=>	'3'
-												),
-				'CONVERT'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::CONVERTUOM',
-												 'argumentCount'	=>	'3'
-												),
-				'CORREL'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::CORREL',
-												 'argumentCount'	=>	'2'
-												),
-				'COS'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'cos',
-												 'argumentCount'	=>	'1'
-												),
-				'COSH'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'cosh',
-												 'argumentCount'	=>	'1'
-												),
-				'COUNT'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::COUNT',
-												 'argumentCount'	=>	'1+'
-												),
-				'COUNTA'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::COUNTA',
-												 'argumentCount'	=>	'1+'
-												),
-				'COUNTBLANK'			=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::COUNTBLANK',
-												 'argumentCount'	=>	'1'
-												),
-				'COUNTIF'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::COUNTIF',
-												 'argumentCount'	=>	'2'
-												),
-				'COUNTIFS'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'2'
-												),
-				'COUPDAYBS'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::COUPDAYBS',
-												 'argumentCount'	=>	'3,4'
-												),
-				'COUPDAYS'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::COUPDAYS',
-												 'argumentCount'	=>	'3,4'
-												),
-				'COUPDAYSNC'			=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::COUPDAYSNC',
-												 'argumentCount'	=>	'3,4'
-												),
-				'COUPNCD'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::COUPNCD',
-												 'argumentCount'	=>	'3,4'
-												),
-				'COUPNUM'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::COUPNUM',
-												 'argumentCount'	=>	'3,4'
-												),
-				'COUPPCD'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::COUPPCD',
-												 'argumentCount'	=>	'3,4'
-												),
-				'COVAR'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::COVAR',
-												 'argumentCount'	=>	'2'
-												),
-				'CRITBINOM'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::CRITBINOM',
-												 'argumentCount'	=>	'3'
-												),
-				'CUBEKPIMEMBER'			=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_CUBE,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'?'
-												),
-				'CUBEMEMBER'			=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_CUBE,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'?'
-												),
-				'CUBEMEMBERPROPERTY'	=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_CUBE,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'?'
-												),
-				'CUBERANKEDMEMBER'		=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_CUBE,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'?'
-												),
-				'CUBESET'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_CUBE,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'?'
-												),
-				'CUBESETCOUNT'			=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_CUBE,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'?'
-												),
-				'CUBEVALUE'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_CUBE,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'?'
-												),
-				'CUMIPMT'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::CUMIPMT',
-												 'argumentCount'	=>	'6'
-												),
-				'CUMPRINC'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::CUMPRINC',
-												 'argumentCount'	=>	'6'
-												),
-				'DATE'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_DATE_AND_TIME,
-												 'functionCall'		=>	'PHPExcel_Calculation_DateTime::DATE',
-												 'argumentCount'	=>	'3'
-												),
-				'DATEDIF'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_DATE_AND_TIME,
-												 'functionCall'		=>	'PHPExcel_Calculation_DateTime::DATEDIF',
-												 'argumentCount'	=>	'2,3'
-												),
-				'DATEVALUE'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_DATE_AND_TIME,
-												 'functionCall'		=>	'PHPExcel_Calculation_DateTime::DATEVALUE',
-												 'argumentCount'	=>	'1'
-												),
-				'DAVERAGE'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_DATABASE,
-												 'functionCall'		=>	'PHPExcel_Calculation_Database::DAVERAGE',
-												 'argumentCount'	=>	'3'
-												),
-				'DAY'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_DATE_AND_TIME,
-												 'functionCall'		=>	'PHPExcel_Calculation_DateTime::DAYOFMONTH',
-												 'argumentCount'	=>	'1'
-												),
-				'DAYS360'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_DATE_AND_TIME,
-												 'functionCall'		=>	'PHPExcel_Calculation_DateTime::DAYS360',
-												 'argumentCount'	=>	'2,3'
-												),
-				'DB'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::DB',
-												 'argumentCount'	=>	'4,5'
-												),
-				'DCOUNT'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_DATABASE,
-												 'functionCall'		=>	'PHPExcel_Calculation_Database::DCOUNT',
-												 'argumentCount'	=>	'3'
-												),
-				'DCOUNTA'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_DATABASE,
-												 'functionCall'		=>	'PHPExcel_Calculation_Database::DCOUNTA',
-												 'argumentCount'	=>	'3'
-												),
-				'DDB'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::DDB',
-												 'argumentCount'	=>	'4,5'
-												),
-				'DEC2BIN'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::DECTOBIN',
-												 'argumentCount'	=>	'1,2'
-												),
-				'DEC2HEX'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::DECTOHEX',
-												 'argumentCount'	=>	'1,2'
-												),
-				'DEC2OCT'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::DECTOOCT',
-												 'argumentCount'	=>	'1,2'
-												),
-				'DEGREES'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'rad2deg',
-												 'argumentCount'	=>	'1'
-												),
-				'DELTA'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::DELTA',
-												 'argumentCount'	=>	'1,2'
-												),
-				'DEVSQ'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::DEVSQ',
-												 'argumentCount'	=>	'1+'
-												),
-				'DGET'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_DATABASE,
-												 'functionCall'		=>	'PHPExcel_Calculation_Database::DGET',
-												 'argumentCount'	=>	'3'
-												),
-				'DISC'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::DISC',
-												 'argumentCount'	=>	'4,5'
-												),
-				'DMAX'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_DATABASE,
-												 'functionCall'		=>	'PHPExcel_Calculation_Database::DMAX',
-												 'argumentCount'	=>	'3'
-												),
-				'DMIN'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_DATABASE,
-												 'functionCall'		=>	'PHPExcel_Calculation_Database::DMIN',
-												 'argumentCount'	=>	'3'
-												),
-				'DOLLAR'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_TEXT_AND_DATA,
-												 'functionCall'		=>	'PHPExcel_Calculation_TextData::DOLLAR',
-												 'argumentCount'	=>	'1,2'
-												),
-				'DOLLARDE'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::DOLLARDE',
-												 'argumentCount'	=>	'2'
-												),
-				'DOLLARFR'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::DOLLARFR',
-												 'argumentCount'	=>	'2'
-												),
-				'DPRODUCT'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_DATABASE,
-												 'functionCall'		=>	'PHPExcel_Calculation_Database::DPRODUCT',
-												 'argumentCount'	=>	'3'
-												),
-				'DSTDEV'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_DATABASE,
-												 'functionCall'		=>	'PHPExcel_Calculation_Database::DSTDEV',
-												 'argumentCount'	=>	'3'
-												),
-				'DSTDEVP'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_DATABASE,
-												 'functionCall'		=>	'PHPExcel_Calculation_Database::DSTDEVP',
-												 'argumentCount'	=>	'3'
-												),
-				'DSUM'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_DATABASE,
-												 'functionCall'		=>	'PHPExcel_Calculation_Database::DSUM',
-												 'argumentCount'	=>	'3'
-												),
-				'DURATION'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'5,6'
-												),
-				'DVAR'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_DATABASE,
-												 'functionCall'		=>	'PHPExcel_Calculation_Database::DVAR',
-												 'argumentCount'	=>	'3'
-												),
-				'DVARP'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_DATABASE,
-												 'functionCall'		=>	'PHPExcel_Calculation_Database::DVARP',
-												 'argumentCount'	=>	'3'
-												),
-				'EDATE'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_DATE_AND_TIME,
-												 'functionCall'		=>	'PHPExcel_Calculation_DateTime::EDATE',
-												 'argumentCount'	=>	'2'
-												),
-				'EFFECT'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::EFFECT',
-												 'argumentCount'	=>	'2'
-												),
-				'EOMONTH'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_DATE_AND_TIME,
-												 'functionCall'		=>	'PHPExcel_Calculation_DateTime::EOMONTH',
-												 'argumentCount'	=>	'2'
-												),
-				'ERF'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::ERF',
-												 'argumentCount'	=>	'1,2'
-												),
-				'ERFC'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::ERFC',
-												 'argumentCount'	=>	'1'
-												),
-				'ERROR.TYPE'			=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_INFORMATION,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::ERROR_TYPE',
-												 'argumentCount'	=>	'1'
-												),
-				'EVEN'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::EVEN',
-												 'argumentCount'	=>	'1'
-												),
-				'EXACT'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_TEXT_AND_DATA,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'2'
-												),
-				'EXP'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'exp',
-												 'argumentCount'	=>	'1'
-												),
-				'EXPONDIST'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::EXPONDIST',
-												 'argumentCount'	=>	'3'
-												),
-				'FACT'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::FACT',
-												 'argumentCount'	=>	'1'
-												),
-				'FACTDOUBLE'			=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::FACTDOUBLE',
-												 'argumentCount'	=>	'1'
-												),
-				'FALSE'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_LOGICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Logical::FALSE',
-												 'argumentCount'	=>	'0'
-												),
-				'FDIST'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'3'
-												),
-				'FIND'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_TEXT_AND_DATA,
-												 'functionCall'		=>	'PHPExcel_Calculation_TextData::SEARCHSENSITIVE',
-												 'argumentCount'	=>	'2,3'
-												),
-				'FINDB'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_TEXT_AND_DATA,
-												 'functionCall'		=>	'PHPExcel_Calculation_TextData::SEARCHSENSITIVE',
-												 'argumentCount'	=>	'2,3'
-												),
-				'FINV'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'3'
-												),
-				'FISHER'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::FISHER',
-												 'argumentCount'	=>	'1'
-												),
-				'FISHERINV'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::FISHERINV',
-												 'argumentCount'	=>	'1'
-												),
-				'FIXED'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_TEXT_AND_DATA,
-												 'functionCall'		=>	'PHPExcel_Calculation_TextData::FIXEDFORMAT',
-												 'argumentCount'	=>	'1-3'
-												),
-				'FLOOR'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::FLOOR',
-												 'argumentCount'	=>	'2'
-												),
-				'FORECAST'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::FORECAST',
-												 'argumentCount'	=>	'3'
-												),
-				'FREQUENCY'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'2'
-												),
-				'FTEST'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'2'
-												),
-				'FV'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::FV',
-												 'argumentCount'	=>	'3-5'
-												),
-				'FVSCHEDULE'			=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::FVSCHEDULE',
-												 'argumentCount'	=>	'2'
-												),
-				'GAMMADIST'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::GAMMADIST',
-												 'argumentCount'	=>	'4'
-												),
-				'GAMMAINV'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::GAMMAINV',
-												 'argumentCount'	=>	'3'
-												),
-				'GAMMALN'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::GAMMALN',
-												 'argumentCount'	=>	'1'
-												),
-				'GCD'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::GCD',
-												 'argumentCount'	=>	'1+'
-												),
-				'GEOMEAN'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::GEOMEAN',
-												 'argumentCount'	=>	'1+'
-												),
-				'GESTEP'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::GESTEP',
-												 'argumentCount'	=>	'1,2'
-												),
-				'GETPIVOTDATA'			=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_LOOKUP_AND_REFERENCE,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'2+'
-												),
-				'GROWTH'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::GROWTH',
-												 'argumentCount'	=>	'1-4'
-												),
-				'HARMEAN'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::HARMEAN',
-												 'argumentCount'	=>	'1+'
-												),
-				'HEX2BIN'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::HEXTOBIN',
-												 'argumentCount'	=>	'1,2'
-												),
-				'HEX2DEC'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::HEXTODEC',
-												 'argumentCount'	=>	'1'
-												),
-				'HEX2OCT'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::HEXTOOCT',
-												 'argumentCount'	=>	'1,2'
-												),
-				'HLOOKUP'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_LOOKUP_AND_REFERENCE,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'3,4'
-												),
-				'HOUR'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_DATE_AND_TIME,
-												 'functionCall'		=>	'PHPExcel_Calculation_DateTime::HOUROFDAY',
-												 'argumentCount'	=>	'1'
-												),
-				'HYPERLINK'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_LOOKUP_AND_REFERENCE,
-												 'functionCall'		=>	'PHPExcel_Calculation_LookupRef::HYPERLINK',
-												 'argumentCount'	=>	'1,2',
-												 'passCellReference'=>	true
-												),
-				'HYPGEOMDIST'			=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::HYPGEOMDIST',
-												 'argumentCount'	=>	'4'
-												),
-				'IF'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_LOGICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Logical::STATEMENT_IF',
-												 'argumentCount'	=>	'1-3'
-												),
-				'IFERROR'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_LOGICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Logical::IFERROR',
-												 'argumentCount'	=>	'2'
-												),
-				'IMABS'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::IMABS',
-												 'argumentCount'	=>	'1'
-												),
-				'IMAGINARY'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::IMAGINARY',
-												 'argumentCount'	=>	'1'
-												),
-				'IMARGUMENT'			=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::IMARGUMENT',
-												 'argumentCount'	=>	'1'
-												),
-				'IMCONJUGATE'			=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::IMCONJUGATE',
-												 'argumentCount'	=>	'1'
-												),
-				'IMCOS'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::IMCOS',
-												 'argumentCount'	=>	'1'
-												),
-				'IMDIV'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::IMDIV',
-												 'argumentCount'	=>	'2'
-												),
-				'IMEXP'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::IMEXP',
-												 'argumentCount'	=>	'1'
-												),
-				'IMLN'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::IMLN',
-												 'argumentCount'	=>	'1'
-												),
-				'IMLOG10'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::IMLOG10',
-												 'argumentCount'	=>	'1'
-												),
-				'IMLOG2'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::IMLOG2',
-												 'argumentCount'	=>	'1'
-												),
-				'IMPOWER'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::IMPOWER',
-												 'argumentCount'	=>	'2'
-												),
-				'IMPRODUCT'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::IMPRODUCT',
-												 'argumentCount'	=>	'1+'
-												),
-				'IMREAL'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::IMREAL',
-												 'argumentCount'	=>	'1'
-												),
-				'IMSIN'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::IMSIN',
-												 'argumentCount'	=>	'1'
-												),
-				'IMSQRT'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::IMSQRT',
-												 'argumentCount'	=>	'1'
-												),
-				'IMSUB'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::IMSUB',
-												 'argumentCount'	=>	'2'
-												),
-				'IMSUM'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::IMSUM',
-												 'argumentCount'	=>	'1+'
-												),
-				'INDEX'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_LOOKUP_AND_REFERENCE,
-												 'functionCall'		=>	'PHPExcel_Calculation_LookupRef::INDEX',
-												 'argumentCount'	=>	'1-4'
-												),
-				'INDIRECT'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_LOOKUP_AND_REFERENCE,
-												 'functionCall'		=>	'PHPExcel_Calculation_LookupRef::INDIRECT',
-												 'argumentCount'	=>	'1,2',
-												 'passCellReference'=>	true
-												),
-				'INFO'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_INFORMATION,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'1'
-												),
-				'INT'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::INT',
-												 'argumentCount'	=>	'1'
-												),
-				'INTERCEPT'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::INTERCEPT',
-												 'argumentCount'	=>	'2'
-												),
-				'INTRATE'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::INTRATE',
-												 'argumentCount'	=>	'4,5'
-												),
-				'IPMT'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::IPMT',
-												 'argumentCount'	=>	'4-6'
-												),
-				'IRR'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::IRR',
-												 'argumentCount'	=>	'1,2'
-												),
-				'ISBLANK'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_INFORMATION,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::IS_BLANK',
-												 'argumentCount'	=>	'1'
-												),
-				'ISERR'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_INFORMATION,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::IS_ERR',
-												 'argumentCount'	=>	'1'
-												),
-				'ISERROR'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_INFORMATION,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::IS_ERROR',
-												 'argumentCount'	=>	'1'
-												),
-				'ISEVEN'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_INFORMATION,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::IS_EVEN',
-												 'argumentCount'	=>	'1'
-												),
-				'ISLOGICAL'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_INFORMATION,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::IS_LOGICAL',
-												 'argumentCount'	=>	'1'
-												),
-				'ISNA'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_INFORMATION,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::IS_NA',
-												 'argumentCount'	=>	'1'
-												),
-				'ISNONTEXT'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_INFORMATION,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::IS_NONTEXT',
-												 'argumentCount'	=>	'1'
-												),
-				'ISNUMBER'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_INFORMATION,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::IS_NUMBER',
-												 'argumentCount'	=>	'1'
-												),
-				'ISODD'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_INFORMATION,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::IS_ODD',
-												 'argumentCount'	=>	'1'
-												),
-				'ISPMT'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::ISPMT',
-												 'argumentCount'	=>	'4'
-												),
-				'ISREF'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_INFORMATION,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'1'
-												),
-				'ISTEXT'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_INFORMATION,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::IS_TEXT',
-												 'argumentCount'	=>	'1'
-												),
-				'JIS'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_TEXT_AND_DATA,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'1'
-												),
-				'KURT'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::KURT',
-												 'argumentCount'	=>	'1+'
-												),
-				'LARGE'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::LARGE',
-												 'argumentCount'	=>	'2'
-												),
-				'LCM'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::LCM',
-												 'argumentCount'	=>	'1+'
-												),
-				'LEFT'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_TEXT_AND_DATA,
-												 'functionCall'		=>	'PHPExcel_Calculation_TextData::LEFT',
-												 'argumentCount'	=>	'1,2'
-												),
-				'LEFTB'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_TEXT_AND_DATA,
-												 'functionCall'		=>	'PHPExcel_Calculation_TextData::LEFT',
-												 'argumentCount'	=>	'1,2'
-												),
-				'LEN'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_TEXT_AND_DATA,
-												 'functionCall'		=>	'PHPExcel_Calculation_TextData::STRINGLENGTH',
-												 'argumentCount'	=>	'1'
-												),
-				'LENB'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_TEXT_AND_DATA,
-												 'functionCall'		=>	'PHPExcel_Calculation_TextData::STRINGLENGTH',
-												 'argumentCount'	=>	'1'
-												),
-				'LINEST'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::LINEST',
-												 'argumentCount'	=>	'1-4'
-												),
-				'LN'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'log',
-												 'argumentCount'	=>	'1'
-												),
-				'LOG'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::LOG_BASE',
-												 'argumentCount'	=>	'1,2'
-												),
-				'LOG10'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'log10',
-												 'argumentCount'	=>	'1'
-												),
-				'LOGEST'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::LOGEST',
-												 'argumentCount'	=>	'1-4'
-												),
-				'LOGINV'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::LOGINV',
-												 'argumentCount'	=>	'3'
-												),
-				'LOGNORMDIST'			=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::LOGNORMDIST',
-												 'argumentCount'	=>	'3'
-												),
-				'LOOKUP'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_LOOKUP_AND_REFERENCE,
-												 'functionCall'		=>	'PHPExcel_Calculation_LookupRef::LOOKUP',
-												 'argumentCount'	=>	'2,3'
-												),
-				'LOWER'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_TEXT_AND_DATA,
-												 'functionCall'		=>	'PHPExcel_Calculation_TextData::LOWERCASE',
-												 'argumentCount'	=>	'1'
-												),
-				'MATCH'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_LOOKUP_AND_REFERENCE,
-												 'functionCall'		=>	'PHPExcel_Calculation_LookupRef::MATCH',
-												 'argumentCount'	=>	'2,3'
-												),
-				'MAX'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::MAX',
-												 'argumentCount'	=>	'1+'
-												),
-				'MAXA'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::MAXA',
-												 'argumentCount'	=>	'1+'
-												),
-				'MAXIF'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::MAXIF',
-												 'argumentCount'	=>	'2+'
-												),
-				'MDETERM'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::MDETERM',
-												 'argumentCount'	=>	'1'
-												),
-				'MDURATION'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'5,6'
-												),
-				'MEDIAN'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::MEDIAN',
-												 'argumentCount'	=>	'1+'
-												),
-				'MEDIANIF'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'2+'
-												),
-				'MID'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_TEXT_AND_DATA,
-												 'functionCall'		=>	'PHPExcel_Calculation_TextData::MID',
-												 'argumentCount'	=>	'3'
-												),
-				'MIDB'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_TEXT_AND_DATA,
-												 'functionCall'		=>	'PHPExcel_Calculation_TextData::MID',
-												 'argumentCount'	=>	'3'
-												),
-				'MIN'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::MIN',
-												 'argumentCount'	=>	'1+'
-												),
-				'MINA'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::MINA',
-												 'argumentCount'	=>	'1+'
-												),
-				'MINIF'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::MINIF',
-												 'argumentCount'	=>	'2+'
-												),
-				'MINUTE'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_DATE_AND_TIME,
-												 'functionCall'		=>	'PHPExcel_Calculation_DateTime::MINUTEOFHOUR',
-												 'argumentCount'	=>	'1'
-												),
-				'MINVERSE'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::MINVERSE',
-												 'argumentCount'	=>	'1'
-												),
-				'MIRR'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::MIRR',
-												 'argumentCount'	=>	'3'
-												),
-				'MMULT'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::MMULT',
-												 'argumentCount'	=>	'2'
-												),
-				'MOD'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::MOD',
-												 'argumentCount'	=>	'2'
-												),
-				'MODE'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::MODE',
-												 'argumentCount'	=>	'1+'
-												),
-				'MONTH'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_DATE_AND_TIME,
-												 'functionCall'		=>	'PHPExcel_Calculation_DateTime::MONTHOFYEAR',
-												 'argumentCount'	=>	'1'
-												),
-				'MROUND'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::MROUND',
-												 'argumentCount'	=>	'2'
-												),
-				'MULTINOMIAL'			=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::MULTINOMIAL',
-												 'argumentCount'	=>	'1+'
-												),
-				'N'						=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_INFORMATION,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::N',
-												 'argumentCount'	=>	'1'
-												),
-				'NA'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_INFORMATION,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::NA',
-												 'argumentCount'	=>	'0'
-												),
-				'NEGBINOMDIST'			=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::NEGBINOMDIST',
-												 'argumentCount'	=>	'3'
-												),
-				'NETWORKDAYS'			=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_DATE_AND_TIME,
-												 'functionCall'		=>	'PHPExcel_Calculation_DateTime::NETWORKDAYS',
-												 'argumentCount'	=>	'2+'
-												),
-				'NOMINAL'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::NOMINAL',
-												 'argumentCount'	=>	'2'
-												),
-				'NORMDIST'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::NORMDIST',
-												 'argumentCount'	=>	'4'
-												),
-				'NORMINV'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::NORMINV',
-												 'argumentCount'	=>	'3'
-												),
-				'NORMSDIST'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::NORMSDIST',
-												 'argumentCount'	=>	'1'
-												),
-				'NORMSINV'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::NORMSINV',
-												 'argumentCount'	=>	'1'
-												),
-				'NOT'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_LOGICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Logical::NOT',
-												 'argumentCount'	=>	'1'
-												),
-				'NOW'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_DATE_AND_TIME,
-												 'functionCall'		=>	'PHPExcel_Calculation_DateTime::DATETIMENOW',
-												 'argumentCount'	=>	'0'
-												),
-				'NPER'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::NPER',
-												 'argumentCount'	=>	'3-5'
-												),
-				'NPV'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::NPV',
-												 'argumentCount'	=>	'2+'
-												),
-				'OCT2BIN'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::OCTTOBIN',
-												 'argumentCount'	=>	'1,2'
-												),
-				'OCT2DEC'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::OCTTODEC',
-												 'argumentCount'	=>	'1'
-												),
-				'OCT2HEX'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_ENGINEERING,
-												 'functionCall'		=>	'PHPExcel_Calculation_Engineering::OCTTOHEX',
-												 'argumentCount'	=>	'1,2'
-												),
-				'ODD'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::ODD',
-												 'argumentCount'	=>	'1'
-												),
-				'ODDFPRICE'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'8,9'
-												),
-				'ODDFYIELD'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'8,9'
-												),
-				'ODDLPRICE'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'7,8'
-												),
-				'ODDLYIELD'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'7,8'
-												),
-				'OFFSET'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_LOOKUP_AND_REFERENCE,
-												 'functionCall'		=>	'PHPExcel_Calculation_LookupRef::OFFSET',
-												 'argumentCount'	=>	'3,5',
-												 'passCellReference'=>	true,
-												 'passByReference'	=>	array(true)
-												),
-				'OR'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_LOGICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Logical::LOGICAL_OR',
-												 'argumentCount'	=>	'1+'
-												),
-				'PEARSON'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::CORREL',
-												 'argumentCount'	=>	'2'
-												),
-				'PERCENTILE'			=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::PERCENTILE',
-												 'argumentCount'	=>	'2'
-												),
-				'PERCENTRANK'			=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::PERCENTRANK',
-												 'argumentCount'	=>	'2,3'
-												),
-				'PERMUT'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::PERMUT',
-												 'argumentCount'	=>	'2'
-												),
-				'PHONETIC'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_TEXT_AND_DATA,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'1'
-												),
-				'PI'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'pi',
-												 'argumentCount'	=>	'0'
-												),
-				'PMT'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::PMT',
-												 'argumentCount'	=>	'3-5'
-												),
-				'POISSON'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::POISSON',
-												 'argumentCount'	=>	'3'
-												),
-				'POWER'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::POWER',
-												 'argumentCount'	=>	'2'
-												),
-				'PPMT'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::PPMT',
-												 'argumentCount'	=>	'4-6'
-												),
-				'PRICE'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::PRICE',
-												 'argumentCount'	=>	'6,7'
-												),
-				'PRICEDISC'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::PRICEDISC',
-												 'argumentCount'	=>	'4,5'
-												),
-				'PRICEMAT'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::PRICEMAT',
-												 'argumentCount'	=>	'5,6'
-												),
-				'PROB'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'3,4'
-												),
-				'PRODUCT'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::PRODUCT',
-												 'argumentCount'	=>	'1+'
-												),
-				'PROPER'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_TEXT_AND_DATA,
-												 'functionCall'		=>	'PHPExcel_Calculation_TextData::PROPERCASE',
-												 'argumentCount'	=>	'1'
-												),
-				'PV'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::PV',
-												 'argumentCount'	=>	'3-5'
-												),
-				'QUARTILE'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::QUARTILE',
-												 'argumentCount'	=>	'2'
-												),
-				'QUOTIENT'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::QUOTIENT',
-												 'argumentCount'	=>	'2'
-												),
-				'RADIANS'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'deg2rad',
-												 'argumentCount'	=>	'1'
-												),
-				'RAND'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::RAND',
-												 'argumentCount'	=>	'0'
-												),
-				'RANDBETWEEN'			=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::RAND',
-												 'argumentCount'	=>	'2'
-												),
-				'RANK'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::RANK',
-												 'argumentCount'	=>	'2,3'
-												),
-				'RATE'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::RATE',
-												 'argumentCount'	=>	'3-6'
-												),
-				'RECEIVED'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::RECEIVED',
-												 'argumentCount'	=>	'4-5'
-												),
-				'REPLACE'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_TEXT_AND_DATA,
-												 'functionCall'		=>	'PHPExcel_Calculation_TextData::REPLACE',
-												 'argumentCount'	=>	'4'
-												),
-				'REPLACEB'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_TEXT_AND_DATA,
-												 'functionCall'		=>	'PHPExcel_Calculation_TextData::REPLACE',
-												 'argumentCount'	=>	'4'
-												),
-				'REPT'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_TEXT_AND_DATA,
-												 'functionCall'		=>	'str_repeat',
-												 'argumentCount'	=>	'2'
-												),
-				'RIGHT'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_TEXT_AND_DATA,
-												 'functionCall'		=>	'PHPExcel_Calculation_TextData::RIGHT',
-												 'argumentCount'	=>	'1,2'
-												),
-				'RIGHTB'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_TEXT_AND_DATA,
-												 'functionCall'		=>	'PHPExcel_Calculation_TextData::RIGHT',
-												 'argumentCount'	=>	'1,2'
-												),
-				'ROMAN'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::ROMAN',
-												 'argumentCount'	=>	'1,2'
-												),
-				'ROUND'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'round',
-												 'argumentCount'	=>	'2'
-												),
-				'ROUNDDOWN'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::ROUNDDOWN',
-												 'argumentCount'	=>	'2'
-												),
-				'ROUNDUP'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::ROUNDUP',
-												 'argumentCount'	=>	'2'
-												),
-				'ROW'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_LOOKUP_AND_REFERENCE,
-												 'functionCall'		=>	'PHPExcel_Calculation_LookupRef::ROW',
-												 'argumentCount'	=>	'-1',
-												 'passByReference'	=>	array(true)
-												),
-				'ROWS'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_LOOKUP_AND_REFERENCE,
-												 'functionCall'		=>	'PHPExcel_Calculation_LookupRef::ROWS',
-												 'argumentCount'	=>	'1'
-												),
-				'RSQ'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::RSQ',
-												 'argumentCount'	=>	'2'
-												),
-				'RTD'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_LOOKUP_AND_REFERENCE,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'1+'
-												),
-				'SEARCH'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_TEXT_AND_DATA,
-												 'functionCall'		=>	'PHPExcel_Calculation_TextData::SEARCHINSENSITIVE',
-												 'argumentCount'	=>	'2,3'
-												),
-				'SEARCHB'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_TEXT_AND_DATA,
-												 'functionCall'		=>	'PHPExcel_Calculation_TextData::SEARCHINSENSITIVE',
-												 'argumentCount'	=>	'2,3'
-												),
-				'SECOND'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_DATE_AND_TIME,
-												 'functionCall'		=>	'PHPExcel_Calculation_DateTime::SECONDOFMINUTE',
-												 'argumentCount'	=>	'1'
-												),
-				'SERIESSUM'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::SERIESSUM',
-												 'argumentCount'	=>	'4'
-												),
-				'SIGN'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::SIGN',
-												 'argumentCount'	=>	'1'
-												),
-				'SIN'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'sin',
-												 'argumentCount'	=>	'1'
-												),
-				'SINH'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'sinh',
-												 'argumentCount'	=>	'1'
-												),
-				'SKEW'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::SKEW',
-												 'argumentCount'	=>	'1+'
-												),
-				'SLN'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::SLN',
-												 'argumentCount'	=>	'3'
-												),
-				'SLOPE'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::SLOPE',
-												 'argumentCount'	=>	'2'
-												),
-				'SMALL'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::SMALL',
-												 'argumentCount'	=>	'2'
-												),
-				'SQRT'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'sqrt',
-												 'argumentCount'	=>	'1'
-												),
-				'SQRTPI'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::SQRTPI',
-												 'argumentCount'	=>	'1'
-												),
-				'STANDARDIZE'			=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::STANDARDIZE',
-												 'argumentCount'	=>	'3'
-												),
-				'STDEV'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::STDEV',
-												 'argumentCount'	=>	'1+'
-												),
-				'STDEVA'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::STDEVA',
-												 'argumentCount'	=>	'1+'
-												),
-				'STDEVP'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::STDEVP',
-												 'argumentCount'	=>	'1+'
-												),
-				'STDEVPA'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::STDEVPA',
-												 'argumentCount'	=>	'1+'
-												),
-				'STEYX'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::STEYX',
-												 'argumentCount'	=>	'2'
-												),
-				'SUBSTITUTE'			=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_TEXT_AND_DATA,
-												 'functionCall'		=>	'PHPExcel_Calculation_TextData::SUBSTITUTE',
-												 'argumentCount'	=>	'3,4'
-												),
-				'SUBTOTAL'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::SUBTOTAL',
-												 'argumentCount'	=>	'2+'
-												),
-				'SUM'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::SUM',
-												 'argumentCount'	=>	'1+'
-												),
-				'SUMIF'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::SUMIF',
-												 'argumentCount'	=>	'2,3'
-												),
-				'SUMIFS'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'?'
-												),
-				'SUMPRODUCT'			=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::SUMPRODUCT',
-												 'argumentCount'	=>	'1+'
-												),
-				'SUMSQ'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::SUMSQ',
-												 'argumentCount'	=>	'1+'
-												),
-				'SUMX2MY2'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::SUMX2MY2',
-												 'argumentCount'	=>	'2'
-												),
-				'SUMX2PY2'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::SUMX2PY2',
-												 'argumentCount'	=>	'2'
-												),
-				'SUMXMY2'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::SUMXMY2',
-												 'argumentCount'	=>	'2'
-												),
-				'SYD'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::SYD',
-												 'argumentCount'	=>	'4'
-												),
-				'T'						=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_TEXT_AND_DATA,
-												 'functionCall'		=>	'PHPExcel_Calculation_TextData::RETURNSTRING',
-												 'argumentCount'	=>	'1'
-												),
-				'TAN'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'tan',
-												 'argumentCount'	=>	'1'
-												),
-				'TANH'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'tanh',
-												 'argumentCount'	=>	'1'
-												),
-				'TBILLEQ'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::TBILLEQ',
-												 'argumentCount'	=>	'3'
-												),
-				'TBILLPRICE'			=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::TBILLPRICE',
-												 'argumentCount'	=>	'3'
-												),
-				'TBILLYIELD'			=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::TBILLYIELD',
-												 'argumentCount'	=>	'3'
-												),
-				'TDIST'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::TDIST',
-												 'argumentCount'	=>	'3'
-												),
-				'TEXT'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_TEXT_AND_DATA,
-												 'functionCall'		=>	'PHPExcel_Calculation_TextData::TEXTFORMAT',
-												 'argumentCount'	=>	'2'
-												),
-				'TIME'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_DATE_AND_TIME,
-												 'functionCall'		=>	'PHPExcel_Calculation_DateTime::TIME',
-												 'argumentCount'	=>	'3'
-												),
-				'TIMEVALUE'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_DATE_AND_TIME,
-												 'functionCall'		=>	'PHPExcel_Calculation_DateTime::TIMEVALUE',
-												 'argumentCount'	=>	'1'
-												),
-				'TINV'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::TINV',
-												 'argumentCount'	=>	'2'
-												),
-				'TODAY'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_DATE_AND_TIME,
-												 'functionCall'		=>	'PHPExcel_Calculation_DateTime::DATENOW',
-												 'argumentCount'	=>	'0'
-												),
-				'TRANSPOSE'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_LOOKUP_AND_REFERENCE,
-												 'functionCall'		=>	'PHPExcel_Calculation_LookupRef::TRANSPOSE',
-												 'argumentCount'	=>	'1'
-												),
-				'TREND'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::TREND',
-												 'argumentCount'	=>	'1-4'
-												),
-				'TRIM'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_TEXT_AND_DATA,
-												 'functionCall'		=>	'PHPExcel_Calculation_TextData::TRIMSPACES',
-												 'argumentCount'	=>	'1'
-												),
-				'TRIMMEAN'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::TRIMMEAN',
-												 'argumentCount'	=>	'2'
-												),
-				'TRUE'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_LOGICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Logical::TRUE',
-												 'argumentCount'	=>	'0'
-												),
-				'TRUNC'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_MATH_AND_TRIG,
-												 'functionCall'		=>	'PHPExcel_Calculation_MathTrig::TRUNC',
-												 'argumentCount'	=>	'1,2'
-												),
-				'TTEST'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'4'
-												),
-				'TYPE'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_INFORMATION,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::TYPE',
-												 'argumentCount'	=>	'1'
-												),
-				'UPPER'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_TEXT_AND_DATA,
-												 'functionCall'		=>	'PHPExcel_Calculation_TextData::UPPERCASE',
-												 'argumentCount'	=>	'1'
-												),
-				'USDOLLAR'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'2'
-												),
-				'VALUE'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_TEXT_AND_DATA,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'1'
-												),
-				'VAR'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::VARFunc',
-												 'argumentCount'	=>	'1+'
-												),
-				'VARA'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::VARA',
-												 'argumentCount'	=>	'1+'
-												),
-				'VARP'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::VARP',
-												 'argumentCount'	=>	'1+'
-												),
-				'VARPA'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::VARPA',
-												 'argumentCount'	=>	'1+'
-												),
-				'VDB'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'5-7'
-												),
-				'VERSION'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_INFORMATION,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::VERSION',
-												 'argumentCount'	=>	'0'
-												),
-				'VLOOKUP'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_LOOKUP_AND_REFERENCE,
-												 'functionCall'		=>	'PHPExcel_Calculation_LookupRef::VLOOKUP',
-												 'argumentCount'	=>	'3,4'
-												),
-				'WEEKDAY'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_DATE_AND_TIME,
-												 'functionCall'		=>	'PHPExcel_Calculation_DateTime::DAYOFWEEK',
-												 'argumentCount'	=>	'1,2'
-												),
-				'WEEKNUM'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_DATE_AND_TIME,
-												 'functionCall'		=>	'PHPExcel_Calculation_DateTime::WEEKOFYEAR',
-												 'argumentCount'	=>	'1,2'
-												),
-				'WEIBULL'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::WEIBULL',
-												 'argumentCount'	=>	'4'
-												),
-				'WORKDAY'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_DATE_AND_TIME,
-												 'functionCall'		=>	'PHPExcel_Calculation_DateTime::WORKDAY',
-												 'argumentCount'	=>	'2+'
-												),
-				'XIRR'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::XIRR',
-												 'argumentCount'	=>	'2,3'
-												),
-				'XNPV'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::XNPV',
-												 'argumentCount'	=>	'3'
-												),
-				'YEAR'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_DATE_AND_TIME,
-												 'functionCall'		=>	'PHPExcel_Calculation_DateTime::YEAR',
-												 'argumentCount'	=>	'1'
-												),
-				'YEARFRAC'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_DATE_AND_TIME,
-												 'functionCall'		=>	'PHPExcel_Calculation_DateTime::YEARFRAC',
-												 'argumentCount'	=>	'2,3'
-												),
-				'YIELD'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Functions::DUMMY',
-												 'argumentCount'	=>	'6,7'
-												),
-				'YIELDDISC'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::YIELDDISC',
-												 'argumentCount'	=>	'4,5'
-												),
-				'YIELDMAT'				=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_FINANCIAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Financial::YIELDMAT',
-												 'argumentCount'	=>	'5,6'
-												),
-				'ZTEST'					=> array('category'			=>	PHPExcel_Calculation_Function::CATEGORY_STATISTICAL,
-												 'functionCall'		=>	'PHPExcel_Calculation_Statistical::ZTEST',
-												 'argumentCount'	=>	'2-3'
-												)
-			);
-
-
-	//	Internal functions used for special control purposes
-	private static $_controlFunctions = array(
-				'MKMATRIX'	=> array('argumentCount'	=>	'*',
-									 'functionCall'		=>	'self::_mkMatrix'
-									)
-			);
-
-
-
-
-	private function __construct() {
-		$localeFileDirectory = PHPEXCEL_ROOT.'PHPExcel/locale/';
-		foreach (glob($localeFileDirectory.'/*',GLOB_ONLYDIR) as $filename) {
-			$filename = substr($filename,strlen($localeFileDirectory)+1);
-			if ($filename != 'en') {
-				self::$_validLocaleLanguages[] = $filename;
-			}
-		}
-
-		$setPrecision = (PHP_INT_SIZE == 4) ? 12 : 16;
-		$this->_savedPrecision = ini_get('precision');
-		if ($this->_savedPrecision < $setPrecision) {
-			ini_set('precision',$setPrecision);
-		}
-	}	//	function __construct()
-
-
-	public function __destruct() {
-		if ($this->_savedPrecision != ini_get('precision')) {
-			ini_set('precision',$this->_savedPrecision);
-		}
-	}
-
-	/**
-	 * Get an instance of this class
-	 *
-	 * @access	public
-	 * @return PHPExcel_Calculation
-	 */
-	public static function getInstance() {
-		if (!isset(self::$_instance) || (self::$_instance === NULL)) {
-			self::$_instance = new PHPExcel_Calculation();
-		}
-
-		return self::$_instance;
-	}	//	function getInstance()
-
-
-	/**
-	 * Flush the calculation cache for any existing instance of this class
-	 *		but only if a PHPExcel_Calculation instance exists
-	 *
-	 * @access	public
-	 * @return null
-	 */
-	public static function flushInstance() {
-		if (isset(self::$_instance) && (self::$_instance !== NULL)) {
-			self::$_instance->clearCalculationCache();
-		}
-	}	//	function flushInstance()
-
-
-	/**
-	 * __clone implementation. Cloning should not be allowed in a Singleton!
-	 *
-	 * @access	public
-	 * @throws	Exception
-	 */
-	public final function __clone() {
-		throw new Exception ('Cloning a Singleton is not allowed!');
-	}	//	function __clone()
-
-
-	/**
-	 * Return the locale-specific translation of TRUE
-	 *
-	 * @access	public
-	 * @return	 string		locale-specific translation of TRUE
-	 */
-	public static function getTRUE() {
-		return self::$_localeBoolean['TRUE'];
-	}
-
-	/**
-	 * Return the locale-specific translation of FALSE
-	 *
-	 * @access	public
-	 * @return	 string		locale-specific translation of FALSE
-	 */
-	public static function getFALSE() {
-		return self::$_localeBoolean['FALSE'];
-	}
-
-	/**
-	 * Set the Array Return Type (Array or Value of first element in the array)
-	 *
-	 * @access	public
-	 * @param	 string	$returnType			Array return type
-	 * @return	 boolean					Success or failure
-	 */
-	public static function setArrayReturnType($returnType) {
-		if (($returnType == self::RETURN_ARRAY_AS_VALUE) ||
-			($returnType == self::RETURN_ARRAY_AS_ERROR) ||
-			($returnType == self::RETURN_ARRAY_AS_ARRAY)) {
-			self::$returnArrayAsType = $returnType;
-			return true;
-		}
-		return false;
-	}	//	function setExcelCalendar()
-
-
-	/**
-	 * Return the Array Return Type (Array or Value of first element in the array)
-	 *
-	 * @access	public
-	 * @return	 string		$returnType			Array return type
-	 */
-	public static function getArrayReturnType() {
-		return self::$returnArrayAsType;
-	}	//	function getExcelCalendar()
-
-
-	/**
-	 * Is calculation caching enabled?
-	 *
-	 * @access	public
-	 * @return boolean
-	 */
-	public function getCalculationCacheEnabled() {
-		return self::$_calculationCacheEnabled;
-	}	//	function getCalculationCacheEnabled()
-
-
-	/**
-	 * Enable/disable calculation cache
-	 *
-	 * @access	public
-	 * @param boolean $pValue
-	 */
-	public function setCalculationCacheEnabled($pValue = true) {
-		self::$_calculationCacheEnabled = $pValue;
-		$this->clearCalculationCache();
-	}	//	function setCalculationCacheEnabled()
-
-
-	/**
-	 * Enable calculation cache
-	 */
-	public function enableCalculationCache() {
-		$this->setCalculationCacheEnabled(true);
-	}	//	function enableCalculationCache()
-
-
-	/**
-	 * Disable calculation cache
-	 */
-	public function disableCalculationCache() {
-		$this->setCalculationCacheEnabled(false);
-	}	//	function disableCalculationCache()
-
-
-	/**
-	 * Clear calculation cache
-	 */
-	public function clearCalculationCache() {
-		self::$_calculationCache = array();
-	}	//	function clearCalculationCache()
-
-
-	/**
-	 * Get calculation cache expiration time
-	 *
-	 * @return float
-	 */
-	public function getCalculationCacheExpirationTime() {
-		return self::$_calculationCacheExpirationTime;
-	}	//	getCalculationCacheExpirationTime()
-
-
-	/**
-	 * Set calculation cache expiration time
-	 *
-	 * @param float $pValue
-	 */
-	public function setCalculationCacheExpirationTime($pValue = 15) {
-		self::$_calculationCacheExpirationTime = $pValue;
-	}	//	function setCalculationCacheExpirationTime()
-
-
-
-
-	/**
-	 * Get the currently defined locale code
-	 *
-	 * @return string
-	 */
-	public function getLocale() {
-		return self::$_localeLanguage;
-	}	//	function getLocale()
-
-
-	/**
-	 * Set the locale code
-	 *
-	 * @return boolean
-	 */
-	public function setLocale($locale='en_us') {
-		//	Identify our locale and language
-		$language = $locale = strtolower($locale);
-		if (strpos($locale,'_') !== false) {
-			list($language) = explode('_',$locale);
-		}
-
-		//	Test whether we have any language data for this language (any locale)
-		if (in_array($language,self::$_validLocaleLanguages)) {
-			//	initialise language/locale settings
-			self::$_localeFunctions = array();
-			self::$_localeArgumentSeparator = ',';
-			self::$_localeBoolean = array('TRUE' => 'TRUE', 'FALSE' => 'FALSE', 'NULL' => 'NULL');
-			//	Default is English, if user isn't requesting english, then read the necessary data from the locale files
-			if ($locale != 'en_us') {
-				//	Search for a file with a list of function names for locale
-				$functionNamesFile = PHPEXCEL_ROOT . 'PHPExcel'.DIRECTORY_SEPARATOR.'locale'.DIRECTORY_SEPARATOR.str_replace('_',DIRECTORY_SEPARATOR,$locale).DIRECTORY_SEPARATOR.'functions';
-				if (!file_exists($functionNamesFile)) {
-					//	If there isn't a locale specific function file, look for a language specific function file
-					$functionNamesFile = PHPEXCEL_ROOT . 'PHPExcel'.DIRECTORY_SEPARATOR.'locale'.DIRECTORY_SEPARATOR.$language.DIRECTORY_SEPARATOR.'functions';
-					if (!file_exists($functionNamesFile)) {
-						return false;
-					}
-				}
-				//	Retrieve the list of locale or language specific function names
-				$localeFunctions = file($functionNamesFile,FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-				foreach ($localeFunctions as $localeFunction) {
-					list($localeFunction) = explode('##',$localeFunction);	//	Strip out comments
-					if (strpos($localeFunction,'=') !== false) {
-						list($fName,$lfName) = explode('=',$localeFunction);
-						$fName = trim($fName);
-						$lfName = trim($lfName);
-						if ((isset(self::$_PHPExcelFunctions[$fName])) && ($lfName != '') && ($fName != $lfName)) {
-							self::$_localeFunctions[$fName] = $lfName;
-						}
-					}
-				}
-				//	Default the TRUE and FALSE constants to the locale names of the TRUE() and FALSE() functions
-				if (isset(self::$_localeFunctions['TRUE'])) { self::$_localeBoolean['TRUE'] = self::$_localeFunctions['TRUE']; }
-				if (isset(self::$_localeFunctions['FALSE'])) { self::$_localeBoolean['FALSE'] = self::$_localeFunctions['FALSE']; }
-
-				$configFile = PHPEXCEL_ROOT . 'PHPExcel'.DIRECTORY_SEPARATOR.'locale'.DIRECTORY_SEPARATOR.str_replace('_',DIRECTORY_SEPARATOR,$locale).DIRECTORY_SEPARATOR.'config';
-				if (!file_exists($configFile)) {
-					$configFile = PHPEXCEL_ROOT . 'PHPExcel'.DIRECTORY_SEPARATOR.'locale'.DIRECTORY_SEPARATOR.$language.DIRECTORY_SEPARATOR.'config';
-				}
-				if (file_exists($configFile)) {
-					$localeSettings = file($configFile,FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-					foreach ($localeSettings as $localeSetting) {
-						list($localeSetting) = explode('##',$localeSetting);	//	Strip out comments
-						if (strpos($localeSetting,'=') !== false) {
-							list($settingName,$settingValue) = explode('=',$localeSetting);
-							$settingName = strtoupper(trim($settingName));
-							switch ($settingName) {
-								case 'ARGUMENTSEPARATOR' :
-									self::$_localeArgumentSeparator = trim($settingValue);
-									break;
-							}
-						}
-					}
-				}
-			}
-
-			self::$functionReplaceFromExcel = self::$functionReplaceToExcel =
-			self::$functionReplaceFromLocale = self::$functionReplaceToLocale = null;
-			self::$_localeLanguage = $locale;
-			return true;
-		}
-		return false;
-	}	//	function setLocale()
-
-
-
-	public static function _translateSeparator($fromSeparator,$toSeparator,$formula,&$inBraces) {
-		$strlen = mb_strlen($formula);
-		for ($i = 0; $i < $strlen; ++$i) {
-			$chr = mb_substr($formula,$i,1);
-			switch ($chr) {
-				case '{' :	$inBraces = true;
-							break;
-				case '}' :	$inBraces = false;
-							break;
-				case $fromSeparator :
-							if (!$inBraces) {
-								$formula = mb_substr($formula,0,$i).$toSeparator.mb_substr($formula,$i+1);
-							}
-			}
-		}
-		return $formula;
-	}
-
-	private static function _translateFormula($from,$to,$formula,$fromSeparator,$toSeparator) {
-		//	Convert any Excel function names to the required language
-		if (self::$_localeLanguage !== 'en_us') {
-			$inBraces = false;
-			//	If there is the possibility of braces within a quoted string, then we don't treat those as matrix indicators
-			if (strpos($formula,'"') !== false) {
-				//	So instead we skip replacing in any quoted strings by only replacing in every other array element after we've exploded
-				//		the formula
-				$temp = explode('"',$formula);
-				$i = false;
-				foreach($temp as &$value) {
-					//	Only count/replace in alternating array entries
-					if ($i = !$i) {
-						$value = preg_replace($from,$to,$value);
-						$value = self::_translateSeparator($fromSeparator,$toSeparator,$value,$inBraces);
-					}
-				}
-				unset($value);
-				//	Then rebuild the formula string
-				$formula = implode('"',$temp);
-			} else {
-				//	If there's no quoted strings, then we do a simple count/replace
-				$formula = preg_replace($from,$to,$formula);
-				$formula = self::_translateSeparator($fromSeparator,$toSeparator,$formula,$inBraces);
-			}
-		}
-
-		return $formula;
-	}
-
-	private static $functionReplaceFromExcel	= null;
-	private static $functionReplaceToLocale		= null;
-
-	public function _translateFormulaToLocale($formula) {
-		if (self::$functionReplaceFromExcel === NULL) {
-			self::$functionReplaceFromExcel = array();
-			foreach(array_keys(self::$_localeFunctions) as $excelFunctionName) {
-				self::$functionReplaceFromExcel[] = '/(@?[^\w\.])'.preg_quote($excelFunctionName).'([\s]*\()/Ui';
-			}
-			foreach(array_keys(self::$_localeBoolean) as $excelBoolean) {
-				self::$functionReplaceFromExcel[] = '/(@?[^\w\.])'.preg_quote($excelBoolean).'([^\w\.])/Ui';
-			}
-
-		}
-
-		if (self::$functionReplaceToLocale === NULL) {
-			self::$functionReplaceToLocale = array();
-			foreach(array_values(self::$_localeFunctions) as $localeFunctionName) {
-				self::$functionReplaceToLocale[] = '$1'.trim($localeFunctionName).'$2';
-			}
-			foreach(array_values(self::$_localeBoolean) as $localeBoolean) {
-				self::$functionReplaceToLocale[] = '$1'.trim($localeBoolean).'$2';
-			}
-		}
-
-		return self::_translateFormula(self::$functionReplaceFromExcel,self::$functionReplaceToLocale,$formula,',',self::$_localeArgumentSeparator);
-	}	//	function _translateFormulaToLocale()
-
-
-	private static $functionReplaceFromLocale	= null;
-	private static $functionReplaceToExcel		= null;
-
-	public function _translateFormulaToEnglish($formula) {
-		if (self::$functionReplaceFromLocale === NULL) {
-			self::$functionReplaceFromLocale = array();
-			foreach(array_values(self::$_localeFunctions) as $localeFunctionName) {
-				self::$functionReplaceFromLocale[] = '/(@?[^\w\.])'.preg_quote($localeFunctionName).'([\s]*\()/Ui';
-			}
-			foreach(array_values(self::$_localeBoolean) as $excelBoolean) {
-				self::$functionReplaceFromLocale[] = '/(@?[^\w\.])'.preg_quote($excelBoolean).'([^\w\.])/Ui';
-			}
-		}
-
-		if (self::$functionReplaceToExcel === NULL) {
-			self::$functionReplaceToExcel = array();
-			foreach(array_keys(self::$_localeFunctions) as $excelFunctionName) {
-				self::$functionReplaceToExcel[] = '$1'.trim($excelFunctionName).'$2';
-			}
-			foreach(array_keys(self::$_localeBoolean) as $excelBoolean) {
-				self::$functionReplaceToExcel[] = '$1'.trim($excelBoolean).'$2';
-			}
-		}
-
-		return self::_translateFormula(self::$functionReplaceFromLocale,self::$functionReplaceToExcel,$formula,self::$_localeArgumentSeparator,',');
-	}	//	function _translateFormulaToEnglish()
-
-
-	public static function _localeFunc($function) {
-		if (self::$_localeLanguage !== 'en_us') {
-			$functionName = trim($function,'(');
-			if (isset(self::$_localeFunctions[$functionName])) {
-				$brace = ($functionName != $function);
-				$function = self::$_localeFunctions[$functionName];
-				if ($brace) { $function .= '('; }
-			}
-		}
-		return $function;
-	}
-
-
-
-
-	/**
-	 * Wrap string values in quotes
-	 *
-	 * @param mixed $value
-	 * @return mixed
-	 */
-	public static function _wrapResult($value) {
-		if (is_string($value)) {
-			//	Error values cannot be "wrapped"
-			if (preg_match('/^'.self::CALCULATION_REGEXP_ERROR.'$/i', $value, $match)) {
-				//	Return Excel errors "as is"
-				return $value;
-			}
-			//	Return strings wrapped in quotes
-			return '"'.$value.'"';
-		//	Convert numeric errors to NaN error
-		} else if((is_float($value)) && ((is_nan($value)) || (is_infinite($value)))) {
-			return PHPExcel_Calculation_Functions::NaN();
-		}
-
-		return $value;
-	}	//	function _wrapResult()
-
-
-	/**
-	 * Remove quotes used as a wrapper to identify string values
-	 *
-	 * @param mixed $value
-	 * @return mixed
-	 */
-	public static function _unwrapResult($value) {
-		if (is_string($value)) {
-			if ((isset($value{0})) && ($value{0} == '"') && (substr($value,-1) == '"')) {
-				return substr($value,1,-1);
-			}
-		//	Convert numeric errors to NaN error
-		} else if((is_float($value)) && ((is_nan($value)) || (is_infinite($value)))) {
-			return PHPExcel_Calculation_Functions::NaN();
-		}
-		return $value;
-	}	//	function _unwrapResult()
-
-
-
-
-	/**
-	 * Calculate cell value (using formula from a cell ID)
-	 * Retained for backward compatibility
-	 *
-	 * @access	public
-	 * @param	PHPExcel_Cell	$pCell	Cell to calculate
-	 * @return	mixed
-	 * @throws	Exception
-	 */
-	public function calculate(PHPExcel_Cell $pCell = null) {
-		try {
-			return $this->calculateCellValue($pCell);
-		} catch (Exception $e) {
-			throw(new Exception($e->getMessage()));
-		}
-	}	//	function calculate()
-
-
-	/**
-	 * Calculate the value of a cell formula
-	 *
-	 * @access	public
-	 * @param	PHPExcel_Cell	$pCell		Cell to calculate
-	 * @param	Boolean			$resetLog	Flag indicating whether the debug log should be reset or not
-	 * @return	mixed
-	 * @throws	Exception
-	 */
-	public function calculateCellValue(PHPExcel_Cell $pCell = null, $resetLog = true) {
-		if ($resetLog) {
-			//	Initialise the logging settings if requested
-			$this->formulaError = null;
-			$this->debugLog = $this->debugLogStack = array();
-			$this->_cyclicFormulaCount = 1;
-
-			$returnArrayAsType = self::$returnArrayAsType;
-			self::$returnArrayAsType = self::RETURN_ARRAY_AS_ARRAY;
-		}
-
-		//	Read the formula from the cell
-		if ($pCell === NULL) {
-			return NULL;
-		}
-
-		if ($resetLog) {
-			self::$returnArrayAsType = $returnArrayAsType;
-		}
-		//	Execute the calculation for the cell formula
-		try {
-			$result = self::_unwrapResult($this->_calculateFormulaValue($pCell->getValue(), $pCell->getCoordinate(), $pCell));
-		} catch (Exception $e) {
-			throw(new Exception($e->getMessage()));
-		}
-
-		if ((is_array($result)) && (self::$returnArrayAsType != self::RETURN_ARRAY_AS_ARRAY)) {
-			$testResult = PHPExcel_Calculation_Functions::flattenArray($result);
-			if (self::$returnArrayAsType == self::RETURN_ARRAY_AS_ERROR) {
-				return PHPExcel_Calculation_Functions::VALUE();
-			}
-			//	If there's only a single cell in the array, then we allow it
-			if (count($testResult) != 1) {
-				//	If keys are numeric, then it's a matrix result rather than a cell range result, so we permit it
-				$r = array_keys($result);
-				$r = array_shift($r);
-				if (!is_numeric($r)) { return PHPExcel_Calculation_Functions::VALUE(); }
-				if (is_array($result[$r])) {
-					$c = array_keys($result[$r]);
-					$c = array_shift($c);
-					if (!is_numeric($c)) {
-						return PHPExcel_Calculation_Functions::VALUE();
-					}
-				}
-			}
-			$result = array_shift($testResult);
-		}
-
-		if ($result === NULL) {
-			return 0;
-		} elseif((is_float($result)) && ((is_nan($result)) || (is_infinite($result)))) {
-			return PHPExcel_Calculation_Functions::NaN();
-		}
-		return $result;
-	}	//	function calculateCellValue(
-
-
-	/**
-	 * Validate and parse a formula string
-	 *
-	 * @param	string		$formula		Formula to parse
-	 * @return	array
-	 * @throws	Exception
-	 */
-	public function parseFormula($formula) {
-		//	Basic validation that this is indeed a formula
-		//	We return an empty array if not
-		$formula = trim($formula);
-		if ((!isset($formula{0})) || ($formula{0} != '=')) return array();
-		$formula = ltrim(substr($formula,1));
-		if (!isset($formula{0})) return array();
-
-		//	Parse the formula and return the token stack
-		return $this->_parseFormula($formula);
-	}	//	function parseFormula()
-
-
-	/**
-	 * Calculate the value of a formula
-	 *
-	 * @param	string		$formula		Formula to parse
-	 * @return	mixed
-	 * @throws	Exception
-	 */
-	public function calculateFormula($formula, $cellID=null, PHPExcel_Cell $pCell = null) {
-		//	Initialise the logging settings
-		$this->formulaError = null;
-		$this->debugLog = $this->debugLogStack = array();
-
-		//	Disable calculation cacheing because it only applies to cell calculations, not straight formulae
-		//	But don't actually flush any cache
-		$resetCache = $this->getCalculationCacheEnabled();
-		self::$_calculationCacheEnabled = false;
-		//	Execute the calculation
-		try {
-			$result = self::_unwrapResult($this->_calculateFormulaValue($formula, $cellID, $pCell));
-		} catch (Exception $e) {
-			throw(new Exception($e->getMessage()));
-		}
-
-		//	Reset calculation cacheing to its previous state
-		self::$_calculationCacheEnabled = $resetCache;
-
-		return $result;
-	}	//	function calculateFormula()
-
-
-	/**
-	 * Parse a cell formula and calculate its value
-	 *
-	 * @param	string			$formula	The formula to parse and calculate
-	 * @param	string			$cellID		The ID (e.g. A3) of the cell that we are calculating
-	 * @param	PHPExcel_Cell	$pCell		Cell to calculate
-	 * @return	mixed
-	 * @throws	Exception
-	 */
-	public function _calculateFormulaValue($formula, $cellID=null, PHPExcel_Cell $pCell = null) {
-//		echo '<b>'.$cellID.'</b><br />';
-		$cellValue = '';
-
-		//	Basic validation that this is indeed a formula
-		//	We simply return the "cell value" (formula) if not
-		$formula = trim($formula);
-		if ($formula{0} != '=') return self::_wrapResult($formula);
-		$formula = ltrim(substr($formula,1));
-		if (!isset($formula{0})) return self::_wrapResult($formula);
-
-		$wsTitle = "\x00Wrk";
-		if ($pCell !== NULL) {
-			$pCellParent = $pCell->getParent();
-			if ($pCellParent !== NULL) {
-				$wsTitle = $pCellParent->getTitle();
-			}
-		}
-		// Is calculation cacheing enabled?
-		if ($cellID !== NULL) {
-			if (self::$_calculationCacheEnabled) {
-				// Is the value present in calculation cache?
-//				echo 'Testing cache value<br />';
-				if (isset(self::$_calculationCache[$wsTitle][$cellID])) {
-//					echo 'Value is in cache<br />';
-					$this->_writeDebug('Testing cache value for cell '.$cellID);
-					//	Is cache still valid?
-					if ((microtime(true) - self::$_calculationCache[$wsTitle][$cellID]['time']) < self::$_calculationCacheExpirationTime) {
-//						echo 'Cache time is still valid<br />';
-						$this->_writeDebug('Retrieving value for '.$cellID.' from cache');
-						// Return the cached result
-						$returnValue = self::$_calculationCache[$wsTitle][$cellID]['data'];
-//						echo 'Retrieving data value of '.$returnValue.' for '.$cellID.' from cache<br />';
-						if (is_array($returnValue)) {
-							$returnValue = PHPExcel_Calculation_Functions::flattenArray($returnValue);
-							return array_shift($returnValue);
-						}
-						return $returnValue;
-					} else {
-//						echo 'Cache has expired<br />';
-						$this->_writeDebug('Cache value for '.$cellID.' has expired');
-						//	Clear the cache if it's no longer valid
-						unset(self::$_calculationCache[$wsTitle][$cellID]);
-					}
-				}
-			}
-		}
-
-		if ((in_array($wsTitle.'!'.$cellID,$this->debugLogStack)) && ($wsTitle != "\x00Wrk")) {
-			if ($this->cyclicFormulaCount <= 0) {
-				return $this->_raiseFormulaError('Cyclic Reference in Formula');
-			} elseif (($this->_cyclicFormulaCount >= $this->cyclicFormulaCount) &&
-					  ($this->_cyclicFormulaCell == $wsTitle.'!'.$cellID)) {
-				return $cellValue;
-			} elseif ($this->_cyclicFormulaCell == $wsTitle.'!'.$cellID) {
-				++$this->_cyclicFormulaCount;
-				if ($this->_cyclicFormulaCount >= $this->cyclicFormulaCount) {
-					return $cellValue;
-				}
-			} elseif ($this->_cyclicFormulaCell == '') {
-				$this->_cyclicFormulaCell = $wsTitle.'!'.$cellID;
-				if ($this->_cyclicFormulaCount >= $this->cyclicFormulaCount) {
-					return $cellValue;
-				}
-			}
-		}
-		$this->debugLogStack[] = $wsTitle.'!'.$cellID;
-		//	Parse the formula onto the token stack and calculate the value
-		$cellValue = $this->_processTokenStack($this->_parseFormula($formula, $pCell), $cellID, $pCell);
-		array_pop($this->debugLogStack);
-
-		// Save to calculation cache
-		if ($cellID !== NULL) {
-			if (self::$_calculationCacheEnabled) {
-				self::$_calculationCache[$wsTitle][$cellID]['time'] = microtime(true);
-				self::$_calculationCache[$wsTitle][$cellID]['data'] = $cellValue;
-			}
-		}
-
-		//	Return the calculated value
-		return $cellValue;
-	}	//	function _calculateFormulaValue()
-
-
-	/**
-	 * Ensure that paired matrix operands are both matrices and of the same size
-	 *
-	 * @param	mixed		&$operand1	First matrix operand
-	 * @param	mixed		&$operand2	Second matrix operand
-	 * @param	integer		$resize		Flag indicating whether the matrices should be resized to match
-	 *										and (if so), whether the smaller dimension should grow or the
-	 *										larger should shrink.
-	 *											0 = no resize
-	 *											1 = shrink to fit
-	 *											2 = extend to fit
-	 */
-	private static function _checkMatrixOperands(&$operand1,&$operand2,$resize = 1) {
-		//	Examine each of the two operands, and turn them into an array if they aren't one already
-		//	Note that this function should only be called if one or both of the operand is already an array
-		if (!is_array($operand1)) {
-			list($matrixRows,$matrixColumns) = self::_getMatrixDimensions($operand2);
-			$operand1 = array_fill(0,$matrixRows,array_fill(0,$matrixColumns,$operand1));
-			$resize = 0;
-		} elseif (!is_array($operand2)) {
-			list($matrixRows,$matrixColumns) = self::_getMatrixDimensions($operand1);
-			$operand2 = array_fill(0,$matrixRows,array_fill(0,$matrixColumns,$operand2));
-			$resize = 0;
-		}
-
-		list($matrix1Rows,$matrix1Columns) = self::_getMatrixDimensions($operand1);
-		list($matrix2Rows,$matrix2Columns) = self::_getMatrixDimensions($operand2);
-		if (($matrix1Rows == $matrix2Columns) && ($matrix2Rows == $matrix1Columns)) {
-			$resize = 1;
-		}
-
-		if ($resize == 2) {
-			//	Given two matrices of (potentially) unequal size, convert the smaller in each dimension to match the larger
-			self::_resizeMatricesExtend($operand1,$operand2,$matrix1Rows,$matrix1Columns,$matrix2Rows,$matrix2Columns);
-		} elseif ($resize == 1) {
-			//	Given two matrices of (potentially) unequal size, convert the larger in each dimension to match the smaller
-			self::_resizeMatricesShrink($operand1,$operand2,$matrix1Rows,$matrix1Columns,$matrix2Rows,$matrix2Columns);
-		}
-		return array( $matrix1Rows,$matrix1Columns,$matrix2Rows,$matrix2Columns);
-	}	//	function _checkMatrixOperands()
-
-
-	/**
-	 * Read the dimensions of a matrix, and re-index it with straight numeric keys starting from row 0, column 0
-	 *
-	 * @param	mixed		&$matrix		matrix operand
-	 * @return	array		An array comprising the number of rows, and number of columns
-	 */
-	public static function _getMatrixDimensions(&$matrix) {
-		$matrixRows = count($matrix);
-		$matrixColumns = 0;
-		foreach($matrix as $rowKey => $rowValue) {
-			$matrixColumns = max(count($rowValue),$matrixColumns);
-			if (!is_array($rowValue)) {
-				$matrix[$rowKey] = array($rowValue);
-			} else {
-				$matrix[$rowKey] = array_values($rowValue);
-			}
-		}
-		$matrix = array_values($matrix);
-		return array($matrixRows,$matrixColumns);
-	}	//	function _getMatrixDimensions()
-
-
-	/**
-	 * Ensure that paired matrix operands are both matrices of the same size
-	 *
-	 * @param	mixed		&$matrix1	First matrix operand
-	 * @param	mixed		&$matrix2	Second matrix operand
-	 */
-	private static function _resizeMatricesShrink(&$matrix1,&$matrix2,$matrix1Rows,$matrix1Columns,$matrix2Rows,$matrix2Columns) {
-		if (($matrix2Columns < $matrix1Columns) || ($matrix2Rows < $matrix1Rows)) {
-			if ($matrix2Columns < $matrix1Columns) {
-				for ($i = 0; $i < $matrix1Rows; ++$i) {
-					for ($j = $matrix2Columns; $j < $matrix1Columns; ++$j) {
-						unset($matrix1[$i][$j]);
-					}
-				}
-			}
-			if ($matrix2Rows < $matrix1Rows) {
-				for ($i = $matrix2Rows; $i < $matrix1Rows; ++$i) {
-					unset($matrix1[$i]);
-				}
-			}
-		}
-
-		if (($matrix1Columns < $matrix2Columns) || ($matrix1Rows < $matrix2Rows)) {
-			if ($matrix1Columns < $matrix2Columns) {
-				for ($i = 0; $i < $matrix2Rows; ++$i) {
-					for ($j = $matrix1Columns; $j < $matrix2Columns; ++$j) {
-						unset($matrix2[$i][$j]);
-					}
-				}
-			}
-			if ($matrix1Rows < $matrix2Rows) {
-				for ($i = $matrix1Rows; $i < $matrix2Rows; ++$i) {
-					unset($matrix2[$i]);
-				}
-			}
-		}
-	}	//	function _resizeMatricesShrink()
-
-
-	/**
-	 * Ensure that paired matrix operands are both matrices of the same size
-	 *
-	 * @param	mixed		&$matrix1	First matrix operand
-	 * @param	mixed		&$matrix2	Second matrix operand
-	 */
-	private static function _resizeMatricesExtend(&$matrix1,&$matrix2,$matrix1Rows,$matrix1Columns,$matrix2Rows,$matrix2Columns) {
-		if (($matrix2Columns < $matrix1Columns) || ($matrix2Rows < $matrix1Rows)) {
-			if ($matrix2Columns < $matrix1Columns) {
-				for ($i = 0; $i < $matrix2Rows; ++$i) {
-					$x = $matrix2[$i][$matrix2Columns-1];
-					for ($j = $matrix2Columns; $j < $matrix1Columns; ++$j) {
-						$matrix2[$i][$j] = $x;
-					}
-				}
-			}
-			if ($matrix2Rows < $matrix1Rows) {
-				$x = $matrix2[$matrix2Rows-1];
-				for ($i = 0; $i < $matrix1Rows; ++$i) {
-					$matrix2[$i] = $x;
-				}
-			}
-		}
-
-		if (($matrix1Columns < $matrix2Columns) || ($matrix1Rows < $matrix2Rows)) {
-			if ($matrix1Columns < $matrix2Columns) {
-				for ($i = 0; $i < $matrix1Rows; ++$i) {
-					$x = $matrix1[$i][$matrix1Columns-1];
-					for ($j = $matrix1Columns; $j < $matrix2Columns; ++$j) {
-						$matrix1[$i][$j] = $x;
-					}
-				}
-			}
-			if ($matrix1Rows < $matrix2Rows) {
-				$x = $matrix1[$matrix1Rows-1];
-				for ($i = 0; $i < $matrix2Rows; ++$i) {
-					$matrix1[$i] = $x;
-				}
-			}
-		}
-	}	//	function _resizeMatricesExtend()
-
-
-	/**
-	 * Format details of an operand for display in the log (based on operand type)
-	 *
-	 * @param	mixed		$value	First matrix operand
-	 * @return	mixed
-	 */
-	private function _showValue($value) {
-		if ($this->writeDebugLog) {
-			$testArray = PHPExcel_Calculation_Functions::flattenArray($value);
-			if (count($testArray) == 1) {
-				$value = array_pop($testArray);
-			}
-
-			if (is_array($value)) {
-				$returnMatrix = array();
-				$pad = $rpad = ', ';
-				foreach($value as $row) {
-					if (is_array($row)) {
-						$returnMatrix[] = implode($pad,array_map(array($this,'_showValue'),$row));
-						$rpad = '; ';
-					} else {
-						$returnMatrix[] = $this->_showValue($row);
-					}
-				}
-				return '{ '.implode($rpad,$returnMatrix).' }';
-			} elseif(is_string($value) && (trim($value,'"') == $value)) {
-				return '"'.$value.'"';
-			} elseif(is_bool($value)) {
-				return ($value) ? self::$_localeBoolean['TRUE'] : self::$_localeBoolean['FALSE'];
-			}
-		}
-		return PHPExcel_Calculation_Functions::flattenSingleValue($value);
-	}	//	function _showValue()
-
-
-	/**
-	 * Format type and details of an operand for display in the log (based on operand type)
-	 *
-	 * @param	mixed		$value	First matrix operand
-	 * @return	mixed
-	 */
-	private function _showTypeDetails($value) {
-		if ($this->writeDebugLog) {
-			$testArray = PHPExcel_Calculation_Functions::flattenArray($value);
-			if (count($testArray) == 1) {
-				$value = array_pop($testArray);
-			}
-
-			if ($value === NULL) {
-				return 'a NULL value';
-			} elseif (is_float($value)) {
-				$typeString = 'a floating point number';
-			} elseif(is_int($value)) {
-				$typeString = 'an integer number';
-			} elseif(is_bool($value)) {
-				$typeString = 'a boolean';
-			} elseif(is_array($value)) {
-				$typeString = 'a matrix';
-			} else {
-				if ($value == '') {
-					return 'an empty string';
-				} elseif ($value{0} == '#') {
-					return 'a '.$value.' error';
-				} else {
-					$typeString = 'a string';
-				}
-			}
-			return $typeString.' with a value of '.$this->_showValue($value);
-		}
-	}	//	function _showTypeDetails()
-
-
-	private static function _convertMatrixReferences($formula) {
-		static $matrixReplaceFrom = array('{',';','}');
-		static $matrixReplaceTo = array('MKMATRIX(MKMATRIX(','),MKMATRIX(','))');
-
-		//	Convert any Excel matrix references to the MKMATRIX() function
-		if (strpos($formula,'{') !== false) {
-			//	If there is the possibility of braces within a quoted string, then we don't treat those as matrix indicators
-			if (strpos($formula,'"') !== false) {
-				//	So instead we skip replacing in any quoted strings by only replacing in every other array element after we've exploded
-				//		the formula
-				$temp = explode('"',$formula);
-				//	Open and Closed counts used for trapping mismatched braces in the formula
-				$openCount = $closeCount = 0;
-				$i = false;
-				foreach($temp as &$value) {
-					//	Only count/replace in alternating array entries
-					if ($i = !$i) {
-						$openCount += substr_count($value,'{');
-						$closeCount += substr_count($value,'}');
-						$value = str_replace($matrixReplaceFrom,$matrixReplaceTo,$value);
-					}
-				}
-				unset($value);
-				//	Then rebuild the formula string
-				$formula = implode('"',$temp);
-			} else {
-				//	If there's no quoted strings, then we do a simple count/replace
-				$openCount = substr_count($formula,'{');
-				$closeCount = substr_count($formula,'}');
-				$formula = str_replace($matrixReplaceFrom,$matrixReplaceTo,$formula);
-			}
-			//	Trap for mismatched braces and trigger an appropriate error
-			if ($openCount < $closeCount) {
-				if ($openCount > 0) {
-					return $this->_raiseFormulaError("Formula Error: Mismatched matrix braces '}'");
-				} else {
-					return $this->_raiseFormulaError("Formula Error: Unexpected '}' encountered");
-				}
-			} elseif ($openCount > $closeCount) {
-				if ($closeCount > 0) {
-					return $this->_raiseFormulaError("Formula Error: Mismatched matrix braces '{'");
-				} else {
-					return $this->_raiseFormulaError("Formula Error: Unexpected '{' encountered");
-				}
-			}
-		}
-
-		return $formula;
-	}	//	function _convertMatrixReferences()
-
-
-	private static function _mkMatrix() {
-		return func_get_args();
-	}	//	function _mkMatrix()
-
-
-	// Convert infix to postfix notation
-	private function _parseFormula($formula, PHPExcel_Cell $pCell = null) {
-		if (($formula = self::_convertMatrixReferences(trim($formula))) === false) {
-			return FALSE;
-		}
-
-		//	If we're using cell caching, then $pCell may well be flushed back to the cache (which detaches the parent worksheet),
-		//		so we store the parent worksheet so that we can re-attach it when necessary
-		$pCellParent = ($pCell !== NULL) ? $pCell->getParent() : NULL;
-
-		//	Binary Operators
-		//	These operators always work on two values
-		//	Array key is the operator, the value indicates whether this is a left or right associative operator
-		$operatorAssociativity	= array('^' => 0,															//	Exponentiation
-										'*' => 0, '/' => 0, 												//	Multiplication and Division
-										'+' => 0, '-' => 0,													//	Addition and Subtraction
-										'&' => 0,															//	Concatenation
-										'|' => 0, ':' => 0,													//	Intersect and Range
-										'>' => 0, '<' => 0, '=' => 0, '>=' => 0, '<=' => 0, '<>' => 0		//	Comparison
-								 	  );
-		//	Comparison (Boolean) Operators
-		//	These operators work on two values, but always return a boolean result
-		$comparisonOperators	= array('>' => true, '<' => true, '=' => true, '>=' => true, '<=' => true, '<>' => true);
-
-		//	Operator Precedence
-		//	This list includes all valid operators, whether binary (including boolean) or unary (such as %)
-		//	Array key is the operator, the value is its precedence
-		$operatorPrecedence	= array(':' => 8,																//	Range
-									'|' => 7,																//	Intersect
-									'~' => 6,																//	Negation
-									'%' => 5,																//	Percentage
-									'^' => 4,																//	Exponentiation
-									'*' => 3, '/' => 3, 													//	Multiplication and Division
-									'+' => 2, '-' => 2,														//	Addition and Subtraction
-									'&' => 1,																//	Concatenation
-									'>' => 0, '<' => 0, '=' => 0, '>=' => 0, '<=' => 0, '<>' => 0			//	Comparison
-								   );
-
-		$regexpMatchString = '/^('.self::CALCULATION_REGEXP_FUNCTION.
-							   '|'.self::CALCULATION_REGEXP_NUMBER.
-							   '|'.self::CALCULATION_REGEXP_STRING.
-							   '|'.self::CALCULATION_REGEXP_OPENBRACE.
-							   '|'.self::CALCULATION_REGEXP_CELLREF.
-							   '|'.self::CALCULATION_REGEXP_NAMEDRANGE.
-							   '|'.self::CALCULATION_REGEXP_ERROR.
-							 ')/si';
-
-		//	Start with initialisation
-		$index = 0;
-		$stack = new PHPExcel_Calculation_Token_Stack;
-		$output = array();
-		$expectingOperator = false;					//	We use this test in syntax-checking the expression to determine when a
-													//		- is a negation or + is a positive operator rather than an operation
-		$expectingOperand = false;					//	We use this test in syntax-checking the expression to determine whether an operand
-													//		should be null in a function call
-		//	The guts of the lexical parser
-		//	Loop through the formula extracting each operator and operand in turn
-		while(true) {
-//			echo 'Assessing Expression <b>'.substr($formula, $index).'</b><br />';
-			$opCharacter = $formula{$index};	//	Get the first character of the value at the current index position
-//			echo 'Initial character of expression block is '.$opCharacter.'<br />';
-			if ((isset($comparisonOperators[$opCharacter])) && (strlen($formula) > $index) && (isset($comparisonOperators[$formula{$index+1}]))) {
-				$opCharacter .= $formula{++$index};
-//				echo 'Initial character of expression block is comparison operator '.$opCharacter.'<br />';
-			}
-
-			//	Find out if we're currently at the beginning of a number, variable, cell reference, function, parenthesis or operand
-			$isOperandOrFunction = preg_match($regexpMatchString, substr($formula, $index), $match);
-//			echo '$isOperandOrFunction is '.(($isOperandOrFunction) ? 'True' : 'False').'<br />';
-//			var_dump($match);
-
-			if ($opCharacter == '-' && !$expectingOperator) {				//	Is it a negation instead of a minus?
-//				echo 'Element is a Negation operator<br />';
-				$stack->push('Unary Operator','~');							//	Put a negation on the stack
-				++$index;													//		and drop the negation symbol
-			} elseif ($opCharacter == '%' && $expectingOperator) {
-//				echo 'Element is a Percentage operator<br />';
-				$stack->push('Unary Operator','%');							//	Put a percentage on the stack
-				++$index;
-			} elseif ($opCharacter == '+' && !$expectingOperator) {			//	Positive (unary plus rather than binary operator plus) can be discarded?
-//				echo 'Element is a Positive number, not Plus operator<br />';
-				++$index;													//	Drop the redundant plus symbol
-			} elseif ((($opCharacter == '~') || ($opCharacter == '|')) && (!$isOperandOrFunction)) {	//	We have to explicitly deny a tilde or pipe, because they are legal
-				return $this->_raiseFormulaError("Formula Error: Illegal character '~'");				//		on the stack but not in the input expression
-
-			} elseif ((isset(self::$_operators[$opCharacter]) or $isOperandOrFunction) && $expectingOperator) {	//	Are we putting an operator on the stack?
-//				echo 'Element with value '.$opCharacter.' is an Operator<br />';
-				while($stack->count() > 0 &&
-					($o2 = $stack->last()) &&
-					isset(self::$_operators[$o2['value']]) &&
-					@($operatorAssociativity[$opCharacter] ? $operatorPrecedence[$opCharacter] < $operatorPrecedence[$o2['value']] : $operatorPrecedence[$opCharacter] <= $operatorPrecedence[$o2['value']])) {
-					$output[] = $stack->pop();								//	Swap operands and higher precedence operators from the stack to the output
-				}
-				$stack->push('Binary Operator',$opCharacter);	//	Finally put our current operator onto the stack
-				++$index;
-				$expectingOperator = false;
-
-			} elseif ($opCharacter == ')' && $expectingOperator) {			//	Are we expecting to close a parenthesis?
-//				echo 'Element is a Closing bracket<br />';
-				$expectingOperand = false;
-				while (($o2 = $stack->pop()) && $o2['value'] != '(') {		//	Pop off the stack back to the last (
-					if ($o2 === NULL) return $this->_raiseFormulaError('Formula Error: Unexpected closing brace ")"');
-					else $output[] = $o2;
-				}
-				$d = $stack->last(2);
-				if (preg_match('/^'.self::CALCULATION_REGEXP_FUNCTION.'$/i', $d['value'], $matches)) {	//	Did this parenthesis just close a function?
-					$functionName = $matches[1];										//	Get the function name
-//					echo 'Closed Function is '.$functionName.'<br />';
-					$d = $stack->pop();
-					$argumentCount = $d['value'];		//	See how many arguments there were (argument count is the next value stored on the stack)
-//					if ($argumentCount == 0) {
-//						echo 'With no arguments<br />';
-//					} elseif ($argumentCount == 1) {
-//						echo 'With 1 argument<br />';
-//					} else {
-//						echo 'With '.$argumentCount.' arguments<br />';
-//					}
-					$output[] = $d;						//	Dump the argument count on the output
-					$output[] = $stack->pop();			//	Pop the function and push onto the output
-					if (isset(self::$_controlFunctions[$functionName])) {
-//						echo 'Built-in function '.$functionName.'<br />';
-						$expectedArgumentCount = self::$_controlFunctions[$functionName]['argumentCount'];
-						$functionCall = self::$_controlFunctions[$functionName]['functionCall'];
-					} elseif (isset(self::$_PHPExcelFunctions[$functionName])) {
-//						echo 'PHPExcel function '.$functionName.'<br />';
-						$expectedArgumentCount = self::$_PHPExcelFunctions[$functionName]['argumentCount'];
-						$functionCall = self::$_PHPExcelFunctions[$functionName]['functionCall'];
-					} else {	// did we somehow push a non-function on the stack? this should never happen
-						return $this->_raiseFormulaError("Formula Error: Internal error, non-function on stack");
-					}
-					//	Check the argument count
-					$argumentCountError = false;
-					if (is_numeric($expectedArgumentCount)) {
-						if ($expectedArgumentCount < 0) {
-//							echo '$expectedArgumentCount is between 0 and '.abs($expectedArgumentCount).'<br />';
-							if ($argumentCount > abs($expectedArgumentCount)) {
-								$argumentCountError = true;
-								$expectedArgumentCountString = 'no more than '.abs($expectedArgumentCount);
-							}
-						} else {
-//							echo '$expectedArgumentCount is numeric '.$expectedArgumentCount.'<br />';
-							if ($argumentCount != $expectedArgumentCount) {
-								$argumentCountError = true;
-								$expectedArgumentCountString = $expectedArgumentCount;
-							}
-						}
-					} elseif ($expectedArgumentCount != '*') {
-						$isOperandOrFunction = preg_match('/(\d*)([-+,])(\d*)/',$expectedArgumentCount,$argMatch);
-//						print_r($argMatch);
-//						echo '<br />';
-						switch ($argMatch[2]) {
-							case '+' :
-								if ($argumentCount < $argMatch[1]) {
-									$argumentCountError = true;
-									$expectedArgumentCountString = $argMatch[1].' or more ';
-								}
-								break;
-							case '-' :
-								if (($argumentCount < $argMatch[1]) || ($argumentCount > $argMatch[3])) {
-									$argumentCountError = true;
-									$expectedArgumentCountString = 'between '.$argMatch[1].' and '.$argMatch[3];
-								}
-								break;
-							case ',' :
-								if (($argumentCount != $argMatch[1]) && ($argumentCount != $argMatch[3])) {
-									$argumentCountError = true;
-									$expectedArgumentCountString = 'either '.$argMatch[1].' or '.$argMatch[3];
-								}
-								break;
-						}
-					}
-					if ($argumentCountError) {
-						return $this->_raiseFormulaError("Formula Error: Wrong number of arguments for $functionName() function: $argumentCount given, ".$expectedArgumentCountString." expected");
-					}
-				}
-				++$index;
-
-			} elseif ($opCharacter == ',') {			//	Is this the separator for function arguments?
-//				echo 'Element is a Function argument separator<br />';
-				while (($o2 = $stack->pop()) && $o2['value'] != '(') {		//	Pop off the stack back to the last (
-					if ($o2 === NULL) return $this->_raiseFormulaError("Formula Error: Unexpected ,");
-					else $output[] = $o2;	// pop the argument expression stuff and push onto the output
-				}
-				//	If we've a comma when we're expecting an operand, then what we actually have is a null operand;
-				//		so push a null onto the stack
-				if (($expectingOperand) || (!$expectingOperator)) {
-					$output[] = array('type' => 'NULL Value', 'value' => self::$_ExcelConstants['NULL'], 'reference' => null);
-				}
-				// make sure there was a function
-				$d = $stack->last(2);
-				if (!preg_match('/^'.self::CALCULATION_REGEXP_FUNCTION.'$/i', $d['value'], $matches))
-					return $this->_raiseFormulaError("Formula Error: Unexpected ,");
-				$d = $stack->pop();
-				$stack->push($d['type'],++$d['value'],$d['reference']);	// increment the argument count
-				$stack->push('Brace', '(');	// put the ( back on, we'll need to pop back to it again
-				$expectingOperator = false;
-				$expectingOperand = true;
-				++$index;
-
-			} elseif ($opCharacter == '(' && !$expectingOperator) {
-//				echo 'Element is an Opening Bracket<br />';
-				$stack->push('Brace', '(');
-				++$index;
-
-			} elseif ($isOperandOrFunction && !$expectingOperator) {	// do we now have a function/variable/number?
-				$expectingOperator = true;
-				$expectingOperand = false;
-				$val = $match[1];
-				$length = strlen($val);
-//				echo 'Element with value '.$val.' is an Operand, Variable, Constant, String, Number, Cell Reference or Function<br />';
-
-				if (preg_match('/^'.self::CALCULATION_REGEXP_FUNCTION.'$/i', $val, $matches)) {
-					$val = preg_replace('/\s/','',$val);
-//					echo 'Element '.$val.' is a Function<br />';
-					if (isset(self::$_PHPExcelFunctions[strtoupper($matches[1])]) || isset(self::$_controlFunctions[strtoupper($matches[1])])) {	// it's a function
-						$stack->push('Function', strtoupper($val));
-						$ax = preg_match('/^\s*(\s*\))/i', substr($formula, $index+$length), $amatch);
-						if ($ax) {
-							$stack->push('Operand Count for Function '.strtoupper($val).')', 0);
-							$expectingOperator = true;
-						} else {
-							$stack->push('Operand Count for Function '.strtoupper($val).')', 1);
-							$expectingOperator = false;
-						}
-						$stack->push('Brace', '(');
-					} else {	// it's a var w/ implicit multiplication
-						$output[] = array('type' => 'Value', 'value' => $matches[1], 'reference' => null);
-					}
-				} elseif (preg_match('/^'.self::CALCULATION_REGEXP_CELLREF.'$/i', $val, $matches)) {
-//					echo 'Element '.$val.' is a Cell reference<br />';
-					//	Watch for this case-change when modifying to allow cell references in different worksheets...
-					//	Should only be applied to the actual cell column, not the worksheet name
-
-					//	If the last entry on the stack was a : operator, then we have a cell range reference
-					$testPrevOp = $stack->last(1);
-					if ($testPrevOp['value'] == ':') {
-						//	If we have a worksheet reference, then we're playing with a 3D reference
-						if ($matches[2] == '') {
-							//	Otherwise, we 'inherit' the worksheet reference from the start cell reference
-							//	The start of the cell range reference should be the last entry in $output
-							$startCellRef = $output[count($output)-1]['value'];
-							preg_match('/^'.self::CALCULATION_REGEXP_CELLREF.'$/i', $startCellRef, $startMatches);
-							if ($startMatches[2] > '') {
-								$val = $startMatches[2].'!'.$val;
-							}
-						} else {
-							return $this->_raiseFormulaError("3D Range references are not yet supported");
-						}
-					}
-
-					$output[] = array('type' => 'Cell Reference', 'value' => $val, 'reference' => $val);
-//					$expectingOperator = false;
-				} else {	// it's a variable, constant, string, number or boolean
-//					echo 'Element is a Variable, Constant, String, Number or Boolean<br />';
-					//	If the last entry on the stack was a : operator, then we may have a row or column range reference
-					$testPrevOp = $stack->last(1);
-					if ($testPrevOp['value'] == ':') {
-						$startRowColRef = $output[count($output)-1]['value'];
-						$rangeWS1 = '';
-						if (strpos('!',$startRowColRef) !== false) {
-							list($rangeWS1,$startRowColRef) = explode('!',$startRowColRef);
-						}
-						if ($rangeWS1 != '') $rangeWS1 .= '!';
-						$rangeWS2 = $rangeWS1;
-						if (strpos('!',$val) !== false) {
-							list($rangeWS2,$val) = explode('!',$val);
-						}
-						if ($rangeWS2 != '') $rangeWS2 .= '!';
-						if ((is_integer($startRowColRef)) && (ctype_digit($val)) &&
-							($startRowColRef <= 1048576) && ($val <= 1048576)) {
-							//	Row range
-							$endRowColRef = ($pCellParent !== NULL) ? $pCellParent->getHighestColumn() : 'XFD';	//	Max 16,384 columns for Excel2007
-							$output[count($output)-1]['value'] = $rangeWS1.'A'.$startRowColRef;
-							$val = $rangeWS2.$endRowColRef.$val;
-						} elseif ((ctype_alpha($startRowColRef)) && (ctype_alpha($val)) &&
-							(strlen($startRowColRef) <= 3) && (strlen($val) <= 3)) {
-							//	Column range
-							$endRowColRef = ($pCellParent !== NULL) ? $pCellParent->getHighestRow() : 1048576;		//	Max 1,048,576 rows for Excel2007
-							$output[count($output)-1]['value'] = $rangeWS1.strtoupper($startRowColRef).'1';
-							$val = $rangeWS2.$val.$endRowColRef;
-						}
-					}
-
-					$localeConstant = false;
-					if ($opCharacter == '"') {
-//						echo 'Element is a String<br />';
-						//	UnEscape any quotes within the string
-						$val = self::_wrapResult(str_replace('""','"',self::_unwrapResult($val)));
-					} elseif (is_numeric($val)) {
-//						echo 'Element is a Number<br />';
-						if ((strpos($val,'.') !== false) || (stripos($val,'e') !== false) || ($val > PHP_INT_MAX) || ($val < -PHP_INT_MAX)) {
-//							echo 'Casting '.$val.' to float<br />';
-							$val = (float) $val;
-						} else {
-//							echo 'Casting '.$val.' to integer<br />';
-							$val = (integer) $val;
-						}
-					} elseif (isset(self::$_ExcelConstants[trim(strtoupper($val))])) {
-						$excelConstant = trim(strtoupper($val));
-//						echo 'Element '.$excelConstant.' is an Excel Constant<br />';
-						$val = self::$_ExcelConstants[$excelConstant];
-					} elseif (($localeConstant = array_search(trim(strtoupper($val)), self::$_localeBoolean)) !== false) {
-//						echo 'Element '.$localeConstant.' is an Excel Constant<br />';
-						$val = self::$_ExcelConstants[$localeConstant];
-					}
-					$details = array('type' => 'Value', 'value' => $val, 'reference' => null);
-					if ($localeConstant) { $details['localeValue'] = $localeConstant; }
-					$output[] = $details;
-				}
-				$index += $length;
-
-			} elseif ($opCharacter == '$') {	// absolute row or column range
-				++$index;
-			} elseif ($opCharacter == ')') {	// miscellaneous error checking
-				if ($expectingOperand) {
-					$output[] = array('type' => 'NULL Value', 'value' => self::$_ExcelConstants['NULL'], 'reference' => null);
-					$expectingOperand = false;
-					$expectingOperator = true;
-				} else {
-					return $this->_raiseFormulaError("Formula Error: Unexpected ')'");
-				}
-			} elseif (isset(self::$_operators[$opCharacter]) && !$expectingOperator) {
-				return $this->_raiseFormulaError("Formula Error: Unexpected operator '$opCharacter'");
-			} else {	// I don't even want to know what you did to get here
-				return $this->_raiseFormulaError("Formula Error: An unexpected error occured");
-			}
-			//	Test for end of formula string
-			if ($index == strlen($formula)) {
-				//	Did we end with an operator?.
-				//	Only valid for the % unary operator
-				if ((isset(self::$_operators[$opCharacter])) && ($opCharacter != '%')) {
-					return $this->_raiseFormulaError("Formula Error: Operator '$opCharacter' has no operands");
-				} else {
-					break;
-				}
-			}
-			//	Ignore white space
-			while (($formula{$index} == "\n") || ($formula{$index} == "\r")) {
-				++$index;
-			}
-			if ($formula{$index} == ' ') {
-				while ($formula{$index} == ' ') {
-					++$index;
-				}
-				//	If we're expecting an operator, but only have a space between the previous and next operands (and both are
-				//		Cell References) then we have an INTERSECTION operator
-//				echo 'Possible Intersect Operator<br />';
-				if (($expectingOperator) && (preg_match('/^'.self::CALCULATION_REGEXP_CELLREF.'.*/Ui', substr($formula, $index), $match)) &&
-					($output[count($output)-1]['type'] == 'Cell Reference')) {
-//					echo 'Element is an Intersect Operator<br />';
-					while($stack->count() > 0 &&
-						($o2 = $stack->last()) &&
-						isset(self::$_operators[$o2['value']]) &&
-						@($operatorAssociativity[$opCharacter] ? $operatorPrecedence[$opCharacter] < $operatorPrecedence[$o2['value']] : $operatorPrecedence[$opCharacter] <= $operatorPrecedence[$o2['value']])) {
-						$output[] = $stack->pop();								//	Swap operands and higher precedence operators from the stack to the output
-					}
-					$stack->push('Binary Operator','|');	//	Put an Intersect Operator on the stack
-					$expectingOperator = false;
-				}
-			}
-		}
-
-		while (($op = $stack->pop()) !== NULL) {	// pop everything off the stack and push onto output
-			if ((is_array($opCharacter) && $opCharacter['value'] == '(') || ($opCharacter === '('))
-				return $this->_raiseFormulaError("Formula Error: Expecting ')'");	// if there are any opening braces on the stack, then braces were unbalanced
-			$output[] = $op;
-		}
-		return $output;
-	}	//	function _parseFormula()
-
-
-	private static function _dataTestReference(&$operandData)
-	{
-		$operand = $operandData['value'];
-		if (($operandData['reference'] === NULL) && (is_array($operand))) {
-			$rKeys = array_keys($operand);
-			$rowKey = array_shift($rKeys);
-			$cKeys = array_keys(array_keys($operand[$rowKey]));
-			$colKey = array_shift($cKeys);
-			if (ctype_upper($colKey)) {
-				$operandData['reference'] = $colKey.$rowKey;
-			}
-		}
-		return $operand;
-	}
-
-	// evaluate postfix notation
-	private function _processTokenStack($tokens, $cellID = null, PHPExcel_Cell $pCell = null) {
-		if ($tokens == false) return false;
-
-		//	If we're using cell caching, then $pCell may well be flushed back to the cache (which detaches the parent worksheet),
-		//		so we store the parent worksheet so that we can re-attach it when necessary
-		$pCellParent = ($pCell !== NULL) ? $pCell->getParent() : null;
-		$stack = new PHPExcel_Calculation_Token_Stack;
-
-		//	Loop through each token in turn
-		foreach ($tokens as $tokenData) {
-//			print_r($tokenData);
-//			echo '<br />';
-			$token = $tokenData['value'];
-//			echo '<b>Token is '.$token.'</b><br />';
-			// if the token is a binary operator, pop the top two values off the stack, do the operation, and push the result back on the stack
-			if (isset(self::$_binaryOperators[$token])) {
-//				echo 'Token is a binary operator<br />';
-				//	We must have two operands, error if we don't
-				if (($operand2Data = $stack->pop()) === NULL) return $this->_raiseFormulaError('Internal error - Operand value missing from stack');
-				if (($operand1Data = $stack->pop()) === NULL) return $this->_raiseFormulaError('Internal error - Operand value missing from stack');
-
-				$operand1 = self::_dataTestReference($operand1Data);
-				$operand2 = self::_dataTestReference($operand2Data);
-
-				//	Log what we're doing
-				if ($token == ':') {
-					$this->_writeDebug('Evaluating Range '.$this->_showValue($operand1Data['reference']).$token.$this->_showValue($operand2Data['reference']));
-				} else {
-					$this->_writeDebug('Evaluating '.$this->_showValue($operand1).' '.$token.' '.$this->_showValue($operand2));
-				}
-
-				//	Process the operation in the appropriate manner
-				switch ($token) {
-					//	Comparison (Boolean) Operators
-					case '>'	:			//	Greater than
-					case '<'	:			//	Less than
-					case '>='	:			//	Greater than or Equal to
-					case '<='	:			//	Less than or Equal to
-					case '='	:			//	Equality
-					case '<>'	:			//	Inequality
-						$this->_executeBinaryComparisonOperation($cellID,$operand1,$operand2,$token,$stack);
-						break;
-					//	Binary Operators
-					case ':'	:			//	Range
-						$sheet1 = $sheet2 = '';
-						if (strpos($operand1Data['reference'],'!') !== false) {
-							list($sheet1,$operand1Data['reference']) = explode('!',$operand1Data['reference']);
-						} else {
-							$sheet1 = ($pCellParent !== NULL) ? $pCellParent->getTitle() : '';
-						}
-						if (strpos($operand2Data['reference'],'!') !== false) {
-							list($sheet2,$operand2Data['reference']) = explode('!',$operand2Data['reference']);
-						} else {
-							$sheet2 = $sheet1;
-						}
-						if ($sheet1 == $sheet2) {
-							if ($operand1Data['reference'] === NULL) {
-								if ((trim($operand1Data['value']) != '') && (is_numeric($operand1Data['value']))) {
-									$operand1Data['reference'] = $pCell->getColumn().$operand1Data['value'];
-								} elseif (trim($operand1Data['reference']) == '') {
-									$operand1Data['reference'] = $pCell->getCoordinate();
-								} else {
-									$operand1Data['reference'] = $operand1Data['value'].$pCell->getRow();
-								}
-							}
-							if ($operand2Data['reference'] === NULL) {
-								if ((trim($operand2Data['value']) != '') && (is_numeric($operand2Data['value']))) {
-									$operand2Data['reference'] = $pCell->getColumn().$operand2Data['value'];
-								} elseif (trim($operand2Data['reference']) == '') {
-									$operand2Data['reference'] = $pCell->getCoordinate();
-								} else {
-									$operand2Data['reference'] = $operand2Data['value'].$pCell->getRow();
-								}
-							}
-
-							$oData = array_merge(explode(':',$operand1Data['reference']),explode(':',$operand2Data['reference']));
-							$oCol = $oRow = array();
-							foreach($oData as $oDatum) {
-								$oCR = PHPExcel_Cell::coordinateFromString($oDatum);
-								$oCol[] = PHPExcel_Cell::columnIndexFromString($oCR[0]) - 1;
-								$oRow[] = $oCR[1];
-							}
-							$cellRef = PHPExcel_Cell::stringFromColumnIndex(min($oCol)).min($oRow).':'.PHPExcel_Cell::stringFromColumnIndex(max($oCol)).max($oRow);
-							if ($pCellParent !== NULL) {
-								$cellValue = $this->extractCellRange($cellRef, $pCellParent->getParent()->getSheetByName($sheet1), false);
-							} else {
-								return $this->_raiseFormulaError('Unable to access Cell Reference');
-							}
-							$stack->push('Cell Reference',$cellValue,$cellRef);
-						} else {
-							$stack->push('Error',PHPExcel_Calculation_Functions::REF(),null);
-						}
-
-						break;
-					case '+'	:			//	Addition
-						$this->_executeNumericBinaryOperation($cellID,$operand1,$operand2,$token,'plusEquals',$stack);
-						break;
-					case '-'	:			//	Subtraction
-						$this->_executeNumericBinaryOperation($cellID,$operand1,$operand2,$token,'minusEquals',$stack);
-						break;
-					case '*'	:			//	Multiplication
-						$this->_executeNumericBinaryOperation($cellID,$operand1,$operand2,$token,'arrayTimesEquals',$stack);
-						break;
-					case '/'	:			//	Division
-						$this->_executeNumericBinaryOperation($cellID,$operand1,$operand2,$token,'arrayRightDivide',$stack);
-						break;
-					case '^'	:			//	Exponential
-						$this->_executeNumericBinaryOperation($cellID,$operand1,$operand2,$token,'power',$stack);
-						break;
-					case '&'	:			//	Concatenation
-						//	If either of the operands is a matrix, we need to treat them both as matrices
-						//		(converting the other operand to a matrix if need be); then perform the required
-						//		matrix operation
-						if (is_bool($operand1)) {
-							$operand1 = ($operand1) ? self::$_localeBoolean['TRUE'] : self::$_localeBoolean['FALSE'];
-						}
-						if (is_bool($operand2)) {
-							$operand2 = ($operand2) ? self::$_localeBoolean['TRUE'] : self::$_localeBoolean['FALSE'];
-						}
-						if ((is_array($operand1)) || (is_array($operand2))) {
-							//	Ensure that both operands are arrays/matrices
-							self::_checkMatrixOperands($operand1,$operand2,2);
-							try {
-								//	Convert operand 1 from a PHP array to a matrix
-								$matrix = new PHPExcel_Shared_JAMA_Matrix($operand1);
-								//	Perform the required operation against the operand 1 matrix, passing in operand 2
-								$matrixResult = $matrix->concat($operand2);
-								$result = $matrixResult->getArray();
-							} catch (Exception $ex) {
-								$this->_writeDebug('JAMA Matrix Exception: '.$ex->getMessage());
-								$result = '#VALUE!';
-							}
-						} else {
-							$result = '"'.str_replace('""','"',self::_unwrapResult($operand1,'"').self::_unwrapResult($operand2,'"')).'"';
-						}
-						$this->_writeDebug('Evaluation Result is '.$this->_showTypeDetails($result));
-						$stack->push('Value',$result);
-						break;
-					case '|'	:			//	Intersect
-						$rowIntersect = array_intersect_key($operand1,$operand2);
-						$cellIntersect = $oCol = $oRow = array();
-						foreach(array_keys($rowIntersect) as $row) {
-							$oRow[] = $row;
-							foreach($rowIntersect[$row] as $col => $data) {
-								$oCol[] = PHPExcel_Cell::columnIndexFromString($col) - 1;
-								$cellIntersect[$row] = array_intersect_key($operand1[$row],$operand2[$row]);
-							}
-						}
-						$cellRef = PHPExcel_Cell::stringFromColumnIndex(min($oCol)).min($oRow).':'.PHPExcel_Cell::stringFromColumnIndex(max($oCol)).max($oRow);
-						$this->_writeDebug('Evaluation Result is '.$this->_showTypeDetails($cellIntersect));
-						$stack->push('Value',$cellIntersect,$cellRef);
-						break;
-				}
-
-			// if the token is a unary operator, pop one value off the stack, do the operation, and push it back on
-			} elseif (($token === '~') || ($token === '%')) {
-//				echo 'Token is a unary operator<br />';
-				if (($arg = $stack->pop()) === NULL) return $this->_raiseFormulaError('Internal error - Operand value missing from stack');
-				$arg = $arg['value'];
-				if ($token === '~') {
-//					echo 'Token is a negation operator<br />';
-					$this->_writeDebug('Evaluating Negation of '.$this->_showValue($arg));
-					$multiplier = -1;
-				} else {
-//					echo 'Token is a percentile operator<br />';
-					$this->_writeDebug('Evaluating Percentile of '.$this->_showValue($arg));
-					$multiplier = 0.01;
-				}
-				if (is_array($arg)) {
-					self::_checkMatrixOperands($arg,$multiplier,2);
-					try {
-						$matrix1 = new PHPExcel_Shared_JAMA_Matrix($arg);
-						$matrixResult = $matrix1->arrayTimesEquals($multiplier);
-						$result = $matrixResult->getArray();
-					} catch (Exception $ex) {
-						$this->_writeDebug('JAMA Matrix Exception: '.$ex->getMessage());
-						$result = '#VALUE!';
-					}
-					$this->_writeDebug('Evaluation Result is '.$this->_showTypeDetails($result));
-					$stack->push('Value',$result);
-				} else {
-					$this->_executeNumericBinaryOperation($cellID,$multiplier,$arg,'*','arrayTimesEquals',$stack);
-				}
-
-			} elseif (preg_match('/^'.self::CALCULATION_REGEXP_CELLREF.'$/i', $token, $matches)) {
-				$cellRef = null;
-//				echo 'Element '.$token.' is a Cell reference<br />';
-				if (isset($matches[8])) {
-//					echo 'Reference is a Range of cells<br />';
-					if ($pCell === NULL) {
-//						We can't access the range, so return a REF error
-						$cellValue = PHPExcel_Calculation_Functions::REF();
-					} else {
-						$cellRef = $matches[6].$matches[7].':'.$matches[9].$matches[10];
-						if ($matches[2] > '') {
-							$matches[2] = trim($matches[2],"\"'");
-							if ((strpos($matches[2],'[') !== false) || (strpos($matches[2],']') !== false)) {
-								//	It's a Reference to an external workbook (not currently supported)
-								return $this->_raiseFormulaError('Unable to access External Workbook');
-							}
-							$matches[2] = trim($matches[2],"\"'");
-//							echo '$cellRef='.$cellRef.' in worksheet '.$matches[2].'<br />';
-							$this->_writeDebug('Evaluating Cell Range '.$cellRef.' in worksheet '.$matches[2]);
-							if ($pCellParent !== NULL) {
-								$cellValue = $this->extractCellRange($cellRef, $pCellParent->getParent()->getSheetByName($matches[2]), false);
-							} else {
-								return $this->_raiseFormulaError('Unable to access Cell Reference');
-							}
-							$this->_writeDebug('Evaluation Result for cells '.$cellRef.' in worksheet '.$matches[2].' is '.$this->_showTypeDetails($cellValue));
-//							$cellRef = $matches[2].'!'.$cellRef;
-						} else {
-//							echo '$cellRef='.$cellRef.' in current worksheet<br />';
-							$this->_writeDebug('Evaluating Cell Range '.$cellRef.' in current worksheet');
-							if ($pCellParent !== NULL) {
-								$cellValue = $this->extractCellRange($cellRef, $pCellParent, false);
-							} else {
-								return $this->_raiseFormulaError('Unable to access Cell Reference');
-							}
-							$this->_writeDebug('Evaluation Result for cells '.$cellRef.' is '.$this->_showTypeDetails($cellValue));
-						}
-					}
-				} else {
-//					echo 'Reference is a single Cell<br />';
-					if ($pCell === NULL) {
-//						We can't access the cell, so return a REF error
-						$cellValue = PHPExcel_Calculation_Functions::REF();
-					} else {
-						$cellRef = $matches[6].$matches[7];
-						if ($matches[2] > '') {
-							$matches[2] = trim($matches[2],"\"'");
-							if ((strpos($matches[2],'[') !== false) || (strpos($matches[2],']') !== false)) {
-								//	It's a Reference to an external workbook (not currently supported)
-								return $this->_raiseFormulaError('Unable to access External Workbook');
-							}
-//							echo '$cellRef='.$cellRef.' in worksheet '.$matches[2].'<br />';
-							$this->_writeDebug('Evaluating Cell '.$cellRef.' in worksheet '.$matches[2]);
-							if ($pCellParent !== NULL) {
-								if ($pCellParent->getParent()->getSheetByName($matches[2])->cellExists($cellRef)) {
-									$cellValue = $this->extractCellRange($cellRef, $pCellParent->getParent()->getSheetByName($matches[2]), false);
-									$pCell->attach($pCellParent);
-								} else {
-									$cellValue = null;
-								}
-							} else {
-								return $this->_raiseFormulaError('Unable to access Cell Reference');
-							}
-							$this->_writeDebug('Evaluation Result for cell '.$cellRef.' in worksheet '.$matches[2].' is '.$this->_showTypeDetails($cellValue));
-//							$cellRef = $matches[2].'!'.$cellRef;
-						} else {
-//							echo '$cellRef='.$cellRef.' in current worksheet<br />';
-							$this->_writeDebug('Evaluating Cell '.$cellRef.' in current worksheet');
-							if ($pCellParent->cellExists($cellRef)) {
-								$cellValue = $this->extractCellRange($cellRef, $pCellParent, false);
-								$pCell->attach($pCellParent);
-							} else {
-								$cellValue = null;
-							}
-							$this->_writeDebug('Evaluation Result for cell '.$cellRef.' is '.$this->_showTypeDetails($cellValue));
-						}
-					}
-				}
-				$stack->push('Value',$cellValue,$cellRef);
-
-			// if the token is a function, pop arguments off the stack, hand them to the function, and push the result back on
-			} elseif (preg_match('/^'.self::CALCULATION_REGEXP_FUNCTION.'$/i', $token, $matches)) {
-//				echo 'Token is a function<br />';
-				$functionName = $matches[1];
-				$argCount = $stack->pop();
-				$argCount = $argCount['value'];
-				if ($functionName != 'MKMATRIX') {
-					$this->_writeDebug('Evaluating Function '.self::_localeFunc($functionName).'() with '.(($argCount == 0) ? 'no' : $argCount).' argument'.(($argCount == 1) ? '' : 's'));
-				}
-				if ((isset(self::$_PHPExcelFunctions[$functionName])) || (isset(self::$_controlFunctions[$functionName]))) {	// function
-					if (isset(self::$_PHPExcelFunctions[$functionName])) {
-						$functionCall = self::$_PHPExcelFunctions[$functionName]['functionCall'];
-						$passByReference = isset(self::$_PHPExcelFunctions[$functionName]['passByReference']);
-						$passCellReference = isset(self::$_PHPExcelFunctions[$functionName]['passCellReference']);
-					} elseif (isset(self::$_controlFunctions[$functionName])) {
-						$functionCall = self::$_controlFunctions[$functionName]['functionCall'];
-						$passByReference = isset(self::$_controlFunctions[$functionName]['passByReference']);
-						$passCellReference = isset(self::$_controlFunctions[$functionName]['passCellReference']);
-					}
-					// get the arguments for this function
-//					echo 'Function '.$functionName.' expects '.$argCount.' arguments<br />';
-					$args = $argArrayVals = array();
-					for ($i = 0; $i < $argCount; ++$i) {
-						$arg = $stack->pop();
-						$a = $argCount - $i - 1;
-						if (($passByReference) &&
-							(isset(self::$_PHPExcelFunctions[$functionName]['passByReference'][$a])) &&
-							(self::$_PHPExcelFunctions[$functionName]['passByReference'][$a])) {
-							if ($arg['reference'] === NULL) {
-								$args[] = $cellID;
-								if ($functionName != 'MKMATRIX') { $argArrayVals[] = $this->_showValue($cellID); }
-							} else {
-								$args[] = $arg['reference'];
-								if ($functionName != 'MKMATRIX') { $argArrayVals[] = $this->_showValue($arg['reference']); }
-							}
-						} else {
-							$args[] = self::_unwrapResult($arg['value']);
-							if ($functionName != 'MKMATRIX') { $argArrayVals[] = $this->_showValue($arg['value']); }
-						}
-					}
-					//	Reverse the order of the arguments
-					krsort($args);
-					if (($passByReference) && ($argCount == 0)) {
-						$args[] = $cellID;
-						$argArrayVals[] = $this->_showValue($cellID);
-					}
-//					echo 'Arguments are: ';
-//					print_r($args);
-//					echo '<br />';
-					if ($functionName != 'MKMATRIX') {
-						if ($this->writeDebugLog) {
-							krsort($argArrayVals);
-							$this->_writeDebug('Evaluating '. self::_localeFunc($functionName).'( '.implode(self::$_localeArgumentSeparator.' ',PHPExcel_Calculation_Functions::flattenArray($argArrayVals)).' )');
-						}
-					}
-					//	Process each argument in turn, building the return value as an array
-//					if (($argCount == 1) && (is_array($args[1])) && ($functionName != 'MKMATRIX')) {
-//						$operand1 = $args[1];
-//						$this->_writeDebug('Argument is a matrix: '.$this->_showValue($operand1));
-//						$result = array();
-//						$row = 0;
-//						foreach($operand1 as $args) {
-//							if (is_array($args)) {
-//								foreach($args as $arg) {
-//									$this->_writeDebug('Evaluating '.self::_localeFunc($functionName).'( '.$this->_showValue($arg).' )');
-//									$r = call_user_func_array($functionCall,$arg);
-//									$this->_writeDebug('Evaluation Result for '.self::_localeFunc($functionName).'() function call is '.$this->_showTypeDetails($r));
-//									$result[$row][] = $r;
-//								}
-//								++$row;
-//							} else {
-//								$this->_writeDebug('Evaluating '.self::_localeFunc($functionName).'( '.$this->_showValue($args).' )');
-//								$r = call_user_func_array($functionCall,$args);
-//								$this->_writeDebug('Evaluation Result for '.self::_localeFunc($functionName).'() function call is '.$this->_showTypeDetails($r));
-//								$result[] = $r;
-//							}
-//						}
-//					} else {
-					//	Process the argument with the appropriate function call
-						if ($passCellReference) {
-							$args[] = $pCell;
-						}
-						if (strpos($functionCall,'::') !== false) {
-							$result = call_user_func_array(explode('::',$functionCall),$args);
-						} else {
-							foreach($args as &$arg) {
-								$arg = PHPExcel_Calculation_Functions::flattenSingleValue($arg);
-							}
-							unset($arg);
-							$result = call_user_func_array($functionCall,$args);
-						}
-//					}
-					if ($functionName != 'MKMATRIX') {
-						$this->_writeDebug('Evaluation Result for '.self::_localeFunc($functionName).'() function call is '.$this->_showTypeDetails($result));
-					}
-					$stack->push('Value',self::_wrapResult($result));
-				}
-
-			} else {
-				// if the token is a number, boolean, string or an Excel error, push it onto the stack
-				if (isset(self::$_ExcelConstants[strtoupper($token)])) {
-					$excelConstant = strtoupper($token);
-//					echo 'Token is a PHPExcel constant: '.$excelConstant.'<br />';
-					$stack->push('Constant Value',self::$_ExcelConstants[$excelConstant]);
-					$this->_writeDebug('Evaluating Constant '.$excelConstant.' as '.$this->_showTypeDetails(self::$_ExcelConstants[$excelConstant]));
-				} elseif ((is_numeric($token)) || ($token === NULL) || (is_bool($token)) || ($token == '') || ($token{0} == '"') || ($token{0} == '#')) {
-//					echo 'Token is a number, boolean, string, null or an Excel error<br />';
-					$stack->push('Value',$token);
-				// if the token is a named range, push the named range name onto the stack
-				} elseif (preg_match('/^'.self::CALCULATION_REGEXP_NAMEDRANGE.'$/i', $token, $matches)) {
-//					echo 'Token is a named range<br />';
-					$namedRange = $matches[6];
-//					echo 'Named Range is '.$namedRange.'<br />';
-					$this->_writeDebug('Evaluating Named Range '.$namedRange);
-					$cellValue = $this->extractNamedRange($namedRange, ((null !== $pCell) ? $pCellParent : null), false);
-					$pCell->attach($pCellParent);
-					$this->_writeDebug('Evaluation Result for named range '.$namedRange.' is '.$this->_showTypeDetails($cellValue));
-					$stack->push('Named Range',$cellValue,$namedRange);
-				} else {
-					return $this->_raiseFormulaError("undefined variable '$token'");
-				}
-			}
-		}
-		// when we're out of tokens, the stack should have a single element, the final result
-		if ($stack->count() != 1) return $this->_raiseFormulaError("internal error");
-		$output = $stack->pop();
-		$output = $output['value'];
-
-//		if ((is_array($output)) && (self::$returnArrayAsType != self::RETURN_ARRAY_AS_ARRAY)) {
-//			return array_shift(PHPExcel_Calculation_Functions::flattenArray($output));
-//		}
-		return $output;
-	}	//	function _processTokenStack()
-
-
-	private function _validateBinaryOperand($cellID,&$operand,&$stack) {
-		//	Numbers, matrices and booleans can pass straight through, as they're already valid
-		if (is_string($operand)) {
-			//	We only need special validations for the operand if it is a string
-			//	Start by stripping off the quotation marks we use to identify true excel string values internally
-			if ($operand > '' && $operand{0} == '"') { $operand = self::_unwrapResult($operand); }
-			//	If the string is a numeric value, we treat it as a numeric, so no further testing
-			if (!is_numeric($operand)) {
-				//	If not a numeric, test to see if the value is an Excel error, and so can't be used in normal binary operations
-				if ($operand > '' && $operand{0} == '#') {
-					$stack->push('Value', $operand);
-					$this->_writeDebug('Evaluation Result is '.$this->_showTypeDetails($operand));
-					return false;
-				} elseif (!PHPExcel_Shared_String::convertToNumberIfFraction($operand)) {
-					//	If not a numeric or a fraction, then it's a text string, and so can't be used in mathematical binary operations
-					$stack->push('Value', '#VALUE!');
-					$this->_writeDebug('Evaluation Result is a '.$this->_showTypeDetails('#VALUE!'));
-					return false;
-				}
-			}
-		}
-
-		//	return a true if the value of the operand is one that we can use in normal binary operations
-		return true;
-	}	//	function _validateBinaryOperand()
-
-
-	private function _executeBinaryComparisonOperation($cellID,$operand1,$operand2,$operation,&$stack,$recursingArrays=false) {
-		//	If we're dealing with matrix operations, we want a matrix result
-		if ((is_array($operand1)) || (is_array($operand2))) {
-			$result = array();
-			if ((is_array($operand1)) && (!is_array($operand2))) {
-				foreach($operand1 as $x => $operandData) {
-					$this->_writeDebug('Evaluating Comparison '.$this->_showValue($operandData).' '.$operation.' '.$this->_showValue($operand2));
-					$this->_executeBinaryComparisonOperation($cellID,$operandData,$operand2,$operation,$stack);
-					$r = $stack->pop();
-					$result[$x] = $r['value'];
-				}
-			} elseif ((!is_array($operand1)) && (is_array($operand2))) {
-				foreach($operand2 as $x => $operandData) {
-					$this->_writeDebug('Evaluating Comparison '.$this->_showValue($operand1).' '.$operation.' '.$this->_showValue($operandData));
-					$this->_executeBinaryComparisonOperation($cellID,$operand1,$operandData,$operation,$stack);
-					$r = $stack->pop();
-					$result[$x] = $r['value'];
-				}
-			} else {
-				if (!$recursingArrays) { self::_checkMatrixOperands($operand1,$operand2,2); }
-				foreach($operand1 as $x => $operandData) {
-					$this->_writeDebug('Evaluating Comparison '.$this->_showValue($operandData).' '.$operation.' '.$this->_showValue($operand2[$x]));
-					$this->_executeBinaryComparisonOperation($cellID,$operandData,$operand2[$x],$operation,$stack,true);
-					$r = $stack->pop();
-					$result[$x] = $r['value'];
-				}
-			}
-			//	Log the result details
-			$this->_writeDebug('Comparison Evaluation Result is '.$this->_showTypeDetails($result));
-			//	And push the result onto the stack
-			$stack->push('Array',$result);
-			return true;
-		}
-
-		//	Simple validate the two operands if they are string values
-		if (is_string($operand1) && $operand1 > '' && $operand1{0} == '"') { $operand1 = self::_unwrapResult($operand1); }
-		if (is_string($operand2) && $operand2 > '' && $operand2{0} == '"') { $operand2 = self::_unwrapResult($operand2); }
-
-		//	execute the necessary operation
-		switch ($operation) {
-			//	Greater than
-			case '>':
-				$result = ($operand1 > $operand2);
-				break;
-			//	Less than
-			case '<':
-				$result = ($operand1 < $operand2);
-				break;
-			//	Equality
-			case '=':
-				$result = ($operand1 == $operand2);
-				break;
-			//	Greater than or equal
-			case '>=':
-				$result = ($operand1 >= $operand2);
-				break;
-			//	Less than or equal
-			case '<=':
-				$result = ($operand1 <= $operand2);
-				break;
-			//	Inequality
-			case '<>':
-				$result = ($operand1 != $operand2);
-				break;
-		}
-
-		//	Log the result details
-		$this->_writeDebug('Evaluation Result is '.$this->_showTypeDetails($result));
-		//	And push the result onto the stack
-		$stack->push('Value',$result);
-		return true;
-	}	//	function _executeBinaryComparisonOperation()
-
-
-	private function _executeNumericBinaryOperation($cellID,$operand1,$operand2,$operation,$matrixFunction,&$stack) {
-		//	Validate the two operands
-		if (!$this->_validateBinaryOperand($cellID,$operand1,$stack)) return false;
-		if (!$this->_validateBinaryOperand($cellID,$operand2,$stack)) return false;
-
-		$executeMatrixOperation = false;
-		//	If either of the operands is a matrix, we need to treat them both as matrices
-		//		(converting the other operand to a matrix if need be); then perform the required
-		//		matrix operation
-		if ((is_array($operand1)) || (is_array($operand2))) {
-			//	Ensure that both operands are arrays/matrices
-			$executeMatrixOperation = true;
-			$mSize = array();
-			list($mSize[],$mSize[],$mSize[],$mSize[]) = self::_checkMatrixOperands($operand1,$operand2,2);
-
-			//	But if they're both single cell matrices, then we can treat them as simple values
-			if (array_sum($mSize) == 4) {
-				$executeMatrixOperation = false;
-				$operand1 = $operand1[0][0];
-				$operand2 = $operand2[0][0];
-			}
-		}
-
-		if ($executeMatrixOperation) {
-			try {
-				//	Convert operand 1 from a PHP array to a matrix
-				$matrix = new PHPExcel_Shared_JAMA_Matrix($operand1);
-				//	Perform the required operation against the operand 1 matrix, passing in operand 2
-				$matrixResult = $matrix->$matrixFunction($operand2);
-				$result = $matrixResult->getArray();
-			} catch (Exception $ex) {
-				$this->_writeDebug('JAMA Matrix Exception: '.$ex->getMessage());
-				$result = '#VALUE!';
-			}
-		} else {
-			if ((PHPExcel_Calculation_Functions::getCompatibilityMode() != PHPExcel_Calculation_Functions::COMPATIBILITY_OPENOFFICE) &&
-				((is_string($operand1) && !is_numeric($operand1)) || (is_string($operand2) && !is_numeric($operand2)))) {
-				$result = PHPExcel_Calculation_Functions::VALUE();
-			} else {
-				//	If we're dealing with non-matrix operations, execute the necessary operation
-				switch ($operation) {
-					//	Addition
-					case '+':
-						$result = $operand1+$operand2;
-						break;
-					//	Subtraction
-					case '-':
-						$result = $operand1-$operand2;
-						break;
-					//	Multiplication
-					case '*':
-						$result = $operand1*$operand2;
-						break;
-					//	Division
-					case '/':
-						if ($operand2 == 0) {
-							//	Trap for Divide by Zero error
-							$stack->push('Value','#DIV/0!');
-							$this->_writeDebug('Evaluation Result is '.$this->_showTypeDetails('#DIV/0!'));
-							return false;
-						} else {
-							$result = $operand1/$operand2;
-						}
-						break;
-					//	Power
-					case '^':
-						$result = pow($operand1,$operand2);
-						break;
-				}
-			}
-		}
-
-		//	Log the result details
-		$this->_writeDebug('Evaluation Result is '.$this->_showTypeDetails($result));
-		//	And push the result onto the stack
-		$stack->push('Value',$result);
-		return true;
-	}	//	function _executeNumericBinaryOperation()
-
-
-	private function _writeDebug($message) {
-		//	Only write the debug log if logging is enabled
-		if ($this->writeDebugLog) {
-			if ($this->echoDebugLog) {
-				echo implode(' -> ',$this->debugLogStack).' -> '.$message,'<br />';
-			}
-			$this->debugLog[] = implode(' -> ',$this->debugLogStack).' -> '.$message;
-		}
-	}	//	function _writeDebug()
-
-
-	// trigger an error, but nicely, if need be
-	protected function _raiseFormulaError($errorMessage) {
-		$this->formulaError = $errorMessage;
-		$this->debugLogStack = array();
-		if (!$this->suppressFormulaErrors) throw new Exception($errorMessage);
-		trigger_error($errorMessage, E_USER_ERROR);
-	}	//	function _raiseFormulaError()
-
-
-	/**
-	 * Extract range values
-	 *
-	 * @param	string				&$pRange		String based range representation
-	 * @param	PHPExcel_Worksheet	$pSheet		Worksheet
-	 * @return  mixed				Array of values in range if range contains more than one element. Otherwise, a single value is returned.
-	 * @throws	Exception
-	 */
-	public function extractCellRange(&$pRange = 'A1', PHPExcel_Worksheet $pSheet = null, $resetLog=true) {
-		// Return value
-		$returnValue = array ();
-
-//		echo 'extractCellRange('.$pRange.')<br />';
-		if ($pSheet !== NULL) {
-//			echo 'Passed sheet name is '.$pSheet->getTitle().'<br />';
-//			echo 'Range reference is '.$pRange.'<br />';
-			if (strpos ($pRange, '!') !== false) {
-//				echo '$pRange reference includes sheet reference<br />';
-				$worksheetReference = PHPExcel_Worksheet::extractSheetTitle($pRange, true);
-				$pSheet = $pSheet->getParent()->getSheetByName($worksheetReference[0]);
-//				echo 'New sheet name is '.$pSheet->getTitle().'<br />';
-				$pRange = $worksheetReference[1];
-//				echo 'Adjusted Range reference is '.$pRange.'<br />';
-			}
-
-			// Extract range
-			$aReferences = PHPExcel_Cell::extractAllCellReferencesInRange($pRange);
-			$pRange = $pSheet->getTitle().'!'.$pRange;
-			if (!isset($aReferences[1])) {
-				//	Single cell in range
-				list($currentCol,$currentRow) = sscanf($aReferences[0],'%[A-Z]%d');
-				if ($pSheet->cellExists($aReferences[0])) {
-					$returnValue[$currentRow][$currentCol] = $pSheet->getCell($aReferences[0])->getCalculatedValue($resetLog);
-				} else {
-					$returnValue[$currentRow][$currentCol] = null;
-				}
-			} else {
-				// Extract cell data for all cells in the range
-				foreach ($aReferences as $reference) {
-					// Extract range
-					list($currentCol,$currentRow) = sscanf($reference,'%[A-Z]%d');
-
-					if ($pSheet->cellExists($reference)) {
-						$returnValue[$currentRow][$currentCol] = $pSheet->getCell($reference)->getCalculatedValue($resetLog);
-					} else {
-						$returnValue[$currentRow][$currentCol] = null;
-					}
-				}
-			}
-		}
-
-		// Return
-		return $returnValue;
-	}	//	function extractCellRange()
-
-
-	/**
-	 * Extract range values
-	 *
-	 * @param	string				&$pRange	String based range representation
-	 * @param	PHPExcel_Worksheet	$pSheet		Worksheet
-	 * @return  mixed				Array of values in range if range contains more than one element. Otherwise, a single value is returned.
-	 * @throws	Exception
-	 */
-	public function extractNamedRange(&$pRange = 'A1', PHPExcel_Worksheet $pSheet = null, $resetLog=true) {
-		// Return value
-		$returnValue = array ();
-
-//		echo 'extractNamedRange('.$pRange.')<br />';
-		if ($pSheet !== NULL) {
-//			echo 'Current sheet name is '.$pSheet->getTitle().'<br />';
-//			echo 'Range reference is '.$pRange.'<br />';
-			if (strpos ($pRange, '!') !== false) {
-//				echo '$pRange reference includes sheet reference<br />';
-				$worksheetReference = PHPExcel_Worksheet::extractSheetTitle($pRange, true);
-				$pSheet = $pSheet->getParent()->getSheetByName($worksheetReference[0]);
-//				echo 'New sheet name is '.$pSheet->getTitle().'<br />';
-				$pRange = $worksheetReference[1];
-//				echo 'Adjusted Range reference is '.$pRange.'<br />';
-			}
-
-			// Named range?
-			$namedRange = PHPExcel_NamedRange::resolveRange($pRange, $pSheet);
-			if ($namedRange !== NULL) {
-				$pSheet = $namedRange->getWorksheet();
-//				echo 'Named Range '.$pRange.' (';
-				$pRange = $namedRange->getRange();
-				$splitRange = PHPExcel_Cell::splitRange($pRange);
-				//	Convert row and column references
-				if (ctype_alpha($splitRange[0][0])) {
-					$pRange = $splitRange[0][0] . '1:' . $splitRange[0][1] . $namedRange->getWorksheet()->getHighestRow();
-				} elseif(ctype_digit($splitRange[0][0])) {
-					$pRange = 'A' . $splitRange[0][0] . ':' . $namedRange->getWorksheet()->getHighestColumn() . $splitRange[0][1];
-				}
-//				echo $pRange.') is in sheet '.$namedRange->getWorksheet()->getTitle().'<br />';
-
-//				if ($pSheet->getTitle() != $namedRange->getWorksheet()->getTitle()) {
-//					if (!$namedRange->getLocalOnly()) {
-//						$pSheet = $namedRange->getWorksheet();
-//					} else {
-//						return $returnValue;
-//					}
-//				}
-			} else {
-				return PHPExcel_Calculation_Functions::REF();
-			}
-
-			// Extract range
-			$aReferences = PHPExcel_Cell::extractAllCellReferencesInRange($pRange);
-//			var_dump($aReferences);
-			if (!isset($aReferences[1])) {
-				//	Single cell (or single column or row) in range
-				list($currentCol,$currentRow) = PHPExcel_Cell::coordinateFromString($aReferences[0]);
-				if ($pSheet->cellExists($aReferences[0])) {
-					$returnValue[$currentRow][$currentCol] = $pSheet->getCell($aReferences[0])->getCalculatedValue($resetLog);
-				} else {
-					$returnValue[$currentRow][$currentCol] = null;
-				}
-			} else {
-				// Extract cell data for all cells in the range
-				foreach ($aReferences as $reference) {
-					// Extract range
-					list($currentCol,$currentRow) = PHPExcel_Cell::coordinateFromString($reference);
-//					echo 'NAMED RANGE: $currentCol='.$currentCol.' $currentRow='.$currentRow.'<br />';
-					if ($pSheet->cellExists($reference)) {
-						$returnValue[$currentRow][$currentCol] = $pSheet->getCell($reference)->getCalculatedValue($resetLog);
-					} else {
-						$returnValue[$currentRow][$currentCol] = null;
-					}
-				}
-			}
-//				print_r($returnValue);
-//			echo '<br />';
-		}
-
-		// Return
-		return $returnValue;
-	}	//	function extractNamedRange()
-
-
-	/**
-	 * Is a specific function implemented?
-	 *
-	 * @param	string	$pFunction	Function Name
-	 * @return	boolean
-	 */
-	public function isImplemented($pFunction = '') {
-		$pFunction = strtoupper ($pFunction);
-		if (isset(self::$_PHPExcelFunctions[$pFunction])) {
-			return (self::$_PHPExcelFunctions[$pFunction]['functionCall'] != 'PHPExcel_Calculation_Functions::DUMMY');
-		} else {
-			return false;
-		}
-	}	//	function isImplemented()
-
-
-	/**
-	 * Get a list of all implemented functions as an array of function objects
-	 *
-	 * @return	array of PHPExcel_Calculation_Function
-	 */
-	public function listFunctions() {
-		// Return value
-		$returnValue = array();
-		// Loop functions
-		foreach(self::$_PHPExcelFunctions as $functionName => $function) {
-			if ($function['functionCall'] != 'PHPExcel_Calculation_Functions::DUMMY') {
-				$returnValue[$functionName] = new PHPExcel_Calculation_Function($function['category'],
-																				$functionName,
-																				$function['functionCall']
-																			   );
-			}
-		}
-
-		// Return
-		return $returnValue;
-	}	//	function listFunctions()
-
-
-	/**
-	 * Get a list of all Excel function names
-	 *
-	 * @return	array
-	 */
-	public function listAllFunctionNames() {
-		return array_keys(self::$_PHPExcelFunctions);
-	}	//	function listAllFunctionNames()
-
-	/**
-	 * Get a list of implemented Excel function names
-	 *
-	 * @return	array
-	 */
-	public function listFunctionNames() {
-		// Return value
-		$returnValue = array();
-		// Loop functions
-		foreach(self::$_PHPExcelFunctions as $functionName => $function) {
-			if ($function['functionCall'] != 'PHPExcel_Calculation_Functions::DUMMY') {
-				$returnValue[] = $functionName;
-			}
-		}
-
-		// Return
-		return $returnValue;
-	}	//	function listFunctionNames()
-
-}	//	class PHPExcel_Calculation
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

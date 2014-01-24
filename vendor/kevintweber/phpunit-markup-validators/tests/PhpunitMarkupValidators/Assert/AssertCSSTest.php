@@ -1,66 +1,31 @@
-<?php
-
-/*
- * This file is part of the PhpunitMarkupValidators package.
- *
- * (c) Kevin Weber <kevintweber@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace PhpunitMarkupValidators\Assert;
-
-use kevintweber\PhpunitMarkupValidators\Assert\AssertCSS;
-
-class AssertCSSTest extends \PHPUnit_Framework_TestCase
-{
-    /**
-     * @covers kevintweber\PhpunitMarkupValidators\Assert\AssertCSS::IsValidMarkup
-     */
-    public function testIsValidMarkup()
-    {
-        // Test valid CSS markup.
-        AssertCSS::IsValidMarkup("div{color:black;}");
-
-        // Test invalid CSS markup.
-        try {
-            AssertCSS::IsValidMarkup("div{color:badcolordude!;}");
-        }
-        catch (\PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers kevintweber\PhpunitMarkupValidators\Assert\AssertCSS::IsValidFile
-     */
-    public function testIsValidFile()
-    {
-        // Test valid CSS file.
-        AssertCSS::IsValidFile(realpath(__DIR__ . "/../../files/CSS_Valid.css"),
-                               "Valid CSS file.");
-
-        // Test invalid CSS file.
-        try {
-            AssertCSS::IsValidFile(realpath(__DIR__ . "/../../files/CSS_Invalid.css"),
-                                   "Invalid CSS file.");
-        }
-        catch (\PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers kevintweber\PhpunitMarkupValidators\Assert\AssertCSS::IsValidUrl
-     */
-    public function testIsValidUrl()
-    {
-        AssertCSS::IsValidUrl("http://www.w3.org/StyleSheets/TR/W3C-WG-NOTE.css",
-                              "Valid CSS url.");
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+8Zb05E3Gro09JwHNY8kq

@@ -1,169 +1,88 @@
-<?php
-
-/**
- * This is the model class for table "{{order}}".
- *
- * The followings are the available columns in table '{{order}}':
- * @property string $id
- * @property string $customer_id
- * @property string $vector_id
- * @property string $date
- * @property string $work_date
- * @property string $due_date
- * @property string $work_number
- * @property string $type_id
- * @property string $status_id
- * @property string $notes
- * @property string $create_time
- * @property string $update_time
- *
- * The followings are the available model relations:
- * @property OrderType $type
- * @property Clienti $customer
- * @property OrderStatus $status
- * @property Barche $vector
- * @property OrderDetail[] $orderDetails
- */
-class BaseOrder extends CActiveRecord
-{
-	/**
-	 * @return string the associated database table name
-	 */
-	public function tableName()
-	{
-		return '{{order}}';
-	}
-
-	/**
-	 * @return array validation rules for model attributes.
-	 */
-	public function rules()
-	{
-		// NOTE: you should only define rules for those attributes that
-		// will receive user inputs.
-		return array(
-			array('customer_id, date, status_id', 'required'),
-			array('customer_id, vector_id', 'length', 'max'=>10),
-			array('work_number, type_id, status_id', 'length', 'max'=>11),
-			array('work_date, due_date, notes, create_time, update_time', 'safe'),
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
-			array('id, customer_id, vector_id, date, work_date, due_date, work_number, type_id, status_id, notes, create_time, update_time', 'safe', 'on'=>'search'),
-		);
-	}
-
-	/**
-	 * @return array relational rules.
-	 */
-	public function relations()
-	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
-		return array(
-			'type' => array(self::BELONGS_TO, 'OrderType', 'type_id'),
-			'customer' => array(self::BELONGS_TO, 'Clienti', 'customer_id'),
-			'status' => array(self::BELONGS_TO, 'OrderStatus', 'status_id'),
-			'vector' => array(self::BELONGS_TO, 'Barche', 'vector_id'),
-			'orderDetails' => array(self::HAS_MANY, 'OrderDetail', 'order_id'),
-		);
-	}
-
-	/**
-	 * @return array customized attribute labels (name=>label)
-	 */
-	public function attributeLabels()
-	{
-		return array(
-			'id' => Yii::t('app', 'ID'),
-			'customer_id' => Yii::t('app', 'Customer'),
-			'vector_id' => Yii::t('app', 'Vector'),
-			'date' => Yii::t('app', 'Date'),
-			'work_date' => Yii::t('app', 'Work Date'),
-			'due_date' => Yii::t('app', 'Due Date'),
-			'work_number' => Yii::t('app', 'Work Number'),
-			'type_id' => Yii::t('app', 'Type'),
-			'status_id' => Yii::t('app', 'Status'),
-			'notes' => Yii::t('app', 'Notes'),
-			'create_time' => Yii::t('app', 'Create Time'),
-			'update_time' => Yii::t('app', 'Update Time'),
-		);
-	}
-
-	/**
-	 * Retrieves a list of models based on the current search/filter conditions.
-	 *
-	 * Typical usecase:
-	 * - Initialize the model fields with values from filter form.
-	 * - Execute this method to get CActiveDataProvider instance which will filter
-	 * models according to data in model fields.
-	 * - Pass data provider to CGridView, CListView or any similar widget.
-	 *
-	 * @return CActiveDataProvider the data provider that can return the models
-	 * based on the search/filter conditions.
-	 */
-	public function search()
-	{
-		// @todo Please modify the following code to remove attributes that should not be searched.
-
-		$criteria=new CDbCriteria;
-
-		$criteria->compare('id',$this->id,true);
-		$criteria->compare('customer_id',$this->customer_id,true);
-		$criteria->compare('vector_id',$this->vector_id,true);
-		$criteria->compare('date',$this->date,true);
-		$criteria->compare('work_date',$this->work_date,true);
-		$criteria->compare('due_date',$this->due_date,true);
-		$criteria->compare('work_number',$this->work_number,true);
-		$criteria->compare('type_id',$this->type_id,true);
-		$criteria->compare('status_id',$this->status_id,true);
-		$criteria->compare('notes',$this->notes,true);
-		$criteria->compare('create_time',$this->create_time,true);
-		$criteria->compare('update_time',$this->update_time,true);
-
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
-	}
-
-	/**
-	 * Returns the static model of the specified AR class.
-	 * Please note that you should have this exact method in all your CActiveRecord descendants!
-	 * @param string $className active record class name.
-	 * @return Order the static model class
-	 */
-	public static function model($className=__CLASS__)
-	{
-		return parent::model($className);
-	}
-
-	/**
-	 * Behavior for timestamp
-	 */
-	public function behaviors(){
-		return array(
-			'CTimestampBehavior' => array(
-				'class' => 'zii.behaviors.CTimestampBehavior',
-				// 'createAttribute' => 'create_time',
-				// 'updateAttribute' => 'update_time',
-			)
-		);
-	}
-
-	/**
-	 * Either attributes required (one or another)
-	 * Use like this: 
-	 * array('attributes1', 'either', 'other' => 'attributes2')
-	 */ 
-	public function either($attribute_name, $params)
-	{
-	    $field1 = $this->getAttributeLabel($attribute_name);
-	    $field2 = $this->getAttributeLabel($params['other']);
-	    if (empty($this->$attribute_name) && empty($this->$params['other'])) {
-	        $this->addError(
-	        	$attribute_name, 
-	        	Yii::t('app', "Either {field1} or {field2} is required.", array('{field1}' => $field1, '{field2}' => $field2)));
-	        return false;
-	    }
-	    return true;
-	}	 
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

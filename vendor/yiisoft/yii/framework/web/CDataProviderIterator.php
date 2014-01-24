@@ -1,155 +1,64 @@
-<?php
-/**
- * CDataProviderIterator class file.
- *
- * @author Charles Pick <charles.pick@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CDataProviderIterator allows iteration over large data sets without holding the entire set in memory.
- *
- * CDataProviderIterator iterates over the results of a data provider, starting at the first page
- * of results and ending at the last page. It is usually only suited for use with {@link CActiveDataProvider}.
- *
- * For example, the following code will iterate over all registered users (active record class User) without
- * running out of memory, even if there are millions of users in the database.
- * <pre>
- * $dataProvider = new CActiveDataProvider("User");
- * $iterator = new CDataProviderIterator($dataProvider);
- * foreach($iterator as $user) {
- *	 echo $user->name."\n";
- * }
- * </pre>
- *
- * @property CDataProvider $dataProvider the data provider to iterate over
- * @property integer $totalItemCount the total number of items in the iterator
- *
- * @author Charles Pick <charles.pick@gmail.com>
- * @author Carsten Brandt <mail@cebe.cc>
- * @package system.web
- * @since 1.1.13
- */
-class CDataProviderIterator extends CComponent implements Iterator, Countable
-{
-	private $_dataProvider;
-	private $_currentIndex=-1;
-	private $_currentPage=0;
-	private $_totalItemCount=-1;
-	private $_items;
-
-	/**
-	 * Constructor.
-	 * @param CDataProvider $dataProvider the data provider to iterate over
-	 * @param integer $pageSize pageSize to use for iteration. This is the number of objects loaded into memory at the same time.
-	 */
-	public function __construct(CDataProvider $dataProvider, $pageSize=null)
-	{
-		$this->_dataProvider=$dataProvider;
-		$this->_totalItemCount=$dataProvider->getTotalItemCount();
-
-		if(($pagination=$this->_dataProvider->getPagination())===false)
-			$this->_dataProvider->setPagination($pagination=new CPagination());
-
-		if($pageSize!==null)
-			$pagination->setPageSize($pageSize);
-	}
-
-	/**
-	 * Returns the data provider to iterate over
-	 * @return CDataProvider the data provider to iterate over
-	 */
-	public function getDataProvider()
-	{
-		return $this->_dataProvider;
-	}
-
-	/**
-	 * Gets the total number of items to iterate over
-	 * @return integer the total number of items to iterate over
-	 */
-	public function getTotalItemCount()
-	{
-		return $this->_totalItemCount;
-	}
-
-	/**
-	 * Loads a page of items
-	 * @return array the items from the next page of results
-	 */
-	protected function loadPage()
-	{
-		$this->_dataProvider->getPagination()->setCurrentPage($this->_currentPage);
-		return $this->_items=$this->dataProvider->getData(true);
-	}
-
-	/**
-	 * Gets the current item in the list.
-	 * This method is required by the Iterator interface.
-	 * @return mixed the current item in the list
-	 */
-	public function current()
-	{
-		return $this->_items[$this->_currentIndex];
-	}
-
-	/**
-	 * Gets the key of the current item.
-	 * This method is required by the Iterator interface.
-	 * @return integer the key of the current item
-	 */
-	public function key()
-	{
-		$pageSize=$this->_dataProvider->getPagination()->getPageSize();
-		return $this->_currentPage*$pageSize+$this->_currentIndex;
-	}
-
-	/**
-	 * Moves the pointer to the next item in the list.
-	 * This method is required by the Iterator interface.
-	 */
-	public function next()
-	{
-		$pageSize=$this->_dataProvider->getPagination()->getPageSize();
-		$this->_currentIndex++;
-		if($this->_currentIndex >= $pageSize)
-		{
-			$this->_currentPage++;
-			$this->_currentIndex=0;
-			$this->loadPage();
-		}
-	}
-
-	/**
-	 * Rewinds the iterator to the start of the list.
-	 * This method is required by the Iterator interface.
-	 */
-	public function rewind()
-	{
-		$this->_currentIndex=0;
-		$this->_currentPage=0;
-		$this->loadPage();
-	}
-
-	/**
-	 * Checks if the current position is valid or not.
-	 * This method is required by the Iterator interface.
-	 * @return boolean true if this index is valid
-	 */
-	public function valid()
-	{
-		return $this->key() < $this->_totalItemCount;
-	}
-
-	/**
-	 * Gets the total number of items in the dataProvider.
-	 * This method is required by the Countable interface.
-	 * @return integer the total number of items
-	 */
-	public function count()
-	{
-		return $this->_totalItemCount;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPns3t64uGILMqKr9GiXszHV00qeaC37q4QYioANXInJXPgmSi2DCDhN2L9buJAYF4miP+JlC
+SCwQgZLjERS7M41qowWHTYG9RPwXOs8jfYZXns2SGw6MFumlqfspPKGcY8MmkrwzDU1p7UvmopWE
+4cTuNavmi+WTKOO4yTrNAPPoqkMRqt+jpqNzAP9O9HGYiunem42DZxHF6ehmCg3/1IE66ouEhL2D
+4As3niiGR+mvB0DMJ5s2hr4euJltSAgiccy4GDnfT7rQ5TmKplcCkz8tJTYFHQmf/y/ScLCk3fEp
+HHkocZ0GM9YoLYXkP857ieiBZYBUS/BgAku75OfKeuv1E/HGmqnJmywCmEpPgdy8/kJ8Awdo7Zer
+riD99sUkT9Z2HjMuU8WglfDZ0IBUbIyrbd5AgNZoplSgRCZjtg2As1smnnh0AohP7nEBgJ3fV2Eo
+bvj4mKdB0nra7rAY3EvwsnOT0u/CmMkWP2xpgB7LBKzolZYPPDA7IncfvKrWwOJJHKb6gZ/06EvU
+2Au6mOpG4ww8M5H68hVCf5fec+eZJVxiq4VjV5SL/0SsemD9Bl5nroZhp/mXqqEU4rqFdffXtAfe
+8rJkRiixpGtvijBVjvTIe64tTmKJ1DJM/A0wsktJX6FmYEsoYz2yNuKtVY8t1ZeA2rmBsiIb3ry7
+A5Gq1kkiQ3JpHcJuJw6aXtEMo6cvdfWQGfrUGfNSDMyrwa5ZrsDPh7eABnrk7qAk5wZjC6nhtqK9
+D3e8iDhHhu3cXRo3zlDqoK6YP/+ZvPKWkOcBWoj+pDa62Pg3PONP05Ysfwyl6ANTGemPlOviwosS
+Zyi7CPsvBNecoyni7YOu9AZBqWTbhaYVsoBKrRDMR25Q85x66O58D+OG/mjDgqJZfrPB9JKZB8k2
+eW+u/1ftoA5H0iOAeRXiOgdF8Um3iR23/J9To4RPPfii2zMgjSvb+DqWShijXd/iFpDOepYHBX1C
+OmGFC86BWpPZ+em1vihexGNHDM5wmiAqgILqL4RgbQEA4jePw3wrtsvDRA6cca22/DJNXc2EfMRC
+d8H6VBE0fKBlrgwfrk7wjPU9IC834JPh5Yb5JJDfTfQ8UgUTeGFzZuPpOA3BXnWlV9M0BWr2bBT7
+PIVzpjwhF/KKsmFzn4axLJ7kHxsr4oakxiS9qdy29YWf5Hn6Ok4N7TFDcPTDykryb6qNo0MZytvq
+ZyIG1/z+t2BNbujgn9SDR4HhTNazrIRZK2LDogAXsgJRgJQKykEefXxveX6jutHH4YY8TbJJ3IXu
+CGs2IRBY7ho+0y/Fc69gQN+aoX5EE+ABtzn2TTigw5D7/qXj6EgoelhUr8XWj9dHHQfxrS0097AC
+Z0Vr8LWQHK4ZxxyvELImgpPJRGOll4oAR7aF9sejhUJlJBH71Fxnpux8SOZPHFYQ7tj5mVB8uE/1
+8trri5PpUqOsksfBQ/iXcuC5pC15mgSzhSNgRdnZUuAbHZ2zb+NnLn1Cb4YN/TJcEq4V1fDWTN0B
+Htl2N+bDBxoyXCPP43V/pJHQS2EOy57qapHjmEsTg4Q7Z1D0ZsIYG92yi1tyX3VL+wEqKHD94iJN
+R/s9+2G3sceq20co3lE3T/ZU08b8rub5DkCVu4QNv5uQL8XkbG2BYuD2t/JAfa0weYHVkDsyOiaO
+vekrOJsirV7uJhd6cRRVay4kV3HjeeXrB7x5xRIQ6rmcJ/VDcwlveOULYIdkmksXuPUiE0qjTOa7
+lodcZNn3RHDgzYzZQMUSpvnUvkPT5uffgT9YFGFjg5Dcb/xKxlqbDcXuXK8eoohicfu+qne9mqLO
+Z96f3LxZplJYhp2+RpQkw4QJp5WYln/vx5sBvjGqR1NMv9g9evywN4tKMlTU1kS2DnvbqFoTKOYM
+XFMX6uAErvsISr96CYx3OK6izZhKJoniohyr5OT8XgTwyPASuDcULzp7XV229PbhYjYHM2abxOCC
+CgXHti4qfqWFE6wxGrvaoCi5VUTFEbqM1a4RZGrm5RTjUellCmRmzoRLoPAJQo29um9ew7OWfKHv
+uuVEBz4KAZFpIYvVG4N4BeIOPvc6hvq+WBLB7Xf0GPnlYe+ef2FE3Rz0iGWKaNSM1Ww9T/16l4CY
+ZYctAuJeuBfinNRhQdzCcCoBHagDCAoTtsVL7prBdM0vU485bsflWGySqi4TN7KaDnsWARA3rsJ4
+mbeV7bzVmILYlvf+bBY0Cba9s/0waDNmwHf+cGKG3+A2XSZg34HRvTIVhr5nCP3t6ZJdLpRAokBM
+S97ht3acbgXOsfy9nrNbhRvaEXm9WiCWMqj/mcfNk9/sQuSSDAMY1SsazX+4ckia7qylXbshCa8G
+d8EVLqkPRjhOzrfWTutcpt1RkgYj3k1Vc27xBGJuYcBe9DsClh8an0po+v/KSlWFvZjvl7d0JXrR
+ZBBE/2g6c9NrgKqmWaUL7xPlMonCyWD0d78svoxKN2YqHuznEKQ1DQs4QU0dovOZwXOPmJ0vg5t8
+XsQHYAcCxg4ZTerG1KAyZydzKqWrECVAqMPmZOlO3UoCrow+B4NE5kpLVfTmBE0w0ItsGB2AZsbg
+vZiJuCfrdo4wPdEWttqhX4G6BGQA4GXr38GcTBur0QrJ2WCI5FSJf1FHI9lR91VunXr27iuZfGT/
+4KvJHMAL2nZx4VxhbtZp8b0rugaOeq5CFNl+pPdQ7j3BvhtKlyFwSXxARvFE3/tAroMHvfDoFpJt
+LjR6t7/1WkGvlpQgBoThGJGMaBIE+Lr0sVd7szOvY+kIxxFs2QmUJkVuKyB6iwgPPtLxn9OwFc9U
+90+xyKsijF5RLo6JQWD32xs/PY8gUMJLoUaBP1Mu0a2mwcOhPfK7rhfxps6IdCuI3b+Kh0oXKpgm
+u5lJHwiCXut9/gryNooyUIVQf6e8qxoXp/q6509/J7phXxGASnjGIvm+aKSZqRDd5Lhfq/qXR7JC
+ryBHgUIoCYU8j4yi20egvowZKy3mKTPtcWWl3wuPhXcdd32h6EZthgQq0jolQgN6w7yY7UhE1mOs
+dro11z/ATK93kj/EpYp/i0JLJfJu20SDZt64Wo3r492iXlEK6OPypgFjVjY4ugZsBfJIcLTTCs8i
+MjgGKJjaQ5xE5vftiu0ps3qQZeFyJdx+AZcc0AOS3GZrkx8thhBBYcktrYZ24RVLY5BRk42iyDRN
+3oRBhQqBYm0CsIO8Z1jB437FR41DUVY29O/yrqwFkkogEiQLbyNm+ORTfKAvN01Xz5WG4UXLK+Hp
+0K8eEwsG6nX6QS144FeGVKSONI4mmuilVhEenLHh4tV3joJs3PgkN0am1I4NCc/zzyJscMcZo711
+e/vhoMdXfTHWQ77baxRR0vj9N5iGqvXUKn3WIRbSk6MFdxh4zoRfqZfCauX25bEMT1OD+xzkTh6f
+ALot+vlfl3jiu7qzdpjAJhH/Zjp5ZEcI801b8C3O4dvAKWBmmrW826bfJqLxEe26jq1/eS0EH2p4
+EoMgMUhnnaF8dsXu+/z0Nh3bk+gR7YLTxnGl0RWU5r4h81xlkBYHcPRk8fmchkXOdJJPsI7MabYp
+a6igwm13Z+xRSAUTX+veHjkH/XrG6WX3biLnlsuipIcccf3Qfa6A3eY9PUETxyYoDe2CY2s7Bl95
+L9q7SrN5MrkZvwdOP2E+3aFEyVmQP0e/o23bwynY5pvy377fGUgiDuxbZMePcLxD+vFkJRBS4NDF
+huQtcnef/+qXbC95sCMsC1K6NXi25eGtj5SKrAU+gW29arTe2G6vNSdtZj7YDL7/+gdFa8DJh63o
+uxeMCh0jt/OaQJ9wAr85yiclJdw9V+OB5P7iMdsC9SYKE4LSgsKwQKwSc0EO+Gc8zmSN6zmeX6Bq
+5ru4pmEKLUJlnLIiTVHFOOsjn+bmBpbNGj1R4KC0h9FNKF/WJlDItT4cTk/BGpcFM+1NUs3PSgCE
+7ffuRLXkbrlRVnXyNh4IuAdwPfA59gNwugXpKP46ViJjWRdg2bzpymB3W7Gfq4vuuuVaW+FeTimu
+C9cEza0uQIN0TqQyKijG7U6oxJwQABHeGjcQf+B/v9XZ0JjqAmmHV05GN/bkgeqERdC/bJ913QrF
+tLzVWcL3zLzcb8g2wjACxsjNOUwsENdtDglXYcGACjvmYMVvytKlGQPdjhdGCxhKgLFFq08qPTyh
+yAIjb30iiwmSqlhafQNlwG9JML7z7lCl407D2AFPZXIAnmoPCSbOmsf6quFmNlux4iCsFPTNVho0
+Ul/WdK4dRxWvLvuX49ZFN47NJyQV4VGoGkpGSfoQPJdz5fS6sP6Vyc13NuwO+f5xTEBp0fkdRLQM
+9nxI+OF/T9viI0OxItIEAsXCrLOa2DqGpxdR7pPgYV/sVY8g/bORxpQA7MwlHgZzT0dhyOAEDfNj
+W0f7kxYYCfS8zfVoIO4/ggGBelWlydLrIB/pmC5SWPGu49ov4IVfx/1xpCzOpW7FN04IO6SSAaM3
+jrTjOUMzZT6jh25JcF8KEN4nTT5gtkFAPc0Y+QFirvlAuttEJWOglJqjCqGrcDBuWFpJv1jzfQmo
+odVOuPga5q2B6eDYvz0Py5Lj+ynqRjkF/hiaCkEqU2QbRhOhIuwp

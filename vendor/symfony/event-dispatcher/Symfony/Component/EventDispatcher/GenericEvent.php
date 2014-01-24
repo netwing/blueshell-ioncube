@@ -1,186 +1,60 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\EventDispatcher;
-
-/**
- * Event encapsulation class.
- *
- * Encapsulates events thus decoupling the observer from the subject they encapsulate.
- *
- * @author Drak <drak@zikula.org>
- */
-class GenericEvent extends Event implements \ArrayAccess, \IteratorAggregate
-{
-    /**
-     * Event subject.
-     *
-     * @var mixed usually object or callable
-     */
-    protected $subject;
-
-    /**
-     * Array of arguments.
-     *
-     * @var array
-     */
-    protected $arguments;
-
-    /**
-     * Encapsulate an event with $subject and $args.
-     *
-     * @param mixed $subject   The subject of the event, usually an object.
-     * @param array $arguments Arguments to store in the event.
-     */
-    public function __construct($subject = null, array $arguments = array())
-    {
-        $this->subject = $subject;
-        $this->arguments = $arguments;
-    }
-
-    /**
-     * Getter for subject property.
-     *
-     * @return mixed $subject The observer subject.
-     */
-    public function getSubject()
-    {
-        return $this->subject;
-    }
-
-    /**
-     * Get argument by key.
-     *
-     * @param string $key Key.
-     *
-     * @throws \InvalidArgumentException If key is not found.
-     *
-     * @return mixed Contents of array key.
-     */
-    public function getArgument($key)
-    {
-        if ($this->hasArgument($key)) {
-            return $this->arguments[$key];
-        }
-
-        throw new \InvalidArgumentException(sprintf('%s not found in %s', $key, $this->getName()));
-    }
-
-    /**
-     * Add argument to event.
-     *
-     * @param string $key   Argument name.
-     * @param mixed  $value Value.
-     *
-     * @return GenericEvent
-     */
-    public function setArgument($key, $value)
-    {
-        $this->arguments[$key] = $value;
-
-        return $this;
-    }
-
-    /**
-     * Getter for all arguments.
-     *
-     * @return array
-     */
-    public function getArguments()
-    {
-        return $this->arguments;
-    }
-
-    /**
-     * Set args property.
-     *
-     * @param array $args Arguments.
-     *
-     * @return GenericEvent
-     */
-    public function setArguments(array $args = array())
-    {
-        $this->arguments = $args;
-
-        return $this;
-    }
-
-    /**
-     * Has argument.
-     *
-     * @param string $key Key of arguments array.
-     *
-     * @return boolean
-     */
-    public function hasArgument($key)
-    {
-        return array_key_exists($key, $this->arguments);
-    }
-
-    /**
-     * ArrayAccess for argument getter.
-     *
-     * @param string $key Array key.
-     *
-     * @throws \InvalidArgumentException If key does not exist in $this->args.
-     *
-     * @return mixed
-     */
-    public function offsetGet($key)
-    {
-        return $this->getArgument($key);
-    }
-
-    /**
-     * ArrayAccess for argument setter.
-     *
-     * @param string $key   Array key to set.
-     * @param mixed  $value Value.
-     */
-    public function offsetSet($key, $value)
-    {
-        $this->setArgument($key, $value);
-    }
-
-    /**
-     * ArrayAccess for unset argument.
-     *
-     * @param string $key Array key.
-     */
-    public function offsetUnset($key)
-    {
-        if ($this->hasArgument($key)) {
-            unset($this->arguments[$key]);
-        }
-    }
-
-    /**
-     * ArrayAccess has argument.
-     *
-     * @param string $key Array key.
-     *
-     * @return boolean
-     */
-    public function offsetExists($key)
-    {
-        return $this->hasArgument($key);
-    }
-
-    /**
-     * IteratorAggregate for iterating over the object like an array
-     *
-     * @return \ArrayIterator
-     */
-    public function getIterator()
-    {
-        return new \ArrayIterator($this->arguments);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+W/kfBvEq5ar6/07IlOVclFK=

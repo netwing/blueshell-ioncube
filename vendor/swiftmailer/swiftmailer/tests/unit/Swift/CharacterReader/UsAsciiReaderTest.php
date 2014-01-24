@@ -1,55 +1,31 @@
-<?php
-
-require_once 'Swift/CharacterReader/UsAsciiReader.php';
-
-class Swift_CharacterReader_UsAsciiReaderTest
-    extends UnitTestCase
-{
-    /*
-
-    for ($c = '', $size = 1; false !== $bytes = $os->read($size); ) {
-        $c .= $bytes;
-        $size = $v->validateCharacter($c);
-        if (-1 == $size) {
-            throw new Exception( ... invalid char .. );
-        } elseif (0 == $size) {
-            return $c; //next character in $os
-        }
-    }
-
-    */
-
-    private $_reader;
-
-    public function setUp()
-    {
-        $this->_reader = new Swift_CharacterReader_UsAsciiReader();
-    }
-
-    public function testAllValidAsciiCharactersReturnZero()
-    {
-        for ($ordinal = 0x00; $ordinal <= 0x7F; ++$ordinal) {
-            $this->assertIdentical(
-                0, $this->_reader->validateByteSequence(array($ordinal), 1)
-                );
-        }
-    }
-
-    public function testMultipleBytesAreInvalid()
-    {
-        for ($ordinal = 0x00; $ordinal <= 0x7F; $ordinal += 2) {
-            $this->assertIdentical(
-                -1, $this->_reader->validateByteSequence(array($ordinal, $ordinal + 1), 2)
-                );
-        }
-    }
-
-    public function testBytesAboveAsciiRangeAreInvalid()
-    {
-        for ($ordinal = 0x80; $ordinal <= 0xFF; ++$ordinal) {
-            $this->assertIdentical(
-                -1, $this->_reader->validateByteSequence(array($ordinal), 1)
-                );
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+lR/TpyEb+DZdzlCKx2gJWdkGePMGCbW=

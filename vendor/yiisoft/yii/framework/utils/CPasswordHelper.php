@@ -1,193 +1,113 @@
-<?php
-/**
- * CPasswordHelper class file.
- *
- * @author Tom Worster <fsb@thefsb.org>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CPasswordHelper provides a simple API for secure password hashing and verification.
- *
- * CPasswordHelper uses the Blowfish hash algorithm available in many PHP runtime
- * environments through the PHP {@link http://php.net/manual/en/function.crypt.php crypt()}
- * built-in function. As of Dec 2012 it is the strongest algorithm available in PHP
- * and the only algorithm without some security concerns surrounding it. For this reason,
- * CPasswordHelper fails to initialize when run in and environment that does not have
- * crypt() and its Blowfish option. Systems with the option include:
- * (1) Most *nix systems since PHP 4 (the algorithm is part of the library function crypt(3));
- * (2) All PHP systems since 5.3.0; (3) All PHP systems with the
- * {@link http://www.hardened-php.net/suhosin/ Suhosin patch}.
- * For more information about password hashing, crypt() and Blowfish, please read
- * the Yii Wiki article
- * {@link http://www.yiiframework.com/wiki/425/use-crypt-for-password-storage/ Use crypt() for password storage}.
- * and the
- * PHP RFC {@link http://wiki.php.net/rfc/password_hash Adding simple password hashing API}.
- *
- * CPasswordHelper throws an exception if the Blowfish hash algorithm is not
- * available in the runtime PHP's crypt() function. It can be used as follows
- *
- * Generate a hash from a password:
- * <pre>
- * $hash = CPasswordHelper::hashPassword($password);
- * </pre>
- * This hash can be stored in a database (e.g. CHAR(64) CHARACTER SET latin1). The
- * hash is usually generated and saved to the database when the user enters a new password.
- * But it can also be useful to generate and save a hash after validating a user's
- * password in order to change the cost or refresh the salt.
- *
- * To verify a password, fetch the user's saved hash from the database (into $hash) and:
- * <pre>
- * if (CPasswordHelper::verifyPassword($password, $hash))
- *     // password is good
- * else
- *     // password is bad
- * </pre>
- *
- * @author Tom Worster <fsb@thefsb.org>
- * @package system.utils
- * @since 1.1.14
- */
-class CPasswordHelper
-{
-	/**
-	 * Check for availability of PHP crypt() with the Blowfish hash option.
-	 * @throws CException if the runtime system does not have PHP crypt() or its Blowfish hash option.
-	 */
-	protected static function checkBlowfish()
-	{
-		if(!function_exists('crypt'))
-			throw new CException(Yii::t('yii','{class} requires the PHP crypt() function. This system does not have it.',
-				array('{class}'=>__CLASS__)));
-
-		if(!defined('CRYPT_BLOWFISH') || !CRYPT_BLOWFISH)
-			throw new CException(Yii::t('yii',
-				'{class} requires the Blowfish option of the PHP crypt() function. This system does not have it.',
-				array('{class}'=>__CLASS__)));
-    }
-
-	/**
-	 * Generate a secure hash from a password and a random salt.
-	 *
-	 * Uses the
-	 * PHP {@link http://php.net/manual/en/function.crypt.php crypt()} built-in function
-	 * with the Blowfish hash option.
-	 *
-	 * @param string $password The password to be hashed.
-	 * @param int $cost Cost parameter used by the Blowfish hash algorithm.
-	 * The higher the value of cost,
-	 * the longer it takes to generate the hash and to verify a password against it. Higher cost
-	 * therefore slows down a brute-force attack. For best protection against brute for attacks,
-	 * set it to the highest value that is tolerable on production servers. The time taken to
-	 * compute the hash doubles for every increment by one of $cost. So, for example, if the
-	 * hash takes 1 second to compute when $cost is 14 then then the compute time varies as
-	 * 2^($cost - 14) seconds.
-	 * @return string The password hash string, ASCII and not longer than 64 characters.
-	 * @throws CException on bad password parameter or if crypt() with Blowfish hash is not available.
-	 */
-	public static function hashPassword($password,$cost=13)
-	{
-		self::checkBlowfish();
-		$salt=self::generateSalt($cost);
-		$hash=crypt($password,$salt);
-
-		if(!is_string($hash) || (function_exists('mb_strlen') ? mb_strlen($hash, '8bit') : strlen($hash))<32)
-			throw new CException(Yii::t('yii','Internal error while generating hash.'));
-
-		return $hash;
-    }
-
-	/**
-	 * Verify a password against a hash.
-	 *
-	 * @param string $password The password to verify. If password is empty or not a string, method will return false.
-	 * @param string $hash The hash to verify the password against.
-	 * @return bool True if the password matches the hash.
-	 * @throws CException on bad password or hash parameters or if crypt() with Blowfish hash is not available.
-	 */
-	public static function verifyPassword($password, $hash)
-	{
-		self::checkBlowfish();
-		if(!is_string($password) || $password==='')
-			return false;
-
-		if (!$password || !preg_match('{^\$2[axy]\$(\d\d)\$[\./0-9A-Za-z]{22}}',$hash,$matches) ||
-			$matches[1]<4 || $matches[1]>31)
-			return false;
-
-		$test=crypt($password,$hash);
-		if(!is_string($test) || strlen($test)<32)
-			return false;
-
-		return self::same($test, $hash);
-	}
-
-	/**
-	 * Check for sameness of two strings using an algorithm with timing
-	 * independent of the string values if the subject strings are of equal length.
-	 *
-	 * The function can be useful to prevent timing attacks. For example, if $a and $b
-	 * are both hash values from the same algorithm, then the timing of this function
-	 * does not reveal whether or not there is a match.
-	 *
-	 * NOTE: timing is affected if $a and $b are different lengths or either is not a
-	 * string. For the purpose of checking password hash this does not reveal information
-	 * useful to an attacker.
-	 *
-	 * @see http://blog.astrumfutura.com/2010/10/nanosecond-scale-remote-timing-attacks-on-php-applications-time-to-take-them-seriously/
-	 * @see http://codereview.stackexchange.com/questions/13512
-	 * @see https://github.com/ircmaxell/password_compat/blob/master/lib/password.php
-	 *
-	 * @param string $a First subject string to compare.
-	 * @param string $b Second subject string to compare.
-	 * @return bool true if the strings are the same, false if they are different or if
-	 * either is not a string.
-	 */
-	public static function same($a,$b)
-	{
-		if(!is_string($a) || !is_string($b))
-			return false;
-
-		$mb=function_exists('mb_strlen');
-		$length=$mb ? mb_strlen($a,'8bit') : strlen($a);
-		if($length!==($mb ? mb_strlen($b,'8bit') : strlen($b)))
-			return false;
-
-		$check=0;
-		for($i=0;$i<$length;$i+=1)
-			$check|=(ord($a[$i])^ord($b[$i]));
-
-		return $check===0;
-	}
-
-	/**
-	 * Generates a salt that can be used to generate a password hash.
-	 *
-	 * The PHP {@link http://php.net/manual/en/function.crypt.php crypt()} built-in function
-	 * requires, for the Blowfish hash algorithm, a salt string in a specific format:
-	 *  "$2a$" (in which the "a" may be replaced by "x" or "y" see PHP manual for details),
-	 *  a two digit cost parameter,
-	 *  "$",
-	 *  22 characters from the alphabet "./0-9A-Za-z".
-	 *
-	 * @param int $cost Cost parameter used by the Blowfish hash algorithm.
-	 * @return string the random salt value.
-	 * @throws CException in case of invalid cost number
-	 */
-	public static function generateSalt($cost=13)
-	{
-		if(!is_numeric($cost))
-			throw new CException(Yii::t('yii','{class}::$cost must be a number.',array('{class}'=>__CLASS__)));
-
-		$cost=(int)$cost;
-		if($cost<4 || $cost>31)
-		    throw new CException(Yii::t('yii','{class}::$cost must be between 4 and 31.',array('{class}'=>__CLASS__)));
-
-		if(($random=Yii::app()->getSecurityManager()->generateRandomString(22,true))===false)
-			if(($random=Yii::app()->getSecurityManager()->generateRandomString(22,false))===false)
-				throw new CException(Yii::t('yii','Unable to generate random string.'));
-		return sprintf('$2a$%02d$',$cost).strtr($random,array('_'=>'.','~'=>'/'));
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+hVqtgBl4k+q=

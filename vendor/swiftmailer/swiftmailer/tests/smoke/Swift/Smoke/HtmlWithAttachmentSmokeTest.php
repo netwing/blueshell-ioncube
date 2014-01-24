@@ -1,30 +1,35 @@
-<?php
-
-require_once 'Swift/Tests/SwiftSmokeTestCase.php';
-
-class Swift_Smoke_HtmlWithAttachmentSmokeTest
-    extends Swift_Tests_SwiftSmokeTestCase
-{
-    public function setUp()
-    {
-        $this->_attFile = dirname(__FILE__) . '/../../../_samples/files/textfile.zip';
-    }
-
-    public function testAttachmentSending()
-    {
-        $mailer = $this->_getMailer();
-        $message = Swift_Message::newInstance('[Swift Mailer] HtmlWithAttachmentSmokeTest')
-            ->setFrom(array(SWIFT_SMOKE_EMAIL_ADDRESS => 'Swift Mailer'))
-            ->setTo(SWIFT_SMOKE_EMAIL_ADDRESS)
-            ->attach(Swift_Attachment::fromPath($this->_attFile))
-            ->setBody('<p>This HTML-formatted message should contain an attached ZIP file (named "textfile.zip").' . PHP_EOL .
-                'When unzipped, the archive should produce a text file which reads:</p>' . PHP_EOL .
-                '<p><q>This is part of a Swift Mailer v4 smoke test.</q></p>', 'text/html'
-            )
-            ;
-        $this->assertEqual(1, $mailer->send($message),
-            '%s: The smoke test should send a single message'
-            );
-        $this->_visualCheck('http://swiftmailer.org/smoke/4.0.0/html_with_attachment.jpg');
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+TBcolGoPNm==

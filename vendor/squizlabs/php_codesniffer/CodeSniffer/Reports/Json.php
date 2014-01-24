@@ -1,114 +1,58 @@
-<?php
-/**
- * Json report for PHP_CodeSniffer.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Jeffrey Fisher <jeffslofish@gmail.com>
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Json report for PHP_CodeSniffer.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Jeffrey Fisher <jeffslofish@gmail.com>
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class PHP_CodeSniffer_Reports_Json implements PHP_CodeSniffer_Report
-{
-
-
-    /**
-     * Generate a partial report for a single processed file.
-     *
-     * Function should return TRUE if it printed or stored data about the file
-     * and FALSE if it ignored the file. Returning TRUE indicates that the file and
-     * its data should be counted in the grand totals.
-     *
-     * @param array   $report      Prepared report data.
-     * @param boolean $showSources Show sources?
-     * @param int     $width       Maximum allowed line width.
-     *
-     * @return boolean
-     */
-    public function generateFileReport(
-        $report,
-        $showSources=false,
-        $width=80
-    ) {
-
-        $filename = str_replace('"', '\"', $report['filename']);
-        $filename = str_replace('/', '\/', $report['filename']);
-        echo "\"$filename\":{";
-        echo '"errors":'.$report['errors'].',"warnings":'.$report['warnings'].',"messages":[';
-
-        $messages = '';
-        foreach ($report['messages'] as $line => $lineErrors) {
-            foreach ($lineErrors as $column => $colErrors) {
-                foreach ($colErrors as $error) {
-                    $error['message'] = str_replace('"', '\"', $error['message']);
-                    $error['message'] = str_replace('/', '\/', $error['message']);
-
-                    $messages .= '{"message":"'.$error['message'].'",';
-                    $messages .= '"source":"'.$error['source'].'",';
-                    $messages .= '"severity":'.$error['severity'].',';
-                    $messages .= '"type":"'.$error['type'].'",';
-                    $messages .= '"line":'.$line.',"column":'.$column.'},';
-                }
-            }
-        }
-
-        echo rtrim($messages, ',');
-        echo ']},';
-
-        return true;
-
-    }//end generateFileReport()
-
-
-    /**
-     * Generates a JSON report.
-     *
-     * @param string  $cachedData    Any partial report data that was returned from
-     *                               generateFileReport during the run.
-     * @param int     $totalFiles    Total number of files processed during the run.
-     * @param int     $totalErrors   Total number of errors found during the run.
-     * @param int     $totalWarnings Total number of warnings found during the run.
-     * @param boolean $showSources   Show sources?
-     * @param int     $width         Maximum allowed line width.
-     * @param boolean $toScreen      Is the report being printed to screen?
-     *
-     * @return void
-     */
-    public function generate(
-        $cachedData,
-        $totalFiles,
-        $totalErrors,
-        $totalWarnings,
-        $showSources=false,
-        $width=80,
-        $toScreen=true
-    ) {
-        echo '{"totals":{"errors":'.$totalErrors.',"warnings":'.$totalWarnings.'},"files":{';
-        echo rtrim($cachedData, ',');
-        echo "}}";
-
-    }//end generate()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

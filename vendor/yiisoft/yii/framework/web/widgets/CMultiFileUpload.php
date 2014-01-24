@@ -1,141 +1,70 @@
-<?php
-/**
- * CMultiFileUpload class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CMultiFileUpload generates a file input that can allow uploading multiple files at a time.
- *
- * This is based on the {@link http://www.fyneworks.com/jquery/multiple-file-upload/ jQuery Multi File Upload plugin}.
- * The uploaded file information can be accessed via $_FILES[widget-name], which gives an array of the uploaded
- * files. Note, you have to set the enclosing form's 'enctype' attribute to be 'multipart/form-data'.
- *
- * Example:
- * <pre>
- * <?php
- *   $this->widget('CMultiFileUpload', array(
- *      'model'=>$model,
- *      'attribute'=>'files',
- *      'accept'=>'jpg|gif',
- *      'options'=>array(
- *         'onFileSelect'=>'function(e, v, m){ alert("onFileSelect - "+v) }',
- *         'afterFileSelect'=>'function(e, v, m){ alert("afterFileSelect - "+v) }',
- *         'onFileAppend'=>'function(e, v, m){ alert("onFileAppend - "+v) }',
- *         'afterFileAppend'=>'function(e, v, m){ alert("afterFileAppend - "+v) }',
- *         'onFileRemove'=>'function(e, v, m){ alert("onFileRemove - "+v) }',
- *         'afterFileRemove'=>'function(e, v, m){ alert("afterFileRemove - "+v) }',
- *      ),
- *   ));
- * ?>
- * </pre>
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.web.widgets
- * @since 1.0
- */
-class CMultiFileUpload extends CInputWidget
-{
-	/**
-	 * @var string the file types that are allowed (eg "gif|jpg").
-	 * Note, the server side still needs to check if the uploaded files have allowed types.
-	 */
-	public $accept;
-	/**
-	 * @var integer the maximum number of files that can be uploaded. If -1, it means no limits. Defaults to -1.
-	 */
-	public $max=-1;
-	/**
-	 * @var string the label for the remove button. Defaults to "Remove".
-	 */
-	public $remove;
-	/**
-	 * @var string message that is displayed when a file type is not allowed.
-	 */
-	public $denied;
-	/**
-	 * @var string message that is displayed when a file is selected.
-	 */
-	public $selected;
-	/**
-	 * @var string message that is displayed when a file appears twice.
-	 */
-	public $duplicate;
-	/**
-	 * @var string the message template for displaying the uploaded file name
-	 * @since 1.1.3
-	 */
-	public $file;
-	/**
-	 * @var array additional options that can be passed to the constructor of the multifile js object.
-	 * @since 1.1.7
-	 */
-	public $options=array();
-
-
-	/**
-	 * Runs the widget.
-	 * This method registers all needed client scripts and renders
-	 * the multiple file uploader.
-	 */
-	public function run()
-	{
-		list($name,$id)=$this->resolveNameID();
-		if(substr($name,-2)!=='[]')
-			$name.='[]';
-		if(isset($this->htmlOptions['id']))
-			$id=$this->htmlOptions['id'];
-		else
-			$this->htmlOptions['id']=$id;
-		$this->registerClientScript();
-		echo CHtml::fileField($name,'',$this->htmlOptions);
-	}
-
-	/**
-	 * Registers the needed CSS and JavaScript.
-	 */
-	public function registerClientScript()
-	{
-		$id=$this->htmlOptions['id'];
-
-		$options=$this->getClientOptions();
-		$options=$options===array()? '' : CJavaScript::encode($options);
-
-		$cs=Yii::app()->getClientScript();
-		$cs->registerCoreScript('multifile');
-		$cs->registerScript('Yii.CMultiFileUpload#'.$id,"jQuery(\"#{$id}\").MultiFile({$options});");
-	}
-
-	/**
-	 * @return array the javascript options
-	 */
-	protected function getClientOptions()
-	{
-		$options=$this->options;
-		foreach(array('onFileRemove','afterFileRemove','onFileAppend','afterFileAppend','onFileSelect','afterFileSelect') as $event)
-		{
-			if(isset($options[$event]) && !($options[$event] instanceof CJavaScriptExpression))
-				$options[$event]=new CJavaScriptExpression($options[$event]);
-		}
-
-		if($this->accept!==null)
-			$options['accept']=$this->accept;
-		if($this->max>0)
-			$options['max']=$this->max;
-
-		$messages=array();
-		foreach(array('remove','denied','selected','duplicate','file') as $messageName)
-		{
-			if($this->$messageName!==null)
-				$messages[$messageName]=$this->$messageName;
-		}
-		if($messages!==array())
-			$options['STRING']=$messages;
-
-		return $options;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+pP+JI3ag3lp6bgHrvk9a

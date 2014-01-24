@@ -1,33 +1,29 @@
-<?php
-$this->pageTitle = Yii::t('app', 'View role {role}', array('{role}' => $model->name));
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
-
-<?php $this->widget('zii.widgets.CDetailView',array(
-    'htmlOptions' => array(
-        'class' => 'table table-striped table-condensed table-hover',
-    ),
-    'data'=>$model,
-    'attributes'=>array(
-		'name',
-		'description',
-    ),
-)); ?>
-
-<dl>
-<?php 
-$tasks = Yii::app()->authManager->tasks;
-$i = 0;
-foreach ($tasks as $task_name => $task): ?>
-
-    <dt><?php echo $task->description; ?></dt>
-    <dd>
-    <?php foreach ($task->children as $k => $v): ?>
-        <?php if (Yii::app()->authManager->hasItemChild($model->name, $v->name)): ?>
-            <span class="text-success"><i class="fa fa-check"></i> <?php echo $v->description; ?></span>
-        <?php else: ?>
-            <span class="text-muted"><i class="fa fa-ban"></i> <?php echo $v->description; ?></span>
-        <?php endif; ?>
-    <?php endforeach; ?>
-    </dd>
-<?php endforeach; ?>
-</dl> 
+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

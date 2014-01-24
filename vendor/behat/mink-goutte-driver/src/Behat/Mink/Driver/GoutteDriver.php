@@ -1,65 +1,31 @@
-<?php
-
-namespace Behat\Mink\Driver;
-
-use Behat\Mink\Driver\Goutte\Client;
-
-/*
- * This file is part of the Behat\Mink.
- * (c) Konstantin Kudryashov <ever.zet@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-/**
- * Goutte driver.
- *
- * @author Konstantin Kudryashov <ever.zet@gmail.com>
- */
-class GoutteDriver extends BrowserKitDriver
-{
-    /**
-     * Initializes Goutte driver.
-     *
-     * @param Client $client HttpKernel client instance
-     */
-    public function __construct(Client $client = null)
-    {
-        parent::__construct($client ?: new Client());
-    }
-
-    /**
-     * Sets HTTP Basic authentication parameters
-     *
-     * @param string|Boolean $user     user name or false to disable authentication
-     * @param string         $password password
-     */
-    public function setBasicAuth($user, $password)
-    {
-        $this->getClient()->setAuth($user, $password);
-    }
-
-    /**
-     * Sets specific request header on client.
-     *
-     * @param string $name
-     * @param string $value
-     */
-    public function setRequestHeader($name, $value)
-    {
-        $this->getClient()->setHeader($name, $value);
-    }
-
-    /**
-     * Prepares URL for visiting.
-     *
-     * @param string $url
-     *
-     * @return string
-     */
-    protected function prepareUrl($url)
-    {
-        return $url;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

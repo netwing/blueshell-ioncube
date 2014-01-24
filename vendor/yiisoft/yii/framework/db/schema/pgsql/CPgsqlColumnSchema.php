@@ -1,57 +1,40 @@
-<?php
-/**
- * CPgsqlColumnSchema class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CPgsqlColumnSchema class describes the column meta data of a PostgreSQL table.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.db.schema.pgsql
- * @since 1.0
- */
-class CPgsqlColumnSchema extends CDbColumnSchema
-{
-	/**
-	 * Extracts the PHP type from DB type.
-	 * @param string $dbType DB type
-	 */
-	protected function extractType($dbType)
-	{
-		if(strpos($dbType,'[')!==false || strpos($dbType,'char')!==false || strpos($dbType,'text')!==false)
-			$this->type='string';
-		elseif(strpos($dbType,'bool')!==false)
-			$this->type='boolean';
-		elseif(preg_match('/(real|float|double)/',$dbType))
-			$this->type='double';
-		elseif(preg_match('/(integer|oid|serial|smallint)/',$dbType))
-			$this->type='integer';
-		else
-			$this->type='string';
-	}
-
-	/**
-	 * Extracts the default value for the column.
-	 * The value is typecasted to correct PHP type.
-	 * @param mixed $defaultValue the default value obtained from metadata
-	 */
-	protected function extractDefault($defaultValue)
-	{
-		if($defaultValue==='true')
-			$this->defaultValue=true;
-		elseif($defaultValue==='false')
-			$this->defaultValue=false;
-		elseif(strpos($defaultValue,'nextval')===0)
-			$this->defaultValue=null;
-		elseif(preg_match('/^\'(.*)\'::/',$defaultValue,$matches))
-			$this->defaultValue=$this->typecast(str_replace("''","'",$matches[1]));
-		elseif(preg_match('/^-?\d+(\.\d*)?$/',$defaultValue,$matches))
-			$this->defaultValue=$this->typecast($defaultValue);
-		// else is null
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

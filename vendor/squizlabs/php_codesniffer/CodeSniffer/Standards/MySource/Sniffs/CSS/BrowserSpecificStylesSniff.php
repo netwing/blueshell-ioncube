@@ -1,102 +1,43 @@
-<?php
-/**
- * MySource_Sniffs_CSS_BrowserSpecificStylesSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * MySource_Sniffs_CSS_BrowserSpecificStylesSniff.
- *
- * Ensure that browser-specific styles are not used.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class MySource_Sniffs_CSS_BrowserSpecificStylesSniff implements PHP_CodeSniffer_Sniff
-{
-
-    /**
-     * A list of tokenizers this sniff supports.
-     *
-     * @var array
-     */
-    public $supportedTokenizers = array('CSS');
-
-    /**
-     * A list of specific stylesheet suffixes we allow.
-     *
-     * These stylesheets contain browser specific styles
-     * so this sniff ignore them files in the form:
-     * *_moz.css and *_ie7.css etc.
-     *
-     * @var array
-     */
-    protected $specificStylesheets = array(
-                                      'moz',
-                                      'ie',
-                                      'ie7',
-                                      'ie8',
-                                      'webkit',
-                                     );
-
-
-    /**
-     * Returns the token types that this sniff is interested in.
-     *
-     * @return array(int)
-     */
-    public function register()
-    {
-        return array(T_STYLE);
-
-    }//end register()
-
-
-    /**
-     * Processes the tokens that this sniff is interested in.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file where the token was found.
-     * @param int                  $stackPtr  The position in the stack where
-     *                                        the token was found.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        // Ignore files with browser-specific suffixes.
-        $filename  = $phpcsFile->getFilename();
-        $breakChar = strrpos($filename, '_');
-        if ($breakChar !== false && substr($filename, -4) === '.css') {
-            $specific = substr($filename, ($breakChar + 1), -4);
-            if (in_array($specific, $this->specificStylesheets) === true) {
-                return;
-            }
-        }
-
-        $tokens  = $phpcsFile->getTokens();
-        $content = $tokens[$stackPtr]['content'];
-
-        if ($content{0} === '-') {
-            $error = 'Browser-specific styles are not allowed';
-            $phpcsFile->addError($error, $stackPtr, 'ForbiddenStyle');
-        }
-
-    }//end process()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

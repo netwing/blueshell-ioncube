@@ -1,294 +1,121 @@
-<?php
-/**
- * A doc generator that outputs documentation in one big HTML file.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-if (class_exists('PHP_CodeSniffer_DocGenerators_Generator', true) === false) {
-    throw new PHP_CodeSniffer_Exception('Class PHP_CodeSniffer_DocGenerators_Generator not found');
-}
-
-/**
- * A doc generator that outputs documentation in one big HTML file.
- *
- * Output is in one large HTML file and is designed for you to style with
- * your own stylesheet. It contains a table of contents at the top with anchors
- * to each sniff.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class PHP_CodeSniffer_DocGenerators_HTML extends PHP_CodeSniffer_DocGenerators_Generator
-{
-
-
-    /**
-     * Generates the documentation for a standard.
-     *
-     * @return void
-     * @see processSniff()
-     */
-    public function generate()
-    {
-        ob_start();
-        $this->printHeader();
-
-        $standardFiles = $this->getStandardFiles();
-        $this->printToc($standardFiles);
-
-        foreach ($standardFiles as $standard) {
-            $doc = new DOMDocument();
-            $doc->load($standard);
-            $documentation = $doc->getElementsByTagName('documentation')->item(0);
-            $this->processSniff($documentation);
-        }
-
-        $this->printFooter();
-
-        $content = ob_get_contents();
-        ob_end_clean();
-
-        echo $content;
-
-    }//end generate()
-
-
-    /**
-     * Print the header of the HTML page.
-     *
-     * @return void
-     */
-    protected function printHeader()
-    {
-        $standard = $this->getStandard();
-        echo '<html>'.PHP_EOL;
-        echo ' <head>'.PHP_EOL;
-        echo "  <title>$standard Coding Standards</title>".PHP_EOL;
-        echo '  <style>
-                    body {
-                        background-color: #FFFFFF;
-                        font-size: 14px;
-                        font-family: Arial, Helvetica, sans-serif;
-                        color: #000000;
-                    }
-
-                    h1 {
-                        color: #666666;
-                        font-size: 20px;
-                        font-weight: bold;
-                        margin-top: 0px;
-                        background-color: #E6E7E8;
-                        padding: 20px;
-                        border: 1px solid #BBBBBB;
-                    }
-
-                    h2 {
-                        color: #00A5E3;
-                        font-size: 16px;
-                        font-weight: normal;
-                        margin-top: 50px;
-                    }
-
-                    .code-comparison {
-                        width: 100%;
-                    }
-
-                    .code-comparison td {
-                        border: 1px solid #CCCCCC;
-                    }
-
-                    .code-comparison-title, .code-comparison-code {
-                        font-family: Arial, Helvetica, sans-serif;
-                        font-size: 12px;
-                        color: #000000;
-                        vertical-align: top;
-                        padding: 4px;
-                        width: 50%;
-                        background-color: #F1F1F1;
-                        line-height: 15px;
-                    }
-
-                    .code-comparison-code {
-                        font-family: Courier;
-                        background-color: #F9F9F9;
-                    }
-
-                    .code-comparison-highlight {
-                        background-color: #DDF1F7;
-                        border: 1px solid #00A5E3;
-                        line-height: 15px;
-                    }
-
-                    .tag-line {
-                        text-align: center;
-                        width: 100%;
-                        margin-top: 30px;
-                        font-size: 12px;
-                    }
-
-                    .tag-line a {
-                        color: #000000;
-                    }
-                </style>'.PHP_EOL;
-        echo ' </head>'.PHP_EOL;
-        echo ' <body>'.PHP_EOL;
-        echo "  <h1>$standard Coding Standards</h1>".PHP_EOL;
-
-    }//end printHeader()
-
-
-    /**
-     * Print the table of contents for the standard.
-     *
-     * The TOC is just an unordered list of bookmarks to sniffs on the page.
-     *
-     * @param array $standardFiles An array of paths to the XML standard files.
-     *
-     * @return void
-     */
-    protected function printToc($standardFiles)
-    {
-        echo '  <h2>Table of Contents</h2>'.PHP_EOL;
-        echo '  <ul class="toc">'.PHP_EOL;
-
-        foreach ($standardFiles as $standard) {
-            $doc = new DOMDocument();
-            $doc->load($standard);
-            $documentation = $doc->getElementsByTagName('documentation')->item(0);
-            $title         = $this->getTitle($documentation);
-            echo '   <li><a href="#'.str_replace(' ', '-', $title)."\">$title</a></li>".PHP_EOL;
-        }
-
-        echo '  </ul>'.PHP_EOL;
-
-    }//end printToc()
-
-
-    /**
-     * Print the footer of the HTML page.
-     *
-     * @return void
-     */
-    protected function printFooter()
-    {
-        // Turn off errors so we don't get timezone warnings if people
-        // don't have their timezone set.
-        error_reporting(0);
-        echo '  <div class="tag-line">';
-        echo 'Documentation generated on '.date('r');
-        echo ' by <a href="http://pear.php.net/package/PHP_CodeSniffer">PHP_CodeSniffer '.PHP_CodeSniffer::VERSION.'</a>';
-        echo '</div>'.PHP_EOL;
-        error_reporting(E_ALL | E_STRICT);
-
-        echo ' </body>'.PHP_EOL;
-        echo '</html>'.PHP_EOL;
-
-    }//end printFooter()
-
-
-    /**
-     * Process the documentation for a single sniff.
-     *
-     * @param DOMNode $doc The DOMNode object for the sniff.
-     *                     It represents the "documentation" tag in the XML
-     *                     standard file.
-     *
-     * @return void
-     */
-    public function processSniff(DOMNode $doc)
-    {
-        $title = $this->getTitle($doc);
-        echo '  <a name="'.str_replace(' ', '-', $title).'" />'.PHP_EOL;
-        echo "  <h2>$title</h2>".PHP_EOL;
-
-        foreach ($doc->childNodes as $node) {
-            if ($node->nodeName === 'standard') {
-                $this->printTextBlock($node);
-            } else if ($node->nodeName === 'code_comparison') {
-                $this->printCodeComparisonBlock($node);
-            }
-        }
-
-    }//end processSniff()
-
-
-    /**
-     * Print a text block found in a standard.
-     *
-     * @param DOMNode $node The DOMNode object for the text block.
-     *
-     * @return void
-     */
-    protected function printTextBlock($node)
-    {
-        $content = trim($node->nodeValue);
-        $content = htmlspecialchars($content);
-
-        // Allow em tags only.
-        $content = str_replace('&lt;em&gt;', '<em>', $content);
-        $content = str_replace('&lt;/em&gt;', '</em>', $content);
-
-        echo "  <p class=\"text\">$content</p>".PHP_EOL;
-
-    }//end printTextBlock()
-
-
-    /**
-     * Print a code comparison block found in a standard.
-     *
-     * @param DOMNode $node The DOMNode object for the code comparison block.
-     *
-     * @return void
-     */
-    protected function printCodeComparisonBlock($node)
-    {
-        $codeBlocks = $node->getElementsByTagName('code');
-
-        $firstTitle = $codeBlocks->item(0)->getAttribute('title');
-        $first = trim($codeBlocks->item(0)->nodeValue);
-        $first = str_replace('<?php', '&lt;?php', $first);
-        $first = str_replace("\n", '</br>', $first);
-        $first = str_replace(' ', '&nbsp;', $first);
-        $first = str_replace('<em>', '<span class="code-comparison-highlight">', $first);
-        $first = str_replace('</em>', '</span>', $first);
-
-        $secondTitle = $codeBlocks->item(1)->getAttribute('title');
-        $second = trim($codeBlocks->item(1)->nodeValue);
-        $second = str_replace('<?php', '&lt;?php', $second);
-        $second = str_replace("\n", '</br>', $second);
-        $second = str_replace(' ', '&nbsp;', $second);
-        $second = str_replace('<em>', '<span class="code-comparison-highlight">', $second);
-        $second = str_replace('</em>', '</span>', $second);
-
-        echo '  <table class="code-comparison">'.PHP_EOL;
-        echo '   <tr>'.PHP_EOL;
-        echo "    <td class=\"code-comparison-title\">$firstTitle</td>".PHP_EOL;
-        echo "    <td class=\"code-comparison-title\">$secondTitle</td>".PHP_EOL;
-        echo '   </tr>'.PHP_EOL;
-        echo '   <tr>'.PHP_EOL;
-        echo "    <td class=\"code-comparison-code\">$first</td>".PHP_EOL;
-        echo "    <td class=\"code-comparison-code\">$second</td>".PHP_EOL;
-        echo '   </tr>'.PHP_EOL;
-        echo '  </table>'.PHP_EOL;
-
-    }//end printCodeComparisonBlock()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

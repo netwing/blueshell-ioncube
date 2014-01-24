@@ -1,97 +1,54 @@
-<?php
-/**
-* Smarty PHPunit tests object variables
-*
-* @package PHPunit
-* @author Uwe Tews
-*/
-
-/**
-* class for object variable tests
-*/
-class ObjectVariableTests extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $this->smarty = SmartyTests::$smarty;
-        SmartyTests::init();
-        $this->smarty->force_compile = true;
-    }
-
-    static function isRunnable()
-    {
-        return true;
-    }
-
-    /**
-    * test simple object variable
-    */
-    public function testObjectVariableOutput()
-    {
-        $object = new VariableObject;
-        $tpl = $this->smarty->createTemplate('string:{$object->hello}');
-        $tpl->assign('object', $object);
-        $this->assertEquals('hello_world', $this->smarty->fetch($tpl));
-    }
-    /**
-    * test simple object variable with variable property
-    */
-    public function testObjectVariableOutputVariableProperty()
-    {
-        $object = new VariableObject;
-        $this->smarty->disableSecurity();
-        $tpl = $this->smarty->createTemplate('string:{$p=\'hello\'}{$object->$p}');
-        $tpl->assign('object', $object);
-        $this->assertEquals('hello_world', $this->smarty->fetch($tpl));
-    }
-    /**
-    * test simple object variable with method
-    */
-    public function testObjectVariableOutputMethod()
-    {
-        $object = new VariableObject;
-        $tpl = $this->smarty->createTemplate('string:{$object->myhello()}');
-        $tpl->assign('object', $object);
-        $this->assertEquals('hello world', $this->smarty->fetch($tpl));
-    }
-    /**
-    * test simple object variable with method
-    */
-    public function testObjectVariableOutputVariableMethod()
-    {
-        $object = new VariableObject;
-        $this->smarty->disableSecurity();
-        $tpl = $this->smarty->createTemplate('string:{$p=\'myhello\'}{$object->$p()}');
-        $tpl->assign('object', $object);
-        $this->assertEquals('hello world', $this->smarty->fetch($tpl));
-    }
-    /**
-    * test  object variable in double quoted string
-    */
-    public function testObjectVariableOutputDoubleQuotes()
-    {
-        $object = new VariableObject;
-        $tpl = $this->smarty->createTemplate('string:{"double quoted `$object->hello` okay"}');
-        $tpl->assign('object', $object);
-        $this->assertEquals('double quoted hello_world okay', $this->smarty->fetch($tpl));
-    }
-    /**
-    * test  object variable in double quoted string as include name
-    */
-    public function testObjectVariableOutputDoubleQuotesInclude()
-    {
-        $object = new VariableObject;
-        $tpl = $this->smarty->createTemplate('string:{include file="`$object->hello`_test.tpl"}');
-        $tpl->assign('object', $object);
-        $this->assertEquals('hello world', $this->smarty->fetch($tpl));
-    }
-}
-
-Class VariableObject {
-    public $hello = 'hello_world';
-
-    public function myhello()
-    {
-        return 'hello world';
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

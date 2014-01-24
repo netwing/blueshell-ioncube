@@ -1,183 +1,70 @@
-<?php
-
-/*
- This program is free software: you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation, either version 3 of the License, or
- (at your option) any later version.
- 
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
-
- You should have received a copy of the GNU General Public License
- along with this program.  If not, see <http://www.gnu.org/licenses/>.
- 
- */
- 
-//require 'Yay/MockGenerator.php';
-//require 'Yay/SimpleInvocation.php';
-//require 'Yay/SimpleDescription.php';
-//require 'Yay/InvocationHandler.php';
-//require 'Yay/MockObject.php';
-//require 'Yay/ExpectationProvider.php';
-//require 'Yay/NotSatisfiedException.php';
-//require 'Yay/StateMachine.php';
-//require 'Yay/SimpleSequence.php';
-
-/**
- * The main Yay context.
- * Handles the generation of MockObjects and the Invocation of methods.
- * @author Chris Corbyn <chris@w3style.co.uk>
- * @package Yay
- */
-class Yay_Mockery implements Yay_InvocationHandler
-{
-  
-  /**
-   * The Expectation stack which is being checked.
-   * @var array
-   * @access private
-   */
-  private $_expectations = array();
-  
-  /**
-   * Invocations which are not expected by any Expectations get caught here.
-   * @var array
-   * @access private
-   */
-  private $_unexpectedInvocations = array();
-  
-  /**
-   * A mock class generator.
-   * @var Yay_MockGenerator
-   * @access private
-   */
-  private $_generator;
-  
-  /**
-   * Create a new Mockery.
-   */
-  public function __construct()
-  {
-    $this->_generator = Yay_MockGenerator::getInstance();
-  }
-  
-  /**
-   * Create a MockObject matching $typeHint.
-   * If the $typeHint is an interface the Mock will implement the interface
-   * and maintain the method signatures from that interface.
-   * If the $typeHint is a class name the Mock will extend the class overriding
-   * all public methods (HOWEVER, if the class contains final methods it is not
-   * possible to override all methods and hence, the mock will have no specific
-   * type.
-   * @param string $typeHint
-   * @return Yay_MockObject
-   */
-  public function mock($typeHint)
-  {
-    $className = $this->_generator->generateMock($typeHint);
-    $reflector = new ReflectionClass($className);
-    return $reflector->newInstance($this);
-  }
-  
-  /**
-   * Specify an Expectation (or Expectations) to check.
-   * @param Yay_ExpectationProvider $provider
-   */
-  public function checking(Yay_ExpectationProvider $provider)
-  {
-    foreach ($provider->getExpectations() as $expectation)
-    {
-      $this->_expectations[] = $expectation;
-    }
-  }
-  
-  /**
-   * Get a state machine named $name.
-   * @param string $name
-   * @return Yay_States
-   */
-  public function states($name)
-  {
-    return new Yay_StateMachine($name);
-  }
-  
-  /**
-   * Create a new Sequence named $name.
-   * @param string $name
-   * @return Yay_Sequence
-   */
-  public function sequence($name)
-  {
-    return new Yay_SimpleSequence($name);
-  }
-  
-  /**
-   * Used by YayMock internally (ignore this method!).
-   */
-  public function &handleInvocation(Yay_Invocation $invocation)
-  {
-    $ret = null;
-    $expected = false;
-    foreach ($this->_expectations as $expectation)
-    {
-      if ($expectation->isExpected($invocation))
-      {
-        $expected = true;
-        if ($action = $expectation->getAction($invocation))
-        {
-          $ret =& $action->invoke($invocation);
-        }
-        break;
-      }
-    }
-    if (!$expected)
-    {
-      $this->_unexpectedInvocations[] = $invocation;
-    }
-    return $ret;
-  }
-  
-  /**
-   * Assert that all Expectations are satisfied.
-   * Throws an Exception of type Yay_NotSatisfiedException if any Expecations
-   * are not satisfied.
-   * @throws Yay_NotSatisfiedException
-   */
-  public function assertIsSatisfied()
-  {
-    $description = new Yay_SimpleDescription();
-    $satisfied = true;
-    foreach ($this->_unexpectedInvocations as $invocation)
-    {
-      $description->appendText('Unexpected invocation');
-      $invocation->describeTo($description);
-      $description->appendText(PHP_EOL);
-      $satisfied = false;
-    }
-    if (!$satisfied)
-    {
-      $description->appendText(PHP_EOL);
-    }
-    foreach ($this->_expectations as $expectation)
-    {
-      if (!$expectation->isSatisfied())
-      {
-        $description->appendText('* ');
-        $satisfied = false;
-      }
-      $expectation->describeTo($description);
-      $description->appendText(PHP_EOL);
-    }
-    if (!$satisfied)
-    {
-      throw new Yay_NotSatisfiedException(
-        'Not all expectations were satisfied or a method was invoked unexpectedly.' .
-        PHP_EOL . PHP_EOL . $description->toString() . PHP_EOL
-        );
-    }
-  }
-  
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

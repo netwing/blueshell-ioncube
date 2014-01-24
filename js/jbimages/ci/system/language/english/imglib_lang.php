@@ -1,24 +1,30 @@
-<?php
-
-$lang['imglib_source_image_required'] = "You must specify a source image in your preferences.";
-$lang['imglib_gd_required'] = "The GD image library is required for this feature.";
-$lang['imglib_gd_required_for_props'] = "Your server must support the GD image library in order to determine the image properties.";
-$lang['imglib_unsupported_imagecreate'] = "Your server does not support the GD function required to process this type of image.";
-$lang['imglib_gif_not_supported'] = "GIF images are often not supported due to licensing restrictions.  You may have to use JPG or PNG images instead.";
-$lang['imglib_jpg_not_supported'] = "JPG images are not supported.";
-$lang['imglib_png_not_supported'] = "PNG images are not supported.";
-$lang['imglib_jpg_or_png_required'] = "The image resize protocol specified in your preferences only works with JPEG or PNG image types.";
-$lang['imglib_copy_error'] = "An error was encountered while attempting to replace the file.  Please make sure your file directory is writable.";
-$lang['imglib_rotate_unsupported'] = "Image rotation does not appear to be supported by your server.";
-$lang['imglib_libpath_invalid'] = "The path to your image library is not correct.  Please set the correct path in your image preferences.";
-$lang['imglib_image_process_failed'] = "Image processing failed.  Please verify that your server supports the chosen protocol and that the path to your image library is correct.";
-$lang['imglib_rotation_angle_required'] = "An angle of rotation is required to rotate the image.";
-$lang['imglib_writing_failed_gif'] = "GIF image.";
-$lang['imglib_invalid_path'] = "The path to the image is not correct.";
-$lang['imglib_copy_failed'] = "The image copy routine failed.";
-$lang['imglib_missing_font'] = "Unable to find a font to use.";
-$lang['imglib_save_failed'] = "Unable to save the image.  Please make sure the image and file directory are writable.";
-
-
-/* End of file imglib_lang.php */
-/* Location: ./system/language/english/imglib_lang.php */
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

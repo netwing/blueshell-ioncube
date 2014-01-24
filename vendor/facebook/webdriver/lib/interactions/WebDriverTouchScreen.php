@@ -1,117 +1,36 @@
-<?php
-// Copyright 2004-present Facebook. All Rights Reserved.
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//   http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
-/**
- * Interface representing touch screen operations.
- */
-interface WebDriverTouchScreen {
-
-  /**
-   * Single tap on the touch enabled device.
-   *
-   * @param WebDriverElement $element
-   * @return $this
-   */
-  public function tap(WebDriverElement $element);
-
-  /**
-   * Double tap on the touch screen using finger motion events.
-   *
-   * @param WebDriverElement $element
-   * @return $this
-   */
-  public function doubleTap(WebDriverElement $element);
-
-  /**
-   * Finger down on the screen.
-   *
-   * @param $x
-   * @param $y
-   * @return $this
-   */
-  public function down($x, $y);
-
-  /**
-   * Flick on the touch screen using finger motion events. Use this flick
-   * command if you don't care where the flick starts on the screen.
-   *
-   * @param int $xpeed
-   * @param int $yspeed
-   * @return $this
-   */
-  public function flick($xspeed, $yspeed);
-
-  /**
-   * Flick on the touch screen using finger motion events.
-   * This flickcommand starts at a particular screen location.
-   *
-   * @param WebDriverElement $element
-   * @param int              $xoffset
-   * @param int              $yoffset
-   * @param int              $speed
-   * @return $this
-   */
-  public function flickFromElement(
-    WebDriverElement $element, $xoffset, $yoffset, $speed);
-
-  /**
-   * Long press on the touch screen using finger motion events.
-   *
-   * @return $this
-   */
-  public function longPress(WebDriverElement $element);
-
-  /**
-   * Finger move on the screen.
-   *
-   * @param int $x
-   * @param int $y
-   * @return $this
-   */
-  public function move($x, $y);
-
-
-  /**
-   * Scroll on the touch screen using finger based motion events. Use this
-   * command if you don't care where the scroll starts on the screen.
-   *
-   * @param int $xoffset
-   * @param int $yoffset
-   * @return $this
-   */
-  public function scroll($xoffset, $yoffset);
-
-  /**
-   * Scroll on the touch screen using finger based motion events. Use this
-   * command to start scrolling at a particular screen location.
-   *
-   * @param WebDriverElement $element
-   * @param int              $xoffset
-   * @param int              $yoffset
-   * @return $this
-   */
-  public function scrollFromElement(
-    WebDriverElement $element, $xoffset, $yoffset);
-
-  /**
-   * Finger up on the screen.
-   *
-   * @param int $x
-   * @param int $y
-   * @return $this
-   */
-  public function up($x, $y);
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+CwNnlxR2j3ymytRhse+3esSgkDi=

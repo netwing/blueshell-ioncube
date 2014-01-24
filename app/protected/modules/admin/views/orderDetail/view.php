@@ -1,43 +1,36 @@
-<?php
-/* @var $this OrderDetailController */
-/* @var $model OrderDetail */
-
-$this->pageTitle = Yii::t('app', 'Update Order Details');
-
-$this->breadcrumbs=array(
-	'Order Details'=>array('order/view', 'id' => $model->order_id),
-	$model->id,
-);
-
-$this->menu=array(
-	array('label'=>Yii::t('app', 'Manage OrderDetail'), 'url'=>array('admin')),
-	array('label'=>Yii::t('app', 'Create OrderDetail'), 'url'=>array('create')),
-	array('label'=>Yii::t('app', 'Update OrderDetail'), 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>Yii::t('app', 'Delete OrderDetail'), 'url'=>array('delete', 'id'=>$model->id), 'linkOptions'=>array('confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>Yii::t('app', 'Back to order'), 'url'=>array('/admin/order/view', 'id'=>$model->order_id)),
-);
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
-
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'order_id' => array(
-			'name'	=> Yii::t('app', 'Order'),
-			'value'	=> $model->id . " - " . $model->order->customer->cliente_nominativo,
-		),
-		'product_id' => array(
-			'name'	=> Yii::t('app', 'Product'),
-			'value'	=> $model->product->name,
-		),
-		'notes',
-		'price',
-		'quantity',
-		'total_no_vat',
-		'vat',
-		'total_vat',
-		'discount',
-		'total',
-		'create_time',
-		'update_time',
-	),
-)); ?>
+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

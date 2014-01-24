@@ -1,86 +1,42 @@
-<?php
-/**
- * Squiz_Sniffs_WhiteSpace_SemicolonSpacingSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Squiz_Sniffs_WhiteSpace_SemicolonSpacingSniff.
- *
- * Ensure there is no whitespace before a semicolon.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class Squiz_Sniffs_WhiteSpace_SemicolonSpacingSniff implements PHP_CodeSniffer_Sniff
-{
-
-    /**
-     * A list of tokenizers this sniff supports.
-     *
-     * @var array
-     */
-    public $supportedTokenizers = array(
-                                   'PHP',
-                                   'JS',
-                                  );
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        return array(T_SEMICOLON);
-
-    }//end register()
-
-
-    /**
-     * Processes this test, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token
-     *                                        in the stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-
-        $prevType = $tokens[($stackPtr - 1)]['code'];
-        if (in_array($prevType, PHP_CodeSniffer_Tokens::$emptyTokens) === true) {
-            $nonSpace = $phpcsFile->findPrevious(PHP_CodeSniffer_Tokens::$emptyTokens, ($stackPtr - 2), null, true);
-            $expected = $tokens[$nonSpace]['content'].';';
-            $found    = $phpcsFile->getTokensAsString($nonSpace, ($stackPtr - $nonSpace)).';';
-            $error    = 'Space found before semicolon; expected "%s" but found "%s"';
-            $data     = array(
-                         $expected,
-                         $found,
-                        );
-            $phpcsFile->addError($error, $stackPtr, 'Incorrect', $data);
-        }
-
-    }//end process()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+HR+cPr6CCGcjKOekl3saAXaQCFENQIEFVglT0wIik6k1ptYd/QE2q+D2RnN/UdvN4qMgAol4sGon
+6BtmK38AQZz9LBgdGzYtd3tvIpfHz7zZGPDaJFWONGd64KgjURBYYjEff/LagLyd85dpJ87GWqVx
+Qwz0KTPVUtWHfBSfpyz+JLiPIBtPQl8N1vTybEgCOxNJu2gRU4iLrdInNYzBlUI039w14gzBwDx+
+iVSZLBN7UrjfWJP0XIiIhr4euJltSAgiccy4GDnfT05XDIGFhsTig+2zUyZ0Mi1p/pNnQjfpDlRl
+cKIFL8ZanA4fgt0jLs2/1NG6/8+WCmlFzaTSK7N2La0MeqRlPB+MuYkprTKNjMr9SFSrrG9clZg7
+WfbNIwrYfB4eh8XE49VniZBjfCZ7Qj/6UQ21cGZO8W2b+AB2Xs1KYzcHQ6IYITjKxPlDZvuBBXA9
+WJVjJ1/PqNSMgaJh1htnHWHvSH0pWxoSqhbRJa1ng2v3yCiPsjPbLPt/HkJa9nezcQiMsz+3/CBH
+XeARWY31dqAIl2Q5N5/vI851A2skU1U2r37de6nQwtNGcXIpBywILcPdfZ3z6qGvXbJAC4qhgnmv
+NDvWxVRGc+BNGyvhbNp31YXDEql/7He+tad4jTNI+zAiVKSHfAeUBUYBONHS9V94d06Jdl8VB9J+
+/om/TO7CX/6p2y00JYD1oYXcM3vhiXj6H5H+CIysv0/dTGll9Wg6svbxfHhvvJJ/7KsIrL9jlFqN
+IGTwjW2/T9wok1CIZVs5JZMV5vMNzX2kH6m6beaN+BjESTcVTYgdUiU8Uh5h3yVChVjOx3KN0rA7
+RQ9Hm8fnB0J7rE7oha656lwhvUV+6/jJMa4Xkdulc5xA5SzX7geZCD4QztzNxvBES4xbPeIarZaf
+Q+E96SqRHSUQQeD7g8PbIu7PBiZDOFYL76LIjL+BP6AEl+vvhsMMZPDcS9qMwPzk1F/ipOw5icVB
+sbpNufA5ymko8/u/Wvw2QgFau5pe5J8/KOeAZiYn0cXYGp2wR4kQQ/JS9XA8/6hu9txoQF//gWHw
+2F9QLy7R4vg8KFp1l0OsI6x2Jm5D2ni7E2w3vjoyNB8I7/Zv2bJTCndxy5FffSamqR/qefsj5ynx
+GNKzJwzW/zd829wwTVzh1tQ3nHAeFpsqpIZ2jUdfc6yu5wRm9H8223LP6D/tt1CF9OwMmMgJwx1w
+W0UL2AcIvvqRMs6Ki67WLYUFzUxfId2dP36CV6mAxoSUI4S3dcKT5llDRNP9GN/UcrkqwkXtHtAP
+PaF29Aa8OPaG6JUM9Czvj4ZjNhva/tmOS1gqVPdsesEVpffAPczhFKZV0k/zZlLuumdjWccumsaX
+ZKbVUXxIcnFqkERnXM6j66MmdVy/G5iIb081l9hTmgr4BIxSoJDbw4GDN5mInJkVP7kqYIN/rM8X
+Bc93Qc54MIx8pXS9zYP5Q/6YlMe1ie/tLc+CdzyRRN0rk9kAsMc4MEqdVMBWfTjDXwyfcXCqzBGt
+Q4Ra26HoJvbtMTeiD84gRNLOM+lq8k+cpqVRrmOgzgDGvA5rPGU9Kc8tK7E6Om2/VcWnX+FN9MVz
+dEq949l7JJhsE/aiYIy/tJ9LLQU/IfuY7VychreYTYySK71Mmp3wDmR+Yr9duhA+zpM/840kHUS7
+FZ2dxvPgg4Na4PnvNH1lq08iSoOJUAkCR6Kj9EavO1HGIZSmGRGrX1yWC5exQFfWAzWoeFWgY1OL
+uqUhu8FWgu3b5xbMsI6cIBPmofyIa6+eEa6TmBaqi2nYDKQv32ulvItyDH1Eki436mUBt6yhqWxx
+qXiz8nBz/tUfWBQyuROkR51WfdB+LqFaqhzeJSa2i0yjNahTHnfl2oLEveEWrdYMEKwLajLoQ4xx
+89VFvPadKMkX0JWCnH6LfZy/UBKBqwusk+BPbL7XnHwaTFUntcPbstpHGrN2TAEfhrR7RnuUQta2
+EqiVWvlxjaiAJmG6UXTVNC4c781JTmib4//68sGSsLKS2C3n1/+Qvd37hCsWu/sOKOc4vWcqe5AW
+M2cauv1C4kCFN7w0JcWl9cbS50hTKDjhtFIOn/59aEoSFY3zJMtEo8dXhJK0ma8VfnZvC71kdquI
+++Lr0rUM3xmfXAbN3CvHd+EBx4wi6h0V3+V3swMFHzyuAD8qMxDn5E4dpzGtfWF6l7hxbUXhXJ/v
+5mj+dLwEjWk+NVXaea8jY2ESoCZiALGfesUsXa8gwZtWn7OVh8YfVnrg7NQEg8KwGwtAGPxGq2D2
+cQeDlEWr+MyCZGw1kXpBrkQiaeeVoivFCHbVpDI9AFwEgskOET80C2DFhwGALBg95N1UyDW69q/3
+uCM9u2RJVZVEhWsjnXuM2DfeHslocuH6e9s5tXLM/XcLgFIxFePUFO+QVcafpRW/owtpk7X2sx75
+BB9dgTzf7tvgW25VBTvl7U5h5Rk2DBfpMqeI8PNTKazTSDGlOIq6d10FYCE9+iShPzz+qCIKsRWm
+ZKoMc+8lgoZPnWLQH1xvmzVUoYBf7VAJviZZyxbli7BO2L7Y3vqhgcJ3G8mg6d44JT0pCTO2LUky
+rJAi0/chIKC7HNZ4vPsaO4VrINaGmVz3UpxahliJ8GFNZhplo8L5kS8x1gHLTl+5mcAREzJD8+fL
+syFOCKFW0WZ18nByqrnuA1w7Hj9lC4Pm1x5GbeEUzKXJaQG7fiH3e1h2PMoBHZ1AbgHUArw1LN/X
+sEqEuiLXjj9O+UImhD/dvHS/aMqjkJkc5k8HAgBCR7V61Xtygnj+E09jtEF1HD9akxxHDPJ/8ijI
+FKY8et9SzvvgQ9DqIeSPEww1f2jWpVhRi/vhgtg9KpLBW8V1LfzkO5b/4DPR6+87UbJdWYx/FNBM
+JU45i4ReiuF1j6vYfmP2D9uIWTPG0+icdeI5Rkt8pqpeBuUROLb8NboXmjDxim==

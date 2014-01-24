@@ -1,74 +1,46 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\Console\Tests\Descriptor;
-
-use Symfony\Component\Console\Input\InputArgument;
-use Symfony\Component\Console\Input\InputDefinition;
-use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Tests\Fixtures\DescriptorApplication1;
-use Symfony\Component\Console\Tests\Fixtures\DescriptorApplication2;
-use Symfony\Component\Console\Tests\Fixtures\DescriptorCommand1;
-use Symfony\Component\Console\Tests\Fixtures\DescriptorCommand2;
-
-/**
- * @author Jean-François Simon <contact@jfsimon.fr>
- */
-class ObjectsProvider
-{
-    public static function getInputArguments()
-    {
-        return array(
-            'input_argument_1' => new InputArgument('argument_name', InputArgument::REQUIRED),
-            'input_argument_2' => new InputArgument('argument_name', InputArgument::IS_ARRAY, 'argument description'),
-            'input_argument_3' => new InputArgument('argument_name', InputArgument::OPTIONAL, 'argument description', 'default_value'),
-        );
-    }
-
-    public static function getInputOptions()
-    {
-        return array(
-            'input_option_1' => new InputOption('option_name', 'o', InputOption::VALUE_NONE),
-            'input_option_2' => new InputOption('option_name', 'o', InputOption::VALUE_OPTIONAL, 'option description', 'default_value'),
-            'input_option_3' => new InputOption('option_name', 'o', InputOption::VALUE_REQUIRED, 'option description'),
-            'input_option_4' => new InputOption('option_name', 'o', InputOption::VALUE_IS_ARRAY | InputOption::VALUE_OPTIONAL, 'option description', array()),
-        );
-    }
-
-    public static function getInputDefinitions()
-    {
-        return array(
-            'input_definition_1' => new InputDefinition(),
-            'input_definition_2' => new InputDefinition(array(new InputArgument('argument_name', InputArgument::REQUIRED))),
-            'input_definition_3' => new InputDefinition(array(new InputOption('option_name', 'o', InputOption::VALUE_NONE))),
-            'input_definition_4' => new InputDefinition(array(
-                new InputArgument('argument_name', InputArgument::REQUIRED),
-                new InputOption('option_name', 'o', InputOption::VALUE_NONE),
-            )),
-        );
-    }
-
-    public static function getCommands()
-    {
-        return array(
-            'command_1' => new DescriptorCommand1(),
-            'command_2' => new DescriptorCommand2(),
-        );
-    }
-
-    public static function getApplications()
-    {
-        return array(
-            'application_1' => new DescriptorApplication1(),
-            'application_2' => new DescriptorApplication2(),
-        );
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPvnnLnkFtgjSGiF2E8ioEdpjIBV4mbxPiA2ivBaOxADkNZugZmVYjzFQzuuWbDMAJup8lNg5
+hR96CbAiOJySdv0WwWgGkV3tzaE3wH8esG9H6JPVfMiEZZrlZR87PpKZzgErjkYLLLUr2ZFNAbVX
+psd3tKlo1wunrHwQdTZET/+Z7cyRe6x67HVef9z0o6Y8kmjeSjaoBEiTHSlLHJ6jzaG4916iTRDl
+R5RPAF/fMyV/htS/H3Mghr4euJltSAgiccy4GDnfT8TakwGGjnmsF/0TwiXOsLnG2uo81ktOomGF
+FR1aaEz9FNrOXBZtBT9YqNDUSKGkuNksDXlbvzEg9p+sfXZlDglxJSCIYFn2qCJG0ihohNjRnDOW
+jmjxP6P3P5E14MU9Y6mnFLrqc9gj4SqHeaegyrTer6PgJH5TTTwj7bLvtPfE9H7H/TN/DGqoCfJ0
+uBrE6Mcck8ppBOEcuXyQIzGf1gX1xGqtEJlchtrtXtkF/z1dAGSN3VByFI1xhM7FWz3+LJWUklra
+K+NhYX/pKbjdyhF/qSGXO4Jxh930RBaaX3UJeVKHx8q6H353HF7gk4wRA4tUQj1MeUirFkJowPjr
+98LZjCURtrp7ZQHPs91pFmqnq/s3C/8IkDkNDZ2pgfXGd3esR+zsvGZ08k5XkiK//p9XyN5bqZTo
+j1hjGhwnfR9Iln9SxwiOIMr2g4N1Q+HK5xDUetjk7/tzKGNFCMsYWI1jqagT35/MdD/eOeMs7F1L
+WbsiRCtT5ncxbkKlS51Uk8sLk8639M64nGQ58zawGQdt7iO/jsBO84xdjIgXOd/OQLMCzra53DEz
+qND5bAWg1Rmgo7mYINcR9ksKqIqNl1/KzrsWhGICSNj1l6xaGKMG9db2brMMwlz3cFSxMXepI/a0
+WMfYYSPjad6MgnMvit/4vj2bYFI08qvS/IuOTyjFiEouQBJ7RddjSOxwPli8ksxN4ZTFcJaN25te
+pi1s/wctVFyFBE61oCfmwyVwCKzslqL82fz9FwvjHmsMX6GaXyVBbgyrUzHVAMNXCrHgIiw7Iztc
+mAv4RpuU3PEv7hnScngWlvdfj2fp3VeT9QHpQF2+lx+Xltn5Nu7zkvjjLcnoC6BZnd8nGEMNbT+E
+y4qfRRX/6fbCGs+DyjXsXBOWelhb9OkVpvzGXpX92VFvBNRwRF2rfs9dvPhwcNEeP5I0rE815XcJ
+ha9a04DUUfnOVfYtFO8vcMwqep11rVIl9SDMuNjHmVV+ufxUCJTgvkKumJQc6lkeqhtI0OO9Ydmx
+3zm1yOBrAjSvEPmcU6w4b1fwlYh64yz2EYWAnXq9VTohGKWJ/yYeR2vOFoVWSi95Fj4t4kT6GwLI
+/KUcydamOfofk+0GfIw90rApN6VDbulWZBrhZI/Ptwh0ecEunyPMWXYwlpWPhMobW01voFyHEp0c
+n79lC95pAGHQyXFLj2kSPys6MjalfWKRoj9JI0GYZVekZ+/WfeH4GQu1Wi0bvNG3Qazbxn1AoJ7l
+iC84S7KVpVRfFVNPDTbmtmb5zTQiYyzY7GUJVvHygNfzsO2p7FMQ5c+NjFV/Avaur0X796auZEH4
+XqrTHtmEsL2jq9+WjMFD29t0/HCPbOoabyOeN8EQsRbfB3Rnfu+9tFHk4XBL4ke2OhcgG/Wwkx0Y
+i0pUof8Uc4wWBd6kdUFhRsN+YliYKjWmsHOxALNBy+BiQF7cH8RwFMvrLVPt+eGeFVtWpKvXA7Ox
+cZOT6cpX5JNwdjDpAebUE4+0HtipwBbbeVnIqJui6S2LaCEpi0ICUOsR8HP/mQbswjii3h/R6cLq
+Y0oJ6qsYt+BhOvyoKHbEzLxrEwFxn5mFskr9qiDucY0Id9UIVWU24iwAcjFzFXC5V9PfirbMPuxi
+K5w91R6dTrwbOPb74GAZ3rgP5hZweDsvzvVAO1mJOrWckE2Xmi5T0cCuRhL5d7HfzfzpFdSMa6e9
+gusJ6PlibAW+kBSil+m3I824dunb7YFIGdLsP1cqCEfb29Y60wBk4FzfqtrNQtrbAeFNEJIJjxcW
+Ya8LGkKI0Pcrk5qfQFv4CgbeQ3d8BQgfZDB40r7xtOWLz1C85UHPvILXe+H8KE1Kd11nw5xv/VDB
+QglMOi4GSwIUSIDrsM3hJcUtB6Exqd0NBV44fQo5YeDNkBIwNLVT3TxVz1kFp7dsaFkqAdhGWYrp
+hEbOgwlW+41IJzoruVssLOQMadiiqCz1MAGE7Hi2URfc0AN4nmuKGOqP3mux/bBVtvYyX/nKIGXx
+TlNpCcYFjrnxsi7CJOw9L6oLYChSMPCjlr78ePQVvgvbmt+Z+CfkwWv4y4GM/vW0PmdEjJtyONWU
+RP3x0SvpsUVjnU5b/t/1HNZW1f7RCeOX9dwNvHY4pYv1FHzLS3QOwZuvQ5vvKdu/wWhrhjJBhfKl
+u+556avjuUFR7aoSsW41Wo7Hgp3PcrGlHYBZOu7fzJr1PR60xFt5OO+ZPJZEMX3TKXCjFoaoiQ3U
+HhnMkHBdJvwy+wCYl0ewtAI+r/JR7RNi8Rb8tAbq7bV4oP5jJJgEGUNHKZxRJfkfJAVXszA5xAwb
+SplDUNwLTN17pQTeJ9ik+XcpDmmasABA4xVy/1WoFi0cUya9GWKB4CBesaonvrFOVXYzXsQLtHAe
+WnsqHtdoIgniR7gGa4PRv/MzGBd/15wPoDdcOqKxhLyRoUrGPDTeINx/nEh8DxdwGn0N2VNmAYq5
+PggS9QYU2k4hfzMpWW8MdhUmK25gEXNRhpl4bAuuWkTE/nbS9Z8noN8HgLlcIeKZRF1AeEznnsjH
+5cQ8Etx6WI+qZL7qAJH4ZAxtfN4k2qI7Zh/n9S37SUJq/itGKgC6prUAGxaT04ZPrjnFkV5oNmAK
+kUlAB4a+zCf/Z9Gqh6g2ZILrVik8yPDGJbjON9UtHvcZdEjmz0zyXpYdCvXv/Ovk/nsEWbNkTCkX
+o1EJHw0aw+snuIvCZuWFLXyTddxkFa0mEA3y38/Q5cleDc5zhESRCdfex0etAbOXGD2GtX9mr2ug
+ZIAzzMUd06PiaedgINQFEU2OsVyqgTXNd4H0BwRHMqp36QDtBuX6lg6XTI1Hdc/c593umHYUoDEt
+gMU7pyzC+luBtD2cyqTvox0W4U7d982CeL3mMARgKR3BuQyAH0JSOug1eNSY2mwj6ZJviFvWK1Vk
+CkOxzLxazQOvllFNKago2FutguXPJfu=

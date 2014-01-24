@@ -1,165 +1,85 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\Console\Descriptor;
-
-use Symfony\Component\Console\Application;
-use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Input\InputArgument;
-use Symfony\Component\Console\Input\InputDefinition;
-use Symfony\Component\Console\Input\InputOption;
-
-/**
- * JSON descriptor.
- *
- * @author Jean-François Simon <contact@jfsimon.fr>
- */
-class JsonDescriptor extends Descriptor
-{
-    /**
-     * {@inheritdoc}
-     */
-    protected function describeInputArgument(InputArgument $argument, array $options = array())
-    {
-        $this->writeData($this->getInputArgumentData($argument), $options);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function describeInputOption(InputOption $option, array $options = array())
-    {
-        $this->writeData($this->getInputOptionData($option), $options);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function describeInputDefinition(InputDefinition $definition, array $options = array())
-    {
-        $this->writeData($this->getInputDefinitionData($definition), $options);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function describeCommand(Command $command, array $options = array())
-    {
-        $this->writeData($this->getCommandData($command), $options);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function describeApplication(Application $application, array $options = array())
-    {
-        $describedNamespace = isset($options['namespace']) ? $options['namespace'] : null;
-        $description = new ApplicationDescription($application, $describedNamespace);
-        $commands = array();
-
-        foreach ($description->getCommands() as $command) {
-            $commands[] = $this->getCommandData($command);
-        }
-
-        $data = $describedNamespace
-            ? array('commands' => $commands, 'namespace' => $describedNamespace)
-            : array('commands' => $commands, 'namespaces' => array_values($description->getNamespaces()));
-
-        $this->writeData($data, $options);
-    }
-
-    /**
-     * Writes data as json.
-     *
-     * @param array $data
-     * @param array $options
-     *
-     * @return array|string
-     */
-    private function writeData(array $data, array $options)
-    {
-        $this->write(json_encode($data, isset($options['json_encoding']) ? $options['json_encoding'] : 0));
-    }
-
-    /**
-     * @param InputArgument $argument
-     *
-     * @return array
-     */
-    private function getInputArgumentData(InputArgument $argument)
-    {
-        return array(
-            'name'        => $argument->getName(),
-            'is_required' => $argument->isRequired(),
-            'is_array'    => $argument->isArray(),
-            'description' => $argument->getDescription(),
-            'default'     => $argument->getDefault(),
-        );
-    }
-
-    /**
-     * @param InputOption $option
-     *
-     * @return array
-     */
-    private function getInputOptionData(InputOption $option)
-    {
-        return array(
-            'name'              => '--'.$option->getName(),
-            'shortcut'          => $option->getShortcut() ? '-'.implode('|-', explode('|', $option->getShortcut())) : '',
-            'accept_value'      => $option->acceptValue(),
-            'is_value_required' => $option->isValueRequired(),
-            'is_multiple'       => $option->isArray(),
-            'description'       => $option->getDescription(),
-            'default'           => $option->getDefault(),
-        );
-    }
-
-    /**
-     * @param InputDefinition $definition
-     *
-     * @return array
-     */
-    private function getInputDefinitionData(InputDefinition $definition)
-    {
-        $inputArguments = array();
-        foreach ($definition->getArguments() as $name => $argument) {
-            $inputArguments[$name] = $this->getInputArgumentData($argument);
-        }
-
-        $inputOptions = array();
-        foreach ($definition->getOptions() as $name => $option) {
-            $inputOptions[$name] = $this->getInputOptionData($option);
-        }
-
-        return array('arguments' => $inputArguments, 'options' => $inputOptions);
-    }
-
-    /**
-     * @param Command $command
-     *
-     * @return array
-     */
-    private function getCommandData(Command $command)
-    {
-        $command->getSynopsis();
-        $command->mergeApplicationDefinition(false);
-
-        return array(
-            'name'        => $command->getName(),
-            'usage'       => $command->getSynopsis(),
-            'description' => $command->getDescription(),
-            'help'        => $command->getProcessedHelp(),
-            'aliases'     => $command->getAliases(),
-            'definition'  => $this->getInputDefinitionData($command->getNativeDefinition()),
-        );
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+DtOkQ4EozozBmIpg1WLuUDU4yhH3jBy1

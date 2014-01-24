@@ -1,94 +1,44 @@
-<?php
-/**
- * CHttpCookie class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * A CHttpCookie instance stores a single cookie, including the cookie name, value, domain, path, expire, and secure.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.web
- * @since 1.0
- */
-class CHttpCookie extends CComponent
-{
-	/**
-	 * @var string name of the cookie
-	 */
-	public $name;
-	/**
-	 * @var string value of the cookie
-	 */
-	public $value='';
-	/**
-	 * @var string domain of the cookie
-	 */
-	public $domain='';
-	/**
-	 * @var integer the timestamp at which the cookie expires. This is the server timestamp. Defaults to 0, meaning "until the browser is closed".
-	 */
-	public $expire=0;
-	/**
-	 * @var string the path on the server in which the cookie will be available on. The default is '/'.
-	 */
-	public $path='/';
-	/**
-	 * @var boolean whether cookie should be sent via secure connection
-	 */
-	public $secure=false;
-	/**
-	 * @var boolean whether the cookie should be accessible only through the HTTP protocol.
-	 * By setting this property to true, the cookie will not be accessible by scripting languages,
-	 * such as JavaScript, which can effectly help to reduce identity theft through XSS attacks.
-	 * Note, this property is only effective for PHP 5.2.0 or above.
-	 */
-	public $httpOnly=false;
-
-	/**
-	 * Constructor.
-	 * @param string $name name of this cookie
-	 * @param string $value value of this cookie
-	 * @param array $options the configuration array consisting of name-value pairs
-	 * that are used to configure this cookie
-	 */
-	public function __construct($name,$value,$options=array())
-	{
-		$this->name=$name;
-		$this->value=$value;
-		$this->configure($options);
-	}
-	/**
-	 * This method can be used to configure the CookieObject with an array
-	 * Note: you cannot use this method to set the name and/or the value of the cookie
-	 * @param array $options the configuration array consisting of name-value pairs
-	 * that are used to configure this cookie
-	 * @since 1.1.11
-	 */
-	public function configure($options=array())
-	{
-		foreach($options as $name=>$value)
-		{
-			if($name==='name'||$name==='value')
-				continue;
-			$this->$name=$value;
-		}
-	}
-	/**
-	 * Magic method to use the cookie object as a string without having to call value property first.
-	 * <code>
-	 * $value = (string)$cookies['name'];
-	 * </code>
-	 * Note, that you still have to check if the cookie exists.
-	 * @return string The value of the cookie. If the value property is null an empty string will be returned.
-	 * @since 1.1.11
-	 */
-	public function __toString()
-	{
-		return (string)$this->value;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

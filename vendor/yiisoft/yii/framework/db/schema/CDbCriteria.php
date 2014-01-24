@@ -1,644 +1,300 @@
-<?php
-/**
- * CDbCriteria class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CDbCriteria represents a query criteria, such as conditions, ordering by, limit/offset.
- *
- * It can be used in AR query methods such as CActiveRecord::find and CActiveRecord::findAll.
- *
- * $criteria=new CDbCriteria();
- * $criteria->compare('status',Post::STATUS_ACTIVE);
- * $criteria->addInCondition('id',array(1,2,3,4,5,6));
- *
- * $posts = Post::model()->findAll($criteria);
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.db.schema
- * @since 1.0
- */
-class CDbCriteria extends CComponent
-{
-	const PARAM_PREFIX=':ycp';
-	/**
-	 * @var integer the global counter for anonymous binding parameters.
-	 * This counter is used for generating the name for the anonymous parameters.
-	 */
-	public static $paramCount=0;
-	/**
-	 * @var mixed the columns being selected. This refers to the SELECT clause in an SQL
-	 * statement. The property can be either a string (column names separated by commas)
-	 * or an array of column names. Defaults to '*', meaning all columns.
-	 */
-	public $select='*';
-	/**
-	 * @var boolean whether to select distinct rows of data only. If this is set true,
-	 * the SELECT clause would be changed to SELECT DISTINCT.
-	 */
-	public $distinct=false;
-	/**
-	 * @var string query condition. This refers to the WHERE clause in an SQL statement.
-	 * For example, <code>age>31 AND team=1</code>.
-	 */
-	public $condition='';
-	/**
-	 * @var array list of query parameter values indexed by parameter placeholders.
-	 * For example, <code>array(':name'=>'Dan', ':age'=>31)</code>.
-	 */
-	public $params=array();
-	/**
-	 * @var integer maximum number of records to be returned. If less than 0, it means no limit.
-	 */
-	public $limit=-1;
-	/**
-	 * @var integer zero-based offset from where the records are to be returned. If less than 0, it means starting from the beginning.
-	 */
-	public $offset=-1;
-	/**
-	 * @var string how to sort the query results. This refers to the ORDER BY clause in an SQL statement.
-	 */
-	public $order='';
-	/**
-	 * @var string how to group the query results. This refers to the GROUP BY clause in an SQL statement.
-	 * For example, <code>'projectID, teamID'</code>.
-	 */
-	public $group='';
-	/**
-	 * @var string how to join with other tables. This refers to the JOIN clause in an SQL statement.
-	 * For example, <code>'LEFT JOIN users ON users.id=authorID'</code>.
-	 */
-	public $join='';
-	/**
-	 * @var string the condition to be applied with GROUP-BY clause.
-	 * For example, <code>'SUM(revenue)<50000'</code>.
-	 */
-	public $having='';
-	/**
-	 * @var mixed the relational query criteria. This is used for fetching related objects in eager loading fashion.
-	 * This property is effective only when the criteria is passed as a parameter to the following methods of CActiveRecord:
-	 * <ul>
-	 * <li>{@link CActiveRecord::find()}</li>
-	 * <li>{@link CActiveRecord::findAll()}</li>
-	 * <li>{@link CActiveRecord::findByPk()}</li>
-	 * <li>{@link CActiveRecord::findAllByPk()}</li>
-	 * <li>{@link CActiveRecord::findByAttributes()}</li>
-	 * <li>{@link CActiveRecord::findAllByAttributes()}</li>
-	 * <li>{@link CActiveRecord::count()}</li>
-	 * </ul>
-	 * The property value will be used as the parameter to the {@link CActiveRecord::with()} method
-	 * to perform the eager loading. Please refer to {@link CActiveRecord::with()} on how to specify this parameter.
-	 * @since 1.1.0
-	 */
-	public $with;
-	/**
-	 * @var string the alias name of the table. If not set, it means the alias is 't'.
-	 */
-	public $alias;
-	/**
-	 * @var boolean whether the foreign tables should be joined with the primary table in a single SQL.
-	 * This property is only used in relational AR queries for HAS_MANY and MANY_MANY relations.
-	 *
-	 * When this property is set true, only a single SQL will be executed for a relational AR query,
-	 * even if the primary table is limited and the relationship between a foreign table and the primary
-	 * table is many-to-one.
-	 *
-	 * When this property is set false, a SQL statement will be executed for each HAS_MANY relation.
-	 *
-	 * When this property is not set, if the primary table is limited or paginated,
-	 * a SQL statement will be executed for each HAS_MANY relation.
-	 * Otherwise, a single SQL statement will be executed for all.
-	 *
-	 * @since 1.1.4
-	 */
-	public $together;
-	/**
-	 * @var string the name of the AR attribute whose value should be used as index of the query result array.
-	 * Defaults to null, meaning the result array will be zero-based integers.
-	 * @since 1.1.5
-	 */
-	public $index;
-	/**
-     * @var mixed scopes to apply
-	 *
-     * This property is effective only when passing criteria to
-	 * the one of the following methods:
-     * <ul>
-     * <li>{@link CActiveRecord::find()}</li>
-     * <li>{@link CActiveRecord::findAll()}</li>
-     * <li>{@link CActiveRecord::findByPk()}</li>
-     * <li>{@link CActiveRecord::findAllByPk()}</li>
-     * <li>{@link CActiveRecord::findByAttributes()}</li>
-     * <li>{@link CActiveRecord::findAllByAttributes()}</li>
-     * <li>{@link CActiveRecord::count()}</li>
-     * </ul>
-	 *
-	 * Can be set to one of the following:
-	 * <ul>
-	 * <li>One scope: $criteria->scopes='scopeName';</li>
-	 * <li>Multiple scopes: $criteria->scopes=array('scopeName1','scopeName2');</li>
-	 * <li>Scope with parameters: $criteria->scopes=array('scopeName'=>array($params));</li>
-	 * <li>Multiple scopes with parameters: $criteria->scopes=array('scopeName1'=>array($params1),'scopeName2'=>array($params2));</li>
-	 * <li>Multiple scopes with the same name: array(array('scopeName'=>array($params1)),array('scopeName'=>array($params2)));</li>
-	 * </ul>
-	 * @since 1.1.7
-	 */
-	public $scopes;
-
-	/**
-	 * Constructor.
-	 * @param array $data criteria initial property values (indexed by property name)
-	 */
-	public function __construct($data=array())
-	{
-		foreach($data as $name=>$value)
-			$this->$name=$value;
-	}
-
-	/**
-	 * Remaps criteria parameters on unserialize to prevent name collisions.
-	 * @since 1.1.9
-	 */
-	public function __wakeup()
-	{
-		$map=array();
-		$params=array();
-		foreach($this->params as $name=>$value)
-		{
-			if(strpos($name,self::PARAM_PREFIX)===0)
-			{
-				$newName=self::PARAM_PREFIX.self::$paramCount++;
-				$map[$name]=$newName;
-			}
-			else
-			{
-				$newName=$name;
-			}
-			$params[$newName]=$value;
-		}
-		if (!empty($map))
-		{
-			$sqlContentFieldNames=array(
-				'select',
-				'condition',
-				'order',
-				'group',
-				'join',
-				'having',
-			);
-			foreach($sqlContentFieldNames as $field)
-			{
-				if(is_array($this->$field))
-					foreach($this->$field as $k=>$v)
-						$this->{$field}[$k]=strtr($v,$map);
-				else
-					$this->$field=strtr($this->$field,$map);
-			}
-		}
-		$this->params=$params;
-	}
-
-	/**
-	 * Appends a condition to the existing {@link condition}.
-	 * The new condition and the existing condition will be concatenated via the specified operator
-	 * which defaults to 'AND'.
-	 * The new condition can also be an array. In this case, all elements in the array
-	 * will be concatenated together via the operator.
-	 * This method handles the case when the existing condition is empty.
-	 * After calling this method, the {@link condition} property will be modified.
-	 * @param mixed $condition the new condition. It can be either a string or an array of strings.
-	 * @param string $operator the operator to join different conditions. Defaults to 'AND'.
-	 * @return CDbCriteria the criteria object itself
-	 */
-	public function addCondition($condition,$operator='AND')
-	{
-		if(is_array($condition))
-		{
-			if($condition===array())
-				return $this;
-			$condition='('.implode(') '.$operator.' (',$condition).')';
-		}
-		if($this->condition==='')
-			$this->condition=$condition;
-		else
-			$this->condition='('.$this->condition.') '.$operator.' ('.$condition.')';
-		return $this;
-	}
-
-	/**
-	 * Appends a search condition to the existing {@link condition}.
-	 * The search condition and the existing condition will be concatenated via the specified operator
-	 * which defaults to 'AND'.
-	 * The search condition is generated using the SQL LIKE operator with the given column name and
-	 * search keyword.
-	 * @param string $column the column name (or a valid SQL expression)
-	 * @param string $keyword the search keyword. This interpretation of the keyword is affected by the next parameter.
-	 * @param boolean $escape whether the keyword should be escaped if it contains characters % or _.
-	 * When this parameter is true (default), the special characters % (matches 0 or more characters)
-	 * and _ (matches a single character) will be escaped, and the keyword will be surrounded with a %
-	 * character on both ends. When this parameter is false, the keyword will be directly used for
-	 * matching without any change.
-	 * @param string $operator the operator used to concatenate the new condition with the existing one.
-	 * Defaults to 'AND'.
-	 * @param string $like the LIKE operator. Defaults to 'LIKE'. You may also set this to be 'NOT LIKE'.
-	 * @return CDbCriteria the criteria object itself
-	 */
-	public function addSearchCondition($column,$keyword,$escape=true,$operator='AND',$like='LIKE')
-	{
-		if($keyword=='')
-			return $this;
-		if($escape)
-			$keyword='%'.strtr($keyword,array('%'=>'\%', '_'=>'\_', '\\'=>'\\\\')).'%';
-		$condition=$column." $like ".self::PARAM_PREFIX.self::$paramCount;
-		$this->params[self::PARAM_PREFIX.self::$paramCount++]=$keyword;
-		return $this->addCondition($condition, $operator);
-	}
-
-	/**
-	 * Appends an IN condition to the existing {@link condition}.
-	 * The IN condition and the existing condition will be concatenated via the specified operator
-	 * which defaults to 'AND'.
-	 * The IN condition is generated by using the SQL IN operator which requires the specified
-	 * column value to be among the given list of values.
-	 * @param string $column the column name (or a valid SQL expression)
-	 * @param array $values list of values that the column value should be in
-	 * @param string $operator the operator used to concatenate the new condition with the existing one.
-	 * Defaults to 'AND'.
-	 * @return CDbCriteria the criteria object itself
-	 */
-	public function addInCondition($column,$values,$operator='AND')
-	{
-		if(($n=count($values))<1)
-			$condition='0=1'; // 0=1 is used because in MSSQL value alone can't be used in WHERE
-		elseif($n===1)
-		{
-			$value=reset($values);
-			if($value===null)
-				$condition=$column.' IS NULL';
-			else
-			{
-				$condition=$column.'='.self::PARAM_PREFIX.self::$paramCount;
-				$this->params[self::PARAM_PREFIX.self::$paramCount++]=$value;
-			}
-		}
-		else
-		{
-			$params=array();
-			foreach($values as $value)
-			{
-				$params[]=self::PARAM_PREFIX.self::$paramCount;
-				$this->params[self::PARAM_PREFIX.self::$paramCount++]=$value;
-			}
-			$condition=$column.' IN ('.implode(', ',$params).')';
-		}
-		return $this->addCondition($condition,$operator);
-	}
-
-	/**
-	 * Appends an NOT IN condition to the existing {@link condition}.
-	 * The NOT IN condition and the existing condition will be concatenated via the specified operator
-	 * which defaults to 'AND'.
-	 * The NOT IN condition is generated by using the SQL NOT IN operator which requires the specified
-	 * column value to be among the given list of values.
-	 * @param string $column the column name (or a valid SQL expression)
-	 * @param array $values list of values that the column value should not be in
-	 * @param string $operator the operator used to concatenate the new condition with the existing one.
-	 * Defaults to 'AND'.
-	 * @return CDbCriteria the criteria object itself
-	 * @since 1.1.1
-	 */
-	public function addNotInCondition($column,$values,$operator='AND')
-	{
-		if(($n=count($values))<1)
-			return $this;
-		if($n===1)
-		{
-			$value=reset($values);
-			if($value===null)
-				$condition=$column.' IS NOT NULL';
-			else
-			{
-				$condition=$column.'!='.self::PARAM_PREFIX.self::$paramCount;
-				$this->params[self::PARAM_PREFIX.self::$paramCount++]=$value;
-			}
-		}
-		else
-		{
-			$params=array();
-			foreach($values as $value)
-			{
-				$params[]=self::PARAM_PREFIX.self::$paramCount;
-				$this->params[self::PARAM_PREFIX.self::$paramCount++]=$value;
-			}
-			$condition=$column.' NOT IN ('.implode(', ',$params).')';
-		}
-		return $this->addCondition($condition,$operator);
-	}
-
-	/**
-	 * Appends a condition for matching the given list of column values.
-	 * The generated condition will be concatenated to the existing {@link condition}
-	 * via the specified operator which defaults to 'AND'.
-	 * The condition is generated by matching each column and the corresponding value.
-	 * @param array $columns list of column names and values to be matched (name=>value)
-	 * @param string $columnOperator the operator to concatenate multiple column matching condition. Defaults to 'AND'.
-	 * @param string $operator the operator used to concatenate the new condition with the existing one.
-	 * Defaults to 'AND'.
-	 * @return CDbCriteria the criteria object itself
-	 */
-	public function addColumnCondition($columns,$columnOperator='AND',$operator='AND')
-	{
-		$params=array();
-		foreach($columns as $name=>$value)
-		{
-			if($value===null)
-				$params[]=$name.' IS NULL';
-			else
-			{
-				$params[]=$name.'='.self::PARAM_PREFIX.self::$paramCount;
-				$this->params[self::PARAM_PREFIX.self::$paramCount++]=$value;
-			}
-		}
-		return $this->addCondition(implode(" $columnOperator ",$params), $operator);
-	}
-
-	/**
-	 * Adds a comparison expression to the {@link condition} property.
-	 *
-	 * This method is a helper that appends to the {@link condition} property
-	 * with a new comparison expression. The comparison is done by comparing a column
-	 * with the given value using some comparison operator.
-	 *
-	 * The comparison operator is intelligently determined based on the first few
-	 * characters in the given value. In particular, it recognizes the following operators
-	 * if they appear as the leading characters in the given value:
-	 * <ul>
-	 * <li><code>&lt;</code>: the column must be less than the given value.</li>
-	 * <li><code>&gt;</code>: the column must be greater than the given value.</li>
-	 * <li><code>&lt;=</code>: the column must be less than or equal to the given value.</li>
-	 * <li><code>&gt;=</code>: the column must be greater than or equal to the given value.</li>
-	 * <li><code>&lt;&gt;</code>: the column must not be the same as the given value.
-	 * Note that when $partialMatch is true, this would mean the value must not be a substring
-	 * of the column.</li>
-	 * <li><code>=</code>: the column must be equal to the given value.</li>
-	 * <li>none of the above: the column must be equal to the given value. Note that when $partialMatch
-	 * is true, this would mean the value must be the same as the given value or be a substring of it.</li>
-	 * </ul>
-	 *
-	 * Note that any surrounding white spaces will be removed from the value before comparison.
-	 * When the value is empty, no comparison expression will be added to the search condition.
-	 *
-	 * @param string $column the name of the column to be searched
-	 * @param mixed $value the column value to be compared with. If the value is a string, the aforementioned
-	 * intelligent comparison will be conducted. If the value is an array, the comparison is done
-	 * by exact match of any of the value in the array. If the string or the array is empty,
-	 * the existing search condition will not be modified.
-	 * @param boolean $partialMatch whether the value should consider partial text match (using LIKE and NOT LIKE operators).
-	 * Defaults to false, meaning exact comparison.
-	 * @param string $operator the operator used to concatenate the new condition with the existing one.
-	 * Defaults to 'AND'.
-	 * @param boolean $escape whether the value should be escaped if $partialMatch is true and
-	 * the value contains characters % or _. When this parameter is true (default),
-	 * the special characters % (matches 0 or more characters)
-	 * and _ (matches a single character) will be escaped, and the value will be surrounded with a %
-	 * character on both ends. When this parameter is false, the value will be directly used for
-	 * matching without any change.
-	 * @return CDbCriteria the criteria object itself
-	 * @since 1.1.1
-	 */
-	public function compare($column, $value, $partialMatch=false, $operator='AND', $escape=true)
-	{
-		if(is_array($value))
-		{
-			if($value===array())
-				return $this;
-			return $this->addInCondition($column,$value,$operator);
-		}
-		else
-			$value="$value";
-
-		if(preg_match('/^(?:\s*(<>|<=|>=|<|>|=))?(.*)$/',$value,$matches))
-		{
-			$value=$matches[2];
-			$op=$matches[1];
-		}
-		else
-			$op='';
-
-		if($value==='')
-			return $this;
-
-		if($partialMatch)
-		{
-			if($op==='')
-				return $this->addSearchCondition($column,$value,$escape,$operator);
-			if($op==='<>')
-				return $this->addSearchCondition($column,$value,$escape,$operator,'NOT LIKE');
-		}
-		elseif($op==='')
-			$op='=';
-
-		$this->addCondition($column.$op.self::PARAM_PREFIX.self::$paramCount,$operator);
-		$this->params[self::PARAM_PREFIX.self::$paramCount++]=$value;
-
-		return $this;
-	}
-
-	/**
-	 * Adds a between condition to the {@link condition} property.
-	 *
-	 * The new between condition and the existing condition will be concatenated via
-	 * the specified operator which defaults to 'AND'.
-	 * If one or both values are empty then the condition is not added to the existing condition.
-	 * This method handles the case when the existing condition is empty.
-	 * After calling this method, the {@link condition} property will be modified.
-	 * @param string $column the name of the column to search between.
-	 * @param string $valueStart the beginning value to start the between search.
-	 * @param string $valueEnd the ending value to end the between search.
-	 * @param string $operator the operator used to concatenate the new condition with the existing one.
-	 * Defaults to 'AND'.
-	 * @return CDbCriteria the criteria object itself
-	 * @since 1.1.2
-	 */
-	public function addBetweenCondition($column,$valueStart,$valueEnd,$operator='AND')
-	{
-		if($valueStart==='' || $valueEnd==='')
-			return $this;
-
-		$paramStart=self::PARAM_PREFIX.self::$paramCount++;
-		$paramEnd=self::PARAM_PREFIX.self::$paramCount++;
-		$this->params[$paramStart]=$valueStart;
-		$this->params[$paramEnd]=$valueEnd;
-		$condition="$column BETWEEN $paramStart AND $paramEnd";
-
-		return $this->addCondition($condition,$operator);
-	}
-
-	/**
-	 * Merges with another criteria.
-	 * In general, the merging makes the resulting criteria more restrictive.
-	 * For example, if both criterias have conditions, they will be 'AND' together.
-	 * Also, the criteria passed as the parameter takes precedence in case
-	 * two options cannot be merged (e.g. LIMIT, OFFSET).
-	 * @param mixed $criteria the criteria to be merged with. Either an array or CDbCriteria.
-	 * @param string|boolean $operator the operator used to concatenate where and having conditions. Defaults to 'AND'.
-	 * For backwards compatibility a boolean value can be passed:
-	 * - 'false' for 'OR'
-	 * - 'true' for 'AND'
-	 */
-	public function mergeWith($criteria,$operator='AND')
-	{
-		if(is_bool($operator))
-			$operator=$operator ? 'AND' : 'OR';
-		if(is_array($criteria))
-			$criteria=new self($criteria);
-		if($this->select!==$criteria->select)
-		{
-			if($this->select==='*')
-				$this->select=$criteria->select;
-			elseif($criteria->select!=='*')
-			{
-				$select1=is_string($this->select)?preg_split('/\s*,\s*/',trim($this->select),-1,PREG_SPLIT_NO_EMPTY):$this->select;
-				$select2=is_string($criteria->select)?preg_split('/\s*,\s*/',trim($criteria->select),-1,PREG_SPLIT_NO_EMPTY):$criteria->select;
-				$this->select=array_merge($select1,array_diff($select2,$select1));
-			}
-		}
-
-		if($this->condition!==$criteria->condition)
-		{
-			if($this->condition==='')
-				$this->condition=$criteria->condition;
-			elseif($criteria->condition!=='')
-				$this->condition="({$this->condition}) $operator ({$criteria->condition})";
-		}
-
-		if($this->params!==$criteria->params)
-			$this->params=array_merge($this->params,$criteria->params);
-
-		if($criteria->limit>0)
-			$this->limit=$criteria->limit;
-
-		if($criteria->offset>=0)
-			$this->offset=$criteria->offset;
-
-		if($criteria->alias!==null)
-			$this->alias=$criteria->alias;
-
-		if($this->order!==$criteria->order)
-		{
-			if($this->order==='')
-				$this->order=$criteria->order;
-			elseif($criteria->order!=='')
-				$this->order=$criteria->order.', '.$this->order;
-		}
-
-		if($this->group!==$criteria->group)
-		{
-			if($this->group==='')
-				$this->group=$criteria->group;
-			elseif($criteria->group!=='')
-				$this->group.=', '.$criteria->group;
-		}
-
-		if($this->join!==$criteria->join)
-		{
-			if($this->join==='')
-				$this->join=$criteria->join;
-			elseif($criteria->join!=='')
-				$this->join.=' '.$criteria->join;
-		}
-
-		if($this->having!==$criteria->having)
-		{
-			if($this->having==='')
-				$this->having=$criteria->having;
-			elseif($criteria->having!=='')
-				$this->having="({$this->having}) $operator ({$criteria->having})";
-		}
-
-		if($criteria->distinct>0)
-			$this->distinct=$criteria->distinct;
-
-		if($criteria->together!==null)
-			$this->together=$criteria->together;
-
-		if($criteria->index!==null)
-			$this->index=$criteria->index;
-
-		if(empty($this->scopes))
-			$this->scopes=$criteria->scopes;
-		elseif(!empty($criteria->scopes))
-		{
-			$scopes1=(array)$this->scopes;
-			$scopes2=(array)$criteria->scopes;
-			foreach($scopes1 as $k=>$v)
-			{
-				if(is_integer($k))
-					$scopes[]=$v;
-				elseif(isset($scopes2[$k]))
-					$scopes[]=array($k=>$v);
-				else
-					$scopes[$k]=$v;
-			}
-			foreach($scopes2 as $k=>$v)
-			{
-				if(is_integer($k))
-					$scopes[]=$v;
-				elseif(isset($scopes1[$k]))
-					$scopes[]=array($k=>$v);
-				else
-					$scopes[$k]=$v;
-			}
-			$this->scopes=$scopes;
-		}
-
-		if(empty($this->with))
-			$this->with=$criteria->with;
-		elseif(!empty($criteria->with))
-		{
-			$this->with=(array)$this->with;
-			foreach((array)$criteria->with as $k=>$v)
-			{
-				if(is_integer($k))
-					$this->with[]=$v;
-				elseif(isset($this->with[$k]))
-				{
-					$excludes=array();
-					foreach(array('joinType','on') as $opt)
-					{
-						if(isset($this->with[$k][$opt]))
-							$excludes[$opt]=$this->with[$k][$opt];
-						if(isset($v[$opt]))
-							$excludes[$opt]= ($opt==='on' && isset($excludes[$opt]) && $v[$opt]!==$excludes[$opt]) ?
-								"($excludes[$opt]) AND $v[$opt]" : $v[$opt];
-						unset($this->with[$k][$opt]);
-						unset($v[$opt]);
-					}
-					$this->with[$k]=new self($this->with[$k]);
-					$this->with[$k]->mergeWith($v,$operator);
-					$this->with[$k]=$this->with[$k]->toArray();
-					if (count($excludes)!==0)
-						$this->with[$k]=CMap::mergeArray($this->with[$k],$excludes);
-				}
-				else
-					$this->with[$k]=$v;
-			}
-		}
-	}
-
-	/**
-	 * @return array the array representation of the criteria
-	 */
-	public function toArray()
-	{
-		$result=array();
-		foreach(array('select', 'condition', 'params', 'limit', 'offset', 'order', 'group', 'join', 'having', 'distinct', 'scopes', 'with', 'alias', 'index', 'together') as $name)
-			$result[$name]=$this->$name;
-		return $result;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPq/I3f3cUlEdwoYRimg8GhhLVgNrMLZzDRciLO0YGWmqyCk8vL2d3c8sgxY7ir9D0nyk4smt
+k6HOKH4sT2p+VBhl2RptZjmwDeswWTEFh5qMV7EIjNZyenIgFJKuTDxQa0dw4QMFvnmRJsdGodUJ
+vzCoMJYExrJMA4iP3I4UpSLwdyim/shF2nXOQuVt2eRzNvJ3h9ewNN03qewFK83G3fcf9ClOa1GL
+AetsGz/DZRStNDKdDKB8hr4euJltSAgiccy4GDnfT3HXZlDiUj4LeN6kMTXRpajv/vkLpB5MeH1g
+2ewgGao4GVDuM9k/ajjX7sVcEDA7O4K1XFYdWBc1aVI90Ez1tM5WBFR1E5p3AQx0qP9eHpLXky3a
+3yDx2xvz7Za6PFyOdNHdkHzdEGGBHf0jTyy2ru7DjntumXh/ZujmawW886CpHr8pA+fCGKfybN7g
+DD43mAk1n3cgfGaRxZ4BfXL3lUYCYNpYKQohPhHyP0mfNacJ/0YwkL5tr9MRzBaCzXfiqyfJaryd
++KCatqXESSnEomPTtmh8rma+fVC3ei9IHOou+R5XO2tfoNw4q8crDeuptJGNfIwQ9DpZmAIh9A7D
+3opykQ5+VVlJXiknupy9/rG43Hkcv9/VuaqMI/3aDsCGhDyYY8OXVJeRpV8IQlFTx4JPslGDNgS1
++S6YpY0ee/tBlqdQ8Ipdduh3hjT/YVQwtosDpt2nbvc5vgx9GJikpOuDrHZezwa6MlzR7AVfN0t3
+TVapcicEVTi53+R2zVtc59/QAbXMXOVPIRDi4dDAcG9ZszDoz7KLoPGnT2YNWJdeaorzZdHmh3Ce
+5eYO4XHxzckPew2schpSAflV25Yz3ZYApSBaxM5muPOUVkV/ALD05vX2auHnWcvydGSp7NdFKObD
+NAssGmbO7tXK1npshb8nQyRkCDAdrwzzUOfv/yBLT5/vinuVayScOEy9+U6PCCMgch65PGOaut3k
+VaI5bs7uFHDJQVa36paFomR+/DebPcVCKhOofi4I8ZHt6c7/TKJDoX3jsGDBoYeCNGANVF1dv5fi
+SVN/Wbqf9p9i+3zK4/lo++SI3wD0NdSZp7o4b13BkWuK+vx1q1OVxBMuj94nsGnVWnKJ48Ftc4gS
+6Ou3wM8kOEs3/b3Z/sjX7hX/96wkuK2OyxpUujPH/WMKmsk/wcKEcwvgAivnEMKdR7WiZ4Y1jTlv
+coqkkO3bw8S+IXnObwHPXsNnt9l90NaZiNQqmQdySbHk9IjN1T/GhR5OO06BMG6qWkuhxddpXXwl
+AgGUFofzA7U6PrxOTUWDoJOCmaQJFqK5UJraq2AQ4jlyLDDi27UdB4r4VwxaRnVmgwFBT1lnGgdb
+182NCK9Ao335UGkTbcWdc3qM206vhQ8rhTS97Hn05M7mh2pSb0o9hT5FwjabLb/S9HUmIoGI4T8G
++/exYlkWaPBg7FM0K2O0/TlCBNKQPY4I90HygMUNBphbXCtaX8nKgkVvce5EIl4IpniQfRCDGOEM
+d0kVtZd8vul2/9Go2KioNnZFFx03+FmgWaN6WfoMGd77N76QeFaAbQT3x+s37wRSuEGujQKiKCkz
+YsG5KX5fqpw4oLukWPA6ZwQ8xsfrgz2qPF41/NoSUoFwRgj8SbXfxU3B9FAFubv5VTyWdutoWKQU
+p0kALDzec0TfV+MH+YDyX1Re8WP1Hs+1Jv/8SD2jIJORw5GVQ18Xih8rvzE0oWcTLWmYt3DRQHii
+Iz1e+w0wHYELIrb8M4vv+eOd7T8+v2MkZYMhrbSDypBvM9wGJsSxxZtcvt/EgzRuwZ6YGpMV1DBA
+TdmXM/dbrbHbwwIvOw9Zd25Y5Yhe5tU87nFnYxTjGJeJhiKJnU/95OAONWWlyPi4b31FjFcwZrEC
+hVX/6d8vBXngNO9evMoYez5D+WKSbQMyrkrwR2ANYdII3+oYphdGZOCXCjFc/uRfyQtgnWjwZlEs
+xoSFa+xMjeuV9VWz+knLIc73jf4kNBtJmRyddDyAFw1p23dG2/+DWSlFh3XyJjFY0OHBwPH0Q0YX
+GGl6xD2fQ5gTPEhihtQIRXJHfaJ0ciecQzVIGZrL8O984lL4W+uHq1rC0bF3EY5hJ4GC8BJcDYNF
+jbYcVpIA3Hvo8QaxzyKcEXhXg7Fuys1uYplmiERTYY/wymO8qSDRFJOGm4b+dX5MS5lAKyZ6Xfwt
+xl6+IOXHWx8HvVmo5PypJodiVrewJr5PoaeMoPk7BHPgnqra5cnGfeXOoZ0AA2ZB+bPH2P+systx
+x5zRveKQLn95g2FwJxqtJgHa1tB5ZSyL9gUMifkbaclYigkLVsrZ4sOmJKMNwbSx+y8Di4k4A90Q
+Tk9+Twb3cvyM/ujV0PZ+g4IIA11HWh+/3ApbWGVaboP9E/dZkx0V4yICqY8Qh0twgH6XT5xameUn
+VysYENpRYPm1mw8x13ENHJtn/6lO4eMmVWffMCmKZ3tYXLm9hUEqgFXEKTzGNSJ7gxm0PHTmt4Zj
+KdyRfglIOBqgZhpHJ3Jpkyrwgot/qB60EGLL6tX0rfvUxl9z9TgbSdEsI6etQBXnSSgEq/CmRRaZ
+6XEmmYK/hL+Sz6JtL8CGi5ouDPk+CqEK28rzWSrUKnZ3oU9Pon++ralLpq9GSa5sgmXFhySeT6Mb
+CfDZbjwOjlLfDJ/iODzZvq+BIVXvnHdq+yogiZ1eferdYpDxBIBTxn0ggsjt53MGkgpZlxc04KQr
+QCf7VUlTUF+vQJ2SfZ1TWVKh8i4JrTObdWnR0X+rb0FJIndWXcEnJwoJeCywuhD4c1mqErh3JcX9
+EmgONM1oL8Kdfc1E4kq0vEPwpDeF+1jx/pNpziAkgop21QoxLA+VJyPUhD1UxzofwTDZHIbaLSMN
+XgFJ8rglWO0Y0jhn415wTifYiKRyJiMmx4QnfW6PwltMV/gtxmbx2aWKL37StO7O93L69EQml4yz
+6wFjQJc3tBeYjTW8dMS3gbVBE4GPQ4OWBFgP45BtoQU26qqXESzGRYGtkLeoPOQkvmPtYRjkZZKO
+hlmbZkwv8mUvZ0yzCF/4u3q8rvlOk/noAPe+/yDTwxMtMQisbY7j6Fk/ejJ1V4/ttHmAQCjoT7bA
+m3LZC4SHLBF2NylTJ5IcZ6sp3hs3zZdwDiik95yaQ7DrxUsbl+JOkS2I2obIEyAAXf6EJgGwM/Ua
+cGsclXCMT77yRx2TpP8asoOukI9mqNpCzwUX5wqjJ5x78Roo0syQmSx9nPpFpHEkqKQqL4h5H6VE
+DRWEX0TMhbPNyrkIfL5pJjT31vfbE1u2LvFI0nqNM6njySmOvElQfWVuMBoLM4rFh+7pRfkCSl+a
+Kl06c3bqMd3ObifOnt5jrQV3J8gwHqMcUWq3mimng40iznWSd/zmDQSu/uEa23eA53PrQ+sdMOHB
+vN6d+kPHeIQDS5l8MAojrg7jX83uTU4bNtnJSyr7vvfOeKvpB91pJVuiDeg23Q3Mib0I8oBRjf0w
+VJWxNocxAyClUO6gy0KJ0WCtAiY3cciCriHpu5zGWB6J+vVFZHTxRUq2B1IGohKEqacaSCZdPAyn
+Sky6+XewaogV4GdjyD13vbDBSI5EYwI9wrGJgJe+JLWityARCOQnYAbgzF+kDdOIn09TqiyoHmTV
+MD3nGTiZ11q+KrFRiNnIKnXLCa4MIdZF75+NDCPNGkvSJH11kUWNzaiJLCoz9AYhnvX0v3hq9IMU
+B0oNd398JI26DnYKGry70n4zEqQzcvzR7lS+52afn4zAN2Hy1Sm7U4tp2vIxY0V/u0Uf/yw8+31/
+cfupc2V6SNIQOImSDplnmIoC4I8GysuoxhZWrFeulk0lJS/4v3QoNHc04iR59+4DpPTlpsn98B9Z
+z4mfWFIagwyun+2EUe7DkpcNM/2oyhUQhZ7+IzTPPY9c/+I5RGXXAXjWOPBPkslz26uAk6Kpx36+
+qMsOSp9kT7qWXvtzJfnggJeSDMMMtK1nqZNOjYnOkFf4HHm/4kDg1FjuYvwuTqClNHt8S8ObmMAm
+O+drS/ocg7l28mcGJhEWFfzCqCYr7X70DAdXlUUk286sVPc+ZXYvHC501/Z/EhWTWhdUCadMPkYR
+gM4p2p41k7umlFjhj2xJq/bJAgFAGj9jck/LOMj2BOLeY26aswXqEHDczaA8G8bL1H5cVfbRtyuN
+caD+tQmiFL7FNEnRmxughAAEIkhfbNUHP94HTbPIHdh4JO/CIrV69Ddxa0+6I+CGv3ZduhW/d+Nl
+WTvpwjnJKbg5xmwlKxN3YnekXbkGRswcSQy809XNsY6fYZOvnZCZ1j7WnMsQaJYc1Etg9Mj2Hht6
+vpHgccuz4iaccwM5bfb4hk0U7IfZTbZIFPr/NntQYMu3/yVpCzjT2+ao0TEa0O9s/w7MowMR7Bbk
+yPzCSnMazHit3tuqRN/Wp7/3BpTnh341Z7Hs/++mYprIM6XzIxBjMQiVRCPVOWnBKqDYHTm3sgcC
+jDiYPWtz7bD29rkG3muXpBTarswDPnCP5XplcHk4zTmUCXt5rO3+zCIY57ygVoYb5WpUDp0+/HTA
+Xfm6Wlc0geyEDv4IijRRmLBgOvqPFyh+TO9/fR/sv3SNYe6Z9jTwR/gXvLMbhZa5qi883jvKQ+jT
+n5/xm19/QSLWH0Uo4VC25KiUBr6HY8GuhP8H9Vb7+DIO1lc1jvge2TLsruJy84kYTAZ83RvQt6Oc
+b/+UbJqUa2TZonxIJ0INAuyaeACxy/QZ6wYCrL3eCH+O2x3VtmbdRHc1bin46Ps2fnx3y5YxIJRX
+lqEkzO5LEsA9Cacv9EDvi0rXaU9jvMFO7OTEdVmZCKewQ+mdlwnFvnA8Ea3W/TU2BcwKCxMD4mBe
+Zx3BRlc3BEodKR2dKR5MQ2uRh331cvYHhH4XkTzjvgYR1gvsKqA4E5UnNIWnFvCWk23wHHYf5abT
+sFgHjevhRNZtA8CxkT0BFX4tX5pMrYsMOgHvu3zfzrNNKZeENp9byZ7T/r9GIhBYf9WFVAm6i+Do
+u/GmgNSEkQp1GWNr58ull6rz4FlPByuwiSVJcjTYV5JiW/uOgeCEzYZhkZOU5978ZrUXcpWsbgvI
+7GbtybhpTTLffnbFqDPYb4bcMDp0Re4iNE+iU33cUXXmVYwOihLcvsf0U+YVWGW6IgROeMwfUH+Q
+x7nkFnpw4hA3DxxfZ3CmZxZ9cPpDuAWSwFk3JJ7oeO21cSdkOYFLXrLRe8F8enI9iBfGi8n+DCkr
+EJQjBFkoTshZgmYaxktPVG6ucp6NnaLZwsZvVXR07kVWowfV/uEV9Z+QSpAhorMJlIRXkNL/EY6S
+cZHt19AJs+ckPE63YSwtC/B9y0ex8vGNG9lxYgsyXqtmXdhVrC9yVNkil7Egd1OKQsIsjGR7zL/W
+/v4vYl0siiJn0MgJvSZAli4ribqn3GnOpxYgkZ6OZ+fuY5q2ERBiIf+REQUGy8hx2wgTLX4EdlQH
+s1q/nrLW/ynE/+yTPlkBKBJGZVxrrVAW3w9ZoEaNxV/IOhR7zpWYU4N1wUmI7V0EJiM9/nqG4718
+FZjOUGtqx0O8+BM9srNkFNfl7P7jaVzVfryhPdJatYtQeCwVgUVvOjFrLtHdsuvxM4bh53WvICJa
+RNv4K3r27eCb724mDD5l5iJErcuOLwA4zQAjgL/Mn8vPSmMCbPF1QXePUXEWzxzIUikVWK59BU90
+ESV6CxVqFpJ0MWoEcJP2pGZ3zzMAqc8rDoZW2WusVF1mem8X5A7vdEap5L2mjQUq77WM9vPNJf7q
+DJ80BeYfb4vsxBSjgCWgPgmasQxt/caKYb7M188/0o48HT9+i7//Zxx/zLgsBw+8YFMtw70F5zC7
+jlCHH/chFOF0WXtnAejRoAijZlcEd/TogluNjAf0c1mcReklopKlBVxE28Hvu5lgjcM2A5gpps6b
+QdAMA2ccPKKEyuoJNTa/0ojIfB2iqX5Hgn2M1cQJ+xBOb2XZ/rOamqc8BSMOgQ5rLKmucZFnmquK
+vMsm3UrEwwkFLlPzsdHEWYD5oNEhuonT+jpNaC8E/wVsUXMkDNcUYEgJ7VAgvnGRrnCHeBxG5qMS
+tu0CBWcU2IvRVdEDj/Vh7z0uO5XRWXJg+FbxjjpFXV9tKkE4qZVA4deohX80T0mzvfLdxAT7JgXl
+qva5Q7awO6JL612VBrGHZjsyiC1S3JP/OhGAcC1c7zsd5fnIZBK/xOLtuBUsFSuLu4EE8zqo6xYe
+R93x3Ps64WFEqFhndnjHi/aRIV60Mk1LobOWcwhacvxytPDb/gT4NQp+nUc/rF30vnwP4CmbTh9u
+UxQMvR07lwOAikexsUX0nn02m8pj+rZ26yRc/PNvDqMl2Qz7HakoxvRV1SZ1tk4zfLJB+DfF4oVU
+/Brj+QivWubyeyYTXG0IvSZNRVsbxOKUQC5pmjH+1lMemEbb4i1y+uAQv8tKMwFuXdbSd+xsBGjl
+9kVpXQ3h5RG0AuHbQzvglzf+6E29r1dEQt0093CmItmrNKLZ/KlV1a7JjanyeBTzPBcZRAtI0XK+
+vA/9YiO24hsfyWky1mPsEVJVfxZE96+3zcikqHxVZQHFG8qj2uK6Bk40QtiMVDkSa2PajpjQac48
+ElzWvHLYtLFGVXt5HlaanNbjes5ImwqRpFBfT1oFz98Hlmm595jXLEBq5t/laYj2PI3GQSf1w2b4
+EPn6fOCHVD6c93bfMvR7P1bsbIYbhv8VHSQ1HCGLFcwC5SoS051UsWlPZyVEvDMTjLzOyLhgpYrn
+42SdDDh2/EwdmqBtaddKB42LeQvBJmpWQ5k3z5hJWVBFvnCMVFnISIBWtoQmAHoq9LAi37YLHCmG
+qPzn3HtKEsf+MKe7MHeA91oErsN/t6/7eKfZI7/wUJu4KOotRamkK3EgISrIzGycBS7SOhWKZQd/
+V6xUUdKViIpUNIhVGBXTGzwyLK6w+eh9dfXsoJQoOXLGJWYi+bT1YCUHjGRgEk4dEwOi3sh+3qG+
+PYJsYk3O9oFMu+FKolMtMGFzYLVbe4LUiLgNva75B/zOK0RE7y3re5lbDN4fBlfeopQCQCG8nFXX
+OKsPAh2ktrGe1mVkFPR39ODoV2Kig50wEOurEVrL6v5ITNkcibgs0O3wR/1a7aAG+5z6QMM+qemZ
+xwhyQpQN3CyJ20GGVX9M1fpi+vV1PWFRPYLnk0SG23d8H//ehRA971kmsLuSVXjlQs71n206m6Go
+EzE3aic1bdNJMimdaMeDbxUOsPvNN4jBwzwW3vTxDkuUD5HvcazxWDh+dPcv81fBpIdeSrZ12MCX
+ViLuI7NLPYyhoDHy0fkokvEtqZ80oHUipLDdQQTiPx1+YvqwdKAZojdLFqPbBHGY3qIdO7RxBlHf
++ulCwm+RqxO2Z/EIHNA3XxhFnVLy4BviaBRgnDiaxcSM03NomdgfgCwZGanqgZj/rt8+3JP8E1oq
+ZhrN5z+L9Y2iOmNFRTAw730p4xvHjpiLB8E3SWYDYc1mkKFSIVqHXssrNiXcjclE7rjerxQwHsj7
+HH28rnUr3YjfYLr6GTz3+QcRoD/iUkbhYxihj4qfwIDsikJtar0/uw38ySGQQSZWDZhy9EPRKzhj
+D/v3zxtRX6uiQBYx2TRfRFSUGUVnmS5S/8YibvAjOXPvPNeSeiHCjUjC3ggZ7y/aVJVY2TQLyrO/
+n9KqvDRWNdY4+X7v78GPesdVeiN3BztyJX3FG0WVI/hIndBudlv3tOEfNfpPLZa3mHcBvmjpIxgV
+DhjcilFdYTYEXm3jy0kARcBgBSvXfitiNo+Qj31qpxMCQXcWXk+iAVyKAPB+BJbgQdDA/qY8LLL0
++eE0riVTEZEc/MuwwFQj8Vi7PzbTXxUQiMXfppSxutrLox2HO91BpgdC+TqPMyE5p9BDBK/HbIwb
+UkEDZn23cTQ0agUpTQAaNe3k6dZkwLs2/YxwCC2h/+0NZB2ajJs4rJ+BgDPbhQLlAhJn4dFQIbG8
+cYnUc0/jJxl4BzcJlJ4wKxOqc5imOEP1hzWcjsJLcC3IXlyAkSwIdegU6vMkZTTngbXaSHjw5eV+
+bgLZD5Ol8sDxZuMxSB9PvjBmSZK+4xhnvu884V5A9TpEGFzRx8HgiFZonvh7sMvH7aljZdrxMJtQ
+ihHDxodWueAeaPcbexhACFYEfHRlvQy1LVqKJAi9onBcyzimNYg6jyeQ+YTK9Wu5QjJpc3ZiBuWO
+4mY8+19MeOTi423iezccSZGPrOj8zxHXvifoBuM1GVzpltGsMfFpwFK5kEHjoAPiFRvPQ29jcFMq
+MNTVxydByTJfAJHF/0Pc21NnMNfejBnJc/OIVnXVlEeCI0jGjSAhusfWL89oMhSnZBQypDu63zfw
+ZjTT3WOSxZlrHp6/nFSt804HAs1cYCmSq7O91yuz/h3HK5yT6lwwnlpaqxyO8pVzLWhGJpV++seP
++/3d0n/ntU6QD5f5Qy4udENjlNXmQJdKWqLOXS7Nhv1L/bORFyvFoSoUEq+O1nhg2jNMsIrPu+JT
+N3EKtL3+TqCVOfcwcNIc0XJMMXc27Yh6CGFY9eDSfSW+mIZNp7LVPnW0RN/wdB+SykySLgZ0LfSV
+GeyTXL+dQjO5M0zv9BSipCJ9Lx4/FcgRSdJvBFINz/4kGkVWsxY2ogPlPUB8KL8NBd+GZyOP5Psd
+IXHsh2I7APyIK2u+MaU+elGQn5jhlKyOFf/wI3kzv26ju2yKzw7JRXG128M7L5SP5kMeapdXXWqw
+mM96UacZuenk2uNSQvP+g2Qhy5XDDQgTL1S6Gnx/HJYLbwLISiELGVoSXdq0SXuYxf6CdNecYTb5
+TiIyJrF3l2gnHquaRKLFMkI7Xt46K+2g1LXWShcECrysbp0a6HTwrpVzIfz3EQx7TavobWsVvGYW
+FT8LP4M/I/d1V1f+DNocmnZFCoNuYZwb5sNMpPWeK9T4Q+E4Gac6fjuZ8BYu8aMDiCVEN3iuXM1I
+CYjx1CDkL2sanqIQUSTGymv3FdyQ1Y/+l6XGPAlBZNsrqRoCMJObXPQXrZkq9ujufGDVJ4BeaHqA
+NxB+13HwdA0IcLesB911MSdisPl69zPLJtzR9zOKfwhjYWawLUfJ5xjysRz+L/w5T2HqbUMQ2zbJ
+WVA9L59R5RnkJ+kTEegB4gDYy431paUiWi/NFav9G/vLHwZzlZ99tRAJwhO7Qg7As/kq6sVfcmUm
+xpPWaeCYOjOWi1g3YSrmyI0NjTY1R+1EO92NCVe724l9rRVaVW6C3v8qC1odIWHtZpgTeZA3czB8
+aCqoJVANjf9VrPPZpVUDTugoS2ps4s8cnT9oKLnL7CmuKwiVVv1JGvFdy/rVH30BXkVrSLsZhy+L
+cU4hOGbLOeSoecDH4xvlphrIPYzLC+IN69qBDmhhb63sUQxaZGTqD8nN6hV966SV7Lq9pDw44a9A
+oZAhBr3JXWkVSH4jcf9QydlazwbxfaAIEPY+6mEwR1QTX9kSEb63y1cNkmuBaTk7zm+CAqdhi56E
+D3fe9nHhNCTKXf1WJgWhOR2rsS7cCPhCqM1smDDKRqsoRinFtsKe6l8UrE9f2xU9x8Z6662t+YbQ
+SYERYYi9GxB6CX3M9ZD4ZG9Nbvkv1IpJxJZHdvNURsrs236wWXVW8R9Canz3OOeK2+0v/px6Lgr6
+y3DAE2pB33zeD4oigTSAugA1UtOfivqJV+Z6Erqb9H9geDHj1QlitheI2PQ655x+KOt27P1mFTp1
+weQ7RyQBj8S60957JZcT1q4LJy1MHmk+AULpJfBDb8RJGuLXO9OmUJxxFMn0uv8W6o5DL1L8Umsh
+/Ndq3gza0hvmzYZSCMgPrrUDIfRef9Ij2rb0O+utcmHm8DzYaGPedlMU5x5FXAj3r7Aj3SSwUsES
+LXy5z0l3zfTfPGMakjNm0fZZW18VbE9DWsEI0b6O2fVp1dqw/shor8ZXy4IUkfNfwSrlaGbgQQ3p
+BC4xIu97CWYIzXJkWcfHo4oMzLmgFMp/MF4vNoxHiIV/xdS4U+JXaXFTxjXKJtup/dU2BLgPE2nX
+lJXgSEhech//k9NvwpQmsK7RckcMp8oJl5P3dJKITIA07odHBljTmfHFyAZj7iXeEVfP/qyeEBgZ
+Z/+tGLwUCI7yRtrT2+tpndY18HI2UeikLGcg/rxdbgCehKGbs7LtrDWfQcDK8b3CouonmmP7jCtq
+jg6q7MVGff3UhOatKHQWHES7eXM03P/cIsNZRQL/hwu8I2s8ZFA93BJgnxpQxqYJW9giYVfD0Feb
+borkL/y5hIaS/F+aqeUaaGWqwxvIzDOhKOecZGYuSBtJ1V5cVzDUbUtVr4YYMA51r6qaTd4DMlw4
+k+kw36n5ozqS9KKjm+tsIbBDQ65HaMiTkMSXvQqULCXrEragCkDizxRz5iXxG6laxnl6FRVAh6BV
+/NyaplcGrYQpCcvhtYD8mCUN1uYp4wYwWv9zX8KZFpvcHaCq9pLUpk7nihloixk33IvPhvRC6urA
+Mmc4xghRVGuX7/Vrcr5p95J3yuOhdp8wBjQdZ5hfNV/aaM3F/1ix2UnilhBJeG/DpN6zCa+GSRVD
+Gy5pIy0aw5g5gYz90AFmhsO/WIVQmcFKSwHrAVGfD0bQ4F05IL+sadDke0D2svMQIo4eupTbkVIB
+bJJ21q3gXjlK9xCRNB1a3yysRq8SA90nvR4Y/q2JoRoSo6GKjS9wzs6gB3/xM2ekCiiWUxGRMRH1
+JbsljR5c2y9UoBHNjOilQWnPHeqGa4hh4nTUctdkKG9Jd3OsqYRLFnc2IQswTjtmYZMwCjMBBOCI
+qSZeuObX3Au8FrZk3paHEK6JtUrc2ZZkNW8GOmzICYUDvMNv/6lqRGMd9y7AnRrpXIZR+aQC+HAc
+nNby3p8+frz2rS7BE2Zieca/27rmTwHbu+5cGpfoxTTpDIgx6YPgHAGxKZc7tTFPx1WVUOkUBHgo
+e33x7or0AV/LfHDxg23U981HGaE6Hl+wTMIBVODXdHCBm2/AkK+m4B3CnjMOxGwurEyVIWcY4hnB
+gjvCVBDssICFzWDu9WM3dkMhmqWbONXeopGgcbpeXm6kUVXYqQmXs3Af3MXfBz1WLd5zherWc/OD
+O/YrtiRWAiV0WNXB3LedNOvzae9F1cEZMgc2u9gfXosSlVHTnFe6iaA9FZyh4mnHeXln3b0d1jFl
+z0W4///6j0jv16VmDHcKljM/IpTwxuiRgIHewfDovVG6/Bvju/Fg5CgiczhxGY4elK3YJ21TJ/kR
+CmLhncjC0v0bbTW639mHDaNRvIHnDt0kcb3xPR7tiNzZEXVfNA5ebJ4f+q96dCbx6kA7zmZ0Q5vJ
+9n2WmDiCWE8ZZLUXqpzcOPRektOB8JVLfTS/X0AMJIq5E2vqg1nVv7ftwb8dDzVS++vNV9trOnCR
+Y2cHNFJWIjRaXNlVNQttBfU2FrAx3bAqChl3428QIJ0GfkT2yz3GBbqEGnsvI2kOLMzEbjbCMDBQ
+nZdupNzzgCTWty+iu8rKt/JgrcNqi8rklF0D4ESnng203S6sHbXWdoQ+eWY0Vq7Bna0nenKFPcjG
+3aM2pLTWthC9tkQFpvAvtq6KmTP8mtc0zdjd/RbDFN3HyvL60hasjHN4CARCPz11LS6AEI6C0BLQ
+pBwBkHjDnIMkrX0Fdqrf/0EHCg6gtBFJH177/Bi7ayOEc8JXnHDekfyfB1ecLhHaPrCjcQxzWTsB
+nr5LmC1DJrJQEHb/Gru9tQHujPTDWqH8ddznzH+rZi6oV9cI/1NjJkpG4XUdODnVmRoR9AFAo4qD
+iuxYp4IcqErZtZkzWfBXS97acP9ZDQgNHOGZASZfFh9HP4R7R6hMLiAD2BZ1rrQ1t3lS1ucBMh3p
+kmqABaIrie4BH0wlDAYEywsUX7VpPfOS3Bbvn8b6tflxmfBAIJYKf/sBN2uTEQgTFZ/2a3hUEOKt
+lShfyYeDNQkZUPQdP8RCrcSff9XnlEEDVriWuBHzubvysot88qVr7EWFQRXTtbGLrXhygOR6mny0
+4Hqh6XMTC8Ll4g33AgWrQFYnRGzg2P7TLIr7DU6uqIgBPuowGBjM+Sy8ZUeh2ZPjKGOE8cy6u9/p
+59MLEapsaZhrVzQeY/1wsFh84PSJr7NlJOYv4+VK9OZ0347IxkCJkh5vAdIAtct8NF+RWaiHCZFp
+bCamDnRHOozsV1aVYWUgbb9LbdNG7wwsfIdP63LkOkH48M3E1HufjdMvBcPwPvPztt05c9ndXl8d
+MUO2jcAI2gCllW60XtZLLU2uctT4fyU0w3e7rLvRwpEccDIQ/V9OZEopDA3rFUK6j5/CenA7wRHW
+G5hdvPiEy2QbqS/HN1fg5LQMAdLWIqLB6BhVzAarSrjnAOfZaGy9KX7X35zwGwQ5t7Yqs6Bz6brF
+JcvJxQvTwIyJpDQ2zklbIvHHZg0j/u6iWX4ilRmjUgtJQXozfmljoAAKwBLKvVir/q+gKQR4yuHb
+tsK7ErHXLiqZais3MsX7tv1VSRtQCqOW5Le6OE3GTfx8TCeiJu1Ie1h3/dVxPkeh4+Lcbjwrjkir
+oj5KZrZZ4b6Hc9FUMICR+aYSUarVIXkv/LnBME4szsKQjdMmW4POm1fvWi03t74QJoQPpasY1btq
+3SWhIIl9BJX9yNLFfl8v9eEjRTDXN30wKR1po8DDu6CaSAa5ViUFNE89C5V706+KwueRPUQ7aLs4
+Fff9pSQD5tDE6rtET3bPmOai4tjRNXc4qG2sUyXIttdzVxkMWhtVi2Yo0t/mzLl5rdPd9fRi7uh8
+cKKKSbOiZ6s1WI4T/Z3Bnh3zL0xOlKnUCOePY5w82M4E7NAvDU31FM7xc7KZU5nxrRO8sgWImQTX
+SF2g8/6fBIKRskeSv21hyd/kBAI+DeJ9WKIBEycSP9gWU75ogcMEs9OHQPSHrKt8aEAo6MU5mpBG
+aDhbe0yZd5qgLY/wVf/SQTI+EByQVjl/UwribFiFPBun3ta3KuWM5wjE8/3Jyrt5agpF/hbjbjWk
+6t7iFk2NOe5/Sa7v5ExcPsNKN4Qd1lJ7fN9UY5keUAJjbd2jsB4jKMrePDRWw8WqP9011HXuh23u
+VG7h0N/sEAhqO0TWPWVtMUTSKboMVwWA6FzuPMm6kICt0gep3L1JTvMxRFxgtvBz8WouPKgIprkT
+PxlpTu2WDy5dBFar565ymCuwFakI9iE50195xZ9AlajSNe1eanuHRkQr8pFSsvFoxK2k7ga5EFw/
+fJDJUPjVxE+zEZtWBaT+PinbciZB2nu8lAVHVRzp1gvhOAXB5FxPIBKu8uxXFfLEmIin146AYR5u
+3465olGwtb5GKzITKpUwlAoHRtKTUvT+9QLf4+O+ZVGxxlSTBC/bMIGlrwjEp7db9AztNbp/UFfG
+i18ME29Yymp1qtMzxnRZCY3vtYHbulMOhZ27/q6R7sgJuBAqfB9YQ8oqeaqdWvyVgXl1AC9kK9Mv
+kWOregjTPVj4udILC/aiUPTSkYVGFa9nY67qn/pdBTyhVb51VHyHrXGBdFIU7luxynZMd5XuQNXB
+ADrUizSS2wwi47TdWamHYeSYA3+uZlmChkv9VnP2B5YWv7i76WpWyS/BwQxqA3OjQFhbZzE/7+Ep
+yf/6Idi3hRzYvKfDD+LTc+JSQzyDQ5uPvYw0l5+EVsavzqrEK3GRiyPfHxsLI4vgYrSvE+W3zMJc
+4uEos0MzlyKEbZP0vbGMQ3Qp6hBsupZZLo8oS0DBRgDa2sVa5yOUM4wIwW7k2M6Qt7Hy2ocWUZhq
+4bZtZ2OqzjQWGPZsRmc1b2XhAYP5ETrNwTsLwIaqb50jaZTlflvmY+ylWi9cqU7qDeuSwvWeP9xv
+/O0SuqTaYLI4s564ZzgcgX0SOQRBqdIRgubP2yePgGv1WH9S6xMG1Qx54avYf+WGiAKL+08KUCfo
+R0JkKfGV5a8UjdaNvENjU1eZ+iEdnKyq+I0mMTGzUr/WBpNPhiBjb5+m67eGN/9iPNGIVkzrxL76
+7B2P75eHMIaLu6oIBaFvtPQ+2NkAVLWPu2YBLjNKRhD/oinuSA4c/mhHwc/Wj10nhimbwomKJGiY
+Q31bAqfIih3B676oOwKiBKXdJPo1g4XKhJWOwoZXk6ApZ/SYJRi/mix7xG+oFci6zmKjmenlRHmX
+TBOq7/+ksS/MlC2FvwAQxpHCtx9uJvX/H7+odHUMGKieTk64/HyOqpLzyBpAFVwGR8+qyRP0XxyN
+voa3OfNJv6TA/yD6CI/K4aPcgbBgtpvGb6WDtDrqolQ3/8WcvBRKSO6TfVTHT9mM6qZXJDCoSM6t
+Dv/sVv1QRc9jS9r72WXsh/hPXfByGrw3llcWdi0GSUshsccNvFRjsR1gNddHfQltlDoIr109Ax60
+cLNL8UB6QMvUKLVk2bN76IXSepqLSJuYxUIdINdrHJwFZ18SGaQu5cVTcSXt3sVoBgzj9zrzu8tF
+Ku5rqCBqFdbq2BBHSFP2QiSZdrh4yNQe+54QpNmPHhaT/n1xGJMv7GBop3LaKs/yxJyNm6H+7JL5
+WshRRzcta7DGBTSM9Lzh13CiJhllSx1bQmQvwBYI0ffXGGI1YNbMkrnxd0dMVHDZ3pazJ3uoDOK7
+y6gq45HsEHa1L5fmOMUCRFe7FM96jZvp/kZzSERLpzbPS0lYNYmjl2tP5/Jr3F2jgzQAflxmsPV9
+Ax3/NKCxMHCM0Nxt08PVAph6nVN6Z0KFDm3HKI17Eo1T3bun3gW9FyiNaMugD71tKsKzbCwQJPO1
+fwiBjm8ftqRMw4HPYDtxLe6fDwhagoHlIjTvtLSbfqbYZ1tOVpzMvfZuREm8o+vl6IGAS497ys5W
+QMwKjKcJwjuv+eP52kIW3RuRRAdHImK9YIaIMKctIoWHXMFU9ySe6pW7fPepmE+Q8Umgf5rjHPEG
+GGwL1VmIxXBVE+UclI3pINPGkZZO1SCcEDba2e9ZDh+F/vt68SRM2aNVXxcNZ3guwOhw9rrArNZv
+GA7MfWCzlNWgB43IC9SsDU28q6Je1AtiNEwP82/fRQyjIEgVIweTYIypQm/v68rUjc0WPdim6csI
+mW9vz4zGePU1KlNxsSwiNdsAGznIbzhXi5OocFlMOpzTnuNa8ML+jev5+gaJi1J/Q5bwQNmcp/r5
+MDGXXiM7QbDJ0Fx0yXpyugGMQXF5qHOg2QSd/yrUQHYUAxdVGuY8f/K0Vvu5Xn4bgy8L89Vp19KI
+aRJLYGcJl/6dbqyvTrcP2r80dv/WpupF1dI75zGgtRK4xU+4/FMeOd6IsAbYmmxcV8Z5t6NRoQt3
+xNKPO646MFUgyQMiAQGWvZWt8oJ2zT9nP4IdCyKKqGxIl+JNSbZcuKBaJOW4e4VSBDF+8FgMK9Ux
++nJnW/btTaCCKF8hOfdKnGikt88Z9HjJ2BYiMxil3iieiPUspFAVQ247frS5Qf4ogfX464O2rMyY
+VtClPB/TBg05xX/gSYXN+HjkV0wrk7J+1rocDAm4hhM9QdXkgo2ddcsdxETDp4JZrz0qjoaNUWFp
+fgu+/VQmT/75P2C4FzjleJ8FtGfGoH64V82FuX70ehP/HlzwXFmV+ClGpwy7dBGgvZd9TfF5H1g+
+qIum+wCrJY3KDvROrcNypF9yueHL3Rzk3Z6uYLhPN2qoOV33FRi8vDnVJfM0IklRgZVydOwATQp7
+TO8hhLLtYKUoh/OUbvvwckzp5njm++KlnQbyPlQ1v7vFn09Lj+nTAxGhafiOVGwRYooftgmcL51H
+PsDgWZYGGMB/PHbTRsnEIMSoQUPKRPKLhnKNZkSlaE4WURWZQ/dFRjFlbCqRz9uD/nFwcCiT73uj
+UayKFRI20P7kv/8IXZDv3+KZMxBGZEGeQNGYlK2N43GGuB4CcTy1Xl15tn//mYCOYIQzRpMMJ+Wt
+rqEuuVMb2S4roEtDkiwoS2XLswb6AkNbmwUK8fnEI5/EXmN5V+iOA5etu7GjgDBtu+z6CTy+9O8K
+lP5FyUn7wj8GBnQzdJ/VikwpCIS8+im9MU4KNVghqr67Am8r5fENIVzEVpH9pkmbWMPbzTQcqqHF
+0yI99tzpnWcOojoDUywj2mh6GU9qIeA6s9o3aQ0Fxj95t0+z4ILLKhMK7BmoFx12kJDGl4UEFgYJ
+vnYrEx0lSwAu41zA2a27eVJjBWEod+WPTFyU0bwmZfDtaDeRtyYcGS67TM3QS7nD0+vRalDFBZSj
+k5HoIFAg/rWs1RkvaRfHNFzIynj/dtC6SVxTUSnuTS8TbYxJWLl8dBT1b28MyEpaxh9rgZx+O9hd
+n4+jNDLsVMQzDJXV+fOPTf2mrMDKRJ9LA3HDVXIY+HZ+KttVghfwXfeEJCyIZF3nwUYBlfUKKTR2
+5tzLiqwZ43C+Sx4p9CxCGlDhxZ6CNC7Bxm592yqAw6nA+5RzfGI9DSEGj6uzxTqq3YiSj9GMMgrK
+RN9PE7HeAWFZkBNen+PDXjyAN/dRb7hlieJZ7ElL/kxYKyfP2Dsmarf6tR4zV6c5Q5AZIqC4Nl5k
+9zG54rvJiLBeBxHaIUjom0ofGTaM9xgd57vgmVMbYwqM35EioaC0aa4oCxTdI5Ez+TjNetPzp2dQ
+l+yd1WMyiHNw79fctO477ReQkDhtG5cHiPsj2WtJfueCDyvhGvhJ8AITlUh48jr7qJx4hWMD63WV
+i59hleUvInXC2KyTukJAjlLwXXKb1ARKXG1vdeG9Xd2BtLsTwX6EbiwBwJQgfF1TfJ339OJuSvX0
+1++9+CTfkPyeWneld4TCxNlDMXoDk0Odyqo0GuS6G4p4VOgyuvZ2SoxKb2cMjVwA5HNo4kT0O77O
+UUAJzB9xhatWpD6jJ81S9fqnzJPIE6hmsMdieW2/wYXGVo1rI1EyR7I8PszuhlwZD5q2sZsHYuZN
+QcsGIVWd/8fMRX23U2gB5LDiVMp2BKvBqxFejSZ6lgFkk5XaGqrg8ZA34wpvZITvw5CWJR2aWACU
+/v7Vff/ykshv5Xs3H5ZEkfOBrelqnAG7M537y2mSh8qbCCO8aXKxemmSZj4MinaWp4MQQKLgbLzb
+AEsGgCcWtLImaGFNw6bPow7kQoVAWNRw7ezf8j+h5XWYuySPBKBlU1yWZnZjj7mF7b5TUIoaXPyo
+mfNoM3CrPwVl1EWMMIRptnrR4U1KoA8GvnrNUrZoDzX0I/Kf0g/NBAAPDZTUI1bN70S6+MvoqhgI
+LZCVffwSZJFN25PbwRTlScjVdmlywnmQzXwPODc7RzS/R8ICOP2vFeXHwLn5LrPKtsgCRPLDCIBx
+L0wJ4FTJFVy+tRE8QXF0kC51QBVXDuLGsniAGmxTlNozaODde/JlQ5+agTlglDfb4TknEWmUko76
+2pi4QSrHTRKT856NvIhH0vBhosT7OJ+oGs4ePd/bGpTXRF4klTQta33lCuDVx2O94+xlYTodz9av
+BUI8tuELow96xjnPCUBQDyf8c/9R5fvgBRycz0oaE15vSuNCyuzUp04vp95EZaVNhkCcYn7BpWlm
+up2oqZ14kxFVYxkVDSQ/5AW//E1zK5/5UaUHiSU7iquuafoFHt41MVNwBnNOPopvbEXgCGQCL3ir
+mAWLAL7g6/g2ybn8rFSzeZ+v199Sk55606kWVZF3vJ9TBgaYEu7pYNfkYXLqFe3msFT4PiAzHaaG
+cf9v9/3KhhDnvkczZw3V2s8PTU61+7MTupdGiP28YGyqy3BHKiDyYvT/HFoXo0120I0Ixbzycx7+
+fpgPVSeJ3FqZ1lv6Zw6Q//+KaNXKdvY/VKGMqCqNyCmIhbGKvycguRHFMCaFpxUswFXl9id5Vhsw
+XzRRtCz2Fhx128gsRo09nrE8QgPRiyDqKrFLsBPFMUSWu5/+jGCQ1GxgA/GlYcntpYSc7a/FSo4H
+GdAhR62ViGm8Fyuv3cOzcgLsgUSJsYlOcYyh1NLSGz/BU0k9SpLPpPmS58AzqYWnfqMWFruUMsDV
+MsuxD4z84rx/PMJi9SrFIJAjaA1AyNEaw5tO2bYVncvkrWaKpZ0d9uO2rYF5FOixHgZ64GM/nYnH
+gYQzccQD198FBslX6tPRkdglbaITnn67oVBJYfHDrojogj9k6A3Pi86RTkRFu0PAQhldEPgDLPv1
+NhWwv7/wSgw+mC6op1uCMvjMAKl3H5oVcfAvhrek20qkkWNbt2IbeZCqWnUpjuwcRzeDVy9jhu3O
+X6aY4+dy0qVQtRhc9PXDOJ7jwu8RBFRXvoECJY8R8Fq46KLaEJ6dn0iw4aa81pS8MhFHQEH2nFMA
+ZXi/mmHzryESC/vzyyfMQzekV/73RySi65ddEJMcz7X+U8dJOF+Id7bDmWD6CRZAXoAMZFikcdqu
+oQ0ObqDMeZdU0YIghivcDLv6kzHBQmIHzji0V3cQ1ydz6wXgbIqD/+K/GUcYZPw5/Wtspn1BmRmv
+n53JWpTT96WUJLDFHRYG6SnVCcld4gH79RRn8vO+fMifu8TMgAVFxksvBvotIlwdIWRSTcQQoCWw
+3wxNj7GiM6wSza40iIUm1/WSdajkubwm339XTlLyHwIoOkMglChaH5KLTmSC6t+Xi+sC1iymsT8V
+/JSw8nmmj1ueOg7uwSqg/c72rRbRH1CUS5tYJb3enARin8mw+3rZDQurZR8XYv/cjKjZz2iAwWzf
+BKWeHYHjhsDu/trouw1u9IVbauWAEUiIEaKxnZ1Jd97xXQIuWj+W4SnoFujHSJcQ9kHfeZlauog/
+ZPeGbR7JqQaMHNa2yQkmzf+wM8jx1EFM5LSIYDA5tImc81r0ym/6OX8RZvTU7b4Ob1Yl0gKmnozD
+5wHr0RARbsZEi/FdqWobe5L6oLi6csXxWnuZdl+iMxoKLhSLOKSVZeLabvr+UjTl00EW8rZrfozG
+TasnPUUx4iDVHCyudTvEN92NoQBttC3lgQon3aG4g1m0ADKOwUrHby3Sw485RFVNDcLKUwKD9QUc
+mECiuCpVTfaM62XntlDWYW40OkSsdO7e73bephAATNCfskI4pNV/AYjTBccBfWLphl2ufuN0gpLi
+zMIO3qAOexRl7chP6mJ7vc7FgREkYy0KdXbE+H9MZeKTLdqxt3EdRtU+4ZtST3DY+W9FLWa1dg/d
+Sm9Yrw+fISKSRvVcIsPZoRPZFec2LAF66UdDM3LS1dQR3MpAP/XYono1HqsosL6NpgbhpRqY7KcD
+ice+lUgw8ESI0Abh0DrInLNBkGT3Yw2ldnJooyzcKxSMHpXoldmTjDDTLzYUV05rD/TJWys2tB7Y
+3f2I2GGa2OWQII2pm2dDNaL5I+R+LUC7+ZPFLuGRa0R8Y/P+f/r1mRowOzrMVkQRQMEmPykyTnx7
+dhckyTMD+P2D53hSTLH4bPas6fp/N8UMsRl9qZuAYwMleVusv9hvZXKFj7NYGmQ8PZHiWPr0yjqV
+5icTg+qM2r/Dj+Y6b2b+n8chaBtFl8Eq1ixKxHN+7oj4WGbB0ZEyvJvc5/bu8YN32VtT8c3WJG9B
+B6Tt4C+ZMQhvV7TjgGK25gCXKVzeam98VjJ55TAH/ZKQulX/nbsR6MWjmyUkWlFf98q7icWaU38V
+0/+9jIttWAlwQlVH+32EYi75f0ttY+N5nTlpOgDcm9/9u7h03N5z3qJ7yiFhbp+uIw543OXj5PJt
+LUrFRmGNX9g4lxdyoTONgvTfZSddp+3c97kP+DJBsoPhlj1euTsvb+0A83YoVQFiv9TKi7gzNVU1
+Vc5FBq1MWlKDKiX0fWMFQwIMYg1PN91avjgEgTTn2kSJmxyV3A5M+9zRm9cTElfT7VAQvR3heP0T
+S0NJMA2LdN+9wD66yo9YuZqFO5jbvwoWufowX6YI4DUBh/6nTHCSTUUCFdRzjET9P/y9cVjkhwr+
+cIC3WPcGmSYdlEKUSc8ZDf2Og2a1dWKckFKBGTU4p9ptn6ebQ3e6jNIW7Jkzcc/mhbeod96oWTHR
+a5q8WUCcmkgdpKkJS7naPLjU3VgPSAiitnMBxavig65ETTCIP8hTPYDXyBLuuL7OR9V5InCQS/hj
+koxC8AsweMn7NbaUK7s6IbWiFczM+DCHTBfuERth5rl/+9I9EZ2DsNyFJwPRhVv1Y8pqydQrTZ/A
+AGwTfIeRG3x2Lq1BDFormw7KWuP40FDn2b4EslEdzz2h56G4sDozZpZbKtvTNiSLZ46FmnweJS9x
+v5W1CbBAnzxVikCVBl61AwkhyZIDj/XK3DnpmbzIUvTKWZSEaFAL4q5SfLV4As4cWQFO01neWBdF
+7P/KEfYvwhVDqBBDeGUAopv5qJeOmKUBwqUMmsXjrNwviVcPAmBZhSVSiBclc4lVpgoQp9PIeYQM
+PQAJQhOZwV06Js0uVPYexsIzoB53HNTqLWN2Xfxk4vmDNNGKYaTU31TbaMCLlq0cLAGoSfTWUZd5
+4TJZQn/IZMfegD+9lwCx8kvB0/UgyzWiUsj+QenykEVE3wpTf4l7QoaJhi8tWk3a9UmmDwVE3xqD
+tuAjlBYgFSf+M4cXjDxY7A/hCAfOcwBcjT9ievvgkoqO65ZhLTCKS+vGShVPfZv2wrQpTkGzj++r
+7HsPqModeBPvsRIknj9Qb8YD3t6B4RKKYEDaYumR4dDEagfAPzbwBpYpObZSvYA7kZBslkgkzhGQ
+GHInLJa431EkVIwKTwScHzlnK2fEC13AowsKMypF7hYINR6xcNYZifI/C4xmqFulmZwpztjXd6jn
+xcQusejbrW+/yLzraSASwEbc6UQLUWwFtRnhYn9I4bkih5XL0Xqxn38PVWG+0XzcA8LJK1vtzTPt
+RWwT0PwfB6xTg73VKarW89bSYqQGWoHdJ6b90rkeJgpob5FnbPQ8GIzA88nhL03tP0N076OClz5x
+MomWJD0HDW5UxLmr0sSxLX98rh9AIETS3FKcJJvUGuud0hfxoE0ZswKAI9F47lWmcUItVUsBa3Xp
+O049lLA8haXCUv/mjc5hPIvNc9GYC0/2RWaQ2VUi86eDc2ctEqEctRXS9VvRrOg+khhXJUpz/h6b
+KM/kpvxGcjuIRIkgPxYj8x/3ld5vAh02iMgGN1d1pfzKA28Ijh0wO93XIWcr4nkQ8EGZ7n3hSh6O
+D5WdoV2f+m2lM1FetaYKPIK6VEHZtyrNbU9qu7gDK+H4Im8kICWbisGKc7CeroWNwhWu+rO6Dfwm
+ydv+2kg8GdraLcVSaD+CY7H0ccarfb1c0LA/aU020mw00HAhoWksnnHqpEIm+wNfdPeZm+LKKpKr
+qeQ9RZkc7sSNQxUqpHDp0G7Z1yhbq6xshhzQkeAnSxJaPvdJu7r2ES1N5YtGcxpUmjSFErWYwzcJ
+AQ2uJcU8mU81ZYrCEtwtwBEsfHbpEn9fVkcbMCwlu8PblEHfxpJODXj5a1bKR+RCrdWGx7iE+LS5
+BKI2DMXu1eFX9i2bQUda7UAC8CXOObkGN5AZsOKAbtMqAVza9XMuM64BICyC8OsMlTLO80FnvN0O
+HN9YHsmPthvAdtdOxxRnxy9VZTsKcO83Ir2EE26Q4FohDWd02MsoYmLZP3x+MynSBOw6CP+hYPmc
+eMgAOvlRVjXUaPJkd0LX/hvtqPhESNwtp9AP7aiRHOFj09iYPjNpVHIWx1U+CMjX540wN6HYt+Wn
+7glPOYIenCEPckxcsqd3JfCzwzrw2dS1HIUPpMzVrtwbVaUa7GeNLBaa7BQlsfG/Cn8LCH4T8m4v
+aoA6C/dxb9wLgKHSDoEN9LwsYUZX8X9kgfCmXtNvwjYHnxsQ8+xK6l5GsAlC9BDGrD/ViceWuTgk
+JXCDviIehp+xANpfJm9eahQhQJEe1xJRUtT/UP77yIcx9CSpfdfYX2a05ftzQyRgxCgEgNOSfys3
+qdVzZi3Fbi572HJtdyUHAq1/f+y9Rwxw4zRcqtGNDq1PlG1nHD9lWP+MFTLbbLXEMbw81B2TnT/p
+wb4Z+G9NQIdlDUvocbhAtda9vZDDZfQhRF28nX9ZFgoAbfEJiZxzStQRZXrvl385wSd3vN8UwuuN
+qJGGujJk9Ml7GqSnXzKSPe6PM24OUuEEoHZUfXwVqePbwzjFOxDTV6e5jbmFlHu6AwAutO5j3vIK
+xuLvuzLRcyQxvl/E0/wmRzQSMsaLSaoS7GKozcONI7cMbAGquV+WIi9ROB4KYzex2HDx5lI8VJSo
+96lURgUVUg2jlayF+3hCrS4MNKUiiFlppqPHGAEX5VpdgvnT+B/cw3NGQGFntLdOR80deFsDCtZT
+EKLTt5b89hvfha/onaXsHiNw7UqRutWOADk2Ez+3UhHPmGzaJJAYc0y7bqutfHOdXdvWmrD2d+WM
+jKyTl6qB/q8OlTf1Iyfre4ApZ9tWAn1vINc0D+hUXEga2Fd7qrZl/PLbFfKvxoppVv20h86ibAmG
+Iomi/aYAcjWBBHOW4kacFfXadgqpRMZYahsDnQMusM9HsDEV2bvWXIh+qJ2TV7HvdAlimk1jmNK0
+SMIa/N/HyWghf07sP5vJMRpidYWYNu0rG17Wm9ph06esxIRuoEWMg8Ye4cDxTUpuNBLS3VJrSQ7F
+NLbb

@@ -1,547 +1,220 @@
-<?php
-/**
- * CWebApplication class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CWebApplication extends CApplication by providing functionalities specific to Web requests.
- *
- * CWebApplication manages the controllers in MVC pattern, and provides the following additional
- * core application components:
- * <ul>
- * <li>{@link urlManager}: provides URL parsing and constructing functionality;</li>
- * <li>{@link request}: encapsulates the Web request information;</li>
- * <li>{@link session}: provides the session-related functionalities;</li>
- * <li>{@link assetManager}: manages the publishing of private asset files.</li>
- * <li>{@link user}: represents the user session information.</li>
- * <li>{@link themeManager}: manages themes.</li>
- * <li>{@link authManager}: manages role-based access control (RBAC).</li>
- * <li>{@link clientScript}: manages client scripts (javascripts and CSS).</li>
- * <li>{@link widgetFactory}: creates widgets and supports widget skinning.</li>
- * </ul>
- *
- * User requests are resolved as controller-action pairs and additional parameters.
- * CWebApplication creates the requested controller instance and let it to handle
- * the actual user request. If the user does not specify controller ID, it will
- * assume {@link defaultController} is requested (which defaults to 'site').
- *
- * Controller class files must reside under the directory {@link getControllerPath controllerPath}
- * (defaults to 'protected/controllers'). The file name and the class name must be
- * the same as the controller ID with the first letter in upper case and appended with 'Controller'.
- * For example, the controller 'article' is defined by the class 'ArticleController'
- * which is in the file 'protected/controllers/ArticleController.php'.
- *
- * @property IAuthManager $authManager The authorization manager component.
- * @property CAssetManager $assetManager The asset manager component.
- * @property CHttpSession $session The session component.
- * @property CWebUser $user The user session information.
- * @property IViewRenderer $viewRenderer The view renderer.
- * @property CClientScript $clientScript The client script manager.
- * @property IWidgetFactory $widgetFactory The widget factory.
- * @property CThemeManager $themeManager The theme manager.
- * @property CTheme $theme The theme used currently. Null if no theme is being used.
- * @property CController $controller The currently active controller.
- * @property string $controllerPath The directory that contains the controller classes. Defaults to 'protected/controllers'.
- * @property string $viewPath The root directory of view files. Defaults to 'protected/views'.
- * @property string $systemViewPath The root directory of system view files. Defaults to 'protected/views/system'.
- * @property string $layoutPath The root directory of layout files. Defaults to 'protected/views/layouts'.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.web
- * @since 1.0
- */
-class CWebApplication extends CApplication
-{
-	/**
-	 * @return string the route of the default controller, action or module. Defaults to 'site'.
-	 */
-	public $defaultController='site';
-	/**
-	 * @var mixed the application-wide layout. Defaults to 'main' (relative to {@link getLayoutPath layoutPath}).
-	 * If this is false, then no layout will be used.
-	 */
-	public $layout='main';
-	/**
-	 * @var array mapping from controller ID to controller configurations.
-	 * Each name-value pair specifies the configuration for a single controller.
-	 * A controller configuration can be either a string or an array.
-	 * If the former, the string should be the class name or
-	 * {@link YiiBase::getPathOfAlias class path alias} of the controller.
-	 * If the latter, the array must contain a 'class' element which specifies
-	 * the controller's class name or {@link YiiBase::getPathOfAlias class path alias}.
-	 * The rest name-value pairs in the array are used to initialize
-	 * the corresponding controller properties. For example,
-	 * <pre>
-	 * array(
-	 *   'post'=>array(
-	 *      'class'=>'path.to.PostController',
-	 *      'pageTitle'=>'something new',
-	 *   ),
-	 *   'user'=>'path.to.UserController',
-	 * )
-	 * </pre>
-	 *
-	 * Note, when processing an incoming request, the controller map will first be
-	 * checked to see if the request can be handled by one of the controllers in the map.
-	 * If not, a controller will be searched for under the {@link getControllerPath default controller path}.
-	 */
-	public $controllerMap=array();
-	/**
-	 * @var array the configuration specifying a controller which should handle
-	 * all user requests. This is mainly used when the application is in maintenance mode
-	 * and we should use a controller to handle all incoming requests.
-	 * The configuration specifies the controller route (the first element)
-	 * and GET parameters (the rest name-value pairs). For example,
-	 * <pre>
-	 * array(
-	 *     'offline/notice',
-	 *     'param1'=>'value1',
-	 *     'param2'=>'value2',
-	 * )
-	 * </pre>
-	 * Defaults to null, meaning catch-all is not effective.
-	 */
-	public $catchAllRequest;
-
-	/**
-	 * @var string Namespace that should be used when loading controllers.
-	 * Default is to use global namespace.
-	 * @since 1.1.11
-	 */
-	public $controllerNamespace;
-
-	private $_controllerPath;
-	private $_viewPath;
-	private $_systemViewPath;
-	private $_layoutPath;
-	private $_controller;
-	private $_theme;
-
-
-	/**
-	 * Processes the current request.
-	 * It first resolves the request into controller and action,
-	 * and then creates the controller to perform the action.
-	 */
-	public function processRequest()
-	{
-		if(is_array($this->catchAllRequest) && isset($this->catchAllRequest[0]))
-		{
-			$route=$this->catchAllRequest[0];
-			foreach(array_splice($this->catchAllRequest,1) as $name=>$value)
-				$_GET[$name]=$value;
-		}
-		else
-			$route=$this->getUrlManager()->parseUrl($this->getRequest());
-		$this->runController($route);
-	}
-
-	/**
-	 * Registers the core application components.
-	 * This method overrides the parent implementation by registering additional core components.
-	 * @see setComponents
-	 */
-	protected function registerCoreComponents()
-	{
-		parent::registerCoreComponents();
-
-		$components=array(
-			'session'=>array(
-				'class'=>'CHttpSession',
-			),
-			'assetManager'=>array(
-				'class'=>'CAssetManager',
-			),
-			'user'=>array(
-				'class'=>'CWebUser',
-			),
-			'themeManager'=>array(
-				'class'=>'CThemeManager',
-			),
-			'authManager'=>array(
-				'class'=>'CPhpAuthManager',
-			),
-			'clientScript'=>array(
-				'class'=>'CClientScript',
-			),
-			'widgetFactory'=>array(
-				'class'=>'CWidgetFactory',
-			),
-		);
-
-		$this->setComponents($components);
-	}
-
-	/**
-	 * @return IAuthManager the authorization manager component
-	 */
-	public function getAuthManager()
-	{
-		return $this->getComponent('authManager');
-	}
-
-	/**
-	 * @return CAssetManager the asset manager component
-	 */
-	public function getAssetManager()
-	{
-		return $this->getComponent('assetManager');
-	}
-
-	/**
-	 * @return CHttpSession the session component
-	 */
-	public function getSession()
-	{
-		return $this->getComponent('session');
-	}
-
-	/**
-	 * @return CWebUser the user session information
-	 */
-	public function getUser()
-	{
-		return $this->getComponent('user');
-	}
-
-	/**
-	 * Returns the view renderer.
-	 * If this component is registered and enabled, the default
-	 * view rendering logic defined in {@link CBaseController} will
-	 * be replaced by this renderer.
-	 * @return IViewRenderer the view renderer.
-	 */
-	public function getViewRenderer()
-	{
-		return $this->getComponent('viewRenderer');
-	}
-
-	/**
-	 * Returns the client script manager.
-	 * @return CClientScript the client script manager
-	 */
-	public function getClientScript()
-	{
-		return $this->getComponent('clientScript');
-	}
-
-	/**
-	 * Returns the widget factory.
-	 * @return IWidgetFactory the widget factory
-	 * @since 1.1
-	 */
-	public function getWidgetFactory()
-	{
-		return $this->getComponent('widgetFactory');
-	}
-
-	/**
-	 * @return CThemeManager the theme manager.
-	 */
-	public function getThemeManager()
-	{
-		return $this->getComponent('themeManager');
-	}
-
-	/**
-	 * @return CTheme the theme used currently. Null if no theme is being used.
-	 */
-	public function getTheme()
-	{
-		if(is_string($this->_theme))
-			$this->_theme=$this->getThemeManager()->getTheme($this->_theme);
-		return $this->_theme;
-	}
-
-	/**
-	 * @param string $value the theme name
-	 */
-	public function setTheme($value)
-	{
-		$this->_theme=$value;
-	}
-
-	/**
-	 * Creates the controller and performs the specified action.
-	 * @param string $route the route of the current request. See {@link createController} for more details.
-	 * @throws CHttpException if the controller could not be created.
-	 */
-	public function runController($route)
-	{
-		if(($ca=$this->createController($route))!==null)
-		{
-			list($controller,$actionID)=$ca;
-			$oldController=$this->_controller;
-			$this->_controller=$controller;
-			$controller->init();
-			$controller->run($actionID);
-			$this->_controller=$oldController;
-		}
-		else
-			throw new CHttpException(404,Yii::t('yii','Unable to resolve the request "{route}".',
-				array('{route}'=>$route===''?$this->defaultController:$route)));
-	}
-
-	/**
-	 * Creates a controller instance based on a route.
-	 * The route should contain the controller ID and the action ID.
-	 * It may also contain additional GET variables. All these must be concatenated together with slashes.
-	 *
-	 * This method will attempt to create a controller in the following order:
-	 * <ol>
-	 * <li>If the first segment is found in {@link controllerMap}, the corresponding
-	 * controller configuration will be used to create the controller;</li>
-	 * <li>If the first segment is found to be a module ID, the corresponding module
-	 * will be used to create the controller;</li>
-	 * <li>Otherwise, it will search under the {@link controllerPath} to create
-	 * the corresponding controller. For example, if the route is "admin/user/create",
-	 * then the controller will be created using the class file "protected/controllers/admin/UserController.php".</li>
-	 * </ol>
-	 * @param string $route the route of the request.
-	 * @param CWebModule $owner the module that the new controller will belong to. Defaults to null, meaning the application
-	 * instance is the owner.
-	 * @return array the controller instance and the action ID. Null if the controller class does not exist or the route is invalid.
-	 */
-	public function createController($route,$owner=null)
-	{
-		if($owner===null)
-			$owner=$this;
-		if(($route=trim($route,'/'))==='')
-			$route=$owner->defaultController;
-		$caseSensitive=$this->getUrlManager()->caseSensitive;
-
-		$route.='/';
-		while(($pos=strpos($route,'/'))!==false)
-		{
-			$id=substr($route,0,$pos);
-			if(!preg_match('/^\w+$/',$id))
-				return null;
-			if(!$caseSensitive)
-				$id=strtolower($id);
-			$route=(string)substr($route,$pos+1);
-			if(!isset($basePath))  // first segment
-			{
-				if(isset($owner->controllerMap[$id]))
-				{
-					return array(
-						Yii::createComponent($owner->controllerMap[$id],$id,$owner===$this?null:$owner),
-						$this->parseActionParams($route),
-					);
-				}
-
-				if(($module=$owner->getModule($id))!==null)
-					return $this->createController($route,$module);
-
-				$basePath=$owner->getControllerPath();
-				$controllerID='';
-			}
-			else
-				$controllerID.='/';
-			$className=ucfirst($id).'Controller';
-			$classFile=$basePath.DIRECTORY_SEPARATOR.$className.'.php';
-
-			if($owner->controllerNamespace!==null)
-				$className=$owner->controllerNamespace.'\\'.$className;
-
-			if(is_file($classFile))
-			{
-				if(!class_exists($className,false))
-					require($classFile);
-				if(class_exists($className,false) && is_subclass_of($className,'CController'))
-				{
-					$id[0]=strtolower($id[0]);
-					return array(
-						new $className($controllerID.$id,$owner===$this?null:$owner),
-						$this->parseActionParams($route),
-					);
-				}
-				return null;
-			}
-			$controllerID.=$id;
-			$basePath.=DIRECTORY_SEPARATOR.$id;
-		}
-	}
-
-	/**
-	 * Parses a path info into an action ID and GET variables.
-	 * @param string $pathInfo path info
-	 * @return string action ID
-	 */
-	protected function parseActionParams($pathInfo)
-	{
-		if(($pos=strpos($pathInfo,'/'))!==false)
-		{
-			$manager=$this->getUrlManager();
-			$manager->parsePathInfo((string)substr($pathInfo,$pos+1));
-			$actionID=substr($pathInfo,0,$pos);
-			return $manager->caseSensitive ? $actionID : strtolower($actionID);
-		}
-		else
-			return $pathInfo;
-	}
-
-	/**
-	 * @return CController the currently active controller
-	 */
-	public function getController()
-	{
-		return $this->_controller;
-	}
-
-	/**
-	 * @param CController $value the currently active controller
-	 */
-	public function setController($value)
-	{
-		$this->_controller=$value;
-	}
-
-	/**
-	 * @return string the directory that contains the controller classes. Defaults to 'protected/controllers'.
-	 */
-	public function getControllerPath()
-	{
-		if($this->_controllerPath!==null)
-			return $this->_controllerPath;
-		else
-			return $this->_controllerPath=$this->getBasePath().DIRECTORY_SEPARATOR.'controllers';
-	}
-
-	/**
-	 * @param string $value the directory that contains the controller classes.
-	 * @throws CException if the directory is invalid
-	 */
-	public function setControllerPath($value)
-	{
-		if(($this->_controllerPath=realpath($value))===false || !is_dir($this->_controllerPath))
-			throw new CException(Yii::t('yii','The controller path "{path}" is not a valid directory.',
-				array('{path}'=>$value)));
-	}
-
-	/**
-	 * @return string the root directory of view files. Defaults to 'protected/views'.
-	 */
-	public function getViewPath()
-	{
-		if($this->_viewPath!==null)
-			return $this->_viewPath;
-		else
-			return $this->_viewPath=$this->getBasePath().DIRECTORY_SEPARATOR.'views';
-	}
-
-	/**
-	 * @param string $path the root directory of view files.
-	 * @throws CException if the directory does not exist.
-	 */
-	public function setViewPath($path)
-	{
-		if(($this->_viewPath=realpath($path))===false || !is_dir($this->_viewPath))
-			throw new CException(Yii::t('yii','The view path "{path}" is not a valid directory.',
-				array('{path}'=>$path)));
-	}
-
-	/**
-	 * @return string the root directory of system view files. Defaults to 'protected/views/system'.
-	 */
-	public function getSystemViewPath()
-	{
-		if($this->_systemViewPath!==null)
-			return $this->_systemViewPath;
-		else
-			return $this->_systemViewPath=$this->getViewPath().DIRECTORY_SEPARATOR.'system';
-	}
-
-	/**
-	 * @param string $path the root directory of system view files.
-	 * @throws CException if the directory does not exist.
-	 */
-	public function setSystemViewPath($path)
-	{
-		if(($this->_systemViewPath=realpath($path))===false || !is_dir($this->_systemViewPath))
-			throw new CException(Yii::t('yii','The system view path "{path}" is not a valid directory.',
-				array('{path}'=>$path)));
-	}
-
-	/**
-	 * @return string the root directory of layout files. Defaults to 'protected/views/layouts'.
-	 */
-	public function getLayoutPath()
-	{
-		if($this->_layoutPath!==null)
-			return $this->_layoutPath;
-		else
-			return $this->_layoutPath=$this->getViewPath().DIRECTORY_SEPARATOR.'layouts';
-	}
-
-	/**
-	 * @param string $path the root directory of layout files.
-	 * @throws CException if the directory does not exist.
-	 */
-	public function setLayoutPath($path)
-	{
-		if(($this->_layoutPath=realpath($path))===false || !is_dir($this->_layoutPath))
-			throw new CException(Yii::t('yii','The layout path "{path}" is not a valid directory.',
-				array('{path}'=>$path)));
-	}
-
-	/**
-	 * The pre-filter for controller actions.
-	 * This method is invoked before the currently requested controller action and all its filters
-	 * are executed. You may override this method with logic that needs to be done
-	 * before all controller actions.
-	 * @param CController $controller the controller
-	 * @param CAction $action the action
-	 * @return boolean whether the action should be executed.
-	 */
-	public function beforeControllerAction($controller,$action)
-	{
-		return true;
-	}
-
-	/**
-	 * The post-filter for controller actions.
-	 * This method is invoked after the currently requested controller action and all its filters
-	 * are executed. You may override this method with logic that needs to be done
-	 * after all controller actions.
-	 * @param CController $controller the controller
-	 * @param CAction $action the action
-	 */
-	public function afterControllerAction($controller,$action)
-	{
-	}
-
-	/**
-	 * Do not call this method. This method is used internally to search for a module by its ID.
-	 * @param string $id module ID
-	 * @return CWebModule the module that has the specified ID. Null if no module is found.
-	 */
-	public function findModule($id)
-	{
-		if(($controller=$this->getController())!==null && ($module=$controller->getModule())!==null)
-		{
-			do
-			{
-				if(($m=$module->getModule($id))!==null)
-					return $m;
-			} while(($module=$module->getParentModule())!==null);
-		}
-		if(($m=$this->getModule($id))!==null)
-			return $m;
-	}
-
-	/**
-	 * Initializes the application.
-	 * This method overrides the parent implementation by preloading the 'request' component.
-	 */
-	protected function init()
-	{
-		parent::init();
-		// preload 'request' so that it has chance to respond to onBeginRequest event.
-		$this->getRequest();
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

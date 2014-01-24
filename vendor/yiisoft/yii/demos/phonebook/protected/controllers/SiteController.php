@@ -1,143 +1,69 @@
-<?php
-
-class SiteController extends CController implements IWebServiceProvider
-{
-	/**
-	 * Declares the 'phonebook' Web service action.
-	 */
-	public function actions()
-	{
-		return array(
-			'phonebook'=>array(
-				'class'=>'CWebServiceAction',
-				'classMap'=>array(
-					'Contact',
-				),
-			),
-		);
-	}
-
-	/**
-	 * This is the default action that displays the phonebook Flex client.
-	 */
-	public function actionIndex()
-	{
-		$this->render('index');
-	}
-
-	/**
-	 * This action serves as a SOAP client to test the phonebook Web service.
-	 */
-	public function actionTest()
-	{
-		$wsdlUrl=Yii::app()->request->hostInfo.$this->createUrl('phonebook');
-		$client=new SoapClient($wsdlUrl);
-		echo "<pre>";
-		echo "login...\n";
-		$client->login('demo','demo');
-		echo "fetching all contacts\n";
-		print_r($client->getContacts());
-		echo "\ninserting a new contact...";
-		$contact=new Contact;
-		$contact->name='Tester Name';
-		$contact->phone='123-123-1234';
-		$client->saveContact($contact);
-		echo "done\n\n";
-		echo "fetching all contacts\n";
-		print_r($client->getContacts());
-		echo "</pre>";
-	}
-
-	/**
-	 * This method is required by IWebServiceProvider.
-	 * It makes sure the user is logged in before making changes to data.
-	 * @param CWebService the currently requested Web service.
-	 * @return boolean whether the remote method should be executed.
-	 */
-	public function beforeWebMethod($service)
-	{
-		$safeMethods=array(
-			'login',
-			'getContacts',
-		);
-		$pattern='/^('.implode('|',$safeMethods).')$/i';
-		if(!Yii::app()->user->isGuest || preg_match($pattern,$service->methodName))
-			return true;
-		else
-			throw new CException('Login required.');
-	}
-
-	/**
-	 * This method is required by IWebServiceProvider.
-	 * @param CWebService the currently requested Web service.
-	 */
-	public function afterWebMethod($service)
-	{
-	}
-
-	/*** The following methods are Web service APIs ***/
-
-	/**
-	 * @param string username
-	 * @param string password
-	 * @return boolean whether login is valid
-	 * @soap
-	 */
-	public function login($username,$password)
-	{
-		$identity=new UserIdentity($username,$password);
-		if($identity->authenticate())
-			Yii::app()->user->login($identity);
-		return $identity->isAuthenticated;
-	}
-
-	/**
-	 * Returns all contact records.
-	 * @return Contact[] the contact records
-	 * @soap
-	 */
-	public function getContacts()
-	{
-		return Contact::model()->findAll();
-	}
-
-	/**
-	 * Updates or inserts a contact.
-	 * If the ID is null, an insertion will be performed;
-	 * Otherwise it updates the existing one.
-	 * @param Contact contact model
-	 * @return boolean whether saving is successful
-	 * @soap
-	 */
-	public function saveContact($contact)
-	{
-		if($contact->id > 0) // update
-		{
-			$contact->isNewRecord=false;
-			if(($oldContact=Contact::model()->findByPk($contact->id))!==null)
-			{
-				$oldContact->attributes=$contact->attributes;
-				return $oldContact->save();
-			}
-			else
-				return false;
-		}
-		else // insert
-		{
-			$contact->isNewRecord=true;
-			$contact->id=null;
-			return $contact->save();
-		}
-	}
-
-	/**
-	 * Deletes the specified contact record.
-	 * @param integer ID of the contact to be deleted
-	 * @return integer number of records deleted
-	 * @soap
-	 */
-	public function deleteContact($id)
-	{
-		return Contact::model()->deleteByPk($id);
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+FUUGzNMdilweYtm=

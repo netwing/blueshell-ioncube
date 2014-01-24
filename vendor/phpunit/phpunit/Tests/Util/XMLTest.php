@@ -1,328 +1,122 @@
-<?php
-/**
- * PHPUnit
- *
- * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @package    PHPUnit
- * @author     Mike Naberezny <mike@maintainable.com>
- * @author     Derek DeVries <derek@maintainable.com>
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      File available since Release 3.3.0
- */
-
-/**
- *
- *
- * @package    PHPUnit
- * @author     Mike Naberezny <mike@maintainable.com>
- * @author     Derek DeVries <derek@maintainable.com>
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      Class available since Release 3.3.0
- */
-class Util_XMLTest extends PHPUnit_Framework_TestCase
-{
-    public function testAssertValidKeysValidKeys()
-    {
-        $options   = array('testA' => 1, 'testB' => 2, 'testC' => 3);
-        $valid     = array('testA', 'testB', 'testC');
-        $expected  = array('testA' => 1, 'testB' => 2, 'testC' => 3);
-        $validated = PHPUnit_Util_XML::assertValidKeys($options, $valid);
-
-        $this->assertEquals($expected, $validated);
-    }
-
-    public function testAssertValidKeysValidKeysEmpty()
-    {
-        $options   = array('testA' => 1, 'testB' => 2);
-        $valid     = array('testA', 'testB', 'testC');
-        $expected  = array('testA' => 1, 'testB' => 2, 'testC' => NULL);
-        $validated = PHPUnit_Util_XML::assertValidKeys($options, $valid);
-
-        $this->assertEquals($expected, $validated);
-    }
-
-    public function testAssertValidKeysDefaultValuesA()
-    {
-        $options   = array('testA' => 1, 'testB' => 2);
-        $valid     = array('testA' => 23, 'testB' => 24, 'testC' => 25);
-        $expected  = array('testA' => 1, 'testB' => 2, 'testC' => 25);
-        $validated = PHPUnit_Util_XML::assertValidKeys($options, $valid);
-
-        $this->assertEquals($expected, $validated);
-    }
-
-    public function testAssertValidKeysDefaultValuesB()
-    {
-        $options   = array();
-        $valid     = array('testA' => 23, 'testB' => 24, 'testC' => 25);
-        $expected  = array('testA' => 23, 'testB' => 24, 'testC' => 25);
-        $validated = PHPUnit_Util_XML::assertValidKeys($options, $valid);
-
-        $this->assertEquals($expected, $validated);
-    }
-
-    public function testAssertValidKeysInvalidKey()
-    {
-        $options = array('testA' => 1, 'testB' => 2, 'testD' => 3);
-        $valid   = array('testA', 'testB', 'testC');
-
-        try {
-            $validated = PHPUnit_Util_XML::assertValidKeys($options, $valid);
-            $this->fail();
-        }
-
-        catch (PHPUnit_Framework_Exception $e) {
-            $this->assertEquals('Unknown key(s): testD', $e->getMessage());
-        }
-    }
-
-    public function testAssertValidKeysInvalidKeys()
-    {
-        $options = array('testA' => 1, 'testD' => 2, 'testE' => 3);
-        $valid   = array('testA', 'testB', 'testC');
-
-        try {
-            $validated = PHPUnit_Util_XML::assertValidKeys($options, $valid);
-            $this->fail();
-        }
-
-        catch (PHPUnit_Framework_Exception $e) {
-            $this->assertEquals('Unknown key(s): testD, testE', $e->getMessage());
-        }
-    }
-
-    public function testConvertAssertSelect()
-    {
-        $selector  = 'div#folder.open a[href="http://www.xerox.com"][title="xerox"].selected.big > span';
-        $converted = PHPUnit_Util_XML::convertSelectToTag($selector);
-        $tag       = array('tag'   => 'div',
-                           'id'    => 'folder',
-                           'class' => 'open',
-                           'descendant' => array('tag'        => 'a',
-                                                 'class'      => 'selected big',
-                                                 'attributes' => array('href'  => 'http://www.xerox.com',
-                                                                       'title' => 'xerox'),
-                                                 'child'      => array('tag' => 'span')));
-         $this->assertEquals($tag, $converted);
-    }
-
-    public function testConvertAssertSelectElt()
-    {
-        $selector  = 'div';
-        $converted = PHPUnit_Util_XML::convertSelectToTag($selector);
-        $tag       = array('tag' => 'div');
-
-        $this->assertEquals($tag, $converted);
-    }
-
-    public function testConvertAssertClass()
-    {
-        $selector  = '.foo';
-        $converted = PHPUnit_Util_XML::convertSelectToTag($selector);
-        $tag       = array('class' => 'foo');
-
-        $this->assertEquals($tag, $converted);
-    }
-
-    public function testConvertAssertId()
-    {
-        $selector  = '#foo';
-        $converted = PHPUnit_Util_XML::convertSelectToTag($selector);
-        $tag       = array('id' => 'foo');
-
-        $this->assertEquals($tag, $converted);
-    }
-
-    public function testConvertAssertAttribute()
-    {
-        $selector  = '[foo="bar"]';
-        $converted = PHPUnit_Util_XML::convertSelectToTag($selector);
-        $tag       = array('attributes' => array('foo' => 'bar'));
-
-        $this->assertEquals($tag, $converted);
-    }
-
-    public function testConvertAssertAttributeSpaces()
-    {
-        $selector  = '[foo="bar baz"] div[value="foo bar"]';
-        $converted = PHPUnit_Util_XML::convertSelectToTag($selector);
-        $tag       = array('attributes' => array('foo' => 'bar baz'),
-                           'descendant' => array('tag'        => 'div',
-                                                 'attributes' => array('value' => 'foo bar')));
-        $this->assertEquals($tag, $converted);
-    }
-
-    public function testConvertAssertAttributeMultipleSpaces()
-    {
-        $selector = '[foo="bar baz"] div[value="foo bar baz"]';
-        $converted = PHPUnit_Util_XML::convertSelectToTag($selector);
-        $tag      = array('attributes' => array('foo' => 'bar baz'),
-                          'descendant' => array('tag' => 'div',
-                                                'attributes' => array('value' => 'foo bar baz')));
-        $this->assertEquals($tag, $converted);
-    }
-
-    public function testConvertAssertSelectEltClass()
-    {
-        $selector  = 'div.foo';
-        $converted = PHPUnit_Util_XML::convertSelectToTag($selector);
-        $tag       = array('tag' => 'div', 'class' => 'foo');
-
-        $this->assertEquals($tag, $converted);
-    }
-
-    public function testConvertAssertSelectEltId()
-    {
-        $selector  = 'div#foo';
-        $converted = PHPUnit_Util_XML::convertSelectToTag($selector);
-        $tag       = array('tag' => 'div', 'id' => 'foo');
-
-        $this->assertEquals($tag, $converted);
-    }
-
-    public function testConvertAssertSelectEltAttrEqual()
-    {
-        $selector  = 'div[foo="bar"]';
-        $converted = PHPUnit_Util_XML::convertSelectToTag($selector);
-        $tag       = array('tag' => 'div', 'attributes' => array('foo' => 'bar'));
-
-        $this->assertEquals($tag, $converted);
-    }
-
-    public function testConvertAssertSelectEltMultiAttrEqual()
-    {
-        $selector  = 'div[foo="bar"][baz="fob"]';
-        $converted = PHPUnit_Util_XML::convertSelectToTag($selector);
-        $tag       = array('tag' => 'div', 'attributes' => array('foo' => 'bar', 'baz' => 'fob'));
-
-        $this->assertEquals($tag, $converted);
-    }
-
-    public function testConvertAssertSelectEltAttrHasOne()
-    {
-        $selector  = 'div[foo~="bar"]';
-        $converted = PHPUnit_Util_XML::convertSelectToTag($selector);
-        $tag       = array('tag' => 'div', 'attributes' => array('foo' => 'regexp:/.*\bbar\b.*/'));
-
-        $this->assertEquals($tag, $converted);
-    }
-
-    public function testConvertAssertSelectEltAttrContains()
-    {
-        $selector  = 'div[foo*="bar"]';
-        $converted = PHPUnit_Util_XML::convertSelectToTag($selector);
-        $tag       = array('tag' => 'div', 'attributes' => array('foo' => 'regexp:/.*bar.*/'));
-
-        $this->assertEquals($tag, $converted);
-    }
-
-    public function testConvertAssertSelectEltChild()
-    {
-        $selector  = 'div > a';
-        $converted = PHPUnit_Util_XML::convertSelectToTag($selector);
-        $tag       = array('tag' => 'div', 'child' => array('tag' => 'a'));
-
-        $this->assertEquals($tag, $converted);
-    }
-
-    public function testConvertAssertSelectEltDescendant()
-    {
-        $selector  = 'div a';
-        $converted = PHPUnit_Util_XML::convertSelectToTag($selector);
-        $tag       = array('tag' => 'div', 'descendant' => array('tag' => 'a'));
-
-        $this->assertEquals($tag, $converted);
-    }
-
-    public function testConvertAssertSelectContent()
-    {
-        $selector  = '#foo';
-        $content   = 'div contents';
-        $converted = PHPUnit_Util_XML::convertSelectToTag($selector, $content);
-        $tag       = array('id' => 'foo', 'content' => 'div contents');
-
-        $this->assertEquals($tag, $converted);
-    }
-
-    public function testConvertAssertSelectTrue()
-    {
-        $selector  = '#foo';
-        $content   = TRUE;
-        $converted = PHPUnit_Util_XML::convertSelectToTag($selector, $content);
-        $tag       = array('id' => 'foo');
-
-        $this->assertEquals($tag, $converted);
-    }
-
-    public function testConvertAssertSelectFalse()
-    {
-        $selector  = '#foo';
-        $content   = FALSE;
-        $converted = PHPUnit_Util_XML::convertSelectToTag($selector, $content);
-        $tag       = array('id' => 'foo');
-
-        $this->assertEquals($tag, $converted);
-    }
-
-    public function testConvertAssertNumber()
-    {
-        $selector  = '.foo';
-        $content   = 3;
-        $converted = PHPUnit_Util_XML::convertSelectToTag($selector, $content);
-        $tag       = array('class' => 'foo');
-
-        $this->assertEquals($tag, $converted);
-    }
-
-    public function testConvertAssertRange()
-    {
-        $selector  = '#foo';
-        $content   = array('greater_than' => 5, 'less_than' => 10);
-        $converted = PHPUnit_Util_XML::convertSelectToTag($selector, $content);
-        $tag       = array('id' => 'foo');
-
-        $this->assertEquals($tag, $converted);
-    }
-
-    public function testPrepareStringEscapesChars()
-    {
-        $this->assertEquals('&#x1b;', PHPUnit_Util_XML::prepareString("\033"));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+bvseHtItxixvkW==

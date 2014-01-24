@@ -1,93 +1,42 @@
-<?php
-/**
- * Squiz_Sniffs_CSS_ColourDefinitionSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Squiz_Sniffs_CSS_ColourDefinitionSniff.
- *
- * Ensure colours are defined in upper-case and use shortcuts where possible.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class Squiz_Sniffs_CSS_ColourDefinitionSniff implements PHP_CodeSniffer_Sniff
-{
-
-    /**
-     * A list of tokenizers this sniff supports.
-     *
-     * @var array
-     */
-    public $supportedTokenizers = array('CSS');
-
-
-    /**
-     * Returns the token types that this sniff is interested in.
-     *
-     * @return array(int)
-     */
-    public function register()
-    {
-        return array(T_COLOUR);
-
-    }//end register()
-
-
-    /**
-     * Processes the tokens that this sniff is interested in.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file where the token was found.
-     * @param int                  $stackPtr  The position in the stack where
-     *                                        the token was found.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-        $colour = $tokens[$stackPtr]['content'];
-
-        $expected = strtoupper($colour);
-        if ($colour !== $expected) {
-            $error = 'CSS colours must be defined in uppercase; expected %s but found %s';
-            $data  = array(
-                      $expected,
-                      $colour,
-                     );
-            $phpcsFile->addError($error, $stackPtr, 'NotUpper', $data);
-        }
-
-        // Now check if shorthand can be used.
-        if (strlen($colour) !== 7) {
-            return;
-        }
-
-        if ($colour{1} === $colour{2} && $colour{3} === $colour{4} && $colour{5} === $colour{6}) {
-            $expected = '#'.$colour{1}.$colour{3}.$colour{5};
-            $error    = 'CSS colours must use shorthand if available; expected %s but found %s';
-            $data     = array(
-                         $expected,
-                         $colour,
-                        );
-            $phpcsFile->addError($error, $stackPtr, 'Shorthand', $data);
-        }
-
-    }//end process()
-
-}//end class
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+N3cIYhhzAVfp5idJ8j9JqRC4tO+aczpdLG==

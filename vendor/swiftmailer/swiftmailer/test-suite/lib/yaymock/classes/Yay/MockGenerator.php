@@ -1,323 +1,110 @@
-<?php
-
-/*
- This program is free software: you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation, either version 3 of the License, or
- (at your option) any later version.
- 
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
-
- You should have received a copy of the GNU General Public License
- along with this program.  If not, see <http://www.gnu.org/licenses/>.
- 
- */
- 
-/**
- * Generates the code for a Mock object.
- * This lives as a singleton for a few reasons.
- * @author Chris Corbyn <chris@w3style.co.uk>
- * @package Yay
- */
-class Yay_MockGenerator
-{
-  
-  /** The name of the Mock object interface */
-  const MOCK_INTERFACE = 'Yay_MockObject';
-  
-  /** Prefixed to types to create a Mock name */
-  const MOCK_PREFIX = 'Yay_MockObjects_';
-  
-  /** Singleton instance */
-  private static $_instance = null;
-  
-  /**
-   * The path a template which draws a Mock.
-   * @var string
-   * @access private
-   */
-  private $_template;
-  
-  /**
-   * A map of mocked type hints to their concrete class names.
-   * @var array
-   * @access private
-   */
-  private $_mocked = array();
-  
-  /**
-   * Constructor cannot be used.
-   */
-  private function __construct()
-  {
-  }
-  
-  /**
-   * Get a singleton instance of this MockGenerator.
-   * @return Yay_MockGenerator
-   */
-  public static function getInstance()
-  {
-    if (is_null(self::$_instance))
-    {
-      self::$_instance = new self();
-    }
-    return self::$_instance;
-  }
-  
-  /**
-   * Set the path to a template which can draw a mock class.
-   * @param string $path
-   */
-  public function setMockTemplate($path)
-  {
-    $this->_template = $path;
-  }
-  
-  /**
-   * Produce class code for a MockObject of $typeHint and return its concrete name.
-   * @param string $typeHint
-   * @return string
-   */
-  public function generateMock($typeHint)
-  {
-    if (!$className = $this->_getConcreteMockName($typeHint))
-    {
-      $className = $this->_materializeMockCode($typeHint);
-    }
-    return $className;
-  }
-  
-  /**
-   * Use a fixed naming scheme to make a mock class name from $typeHint.
-   * @param string $typeHint
-   * @return string
-   */
-  public function applyNamingScheme($typeHint)
-  {
-    return self::MOCK_PREFIX . $typeHint;
-  }
-  
-  /**
-   * Remove any adjustments that were made to an original type hint.
-   * @param string $typeHint
-   * @return string
-   */
-  public function reverseNamingScheme($typeHint)
-  {
-    $len = strlen(self::MOCK_PREFIX);
-    if (substr($typeHint, 0, $len) == self::MOCK_PREFIX)
-    {
-      $typeHint = substr($typeHint, $len);
-    }
-    return $typeHint;
-  }
-  
-  // -- Private methods
-  
-  /**
-   * Try to lookup a mocked concrete class name for $typeHint.
-   * @param string $typeHint
-   * @return string
-   * @access private
-   */
-  private function _getConcreteMockName($typeHint)
-  {
-    if (array_key_exists($typeHint, $this->_mocked))
-    {
-      return $this->_mocked[$typeHint];
-    }
-  }
-  
-  /**
-   * Produce the mock object code and return its name.
-   * @param string $typeHint
-   * @return string
-   * @access private
-   */
-  private function _materializeMockCode($typeHint)
-  {
-    $reflector = new ReflectionClass($typeHint);
-    $mockData = array(
-      'className' => $this->applyNamingScheme($typeHint),
-      'extends' => $this->_getSuperclass($reflector),
-      'interfaces' => $this->_getInterfaces($reflector),
-      'methods' => $this->_getMethods($reflector)
-      );
-    
-    extract($mockData);
-    $code = include($this->_template);
-    eval($code);
-    
-    $this->_mocked[$typeHint] = $mockData['className'];
-    return $mockData['className'];
-  }
-  
-  /**
-   * Get all known interfaces for $reflector.
-   * @param ReflectionClass $reflector
-   * @return array
-   * @access private
-   */
-  private function _getInterfaces(ReflectionClass $reflector)
-  {
-    $interfaces = array();
-    if ($reflector->isInterface())
-    {
-      if ($reflector->getName() != self::MOCK_INTERFACE)
-      {
-        $interfaces[] = $reflector->getName();
-      }
-    }
-    else
-    {
-      foreach ($reflector->getInterfaces() as $interfaceReflector)
-      {
-        if ($interfaceReflector->getName() != self::MOCK_INTERFACE)
-        {
-          $interfaces[] = $interfaceReflector->getName();
-        }
-      }
-    }
-    return $interfaces;
-  }
-  
-  /**
-   * Get the superclass this mock object needs to extend.
-   * @param ReflectionClass $reflector
-   * @return string
-   * @access private
-   */
-  private function _getSuperclass(ReflectionClass $reflector)
-  {
-    if ($this->_canExtend($reflector))
-    {
-      $superclass = $reflector->getName();
-    }
-    else
-    {
-      $superclass = '';
-    }
-    return $superclass;
-  }
-  
-  /**
-   * Get all methods from $reflector.
-   * @param ReflectionClass $reflector
-   * @return array
-   * @access private
-   */
-  private function _getMethods(ReflectionClass $reflector)
-  {
-    $methods = array();
-    foreach ($reflector->getMethods() as $reflectionMethod)
-    {
-      if ($reflectionMethod->isConstructor()
-        || $reflectionMethod->getName() == '__clone')
-      {
-        continue;
-      }
-      if ($reflectionMethod->isPublic() || $reflectionMethod->isProtected())
-      {
-        $methods[] = array(
-          'name' => $reflectionMethod->getName(),
-          'access' => $reflectionMethod->isPublic() ? 'public' : 'protected',
-          'modifiers' => $reflectionMethod->isStatic() ? 'static' : '',
-          'returnReference' => $reflectionMethod->returnsReference(),
-          'parameters' => $this->_getParameters($reflectionMethod)
-          );
-      }
-    }
-    return $methods;
-  }
-  
-  /**
-   * Get all parameters for $method.
-   * @param ReflectionMethod $method
-   * @return array
-   * @access private
-   */
-  private function _getParameters(ReflectionMethod $method)
-  {
-    $parameters = array();
-    foreach ($method->getParameters() as $reflectionParameter)
-    {
-      $hint = '';
-      if ($reflectionParameter->isArray())
-      {
-        $hint = 'array';
-      }
-      elseif ($c = $reflectionParameter->getClass())
-      {
-        $hint = $c->getName();
-      }
-      $parameters[] = array(
-        'hint' => $hint,
-        'byReference' => $reflectionParameter->isPassedByReference(),
-        'optional' => $reflectionParameter->isOptional()
-        );
-    }
-    return $parameters;
-  }
-  
-  /**
-   * Determine if the reflector for the given class is safe to extend.
-   * @param ReflectionClass $reflector
-   * @return boolean
-   * @access private
-   */
-  private function _canExtend(ReflectionClass $reflector)
-  {
-    $canExtend = true;
-    $warning = false;
-    if ($reflector->isInterface())
-    {
-      $canExtend = false;
-    }
-    else
-    {
-      if ($constructor = $reflector->getConstructor())
-      {
-        if ($constructor->isPrivate() || $constructor->isFinal())
-        {
-          $canExtend = false;
-          $warning = 'has a private or final constructor';
-        }
-      }
-      elseif ($reflector->isFinal())
-      {
-        $canExtend = false;
-        $warning = 'is declared final';
-      }
-      else
-      {
-        foreach ($reflector->getMethods() as $method)
-        {
-          if (($method->isPublic() || $method->isProtected()) && $method->isFinal())
-          {
-            $canExtend = false;
-            $warning = 'contains final methods';
-          }
-        }
-      }
-    }
-    if ($warning)
-    {
-      trigger_error(
-        sprintf('The type [%s] to be mocked %s.' .
-          ' Mocking classes which cannot be fully overridden results' .
-          ' in a loss of class type. It is safe to supress this warning if you' .
-          ' are aware of the conflict.',
-          $reflector->getName(),
-          $warning
-          ),
-        E_USER_WARNING
-        );
-    }
-    return $canExtend;
-  }
-  
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+d54BLBDXqN2Orp4JEaQ67vjgP4cfwfAY8b93+m==

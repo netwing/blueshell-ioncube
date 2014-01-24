@@ -1,64 +1,43 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\Process\Tests;
-
-use Symfony\Component\Process\PhpExecutableFinder;
-
-/**
- * @author Robert Schönthal <seroscho@googlemail.com>
- */
-class PhpExecutableFinderTest extends \PHPUnit_Framework_TestCase
-{
-    /**
-     * tests find() with the env var PHP_PATH
-     */
-    public function testFindWithPhpPath()
-    {
-        if (defined('PHP_BINARY')) {
-            $this->markTestSkipped('The PHP binary is easily available as of PHP 5.4');
-        }
-
-        $f = new PhpExecutableFinder();
-
-        $current = $f->find();
-
-        //not executable PHP_PATH
-        putenv('PHP_PATH=/not/executable/php');
-        $this->assertFalse($f->find(), '::find() returns false for not executable PHP');
-
-        //executable PHP_PATH
-        putenv('PHP_PATH='.$current);
-        $this->assertEquals($f->find(), $current, '::find() returns the executable PHP');
-    }
-
-    /**
-     * tests find() with default executable
-     */
-    public function testFindWithSuffix()
-    {
-        if (defined('PHP_BINARY')) {
-            $this->markTestSkipped('The PHP binary is easily available as of PHP 5.4');
-        }
-
-        putenv('PHP_PATH=');
-        putenv('PHP_PEAR_PHP_BIN=');
-        $f = new PhpExecutableFinder();
-
-        $current = $f->find();
-
-        //TODO maybe php executable is custom or even Windows
-        if (defined('PHP_WINDOWS_VERSION_BUILD')) {
-            $this->assertTrue(is_executable($current));
-            $this->assertTrue((bool) preg_match('/'.addSlashes(DIRECTORY_SEPARATOR).'php\.(exe|bat|cmd|com)$/i', $current), '::find() returns the executable PHP with suffixes');
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+xz6jD+egRW==

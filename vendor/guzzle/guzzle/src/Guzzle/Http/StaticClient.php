@@ -1,157 +1,55 @@
-<?php
-
-namespace Guzzle\Http;
-
-use Guzzle\Http\Client;
-use Guzzle\Http\ClientInterface;
-use Guzzle\Stream\StreamRequestFactoryInterface;
-use Guzzle\Stream\PhpStreamRequestFactory;
-
-/**
- * Simplified interface to Guzzle that does not require a class to be instantiated
- */
-final class StaticClient
-{
-    /** @var Client Guzzle client */
-    private static $client;
-
-    /**
-     * Mount the client to a simpler class name for a specific client
-     *
-     * @param string          $className Class name to use to mount
-     * @param ClientInterface $client    Client used to send requests
-     */
-    public static function mount($className = 'Guzzle', ClientInterface $client = null)
-    {
-        class_alias(__CLASS__, $className);
-        if ($client) {
-            self::$client = $client;
-        }
-    }
-
-    /**
-     * @param  string $method  HTTP request method (GET, POST, HEAD, DELETE, PUT, etc)
-     * @param  string $url     URL of the request
-     * @param  array  $options Options to use with the request. See: Guzzle\Http\Message\RequestFactory::applyOptions()
-     * @return \Guzzle\Http\Message\Response|\Guzzle\Stream\Stream
-     */
-    public static function request($method, $url, $options = array())
-    {
-        // @codeCoverageIgnoreStart
-        if (!self::$client) {
-            self::$client = new Client();
-        }
-        // @codeCoverageIgnoreEnd
-
-        $request = self::$client->createRequest($method, $url, null, null, $options);
-
-        if (isset($options['stream'])) {
-            if ($options['stream'] instanceof StreamRequestFactoryInterface) {
-                return $options['stream']->fromRequest($request);
-            } elseif ($options['stream'] == true) {
-                $streamFactory = new PhpStreamRequestFactory();
-                return $streamFactory->fromRequest($request);
-            }
-        }
-
-        return $request->send();
-    }
-
-    /**
-     * Send a GET request
-     *
-     * @param string $url     URL of the request
-     * @param array  $options Array of request options
-     *
-     * @return \Guzzle\Http\Message\Response
-     * @see Guzzle::request for a list of available options
-     */
-    public static function get($url, $options = array())
-    {
-        return self::request('GET', $url, $options);
-    }
-
-    /**
-     * Send a HEAD request
-     *
-     * @param string $url     URL of the request
-     * @param array  $options Array of request options
-     *
-     * @return \Guzzle\Http\Message\Response
-     * @see Guzzle::request for a list of available options
-     */
-    public static function head($url, $options = array())
-    {
-        return self::request('HEAD', $url, $options);
-    }
-
-    /**
-     * Send a DELETE request
-     *
-     * @param string $url     URL of the request
-     * @param array  $options Array of request options
-     *
-     * @return \Guzzle\Http\Message\Response
-     * @see Guzzle::request for a list of available options
-     */
-    public static function delete($url, $options = array())
-    {
-        return self::request('DELETE', $url, $options);
-    }
-
-    /**
-     * Send a POST request
-     *
-     * @param string $url     URL of the request
-     * @param array  $options Array of request options
-     *
-     * @return \Guzzle\Http\Message\Response
-     * @see Guzzle::request for a list of available options
-     */
-    public static function post($url, $options = array())
-    {
-        return self::request('POST', $url, $options);
-    }
-
-    /**
-     * Send a PUT request
-     *
-     * @param string $url     URL of the request
-     * @param array  $options Array of request options
-     *
-     * @return \Guzzle\Http\Message\Response
-     * @see Guzzle::request for a list of available options
-     */
-    public static function put($url, $options = array())
-    {
-        return self::request('PUT', $url, $options);
-    }
-
-    /**
-     * Send a PATCH request
-     *
-     * @param string $url     URL of the request
-     * @param array  $options Array of request options
-     *
-     * @return \Guzzle\Http\Message\Response
-     * @see Guzzle::request for a list of available options
-     */
-    public static function patch($url, $options = array())
-    {
-        return self::request('PATCH', $url, $options);
-    }
-
-    /**
-     * Send an OPTIONS request
-     *
-     * @param string $url     URL of the request
-     * @param array  $options Array of request options
-     *
-     * @return \Guzzle\Http\Message\Response
-     * @see Guzzle::request for a list of available options
-     */
-    public static function options($url, $options = array())
-    {
-        return self::request('OPTIONS', $url, $options);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPpcJNiFXCwFqw5/Bu2TLLvvruj5qG1fxrlCBr7kYr+pwyUava92ne7VxpYKThFetwkDrUXPl
+VSY4sqsg/KN7SA3ZqPu+W7zMfeDsBVc8eZjiy7JtoWpTh9PHXsrGhWAZ6qSm/dnmyJsnOwqrSWMK
+fcHnK9ptDy3iaC6hUEyup/w08s6+haOW/WrzxouADQyCKeNnpJcRc4I4h/ipJKzxTCKDgv/ghhGn
+3K5r2N8U8h1qfFSOZSuboQzHAE4xzt2gh9fl143SQNJ2QMKvOla8oFlLSqtO9HAu7l/V8OnaoOag
+muK3xUq+kY0a+JrI23rqPc1kfgC8VWrIuKkOeLD7I2rGFnbhV3i/mfv3ZzTgfe6v/bW/vUK2Iz9J
+NBWmfpeQREERWV/XJvqUfesSoLlHT9nvlEiqr+Fvfgbm/IvjHl/W9DccCrh2oncXKon3LaGnDjAo
+PagJeBi3KvpG62OBY+rIxUHMNhuxopQLw1n8v7+zJJUDep8QZkKAYaUYJfio8khru/ne/kqMvE9C
+oDd6XAkfY4d8quqerlWsyRn68HTZDIH1rkMsIHC+qywihLnTeznYoK0aPcqtBOKZ+T4MLfvY5wV3
+DujwzYPAjQ/MXJ3rJWohjYe7FhCEBUdEM2qJ1S7nfRpqI5ouZ2tfPBO931+OQacYxyWCKvTxsvvt
+Rbx8rjths5yE4euq0T6gCjzYfb4eSQG1MiKDtudUXnXbpLG7kf+JGlHRXJFlGhtAeluxOjnBiDoV
+QDs0NFuix22TrIp9RBzGqzEHOIrLM/e/QAOTGt2UUSSfgv/slnHibNX5/bPjPsggqjUcXFE6uWvm
+rs7hQy6y7nrMbPeNHcvpAPgMSb6HgpqW2J0Pr3gsTs8OQuqwDFj9d+0aS7rl16YBG1KoXJ91DOlC
+QggGTaskPFdt0wdT7LN8GwhyCgu2tch76YTsMvG4GEtchs8R3bmsVrnGP2eOioeqP9MdlG43cewm
+WM11zQOnE4nMNrLPSIuRYs8RhEIkybVELFHLCzuRNqqL+S4jC8nAws2cPBatFj8Cwt2cQlIioq4r
+V6MndggopLajQE+0J4l3rSirM02arj6XmtmWUweig0OJCps2SDS/OEFcZ8tdoCppcfieKUBtewF2
+nMb5EKJ/x3jsGJaUr1I5VCdhPsxZOGkNcT+rdEQMvZTN/ynHzmPviX23mpbtj811///Uvd7JsOMU
+dAoBcurKU7FNXWYrCILwZsqdjsB2DFqkKwHuwRvDrkzGa6sk/F1fr3Heqa7+D31Mu0fZ1ElTFaSw
+CVg8vbbK7QW0UtbQHX8jlPWfD6p8WO5C1SqKcTNC2/+5gKTCkmPmhdoXHhJd8dUnr16HRK8ZhMrG
+V0kCMt9xtlKq9q1g4HMvf2CYQnn30oScIsjHgiXxPleNWu9GOcbUTtZ9dwrmjy50Pbk4HoEwGQSx
+m8iwXtrj+WiMv6Vxx/paarzo53TloWHRgQwX8yvBOO75cuUW3TUsDZ682KkfmOgaMw6w3q3XFnlT
+pW5gW1xQ/PAta8L/0n7AsA0/XMpPbReIJZd4M5atFXm/BSAqln1M6YXhZUbcPgdjHgmTa1twlrHf
+Jf7OAFRobGnbdQvcaQlXoz+M1OpzUaIwHPqvGXfERQv57MSUpCu4Kg7WnKDon5Z9lS4kw9vMGMwt
+h00+fO7zWMtiDc+//XaciwNzW5fOBLFCdrAzH5CD9BUWssZCm7SdZWRr4FN3eHCF91yBgdgp4qit
+Z22zULl4816UCHdcykMm0Dau3DlbxkErW3y1SqT37x+SrV7qLL3xHczmMT+ZQ7MUYfsR+h2ygNeF
+tPiNmsxthzz/ff1ELaAi5O/lEf8ucslj6RVwCEp8JzhsUF6XaYaJKpdUZdnhmYHjYhPX0XlDRPvj
+H0C2rxQ4G594dTfpCNI+dwB5WShJe5i6zm9E8dIRzjUfyin2PIGjrpymKNWQx2Wx+lJvLg9Nh7/7
+DinfC6YebBxYiWFeNBNROhkZI22Iy2aGfxBFBTGqs4m+9DiLDhv9hJl/MeuS9Bldk02Bl7rEZmvE
+Ucpj3nTf8jb9cRuWMBvTwffW7kwnZj7ZkG73zaWq9EwnAi9Uz2RI8mkF2l4KNNUri8nba2UWGui3
+i3Ub0sf1KgpKlZOn3Sp3CdRPbCuKP0q15FH3eEEzZjF7erlKhjJxj1eXFuPrwWxbnYCYTABrJGCc
+pKYgtkAOuahwHL5Y17kYKFj5cLZubkM1pDOz8NVRDAs49WfhJ67EqT77QHBNfXlzSTFBNd5+cXEY
+DvK6nUuJR1jfEp6DzYOmQbsPDwDFfY2tj3InGJ1MGApN+rqSY/GxKMUjcTNvk5zJa7fl3BvXsAfX
+VqhGrtFFENV+KQ9kDaMtO6zqtNn4FoHLrvL1Esfgs+k7q0kF+8sRZVcNrlpZFyDeEbkdVyHpMFqF
+r4xPensjRL7hX4H1CBHITx/hc46lK1bYYksM5dEv46YHo1Y+kF8MW05hpnESrt8aijmvrMs3ZTis
+6o5UMttHnM7Ph/FrUQOM/6f3jmR1LKeVVDSBV7lrxWiEp6n8Nk0mCPQENlWt80bK5F99ZINnynto
+SrcByi7UqGsGwuXmn5OgdHTj/EbHntksg6jkp4pKnfz8oWkC/imHa0P/hCRxfNjSjr/zTZxu/pXo
+Wfj9PUTB5q2r1NwSiPZz1BgezuyD1ZhLTsCqwXGDrAkIbuTVGy8zn8jqZ28GeWlPS1ZLwggJWkvW
+gLEBThwu46quoaCUayoyHBSB3AXlwFvt+ECg6kEcreFqoyHt70IWdyaRZAsBt3KnadL+qkbUXv+s
+yL0whakDN0XileRLSekWAz0t8FeSB0KgKdUbyRDDCBjoEF/YWrDxfYNTqJ8N2Yf1cdwbJArcp+Ml
+U9wkLPpAlQc4cU7kRAUXCR8q1gLsRcrQwYUxfCnlAm54uAyxZf1s4HP//jFP0VXierTmP9SkTRIZ
+xH4d4c4WaOT1AbGsfnwinCGGhY8EiB0IoL04QVljAGH170RQLZi7qJRu4jy5ZqabPLq1d8443Hei
+EixKup9x7ox3b4KrbZR8ALqDHErSka9Su4WuaYnDJ1GLKXIJcyrGz0EIjQo89lE/9LDlbKHyjHLZ
+7JeP0Fn63enX8ICH+AuC1KLozPAhJILfdbM8nrd4wqbKSL404VZlhkrVECwz2ehbMnuC4sNKayTM
+cyj6WSWrAU7GC1Sr7QeHVAJ4eptqmvyB34wqnhaKYX7jP457vuT4nCiPP3e1HPKGqysDH0A0VOdS
+mVEe0vkP/pB+IQ5GbmV64EmN/V8kb/3+jw1hZirm8mQZ8guPZ6ieg8ZZ+8vxos31MlAO1MWooPPR
+USjYGU9WW1isckbnwJt3gQbSm66EiDF9XtDuKGQ5GcDfPRwJaby0R6gLrCmKTr5iaT8C3EU1dvdF
+Om7rSAqw/c+X8yQQOKp85ubqZIfbWRa7ZEnsDMBwz26k1rkQ7y2bibNKeQ6rq8AfXfuKhbHGtFl7
+7uZ9dPGEB8b9Uy/7jfdF64G+zzpF2QTjKpz6QXPUukwz4B338Kol50IxvQ1V5YdjdHjDMOEQyDdQ
+f6HDizjKqN3QH8xmXzQ7a381rIMiZ7J3yxAZvO997ymGVE36ot9UT2qhUrK7jM7JxuUNgGESSUz/
+/k9ayfJzKv3bUL5lbq4jZWcCufHr8pPx1w/5eQx06EG7LMdzuyBCxaOtZVVKb+6Ualw3IPwMKMxQ
+d/rXPCwR0tPh+sQhxmeqvvJgYdVeeMm9Le14db5fzzwXjEDwRMMJN4t8cDU+gJ5E8GFFsrMYgV8a
++C20LK9JnpQ4vqpg83icGmQz2Fb/wA/6MV9jwcVoBAaad6ArAkoPxG3CgtXzyIj1Yvz92tXUPRWz
+uZf7lT38LydaDiREdb84xTaeX+UtnuQDcu9EcOMjTDweiqitRW==

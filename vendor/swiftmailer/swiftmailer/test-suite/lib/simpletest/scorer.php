@@ -1,862 +1,226 @@
-<?php
-/**
- *  base include file for SimpleTest
- *  @package    SimpleTest
- *  @subpackage UnitTester
- *  @version    $Id: scorer.php 1788 2008-04-27 11:01:59Z pp11 $
- */
-
-/**#@+*/
-require_once(dirname(__FILE__) . '/invoker.php');
-/**#@-*/
-
-/**
- *    Can receive test events and display them. Display
- *    is achieved by making display methods available
- *    and visiting the incoming event.
- *    @package SimpleTest
- *    @subpackage UnitTester
- *    @abstract
- */
-class SimpleScorer {
-    private $passes;
-    private $fails;
-    private $exceptions;
-    private $is_dry_run;
-
-    /**
-     *    Starts the test run with no results.
-     *    @access public
-     */
-    function __construct() {
-        $this->passes = 0;
-        $this->fails = 0;
-        $this->exceptions = 0;
-        $this->is_dry_run = false;
-    }
-
-    /**
-     *    Signals that the next evaluation will be a dry
-     *    run. That is, the structure events will be
-     *    recorded, but no tests will be run.
-     *    @param boolean $is_dry        Dry run if true.
-     *    @access public
-     */
-    function makeDry($is_dry = true) {
-        $this->is_dry_run = $is_dry;
-    }
-
-    /**
-     *    The reporter has a veto on what should be run.
-     *    @param string $test_case_name  name of test case.
-     *    @param string $method          Name of test method.
-     *    @access public
-     */
-    function shouldInvoke($test_case_name, $method) {
-        return ! $this->is_dry_run;
-    }
-
-    /**
-     *    Can wrap the invoker in preperation for running
-     *    a test.
-     *    @param SimpleInvoker $invoker   Individual test runner.
-     *    @return SimpleInvoker           Wrapped test runner.
-     *    @access public
-     */
-    function createInvoker($invoker) {
-        return $invoker;
-    }
-
-    /**
-     *    Accessor for current status. Will be false
-     *    if there have been any failures or exceptions.
-     *    Used for command line tools.
-     *    @return boolean        True if no failures.
-     *    @access public
-     */
-    function getStatus() {
-        if ($this->exceptions + $this->fails > 0) {
-            return false;
-        }
-        return true;
-    }
-
-    /**
-     *    Paints the start of a group test.
-     *    @param string $test_name     Name of test or other label.
-     *    @param integer $size         Number of test cases starting.
-     *    @access public
-     */
-    function paintGroupStart($test_name, $size) {
-    }
-
-    /**
-     *    Paints the end of a group test.
-     *    @param string $test_name     Name of test or other label.
-     *    @access public
-     */
-    function paintGroupEnd($test_name) {
-    }
-
-    /**
-     *    Paints the start of a test case.
-     *    @param string $test_name     Name of test or other label.
-     *    @access public
-     */
-    function paintCaseStart($test_name) {
-    }
-
-    /**
-     *    Paints the end of a test case.
-     *    @param string $test_name     Name of test or other label.
-     *    @access public
-     */
-    function paintCaseEnd($test_name) {
-    }
-
-    /**
-     *    Paints the start of a test method.
-     *    @param string $test_name     Name of test or other label.
-     *    @access public
-     */
-    function paintMethodStart($test_name) {
-    }
-
-    /**
-     *    Paints the end of a test method.
-     *    @param string $test_name     Name of test or other label.
-     *    @access public
-     */
-    function paintMethodEnd($test_name) {
-    }
-
-    /**
-     *    Increments the pass count.
-     *    @param string $message        Message is ignored.
-     *    @access public
-     */
-    function paintPass($message) {
-        $this->passes++;
-    }
-
-    /**
-     *    Increments the fail count.
-     *    @param string $message        Message is ignored.
-     *    @access public
-     */
-    function paintFail($message) {
-        $this->fails++;
-    }
-
-    /**
-     *    Deals with PHP 4 throwing an error.
-     *    @param string $message    Text of error formatted by
-     *                              the test case.
-     *    @access public
-     */
-    function paintError($message) {
-        $this->exceptions++;
-    }
-
-    /**
-     *    Deals with PHP 5 throwing an exception.
-     *    @param Exception $exception    The actual exception thrown.
-     *    @access public
-     */
-    function paintException($exception) {
-        $this->exceptions++;
-    }
-    
-    /**
-     *    Prints the message for skipping tests.
-     *    @param string $message    Text of skip condition.
-     *    @access public
-     */
-    function paintSkip($message) {
-    }
-
-    /**
-     *    Accessor for the number of passes so far.
-     *    @return integer       Number of passes.
-     *    @access public
-     */
-    function getPassCount() {
-        return $this->passes;
-    }
-
-    /**
-     *    Accessor for the number of fails so far.
-     *    @return integer       Number of fails.
-     *    @access public
-     */
-    function getFailCount() {
-        return $this->fails;
-    }
-
-    /**
-     *    Accessor for the number of untrapped errors
-     *    so far.
-     *    @return integer       Number of exceptions.
-     *    @access public
-     */
-    function getExceptionCount() {
-        return $this->exceptions;
-    }
-
-    /**
-     *    Paints a simple supplementary message.
-     *    @param string $message        Text to display.
-     *    @access public
-     */
-    function paintMessage($message) {
-    }
-
-    /**
-     *    Paints a formatted ASCII message such as a
-     *    privateiable dump.
-     *    @param string $message        Text to display.
-     *    @access public
-     */
-    function paintFormattedMessage($message) {
-    }
-
-    /**
-     *    By default just ignores user generated events.
-     *    @param string $type        Event type as text.
-     *    @param mixed $payload      Message or object.
-     *    @access public
-     */
-    function paintSignal($type, $payload) {
-    }
-}
-
-/**
- *    Recipient of generated test messages that can display
- *    page footers and headers. Also keeps track of the
- *    test nesting. This is the main base class on which
- *    to build the finished test (page based) displays.
- *    @package SimpleTest
- *    @subpackage UnitTester
- */
-class SimpleReporter extends SimpleScorer {
-    private $test_stack;
-    private $size;
-    private $progress;
-
-    /**
-     *    Starts the display with no results in.
-     *    @access public
-     */
-    function __construct() {
-        parent::__construct();
-        $this->test_stack = array();
-        $this->size = null;
-        $this->progress = 0;
-    }
-    
-    /**
-     *    Gets the formatter for privateiables and other small
-     *    generic data items.
-     *    @return SimpleDumper          Formatter.
-     *    @access public
-     */
-    function getDumper() {
-        return new SimpleDumper();
-    }
-
-    /**
-     *    Paints the start of a group test. Will also paint
-     *    the page header and footer if this is the
-     *    first test. Will stash the size if the first
-     *    start.
-     *    @param string $test_name   Name of test that is starting.
-     *    @param integer $size       Number of test cases starting.
-     *    @access public
-     */
-    function paintGroupStart($test_name, $size) {
-        if (! isset($this->size)) {
-            $this->size = $size;
-        }
-        if (count($this->test_stack) == 0) {
-            $this->paintHeader($test_name);
-        }
-        $this->test_stack[] = $test_name;
-    }
-
-    /**
-     *    Paints the end of a group test. Will paint the page
-     *    footer if the stack of tests has unwound.
-     *    @param string $test_name   Name of test that is ending.
-     *    @param integer $progress   Number of test cases ending.
-     *    @access public
-     */
-    function paintGroupEnd($test_name) {
-        array_pop($this->test_stack);
-        if (count($this->test_stack) == 0) {
-            $this->paintFooter($test_name);
-        }
-    }
-
-    /**
-     *    Paints the start of a test case. Will also paint
-     *    the page header and footer if this is the
-     *    first test. Will stash the size if the first
-     *    start.
-     *    @param string $test_name   Name of test that is starting.
-     *    @access public
-     */
-    function paintCaseStart($test_name) {
-        if (! isset($this->size)) {
-            $this->size = 1;
-        }
-        if (count($this->test_stack) == 0) {
-            $this->paintHeader($test_name);
-        }
-        $this->test_stack[] = $test_name;
-    }
-
-    /**
-     *    Paints the end of a test case. Will paint the page
-     *    footer if the stack of tests has unwound.
-     *    @param string $test_name   Name of test that is ending.
-     *    @access public
-     */
-    function paintCaseEnd($test_name) {
-        $this->progress++;
-        array_pop($this->test_stack);
-        if (count($this->test_stack) == 0) {
-            $this->paintFooter($test_name);
-        }
-    }
-
-    /**
-     *    Paints the start of a test method.
-     *    @param string $test_name   Name of test that is starting.
-     *    @access public
-     */
-    function paintMethodStart($test_name) {
-        $this->test_stack[] = $test_name;
-    }
-
-    /**
-     *    Paints the end of a test method. Will paint the page
-     *    footer if the stack of tests has unwound.
-     *    @param string $test_name   Name of test that is ending.
-     *    @access public
-     */
-    function paintMethodEnd($test_name) {
-        array_pop($this->test_stack);
-    }
-
-    /**
-     *    Paints the test document header.
-     *    @param string $test_name     First test top level
-     *                                 to start.
-     *    @access public
-     *    @abstract
-     */
-    function paintHeader($test_name) {
-    }
-
-    /**
-     *    Paints the test document footer.
-     *    @param string $test_name        The top level test.
-     *    @access public
-     *    @abstract
-     */
-    function paintFooter($test_name) {
-    }
-
-    /**
-     *    Accessor for internal test stack. For
-     *    subclasses that need to see the whole test
-     *    history for display purposes.
-     *    @return array     List of methods in nesting order.
-     *    @access public
-     */
-    function getTestList() {
-        return $this->test_stack;
-    }
-
-    /**
-     *    Accessor for total test size in number
-     *    of test cases. Null until the first
-     *    test is started.
-     *    @return integer   Total number of cases at start.
-     *    @access public
-     */
-    function getTestCaseCount() {
-        return $this->size;
-    }
-
-    /**
-     *    Accessor for the number of test cases
-     *    completed so far.
-     *    @return integer   Number of ended cases.
-     *    @access public
-     */
-    function getTestCaseProgress() {
-        return $this->progress;
-    }
-
-    /**
-     *    Static check for running in the comand line.
-     *    @return boolean        True if CLI.
-     *    @access public
-     */
-    static function inCli() {
-        return php_sapi_name() == 'cli';
-    }
-}
-
-/**
- *    For modifying the behaviour of the visual reporters.
- *    @package SimpleTest
- *    @subpackage UnitTester
- */
-class SimpleReporterDecorator {
-    protected $reporter;
-
-    /**
-     *    Mediates between the reporter and the test case.
-     *    @param SimpleScorer $reporter       Reporter to receive events.
-     */
-    function __construct($reporter) {
-        $this->reporter = $reporter;
-    }
-
-    /**
-     *    Signals that the next evaluation will be a dry
-     *    run. That is, the structure events will be
-     *    recorded, but no tests will be run.
-     *    @param boolean $is_dry        Dry run if true.
-     *    @access public
-     */
-    function makeDry($is_dry = true) {
-        $this->reporter->makeDry($is_dry);
-    }
-
-    /**
-     *    Accessor for current status. Will be false
-     *    if there have been any failures or exceptions.
-     *    Used for command line tools.
-     *    @return boolean        True if no failures.
-     *    @access public
-     */
-    function getStatus() {
-        return $this->reporter->getStatus();
-    }
-
-    /**
-     *    The reporter has a veto on what should be run.
-     *    @param string $test_case_name  name of test case.
-     *    @param string $method          Name of test method.
-     *    @return boolean                True if test should be run.
-     *    @access public
-     */
-    function shouldInvoke($test_case_name, $method) {
-        return $this->reporter->shouldInvoke($test_case_name, $method);
-    }
-
-    /**
-     *    Can wrap the invoker in preperation for running
-     *    a test.
-     *    @param SimpleInvoker $invoker   Individual test runner.
-     *    @return SimpleInvoker           Wrapped test runner.
-     *    @access public
-     */
-    function createInvoker($invoker) {
-        return $this->reporter->createInvoker($invoker);
-    }
-    
-    /**
-     *    Gets the formatter for privateiables and other small
-     *    generic data items.
-     *    @return SimpleDumper          Formatter.
-     *    @access public
-     */
-    function getDumper() {
-        return $this->reporter->getDumper();
-    }
-
-    /**
-     *    Paints the start of a group test.
-     *    @param string $test_name     Name of test or other label.
-     *    @param integer $size         Number of test cases starting.
-     *    @access public
-     */
-    function paintGroupStart($test_name, $size) {
-        $this->reporter->paintGroupStart($test_name, $size);
-    }
-
-    /**
-     *    Paints the end of a group test.
-     *    @param string $test_name     Name of test or other label.
-     *    @access public
-     */
-    function paintGroupEnd($test_name) {
-        $this->reporter->paintGroupEnd($test_name);
-    }
-
-    /**
-     *    Paints the start of a test case.
-     *    @param string $test_name     Name of test or other label.
-     *    @access public
-     */
-    function paintCaseStart($test_name) {
-        $this->reporter->paintCaseStart($test_name);
-    }
-
-    /**
-     *    Paints the end of a test case.
-     *    @param string $test_name     Name of test or other label.
-     *    @access public
-     */
-    function paintCaseEnd($test_name) {
-        $this->reporter->paintCaseEnd($test_name);
-    }
-
-    /**
-     *    Paints the start of a test method.
-     *    @param string $test_name     Name of test or other label.
-     *    @access public
-     */
-    function paintMethodStart($test_name) {
-        $this->reporter->paintMethodStart($test_name);
-    }
-
-    /**
-     *    Paints the end of a test method.
-     *    @param string $test_name     Name of test or other label.
-     *    @access public
-     */
-    function paintMethodEnd($test_name) {
-        $this->reporter->paintMethodEnd($test_name);
-    }
-
-    /**
-     *    Chains to the wrapped reporter.
-     *    @param string $message        Message is ignored.
-     *    @access public
-     */
-    function paintPass($message) {
-        $this->reporter->paintPass($message);
-    }
-
-    /**
-     *    Chains to the wrapped reporter.
-     *    @param string $message        Message is ignored.
-     *    @access public
-     */
-    function paintFail($message) {
-        $this->reporter->paintFail($message);
-    }
-
-    /**
-     *    Chains to the wrapped reporter.
-     *    @param string $message    Text of error formatted by
-     *                              the test case.
-     *    @access public
-     */
-    function paintError($message) {
-        $this->reporter->paintError($message);
-    }
-
-    /**
-     *    Chains to the wrapped reporter.
-     *    @param Exception $exception        Exception to show.
-     *    @access public
-     */
-    function paintException($exception) {
-        $this->reporter->paintException($exception);
-    }
-    
-    /**
-     *    Prints the message for skipping tests.
-     *    @param string $message    Text of skip condition.
-     *    @access public
-     */
-    function paintSkip($message) {
-        $this->reporter->paintSkip($message);
-    }
-
-    /**
-     *    Chains to the wrapped reporter.
-     *    @param string $message        Text to display.
-     *    @access public
-     */
-    function paintMessage($message) {
-        $this->reporter->paintMessage($message);
-    }
-
-    /**
-     *    Chains to the wrapped reporter.
-     *    @param string $message        Text to display.
-     *    @access public
-     */
-    function paintFormattedMessage($message) {
-        $this->reporter->paintFormattedMessage($message);
-    }
-
-    /**
-     *    Chains to the wrapped reporter.
-     *    @param string $type        Event type as text.
-     *    @param mixed $payload      Message or object.
-     *    @return boolean            Should return false if this
-     *                               type of signal should fail the
-     *                               test suite.
-     *    @access public
-     */
-    function paintSignal($type, $payload) {
-        $this->reporter->paintSignal($type, $payload);
-    }
-}
-
-/**
- *    For sending messages to multiple reporters at
- *    the same time.
- *    @package SimpleTest
- *    @subpackage UnitTester
- */
-class MultipleReporter {
-    private $reporters = array();
-
-    /**
-     *    Adds a reporter to the subscriber list.
-     *    @param SimpleScorer $reporter     Reporter to receive events.
-     *    @access public
-     */
-    function attachReporter($reporter) {
-        $this->reporters[] = $reporter;
-    }
-
-    /**
-     *    Signals that the next evaluation will be a dry
-     *    run. That is, the structure events will be
-     *    recorded, but no tests will be run.
-     *    @param boolean $is_dry        Dry run if true.
-     *    @access public
-     */
-    function makeDry($is_dry = true) {
-        for ($i = 0; $i < count($this->reporters); $i++) {
-            $this->reporters[$i]->makeDry($is_dry);
-        }
-    }
-
-    /**
-     *    Accessor for current status. Will be false
-     *    if there have been any failures or exceptions.
-     *    If any reporter reports a failure, the whole
-     *    suite fails.
-     *    @return boolean        True if no failures.
-     *    @access public
-     */
-    function getStatus() {
-        for ($i = 0; $i < count($this->reporters); $i++) {
-            if (! $this->reporters[$i]->getStatus()) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    /**
-     *    The reporter has a veto on what should be run.
-     *    It requires all reporters to want to run the method.
-     *    @param string $test_case_name  name of test case.
-     *    @param string $method          Name of test method.
-     *    @access public
-     */
-    function shouldInvoke($test_case_name, $method) {
-        for ($i = 0; $i < count($this->reporters); $i++) {
-            if (! $this->reporters[$i]->shouldInvoke($test_case_name, $method)) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    /**
-     *    Every reporter gets a chance to wrap the invoker.
-     *    @param SimpleInvoker $invoker   Individual test runner.
-     *    @return SimpleInvoker           Wrapped test runner.
-     *    @access public
-     */
-    function createInvoker($invoker) {
-        for ($i = 0; $i < count($this->reporters); $i++) {
-            $invoker = $this->reporters[$i]->createInvoker($invoker);
-        }
-        return $invoker;
-    }
-    
-    /**
-     *    Gets the formatter for privateiables and other small
-     *    generic data items.
-     *    @return SimpleDumper          Formatter.
-     *    @access public
-     */
-    function getDumper() {
-        return new SimpleDumper();
-    }
-
-    /**
-     *    Paints the start of a group test.
-     *    @param string $test_name     Name of test or other label.
-     *    @param integer $size         Number of test cases starting.
-     *    @access public
-     */
-    function paintGroupStart($test_name, $size) {
-        for ($i = 0; $i < count($this->reporters); $i++) {
-            $this->reporters[$i]->paintGroupStart($test_name, $size);
-        }
-    }
-
-    /**
-     *    Paints the end of a group test.
-     *    @param string $test_name     Name of test or other label.
-     *    @access public
-     */
-    function paintGroupEnd($test_name) {
-        for ($i = 0; $i < count($this->reporters); $i++) {
-            $this->reporters[$i]->paintGroupEnd($test_name);
-        }
-    }
-
-    /**
-     *    Paints the start of a test case.
-     *    @param string $test_name     Name of test or other label.
-     *    @access public
-     */
-    function paintCaseStart($test_name) {
-        for ($i = 0; $i < count($this->reporters); $i++) {
-            $this->reporters[$i]->paintCaseStart($test_name);
-        }
-    }
-
-    /**
-     *    Paints the end of a test case.
-     *    @param string $test_name     Name of test or other label.
-     *    @access public
-     */
-    function paintCaseEnd($test_name) {
-        for ($i = 0; $i < count($this->reporters); $i++) {
-            $this->reporters[$i]->paintCaseEnd($test_name);
-        }
-    }
-
-    /**
-     *    Paints the start of a test method.
-     *    @param string $test_name     Name of test or other label.
-     *    @access public
-     */
-    function paintMethodStart($test_name) {
-        for ($i = 0; $i < count($this->reporters); $i++) {
-            $this->reporters[$i]->paintMethodStart($test_name);
-        }
-    }
-
-    /**
-     *    Paints the end of a test method.
-     *    @param string $test_name     Name of test or other label.
-     *    @access public
-     */
-    function paintMethodEnd($test_name) {
-        for ($i = 0; $i < count($this->reporters); $i++) {
-            $this->reporters[$i]->paintMethodEnd($test_name);
-        }
-    }
-
-    /**
-     *    Chains to the wrapped reporter.
-     *    @param string $message        Message is ignored.
-     *    @access public
-     */
-    function paintPass($message) {
-        for ($i = 0; $i < count($this->reporters); $i++) {
-            $this->reporters[$i]->paintPass($message);
-        }
-    }
-
-    /**
-     *    Chains to the wrapped reporter.
-     *    @param string $message        Message is ignored.
-     *    @access public
-     */
-    function paintFail($message) {
-        for ($i = 0; $i < count($this->reporters); $i++) {
-            $this->reporters[$i]->paintFail($message);
-        }
-    }
-
-    /**
-     *    Chains to the wrapped reporter.
-     *    @param string $message    Text of error formatted by
-     *                              the test case.
-     *    @access public
-     */
-    function paintError($message) {
-        for ($i = 0; $i < count($this->reporters); $i++) {
-            $this->reporters[$i]->paintError($message);
-        }
-    }
-    
-    /**
-     *    Chains to the wrapped reporter.
-     *    @param Exception $exception    Exception to display.
-     *    @access public
-     */
-    function paintException($exception) {
-        for ($i = 0; $i < count($this->reporters); $i++) {
-            $this->reporters[$i]->paintException($exception);
-        }
-    }
-
-    /**
-     *    Prints the message for skipping tests.
-     *    @param string $message    Text of skip condition.
-     *    @access public
-     */
-    function paintSkip($message) {
-        for ($i = 0; $i < count($this->reporters); $i++) {
-            $this->reporters[$i]->paintSkip($message);
-        }
-    }
-
-    /**
-     *    Chains to the wrapped reporter.
-     *    @param string $message        Text to display.
-     *    @access public
-     */
-    function paintMessage($message) {
-        for ($i = 0; $i < count($this->reporters); $i++) {
-            $this->reporters[$i]->paintMessage($message);
-        }
-    }
-
-    /**
-     *    Chains to the wrapped reporter.
-     *    @param string $message        Text to display.
-     *    @access public
-     */
-    function paintFormattedMessage($message) {
-        for ($i = 0; $i < count($this->reporters); $i++) {
-            $this->reporters[$i]->paintFormattedMessage($message);
-        }
-    }
-
-    /**
-     *    Chains to the wrapped reporter.
-     *    @param string $type        Event type as text.
-     *    @param mixed $payload      Message or object.
-     *    @return boolean            Should return false if this
-     *                               type of signal should fail the
-     *                               test suite.
-     *    @access public
-     */
-    function paintSignal($type, $payload) {
-        for ($i = 0; $i < count($this->reporters); $i++) {
-            $this->reporters[$i]->paintSignal($type, $payload);
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+R9nyIo+4XTXuUMv8qvgwZc1dOm==

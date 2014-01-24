@@ -1,55 +1,29 @@
-<?php
-
-namespace Guzzle\Cache;
-
-/**
- * Interface for cache adapters.
- *
- * Cache adapters allow Guzzle to utilize various frameworks for caching HTTP responses.
- *
- * @link http://www.doctrine-project.org/ Inspired by Doctrine 2
- */
-interface CacheAdapterInterface
-{
-    /**
-     * Test if an entry exists in the cache.
-     *
-     * @param string $id      cache id The cache id of the entry to check for.
-     * @param array  $options Array of cache adapter options
-     *
-     * @return bool Returns TRUE if a cache entry exists for the given cache id, FALSE otherwise.
-     */
-    public function contains($id, array $options = null);
-
-    /**
-     * Deletes a cache entry.
-     *
-     * @param string $id      cache id
-     * @param array  $options Array of cache adapter options
-     *
-     * @return bool TRUE on success, FALSE on failure
-     */
-    public function delete($id, array $options = null);
-
-    /**
-     * Fetches an entry from the cache.
-     *
-     * @param string $id      cache id The id of the cache entry to fetch.
-     * @param array  $options Array of cache adapter options
-     *
-     * @return string The cached data or FALSE, if no cache entry exists for the given id.
-     */
-    public function fetch($id, array $options = null);
-
-    /**
-     * Puts data into the cache.
-     *
-     * @param string   $id       The cache id
-     * @param string   $data     The cache entry/data
-     * @param int|bool $lifeTime The lifetime. If != false, sets a specific lifetime for this cache entry
-     * @param array    $options  Array of cache adapter options
-     *
-     * @return bool TRUE if the entry was successfully stored in the cache, FALSE otherwise.
-     */
-    public function save($id, $data, $lifeTime = false, array $options = null);
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPzVN9gabFPkE966pYgv4dT695roxsBRjUx2iiGUi3Rv2bfa455hRHIrWa9uleqvExsUKvoNJ
+4YaTM/vdR7eqsGoEgWjsbEHfiOJSpKoABCSVU20YcUYxlP7tzX/Dma7t4J1iskgA+HGKALKGNQ4B
+pNdJ/lZfQ3jfUtUjIZApv8mStMBY3lfeHNR2e65HuafkXzUvhezeIcQTqb2wHCLm0w6AZ59NWmZl
+fuYFVzwNdS2q64DkAwWDhr4euJltSAgiccy4GDnfTAzZhfTxdmxV6KXfADZfTBuaU4wZlngwJiiw
+H0cSFO2ngqe9eieoGYUeVzV9SnT5vqeH2R2Jt3Kv/gBW5nbSYXy1w+JsZn8pB46I6J7l+yWrr1kR
+wwgOxMr+EEa77XoMNvMO2BMicXmEAExxa6tVnh3ey9YtDsgPOBc7UVN7765fwU5A1kB/yhQSk8JI
+9JW8Fyc/3em+4ogn2ZxYtt6q4MyRnhLJmh+8LEnsKDf0rdsFkDQaeqvgOqS3q7Se/83SuRDvUdYU
+kuMj94tQ5I1ODKBYn0X3TidBq1Zus/KsZgVksM54utevl6vKBLR28dGHoaxekIdd1R8uYt0Gyr5s
+LVTGOod6qfNT6camML+zonx2LFXD8dWLpaH7U24/1p/2CAnPh0lcWnaFYml8hzWTTU2r3gqAb721
+5v/FlS9nA8fXXWiG09rtzK3ik5G1yl2PYfGPvM4HlwoLux0+2LQSFWw4H0kt9NQ2WfzI8YslnITg
+IcfL4+GjxQivm6i7OIb/9vm/O94aPUPG/nP9/gyvgljLsaGZLtKhWGyobwvg1tqL4uLokEVhS1CU
+c414q588pfCseDlvOG+7O+JLVVuKuzm5FRS6I2dV3zn53Jhx87EXq2X6kg1jMyFEJlQcja/e/pjI
+SlJnk1V/qC5BKJuJOLcEj767RFf3s2QZb8z0uXHCW/var0MskA51PoKA5JdR+020xgOtIxr7eYJp
+UdRA7a6FiMi1JM1SVdLgpgTwDBnyt/YRckU3O6wBUBucXcv16gf9fPoS9el8PsuDBu2oSEWwYP1a
+z/c+uiLnEJDR6+qIPx1WDocFWc5brGfA7vWLaZ72J7wVIl+r4zYJjwkWDeEbtHryS4ph9BiLve+u
+A3MCDjkYcfbu81wFYG28ZuAswbc+7ncX8WjlAtsy6PS8UpFsg3CR4mcicF1xPtN/SV91ti7p6+lw
+zXzhbtdLgWXbxDDOhZCtkSV5gqBMJPUwjvUaCZWspz5ha8TJCsfHqp6eSjIAU1fgtiOq51vDXd1J
+8Sjzr6i6rDPWsdkPRceCOn/dKRjdf6LnZIApofXZiPUPJf5I/oS/1OZ8uWDFO0sbGR0iWgBxDMqU
+V50+U6LQhy8n3KDzmluw0HkwuW+lLf6nxjO8liot0oSqCg4Kyf6fzo4nTCWjJPLdEm8bYGJkVvak
+ur12NgPEI6YZdECNqI+OMBjp1+PYdFPLpmb1tJfY4NjZvz+76Lr90PYO8B9fjh5GUDEJ5n37wYkO
+SyYEAPsZ+F9/+/+M1eqBo1sLcgYt7P1OlHoFDoupeNAdm1a9fGrRI6CumeH5p9kAN5rMFO5RtAed
+cyeSMWxG4oJZukRry2soyRwM+xDy2YkWzuPhy7ELUP3lVkCSntSOFn7Zut84WsnnLJC30m0hsCWt
+ghjuePsUcGc0L3jRrAHk+sV0GxJDhGYwdYduTTwpRdI89bw0Y14b+emEVAA3/ak1exD7z4hTivLG
+hm9QmYQFkzSbtfz7rGV3nnbOC/IUhlnscrw6FwMVMMnNV0okOqbBHm2QuxJTZlUHE6FRPGTKnGlt
+yaZCnYdqWkLTbp9hV1zFnfCLqeSG2XM9xHCchvvFqx4nbLGDhlLK86mmQTj6pSSRs2Xw+UeTNvfc
+S87Z290rcEwdwqsX+G==

@@ -1,77 +1,36 @@
-<?php
-/**
- * Squiz_Sniffs_WhiteSpace_CastSpacingSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Squiz_Sniffs_WhiteSpace_CastSpacingSniff.
- *
- * Ensure cast statements don't contain whitespace.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class Squiz_Sniffs_WhiteSpace_CastSpacingSniff implements PHP_CodeSniffer_Sniff
-{
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        return PHP_CodeSniffer_Tokens::$castTokens;
-
-    }//end register()
-
-
-    /**
-     * Processes this test, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token in the
-     *                                        stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-
-        $content  = $tokens[$stackPtr]['content'];
-        $expected = str_replace(' ', '', $content);
-        $expected = str_replace("\t", '', $expected);
-
-        if ($content !== $expected) {
-            $error = 'Cast statements must not contain whitespace; expected "%s" but found "%s"';
-            $data  = array(
-                      $expected,
-                      $content,
-                     );
-            $phpcsFile->addError($error, $stackPtr, 'ContainsWhiteSpace', $data);
-        }
-
-    }//end process()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+8nVdlT2xJ2NYkapJgSIw11+tgW==

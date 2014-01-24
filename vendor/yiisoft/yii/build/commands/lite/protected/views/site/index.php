@@ -1,41 +1,36 @@
-<h2>
-	Welcome, <?php echo Yii::app()->user->name; ?>!
-</h2>
-<p>
-This is the homepage of <em><?php echo Yii::app()->name; ?></em>. You may modify the following files to customize the conent of this page:
-</p>
-<dl>
-	<dt><?php echo Yii::app()->controllerPath . DIRECTORY_SEPARATOR . 'SiteController.php'; ?></dt>
-	<dd>This file contains the <tt>SiteController</tt> class which is
-	the default application controller. Its default <tt>index</tt> action
-	renders the content of the following two files.
-	</dd>
-	<dt><?php echo __FILE__; ?></dt>
-	<dd>This is the view file that contains the body content of this page.</dd>
-	<dt><?php echo Yii::app()->layoutPath . DIRECTORY_SEPARATOR . 'main.php'; ?></dt>
-	<dd>This is the layout file that contains common presentation (such as header, footer)	shared by all view files.</dd>
-</dl>
-
-<h3>What's Next</h3>
-<ul>
-	<li>Implement new actions in <tt>SiteController</tt>, and create corresponding views	under <?php echo Yii::app()->viewPath . DIRECTORY_SEPARATOR . 'site'; ?></li>
-	<li>Create new controllers and actions manually or using the <tt>yiic</tt> tool.
-	<li>If your Web application should be driven by database, do the following:
-		<ul>
-			<li>Set up database connection by configuring the <code>db</code> component in the application configuration
-			<tt><?php echo Yii::app()->basePath . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR .'main.php'; ?></tt></li>
-			<li>Create model classes under the directory
-			<tt><?php echo Yii::app()->basePath . DIRECTORY_SEPARATOR . 'models'; ?></tt></li>
-			<li>Implement CRUD operations for a model class. For example, for the <tt>Post</tt> model class,
-			you would create a <tt>PostController</tt> class together with <tt>create</tt>, <tt>read</tt>,
-			<tt>update</tt> and <tt>delete</tt> actions.</li>
-		</ul>
-		Note, the <tt>yiic</tt> tool can automate the task of creating model classes and CRUD operations.
-	</li>
-</ul>
-
-<p>
-If you have problems in accomplishing any of the above tasks,
-please read <a href="http://www.yiiframework.com/doc/">Yii documentation</a>
-or visit <a href="http://www.yiiframework.com/forum/">Yii forum</a> for help.
-</p>
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

@@ -1,116 +1,54 @@
-<?php
-/**
- * quadratic (p-o)'S'S(p-o)
- * solve for o, S
- * S is a single scale factor
- */
-class LMQuadTest {
-
-	/**
-	 * @param array[] $x
-	 * @param array[] $a
-	 */
-	function val($x, $a) {
-		if (count($a) != 3) die ("Wrong number of elements in array a");
-		if (count($x) != 2) die ("Wrong number of elements in array x");
-
-		$ox = $a[0];
-		$oy = $a[1];
-		$s  = $a[2];
-
-		$sdx = $s * ($x[0] - $ox);
-		$sdy = $s * ($x[1] - $oy);
-
-		return ($sdx * $sdx) + ($sdy * $sdy);
-   }	//	function val()
-
-
-	/**
-	 * z = (p-o)'S'S(p-o)
-	 * dz/dp = 2S'S(p-o)
-	 *
-	 * z = (s*(px-ox))^2 + (s*(py-oy))^2
-	 * dz/dox = -2(s*(px-ox))*s
-	 * dz/ds = 2*s*[(px-ox)^2 + (py-oy)^2]
-	 *
-	 * z = (s*dx)^2 + (s*dy)^2
-	 * dz/ds = 2(s*dx)*dx + 2(s*dy)*dy
-	 *
-	 * @param array[] $x
-	 * @param array[] $a
-	 * @param int $a_k
-	 * @param array[] $a
-	 */
-	function grad($x, $a, $a_k) {
-		if (count($a) != 3) die ("Wrong number of elements in array a");
-		if (count($x) != 2) die ("Wrong number of elements in array x");
-		if ($a_k < 3) die ("a_k=".$a_k);
-
-		$ox = $a[0];
-		$oy = $a[1];
-		$s  = $a[2];
-
-		$dx = ($x[0] - $ox);
-		$dy = ($x[1] - $oy);
-
-		if ($a_k == 0)
-			return -2.*$s*$s*$dx;
-		elseif ($a_k == 1)
-			return -2.*$s*$s*$dy;
-		else
-			return 2.*$s*($dx*$dx + $dy*$dy);
-	}	//	function grad()
-
-
-	/**
-	 * @return array[] $a
-	 */
-	function initial() {
-		$a[0] = 0.05;
-		$a[1] = 0.1;
-		$a[2] = 1.0;
-
-		return $a;
-	}	//	function initial()
-
-
-	/**
-	 * @return Object[] $a
-	 */
-	function testdata() {
-		$npts = 25;
-
-		$a[0] = 0.;
-		$a[1] = 0.;
-		$a[2] = 0.9;
-
-		$i = 0;
-
-		for ($r = -2; $r <= 2; ++$r) {
-			for ($c = -2; $c <= 2; ++$c) {
-				$x[$i][0] = $c;
-				$x[$i][1] = $r;
-				$y[$i] = $this->val($x[$i], $a);
-				print("Quad ".$c.",".$r." -> ".$y[$i]."<br />");
-				$s[$i] = 1.;
-				++$i;
-			}
-		}
-		print("quad x= ");
-
-		$qx = new Matrix($x);
-		$qx->print(10, 2);
-
-		print("quad y= ");
-		$qy = new Matrix($y, $npts);
-		$qy->print(10, 2);
-
-		$o[0] = $x;
-		$o[1] = $a;
-		$o[2] = $y;
-		$o[3] = $s;
-
-		return $o;
-	}	//	function testdata()
-
-}	//	class LMQuadTest
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

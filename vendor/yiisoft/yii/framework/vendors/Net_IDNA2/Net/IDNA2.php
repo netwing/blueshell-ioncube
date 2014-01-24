@@ -1,3402 +1,689 @@
-<?php
-
-// {{{ license
-
-/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 foldmethod=marker: */
-//
-// +----------------------------------------------------------------------+
-// | This library is free software; you can redistribute it and/or modify |
-// | it under the terms of the GNU Lesser General Public License as       |
-// | published by the Free Software Foundation; either version 2.1 of the |
-// | License, or (at your option) any later version.                      |
-// |                                                                      |
-// | This library is distributed in the hope that it will be useful, but  |
-// | WITHOUT ANY WARRANTY; without even the implied warranty of           |
-// | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU    |
-// | Lesser General Public License for more details.                      |
-// |                                                                      |
-// | You should have received a copy of the GNU Lesser General Public     |
-// | License along with this library; if not, write to the Free Software  |
-// | Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 |
-// | USA.                                                                 |
-// +----------------------------------------------------------------------+
-//
-
-// }}}
-require_once dirname(__FILE__).'/IDNA2/Exception.php';
-require_once dirname(__FILE__).'/IDNA2/Exception/Nameprep.php';
-
-/**
- * Encode/decode Internationalized Domain Names.
- *
- * The class allows to convert internationalized domain names
- * (see RFC 3490 for details) as they can be used with various registries worldwide
- * to be translated between their original (localized) form and their encoded form
- * as it will be used in the DNS (Domain Name System).
- *
- * The class provides two public methods, encode() and decode(), which do exactly
- * what you would expect them to do. You are allowed to use complete domain names,
- * simple strings and complete email addresses as well. That means, that you might
- * use any of the following notations:
- *
- * - www.n�rgler.com
- * - xn--nrgler-wxa
- * - xn--brse-5qa.xn--knrz-1ra.info
- *
- * Unicode input might be given as either UTF-8 string, UCS-4 string or UCS-4
- * array. Unicode output is available in the same formats.
- * You can select your preferred format via {@link set_paramter()}.
- *
- * ACE input and output is always expected to be ASCII.
- *
- * @package Net
- * @author  Markus Nix <mnix@docuverse.de>
- * @author  Matthias Sommerfeld <mso@phlylabs.de>
- * @author  Stefan Neufeind <pear.neufeind@speedpartner.de>
- * @version $Id: IDNA2.php 305344 2010-11-14 23:52:42Z neufeind $
- */
-class Net_IDNA2
-{
-    // {{{ npdata
-    /**
-     * These Unicode codepoints are
-     * mapped to nothing, See RFC3454 for details
-     *
-     * @static
-     * @var array
-     * @access private
-     */
-    private static $_np_map_nothing = array(
-        0xAD,
-        0x34F,
-        0x1806,
-        0x180B,
-        0x180C,
-        0x180D,
-        0x200B,
-        0x200C,
-        0x200D,
-        0x2060,
-        0xFE00,
-        0xFE01,
-        0xFE02,
-        0xFE03,
-        0xFE04,
-        0xFE05,
-        0xFE06,
-        0xFE07,
-        0xFE08,
-        0xFE09,
-        0xFE0A,
-        0xFE0B,
-        0xFE0C,
-        0xFE0D,
-        0xFE0E,
-        0xFE0F,
-        0xFEFF
-    );
-
-    /**
-     * Prohibited codepints
-     *
-     * @static
-     * @var array
-     * @access private
-     */
-    private static $_general_prohibited = array(
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        0xA,
-        0xB,
-        0xC,
-        0xD,
-        0xE,
-        0xF,
-        0x10,
-        0x11,
-        0x12,
-        0x13,
-        0x14,
-        0x15,
-        0x16,
-        0x17,
-        0x18,
-        0x19,
-        0x1A,
-        0x1B,
-        0x1C,
-        0x1D,
-        0x1E,
-        0x1F,
-        0x20,
-        0x21,
-        0x22,
-        0x23,
-        0x24,
-        0x25,
-        0x26,
-        0x27,
-        0x28,
-        0x29,
-        0x2A,
-        0x2B,
-        0x2C,
-        0x2F,
-        0x3B,
-        0x3C,
-        0x3D,
-        0x3E,
-        0x3F,
-        0x40,
-        0x5B,
-        0x5C,
-        0x5D,
-        0x5E,
-        0x5F,
-        0x60,
-        0x7B,
-        0x7C,
-        0x7D,
-        0x7E,
-        0x7F,
-        0x3002
-    );
-
-    /**
-     * Codepints prohibited by Nameprep
-     * @static
-     * @var array
-     * @access private
-     */
-    private static $_np_prohibit = array(
-        0xA0,
-        0x1680,
-        0x2000,
-        0x2001,
-        0x2002,
-        0x2003,
-        0x2004,
-        0x2005,
-        0x2006,
-        0x2007,
-        0x2008,
-        0x2009,
-        0x200A,
-        0x200B,
-        0x202F,
-        0x205F,
-        0x3000,
-        0x6DD,
-        0x70F,
-        0x180E,
-        0x200C,
-        0x200D,
-        0x2028,
-        0x2029,
-        0xFEFF,
-        0xFFF9,
-        0xFFFA,
-        0xFFFB,
-        0xFFFC,
-        0xFFFE,
-        0xFFFF,
-        0x1FFFE,
-        0x1FFFF,
-        0x2FFFE,
-        0x2FFFF,
-        0x3FFFE,
-        0x3FFFF,
-        0x4FFFE,
-        0x4FFFF,
-        0x5FFFE,
-        0x5FFFF,
-        0x6FFFE,
-        0x6FFFF,
-        0x7FFFE,
-        0x7FFFF,
-        0x8FFFE,
-        0x8FFFF,
-        0x9FFFE,
-        0x9FFFF,
-        0xAFFFE,
-        0xAFFFF,
-        0xBFFFE,
-        0xBFFFF,
-        0xCFFFE,
-        0xCFFFF,
-        0xDFFFE,
-        0xDFFFF,
-        0xEFFFE,
-        0xEFFFF,
-        0xFFFFE,
-        0xFFFFF,
-        0x10FFFE,
-        0x10FFFF,
-        0xFFF9,
-        0xFFFA,
-        0xFFFB,
-        0xFFFC,
-        0xFFFD,
-        0x340,
-        0x341,
-        0x200E,
-        0x200F,
-        0x202A,
-        0x202B,
-        0x202C,
-        0x202D,
-        0x202E,
-        0x206A,
-        0x206B,
-        0x206C,
-        0x206D,
-        0x206E,
-        0x206F,
-        0xE0001
-    );
-
-    /**
-     * Codepoint ranges prohibited by nameprep
-     *
-     * @static
-     * @var array
-     * @access private
-     */
-    private static $_np_prohibit_ranges = array(
-        array(0x80,     0x9F    ),
-        array(0x2060,   0x206F  ),
-        array(0x1D173,  0x1D17A ),
-        array(0xE000,   0xF8FF  ),
-        array(0xF0000,  0xFFFFD ),
-        array(0x100000, 0x10FFFD),
-        array(0xFDD0,   0xFDEF  ),
-        array(0xD800,   0xDFFF  ),
-        array(0x2FF0,   0x2FFB  ),
-        array(0xE0020,  0xE007F )
-    );
-
-    /**
-     * Replacement mappings (casemapping, replacement sequences, ...)
-     *
-     * @static
-     * @var array
-     * @access private
-     */
-    private static $_np_replacemaps = array(
-        0x41    => array(0x61),
-        0x42    => array(0x62),
-        0x43    => array(0x63),
-        0x44    => array(0x64),
-        0x45    => array(0x65),
-        0x46    => array(0x66),
-        0x47    => array(0x67),
-        0x48    => array(0x68),
-        0x49    => array(0x69),
-        0x4A    => array(0x6A),
-        0x4B    => array(0x6B),
-        0x4C    => array(0x6C),
-        0x4D    => array(0x6D),
-        0x4E    => array(0x6E),
-        0x4F    => array(0x6F),
-        0x50    => array(0x70),
-        0x51    => array(0x71),
-        0x52    => array(0x72),
-        0x53    => array(0x73),
-        0x54    => array(0x74),
-        0x55    => array(0x75),
-        0x56    => array(0x76),
-        0x57    => array(0x77),
-        0x58    => array(0x78),
-        0x59    => array(0x79),
-        0x5A    => array(0x7A),
-        0xB5    => array(0x3BC),
-        0xC0    => array(0xE0),
-        0xC1    => array(0xE1),
-        0xC2    => array(0xE2),
-        0xC3    => array(0xE3),
-        0xC4    => array(0xE4),
-        0xC5    => array(0xE5),
-        0xC6    => array(0xE6),
-        0xC7    => array(0xE7),
-        0xC8    => array(0xE8),
-        0xC9    => array(0xE9),
-        0xCA    => array(0xEA),
-        0xCB    => array(0xEB),
-        0xCC    => array(0xEC),
-        0xCD    => array(0xED),
-        0xCE    => array(0xEE),
-        0xCF    => array(0xEF),
-        0xD0    => array(0xF0),
-        0xD1    => array(0xF1),
-        0xD2    => array(0xF2),
-        0xD3    => array(0xF3),
-        0xD4    => array(0xF4),
-        0xD5    => array(0xF5),
-        0xD6    => array(0xF6),
-        0xD8    => array(0xF8),
-        0xD9    => array(0xF9),
-        0xDA    => array(0xFA),
-        0xDB    => array(0xFB),
-        0xDC    => array(0xFC),
-        0xDD    => array(0xFD),
-        0xDE    => array(0xFE),
-        0xDF    => array(0x73, 0x73),
-        0x100   => array(0x101),
-        0x102   => array(0x103),
-        0x104   => array(0x105),
-        0x106   => array(0x107),
-        0x108   => array(0x109),
-        0x10A   => array(0x10B),
-        0x10C   => array(0x10D),
-        0x10E   => array(0x10F),
-        0x110   => array(0x111),
-        0x112   => array(0x113),
-        0x114   => array(0x115),
-        0x116   => array(0x117),
-        0x118   => array(0x119),
-        0x11A   => array(0x11B),
-        0x11C   => array(0x11D),
-        0x11E   => array(0x11F),
-        0x120   => array(0x121),
-        0x122   => array(0x123),
-        0x124   => array(0x125),
-        0x126   => array(0x127),
-        0x128   => array(0x129),
-        0x12A   => array(0x12B),
-        0x12C   => array(0x12D),
-        0x12E   => array(0x12F),
-        0x130   => array(0x69, 0x307),
-        0x132   => array(0x133),
-        0x134   => array(0x135),
-        0x136   => array(0x137),
-        0x139   => array(0x13A),
-        0x13B   => array(0x13C),
-        0x13D   => array(0x13E),
-        0x13F   => array(0x140),
-        0x141   => array(0x142),
-        0x143   => array(0x144),
-        0x145   => array(0x146),
-        0x147   => array(0x148),
-        0x149   => array(0x2BC, 0x6E),
-        0x14A   => array(0x14B),
-        0x14C   => array(0x14D),
-        0x14E   => array(0x14F),
-        0x150   => array(0x151),
-        0x152   => array(0x153),
-        0x154   => array(0x155),
-        0x156   => array(0x157),
-        0x158   => array(0x159),
-        0x15A   => array(0x15B),
-        0x15C   => array(0x15D),
-        0x15E   => array(0x15F),
-        0x160   => array(0x161),
-        0x162   => array(0x163),
-        0x164   => array(0x165),
-        0x166   => array(0x167),
-        0x168   => array(0x169),
-        0x16A   => array(0x16B),
-        0x16C   => array(0x16D),
-        0x16E   => array(0x16F),
-        0x170   => array(0x171),
-        0x172   => array(0x173),
-        0x174   => array(0x175),
-        0x176   => array(0x177),
-        0x178   => array(0xFF),
-        0x179   => array(0x17A),
-        0x17B   => array(0x17C),
-        0x17D   => array(0x17E),
-        0x17F   => array(0x73),
-        0x181   => array(0x253),
-        0x182   => array(0x183),
-        0x184   => array(0x185),
-        0x186   => array(0x254),
-        0x187   => array(0x188),
-        0x189   => array(0x256),
-        0x18A   => array(0x257),
-        0x18B   => array(0x18C),
-        0x18E   => array(0x1DD),
-        0x18F   => array(0x259),
-        0x190   => array(0x25B),
-        0x191   => array(0x192),
-        0x193   => array(0x260),
-        0x194   => array(0x263),
-        0x196   => array(0x269),
-        0x197   => array(0x268),
-        0x198   => array(0x199),
-        0x19C   => array(0x26F),
-        0x19D   => array(0x272),
-        0x19F   => array(0x275),
-        0x1A0   => array(0x1A1),
-        0x1A2   => array(0x1A3),
-        0x1A4   => array(0x1A5),
-        0x1A6   => array(0x280),
-        0x1A7   => array(0x1A8),
-        0x1A9   => array(0x283),
-        0x1AC   => array(0x1AD),
-        0x1AE   => array(0x288),
-        0x1AF   => array(0x1B0),
-        0x1B1   => array(0x28A),
-        0x1B2   => array(0x28B),
-        0x1B3   => array(0x1B4),
-        0x1B5   => array(0x1B6),
-        0x1B7   => array(0x292),
-        0x1B8   => array(0x1B9),
-        0x1BC   => array(0x1BD),
-        0x1C4   => array(0x1C6),
-        0x1C5   => array(0x1C6),
-        0x1C7   => array(0x1C9),
-        0x1C8   => array(0x1C9),
-        0x1CA   => array(0x1CC),
-        0x1CB   => array(0x1CC),
-        0x1CD   => array(0x1CE),
-        0x1CF   => array(0x1D0),
-        0x1D1   => array(0x1D2),
-        0x1D3   => array(0x1D4),
-        0x1D5   => array(0x1D6),
-        0x1D7   => array(0x1D8),
-        0x1D9   => array(0x1DA),
-        0x1DB   => array(0x1DC),
-        0x1DE   => array(0x1DF),
-        0x1E0   => array(0x1E1),
-        0x1E2   => array(0x1E3),
-        0x1E4   => array(0x1E5),
-        0x1E6   => array(0x1E7),
-        0x1E8   => array(0x1E9),
-        0x1EA   => array(0x1EB),
-        0x1EC   => array(0x1ED),
-        0x1EE   => array(0x1EF),
-        0x1F0   => array(0x6A, 0x30C),
-        0x1F1   => array(0x1F3),
-        0x1F2   => array(0x1F3),
-        0x1F4   => array(0x1F5),
-        0x1F6   => array(0x195),
-        0x1F7   => array(0x1BF),
-        0x1F8   => array(0x1F9),
-        0x1FA   => array(0x1FB),
-        0x1FC   => array(0x1FD),
-        0x1FE   => array(0x1FF),
-        0x200   => array(0x201),
-        0x202   => array(0x203),
-        0x204   => array(0x205),
-        0x206   => array(0x207),
-        0x208   => array(0x209),
-        0x20A   => array(0x20B),
-        0x20C   => array(0x20D),
-        0x20E   => array(0x20F),
-        0x210   => array(0x211),
-        0x212   => array(0x213),
-        0x214   => array(0x215),
-        0x216   => array(0x217),
-        0x218   => array(0x219),
-        0x21A   => array(0x21B),
-        0x21C   => array(0x21D),
-        0x21E   => array(0x21F),
-        0x220   => array(0x19E),
-        0x222   => array(0x223),
-        0x224   => array(0x225),
-        0x226   => array(0x227),
-        0x228   => array(0x229),
-        0x22A   => array(0x22B),
-        0x22C   => array(0x22D),
-        0x22E   => array(0x22F),
-        0x230   => array(0x231),
-        0x232   => array(0x233),
-        0x345   => array(0x3B9),
-        0x37A   => array(0x20, 0x3B9),
-        0x386   => array(0x3AC),
-        0x388   => array(0x3AD),
-        0x389   => array(0x3AE),
-        0x38A   => array(0x3AF),
-        0x38C   => array(0x3CC),
-        0x38E   => array(0x3CD),
-        0x38F   => array(0x3CE),
-        0x390   => array(0x3B9, 0x308, 0x301),
-        0x391   => array(0x3B1),
-        0x392   => array(0x3B2),
-        0x393   => array(0x3B3),
-        0x394   => array(0x3B4),
-        0x395   => array(0x3B5),
-        0x396   => array(0x3B6),
-        0x397   => array(0x3B7),
-        0x398   => array(0x3B8),
-        0x399   => array(0x3B9),
-        0x39A   => array(0x3BA),
-        0x39B   => array(0x3BB),
-        0x39C   => array(0x3BC),
-        0x39D   => array(0x3BD),
-        0x39E   => array(0x3BE),
-        0x39F   => array(0x3BF),
-        0x3A0   => array(0x3C0),
-        0x3A1   => array(0x3C1),
-        0x3A3   => array(0x3C3),
-        0x3A4   => array(0x3C4),
-        0x3A5   => array(0x3C5),
-        0x3A6   => array(0x3C6),
-        0x3A7   => array(0x3C7),
-        0x3A8   => array(0x3C8),
-        0x3A9   => array(0x3C9),
-        0x3AA   => array(0x3CA),
-        0x3AB   => array(0x3CB),
-        0x3B0   => array(0x3C5, 0x308, 0x301),
-        0x3C2   => array(0x3C3),
-        0x3D0   => array(0x3B2),
-        0x3D1   => array(0x3B8),
-        0x3D2   => array(0x3C5),
-        0x3D3   => array(0x3CD),
-        0x3D4   => array(0x3CB),
-        0x3D5   => array(0x3C6),
-        0x3D6   => array(0x3C0),
-        0x3D8   => array(0x3D9),
-        0x3DA   => array(0x3DB),
-        0x3DC   => array(0x3DD),
-        0x3DE   => array(0x3DF),
-        0x3E0   => array(0x3E1),
-        0x3E2   => array(0x3E3),
-        0x3E4   => array(0x3E5),
-        0x3E6   => array(0x3E7),
-        0x3E8   => array(0x3E9),
-        0x3EA   => array(0x3EB),
-        0x3EC   => array(0x3ED),
-        0x3EE   => array(0x3EF),
-        0x3F0   => array(0x3BA),
-        0x3F1   => array(0x3C1),
-        0x3F2   => array(0x3C3),
-        0x3F4   => array(0x3B8),
-        0x3F5   => array(0x3B5),
-        0x400   => array(0x450),
-        0x401   => array(0x451),
-        0x402   => array(0x452),
-        0x403   => array(0x453),
-        0x404   => array(0x454),
-        0x405   => array(0x455),
-        0x406   => array(0x456),
-        0x407   => array(0x457),
-        0x408   => array(0x458),
-        0x409   => array(0x459),
-        0x40A   => array(0x45A),
-        0x40B   => array(0x45B),
-        0x40C   => array(0x45C),
-        0x40D   => array(0x45D),
-        0x40E   => array(0x45E),
-        0x40F   => array(0x45F),
-        0x410   => array(0x430),
-        0x411   => array(0x431),
-        0x412   => array(0x432),
-        0x413   => array(0x433),
-        0x414   => array(0x434),
-        0x415   => array(0x435),
-        0x416   => array(0x436),
-        0x417   => array(0x437),
-        0x418   => array(0x438),
-        0x419   => array(0x439),
-        0x41A   => array(0x43A),
-        0x41B   => array(0x43B),
-        0x41C   => array(0x43C),
-        0x41D   => array(0x43D),
-        0x41E   => array(0x43E),
-        0x41F   => array(0x43F),
-        0x420   => array(0x440),
-        0x421   => array(0x441),
-        0x422   => array(0x442),
-        0x423   => array(0x443),
-        0x424   => array(0x444),
-        0x425   => array(0x445),
-        0x426   => array(0x446),
-        0x427   => array(0x447),
-        0x428   => array(0x448),
-        0x429   => array(0x449),
-        0x42A   => array(0x44A),
-        0x42B   => array(0x44B),
-        0x42C   => array(0x44C),
-        0x42D   => array(0x44D),
-        0x42E   => array(0x44E),
-        0x42F   => array(0x44F),
-        0x460   => array(0x461),
-        0x462   => array(0x463),
-        0x464   => array(0x465),
-        0x466   => array(0x467),
-        0x468   => array(0x469),
-        0x46A   => array(0x46B),
-        0x46C   => array(0x46D),
-        0x46E   => array(0x46F),
-        0x470   => array(0x471),
-        0x472   => array(0x473),
-        0x474   => array(0x475),
-        0x476   => array(0x477),
-        0x478   => array(0x479),
-        0x47A   => array(0x47B),
-        0x47C   => array(0x47D),
-        0x47E   => array(0x47F),
-        0x480   => array(0x481),
-        0x48A   => array(0x48B),
-        0x48C   => array(0x48D),
-        0x48E   => array(0x48F),
-        0x490   => array(0x491),
-        0x492   => array(0x493),
-        0x494   => array(0x495),
-        0x496   => array(0x497),
-        0x498   => array(0x499),
-        0x49A   => array(0x49B),
-        0x49C   => array(0x49D),
-        0x49E   => array(0x49F),
-        0x4A0   => array(0x4A1),
-        0x4A2   => array(0x4A3),
-        0x4A4   => array(0x4A5),
-        0x4A6   => array(0x4A7),
-        0x4A8   => array(0x4A9),
-        0x4AA   => array(0x4AB),
-        0x4AC   => array(0x4AD),
-        0x4AE   => array(0x4AF),
-        0x4B0   => array(0x4B1),
-        0x4B2   => array(0x4B3),
-        0x4B4   => array(0x4B5),
-        0x4B6   => array(0x4B7),
-        0x4B8   => array(0x4B9),
-        0x4BA   => array(0x4BB),
-        0x4BC   => array(0x4BD),
-        0x4BE   => array(0x4BF),
-        0x4C1   => array(0x4C2),
-        0x4C3   => array(0x4C4),
-        0x4C5   => array(0x4C6),
-        0x4C7   => array(0x4C8),
-        0x4C9   => array(0x4CA),
-        0x4CB   => array(0x4CC),
-        0x4CD   => array(0x4CE),
-        0x4D0   => array(0x4D1),
-        0x4D2   => array(0x4D3),
-        0x4D4   => array(0x4D5),
-        0x4D6   => array(0x4D7),
-        0x4D8   => array(0x4D9),
-        0x4DA   => array(0x4DB),
-        0x4DC   => array(0x4DD),
-        0x4DE   => array(0x4DF),
-        0x4E0   => array(0x4E1),
-        0x4E2   => array(0x4E3),
-        0x4E4   => array(0x4E5),
-        0x4E6   => array(0x4E7),
-        0x4E8   => array(0x4E9),
-        0x4EA   => array(0x4EB),
-        0x4EC   => array(0x4ED),
-        0x4EE   => array(0x4EF),
-        0x4F0   => array(0x4F1),
-        0x4F2   => array(0x4F3),
-        0x4F4   => array(0x4F5),
-        0x4F8   => array(0x4F9),
-        0x500   => array(0x501),
-        0x502   => array(0x503),
-        0x504   => array(0x505),
-        0x506   => array(0x507),
-        0x508   => array(0x509),
-        0x50A   => array(0x50B),
-        0x50C   => array(0x50D),
-        0x50E   => array(0x50F),
-        0x531   => array(0x561),
-        0x532   => array(0x562),
-        0x533   => array(0x563),
-        0x534   => array(0x564),
-        0x535   => array(0x565),
-        0x536   => array(0x566),
-        0x537   => array(0x567),
-        0x538   => array(0x568),
-        0x539   => array(0x569),
-        0x53A   => array(0x56A),
-        0x53B   => array(0x56B),
-        0x53C   => array(0x56C),
-        0x53D   => array(0x56D),
-        0x53E   => array(0x56E),
-        0x53F   => array(0x56F),
-        0x540   => array(0x570),
-        0x541   => array(0x571),
-        0x542   => array(0x572),
-        0x543   => array(0x573),
-        0x544   => array(0x574),
-        0x545   => array(0x575),
-        0x546   => array(0x576),
-        0x547   => array(0x577),
-        0x548   => array(0x578),
-        0x549   => array(0x579),
-        0x54A   => array(0x57A),
-        0x54B   => array(0x57B),
-        0x54C   => array(0x57C),
-        0x54D   => array(0x57D),
-        0x54E   => array(0x57E),
-        0x54F   => array(0x57F),
-        0x550   => array(0x580),
-        0x551   => array(0x581),
-        0x552   => array(0x582),
-        0x553   => array(0x583),
-        0x554   => array(0x584),
-        0x555   => array(0x585),
-        0x556   => array(0x586),
-        0x587   => array(0x565, 0x582),
-        0x1E00  => array(0x1E01),
-        0x1E02  => array(0x1E03),
-        0x1E04  => array(0x1E05),
-        0x1E06  => array(0x1E07),
-        0x1E08  => array(0x1E09),
-        0x1E0A  => array(0x1E0B),
-        0x1E0C  => array(0x1E0D),
-        0x1E0E  => array(0x1E0F),
-        0x1E10  => array(0x1E11),
-        0x1E12  => array(0x1E13),
-        0x1E14  => array(0x1E15),
-        0x1E16  => array(0x1E17),
-        0x1E18  => array(0x1E19),
-        0x1E1A  => array(0x1E1B),
-        0x1E1C  => array(0x1E1D),
-        0x1E1E  => array(0x1E1F),
-        0x1E20  => array(0x1E21),
-        0x1E22  => array(0x1E23),
-        0x1E24  => array(0x1E25),
-        0x1E26  => array(0x1E27),
-        0x1E28  => array(0x1E29),
-        0x1E2A  => array(0x1E2B),
-        0x1E2C  => array(0x1E2D),
-        0x1E2E  => array(0x1E2F),
-        0x1E30  => array(0x1E31),
-        0x1E32  => array(0x1E33),
-        0x1E34  => array(0x1E35),
-        0x1E36  => array(0x1E37),
-        0x1E38  => array(0x1E39),
-        0x1E3A  => array(0x1E3B),
-        0x1E3C  => array(0x1E3D),
-        0x1E3E  => array(0x1E3F),
-        0x1E40  => array(0x1E41),
-        0x1E42  => array(0x1E43),
-        0x1E44  => array(0x1E45),
-        0x1E46  => array(0x1E47),
-        0x1E48  => array(0x1E49),
-        0x1E4A  => array(0x1E4B),
-        0x1E4C  => array(0x1E4D),
-        0x1E4E  => array(0x1E4F),
-        0x1E50  => array(0x1E51),
-        0x1E52  => array(0x1E53),
-        0x1E54  => array(0x1E55),
-        0x1E56  => array(0x1E57),
-        0x1E58  => array(0x1E59),
-        0x1E5A  => array(0x1E5B),
-        0x1E5C  => array(0x1E5D),
-        0x1E5E  => array(0x1E5F),
-        0x1E60  => array(0x1E61),
-        0x1E62  => array(0x1E63),
-        0x1E64  => array(0x1E65),
-        0x1E66  => array(0x1E67),
-        0x1E68  => array(0x1E69),
-        0x1E6A  => array(0x1E6B),
-        0x1E6C  => array(0x1E6D),
-        0x1E6E  => array(0x1E6F),
-        0x1E70  => array(0x1E71),
-        0x1E72  => array(0x1E73),
-        0x1E74  => array(0x1E75),
-        0x1E76  => array(0x1E77),
-        0x1E78  => array(0x1E79),
-        0x1E7A  => array(0x1E7B),
-        0x1E7C  => array(0x1E7D),
-        0x1E7E  => array(0x1E7F),
-        0x1E80  => array(0x1E81),
-        0x1E82  => array(0x1E83),
-        0x1E84  => array(0x1E85),
-        0x1E86  => array(0x1E87),
-        0x1E88  => array(0x1E89),
-        0x1E8A  => array(0x1E8B),
-        0x1E8C  => array(0x1E8D),
-        0x1E8E  => array(0x1E8F),
-        0x1E90  => array(0x1E91),
-        0x1E92  => array(0x1E93),
-        0x1E94  => array(0x1E95),
-        0x1E96  => array(0x68, 0x331),
-        0x1E97  => array(0x74, 0x308),
-        0x1E98  => array(0x77, 0x30A),
-        0x1E99  => array(0x79, 0x30A),
-        0x1E9A  => array(0x61, 0x2BE),
-        0x1E9B  => array(0x1E61),
-        0x1EA0  => array(0x1EA1),
-        0x1EA2  => array(0x1EA3),
-        0x1EA4  => array(0x1EA5),
-        0x1EA6  => array(0x1EA7),
-        0x1EA8  => array(0x1EA9),
-        0x1EAA  => array(0x1EAB),
-        0x1EAC  => array(0x1EAD),
-        0x1EAE  => array(0x1EAF),
-        0x1EB0  => array(0x1EB1),
-        0x1EB2  => array(0x1EB3),
-        0x1EB4  => array(0x1EB5),
-        0x1EB6  => array(0x1EB7),
-        0x1EB8  => array(0x1EB9),
-        0x1EBA  => array(0x1EBB),
-        0x1EBC  => array(0x1EBD),
-        0x1EBE  => array(0x1EBF),
-        0x1EC0  => array(0x1EC1),
-        0x1EC2  => array(0x1EC3),
-        0x1EC4  => array(0x1EC5),
-        0x1EC6  => array(0x1EC7),
-        0x1EC8  => array(0x1EC9),
-        0x1ECA  => array(0x1ECB),
-        0x1ECC  => array(0x1ECD),
-        0x1ECE  => array(0x1ECF),
-        0x1ED0  => array(0x1ED1),
-        0x1ED2  => array(0x1ED3),
-        0x1ED4  => array(0x1ED5),
-        0x1ED6  => array(0x1ED7),
-        0x1ED8  => array(0x1ED9),
-        0x1EDA  => array(0x1EDB),
-        0x1EDC  => array(0x1EDD),
-        0x1EDE  => array(0x1EDF),
-        0x1EE0  => array(0x1EE1),
-        0x1EE2  => array(0x1EE3),
-        0x1EE4  => array(0x1EE5),
-        0x1EE6  => array(0x1EE7),
-        0x1EE8  => array(0x1EE9),
-        0x1EEA  => array(0x1EEB),
-        0x1EEC  => array(0x1EED),
-        0x1EEE  => array(0x1EEF),
-        0x1EF0  => array(0x1EF1),
-        0x1EF2  => array(0x1EF3),
-        0x1EF4  => array(0x1EF5),
-        0x1EF6  => array(0x1EF7),
-        0x1EF8  => array(0x1EF9),
-        0x1F08  => array(0x1F00),
-        0x1F09  => array(0x1F01),
-        0x1F0A  => array(0x1F02),
-        0x1F0B  => array(0x1F03),
-        0x1F0C  => array(0x1F04),
-        0x1F0D  => array(0x1F05),
-        0x1F0E  => array(0x1F06),
-        0x1F0F  => array(0x1F07),
-        0x1F18  => array(0x1F10),
-        0x1F19  => array(0x1F11),
-        0x1F1A  => array(0x1F12),
-        0x1F1B  => array(0x1F13),
-        0x1F1C  => array(0x1F14),
-        0x1F1D  => array(0x1F15),
-        0x1F28  => array(0x1F20),
-        0x1F29  => array(0x1F21),
-        0x1F2A  => array(0x1F22),
-        0x1F2B  => array(0x1F23),
-        0x1F2C  => array(0x1F24),
-        0x1F2D  => array(0x1F25),
-        0x1F2E  => array(0x1F26),
-        0x1F2F  => array(0x1F27),
-        0x1F38  => array(0x1F30),
-        0x1F39  => array(0x1F31),
-        0x1F3A  => array(0x1F32),
-        0x1F3B  => array(0x1F33),
-        0x1F3C  => array(0x1F34),
-        0x1F3D  => array(0x1F35),
-        0x1F3E  => array(0x1F36),
-        0x1F3F  => array(0x1F37),
-        0x1F48  => array(0x1F40),
-        0x1F49  => array(0x1F41),
-        0x1F4A  => array(0x1F42),
-        0x1F4B  => array(0x1F43),
-        0x1F4C  => array(0x1F44),
-        0x1F4D  => array(0x1F45),
-        0x1F50  => array(0x3C5, 0x313),
-        0x1F52  => array(0x3C5, 0x313, 0x300),
-        0x1F54  => array(0x3C5, 0x313, 0x301),
-        0x1F56  => array(0x3C5, 0x313, 0x342),
-        0x1F59  => array(0x1F51),
-        0x1F5B  => array(0x1F53),
-        0x1F5D  => array(0x1F55),
-        0x1F5F  => array(0x1F57),
-        0x1F68  => array(0x1F60),
-        0x1F69  => array(0x1F61),
-        0x1F6A  => array(0x1F62),
-        0x1F6B  => array(0x1F63),
-        0x1F6C  => array(0x1F64),
-        0x1F6D  => array(0x1F65),
-        0x1F6E  => array(0x1F66),
-        0x1F6F  => array(0x1F67),
-        0x1F80  => array(0x1F00, 0x3B9),
-        0x1F81  => array(0x1F01, 0x3B9),
-        0x1F82  => array(0x1F02, 0x3B9),
-        0x1F83  => array(0x1F03, 0x3B9),
-        0x1F84  => array(0x1F04, 0x3B9),
-        0x1F85  => array(0x1F05, 0x3B9),
-        0x1F86  => array(0x1F06, 0x3B9),
-        0x1F87  => array(0x1F07, 0x3B9),
-        0x1F88  => array(0x1F00, 0x3B9),
-        0x1F89  => array(0x1F01, 0x3B9),
-        0x1F8A  => array(0x1F02, 0x3B9),
-        0x1F8B  => array(0x1F03, 0x3B9),
-        0x1F8C  => array(0x1F04, 0x3B9),
-        0x1F8D  => array(0x1F05, 0x3B9),
-        0x1F8E  => array(0x1F06, 0x3B9),
-        0x1F8F  => array(0x1F07, 0x3B9),
-        0x1F90  => array(0x1F20, 0x3B9),
-        0x1F91  => array(0x1F21, 0x3B9),
-        0x1F92  => array(0x1F22, 0x3B9),
-        0x1F93  => array(0x1F23, 0x3B9),
-        0x1F94  => array(0x1F24, 0x3B9),
-        0x1F95  => array(0x1F25, 0x3B9),
-        0x1F96  => array(0x1F26, 0x3B9),
-        0x1F97  => array(0x1F27, 0x3B9),
-        0x1F98  => array(0x1F20, 0x3B9),
-        0x1F99  => array(0x1F21, 0x3B9),
-        0x1F9A  => array(0x1F22, 0x3B9),
-        0x1F9B  => array(0x1F23, 0x3B9),
-        0x1F9C  => array(0x1F24, 0x3B9),
-        0x1F9D  => array(0x1F25, 0x3B9),
-        0x1F9E  => array(0x1F26, 0x3B9),
-        0x1F9F  => array(0x1F27, 0x3B9),
-        0x1FA0  => array(0x1F60, 0x3B9),
-        0x1FA1  => array(0x1F61, 0x3B9),
-        0x1FA2  => array(0x1F62, 0x3B9),
-        0x1FA3  => array(0x1F63, 0x3B9),
-        0x1FA4  => array(0x1F64, 0x3B9),
-        0x1FA5  => array(0x1F65, 0x3B9),
-        0x1FA6  => array(0x1F66, 0x3B9),
-        0x1FA7  => array(0x1F67, 0x3B9),
-        0x1FA8  => array(0x1F60, 0x3B9),
-        0x1FA9  => array(0x1F61, 0x3B9),
-        0x1FAA  => array(0x1F62, 0x3B9),
-        0x1FAB  => array(0x1F63, 0x3B9),
-        0x1FAC  => array(0x1F64, 0x3B9),
-        0x1FAD  => array(0x1F65, 0x3B9),
-        0x1FAE  => array(0x1F66, 0x3B9),
-        0x1FAF  => array(0x1F67, 0x3B9),
-        0x1FB2  => array(0x1F70, 0x3B9),
-        0x1FB3  => array(0x3B1, 0x3B9),
-        0x1FB4  => array(0x3AC, 0x3B9),
-        0x1FB6  => array(0x3B1, 0x342),
-        0x1FB7  => array(0x3B1, 0x342, 0x3B9),
-        0x1FB8  => array(0x1FB0),
-        0x1FB9  => array(0x1FB1),
-        0x1FBA  => array(0x1F70),
-        0x1FBB  => array(0x1F71),
-        0x1FBC  => array(0x3B1, 0x3B9),
-        0x1FBE  => array(0x3B9),
-        0x1FC2  => array(0x1F74, 0x3B9),
-        0x1FC3  => array(0x3B7, 0x3B9),
-        0x1FC4  => array(0x3AE, 0x3B9),
-        0x1FC6  => array(0x3B7, 0x342),
-        0x1FC7  => array(0x3B7, 0x342, 0x3B9),
-        0x1FC8  => array(0x1F72),
-        0x1FC9  => array(0x1F73),
-        0x1FCA  => array(0x1F74),
-        0x1FCB  => array(0x1F75),
-        0x1FCC  => array(0x3B7, 0x3B9),
-        0x1FD2  => array(0x3B9, 0x308, 0x300),
-        0x1FD3  => array(0x3B9, 0x308, 0x301),
-        0x1FD6  => array(0x3B9, 0x342),
-        0x1FD7  => array(0x3B9, 0x308, 0x342),
-        0x1FD8  => array(0x1FD0),
-        0x1FD9  => array(0x1FD1),
-        0x1FDA  => array(0x1F76),
-        0x1FDB  => array(0x1F77),
-        0x1FE2  => array(0x3C5, 0x308, 0x300),
-        0x1FE3  => array(0x3C5, 0x308, 0x301),
-        0x1FE4  => array(0x3C1, 0x313),
-        0x1FE6  => array(0x3C5, 0x342),
-        0x1FE7  => array(0x3C5, 0x308, 0x342),
-        0x1FE8  => array(0x1FE0),
-        0x1FE9  => array(0x1FE1),
-        0x1FEA  => array(0x1F7A),
-        0x1FEB  => array(0x1F7B),
-        0x1FEC  => array(0x1FE5),
-        0x1FF2  => array(0x1F7C, 0x3B9),
-        0x1FF3  => array(0x3C9, 0x3B9),
-        0x1FF4  => array(0x3CE, 0x3B9),
-        0x1FF6  => array(0x3C9, 0x342),
-        0x1FF7  => array(0x3C9, 0x342, 0x3B9),
-        0x1FF8  => array(0x1F78),
-        0x1FF9  => array(0x1F79),
-        0x1FFA  => array(0x1F7C),
-        0x1FFB  => array(0x1F7D),
-        0x1FFC  => array(0x3C9, 0x3B9),
-        0x20A8  => array(0x72, 0x73),
-        0x2102  => array(0x63),
-        0x2103  => array(0xB0, 0x63),
-        0x2107  => array(0x25B),
-        0x2109  => array(0xB0, 0x66),
-        0x210B  => array(0x68),
-        0x210C  => array(0x68),
-        0x210D  => array(0x68),
-        0x2110  => array(0x69),
-        0x2111  => array(0x69),
-        0x2112  => array(0x6C),
-        0x2115  => array(0x6E),
-        0x2116  => array(0x6E, 0x6F),
-        0x2119  => array(0x70),
-        0x211A  => array(0x71),
-        0x211B  => array(0x72),
-        0x211C  => array(0x72),
-        0x211D  => array(0x72),
-        0x2120  => array(0x73, 0x6D),
-        0x2121  => array(0x74, 0x65, 0x6C),
-        0x2122  => array(0x74, 0x6D),
-        0x2124  => array(0x7A),
-        0x2126  => array(0x3C9),
-        0x2128  => array(0x7A),
-        0x212A  => array(0x6B),
-        0x212B  => array(0xE5),
-        0x212C  => array(0x62),
-        0x212D  => array(0x63),
-        0x2130  => array(0x65),
-        0x2131  => array(0x66),
-        0x2133  => array(0x6D),
-        0x213E  => array(0x3B3),
-        0x213F  => array(0x3C0),
-        0x2145  => array(0x64),
-        0x2160  => array(0x2170),
-        0x2161  => array(0x2171),
-        0x2162  => array(0x2172),
-        0x2163  => array(0x2173),
-        0x2164  => array(0x2174),
-        0x2165  => array(0x2175),
-        0x2166  => array(0x2176),
-        0x2167  => array(0x2177),
-        0x2168  => array(0x2178),
-        0x2169  => array(0x2179),
-        0x216A  => array(0x217A),
-        0x216B  => array(0x217B),
-        0x216C  => array(0x217C),
-        0x216D  => array(0x217D),
-        0x216E  => array(0x217E),
-        0x216F  => array(0x217F),
-        0x24B6  => array(0x24D0),
-        0x24B7  => array(0x24D1),
-        0x24B8  => array(0x24D2),
-        0x24B9  => array(0x24D3),
-        0x24BA  => array(0x24D4),
-        0x24BB  => array(0x24D5),
-        0x24BC  => array(0x24D6),
-        0x24BD  => array(0x24D7),
-        0x24BE  => array(0x24D8),
-        0x24BF  => array(0x24D9),
-        0x24C0  => array(0x24DA),
-        0x24C1  => array(0x24DB),
-        0x24C2  => array(0x24DC),
-        0x24C3  => array(0x24DD),
-        0x24C4  => array(0x24DE),
-        0x24C5  => array(0x24DF),
-        0x24C6  => array(0x24E0),
-        0x24C7  => array(0x24E1),
-        0x24C8  => array(0x24E2),
-        0x24C9  => array(0x24E3),
-        0x24CA  => array(0x24E4),
-        0x24CB  => array(0x24E5),
-        0x24CC  => array(0x24E6),
-        0x24CD  => array(0x24E7),
-        0x24CE  => array(0x24E8),
-        0x24CF  => array(0x24E9),
-        0x3371  => array(0x68, 0x70, 0x61),
-        0x3373  => array(0x61, 0x75),
-        0x3375  => array(0x6F, 0x76),
-        0x3380  => array(0x70, 0x61),
-        0x3381  => array(0x6E, 0x61),
-        0x3382  => array(0x3BC, 0x61),
-        0x3383  => array(0x6D, 0x61),
-        0x3384  => array(0x6B, 0x61),
-        0x3385  => array(0x6B, 0x62),
-        0x3386  => array(0x6D, 0x62),
-        0x3387  => array(0x67, 0x62),
-        0x338A  => array(0x70, 0x66),
-        0x338B  => array(0x6E, 0x66),
-        0x338C  => array(0x3BC, 0x66),
-        0x3390  => array(0x68, 0x7A),
-        0x3391  => array(0x6B, 0x68, 0x7A),
-        0x3392  => array(0x6D, 0x68, 0x7A),
-        0x3393  => array(0x67, 0x68, 0x7A),
-        0x3394  => array(0x74, 0x68, 0x7A),
-        0x33A9  => array(0x70, 0x61),
-        0x33AA  => array(0x6B, 0x70, 0x61),
-        0x33AB  => array(0x6D, 0x70, 0x61),
-        0x33AC  => array(0x67, 0x70, 0x61),
-        0x33B4  => array(0x70, 0x76),
-        0x33B5  => array(0x6E, 0x76),
-        0x33B6  => array(0x3BC, 0x76),
-        0x33B7  => array(0x6D, 0x76),
-        0x33B8  => array(0x6B, 0x76),
-        0x33B9  => array(0x6D, 0x76),
-        0x33BA  => array(0x70, 0x77),
-        0x33BB  => array(0x6E, 0x77),
-        0x33BC  => array(0x3BC, 0x77),
-        0x33BD  => array(0x6D, 0x77),
-        0x33BE  => array(0x6B, 0x77),
-        0x33BF  => array(0x6D, 0x77),
-        0x33C0  => array(0x6B, 0x3C9),
-        0x33C1  => array(0x6D, 0x3C9),
-        /* 0x33C2  => array(0x61, 0x2E, 0x6D, 0x2E), */
-        0x33C3  => array(0x62, 0x71),
-        0x33C6  => array(0x63, 0x2215, 0x6B, 0x67),
-        0x33C7  => array(0x63, 0x6F, 0x2E),
-        0x33C8  => array(0x64, 0x62),
-        0x33C9  => array(0x67, 0x79),
-        0x33CB  => array(0x68, 0x70),
-        0x33CD  => array(0x6B, 0x6B),
-        0x33CE  => array(0x6B, 0x6D),
-        0x33D7  => array(0x70, 0x68),
-        0x33D9  => array(0x70, 0x70, 0x6D),
-        0x33DA  => array(0x70, 0x72),
-        0x33DC  => array(0x73, 0x76),
-        0x33DD  => array(0x77, 0x62),
-        0xFB00  => array(0x66, 0x66),
-        0xFB01  => array(0x66, 0x69),
-        0xFB02  => array(0x66, 0x6C),
-        0xFB03  => array(0x66, 0x66, 0x69),
-        0xFB04  => array(0x66, 0x66, 0x6C),
-        0xFB05  => array(0x73, 0x74),
-        0xFB06  => array(0x73, 0x74),
-        0xFB13  => array(0x574, 0x576),
-        0xFB14  => array(0x574, 0x565),
-        0xFB15  => array(0x574, 0x56B),
-        0xFB16  => array(0x57E, 0x576),
-        0xFB17  => array(0x574, 0x56D),
-        0xFF21  => array(0xFF41),
-        0xFF22  => array(0xFF42),
-        0xFF23  => array(0xFF43),
-        0xFF24  => array(0xFF44),
-        0xFF25  => array(0xFF45),
-        0xFF26  => array(0xFF46),
-        0xFF27  => array(0xFF47),
-        0xFF28  => array(0xFF48),
-        0xFF29  => array(0xFF49),
-        0xFF2A  => array(0xFF4A),
-        0xFF2B  => array(0xFF4B),
-        0xFF2C  => array(0xFF4C),
-        0xFF2D  => array(0xFF4D),
-        0xFF2E  => array(0xFF4E),
-        0xFF2F  => array(0xFF4F),
-        0xFF30  => array(0xFF50),
-        0xFF31  => array(0xFF51),
-        0xFF32  => array(0xFF52),
-        0xFF33  => array(0xFF53),
-        0xFF34  => array(0xFF54),
-        0xFF35  => array(0xFF55),
-        0xFF36  => array(0xFF56),
-        0xFF37  => array(0xFF57),
-        0xFF38  => array(0xFF58),
-        0xFF39  => array(0xFF59),
-        0xFF3A  => array(0xFF5A),
-        0x10400 => array(0x10428),
-        0x10401 => array(0x10429),
-        0x10402 => array(0x1042A),
-        0x10403 => array(0x1042B),
-        0x10404 => array(0x1042C),
-        0x10405 => array(0x1042D),
-        0x10406 => array(0x1042E),
-        0x10407 => array(0x1042F),
-        0x10408 => array(0x10430),
-        0x10409 => array(0x10431),
-        0x1040A => array(0x10432),
-        0x1040B => array(0x10433),
-        0x1040C => array(0x10434),
-        0x1040D => array(0x10435),
-        0x1040E => array(0x10436),
-        0x1040F => array(0x10437),
-        0x10410 => array(0x10438),
-        0x10411 => array(0x10439),
-        0x10412 => array(0x1043A),
-        0x10413 => array(0x1043B),
-        0x10414 => array(0x1043C),
-        0x10415 => array(0x1043D),
-        0x10416 => array(0x1043E),
-        0x10417 => array(0x1043F),
-        0x10418 => array(0x10440),
-        0x10419 => array(0x10441),
-        0x1041A => array(0x10442),
-        0x1041B => array(0x10443),
-        0x1041C => array(0x10444),
-        0x1041D => array(0x10445),
-        0x1041E => array(0x10446),
-        0x1041F => array(0x10447),
-        0x10420 => array(0x10448),
-        0x10421 => array(0x10449),
-        0x10422 => array(0x1044A),
-        0x10423 => array(0x1044B),
-        0x10424 => array(0x1044C),
-        0x10425 => array(0x1044D),
-        0x1D400 => array(0x61),
-        0x1D401 => array(0x62),
-        0x1D402 => array(0x63),
-        0x1D403 => array(0x64),
-        0x1D404 => array(0x65),
-        0x1D405 => array(0x66),
-        0x1D406 => array(0x67),
-        0x1D407 => array(0x68),
-        0x1D408 => array(0x69),
-        0x1D409 => array(0x6A),
-        0x1D40A => array(0x6B),
-        0x1D40B => array(0x6C),
-        0x1D40C => array(0x6D),
-        0x1D40D => array(0x6E),
-        0x1D40E => array(0x6F),
-        0x1D40F => array(0x70),
-        0x1D410 => array(0x71),
-        0x1D411 => array(0x72),
-        0x1D412 => array(0x73),
-        0x1D413 => array(0x74),
-        0x1D414 => array(0x75),
-        0x1D415 => array(0x76),
-        0x1D416 => array(0x77),
-        0x1D417 => array(0x78),
-        0x1D418 => array(0x79),
-        0x1D419 => array(0x7A),
-        0x1D434 => array(0x61),
-        0x1D435 => array(0x62),
-        0x1D436 => array(0x63),
-        0x1D437 => array(0x64),
-        0x1D438 => array(0x65),
-        0x1D439 => array(0x66),
-        0x1D43A => array(0x67),
-        0x1D43B => array(0x68),
-        0x1D43C => array(0x69),
-        0x1D43D => array(0x6A),
-        0x1D43E => array(0x6B),
-        0x1D43F => array(0x6C),
-        0x1D440 => array(0x6D),
-        0x1D441 => array(0x6E),
-        0x1D442 => array(0x6F),
-        0x1D443 => array(0x70),
-        0x1D444 => array(0x71),
-        0x1D445 => array(0x72),
-        0x1D446 => array(0x73),
-        0x1D447 => array(0x74),
-        0x1D448 => array(0x75),
-        0x1D449 => array(0x76),
-        0x1D44A => array(0x77),
-        0x1D44B => array(0x78),
-        0x1D44C => array(0x79),
-        0x1D44D => array(0x7A),
-        0x1D468 => array(0x61),
-        0x1D469 => array(0x62),
-        0x1D46A => array(0x63),
-        0x1D46B => array(0x64),
-        0x1D46C => array(0x65),
-        0x1D46D => array(0x66),
-        0x1D46E => array(0x67),
-        0x1D46F => array(0x68),
-        0x1D470 => array(0x69),
-        0x1D471 => array(0x6A),
-        0x1D472 => array(0x6B),
-        0x1D473 => array(0x6C),
-        0x1D474 => array(0x6D),
-        0x1D475 => array(0x6E),
-        0x1D476 => array(0x6F),
-        0x1D477 => array(0x70),
-        0x1D478 => array(0x71),
-        0x1D479 => array(0x72),
-        0x1D47A => array(0x73),
-        0x1D47B => array(0x74),
-        0x1D47C => array(0x75),
-        0x1D47D => array(0x76),
-        0x1D47E => array(0x77),
-        0x1D47F => array(0x78),
-        0x1D480 => array(0x79),
-        0x1D481 => array(0x7A),
-        0x1D49C => array(0x61),
-        0x1D49E => array(0x63),
-        0x1D49F => array(0x64),
-        0x1D4A2 => array(0x67),
-        0x1D4A5 => array(0x6A),
-        0x1D4A6 => array(0x6B),
-        0x1D4A9 => array(0x6E),
-        0x1D4AA => array(0x6F),
-        0x1D4AB => array(0x70),
-        0x1D4AC => array(0x71),
-        0x1D4AE => array(0x73),
-        0x1D4AF => array(0x74),
-        0x1D4B0 => array(0x75),
-        0x1D4B1 => array(0x76),
-        0x1D4B2 => array(0x77),
-        0x1D4B3 => array(0x78),
-        0x1D4B4 => array(0x79),
-        0x1D4B5 => array(0x7A),
-        0x1D4D0 => array(0x61),
-        0x1D4D1 => array(0x62),
-        0x1D4D2 => array(0x63),
-        0x1D4D3 => array(0x64),
-        0x1D4D4 => array(0x65),
-        0x1D4D5 => array(0x66),
-        0x1D4D6 => array(0x67),
-        0x1D4D7 => array(0x68),
-        0x1D4D8 => array(0x69),
-        0x1D4D9 => array(0x6A),
-        0x1D4DA => array(0x6B),
-        0x1D4DB => array(0x6C),
-        0x1D4DC => array(0x6D),
-        0x1D4DD => array(0x6E),
-        0x1D4DE => array(0x6F),
-        0x1D4DF => array(0x70),
-        0x1D4E0 => array(0x71),
-        0x1D4E1 => array(0x72),
-        0x1D4E2 => array(0x73),
-        0x1D4E3 => array(0x74),
-        0x1D4E4 => array(0x75),
-        0x1D4E5 => array(0x76),
-        0x1D4E6 => array(0x77),
-        0x1D4E7 => array(0x78),
-        0x1D4E8 => array(0x79),
-        0x1D4E9 => array(0x7A),
-        0x1D504 => array(0x61),
-        0x1D505 => array(0x62),
-        0x1D507 => array(0x64),
-        0x1D508 => array(0x65),
-        0x1D509 => array(0x66),
-        0x1D50A => array(0x67),
-        0x1D50D => array(0x6A),
-        0x1D50E => array(0x6B),
-        0x1D50F => array(0x6C),
-        0x1D510 => array(0x6D),
-        0x1D511 => array(0x6E),
-        0x1D512 => array(0x6F),
-        0x1D513 => array(0x70),
-        0x1D514 => array(0x71),
-        0x1D516 => array(0x73),
-        0x1D517 => array(0x74),
-        0x1D518 => array(0x75),
-        0x1D519 => array(0x76),
-        0x1D51A => array(0x77),
-        0x1D51B => array(0x78),
-        0x1D51C => array(0x79),
-        0x1D538 => array(0x61),
-        0x1D539 => array(0x62),
-        0x1D53B => array(0x64),
-        0x1D53C => array(0x65),
-        0x1D53D => array(0x66),
-        0x1D53E => array(0x67),
-        0x1D540 => array(0x69),
-        0x1D541 => array(0x6A),
-        0x1D542 => array(0x6B),
-        0x1D543 => array(0x6C),
-        0x1D544 => array(0x6D),
-        0x1D546 => array(0x6F),
-        0x1D54A => array(0x73),
-        0x1D54B => array(0x74),
-        0x1D54C => array(0x75),
-        0x1D54D => array(0x76),
-        0x1D54E => array(0x77),
-        0x1D54F => array(0x78),
-        0x1D550 => array(0x79),
-        0x1D56C => array(0x61),
-        0x1D56D => array(0x62),
-        0x1D56E => array(0x63),
-        0x1D56F => array(0x64),
-        0x1D570 => array(0x65),
-        0x1D571 => array(0x66),
-        0x1D572 => array(0x67),
-        0x1D573 => array(0x68),
-        0x1D574 => array(0x69),
-        0x1D575 => array(0x6A),
-        0x1D576 => array(0x6B),
-        0x1D577 => array(0x6C),
-        0x1D578 => array(0x6D),
-        0x1D579 => array(0x6E),
-        0x1D57A => array(0x6F),
-        0x1D57B => array(0x70),
-        0x1D57C => array(0x71),
-        0x1D57D => array(0x72),
-        0x1D57E => array(0x73),
-        0x1D57F => array(0x74),
-        0x1D580 => array(0x75),
-        0x1D581 => array(0x76),
-        0x1D582 => array(0x77),
-        0x1D583 => array(0x78),
-        0x1D584 => array(0x79),
-        0x1D585 => array(0x7A),
-        0x1D5A0 => array(0x61),
-        0x1D5A1 => array(0x62),
-        0x1D5A2 => array(0x63),
-        0x1D5A3 => array(0x64),
-        0x1D5A4 => array(0x65),
-        0x1D5A5 => array(0x66),
-        0x1D5A6 => array(0x67),
-        0x1D5A7 => array(0x68),
-        0x1D5A8 => array(0x69),
-        0x1D5A9 => array(0x6A),
-        0x1D5AA => array(0x6B),
-        0x1D5AB => array(0x6C),
-        0x1D5AC => array(0x6D),
-        0x1D5AD => array(0x6E),
-        0x1D5AE => array(0x6F),
-        0x1D5AF => array(0x70),
-        0x1D5B0 => array(0x71),
-        0x1D5B1 => array(0x72),
-        0x1D5B2 => array(0x73),
-        0x1D5B3 => array(0x74),
-        0x1D5B4 => array(0x75),
-        0x1D5B5 => array(0x76),
-        0x1D5B6 => array(0x77),
-        0x1D5B7 => array(0x78),
-        0x1D5B8 => array(0x79),
-        0x1D5B9 => array(0x7A),
-        0x1D5D4 => array(0x61),
-        0x1D5D5 => array(0x62),
-        0x1D5D6 => array(0x63),
-        0x1D5D7 => array(0x64),
-        0x1D5D8 => array(0x65),
-        0x1D5D9 => array(0x66),
-        0x1D5DA => array(0x67),
-        0x1D5DB => array(0x68),
-        0x1D5DC => array(0x69),
-        0x1D5DD => array(0x6A),
-        0x1D5DE => array(0x6B),
-        0x1D5DF => array(0x6C),
-        0x1D5E0 => array(0x6D),
-        0x1D5E1 => array(0x6E),
-        0x1D5E2 => array(0x6F),
-        0x1D5E3 => array(0x70),
-        0x1D5E4 => array(0x71),
-        0x1D5E5 => array(0x72),
-        0x1D5E6 => array(0x73),
-        0x1D5E7 => array(0x74),
-        0x1D5E8 => array(0x75),
-        0x1D5E9 => array(0x76),
-        0x1D5EA => array(0x77),
-        0x1D5EB => array(0x78),
-        0x1D5EC => array(0x79),
-        0x1D5ED => array(0x7A),
-        0x1D608 => array(0x61),
-        0x1D609 => array(0x62),
-        0x1D60A => array(0x63),
-        0x1D60B => array(0x64),
-        0x1D60C => array(0x65),
-        0x1D60D => array(0x66),
-        0x1D60E => array(0x67),
-        0x1D60F => array(0x68),
-        0x1D610 => array(0x69),
-        0x1D611 => array(0x6A),
-        0x1D612 => array(0x6B),
-        0x1D613 => array(0x6C),
-        0x1D614 => array(0x6D),
-        0x1D615 => array(0x6E),
-        0x1D616 => array(0x6F),
-        0x1D617 => array(0x70),
-        0x1D618 => array(0x71),
-        0x1D619 => array(0x72),
-        0x1D61A => array(0x73),
-        0x1D61B => array(0x74),
-        0x1D61C => array(0x75),
-        0x1D61D => array(0x76),
-        0x1D61E => array(0x77),
-        0x1D61F => array(0x78),
-        0x1D620 => array(0x79),
-        0x1D621 => array(0x7A),
-        0x1D63C => array(0x61),
-        0x1D63D => array(0x62),
-        0x1D63E => array(0x63),
-        0x1D63F => array(0x64),
-        0x1D640 => array(0x65),
-        0x1D641 => array(0x66),
-        0x1D642 => array(0x67),
-        0x1D643 => array(0x68),
-        0x1D644 => array(0x69),
-        0x1D645 => array(0x6A),
-        0x1D646 => array(0x6B),
-        0x1D647 => array(0x6C),
-        0x1D648 => array(0x6D),
-        0x1D649 => array(0x6E),
-        0x1D64A => array(0x6F),
-        0x1D64B => array(0x70),
-        0x1D64C => array(0x71),
-        0x1D64D => array(0x72),
-        0x1D64E => array(0x73),
-        0x1D64F => array(0x74),
-        0x1D650 => array(0x75),
-        0x1D651 => array(0x76),
-        0x1D652 => array(0x77),
-        0x1D653 => array(0x78),
-        0x1D654 => array(0x79),
-        0x1D655 => array(0x7A),
-        0x1D670 => array(0x61),
-        0x1D671 => array(0x62),
-        0x1D672 => array(0x63),
-        0x1D673 => array(0x64),
-        0x1D674 => array(0x65),
-        0x1D675 => array(0x66),
-        0x1D676 => array(0x67),
-        0x1D677 => array(0x68),
-        0x1D678 => array(0x69),
-        0x1D679 => array(0x6A),
-        0x1D67A => array(0x6B),
-        0x1D67B => array(0x6C),
-        0x1D67C => array(0x6D),
-        0x1D67D => array(0x6E),
-        0x1D67E => array(0x6F),
-        0x1D67F => array(0x70),
-        0x1D680 => array(0x71),
-        0x1D681 => array(0x72),
-        0x1D682 => array(0x73),
-        0x1D683 => array(0x74),
-        0x1D684 => array(0x75),
-        0x1D685 => array(0x76),
-        0x1D686 => array(0x77),
-        0x1D687 => array(0x78),
-        0x1D688 => array(0x79),
-        0x1D689 => array(0x7A),
-        0x1D6A8 => array(0x3B1),
-        0x1D6A9 => array(0x3B2),
-        0x1D6AA => array(0x3B3),
-        0x1D6AB => array(0x3B4),
-        0x1D6AC => array(0x3B5),
-        0x1D6AD => array(0x3B6),
-        0x1D6AE => array(0x3B7),
-        0x1D6AF => array(0x3B8),
-        0x1D6B0 => array(0x3B9),
-        0x1D6B1 => array(0x3BA),
-        0x1D6B2 => array(0x3BB),
-        0x1D6B3 => array(0x3BC),
-        0x1D6B4 => array(0x3BD),
-        0x1D6B5 => array(0x3BE),
-        0x1D6B6 => array(0x3BF),
-        0x1D6B7 => array(0x3C0),
-        0x1D6B8 => array(0x3C1),
-        0x1D6B9 => array(0x3B8),
-        0x1D6BA => array(0x3C3),
-        0x1D6BB => array(0x3C4),
-        0x1D6BC => array(0x3C5),
-        0x1D6BD => array(0x3C6),
-        0x1D6BE => array(0x3C7),
-        0x1D6BF => array(0x3C8),
-        0x1D6C0 => array(0x3C9),
-        0x1D6D3 => array(0x3C3),
-        0x1D6E2 => array(0x3B1),
-        0x1D6E3 => array(0x3B2),
-        0x1D6E4 => array(0x3B3),
-        0x1D6E5 => array(0x3B4),
-        0x1D6E6 => array(0x3B5),
-        0x1D6E7 => array(0x3B6),
-        0x1D6E8 => array(0x3B7),
-        0x1D6E9 => array(0x3B8),
-        0x1D6EA => array(0x3B9),
-        0x1D6EB => array(0x3BA),
-        0x1D6EC => array(0x3BB),
-        0x1D6ED => array(0x3BC),
-        0x1D6EE => array(0x3BD),
-        0x1D6EF => array(0x3BE),
-        0x1D6F0 => array(0x3BF),
-        0x1D6F1 => array(0x3C0),
-        0x1D6F2 => array(0x3C1),
-        0x1D6F3 => array(0x3B8),
-        0x1D6F4 => array(0x3C3),
-        0x1D6F5 => array(0x3C4),
-        0x1D6F6 => array(0x3C5),
-        0x1D6F7 => array(0x3C6),
-        0x1D6F8 => array(0x3C7),
-        0x1D6F9 => array(0x3C8),
-        0x1D6FA => array(0x3C9),
-        0x1D70D => array(0x3C3),
-        0x1D71C => array(0x3B1),
-        0x1D71D => array(0x3B2),
-        0x1D71E => array(0x3B3),
-        0x1D71F => array(0x3B4),
-        0x1D720 => array(0x3B5),
-        0x1D721 => array(0x3B6),
-        0x1D722 => array(0x3B7),
-        0x1D723 => array(0x3B8),
-        0x1D724 => array(0x3B9),
-        0x1D725 => array(0x3BA),
-        0x1D726 => array(0x3BB),
-        0x1D727 => array(0x3BC),
-        0x1D728 => array(0x3BD),
-        0x1D729 => array(0x3BE),
-        0x1D72A => array(0x3BF),
-        0x1D72B => array(0x3C0),
-        0x1D72C => array(0x3C1),
-        0x1D72D => array(0x3B8),
-        0x1D72E => array(0x3C3),
-        0x1D72F => array(0x3C4),
-        0x1D730 => array(0x3C5),
-        0x1D731 => array(0x3C6),
-        0x1D732 => array(0x3C7),
-        0x1D733 => array(0x3C8),
-        0x1D734 => array(0x3C9),
-        0x1D747 => array(0x3C3),
-        0x1D756 => array(0x3B1),
-        0x1D757 => array(0x3B2),
-        0x1D758 => array(0x3B3),
-        0x1D759 => array(0x3B4),
-        0x1D75A => array(0x3B5),
-        0x1D75B => array(0x3B6),
-        0x1D75C => array(0x3B7),
-        0x1D75D => array(0x3B8),
-        0x1D75E => array(0x3B9),
-        0x1D75F => array(0x3BA),
-        0x1D760 => array(0x3BB),
-        0x1D761 => array(0x3BC),
-        0x1D762 => array(0x3BD),
-        0x1D763 => array(0x3BE),
-        0x1D764 => array(0x3BF),
-        0x1D765 => array(0x3C0),
-        0x1D766 => array(0x3C1),
-        0x1D767 => array(0x3B8),
-        0x1D768 => array(0x3C3),
-        0x1D769 => array(0x3C4),
-        0x1D76A => array(0x3C5),
-        0x1D76B => array(0x3C6),
-        0x1D76C => array(0x3C7),
-        0x1D76D => array(0x3C8),
-        0x1D76E => array(0x3C9),
-        0x1D781 => array(0x3C3),
-        0x1D790 => array(0x3B1),
-        0x1D791 => array(0x3B2),
-        0x1D792 => array(0x3B3),
-        0x1D793 => array(0x3B4),
-        0x1D794 => array(0x3B5),
-        0x1D795 => array(0x3B6),
-        0x1D796 => array(0x3B7),
-        0x1D797 => array(0x3B8),
-        0x1D798 => array(0x3B9),
-        0x1D799 => array(0x3BA),
-        0x1D79A => array(0x3BB),
-        0x1D79B => array(0x3BC),
-        0x1D79C => array(0x3BD),
-        0x1D79D => array(0x3BE),
-        0x1D79E => array(0x3BF),
-        0x1D79F => array(0x3C0),
-        0x1D7A0 => array(0x3C1),
-        0x1D7A1 => array(0x3B8),
-        0x1D7A2 => array(0x3C3),
-        0x1D7A3 => array(0x3C4),
-        0x1D7A4 => array(0x3C5),
-        0x1D7A5 => array(0x3C6),
-        0x1D7A6 => array(0x3C7),
-        0x1D7A7 => array(0x3C8),
-        0x1D7A8 => array(0x3C9),
-        0x1D7BB => array(0x3C3),
-        0x3F9   => array(0x3C3),
-        0x1D2C  => array(0x61),
-        0x1D2D  => array(0xE6),
-        0x1D2E  => array(0x62),
-        0x1D30  => array(0x64),
-        0x1D31  => array(0x65),
-        0x1D32  => array(0x1DD),
-        0x1D33  => array(0x67),
-        0x1D34  => array(0x68),
-        0x1D35  => array(0x69),
-        0x1D36  => array(0x6A),
-        0x1D37  => array(0x6B),
-        0x1D38  => array(0x6C),
-        0x1D39  => array(0x6D),
-        0x1D3A  => array(0x6E),
-        0x1D3C  => array(0x6F),
-        0x1D3D  => array(0x223),
-        0x1D3E  => array(0x70),
-        0x1D3F  => array(0x72),
-        0x1D40  => array(0x74),
-        0x1D41  => array(0x75),
-        0x1D42  => array(0x77),
-        0x213B  => array(0x66, 0x61, 0x78),
-        0x3250  => array(0x70, 0x74, 0x65),
-        0x32CC  => array(0x68, 0x67),
-        0x32CE  => array(0x65, 0x76),
-        0x32CF  => array(0x6C, 0x74, 0x64),
-        0x337A  => array(0x69, 0x75),
-        0x33DE  => array(0x76, 0x2215, 0x6D),
-        0x33DF  => array(0x61, 0x2215, 0x6D)
-    );
-
-    /**
-     * Normalization Combining Classes; Code Points not listed
-     * got Combining Class 0.
-     *
-     * @static
-     * @var array
-     * @access private
-     */
-    private static $_np_norm_combcls = array(
-        0x334   => 1,
-        0x335   => 1,
-        0x336   => 1,
-        0x337   => 1,
-        0x338   => 1,
-        0x93C   => 7,
-        0x9BC   => 7,
-        0xA3C   => 7,
-        0xABC   => 7,
-        0xB3C   => 7,
-        0xCBC   => 7,
-        0x1037  => 7,
-        0x3099  => 8,
-        0x309A  => 8,
-        0x94D   => 9,
-        0x9CD   => 9,
-        0xA4D   => 9,
-        0xACD   => 9,
-        0xB4D   => 9,
-        0xBCD   => 9,
-        0xC4D   => 9,
-        0xCCD   => 9,
-        0xD4D   => 9,
-        0xDCA   => 9,
-        0xE3A   => 9,
-        0xF84   => 9,
-        0x1039  => 9,
-        0x1714  => 9,
-        0x1734  => 9,
-        0x17D2  => 9,
-        0x5B0   => 10,
-        0x5B1   => 11,
-        0x5B2   => 12,
-        0x5B3   => 13,
-        0x5B4   => 14,
-        0x5B5   => 15,
-        0x5B6   => 16,
-        0x5B7   => 17,
-        0x5B8   => 18,
-        0x5B9   => 19,
-        0x5BB   => 20,
-        0x5Bc   => 21,
-        0x5BD   => 22,
-        0x5BF   => 23,
-        0x5C1   => 24,
-        0x5C2   => 25,
-        0xFB1E  => 26,
-        0x64B   => 27,
-        0x64C   => 28,
-        0x64D   => 29,
-        0x64E   => 30,
-        0x64F   => 31,
-        0x650   => 32,
-        0x651   => 33,
-        0x652   => 34,
-        0x670   => 35,
-        0x711   => 36,
-        0xC55   => 84,
-        0xC56   => 91,
-        0xE38   => 103,
-        0xE39   => 103,
-        0xE48   => 107,
-        0xE49   => 107,
-        0xE4A   => 107,
-        0xE4B   => 107,
-        0xEB8   => 118,
-        0xEB9   => 118,
-        0xEC8   => 122,
-        0xEC9   => 122,
-        0xECA   => 122,
-        0xECB   => 122,
-        0xF71   => 129,
-        0xF72   => 130,
-        0xF7A   => 130,
-        0xF7B   => 130,
-        0xF7C   => 130,
-        0xF7D   => 130,
-        0xF80   => 130,
-        0xF74   => 132,
-        0x321   => 202,
-        0x322   => 202,
-        0x327   => 202,
-        0x328   => 202,
-        0x31B   => 216,
-        0xF39   => 216,
-        0x1D165 => 216,
-        0x1D166 => 216,
-        0x1D16E => 216,
-        0x1D16F => 216,
-        0x1D170 => 216,
-        0x1D171 => 216,
-        0x1D172 => 216,
-        0x302A  => 218,
-        0x316   => 220,
-        0x317   => 220,
-        0x318   => 220,
-        0x319   => 220,
-        0x31C   => 220,
-        0x31D   => 220,
-        0x31E   => 220,
-        0x31F   => 220,
-        0x320   => 220,
-        0x323   => 220,
-        0x324   => 220,
-        0x325   => 220,
-        0x326   => 220,
-        0x329   => 220,
-        0x32A   => 220,
-        0x32B   => 220,
-        0x32C   => 220,
-        0x32D   => 220,
-        0x32E   => 220,
-        0x32F   => 220,
-        0x330   => 220,
-        0x331   => 220,
-        0x332   => 220,
-        0x333   => 220,
-        0x339   => 220,
-        0x33A   => 220,
-        0x33B   => 220,
-        0x33C   => 220,
-        0x347   => 220,
-        0x348   => 220,
-        0x349   => 220,
-        0x34D   => 220,
-        0x34E   => 220,
-        0x353   => 220,
-        0x354   => 220,
-        0x355   => 220,
-        0x356   => 220,
-        0x591   => 220,
-        0x596   => 220,
-        0x59B   => 220,
-        0x5A3   => 220,
-        0x5A4   => 220,
-        0x5A5   => 220,
-        0x5A6   => 220,
-        0x5A7   => 220,
-        0x5AA   => 220,
-        0x655   => 220,
-        0x656   => 220,
-        0x6E3   => 220,
-        0x6EA   => 220,
-        0x6ED   => 220,
-        0x731   => 220,
-        0x734   => 220,
-        0x737   => 220,
-        0x738   => 220,
-        0x739   => 220,
-        0x73B   => 220,
-        0x73C   => 220,
-        0x73E   => 220,
-        0x742   => 220,
-        0x744   => 220,
-        0x746   => 220,
-        0x748   => 220,
-        0x952   => 220,
-        0xF18   => 220,
-        0xF19   => 220,
-        0xF35   => 220,
-        0xF37   => 220,
-        0xFC6   => 220,
-        0x193B  => 220,
-        0x20E8  => 220,
-        0x1D17B => 220,
-        0x1D17C => 220,
-        0x1D17D => 220,
-        0x1D17E => 220,
-        0x1D17F => 220,
-        0x1D180 => 220,
-        0x1D181 => 220,
-        0x1D182 => 220,
-        0x1D18A => 220,
-        0x1D18B => 220,
-        0x59A   => 222,
-        0x5AD   => 222,
-        0x1929  => 222,
-        0x302D  => 222,
-        0x302E  => 224,
-        0x302F  => 224,
-        0x1D16D => 226,
-        0x5AE   => 228,
-        0x18A9  => 228,
-        0x302B  => 228,
-        0x300   => 230,
-        0x301   => 230,
-        0x302   => 230,
-        0x303   => 230,
-        0x304   => 230,
-        0x305   => 230,
-        0x306   => 230,
-        0x307   => 230,
-        0x308   => 230,
-        0x309   => 230,
-        0x30A   => 230,
-        0x30B   => 230,
-        0x30C   => 230,
-        0x30D   => 230,
-        0x30E   => 230,
-        0x30F   => 230,
-        0x310   => 230,
-        0x311   => 230,
-        0x312   => 230,
-        0x313   => 230,
-        0x314   => 230,
-        0x33D   => 230,
-        0x33E   => 230,
-        0x33F   => 230,
-        0x340   => 230,
-        0x341   => 230,
-        0x342   => 230,
-        0x343   => 230,
-        0x344   => 230,
-        0x346   => 230,
-        0x34A   => 230,
-        0x34B   => 230,
-        0x34C   => 230,
-        0x350   => 230,
-        0x351   => 230,
-        0x352   => 230,
-        0x357   => 230,
-        0x363   => 230,
-        0x364   => 230,
-        0x365   => 230,
-        0x366   => 230,
-        0x367   => 230,
-        0x368   => 230,
-        0x369   => 230,
-        0x36A   => 230,
-        0x36B   => 230,
-        0x36C   => 230,
-        0x36D   => 230,
-        0x36E   => 230,
-        0x36F   => 230,
-        0x483   => 230,
-        0x484   => 230,
-        0x485   => 230,
-        0x486   => 230,
-        0x592   => 230,
-        0x593   => 230,
-        0x594   => 230,
-        0x595   => 230,
-        0x597   => 230,
-        0x598   => 230,
-        0x599   => 230,
-        0x59C   => 230,
-        0x59D   => 230,
-        0x59E   => 230,
-        0x59F   => 230,
-        0x5A0   => 230,
-        0x5A1   => 230,
-        0x5A8   => 230,
-        0x5A9   => 230,
-        0x5AB   => 230,
-        0x5AC   => 230,
-        0x5AF   => 230,
-        0x5C4   => 230,
-        0x610   => 230,
-        0x611   => 230,
-        0x612   => 230,
-        0x613   => 230,
-        0x614   => 230,
-        0x615   => 230,
-        0x653   => 230,
-        0x654   => 230,
-        0x657   => 230,
-        0x658   => 230,
-        0x6D6   => 230,
-        0x6D7   => 230,
-        0x6D8   => 230,
-        0x6D9   => 230,
-        0x6DA   => 230,
-        0x6DB   => 230,
-        0x6DC   => 230,
-        0x6DF   => 230,
-        0x6E0   => 230,
-        0x6E1   => 230,
-        0x6E2   => 230,
-        0x6E4   => 230,
-        0x6E7   => 230,
-        0x6E8   => 230,
-        0x6EB   => 230,
-        0x6EC   => 230,
-        0x730   => 230,
-        0x732   => 230,
-        0x733   => 230,
-        0x735   => 230,
-        0x736   => 230,
-        0x73A   => 230,
-        0x73D   => 230,
-        0x73F   => 230,
-        0x740   => 230,
-        0x741   => 230,
-        0x743   => 230,
-        0x745   => 230,
-        0x747   => 230,
-        0x749   => 230,
-        0x74A   => 230,
-        0x951   => 230,
-        0x953   => 230,
-        0x954   => 230,
-        0xF82   => 230,
-        0xF83   => 230,
-        0xF86   => 230,
-        0xF87   => 230,
-        0x170D  => 230,
-        0x193A  => 230,
-        0x20D0  => 230,
-        0x20D1  => 230,
-        0x20D4  => 230,
-        0x20D5  => 230,
-        0x20D6  => 230,
-        0x20D7  => 230,
-        0x20DB  => 230,
-        0x20DC  => 230,
-        0x20E1  => 230,
-        0x20E7  => 230,
-        0x20E9  => 230,
-        0xFE20  => 230,
-        0xFE21  => 230,
-        0xFE22  => 230,
-        0xFE23  => 230,
-        0x1D185 => 230,
-        0x1D186 => 230,
-        0x1D187 => 230,
-        0x1D189 => 230,
-        0x1D188 => 230,
-        0x1D1AA => 230,
-        0x1D1AB => 230,
-        0x1D1AC => 230,
-        0x1D1AD => 230,
-        0x315   => 232,
-        0x31A   => 232,
-        0x302C  => 232,
-        0x35F   => 233,
-        0x362   => 233,
-        0x35D   => 234,
-        0x35E   => 234,
-        0x360   => 234,
-        0x361   => 234,
-        0x345   => 240
-    );
-    // }}}
-
-    // {{{ properties
-    /**
-     * @var string
-     * @access private
-     */
-    private $_punycode_prefix = 'xn--';
-
-    /**
-     * @access private
-     */
-    private $_invalid_ucs = 0x80000000;
-
-    /**
-     * @access private
-     */
-    private $_max_ucs = 0x10FFFF;
-
-    /**
-     * @var int
-     * @access private
-     */
-    private $_base = 36;
-
-    /**
-     * @var int
-     * @access private
-     */
-    private $_tmin = 1;
-
-    /**
-     * @var int
-     * @access private
-     */
-    private $_tmax = 26;
-
-    /**
-     * @var int
-     * @access private
-     */
-    private $_skew = 38;
-
-    /**
-     * @var int
-     * @access private
-     */
-    private $_damp = 700;
-
-    /**
-     * @var int
-     * @access private
-     */
-    private $_initial_bias = 72;
-
-    /**
-     * @var int
-     * @access private
-     */
-    private $_initial_n = 0x80;
-
-    /**
-     * @var int
-     * @access private
-     */
-    private $_slast;
-
-    /**
-     * @access private
-     */
-    private $_sbase = 0xAC00;
-
-    /**
-     * @access private
-     */
-    private $_lbase = 0x1100;
-
-    /**
-     * @access private
-     */
-    private $_vbase = 0x1161;
-
-    /**
-     * @access private
-     */
-    private $_tbase = 0x11a7;
-
-    /**
-     * @var int
-     * @access private
-     */
-    private $_lcount = 19;
-
-    /**
-     * @var int
-     * @access private
-     */
-    private $_vcount = 21;
-
-    /**
-     * @var int
-     * @access private
-     */
-    private $_tcount = 28;
-
-    /**
-     * vcount * tcount
-     *
-     * @var int
-     * @access private
-     */
-    private $_ncount = 588;
-
-    /**
-     * lcount * tcount * vcount
-     *
-     * @var int
-     * @access private
-     */
-    private $_scount = 11172;
-
-    /**
-     * Default encoding for encode()'s input and decode()'s output is UTF-8;
-     * Other possible encodings are ucs4_string and ucs4_array
-     * See {@link setParams()} for how to select these
-     *
-     * @var bool
-     * @access private
-     */
-    private $_api_encoding = 'utf8';
-
-    /**
-     * Overlong UTF-8 encodings are forbidden
-     *
-     * @var bool
-     * @access private
-     */
-    private $_allow_overlong = false;
-
-    /**
-     * Behave strict or not
-     *
-     * @var bool
-     * @access private
-     */
-    private $_strict_mode = false;
-
-    /**
-     * IDNA-version to use
-     *
-     * Values are "2003" and "2008".
-     * Defaults to "2003", since that was the original version and for
-     * compatibility with previous versions of this library.
-     * If you need to encode "new" characters like the German "Eszett",
-     * please switch to 2008 first before encoding.
-     *
-     * @var bool
-     * @access private
-     */
-    private $_version = '2003';
-
-    /**
-     * Cached value indicating whether or not mbstring function overloading is
-     * on for strlen
-     *
-     * This is cached for optimal performance.
-     *
-     * @var boolean
-     * @see Net_IDNA2::_byteLength()
-     */
-    private static $_mb_string_overload = null;
-    // }}}
-
-
-    // {{{ constructor
-    /**
-     * Constructor
-     *
-     * @param array $options Options to initialise the object with
-     *
-     * @access public
-     * @see    setParams()
-     */
-    public function __construct($options = null)
-    {
-        $this->_slast = $this->_sbase + $this->_lcount * $this->_vcount * $this->_tcount;
-
-        if (is_array($options)) {
-            $this->setParams($options);
-        }
-
-        // populate mbstring overloading cache if not set
-        if (self::$_mb_string_overload === null) {
-            self::$_mb_string_overload = (extension_loaded('mbstring')
-                && (ini_get('mbstring.func_overload') & 0x02) === 0x02);
-        }
-    }
-    // }}}
-
-
-    /**
-     * Sets a new option value. Available options and values:
-     *
-     * [utf8 -     Use either UTF-8 or ISO-8859-1 as input (true for UTF-8, false
-     *             otherwise); The output is always UTF-8]
-     * [overlong - Unicode does not allow unnecessarily long encodings of chars,
-     *             to allow this, set this parameter to true, else to false;
-     *             default is false.]
-     * [strict -   true: strict mode, good for registration purposes - Causes errors
-     *             on failures; false: loose mode, ideal for "wildlife" applications
-     *             by silently ignoring errors and returning the original input instead]
-     *
-     * @param mixed  $option Parameter to set (string: single parameter; array of Parameter => Value pairs)
-     * @param string $value  Value to use (if parameter 1 is a string)
-     *
-     * @return boolean       true on success, false otherwise
-     * @access public
-     */
-    public function setParams($option, $value = false)
-    {
-        if (!is_array($option)) {
-            $option = array($option => $value);
-        }
-
-        foreach ($option as $k => $v) {
-            switch ($k) {
-            case 'encoding':
-                switch ($v) {
-                case 'utf8':
-                case 'ucs4_string':
-                case 'ucs4_array':
-                    $this->_api_encoding = $v;
-                    break;
-
-                default:
-                    throw new InvalidArgumentException('Set Parameter: Unknown parameter '.$v.' for option '.$k);
-                }
-
-                break;
-
-            case 'overlong':
-                $this->_allow_overlong = ($v) ? true : false;
-                break;
-
-            case 'strict':
-                $this->_strict_mode = ($v) ? true : false;
-                break;
-
-            case 'version':
-                if (in_array($v, array('2003', '2008'))) {
-                    $this->_version = $v;
-                } else {
-                    throw new InvalidArgumentException('Set Parameter: Invalid parameter '.$v.' for option '.$k);
-                }
-                break;
-
-            default:
-                return false;
-            }
-        }
-
-        return true;
-    }
-
-    /**
-     * Encode a given UTF-8 domain name.
-     *
-     * @param string $decoded           Domain name (UTF-8 or UCS-4)
-     * @param string $one_time_encoding Desired input encoding, see {@link set_parameter}
-     *                                  If not given will use default-encoding
-     *
-     * @return string Encoded Domain name (ACE string)
-     * @return mixed  processed string
-     * @throws Exception
-     * @access public
-     */
-    public function encode($decoded, $one_time_encoding = false)
-    {
-        // Forcing conversion of input to UCS4 array
-        // If one time encoding is given, use this, else the objects property
-        switch (($one_time_encoding) ? $one_time_encoding : $this->_api_encoding) {
-        case 'utf8':
-            $decoded = $this->_utf8_to_ucs4($decoded);
-            break;
-        case 'ucs4_string':
-            $decoded = $this->_ucs4_string_to_ucs4($decoded);
-        case 'ucs4_array': // No break; before this line. Catch case, but do nothing
-            break;
-        default:
-            throw new InvalidArgumentException('Unsupported input format');
-        }
-
-        // No input, no output, what else did you expect?
-        if (empty($decoded)) return '';
-
-        // Anchors for iteration
-        $last_begin = 0;
-        // Output string
-        $output = '';
-
-        foreach ($decoded as $k => $v) {
-            // Make sure to use just the plain dot
-            switch($v) {
-            case 0x3002:
-            case 0xFF0E:
-            case 0xFF61:
-                $decoded[$k] = 0x2E;
-                // It's right, no break here
-                // The codepoints above have to be converted to dots anyway
-
-            // Stumbling across an anchoring character
-            case 0x2E:
-            case 0x2F:
-            case 0x3A:
-            case 0x3F:
-            case 0x40:
-                // Neither email addresses nor URLs allowed in strict mode
-                if ($this->_strict_mode) {
-                    throw new InvalidArgumentException('Neither email addresses nor URLs are allowed in strict mode.');
-                }
-                // Skip first char
-                if ($k) {
-                    $encoded = '';
-                    $encoded = $this->_encode(array_slice($decoded, $last_begin, (($k)-$last_begin)));
-                    if ($encoded) {
-                        $output .= $encoded;
-                    } else {
-                        $output .= $this->_ucs4_to_utf8(array_slice($decoded, $last_begin, (($k)-$last_begin)));
-                    }
-                    $output .= chr($decoded[$k]);
-                }
-                $last_begin = $k + 1;
-            }
-        }
-        // Catch the rest of the string
-        if ($last_begin) {
-            $inp_len = sizeof($decoded);
-            $encoded = '';
-            $encoded = $this->_encode(array_slice($decoded, $last_begin, (($inp_len)-$last_begin)));
-            if ($encoded) {
-                $output .= $encoded;
-            } else {
-                $output .= $this->_ucs4_to_utf8(array_slice($decoded, $last_begin, (($inp_len)-$last_begin)));
-            }
-            return $output;
-        }
-
-        if ($output = $this->_encode($decoded)) {
-            return $output;
-        }
-
-        return $this->_ucs4_to_utf8($decoded);
-    }
-
-    /**
-     * Decode a given ACE domain name.
-     *
-     * @param string $input             Domain name (ACE string)
-     * @param string $one_time_encoding Desired output encoding, see {@link set_parameter}
-     *
-     * @return string                   Decoded Domain name (UTF-8 or UCS-4)
-     * @throws Exception
-     * @access public
-     */
-    public function decode($input, $one_time_encoding = false)
-    {
-        // Optionally set
-        if ($one_time_encoding) {
-            switch ($one_time_encoding) {
-            case 'utf8':
-            case 'ucs4_string':
-            case 'ucs4_array':
-                break;
-            default:
-                throw new InvalidArgumentException('Unknown encoding '.$one_time_encoding);
-            }
-        }
-        // Make sure to drop any newline characters around
-        $input = trim($input);
-
-        // Negotiate input and try to determine, wether it is a plain string,
-        // an email address or something like a complete URL
-        if (strpos($input, '@')) { // Maybe it is an email address
-            // No no in strict mode
-            if ($this->_strict_mode) {
-                throw new InvalidArgumentException('Only simple domain name parts can be handled in strict mode');
-            }
-            list($email_pref, $input) = explode('@', $input, 2);
-            $arr = explode('.', $input);
-            foreach ($arr as $k => $v) {
-                $conv = $this->_decode($v);
-                if ($conv) $arr[$k] = $conv;
-            }
-            $return = $email_pref . '@' . join('.', $arr);
-        } elseif (preg_match('![:\./]!', $input)) { // Or a complete domain name (with or without paths / parameters)
-            // No no in strict mode
-            if ($this->_strict_mode) {
-                throw new InvalidArgumentException('Only simple domain name parts can be handled in strict mode');
-            }
-
-            $parsed = parse_url($input);
-            if (isset($parsed['host'])) {
-                $arr = explode('.', $parsed['host']);
-                foreach ($arr as $k => $v) {
-                    $conv = $this->_decode($v);
-                    if ($conv) $arr[$k] = $conv;
-                }
-                $parsed['host'] = join('.', $arr);
-                if (isset($parsed['scheme'])) {
-                    $parsed['scheme'] .= (strtolower($parsed['scheme']) == 'mailto') ? ':' : '://';
-                }
-                $return = $this->_unparse_url($parsed);
-            } else { // parse_url seems to have failed, try without it
-                $arr = explode('.', $input);
-                foreach ($arr as $k => $v) {
-                    $conv = $this->_decode($v);
-                    if ($conv) $arr[$k] = $conv;
-                }
-                $return = join('.', $arr);
-            }
-        } else { // Otherwise we consider it being a pure domain name string
-            $return = $this->_decode($input);
-        }
-        // The output is UTF-8 by default, other output formats need conversion here
-        // If one time encoding is given, use this, else the objects property
-        switch (($one_time_encoding) ? $one_time_encoding : $this->_api_encoding) {
-        case 'utf8':
-            return $return;
-            break;
-        case 'ucs4_string':
-            return $this->_ucs4_to_ucs4_string($this->_utf8_to_ucs4($return));
-            break;
-        case 'ucs4_array':
-            return $this->_utf8_to_ucs4($return);
-            break;
-        default:
-            throw new InvalidArgumentException('Unsupported output format');
-        }
-    }
-
-
-    // {{{ private
-    /**
-     * Opposite function to parse_url()
-     *
-     * Inspired by code from comments of php.net-documentation for parse_url()
-     *
-     * @param array $parts_arr parts (strings) as returned by parse_url()
-     *
-     * @return string
-     * @access private
-     */
-    private function _unparse_url($parts_arr)
-    {
-        if (!empty($parts_arr['scheme'])) {
-            $ret_url = $parts_arr['scheme'];
-        }
-        if (!empty($parts_arr['user'])) {
-            $ret_url .= $parts_arr['user'];
-            if (!empty($parts_arr['pass'])) {
-                $ret_url .= ':' . $parts_arr['pass'];
-            }
-            $ret_url .= '@';
-        }
-        $ret_url .= $parts_arr['host'];
-        if (!empty($parts_arr['port'])) {
-            $ret_url .= ':' . $parts_arr['port'];
-        }
-        $ret_url .= $parts_arr['path'];
-        if (!empty($parts_arr['query'])) {
-            $ret_url .= '?' . $parts_arr['query'];
-        }
-        if (!empty($parts_arr['fragment'])) {
-            $ret_url .= '#' . $parts_arr['fragment'];
-        }
-        return $ret_url;
-    }
-
-    /**
-     * The actual encoding algorithm.
-     *
-     * @param string $decoded Decoded string which should be encoded
-     *
-     * @return string         Encoded string
-     * @throws Exception
-     * @access private
-     */
-    private function _encode($decoded)
-    {
-        // We cannot encode a domain name containing the Punycode prefix
-        $extract = self::_byteLength($this->_punycode_prefix);
-        $check_pref = $this->_utf8_to_ucs4($this->_punycode_prefix);
-        $check_deco = array_slice($decoded, 0, $extract);
-
-        if ($check_pref == $check_deco) {
-            throw new InvalidArgumentException('This is already a punycode string');
-        }
-
-        // We will not try to encode strings consisting of basic code points only
-        $encodable = false;
-        foreach ($decoded as $k => $v) {
-            if ($v > 0x7a) {
-                $encodable = true;
-                break;
-            }
-        }
-        if (!$encodable) {
-            if ($this->_strict_mode) {
-                throw new InvalidArgumentException('The given string does not contain encodable chars');
-            }
-
-            return false;
-        }
-
-        // Do NAMEPREP
-        $decoded = $this->_nameprep($decoded);
-
-        $deco_len = count($decoded);
-
-        // Empty array
-        if (!$deco_len) {
-            return false;
-        }
-
-        // How many chars have been consumed
-        $codecount = 0;
-
-        // Start with the prefix; copy it to output
-        $encoded = $this->_punycode_prefix;
-
-        $encoded = '';
-        // Copy all basic code points to output
-        for ($i = 0; $i < $deco_len; ++$i) {
-            $test = $decoded[$i];
-            // Will match [0-9a-zA-Z-]
-            if ((0x2F < $test && $test < 0x40)
-                || (0x40 < $test && $test < 0x5B)
-                || (0x60 < $test && $test <= 0x7B)
-                || (0x2D == $test)
-            ) {
-                $encoded .= chr($decoded[$i]);
-                $codecount++;
-            }
-        }
-
-        // All codepoints were basic ones
-        if ($codecount == $deco_len) {
-            return $encoded;
-        }
-
-        // Start with the prefix; copy it to output
-        $encoded = $this->_punycode_prefix . $encoded;
-
-        // If we have basic code points in output, add an hyphen to the end
-        if ($codecount) {
-            $encoded .= '-';
-        }
-
-        // Now find and encode all non-basic code points
-        $is_first  = true;
-        $cur_code  = $this->_initial_n;
-        $bias      = $this->_initial_bias;
-        $delta     = 0;
-
-        while ($codecount < $deco_len) {
-            // Find the smallest code point >= the current code point and
-            // remember the last ouccrence of it in the input
-            for ($i = 0, $next_code = $this->_max_ucs; $i < $deco_len; $i++) {
-                if ($decoded[$i] >= $cur_code && $decoded[$i] <= $next_code) {
-                    $next_code = $decoded[$i];
-                }
-            }
-
-            $delta += ($next_code - $cur_code) * ($codecount + 1);
-            $cur_code = $next_code;
-
-            // Scan input again and encode all characters whose code point is $cur_code
-            for ($i = 0; $i < $deco_len; $i++) {
-                if ($decoded[$i] < $cur_code) {
-                    $delta++;
-                } else if ($decoded[$i] == $cur_code) {
-                    for ($q = $delta, $k = $this->_base; 1; $k += $this->_base) {
-                        $t = ($k <= $bias)?
-                            $this->_tmin :
-                            (($k >= $bias + $this->_tmax)? $this->_tmax : $k - $bias);
-
-                        if ($q < $t) {
-                            break;
-                        }
-
-                        $encoded .= $this->_encodeDigit(ceil($t + (($q - $t) % ($this->_base - $t))));
-                        $q = ($q - $t) / ($this->_base - $t);
-                    }
-
-                    $encoded .= $this->_encodeDigit($q);
-                    $bias = $this->_adapt($delta, $codecount + 1, $is_first);
-                    $codecount++;
-                    $delta = 0;
-                    $is_first = false;
-                }
-            }
-
-            $delta++;
-            $cur_code++;
-        }
-
-        return $encoded;
-    }
-
-    /**
-     * The actual decoding algorithm.
-     *
-     * @param string $encoded Encoded string which should be decoded
-     *
-     * @return string         Decoded string
-     * @throws Exception
-     * @access private
-     */
-    private function _decode($encoded)
-    {
-        // We do need to find the Punycode prefix
-        if (!preg_match('!^' . preg_quote($this->_punycode_prefix, '!') . '!', $encoded)) {
-            return false;
-        }
-
-        $encode_test = preg_replace('!^' . preg_quote($this->_punycode_prefix, '!') . '!', '', $encoded);
-
-        // If nothing left after removing the prefix, it is hopeless
-        if (!$encode_test) {
-            return false;
-        }
-
-        // Find last occurence of the delimiter
-        $delim_pos = strrpos($encoded, '-');
-
-        if ($delim_pos > self::_byteLength($this->_punycode_prefix)) {
-            for ($k = self::_byteLength($this->_punycode_prefix); $k < $delim_pos; ++$k) {
-                $decoded[] = ord($encoded{$k});
-            }
-        } else {
-            $decoded = array();
-        }
-
-        $deco_len = count($decoded);
-        $enco_len = self::_byteLength($encoded);
-
-        // Wandering through the strings; init
-        $is_first = true;
-        $bias     = $this->_initial_bias;
-        $idx      = 0;
-        $char     = $this->_initial_n;
-
-        for ($enco_idx = ($delim_pos)? ($delim_pos + 1) : 0; $enco_idx < $enco_len; ++$deco_len) {
-            for ($old_idx = $idx, $w = 1, $k = $this->_base; 1 ; $k += $this->_base) {
-                $digit = $this->_decodeDigit($encoded{$enco_idx++});
-                $idx += $digit * $w;
-
-                $t = ($k <= $bias) ?
-                    $this->_tmin :
-                    (($k >= $bias + $this->_tmax)? $this->_tmax : ($k - $bias));
-
-                if ($digit < $t) {
-                    break;
-                }
-
-                $w = (int)($w * ($this->_base - $t));
-            }
-
-            $bias      = $this->_adapt($idx - $old_idx, $deco_len + 1, $is_first);
-            $is_first  = false;
-            $char     += (int) ($idx / ($deco_len + 1));
-            $idx      %= ($deco_len + 1);
-
-            if ($deco_len > 0) {
-                // Make room for the decoded char
-                for ($i = $deco_len; $i > $idx; $i--) {
-                    $decoded[$i] = $decoded[($i - 1)];
-                }
-            }
-
-            $decoded[$idx++] = $char;
-        }
-
-        return $this->_ucs4_to_utf8($decoded);
-    }
-
-    /**
-     * Adapt the bias according to the current code point and position.
-     *
-     * @param int     $delta    ...
-     * @param int     $npoints  ...
-     * @param boolean $is_first ...
-     *
-     * @return int
-     * @access private
-     */
-    private function _adapt($delta, $npoints, $is_first)
-    {
-        $delta = (int) ($is_first ? ($delta / $this->_damp) : ($delta / 2));
-        $delta += (int) ($delta / $npoints);
-
-        for ($k = 0; $delta > (($this->_base - $this->_tmin) * $this->_tmax) / 2; $k += $this->_base) {
-            $delta = (int) ($delta / ($this->_base - $this->_tmin));
-        }
-
-        return (int) ($k + ($this->_base - $this->_tmin + 1) * $delta / ($delta + $this->_skew));
-    }
-
-    /**
-     * Encoding a certain digit.
-     *
-     * @param int $d One digit to encode
-     *
-     * @return char  Encoded digit
-     * @access private
-     */
-    private function _encodeDigit($d)
-    {
-        return chr($d + 22 + 75 * ($d < 26));
-    }
-
-    /**
-     * Decode a certain digit.
-     *
-     * @param char $cp One digit (character) to decode
-     *
-     * @return int     Decoded digit
-     * @access private
-     */
-    private function _decodeDigit($cp)
-    {
-        $cp = ord($cp);
-        return ($cp - 48 < 10)? $cp - 22 : (($cp - 65 < 26)? $cp - 65 : (($cp - 97 < 26)? $cp - 97 : $this->_base));
-    }
-
-    /**
-     * Do Nameprep according to RFC3491 and RFC3454.
-     *
-     * @param array $input Unicode Characters
-     *
-     * @return string      Unicode Characters, Nameprep'd
-     * @throws Exception
-     * @access private
-     */
-    private function _nameprep($input)
-    {
-        $output = array();
-
-        // Walking through the input array, performing the required steps on each of
-        // the input chars and putting the result into the output array
-        // While mapping required chars we apply the cannonical ordering
-
-        foreach ($input as $v) {
-            // Map to nothing == skip that code point
-            if (in_array($v, self::$_np_map_nothing)) {
-                continue;
-            }
-
-            // Try to find prohibited input
-            if (in_array($v, self::$_np_prohibit) || in_array($v, self::$_general_prohibited)) {
-                throw new Net_IDNA2_Exception_Nameprep('Prohibited input U+' . sprintf('%08X', $v));
-            }
-
-            foreach (self::$_np_prohibit_ranges as $range) {
-                if ($range[0] <= $v && $v <= $range[1]) {
-                    throw new Net_IDNA2_Exception_Nameprep('Prohibited input U+' . sprintf('%08X', $v));
-                }
-            }
-
-            // Hangul syllable decomposition
-            if (0xAC00 <= $v && $v <= 0xD7AF) {
-                foreach ($this->_hangulDecompose($v) as $out) {
-                    $output[] = $out;
-                }
-            } else if (($this->_version == '2003') && isset(self::$_np_replacemaps[$v])) {
-                // There's a decomposition mapping for that code point
-                // Decompositions only in version 2003 (original) of IDNA
-                foreach ($this->_applyCannonicalOrdering(self::$_np_replacemaps[$v]) as $out) {
-                    $output[] = $out;
-                }
-            } else {
-                $output[] = $v;
-            }
-        }
-
-        // Combine code points
-
-        $last_class   = 0;
-        $last_starter = 0;
-        $out_len      = count($output);
-
-        for ($i = 0; $i < $out_len; ++$i) {
-            $class = $this->_getCombiningClass($output[$i]);
-
-            if ((!$last_class || $last_class != $class) && $class) {
-                // Try to match
-                $seq_len = $i - $last_starter;
-                $out = $this->_combine(array_slice($output, $last_starter, $seq_len));
-
-                // On match: Replace the last starter with the composed character and remove
-                // the now redundant non-starter(s)
-                if ($out) {
-                    $output[$last_starter] = $out;
-
-                    if (count($out) != $seq_len) {
-                        for ($j = $i + 1; $j < $out_len; ++$j) {
-                            $output[$j - 1] = $output[$j];
-                        }
-
-                        unset($output[$out_len]);
-                    }
-
-                    // Rewind the for loop by one, since there can be more possible compositions
-                    $i--;
-                    $out_len--;
-                    $last_class = ($i == $last_starter)? 0 : $this->_getCombiningClass($output[$i - 1]);
-
-                    continue;
-                }
-            }
-
-            // The current class is 0
-            if (!$class) {
-                $last_starter = $i;
-            }
-
-            $last_class = $class;
-        }
-
-        return $output;
-    }
-
-    /**
-     * Decomposes a Hangul syllable
-     * (see http://www.unicode.org/unicode/reports/tr15/#Hangul).
-     *
-     * @param integer $char 32bit UCS4 code point
-     *
-     * @return array        Either Hangul Syllable decomposed or original 32bit
-     *                      value as one value array
-     * @access private
-     */
-    private function _hangulDecompose($char)
-    {
-        $sindex = $char - $this->_sbase;
-
-        if ($sindex < 0 || $sindex >= $this->_scount) {
-            return array($char);
-        }
-
-        $result   = array();
-        $T        = $this->_tbase + $sindex % $this->_tcount;
-        $result[] = (int)($this->_lbase +  $sindex / $this->_ncount);
-        $result[] = (int)($this->_vbase + ($sindex % $this->_ncount) / $this->_tcount);
-
-        if ($T != $this->_tbase) {
-            $result[] = $T;
-        }
-
-        return $result;
-    }
-
-    /**
-     * Ccomposes a Hangul syllable
-     * (see http://www.unicode.org/unicode/reports/tr15/#Hangul).
-     *
-     * @param array $input Decomposed UCS4 sequence
-     *
-     * @return array       UCS4 sequence with syllables composed
-     * @access private
-     */
-    private function _hangulCompose($input)
-    {
-        $inp_len = count($input);
-
-        if (!$inp_len) {
-            return array();
-        }
-
-        $result   = array();
-        $last     = $input[0];
-        $result[] = $last; // copy first char from input to output
-
-        for ($i = 1; $i < $inp_len; ++$i) {
-            $char = $input[$i];
-
-            // Find out, wether two current characters from L and V
-            $lindex = $last - $this->_lbase;
-
-            if (0 <= $lindex && $lindex < $this->_lcount) {
-                $vindex = $char - $this->_vbase;
-
-                if (0 <= $vindex && $vindex < $this->_vcount) {
-                    // create syllable of form LV
-                    $last    = ($this->_sbase + ($lindex * $this->_vcount + $vindex) * $this->_tcount);
-                    $out_off = count($result) - 1;
-                    $result[$out_off] = $last; // reset last
-
-                    // discard char
-                    continue;
-                }
-            }
-
-            // Find out, wether two current characters are LV and T
-            $sindex = $last - $this->_sbase;
-
-            if (0 <= $sindex && $sindex < $this->_scount && ($sindex % $this->_tcount) == 0) {
-                $tindex = $char - $this->_tbase;
-
-                if (0 <= $tindex && $tindex <= $this->_tcount) {
-                    // create syllable of form LVT
-                    $last += $tindex;
-                    $out_off = count($result) - 1;
-                    $result[$out_off] = $last; // reset last
-
-                    // discard char
-                    continue;
-                }
-            }
-
-            // if neither case was true, just add the character
-            $last = $char;
-            $result[] = $char;
-        }
-
-        return $result;
-    }
-
-    /**
-     * Returns the combining class of a certain wide char.
-     *
-     * @param integer $char Wide char to check (32bit integer)
-     *
-     * @return integer      Combining class if found, else 0
-     * @access private
-     */
-    private function _getCombiningClass($char)
-    {
-        return isset(self::$_np_norm_combcls[$char])? self::$_np_norm_combcls[$char] : 0;
-    }
-
-    /**
-     * Apllies the cannonical ordering of a decomposed UCS4 sequence.
-     *
-     * @param array $input Decomposed UCS4 sequence
-     *
-     * @return array       Ordered USC4 sequence
-     * @access private
-     */
-    private function _applyCannonicalOrdering($input)
-    {
-        $swap = true;
-        $size = count($input);
-
-        while ($swap) {
-            $swap = false;
-            $last = $this->_getCombiningClass($input[0]);
-
-            for ($i = 0; $i < $size - 1; ++$i) {
-                $next = $this->_getCombiningClass($input[$i + 1]);
-
-                if ($next != 0 && $last > $next) {
-                    // Move item leftward until it fits
-                    for ($j = $i + 1; $j > 0; --$j) {
-                        if ($this->_getCombiningClass($input[$j - 1]) <= $next) {
-                            break;
-                        }
-
-                        $t = $input[$j];
-                        $input[$j] = $input[$j - 1];
-                        $input[$j - 1] = $t;
-                        $swap = 1;
-                    }
-
-                    // Reentering the loop looking at the old character again
-                    $next = $last;
-                }
-
-                $last = $next;
-            }
-        }
-
-        return $input;
-    }
-
-    /**
-     * Do composition of a sequence of starter and non-starter.
-     *
-     * @param array $input UCS4 Decomposed sequence
-     *
-     * @return array       Ordered USC4 sequence
-     * @access private
-     */
-    private function _combine($input)
-    {
-        $inp_len = count($input);
-
-        // Is it a Hangul syllable?
-        if (1 != $inp_len) {
-            $hangul = $this->_hangulCompose($input);
-
-            // This place is probably wrong
-            if (count($hangul) != $inp_len) {
-                return $hangul;
-            }
-        }
-
-        foreach (self::$_np_replacemaps as $np_src => $np_target) {
-            if ($np_target[0] != $input[0]) {
-                continue;
-            }
-
-            if (count($np_target) != $inp_len) {
-                continue;
-            }
-
-            $hit = false;
-
-            foreach ($input as $k2 => $v2) {
-                if ($v2 == $np_target[$k2]) {
-                    $hit = true;
-                } else {
-                    $hit = false;
-                    break;
-                }
-            }
-
-            if ($hit) {
-                return $np_src;
-            }
-        }
-
-        return false;
-    }
-
-    /**
-     * This converts an UTF-8 encoded string to its UCS-4 (array) representation
-     * By talking about UCS-4 we mean arrays of 32bit integers representing
-     * each of the "chars". This is due to PHP not being able to handle strings with
-     * bit depth different from 8. This applies to the reverse method _ucs4_to_utf8(), too.
-     * The following UTF-8 encodings are supported:
-     *
-     * bytes bits  representation
-     * 1        7  0xxxxxxx
-     * 2       11  110xxxxx 10xxxxxx
-     * 3       16  1110xxxx 10xxxxxx 10xxxxxx
-     * 4       21  11110xxx 10xxxxxx 10xxxxxx 10xxxxxx
-     * 5       26  111110xx 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx
-     * 6       31  1111110x 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx
-     *
-     * Each x represents a bit that can be used to store character data.
-     *
-     * @param string $input utf8-encoded string
-     *
-     * @return array        ucs4-encoded array
-     * @throws Exception
-     * @access private
-     */
-    private function _utf8_to_ucs4($input)
-    {
-        $output = array();
-        $out_len = 0;
-        $inp_len = self::_byteLength($input, '8bit');
-        $mode = 'next';
-        $test = 'none';
-        for ($k = 0; $k < $inp_len; ++$k) {
-            $v = ord($input{$k}); // Extract byte from input string
-
-            if ($v < 128) { // We found an ASCII char - put into stirng as is
-                $output[$out_len] = $v;
-                ++$out_len;
-                if ('add' == $mode) {
-                    throw new UnexpectedValueException('Conversion from UTF-8 to UCS-4 failed: malformed input at byte '.$k);
-                }
-                continue;
-            }
-            if ('next' == $mode) { // Try to find the next start byte; determine the width of the Unicode char
-                $start_byte = $v;
-                $mode = 'add';
-                $test = 'range';
-                if ($v >> 5 == 6) { // &110xxxxx 10xxxxx
-                    $next_byte = 0; // Tells, how many times subsequent bitmasks must rotate 6bits to the left
-                    $v = ($v - 192) << 6;
-                } elseif ($v >> 4 == 14) { // &1110xxxx 10xxxxxx 10xxxxxx
-                    $next_byte = 1;
-                    $v = ($v - 224) << 12;
-                } elseif ($v >> 3 == 30) { // &11110xxx 10xxxxxx 10xxxxxx 10xxxxxx
-                    $next_byte = 2;
-                    $v = ($v - 240) << 18;
-                } elseif ($v >> 2 == 62) { // &111110xx 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx
-                    $next_byte = 3;
-                    $v = ($v - 248) << 24;
-                } elseif ($v >> 1 == 126) { // &1111110x 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx
-                    $next_byte = 4;
-                    $v = ($v - 252) << 30;
-                } else {
-                    throw new UnexpectedValueException('This might be UTF-8, but I don\'t understand it at byte '.$k);
-                }
-                if ('add' == $mode) {
-                    $output[$out_len] = (int) $v;
-                    ++$out_len;
-                    continue;
-                }
-            }
-            if ('add' == $mode) {
-                if (!$this->_allow_overlong && $test == 'range') {
-                    $test = 'none';
-                    if (($v < 0xA0 && $start_byte == 0xE0) || ($v < 0x90 && $start_byte == 0xF0) || ($v > 0x8F && $start_byte == 0xF4)) {
-                        throw new OutOfRangeException('Bogus UTF-8 character detected (out of legal range) at byte '.$k);
-                    }
-                }
-                if ($v >> 6 == 2) { // Bit mask must be 10xxxxxx
-                    $v = ($v - 128) << ($next_byte * 6);
-                    $output[($out_len - 1)] += $v;
-                    --$next_byte;
-                } else {
-                    throw new UnexpectedValueException('Conversion from UTF-8 to UCS-4 failed: malformed input at byte '.$k);
-                }
-                if ($next_byte < 0) {
-                    $mode = 'next';
-                }
-            }
-        } // for
-        return $output;
-    }
-
-    /**
-     * Convert UCS-4 array into UTF-8 string
-     *
-     * @param array $input ucs4-encoded array
-     *
-     * @return string      utf8-encoded string
-     * @throws Exception
-     * @access private
-     */
-    private function _ucs4_to_utf8($input)
-    {
-        $output = '';
-
-        foreach ($input as $v) {
-            // $v = ord($v);
-
-            if ($v < 128) {
-                // 7bit are transferred literally
-                $output .= chr($v);
-            } else if ($v < 1 << 11) {
-                // 2 bytes
-                $output .= chr(192 + ($v >> 6))
-                    . chr(128 + ($v & 63));
-            } else if ($v < 1 << 16) {
-                // 3 bytes
-                $output .= chr(224 + ($v >> 12))
-                    . chr(128 + (($v >> 6) & 63))
-                    . chr(128 + ($v & 63));
-            } else if ($v < 1 << 21) {
-                // 4 bytes
-                $output .= chr(240 + ($v >> 18))
-                    . chr(128 + (($v >> 12) & 63))
-                    . chr(128 + (($v >>  6) & 63))
-                    . chr(128 + ($v & 63));
-            } else if ($v < 1 << 26) {
-                // 5 bytes
-                $output .= chr(248 + ($v >> 24))
-                    . chr(128 + (($v >> 18) & 63))
-                    . chr(128 + (($v >> 12) & 63))
-                    . chr(128 + (($v >>  6) & 63))
-                    . chr(128 + ($v & 63));
-            } else if ($v < 1 << 31) {
-                // 6 bytes
-                $output .= chr(252 + ($v >> 30))
-                    . chr(128 + (($v >> 24) & 63))
-                    . chr(128 + (($v >> 18) & 63))
-                    . chr(128 + (($v >> 12) & 63))
-                    . chr(128 + (($v >>  6) & 63))
-                    . chr(128 + ($v & 63));
-            } else {
-                throw new UnexpectedValueException('Conversion from UCS-4 to UTF-8 failed: malformed input');
-            }
-        }
-
-        return $output;
-    }
-
-    /**
-     * Convert UCS-4 array into UCS-4 string
-     *
-     * @param array $input ucs4-encoded array
-     *
-     * @return string      ucs4-encoded string
-     * @throws Exception
-     * @access private
-     */
-    private function _ucs4_to_ucs4_string($input)
-    {
-        $output = '';
-        // Take array values and split output to 4 bytes per value
-        // The bit mask is 255, which reads &11111111
-        foreach ($input as $v) {
-            $output .= ($v & (255 << 24) >> 24) . ($v & (255 << 16) >> 16) . ($v & (255 << 8) >> 8) . ($v & 255);
-        }
-        return $output;
-    }
-
-    /**
-     * Convert UCS-4 string into UCS-4 array
-     *
-     * @param string $input ucs4-encoded string
-     *
-     * @return array        ucs4-encoded array
-     * @throws InvalidArgumentException
-     * @access private
-     */
-    private function _ucs4_string_to_ucs4($input)
-    {
-        $output = array();
-
-        $inp_len = self::_byteLength($input);
-        // Input length must be dividable by 4
-        if ($inp_len % 4) {
-            throw new InvalidArgumentException('Input UCS4 string is broken');
-        }
-
-        // Empty input - return empty output
-        if (!$inp_len) {
-            return $output;
-        }
-
-        for ($i = 0, $out_len = -1; $i < $inp_len; ++$i) {
-            // Increment output position every 4 input bytes
-            if (!$i % 4) {
-                $out_len++;
-                $output[$out_len] = 0;
-            }
-            $output[$out_len] += ord($input{$i}) << (8 * (3 - ($i % 4) ) );
-        }
-        return $output;
-    }
-
-    /**
-     * Echo hex representation of UCS4 sequence.
-     *
-     * @param array   $input       UCS4 sequence
-     * @param boolean $include_bit Include bitmask in output
-     *
-     * @return void
-     * @static
-     * @access private
-     */
-    private static function _showHex($input, $include_bit = false)
-    {
-        foreach ($input as $k => $v) {
-            echo '[', $k, '] => ', sprintf('%X', $v);
-
-            if ($include_bit) {
-                echo ' (', Net_IDNA2::_showBitmask($v), ')';
-            }
-
-            echo "\n";
-        }
-    }
-
-    /**
-     * Gives you a bit representation of given Byte (8 bits), Word (16 bits) or DWord (32 bits)
-     * Output width is automagically determined
-     *
-     * @param int $octet ...
-     *
-     * @return string    Bitmask-representation
-     * @static
-     * @access private
-     */
-    private static function _showBitmask($octet)
-    {
-        if ($octet >= (1 << 16)) {
-            $w = 31;
-        } else if ($octet >= (1 << 8)) {
-            $w = 15;
-        } else {
-            $w = 7;
-        }
-
-        $return = '';
-
-        for ($i = $w; $i > -1; $i--) {
-            $return .= ($octet & (1 << $i))? '1' : '0';
-        }
-
-        return $return;
-    }
-
-    /**
-     * Gets the length of a string in bytes even if mbstring function
-     * overloading is turned on
-     *
-     * @param string $string the string for which to get the length.
-     *
-     * @return integer the length of the string in bytes.
-     *
-     * @see Net_IDNA2::$_mb_string_overload
-     */
-    private static function _byteLength($string)
-    {
-        if (self::$_mb_string_overload) {
-            return mb_strlen($string, '8bit');
-        }
-        return strlen((binary)$string);
-    }
-
-    // }}}}
-
-    // {{{ factory
-    /**
-     * Attempts to return a concrete IDNA instance for either php4 or php5.
-     *
-     * @param array $params Set of paramaters
-     *
-     * @return Net_IDNA2
-     * @access public
-     */
-    function getInstance($params = array())
-    {
-        return new Net_IDNA2($params);
-    }
-    // }}}
-
-    // {{{ singleton
-    /**
-     * Attempts to return a concrete IDNA instance for either php4 or php5,
-     * only creating a new instance if no IDNA instance with the same
-     * parameters currently exists.
-     *
-     * @param array $params Set of paramaters
-     *
-     * @return object Net_IDNA2
-     * @access public
-     */
-    function singleton($params = array())
-    {
-        static $instances;
-        if (!isset($instances)) {
-            $instances = array();
-        }
-
-        $signature = serialize($params);
-        if (!isset($instances[$signature])) {
-            $instances[$signature] = Net_IDNA2::getInstance($params);
-        }
-
-        return $instances[$signature];
-    }
-    // }}}
-}
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+TfVFN6D0JqVXCoAFEhRaJbyA

@@ -1,88 +1,59 @@
-<?php $this->pageTitle = "Date time test"; ?>
-
-<p>
-<strong>Short:</strong> <?php echo Yii::app()->format->dateShort("2013-06-01"); ?>  
-<strong>Medium:</strong> <?php echo Yii::app()->format->date("2013-06-01"); ?>  
-<strong>Long:</strong> <?php echo Yii::app()->format->dateLong("2013-06-01"); ?>  
-<strong>Full:</strong> <?php echo Yii::app()->format->dateFull("2013-06-01"); ?>  
-</p>
-
-<p>
-<strong>Short:</strong> <?php echo Yii::app()->format->timeShort("13:45:59"); ?>  
-<strong>Medium:</strong> <?php echo Yii::app()->format->time("13:45:59"); ?>  
-<strong>Long:</strong> <?php echo Yii::app()->format->timeLong("13:45:59"); ?>  
-<strong>Full:</strong> <?php echo Yii::app()->format->timeFull("13:45:59"); ?>
-</p>
-
-
-<?php $form = $this->beginWidget('CActiveForm', array(
-    'id' => 'datetime-form',
-    'enableAjaxValidation'  => true,
-    'htmlOptions'=>array('class'=>'form-horizontal well'),
-    'errorMessageCssClass' => 'text-danger'
-)); ?>
-
-    <p class="help-block">Fields with <span class="required">*</span> are required.</p>
-
-    <?php echo $form->errorSummary($model); ?>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model,'my_date', array('class' => 'col-lg-2 control-label')); ?>
-        <div class="col-lg-10">
-        <?php $datepicker = $this->widget('ext.netwing.widgets.JuiDatePicker', array(
-            'htmlOptions' => array('class' => 'form-control'),
-            'model' => $model,
-            'attribute' => 'my_date',
-        )); ?>
-        <?php echo $form->error($model,'my_date'); ?>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model,'my_another_date', array('class' => 'col-lg-2 control-label')); ?>
-        <div class="col-lg-10">
-        <?php $datepicker = $this->widget('ext.netwing.widgets.JuiDatePicker', array(
-            'htmlOptions' => array('class' => 'form-control'),
-            'name' => 'my_another_date',
-            'value' => '2013-10-11',
-        )); ?>
-        <?php echo $form->error($model,'my_another_date'); ?>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model,'my_time', array('class' => 'col-lg-2 control-label')); ?>
-        <div class="col-lg-10">
-        <?php $timepicker = $this->widget('ext.netwing.widgets.JuiTimePicker', array(
-            'htmlOptions' => array('class' => 'form-control'),
-            'model' => $model,
-            'attribute' => 'my_time',
-        )); ?>
-        <?php echo $form->error($model,'my_time'); ?>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model,'my_another_time', array('class' => 'col-lg-2 control-label')); ?>
-        <div class="col-lg-10">
-        <?php $timepicker = $this->widget('ext.netwing.widgets.JuiTimePicker', array(
-            'htmlOptions' => array('class' => 'form-control'),
-            'name' => 'my_another_time',
-            'value' => '18:29:59',
-        )); ?>
-        <?php echo $form->error($model,'my_another_time'); ?>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="col-lg-offset-2 col-lg-10">
-            <button type="reset" class="btn btn-warning"><?php echo Yii::t('form', 'Reset'); ?></button>
-            <button type="submit" class="btn btn-primary"><?php echo Yii::t('form', 'Submit'); ?></button>
-        </div>
-    </div>
-
-    <?php $this->endWidget(); ?>
-
-<?php if (count($_POST) > 0): ?>
-<?php CVarDumper::dump($_POST, 10, true); ?>
-<?php endif; ?>
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+3bSBhRA8dufg

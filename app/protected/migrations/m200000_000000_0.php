@@ -1,945 +1,500 @@
-<?php
-
-class m200000_000000_0 extends CDbMigration
-{
-	public function safeUp()
-	{
-
-        $auth = Yii::app()->authManager;
-
-        $task = $auth->createTask("admin:main", Yii::t('app', 'Main access'));
-        $auth->createOperation("admin:main:read", Yii::t('app', 'Allow'));
-
-        $task->addChild("admin:main:read");
-
-        $task = $auth->createTask("admin:contract", Yii::t('app', 'Contracts'));
-        $auth->createOperation("admin:contract:create", Yii::t('app', 'Create'));
-        $auth->createOperation("admin:contract:read", Yii::t('app', 'Read'));
-        $auth->createOperation("admin:contract:update", Yii::t('app', 'Update'));
-        $auth->createOperation("admin:contract:delete", Yii::t('app', 'Delete'));
-
-        $task->addChild("admin:contract:create");
-        $task->addChild("admin:contract:read");
-        $task->addChild("admin:contract:update");
-        $task->addChild("admin:contract:delete");
-
-        $task = $auth->createTask("admin:customer", Yii::t('app', 'Customers'));
-        $auth->createOperation("admin:customer:create", Yii::t('app', 'Create'));
-        $auth->createOperation("admin:customer:read", Yii::t('app', 'Read'));
-        $auth->createOperation("admin:customer:update", Yii::t('app', 'Update'));
-        $auth->createOperation("admin:customer:delete", Yii::t('app', 'Delete'));
-
-        $task->addChild("admin:customer:create");
-        $task->addChild("admin:customer:read");
-        $task->addChild("admin:customer:update");
-        $task->addChild("admin:customer:delete");
-
-        $task = $auth->createTask("admin:vector", Yii::t('app', 'Vectors'));
-        $auth->createOperation("admin:vector:create", Yii::t('app', 'Create'));
-        $auth->createOperation("admin:vector:read", Yii::t('app', 'Read'));
-        $auth->createOperation("admin:vector:update", Yii::t('app', 'Update'));
-        $auth->createOperation("admin:vector:delete", Yii::t('app', 'Delete'));
-
-        $task->addChild("admin:vector:create");
-        $task->addChild("admin:vector:read");
-        $task->addChild("admin:vector:update");
-        $task->addChild("admin:vector:delete");
-
-        $task = $auth->createTask("admin:resource", Yii::t('app', 'Resources'));
-        $auth->createOperation("admin:resource:create", Yii::t('app', 'Create'));
-        $auth->createOperation("admin:resource:read", Yii::t('app', 'Read'));
-        $auth->createOperation("admin:resource:update", Yii::t('app', 'Update'));
-        $auth->createOperation("admin:resource:delete", Yii::t('app', 'Delete'));
-
-        $task->addChild("admin:resource:create");
-        $task->addChild("admin:resource:read");
-        $task->addChild("admin:resource:update");
-        $task->addChild("admin:resource:delete");
-
-        $task = $auth->createTask("admin:document", Yii::t('app', 'Documents'));
-        $auth->createOperation("admin:document:create", Yii::t('app', 'Create'));
-        $auth->createOperation("admin:document:read", Yii::t('app', 'Read'));
-        $auth->createOperation("admin:document:update", Yii::t('app', 'Update'));
-        $auth->createOperation("admin:document:delete", Yii::t('app', 'Delete'));
-
-        $task->addChild("admin:document:create");
-        $task->addChild("admin:document:read");
-        $task->addChild("admin:document:update");
-        $task->addChild("admin:document:delete");
-
-        $task = $auth->createTask("admin:invoice", Yii::t('app', 'Invoices'));
-        $auth->createOperation("admin:invoice:create", Yii::t('app', 'Create'));
-        $auth->createOperation("admin:invoice:read", Yii::t('app', 'Read'));
-        $auth->createOperation("admin:invoice:update", Yii::t('app', 'Update'));
-        $auth->createOperation("admin:invoice:delete", Yii::t('app', 'Delete'));
-
-        $task->addChild("admin:invoice:create");
-        $task->addChild("admin:invoice:read");
-        $task->addChild("admin:invoice:update");
-        $task->addChild("admin:invoice:delete");
-
-        $task = $auth->createTask("admin:template", Yii::t('app', 'Print templates'));
-        $auth->createOperation("admin:template:create", Yii::t('app', 'Create'));
-        $auth->createOperation("admin:template:read", Yii::t('app', 'Read'));
-        $auth->createOperation("admin:template:update", Yii::t('app', 'Update'));
-        $auth->createOperation("admin:template:delete", Yii::t('app', 'Delete'));
-
-        $task->addChild("admin:template:create");
-        $task->addChild("admin:template:read");
-        $task->addChild("admin:template:update");
-        $task->addChild("admin:template:delete");
-
-        $task = $auth->createTask("admin:pricelist", Yii::t('app', 'Prices lists'));
-        $auth->createOperation("admin:pricelist:create", Yii::t('app', 'Create'));
-        $auth->createOperation("admin:pricelist:read", Yii::t('app', 'Read'));
-        $auth->createOperation("admin:pricelist:update", Yii::t('app', 'Update'));
-        $auth->createOperation("admin:pricelist:delete", Yii::t('app', 'Delete'));
-
-        $task->addChild("admin:pricelist:create");
-        $task->addChild("admin:pricelist:read");
-        $task->addChild("admin:pricelist:update");
-        $task->addChild("admin:pricelist:delete");
-
-        $task = $auth->createTask("admin:preference", Yii::t('app', 'Preferences'));
-        $auth->createOperation("admin:preference:create", Yii::t('app', 'Create'));
-        $auth->createOperation("admin:preference:read", Yii::t('app', 'Read'));
-        $auth->createOperation("admin:preference:update", Yii::t('app', 'Update'));
-        $auth->createOperation("admin:preference:delete", Yii::t('app', 'Delete'));
-
-        $task->addChild("admin:preference:create");
-        $task->addChild("admin:preference:read");
-        $task->addChild("admin:preference:update");
-        $task->addChild("admin:preference:delete");
-
-        // Allow this operations to role
-        $role_admin = $auth->getAuthItem('ADMIN');
-        $role_admin->addChild("admin:main:read");
-
-        $role_admin->addChild("admin:contract:create");
-        $role_admin->addChild("admin:contract:update");
-        $role_admin->addChild("admin:contract:read");
-        $role_admin->addChild("admin:contract:delete");
-
-        $role_admin->addChild("admin:customer:create");
-        $role_admin->addChild("admin:customer:update");
-        $role_admin->addChild("admin:customer:read");
-        $role_admin->addChild("admin:customer:delete");
-
-        $role_admin->addChild("admin:vector:create");
-        $role_admin->addChild("admin:vector:update");
-        $role_admin->addChild("admin:vector:read");
-        $role_admin->addChild("admin:vector:delete");
-
-        $role_admin->addChild("admin:resource:create");
-        $role_admin->addChild("admin:resource:update");
-        $role_admin->addChild("admin:resource:read");
-        $role_admin->addChild("admin:resource:delete");
-
-        $role_admin->addChild("admin:document:create");
-        $role_admin->addChild("admin:document:update");
-        $role_admin->addChild("admin:document:read");
-        $role_admin->addChild("admin:document:delete");
-
-        $role_admin->addChild("admin:invoice:create");
-        $role_admin->addChild("admin:invoice:update");
-        $role_admin->addChild("admin:invoice:read");
-        $role_admin->addChild("admin:invoice:delete");
-
-        $role_admin->addChild("admin:template:create");
-        $role_admin->addChild("admin:template:update");
-        $role_admin->addChild("admin:template:read");
-        $role_admin->addChild("admin:template:delete");
-
-        $role_admin->addChild("admin:pricelist:create");
-        $role_admin->addChild("admin:pricelist:update");
-        $role_admin->addChild("admin:pricelist:read");
-        $role_admin->addChild("admin:pricelist:delete");
-
-        $role_admin->addChild("admin:preference:create");
-        $role_admin->addChild("admin:preference:update");
-        $role_admin->addChild("admin:preference:read");
-        $role_admin->addChild("admin:preference:delete");
-
-        $auth->save();
-
-        // Copy all user from old tables to new table
-        $role = '["USER"]';
-        $this->truncateTable("{{user}}");
-        $this->execute("INSERT INTO {{user}} (name, username, password, role) SELECT utente_nominativo, utente_username, utente_password, '" . $role . "' FROM {{utenti}}");
-
-        // Product groups
-        $this->createTable('{{product_group}}', array(
-            "id"            => "INT(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ",
-            "name"          => "VARCHAR(255) NOT NULL",
-            "description"   => "TEXT NULL",
-            "enabled"       => "TINYINT(1) UNSIGNED DEFAULT '1'",
-            "sort_order"    => "INT(11) UNSIGNED NOT NULL DEFAULT '0'",
-            "create_time"   => "DATETIME",
-            "update_time"   => "DATETIME",
-        ), 'ENGINE = InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci');
-
-        $this->insert("{{product_group}}", array('name' => 'Attrezzature', 'create_time' => new CDbExpression('NOW()')));
-        $this->insert("{{product_group}}", array('name' => 'Prodotti consumabili', 'create_time' => new CDbExpression('NOW()')));
-        $this->insert("{{product_group}}", array('name' => 'Manodopera', 'create_time' => new CDbExpression('NOW()')));
-        $this->insert("{{product_group}}", array('name' => 'Servizi', 'create_time' => new CDbExpression('NOW()')));
-
-        // Products, services and so on
-        $this->createTable('{{product}}', array(
-            "id"            => "INT(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ",
-            "group_id"      => "INT(11) UNSIGNED NOT NULL",
-            "sku"           => "VARCHAR(255) NOT NULL",
-            "name"          => "VARCHAR(255) NOT NULL",
-            "description"   => "TEXT NULL",
-            "measure_unit"  => "VARCHAR(255) NOT NULL",
-            "price"         => "DECIMAL(10,2) NOT NULL DEFAULT '0.00'",
-            "vat"           => "DECIMAL(10,2) NOT NULL DEFAULT '0.00'",
-            "work_time"     => "DECIMAL(10,2) NOT NULL DEFAULT '0.00'",
-            "enabled"       => "TINYINT(1) UNSIGNED DEFAULT '1'",
-            "sort_order"    => "INT(11) UNSIGNED NOT NULL DEFAULT '0'",
-            "create_time"   => "DATETIME",
-            "update_time"   => "DATETIME",
-        ), 'ENGINE = InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci');
-
-        $this->addForeignKey('fk_product_group_id_' . DB_TABLE_PREFIX . 'product_group_id', '{{product}}', 'group_id', "{{product_group}}", "id", 'CASCADE', 'CASCADE');
-
-        $this->insert("{{product}}", array('group_id' => 1, 
-            'name' => 'Corda 5 millimetri', 
-            'sku' => '1001005', 
-            'measure_unit' => 'Metri', 
-            'price' => '0.75', 
-            'vat' => '22',
-            'create_time' => new CDbExpression('NOW()')));
-        $this->insert("{{product}}", array('group_id' => 1, 
-            'name' => 'Paranco', 
-            'sku' => '1002158', 
-            'measure_unit' => 'Pezzi', 
-            'price' => '125.00', 
-            'vat' => '22',
-            'create_time' => new CDbExpression('NOW()')));
-        
-        $this->insert("{{product}}", array('group_id' => 2, 
-            'name' => 'Olio per motore', 
-            'sku' => '1002874', 
-            'measure_unit' => 'Litri', 
-            'price' => '23.50', 
-            'vat' => '22',
-            'create_time' => new CDbExpression('NOW()')));
-        $this->insert("{{product}}", array('group_id' => 2, 
-            'name' => 'Vernice bianca', 
-            'sku' => '1002548', 
-            'measure_unit' => 'Litri', 
-            'price' => '8.50', 
-            'vat' => '22',
-            'create_time' => new CDbExpression('NOW()')));
-        
-        $this->insert("{{product}}", array('group_id' => 3, 
-            'name' => 'Carteggio', 
-            'sku' => '3003558', 
-            'measure_unit' => 'Ore', 
-            'price' => '35.00', 
-            'vat' => '22',
-            'work_time' => '60',
-            'create_time' => new CDbExpression('NOW()')));
-        $this->insert("{{product}}", array('group_id' => 3, 
-            'name' => 'Verniciatura', 
-            'sku' => '3003252', 
-            'measure_unit' => 'Ore', 
-            'price' => '28.50', 
-            'vat' => '22',
-            'work_time' => '75',
-            'create_time' => new CDbExpression('NOW()')));
-        
-        $this->insert("{{product}}", array('group_id' => 4, 
-            'name' => 'Alaggio barca da 4 metri', 
-            'sku' => '4404001', 
-            'measure_unit' => 'Numero', 
-            'price' => '250.00', 
-            'vat' => '22',
-            'work_time' => '120',
-            'create_time' => new CDbExpression('NOW()')));
-        $this->insert("{{product}}", array('group_id' => 4, 
-            'name' => 'Varo barca da 4 metri', 
-            'sku' => '4404002', 
-            'measure_unit' => 'Numero', 
-            'price' => '250.00', 
-            'vat' => '22',
-            'work_time' => '120',
-            'create_time' => new CDbExpression('NOW()')));
-
-        $this->insert("{{product}}", array('group_id' => 4, 
-            'name' => 'Alaggio barca da 6 metri', 
-            'sku' => '4406001', 
-            'measure_unit' => 'Numero', 
-            'price' => '375.00', 
-            'vat' => '22',
-            'work_time' => '180',
-            'create_time' => new CDbExpression('NOW()')));
-        $this->insert("{{product}}", array('group_id' => 4, 
-            'name' => 'Varo barca da 6 metri', 
-            'sku' => '4406002', 
-            'measure_unit' => 'Numero', 
-            'price' => '375.00', 
-            'vat' => '22',
-            'work_time' => '180',
-            'create_time' => new CDbExpression('NOW()')));
-
-        // Order status (active, pending, closed, etc...)
-        $this->createTable('{{order_status}}', array(
-            "id"            => "INT(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ",
-            "name"          => "VARCHAR(255) NOT NULL DEFAULT ''",
-            "color"         => "VARCHAR(255) NOT NULL DEFAULT ''",
-            "quote"         => "TINYINT(1) UNSIGNED DEFAULT '0'",
-            "opened"        => "TINYINT(1) UNSIGNED DEFAULT '0'",
-            "pending"       => "TINYINT(1) UNSIGNED DEFAULT '0'",
-            "closed"        => "TINYINT(1) UNSIGNED DEFAULT '0'",
-            "cancelled"     => "TINYINT(1) UNSIGNED DEFAULT '0'",
-            "sort_order"    => "INT(11) UNSIGNED NOT NULL DEFAULT '0'",
-            "create_time"   => "DATETIME",
-            "update_time"   => "DATETIME",
-        ), 'ENGINE = InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci');
-
-        $this->insert("{{order_status}}", array('name' => 'Quote', 'color' => "#eb84dd", 'quote' => 1, 'sort_order' => 1, 'create_time' => new CDbExpression('NOW()')));
-        $this->insert("{{order_status}}", array('name' => 'Active', 'color' => "#00ff00", 'opened' => 1, 'sort_order' => 2, 'create_time' => new CDbExpression('NOW()')));
-        $this->insert("{{order_status}}", array('name' => 'Pending', 'color' => "#f5911e", 'pending' => 1, 'sort_order' => 3, 'create_time' => new CDbExpression('NOW()')));
-        $this->insert("{{order_status}}", array('name' => 'Closed', 'color' => "#bd0000", 'closed' => 1, 'sort_order' => 4, 'create_time' => new CDbExpression('NOW()')));
-        $this->insert("{{order_status}}", array('name' => 'Cancelled', 'color' => "#adadad", 'cancelled' => 1, 'sort_order' => 5, 'create_time' => new CDbExpression('NOW()')));
-
-        // Order type (standard order, contract order, service or consumption order)
-        $this->createTable('{{order_type}}', array(
-            "id"            => "INT(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ",
-            "name"          => "VARCHAR(255) NOT NULL DEFAULT ''",
-            "description"   => "TEXT",
-            "color"         => "VARCHAR(255) NOT NULL DEFAULT ''",
-            "show"          => "TINYINT(1) UNSIGNED DEFAULT '0'",
-            "sort_order"    => "INT(11) UNSIGNED NOT NULL DEFAULT '0'",
-            "create_time"   => "DATETIME",
-            "update_time"   => "DATETIME",
-        ), 'ENGINE = InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci');
-
-        $this->insert("{{order_type}}", array(
-            'name' => 'Order', 
-            'description' => 'Standard order',
-            'color' => "#66ccff", 
-            'show' => 1, 'sort_order' => 1, 'create_time' => new CDbExpression('NOW()')
-        ));
-        $this->insert("{{order_type}}", array(
-            'name' => 'Contract', 
-            'description' => 'Contract order',
-            'color' => "#ffcc66", 
-            'show' => 0, 'sort_order' => 2, 'create_time' => new CDbExpression('NOW()')
-        ));
-        $this->insert("{{order_type}}", array(
-            'name' => 'Service', 
-            'description' => 'Service or usage order',
-            'color' => "#66ffcc", 
-            'show' => 1, 'sort_order' => 3, 'create_time' => new CDbExpression('NOW()')
-        ));
-
-        // Orders
-        $this->createTable('{{order}}', array(
-            "id"            => "INT(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ",
-            "customer_id"   => "INT(10) UNSIGNED NOT NULL ",
-            "vector_id"     => "INT(10) UNSIGNED NULL DEFAULT NULL",
-            "date"          => "DATE NOT NULL",
-            "work_date"     => "DATE NULL DEFAULT NULL",
-            "due_date"      => "DATE NULL DEFAULT NULL",
-            "work_number"   => "INT(11) UNSIGNED DEFAULT NULL",
-            "type_id"       => "INT(11) UNSIGNED NOT NULL DEFAULT '1'",
-            "status_id"     => "INT(11) UNSIGNED NOT NULL",
-            "notes"         => "TEXT NULL",
-            "create_time"   => "DATETIME",
-            "update_time"   => "DATETIME",
-        ), 'ENGINE = InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci');
-
-        $this->addForeignKey('fk_order_customer_id_' . DB_TABLE_PREFIX . 'clienti_cliente_id', '{{order}}', 'customer_id', "{{clienti}}", "cliente_id", 'CASCADE', 'CASCADE');
-        $this->addForeignKey('fk_order_vector_id_' . DB_TABLE_PREFIX . 'barche_barca_id', '{{order}}', 'vector_id', "{{barche}}", "barca_id", 'CASCADE', 'CASCADE');
-        $this->addForeignKey('fk_order_status_id_' . DB_TABLE_PREFIX . 'order_status_id', '{{order}}', 'status_id', "{{order_status}}", "id", 'RESTRICT', 'RESTRICT');
-        $this->addForeignKey('fk_order_type_id_' . DB_TABLE_PREFIX . 'order_type_id', '{{order}}', 'type_id', "{{order_type}}", "id", 'RESTRICT', 'RESTRICT');
-
-        // Orders details
-        $this->createTable('{{order_detail}}', array(
-            "id"                => "INT(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ",
-            "order_id"          => "INT(11) UNSIGNED NOT NULL",
-            "product_id"        => "INT(11) UNSIGNED NULL DEFAULT NULL",
-            "contract_id"       => "INT(11) UNSIGNED NULL DEFAULT NULL",
-            "price"             => "DECIMAL(10,2) NOT NULL DEFAULT '0.00'", // price singular object
-            "quantity"          => "DECIMAL(10,2) NOT NULL DEFAULT '0.00'", // number of object
-            "total_no_vat"      => "DECIMAL(10,2) NOT NULL DEFAULT '0.00'", // = price * number
-            "vat"               => "DECIMAL(10,2) NOT NULL DEFAULT '0.00'", // percentage tax
-            "vat_value"         => "DECIMAL(10,2) NOT NULL DEFAULT '0.00'", // value of vat
-            "total_vat"         => "DECIMAL(10,2) NOT NULL DEFAULT '0.00'", // = (price * number) + VAT
-            "discount"          => "DECIMAL(10,2) NOT NULL DEFAULT '0.00'", // percentage discount
-            "discount_value"    => "DECIMAL(10,2) NOT NULL DEFAULT '0.00'", // value of discount
-            "total"             => "DECIMAL(10,2) NOT NULL DEFAULT '0.00'", // total_vat - discount
-            "work_time"         => "DECIMAL(10,2) NOT NULL DEFAULT '0.00'", // minutes of work for 1 quantity
-            "total_work_time"   => "DECIMAL(10,2) NOT NULL DEFAULT '0.00'", // total minutes of work            
-            "done"              => "TINYINT(1) UNSIGNED DEFAULT '0'", // mark as done by staff
-            "notes"             => "TEXT DEFAULT NULL",
-            "create_time"       => "DATETIME",
-            "update_time"       => "DATETIME",
-        ), 'ENGINE = InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci');
-
-        $this->addForeignKey('fk_order_detail_order_id_' . DB_TABLE_PREFIX . 'order_id', '{{order_detail}}', 'order_id', "{{order}}", "id", 'CASCADE', 'CASCADE');
-        $this->addForeignKey('fk_order_detail_product_id_' . DB_TABLE_PREFIX . 'product_id', '{{order_detail}}', 'product_id', "{{product}}", "id", 'RESTRICT', 'RESTRICT');
-        $this->addForeignKey('fk_order_detail_contract_id_' . DB_TABLE_PREFIX . 'contratti_id', '{{order_detail}}', 'contract_id', "{{contratti}}", "contratto_id", 'RESTRICT', 'RESTRICT');
-
-        $auth = Yii::app()->authManager;
-
-        // Create new task (operation collector)
-        $task = $auth->createTask("admin:order", Yii::t('app', 'Ordini'));
-        // Create new operation
-        $auth->createOperation("admin:order:create", Yii::t('app', 'Create'));
-        $auth->createOperation("admin:order:read", Yii::t('app', 'Read'));
-        $auth->createOperation("admin:order:update", Yii::t('app', 'Update'));
-        $auth->createOperation("admin:order:delete", Yii::t('app', 'Delete'));
-        
-        // Add operation to task
-        $task->addChild("admin:order:create");
-        $task->addChild("admin:order:read");
-        $task->addChild("admin:order:update");
-        $task->addChild("admin:order:delete");
-
-        // Get admin role
-        $role_admin = $auth->getAuthItem('ADMIN');
-
-        // Add operation to admin role
-        $role_admin->addChild("admin:order:create");
-        $role_admin->addChild("admin:order:update");
-        $role_admin->addChild("admin:order:read");
-        $role_admin->addChild("admin:order:delete");
-
-        $auth->save();
-
-        // Product groups
-        $this->createTable('{{system_template}}', array(
-            "id"            => "VARCHAR(255) NOT NULL",
-            "language"      => "VARCHAR(255) NOT NULL",
-            "name"          => "VARCHAR(255) NOT NULL",
-            "description"   => "TEXT NULL",
-            "text_content"  => "TEXT",
-            "html_content"  => "TEXT",
-            "create_time"   => "DATETIME",
-            "update_time"   => "DATETIME",
-            "PRIMARY KEY (`id`, `language`)",
-        ), 'ENGINE = InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci');
-
-        $this->insert("{{system_template}}", array(
-            'id'    => 'PRINT_HEADER',
-            'name' => 'Header print', 
-            "description" => "Header for all print",
-            "text_content" => '{$smarty.const.APPLICATION_COMPANY_NAME}\n---------------------', 
-            "html_content" => '<h2>{$smarty.const.APPLICATION_COMPANY_NAME}</h2> <hr />', 
-            "language"  => "en",
-            'create_time' => new CDbExpression('NOW()')
-        ));
-
-        $this->insert("{{system_template}}", array(
-            'id'    => 'PRINT_FOOTER',
-            'name' => 'Footer print', 
-            "description" => "Footer for all print", 
-            "text_content" => '---------------------', 
-            "html_content" => '<table style="width: 100%;"><tr><td>{$footer_date}</td><td align="right">Page CURRENT_PAGE / TOTAL_PAGES</td></tr></table>', 
-            "language"  => "en",
-            'create_time' => new CDbExpression('NOW()')
-        ));
-
-        $this->insert("{{system_template}}", array(
-            'id'    => 'PRINT_ORDER',
-            'name' => 'Order print', 
-            "description" => "Order print", 
-            "text_content" => 'Hello, this is order is for {$order->customer->cliente_nominativo}', 
-            "html_content" => '<h1>Order #{$order.id} {if $order.work_number} - Work number #{$order.work_number} {/if}</h1>
-<h2>Client: {$order.customer.cliente_nominativo} {if $order.vector !== null} <br />Vector: {$order.vector.barca_nome} {$order.vector.barca_targa} {/if}</h2>
-<p>Date: {$order_date}<br /> Work date: {$order_work_date}<br /> Due date: {$order_due_date}</p>
-<table style="border: 1px solid black; width: 100%;" cellpadding="2">
-<thead>
-<tr><th>Product</th><th>Price</th><th>Quantity</th><th>Vat</th><th>Discount</th><th>Sub total</th></tr>
-</thead>
-<tbody><!-- {foreach $order.orderDetails as $k => $v} -->
-<tr>
-<td>{$v.product.name}</td>
-<td style="text-align: right;">{$v.price}</td>
-<td style="text-align: right;">{$v.quantity}</td>
-<td style="text-align: right;">{$v.vat}</td>
-<td style="text-align: right;">{$v.discount}</td>
-<td style="text-align: right;">{$v.total}</td>
-</tr>
-<!-- {/foreach} --></tbody>
-</table>
-<table style="width: 100%;" cellpadding="4">
-<thead>
-<tr><th align="center">Net total</th><th align="center">VAT total</th><th align="center">Discount total</th><th align="center"><strong>Order total</strong></th></tr>
-</thead>
-<tbody>
-<tr>
-<td align="right">{$order.net_total}</td>
-<td align="right">{$order.vat_total}</td>
-<td align="right">{$order.discount_total}</td>
-<td align="right"><strong>{$order.total}</strong></td>
-</tr>
-</tbody>
-</table>
-<h2>Notes:</h2>
-<p>{$order.notes|nl2br}</p>', 
-            "language"  => "en",
-            'create_time' => new CDbExpression('NOW()')
-        ));
-
-        $this->insert("{{system_template}}", array(
-            'id'    => 'PRINT_INVOICE',
-            'name' => 'Invoice print', 
-            "description" => "Invoice print", 
-            "text_content" => 'Hello, this invoice is for {$invoice->customer->cliente_nominativo}', 
-            "html_content" => '<h1>{$invoice.type.name}&nbsp;{if $invoice.invoice_number}{$invoice.type.prefix}{$invoice.invoice_number}{else}{$invoice.id}{/if}</h1>
-<p>{$invoice.billing_header}<br /> {$invoice.billing_address}<br /> {$invoice.billing_zip}, {$invoice.billing_city}, {$invoice.billing_province}<br /> {$invoice.billing_country}<br /> {$invoice.billing_tax}</p>
-<p>{if $invoice.status.unpaid}Date: {$invoice_date}<br />Due date: {$invoice_due_date} {elseif $invoice.status.paid}Date: {$invoice_date_paid} {else}Date: {$invoice_date}{/if}</p>
-<table style="border: 1px solid black; width: 100%;" cellpadding="2" cellspacing="2">
-<thead>
-<tr><th>Description</th><th>Price</th><th>Quantity</th><th>Vat</th><th>Discount</th><th>Sub total</th></tr>
-</thead>
-<tbody><!-- {foreach $invoice.invoiceRows as $k => $v} --> <!-- {cycle values="#eeeeee,#d0d0d0" assign="trcolor"} -->
-<tr style="background-color: {$trcolor};">
-<td>{$v.description}</td>
-<td style="text-align: right;">{$v.price}</td>
-<td style="text-align: right;">{$v.quantity}</td>
-<td style="text-align: right;">{$v.vat}</td>
-<td style="text-align: right;">{$v.discount}</td>
-<td style="text-align: right;">{$v.total}</td>
-</tr>
-<!-- {/foreach} --></tbody>
-</table>
-<table style="width: 100%;" cellpadding="4">
-<thead>
-<tr><th align="center">Net total</th><th align="center">VAT total</th><th align="center">Discount total</th><th align="center"><strong>Invoice&nbsp;total</strong></th></tr>
-</thead>
-<tbody>
-<tr>
-<td align="right">{$invoice.net_total}</td>
-<td align="right">{$invoice.vat_total}</td>
-<td align="right">{$invoice.discount_total}</td>
-<td align="right"><strong>{$invoice.total}</strong></td>
-</tr>
-</tbody>
-</table>
-<h2>Notes:</h2>
-<p>{$invoice.notes|nl2br}</p>', 
-            "language"  => "en",
-            'create_time' => new CDbExpression('NOW()')
-        ));
-
-        $auth = Yii::app()->authManager;
-
-        $task = $auth->createTask("admin:systemTemplate", Yii::t('app', 'System templates'));
-        $auth->createOperation("admin:systemTemplate:create", Yii::t('app', 'Create'));
-        $auth->createOperation("admin:systemTemplate:read", Yii::t('app', 'Read'));
-        $auth->createOperation("admin:systemTemplate:update", Yii::t('app', 'Update'));
-        $auth->createOperation("admin:systemTemplate:delete", Yii::t('app', 'Delete'));
-
-        $task->addChild("admin:systemTemplate:create");
-        $task->addChild("admin:systemTemplate:read");
-        $task->addChild("admin:systemTemplate:update");
-        $task->addChild("admin:systemTemplate:delete");
-
-        $role_admin = $auth->getAuthItem('ADMIN');
-
-        $role_admin->addChild("admin:systemTemplate:create");
-        $role_admin->addChild("admin:systemTemplate:update");
-        $role_admin->addChild("admin:systemTemplate:read");
-        $role_admin->addChild("admin:systemTemplate:delete");
-
-        $auth->save();
-
-        // Invoice status (paid, unpaid, cancelled)
-        $this->createTable('{{invoice_status}}', array(
-            "id"            => "INT(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ",
-            "name"          => "VARCHAR(255) NOT NULL DEFAULT ''",
-            "color"         => "VARCHAR(255) NOT NULL DEFAULT ''",
-            "paid"          => "TINYINT(1) UNSIGNED DEFAULT '0'",
-            "unpaid"        => "TINYINT(1) UNSIGNED DEFAULT '0'",
-            "cancelled"     => "TINYINT(1) UNSIGNED DEFAULT '0'",
-            "sort_order"    => "INT(11) UNSIGNED NOT NULL DEFAULT '0'",
-            "create_time"   => "DATETIME",
-            "update_time"   => "DATETIME",
-        ), 'ENGINE = InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci');
-
-        $this->insert("{{invoice_status}}", array('name' => 'Paid', 'color' => "#00ff00", 'paid' => 1, 'sort_order' => 1, 'create_time' => new CDbExpression('NOW()')));
-        $this->insert("{{invoice_status}}", array('name' => 'Unpaid', 'color' => "#f5911e", 'unpaid' => 1, 'sort_order' => 2, 'create_time' => new CDbExpression('NOW()')));
-        $this->insert("{{invoice_status}}", array('name' => 'Cancelled', 'color' => "#ababab", 'cancelled' => 1, 'sort_order' => 3, 'create_time' => new CDbExpression('NOW()')));
-
-        // Invoice type (invoice, credit note and different invoice lines)
-        $this->createTable('{{invoice_type}}', array(
-            "id"            => "INT(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ",
-            "name"          => "VARCHAR(255) NOT NULL DEFAULT ''",
-            "description"   => "TEXT",
-            "color"         => "VARCHAR(255) NOT NULL DEFAULT ''",
-            "type"          => "ENUM('INCOME', 'OUTCOME')",
-            "prefix"        => "VARCHAR(255) NOT NULL DEFAULT ''",
-            "year_restart"  => "TINYINT(1) UNSIGNED NOT NULL DEFAULT '1'",
-            "sort_order"    => "INT(11) UNSIGNED NOT NULL DEFAULT '0'",
-            "enabled"       => "TINYINT(1) UNSIGNED DEFAULT '1'",
-            "create_time"   => "DATETIME",
-            "update_time"   => "DATETIME",
-        ), 'ENGINE = InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci');
-
-        $this->insert("{{invoice_type}}", array(
-            'name' => 'Invoice', 
-            'description' => 'Standard invoice',
-            'color' => "#66ccff", 
-            'type' => "INCOME", 'sort_order' => 1, 'create_time' => new CDbExpression('NOW()')
-        ));
-        $this->insert("{{invoice_type}}", array(
-            'name' => 'Credit note', 
-            'description' => 'Credit note',
-            'color' => "#ffcc66", 
-            'type' => "OUTCOME", 'sort_order' => 2, 'create_time' => new CDbExpression('NOW()')
-        ));
-
-        // Invoices
-        $this->createTable('{{invoice}}', array(
-            "id"                => "INT(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY",
-            "customer_id"       => "INT(10) UNSIGNED NOT NULL",
-            "invoice_number"    => "INT(11) UNSIGNED NOT NULL DEFAULT '0'",
-            "date"              => "DATE NOT NULL",
-
-            "billing_header"    => "TEXT NOT NULL",
-            "billing_address"   => "TEXT NOT NULL",
-            "billing_zip"       => "TEXT NULL DEFAULT NULL",
-            "billing_city"      => "TEXT NULL DEFAULT NULL",
-            "billing_province"  => "TEXT NULL DEFAULT NULL",
-            "billing_country"   => "TEXT NULL DEFAULT NULL",
-            "billing_tax"       => "TEXT NOT NULL",
-
-            "shipping_header"    => "TEXT NULL DEFAULT NULL",
-            "shipping_address"   => "TEXT NULL DEFAULT NULL",
-            "shipping_zip"       => "TEXT NULL DEFAULT NULL",
-            "shipping_city"      => "TEXT NULL DEFAULT NULL",
-            "shipping_province"  => "TEXT NULL DEFAULT NULL",
-            "shipping_country"   => "TEXT NULL DEFAULT NULL",
-
-            "status_id"         => "INT(11) UNSIGNED NOT NULL",
-            "type_id"           => "INT(11) UNSIGNED NOT NULL",
-            "due_date"          => "DATE NULL DEFAULT NULL",
-            "date_paid"         => "DATE NULL DEFAULT NULL",
-            "payment_method"    => "TEXT",
-            "notes"             => "TEXT NULL",
-            "create_time"       => "DATETIME",
-            "update_time"       => "DATETIME",
-        ), 'ENGINE = InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci');
-
-        $this->addForeignKey('fk_invoice_customer_id_' . DB_TABLE_PREFIX . 'clienti_cliente_id', '{{invoice}}', 'customer_id', "{{clienti}}", "cliente_id", 'CASCADE', 'CASCADE');
-        $this->addForeignKey('fk_invoice_status_id_' . DB_TABLE_PREFIX . 'invoice_status_id', '{{invoice}}', 'status_id', "{{invoice_status}}", "id", 'RESTRICT', 'RESTRICT');
-        $this->addForeignKey('fk_invoice_type_id_' . DB_TABLE_PREFIX . 'invoice_type_id', '{{invoice}}', 'type_id', "{{invoice_type}}", "id", 'RESTRICT', 'RESTRICT');
-
-        // Invoice rows
-        $this->createTable('{{invoice_row}}', array(
-            "id"                => "INT(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ",
-            "invoice_id"        => "INT(11) UNSIGNED NOT NULL",
-            "order_detail_id"   => "INT(11) UNSIGNED NULL DEFAULT NULL",
-            "description"       => "TEXT NOT NULL",
-            "price"             => "DECIMAL(10,2) NOT NULL DEFAULT '0.00'", // price singular object
-            "quantity"          => "DECIMAL(10,2) NOT NULL DEFAULT '0.00'", // number of object
-            "total_no_vat"      => "DECIMAL(10,2) NOT NULL DEFAULT '0.00'", // = price * number
-            "vat"               => "DECIMAL(10,2) NOT NULL DEFAULT '0.00'", // percentage tax
-            "vat_value"         => "DECIMAL(10,2) NOT NULL DEFAULT '0.00'", // value of vat
-            "total_vat"         => "DECIMAL(10,2) NOT NULL DEFAULT '0.00'", // = (price * number) + VAT
-            "discount"          => "DECIMAL(10,2) NOT NULL DEFAULT '0.00'", // percentage discount
-            "discount_value"    => "DECIMAL(10,2) NOT NULL DEFAULT '0.00'", // value of discount
-            "total"             => "DECIMAL(10,2) NOT NULL DEFAULT '0.00'", // total_vat - discount
-            "notes"             => "TEXT DEFAULT NULL",
-            "create_time"       => "DATETIME",
-            "update_time"       => "DATETIME",
-        ), 'ENGINE = InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci');
-
-        $this->addForeignKey('fk_invoice_row_id_' . DB_TABLE_PREFIX . 'invoice_id', '{{invoice_row}}', 'invoice_id', "{{invoice}}", "id", 'CASCADE', 'CASCADE');
-        $this->addForeignKey('fk_invoice_row_order_detail_id_' . DB_TABLE_PREFIX . 'order_detail_id', '{{invoice_row}}', 'order_detail_id', "{{order_detail}}", "id", 'RESTRICT', 'RESTRICT');
-
-        $this->addColumn('{{contratti_tipo}}', 'color', "VARCHAR(255) NOT NULL DEFAULT ''");
-        $this->addColumn('{{contratti_tipo}}', 'prefix', "VARCHAR(255) NOT NULL DEFAULT ''");
-        $this->addColumn('{{contratti_tipo}}', 'rent', "TINYINT(1) UNSIGNED DEFAULT '0'");
-        $this->addColumn('{{contratti_tipo}}', 'transit', "TINYINT(1) UNSIGNED DEFAULT '0'");
-        $this->addColumn('{{contratti_tipo}}', 'sell', "TINYINT(1) UNSIGNED DEFAULT '0'");
-        $this->addColumn('{{contratti_tipo}}', 'option', "TINYINT(1) UNSIGNED DEFAULT '0'");
-        $this->addColumn('{{contratti_tipo}}', 'manage', "TINYINT(1) UNSIGNED DEFAULT '0'");
-        $this->addColumn('{{contratti_tipo}}', 'reservation', "TINYINT(1) UNSIGNED DEFAULT '0'");
-        $this->addColumn('{{contratti_tipo}}', 'sort_order', "INT(11) UNSIGNED NOT NULL DEFAULT '0'");
-        $this->addColumn('{{contratti_tipo}}', 'enabled', "TINYINT(1) UNSIGNED DEFAULT '1'");
-        $this->addColumn('{{contratti_tipo}}', 'create_time', "DATETIME");
-        $this->addColumn('{{contratti_tipo}}', 'update_time', "DATETIME");
-
-        $this->update('{{contratti_tipo}}', array(
-            'color' => '#ffff00',
-            'rent'  => 1,
-            'sort_order' => 1,
-            'create_time' => new CDbExpression('NOW()'),
-            'update_time' => new CDbExpression('NOW()'),
-        ), 'contratto_tipo_id = 1');
-
-        $this->update('{{contratti_tipo}}', array(
-            'color' => '#00ffff',
-            'transit'  => 1,
-            'sort_order' => 2,
-            'create_time' => new CDbExpression('NOW()'),
-            'update_time' => new CDbExpression('NOW()'),
-        ), 'contratto_tipo_id = 11');
-
-        $this->update('{{contratti_tipo}}', array(
-            'color' => '#ff0000',
-            'sell'  => 1,
-            'sort_order' => 3,
-            'create_time' => new CDbExpression('NOW()'),
-            'update_time' => new CDbExpression('NOW()'),
-        ), 'contratto_tipo_id = 2');
-
-        $this->update('{{contratti_tipo}}', array(
-            'color' => '#9999ff',
-            'option'  => 1,
-            'sort_order' => 4,
-            'create_time' => new CDbExpression('NOW()'),
-            'update_time' => new CDbExpression('NOW()'),
-        ), 'contratto_tipo_id = 13');
-
-        $this->update('{{contratti_tipo}}', array(
-            'color' => '#ff00ff',
-            'manage'  => 1,
-            'sort_order' => 5,
-            'create_time' => new CDbExpression('NOW()'),
-            'update_time' => new CDbExpression('NOW()'),
-        ), 'contratto_tipo_id = 3');
-
-        $this->update('{{contratti_tipo}}', array(
-            'color' => '#00ff00',
-            'reservation'  => 1,
-            'sort_order' => 6,
-            'create_time' => new CDbExpression('NOW()'),
-            'update_time' => new CDbExpression('NOW()'),
-        ), 'contratto_tipo_id = 4');
-
-
-        $this->addColumn('{{dimensioni}}', 'create_time', "TIMESTAMP");        
-        $this->addColumn('{{dimensioni}}', 'update_time', "TIMESTAMP");        
-
-        $this->addColumn('{{clienti}}', 'country', "VARCHAR(255) NOT NULL DEFAULT ''");
-        $this->createIndex("idx_clienti_country", "{{clienti}}", "country", false);
-        $this->addColumn('{{clienti}}', 'create_time', "TIMESTAMP");        
-        $this->addColumn('{{clienti}}', 'update_time', "TIMESTAMP");        
-
-        $this->addColumn('{{barche}}', 'builder', "VARCHAR(255) NOT NULL DEFAULT ''");
-        $this->createIndex("idx_barche_builder", "{{barche}}", "builder", false);
-
-        $this->addColumn('{{barche}}', 'insurance_company', "VARCHAR(255) NOT NULL DEFAULT ''");
-        $this->createIndex("idx_barche_insurance_company", "{{barche}}", "insurance_company", false);
-
-        $this->addColumn('{{barche}}', 'country', "VARCHAR(255) NOT NULL DEFAULT ''");
-        $this->createIndex("idx_barche_country", "{{barche}}", "country", false);
-        
-        $this->addColumn('{{barche}}', 'create_time', "TIMESTAMP");        
-        $this->addColumn('{{barche}}', 'update_time', "TIMESTAMP");   
-        
-		return true;
-	}
-
-	public function safeDown()
-	{
-
-		$auth = Yii::app()->authManager;
-	
-		$auth->removeAuthItem("admin:main");
-		$auth->removeAuthItem("admin:contract");
-		$auth->removeAuthItem("admin:customer");
-		$auth->removeAuthItem("admin:vector");
-		$auth->removeAuthItem("admin:resource");
-		$auth->removeAuthItem("admin:document");
-		$auth->removeAuthItem("admin:invoice");
-		$auth->removeAuthItem("admin:template");
-		$auth->removeAuthItem("admin:pricelist");
-		$auth->removeAuthItem("admin:preference");
-
-        $auth->removeAuthItem("admin:main:allow");
-        $auth->removeAuthItem("admin:contract:create");
-        $auth->removeAuthItem("admin:contract:read");
-        $auth->removeAuthItem("admin:contract:update");
-        $auth->removeAuthItem("admin:contract:delete");
-        $auth->removeAuthItem("admin:customer:create");
-        $auth->removeAuthItem("admin:customer:read");
-        $auth->removeAuthItem("admin:customer:update");
-        $auth->removeAuthItem("admin:customer:delete");
-        $auth->removeAuthItem("admin:vector:create");
-        $auth->removeAuthItem("admin:vector:read");
-        $auth->removeAuthItem("admin:vector:update");
-        $auth->removeAuthItem("admin:vector:delete");
-        $auth->removeAuthItem("admin:resource:create");
-        $auth->removeAuthItem("admin:resource:read");
-        $auth->removeAuthItem("admin:resource:update");
-        $auth->removeAuthItem("admin:resource:delete");
-        $auth->removeAuthItem("admin:document:create");
-        $auth->removeAuthItem("admin:document:read");
-        $auth->removeAuthItem("admin:document:update");
-        $auth->removeAuthItem("admin:document:delete");
-        $auth->removeAuthItem("admin:invoice:create");
-        $auth->removeAuthItem("admin:invoice:read");
-        $auth->removeAuthItem("admin:invoice:update");
-        $auth->removeAuthItem("admin:invoice:delete");
-        $auth->removeAuthItem("admin:template:create");
-        $auth->removeAuthItem("admin:template:read");
-        $auth->removeAuthItem("admin:template:update");
-        $auth->removeAuthItem("admin:template:delete");
-        $auth->removeAuthItem("admin:pricelist:create");
-        $auth->removeAuthItem("admin:pricelist:read");
-        $auth->removeAuthItem("admin:pricelist:update");
-        $auth->removeAuthItem("admin:pricelist:delete");
-        $auth->removeAuthItem("admin:preference:create");
-        $auth->removeAuthItem("admin:preference:read");
-        $auth->removeAuthItem("admin:preference:update");
-        $auth->removeAuthItem("admin:preference:delete");
-
-        $this->truncateTable("{{user}}");
-
-		$auth->save();
-
-        $this->execute("SET foreign_key_checks = 0;");
-
-        try {
-            $table = "order_detail";
-            $this->dropTable('{{' . $table . '}}');
-        } catch (Exception $e) {
-            echo "Table '" . $table ."' not found" . PHP_EOL;
-        }
-
-        try {
-            $table = "order";
-            $this->dropTable('{{' . $table . '}}');
-        } catch (Exception $e) {
-            echo "Table '" . $table ."' not found" . PHP_EOL;
-        }
-
-        try {
-            $table = "order_status";
-            $this->dropTable('{{' . $table . '}}');
-        } catch (Exception $e) {
-            echo "Table '" . $table ."' not found" . PHP_EOL;
-        }
-
-        try {
-            $table = "order_type";
-            $this->dropTable('{{' . $table . '}}');
-        } catch (Exception $e) {
-            echo "Table '" . $table ."' not found" . PHP_EOL;
-        }
-
-        try {
-            $table = "product";
-            $this->dropTable('{{' . $table . '}}');
-        } catch (Exception $e) {
-            echo "Table '" . $table ."' not found" . PHP_EOL;
-        }
-
-        try {
-            $table = "product_group";
-            $this->dropTable('{{' . $table . '}}');
-        } catch (Exception $e) {
-            echo "Table '" . $table ."' not found" . PHP_EOL;
-        }
-   
-        $this->execute("SET foreign_key_checks = 1;");
-
-        $auth = Yii::app()->authManager;
-    
-        $auth->removeAuthItem("admin:order");
-        $auth->removeAuthItem("admin:order:create");
-        $auth->removeAuthItem("admin:order:read");
-        $auth->removeAuthItem("admin:order:update");
-        $auth->removeAuthItem("admin:order:delete");
-
-        $auth->save();
-
-        try {
-            $table = "system_template";
-            $this->dropTable('{{' . $table . '}}');
-        } catch (Exception $e) {
-            echo "Table '" . $table ."' not found" . PHP_EOL;
-        }
-
-        $auth = Yii::app()->authManager;
-    
-        $auth->removeAuthItem("admin:systemTemplate");
-        $auth->removeAuthItem("admin:systemTemplate:create");
-        $auth->removeAuthItem("admin:systemTemplate:read");
-        $auth->removeAuthItem("admin:systemTemplate:update");
-        $auth->removeAuthItem("admin:systemTemplate:delete");
-
-        $auth->save();
-
-
-        $this->execute("SET foreign_key_checks = 0;");
-
-        try {
-            $table = "invoice_row";
-            $this->dropTable('{{' . $table . '}}');
-        } catch (Exception $e) {
-            echo "Table '" . $table ."' not found" . PHP_EOL;
-        }
-   
-        try {
-            $table = "invoice";
-            $this->dropTable('{{' . $table . '}}');
-        } catch (Exception $e) {
-            echo "Table '" . $table ."' not found" . PHP_EOL;
-        }
-   
-        try {
-            $table = "invoice_status";
-            $this->dropTable('{{' . $table . '}}');
-        } catch (Exception $e) {
-            echo "Table '" . $table ."' not found" . PHP_EOL;
-        }
-   
-        try {
-            $table = "invoice_type";
-            $this->dropTable('{{' . $table . '}}');
-        } catch (Exception $e) {
-            echo "Table '" . $table ."' not found" . PHP_EOL;
-        }
-
-
-        $this->execute("SET foreign_key_checks = 0;");
-
-        $this->dropColumn('{{contratti_tipo}}', 'color');
-        $this->dropColumn('{{contratti_tipo}}', 'prefix');
-        $this->dropColumn('{{contratti_tipo}}', 'rent');
-        $this->dropColumn('{{contratti_tipo}}', 'transit');
-        $this->dropColumn('{{contratti_tipo}}', 'sell');
-        $this->dropColumn('{{contratti_tipo}}', 'option');
-        $this->dropColumn('{{contratti_tipo}}', 'manage');
-        $this->dropColumn('{{contratti_tipo}}', 'reservation');
-        $this->dropColumn('{{contratti_tipo}}', 'sort_order');
-        $this->dropColumn('{{contratti_tipo}}', 'enabled');
-        $this->dropColumn('{{contratti_tipo}}', 'create_time');
-        $this->dropColumn('{{contratti_tipo}}', 'update_time');
-   
-
-        $this->execute("SET foreign_key_checks = 0;");
-
-        $this->dropColumn('{{dimensioni}}', 'create_time');
-        $this->dropColumn('{{dimensioni}}', 'update_time');
-
-        $this->dropColumn('{{clienti}}', 'country');
-        $this->dropColumn('{{clienti}}', 'create_time');
-        $this->dropColumn('{{clienti}}', 'update_time');
-
-        $this->dropColumn('{{barche}}', 'builder');
-        $this->dropColumn('{{barche}}', 'insurance_company');
-        $this->dropColumn('{{barche}}', 'country');
-        $this->dropColumn('{{barche}}', 'create_time');
-        $this->dropColumn('{{barche}}', 'update_time');
-
-        $this->dropIndex("idx_clienti_country", "{{clienti}}");
-        $this->dropIndex("idx_barche_builder", "{{barche}}");
-        $this->dropIndex("idx_barche_insurance_company", "{{barche}}");
-        
-        $this->dropIndex("idx_barche_country", "{{barche}}");
-        
-
-    	return true;
-	}
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

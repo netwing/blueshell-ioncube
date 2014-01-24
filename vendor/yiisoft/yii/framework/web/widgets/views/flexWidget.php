@@ -1,99 +1,55 @@
-<?php
-/**
- * The view file for CFlexWidget.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- * @package system.web.widgets.views
- * @since 1.0
- */
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
-<script type="text/javascript">
-/*<![CDATA[*/
-// Version check for the Flash Player that has the ability to start Player Product Install (6.0r65)
-var hasProductInstall = DetectFlashVer(6, 0, 65);
-
-// Version check based upon the values defined in globals
-var hasRequestedVersion = DetectFlashVer(9, 0, 0);
-
-// Check to see if a player with Flash Product Install is available and the version does not meet the requirements for playback
-if ( hasProductInstall && !hasRequestedVersion ) {
-	// MMdoctitle is the stored document.title value used by the installation process to close the window that started the process
-	// This is necessary in order to close browser windows that are still utilizing the older version of the player after installation has completed
-	// DO NOT MODIFY THE FOLLOWING FOUR LINES
-	// Location visited after installation is complete if installation is required
-	var MMPlayerType = (isIE == true) ? "ActiveX" : "PlugIn";
-	var MMredirectURL = window.location;
-	document.title = document.title.slice(0, 47) + " - Flash Player Installation";
-	var MMdoctitle = document.title;
-
-	AC_FL_RunContent(
-		"src", "<?php echo $this->baseUrl ?>/playerProductInstall",
-		"FlashVars", "MMredirectURL="+MMredirectURL+'&MMplayerType='+MMPlayerType+'&MMdoctitle='+MMdoctitle+"",
-		"width", "<?php echo $this->width; ?>",
-		"height", "<?php echo $this->height; ?>",
-		"align", "<?php echo $this->align; ?>",
-		"id", "<?php echo $this->name; ?>",
-		"quality", "<?php echo $this->quality; ?>",
-		"bgcolor", "<?php echo $this->bgColor; ?>",
-		"name", "<?php echo $this->name; ?>",
-		"allowScriptAccess","<?php echo $this->allowScriptAccess ?>",
-		"allowFullScreen","<?php echo $this->allowFullScreen ?>",
-		"type", "application/x-shockwave-flash",
-		"pluginspage", "http://www.adobe.com/go/getflashplayer"
-	);
-} else if (hasRequestedVersion) {
-	// if we've detected an acceptable version
-	// embed the Flash Content SWF when all tests are passed
-	AC_FL_RunContent(
-		"src", "<?php echo $this->baseUrl ?>/<?php echo $this->name ?>",
-		"width", "<?php echo $this->width ?>",
-		"height", "<?php echo $this->height ?>",
-		"align", "<?php echo $this->align ?>",
-		"id", "<?php echo $this->name ?>",
-		"quality", "<?php echo $this->quality ?>",
-		"bgcolor", "<?php echo $this->bgColor ?>",
-		"name", "<?php echo $this->name ?>",
-		"flashvars","<?php echo $this->flashVarsAsString; ?>",
-		"allowScriptAccess","<?php echo $this->allowScriptAccess ?>",
-		"allowFullScreen","<?php echo $this->allowFullScreen ?>",
-		"type", "application/x-shockwave-flash",
-		"pluginspage", "http://www.adobe.com/go/getflashplayer"
-	);
-} else {  // flash is too old or we can't detect the plugin
-	var alternateContent = '<?php echo CJavaScript::quote($this->altHtmlContent); ?>';
-	document.write(alternateContent);  // insert non-flash content
-}
-/*]]>*/
-</script>
-<noscript>
-	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
-		id="<?php echo $this->name ?>"
-		width="<?php echo $this->width ?>"
-		height="<?php echo $this->height ?>"
-		codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab">
-			<param name="movie" value="<?php echo $this->baseUrl ?>/<?php echo $this->name ?>.swf" />
-			<param name="quality" value="<?php echo $this->quality ?>" />
-			<param name="bgcolor" value="<?php echo $this->bgColor ?>" />
-			<param name="flashVars" value="<?php echo $this->flashVarsAsString ?>" />
-			<param name="allowScriptAccess" value="<?php echo $this->allowScriptAccess ?>" />
-			<param name="allowFullScreen" value="<?php echo $this->allowFullScreen ?>" />
-			<embed src="<?php echo $this->baseUrl ?>/<?php echo $this->name ?>.swf"
-				quality="<?php echo $this->quality ?>"
-				bgcolor="<?php echo $this->bgColor ?>"
-				width="<?php echo $this->width ?>"
-				height="<?php echo $this->height ?>"
-				name="<?php echo $this->name ?>"
-				align="<?php echo $this->align ?>"
-				play="true"
-				loop="false"
-				quality="<?php echo $this->quality ?>"
-				allowScriptAccess="<?php echo $this->allowScriptAccess ?>"
-				allowFullScreen="<?php echo $this->allowFullScreen ?>"
-				type="application/x-shockwave-flash"
-				pluginspage="http://www.adobe.com/go/getflashplayer">
-			</embed>
-	</object>
-</noscript>
+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

@@ -1,64 +1,52 @@
-<?php
-require_once("config.inc.php");
-
-$rtf=new RTF();
-
-$campi=array("<NOMINATIVO>"=>"Emanuele Deserti",
-			 "<INDIRIZZO>"=>"Via William Bertazzini, 10",
-			 "<CAP>"=>"44030",
-			 "<CITTA>"=>"Pontegradella",
-			 "<PROVINCIA>"=>"Ferrara",
-			 "<NUMERO_DOCUMENTO>"=>"935 F",
-			 "<DATA>"=>date("d-m-Y",time()),
-			 "<TIPO_DOCUMENTO>"=>"Fattura",
-			 "<CONDIZIONI_PAGAMENTO>"=>"Rimessa Diretta",
-			 "<CODICE_FISCALE>"=>"DSRMNL79R03D548A",
-			 "<PARTITA_IVA>"=>"012345678901",
-			 "<ALIQUOTA>"=>"21 %",
-			 "<IMPONIBILE>"=>"2000,00",
-			 "<IMPOSTA>"=>"400,00",
-			 "<TOTALE>"=>"2400,00",
-			 "<SPESE_TRASPORTO>"=>"100,00",
-			 "<SPESE_INCASSO>"=>"100,00",
-			 "<BOLLI>"=>"50,00",
-			 "<TOTALE_EURO>"=>"2650,00"
-			);
-$righe_fattura=array(0=>array("DESCRIZIONE","U","Q","LISTINO","SCONTO","TOTALE","IVA"),
-					 1=>array("DESCRIZIONE"=>"Ormeggio annuale dal 07/12/2004 al 06/12/2004 su pontile A/2","U"=>"anno","Q"=>"1","LISTINO"=>"2572,50","SCONTO"=>"","TOTALE"=>"3400,00","IVA"=>"512,50"),
-					 2=>array("DESCRIZIONE"=>"BVeta","U"=>"anno","Q"=>"1","LISTINO"=>"2572,50","SCONTO"=>"","TOTALE"=>"3400,00","IVA"=>"512,50"),
-					 3=>array("DESCRIZIONE"=>"gamma","U"=>"anno","Q"=>"1","LISTINO"=>"2572,50","SCONTO"=>"","TOTALE"=>"3400,00","IVA"=>"512,50"),
-					 4=>array("DESCRIZIONE"=>"delta","U"=>"anno","Q"=>"1","LISTINO"=>"2572,50","SCONTO"=>"","TOTALE"=>"3400,00","IVA"=>"512,50"),
-					 5=>array("DESCRIZIONE"=>"omega","U"=>"anno","Q"=>"1","LISTINO"=>"2572,50","SCONTO"=>"","TOTALE"=>"3400,00","IVA"=>"512,50")
-					 );
-
-for ($i=1;$i<=9;$i++)
-{
-
-	if (array_key_exists($i,$righe_fattura) and count($righe_fattura[$i])>0)
-	{
-		foreach ($righe_fattura[$i] as $k=>$v)
-		{
-			$key="<".$k.$i.">";
-			$campi[$key]=$v;
-		}
-	}
-	else
-	{
-		foreach ($righe_fattura[0] as $k)
-		{
-			$key="<".$k.$i.">";
-			$campi[$key]="";
-		}
-	}
-}
-
-//print_r($campi);
-
-$chiavi=array_keys($campi);
-$valori=array_values($campi);
-$rtf=new RTF();
-$rtf->carica_template("template/fattura.rtf");
-$rtf->rtf_singolo($chiavi,$valori);
-// echo $rtf->contenuto_finale;
-$rtf->output("Fattura.doc");
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+hBruISBPEHJXueXF3i1B4ATK0MZX

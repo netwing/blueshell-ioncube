@@ -1,40 +1,29 @@
-<?php
-
-namespace Guzzle\Plugin\Backoff;
-
-/**
- * Strategy used to retry when certain error codes are encountered
- */
-abstract class AbstractErrorCodeBackoffStrategy extends AbstractBackoffStrategy
-{
-    /** @var array Default cURL errors to retry */
-    protected static $defaultErrorCodes = array();
-
-    /** @var array Error codes that can be retried */
-    protected $errorCodes;
-
-    /**
-     * @param array                    $codes Array of codes that should be retried
-     * @param BackoffStrategyInterface $next  The optional next strategy
-     */
-    public function __construct(array $codes = null, BackoffStrategyInterface $next = null)
-    {
-        $this->errorCodes = array_fill_keys($codes ?: static::$defaultErrorCodes, 1);
-        $this->next = $next;
-    }
-
-    /**
-     * Get the default failure codes to retry
-     *
-     * @return array
-     */
-    public static function getDefaultFailureCodes()
-    {
-        return static::$defaultErrorCodes;
-    }
-
-    public function makesDecision()
-    {
-        return true;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

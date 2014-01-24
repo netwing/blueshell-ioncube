@@ -1,96 +1,30 @@
-<?php
-/**
- * PHPUnit
- *
- * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @package    PHPUnit
- * @subpackage Framework_Constraint
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @author     Bernhard Schussek <bschussek@2bepublished.at>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      File available since Release 3.4.0
- */
-
-/**
- * Constraint that asserts that the string it is evaluated for begins with a
- * given prefix.
- *
- * @package    PHPUnit
- * @subpackage Framework_Constraint
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @author     Bernhard Schussek <bschussek@2bepublished.at>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      Class available since Release 3.4.0
- */
-class PHPUnit_Framework_Constraint_StringStartsWith extends PHPUnit_Framework_Constraint
-{
-    /**
-     * @var string
-     */
-    protected $prefix;
-
-    /**
-     * @param string $prefix
-     */
-    public function __construct($prefix)
-    {
-        $this->prefix = $prefix;
-    }
-
-    /**
-     * Evaluates the constraint for parameter $other. Returns TRUE if the
-     * constraint is met, FALSE otherwise.
-     *
-     * @param mixed $other Value or object to evaluate.
-     * @return bool
-     */
-    protected function matches($other)
-    {
-        return strpos($other, $this->prefix) === 0;
-    }
-
-    /**
-     * Returns a string representation of the constraint.
-     *
-     * @return string
-     */
-    public function toString()
-    {
-        return 'starts with "' . $this->prefix . '"';
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+/ajdkzLzg9ISfAzr5ZS=

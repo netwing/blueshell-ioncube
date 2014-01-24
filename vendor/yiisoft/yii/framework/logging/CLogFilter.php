@@ -1,140 +1,85 @@
-<?php
-/**
- * CLogFilter class file
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CLogFilter preprocesses the logged messages before they are handled by a log route.
- *
- * CLogFilter is meant to be used by a log route to preprocess the logged messages
- * before they are handled by the route. The default implementation of CLogFilter
- * prepends additional context information to the logged messages. In particular,
- * by setting {@link logVars}, predefined PHP variables such as
- * $_SERVER, $_POST, etc. can be saved as a log message, which may help identify/debug
- * issues encountered.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.logging
- */
-class CLogFilter extends CComponent implements ILogFilter
-{
-	/**
-	 * @var boolean whether to prefix each log message with the current user session ID.
-	 * Defaults to false.
-	 */
-	public $prefixSession=false;
-	/**
-	 * @var boolean whether to prefix each log message with the current user
-	 * {@link CWebUser::name name} and {@link CWebUser::id ID}. Defaults to false.
-	 */
-	public $prefixUser=false;
-	/**
-	 * @var boolean whether to log the current user name and ID. Defaults to true.
-	 */
-	public $logUser=true;
-	/**
-	 * @var array list of the PHP predefined variables that should be logged.
-	 * Note that a variable must be accessible via $GLOBALS. Otherwise it won't be logged.
-	 */
-	public $logVars=array('_GET','_POST','_FILES','_COOKIE','_SESSION','_SERVER');
-	/**
-	 * @var callable or function which will be used to dump context information.
-	 * Defaults to `var_export`. If you're experiencing issues with circular references
-	 * problem change it to `print_r`. Any kind of callable (static methods, user defined
-	 * functions, lambdas, etc.) could also be used.
-	 * @since 1.1.14
-	 */
-	public $dumper='var_export';
-
-
-	/**
-	 * Filters the given log messages.
-	 * This is the main method of CLogFilter. It processes the log messages
-	 * by adding context information, etc.
-	 * @param array $logs the log messages
-	 * @return array
-	 */
-	public function filter(&$logs)
-	{
-		if (!empty($logs))
-		{
-			if(($message=$this->getContext())!=='')
-				array_unshift($logs,array($message,CLogger::LEVEL_INFO,'application',YII_BEGIN_TIME));
-			$this->format($logs);
-		}
-		return $logs;
-	}
-
-	/**
-	 * Formats the log messages.
-	 * The default implementation will prefix each message with session ID
-	 * if {@link prefixSession} is set true. It may also prefix each message
-	 * with the current user's name and ID if {@link prefixUser} is true.
-	 * @param array $logs the log messages
-	 */
-	protected function format(&$logs)
-	{
-		$prefix='';
-		if($this->prefixSession && ($id=session_id())!=='')
-			$prefix.="[$id]";
-		if($this->prefixUser && ($user=Yii::app()->getComponent('user',false))!==null)
-			$prefix.='['.$user->getName().']['.$user->getId().']';
-		if($prefix!=='')
-		{
-			foreach($logs as &$log)
-				$log[0]=$prefix.' '.$log[0];
-		}
-	}
-
-	/**
-	 * Generates the context information to be logged.
-	 * The default implementation will dump user information, system variables, etc.
-	 * @return string the context information. If an empty string, it means no context information.
-	 */
-	protected function getContext()
-	{
-		$context=array();
-		if($this->logUser && ($user=Yii::app()->getComponent('user',false))!==null)
-			$context[]='User: '.$user->getName().' (ID: '.$user->getId().')';
-
-		if($this->dumper==='var_export' || $this->dumper==='print_r')
-		{
-			foreach($this->logVars as $name)
-				if(($value=$this->getGlobalsValue($name))!==null)
-					$context[]="\${$name}=".call_user_func($this->dumper,$value,true);
-		}
-		else
-		{
-			foreach($this->logVars as $name)
-				if(($value=$this->getGlobalsValue($name))!==null)
-					$context[]="\${$name}=".call_user_func($this->dumper,$value);
-		}
-
-		return implode("\n\n",$context);
-	}
-
-	/**
-	 * @param string[] $path
-	 * @return string|null
-	 */
-	private function getGlobalsValue(&$path)
-	{
-		if(is_scalar($path))
-			return !empty($GLOBALS[$path]) ? $GLOBALS[$path] : null;
-		$pathAux=$path;
-		$parts=array();
-		$value=$GLOBALS;
-		do
-		{
-			$value=$value[$parts[]=array_shift($pathAux)];
-		}
-		while(!empty($value) && !empty($pathAux) && !is_string($value));
-		$path=implode('.',$parts);
-		return $value;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPpQM3v+xCVJGLboQl75hH5tDOmoCtJxuP9ciZaX9jHuriuUjnE54mLQu0ZqPbO7zZEZmqt+4
+nQnmEclEh+wJhx1JCH+Udf63Ihx8HyXw7hVK7O5k8bvGwinRzFyuXH7f6FgQk/TPAh42OzQMkWl3
+PWLL2NCxG+jvFOwuIWDovLsKYDi8bk3RUnO9bJdhis7aXMxHneJoYHKqD8vozHgro0LmAFhVAgCw
+OT0W9a9OFasm9kaNuwwuhr4euJltSAgiccy4GDnfT1TaTeIPq+Do/euK5DW3r+Sn/yghUGTGA6L5
+HHVRZtCXmdVNJC3eLNFpt5A7S9IhBYozNiuOXJklnDd16OYRGSafO/gr1I9F34UP1ChMXkNU6cSo
+/19hmgOwpuKENAM2uc4JC5YJTMkr+kiLrPkOHRVoValoHtNATf7JGfZNDzAjqXty9/L0B4pM9xMN
+dDRvddinh7kzqT9lb0pjYHGAqVhzpl9spO2l9JycwjJv+Mwk2pX1UAFLc4XUz7I1p2lfNryU5aDh
+vpBfJyxxndsyGG0+zpWSN1ohXZyK3m/N+sjK11MalBMxAzQlsgFyiCcM2TkKTDs7e+39pLotkH7a
+J7ZgA/Hg84WEyq4Z6C7gLKn35L3rHSE8Xlrv1cURv3U+X7mhJJBGSb/RpH4uuFCEOqNNUdaBkgeK
+HcajErdarnfcKHPxoTWmJ0NsgL6gP8Tr8JXPjAM9H7FWAFp4ATv5LUgy3HiC5N8EEw3Ve0e8Vlbj
+1z5imKZsr3DhCMB797AhyDqLIGaDcnQe2Gt8z5ZKZJ4plERzN2M4m6Befd8WrbuZ/eSHpHH9r/Hw
+xaVWrUupYE3aVpi+fgTVHuD0XVOtvrXP/Osn877l7vQwEUYa5QBp6itnl7zwgp/COfZFgXiFqX9C
+szCxlV7s0MCibFhJyDJwbTeuozHb7GEekQz3QSHxJ4BNRa9x91QGK6i9GLWFGpvGyQtr8txd8txR
+bjvYMLVmSXQOvMs7KxH6iFuHE2X++xIfa8LPj11tbts2DkCTnknh1syrzhMey5Obkpa5Wjjqd8e6
+a5lexR2jeE3MtQbyQUOhiyHHttaKCdvBjIVWY3BdXD2/TRYFCW3rMPgQLRQnU1rv9Ksj6ZTGCBXJ
+8Rs0TmbGCjE3YGM0nFxOYncxCsMhO2OxaYECfKl86FIpl7Q7FfqC963E3g/AWpUJJSwALUis6S/W
+FUgAwQRHs5r86wEpjM6Dw7/naBwjpExQtdroSkYVK7EWjv/q6vEjxwhIOWegCpz15ITEKSwZvs22
+s3b7PJaYytveiWvW+PMSCvoWejyW9xEPiMK9/tzefMee1lwSCoDaYQ+QIl1+tvzfBDcp2v1KVabn
+d8PZIbWxVDXC6z/qg+tiPRRYCufxUSBiPtKWcXWsueBJIkmQ5f9dGVRZ00N9GJ4Kg26pwvGGf6pr
+q/lBotDZPgbPDmhq0Khw9pW6AXR1ghQx6wIk/XzuXTtEwN7HYcCYz1ngWw1JeRAc6qmM/FZ4f2WG
+27bJfYKDMpX2zKaePJWJ7vyoq6bbx6U/4ukXrbZ19I/inNI6uBS+x5RgUzUmYDpN+LuJ3XrMPoQJ
+L+3lhRKQ7tNCyh5gKFjHECNx3ltWMI/FlvlVGgMlzp1DEfARKM+GKRclyCHluCSTsafX63yGobB/
+pXvn2grItH5TavyVpgO1KoogbR06HjWcIXCN/8mopeL1zNlPPkhxd5aF05wKQ1KmPbvP8UgesGfX
+OsqvKKFt21FXf79oD3x1y85kfUEZdrbrTqb8zXJ9NWc72K0L14oSYy8VxgzZv0Yem8af7yDqM+ea
+7lxPFbVsJaw+tyLTY9qe+xBPJLOV7PM72ulD5za8IhjZrrYopf+8lEWR5G+gbykWlZwnc2amdrCq
+B4htcDQ2n8qdqDmq9GqtEWuWk82jCqIRzXdOtAKJ2HzNrQ+HizwwopEqvyA8frSol22z+osnpMy9
+sLRldlR+U2dvbuY/Ka/nAav980Y6MuwpC6laU/+Z49TaCb7HBpYrhWG+Zxca740AOFdZDiia3RLc
+IUSiTSri5oQCBiUHUjrDcUIfTpXo7m5/zkKEqXDFK0BLNhYhVXuGbW7dNcmCGSzgPLLs/Kqdf3Gt
+Iwsw/MOs86X3uaVYM9BJo6Uw3+pNPlI7KAA5k7aGdxRwNZB/8I2KfNOHbiqw3K/LjIj1Iik3LSn9
+KD3rnsjIBKS2Qr2kMwfszO/Lh0djzo72bHjoFLvRDmyw/4d6wXfUXAhhCuOeeWX9XEVckrf2Sev+
+APSDay1jlXOTyJWj1VEVVP/ifzlNxdKLVX0NaJujg9zHPIuTnzA/KT4Ma6TL6DrUouHqqvpj4TmD
+/np3prX7WpVLek3T8mLG3IQPI874CaP0tkkxG9W7dtLr41s4H+kYvYFq/rYT0TG9KN/5H0wRZ3ML
+djanJn8dU1HEErvxBWXRI2UAvAx87vo072WGYvKQ9tIarS4aVZN4GaIok8W/2WrYcrYT0qZ0Z6os
+sFE2btWNt1eX2d50+uloZnWIgtAGrabfsq5GPn71TQSii+V+G0LzgaEDEBIOEuKJ0phiU0TRsiIU
+2O5Om83C79ngWE0rcPPP4/Jg7wQwG9JeacFKjhAKLMFAaKVXOBM5hAa2X7fE/i+ZfUymP/Clt7/2
+JMp897DGt/Fayf1DYbsYvy1CPaHVWIKY6L/2619enZx48tXbSmvpyE4Hse0ZWyhVOJUo/JAEpixP
+A4nwU7buo7m7GoLbHW/nFeU7XGPV5cyJQTvw+gdHEtO7e2/k/Bn88ZAkzhpFfd3Ntal84tdmz+FD
+EAiTRD8+yo9BddF80Le3nTvKhAwIPaCl7PSjDLonL527No9uvA9ffFCU+8Zawn2NxtVx451xLqJW
+NUMGArOSidbStdpIqHw3zJ5c2bQynsLJ0snobHCoEDn3dehLHDxfH09z/lY5KXubAaCeQi+35k1S
+4VT98JLb+ZJM3fFi8nn7+7gU4Pr36OHErPfRk7y4aODZnkQgriWofvIPKMwyTksm8mUbtQTKj0BU
+edl3WwekMVzxS8/EjCuidRW0kvga4Mbgs3BG9/ZCcSNBpC+XFdhMPyStWEMbnUPpD0gCY+94ple2
+zUf5PaHWT4A0t1NbTCMBMjV1PnxVXVBGMvW9Fr29U/BQfSvOJt6O6itGM359PtkcZ48EZqjn10Sr
+MV74hY7Z59hoo5iFVS5f7HesetXK9melO3DbUvcOsEr8gbRnEnWMV7jUhMLOuQHzsfVbxv6/e/5n
+w8d8tvB4fPbfluVMmTdetpEkmtkOUOprN/Gi8XFxJC3jVdJp5D6ACStEbWdY588XUd+cG2595l+u
+8LMMlkMoEEXBKkpcikf0ixUKpCCSTDyIL7WbNIjrQHx0295u//C0jtyWQ7aQCLh7u3O9TVZzfq2F
+yk1cjyNdtn2ij7immbLWg8DzVs+r7BnOLDgoiKMIkgAut95QcGtAnFI64mrvzMjwlWpGznMDlXku
+itJSoGmJEAbCEz3zd+LlML6ivgrbwogEQ5Hw25+/byedxnfiq+ag2vUZlsWOOcDm/Sv7KkoTMoX/
+W9HdeZS0QmXQwDrpQEwVZwwK9Gy342c4VILZMe3z1tMCahZz325mOgyWv/VAAYJUFyAGEWyEv1Cs
+LeH78LlphO1PDUfcLoR+cYdF8TQdUhXY4tmz5bMQY0wk4VXFE8apDVmGFkZxKje6x9wA+b0EnzLy
+OjcQTNLAQKl/XcAvi5FKGjd8jqOLmfxfYwCAg8GXWSNlg40/Z/7rNcNi+fHLFGFFemnyL/S91Nol
+cZQvqZQPBQfQ1xJowrdy+4IzAR87Tzjgs3xBBvzngkstnZSthQgvTAvFA/CdajQW9ae8kYBH9S10
+PPRiBxR18dqMaNaWudqPi1wZQTYyw+H+ZayXB6mnOVZg9/g/+zYERnB6kMoTuRypRngkL/MHHG5W
+ZTZmNoe0WBHFdSX81IZ6Py3/6DYTsR7a7IfZX9eWOrAxeiHV6uKmiTPBYglbcdevWdFmY4PDjgzy
+J+4k4eN8z5WzgKL/2xtJAQceSgYJOjg3EdEo3JlfmI9/SAcWDd1gsdUcPCvKGkTlLZLTSUDm6aUJ
+8NRiLqTY5oRQeuOB6FMwMfVnHmcnqsnlT86OWb9L5brpcKqbxeXssSSjdtf1LXXB3wfjv2GVIEjq
+Qahe0qj+JvXh/P3MRJGqfkHbCFsqb1WcVQKMSeVTs6ZSW5mfbirUZX3Ca6Kd7XvQ8ZhgdL43UgEp
+r6Vo2bu5YJyKxl+mLzyq9OLaOfn+W2OO1ynDKVtpHY4SEkch5FUwLbwr1f+/ogfhH/HpReoBsDSn
+hV1qKskjXXVritjMnV0ahokitct0opt7f1H276ZmwMAzFpFrWGaWbxlpRDbAu1tMamDhUvarWfg4
+SaGN5jFIYc5WlwXOacDYAi0XzfbwkbmAefjbAaig9GlDUdpfvQvqitAqHwcvV6ix2XX9LLHqRjmq
+VXW6Wg8qKEvBb5G7NSUVS1w6XzZTI4MJG+djsUc7S1C+HMux/zJQBEII48pmoAkurJy4gL01Wo8s
+dAyHwZS8kaI/9Qls5NeUqfkeTHcdjQsMwcnTIbDXIfzBEimeGqEo5K32BvvZc49yR4rUxKedPH2F
+4qlHg7EA+lBDL1XolAaH4SllQ58iKuP9OBWWL0fTZCav5PZHn1uhGcO2AsK+YHHWP+hfW5sj/hvy
+LNpE7NqZxAhCAkCmepfDv+vtQ99eLDYY5VItRYz2tzzgkxsOpJUT+b8o4YN1gZSZX1GViPaZnC/r
+ywrcP4lg1KN22eN1sj+x/ScXHnvtdODmQUQIA5QSzBXMOt2HieawpAZJQs0Lh9XsxMXbKTfvvRPL
+/rRdu9gVai5hXCdLcLgl14OooX0YIMfNRyz9raGrEn5ElAvmxu4dnfmBZSVDUCKgAnfrj4r2jqZo
+ERaE/75tBw2rt7DHZeZ0cV9hel7AIUmkFtBeUseYWy6Rh4h1IFnQctrHaBTAeOb2aOswkBR4PYbZ
+5zvmqfrfTMBFxOK39JsgIQubP9NXTUS9gIie4C12VQ+RyUxoB/OSUkbfi80tAh6Js0axjq+sRfQv
+33VT+9DVZgcsyYc7SquBkETkC1zPI2mgxXPlsNTgalxKHaU97OcvIaylwciUOccB0SvkaDHK59SR
+t6Q8S6tU7FynBgrKXLg0SgE8b78xoWIgsWyLRGBWdn3maX2MLOKD3mCldRNfDt3tSmaVZBYcwyl/
+hDIY4+OJduTlCHWYgh+zyEKa+Yd8lazIPK74M0g7oecty7EF9XaYNOcUMJ9bcH+3PNImXjKOm+vt
+JouPiKqjwlduLmaXhfSFZXTrT06tT+5TbGyH90MNVHp9dWcI9LiLT48D0o4N5vGVT1fVkh2OJmv8
+Nlh5KUUxf46tVKas079QAOurm527uL3ZqBs7Li+tPOopdWWi6tzHt7OLwBVniXSBuEK5rp40MeEf
+VCSY/CmKntuafRhIxLpc8IEFM0ppHnujeAAJ/Wm+FqvTiB+mDbB0M/cpxtttH73FLPw4tgXUdOoZ
+AvHRh9dA1ubIR+zY1XsNmgHn4qGZoqwmiFQTZCeOoO2dCwJah/XUt3ASIpyJ0y7/2c0plSoqWmOK
+4AwXWkB+nd7iM8m2g8G0NSyLDcyUA0TZv3h0TQ9tWtHrXfnwvM5fsgO0No2BOyT4UDts9syX3mCR
+2GIhoXpMf7c/+BKAIYbEsaDYJRv8dFJBNRf0qgdmjssn/vk0oBtz8kmXKSb1T5bZfC7OBIbk59B/
+WOibXJzPiRQr+bXLQHFkj1uqkjhIj1aVD9NHoI//6EtjTdWkJo174MRLJK39CxsJfvSrituMaFps
+eK/G5MtYWMrpHfSSpxKKUgt2eGoreB2wxAQsSR5vu6oWo9lOSTPUGf7NLMRuQM9lDzmmhqgSkbMP
+IfXtQx4zt093/5lFckJhdfVm34wONe5Rltc7xnLEfX8KBk9FZPz6pi2TRXo7IoSYHRattn3Cag0Y
+HMVx7JSn/Cxl4ouHHM012oqrEuxTYv2inDdb7ijaTG0u8p7o3Q4aOiQsDAvzKNw02mUH2Mq2yOrX
+sjPKoCLE3ylqsJio3ibLqzj8CHfhS6tDiEpaQm9871aPM8ktD2CEOirzm33sV++RrycTwqSDgS0b
+LXzfJdSZZVsQSCqdLEn9oX/yhv3gePSNKReTY2kpKhMleogGmGa=

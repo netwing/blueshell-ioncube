@@ -1,907 +1,630 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\Console\Tests;
-
-use Symfony\Component\Console\Application;
-use Symfony\Component\Console\Helper\HelperSet;
-use Symfony\Component\Console\Helper\FormatterHelper;
-use Symfony\Component\Console\Input\ArgvInput;
-use Symfony\Component\Console\Input\ArrayInput;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputArgument;
-use Symfony\Component\Console\Input\InputDefinition;
-use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Output\NullOutput;
-use Symfony\Component\Console\Output\Output;
-use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Output\StreamOutput;
-use Symfony\Component\Console\Tester\ApplicationTester;
-use Symfony\Component\Console\Event\ConsoleCommandEvent;
-use Symfony\Component\Console\Event\ConsoleExceptionEvent;
-use Symfony\Component\Console\Event\ConsoleTerminateEvent;
-use Symfony\Component\EventDispatcher\EventDispatcher;
-
-class ApplicationTest extends \PHPUnit_Framework_TestCase
-{
-    protected static $fixturesPath;
-
-    public static function setUpBeforeClass()
-    {
-        self::$fixturesPath = realpath(__DIR__.'/Fixtures/');
-        require_once self::$fixturesPath.'/FooCommand.php';
-        require_once self::$fixturesPath.'/Foo1Command.php';
-        require_once self::$fixturesPath.'/Foo2Command.php';
-        require_once self::$fixturesPath.'/Foo3Command.php';
-        require_once self::$fixturesPath.'/Foo4Command.php';
-        require_once self::$fixturesPath.'/Foo5Command.php';
-        require_once self::$fixturesPath.'/FoobarCommand.php';
-        require_once self::$fixturesPath.'/BarBucCommand.php';
-    }
-
-    protected function normalizeLineBreaks($text)
-    {
-        return str_replace(PHP_EOL, "\n", $text);
-    }
-
-    /**
-     * Replaces the dynamic placeholders of the command help text with a static version.
-     * The placeholder %command.full_name% includes the script path that is not predictable
-     * and can not be tested against.
-     */
-    protected function ensureStaticCommandHelp(Application $application)
-    {
-        foreach ($application->all() as $command) {
-            $command->setHelp(str_replace('%command.full_name%', 'app/console %command.name%', $command->getHelp()));
-        }
-    }
-
-    public function testConstructor()
-    {
-        $application = new Application('foo', 'bar');
-        $this->assertEquals('foo', $application->getName(), '__construct() takes the application name as its first argument');
-        $this->assertEquals('bar', $application->getVersion(), '__construct() takes the application version as its second argument');
-        $this->assertEquals(array('help', 'list'), array_keys($application->all()), '__construct() registered the help and list commands by default');
-    }
-
-    public function testSetGetName()
-    {
-        $application = new Application();
-        $application->setName('foo');
-        $this->assertEquals('foo', $application->getName(), '->setName() sets the name of the application');
-    }
-
-    public function testSetGetVersion()
-    {
-        $application = new Application();
-        $application->setVersion('bar');
-        $this->assertEquals('bar', $application->getVersion(), '->setVersion() sets the version of the application');
-    }
-
-    public function testGetLongVersion()
-    {
-        $application = new Application('foo', 'bar');
-        $this->assertEquals('<info>foo</info> version <comment>bar</comment>', $application->getLongVersion(), '->getLongVersion() returns the long version of the application');
-    }
-
-    public function testHelp()
-    {
-        $application = new Application();
-        $this->assertStringEqualsFile(self::$fixturesPath.'/application_gethelp.txt', $this->normalizeLineBreaks($application->getHelp()), '->setHelp() returns a help message');
-    }
-
-    public function testAll()
-    {
-        $application = new Application();
-        $commands = $application->all();
-        $this->assertEquals('Symfony\\Component\\Console\\Command\\HelpCommand', get_class($commands['help']), '->all() returns the registered commands');
-
-        $application->add(new \FooCommand());
-        $commands = $application->all('foo');
-        $this->assertEquals(1, count($commands), '->all() takes a namespace as its first argument');
-    }
-
-    public function testRegister()
-    {
-        $application = new Application();
-        $command = $application->register('foo');
-        $this->assertEquals('foo', $command->getName(), '->register() registers a new command');
-    }
-
-    public function testAdd()
-    {
-        $application = new Application();
-        $application->add($foo = new \FooCommand());
-        $commands = $application->all();
-        $this->assertEquals($foo, $commands['foo:bar'], '->add() registers a command');
-
-        $application = new Application();
-        $application->addCommands(array($foo = new \FooCommand(), $foo1 = new \Foo1Command()));
-        $commands = $application->all();
-        $this->assertEquals(array($foo, $foo1), array($commands['foo:bar'], $commands['foo:bar1']), '->addCommands() registers an array of commands');
-    }
-
-    /**
-     * @expectedException \LogicException
-     * @expectedExceptionMessage Command class "Foo5Command" is not correctly initialized. You probably forgot to call the parent constructor.
-     */
-    public function testAddCommandWithEmptyConstructor()
-    {
-        $application = new Application();
-        $application->add(new \Foo5Command());
-    }
-
-    public function testHasGet()
-    {
-        $application = new Application();
-        $this->assertTrue($application->has('list'), '->has() returns true if a named command is registered');
-        $this->assertFalse($application->has('afoobar'), '->has() returns false if a named command is not registered');
-
-        $application->add($foo = new \FooCommand());
-        $this->assertTrue($application->has('afoobar'), '->has() returns true if an alias is registered');
-        $this->assertEquals($foo, $application->get('foo:bar'), '->get() returns a command by name');
-        $this->assertEquals($foo, $application->get('afoobar'), '->get() returns a command by alias');
-
-        $application = new Application();
-        $application->add($foo = new \FooCommand());
-        // simulate --help
-        $r = new \ReflectionObject($application);
-        $p = $r->getProperty('wantHelps');
-        $p->setAccessible(true);
-        $p->setValue($application, true);
-        $command = $application->get('foo:bar');
-        $this->assertInstanceOf('Symfony\Component\Console\Command\HelpCommand', $command, '->get() returns the help command if --help is provided as the input');
-    }
-
-    public function testSilentHelp()
-    {
-        $application = new Application();
-        $application->setAutoExit(false);
-        $application->setCatchExceptions(false);
-
-        $tester = new ApplicationTester($application);
-        $tester->run(array('-h' => true, '-q' => true), array('decorated' => false));
-
-        $this->assertEmpty($tester->getDisplay(true));
-    }
-
-    /**
-     * @expectedException        \InvalidArgumentException
-     * @expectedExceptionMessage The command "foofoo" does not exist.
-     */
-    public function testGetInvalidCommand()
-    {
-        $application = new Application();
-        $application->get('foofoo');
-    }
-
-    public function testGetNamespaces()
-    {
-        $application = new Application();
-        $application->add(new \FooCommand());
-        $application->add(new \Foo1Command());
-        $this->assertEquals(array('foo'), $application->getNamespaces(), '->getNamespaces() returns an array of unique used namespaces');
-    }
-
-    public function testFindNamespace()
-    {
-        $application = new Application();
-        $application->add(new \FooCommand());
-        $this->assertEquals('foo', $application->findNamespace('foo'), '->findNamespace() returns the given namespace if it exists');
-        $this->assertEquals('foo', $application->findNamespace('f'), '->findNamespace() finds a namespace given an abbreviation');
-        $application->add(new \Foo2Command());
-        $this->assertEquals('foo', $application->findNamespace('foo'), '->findNamespace() returns the given namespace if it exists');
-    }
-
-    /**
-     * @expectedException        \InvalidArgumentException
-     * @expectedExceptionMessage The namespace "f" is ambiguous (foo, foo1).
-     */
-    public function testFindAmbiguousNamespace()
-    {
-        $application = new Application();
-        $application->add(new \BarBucCommand());
-        $application->add(new \FooCommand());
-        $application->add(new \Foo2Command());
-        $application->findNamespace('f');
-    }
-
-    /**
-     * @expectedException        \InvalidArgumentException
-     * @expectedExceptionMessage There are no commands defined in the "bar" namespace.
-     */
-    public function testFindInvalidNamespace()
-    {
-        $application = new Application();
-        $application->findNamespace('bar');
-    }
-
-    /**
-     * @expectedException        \InvalidArgumentException
-     * @expectedExceptionMessage Command "foo1" is not defined
-     */
-    public function testFindUniqueNameButNamespaceName()
-    {
-        $application = new Application();
-        $application->add(new \FooCommand());
-        $application->add(new \Foo1Command());
-        $application->add(new \Foo2Command());
-
-        $application->find($commandName = 'foo1');
-    }
-
-    public function testFind()
-    {
-        $application = new Application();
-        $application->add(new \FooCommand());
-
-        $this->assertInstanceOf('FooCommand', $application->find('foo:bar'), '->find() returns a command if its name exists');
-        $this->assertInstanceOf('Symfony\Component\Console\Command\HelpCommand', $application->find('h'), '->find() returns a command if its name exists');
-        $this->assertInstanceOf('FooCommand', $application->find('f:bar'), '->find() returns a command if the abbreviation for the namespace exists');
-        $this->assertInstanceOf('FooCommand', $application->find('f:b'), '->find() returns a command if the abbreviation for the namespace and the command name exist');
-        $this->assertInstanceOf('FooCommand', $application->find('a'), '->find() returns a command if the abbreviation exists for an alias');
-    }
-
-    /**
-     * @dataProvider provideAmbiguousAbbreviations
-     */
-    public function testFindWithAmbiguousAbbreviations($abbreviation, $expectedExceptionMessage)
-    {
-        $this->setExpectedException('InvalidArgumentException', $expectedExceptionMessage);
-
-        $application = new Application();
-        $application->add(new \FooCommand());
-        $application->add(new \Foo1Command());
-        $application->add(new \Foo2Command());
-
-        $application->find($abbreviation);
-    }
-
-    public function provideAmbiguousAbbreviations()
-    {
-        return array(
-            array('f', 'Command "f" is not defined.'),
-            array('a', 'Command "a" is ambiguous (afoobar, afoobar1 and 1 more).'),
-            array('foo:b', 'Command "foo:b" is ambiguous (foo:bar, foo:bar1 and 1 more).')
-        );
-    }
-
-    public function testFindCommandEqualNamespace()
-    {
-        $application = new Application();
-        $application->add(new \Foo3Command());
-        $application->add(new \Foo4Command());
-
-        $this->assertInstanceOf('Foo3Command', $application->find('foo3:bar'), '->find() returns the good command even if a namespace has same name');
-        $this->assertInstanceOf('Foo4Command', $application->find('foo3:bar:toh'), '->find() returns a command even if its namespace equals another command name');
-    }
-
-    public function testFindCommandWithAmbiguousNamespacesButUniqueName()
-    {
-        $application = new Application();
-        $application->add(new \FooCommand());
-        $application->add(new \FoobarCommand());
-
-        $this->assertInstanceOf('FoobarCommand', $application->find('f:f'));
-    }
-
-    public function testFindCommandWithMissingNamespace()
-    {
-        $application = new Application();
-        $application->add(new \Foo4Command());
-
-        $this->assertInstanceOf('Foo4Command', $application->find('f::t'));
-    }
-
-    /**
-     * @dataProvider             provideInvalidCommandNamesSingle
-     * @expectedException        \InvalidArgumentException
-     * @expectedExceptionMessage Did you mean this
-     */
-    public function testFindAlternativeExceptionMessageSingle($name)
-    {
-        $application = new Application();
-        $application->add(new \Foo3Command());
-        $application->find($name);
-    }
-
-    public function provideInvalidCommandNamesSingle()
-    {
-        return array(
-            array('foo3:baR'),
-            array('foO3:bar')
-        );
-    }
-
-    public function testFindAlternativeExceptionMessageMultiple()
-    {
-        $application = new Application();
-        $application->add(new \FooCommand());
-        $application->add(new \Foo1Command());
-        $application->add(new \Foo2Command());
-
-        // Command + plural
-        try {
-            $application->find('foo:baR');
-            $this->fail('->find() throws an \InvalidArgumentException if command does not exist, with alternatives');
-        } catch (\Exception $e) {
-            $this->assertInstanceOf('\InvalidArgumentException', $e, '->find() throws an \InvalidArgumentException if command does not exist, with alternatives');
-            $this->assertRegExp('/Did you mean one of these/', $e->getMessage(), '->find() throws an \InvalidArgumentException if command does not exist, with alternatives');
-            $this->assertRegExp('/foo1:bar/', $e->getMessage());
-            $this->assertRegExp('/foo:bar/', $e->getMessage());
-        }
-
-        // Namespace + plural
-        try {
-            $application->find('foo2:bar');
-            $this->fail('->find() throws an \InvalidArgumentException if command does not exist, with alternatives');
-        } catch (\Exception $e) {
-            $this->assertInstanceOf('\InvalidArgumentException', $e, '->find() throws an \InvalidArgumentException if command does not exist, with alternatives');
-            $this->assertRegExp('/Did you mean one of these/', $e->getMessage(), '->find() throws an \InvalidArgumentException if command does not exist, with alternatives');
-            $this->assertRegExp('/foo1/', $e->getMessage());
-        }
-
-        $application->add(new \Foo3Command());
-        $application->add(new \Foo4Command());
-
-        // Subnamespace + plural
-        try {
-            $a = $application->find('foo3:');
-            $this->fail('->find() should throw an \InvalidArgumentException if a command is ambiguous because of a subnamespace, with alternatives');
-        } catch (\Exception $e) {
-            $this->assertInstanceOf('\InvalidArgumentException', $e);
-            $this->assertRegExp('/foo3:bar/', $e->getMessage());
-            $this->assertRegExp('/foo3:bar:toh/', $e->getMessage());
-        }
-    }
-
-    public function testFindAlternativeCommands()
-    {
-        $application = new Application();
-
-        $application->add(new \FooCommand());
-        $application->add(new \Foo1Command());
-        $application->add(new \Foo2Command());
-
-        try {
-            $application->find($commandName = 'Unknown command');
-            $this->fail('->find() throws an \InvalidArgumentException if command does not exist');
-        } catch (\Exception $e) {
-            $this->assertInstanceOf('\InvalidArgumentException', $e, '->find() throws an \InvalidArgumentException if command does not exist');
-            $this->assertEquals(sprintf('Command "%s" is not defined.', $commandName), $e->getMessage(), '->find() throws an \InvalidArgumentException if command does not exist, without alternatives');
-        }
-
-        // Test if "bar1" command throw an "\InvalidArgumentException" and does not contain
-        // "foo:bar" as alternative because "bar1" is too far from "foo:bar"
-        try {
-            $application->find($commandName = 'bar1');
-            $this->fail('->find() throws an \InvalidArgumentException if command does not exist');
-        } catch (\Exception $e) {
-            $this->assertInstanceOf('\InvalidArgumentException', $e, '->find() throws an \InvalidArgumentException if command does not exist');
-            $this->assertRegExp(sprintf('/Command "%s" is not defined./', $commandName), $e->getMessage(), '->find() throws an \InvalidArgumentException if command does not exist, with alternatives');
-            $this->assertRegExp('/afoobar1/', $e->getMessage(), '->find() throws an \InvalidArgumentException if command does not exist, with alternative : "afoobar1"');
-            $this->assertRegExp('/foo:bar1/', $e->getMessage(), '->find() throws an \InvalidArgumentException if command does not exist, with alternative : "foo:bar1"');
-            $this->assertNotRegExp('/foo:bar(?>!1)/', $e->getMessage(), '->find() throws an \InvalidArgumentException if command does not exist, without "foo:bar" alternative');
-        }
-    }
-
-    public function testFindAlternativeNamespace()
-    {
-        $application = new Application();
-
-        $application->add(new \FooCommand());
-        $application->add(new \Foo1Command());
-        $application->add(new \Foo2Command());
-        $application->add(new \foo3Command());
-
-        try {
-            $application->find('Unknown-namespace:Unknown-command');
-            $this->fail('->find() throws an \InvalidArgumentException if namespace does not exist');
-        } catch (\Exception $e) {
-            $this->assertInstanceOf('\InvalidArgumentException', $e, '->find() throws an \InvalidArgumentException if namespace does not exist');
-            $this->assertEquals('There are no commands defined in the "Unknown-namespace" namespace.', $e->getMessage(), '->find() throws an \InvalidArgumentException if namespace does not exist, without alternatives');
-        }
-
-        try {
-            $application->find('foo2:command');
-            $this->fail('->find() throws an \InvalidArgumentException if namespace does not exist');
-        } catch (\Exception $e) {
-            $this->assertInstanceOf('\InvalidArgumentException', $e, '->find() throws an \InvalidArgumentException if namespace does not exist');
-            $this->assertRegExp('/There are no commands defined in the "foo2" namespace./', $e->getMessage(), '->find() throws an \InvalidArgumentException if namespace does not exist, with alternative');
-            $this->assertRegExp('/foo/', $e->getMessage(), '->find() throws an \InvalidArgumentException if namespace does not exist, with alternative : "foo"');
-            $this->assertRegExp('/foo1/', $e->getMessage(), '->find() throws an \InvalidArgumentException if namespace does not exist, with alternative : "foo1"');
-            $this->assertRegExp('/foo3/', $e->getMessage(), '->find() throws an \InvalidArgumentException if namespace does not exist, with alternative : "foo3"');
-        }
-    }
-
-    public function testFindNamespaceDoesNotFailOnDeepSimilarNamespaces()
-    {
-        $application = $this->getMock('Symfony\Component\Console\Application', array('getNamespaces'));
-        $application->expects($this->once())
-            ->method('getNamespaces')
-            ->will($this->returnValue(array('foo:sublong', 'bar:sub')));
-
-        $this->assertEquals('foo:sublong', $application->findNamespace('f:sub'));
-    }
-
-    public function testSetCatchExceptions()
-    {
-        $application = $this->getMock('Symfony\Component\Console\Application', array('getTerminalWidth'));
-        $application->setAutoExit(false);
-        $application->expects($this->any())
-            ->method('getTerminalWidth')
-            ->will($this->returnValue(120));
-        $tester = new ApplicationTester($application);
-
-        $application->setCatchExceptions(true);
-        $tester->run(array('command' => 'foo'), array('decorated' => false));
-        $this->assertStringEqualsFile(self::$fixturesPath.'/application_renderexception1.txt', $tester->getDisplay(true), '->setCatchExceptions() sets the catch exception flag');
-
-        $application->setCatchExceptions(false);
-        try {
-            $tester->run(array('command' => 'foo'), array('decorated' => false));
-            $this->fail('->setCatchExceptions() sets the catch exception flag');
-        } catch (\Exception $e) {
-            $this->assertInstanceOf('\Exception', $e, '->setCatchExceptions() sets the catch exception flag');
-            $this->assertEquals('Command "foo" is not defined.', $e->getMessage(), '->setCatchExceptions() sets the catch exception flag');
-        }
-    }
-
-    public function testAsText()
-    {
-        $application = new Application();
-        $application->add(new \FooCommand);
-        $this->ensureStaticCommandHelp($application);
-        $this->assertStringEqualsFile(self::$fixturesPath.'/application_astext1.txt', $this->normalizeLineBreaks($application->asText()), '->asText() returns a text representation of the application');
-        $this->assertStringEqualsFile(self::$fixturesPath.'/application_astext2.txt', $this->normalizeLineBreaks($application->asText('foo')), '->asText() returns a text representation of the application');
-    }
-
-    public function testAsXml()
-    {
-        $application = new Application();
-        $application->add(new \FooCommand);
-        $this->ensureStaticCommandHelp($application);
-        $this->assertXmlStringEqualsXmlFile(self::$fixturesPath.'/application_asxml1.txt', $application->asXml(), '->asXml() returns an XML representation of the application');
-        $this->assertXmlStringEqualsXmlFile(self::$fixturesPath.'/application_asxml2.txt', $application->asXml('foo'), '->asXml() returns an XML representation of the application');
-    }
-
-    public function testRenderException()
-    {
-        $application = $this->getMock('Symfony\Component\Console\Application', array('getTerminalWidth'));
-        $application->setAutoExit(false);
-        $application->expects($this->any())
-            ->method('getTerminalWidth')
-            ->will($this->returnValue(120));
-        $tester = new ApplicationTester($application);
-
-        $tester->run(array('command' => 'foo'), array('decorated' => false));
-        $this->assertStringEqualsFile(self::$fixturesPath.'/application_renderexception1.txt', $tester->getDisplay(true), '->renderException() renders a pretty exception');
-
-        $tester->run(array('command' => 'foo'), array('decorated' => false, 'verbosity' => Output::VERBOSITY_VERBOSE));
-        $this->assertContains('Exception trace', $tester->getDisplay(), '->renderException() renders a pretty exception with a stack trace when verbosity is verbose');
-
-        $tester->run(array('command' => 'list', '--foo' => true), array('decorated' => false));
-        $this->assertStringEqualsFile(self::$fixturesPath.'/application_renderexception2.txt', $tester->getDisplay(true), '->renderException() renders the command synopsis when an exception occurs in the context of a command');
-
-        $application->add(new \Foo3Command);
-        $tester = new ApplicationTester($application);
-        $tester->run(array('command' => 'foo3:bar'), array('decorated' => false));
-        $this->assertStringEqualsFile(self::$fixturesPath.'/application_renderexception3.txt', $tester->getDisplay(true), '->renderException() renders a pretty exceptions with previous exceptions');
-
-        $tester->run(array('command' => 'foo3:bar'), array('decorated' => true));
-        $this->assertStringEqualsFile(self::$fixturesPath.'/application_renderexception3decorated.txt', $tester->getDisplay(true), '->renderException() renders a pretty exceptions with previous exceptions');
-
-        $application = $this->getMock('Symfony\Component\Console\Application', array('getTerminalWidth'));
-        $application->setAutoExit(false);
-        $application->expects($this->any())
-            ->method('getTerminalWidth')
-            ->will($this->returnValue(32));
-        $tester = new ApplicationTester($application);
-
-        $tester->run(array('command' => 'foo'), array('decorated' => false));
-        $this->assertStringEqualsFile(self::$fixturesPath.'/application_renderexception4.txt', $tester->getDisplay(true), '->renderException() wraps messages when they are bigger than the terminal');
-    }
-
-    public function testRun()
-    {
-        $application = new Application();
-        $application->setAutoExit(false);
-        $application->setCatchExceptions(false);
-        $application->add($command = new \Foo1Command());
-        $_SERVER['argv'] = array('cli.php', 'foo:bar1');
-
-        ob_start();
-        $application->run();
-        ob_end_clean();
-
-        $this->assertSame('Symfony\Component\Console\Input\ArgvInput', get_class($command->input), '->run() creates an ArgvInput by default if none is given');
-        $this->assertSame('Symfony\Component\Console\Output\ConsoleOutput', get_class($command->output), '->run() creates a ConsoleOutput by default if none is given');
-
-        $application = new Application();
-        $application->setAutoExit(false);
-        $application->setCatchExceptions(false);
-
-        $this->ensureStaticCommandHelp($application);
-        $tester = new ApplicationTester($application);
-
-        $tester->run(array(), array('decorated' => false));
-        $this->assertStringEqualsFile(self::$fixturesPath.'/application_run1.txt', $tester->getDisplay(true), '->run() runs the list command if no argument is passed');
-
-        $tester->run(array('--help' => true), array('decorated' => false));
-        $this->assertStringEqualsFile(self::$fixturesPath.'/application_run2.txt', $tester->getDisplay(true), '->run() runs the help command if --help is passed');
-
-        $tester->run(array('-h' => true), array('decorated' => false));
-        $this->assertStringEqualsFile(self::$fixturesPath.'/application_run2.txt', $tester->getDisplay(true), '->run() runs the help command if -h is passed');
-
-        $tester->run(array('command' => 'list', '--help' => true), array('decorated' => false));
-        $this->assertStringEqualsFile(self::$fixturesPath.'/application_run3.txt', $tester->getDisplay(true), '->run() displays the help if --help is passed');
-
-        $tester->run(array('command' => 'list', '-h' => true), array('decorated' => false));
-        $this->assertStringEqualsFile(self::$fixturesPath.'/application_run3.txt', $tester->getDisplay(true), '->run() displays the help if -h is passed');
-
-        $tester->run(array('--ansi' => true));
-        $this->assertTrue($tester->getOutput()->isDecorated(), '->run() forces color output if --ansi is passed');
-
-        $tester->run(array('--no-ansi' => true));
-        $this->assertFalse($tester->getOutput()->isDecorated(), '->run() forces color output to be disabled if --no-ansi is passed');
-
-        $tester->run(array('--version' => true), array('decorated' => false));
-        $this->assertStringEqualsFile(self::$fixturesPath.'/application_run4.txt', $tester->getDisplay(true), '->run() displays the program version if --version is passed');
-
-        $tester->run(array('-V' => true), array('decorated' => false));
-        $this->assertStringEqualsFile(self::$fixturesPath.'/application_run4.txt', $tester->getDisplay(true), '->run() displays the program version if -v is passed');
-
-        $tester->run(array('command' => 'list', '--quiet' => true));
-        $this->assertSame('', $tester->getDisplay(), '->run() removes all output if --quiet is passed');
-
-        $tester->run(array('command' => 'list', '-q' => true));
-        $this->assertSame('', $tester->getDisplay(), '->run() removes all output if -q is passed');
-
-        $tester->run(array('command' => 'list', '--verbose' => true));
-        $this->assertSame(Output::VERBOSITY_VERBOSE, $tester->getOutput()->getVerbosity(), '->run() sets the output to verbose if --verbose is passed');
-
-        $tester->run(array('command' => 'list', '--verbose' => 1));
-        $this->assertSame(Output::VERBOSITY_VERBOSE, $tester->getOutput()->getVerbosity(), '->run() sets the output to verbose if --verbose=1 is passed');
-
-        $tester->run(array('command' => 'list', '--verbose' => 2));
-        $this->assertSame(Output::VERBOSITY_VERY_VERBOSE, $tester->getOutput()->getVerbosity(), '->run() sets the output to very verbose if --verbose=2 is passed');
-
-        $tester->run(array('command' => 'list', '--verbose' => 3));
-        $this->assertSame(Output::VERBOSITY_DEBUG, $tester->getOutput()->getVerbosity(), '->run() sets the output to debug if --verbose=3 is passed');
-
-        $tester->run(array('command' => 'list', '--verbose' => 4));
-        $this->assertSame(Output::VERBOSITY_VERBOSE, $tester->getOutput()->getVerbosity(), '->run() sets the output to verbose if unknown --verbose level is passed');
-
-        $tester->run(array('command' => 'list', '-v' => true));
-        $this->assertSame(Output::VERBOSITY_VERBOSE, $tester->getOutput()->getVerbosity(), '->run() sets the output to verbose if -v is passed');
-
-        $tester->run(array('command' => 'list', '-vv' => true));
-        $this->assertSame(Output::VERBOSITY_VERY_VERBOSE, $tester->getOutput()->getVerbosity(), '->run() sets the output to verbose if -v is passed');
-
-        $tester->run(array('command' => 'list', '-vvv' => true));
-        $this->assertSame(Output::VERBOSITY_DEBUG, $tester->getOutput()->getVerbosity(), '->run() sets the output to verbose if -v is passed');
-
-        $application = new Application();
-        $application->setAutoExit(false);
-        $application->setCatchExceptions(false);
-        $application->add(new \FooCommand());
-        $tester = new ApplicationTester($application);
-
-        $tester->run(array('command' => 'foo:bar', '--no-interaction' => true), array('decorated' => false));
-        $this->assertSame('called'.PHP_EOL, $tester->getDisplay(), '->run() does not call interact() if --no-interaction is passed');
-
-        $tester->run(array('command' => 'foo:bar', '-n' => true), array('decorated' => false));
-        $this->assertSame('called'.PHP_EOL, $tester->getDisplay(), '->run() does not call interact() if -n is passed');
-    }
-
-    /**
-     * Issue #9285
-     *
-     * If the "verbose" option is just before an argument in ArgvInput,
-     * an argument value should not be treated as verbosity value.
-     * This test will fail with "Not enough arguments." if broken
-     */
-    public function testVerboseValueNotBreakArguments()
-    {
-        $application = new Application();
-        $application->setAutoExit(false);
-        $application->setCatchExceptions(false);
-        $application->add(new \FooCommand());
-
-        $output = new StreamOutput(fopen('php://memory', 'w', false));
-
-        $input = new ArgvInput(array('cli.php', '-v', 'foo:bar'));
-        $application->run($input, $output);
-
-        $input = new ArgvInput(array('cli.php', '--verbose', 'foo:bar'));
-        $application->run($input, $output);
-    }
-
-    public function testRunReturnsIntegerExitCode()
-    {
-        $exception = new \Exception('', 4);
-
-        $application = $this->getMock('Symfony\Component\Console\Application', array('doRun'));
-        $application->setAutoExit(false);
-        $application->expects($this->once())
-             ->method('doRun')
-             ->will($this->throwException($exception));
-
-        $exitCode = $application->run(new ArrayInput(array()), new NullOutput());
-
-        $this->assertSame(4, $exitCode, '->run() returns integer exit code extracted from raised exception');
-    }
-
-    public function testRunReturnsExitCodeOneForExceptionCodeZero()
-    {
-        $exception = new \Exception('', 0);
-
-        $application = $this->getMock('Symfony\Component\Console\Application', array('doRun'));
-        $application->setAutoExit(false);
-        $application->expects($this->once())
-             ->method('doRun')
-             ->will($this->throwException($exception));
-
-        $exitCode = $application->run(new ArrayInput(array()), new NullOutput());
-
-        $this->assertSame(1, $exitCode, '->run() returns exit code 1 when exception code is 0');
-    }
-
-    /**
-     * @expectedException \LogicException
-     * @dataProvider getAddingAlreadySetDefinitionElementData
-     */
-    public function testAddingAlreadySetDefinitionElementData($def)
-    {
-        $application = new Application();
-        $application->setAutoExit(false);
-        $application->setCatchExceptions(false);
-        $application
-            ->register('foo')
-            ->setDefinition(array($def))
-            ->setCode(function (InputInterface $input, OutputInterface $output) {})
-        ;
-
-        $input = new ArrayInput(array('command' => 'foo'));
-        $output = new NullOutput();
-        $application->run($input, $output);
-    }
-
-    public function getAddingAlreadySetDefinitionElementData()
-    {
-        return array(
-            array(new InputArgument('command', InputArgument::REQUIRED)),
-            array(new InputOption('quiet', '', InputOption::VALUE_NONE)),
-            array(new InputOption('query', 'q', InputOption::VALUE_NONE)),
-        );
-    }
-
-    public function testGetDefaultHelperSetReturnsDefaultValues()
-    {
-        $application = new Application();
-        $application->setAutoExit(false);
-        $application->setCatchExceptions(false);
-
-        $helperSet = $application->getHelperSet();
-
-        $this->assertTrue($helperSet->has('formatter'));
-        $this->assertTrue($helperSet->has('dialog'));
-        $this->assertTrue($helperSet->has('progress'));
-    }
-
-    public function testAddingSingleHelperSetOverwritesDefaultValues()
-    {
-        $application = new Application();
-        $application->setAutoExit(false);
-        $application->setCatchExceptions(false);
-
-        $application->setHelperSet(new HelperSet(array(new FormatterHelper())));
-
-        $helperSet = $application->getHelperSet();
-
-        $this->assertTrue($helperSet->has('formatter'));
-
-        // no other default helper set should be returned
-        $this->assertFalse($helperSet->has('dialog'));
-        $this->assertFalse($helperSet->has('progress'));
-    }
-
-    public function testOverwritingDefaultHelperSetOverwritesDefaultValues()
-    {
-        $application = new CustomApplication();
-        $application->setAutoExit(false);
-        $application->setCatchExceptions(false);
-
-        $application->setHelperSet(new HelperSet(array(new FormatterHelper())));
-
-        $helperSet = $application->getHelperSet();
-
-        $this->assertTrue($helperSet->has('formatter'));
-
-        // no other default helper set should be returned
-        $this->assertFalse($helperSet->has('dialog'));
-        $this->assertFalse($helperSet->has('progress'));
-    }
-
-    public function testGetDefaultInputDefinitionReturnsDefaultValues()
-    {
-        $application = new Application();
-        $application->setAutoExit(false);
-        $application->setCatchExceptions(false);
-
-        $inputDefinition = $application->getDefinition();
-
-        $this->assertTrue($inputDefinition->hasArgument('command'));
-
-        $this->assertTrue($inputDefinition->hasOption('help'));
-        $this->assertTrue($inputDefinition->hasOption('quiet'));
-        $this->assertTrue($inputDefinition->hasOption('verbose'));
-        $this->assertTrue($inputDefinition->hasOption('version'));
-        $this->assertTrue($inputDefinition->hasOption('ansi'));
-        $this->assertTrue($inputDefinition->hasOption('no-ansi'));
-        $this->assertTrue($inputDefinition->hasOption('no-interaction'));
-    }
-
-    public function testOverwritingDefaultInputDefinitionOverwritesDefaultValues()
-    {
-        $application = new CustomApplication();
-        $application->setAutoExit(false);
-        $application->setCatchExceptions(false);
-
-        $inputDefinition = $application->getDefinition();
-
-        // check whether the default arguments and options are not returned any more
-        $this->assertFalse($inputDefinition->hasArgument('command'));
-
-        $this->assertFalse($inputDefinition->hasOption('help'));
-        $this->assertFalse($inputDefinition->hasOption('quiet'));
-        $this->assertFalse($inputDefinition->hasOption('verbose'));
-        $this->assertFalse($inputDefinition->hasOption('version'));
-        $this->assertFalse($inputDefinition->hasOption('ansi'));
-        $this->assertFalse($inputDefinition->hasOption('no-ansi'));
-        $this->assertFalse($inputDefinition->hasOption('no-interaction'));
-
-        $this->assertTrue($inputDefinition->hasOption('custom'));
-    }
-
-    public function testSettingCustomInputDefinitionOverwritesDefaultValues()
-    {
-        $application = new Application();
-        $application->setAutoExit(false);
-        $application->setCatchExceptions(false);
-
-        $application->setDefinition(new InputDefinition(array(new InputOption('--custom', '-c', InputOption::VALUE_NONE, 'Set the custom input definition.'))));
-
-        $inputDefinition = $application->getDefinition();
-
-        // check whether the default arguments and options are not returned any more
-        $this->assertFalse($inputDefinition->hasArgument('command'));
-
-        $this->assertFalse($inputDefinition->hasOption('help'));
-        $this->assertFalse($inputDefinition->hasOption('quiet'));
-        $this->assertFalse($inputDefinition->hasOption('verbose'));
-        $this->assertFalse($inputDefinition->hasOption('version'));
-        $this->assertFalse($inputDefinition->hasOption('ansi'));
-        $this->assertFalse($inputDefinition->hasOption('no-ansi'));
-        $this->assertFalse($inputDefinition->hasOption('no-interaction'));
-
-        $this->assertTrue($inputDefinition->hasOption('custom'));
-    }
-
-    public function testRunWithDispatcher()
-    {
-        $application = new Application();
-        $application->setAutoExit(false);
-        $application->setDispatcher($this->getDispatcher());
-
-        $application->register('foo')->setCode(function (InputInterface $input, OutputInterface $output) {
-            $output->write('foo.');
-        });
-
-        $tester = new ApplicationTester($application);
-        $tester->run(array('command' => 'foo'));
-        $this->assertEquals('before.foo.after.', $tester->getDisplay());
-    }
-
-    /**
-     * @expectedException        \LogicException
-     * @expectedExceptionMessage caught
-     */
-    public function testRunWithExceptionAndDispatcher()
-    {
-        $application = new Application();
-        $application->setDispatcher($this->getDispatcher());
-        $application->setAutoExit(false);
-        $application->setCatchExceptions(false);
-
-        $application->register('foo')->setCode(function (InputInterface $input, OutputInterface $output) {
-            throw new \RuntimeException('foo');
-        });
-
-        $tester = new ApplicationTester($application);
-        $tester->run(array('command' => 'foo'));
-    }
-
-    public function testRunDispatchesAllEventsWithException()
-    {
-        $application = new Application();
-        $application->setDispatcher($this->getDispatcher());
-        $application->setAutoExit(false);
-
-        $application->register('foo')->setCode(function (InputInterface $input, OutputInterface $output) {
-            $output->write('foo.');
-
-            throw new \RuntimeException('foo');
-        });
-
-        $tester = new ApplicationTester($application);
-        $tester->run(array('command' => 'foo'));
-        $this->assertContains('before.foo.after.caught.', $tester->getDisplay());
-    }
-
-    public function testTerminalDimensions()
-    {
-        $application = new Application();
-        $originalDimensions = $application->getTerminalDimensions();
-        $this->assertCount(2, $originalDimensions);
-
-        $width = 80;
-        if ($originalDimensions[0] == $width) {
-            $width = 100;
-        }
-
-        $application->setTerminalDimensions($width, 80);
-        $this->assertSame(array($width, 80), $application->getTerminalDimensions());
-    }
-
-    protected function getDispatcher()
-    {
-        $dispatcher = new EventDispatcher();
-        $dispatcher->addListener('console.command', function (ConsoleCommandEvent $event) {
-            $event->getOutput()->write('before.');
-        });
-        $dispatcher->addListener('console.terminate', function (ConsoleTerminateEvent $event) {
-            $event->getOutput()->write('after.');
-
-            $event->setExitCode(128);
-        });
-        $dispatcher->addListener('console.exception', function (ConsoleExceptionEvent $event) {
-            $event->getOutput()->writeln('caught.');
-
-            $event->setException(new \LogicException('caught.', $event->getExitCode(), $event->getException()));
-        });
-
-        return $dispatcher;
-    }
-}
-
-class CustomApplication extends Application
-{
-    /**
-     * Overwrites the default input definition.
-     *
-     * @return InputDefinition An InputDefinition instance
-     */
-    protected function getDefaultInputDefinition()
-    {
-        return new InputDefinition(array(new InputOption('--custom', '-c', InputOption::VALUE_NONE, 'Set the custom input definition.')));
-    }
-
-    /**
-     * Gets the default helper set with the helpers that should always be available.
-     *
-     * @return HelperSet A HelperSet instance
-     */
-    protected function getDefaultHelperSet()
-    {
-        return new HelperSet(array(new FormatterHelper()));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

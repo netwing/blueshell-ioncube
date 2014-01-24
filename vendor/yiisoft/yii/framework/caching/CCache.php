@@ -1,376 +1,170 @@
-<?php
-/**
- * CCache class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CCache is the base class for cache classes with different cache storage implementation.
- *
- * A data item can be stored in cache by calling {@link set} and be retrieved back
- * later by {@link get}. In both operations, a key identifying the data item is required.
- * An expiration time and/or a dependency can also be specified when calling {@link set}.
- * If the data item expires or the dependency changes, calling {@link get} will not
- * return back the data item.
- *
- * Note, by definition, cache does not ensure the existence of a value
- * even if it does not expire. Cache is not meant to be a persistent storage.
- *
- * CCache implements the interface {@link ICache} with the following methods:
- * <ul>
- * <li>{@link get} : retrieve the value with a key (if any) from cache</li>
- * <li>{@link set} : store the value with a key into cache</li>
- * <li>{@link add} : store the value only if cache does not have this key</li>
- * <li>{@link delete} : delete the value with the specified key from cache</li>
- * <li>{@link flush} : delete all values from cache</li>
- * </ul>
- *
- * Child classes must implement the following methods:
- * <ul>
- * <li>{@link getValue}</li>
- * <li>{@link setValue}</li>
- * <li>{@link addValue}</li>
- * <li>{@link deleteValue}</li>
- * <li>{@link getValues} (optional)</li>
- * <li>{@link flushValues} (optional)</li>
- * <li>{@link serializer} (optional)</li>
- * </ul>
- *
- * CCache also implements ArrayAccess so that it can be used like an array.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.caching
- * @since 1.0
- */
-abstract class CCache extends CApplicationComponent implements ICache, ArrayAccess
-{
-	/**
-	 * @var string a string prefixed to every cache key so that it is unique. Defaults to null which means
-	 * to use the {@link CApplication::getId() application ID}. If different applications need to access the same
-	 * pool of cached data, the same prefix should be set for each of the applications explicitly.
-	 */
-	public $keyPrefix;
-	/**
-	 * @var boolean whether to md5-hash the cache key for normalization purposes. Defaults to true. Setting this property to false makes sure the cache
-	 * key will not be tampered when calling the relevant methods {@link get()}, {@link set()}, {@link add()} and {@link delete()}. This is useful if a Yii
-	 * application as well as an external application need to access the same cache pool (also see description of {@link keyPrefix} regarding this use case).
-	 * However, without normalization you should make sure the affected cache backend does support the structure (charset, length, etc.) of all the provided
-	 * cache keys, otherwise there might be unexpected behavior.
-	 * @since 1.1.11
-	 **/
-	public $hashKey=true;
-	/**
-	 * @var array|boolean the functions used to serialize and unserialize cached data. Defaults to null, meaning
-	 * using the default PHP `serialize()` and `unserialize()` functions. If you want to use some more efficient
-	 * serializer (e.g. {@link http://pecl.php.net/package/igbinary igbinary}), you may configure this property with
-	 * a two-element array. The first element specifies the serialization function, and the second the deserialization
-	 * function. If this property is set false, data will be directly sent to and retrieved from the underlying
-	 * cache component without any serialization or deserialization. You should not turn off serialization if
-	 * you are using {@link CCacheDependency cache dependency}, because it relies on data serialization.
-	 */
-	public $serializer;
-
-	/**
-	 * Initializes the application component.
-	 * This method overrides the parent implementation by setting default cache key prefix.
-	 */
-	public function init()
-	{
-		parent::init();
-		if($this->keyPrefix===null)
-			$this->keyPrefix=Yii::app()->getId();
-	}
-
-	/**
-	 * @param string $key a key identifying a value to be cached
-	 * @return string a key generated from the provided key which ensures the uniqueness across applications
-	 */
-	protected function generateUniqueKey($key)
-	{
-		return $this->hashKey ? md5($this->keyPrefix.$key) : $this->keyPrefix.$key;
-	}
-
-	/**
-	 * Retrieves a value from cache with a specified key.
-	 * @param string $id a key identifying the cached value
-	 * @return mixed the value stored in cache, false if the value is not in the cache, expired or the dependency has changed.
-	 */
-	public function get($id)
-	{
-		$value = $this->getValue($this->generateUniqueKey($id));
-		if($value===false || $this->serializer===false)
-			return $value;
-		if($this->serializer===null)
-			$value=unserialize($value);
-		else
-			$value=call_user_func($this->serializer[1], $value);
-		if(is_array($value) && (!$value[1] instanceof ICacheDependency || !$value[1]->getHasChanged()))
-		{
-			Yii::trace('Serving "'.$id.'" from cache','system.caching.'.get_class($this));
-			return $value[0];
-		}
-		else
-			return false;
-	}
-
-	/**
-	 * Retrieves multiple values from cache with the specified keys.
-	 * Some caches (such as memcache, apc) allow retrieving multiple cached values at one time,
-	 * which may improve the performance since it reduces the communication cost.
-	 * In case a cache does not support this feature natively, it will be simulated by this method.
-	 * @param array $ids list of keys identifying the cached values
-	 * @return array list of cached values corresponding to the specified keys. The array
-	 * is returned in terms of (key,value) pairs.
-	 * If a value is not cached or expired, the corresponding array value will be false.
-	 */
-	public function mget($ids)
-	{
-		$uids = array();
-		foreach ($ids as $id)
-			$uids[$id] = $this->generateUniqueKey($id);
-
-		$values = $this->getValues($uids);
-		$results = array();
-		if($this->serializer === false)
-		{
-			foreach ($uids as $id => $uid)
-				$results[$id] = isset($values[$uid]) ? $values[$uid] : false;
-		}
-		else
-		{
-			foreach($uids as $id => $uid)
-			{
-				$results[$id] = false;
-				if(isset($values[$uid]))
-				{
-					$value = $this->serializer === null ? unserialize($values[$uid]) : call_user_func($this->serializer[1], $values[$uid]);
-					if(is_array($value) && (!$value[1] instanceof ICacheDependency || !$value[1]->getHasChanged()))
-					{
-						Yii::trace('Serving "'.$id.'" from cache','system.caching.'.get_class($this));
-						$results[$id] = $value[0];
-					}
-				}
-			}
-		}
-		return $results;
-	}
-
-	/**
-	 * Stores a value identified by a key into cache.
-	 * If the cache already contains such a key, the existing value and
-	 * expiration time will be replaced with the new ones.
-	 *
-	 * @param string $id the key identifying the value to be cached
-	 * @param mixed $value the value to be cached
-	 * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
-	 * @param ICacheDependency $dependency dependency of the cached item. If the dependency changes, the item is labeled invalid.
-	 * @return boolean true if the value is successfully stored into cache, false otherwise
-	 */
-	public function set($id,$value,$expire=0,$dependency=null)
-	{
-		Yii::trace('Saving "'.$id.'" to cache','system.caching.'.get_class($this));
-
-		if ($dependency !== null && $this->serializer !== false)
-			$dependency->evaluateDependency();
-
-		if ($this->serializer === null)
-			$value = serialize(array($value,$dependency));
-		elseif ($this->serializer !== false)
-			$value = call_user_func($this->serializer[0], array($value,$dependency));
-
-		return $this->setValue($this->generateUniqueKey($id), $value, $expire);
-	}
-
-	/**
-	 * Stores a value identified by a key into cache if the cache does not contain this key.
-	 * Nothing will be done if the cache already contains the key.
-	 * @param string $id the key identifying the value to be cached
-	 * @param mixed $value the value to be cached
-	 * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
-	 * @param ICacheDependency $dependency dependency of the cached item. If the dependency changes, the item is labeled invalid.
-	 * @return boolean true if the value is successfully stored into cache, false otherwise
-	 */
-	public function add($id,$value,$expire=0,$dependency=null)
-	{
-		Yii::trace('Adding "'.$id.'" to cache','system.caching.'.get_class($this));
-
-		if ($dependency !== null && $this->serializer !== false)
-			$dependency->evaluateDependency();
-
-		if ($this->serializer === null)
-			$value = serialize(array($value,$dependency));
-		elseif ($this->serializer !== false)
-			$value = call_user_func($this->serializer[0], array($value,$dependency));
-
-		return $this->addValue($this->generateUniqueKey($id), $value, $expire);
-	}
-
-	/**
-	 * Deletes a value with the specified key from cache
-	 * @param string $id the key of the value to be deleted
-	 * @return boolean if no error happens during deletion
-	 */
-	public function delete($id)
-	{
-		Yii::trace('Deleting "'.$id.'" from cache','system.caching.'.get_class($this));
-		return $this->deleteValue($this->generateUniqueKey($id));
-	}
-
-	/**
-	 * Deletes all values from cache.
-	 * Be careful of performing this operation if the cache is shared by multiple applications.
-	 * @return boolean whether the flush operation was successful.
-	 */
-	public function flush()
-	{
-		Yii::trace('Flushing cache','system.caching.'.get_class($this));
-		return $this->flushValues();
-	}
-
-	/**
-	 * Retrieves a value from cache with a specified key.
-	 * This method should be implemented by child classes to retrieve the data
-	 * from specific cache storage. The uniqueness and dependency are handled
-	 * in {@link get()} already. So only the implementation of data retrieval
-	 * is needed.
-	 * @param string $key a unique key identifying the cached value
-	 * @return string|boolean the value stored in cache, false if the value is not in the cache or expired.
-	 * @throws CException if this method is not overridden by child classes
-	 */
-	protected function getValue($key)
-	{
-		throw new CException(Yii::t('yii','{className} does not support get() functionality.',
-			array('{className}'=>get_class($this))));
-	}
-
-	/**
-	 * Retrieves multiple values from cache with the specified keys.
-	 * The default implementation simply calls {@link getValue} multiple
-	 * times to retrieve the cached values one by one.
-	 * If the underlying cache storage supports multiget, this method should
-	 * be overridden to exploit that feature.
-	 * @param array $keys a list of keys identifying the cached values
-	 * @return array a list of cached values indexed by the keys
-	 */
-	protected function getValues($keys)
-	{
-		$results=array();
-		foreach($keys as $key)
-			$results[$key]=$this->getValue($key);
-		return $results;
-	}
-
-	/**
-	 * Stores a value identified by a key in cache.
-	 * This method should be implemented by child classes to store the data
-	 * in specific cache storage. The uniqueness and dependency are handled
-	 * in {@link set()} already. So only the implementation of data storage
-	 * is needed.
-	 *
-	 * @param string $key the key identifying the value to be cached
-	 * @param string $value the value to be cached
-	 * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
-	 * @return boolean true if the value is successfully stored into cache, false otherwise
-	 * @throws CException if this method is not overridden by child classes
-	 */
-	protected function setValue($key,$value,$expire)
-	{
-		throw new CException(Yii::t('yii','{className} does not support set() functionality.',
-			array('{className}'=>get_class($this))));
-	}
-
-	/**
-	 * Stores a value identified by a key into cache if the cache does not contain this key.
-	 * This method should be implemented by child classes to store the data
-	 * in specific cache storage. The uniqueness and dependency are handled
-	 * in {@link add()} already. So only the implementation of data storage
-	 * is needed.
-	 *
-	 * @param string $key the key identifying the value to be cached
-	 * @param string $value the value to be cached
-	 * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
-	 * @return boolean true if the value is successfully stored into cache, false otherwise
-	 * @throws CException if this method is not overridden by child classes
-	 */
-	protected function addValue($key,$value,$expire)
-	{
-		throw new CException(Yii::t('yii','{className} does not support add() functionality.',
-			array('{className}'=>get_class($this))));
-	}
-
-	/**
-	 * Deletes a value with the specified key from cache
-	 * This method should be implemented by child classes to delete the data from actual cache storage.
-	 * @param string $key the key of the value to be deleted
-	 * @return boolean if no error happens during deletion
-	 * @throws CException if this method is not overridden by child classes
-	 */
-	protected function deleteValue($key)
-	{
-		throw new CException(Yii::t('yii','{className} does not support delete() functionality.',
-			array('{className}'=>get_class($this))));
-	}
-
-	/**
-	 * Deletes all values from cache.
-	 * Child classes may implement this method to realize the flush operation.
-	 * @return boolean whether the flush operation was successful.
-	 * @throws CException if this method is not overridden by child classes
-	 * @since 1.1.5
-	 */
-	protected function flushValues()
-	{
-		throw new CException(Yii::t('yii','{className} does not support flushValues() functionality.',
-			array('{className}'=>get_class($this))));
-	}
-
-	/**
-	 * Returns whether there is a cache entry with a specified key.
-	 * This method is required by the interface ArrayAccess.
-	 * @param string $id a key identifying the cached value
-	 * @return boolean
-	 */
-	public function offsetExists($id)
-	{
-		return $this->get($id)!==false;
-	}
-
-	/**
-	 * Retrieves the value from cache with a specified key.
-	 * This method is required by the interface ArrayAccess.
-	 * @param string $id a key identifying the cached value
-	 * @return mixed the value stored in cache, false if the value is not in the cache or expired.
-	 */
-	public function offsetGet($id)
-	{
-		return $this->get($id);
-	}
-
-	/**
-	 * Stores the value identified by a key into cache.
-	 * If the cache already contains such a key, the existing value will be
-	 * replaced with the new ones. To add expiration and dependencies, use the set() method.
-	 * This method is required by the interface ArrayAccess.
-	 * @param string $id the key identifying the value to be cached
-	 * @param mixed $value the value to be cached
-	 */
-	public function offsetSet($id, $value)
-	{
-		$this->set($id, $value);
-	}
-
-	/**
-	 * Deletes the value with the specified key from cache
-	 * This method is required by the interface ArrayAccess.
-	 * @param string $id the key of the value to be deleted
-	 * @return boolean if no error happens during deletion
-	 */
-	public function offsetUnset($id)
-	{
-		$this->delete($id);
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

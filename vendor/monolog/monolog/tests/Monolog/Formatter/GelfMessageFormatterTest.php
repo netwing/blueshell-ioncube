@@ -1,187 +1,87 @@
-<?php
-
-/*
- * This file is part of the Monolog package.
- *
- * (c) Jordi Boggiano <j.boggiano@seld.be>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Monolog\Formatter;
-
-use Monolog\Logger;
-use Monolog\Formatter\GelfMessageFormatter;
-
-class GelfMessageFormatterTest extends \PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        if (!class_exists("Gelf\Message")) {
-            $this->markTestSkipped("mlehner/gelf-php not installed");
-        }
-    }
-
-    /**
-     * @covers Monolog\Formatter\GelfMessageFormatter::format
-     */
-    public function testDefaultFormatter()
-    {
-        $formatter = new GelfMessageFormatter();
-        $record = array(
-            'level' => Logger::ERROR,
-            'level_name' => 'ERROR',
-            'channel' => 'meh',
-            'context' => array(),
-            'datetime' => new \DateTime("@0"),
-            'extra' => array(),
-            'message' => 'log',
-        );
-
-        $message = $formatter->format($record);
-
-        $this->assertInstanceOf('Gelf\Message', $message);
-        $this->assertEquals(0, $message->getTimestamp());
-        $this->assertEquals('log', $message->getShortMessage());
-        $this->assertEquals('meh', $message->getFacility());
-        $this->assertEquals(null, $message->getLine());
-        $this->assertEquals(null, $message->getFile());
-        $this->assertEquals(3, $message->getLevel());
-        $this->assertNotEmpty($message->getHost());
-
-        $formatter = new GelfMessageFormatter('mysystem');
-
-        $message = $formatter->format($record);
-
-        $this->assertInstanceOf('Gelf\Message', $message);
-        $this->assertEquals('mysystem', $message->getHost());
-    }
-
-    /**
-     * @covers Monolog\Formatter\GelfMessageFormatter::format
-     */
-    public function testFormatWithFileAndLine()
-    {
-        $formatter = new GelfMessageFormatter();
-        $record = array(
-            'level' => Logger::ERROR,
-            'level_name' => 'ERROR',
-            'channel' => 'meh',
-            'context' => array('from' => 'logger'),
-            'datetime' => new \DateTime("@0"),
-            'extra' => array('file' => 'test', 'line' => 14),
-            'message' => 'log',
-        );
-
-        $message = $formatter->format($record);
-
-        $this->assertInstanceOf('Gelf\Message', $message);
-        $this->assertEquals('test', $message->getFile());
-        $this->assertEquals(14, $message->getLine());
-    }
-
-    /**
-     * @covers Monolog\Formatter\GelfMessageFormatter::format
-     */
-    public function testFormatWithContext()
-    {
-        $formatter = new GelfMessageFormatter();
-        $record = array(
-            'level' => Logger::ERROR,
-            'level_name' => 'ERROR',
-            'channel' => 'meh',
-            'context' => array('from' => 'logger'),
-            'datetime' => new \DateTime("@0"),
-            'extra' => array('key' => 'pair'),
-            'message' => 'log'
-        );
-
-        $message = $formatter->format($record);
-
-        $this->assertInstanceOf('Gelf\Message', $message);
-
-        $message_array = $message->toArray();
-
-        $this->assertArrayHasKey('_ctxt_from', $message_array);
-        $this->assertEquals('logger', $message_array['_ctxt_from']);
-
-        // Test with extraPrefix
-        $formatter = new GelfMessageFormatter(null, null, 'CTX');
-        $message = $formatter->format($record);
-
-        $this->assertInstanceOf('Gelf\Message', $message);
-
-        $message_array = $message->toArray();
-
-        $this->assertArrayHasKey('_CTXfrom', $message_array);
-        $this->assertEquals('logger', $message_array['_CTXfrom']);
-
-    }
-
-    /**
-     * @covers Monolog\Formatter\GelfMessageFormatter::format
-     */
-    public function testFormatWithContextContainingException()
-    {
-        $formatter = new GelfMessageFormatter();
-        $record = array(
-            'level' => Logger::ERROR,
-            'level_name' => 'ERROR',
-            'channel' => 'meh',
-            'context' => array('from' => 'logger', 'exception' => array(
-                'class' => '\Exception',
-                'file'  => '/some/file/in/dir.php:56',
-                'trace' => array('/some/file/1.php:23', '/some/file/2.php:3')
-            )),
-            'datetime' => new \DateTime("@0"),
-            'extra' => array(),
-            'message' => 'log'
-        );
-
-        $message = $formatter->format($record);
-
-        $this->assertInstanceOf('Gelf\Message', $message);
-
-        $this->assertEquals("/some/file/in/dir.php", $message->getFile());
-        $this->assertEquals("56", $message->getLine());
-
-    }
-
-    /**
-     * @covers Monolog\Formatter\GelfMessageFormatter::format
-     */
-    public function testFormatWithExtra()
-    {
-        $formatter = new GelfMessageFormatter();
-        $record = array(
-            'level' => Logger::ERROR,
-            'level_name' => 'ERROR',
-            'channel' => 'meh',
-            'context' => array('from' => 'logger'),
-            'datetime' => new \DateTime("@0"),
-            'extra' => array('key' => 'pair'),
-            'message' => 'log'
-        );
-
-        $message = $formatter->format($record);
-
-        $this->assertInstanceOf('Gelf\Message', $message);
-
-        $message_array = $message->toArray();
-
-        $this->assertArrayHasKey('_key', $message_array);
-        $this->assertEquals('pair', $message_array['_key']);
-
-        // Test with extraPrefix
-        $formatter = new GelfMessageFormatter(null, 'EXT');
-        $message = $formatter->format($record);
-
-        $this->assertInstanceOf('Gelf\Message', $message);
-
-        $message_array = $message->toArray();
-
-        $this->assertArrayHasKey('_EXTkey', $message_array);
-        $this->assertEquals('pair', $message_array['_EXTkey']);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

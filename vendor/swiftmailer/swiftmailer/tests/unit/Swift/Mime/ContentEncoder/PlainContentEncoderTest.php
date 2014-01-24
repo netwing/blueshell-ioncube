@@ -1,277 +1,154 @@
-<?php
-
-require_once 'Swift/Tests/SwiftUnitTestCase.php';
-require_once 'Swift/Mime/ContentEncoder/PlainContentEncoder.php';
-require_once 'Swift/InputByteStream.php';
-require_once 'Swift/OutputByteStream.php';
-
-class Swift_StreamCollector implements Yay_Action
-{
-    public $content = '';
-    public function &invoke(Yay_Invocation $inv) {
-        $args = $inv->getArguments();
-        $this->content .= current($args);
-    }
-    public function describeTo(Yay_Description $description)
-    {
-        $description->appendText(' gathers input;');
-    }
-}
-
-class Swift_Mime_ContentEncoder_PlainContentEncoderTest
-    extends Swift_Tests_SwiftUnitTestCase
-{
-    public function testNameCanBeSpecifiedInConstructor()
-    {
-        $encoder = $this->_getEncoder('7bit');
-        $this->assertEqual('7bit', $encoder->getName());
-
-        $encoder = $this->_getEncoder('8bit');
-        $this->assertEqual('8bit', $encoder->getName());
-    }
-
-    public function testNoOctetsAreModifiedInString()
-    {
-        $encoder = $this->_getEncoder('7bit');
-        foreach (range(0x00, 0xFF) as $octet) {
-            $byte = pack('C', $octet);
-            $this->assertIdenticalBinary($byte, $encoder->encodeString($byte));
-        }
-    }
-
-    public function testNoOctetsAreModifiedInByteStream()
-    {
-        $encoder = $this->_getEncoder('7bit');
-        foreach (range(0x00, 0xFF) as $octet) {
-            $byte = pack('C', $octet);
-
-            $os = $this->_createOutputByteStream();
-            $is = $this->_createInputByteStream();
-            $collection = new Swift_StreamCollector();
-
-            $this->_checking(Expectations::create()
-                -> allowing($is)->write(any(), optional()) -> will($collection)
-                -> ignoring($is)
-
-                -> one($os)->read(optional()) -> returns($byte)
-                -> allowing($os)->read(optional()) -> returns(false)
-
-                -> ignoring($os)
-                );
-
-            $encoder->encodeByteStream($os, $is);
-            $this->assertIdenticalBinary($byte, $collection->content);
-        }
-    }
-
-    public function testLineLengthCanBeSpecified()
-    {
-        $encoder = $this->_getEncoder('7bit');
-
-        $chars = array();
-        for ($i = 0; $i < 50; $i++) {
-            $chars[] = 'a';
-        }
-        $input = implode(' ', $chars); //99 chars long
-
-        $this->assertEqual(
-            'a a a a a a a a a a a a a a a a a a a a a a a a a ' . "\r\n" . //50 *
-            'a a a a a a a a a a a a a a a a a a a a a a a a a',            //99
-            $encoder->encodeString($input, 0, 50),
-            '%s: Lines should be wrapped at 50 chars'
-            );
-    }
-
-    public function testLineLengthCanBeSpecifiedInByteStream()
-    {
-        $encoder = $this->_getEncoder('7bit');
-
-        $os = $this->_createOutputByteStream();
-        $is = $this->_createInputByteStream();
-        $collection = new Swift_StreamCollector();
-
-        $this->_checking(Expectations::create()
-            -> allowing($is)->write(any(), optional()) -> will($collection)
-            -> ignoring($is)
-            );
-
-        for ($i = 0; $i < 50; $i++) {
-            $this->_checking(Expectations::create()
-                -> one($os)->read(optional()) -> returns('a ')
-                );
-        }
-
-        $this->_checking(Expectations::create()
-            -> allowing($os)->read(optional()) -> returns(false)
-            );
-
-        $encoder->encodeByteStream($os, $is, 0, 50);
-        $this->assertEqual(
-            str_repeat('a ', 25) . "\r\n" . str_repeat('a ', 25),
-            $collection->content
-            );
-    }
-
-    public function testencodeStringGeneratesCorrectCrlf()
-    {
-        $encoder = $this->_getEncoder('7bit', true);
-        $this->assertEqual("a\r\nb", $encoder->encodeString("a\rb"),
-            '%s: Line endings should be standardized'
-            );
-        $this->assertEqual("a\r\nb", $encoder->encodeString("a\nb"),
-            '%s: Line endings should be standardized'
-            );
-        $this->assertEqual("a\r\n\r\nb", $encoder->encodeString("a\n\rb"),
-            '%s: Line endings should be standardized'
-            );
-        $this->assertEqual("a\r\n\r\nb", $encoder->encodeString("a\r\rb"),
-            '%s: Line endings should be standardized'
-            );
-        $this->assertEqual("a\r\n\r\nb", $encoder->encodeString("a\n\nb"),
-            '%s: Line endings should be standardized'
-            );
-    }
-
-    public function testCanonicEncodeByteStreamGeneratesCorrectCrlf_1()
-    {
-        $encoder = $this->_getEncoder('7bit', true);
-
-        $os = $this->_createOutputByteStream();
-        $is = $this->_createInputByteStream();
-        $collection = new Swift_StreamCollector();
-
-        $this->_checking(Expectations::create()
-            -> allowing($is)->write(any(), optional()) -> will($collection)
-            -> ignoring($is)
-
-            -> one($os)->read(optional()) -> returns('a')
-            -> one($os)->read(optional()) -> returns("\r")
-            -> one($os)->read(optional()) -> returns('b')
-            -> allowing($os)->read(optional()) -> returns(false)
-
-            -> ignoring($os)
-            );
-
-        $encoder->encodeByteStream($os, $is);
-        $this->assertEqual("a\r\nb", $collection->content);
-    }
-
-    public function testCanonicEncodeByteStreamGeneratesCorrectCrlf_2()
-    {
-        $encoder = $this->_getEncoder('7bit', true);
-
-        $os = $this->_createOutputByteStream();
-        $is = $this->_createInputByteStream();
-        $collection = new Swift_StreamCollector();
-
-        $this->_checking(Expectations::create()
-            -> allowing($is)->write(any(), optional()) -> will($collection)
-            -> ignoring($is)
-
-            -> one($os)->read(optional()) -> returns('a')
-            -> one($os)->read(optional()) -> returns("\n")
-            -> one($os)->read(optional()) -> returns('b')
-            -> allowing($os)->read(optional()) -> returns(false)
-
-            -> ignoring($os)
-            );
-
-        $encoder->encodeByteStream($os, $is);
-        $this->assertEqual("a\r\nb", $collection->content);
-    }
-
-    public function testCanonicEncodeByteStreamGeneratesCorrectCrlf_3()
-    {
-        $encoder = $this->_getEncoder('7bit', true);
-
-        $os = $this->_createOutputByteStream();
-        $is = $this->_createInputByteStream();
-        $collection = new Swift_StreamCollector();
-
-        $this->_checking(Expectations::create()
-            -> allowing($is)->write(any(), optional()) -> will($collection)
-            -> ignoring($is)
-
-            -> one($os)->read(optional()) -> returns('a')
-            -> one($os)->read(optional()) -> returns("\n\r")
-            -> one($os)->read(optional()) -> returns('b')
-            -> allowing($os)->read(optional()) -> returns(false)
-
-            -> ignoring($os)
-            );
-
-        $encoder->encodeByteStream($os, $is);
-        $this->assertEqual("a\r\n\r\nb", $collection->content);
-    }
-
-    public function testCanonicEncodeByteStreamGeneratesCorrectCrlf_4()
-    {
-        $encoder = $this->_getEncoder('7bit', true);
-
-        $os = $this->_createOutputByteStream();
-        $is = $this->_createInputByteStream();
-        $collection = new Swift_StreamCollector();
-
-        $this->_checking(Expectations::create()
-            -> allowing($is)->write(any(), optional()) -> will($collection)
-            -> ignoring($is)
-
-            -> one($os)->read(optional()) -> returns('a')
-            -> one($os)->read(optional()) -> returns("\n\n")
-            -> one($os)->read(optional()) -> returns('b')
-            -> allowing($os)->read(optional()) -> returns(false)
-
-            -> ignoring($os)
-            );
-
-        $encoder->encodeByteStream($os, $is);
-        $this->assertEqual("a\r\n\r\nb", $collection->content);
-    }
-
-    public function testCanonicEncodeByteStreamGeneratesCorrectCrlf_5()
-    {
-        $encoder = $this->_getEncoder('7bit', true);
-
-        $os = $this->_createOutputByteStream();
-        $is = $this->_createInputByteStream();
-        $collection = new Swift_StreamCollector();
-
-        $this->_checking(Expectations::create()
-            -> allowing($is)->write(any(), optional()) -> will($collection)
-            -> ignoring($is)
-
-            -> one($os)->read(optional()) -> returns('a')
-            -> one($os)->read(optional()) -> returns("\r\r")
-            -> one($os)->read(optional()) -> returns('b')
-            -> allowing($os)->read(optional()) -> returns(false)
-
-            -> ignoring($os)
-            );
-
-        $encoder->encodeByteStream($os, $is);
-        $this->assertEqual("a\r\n\r\nb", $collection->content);
-    }
-
-    // -- Private helpers
-
-    private function _getEncoder($name, $canonical = false)
-    {
-        return new Swift_Mime_ContentEncoder_PlainContentEncoder($name, $canonical);
-    }
-
-    private function _createOutputByteStream($stub = false)
-    {
-        return $stub
-            ? $this->_stub('Swift_OutputByteStream')
-            : $this->_mock('Swift_OutputByteStream')
-            ;
-    }
-
-    private function _createInputByteStream($stub = false)
-    {
-        return $stub
-            ? $this->_stub('Swift_InputByteStream')
-            : $this->_mock('Swift_InputByteStream')
-            ;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

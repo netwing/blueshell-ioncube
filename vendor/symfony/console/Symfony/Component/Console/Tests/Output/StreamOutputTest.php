@@ -1,60 +1,46 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\Console\Tests\Output;
-
-use Symfony\Component\Console\Output\Output;
-use Symfony\Component\Console\Output\StreamOutput;
-
-class StreamOutputTest extends \PHPUnit_Framework_TestCase
-{
-    protected $stream;
-
-    protected function setUp()
-    {
-        $this->stream = fopen('php://memory', 'a', false);
-    }
-
-    protected function tearDown()
-    {
-        $this->stream = null;
-    }
-
-    public function testConstructor()
-    {
-        $output = new StreamOutput($this->stream, Output::VERBOSITY_QUIET, true);
-        $this->assertEquals(Output::VERBOSITY_QUIET, $output->getVerbosity(), '__construct() takes the verbosity as its first argument');
-        $this->assertTrue($output->isDecorated(), '__construct() takes the decorated flag as its second argument');
-    }
-
-    /**
-     * @expectedException        \InvalidArgumentException
-     * @expectedExceptionMessage The StreamOutput class needs a stream as its first argument.
-     */
-    public function testStreamIsRequired()
-    {
-        new StreamOutput('foo');
-    }
-
-    public function testGetStream()
-    {
-        $output = new StreamOutput($this->stream);
-        $this->assertEquals($this->stream, $output->getStream(), '->getStream() returns the current stream');
-    }
-
-    public function testDoWrite()
-    {
-        $output = new StreamOutput($this->stream);
-        $output->writeln('foo');
-        rewind($output->getStream());
-        $this->assertEquals('foo'.PHP_EOL, stream_get_contents($output->getStream()), '->doWrite() writes to the stream');
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+Pxf897HX

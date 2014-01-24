@@ -1,53 +1,30 @@
-<?php
-/**
- * CExtController class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-
-/**
- * CExtController is the base class for controllers distributed as extension.
- *
- * The main purpose of CExtController is to redefine the {@link viewPath} property
- * so that it points to the "views" subdirectory under the directory containing
- * the controller class file.
- *
- * @property string $viewPath The directory containing the view files for this controller.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.web
- * @since 1.0
- */
-class CExtController extends CController
-{
-	private $_viewPath;
-
-	/**
-	 * Returns the directory containing view files for this controller.
-	 * This method overrides the parent implementation by specifying the view path
-	 * to be the "views" subdirectory under the directory containing the controller
-	 * class file.
-	 * @return string the directory containing the view files for this controller.
-	 */
-	public function getViewPath()
-	{
-		if($this->_viewPath===null)
-		{
-			$class=new ReflectionClass(get_class($this));
-			$this->_viewPath=dirname($class->getFileName()).DIRECTORY_SEPARATOR.'views';
-		}
-		return $this->_viewPath;
-	}
-
-	/**
-	 * @param string $value the directory containing the view files for this controller.
-	 */
-	public function setViewPath($value)
-	{
-		$this->_viewPath=$value;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

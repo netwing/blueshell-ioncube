@@ -1,67 +1,39 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\Process;
-
-/**
- * An executable finder specifically designed for the PHP executable.
- *
- * @author Fabien Potencier <fabien@symfony.com>
- * @author Johannes M. Schmitt <schmittjoh@gmail.com>
- */
-class PhpExecutableFinder
-{
-    private $executableFinder;
-
-    public function __construct()
-    {
-        $this->executableFinder = new ExecutableFinder();
-    }
-
-    /**
-     * Finds The PHP executable.
-     *
-     * @return string|false The PHP executable path or false if it cannot be found
-     */
-    public function find()
-    {
-        // HHVM support
-        if (defined('HHVM_VERSION') && false !== $hhvm = getenv('PHP_BINARY')) {
-            return $hhvm;
-        }
-
-        // PHP_BINARY return the current sapi executable
-        if (defined('PHP_BINARY') && PHP_BINARY && in_array(PHP_SAPI, array('cli', 'cli-server')) && is_file(PHP_BINARY)) {
-            return PHP_BINARY;
-        }
-
-        if ($php = getenv('PHP_PATH')) {
-            if (!is_executable($php)) {
-                return false;
-            }
-
-            return $php;
-        }
-
-        if ($php = getenv('PHP_PEAR_PHP_BIN')) {
-            if (is_executable($php)) {
-                return $php;
-            }
-        }
-
-        $dirs = array(PHP_BINDIR);
-        if (defined('PHP_WINDOWS_VERSION_BUILD')) {
-            $dirs[] = 'C:\xampp\php\\';
-        }
-
-        return $this->executableFinder->find('php', false, $dirs);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+OzqB8p1HMes/dN40s0==

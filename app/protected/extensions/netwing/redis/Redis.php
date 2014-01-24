@@ -1,97 +1,43 @@
-<?php
-/**
-* NRedis class file
-*
-* use and modify it as you wish
-* 
-* @author Emanuele Deserti <emanuele.deserti@netwing.it>
-* @license http://www.opensource.org/licenses/gpl-3.0.html
-*
-*/
-
-/**
-* NRedis uses Predis client as redis php client{@link https://github.com/nrk/predis predis}.
-*/
-class Redis
-{
-    /**
-    * @var Redis the Redis instance
-    */
-    protected $_redis = null;
-    /**
-    * @var array list of servers 
-    */
-    protected $_servers = array();
-
-    /**
-     * @var string predis path
-     */
-    private $predis_path = "vendor.predis.predis.lib.Predis";
-
-    /**
-    * @var string list of servers 
-    */
-    public $servers = array(
-        'host' => '127.0.0.1',
-        'port' => 6379
-    );
-
-    /**
-    * @var ID of database
-    */
-    public $database = 0;
-
-    /**
-    * @var Prefix for keys
-    */
-    public $prefix = "";
-
-    /**
-    * Initializes this application component.
-    * This method is required by the {@link IApplicationComponent} interface.
-    * It creates the redis instance and adds redis servers.
-    * @throws CException if redis extension is not loaded
-    */
-    public function init()
-    {
-        $this->getRedis();
-    }
-
-    /**
-    * @return mixed the redis instance (or redisd if {@link useRedisd} is true) used by this component.
-    */
-    public function getRedis()
-    {
-        if ($this->_redis!==null) {
-            return $this->_redis;
-        } 
-
-        // Disable Yii autoload
-        spl_autoload_unregister(array('YiiBase', 'autoload'));
-        // Start Redis connection
-        Yii::log('Opening Redis connection', CLogger::LEVEL_TRACE);
-        if (isset($this->prefix) and $this->prefix != "" and strlen($this->prefix) > 0) {
-            $this->_redis = new Predis\Client($this->servers, array('prefix' => $this->prefix));
-        } else {
-            $this->_redis = new Predis\Client($this->servers);
-        }
-
-        if (isset($this->database) and $this->database > 0) {
-            $this->_redis->SELECT($this->database);
-        }
-        // Re-enable Yii autoload
-        spl_autoload_register(array('YiiBase', 'autoload'));
-
-        return $this->_redis;
-    }
-
-    /**
-    * call unusual method
-    * */
-    public function __call($method,$args)
-    {
-        return call_user_func_array(array($this->_redis,$method),$args);
-    }
-
-}
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

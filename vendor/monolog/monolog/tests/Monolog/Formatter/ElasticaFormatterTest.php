@@ -1,80 +1,47 @@
-<?php
-
-/*
- * This file is part of the Monolog package.
- *
- * (c) Jordi Boggiano <j.boggiano@seld.be>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Monolog\Formatter;
-
-use Monolog\Logger;
-use Monolog\Formatter\ElasticaFormatter;
-
-class ElasticaFormatterTest extends \PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        if (!class_exists("Elastica\Document")) {
-            $this->markTestSkipped("ruflin/elastica not installed");
-        }
-    }
-
-    /**
-     * @covers Monolog\Formatter\ElasticaFormatter::__construct
-     * @covers Monolog\Formatter\ElasticaFormatter::format
-     * @covers Monolog\Formatter\ElasticaFormatter::getDocument
-     */
-    public function testFormat()
-    {
-        // test log message
-        $msg = array(
-            'level' => Logger::ERROR,
-            'level_name' => 'ERROR',
-            'channel' => 'meh',
-            'context' => array('foo' => 7, 'bar', 'class' => new \stdClass),
-            'datetime' => new \DateTime("@0"),
-            'extra' => array(),
-            'message' => 'log',
-        );
-
-        // expected values
-        $expected = $msg;
-        $expected['datetime'] = '1970-01-01T00:00:00+0000';
-        $expected['context'] = array(
-            'class' => '[object] (stdClass: {})',
-            'foo' => 7,
-            0 => 'bar',
-        );
-
-        // format log message
-        $formatter = new ElasticaFormatter('my_index', 'doc_type');
-        $doc = $formatter->format($msg);
-        $this->assertInstanceOf('Elastica\Document', $doc);
-
-        // Document parameters
-        $params = $doc->getParams();
-        $this->assertEquals('my_index', $params['_index']);
-        $this->assertEquals('doc_type', $params['_type']);
-
-        // Document data values
-        $data = $doc->getData();
-        foreach (array_keys($expected) as $key) {
-            $this->assertEquals($expected[$key], $data[$key]);
-        }
-    }
-
-    /**
-     * @covers Monolog\Formatter\ElasticaFormatter::getIndex
-     * @covers Monolog\Formatter\ElasticaFormatter::getType
-     */
-    public function testGetters()
-    {
-        $formatter = new ElasticaFormatter('my_index', 'doc_type');
-        $this->assertEquals('my_index', $formatter->getIndex());
-        $this->assertEquals('doc_type', $formatter->getType());
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+jYkverMSfm==

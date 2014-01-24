@@ -1,385 +1,190 @@
-<?php
-/**
- * Phing wrapper around git subsplit.
- *
- * @see https://github.com/dflydev/git-subsplit
- * @copyright 2012 Clay Loveless <clay@php.net>
- * @license   http://claylo.mit-license.org/2012/ MIT License
- */
-
-require_once 'phing/tasks/ext/git/GitBaseTask.php';
-
-// base - base of tree to split out
-// subIndicatorFile - composer.json, package.xml?
-class GuzzleSubSplitTask extends GitBaseTask
-{
-    /**
-     * What git repository to pull from and publish to
-     */
-    protected $remote = null;
-
-    /**
-     * Publish for comma-separated heads instead of all heads
-     */
-    protected $heads = null;
-
-    /**
-     * Publish for comma-separated tags instead of all tags
-     */
-    protected $tags = null;
-
-    /**
-     * Base of the tree RELATIVE TO .subsplit working dir
-     */
-    protected $base = null;
-
-    /**
-     * The presence of this file will indicate that the directory it resides
-     * in is at the top level of a split.
-     */
-    protected $subIndicatorFile = 'composer.json';
-
-    /**
-     * Do everything except actually send the update.
-     */
-    protected $dryRun = null;
-
-    /**
-     * Do not sync any heads.
-     */
-    protected $noHeads = false;
-
-    /**
-     * Do not sync any tags.
-     */
-    protected $noTags = false;
-
-    /**
-     * The splits we found in the heads
-     */
-    protected $splits;
-
-    public function setRemote($str)
-    {
-        $this->remote = $str;
-    }
-
-    public function getRemote()
-    {
-        return $this->remote;
-    }
-
-    public function setHeads($str)
-    {
-        $this->heads = explode(',', $str);
-    }
-
-    public function getHeads()
-    {
-        return $this->heads;
-    }
-
-    public function setTags($str)
-    {
-        $this->tags = explode(',', $str);
-    }
-
-    public function getTags()
-    {
-        return $this->tags;
-    }
-
-    public function setBase($str)
-    {
-        $this->base = $str;
-    }
-
-    public function getBase()
-    {
-        return $this->base;
-    }
-
-    public function setSubIndicatorFile($str)
-    {
-        $this->subIndicatorFile = $str;
-    }
-
-    public function getSubIndicatorFile()
-    {
-        return $this->subIndicatorFile;
-    }
-
-    public function setDryRun($bool)
-    {
-        $this->dryRun = (bool) $bool;
-    }
-
-    public function getDryRun()
-    {
-        return $this->dryRun;
-    }
-
-    public function setNoHeads($bool)
-    {
-        $this->noHeads = (bool) $bool;
-    }
-
-    public function getNoHeads()
-    {
-        return $this->noHeads;
-    }
-
-    public function setNoTags($bool)
-    {
-        $this->noTags = (bool) $bool;
-    }
-
-    public function getNoTags()
-    {
-        return $this->noTags;
-    }
-
-    /**
-     * GitClient from VersionControl_Git
-     */
-    protected $client   = null;
-
-    /**
-     * The main entry point
-     */
-    public function main()
-    {
-        $repo = $this->getRepository();
-        if (empty($repo)) {
-            throw new BuildException('"repository" is a required parameter');
-        }
-
-        $remote = $this->getRemote();
-        if (empty($remote)) {
-            throw new BuildException('"remote" is a required parameter');
-        }
-
-        chdir($repo);
-        $this->client = $this->getGitClient(false, $repo);
-
-        // initalized yet?
-        if (!is_dir('.subsplit')) {
-            $this->subsplitInit();
-        } else {
-            // update
-            $this->subsplitUpdate();
-        }
-
-        // find all splits based on heads requested
-        $this->findSplits();
-
-        // check that GitHub has the repos
-        $this->verifyRepos();
-
-        // execute the subsplits
-        $this->publish();
-    }
-
-    public function publish()
-    {
-        $this->log('DRY RUN ONLY FOR NOW');
-        $base = $this->getBase();
-        $base = rtrim($base, '/') . '/';
-        $org = $this->getOwningTarget()->getProject()->getProperty('github.org');
-
-        $splits = array();
-
-        $heads = $this->getHeads();
-        foreach ($heads as $head) {
-            foreach ($this->splits[$head] as $component => $meta) {
-                $splits[] = $base . $component . ':git@github.com:'. $org.'/'.$meta['repo'];
-            }
-
-            $cmd = 'git subsplit publish ';
-            $cmd .= escapeshellarg(implode(' ', $splits));
-
-            if ($this->getNoHeads()) {
-                $cmd .= ' --no-heads';
-            } else {
-                $cmd .= ' --heads='.$head;
-            }
-
-            if ($this->getNoTags()) {
-                $cmd .= ' --no-tags';
-            } else {
-                if ($this->getTags()) {
-                    $cmd .= ' --tags=' . escapeshellarg(implode(' ', $this->getTags()));
-                }
-            }
-
-            passthru($cmd);
-        }
-    }
-
-    /**
-     * Runs `git subsplit update`
-     */
-    public function subsplitUpdate()
-    {
-        $repo = $this->getRepository();
-        $this->log('git-subsplit update...');
-        $cmd = $this->client->getCommand('subsplit');
-        $cmd->addArgument('update');
-        try {
-            $output = $cmd->execute();
-        } catch (Exception $e) {
-            throw new BuildException('git subsplit update failed'. $e);
-        }
-        chdir($repo . '/.subsplit');
-        passthru('php ../composer.phar update --dev');
-        chdir($repo);
-    }
-
-    /**
-     * Runs `git subsplit init` based on the remote repository.
-     */
-    public function subsplitInit()
-    {
-        $remote = $this->getRemote();
-        $cmd = $this->client->getCommand('subsplit');
-        $this->log('running git-subsplit init ' . $remote);
-
-        $cmd->setArguments(array(
-            'init',
-            $remote
-        ));
-
-        try {
-            $output = $cmd->execute();
-        } catch (Exception $e) {
-            throw new BuildException('git subsplit init failed'. $e);
-        }
-        $this->log(trim($output), Project::MSG_INFO);
-        $repo = $this->getRepository();
-        chdir($repo . '/.subsplit');
-        passthru('php ../composer.phar install --dev');
-        chdir($repo);
-    }
-
-    /**
-     * Find the composer.json files using Phing's directory scanner
-     *
-     * @return array
-     */
-    protected function findSplits()
-    {
-        $this->log("checking heads for subsplits");
-        $repo = $this->getRepository();
-        $base = $this->getBase();
-
-        $splits = array();
-        $heads = $this->getHeads();
-
-        if (!empty($base)) {
-            $base = '/' . ltrim($base, '/');
-        } else {
-            $base = '/';
-        }
-
-        chdir($repo . '/.subsplit');
-        foreach ($heads as $head) {
-            $splits[$head] = array();
-
-            // check each head requested *BEFORE* the actual subtree split command gets it
-            passthru("git checkout '$head'");
-            $ds = new DirectoryScanner();
-            $ds->setBasedir($repo . '/.subsplit' . $base);
-            $ds->setIncludes(array('**/'.$this->subIndicatorFile));
-            $ds->scan();
-            $files = $ds->getIncludedFiles();
-
-            // Process the files we found
-            foreach ($files as $file) {
-                $pkg = file_get_contents($repo . '/.subsplit' . $base .'/'. $file);
-                $pkg_json = json_decode($pkg, true);
-                $name = $pkg_json['name'];
-                $component = str_replace('/composer.json', '', $file);
-                // keep this for split cmd
-                $tmpreponame = explode('/', $name);
-                $reponame = $tmpreponame[1];
-                $splits[$head][$component]['repo'] = $reponame;
-                $nscomponent = str_replace('/', '\\', $component);
-                $splits[$head][$component]['desc'] = "[READ ONLY] Subtree split of $nscomponent: " . $pkg_json['description'];
-            }
-        }
-
-        // go back to how we found it
-        passthru("git checkout master");
-        chdir($repo);
-        $this->splits = $splits;
-    }
-
-    /**
-     * Based on list of repositories we determined we *should* have, talk
-     * to GitHub and make sure they're all there.
-     *
-     */
-    protected function verifyRepos()
-    {
-        $this->log('verifying GitHub target repos');
-        $github_org = $this->getOwningTarget()->getProject()->getProperty('github.org');
-        $github_creds = $this->getOwningTarget()->getProject()->getProperty('github.basicauth');
-
-        if ($github_creds == 'username:password') {
-            $this->log('Skipping GitHub repo checks. Update github.basicauth in build.properties to verify repos.', 1);
-            return;
-        }
-
-        $ch = curl_init('https://api.github.com/orgs/'.$github_org.'/repos?type=all');
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_USERPWD, $github_creds);
-        // change this when we know we can use our bundled CA bundle!
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        $result = curl_exec($ch);
-        curl_close($ch);
-        $repos = json_decode($result, true);
-        $existing_repos = array();
-
-        // parse out the repos we found on GitHub
-        foreach ($repos as $repo) {
-            $tmpreponame = explode('/', $repo['full_name']);
-            $reponame = $tmpreponame[1];
-            $existing_repos[$reponame] = $repo['description'];
-        }
-
-        $heads = $this->getHeads();
-        foreach ($heads as $head) {
-            foreach ($this->splits[$head] as $component => $meta) {
-
-                $reponame = $meta['repo'];
-
-                if (!isset($existing_repos[$reponame])) {
-                    $this->log("Creating missing repo $reponame");
-                    $payload = array(
-                        'name' => $reponame,
-                        'description' => $meta['desc'],
-                        'homepage' => 'http://www.guzzlephp.org/',
-                        'private' => true,
-                        'has_issues' => false,
-                        'has_wiki' => false,
-                        'has_downloads' => true,
-                        'auto_init' => false
-                    );
-                    $ch = curl_init('https://api.github.com/orgs/'.$github_org.'/repos');
-                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                    curl_setopt($ch, CURLOPT_USERPWD, $github_creds);
-                    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-                    curl_setopt($ch, CURLOPT_POST, 1);
-                    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
-                    // change this when we know we can use our bundled CA bundle!
-                    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-                    $result = curl_exec($ch);
-                    echo "Response code: ".curl_getinfo($ch, CURLINFO_HTTP_CODE)."\n";
-                    curl_close($ch);
-                } else {
-                    $this->log("Repo $reponame exists", 2);
-                }
-            }
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

@@ -1,160 +1,87 @@
-<?php
-/**
- * CPhpMessageSource class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CPhpMessageSource represents a message source that stores translated messages in PHP scripts.
- *
- * CPhpMessageSource uses PHP files and arrays to keep message translations.
- * <ul>
- * <li>All translations are saved under the {@link basePath} directory.</li>
- * <li>Translations in one language are kept as PHP files under an individual subdirectory
- *   whose name is the same as the language ID. Each PHP file contains messages
- *   belonging to the same category, and the file name is the same as the category name.</li>
- * <li>Within a PHP file, an array of (source, translation) pairs is returned.
- * For example:
- * <pre>
- * return array(
- *     'original message 1' => 'translated message 1',
- *     'original message 2' => 'translated message 2',
- * );
- * </pre>
- * </li>
- * </ul>
- * When {@link cachingDuration} is set as a positive number, message translations will be cached.
- *
- * Messages for an extension class (e.g. a widget, a module) can be specially managed and used.
- * In particular, if a message belongs to an extension whose class name is Xyz, then the message category
- * can be specified in the format of 'Xyz.categoryName'. And the corresponding message file
- * is assumed to be 'BasePath/messages/LanguageID/categoryName.php', where 'BasePath' refers to
- * the directory that contains the extension class file. When using Yii::t() to translate an extension message,
- * the category name should be set as 'Xyz.categoryName'.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.i18n
- * @since 1.0
- */
-class CPhpMessageSource extends CMessageSource
-{
-	const CACHE_KEY_PREFIX='Yii.CPhpMessageSource.';
-
-	/**
-	 * @var integer the time in seconds that the messages can remain valid in cache.
-	 * Defaults to 0, meaning the caching is disabled.
-	 */
-	public $cachingDuration=0;
-	/**
-	 * @var string the ID of the cache application component that is used to cache the messages.
-	 * Defaults to 'cache' which refers to the primary cache application component.
-	 * Set this property to false if you want to disable caching the messages.
-	 */
-	public $cacheID='cache';
-	/**
-	 * @var string the base path for all translated messages. Defaults to null, meaning
-	 * the "messages" subdirectory of the application directory (e.g. "protected/messages").
-	 */
-	public $basePath;
-	/**
-	 * @var array the message paths for extensions that do not have a base class to use as category prefix.
-	 * The format of the array should be:
-	 * <pre>
-	 * array(
-	 *     'ExtensionName' => 'ext.ExtensionName.messages',
-	 * )
-	 * </pre>
-	 * Where the key is the name of the extension and the value is the alias to the path
-	 * of the "messages" subdirectory of the extension.
-	 * When using Yii::t() to translate an extension message, the category name should be
-	 * set as 'ExtensionName.categoryName'.
-	 * Defaults to an empty array, meaning no extensions registered.
-	 * @since 1.1.13
-	 */
-	public $extensionPaths=array();
-
-	private $_files=array();
-
-	/**
-	 * Initializes the application component.
-	 * This method overrides the parent implementation by preprocessing
-	 * the user request data.
-	 */
-	public function init()
-	{
-		parent::init();
-		if($this->basePath===null)
-			$this->basePath=Yii::getPathOfAlias('application.messages');
-	}
-
-	/**
-	 * Determines the message file name based on the given category and language.
-	 * If the category name contains a dot, it will be split into the module class name and the category name.
-	 * In this case, the message file will be assumed to be located within the 'messages' subdirectory of
-	 * the directory containing the module class file.
-	 * Otherwise, the message file is assumed to be under the {@link basePath}.
-	 * @param string $category category name
-	 * @param string $language language ID
-	 * @return string the message file path
-	 */
-	protected function getMessageFile($category,$language)
-	{
-		if(!isset($this->_files[$category][$language]))
-		{
-			if(($pos=strpos($category,'.'))!==false)
-			{
-				$extensionClass=substr($category,0,$pos);
-				$extensionCategory=substr($category,$pos+1);
-				// First check if there's an extension registered for this class.
-				if(isset($this->extensionPaths[$extensionClass]))
-					$this->_files[$category][$language]=Yii::getPathOfAlias($this->extensionPaths[$extensionClass]).DIRECTORY_SEPARATOR.$language.DIRECTORY_SEPARATOR.$extensionCategory.'.php';
-				else
-				{
-					// No extension registered, need to find it.
-					$class=new ReflectionClass($extensionClass);
-					$this->_files[$category][$language]=dirname($class->getFileName()).DIRECTORY_SEPARATOR.'messages'.DIRECTORY_SEPARATOR.$language.DIRECTORY_SEPARATOR.$extensionCategory.'.php';
-				}
-			}
-			else
-				$this->_files[$category][$language]=$this->basePath.DIRECTORY_SEPARATOR.$language.DIRECTORY_SEPARATOR.$category.'.php';
-		}
-		return $this->_files[$category][$language];
-	}
-
-	/**
-	 * Loads the message translation for the specified language and category.
-	 * @param string $category the message category
-	 * @param string $language the target language
-	 * @return array the loaded messages
-	 */
-	protected function loadMessages($category,$language)
-	{
-		$messageFile=$this->getMessageFile($category,$language);
-
-		if($this->cachingDuration>0 && $this->cacheID!==false && ($cache=Yii::app()->getComponent($this->cacheID))!==null)
-		{
-			$key=self::CACHE_KEY_PREFIX . $messageFile;
-			if(($data=$cache->get($key))!==false)
-				return unserialize($data);
-		}
-
-		if(is_file($messageFile))
-		{
-			$messages=include($messageFile);
-			if(!is_array($messages))
-				$messages=array();
-			if(isset($cache))
-			{
-				$dependency=new CFileCacheDependency($messageFile);
-				$cache->set($key,serialize($messages),$this->cachingDuration,$dependency);
-			}
-			return $messages;
-		}
-		else
-			return array();
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

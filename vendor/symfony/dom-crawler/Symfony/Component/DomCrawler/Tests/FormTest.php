@@ -1,839 +1,442 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\DomCrawler\Tests;
-
-use Symfony\Component\DomCrawler\Form;
-use Symfony\Component\DomCrawler\FormFieldRegistry;
-use Symfony\Component\DomCrawler\Field;
-
-class FormTest extends \PHPUnit_Framework_TestCase
-{
-    public static function setUpBeforeClass()
-    {
-        // Ensure that the private helper class FormFieldRegistry is loaded
-        class_exists('Symfony\\Component\\DomCrawler\\Form');
-    }
-
-    public function testConstructorThrowsExceptionIfTheNodeHasNoFormAncestor()
-    {
-        $dom = new \DOMDocument();
-        $dom->loadHTML('
-            <html>
-                <input type="submit" />
-                <form>
-                    <input type="foo" />
-                </form>
-                <button />
-            </html>
-        ');
-
-        $nodes = $dom->getElementsByTagName('input');
-
-        try {
-            $form = new Form($nodes->item(0), 'http://example.com');
-            $this->fail('__construct() throws a \\LogicException if the node has no form ancestor');
-        } catch (\LogicException $e) {
-            $this->assertTrue(true, '__construct() throws a \\LogicException if the node has no form ancestor');
-        }
-
-        try {
-            $form = new Form($nodes->item(1), 'http://example.com');
-            $this->fail('__construct() throws a \\LogicException if the input type is not submit, button, or image');
-        } catch (\LogicException $e) {
-            $this->assertTrue(true, '__construct() throws a \\LogicException if the input type is not submit, button, or image');
-        }
-
-        $nodes = $dom->getElementsByTagName('button');
-
-        try {
-            $form = new Form($nodes->item(0), 'http://example.com');
-            $this->fail('__construct() throws a \\LogicException if the node has no form ancestor');
-        } catch (\LogicException $e) {
-            $this->assertTrue(true, '__construct() throws a \\LogicException if the node has no form ancestor');
-        }
-    }
-
-    /**
-     * __construct() should throw \\LogicException if the form attribute is invalid
-     * @expectedException \LogicException
-     */
-    public function testConstructorThrowsExceptionIfNoRelatedForm()
-    {
-        $dom = new \DOMDocument();
-        $dom->loadHTML('
-            <html>
-                <form id="bar">
-                    <input type="submit" form="nonexistent" />
-                </form>
-                <input type="text" form="nonexistent" />
-                <button />
-            </html>
-        ');
-
-        $nodes = $dom->getElementsByTagName('input');
-
-        $form = new Form($nodes->item(0), 'http://example.com');
-        $form = new Form($nodes->item(1), 'http://example.com');
-    }
-
-    public function testConstructorHandlesFormAttribute()
-    {
-        $dom = $this->createTestHtml5Form();
-
-        $inputElements = $dom->getElementsByTagName('input');
-        $buttonElements = $dom->getElementsByTagName('button');
-
-        // Tests if submit buttons are correctly assigned to forms
-        $form1 = new Form($buttonElements->item(1), 'http://example.com');
-        $this->assertSame($dom->getElementsByTagName('form')->item(0), $form1->getFormNode(), 'HTML5-compliant form attribute handled incorrectly');
-
-        $form1 = new Form($inputElements->item(3), 'http://example.com');
-        $this->assertSame($dom->getElementsByTagName('form')->item(0), $form1->getFormNode(), 'HTML5-compliant form attribute handled incorrectly');
-
-        $form2 = new Form($buttonElements->item(0), 'http://example.com');
-        $this->assertSame($dom->getElementsByTagName('form')->item(1), $form2->getFormNode(), 'HTML5-compliant form attribute handled incorrectly');
-    }
-
-    public function testConstructorHandlesFormValues()
-    {
-        $dom = $this->createTestHtml5Form();
-
-        $inputElements = $dom->getElementsByTagName('input');
-        $buttonElements = $dom->getElementsByTagName('button');
-
-        $form1 = new Form($inputElements->item(3), 'http://example.com');
-        $form2 = new Form($buttonElements->item(0), 'http://example.com');
-
-        // Tests if form values are correctly assigned to forms
-        $values1 = array(
-            'apples' => array('1', '2'),
-            'form_name' => 'form-1',
-            'button_1' => 'Capture fields',
-            'outer_field' => 'success'
-        );
-        $values2 = array(
-            'oranges' => array('1', '2', '3'),
-            'form_name' => 'form_2',
-            'button_2' => '',
-            'app_frontend_form_type_contact_form_type' => array('contactType' => '', 'firstName' => 'John')
-        );
-
-        $this->assertEquals($values1, $form1->getPhpValues(), 'HTML5-compliant form attribute handled incorrectly');
-        $this->assertEquals($values2, $form2->getPhpValues(), 'HTML5-compliant form attribute handled incorrectly');
-    }
-
-    public function testMultiValuedFields()
-    {
-        $form = $this->createForm('<form>
-            <input type="text" name="foo[4]" value="foo" disabled="disabled" />
-            <input type="text" name="foo" value="foo" disabled="disabled" />
-            <input type="text" name="foo[2]" value="foo" disabled="disabled" />
-            <input type="text" name="foo[]" value="foo" disabled="disabled" />
-            <input type="text" name="bar[foo][]" value="foo" disabled="disabled" />
-            <input type="text" name="bar[foo][foobar]" value="foo" disabled="disabled" />
-            <input type="submit" />
-        </form>
-        ');
-
-        $this->assertEquals(
-            array_keys($form->all()),
-            array('foo[2]', 'foo[3]', 'bar[foo][0]', 'bar[foo][foobar]')
-        );
-
-        $this->assertEquals($form->get('foo[2]')->getValue(), 'foo');
-        $this->assertEquals($form->get('foo[3]')->getValue(), 'foo');
-        $this->assertEquals($form->get('bar[foo][0]')->getValue(), 'foo');
-        $this->assertEquals($form->get('bar[foo][foobar]')->getValue(), 'foo');
-
-        $form['foo[2]'] = 'bar';
-        $form['foo[3]'] = 'bar';
-
-        $this->assertEquals($form->get('foo[2]')->getValue(), 'bar');
-        $this->assertEquals($form->get('foo[3]')->getValue(), 'bar');
-
-        $form['bar'] = array('foo' => array('0' => 'bar', 'foobar' => 'foobar'));
-
-        $this->assertEquals($form->get('bar[foo][0]')->getValue(), 'bar');
-        $this->assertEquals($form->get('bar[foo][foobar]')->getValue(), 'foobar');
-
-    }
-
-    /**
-     * @dataProvider provideInitializeValues
-     */
-    public function testConstructor($message, $form, $values)
-    {
-        $form = $this->createForm('<form>'.$form.'</form>');
-        $this->assertEquals(
-            $values,
-            array_map(function ($field) {
-                    $class = get_class($field);
-
-                    return array(substr($class, strrpos($class, '\\') + 1), $field->getValue());
-                },
-                $form->all()
-            ),
-            '->getDefaultValues() '.$message
-        );
-    }
-
-    public function provideInitializeValues()
-    {
-        return array(
-            array(
-                'does not take into account input fields without a name attribute',
-                '<input type="text" value="foo" />
-                 <input type="submit" />',
-                array(),
-            ),
-            array(
-                'does not take into account input fields with an empty name attribute value',
-                '<input type="text" name="" value="foo" />
-                 <input type="submit" />',
-                array(),
-            ),
-            array(
-                'takes into account disabled input fields',
-                '<input type="text" name="foo" value="foo" disabled="disabled" />
-                 <input type="submit" />',
-                array('foo' => array('InputFormField', 'foo')),
-            ),
-            array(
-                'appends the submitted button value',
-                '<input type="submit" name="bar" value="bar" />',
-                array('bar' => array('InputFormField', 'bar')),
-            ),
-            array(
-                'appends the submitted button value for Button element',
-                '<button type="submit" name="bar" value="bar">Bar</button>',
-                array('bar' => array('InputFormField', 'bar')),
-            ),
-            array(
-                'appends the submitted button value but not other submit buttons',
-                '<input type="submit" name="bar" value="bar" />
-                 <input type="submit" name="foobar" value="foobar" />',
-                 array('foobar' => array('InputFormField', 'foobar')),
-            ),
-            array(
-                'returns textareas',
-                '<textarea name="foo">foo</textarea>
-                 <input type="submit" />',
-                 array('foo' => array('TextareaFormField', 'foo')),
-            ),
-            array(
-                'returns inputs',
-                '<input type="text" name="foo" value="foo" />
-                 <input type="submit" />',
-                 array('foo' => array('InputFormField', 'foo')),
-            ),
-            array(
-                'returns checkboxes',
-                '<input type="checkbox" name="foo" value="foo" checked="checked" />
-                 <input type="submit" />',
-                 array('foo' => array('ChoiceFormField', 'foo')),
-            ),
-            array(
-                'returns not-checked checkboxes',
-                '<input type="checkbox" name="foo" value="foo" />
-                 <input type="submit" />',
-                 array('foo' => array('ChoiceFormField', false)),
-            ),
-            array(
-                'returns radio buttons',
-                '<input type="radio" name="foo" value="foo" />
-                 <input type="radio" name="foo" value="bar" checked="bar" />
-                 <input type="submit" />',
-                 array('foo' => array('ChoiceFormField', 'bar')),
-            ),
-            array(
-                'returns file inputs',
-                '<input type="file" name="foo" />
-                 <input type="submit" />',
-                 array('foo' => array('FileFormField', array('name' => '', 'type' => '', 'tmp_name' => '', 'error' => 4, 'size' => 0))),
-            ),
-        );
-    }
-
-    public function testGetFormNode()
-    {
-        $dom = new \DOMDocument();
-        $dom->loadHTML('<html><form><input type="submit" /></form></html>');
-
-        $form = new Form($dom->getElementsByTagName('input')->item(0), 'http://example.com');
-
-        $this->assertSame($dom->getElementsByTagName('form')->item(0), $form->getFormNode(), '->getFormNode() returns the form node associated with this form');
-    }
-
-    public function testGetFormNodeFromNamedForm()
-    {
-        $dom = new \DOMDocument();
-        $dom->loadHTML('<html><form name="my_form"><input type="submit" /></form></html>');
-
-        $form = new Form($dom->getElementsByTagName('form')->item(0), 'http://example.com');
-
-        $this->assertSame($dom->getElementsByTagName('form')->item(0), $form->getFormNode(), '->getFormNode() returns the form node associated with this form');
-    }
-
-    public function testGetMethod()
-    {
-        $form = $this->createForm('<form><input type="submit" /></form>');
-        $this->assertEquals('GET', $form->getMethod(), '->getMethod() returns get if no method is defined');
-
-        $form = $this->createForm('<form method="post"><input type="submit" /></form>');
-        $this->assertEquals('POST', $form->getMethod(), '->getMethod() returns the method attribute value of the form');
-
-        $form = $this->createForm('<form method="post"><input type="submit" /></form>', 'put');
-        $this->assertEquals('PUT', $form->getMethod(), '->getMethod() returns the method defined in the constructor if provided');
-
-        $form = $this->createForm('<form method="post"><input type="submit" /></form>', 'delete');
-        $this->assertEquals('DELETE', $form->getMethod(), '->getMethod() returns the method defined in the constructor if provided');
-
-        $form = $this->createForm('<form method="post"><input type="submit" /></form>', 'patch');
-        $this->assertEquals('PATCH', $form->getMethod(), '->getMethod() returns the method defined in the constructor if provided');
-    }
-
-    public function testGetSetValue()
-    {
-        $form = $this->createForm('<form><input type="text" name="foo" value="foo" /><input type="submit" /></form>');
-
-        $this->assertEquals('foo', $form['foo']->getValue(), '->offsetGet() returns the value of a form field');
-
-        $form['foo'] = 'bar';
-
-        $this->assertEquals('bar', $form['foo']->getValue(), '->offsetSet() changes the value of a form field');
-
-        try {
-            $form['foobar'] = 'bar';
-            $this->fail('->offsetSet() throws an \InvalidArgumentException exception if the field does not exist');
-        } catch (\InvalidArgumentException $e) {
-            $this->assertTrue(true, '->offsetSet() throws an \InvalidArgumentException exception if the field does not exist');
-        }
-
-        try {
-            $form['foobar'];
-            $this->fail('->offsetSet() throws an \InvalidArgumentException exception if the field does not exist');
-        } catch (\InvalidArgumentException $e) {
-            $this->assertTrue(true, '->offsetSet() throws an \InvalidArgumentException exception if the field does not exist');
-        }
-    }
-
-    public function testSetValueOnMultiValuedFieldsWithMalformedName()
-    {
-        $form = $this->createForm('<form><input type="text" name="foo[bar]" value="bar" /><input type="text" name="foo[baz]" value="baz" /><input type="submit" /></form>');
-
-        try {
-            $form['foo[bar'] = 'bar';
-            $this->fail('->offsetSet() throws an \InvalidArgumentException exception if the name is malformed.');
-        } catch (\InvalidArgumentException $e) {
-            $this->assertTrue(true, '->offsetSet() throws an \InvalidArgumentException exception if the name is malformed.');
-        }
-    }
-
-    public function testDisableValidation()
-    {
-        $form = $this->createForm('<form>
-            <select name="foo[bar]">
-                <option value="bar">bar</option>
-            </select>
-            <select name="foo[baz]">
-                <option value="foo">foo</option>
-            </select>
-            <input type="submit" />
-        </form>');
-
-        $form->disableValidation();
-
-        $form['foo[bar]']->select('foo');
-        $form['foo[baz]']->select('bar');
-        $this->assertEquals('foo', $form['foo[bar]']->getValue(), '->disableValidation() disables validation of all ChoiceFormField.');
-        $this->assertEquals('bar', $form['foo[baz]']->getValue(), '->disableValidation() disables validation of all ChoiceFormField.');
-    }
-
-    public function testOffsetUnset()
-    {
-        $form = $this->createForm('<form><input type="text" name="foo" value="foo" /><input type="submit" /></form>');
-        unset($form['foo']);
-        $this->assertFalse(isset($form['foo']), '->offsetUnset() removes a field');
-    }
-
-    public function testOffsetExists()
-    {
-        $form = $this->createForm('<form><input type="text" name="foo" value="foo" /><input type="submit" /></form>');
-
-        $this->assertTrue(isset($form['foo']), '->offsetExists() return true if the field exists');
-        $this->assertFalse(isset($form['bar']), '->offsetExists() return false if the field does not exist');
-    }
-
-    public function testGetValues()
-    {
-        $form = $this->createForm('<form><input type="text" name="foo[bar]" value="foo" /><input type="text" name="bar" value="bar" /><input type="submit" /></form>');
-        $this->assertEquals(array('foo[bar]' => 'foo', 'bar' => 'bar'), $form->getValues(), '->getValues() returns all form field values');
-
-        $form = $this->createForm('<form><input type="checkbox" name="foo" value="foo" /><input type="text" name="bar" value="bar" /><input type="submit" /></form>');
-        $this->assertEquals(array('bar' => 'bar'), $form->getValues(), '->getValues() does not include not-checked checkboxes');
-
-        $form = $this->createForm('<form><input type="file" name="foo" value="foo" /><input type="text" name="bar" value="bar" /><input type="submit" /></form>');
-        $this->assertEquals(array('bar' => 'bar'), $form->getValues(), '->getValues() does not include file input fields');
-
-        $form = $this->createForm('<form><input type="text" name="foo" value="foo" disabled="disabled" /><input type="text" name="bar" value="bar" /><input type="submit" /></form>');
-        $this->assertEquals(array('bar' => 'bar'), $form->getValues(), '->getValues() does not include disabled fields');
-    }
-
-    public function testSetValues()
-    {
-        $form = $this->createForm('<form><input type="checkbox" name="foo" value="foo" checked="checked" /><input type="text" name="bar" value="bar" /><input type="submit" /></form>');
-        $form->setValues(array('foo' => false, 'bar' => 'foo'));
-        $this->assertEquals(array('bar' => 'foo'), $form->getValues(), '->setValues() sets the values of fields');
-    }
-
-    public function testMultiselectSetValues()
-    {
-        $form = $this->createForm('<form><select multiple="multiple" name="multi"><option value="foo">foo</option><option value="bar">bar</option></select><input type="submit" /></form>');
-        $form->setValues(array('multi' => array("foo", "bar")));
-        $this->assertEquals(array('multi' => array('foo', 'bar')), $form->getValues(), '->setValue() sets the values of select');
-    }
-
-    public function testGetPhpValues()
-    {
-        $form = $this->createForm('<form><input type="text" name="foo[bar]" value="foo" /><input type="text" name="bar" value="bar" /><input type="submit" /></form>');
-        $this->assertEquals(array('foo' => array('bar' => 'foo'), 'bar' => 'bar'), $form->getPhpValues(), '->getPhpValues() converts keys with [] to arrays');
-    }
-
-    public function testGetFiles()
-    {
-        $form = $this->createForm('<form><input type="file" name="foo[bar]" /><input type="text" name="bar" value="bar" /><input type="submit" /></form>');
-        $this->assertEquals(array(), $form->getFiles(), '->getFiles() returns an empty array if method is get');
-
-        $form = $this->createForm('<form method="post"><input type="file" name="foo[bar]" /><input type="text" name="bar" value="bar" /><input type="submit" /></form>');
-        $this->assertEquals(array('foo[bar]' => array('name' => '', 'type' => '', 'tmp_name' => '', 'error' => 4, 'size' => 0)), $form->getFiles(), '->getFiles() only returns file fields for POST');
-
-        $form = $this->createForm('<form method="post"><input type="file" name="foo[bar]" /><input type="text" name="bar" value="bar" /><input type="submit" /></form>', 'put');
-        $this->assertEquals(array('foo[bar]' => array('name' => '', 'type' => '', 'tmp_name' => '', 'error' => 4, 'size' => 0)), $form->getFiles(), '->getFiles() only returns file fields for PUT');
-
-        $form = $this->createForm('<form method="post"><input type="file" name="foo[bar]" /><input type="text" name="bar" value="bar" /><input type="submit" /></form>', 'delete');
-        $this->assertEquals(array('foo[bar]' => array('name' => '', 'type' => '', 'tmp_name' => '', 'error' => 4, 'size' => 0)), $form->getFiles(), '->getFiles() only returns file fields for DELETE');
-
-        $form = $this->createForm('<form method="post"><input type="file" name="foo[bar]" /><input type="text" name="bar" value="bar" /><input type="submit" /></form>', 'patch');
-        $this->assertEquals(array('foo[bar]' => array('name' => '', 'type' => '', 'tmp_name' => '', 'error' => 4, 'size' => 0)), $form->getFiles(), '->getFiles() only returns file fields for PATCH');
-
-        $form = $this->createForm('<form method="post"><input type="file" name="foo[bar]" disabled="disabled" /><input type="submit" /></form>');
-        $this->assertEquals(array(), $form->getFiles(), '->getFiles() does not include disabled file fields');
-    }
-
-    public function testGetPhpFiles()
-    {
-        $form = $this->createForm('<form method="post"><input type="file" name="foo[bar]" /><input type="text" name="bar" value="bar" /><input type="submit" /></form>');
-        $this->assertEquals(array('foo' => array('bar' => array('name' => '', 'type' => '', 'tmp_name' => '', 'error' => 4, 'size' => 0))), $form->getPhpFiles(), '->getPhpFiles() converts keys with [] to arrays');
-    }
-
-    /**
-     * @dataProvider provideGetUriValues
-     */
-    public function testGetUri($message, $form, $values, $uri, $method = null)
-    {
-        $form = $this->createForm($form, $method);
-        $form->setValues($values);
-
-        $this->assertEquals('http://example.com'.$uri, $form->getUri(), '->getUri() '.$message);
-    }
-
-    public function testGetBaseUri()
-    {
-        $dom = new \DOMDocument();
-        $dom->loadHTML('<form method="post" action="foo.php"><input type="text" name="bar" value="bar" /><input type="submit" /></form>');
-
-        $nodes = $dom->getElementsByTagName('input');
-        $form = new Form($nodes->item($nodes->length - 1), 'http://www.foo.com/');
-        $this->assertEquals('http://www.foo.com/foo.php', $form->getUri());
-    }
-
-    public function testGetUriWithAnchor()
-    {
-        $form = $this->createForm('<form action="#foo"><input type="submit" /></form>', null, 'http://example.com/id/123');
-
-        $this->assertEquals('http://example.com/id/123#foo', $form->getUri());
-    }
-
-    public function testGetUriActionAbsolute()
-    {
-        $formHtml='<form id="login_form" action="https://login.foo.com/login.php?login_attempt=1" method="POST"><input type="text" name="foo" value="foo" /><input type="submit" /></form>';
-
-        $form = $this->createForm($formHtml);
-        $this->assertEquals('https://login.foo.com/login.php?login_attempt=1', $form->getUri(), '->getUri() returns absolute URIs set in the action form');
-
-        $form = $this->createForm($formHtml, null, 'https://login.foo.com');
-        $this->assertEquals('https://login.foo.com/login.php?login_attempt=1', $form->getUri(), '->getUri() returns absolute URIs set in the action form');
-
-        $form = $this->createForm($formHtml, null, 'https://login.foo.com/bar/');
-        $this->assertEquals('https://login.foo.com/login.php?login_attempt=1', $form->getUri(), '->getUri() returns absolute URIs set in the action form');
-
-        // The action URI haven't the same domain Host have an another domain as Host
-        $form = $this->createForm($formHtml, null, 'https://www.foo.com');
-        $this->assertEquals('https://login.foo.com/login.php?login_attempt=1', $form->getUri(), '->getUri() returns absolute URIs set in the action form');
-
-        $form = $this->createForm($formHtml, null, 'https://www.foo.com/bar/');
-        $this->assertEquals('https://login.foo.com/login.php?login_attempt=1', $form->getUri(), '->getUri() returns absolute URIs set in the action form');
-    }
-
-    public function testGetUriAbsolute()
-    {
-        $form = $this->createForm('<form action="foo"><input type="submit" /></form>', null, 'http://localhost/foo/');
-        $this->assertEquals('http://localhost/foo/foo', $form->getUri(), '->getUri() returns absolute URIs');
-
-        $form = $this->createForm('<form action="/foo"><input type="submit" /></form>', null, 'http://localhost/foo/');
-        $this->assertEquals('http://localhost/foo', $form->getUri(), '->getUri() returns absolute URIs');
-    }
-
-    public function testGetUriWithOnlyQueryString()
-    {
-        $form = $this->createForm('<form action="?get=param"><input type="submit" /></form>', null, 'http://localhost/foo/bar');
-        $this->assertEquals('http://localhost/foo/bar?get=param', $form->getUri(), '->getUri() returns absolute URIs only if the host has been defined in the constructor');
-    }
-
-    public function testGetUriWithoutAction()
-    {
-        $form = $this->createForm('<form><input type="submit" /></form>', null, 'http://localhost/foo/bar');
-        $this->assertEquals('http://localhost/foo/bar', $form->getUri(), '->getUri() returns path if no action defined');
-    }
-
-    public function provideGetUriValues()
-    {
-        return array(
-            array(
-                'returns the URI of the form',
-                '<form action="/foo"><input type="submit" /></form>',
-                array(),
-                '/foo'
-            ),
-            array(
-                'appends the form values if the method is get',
-                '<form action="/foo"><input type="text" name="foo" value="foo" /><input type="submit" /></form>',
-                array(),
-                '/foo?foo=foo'
-            ),
-            array(
-                'appends the form values and merges the submitted values',
-                '<form action="/foo"><input type="text" name="foo" value="foo" /><input type="submit" /></form>',
-                array('foo' => 'bar'),
-                '/foo?foo=bar'
-            ),
-            array(
-                'does not append values if the method is post',
-                '<form action="/foo" method="post"><input type="text" name="foo" value="foo" /><input type="submit" /></form>',
-                array(),
-                '/foo'
-            ),
-            array(
-                'does not append values if the method is patch',
-                '<form action="/foo" method="post"><input type="text" name="foo" value="foo" /><input type="submit" /></form>',
-                array(),
-                '/foo',
-                'PUT'
-            ),
-            array(
-                'does not append values if the method is delete',
-                '<form action="/foo" method="post"><input type="text" name="foo" value="foo" /><input type="submit" /></form>',
-                array(),
-                '/foo',
-                'DELETE'
-            ),
-            array(
-                'does not append values if the method is put',
-                '<form action="/foo" method="post"><input type="text" name="foo" value="foo" /><input type="submit" /></form>',
-                array(),
-                '/foo',
-                'PATCH'
-            ),
-            array(
-                'appends the form values to an existing query string',
-                '<form action="/foo?bar=bar"><input type="text" name="foo" value="foo" /><input type="submit" /></form>',
-                array(),
-                '/foo?bar=bar&foo=foo'
-            ),
-            array(
-                'returns an empty URI if the action is empty',
-                '<form><input type="submit" /></form>',
-                array(),
-                '/',
-            ),
-            array(
-                'appends the form values even if the action is empty',
-                '<form><input type="text" name="foo" value="foo" /><input type="submit" /></form>',
-                array(),
-                '/?foo=foo',
-            ),
-            array(
-                'chooses the path if the action attribute value is a sharp (#)',
-                '<form action="#" method="post"><input type="text" name="foo" value="foo" /><input type="submit" /></form>',
-                array(),
-                '/#',
-            ),
-        );
-    }
-
-    public function testHas()
-    {
-        $form = $this->createForm('<form method="post"><input type="text" name="bar" value="bar" /><input type="submit" /></form>');
-
-        $this->assertFalse($form->has('foo'), '->has() returns false if a field is not in the form');
-        $this->assertTrue($form->has('bar'), '->has() returns true if a field is in the form');
-    }
-
-    public function testRemove()
-    {
-        $form = $this->createForm('<form method="post"><input type="text" name="bar" value="bar" /><input type="submit" /></form>');
-        $form->remove('bar');
-        $this->assertFalse($form->has('bar'), '->remove() removes a field');
-    }
-
-    public function testGet()
-    {
-        $form = $this->createForm('<form method="post"><input type="text" name="bar" value="bar" /><input type="submit" /></form>');
-
-        $this->assertEquals('Symfony\\Component\\DomCrawler\\Field\\InputFormField', get_class($form->get('bar')), '->get() returns the field object associated with the given name');
-
-        try {
-            $form->get('foo');
-            $this->fail('->get() throws an \InvalidArgumentException if the field does not exist');
-        } catch (\InvalidArgumentException $e) {
-            $this->assertTrue(true, '->get() throws an \InvalidArgumentException if the field does not exist');
-        }
-    }
-
-    public function testAll()
-    {
-        $form = $this->createForm('<form method="post"><input type="text" name="bar" value="bar" /><input type="submit" /></form>');
-
-        $fields = $form->all();
-        $this->assertEquals(1, count($fields), '->all() return an array of form field objects');
-        $this->assertEquals('Symfony\\Component\\DomCrawler\\Field\\InputFormField', get_class($fields['bar']), '->all() return an array of form field objects');
-    }
-
-    public function testSubmitWithoutAFormButton()
-    {
-        $dom = new \DOMDocument();
-        $dom->loadHTML('
-            <html>
-                <form>
-                    <input type="foo" />
-                </form>
-            </html>
-        ');
-
-        $nodes = $dom->getElementsByTagName('form');
-        $form = new Form($nodes->item(0), 'http://example.com');
-        $this->assertSame($nodes->item(0), $form->getFormNode(), '->getFormNode() returns the form node associated with this form');
-    }
-
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testFormFieldRegistryAddThrowAnExceptionWhenTheNameIsMalformed()
-    {
-        $registry = new FormFieldRegistry();
-        $registry->add($this->getFormFieldMock('[foo]'));
-    }
-
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testFormFieldRegistryRemoveThrowAnExceptionWhenTheNameIsMalformed()
-    {
-        $registry = new FormFieldRegistry();
-        $registry->remove('[foo]');
-    }
-
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testFormFieldRegistryGetThrowAnExceptionWhenTheNameIsMalformed()
-    {
-        $registry = new FormFieldRegistry();
-        $registry->get('[foo]');
-    }
-
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testFormFieldRegistryGetThrowAnExceptionWhenTheFieldDoesNotExist()
-    {
-        $registry = new FormFieldRegistry();
-        $registry->get('foo');
-    }
-
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testFormFieldRegistrySetThrowAnExceptionWhenTheNameIsMalformed()
-    {
-        $registry = new FormFieldRegistry();
-        $registry->set('[foo]', null);
-    }
-
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testFormFieldRegistrySetThrowAnExceptionWhenTheFieldDoesNotExist()
-    {
-        $registry = new FormFieldRegistry();
-        $registry->set('foo', null);
-    }
-
-    public function testFormFieldRegistryHasReturnsTrueWhenTheFQNExists()
-    {
-        $registry = new FormFieldRegistry();
-        $registry->add($this->getFormFieldMock('foo[bar]'));
-
-        $this->assertTrue($registry->has('foo'));
-        $this->assertTrue($registry->has('foo[bar]'));
-        $this->assertFalse($registry->has('bar'));
-        $this->assertFalse($registry->has('foo[foo]'));
-    }
-
-    public function testFormRegistryFieldsCanBeRemoved()
-    {
-        $registry = new FormFieldRegistry();
-        $registry->add($this->getFormFieldMock('foo'));
-        $registry->remove('foo');
-        $this->assertFalse($registry->has('foo'));
-    }
-
-    public function testFormRegistrySupportsMultivaluedFields()
-    {
-        $registry = new FormFieldRegistry();
-        $registry->add($this->getFormFieldMock('foo[]'));
-        $registry->add($this->getFormFieldMock('foo[]'));
-        $registry->add($this->getFormFieldMock('bar[5]'));
-        $registry->add($this->getFormFieldMock('bar[]'));
-        $registry->add($this->getFormFieldMock('bar[baz]'));
-
-        $this->assertEquals(
-            array('foo[0]', 'foo[1]', 'bar[5]', 'bar[6]', 'bar[baz]'),
-            array_keys($registry->all())
-        );
-    }
-
-    public function testFormRegistrySetValues()
-    {
-        $registry = new FormFieldRegistry();
-        $registry->add($f2 = $this->getFormFieldMock('foo[2]'));
-        $registry->add($f3 = $this->getFormFieldMock('foo[3]'));
-        $registry->add($fbb = $this->getFormFieldMock('foo[bar][baz]'));
-
-        $f2
-            ->expects($this->exactly(2))
-            ->method('setValue')
-            ->with(2)
-        ;
-
-        $f3
-            ->expects($this->exactly(2))
-            ->method('setValue')
-            ->with(3)
-        ;
-
-        $fbb
-            ->expects($this->exactly(2))
-            ->method('setValue')
-            ->with('fbb')
-        ;
-
-        $registry->set('foo[2]', 2);
-        $registry->set('foo[3]', 3);
-        $registry->set('foo[bar][baz]', 'fbb');
-
-        $registry->set('foo', array(
-            2     => 2,
-            3     => 3,
-            'bar' => array(
-                'baz' => 'fbb'
-             )
-        ));
-    }
-
-    protected function getFormFieldMock($name, $value = null)
-    {
-        $field = $this
-            ->getMockBuilder('Symfony\\Component\\DomCrawler\\Field\\FormField')
-            ->setMethods(array('getName', 'getValue', 'setValue', 'initialize'))
-            ->disableOriginalConstructor()
-            ->getMock()
-        ;
-
-        $field
-            ->expects($this->any())
-            ->method('getName')
-            ->will($this->returnValue($name))
-        ;
-
-        $field
-            ->expects($this->any())
-            ->method('getValue')
-            ->will($this->returnValue($value))
-        ;
-
-        return $field;
-    }
-
-    protected function createForm($form, $method = null, $currentUri = null)
-    {
-        $dom = new \DOMDocument();
-        $dom->loadHTML('<html>'.$form.'</html>');
-
-        $nodes = $dom->getElementsByTagName('input');
-        $xPath = new \DOMXPath($dom);
-        $nodes = $xPath->query('//input | //button');
-
-        if (null === $currentUri) {
-            $currentUri = 'http://example.com/';
-        }
-
-        return new Form($nodes->item($nodes->length - 1), $currentUri, $method);
-    }
-
-    protected function createTestHtml5Form()
-    {
-        $dom = new \DOMDocument();
-        $dom->loadHTML('
-        <html>
-            <h1>Hello form</h1>
-            <form id="form-1" action="" method="POST">
-                <div><input type="checkbox" name="apples[]" value="1" checked /></div>
-                <input form="form_2" type="checkbox" name="oranges[]" value="1" checked />
-                <div><label></label><input form="form-1" type="hidden" name="form_name" value="form-1" /></div>
-                <input form="form-1" type="submit" name="button_1" value="Capture fields" />
-                <button form="form_2" type="submit" name="button_2">Submit form_2</button>
-            </form>
-            <input form="form-1" type="checkbox" name="apples[]" value="2" checked />
-            <form id="form_2" action="" method="POST">
-                <div><div><input type="checkbox" name="oranges[]" value="2" checked />
-                <input type="checkbox" name="oranges[]" value="3" checked /></div></div>
-                <input form="form_2" type="hidden" name="form_name" value="form_2" />
-                <input form="form-1" type="hidden" name="outer_field" value="success" />
-                <button form="form-1" type="submit" name="button_3">Submit from outside the form</button>
-                <div>
-                    <label for="app_frontend_form_type_contact_form_type_contactType">Message subject</label>
-                    <div>
-                        <select name="app_frontend_form_type_contact_form_type[contactType]" id="app_frontend_form_type_contact_form_type_contactType"><option selected="selected" value="">Please select subject</option><option id="1">Test type</option></select>
-                    </div>
-                </div>
-                <div>
-                    <label for="app_frontend_form_type_contact_form_type_firstName">Firstname</label>
-                    <input type="text" name="app_frontend_form_type_contact_form_type[firstName]" value="John" id="app_frontend_form_type_contact_form_type_firstName"/>
-                </div>
-            </form>
-            <button />
-        </html>');
-
-        return $dom;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

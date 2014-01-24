@@ -1,89 +1,45 @@
-<?php
-/**
- * Squiz_Sniffs_Files_FileExtensionSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Squiz_Sniffs_Files_FileExtensionSniff.
- *
- * Tests that the stars in a doc comment align correctly.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class Squiz_Sniffs_Files_FileExtensionSniff implements PHP_CodeSniffer_Sniff
-{
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        return array(T_OPEN_TAG);
-
-    }//end register()
-
-
-    /**
-     * Processes this test, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token in the
-     *                                        stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-
-        // Make sure this is the first PHP open tag so we don't process
-        // the same file twice.
-        $prevOpenTag = $phpcsFile->findPrevious(T_OPEN_TAG, ($stackPtr - 1));
-        if ($prevOpenTag !== false) {
-            return;
-        }
-
-        $fileName  = $phpcsFile->getFileName();
-        $extension = substr($fileName, strrpos($fileName, '.'));
-        $nextClass = $phpcsFile->findNext(array(T_CLASS, T_INTERFACE, T_TRAIT), $stackPtr);
-
-        if ($extension === '.php') {
-            if ($nextClass !== false) {
-                $error = '%s found in ".php" file; use ".inc" extension instead';
-                $data  = array(ucfirst($tokens[$nextClass]['content']));
-                $phpcsFile->addError($error, $stackPtr, 'ClassFound', $data);
-            }
-        } else if ($extension === '.inc') {
-            if ($nextClass === false) {
-                $error = 'No interface or class found in ".inc" file; use ".php" extension instead';
-                $phpcsFile->addError($error, $stackPtr, 'NoClass');
-            }
-        }
-
-    }//end process()
-
-
-}//end class
-
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+9JXs

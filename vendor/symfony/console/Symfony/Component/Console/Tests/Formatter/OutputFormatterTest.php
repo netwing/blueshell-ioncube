@@ -1,234 +1,101 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\Console\Tests\Formatter;
-
-use Symfony\Component\Console\Formatter\OutputFormatter;
-use Symfony\Component\Console\Formatter\OutputFormatterStyle;
-
-class OutputFormatterTest extends \PHPUnit_Framework_TestCase
-{
-    public function testEmptyTag()
-    {
-        $formatter = new OutputFormatter(true);
-        $this->assertEquals("foo<>bar", $formatter->format('foo<>bar'));
-    }
-
-    public function testLGCharEscaping()
-    {
-        $formatter = new OutputFormatter(true);
-
-        $this->assertEquals("foo<bar", $formatter->format('foo\\<bar'));
-        $this->assertEquals("<info>some info</info>", $formatter->format('\\<info>some info\\</info>'));
-        $this->assertEquals("\\<info>some info\\</info>", OutputFormatter::escape('<info>some info</info>'));
-
-        $this->assertEquals(
-            "\033[33mSymfony\\Component\\Console does work very well!\033[0m",
-            $formatter->format('<comment>Symfony\Component\Console does work very well!</comment>')
-        );
-    }
-
-    public function testBundledStyles()
-    {
-        $formatter = new OutputFormatter(true);
-
-        $this->assertTrue($formatter->hasStyle('error'));
-        $this->assertTrue($formatter->hasStyle('info'));
-        $this->assertTrue($formatter->hasStyle('comment'));
-        $this->assertTrue($formatter->hasStyle('question'));
-
-        $this->assertEquals(
-            "\033[37;41msome error\033[0m",
-            $formatter->format('<error>some error</error>')
-        );
-        $this->assertEquals(
-            "\033[32msome info\033[0m",
-            $formatter->format('<info>some info</info>')
-        );
-        $this->assertEquals(
-            "\033[33msome comment\033[0m",
-            $formatter->format('<comment>some comment</comment>')
-        );
-        $this->assertEquals(
-            "\033[30;46msome question\033[0m",
-            $formatter->format('<question>some question</question>')
-        );
-    }
-
-    public function testNestedStyles()
-    {
-        $formatter = new OutputFormatter(true);
-
-        $this->assertEquals(
-            "\033[37;41msome \033[0m\033[32msome info\033[0m\033[37;41m error\033[0m",
-            $formatter->format('<error>some <info>some info</info> error</error>')
-        );
-    }
-
-    public function testStyleMatchingNotGreedy()
-    {
-        $formatter = new OutputFormatter(true);
-
-        $this->assertEquals(
-            "(\033[32m>=2.0,<2.3\033[0m)",
-            $formatter->format('(<info>>=2.0,<2.3</info>)')
-        );
-    }
-
-    public function testStyleEscaping()
-    {
-        $formatter = new OutputFormatter(true);
-
-        $this->assertEquals(
-            "(\033[32mz>=2.0,<a2.3\033[0m)",
-            $formatter->format('(<info>'.$formatter->escape('z>=2.0,<a2.3').'</info>)')
-        );
-    }
-
-    public function testDeepNestedStyles()
-    {
-        $formatter = new OutputFormatter(true);
-
-        $this->assertEquals(
-            "\033[37;41merror\033[0m\033[32minfo\033[0m\033[33mcomment\033[0m\033[37;41merror\033[0m",
-            $formatter->format('<error>error<info>info<comment>comment</info>error</error>')
-        );
-    }
-
-    public function testNewStyle()
-    {
-        $formatter = new OutputFormatter(true);
-
-        $style = new OutputFormatterStyle('blue', 'white');
-        $formatter->setStyle('test', $style);
-
-        $this->assertEquals($style, $formatter->getStyle('test'));
-        $this->assertNotEquals($style, $formatter->getStyle('info'));
-
-        $style = new OutputFormatterStyle('blue', 'white');
-        $formatter->setStyle('b', $style);
-
-        $this->assertEquals("\033[34;47msome \033[0m\033[34;47mcustom\033[0m\033[34;47m msg\033[0m", $formatter->format('<test>some <b>custom</b> msg</test>'));
-    }
-
-    public function testRedefineStyle()
-    {
-        $formatter = new OutputFormatter(true);
-
-        $style = new OutputFormatterStyle('blue', 'white');
-        $formatter->setStyle('info', $style);
-
-        $this->assertEquals("\033[34;47msome custom msg\033[0m", $formatter->format('<info>some custom msg</info>'));
-    }
-
-    public function testInlineStyle()
-    {
-        $formatter = new OutputFormatter(true);
-
-        $this->assertEquals("\033[34;41msome text\033[0m", $formatter->format('<fg=blue;bg=red>some text</>'));
-        $this->assertEquals("\033[34;41msome text\033[0m", $formatter->format('<fg=blue;bg=red>some text</fg=blue;bg=red>'));
-    }
-
-    public function testNonStyleTag()
-    {
-        $formatter = new OutputFormatter(true);
-        $this->assertEquals("\033[32msome \033[0m\033[32m<tag> styled \033[0m\033[32m<p>single-char tag\033[0m\033[32m</p>\033[0m", $formatter->format('<info>some <tag> styled <p>single-char tag</p></info>'));
-    }
-
-    public function testNotDecoratedFormatter()
-    {
-        $formatter = new OutputFormatter(false);
-
-        $this->assertTrue($formatter->hasStyle('error'));
-        $this->assertTrue($formatter->hasStyle('info'));
-        $this->assertTrue($formatter->hasStyle('comment'));
-        $this->assertTrue($formatter->hasStyle('question'));
-
-        $this->assertEquals(
-            "some error", $formatter->format('<error>some error</error>')
-        );
-        $this->assertEquals(
-            "some info", $formatter->format('<info>some info</info>')
-        );
-        $this->assertEquals(
-            "some comment", $formatter->format('<comment>some comment</comment>')
-        );
-        $this->assertEquals(
-            "some question", $formatter->format('<question>some question</question>')
-        );
-
-        $formatter->setDecorated(true);
-
-        $this->assertEquals(
-            "\033[37;41msome error\033[0m", $formatter->format('<error>some error</error>')
-        );
-        $this->assertEquals(
-            "\033[32msome info\033[0m", $formatter->format('<info>some info</info>')
-        );
-        $this->assertEquals(
-            "\033[33msome comment\033[0m", $formatter->format('<comment>some comment</comment>')
-        );
-        $this->assertEquals(
-            "\033[30;46msome question\033[0m", $formatter->format('<question>some question</question>')
-        );
-    }
-
-    public function testContentWithLineBreaks()
-    {
-        $formatter = new OutputFormatter(true);
-
-        $this->assertEquals(<<<EOF
-\033[32m
-some text\033[0m
-EOF
-            , $formatter->format(<<<EOF
-<info>
-some text</info>
-EOF
-        ));
-
-        $this->assertEquals(<<<EOF
-\033[32msome text
-\033[0m
-EOF
-            , $formatter->format(<<<EOF
-<info>some text
-</info>
-EOF
-        ));
-
-        $this->assertEquals(<<<EOF
-\033[32m
-some text
-\033[0m
-EOF
-            , $formatter->format(<<<EOF
-<info>
-some text
-</info>
-EOF
-        ));
-
-        $this->assertEquals(<<<EOF
-\033[32m
-some text
-more text
-\033[0m
-EOF
-            , $formatter->format(<<<EOF
-<info>
-some text
-more text
-</info>
-EOF
-        ));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

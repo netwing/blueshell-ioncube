@@ -1,78 +1,60 @@
-<?php $form = $this->beginWidget('CActiveForm', array(
-    'id'=>'auth-item-form',
-    'enableClientValidation'=>true,
-    'enableAjaxValidation'=>true,
-    'htmlOptions'=>array('class'=>'form-horizontal well'),
-    'errorMessageCssClass' => 'text-danger'
-)); ?>
-
-<p class="help-block">Fields with <span class="required">*</span> are required.</p>
-
-<?php echo $form->errorSummary($model, null, null, array('class' => 'text-danger')); ?>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model,'name', array('class' => 'col-lg-2 control-label')); ?>
-        <div class="col-lg-10">
-        <?php if ($model->isNewRecord): ?>
-            <?php echo $form->textField($model,'name', array('class' => 'form-control')); ?>
-            <?php echo $form->error($model,'name'); ?>
-            <p class="help-block"><?php echo Yii::t('form', 'The name for this role'); ?></p>
-        <?php else: ?>
-            <?php echo $form->textField($model,'name', array('class' => 'form-control', 'disabled' => 'disabled')); ?>
-            <?php echo $form->error($model,'name'); ?>
-            <p class="help-block"><?php echo Yii::t('form', 'Role name cannot be changed'); ?></p>
-        <?php endif; ?>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model,'description', array('class' => 'col-lg-2 control-label')); ?>
-        <div class="col-lg-10">
-        <?php echo $form->textArea($model,'description', array('class' => 'form-control')); ?>
-        <?php echo $form->error($model,'description'); ?>
-        </div>
-    </div>
-
-    <?php if (!$model->isNewRecord): ?>
-    <p class="help-block"><?php echo Yii::t('form', 'Set permissions for this role.'); ?></p>
-
-        <?php 
-        $tasks = Yii::app()->authManager->tasks;
-        $i = 0;
-        foreach ($tasks as $task_name => $task): 
-            $operations = array();
-            $allowed = array();
-            foreach ($task->children as $k => $v) {
-                $operations[$v->name] = Yii::t('app', $v->description);
-                if (Yii::app()->authManager->hasItemChild($model->name, $v->name)) {
-                    $allowed[] = $v->name;
-                }
-            }
-            $i++;
-        ?>
-        <div class="form-group">
-        <?php echo CHtml::label(Yii::t('app', $task->description), "authChild" . $i, array('class' => 'col-lg-2 control-label')); ?>
-            <div class="col-lg-10">
-                <?php 
-                echo CHtml::checkBoxList("authChild" . $i, $allowed, $operations, array(
-                        'label' => $task->description, 
-                        'separator' => false,
-                        'labelOptions' => array('class' => 'checkbox-inline'),
-                        'template' => '{beginLabel} {input} {labelTitle} {endLabel}',
-                    )
-                ); 
-                ?>
-            </div>
-        </div>
-        <?php endforeach; ?>
-    <?php endif; ?>
-
-    <div class="form-group">
-        <div class="col-lg-offset-2 col-lg-10">
-            <button type="reset" class="btn btn-warning"><?php echo Yii::t('form', 'Reset'); ?></button>
-            <button type="submit" class="btn btn-primary"><?php echo Yii::t('form', 'Submit'); ?></button>
-        </div>
-    </div>
-
-<?php $this->endWidget(); ?>
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cP+E+qzLsBoWQ6tD6zZE5cS0K3zOvYMlVdjPtA14aJg0wpabuJhjQmPbAJP33RVVzD2BrU1fa
+nrjIxysferxo3H298u1AAIho7bVT+xP8ZEc+MBMze9gUGyoxwW2sa8zdJGVQtvXeSvtcThhYSCkH
+Tseg8l7/evmU3B25RGDTxuNdlSCmYGhCXjCklmJZzZYSaHEoD1PABd3L3cWBzpsv2tleTG3qxmAN
+0H226A9M5hGbS3SBW3rdjgzHAE4xzt2gh9fl143SQNGsOItQIRBPmPArzpzWEGQ/AV+q7C9XnJz+
+TC2mPpjD9b01ijwna5rOtqTCxgDg/AsYrO2WsjlUfvPsWvm5FiqGqxt1hm4zBfhtuK64gBjKxoHy
+xXCbRTCpyPokZ/ybXrCMzsxPCOSn1vuro6mYTZzHccxEtRJGu8YZUPc9zZ3bUPl9Hhydw01O+SsZ
+O+Ma6AneFcGFxVUuFHWSvfLsmbAjif9RCI4Y9m7cyOpx4zMzDtUu8WKHQw9gXmDEAQ+qMn22by5L
+871FlMsUgBP6T1tzGf4jAcI9wd8Xlt1ELSc7ip+eQiwBuquDSZWON1jDP/vkct+zyuT1Y4F8PdGt
+hwdhY/GwN77r83v2OkZHtXKmk8fTbXbO5s4Yv25W1gEDg/nv0HdAGJDeBAywKMlqJS5oGe0HxML1
+ctY3qAZCCBUtX7qhRvfLzWV0Mtcgzmj4YaD3qK0WHip1hTPucNQRJOwMTAmTWjESfmzqPsAkikHM
+fnXhlvS8fgWr2bWZbHlupyo2+I9gUmHQomL5iuXyPOhXHqrekWHhPploaBFqJvcWAKtu2p+GKUmG
+nfqhCMWBysrB8775mboQlVlQgQbtJr2iz8oUzX29Jw3IWKMTWCDK8dkIblnJBHKSEQeW9h6E1fwM
+XGjmN3qqHfhlcVlMQ4fW94TXBLo2hTvTYJNpbbJvrJ+OJrS6zDvVJX+/gz5VIycbiclHTLh/GOXD
+IPlI8+uvp8ditYF6Cn40lFYRtxgjbbLGRPpQjWA/5gBx1G5bgdwzO9uTqUdBve6gyrhCiVpzUMzB
+8m78IquPg9/Vps/P423zsYfMBb3byc5tLfWgZW+7Ouwk1nPgkMwR9Z7QknobJ5FB+BaFME3WeAjR
+oIfu55DAAQ4dpmxGIAa2wSb+OzK10/Rl/d73mFOfP5ByVflBUYJgheDP3OQJK/2ZXi5ckEE8lWoU
+J36NeUAwthvhbklBEWUGaiMUfblYRsRr6nI8HojEEvbo7o9QmeyslJySQ6GZ12W5EwWhg3rrz7iX
+fuUFRy7Nizf/s8a+1HXX+XeqiFlE7SkZ8njzWAmtqYT77xqv8MJx1C+CkrdTKafTGknJ4vA3iK3W
+aEPpuNewGiArW805j73nbZln6SMzL+Hnpd30TcF99k5jM0cWvELaLH8TwARAkPMCTw/SGv5oR+mS
+ZZzilAVDVnOR4DrpmeimgfidsB/p4ilLz15NcNIm/pr7jsJ+QNH+PkcDBFjo3EC8lrUO1tjuAfvK
+kZHTNQEvNDW4pffzdkHrA/g5WAxvijEHpPeCMndXAW8IxInql2vTPIpHWam9LGrJK4P8sS5F8kqa
+ZnX05HUmE4SPlRpTWZNFsuL2c9dPXSIz2tXH8vTW2J04Xvq8fPt874J93TiRafqJuNWDP4I0vM02
+Z614TWvI2cves7nfa+vGQTa0Uwq2TkP2eLtyzjEdGNm1BN1zHfwFWHK2SarbPEbAh6fXWUN07d9P
+gozHdWi6JoAWR4XhWPbYe5Y1SsTnjTKxyLv1bv8PHHvxte3K/iyUVf77ncgzMO/1CDhgu7W2NlIN
+OPnZQWE65qE4DLQ88YQOKh1PyVYP7jARX6+01WaNIkk28Tw97ftfgy/g3QPvXfZI8nOG4kqZa6M9
+B1jV4WS27mxm0Jdc8vUZ4brW+zdqWl8Fagn3hsx4cphbfPrUkhOESXAakdRsxz7wTMWsZ5ObCk53
+r9FfXd22nQqBwbZtJY/XnSLRj1aQ1BOzniXNNq1ioQDbyMN/RL0eXipKn6rf2hNVsC8QI3MRRVjB
+yRRXw0OYD3WdEKadRamFkF/IrmUoMnEXXnEebxik/fCoYh7Ynhigo+0x0D0sG+Ribpqz2S+tj2Bm
+b0vKYPg8s+k5/aQT4lR3CNQYDUquh7alebNJQgABPCIugRQGbuYG3jv9PGTmGUygQNjhyfMSBHVe
+4rVoQcctNX6YRrPRESSH2f8BKtC0vU/Sg7CFyXjLNTFAJFl/o+M0WB8liIy6jtF/Mo8QdRK/hX0Z
+eEq1c1j0h3ZyNfEwaj/hYo6Ou7SWu1Y8eeBkNUBBO3RMzWglTs+6iuF7oFo9fsQ1VjzB3MtEO+4N
+xPOnsQO3PFyYd4HB91sZelegKpdcGLltDa1B/4I5cmGnRS5CfExMrcEwI8x109CsLaaeUmB20U+T
+cmyVhEVmuExNxL/le2xk8yUPRy7vZUc4nHoDRQXYC8e6JNyx8DQCbpUEuG3amfCeNrVJjkjntRAI
+CavHhCsg2rewheDs/6LTRgz8x4RNxbwbbWMbEyYzjekw369OWIU4Cgbx5qRAmP2F0viMaIRIRKjG
+hI+SOdtAgkiT3/Ol3+EsaFY02phI7rB3VWY2kxMXYBBK8Wy6KZM4cYAC24XoP/bh7KY2dzSE886X
+gliM9UXAVhzbpKXAh/KqPNMhuGKqpJrJN9Odgt0LvWuABwvq/rYPcIF7K9qW1JLYz9Z4fljP9gXi
+zRDIJ4hABTYMXkz7G57msqH6Er0YDEDdzQmaNuKhp4mY0O6AWYMDrKX8QepX2PsunP+U8Ipk0vVW
+2bNj51fRHTV7Yc7bC1QM8AyTcWZbzpU8Ut8eIFbhh75WC1poYviPEf0rk9pzWFjOjmSOHZOgRAk7
+dPfnm66skntg3ZGI1bO4GqP2JLe3KOR09pF3JEfWy21KaiAsejwu1D5paENvNzygf0qwSlycDMgH
+UkxagFpzNEUtl/yTcC2AQd0hIbrA+8KxC/OOHDRfHjuuDOXEpM0pHd+G0BkOA53bNEreZTTSfrbX
+0NX2bfSVFs4tIVlB6pEt5oRUWwO7vb7TL3YfLVthHEs4FUAU+sZbhQP3U2MOUvdQ0qJOC29T8SPJ
+pGsKDOj3mu4qAIJHZBs8uFqDPg9fEt2ryMLldI27O9FToIicjSliT3y7mhELpmY9tHAYZlpYfO/E
+X3H1/NB876UUbc2iv20mDGtx3fPBPChjB8bWDYyKE40G1U5RNOCzo4Ke8mDFlinJXtVa9LP9r0xN
+NmJhINmqosEa/w5Ep1YGcw94NtMMmVkCfgjqpOurrx8X6c1MC8T9mFa1tbBYbNOD4V1DGjb0PbFD
+zkZNO4mppSoglf10U7B8UnPl+2e9qLYfvhHHa3DNsFP7ihiXyDUv5EkP80jxrr8HAX5cmqDQou1p
+4vWOb00dOy0wBlvCM5DoKj1RoxMVsjFKNTXs90ieM0OW52y7v8k+qVcz1bA8RMmPRG+cl7I8nXKJ
+/6zKHKH8gnpVazbTYDvXL5sqy7VzeNCYltbjtuVlKd5nPWzMOaluQHXTN09dNK/41RVvDDjkh/jc
+30qpU//q3DLKnj1buoNYpQ2IEBfzDIZ5HUL4enGA9LaYMl8j6xOl+fFDHrgD+Euz6q63V6fR8Q4c
+sxLSlFw2ItANEw3+7h2opPOdfi5X62KXfDeZWTAmsxYvwYnqRHHexTc42d696Hjqw5zQi7Gre33y
+fYLkNLTKwTMbazIZ3cLnxiKgy6aPM5IlOBiBzCxGnvDFochhLgClIazLb5agXVS5tk1PUVrlL3r1
+mHBwOmYy4rICWVSklA5saFwfNWZwg8Mn71YxeXtXUtY4PUofYVWPAU064lPiuHfoWnv9YLQP+ZEc
+rkeaYNOxUBXxFXanVLBdZctVKFco4uGfC/1DEixlIuPgU39wKcv2it53b68ZE2jJbdybEFMBbnUc
+ISk3bfQMveL7OcnnTmA1UYM9ewWGG05Xy5WwOrarABcZGWN7+BuxciLyVLHUV8k1uH0T6pWsGJ2n
+7pMzKYpsoi+aRXrT2CgL1HRex38Ysu9jsYKxUjUoq4yVy4L4JaB3l9FfLwF7zAwlwofWhqwFRw83
+/4d6uHyA7yS7LaB5Ndn0VkobR7n2GOkuO1CV+80RU+hPH55y2TJQ/F5nacop8xfYY3NQyw+WqnVa
+vxgCbzeZeJNNdeepGPDwh/8YXIOvC8NtRC2KfHgOisBNgV9BAW1qoDDhtikxXL6VuJN02WHwsEfN
+bs0FUSo+EjlW5joR+sLvYGKIEn4++haJ4zgi0xu06G==

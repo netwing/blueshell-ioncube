@@ -1,106 +1,44 @@
-<?php
-/**
- * PHPExcel
- *
- * Copyright (c) 2006 - 2012 PHPExcel
- *
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation; either
- * version 2.1 of the License, or (at your option) any later version.
- *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
- *
- * @category   PHPExcel
- * @package    PHPExcel_Cell
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
- * @version    1.7.8, 2012-10-12
- */
-
-
-/** PHPExcel root directory */
-if (!defined('PHPEXCEL_ROOT')) {
-	/**
-	 * @ignore
-	 */
-	define('PHPEXCEL_ROOT', dirname(__FILE__) . '/../../');
-	require(PHPEXCEL_ROOT . 'PHPExcel/Autoloader.php');
-}
-
-
-/**
- * PHPExcel_Cell_DefaultValueBinder
- *
- * @category   PHPExcel
- * @package    PHPExcel_Cell
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- */
-class PHPExcel_Cell_DefaultValueBinder implements PHPExcel_Cell_IValueBinder
-{
-	/**
-	 * Bind value to a cell
-	 *
-	 * @param PHPExcel_Cell $cell	Cell to bind value to
-	 * @param mixed $value			Value to bind in cell
-	 * @return boolean
-	 */
-	public function bindValue(PHPExcel_Cell $cell, $value = null)
-	{
-		// sanitize UTF-8 strings
-		if (is_string($value)) {
-			$value = PHPExcel_Shared_String::SanitizeUTF8($value);
-		}
-
-		// Set value explicit
-		$cell->setValueExplicit( $value, self::dataTypeForValue($value) );
-
-		// Done!
-		return true;
-	}
-
-	/**
-	 * DataType for value
-	 *
-	 * @param	mixed 	$pValue
-	 * @return 	int
-	 */
-	public static function dataTypeForValue($pValue = null) {
-		// Match the value against a few data types
-		if (is_null($pValue)) {
-			return PHPExcel_Cell_DataType::TYPE_NULL;
-
-		} elseif ($pValue === '') {
-			return PHPExcel_Cell_DataType::TYPE_STRING;
-
-		} elseif ($pValue instanceof PHPExcel_RichText) {
-			return PHPExcel_Cell_DataType::TYPE_INLINE;
-
-		} elseif ($pValue{0} === '=' && strlen($pValue) > 1) {
-			return PHPExcel_Cell_DataType::TYPE_FORMULA;
-
-		} elseif (is_bool($pValue)) {
-			return PHPExcel_Cell_DataType::TYPE_BOOL;
-
-		} elseif (is_float($pValue) || is_int($pValue)) {
-			return PHPExcel_Cell_DataType::TYPE_NUMERIC;
-
-		} elseif (preg_match('/^\-?([0-9]+\\.?[0-9]*|[0-9]*\\.?[0-9]+)$/', $pValue)) {
-			return PHPExcel_Cell_DataType::TYPE_NUMERIC;
-
-		} elseif (is_string($pValue) && array_key_exists($pValue, PHPExcel_Cell_DataType::getErrorCodes())) {
-			return PHPExcel_Cell_DataType::TYPE_ERROR;
-
-		} else {
-			return PHPExcel_Cell_DataType::TYPE_STRING;
-
-		}
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

@@ -1,81 +1,63 @@
-<?php
-
-namespace Guzzle\Tests\Http;
-
-use Guzzle\Http\EntityBody;
-use Guzzle\Http\ReadLimitEntityBody;
-
-/**
- * @covers Guzzle\Http\ReadLimitEntityBody
- */
-class ReadLimitEntityBodyTest extends \Guzzle\Tests\GuzzleTestCase
-{
-    /** @var ReadLimitEntityBody */
-    protected $body;
-
-    /** @var EntityBody */
-    protected $decorated;
-
-    public function setUp()
-    {
-        $this->decorated = EntityBody::factory(fopen(__FILE__, 'r'));
-        $this->body = new ReadLimitEntityBody($this->decorated, 10, 3);
-    }
-
-    public function testReturnsSubsetWhenCastToString()
-    {
-        $body = EntityBody::factory('foo_baz_bar');
-        $limited = new ReadLimitEntityBody($body, 3, 4);
-        $this->assertEquals('baz', (string) $limited);
-    }
-
-    public function testReturnsSubsetOfEmptyBodyWhenCastToString()
-    {
-        $body = EntityBody::factory('');
-        $limited = new ReadLimitEntityBody($body, 0, 10);
-        $this->assertEquals('', (string) $limited);
-    }
-
-    public function testSeeksWhenConstructed()
-    {
-        $this->assertEquals(3, $this->body->ftell());
-    }
-
-    public function testAllowsBoundedSeek()
-    {
-        $this->body->seek(100);
-        $this->assertEquals(13, $this->body->ftell());
-        $this->body->seek(0);
-        $this->assertEquals(3, $this->body->ftell());
-        $this->assertEquals(false, $this->body->seek(1000, SEEK_END));
-    }
-
-    public function testReadsOnlySubsetOfData()
-    {
-        $data = $this->body->read(100);
-        $this->assertEquals(10, strlen($data));
-        $this->assertFalse($this->body->read(1000));
-
-        $this->body->setOffset(10);
-        $newData = $this->body->read(100);
-        $this->assertEquals(10, strlen($newData));
-        $this->assertNotSame($data, $newData);
-    }
-
-    public function testClaimsConsumedWhenReadLimitIsReached()
-    {
-        $this->assertFalse($this->body->isConsumed());
-        $this->body->read(1000);
-        $this->assertTrue($this->body->isConsumed());
-    }
-
-    public function testContentLengthIsBounded()
-    {
-        $this->assertEquals(10, $this->body->getContentLength());
-    }
-
-    public function testContentMd5IsBasedOnSubsection()
-    {
-        $this->assertNotSame($this->body->getContentMd5(), $this->decorated->getContentMd5());
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+axM+Gpw+H1zfJm==

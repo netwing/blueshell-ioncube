@@ -1,850 +1,417 @@
-<?php
-/**
- * CUrlManager class file
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CUrlManager manages the URLs of Yii Web applications.
- *
- * It provides URL construction ({@link createUrl()}) as well as parsing ({@link parseUrl()}) functionality.
- *
- * URLs managed via CUrlManager can be in one of the following two formats,
- * by setting {@link setUrlFormat urlFormat} property:
- * <ul>
- * <li>'path' format: /path/to/EntryScript.php/name1/value1/name2/value2...</li>
- * <li>'get' format:  /path/to/EntryScript.php?name1=value1&name2=value2...</li>
- * </ul>
- *
- * When using 'path' format, CUrlManager uses a set of {@link setRules rules} to:
- * <ul>
- * <li>parse the requested URL into a route ('ControllerID/ActionID') and GET parameters;</li>
- * <li>create URLs based on the given route and GET parameters.</li>
- * </ul>
- *
- * A rule consists of a route and a pattern. The latter is used by CUrlManager to determine
- * which rule is used for parsing/creating URLs. A pattern is meant to match the path info
- * part of a URL. It may contain named parameters using the syntax '&lt;ParamName:RegExp&gt;'.
- *
- * When parsing a URL, a matching rule will extract the named parameters from the path info
- * and put them into the $_GET variable; when creating a URL, a matching rule will extract
- * the named parameters from $_GET and put them into the path info part of the created URL.
- *
- * If a pattern ends with '/*', it means additional GET parameters may be appended to the path
- * info part of the URL; otherwise, the GET parameters can only appear in the query string part.
- *
- * To specify URL rules, set the {@link setRules rules} property as an array of rules (pattern=>route).
- * For example,
- * <pre>
- * array(
- *     'articles'=>'article/list',
- *     'article/<id:\d+>/*'=>'article/read',
- * )
- * </pre>
- * Two rules are specified in the above:
- * <ul>
- * <li>The first rule says that if the user requests the URL '/path/to/index.php/articles',
- *   it should be treated as '/path/to/index.php/article/list'; and vice versa applies
- *   when constructing such a URL.</li>
- * <li>The second rule contains a named parameter 'id' which is specified using
- *   the &lt;ParamName:RegExp&gt; syntax. It says that if the user requests the URL
- *   '/path/to/index.php/article/13', it should be treated as '/path/to/index.php/article/read?id=13';
- *   and vice versa applies when constructing such a URL.</li>
- * </ul>
- *
- * The route part may contain references to named parameters defined in the pattern part.
- * This allows a rule to be applied to different routes based on matching criteria.
- * For example,
- * <pre>
- * array(
- *      '<_c:(post|comment)>/<id:\d+>/<_a:(create|update|delete)>'=>'<_c>/<_a>',
- *      '<_c:(post|comment)>/<id:\d+>'=>'<_c>/view',
- *      '<_c:(post|comment)>s/*'=>'<_c>/list',
- * )
- * </pre>
- * In the above, we use two named parameters '<_c>' and '<_a>' in the route part. The '<_c>'
- * parameter matches either 'post' or 'comment', while the '<_a>' parameter matches an action ID.
- *
- * Like normal rules, these rules can be used for both parsing and creating URLs.
- * For example, using the rules above, the URL '/index.php/post/123/create'
- * would be parsed as the route 'post/create' with GET parameter 'id' being 123.
- * And given the route 'post/list' and GET parameter 'page' being 2, we should get a URL
- * '/index.php/posts/page/2'.
- *
- * It is also possible to include hostname into the rules for parsing and creating URLs.
- * One may extract part of the hostname to be a GET parameter.
- * For example, the URL <code>http://admin.example.com/en/profile</code> may be parsed into GET parameters
- * <code>user=admin</code> and <code>lang=en</code>. On the other hand, rules with hostname may also be used to
- * create URLs with parameterized hostnames.
- *
- * In order to use parameterized hostnames, simply declare URL rules with host info, e.g.:
- * <pre>
- * array(
- *     'http://<user:\w+>.example.com/<lang:\w+>/profile' => 'user/profile',
- * )
- * </pre>
- *
- * Starting from version 1.1.8, one can write custom URL rule classes and use them for one or several URL rules.
- * For example,
- * <pre>
- * array(
- *   // a standard rule
- *   '<action:(login|logout)>' => 'site/<action>',
- *   // a custom rule using data in DB
- *   array(
- *     'class' => 'application.components.MyUrlRule',
- *     'connectionID' => 'db',
- *   ),
- * )
- * </pre>
- * Please note that the custom URL rule class should extend from {@link CBaseUrlRule} and
- * implement the following two methods,
- * <ul>
- *    <li>{@link CBaseUrlRule::createUrl()}</li>
- *    <li>{@link CBaseUrlRule::parseUrl()}</li>
- * </ul>
- *
- * CUrlManager is a default application component that may be accessed via
- * {@link CWebApplication::getUrlManager()}.
- *
- * @property string $baseUrl The base URL of the application (the part after host name and before query string).
- * If {@link showScriptName} is true, it will include the script name part.
- * Otherwise, it will not, and the ending slashes are stripped off.
- * @property string $urlFormat The URL format. Defaults to 'path'. Valid values include 'path' and 'get'.
- * Please refer to the guide for more details about the difference between these two formats.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.web
- * @since 1.0
- */
-class CUrlManager extends CApplicationComponent
-{
-	const CACHE_KEY='Yii.CUrlManager.rules';
-	const GET_FORMAT='get';
-	const PATH_FORMAT='path';
-
-	/**
-	 * @var array the URL rules (pattern=>route).
-	 */
-	public $rules=array();
-	/**
-	 * @var string the URL suffix used when in 'path' format.
-	 * For example, ".html" can be used so that the URL looks like pointing to a static HTML page. Defaults to empty.
-	 */
-	public $urlSuffix='';
-	/**
-	 * @var boolean whether to show entry script name in the constructed URL. Defaults to true.
-	 */
-	public $showScriptName=true;
-	/**
-	 * @var boolean whether to append GET parameters to the path info part. Defaults to true.
-	 * This property is only effective when {@link urlFormat} is 'path' and is mainly used when
-	 * creating URLs. When it is true, GET parameters will be appended to the path info and
-	 * separate from each other using slashes. If this is false, GET parameters will be in query part.
-	 */
-	public $appendParams=true;
-	/**
-	 * @var string the GET variable name for route. Defaults to 'r'.
-	 */
-	public $routeVar='r';
-	/**
-	 * @var boolean whether routes are case-sensitive. Defaults to true. By setting this to false,
-	 * the route in the incoming request will be turned to lower case first before further processing.
-	 * As a result, you should follow the convention that you use lower case when specifying
-	 * controller mapping ({@link CWebApplication::controllerMap}) and action mapping
-	 * ({@link CController::actions}). Also, the directory names for organizing controllers should
-	 * be in lower case.
-	 */
-	public $caseSensitive=true;
-	/**
-	 * @var boolean whether the GET parameter values should match the corresponding
-	 * sub-patterns in a rule before using it to create a URL. Defaults to false, meaning
-	 * a rule will be used for creating a URL only if its route and parameter names match the given ones.
-	 * If this property is set true, then the given parameter values must also match the corresponding
-	 * parameter sub-patterns. Note that setting this property to true will degrade performance.
-	 * @since 1.1.0
-	 */
-	public $matchValue=false;
-	/**
-	 * @var string the ID of the cache application component that is used to cache the parsed URL rules.
-	 * Defaults to 'cache' which refers to the primary cache application component.
-	 * Set this property to false if you want to disable caching URL rules.
-	 */
-	public $cacheID='cache';
-	/**
-	 * @var boolean whether to enable strict URL parsing.
-	 * This property is only effective when {@link urlFormat} is 'path'.
-	 * If it is set true, then an incoming URL must match one of the {@link rules URL rules}.
-	 * Otherwise, it will be treated as an invalid request and trigger a 404 HTTP exception.
-	 * Defaults to false.
-	 */
-	public $useStrictParsing=false;
-	/**
-	 * @var string the class name or path alias for the URL rule instances. Defaults to 'CUrlRule'.
-	 * If you change this to something else, please make sure that the new class must extend from
-	 * {@link CBaseUrlRule} and have the same constructor signature as {@link CUrlRule}.
-	 * It must also be serializable and autoloadable.
-	 * @since 1.1.8
-	 */
-	public $urlRuleClass='CUrlRule';
-
-	private $_urlFormat=self::GET_FORMAT;
-	private $_rules=array();
-	private $_baseUrl;
-
-
-	/**
-	 * Initializes the application component.
-	 */
-	public function init()
-	{
-		parent::init();
-		$this->processRules();
-	}
-
-	/**
-	 * Processes the URL rules.
-	 */
-	protected function processRules()
-	{
-		if(empty($this->rules) || $this->getUrlFormat()===self::GET_FORMAT)
-			return;
-		if($this->cacheID!==false && ($cache=Yii::app()->getComponent($this->cacheID))!==null)
-		{
-			$hash=md5(serialize($this->rules));
-			if(($data=$cache->get(self::CACHE_KEY))!==false && isset($data[1]) && $data[1]===$hash)
-			{
-				$this->_rules=$data[0];
-				return;
-			}
-		}
-		foreach($this->rules as $pattern=>$route)
-			$this->_rules[]=$this->createUrlRule($route,$pattern);
-		if(isset($cache))
-			$cache->set(self::CACHE_KEY,array($this->_rules,$hash));
-	}
-
-	/**
-	 * Adds new URL rules.
-	 * In order to make the new rules effective, this method must be called BEFORE
-	 * {@link CWebApplication::processRequest}.
-	 * @param array $rules new URL rules (pattern=>route).
-	 * @param boolean $append whether the new URL rules should be appended to the existing ones. If false,
-	 * they will be inserted at the beginning.
-	 * @since 1.1.4
-	 */
-	public function addRules($rules,$append=true)
-	{
-		if ($append)
-		{
-			foreach($rules as $pattern=>$route)
-				$this->_rules[]=$this->createUrlRule($route,$pattern);
-		}
-		else
-		{
-			$rules=array_reverse($rules);
-			foreach($rules as $pattern=>$route)
-				array_unshift($this->_rules, $this->createUrlRule($route,$pattern));
-		}
-	}
-
-	/**
-	 * Creates a URL rule instance.
-	 * The default implementation returns a CUrlRule object.
-	 * @param mixed $route the route part of the rule. This could be a string or an array
-	 * @param string $pattern the pattern part of the rule
-	 * @return CUrlRule the URL rule instance
-	 * @since 1.1.0
-	 */
-	protected function createUrlRule($route,$pattern)
-	{
-		if(is_array($route) && isset($route['class']))
-			return $route;
-		else
-		{
-			$urlRuleClass=Yii::import($this->urlRuleClass,true);
-			return new $urlRuleClass($route,$pattern);
-		}
-	}
-
-	/**
-	 * Constructs a URL.
-	 * @param string $route the controller and the action (e.g. article/read)
-	 * @param array $params list of GET parameters (name=>value). Both the name and value will be URL-encoded.
-	 * If the name is '#', the corresponding value will be treated as an anchor
-	 * and will be appended at the end of the URL.
-	 * @param string $ampersand the token separating name-value pairs in the URL. Defaults to '&'.
-	 * @return string the constructed URL
-	 */
-	public function createUrl($route,$params=array(),$ampersand='&')
-	{
-		unset($params[$this->routeVar]);
-		foreach($params as $i=>$param)
-			if($param===null)
-				$params[$i]='';
-
-		if(isset($params['#']))
-		{
-			$anchor='#'.$params['#'];
-			unset($params['#']);
-		}
-		else
-			$anchor='';
-		$route=trim($route,'/');
-		foreach($this->_rules as $i=>$rule)
-		{
-			if(is_array($rule))
-				$this->_rules[$i]=$rule=Yii::createComponent($rule);
-			if(($url=$rule->createUrl($this,$route,$params,$ampersand))!==false)
-			{
-				if($rule->hasHostInfo)
-					return $url==='' ? '/'.$anchor : $url.$anchor;
-				else
-					return $this->getBaseUrl().'/'.$url.$anchor;
-			}
-		}
-		return $this->createUrlDefault($route,$params,$ampersand).$anchor;
-	}
-
-	/**
-	 * Creates a URL based on default settings.
-	 * @param string $route the controller and the action (e.g. article/read)
-	 * @param array $params list of GET parameters
-	 * @param string $ampersand the token separating name-value pairs in the URL.
-	 * @return string the constructed URL
-	 */
-	protected function createUrlDefault($route,$params,$ampersand)
-	{
-		if($this->getUrlFormat()===self::PATH_FORMAT)
-		{
-			$url=rtrim($this->getBaseUrl().'/'.$route,'/');
-			if($this->appendParams)
-			{
-				$url=rtrim($url.'/'.$this->createPathInfo($params,'/','/'),'/');
-				return $route==='' ? $url : $url.$this->urlSuffix;
-			}
-			else
-			{
-				if($route!=='')
-					$url.=$this->urlSuffix;
-				$query=$this->createPathInfo($params,'=',$ampersand);
-				return $query==='' ? $url : $url.'?'.$query;
-			}
-		}
-		else
-		{
-			$url=$this->getBaseUrl();
-			if(!$this->showScriptName)
-				$url.='/';
-			if($route!=='')
-			{
-				$url.='?'.$this->routeVar.'='.$route;
-				if(($query=$this->createPathInfo($params,'=',$ampersand))!=='')
-					$url.=$ampersand.$query;
-			}
-			elseif(($query=$this->createPathInfo($params,'=',$ampersand))!=='')
-				$url.='?'.$query;
-			return $url;
-		}
-	}
-
-	/**
-	 * Parses the user request.
-	 * @param CHttpRequest $request the request application component
-	 * @return string the route (controllerID/actionID) and perhaps GET parameters in path format.
-	 */
-	public function parseUrl($request)
-	{
-		if($this->getUrlFormat()===self::PATH_FORMAT)
-		{
-			$rawPathInfo=$request->getPathInfo();
-			$pathInfo=$this->removeUrlSuffix($rawPathInfo,$this->urlSuffix);
-			foreach($this->_rules as $i=>$rule)
-			{
-				if(is_array($rule))
-					$this->_rules[$i]=$rule=Yii::createComponent($rule);
-				if(($r=$rule->parseUrl($this,$request,$pathInfo,$rawPathInfo))!==false)
-					return isset($_GET[$this->routeVar]) ? $_GET[$this->routeVar] : $r;
-			}
-			if($this->useStrictParsing)
-				throw new CHttpException(404,Yii::t('yii','Unable to resolve the request "{route}".',
-					array('{route}'=>$pathInfo)));
-			else
-				return $pathInfo;
-		}
-		elseif(isset($_GET[$this->routeVar]))
-			return $_GET[$this->routeVar];
-		elseif(isset($_POST[$this->routeVar]))
-			return $_POST[$this->routeVar];
-		else
-			return '';
-	}
-
-	/**
-	 * Parses a path info into URL segments and saves them to $_GET and $_REQUEST.
-	 * @param string $pathInfo path info
-	 */
-	public function parsePathInfo($pathInfo)
-	{
-		if($pathInfo==='')
-			return;
-		$segs=explode('/',$pathInfo.'/');
-		$n=count($segs);
-		for($i=0;$i<$n-1;$i+=2)
-		{
-			$key=$segs[$i];
-			if($key==='') continue;
-			$value=$segs[$i+1];
-			if(($pos=strpos($key,'['))!==false && ($m=preg_match_all('/\[(.*?)\]/',$key,$matches))>0)
-			{
-				$name=substr($key,0,$pos);
-				for($j=$m-1;$j>=0;--$j)
-				{
-					if($matches[1][$j]==='')
-						$value=array($value);
-					else
-						$value=array($matches[1][$j]=>$value);
-				}
-				if(isset($_GET[$name]) && is_array($_GET[$name]))
-					$value=CMap::mergeArray($_GET[$name],$value);
-				$_REQUEST[$name]=$_GET[$name]=$value;
-			}
-			else
-				$_REQUEST[$key]=$_GET[$key]=$value;
-		}
-	}
-
-	/**
-	 * Creates a path info based on the given parameters.
-	 * @param array $params list of GET parameters
-	 * @param string $equal the separator between name and value
-	 * @param string $ampersand the separator between name-value pairs
-	 * @param string $key this is used internally.
-	 * @return string the created path info
-	 */
-	public function createPathInfo($params,$equal,$ampersand, $key=null)
-	{
-		$pairs = array();
-		foreach($params as $k => $v)
-		{
-			if ($key!==null)
-				$k = $key.'['.$k.']';
-
-			if (is_array($v))
-				$pairs[]=$this->createPathInfo($v,$equal,$ampersand, $k);
-			else
-				$pairs[]=urlencode($k).$equal.urlencode($v);
-		}
-		return implode($ampersand,$pairs);
-	}
-
-	/**
-	 * Removes the URL suffix from path info.
-	 * @param string $pathInfo path info part in the URL
-	 * @param string $urlSuffix the URL suffix to be removed
-	 * @return string path info with URL suffix removed.
-	 */
-	public function removeUrlSuffix($pathInfo,$urlSuffix)
-	{
-		if($urlSuffix!=='' && substr($pathInfo,-strlen($urlSuffix))===$urlSuffix)
-			return substr($pathInfo,0,-strlen($urlSuffix));
-		else
-			return $pathInfo;
-	}
-
-	/**
-	 * Returns the base URL of the application.
-	 * @return string the base URL of the application (the part after host name and before query string).
-	 * If {@link showScriptName} is true, it will include the script name part.
-	 * Otherwise, it will not, and the ending slashes are stripped off.
-	 */
-	public function getBaseUrl()
-	{
-		if($this->_baseUrl!==null)
-			return $this->_baseUrl;
-		else
-		{
-			if($this->showScriptName)
-				$this->_baseUrl=Yii::app()->getRequest()->getScriptUrl();
-			else
-				$this->_baseUrl=Yii::app()->getRequest()->getBaseUrl();
-			return $this->_baseUrl;
-		}
-	}
-
-	/**
-	 * Sets the base URL of the application (the part after host name and before query string).
-	 * This method is provided in case the {@link baseUrl} cannot be determined automatically.
-	 * The ending slashes should be stripped off. And you are also responsible to remove the script name
-	 * if you set {@link showScriptName} to be false.
-	 * @param string $value the base URL of the application
-	 * @since 1.1.1
-	 */
-	public function setBaseUrl($value)
-	{
-		$this->_baseUrl=$value;
-	}
-
-	/**
-	 * Returns the URL format.
-	 * @return string the URL format. Defaults to 'path'. Valid values include 'path' and 'get'.
-	 * Please refer to the guide for more details about the difference between these two formats.
-	 */
-	public function getUrlFormat()
-	{
-		return $this->_urlFormat;
-	}
-
-	/**
-	 * Sets the URL format.
-	 * @param string $value the URL format. It must be either 'path' or 'get'.
-	 */
-	public function setUrlFormat($value)
-	{
-		if($value===self::PATH_FORMAT || $value===self::GET_FORMAT)
-			$this->_urlFormat=$value;
-		else
-			throw new CException(Yii::t('yii','CUrlManager.UrlFormat must be either "path" or "get".'));
-	}
-}
-
-
-/**
- * CBaseUrlRule is the base class for a URL rule class.
- *
- * Custom URL rule classes should extend from this class and implement two methods:
- * {@link createUrl} and {@link parseUrl}.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.web
- * @since 1.1.8
- */
-abstract class CBaseUrlRule extends CComponent
-{
-	/**
-	 * @var boolean whether this rule will also parse the host info part. Defaults to false.
-	 */
-	public $hasHostInfo=false;
-	/**
-	 * Creates a URL based on this rule.
-	 * @param CUrlManager $manager the manager
-	 * @param string $route the route
-	 * @param array $params list of parameters (name=>value) associated with the route
-	 * @param string $ampersand the token separating name-value pairs in the URL.
-	 * @return mixed the constructed URL. False if this rule does not apply.
-	 */
-	abstract public function createUrl($manager,$route,$params,$ampersand);
-	/**
-	 * Parses a URL based on this rule.
-	 * @param CUrlManager $manager the URL manager
-	 * @param CHttpRequest $request the request object
-	 * @param string $pathInfo path info part of the URL (URL suffix is already removed based on {@link CUrlManager::urlSuffix})
-	 * @param string $rawPathInfo path info that contains the potential URL suffix
-	 * @return mixed the route that consists of the controller ID and action ID. False if this rule does not apply.
-	 */
-	abstract public function parseUrl($manager,$request,$pathInfo,$rawPathInfo);
-}
-
-/**
- * CUrlRule represents a URL formatting/parsing rule.
- *
- * It mainly consists of two parts: route and pattern. The former classifies
- * the rule so that it only applies to specific controller-action route.
- * The latter performs the actual formatting and parsing role. The pattern
- * may have a set of named parameters.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.web
- * @since 1.0
- */
-class CUrlRule extends CBaseUrlRule
-{
-	/**
-	 * @var string the URL suffix used for this rule.
-	 * For example, ".html" can be used so that the URL looks like pointing to a static HTML page.
-	 * Defaults to null, meaning using the value of {@link CUrlManager::urlSuffix}.
-	 */
-	public $urlSuffix;
-	/**
-	 * @var boolean whether the rule is case sensitive. Defaults to null, meaning
-	 * using the value of {@link CUrlManager::caseSensitive}.
-	 */
-	public $caseSensitive;
-	/**
-	 * @var array the default GET parameters (name=>value) that this rule provides.
-	 * When this rule is used to parse the incoming request, the values declared in this property
-	 * will be injected into $_GET.
-	 */
-	public $defaultParams=array();
-	/**
-	 * @var boolean whether the GET parameter values should match the corresponding
-	 * sub-patterns in the rule when creating a URL. Defaults to null, meaning using the value
-	 * of {@link CUrlManager::matchValue}. When this property is false, it means
-	 * a rule will be used for creating a URL if its route and parameter names match the given ones.
-	 * If this property is set true, then the given parameter values must also match the corresponding
-	 * parameter sub-patterns. Note that setting this property to true will degrade performance.
-	 * @since 1.1.0
-	 */
-	public $matchValue;
-	/**
-	 * @var string the HTTP verb (e.g. GET, POST, DELETE) that this rule should match.
-	 * If this rule can match multiple verbs, please separate them with commas.
-	 * If this property is not set, the rule can match any verb.
-	 * Note that this property is only used when parsing a request. It is ignored for URL creation.
-	 * @since 1.1.7
-	 */
-	public $verb;
-	/**
-	 * @var boolean whether this rule is only used for request parsing.
-	 * Defaults to false, meaning the rule is used for both URL parsing and creation.
-	 * @since 1.1.7
-	 */
-	public $parsingOnly=false;
-	/**
-	 * @var string the controller/action pair
-	 */
-	public $route;
-	/**
-	 * @var array the mapping from route param name to token name (e.g. _r1=><1>)
-	 */
-	public $references=array();
-	/**
-	 * @var string the pattern used to match route
-	 */
-	public $routePattern;
-	/**
-	 * @var string regular expression used to parse a URL
-	 */
-	public $pattern;
-	/**
-	 * @var string template used to construct a URL
-	 */
-	public $template;
-	/**
-	 * @var array list of parameters (name=>regular expression)
-	 */
-	public $params=array();
-	/**
-	 * @var boolean whether the URL allows additional parameters at the end of the path info.
-	 */
-	public $append;
-	/**
-	 * @var boolean whether host info should be considered for this rule
-	 */
-	public $hasHostInfo;
-
-	/**
-	 * Constructor.
-	 * @param string $route the route of the URL (controller/action)
-	 * @param string $pattern the pattern for matching the URL
-	 */
-	public function __construct($route,$pattern)
-	{
-		if(is_array($route))
-		{
-			foreach(array('urlSuffix', 'caseSensitive', 'defaultParams', 'matchValue', 'verb', 'parsingOnly') as $name)
-			{
-				if(isset($route[$name]))
-					$this->$name=$route[$name];
-			}
-			if(isset($route['pattern']))
-				$pattern=$route['pattern'];
-			$route=$route[0];
-		}
-		$this->route=trim($route,'/');
-
-		$tr2['/']=$tr['/']='\\/';
-
-		if(strpos($route,'<')!==false && preg_match_all('/<(\w+)>/',$route,$matches2))
-		{
-			foreach($matches2[1] as $name)
-				$this->references[$name]="<$name>";
-		}
-
-		$this->hasHostInfo=!strncasecmp($pattern,'http://',7) || !strncasecmp($pattern,'https://',8);
-
-		if($this->verb!==null)
-			$this->verb=preg_split('/[\s,]+/',strtoupper($this->verb),-1,PREG_SPLIT_NO_EMPTY);
-
-		if(preg_match_all('/<(\w+):?(.*?)?>/',$pattern,$matches))
-		{
-			$tokens=array_combine($matches[1],$matches[2]);
-			foreach($tokens as $name=>$value)
-			{
-				if($value==='')
-					$value='[^\/]+';
-				$tr["<$name>"]="(?P<$name>$value)";
-				if(isset($this->references[$name]))
-					$tr2["<$name>"]=$tr["<$name>"];
-				else
-					$this->params[$name]=$value;
-			}
-		}
-		$p=rtrim($pattern,'*');
-		$this->append=$p!==$pattern;
-		$p=trim($p,'/');
-		$this->template=preg_replace('/<(\w+):?.*?>/','<$1>',$p);
-		$this->pattern='/^'.strtr($this->template,$tr).'\/';
-		if($this->append)
-			$this->pattern.='/u';
-		else
-			$this->pattern.='$/u';
-
-		if($this->references!==array())
-			$this->routePattern='/^'.strtr($this->route,$tr2).'$/u';
-
-		if(YII_DEBUG && @preg_match($this->pattern,'test')===false)
-			throw new CException(Yii::t('yii','The URL pattern "{pattern}" for route "{route}" is not a valid regular expression.',
-				array('{route}'=>$route,'{pattern}'=>$pattern)));
-	}
-
-	/**
-	 * Creates a URL based on this rule.
-	 * @param CUrlManager $manager the manager
-	 * @param string $route the route
-	 * @param array $params list of parameters
-	 * @param string $ampersand the token separating name-value pairs in the URL.
-	 * @return mixed the constructed URL or false on error
-	 */
-	public function createUrl($manager,$route,$params,$ampersand)
-	{
-		if($this->parsingOnly)
-			return false;
-
-		if($manager->caseSensitive && $this->caseSensitive===null || $this->caseSensitive)
-			$case='';
-		else
-			$case='i';
-
-		$tr=array();
-		if($route!==$this->route)
-		{
-			if($this->routePattern!==null && preg_match($this->routePattern.$case,$route,$matches))
-			{
-				foreach($this->references as $key=>$name)
-					$tr[$name]=$matches[$key];
-			}
-			else
-				return false;
-		}
-
-		foreach($this->defaultParams as $key=>$value)
-		{
-			if(isset($params[$key]))
-			{
-				if($params[$key]==$value)
-					unset($params[$key]);
-				else
-					return false;
-			}
-		}
-
-		foreach($this->params as $key=>$value)
-			if(!isset($params[$key]))
-				return false;
-
-		if($manager->matchValue && $this->matchValue===null || $this->matchValue)
-		{
-			foreach($this->params as $key=>$value)
-			{
-				if(!preg_match('/\A'.$value.'\z/u'.$case,$params[$key]))
-					return false;
-			}
-		}
-
-		foreach($this->params as $key=>$value)
-		{
-			$tr["<$key>"]=urlencode($params[$key]);
-			unset($params[$key]);
-		}
-
-		$suffix=$this->urlSuffix===null ? $manager->urlSuffix : $this->urlSuffix;
-
-		$url=strtr($this->template,$tr);
-
-		if($this->hasHostInfo)
-		{
-			$hostInfo=Yii::app()->getRequest()->getHostInfo();
-			if(stripos($url,$hostInfo)===0)
-				$url=substr($url,strlen($hostInfo));
-		}
-
-		if(empty($params))
-			return $url!=='' ? $url.$suffix : $url;
-
-		if($this->append)
-			$url.='/'.$manager->createPathInfo($params,'/','/').$suffix;
-		else
-		{
-			if($url!=='')
-				$url.=$suffix;
-			$url.='?'.$manager->createPathInfo($params,'=',$ampersand);
-		}
-
-		return $url;
-	}
-
-	/**
-	 * Parses a URL based on this rule.
-	 * @param CUrlManager $manager the URL manager
-	 * @param CHttpRequest $request the request object
-	 * @param string $pathInfo path info part of the URL
-	 * @param string $rawPathInfo path info that contains the potential URL suffix
-	 * @return mixed the route that consists of the controller ID and action ID or false on error
-	 */
-	public function parseUrl($manager,$request,$pathInfo,$rawPathInfo)
-	{
-		if($this->verb!==null && !in_array($request->getRequestType(), $this->verb, true))
-			return false;
-
-		if($manager->caseSensitive && $this->caseSensitive===null || $this->caseSensitive)
-			$case='';
-		else
-			$case='i';
-
-		if($this->urlSuffix!==null)
-			$pathInfo=$manager->removeUrlSuffix($rawPathInfo,$this->urlSuffix);
-
-		// URL suffix required, but not found in the requested URL
-		if($manager->useStrictParsing && $pathInfo===$rawPathInfo)
-		{
-			$urlSuffix=$this->urlSuffix===null ? $manager->urlSuffix : $this->urlSuffix;
-			if($urlSuffix!='' && $urlSuffix!=='/')
-				return false;
-		}
-
-		if($this->hasHostInfo)
-			$pathInfo=strtolower($request->getHostInfo()).rtrim('/'.$pathInfo,'/');
-
-		$pathInfo.='/';
-
-		if(preg_match($this->pattern.$case,$pathInfo,$matches))
-		{
-			foreach($this->defaultParams as $name=>$value)
-			{
-				if(!isset($_GET[$name]))
-					$_REQUEST[$name]=$_GET[$name]=$value;
-			}
-			$tr=array();
-			foreach($matches as $key=>$value)
-			{
-				if(isset($this->references[$key]))
-					$tr[$this->references[$key]]=$value;
-				elseif(isset($this->params[$key]))
-					$_REQUEST[$key]=$_GET[$key]=$value;
-			}
-			if($pathInfo!==$matches[0]) // there're additional GET params
-				$manager->parsePathInfo(ltrim(substr($pathInfo,strlen($matches[0])),'/'));
-			if($this->routePattern!==null)
-				return strtr($this->route,$tr);
-			else
-				return $this->route;
-		}
-		else
-			return false;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPqjOa/bBNcZ+1aG6skkUeXG2kJ0NHBTHbOUi211hAvijhqC6ouX1uzqHcJXbVPSvuFHkHaVh
+SfNiWZ+h//Bo3PywZI4IohGM6T3GbTINkTqhIO+l9VFOEUuU1bVPJdOGN94GC0EaK0YsDQl6M7Qc
+auDpN4AicrSUR1Au8SHiYDcj/jAvNOsddOnKWpUqYvlfLdYT5mJaVFBhIlzHCdVQOs9sSAG24+n/
+ddgSbq194InLprVWp/sPhr4euJltSAgiccy4GDnfTAbWPxEM0wnvkTlvZjXZPqfE5il8LxVCMhft
+B4K9NA5ZCw7dgf0b/QcEomRe+J88bNwGrXDa5rg1GPh2sS3pHfYJzviOddhxYXqNwsMwAymR4pfr
+9M0lEHfWneuE/+ZJ3EC2ShQSuoP7MQ1ohVLrYpWSZ2mCKc3QIWTeau7jT9ZvH5Zh++q2leyxsmSR
+ir3F6noEmDMUDJHB1PbepOjAvS2Czi8QQyfoQEAKNYjcpqmIiVXtVCrCJPiZ/FvJD0enjkXw0eTR
+osJgah//LqcOlDugXf3iB3bTI2eBC5ekgmiBGKUCW8dz/TBCj14LjTXP/StcOACVlCvNbaHhSi4D
+8qT4W9vHhOTpeIqf5x+PdurOcypwD1hWuXMKynzi82l3SxWVPfBUUe68Bsf7WOoPpSf6zSAIyn4i
+DqJMEIO91rrndHZuG+R35gbgj9FhYfSMPEPSOR/dz0P0+8wRpH6ivubrY4Muojo03Uw5uvVjvMHm
+ChKGYnYcw8jPf7C5SF6oD6D34mGOeKFzyZgRDx+RwqSa5VL2tEjfe6dZTq+YylIniembC6u1EbO6
+CotNJ2W5DXGXUQKzY7MSUDjt+I94z9+f8MCc3MIncMbN7cHIL3ZjUI50j30YyBt5g/I0jBNl8LyO
+pn5NUvjHgK+Pl1bMTLcFy8Jl4QoQjKOUKQ7kJ2FOsLLE1qpaPe92KjZevLIZlqDh+HTq7lZEJMrt
+ySiZTKZVQR0RkooVn8pFz9UN6q8iluzcrshbCLYu3HypS5rvOrRPz+uCYorm/eY01qiE0lPizDfo
+swW+XwF04NSuYFnqR5rQi2VEtPjvflK6KOM3kwINHy+9OYSdNXfVkJ0Z+nzkn89qKZ6BZO0NV104
+O+szNhS/G4T9ZkRstyMATSg1OeHBeUruzX7iNX8x178NbPLBrRydckEKrngm9xAtZ/L3jq4gl8rM
+D2I5ATLmJUzMpLJ8+KqK1d6sbHFqPKKHSgF7AyFeut3lFbWUagMA+5JY7uldCdet16wrPxgMzjZl
+30/nW1sWs1YNiXGKZw47ZIUl7ONxe5KlnUHiaFRoJzbWLQ2nqDn3X4yUf3ufBGM0/qbmlLgo0U/B
+h0F7Rs4eIXlSwC31JduqFpjXqhLp4BYqvKvDx0txgUqhucnVlYPsSd6RafHlo4WRYsoY1GS3aB8Z
+Hin3lUs0Idcf4KvU9MR6yqtB9SOhTM3XxQnoCTMuPwObqqVZoqQbfZYANGH8XzDs+Y+ESGhgSSAV
+r6rnYOuA+cmO0Gb5bkfp4/PmHLNNGQkteN7Tjj1D0qlSSiKOy+Ijmzd2aZ2S+U7FaGn87AY/3Yb2
+QfXqBEFXSnVCEfdiZRm6+TylzQB4nYgoqYIIDlZCD+qbG34oxdWQqgGUAzXAiiifjM4u2yDsrr+f
++z+1icDuPozYvHIQPwF9s6lshxvLkbQv5gEQJ/nyqHiShpNGOcNlyHqpwR1UksM8Iy8wwSkO54f/
+zNKUa8dgz00DNimorG+zQ5IuwLmlQTxLtY97aL5UhiPwvMclZ2Iwru42O8D7Cqj7aHcFA2ASBlVx
+dxuRxrSo2LMLefiMr8r/J0P8bjrwVgUIMwdfew8xBx9hK0x1ayKkKqAsdOSHNOlEUTAq4DwN7Ebi
+Q114nqsHnZeteB2RtLgwCHioSmrm5gibY1hqqS9+aMShGYLcvdEchRAEBg9k7fZvqY9abk2NuIye
+kSVimDduA+qI0XjwPw3T5OLpjJ6bPhXc/uxmGx6+3PTgOcAdQXWoKqDRlbO1pFtov8dvNtsFzKpJ
+Tn5zB/jTuPZQsT86CCM5UuPshvEPI9TDHp3M25xjRwr+YKeRFITH6liUPZ8Ngtue4XbJamvOCgwn
+NbkrCd+OtWWuwamAtx9fOo7ZHE4lsRwyK8gikjX3s2yYX6kVTwRpbkydMZL59qxHc0btY6SsCz6S
+SkuTryrABHdagyKkAc24R84g4xFAsXRcDuq/oxgmGMNxB+UuDZ1xMjFHiJlXWPp493fgyOvG8Ntt
+eF0e+eBqdGow/dn+UkgzJP1NHXKNmiDdykzHAyHPGg4pkmqFUkIgluHSZRFluA/fVQe1SL1dzHMw
+kzL3/Org2e3UyQFU8IthVODc0M+68Idzs0cIvbC9oyNtK+WkpvrrIx5bbCWFUH0saujBmPf8X5Ge
+ZR91WqIUvUP2YEjyAflQaSPUQoIgbiOXbKlTKUvqSuRe1aJmOxVpVBLt27Htbm3f+ddJ5d4w432G
+rmSHRKR3MmZQ4wkyhGZ3mIfO7it5wosFkIfWxT60hBQHoDRypFTGtxdAN4TXZ946dYmgPaS6JIpp
+lGjrE3heFNluYPX23LLg7Dn6PnJcVbiVDnKPvjV+idOA/FGLml5TaejbdOhHkhia0L9Djtcbvdn6
+hRcua/OTucOOJlSpUaVdSd/wJ3jykEx7o4VHDvqsxCAqT1PTJxx3K8bvXvfoC5OVMWt/IJYa5Zeb
+2R6VmeKjPjfLYbn+2q96Zz1SfiJ/YOg4zSPqS/jw5N7VC8gJYmoAS0up/QOT0A1sr7sMvAn4CUID
+wqENW4HBiDgP1XpAmZYlTGXkMw9EZcFIBR/PJ4PT84XmvKCxAspFfq7i9ybMg2NUr+QBsfJNS4km
+wnezvGbACrYQu8RVO6yR6NWkLp3rcLkcK56AdeFdZyOC8TNEPSm1/0PrZlz87Ry7ZawTuuBvVxy3
+AznSk9DBPr5WmMt3XSdVSsJFYPDs4jlqBsXBHQAX6+JixYCfBrSQKsW9CUsYx4HfDd5oSCYT3yeU
+ONxLdi6R87VxS21VS63HiCC6Oe9a7viLzvsJl1inLyNBYJa881ZY3U09C0VJNUSeepSkOHfvX3j/
+S9XMRuIlqN1HPvMuzvBTfd6TqPwJab/Lf8Mg7BRx1jHikLhj9k7QqYhOvVIvklVC8Gk+SPDrV12L
+rABx8qOwNuGdZFIerBYV1D0gM9hlENBGQ0Lcj9SdoLGG5BXGehGMeSsmv3Uz/b8IjDLAxKY1eTlR
+Aax2M7HFrf+2NZ3igxYBd9eA31zWA2HgfWmOv6AN3NBiCAbAZcuZIvfk7SekkPqAyzeWqcftOMfz
+YEQUdIioKdpOhczr/jcpDKzfFTSNUg76s/s6ziF4PFdzffSiwQFZSlp1SJ+I3jNcWdTqcbxlHcab
+0LM5gZhzLosxNTQrFyDnCnZRBU3nEbUyV/4VjIwQiEgzUxI3rI0VJ/dT2kZN2qnQ2GRymdyFZNxJ
+VrvRdiWiiqD0xQWsurqK9rDS8O6ia3b1DwtmS9QQ1lzjLZDLGX5c2cusTKPvoq8GbRWpVYLe3gaM
+6NQQsP7HLTlxJ3AhD4UhrMsIJL1F9CxjIJHSv/aYiczHFLeZibgRLqldigpqUT+MJg4/yBetFiYR
+APeXqSeMLu2fTtrV6EGcfE/k5cICx0L8U9MpSkNw3+BuT7kNrsxAraGMhSoY4jksB/ueOuyWgKU1
+rUSHHqXhbI1XlcUeapK4I28Mct95CmJLYwwS7JA9nWs8NqPVeHIJumF3hxVIYqM17GLYekaR6ve3
+T8cFCR/xFMWpjrRzXtJ1YO0TS9/Vj+6Vfzomf4w5IJvJl9qwQYizmIl0/VLMtQLNzf59KROxz3g0
+pdU6HCB25jUQDxVsDoib2kg+T7H6Nczizk9+pm9HsQEXSka4wj4fXIqLJKPxXlKoZhnTvTDHeetS
+52jxbhZMAJOJwmudDuEmG5T+nRNdGG8j2Y4XJyQHQ5V6SvpRSxZseSkO97jJb0j5IlAgqUsIaoSx
+ZAtuZH1dZFzghjx9c5ZVCJ7KVK4t73PchZH4z/9NdWPlM51fi83T1dgl+xMn+bws3gU9KqvdLv0/
+vRjlXrHSzx5gD9D4sgRsfXGCWVf53ydYqeqCmHOhyp8i0VDS7JFF3X08/2DRMpvaTMQ/4XYn3QGd
+8YJIA5ehbbE01CHcHLkyedmcrDhRSsz/D7lNG4qckObtVYarYtiLS7w8ax6xKOC1iD2jdTeirhr1
+jzR1oWrdX1DhFJIlJExY4tIj77BKZW6js6pp+RVOvPiHZilqf7SlhIkf7vsKqIThst9u4kHRS4bE
+iiyCW8TTSzlk0pQIkwHBqTzoR2/aTC4WEKUit23tIlGvYBoAaetyWKfsK8S8XdHzv70tct2i08ks
+4S99DkkXGNpOuby8sB/+UN9+Oy6GLeRJNSTJnNfs2EUudJ5L49zUdkKJ61LvSoAaJ1TBo94IOjXT
+VIEc/d6Rg+iGw9Fl0kQmXj/aXY1ADwPYoWqCCRgFCN4zOFU+9XX3+NBla0N3m2vVBhUc0eJ09NUc
+vXDQRv7omP81X9xa9ceC/LCmAZavs0aFOUDWBCUtXYpDi1eZqWUAZWNJzp38SNSgHKvDJctHo0Q0
+atXKLYDJNXRRERKwsK+Zfp3w6VqlOYcovSNGKGniH8jhcP1SICW2rW5UACYFmRFXQTT5Xv0xj5QY
++k5e/x+ptka/S9HU454M5MyWkI/ZvVpjS2YrJhdkd5skRnjUyt+Ni3ysMDtmzrXiGr/S13+2HTEx
+sYB3mZg3ZX6kGxhQ9lAoJ6jkZ1IlxGDGn6CvjOaKG9y5fGMP7i0Dop0munZpFcXodFdmfl2YbSJF
+LqbLW+eJPRiNHg0jnxqpHNYO0mwXK8wL+XN3BZPihf8nBW1vQw2TKU0f68zOBaEEpvFIDRRKZWD4
+OpkEXZIdjvtu3i7giYMBVIsGXrWmaV82tU+OROtqT6mB2/HASJZoXVMQqOz35l4GGhuZz8MbZUEA
+y9RP6c5N8uDspqxl4Xq71ffO9hrTL5mvyp9IfNHdL+Vi3oHRaj3bYH8NwCuhlXV3gbFIlAWKKgCs
++1OwjZ7pn+vi3lTiXtYPGt5c/Qj0XnRY73ZDpkJDd0MqQkznoRqWfSjShwydt5liQpkCK0oPIEBw
+BQHndntwUd4nkl2eK/ZssghVujNkEJNPswfRXMqMN6mmQbqtb1hr3H0N2SISXlo14SUhuaK1WeLN
+ChxjkrTGKnFBCLnSu+wJGxdTMmRGRtM3gntBbHPDkDCHG1ebowAKuD9xImAUtBR8539+EvB1j0Ra
+SPGLZoUEftkRr5qcT5K6ATlpq9eKghpu1xvjqGFkE1HM996Ab6YQPSdCJOAXOr5zpjCC4VI11Dbm
+Rm0JE41ey7Ae7Tb2UO17nOj0GKgTgKQO8n4Qaz8aW7FQ7Cl69HxeNvbHkAt7GYtKDCmQ3Vpz3Tk1
+vJxkds2a3g5Y4Fumetq05MwPDwKqacK90+Dv72SEkfcdUU7rpP2Mim3aCjI7VqNm6SZp4+6LiH3C
+GDEIPxRLXBEmoimcYfgtHRJsBHT3wHoQSvX4lFzOVYEeK4dw9sBJPR/pZeeJrRrT+fb35aFE+2Sz
+XzxTVjhtRPlAB0PkJ7HrIiB4wGPq8VY3iTvfhrwBWF7Az3CkES5BzRjGroSe8tTMN1sqv8k1VXrW
+DDkgMxCazOR3d/XvCyQKvS4gaK0vItx04F+3CLlHjR3miZMtOmZCiRc0St9k5tgDJK/sQ7rVreWp
+sCfQXs/mxOpxLnOAij3miZTi1U07RE/LZhsOorqF9XOfe8Ls/pto1s4kHlzbMXmcljtPccmHEpj4
+wK7eVrS824wsgSqB77GV2wHm8qfh2NOfP6suZng3o5En7YrWCUk3z3N83ohAGWWKc7ImJSUeNGn1
+UrGd+9z18NWpLCcWWc7paZ5F8tAZogQ8IyZc5iYF9jMcBZ2Vo5gDlk7hA68UCLJHv3c58ZvnwU+R
+Qgsyc0fClJgrtR2txOvgODVjys5N28if8BySma0XgjBAFkidJCBsYHGAuzSSUsV1S7+lzb6ZViU+
+P0HtblovzQz98iJ1HKkknKxiZsPOwLk+0xMn5ZFMhtOihOaXBGcMolsuzlducOrno+0n+qU2tyFI
+WIFzXy+bcG3ach5C6UtBWvLqYifg3dHe5SHIBUrPiqbwaNWtyWuiGYQ6eKA0IgfYCbUS40v0tfWS
+wk+1G0E/iDW0vqAsu5Hn7mPsSG0+DePQK8puMgIW9fgZ5qHzWScgZ5jp8ATA4Rgi28m68xoIqzaz
+uTyoQ+wBjlS5dS1M85O2A3zyntqDu8tgZ2ixRbc0Y+dcUJ4ttaRcDKsCowd6uJ7RxyHJmGfpm3uQ
+cZtIRWd+iUibTL/ZNAzSVtXqxdWuPNmCEOFzCJ/HJzTZdrYahkvOYStKaRdrUDBP2vTTJtDD5rmv
+Ff9xTK4a/QONMq0i4TscOs7JVsJxJ399LTKQPSAwvAxtI3aXfTa/RD/ivV9d1p4HqCGxkV9QwkCg
+oyJAESG7kcDohK+MONt/6glEmd2YmPVq0CCxGOBCzJBBskYB2Gt1dmlBYhRHdByRjilPK8bD+0e7
+XU+qOEjGDPOwiZ+BTenFajuYWOiNugBLKxQsr0velcg+1TV9e+iYNwTajSu13tep5Py4W7zUxmgY
+yLdMkskHSK/r4LxCk0nXPvemj8yb3zkfKtP2rm6qxiQSS51WwqYlBKKGiUaXyTG/eBZC5YjEVFTy
+6JswOGkXWD72YTLd/XP66rMqWv57nDX3RzRmTQ0QVw4X3etLno3LO4DwdGFww+zw9/9t69eCy84q
+3Lvk4YcqPBom3GHrSg3VeRWYj9RAI1oETC+FSIxhZrnlBcan8neRAyDWSV+2syXHp9/YoT05OLTs
+bi0CmbYsdnTY1Y0NxWOe2d/k/oNBIfAOrmHhcZHJnwFm5Yq9QvweZMTEPL1m28U8rvca2GqcTCwI
+vgdWobWcjhwKDWWf1Sy9VALNGNLqRpJgVjObpgiamj3cWDEB8OB1i5W1SJ3mTXXe9bXcWvhCsbe+
+otYN3V+uaPXR/Bwt0LSEd7lu80Q79VEkgaNqdWG7YNYmcYiiAIc0Di7IiYHyFO9+dhc42q1FCgCp
+JrJNWRzEdL1L5wlGUeuv9M7ZJN06WICzwxOdRxTRDqefnTT/vkCWfep08VH1OPsCfhe3Uj18cbn7
+9RpmlFO4MYUJKYIMSoP01DBkeAI0Ks8ueguc8vAockPM19gc4KV8HSrB6dHCchJGB0FlpXXFgWoW
+sMHnTe+STrT2gh/AqTopBFpct2ipFzg2lqv4WQQ9Q/XePTCvL4YukevCQcTQOzEmQDwioe3I60Re
+9BvpdAokSh/LH/S/IrlW0GZpeLSTavJ83RcXsX8tO59HTzTzs36EL1fyYcZExkwmwPwlDgv84V3O
+enbXSN+qfpymPP0hekfD9Y1SOwClDKb1rxcYnnlLDGmgzQmMaXHOsZqlzC73jEP2yvmJxMclYeqj
+JvyzpYV+zcQ5ugg6ZF2LS9RguNlk1Y3v9ShYu0YpyQDafLIy1sjmSNtXh9NNMbymQaMy6KEAdv74
+W9OJ4Drz7FkH9JM/4mwouiEQMq9AJATzXzIuz8EPdwXN2xwZ+MWNZvDQ3MrexY3bz9l7btnX1Az0
+oy43XG1sWlkF/FKNWleznuGLdcVj+iQyoeXushhexkqN4QjLir3XIQg9GAK17v3YuxwZR/Q94xmH
+TufM3D6WBcs8oMkfeKuLDRCwTj0ZWwbwTFYIUUIlCFzUJt72tNmVR9MYBR2bFkrwip3U423L6/HJ
+JrjUb65buVrCZ073J6uZ1qD65jnzZXngVF78EoLs6yYd6X3vQGwXNtTtDHxrLYUBPULbbuRNYcX0
+/PHevEKf9IyiaZtwj0KrBZW6U/oInotPiSe80W/sspB5pA29de18PhSvtbw2KXJl0BA15aPZ5ZFf
+8QcuAZ7C+bpD/F//7vgDYnjsGnFHn2T9a86KSZxnzpIsvBSxTbeGYW+lHLqpsXo5l0P5i3lr06GM
+jzewq1w71hq+q2O02JDU2eVz34zpukB1EhiX96P0M2Y04Nmc1fYutaClVXoWGw/9vJH+S3291g1t
+B54om0thDC7vN5RgK+CbWMHfSEwdUGCm+ZZscE4ijEZ4kJljFQnd3dG6s0nndZ2dO3yKFvvnPqSS
+2RJ1SfoPiGllEErHcShKLE8wWW83RcHbHJP5y8uHQof0xNeuOFf42b0k/FrUlqmtijoZ4rmK5TEX
+KZusyzYcwsll9X7nPNifPd0n3YqoZkzJAK3fZON1zgCiODthwT0ES53rNVx0ZvztArEavXTPLHxm
+eTPCs7x8DAQOdliGfxh5oS28dhE9iiHwPzo/i+D0im3XUEPstS1pCxfGNLPRHmOl3+Dr8dBEGlVA
+MAliZlz579QQZkDWO1LEfyaZsj4XFhPYZ/KgfNJxQfFsfV0R647022dyrnnlSLOFtukJMqlbSzQk
+72bcu/QaacbhsdmsEkTJdlCit2vuxWHpuceJdXAbVMar3bBMVvOdYiGW6JUmS63DxY1iXSWc2psI
+EDBp8AOf0ajTb9rnE+0E9LVoy9QqCmkosBtvR35mSE33TG1ZieS+J2oIobDCdH8aseJaBOW3is7Z
+MyRI3lW3gnlf4cXCOknXqQupMjXei5rdvuffFVqevCnY7EETm9nu+C7cY5XRP8VnjD73tp6WVqIW
+Xi3b7KD/36PWkdgRWTLpShLw5BTAW914aV+hsBfr/dXIrliNxDP98R5+HLysfAQAGnUV2TMfK+yY
+zBcXFMULEXHI4LWvZoCPPSnQE0NCcdns0LdZb/JO1zsEKEcmj6aKhWQhx1mBGNslS7aAWpf4+056
+lMXufN7Enei3S2inVcXgPibl882XxySf8ni19CEVcR/VqZJLbJhZ+UUyyy/4OgjNbFFEtO4AysA4
+WM49YLdS8qUtqJVCKc8xOeIPrSPQtSxDFWNUxY/vhiQSdY4u3B3j+mYm305Ru8NKYrHeijUDg8Qb
+tA8AIDSaDJtgiUAroKNOQP+YW2JxPyhsTmgCRTtK5SM0IIcchxccvljUxTTo0BHVADsZJghMTvBW
+OfnhVfnYFKAAsj6iQEQTs3AXt8BiAYTvwjSlI7BDKTlb6n0j2xkvzlg4/xijVly0gFs0xU21TNXU
+DPlKuH6AJxtp9VPXagoOBpOj+9yPnDbYlYrbHjsLjhLM2Sd7VCTkNnWXEX79LfyKneihWumm27vI
+hFmfpmu0RQb5hnfohgiddtV2rEp1thwSZ9Qo3e2Qw43F8TItf0OxPV2pXzS72DAn5bsMA8XEXvSk
+zYoHsTgGSqsdfBSXe+cChXPuZ9NIOwbcecR6V1iX0kQ+9aKHTqoJ8mbbIZEyMVOEig9HVBcF/C38
+EtoKkujgTbTQUqrgFRbtpLSNW+VfUCG79KwVYw6TQAOHQsdNEoZhflGYGe1WviAA+DnFtaEmXlnq
+swvWpGY8KjAObRjLniXDbBdgBkSTa1GkAlQ0qYnDROpx5LnnfXUT0m8X/SgltkHr+nvzWDOPRmlv
+hZg/o8qHXU7gj8uocE2tuZe8luOPXbE3tNQh4snkKew7LfCnBKRX0S9/RCMkIBZamFRV0x/VdFCL
+97yXaG/vhTnAJ4POZHSoEZAq1q0adgl4fYZBncFP0WSC7SrpzdhUFZNGzZ4QqlAP69kVHqgxfO5B
+WAm9sgtY3pg2M+SXGy+VbNsY2cwn37w1jIohqzpdSsfMhbTgnMsCdORXJYjob2RwAodK2kGC/m4C
+WxRVaWiMTf6WMjj2asVz+1THWVb7j/+tOrth/xbdjFekxo1HhoKdRZC9wrTlFyYPBJJETi+9Dj+J
+HNDLsc+MTJvxDj+Q9xViXQzWKndvVPG9BICr++kct9mQpDVKIhxmZmKtZYBqNmNqVTKHssimAg9z
+oPIdV0WBXF3g1zCI0x6HON9xykW1DwWtVVE/usQHeISagbue/GcfPr2CIg73qGnbHo+PQLp2cz6t
+5utlZqDuPtij+T/QuIwszZLxl+YcpHC3+mKiV27qPnGHqipZ/8Vj65Y+v7fjNNSbBakUTXxyJv4M
+J/y+1JsDuAqOlhBoxl8YEoItnkQHZw/Vk8IwP7EstOd05cn6Damm/NwN4SsYAWEcxOY7cTXil0fN
+3ol+M3iez8mm6PpFwgzr1WhfsjCb7LJvyWoeWfntXWc3e00w0d/PDI0PjsHUzDajbMgRy14UIzX/
+cCE61j7tv/ItBCcxFOcxj8WWEjPiJuYa2q2GqHwMoq4r3McguKJE3bYiaMFm/jIw0/iS0GWPmhuv
+riS0UbJgReuxhYQOUU9v9Im0L3BkT1JR0+pdjvbn4Ngs3DVKvIex5IA866UjDM6saUX/DYc/Fiys
+HHCwcKIk9Rb/9m7uMMVsopSL3IpFYQLy8/6g8LI7LnrCGs7OEd+f+qX+XT8bKaxQ8P+cThQE6EPn
+koglh4+XJYQO9dPlNAAJXaLQ/CHrx6EuAh5cN/CP45kZB2Hym0/2b/P5WKwKVUCVPkF01b+V9TY6
+Rje0stS9rHDI15swfI8uiuyQd2HF5Sz0BoNj4fi8IwdkccZZITU44nNnpVAVCfGJ4jmjeeVexFxt
+lyeZR9QDVAvnIIdr97tRkWmxmPZ9R3HV7bW3l+LXC9YtG8m0vDZfh661/n/M1Zi9oDMH9W7ckWcu
+g4Qz39LpppR/wY3/7XoxZqBF3zdujsrh0Cux4UyO39Icbuu1Or82rPqjITV8HFM6K8h71mPZX9Br
+iqJ8viVgM1OWNkcF0SNO8XzbYW8Q8Mq08LlarloMA5VmP/p1Jy/mA0VOAdnvcw3hZ9+I0J/agpEo
+RzWuCaEoY4cwfutJ/zJB3/6B+RdurrYiST38377AJtv7N+zc8iO9okE3gfwyeqPh6M9BZIICeYjg
+QwAK0AaOru7IEdZVwbXN00xIiFVHit3YBhiPdanhwMDNG4ZFy1hnNMKYZpU+SxMi1LpU0K2efCjb
+LVgxXX99l2l0wY7ChE+JYcAX32RW3VXObw/+phiMsTpr1RsrlQQpWBmM/pxrBDLLktu11hkuSbpJ
+SzFKbV6NzRsfdtM0T9kRSd+7iGZW0Ae6LMTJH9mOWeUSL2AfKfVFZlsCsmxR5GNl7Og6o5biVmDk
+TqpvlEPcHtrqOUt4OsoRImLsLPQj2ujXWlwxGeqhmXXFY7Lso0sF8/QOzrKZmyB+Jh1Tu9qaEUfK
+Z1n48C3mEykFQ5Fg8/NDwaRUZfe6gUR0Q8f/VNgAkoyUnsRaoWwYae7rsxxd5VHI8rXq/qRSwxsi
+Jy5LMrzDutvTik4pv0+4Bq4XGlUYPavIOdlF0/1MDLnrRKSQXTAeQjCqi1SfRJZxsUI2qVYV0zBC
+RTFmfbDaKCygTdx+hcd/TRf/WOJE9jSFK/Ge26mD8OBlJjXSmwIAUtD/wLSrVGjtHi19DwuWSWyT
+ZW4XSrBlL84/egst8YME1TAPzItO8gZHb/un63hBiazqV4yzrgUdxHNPDFkNrUujaVo15L5GDuZD
+uzC1NoVHfHGPhY+GyJf3KsTXPnl1szE9XplbnexN95zWbXE2bV92dfeXO0Fuu2RycmlQXauONw3P
+zZBHH/WvUdyRwksl4+XlUOObrk02lW4AvAE9L2VcOTo96bIDLUoB6dU0lPG7V7b04AHJNiFg2BjW
+DbbRYwF5PXyu+SHy8DsWFT0iLQ2XB4fmcJsAFanLxLfwNXM5RBpItna06/yZAEHDCDfGDjL0Cxu6
+fteeX5ivE2j3QUKIMiXVt2+tGiLvRa2ijkI6w2bNA4tCORiN0EdmtLlnISg5qDoGylFP2Mg+/Q4j
+qSrSIGrZ9C8lw/Tm8vs5DKVK5iXupUmxMMFdyX63M1AwlW8jQkps8RhWu0q6mWyqehLKUAiIdliC
+7Pvs7x4lme+T5eIkEC8G4cpEiKoZ0LVHhtraIm4eZY+EGYN1/GfVxnDvzKmYzgCSOfsGXxaGIMuC
+TfQaDpQaoh296Q4Dlg0delVCcYQ/KxcyGOBzeWY2NzzaN2+xJe+udXoklOdS2p2Jeu95A7kHnSTu
+sS6yKTs1+PBgcYA1pmf2zqWDHCfO2G8/PJS3jeesTvchH9F9j76rkg1PUls1gwe1uRXu8gfBXrTI
+tdnqenKsKxbzviQkS4DvQN0DEAQXPo/ez1mJ0MQK4Fz3BBrXeTh90kM2g6x63BfzzN6rqzTS2V3M
+nfy2YYkejQQ9a41CuiVas04aR/k2PeRpFyAL5CJp+UyO+jaAd3cLiDsRzhaib9x1qIv3htR+oJgC
+Sv4akOVEKIJZ7RPM4/EY+FIZhMwfZeKzdHkW8/3Mqorkhd2mzAkb5etSyCWlMWrmz5UiRaiLYp7T
+RgM+IkqUw6D+nPmAGBrBjxxKiuWsrvafBekn9Cs660aIbWE2y6e72sSdi9lCy1FJaWcxhAEXIE02
+9uE7f1J/2WgxkRlwLUiAlhiFDnUdwiVkYZ59Qq4kqWSkdqIpHluKld8dw0R9bGJ7s1nGXXheec5b
+ceI0MVwtgOdnf4qURsk4bdIS3V5VW1ytKTJg6kxeyAuuXKc//He9amtlBPjpXDTHm7Sl5uEIhH9S
+dgSbfMzMJHpyprZXujqx1atamP3FhVWSGnKt9D8BDQ6R4fgoWYeWSSvm93bIb2XUFwO9Q2SrYLLz
+iRLdwjXlo0JYdomdFJcqVIKUetgvo9J1u/g4hDL7efEaGoixOaTxFYYB1QtcUEY1omxdPUx1S+z6
+Mdu5touLMZ9B0k84g3DV4EFbVtN45lcy/JWXsEBXwDJ0nbtYdtgfGNH3QL1xiL7lYqQwM8b3FhYD
+c6qF2NB+P0P9KKOunIjaG9/vlP6cn9kthqMYe0R4p+UeR5wx1Kq4v6QLf1yUwILSMSFb2Av+dui6
+LD4Hy86U4I9AbNreWmKqPRwbzep54FI4yKjDY7fo5Qdr26FReV+9bHhZbGAjHSd7GC5sPVrRTWD9
+ZozOhQoddG6hofDVm4FOnDg7pfBhNscTCKdMGxH+VCbMmfqs/YLW3VmQzh8JJwrWk0htAzzVw4YC
+2kj9RXvNcvG1rrb8T/4fp7w+2JMEm5r5ddmdmO8QpmLwfSBYU0jbnkOQFuIMu7m5uJFfsJX8dTGH
+6UHlpuKVnQD95glyR5BR9X0565pcQjEDVJd1Hk1HqhGzbOyXMJDbO7exDVi+jw4blAe6wVRo7ent
+zytidYqbxNmHRWPjZ1LSnuTc2ShVEMgqCt2gdxoqfh3K8JIOn/DpBEczJX3jdnRDJObQ8OVh3J3+
+TP/IWqCFOzsV531VnYwdi9qWaAeWBZd9Fd217FE8N3e9kspXXM1GOjk882rUWvm2qucOpwZOEmI5
+6T1fOJw1X34TU0+8gEYu9TB6CkaYNXnOoCMY9MHydh6/K76HS49vMv9LivWfr5a0d8z7TFnJbdr8
+sB1u5oHVJOIfnIZ7Oh/Vf4rSJ1gIIF7N9uqaMGBTkXE8uVq7RTuNlFWIjeLwfy3SY5ERjuf5153h
+mtgroT6tYo0dzwIL6gCUWt6Stu93Q58EwsaxVWgfMvh05IO8tu1vMLbz2p2IZkvvBbRnE2Ma1aNR
+5RvUff9tZXaJzzsiyk8aUFPjahumLGQcEg79h/BkbrAC4DlbAGx1bLP3TPFbQ+Scz0EPf7zpN9CV
+I7O+MvZXnKhsNt+oxrQU+uxreIwW7Lv764bgUwA2OzRRUADR/e/bIbV5GQHrKF3FJAvAXTo+rcw1
+Fgvj/lQhKxa2lf5BJjfEJuiEbosdNP/9Gf5CL2YE6vMnB/ni/1oKglBiuUQ48XOuTuyxDxuJKpXW
+omZtAttlQTLlFOVxiUiwZaUQhM2kXcw+kuZWYkLmKYnGbsgcrREC1Rek0pMSRhnBcfoS6xbEank2
+CrfQ4R5bk/QDfuP1XbWXhEhGxOrBAtl+FvTZeSTPVifdHjf2ewy63VlKVjoKkLLuhpB7/euf/FGW
+q43ZQS+oQGoGxLRTpbm0Grnh6D6TkBiUpvyLhxDhh/R9Dg4vHo5tzffQH0hLeSw4aB9rzsD+4V55
+mQRCyclN332dpLfJhJHWWNNYzRtIwNOuKuMFhjzAV1ZWUJLDk2Dtkf5lX0pqWNTuo/A99qKfzV+B
+gwGL5fDpMCC44e7GJ6RSyCiMHzEjVCDrFs2wuBwIQVMtXOHfQ84b//cKfhqfmBTAX5xyPeYESGlf
+HrtF39T0IKfITZZF0s6VF/7XOlvamOclEfKfKybWHLWbUgtoakVpVFKsZlTwAHHPwc3w18dYSMgT
+8FfOdXqFGna85SF/s6C2MmS43yKXMF6Of0mFx5ylScDoPGAQ31HvjzeNez9P0+Brdw1BAdYPHjuC
+49O+xZbkd5uEiwAaRmbwhChXzR+wcRkxxP4CxCm66dd3VzfHfgrxc6SM7wULrAd6ierLaI58gP5W
+6Dl+tbITYwD7NM+W6CShgTpthe7KyjbzZh450a4x2DG6Fvd3C4NFSoG1ZW5ubo1JqPEADXmIm0c3
+ZXnF4SM2V0+VGLq6QovyP9hvdOqu+6Zs+TZi3/Zt20f3t73NXmE0PlfsedtRaCR/ETzDnwcUyzNA
+U6JJmqrmYGCAXgOvS0ujb6cY5r8k6ok7vXCnSuIbp6gwGFWIVL5ibUixT9he+m3cHx6fb0idDTex
+jNQiOjLSsGDRE9oV3yDSLWOzv6QL+U7pRhXlPXJ7nEjHWqjv/OJ56AO2oK15LTNScyrAlcOP/IaY
+jNHe2JMXmuFgM9GzOF53e042Q8TKmwME+ZFSQlYTITojwHDvHaNpfURIzKzsCNMvCLH1G6NXlSaw
+hpYUK9vRE9ZXa31eQceS9+i2Pj2MIRfBaZOPjQqqGRu80DG+I0NvX/wuUNCI1GFICGTM1IrZpOqs
+C2MWGBPyiApNXa5i98WXQakkggpKsncJRdY5SSNZl1E0Eir3qpFf5NjsLxf5Zb0+WqT+tGWjJCMT
+0AxGlQUXNjqpE/LFdbJwDkZXOGmzsoqrZJVkGG5zu+ms7hRwRqLO4H4Y7fo+cJX3JZlxQ9YksNV6
+UPDq0QjkuK7k+l+kO4JfSi02VKkkriOpcCANa0qqmgli+FIQoP/Ad914pjoWQbMcAWwgKzvicM3D
+r4I21j3Mo47c85xkpOFzLmLsKl8IY9VV3JO6BJ5DlvQ4IdeI+janhkjWRZWflHORoP3S0OMMsWYa
+feiQWEl3lmQNvKMQ79h8mK3fzuJDGXqquBeFZ3kRSbsxO58t+urejynh9ePMdD2I5DhG+Np94MAe
+iCR81eMph360RWhfFM6MWTuSCid8nZvkcg44FdzUGS0J82UAjqY3Jsnrt9oCW+8UwIOH6ioefxmr
+TWHW1uzaiRxosqJenjbRJtynwKYJI8+fPAb6GnoTC3x6lWAKuKF7Sum+0Cqa2sbV9qpZtElhbt5l
+J22HdhQTxEOZs541AROQG+dTM61hbEKDJcri7NiKteqkgM8Kib/WByB8zaMckD6em4oEmj0ppK+0
+hlMl224r2dMU0bmJuhypChOSLJXbb2T05EimAD4F8CYsAaPMty46i1li6U6hWEzm2Ninxqhr4r9R
+RLG32kk+b1OkxryqlaCBN9JvzyvgMwlpSs+nlLH07NRdTIh5ohCwhxe7TRxNUIs0afWcIe6dyKRl
+0wlF36HwTXoYLW/JQhzF6CxbDk9MRyik2Fw+InN8XoG1uq9nMfDLGFJhpadQP7eOSKcJAptakEcL
+e141+INVdA4oYLN3asc/GS46ERqWlGSvpxPhtIY3a6JleuSwZcPvco0Lqyt4r32eS6+wlTwR4Zf5
+y3uo+SEMScaBC8LGDHpMetr8eX6+dkxMD41WqG9N0JgluNbzHfg9AST4N86PJy1/ynfuAC4SbzCG
+efJyXDDV7CTNB2WfNE9nV2bDqRO2ZXvp2xG+LKqX497F3u9KUVzNYse0HS8WLZF+Wfw8Imy4rmrZ
+4YryQbuF9ao0cuUkFTIYXcpcBouZOipITPE27g+2tmi8LujbcyH6mLGMs+fgCyV6p96wkrE/sTnc
+tF98PpcW3CoicxsFMqa8n63vjvQjaUhTMsrVFUBGJNo16WXH0dxDJFkDtT2yNVYIAyVUlKjHy8S5
+YjOiOjyvNCvGY4fNiqyf0h7l6cpUYlMSzOmMWEVegFxhK145HCcIU4XEMkY1znv9GfYaAKzvseUl
+kOKgUWank/R7X/dEcQh+OKB6wAvYYtEcp00lQDwKTCIilsHo1aJ0lcSAxA0QcMF+Zu+K4PF8I/gm
+ozRBH5LMquKJrd8tcxhN3eneszjsncl2/CDGnio0T+PAg07cTp3FxkJBgjYT4n+9mWdhTEUUXpgo
+aG3fjIjbdy9IVnYfTbi6Aa3WB5adb3h8Ns+9HIxObasfyHbLxO0+fND4dYvHc3V7uYG0OHR8MvjV
++c2lIwng7far5hdwQrMXegqVksHY+zNRurfSxA7fTrSPoMg7d3ubSuimq/1cLkFPBbeTdU4wrGoL
+HjcWIuzZgP/kvPvqw5mn5lbbUdyfPxp7nGlDXXAwy+Irf0zjIUViNWQ8sIyK8K061LkGqQsJg3Se
+TO9M5ZJYR1cIuLzZhl5KtG15cACqHXYMZZE0nL0hhhltqKOwif1r9GC4+yOAn8DjFK7rCqxD4W9a
+rOcV/D9/xMT7Z7CSTpqmZaCjidEeSXy0THOr4DQzUefwWYtOiTzY7uASUSIXShFwDU1Ziem/cqXE
+G9tk4hWwMtG52EOCmkddBVzMAl45VzAzYYE+nSKDNr3iro667Wi8Z4N6K8u5v+J1pHvhhC6jEmB5
+HjOYPwihqIsm4xmIrGr7DE6ESbKUrBzwOHNyvXje6ElqGJkOPLC/dBYy1zkkof5uIeFDzI/StIr0
+bgrY/MpcT1Ru7kYvGSlvf6KqgCMr5Dh/upAgBm10EcCDxDOOypVHupeUophzAxOsMbK5lqCGeM2v
+5anuA+bbU91t75XuMbuV9tBfDlynZamldmT2SU28JN/bX4hrnhB8375J49w0Jnh/m+EqgVmX8+ya
+KEQGGjAV7cw/fY0lenoSrWjPN4bUguop6FPYYYuWc1vM7X48VWlWfMSN7lXe0Z/zmn+m1nAvGWHY
+aTHIkT7qEAD7a81dFheiZO9+mdDZdDKNEAEvcBXkDBdDA0g48RRAhGAJXRQ+kYNgCUOhLhkHC1iv
+XKl93ei2PvzA8CxXYqL0jy6jNfzPiwlkDPFLY/tGWHvswoo+I8RSuXzfqLTjsKneJl2LxHU9MT53
+wP+8RXxmQdzhoVmBpMXh12yw4pHdars1yhYgs1Wjn7Svw8JJ218W9jTB+yLyxxDc4Yc3AXJE3fak
+yfVxkSO7g179EeQPQEpsN6O9tJfIJZTjaLB9LDhAKf5mpLBV2Vw2qrXhk0LezPJxm7iVs5GjIUGa
+4zEfNTUVIJD0/5MbCYIEVS+Ncrs/hgKrnQ4Kb9EaPiz+8MWpYeh2Ct167p6PCFOu3Ck+vOBSD1nA
+L5y2QPBZqhdtyrrWduUdCjL96AZFaT/D9Izz1w9PjZMUAw8+T6DpNlE/ka4ur/D5PFsVJdXOgF3E
+6roTYvSoTAcaKo6vfaqm97Xol4RK2ZuCiaAz6rq99TDADWNZk7LTkYsJCXn5u8SDl7Rk4lw3Qaca
+qlVZ63l54Xgr+jE+AXmufqGAXTnUzqh/zQLrmkU4u6AoskTyBUuAWXTv7ixzFgJTfPDAhXLC6jPN
+NhN7wGubrEvLzJSxpn5U4kAdx5HPM83skzXScoe7wl0QBb9zAg5VAv4L2koS+UHGTE7IfwDYakao
+h3lGjHhNbtsm0SGargIyJQ8oId74hw9XN1RJKo2mQHshvpzZ4+77VVDw/nbPZurJbtq6xCOQgIcU
+uSkgATKuS/HWMFU8GBdjoz/CGyFZykEaA3L8RHAYqE/wjUfN8neVKXQzZJl7QCMjwelAoiaVycHt
+8MkE9uzpcJzpytS/P0Td00BU7WyY/A4h0RHo1wZhbY3fvgQ2p+vaMQ9ye94f0yGBITpK7JtNdTu7
+rvEQr74WfAFrUCKd3WX3yt8O5wPMJTkWPu4gn/b/LQ2oYqiLEKG6GiBR1ujM30IQ7nYz2If2MMTV
+dOzVYYTOjlrc1D9IFyn1Bjz+KesvWzod8wG83WYipEd70x9mRPHaX4EJHCeDP2D5vcoWPE7cxFXG
+D/aUM/YzRvTAr9tZ+8GwJkq/+kJqNlh7ve6RjcOHSInqXAMgzr6qxPfLeKnFzez3jy2rkqREf7rW
+BtnsFk+/haEHuBoaXYJ3uxUVu6r91ia179pctfyjFJRz1+0rGuGx+POrRn73b/g/VJqepaArg9nK
+cDbuewxiLaY2XzmVFOY8kUDScv035MDO6CZQJVaZSYeJPH+C6PU0N7C1JALOIrdWrzMrmScJyYJY
+iWvHWB5JzwgxiAiJbCpRCsmYrg69YPIUQGpo+KYjckzLnqW/8BjJuCsS7j19v0Stez4G7i87QWa4
+IRTOjyBAdixnRMvB79iP8b/S2zocyPoYmMiA7m+5veFO8OpawHPf9Tz26IjE66ms6miTsfU85vd6
+PulhMpOS1dq/ifmWerrncrwfb/49JGHXV6u5oq2ba4m1Xr6YBR1y7PqAyxKZ3PHzdy8CeqxKN5SM
+wejoND+gkV7wFeXABJKcHOTAoLXVHFUhPRahpDMz+8jeNuNRxE65STemwo6uAJ8QtR8iNlAZGcoY
+33u/3YV/aspsWiFPfyU0iE62owPpNpGTTKN9kGZvz/DTtRw+/U4bXHnZjmSnXPPi5Mp7OoEAgvzO
+1dyMA62jJpy5oAD+BQeIZCdgsyhkuohzRfqnGjvKA0CtaUobRx0GGJv9n7jSzOZwcFjN8yGRcKjH
+MzOK0O5OgwjNFQZ/L24wCaaxT55VR1xRzJKYUnFSDvGtPMsEVnrqZb1lrE67gTZnT//RnIubpnmk
+u18AzBd8PI8iRb1OZ3rU17tzqD5SEsIohYrOeDqo1lJMHvirEgof1CScg4K4KBbYQvp9Pkn2OGzK
+lZcNwMXcgtmnT59Fxdb+itoMPh0CeGX/tY/jPY739kE+5ONFcGWguzGo1BQRUyVoMXgzW3t/FcfS
+Se0v6eXJo3ZkX8wdvb5Wqk0kp54FJt7jNnpGhMFQi1DMxFpMYmkv806R0WfW8itNjED765WTCn1k
+f4vKzeMsFckLPDB+LIAKvWWm9C5J8bkkYmnoCJUJfR5FkUclAt3PVNSw6OPKR/He7Av7+G+XbMf7
+USj7azp3ypkfVH1gByM5ROM5SEKSzHeDk4y9dF0ueFyGA2dvdG6i4TzbJrMjXzXAuMp+MsRcVhBi
+5lNMGtA1WC6Oqrh9aLpLY5+IHTOESulbhmPAbZWK6cLI0afq9Qz++hgH4/I/bi5UeatVWWEZcEfg
+KiE1rl05+CSi/vIJT0bjvYcWwFqG3XNivQnrgDfdgcqwAn3vi6UjnpV9PgeDKjGOjM13XFTqye3u
+v9C5DB+CcwvU/v6N20DCSsinbilifzTmfve41yS0pn0Nh9/Z3OibsouM5eKRuj/vVHQV7Z4H7Uu4
+ozGlDNQnnb4dOiOzrDDvX1gHUC85Fz0mgW/+tvCIEDPWdqu6KCY5ZxMXvmlGN8f/N309PT2H1SnR
+PPnNy6lPrmEPO28F4OVwpjw5evf33FLJPWGobZCnMQWbL4lzXTSC6MPJjPQxXleMCUrXWKWAAZ6r
+U7y/Xcx4XnPdpW8dSG71UWw5tM07xcPTcUUf1sui1FKZQ/15jpySY1+41spj7CX+tDxCjvXm99rb
+NXbcHALGv/tOp9+LLEAKbP2UHmbPRdEH4GQMPaFQw3Ob/abWO4wu3pzSEZXTMTEPph15NFe0FjE5
+xe0bfs/Tz+S1890+U2pIxzaIsplXlHJoXdkUXK4C0q/lfsBT6KlyDRm6EVBJlWPEpqj6IiUaVxI1
+HBXEbzowL0w641OQvdeHUg6EN+EDrWvQgIbadKbOwc+sshoOwzqXd9fHUm36sKW+pprkbQmXiSuG
+qn5KOSz/b+K0NAxl8ZPr/l1tJ4osjQqmuhoYYhIi7iP8zvQIwT0qmziGpA0p17J/lbVR9Eq5zY+8
+uarYRWlzG99oIviw3uKbSkqF5KdZN4XImqrVWHN6D/Q5Jks3OcyJd7ji1/Jz045ipnjIh4P4KLHZ
+ONF2/X2b0OPKXG9bO8+oBBjfP/s+x1VNXLX30vAUpZ5/OzvB1VTCWYoc505GQO/QfYTGt8u75S+H
+61eR159kfnGUvFl9SLN608rfbrY1bVWzrNL14pAOcTbcZpvc5fFmL/ZhY2ILxXl/NT/g4s+Ephv5
+9826XZTTaHfgvIagEdZva4ih9JCdUKQsSWImydqWeobVN9zKCAfBiZYoSNPJDDmvCj+Drb6Ab6MP
+78P36VvdQ7bdipD4Y80GT4OAm/i8zot32ZFOib7QUpRoLuns2Lbtt+tFbpXm13y76riC/xVtvImz
+3v/L6ra3g41PAzROG8tG07PKCxS4IpTyGfEJQij15nMDCB+Gnw3rL2y2XY5MiwAnaogjbre00RGm
+uhYMM87ptiNNGdoGUC/VeVsd+p8mPUN2UGDcfumk6jYXU29idrhHdVIbgSLNiPGAI/J51F8eaU2g
+RRdCa93mdS+Z+occ29K1s2FpReguUyJSK9fgpuOxNkGm0aEsEtXl5jlHN0i4O4Pcna8ux7oqV0vv
+71zzSMlSJ3Hfy69T6vTVyV0rJ4yi46nQ6KvtvWsjpgL5WM0CSFaReprdQgVcFbNaezFbCh8vQ7v/
+kKPf+UXEf89nAnpThLsUIP77MA5apLIz4Tbx/ePQ+on16jYOqnM5OUtx8QMh9PS+9ud//u1WC3Vn
+vaPgofOHkbO/phBsBM1oEJD9IJM4JOGfm6XolQypwNwfMeZm33Hd+KE+1SUzIZv4O86/ip9uVzR2
+7Ezxf2avAt/bA15i4ZhtSe8+/668jOPfFh+xraKAFNWUO0oNd6vvWOY07alGeYD8WrTarXMiy9wS
+wZ0kTi6XZGH4Szbr8nHHkviPa38z8ddCLRaV7Px1y7CqhaIfCB2hgTI8b4mfGIotVm+3Dnpfn46R
+cOmKKAOZzWCfDMBAZTzOCWGORSx4UYfH7ddMpzoNMw6IMwdjUC74/x7Pg9pViQ1x4DgsZmkCD//u
+HMf3A+wblUEDX233Co/VKo9tscSHYQhk94I+qQ5R6Q0MNOmeg+QNDyFxoCC6NhtXCH/s4/Snrmtv
+z+8MN6Rcz/fBmdouf0Umv6gSPUcmu9Vv9B0ieKeaE8XXlCwjv4s0t0CMuJqxUFkQTkCt2qzzjr7f
+j2ogCT5sH8T4rLFH+q4K1oyQv0JLbbUlc7bB/B3J1YkEYm0sQ9woOA2eJ4kDa4uTpBGCAk8wmjG3
+zCnRZg0VA1U9whns2uTR01f9Ms4ByRvfHULTnK1hnFewy0tibyLdUnQUkn2PO9LNOWiX3yyJocod
+0K52WRZx0fQE1oTJ6aazxVyZd8YqVpSPfBnKaDaVWdRRWdPhBNJAtLXoQMjDKp0dx/tgj6EQFpye
+MhvxFsK+z5Z1EDAbZiO+IY4Thco8+me63ypN38a9s1EAD4r+WmKeXKy94Zg0a4C2M53GLBHsZGx6
+TiNY+Hq3NK2Lyy1/X8PhSmk+1lZoLPxE1brVwKBW1+m7Nh4UFGRcjFNMsfUlP6BWtjBILQL9/X2O
+9vJ5Lsw5bylcKILi5q8/fzQqdfyYJrU8wjZDjjGD57FiybBRDFKrGq9p6gvMv89ZsMjjQ21b6Tab
+hvqRargHt6cB0DA1Cc2msCafAJ/AvAHYAiddanRxtg/l5dtjCoV0s/VelSvqn9c3u0Xm7Z0pMwRG
+uwRWCh6wBlyI7ePeR467urVgZWHXN7YymUUawq0xlWbTkfUdK9mcaAgOJR0gWWbq7T9nWz8oa0Lf
+DEPobcB0/x75FLCFBmU3xoW5c5HjoyGks08/7YREJwEPtpcMte+QliZTzWAl0t4bLFzlpDCUXEzr
+zA2aPDZKdzsTqXbsKY3uouoic1wXrG7AzNDGuQKS2MHBl4bDn/IWp29/g6uclUTcRIem1XwIIC//
+quQRA64dJR1AHElcf4yv3SrlSRIeqpuliBm/REEbUfhGIfDJmyWmSx3xlBiJkw+IyxwQOYfWDECa
+MacaPo3VdpFKGY26sEkcW1ovt9e96TqOVjD+gPcdMhxsGnzmGT7iqmD1+LAWcj0kxQFsnD9ORmOG
+VLUO3boKfwwbyRJlwc6oZ2sdI1A0obm5dwLye0M3vG4+ZI0n9oVC4Isrcd3Ua2qLlTgL7BIjhH3G
+NF7KYF1N8unZTY29LKlmyiFmDnBHdRHNnBvF6NIPKx80sgAMtMgu3pGYRKsD9kZ6pUU4/kDDciji
+jfmJL1smWhKaGczVWAPJ8edUm/nOW7Oq/dtwfyThpKVdVlzirwpPftWrXxk732Uz2S36ibCXSvx8
+RCLJFNTwvKOHOj3gmbJFyC9Wj1msWXYQONlV5ycz7F71QWgAoibMnV4qB9x2Mo//BV1fY/R6inDD
+H+KkJjLtzUo6Zpx/w+a4y7QLlPVajzd2dzlhclgyNm6wNzxeHASSMowS7SGszvwTJflibd7soBtw
+cSevs5lzMHTD1piOSWoR/xapu4WK7gicv5FyzpkWoMd7hKNWtDbbvZg6QHYx9kM8EFjJky0n9ZWt
+9F80t5UjM2tGc4aVuQawvVJ7rg8ukzyIerwWXUNYebyi0GxMOWMR6zLcphuuMpM/xP97YjWv6+5X
+wFOW3dwA1IQLfOJXdGoKPdItVzQX8eIdrHoFELNy8OZQ+t9ceORq8qB98D/EBMZNY9DcKVkatl6x
+Ws/CZFPpyCDvfNwtVIjPvBw384e7kecDX+qe6sQz+dg1iUJ6gVPCEHb/W62T4yXX2RNOD1qQL1FS
+DhbHjwWaGNQecSeDrRYA1G6ZItyWCfzUZnq4aE8Gy3bhG5K648dEQJLQKpIyaKVoZw0VqihfqUrp
+Jyp4kQIW4rpJzxsnrPFjVQpM5ibYE6y6zkSbOmd14XSPNDvDx7POYJGAsCt3J7ft5gkjhocDkTqp
+zR1e/aPA1g/3f6tChdppR8pARCnxPh7Vwa29508jzi+fQAlzTrSlcM589fJYupqu08C5KNmPoFAq
+X9/cQA+9HdaNSH6HvKLRCwuXtGPS51dDvTCm73/CBP2pPpqvAP8kQLuPMyBWY71Q1MaNw0gS1Os4
+6W/FbEqT1VN455VWhuoPwwsLWd9HSOIGS7LJmaLj60ZBH/TmbC6How1HH07LhFH8ZVq+zIq+xT6K
+bpSXuj4nyi7iFKXG4yjgsoOl+Z3Rzpcnwtka8QmrITbM0Uun3LzydMZQVFpuake6hA0BymTxv6RC
+2M0qGpDbsAyFiXp1px+1ZE2SMRpB6HtEq9np2XxZvNrMkxkhKA+MzGSZi7tcy+kxCM9jOM5uym1s
+RU3vqXWMEpIlIBjn/52aR3/SegyojmW/Gc2iWyFJ+LomUSpY9L5zAWiWKXxrHI1atsKMNNaiX9Ez
+9Sr8PmLc3MG4gIA8N2z7MBj2kvgKQSshVd8YJmYc4uVUQBF1fNIXtBwJG/mxC7029OLFWNf8+rd1
+p8kLSRMNJ6lh8ucW8tGnXotzEv+NmT1gbKbeIr3lWeqm1v+HaLtDnzbBzIZKcK0BhWXB0EpvLW4V
+BioqLGheIk0FFOF5Dy/R3avnSXIqJVrGpOBUVpRCY82XG97plwAM1rpc4vLp7LBiJIGg1uhxCAe/
+0sPdTG85JQ/LP8y+81RAuqylXCCWLwqzzhoQ4m6c8+S5cOOBW7jsPjGQe9m4yeAXJIGisi65XMkq
+ao/snnSdc92HQ/3jp+IfzFMzzBwc0mAmoIOPWcqRfT1LvjQ95fMmdY/KwtFT3vo3dI53sheGrqra
+6Dts7ZCH4yZH865dvPhKIp8ZNiZDw4FDwpREypI9toexZEVFg7TZQiON2NLPJKlwImLEEti8Roll
+nx2HXjG4H5/Py65lAmguXIQ2M0Vwm1GI07SwtVaTakty+j9poLzSY5nTKSaVg5nH9abfq0KgbAmJ
+vZ1jRFEBgZEFnB7g3S9TYAWRzycWuZaBoW/52fZwKgk00ZkOInXlPSs92ut4xh4Q+e8zPQsKhZvr
+anPlAhsirdCQ74tJmMg72Os5Fv7XSxcT3nybRAkO+T1HXlXmxK5BlaenEdv+azFXjZG4a2bZry96
+LFuOqUDUIXJ/e0TAYG+6dX3+EiL0LknEZcMjK7Bk96rvA8FW5hTPbWIk1PPva/Z413/omQR3uGrZ
+LQNJSnzvABrd51ohdI+LStE2Zn7cEadnMnbN/yMBnl1DhU2Navz6txtVoi45lC6o9Kmgtk3rfKVs
+rRaEB0CIfKJYJdRm+dhUC5vBUJE7ZEu17a35DbynpGVRCb5DhbMusxQZHZ5RhJTI6tpEIG/LP2gi
+QNU1qD26z9WRb9kyfX8bjHeB8uKHA+p3XTjjXWXTtDe23xGQLb9sMWms6o/DFRHf4aCC+Q0/zlRk
+2Eizb4XUq6HjP4h806/ownX30ZIwo/U+UnrxKcxOxtjq82PG9FtH7hYu8DNJfTXL+4x9QdXyV91g
+ZLgUoxSCoYNv4ArHXsKqsLD2ldXB0UmFlVF+09gyMAUDrBj2VZ+se6aeFN6slQTxjLAF1pOzrpXN
+qxlSSMbZjsa4OvUIaDlpCEiS2/WibP9ADcnFvV4xlxJj7tri9MrWmwQ64sJU6vPnDT1mfYvPDWJD
+nduIEzGzP4p6jHUA6B601yLg5PVUeUaYWI4oFcH1GNfm1DzI+3tvhI/WCPqrXzQq9eBvO81KlCcp
+hOVtGYok88b1BGLZOsD1+vQPMLuft6PVn5CoPv7BO3K85UB/reCB9dLJpUL4CKKcjH0w+C6yhoN3
+MKVBMUMYH4vGHt0WL5ydKnV/f+ovVBVf5md0yuQJJMbQ5GLBpQOR6pYhIWl7LEVx7JM1AL8+MBgg
+IMt1WQ6753Gvq73Uf568qvTHS/P5sYTKDxX0fdQ0WIyPOnRp3r6eq802jWXpGkITm55pE3KDVUZy
+XM9jRHj4JKYNjRUZD3zRrPow/Rf2iqBf+X6WmUapjEXzEjbP56CNKDtM/n6PYD53YWd39I3vfg60
+noVlvglIXbg/03aNsxlLq0c5yYq7eGsukyzw+5GN+CxA/Kd62bxwrbF3remmKmcVC2UBZ9lohjg/
+ln706x6vzedxKiavxOqa0kpl9T3vNR4ItvLfKZX2srpFmaD3rCtgmeatmzts2hhV2SulSgSz+VrG
+KE32fCluaFq082+1n8veHiCfnxO03Q8o1OswqY4ZXCdrZfuv7ztj39DN9F+v7B8d7m2xxLHRxWrk
+3ozMK9WvCwcRTBENIIwZKQ73Dp7tZ2Lj2BVX6wsN1s9EP/MmDtTtHGzJgjgGDBngmogdBIwjWnNg
+ZNJtndVH9Jisk2EfpZBvNMBDOJbaA+0XrNKqA0140xPfvBCpKjR03XDJSRnzyov9/lAuIQunHcvn
+VSO4Yqof+hAUq5yYG8AW3JX+OyulvCV0tLDyLCZpWXoDyvqRXoOiWoj46qjHf3LMv4Q6O/iOPgAP
+d+0DwK7tEA8pD6fGYsR+6qYH1pc4AjfFqN+pHJ2c42BMTZMbaHFeiBMh+lFcyqgFBmhCEGtmHNJQ
+Z9MW7OhyTpVf2SUqsDC9/y3/aOtJLoh/SRjWiMM/NUPh1d/yhXv3PF7i9yw1j/LWtIR74nzZYRj0
+y2hhfee8P2ijJ8wgaK/uPrMNzbjRjVzShzU26Vns0JqiuUrLm1ev7LLbVqufyNPQoE6FR3klkXjX
+3PnsFWlMnDkcDh59ANh77/s12xHuegGPCDmP6yHX+3RSMfynQA4kNoYkC3/++4Zk/KxN8mCNhxkS
+eT+PY92Vfub4VeblsDtzNU0Em8clwREbuqsu3YQuk9elBTSgOgqNFU8+b5/liUyYeclSKuWp+ZzJ
+er00wPkIuAj0E3hW3AlT3MA/uqYfHj+I+Liu+kjSBAtw6BQ+s933qfoyj2l/U47yRXa95SOEMa1F
+zj1kJsxlWgn6p9IwrhripR8xNc+kwiAolVufYaObGDkvg9qCxqVIxtPxSvSTeLzcGwyQVIx/p+89
+RFPCD7qLyUdnRT9yEV+6ZRiN2LhWmn/gc2b2DlWf3o9J8zFke1BxRpNYo7FkaoLme+/m9Gys8UOz
+XE6lGwra/YiJsy8/ZApiKL/bqaIMe5b2xT7M+qE8VI9/oo4u+cldM+r3Qyz46qMfJhP1urVEKeNX
+nfm4f0/iqSAqBE+tuOZj0uU5ZFfe08Zp5P6EGR/jVmM6sWd8aYNQsSH7gYSrvQGufWFSIZwEb1GW
+YB535CWQoBHMoKY/10EYEXqZw7KMtWupm5eBX0nrcp9H+r/7AkNfRtLG+ofg6vh8OiwpC2VWlHXo
+9RYRp/Kh4NA4Xut5Qq6AEvp/jveZc/yJt9n0NzuAT0aL4aenZmzcVkGR0Ko1vUMGfh40vgo+TmBF
+rmCTC3chf1nN1/rjDEn52jWPhAOVro/3Q9WpuPuSWAQnlZAD2nOnZ6c/LQa4pI6UIiuAUrIjKjeO
+n+pfqkCgkUELODp9R7DDum25ADZ9p7MzY57TtbmHzit4+ZMXz8Nwz0kCbOmsQM1+83Cr5cx9Ng2w
+YSsHFSxqQ0fDCjU+b/Am9MAhnYq2tyDnZEGgaeBJ71BI9UqQijYhCrY/2xYy5e4D9vfU/ynZKCNm
++ZyR18ifz/ptHiBWOwh302TzouKT+rbQeTljMUJTiqwxfOa/3z/OmdzVAS+j8QcburC/r2ifFJe6
+ee7CazWhc6ZOEMPKfhwlfTExu/lFYufFW+yGmG2lJd16/6wc1D256ipwTN80R6VJZ1LJHM6zWEbG
+Sz58Z9HmKCUi3RH+vM9CL/kbu3KujZf+pXNSO5LimQBJPpTcptdu6WhBvE9GB1d3dkSlTeMlJSR9
+x7NQmU6cLQq34iR8jPXVuLe3q+pDKZv1MBvLpPESGZL96XUF0nxEekB2KZrZE6bDM+G/quhAEXpM
+DySDecdq0pAMWIR5loqfX2ynwfdTN0J/7093iRp/m++fmAuzj94h5k15dmcrDl9U5CRhaZDwE0os
+KS+MDkO3zZgQxzcMSoQKRIlEKSlz2/9oG3IoWlg3VWoY7Q4pSCK3PFHWGUhWnyE7o+lWgU3IwGqR
+RkPhXcYZ/4tbs56SeU82OlGqB7bGe34KwEu6ObD70RPfXDtmx6UhtDVj48Cp8Rkan/IaJTdcv551
+I0UqngCXIqER7JkNJzucc8NELq8Ipwfbf+1jPdBQJJKr3G6L16xiWjAC6vqRd7o3fljVka2uQPQk
+st8BcyoCJBo2MKBL0GAG45R5iEHEs3u4YDLriJ2GTvL50sKSTqRz5sE3lItc0D/xzV52C9jJRRNW
+rb2gzprd15D01yvplcxJAoivHNugGSEyFhK/ao3GUY+PxIrokvIaSwo56q22TSrRA2gWecZeGpBr
+tS0XosOozSdl34sSUoz06P1GiiBGEPaCExRdbl+VU547G0ZuSGCzwp2kM2WfXiIF+MsE4LWblJJ5
+AZGGl73/uQj0AzD9jX8VA2zCghtK6IPnUj0DzJVhIEcezcUAlP1VCsC2UPkFcRtLqXd9wJRhGlXj
+lzXP53sqi1YU6563yEVxks306DhjTi9oG1VQA9RA3eWezJSPvzQZqLEHWwd/iwNO15MUeuwSkZ7H
+n1X8+W5fSentN9OdmvNLCELy212mdzPgcvjrPjjykgsN/vHgmnSzPmL1k/ARmGuFIp64GfxVxh6T
+HzcW2nHfPbCWIl32Z275xvmjyJEAx3QmO++jq0GIHfLqwwa/zxvWg3/FR4ka8gqLGmiSQR5b2ZBg
+5LHJI0ldQrDGK6dJdPhXl9MU9fWrzpNCyQPNjseMUuH3WFI0jSnqSG1+tGj3UYvJcw4tqkJaaqfs
+vJV1X7hyzJzrs0f30Bz8XriTBRWDKd1A7itU3zAbcZfvHDmFZQrBHXre9pBYi+uOLCRsqD4+fVnc
+VC8lzPaZSmpwiSimL5SJ5gB63/FGl++9+VG9e40FmfuVbROPh1tx8uEc3GgMV7huHL6PAnLK8Cdw
+vHR/dZW0i7Y3RxBxtRnUNXKnFPz++LkD3oOWsz+KQMgd2RkVBRj6WHX0v4XDuGY6CVJh++O4E01g
+Zo5XzDxBHjjuCOEj4A9fkPthUVio2/GKpxYTjdmAKBzs6a0uvmcMdDDcwHFdoFvOg31qWKl/UX6p
+/6WDAPDi/K/audI178XfkDo8m68+s4ozcVyM2Cw6PNzGocXLGdDkocGrTM3ciV9rfBdzPkndvHzm
+k4x7HsIIA8WP2lIb+IRQv3s2V8X+UQ3cudk8NGJgpiYqp0OiS+I2A4MAfJ+3LyPCj9Aky7tfxl5A
+Om/hAFi6sguxnTB+T/3ExAFLvIaJLjDv8bR/tXWuK64u+6qK6qH6K2kD2gmCVhw73LDobBWm2pZK
+1TNRmWqjWZxHuuMUlR2WLy1qVyVhVl4FZttke1g/RJ6GJ2S+ujzveRuBioBP+kwZcIfG5OkD3BXU
+1f6O3I/Wod431pFSddXJaD0s0p5AU9OiNvbbNFCQV/G6N6LXnxrssSBS324CI3dDSzKzS+nso0ds
+Scj372pm69YMlwfrjgP4bEDtFK6FHhPK24BPv3KcrSHuA4CsdDpWDQKX9NjryYZxH/h0BuH0gnJa
+FgDX8qXn3yeD3t6B7g4mGW6SyRem5m/PBA4Ag43O6COEopYjPfLZeRSTUFA0ZQpM0WF9vmTg1zFc
+sb/zxWg3JxDq/nZe6YgknCcTGWwbBSW53cBnoIYIuSE7Qgy91VoEw3BESkmMSQ3TWAGal78YXma/
+rTipE6fHMSHU0g4SN9sjOIl0U6WCWqwmSdSkd7b1nMCt8F/hScrdoNvDQ2SY57llrwpK+MRgScq/
+9dCmXmNxFjnSJ/HLLA+IqCG9MoZDyY1tY0PzKbZubFgoj0Cuu+hUuA5cbD7jaaxI+60X91QTz0TJ
+6ZG1va+X9Zf4JuJKHooNxPn3A8SpHPdlA+pGy+pPX1kEwQBpHJtiEgq57o4Oz2B0pRKR5JckkxV8
+M5K+J4C+UfRlRidQGDFGA68mdFikXjXItGVPq2+FdB9Px2/L/sCco0UruP6ztKkNhjeq/7oFG58U
+qJsGiJUPuhElRdb33BWWjCLjr6E3eK3OEQ9bSIf07aBOGYGcIz9UhP7t4trcSLQU6LF6hFNkYMxD
+2j8IUA2uBkbY8BQrI6Pso7vMKqjCkn/bUFt5HScxI3ZDiDreC4zOF+/dTusNLGdRsRm2c15k5VJ7
+S0oxRNG7wfDxXg97cOkpw+0w70xKHFdWj2c1YRpGBwTuhCv06itjkWzdHJkXSLisOUEa0If00fY5
+HMAsu1KRco6StWoHXDDLWOjhlSPQqfc9ggl1pu9I2qZpEoAqlBL2AqmifuWhip1Kg21d2wARmd+h
+8AwqFzEMEFGSuGEhKaZBEyLjAbiKnhh4HJXVsL0IulmStXJ/T4oqqZfuohN0HYM4LqW0FQLFKib+
+0BvQWlmAXOmNo6jYa1zZ4x+sczuNFkqHx/Z3z9tIUsos/oYcHqdK9cuHZMCQMMSWs5nwpt0sKTK6
+YAYJuNOxhZTB22m5XU0rjb65J23VOIV0GQYMNwUH70KvtAX6chfjNRunVipeaqHGQn9ZivClHZGc
+uaFAVK1d7ql08+5llhFqrNfuREiowVq8HF/WMt6y8DebxwN1Ud5MrfSuXZQZsWFVHu+0y+0SFyzU
+lKNhHDbRUD4LC6y17bV6lCZyQeo5s6gJ2MzV2YMBc/byrybC+0eEHrrMWiDw/qguFtzCf/x+bEan
+3VXOeUX8c/IkknWBu6i+Q88/3Y6yR+MvUM1cNxi2eRUv/lzNngXx2o4eoA9ei/e8okiKy3Ux2les
+C4G5JH9E45eLmKzGV7DabXJFSEhWj0WGR5YAkbDFwgjlz+yH5tWTHscEUbqO5vS/xTP8Ojj48qz3
+wE19zD3gsbVpAR9wW39yJDbFSQTAUEBwhFUzUmAL3qwKj6YvQ+1YNUS+SGEXxOJ7JFSHSdoSJeiT
+Gs6P0hNkIIaFBZKHz6UjYb65oJXBlNZuj6HioAyqv+JAC6CLQUKX+MwAr3SKsEekge0c4UKvJu+w
+6BmK+Vt4kJqc3RyM3tUGUdy4O6cN3v+M5FekPBC3THKIVNaeBWob9h/VZnsjPo0ExGAolLXtB1pq
+71qiyMvu1PPGRNsodiIW3GbAHhwUD0Yzn1NM1orVyxR1wCyE15fxyldE+1wxH0R8NNZ3x1svB8eP
+EMPgbEL51xUQeQQEj5UwHBhjQwqCDkgABG0Xi77dvzcz8n6o+YkZNCqdsbaknxVPrxKLgqcHZKTG
+4CMdc+bsxTC+PI0/vUzeJ2fHymvrWMiSnTEpzBniTj9mUl5uNeICggpmJOT03EM3c6NOwBZJgGI+
+l9LvvF0e5dikr3yFh7azh4jMp/tA693vbQ27Esa56qY/goqXhFb0lrCWT5sj/R289Fz7yFZaR7M+
+7QnIH/Bwzsq9D3XdVyrwRun3jHNcvhzTEEY4ic1gAxvhPwlWgeqA8GNZpWvMgPLdJ9qAGxzu6Cbx
+JB0x95rA/4dUQglRaaLSfbuuvkVZ+7jX++jb83dP3OP/OGtQMDP9RFnaO1d1V1MxRQCiyKgnm2o3
+NJevQF1cqC2zY9PF1xw6g635yZSIHwX8yoVOTveT+BPVvRbEjFIX4TB92mI7tAnbnEbcQ/xLiPFF
+XkEWDued1PZSQHM3aS8JSPDufFS6LGcoSD3wM/YrZ22eHsd6Oxn4uUYNqx6zSPlL3xScv0KpdXeI
+fcHfvWv/lZ9/MT2jnO5WiOUAA4Dc/n9hDet7mUpyQB204+fo+r/lZ//A0n+RN41lqrupaCAKiwV6
+DMcfc38IxET4I+MwG1ovReMpxgfZMlTbu8AzVr/sl+KvWKlUvFHUvi9+XD2Kol2/tB6r/c7EJB84
+T3CBqvOPvBfskv+2oQPCjQHBGwHUhXSETrbSFYfoHvUHB6NiJOF7lDyeIVmn6MwUkfMvFZ4dNutX
+lg7bn+24vC+KaIZv3SFWdqMDoQqUWxGEDaByI4lTKuk6ZnZEpQo1Zis9QEYfjXhHPtkN/SbfFruq
+fg0/0by6dRyGtnkOzmRj62zEvkXD7lGSZj9vfImo7nSPz6giQ+HFdUAayqZC2KvFfdMxydVV6JMv
+JrdnDJeIwl8Gb92uk4A6gehpoiHkTWezpqQ02wXjucx0k/xAvBtaRt9z3Ce9xNmYPVuIXO7VoBN1
+TlG0ZXmaQVQkpPfi71/1BjKhqa+JUX8D4Y4inOL43URL6Xk4naNHboQYqVhXc2OoKHslbln7yi1Q
+SbuwiSKbkMs+ffx+3Z/hEayirmZfGFXED9QMmBihN3yx1mh7rEZRJd56HrCA2dZKatVv169i+zY6
+ZYmHvWc3FJ0BlhohGWWJ

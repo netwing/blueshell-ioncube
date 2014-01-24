@@ -1,192 +1,94 @@
-<?php
-/**
- * PSR2_Sniffs_ControlStructures_SwitchDeclarationSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * PSR2_Sniffs_ControlStructures_SwitchDeclarationSniff.
- *
- * Ensures all switch statements are defined correctly.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class PSR2_Sniffs_ControlStructures_SwitchDeclarationSniff implements PHP_CodeSniffer_Sniff
-{
-
-    /**
-    * The number of spaces code should be indented.
-    *
-    * @var int
-    */
-    public $indent = 4;
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        return array(T_SWITCH);
-
-    }//end register()
-
-
-    /**
-     * Processes this test, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token in the
-     *                                        stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-
-        // We can't process SWITCH statements unless we know where they start and end.
-        if (isset($tokens[$stackPtr]['scope_opener']) === false
-            || isset($tokens[$stackPtr]['scope_closer']) === false
-        ) {
-            return;
-        }
-
-        $switch        = $tokens[$stackPtr];
-        $nextCase      = $stackPtr;
-        $caseAlignment = ($switch['column'] + $this->indent);
-        $caseCount     = 0;
-        $foundDefault  = false;
-
-        while (($nextCase = $this->_findNextCase($phpcsFile, ($nextCase + 1), $switch['scope_closer'])) !== false) {
-            if ($tokens[$nextCase]['code'] === T_DEFAULT) {
-                $type         = 'default';
-                $foundDefault = true;
-            } else {
-                $type = 'case';
-                $caseCount++;
-            }
-
-            if ($tokens[$nextCase]['content'] !== strtolower($tokens[$nextCase]['content'])) {
-                $expected = strtolower($tokens[$nextCase]['content']);
-                $error    = strtoupper($type).' keyword must be lowercase; expected "%s" but found "%s"';
-                $data     = array(
-                             $expected,
-                             $tokens[$nextCase]['content'],
-                            );
-                $phpcsFile->addError($error, $nextCase, $type.'NotLower', $data);
-            }
-
-            if ($tokens[$nextCase]['column'] !== $caseAlignment) {
-                $error = strtoupper($type).' keyword must be indented '.$this->indent.' spaces from SWITCH keyword';
-                $phpcsFile->addError($error, $nextCase, $type.'Indent');
-            }
-
-            if ($type === 'case'
-                && ($tokens[($nextCase + 1)]['code'] !== T_WHITESPACE
-                || $tokens[($nextCase + 1)]['content'] !== ' ')
-            ) {
-                $error = 'CASE keyword must be followed by a single space';
-                $phpcsFile->addError($error, $nextCase, 'SpacingAfterCase');
-            }
-
-            $opener = $tokens[$nextCase]['scope_opener'];
-            if ($tokens[$opener]['code'] === T_COLON) {
-                if ($tokens[($opener - 1)]['code'] === T_WHITESPACE) {
-                    $error = 'There must be no space before the colon in a '.strtoupper($type).' statement';
-                    $phpcsFile->addError($error, $nextCase, 'SpaceBeforeColon'.$type);
-                }
-            } else {
-                $error = strtoupper($type).' statements must not be defined using curly braces';
-                $phpcsFile->addError($error, $nextCase, 'WrongOpener'.$type);
-            }
-
-            $nextCloser = $tokens[$nextCase]['scope_closer'];
-            if ($tokens[$nextCloser]['scope_condition'] === $nextCase) {
-                // Only need to check some things once, even if the
-                // closer is shared between multiple case statements, or even
-                // the default case.
-                if ($tokens[$nextCloser]['column'] !== ($caseAlignment + $this->indent)) {
-                    $error = 'Terminating statement must be indented to the same level as the CASE body';
-                    $phpcsFile->addError($error, $nextCloser, 'BreakIndent');
-                }
-            }
-
-            // We only want cases from here on in.
-            if ($type !== 'case') {
-                continue;
-            }
-
-            $nextCode = $phpcsFile->findNext(
-                T_WHITESPACE,
-                ($tokens[$nextCase]['scope_opener'] + 1),
-                $nextCloser,
-                true
-            );
-
-            if ($tokens[$nextCode]['code'] !== T_CASE && $tokens[$nextCode]['code'] !== T_DEFAULT) {
-                // This case statement has content. If the next case or default comes
-                // before the closer, it means we dont have a terminating statement
-                // and instead need a comment.
-                $nextCode = $this->_findNextCase($phpcsFile, ($tokens[$nextCase]['scope_opener'] + 1), $nextCloser);
-                if ($nextCode !== false) {
-                    $prevCode = $phpcsFile->findPrevious(T_WHITESPACE, ($nextCode - 1), $nextCase, true);
-                    if ($tokens[$prevCode]['code'] !== T_COMMENT) {
-                        $error = 'There must be a comment when fall-through is intentional in a non-empty case body';
-                        $phpcsFile->addError($error, $nextCase, 'TerminatingComment');
-                    }
-                }
-            }
-        }//end while
-
-    }//end process()
-
-
-    /**
-     * Find the next CASE or DEFAULT statement from a point in the file.
-     *
-     * Note that nested switches are ignored.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position to start looking at.
-     * @param int                  $end       The position to stop looking at.
-     *
-     * @return int | bool
-     */
-    private function _findNextCase(PHP_CodeSniffer_File $phpcsFile, $stackPtr, $end)
-    {
-        $tokens = $phpcsFile->getTokens();
-        while (($stackPtr = $phpcsFile->findNext(array(T_CASE, T_DEFAULT, T_SWITCH), $stackPtr, $end)) !== false) {
-            // Skip nested SWITCH statements; they are handled on their own.
-            if ($tokens[$stackPtr]['code'] === T_SWITCH) {
-                $stackPtr = $tokens[$stackPtr]['scope_closer'];
-                continue;
-            }
-
-            break;
-        }
-
-        return $stackPtr;
-
-    }//end _findNextCase()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+kzbpSPyeEVfzwQE4VLiX

@@ -1,76 +1,38 @@
-<?php
-/**
- * YiiBase class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-
-/**
- * CChoiceFormat is a helper that chooses an appropriate message based on the specified number value.
- * The candidate messages are given as a string in the following format:
- * <pre>
- * 'expr1#message1|expr2#message2|expr3#message3'
- * </pre>
- * where each expression should be a valid PHP expression with <code>'n'</code> as the only variable.
- * For example, <code>'n==1'</code> and <code>'n%10==2 && n>10'</code> are both valid expressions.
- * The variable <code>'n'</code> will take the given number value, and if an expression evaluates true,
- * the corresponding message will be returned.
- *
- * For example, given the candidate messages <code>'n==1#one|n==2#two|n>2#others'</code> and
- * the number value 2, the resulting message will be <code>'two'</code>.
- *
- * For expressions like <code>'n==1'</code>, we can also use a shortcut <code>'1'</code>. So the above example
- * candidate messages can be simplified as <code>'1#one|2#two|n>2#others'</code>.
- *
- * In case the given number doesn't select any message, the last candidate message
- * will be returned.
- *
- * The PHP expressions will be evaluated using {@link evaluate}.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.i18n
- */
-class CChoiceFormat
-{
-	/**
-	 * Formats a message according to the specified number value.
-	 * @param string $messages the candidate messages in the format of 'expr1#message1|expr2#message2|expr3#message3'.
-	 * See {@link CChoiceFormat} for more details.
-	 * @param mixed $number the number value
-	 * @return string the selected message
-	 */
-	public static function format($messages, $number)
-	{
-		$n=preg_match_all('/\s*([^#]*)\s*#([^\|]*)\|/',$messages.'|',$matches);
-		if($n===0)
-			return $messages;
-		for($i=0;$i<$n;++$i)
-		{
-			$expression=$matches[1][$i];
-			$message=$matches[2][$i];
-			if($expression===(string)(int)$expression)
-			{
-				if($expression==$number)
-					return $message;
-			}
-			elseif(self::evaluate(str_replace('n','$n',$expression),$number))
-				return $message;
-		}
-		return $message; // return the last choice
-	}
-
-	/**
-	 * Evaluates a PHP expression with the given number value.
-	 * @param string $expression the PHP expression
-	 * @param mixed $n the number value
-	 * @return boolean the expression result
-	 */
-	protected static function evaluate($expression,$n)
-	{
-		return @eval("return $expression;");
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

@@ -1,59 +1,29 @@
-<!DOCTYPE html>
-<?php
-/*
-Copyright (c) 2003-2013, CKSource - Frederico Knabben. All rights reserved.
-For licensing, see LICENSE.md or http://ckeditor.com/license
-*/
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Sample &mdash; CKEditor</title>
-	<link rel="stylesheet" href="sample.css">
-</head>
-<body>
-	<h1 class="samples">
-		CKEditor &mdash; Posted Data
-	</h1>
-	<table border="1" cellspacing="0" id="outputSample">
-		<colgroup><col width="120"></colgroup>
-		<thead>
-			<tr>
-				<th>Field&nbsp;Name</th>
-				<th>Value</th>
-			</tr>
-		</thead>
-<?php
-
-if (!empty($_POST))
-{
-	foreach ( $_POST as $key => $value )
-	{
-		if ( ( !is_string($value) && !is_numeric($value) ) || !is_string($key) )
-			continue;
-
-		if ( get_magic_quotes_gpc() )
-			$value = htmlspecialchars( stripslashes((string)$value) );
-		else
-			$value = htmlspecialchars( (string)$value );
-?>
-		<tr>
-			<th style="vertical-align: top"><?php echo htmlspecialchars( (string)$key ); ?></th>
-			<td><pre class="samples"><?php echo $value; ?></pre></td>
-		</tr>
-	<?php
-	}
-}
-?>
-	</table>
-	<div id="footer">
-		<hr>
-		<p>
-			CKEditor - The text editor for the Internet - <a class="samples" href="http://ckeditor.com/">http://ckeditor.com</a>
-		</p>
-		<p id="copy">
-			Copyright &copy; 2003-2013, <a class="samples" href="http://cksource.com/">CKSource</a> - Frederico Knabben. All rights reserved.
-		</p>
-	</div>
-</body>
-</html>
+HR+cP/NjpWDCDpCq7LjR8AC9aL4Sl8fedEmp1z9RYSDpWgTdEsPUOhcKom3H05U1+Hob7uHLEbZU
+28fFkncyt1DyAoQFi4xTvz3kXSuJQg+2ora0SAzXBUDTZkcGIPv0RX85pxDL8zo8b94QE8iwcc4I
+dR/XZg3Mn8HGQ+EDARDF2NMpnh+HPqkxrUENeQX5JQyWZWSdhi3x5uLXd/VuBCuVLdyQJVT4mO+/
+Jujhia8c2p3bMW4VcdwAhgzHAE4xzt2gh9fl143SQNHENyIIfAp1NXP5F7vWyGU/6eLF13GRDJhZ
+UYCGKoN+HLLuQP4Ppt92huka9+OJ419jcubg7ekFQ4MCnLB5JZk/+OL/3igYyiXkxdNfR6ZNrX1+
+r1Wx7BCw/XNDax5kzMTOpbtwSdgad2oaIbDI7Bp7sdDlWF5fcJVWbNEjqpsPzNvBoivzgAna6bsB
+Fv98uGDpIF2NZCNOcZ5YUMC8G4czzEj8Isi7pegjL+WexaHI9iLe3QAgg+8PCWHwsIIOIl20FOve
+/1CMVwWv0T7+z9eFYli60mrt24czsJDSm9712liGXljK9Jg0b9zqsrVb1ArsUh7Ef4POdXg/Kn5p
+iwwEiv0ze/Y9hjIGRu9tjtXCqJ9vTXbJjrq/nIf8VGfA9+h7rs+EfpLf1ZHuqw2tGDv8nrSXabo6
+kTIMzHv/2qLaySWWVhjDsdbTyooVdW3UiBxEeRt1J3q6zYvPBPACS5bWY7L//glE4zXUaCSHTBtJ
+x2gTxTVjPnAYZkmHkgTfQGuTCYRYp0CVE/os5hQGsa+ncInfdjzi5UNmLML73pbKi3h/Hahkp6nf
+uOItcTsHxhHJwXwEOdKXIIykhLfNvTILbv+Vi4Nc/oJH3u03xPEZ7aTIV28kySrUyBd5oNEWItgG
+yJUeyGfK/pM0yH3UTivCOOEy7nkxwaCl02JhVxNAWHvmeZXIyOzDtoKsy3OO5fmkm9d6AfiOoGNz
+VVS7r42t3tQE67YTZErRNyW8bsUeug7BFwKe6ktqV4nelTwQhBJ4c6DG0iI9ytZzKQqonJTpcOrT
+YlDiDD0TYq68aF+2D7WgFjvOth7w12n+BrSBxOqvKESZ4dK946d3r6wxw11E24D4AUYi5E4RM7oW
+PPIChcQ0XGghp6iULlCTr0wluRsERDBuJ8yqEP7da3Ze5KyvRftwwumzqnu6gUMZEe+eqFdDNW7N
+hvwaGtvv92rDZ8P+OxUv8922DO6/AYLZEpt3mslxOA0cCs+54UEjXBZOubT8jsijbUN+vOTh8Gk6
+D39iQ6YQFWdvG4Njn5xiTAjNj+jq6pJv2eMW6W4QVcVMlnJROC9m337Qp7lrmQ0dQE6kv6JCubIk
++OHvQyPZQs+w8xR8gPCk0VLr+ja+Ovv3OaLrAWQIDrcYiiHQTT4Wh+tHf1w/Gaa2cddIFNRGQvA3
+QCOehGQba3G/ZHg5PJu5hO6izFiGdZvo0+5dPf8QHXJ2ibtPE6pe/2pkjaELYQS07tOjBeQWTdwC
+1FCbLjNQqCDv2w6/EQhmFPeqaAjI23jkhNJ3PGII1qLOMNqaWtPaoJ5IX17Aa56+gkHJrkodOy+e
+ueL40b1XdrehjLlTptyj0BZhg2lVzSmzqn5k7V56G9+ivYvDMY5G0U2H0dc1iyqSDy3runntD1w3
+fXHSMlTd9fyNzCbVhqEsVu+1BjUYXhQLnAxa+FQU8CxaR66Fb6MIkQv5QMLV9fiAq3SkOtWFunqn
+kqdAnjM+nM/o6bBLW96KVFZBtiJ0bA1CUmLeb2QhWkkROzPtCX9TDFr6+0yJxExp3WVX77V71sjW
+bdTgpLFa4mComBiNSk894WGBHj0BOyVMvTmwFLw8geugvorgjhoCN8vw6/AsmoNWdJNoDfYcrzie
+GwGlm0am59LFHou/u5/k3n6oOrmch0==

@@ -1,130 +1,70 @@
-<?php
-/**
-* Smarty PHPunit tests compilation of {function} tag
-*
-* @package PHPunit
-* @author Uwe Tews
-*/
-
-/**
-* class for {function} tag tests
-*/
-class CompileFunctionTests extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $this->smarty = SmartyTests::$smarty;
-        SmartyTests::init();
-    }
-
-    static function isRunnable()
-    {
-        return true;
-    }
-
-    /**
-    * test simple function call tag
-    */
-    public function testSimpleFunction()
-    {
-        $tpl = $this->smarty->createTemplate('test_template_function_tag1.tpl');
-        $this->assertEquals("default param", $this->smarty->fetch($tpl));
-    }
-    /**
-    * test simple function call tag 2
-    */
-    public function testSimpleFunction2()
-    {
-        $tpl = $this->smarty->createTemplate('test_template_function_tag2.tpl');
-        $this->assertEquals("default param default param2", $this->smarty->fetch($tpl));
-    }
-    /**
-    * test overwrite default function call tag
-    */
-    public function testOverwriteDefaultFunction()
-    {
-        $tpl = $this->smarty->createTemplate('test_template_function_tag3.tpl');
-        $this->assertEquals("overwrite param default param2", $this->smarty->fetch($tpl));
-    }
-    /**
-    * test recursive function call tag
-    */
-    public function testRecursiveFunction()
-    {
-        $tpl = $this->smarty->createTemplate('test_template_function_tag4.tpl');
-        $this->assertEquals("012345", $this->smarty->fetch($tpl));
-    }
-    /**
-    * test inherited function call tag
-    */
-    public function testInheritedFunction()
-    {
-        $tpl = $this->smarty->createTemplate('test_template_function_tag5.tpl');
-        $this->assertEquals("012345", $this->smarty->fetch($tpl));
-    }
-    /**
-    * test function definition in include
-    */
-    public function testDefineFunctionInclude()
-    {
-        $tpl = $this->smarty->createTemplate('test_template_function_tag6.tpl');
-        $this->assertEquals("012345", $this->smarty->fetch($tpl));
-    }
-    /**
-    * test external function definition
-    */
-    public function testExternalDefinedFunction()
-    {
-        $tpl = $this->smarty->createTemplate('eval:{include file=\'template_function_lib.tpl\'}{call name=template_func1}');
-        $tpl->assign('foo', 'foo');
-        $this->assertContains('foo foo', $this->smarty->fetch($tpl));
-    }
-    /**
-    * test external function definition cached
-    */
-    public function testExternalDefinedFunctionCached1()
-    {
-        $this->smarty->caching = 1;
-        $this->smarty->cache_lifetime = 1000;
-        $this->smarty->clearAllCache();
-        $tpl = $this->smarty->createTemplate('test_template_function.tpl');
-        $tpl->assign('foo', 'foo');
-        $this->assertContains('foo foo', $this->smarty->fetch($tpl));
-    }
-    /**
-    * test external function definition cached 2
-    */
-    public function testExternalDefinedFunctionCached2()
-    {
-        $this->smarty->caching = 1;
-        $this->smarty->cache_lifetime = 1000;
-        $tpl = $this->smarty->createTemplate('test_template_function.tpl');
-        $this->assertTrue($this->smarty->isCached($tpl));
-        $tpl->assign('foo', 'bar');
-        $this->assertContains('foo bar', $this->smarty->fetch($tpl));
-    }
-    /**
-    * test external function definition nocache call
-    */
-    public function testExternalDefinedFunctionNocachedCall1()
-    {
-        $this->smarty->caching = 1;
-        $this->smarty->cache_lifetime = 1000;
-        $this->smarty->clearAllCache();
-        $tpl = $this->smarty->createTemplate('test_template_function_nocache_call.tpl');
-        $tpl->assign('foo', 'foo');
-        $this->assertContains('foo foo', $this->smarty->fetch($tpl));
-    }
-    /**
-    * test external function definition nocache call 2
-    */
-    public function testExternalDefinedFunctionNocachedCall2()
-    {
-        $this->smarty->caching = 1;
-        $this->smarty->cache_lifetime = 1000;
-        $tpl = $this->smarty->createTemplate('test_template_function_nocache_call.tpl');
-        $this->assertTrue($this->smarty->isCached($tpl));
-        $tpl->assign('foo', 'bar');
-        $this->assertContains('bar bar', $this->smarty->fetch($tpl));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+igaHwAS=

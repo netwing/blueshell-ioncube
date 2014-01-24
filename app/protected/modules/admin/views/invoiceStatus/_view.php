@@ -1,42 +1,29 @@
-<?php
-/* @var $this InvoiceStatusController */
-/* @var $data InvoiceStatus */
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
-
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h3 class="panel-title">
-            <?php echo CHtml::link(CHtml::encode($data->id), array('view','id'=>$data->id)); ?>
-        </h3>
-    </div>
-    <div class="panel-body">
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('name')); ?>:</b>
-	<?php echo CHtml::encode($data->name); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('color')); ?>:</b>
-	<?php echo CHtml::encode($data->color); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('paid')); ?>:</b>
-	<?php echo CHtml::encode($data->paid); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('unpaid')); ?>:</b>
-	<?php echo CHtml::encode($data->unpaid); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('cancelled')); ?>:</b>
-	<?php echo CHtml::encode($data->cancelled); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('sort_order')); ?>:</b>
-	<?php echo CHtml::encode($data->sort_order); ?><br />
-
-	<?php /*
-	<b><?php echo CHtml::encode($data->getAttributeLabel('create_time')); ?>:</b>
-	<?php echo CHtml::encode($data->create_time); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('update_time')); ?>:</b>
-	<?php echo CHtml::encode($data->update_time); ?><br />
-
-	*/ ?>
-    </div>
-</div>
-
+HR+cPrmBlQRKqGM9jRqeXRkj6Zw5qSS42vNCbS8JASQimnf7hJlHUd57miKU4CptUFbf+8wmHeHs
+6KLosIdt0hXQrpcT5iLJEg4JCDbwIvlCjPw/8+xamT+hXDFxAZvAE8jSK6Bq8GxCFlrf5a5d85NA
+zfCz2ZCGvRLOSw0v5v6aBtCxhDWp6PnUJPV4IKesoD3GBwLXbBoe3CnE+n9YzXDU1bgkSyQSeMMJ
+zMVgLm2B6mTwnm8pEPlwFLQFhr4euJltSAgiccy4GDnfT65XQ1mKsgXH0j49/M0v1hyg8WB8Y9im
+8Y+gYsImdSvQh1QFcCxrvwU0I3hvKrMIQVr91BEAn2/S9hmDlpGTaRgO4SiEyjMTFtC2598v2gLo
+eQwA0h865qjUy5oL4KtneLvVVFm+YE1xSlZ3dAAcRnwV+fXaW1E2mNoG9wEQGzWKvpjMoi9MuqLu
+Dx7r4bCE+uHxVAFfnX/47uZNYiGXQqfGKMS2GpFFuRV7cEN4i402l8q+RVTZkPGbetPK4kRfUJN/
+vUVnkMX9OMQppZ9WG5QgC92OG762OkUK5FDYuNFR9OVOhuQ30EBpEryiZuStWY+OdEbvluIDEOCh
+y00jVFjQc7dRqY9HXJiZnu/q8gq6bYJsfZB/jMcy9zpFbYPfH7VKtQuOBiS05mkMEejVBWtxjNE+
+Qr/iePzYAXc6L7L9G9ExIedHU5BXmlHvEpCGSE49tlRNnfJOG/9mZLZhItuqaH0prguP0//ybrg8
+nDI5d1Ac2iLWQEh9ebsrJsn6I7ISMQcnXYUlCTfAZUMgeNGoAPw79sYkkmhWeUVlBJZ/Ihhq9x8d
+winEAB+qxYnSltOf0hMeLpx61U4gV+J4+TYFNB8T3/6qTueE4SOk5hNSxOeHQbAuZYUwMkO0VOSh
+tHibwF3X7dpoIWzFFwkEQtkpdjP5vvmkrB3U3D7/0NLNK2uVoyLO56RjqEPndrqRA0wPnfqnMD2e
+q43fsjBs0/SGTosdoPH74zJRO9Jq0YX/AyYA4WalIW/08YpC+6jDf/gqSOUsZOkNUztpmRQ1zb1R
+kL/dFII3WAVtj9HFnF1s4IhrQEOFuBMvj1/zPTGjtyC92/gEIOnMoYSGaPYaiPxFXX7PpdY9i6OI
++s+QivCqZI0i95YvGiWkhH6pDXTnhLZHzqT16J5jVNTuzOtLoONpx/vL6K4EmVh75vZEdRu5y0sQ
+ZwrFwqJV116sb2SWnEE0euodpqEIbpkALa9DGkyjrBcOrjaSc60qBY0l5rztKf1CdwxzeBNqiUyI
+Ixnb6CVbzMMvASNTwu4aLSwUOub6D7PSZRU0sm4cmf+y22fcuQNr8B1gdbNJqO2JsuKb6n/yIleT
+kMnVLRhUnVz+LO2GIBzsafBMioTM2CaG1Z7tyu0536SaI1r/80jGQrw9VZ28FeBrT/OTZtt1M4Gg
+4SVTjk+h6FJ9VgEW2UVe9nmIt1AIRKwMPwzCnHmxZhkShP8W8Budb7Tyo/zy0ucsUBercc9HuTu4
+LK3tCHg0OWvPn60ZiaF7dC7Dn/DaS5iYGSqOhV5MiVe2XiriMoXsG8zPB2UbIMS42pN6ivy7XXWQ
+Ez97FdBrzTNOAR+GewGB1QwaVWwzz55fffi0/ejfqGdCMOK2txUAftQL8IoQEZC+kAQLMs5wxHtg
+E0A2GG7RIuvpj6B+bbBzg0T3MP2VSOmQzOei19EuQwLfEsMm/FAgvzrlJydHcggqnMAXh3cf70+f
+CN+ksm6KKzRIK5PouSfhuDUThxCIZHPnO9icx2kJqw5vW1Mc++pjfeXR8r6U8sWDWL5/WHblBtq+
+M1Z5gjNdvcj491VD9kBbdcJGMHoj2f71Vc488pzr4j4QqyDWY+jT8rbdAxF2O6OSmdJG+jj/0wB7
+LE4qSHGLwVwSgASV/0KAk1C2jHzYHHS=

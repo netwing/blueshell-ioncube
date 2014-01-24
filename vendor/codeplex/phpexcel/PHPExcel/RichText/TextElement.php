@@ -1,108 +1,35 @@
-<?php
-/**
- * PHPExcel
- *
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation; either
- * version 2.1 of the License, or (at your option) any later version.
- *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
- *
- * @category   PHPExcel
- * @package    PHPExcel_RichText
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
- * @version    1.7.8, 2012-10-12
- */
-
-
-/**
- * PHPExcel_RichText_TextElement
- *
- * @category   PHPExcel
- * @package    PHPExcel_RichText
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- */
-class PHPExcel_RichText_TextElement implements PHPExcel_RichText_ITextElement
-{
-	/**
-	 * Text
-	 *
-	 * @var string
-	 */
-	private $_text;
-
-    /**
-     * Create a new PHPExcel_RichText_TextElement instance
-     *
-     * @param 	string		$pText		Text
-     */
-    public function __construct($pText = '')
-    {
-    	// Initialise variables
-    	$this->_text = $pText;
-    }
-
-	/**
-	 * Get text
-	 *
-	 * @return string	Text
-	 */
-	public function getText() {
-		return $this->_text;
-	}
-
-	/**
-	 * Set text
-	 *
-	 * @param 	$pText string	Text
-	 * @return PHPExcel_RichText_ITextElement
-	 */
-	public function setText($pText = '') {
-		$this->_text = $pText;
-		return $this;
-	}
-
-	/**
-	 * Get font
-	 *
-	 * @return PHPExcel_Style_Font
-	 */
-	public function getFont() {
-		return null;
-	}
-
-	/**
-	 * Get hash code
-	 *
-	 * @return string	Hash code
-	 */
-	public function getHashCode() {
-    	return md5(
-    		  $this->_text
-    		. __CLASS__
-    	);
-    }
-
-	/**
-	 * Implement PHP __clone to create a deep clone, not just a shallow copy.
-	 */
-	public function __clone() {
-		$vars = get_object_vars($this);
-		foreach ($vars as $key => $value) {
-			if (is_object($value)) {
-				$this->$key = clone $value;
-			} else {
-				$this->$key = $value;
-			}
-		}
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

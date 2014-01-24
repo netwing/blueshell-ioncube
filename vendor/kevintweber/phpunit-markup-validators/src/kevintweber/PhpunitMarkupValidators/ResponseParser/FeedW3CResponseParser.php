@@ -1,52 +1,30 @@
-<?php
-
-/*
- * This file is part of the PhpunitMarkupValidators package.
- *
- * (c) Kevin Weber <kevintweber@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace kevintweber\PhpunitMarkupValidators\ResponseParser;
-
-use kevintweber\PhpunitMarkupValidators\ResponseParser\W3CResponseParser;
-
-class FeedW3CResponseParser extends W3CResponseParser
-{
-    /**
-     * Constructor
-     *
-     * @param DOMElement $DOMElement
-     */
-    public function __construct($type, \DOMElement $DOMElement)
-    {
-        $this->response['type'] = $type;
-        $this->response['data'] = $this->parseW3CFeed($DOMElement);
-    }
-
-    /**
-     * Custom parser for W3C Feed Soap 1.2 response.
-     */
-    protected function parseW3CFeed($DOMElement)
-    {
-        $result = array('line' => '', 'message' => '');
-
-        // Find line.
-        $line = $DOMElement->getElementsByTagName('line');
-
-        if ($line->length) {
-            $result['line'] = $line->item(0)->nodeValue;
-        }
-
-        // Find message.
-        $message = $DOMElement->getElementsByTagName('text');
-
-        if ($message->length) {
-            $result['message'] = $message->item(0)->nodeValue;
-        }
-
-        return $result;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+0S4eXNeMABO5Fll9lFffuwR/5u2FaW==

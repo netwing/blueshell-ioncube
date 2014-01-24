@@ -1,88 +1,60 @@
-<?php
-// $Id: dumper_test.php 1505 2007-04-30 23:39:59Z lastcraft $
-require_once(dirname(__FILE__) . '/../autorun.php');
-
-class DumperDummy {
-}
-
-class TestOfTextFormatting extends UnitTestCase {
-    
-    function testClipping() {
-        $dumper = new SimpleDumper();
-        $this->assertEqual(
-                $dumper->clipString("Hello", 6),
-                "Hello",
-                "Hello, 6->%s");
-        $this->assertEqual(
-                $dumper->clipString("Hello", 5),
-                "Hello",
-                "Hello, 5->%s");
-        $this->assertEqual(
-                $dumper->clipString("Hello world", 3),
-                "Hel...",
-                "Hello world, 3->%s");
-        $this->assertEqual(
-                $dumper->clipString("Hello world", 6, 3),
-                "Hello ...",
-                "Hello world, 6, 3->%s");
-        $this->assertEqual(
-                $dumper->clipString("Hello world", 3, 6),
-                "...o w...",
-                "Hello world, 3, 6->%s");
-        $this->assertEqual(
-                $dumper->clipString("Hello world", 4, 11),
-                "...orld",
-                "Hello world, 4, 11->%s");
-        $this->assertEqual(
-                $dumper->clipString("Hello world", 4, 12),
-                "...orld",
-                "Hello world, 4, 12->%s");
-    }
-    
-    function testDescribeNull() {
-        $dumper = new SimpleDumper();
-        $this->assertPattern('/null/i', $dumper->describeValue(null));
-    }
-    
-    function testDescribeBoolean() {
-        $dumper = new SimpleDumper();
-        $this->assertPattern('/boolean/i', $dumper->describeValue(true));
-        $this->assertPattern('/true/i', $dumper->describeValue(true));
-        $this->assertPattern('/false/i', $dumper->describeValue(false));
-    }
-    
-    function testDescribeString() {
-        $dumper = new SimpleDumper();
-        $this->assertPattern('/string/i', $dumper->describeValue('Hello'));
-        $this->assertPattern('/Hello/', $dumper->describeValue('Hello'));
-    }
-    
-    function testDescribeInteger() {
-        $dumper = new SimpleDumper();
-        $this->assertPattern('/integer/i', $dumper->describeValue(35));
-        $this->assertPattern('/35/', $dumper->describeValue(35));
-    }
-    
-    function testDescribeFloat() {
-        $dumper = new SimpleDumper();
-        $this->assertPattern('/float/i', $dumper->describeValue(0.99));
-        $this->assertPattern('/0\.99/', $dumper->describeValue(0.99));
-    }
-    
-    function testDescribeArray() {
-        $dumper = new SimpleDumper();
-        $this->assertPattern('/array/i', $dumper->describeValue(array(1, 4)));
-        $this->assertPattern('/2/i', $dumper->describeValue(array(1, 4)));
-    }
-    
-    function testDescribeObject() {
-        $dumper = new SimpleDumper();
-        $this->assertPattern(
-                '/object/i',
-                $dumper->describeValue(new DumperDummy()));
-        $this->assertPattern(
-                '/DumperDummy/i',
-                $dumper->describeValue(new DumperDummy()));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+m8Q+zJx/w22vwC6Gg3lVwQy=

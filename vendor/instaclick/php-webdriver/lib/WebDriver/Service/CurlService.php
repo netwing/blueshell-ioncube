@@ -1,102 +1,59 @@
-<?php
-/**
- * Copyright 2004-2013 Facebook. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- * @package WebDriver
- *
- * @author Justin Bishop <jubishop@gmail.com>
- * @author Anthon Pang <apang@softwaredevelopment.ca>
- * @author Fabrizio Branca <mail@fabrizio-branca.de>
- */
-
-namespace WebDriver\Service;
-
-use WebDriver\Exception as WebDriverException;
-
-/**
- * WebDriver\Service\CurlService class
- *
- * @package WebDriver
- */
-class CurlService implements CurlServiceInterface
-{
-    /**
-     * {@inheritdoc}
-     */
-    public function execute($requestMethod, $url, $parameters = null, $extraOptions = array())
-    {
-        $customHeaders = array(
-            'Content-Type: application/json;charset=UTF-8',
-            'Accept: application/json;charset=UTF-8',
-        );
-
-        $curl = curl_init($url);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-
-        switch ($requestMethod) {
-            case 'GET':
-                break;
-
-            case 'POST':
-                if ($parameters && is_array($parameters)) {
-                    curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($parameters));
-                } else {
-                    $customHeaders[] = 'Content-Length: 0';
-                }
-
-                curl_setopt($curl, CURLOPT_POST, true);
-                break;
-
-            case 'DELETE':
-                curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'DELETE');
-                break;
-
-            case 'PUT':
-                if ($parameters && is_array($parameters)) {
-                    curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($parameters));
-                } else {
-                    $customHeaders[] = 'Content-Length: 0';
-                }
-
-                curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'PUT');
-                break;
-        }
-
-        foreach ($extraOptions as $option => $value) {
-            curl_setopt($curl, $option, $value);
-        }
-
-        curl_setopt($curl, CURLOPT_HTTPHEADER, $customHeaders);
-
-        $rawResults = trim(curl_exec($curl));
-        $info = curl_getinfo($curl);
-
-        if (CURLE_GOT_NOTHING !== curl_errno($curl) && $error = curl_error($curl)) {
-            $message = sprintf(
-                'Curl error thrown for http %s to %s%s',
-                $requestMethod,
-                $url,
-                $parameters && is_array($parameters)
-                ? ' with params: ' . json_encode($parameters) : ''
-            );
-
-            throw WebDriverException::factory(WebDriverException::CURL_EXEC, $message . "\n\n" . $error);
-        }
-
-        curl_close($curl);
-
-        return array($rawResults, $info);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+yOaNTqeDPXUrjBE+1AF+vW==

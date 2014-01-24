@@ -1,116 +1,46 @@
-<?php
-/**
- * PHPUnit
- *
- * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @package    PHPUnit
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      File available since Release 2.3.0
- */
-
-class BankAccountException extends RuntimeException {}
-
-/**
- * A bank account.
- *
- * @package    PHPUnit
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      Class available since Release 2.3.0
- */
-class BankAccount
-{
-    /**
-     * The bank account's balance.
-     *
-     * @var    float
-     */
-    protected $balance = 0;
-
-    /**
-     * Returns the bank account's balance.
-     *
-     * @return float
-     */
-    public function getBalance()
-    {
-        return $this->balance;
-    }
-
-    /**
-     * Sets the bank account's balance.
-     *
-     * @param  float $balance
-     * @throws BankAccountException
-     */
-    protected function setBalance($balance)
-    {
-        if ($balance >= 0) {
-            $this->balance = $balance;
-        } else {
-            throw new BankAccountException;
-        }
-    }
-
-    /**
-     * Deposits an amount of money to the bank account.
-     *
-     * @param  float $balance
-     * @throws BankAccountException
-     */
-    public function depositMoney($balance)
-    {
-        $this->setBalance($this->getBalance() + $balance);
-
-        return $this->getBalance();
-    }
-
-    /**
-     * Withdraws an amount of money from the bank account.
-     *
-     * @param  float $balance
-     * @throws BankAccountException
-     */
-    public function withdrawMoney($balance)
-    {
-        $this->setBalance($this->getBalance() - $balance);
-
-        return $this->getBalance();
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

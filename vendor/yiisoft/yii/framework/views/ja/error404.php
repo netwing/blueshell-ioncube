@@ -1,33 +1,29 @@
-<!DOCTYPE html PUBLIC
-	"-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<title>404 ページが見つかりません</title>
-<style type="text/css">
-/*<![CDATA[*/
-body {font-family:Verdana, 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic ProN', sans-serif; font-weight:normal; color:black; background-color:white;}
-h1 {font-weight:normal;font-size:18pt;color:red }
-h2 {font-weight:normal;font-size:14pt;color:maroon }
-h3 {font-weight:bold;font-size:11pt}
-p {font-weight:normal;color:black;font-size:9pt;margin-top: -5px}
-.version {color: gray;font-size:8pt;border-top:1px solid #aaaaaa;}
-/*]]>*/
-</style>
-</head>
-<body>
-<h1>404 ページが見つかりません</h1>
-<h2><?php echo nl2br(CHtml::encode($data['message'])); ?></h2>
-<p>
-リクエストされたURLはこのサーバでは見つかりませんでした。
-URLを手で入力した場合には、スペルをチェックしてから再度トライしてください。
-</p>
-<p>
-これがサーバの不具合であると思われる場合は、<?php echo $data['admin']; ?>にご連絡ください。
-</p>
-<div class="version">
-<?php echo date('Y-m-d H:i:s',$data['time']) .' '. $data['version']; ?>
-</div>
-</body>
-</html>
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

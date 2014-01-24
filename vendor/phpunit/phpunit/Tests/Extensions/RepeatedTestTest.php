@@ -1,108 +1,45 @@
-<?php
-/**
- * PHPUnit
- *
- * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @package    PHPUnit
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      File available since Release 2.0.0
- */
-
-require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'Success.php';
-
-/**
- *
- *
- * @package    PHPUnit
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      Class available since Release 2.0.0
- */
-class Extensions_RepeatedTestTest extends PHPUnit_Framework_TestCase
-{
-    protected $suite;
-
-    public function __construct()
-    {
-        $this->suite = new PHPUnit_Framework_TestSuite;
-
-        $this->suite->addTest(new Success);
-        $this->suite->addTest(new Success);
-    }
-
-    public function testRepeatedOnce()
-    {
-        $test = new PHPUnit_Extensions_RepeatedTest($this->suite, 1);
-        $this->assertEquals(2, count($test));
-
-        $result = $test->run();
-        $this->assertEquals(2, count($result));
-    }
-
-    public function testRepeatedMoreThanOnce()
-    {
-        $test = new PHPUnit_Extensions_RepeatedTest($this->suite, 3);
-        $this->assertEquals(6, count($test));
-
-        $result = $test->run();
-        $this->assertEquals(6, count($result));
-    }
-
-    public function testRepeatedZero()
-    {
-        $test = new PHPUnit_Extensions_RepeatedTest($this->suite, 0);
-        $this->assertEquals(0, count($test));
-
-        $result = $test->run();
-        $this->assertEquals(0, count($result));
-    }
-
-    public function testRepeatedNegative()
-    {
-        try {
-            $test = new PHPUnit_Extensions_RepeatedTest($this->suite, -1);
-        }
-
-        catch (Exception $e) {
-            return;
-        }
-
-        $this->fail('Should throw an Exception');
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+BERKjf1NUXc7AQDSrQ6DYaqiejebrgi=

@@ -1,592 +1,232 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\BrowserKit;
-
-use Symfony\Component\DomCrawler\Crawler;
-use Symfony\Component\DomCrawler\Link;
-use Symfony\Component\DomCrawler\Form;
-use Symfony\Component\Process\PhpProcess;
-
-/**
- * Client simulates a browser.
- *
- * To make the actual request, you need to implement the doRequest() method.
- *
- * If you want to be able to run requests in their own process (insulated flag),
- * you need to also implement the getScript() method.
- *
- * @author Fabien Potencier <fabien@symfony.com>
- *
- * @api
- */
-abstract class Client
-{
-    protected $history;
-    protected $cookieJar;
-    protected $server = array();
-    protected $internalRequest;
-    protected $request;
-    protected $internalResponse;
-    protected $response;
-    protected $crawler;
-    protected $insulated = false;
-    protected $redirect;
-    protected $followRedirects = true;
-
-    private $maxRedirects = -1;
-    private $redirectCount = 0;
-    private $isMainRequest = true;
-
-    /**
-     * Constructor.
-     *
-     * @param array     $server    The server parameters (equivalent of $_SERVER)
-     * @param History   $history   A History instance to store the browser history
-     * @param CookieJar $cookieJar A CookieJar instance to store the cookies
-     *
-     * @api
-     */
-    public function __construct(array $server = array(), History $history = null, CookieJar $cookieJar = null)
-    {
-        $this->setServerParameters($server);
-        $this->history = $history ?: new History();
-        $this->cookieJar = $cookieJar ?: new CookieJar();
-    }
-
-    /**
-     * Sets whether to automatically follow redirects or not.
-     *
-     * @param Boolean $followRedirect Whether to follow redirects
-     *
-     * @api
-     */
-    public function followRedirects($followRedirect = true)
-    {
-        $this->followRedirects = (Boolean) $followRedirect;
-    }
-
-    /**
-     * Sets the maximum number of requests that crawler can follow.
-     *
-     * @param integer $maxRedirects
-     */
-    public function setMaxRedirects($maxRedirects)
-    {
-        $this->maxRedirects = $maxRedirects < 0 ? -1 : $maxRedirects;
-        $this->followRedirects = -1 != $this->maxRedirects;
-    }
-
-    /**
-     * Sets the insulated flag.
-     *
-     * @param Boolean $insulated Whether to insulate the requests or not
-     *
-     * @throws \RuntimeException When Symfony Process Component is not installed
-     *
-     * @api
-     */
-    public function insulate($insulated = true)
-    {
-        if ($insulated && !class_exists('Symfony\\Component\\Process\\Process')) {
-            // @codeCoverageIgnoreStart
-            throw new \RuntimeException('Unable to isolate requests as the Symfony Process Component is not installed.');
-            // @codeCoverageIgnoreEnd
-        }
-
-        $this->insulated = (Boolean) $insulated;
-    }
-
-    /**
-     * Sets server parameters.
-     *
-     * @param array $server An array of server parameters
-     *
-     * @api
-     */
-    public function setServerParameters(array $server)
-    {
-        $this->server = array_merge(array(
-            'HTTP_HOST'       => 'localhost',
-            'HTTP_USER_AGENT' => 'Symfony2 BrowserKit',
-        ), $server);
-    }
-
-    /**
-     * Sets single server parameter.
-     *
-     * @param string $key   A key of the parameter
-     * @param string $value A value of the parameter
-     */
-    public function setServerParameter($key, $value)
-    {
-        $this->server[$key] = $value;
-    }
-
-    /**
-     * Gets single server parameter for specified key.
-     *
-     * @param string $key     A key of the parameter to get
-     * @param string $default A default value when key is undefined
-     *
-     * @return string A value of the parameter
-     */
-    public function getServerParameter($key, $default = '')
-    {
-        return (isset($this->server[$key])) ? $this->server[$key] : $default;
-    }
-
-    /**
-     * Returns the History instance.
-     *
-     * @return History A History instance
-     *
-     * @api
-     */
-    public function getHistory()
-    {
-        return $this->history;
-    }
-
-    /**
-     * Returns the CookieJar instance.
-     *
-     * @return CookieJar A CookieJar instance
-     *
-     * @api
-     */
-    public function getCookieJar()
-    {
-        return $this->cookieJar;
-    }
-
-    /**
-     * Returns the current Crawler instance.
-     *
-     * @return Crawler|null A Crawler instance
-     *
-     * @api
-     */
-    public function getCrawler()
-    {
-        return $this->crawler;
-    }
-
-    /**
-     * Returns the current BrowserKit Response instance.
-     *
-     * @return Response|null A BrowserKit Response instance
-     *
-     * @api
-     */
-    public function getInternalResponse()
-    {
-        return $this->internalResponse;
-    }
-
-    /**
-     * Returns the current origin response instance.
-     *
-     * The origin response is the response instance that is returned
-     * by the code that handles requests.
-     *
-     * @return object|null A response instance
-     *
-     * @see doRequest
-     *
-     * @api
-     */
-    public function getResponse()
-    {
-        return $this->response;
-    }
-
-    /**
-     * Returns the current BrowserKit Request instance.
-     *
-     * @return Request|null A BrowserKit Request instance
-     *
-     * @api
-     */
-    public function getInternalRequest()
-    {
-        return $this->internalRequest;
-    }
-
-    /**
-     * Returns the current origin Request instance.
-     *
-     * The origin request is the request instance that is sent
-     * to the code that handles requests.
-     *
-     * @return object|null A Request instance
-     *
-     * @see doRequest
-     *
-     * @api
-     */
-    public function getRequest()
-    {
-        return $this->request;
-    }
-
-    /**
-     * Clicks on a given link.
-     *
-     * @param Link $link A Link instance
-     *
-     * @return Crawler
-     *
-     * @api
-     */
-    public function click(Link $link)
-    {
-        if ($link instanceof Form) {
-            return $this->submit($link);
-        }
-
-        return $this->request($link->getMethod(), $link->getUri());
-    }
-
-    /**
-     * Submits a form.
-     *
-     * @param Form  $form   A Form instance
-     * @param array $values An array of form field values
-     *
-     * @return Crawler
-     *
-     * @api
-     */
-    public function submit(Form $form, array $values = array())
-    {
-        $form->setValues($values);
-
-        return $this->request($form->getMethod(), $form->getUri(), $form->getPhpValues(), $form->getPhpFiles());
-    }
-
-    /**
-     * Calls a URI.
-     *
-     * @param string  $method        The request method
-     * @param string  $uri           The URI to fetch
-     * @param array   $parameters    The Request parameters
-     * @param array   $files         The files
-     * @param array   $server        The server parameters (HTTP headers are referenced with a HTTP_ prefix as PHP does)
-     * @param string  $content       The raw body data
-     * @param Boolean $changeHistory Whether to update the history or not (only used internally for back(), forward(), and reload())
-     *
-     * @return Crawler
-     *
-     * @api
-     */
-    public function request($method, $uri, array $parameters = array(), array $files = array(), array $server = array(), $content = null, $changeHistory = true)
-    {
-        if ($this->isMainRequest) {
-            $this->redirectCount = 0;
-        } else {
-            ++$this->redirectCount;
-        }
-
-        $uri = $this->getAbsoluteUri($uri);
-
-        $server = array_merge($this->server, $server);
-        if (!$this->history->isEmpty()) {
-            $server['HTTP_REFERER'] = $this->history->current()->getUri();
-        }
-        $server['HTTP_HOST'] = parse_url($uri, PHP_URL_HOST);
-        $server['HTTPS'] = 'https' == parse_url($uri, PHP_URL_SCHEME);
-
-        $this->internalRequest = new Request($uri, $method, $parameters, $files, $this->cookieJar->allValues($uri), $server, $content);
-
-        $this->request = $this->filterRequest($this->internalRequest);
-
-        if (true === $changeHistory) {
-            $this->history->add($this->internalRequest);
-        }
-
-        if ($this->insulated) {
-            $this->response = $this->doRequestInProcess($this->request);
-        } else {
-            $this->response = $this->doRequest($this->request);
-        }
-
-        $this->internalResponse = $this->filterResponse($this->response);
-
-        $this->cookieJar->updateFromResponse($this->internalResponse, $uri);
-
-        $status = $this->internalResponse->getStatus();
-
-        if ($status >= 300 && $status < 400) {
-            $this->redirect = $this->internalResponse->getHeader('Location');
-        } else {
-            $this->redirect = null;
-        }
-
-        if ($this->followRedirects && $this->redirect) {
-            return $this->crawler = $this->followRedirect();
-        }
-
-        return $this->crawler = $this->createCrawlerFromContent($this->internalRequest->getUri(), $this->internalResponse->getContent(), $this->internalResponse->getHeader('Content-Type'));
-    }
-
-    /**
-     * Makes a request in another process.
-     *
-     * @param object $request An origin request instance
-     *
-     * @return object An origin response instance
-     *
-     * @throws \RuntimeException When processing returns exit code
-     */
-    protected function doRequestInProcess($request)
-    {
-        // We set the TMPDIR (for Macs) and TEMP (for Windows), because on these platforms the temp directory changes based on the user.
-        $process = new PhpProcess($this->getScript($request), null, array('TMPDIR' => sys_get_temp_dir(), 'TEMP' => sys_get_temp_dir()));
-        $process->run();
-
-        if (!$process->isSuccessful() || !preg_match('/^O\:\d+\:/', $process->getOutput())) {
-            throw new \RuntimeException(sprintf('OUTPUT: %s ERROR OUTPUT: %s', $process->getOutput(), $process->getErrorOutput()));
-        }
-
-        return unserialize($process->getOutput());
-    }
-
-    /**
-     * Makes a request.
-     *
-     * @param object $request An origin request instance
-     *
-     * @return object An origin response instance
-     */
-    abstract protected function doRequest($request);
-
-    /**
-     * Returns the script to execute when the request must be insulated.
-     *
-     * @param object $request An origin request instance
-     *
-     * @throws \LogicException When this abstract class is not implemented
-     */
-    protected function getScript($request)
-    {
-        // @codeCoverageIgnoreStart
-        throw new \LogicException('To insulate requests, you need to override the getScript() method.');
-        // @codeCoverageIgnoreEnd
-    }
-
-    /**
-     * Filters the BrowserKit request to the origin one.
-     *
-     * @param Request $request The BrowserKit Request to filter
-     *
-     * @return object An origin request instance
-     */
-    protected function filterRequest(Request $request)
-    {
-        return $request;
-    }
-
-    /**
-     * Filters the origin response to the BrowserKit one.
-     *
-     * @param object $response The origin response to filter
-     *
-     * @return Response An BrowserKit Response instance
-     */
-    protected function filterResponse($response)
-    {
-        return $response;
-    }
-
-    /**
-     * Creates a crawler.
-     *
-     * This method returns null if the DomCrawler component is not available.
-     *
-     * @param string $uri     A URI
-     * @param string $content Content for the crawler to use
-     * @param string $type    Content type
-     *
-     * @return Crawler|null
-     */
-    protected function createCrawlerFromContent($uri, $content, $type)
-    {
-        if (!class_exists('Symfony\Component\DomCrawler\Crawler')) {
-            return null;
-        }
-
-        $crawler = new Crawler(null, $uri);
-        $crawler->addContent($content, $type);
-
-        return $crawler;
-    }
-
-    /**
-     * Goes back in the browser history.
-     *
-     * @return Crawler
-     *
-     * @api
-     */
-    public function back()
-    {
-        return $this->requestFromRequest($this->history->back(), false);
-    }
-
-    /**
-     * Goes forward in the browser history.
-     *
-     * @return Crawler
-     *
-     * @api
-     */
-    public function forward()
-    {
-        return $this->requestFromRequest($this->history->forward(), false);
-    }
-
-    /**
-     * Reloads the current browser.
-     *
-     * @return Crawler
-     *
-     * @api
-     */
-    public function reload()
-    {
-        return $this->requestFromRequest($this->history->current(), false);
-    }
-
-    /**
-     * Follow redirects?
-     *
-     * @return Crawler
-     *
-     * @throws \LogicException If request was not a redirect
-     *
-     * @api
-     */
-    public function followRedirect()
-    {
-        if (empty($this->redirect)) {
-            throw new \LogicException('The request was not redirected.');
-        }
-
-        if (-1 !== $this->maxRedirects) {
-            if ($this->redirectCount > $this->maxRedirects) {
-                throw new \LogicException(sprintf('The maximum number (%d) of redirections was reached.', $this->maxRedirects));
-            }
-        }
-
-        $request = $this->internalRequest;
-
-        if (in_array($this->internalResponse->getStatus(), array(302, 303))) {
-            $method = 'get';
-            $files = array();
-            $content = null;
-        } else {
-            $method = $request->getMethod();
-            $files = $request->getFiles();
-            $content = $request->getContent();
-        }
-
-        if ('get' === strtolower($method)) {
-            // Don't forward parameters for GET request as it should reach the redirection URI
-            $parameters = array();
-        } else {
-            $parameters = $request->getParameters();
-        }
-
-        $server = $request->getServer();
-        unset($server['HTTP_IF_NONE_MATCH'], $server['HTTP_IF_MODIFIED_SINCE']);
-
-        $this->isMainRequest = false;
-
-        $response = $this->request($method, $this->redirect, $parameters, $files, $server, $content);
-
-        $this->isMainRequest = true;
-
-        return $response;
-    }
-
-    /**
-     * Restarts the client.
-     *
-     * It flushes history and all cookies.
-     *
-     * @api
-     */
-    public function restart()
-    {
-        $this->cookieJar->clear();
-        $this->history->clear();
-    }
-
-    /**
-     * Takes a URI and converts it to absolute if it is not already absolute.
-     *
-     * @param string $uri A URI
-     *
-     * @return string An absolute URI
-     */
-    protected function getAbsoluteUri($uri)
-    {
-        // already absolute?
-        if (0 === strpos($uri, 'http')) {
-            return $uri;
-        }
-
-        if (!$this->history->isEmpty()) {
-            $currentUri = $this->history->current()->getUri();
-        } else {
-            $currentUri = sprintf('http%s://%s/',
-                isset($this->server['HTTPS']) ? 's' : '',
-                isset($this->server['HTTP_HOST']) ? $this->server['HTTP_HOST'] : 'localhost'
-            );
-        }
-
-        // protocol relative URL
-        if (0 === strpos($uri, '//')) {
-            return parse_url($currentUri, PHP_URL_SCHEME).':'.$uri;
-        }
-
-        // anchor?
-        if (!$uri || '#' == $uri[0]) {
-            return preg_replace('/#.*?$/', '', $currentUri).$uri;
-        }
-
-        if ('/' !== $uri[0]) {
-            $path = parse_url($currentUri, PHP_URL_PATH);
-
-            if ('/' !== substr($path, -1)) {
-                $path = substr($path, 0, strrpos($path, '/') + 1);
-            }
-
-            $uri = $path.$uri;
-        }
-
-        return preg_replace('#^(.*?//[^/]+)\/.*$#', '$1', $currentUri).$uri;
-    }
-
-    /**
-     * Makes a request from a Request object directly.
-     *
-     * @param Request $request       A Request instance
-     * @param Boolean $changeHistory Whether to update the history or not (only used internally for back(), forward(), and reload())
-     *
-     * @return Crawler
-     */
-    protected function requestFromRequest(Request $request, $changeHistory = true)
-    {
-        return $this->request($request->getMethod(), $request->getUri(), $request->getParameters(), $request->getFiles(), $request->getServer(), $request->getContent(), $changeHistory);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+9VG38+UaT8C7ktQ2Z66f/7SWHWL5ZB3YwnjV

@@ -1,76 +1,48 @@
-<?php
-
-require_once 'Swift/Tests/SwiftUnitTestCase.php';
-require_once 'Swift/Mime/Headers/DateHeader.php';
-require_once 'Swift/Mime/Grammar.php';
-
-class Swift_Mime_Headers_DateHeaderTest
-    extends Swift_Tests_SwiftUnitTestCase
-{
-    /* --
-    The following tests refer to RFC 2822, section 3.6.1 and 3.3.
-    */
-
-    public function testTypeIsDateHeader()
-    {
-        $header = $this->_getHeader('Date');
-        $this->assertEqual(Swift_Mime_Header::TYPE_DATE, $header->getFieldType());
-    }
-
-    public function testGetTimestamp()
-    {
-        $timestamp = time();
-        $header = $this->_getHeader('Date');
-        $header->setTimestamp($timestamp);
-        $this->assertIdentical($timestamp, $header->getTimestamp());
-    }
-
-    public function testTimestampCanBeSetBySetter()
-    {
-        $timestamp = time();
-        $header = $this->_getHeader('Date');
-        $header->setTimestamp($timestamp);
-        $this->assertIdentical($timestamp, $header->getTimestamp());
-    }
-
-    public function testIntegerTimestampIsConvertedToRfc2822Date()
-    {
-        $timestamp = time();
-        $header = $this->_getHeader('Date');
-        $header->setTimestamp($timestamp);
-        $this->assertEqual(date('r', $timestamp), $header->getFieldBody());
-    }
-
-    public function testSetBodyModel()
-    {
-        $timestamp = time();
-        $header = $this->_getHeader('Date');
-        $header->setFieldBodyModel($timestamp);
-        $this->assertEqual(date('r', $timestamp), $header->getFieldBody());
-    }
-
-    public function testGetBodyModel()
-    {
-        $timestamp = time();
-        $header = $this->_getHeader('Date');
-        $header->setTimestamp($timestamp);
-        $this->assertEqual($timestamp, $header->getFieldBodyModel());
-    }
-
-    public function testToString()
-    {
-        $timestamp = time();
-        $header = $this->_getHeader('Date');
-        $header->setTimestamp($timestamp);
-        $this->assertEqual('Date: ' . date('r', $timestamp) . "\r\n",
-            $header->toString()
-            );
-    }
-
-    // -- Private methods
-
-    private function _getHeader($name)
-    {
-        return new Swift_Mime_Headers_DateHeader($name, new Swift_Mime_Grammar());
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+Dq+ZaFqo3Wvu3vaJ+rm2xxJdlV44kjLlI44=

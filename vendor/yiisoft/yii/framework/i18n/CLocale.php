@@ -1,472 +1,190 @@
-<?php
-/**
- * CLocale class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CLocale represents the data relevant to a locale.
- *
- * The data includes the number formatting information and date formatting information.
- *
- * @property string $id The locale ID (in canonical form).
- * @property CNumberFormatter $numberFormatter The number formatter for this locale.
- * @property CDateFormatter $dateFormatter The date formatter for this locale.
- * @property string $decimalFormat The decimal format.
- * @property string $currencyFormat The currency format.
- * @property string $percentFormat The percent format.
- * @property string $scientificFormat The scientific format.
- * @property array $monthNames Month names indexed by month values (1-12).
- * @property array $weekDayNames The weekday names indexed by weekday values (0-6, 0 means Sunday, 1 Monday, etc.).
- * @property string $aMName The AM name.
- * @property string $pMName The PM name.
- * @property string $dateFormat Date format.
- * @property string $timeFormat Date format.
- * @property string $dateTimeFormat Datetime format, i.e., the order of date and time.
- * @property string $orientation The character orientation, which is either 'ltr' (left-to-right) or 'rtl' (right-to-left).
- * @property array $pluralRules Plural forms expressions.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.i18n
- * @since 1.0
- */
-class CLocale extends CComponent
-{
-	/**
-	 * @var string the directory that contains the locale data. If this property is not set,
-	 * the locale data will be loaded from 'framework/i18n/data'.
-	 * @since 1.1.0
-	 */
-	public static $dataPath;
-
-	private $_id;
-	private $_data;
-	private $_dateFormatter;
-	private $_numberFormatter;
-
-	/**
-	 * Returns the instance of the specified locale.
-	 * Since the constructor of CLocale is protected, you can only use
-	 * this method to obtain an instance of the specified locale.
-	 * @param string $id the locale ID (e.g. en_US)
-	 * @return CLocale the locale instance
-	 */
-	public static function getInstance($id)
-	{
-		static $locales=array();
-		if(isset($locales[$id]))
-			return $locales[$id];
-		else
-			return $locales[$id]=new CLocale($id);
-	}
-
-	/**
-	 * @return array IDs of the locales which the framework can recognize
-	 */
-	public static function getLocaleIDs()
-	{
-		static $locales;
-		if($locales===null)
-		{
-			$locales=array();
-			$dataPath=self::$dataPath===null ? dirname(__FILE__).DIRECTORY_SEPARATOR.'data' : self::$dataPath;
-			$folder=@opendir($dataPath);
-			while(($file=@readdir($folder))!==false)
-			{
-				$fullPath=$dataPath.DIRECTORY_SEPARATOR.$file;
-				if(substr($file,-4)==='.php' && is_file($fullPath))
-					$locales[]=substr($file,0,-4);
-			}
-			closedir($folder);
-			sort($locales);
-		}
-		return $locales;
-	}
-
-	/**
-	 * Constructor.
-	 * Since the constructor is protected, please use {@link getInstance}
-	 * to obtain an instance of the specified locale.
-	 * @param string $id the locale ID (e.g. en_US)
-	 * @throws CException if given locale id is not recognized
-	 */
-	protected function __construct($id)
-	{
-		$this->_id=self::getCanonicalID($id);
-		$dataPath=self::$dataPath===null ? dirname(__FILE__).DIRECTORY_SEPARATOR.'data' : self::$dataPath;
-		$dataFile=$dataPath.DIRECTORY_SEPARATOR.$this->_id.'.php';
-		if(is_file($dataFile))
-			$this->_data=require($dataFile);
-		else
-			throw new CException(Yii::t('yii','Unrecognized locale "{locale}".',array('{locale}'=>$id)));
-	}
-
-	/**
-	 * Converts a locale ID to its canonical form.
-	 * In canonical form, a locale ID consists of only underscores and lower-case letters.
-	 * @param string $id the locale ID to be converted
-	 * @return string the locale ID in canonical form
-	 */
-	public static function getCanonicalID($id)
-	{
-		return strtolower(str_replace('-','_',$id));
-	}
-
-	/**
-	 * @return string the locale ID (in canonical form)
-	 */
-	public function getId()
-	{
-		return $this->_id;
-	}
-
-	/**
-	 * @return CNumberFormatter the number formatter for this locale
-	 */
-	public function getNumberFormatter()
-	{
-		if($this->_numberFormatter===null)
-			$this->_numberFormatter=new CNumberFormatter($this);
-		return $this->_numberFormatter;
-	}
-
-	/**
-	 * @return CDateFormatter the date formatter for this locale
-	 */
-	public function getDateFormatter()
-	{
-		if($this->_dateFormatter===null)
-			$this->_dateFormatter=new CDateFormatter($this);
-		return $this->_dateFormatter;
-	}
-
-	/**
-	 * @param string $currency 3-letter ISO 4217 code. For example, the code "USD" represents the US Dollar and "EUR" represents the Euro currency.
-	 * @return string the localized currency symbol. Null if the symbol does not exist.
-	 */
-	public function getCurrencySymbol($currency)
-	{
-		return isset($this->_data['currencySymbols'][$currency]) ? $this->_data['currencySymbols'][$currency] : null;
-	}
-
-	/**
-	 * @param string $name symbol name
-	 * @return string symbol
-	 */
-	public function getNumberSymbol($name)
-	{
-		return isset($this->_data['numberSymbols'][$name]) ? $this->_data['numberSymbols'][$name] : null;
-	}
-
-	/**
-	 * @return string the decimal format
-	 */
-	public function getDecimalFormat()
-	{
-		return $this->_data['decimalFormat'];
-	}
-
-	/**
-	 * @return string the currency format
-	 */
-	public function getCurrencyFormat()
-	{
-		return $this->_data['currencyFormat'];
-	}
-
-	/**
-	 * @return string the percent format
-	 */
-	public function getPercentFormat()
-	{
-		return $this->_data['percentFormat'];
-	}
-
-	/**
-	 * @return string the scientific format
-	 */
-	public function getScientificFormat()
-	{
-		return $this->_data['scientificFormat'];
-	}
-
-	/**
-	 * @param integer $month month (1-12)
-	 * @param string $width month name width. It can be 'wide', 'abbreviated' or 'narrow'.
-	 * @param boolean $standAlone whether the month name should be returned in stand-alone format
-	 * @return string the month name
-	 */
-	public function getMonthName($month,$width='wide',$standAlone=false)
-	{
-		if($standAlone)
-			return isset($this->_data['monthNamesSA'][$width][$month]) ? $this->_data['monthNamesSA'][$width][$month] : $this->_data['monthNames'][$width][$month];
-		else
-			return isset($this->_data['monthNames'][$width][$month]) ? $this->_data['monthNames'][$width][$month] : $this->_data['monthNamesSA'][$width][$month];
-	}
-
-	/**
-	 * Returns the month names in the specified width.
-	 * @param string $width month name width. It can be 'wide', 'abbreviated' or 'narrow'.
-	 * @param boolean $standAlone whether the month names should be returned in stand-alone format
-	 * @return array month names indexed by month values (1-12)
-	 */
-	public function getMonthNames($width='wide',$standAlone=false)
-	{
-		if($standAlone)
-			return isset($this->_data['monthNamesSA'][$width]) ? $this->_data['monthNamesSA'][$width] : $this->_data['monthNames'][$width];
-		else
-			return isset($this->_data['monthNames'][$width]) ? $this->_data['monthNames'][$width] : $this->_data['monthNamesSA'][$width];
-	}
-
-	/**
-	 * @param integer $day weekday (0-7, 0 and 7 means Sunday)
-	 * @param string $width weekday name width.  It can be 'wide', 'abbreviated' or 'narrow'.
-	 * @param boolean $standAlone whether the week day name should be returned in stand-alone format
-	 * @return string the weekday name
-	 */
-	public function getWeekDayName($day,$width='wide',$standAlone=false)
-	{
-		$day=$day%7;
-		if($standAlone)
-			return isset($this->_data['weekDayNamesSA'][$width][$day]) ? $this->_data['weekDayNamesSA'][$width][$day] : $this->_data['weekDayNames'][$width][$day];
-		else
-			return isset($this->_data['weekDayNames'][$width][$day]) ? $this->_data['weekDayNames'][$width][$day] : $this->_data['weekDayNamesSA'][$width][$day];
-	}
-
-	/**
-	 * Returns the week day names in the specified width.
-	 * @param string $width weekday name width.  It can be 'wide', 'abbreviated' or 'narrow'.
-	 * @param boolean $standAlone whether the week day name should be returned in stand-alone format
-	 * @return array the weekday names indexed by weekday values (0-6, 0 means Sunday, 1 Monday, etc.)
-	 */
-	public function getWeekDayNames($width='wide',$standAlone=false)
-	{
-		if($standAlone)
-			return isset($this->_data['weekDayNamesSA'][$width]) ? $this->_data['weekDayNamesSA'][$width] : $this->_data['weekDayNames'][$width];
-		else
-			return isset($this->_data['weekDayNames'][$width]) ? $this->_data['weekDayNames'][$width] : $this->_data['weekDayNamesSA'][$width];
-	}
-
-	/**
-	 * @param integer $era era (0,1)
-	 * @param string $width era name width.  It can be 'wide', 'abbreviated' or 'narrow'.
-	 * @return string the era name
-	 */
-	public function getEraName($era,$width='wide')
-	{
-		return $this->_data['eraNames'][$width][$era];
-	}
-
-	/**
-	 * @return string the AM name
-	 */
-	public function getAMName()
-	{
-		return $this->_data['amName'];
-	}
-
-	/**
-	 * @return string the PM name
-	 */
-	public function getPMName()
-	{
-		return $this->_data['pmName'];
-	}
-
-	/**
-	 * @param string $width date format width. It can be 'full', 'long', 'medium' or 'short'.
-	 * @return string date format
-	 */
-	public function getDateFormat($width='medium')
-	{
-		return $this->_data['dateFormats'][$width];
-	}
-
-	/**
-	 * @param string $width time format width. It can be 'full', 'long', 'medium' or 'short'.
-	 * @return string date format
-	 */
-	public function getTimeFormat($width='medium')
-	{
-		return $this->_data['timeFormats'][$width];
-	}
-
-	/**
-	 * @return string datetime format, i.e., the order of date and time.
-	 */
-	public function getDateTimeFormat()
-	{
-		return $this->_data['dateTimeFormat'];
-	}
-
-	/**
-	 * @return string the character orientation, which is either 'ltr' (left-to-right) or 'rtl' (right-to-left)
-	 * @since 1.1.2
-	 */
-	public function getOrientation()
-	{
-		return isset($this->_data['orientation']) ? $this->_data['orientation'] : 'ltr';
-	}
-
-	/**
-	 * @return array plural forms expressions
-	 */
-	public function getPluralRules()
-	{
-		return isset($this->_data['pluralRules']) ? $this->_data['pluralRules'] : array(0=>'true');
-	}
-
-	/**
-	 * Converts a locale ID to a language ID.
-	 * A language ID consists of only the first group of letters before an underscore or dash.
-	 * @param string $id the locale ID to be converted
-	 * @return string the language ID
-	 * @since 1.1.9
-	 */
-	public function getLanguageID($id)
-	{
-		// normalize id
-		$id = $this->getCanonicalID($id);
-		// remove sub tags
-		if(($underscorePosition=strpos($id, '_'))!== false)
-		{
-			$id = substr($id, 0, $underscorePosition);
-		}
-		return $id;
-	}
-
-	/**
-	 * Converts a locale ID to a script ID.
-	 * A script ID consists of only the last four characters after an underscore or dash.
-	 * @param string $id the locale ID to be converted
-	 * @return string the script ID
-	 * @since 1.1.9
-	 */
-	public function getScriptID($id)
-	{
-		// normalize id
-		$id = $this->getCanonicalID($id);
-		// find sub tags
-		if(($underscorePosition=strpos($id, '_'))!==false)
-		{
-			$subTag = explode('_', $id);
-			// script sub tags can be distigused from territory sub tags by length
-			if (strlen($subTag[1])===4)
-			{
-				$id = $subTag[1];
-			}
-			else
-			{
-				$id = null;
-			}
-		}
-		else
-		{
-			$id = null;
-		}
-		return $id;
-	}
-
-	/**
-	 * Converts a locale ID to a territory ID.
-	 * A territory ID consists of only the last two to three letter or digits after an underscore or dash.
-	 * @param string $id the locale ID to be converted
-	 * @return string the territory ID
-	 * @since 1.1.9
-	 */
-	public function getTerritoryID($id)
-	{
-		// normalize id
-		$id = $this->getCanonicalID($id);
-		// find sub tags
-		if (($underscorePosition=strpos($id, '_'))!== false)
-		{
-			$subTag = explode('_', $id);
-			// territory sub tags can be distigused from script sub tags by length
-			if (isset($subTag[2]) && strlen($subTag[2])<4)
-			{
-				$id = $subTag[2];
-			}
-			elseif (strlen($subTag[1])<4)
-			{
-				$id = $subTag[1];
-			}
-			else
-			{
-				$id = null;
-			}
-		}
-		else
-		{
-			$id = null;
-		}
-		return $id;
-	}
-
-	/**
-	 * Gets a localized name from i18n data file (one of framework/i18n/data/ files).
-	 *
-	 * @param string $id array key from an array named by $category.
-	 * @param string $category data category. One of 'languages', 'scripts' or 'territories'.
-	 * @return string the localized name for the id specified. Null if data does not exist.
-	 * @since 1.1.9
-	 */
-	public function getLocaleDisplayName($id=null, $category='languages')
-	{
-		$id = $this->getCanonicalID($id);
-		if (($category == 'languages') && (isset($this->_data[$category][$id])))
-		{
-			return $this->_data[$category][$id];
-		}
-		elseif (($category == 'scripts') && ($val=$this->getScriptID($id)) && (isset($this->_data[$category][$val])))
-		{
-			return $this->_data[$category][$val];
-		}
-		elseif (($category == 'territories') && ($val=$this->getTerritoryID($id)) && (isset($this->_data[$category][$val])))
-		{
-			return $this->_data[$category][$val];
-		}
-		elseif (isset($this->_data[$category][$id]))
-		{
-			return $this->_data[$category][$id];
-		}
-		else {
-			return null;
-		}
-	}
-
-	/**
-	 * @param string $id Unicode language identifier from IETF BCP 47. For example, the code "en_US" represents U.S. English and "en_GB" represents British English.
-	 * @return string the local display name for the language. Null if the language code does not exist.
-	 * @since 1.1.9
-	 */
-	public function getLanguage($id)
-	{
-		$id = $this->getLanguageID($id);
-		return $this->getLocaleDisplayName($id, 'languages');
-	}
-
-	/**
-	 * @param string $id Unicode script identifier from IETF BCP 47. For example, the code "en_US" represents U.S. English and "en_GB" represents British English.
-	 * @return string the local display name for the script. Null if the script code does not exist.
-	 * @since 1.1.9
-	 */
-	public function getScript($id)
-	{
-		return $this->getLocaleDisplayName($id, 'scripts');
-	}
-
-	/**
-	 * @param string $id Unicode territory identifier from IETF BCP 47. For example, the code "en_US" represents U.S. English and "en_GB" represents British English.
-	 * @return string the local display name for the territory. Null if the territory code does not exist.
-	 * @since 1.1.9
-	 */
-	public function getTerritory($id)
-	{
-		return $this->getLocaleDisplayName($id, 'territories');
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

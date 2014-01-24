@@ -1,101 +1,34 @@
-<?php
-
-namespace Guzzle\Http\Exception;
-
-use Guzzle\Http\Curl\CurlHandle;
-
-/**
- * cURL request exception
- */
-class CurlException extends RequestException
-{
-    private $curlError;
-    private $curlErrorNo;
-    private $handle;
-    private $curlInfo = array();
-
-    /**
-     * Set the cURL error message
-     *
-     * @param string $error  Curl error
-     * @param int    $number Curl error number
-     *
-     * @return self
-     */
-    public function setError($error, $number)
-    {
-        $this->curlError = $error;
-        $this->curlErrorNo = $number;
-
-        return $this;
-    }
-
-    /**
-     * Set the associated curl handle
-     *
-     * @param CurlHandle $handle Curl handle
-     *
-     * @return self
-     */
-    public function setCurlHandle(CurlHandle $handle)
-    {
-        $this->handle = $handle;
-
-        return $this;
-    }
-
-    /**
-     * Get the associated cURL handle
-     *
-     * @return CurlHandle|null
-     */
-    public function getCurlHandle()
-    {
-        return $this->handle;
-    }
-
-    /**
-     * Get the associated cURL error message
-     *
-     * @return string|null
-     */
-    public function getError()
-    {
-        return $this->curlError;
-    }
-
-    /**
-     * Get the associated cURL error number
-     *
-     * @return int|null
-     */
-    public function getErrorNo()
-    {
-        return $this->curlErrorNo;
-    }
-
-    /**
-     * Returns curl information about the transfer
-     *
-     * @return array
-     */
-    public function getCurlInfo()
-    {
-        return $this->curlInfo;
-    }
-
-    /**
-     * Set curl transfer information
-     *
-     * @param array $info Array of curl transfer information
-     *
-     * @return self
-     * @link http://php.net/manual/en/function.curl-getinfo.php
-     */
-    public function setCurlInfo(array $info)
-    {
-        $this->curlInfo = $info;
-
-        return $this;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

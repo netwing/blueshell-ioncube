@@ -1,156 +1,61 @@
-<?php
-
-/*
- * This file is part of the PhpunitMarkupValidators package.
- *
- * (c) Kevin Weber <kevintweber@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace kevintweber\PhpunitMarkupValidators\Connector;
-
-use kevintweber\PhpunitMarkupValidators\Util\Throttle;
-
-abstract class Connector
-{
-    protected $input;
-    protected $outputType;
-    protected $url;
-
-    /**
-     * Will execute a cURL request.
-     *
-     * @param string $type The type of input.
-     *
-     * @return mixed The response from the web service.
-     */
-    public function execute($type)
-    {
-        switch (strtolower($type)) {
-        case 'markup':
-            $curlOptArray = $this->getMarkupOpts();
-            break;
-
-        case 'file':
-            $curlOptArray = $this->getFileOpts();
-            break;
-
-        case 'url':
-            $curlOptArray = $this->getUrlOpts();
-            break;
-
-        default:
-            throw new \PHPUnit_Framework_Exception('Invalid type: ' . $type);
-            break;
-        }
-
-        $curlOptArray = $curlOptArray + array(CURLOPT_RETURNTRANSFER => true,
-                                              CURLOPT_TIMEOUT => 10);
-
-        // Throttle calls (if necessary).
-        Throttle::delay(get_class($this));
-
-        $curl = curl_init();
-        curl_setopt_array($curl, $curlOptArray);
-
-        if (!$response = curl_exec($curl)) {
-            throw new \PHPUnit_Framework_Exception('Unable to validate. Error: ' .
-                                                   curl_error($curl));
-        }
-
-        curl_close($curl);
-
-        return $response;
-    }
-
-    abstract protected function getMarkupOpts();
-    abstract protected function getFileOpts();
-    abstract protected function getUrlOpts();
-
-    /**
-     * Process the result from the service.
-     *
-     * @param mixed $result The result from the service.
-     *
-     * @return bool True is valid.
-     */
-    abstract public function processResponse($response);
-
-    /**
-     * A helper function to parse the validation service response.
-     *
-     * @param string $response The response text.
-     *
-     * @return string A description of the failure.
-     */
-    public function describeFailure($response)
-    {
-        return $response;
-    }
-
-    /**
-     * Getter for 'input'.
-     *
-     * @return string The value of 'input'
-     */
-    public function getInput()
-    {
-        return $this->input;
-    }
-
-    /**
-     * Setter for 'input'.
-     *
-     * @param string $value The new value of 'input'
-     */
-    public function setInput($value)
-    {
-        $this->input = $value;
-    }
-
-    /**
-     * Getter for 'outputType'.
-     *
-     * @return string The value of 'outputType'
-     */
-    public function getOutputType()
-    {
-        return $this->outputType;
-    }
-
-    /**
-     * Setter for 'outputType'.
-     *
-     * @param string $value The new value of 'outputType'
-     */
-    public function setOutputType($value)
-    {
-        $this->outputType = $value;
-    }
-
-    /**
-     * Getter for 'url'.
-     *
-     * @return string The value of 'url'
-     */
-    public function getUrl()
-    {
-        return $this->url;
-    }
-
-    /**
-     * Setter for 'url'.
-     *
-     * @param string $value The new value of 'url'
-     */
-    public function setUrl($value)
-    {
-        if (filter_var($value, FILTER_VALIDATE_URL) === false) {
-            throw new \PHPUnit_Framework_Exception("Url is not valid.\n");
-        }
-
-        $this->url = $value;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+x30=

@@ -1,59 +1,49 @@
-<?php
-
-namespace Guzzle\Tests\Service\Command;
-
-use Guzzle\Http\Message\Response;
-use Guzzle\Service\Client;
-use Guzzle\Service\Command\DefaultResponseParser;
-use Guzzle\Service\Command\OperationCommand;
-use Guzzle\Service\Description\Operation;
-
-/**
- * @covers Guzzle\Service\Command\DefaultResponseParser
- */
-class DefaultResponseParserTest extends \Guzzle\Tests\GuzzleTestCase
-{
-    public function testParsesXmlResponses()
-    {
-        $op = new OperationCommand(array(), new Operation());
-        $op->setClient(new Client());
-        $request = $op->prepare();
-        $request->setResponse(new Response(200, array(
-            'Content-Type' => 'application/xml'
-        ), '<Foo><Baz>Bar</Baz></Foo>'), true);
-        $this->assertInstanceOf('SimpleXMLElement', $op->execute());
-    }
-
-    public function testParsesJsonResponses()
-    {
-        $op = new OperationCommand(array(), new Operation());
-        $op->setClient(new Client());
-        $request = $op->prepare();
-        $request->setResponse(new Response(200, array(
-            'Content-Type' => 'application/json'
-        ), '{"Baz":"Bar"}'), true);
-        $this->assertEquals(array('Baz' => 'Bar'), $op->execute());
-    }
-
-    /**
-     * @expectedException \Guzzle\Common\Exception\RuntimeException
-     */
-    public function testThrowsExceptionWhenParsingJsonFails()
-    {
-        $op = new OperationCommand(array(), new Operation());
-        $op->setClient(new Client());
-        $request = $op->prepare();
-        $request->setResponse(new Response(200, array('Content-Type' => 'application/json'), '{"Baz":ddw}'), true);
-        $op->execute();
-    }
-
-    public function testAddsContentTypeWhenExpectsIsSetOnCommand()
-    {
-        $op = new OperationCommand(array(), new Operation());
-        $op['command.expects'] = 'application/json';
-        $op->setClient(new Client());
-        $request = $op->prepare();
-        $request->setResponse(new Response(200, null, '{"Baz":"Bar"}'), true);
-        $this->assertEquals(array('Baz' => 'Bar'), $op->execute());
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

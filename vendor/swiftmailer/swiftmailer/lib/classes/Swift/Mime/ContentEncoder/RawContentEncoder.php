@@ -1,65 +1,32 @@
-<?php
-
-/*
- * This file is part of SwiftMailer.
- * (c) 2004-2009 Chris Corbyn
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-/**
- * Handles raw Transfer Encoding in Swift Mailer.
- *
- * @package    Swift
- * @subpackage Mime
- *
- * @author     Sebastiaan Stok <s.stok@rollerscapes.net>
- */
-class Swift_Mime_ContentEncoder_RawContentEncoder implements Swift_Mime_ContentEncoder
-{
-    /**
-     * Encode a given string to produce an encoded string.
-     *
-     * @param  string $string
-     * @param  int    $firstLineOffset ignored
-     * @param  int    $maxLineLength   ignored
-     * @return string
-     */
-    public function encodeString($string, $firstLineOffset = 0, $maxLineLength = 0)
-    {
-        return $string;
-    }
-
-    /**
-     * Encode stream $in to stream $out.
-     *
-     * @param Swift_OutputByteStream $in
-     * @param Swift_InputByteStream  $out
-     * @param int                    $firstLineOffset ignored
-     * @param int                    $maxLineLength   ignored
-     */
-    public function encodeByteStream(Swift_OutputByteStream $os, Swift_InputByteStream $is, $firstLineOffset = 0, $maxLineLength = 0)
-    {
-        while (false !== ($bytes = $os->read(8192))) {
-            $is->write($bytes);
-        }
-    }
-
-    /**
-     * Get the name of this encoding scheme.
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return 'raw';
-    }
-
-    /**
-     * Not used.
-     */
-    public function charsetChanged($charset)
-    {
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+A3kHoopl0XUm0gjiIG==

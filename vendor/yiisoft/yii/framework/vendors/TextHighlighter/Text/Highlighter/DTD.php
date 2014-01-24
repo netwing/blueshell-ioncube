@@ -1,408 +1,70 @@
-<?php
-/**
- * Auto-generated class. DTD syntax highlighting 
- *
- * PHP version 4 and 5
- *
- * LICENSE: This source file is subject to version 3.0 of the PHP license
- * that is available through the world-wide-web at the following URI:
- * http://www.php.net/license/3_0.txt.  If you did not receive a copy of
- * the PHP License and are unable to obtain it through the web, please
- * send a note to license@php.net so we can mail you a copy immediately.
- *
- * @copyright  2004-2006 Andrey Demenev
- * @license    http://www.php.net/license/3_0.txt  PHP License
- * @link       http://pear.php.net/package/Text_Highlighter
- * @category   Text
- * @package    Text_Highlighter
- * @version    generated from: : dtd.xml,v 1.1 2007/06/03 02:35:28 ssttoo Exp 
- * @author Andrey Demenev <demenev@gmail.com>
- *
- */
-
-/**
- * Auto-generated class. DTD syntax highlighting
- *
- * @author Andrey Demenev <demenev@gmail.com>
- * @category   Text
- * @package    Text_Highlighter
- * @copyright  2004-2006 Andrey Demenev
- * @license    http://www.php.net/license/3_0.txt  PHP License
- * @version    Release: 0.7.1
- * @link       http://pear.php.net/package/Text_Highlighter
- */
-class  Text_Highlighter_DTD extends Text_Highlighter
-{
-    var $_language = 'dtd';
-
-    /**
-     *  Constructor
-     *
-     * @param array  $options
-     * @access public
-     */
-    function __construct($options=array())
-    {
-
-        $this->_options = $options;
-        $this->_regs = array (
-            -1 => '/(\\<!--)|(\\<\\!\\[)|((\\&|\\%)[\\w\\-\\.]+;)/',
-            0 => '//',
-            1 => '/(\\<!--)|(\\<)|(#PCDATA\\b)|((\\&|\\%)[\\w\\-\\.]+;)|((?i)[a-z][a-z\\d\\-\\,:]+)/',
-            2 => '/(\\<!--)|(\\()|(\')|(")|((?<=\\<)!(ENTITY|ATTLIST|ELEMENT|NOTATION)\\b)|(\\s(#(IMPLIED|REQUIRED|FIXED))|CDATA|ENTITY|NOTATION|NMTOKENS?|PUBLIC|SYSTEM\\b)|(#PCDATA\\b)|((\\&|\\%)[\\w\\-\\.]+;)|((?i)[a-z][a-z\\d\\-\\,:]+)/',
-            3 => '/(\\()|((\\&|\\%)[\\w\\-\\.]+;)|((?i)[a-z][a-z\\d\\-\\,:]+)/',
-            4 => '/((\\&|\\%)[\\w\\-\\.]+;)/',
-            5 => '/((\\&|\\%)[\\w\\-\\.]+;)/',
-        );
-        $this->_counts = array (
-            -1 => 
-            array (
-                0 => 0,
-                1 => 0,
-                2 => 1,
-            ),
-            0 => 
-            array (
-            ),
-            1 => 
-            array (
-                0 => 0,
-                1 => 0,
-                2 => 0,
-                3 => 1,
-                4 => 0,
-            ),
-            2 => 
-            array (
-                0 => 0,
-                1 => 0,
-                2 => 0,
-                3 => 0,
-                4 => 1,
-                5 => 2,
-                6 => 0,
-                7 => 1,
-                8 => 0,
-            ),
-            3 => 
-            array (
-                0 => 0,
-                1 => 1,
-                2 => 0,
-            ),
-            4 => 
-            array (
-                0 => 1,
-            ),
-            5 => 
-            array (
-                0 => 1,
-            ),
-        );
-        $this->_delim = array (
-            -1 => 
-            array (
-                0 => 'comment',
-                1 => 'brackets',
-                2 => '',
-            ),
-            0 => 
-            array (
-            ),
-            1 => 
-            array (
-                0 => 'comment',
-                1 => 'brackets',
-                2 => '',
-                3 => '',
-                4 => '',
-            ),
-            2 => 
-            array (
-                0 => 'comment',
-                1 => 'brackets',
-                2 => 'quotes',
-                3 => 'quotes',
-                4 => '',
-                5 => '',
-                6 => '',
-                7 => '',
-                8 => '',
-            ),
-            3 => 
-            array (
-                0 => 'brackets',
-                1 => '',
-                2 => '',
-            ),
-            4 => 
-            array (
-                0 => '',
-            ),
-            5 => 
-            array (
-                0 => '',
-            ),
-        );
-        $this->_inner = array (
-            -1 => 
-            array (
-                0 => 'comment',
-                1 => 'code',
-                2 => 'special',
-            ),
-            0 => 
-            array (
-            ),
-            1 => 
-            array (
-                0 => 'comment',
-                1 => 'code',
-                2 => 'reserved',
-                3 => 'special',
-                4 => 'identifier',
-            ),
-            2 => 
-            array (
-                0 => 'comment',
-                1 => 'code',
-                2 => 'string',
-                3 => 'string',
-                4 => 'var',
-                5 => 'reserved',
-                6 => 'reserved',
-                7 => 'special',
-                8 => 'identifier',
-            ),
-            3 => 
-            array (
-                0 => 'code',
-                1 => 'special',
-                2 => 'identifier',
-            ),
-            4 => 
-            array (
-                0 => 'special',
-            ),
-            5 => 
-            array (
-                0 => 'special',
-            ),
-        );
-        $this->_end = array (
-            0 => '/--\\>/',
-            1 => '/\\]\\]\\>/',
-            2 => '/\\>/',
-            3 => '/\\)/',
-            4 => '/\'/',
-            5 => '/"/',
-        );
-        $this->_states = array (
-            -1 => 
-            array (
-                0 => 0,
-                1 => 1,
-                2 => -1,
-            ),
-            0 => 
-            array (
-            ),
-            1 => 
-            array (
-                0 => 0,
-                1 => 2,
-                2 => -1,
-                3 => -1,
-                4 => -1,
-            ),
-            2 => 
-            array (
-                0 => 0,
-                1 => 3,
-                2 => 4,
-                3 => 5,
-                4 => -1,
-                5 => -1,
-                6 => -1,
-                7 => -1,
-                8 => -1,
-            ),
-            3 => 
-            array (
-                0 => 3,
-                1 => -1,
-                2 => -1,
-            ),
-            4 => 
-            array (
-                0 => -1,
-            ),
-            5 => 
-            array (
-                0 => -1,
-            ),
-        );
-        $this->_keywords = array (
-            -1 => 
-            array (
-                0 => -1,
-                1 => -1,
-                2 => 
-                array (
-                ),
-            ),
-            0 => 
-            array (
-            ),
-            1 => 
-            array (
-                0 => -1,
-                1 => -1,
-                2 => 
-                array (
-                ),
-                3 => 
-                array (
-                ),
-                4 => 
-                array (
-                ),
-            ),
-            2 => 
-            array (
-                0 => -1,
-                1 => -1,
-                2 => -1,
-                3 => -1,
-                4 => 
-                array (
-                ),
-                5 => 
-                array (
-                ),
-                6 => 
-                array (
-                ),
-                7 => 
-                array (
-                ),
-                8 => 
-                array (
-                ),
-            ),
-            3 => 
-            array (
-                0 => -1,
-                1 => 
-                array (
-                ),
-                2 => 
-                array (
-                ),
-            ),
-            4 => 
-            array (
-                0 => 
-                array (
-                ),
-            ),
-            5 => 
-            array (
-                0 => 
-                array (
-                ),
-            ),
-        );
-        $this->_parts = array (
-            0 => 
-            array (
-            ),
-            1 => 
-            array (
-                0 => NULL,
-                1 => NULL,
-                2 => NULL,
-                3 => NULL,
-                4 => NULL,
-            ),
-            2 => 
-            array (
-                0 => NULL,
-                1 => NULL,
-                2 => NULL,
-                3 => NULL,
-                4 => NULL,
-                5 => NULL,
-                6 => NULL,
-                7 => NULL,
-                8 => NULL,
-            ),
-            3 => 
-            array (
-                0 => NULL,
-                1 => NULL,
-                2 => NULL,
-            ),
-            4 => 
-            array (
-                0 => NULL,
-            ),
-            5 => 
-            array (
-                0 => NULL,
-            ),
-        );
-        $this->_subst = array (
-            -1 => 
-            array (
-                0 => false,
-                1 => false,
-                2 => false,
-            ),
-            0 => 
-            array (
-            ),
-            1 => 
-            array (
-                0 => false,
-                1 => false,
-                2 => false,
-                3 => false,
-                4 => false,
-            ),
-            2 => 
-            array (
-                0 => false,
-                1 => false,
-                2 => false,
-                3 => false,
-                4 => false,
-                5 => false,
-                6 => false,
-                7 => false,
-                8 => false,
-            ),
-            3 => 
-            array (
-                0 => false,
-                1 => false,
-                2 => false,
-            ),
-            4 => 
-            array (
-                0 => false,
-            ),
-            5 => 
-            array (
-                0 => false,
-            ),
-        );
-        $this->_conditions = array (
-        );
-        $this->_kwmap = array (
-        );
-        $this->_defClass = 'code';
-        $this->_checkDefines();
-    }
-    
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPmqeK43IkwXtl+V5OwQ15BWoMadPA9lcPQIiicf4JxNOZiD1TFGvhFxHmw7kxdREE9hkzdMW
+wMMiJegPPOBcDFSHWeoW3wQO/lDT8tIAfRiN80kOe+7suV25yN5c3SKaLs1xmsX/9w/tE8LZ1QF/
+5Yv9/fkasmTsNxuCvkHC/noJ8QPJSPGoRyX+zRPEnwh5hwoHoUvIbyk1hMxhQwkpLX4NapuF4v15
+jc5C6blD44gkkibcm5V9hr4euJltSAgiccy4GDnfT4nfgknzgRssEWsl+3XXNtuKfwZTO0XTsXk+
+QlYFs2RMYc3MxfV91hKYivgvtrzIIz8itygmoi0mIjGl51YUcArVvnAII0IqR+eKdvZV/E5sZf2D
+LA6qzHYCbfX2zsIxTyKx2HtNmxKKtUFf60h/hUwAjyCcX9psgp1ZovTo6+qTeZxh8cWcQ1y/5Nur
+mlxZKyUL0BXHCmJeKGUCZy0BFzk3Exky6A2iPBhdKNORcTcwRzAjuuUU+79kb8zrLsHBR05Y0jYV
+cRwEhrDIkXTTOYM+9u/Cbk5VT9wnteY9mh5AcPOjUO5u/tEpijk5xRCecRikHaMBOCGs5kiK4Wis
+4s01EC7F6QiTVql5hp3PFtUN+K3hpq3/ARrLl141eBDqcEck/NlAqcorOc3/iBRzB7fVmhuR0oGZ
+bteVrZ6IoZ7JUHIX3NzOum5WChy8ResZkVWwnEDI3J3GDSrBHiumh4eQnkOEYVcmkLwuzOusRGfm
+XH+YK9K0VMy4mNsGHz+RSywhpwg/cSUncFD6Nj8fI02Tgy/kA04faGH/fW2p9d4sQ4SY2OLeJ74e
+xwMffHh7Fj+ZK70nBZFPw5S6jkJQykuBulv6cAyV5K/W4Hg44bx1PnOuBWzDGFnMJW0xYvL4T7nf
+I1wv2jKQAaXPelWNlKI2n23dNhuiALURqIcakPQp8xk5IXEmbCGhAoADt9VkgkXuLu3IJl/NZNTS
+ez8Zdb3P1Nw+OiIF09JV3r0Gcrr+dqRAtpZ+5yKtGehUYNaBl4Uh9LXsSHTnDQ7ny/fP9OFSr57l
+qofCRDCxlAG8+Ux6QA1rPQv+g1909ezGCDxwhIwMHSIk5rHYfLK6vQ6C2y7G0HXGKhRC7TXrzE3d
+AdyM1oknZgRv3zDb0QQmiMQzhPWcj7FsM5uvCwilUx5idcL0VASEAHV4MmMu8Uag55B3ho0DYoMW
+Mq8KraanOF1PMuyVOrEdKv7yRfelRH+zry69krnafQIe8j7Yd8imgrNkJQ67JhkvTGmjziEHIisD
+OWjl2H0mJK13LAscRrR1Kb8WV7fMKOuEjNu7AWMrqQ0/hgQoAlNbMVdNhx6XyM66MeyFdWOiBeFU
+aAAgl0f+tj3vKncgGCYYFy2O7lXxJKkmWk77hzuxK0UsYyx69p/Nh7Rnx4PbFRRoCYUzUcJgquxG
+NiGu81CBXqXIJRX4XolLU9+CDDEbbksOhB36rNC+LWEaWjw+q7/IdrjR0+f59Msd4vTlNEIEbhyZ
+ufjYRmoapnZ8LtV7rYi+p2VmsCX2LlFgvSPuEEWMXEbXUsIEY159o011d1ilHSCCJnPTz2uwmIin
+4FMKZPmZiNS31VgV+qXFYXVL6CxHcj8pFZaab887lWaTibwXJIn7T1c9aiEpoVPLaywZ58r/Gt6O
+rtTONqf9Eu7IiQONIKyWT2S9rzFM1+wlJGCvXvmzzD9by4UX9DyqYAo/yhbxD00bVyq3nkzW5ILE
+FG7uxpShaZaEPALg1mxUBdnv0QlRcqi0JY8VQExCMTt7FJHa2Zlw/5FolCnxW/1KcRAd45ScJCqn
+cqbivM7viH58jUYy7jnnHKqfwsZcKylVoVg5Os9KTKpkvWiAcjUH3aaqHBnMDqObrc8PQB7N5VDL
+9Pf2YX5f1prKKHd5QLPg0CBoXKVUDOaTeVmT1V5NW1iYDmfc08buOmnXjLGZL+9DIo/Vnu63yI0a
+p2bVzgtkykR7jOyAgYZukxrQ6ksZhXsn0iPi/QzN2nwShL+y7qu0/GUG0En8P4Ncg74DUolQCpD8
+EPIE/GgGqCuKn68EboZROdZ5jduivITQC7Wi2QkkZ9XX9ibrc+Rqbe5S/IoSYhCLP2xC1Gbw4HK1
+nlwV26bM6MuPh2XfBCgU5d5OKNArqmgL9QvD9PDe4UqOUyFj4CjdSiBI5M5Oc5MhKyXZTW9pDqDg
+OW1ZheQLme+VL/Q5FfYJIcXDF/5RULpyEb2fMlBGMWtQHig9w3ipzj7jPHPxhc+mhmj3dnU9KS1m
+U+6Of+D4IulPDCyTNi7F8aJjMCq7SiCwvx9f8ULRGSeQczyV4BLan6FA4grcccqNNnmf0TUVtpaE
+jqAswZkvPc5a+sBAJl+PAnW5nin8a9Wr/+/2MSIOLFhFA07RKn4ZIz2Qgwt2EpZd0+oZ0BsGghmx
+mR5s0EY2Nx5D4TyWz1TuaMickBQapma3KtSU3sScy+ERgVZkvnk6LaZb+X7Zu8yJjBuQeDl7+bZi
+soGHKPpxOv/xJg8FgbC0051kwMVx1Nxu91j1qK4Qm5W0CabBDVSTq5Ry6qkBTee9YVup+skdjAox
+STXdesrgZtwFLPBjqmeYgXZzCWavJnFfXlK8zT2yxQ327PhAgnBwMm7ObwgSphZ1PbNJIUSEjzag
+fY7ypYPk+Y11SmBr8C5g0o+a/vB2AGo68NlI8gRhyigtIlYZDzG97JtpriaUptTCBwVAXHB/FZlO
+hNKDmSIsJrOLiQdVKdUVAGQRqgSkPthZGnejJvTRYuxa7CUXJOT7Y0hqNLDKyuEcQOeNy9/jsCBA
+LHSJGqXXYx93YDNFQUwaIERMHkDhessACLC8kiAYfI+9VnjjqbYRQuz44LxIohXR64DVAoAsirWd
+zPcZ5Lyh5SoIYp9B4oN7j2/UrhgF2Amz7WXsnuT3lMhmwVdkjz1LTWGdMjvqvsMPatVYqIXsAKCL
+/nhU8V7d0hkuKR+aV/6q9pKksRHHb9U/mpIBGttDDGcOdbYnLfDQG7WigrMZLHazgq8lEGdtf1/I
+uYc/cB1RKapBqVFCURp9/t+JAn+yxmMX6l/6WPt0hz1zl1Yqur1GIPnlOmyp1skVWIiGIm4n88yv
+ssg46E2MGuJXiC49La49VogVASJIGLt55fgb5S248KQK79Ko/RNpnBnclCOZVFXKhnlLeJ9vIKUK
+7aNlxVoFtkwZjbhD2lqF1neXvMxslPZNZAlvR8nHAxOLqR6LsGjASNT1SO7f4Qf72Sgf0runTKXO
+I5pyS1SVCo2RJ7w9TU/vqCR8fFtkoeu8WxJn7V7sh2+0LjaG32zrV06H6Mjqkzwws3zworbAO8CX
+brV7nMZJ8SmGvjrWVIGrl58hREInKEm8oMsfNTuBx5kzDpcitglDJhjafjoyhInyjyw0J5K/9D0U
+CzY3FYjd++kIWHX9hwaSjbBoe81jm3fIQfUNbFsES4o9N9yu3b2yfQHDLGzOe/6u5EcUh4MK5R1+
+5ICDRrk30Fjuby9ZFmjv7J284TMdG3DcYVScVh7vVYXgNFMZVo8X0aMYMyAq1dh0nhi07vSQpzEz
+gQYwDuvU08dGIuaGwJcwfgcU9ejY3qGe0NGqh6qBRcyaJuZ36niawUUD5wr+0FutnIyQ4QMwzunw
+RtmCUU4liUG2X58wC0cWJbaClbcO4hRIgChINtLNEx5NHqoBsBxOKBwERAh0Zj+z8wDc1g2FPoVJ
+2HlBD+NBHM5l4yhbR6xWDds9KgciVkHCPZH02PqFAG/PLwrhpG8CJdoMC8wh35RfkKHi4/avdtWo
+f7tqfi+9aadzQ6xxMeSKzv/SYt1T7ClMa7mKKSlGax+MPAIKwNE/2vRjVFe70z7esLCW9FSL7E0Q
+1W6/ntCdjK+muhhAqyrCSue9UoVgQdhNtvWTibeiJrCoqqbB4HZrxqhXYgqCQsB7TXi/WC07+Dr/
+++wclGXJUmVIv2k+6Og5wXM6JTka+hWMGvI6PtJ78//zijjm9h441pqlqeVzADgLaKgHORkOiBJQ
+0oRNCvj3SJdpHvGKFGUUyesRqWbReu/rFoLGHIFvwGJiCxjDcd+l1luJ1jJKRmJRlIjny6gNaYqk
+OAAkuYjkI8l4/dVmMKmaFXDC7G6UTPYstmIxagl10k7bt6khcb33qwUBaVHiN0hEZ6zSs9OLp04+
+DgF0Xr38LfkaDiskUVPgtv4TfkHgiTBIuvxG09THW25/EVQkTJ0aArUy7T8OGnnuKPbaCpLhRgC4
+xjNnW2+LlpASQ+VbC2OiHLjLACTg3N2ijIctjGQw9M7AY8aoSuj/S/9twXzwbk0boLS5SmBphFBm
+x9pUDgLcDloArpfL7rv1WYhQdo3qxLoKsfIxN7VKQcvlLzC93kNMYTALErxamGwvKaqYKBwZ9gvd
+5TLVZww4lVIH/JKkqo38Bv54NsopPhdrwbEmsbjtketgzqUdMcqA/zX7zcRoeYs2NlkNvLamfJq2
+kDvcWlh2MgHQaJUzNxsj0gUi9suiFfRuRdXAwTy7ijCsFYWCCXCPgHJu74PWn2iiy+t9kms6wrJe
+rzYB01YspZsOaz/eE+l2NqgwQOI9yUpbyNeqQmEBuFbEUmr2ivTOaR4wi3jtjZMhDwUOrVdX9WqC
+YP2fxY9hr9z3rnJ6vHPxIPM6nhp5KG5L9O3lJOvPQ1sbKbyMvbO92qVjDlHjcl4UD0zj0skn76BR
+RXfga6HQ4AjeBrXvTxofRXHQ8/2U0yUgwRVJNewPuANC8t7vSy62cJ9XfYbh2YoJ/sonn6GPcrrR
+Ejp9QwFRb1AZ3L6p7UhwYKsGmdVZufcDtS5YakAtLvv3VjEufLUk6Rv3qwCXAnQ41ayGppvIAH/v
+pSZqJMya08Eh0aJYj0hWGl3M7PTmOs5jgkdR56+4Zs2nGIe+K24hAVdXpElzu6pQAfH3NfpEcQTj
+SUIrm5WmgzV1N6gAVKTfsq3gNaozlEzi/XedmbPme2uC6hya21KO8cug2WyZNC7N3IlTmWlugKla
+aoNfKCzImfxu2dkHBiZu1l4qQmQH+MmEUIopMGUKlMCIG/2zvn6dwzoS8m==

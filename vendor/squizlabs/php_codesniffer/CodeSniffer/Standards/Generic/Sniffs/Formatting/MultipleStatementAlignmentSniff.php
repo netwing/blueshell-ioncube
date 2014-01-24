@@ -1,304 +1,110 @@
-<?php
-/**
- * Generic_Sniffs_Formatting_MultipleStatementAlignmentSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Generic_Sniffs_Formatting_MultipleStatementAlignmentSniff.
- *
- * Checks alignment of assignments. If there are multiple adjacent assignments,
- * it will check that the equals signs of each assignment are aligned. It will
- * display a warning to advise that the signs should be aligned.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class Generic_Sniffs_Formatting_MultipleStatementAlignmentSniff implements PHP_CodeSniffer_Sniff
-{
-
-    /**
-     * A list of tokenizers this sniff supports.
-     *
-     * @var array
-     */
-    public $supportedTokenizers = array(
-                                   'PHP',
-                                   'JS',
-                                  );
-
-    /**
-     * If true, an error will be thrown; otherwise a warning.
-     *
-     * @var bool
-     */
-    public $error = false;
-
-    /**
-     * The maximum amount of padding before the alignment is ignored.
-     *
-     * If the amount of padding required to align this assignment with the
-     * surrounding assignments exceeds this number, the assignment will be
-     * ignored and no errors or warnings will be thrown.
-     *
-     * @var int
-     */
-    public $maxPadding = 1000;
-
-    /**
-     * If true, multi-line assignments are not checked.
-     *
-     * @var int
-     */
-    public $ignoreMultiLine = false;
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        return PHP_CodeSniffer_Tokens::$assignmentTokens;
-
-    }//end register()
-
-
-    /**
-     * Processes this test, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token
-     *                                        in the stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-
-        // Ignore assignments used in a condition, like an IF or FOR.
-        if (isset($tokens[$stackPtr]['nested_parenthesis']) === true) {
-            foreach ($tokens[$stackPtr]['nested_parenthesis'] as $start => $end) {
-                if (isset($tokens[$start]['parenthesis_owner']) === true) {
-                    return;
-                }
-            }
-        }
-
-        /*
-            By this stage, it is known that there is an assignment on this line.
-            We only want to process the block once we reach the last assignment,
-            so we need to determine if there are more to follow.
-        */
-
-        // The assignment may span over multiple lines, so look for the
-        // end of the assignment so we can check assignment blocks correctly.
-        $lineEnd = $phpcsFile->findNext(T_SEMICOLON, ($stackPtr + 1));
-
-        $nextAssign = $phpcsFile->findNext(
-            PHP_CodeSniffer_Tokens::$assignmentTokens,
-            ($lineEnd + 1)
-        );
-
-        if ($nextAssign !== false) {
-            $isAssign = true;
-            if ($tokens[$nextAssign]['line'] === ($tokens[$lineEnd]['line'] + 1)) {
-                // Assignment may be in the same block as this one. Just make sure
-                // it is not used in a condition, like an IF or FOR.
-                if (isset($tokens[$nextAssign]['nested_parenthesis']) === true) {
-                    foreach ($tokens[$nextAssign]['nested_parenthesis'] as $start => $end) {
-                        if (isset($tokens[$start]['parenthesis_owner']) === true) {
-                            // Not an assignment.
-                            $isAssign = false;
-                            break;
-                        }
-                    }
-                }
-
-                if ($isAssign === true) {
-                    return;
-                }
-            }
-        }
-
-        // Getting here means that this is the last in a block of statements.
-        $assignments    = array();
-        $assignments[]  = $stackPtr;
-        $prevAssignment = $stackPtr;
-        $lastLine       = $tokens[$stackPtr]['line'];
-
-        while (($prevAssignment = $phpcsFile->findPrevious(PHP_CodeSniffer_Tokens::$assignmentTokens, ($prevAssignment - 1))) !== false) {
-
-            // We are not interested in double arrows as they assign values inside
-            // arrays and loops and do not use the same indentation rules.
-            if ($tokens[$prevAssignment]['code'] === T_DOUBLE_ARROW) {
-                continue;
-            }
-
-            // The assignment's end token must be on the line directly
-            // above the current one to be in the same assignment block.
-            $lineEnd = $phpcsFile->findNext(T_SEMICOLON, ($prevAssignment + 1));
-
-            // And the end token must actually belong to this assignment.
-            $nextOpener = $phpcsFile->findNext(
-                PHP_CodeSniffer_Tokens::$scopeOpeners,
-                ($prevAssignment + 1)
-            );
-
-            if ($nextOpener !== false && $nextOpener < $lineEnd) {
-                break;
-            }
-
-            if ($tokens[$lineEnd]['line'] !== ($lastLine - 1)) {
-                break;
-            }
-
-            // Make sure it is not assigned inside a condition (eg. IF, FOR).
-            if (isset($tokens[$prevAssignment]['nested_parenthesis']) === true) {
-                foreach ($tokens[$prevAssignment]['nested_parenthesis'] as $start => $end) {
-                    if (isset($tokens[$start]['parenthesis_owner']) === true) {
-                        break(2);
-                    }
-                }
-            }
-
-            $assignments[] = $prevAssignment;
-            $lastLine      = $tokens[$prevAssignment]['line'];
-        }//end while
-
-        $assignmentData      = array();
-        $maxAssignmentLength = 0;
-        $maxVariableLength   = 0;
-
-        foreach ($assignments as $assignment) {
-            $prev = $phpcsFile->findPrevious(
-                PHP_CodeSniffer_Tokens::$emptyTokens,
-                ($assignment - 1),
-                null,
-                true
-            );
-
-            $endColumn = $tokens[($prev + 1)]['column'];
-
-            if ($maxVariableLength < $endColumn) {
-                $maxVariableLength = $endColumn;
-            }
-
-            if ($maxAssignmentLength < strlen($tokens[$assignment]['content'])) {
-                $maxAssignmentLength = strlen($tokens[$assignment]['content']);
-            }
-
-            $assignmentData[$assignment]
-                = array(
-                   'variable_length'   => $endColumn,
-                   'assignment_length' => strlen($tokens[$assignment]['content']),
-                  );
-        }//end foreach
-
-        foreach ($assignmentData as $assignment => $data) {
-            if ($data['assignment_length'] === $maxAssignmentLength) {
-                if ($data['variable_length'] === $maxVariableLength) {
-                    // The assignment is the longest possible, so the column that
-                    // everything has to align to is based on it.
-                    $column = ($maxVariableLength + 1);
-                    break;
-                } else {
-                    // The assignment token is the longest out of all of the
-                    // assignments, but the variable name is not, so the column
-                    // the start at can go back more to cover the space
-                    // between the variable name and the assignment operator.
-                    $column = ($maxVariableLength - ($maxAssignmentLength - 1) + 1);
-                }
-            }
-        }
-
-        // Determine the actual position that each equals sign should be in.
-        foreach ($assignments as $assignment) {
-            // Actual column takes into account the length of the assignment operator.
-            $actualColumn = ($column + $maxAssignmentLength - strlen($tokens[$assignment]['content']));
-            if ($tokens[$assignment]['column'] !== $actualColumn) {
-                $prev = $phpcsFile->findPrevious(
-                    PHP_CodeSniffer_Tokens::$emptyTokens,
-                    ($assignment - 1),
-                    null,
-                    true
-                );
-
-                $expected = ($actualColumn - $tokens[($prev + 1)]['column']);
-
-                if ($tokens[$assignment]['line'] !== $tokens[$prev]['line']) {
-                    // Instead of working out how many spaces there are
-                    // across new lines, the error message becomes more
-                    // generic below.
-                    $found = null;
-                } else {
-                    $found = ($tokens[$assignment]['column'] - $tokens[($prev + 1)]['column']);
-                }
-
-                // If the expected number of spaces for alignment exceeds the
-                // maxPadding rule, we just check for a single space as no
-                // alignment is required.
-                if ($expected > $this->maxPadding) {
-                    if ($found === 1) {
-                        continue;
-                    } else {
-                        $expected = 1;
-                    }
-                }
-
-                // Skip multi-line assignments if required.
-                if ($found === null && $this->ignoreMultiLine === true) {
-                    continue;
-                }
-
-                $expected .= ($expected === 1) ? ' space' : ' spaces';
-                if ($found === null) {
-                    $found = 'a new line';
-                } else {
-                    $found .= ($found === 1) ? ' space' : ' spaces';
-                }
-
-                if (count($assignments) === 1) {
-                    $type  = 'Incorrect';
-                    $error = 'Equals sign not aligned correctly; expected %s but found %s';
-                } else {
-                    $type  = 'NotSame';
-                    $error = 'Equals sign not aligned with surrounding assignments; expected %s but found %s';
-                }
-
-                $errorData = array(
-                              $expected,
-                              $found,
-                             );
-
-                if ($this->error === true) {
-                    $phpcsFile->addError($error, $assignment, $type, $errorData);
-                } else {
-                    $phpcsFile->addWarning($error, $assignment, $type.'Warning', $errorData);
-                }
-            }//end if
-        }//end foreach
-
-    }//end process()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

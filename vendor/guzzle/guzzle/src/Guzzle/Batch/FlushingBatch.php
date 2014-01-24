@@ -1,60 +1,33 @@
-<?php
-
-namespace Guzzle\Batch;
-
-/**
- * BatchInterface decorator used to add automatic flushing of the queue when the size of the queue reaches a threshold.
- */
-class FlushingBatch extends AbstractBatchDecorator
-{
-    /** @var int The threshold for which to automatically flush */
-    protected $threshold;
-
-    /** @var int Current number of items known to be in the queue */
-    protected $currentTotal = 0;
-
-    /**
-     * @param BatchInterface $decoratedBatch  BatchInterface that is being decorated
-     * @param int            $threshold       Flush when the number in queue matches the threshold
-     */
-    public function __construct(BatchInterface $decoratedBatch, $threshold)
-    {
-        $this->threshold = $threshold;
-        parent::__construct($decoratedBatch);
-    }
-
-    /**
-     * Set the auto-flush threshold
-     *
-     * @param int $threshold The auto-flush threshold
-     *
-     * @return FlushingBatch
-     */
-    public function setThreshold($threshold)
-    {
-        $this->threshold = $threshold;
-
-        return $this;
-    }
-
-    /**
-     * Get the auto-flush threshold
-     *
-     * @return int
-     */
-    public function getThreshold()
-    {
-        return $this->threshold;
-    }
-
-    public function add($item)
-    {
-        $this->decoratedBatch->add($item);
-        if (++$this->currentTotal >= $this->threshold) {
-            $this->currentTotal = 0;
-            $this->decoratedBatch->flush();
-        }
-
-        return $this;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+w6uFsIgei0cxLCVMom==

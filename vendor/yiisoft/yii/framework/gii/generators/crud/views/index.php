@@ -1,64 +1,41 @@
-<?php
-$class=get_class($model);
-Yii::app()->clientScript->registerScript('gii.crud',"
-$('#{$class}_controller').change(function(){
-	$(this).data('changed',$(this).val()!='');
-});
-$('#{$class}_model').bind('keyup change', function(){
-	var controller=$('#{$class}_controller');
-	if(!controller.data('changed')) {
-		var id=new String($(this).val().match(/\\w*$/));
-		if(id.length>0)
-			id=id.substring(0,1).toLowerCase()+id.substring(1);
-		controller.val(id);
-	}
-});
-");
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
-<h1>Crud Generator</h1>
-
-<p>This generator generates a controller and views that implement CRUD operations for the specified data model.</p>
-
-<?php $form=$this->beginWidget('CCodeForm', array('model'=>$model)); ?>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'model'); ?>
-		<?php echo $form->textField($model,'model',array('size'=>65)); ?>
-		<div class="tooltip">
-			Model class is case-sensitive. It can be either a class name (e.g. <code>Post</code>)
-		    or the path alias of the class file (e.g. <code>application.models.Post</code>).
-		    Note that if the former, the class must be auto-loadable.
-		</div>
-		<?php echo $form->error($model,'model'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'controller'); ?>
-		<?php echo $form->textField($model,'controller',array('size'=>65)); ?>
-		<div class="tooltip">
-			Controller ID is case-sensitive. CRUD controllers are often named after
-			the model class name that they are dealing with. Below are some examples:
-			<ul>
-				<li><code>post</code> generates <code>PostController.php</code></li>
-				<li><code>postTag</code> generates <code>PostTagController.php</code></li>
-				<li><code>admin/user</code> generates <code>admin/UserController.php</code>.
-					If the application has an <code>admin</code> module enabled,
-					it will generate <code>UserController</code> (and other CRUD code)
-					within the module instead.
-				</li>
-			</ul>
-		</div>
-		<?php echo $form->error($model,'controller'); ?>
-	</div>
-
-	<div class="row sticky">
-		<?php echo $form->labelEx($model,'baseControllerClass'); ?>
-		<?php echo $form->textField($model,'baseControllerClass',array('size'=>65)); ?>
-		<div class="tooltip">
-			This is the class that the new CRUD controller class will extend from.
-			Please make sure the class exists and can be autoloaded.
-		</div>
-		<?php echo $form->error($model,'baseControllerClass'); ?>
-	</div>
-
-<?php $this->endWidget(); ?>
+HR+cP+BMTrpfE4oKu6RYV/AqnCyvTK4jcvCH+9YiVXAqdraPQ2lGDFYV3QyFu0kuKaeJ0Vk2XwQo
+iqMb1iwT4U4CLM76yPhK/Z3QvUuG+brKNQFCfa0pY2iAsIOnMxxTjS3WPpD4GFxMYgQ+wSodNAzk
+moUAQ8XZWb0930SrGLXZSPrWtKT0V9n5MD8vV5pA2vrx7isshdI1CgtbcobblbfLNty+43PmEuIC
+xtuRXKZiVB/coeNPbS95hr4euJltSAgiccy4GDnfT8LZtaVjkl0F1XeKQi3z+KePOjDBWCYrPcoq
+CgHXgyihXUqB/cNUdTZ5eECkbryTNUFPqyFhzaX0JyfOGfo2ff8zucx/YAH6rewRKXo8q2HTTAyH
+EMk2QH/OJQM8XlL5jMDPCytWNfBHYgrMYW2LMbNsvJ0LcPabd6kXfQbWi2Q8njXCczeS4fRgiaeR
+VdMQuZb7Ew9ER8oRZtAxKtCeSM7uJ0fTEdQ941dKTscZFZ/W+Ty+0bYTO3jYhLccQGzN+yYO7rr+
+1OujFgvMD//r0SZlkGXYTXpYSPm03kqf3L6h+hH11ThZMOeDoh0sQHBl1LYpkXUvCL89dDo5reZ/
+TWL0K8hNdbVoV22Pbbl62pjpl5HaDnPFMEsZczbzW806X4+8L4biU8/FYuANfDfUlRGdtPrF8l/x
+isktroSnISF/X6GVgKJbzlj9IOuTDJsfZVycDgnuSFE1BXqKDWptpxL1yrWkUfP6AnQkoHzC4gBU
+ivsafum8ZF5yNshOvn/RYmSpc6hXCe+oJr1pmez2QGu9rDVfUiMK5ME7oXNtMZeR2CY1tsfdOwlo
+BEUwBibf9wFrZAcwl11mQ1CnoCmWtd6drdYcmb/flngzG5KRh0iFdjY30TrwsFauBBObSlaPRJd6
+3eYO7Fp/aWhcUZKb/p9m6P8o9RBaFujgmYv/yJUW3mTAgmPbrzq1TGshtgocD5NEp8hBbpK8sKN+
+8nzLte6EuAv96Q62+L6Y9DybY3uW5rDIH5k6NjDrw6kDWwPJtnvBf8MJdqmLEgNFUeU+fa6gg5M+
+T5fldkCTtgnEdllWFqWP2DB9xgHjTiXC0UC0Qv2EjzlwYwsKzjpyJio8RREdi5Dtrka4XSKR5yhW
+pDABZYaZvGd4KMwkwS10GWNJ8USBnXiSPXDso2tm9+W68nuBNKL9Jx6HhyWB9jKFuFQYKk6dt5UX
+PWZTSuZouMIw9bCKK0nbJwhfspJ8hyJW+fRkDg3tP3WNePeYZqzzdeglcWhrPhk4yBbz5HsCBPRB
++W3XrfyIkd7tQsWeW7Cld3R7jazWdgGKvxXAtSXr7LrU/tXkfgi6VjLa3ugh6t8k1ucYq1TJJiIJ
+7fWBK3EzOXhRZbP2D2bqUwWIHS3hNLk6iwT0T5yx2FtyLs6QRmczHRTq6RWmneP4ruULO5wMamkA
+ph9A/XOsvYxWY1UYJANLNWRbo9IbWQycaX1inKIpBhAZCDGbpnUreVCclQnWYbmB9Xw88pXtADGJ
+x3aeraRliWFxAimYddJkKIVo6jTr4Loxo+mDIs8QN4kn3VFq0G0okjUs3PvL+OyMjaHfhujuiKHz
+leGu8qUIR68xo1YjYXvlLYDOisKEoXnEDliNDEsUuQy1fGQ264/O0nF8RzHsz4qHGPgzNUH3oMGp
+RdWRSGCK+aVr7WJhSP5zL2fbnTmJhdR2GXA3IddgvvLF4WUYTLSvG4ZEVH6wOtdJEkSzp7l1LIPg
+tYOzgcdHFKCa6v1yUtOHDsoKDO9VN7Rz8C2/Iyma0KFyb/n2mjHKWXvmQ4+qkWHT9vJRt5rE22Sd
+lXWx/lHRczGz5eSj/uLM3D4f2ILT0yh8rN1iDJeYXu3wy9E2NiqPINsfe6d0Z5wxRqMvlvwxbnCt
+oQ5FBp15oo+XBeS3A+JA+AuH2uLusqPyb3Mvzt/7X9dANx2VfDYtGpBp+QuUxekA55If1HivJBoB
+gWOFHl/R53/K6dAwXL8+vGPmVVetZHJQzrJoAgrgDqel3TMb7MSCOUaI02Nz79i+sB7593helwXy
+mimjQpq0mDbGcIiXO9CfbPN1fkD8HZwAZf9i5ErEBERSwqD4ZotMQurIZ2ZfdyXmJxJsp4t9M7ia
+nNUwX/pGNTN7hog8JWkI3bwpevG90oD625U9dLS0byBK1gw9ZIHLtqabtghDbgpKWyTPp+XGpPBH
+k3wyQCDu/yrR10G2m44I936jLbHaPZBWKO4YHn5hsc6MBqABNpd0PopOHFzroeFGNSIvr0+pS9Tb
+qTj4R1GMHuVj+1LVYPWiaxsst4O1IbopngsTVFgWXHFj4nhYYuCVWkzc35CkIizwsSbrdr4ql6nr
+7VgFMUE6tP4mdFW6/v7yXF49I/Sf2j3DpkK7a0LVNn0WnkOLuj4a6QRPN1M9PKfgCo8bm8UZKzPx
+HZEHYB3Fg8I/ZFwOsHWAeYI2ELRGXzaQronbzzdMi3ANvsHu+hwr/iBtOiVFSSDVZEJGPWglR6hr
+He2NX2CYmvX2hUDZrWJ0pyNqohBfdEIxGI0MRnbQS6dX7n+kzp22zS/Tyuv2spc4DuyZCUrOWt8M
+e3UtXFoMwpA8VVMJQsYHbkIBsVmn0TFPnKgLhptdvgCVIiCkFTEZAXl5rPrd19+Osx6f858VZ5rs
+Vwqj7vshTtiIFnCTGdoostdQjrHNcBAUAAp+8ZY9Nqp9EecOoltfsYrJeam6C0fWqlyLRM1j+Wa/
+/o6xaT4C5sNMQxoaKYHFtiP6bX9CJ2su2XjUPkoq4I6IWbC0MCYvMywKPW4TmREglPFw6kwGHxZ0
+MNEKeerXq5887Y++YA8biG==

@@ -1,265 +1,102 @@
-<?php
-/**
- * PHP_CodeCoverage
- *
- * Copyright (c) 2009-2013, Sebastian Bergmann <sebastian@phpunit.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @category   PHP
- * @package    CodeCoverage
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://github.com/sebastianbergmann/php-code-coverage
- * @since      File available since Release 1.0.0
- */
-
-/**
- * Utility methods.
- *
- * @category   PHP
- * @package    CodeCoverage
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://github.com/sebastianbergmann/php-code-coverage
- * @since      Class available since Release 1.0.0
- */
-class PHP_CodeCoverage_Util
-{
-    /**
-     * @var array
-     */
-    protected static $ignoredLines = array();
-
-    /**
-     * @var array
-     */
-    protected static $ids = array();
-
-
-    /**
-     * Returns the lines of a source file that should be ignored.
-     *
-     * @param  string  $filename
-     * @param  boolean $cacheTokens
-     * @return array
-     * @throws PHP_CodeCoverage_Exception
-     */
-    public static function getLinesToBeIgnored($filename, $cacheTokens = TRUE)
-    {
-        if (!is_string($filename)) {
-            throw PHP_CodeCoverage_Util_InvalidArgumentHelper::factory(
-              1, 'string'
-            );
-        }
-
-        if (!is_bool($cacheTokens)) {
-            throw PHP_CodeCoverage_Util_InvalidArgumentHelper::factory(
-              2, 'boolean'
-            );
-        }
-
-        if (!isset(self::$ignoredLines[$filename])) {
-            self::$ignoredLines[$filename] = array();
-            $ignore                        = FALSE;
-            $stop                          = FALSE;
-            $lines                         = file($filename);
-
-            foreach ($lines as $index => $line) {
-                if (!trim($line)) {
-                    self::$ignoredLines[$filename][$index+1] = TRUE;
-                }
-            }
-
-            if ($cacheTokens) {
-                $tokens = PHP_Token_Stream_CachingFactory::get($filename);
-            } else {
-                $tokens = new PHP_Token_Stream($filename);
-            }
-
-            $classes = array_merge($tokens->getClasses(), $tokens->getTraits());
-            $tokens  = $tokens->tokens();
-
-            foreach ($tokens as $token) {
-                switch (get_class($token)) {
-                    case 'PHP_Token_COMMENT':
-                    case 'PHP_Token_DOC_COMMENT': {
-
-                        $_token = trim($token);
-                        $_line  = trim($lines[$token->getLine() - 1]);
-
-                        if ($_token == '// @codeCoverageIgnore' ||
-                            $_token == '//@codeCoverageIgnore') {
-                            $ignore = TRUE;
-                            $stop   = TRUE;
-                        }
-
-                        else if ($_token == '// @codeCoverageIgnoreStart' ||
-                                 $_token == '//@codeCoverageIgnoreStart') {
-                            $ignore = TRUE;
-                        }
-
-                        else if ($_token == '// @codeCoverageIgnoreEnd' ||
-                                 $_token == '//@codeCoverageIgnoreEnd') {
-                            $stop = TRUE;
-                        }
-
-                        // be sure the comment doesn't have some token BEFORE it on the same line...
-                        // it would not be safe to ignore the whole line in those cases.
-                        if (0 === strpos($_token, $_line)) {
-                            $count = substr_count($token, "\n");
-                            $line  = $token->getLine();
-
-                            for ($i = $line; $i < $line + $count; $i++) {
-                                self::$ignoredLines[$filename][$i] = TRUE;
-                            }
-
-                            if ($token instanceof PHP_Token_DOC_COMMENT) {
-                                // Workaround for the fact the DOC_COMMENT token
-                                // does not include the final \n character in its
-                                // text.
-                                if (substr(trim($lines[$i-1]), -2) == '*/') {
-                                    self::$ignoredLines[$filename][$i] = TRUE;
-                                }
-                            }
-                        }
-                    }
-                    break;
-
-                    case 'PHP_Token_INTERFACE':
-                    case 'PHP_Token_TRAIT':
-                    case 'PHP_Token_CLASS':
-                    case 'PHP_Token_FUNCTION': {
-                        $docblock = $token->getDocblock();
-
-                        if (strpos($docblock, '@codeCoverageIgnore')) {
-                            $endLine = $token->getEndLine();
-
-                            for ($i = $token->getLine(); $i <= $endLine; $i++) {
-                                self::$ignoredLines[$filename][$i] = TRUE;
-                            }
-                        }
-
-                        else if ($token instanceof PHP_Token_INTERFACE ||
-                                 $token instanceof PHP_Token_TRAIT ||
-                                 $token instanceof PHP_Token_CLASS) {
-                            if (empty($classes[$token->getName()]['methods'])) {
-                                for ($i = $token->getLine();
-                                     $i <= $token->getEndLine();
-                                     $i++) {
-                                    self::$ignoredLines[$filename][$i] = TRUE;
-                                }
-                            } else {
-                                $firstMethod = array_shift(
-                                  $classes[$token->getName()]['methods']
-                                );
-
-                                do {
-                                    $lastMethod = array_pop(
-                                      $classes[$token->getName()]['methods']
-                                    );
-                                } while ($lastMethod !== NULL && substr($lastMethod['signature'], 0, 18) == 'anonymous function');
-
-                                if ($lastMethod === NULL) {
-                                    $lastMethod = $firstMethod;
-                                }
-
-                                for ($i = $token->getLine();
-                                     $i < $firstMethod['startLine'];
-                                     $i++) {
-                                    self::$ignoredLines[$filename][$i] = TRUE;
-                                }
-
-                                for ($i = $token->getEndLine();
-                                     $i > $lastMethod['endLine'];
-                                     $i--) {
-                                    self::$ignoredLines[$filename][$i] = TRUE;
-                                }
-                            }
-                        }
-                    }
-                    break;
-
-                    case 'PHP_Token_NAMESPACE': {
-                        self::$ignoredLines[$filename][$token->getEndLine()] = TRUE;
-                    } // Intentional fallthrough
-                    case 'PHP_Token_OPEN_TAG':
-                    case 'PHP_Token_CLOSE_TAG':
-                    case 'PHP_Token_USE': {
-                        self::$ignoredLines[$filename][$token->getLine()] = TRUE;
-                    }
-                    break;
-                }
-
-                if ($ignore) {
-                    self::$ignoredLines[$filename][$token->getLine()] = TRUE;
-
-                    if ($stop) {
-                        $ignore = FALSE;
-                        $stop   = FALSE;
-                    }
-                }
-            }
-        }
-
-        return self::$ignoredLines[$filename];
-    }
-
-    /**
-     * @param  float $a
-     * @param  float $b
-     * @return float ($a / $b) * 100
-     */
-    public static function percent($a, $b, $asString = FALSE, $fixedWidth = FALSE)
-    {
-        if ($asString && $b == 0) {
-            return '';
-        }
-
-        if ($b > 0) {
-            $percent = ($a / $b) * 100;
-        } else {
-            $percent = 100;
-        }
-
-        if ($asString) {
-            if ($fixedWidth) {
-                return sprintf('%6.2F%%', $percent);
-            }
-
-            return sprintf('%01.2F%%', $percent);
-        } else {
-            return $percent;
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

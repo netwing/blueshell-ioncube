@@ -1,160 +1,55 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\CssSelector\Parser\Tokenizer;
-
-/**
- * CSS selector tokenizer patterns builder.
- *
- * This component is a port of the Python cssselector library,
- * which is copyright Ian Bicking, @see https://github.com/SimonSapin/cssselect.
- *
- * @author Jean-François Simon <jeanfrancois.simon@sensiolabs.com>
- */
-class TokenizerPatterns
-{
-    /**
-     * @var string
-     */
-    private $unicodeEscapePattern;
-
-    /**
-     * @var string
-     */
-    private $simpleEscapePattern;
-
-    /**
-     * @var string
-     */
-    private $newLineEscapePattern;
-
-    /**
-     * @var string
-     */
-    private $escapePattern;
-
-    /**
-     * @var string
-     */
-    private $stringEscapePattern;
-
-    /**
-     * @var string
-     */
-    private $nonAsciiPattern;
-
-    /**
-     * @var string
-     */
-    private $nmCharPattern;
-
-    /**
-     * @var string
-     */
-    private $nmStartPattern;
-
-    /**
-     * @var string
-     */
-    private $identifierPattern;
-
-    /**
-     * @var string
-     */
-    private $hashPattern;
-
-    /**
-     * @var string
-     */
-    private $numberPattern;
-
-    /**
-     * @var string
-     */
-    private $quotedStringPattern;
-
-    /**
-     * Constructor.
-     */
-    public function __construct()
-    {
-        $this->unicodeEscapePattern = '\\\\([0-9a-f]{1,6})(?:\r\n|[ \n\r\t\f])?';
-        $this->simpleEscapePattern = '\\\\(.)';
-        $this->newLineEscapePattern = '\\\\(?:\n|\r\n|\r|\f)';
-        $this->escapePattern = $this->unicodeEscapePattern.'|\\\\[^\n\r\f0-9a-f]';
-        $this->stringEscapePattern = $this->newLineEscapePattern.'|'.$this->escapePattern;
-        $this->nonAsciiPattern = '[^\x00-\x7F]';
-        $this->nmCharPattern = '[_a-z0-9-]|'.$this->escapePattern.'|'.$this->nonAsciiPattern;
-        $this->nmStartPattern = '[_a-z]|'.$this->escapePattern.'|'.$this->nonAsciiPattern;
-        $this->identifierPattern = '(?:'.$this->nmStartPattern.')(?:'.$this->nmCharPattern.')*';
-        $this->hashPattern = '#((?:'.$this->nmCharPattern.')+)';
-        $this->numberPattern = '[+-]?(?:[0-9]*\.[0-9]+|[0-9]+)';
-        $this->quotedStringPattern = '([^\n\r\f%s]|'.$this->stringEscapePattern.')*';
-    }
-
-    /**
-     * @return string
-     */
-    public function getNewLineEscapePattern()
-    {
-        return '~^'.$this->newLineEscapePattern.'~';
-    }
-
-    /**
-     * @return string
-     */
-    public function getSimpleEscapePattern()
-    {
-        return '~^'.$this->simpleEscapePattern.'~';
-    }
-
-    /**
-     * @return string
-     */
-    public function getUnicodeEscapePattern()
-    {
-        return '~^'.$this->unicodeEscapePattern.'~i';
-    }
-
-    /**
-     * @return string
-     */
-    public function getIdentifierPattern()
-    {
-        return '~^'.$this->identifierPattern.'~i';
-    }
-
-    /**
-     * @return string
-     */
-    public function getHashPattern()
-    {
-        return '~^'.$this->hashPattern.'~i';
-    }
-
-    /**
-     * @return string
-     */
-    public function getNumberPattern()
-    {
-        return '~^'.$this->numberPattern.'~';
-    }
-
-    /**
-     * @param string $quote
-     *
-     * @return string
-     */
-    public function getQuotedStringPattern($quote)
-    {
-        return '~^'.sprintf($this->quotedStringPattern, $quote).'~i';
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+Hl4VAtEhh3TglW==

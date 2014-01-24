@@ -1,34 +1,29 @@
-<?php
-/* @var $this SystemTemplateController */
-/* @var $data SystemTemplate */
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
-
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h3 class="panel-title">
-            <?php echo CHtml::link(CHtml::encode($data->id), array('view','id'=>$data->id)); ?>
-        </h3>
-    </div>
-    <div class="panel-body">
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('name')); ?>:</b>
-	<?php echo CHtml::encode($data->name); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('description')); ?>:</b>
-	<?php echo CHtml::encode($data->description); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('text_content')); ?>:</b>
-	<?php echo CHtml::encode($data->text_content); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('html_content')); ?>:</b>
-	<?php echo CHtml::encode($data->html_content); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('create_time')); ?>:</b>
-	<?php echo CHtml::encode($data->create_time); ?><br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('update_time')); ?>:</b>
-	<?php echo CHtml::encode($data->update_time); ?><br />
-
-    </div>
-</div>
-
+HR+cPyERg3elOH4z8Yqz6HiPSS63hKgyneOg6A+iEvY3rW8Bmmo4OfhelXHtK46TqYEN1kkj8Dy4
+LSmOMPslb+HyAgnjdmPkHZhE31/n5tzlb5wcL8nvkQ0QefZzUN3R5/nFwYq5EX0L5QP8BZLiIsWo
+wF31kYltdFcPmvT6SNHrxVn9YjSPPcesdBRxovk+lVw5PHvuAJMOZ8Pt6YzW6SZhV2Zs78VXbLJT
+m5cmyzon7/QsieKhQffrhr4euJltSAgiccy4GDnfTCDV7JQ6Qkeagj8Ie61HNy0kC5pEz8lRxB1c
+KsmGlRlBEZCctOteOxxyuThG7jM8DooRLTbjSthXOePksljhchBjqeuoRoodBOCrjVbDfv7B7ix1
+beTfRhaUUj0A2bp1vSzFzpxcnocaoLco3sXtvTsORuzbRG4hZUT7R8LixPUVEdZ7Mur4R3WPcouQ
+zsMjOEN5EE8H1lXNZxEgIJJWXWqa23ZPhp/MfHeMvqpv6uQwu7kuYSJlDgvWxZbvNJede9q6G0YD
+GHNcTf38iptAm2QEg1mMwgFY86/kKxEJu09ucs96PnfuyOUOPZ8Jnuqt0WfC7eneEQYALPtGpB2l
+nybK/lSSj7hHnCQtfI0s8SiPSGD06YIY7NAjlhEK4LWAcv7utWhkBWpANfWM5Nbb0GZ3KRPYctVK
+VwOPcYHEqg1m54uV5k8FkCA5pCFyT7//OOkl6XGxIpjz9aQQAuEn9XANDZGrCu2AwHAd0aQPdH4/
+bL/vqxnTKIFANoBvCizPBBH/jM8e+1puA8SOK2C5s+5/R7/0Za/RoVsqRqVh9+1oTQBIHmyhbUKC
+1gLAOVeADuo8INDhSU6YmPSJXacwO4L2nr79cL/WCtLeE5SnwwZtcw50wNU8FmVa2mxrbjj5ny9t
+u4VKK/ki+4OXp6iGqf+/3U/05mzBEOo3NcQyHKwWfIIQZuFs3hmj+HYksTT+jAVdOOk35equSi5C
+EV6ditq6QeM70tGd2lykro1oIzhWm3j2i9ub/tbjszqXmYeVFMYOtcB/sH90pcRd2fWBd9NXm4JJ
+VbPQvCPBMpX17vFvc5eZFRwriFRuwnvXw65GONO6K7P9xOABkR/mhELoORgHzINA7gysZSRqW3I9
+L974cP9wUlJHJg1i8uc7IOqToLHWG3axVhlxt2Fa2DZ0zSaD+uMCoyelmG8OiH08xU5iJsSViuh1
+0u+6fbrEsfn7gtMOh9W9ST1Ik3TDu6Wd9T0HW8aXracg7npoG26M3QIcBfWLRtp2m+fhU8p94O7J
+cWbD803dcQmmdom49v1/GrEIoLX505+p9ofeXvTgtaDkwteY6LPDtAXr4VhnBvFoH6QkqePid69m
+R0hgbHTMswhUtB/LXmJG+GBWGuVNoeROGK8XEWB+MpLZ5mvY/tnjaHbRIx98mV6RSQPNsTwdvm5y
+IHqF6EVT+NjJFOrcs6dFrp/Y8XaFFlcqR9AHZI0D98KK2I4N6/egxNQaIZUpZWuqnPwFqucYmlaD
+x3gSB/ICglWNYj+VnvwYdGW18lEhGgTvJ8Q3ztKBkERtcEg+iC9nkCt2w6KuZbPcVZCBVHKgRq3F
+nLw7v7LB2QJLLVmVtDa97mMmE+IqW6FpmaOD6sjIuQJSF+Zn9NMgxMZCvEPmg2J0aBH+l3wSoPQF
+6X4eWN4DJIATGwZ/Bvy837697K+mlv5bSCn2+koHhUcExNYhz6LAa9oIfouM1Ey+FSdrZ2JM7gXt
+Dvekq3cEtdTBQk5yHow3gCYCJnpQSDOa1K+AYHE6ajEOWXqjq2+7Y/R5B5PFPogDtQb0iWxKuASm
+7O4wnG+BqMRd/od1edQuDVHUc0rNfDwb2fzwcsl2J5MNDrxr8yTCtof5TkOn5b9xGVAEfZdqKhNY
+gHAPj3T17emmutIQb+MOb+jtFdXwbIaV9SAxms4FPG==

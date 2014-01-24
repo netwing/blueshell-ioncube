@@ -1,85 +1,46 @@
-<?php
-
-namespace Guzzle\Common\Exception;
-
-/**
- * Collection of exceptions
- */
-class ExceptionCollection extends \Exception implements GuzzleException, \IteratorAggregate, \Countable
-{
-    /** @var array Array of Exceptions */
-    protected $exceptions = array();
-
-    /**
-     * Set all of the exceptions
-     *
-     * @param array $exceptions Array of exceptions
-     *
-     * @return self
-     */
-    public function setExceptions(array $exceptions)
-    {
-        $this->exceptions = array();
-        foreach ($exceptions as $exception) {
-            $this->add($exception);
-        }
-
-        return $this;
-    }
-
-    /**
-     * Add exceptions to the collection
-     *
-     * @param ExceptionCollection|\Exception $e Exception to add
-     *
-     * @return ExceptionCollection;
-     */
-    public function add($e)
-    {
-        if ($this->message) {
-            $this->message .= "\n";
-        }
-
-        if ($e instanceof self) {
-            $this->message .= '(' . get_class($e) . ")";
-            foreach (explode("\n", $e->getMessage()) as $message) {
-                $this->message .= "\n    {$message}";
-            }
-        } elseif ($e instanceof \Exception) {
-            $this->exceptions[] = $e;
-            $this->message .= '(' . get_class($e) . ') ' . $e->getMessage();
-        }
-
-        return $this;
-    }
-
-    /**
-     * Get the total number of request exceptions
-     *
-     * @return int
-     */
-    public function count()
-    {
-        return count($this->exceptions);
-    }
-
-    /**
-     * Allows array-like iteration over the request exceptions
-     *
-     * @return \ArrayIterator
-     */
-    public function getIterator()
-    {
-        return new \ArrayIterator($this->exceptions);
-    }
-
-    /**
-     * Get the first exception in the collection
-     *
-     * @return \Exception
-     */
-    public function getFirst()
-    {
-        return $this->exceptions ? $this->exceptions[0] : null;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+3evzte7liAPXDOo4

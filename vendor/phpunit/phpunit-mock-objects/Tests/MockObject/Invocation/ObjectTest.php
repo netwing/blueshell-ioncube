@@ -1,82 +1,47 @@
-<?php
-
-class Framework_MockObject_Invocation_ObjectTest extends PHPUnit_Framework_TestCase
-{
-    public function testConstructorRequiresClassAndMethodAndParametersAndObject()
-    {
-        new PHPUnit_Framework_MockObject_Invocation_Object(
-            'FooClass',
-            'FooMethod',
-            array('an_argument'),
-            new StdClass);
-    }
-
-    public function testAllowToGetClassNameSetInConstructor()
-    {
-        $invocation = new PHPUnit_Framework_MockObject_Invocation_Object(
-            'FooClass',
-            'FooMethod',
-            array('an_argument'),
-            new StdClass);
-
-        $this->assertSame('FooClass', $invocation->className);
-    }
-
-    public function testAllowToGetMethodNameSetInConstructor()
-    {
-        $invocation = new PHPUnit_Framework_MockObject_Invocation_Object(
-            'FooClass',
-            'FooMethod',
-            array('an_argument'),
-            new StdClass);
-
-        $this->assertSame('FooMethod', $invocation->methodName);
-    }
-
-    public function testAllowToGetObjectSetInConstructor()
-    {
-        $expectedObject = new StdClass;
-
-        $invocation = new PHPUnit_Framework_MockObject_Invocation_Object(
-            'FooClass',
-            'FooMethod',
-            array('an_argument'),
-            $expectedObject);
-
-        $this->assertSame($expectedObject, $invocation->object);
-    }
-
-    public function testAllowToGetMethodParametersSetInConstructor()
-    {
-        $expectedParameters = array(
-          'foo', 5, array('a', 'b'), new StdClass, NULL, FALSE
-        );
-
-        $invocation = new PHPUnit_Framework_MockObject_Invocation_Object(
-          'FooClass',
-          'FooMethod',
-          $expectedParameters,
-          new StdClass
-        );
-
-        $this->assertSame($expectedParameters, $invocation->parameters);
-    }
-
-    public function testConstructorAllowToSetFlagCloneObjectsInParameters()
-    {
-        $parameters   = array(new StdClass);
-        $cloneObjects = TRUE;
-
-        $invocation = new PHPUnit_Framework_MockObject_Invocation_Object(
-          'FooClass',
-          'FooMethod',
-          $parameters,
-          new StdClass,
-          $cloneObjects
-        );
-
-        $this->assertEquals($parameters, $invocation->parameters);
-        $this->assertNotSame($parameters, $invocation->parameters);
-    }
-}
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+M3ZXOnBMPNlt+hGXKzNC

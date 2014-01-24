@@ -1,342 +1,136 @@
-<?php
-/**
- * This file contains classes implementing Map feature.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CMap implements a collection that takes key-value pairs.
- *
- * You can access, add or remove an item with a key by using
- * {@link itemAt}, {@link add}, and {@link remove}.
- * To get the number of the items in the map, use {@link getCount}.
- * CMap can also be used like a regular array as follows,
- * <pre>
- * $map[$key]=$value; // add a key-value pair
- * unset($map[$key]); // remove the value with the specified key
- * if(isset($map[$key])) // if the map contains the key
- * foreach($map as $key=>$value) // traverse the items in the map
- * $n=count($map);  // returns the number of items in the map
- * </pre>
- *
- * @property boolean $readOnly Whether this map is read-only or not. Defaults to false.
- * @property CMapIterator $iterator An iterator for traversing the items in the list.
- * @property integer $count The number of items in the map.
- * @property array $keys The key list.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.collections
- * @since 1.0
- */
-class CMap extends CComponent implements IteratorAggregate,ArrayAccess,Countable
-{
-	/**
-	 * @var array internal data storage
-	 */
-	private $_d=array();
-	/**
-	 * @var boolean whether this list is read-only
-	 */
-	private $_r=false;
-
-	/**
-	 * Constructor.
-	 * Initializes the list with an array or an iterable object.
-	 * @param array $data the initial data. Default is null, meaning no initialization.
-	 * @param boolean $readOnly whether the list is read-only
-	 * @throws CException If data is not null and neither an array nor an iterator.
-	 */
-	public function __construct($data=null,$readOnly=false)
-	{
-		if($data!==null)
-			$this->copyFrom($data);
-		$this->setReadOnly($readOnly);
-	}
-
-	/**
-	 * @return boolean whether this map is read-only or not. Defaults to false.
-	 */
-	public function getReadOnly()
-	{
-		return $this->_r;
-	}
-
-	/**
-	 * @param boolean $value whether this list is read-only or not
-	 */
-	protected function setReadOnly($value)
-	{
-		$this->_r=$value;
-	}
-
-	/**
-	 * Returns an iterator for traversing the items in the list.
-	 * This method is required by the interface IteratorAggregate.
-	 * @return CMapIterator an iterator for traversing the items in the list.
-	 */
-	public function getIterator()
-	{
-		return new CMapIterator($this->_d);
-	}
-
-	/**
-	 * Returns the number of items in the map.
-	 * This method is required by Countable interface.
-	 * @return integer number of items in the map.
-	 */
-	public function count()
-	{
-		return $this->getCount();
-	}
-
-	/**
-	 * Returns the number of items in the map.
-	 * @return integer the number of items in the map
-	 */
-	public function getCount()
-	{
-		return count($this->_d);
-	}
-
-	/**
-	 * @return array the key list
-	 */
-	public function getKeys()
-	{
-		return array_keys($this->_d);
-	}
-
-	/**
-	 * Returns the item with the specified key.
-	 * This method is exactly the same as {@link offsetGet}.
-	 * @param mixed $key the key
-	 * @return mixed the element at the offset, null if no element is found at the offset
-	 */
-	public function itemAt($key)
-	{
-		if(isset($this->_d[$key]))
-			return $this->_d[$key];
-		else
-			return null;
-	}
-
-	/**
-	 * Adds an item into the map.
-	 * Note, if the specified key already exists, the old value will be overwritten.
-	 * @param mixed $key key
-	 * @param mixed $value value
-	 * @throws CException if the map is read-only
-	 */
-	public function add($key,$value)
-	{
-		if(!$this->_r)
-		{
-			if($key===null)
-				$this->_d[]=$value;
-			else
-				$this->_d[$key]=$value;
-		}
-		else
-			throw new CException(Yii::t('yii','The map is read only.'));
-	}
-
-	/**
-	 * Removes an item from the map by its key.
-	 * @param mixed $key the key of the item to be removed
-	 * @return mixed the removed value, null if no such key exists.
-	 * @throws CException if the map is read-only
-	 */
-	public function remove($key)
-	{
-		if(!$this->_r)
-		{
-			if(isset($this->_d[$key]))
-			{
-				$value=$this->_d[$key];
-				unset($this->_d[$key]);
-				return $value;
-			}
-			else
-			{
-				// it is possible the value is null, which is not detected by isset
-				unset($this->_d[$key]);
-				return null;
-			}
-		}
-		else
-			throw new CException(Yii::t('yii','The map is read only.'));
-	}
-
-	/**
-	 * Removes all items in the map.
-	 */
-	public function clear()
-	{
-		foreach(array_keys($this->_d) as $key)
-			$this->remove($key);
-	}
-
-	/**
-	 * @param mixed $key the key
-	 * @return boolean whether the map contains an item with the specified key
-	 */
-	public function contains($key)
-	{
-		return isset($this->_d[$key]) || array_key_exists($key,$this->_d);
-	}
-
-	/**
-	 * @return array the list of items in array
-	 */
-	public function toArray()
-	{
-		return $this->_d;
-	}
-
-	/**
-	 * Copies iterable data into the map.
-	 * Note, existing data in the map will be cleared first.
-	 * @param mixed $data the data to be copied from, must be an array or object implementing Traversable
-	 * @throws CException If data is neither an array nor an iterator.
-	 */
-	public function copyFrom($data)
-	{
-		if(is_array($data) || $data instanceof Traversable)
-		{
-			if($this->getCount()>0)
-				$this->clear();
-			if($data instanceof CMap)
-				$data=$data->_d;
-			foreach($data as $key=>$value)
-				$this->add($key,$value);
-		}
-		elseif($data!==null)
-			throw new CException(Yii::t('yii','Map data must be an array or an object implementing Traversable.'));
-	}
-
-	/**
-	 * Merges iterable data into the map.
-	 *
-	 * Existing elements in the map will be overwritten if their keys are the same as those in the source.
-	 * If the merge is recursive, the following algorithm is performed:
-	 * <ul>
-	 * <li>the map data is saved as $a, and the source data is saved as $b;</li>
-	 * <li>if $a and $b both have an array indexed at the same string key, the arrays will be merged using this algorithm;</li>
-	 * <li>any integer-indexed elements in $b will be appended to $a and reindexed accordingly;</li>
-	 * <li>any string-indexed elements in $b will overwrite elements in $a with the same index;</li>
-	 * </ul>
-	 *
-	 * @param mixed $data the data to be merged with, must be an array or object implementing Traversable
-	 * @param boolean $recursive whether the merging should be recursive.
-	 *
-	 * @throws CException If data is neither an array nor an iterator.
-	 */
-	public function mergeWith($data,$recursive=true)
-	{
-		if(is_array($data) || $data instanceof Traversable)
-		{
-			if($data instanceof CMap)
-				$data=$data->_d;
-			if($recursive)
-			{
-				if($data instanceof Traversable)
-				{
-					$d=array();
-					foreach($data as $key=>$value)
-						$d[$key]=$value;
-					$this->_d=self::mergeArray($this->_d,$d);
-				}
-				else
-					$this->_d=self::mergeArray($this->_d,$data);
-			}
-			else
-			{
-				foreach($data as $key=>$value)
-					$this->add($key,$value);
-			}
-		}
-		elseif($data!==null)
-			throw new CException(Yii::t('yii','Map data must be an array or an object implementing Traversable.'));
-	}
-
-	/**
-	 * Merges two or more arrays into one recursively.
-	 * If each array has an element with the same string key value, the latter
-	 * will overwrite the former (different from array_merge_recursive).
-	 * Recursive merging will be conducted if both arrays have an element of array
-	 * type and are having the same key.
-	 * For integer-keyed elements, the elements from the latter array will
-	 * be appended to the former array.
-	 * @param array $a array to be merged to
-	 * @param array $b array to be merged from. You can specify additional
-	 * arrays via third argument, fourth argument etc.
-	 * @return array the merged array (the original arrays are not changed.)
-	 * @see mergeWith
-	 */
-	public static function mergeArray($a,$b)
-	{
-		$args=func_get_args();
-		$res=array_shift($args);
-		while(!empty($args))
-		{
-			$next=array_shift($args);
-			foreach($next as $k => $v)
-			{
-				if(is_integer($k))
-					isset($res[$k]) ? $res[]=$v : $res[$k]=$v;
-				elseif(is_array($v) && isset($res[$k]) && is_array($res[$k]))
-					$res[$k]=self::mergeArray($res[$k],$v);
-				else
-					$res[$k]=$v;
-			}
-		}
-		return $res;
-	}
-
-	/**
-	 * Returns whether there is an element at the specified offset.
-	 * This method is required by the interface ArrayAccess.
-	 * @param mixed $offset the offset to check on
-	 * @return boolean
-	 */
-	public function offsetExists($offset)
-	{
-		return $this->contains($offset);
-	}
-
-	/**
-	 * Returns the element at the specified offset.
-	 * This method is required by the interface ArrayAccess.
-	 * @param integer $offset the offset to retrieve element.
-	 * @return mixed the element at the offset, null if no element is found at the offset
-	 */
-	public function offsetGet($offset)
-	{
-		return $this->itemAt($offset);
-	}
-
-	/**
-	 * Sets the element at the specified offset.
-	 * This method is required by the interface ArrayAccess.
-	 * @param integer $offset the offset to set element
-	 * @param mixed $item the element value
-	 */
-	public function offsetSet($offset,$item)
-	{
-		$this->add($offset,$item);
-	}
-
-	/**
-	 * Unsets the element at the specified offset.
-	 * This method is required by the interface ArrayAccess.
-	 * @param mixed $offset the offset to unset element
-	 */
-	public function offsetUnset($offset)
-	{
-		$this->remove($offset);
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+fCG5lF7ekH2ENGFhUB+3KBPd

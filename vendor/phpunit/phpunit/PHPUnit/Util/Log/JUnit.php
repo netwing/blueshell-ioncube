@@ -1,482 +1,173 @@
-<?php
-/**
- * PHPUnit
- *
- * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @package    PHPUnit
- * @subpackage Util_Log
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      File available since Release 2.3.0
- */
-
-/**
- * A TestListener that generates a logfile of the test execution in XML markup.
- *
- * The XML markup used is the same as the one that is used by the JUnit Ant task.
- *
- * @package    PHPUnit
- * @subpackage Util_Log
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      Class available since Release 2.1.0
- */
-class PHPUnit_Util_Log_JUnit extends PHPUnit_Util_Printer implements PHPUnit_Framework_TestListener
-{
-    /**
-     * @var    DOMDocument
-     */
-    protected $document;
-
-    /**
-     * @var    DOMElement
-     */
-    protected $root;
-
-    /**
-     * @var    boolean
-     */
-    protected $logIncompleteSkipped = FALSE;
-
-    /**
-     * @var    boolean
-     */
-    protected $writeDocument = TRUE;
-
-    /**
-     * @var    DOMElement[]
-     */
-    protected $testSuites = array();
-
-    /**
-     * @var    integer[]
-     */
-    protected $testSuiteTests = array(0);
-
-    /**
-     * @var    integer[]
-     */
-    protected $testSuiteAssertions = array(0);
-
-    /**
-     * @var    integer[]
-     */
-    protected $testSuiteErrors = array(0);
-
-    /**
-     * @var    integer[]
-     */
-    protected $testSuiteFailures = array(0);
-
-    /**
-     * @var    integer[]
-     */
-    protected $testSuiteTimes = array(0);
-
-    /**
-     * @var    integer
-     */
-    protected $testSuiteLevel = 0;
-
-    /**
-     * @var    DOMElement
-     */
-    protected $currentTestCase = NULL;
-
-    /**
-     * @var    boolean
-     */
-    protected $attachCurrentTestCase = TRUE;
-
-    /**
-     * Constructor.
-     *
-     * @param  mixed   $out
-     * @param  boolean $logIncompleteSkipped
-     */
-    public function __construct($out = NULL, $logIncompleteSkipped = FALSE)
-    {
-        $this->document = new DOMDocument('1.0', 'UTF-8');
-        $this->document->formatOutput = TRUE;
-
-        $this->root = $this->document->createElement('testsuites');
-        $this->document->appendChild($this->root);
-
-        parent::__construct($out);
-
-        $this->logIncompleteSkipped = $logIncompleteSkipped;
-    }
-
-    /**
-     * Flush buffer and close output.
-     *
-     */
-    public function flush()
-    {
-        if ($this->writeDocument === TRUE) {
-            $this->write($this->getXML());
-        }
-
-        parent::flush();
-    }
-
-    /**
-     * An error occurred.
-     *
-     * @param  PHPUnit_Framework_Test $test
-     * @param  Exception              $e
-     * @param  float                  $time
-     */
-    public function addError(PHPUnit_Framework_Test $test, Exception $e, $time)
-    {
-        if ($this->currentTestCase !== NULL) {
-            if ($test instanceof PHPUnit_Framework_SelfDescribing) {
-                $buffer = $test->toString() . "\n";
-            } else {
-                $buffer = '';
-            }
-
-            $buffer .= PHPUnit_Framework_TestFailure::exceptionToString($e) .
-                       "\n" .
-                       PHPUnit_Util_Filter::getFilteredStacktrace($e);
-
-            $error = $this->document->createElement(
-              'error', PHPUnit_Util_XML::prepareString($buffer)
-            );
-
-            $error->setAttribute('type', get_class($e));
-
-            $this->currentTestCase->appendChild($error);
-
-            $this->testSuiteErrors[$this->testSuiteLevel]++;
-        }
-    }
-
-    /**
-     * A failure occurred.
-     *
-     * @param  PHPUnit_Framework_Test                 $test
-     * @param  PHPUnit_Framework_AssertionFailedError $e
-     * @param  float                                  $time
-     */
-    public function addFailure(PHPUnit_Framework_Test $test, PHPUnit_Framework_AssertionFailedError $e, $time)
-    {
-        if ($this->currentTestCase !== NULL) {
-            if (!$test instanceof PHPUnit_Framework_Warning) {
-                if ($test instanceof PHPUnit_Framework_SelfDescribing) {
-                    $buffer = $test->toString() . "\n";
-                } else {
-                    $buffer = '';
-                }
-
-                $buffer .= PHPUnit_Framework_TestFailure::exceptionToString($e) .
-                           "\n" .
-                           PHPUnit_Util_Filter::getFilteredStacktrace($e);
-
-                $failure = $this->document->createElement(
-                  'failure', PHPUnit_Util_XML::prepareString($buffer)
-                );
-
-                $failure->setAttribute('type', get_class($e));
-
-                $this->currentTestCase->appendChild($failure);
-
-                $this->testSuiteFailures[$this->testSuiteLevel]++;
-            }
-        }
-    }
-
-    /**
-     * Incomplete test.
-     *
-     * @param  PHPUnit_Framework_Test $test
-     * @param  Exception              $e
-     * @param  float                  $time
-     */
-    public function addIncompleteTest(PHPUnit_Framework_Test $test, Exception $e, $time)
-    {
-        if ($this->logIncompleteSkipped && $this->currentTestCase !== NULL) {
-            $error = $this->document->createElement(
-              'error',
-              PHPUnit_Util_XML::prepareString(
-                "Incomplete Test\n" .
-                PHPUnit_Util_Filter::getFilteredStacktrace($e)
-              )
-            );
-
-            $error->setAttribute('type', get_class($e));
-
-            $this->currentTestCase->appendChild($error);
-
-            $this->testSuiteErrors[$this->testSuiteLevel]++;
-        } else {
-            $this->attachCurrentTestCase = FALSE;
-        }
-    }
-
-    /**
-     * Skipped test.
-     *
-     * @param  PHPUnit_Framework_Test $test
-     * @param  Exception              $e
-     * @param  float                  $time
-     * @since  Method available since Release 3.0.0
-     */
-    public function addSkippedTest(PHPUnit_Framework_Test $test, Exception $e, $time)
-    {
-        if ($this->logIncompleteSkipped && $this->currentTestCase !== NULL) {
-            $error = $this->document->createElement(
-              'error',
-              PHPUnit_Util_XML::prepareString(
-                "Skipped Test\n" .
-                PHPUnit_Util_Filter::getFilteredStacktrace($e)
-              )
-            );
-
-            $error->setAttribute('type', get_class($e));
-
-            $this->currentTestCase->appendChild($error);
-
-            $this->testSuiteErrors[$this->testSuiteLevel]++;
-        } else {
-            $this->attachCurrentTestCase = FALSE;
-        }
-    }
-
-    /**
-     * A testsuite started.
-     *
-     * @param  PHPUnit_Framework_TestSuite $suite
-     * @since  Method available since Release 2.2.0
-     */
-    public function startTestSuite(PHPUnit_Framework_TestSuite $suite)
-    {
-        $testSuite = $this->document->createElement('testsuite');
-        $testSuite->setAttribute('name', $suite->getName());
-
-        if (class_exists($suite->getName(), FALSE)) {
-            try {
-                $class = new ReflectionClass($suite->getName());
-
-                $testSuite->setAttribute('file', $class->getFileName());
-
-                $packageInformation = PHPUnit_Util_Class::getPackageInformation(
-                  $suite->getName(), $class->getDocComment()
-                );
-
-                if (!empty($packageInformation['namespace'])) {
-                    $testSuite->setAttribute(
-                      'namespace', $packageInformation['namespace']
-                    );
-                }
-
-                if (!empty($packageInformation['fullPackage'])) {
-                    $testSuite->setAttribute(
-                      'fullPackage', $packageInformation['fullPackage']
-                    );
-                }
-
-                if (!empty($packageInformation['category'])) {
-                    $testSuite->setAttribute(
-                      'category', $packageInformation['category']
-                    );
-                }
-
-                if (!empty($packageInformation['package'])) {
-                    $testSuite->setAttribute(
-                      'package', $packageInformation['package']
-                    );
-                }
-
-                if (!empty($packageInformation['subpackage'])) {
-                    $testSuite->setAttribute(
-                      'subpackage', $packageInformation['subpackage']
-                    );
-                }
-            }
-
-            catch (ReflectionException $e) {
-            }
-        }
-
-        if ($this->testSuiteLevel > 0) {
-            $this->testSuites[$this->testSuiteLevel]->appendChild($testSuite);
-        } else {
-            $this->root->appendChild($testSuite);
-        }
-
-        $this->testSuiteLevel++;
-        $this->testSuites[$this->testSuiteLevel]          = $testSuite;
-        $this->testSuiteTests[$this->testSuiteLevel]      = 0;
-        $this->testSuiteAssertions[$this->testSuiteLevel] = 0;
-        $this->testSuiteErrors[$this->testSuiteLevel]     = 0;
-        $this->testSuiteFailures[$this->testSuiteLevel]   = 0;
-        $this->testSuiteTimes[$this->testSuiteLevel]      = 0;
-    }
-
-    /**
-     * A testsuite ended.
-     *
-     * @param  PHPUnit_Framework_TestSuite $suite
-     * @since  Method available since Release 2.2.0
-     */
-    public function endTestSuite(PHPUnit_Framework_TestSuite $suite)
-    {
-        $this->testSuites[$this->testSuiteLevel]->setAttribute(
-          'tests', $this->testSuiteTests[$this->testSuiteLevel]
-        );
-
-        $this->testSuites[$this->testSuiteLevel]->setAttribute(
-          'assertions', $this->testSuiteAssertions[$this->testSuiteLevel]
-        );
-
-        $this->testSuites[$this->testSuiteLevel]->setAttribute(
-          'failures', $this->testSuiteFailures[$this->testSuiteLevel]
-        );
-
-        $this->testSuites[$this->testSuiteLevel]->setAttribute(
-          'errors', $this->testSuiteErrors[$this->testSuiteLevel]
-        );
-
-        $this->testSuites[$this->testSuiteLevel]->setAttribute(
-          'time', sprintf('%F', $this->testSuiteTimes[$this->testSuiteLevel])
-        );
-
-        if ($this->testSuiteLevel > 1) {
-            $this->testSuiteTests[$this->testSuiteLevel - 1]      += $this->testSuiteTests[$this->testSuiteLevel];
-            $this->testSuiteAssertions[$this->testSuiteLevel - 1] += $this->testSuiteAssertions[$this->testSuiteLevel];
-            $this->testSuiteErrors[$this->testSuiteLevel - 1]     += $this->testSuiteErrors[$this->testSuiteLevel];
-            $this->testSuiteFailures[$this->testSuiteLevel - 1]   += $this->testSuiteFailures[$this->testSuiteLevel];
-            $this->testSuiteTimes[$this->testSuiteLevel - 1]      += $this->testSuiteTimes[$this->testSuiteLevel];
-        }
-
-        $this->testSuiteLevel--;
-    }
-
-    /**
-     * A test started.
-     *
-     * @param  PHPUnit_Framework_Test $test
-     */
-    public function startTest(PHPUnit_Framework_Test $test)
-    {
-        if (!$test instanceof PHPUnit_Framework_Warning) {
-            $testCase = $this->document->createElement('testcase');
-            $testCase->setAttribute('name', $test->getName());
-
-            if ($test instanceof PHPUnit_Framework_TestCase) {
-                $class      = new ReflectionClass($test);
-                $methodName = $test->getName();
-
-                if ($class->hasMethod($methodName)) {
-                    $method = $class->getMethod($test->getName());
-
-                    $testCase->setAttribute('class', $class->getName());
-                    $testCase->setAttribute('file', $class->getFileName());
-                    $testCase->setAttribute('line', $method->getStartLine());
-                }
-            }
-
-            $this->currentTestCase = $testCase;
-        }
-    }
-
-    /**
-     * A test ended.
-     *
-     * @param  PHPUnit_Framework_Test $test
-     * @param  float                  $time
-     */
-    public function endTest(PHPUnit_Framework_Test $test, $time)
-    {
-        if (!$test instanceof PHPUnit_Framework_Warning) {
-            if ($this->attachCurrentTestCase) {
-                if ($test instanceof PHPUnit_Framework_TestCase) {
-                    $numAssertions = $test->getNumAssertions();
-                    $this->testSuiteAssertions[$this->testSuiteLevel] += $numAssertions;
-
-                    $this->currentTestCase->setAttribute(
-                      'assertions', $numAssertions
-                    );
-                }
-
-                $this->currentTestCase->setAttribute(
-                  'time', sprintf('%F', $time)
-                );
-
-                $this->testSuites[$this->testSuiteLevel]->appendChild(
-                  $this->currentTestCase
-                );
-
-                $this->testSuiteTests[$this->testSuiteLevel]++;
-                $this->testSuiteTimes[$this->testSuiteLevel] += $time;
-            }
-        }
-
-        $this->attachCurrentTestCase = TRUE;
-        $this->currentTestCase       = NULL;
-    }
-
-    /**
-     * Returns the XML as a string.
-     *
-     * @return string
-     * @since  Method available since Release 2.2.0
-     */
-    public function getXML()
-    {
-        return $this->document->saveXML();
-    }
-
-    /**
-     * Enables or disables the writing of the document
-     * in flush().
-     *
-     * This is a "hack" needed for the integration of
-     * PHPUnit with Phing.
-     *
-     * @return string
-     * @since  Method available since Release 2.2.0
-     */
-    public function setWriteDocument($flag)
-    {
-        if (is_bool($flag)) {
-            $this->writeDocument = $flag;
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+GcoSKKPknoj85VYb722szxnd8CC4

@@ -1,553 +1,227 @@
-<?php
-
-Yii::import('system.web.CUrlManager');
-
-class CUrlManagerTest extends CTestCase
-{
-	public function testParseUrlWithPathFormat()
-	{
-		$rules=array(
-			'article/<id:\d+>'=>'article/read',
-			'article/<year:\d{4}>/<title>/*'=>'article/read',
-			'a/<_a>/*'=>'article',
-			'register/*'=>'user',
-			'home/*'=>'',
-			'ad/*'=>'admin/index/list',
-			'<c:(post|comment)>/<id:\d+>/<a:(create|update|delete)>'=>'<c>/<a>',
-			'<c:(post|comment)>/<id:\d+>'=>'<c>/view',
-			'<c:(post|comment)>s/*'=>'<c>/list',
-			'http://<user:\w+>.example.com/<lang:\w+>/profile'=>'user/profile',
-			'currency/<c:\p{Sc}>'=>'currency/info',
-		);
-		$entries=array(
-			array(
-				'pathInfo'=>'article/123',
-				'route'=>'article/read',
-				'params'=>array('id'=>'123'),
-			),
-			array(
-				'pathInfo'=>'article/123/name/value',
-				'route'=>'article/123/name/value',
-				'params'=>array(),
-			),
-			array(
-				'pathInfo'=>'article/2000/title goes here',
-				'route'=>'article/read',
-				'params'=>array('year'=>'2000','title'=>'title goes here'),
-			),
-			array(
-				'pathInfo'=>'article/2000/title goes here/name/value',
-				'route'=>'article/read',
-				'params'=>array('year'=>'2000','title'=>'title goes here','name'=>'value'),
-			),
-			array(
-				'pathInfo'=>'register/username/admin',
-				'route'=>'user',
-				'params'=>array('username'=>'admin'),
-			),
-			array(
-				'pathInfo'=>'home/name/value/name1/value1',
-				'route'=>'',
-				'params'=>array('name'=>'value','name1'=>'value1'),
-			),
-			array(
-				'pathInfo'=>'home2/name/value/name1/value1',
-				'route'=>'home2/name/value/name1/value1',
-				'params'=>array(),
-			),
-			array(
-				'pathInfo'=>'post',
-				'route'=>'post',
-				'params'=>array(),
-			),
-			array(
-				'pathInfo'=>'post/read',
-				'route'=>'post/read',
-				'params'=>array(),
-			),
-			array(
-				'pathInfo'=>'post/read/id/100',
-				'route'=>'post/read/id/100',
-				'params'=>array(),
-			),
-			array(
-				'pathInfo'=>'',
-				'route'=>'',
-				'params'=>array(),
-			),
-			array(
-				'pathInfo'=>'ad/name/value',
-				'route'=>'admin/index/list',
-				'params'=>array('name'=>'value'),
-			),
-			array(
-				'pathInfo'=>'admin/name/value',
-				'route'=>'admin/name/value',
-				'params'=>array(),
-			),
-			array(
-				'pathInfo'=>'posts',
-				'route'=>'post/list',
-				'params'=>array(),
-			),
-			array(
-				'pathInfo'=>'posts/page/3',
-				'route'=>'post/list',
-				'params'=>array('page'=>3),
-			),
-			array(
-				'pathInfo'=>'post/3',
-				'route'=>'post/view',
-				'params'=>array('id'=>3),
-			),
-			array(
-				'pathInfo'=>'post/3/delete',
-				'route'=>'post/delete',
-				'params'=>array('id'=>3),
-			),
-			array(
-				'pathInfo'=>'post/3/delete/a',
-				'route'=>'post/3/delete/a',
-				'params'=>array(),
-			),
-			array(
-				'pathInfo'=>'en/profile',
-				'route'=>'user/profile',
-				'params'=>array('user'=>'admin','lang'=>'en'),
-			),
-			array(
-				'pathInfo'=>'currency/＄',
-				'route'=>'currency/info',
-				'params'=>array('c'=>'＄'),
-			),
-		);
-		$config=array(
-			'basePath'=>dirname(__FILE__),
-			'components'=>array(
-				'request'=>array(
-					'class'=>'TestHttpRequest',
-					'scriptUrl'=>'/app/index.php',
-				),
-			),
-		);
-		$app=new TestApplication($config);
-		$app->controllerPath=dirname(__FILE__).DIRECTORY_SEPARATOR.'controllers';
-		$request=$app->request;
-		$_SERVER['HTTP_HOST']='admin.example.com';
-		$um=new CUrlManager;
-		$um->urlSuffix='.html';
-		$um->urlFormat='path';
-		$um->rules=$rules;
-		$um->init($app);
-		foreach($entries as $entry)
-		{
-			$request->pathInfo=$entry['pathInfo'];
-			$_GET=array();
-			$route=$um->parseUrl($request);
-			$this->assertEquals($entry['route'],$route);
-			$this->assertEquals($entry['params'],$_GET);
-			// test the .html version
-			$request->pathInfo=$entry['pathInfo'].'.html';
-			$_GET=array();
-			$route=$um->parseUrl($request);
-			$this->assertEquals($entry['route'],$route);
-			$this->assertEquals($entry['params'],$_GET);
-		}
-	}
-
-	public function testcreateUrlWithPathFormat()
-	{
-		$rules=array(
-			'article/<id:\d+>'=>'article/read',
-			'article/<year:\d{4}>/<title>/*'=>'article/read',
-			'a/<_a>/*'=>'article',
-			'register/*'=>'user',
-			'home/*'=>'',
-			'<c:(post|comment)>/<id:\d+>/<a:(create|update|delete)>'=>'<c>/<a>',
-			'<c:(post|comment)>/<id:\d+>'=>'<c>/view',
-			'<c:(post|comment)>s/*'=>'<c>/list',
-			'http://<user:\w+>.example.com/<lang:\w+>/profile'=>'user/profile',
-			'currency/<c:\p{Sc}>'=>'currency/info',
-		);
-		$config=array(
-			'basePath'=>dirname(__FILE__),
-			'components'=>array(
-				'request'=>array(
-					'class'=>'TestHttpRequest',
-				),
-			),
-		);
-		$_SERVER['HTTP_HOST']='user.example.com';
-		$app=new TestApplication($config);
-		$entries=array(
-			array(
-				'scriptUrl'=>'/apps/index.php',
-				'url'=>'/apps/index.php/post/123?name1=value1',
-				'url2'=>'/apps/post/123?name1=value1',
-				'url3'=>'/apps/post/123.html?name1=value1',
-				'route'=>'post/view',
-				'params'=>array(
-					'id'=>'123',
-					'name1'=>'value1',
-				),
-			),
-			array(
-				'scriptUrl'=>'/apps/index.php',
-				'url'=>'/apps/index.php/post/123/update?name1=value1',
-				'url2'=>'/apps/post/123/update?name1=value1',
-				'url3'=>'/apps/post/123/update.html?name1=value1',
-				'route'=>'post/update',
-				'params'=>array(
-					'id'=>'123',
-					'name1'=>'value1',
-				),
-			),
-			array(
-				'scriptUrl'=>'/apps/index.php',
-				'url'=>'/apps/index.php/posts/page/123',
-				'url2'=>'/apps/posts/page/123',
-				'url3'=>'/apps/posts/page/123.html',
-				'route'=>'post/list',
-				'params'=>array(
-					'page'=>'123',
-				),
-			),
-			array(
-				'scriptUrl'=>'/apps/index.php',
-				'url'=>'/apps/index.php/article/123?name1=value1',
-				'url2'=>'/apps/article/123?name1=value1',
-				'url3'=>'/apps/article/123.html?name1=value1',
-				'route'=>'article/read',
-				'params'=>array(
-					'id'=>'123',
-					'name1'=>'value1',
-				),
-			),
-			array(
-				'scriptUrl'=>'/index.php',
-				'url'=>'/index.php/article/123?name1=value1',
-				'url2'=>'/article/123?name1=value1',
-				'url3'=>'/article/123.html?name1=value1',
-				'route'=>'article/read',
-				'params'=>array(
-					'id'=>'123',
-					'name1'=>'value1',
-				),
-			),
-			array(
-				'scriptUrl'=>'/apps/index.php',
-				'url'=>'/apps/index.php/article/2000/the_title/name1/value1',
-				'url2'=>'/apps/article/2000/the_title/name1/value1',
-				'url3'=>'/apps/article/2000/the_title/name1/value1.html',
-				'route'=>'article/read',
-				'params'=>array(
-					'year'=>'2000',
-					'title'=>'the_title',
-					'name1'=>'value1',
-				),
-			),
-			array(
-				'scriptUrl'=>'/index.php',
-				'url'=>'/index.php/article/2000/the_title/name1/value1',
-				'url2'=>'/article/2000/the_title/name1/value1',
-				'url3'=>'/article/2000/the_title/name1/value1.html',
-				'route'=>'article/read',
-				'params'=>array(
-					'year'=>'2000',
-					'title'=>'the_title',
-					'name1'=>'value1',
-				),
-			),
-			array(
-				'scriptUrl'=>'/apps/index.php',
-				'url'=>'/apps/index.php/post/edit/id/123/name1/value1',
-				'url2'=>'/apps/post/edit/id/123/name1/value1',
-				'url3'=>'/apps/post/edit/id/123/name1/value1.html',
-				'route'=>'post/edit',
-				'params'=>array(
-					'id'=>'123',
-					'name1'=>'value1',
-				),
-			),
-			array(
-				'scriptUrl'=>'/index.php',
-				'url'=>'http://admin.example.com/en/profile',
-				'url2'=>'http://admin.example.com/en/profile',
-				'url3'=>'http://admin.example.com/en/profile.html',
-				'route'=>'user/profile',
-				'params'=>array(
-					'user'=>'admin',
-					'lang'=>'en',
-				),
-			),
-			array(
-				'scriptUrl'=>'/index.php',
-				'url'=>'/en/profile',
-				'url2'=>'/en/profile',
-				'url3'=>'/en/profile.html',
-				'route'=>'user/profile',
-				'params'=>array(
-					'user'=>'user',
-					'lang'=>'en',
-				),
-			),
-			array(
-				'scriptUrl'=>'/index.php',
-				'url'=>'/index.php/currency/%EF%BC%84',
-				'url2'=>'/currency/%EF%BC%84',
-				'url3'=>'/currency/%EF%BC%84.html',
-				'route'=>'currency/info',
-				'params'=>array(
-					'c'=>'＄',
-				),
-			),
-		);
-		foreach($entries as $entry)
-		{
-			$app->request->baseUrl=null; // reset so that it can be determined based on scriptUrl
-			$app->request->scriptUrl=$entry['scriptUrl'];
-			for($matchValue=0;$matchValue<2;$matchValue++)
-			{
-				$um=new CUrlManager;
-				$um->urlFormat='path';
-				$um->rules=$rules;
-				$um->matchValue=$matchValue!=0;
-				$um->init($app);
-				$url=$um->createUrl($entry['route'],$entry['params']);
-				$this->assertEquals($entry['url'],$url,'matchValue='.($um->matchValue ? 'true' : 'false'));
-
-				$um=new CUrlManager;
-				$um->urlFormat='path';
-				$um->rules=$rules;
-				$um->matchValue=$matchValue!=0;
-				$um->init($app);
-				$um->showScriptName=false;
-				$url=$um->createUrl($entry['route'],$entry['params']);
-				$this->assertEquals($entry['url2'],$url,'matchValue='.($um->matchValue ? 'true' : 'false'));
-
-				$um->urlSuffix='.html';
-				$url=$um->createUrl($entry['route'],$entry['params']);
-				$this->assertEquals($entry['url3'],$url,'matchValue='.($um->matchValue ? 'true' : 'false'));
-			}
-		}
-	}
-
-	public function testParseUrlWithGetFormat()
-	{
-		$config=array(
-			'basePath'=>dirname(__FILE__),
-			'components'=>array(
-				'request'=>array(
-					'class'=>'TestHttpRequest',
-					'scriptUrl'=>'/app/index.php',
-				),
-			),
-		);
-		$entries=array(
-			array(
-				'route'=>'article/read',
-				'name'=>'value',
-			),
-		);
-		$app=new TestApplication($config);
-		$request=$app->request;
-		$um=new CUrlManager;
-		$um->urlFormat='get';
-		$um->routeVar='route';
-		$um->init($app);
-		foreach($entries as $entry)
-		{
-			$_GET=$entry;
-			$route=$um->parseUrl($request);
-			$this->assertEquals($entry['route'],$route);
-			$this->assertEquals($_GET,$entry);
-		}
-	}
-
-	public function testCreateUrlWithGetFormat()
-	{
-		$config=array(
-			'basePath'=>dirname(__FILE__),
-			'components'=>array(
-				'request'=>array(
-					'class'=>'TestHttpRequest',
-				),
-			),
-		);
-		$app=new TestApplication($config);
-		$entries=array(
-			array(
-				'scriptUrl'=>'/apps/index.php',
-				'url'=>'/apps/index.php?route=article/read&name=value&name1=value1',
-				'url2'=>'/apps/?route=article/read&name=value&name1=value1',
-				'route'=>'article/read',
-				'params'=>array(
-					'name'=>'value',
-					'name1'=>'value1',
-				),
-			),
-			array(
-				'scriptUrl'=>'/index.php',
-				'url'=>'/index.php?route=article/read&name=value&name1=value1',
-				'url2'=>'/?route=article/read&name=value&name1=value1',
-				'route'=>'article/read',
-				'params'=>array(
-					'name'=>'value',
-					'name1'=>'value1',
-				),
-			),
-		);
-		foreach($entries as $entry)
-		{
-			$app->request->baseUrl=null;
-			$app->request->scriptUrl=$entry['scriptUrl'];
-			$um=new CUrlManager;
-			$um->urlFormat='get';
-			$um->routeVar='route';
-			$um->init($app);
-			$url=$um->createUrl($entry['route'],$entry['params'],'&');
-			$this->assertEquals($url,$entry['url']);
-
-			$um=new CUrlManager;
-			$um->urlFormat='get';
-			$um->routeVar='route';
-			$um->showScriptName=false;
-			$um->init($app);
-			$url=$um->createUrl($entry['route'],$entry['params'],'&');
-			$this->assertEquals($url,$entry['url2']);
-		}
-	}
-
-	public function testDefaultParams()
-	{
-		$config=array(
-			'basePath'=>dirname(__FILE__),
-			'components'=>array(
-				'request'=>array(
-					'class'=>'TestHttpRequest',
-				),
-			),
-		);
-		$app=new TestApplication($config);
-
-		$app->request->baseUrl=null; // reset so that it can be determined based on scriptUrl
-		$app->request->scriptUrl='/apps/index.php';
-		$um=new CUrlManager;
-		$um->urlFormat='path';
-		$um->rules=array(
-			''=>array('site/page', 'defaultParams'=>array('view'=>'about')),
-			'posts'=>array('post/index', 'defaultParams'=>array('page'=>1)),
-			'<slug:[0-9a-z-]+>' => array('news/list', 'defaultParams' => array('page' => 1)),
-		);
-		$um->init($app);
-
-		$url=$um->createUrl('site/page',array('view'=>'about'));
-		$this->assertEquals('/apps/index.php/',$url);
-		$app->request->pathInfo='';
-		$_GET=array();
-		$route=$um->parseUrl($app->request);
-		$this->assertEquals('site/page',$route);
-		$this->assertEquals(array('view'=>'about'),$_GET);
-
-		$url=$um->createUrl('post/index',array('page'=>1));
-		$this->assertEquals('/apps/index.php/posts',$url);
-		$app->request->pathInfo='posts';
-		$_GET=array();
-		$route=$um->parseUrl($app->request);
-		$this->assertEquals('post/index',$route);
-		$this->assertEquals(array('page'=>'1'),$_GET);
-
-		$url=$um->createUrl('news/list', array('slug' => 'example', 'page' => 1));
-		$this->assertEquals('/apps/index.php/example',$url);
-		$app->request->pathInfo='example';
-		$_GET=array();
-		$route=$um->parseUrl($app->request);
-		$this->assertEquals('news/list',$route);
-		$this->assertEquals(array('slug'=>'example', 'page'=>'1'),$_GET);
-	}
-
-	public function testVerb()
-	{
-		$config=array(
-			'basePath'=>dirname(__FILE__),
-			'components'=>array(
-				'request'=>array(
-					'class'=>'TestHttpRequest',
-				),
-			),
-		);
-		$rules=array(
-			'article/<id:\d+>'=>array('article/read', 'verb'=>'GET'),
-			'article/update/<id:\d+>'=>array('article/update', 'verb'=>'POST'),
-			'article/update/*'=>'article/admin',
-		);
-
-		$entries=array(
-			array(
-				'scriptUrl'=>'/apps/index.php',
-				'url'=>'article/123',
-				'verb'=>'GET',
-				'route'=>'article/read',
-			),
-			array(
-				'scriptUrl'=>'/apps/index.php',
-				'url'=>'article/update/123',
-				'verb'=>'POST',
-				'route'=>'article/update',
-			),
-			array(
-				'scriptUrl'=>'/apps/index.php',
-				'url'=>'article/update/123',
-				'verb'=>'GET',
-				'route'=>'article/admin',
-			),
-		);
-
-		foreach($entries as $entry)
-		{
-			$_SERVER['REQUEST_METHOD']=$entry['verb'];
-			$app=new TestApplication($config);
-			$app->request->baseUrl=null; // reset so that it can be determined based on scriptUrl
-			$app->request->scriptUrl=$entry['scriptUrl'];
-			$app->request->pathInfo=$entry['url'];
-			$um=new CUrlManager;
-			$um->urlFormat='path';
-			$um->rules=$rules;
-			$um->init($app);
-			$route=$um->parseUrl($app->request);
-			$this->assertEquals($entry['route'],$route);
-		}
-	}
-
-	public function testParsingOnly()
-	{
-		$config=array(
-			'basePath'=>dirname(__FILE__),
-			'components'=>array(
-				'request'=>array(
-					'class'=>'TestHttpRequest',
-				),
-			),
-		);
-		$rules=array(
-			'(articles|article)/<id:\d+>'=>array('article/read', 'parsingOnly'=>true),
-			'article/<id:\d+>'=>array('article/read', 'verb'=>'GET'),
-		);
-
-		$_SERVER['REQUEST_METHOD']='GET';
-		$app=new TestApplication($config);
-		$app->request->baseUrl=null; // reset so that it can be determined based on scriptUrl
-		$app->request->scriptUrl='/apps/index.php';
-		$app->request->pathInfo='articles/123';
-		$um=new CUrlManager;
-		$um->urlFormat='path';
-		$um->rules=$rules;
-		$um->init($app);
-
-		$route=$um->parseUrl($app->request);
-		$this->assertEquals('article/read',$route);
-
-		$url=$um->createUrl('article/read', array('id'=>345));
-		$this->assertEquals('/apps/index.php/article/345',$url);
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+RwWNpyGtIbEG7NRYaNJgXVwvGQ//YYDlL0==

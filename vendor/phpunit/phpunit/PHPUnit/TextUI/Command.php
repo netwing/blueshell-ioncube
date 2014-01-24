@@ -1,897 +1,310 @@
-<?php
-/**
- * PHPUnit
- *
- * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @package    PHPUnit
- * @subpackage TextUI
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      File available since Release 3.0.0
- */
-
-/**
- * A TestRunner for the Command Line Interface (CLI)
- * PHP SAPI Module.
- *
- * @package    PHPUnit
- * @subpackage TextUI
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      Class available since Release 3.0.0
- */
-class PHPUnit_TextUI_Command
-{
-    /**
-     * @var array
-     */
-    protected $arguments = array(
-      'listGroups'              => FALSE,
-      'loader'                  => NULL,
-      'useDefaultConfiguration' => TRUE
-    );
-
-    /**
-     * @var array
-     */
-    protected $options = array();
-
-    /**
-     * @var array
-     */
-    protected $longOptions = array(
-      'colors' => NULL,
-      'bootstrap=' => NULL,
-      'configuration=' => NULL,
-      'coverage-html=' => NULL,
-      'coverage-clover=' => NULL,
-      'coverage-php=' => NULL,
-      'coverage-text==' => NULL,
-      'debug' => NULL,
-      'exclude-group=' => NULL,
-      'filter=' => NULL,
-      'testsuite=' => NULL,
-      'group=' => NULL,
-      'help' => NULL,
-      'include-path=' => NULL,
-      'list-groups' => NULL,
-      'loader=' => NULL,
-      'log-json=' => NULL,
-      'log-junit=' => NULL,
-      'log-tap=' => NULL,
-      'process-isolation' => NULL,
-      'repeat=' => NULL,
-      'stderr' => NULL,
-      'stop-on-error' => NULL,
-      'stop-on-failure' => NULL,
-      'stop-on-incomplete' => NULL,
-      'stop-on-skipped' => NULL,
-      'strict' => NULL,
-      'tap' => NULL,
-      'testdox' => NULL,
-      'testdox-html=' => NULL,
-      'testdox-text=' => NULL,
-      'test-suffix=' => NULL,
-      'no-configuration' => NULL,
-      'no-globals-backup' => NULL,
-      'printer=' => NULL,
-      'static-backup' => NULL,
-      'verbose' => NULL,
-      'version' => NULL
-    );
-
-    /**
-     * @var array
-     */
-    protected $missingExtensions = array();
-
-    /**
-     * @param boolean $exit
-     */
-    public static function main($exit = TRUE)
-    {
-        $command = new PHPUnit_TextUI_Command;
-        return $command->run($_SERVER['argv'], $exit);
-    }
-
-    /**
-     * @param array   $argv
-     * @param boolean $exit
-     */
-    public function run(array $argv, $exit = TRUE)
-    {
-        $this->handleArguments($argv);
-
-        $runner = $this->createRunner();
-
-        if (is_object($this->arguments['test']) &&
-            $this->arguments['test'] instanceof PHPUnit_Framework_Test) {
-            $suite = $this->arguments['test'];
-        } else {
-            $suite = $runner->getTest(
-              $this->arguments['test'],
-              $this->arguments['testFile'],
-              $this->arguments['testSuffixes']
-            );
-        }
-
-        if ($this->arguments['listGroups']) {
-            PHPUnit_TextUI_TestRunner::printVersionString();
-
-            print "Available test group(s):\n";
-
-            $groups = $suite->getGroups();
-            sort($groups);
-
-            foreach ($groups as $group) {
-                print " - $group\n";
-            }
-
-            if ($exit) {
-                exit(PHPUnit_TextUI_TestRunner::SUCCESS_EXIT);
-            } else {
-                return PHPUnit_TextUI_TestRunner::SUCCESS_EXIT;
-            }
-        }
-
-        unset($this->arguments['test']);
-        unset($this->arguments['testFile']);
-
-        try {
-            $result = $runner->doRun($suite, $this->arguments);
-        }
-
-        catch (PHPUnit_Framework_Exception $e) {
-            print $e->getMessage() . "\n";
-        }
-
-        $ret = PHPUnit_TextUI_TestRunner::FAILURE_EXIT;
-
-        if (isset($result) && $result->wasSuccessful()) {
-            $ret = PHPUnit_TextUI_TestRunner::SUCCESS_EXIT;
-        }
-
-        else if (!isset($result) || $result->errorCount() > 0) {
-            $ret = PHPUnit_TextUI_TestRunner::EXCEPTION_EXIT;
-        }
-
-        if ($exit) {
-            exit($ret);
-        } else {
-            return $ret;
-        }
-    }
-
-    /**
-     * Create a TestRunner, override in subclasses.
-     *
-     * @return PHPUnit_TextUI_TestRunner
-     * @since  Method available since Release 3.6.0
-     */
-    protected function createRunner()
-    {
-        return new PHPUnit_TextUI_TestRunner($this->arguments['loader']);
-    }
-
-    /**
-     * Handles the command-line arguments.
-     *
-     * A child class of PHPUnit_TextUI_Command can hook into the argument
-     * parsing by adding the switch(es) to the $longOptions array and point to a
-     * callback method that handles the switch(es) in the child class like this
-     *
-     * <code>
-     * <?php
-     * class MyCommand extends PHPUnit_TextUI_Command
-     * {
-     *     public function __construct()
-     *     {
-     *         $this->longOptions['--my-switch'] = 'myHandler';
-     *     }
-     *
-     *     // --my-switch foo -> myHandler('foo')
-     *     protected function myHandler($value)
-     *     {
-     *     }
-     * }
-     * </code>
-     *
-     * @param array $argv
-     */
-    protected function handleArguments(array $argv)
-    {
-        try {
-            $this->options = PHPUnit_Util_Getopt::getopt(
-              $argv,
-              'd:c:hv',
-              array_keys($this->longOptions)
-            );
-        }
-
-        catch (PHPUnit_Framework_Exception $e) {
-            PHPUnit_TextUI_TestRunner::showError($e->getMessage());
-        }
-
-        foreach ($this->options[0] as $option) {
-            switch ($option[0]) {
-                case '--colors': {
-                    $this->arguments['colors'] = TRUE;
-                }
-                break;
-
-                case '--bootstrap': {
-                    $this->arguments['bootstrap'] = $option[1];
-                }
-                break;
-
-                case 'c':
-                case '--configuration': {
-                    $this->arguments['configuration'] = $option[1];
-                }
-                break;
-
-                case '--coverage-clover':
-                case '--coverage-html':
-                case '--coverage-php':
-                case '--coverage-text': {
-                    if (!extension_loaded('tokenizer')) {
-                        $this->showExtensionNotLoadedMessage(
-                          'tokenizer', 'No code coverage will be generated.'
-                        );
-
-                        continue;
-                    }
-
-                    if (!extension_loaded('xdebug')) {
-                        $this->showExtensionNotLoadedMessage(
-                          'Xdebug', 'No code coverage will be generated.'
-                        );
-
-                        continue;
-                    }
-
-                    switch ($option[0]) {
-                        case '--coverage-clover': {
-                            $this->arguments['coverageClover'] = $option[1];
-                        }
-                        break;
-
-                        case '--coverage-html': {
-                            $this->arguments['reportDirectory'] = $option[1];
-                        }
-                        break;
-
-                        case '--coverage-php': {
-                            $this->arguments['coveragePHP'] = $option[1];
-                        }
-                        break;
-
-                        case '--coverage-text': {
-                            if ($option[1] === NULL) {
-                                $option[1] = 'php://stdout';
-                            }
-
-                            $this->arguments['coverageText'] = $option[1];
-                            $this->arguments['coverageTextShowUncoveredFiles'] = FALSE;
-                        }
-                        break;
-                    }
-                }
-                break;
-
-                case 'd': {
-                    $ini = explode('=', $option[1]);
-
-                    if (isset($ini[0])) {
-                        if (isset($ini[1])) {
-                            ini_set($ini[0], $ini[1]);
-                        } else {
-                            ini_set($ini[0], TRUE);
-                        }
-                    }
-                }
-                break;
-
-                case '--debug': {
-                    $this->arguments['debug'] = TRUE;
-                }
-                break;
-
-                case 'h':
-                case '--help': {
-                    $this->showHelp();
-                    exit(PHPUnit_TextUI_TestRunner::SUCCESS_EXIT);
-                }
-                break;
-
-                case '--filter': {
-                    $this->arguments['filter'] = $option[1];
-                }
-                break;
-
-                case '--testsuite': {
-                    $this->arguments['testsuite'] = $option[1];
-                }
-                break;
-
-                case '--group': {
-                    $this->arguments['groups'] = explode(',', $option[1]);
-                }
-                break;
-
-                case '--exclude-group': {
-                    $this->arguments['excludeGroups'] = explode(
-                      ',', $option[1]
-                    );
-                }
-                break;
-
-                case '--test-suffix': {
-                    $this->arguments['testSuffixes'] = explode(
-                      ',', $option[1]
-                    );
-                }
-                break;
-
-                case '--include-path': {
-                    $includePath = $option[1];
-                }
-                break;
-
-                case '--list-groups': {
-                    $this->arguments['listGroups'] = TRUE;
-                }
-                break;
-
-                case '--printer': {
-                    $this->arguments['printer'] = $option[1];
-                }
-                break;
-
-                case '--loader': {
-                    $this->arguments['loader'] = $option[1];
-                }
-                break;
-
-                case '--log-json': {
-                    $this->arguments['jsonLogfile'] = $option[1];
-                }
-                break;
-
-                case '--log-junit': {
-                    $this->arguments['junitLogfile'] = $option[1];
-                }
-                break;
-
-                case '--log-tap': {
-                    $this->arguments['tapLogfile'] = $option[1];
-                }
-                break;
-
-                case '--process-isolation': {
-                    $this->arguments['processIsolation'] = TRUE;
-                }
-                break;
-
-                case '--repeat': {
-                    $this->arguments['repeat'] = (int)$option[1];
-                }
-                break;
-
-                case '--stderr': {
-                    $this->arguments['printer'] = new PHPUnit_TextUI_ResultPrinter(
-                      'php://stderr',
-                      isset($this->arguments['verbose']) ? $this->arguments['verbose'] : FALSE
-                    );
-                }
-                break;
-
-                case '--stop-on-error': {
-                    $this->arguments['stopOnError'] = TRUE;
-                }
-                break;
-
-                case '--stop-on-failure': {
-                    $this->arguments['stopOnFailure'] = TRUE;
-                }
-                break;
-
-                case '--stop-on-incomplete': {
-                    $this->arguments['stopOnIncomplete'] = TRUE;
-                }
-                break;
-
-                case '--stop-on-skipped': {
-                    $this->arguments['stopOnSkipped'] = TRUE;
-                }
-                break;
-
-                case '--tap': {
-                    $this->arguments['printer'] = new PHPUnit_Util_Log_TAP;
-                }
-                break;
-
-                case '--testdox': {
-                    $this->arguments['printer'] = new PHPUnit_Util_TestDox_ResultPrinter_Text;
-                }
-                break;
-
-                case '--testdox-html': {
-                    $this->arguments['testdoxHTMLFile'] = $option[1];
-                }
-                break;
-
-                case '--testdox-text': {
-                    $this->arguments['testdoxTextFile'] = $option[1];
-                }
-                break;
-
-                case '--no-configuration': {
-                    $this->arguments['useDefaultConfiguration'] = FALSE;
-                }
-                break;
-
-                case '--no-globals-backup': {
-                    $this->arguments['backupGlobals'] = FALSE;
-                }
-                break;
-
-                case '--static-backup': {
-                    $this->arguments['backupStaticAttributes'] = TRUE;
-                }
-                break;
-
-                case 'v':
-                case '--verbose': {
-                    $this->arguments['verbose'] = TRUE;
-                }
-                break;
-
-                case '--version': {
-                    PHPUnit_TextUI_TestRunner::printVersionString();
-                    exit(PHPUnit_TextUI_TestRunner::SUCCESS_EXIT);
-                }
-                break;
-
-                case '--strict': {
-                    $this->arguments['strict'] = TRUE;
-                }
-                break;
-
-                default: {
-                    $optionName = str_replace('--', '', $option[0]);
-
-                    if (isset($this->longOptions[$optionName])) {
-                        $handler = $this->longOptions[$optionName];
-                    }
-
-                    else if (isset($this->longOptions[$optionName . '='])) {
-                        $handler = $this->longOptions[$optionName . '='];
-                    }
-
-                    if (isset($handler) && is_callable(array($this, $handler))) {
-                        $this->$handler($option[1]);
-                    }
-                }
-            }
-        }
-
-        $this->handleCustomTestSuite();
-
-        if (!isset($this->arguments['test'])) {
-
-            if (isset($this->options[1][0])) {
-                $this->arguments['test'] = $this->options[1][0];
-            }
-
-            if (isset($this->options[1][1])) {
-                $this->arguments['testFile'] = $this->options[1][1];
-            } else {
-                $this->arguments['testFile'] = '';
-            }
-
-            if (isset($this->arguments['test']) &&
-                is_file($this->arguments['test']) &&
-                substr($this->arguments['test'], -5, 5) != '.phpt') {
-                $this->arguments['testFile'] = realpath($this->arguments['test']);
-                $this->arguments['test']     = substr($this->arguments['test'], 0, strrpos($this->arguments['test'], '.'));
-            }
-        }
-
-        if (!isset($this->arguments['testSuffixes'])) {
-            $this->arguments['testSuffixes'] = array('Test.php', '.phpt');
-        }
-
-        if (isset($includePath)) {
-            ini_set(
-              'include_path',
-              $includePath . PATH_SEPARATOR . ini_get('include_path')
-            );
-        }
-
-        if (isset($this->arguments['bootstrap'])) {
-            $this->handleBootstrap($this->arguments['bootstrap']);
-        }
-
-        if (isset($this->arguments['printer']) &&
-            is_string($this->arguments['printer'])) {
-            $this->arguments['printer'] = $this->handlePrinter($this->arguments['printer']);
-        }
-
-        if ($this->arguments['loader'] !== NULL) {
-            $this->arguments['loader'] = $this->handleLoader($this->arguments['loader']);
-        }
-
-        if (isset($this->arguments['configuration']) &&
-            is_dir($this->arguments['configuration'])) {
-            $configurationFile = $this->arguments['configuration'] .
-                                 '/phpunit.xml';
-
-            if (file_exists($configurationFile)) {
-                $this->arguments['configuration'] = realpath(
-                  $configurationFile
-                );
-            }
-
-            else if (file_exists($configurationFile . '.dist')) {
-                $this->arguments['configuration'] = realpath(
-                  $configurationFile . '.dist'
-                );
-            }
-        }
-
-        else if (!isset($this->arguments['configuration']) &&
-                 $this->arguments['useDefaultConfiguration']) {
-            if (file_exists('phpunit.xml')) {
-                $this->arguments['configuration'] = realpath('phpunit.xml');
-            } else if (file_exists('phpunit.xml.dist')) {
-                $this->arguments['configuration'] = realpath(
-                  'phpunit.xml.dist'
-                );
-            }
-        }
-
-        if (isset($this->arguments['configuration'])) {
-            try {
-                $configuration = PHPUnit_Util_Configuration::getInstance(
-                  $this->arguments['configuration']
-                );
-            }
-
-            catch (Exception $e) {
-                print $e->getMessage() . "\n";
-                exit(PHPUnit_TextUI_TestRunner::FAILURE_EXIT);
-            }
-
-            $phpunit = $configuration->getPHPUnitConfiguration();
-
-            $configuration->handlePHPConfiguration();
-
-            if (!isset($this->arguments['bootstrap']) && isset($phpunit['bootstrap'])) {
-                $this->handleBootstrap($phpunit['bootstrap']);
-            }
-
-            if (isset($phpunit['printerClass'])) {
-                if (isset($phpunit['printerFile'])) {
-                    $file = $phpunit['printerFile'];
-                } else {
-                    $file = '';
-                }
-
-                $this->arguments['printer'] = $this->handlePrinter(
-                  $phpunit['printerClass'], $file
-                );
-            }
-
-            if (isset($phpunit['testSuiteLoaderClass'])) {
-                if (isset($phpunit['testSuiteLoaderFile'])) {
-                    $file = $phpunit['testSuiteLoaderFile'];
-                } else {
-                    $file = '';
-                }
-
-                $this->arguments['loader'] = $this->handleLoader(
-                  $phpunit['testSuiteLoaderClass'], $file
-                );
-            }
-
-            $logging = $configuration->getLoggingConfiguration();
-
-            if (isset($logging['coverage-html']) || isset($logging['coverage-clover']) || isset($logging['coverage-text']) ) {
-                if (!extension_loaded('tokenizer')) {
-                    $this->showExtensionNotLoadedMessage(
-                      'tokenizer', 'No code coverage will be generated.'
-                    );
-                }
-
-                else if (!extension_loaded('Xdebug')) {
-                    $this->showExtensionNotLoadedMessage(
-                      'Xdebug', 'No code coverage will be generated.'
-                    );
-                }
-            }
-
-            $browsers = $configuration->getSeleniumBrowserConfiguration();
-
-            if (!empty($browsers) &&
-                class_exists('PHPUnit_Extensions_SeleniumTestCase')) {
-                PHPUnit_Extensions_SeleniumTestCase::$browsers = $browsers;
-            }
-
-            if (!isset($this->arguments['test'])) {
-                $testSuite = $configuration->getTestSuiteConfiguration(isset($this->arguments['testsuite']) ? $this->arguments['testsuite'] : null);
-
-                if ($testSuite !== NULL) {
-                    $this->arguments['test'] = $testSuite;
-                }
-            }
-        }
-
-        if (isset($this->arguments['test']) && is_string($this->arguments['test']) && substr($this->arguments['test'], -5, 5) == '.phpt') {
-            $test = new PHPUnit_Extensions_PhptTestCase($this->arguments['test']);
-
-            $this->arguments['test'] = new PHPUnit_Framework_TestSuite;
-            $this->arguments['test']->addTest($test);
-        }
-
-        if (!isset($this->arguments['test']) ||
-            (isset($this->arguments['testDatabaseLogRevision']) && !isset($this->arguments['testDatabaseDSN']))) {
-            $this->showHelp();
-            exit(PHPUnit_TextUI_TestRunner::EXCEPTION_EXIT);
-        }
-    }
-
-    /**
-     * Handles the loading of the PHPUnit_Runner_TestSuiteLoader implementation.
-     *
-     * @param  string  $loaderClass
-     * @param  string  $loaderFile
-     * @return PHPUnit_Runner_TestSuiteLoader
-     */
-    protected function handleLoader($loaderClass, $loaderFile = '')
-    {
-        if (!class_exists($loaderClass, FALSE)) {
-            if ($loaderFile == '') {
-                $loaderFile = PHPUnit_Util_Filesystem::classNameToFilename(
-                  $loaderClass
-                );
-            }
-
-            $loaderFile = stream_resolve_include_path($loaderFile);
-
-            if ($loaderFile) {
-                require $loaderFile;
-            }
-        }
-
-        if (class_exists($loaderClass, FALSE)) {
-            $class = new ReflectionClass($loaderClass);
-
-            if ($class->implementsInterface('PHPUnit_Runner_TestSuiteLoader') &&
-                $class->isInstantiable()) {
-                $loader = $class->newInstance();
-            }
-        }
-
-        if (!isset($loader)) {
-            PHPUnit_TextUI_TestRunner::showError(
-              sprintf(
-                'Could not use "%s" as loader.',
-
-                $loaderClass
-              )
-            );
-        }
-
-        return $loader;
-    }
-
-    /**
-     * Handles the loading of the PHPUnit_Util_Printer implementation.
-     *
-     * @param  string $printerClass
-     * @param  string $printerFile
-     * @return PHPUnit_Util_Printer
-     */
-    protected function handlePrinter($printerClass, $printerFile = '')
-    {
-        if (!class_exists($printerClass, FALSE)) {
-            if ($printerFile == '') {
-                $printerFile = PHPUnit_Util_Filesystem::classNameToFilename(
-                  $printerClass
-                );
-            }
-
-            $printerFile = stream_resolve_include_path($printerFile);
-
-            if ($printerFile) {
-                require $printerFile;
-            }
-        }
-
-        if (class_exists($printerClass, FALSE)) {
-            $class = new ReflectionClass($printerClass);
-
-            if ($class->implementsInterface('PHPUnit_Framework_TestListener') &&
-                $class->isSubclassOf('PHPUnit_Util_Printer') &&
-                $class->isInstantiable()) {
-                $printer = $class->newInstance();
-            }
-        }
-
-        if (!isset($printer)) {
-            PHPUnit_TextUI_TestRunner::showError(
-              sprintf(
-                'Could not use "%s" as printer.',
-
-                $printerClass
-              )
-            );
-        }
-
-        return $printer;
-    }
-
-    /**
-     * Loads a bootstrap file.
-     *
-     * @param string $filename
-     */
-    protected function handleBootstrap($filename)
-    {
-        try {
-            PHPUnit_Util_Fileloader::checkAndLoad($filename);
-        }
-
-        catch (PHPUnit_Framework_Exception $e) {
-            PHPUnit_TextUI_TestRunner::showError($e->getMessage());
-        }
-    }
-
-    /**
-     * @param string  $message
-     * @since Method available since Release 3.6.0
-     */
-    protected function showExtensionNotLoadedMessage($extension, $message = '')
-    {
-        if (isset($this->missingExtensions[$extension])) {
-            return;
-        }
-
-        if (!empty($message)) {
-            $message = ' ' . $message;
-        }
-
-        $this->showMessage(
-          'The ' . $extension . ' extension is not loaded.' . $message . "\n",
-          FALSE
-        );
-
-        $this->missingExtensions[$extension] = TRUE;
-    }
-
-    /**
-     * Shows a message.
-     *
-     * @param string  $message
-     * @param boolean $exit
-     */
-    protected function showMessage($message, $exit = TRUE)
-    {
-        PHPUnit_TextUI_TestRunner::printVersionString();
-        print $message . "\n";
-
-        if ($exit) {
-            exit(PHPUnit_TextUI_TestRunner::EXCEPTION_EXIT);
-        } else {
-            print "\n";
-        }
-    }
-
-    /**
-     * Show the help message.
-     */
-    protected function showHelp()
-    {
-        PHPUnit_TextUI_TestRunner::printVersionString();
-
-        print <<<EOT
-Usage: phpunit [switches] UnitTest [UnitTest.php]
-       phpunit [switches] <directory>
-
-  --log-junit <file>        Log test execution in JUnit XML format to file.
-  --log-tap <file>          Log test execution in TAP format to file.
-  --log-json <file>         Log test execution in JSON format.
-
-  --coverage-clover <file>  Generate code coverage report in Clover XML format.
-  --coverage-html <dir>     Generate code coverage report in HTML format.
-  --coverage-php <file>     Serialize PHP_CodeCoverage object to file.
-  --coverage-text=<file>    Generate code coverage report in text format.
-                            Default to writing to the standard output.
-
-  --testdox-html <file>     Write agile documentation in HTML format to file.
-  --testdox-text <file>     Write agile documentation in Text format to file.
-
-  --filter <pattern>        Filter which tests to run.
-  --testsuite <pattern>     Filter which testsuite to run.
-  --group ...               Only runs tests from the specified group(s).
-  --exclude-group ...       Exclude tests from the specified group(s).
-  --list-groups             List available test groups.
-  --test-suffix ...         Only search for test in files with specified
-                            suffix(es). Default: Test.php,.phpt
-
-  --loader <loader>         TestSuiteLoader implementation to use.
-  --printer <printer>       TestSuiteListener implementation to use.
-  --repeat <times>          Runs the test(s) repeatedly.
-
-  --tap                     Report test execution progress in TAP format.
-  --testdox                 Report test execution progress in TestDox format.
-
-  --colors                  Use colors in output.
-  --stderr                  Write to STDERR instead of STDOUT.
-  --stop-on-error           Stop execution upon first error.
-  --stop-on-failure         Stop execution upon first error or failure.
-  --stop-on-skipped         Stop execution upon first skipped test.
-  --stop-on-incomplete      Stop execution upon first incomplete test.
-  --strict                  Run tests in strict mode.
-  -v|--verbose              Output more verbose information.
-  --debug                   Display debugging information during test execution.
-
-  --process-isolation       Run each test in a separate PHP process.
-  --no-globals-backup       Do not backup and restore \$GLOBALS for each test.
-  --static-backup           Backup and restore static attributes for each test.
-
-  --bootstrap <file>        A "bootstrap" PHP file that is run before the tests.
-  -c|--configuration <file> Read configuration from XML file.
-  --no-configuration        Ignore default configuration file (phpunit.xml).
-  --include-path <path(s)>  Prepend PHP's include_path with given path(s).
-  -d key[=value]            Sets a php.ini value.
-
-  -h|--help                 Prints this usage information.
-  --version                 Prints the version and exits.
-
-EOT;
-    }
-
-    /**
-     * Custom callback for test suite discovery.
-     */
-    protected function handleCustomTestSuite()
-    {
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

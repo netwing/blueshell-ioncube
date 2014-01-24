@@ -1,142 +1,77 @@
-<?php
-
-class CExistValidatorTest extends CTestCase
-{
-	/**
-	 * @var CDbConnection test database connection.
-	 */
-	private $_connection;
-	/**
-	 * @var string test table name.
-	 */
-	private $_tableName = 'test_table';
-	/**
-	 * @var string test {@link CActiveRecord} model.
-	 */
-	private $_arModelName = 'TestExistModel';
-
-	protected function setUp()
-	{
-		if(!extension_loaded('pdo') || !extension_loaded('pdo_sqlite'))
-			$this->markTestSkipped('PDO and SQLite extensions are required.');
-
-		$this->_connection=new CDbConnection('sqlite::memory:');
-		$this->_connection->active=true;
-		$columns = array(
-			'id'=>'pk',
-			'name'=>'string',
-		);
-		$this->_connection->createCommand()->createTable($this->_tableName, $columns);
-
-		CActiveRecord::$db=$this->_connection;
-		$this->declareArModelClass();
-	}
-
-	protected function tearDown()
-	{
-		$this->_connection->createCommand()->dropTable($this->_tableName);
-		$this->_connection->active=false;
-	}
-
-	/**
-	 * Declares test active record class.
-	 * @return boolean success.
-	 */
-	protected function declareArModelClass()
-	{
-		if (!class_exists($this->_arModelName,false))
-		{
-			$classDefinitionCode=<<<EOD
-class {$this->_arModelName} extends CActiveRecord
-{
-	public static function model(\$className=__CLASS__)
-	{
-		return parent::model(\$className);
-	}
-
-	public function tableName()
-	{
-		return '{$this->_tableName}';
-	}
-
-	public function rules()
-	{
-		return array(
-			array('name','exist','on'=>'simple'),
-			array('name','exist','caseSensitive'=>true,'on'=>'case_sensitive'),
-			array('name','exist','caseSensitive'=>false,'on'=>'not_case_sensitive'),
-			array('name','exist','criteria'=>array('alias'=>'test_alias'),'on'=>'criteria'),
-		);
-	}
-}
-EOD;
-			eval($classDefinitionCode);
-		}
-		return true;
-	}
-
-	public function testValidate()
-	{
-		$modelClassName = $this->_arModelName;
-		$name = 'test_name';
-
-		$model = new $modelClassName('simple');
-		$model->name = $name;
-		$this->assertFalse($model->validate(),'Not existing value considered as valid!');
-
-		$model->save(false);
-		$this->assertTrue($model->validate(),'Existing value consider as invalid!');
-
-		$anotherModel = new $modelClassName('simple');
-		$anotherModel->name = $name;
-		$this->assertTrue($anotherModel->validate(),'Duplicate entry of existing value considered as invalid!');
-	}
-
-	/**
-	 * @depends testValidate
-	 */
-	public function testValidateCaseSensitive()
-	{
-		$modelClassName = $this->_arModelName;
-		$name = 'test_name';
-
-		$initModel = new $modelClassName();
-		$initModel->name = $name;
-		$initModel->save(false);
-
-		$caseSensitiveModel = new $modelClassName('case_sensitive');
-		$caseSensitiveModel->name = $name;
-		$this->assertTrue($caseSensitiveModel->validate(),'Validation breaks in case sensitive mode!');
-		$caseSensitiveModel->name = strtoupper($name);
-		$this->assertFalse($caseSensitiveModel->validate(),'Same value in other case considered as valid!');
-
-		$caseInsensitiveModel = new $modelClassName('not_case_sensitive');
-		$caseInsensitiveModel->name = strtoupper($name);
-		$this->assertTrue($caseInsensitiveModel->validate(),'Same value in other case considered as invalid!');
-	}
-
-	/**
-	 * @depends testValidate
-	 */
-	public function testValidateWithCriteria()
-	{
-		$modelClassName = $this->_arModelName;
-		$name = 'test_name';
-
-		$model = new $modelClassName('criteria');
-		$model->name = $name;
-		$this->assertFalse($model->validate(),'Unable to validate model with custom criteria!');
-	}
-
-	/**
-	 * https://github.com/yiisoft/yii/issues/1955
-	 */
-	public function testArrayValue()
-	{
-		$modelClassName = $this->_arModelName;
-		$model = new $modelClassName('simple');
-		$model->name = array('test_name');
-		$this->assertFalse($model->validate());
-		$this->assertTrue($model->hasErrors('name'));
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+Z/ciiwTOBLnG31WpdxwhQxImYMom

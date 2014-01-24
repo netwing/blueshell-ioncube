@@ -1,88 +1,34 @@
-<?php
-
-/*
- This program is free software: you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation, either version 3 of the License, or
- (at your option) any later version.
- 
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
-
- You should have received a copy of the GNU General Public License
- along with this program.  If not, see <http://www.gnu.org/licenses/>.
- 
- */
- 
-//require 'Yay/MockObject.php';
-//require 'Yay/Invocation.php';
-//require 'Yay/Action.php';
-//require 'Yay/SelfDescribing.php';
-//require 'Yay/State.php';
-//require 'Yay/StatePredicate.php';
-//require 'Yay/Sequence.php';
-
-/**
- * An Invocation expectation.
- * @author Chris Corbyn <chris@w3style.co.uk>
- * @package Yay
- */
-interface Yay_Expectation extends Yay_SelfDescribing
-{
-  
-  /**
-   * Specify the MockObject which the Invocation will occur.
-   * This method should return the mock object in record mode.
-   * @param Yay_MockObject $mock
-   * @return Yay_MockObject
-   */
-  public function of(Yay_MockObject $mock);
-  
-  /**
-   * Notify the Expectation of an Invocation and check if it matches.
-   * @param Yay_Invocation $invocation
-   * @return boolean
-   */
-  public function isExpected(Yay_Invocation $invocation);
-  
-  /**
-   * Specify the Action to run if a match occurs.
-   * @param Yay_Action $action
-   */
-  public function will(Yay_Action $action);
-  
-  /**
-   * Only be expected when in the given State predicate.
-   * @param Yay_StatePredicate $predicate
-   */
-  public function when(Yay_StatePredicate $predicate);
-  
-  /**
-   * Activate the given $state if a match occurs.
-   * @param Yay_State $state
-   */
-  public function then(Yay_State $state);
-  
-  /**
-   * Constrain this expectation to be valid only if invoked in the given sequence.
-   * @param Yay_Sequence $sequence
-   */
-  public function inSequence(Yay_Sequence $sequence);
-  
-  /**
-   * Test if all conditions of the Invocation are satisfied.
-   * @return boolean
-   */
-  public function isSatisfied();
-  
-  /**
-   * Get the Action for the given Invocation.
-   * This may have been specified by a will() clause.
-   * @param Yay_Invocation $invocation
-   * @return Yay_Action
-   */
-  public function getAction(Yay_Invocation $invocation);
-  
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

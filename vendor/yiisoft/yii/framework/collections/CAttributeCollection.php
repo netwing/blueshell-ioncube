@@ -1,213 +1,82 @@
-<?php
-/**
- * This file contains classes implementing attribute collection feature.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-
-/**
- * CAttributeCollection implements a collection for storing attribute names and values.
- *
- * Besides all functionalities provided by {@link CMap}, CAttributeCollection
- * allows you to get and set attribute values like getting and setting
- * properties. For example, the following usages are all valid for a
- * CAttributeCollection object:
- * <pre>
- * $collection->text='text'; // same as:  $collection->add('text','text');
- * echo $collection->text;   // same as:  echo $collection->itemAt('text');
- * </pre>
- *
- * The case sensitivity of attribute names can be toggled by setting the
- * {@link caseSensitive} property of the collection.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.collections
- * @since 1.0
- */
-class CAttributeCollection extends CMap
-{
-	/**
-	 * @var boolean whether the keys are case-sensitive. Defaults to false.
-	 */
-	public $caseSensitive=false;
-
-	/**
-	 * Returns a property value or an event handler list by property or event name.
-	 * This method overrides the parent implementation by returning
-	 * a key value if the key exists in the collection.
-	 * @param string $name the property name or the event name
-	 * @return mixed the property value or the event handler list
-	 * @throws CException if the property/event is not defined.
-	 */
-	public function __get($name)
-	{
-		if($this->contains($name))
-			return $this->itemAt($name);
-		else
-			return parent::__get($name);
-	}
-
-	/**
-	 * Sets value of a component property.
-	 * This method overrides the parent implementation by adding a new key value
-	 * to the collection.
-	 * @param string $name the property name or event name
-	 * @param mixed $value the property value or event handler
-	 * @throws CException If the property is not defined or read-only.
-	 */
-	public function __set($name,$value)
-	{
-		$this->add($name,$value);
-	}
-
-	/**
-	 * Checks if a property value is null.
-	 * This method overrides the parent implementation by checking
-	 * if the key exists in the collection and contains a non-null value.
-	 * @param string $name the property name or the event name
-	 * @return boolean whether the property value is null
-	 */
-	public function __isset($name)
-	{
-		if($this->contains($name))
-			return $this->itemAt($name)!==null;
-		else
-			return parent::__isset($name);
-	}
-
-	/**
-	 * Sets a component property to be null.
-	 * This method overrides the parent implementation by clearing
-	 * the specified key value.
-	 * @param string $name the property name or the event name
-	 */
-	public function __unset($name)
-	{
-		$this->remove($name);
-	}
-
-	/**
-	 * Returns the item with the specified key.
-	 * This overrides the parent implementation by converting the key to lower case first if {@link caseSensitive} is false.
-	 * @param mixed $key the key
-	 * @return mixed the element at the offset, null if no element is found at the offset
-	 */
-	public function itemAt($key)
-	{
-		if($this->caseSensitive)
-			return parent::itemAt($key);
-		else
-			return parent::itemAt(strtolower($key));
-	}
-
-	/**
-	 * Adds an item into the map.
-	 * This overrides the parent implementation by converting the key to lower case first if {@link caseSensitive} is false.
-	 * @param mixed $key key
-	 * @param mixed $value value
-	 */
-	public function add($key,$value)
-	{
-		if($this->caseSensitive)
-			parent::add($key,$value);
-		else
-			parent::add(strtolower($key),$value);
-	}
-
-	/**
-	 * Removes an item from the map by its key.
-	 * This overrides the parent implementation by converting the key to lower case first if {@link caseSensitive} is false.
-	 * @param mixed $key the key of the item to be removed
-	 * @return mixed the removed value, null if no such key exists.
-	 */
-	public function remove($key)
-	{
-		if($this->caseSensitive)
-			return parent::remove($key);
-		else
-			return parent::remove(strtolower($key));
-	}
-
-	/**
-	 * Returns whether the specified is in the map.
-	 * This overrides the parent implementation by converting the key to lower case first if {@link caseSensitive} is false.
-	 * @param mixed $key the key
-	 * @return boolean whether the map contains an item with the specified key
-	 */
-	public function contains($key)
-	{
-		if($this->caseSensitive)
-			return parent::contains($key);
-		else
-			return parent::contains(strtolower($key));
-	}
-
-	/**
-	 * Determines whether a property is defined.
-	 * This method overrides parent implementation by returning true
-	 * if the collection contains the named key.
-	 * @param string $name the property name
-	 * @return boolean whether the property is defined
-	 */
-	public function hasProperty($name)
-	{
-		return $this->contains($name) || parent::hasProperty($name);
-	}
-
-	/**
-	 * Determines whether a property can be read.
-	 * This method overrides parent implementation by returning true
-	 * if the collection contains the named key.
-	 * @param string $name the property name
-	 * @return boolean whether the property can be read
-	 */
-	public function canGetProperty($name)
-	{
-		return $this->contains($name) || parent::canGetProperty($name);
-	}
-
-	/**
-	 * Determines whether a property can be set.
-	 * This method overrides parent implementation by always returning true
-	 * because you can always add a new value to the collection.
-	 * @param string $name the property name
-	 * @return boolean true
-	 */
-	public function canSetProperty($name)
-	{
-		return true;
-	}
-
-	/**
-	 * Merges iterable data into the map.
-	 *
-	 * Existing elements in the map will be overwritten if their keys are the same as those in the source.
-	 * If the merge is recursive, the following algorithm is performed:
-	 * <ul>
-	 * <li>the map data is saved as $a, and the source data is saved as $b;</li>
-	 * <li>if $a and $b both have an array indexed at the same string key, the arrays will be merged using this algorithm;</li>
-	 * <li>any integer-indexed elements in $b will be appended to $a and reindexed accordingly;</li>
-	 * <li>any string-indexed elements in $b will overwrite elements in $a with the same index;</li>
-	 * </ul>
-	 *
-	 * @param mixed $data the data to be merged with, must be an array or object implementing Traversable
-	 * @param boolean $recursive whether the merging should be recursive.
-	 *
-	 * @throws CException If data is neither an array nor an iterator.
-	 */
-	public function mergeWith($data,$recursive=true)
-	{
-		if(!$this->caseSensitive && (is_array($data) || $data instanceof Traversable))
-		{
-			$d=array();
-			foreach($data as $key=>$value)
-				$d[strtolower($key)]=$value;
-			return parent::mergeWith($d,$recursive);
-		}
-		parent::mergeWith($data,$recursive);
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

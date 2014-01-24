@@ -1,66 +1,44 @@
-<?php
-/**
-* Smarty PHPunit tests compilation of {nocache} tag
-*
-* @package PHPunit
-* @author Uwe Tews
-*/
-
-/**
-* class for {nocache} tag tests
-*/
-class CompileNocacheTests extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $this->smarty = SmartyTests::$smarty;
-        SmartyTests::init();
-    }
-
-    static function isRunnable()
-    {
-        return true;
-    }
-
-    /**
-    * test nocache tag caching disabled
-    */
-    public function testNocacheCachingNo()
-    {
-        $this->smarty->caching = 0;
-        $this->smarty->assign('foo', 0);
-        $this->smarty->assign('bar', 'A');
-        $content = $this->smarty->fetch('test_nocache_tag.tpl');
-        $this->assertContains("root 2A", $content);
-        $this->assertContains("include 4A", $content);
-        $this->smarty->assign('foo', 2);
-        $this->smarty->assign('bar', 'B');
-        $content = $this->smarty->fetch('test_nocache_tag.tpl');
-        $this->assertContains("root 4B", $content);
-        $this->assertContains("include 6B", $content);
-    }
-    /**
-    * test nocache tag caching enabled
-    */
-    public function testNocacheCachingYes1()
-    {
-        $this->smarty->caching = 1;
-        $this->smarty->cache_lifetime = 5;
-        $this->smarty->assign('foo', 0);
-        $this->smarty->assign('bar', 'A');
-        $content = $this->smarty->fetch('test_nocache_tag.tpl');
-        $this->assertContains("root 2A", $content);
-        $this->assertContains("include 4A", $content);
-    }
-    public function testNocacheCachingYes2()
-    {
-        $this->smarty->caching = 1;
-        $this->smarty->cache_lifetime = 5;
-
-        $this->smarty->assign('foo', 2);
-        $this->smarty->assign('bar', 'B');
-        $content = $this->smarty->fetch('test_nocache_tag.tpl');
-        $this->assertContains("root 4A", $content);
-        $this->assertContains("include 6A", $content);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

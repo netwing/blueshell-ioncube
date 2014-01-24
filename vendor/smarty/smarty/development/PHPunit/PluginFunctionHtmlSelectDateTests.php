@@ -1,626 +1,348 @@
-<?php
-/**
-* Smarty PHPunit tests of modifier
-*
-* @package PHPunit
-* @author Rodney Rehm
-*/
-
-/**
-* class for modifier tests
-*/
-class PluginFunctionHtmlSelectDateTests extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $this->smarty = SmartyTests::$smarty;
-        SmartyTests::init();
-
-        $this->now = mktime( 15, 0, 0, 2, 20, 2013 );
-    }
-
-    static function isRunnable()
-    {
-        return true;
-    }
-
-    protected $now = null;
-    protected $years = array(
-        'start_2005' => '<option value="2005">2005</option>
-<option value="2006">2006</option>
-<option value="2007">2007</option>
-<option value="2008">2008</option>
-<option value="2009">2009</option>
-<option value="2010">2010</option>
-<option value="2011">2011</option>
-<option value="2012">2012</option>
-<option value="2013" selected="selected">2013</option>',
-        'start_+5' => '<option value="2013" selected="selected">2013</option>
-<option value="2014">2014</option>
-<option value="2015">2015</option>
-<option value="2016">2016</option>
-<option value="2017">2017</option>
-<option value="2018">2018</option>',
-        'start_-5' => '<option value="2008">2008</option>
-<option value="2009">2009</option>
-<option value="2010">2010</option>
-<option value="2011">2011</option>
-<option value="2012">2012</option>
-<option value="2013" selected="selected">2013</option>',
-        'end_2005' => '<option value="2005">2005</option>
-<option value="2006">2006</option>
-<option value="2007">2007</option>
-<option value="2008">2008</option>
-<option value="2009">2009</option>
-<option value="2010">2010</option>
-<option value="2011">2011</option>
-<option value="2012">2012</option>
-<option value="2013" selected="selected">2013</option>',
-        'end_+5' => '<option value="2013" selected="selected">2013</option>
-<option value="2014">2014</option>
-<option value="2015">2015</option>
-<option value="2016">2016</option>
-<option value="2017">2017</option>
-<option value="2018">2018</option>',
-        'end_-5' => '<option value="2008">2008</option>
-<option value="2009">2009</option>
-<option value="2010">2010</option>
-<option value="2011">2011</option>
-<option value="2012">2012</option>
-<option value="2013" selected="selected">2013</option>',
-        'default' => '<option value="2013" selected="selected">2013</option>',
-        'none' => '<option value="2013">2013</option>',
-    );
-
-    protected $months = array(
-        'none' => '<option value="01">January</option>
-<option value="02">February</option>
-<option value="03">March</option>
-<option value="04">April</option>
-<option value="05">May</option>
-<option value="06">June</option>
-<option value="07">July</option>
-<option value="08">August</option>
-<option value="09">September</option>
-<option value="10">October</option>
-<option value="11">November</option>
-<option value="12">December</option>',
-        'default' => '<option value="01">January</option>
-<option value="02" selected="selected">February</option>
-<option value="03">March</option>
-<option value="04">April</option>
-<option value="05">May</option>
-<option value="06">June</option>
-<option value="07">July</option>
-<option value="08">August</option>
-<option value="09">September</option>
-<option value="10">October</option>
-<option value="11">November</option>
-<option value="12">December</option>',
-        'format_%b' => '<option value="01">Jan</option>
-<option value="02" selected="selected">Feb</option>
-<option value="03">Mar</option>
-<option value="04">Apr</option>
-<option value="05">May</option>
-<option value="06">Jun</option>
-<option value="07">Jul</option>
-<option value="08">Aug</option>
-<option value="09">Sep</option>
-<option value="10">Oct</option>
-<option value="11">Nov</option>
-<option value="12">Dec</option>',
-        'format_value_%b' => '<option value="Jan">January</option>
-<option value="Feb" selected="selected">February</option>
-<option value="Mar">March</option>
-<option value="Apr">April</option>
-<option value="May">May</option>
-<option value="Jun">June</option>
-<option value="Jul">July</option>
-<option value="Aug">August</option>
-<option value="Sep">September</option>
-<option value="Oct">October</option>
-<option value="Nov">November</option>
-<option value="Dec">December</option>',
-        'names' => '<option value="01">alpha</option>
-<option value="02" selected="selected">bravo</option>
-<option value="03">charlie</option>
-<option value="04">delta</option>
-<option value="05">echo</option>
-<option value="06">foxtrot</option>
-<option value="07">golf</option>
-<option value="08">hotel</option>
-<option value="09">india</option>
-<option value="10">juliet</option>
-<option value="11">kilo</option>
-<option value="12">lima</option>',
-    );
-
-    protected $days = array(
-        'none' => '<option value="1">01</option>
-<option value="2">02</option>
-<option value="3">03</option>
-<option value="4">04</option>
-<option value="5">05</option>
-<option value="6">06</option>
-<option value="7">07</option>
-<option value="8">08</option>
-<option value="9">09</option>
-<option value="10">10</option>
-<option value="11">11</option>
-<option value="12">12</option>
-<option value="13">13</option>
-<option value="14">14</option>
-<option value="15">15</option>
-<option value="16">16</option>
-<option value="17">17</option>
-<option value="18">18</option>
-<option value="19">19</option>
-<option value="20">20</option>
-<option value="21">21</option>
-<option value="22">22</option>
-<option value="23">23</option>
-<option value="24">24</option>
-<option value="25">25</option>
-<option value="26">26</option>
-<option value="27">27</option>
-<option value="28">28</option>
-<option value="29">29</option>
-<option value="30">30</option>
-<option value="31">31</option>',
-        'default' => '<option value="1">01</option>
-<option value="2">02</option>
-<option value="3">03</option>
-<option value="4">04</option>
-<option value="5">05</option>
-<option value="6">06</option>
-<option value="7">07</option>
-<option value="8">08</option>
-<option value="9">09</option>
-<option value="10">10</option>
-<option value="11">11</option>
-<option value="12">12</option>
-<option value="13">13</option>
-<option value="14">14</option>
-<option value="15">15</option>
-<option value="16">16</option>
-<option value="17">17</option>
-<option value="18">18</option>
-<option value="19">19</option>
-<option value="20" selected="selected">20</option>
-<option value="21">21</option>
-<option value="22">22</option>
-<option value="23">23</option>
-<option value="24">24</option>
-<option value="25">25</option>
-<option value="26">26</option>
-<option value="27">27</option>
-<option value="28">28</option>
-<option value="29">29</option>
-<option value="30">30</option>
-<option value="31">31</option>',
-        'format_%03d' => '<option value="1">001</option>
-<option value="2">002</option>
-<option value="3">003</option>
-<option value="4">004</option>
-<option value="5">005</option>
-<option value="6">006</option>
-<option value="7">007</option>
-<option value="8">008</option>
-<option value="9">009</option>
-<option value="10">010</option>
-<option value="11">011</option>
-<option value="12">012</option>
-<option value="13">013</option>
-<option value="14">014</option>
-<option value="15">015</option>
-<option value="16">016</option>
-<option value="17">017</option>
-<option value="18">018</option>
-<option value="19">019</option>
-<option value="20" selected="selected">020</option>
-<option value="21">021</option>
-<option value="22">022</option>
-<option value="23">023</option>
-<option value="24">024</option>
-<option value="25">025</option>
-<option value="26">026</option>
-<option value="27">027</option>
-<option value="28">028</option>
-<option value="29">029</option>
-<option value="30">030</option>
-<option value="31">031</option>',
-        'format_value_%03d' => '<option value="001">01</option>
-<option value="002">02</option>
-<option value="003">03</option>
-<option value="004">04</option>
-<option value="005">05</option>
-<option value="006">06</option>
-<option value="007">07</option>
-<option value="008">08</option>
-<option value="009">09</option>
-<option value="010">10</option>
-<option value="011">11</option>
-<option value="012">12</option>
-<option value="013">13</option>
-<option value="014">14</option>
-<option value="015">15</option>
-<option value="016">16</option>
-<option value="017">17</option>
-<option value="018">18</option>
-<option value="019">19</option>
-<option value="020" selected="selected">20</option>
-<option value="021">21</option>
-<option value="022">22</option>
-<option value="023">23</option>
-<option value="024">24</option>
-<option value="025">25</option>
-<option value="026">26</option>
-<option value="027">27</option>
-<option value="028">28</option>
-<option value="029">29</option>
-<option value="030">30</option>
-<option value="031">31</option>',
-    );
-
-    protected function reverse($string)
-    {
-        $t = explode( "\n", $string );
-        $t = array_reverse($t);
-
-        return join("\n", $t);
-    }
-
-    public function testDefault()
-    {
-        $n = "\n";
-        $result = '<select name="Date_Month">'.$n. $this->months['default'] .$n.'</select>'
-            .$n.'<select name="Date_Day">'.$n. $this->days['default'] .$n.'</select>'
-            .$n.'<select name="Date_Year">'.$n. $this->years['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time='. $this->now .'}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testPrefix()
-    {
-        $n = "\n";
-        $result = '<select name="foobar_Month">'.$n. $this->months['default'] .$n.'</select>'
-            .$n.'<select name="foobar_Day">'.$n. $this->days['default'] .$n.'</select>'
-            .$n.'<select name="foobar_Year">'.$n. $this->years['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time='. $this->now .' prefix="foobar_"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testFieldArray()
-    {
-        $n = "\n";
-        $result = '<select name="namorized[Date_Month]">'.$n. $this->months['default'] .$n.'</select>'
-            .$n.'<select name="namorized[Date_Day]">'.$n. $this->days['default'] .$n.'</select>'
-            .$n.'<select name="namorized[Date_Year]">'.$n. $this->years['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time='. $this->now .' field_array="namorized"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="namorized[foobar_Month]">'.$n. $this->months['default'] .$n.'</select>'
-            .$n.'<select name="namorized[foobar_Day]">'.$n. $this->days['default'] .$n.'</select>'
-            .$n.'<select name="namorized[foobar_Year]">'.$n. $this->years['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time='. $this->now .' field_array="namorized" prefix="foobar_"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testExtra()
-    {
-        $n = "\n";
-        $result = '<select name="Date_Month" data-foo="xy">'.$n. $this->months['default'] .$n.'</select>'
-            .$n.'<select name="Date_Day" data-foo="xy">'.$n. $this->days['default'] .$n.'</select>'
-            .$n.'<select name="Date_Year" data-foo="xy">'.$n. $this->years['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time='. $this->now .' all_extra="data-foo=\"xy\""}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="Date_Month" data-foo="month">'.$n. $this->months['default'] .$n.'</select>'
-            .$n.'<select name="Date_Day" data-foo="day">'.$n. $this->days['default'] .$n.'</select>'
-            .$n.'<select name="Date_Year" data-foo="year">'.$n. $this->years['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time='. $this->now .' day_extra="data-foo=\"day\"" month_extra="data-foo=\"month\"" year_extra="data-foo=\"year\""}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="Date_Month" data_foo="foo">'.$n. $this->months['default'] .$n.'</select>'
-            .$n.'<select name="Date_Day" data_foo="foo">'.$n. $this->days['default'] .$n.'</select>'
-            .$n.'<select name="Date_Year" data_foo="foo">'.$n. $this->years['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time='. $this->now .' data_foo="foo"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testFieldOrder()
-    {
-        $n = "\n";
-        $result = '<select name="Date_Day">'.$n. $this->days['default'] .$n.'</select>'
-            .$n.'<select name="Date_Month">'.$n. $this->months['default'] .$n.'</select>'
-            .$n.'<select name="Date_Year">'.$n. $this->years['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time='. $this->now .' field_order="DMY"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="Date_Year">'.$n. $this->years['default'] .$n.'</select>'
-            .$n.'<select name="Date_Month">'.$n. $this->months['default'] .$n.'</select>'
-            .$n.'<select name="Date_Day">'.$n. $this->days['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time='. $this->now .' field_order="YMD"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-    }
-
-    public function testFieldSeparator()
-    {
-        $n = "\n";
-        $result = '<select name="Date_Day">'.$n. $this->days['default'] .$n.'</select>'
-            .' - <select name="Date_Month">'.$n. $this->months['default'] .$n.'</select>'
-            .' - <select name="Date_Year">'.$n. $this->years['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time='. $this->now .' field_order="DMY" field_separator=" - "}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="Date_Year">'.$n. $this->years['default'] .$n.'</select>'
-            .' / <select name="Date_Month">'.$n. $this->months['default'] .$n.'</select>'
-            .' / <select name="Date_Day">'.$n. $this->days['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time='. $this->now .' field_order="YMD" field_separator=" / "}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testEmpty()
-    {
-        $n = "\n";
-        $result = '<select name="Date_Month">'.$n.'<option value=""></option>'.$n. $this->months['default'] .$n.'</select>'
-            .$n.'<select name="Date_Day">'.$n.'<option value=""></option>'.$n. $this->days['default'] .$n.'</select>'
-            .$n.'<select name="Date_Year">'.$n.'<option value=""></option>'.$n. $this->years['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time='. $this->now .' all_empty=""}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="Date_Month">'.$n.'<option value="">all</option>'.$n. $this->months['default'] .$n.'</select>'
-            .$n.'<select name="Date_Day">'.$n.'<option value="">all</option>'.$n. $this->days['default'] .$n.'</select>'
-            .$n.'<select name="Date_Year">'.$n.'<option value="">all</option>'.$n. $this->years['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time='. $this->now .' all_empty="all"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="Date_Month">'.$n. $this->months['default'] .$n.'</select>'
-            .$n.'<select name="Date_Day">'.$n. $this->days['default'] .$n.'</select>'
-            .$n.'<select name="Date_Year">'.$n.'<option value=""></option>'.$n. $this->years['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time='. $this->now .' year_empty=""}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="Date_Month">'.$n.'<option value="">month</option>'.$n. $this->months['default'] .$n.'</select>'
-            .$n.'<select name="Date_Day">'.$n.'<option value="">day</option>'.$n. $this->days['default'] .$n.'</select>'
-            .$n.'<select name="Date_Year">'.$n.'<option value="">year</option>'.$n. $this->years['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time='. $this->now .' year_empty="year" month_empty="month" day_empty="day"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testEmptyUnset()
-    {
-        $n = "\n";
-        $result = '<select name="Date_Month">'.$n.'<option value=""></option>'.$n. $this->months['none'] .$n.'</select>'
-            .$n.'<select name="Date_Day">'.$n.'<option value=""></option>'.$n. $this->days['none'] .$n.'</select>'
-            .$n.'<select name="Date_Year">'.$n.'<option value=""></option>'.$n. $this->years['none'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time=null all_empty=""}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="Date_Month">'.$n.'<option value="">all</option>'.$n. $this->months['none'] .$n.'</select>'
-            .$n.'<select name="Date_Day">'.$n.'<option value="">all</option>'.$n. $this->days['none'] .$n.'</select>'
-            .$n.'<select name="Date_Year">'.$n.'<option value="">all</option>'.$n. $this->years['none'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time=null all_empty="all"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="Date_Month">'.$n. $this->months['none'] .$n.'</select>'
-            .$n.'<select name="Date_Day">'.$n. $this->days['none'] .$n.'</select>'
-            .$n.'<select name="Date_Year">'.$n.'<option value=""></option>'.$n. $this->years['none'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time=null year_empty=""}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="Date_Month">'.$n.'<option value="">month</option>'.$n. $this->months['none'] .$n.'</select>'
-            .$n.'<select name="Date_Day">'.$n.'<option value="">day</option>'.$n. $this->days['none'] .$n.'</select>'
-            .$n.'<select name="Date_Year">'.$n.'<option value="">year</option>'.$n. $this->years['none'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time=null year_empty="year" month_empty="month" day_empty="day"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testId()
-    {
-        $n = "\n";
-        $result = '<select name="Date_Month" id="Date_Month">'.$n. $this->months['default'] .$n.'</select>'
-            .$n.'<select name="Date_Day" id="Date_Day">'.$n. $this->days['default'] .$n.'</select>'
-            .$n.'<select name="Date_Year" id="Date_Year">'.$n. $this->years['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time='. $this->now .' all_id=""}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="Date_Month" id="all-Date_Month">'.$n. $this->months['default'] .$n.'</select>'
-            .$n.'<select name="Date_Day" id="all-Date_Day">'.$n. $this->days['default'] .$n.'</select>'
-            .$n.'<select name="Date_Year" id="all-Date_Year">'.$n. $this->years['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time='. $this->now .' all_id="all-"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="Date_Month" id="month">'.$n. $this->months['default'] .$n.'</select>'
-            .$n.'<select name="Date_Day" id="day">'.$n. $this->days['default'] .$n.'</select>'
-            .$n.'<select name="Date_Year" id="year">'.$n. $this->years['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time='. $this->now .' year_id="year" month_id="month" day_id="day"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testStartYearAbsolute()
-    {
-        $n = "\n";
-        $result = '<select name="Date_Month">'.$n. $this->months['default'] .$n.'</select>'
-            .$n.'<select name="Date_Day">'.$n. $this->days['default'] .$n.'</select>'
-            .$n.'<select name="Date_Year">'.$n. $this->years['start_2005'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time='. $this->now .' start_year=2005}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testStartYearRelative()
-    {
-        $n = "\n";
-        $result = '<select name="Date_Month">'.$n. $this->months['default'] .$n.'</select>'
-            .$n.'<select name="Date_Day">'.$n. $this->days['default'] .$n.'</select>'
-            .$n.'<select name="Date_Year">'.$n. $this->years['start_+5'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time='. $this->now .' start_year="+5"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testStartYearRelativeNegative()
-    {
-        $n = "\n";
-        $result = '<select name="Date_Month">'.$n. $this->months['default'] .$n.'</select>'
-            .$n.'<select name="Date_Day">'.$n. $this->days['default'] .$n.'</select>'
-            .$n.'<select name="Date_Year">'.$n. $this->years['start_-5'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time='. $this->now .' start_year="-5"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testEndYearAbsolute()
-    {
-        $n = "\n";
-        $result = '<select name="Date_Month">'.$n. $this->months['default'] .$n.'</select>'
-            .$n.'<select name="Date_Day">'.$n. $this->days['default'] .$n.'</select>'
-            .$n.'<select name="Date_Year">'.$n. $this->years['end_2005'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time='. $this->now .' end_year=2005}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testEndYearRelative()
-    {
-        $n = "\n";
-        $result = '<select name="Date_Month">'.$n. $this->months['default'] .$n.'</select>'
-            .$n.'<select name="Date_Day">'.$n. $this->days['default'] .$n.'</select>'
-            .$n.'<select name="Date_Year">'.$n. $this->years['end_+5'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time='. $this->now .' end_year="+5"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testEndYearRelativeNegative()
-    {
-        $n = "\n";
-        $result = '<select name="Date_Month">'.$n. $this->months['default'] .$n.'</select>'
-            .$n.'<select name="Date_Day">'.$n. $this->days['default'] .$n.'</select>'
-            .$n.'<select name="Date_Year">'.$n. $this->years['end_-5'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time='. $this->now .' end_year="-5"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testDisplayDaysMonthYear()
-    {
-        $n = "\n";
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time='. $this->now .' display_days=false}');
-        $result = '<select name="Date_Month">'.$n. $this->months['default'] .$n.'</select>'
-            .$n.'<select name="Date_Year">'.$n. $this->years['default'] .$n.'</select>';
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time='. $this->now .' display_months=false}');
-        $result = '<select name="Date_Day">'.$n. $this->days['default'] .$n.'</select>'
-           .$n.'<select name="Date_Year">'.$n. $this->years['default'] .$n.'</select>';
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time='. $this->now .' display_years=false}');
-        $result = '<select name="Date_Month">'.$n. $this->months['default'] .$n.'</select>'
-            .$n.'<select name="Date_Day">'.$n. $this->days['default'] .$n.'</select>';
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testYearsReversed()
-    {
-        $n = "\n";
-        $result = '<select name="Date_Month">'.$n. $this->months['default'] .$n.'</select>'
-            .$n.'<select name="Date_Day">'.$n. $this->days['default'] .$n.'</select>'
-            .$n.'<select name="Date_Year">'.$n. $this->reverse($this->years['start_2005']) .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time='. $this->now .' start_year=2005 reverse_years=true}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="Date_Month">'.$n. $this->months['default'] .$n.'</select>'
-            .$n.'<select name="Date_Day">'.$n. $this->days['default'] .$n.'</select>'
-            .$n.'<select name="Date_Year">'.$n. $this->reverse($this->years['start_+5']) .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time='. $this->now .' start_year="+5" reverse_years=true}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testYearText()
-    {
-        $n = "\n";
-        $result = '<select name="Date_Month">'.$n. $this->months['default'] .$n.'</select>'
-            .$n.'<select name="Date_Day">'.$n. $this->days['default'] .$n.'</select>'
-            .$n.'<input type="text" name="Date_Year" value="2013" size="4" maxlength="4" />';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time='. $this->now .' year_as_text=true}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $result = '<select name="foo_Month">'.$n. $this->months['default'] .$n.'</select>'
-            .$n.'<select name="foo_Day">'.$n. $this->days['default'] .$n.'</select>'
-            .$n.'<input type="text" name="foo_Year" value="2013" size="4" maxlength="4" />';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time='. $this->now .' year_as_text=true prefix="foo_"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testMonthFormat()
-    {
-        $n = "\n";
-        $result = '<select name="Date_Month">'.$n. $this->months['format_%b'] .$n.'</select>'
-            .$n.'<select name="Date_Day">'.$n. $this->days['default'] .$n.'</select>'
-            .$n.'<select name="Date_Year">'.$n. $this->years['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time='. $this->now .' month_format="%b"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testMonthFormatValue()
-    {
-        $n = "\n";
-        $result = '<select name="Date_Month">'.$n. $this->months['format_value_%b'] .$n.'</select>'
-            .$n.'<select name="Date_Day">'.$n. $this->days['default'] .$n.'</select>'
-            .$n.'<select name="Date_Year">'.$n. $this->years['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time='. $this->now .' month_value_format="%b"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testMonthNames()
-    {
-        $n = "\n";
-        $result = '<select name="Date_Month">'.$n. $this->months['names'] .$n.'</select>'
-            .$n.'<select name="Date_Day">'.$n. $this->days['default'] .$n.'</select>'
-            .$n.'<select name="Date_Year">'.$n. $this->years['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{$names = [1 => "alpha","bravo","charlie","delta","echo","foxtrot","golf","hotel","india","juliet","kilo","lima"]}{html_select_date time='. $this->now .' month_names=$names}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testDayFormat()
-    {
-        $n = "\n";
-        $result = '<select name="Date_Month">'.$n. $this->months['default'] .$n.'</select>'
-            .$n.'<select name="Date_Day">'.$n. $this->days['format_%03d'] .$n.'</select>'
-            .$n.'<select name="Date_Year">'.$n. $this->years['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time='. $this->now .' day_format="%03d"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testDayFormatValue()
-    {
-        $n = "\n";
-        $result = '<select name="Date_Month">'.$n. $this->months['default'] .$n.'</select>'
-            .$n.'<select name="Date_Day">'.$n. $this->days['format_value_%03d'] .$n.'</select>'
-            .$n.'<select name="Date_Year">'.$n. $this->years['default'] .$n.'</select>';
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time='. $this->now .' day_value_format="%03d"}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testTimeArray()
-    {
-        $n = "\n";
-        $result = '<select name="namorized[foobar_Month]">'.$n. $this->months['default'] .$n.'</select>'
-            .$n.'<select name="namorized[foobar_Day]">'.$n. $this->days['default'] .$n.'</select>'
-            .$n.'<select name="namorized[foobar_Year]">'.$n. $this->years['default'] .$n.'</select>';
-
-        $date_array = array(
-            'namorized' => array(
-                'foobar_Month' => '02',
-                'foobar_Day' => '20',
-                'foobar_Year' => '2013',
-            ),
-        );
-
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time=$date_array.namorized field_array="namorized" prefix="foobar_"}');
-        $tpl->assign('date_array', $date_array);
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-
-        $tpl = $this->smarty->createTemplate('eval:{html_select_date time=$date_array field_array="namorized" prefix="foobar_"}');
-        $tpl->assign('date_array', $date_array);
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

@@ -1,92 +1,45 @@
-<?php
-/**
- * Timepicker class file.
- * @author Emanuele Deserti <emanuele.deserti@netwing.it>
- * @copyright Copyright &copy; Emanuele Deserti 2013-
- * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
- * @package netwing
- * @version 1.0.0
- */
-
-/**
- * Timepicker component.
- */
-class Timepicker extends CApplicationComponent
-{
-    /**
-     * @var bool whether we should copy the asset file or directory even if it is already published before.
-     */
-    public $forceCopyAssets = false;
-
-    private $_assetsUrl;
-
-    /**
-     * Registers the Font awesome CSS.
-     * @param string $url the URL to the CSS file to register.
-     */
-    public function registerCss($url = null)
-    {
-        if ($url === null) {
-            $fileName = YII_DEBUG ? 'jquery-ui-timepicker-addon.css' : 'jquery-ui-timepicker-addon.min.css';
-            $url = $this->getAssetsUrl() . "/" . $fileName;
-        }
-        Yii::app()->clientScript->registerCssFile($url);
-    }
-
-    /**
-     * Registers all Bootstrap CSS files.
-     */
-    public function registerAllCss()
-    {
-        $this->registerCss();
-    }
-
-    /**
-     * Registers the js file
-     * @param string $url the URL to the CSS file to register.
-     */
-    public function registerJs($url = null)
-    {
-        if ($url === null) {
-            $fileName = YII_DEBUG ? 'jquery-ui-timepicker-addon.js' : 'jquery-ui-timepicker-addon.min.js';
-            $url = $this->getAssetsUrl() . "/" . $fileName;
-        }
-        Yii::app()->clientScript->registerScriptFile($url, CClientScript::POS_END);
-    }
-
-    /**
-     * Registers all Bootstrap CSS files.
-     */
-    public function registerAllJs()
-    {
-        $this->registerJs();
-    }
-
-
-    /**
-     * Registers all assets.
-     */
-    public function register()
-    {
-        $this->registerAllCss();
-        $this->registerAllJs();
-    }
-
-    /**
-     * Returns the url to the published assets folder.
-     * @return string the url.
-     */
-    public function getAssetsUrl()
-    {
-        if (isset($this->_assetsUrl)) {
-            return $this->_assetsUrl;
-        } else {
-            // Save default exclude files
-            $excludeFiles = Yii::app()->assetManager->excludeFiles;
-            $assetsPath = Yii::getPathOfAlias('bower.jquery-timepicker-addon');
-            $assetsUrl = Yii::app()->assetManager->publish($assetsPath, true, -1, $this->forceCopyAssets);
-            return $this->_assetsUrl = $assetsUrl;
-        }
-    }
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+5b0bYVKhjDeZOqO=

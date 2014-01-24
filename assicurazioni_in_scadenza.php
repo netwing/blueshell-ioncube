@@ -1,28 +1,33 @@
-<?php
-require_once("config.inc.php");
-// Inclusione del file di configurazione generale
-$blue->autentica_utente("imbarcazioni","R");
-// Raccolta delle imbarcazioni con scadenza imminente nei contratti in essere...
-$select_polizze="SELECT barca_id,barca_nome,barca_proprietario,cliente_nominativo,barca_scadenza_polizza,contratto_tipo FROM ".$tabelle['barche'].",".$tabelle['clienti'].",".$tabelle['contratti']." WHERE barca_scadenza_polizza BETWEEN NOW()-INTERVAL 1 YEAR AND NOW()+INTERVAL 30 DAY AND cliente_id=barca_proprietario AND contratto_inizio<=NOW() AND contratto_fine>=NOW() AND barca_id=contratto_barca AND contratto_tipo!='4' GROUP BY barca_id ORDER BY barca_scadenza_polizza ASC";
-$result_polizze=$sql->select_query($select_polizze);
-// Carichiamo le polizze di assicurazione in scadenza
-$polizze=array();
-while($row_polizze=mysql_fetch_array($result_polizze))
-{
-	$data=$sql->data_ita($row_polizze['barca_scadenza_polizza']);
-	$row_polizze['barca_scadenza_polizza']=$data[0];
-	$polizze[]=$row_polizze;
-}
-// Eseguiamo lo stesso procedimento per le presenze
-$select_polizze="SELECT barca_id,barca_nome,barca_proprietario,cliente_nominativo,barca_scadenza_polizza FROM ".$tabelle['barche'].",".$tabelle['clienti'].",".$tabelle['presenze']." WHERE barca_scadenza_polizza BETWEEN NOW()-INTERVAL 1 YEAR AND NOW()+INTERVAL 30 DAY AND cliente_id=barca_proprietario AND presenza_arrivo<=NOW() AND (presenza_partenza>=NOW() OR presenza_partenza='0000-00-00') AND barca_id=presenza_barca GROUP BY barca_id ORDER BY barca_scadenza_polizza ASC";
-$result_polizze=$sql->select_query($select_polizze);
-// Carichiamo le polizze di assicurazione in scadenza
-//$polizze=array();
-while($row_polizze=mysql_fetch_array($result_polizze))
-{
-	$data=$sql->data_ita($row_polizze['barca_scadenza_polizza']);
-	$row_polizze['barca_scadenza_polizza']=$data[0];
-	$polizze[]=$row_polizze;
-}
-
-require_once "views/vector/expiring_insurance.php";
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+s1WXJMlNPg86FbH+XcoCYUAOwUdRiwMDrBoN

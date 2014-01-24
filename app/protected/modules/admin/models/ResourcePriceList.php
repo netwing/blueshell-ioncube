@@ -1,75 +1,41 @@
-<?php
-
-Yii::import('application.modules.admin.models.base.BaseResourcePriceList');
-
-class ResourcePriceList extends BaseResourcePriceList
-{
-
-    /**
-     * @return array relational rules.
-     */
-    public function relations()
-    {
-        // NOTE: you may need to adjust the relation name and the related
-        // class name for the relations automatically generated below.
-        return array_merge(parent::relations(), array(
-            // DB relation
-            'dimension' => array(self::BELONGS_TO, 'Dimension', 'listino_posto_barca_anno'),
-        ));
-    }
-
-    /**
-     * Parameterized named scope
-     * Get model in year
-     */
-    public function onYear($year = null)
-    {
-        if ($this->listino_posto_barca_anno === null) {
-            return $this;
-        }
-        $this->getDbCriteria()->addCondition('listino_posto_barca_anno = ' . (int) $this->listino_posto_barca_anno);
-        return $this;
-    }
-
-    /**
-     * Get year for ResourcePriceList
-     */
-    public static function getYears()
-    {
-        $cmd = Yii::app()->db->createCommand()
-                ->selectDistinct('listino_posto_barca_anno AS year')
-                ->from("{{listini_posti_barca}}");
-        $years = $cmd->queryColumn();
-
-        $years = array_unique($years);
-        rsort($years);
-        $years = array_combine($years, $years);
-
-        return $years;
-    }
-
-    /**
-     * Returns the static model of the specified AR class.
-     * Please note that you should have this exact method in all your CActiveRecord descendants!
-     * @param string $className active record class name.
-     * @return ResourcePriceList the static model class
-     */
-    public static function model($className=__CLASS__)
-    {
-        return parent::model($className);
-    }
-
-    /**
-     * Behavior for timestamp
-     */
-    public function behaviors(){
-        return array(
-            // 'CTimestampBehavior' => array(
-                // 'class' => 'zii.behaviors.CTimestampBehavior',
-                // 'createAttribute' => 'create_time',
-                // 'updateAttribute' => 'update_time',
-            // )
-        );
-    }
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

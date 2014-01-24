@@ -1,170 +1,86 @@
-#!/usr/bin/env php -q
-<?php
-/**
-* Generates a package.xml file for simpletest
-*/
-/*---------------------------------------------------------------------------*/
-// Modify this - path the the source code - no trailing slash
-$packagedir = '/home/username/simpletest';
-/*---------------------------------------------------------------------------*/
-// Modify this - the version / state of the package
-$version = '0.9.4';
-$state = 'beta'; // alpha / beta / stable
-/*---------------------------------------------------------------------------*/
-// Modify the release notes. Try to keep under 80 chars width
-$releaseNotes = <<<EOD
-This is the final version of the PHP unit and web testing tool before the
-stable release 1.0 version. It features many improvements to the HTML form
-parsing and exposure of the underlying web browser. There are also numerous
-minor improvements and bug fixes.
-EOD;
-/*---------------------------------------------------------------------------*/
-// Modify short description. Try to keep under 80 chars width
-$shortDesc = <<<EOD
-Unit testing, mock objects and web testing framework for PHP.
-EOD;
-/*---------------------------------------------------------------------------*/
-// Modify long description. Try to keep under 80 chars width
-$longDesc = <<<EOD
-The heart of SimpleTest is a testing framework built around test case classes.
-These are written as extensions of base test case classes, each extended with
-methods that actually contain test code. Top level test scripts then invoke
-the run()  methods on every one of these test cases in order. Each test
-method is written to invoke various assertions that the developer expects to
-be true such as assertEqual(). If the expectation is correct, then a
-successful result is dispatched to the observing test reporter, but any
-failure triggers an alert and a description of the mismatch.
-
-These tools are designed for the developer. Tests are written in the PHP
-language itself more or less as the application itself is built. The advantage
-of using PHP itself as the testing language is that there are no new languages
-to learn, testing can start straight away, and the developer can test any part
-of the code. Basically, all parts that can be accessed by the application code
-can also be accessed by the test code if they are in the same language. 
-EOD;
-/*---------------------------------------------------------------------------*/
-// Modify the maintainers are required
-$maintainers = array (
-	array ('handle'=>'lastcraft','role'=>'lead','name'=>'Marcus Baker', 'email'=>'marcus@lastcraft.com'),
-	array ('handle'=>'jsweat','role'=>'helper','name'=>'Jason Sweat', 'email'=>'jsweat_php@yahoo.com'),
-	array ('handle'=>'hfuecks','role'=>'helper','name'=>'Harry Fuecks', 'email'=>'hfuecks@phppatterns.com'),
-);
-/*---------------------------------------------------------------------------*/
-
-/**
-* Code starts here
-*/
-require_once('PEAR/PackageFileManager.php');
-$PPFM = new PEAR_PackageFileManager;
-
-if (version_compare(phpversion(), '4.3.0', '<') ||
-    php_sapi_name() == 'cgi') {
-    define('STDOUT', fopen('php://stdout', 'w'));
-    define('STDERR', fopen('php://stderr', 'w'));
-    register_shutdown_function(
-        create_function('', 'fclose(STDOUT); fclose(STDERR); return true;'));
-}
-
-/**
-* A giant array to configure the PackageFileManager. For the "roles" see
-* http://pear.php.net/manual/en/developers.packagedef.php
-*/
-$options = array(
-	'baseinstalldir' => 'simpletest',
-	'version' => $version,
-	'packagedirectory' => $packagedir,
-	'outputdirectory' => $packagedir,
-	'pathtopackagefile' => $packagedir, 
-	'state' => $state,
-	'summary' => $shortDesc,
-	'description' => $longDesc,
-	'filelistgenerator' => 'file',
-	'notes' => $releaseNotes,
-	'package' => 'SimpleTest',
-	'license' => 'The Open Group Test Suite License',
-
-	'dir_roles' => array(
-		'docs' => 'doc',
-		'test' => 'test',
-		'extensions' => 'php',
-		//'tutorials' => 'doc',
-		//'tutorials/SimpleTest' => 'doc',
-		//'ui' => 'php',
-		//'ui/css' => 'data',
-		//'ui/img' => 'data',
-		//'ui/js' => 'data',
-		//'ui/js/tests' => 'test',
-		),
-	'exceptions' =>
-		array(
-			'HELP_MY_TESTS_DONT_WORK_ANYMORE' => 'doc',
-			'LICENSE' => 'doc',
-			'README' => 'doc',
-			'TODO' => 'doc',
-			'VERSION' => 'doc',
-		),
-	'ignore' => 
-		array(
-			"$packagedir/packages",
-			"$packagedir/ui",
-			),
-	);
-
-$status = $PPFM->setOptions($options);
-
-if (PEAR::isError($status)) {
-    fwrite (STDERR,$status->getMessage());
-    exit;
-}
-
-foreach ( $maintainers as $maintainer ) {
-	$PPFM->addMaintainer(
-		$maintainer['handle'],
-		$maintainer['role'],
-		$maintainer['name'],
-		$maintainer['email'] );
-}
-
-// Adds a dependency of PHP 4.2.3+
-$status = $PPFM->addDependency('php', '4.2.3', 'ge', 'php');
-if (PEAR::isError($status)) {
-    fwrite (STDERR,$status->getMessage());
-    exit;
-}
-
-// hack (apparently)
-$PPFM->addRole('tpl', 'php');
-$PPFM->addRole('png', 'php');
-$PPFM->addRole('gif', 'php');
-$PPFM->addRole('jpg', 'php');
-$PPFM->addRole('css', 'php');
-$PPFM->addRole('js', 'php');
-$PPFM->addRole('ini', 'php');
-$PPFM->addRole('inc', 'php');
-$PPFM->addRole('afm', 'php');
-$PPFM->addRole('pkg', 'doc');
-$PPFM->addRole('cls', 'doc');
-$PPFM->addRole('proc', 'doc');
-$PPFM->addRole('sh', 'script');
-
-ob_start();
-$status = $PPFM->writePackageFile(false);
-$output = ob_get_contents();
-ob_end_clean();
-
-// Hacks to handle PPFM output
-$start = strpos ($output,"<?xml");
-if ( $start != 0 ) {
-	$errors = substr($output,0,($start-1));
-	$output = substr($output,$start);
-	$errors = explode("\n",$errors);
-	foreach ( $errors as $error ) {
-		fwrite (STDERR,$error."\n");
-	}
-}
-fwrite(STDOUT,$output);
-
-if (PEAR::isError($status)) {
-	fwrite (STDERR,$status->getMessage());
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

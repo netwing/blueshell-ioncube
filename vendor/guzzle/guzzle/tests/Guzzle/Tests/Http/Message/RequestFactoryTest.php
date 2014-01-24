@@ -1,614 +1,455 @@
-<?php
-
-namespace Guzzle\Tests\Http\Message;
-
-use Guzzle\Common\Collection;
-use Guzzle\Http\Client;
-use Guzzle\Http\Message\Response;
-use Guzzle\Http\Url;
-use Guzzle\Http\EntityBody;
-use Guzzle\Http\Message\RequestFactory;
-use Guzzle\Http\Message\Request;
-use Guzzle\Http\QueryString;
-use Guzzle\Parser\Message\MessageParser;
-use Guzzle\Plugin\Log\LogPlugin;
-use Guzzle\Plugin\Mock\MockPlugin;
-
-/**
- * @group server
- * @covers Guzzle\Http\Message\RequestFactory
- */
-class HttpRequestFactoryTest extends \Guzzle\Tests\GuzzleTestCase
-{
-    public function testCachesSingletonInstance()
-    {
-        $factory = RequestFactory::getInstance();
-        $this->assertSame($factory, RequestFactory::getInstance());
-    }
-
-    public function testCreatesNewGetRequests()
-    {
-        $request = RequestFactory::getInstance()->create('GET', 'http://www.google.com/');
-        $this->assertInstanceOf('Guzzle\\Http\\Message\\MessageInterface', $request);
-        $this->assertInstanceOf('Guzzle\\Http\\Message\\RequestInterface', $request);
-        $this->assertInstanceOf('Guzzle\\Http\\Message\\Request', $request);
-        $this->assertEquals('GET', $request->getMethod());
-        $this->assertEquals('http', $request->getScheme());
-        $this->assertEquals('http://www.google.com/', $request->getUrl());
-        $this->assertEquals('www.google.com', $request->getHost());
-        $this->assertEquals('/', $request->getPath());
-        $this->assertEquals('/', $request->getResource());
-
-        // Create a GET request with a custom receiving body
-        $this->getServer()->enqueue("HTTP/1.1 200 OK\r\nContent-Length: 0\r\n\r\n");
-        $b = EntityBody::factory();
-        $request = RequestFactory::getInstance()->create('GET', $this->getServer()->getUrl(), null, $b);
-        $request->setClient(new Client());
-        $response = $request->send();
-        $this->assertSame($b, $response->getBody());
-    }
-
-    public function testCreatesPutRequests()
-    {
-        // Test using a string
-        $request = RequestFactory::getInstance()->create('PUT', 'http://www.google.com/path?q=1&v=2', null, 'Data');
-        $this->assertInstanceOf('Guzzle\\Http\\Message\\EntityEnclosingRequest', $request);
-        $this->assertEquals('PUT', $request->getMethod());
-        $this->assertEquals('http', $request->getScheme());
-        $this->assertEquals('http://www.google.com/path?q=1&v=2', $request->getUrl());
-        $this->assertEquals('www.google.com', $request->getHost());
-        $this->assertEquals('/path', $request->getPath());
-        $this->assertEquals('/path?q=1&v=2', $request->getResource());
-        $this->assertInstanceOf('Guzzle\\Http\\EntityBody', $request->getBody());
-        $this->assertEquals('Data', (string) $request->getBody());
-        unset($request);
-
-        // Test using an EntityBody
-        $request = RequestFactory::getInstance()->create('PUT', 'http://www.google.com/path?q=1&v=2', null, EntityBody::factory('Data'));
-        $this->assertInstanceOf('Guzzle\\Http\\Message\\EntityEnclosingRequest', $request);
-        $this->assertEquals('Data', (string) $request->getBody());
-
-        // Test using a resource
-        $resource = fopen('php://temp', 'w+');
-        fwrite($resource, 'Data');
-        $request = RequestFactory::getInstance()->create('PUT', 'http://www.google.com/path?q=1&v=2', null, $resource);
-        $this->assertInstanceOf('Guzzle\\Http\\Message\\EntityEnclosingRequest', $request);
-        $this->assertEquals('Data', (string) $request->getBody());
-
-        // Test using an object that can be cast as a string
-        $request = RequestFactory::getInstance()->create('PUT', 'http://www.google.com/path?q=1&v=2', null, Url::factory('http://www.example.com/'));
-        $this->assertInstanceOf('Guzzle\\Http\\Message\\EntityEnclosingRequest', $request);
-        $this->assertEquals('http://www.example.com/', (string) $request->getBody());
-    }
-
-    public function testCreatesHeadAndDeleteRequests()
-    {
-        $request = RequestFactory::getInstance()->create('DELETE', 'http://www.test.com/');
-        $this->assertEquals('DELETE', $request->getMethod());
-        $request = RequestFactory::getInstance()->create('HEAD', 'http://www.test.com/');
-        $this->assertEquals('HEAD', $request->getMethod());
-    }
-
-    public function testCreatesOptionsRequests()
-    {
-        $request = RequestFactory::getInstance()->create('OPTIONS', 'http://www.example.com/');
-        $this->assertEquals('OPTIONS', $request->getMethod());
-        $this->assertInstanceOf('Guzzle\\Http\\Message\\Request', $request);
-    }
-
-    public function testCreatesNewPutRequestWithBody()
-    {
-        $request = RequestFactory::getInstance()->create('PUT', 'http://www.google.com/path?q=1&v=2', null, 'Data');
-        $this->assertEquals('Data', (string) $request->getBody());
-    }
-
-    public function testCreatesNewPostRequestWithFields()
-    {
-        // Use an array
-        $request = RequestFactory::getInstance()->create('POST', 'http://www.google.com/path?q=1&v=2', null, array(
-            'a' => 'b'
-        ));
-        $this->assertEquals(array('a' => 'b'), $request->getPostFields()->getAll());
-        unset($request);
-
-        // Use a collection
-        $request = RequestFactory::getInstance()->create('POST', 'http://www.google.com/path?q=1&v=2', null, new Collection(array(
-            'a' => 'b'
-        )));
-        $this->assertEquals(array('a' => 'b'), $request->getPostFields()->getAll());
-
-        // Use a QueryString
-        $request = RequestFactory::getInstance()->create('POST', 'http://www.google.com/path?q=1&v=2', null, new QueryString(array(
-            'a' => 'b'
-        )));
-        $this->assertEquals(array('a' => 'b'), $request->getPostFields()->getAll());
-
-        $request = RequestFactory::getInstance()->create('POST', 'http://www.test.com/', null, array(
-            'a' => 'b',
-            'file' => '@' . __FILE__
-        ));
-
-        $this->assertEquals(array(
-            'a' => 'b'
-        ), $request->getPostFields()->getAll());
-
-        $files = $request->getPostFiles();
-        $this->assertInstanceOf('Guzzle\Http\Message\PostFile', $files['file'][0]);
-    }
-
-    public function testCreatesFromParts()
-    {
-        $parts = parse_url('http://michael:123@www.google.com:8080/path?q=1&v=2');
-
-        $request = RequestFactory::getInstance()->fromParts('PUT', $parts, null, 'Data');
-        $this->assertInstanceOf('Guzzle\\Http\\Message\\EntityEnclosingRequest', $request);
-        $this->assertEquals('PUT', $request->getMethod());
-        $this->assertEquals('http', $request->getScheme());
-        $this->assertEquals('http://www.google.com:8080/path?q=1&v=2', $request->getUrl());
-        $this->assertEquals('www.google.com', $request->getHost());
-        $this->assertEquals('www.google.com:8080', $request->getHeader('Host'));
-        $this->assertEquals('/path', $request->getPath());
-        $this->assertEquals('/path?q=1&v=2', $request->getResource());
-        $this->assertInstanceOf('Guzzle\\Http\\EntityBody', $request->getBody());
-        $this->assertEquals('Data', (string) $request->getBody());
-        $this->assertEquals('michael', $request->getUsername());
-        $this->assertEquals('123', $request->getPassword());
-        $this->assertEquals('8080', $request->getPort());
-        $this->assertEquals(array(
-            'scheme' => 'http',
-            'host' => 'www.google.com',
-            'port' => 8080,
-            'path' => '/path',
-            'query' => 'q=1&v=2',
-        ), parse_url($request->getUrl()));
-    }
-
-    public function testCreatesFromMessage()
-    {
-        $auth = base64_encode('michael:123');
-        $message = "PUT /path?q=1&v=2 HTTP/1.1\r\nHost: www.google.com:8080\r\nContent-Length: 4\r\nAuthorization: Basic {$auth}\r\n\r\nData";
-        $request = RequestFactory::getInstance()->fromMessage($message);
-        $this->assertInstanceOf('Guzzle\\Http\\Message\\EntityEnclosingRequest', $request);
-        $this->assertEquals('PUT', $request->getMethod());
-        $this->assertEquals('http', $request->getScheme());
-        $this->assertEquals('http://www.google.com:8080/path?q=1&v=2', $request->getUrl());
-        $this->assertEquals('www.google.com', $request->getHost());
-        $this->assertEquals('www.google.com:8080', $request->getHeader('Host'));
-        $this->assertEquals('/path', $request->getPath());
-        $this->assertEquals('/path?q=1&v=2', $request->getResource());
-        $this->assertInstanceOf('Guzzle\\Http\\EntityBody', $request->getBody());
-        $this->assertEquals('Data', (string) $request->getBody());
-        $this->assertEquals("Basic {$auth}", (string) $request->getHeader('Authorization'));
-        $this->assertEquals('8080', $request->getPort());
-
-        // Test passing a blank message returns false
-        $this->assertFalse($request = RequestFactory::getInstance()->fromMessage(''));
-
-        // Test passing a url with no port
-        $message = "PUT /path?q=1&v=2 HTTP/1.1\r\nHost: www.google.com\r\nContent-Length: 4\r\nAuthorization: Basic {$auth}\r\n\r\nData";
-        $request = RequestFactory::getInstance()->fromMessage($message);
-        $this->assertInstanceOf('Guzzle\\Http\\Message\\EntityEnclosingRequest', $request);
-        $this->assertEquals('PUT', $request->getMethod());
-        $this->assertEquals('http', $request->getScheme());
-        $this->assertEquals('http://www.google.com/path?q=1&v=2', $request->getUrl());
-        $this->assertEquals('www.google.com', $request->getHost());
-        $this->assertEquals('/path', $request->getPath());
-        $this->assertEquals('/path?q=1&v=2', $request->getResource());
-        $this->assertInstanceOf('Guzzle\\Http\\EntityBody', $request->getBody());
-        $this->assertEquals('Data', (string) $request->getBody());
-        $this->assertEquals("Basic {$auth}", (string) $request->getHeader('Authorization'));
-        $this->assertEquals(80, $request->getPort());
-    }
-
-    public function testCreatesNewTraceRequest()
-    {
-        $request = RequestFactory::getInstance()->create('TRACE', 'http://www.google.com/');
-        $this->assertFalse($request instanceof \Guzzle\Http\Message\EntityEnclosingRequest);
-        $this->assertEquals('TRACE', $request->getMethod());
-    }
-
-    public function testCreatesProperTransferEncodingRequests()
-    {
-        $request = RequestFactory::getInstance()->create('PUT', 'http://www.google.com/', array(
-            'Transfer-Encoding' => 'chunked'
-        ), 'hello');
-        $this->assertEquals('chunked', $request->getHeader('Transfer-Encoding'));
-        $this->assertFalse($request->hasHeader('Content-Length'));
-    }
-
-    public function testProperlyDealsWithDuplicateHeaders()
-    {
-        $parser = new MessageParser();
-
-        $message = "POST / http/1.1\r\n"
-            . "DATE:Mon, 09 Sep 2011 23:36:00 GMT\r\n"
-            . "host:host.foo.com\r\n"
-            . "ZOO:abc\r\n"
-            . "ZOO:123\r\n"
-            . "ZOO:HI\r\n"
-            . "zoo:456\r\n\r\n";
-
-        $parts = $parser->parseRequest($message);
-        $this->assertEquals(array (
-            'DATE' => 'Mon, 09 Sep 2011 23:36:00 GMT',
-            'host' => 'host.foo.com',
-            'ZOO'  => array('abc', '123', 'HI'),
-            'zoo'  => '456',
-        ), $parts['headers']);
-
-        $request = RequestFactory::getInstance()->fromMessage($message);
-
-        $this->assertEquals(array(
-            'abc', '123', 'HI', '456'
-        ), $request->getHeader('zoo')->toArray());
-    }
-
-    public function testCreatesHttpMessagesWithBodiesAndNormalizesLineEndings()
-    {
-        $message = "POST / http/1.1\r\n"
-                 . "Content-Type:application/x-www-form-urlencoded; charset=utf8\r\n"
-                 . "Date:Mon, 09 Sep 2011 23:36:00 GMT\r\n"
-                 . "Host:host.foo.com\r\n\r\n"
-                 . "foo=bar";
-
-        $request = RequestFactory::getInstance()->fromMessage($message);
-        $this->assertEquals('application/x-www-form-urlencoded; charset=utf8', (string) $request->getHeader('Content-Type'));
-        $this->assertEquals('foo=bar', (string) $request->getBody());
-
-        $message = "POST / http/1.1\n"
-                 . "Content-Type:application/x-www-form-urlencoded; charset=utf8\n"
-                 . "Date:Mon, 09 Sep 2011 23:36:00 GMT\n"
-                 . "Host:host.foo.com\n\n"
-                 . "foo=bar";
-        $request = RequestFactory::getInstance()->fromMessage($message);
-        $this->assertEquals('foo=bar', (string) $request->getBody());
-
-        $message = "PUT / HTTP/1.1\r\nContent-Length: 0\r\n\r\n";
-        $request = RequestFactory::getInstance()->fromMessage($message);
-        $this->assertTrue($request->hasHeader('Content-Length'));
-        $this->assertEquals(0, (string) $request->getHeader('Content-Length'));
-    }
-
-    public function testBugPathIncorrectlyHandled()
-    {
-        $message = "POST /foo\r\n\r\nBODY";
-        $request = RequestFactory::getInstance()->fromMessage($message);
-        $this->assertSame('POST', $request->getMethod());
-        $this->assertSame('/foo', $request->getPath());
-        $this->assertSame('BODY', (string) $request->getBody());
-    }
-
-    public function testHandlesChunkedTransferEncoding()
-    {
-        $request = RequestFactory::getInstance()->create('PUT', 'http://www.foo.com/', array(
-            'Transfer-Encoding' => 'chunked'
-        ), 'Test');
-        $this->assertFalse($request->hasHeader('Content-Length'));
-        $this->assertEquals('chunked', $request->getHeader('Transfer-Encoding'));
-
-        $request = RequestFactory::getInstance()->create('POST', 'http://www.foo.com/', array(
-            'transfer-encoding' => 'chunked'
-        ), array(
-            'foo' => 'bar'
-        ));
-
-        $this->assertFalse($request->hasHeader('Content-Length'));
-        $this->assertEquals('chunked', $request->getHeader('Transfer-Encoding'));
-    }
-
-    public function testClonesRequestsWithMethodWithoutClient()
-    {
-        $f = RequestFactory::getInstance();
-        $request = $f->create('GET', 'http://www.test.com', array('X-Foo' => 'Bar'));
-        $request->getParams()->replace(array('test' => '123'));
-        $request->getCurlOptions()->set('foo', 'bar');
-        $cloned = $f->cloneRequestWithMethod($request, 'PUT');
-        $this->assertEquals('PUT', $cloned->getMethod());
-        $this->assertEquals('Bar', (string) $cloned->getHeader('X-Foo'));
-        $this->assertEquals('http://www.test.com', $cloned->getUrl());
-        // Ensure params are cloned and cleaned up
-        $this->assertEquals(1, count($cloned->getParams()->getAll()));
-        $this->assertEquals('123', $cloned->getParams()->get('test'));
-        // Ensure curl options are cloned
-        $this->assertEquals('bar', $cloned->getCurlOptions()->get('foo'));
-        // Ensure event dispatcher is cloned
-        $this->assertNotSame($request->getEventDispatcher(), $cloned->getEventDispatcher());
-    }
-
-    public function testClonesRequestsWithMethodWithClient()
-    {
-        $f = RequestFactory::getInstance();
-        $client = new Client();
-        $request = $client->put('http://www.test.com', array('Content-Length' => 4), 'test');
-        $cloned = $f->cloneRequestWithMethod($request, 'GET');
-        $this->assertEquals('GET', $cloned->getMethod());
-        $this->assertNull($cloned->getHeader('Content-Length'));
-        $this->assertEquals('http://www.test.com', $cloned->getUrl());
-        $this->assertSame($request->getClient(), $cloned->getClient());
-    }
-
-    public function testClonesRequestsWithMethodWithClientWithEntityEnclosingChange()
-    {
-        $f = RequestFactory::getInstance();
-        $client = new Client();
-        $request = $client->put('http://www.test.com', array('Content-Length' => 4), 'test');
-        $cloned = $f->cloneRequestWithMethod($request, 'POST');
-        $this->assertEquals('POST', $cloned->getMethod());
-        $this->assertEquals('test', (string) $cloned->getBody());
-    }
-
-    public function testCanDisableRedirects()
-    {
-        $this->getServer()->enqueue(array(
-            "HTTP/1.1 307\r\nLocation: " . $this->getServer()->getUrl() . "\r\nContent-Length: 0\r\n\r\n"
-        ));
-        $client = new Client($this->getServer()->getUrl());
-        $response = $client->get('/', array(), array('allow_redirects' => false))->send();
-        $this->assertEquals(307, $response->getStatusCode());
-    }
-
-    public function testCanAddCookies()
-    {
-        $client = new Client($this->getServer()->getUrl());
-        $request = $client->get('/', array(), array('cookies' => array('Foo' => 'Bar')));
-        $this->assertEquals('Bar', $request->getCookie('Foo'));
-    }
-
-    public function testCanAddQueryString()
-    {
-        $request = RequestFactory::getInstance()->create('GET', 'http://foo.com', array(), null, array(
-            'query' => array('Foo' => 'Bar')
-        ));
-        $this->assertEquals('Bar', $request->getQuery()->get('Foo'));
-    }
-
-    public function testCanSetDefaultQueryString()
-    {
-        $request = new Request('GET', 'http://www.foo.com?test=abc');
-        RequestFactory::getInstance()->applyOptions($request, array(
-            'query' => array('test' => '123', 'other' => 't123')
-        ), RequestFactory::OPTIONS_AS_DEFAULTS);
-        $this->assertEquals('abc', $request->getQuery()->get('test'));
-        $this->assertEquals('t123', $request->getQuery()->get('other'));
-    }
-
-    public function testCanAddBasicAuth()
-    {
-        $request = RequestFactory::getInstance()->create('GET', 'http://foo.com', array(), null, array(
-            'auth' => array('michael', 'test')
-        ));
-        $this->assertEquals('michael', $request->getUsername());
-        $this->assertEquals('test', $request->getPassword());
-    }
-
-    public function testCanAddDigestAuth()
-    {
-        $request = RequestFactory::getInstance()->create('GET', 'http://foo.com', array(), null, array(
-            'auth' => array('michael', 'test', 'digest')
-        ));
-        $this->assertEquals(CURLAUTH_DIGEST, $request->getCurlOptions()->get(CURLOPT_HTTPAUTH));
-        $this->assertEquals('michael', $request->getUsername());
-        $this->assertEquals('test', $request->getPassword());
-    }
-
-    public function testCanAddEvents()
-    {
-        $foo = null;
-        $client = new Client();
-        $client->addSubscriber(new MockPlugin(array(new Response(200))));
-        $request = $client->get($this->getServer()->getUrl(), array(), array(
-            'events' => array(
-                'request.before_send' => function () use (&$foo) { $foo = true; }
-            )
-        ));
-        $request->send();
-        $this->assertTrue($foo);
-    }
-
-    public function testCanAddEventsWithPriority()
-    {
-        $foo = null;
-        $client = new Client();
-        $client->addSubscriber(new MockPlugin(array(new Response(200))));
-        $request = $client->get($this->getServer()->getUrl(), array(), array(
-            'events' => array(
-                'request.before_send' => array(function () use (&$foo) { $foo = true; }, 100)
-            )
-        ));
-        $request->send();
-        $this->assertTrue($foo);
-    }
-
-    public function testCanAddPlugins()
-    {
-        $mock = new MockPlugin(array(new Response(200)));
-        $client = new Client();
-        $client->addSubscriber($mock);
-        $request = $client->get('/', array(), array(
-            'plugins' => array($mock)
-        ));
-        $request->send();
-    }
-
-    public function testCanDisableExceptions()
-    {
-        $client = new Client();
-        $request = $client->get('/', array(), array(
-            'plugins' => array(new MockPlugin(array(new Response(500)))),
-            'exceptions' => false
-        ));
-        $this->assertEquals(500, $request->send()->getStatusCode());
-    }
-
-    public function testCanDisableExceptionsWithErrorListener()
-    {
-        $client = new Client();
-        $client->getEventDispatcher()->addListener('request.error', function () {});
-        $request = $client->get('/', array(), array(
-                'plugins' => array(new MockPlugin(array(new Response(500)))),
-                'exceptions' => false
-            ));
-        $this->assertEquals(500, $request->send()->getStatusCode());
-    }
-
-    public function testCanChangeSaveToLocation()
-    {
-        $r = EntityBody::factory();
-        $client = new Client();
-        $request = $client->get('/', array(), array(
-            'plugins' => array(new MockPlugin(array(new Response(200, array(), 'testing')))),
-            'save_to' => $r
-        ));
-        $request->send();
-        $this->assertEquals('testing', (string) $r);
-    }
-
-    public function testCanSetProxy()
-    {
-        $client = new Client();
-        $request = $client->get('/', array(), array('proxy' => '192.168.16.121'));
-        $this->assertEquals('192.168.16.121', $request->getCurlOptions()->get(CURLOPT_PROXY));
-    }
-
-    public function testCanSetHeadersOption()
-    {
-        $client = new Client();
-        $request = $client->get('/', array(), array('headers' => array('Foo' => 'Bar')));
-        $this->assertEquals('Bar', (string) $request->getHeader('Foo'));
-    }
-
-    public function testCanSetDefaultHeadersOptions()
-    {
-        $request = new Request('GET', 'http://www.foo.com', array('Foo' => 'Bar'));
-        RequestFactory::getInstance()->applyOptions($request, array(
-            'headers' => array('Foo' => 'Baz', 'Bam' => 't123')
-        ), RequestFactory::OPTIONS_AS_DEFAULTS);
-        $this->assertEquals('Bar', (string) $request->getHeader('Foo'));
-        $this->assertEquals('t123', (string) $request->getHeader('Bam'));
-    }
-
-    public function testCanSetBodyOption()
-    {
-        $client = new Client();
-        $request = $client->put('/', array(), null, array('body' => 'test'));
-        $this->assertEquals('test', (string) $request->getBody());
-    }
-
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testValidatesBodyOption()
-    {
-        $client = new Client();
-        $client->get('/', array(), array('body' => 'test'));
-    }
-
-    public function testCanSetTimeoutOption()
-    {
-        $client = new Client();
-        $request = $client->get('/', array(), array('timeout' => 1.5));
-        $this->assertEquals(1500, $request->getCurlOptions()->get(CURLOPT_TIMEOUT_MS));
-    }
-
-    public function testCanSetConnectTimeoutOption()
-    {
-        $client = new Client();
-        $request = $client->get('/', array(), array('connect_timeout' => 1.5));
-        $this->assertEquals(1500, $request->getCurlOptions()->get(CURLOPT_CONNECTTIMEOUT_MS));
-    }
-
-    public function testCanSetDebug()
-    {
-        $client = new Client();
-        $request = $client->get('/', array(), array('debug' => true));
-        $match = false;
-        foreach ($request->getEventDispatcher()->getListeners('request.sent') as $l) {
-            if ($l[0] instanceof LogPlugin) {
-                $match = true;
-                break;
-            }
-        }
-        $this->assertTrue($match);
-    }
-
-    public function testCanSetVerifyToOff()
-    {
-        $client = new Client();
-        $request = $client->get('/', array(), array('verify' => false));
-        $this->assertNull($request->getCurlOptions()->get(CURLOPT_CAINFO));
-        $this->assertSame(0, $request->getCurlOptions()->get(CURLOPT_SSL_VERIFYHOST));
-        $this->assertFalse($request->getCurlOptions()->get(CURLOPT_SSL_VERIFYPEER));
-    }
-
-    public function testCanSetVerifyToOn()
-    {
-        $client = new Client();
-        $request = $client->get('/', array(), array('verify' => true));
-        $this->assertNotNull($request->getCurlOptions()->get(CURLOPT_CAINFO));
-        $this->assertSame(2, $request->getCurlOptions()->get(CURLOPT_SSL_VERIFYHOST));
-        $this->assertTrue($request->getCurlOptions()->get(CURLOPT_SSL_VERIFYPEER));
-    }
-
-    public function testCanSetVerifyToPath()
-    {
-        $client = new Client();
-        $request = $client->get('/', array(), array('verify' => '/foo.pem'));
-        $this->assertEquals('/foo.pem', $request->getCurlOptions()->get(CURLOPT_CAINFO));
-        $this->assertSame(2, $request->getCurlOptions()->get(CURLOPT_SSL_VERIFYHOST));
-        $this->assertTrue($request->getCurlOptions()->get(CURLOPT_SSL_VERIFYPEER));
-    }
-
-    public function inputValidation()
-    {
-        return array_map(function ($option) { return array($option); }, array(
-            'headers', 'query', 'cookies', 'auth', 'events', 'plugins', 'params'
-        ));
-    }
-
-    /**
-     * @dataProvider inputValidation
-     * @expectedException \Guzzle\Common\Exception\InvalidArgumentException
-     */
-    public function testValidatesInput($option)
-    {
-        $client = new Client();
-        $client->get('/', array(), array($option => 'foo'));
-    }
-
-    public function testCanAddRequestParams()
-    {
-        $client = new Client();
-        $request = $client->put('/', array(), null, array('params' => array('foo' => 'test')));
-        $this->assertEquals('test', $request->getParams()->get('foo'));
-    }
-
-    public function testCanAddSslKey()
-    {
-        $client = new Client();
-        $request = $client->get('/', array(), array('ssl_key' => '/foo.pem'));
-        $this->assertEquals('/foo.pem', $request->getCurlOptions()->get(CURLOPT_SSLKEY));
-    }
-
-    public function testCanAddSslKeyPassword()
-    {
-        $client = new Client();
-        $request = $client->get('/', array(), array('ssl_key' => array('/foo.pem', 'bar')));
-        $this->assertEquals('/foo.pem', $request->getCurlOptions()->get(CURLOPT_SSLKEY));
-        $this->assertEquals('bar', $request->getCurlOptions()->get(CURLOPT_SSLKEYPASSWD));
-    }
-
-    public function testCanAddSslCert()
-    {
-        $client = new Client();
-        $request = $client->get('/', array(), array('cert' => '/foo.pem'));
-        $this->assertEquals('/foo.pem', $request->getCurlOptions()->get(CURLOPT_SSLCERT));
-    }
-
-    public function testCanAddSslCertPassword()
-    {
-        $client = new Client();
-        $request = $client->get('/', array(), array('cert' => array('/foo.pem', 'bar')));
-        $this->assertEquals('/foo.pem', $request->getCurlOptions()->get(CURLOPT_SSLCERT));
-        $this->assertEquals('bar', $request->getCurlOptions()->get(CURLOPT_SSLCERTPASSWD));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

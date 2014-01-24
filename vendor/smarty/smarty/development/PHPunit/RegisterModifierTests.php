@@ -1,98 +1,67 @@
-<?php
-/**
- * Smarty PHPunit tests register->modifier / unregister->modifier methods
- *
- * @package PHPunit
- * @author Uwe Tews
- */
-
-/**
- * class for register->modifier / unregister->modifier methods tests
- */
-class RegisterModifierTests extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $this->smarty = SmartyTests::$smarty;
-        SmartyTests::init();
-    }
-
-    static function isRunnable()
-    {
-        return true;
-    }
-
-    /**
-     * test register->modifier method for function
-     */
-    public function testRegisterModifier()
-    {
-        $this->smarty->registerPlugin(Smarty::PLUGIN_MODIFIER,'testmodifier', 'mymodifier');
-        $this->assertEquals('mymodifier', $this->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['testmodifier'][0]);
-        $this->smarty->assign('foo', 'foo');
-        $this->smarty->assign('bar', 'bar');
-        $this->assertEquals('foo function blar bar', $this->smarty->fetch('eval:{$foo|testmodifier:blar:$bar}'));
-    }
-    /**
-     * test register->modifier method for classes
-     */
-    public function testRegisterModifierClass()
-    {
-        $this->smarty->registerPlugin(Smarty::PLUGIN_MODIFIER,'testmodifier', array('mymodifierclass', 'static_method'));
-        $this->smarty->assign('foo', 'foo');
-        $this->smarty->assign('bar', 'bar');
-        $this->assertEquals('foo static blar bar', $this->smarty->fetch('eval:{$foo|testmodifier:blar:$bar}'));
-    }
-    /**
-     * test register->modifier method for objects
-     */
-    public function testRegisterModifierObject()
-    {
-        $obj = new mymodifierclass;
-        $this->smarty->registerPlugin(Smarty::PLUGIN_MODIFIER,'testmodifier', array($obj, 'object_method'));
-        $this->smarty->assign('foo', 'foo');
-        $this->smarty->assign('bar', 'bar');
-        $this->assertEquals('foo object blar bar', $this->smarty->fetch('eval:{$foo|testmodifier:blar:$bar}'));
-    }
-    /**
-     * test unregister->modifier method
-     */
-    public function testUnregisterModifier()
-    {
-        $this->smarty->registerPlugin(Smarty::PLUGIN_MODIFIER,'testmodifier', 'mymodifier');
-        $this->smarty->unregisterPlugin(Smarty::PLUGIN_MODIFIER,'testmodifier');
-        $this->assertFalse(isset($this->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['testmodifier']));
-    }
-    /**
-     * test unregister->modifier method not registered
-     */
-    public function testUnregisterModifierNotRegistered()
-    {
-        $this->smarty->unregisterPlugin(Smarty::PLUGIN_MODIFIER,'testmodifier');
-        $this->assertFalse(isset($this->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['testmodifier']));
-    }
-    /**
-     * test unregister->modifier method other registered
-     */
-    public function testUnregisterModifierOtherRegistered()
-    {
-        $this->smarty->registerPlugin(Smarty::PLUGIN_BLOCK,'testmodifier', 'mymodifier');
-        $this->smarty->unregisterPlugin(Smarty::PLUGIN_MODIFIER,'testmodifier');
-        $this->assertTrue(isset($this->smarty->registered_plugins[Smarty::PLUGIN_BLOCK]['testmodifier']));
-    }
-}
-function mymodifier($a, $b, $c)
-{
-    return "$a function $b $c";
-}
-class mymodifierclass
-{
-    static function static_method($a, $b, $c)
-    {
-        return "$a static $b $c";
-    }
-    public function object_method($a, $b, $c)
-    {
-        return "$a object $b $c";
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

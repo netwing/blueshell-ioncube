@@ -1,72 +1,62 @@
-<?php
-
-namespace Guzzle\Tests\Plugin\Cache;
-
-use Doctrine\Common\Cache\ArrayCache;
-use Guzzle\Cache\DoctrineCacheAdapter;
-use Guzzle\Common\Event;
-use Guzzle\Http\Message\Request;
-use Guzzle\Http\Message\Response;
-use Guzzle\Plugin\Cache\CachePlugin;
-use Guzzle\Plugin\Cache\CallbackCanCacheStrategy;
-
-/**
- * @covers Guzzle\Plugin\Cache\CallbackCanCacheStrategy
- */
-class CallbackCanCacheStrategyTest extends \Guzzle\Tests\GuzzleTestCase
-{
-    /**
-     * @expectedException \Guzzle\Common\Exception\InvalidArgumentException
-     */
-    public function testConstructorEnsuresCallbackIsCallable()
-    {
-        $p = new CallbackCanCacheStrategy(new \stdClass());
-    }
-
-    public function testUsesCallback()
-    {
-        $c = new CallbackCanCacheStrategy(function ($request) { return true; });
-        $this->assertTrue($c->canCacheRequest(new Request('DELETE', 'http://www.foo.com')));
-    }
-
-    /**
-     * The following is a bit of an integration test to ensure that the CachePlugin honors a
-     * custom can cache strategy.
-     */
-    public function testIntegrationWithCachePlugin()
-    {
-        $c = new CallbackCanCacheStrategy(
-            function ($request) { return true; },
-            function ($response) { return true; }
-        );
-
-        // Make a request and response that have no business being cached
-        $request = new Request('DELETE', 'http://www.foo.com');
-        $response = Response::fromMessage(
-            "HTTP/1.1 200 OK\r\n"
-            . "Expires: Mon, 26 Jul 1997 05:00:00 GMT\r\n"
-            . "Last-Modified: Wed, 09 Jan 2013 08:48:53 GMT\r\n"
-            . "Content-Length: 2\r\n"
-            . "Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0\r\n\r\n"
-            . "hi"
-        );
-
-        $this->assertTrue($c->canCacheRequest($request));
-        $this->assertTrue($c->canCacheResponse($response));
-
-        $s = $this->getMockBuilder('Guzzle\Plugin\Cache\DefaultCacheStorage')
-            ->setConstructorArgs(array(new DoctrineCacheAdapter(new ArrayCache())))
-            ->setMethods(array('fetch'))
-            ->getMockForAbstractClass();
-
-        $s->expects($this->once())
-            ->method('fetch')
-            ->will($this->returnValue($response));
-
-        $plugin = new CachePlugin(array('can_cache' => $c, 'storage' => $s));
-        $plugin->onRequestBeforeSend(new Event(array('request' => $request)));
-
-        $this->assertEquals(200, $request->getResponse()->getStatusCode());
-        $this->assertEquals('hi', $request->getResponse()->getBody(true));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+p6UcQU019nXzHkjgnhCmRxf70XLK

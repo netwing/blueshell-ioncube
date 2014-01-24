@@ -1,49 +1,60 @@
-<?php
-require_once("config.inc.php");
-$blue->autentica_utente("fatture","R");
-$elenco_clienti=$blue->elenco_clienti();
-$fattura_anno=date("Y",time());
-$fattura_mese=date("m",time());
-
-if (array_key_exists("anno",$_GET)) {
-	$_SESSION['gestione_fatture']['fattura_anno']=$_GET['anno'];
-}
-if (array_key_exists("gestione_fatture",$_SESSION) and array_key_exists("fattura_anno",$_SESSION['gestione_fatture'])) {
-	$fattura_anno=$_SESSION['gestione_fatture']['fattura_anno'];
-}
-if (array_key_exists("mese",$_GET)) {
-	$_SESSION['gestione_fatture']['fattura_mese']=$_GET['mese'];
-}
-if (array_key_exists("gestione_fatture",$_SESSION) and array_key_exists("fattura_mese",$_SESSION['gestione_fatture'])) {
-	$fattura_mese=$_SESSION['gestione_fatture']['fattura_mese'];
-}
-
-$select_anni="SELECT LEFT(fattura_data,4) AS anno FROM ".$tabelle['fatture']." WHERE LEFT(fattura_data,4)<>'0000' GROUP BY LEFT(fattura_data,4)";
-$result_anni=$sql->select_query($select_anni);
-$anni = array();
-while ($row_anni=mysql_fetch_array($result_anni)) {
-	if ($row_anni['anno'] == $fattura_anno) {
-		$anni[] = "<li role=\"presentation\"><a href=\"fatture.php?anno=".$row_anni['anno']."\"><strong>".$row_anni['anno']."</strong></a></li>";		
-	} else {
-		$anni[] = "<li role=\"presentation\"><a href=\"fatture.php?anno=".$row_anni['anno']."\">".$row_anni['anno']."</a></li>";
-	}
-}
-
-$elenco_mesi=array("01"=>"Gen","02"=>"Feb","03"=>"Mar","04"=>"Apr","05"=>"Mag","06"=>"Giu","07"=>"Lug","08"=>"Ago","09"=>"Set","10"=>"Ott","11"=>"Nov","12"=>"Dec");
-$mesi = array();
-foreach ($elenco_mesi as $k=>$v) {
-	if ($k == $fattura_mese) {
-		$mesi[] = "<li role=\"presentation\"><a href=\"fatture.php?mese=".$k."\"><strong>".$v."</strong></a></li>";
-	} else {
-		$mesi[] = "<li role=\"presentation\"><a href=\"fatture.php?mese=".$k."\">".$v."</a></li>";	
-	}
-}
-
-$periodo=$fattura_anno."-".$fattura_mese;
-$where_fattura="fattura_data LIKE '".$periodo."%'";
-$paginazione=$sql->paginazione_menu($tabelle['fatture'],$where_fattura);
-$limit=$sql->paginazione_valuta();
-$select_fatture="SELECT fattura_id,fattura_cliente_id,fattura_numero,fattura_data,SUM(fattura_riga_imponibile) AS fattura_imponibile,SUM(fattura_riga_totale) AS fattura_totale FROM ".$tabelle['fatture'].",".$tabelle['fatture_righe']." WHERE ".$where_fattura." AND fattura_riga_fattura_id=fattura_id GROUP BY fattura_id ORDER BY (fattura_numero + 0) ASC LIMIT ".$limit;
-$result_fatture=$sql->select_query($select_fatture);
-
-require_once "views/invoice/admin.php";
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+hCun3/8VhTjXUEUtuS53KG==

@@ -1,63 +1,59 @@
-<?php
-
-namespace Guzzle\Tests\Service\Command\LocationVisitor\Request;
-
-use Guzzle\Http\EntityBody;
-use Guzzle\Service\Command\LocationVisitor\Request\BodyVisitor as Visitor;
-
-/**
- * @covers Guzzle\Service\Command\LocationVisitor\Request\BodyVisitor
- */
-class BodyVisitorTest extends AbstractVisitorTestCase
-{
-    public function testVisitsLocation()
-    {
-        $visitor = new Visitor();
-        $param = $this->getNestedCommand('body')->getParam('foo')->setSentAs('Foo');
-        $visitor->visit($this->command, $this->request, $param, '123');
-        $this->assertEquals('123', (string) $this->request->getBody());
-        $this->assertNull($this->request->getHeader('Expect'));
-    }
-
-    public function testAddsExpectHeaderWhenSetToTrue()
-    {
-        $visitor = new Visitor();
-        $param = $this->getNestedCommand('body')->getParam('foo')->setSentAs('Foo');
-        $param->setData('expect_header', true);
-        $visitor->visit($this->command, $this->request, $param, '123');
-        $this->assertEquals('123', (string) $this->request->getBody());
-    }
-
-    public function testCanDisableExpectHeader()
-    {
-        $visitor = new Visitor();
-        $param = $this->getNestedCommand('body')->getParam('foo')->setSentAs('Foo');
-        $param->setData('expect_header', false);
-        $visitor->visit($this->command, $this->request, $param, '123');
-        $this->assertNull($this->request->getHeader('Expect'));
-    }
-
-    public function testCanSetExpectHeaderBasedOnSize()
-    {
-        $visitor = new Visitor();
-        $param = $this->getNestedCommand('body')->getParam('foo')->setSentAs('Foo');
-        // The body is less than the cutoff
-        $param->setData('expect_header', 5);
-        $visitor->visit($this->command, $this->request, $param, '123');
-        $this->assertNull($this->request->getHeader('Expect'));
-        // Now check when the body is greater than the cutoff
-        $param->setData('expect_header', 2);
-        $visitor->visit($this->command, $this->request, $param, '123');
-        $this->assertEquals('100-Continue', (string) $this->request->getHeader('Expect'));
-    }
-
-    public function testAddsContentEncodingWhenSetOnBody()
-    {
-        $visitor = new Visitor();
-        $param = $this->getNestedCommand('body')->getParam('foo')->setSentAs('Foo');
-        $body = EntityBody::factory('foo');
-        $body->compress();
-        $visitor->visit($this->command, $this->request, $param, $body);
-        $this->assertEquals('gzip', (string) $this->request->getHeader('Content-Encoding'));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

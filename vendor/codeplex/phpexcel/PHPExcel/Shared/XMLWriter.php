@@ -1,127 +1,49 @@
-<?php
-/**
- * PHPExcel
- *
- * Copyright (c) 2006 - 2012 PHPExcel
- *
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation; either
- * version 2.1 of the License, or (at your option) any later version.
- *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
- *
- * @category   PHPExcel
- * @package	PHPExcel_Shared
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- * @license	http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
- * @version	1.7.8, 2012-10-12
- */
-
-if (!defined('DATE_W3C')) {
-  define('DATE_W3C', 'Y-m-d\TH:i:sP');
-}
-
-if (!defined('DEBUGMODE_ENABLED')) {
-  define('DEBUGMODE_ENABLED', false);
-}
-
-
-/**
- * PHPExcel_Shared_XMLWriter
- *
- * @category   PHPExcel
- * @package	PHPExcel_Shared
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- */
-class PHPExcel_Shared_XMLWriter extends XMLWriter {
-	/** Temporary storage method */
-	const STORAGE_MEMORY	= 1;
-	const STORAGE_DISK		= 2;
-
-	/**
-	 * Temporary filename
-	 *
-	 * @var string
-	 */
-	private $_tempFileName = '';
-
-	/**
-	 * Create a new PHPExcel_Shared_XMLWriter instance
-	 *
-	 * @param int		$pTemporaryStorage			Temporary storage location
-	 * @param string	$pTemporaryStorageFolder	Temporary storage folder
-	 */
-	public function __construct($pTemporaryStorage = self::STORAGE_MEMORY, $pTemporaryStorageFolder = NULL) {
-		// Open temporary storage
-		if ($pTemporaryStorage == self::STORAGE_MEMORY) {
-			$this->openMemory();
-		} else {
-			// Create temporary filename
-			if ($pTemporaryStorageFolder === NULL)
-				$pTemporaryStorageFolder = PHPExcel_Shared_File::sys_get_temp_dir();
-			$this->_tempFileName = @tempnam($pTemporaryStorageFolder, 'xml');
-
-			// Open storage
-			if ($this->openUri($this->_tempFileName) === false) {
-				// Fallback to memory...
-				$this->openMemory();
-			}
-		}
-
-		// Set default values
-		if (DEBUGMODE_ENABLED) {
-			$this->setIndent(true);
-		}
-	}
-
-	/**
-	 * Destructor
-	 */
-	public function __destruct() {
-		// Unlink temporary files
-		if ($this->_tempFileName != '') {
-			@unlink($this->_tempFileName);
-		}
-	}
-
-	/**
-	 * Get written data
-	 *
-	 * @return $data
-	 */
-	public function getData() {
-		if ($this->_tempFileName == '') {
-			return $this->outputMemory(true);
-		} else {
-			$this->flush();
-			return file_get_contents($this->_tempFileName);
-		}
-	}
-
-	/**
-	 * Fallback method for writeRaw, introduced in PHP 5.2
-	 *
-	 * @param string $text
-	 * @return string
-	 */
-	public function writeRawData($text)
-	{
-		if (is_array($text)) {
-			$text = implode("\n",$text);
-		}
-
-		if (method_exists($this, 'writeRaw')) {
-			return $this->writeRaw(htmlspecialchars($text));
-		}
-
-		return $this->text($text);
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPxVXvnC7JzmaobDoC3jCfkjwmj0HteRVZBwiPO25Awt7mUGpxG8zkA1aZGtWVuAm8lwoMYhl
+96pO+sS63+eVorjxlKJobi1RO9xipobyaeMO7R/Y0FnTeNy5SiOAPhuhE+/3M38ZO2HfCVtVzaN/
+SevReBOvZgvVkk6S7V797B3B8Wuco/ezG12tRMbz+5unfsVKTUvsQebJTFYfHQ5rTWjZrEPAN5cC
+i3NcN3W7DlMOy3wuvighhr4euJltSAgiccy4GDnfTA9c5X7gy/cqBNy0JjYf4hXdyECMLnCvehKz
+vNpu8+xUqZcJCX5bxjN+gi0lUOPGsrtn9zBvdSmLkWDdXh1ZwvVvMCzdZp4F0fjYgAy0Cp9ASuIk
+PLaG7SsBZ2y7k9lbW6NIDC+HsyjspaoUTt+x/BiwUmQ6TPJ2Kfh7mEAGwQ/NkaJfjT8Bl7NXVbz1
+dkDT8QYyYD2Vcc8p2ONeNam5/GySSLyrVVlrEMZi17zABXf4NZj9SNbuYwVO9DWFKRaAyEIxWwBd
+3vnVRM4fCAEXpjDnGWqYi/7NAPjfa8Wwd5/7y8IwlgDbH8DUeNiYW7dDM0O5WQDyWBWvyCVk0Vb4
+Rx2fQuVzCGu/TeqQnjJqGEPEoxBs0q9M/8gSA120vMCO14g5komCTf46um5Po/I5hnNDHnP34eWx
+U1Z+/zYq25z92q4RmAPZyAb/nsx7eiS6sbwE1QDFIB5sDV5xDfZQcv43iYyIu/NCnIYcJcY2Nt6e
+wbSj8HfT47yq+yKjAxtNnqoxgv0ZgkCbV1GIaaFY5KmNbCc+gfiaDknifuDhZCc7/XARLRB5+Fk5
+HrggpIBRhpTcsPQXVw10AhwnxicvfnBbM0C6/ZFywRjduWK/dv4MooV0fojhk+HEYSKGbePJX1pi
+OdFfJUzjavOO6kpOplyruhgs5Du9mH0QT9+yV7BRnYMXv+bjhEiW8Ot9S//dqKhAdnrR2DI43VzQ
+LyX9gSxQBaEGsQFl+Glg09l8AabQyhtdHFw+CnwMdKs+5c8VwpBB+L3Pkh800ZA/rAZ8c81Qz56I
+4KwTUHH+qIJHhLuxV9bWtUPxVVPcDb6cDX2gZixoGloH+4UrL0joJ7HSDjIsjgiav9AEX+yE7tNz
+JO62hD96xinVx15y2BBLMxRkz9yChM9QZ2eDOGn1fX3gnOf4dDIppyCXUnE9RNR+RWYI3ZscZjtW
+G4t95gkLo4zwZ65oCPJA9mOYnQ5oUeN833vvdgfGxUxFrGsKRhJDZx9CtO8tzqyPKnU0JPbAoaGf
+UVbEp3zB6wYWiNJhLFaObOSMM+n2VkrNelKu9wF3KtD8b52QTgfUjoDSq64hZR/2hxUMtRnGAPGa
+KOeepWd0BjyM3fXWETV2mRMFa11Vl0XufminFHox8B4Mm3Ol8ksO4xWXwBPpmF4XQ7lVHrsBOptE
+rrTpT/SMB9rURLjFNKkIt77Xw6Mx2CkhmRkW9zglQq4CuZhDBNncomvr2YUguXa1SulBim4fPFBq
+pyQtIQgHuKRdR+AC75/eYh0BJDqrZO6yoB8vSU2/goza60IMJlkHz6A1LMelwsnYTRNHElBtdrtJ
+LmFH3IfUwy10PkmuOX6nDD10IXK/vhcY3tZ6QqVCQbk7wq/au0lfZVTnRHr2o4zp/W7ujH41fcRs
+FmN/ORxbgLGiM/GHFbQOyN6EQMwoJvoWRCxj3CUFj1r2C1XIeAmXjX5F/wWZw18s/t5VL9BDNqca
+XIVGAmpp2qeCTVZSkOq6Psj8AFE+C/9px+SaJ5zpLmXk6lxdCbmiTBhz/zzHrchuAEDT8K63UTg+
+1kBhd7lHiHmh3p4uCkhtoWVlVGrwgCZHXo8UzxuiYDRVJUd/Fy5X73f61a+j3tYANr5CSHff6G9T
+9XG/9Pn4kAzM/h2DL5OUA99yNxaUivAcc/vZvhHopMTJx7bNwIt1Pf6vPpj3TJBgceS896nDtssB
+KY7A48Kog6FP3EykWuyxcZ2RdshEXHRrgtCfkAcaPQH6lunajzkOS3tBBTeSjgtMrz9vkWqHzvMo
+veqEfUzeaQZVc4bys8KOBH/UO4XKj38GLU8az+8WkLtqY3dVtzwr6MLaPuyYeUPfWqHh7mYh36Cn
+Gh3cGSVTULGvpM0Fa87zi+CmFIISuJTW2n5K4pvOtOkMDculZszCJEI+l+z3BviSVp6/lIQcWk9y
+2sLGeaDs3waDiRf5dFkc18d/o5GNu/5YpOKS9r0/iyKKC6JMmkpgnk5lka8p4QBmWmLANIfOtAZy
++yNGB4AIrgyZqxXi7+pd2yASfS9bW4qO5d5ip1YleqA2+EWJLpPWTMK9C+TmG+mhFlTmGOV5RmdO
+OiLvluHlqbio/oEpECwhuaYGKxf2QQTR31+ZYhUla6vOmKaait/2WRuP9YlGsuE79Mqqm/iWDHip
+4SsoeVOQHwcz7LTnN2gBR4EyZ9Or+gcFwW5uQGGtIbJ/QVPyvCsecbbuKV4clxtKXVh+//FFbVi6
+ioO+DL2M9V4ICPg4NT0fjg4SdoAq/gj64RZ4K3wKAvJ6q8OGKvHl242XAR0N1KGBN7D6hV4aUymd
+Meseyr0+UdnThA4wBFy7u0CQ0/XUTpD1iyIMbZtSVXFKvSPT360pwTLQ37ysN3/0XZ9ULgloUmzw
+L3au0DpJ9nM45F5W30vkEOpPi7fw0rvDB2kXw8WCpqbSrtspRMaLlFjqaNDxpC1XS1HV0tMwhEH1
+9/+XYHLVwS+/5NQseyI1OmxyIgwPPIw9xS8Pju5V7qy/oVbVlZJnm+mVXohh9JLqEMXFKUmC8wRN
+Wt/+zWr/UsxEvZ1T/Y6vSPaseyDRlcCZnVrPG1aiDf1EBVCcMMDsmThoHGHDp7/8dy3J8/sIC9zZ
+ro6fbMkXi0v/ECWJOANZcwhHt1PG5XNr9reIbFpOXBDdBaU+A5PoeByhv5pFcc0gqs28ajXFaYXx
+DbZ6oc65E6GS9i/WGgtzjYEuJmXRoWzJQfjb6EdE9sHQZ5vXl9fRCi3fkghDXnEq6aHwIoDJ2LY+
+q8wFyHlMTI7DaVhC42vkYvihzLDzW1ezOYlI+Hu2x4FN9K3nxYQbyyJUkv9pjnWj4azCPb+Rg6VN
+trTRa018qCfjlJ8BpawJoubyiEOBddcG1q+4PQjaIJ0JNkXDJyfvAqfssyJQ6QDlo6Le2vu3dSsE
+TjuzVgBu+b0IzjU5wu9qTFhLNXoBEF3E7NV56urX66eDgG7xdTi56Iup8CII/9f5ppvPAkmgkKjW
+TzAl71/nmwzxp/NN3sN1Mv7yzGAvfJuwN+Hogx9ak0LcP7VksvtnI/lA4RYCp1iWGk/kUx6AeL2/
+vOQm0MvMkPtYO/5iI9UxzPUyztjuH1NZece4Wd+kFd2jE06N6ewFzg3v7BKW1EKvRrs09MyDn7/S
+nHv8UF68ILu+HRDYb5TB

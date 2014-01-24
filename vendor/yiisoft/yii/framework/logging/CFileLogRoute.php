@@ -1,203 +1,97 @@
-<?php
-/**
- * CFileLogRoute class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CFileLogRoute records log messages in files.
- *
- * The log files are stored under {@link setLogPath logPath} and the file name
- * is specified by {@link setLogFile logFile}. If the size of the log file is
- * greater than {@link setMaxFileSize maxFileSize} (in kilo-bytes), a rotation
- * is performed, which renames the current log file by suffixing the file name
- * with '.1'. All existing log files are moved backwards one place, i.e., '.2'
- * to '.3', '.1' to '.2'. The property {@link setMaxLogFiles maxLogFiles}
- * specifies how many files to be kept.
- * If the property {@link rotateByCopy} is true, the primary log file will be
- * rotated by a copy and truncated (to be more compatible with log tailers)
- * otherwise it will be rotated by being renamed.
- *
- * @property string $logPath Directory storing log files. Defaults to application runtime path.
- * @property string $logFile Log file name. Defaults to 'application.log'.
- * @property integer $maxFileSize Maximum log file size in kilo-bytes (KB). Defaults to 1024 (1MB).
- * @property integer $maxLogFiles Number of files used for rotation. Defaults to 5.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.logging
- * @since 1.0
- */
-class CFileLogRoute extends CLogRoute
-{
-	/**
-	 * @var integer maximum log file size
-	 */
-	private $_maxFileSize=1024; // in KB
-	/**
-	 * @var integer number of log files used for rotation
-	 */
-	private $_maxLogFiles=5;
-	/**
-	 * @var string directory storing log files
-	 */
-	private $_logPath;
-	/**
-	 * @var string log file name
-	 */
-	private $_logFile='application.log';
-	/**
-	 * @var boolean Whether to rotate primary log by copy and truncate
-	 * which is more compatible with log tailers. Defaults to false.
-	 * @since 1.1.14
-	 */
-	public $rotateByCopy=false;
-
-	/**
-	 * Initializes the route.
-	 * This method is invoked after the route is created by the route manager.
-	 */
-	public function init()
-	{
-		parent::init();
-		if($this->getLogPath()===null)
-			$this->setLogPath(Yii::app()->getRuntimePath());
-	}
-
-	/**
-	 * @return string directory storing log files. Defaults to application runtime path.
-	 */
-	public function getLogPath()
-	{
-		return $this->_logPath;
-	}
-
-	/**
-	 * @param string $value directory for storing log files.
-	 * @throws CException if the path is invalid
-	 */
-	public function setLogPath($value)
-	{
-		$this->_logPath=realpath($value);
-		if($this->_logPath===false || !is_dir($this->_logPath) || !is_writable($this->_logPath))
-			throw new CException(Yii::t('yii','CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.',
-				array('{path}'=>$value)));
-	}
-
-	/**
-	 * @return string log file name. Defaults to 'application.log'.
-	 */
-	public function getLogFile()
-	{
-		return $this->_logFile;
-	}
-
-	/**
-	 * @param string $value log file name
-	 */
-	public function setLogFile($value)
-	{
-		$this->_logFile=$value;
-	}
-
-	/**
-	 * @return integer maximum log file size in kilo-bytes (KB). Defaults to 1024 (1MB).
-	 */
-	public function getMaxFileSize()
-	{
-		return $this->_maxFileSize;
-	}
-
-	/**
-	 * @param integer $value maximum log file size in kilo-bytes (KB).
-	 */
-	public function setMaxFileSize($value)
-	{
-		if(($this->_maxFileSize=(int)$value)<1)
-			$this->_maxFileSize=1;
-	}
-
-	/**
-	 * @return integer number of files used for rotation. Defaults to 5.
-	 */
-	public function getMaxLogFiles()
-	{
-		return $this->_maxLogFiles;
-	}
-
-	/**
-	 * @param integer $value number of files used for rotation.
-	 */
-	public function setMaxLogFiles($value)
-	{
-		if(($this->_maxLogFiles=(int)$value)<1)
-			$this->_maxLogFiles=1;
-	}
-
-	/**
-	 * Saves log messages in files.
-	 * @param array $logs list of log messages
-	 */
-	protected function processLogs($logs)
-	{
-		$text='';
-		foreach($logs as $log)
-			$text.=$this->formatLogMessage($log[0],$log[1],$log[2],$log[3]);
-
-		$logFile=$this->getLogPath().DIRECTORY_SEPARATOR.$this->getLogFile();
-		$fp=@fopen($logFile,'a');
-		@flock($fp,LOCK_EX);
-		if(@filesize($logFile)>$this->getMaxFileSize()*1024)
-		{
-			$this->rotateFiles();
-			@flock($fp,LOCK_UN);
-			@fclose($fp);
-			@file_put_contents($logFile,$text,FILE_APPEND|LOCK_EX);
-		}
-		else
-		{
-			@fwrite($fp,$text);
-			@flock($fp,LOCK_UN);
-			@fclose($fp);
-		}
-	}
-
-	/**
-	 * Rotates log files.
-	 */
-	protected function rotateFiles()
-	{
-		$file=$this->getLogPath().DIRECTORY_SEPARATOR.$this->getLogFile();
-		$max=$this->getMaxLogFiles();
-		for($i=$max;$i>0;--$i)
-		{
-			$rotateFile=$file.'.'.$i;
-			if(is_file($rotateFile))
-			{
-				// suppress errors because it's possible multiple processes enter into this section
-				if($i===$max)
-					@unlink($rotateFile);
-				else
-					@rename($rotateFile,$file.'.'.($i+1));
-			}
-		}
-		if(is_file($file))
-		{
-			// suppress errors because it's possible multiple processes enter into this section
-			if($this->rotateByCopy)
-			{
-				@copy($file,$file.'.1');
-				if($fp=@fopen($file,'a'))
-				{
-					@ftruncate($fp,0);
-					@fclose($fp);
-				}
-			}
-			else
-				@rename($file,$file.'.1');
-		}
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

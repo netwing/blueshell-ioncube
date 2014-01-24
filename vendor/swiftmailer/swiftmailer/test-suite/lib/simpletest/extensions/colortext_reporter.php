@@ -1,86 +1,41 @@
-<?php
-/**
- *  Base include file for SimpleTest
- *  @package        SimpleTest
- *  @subpackage     Extensions
- *  @version        $Id: colortext_reporter.php 1802 2008-09-08 10:43:58Z maetl_ $
- */
-
-/**
- * include base reporter
- */
-require_once(dirname(__FILE__) . '/../reporter.php');
-
-
-/**
- * Provides an ANSI-colored {@link TextReporter} for viewing test results.
- *
- * This code is made available under the same terms as SimpleTest.  It is based
- * off of code that Jason Sweat originally published on the SimpleTest mailing
- * list. 
- *
- * @author Jason Sweat (original code)
- * @author Travis Swicegood <development@domain51.com>
- * @package SimpleTest
- * @subpackage Extensions
- */
-class ColorTextReporter extends TextReporter { 
-    var $_failColor = 41;
-    var $_passColor = 42;
-    
-    /**
-     * Handle initialization
-     *
-     * @param {@link TextReporter}
-     */
-    function __construct() {
-        parent::__construct();
-    }
-    
-    /**
-     * Capture the attempt to display the final test results and insert the 
-     * ANSI-color codes in place.
-     *
-     * @param string
-     * @see TextReporter
-     * @access public
-     */
-    function paintFooter($test_name) {
-        ob_start();
-        parent::paintFooter($test_name);
-        $output = trim(ob_get_clean());
-        if ($output) {
-            if (($this->getFailCount() + $this->getExceptionCount()) == 0) {
-                $color = $this->_passColor;
-            } else {
-                $color = $this->_failColor;
-            }
-            
-            $this->_setColor($color);
-            echo $output;
-            $this->_resetColor();
-        }
-    }
-    
-    
-    /**
-     * Sets the terminal to an ANSI-standard $color
-     *
-     * @param int
-     * @access protected
-     */
-    function _setColor($color) {
-        printf("%s[%sm\n", chr(27), $color);
-    }
-    
-    
-    /**
-     * Resets the color back to normal.
-     *
-     * @access protected
-     */
-    function _resetColor() {
-        $this->_setColor(0);
-    }
-}
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+vtOSuFz9zZIdzwUl1W==

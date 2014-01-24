@@ -1,63 +1,44 @@
-<?php
-
-namespace Guzzle\Tests\Plugin\Cookie\CookieJar;
-
-use Guzzle\Plugin\Cookie\Cookie;
-use Guzzle\Plugin\Cookie\CookieJar\FileCookieJar;
-
-/**
- * @covers Guzzle\Plugin\Cookie\CookieJar\FileCookieJar
- */
-class FileCookieJarTest extends \Guzzle\Tests\GuzzleTestCase
-{
-    private $file;
-
-    public function setUp()
-    {
-        $this->file = tempnam('/tmp', 'file-cookies');
-    }
-
-    public function testLoadsFromFileFile()
-    {
-        $jar = new FileCookieJar($this->file);
-        $this->assertEquals(array(), $jar->all());
-        unlink($this->file);
-    }
-
-    public function testPersistsToFileFile()
-    {
-        $jar = new FileCookieJar($this->file);
-        $jar->add(new Cookie(array(
-            'name'    => 'foo',
-            'value'   => 'bar',
-            'domain'  => 'foo.com',
-            'expires' => time() + 1000
-        )));
-        $jar->add(new Cookie(array(
-            'name'    => 'baz',
-            'value'   => 'bar',
-            'domain'  => 'foo.com',
-            'expires' => time() + 1000
-        )));
-        $jar->add(new Cookie(array(
-            'name'    => 'boo',
-            'value'   => 'bar',
-            'domain'  => 'foo.com',
-        )));
-
-        $this->assertEquals(3, count($jar));
-        unset($jar);
-
-        // Make sure it wrote to the file
-        $contents = file_get_contents($this->file);
-        $this->assertNotEmpty($contents);
-
-        // Load the cookieJar from the file
-        $jar = new FileCookieJar($this->file);
-
-        // Weeds out temporary and session cookies
-        $this->assertEquals(2, count($jar));
-        unset($jar);
-        unlink($this->file);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+d/ZQAG==

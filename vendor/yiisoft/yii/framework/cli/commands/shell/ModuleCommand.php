@@ -1,93 +1,52 @@
-<?php
-/**
- * ModuleCommand class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- * @version $Id: ModuleCommand.php 433 2008-12-30 22:59:17Z qiang.xue $
- */
-
-/**
- * ModuleCommand generates a controller class.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @version $Id: ModuleCommand.php 433 2008-12-30 22:59:17Z qiang.xue $
- * @package system.cli.commands.shell
- */
-class ModuleCommand extends CConsoleCommand
-{
-	/**
-	 * @var string the directory that contains templates for the module command.
-	 * Defaults to null, meaning using 'framework/cli/views/shell/module'.
-	 * If you set this path and some views are missing in the directory,
-	 * the default views will be used.
-	 */
-	public $templatePath;
-
-	public function getHelp()
-	{
-		return <<<EOD
-USAGE
-  module <module-ID>
-
-DESCRIPTION
-  This command generates an application module.
-
-PARAMETERS
- * module-ID: required, module ID. It is case-sensitive.
-
-EOD;
-	}
-
-	/**
-	 * Execute the action.
-	 * @param array $args command line parameters specific for this command
-	 * @return integer|null non zero application exit code for help or null on success
-	 */
-	public function run($args)
-	{
-		if(!isset($args[0]))
-		{
-			echo "Error: module ID is required.\n";
-			echo $this->getHelp();
-			return 1;
-		}
-
-		$moduleID=$args[0];
-		$moduleClass=ucfirst($moduleID).'Module';
-		$modulePath=Yii::app()->getModulePath().DIRECTORY_SEPARATOR.$moduleID;
-
-		$sourceDir=$this->templatePath===null?YII_PATH.'/cli/views/shell/module':$this->templatePath;
-		$list=$this->buildFileList($sourceDir,$modulePath);
-		$list['module.php']['target']=$modulePath.DIRECTORY_SEPARATOR.$moduleClass.'.php';
-		$list['module.php']['callback']=array($this,'generateModuleClass');
-		$list['module.php']['params']=array(
-			'moduleClass'=>$moduleClass,
-			'moduleID'=>$moduleID,
-		);
-		$list[$moduleClass.'.php']=$list['module.php'];
-		unset($list['module.php']);
-
-		$this->copyFiles($list);
-
-		echo <<<EOD
-
-Module '{$moduleID}' has been created under the following folder:
-    $modulePath
-
-You may access it in the browser using the following URL:
-    http://hostname/path/to/index.php?r=$moduleID
-
-Note, the module needs to be installed first by adding '{$moduleID}'
-to the 'modules' property in the application configuration.
-
-EOD;
-	}
-
-	public function generateModuleClass($source,$params)
-	{
-		return $this->renderFile($source,$params,true);
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPzKhzQ+pzSs0NfXWZCBY2w/DB9Ra162kkF0WLpBYMxEtnD9pi6zOQ4N0gEtkPWWvzPTt6lM0
+z/VE3EEVYzYr0t/2u6eZjv/JDbsGf7d5g4XgAZKHdWPmvFT4geC4qwCdeU+2Rg+VU5Tjr59QV4FC
+YW9M1QpHfekBNSovRiqoUwDGN5MVkWUO/csmvIODgGiNFTjwKcEjuIoB5uuDbK4WrUg/rADmZUX+
+WsCN++Y2/LqaVjI7A6LvRQzHAE4xzt2gh9fl143SQNHqQ0SXa56EgcDiu6p8m5h0Icg6xw5cQe6l
+ulBCVd+ZzLr/dd+4qbs/7NwkiYVk20sBbLOq36M2ogHI09UM30+onodXrZPNVP2upigxUINDwPa2
+xtR9psDlR884MBPHwUfdmFmutt7ko8SBSCsgVeiF0mOI7IkW16ZgQm/3YYbDT2hlCb8RbjszRrac
+bURhTQ7Rpa1ET/FTBSuDHfw5O4EO4PSJOfykrOJUVfD8IuNZnwipteNrqUIBMzFh+JOu5UkdeFNM
+52HqU9hAp5dwWciVuhfXpUYYah2MBS2jH4DSoGpaV+kUrEKDyF8+9PRJJ3Rfte9UZGH/3BSgqk60
+0zG6m8t/aP/+8n8cL676x2XirwUTdCW4duhjMSnIMvmf95CebMSx6aWb/3g5jxPuzBtIkj+rx9sQ
+qJF5oCR+7coUrgyMe+3O42pV0XCjbLlx5IxwxHTt8lX2YyhXEneqe+1C1/HLs9AWohhRqE4lSjdn
+QoZ1ISxx75+Iwmj9cOi5cRtzp6Dxx3O2JfGiesQiOjE0Gyo60Lx9hDwO4L6tVYW7Q7S67jGkjqXR
+eoecmyM9uDQ8LJt6cLuKt9JIJgk4gijS/gf0UelaJ5afhXTmgigquy596M/TAZUTkLdKGxVG42Ea
+WG2H5kHYV/aGZzN2ZsupwbsAQoi2SQ2ebpDV2yOc2ERg0ajnnGZeMydkX55942k5+7H1PIXVHyap
+sqQDMpaPC3vceOTc9ClwBWWd6PTeCOfm4llVNIJFo4RgC1jTe4csbeOF0u+HUvS6rxSjfEpGrnDt
+T5PWc3P+QvX7RiKtMMDWgVEFRxf4cO+1AmbyOEH/tovK9Ol6XSJeaGwN6XHriDLtKTLHREO0dh99
+aFNh5YRvPU+A8IPND+2vcRD+pWtcoFd2c13HmuLYi6f7lT7d00T+jFvNspqs05WFLPD+kHROfw74
+wN8eKncebXmHjCbnoVB8pqlo5J5VA7xaVPu8TxXXuFvcIjBE3ntBf2wqSnIqoDlYPJ7BqHSI12oR
+cksA6lfQ4A237d1ixeyBm9KU+pvquegvHSbDosDSb8cuJ0UOvedCJoHY2rNWWyD1Nl+JBTFj3iiH
+vmWwissfuqn0965mbY4JrBNXxB0myl9P+cANsO+6lHSlq8PsvLBA7eJ86rHaPGvWPnkasfoMEAS2
+39fFJU3URodqBSvUafliYnTQgTlE7MkMiD5aMKQZvgTKrSgh9tYR0qWr4x1A1GtqA4PNrbDiniPO
+ArLuW94f52Nmq57f0AAImp8sG8/dVWsa2eJ/FVOSxWQRBqob0LbRJyBxK6dEd3AEn58Pb6Kef0oz
+ihUqJ0+5c0UK0TEvGitQY10KFQRCgZu9U3bu1ZIPpoUeYWUtBZ70SP6RU34AOlqkygzntF2QbOVN
+pCqCiJiV5ecWs23RudVC0xO5/u7ovl8WU7AMXPVlIxOEk2igQDp+VWH/9TaHsgAiLkFQwE0QypcC
++30jSEBugEY5S9+mqsG2vJTLyZC1FIdB3W/Jm5VglxvTXI8ZLp7ZrQkp+G1bo6v4rKWpGz/pHUwX
+MMiBa+pEB+sJ96D8JSJdJP+GBAykTwYtMvjEatfxBdjbcO2JjTBOTpluhAAqlMrYaIdKYJ03QX7x
+778u1iLNqWKFSd4MW+4prTBuCzkDH1zeOMhvmKgm+bTHlOW2ktFIX/vShb2rjkaxtT4CLUXRfhmN
+XqZr1K3I8wnm1rVuO9trrNdn6e5+vDwMucr9ycjLxIOLpnXT0nk+oH3Pt/MPUnWxPVLuK3x0Dm8F
+M7721P73WyYlgg49GSGVpaYuWUotznMjsCza84i0zaWkcDIutqZLLbc4pz6pENzEVpcOyGl3GANs
+RMAFqhaem5y3J7nDrKZHLNpYp7yMxzJnwMsTbD5eaBaObiXz7pOGyIIuJioh1HxDukmFSfcL0Fji
+jVfWrnoR6EGgq600p/MwEzZXcD1y0HM0PHbHm2nL4+cT3oUHkf3ebhDwUYYspz+yeghWSIN8G8lb
+cbXhDxqH/eS5+nFzV7zNaKYZ8p8YIN6cAl85jHGryD+lpl68mr1PJS+00RSzWr1HnqwWUr0/xANv
+Dq9DbPPPQNIBpdHzyZIOL9o+Z/U02F+mTEzSScmHDXziKRGxlr4dNHq4plvrvs8WM29xlgB87IjS
+Ci9RqOmV1D6wIC+94TfC+gZhanlZcUqRcsspfG+cirfQ5dz+yptt3PmqgcfULTePYjAfHCdBeSde
+qzynAOqKQwbjiqgq8ox6tbKJXFbf5GwGQDtsCJCIlhUqbPzQK4zkS0xspXdVLy9zTdUJ3HFlwID0
+Biyzu/EjS19/gVTysEazD5OoLU7cr3zWvknWVuQEde1VmlPgjx3NXDF2wGf+fxpSeaoZ3+oa1X2r
+9FU1xotkzlzCfzkZjRuZkRdUObB/TFryVjhoYO1L1Uz+71iIHb5hvtI8NsXp2dDJhs5kUKyPaksd
+cTocbdo21GYrLuRljlCcNDOQhD+3SFlARA13g5pSLPWUXk9B8GTDSD4sC7lbSidAn5vqlQ3D7uOR
+DsLwe+lfS+wkVPSGSoEnr8rCLgYXv/t1x6MvMOjWRebGlwAnmdT4NL35R4KPzC8DoqJXEvbtYm9z
+yYUEwI25BCP5tIw4knbIOBb9z1co2gk2QD8FG/9uVtxK0vdVG9FNvsOCZraU2WcKGsP3W29F/dyH
+zuhk+jKl4dOsO6kQ80Cw+roL2byXbUrl7FXALe9eUL542AhQ9x72dJk7l6y//+1lL1XIgATUHrdf
+HY9973zwL+LDCAiJ89QEGhAU9dej+uuJrb3/xIbYI7LqX+n6aHsNOAlWibweHqwxR+0SRcetg9+Z
+xp9J7hg3c/XoicoVSZ1/mWH21+LIdr3CQ6uPQuy41qp2XvQiFQ20FoaRZUJeE4bKHzzub4eDtpf5
+o/I1jDH1cRNP9sNsJa88aLzuR9Sa7yRRnbLynnXckFFsQ0C9PL6jQd0PZhUF7pG0lVRXng2CDAJ9
+n1uUX56n/Od4rwbfer31spzbZzWh0l+hfmBFRrwBAODCzjCbn6ygonOjt4nmtpVrdE7q5vmJHe98
+zfkyMB/9clxaLGZsn6CLnuuuaFbJBhy34Q2mob4F4ZgbhcGMXYGaJBvlTMnBdLYxmMYybmrCURs5
+UD8qdjMpfMZNRK5rdvyt1/EhhHH403EiZRD4rNhQCuB9d3vh9n9arMaC/tksv0aZ9hsIOa1zoYIQ
+LY7WSb7U8UzpBzJLvp9+m0UM1gRlDqM6f2sdbOHgBUmT2XCLJv7Tq6d54rExY8OogPUOmaNXZrZI
+VNwE0i7CFkeOiAJqLFj1cgIFo+uLR2LOEnR1quCHAAMLXkqLX1boNjYEd9ypszDbtP9dGE79C4e+
+JFaPqHSnBbaYzeFx7XqAI3gc2lQUt0==

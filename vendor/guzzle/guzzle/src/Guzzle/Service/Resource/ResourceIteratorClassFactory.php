@@ -1,60 +1,40 @@
-<?php
-
-namespace Guzzle\Service\Resource;
-
-use Guzzle\Inflection\InflectorInterface;
-use Guzzle\Inflection\Inflector;
-use Guzzle\Service\Command\CommandInterface;
-
-/**
- * Factory for creating {@see ResourceIteratorInterface} objects using a convention of storing iterator classes under a
- * root namespace using the name of a {@see CommandInterface} object as a convention for determining the name of an
- * iterator class. The command name is converted to CamelCase and Iterator is appended (e.g. abc_foo => AbcFoo).
- */
-class ResourceIteratorClassFactory extends AbstractResourceIteratorFactory
-{
-    /** @var array List of namespaces used to look for classes */
-    protected $namespaces;
-
-    /** @var InflectorInterface Inflector used to determine class names */
-    protected $inflector;
-
-    /**
-     * @param string|array       $namespaces List of namespaces for iterator objects
-     * @param InflectorInterface $inflector  Inflector used to resolve class names
-     */
-    public function __construct($namespaces = array(), InflectorInterface $inflector = null)
-    {
-        $this->namespaces = (array) $namespaces;
-        $this->inflector = $inflector ?: Inflector::getDefault();
-    }
-
-    /**
-     * Registers a namespace to check for Iterators
-     *
-     * @param string $namespace Namespace which contains Iterator classes
-     *
-     * @return self
-     */
-    public function registerNamespace($namespace)
-    {
-        array_unshift($this->namespaces, $namespace);
-
-        return $this;
-    }
-
-    protected function getClassName(CommandInterface $command)
-    {
-        $iteratorName = $this->inflector->camel($command->getName()) . 'Iterator';
-
-        // Determine the name of the class to load
-        foreach ($this->namespaces as $namespace) {
-            $potentialClassName = $namespace . '\\' . $iteratorName;
-            if (class_exists($potentialClassName)) {
-                return $potentialClassName;
-            }
-        }
-
-        return false;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPyHoHKBMtBrrkyBGOQ64Y2MI0AI1zSLTAOEiHju8aLrMNvmBK/Wb0A8l2EQ26863YvMgvzz/
+f3sBqlDkdTxE088JWFi6OiRQc+CWMawMb5M5opejuG+3yDW+8QGTYZOBcheX5WaBfbfB45jThqUs
+bAxE/vA7wkzrmBvqGm70Uexeo0l92QHopluDyMRR26dMJ2qNMwSvMjHmfsHIMuS88gos5Ka8vApn
+6D8Jxv07E10AeETFIygbhr4euJltSAgiccy4GDnfT9fWEZvio+bbt1fRqTZ1AySEQrr0SxL1O4nY
+QJyu99ShxveJ2/A+rzefyYze1ffJf93dmJH4Ck3syItw9+w4H5YBhqJWDAGGH2ajKBQ7KUaIPV1T
+a3OIC+JLNG0VmHYCIrVAQrcPY8+y2wmfmeGVKBChVGW+6rP0hnz6awmPZknLanwK+yrkmdDIiUax
+lvUJjdDtW5MDt5PzdUAvCsNMIsmMTaYL6UII39lB5N5D4JVHyduqZF8bif8cVqXxurB0G4Qs6/hm
+kiGd44ocsR3/k+8dGc5yFITg47G+hWpXWmkzmhZdVsjyVSHBUwpojeHIE2w0cedaTpEFVljoaxyf
+m7yQtXkiCwUu9GOKXF0sGxgW6b5wbXyaqSzTGHI16xyrjMcVovNXbxbmBKWMsCTuKiSv27vG7gd1
+Jj8QdxEMioyx5Jj3w7QyL693NXalah33esvubKbp+ZkJUJGTPdPPybsETos4UJVLL6h028XvvdUL
+dVeerOItKFXCzMPI0GIIqtq//BOew1/lth6JVGInu/M5PPsixKquZiC/3xMF0FeDU9HHd9n+NwTS
+Ox1hpZG7ZBLYb6Y7EMITdRG4pgUNxRxudNeeA8Baf0LgUaXAw7PBNArbUHdj0R7PxQG8fWE6gGaO
+rIolKdA5BVnCP9Q8rpypNGcVhlj73EPfkJqSSCrS+bML2mB8yHeIL+NTM91aY+Ntb/IhlwPH1Xbx
+pOjydSVTYx+VKV+ZYskNhRE9HNuaCe381jss3R6hTgFZ9tJnHzJgoPmumS6GBK89RlaNgPrXh1Or
+cAkeWeia4/r3z1kSFjb+wQ8M67/ZaT9x9UnDwfZjJrrVaERGjYknZ0eumQxpSti123aLsREJOsJi
+ons5PjvsMigoatQb4NDDX/edQFhxdeTAoeCbooYo2+3gOM4gXExarbrve8yST1Qv37RpG2ZCVbzw
+gWVJBb4X5FNidKdoibelsLjCnasmblQ1Q1S19O57Fg4BOuH6G9KsZoelTUcaLZj7X2Fzj2KBGm2C
+Q2/FOfHSBQWExYM9yJJUVNVVs6Z850wiqeKeaiji6LmwQUDto2GX/pG5s2SNGJ8U1F2B9jDo3O8k
+j1UwV+cIzhW3WZfwU4csuzLJVXEXB39OehW3OHuC55and/d33n4FndcNDq5nSxeKeYe5WF8e6vts
+JcOAbp0fmwlmxiOtiGeqnJhkfLZ+5BVPJKcdoynHxPoJCaU3MXeIjZJ2hRBuyCtDkf85DSMTKu/g
+3R8feMCTSCl9iIcPD1MuDHhDKpkYL/Oj/WhBkQTSxlM/M145eF3Fgi4N3v6gTPt0G3Rxufe8JeMA
+HeqSsQ4GWg61PD8unpUtzG2iQ5qHefyFWV4KFpcOrQLOuOfKKhCK7txfKEMCT55iNxxk5n9uId1u
+gg8r0q8cFdyUVGN/frPSTyah8zQVEAVaz8Iaqg/O6OJ7HxnWbcYeXQdDY+PBAKkHb03ieCn7ZD1l
+9LEnlnzbGGskEo2I9tJoTOZbbsiIIcRbcDsUU+T4BQiDUE/jdAKBv4k2gAX2DGO3OQD5COFf9Xpd
+285c8ZXajaC6sghCr0TQ542x9i/sOGsfIsml4BcW5byv59O9Lzw0ZMQqmeqDWsSVP93SnwNZxGaS
+r7d5BT8Rik1tpG9m7SiL06CRwE7It7p1hwtuGQQ0n+EaClC6JGK0Xoc+xrhay7ar0NRGje0QX55K
+f4/yq5Jh1Oi1yCUDYCLA/hguFI7C98ZEVnM2w01dj1iwnUfdh0StEV+lkS3pHwW7U5B7r4LwPcqI
+NqJHZwzSShprrQLSQeyKwH6T9hZ/yPAWC4n8+gyuwI4eOC8uq5JPYtlPaGFjJKDUlgqpqvPT2G1v
+tIVNqjTBHnRwqxYphOJXK2Q0IFbhY9vuyeSTBsigVHOuQhAaSQphO5ZwViRWSIBh4ZccFljZ0osa
+NRi1nuTsBPqsRORuqzeTIZciAY6OraX4WY02Y8vqQtxi+pvw5gLnBbecReiv2zq5CLKNGCvS7om7
+SK6AepbxSVIrjo+BmCfec95mksabRfFnJXB+AtmCBXsuSn7iM8idTrzdPLcFJaYfvdZxcQro0kb8
+ga3KpLHu8uVTuAm4/qRQEPImt1g/ZJZxJerDHRMfceZ9m6vZqtKmyS1vcuYhsGJHpDpI4GCpkA83
+Q64imNZ4s3udcoUIAFYnzcCdqhPj7D0uLeOSOjjwAf5gDvLqeXO0A3Z2YvU5IRgP4b7WX1wvOuj6
+A7XpoxhNp8CTMoT3JUOF86A9dZGVFNc5eOcwjPEZqciovdVCQOz3KRs/RkwBPmA3HgKNWtS/E6v7
+BpZ1zzOTYgusyGAV6E6e9p3Js6trVeMSrsCubb1VlT2VTXG34xxDISsQUAjRwlQB2c3sRurOfUIa
+bsg+LB8G5xHBiw1K9ZWYit4pusV0YLkwLBhTbmKEUBbV/+WYibaS3sGObguPsav96EmQP8XqjkdL
+hbbJuWX1XcU6kWbzW7q=

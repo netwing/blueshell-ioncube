@@ -1,37 +1,26 @@
-<!DOCTYPE html PUBLIC
-	"-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<title>Error <?php echo $data['code']; ?></title>
-
-<style type="text/css">
-/*<![CDATA[*/
-body {font-family:"Verdana";font-weight:normal;color:black;background-color:white;}
-h1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
-h2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
-h3 {font-family:"Verdana";font-weight:bold;font-size:11pt}
-p {font-family:"Verdana";font-weight:normal;color:black;font-size:9pt;margin-top: -5px}
-.version {color: gray;font-size:8pt;border-top:1px solid #aaaaaa;}
-/*]]>*/
-</style>
-</head>
-
-<body>
-<h1>Error <?php echo $data['code']; ?></h1>
-<h2><?php echo nl2br(CHtml::encode($data['message'])); ?></h2>
-<p>
-El error mencionado ocurrió cuando el Servidor Web estaba procesando su solicitud.
-</p>
-<p>
-Si piensa que este es un error del servidor, por favor contacte a <?php echo $data['admin']; ?>.
-</p>
-<p>
-Gracias.
-</p>
-<div class="version">
-<?php echo date('Y-m-d H:i:s',$data['time']) .' '. $data['version']; ?>
-</div>
-</body>
-</html>
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPzrMT++llql1ekFYpE90cYmKVVZcE4Tmth+iBk06XnCZb5t11WlhmE0llDG496j5Q3W1goil
+cZEdmFAlfyFXtiyqlGj6fG7XylMKU/iIpvCzeHBpAZQ/3mJ7izucbvnmrjfP+CbvMZTWNpPcunpZ
+rAFyuI8m3nhwSk7BmKOJCnGvTxMxHk9cf9SehqsocrtqnifCRqHHWODbxrTJrs49UYzO84MMQ1Xo
+qDOK65fTTxElhDNwrXNkhr4euJltSAgiccy4GDnfT4LbCn8UK9Zjib2v7TXRXja8njNpya4YwFQj
+zQzD+mJ4t1K3WtfIKiQcx+6Zu2NkabukELeTIwSwDRalx9kSub0ULSTBzRWHtQkMOQR8oVQdDQkv
+I1aDsvjrmIed7LvCSTdwpoVq53Nr6e4h7obM5tg2dM+r6Vf56mMeQUsyKhU5lDva3GNfLLrFM03x
+A007/yPWjFFJeSRthCp5u8eoDqruVBgMqiczZcGIp6JBk27U+/VwLsR/uNhb4nEkCGQipratKzd5
+hm1HXAJ7eDWQsME3M4XoMB935OZjHpWD4PAq6T+NO5rIGkhHpD3yhoP34I1bIQ7ptP1f3RPCRq85
+zFUD4Nbt7hAQ+gRNGwl6ZAUgdhHFMoDxtIVAdDXwl939yb5hJX0lDXdsJv7hH5ehoXGq1ZQ7zRho
+e+Kb761O5XAaPkXHMFYkf8mwLiARKP43kxRdGpk4OcaO8DihriV+yXMuqLBix7/13ruzZ2+bcmwl
+oEBsWszOAZh+rH506ylCf1GoIiWqbQkDyCsoP+EXRe+1WozeWuqs1+9C4tFib1W0ska2sHMQKaCx
+UctSCx2O9DY//G9D1RaoDuz3idLlLdNx5X5+BlHq9rLLD3Xc62g9O8dj1At4uBqepDurdXBCdcMX
+a7B/BqaWKwHUafTfpmqBNitIkZkUSfRyRXPf8KEAAWNqtvTTyFKfTSA8pKaCcs3c8yThbIOGQVzi
+UQyuVVTP+RfyLMltRcU8Zndj5Lp+j4BijPjUFaJZc3XF29hLLQy7v1u8gXm1tdePvWktRlgMXOlc
+O9kbw2qLgDY9xZMIXFOvCNoh4+tbQSiZHTYRMWfbvYS3M5rSGPnGQj5G7nDExCCE8Q8XC5KevRbC
+MpYX6Yo+mEGiIaQpuzWC4YYLBNBFruUznYPBulscQj7uzUpb9s5pi5E2d7QOp+dq1H1NxPZVSPuk
+gdL0syiiQ++kxOAQ6Zkws9aSeKh4cKhudrLaMY/ZnYdgLIE0+DBUbL3Au3hGa1VNOwnxLZP9/iKh
+x62bK/p9g3DZ4akgP79HnpSUI/B+oURhCGbeUXoc1WBhwza4PXKXpzQ5mtZmHNI0eegTdWx3Tl1v
+xiL1RcSYg6wkBUJwSck28tEmm7PClMc+fuJIIPtNfUqj3q+C/6QWCX7a354bIgyghsk6GW/tzKqs
+OD6PN//++B+8ijxhhikSmkkEea2jhx+7YpaLX/r+k/fRiKj5YAzAXANWKz7Y/CIJ9WBG0pwMkquk
+5E9dd/QfPExqwpiD4UKSMdTRdXR1U4s9TS/I3ld7hMto+tZAxxraGdYH9RoTh5eBFK5Ei4aWQQCO
+OGtcpC+eG+WH1HeVA52sQ1JMS9QiuGkl/CJoxTXQEy13Y9lAwrvhzM7NJhfkv54cqQ2oj5mk5633
+sIiavwS8EdkyoWu4hKtyEQsWcrDQzYD4Mlp1L4X/e/Fx4XSik72NlhmZgZK=

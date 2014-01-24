@@ -1,110 +1,34 @@
-<?php
-/**
- * Copyright 2011-2013 Anthon Pang. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- * @package WebDriver
- *
- * @author Anthon Pang <apang@softwaredevelopment.ca>
- */
-
-namespace WebDriver\WebTest;
-
-use WebDriver\Session;
-use WebDriver\Exception as WebDriverException;
-
-/**
- * abstract WebDriver\WebTest\Script class
- *
- * @package WebDriver
- */
-abstract class Script
-{
-    /**
-     * Session
-     *
-     * @var \WebDriver\Session
-     */
-    protected $session;
-
-    /**
-     * Tally on assertions
-     *
-     * @var array
-     */
-    protected $assertStats;
-
-    /**
-     * Constructor
-     *
-     * @param \WebDriver\Session $session
-     */
-    public function __construct(\WebDriver\Session $session)
-    {
-        $this->session = $session;
-
-        $this->assertStats = array(
-            'pass' => 0,
-            'failure' => 0,
-            'total' => 0,
-        );
-    }
-
-    /**
-     * Assert (expect) value
-     *
-     * @param mixed  $expression Expression
-     * @param mixed  $expected   Expected
-     * @param string $message    Message
-     *
-     * @throw \WebDriver\Exception\WebTestAssertion if $expression is not equal to $expected
-     */
-    protected function assert($expression, $expected, $message)
-    {
-        $this->assertStats['total']++;
-
-        if ($expression !== $expected) {
-            $this->assertStats['failure']++;
-
-            throw WebDriverException::factory(WebDriverException::WEBTEST_ASSERTION, $message);
-        }
-
-        $this->assertStats['pass']++;
-    }
-
-    /**
-     * Assert (expect) exception
-     *
-     * @param function $callback Callback function
-     * @param string   $message  Message
-     *
-     * @throw \WebDriver\Exception\WebTestAssertion if not exception is thrown
-     */
-    protected function assertException($callback, $message)
-    {
-        $this->assertStats['total']++;
-
-        try {
-            $callback();
-
-            $this->assertStats['failure']++;
-
-            throw WebDriverException::factory(WebDriverException::WEBTEST_ASSERTION, $message);
-        } catch (\Exception $e) {
-            // expected exception
-        }
-
-        $this->assertStats['pass']++;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

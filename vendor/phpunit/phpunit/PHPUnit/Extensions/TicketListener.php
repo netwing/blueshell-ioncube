@@ -1,224 +1,75 @@
-<?php
-/**
- * PHPUnit
- *
- * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @package    PHPUnit
- * @subpackage Extensions_TicketListener
- * @author     Sean Coates <sean@caedmon.net>
- * @author     Raphael Stolt <raphael.stolt@gmail.com>
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      File available since Release 3.4.0
- */
-
-/**
- * Base class for test listeners that interact with an issue tracker.
- *
- * @package    PHPUnit
- * @subpackage Extensions_TicketListener
- * @author     Sean Coates <sean@caedmon.net>
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      Class available since Release 3.4.0
- */
-abstract class PHPUnit_Extensions_TicketListener implements PHPUnit_Framework_TestListener
-{
-    /**
-     * @var array
-     */
-    protected $ticketCounts = array();
-
-    /**
-     * @var boolean
-     */
-    protected $ran = FALSE;
-
-    /**
-     * An error occurred.
-     *
-     * @param  PHPUnit_Framework_Test $test
-     * @param  Exception              $e
-     * @param  float                  $time
-     */
-    public function addError(PHPUnit_Framework_Test $test, Exception $e, $time)
-    {
-    }
-
-    /**
-     * A failure occurred.
-     *
-     * @param  PHPUnit_Framework_Test                 $test
-     * @param  PHPUnit_Framework_AssertionFailedError $e
-     * @param  float                                  $time
-     */
-    public function addFailure(PHPUnit_Framework_Test $test, PHPUnit_Framework_AssertionFailedError $e, $time)
-    {
-    }
-
-    /**
-     * Incomplete test.
-     *
-     * @param  PHPUnit_Framework_Test $test
-     * @param  Exception              $e
-     * @param  float                  $time
-     */
-    public function addIncompleteTest(PHPUnit_Framework_Test $test, Exception $e, $time)
-    {
-    }
-
-    /**
-     * Skipped test.
-     *
-     * @param  PHPUnit_Framework_Test $test
-     * @param  Exception              $e
-     * @param  float                  $time
-     * @since  Method available since Release 3.0.0
-     */
-    public function addSkippedTest(PHPUnit_Framework_Test $test, Exception $e, $time)
-    {
-    }
-
-    /**
-     * A test suite started.
-     *
-     * @param  PHPUnit_Framework_TestSuite $suite
-     * @since  Method available since Release 2.2.0
-     */
-    public function startTestSuite(PHPUnit_Framework_TestSuite $suite)
-    {
-    }
-
-    /**
-     * A test suite ended.
-     *
-     * @param  PHPUnit_Framework_TestSuite $suite
-     * @since  Method available since Release 2.2.0
-     */
-    public function endTestSuite(PHPUnit_Framework_TestSuite $suite)
-    {
-    }
-
-    /**
-     * A test started.
-     *
-     * @param  PHPUnit_Framework_Test $test
-     */
-    public function startTest(PHPUnit_Framework_Test $test)
-    {
-        if (!$test instanceof PHPUnit_Framework_Warning) {
-            if ($this->ran) {
-                return;
-            }
-
-            $name    = $test->getName(FALSE);
-            $tickets = PHPUnit_Util_Test::getTickets(get_class($test), $name);
-
-            foreach ($tickets as $ticket) {
-                $this->ticketCounts[$ticket][$name] = 1;
-            }
-
-            $this->ran = TRUE;
-        }
-    }
-
-    /**
-     * A test ended.
-     *
-     * @param  PHPUnit_Framework_Test $test
-     * @param  float                  $time
-     */
-    public function endTest(PHPUnit_Framework_Test $test, $time)
-    {
-        if (!$test instanceof PHPUnit_Framework_Warning) {
-            if ($test->getStatus() == PHPUnit_Runner_BaseTestRunner::STATUS_PASSED) {
-                $ifStatus   = array('assigned', 'new', 'reopened');
-                $newStatus  = 'closed';
-                $message    = 'Automatically closed by PHPUnit (test passed).';
-                $resolution = 'fixed';
-                $cumulative = TRUE;
-            }
-
-            else if ($test->getStatus() == PHPUnit_Runner_BaseTestRunner::STATUS_FAILURE) {
-                $ifStatus   = array('closed');
-                $newStatus  = 'reopened';
-                $message    = 'Automatically reopened by PHPUnit (test failed).';
-                $resolution = '';
-                $cumulative = FALSE;
-            }
-
-            else {
-                return;
-            }
-
-            $name    = $test->getName(FALSE);
-            $tickets = PHPUnit_Util_Test::getTickets(get_class($test), $name);
-
-            foreach ($tickets as $ticket) {
-                // Remove this test from the totals (if it passed).
-                if ($test->getStatus() == PHPUnit_Runner_BaseTestRunner::STATUS_PASSED) {
-                    unset($this->ticketCounts[$ticket][$name]);
-                }
-
-                // Only close tickets if ALL referenced cases pass
-                // but reopen tickets if a single test fails.
-                if ($cumulative) {
-                    // Determine number of to-pass tests:
-                    if (count($this->ticketCounts[$ticket]) > 0) {
-                        // There exist remaining test cases with this reference.
-                        $adjustTicket = FALSE;
-                    } else {
-                        // No remaining tickets, go ahead and adjust.
-                        $adjustTicket = TRUE;
-                    }
-                } else {
-                    $adjustTicket = TRUE;
-                }
-
-                $ticketInfo = $this->getTicketInfo($ticket);
-
-                if ($adjustTicket && in_array($ticketInfo['status'], $ifStatus)) {
-                    $this->updateTicket($ticket, $newStatus, $message, $resolution);
-                }
-            }
-        }
-    }
-
-    abstract protected function getTicketInfo($ticketId = NULL);
-    abstract protected function updateTicket($ticketId, $newStatus, $message, $resolution);
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+10nIdbct36qD9W==

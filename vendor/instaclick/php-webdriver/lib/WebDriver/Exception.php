@@ -1,159 +1,66 @@
-<?php
-/**
- * Copyright 2004-2013 Facebook. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- * @package WebDriver
- *
- * @author Justin Bishop <jubishop@gmail.com>
- * @author Anthon Pang <apang@softwaredevelopment.ca>
- */
-
-namespace WebDriver;
-
-/**
- * WebDriver\Exception class
- *
- * @package WebDriver
- */
-abstract class Exception extends \Exception
-{
-    /**
-     * Response status codes
-     *
-     * @link http://code.google.com/p/selenium/wiki/JsonWireProtocol#Response_Status_Codes
-     */
-    const SUCCESS = 0;
-    const NO_SUCH_DRIVER = 6;
-    const NO_SUCH_ELEMENT = 7;
-    const NO_SUCH_FRAME = 8;
-    const UNKNOWN_COMMAND = 9;
-    const STALE_ELEMENT_REFERENCE = 10;
-    const ELEMENT_NOT_VISIBLE = 11;
-    const INVALID_ELEMENT_STATE = 12;
-    const UNKNOWN_ERROR = 13;
-    const ELEMENT_IS_NOT_SELECTABLE = 15;
-    const JAVASCRIPT_ERROR = 17;
-    const XPATH_LOOKUP_ERROR = 19;
-    const TIMEOUT = 21;
-    const NO_SUCH_WINDOW = 23;
-    const INVALID_COOKIE_DOMAIN = 24;
-    const UNABLE_TO_SET_COOKIE = 25;
-    const UNEXPECTED_ALERT_OPEN = 26;
-    const NO_ALERT_OPEN_ERROR = 27;
-    const SCRIPT_TIMEOUT = 28;
-    const INVALID_ELEMENT_COORDINATES = 29;
-    const IME_NOT_AVAILABLE = 30;
-    const IME_ENGINE_ACTIVATION_FAILED = 31;
-    const INVALID_SELECTOR = 32;
-    const SESSION_NOT_CREATED = 33;
-    const MOVE_TARGET_OUT_OF_BOUNDS = 34;
-
-    // obsolete
-    const INDEX_OUT_OF_BOUNDS = 1;
-    const NO_COLLECTION = 2;
-    const NO_STRING = 3;
-    const NO_STRING_LENGTH = 4;
-    const NO_STRING_WRAPPER = 5;
-    const OBSOLETE_ELEMENT = 10;
-    const ELEMENT_NOT_DISPLAYED = 11;
-    const UNHANDLED = 13;
-    const EXPECTED = 14;
-    const ELEMENT_NOT_SELECTABLE = 15;
-    const NO_SUCH_DOCUMENT = 16;
-    const UNEXPECTED_JAVASCRIPT = 17;
-    const NO_SCRIPT_RESULT = 18;
-    const NO_SUCH_COLLECTION = 20;
-    const NULL_POINTER = 22;
-    const NO_MODAL_DIALOG_OPEN_ERROR = 27;
-
-    // user-defined
-    const CURL_EXEC = -1;
-    const OBSOLETE_COMMAND = -2;
-    const NO_PARAMETERS_EXPECTED = -3;
-    const JSON_PARAMETERS_EXPECTED = -4;
-    const UNEXPECTED_PARAMETERS = -5;
-    const INVALID_REQUEST = -6;
-    const UNKNOWN_LOCATOR_STRATEGY = -7;
-    const WEBTEST_ASSERTION = -8;
-
-    private static $errs = array(
-//      self::SUCCESS => array('Success', 'This should never be thrown!'),
-
-        self::NO_SUCH_DRIVER => array('NoSuchDriver', 'A session is either terminated or not started'),
-        self::NO_SUCH_ELEMENT => array('NoSuchElement', 'An element could not be located on the page using the given search parameters.'),
-        self::NO_SUCH_FRAME => array('NoSuchFrame', 'A request to switch to a frame could not be satisfied because the frame could not be found.'),
-        self::UNKNOWN_COMMAND => array('UnknownCommand', 'The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource.'),
-        self::STALE_ELEMENT_REFERENCE => array('StaleElementReference', 'An element command failed because the referenced element is no longer attached to the DOM.'),
-        self::ELEMENT_NOT_VISIBLE => array('ElementNotVisible', 'An element command could not be completed because the element is not visible on the page.'),
-        self::INVALID_ELEMENT_STATE => array('InvalidElementState', 'An element command could not be completed because the element is in an invalid state (e.g., attempting to click a disabled element).'),
-        self::UNKNOWN_ERROR => array('UnknownError', 'An unknown server-side error occurred while processing the command.'),
-        self::ELEMENT_IS_NOT_SELECTABLE => array('ElementIsNotSelectable', 'An attempt was made to select an element that cannot be selected.'),
-        self::JAVASCRIPT_ERROR => array('JavaScriptError', 'An error occurred while executing user supplied JavaScript.'),
-        self::XPATH_LOOKUP_ERROR => array('XPathLookupError', 'An error occurred while searching for an element by XPath.'),
-        self::TIMEOUT => array('Timeout', 'An operation did not complete before its timeout expired.'),
-        self::NO_SUCH_WINDOW => array('NoSuchWindow', 'A request to switch to a different window could not be satisfied because the window could not be found.'),
-        self::INVALID_COOKIE_DOMAIN => array('InvalidCookieDomain', 'An illegal attempt was made to set a cookie under a different domain than the current page.'),
-        self::UNABLE_TO_SET_COOKIE => array('UnableToSetCookie', 'A request to set a cookie\'s value could not be satisfied.'),
-        self::UNEXPECTED_ALERT_OPEN => array('UnexpectedAlertOpen', 'A modal dialog was open, blocking this operation'),
-        self::NO_ALERT_OPEN_ERROR => array('NoAlertOpenError', 'An attempt was made to operate on a modal dialog when one was not open.'),
-        self::SCRIPT_TIMEOUT => array('ScriptTimeout', 'A script did not complete before its timeout expired.'),
-        self::INVALID_ELEMENT_COORDINATES => array('InvalidElementCoordinates', 'The coordinates provided to an interactions operation are invalid.'),
-        self::IME_NOT_AVAILABLE => array('IMENotAvailable', 'IME was not available.'),
-        self::IME_ENGINE_ACTIVATION_FAILED => array('IMEEngineActivationFailed', 'An IME engine could not be started.'),
-        self::INVALID_SELECTOR => array('InvalidSelector', 'Argument was an invalid selector (e.g., XPath/CSS).'),
-        self::SESSION_NOT_CREATED => array('SessionNotCreated', 'A new session could not be created (e.g., a required capability could not be set).'),
-        self::MOVE_TARGET_OUT_OF_BOUNDS => array('MoveTargetOutOfBounds', 'Target provided for a move action is out of bounds.'),
-
-        self::CURL_EXEC => array('CurlExec', 'curl_exec() error.'),
-        self::OBSOLETE_COMMAND => array('ObsoleteCommand', 'This WebDriver command is obsolete.'),
-        self::NO_PARAMETERS_EXPECTED => array('NoParametersExpected', 'This HTTP request method expects no parameters.'),
-        self::JSON_PARAMETERS_EXPECTED => array('JsonParameterExpected', 'This POST request expects a JSON parameter (array).'),
-        self::UNEXPECTED_PARAMETERS => array('UnexpectedParameters', 'This command does not expect this number of parameters.'),
-        self::INVALID_REQUEST => array('InvalidRequest', 'This command does not support this HTTP request method.'),
-        self::UNKNOWN_LOCATOR_STRATEGY => array('UnknownLocatorStrategy', 'This locator strategy is not supported.'),
-        self::WEBTEST_ASSERTION => array('WebTestAssertion', 'WebTest assertion failed.'),
-    );
-
-    /**
-     * Factory method to create WebDriver\Exception objects
-     *
-     * @param integer    $code              Code
-     * @param string     $message           Message
-     * @param \Exception $previousException Previous exception
-     *
-     * @return \Exception
-     */
-    public static function factory($code, $message = null, $previousException = null)
-    {
-        // unknown error
-        if (!isset(self::$errs[$code])) {
-            if (trim($message) === '') {
-                $message = 'Unknown Error';
-            }
-
-            return new \Exception($message, $code, $previousException);
-        }
-
-        $errorDefinition = self::$errs[$code];
-
-        if (trim($message) === '') {
-            $message = $errorDefinition[1];
-        }
-
-        $className = __CLASS__ . '\\' . $errorDefinition[0];
-
-        return new $className($message, $code, $previousException);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

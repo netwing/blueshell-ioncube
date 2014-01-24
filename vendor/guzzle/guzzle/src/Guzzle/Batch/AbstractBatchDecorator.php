@@ -1,66 +1,38 @@
-<?php
-
-namespace Guzzle\Batch;
-
-/**
- * Abstract decorator used when decorating a BatchInterface
- */
-abstract class AbstractBatchDecorator implements BatchInterface
-{
-    /** @var BatchInterface Decorated batch object */
-    protected $decoratedBatch;
-
-    /**
-     * @param BatchInterface $decoratedBatch  BatchInterface that is being decorated
-     */
-    public function __construct(BatchInterface $decoratedBatch)
-    {
-        $this->decoratedBatch = $decoratedBatch;
-    }
-
-    /**
-     * Allow decorators to implement custom methods
-     *
-     * @param string $method Missing method name
-     * @param array  $args   Method arguments
-     *
-     * @return mixed
-     * @codeCoverageIgnore
-     */
-    public function __call($method, array $args)
-    {
-        return call_user_func_array(array($this->decoratedBatch, $method), $args);
-    }
-
-    public function add($item)
-    {
-        $this->decoratedBatch->add($item);
-
-        return $this;
-    }
-
-    public function flush()
-    {
-        return $this->decoratedBatch->flush();
-    }
-
-    public function isEmpty()
-    {
-        return $this->decoratedBatch->isEmpty();
-    }
-
-    /**
-     * Trace the decorators associated with the batch
-     *
-     * @return array
-     */
-    public function getDecorators()
-    {
-        $found = array($this);
-        if (method_exists($this->decoratedBatch, 'getDecorators')) {
-            $found = array_merge($found, $this->decoratedBatch->getDecorators());
-        }
-
-        return $found;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+hhI/dGy6itjY/pbd

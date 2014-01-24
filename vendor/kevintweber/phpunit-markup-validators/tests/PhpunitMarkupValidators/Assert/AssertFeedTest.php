@@ -1,70 +1,35 @@
-<?php
-
-/*
- * This file is part of the PhpunitMarkupValidators package.
- *
- * (c) Kevin Weber <kevintweber@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace PhpunitMarkupValidators\Assert;
-
-use kevintweber\PhpunitMarkupValidators\Assert\AssertFeed;
-
-class AssertFeedTest extends \PHPUnit_Framework_TestCase
-{
-    /**
-     * @covers kevintweber\PhpunitMarkupValidators\Assert\AssertFeed::IsValidMarkup
-     */
-    public function testIsValidMarkup()
-    {
-        // Test valid feed markup.
-        AssertFeed::IsValidMarkup('<?xml version="1.0" encoding="UTF-8" ?><rss version="2.0"><channel><title>RSS Title</title><description>RSS feed</description><link>http://www.someexamplerssdomain.com/main.html</link><lastBuildDate>Mon, 06 Sep 2010 00:01:00 +0000 </lastBuildDate><pubDate>Mon, 06 Sep 2010 16:45:00 +0000 </pubDate><ttl>1800</ttl>
-<item><title>Example</title><description>text description</description><link>http://www.example.com/</link><guid>http://www.example.com/123</guid><pubDate>Mon, 06 Sep 2010 16:45:00 +0000</pubDate></item></channel></rss>',
-                                  "Valid RSS markup.");
-
-        // Test invalid feed markup.
-        try {
-            AssertFeed::IsValidMarkup('<?xml version="1.0" encoding="UTF-8" ?><rss version="2.0"><channel><title>RSS Title</title><description>RSS feed</description><link>http://www.someexamplerssdomain.com/main.html</link><lastBuildDate>Mon, 06 Sep 2010 00:01:00 +0000 </lastBuildDate><pubDate>Mon, 06 Sep 2010 16:45:00 +0000 </pubDate><ttl>1800</ttl>
-<item><title>Example</title><description>text description</description><link>http://www.example.com/</link><guid>http://www.example.com/123</guid><pubDate>Mon, 06 Sep 2010 16:45:00 +0000</pubDate>',
-                                      "Invalid RSS markup.");
-        }
-        catch (\PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers kevintweber\PhpunitMarkupValidators\Assert\AssertFeed::IsValidFile
-     */
-    public function testIsValidFile()
-    {
-        // Test valid RSS 2.0 file.
-        AssertFeed::IsValidFile(realpath(__DIR__ . "/../../files/RSS20_Valid.rss"),
-                                "Valid RSS 2.0 file.");
-
-        // Test invalid RSS 2.0 file.
-        try {
-            AssertFeed::IsValidFile(realpath(__DIR__ . "/../../files/RSS20_Invalid.rss"),
-                                    "Invalid RSS 2.0 file.");
-        }
-        catch (\PHPUnit_Framework_AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers kevintweber\PhpunitMarkupValidators\Assert\AssertFeed::IsValidUrl
-     */
-    public function testIsValidUrl()
-    {
-        // Test valid HTML url.
-        AssertFeed::IsValidUrl("http://www.w3.org/News/news.rss", "Valid RSS url.");
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

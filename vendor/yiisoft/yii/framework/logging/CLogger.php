@@ -1,354 +1,178 @@
-<?php
-/**
- * CLogger class file
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CLogger records log messages in memory.
- *
- * CLogger implements the methods to retrieve the messages with
- * various filter conditions, including log levels and log categories.
- *
- * @property array $logs List of messages. Each array element represents one message
- * with the following structure:
- * array(
- *   [0] => message (string)
- *   [1] => level (string)
- *   [2] => category (string)
- *   [3] => timestamp (float, obtained by microtime(true));.
- * @property float $executionTime The total time for serving the current request.
- * @property integer $memoryUsage Memory usage of the application (in bytes).
- * @property array $profilingResults The profiling results.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.logging
- * @since 1.0
- */
-class CLogger extends CComponent
-{
-	const LEVEL_TRACE='trace';
-	const LEVEL_WARNING='warning';
-	const LEVEL_ERROR='error';
-	const LEVEL_INFO='info';
-	const LEVEL_PROFILE='profile';
-
-	/**
-	 * @var integer how many messages should be logged before they are flushed to destinations.
-	 * Defaults to 10,000, meaning for every 10,000 messages, the {@link flush} method will be
-	 * automatically invoked once. If this is 0, it means messages will never be flushed automatically.
-	 * @since 1.1.0
-	 */
-	public $autoFlush=10000;
-	/**
-	 * @var boolean this property will be passed as the parameter to {@link flush()} when it is
-	 * called in {@link log()} due to the limit of {@link autoFlush} being reached.
-	 * By default, this property is false, meaning the filtered messages are still kept in the memory
-	 * by each log route after calling {@link flush()}. If this is true, the filtered messages
-	 * will be written to the actual medium each time {@link flush()} is called within {@link log()}.
-	 * @since 1.1.8
-	 */
-	public $autoDump=false;
-	/**
-	 * @var array log messages
-	 */
-	private $_logs=array();
-	/**
-	 * @var integer number of log messages
-	 */
-	private $_logCount=0;
-	/**
-	 * @var array log levels for filtering (used when filtering)
-	 */
-	private $_levels;
-	/**
-	 * @var array log categories for filtering (used when filtering)
-	 */
-	private $_categories;
-	/**
-	 * @var array log categories for excluding from filtering (used when filtering)
-	 */
-	private $_except=array();
-	/**
-	 * @var array the profiling results (category, token => time in seconds)
-	 */
-	private $_timings;
-	/**
-	* @var boolean if we are processing the log or still accepting new log messages
-	* @since 1.1.9
-	*/
-	private $_processing=false;
-
-	/**
-	 * Logs a message.
-	 * Messages logged by this method may be retrieved back via {@link getLogs}.
-	 * @param string $message message to be logged
-	 * @param string $level level of the message (e.g. 'Trace', 'Warning', 'Error'). It is case-insensitive.
-	 * @param string $category category of the message (e.g. 'system.web'). It is case-insensitive.
-	 * @see getLogs
-	 */
-	public function log($message,$level='info',$category='application')
-	{
-		$this->_logs[]=array($message,$level,$category,microtime(true));
-		$this->_logCount++;
-		if($this->autoFlush>0 && $this->_logCount>=$this->autoFlush && !$this->_processing)
-		{
-			$this->_processing=true;
-			$this->flush($this->autoDump);
-			$this->_processing=false;
-		}
-	}
-
-	/**
-	 * Retrieves log messages.
-	 *
-	 * Messages may be filtered by log levels and/or categories.
-	 * A level filter is specified by a list of levels separated by comma or space
-	 * (e.g. 'trace, error'). A category filter is similar to level filter
-	 * (e.g. 'system, system.web'). A difference is that in category filter
-	 * you can use pattern like 'system.*' to indicate all categories starting
-	 * with 'system'.
-	 *
-	 * If you do not specify level filter, it will bring back logs at all levels.
-	 * The same applies to category filter.
-	 *
-	 * Level filter and category filter are combinational, i.e., only messages
-	 * satisfying both filter conditions will be returned.
-	 *
-	 * @param string $levels level filter
-	 * @param array|string $categories category filter
-	 * @param array|string $except list of log categories to ignore
-	 * @return array list of messages. Each array element represents one message
-	 * with the following structure:
-	 * array(
-	 *   [0] => message (string)
-	 *   [1] => level (string)
-	 *   [2] => category (string)
-	 *   [3] => timestamp (float, obtained by microtime(true));
-	 */
-	public function getLogs($levels='',$categories=array(), $except=array())
-	{
-		$this->_levels=preg_split('/[\s,]+/',strtolower($levels),-1,PREG_SPLIT_NO_EMPTY);
-
-		if (is_string($categories))
-			$this->_categories=preg_split('/[\s,]+/',strtolower($categories),-1,PREG_SPLIT_NO_EMPTY);
-		else
-			$this->_categories=array_filter(array_map('strtolower',$categories));
-
-		if (is_string($except))
-			$this->_except=preg_split('/[\s,]+/',strtolower($except),-1,PREG_SPLIT_NO_EMPTY);
-		else
-			$this->_except=array_filter(array_map('strtolower',$except));
-
-		$ret=$this->_logs;
-
-		if(!empty($levels))
-			$ret=array_values(array_filter($ret,array($this,'filterByLevel')));
-
-		if(!empty($this->_categories) || !empty($this->_except))
-			$ret=array_values(array_filter($ret,array($this,'filterByCategory')));
-
-		return $ret;
-	}
-
-	/**
-	 * Filter function used by {@link getLogs}
-	 * @param array $value element to be filtered
-	 * @return boolean true if valid log, false if not.
-	 */
-	private function filterByCategory($value)
-	{
-		return $this->filterAllCategories($value, 2);
-	}
-
-	/**
-	 * Filter function used by {@link getProfilingResults}
-	 * @param array $value element to be filtered
-	 * @return boolean true if valid timing entry, false if not.
-	 */
-	private function filterTimingByCategory($value)
-	{
-		return $this->filterAllCategories($value, 1);
-	}
-
-	/**
-	 * Filter function used to filter included and excluded categories
-	 * @param array $value element to be filtered
-	 * @param integer $index index of the values array to be used for check
-	 * @return boolean true if valid timing entry, false if not.
-	 */
-	private function filterAllCategories($value, $index)
-	{
-		$cat=strtolower($value[$index]);
-		$ret=empty($this->_categories);
-		foreach($this->_categories as $category)
-		{
-			if($cat===$category || (($c=rtrim($category,'.*'))!==$category && strpos($cat,$c)===0))
-				$ret=true;
-		}
-		if($ret)
-		{
-			foreach($this->_except as $category)
-			{
-				if($cat===$category || (($c=rtrim($category,'.*'))!==$category && strpos($cat,$c)===0))
-					$ret=false;
-			}
-		}
-		return $ret;
-	}
-
-	/**
-	 * Filter function used by {@link getLogs}
-	 * @param array $value element to be filtered
-	 * @return boolean true if valid log, false if not.
-	 */
-	private function filterByLevel($value)
-	{
-		return in_array(strtolower($value[1]),$this->_levels);
-	}
-
-	/**
-	 * Returns the total time for serving the current request.
-	 * This method calculates the difference between now and the timestamp
-	 * defined by constant YII_BEGIN_TIME.
-	 * To estimate the execution time more accurately, the constant should
-	 * be defined as early as possible (best at the beginning of the entry script.)
-	 * @return float the total time for serving the current request.
-	 */
-	public function getExecutionTime()
-	{
-		return microtime(true)-YII_BEGIN_TIME;
-	}
-
-	/**
-	 * Returns the memory usage of the current application.
-	 * This method relies on the PHP function memory_get_usage().
-	 * If it is not available, the method will attempt to use OS programs
-	 * to determine the memory usage. A value 0 will be returned if the
-	 * memory usage can still not be determined.
-	 * @return integer memory usage of the application (in bytes).
-	 */
-	public function getMemoryUsage()
-	{
-		if(function_exists('memory_get_usage'))
-			return memory_get_usage();
-		else
-		{
-			$output=array();
-			if(strncmp(PHP_OS,'WIN',3)===0)
-			{
-				exec('tasklist /FI "PID eq ' . getmypid() . '" /FO LIST',$output);
-				return isset($output[5])?preg_replace('/[\D]/','',$output[5])*1024 : 0;
-			}
-			else
-			{
-				$pid=getmypid();
-				exec("ps -eo%mem,rss,pid | grep $pid", $output);
-				$output=explode("  ",$output[0]);
-				return isset($output[1]) ? $output[1]*1024 : 0;
-			}
-		}
-	}
-
-	/**
-	 * Returns the profiling results.
-	 * The results may be filtered by token and/or category.
-	 * If no filter is specified, the returned results would be an array with each element
-	 * being array($token,$category,$time).
-	 * If a filter is specified, the results would be an array of timings.
-	 *
-	 * Since 1.1.11, filtering results by category supports the same format used for filtering logs in
-	 * {@link getLogs}, and similarly supports filtering by multiple categories and wildcard.
-	 * @param string $token token filter. Defaults to null, meaning not filtered by token.
-	 * @param string $categories category filter. Defaults to null, meaning not filtered by category.
-	 * @param boolean $refresh whether to refresh the internal timing calculations. If false,
-	 * only the first time calling this method will the timings be calculated internally.
-	 * @return array the profiling results.
-	 */
-	public function getProfilingResults($token=null,$categories=null,$refresh=false)
-	{
-		if($this->_timings===null || $refresh)
-			$this->calculateTimings();
-		if($token===null && $categories===null)
-			return $this->_timings;
-
-		$timings = $this->_timings;
-		if($categories!==null) {
-			$this->_categories=preg_split('/[\s,]+/',strtolower($categories),-1,PREG_SPLIT_NO_EMPTY);
-			$timings=array_filter($timings,array($this,'filterTimingByCategory'));
-		}
-
-		$results=array();
-		foreach($timings as $timing)
-		{
-			if($token===null || $timing[0]===$token)
-				$results[]=$timing[2];
-		}
-		return $results;
-	}
-
-	private function calculateTimings()
-	{
-		$this->_timings=array();
-
-		$stack=array();
-		foreach($this->_logs as $log)
-		{
-			if($log[1]!==CLogger::LEVEL_PROFILE)
-				continue;
-			list($message,$level,$category,$timestamp)=$log;
-			if(!strncasecmp($message,'begin:',6))
-			{
-				$log[0]=substr($message,6);
-				$stack[]=$log;
-			}
-			elseif(!strncasecmp($message,'end:',4))
-			{
-				$token=substr($message,4);
-				if(($last=array_pop($stack))!==null && $last[0]===$token)
-				{
-					$delta=$log[3]-$last[3];
-					$this->_timings[]=array($message,$category,$delta);
-				}
-				else
-					throw new CException(Yii::t('yii','CProfileLogRoute found a mismatching code block "{token}". Make sure the calls to Yii::beginProfile() and Yii::endProfile() be properly nested.',
-						array('{token}'=>$token)));
-			}
-		}
-
-		$now=microtime(true);
-		while(($last=array_pop($stack))!==null)
-		{
-			$delta=$now-$last[3];
-			$this->_timings[]=array($last[0],$last[2],$delta);
-		}
-	}
-
-	/**
-	 * Removes all recorded messages from the memory.
-	 * This method will raise an {@link onFlush} event.
-	 * The attached event handlers can process the log messages before they are removed.
-	 * @param boolean $dumpLogs whether to process the logs immediately as they are passed to log route
-	 * @since 1.1.0
-	 */
-	public function flush($dumpLogs=false)
-	{
-		$this->onFlush(new CEvent($this, array('dumpLogs'=>$dumpLogs)));
-		$this->_logs=array();
-		$this->_logCount=0;
-	}
-
-	/**
-	 * Raises an <code>onFlush</code> event.
-	 * @param CEvent $event the event parameter
-	 * @since 1.1.0
-	 */
-	public function onFlush($event)
-	{
-		$this->raiseEvent('onFlush', $event);
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPnW8kLdPim6UiDyiUetngBid+XMlPi2xkOIiJd75KwWl/Z+5ZIoQV5LbWEu1cbFQEixgdzLR
+91oBjINvzBCG0lf8AVKLewcXdrNtrBY8ZrSZWssIazXl8swtA07RD2oZTT3cBHYXY3ZNMxiATBHU
+VzngnnHzBsHRbVPZVvPEyMXZeUCvJ4r6b3lpwiMbT4vvi1JFvoiWyGFxU/6IOcYyP9Gt/c/iWDXT
+CyZBGSd1X1G4VNR7wT/fhr4euJltSAgiccy4GDnfTFPc0wcIenlC2XDGHDYhNNvUhgH++6MzXySx
+wCyA1WhW4y2C69lYNSV2eXv59LDc0eO7u8MKaSHFXNbxN7lvWTDjOUKQw7uU3vnp5ak3sQ9zVDkG
+jR+WRRAyBgmkyDAZq1OzEm1/GsVsDUyIz+mRRMEqn5a2KiK7Uqrk7v+DHKA24IvIqTnnmcmM7vyd
+PA2jEShZG+KvxZG2eMQEIbcNnWJKATIaMIL8MSAWBMZX6O5coE1FfAYZ2NtKVtegaHWZ1fxNDb3W
+DPXezdqfM+tbHz2dgC3LJLEhKnulv6uihMmGKyvoy1IUId85MeSw9e6ifxj8Oft3ScC1OXaziamI
+mOf4ZdWMQaCrJy2yWvOm61v6TDWCM7h/34DWAl9sYBjuJPE9YKMWBdfN5c1srU+PdRRmkNdhc6hi
+nHOHYjEZo6t/PegzmOdlalEYQnwMPD+cbnt4pXNvc+qADP6exPDUZH0cPMsZZ/8nJjDU8JVV6QKz
+3bM5AkBeB2lBEmMohC+OwibIpfS39d5mhdXFam2BKj6evV+XdeU8MXW4uTMmbLq4G9HjRXXdkr3C
+AOWz+vkkgv9fNdUc7HInw9uWFziYK+X5ft97ZltI1Q+6tWzF54is+eHH7z0C4Lym+P5YTpapgfQO
+otrWBUF8l8+Nf9U/t8f+U7aG5qY/i6CBpBRmit6Fg07ciRYUO4o97p1PnfXfEB3so5avV//EvFEs
+WcpP032kLzurGb+UiNoorYYB4gXzYmGwY4FNGKhkVQX1ZRlkQv08sCE1SM0jtTINAPkXxtykYuCo
+ECfdSZ+w29Nj+dAdCTyM2YVaBbUWxfbhsi4YSF8C6kPHoaEaBtTR3QZgFcnQ3ETeU8TKM6sMY4jv
+ATMKHzbcf5xudtFmB0w5lDIFNY49KeJlN1IHz/I/RDWDCWxJBwiTwrKfFHu3oGToA5M4POlrdaMs
+ZksAhUSGWLYfe/XWydDIoTL4ppvo3JkAW4gfoqqQJcvh7Ible+SvTuJ3uFogDCp4j36w46e9aA0B
+FSih/b87/x/SNzkfnATFnDuudDINJVbD8NbySlytXDx/V1GLwL2fsx+you+pbc+vUO9KZSp1XObO
+/etY9RwF0MnJUXUEjtjGcuKSH2HuuvRk9IHDnqBlJUcwo/UAEsgDX84O/5JMcqhB9t+1b81NN4Lj
+W3L/LCsF0O3C/WYVf1hpQ634GmlXviTnyETD3fzDnCkSKqUJql6weCmiwqZvtTe+XINxWiPDHFDO
+y5IX1Ww4nVYKe8SaWigg6VaBWIUA4HkpdSUqgwnqDAVgqSkWlWcRZa4v0evVHq/X5GntA7HP/NMY
+hA2VtVtW8SrlPbPrB9URcxZAWu1CAAgyXGzQ7d6rrBdy7o0knN4KQtyRQrAkflxfSc5MV026nyLw
+SNunuGViOgXsZ9L+aey24clbNynhTxhdAWaFP4z0Fvo4chDjOJ9yYzDZVwMD4npxcSKeSPu6MCso
+r0KVG7dC04E5qugY0gQcmCSeH06jDj7TDIxOl8XMo6X2r1L5m43r3P0Yt5KR4UmhhRhSOfM7opbW
+NC6QaKY+bBHsRbdbDHdx3xULBDgnzTIG8bFNPpfYyHyi/KRAwC3CpmeBu1KOYo/+3s0P6dhmQwJM
+cFlc4kda+uua7+b4Y6xCEnyJmCOzeEWEdU+6np/GLASxJIr+MCgBLG4UWVxmYOk3qTKHMoLFBVrd
+SOq9TBB+P71MbjmeITdZX5T5jlegPkDD1zY6UsNKfH/MKCzbOXbqQ8ZdZssfg0GEmk9wWefi7p7y
+KwB2L/MMmbnlQpyoHPdPCqE345da/lgE6cXITWRveToQR9unOtI65vko+RItwq3yy1zJvPtqP78M
+of4UMBAOmqmb2zuftSaWJMadXxU6ywTyzkTG09q5SjrCkzTloN8tCqyPGsZRNZ1ys5SLGrD3ljSH
+yipYhV0VPO9cKlaQpfGGpW7wrv6XquUs3MZUDiiEnhBZSztkv5K/81G2HI9cnuTpJL6RR2NX1LWP
+gslCX6zvymXZvCCzQ+sGvaylW+7Qeyl6MhXz6qGHNPiEkZvJBkoGClIXsqGZG2dOSvuAwVHmh6ZQ
+T6RUZudlPHLXQJQTsVK1nMqOvtpz8BtmQMGmUP4FHXtq0r+emd9ZzMQ0KbUf5UF7eqFtSlctxtIi
+3tN3tSdvaLDRHnPry0GKCQCa2cVdFRcKf9QvCuW3uwLwEopR/nhevhSlI/InpCSUc/LUrq1b39uq
+Su6KUK+0KiDGL9PI6UlT+qBa/+JXnAInwJC1cd+GT/kLC3eB0/oePLqjZ6wTNGI9yHjtNaDdRn6d
+RWbDG6vx/j92g+RLM14DrQKL9PDGf7TXfkRRcVCZHQhPgOVXg6EOWzVukKi6Rx97dmzkdPQ3QydX
+DENl0WVP/Jwu8dxzjLkqTiG25ksWQzM21xS0ndw/t/M8B9S9bS49dHiJVmudLn5MUaUWfPkXyhSo
+WN+DugvP4esgfG4/iFIxB/bSJFmdq4SvrldTZiDU9sHgGvt/Cv2rmCdr6QXvhiP63ETrKov98wNa
+caxEAKMPtyDenLgpwvvIAA+m6U6EvAAN4A8tgqACKrSn4VzElahOablmx0gD0fettJBWe1wBpAeH
+WTh5xp/2BMviIzvDXBhQjYAF1/NFPBfx/J0vyJ51UeVx5/b4Ch6pBY0Nnd/kUAze88P8e26OjlmK
+pCqFXpFPbAaMEJ0l0ADJDpQtJ53ysjeUOvSgxZqe8eq62kcKQxbicOe0lEBOcDSQyi8b6zmmtKKM
+RcbNYUdEUPvZsXSmj6XOl2JGTB6/GL6a0CVuqzRowJEYZVj7siiuXs1vzaI2ApZJ2sNXVYX69Sjv
+tjwXhYWJrY7uOVRuQ5Nio4CPGnoca68B5UyromP5kpH06i69UPO3yWMRqUvFvuw1aqyFrm+fRQEo
+Hw/s1bf6OIVIZsrL3f/wWnnwJsDLiL6//wv9bLKXZd1POwxVlFR4I1U4HqhxWbMD+szxRYpFpfRw
+YjrTmQmboYz0LtUTJhzcI/Q+A16rnepVnCkTpWEu5lZAe7vNibMALfPJgmTSZZlYM7ls8ek6FUmX
+vDpSQ2G4CCt09hcbXU3QbZJt6RyjsgY+E1Jj9RrU1ZNA5BF2z279137wq9gJqR9DDz+bEbj+g4XA
+OOetx+fxiMrUdKbMG4JcjEOLhDcHOUBcCYT4AV2pn6nUWnJAGvj61U+P97+NFwr5erSVjTsTMExX
+Rh3+44W6Oq+zSkLeH1MK/lw1buJS8l97wwpG12BGBxRUkdIncWcrP+Mx5xh/BN4aW7ROmDQrCDwz
+Mnq9A6BDGwvFtNXFD8PkHxUnc5oijIYNqh4NoSaWZI9jgDJFOfHWIcJ07ZjUsbwictqCjo0iIhIm
+LfuqHTDRubmBiTr9DdLByuHHnHg15dwcz3u5NSKNEa+N7ap1cx90+cD/8y4alIKPZ/VSemG1EEQ0
+NPf/aOahqeHu7AG3em27bu4d3y3vRKlJbWmq8zYI7za9HdR2WMWo07Q00kfJ/koy5XUFsxcWwGPS
+xOfuVUmF8STvOvZcVuSUMneWKbQVtMVhaUs2rBeDs/+QqUaNMKzJjI1mfseCMdy1GdnzPFFCEPY1
+PtFVqYKTN+xAedKlNSelytU1CVGCwV+toOzlj0pr7wKJKo9CowFs65p4RcTQpQshAHCgC/fWc9J/
+1P0YFn2jt/iGr6Asj/6HpHmwSyUtcytvRdhEpULgjjGrNrsrtiIMlqN1ptRUMYzx9LymUmaceUKu
+RC2MSJax5brBRXH33U/GTHoDGsA1pgJxhahXVLSh87QEePqeJyV0BHO4bM8luKMv4xvNpSXYvuPD
+p+V2UPfu0Jqg0VGzRvQyYkV41tLoIDG7UxyjNRdvSdv9CKHP5AXWdMvXPskNKLqbUC/oShQqgbaW
+nYeS5Ci4Ph2syBsvTfqtxfBNqy/XbhM1P3SktIf/9jzucklu+TR6Atrcy6LpP5EoGk8jZLsXx332
+iNrgDLOU+O04zfqcPZ5/lWMm91mhZ9RMDHcaEtrlKvyAqnzRVZJ9kMHEfWdj/a9NCBpv1zQh1Dyz
+n2tXhhvNXYHONIOnfxIW6DStS80uIFQC7qRomfDpcfK2KWZmbTd/aarlY5m3d0wiXkMuII6dv/6V
+9NN3FY7bzUbFUmrnHcSbZujA/PFtL3gr/Y4N2bpplwbT90BzCeJAXQdtKN3Sjn7/3l5S1GoLCmrp
+fmB7u03VJHUTHwJMDBGCUKEADfsNJSKFb1uUhCqgnZ9+1RkYj7L9WZtdg3WUMRJvEoJ481VhuvRF
+GAMMD26Hc5sGRDjjvMFI85hlhsqmjd+UFGGl+Nnlg0fi8+h2kWYc6yMNOkwGXnZ18tWoDxuFIr2d
+D9xgtTc2Uzbn2NEMrlZUidZPxp3u3SKu/hH+kpawcFbVso5ADxUKQYyxjqQjmie7do9r+QeCvZZi
+vTi1/Ho55a4+11nLjmOer/7/Qwtgn4ZNmLvxJXxBDZ+rk+LJ1AzPAqZB1t0fovavt/BglhCfNrhN
+LqQNyNazNnlJ9FekWeze4rLjFMd1V2D+Q/YjwanqKtA9EY7gvDuHDcmADcQzV2UjNuc/tW51oTX8
+XSBMqqtf+GZcka17hYGStajcYkSQRUrakSALMynCpSvrkxKIon1TNO5yypFDMQIZCC0j0uxsw9Tc
+fM9UHqleswzN1NwTENC6dT2p5ABNayGRKcfAOnUKJnFiGQV/p0FpSTi33yZRAfRCx2nK0ze6ukHx
+YgI/RWQL5i185NKhEzqKeHtQv0D6aFEh+wlJ8LGsHniGDd2eUagB/wmrfTgtc+XMIJ+RQnGuxoZ2
+e4vVXthoq/OXZYz+oJeEZRtyrDy5Ju+aG4j/QFvz4u3eXHwJromltcNqFMA/jrbNK4ByiVYKcr42
+kWfI/o8+YnxSHxQjumNwK7PVIV9vPYdBsds50lD1k8ofwVeTtoOsn6lwwMwGfv3Hh0hIzRrRwRvH
+lml5iEzqiKEtVjNzzA+fTPUzM4BPmdIoNVPk6WOnEuLfL2wO+il3tp31eSBhdDzRYIjW3hFmkNq1
+EvbdQW4WQBy2hmEBPkgcdbyakOXzh8ssx+Ighy3EhefyRZewPc+hPEUXBvGvkXXZHxHhUgGczt87
+VPQYsspL6RyhOG2q0pI2FxlXnGba6YChSpzNpYxNfp+0XFp9qZ8iULAM0C4iAA8Hu7xv6mPfxRE5
+R3sb4DPSEi2vAIKGizzUkXEHpJJYykvqcyNyOfBVU4B/QaBgsibp18YxmtbJrW0ghjWGAFERbmmi
+/gKX1Db/yDNcv53+71S9XGt66FMGivzgbU8jiyvRe1i2fGtvdBXax6r9qWIm/SDjDqRYDtij9CpF
+QzTYuayocE4UG8L/6ffuWQ9A5FrdIGxllumRMkDFAW/nSWQQjMz75Kc+5dNW6g/C0WOX4oyjE8gP
+PdatExWpzcPPVWCSzGi6IBJPeapO09r4Nf/c4XvgU//CjQ5n80iz+oqkkMNuQUhOLtWvSSYj20l3
+OdX0AgE3+72fbbGQddkdT6iJy4/zQpXBzsIfLVHmYh8S0TDTv1Fw4RosiYe2+5Fw8rBfCmjgFUVR
+GF0lVyxnTmTEYMtdzriSeFT8Ox7ByTWj3XNy53JBP2PkU7KnbXxjO8m7tWUiNbkBGnG/k94dS6l2
+reIjTRGC6tGXN5WAz/0TDU8nPasbU/kNsgg429WYp0cVvDJVHuMhXCyGBUQ3ReHvljgc1RMcpI+M
+gTmIBcuWlcAR/4pb1N1/uLlNPYyMGFhJ9G0ZK4eG+A1d0ojtr1/mMEwHkgRsYjQMCs0ifQEng60N
+hi6Od4ARGlvtLtySloVNG9Xg0yV69kf+e++7KUvuyXZYy+IG+j92A9+95p1GyU1Ms7RVQdGUAaQ4
+YHvwptplbZd1xdnFtl4Nw45ICyBmD2J4oecEzTaKh2Eh6VerY1NJJsszL3O/Fi3eQihEGBiOdV7X
+DnCXfiG4Q8kxbeRJvaalRb4XuUb364vVMeqtQlxBg9EboFsH78pZ5RbScDHEQGqb/J4Xtmkj04Bi
+A57OnoQm0IuHnjOsGkb0LoJfWki7YKbbCHEm2sVHF+D0fQZQnFVQPeOV1pTtBGrLEtCCH5zM910l
+PBML8GXsvZUH6Te/3Ck2BD9hxFCkv3EqFlVdd0mgbSTTwakCcsdecByrZtKe5At0beq4s+q4KVSM
+/qh5o/EA1h6fLVxr54R7sNVyIrtND0s/IBm3sbhm90YccQ7nDfLSRirh0NYXMOSwEnxz5iBeXL5f
+Mt10Ng7CBdpY163/ZyG7FqBz8v9Mac3BXvSj7FLkVaXW4tyOyRTjxTG7qlneaex6NnZ6xWcJ69yT
+rgHgMg9Mpjxc5Padf1j5FiTX1C+6S1BzkEj205ZEHBIJ+PKwhE/Tx/UyfdJ4QmwBD8/BmuQsWE3m
+bbWkavvceqFuwG78NU0DnrO+rwV5x8DJo5CF3JwziKmYdwzzec6+jGwJD07wUyaYk9ki0goPRiS0
+yXAMYqEA4uxgx/Z/AMkqCVVhnxC7mU7VwPQUozgk58LGZPspB4cIlypuQmzOCWwbB4CChD4sya6l
+0WbESNzEQLjj8CUkJwtuL95IHOwzRNatjFMsQQ7tjH9mlMvDwoqX6l/HPAPKm4LCr0DVN2A7yryl
+HaZ1ff3y0stVUTkh58ZhPqjyQptmwB2UuwzUCb7vwwNH4qkM+3ZtOU7FXvnRIlUVeZM4WW+k/BU9
+OmDHia64asUdoRf25/SXOT5yHLIYk22n4hFBMHolwnW+BPV4LulQgy5ydsHF6LL46CO9iq9d4TUo
+h27F81abQfRP9Wz6Xt3nabGOMODwqUNO2N/5jTDZaS9E9d7OsEUYu7ek9pUM0+m3L9TSZz5QFlZH
+eRDOWJwORGQjyLhB9TDP6dThJoiqI+NZzpsV1CMQ39d5mZe8Qdc2wkNJBST+PCLq1hfTydXPMEcc
+YBWuSFcYKNonkPeogyqJplmpNLr9NHC6eTfD4+3zxJ2TmCGAhjYKJMNmnKL1jXfMndSeC346d5MT
+Mz/8QqfWtRfnYJQ7bPoP+dCIwywrbkNZSDziPRDy4jRDzJe2dXj2YP1aZdouRwqaQzA56er5fyOJ
+AGoZID773UJxOfv9YnV5LbAnK2yblzKrdaItaR06V3bQTkg2Zps2K/OWRbevUmkSGqJz6HI7xhF3
+IFZtht3GmtEoRlFMC99uGrDTOgN8QquvezWu/d2XDvGO+ZJeNSKXgtuJu6E7/icPDmKehLRyMbvF
+CyCjDHRyYVLIVMC+kXO+lIDvTzSM5vJEHfyG6L+tvnLcHPmMZzCGCyFAubyxel3hp+nVt28XQJk3
+PPEokj6pP1qrubiPHwtwlRQOgHLusL0M5YciqVLfEpCLYQVT4/3JcAPARxh/PIsVrsF3PBSH9OH2
+J8gJa3xCAcMBAHIDIK+/Q2YbXpkE/0LDJlFd5VPzhsH72dXCra2ZAmJFKOMdqAoLceD15LqgCFWQ
+MTkGEowjj6F+QpAwBsiOaHICQBzfKJIo4v6YfiAADLuP0MDNH3JGonAVpTBL/diocG0RwF7tFVc2
+rRpIQ1/gpU6NSYEhaCf+Gp68efeYpCdFbbh0WmDAZrWn2Ls4YZQX3K0Hub2D+s8UjzJbJ2wTjqMh
+G1ojavXuoJ6zBF17nihupABcErD8BooY4iAS4sTCTzPVfKn4kV7ZpjIvTOuhUQZ2y8fz1T4pck+j
+OgwgCOFSDZSJ5zKAf2FJkZ1SY4/7PTjCSkbjktHIHMwS75M51XUoLe0rGLq4ZfkwJQkvqlEObbHZ
+0RzP2UzcbvhzYRU+69M5o8MKgwTfZOVYB8+o37unoFOkvJ5I8q6WnoAvwevsfn5jLSkjrpwVY7Kt
+rGUfHRGsYJJxIn886hdEeDtYLUzDONiWQHvp/63knMCKGR5tWPa14LMagjToKXYua4W+0l8CBWVh
+nROULLfIGUM1E1RoM/uZEmFiDNRPfa+wCGa7oc2OgFTtOyBQ5loP4im1EwJiywQsmFra+rnNTtnP
+Fe0sOXA6y1gzCcudKAV3aLy6SUEsewG3hnBu+4NABiYFiGrMEw9MH36iCGD3R7ZL36+hz/wXWG9B
+l6QcbhFWVFvDYMI81120GzuNAiD4u/uRVrMfh4i0uxgJRHQ/8b1LMKl6KuuSPZ+wyn17rd4WsqEM
+OEZLXtfQQ0LYseR0YhyGQ3QkbTAkHMzCHlzMJRlyCZSSciL2khotNzHKNXGJBDzcrwzxFpPlVCGR
+tO83JXXngpTh/+13f5heUo+aJhTimludFwdyFUsu8/vQEQAYHC8hw16epDm7wU/jNdPVrmyPZTxH
+CUAgsjBiNmgx0AkTv650NQS9X4GG0ve2ImGMt8IDQbmq9FeoD6Bpji7XIYLFSMxEhuIKK+Y838Kn
+SAFeCOU9z1fYrDud1Hy1pAj0YbS84RAhd4RNL0TGveLt7WJi88CigE0lGj4oOr/ZBgNPT8d247fM
+0tl+uOH7Mf1CEw2lFX6tyLv6ZKSv/eN9GTso7XYleR63R4gqoHMZ+BgCuBRaENpSYaRCd7o3Jhre
+QjmVQVA13zjoHBCsXqOliVDFDstikyeijLB0Inr/fLk6Y8+ELf2qeLV5bOUD7QGik20eIkZ/EkzH
+/MVHrh0txuW31ABS33E3lQQzVKzj4xB9NoiqvsUgbv/RD36CuZvFrP1IAeKjX6bVkMS3oPstkPs2
+7V/0DRXPxgsSakIiwskBQ8VwvSzQZtsO2khUH2+0ZeQrkLityWf1Wt1kfSbvlyYHPCteBL+t23l9
+XlFYn44lGf/6o8lB8sM3wnnxe4A8OhxHRU+ijo1zD0K83Xc2ASE5kX6NgGL5u2WZN3/WLQwEyTeB
+oU/Meab+241jaDoUpPhRqnvSoLWW3pQuyyD1ytJf++lLUWiUyr+ZPiQikIHOk1NiSCd/7QKYZw0O
+tEEjsO59wyEf+yvB5sv3aqjSasqFqKWIMh/treGX5aUxLH3zZpEXss/X7yOBjjdrpwaqoOwZr4Il
+gNG3zGUkrYc6Ge1ufQjrfHPytiYcRvCkWU7M+L8/CMOtm7165+46f2SbdpGoepQArMHkqiuhvZIA
+4iwyqyqDju9QPl8qYgCs0K3VxP/f4TMVFLD3NQZBnYlqX0p17QCDHCnsy2/cp/59T+IGv2bT4bRg
+EodaoHQUoQRPUkW3/+Sud/ESjRiHWVcmZUb9KO+OzymRVRgFlvFFSaFsa2dRIh5E8WypO6C3v6Bm
+0UNfKgebw4FR520mPHoZmSHrP9RGdBt2mlkH3pe8MFRoTtFUUVDwJUjgE1d65kk3BKmjaluDHG5/
+ugOfZ8KS1Cgq9MVxqibyS4FCFltrzyoheUXZ+LyI51BTOW7k828/SSqDaFs43L4TvwJj5xzldeHr
+wD3b7L86IbGHKofiABRTkRjUbvdWa8r4XxeAou/WceNzXAeYrZH9igNOuCghQcG+vxflvnzZ1PlQ
+g3aLT0mLpP0p0os4aatAauGWrIMYzgZxnmFXGvos/cmEBZW3tA5rIlsA7NwVrFGVs9sdCM34/trX
+CzqEktHPYbHcMPPzxDYjjaef5+HzLzaqqSvJ9lNrCa6WAabERoBZtovxEdJ5dg8Piir9tdRPlF23
+HROXnsvHQ2aiPt9ID7APdjaQajptYsETseUSWjas9jwKvinbCsJwCvERXcyrE8FyTNz6vWksZnXF
+Aosg/QdH5ITI3oaCz8D2beBXvCYrD0JBzxqvQbvrwkqsKAZRIOy6WQu4J3zW9eIaj5lHTyVBNli3
+sQwUSbfauT+8UsCb0X26yMUJngpr0AqdwHSdzYiQI2s8esXWTGhuIDJbFfj4N5vvFQy/znxIXBK+
+RGi6upzqJN1j5WBT/EH7QMod1IoTtycidYbX62c6Kixuu7P3blTiLhy2P7a2sw7cZUU2EUvgNsQm
+B+nOjPs95qo6kJKdqRYoHGhW0aDtkKPhSxq4V9WcT3XTTREvZbHApAD+smguJ0IR67RvbLrqKgq/
+GeyWQB36NbGOIZMwASCTQwv3UI/wlrcUth55kqIozxn2Esco+R/X+stnBseVRRJvfzAPqvvL1E9v
+N85g1A87bEia51sdUXUOKYppsN73xVWxSpO2rOBd06wRozIk1pHh3/DXc7mOWXHvnroyMGLH+4M3
+uJ9r86uxp8eGRL+ElY3EiykMkVxc9HoGxYPnGrZyjPKHMHzlKBDra30/H7pCTlMsCL9gkUGG+dUx
+jPuHzGf+t5wR3r16QhhW2USIcpw+BtfrbhcRXmXBmUXbHQmKqPcwwv32AOl71ZtkP/Qp1Fyg4uUn
+5v9ufpNdCDXqQtErdMOKhEVCf+NPAisw6i8J/nst2ZZYaxvzhT2ITc+SJMLb3DBLYFPzFr1SmTwD
+/UPkboLMdjLLHb74eWkgm9OQlYPN7BE4Yc3kSYq5s+upt0/gw77sD7QujHFf2A2mCVlw4h8rjiiM
+xbL8i/NOWrl30KZFRAGSAYez6c1qOQjtACk69mX4yU3kj2k+h05sSXTk57u5c74N9aJ+0RKMQdGe
+4aEjqj/bmXVGaqlM03qQEdeFbKLZUwKqoaxSr89NY5xCHznkCRhQRqwbvRCiNprCCKRpb83MPswD
+5xRrlyu6TucGr34Ga1Im0+G+GLT9q2Pcg8T+3bMEpv3N8qvHExMqiZSpx+hfLeBZEc8iVqjRJw4B
+KB/phyaByJwsdSCJ9LBtZ0Mb51DR5aJPj6AUcQt+uuFBDpe/uciPmjNx+j6I1fGByLtYlZrfDAHi
+sWz/7GDta9ktd5XMDT2eDfmI412b2wxMFomU9AhOn6V2WQX9lAJ0xDmh/yMpFJzzxCZGH9NlOdsE
++aFRQZBJ5Q4TTOC5VFw1TyxkYy5Wp9Vh1kv73fE0rTDCBCmeIOLxI1wRG2wur4AEjuCfwdzTSPSi
+B97ZJnCwg/RmVZ2vBth4BqWeMhwWaxmjHBnQii1Kchj17P2f5qzfUixqVELwoMsRH2sOnjKvdd8n
+bmppdS54a6nh1rDWMzIZ8zW7hJlfjuyGnOSVucqG9Mrx2KBaCL05Tf/zrXQ35QoEnqpe2nf5mT7u
+lTVGhXw85twnh4FZrXxVaNihKwpN5NK/1cf6iK05HcM5WdjFLjJfUhOcBsksT54LBHWgtTqRnzTk
+7c2oeB/ajZy4CHC6+650clr0Q4yTeNl1q5zai8Rol/3EwmJdyUFaNCaN1MpdVWSga9J1Dau56QqG
+A0canUfOjBNE9Mp1zZwgTwsggSWaMO4lToUfBOzdtxB/uV6sjK1YTZXCkUc2gkgwITTBdmV9wmdI
+KeDvyvtjJoINJ2CJMOTOhHD16KwKnFetL5MKLY3uYuCgNZrvQajbYQTyaLSvcQWMOX8Vhvz5Exhn
+rqc0nF9c6pIbt3jGjtSW1TfW3A+ceq/jN5j2xnsq0j8jIX5pmg3Hdl00H3Mn4RUmKN68uTrzmKFu
+ebrsqLzoxPVcUDhtGjRN2eO4k7ttQzcDamIal1PHJwtSIADN/O9wGXef5GwIvj1E93KkMSKnHXWu
+wUzbve4PiUgFbRHJkVzyKv022VcsgWp6UrMGcO3d3BvUYgUdnYFFVSFoPIfSrbELOJl3rkRs57Qd
+BZS8t4Z1BKWtHN5krSCIib8mjxyBr4m+5zl/q6XP8b35EpDKdaDkr3bxgAGTbfBu3ub0Xc9z/Fi1
+iKwq4py393Ar2fZP12xbQoMTYMwW+uc0H4byBN4bkA3drC0LJrClfYTVXvTTjoYVy+5FFoqFhltG
+bMyBLUC267ZSJd2U6YncfWv+AzpxrugsSei1PKmZgKGxzqFsGmJ6w+mrne7PqpTrQK/zKVcqVDRR
+ZHDU+dDcEIMGpLCd8vDAIhQG8xIPw3YoUQ93XsjTA/8hL2Z5+bfCfPSK7LIQnLa2edgCODSzMPYc
+BjaGGcKJvVUV81dPvo6RUrXDNWDrwy+yeLOiMMW412slBD7wfkK1f6uhTzkFuKlJYAWgIDbIJdXo
+gskcBuj37Z2U+GGboHOoe6OQ5gSZxdGG4NpW54VhD2GpSiA6rDLb7xBLmGNADLBOJzz98sT4KtcU
+IWXvp4Cz9vIBJOVaZhO2mBmPCyd1EgzxjIPG/75DSxVwMoGhSbYY5taUjboDnbSPejhxWQts84vX
+BTQB6Rg5fIClf6ui75IuVmpibQTqmlknmciHkuxRpQQkBcjqiNeo98iXGxenVJq4G0PD+aw0QAyK
+cEaTbEosEwVg85rDdgMSkqgmf1g/T4M+ypE+s068Rp3IKT5YAvFlKjh1MQKQXGLMwkdYnU1RW3vS
+HZuj0CMLnoAzegZF9lgwf0DWNfkkw/h9qzCF/WvnMw2Tnawnxb437NjTUHT4urVJ2ST1kEvPJoGh
+65U+f8NXQqjJwZstfUo3ELbGir/mUBBVBeaMqGL1k6BGTwIKluXCOQ6LGxPmNAidgC6VP2y1/sx8
+MlbECHXSpMmCXfwsMfaqpXgqHg7RgKr2zxozMpfJjzSHG5+bEbPhaiMmvogPNBWr3rYgOQBhPgA5
++nNGBj7h3LA+lr+P91PBXbbLsxxblibt1WD4lX2Y96JzbhFI2RHzTjzXJV/cxGp6bx+olO5YPmic
+AlqeNQWzHozuaKUMXCp1IQHdDOn0w0LipWqSs7mCfRq7myag+qnBN1wH/z5FjtkrDsUf09HV15oV
+ZLj4KQKxihedhLUXeGXtjAWSrqjJ8mpvlqdM4U2/o+j/hCnduTnUW8IgeEJJ/Tskii5wCD51V7Cs
+pdbdIRv447bDJPQR0YO8qyTB55IXugSLXupSb7BbPl2IpJuPlkyXWSCUScAWw1nMwZd5IV40N2BF
+SRGdQYhM1LGeNMgjKMnh6vMW6j4+iBuPhhijWYFRmS7FJMvxL8+cSF57D0CeMwad6eTgtiudEdt7
+jJBN2+fbCsMmYVJ+7guZHSERj7WTO3f/gKdtoFm6oKKE78VxDDatLsn68sLB244Cnzf0fBxv/+il
+pex/OblCespkEfv3jkitUHoOKT5dxRQu0AOk2uD/QGJuQuOShatb1ki=

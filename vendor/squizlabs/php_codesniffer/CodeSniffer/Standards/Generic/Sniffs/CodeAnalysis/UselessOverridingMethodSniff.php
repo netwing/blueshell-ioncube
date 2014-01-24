@@ -1,180 +1,83 @@
-<?php
-/**
- * This file is part of the CodeAnalysis addon for PHP_CodeSniffer.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Manuel Pichler <mapi@manuel-pichler.de>
- * @copyright 2007-2008 Manuel Pichler. All rights reserved.
- * @license   http://www.opensource.org/licenses/bsd-license.php BSD License
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Detects unnecessary overridden methods that simply call their parent.
- *
- * This rule is based on the PMD rule catalog. The Useless Overriding Method
- * sniff detects the use of methods that only call their parent classes's method
- * with the same name and arguments. These methods are not required.
- *
- * <code>
- * class FooBar {
- *   public function __construct($a, $b) {
- *     parent::__construct($a, $b);
- *   }
- * }
- * </code>
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Manuel Pichler <mapi@manuel-pichler.de>
- * @copyright 2007-2008 Manuel Pichler. All rights reserved.
- * @license   http://www.opensource.org/licenses/bsd-license.php BSD License
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class Generic_Sniffs_CodeAnalysis_UselessOverridingMethodSniff implements PHP_CodeSniffer_Sniff
-{
-
-
-    /**
-     * Registers the tokens that this sniff wants to listen for.
-     *
-     * @return array(integer)
-     */
-    public function register()
-    {
-        return array(T_FUNCTION);
-
-    }//end register()
-
-
-    /**
-     * Processes this test, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token
-     *                                        in the stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-        $token  = $tokens[$stackPtr];
-
-        // Skip function without body.
-        if (isset($token['scope_opener']) === false) {
-            return;
-        }
-
-        // Get function name.
-        $methodName = $phpcsFile->getDeclarationName($stackPtr);
-
-        // Get all parameters from method signature.
-        $signature = array();
-        foreach ($phpcsFile->getMethodParameters($stackPtr) as $param) {
-            $signature[] = $param['name'];
-        }
-
-        $next = ++$token['scope_opener'];
-        $end  = --$token['scope_closer'];
-
-        for (; $next <= $end; ++$next) {
-            $code = $tokens[$next]['code'];
-
-            if (in_array($code, PHP_CodeSniffer_Tokens::$emptyTokens) === true) {
-                continue;
-            } else if ($code === T_RETURN) {
-                continue;
-            }
-
-            break;
-        }
-
-        // Any token except 'parent' indicates correct code.
-        if ($tokens[$next]['code'] !== T_PARENT) {
-            return;
-        }
-
-        // Find next non empty token index, should be double colon.
-        $next = $phpcsFile->findNext(PHP_CodeSniffer_Tokens::$emptyTokens, ($next + 1), null, true);
-
-        // Skip for invalid code.
-        if ($next === false || $tokens[$next]['code'] !== T_DOUBLE_COLON) {
-            return;
-        }
-
-        // Find next non empty token index, should be the function name.
-        $next = $phpcsFile->findNext(PHP_CodeSniffer_Tokens::$emptyTokens, ($next + 1), null, true);
-
-        // Skip for invalid code or other method.
-        if ($next === false || $tokens[$next]['content'] !== $methodName) {
-            return;
-        }
-
-        // Find next non empty token index, should be the open parenthesis.
-        $next = $phpcsFile->findNext(PHP_CodeSniffer_Tokens::$emptyTokens, ($next + 1), null, true);
-
-        // Skip for invalid code.
-        if ($next === false || $tokens[$next]['code'] !== T_OPEN_PARENTHESIS) {
-            return;
-        }
-
-        $validParameterTypes = array(
-                                T_VARIABLE,
-                                T_LNUMBER,
-                                T_CONSTANT_ENCAPSED_STRING,
-                               );
-
-        $parameters       = array('');
-        $parenthesisCount = 1;
-        $count            = count($tokens);
-        for (++$next; $next < $count; ++$next) {
-            $code = $tokens[$next]['code'];
-
-            if ($code === T_OPEN_PARENTHESIS) {
-                ++$parenthesisCount;
-            } else if ($code === T_CLOSE_PARENTHESIS) {
-                --$parenthesisCount;
-            } else if ($parenthesisCount === 1 && $code === T_COMMA) {
-                $parameters[] = '';
-            } else if (in_array($code, PHP_CodeSniffer_Tokens::$emptyTokens) === false) {
-                $parameters[(count($parameters) - 1)] .= $tokens[$next]['content'];
-            }
-
-            if ($parenthesisCount === 0) {
-                break;
-            }
-        }//end for
-
-        $next = $phpcsFile->findNext(PHP_CodeSniffer_Tokens::$emptyTokens, ($next + 1), null, true);
-        if ($next === false || $tokens[$next]['code'] !== T_SEMICOLON) {
-            return;
-        }
-
-        // Check rest of the scope.
-        for (++$next; $next <= $end; ++$next) {
-            $code = $tokens[$next]['code'];
-            // Skip for any other content.
-            if (in_array($code, PHP_CodeSniffer_Tokens::$emptyTokens) === false) {
-                return;
-            }
-        }
-
-        $parameters = array_map('trim', $parameters);
-        $parameters = array_filter($parameters);
-
-        if (count($parameters) === count($signature) && $parameters === $signature) {
-            $phpcsFile->addWarning('Useless method overriding detected', $stackPtr, 'Found');
-        }
-
-    }//end process()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

@@ -1,709 +1,383 @@
-<?php
-/**
- * CWsdlGenerator class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CWsdlGenerator generates the WSDL for a given service class.
- *
- * The WSDL generation is based on the doc comments found in the service class file.
- * In particular, it recognizes the '@soap' tag in the comment and extracts
- * API method and type definitions.
- *
- * In a service class, a remote invokable method must be a public method with a doc
- * comment block containing the '@soap' tag. In the doc comment, the type and name
- * of every input parameter and the type of the return value should be declared using
- * the standard phpdoc format.
- *
- * CWsdlGenerator recognizes the following primitive types (case-sensitive) in
- * the parameter and return type declarations:
- * <ul>
- * <li>str/string: maps to xsd:string;</li>
- * <li>int/integer: maps to xsd:int;</li>
- * <li>float/double: maps to xsd:float;</li>
- * <li>bool/boolean: maps to xsd:boolean;</li>
- * <li>date: maps to xsd:date;</li>
- * <li>time: maps to xsd:time;</li>
- * <li>datetime: maps to xsd:dateTime;</li>
- * <li>array: maps to xsd:string;</li>
- * <li>object: maps to xsd:struct;</li>
- * <li>mixed: maps to xsd:anyType.</li>
- * </ul>
- *
- * If a type is not a primitive type, it is considered as a class type, and
- * CWsdlGenerator will look for its property declarations. Only public properties
- * are considered, and they each must be associated with a doc comment block containg
- * the '@soap' tag. The doc comment block should declare the type of the property.
- *
- * CWsdlGenerator recognizes the array type with the following format:
- * <pre>
- * typeName[]: maps to tns:typeNameArray
- * </pre>
- *
- * The following is an example declaring a remote invokable method:
- * <pre>
- * / **
- *   * A foo method.
- *   * @param string name of something
- *   * @param string value of something
- *   * @return string[] some array
- *   * @soap
- *   * /
- * public function foo($name,$value) {...}
- * </pre>
- *
- * And the following is an example declaring a class with remote accessible properties:
- * <pre>
- * class Foo {
- *     / **
- *       * @var string name of foo {nillable=1, minOccurs=0, maxOccurs=2}
- *       * @soap
- *       * /
- *     public $name;
- *     / **
- *       * @var Member[] members of foo
- *       * @soap
- *       * /
- *     public $members;
- * }
- * </pre>
- * In the above, the 'members' property is an array of 'Member' objects. Since 'Member' is not
- * a primitive type, CWsdlGenerator will look further to find the definition of 'Member'.
- *
- * Optionally, extra attributes (nillable, minOccurs, maxOccurs) can be defined for each
- * property by enclosing definitions into curly brackets and separated by comma like so:
- *
- * {[attribute1 = value1][, attribute2 = value2], ...}
- *
- * where the attribute can be one of following:
- * <ul>
- * <li>nillable = [0|1|true|false]</li>
- * <li>minOccurs = n; where n>=0</li>
- * <li>maxOccurs = n; where [n>=0|unbounded]</li>
- * </ul>
- *
- * Additionally, each complex data type can have assigned a soap indicator flag declaring special usage for such a data type.
- * A soap indicator must be declared in the doc comment block with the '@soap-indicator' tag.
- * Following soap indicators are currently supported:
- * <ul>
- * <li>all - (default) allows any sorting order of child nodes</li>
- * <li>sequence - all child nodes in WSDL XML file will be expected in predefined order</li>
- * <li>choice - supplied can be either of the child elements</li>
- * </ul>
- * The Group indicators can be also injected via custom soap definitions as XML node into WSDL structure.
- *
- * In the following example, class Foo will create a XML node <xsd:Foo><xsd:sequence> ... </xsd:sequence></xsd:Foo> with children attributes expected in pre-defined order.
- * <pre>
- * / *
- *   * @soap-indicator sequence
- *   * /
- * class Foo {
- *     ...
- * }
- * </pre>
- * For more on soap indicators, see See {@link http://www.w3schools.com/schema/schema_complex_indicators.asp}.
- *
- * Since the variability of WSDL definitions is virtually unlimited, a special doc comment tag '@soap-wsdl' can be used in order to inject any custom XML string into generated WSDL file.
- * If such a block of the code is found in class's comment block, then it will be used instead of parsing and generating standard attributes within the class.
- * This gives virtually unlimited flexibility in defining data structures of any complexity.
- * Following is an example of defining custom piece of WSDL XML node:
- * <pre>
- * / *
- *   * @soap-wsdl <xsd:sequence>
- *   * @soap-wsdl 	<xsd:element minOccurs="1" maxOccurs="1" nillable="false" name="name" type="xsd:string"/>
- *   * @soap-wsdl 	<xsd:choice minOccurs="1" maxOccurs="1" nillable="false">
- *   * @soap-wsdl 		<xsd:element minOccurs="1" maxOccurs="1" nillable="false" name="age" type="xsd:integer"/>
- *   * @soap-wsdl 		<xsd:element minOccurs="1" maxOccurs="1" nillable="false" name="date_of_birth" type="xsd:date"/>
- *   * @soap-wsdl 	</xsd:choice>
- *   * @soap-wsdl </xsd:sequence>
- *   * /
- * class User {
- *     / **
- *       * @var string User name {minOccurs=1, maxOccurs=1}
- *       * @soap
- *       * /
- *     public $name;
- *     / **
- *       * @var integer User age {nillable=0, minOccurs=1, maxOccurs=1}
- *       * @example 35
- *       * @soap
- *       * /
- *     public $age;
- *     / **
- *       * @var date User's birthday {nillable=0, minOccurs=1, maxOccurs=1}
- *       * @example 1980-05-27
- *       * @soap
- *       * /
- *     public $date_of_birth;
- * }
- * </pre>
- * In the example above, WSDL generator would inject under XML node <xsd:User> the code block defined by @soap-wsdl lines.
- *
- * By inserting into SOAP URL link the parameter "?makedoc", WSDL generator will output human-friendly overview of all complex data types rather than XML WSDL file.
- * Each complex type is described in a separate HTML table and recognizes also the '@example' PHPDoc tag. See {@link buildHtmlDocs()}.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.web.services
- * @since 1.0
- */
-class CWsdlGenerator extends CComponent
-{
-	/**
-	 * @var string the namespace to be used in the generated WSDL.
-	 * If not set, it defaults to the name of the class that WSDL is generated upon.
-	 */
-	public $namespace;
-	/**
-	 * @var string the name of the generated WSDL.
-	 * If not set, it defaults to "urn:{$className}wsdl".
-	 */
-	public $serviceName;
-
-	protected static $typeMap=array(
-		'string'=>'xsd:string',
-		'str'=>'xsd:string',
-		'int'=>'xsd:int',
-		'integer'=>'xsd:integer',
-		'float'=>'xsd:float',
-		'double'=>'xsd:float',
-		'bool'=>'xsd:boolean',
-		'boolean'=>'xsd:boolean',
-		'date'=>'xsd:date',
-		'time'=>'xsd:time',
-		'datetime'=>'xsd:dateTime',
-		'array'=>'soap-enc:Array',
-		'object'=>'xsd:struct',
-		'mixed'=>'xsd:anyType',
-	);
-
-	/**
-	* @var array List of recognized SOAP operations that will become remotely available.
-	* All methods with declared @soap parameter will be included here in the format operation1 => description1, operation2 => description2, ..
-	*/
-	protected $operations;
-
-	/**
-	* @var array List of complex types used by operations.
-	* If an SOAP operation defines complex input or output type, all objects are included here containing all sub-parameters.
-	* For instance, if an SOAP operation "createUser" requires complex input object "User", then the object "User" will be included here with declared subparameters such as "firstname", "lastname", etc..
-	*/
-	protected $types;
-
-	/**
-	* @var array Map of request and response types for all operations.
-	*/
-	protected $messages;
-
-	/**
-	 * Generates the WSDL for the given class.
-	 * @param string $className class name
-	 * @param string $serviceUrl Web service URL
-	 * @param string $encoding encoding of the WSDL. Defaults to 'UTF-8'.
-	 * @return string the generated WSDL
-	 */
-	public function generateWsdl($className, $serviceUrl, $encoding='UTF-8')
-	{
-		$this->operations=array();
-		$this->types=array();
-		$this->messages=array();
-		if($this->serviceName===null)
-			$this->serviceName=$className;
-		if($this->namespace===null)
-			$this->namespace='urn:'.str_replace('\\','/',$className).'wsdl';
-
-		$reflection=new ReflectionClass($className);
-		foreach($reflection->getMethods() as $method)
-		{
-			if($method->isPublic())
-				$this->processMethod($method);
-		}
-
-		$wsdl=$this->buildDOM($serviceUrl,$encoding)->saveXML();
-
-		if(isset($_GET['makedoc']))
-			$this->buildHtmlDocs();
-
-		return $wsdl;
-	}
-
-	/**
-	 * @param ReflectionMethod $method method
-	 */
-	protected function processMethod($method)
-	{
-		$comment=$method->getDocComment();
-		if(strpos($comment,'@soap')===false)
-			return;
-		$comment=strtr($comment,array("\r\n"=>"\n","\r"=>"\n")); // make line endings consistent: win -> unix, mac -> unix
-
-		$methodName=$method->getName();
-		$comment=preg_replace('/^\s*\**(\s*?$|\s*)/m','',$comment);
-		$params=$method->getParameters();
-		$message=array();
-		$n=preg_match_all('/^@param\s+([\w\.]+(\[\s*\])?)\s*?(.*)$/im',$comment,$matches);
-		if($n>count($params))
-			$n=count($params);
-		for($i=0;$i<$n;++$i)
-			$message[$params[$i]->getName()]=array($this->processType($matches[1][$i]), trim($matches[3][$i])); // name => type, doc
-
-		$this->messages[$methodName.'Request']=$message;
-
-		if(preg_match('/^@return\s+([\w\.]+(\[\s*\])?)\s*?(.*)$/im',$comment,$matches))
-			$return=array($this->processType($matches[1]),trim($matches[2])); // type, doc
-		else
-			$return=null;
-		$this->messages[$methodName.'Response']=array('return'=>$return);
-
-		if(preg_match('/^\/\*+\s*([^@]*?)\n@/s',$comment,$matches))
-			$doc=trim($matches[1]);
-		else
-			$doc='';
-		$this->operations[$methodName]=$doc;
-	}
-
-	/**
-	 * @param string $type PHP variable type
-	 */
-	protected function processType($type)
-	{
-		if(isset(self::$typeMap[$type]))
-			return self::$typeMap[$type];
-		elseif(isset($this->types[$type]))
-			return is_array($this->types[$type]) ? 'tns:'.$type : $this->types[$type];
-		elseif(($pos=strpos($type,'[]'))!==false)
-		{	// array of types
-			$type=substr($type,0,$pos);
-			$this->types[$type.'[]']='tns:'.$type.'Array';
-			$this->processType($type);
-			return $this->types[$type.'[]'];
-		}
-		else
-		{	// process class / complex type
-			$type=Yii::import($type,true);
-			$class=new ReflectionClass($type);
-
-			$comment=$class->getDocComment();
-			$comment=strtr($comment,array("\r\n"=>"\n","\r"=>"\n")); // make line endings consistent: win -> unix, mac -> unix
-			$comment=preg_replace('/^\s*\**(\s*?$|\s*)/m','',$comment);
-
-			// extract soap indicator flag, if defined, e.g. @soap-indicator sequence
-			// see http://www.w3schools.com/schema/schema_complex_indicators.asp
-			if(preg_match('/^@soap-indicator\s+(\w+)\s*?(.*)$/im', $comment, $matches))
-			{
-				$indicator=$matches[1];
-				$attributes=$this->getWsdlElementAttributes($matches[2]);
-			}else{
-				$indicator='all';
-				$attributes=$this->getWsdlElementAttributes('');
-			}
-
-			$custom_wsdl=false;
-			if(preg_match_all('/^@soap-wsdl\s+(\S.*)$/im',$comment,$matches)>0)
-				$custom_wsdl=implode("\n", $matches[1]);
-
-			$this->types[$type]=array(
-				'indicator'=>$indicator,
-				'nillable'=>$attributes['nillable'],
-				'minOccurs'=>$attributes['minOccurs'],
-				'maxOccurs'=>$attributes['maxOccurs'],
-				'custom_wsdl'=>$custom_wsdl,
-				'properties'=>array()
-			);
-
-			foreach($class->getProperties() as $property)
-			{
-				$comment=$property->getDocComment();
-				if($property->isPublic() && strpos($comment,'@soap')!==false)
-				{
-					if(preg_match('/@var\s+([\w\.]+(\[\s*\])?)\s*?(.*)$/mi',$comment,$matches))
-					{
-						$attributes=$this->getWsdlElementAttributes($matches[3]);
-
-						if(preg_match('/{(.+)}/',$comment,$attr))
-							$matches[3]=str_replace($attr[0],'',$matches[3]);
-
-						// extract PHPDoc @example
-						$example='';
-						if(preg_match("/@example[:]?(.+)/mi",$comment,$match))
-							$example=trim($match[1]);
-
-						$this->types[$type]['properties'][$property->getName()]=array(
-							$this->processType($matches[1]),
-							trim($matches[3]),
-							$attributes['nillable'],
-							$attributes['minOccurs'],
-							$attributes['maxOccurs'],
-							$example
-						); // name => type, doc, nillable, minOccurs, maxOccurs, example
-					}
-				}
-			}
-			return 'tns:'.$type;
-		}
-	}
-
-	/**
-	* Parse attributes nillable, minOccurs, maxOccurs
-	* @param string $comment Extracted PHPDoc comment
-	*/
-	protected function getWsdlElementAttributes($comment) {
-		$nillable=$minOccurs=$maxOccurs=null;
-		if(preg_match('/{(.+)}/',$comment,$attr))
-		{
-			if(preg_match_all('/((\w+)\s*=\s*(\w+))/mi',$attr[1],$attr))
-			{
-				foreach($attr[2] as $id=>$prop)
-				{
-					$prop=strtolower($prop);
-					$val=strtolower($attr[3][$id]);
-					if($prop=='nillable'){
-						if($val=='false' || $val=='true')
-							$nillable=$val;
-						else
-							$nillable=$val ? 'true' : 'false';
-					}elseif($prop=='minoccurs')
-						$minOccurs=intval($val);
-					elseif($prop=='maxoccurs')
-						$maxOccurs=($val=='unbounded') ? 'unbounded' : intval($val);
-				}
-			}
-		}
-		return array(
-			'nillable'=>$nillable,
-			'minOccurs'=>$minOccurs,
-			'maxOccurs'=>$maxOccurs
-		);
-	}
-
-	/**
-	* Import custom XML source node into WSDL document under specified target node
-	* @param DOMDocument $dom XML WSDL document being generated
-	* @param DOMElement $target XML node, to which will be appended $source node
-	* @param DOMNode $source Source XML node to be imported
-	*/
-	protected function injectDom(DOMDocument $dom, DOMElement $target, DOMNode $source)
-	{
-		if ($source->nodeType!=XML_ELEMENT_NODE)
-			return;
-
-		$import=$dom->createElement($source->nodeName);
-
-		foreach($source->attributes as $attr)
-			$import->setAttribute($attr->name,$attr->value);
-
-		foreach($source->childNodes as $child)
-			$this->injectDom($dom,$import,$child);
-
-		$target->appendChild($import);
-	}
-
-	/**
-	 * @param string $serviceUrl Web service URL
-	 * @param string $encoding encoding of the WSDL. Defaults to 'UTF-8'.
-	 */
-	protected function buildDOM($serviceUrl,$encoding)
-	{
-		$xml="<?xml version=\"1.0\" encoding=\"$encoding\"?>
-<definitions name=\"{$this->serviceName}\" targetNamespace=\"{$this->namespace}\"
-	 xmlns=\"http://schemas.xmlsoap.org/wsdl/\"
-	 xmlns:tns=\"{$this->namespace}\"
-	 xmlns:soap=\"http://schemas.xmlsoap.org/wsdl/soap/\"
-	 xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"
-	 xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\"
-	 xmlns:soap-enc=\"http://schemas.xmlsoap.org/soap/encoding/\"></definitions>";
-
-		$dom=new DOMDocument();
-		$dom->formatOutput=true;
-		$dom->loadXml($xml);
-		$this->addTypes($dom);
-
-		$this->addMessages($dom);
-		$this->addPortTypes($dom);
-		$this->addBindings($dom);
-		$this->addService($dom,$serviceUrl);
-
-		return $dom;
-	}
-
-	/**
-	 * @param DOMDocument $dom Represents an entire HTML or XML document; serves as the root of the document tree
-	 */
-	protected function addTypes($dom)
-	{
-		if($this->types===array())
-			return;
-		$types=$dom->createElement('wsdl:types');
-		$schema=$dom->createElement('xsd:schema');
-		$schema->setAttribute('targetNamespace',$this->namespace);
-		foreach($this->types as $phpType=>$xmlType)
-		{
-			if(is_string($xmlType) && strrpos($xmlType,'Array')!==strlen($xmlType)-5)
-				continue;  // simple type
-			$complexType=$dom->createElement('xsd:complexType');
-			if(is_string($xmlType))
-			{
-				if(($pos=strpos($xmlType,'tns:'))!==false)
-					$complexType->setAttribute('name',substr($xmlType,4));
-				else
-					$complexType->setAttribute('name',$xmlType);
-				$complexContent=$dom->createElement('xsd:complexContent');
-				$restriction=$dom->createElement('xsd:restriction');
-				$restriction->setAttribute('base','soap-enc:Array');
-				$attribute=$dom->createElement('xsd:attribute');
-				$attribute->setAttribute('ref','soap-enc:arrayType');
-				$attribute->setAttribute('wsdl:arrayType',substr($xmlType,0,strlen($xmlType)-5).'[]');
-
-				$arrayType=($dppos=strpos($xmlType,':')) !==false ? substr($xmlType,$dppos + 1) : $xmlType; // strip namespace, if any
-				$arrayType=substr($arrayType,0,-5); // strip 'Array' from name
-				$arrayType=(isset(self::$typeMap[$arrayType]) ? 'xsd:' : 'tns:') .$arrayType.'[]';
-				$attribute->setAttribute('wsdl:arrayType',$arrayType);
-
-				$restriction->appendChild($attribute);
-				$complexContent->appendChild($restriction);
-				$complexType->appendChild($complexContent);
-			}
-			elseif(is_array($xmlType))
-			{
-				$complexType->setAttribute('name',$phpType);
-				if($xmlType['custom_wsdl']!==false)
-				{
-					$custom_dom=new DOMDocument();
-					$custom_dom->loadXML('<root xmlns:xsd="http://www.w3.org/2001/XMLSchema">'.$xmlType['custom_wsdl'].'</root>');
-					foreach($custom_dom->documentElement->childNodes as $el)
-						$this->injectDom($dom,$complexType,$el);
-				}else{
-					$all=$dom->createElement('xsd:' . $xmlType['indicator']);
-
-					if(!is_null($xmlType['minOccurs']))
-						$all->setAttribute('minOccurs',$xmlType['minOccurs']);
-					if(!is_null($xmlType['maxOccurs']))
-						$all->setAttribute('maxOccurs',$xmlType['maxOccurs']);
-					if(!is_null($xmlType['nillable']))
-						$all->setAttribute('nillable',$xmlType['nillable']);
-
-					foreach($xmlType['properties'] as $name=>$type)
-					{
-						$element=$dom->createElement('xsd:element');
-						if(!is_null($type[3]))
-							$element->setAttribute('minOccurs',$type[3]);
-						if(!is_null($type[4]))
-							$element->setAttribute('maxOccurs',$type[4]);
-						if(!is_null($type[2]))
-							$element->setAttribute('nillable',$type[2]);
-						$element->setAttribute('name',$name);
-						$element->setAttribute('type',$type[0]);
-						$all->appendChild($element);
-					}
-					$complexType->appendChild($all);
-				}
-			}
-			$schema->appendChild($complexType);
-			$types->appendChild($schema);
-		}
-		$dom->documentElement->appendChild($types);
-	}
-
-	/**
-	 * @param DOMDocument $dom Represents an entire HTML or XML document; serves as the root of the document tree
-	 */
-	protected function addMessages($dom)
-	{
-		foreach($this->messages as $name=>$message)
-		{
-			$element=$dom->createElement('wsdl:message');
-			$element->setAttribute('name',$name);
-			foreach($this->messages[$name] as $partName=>$part)
-			{
-				if(is_array($part))
-				{
-					$partElement=$dom->createElement('wsdl:part');
-					$partElement->setAttribute('name',$partName);
-					$partElement->setAttribute('type',$part[0]);
-					$element->appendChild($partElement);
-				}
-			}
-			$dom->documentElement->appendChild($element);
-		}
-	}
-
-	/**
-	 * @param DOMDocument $dom Represents an entire HTML or XML document; serves as the root of the document tree
-	 */
-	protected function addPortTypes($dom)
-	{
-		$portType=$dom->createElement('wsdl:portType');
-		$portType->setAttribute('name',$this->serviceName.'PortType');
-		$dom->documentElement->appendChild($portType);
-		foreach($this->operations as $name=>$doc)
-			$portType->appendChild($this->createPortElement($dom,$name,$doc));
-	}
-
-	/**
-	 * @param DOMDocument $dom Represents an entire HTML or XML document; serves as the root of the document tree
-	 * @param string $name method name
-	 * @param string $doc doc
-	 */
-	protected function createPortElement($dom,$name,$doc)
-	{
-		$operation=$dom->createElement('wsdl:operation');
-		$operation->setAttribute('name',$name);
-
-		$input=$dom->createElement('wsdl:input');
-		$input->setAttribute('message', 'tns:'.$name.'Request');
-		$output=$dom->createElement('wsdl:output');
-		$output->setAttribute('message', 'tns:'.$name.'Response');
-
-		$operation->appendChild($dom->createElement('wsdl:documentation',$doc));
-		$operation->appendChild($input);
-		$operation->appendChild($output);
-
-		return $operation;
-	}
-
-	/**
-	 * @param DOMDocument $dom Represents an entire HTML or XML document; serves as the root of the document tree
-	 */
-	protected function addBindings($dom)
-	{
-		$binding=$dom->createElement('wsdl:binding');
-		$binding->setAttribute('name',$this->serviceName.'Binding');
-		$binding->setAttribute('type','tns:'.$this->serviceName.'PortType');
-
-		$soapBinding=$dom->createElement('soap:binding');
-		$soapBinding->setAttribute('style','rpc');
-		$soapBinding->setAttribute('transport','http://schemas.xmlsoap.org/soap/http');
-		$binding->appendChild($soapBinding);
-
-		$dom->documentElement->appendChild($binding);
-
-		foreach($this->operations as $name=>$doc)
-			$binding->appendChild($this->createOperationElement($dom,$name));
-	}
-
-	/**
-	 * @param DOMDocument $dom Represents an entire HTML or XML document; serves as the root of the document tree
-	 * @param string $name method name
-	 */
-	protected function createOperationElement($dom,$name)
-	{
-		$operation=$dom->createElement('wsdl:operation');
-		$operation->setAttribute('name', $name);
-		$soapOperation=$dom->createElement('soap:operation');
-		$soapOperation->setAttribute('soapAction', $this->namespace.'#'.$name);
-		$soapOperation->setAttribute('style','rpc');
-
-		$input=$dom->createElement('wsdl:input');
-		$output=$dom->createElement('wsdl:output');
-
-		$soapBody=$dom->createElement('soap:body');
-		$soapBody->setAttribute('use', 'encoded');
-		$soapBody->setAttribute('namespace', $this->namespace);
-		$soapBody->setAttribute('encodingStyle', 'http://schemas.xmlsoap.org/soap/encoding/');
-		$input->appendChild($soapBody);
-		$output->appendChild(clone $soapBody);
-
-		$operation->appendChild($soapOperation);
-		$operation->appendChild($input);
-		$operation->appendChild($output);
-
-		return $operation;
-	}
-
-	/**
-	 * @param DOMDocument $dom Represents an entire HTML or XML document; serves as the root of the document tree
-	 * @param string $serviceUrl Web service URL
-	 */
-	protected function addService($dom,$serviceUrl)
-	{
-		$service=$dom->createElement('wsdl:service');
-		$service->setAttribute('name', $this->serviceName.'Service');
-
-		$port=$dom->createElement('wsdl:port');
-		$port->setAttribute('name', $this->serviceName.'Port');
-		$port->setAttribute('binding', 'tns:'.$this->serviceName.'Binding');
-
-		$soapAddress=$dom->createElement('soap:address');
-		$soapAddress->setAttribute('location',$serviceUrl);
-		$port->appendChild($soapAddress);
-		$service->appendChild($port);
-		$dom->documentElement->appendChild($service);
-	}
-
-	/**
-	* Generate human friendly HTML documentation for complex data types.
-	* This method can be invoked either by inserting URL parameter "&makedoc" into URL link, e.g. "http://www.mydomain.com/soap/create?makedoc", or simply by calling from another script with argument $return=true.
-	*
-	* Each complex data type is described in a separate HTML table containing following columns:
-	* <ul>
-	* <li># - attribute ID</li>
-	* <li>Attribute - attribute name, e.g. firstname</li>
-	* <li>Type - attribute type, e.g. integer, date, tns:SoapPovCalculationResultArray</li>
-	* <li>Nill - true|false - whether the attribute is nillable</li>
-	* <li>Min - minimum number of occurrences</li>
-	* <li>Max - maximum number of occurrences</li>
-	* <li>Description - Detailed description of the attribute.</li>
-	* <li>Example - Attribute example value if provided via PHPDoc property @example.</li>
-	* <ul>
-	*
-	* @param bool $return If true, generated HTML output will be returned rather than directly sent to output buffer
-	*/
-	public function buildHtmlDocs($return=false)
-	{
-		$html='<html><head>';
-		$html.='<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';
-		$html.='<style type="text/css">
-table{border-collapse: collapse;background-color: #DDDDDD;}
-tr{background-color: #FFFFFF;}
-th{background-color: #EEEEEE;}
-th, td{font-size: 12px;font-family: courier;padding: 3px;}
-</style>';
-		$html.='</head><body>';
-		$html.='<h2>WSDL documentation for service '.$this->serviceName.'</h2>';
-		$html.='<p>Generated on '.date('d.m.Y H:i:s').'</p>';
-		$html.='<table border="0" cellspacing="1" cellpadding="1">';
-		$html.='<tr><td>';
-
-		if(!empty($this->types))
-		{
-			foreach($this->types as $object=>$options){
-				if(!is_array($options) || empty($options) || !is_array($options['properties']) || empty($options['properties'])){
-					continue;
-				}
-				$params=$options['properties'];
-				$html.="\n\n<h3>Object: {$object}</h3>";
-				$html.='<table border="1" cellspacing="1" cellpadding="1">';
-				$html.='<tr><th>#</th><th>Attribute</th><th>Type</th><th>Nill</th><th>Min</th><th>Max</th><th>Description</th><th>Example</th></tr>';
-				$c=0;
-				foreach($params as $param=>$prop){
-					++$c;
-					$html.="\n<tr>"
-								."\n\t<td>{$c}</td>"
-								."\n\t<td>{$param}</td>"
-								."\n\t<td>".(str_replace('xsd:','',$prop[0]))."</td>"
-								."\n\t<td>".$prop[2]."</td>"
-								."\n\t<td>".($prop[3]==null ? '&nbsp;' : $prop[3])."</td>"
-								."\n\t<td>".($prop[4]==null ? '&nbsp;' : $prop[4])."</td>"
-								."\n\t<td>{$prop[1]}</td>"
-								."\n\t<td>".(trim($prop[5])=='' ? '&nbsp;' : $prop[5])."</td>"
-							."\n</tr>";
-				}
-				$html.="\n</table><br/>";
-			}
-		}
-		else
-			$html.='No complex data type found!';
-
-		$html.='</td></tr></table></body></html>';
-
-		if($return)
-			return $html;
-
-		echo $html;
-		Yii::app()->end(); // end the app to avoid conflict with text/xml header
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+9E60uOmm4vCTQXTEjh16johBys4=

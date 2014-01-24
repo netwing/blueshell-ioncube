@@ -1,184 +1,66 @@
-<?php
-
-/*
- * This file is part of the Monolog package.
- *
- * (c) Jordi Boggiano <j.boggiano@seld.be>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Monolog\Handler;
-
-use Monolog\Logger;
-use Monolog\Formatter\FormatterInterface;
-use Monolog\Formatter\LineFormatter;
-
-/**
- * Base Handler class providing the Handler structure
- *
- * @author Jordi Boggiano <j.boggiano@seld.be>
- */
-abstract class AbstractHandler implements HandlerInterface
-{
-    protected $level = Logger::DEBUG;
-    protected $bubble = true;
-
-    /**
-     * @var FormatterInterface
-     */
-    protected $formatter;
-    protected $processors = array();
-
-    /**
-     * @param integer $level  The minimum logging level at which this handler will be triggered
-     * @param Boolean $bubble Whether the messages that are handled can bubble up the stack or not
-     */
-    public function __construct($level = Logger::DEBUG, $bubble = true)
-    {
-        $this->level = $level;
-        $this->bubble = $bubble;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function isHandling(array $record)
-    {
-        return $record['level'] >= $this->level;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function handleBatch(array $records)
-    {
-        foreach ($records as $record) {
-            $this->handle($record);
-        }
-    }
-
-    /**
-     * Closes the handler.
-     *
-     * This will be called automatically when the object is destroyed
-     */
-    public function close()
-    {
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function pushProcessor($callback)
-    {
-        if (!is_callable($callback)) {
-            throw new \InvalidArgumentException('Processors must be valid callables (callback or object with an __invoke method), '.var_export($callback, true).' given');
-        }
-        array_unshift($this->processors, $callback);
-
-        return $this;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function popProcessor()
-    {
-        if (!$this->processors) {
-            throw new \LogicException('You tried to pop from an empty processor stack.');
-        }
-
-        return array_shift($this->processors);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setFormatter(FormatterInterface $formatter)
-    {
-        $this->formatter = $formatter;
-
-        return $this;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getFormatter()
-    {
-        if (!$this->formatter) {
-            $this->formatter = $this->getDefaultFormatter();
-        }
-
-        return $this->formatter;
-    }
-
-    /**
-     * Sets minimum logging level at which this handler will be triggered.
-     *
-     * @param  integer $level
-     * @return self
-     */
-    public function setLevel($level)
-    {
-        $this->level = $level;
-
-        return $this;
-    }
-
-    /**
-     * Gets minimum logging level at which this handler will be triggered.
-     *
-     * @return integer
-     */
-    public function getLevel()
-    {
-        return $this->level;
-    }
-
-    /**
-     * Sets the bubbling behavior.
-     *
-     * @param Boolean $bubble true means that this handler allows bubbling.
-     *                        false means that bubbling is not permitted.
-     * @return self
-     */
-    public function setBubble($bubble)
-    {
-        $this->bubble = $bubble;
-
-        return $this;
-    }
-
-    /**
-     * Gets the bubbling behavior.
-     *
-     * @return Boolean true means that this handler allows bubbling.
-     *                 false means that bubbling is not permitted.
-     */
-    public function getBubble()
-    {
-        return $this->bubble;
-    }
-
-    public function __destruct()
-    {
-        try {
-            $this->close();
-        } catch (\Exception $e) {
-            // do nothing
-        }
-    }
-
-    /**
-     * Gets the default formatter.
-     *
-     * @return FormatterInterface
-     */
-    protected function getDefaultFormatter()
-    {
-        return new LineFormatter();
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+9RzI93kP9KTNh8DPRVu=

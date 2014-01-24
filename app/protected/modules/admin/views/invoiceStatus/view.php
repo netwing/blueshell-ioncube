@@ -1,37 +1,30 @@
-<?php
-/* @var $this InvoiceStatusController */
-/* @var $model InvoiceStatus */
-
-$this->pageTitle = Yii::t('app', 'Update Invoice Statuses');
-
-$this->breadcrumbs=array(
-	'Invoice Statuses'=>array('index'),
-	$model->name,
-);
-
-$this->menu=array(
-	array('label'=>Yii::t('app', 'Manage InvoiceStatus'), 'url'=>array('admin')),
-	array('label'=>Yii::t('app', 'Create InvoiceStatus'), 'url'=>array('create')),
-	array('label'=>Yii::t('app', 'Update InvoiceStatus'), 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>Yii::t('app', 'Delete InvoiceStatus'), 'url'=>array('delete', 'id'=>$model->id), 'linkOptions'=>array('confirm'=>'Are you sure you want to delete this item?')),
-);
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
-
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'id',
-		'name',
-		'color' => array(
-			'label' => $model->getAttributeLabel("color"),
-			'value' => $model,
-			'type'	=> 'textColor',
-		),
-		'paid:booleanString',
-		'unpaid:booleanString',
-		'cancelled:booleanString',
-		'sort_order',
-		'create_time:datetimeLong',
-		'update_time:datetimeLong',
-	),
-)); ?>
+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
+9qO25F/JnSJX/mhnV9fDjHMikpMBfq4=

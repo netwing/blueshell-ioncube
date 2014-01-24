@@ -1,123 +1,64 @@
-<?php
-/**
- * CTimestampBehavior class file.
- *
- * @author Jonah Turnquist <poppitypop@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CTimestampBehavior will automatically fill date and time related attributes.
- *
- * CTimestampBehavior will automatically fill date and time related attributes when the active record
- * is created and/or updated.
- * You may specify an active record model to use this behavior like so:
- * <pre>
- * public function behaviors(){
- * 	return array(
- * 		'CTimestampBehavior' => array(
- * 			'class' => 'zii.behaviors.CTimestampBehavior',
- * 			'createAttribute' => 'create_time_attribute',
- * 			'updateAttribute' => 'update_time_attribute',
- * 		)
- * 	);
- * }
- * </pre>
- * The {@link createAttribute} and {@link updateAttribute} options actually default to 'create_time' and 'update_time'
- * respectively, so it is not required that you configure them. If you do not wish CTimestampBehavior
- * to set a timestamp for record update or creation, set the corresponding attribute option to null.
- *
- * By default, the update attribute is only set on record update. If you also wish it to be set on record creation,
- * set the {@link setUpdateOnCreate} option to true.
- *
- * Although CTimestampBehavior attempts to figure out on it's own what value to inject into the timestamp attribute,
- * you may specify a custom value to use instead via {@link timestampExpression}
- *
- * @author Jonah Turnquist <poppitypop@gmail.com>
- * @package zii.behaviors
- * @since 1.1
- */
-
-class CTimestampBehavior extends CActiveRecordBehavior {
-	/**
-	 * @var mixed The name of the attribute to store the creation time.  Set to null to not
-	 * use a timestamp for the creation attribute.  Defaults to 'create_time'
-	 */
-	public $createAttribute = 'create_time';
-	/**
-	 * @var mixed The name of the attribute to store the modification time.  Set to null to not
-	 * use a timestamp for the update attribute.  Defaults to 'update_time'
-	 */
-	public $updateAttribute = 'update_time';
-
-	/**
-	 * @var bool Whether to set the update attribute to the creation timestamp upon creation.
-	 * Otherwise it will be left alone.  Defaults to false.
-	 */
-	public $setUpdateOnCreate = false;
-
-	/**
-	 * @var mixed The expression that will be used for generating the timestamp.
-	 * This can be either a string representing a PHP expression (e.g. 'time()'),
-	 * or a {@link CDbExpression} object representing a DB expression (e.g. new CDbExpression('NOW()')).
-	 * Defaults to null, meaning that we will attempt to figure out the appropriate timestamp
-	 * automatically. If we fail at finding the appropriate timestamp, then it will
-	 * fall back to using the current UNIX timestamp.
-	 *
-	 * A PHP expression can be any PHP code that has a value. To learn more about what an expression is,
-	 * please refer to the {@link http://www.php.net/manual/en/language.expressions.php php manual}.
-	 */
-	public $timestampExpression;
-
-	/**
-	 * @var array Maps column types to database method
-	 */
-	protected static $map = array(
-			'datetime'=>'NOW()',
-			'timestamp'=>'NOW()',
-			'date'=>'NOW()',
-	);
-
-	/**
-	 * Responds to {@link CModel::onBeforeSave} event.
-	 * Sets the values of the creation or modified attributes as configured
-	 *
-	 * @param CModelEvent $event event parameter
-	 */
-	public function beforeSave($event) {
-		if ($this->getOwner()->getIsNewRecord() && ($this->createAttribute !== null)) {
-			$this->getOwner()->{$this->createAttribute} = $this->getTimestampByAttribute($this->createAttribute);
-		}
-		if ((!$this->getOwner()->getIsNewRecord() || $this->setUpdateOnCreate) && ($this->updateAttribute !== null)) {
-			$this->getOwner()->{$this->updateAttribute} = $this->getTimestampByAttribute($this->updateAttribute);
-		}
-	}
-
-	/**
-	 * Gets the appropriate timestamp depending on the column type $attribute is
-	 *
-	 * @param string $attribute $attribute
-	 * @return mixed timestamp (eg unix timestamp or a mysql function)
-	 */
-	protected function getTimestampByAttribute($attribute) {
-		if ($this->timestampExpression instanceof CDbExpression)
-			return $this->timestampExpression;
-		elseif ($this->timestampExpression !== null)
-			return @eval('return '.$this->timestampExpression.';');
-
-		$columnType = $this->getOwner()->getTableSchema()->getColumn($attribute)->dbType;
-		return $this->getTimestampByColumnType($columnType);
-	}
-
-	/**
-	 * Returns the appropriate timestamp depending on $columnType
-	 *
-	 * @param string $columnType $columnType
-	 * @return mixed timestamp (eg unix timestamp or a mysql function)
-	 */
-	protected function getTimestampByColumnType($columnType) {
-		return isset(self::$map[$columnType]) ? new CDbExpression(self::$map[$columnType]) : time();
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+7At0oYG5Yn3ZjTIzKyq5/wtJUYd3vLsvppFDfW==

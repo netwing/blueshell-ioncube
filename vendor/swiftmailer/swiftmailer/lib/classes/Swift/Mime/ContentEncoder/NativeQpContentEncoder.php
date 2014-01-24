@@ -1,125 +1,59 @@
-<?php
-
-/*
- * This file is part of SwiftMailer.
- * (c) 2004-2009 Chris Corbyn
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-/**
- * Handles Quoted Printable (QP) Transfer Encoding in Swift Mailer using the PHP core function.
- *
- * @package    Swift
- * @subpackage Mime
- * @author     Lars Strojny
- */
-class Swift_Mime_ContentEncoder_NativeQpContentEncoder implements Swift_Mime_ContentEncoder
-{
-    /**
-     * @var null|string
-     */
-    private $charset;
-
-    /**
-     * @param null|string $charset
-     */
-    public function __construct($charset = null)
-    {
-        $this->charset = $charset ? $charset : 'utf-8';
-    }
-
-    /**
-     * Notify this observer that the entity's charset has changed.
-     *
-     * @param string $charset
-     */
-    public function charsetChanged($charset)
-    {
-        $this->charset = $charset;
-    }
-
-    /**
-     * Encode $in to $out.
-     *
-     * @param Swift_OutputByteStream $os              to read from
-     * @param Swift_InputByteStream  $is              to write to
-     * @param integer                $firstLineOffset
-     * @param integer                $maxLineLength   0 indicates the default length for this encoding
-     *
-     * @throws RuntimeException
-     */
-    public function encodeByteStream(Swift_OutputByteStream $os, Swift_InputByteStream $is, $firstLineOffset = 0, $maxLineLength = 0)
-    {
-        if ($this->charset !== 'utf-8') {
-            throw new RuntimeException(
-                sprintf('Charset "%s" not supported. NativeQpContentEncoder only supports "utf-8"', $this->charset));
-        }
-
-        $string = '';
-
-        while (false !== $bytes = $os->read(8192)) {
-            $string .= $bytes;
-        }
-
-        $is->write($this->encodeString($string));
-    }
-
-    /**
-     * Get the MIME name of this content encoding scheme.
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return 'quoted-printable';
-    }
-
-    /**
-     * Encode a given string to produce an encoded string.
-     *
-     * @param string  $string
-     * @param integer $firstLineOffset if first line needs to be shorter
-     * @param integer $maxLineLength   0 indicates the default length for this encoding
-     *
-     * @return string
-     *
-     * @throws RuntimeException
-     */
-    public function encodeString($string, $firstLineOffset = 0, $maxLineLength = 0)
-    {
-        if ($this->charset !== 'utf-8') {
-            throw new RuntimeException(
-                sprintf('Charset "%s" not supported. NativeQpContentEncoder only supports "utf-8"', $this->charset));
-        }
-
-        return $this->_standardize(quoted_printable_encode($string));
-    }
-
-    /**
-     * Make sure CRLF is correct and HT/SPACE are in valid places.
-     *
-     * @param string $string
-     *
-     * @return string
-     */
-    protected function _standardize($string)
-    {
-        // transform CR or LF to CRLF
-        $string = preg_replace('~=0D(?!=0A)|(?<!=0D)=0A~', '=0D=0A', $string);
-        // transform =0D=0A to CRLF
-        $string = str_replace(array("\t=0D=0A", " =0D=0A", "=0D=0A"), array("=09\r\n", "=20\r\n", "\r\n"), $string);
-
-        switch ($end = ord(substr($string, -1))) {
-            case 0x09:
-                $string = substr_replace($string, '=09', -1);
-                break;
-            case 0x20:
-                $string = substr_replace($string, '=20', -1);
-                break;
-        }
-
-        return $string;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

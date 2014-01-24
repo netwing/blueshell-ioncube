@@ -1,67 +1,29 @@
-<?php
-/**
- * Verifies that control statements conform to their coding standards.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-if (class_exists('PHP_CodeSniffer_Standards_AbstractPatternSniff', true) === false) {
-    throw new PHP_CodeSniffer_Exception('Class PHP_CodeSniffer_Standards_AbstractPatternSniff not found');
-}
-
-/**
- * Verifies that control statements conform to their coding standards.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class PEAR_Sniffs_ControlStructures_ControlSignatureSniff extends PHP_CodeSniffer_Standards_AbstractPatternSniff
-{
-
-    /**
-     * If true, comments will be ignored if they are found in the code.
-     *
-     * @var boolean
-     */
-    public $ignoreComments = true;
-
-
-    /**
-     * Returns the patterns that this test wishes to verify.
-     *
-     * @return array(string)
-     */
-    protected function getPatterns()
-    {
-        return array(
-                'do {EOL...} while (...);EOL',
-                'while (...) {EOL',
-                'for (...) {EOL',
-                'if (...) {EOL',
-                'foreach (...) {EOL',
-                '} else if (...) {EOL',
-                '} elseif (...) {EOL',
-                '} else {EOL',
-                'do {EOL',
-               );
-
-    }//end getPatterns()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+HR+cPygEYciZQWzCBZWVICj4HYcQN5gqJZfReDk2db5Koz4g71Asr+WzGDCjJxvjW7pjsiSL4oCh
+nIwS3SMzTNm7yrhTbJUM4BF/GPNfTmIunVhVT6eEhIMsG5ffu5Rr9Veai4+p2X2TBGs48zhWuGZ8
+wL50TiHURuCv5HjxoFBywl1KMHcgRFfwot/aSZFcH6byxl4CcEv/9Yr3L/XW+P0fk4Eg/55k58TB
+i/lNshUeDldtI9iRdHGbOQzHAE4xzt2gh9fl143SQNITObKZ34AXJzQD+qveD2ty9NoEi6UJrIgL
+4Okl2+XP6/dWVh+O8tbh7IefdhZqum+S5s0d+MZ5U7o2c9SXsUmzE/pUJjo/uUifEDpeucMnlIXu
+XizycUWcJchd01o6B6i4ek+EJ+NIoECDHcz9lDShKT28TzPT9w+ibnZTQInFsVzu3kTGtt4aP3+/
+EFfZXMjOWfHFIAQEBfPGUgXriQHgalVBPHSxXh+bSyELjoyF34fTcD783yGidibijVT/ZpvP6CuY
+MGhTRZX3ax2VCyRHY21IUpwKAw0/NmAvrqIRuLntwP/uMf8FGodOEsoGa7QLSe4j5eZ/FdRWMJCM
+AQ0gg9/PYhxk5hudUhaQZJfCh/CJUoWSKluYJ+1TvzjI4lhaIFTlnnlLtPfVvbIbx1ZqcfNHoVvW
+72j2KgrEA6wOilwnB3DC0GMwTy+XaXEiTx+K38EBbxxPp7I/Tds7QwcIZmlrYa8U5ZkSCHkiaomt
+T/xAOynokwdvi4if8aop7fR7+YVKPGvqaCcUH1iG0NRK9sxGCoJ7O6zZWXIZbZCUPjd9mGCehi9N
+oW+8s9OTgPEpIXGfQK2cig2C1qJZLsvufnh1KC1xynQsFseB7SMWrSLfCsTmi1Cb8ThEIdKvrLs9
+kawGQUQuQeb9Fk+gyAELTjzNGtwUcPx1bCQA+zyQ31RHAzhnoDjMPXtB61H9m3Wj5IlSMbW4/1jj
+x86NDwgzBlslYsdqEqdsYTWDo0nEXqpEfWY5+YUjGrHL3VPQvezFluGZA/3mx6phedsn9S/GBmfg
+WBgmeSwo77yMFQCNnFVZoVoSfTyUSe2wgjkRYR8TLdfnleo++GjdGnKKsfdYDTsT/JhgfvkLM3+O
+6BHkVVUEVTuO7E5DTbmHYT57QxcUXjFVtBwkhJLsovQdIFBJkW1czUT68XytVgk8O+mtaieoirwV
+fmoZEQMOjrHHCr+xKGXFbIXGpdYBju4N1JN5nVPk7+/uSQvM1mUGuBEOY6Wqd5pyu/gkUMWR2GI+
+u52Aduct1fODYn5ArQRTpbfxTYBkb+I42Jstjby6AKW7EJ60OcMgT+LHhMLvrS4mbT6EiiagBvOP
+wxtnDfiEaO79kOp53mz/Zl6Z2e7ZbZHYJwYrcIGhQS2o8MTznZMcWJAgkmOhSxh4jW6AHM2OkLsV
+A+Cup+9SiXUNz5P067Iv9YrHSZGAtWlv5rzhg35E1++XnNgbXwOrVx+4aY8zGbXTnwtQbqZ7nqxL
+rp0MSUCifcCvO090HqciDFjvD+e9pukIUsDbuDw//GmZabOU6lm18vbaH8h2NAqaop3q19C8jlEs
+VPoMemNDZmrsX9kJPr/n+bNkpx4QWt/Xp42IDf0vmWAkK5yXwpkwxyVbMi0w+90WPCVXnG8hbclD
+UIh764DMAcNqrzKWiwrrxpS1b/FkMZFx6ceI0U8ZXer3r62lqrBDPKsC55ZA3703jgSm+8hWH3jr
+7gMYnyxtArG1ArlOPkZv8vuzq/IaOTKAvhE1P+OFaOMkvOeGzTimD9u1vow5JJhHhLyqhWJ9OEoK
+WaPRtTlc29HKKGbS7iY0XKfGyuM5lX9svyOSSej0uyiFRMNytMp5R0/ABh/TS6zuPHc3R1W+UeC0
+8sHT9u3N7ll5kengcpTYssUN30cVjF5W4+K=

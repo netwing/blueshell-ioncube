@@ -1,269 +1,137 @@
-<?php
-/* @var $this InvoiceController */
-/* @var $model Invoice */
-
-$this->pageTitle = Yii::t('app', 'Update Invoices');
-
-$this->breadcrumbs=array(
-	'Invoices'=>array('index'),
-	$model->id,
-);
-
-$this->menu=array(
-	array('label'=>Yii::t('app', 'Manage Invoice'), 'url'=>array('admin')),
-    array('label'=>Yii::t('app', 'Create Invoice'), 'url'=>array('create')),
-	array('label'=>Yii::t('app', 'Update Invoice'), 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>Yii::t('app', 'Delete Invoice'), 'url'=>array('delete', 'id'=>$model->id), 'linkOptions'=>array('confirm'=>'Are you sure you want to delete this item?')),
-    array(
-        'label'=>Yii::t('app', 'Add row'), 
-        'url'=>array('invoiceRow/create', 'invoiceid' => $model->id),
-    ),
-);
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
-
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'id',
-        'customer.cliente_nominativo' => array(
-            'label' => $model->getAttributeLabel('customer.cliente_nominativo'),
-            'value' => '<a href="' . Yii::app()->createUrl('/admin/customer/detail', array('id' => $model->customer->cliente_id, '#' => 'invoice')) . '">' . $model->customer->cliente_nominativo . '</a>',
-            'type'  => 'html',
-        ),
-        'invoice_number' => array(
-            'label' => $model->getAttributeLabel('invoice_number'),
-            'value' => ($model->invoice_number > 0) ? $model->invoice_number : null,
-        ),
-		'date:dateLong',
-		'billing_address' => array(
-			'label' => Yii::t('app', 'Billing address'),
-			'value'	=> $model->billing_header . ", " . 
-                       $model->billing_address . ", " . 
-                       $model->billing_zip . ", " . 
-                       $model->billing_city . ", " . 
-                       $model->billing_province . ", " . 
-                       $model->billing_country . ", " . 
-                       $model->billing_tax,
-		),
-		'shipping_address' => array(
-			'label' => Yii::t('app', 'Shipping address'),
-            'value' => $model->shipping_header . ", " . 
-                       $model->shipping_address . ", " . 
-                       $model->shipping_zip . ", " . 
-                       $model->shipping_city . ", " . 
-                       $model->shipping_province . ", " . 
-                       $model->shipping_country,
-		),
-		'status.name' => array(
-			'label' => $model->getAttributeLabel("status.name"),
-			'value' => $model->status,
-			'type'	=> 'textColor',
-		),
-
-		'type.name',
-		'due_date:dateLong',
-		'date_paid:dateLong',
-		'payment_method',
-		'notes',
-		'create_time:datetimeLong',
-		'update_time:datetimeLong',
-	),
-)); ?>
-
-<?php $form=$this->beginWidget('CActiveForm', array(
-    'id'=>'invoice-row-split-form',
-    'action' => $this->createUrl('split', array('id' => $model->id)),
-)); ?>
-<?php 
-$dataProvider = new CArrayDataProvider($model->invoiceRows, array(
-    'pagination'=>array(
-        'pageSize'=>-1,
-    ),
-));
-$this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'invoice-row-grid',
-	'dataProvider' => $dataProvider,
-	// 'filter'=>$model,
-	'rowCssClass'   => array(),
-	'itemsCssClass' => 'table table-hover table-bordered',
-	'pagerCssClass'     => "col-md-12 text-right",
-	'pager'             => array(
-	    'header'                => '',
-	    'internalPageCssClass'  => '',
-	    'firstPageCssClass'     => '',
-	    'lastPageCssClass'      => '',
-	    'selectedPageCssClass'  => 'active',
-	    'htmlOptions'   => array(
-	        'class'     => 'pagination pagination-sm',
-	    )
-	),
-	'columns'=>array(
-        // Show a column with checkbox
-        array(
-            'class'             => 'zii.widgets.grid.CCheckBoxColumn',
-            'selectableRows'    => 2,
-            'visible'           => !$model->status->paid,
-            'footer'            => '<button type="submit" class="btn btn-link btn-xs">' . Yii::t('app', 'Split') . '</button>',
-            'visible'           => ($dataProvider->getItemCount() > 1),
-        ),
-		    'description' => array(
-            'header' => InvoiceRow::model()->getAttributeLabel("description"),
-            'value'  => '$data->description',
-        ),
-        'price' => array(
-            'header'        => Yii::t('app', 'Price'),
-            'htmlOptions'   => array('class' => 'text-right'),
-            'value'         => '$data->price',
-            'type'          => 'currency',
-        ),
-        'quantity' => array(
-            'header'        => Yii::t('app', 'Quantity'),
-            'htmlOptions'   => array('class' => 'text-right'),
-            'value'         => '$data->quantity',
-        ),
-        'vat' => array(
-            'header'        => Yii::t('app', 'Vat'),
-            'htmlOptions'   => array('class' => 'text-right'),
-            'value'         => '$data->vat',
-        ),
-		'discount' => array(
-            'header'        => Yii::t('app', 'Discount'),
-            'htmlOptions'   => array('class' => 'text-right'),
-            'value'         => '$data->discount',
-        ),
-		'total' => array(
-            'header' => Yii::t('app', 'Sub total'),
-            'htmlOptions'   => array('class' => 'text-right'),
-            'value' => '$data->total',
-            'type'          => 'currency',
-        ),
-        // Show a column with 3 icons as buttons
-        array(
-            'class'         => 'zii.widgets.grid.CButtonColumn',
-            'htmlOptions'   => array('style' => 'white-space: nowrap'),
-            'afterDelete'   => 'function(link,success,data) { if (success && data) alert(data); }',
-            'template'      => '{view} {update} {delete} {detail}',
-            'buttons'       => array(
-                'view'      => array(
-                    'options'       => array('rel' => 'tooltip', 'data-toggle' => 'tooltip', 'title' => Yii::t('app', 'View')),
-                    'label'         => '<i class="fa fa-eye"></i>',
-                    'imageUrl'      => false,
-                    'url'			=> 'Yii::app()->createUrl("/admin/invoiceRow/view", array("id" => $data->id))',
-                    // 'visible'       => '($data->product)',
-                ),
-                'update'      => array(
-                    'options'       => array('rel' => 'tooltip', 'data-toggle' => 'tooltip', 'title' => Yii::t('app', 'Update')),
-                    'label'         => '<i class="fa fa-pencil"></i>',
-                    'imageUrl'      => false,
-                    'url'           => 'Yii::app()->createUrl("/admin/invoiceRow/update", array("id" => $data->id))',
-                    // 'visible'       => '($data->product)',
-                ),
-                'delete'      => array(
-                    'options'       => array('rel' => 'tooltip', 'data-toggle' => 'tooltip', 'title' => Yii::t('app', 'Delete')),
-                    'label'         => '<i class="fa fa-times"></i>',
-                    'imageUrl'      => false,
-                    'url'			      => 'Yii::app()->createUrl("/admin/invoiceRow/delete", array("id" => $data->id))',
-                    // 'visible'       => '($data->product)',
-                ),
-                'detail'      => array(
-                    'options'       => array('rel' => 'tooltip', 'data-toggle' => 'tooltip', 'title' => Yii::t('app', 'Details')),
-                    'label'         => '<i class="fa fa-file-text"></i>',
-                    'imageUrl'      => false,
-                    'url'           => 'Yii::app()->createUrl("/admin/order/view", array("id" => $data->orderDetail->order_id))',
-                    'visible'       => '($data->orderDetail)',
-                ),
-            )
-        ),
-	),
-)); ?>
-
-<?php $this->endWidget(); ?>
-
-
-<div class="row">
-
-<div class="col-md-3 col-xs-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title"><?php echo Yii::t('app', 'Net total'); ?></h3>
-      </div>
-      <div class="panel-body text-right">
-        <?php echo Yii::app()->format->currency($model->net_total); ?>
-      </div>
-    </div>
-</div>
-
-<div class="col-md-3 col-xs-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title"><?php echo Yii::t('app', 'VAT total'); ?></h3>
-      </div>
-      <div class="panel-body text-right">
-        <?php echo Yii::app()->format->currency($model->vat_total); ?>
-      </div>
-    </div>
-</div>
-
-<div class="col-md-3 col-xs-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title"><?php echo Yii::t('app', 'Discount total'); ?></h3>
-      </div>
-      <div class="panel-body text-right">
-        <?php echo Yii::app()->format->currency($model->discount_total); ?>
-      </div>
-    </div>
-</div>
-
-<div class="col-md-3 col-xs-6">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <h3 class="panel-title"><?php echo Yii::t('app', 'Total'); ?></h3>
-      </div>
-      <div class="panel-body text-right">
-        <?php echo Yii::app()->format->currency($model->total); ?>
-      </div>
-    </div>
-</div>
-
-</div>
-
-<?php $this->beginClip('sidebar1'); ?>
-
-<div class="row" style="margin-bottom: 20px">
-
-    <div class="col-xs-6">
-        <a href="<?php echo $this->createUrl('print', array('id' => $model->id, 'output' => 'I')); ?>" target="_blank" class="btn btn-success btn-block"><?php echo Yii::t('app', 'Show invoice'); ?></a>
-    </div>
-
-    <div class="col-xs-6">
-        <a href="<?php echo $this->createUrl('print', array('id' => $model->id)); ?>" class="btn btn-success btn-block"><?php echo Yii::t('app', 'Print invoice'); ?></a>
-    </div>
-
-</div>
-
-<?php $this->endClip(); ?>
-
-<?php $this->beginClip('sidebar2'); ?>
-
-<div class="row" style="margin-bottom: 20px">
-
-    <div class="col-xs-12">
-
-        <div class="btn-group">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                <?php echo Yii::t('app', "Mark invoice as"); ?> <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" role="menu">
-            <?php foreach (InvoiceStatus::model()->findAll(array('order' => 'sort_order')) as $status): ?>
-                <li><a href="<?php echo $this->createUrl('status', array('id' => $model->id, 'status' => $status->id)); ?>">
-                    <?php echo $status->name; ?></a></li>
-            <?php endforeach; ?>
-            </ul>
-        </div>
-
-    </div>
-
-</div>
-
-<?php $this->endClip(); ?>
+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

@@ -1,63 +1,39 @@
-<?php
-
-namespace Guzzle\Tests\Http\Message\Header;
-
-use Guzzle\Http\Message\Header\Link;
-use Guzzle\Tests\GuzzleTestCase;
-
-class LinkTest extends GuzzleTestCase
-{
-    public function testParsesLinks()
-    {
-        $link = new Link('Link', '<http:/.../front.jpeg>; rel=front; type="image/jpeg", <http://.../back.jpeg>; rel=back; type="image/jpeg", <http://.../side.jpeg?test=1>; rel=side; type="image/jpeg"');
-        $links = $link->getLinks();
-        $this->assertEquals(array(
-            array(
-                'rel' => 'front',
-                'type' => 'image/jpeg',
-                'url' => 'http:/.../front.jpeg',
-            ),
-            array(
-                'rel' => 'back',
-                'type' => 'image/jpeg',
-                'url' => 'http://.../back.jpeg',
-            ),
-            array(
-                'rel' => 'side',
-                'type' => 'image/jpeg',
-                'url' => 'http://.../side.jpeg?test=1'
-            )
-        ), $links);
-
-        $this->assertEquals(array(
-            'rel' => 'back',
-            'type' => 'image/jpeg',
-            'url' => 'http://.../back.jpeg',
-        ), $link->getLink('back'));
-
-        $this->assertTrue($link->hasLink('front'));
-        $this->assertFalse($link->hasLink('foo'));
-    }
-
-    public function testCanAddLink()
-    {
-        $link = new Link('Link', '<http://foo>; rel=a; type="image/jpeg"');
-        $link->addLink('http://test.com', 'test', array('foo' => 'bar'));
-        $this->assertEquals(
-            '<http://foo>; rel=a; type="image/jpeg", <http://test.com>; rel="test"; foo="bar"',
-            (string) $link
-        );
-    }
-
-    public function testCanParseLinksWithCommas()
-    {
-        $link = new Link('Link', '<http://example.com/TheBook/chapter1>; rel="previous"; title="start, index"');
-        $this->assertEquals(array(
-            array(
-                'rel' => 'previous',
-                'title' => 'start, index',
-                'url' => 'http://example.com/TheBook/chapter1',
-            )
-        ), $link->getLinks());
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

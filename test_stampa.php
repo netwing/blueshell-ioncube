@@ -1,44 +1,34 @@
-<?php
-require_once("config.inc.php");
-$valute=array('listino','imponibile','totale','imponibile_fattura','imposta','totale_fattura');
-
-$campi=array("<NOMINATIVO>"=>"Nominativo di Prova",
-			 "<INDIRIZZO>"=>"Via Milano, 1",
-			 "<CAP>"=>"00138",
-			 "<CITTA>"=>"Roma",
-			 "<NAZIONE>"=>"Italia",
-			 "<PROVINCIA>"=>"RM",
-			 "<PARTITA_IVA>"=>"0123456789123456",
-			 "<CODICE_FISCALE>"=>"ABCDEF12X56Q789X",
-			 "<NUMERO_DOCUMENTO>"=>"100",
-			 "<DATA>"=>date("d-m-Y",mktime()),
-			 "<TIPO_DOCUMENTO>"=>"Fattura",
-			 "<CONDIZIONI_PAGAMENTO>"=>"Rimessa Diretta",
-
-			 "<DESCRIZIONE1>"=>"Oggetto",
-			 "<U1>"=>"Kg",
-			 "<Q1>"=>"1",
-			 "<LISTINO1>"=>"1234,56",
-			 "<SCONTO1>"=>"0",
-			 "<IMPONIBILE1>"=>"2345,67",
-			 "<IVA1>"=>"20%",
-			 "<TOTALE1>"=>"5678,90",
-			
-			 "<ALIQUOTA>"=>"20%",
-			 "<ESENTE_IVA>"=>"",
-			 "<IMPONIBILE>"=>"2345,67",
-			 "<IMPOSTA>"=>"500",
-			 "<TOTALE>"=>"5678,90",
-			 "<SPESE_TRASPORTO>"=>"",
-			 "<SPESE_INCASSO>"=>"",
-			 "<BOLLI>"=>"",
-			 "<TOTALE_EURO>"=>"9999,99"
-			);
-			
-// Questo per aggiornare il fatturato nella riga del contratto solo se l'attuale fatturato più quello nuovo non superano il totale del contratto
-$chiavi=array_keys($campi);
-$valori=array_values($campi);
-$rtf=new RTF();
-$rtf->carica_template("template/fattura.rtf");
-$rtf->rtf_singolo($chiavi,$valori);
-$rtf->output("Fattura.doc");
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+lTGtSlp+qD335au0GajrFq8tAItMGRhn+K7D

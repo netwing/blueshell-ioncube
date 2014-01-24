@@ -1,49 +1,34 @@
-<?php
-/* @var $this DimensionController */
-/* @var $model Dimension */
-/* @var $form CActiveForm */
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
-
-<div class="wide form">
-
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'action'=>Yii::app()->createUrl($this->route),
-	'method'=>'get',
-    'htmlOptions'=>array('class'=>'form-horizontal well'),
-)); ?>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'dimensione_id', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
-        <?php echo $form->textField($model, 'dimensione_id', array('class' => 'form-control')); ?>        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'dimensione_lunghezza', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
-        <?php echo $form->textField($model, 'dimensione_lunghezza', array('class' => 'form-control')); ?>        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'dimensione_larghezza', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
-        <?php echo $form->textField($model, 'dimensione_larghezza', array('class' => 'form-control')); ?>        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'dimensione_profondita', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
-        <?php echo $form->textField($model, 'dimensione_profondita', array('class' => 'form-control')); ?>        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'dimensione_tipo', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
-        <?php echo $form->textField($model, 'dimensione_tipo', array('class' => 'form-control')); ?>        </div>
-    </div>
-
-
-    <div class="form-group">
-        <div class="col-lg-offset-2 col-lg-4">
-            <button type="submit" class="btn btn-primary"><?php echo Yii::t('app', 'Search'); ?></button>
-        </div>
-    </div>
-
-<?php $this->endWidget(); ?>
-
-</div><!-- search-form -->
+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

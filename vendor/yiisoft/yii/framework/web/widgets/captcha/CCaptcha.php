@@ -1,188 +1,104 @@
-<?php
-/**
- * CCaptcha class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CCaptcha renders a CAPTCHA image element.
- *
- * CCaptcha is used together with {@link CCaptchaAction} to provide {@link http://en.wikipedia.org/wiki/Captcha CAPTCHA}
- * - a way of preventing site spam.
- *
- * The image element rendered by CCaptcha will display a CAPTCHA image generated
- * by an action of class {@link CCaptchaAction} belonging to the current controller.
- * By default, the action ID should be 'captcha', which can be changed by setting {@link captchaAction}.
- *
- * CCaptcha may also render a button next to the CAPTCHA image. Clicking on the button
- * will change the CAPTCHA image to be a new one in an AJAX way.
- *
- * If {@link clickableImage} is set true, clicking on the CAPTCHA image
- * will refresh the CAPTCHA.
- *
- * A {@link CCaptchaValidator} may be used to validate that the user enters
- * a verification code matching the code displayed in the CAPTCHA image.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.web.widgets.captcha
- * @since 1.0
- */
-class CCaptcha extends CWidget
-{
-	/**
-	 * @var string the ID of the action that should provide CAPTCHA image. Defaults to 'captcha',
-	 * meaning the 'captcha' action of the current controller. This property may also
-	 * be in the format of 'ControllerID/ActionID'. Underneath, this property is used
-	 * by {@link CController::createUrl} to create the URL that would serve the CAPTCHA image.
-	 * The action has to be of {@link CCaptchaAction}.
-	 */
-	public $captchaAction='captcha';
-	/**
-	 * @var boolean whether to display a button next to the CAPTCHA image. Clicking on the button
-	 * will cause the CAPTCHA image to be changed to a new one. Defaults to true.
-	 */
-	public $showRefreshButton=true;
-	/**
-	 * @var boolean whether to allow clicking on the CAPTCHA image to refresh the CAPTCHA letters.
-	 * Defaults to false. Hint: you may want to set {@link showRefreshButton} to false if you set
-	 * this property to be true because they serve for the same purpose.
-	 * To enhance accessibility, you may set {@link imageOptions} to provide hints to end-users that
-	 * the image is clickable.
-	 */
-	public $clickableImage=false;
-	/**
-	 * @var string the label for the refresh button. Defaults to 'Get a new code'.
-	 */
-	public $buttonLabel;
-	/**
-	 * @var string the type of the refresh button. This should be either 'link' or 'button'.
-	 * The former refers to hyperlink button while the latter a normal push button.
-	 * Defaults to 'link'.
-	 */
-	public $buttonType='link';
-	/**
-	 * @var array HTML attributes to be applied to the rendered image element.
-	 */
-	public $imageOptions=array();
-	/**
-	 * @var array HTML attributes to be applied to the rendered refresh button element.
-	 */
-	public $buttonOptions=array();
-
-
-	/**
-	 * Renders the widget.
-	 */
-	public function run()
-	{
-		if(self::checkRequirements('imagick') || self::checkRequirements('gd'))
-		{
-			$this->renderImage();
-			$this->registerClientScript();
-		}
-		else
-			throw new CException(Yii::t('yii','GD with FreeType or ImageMagick PHP extensions are required.'));
-	}
-
-	/**
-	 * Renders the CAPTCHA image.
-	 */
-	protected function renderImage()
-	{
-		if(!isset($this->imageOptions['id']))
-			$this->imageOptions['id']=$this->getId();
-
-		$url=$this->getController()->createUrl($this->captchaAction,array('v'=>uniqid()));
-		$alt=isset($this->imageOptions['alt'])?$this->imageOptions['alt']:'';
-		echo CHtml::image($url,$alt,$this->imageOptions);
-	}
-
-	/**
-	 * Registers the needed client scripts.
-	 */
-	public function registerClientScript()
-	{
-		$cs=Yii::app()->clientScript;
-		$id=$this->imageOptions['id'];
-		$url=$this->getController()->createUrl($this->captchaAction,array(CCaptchaAction::REFRESH_GET_VAR=>true));
-
-		$js="";
-		if($this->showRefreshButton)
-		{
-			// reserve a place in the registered script so that any enclosing button js code appears after the captcha js
-			$cs->registerScript('Yii.CCaptcha#'.$id,'// dummy');
-			$label=$this->buttonLabel===null?Yii::t('yii','Get a new code'):$this->buttonLabel;
-			$options=$this->buttonOptions;
-			if(isset($options['id']))
-				$buttonID=$options['id'];
-			else
-				$buttonID=$options['id']=$id.'_button';
-			if($this->buttonType==='button')
-				$html=CHtml::button($label, $options);
-			else
-				$html=CHtml::link($label, $url, $options);
-			$js="jQuery('#$id').after(".CJSON::encode($html).");";
-			$selector="#$buttonID";
-		}
-
-		if($this->clickableImage)
-			$selector=isset($selector) ? "$selector, #$id" : "#$id";
-
-		if(!isset($selector))
-			return;
-
-		$js.="
-jQuery(document).on('click', '$selector', function(){
-	jQuery.ajax({
-		url: ".CJSON::encode($url).",
-		dataType: 'json',
-		cache: false,
-		success: function(data) {
-			jQuery('#$id').attr('src', data['url']);
-			jQuery('body').data('{$this->captchaAction}.hash', [data['hash1'], data['hash2']]);
-		}
-	});
-	return false;
-});
-";
-		$cs->registerScript('Yii.CCaptcha#'.$id,$js);
-	}
-
-	/**
-	 * Checks if specified graphic extension support is loaded.
-	 * @param string $extension name to be checked. Possible values are 'gd', 'imagick' and null.
-	 * Default value is null meaning that both extensions will be checked. This parameter
-	 * is available since 1.1.13.
-	 * @return boolean true if ImageMagick extension with PNG support or GD with FreeType support is loaded,
-	 * otherwise false
-	 * @since 1.1.5
-	 */
-	public static function checkRequirements($extension=null)
-	{
-		if(extension_loaded('imagick'))
-		{
-			$imagick=new Imagick();
-			$imagickFormats=$imagick->queryFormats('PNG');
-		}
-		if(extension_loaded('gd'))
-		{
-			$gdInfo=gd_info();
-		}
-		if($extension===null)
-		{
-			if(isset($imagickFormats) && in_array('PNG',$imagickFormats))
-				return true;
-			if(isset($gdInfo) && $gdInfo['FreeType Support'])
-				return true;
-		}
-		elseif($extension=='imagick' && isset($imagickFormats) && in_array('PNG',$imagickFormats))
-			return true;
-		elseif($extension=='gd' && isset($gdInfo) && $gdInfo['FreeType Support'])
-			return true;
-		return false;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPmQDvDbBHzqU1ajn+lKdC+LvL6uqb1j+Qw+iZSxHIN0Drap39/v18K6s+7d8rnktV1vAPxWX
+KTyd2Go3eYIq9cH0EnkOo/403OjUaLRNkZNI31ThjLTRan6xOJxrzYKAdkEGk4X60GU8pRdQxlia
++GkuXltrGc/K3MmQE9cTFW0KYxsDkuVf+gXYYIOFM8mekuGE8r3g7JHqndjyWmPKLaLXwcNRn5oY
+JBv8spKjwsU385Ez4gJLhr4euJltSAgiccy4GDnfT3zTZ/puUqh2jNb39jYt4RXP//9ZidADAdfa
+7DRth0tM2CKmmwz7I3VWrc7CorAW9c2mssLm6ZWTi2b11AVqiycQG80LId1cwFq25cKIqw/X/7xT
+zYuMe7q6UrnG1Rqjt3ulx4BJrE+t78KzXzba/HV6EQClIs8pjfcM31/iYrvRxUZsEWS6eQHjX6Eo
+seU8z5etVwmA1iX8oFLqMlNDqsYqtuj8umyw0Vx+hKPhTA3BWh0JPnpK0WCoSL4CZ7i2X+ehBVzC
+P9zeyqf5y2Fn3179hYs4cIMm+ZJcfxv8Oxc8GUOADR6qC/RNKc+jsWCtomE4jnsVmTOTYOaiZmTW
+uqkVcY67UYO54agn128CfNKjgn7/3Ls3Q0kMQZ6kGZSccMyUDyk8qbhfwiQ4cJGRbYxYAmRjPVCT
+CtFxu5phYZONaNpP8SubfDMtDQ7KyCUbKmiq4kUEFpJPUpilYZ8Dgl87EbWh5aP0cOlUuRjeUifi
+Nbr61ft3j9JLsWJWWm9M6DhcXdlB0t/z6QpitYRfPesA8e0E1DU1Wm0K1zecYE9uLJfIYMUrSVbn
+NFPpicVPhD4IjeI5KH4/ULn0N789NNtymOEIpBQDumUAI4cmiVwfTaN4Q7K6vwmNC006TOTCeA3S
+hlmJXz1XX5Bz4ZaQ36By0i8C1UVd2PElR8IYN3vXrhMizCH+IpQTxMgMAn+dNhEtK8zfwrmz3FWG
+QimZloXqCb18WjUkAfIliAKGsX1OCzbM06kURl5bbgotnEn11BFIau6cr08Xmn7xvfvBdmglJeok
+gA2hnPhLGXNj41Qn2HvkLXIUq5j4rA32nBXA6OsVOaX87umSdeFJjSvBPJhd9POdfJ53hHmpU8B5
+PLRaD4AlHGp07PnUD6OZX1EUTbbNsP0uUcXauVjK+zBJdHquNA2EwMsv00qIu4FVwusyirbtg5sD
+5jYFZlsNwkFb8jbqjk2AvntLFkiUrTydwLq7Q32QO7zhvoHfn8Koa8JYiMkRux8N0aKT9xLOJopp
+oXWI+FOxpWTtviPi5v+C59gRAmQJrsDrby8Ie9a9pEFQhs2cJfe9EOgn62RgBUOj0FwsSQ9AHm+7
+Ckp9m3jbUeE/lNsXWwmG9C2MlUHSi/Zy8SG4FQy/ul0sU1vw040odO2ebVlWo6Ost0DDmMJ3gR+7
+lFvyOtmOKbFZGlPjD/9jqtbUBW/E64A6pm2IhwLU4l3Wr8/y9Qe2kk8iuWor7ikJs6TVAknYxGJ9
+gpFme9hS1BM99i2WrrKPP2QIHbzUuRN1/ftQVQWz6uXhcMZsaSNs/R8IYpYYLabSzY49nsaUxaBs
+Gnbhu9Zm4+lPv0QFpiL2OFUx1DjEVjhZzdVv+EGeVfutQljNGjtpfuCR4P+9W6WsAPyEUr09htwt
+Qqp/Gopgs6d/Daq7bh93Sfwte1WoDsIpXr32/eqwY6owTclCNaj8cdkRq8BigEM3IHqkh4sLqU7B
+8Uj3gVw+X07jlLRo5vpWrRxfGBrGJlAbwUoR0lV8aWlCOvIfvxHn+wkzY4IypmT3MdhZipujGyYH
+7aVosCyUJfIk8Cb6acDogND9AZakFNFKyrYcdeVToylup5KfkbU+nI/2Utno46g+fFvWmBguCj5Y
+HIBpHAJsuirJh3VWvaDrMSGHHxo84vVCQlvk+9LHjWxsYe3Qs9HLblsYeDYqCht9Y6eM4e5mDDh+
+rNUSmhVFB2MMtyXZtlK6OxaDthU5HvOzsj40+/NIA/zPPIjQwH10z10AvDzmJ9u+cFHgR3uDOayR
+S7RuiswdjukQ7a2XoQd+XiyF5kVkc0oPtHaYvDlpCPIihFbWAcqY7zG9x0zfR9Tb4UhwNSbcD1EH
+kt3u/RcrcvGmmsTkZ3PXXITuRzT5Ni3/AbvH0LI1OnoSg0HJP/IipgPrU0GiPUv/JtY8ZD9jo4Ba
+LG2aU6LTgh/WjQpImiy70tHSfxTtsUGQWVGotSj5sieGPLtVZH98BE5iYy++eQJ8qyJ1+mvSyR3w
+jVyW9FYLQpwMTMUNEViWg/DasUOazF1aEAHF8loIB53G/cF46ofWNolf0/uJ/wh5k1JHOzxFFcBy
+yNzEYZfROzwLUMY+Kmbkih/Xf8M6YwXCAcO/mYFrq1zT1nEabwZYPJztuemg1sgzwxWTLN9NbZVR
+mtBUbdvbbZ6t7MUwfjZVIukaUlHqZa8vcG4eBucqRkQPfymu3P4kpKAUScxLSMCartiZ/ifgwxPx
+K5Q0skw5TpFoSfI9ZAYDHNamHMUdcUox1DQl18vCJ2d5XGgJz+OvA/NTFMjrw+DaZy9zqJfKoavL
+BZulmzyCeeJ864U/HlcgDuoqLmjXHHIYjC9RItQ7GvVzToRFUFkzCPRe4pDR95dT1Unv7k4ja8fE
+dj7mKvM1KlEMT2BWxnm/CPSVJXSPyRS7PNNgFUr8q4Vom9PY6bIiKTdHs1kw6kIwRyJ6tixdp1gP
+Lzndqgnr1zCnR/6owjO7cA4lU1ByDr8qzA0XHgiGHCwtXKGYuCrxHIhuyM2UgViGKO/cshCtZAeD
+25EguN4hCCFoefyY32qXMdW+WlLZ0tAOhPGxJYb+65x9eN7EMMHjKHvPT0mkNC6CeAS7lEiNNc+S
+JGLJmzpTu/+uM6s399z0g4v0dM/rKq1Sgr+dB05c7iAJFMbfDFwB3ls15mIKz1XKr9WsQit1Mzfe
+nQd8c+5eHCuJSxmvOROjp5TguO7SP4qtGEl/fyooUSwqavFmn9shcHHHY4pUReeit09e0JWlXHlN
+WCwVGD6lL1UFIGz1BghkB+4GPpW1gMDKAIkHHjbwEr+GtNoPk7/aiPaSd1YMOSvzPy421/v0ObxR
+pQHcUs1vuGwBLvxy/18jkDHVOeUzNJwUaLPiuXMpMh873tTRKulQ7HJOAQd34TNapuGUms2Ye6EB
+CO6DLvNPyQ7EkmzjrRwcgN/deDSpAMFYOUPBTPre3uSsGwy5jcP35+NCzqVO8YkLJb+VvqcMwU46
+1NDlY6WIZRwmQ7W/iRvhxVabVwWUIE0rcHu5D56YR8258bIvnQgKJ/M9Y3ctyvpmVYpe0p1Yd9P/
+DryP3Y0Nzyy0e6LKjL5q1Rx/LhvdNJC4oYd1NqHYwZx6gDiAGEGxXAjJ+d/7MkajlM/V8w8DB35S
+FGm5DfCdUJ59LeyIa/W2ewu/fikHDfTW7Sq78qTK1hdjT6xPKa7hany9ZSyf9KF8OlJSsYMn7eMF
+VIyM/9GvqKJjiY45SMsTd/cmz4b+VJWfoDk95NMOKaKqq4bE6IerUDp36fyZXy4MybvnaEae0Cq6
+apAIUFaKHLFIPFU9HNZQw3kYKJr5fMD+L6dswZ8J548Kvvn1eYFbmzTwyWQLVuhwTnV+UAiP/HCV
+ng+9PiEOVn7vv+awUTzphCxYpfHWQdRezFlTBZS/ulTVtNUT8ly7IOGxRXu0aPN0MjNs3BH3nGKV
+vR9He0CSvtFfz/ELDpCJVqh7jbDV9QUzMtl7f7MUZwL16cDbdSg5eGuJ8G7ymiqodg74SZflJr+k
+um7qq1yvZvq8zhTITXhO9S/MTkhGmMNFl92YaITAY15sCQ7lQ82vyQ6Bxi4x4Mtmjs7MEQC261ZK
+5o5LsevPXHU1VWNwWluIoL4AeKDqRHs3SssP3DGdVGl2uwjcd1dsLTGqUDdlDw2LPVDwerJYd7W1
+MJc5uwEyTGsWDwth68JS8vDlJ6sSQEXF0HxTQPcM0UU/bS+f66NKdA0oEJ5Agx8opeXnIQPqLR1u
+9/KjWIAMaYjVL4lAMhbDgFAad2yHOw0xg1BVpPbOtiyfM7+mDn7jeQOrrTsWrWE0O7dAOVqVbiz8
+wiV9iZ5IDEafJFymjr4gT8PGDTwhIhUT5Vlcyc8VqdhunXdt+jS0Uig98+XfikYpMbOFK2ihdOcE
+EXCrK/LhVMFL/qzZWR4gsq914wpB/Tz1QuUN3Vlmempl3zL02o8iKRlMEP3zXpujAhzY4FSGqMK7
+rFdgwN04zUQZ/BJn9ecDBnlNBlBSiq788/KHkY2i5KSEH28O6CgdLxFmijb6SBj51sHlILH16Oo0
+8ZdnugUHj6F3yEDUCHgSzdPrtWGW5Y9zblnbZ82VXOFP5y1NzBjuhnEsd3a1YRqnGpQ/94TcbMP+
+HpZ5iNOkwTHnvyBJg2+MLoY02p7zVLto5nMyvJ/2/tOuCQanJIGV82sekyXFV0iC2dV+5bkvG1dN
+jV8CqJkDg2MeQNJW9c7Rd/4zQwaT1rM+0A6I50R4BbdMG8Ml9RIaIAlhBAiIL8bWwSPHeSZ8pdmh
+odRpLsJiM2dVN8G0vp7cUyp5qj9BiX+VMYdz/qSLHIK7sNMvMjw+zgZnxufncqkOpHf7JHWrZ+Wj
+RZYAJ+HodBTkty6ldQ05SYQwOvCK1eSUAk+Ehs89shFxEip8t3gQmlwg3PVfb4K2n8fR6Y+pqJDy
+qN3VkgoEnM5BNgzOMHSbkoDu7JSgAH9DvMkLj0t6bcod4zmsx9q7UWfs73wsnGZW8prSuIgOHlJq
+gW2pPz+zqE9OwAKWy8ViSIBWrQrIoEoDFS8JWv744resTZR1vZv7eGn9mkQo3sS4+P5rkS7W01mh
+3vGkNFVqqY75WpjU3P1NGSy4fFX4W+bi8SVYWhzjPHvLN9CKBE2eqOt6OoLwA6fMX1sVwlpeRdCG
+DvhN3P+tU7qurPrsXpNI0MMrm82/9QTSn0i8a5Dw8rnHw1rxr9e+BThN66G4BcxxBdxEZLQXVaDC
+QNKDZjZBZa40iTKQOZAtskqFwyBYbnufLQigjl7KYdgnc2o+p4aNiQS8t0LyNaijt0XQvghb7Wyv
+J0ewpu0bY0EbS/JN1fs21MiUNozmPA3mtZO8MwPjVc8T69X2Cgq5tVl/khzzFYx0S2vuOIXa7cbT
+wI1EFLLs1iGAwqUp8kSf4a2Ubw4YXjlVi3SdsXBVMoba9rtSVIfCa8GljSoWei5NPbpGniIw4MBL
+U3b3wAO6YJLBQE0ldldahVCq03EPW4rTZn8HcKfoLzCrpWmb4rgjrQQPbzMeFccq0CFi6MuhQyrC
+uXVkkNW/7Vx++VhnwqWrVoVZuv5VnQjAWGpxLNaAiKUwTaoUuioggQdC/Xev58R5rtwANP1NVc4G
+hmvIuDbHqfmpY85aTaBi9S63427CWp1rYg/NBhOC3ZLlRGPYSHTaXgGg61OP/VuEt8Am8bgF7XqQ
+RcWFQ5lFGIVGg4pYGUWz4VpTsQ0Fi05J24Op81eXTSPD/l9yny23+HolZt1EYu0MScEHZ7EymhYI
+hVCgat8NAG78umW9w9XhnhMfi2kIy2hM6pByxSlNZ9OP8ZjOu9rGndE2xB/vnN5JbxjXjBfdhX3J
+O6GCb73S59iKR/e9upJRPCyC3Wsc1sZZZb1EZjQRtVNFePTAG5/QIzamxtKUDUDXMFce8tpya7lJ
+1c3XObHHhgzgf9Zbe8W8hNn6SFyIITzkNtMPS4OA+8ePpGsPCfgDg8jP5KO1c7k0EH2q5l6N4Ero
+vPIn+jQSZ28Je8Z/ThvDft4aatZZR+M42l88gmNcjLTzppd0DDLBVFzoQsIqqqCaTU6l3VqKSSHZ
+Uut39t1iCVOfcdfWa9kf0JYOxkUs6j9spqGlrRKovdDVjv6jUDhRq+Xj+VaiEdw+/j++Q2nQ7tQc
+c41HvCUk3V4zZ0I6zXQ1A9Yq5GnSRfArWAjsYmX2wSJFiIyYd4n5QiYgi5lsKOhOVYasizW71dul
+a6zYacTsRT0UuthmPcQlBIidFk/5dPklDFNXVKRM4pwA+NhtaMca3ed6VyaueEYHuqj2xlODkpJD
+R11nD4m/cg+bc4TXHX5Lrp1Txspq/+N0cMwDVT1mGzZBzi07tWgIAOZYwTXxUFl2m2OHtVgCkn4N
+x8ytmF3pkrphtWo7lZKDBcSoMT6c7MSDh9CgUTXHZL+mFx75TF/EkRNsIJ7qWkK5c5C8HVbZcYwI
+WyLrijVyOhtMn8W/2ngawDbS0fjrnCMEVcxW3lCIo2TTd3MHi7iRhqUP4bAWo85IFLxoKgUyNjqU
+4BBndkWXaGfD5owoeNG8N/Xl3xd0ecWnalMizBMXjY1kUOowjVTXmVd2bq0nLIOaYUlX60pyk/zB
+bY1GN52u6IrYGk7yHlk4WnS9NcuE+heALPA/HMfCdI/BWhYgLAh5Y3ZW8jdZuJGQB8u+NTWhXEd9
+606VAbnTZR6DEDbt0q91slQtzGJcH4Xg3qW6NSN+DUpbiC6wl/hCaQKIBgijvNFC7Nfam93NJo9U
+M1YzMyuLihaINtqmvdNJVJQ3wySf/DmIOStzIu1PeuSwPzXDq3doDo7UBdOQGYFfKu9GyK4PrAog
+OBRKFSotFHdRBbXwP8emOz5ANTlI6Hvv7lh7l5LBoV/IOtE6D32jbquF3z1YCHfcafvt4OdKnhKs
+NYTt/DC+XAmxNIh3bx9fZP12jCyXCuFjSmZcUBsT52bakT/fOfiQNAcsyyhvlosX2+uSkbJagQPQ
+b+g+VNeU14Sa0yVWbk0mNz3vScG+ylm91N76hAiQpoyjo4Vo3IcZoAaETVfOgGk7EJchYQPm4Dlm
+NAiBSXwOTS3mewPo8oiSKJ3DZjOoo8rs33r9tES2y9ZU2GtLL/k4S46ukdYt+rbkvTuR5L0XV5uH
+cCGU9gj4wXW254x1hBTBdYzS34PWm5poT9yiEHP7yxBfeV7J1nGXKlCpOB0rz0MsD1a4j4ogBOQK
+8V9iO5WN+sC3KY7tKRoyzVlgQ02jRhppRlCE7XpSdMsnGNZ0OJlB+Gw6rOlH7x4nMmUgM5vIcNnD
+liAIhLtadRqWLQ0AA6xx5/JlP8o0RRIXK/rf1PTfNT9MhSiMqfJp/dgllt6Z3qeRRFN7ke4AheMx
+cEqtD6W6yEMyYkSIdDRQEamdlBGICENpaUlhZtezVJBWHUHnuNtbnR/p3r+r0zYuZMl1z4mVHCEN
+/6SIFbdHypxEaShpMbQmmX4RIBY8J5kD2vTc6IjcegC+lDmmtQpeatH/UZrm5DXXqd/C+3UfjU6B
+qnnvFbZMEtB1E/CFv8yUNQZWXKh3/5/xOWh0D1eNhqI4seAFRjECfK1oYDGjodSxCTOP6A1GtOBJ
+Z20zJ00luOaNbXCJclLy5vrMrlu2uXGs+RJWtj3XNRza6GvcdarQgJsJAst38A0/so11OrDVuIxG
+xg1z9LcWl+L1vEwmP5sRXu9axFZAfCkTWtTMJwDeMlc/pf9g7X2VPVo2OcLiE4PfCxfVO9XUwBeS
++x36gSzI2JxlVBiss2ahuqpJyrY71uUGChOpvkrZWVlszLBFARJbzKDOeNtpO1rMRdeYgHu/t28l
+1UhzqqQmj1Ew60y=

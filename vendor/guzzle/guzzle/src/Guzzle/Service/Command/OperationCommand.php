@@ -1,89 +1,41 @@
-<?php
-
-namespace Guzzle\Service\Command;
-
-/**
- * A command that creates requests based on {@see Guzzle\Service\Description\OperationInterface} objects, and if the
- * matching operation uses a service description model in the responseClass attribute, then this command will marshal
- * the response into an associative array based on the JSON schema of the model.
- */
-class OperationCommand extends AbstractCommand
-{
-    /** @var RequestSerializerInterface */
-    protected $requestSerializer;
-
-    /** @var ResponseParserInterface Response parser */
-    protected $responseParser;
-
-    /**
-     * Set the response parser used with the command
-     *
-     * @param ResponseParserInterface $parser Response parser
-     *
-     * @return self
-     */
-    public function setResponseParser(ResponseParserInterface $parser)
-    {
-        $this->responseParser = $parser;
-
-        return $this;
-    }
-
-    /**
-     * Set the request serializer used with the command
-     *
-     * @param RequestSerializerInterface $serializer Request serializer
-     *
-     * @return self
-     */
-    public function setRequestSerializer(RequestSerializerInterface $serializer)
-    {
-        $this->requestSerializer = $serializer;
-
-        return $this;
-    }
-
-    /**
-     * Get the request serializer used with the command
-     *
-     * @return RequestSerializerInterface
-     */
-    public function getRequestSerializer()
-    {
-        if (!$this->requestSerializer) {
-            // Use the default request serializer if none was found
-            $this->requestSerializer = DefaultRequestSerializer::getInstance();
-        }
-
-        return $this->requestSerializer;
-    }
-
-    /**
-     * Get the response parser used for the operation
-     *
-     * @return ResponseParserInterface
-     */
-    public function getResponseParser()
-    {
-        if (!$this->responseParser) {
-            // Use the default response parser if none was found
-            $this->responseParser = OperationResponseParser::getInstance();
-        }
-
-        return $this->responseParser;
-    }
-
-    protected function build()
-    {
-        // Prepare and serialize the request
-        $this->request = $this->getRequestSerializer()->prepare($this);
-    }
-
-    protected function process()
-    {
-        // Do not process the response if 'command.response_processing' is set to 'raw'
-        $this->result = $this[self::RESPONSE_PROCESSING] == self::TYPE_RAW
-            ? $this->request->getResponse()
-            : $this->getResponseParser()->parse($this);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

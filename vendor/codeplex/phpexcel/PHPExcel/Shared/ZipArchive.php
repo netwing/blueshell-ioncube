@@ -1,114 +1,45 @@
-<?php
-/**
- * PHPExcel
- *
- * Copyright (c) 2006 - 2012 PHPExcel
- *
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation; either
- * version 2.1 of the License, or (at your option) any later version.
- *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
- *
- * @category   PHPExcel
- * @package    PHPExcel_Shared_ZipArchive
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
- * @version    1.7.8, 2012-10-12
- */
-
-if (!defined('PCLZIP_TEMPORARY_DIR')) {
-	define('PCLZIP_TEMPORARY_DIR', PHPExcel_Shared_File::sys_get_temp_dir());
-}
-require_once PHPEXCEL_ROOT . 'PHPExcel/Shared/PCLZip/pclzip.lib.php';
-
-
-/**
- * PHPExcel_Shared_ZipArchive
- *
- * @category   PHPExcel
- * @package    PHPExcel_Shared_ZipArchive
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- */
-class PHPExcel_Shared_ZipArchive
-{
-
-	/**	constants */
-	const OVERWRITE		= 'OVERWRITE';
-	const CREATE		= 'CREATE';
-
-
-	/**
-	 * Temporary storage directory
-	 *
-	 * @var string
-	 */
-	private $_tempDir;
-
-	/**
-	 * Zip Archive Stream Handle
-	 *
-	 * @var string
-	 */
-	private $_zip;
-
-
-    /**
-	 * Open a new zip archive
-	 *
-	 * @param	string	$fileName	Filename for the zip archive
-	 * @return	boolean
-     */
-	public function open($fileName)
-	{
-		$this->_tempDir = PHPExcel_Shared_File::sys_get_temp_dir();
-
-		$this->_zip = new PclZip($fileName);
-
-		return true;
-	}
-
-
-    /**
-	 * Close this zip archive
-	 *
-     */
-	public function close()
-	{
-	}
-
-
-    /**
-	 * Add a new file to the zip archive from a string of raw data.
-	 *
-	 * @param	string	$localname		Directory/Name of the file to add to the zip archive
-	 * @param	string	$contents		String of data to add to the zip archive
-     */
-	public function addFromString($localname, $contents)
-	{
-		$filenameParts = pathinfo($localname);
-
-		$handle = fopen($this->_tempDir.'/'.$filenameParts["basename"], "wb");
-		fwrite($handle, $contents);
-		fclose($handle);
-
-		$res = $this->_zip->add($this->_tempDir.'/'.$filenameParts["basename"],
-								PCLZIP_OPT_REMOVE_PATH, $this->_tempDir,
-								PCLZIP_OPT_ADD_PATH, $filenameParts["dirname"]
-							   );
-		if ($res == 0) {
-			throw new Exception("Error zipping files : " . $this->_zip->errorInfo(true));
-		}
-
-		unlink($this->_tempDir.'/'.$filenameParts["basename"]);
-	}
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

@@ -1,76 +1,38 @@
-<?php
-/**
- * Squiz_Sniffs_WhiteSpace_ObjectOperatorSpacingSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Squiz_Sniffs_WhiteSpace_ObjectOperatorSpacingSniff.
- *
- * Ensure there is no whitespace before a semicolon.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class Squiz_Sniffs_WhiteSpace_ObjectOperatorSpacingSniff implements PHP_CodeSniffer_Sniff
-{
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        return array(T_OBJECT_OPERATOR);
-
-    }//end register()
-
-
-    /**
-     * Processes this test, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token
-     *                                        in the stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-
-        $prevType = $tokens[($stackPtr - 1)]['code'];
-        if (in_array($prevType, PHP_CodeSniffer_Tokens::$emptyTokens) === true) {
-            $error = 'Space found before object operator';
-            $phpcsFile->addError($error, $stackPtr, 'Before');
-        }
-
-        $nextType = $tokens[($stackPtr + 1)]['code'];
-        if (in_array($nextType, PHP_CodeSniffer_Tokens::$emptyTokens) === true) {
-            $error = 'Space found after object operator';
-            $phpcsFile->addError($error, $stackPtr, 'After');
-        }
-
-    }//end process()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

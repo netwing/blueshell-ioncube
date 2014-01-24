@@ -1,82 +1,32 @@
-<?php
-/**
- * PHPUnit
- *
- * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @package    PHPUnit
- * @subpackage Extensions_PhptTestCase
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      File available since Release 3.1.4
- */
-
-/**
- * Suite for .phpt test cases.
- *
- * @package    PHPUnit
- * @subpackage Extensions_PhptTestCase
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      Class available since Release 3.1.4
- */
-class PHPUnit_Extensions_PhptTestSuite extends PHPUnit_Framework_TestSuite
-{
-    /**
-     * Constructs a new TestSuite for .phpt test cases.
-     *
-     * @param  string $directory
-     * @param  array  $options Array with ini settings for the php instance run,
-     *                         key being the name if the setting, value the ini value.
-     * @throws PHPUnit_Framework_Exception
-     */
-    public function __construct($directory, array $options = array())
-    {
-        if (is_string($directory) && is_dir($directory)) {
-            $this->setName($directory);
-
-            $facade = new File_Iterator_Facade;
-            $files  = $facade->getFilesAsArray($directory, '.phpt');
-
-            foreach ($files as $file) {
-                $this->addTestFile($file, $options);
-            }
-        } else {
-            throw PHPUnit_Util_InvalidArgumentHelper::factory(1, 'directory name');
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+8tkdd95dVfY3L4tWINn4cEc+rhPliW==

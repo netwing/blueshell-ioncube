@@ -1,138 +1,83 @@
-<?php
-/**
-* Smarty PHPunit tests of modifier
-*
-* @package PHPunit
-* @author Rodney Rehm
-*/
-
-/**
-* class for modifier tests
-*/
-class PluginBlockTextformatTests extends PHPUnit_Framework_TestCase
-{
-    protected $string = "\n\nThis is foo.\nThis is foo.\nThis is foo.\nThis is foo.\nThis is foo.\nThis is foo.\n\nThis is bar.\n\nbar foo bar foo     foo.\nbar foo bar foo     foo.\nbar foo bar foo     foo.\nbar foo bar foo     foo.\nbar foo bar foo     foo.\nbar foo bar foo     foo.\nbar foo bar foo     foo.\n\n";
-    public function setUp()
-    {
-        $this->smarty = SmartyTests::$smarty;
-        SmartyTests::init();
-    }
-
-    static function isRunnable()
-    {
-        return true;
-    }
-
-    public function testDefault()
-    {
-        $result = "\n\nThis is foo. This is foo. This is foo.\nThis is foo. This is foo. This is foo.\n\nThis is bar.\n\nbar foo bar foo foo. bar foo bar foo\nfoo. bar foo bar foo foo. bar foo bar\nfoo foo. bar foo bar foo foo. bar foo\nbar foo foo. bar foo bar foo foo.\n\n";
-        $tpl = $this->smarty->createTemplate('eval:{textformat wrap=40}' . $this->string . '{/textformat}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testDefaultWithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $result = "\n\nThis is foo. This is foo. This is foo.\nThis is foo. This is foo. This is foo.\n\nThis is bar.\n\nbar foo bar foo foo. bar foo bar foo\nfoo. bar foo bar foo foo. bar foo bar\nfoo foo. bar foo bar foo foo. bar foo\nbar foo foo. bar foo bar foo foo.\n\n";
-        $tpl = $this->smarty->createTemplate('eval:{textformat wrap=40}' . $this->string . '{/textformat}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-        Smarty::$_MBSTRING = true;
-    }
-
-    public function testIndent()
-    {
-        $result = "\n\n    This is foo. This is foo. This is\n    foo. This is foo. This is foo. This\n    is foo.\n\n    This is bar.\n\n    bar foo bar foo foo. bar foo bar foo\n    foo. bar foo bar foo foo. bar foo\n    bar foo foo. bar foo bar foo foo.\n    bar foo bar foo foo. bar foo bar foo\n    foo.\n\n";
-        $tpl = $this->smarty->createTemplate('eval:{textformat wrap=40 indent=4}' . $this->string . '{/textformat}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testIndentWithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $result = "\n\n    This is foo. This is foo. This is\n    foo. This is foo. This is foo. This\n    is foo.\n\n    This is bar.\n\n    bar foo bar foo foo. bar foo bar foo\n    foo. bar foo bar foo foo. bar foo\n    bar foo foo. bar foo bar foo foo.\n    bar foo bar foo foo. bar foo bar foo\n    foo.\n\n";
-        $tpl = $this->smarty->createTemplate('eval:{textformat wrap=40 indent=4}' . $this->string . '{/textformat}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-        Smarty::$_MBSTRING = true;
-    }
-
-    public function testIndentFirst()
-    {
-        $result = "\n\n        This is foo. This is foo. This\n    is foo. This is foo. This is foo.\n    This is foo.\n\n        This is bar.\n\n        bar foo bar foo foo. bar foo bar\n    foo foo. bar foo bar foo foo. bar\n    foo bar foo foo. bar foo bar foo\n    foo. bar foo bar foo foo. bar foo\n    bar foo foo.\n\n";
-        $tpl = $this->smarty->createTemplate('eval:{textformat wrap=40 indent=4 indent_first=4}' . $this->string . '{/textformat}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testIndentFirstWithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $result = "\n\n        This is foo. This is foo. This\n    is foo. This is foo. This is foo.\n    This is foo.\n\n        This is bar.\n\n        bar foo bar foo foo. bar foo bar\n    foo foo. bar foo bar foo foo. bar\n    foo bar foo foo. bar foo bar foo\n    foo. bar foo bar foo foo. bar foo\n    bar foo foo.\n\n";
-        $tpl = $this->smarty->createTemplate('eval:{textformat wrap=40 indent=4 indent_first=4}' . $this->string . '{/textformat}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-        Smarty::$_MBSTRING = true;
-    }
-
-    public function testIndentchar()
-    {
-        $result = "\n\n####This is foo. This is foo. This is\n####foo. This is foo. This is foo. This\n####is foo.\n\n####This is bar.\n\n####bar foo bar foo foo. bar foo bar foo\n####foo. bar foo bar foo foo. bar foo\n####bar foo foo. bar foo bar foo foo.\n####bar foo bar foo foo. bar foo bar foo\n####foo.\n\n";
-        $tpl = $this->smarty->createTemplate('eval:{textformat wrap=40 indent=4 indent_char="#"}' . $this->string . '{/textformat}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testIndentcharWithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $result = "\n\n####This is foo. This is foo. This is\n####foo. This is foo. This is foo. This\n####is foo.\n\n####This is bar.\n\n####bar foo bar foo foo. bar foo bar foo\n####foo. bar foo bar foo foo. bar foo\n####bar foo foo. bar foo bar foo foo.\n####bar foo bar foo foo. bar foo bar foo\n####foo.\n\n";
-        $tpl = $this->smarty->createTemplate('eval:{textformat wrap=40 indent=4 indent_char="#"}' . $this->string . '{/textformat}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-        Smarty::$_MBSTRING = true;
-    }
-
-    public function testIndentcharFirst()
-    {
-        $result = "\n\n########This is foo. This is foo. This\n####is foo. This is foo. This is foo.\n####This is foo.\n\n########This is bar.\n\n########bar foo bar foo foo. bar foo bar\n####foo foo. bar foo bar foo foo. bar\n####foo bar foo foo. bar foo bar foo\n####foo. bar foo bar foo foo. bar foo\n####bar foo foo.\n\n";
-        $tpl = $this->smarty->createTemplate('eval:{textformat wrap=40 indent=4 indent_first=4 indent_char="#"}' . $this->string . '{/textformat}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testIndentcharFirstWithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $result = "\n\n########This is foo. This is foo. This\n####is foo. This is foo. This is foo.\n####This is foo.\n\n########This is bar.\n\n########bar foo bar foo foo. bar foo bar\n####foo foo. bar foo bar foo foo. bar\n####foo bar foo foo. bar foo bar foo\n####foo. bar foo bar foo foo. bar foo\n####bar foo foo.\n\n";
-        $tpl = $this->smarty->createTemplate('eval:{textformat wrap=40 indent=4 indent_first=4 indent_char="#"}' . $this->string . '{/textformat}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-        Smarty::$_MBSTRING = true;
-    }
-
-    public function testWrapchar()
-    {
-        $result = "##    This is foo. This is foo. This is#foo. This is foo. This is foo. This#is foo.##    This is bar.##    bar foo bar foo foo. bar foo bar foo#foo. bar foo bar foo foo. bar foo#bar foo foo. bar foo bar foo foo.#bar foo bar foo foo. bar foo bar foo#foo.##";
-        $tpl = $this->smarty->createTemplate('eval:{textformat wrap=40 indent=4 wrap_char="#"}' . $this->string . '{/textformat}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testWrapcharWithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $result = "##    This is foo. This is foo. This is#foo. This is foo. This is foo. This#is foo.##    This is bar.##    bar foo bar foo foo. bar foo bar foo#foo. bar foo bar foo foo. bar foo#bar foo foo. bar foo bar foo foo.#bar foo bar foo foo. bar foo bar foo#foo.##";
-        $tpl = $this->smarty->createTemplate('eval:{textformat wrap=40 indent=4 wrap_char="#"}' . $this->string . '{/textformat}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-        Smarty::$_MBSTRING = true;
-    }
-
-    public function testStyleEmail()
-    {
-        $result = "\n\nThis is foo. This is foo. This is foo. This is foo. This is foo. This is\nfoo.\n\nThis is bar.\n\nbar foo bar foo foo. bar foo bar foo foo. bar foo bar foo foo. bar foo\nbar foo foo. bar foo bar foo foo. bar foo bar foo foo. bar foo bar foo\nfoo.\n\n";
-        $tpl = $this->smarty->createTemplate('eval:{textformat style="email"}' . $this->string . '{/textformat}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-    }
-
-    public function testStyleEmailWithoutMbstring()
-    {
-        Smarty::$_MBSTRING = false;
-        $result = "\n\nThis is foo. This is foo. This is foo. This is foo. This is foo. This is\nfoo.\n\nThis is bar.\n\nbar foo bar foo foo. bar foo bar foo foo. bar foo bar foo foo. bar foo\nbar foo foo. bar foo bar foo foo. bar foo bar foo foo. bar foo bar foo\nfoo.\n\n";
-        $tpl = $this->smarty->createTemplate('eval:{textformat style="email"}' . $this->string . '{/textformat}');
-        $this->assertEquals($result, $this->smarty->fetch($tpl));
-        Smarty::$_MBSTRING = true;
-    }
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+pjjNrwVgfH0uFMa=

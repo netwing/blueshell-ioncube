@@ -1,59 +1,38 @@
-<?php
-
-require_once "../Matrix.php";
-
-/**
- * Given n points (x0,y0)...(xn-1,yn-1), the following method computes
- * the polynomial factors of the n-1't degree polynomial passing through
- * the n points.
- *
- * Example: Passing in three points (2,3) (1,4) and (3,7) will produce
- * the results [2.5, -8.5, 10] which means that the points are on the
- * curve y = 2.5x² - 8.5x + 10.
- *
- * @see http://geosoft.no/software/lagrange/LagrangeInterpolation.java.html
- * @see http://source.freehep.org/jcvsweb/ilc/LCSIM/wdview/lcsim/src/org/lcsim/fit/polynomial/PolynomialFitter.java
- * @author Jacob Dreyer
- * @author Paul Meagher (port to PHP and minor changes)
- *
- * @param x[] float
- * @param y[] float
- */
-class LagrangeInterpolation {
-
-	public function findPolynomialFactors($x, $y) {
-		$n = count($x);
-
-		$data = array();  // double[n][n];
-		$rhs  = array();  // double[n];
-
-		for ($i = 0; $i < $n; ++$i) {
-			$v = 1;
-			for ($j = 0; $j < $n; ++$j) {
-				$data[$i][$n-$j-1] = $v;
-				$v *= $x[$i];
-			}
-			$rhs[$i] = $y[$i];
-		}
-
-		// Solve m * s = b
-		$m = new Matrix($data);
-		$b = new Matrix($rhs, $n);
-
-		$s = $m->solve($b);
-
-		return $s->getRowPackedCopy();
-	}	//	function findPolynomialFactors()
-
-}	//	class LagrangeInterpolation
-
-
-$x = array(2.0, 1.0, 3.0);
-$y = array(3.0, 4.0, 7.0);
-
-$li = new LagrangeInterpolation;
-$f = $li->findPolynomialFactors($x, $y);
-
-for ($i = 0; $i < 3; ++$i) {
-	echo $f[$i]."<br />";
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

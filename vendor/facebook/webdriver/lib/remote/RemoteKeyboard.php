@@ -1,67 +1,29 @@
-<?php
-// Copyright 2004-present Facebook. All Rights Reserved.
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
-/**
- * Execute keyboard commands for RemoteWebDriver.
- */
-class RemoteKeyboard implements WebDriverKeyboard {
-
-  private $executor;
-
-  public function __construct($executor) {
-    $this->executor = $executor;
-  }
-
-  /**
-   * Send keys to active element
-   *
-   * @param $keys
-   * @return $this
-   */
-  public function sendKeys($keys) {
-    $this->executor->execute('sendKeys', array(
-      'value' => WebDriverKeys::encode($keys),
-    ));
-    return $this;
-  }
-
-  /**
-   * Press a modifier key
-   *
-   * @see WebDriverKeys
-   * @param string $key
-   * @return $this
-   */
-  public function pressKey($key) {
-    $this->executor->execute('sendKeys', array(
-      'value' => array((string)$key),
-    ));
-    return $this;
-  }
-
-  /**
-   * Release a modifier key
-   *
-   * @see WebDriverKeys
-   * @param string $key
-   * @return $this
-   */
-  public function releaseKey($key) {
-    $this->executor->execute('sendKeys', array(
-      'value' => array((string)$key),
-    ));
-    return $this;
-  }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

@@ -1,2954 +1,1154 @@
-<?php
-/**
- * PHPExcel
- *
- * Copyright (c) 2006 - 2012 PHPExcel
- *
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation; either
- * version 2.1 of the License, or (at your option) any later version.
- *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
- *
- * @category   PHPExcel
- * @package    PHPExcel_Writer_Excel5
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
- * @version    1.7.8, 2012-10-12
- */
-
-// Original file header of PEAR::Spreadsheet_Excel_Writer_Worksheet (used as the base for this class):
-// -----------------------------------------------------------------------------------------
-// /*
-// *  Module written/ported by Xavier Noguer <xnoguer@rezebra.com>
-// *
-// *  The majority of this is _NOT_ my code.  I simply ported it from the
-// *  PERL Spreadsheet::WriteExcel module.
-// *
-// *  The author of the Spreadsheet::WriteExcel module is John McNamara
-// *  <jmcnamara@cpan.org>
-// *
-// *  I _DO_ maintain this code, and John McNamara has nothing to do with the
-// *  porting of this code to PHP.  Any questions directly related to this
-// *  class library should be directed to me.
-// *
-// *  License Information:
-// *
-// *    Spreadsheet_Excel_Writer:  A library for generating Excel Spreadsheets
-// *    Copyright (c) 2002-2003 Xavier Noguer xnoguer@rezebra.com
-// *
-// *    This library is free software; you can redistribute it and/or
-// *    modify it under the terms of the GNU Lesser General Public
-// *    License as published by the Free Software Foundation; either
-// *    version 2.1 of the License, or (at your option) any later version.
-// *
-// *    This library is distributed in the hope that it will be useful,
-// *    but WITHOUT ANY WARRANTY; without even the implied warranty of
-// *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-// *    Lesser General Public License for more details.
-// *
-// *    You should have received a copy of the GNU Lesser General Public
-// *    License along with this library; if not, write to the Free Software
-// *    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
-// */
-
-
-/**
- * PHPExcel_Writer_Excel5_Worksheet
- *
- * @category   PHPExcel
- * @package    PHPExcel_Writer_Excel5
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- */
-class PHPExcel_Writer_Excel5_Worksheet extends PHPExcel_Writer_Excel5_BIFFwriter
-{
-	/**
-	 * Formula parser
-	 *
-	 * @var PHPExcel_Writer_Excel5_Parser
-	 */
-	private $_parser;
-
-	/**
-	 * Maximum number of characters for a string (LABEL record in BIFF5)
-	 * @var integer
-	 */
-	public $_xls_strmax;
-
-	/**
-	 * Array containing format information for columns
-	 * @var array
-	 */
-	public $_colinfo;
-
-	/**
-	 * Array containing the selected area for the worksheet
-	 * @var array
-	 */
-	public $_selection;
-
-	/**
-	 * The active pane for the worksheet
-	 * @var integer
-	 */
-	public $_active_pane;
-
-	/**
-	 * Whether to use outline.
-	 * @var integer
-	 */
-	public $_outline_on;
-
-	/**
-	 * Auto outline styles.
-	 * @var bool
-	 */
-	public $_outline_style;
-
-	/**
-	 * Whether to have outline summary below.
-	 * @var bool
-	 */
-	public $_outline_below;
-
-	/**
-	 * Whether to have outline summary at the right.
-	 * @var bool
-	 */
-	public $_outline_right;
-
-	/**
-	 * Reference to the total number of strings in the workbook
-	 * @var integer
-	 */
-	public $_str_total;
-
-	/**
-	 * Reference to the number of unique strings in the workbook
-	 * @var integer
-	 */
-	public $_str_unique;
-
-	/**
-	 * Reference to the array containing all the unique strings in the workbook
-	 * @var array
-	 */
-	public $_str_table;
-
-	/**
-	 * Color cache
-	 */
-	private $_colors;
-
-	/**
-	 * Index of first used row (at least 0)
-	 * @var int
-	 */
-	private $_firstRowIndex;
-
-	/**
-	 * Index of last used row. (no used rows means -1)
-	 * @var int
-	 */
-	private $_lastRowIndex;
-
-	/**
-	 * Index of first used column (at least 0)
-	 * @var int
-	 */
-	private $_firstColumnIndex;
-
-	/**
-	 * Index of last used column (no used columns means -1)
-	 * @var int
-	 */
-	private $_lastColumnIndex;
-
-	/**
-	 * Sheet object
-	 * @var PHPExcel_Worksheet
-	 */
-	public $_phpSheet;
-
-	/**
-	 * Count cell style Xfs
-	 *
-	 * @var int
-	 */
-	private $_countCellStyleXfs;
-
-	/**
-	 * Escher object corresponding to MSODRAWING
-	 *
-	 * @var PHPExcel_Shared_Escher
-	 */
-	private $_escher;
-
-	/**
-	 * Array of font hashes associated to FONT records index
-	 *
-	 * @var array
-	 */
-	public $_fntHashIndex;
-
-	/**
-	 * Constructor
-	 *
-	 * @param int		&$str_total		Total number of strings
-	 * @param int		&$str_unique	Total number of unique strings
-	 * @param array		&$str_table		String Table
-	 * @param array		&$colors		Colour Table
-	 * @param mixed		$parser			The formula parser created for the Workbook
-	 * @param boolean	$preCalculateFormulas	Flag indicating whether formulas should be calculated or just written
-	 * @param string	$phpSheet		The worksheet to write
-	 * @param PHPExcel_Worksheet $phpSheet
-	 */
-	public function __construct(&$str_total, &$str_unique, &$str_table, &$colors,
-								$parser, $preCalculateFormulas, $phpSheet)
-	{
-		// It needs to call its parent's constructor explicitly
-		parent::__construct();
-
-		// change BIFFwriter limit for CONTINUE records
-//		$this->_limit = 8224;
-
-
-		$this->_preCalculateFormulas = $preCalculateFormulas;
-		$this->_str_total		= &$str_total;
-		$this->_str_unique		= &$str_unique;
-		$this->_str_table		= &$str_table;
-		$this->_colors			= &$colors;
-		$this->_parser			= $parser;
-
-		$this->_phpSheet = $phpSheet;
-
-		//$this->ext_sheets		= array();
-		//$this->offset			= 0;
-		$this->_xls_strmax		= 255;
-		$this->_colinfo			= array();
-		$this->_selection		= array(0,0,0,0);
-		$this->_active_pane		= 3;
-
-		$this->_print_headers		= 0;
-
-		$this->_outline_style		= 0;
-		$this->_outline_below		= 1;
-		$this->_outline_right		= 1;
-		$this->_outline_on			= 1;
-
-		$this->_fntHashIndex	= array();
-
-		// calculate values for DIMENSIONS record
-		$minR = 1;
-		$minC = 'A';
-
-		$maxR  = $this->_phpSheet->getHighestRow();
-		$maxC = $this->_phpSheet->getHighestColumn();
-
-		// Determine lowest and highest column and row
-//		$this->_firstRowIndex = ($minR > 65535) ? 65535 : $minR;
-		$this->_lastRowIndex = ($maxR > 65535) ? 65535 : $maxR ;
-
-		$this->_firstColumnIndex	= PHPExcel_Cell::columnIndexFromString($minC);
-		$this->_lastColumnIndex		= PHPExcel_Cell::columnIndexFromString($maxC);
-
-//		if ($this->_firstColumnIndex > 255) $this->_firstColumnIndex = 255;
-		if ($this->_lastColumnIndex > 255) $this->_lastColumnIndex = 255;
-
-		$this->_countCellStyleXfs = count($phpSheet->getParent()->getCellStyleXfCollection());
-	}
-
-	/**
-	 * Add data to the beginning of the workbook (note the reverse order)
-	 * and to the end of the workbook.
-	 *
-	 * @access public
-	 * @see PHPExcel_Writer_Excel5_Workbook::storeWorkbook()
-	 */
-	function close()
-	{
-		$_phpSheet = $this->_phpSheet;
-
-		$num_sheets = $_phpSheet->getParent()->getSheetCount();
-
-		// Write BOF record
-		$this->_storeBof(0x0010);
-
-		// Write PRINTHEADERS
-		$this->_writePrintHeaders();
-
-		// Write PRINTGRIDLINES
-		$this->_writePrintGridlines();
-
-		// Write GRIDSET
-		$this->_writeGridset();
-
-		// Calculate column widths
-		$_phpSheet->calculateColumnWidths();
-
-		// Column dimensions
-		if (($defaultWidth = $_phpSheet->getDefaultColumnDimension()->getWidth()) < 0) {
-			$defaultWidth = PHPExcel_Shared_Font::getDefaultColumnWidthByFont($_phpSheet->getParent()->getDefaultStyle()->getFont());
-		}
-
-		$columnDimensions = $_phpSheet->getColumnDimensions();
-		$maxCol = $this->_lastColumnIndex -1;
-		for ($i = 0; $i <= $maxCol; ++$i) {
-			$hidden = 0;
-			$level = 0;
-			$xfIndex = 15; // there are 15 cell style Xfs
-
-			$width = $defaultWidth;
-
-			$columnLetter = PHPExcel_Cell::stringFromColumnIndex($i);
-			if (isset($columnDimensions[$columnLetter])) {
-				$columnDimension = $columnDimensions[$columnLetter];
-				if ($columnDimension->getWidth() >= 0) {
-					$width = $columnDimension->getWidth();
-				}
-				$hidden = $columnDimension->getVisible() ? 0 : 1;
-				$level = $columnDimension->getOutlineLevel();
-				$xfIndex = $columnDimension->getXfIndex() + 15; // there are 15 cell style Xfs
-			}
-
-			// Components of _colinfo:
-			// $firstcol first column on the range
-			// $lastcol  last column on the range
-			// $width	width to set
-			// $xfIndex  The optional cell style Xf index to apply to the columns
-			// $hidden   The optional hidden atribute
-			// $level	The optional outline level
-			$this->_colinfo[] = array($i, $i, $width, $xfIndex, $hidden, $level);
-		}
-
-		// Write GUTS
-		$this->_writeGuts();
-
-		// Write DEFAULTROWHEIGHT
-		$this->_writeDefaultRowHeight();
-
-		// Write WSBOOL
-		$this->_writeWsbool();
-
-		// Write horizontal and vertical page breaks
-		$this->_writeBreaks();
-
-		// Write page header
-		$this->_writeHeader();
-
-		// Write page footer
-		$this->_writeFooter();
-
-		// Write page horizontal centering
-		$this->_writeHcenter();
-
-		// Write page vertical centering
-		$this->_writeVcenter();
-
-		// Write left margin
-		$this->_writeMarginLeft();
-
-		// Write right margin
-		$this->_writeMarginRight();
-
-		// Write top margin
-		$this->_writeMarginTop();
-
-		// Write bottom margin
-		$this->_writeMarginBottom();
-
-		// Write page setup
-		$this->_writeSetup();
-
-		// Write sheet protection
-		$this->_writeProtect();
-
-		// Write SCENPROTECT
-		$this->_writeScenProtect();
-
-		// Write OBJECTPROTECT
-		$this->_writeObjectProtect();
-
-		// Write sheet password
-		$this->_writePassword();
-
-		// Write DEFCOLWIDTH record
-		$this->_writeDefcol();
-
-		// Write the COLINFO records if they exist
-		if (!empty($this->_colinfo)) {
-			$colcount = count($this->_colinfo);
-			for ($i = 0; $i < $colcount; ++$i) {
-				$this->_writeColinfo($this->_colinfo[$i]);
-			}
-		}
-		$autoFilterRange = $_phpSheet->getAutoFilter()->getRange();
-		if (!empty($autoFilterRange)) {
-			// Write AUTOFILTERINFO
-			$this->_writeAutoFilterInfo();
-		}
-
-		// Write sheet dimensions
-		$this->_writeDimensions();
-
-		// Row dimensions
-		foreach ($_phpSheet->getRowDimensions() as $rowDimension) {
-			$xfIndex = $rowDimension->getXfIndex() + 15; // there are 15 cellXfs
-			$this->_writeRow( $rowDimension->getRowIndex() - 1, $rowDimension->getRowHeight(), $xfIndex, ($rowDimension->getVisible() ? '0' : '1'), $rowDimension->getOutlineLevel() );
-		}
-
-		// Write Cells
-		foreach ($_phpSheet->getCellCollection() as $cellID) {
-			$cell = $_phpSheet->getCell($cellID);
-			$row = $cell->getRow() - 1;
-			$column = PHPExcel_Cell::columnIndexFromString($cell->getColumn()) - 1;
-
-			// Don't break Excel!
-//			if ($row + 1 > 65536 or $column + 1 > 256) {
-			if ($row > 65535 || $column > 255) {
-				break;
-			}
-
-			// Write cell value
-			$xfIndex = $cell->getXfIndex() + 15; // there are 15 cell style Xfs
-
-			$cVal = $cell->getValue();
-			if ($cVal instanceof PHPExcel_RichText) {
-				// $this->_writeString($row, $column, $cVal->getPlainText(), $xfIndex);
-				$arrcRun = array();
-				$str_len = strlen($cVal->getPlainText());
-				$str_pos = 0;
-				$elements = $cVal->getRichTextElements();
-				foreach ($elements as $element) {
-					// FONT Index
-					if ($element instanceof PHPExcel_RichText_Run) {
-						$str_fontidx = $this->_fntHashIndex[$element->getFont()->getHashCode()];
-					}
-					else {
-						$str_fontidx = 0;
-					}
-					$arrcRun[] = array('strlen' => $str_pos, 'fontidx' => $str_fontidx);
-					// Position FROM
-					$str_pos += strlen($element->getText());
-				}
-				$this->_writeRichTextString($row, $column, $cVal->getPlainText(), $xfIndex, $arrcRun);
-			} else {
-				switch ($cell->getDatatype()) {
-					case PHPExcel_Cell_DataType::TYPE_STRING:
-					case PHPExcel_Cell_DataType::TYPE_NULL:
-						if ($cVal === '' || $cVal === null) {
-							$this->_writeBlank($row, $column, $xfIndex);
-						} else {
-							$this->_writeString($row, $column, $cVal, $xfIndex);
-						}
-						break;
-
-					case PHPExcel_Cell_DataType::TYPE_NUMERIC:
-						$this->_writeNumber($row, $column, $cVal, $xfIndex);
-						break;
-
-					case PHPExcel_Cell_DataType::TYPE_FORMULA:
-						$calculatedValue = $this->_preCalculateFormulas ?
-							$cell->getCalculatedValue() : null;
-						$this->_writeFormula($row, $column, $cVal, $xfIndex, $calculatedValue);
-						break;
-
-					case PHPExcel_Cell_DataType::TYPE_BOOL:
-						$this->_writeBoolErr($row, $column, $cVal, 0, $xfIndex);
-						break;
-
-					case PHPExcel_Cell_DataType::TYPE_ERROR:
-						$this->_writeBoolErr($row, $column, self::_mapErrorCode($cVal), 1, $xfIndex);
-						break;
-
-				}
-			}
-		}
-
-		// Append
-		$this->_writeMsoDrawing();
-
-		$this->_writeWindow2();
-		$this->_writeZoom();
-		if ($_phpSheet->getFreezePane()) {
-			$this->_writePanes();
-		}
-		$this->_writeSelection();
-		$this->_writeMergedCells();
-
-		// Hyperlinks
-		foreach ($_phpSheet->getHyperLinkCollection() as $coordinate => $hyperlink) {
-			list($column, $row) = PHPExcel_Cell::coordinateFromString($coordinate);
-
-			$url = $hyperlink->getUrl();
-
-			if ( strpos($url, 'sheet://') !== false ) {
-				// internal to current workbook
-				$url = str_replace('sheet://', 'internal:', $url);
-
-			} else if ( preg_match('/^(http:|https:|ftp:|mailto:)/', $url) ) {
-				// URL
-				// $url = $url;
-
-			} else {
-				// external (local file)
-				$url = 'external:' . $url;
-			}
-
-			$this->_writeUrl($row - 1, PHPExcel_Cell::columnIndexFromString($column) - 1, $url);
-		}
-
-		$this->_writeDataValidity();
-		$this->_writeSheetLayout();
-		$this->_writeSheetProtection();
-		$this->_writeRangeProtection();
-
-		$this->_storeEof();
-	}
-
-	/**
-	 * Write a cell range address in BIFF8
-	 * always fixed range
-	 * See section 2.5.14 in OpenOffice.org's Documentation of the Microsoft Excel File Format
-	 *
-	 * @param string $range E.g. 'A1' or 'A1:B6'
-	 * @return string Binary data
-	 */
-	private function _writeBIFF8CellRangeAddressFixed($range = 'A1')
-	{
-		$explodes = explode(':', $range);
-
-		// extract first cell, e.g. 'A1'
-		$firstCell = $explodes[0];
-
-		// extract last cell, e.g. 'B6'
-		if (count($explodes) == 1) {
-			$lastCell = $firstCell;
-		} else {
-			$lastCell = $explodes[1];
-		}
-
-		$firstCellCoordinates = PHPExcel_Cell::coordinateFromString($firstCell); // e.g. array(0, 1)
-		$lastCellCoordinates  = PHPExcel_Cell::coordinateFromString($lastCell);  // e.g. array(1, 6)
-
-		return(pack('vvvv',
-			$firstCellCoordinates[1] - 1,
-			$lastCellCoordinates[1] - 1,
-			PHPExcel_Cell::columnIndexFromString($firstCellCoordinates[0]) - 1,
-			PHPExcel_Cell::columnIndexFromString($lastCellCoordinates[0]) - 1
-		));
-	}
-
-	/**
-	 * Retrieves data from memory in one chunk, or from disk in $buffer
-	 * sized chunks.
-	 *
-	 * @return string The data
-	 */
-	function getData()
-	{
-		$buffer = 4096;
-
-		// Return data stored in memory
-		if (isset($this->_data)) {
-			$tmp   = $this->_data;
-			unset($this->_data);
-			return $tmp;
-		}
-		// No data to return
-		return false;
-	}
-
-	/**
-	 * Set the option to print the row and column headers on the printed page.
-	 *
-	 * @access public
-	 * @param integer $print Whether to print the headers or not. Defaults to 1 (print).
-	 */
-	function printRowColHeaders($print = 1)
-	{
-		$this->_print_headers = $print;
-	}
-
-	/**
-	 * This method sets the properties for outlining and grouping. The defaults
-	 * correspond to Excel's defaults.
-	 *
-	 * @param bool $visible
-	 * @param bool $symbols_below
-	 * @param bool $symbols_right
-	 * @param bool $auto_style
-	 */
-	function setOutline($visible = true, $symbols_below = true, $symbols_right = true, $auto_style = false)
-	{
-		$this->_outline_on	= $visible;
-		$this->_outline_below = $symbols_below;
-		$this->_outline_right = $symbols_right;
-		$this->_outline_style = $auto_style;
-
-		// Ensure this is a boolean vale for Window2
-		if ($this->_outline_on) {
-			$this->_outline_on = 1;
-		}
-	 }
-
-	/**
-	 * Write a double to the specified row and column (zero indexed).
-	 * An integer can be written as a double. Excel will display an
-	 * integer. $format is optional.
-	 *
-	 * Returns  0 : normal termination
-	 *		 -2 : row or column out of range
-	 *
-	 * @param integer $row	Zero indexed row
-	 * @param integer $col	Zero indexed column
-	 * @param float   $num	The number to write
-	 * @param mixed   $xfIndex The optional XF format
-	 * @return integer
-	 */
-	private function _writeNumber($row, $col, $num, $xfIndex)
-	{
-		$record	= 0x0203;				 // Record identifier
-		$length	= 0x000E;				 // Number of bytes to follow
-
-		$header		= pack("vv",  $record, $length);
-		$data		= pack("vvv", $row, $col, $xfIndex);
-		$xl_double	= pack("d",   $num);
-		if (self::getByteOrder()) { // if it's Big Endian
-			$xl_double = strrev($xl_double);
-		}
-
-		$this->_append($header.$data.$xl_double);
-		return(0);
-	}
-
-	/**
-	 * Write a LABELSST record or a LABEL record. Which one depends on BIFF version
-	 *
-	 * @param int $row Row index (0-based)
-	 * @param int $col Column index (0-based)
-	 * @param string $str The string
-	 * @param int $xfIndex Index to XF record
-	 */
-	private function _writeString($row, $col, $str, $xfIndex)
-	{
-		$this->_writeLabelSst($row, $col, $str, $xfIndex);
-	}
-	/**
-	 * Write a LABELSST record or a LABEL record. Which one depends on BIFF version
-	 * It differs from _writeString by the writing of rich text strings.
-	 * @param int $row Row index (0-based)
-	 * @param int $col Column index (0-based)
-	 * @param string $str The string
-	 * @param mixed   $xfIndex The XF format index for the cell
-	 * @param array $arrcRun Index to Font record and characters beginning
-	 */
-	private function _writeRichTextString($row, $col, $str, $xfIndex, $arrcRun){
-		$record	= 0x00FD;				   // Record identifier
-		$length	= 0x000A;				   // Bytes to follow
-
-		$str = PHPExcel_Shared_String::UTF8toBIFF8UnicodeShort($str, $arrcRun);
-
-		/* check if string is already present */
-		if (!isset($this->_str_table[$str])) {
-			$this->_str_table[$str] = $this->_str_unique++;
-		}
-		$this->_str_total++;
-
-		$header	= pack('vv',   $record, $length);
-		$data	= pack('vvvV', $row, $col, $xfIndex, $this->_str_table[$str]);
-		$this->_append($header.$data);
-	}
-
-	/**
-	 * Write a string to the specified row and column (zero indexed).
-	 * NOTE: there is an Excel 5 defined limit of 255 characters.
-	 * $format is optional.
-	 * Returns  0 : normal termination
-	 *		 -2 : row or column out of range
-	 *		 -3 : long string truncated to 255 chars
-	 *
-	 * @access public
-	 * @param integer $row	Zero indexed row
-	 * @param integer $col	Zero indexed column
-	 * @param string  $str	The string to write
-	 * @param mixed   $xfIndex The XF format index for the cell
-	 * @return integer
-	 */
-	private function _writeLabel($row, $col, $str, $xfIndex)
-	{
-		$strlen	= strlen($str);
-		$record	= 0x0204;				   // Record identifier
-		$length	= 0x0008 + $strlen;		 // Bytes to follow
-
-		$str_error = 0;
-
-		if ($strlen > $this->_xls_strmax) { // LABEL must be < 255 chars
-			$str	= substr($str, 0, $this->_xls_strmax);
-			$length	= 0x0008 + $this->_xls_strmax;
-			$strlen	= $this->_xls_strmax;
-			$str_error = -3;
-		}
-
-		$header	= pack("vv",   $record, $length);
-		$data	= pack("vvvv", $row, $col, $xfIndex, $strlen);
-		$this->_append($header . $data . $str);
-		return($str_error);
-	}
-
-	/**
-	 * Write a string to the specified row and column (zero indexed).
-	 * This is the BIFF8 version (no 255 chars limit).
-	 * $format is optional.
-	 * Returns  0 : normal termination
-	 *		 -2 : row or column out of range
-	 *		 -3 : long string truncated to 255 chars
-	 *
-	 * @access public
-	 * @param integer $row	Zero indexed row
-	 * @param integer $col	Zero indexed column
-	 * @param string  $str	The string to write
-	 * @param mixed   $xfIndex The XF format index for the cell
-	 * @return integer
-	 */
-	private function _writeLabelSst($row, $col, $str, $xfIndex)
-	{
-		$record	= 0x00FD;				   // Record identifier
-		$length	= 0x000A;				   // Bytes to follow
-
-		$str = PHPExcel_Shared_String::UTF8toBIFF8UnicodeLong($str);
-
-		/* check if string is already present */
-		if (!isset($this->_str_table[$str])) {
-			$this->_str_table[$str] = $this->_str_unique++;
-		}
-		$this->_str_total++;
-
-		$header	= pack('vv',   $record, $length);
-		$data	= pack('vvvV', $row, $col, $xfIndex, $this->_str_table[$str]);
-		$this->_append($header.$data);
-	}
-
-	/**
-	 * Writes a note associated with the cell given by the row and column.
-	 * NOTE records don't have a length limit.
-	 *
-	 * @param integer $row	Zero indexed row
-	 * @param integer $col	Zero indexed column
-	 * @param string  $note   The note to write
-	 */
-	private function _writeNote($row, $col, $note)
-	{
-		$note_length	= strlen($note);
-		$record			= 0x001C;			// Record identifier
-		$max_length		= 2048;				// Maximun length for a NOTE record
-
-		// Length for this record is no more than 2048 + 6
-		$length	= 0x0006 + min($note_length, 2048);
-		$header	= pack("vv",   $record, $length);
-		$data	= pack("vvv", $row, $col, $note_length);
-		$this->_append($header . $data . substr($note, 0, 2048));
-
-		for ($i = $max_length; $i < $note_length; $i += $max_length) {
-			$chunk  = substr($note, $i, $max_length);
-			$length = 0x0006 + strlen($chunk);
-			$header = pack("vv",   $record, $length);
-			$data   = pack("vvv", -1, 0, strlen($chunk));
-			$this->_append($header.$data.$chunk);
-		}
-		return(0);
-	}
-
-	/**
-	 * Write a blank cell to the specified row and column (zero indexed).
-	 * A blank cell is used to specify formatting without adding a string
-	 * or a number.
-	 *
-	 * A blank cell without a format serves no purpose. Therefore, we don't write
-	 * a BLANK record unless a format is specified.
-	 *
-	 * Returns  0 : normal termination (including no format)
-	 *		 -1 : insufficient number of arguments
-	 *		 -2 : row or column out of range
-	 *
-	 * @param integer $row	Zero indexed row
-	 * @param integer $col	Zero indexed column
-	 * @param mixed   $xfIndex The XF format index
-	 */
-	function _writeBlank($row, $col, $xfIndex)
-	{
-		$record	= 0x0201;				 // Record identifier
-		$length	= 0x0006;				 // Number of bytes to follow
-
-		$header	= pack("vv",  $record, $length);
-		$data	  = pack("vvv", $row, $col, $xfIndex);
-		$this->_append($header . $data);
-		return 0;
-	}
-
-	/**
-	 * Write a boolean or an error type to the specified row and column (zero indexed)
-	 *
-	 * @param int $row Row index (0-based)
-	 * @param int $col Column index (0-based)
-	 * @param int $value
-	 * @param boolean $isError Error or Boolean?
-	 * @param int $xfIndex
-	 */
-	private function _writeBoolErr($row, $col, $value, $isError, $xfIndex)
-	{
-		$record = 0x0205;
-		$length = 8;
-
-		$header	= pack("vv",  $record, $length);
-		$data	  = pack("vvvCC", $row, $col, $xfIndex, $value, $isError);
-		$this->_append($header . $data);
-		return 0;
-	}
-
-	/**
-	 * Write a formula to the specified row and column (zero indexed).
-	 * The textual representation of the formula is passed to the parser in
-	 * Parser.php which returns a packed binary string.
-	 *
-	 * Returns  0 : normal termination
-	 *		 -1 : formula errors (bad formula)
-	 *		 -2 : row or column out of range
-	 *
-	 * @param integer $row	 Zero indexed row
-	 * @param integer $col	 Zero indexed column
-	 * @param string  $formula The formula text string
-	 * @param mixed   $xfIndex  The XF format index
-	 * @param mixed   $calculatedValue  Calculated value
-	 * @return integer
-	 */
-	private function _writeFormula($row, $col, $formula, $xfIndex, $calculatedValue)
-	{
-		$record	= 0x0006;	 // Record identifier
-
-		// Initialize possible additional value for STRING record that should be written after the FORMULA record?
-		$stringValue = null;
-
-		// calculated value
-		if (isset($calculatedValue)) {
-			// Since we can't yet get the data type of the calculated value,
-			// we use best effort to determine data type
-			if (is_bool($calculatedValue)) {
-				// Boolean value
-				$num = pack('CCCvCv', 0x01, 0x00, (int)$calculatedValue, 0x00, 0x00, 0xFFFF);
-			} elseif (is_int($calculatedValue) || is_float($calculatedValue)) {
-				// Numeric value
-				$num = pack('d', $calculatedValue);
-			} elseif (is_string($calculatedValue)) {
-				if (array_key_exists($calculatedValue, PHPExcel_Cell_DataType::getErrorCodes())) {
-					// Error value
-					$num = pack('CCCvCv', 0x02, 0x00, self::_mapErrorCode($calculatedValue), 0x00, 0x00, 0xFFFF);
-				} elseif ($calculatedValue === '') {
-					// Empty string (and BIFF8)
-					$num = pack('CCCvCv', 0x03, 0x00, 0x00, 0x00, 0x00, 0xFFFF);
-				} else {
-					// Non-empty string value (or empty string BIFF5)
-					$stringValue = $calculatedValue;
-					$num = pack('CCCvCv', 0x00, 0x00, 0x00, 0x00, 0x00, 0xFFFF);
-				}
-			} else {
-				// We are really not supposed to reach here
-				$num = pack('d', 0x00);
-			}
-		} else {
-			$num = pack('d', 0x00);
-		}
-
-		$grbit		= 0x03;				// Option flags
-		$unknown	= 0x0000;			// Must be zero
-
-		// Strip the '=' or '@' sign at the beginning of the formula string
-		if ($formula{0} == '=') {
-			$formula = substr($formula,1);
-		} else {
-			// Error handling
-			$this->_writeString($row, $col, 'Unrecognised character for formula');
-			return -1;
-		}
-
-		// Parse the formula using the parser in Parser.php
-		try {
-			$error = $this->_parser->parse($formula);
-			$formula = $this->_parser->toReversePolish();
-
-			$formlen	= strlen($formula);	// Length of the binary string
-			$length	 = 0x16 + $formlen;	 // Length of the record data
-
-			$header	= pack("vv",	  $record, $length);
-
-			$data	  = pack("vvv", $row, $col, $xfIndex)
-						. $num
-						. pack("vVv", $grbit, $unknown, $formlen);
-			$this->_append($header . $data . $formula);
-
-			// Append also a STRING record if necessary
-			if ($stringValue !== null) {
-				$this->_writeStringRecord($stringValue);
-			}
-
-			return 0;
-
-		} catch (Exception $e) {
-			// do nothing
-		}
-
-	}
-
-	/**
-	 * Write a STRING record. This
-	 *
-	 * @param string $stringValue
-	 */
-	private function _writeStringRecord($stringValue)
-	{
-		$record = 0x0207;	 // Record identifier
-		$data = PHPExcel_Shared_String::UTF8toBIFF8UnicodeLong($stringValue);
-
-		$length = strlen($data);
-		$header = pack('vv', $record, $length);
-
-		$this->_append($header . $data);
-	}
-
-	/**
-	 * Write a hyperlink.
-	 * This is comprised of two elements: the visible label and
-	 * the invisible link. The visible label is the same as the link unless an
-	 * alternative string is specified. The label is written using the
-	 * _writeString() method. Therefore the 255 characters string limit applies.
-	 * $string and $format are optional.
-	 *
-	 * The hyperlink can be to a http, ftp, mail, internal sheet (not yet), or external
-	 * directory url.
-	 *
-	 * Returns  0 : normal termination
-	 *		 -2 : row or column out of range
-	 *		 -3 : long string truncated to 255 chars
-	 *
-	 * @param integer $row	Row
-	 * @param integer $col	Column
-	 * @param string  $url	URL string
-	 * @return integer
-	 */
-	private function _writeUrl($row, $col, $url)
-	{
-		// Add start row and col to arg list
-		return($this->_writeUrlRange($row, $col, $row, $col, $url));
-	}
-
-	/**
-	 * This is the more general form of _writeUrl(). It allows a hyperlink to be
-	 * written to a range of cells. This function also decides the type of hyperlink
-	 * to be written. These are either, Web (http, ftp, mailto), Internal
-	 * (Sheet1!A1) or external ('c:\temp\foo.xls#Sheet1!A1').
-	 *
-	 * @access private
-	 * @see _writeUrl()
-	 * @param integer $row1   Start row
-	 * @param integer $col1   Start column
-	 * @param integer $row2   End row
-	 * @param integer $col2   End column
-	 * @param string  $url	URL string
-	 * @return integer
-	 */
-	function _writeUrlRange($row1, $col1, $row2, $col2, $url)
-	{
-		// Check for internal/external sheet links or default to web link
-		if (preg_match('[^internal:]', $url)) {
-			return($this->_writeUrlInternal($row1, $col1, $row2, $col2, $url));
-		}
-		if (preg_match('[^external:]', $url)) {
-			return($this->_writeUrlExternal($row1, $col1, $row2, $col2, $url));
-		}
-		return($this->_writeUrlWeb($row1, $col1, $row2, $col2, $url));
-	}
-
-	/**
-	 * Used to write http, ftp and mailto hyperlinks.
-	 * The link type ($options) is 0x03 is the same as absolute dir ref without
-	 * sheet. However it is differentiated by the $unknown2 data stream.
-	 *
-	 * @access private
-	 * @see _writeUrl()
-	 * @param integer $row1   Start row
-	 * @param integer $col1   Start column
-	 * @param integer $row2   End row
-	 * @param integer $col2   End column
-	 * @param string  $url	URL string
-	 * @return integer
-	 */
-	function _writeUrlWeb($row1, $col1, $row2, $col2, $url)
-	{
-		$record	  = 0x01B8;					   // Record identifier
-		$length	  = 0x00000;					  // Bytes to follow
-
-		// Pack the undocumented parts of the hyperlink stream
-		$unknown1	= pack("H*", "D0C9EA79F9BACE118C8200AA004BA90B02000000");
-		$unknown2	= pack("H*", "E0C9EA79F9BACE118C8200AA004BA90B");
-
-		// Pack the option flags
-		$options	 = pack("V", 0x03);
-
-		// Convert URL to a null terminated wchar string
-		$url		 = join("\0", preg_split("''", $url, -1, PREG_SPLIT_NO_EMPTY));
-		$url		 = $url . "\0\0\0";
-
-		// Pack the length of the URL
-		$url_len	 = pack("V", strlen($url));
-
-		// Calculate the data length
-		$length	  = 0x34 + strlen($url);
-
-		// Pack the header data
-		$header	  = pack("vv",   $record, $length);
-		$data		= pack("vvvv", $row1, $row2, $col1, $col2);
-
-		// Write the packed data
-		$this->_append($header . $data .
-					   $unknown1 . $options .
-					   $unknown2 . $url_len . $url);
-		return 0;
-	}
-
-	/**
-	 * Used to write internal reference hyperlinks such as "Sheet1!A1".
-	 *
-	 * @access private
-	 * @see _writeUrl()
-	 * @param integer $row1   Start row
-	 * @param integer $col1   Start column
-	 * @param integer $row2   End row
-	 * @param integer $col2   End column
-	 * @param string  $url	URL string
-	 * @return integer
-	 */
-	function _writeUrlInternal($row1, $col1, $row2, $col2, $url)
-	{
-		$record	  = 0x01B8;					   // Record identifier
-		$length	  = 0x00000;					  // Bytes to follow
-
-		// Strip URL type
-		$url = preg_replace('/^internal:/', '', $url);
-
-		// Pack the undocumented parts of the hyperlink stream
-		$unknown1	= pack("H*", "D0C9EA79F9BACE118C8200AA004BA90B02000000");
-
-		// Pack the option flags
-		$options	 = pack("V", 0x08);
-
-		// Convert the URL type and to a null terminated wchar string
-		$url .= "\0";
-
-		// character count
-		$url_len = PHPExcel_Shared_String::CountCharacters($url);
-		$url_len = pack('V', $url_len);
-
-		$url = PHPExcel_Shared_String::ConvertEncoding($url, 'UTF-16LE', 'UTF-8');
-
-		// Calculate the data length
-		$length	  = 0x24 + strlen($url);
-
-		// Pack the header data
-		$header	  = pack("vv",   $record, $length);
-		$data		= pack("vvvv", $row1, $row2, $col1, $col2);
-
-		// Write the packed data
-		$this->_append($header . $data .
-					   $unknown1 . $options .
-					   $url_len . $url);
-		return 0;
-	}
-
-	/**
-	 * Write links to external directory names such as 'c:\foo.xls',
-	 * c:\foo.xls#Sheet1!A1', '../../foo.xls'. and '../../foo.xls#Sheet1!A1'.
-	 *
-	 * Note: Excel writes some relative links with the $dir_long string. We ignore
-	 * these cases for the sake of simpler code.
-	 *
-	 * @access private
-	 * @see _writeUrl()
-	 * @param integer $row1   Start row
-	 * @param integer $col1   Start column
-	 * @param integer $row2   End row
-	 * @param integer $col2   End column
-	 * @param string  $url	URL string
-	 * @return integer
-	 */
-	function _writeUrlExternal($row1, $col1, $row2, $col2, $url)
-	{
-		// Network drives are different. We will handle them separately
-		// MS/Novell network drives and shares start with \\
-		if (preg_match('[^external:\\\\]', $url)) {
-			return; //($this->_writeUrlExternal_net($row1, $col1, $row2, $col2, $url, $str, $format));
-		}
-
-		$record	  = 0x01B8;					   // Record identifier
-		$length	  = 0x00000;					  // Bytes to follow
-
-		// Strip URL type and change Unix dir separator to Dos style (if needed)
-		//
-		$url = preg_replace('/^external:/', '', $url);
-		$url = preg_replace('/\//', "\\", $url);
-
-		// Determine if the link is relative or absolute:
-		//   relative if link contains no dir separator, "somefile.xls"
-		//   relative if link starts with up-dir, "..\..\somefile.xls"
-		//   otherwise, absolute
-
-		$absolute = 0x00; // relative path
-		if ( preg_match('/^[A-Z]:/', $url) ) {
-			$absolute = 0x02; // absolute path on Windows, e.g. C:\...
-		}
-		$link_type			   = 0x01 | $absolute;
-
-		// Determine if the link contains a sheet reference and change some of the
-		// parameters accordingly.
-		// Split the dir name and sheet name (if it exists)
-		$dir_long = $url;
-		if (preg_match("/\#/", $url)) {
-			$link_type |= 0x08;
-		}
-
-
-		// Pack the link type
-		$link_type   = pack("V", $link_type);
-
-		// Calculate the up-level dir count e.g.. (..\..\..\ == 3)
-		$up_count	= preg_match_all("/\.\.\\\/", $dir_long, $useless);
-		$up_count	= pack("v", $up_count);
-
-		// Store the short dos dir name (null terminated)
-		$dir_short   = preg_replace("/\.\.\\\/", '', $dir_long) . "\0";
-
-		// Store the long dir name as a wchar string (non-null terminated)
-		$dir_long	   = $dir_long . "\0";
-
-		// Pack the lengths of the dir strings
-		$dir_short_len = pack("V", strlen($dir_short)	  );
-		$dir_long_len  = pack("V", strlen($dir_long)	   );
-		$stream_len	= pack("V", 0);//strlen($dir_long) + 0x06);
-
-		// Pack the undocumented parts of the hyperlink stream
-		$unknown1 = pack("H*",'D0C9EA79F9BACE118C8200AA004BA90B02000000'	   );
-		$unknown2 = pack("H*",'0303000000000000C000000000000046'			   );
-		$unknown3 = pack("H*",'FFFFADDE000000000000000000000000000000000000000');
-		$unknown4 = pack("v",  0x03											);
-
-		// Pack the main data stream
-		$data		= pack("vvvv", $row1, $row2, $col1, $col2) .
-						  $unknown1	 .
-						  $link_type	.
-						  $unknown2	 .
-						  $up_count	 .
-						  $dir_short_len.
-						  $dir_short	.
-						  $unknown3	 .
-						  $stream_len   ;/*.
-						  $dir_long_len .
-						  $unknown4	 .
-						  $dir_long	 .
-						  $sheet_len	.
-						  $sheet		;*/
-
-		// Pack the header data
-		$length   = strlen($data);
-		$header   = pack("vv", $record, $length);
-
-		// Write the packed data
-		$this->_append($header. $data);
-		return 0;
-	}
-
-	/**
-	 * This method is used to set the height and format for a row.
-	 *
-	 * @param integer $row	The row to set
-	 * @param integer $height Height we are giving to the row.
-	 *						Use null to set XF without setting height
-	 * @param integer $xfIndex  The optional cell style Xf index to apply to the columns
-	 * @param bool	$hidden The optional hidden attribute
-	 * @param integer $level  The optional outline level for row, in range [0,7]
-	 */
-	private function _writeRow($row, $height, $xfIndex, $hidden = false, $level = 0)
-	{
-		$record	  = 0x0208;			   // Record identifier
-		$length	  = 0x0010;			   // Number of bytes to follow
-
-		$colMic	  = 0x0000;			   // First defined column
-		$colMac	  = 0x0000;			   // Last defined column
-		$irwMac	  = 0x0000;			   // Used by Excel to optimise loading
-		$reserved	= 0x0000;			   // Reserved
-		$grbit	   = 0x0000;			   // Option flags
-		$ixfe		= $xfIndex;
-
-		if ( $height < 0 ){
-			$height = null;
-		}
-
-		// Use _writeRow($row, null, $XF) to set XF format without setting height
-		if ($height != null) {
-			$miyRw = $height * 20;  // row height
-		} else {
-			$miyRw = 0xff;		  // default row height is 256
-		}
-
-		// Set the options flags. fUnsynced is used to show that the font and row
-		// heights are not compatible. This is usually the case for WriteExcel.
-		// The collapsed flag 0x10 doesn't seem to be used to indicate that a row
-		// is collapsed. Instead it is used to indicate that the previous row is
-		// collapsed. The zero height flag, 0x20, is used to collapse a row.
-
-		$grbit |= $level;
-		if ($hidden) {
-			$grbit |= 0x0020;
-		}
-		if ($height !== null) {
-			$grbit |= 0x0040; // fUnsynced
-		}
-		if ($xfIndex !== 0xF) {
-			$grbit |= 0x0080;
-		}
-		$grbit |= 0x0100;
-
-		$header   = pack("vv",	   $record, $length);
-		$data	 = pack("vvvvvvvv", $row, $colMic, $colMac, $miyRw,
-									 $irwMac,$reserved, $grbit, $ixfe);
-		$this->_append($header.$data);
-	}
-
-	/**
-	 * Writes Excel DIMENSIONS to define the area in which there is data.
-	 */
-	private function _writeDimensions()
-	{
-		$record = 0x0200; // Record identifier
-
-		$length = 0x000E;
-		$data = pack('VVvvv'
-				, $this->_firstRowIndex
-				, $this->_lastRowIndex + 1
-				, $this->_firstColumnIndex
-				, $this->_lastColumnIndex + 1
-				, 0x0000 // reserved
-			);
-
-		$header = pack("vv", $record, $length);
-		$this->_append($header.$data);
-	}
-
-	/**
-	 * Write BIFF record Window2.
-	 */
-	private function _writeWindow2()
-	{
-		$record		 = 0x023E;	 // Record identifier
-		$length		 = 0x0012;
-
-		$grbit		  = 0x00B6;	 // Option flags
-		$rwTop		  = 0x0000;	 // Top row visible in window
-		$colLeft		= 0x0000;	 // Leftmost column visible in window
-
-
-		// The options flags that comprise $grbit
-		$fDspFmla	   = 0;					 // 0 - bit
-		$fDspGrid	   = $this->_phpSheet->getShowGridlines() ? 1 : 0; // 1
-		$fDspRwCol	  = $this->_phpSheet->getShowRowColHeaders() ? 1 : 0; // 2
-		$fFrozen		= $this->_phpSheet->getFreezePane() ? 1 : 0;		// 3
-		$fDspZeros	  = 1;					 // 4
-		$fDefaultHdr	= 1;					 // 5
-		$fArabic		= $this->_phpSheet->getRightToLeft() ? 1 : 0; // 6
-		$fDspGuts	   = $this->_outline_on;	// 7
-		$fFrozenNoSplit = 0;					 // 0 - bit
-		// no support in PHPExcel for selected sheet, therefore sheet is only selected if it is the active sheet
-		$fSelected	  = ($this->_phpSheet === $this->_phpSheet->getParent()->getActiveSheet()) ? 1 : 0;
-		$fPaged		 = 1;					 // 2
-
-		$grbit			 = $fDspFmla;
-		$grbit			|= $fDspGrid	   << 1;
-		$grbit			|= $fDspRwCol	  << 2;
-		$grbit			|= $fFrozen		<< 3;
-		$grbit			|= $fDspZeros	  << 4;
-		$grbit			|= $fDefaultHdr	<< 5;
-		$grbit			|= $fArabic		<< 6;
-		$grbit			|= $fDspGuts	   << 7;
-		$grbit			|= $fFrozenNoSplit << 8;
-		$grbit			|= $fSelected	  << 9;
-		$grbit			|= $fPaged		 << 10;
-
-		$header  = pack("vv",   $record, $length);
-		$data	= pack("vvv", $grbit, $rwTop, $colLeft);
-
-		// FIXME !!!
-		$rgbHdr	   = 0x0040; // Row/column heading and gridline color index
-		$zoom_factor_page_break = 0x0000;
-		$zoom_factor_normal	 = 0x0000;
-		$data .= pack("vvvvV", $rgbHdr, 0x0000, $zoom_factor_page_break, $zoom_factor_normal, 0x00000000);
-
-		$this->_append($header.$data);
-	}
-
-	/**
-	 * Write BIFF record DEFAULTROWHEIGHT.
-	 */
-	private function _writeDefaultRowHeight()
-	{
-		$defaultRowHeight = $this->_phpSheet->getDefaultRowDimension()->getRowHeight();
-
-		if ($defaultRowHeight < 0) {
-			return;
-		}
-
-		// convert to twips
-		$defaultRowHeight = (int) 20 * $defaultRowHeight;
-
-		$record   = 0x0225;	  // Record identifier
-		$length   = 0x0004;	  // Number of bytes to follow
-
-		$header   = pack("vv", $record, $length);
-		$data	 = pack("vv",  1, $defaultRowHeight);
-		$this->_append($header . $data);
-	}
-
-	/**
-	 * Write BIFF record DEFCOLWIDTH if COLINFO records are in use.
-	 */
-	private function _writeDefcol()
-	{
-		$defaultColWidth = 8;
-
-		$record   = 0x0055;	  // Record identifier
-		$length   = 0x0002;	  // Number of bytes to follow
-
-		$header = pack("vv", $record, $length);
-		$data = pack("v", $defaultColWidth);
-		$this->_append($header . $data);
-	}
-
-	/**
-	 * Write BIFF record COLINFO to define column widths
-	 *
-	 * Note: The SDK says the record length is 0x0B but Excel writes a 0x0C
-	 * length record.
-	 *
-	 * @param array $col_array This is the only parameter received and is composed of the following:
-	 *				0 => First formatted column,
-	 *				1 => Last formatted column,
-	 *				2 => Col width (8.43 is Excel default),
-	 *				3 => The optional XF format of the column,
-	 *				4 => Option flags.
-	 *				5 => Optional outline level
-	 */
-	private function _writeColinfo($col_array)
-	{
-		if (isset($col_array[0])) {
-			$colFirst = $col_array[0];
-		}
-		if (isset($col_array[1])) {
-			$colLast = $col_array[1];
-		}
-		if (isset($col_array[2])) {
-			$coldx = $col_array[2];
-		} else {
-			$coldx = 8.43;
-		}
-		if (isset($col_array[3])) {
-			$xfIndex = $col_array[3];
-		} else {
-			$xfIndex = 15;
-		}
-		if (isset($col_array[4])) {
-			$grbit = $col_array[4];
-		} else {
-			$grbit = 0;
-		}
-		if (isset($col_array[5])) {
-			$level = $col_array[5];
-		} else {
-			$level = 0;
-		}
-		$record   = 0x007D;		  // Record identifier
-		$length   = 0x000C;		  // Number of bytes to follow
-
-		$coldx   *= 256;			 // Convert to units of 1/256 of a char
-
-		$ixfe	 = $xfIndex;
-		$reserved = 0x0000;			// Reserved
-
-		$level = max(0, min($level, 7));
-		$grbit |= $level << 8;
-
-		$header   = pack("vv",	 $record, $length);
-		$data	 = pack("vvvvvv", $colFirst, $colLast, $coldx,
-								   $ixfe, $grbit, $reserved);
-		$this->_append($header.$data);
-	}
-
-	/**
-	 * Write BIFF record SELECTION.
-	 */
-	private function _writeSelection()
-	{
-		// look up the selected cell range
-		$selectedCells = $this->_phpSheet->getSelectedCells();
-		$selectedCells = PHPExcel_Cell::splitRange($this->_phpSheet->getSelectedCells());
-		$selectedCells = $selectedCells[0];
-		if (count($selectedCells) == 2) {
-			list($first, $last) = $selectedCells;
-		} else {
-			$first = $selectedCells[0];
-			$last  = $selectedCells[0];
-		}
-
-		list($colFirst, $rwFirst) = PHPExcel_Cell::coordinateFromString($first);
-		$colFirst = PHPExcel_Cell::columnIndexFromString($colFirst) - 1; // base 0 column index
-		--$rwFirst; // base 0 row index
-
-		list($colLast, $rwLast) = PHPExcel_Cell::coordinateFromString($last);
-		$colLast = PHPExcel_Cell::columnIndexFromString($colLast) - 1; // base 0 column index
-		--$rwLast; // base 0 row index
-
-		// make sure we are not out of bounds
-		$colFirst = min($colFirst, 255);
-		$colLast  = min($colLast,  255);
-
-		$rwFirst = min($rwFirst, 65535);
-		$rwLast  = min($rwLast,  65535);
-
-		$record   = 0x001D;				  // Record identifier
-		$length   = 0x000F;				  // Number of bytes to follow
-
-		$pnn	  = $this->_active_pane;	 // Pane position
-		$rwAct	= $rwFirst;				// Active row
-		$colAct   = $colFirst;			   // Active column
-		$irefAct  = 0;					   // Active cell ref
-		$cref	 = 1;					   // Number of refs
-
-		if (!isset($rwLast)) {
-			$rwLast   = $rwFirst;	   // Last  row in reference
-		}
-		if (!isset($colLast)) {
-			$colLast  = $colFirst;	  // Last  col in reference
-		}
-
-		// Swap last row/col for first row/col as necessary
-		if ($rwFirst > $rwLast) {
-			list($rwFirst, $rwLast) = array($rwLast, $rwFirst);
-		}
-
-		if ($colFirst > $colLast) {
-			list($colFirst, $colLast) = array($colLast, $colFirst);
-		}
-
-		$header   = pack("vv",		 $record, $length);
-		$data	 = pack("CvvvvvvCC",  $pnn, $rwAct, $colAct,
-									   $irefAct, $cref,
-									   $rwFirst, $rwLast,
-									   $colFirst, $colLast);
-		$this->_append($header . $data);
-	}
-
-	/**
-	 * Store the MERGEDCELLS records for all ranges of merged cells
-	 */
-	private function _writeMergedCells()
-	{
-		$mergeCells = $this->_phpSheet->getMergeCells();
-		$countMergeCells = count($mergeCells);
-
-		if ($countMergeCells == 0) {
-			return;
-		}
-
-		// maximum allowed number of merged cells per record
-		$maxCountMergeCellsPerRecord = 1027;
-
-		// record identifier
-		$record = 0x00E5;
-
-		// counter for total number of merged cells treated so far by the writer
-		$i = 0;
-
-		// counter for number of merged cells written in record currently being written
-		$j = 0;
-
-		// initialize record data
-		$recordData = '';
-
-		// loop through the merged cells
-		foreach ($mergeCells as $mergeCell) {
-			++$i;
-			++$j;
-
-			// extract the row and column indexes
-			$range = PHPExcel_Cell::splitRange($mergeCell);
-			list($first, $last) = $range[0];
-			list($firstColumn, $firstRow) = PHPExcel_Cell::coordinateFromString($first);
-			list($lastColumn, $lastRow) = PHPExcel_Cell::coordinateFromString($last);
-
-			$recordData .= pack('vvvv', $firstRow - 1, $lastRow - 1, PHPExcel_Cell::columnIndexFromString($firstColumn) - 1, PHPExcel_Cell::columnIndexFromString($lastColumn) - 1);
-
-			// flush record if we have reached limit for number of merged cells, or reached final merged cell
-			if ($j == $maxCountMergeCellsPerRecord or $i == $countMergeCells) {
-				$recordData = pack('v', $j) . $recordData;
-				$length = strlen($recordData);
-				$header = pack('vv', $record, $length);
-				$this->_append($header . $recordData);
-
-				// initialize for next record, if any
-				$recordData = '';
-				$j = 0;
-			}
-		}
-	}
-
-	/**
-	 * Write SHEETLAYOUT record
-	 */
-	private function _writeSheetLayout()
-	{
-		if (!$this->_phpSheet->isTabColorSet()) {
-			return;
-		}
-
-		$recordData = pack(
-			'vvVVVvv'
-			, 0x0862
-			, 0x0000		// unused
-			, 0x00000000	// unused
-			, 0x00000000	// unused
-			, 0x00000014	// size of record data
-			, $this->_colors[$this->_phpSheet->getTabColor()->getRGB()]	// color index
-			, 0x0000		// unused
-		);
-
-		$length = strlen($recordData);
-
-		$record = 0x0862; // Record identifier
-		$header = pack('vv', $record, $length);
-		$this->_append($header . $recordData);
-	}
-
-	/**
-	 * Write SHEETPROTECTION
-	 */
-	private function _writeSheetProtection()
-	{
-		// record identifier
-		$record = 0x0867;
-
-		// prepare options
-		$options  =   (int) !$this->_phpSheet->getProtection()->getObjects()
-					| (int) !$this->_phpSheet->getProtection()->getScenarios()           << 1
-					| (int) !$this->_phpSheet->getProtection()->getFormatCells()         << 2
-					| (int) !$this->_phpSheet->getProtection()->getFormatColumns()       << 3
-					| (int) !$this->_phpSheet->getProtection()->getFormatRows()          << 4
-					| (int) !$this->_phpSheet->getProtection()->getInsertColumns()       << 5
-					| (int) !$this->_phpSheet->getProtection()->getInsertRows()          << 6
-					| (int) !$this->_phpSheet->getProtection()->getInsertHyperlinks()    << 7
-					| (int) !$this->_phpSheet->getProtection()->getDeleteColumns()       << 8
-					| (int) !$this->_phpSheet->getProtection()->getDeleteRows()          << 9
-					| (int) !$this->_phpSheet->getProtection()->getSelectLockedCells()   << 10
-					| (int) !$this->_phpSheet->getProtection()->getSort()                << 11
-					| (int) !$this->_phpSheet->getProtection()->getAutoFilter()          << 12
-					| (int) !$this->_phpSheet->getProtection()->getPivotTables()         << 13
-					| (int) !$this->_phpSheet->getProtection()->getSelectUnlockedCells() << 14 ;
-
-		// record data
-		$recordData = pack(
-			'vVVCVVvv'
-			, 0x0867		// repeated record identifier
-			, 0x0000		// not used
-			, 0x0000		// not used
-			, 0x00			// not used
-			, 0x01000200	// unknown data
-			, 0xFFFFFFFF	// unknown data
-			, $options		// options
-			, 0x0000		// not used
-		);
-
-		$length = strlen($recordData);
-		$header = pack('vv', $record, $length);
-
-		$this->_append($header . $recordData);
-	}
-
-	/**
-	 * Write BIFF record RANGEPROTECTION
-	 *
-	 * Openoffice.org's Documentaion of the Microsoft Excel File Format uses term RANGEPROTECTION for these records
-	 * Microsoft Office Excel 97-2007 Binary File Format Specification uses term FEAT for these records
-	 */
-	private function _writeRangeProtection()
-	{
-		foreach ($this->_phpSheet->getProtectedCells() as $range => $password) {
-			// number of ranges, e.g. 'A1:B3 C20:D25'
-			$cellRanges = explode(' ', $range);
-			$cref = count($cellRanges);
-
-			$recordData = pack(
-				'vvVVvCVvVv',
-				0x0868,
-				0x00,
-				0x0000,
-				0x0000,
-				0x02,
-				0x0,
-				0x0000,
-				$cref,
-				0x0000,
-				0x00
-			);
-
-			foreach ($cellRanges as $cellRange) {
-				$recordData .= $this->_writeBIFF8CellRangeAddressFixed($cellRange);
-			}
-
-			// the rgbFeat structure
-			$recordData .= pack(
-				'VV',
-				0x0000,
-				hexdec($password)
-			);
-
-			$recordData .= PHPExcel_Shared_String::UTF8toBIFF8UnicodeLong('p' . md5($recordData));
-
-			$length = strlen($recordData);
-
-			$record = 0x0868;		// Record identifier
-			$header = pack("vv", $record, $length);
-			$this->_append($header . $recordData);
-		}
-	}
-
-	/**
-	 * Write BIFF record EXTERNCOUNT to indicate the number of external sheet
-	 * references in a worksheet.
-	 *
-	 * Excel only stores references to external sheets that are used in formulas.
-	 * For simplicity we store references to all the sheets in the workbook
-	 * regardless of whether they are used or not. This reduces the overall
-	 * complexity and eliminates the need for a two way dialogue between the formula
-	 * parser the worksheet objects.
-	 *
-	 * @param integer $count The number of external sheet references in this worksheet
-	 */
-	private function _writeExterncount($count)
-	{
-		$record = 0x0016;		  // Record identifier
-		$length = 0x0002;		  // Number of bytes to follow
-
-		$header = pack("vv", $record, $length);
-		$data   = pack("v",  $count);
-		$this->_append($header . $data);
-	}
-
-	/**
-	 * Writes the Excel BIFF EXTERNSHEET record. These references are used by
-	 * formulas. A formula references a sheet name via an index. Since we store a
-	 * reference to all of the external worksheets the EXTERNSHEET index is the same
-	 * as the worksheet index.
-	 *
-	 * @param string $sheetname The name of a external worksheet
-	 */
-	private function _writeExternsheet($sheetname)
-	{
-		$record	= 0x0017;		 // Record identifier
-
-		// References to the current sheet are encoded differently to references to
-		// external sheets.
-		//
-		if ($this->_phpSheet->getTitle() == $sheetname) {
-			$sheetname = '';
-			$length	= 0x02;  // The following 2 bytes
-			$cch	   = 1;	 // The following byte
-			$rgch	  = 0x02;  // Self reference
-		} else {
-			$length	= 0x02 + strlen($sheetname);
-			$cch	   = strlen($sheetname);
-			$rgch	  = 0x03;  // Reference to a sheet in the current workbook
-		}
-
-		$header = pack("vv",  $record, $length);
-		$data   = pack("CC", $cch, $rgch);
-		$this->_append($header . $data . $sheetname);
-	}
-
-	/**
-	 * Writes the Excel BIFF PANE record.
-	 * The panes can either be frozen or thawed (unfrozen).
-	 * Frozen panes are specified in terms of an integer number of rows and columns.
-	 * Thawed panes are specified in terms of Excel's units for rows and columns.
-	 */
-	private function _writePanes()
-	{
-		$panes = array();
-		if ($freezePane = $this->_phpSheet->getFreezePane()) {
-			list($column, $row) = PHPExcel_Cell::coordinateFromString($freezePane);
-			$panes[0] = $row - 1;
-			$panes[1] = PHPExcel_Cell::columnIndexFromString($column) - 1;
-		} else {
-			// thaw panes
-			return;
-		}
-
-		$y	   = isset($panes[0]) ? $panes[0] : null;
-		$x	   = isset($panes[1]) ? $panes[1] : null;
-		$rwTop   = isset($panes[2]) ? $panes[2] : null;
-		$colLeft = isset($panes[3]) ? $panes[3] : null;
-		if (count($panes) > 4) { // if Active pane was received
-			$pnnAct = $panes[4];
-		} else {
-			$pnnAct = null;
-		}
-		$record  = 0x0041;	   // Record identifier
-		$length  = 0x000A;	   // Number of bytes to follow
-
-		// Code specific to frozen or thawed panes.
-		if ($this->_phpSheet->getFreezePane()) {
-			// Set default values for $rwTop and $colLeft
-			if (!isset($rwTop)) {
-				$rwTop   = $y;
-			}
-			if (!isset($colLeft)) {
-				$colLeft = $x;
-			}
-		} else {
-			// Set default values for $rwTop and $colLeft
-			if (!isset($rwTop)) {
-				$rwTop   = 0;
-			}
-			if (!isset($colLeft)) {
-				$colLeft = 0;
-			}
-
-			// Convert Excel's row and column units to the internal units.
-			// The default row height is 12.75
-			// The default column width is 8.43
-			// The following slope and intersection values were interpolated.
-			//
-			$y = 20*$y + 255;
-			$x = 113.879*$x + 390;
-		}
-
-
-		// Determine which pane should be active. There is also the undocumented
-		// option to override this should it be necessary: may be removed later.
-		//
-		if (!isset($pnnAct)) {
-			if ($x != 0 && $y != 0) {
-				$pnnAct = 0; // Bottom right
-			}
-			if ($x != 0 && $y == 0) {
-				$pnnAct = 1; // Top right
-			}
-			if ($x == 0 && $y != 0) {
-				$pnnAct = 2; // Bottom left
-			}
-			if ($x == 0 && $y == 0) {
-				$pnnAct = 3; // Top left
-			}
-		}
-
-		$this->_active_pane = $pnnAct; // Used in _writeSelection
-
-		$header	 = pack("vv",	$record, $length);
-		$data	   = pack("vvvvv", $x, $y, $rwTop, $colLeft, $pnnAct);
-		$this->_append($header . $data);
-	}
-
-	/**
-	 * Store the page setup SETUP BIFF record.
-	 */
-	private function _writeSetup()
-	{
-		$record	   = 0x00A1;				  // Record identifier
-		$length	   = 0x0022;				  // Number of bytes to follow
-
-		$iPaperSize   = $this->_phpSheet->getPageSetup()->getPaperSize();	// Paper size
-
-		$iScale = $this->_phpSheet->getPageSetup()->getScale() ?
-			$this->_phpSheet->getPageSetup()->getScale() : 100;   // Print scaling factor
-
-		$iPageStart   = 0x01;				 // Starting page number
-		$iFitWidth	= (int) $this->_phpSheet->getPageSetup()->getFitToWidth();	// Fit to number of pages wide
-		$iFitHeight	= (int) $this->_phpSheet->getPageSetup()->getFitToHeight();	// Fit to number of pages high
-		$grbit		= 0x00;				 // Option flags
-		$iRes		 = 0x0258;			   // Print resolution
-		$iVRes		= 0x0258;			   // Vertical print resolution
-
-		$numHdr	   = $this->_phpSheet->getPageMargins()->getHeader();  // Header Margin
-
-		$numFtr	   = $this->_phpSheet->getPageMargins()->getFooter();   // Footer Margin
-		$iCopies	  = 0x01;				 // Number of copies
-
-		$fLeftToRight = 0x0;					 // Print over then down
-
-		// Page orientation
-		$fLandscape = ($this->_phpSheet->getPageSetup()->getOrientation() == PHPExcel_Worksheet_PageSetup::ORIENTATION_LANDSCAPE) ?
-			0x0 : 0x1;
-
-		$fNoPls	   = 0x0;					 // Setup not read from printer
-		$fNoColor	 = 0x0;					 // Print black and white
-		$fDraft	   = 0x0;					 // Print draft quality
-		$fNotes	   = 0x0;					 // Print notes
-		$fNoOrient	= 0x0;					 // Orientation not set
-		$fUsePage	 = 0x0;					 // Use custom starting page
-
-		$grbit		   = $fLeftToRight;
-		$grbit		  |= $fLandscape	<< 1;
-		$grbit		  |= $fNoPls		<< 2;
-		$grbit		  |= $fNoColor	  << 3;
-		$grbit		  |= $fDraft		<< 4;
-		$grbit		  |= $fNotes		<< 5;
-		$grbit		  |= $fNoOrient	 << 6;
-		$grbit		  |= $fUsePage	  << 7;
-
-		$numHdr = pack("d", $numHdr);
-		$numFtr = pack("d", $numFtr);
-		if (self::getByteOrder()) { // if it's Big Endian
-			$numHdr = strrev($numHdr);
-			$numFtr = strrev($numFtr);
-		}
-
-		$header = pack("vv", $record, $length);
-		$data1  = pack("vvvvvvvv", $iPaperSize,
-								   $iScale,
-								   $iPageStart,
-								   $iFitWidth,
-								   $iFitHeight,
-								   $grbit,
-								   $iRes,
-								   $iVRes);
-		$data2  = $numHdr.$numFtr;
-		$data3  = pack("v", $iCopies);
-		$this->_append($header . $data1 . $data2 . $data3);
-	}
-
-	/**
-	 * Store the header caption BIFF record.
-	 */
-	private function _writeHeader()
-	{
-		$record  = 0x0014;			   // Record identifier
-
-		/* removing for now
-		// need to fix character count (multibyte!)
-		if (strlen($this->_phpSheet->getHeaderFooter()->getOddHeader()) <= 255) {
-			$str	  = $this->_phpSheet->getHeaderFooter()->getOddHeader();	   // header string
-		} else {
-			$str = '';
-		}
-		*/
-
-		$recordData = PHPExcel_Shared_String::UTF8toBIFF8UnicodeLong($this->_phpSheet->getHeaderFooter()->getOddHeader());
-		$length = strlen($recordData);
-
-		$header   = pack("vv", $record, $length);
-
-		$this->_append($header . $recordData);
-	}
-
-	/**
-	 * Store the footer caption BIFF record.
-	 */
-	private function _writeFooter()
-	{
-		$record  = 0x0015;			   // Record identifier
-
-		/* removing for now
-		// need to fix character count (multibyte!)
-		if (strlen($this->_phpSheet->getHeaderFooter()->getOddFooter()) <= 255) {
-			$str = $this->_phpSheet->getHeaderFooter()->getOddFooter();
-		} else {
-			$str = '';
-		}
-		*/
-
-		$recordData = PHPExcel_Shared_String::UTF8toBIFF8UnicodeLong($this->_phpSheet->getHeaderFooter()->getOddFooter());
-		$length = strlen($recordData);
-
-		$header	= pack("vv", $record, $length);
-
-		$this->_append($header . $recordData);
-	}
-
-	/**
-	 * Store the horizontal centering HCENTER BIFF record.
-	 *
-	 * @access private
-	 */
-	private function _writeHcenter()
-	{
-		$record   = 0x0083;			  // Record identifier
-		$length   = 0x0002;			  // Bytes to follow
-
-		$fHCenter = $this->_phpSheet->getPageSetup()->getHorizontalCentered() ? 1 : 0;	 // Horizontal centering
-
-		$header	= pack("vv", $record, $length);
-		$data	  = pack("v",  $fHCenter);
-
-		$this->_append($header.$data);
-	}
-
-	/**
-	 * Store the vertical centering VCENTER BIFF record.
-	 */
-	private function _writeVcenter()
-	{
-		$record   = 0x0084;			  // Record identifier
-		$length   = 0x0002;			  // Bytes to follow
-
-		$fVCenter = $this->_phpSheet->getPageSetup()->getVerticalCentered() ? 1 : 0;	 // Horizontal centering
-
-		$header	= pack("vv", $record, $length);
-		$data	  = pack("v",  $fVCenter);
-		$this->_append($header . $data);
-	}
-
-	/**
-	 * Store the LEFTMARGIN BIFF record.
-	 */
-	private function _writeMarginLeft()
-	{
-		$record  = 0x0026;				   // Record identifier
-		$length  = 0x0008;				   // Bytes to follow
-
-		$margin  = $this->_phpSheet->getPageMargins()->getLeft();	 // Margin in inches
-
-		$header	= pack("vv",  $record, $length);
-		$data	  = pack("d",   $margin);
-		if (self::getByteOrder()) { // if it's Big Endian
-			$data = strrev($data);
-		}
-
-		$this->_append($header . $data);
-	}
-
-	/**
-	 * Store the RIGHTMARGIN BIFF record.
-	 */
-	private function _writeMarginRight()
-	{
-		$record  = 0x0027;				   // Record identifier
-		$length  = 0x0008;				   // Bytes to follow
-
-		$margin  = $this->_phpSheet->getPageMargins()->getRight();	 // Margin in inches
-
-		$header	= pack("vv",  $record, $length);
-		$data	  = pack("d",   $margin);
-		if (self::getByteOrder()) { // if it's Big Endian
-			$data = strrev($data);
-		}
-
-		$this->_append($header . $data);
-	}
-
-	/**
-	 * Store the TOPMARGIN BIFF record.
-	 */
-	private function _writeMarginTop()
-	{
-		$record  = 0x0028;				   // Record identifier
-		$length  = 0x0008;				   // Bytes to follow
-
-		$margin  = $this->_phpSheet->getPageMargins()->getTop();	 // Margin in inches
-
-		$header	= pack("vv",  $record, $length);
-		$data	  = pack("d",   $margin);
-		if (self::getByteOrder()) { // if it's Big Endian
-			$data = strrev($data);
-		}
-
-		$this->_append($header . $data);
-	}
-
-	/**
-	 * Store the BOTTOMMARGIN BIFF record.
-	 */
-	private function _writeMarginBottom()
-	{
-		$record  = 0x0029;				   // Record identifier
-		$length  = 0x0008;				   // Bytes to follow
-
-		$margin  = $this->_phpSheet->getPageMargins()->getBottom();	 // Margin in inches
-
-		$header	= pack("vv",  $record, $length);
-		$data	  = pack("d",   $margin);
-		if (self::getByteOrder()) { // if it's Big Endian
-			$data = strrev($data);
-		}
-
-		$this->_append($header . $data);
-	}
-
-	/**
-	 * Write the PRINTHEADERS BIFF record.
-	 */
-	private function _writePrintHeaders()
-	{
-		$record	  = 0x002a;				   // Record identifier
-		$length	  = 0x0002;				   // Bytes to follow
-
-		$fPrintRwCol = $this->_print_headers;	 // Boolean flag
-
-		$header	  = pack("vv", $record, $length);
-		$data		= pack("v", $fPrintRwCol);
-		$this->_append($header . $data);
-	}
-
-	/**
-	 * Write the PRINTGRIDLINES BIFF record. Must be used in conjunction with the
-	 * GRIDSET record.
-	 */
-	private function _writePrintGridlines()
-	{
-		$record	  = 0x002b;					// Record identifier
-		$length	  = 0x0002;					// Bytes to follow
-
-		$fPrintGrid  = $this->_phpSheet->getPrintGridlines() ? 1 : 0;	// Boolean flag
-
-		$header	  = pack("vv", $record, $length);
-		$data	  = pack("v", $fPrintGrid);
-		$this->_append($header . $data);
-	}
-
-	/**
-	 * Write the GRIDSET BIFF record. Must be used in conjunction with the
-	 * PRINTGRIDLINES record.
-	 */
-	private function _writeGridset()
-	{
-		$record	  = 0x0082;						// Record identifier
-		$length	  = 0x0002;						// Bytes to follow
-
-		$fGridSet	= !$this->_phpSheet->getPrintGridlines();	 // Boolean flag
-
-		$header	  = pack("vv",  $record, $length);
-		$data		= pack("v",   $fGridSet);
-		$this->_append($header . $data);
-	}
-
-	/**
-	 * Write the AUTOFILTERINFO BIFF record. This is used to configure the number of autofilter select used in the sheet.
-	 */
-	private function _writeAutoFilterInfo(){
-		$record	  = 0x009D;						// Record identifier
-		$length	  = 0x0002;						// Bytes to follow
-
-		$rangeBounds = PHPExcel_Cell::rangeBoundaries($this->_phpSheet->getAutoFilter()->getRange());
-		$iNumFilters = 1 + $rangeBounds[1][0] - $rangeBounds[0][0];
-
-		$header   = pack("vv", $record, $length);
-		$data     = pack("v",  $iNumFilters);
-		$this->_append($header . $data);
-	}
-
-	/**
-	 * Write the GUTS BIFF record. This is used to configure the gutter margins
-	 * where Excel outline symbols are displayed. The visibility of the gutters is
-	 * controlled by a flag in WSBOOL.
-	 *
-	 * @see _writeWsbool()
-	 */
-	private  function _writeGuts()
-	{
-		$record	  = 0x0080;   // Record identifier
-		$length	  = 0x0008;   // Bytes to follow
-
-		$dxRwGut	 = 0x0000;   // Size of row gutter
-		$dxColGut	= 0x0000;   // Size of col gutter
-
-		// determine maximum row outline level
-		$maxRowOutlineLevel = 0;
-		foreach ($this->_phpSheet->getRowDimensions() as $rowDimension) {
-			$maxRowOutlineLevel = max($maxRowOutlineLevel, $rowDimension->getOutlineLevel());
-		}
-
-		$col_level   = 0;
-
-		// Calculate the maximum column outline level. The equivalent calculation
-		// for the row outline level is carried out in _writeRow().
-		$colcount = count($this->_colinfo);
-		for ($i = 0; $i < $colcount; ++$i) {
-			$col_level = max($this->_colinfo[$i][5], $col_level);
-		}
-
-		// Set the limits for the outline levels (0 <= x <= 7).
-		$col_level = max(0, min($col_level, 7));
-
-		// The displayed level is one greater than the max outline levels
-		if ($maxRowOutlineLevel) {
-			++$maxRowOutlineLevel;
-		}
-		if ($col_level) {
-			++$col_level;
-		}
-
-		$header	  = pack("vv",   $record, $length);
-		$data		= pack("vvvv", $dxRwGut, $dxColGut, $maxRowOutlineLevel, $col_level);
-
-		$this->_append($header.$data);
-	}
-
-	/**
-	 * Write the WSBOOL BIFF record, mainly for fit-to-page. Used in conjunction
-	 * with the SETUP record.
-	 */
-	private function _writeWsbool()
-	{
-		$record	  = 0x0081;   // Record identifier
-		$length	  = 0x0002;   // Bytes to follow
-		$grbit	   = 0x0000;
-
-		// The only option that is of interest is the flag for fit to page. So we
-		// set all the options in one go.
-		//
-		// Set the option flags
-		$grbit |= 0x0001;						   // Auto page breaks visible
-		if ($this->_outline_style) {
-			$grbit |= 0x0020; // Auto outline styles
-		}
-		if ($this->_phpSheet->getShowSummaryBelow()) {
-			$grbit |= 0x0040; // Outline summary below
-		}
-		if ($this->_phpSheet->getShowSummaryRight()) {
-			$grbit |= 0x0080; // Outline summary right
-		}
-		if ($this->_phpSheet->getPageSetup()->getFitToPage()) {
-			$grbit |= 0x0100; // Page setup fit to page
-		}
-		if ($this->_outline_on) {
-			$grbit |= 0x0400; // Outline symbols displayed
-		}
-
-		$header	  = pack("vv", $record, $length);
-		$data		= pack("v",  $grbit);
-		$this->_append($header . $data);
-	}
-
-	/**
-	 * Write the HORIZONTALPAGEBREAKS and VERTICALPAGEBREAKS BIFF records.
-	 */
-	private function _writeBreaks()
-	{
-		// initialize
-		$vbreaks = array();
-		$hbreaks = array();
-
-		foreach ($this->_phpSheet->getBreaks() as $cell => $breakType) {
-			// Fetch coordinates
-			$coordinates = PHPExcel_Cell::coordinateFromString($cell);
-
-			// Decide what to do by the type of break
-			switch ($breakType) {
-				case PHPExcel_Worksheet::BREAK_COLUMN:
-					// Add to list of vertical breaks
-					$vbreaks[] = PHPExcel_Cell::columnIndexFromString($coordinates[0]) - 1;
-					break;
-
-				case PHPExcel_Worksheet::BREAK_ROW:
-					// Add to list of horizontal breaks
-					$hbreaks[] = $coordinates[1];
-					break;
-
-				case PHPExcel_Worksheet::BREAK_NONE:
-				default:
-					// Nothing to do
-					break;
-			}
-		}
-
-		//horizontal page breaks
-		if (!empty($hbreaks)) {
-
-			// Sort and filter array of page breaks
-			sort($hbreaks, SORT_NUMERIC);
-			if ($hbreaks[0] == 0) { // don't use first break if it's 0
-				array_shift($hbreaks);
-			}
-
-			$record  = 0x001b;			   // Record identifier
-			$cbrk	= count($hbreaks);	   // Number of page breaks
-			$length  = 2 + 6 * $cbrk;	  // Bytes to follow
-
-			$header  = pack("vv", $record, $length);
-			$data	= pack("v",  $cbrk);
-
-			// Append each page break
-			foreach ($hbreaks as $hbreak) {
-				$data .= pack("vvv", $hbreak, 0x0000, 0x00ff);
-			}
-
-			$this->_append($header . $data);
-		}
-
-		// vertical page breaks
-		if (!empty($vbreaks)) {
-
-			// 1000 vertical pagebreaks appears to be an internal Excel 5 limit.
-			// It is slightly higher in Excel 97/200, approx. 1026
-			$vbreaks = array_slice($vbreaks, 0, 1000);
-
-			// Sort and filter array of page breaks
-			sort($vbreaks, SORT_NUMERIC);
-			if ($vbreaks[0] == 0) { // don't use first break if it's 0
-				array_shift($vbreaks);
-			}
-
-			$record  = 0x001a;			   // Record identifier
-			$cbrk	= count($vbreaks);	   // Number of page breaks
-			$length  = 2 + 6 * $cbrk;	  // Bytes to follow
-
-			$header  = pack("vv",  $record, $length);
-			$data	= pack("v",   $cbrk);
-
-			// Append each page break
-			foreach ($vbreaks as $vbreak) {
-				$data .= pack("vvv", $vbreak, 0x0000, 0xffff);
-			}
-
-			$this->_append($header . $data);
-		}
-	}
-
-	/**
-	 * Set the Biff PROTECT record to indicate that the worksheet is protected.
-	 */
-	private function _writeProtect()
-	{
-		// Exit unless sheet protection has been specified
-		if (!$this->_phpSheet->getProtection()->getSheet()) {
-			return;
-		}
-
-		$record	  = 0x0012;			 // Record identifier
-		$length	  = 0x0002;			 // Bytes to follow
-
-		$fLock	   = 1;	// Worksheet is protected
-
-		$header	  = pack("vv", $record, $length);
-		$data		= pack("v",  $fLock);
-
-		$this->_append($header.$data);
-	}
-
-	/**
-	 * Write SCENPROTECT
-	 */
-	private function _writeScenProtect()
-	{
-		// Exit if sheet protection is not active
-		if (!$this->_phpSheet->getProtection()->getSheet()) {
-			return;
-		}
-
-		// Exit if scenarios are not protected
-		if (!$this->_phpSheet->getProtection()->getScenarios()) {
-			return;
-		}
-
-		$record = 0x00DD; // Record identifier
-		$length = 0x0002; // Bytes to follow
-
-		$header = pack('vv', $record, $length);
-		$data = pack('v', 1);
-
-		$this->_append($header . $data);
-	}
-
-	/**
-	 * Write OBJECTPROTECT
-	 */
-	private function _writeObjectProtect()
-	{
-		// Exit if sheet protection is not active
-		if (!$this->_phpSheet->getProtection()->getSheet()) {
-			return;
-		}
-
-		// Exit if objects are not protected
-		if (!$this->_phpSheet->getProtection()->getObjects()) {
-			return;
-		}
-
-		$record = 0x0063; // Record identifier
-		$length = 0x0002; // Bytes to follow
-
-		$header = pack('vv', $record, $length);
-		$data = pack('v', 1);
-
-		$this->_append($header . $data);
-	}
-
-	/**
-	 * Write the worksheet PASSWORD record.
-	 */
-	private function _writePassword()
-	{
-		// Exit unless sheet protection and password have been specified
-		if (!$this->_phpSheet->getProtection()->getSheet() || !$this->_phpSheet->getProtection()->getPassword()) {
-			return;
-		}
-
-		$record	  = 0x0013;			   // Record identifier
-		$length	  = 0x0002;			   // Bytes to follow
-
-		$wPassword   = hexdec($this->_phpSheet->getProtection()->getPassword());	 // Encoded password
-
-		$header	  = pack("vv", $record, $length);
-		$data		= pack("v",  $wPassword);
-
-		$this->_append($header . $data);
-	}
-
-	/**
-	 * Insert a 24bit bitmap image in a worksheet.
-	 *
-	 * @access public
-	 * @param integer $row	 The row we are going to insert the bitmap into
-	 * @param integer $col	 The column we are going to insert the bitmap into
-	 * @param mixed   $bitmap  The bitmap filename or GD-image resource
-	 * @param integer $x	   The horizontal position (offset) of the image inside the cell.
-	 * @param integer $y	   The vertical position (offset) of the image inside the cell.
-	 * @param float   $scale_x The horizontal scale
-	 * @param float   $scale_y The vertical scale
-	 */
-	function insertBitmap($row, $col, $bitmap, $x = 0, $y = 0, $scale_x = 1, $scale_y = 1)
-	{
-		$bitmap_array = (is_resource($bitmap) ? $this->_processBitmapGd($bitmap) : $this->_processBitmap($bitmap));
-		list($width, $height, $size, $data) = $bitmap_array; //$this->_processBitmap($bitmap);
-
-		// Scale the frame of the image.
-		$width  *= $scale_x;
-		$height *= $scale_y;
-
-		// Calculate the vertices of the image and write the OBJ record
-		$this->_positionImage($col, $row, $x, $y, $width, $height);
-
-		// Write the IMDATA record to store the bitmap data
-		$record	  = 0x007f;
-		$length	  = 8 + $size;
-		$cf		  = 0x09;
-		$env		 = 0x01;
-		$lcb		 = $size;
-
-		$header	  = pack("vvvvV", $record, $length, $cf, $env, $lcb);
-		$this->_append($header.$data);
-	}
-
-	/**
-	 * Calculate the vertices that define the position of the image as required by
-	 * the OBJ record.
-	 *
-	 *		 +------------+------------+
-	 *		 |	 A	  |	  B	 |
-	 *   +-----+------------+------------+
-	 *   |	 |(x1,y1)	 |			|
-	 *   |  1  |(A1)._______|______	  |
-	 *   |	 |	|			  |	 |
-	 *   |	 |	|			  |	 |
-	 *   +-----+----|	BITMAP	|-----+
-	 *   |	 |	|			  |	 |
-	 *   |  2  |	|______________.	 |
-	 *   |	 |			|		(B2)|
-	 *   |	 |			|	 (x2,y2)|
-	 *   +---- +------------+------------+
-	 *
-	 * Example of a bitmap that covers some of the area from cell A1 to cell B2.
-	 *
-	 * Based on the width and height of the bitmap we need to calculate 8 vars:
-	 *	 $col_start, $row_start, $col_end, $row_end, $x1, $y1, $x2, $y2.
-	 * The width and height of the cells are also variable and have to be taken into
-	 * account.
-	 * The values of $col_start and $row_start are passed in from the calling
-	 * function. The values of $col_end and $row_end are calculated by subtracting
-	 * the width and height of the bitmap from the width and height of the
-	 * underlying cells.
-	 * The vertices are expressed as a percentage of the underlying cell width as
-	 * follows (rhs values are in pixels):
-	 *
-	 *	   x1 = X / W *1024
-	 *	   y1 = Y / H *256
-	 *	   x2 = (X-1) / W *1024
-	 *	   y2 = (Y-1) / H *256
-	 *
-	 *	   Where:  X is distance from the left side of the underlying cell
-	 *			   Y is distance from the top of the underlying cell
-	 *			   W is the width of the cell
-	 *			   H is the height of the cell
-	 * The SDK incorrectly states that the height should be expressed as a
-	 *		percentage of 1024.
-	 *
-	 * @access private
-	 * @param integer $col_start Col containing upper left corner of object
-	 * @param integer $row_start Row containing top left corner of object
-	 * @param integer $x1		Distance to left side of object
-	 * @param integer $y1		Distance to top of object
-	 * @param integer $width	 Width of image frame
-	 * @param integer $height	Height of image frame
-	 */
-	function _positionImage($col_start, $row_start, $x1, $y1, $width, $height)
-	{
-		// Initialise end cell to the same as the start cell
-		$col_end	= $col_start;  // Col containing lower right corner of object
-		$row_end	= $row_start;  // Row containing bottom right corner of object
-
-		// Zero the specified offset if greater than the cell dimensions
-		if ($x1 >= PHPExcel_Shared_Excel5::sizeCol($this->_phpSheet, PHPExcel_Cell::stringFromColumnIndex($col_start))) {
-			$x1 = 0;
-		}
-		if ($y1 >= PHPExcel_Shared_Excel5::sizeRow($this->_phpSheet, $row_start + 1)) {
-			$y1 = 0;
-		}
-
-		$width	  = $width  + $x1 -1;
-		$height	 = $height + $y1 -1;
-
-		// Subtract the underlying cell widths to find the end cell of the image
-		while ($width >= PHPExcel_Shared_Excel5::sizeCol($this->_phpSheet, PHPExcel_Cell::stringFromColumnIndex($col_end))) {
-			$width -= PHPExcel_Shared_Excel5::sizeCol($this->_phpSheet, PHPExcel_Cell::stringFromColumnIndex($col_end));
-			++$col_end;
-		}
-
-		// Subtract the underlying cell heights to find the end cell of the image
-		while ($height >= PHPExcel_Shared_Excel5::sizeRow($this->_phpSheet, $row_end + 1)) {
-			$height -= PHPExcel_Shared_Excel5::sizeRow($this->_phpSheet, $row_end + 1);
-			++$row_end;
-		}
-
-		// Bitmap isn't allowed to start or finish in a hidden cell, i.e. a cell
-		// with zero eight or width.
-		//
-		if (PHPExcel_Shared_Excel5::sizeCol($this->_phpSheet, PHPExcel_Cell::stringFromColumnIndex($col_start)) == 0) {
-			return;
-		}
-		if (PHPExcel_Shared_Excel5::sizeCol($this->_phpSheet, PHPExcel_Cell::stringFromColumnIndex($col_end))   == 0) {
-			return;
-		}
-		if (PHPExcel_Shared_Excel5::sizeRow($this->_phpSheet, $row_start + 1) == 0) {
-			return;
-		}
-		if (PHPExcel_Shared_Excel5::sizeRow($this->_phpSheet, $row_end + 1)   == 0) {
-			return;
-		}
-
-		// Convert the pixel values to the percentage value expected by Excel
-		$x1 = $x1	 / PHPExcel_Shared_Excel5::sizeCol($this->_phpSheet, PHPExcel_Cell::stringFromColumnIndex($col_start))   * 1024;
-		$y1 = $y1	 / PHPExcel_Shared_Excel5::sizeRow($this->_phpSheet, $row_start + 1)   *  256;
-		$x2 = $width  / PHPExcel_Shared_Excel5::sizeCol($this->_phpSheet, PHPExcel_Cell::stringFromColumnIndex($col_end))	 * 1024; // Distance to right side of object
-		$y2 = $height / PHPExcel_Shared_Excel5::sizeRow($this->_phpSheet, $row_end + 1)	 *  256; // Distance to bottom of object
-
-		$this->_writeObjPicture($col_start, $x1,
-								 $row_start, $y1,
-								 $col_end, $x2,
-								 $row_end, $y2);
-	}
-
-	/**
-	 * Store the OBJ record that precedes an IMDATA record. This could be generalise
-	 * to support other Excel objects.
-	 *
-	 * @param integer $colL Column containing upper left corner of object
-	 * @param integer $dxL  Distance from left side of cell
-	 * @param integer $rwT  Row containing top left corner of object
-	 * @param integer $dyT  Distance from top of cell
-	 * @param integer $colR Column containing lower right corner of object
-	 * @param integer $dxR  Distance from right of cell
-	 * @param integer $rwB  Row containing bottom right corner of object
-	 * @param integer $dyB  Distance from bottom of cell
-	 */
-	private function _writeObjPicture($colL,$dxL,$rwT,$dyT,$colR,$dxR,$rwB,$dyB)
-	{
-		$record	  = 0x005d;   // Record identifier
-		$length	  = 0x003c;   // Bytes to follow
-
-		$cObj		= 0x0001;   // Count of objects in file (set to 1)
-		$OT		  = 0x0008;   // Object type. 8 = Picture
-		$id		  = 0x0001;   // Object ID
-		$grbit	   = 0x0614;   // Option flags
-
-		$cbMacro	 = 0x0000;   // Length of FMLA structure
-		$Reserved1   = 0x0000;   // Reserved
-		$Reserved2   = 0x0000;   // Reserved
-
-		$icvBack	 = 0x09;	 // Background colour
-		$icvFore	 = 0x09;	 // Foreground colour
-		$fls		 = 0x00;	 // Fill pattern
-		$fAuto	   = 0x00;	 // Automatic fill
-		$icv		 = 0x08;	 // Line colour
-		$lns		 = 0xff;	 // Line style
-		$lnw		 = 0x01;	 // Line weight
-		$fAutoB	  = 0x00;	 // Automatic border
-		$frs		 = 0x0000;   // Frame style
-		$cf		  = 0x0009;   // Image format, 9 = bitmap
-		$Reserved3   = 0x0000;   // Reserved
-		$cbPictFmla  = 0x0000;   // Length of FMLA structure
-		$Reserved4   = 0x0000;   // Reserved
-		$grbit2	  = 0x0001;   // Option flags
-		$Reserved5   = 0x0000;   // Reserved
-
-
-		$header	  = pack("vv", $record, $length);
-		$data		= pack("V", $cObj);
-		$data	   .= pack("v", $OT);
-		$data	   .= pack("v", $id);
-		$data	   .= pack("v", $grbit);
-		$data	   .= pack("v", $colL);
-		$data	   .= pack("v", $dxL);
-		$data	   .= pack("v", $rwT);
-		$data	   .= pack("v", $dyT);
-		$data	   .= pack("v", $colR);
-		$data	   .= pack("v", $dxR);
-		$data	   .= pack("v", $rwB);
-		$data	   .= pack("v", $dyB);
-		$data	   .= pack("v", $cbMacro);
-		$data	   .= pack("V", $Reserved1);
-		$data	   .= pack("v", $Reserved2);
-		$data	   .= pack("C", $icvBack);
-		$data	   .= pack("C", $icvFore);
-		$data	   .= pack("C", $fls);
-		$data	   .= pack("C", $fAuto);
-		$data	   .= pack("C", $icv);
-		$data	   .= pack("C", $lns);
-		$data	   .= pack("C", $lnw);
-		$data	   .= pack("C", $fAutoB);
-		$data	   .= pack("v", $frs);
-		$data	   .= pack("V", $cf);
-		$data	   .= pack("v", $Reserved3);
-		$data	   .= pack("v", $cbPictFmla);
-		$data	   .= pack("v", $Reserved4);
-		$data	   .= pack("v", $grbit2);
-		$data	   .= pack("V", $Reserved5);
-
-		$this->_append($header . $data);
-	}
-
-	/**
-	 * Convert a GD-image into the internal format.
-	 *
-	 * @access private
-	 * @param resource $image The image to process
-	 * @return array Array with data and properties of the bitmap
-	 */
-	function _processBitmapGd($image) {
-		$width = imagesx($image);
-		$height = imagesy($image);
-
-		$data = pack("Vvvvv", 0x000c, $width, $height, 0x01, 0x18);
-		for ($j=$height; $j--; ) {
-			for ($i=0; $i < $width; ++$i) {
-				$color = imagecolorsforindex($image, imagecolorat($image, $i, $j));
-				foreach (array("red", "green", "blue") as $key) {
-					$color[$key] = $color[$key] + round((255 - $color[$key]) * $color["alpha"] / 127);
-				}
-				$data .= chr($color["blue"]) . chr($color["green"]) . chr($color["red"]);
-			}
-			if (3*$width % 4) {
-				$data .= str_repeat("\x00", 4 - 3*$width % 4);
-			}
-		}
-
-		return array($width, $height, strlen($data), $data);
-	}
-
-	/**
-	 * Convert a 24 bit bitmap into the modified internal format used by Windows.
-	 * This is described in BITMAPCOREHEADER and BITMAPCOREINFO structures in the
-	 * MSDN library.
-	 *
-	 * @access private
-	 * @param string $bitmap The bitmap to process
-	 * @return array Array with data and properties of the bitmap
-	 */
-	function _processBitmap($bitmap)
-	{
-		// Open file.
-		$bmp_fd = @fopen($bitmap,"rb");
-		if (!$bmp_fd) {
-			throw new Exception("Couldn't import $bitmap");
-		}
-
-		// Slurp the file into a string.
-		$data = fread($bmp_fd, filesize($bitmap));
-
-		// Check that the file is big enough to be a bitmap.
-		if (strlen($data) <= 0x36) {
-			throw new Exception("$bitmap doesn't contain enough data.\n");
-		}
-
-		// The first 2 bytes are used to identify the bitmap.
-		$identity = unpack("A2ident", $data);
-		if ($identity['ident'] != "BM") {
-			throw new Exception("$bitmap doesn't appear to be a valid bitmap image.\n");
-		}
-
-		// Remove bitmap data: ID.
-		$data = substr($data, 2);
-
-		// Read and remove the bitmap size. This is more reliable than reading
-		// the data size at offset 0x22.
-		//
-		$size_array   = unpack("Vsa", substr($data, 0, 4));
-		$size   = $size_array['sa'];
-		$data   = substr($data, 4);
-		$size  -= 0x36; // Subtract size of bitmap header.
-		$size  += 0x0C; // Add size of BIFF header.
-
-		// Remove bitmap data: reserved, offset, header length.
-		$data = substr($data, 12);
-
-		// Read and remove the bitmap width and height. Verify the sizes.
-		$width_and_height = unpack("V2", substr($data, 0, 8));
-		$width  = $width_and_height[1];
-		$height = $width_and_height[2];
-		$data   = substr($data, 8);
-		if ($width > 0xFFFF) {
-			throw new Exception("$bitmap: largest image width supported is 65k.\n");
-		}
-		if ($height > 0xFFFF) {
-			throw new Exception("$bitmap: largest image height supported is 65k.\n");
-		}
-
-		// Read and remove the bitmap planes and bpp data. Verify them.
-		$planes_and_bitcount = unpack("v2", substr($data, 0, 4));
-		$data = substr($data, 4);
-		if ($planes_and_bitcount[2] != 24) { // Bitcount
-			throw new Exception("$bitmap isn't a 24bit true color bitmap.\n");
-		}
-		if ($planes_and_bitcount[1] != 1) {
-			throw new Exception("$bitmap: only 1 plane supported in bitmap image.\n");
-		}
-
-		// Read and remove the bitmap compression. Verify compression.
-		$compression = unpack("Vcomp", substr($data, 0, 4));
-		$data = substr($data, 4);
-
-		//$compression = 0;
-		if ($compression['comp'] != 0) {
-			throw new Exception("$bitmap: compression not supported in bitmap image.\n");
-		}
-
-		// Remove bitmap data: data size, hres, vres, colours, imp. colours.
-		$data = substr($data, 20);
-
-		// Add the BITMAPCOREHEADER data
-		$header  = pack("Vvvvv", 0x000c, $width, $height, 0x01, 0x18);
-		$data	= $header . $data;
-
-		return (array($width, $height, $size, $data));
-	}
-
-	/**
-	 * Store the window zoom factor. This should be a reduced fraction but for
-	 * simplicity we will store all fractions with a numerator of 100.
-	 */
-	private function _writeZoom()
-	{
-		// If scale is 100 we don't need to write a record
-		if ($this->_phpSheet->getSheetView()->getZoomScale() == 100) {
-			return;
-		}
-
-		$record	  = 0x00A0;			   // Record identifier
-		$length	  = 0x0004;			   // Bytes to follow
-
-		$header	  = pack("vv", $record, $length);
-		$data		= pack("vv", $this->_phpSheet->getSheetView()->getZoomScale(), 100);
-		$this->_append($header . $data);
-	}
-
-	/**
-	 * Get Escher object
-	 *
-	 * @return PHPExcel_Shared_Escher
-	 */
-	public function getEscher()
-	{
-		return $this->_escher;
-	}
-
-	/**
-	 * Set Escher object
-	 *
-	 * @param PHPExcel_Shared_Escher $pValue
-	 */
-	public function setEscher(PHPExcel_Shared_Escher $pValue = null)
-	{
-		$this->_escher = $pValue;
-	}
-
-	/**
-	 * Write MSODRAWING record
-	 */
-	private function _writeMsoDrawing()
-	{
-		// write the Escher stream if necessary
-		if (isset($this->_escher)) {
-			$writer = new PHPExcel_Writer_Excel5_Escher($this->_escher);
-			$data = $writer->close();
-			$spOffsets = $writer->getSpOffsets();
-			$spTypes = $writer->getSpTypes();
-			// write the neccesary MSODRAWING, OBJ records
-
-			// split the Escher stream
-			$spOffsets[0] = 0;
-			$nm = count($spOffsets) - 1; // number of shapes excluding first shape
-			for ($i = 1; $i <= $nm; ++$i) {
-				// MSODRAWING record
-				$record = 0x00EC;			// Record identifier
-
-				// chunk of Escher stream for one shape
-				$dataChunk = substr($data, $spOffsets[$i -1], $spOffsets[$i] - $spOffsets[$i - 1]);
-
-				$length = strlen($dataChunk);
-				$header = pack("vv", $record, $length);
-
-				$this->_append($header . $dataChunk);
-
-				// OBJ record
-				$record = 0x005D; // record identifier
-				$objData = '';
-
-				// ftCmo
-				if($spTypes[$i] == 0x00C9){
-					// Add ftCmo (common object data) subobject
-					$objData .=
-						pack('vvvvvVVV'
-								, 0x0015	// 0x0015 = ftCmo
-								, 0x0012	// length of ftCmo data
-								, 0x0014	// object type, 0x0014 = filter
-								, $i		// object id number, Excel seems to use 1-based index, local for the sheet
-								, 0x2101	// option flags, 0x2001 is what OpenOffice.org uses
-								, 0			// reserved
-								, 0			// reserved
-								, 0			// reserved
-						);
-
-					// Add ftSbs Scroll bar subobject
-					$objData .= pack('vv', 0x00C, 0x0014);
-					$objData .= pack('H*', '0000000000000000640001000A00000010000100');
-					// Add ftLbsData (List box data) subobject
-					$objData .= pack('vv', 0x0013, 0x1FEE);
-					$objData .= pack('H*', '00000000010001030000020008005700');
-				}
-				else {
-					// Add ftCmo (common object data) subobject
-					$objData .=
-						pack('vvvvvVVV'
-							, 0x0015	// 0x0015 = ftCmo
-							, 0x0012	// length of ftCmo data
-							, 0x0008	// object type, 0x0008 = picture
-							, $i		// object id number, Excel seems to use 1-based index, local for the sheet
-							, 0x6011	// option flags, 0x6011 is what OpenOffice.org uses
-							, 0			// reserved
-							, 0			// reserved
-							, 0			// reserved
-						);
-				}
-
-				// ftEnd
-				$objData .=
-					pack('vv'
-						, 0x0000	// 0x0000 = ftEnd
-						, 0x0000	// length of ftEnd data
-					);
-
-				$length = strlen($objData);
-				$header = pack('vv', $record, $length);
-				$this->_append($header . $objData);
-			}
-		}
-	}
-
-	/**
-	 * Store the DATAVALIDATIONS and DATAVALIDATION records.
-	 */
-	private function _writeDataValidity()
-	{
-		// Datavalidation collection
-		$dataValidationCollection = $this->_phpSheet->getDataValidationCollection();
-
-		// Write data validations?
-		if (!empty($dataValidationCollection)) {
-
-			// DATAVALIDATIONS record
-			$record = 0x01B2;	  // Record identifier
-			$length	  = 0x0012;	  // Bytes to follow
-
-			$grbit  = 0x0000;	   // Prompt box at cell, no cached validity data at DV records
-			$horPos	  = 0x00000000;  // Horizontal position of prompt box, if fixed position
-			$verPos	  = 0x00000000;  // Vertical position of prompt box, if fixed position
-			$objId  = 0xFFFFFFFF;  // Object identifier of drop down arrow object, or -1 if not visible
-
-			$header	  = pack('vv', $record, $length);
-			$data		= pack('vVVVV', $grbit, $horPos, $verPos, $objId,
-										 count($dataValidationCollection));
-			$this->_append($header.$data);
-
-			// DATAVALIDATION records
-			$record = 0x01BE;			  // Record identifier
-
-			foreach ($dataValidationCollection as $cellCoordinate => $dataValidation) {
-				// initialize record data
-				$data = '';
-
-				// options
-				$options = 0x00000000;
-
-				// data type
-				$type = $dataValidation->getType();
-				switch ($type) {
-					case PHPExcel_Cell_DataValidation::TYPE_NONE:		$type = 0x00;	break;
-					case PHPExcel_Cell_DataValidation::TYPE_WHOLE:		$type = 0x01;	break;
-					case PHPExcel_Cell_DataValidation::TYPE_DECIMAL:	$type = 0x02;	break;
-					case PHPExcel_Cell_DataValidation::TYPE_LIST:		$type = 0x03;	break;
-					case PHPExcel_Cell_DataValidation::TYPE_DATE:		$type = 0x04;	break;
-					case PHPExcel_Cell_DataValidation::TYPE_TIME:		$type = 0x05;	break;
-					case PHPExcel_Cell_DataValidation::TYPE_TEXTLENGTH:	$type = 0x06;	break;
-					case PHPExcel_Cell_DataValidation::TYPE_CUSTOM:		$type = 0x07;	break;
-				}
-				$options |= $type << 0;
-
-				// error style
-				$errorStyle = $dataValidation->getType();
-				switch ($errorStyle) {
-					case PHPExcel_Cell_DataValidation::STYLE_STOP:			$errorStyle = 0x00;		break;
-					case PHPExcel_Cell_DataValidation::STYLE_WARNING:		$errorStyle = 0x01;		break;
-					case PHPExcel_Cell_DataValidation::STYLE_INFORMATION:	$errorStyle = 0x02;		break;
-				}
-				$options |= $errorStyle << 4;
-
-				// explicit formula?
-				if ($type == 0x03 && preg_match('/^\".*\"$/', $dataValidation->getFormula1())) {
-					$options |= 0x01				<< 7;
-				}
-
-				// empty cells allowed
-				$options |= $dataValidation->getAllowBlank() << 8;
-
-				// show drop down
-				$options |= (!$dataValidation->getShowDropDown()) << 9;
-
-				// show input message
-				$options |= $dataValidation->getShowInputMessage() << 18;
-
-				// show error message
-				$options |= $dataValidation->getShowErrorMessage() << 19;
-
-				// condition operator
-				$operator = $dataValidation->getOperator();
-				switch ($operator) {
-					case PHPExcel_Cell_DataValidation::OPERATOR_BETWEEN: $operator = 0x00			;	break;
-					case PHPExcel_Cell_DataValidation::OPERATOR_NOTBETWEEN: $operator = 0x01		;	break;
-					case PHPExcel_Cell_DataValidation::OPERATOR_EQUAL: $operator = 0x02				;	break;
-					case PHPExcel_Cell_DataValidation::OPERATOR_NOTEQUAL: $operator = 0x03			;	break;
-					case PHPExcel_Cell_DataValidation::OPERATOR_GREATERTHAN: $operator = 0x04		;	break;
-					case PHPExcel_Cell_DataValidation::OPERATOR_LESSTHAN: $operator = 0x05			;	break;
-					case PHPExcel_Cell_DataValidation::OPERATOR_GREATERTHANOREQUAL: $operator = 0x06;	break;
-					case PHPExcel_Cell_DataValidation::OPERATOR_LESSTHANOREQUAL: $operator = 0x07	;	break;
-				}
-				$options |= $operator << 20;
-
-				$data		= pack('V', $options);
-
-				// prompt title
-				$promptTitle = $dataValidation->getPromptTitle() !== '' ?
-					$dataValidation->getPromptTitle() : chr(0);
-				$data .= PHPExcel_Shared_String::UTF8toBIFF8UnicodeLong($promptTitle);
-
-				// error title
-				$errorTitle = $dataValidation->getErrorTitle() !== '' ?
-					$dataValidation->getErrorTitle() : chr(0);
-				$data .= PHPExcel_Shared_String::UTF8toBIFF8UnicodeLong($errorTitle);
-
-				// prompt text
-				$prompt = $dataValidation->getPrompt() !== '' ?
-					$dataValidation->getPrompt() : chr(0);
-				$data .= PHPExcel_Shared_String::UTF8toBIFF8UnicodeLong($prompt);
-
-				// error text
-				$error = $dataValidation->getError() !== '' ?
-					$dataValidation->getError() : chr(0);
-				$data .= PHPExcel_Shared_String::UTF8toBIFF8UnicodeLong($error);
-
-				// formula 1
-				try {
-					$formula1 = $dataValidation->getFormula1();
-					if ($type == 0x03) { // list type
-						$formula1 = str_replace(',', chr(0), $formula1);
-					}
-					$this->_parser->parse($formula1);
-					$formula1 = $this->_parser->toReversePolish();
-					$sz1 = strlen($formula1);
-
-				} catch(Exception $e) {
-					$sz1 = 0;
-					$formula1 = '';
-				}
-				$data .= pack('vv', $sz1, 0x0000);
-				$data .= $formula1;
-
-				// formula 2
-				try {
-					$formula2 = $dataValidation->getFormula2();
-					if ($formula2 === '') {
-						throw new Exception('No formula2');
-					}
-					$this->_parser->parse($formula2);
-					$formula2 = $this->_parser->toReversePolish();
-					$sz2 = strlen($formula2);
-
-				} catch(Exception $e) {
-					$sz2 = 0;
-					$formula2 = '';
-				}
-				$data .= pack('vv', $sz2, 0x0000);
-				$data .= $formula2;
-
-				// cell range address list
-				$data .= pack('v', 0x0001);
-				$data .= $this->_writeBIFF8CellRangeAddressFixed($cellCoordinate);
-
-				$length = strlen($data);
-			$header = pack("vv", $record, $length);
-
-				$this->_append($header . $data);
-			}
-		}
-	}
-
-	/**
-	 * Map Error code
-	 *
-	 * @param string $errorCode
-	 * @return int
-	 */
-	private static function _mapErrorCode($errorCode) {
-		switch ($errorCode) {
-			case '#NULL!':	return 0x00;
-			case '#DIV/0!':	return 0x07;
-			case '#VALUE!':	return 0x0F;
-			case '#REF!':	return 0x17;
-			case '#NAME?':	return 0x1D;
-			case '#NUM!':	return 0x24;
-			case '#N/A':	return 0x2A;
-		}
-
-		return 0;
-	}
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+vGpmEuUGJ2zlju7/KeQ0TdveQD2QmYcW/fNPwm==

@@ -1,89 +1,29 @@
-<?php
-/**
- * Copyright 2011-2013 Anthon Pang. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- * @package WebDriver
- *
- * @author Anthon Pang <apang@softwaredevelopment.ca>
- * @author Fabrizio Branca <mail@fabrizio-branca.de>
- */
-
-namespace WebDriver;
-
-/**
- * WebDriver\Window class
- *
- * @package WebDriver
- *
- * @method array getSize() Get size of the window.
- * @method void postSize($json) Change the size of the window.
- * @method array getPosition() Get position of the window.
- * @method void postPosition($json) Change position of the window.
- * @method void maximize() Maximize the window if not already maximized.
- */
-final class Window extends AbstractWebDriver
-{
-    /**
-     * Window handle
-     *
-     * @var string
-     */
-    private $windowHandle;
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function methods()
-    {
-        return array(
-            'size' => array('GET', 'POST'),
-            'position' => array('GET', 'POST'),
-            'maximize' => array('POST'),
-        );
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function obsoleteMethods()
-    {
-        return array(
-            'restore' => array('POST'),
-        );
-    }
-
-    /**
-     * Get window handle
-     *
-     * @return string
-     */
-    public function getHandle()
-    {
-        return $this->windowHandle;
-    }
-
-    /**
-     * Constructor
-     *
-     * @param string $url          URL
-     * @param string $windowHandle Window handle
-     */
-    public function __construct($url, $windowHandle)
-    {
-        $this->windowHandle = $windowHandle;
-
-        parent::__construct($url . '/' . $windowHandle);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

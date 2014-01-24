@@ -1,107 +1,39 @@
-<?php
-// Copyright 2004-present Facebook. All Rights Reserved.
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
-interface WebDriverEventListener {
-
-  /**
-   * @param string               $url
-   * @param EventFiringWebDriver $driver
-   */
-  public function beforeNavigateTo($url, EventFiringWebDriver $driver);
-
-  /**
-   * @param string               $url
-   * @param EventFiringWebDriver $driver
-   */
-  public function afterNavigateTo($url, EventFiringWebDriver $driver);
-
-  /**
-   * @param EventFiringWebDriver $driver
-   */
-  public function beforeNavigateBack(EventFiringWebDriver $driver);
-
-  /**
-   * @param EventFiringWebDriver $driver
-   */
-  public function afterNavigateBack(EventFiringWebDriver $driver);
-
-  /**
-   * @param EventFiringWebDriver $driver
-   */
-  public function beforeNavigateForward(EventFiringWebDriver $driver);
-
-  /**
-   * @param EventFiringWebDriver $driver
-   */
-  public function afterNavigateForward(EventFiringWebDriver $driver);
-
-  /**
-   * @param WebDriverBy          $by
-   * @param EventFiringWebElement|null $element
-   * @param EventFiringWebDriver  $driver
-   */
-  public function beforeFindBy(WebDriverBy $by,
-                               $element,
-                               EventFiringWebDriver $driver);
-
-  /**
-   * @param WebDriverBy           $by
-   * @param EventFiringWebElement|null $element
-   * @param EventFiringWebDriver  $driver
-   */
-  public function afterFindBy(WebDriverBy $by,
-                              $element,
-                              EventFiringWebDriver $driver);
-
-  /**
-   * @param string               $script
-   * @param EventFiringWebDriver $driver
-   */
-  public function beforeScript($script, EventFiringWebDriver $driver);
-
-  /**
-   * @param string               $script
-   * @param EventFiringWebDriver $driver
-   */
-  public function afterScript($script, EventFiringWebDriver $driver);
-
-  /**
-   * @param EventFiringWebElement $element
-   */
-  public function beforeClickOn(EventFiringWebElement $element);
-
-  /**
-   * @param EventFiringWebElement $element
-   */
-  public function afterClickOn(EventFiringWebElement $element);
-
-  /**
-   * @param EventFiringWebElement $element
-   */
-  public function beforeChangeValueOf(EventFiringWebElement $element);
-
-  /**
-   * @param EventFiringWebElement $element
-   */
-  public function afterChangeValueOf(EventFiringWebElement $element);
-
-  /**
-   * @param WebDriverException   $exception
-   * @param EventFiringWebDriver $driver
-   */
-  public function onException(WebDriverException $exception,
-                              EventFiringWebDriver $driver = null);
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

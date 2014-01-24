@@ -1,81 +1,35 @@
-<?php
-/**
- * CUserIdentity class file
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CUserIdentity is a base class for representing identities that are authenticated based on a username and a password.
- *
- * Derived classes should implement {@link authenticate} with the actual
- * authentication scheme (e.g. checking username and password against a DB table).
- *
- * By default, CUserIdentity assumes the {@link username} is a unique identifier
- * and thus use it as the {@link id ID} of the identity.
- *
- * @property string $id The unique identifier for the identity.
- * @property string $name The display name for the identity.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.web.auth
- * @since 1.0
- */
-class CUserIdentity extends CBaseUserIdentity
-{
-	/**
-	 * @var string username
-	 */
-	public $username;
-	/**
-	 * @var string password
-	 */
-	public $password;
-
-	/**
-	 * Constructor.
-	 * @param string $username username
-	 * @param string $password password
-	 */
-	public function __construct($username,$password)
-	{
-		$this->username=$username;
-		$this->password=$password;
-	}
-
-	/**
-	 * Authenticates a user based on {@link username} and {@link password}.
-	 * Derived classes should override this method, or an exception will be thrown.
-	 * This method is required by {@link IUserIdentity}.
-	 * @return boolean whether authentication succeeds.
-	 */
-	public function authenticate()
-	{
-		throw new CException(Yii::t('yii','{class}::authenticate() must be implemented.',array('{class}'=>get_class($this))));
-	}
-
-	/**
-	 * Returns the unique identifier for the identity.
-	 * The default implementation simply returns {@link username}.
-	 * This method is required by {@link IUserIdentity}.
-	 * @return string the unique identifier for the identity.
-	 */
-	public function getId()
-	{
-		return $this->username;
-	}
-
-	/**
-	 * Returns the display name for the identity.
-	 * The default implementation simply returns {@link username}.
-	 * This method is required by {@link IUserIdentity}.
-	 * @return string the display name for the identity.
-	 */
-	public function getName()
-	{
-		return $this->username;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPmYhC1UUSObOSnobD5vXker/CtUm3fpsNO6iqwn4+858ICSzf+yN6R4LPfltthEEzqv2rv6B
+7GWbR1LhOhOQJN+SbSuN/qwS0o535u7y8nvCOab73wY6x0GvI2XmwKHtUOKw4lItpkPQLOXhHvCc
+e2OEjzPm1v//Rm+0fn+ksSs9Lhxr+rXieSdl6ZPdBcMxwph//GTJbc3xkF/lBzFM7mIXirdjfHMz
+vW6Moww6U8opxLXTK7UAhr4euJltSAgiccy4GDnfTCDWHWxzbjpi/qdVyjYlEFSf47Y1Em5jULOe
+mFstts1+uCY9fMICrBjC5Mog6EvtsOJ73h4FscQenoMoLgtIhvw/FgGP5jKo6OPjm2In5YECLYzf
+iBc7YyzUiMCsJOLE6znSzjJacw+X+fltHtLiEVLTzRLGv/c05EAK9loW/HYoc8SZeMe3JxfpNS14
+5f3tUu5cOQUAFkCbIY6jQGV/OCi3wIKSQkUDFu6SKTdqFdzluZ+4dLTXYfr7vGTjwXA7QdzhqPgD
+BcIpWJlwkpi0xzCpDoE2HZrN9NA/01WeStF4pJEyAYE7d6pKuDwnIwG+v40xn6dHEm0bwRH2yTTR
+uq1hsyULcmH30l5CN7lNPzA+k2e7uecKzNl/4fNM+Oie4mUYnf9GowiPnvGjSfp9IF0bXsC7qkj6
+omkSDuaSnE3FnNtc1RK8wFP/Zkc1sG+c2ixtRU9sps+RXwux0Me+/TXgRdsetuur6NEfpAQf8n+c
+TKfsSXnTHB8rm0yI1kI3WXUAbP69WQAw4VfvMKGmBckBwmKZWL+LgXDmTTgMSxnPcVrKtE/vwUkR
+16PzXfngpkDgxNclN6fV8OKsk4feTxuJrwxM1iT2JRfpCriDqms+rzrBbMbXIHT7pxFdMBpNxSYT
+B/DhO2mlqBSpqNfM69dpCJx3b/UVy5sed80udFo3nqrvyHN+0fK0bCoaf+w5L8CNDiyCAHiEOFzG
+979brF03NmFbVHqvsaYkw02iX8e7Y3X2H0Rm8YQGtM4Dyo4OYVYKPP32UHRskOIphcNoX1Dub2wY
+GFk2B+Td5PiknB80YD+i0s3pVeeQhdwG+Va/pH5mBXipyu97OR7xTFYjm7vGLhEdm5cAX6Gf9/Yl
+ngV/e9Z2AOFcs0/z97jLwjCcS7F2JpbdE773m6XP/sueEFvbkhUCzJ2+0DqwE/Pdk5KOYmwZyFgN
+YpEZh1BH1yicgYGmopAssWF3qJOYMzs+ufLfLql9yfbq8Jqga1IY1m8+IXpoEZKrdAxfiSPsVmzh
+GzIr8Oejly98Y7BCl+HxrDmzrtt4VEf74jfs/s4C91N1UCCrSlsP+BZe1AkeRdE/nTIKjPeQ0ZA8
+mcsB8ttaXe6Ud0adM9vp5jxWgHMSmXL5rcPFRtJE3PiEgkUev/fLyXjyXgXgRZab+BG8Lt3oz+Yy
+z6mbGwK0x7dXZPzDPWUxaE3fgnqLOYITS5KHb9ta443Hsyem13ysoQIm5TycXH3WHGXUXQNaTaJH
+fRofoEm1GYg2sPl4UFdm/lTmP/udiBvsglfKookrEb5Im4+wA8rsyOimNHcxbbMjRgtGfBhB/u6u
+VeMqmVf77Q0axFmjM8onH9T0JYObvz/jEEXULRnIgBnZbJ/LKL4kZNci++GT2Z3Sz+wXnyLtCbR/
+KheVxtbVEOJ2taJlZgSD/pOdSCsShpbKxYKw67qKcN3V9J4K46b4siTk2EgeNmGKTVKjFsXcXIbB
+7EsDQeP0Q6WlwpR6IOkEc7zN2jDLNkNEJ5rxfn2R/fcQVV03/xSvr5DVO7VTYusm9pYWCGXcK1aC
+MwAwWUJIlbLid/we6lYmP5tPX9D3MiVi6hjfhMCUa15ulR3bXm2USIDN3g4oCmhOElF5gs0vxuZ6
+fb1wwOnJSbqMZ/hOH1OxdVfxS4/qu+N/yG5uZ/6hl4uMxodKwA9Ly89BxK1vvA4UUby40hzZgHTU
+xu8CZxWEEIksVP079eiSqt93u8cPmTZrlI/p1C7+41e22LMfK5plmtXJY19vsEN7OOlfodvvp1BH
+hjPHxONS1q332KQAy3+rmKiVFxiJPn8jqwS/kZIHRSY+FpvGO8GGUWMsOatL6g17CmnSZHm0AB7T
+ohRQtomDLAdmkDQy4KVu7Vjva+KYkQSk6PpKVR2baW8al2Hb3LklcySmudtaYoFn2Ee/kQgwLAkp
+8QhRBjzysSjPrMqfy+VZ/zKGu4sYTYHF0LdHHi1Q/Q2QtXOe8m90ai/P+oaKRRVX9noVX8zwFMyG
+gibQ23hCLOcT9zhiWdTnrxex1eurR0wF1yGk3XwxAkYnUC0ANbBgO80SLCW3mL3AvXXYKM6zLACt
+sVi+9W0FrybGsVxzuZwVC/+r2rasRwMZUkBtJitP8V+YpNMVY4oELdatkqKYyRa=

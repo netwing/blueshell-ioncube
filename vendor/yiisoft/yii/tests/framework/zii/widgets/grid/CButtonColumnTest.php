@@ -1,39 +1,42 @@
-<?php
-/**
- * CButtonColumnTest
- */
-class CButtonColumnTest extends CTestCase
-{
-	public function testCallbackEncoding()
-	{
-		$expected = "jQuery(document).on('click','#grid1 a.view',function() { /* callback */ });";
-
-		$out=$this->getWidgetScript('js:function() { /* callback */ }');
-		$this->assertTrue(mb_strpos($out,$expected, null, Yii::app()->charset)!==false, "Unexpected JavaScript (js:): ".$out);
-
-		$out=$this->getWidgetScript('function() { /* callback */ }');
-		$this->assertTrue(mb_strpos($out,$expected, null, Yii::app()->charset)!==false, "Unexpected JavaScript (w/o js:): ".$out);
-
-		$out=$this->getWidgetScript(new CJavaScriptExpression('function() { /* callback */ }'));
-		$this->assertTrue(mb_strpos($out,$expected, null, Yii::app()->charset)!==false, "Unexpected JavaScript (wrap): ".$out);
-	}
-
-	private function getWidgetScript($callback)
-	{
-		Yii::import('zii.widgets.grid.CButtonColumn');
-		Yii::app()->clientScript->scripts = array();
-		ob_start();
-		$grid = new stdClass();
-		$grid->id = 'grid1';
-		$widget = $this->getMock('CButtonColumn', array('initDefaultButtons'), array($grid));
-		$widget->buttons = array(
-			'view' => array(
-				'click'=>$callback,
-			),
-		);
-		$widget->init();
-		Yii::app()->clientScript->render($out);
-		ob_end_clean();
-		return $out;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cP/rBjrV/y9GBc2tw8dJqhSih/LyGcm5RHeQiLUHCMmElzAzK6L10S3HYhjHlWVSgvnAVJoT0
+iQSFtwaQfzUELwoXUO4cSrjSFJ49VCsSXhIVjg/8vyWgAfhFVVxUQaIfPtp/w51TOZt7IiiSzarL
+NsI9ZCxiPXVurm9dWC5Q2ENV2XciNakVzHvwRImNy4ClkX6G5FxklTl7eZ5Clw40ey2cHl4BTAJn
+VFwNH/dlMWABlYtxmk2lhr4euJltSAgiccy4GDnfT59c2YZ3kwc4GuG2v40PQKf4/vbG6qI9ZxOT
+CoxntgvcTmthcd68zhya9L6sYgsEoGU5z0WNWW64kq88OLxIDDY9X9zoMm8ZOgtLmpEBOxsDGfig
+7LYPJVuMsLzn/EY+f3CgtMzUsRSDbSdLh4MQwhNA/TBe7sEVhbdIU1teXz0UHfLXPqbyAYACX2Cm
+WB71j9CZ6UMGBlOxyTXJrUhVvmYOHuA7tVvwide13QGkoImdf0dLHttZjzLbutetKUPSmAnE6wbs
+AuEwBP+j3BRxC3hHunc7ZI4RftSlrmjnl9mlN7UhvgiLfAJHzE3Gb+/Swfs/49HePRtPfKMY20ch
+AJiUamBLLbQecEHj8kpzRaWZcsB/Zz1bme2G+gRUUq5jJXoLQm+8fkrL5wv5C6yqhPtLOMQ8A1V5
+8pM8Z0Lu+kDoHH9uzgQyx7fEL2uMr7SdpA6kVF9UCNNzjKCTvXXkKLF8XhDM0uK9oRhKWuU8hHsf
+cjrBqzL2kiAag1mIdusDVBw18DFmC/w20IV4uzxSQxkw/dgzjXeM1B3GcTqZ+c5+12Zm94NB/IyL
+2zboauVkKYF0gQhmkAtGDZYkl3LP53aZ1I34g6XEOVMfqdD5WDSFY+Gf68GM/FhSeyL0jQPBX8Yl
+xU0RfGU3B9IJ/lle11xFr7ejDu4lPrpQRFyN/v7JN+d8SYUGei470ne9QaZPY9RyKtpSRGtBAhYW
+OGNjDF6yjnTcOWM+xbFSebgGaa6ouDWjoIw8SBTyYnxao6/sY4p82+cavjoo7MCrqymqjOhcFkU6
+Oq13eSRY+2RKQ/G18vVpeapyBLAIM69dz6TLtZgIzVfWNBjlbGe9cSSRaYZoM4p/PCkKBOOCnFlW
+7i2Ga+j7WdQ4iZThTiYPptP9hm8+suTL8EKmhwKbOOB4TMTczzWiQNyGPmffWA5NjNTORi46LY2i
+WLVtzoj2W+vxbKPtu4cBqJ/pTuhVyu+yehXcbe+6/LY1KFBaTgufRdGt7RRIetli71GXEG4SzP0R
+y0LIKafD2lluVbN5sVPc2L9eLD8iYWjh/zeumUCQfun/L/nBOxG3UDhaiwGqwWr8QDxt0n2CP1N1
++kCDcLuRwmTwxpqRBCOWpE/vQD//WNOeb/JlcFvDPMDf+p1bkXB/mb7O9qwVIs7NmxaYrWQzC3w7
+icVo80RefrBbtTt8r+KAgMjMovDAdKJ8Lx7hgIB4QjvVs61K15KucW8FWtNidMn6Po0mAxkCKqsB
+L1tJ19M4hDUbws75SElhHOIZ8TFprvz7xlcVdGSZtfdoDIDFp1hGRhRD2zS1yE5fhOal+fdFz6PI
+5taW9fRML1rxPVm/gaVPzsyJDD7MTVavT9Go69DVgoNVqEepcsupGJt7Wpztq/8Gqtnpp1F/lAIu
+lJYXea518LT32tt0MrNFnxDR2GRN8huAGBynbJsg71EMauR0uVBvqcdUUz5g47weMrqu7gMh+QEv
+90bo+h4d3G2ehu6NsjitX/4L0GontLbFsjM93Kgu1HB+4MYoOMQxVPmvzR/qQoDZrhp82JlmomQW
+JUlmzCxYZgfrNzZXgW4wDNhmvZDEdgzaR76KRj7VQTtic1euuuu+IzYoehiuHxgFopBivvje8fFK
+hKEsPpe10onKIuCT6LpdieRXpZKR9K5Lw5dGSODnVGtKbVHIoaVIzIofl0aWRYUmJr0TtdTg+4sZ
+mW+CFUWe1J7jn29jFO+mpJrH9Pf1r2gc9lyz5Qws+Kd9dtYlUAA0CklDZ/zdv9uiebZs+czOA+bV
+hQPb3UXxkUvRQ311sYaL7AWKwkMNV7fZWpCKW6DMGuYNoLnbmFWjXfzkNzXxAa91LSbdaXIU1B+i
+J2OAjX0kl/lY08jEWIOxPVIH4xIL+12c/s9f1O47FtC294VSvysprPZk1K+bCPOeiwXL1g5APpxx
+mZOw14+GaiYKp9HILuzoCuVpvsncyKPom7VswOBkdl9j+bnvNuycnawtRi6lkto97dfVJ5COyMQp
+i163bhaGm0T08bmEbvVDB+2AYMF5XfPfhKYR/ZGAtmgDATWnWhzzJANs3KHciOvjmGPmK/DQOlt4
+NuX6n3bJCJcLo8CdQQBBilHPDKGbmQZGPje8I49NaqJ4dwzGf4xSjKBDCf5Zx4Mm4kOGurgOfuR0
+++Lj3izMBYV4OZc+JbHFWjNF3/nO7k/rr82ZuCQSdORfoHlADEijcf03d0JaIHnjXkS1Ufr2Iouj
+lIZfaqVvD9+PZxipBjVROM6wjexuA3QrxJkZG8077NDs1Amfe/8Ij1gO3VFAnSxcKwwYpEDV6PuD
+0V+tnr17h8sxboXkHl1mNE/pMO5brnP/RXjZxW3giuNMoTONIET7Ub0EhO79T5zGNChChVYnA2PG
+4fjage4v+GFwsYR+6Ur2IwmN//Bf7XmDWvEi672H4RLyfN8RLulJU6VMvX/BdELTLPCCt671Tqms
+z4KFz+hqRZEsPNRcDBKcLMRz7aKqeFaTH45dYyGvoZKxqbd7DxL5RlXjvDNhpchuy5LVP9eInnYG
+UZs8nTIw0A0kAmVxcxLCtVwYqIXzuHrFBFKTHy4RU/Hub9g5N9h0f4BI443q2Fj+L2HfrHyTFSYf
+9CWxmwy5u0b/

@@ -1,1857 +1,809 @@
-<?php
-/**
- * PHP_ParserGenerator, a php 5 parser generator.
- *
- * This is a direct port of the Lemon parser generator, found at
- * {@link http://www.hwaci.com/sw/lemon/}
- *
- * PHP version 5
- *
- * LICENSE:
- *
- * Copyright (c) 2006, Gregory Beaver <cellog@php.net>
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *     * Redistributions of source code must retain the above copyright
- *       notice, this list of conditions and the following disclaimer.
- *     * Redistributions in binary form must reproduce the above copyright
- *       notice, this list of conditions and the following disclaimer in
- *       the documentation and/or other materials provided with the distribution.
- *     * Neither the name of the PHP_ParserGenerator nor the names of its
- *       contributors may be used to endorse or promote products derived
- *       from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
- * IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
- * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
- * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
- * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
- * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
- * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
- * PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
- * OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
- * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
- * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- *
- * @category   php
- * @package    PHP_ParserGenerator
- * @author     Gregory Beaver <cellog@php.net>
- * @copyright  2006 Gregory Beaver
- * @license    http://www.opensource.org/licenses/bsd-license.php New BSD License
- * @version    CVS: $Id: Data.php,v 1.2 2007/03/04 17:52:05 cellog Exp $
- * @since      File available since Release 0.1.0
- */
-/**
-/**
- * The state vector for the entire parser generator is recorded in
- * this class.
- *
- * @package    PHP_ParserGenerator
- * @author     Gregory Beaver <cellog@php.net>
- * @copyright  2006 Gregory Beaver
- * @license    http://www.opensource.org/licenses/bsd-license.php New BSD License
- * @version    0.1.5
- * @since      Class available since Release 0.1.0
- */
-
-class PHP_ParserGenerator_Data
-{
-    /**
-     * Used for terminal and non-terminal offsets into the action table
-     * when their default should be used instead
-     */
-    const NO_OFFSET = -2147483647;
-    /**
-     * Table of states sorted by state number
-     * @var array array of {@link PHP_ParserGenerator_State} objects
-     */
-    public $sorted;
-    /**
-     * List of all rules
-     * @var PHP_ParserGenerator_Rule
-     */
-    public $rule;
-    /**
-     * Number of states
-     * @var int
-     */
-    public $nstate;
-    /**
-     * Number of rules
-     * @var int
-     */
-    public $nrule;
-    /**
-     * Number of terminal and nonterminal symbols
-     * @var int
-     */
-    public $nsymbol;
-    /**
-     * Number of terminal symbols (tokens)
-     * @var int
-     */
-    public $nterminal;
-    /**
-     * Sorted array of pointers to symbols
-     * @var array array of {@link PHP_ParserGenerator_Symbol} objects
-     */
-    public $symbols = array();
-    /**
-     * Number of errors
-     * @var int
-     */
-    public $errorcnt;
-    /**
-     * The error symbol
-     * @var PHP_ParserGenerator_Symbol
-     */
-    public $errsym;
-    /**
-     * Name of the generated parser
-     * @var string
-     */
-    public $name;
-    /**
-     * Unused relic from the C version
-     *
-     * Type of terminal symbols in the parser stack
-     * @var string
-     */
-    public $tokentype;
-    /**
-     * Unused relic from the C version
-     *
-     * The default type of non-terminal symbols
-     * @var string
-     */
-    public $vartype;
-    /**
-     * Name of the start symbol for the grammar
-     * @var string
-     */
-    public $start;
-    /**
-     * Size of the parser stack
-     *
-     * This is 100 by default, but is set with the %stack_size directive
-     * @var int
-     */
-    public $stacksize;
-    /**
-     * Code to put at the start of the parser file
-     *
-     * This is set by the %include directive
-     * @var string
-     */
-    public $include_code;
-    /**
-     * Line number for start of include code
-     * @var int
-     */
-    public $includeln;
-    /**
-     * Code to put in the parser class
-     *
-     * This is set by the %include_class directive
-     * @var string
-     */
-    public $include_classcode;
-    /**
-     * Line number for start of include code
-     * @var int
-     */
-    public $include_classln;
-    /**
-     * any extends/implements code
-     *
-     * This is set by the %declare_class directive
-     * @var string
-     */
-    /**
-     * Line number for class declaration code
-     * @var int
-     */
-    public $declare_classcode;
-    /**
-     * Line number for start of class declaration code
-     * @var int
-     */
-    public $declare_classln;
-    /**
-     * Code to execute when a syntax error is seen
-     *
-     * This is set by the %syntax_error directive
-     * @var string
-     */
-    public $error;
-    /**
-     * Line number for start of error code
-     * @var int
-     */
-    public $errorln;
-    /**
-     * Code to execute on a stack overflow
-     *
-     * This is set by the %stack_overflow directive
-     */
-    public $overflow;
-    /**
-     * Line number for start of overflow code
-     * @var int
-     */
-    public $overflowln;
-    /**
-     * Code to execute on parser failure
-     *
-     * This is set by the %parse_failure directive
-     * @var string
-     */
-    public $failure;
-    /**
-     * Line number for start of failure code
-     * @var int
-     */
-    public $failureln;
-    /**
-     * Code to execute when the parser acccepts (completes parsing)
-     *
-     * This is set by the %parse_accept directive
-     * @var string
-     */
-    public $accept;
-    /**
-     * Line number for the start of accept code
-     * @var int
-     */
-    public $acceptln;
-    /**
-     * Code appended to the generated file
-     *
-     * This is set by the %code directive
-     * @var string
-     */
-    public $extracode;
-    /**
-     * Line number for the start of the extra code
-     * @var int
-     */
-    public $extracodeln;
-    /**
-     * Code to execute to destroy token data
-     *
-     * This is set by the %token_destructor directive
-     * @var string
-     */
-    public $tokendest;
-    /**
-     * Line number for token destroyer code
-     * @var int
-     */
-    public $tokendestln;
-    /**
-     * Code for the default non-terminal destructor
-     *
-     * This is set by the %default_destructor directive
-     * @var string
-     */
-    public $vardest;
-    /**
-     * Line number for default non-terminal destructor code
-     * @var int
-     */
-    public $vardestln;
-    /**
-     * Name of the input file
-     * @var string
-     */
-    public $filename;
-    /**
-     * Name of the input file without its extension
-     * @var string
-     */
-    public $filenosuffix;
-    /**
-     * Name of the current output file
-     * @var string
-     */
-    public $outname;
-    /**
-     * A prefix added to token names
-     * @var string
-     */
-    public $tokenprefix;
-    /**
-     * Number of parsing conflicts
-     * @var int
-     */
-    public $nconflict;
-    /**
-     * Size of the parse tables
-     * @var int
-     */
-    public $tablesize;
-    /**
-     * Public only basis configurations
-     */
-    public $basisflag;
-    /**
-     * True if any %fallback is seen in the grammer
-     * @var boolean
-     */
-    public $has_fallback;
-    /**
-     * Name of the program
-     * @var string
-     */
-    public $argv0;
-
-    /* Find a precedence symbol of every rule in the grammar.
-     *
-     * Those rules which have a precedence symbol coded in the input
-     * grammar using the "[symbol]" construct will already have the
-     * $rp->precsym field filled.  Other rules take as their precedence
-     * symbol the first RHS symbol with a defined precedence.  If there
-     * are not RHS symbols with a defined precedence, the precedence
-     * symbol field is left blank.
-     */
-    public function FindRulePrecedences()
-    {
-        for ($rp = $this->rule; $rp; $rp = $rp->next) {
-            if ($rp->precsym === 0) {
-                for ($i = 0; $i < $rp->nrhs && $rp->precsym === 0; $i++) {
-                    $sp = $rp->rhs[$i];
-                    if ($sp->type == PHP_ParserGenerator_Symbol::MULTITERMINAL) {
-                        for ($j = 0; $j < $sp->nsubsym; $j++) {
-                            if ($sp->subsym[$j]->prec >= 0) {
-                                $rp->precsym = $sp->subsym[$j];
-                                break;
-                            }
-                        }
-                    } elseif ($sp->prec >= 0) {
-                        $rp->precsym = $rp->rhs[$i];
-                    }
-                }
-            }
-        }
-    }
-
-    /**
-     * Find all nonterminals which will generate the empty string.
-     * Then go back and compute the first sets of every nonterminal.
-     * The first set is the set of all terminal symbols which can begin
-     * a string generated by that nonterminal.
-     */
-    public function FindFirstSets()
-    {
-        for ($i = 0; $i < $this->nsymbol; $i++) {
-            $this->symbols[$i]->lambda = false;
-        }
-        for ($i = $this->nterminal; $i < $this->nsymbol; $i++) {
-            $this->symbols[$i]->firstset = array();
-        }
-
-        /* First compute all lambdas */
-        do {
-            $progress = 0;
-            for ($rp = $this->rule; $rp; $rp = $rp->next) {
-                if ($rp->lhs->lambda) {
-                    continue;
-                }
-                for ($i = 0; $i < $rp->nrhs; $i++) {
-                    $sp = $rp->rhs[$i];
-                    if ($sp->type != PHP_ParserGenerator_Symbol::TERMINAL || $sp->lambda === false) {
-                        break;
-                    }
-                }
-                if ($i === $rp->nrhs) {
-                    $rp->lhs->lambda = true;
-                    $progress = 1;
-                }
-            }
-        } while ($progress);
-
-        /* Now compute all first sets */
-        do {
-            $progress = 0;
-            for ($rp = $this->rule; $rp; $rp = $rp->next) {
-                $s1 = $rp->lhs;
-                for ($i = 0; $i < $rp->nrhs; $i++) {
-                    $s2 = $rp->rhs[$i];
-                    if ($s2->type == PHP_ParserGenerator_Symbol::TERMINAL) {
-                        //progress += SetAdd(s1->firstset,s2->index);
-                        $progress += isset($s1->firstset[$s2->index]) ? 0 : 1;
-                        $s1->firstset[$s2->index] = 1;
-                        break;
-                    } elseif ($s2->type == PHP_ParserGenerator_Symbol::MULTITERMINAL) {
-                        for ($j = 0; $j < $s2->nsubsym; $j++) {
-                            //progress += SetAdd(s1->firstset,s2->subsym[j]->index);
-                            $progress += isset($s1->firstset[$s2->subsym[$j]->index]) ? 0 : 1;
-                            $s1->firstset[$s2->subsym[$j]->index] = 1;
-                        }
-                        break;
-                    } elseif ($s1 === $s2) {
-                        if ($s1->lambda === false) {
-                            break;
-                        }
-                    } else {
-                        //progress += SetUnion(s1->firstset,s2->firstset);
-                        $test = array_diff_key($s2->firstset, $s1->firstset);
-                        if (count($test)) {
-                            $progress++;
-                            $s1->firstset += $test;
-                        }
-                        if ($s2->lambda === false) {
-                            break;
-                        }
-                    }
-                }
-            }
-        } while ($progress);
-    }
-
-    /**
-     * Compute all LR(0) states for the grammar.  Links
-     * are added to between some states so that the LR(1) follow sets
-     * can be computed later.
-     */
-    public function FindStates()
-    {
-        PHP_ParserGenerator_Config::Configlist_init();
-
-        /* Find the start symbol */
-        if ($this->start) {
-            $sp = PHP_ParserGenerator_Symbol::Symbol_find($this->start);
-            if ($sp == 0) {
-                PHP_ParserGenerator::ErrorMsg($this->filename, 0,
-                    "The specified start symbol \"%s\" is not " .
-                    "in a nonterminal of the grammar.  \"%s\" will be used as the start " .
-                    "symbol instead.", $this->start, $this->rule->lhs->name);
-                $this->errorcnt++;
-                $sp = $this->rule->lhs;
-            }
-        } else {
-            $sp = $this->rule->lhs;
-        }
-
-        /* Make sure the start symbol doesn't occur on the right-hand side of
-        ** any rule.  Report an error if it does.  (YACC would generate a new
-        ** start symbol in this case.) */
-        for ($rp = $this->rule; $rp; $rp = $rp->next) {
-            for ($i = 0; $i < $rp->nrhs; $i++) {
-                if ($rp->rhs[$i]->type == PHP_ParserGenerator_Symbol::MULTITERMINAL) {
-                    foreach ($rp->rhs[$i]->subsym as $subsp) {
-                        if ($subsp === $sp) {
-                            PHP_ParserGenerator::ErrorMsg($this->filename, 0,
-                                "The start symbol \"%s\" occurs on the " .
-                                "right-hand side of a rule. This will result in a parser which " .
-                                "does not work properly.", $sp->name);
-                            $this->errorcnt++;
-                        }
-                    }
-                } elseif ($rp->rhs[$i] === $sp) {
-                    PHP_ParserGenerator::ErrorMsg($this->filename, 0,
-                        "The start symbol \"%s\" occurs on the " .
-                        "right-hand side of a rule. This will result in a parser which " .
-                        "does not work properly.", $sp->name);
-                    $this->errorcnt++;
-                }
-            }
-        }
-
-        /* The basis configuration set for the first state
-        ** is all rules which have the start symbol as their
-        ** left-hand side */
-        for ($rp = $sp->rule; $rp; $rp = $rp->nextlhs) {
-            $newcfp = PHP_ParserGenerator_Config::Configlist_addbasis($rp, 0);
-            $newcfp->fws[0] = 1;
-        }
-
-        /* Compute the first state.  All other states will be
-        ** computed automatically during the computation of the first one.
-        ** The returned pointer to the first state is not used. */
-        $newstp = array();
-        $newstp = $this->getstate();
-        if (is_array($newstp)) {
-            $this->buildshifts($newstp[0]); /* Recursively compute successor states */
-        }
-    }
-
-    /**
-     * @return PHP_ParserGenerator_State
-     */
-    private function getstate()
-    {
-        /* Extract the sorted basis of the new state.  The basis was constructed
-        ** by prior calls to "Configlist_addbasis()". */
-        PHP_ParserGenerator_Config::Configlist_sortbasis();
-        $bp = PHP_ParserGenerator_Config::Configlist_basis();
-
-        /* Get a state with the same basis */
-        $stp = PHP_ParserGenerator_State::State_find($bp);
-        if ($stp) {
-            /* A state with the same basis already exists!  Copy all the follow-set
-            ** propagation links from the state under construction into the
-            ** preexisting state, then return a pointer to the preexisting state */
-            for ($x = $bp, $y = $stp->bp; $x && $y; $x = $x->bp, $y = $y->bp) {
-                PHP_ParserGenerator_PropagationLink::Plink_copy($y->bplp, $x->bplp);
-                PHP_ParserGenerator_PropagationLink::Plink_delete($x->fplp);
-                $x->fplp = $x->bplp = 0;
-            }
-            $cfp = PHP_ParserGenerator_Config::Configlist_return();
-            PHP_ParserGenerator_Config::Configlist_eat($cfp);
-        } else {
-            /* This really is a new state.  Construct all the details */
-            PHP_ParserGenerator_Config::Configlist_closure($this);    /* Compute the configuration closure */
-            PHP_ParserGenerator_Config::Configlist_sort();           /* Sort the configuration closure */
-            $cfp = PHP_ParserGenerator_Config::Configlist_return();   /* Get a pointer to the config list */
-            $stp = new PHP_ParserGenerator_State;           /* A new state structure */
-            $stp->bp = $bp;                /* Remember the configuration basis */
-            $stp->cfp = $cfp;              /* Remember the configuration closure */
-            $stp->statenum = $this->nstate++; /* Every state gets a sequence number */
-            $stp->ap = 0;                 /* No actions, yet. */
-            PHP_ParserGenerator_State::State_insert($stp, $stp->bp);   /* Add to the state table */
-            // this can't work, recursion is too deep, move it into FindStates()
-            //$this->buildshifts($stp);       /* Recursively compute successor states */
-            return array($stp);
-        }
-
-        return $stp;
-    }
-
-    /**
-     * Construct all successor states to the given state.  A "successor"
-     * state is any state which can be reached by a shift action.
-     * @param PHP_ParserGenerator_Data
-     * @param PHP_ParserGenerator_State The state from which successors are computed
-     */
-    private function buildshifts(PHP_ParserGenerator_State $stp)
-    {
-//    struct config *cfp;  /* For looping thru the config closure of "stp" */
-//    struct config *bcfp; /* For the inner loop on config closure of "stp" */
-//    struct config *new;  /* */
-//    struct symbol *sp;   /* Symbol following the dot in configuration "cfp" */
-//    struct symbol *bsp;  /* Symbol following the dot in configuration "bcfp" */
-//    struct state *newstp; /* A pointer to a successor state */
-
-        /* Each configuration becomes complete after it contibutes to a successor
-        ** state.  Initially, all configurations are incomplete */
-        $cfp = $stp->cfp;
-        for ($cfp = $stp->cfp; $cfp; $cfp = $cfp->next) {
-            $cfp->status = PHP_ParserGenerator_Config::INCOMPLETE;
-        }
-
-        /* Loop through all configurations of the state "stp" */
-        for ($cfp = $stp->cfp; $cfp; $cfp = $cfp->next) {
-            if ($cfp->status == PHP_ParserGenerator_Config::COMPLETE) {
-                continue;    /* Already used by inner loop */
-            }
-            if ($cfp->dot >= $cfp->rp->nrhs) {
-                continue;  /* Can't shift this config */
-            }
-            PHP_ParserGenerator_Config::Configlist_reset();                      /* Reset the new config set */
-            $sp = $cfp->rp->rhs[$cfp->dot];             /* Symbol after the dot */
-
-            /* For every configuration in the state "stp" which has the symbol "sp"
-            ** following its dot, add the same configuration to the basis set under
-            ** construction but with the dot shifted one symbol to the right. */
-            $bcfp = $cfp;
-            for ($bcfp = $cfp; $bcfp; $bcfp = $bcfp->next) {
-                if ($bcfp->status == PHP_ParserGenerator_Config::COMPLETE) {
-                    continue;    /* Already used */
-                }
-                if ($bcfp->dot >= $bcfp->rp->nrhs) {
-                    continue; /* Can't shift this one */
-                }
-                $bsp = $bcfp->rp->rhs[$bcfp->dot];           /* Get symbol after dot */
-                if (!PHP_ParserGenerator_Symbol::same_symbol($bsp, $sp)) {
-                    continue;      /* Must be same as for "cfp" */
-                }
-                $bcfp->status = PHP_ParserGenerator_Config::COMPLETE;             /* Mark this config as used */
-                $new = PHP_ParserGenerator_Config::Configlist_addbasis($bcfp->rp, $bcfp->dot + 1);
-                PHP_ParserGenerator_PropagationLink::Plink_add($new->bplp, $bcfp);
-            }
-
-            /* Get a pointer to the state described by the basis configuration set
-            ** constructed in the preceding loop */
-            $newstp = $this->getstate();
-            if (is_array($newstp)) {
-                $this->buildshifts($newstp[0]); /* Recursively compute successor states */
-                $newstp = $newstp[0];
-            }
-
-            /* The state "newstp" is reached from the state "stp" by a shift action
-            ** on the symbol "sp" */
-            if ($sp->type == PHP_ParserGenerator_Symbol::MULTITERMINAL) {
-                for ($i = 0; $i < $sp->nsubsym; $i++) {
-                    PHP_ParserGenerator_Action::Action_add($stp->ap, PHP_ParserGenerator_Action::SHIFT, $sp->subsym[$i],
-                                            $newstp);
-                }
-            } else {
-                PHP_ParserGenerator_Action::Action_add($stp->ap, PHP_ParserGenerator_Action::SHIFT, $sp, $newstp);
-            }
-        }
-    }
-
-    /**
-     * Construct the propagation links
-     */
-    public function FindLinks()
-    {
-        /* Housekeeping detail:
-        ** Add to every propagate link a pointer back to the state to
-        ** which the link is attached. */
-        foreach ($this->sorted as $info) {
-            $info->key->stp = $info->data;
-        }
-
-        /* Convert all backlinks into forward links.  Only the forward
-        ** links are used in the follow-set computation. */
-        for ($i = 0; $i < $this->nstate; $i++) {
-            $stp = $this->sorted[$i];
-            for ($cfp = $stp->data->cfp; $cfp; $cfp = $cfp->next) {
-                for ($plp = $cfp->bplp; $plp; $plp = $plp->next) {
-                    $other = $plp->cfp;
-                    PHP_ParserGenerator_PropagationLink::Plink_add($other->fplp, $cfp);
-                }
-            }
-        }
-    }
-
-    /**
-     * Compute the reduce actions, and resolve conflicts.
-     */
-    public function FindActions()
-    {
-        /* Add all of the reduce actions
-        ** A reduce action is added for each element of the followset of
-        ** a configuration which has its dot at the extreme right.
-        */
-        for ($i = 0; $i < $this->nstate; $i++) {   /* Loop over all states */
-            $stp = $this->sorted[$i]->data;
-            for ($cfp = $stp->cfp; $cfp; $cfp = $cfp->next) {
-                /* Loop over all configurations */
-                if ($cfp->rp->nrhs == $cfp->dot) {        /* Is dot at extreme right? */
-                    for ($j = 0; $j < $this->nterminal; $j++) {
-                        if (isset($cfp->fws[$j])) {
-                            /* Add a reduce action to the state "stp" which will reduce by the
-                            ** rule "cfp->rp" if the lookahead symbol is "$this->symbols[j]" */
-                            PHP_ParserGenerator_Action::Action_add($stp->ap, PHP_ParserGenerator_Action::REDUCE,
-                                                    $this->symbols[$j], $cfp->rp);
-                        }
-                    }
-                }
-            }
-        }
-
-        /* Add the accepting token */
-        if ($this->start instanceof PHP_ParserGenerator_Symbol) {
-            $sp = PHP_ParserGenerator_Symbol::Symbol_find($this->start);
-            if ($sp === 0) {
-                $sp = $this->rule->lhs;
-            }
-        } else {
-            $sp = $this->rule->lhs;
-        }
-        /* Add to the first state (which is always the starting state of the
-        ** finite state machine) an action to ACCEPT if the lookahead is the
-        ** start nonterminal.  */
-        PHP_ParserGenerator_Action::Action_add($this->sorted[0]->data->ap, PHP_ParserGenerator_Action::ACCEPT, $sp, 0);
-
-        /* Resolve conflicts */
-        for ($i = 0; $i < $this->nstate; $i++) {
-    //    struct action *ap, *nap;
-    //    struct state *stp;
-            $stp = $this->sorted[$i]->data;
-            if (!$stp->ap) {
-                throw new Exception('state has no actions associated');
-            }
-            echo 'processing state ' . $stp->statenum . " actions:\n";
-            for ($ap = $stp->ap; $ap !== 0 && $ap->next !== 0; $ap = $ap->next) {
-                echo '  Action ';
-                $ap->display(true);
-            }
-            $stp->ap = PHP_ParserGenerator_Action::Action_sort($stp->ap);
-            for ($ap = $stp->ap; $ap !== 0 && $ap->next !== 0; $ap = $ap->next) {
-                for ($nap = $ap->next; $nap !== 0 && $nap->sp === $ap->sp ; $nap = $nap->next) {
-                    /* The two actions "ap" and "nap" have the same lookahead.
-                    ** Figure out which one should be used */
-                    $this->nconflict += $this->resolve_conflict($ap, $nap, $this->errsym);
-                }
-            }
-        }
-
-        /* Report an error for each rule that can never be reduced. */
-        for ($rp = $this->rule; $rp; $rp = $rp->next) {
-            $rp->canReduce = false;
-        }
-        for ($i = 0; $i < $this->nstate; $i++) {
-            for ($ap = $this->sorted[$i]->data->ap; $ap !== 0; $ap = $ap->next) {
-                if ($ap->type == PHP_ParserGenerator_Action::REDUCE) {
-                    $ap->x->canReduce = true;
-                }
-            }
-        }
-        for ($rp = $this->rule; $rp !== 0; $rp = $rp->next) {
-            if ($rp->canReduce) {
-                continue;
-            }
-            PHP_ParserGenerator::ErrorMsg($this->filename, $rp->ruleline, "This rule can not be reduced (is not connected to the start symbol).\n");
-            $this->errorcnt++;
-        }
-    }
-
-    /** Resolve a conflict between the two given actions.  If the
-     * conflict can't be resolve, return non-zero.
-     *
-     * NO LONGER TRUE:
-     *   To resolve a conflict, first look to see if either action
-     *   is on an error rule.  In that case, take the action which
-     *   is not associated with the error rule.  If neither or both
-     *   actions are associated with an error rule, then try to
-     *   use precedence to resolve the conflict.
-     *
-     * If either action is a SHIFT, then it must be apx.  This
-     * function won't work if apx->type==REDUCE and apy->type==SHIFT.
-     * @param PHP_ParserGenerator_Action
-     * @param PHP_ParserGenerator_Action
-     * @param PHP_ParserGenerator_Symbol|null The error symbol (if defined.  NULL otherwise)
-     */
-    public function resolve_conflict($apx, $apy, $errsym)
-    {
-        $errcnt = 0;
-        if ($apx->sp !== $apy->sp) {
-            throw new Exception('no conflict but resolve_conflict called');
-        }
-        if ($apx->type == PHP_ParserGenerator_Action::SHIFT && $apy->type == PHP_ParserGenerator_Action::REDUCE) {
-            $spx = $apx->sp;
-            $spy = $apy->x->precsym;
-            if ($spy === 0 || $spx->prec < 0 || $spy->prec < 0) {
-                /* Not enough precedence information. */
-                $apy->type = PHP_ParserGenerator_Action::CONFLICT;
-                $errcnt++;
-            } elseif ($spx->prec > $spy->prec) {    /* Lower precedence wins */
-                $apy->type = PHP_ParserGenerator_Action::RD_RESOLVED;
-            } elseif ($spx->prec < $spy->prec) {
-                $apx->type = PHP_ParserGenerator_Action::SH_RESOLVED;
-            } elseif ($spx->prec === $spy->prec && $spx->assoc == PHP_ParserGenerator_Symbol::RIGHT) {
-                /* Use operator */
-                $apy->type = PHP_ParserGenerator_Action::RD_RESOLVED;                       /* associativity */
-            } elseif ($spx->prec === $spy->prec && $spx->assoc == PHP_ParserGenerator_Symbol::LEFT) {
-                /* to break tie */
-                $apx->type = PHP_ParserGenerator_Action::SH_RESOLVED;
-            } else {
-                if ($spx->prec !== $spy->prec || $spx->assoc !== PHP_ParserGenerator_Symbol::NONE) {
-                    throw new Exception('$spx->prec !== $spy->prec || $spx->assoc !== PHP_ParserGenerator_Symbol::NONE');
-                }
-                $apy->type = PHP_ParserGenerator_Action::CONFLICT;
-                $errcnt++;
-            }
-        } elseif ($apx->type == PHP_ParserGenerator_Action::REDUCE && $apy->type == PHP_ParserGenerator_Action::REDUCE) {
-            $spx = $apx->x->precsym;
-            $spy = $apy->x->precsym;
-            if ($spx === 0 || $spy === 0 || $spx->prec < 0 ||
-                  $spy->prec < 0 || $spx->prec === $spy->prec) {
-                $apy->type = PHP_ParserGenerator_Action::CONFLICT;
-                $errcnt++;
-            } elseif ($spx->prec > $spy->prec) {
-                $apy->type = PHP_ParserGenerator_Action::RD_RESOLVED;
-            } elseif ($spx->prec < $spy->prec) {
-                $apx->type = PHP_ParserGenerator_Action::RD_RESOLVED;
-            }
-        } else {
-            if ($apx->type!== PHP_ParserGenerator_Action::SH_RESOLVED &&
-                $apx->type!== PHP_ParserGenerator_Action::RD_RESOLVED &&
-                $apx->type!== PHP_ParserGenerator_Action::CONFLICT &&
-                $apy->type!== PHP_ParserGenerator_Action::SH_RESOLVED &&
-                $apy->type!== PHP_ParserGenerator_Action::RD_RESOLVED &&
-                $apy->type!== PHP_ParserGenerator_Action::CONFLICT) {
-                throw new Exception('$apx->type!== PHP_ParserGenerator_Action::SH_RESOLVED &&
-                $apx->type!== PHP_ParserGenerator_Action::RD_RESOLVED &&
-                $apx->type!== PHP_ParserGenerator_Action::CONFLICT &&
-                $apy->type!== PHP_ParserGenerator_Action::SH_RESOLVED &&
-                $apy->type!== PHP_ParserGenerator_Action::RD_RESOLVED &&
-                $apy->type!== PHP_ParserGenerator_Action::CONFLICT');
-            }
-            /* The REDUCE/SHIFT case cannot happen because SHIFTs come before
-            ** REDUCEs on the list.  If we reach this point it must be because
-            ** the parser conflict had already been resolved. */
-        }
-
-        return $errcnt;
-    }
-
-    /**
-     * Reduce the size of the action tables, if possible, by making use
-     * of defaults.
-     *
-     * In this version, we take the most frequent REDUCE action and make
-     * it the default.
-     */
-    public function CompressTables()
-    {
-        for ($i = 0; $i < $this->nstate; $i++) {
-            $stp = $this->sorted[$i]->data;
-            $nbest = 0;
-            $rbest = 0;
-
-            for ($ap = $stp->ap; $ap; $ap = $ap->next) {
-                if ($ap->type != PHP_ParserGenerator_Action::REDUCE) {
-                    continue;
-                }
-                $rp = $ap->x;
-                if ($rp === $rbest) {
-                    continue;
-                }
-                $n = 1;
-                for ($ap2 = $ap->next; $ap2; $ap2 = $ap2->next) {
-                    if ($ap2->type != PHP_ParserGenerator_Action::REDUCE) {
-                        continue;
-                    }
-                    $rp2 = $ap2->x;
-                    if ($rp2 === $rbest) {
-                        continue;
-                    }
-                    if ($rp2 === $rp) {
-                        $n++;
-                    }
-                }
-                if ($n > $nbest) {
-                    $nbest = $n;
-                    $rbest = $rp;
-                }
-            }
-
-            /* Do not make a default if the number of rules to default
-            ** is not at least 1 */
-            if ($nbest < 1) {
-                continue;
-            }
-
-            /* Combine matching REDUCE actions into a single default */
-            for ($ap = $stp->ap; $ap; $ap = $ap->next) {
-                if ($ap->type == PHP_ParserGenerator_Action::REDUCE && $ap->x === $rbest) {
-                    break;
-                }
-            }
-            if ($ap === 0) {
-                throw new Exception('$ap is not an object');
-            }
-            $ap->sp = PHP_ParserGenerator_Symbol::Symbol_new("{default}");
-            for ($ap = $ap->next; $ap; $ap = $ap->next) {
-                if ($ap->type == PHP_ParserGenerator_Action::REDUCE && $ap->x === $rbest) {
-                    $ap->type = PHP_ParserGenerator_Action::NOT_USED;
-                }
-            }
-            $stp->ap = PHP_ParserGenerator_Action::Action_sort($stp->ap);
-        }
-    }
-
-    /**
-     * Renumber and resort states so that states with fewer choices
-     * occur at the end.  Except, keep state 0 as the first state.
-     */
-    public function ResortStates()
-    {
-        for ($i = 0; $i < $this->nstate; $i++) {
-            $stp = $this->sorted[$i]->data;
-            $stp->nTknAct = $stp->nNtAct = 0;
-            $stp->iDflt = $this->nstate + $this->nrule;
-            $stp->iTknOfst = PHP_ParserGenerator_Data::NO_OFFSET;
-            $stp->iNtOfst = PHP_ParserGenerator_Data::NO_OFFSET;
-            for ($ap = $stp->ap; $ap; $ap = $ap->next) {
-                if ($this->compute_action($ap) >= 0) {
-                    if ($ap->sp->index < $this->nterminal) {
-                        $stp->nTknAct++;
-                    } elseif ($ap->sp->index < $this->nsymbol) {
-                        $stp->nNtAct++;
-                    } else {
-                        $stp->iDflt = $this->compute_action($ap);
-                    }
-                }
-            }
-            $this->sorted[$i] = $stp;
-        }
-        $save = $this->sorted[0];
-        unset($this->sorted[0]);
-        usort($this->sorted, array('PHP_ParserGenerator_State', 'stateResortCompare'));
-        array_unshift($this->sorted, $save);
-        for ($i = 0; $i < $this->nstate; $i++) {
-            $this->sorted[$i]->statenum = $i;
-        }
-    }
-
-    /**
-     * Given an action, compute the integer value for that action
-     * which is to be put in the action table of the generated machine.
-     * Return negative if no action should be generated.
-     * @param PHP_ParserGenerator_Action
-     */
-    public function compute_action($ap)
-    {
-        switch ($ap->type) {
-            case PHP_ParserGenerator_Action::SHIFT:
-                $act = $ap->x->statenum;
-                break;
-            case PHP_ParserGenerator_Action::REDUCE:
-                $act = $ap->x->index + $this->nstate;
-                break;
-            case PHP_ParserGenerator_Action::ERROR:
-                $act = $this->nstate + $this->nrule;
-                break;
-            case PHP_ParserGenerator_Action::ACCEPT:
-                $act = $this->nstate + $this->nrule + 1;
-                break;
-            default:
-                $act = -1;
-                break;
-        }
-
-        return $act;
-    }
-
-    /**
-     * Generate the "Parse.out" log file
-     */
-    public function ReportOutput()
-    {
-        $fp = fopen($this->filenosuffix . ".out", "wb");
-        if (!$fp) {
-            return;
-        }
-        for ($i = 0; $i < $this->nstate; $i++) {
-            $stp = $this->sorted[$i];
-            fprintf($fp, "State %d:\n", $stp->statenum);
-            if ($this->basisflag) {
-                $cfp = $stp->bp;
-            } else {
-                $cfp = $stp->cfp;
-            } while ($cfp) {
-                if ($cfp->dot == $cfp->rp->nrhs) {
-                    $buf = sprintf('(%d)', $cfp->rp->index);
-                    fprintf($fp, '    %5s ', $buf);
-                } else {
-                    fwrite($fp,'          ');
-                }
-                $cfp->ConfigPrint($fp);
-                fwrite($fp, "\n");
-                if (0) {
-                    //SetPrint(fp,cfp->fws,$this);
-                    //PlinkPrint(fp,cfp->fplp,"To  ");
-                    //PlinkPrint(fp,cfp->bplp,"From");
-                }
-                if ($this->basisflag) {
-                    $cfp = $cfp->bp;
-                } else {
-                    $cfp = $cfp->next;
-                }
-            }
-            fwrite($fp, "\n");
-            for ($ap = $stp->ap; $ap; $ap = $ap->next) {
-                if ($ap->PrintAction($fp, 30)) {
-                    fprintf($fp,"\n");
-                }
-            }
-            fwrite($fp,"\n");
-        }
-        fclose($fp);
-    }
-
-    /**
-     * The next function finds the template file and opens it, returning
-     * a pointer to the opened file.
-     * @return resource
-     */
-    private function tplt_open()
-    {
-        $templatename = dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . "Lempar.php";
-        $buf = $this->filenosuffix . '.lt';
-        if (file_exists($buf) && is_readable($buf)) {
-            $tpltname = $buf;
-        } elseif (file_exists($templatename) && is_readable($templatename)) {
-            $tpltname = $templatename;
-        } elseif ($fp = @fopen($templatename, 'rb', true)) {
-            return $fp;
-        }
-        if (!isset($tpltname)) {
-            echo "Can't find the parser driver template file \"%s\".\n",
-                $templatename;
-            $this->errorcnt++;
-
-            return 0;
-        }
-        $in = @fopen($tpltname,"rb");
-        if (!$in) {
-            printf("Can't open the template file \"%s\".\n", $tpltname);
-            $this->errorcnt++;
-
-            return 0;
-        }
-
-        return $in;
-    }
-
-#define LINESIZE 1000
-    /**#@+
-     * The next cluster of routines are for reading the template file
-     * and writing the results to the generated parser
-     */
-    /**
-     * The first function transfers data from "in" to "out" until
-     * a line is seen which begins with "%%".  The line number is
-     * tracked.
-     *
-     * if name!=0, then any word that begin with "Parse" is changed to
-     * begin with *name instead.
-     */
-    private function tplt_xfer($name, $in, $out, &$lineno)
-    {
-        while (($line = fgets($in, 1024)) && ($line[0] != '%' || $line[1] != '%')) {
-            $lineno++;
-            $iStart = 0;
-            if ($name) {
-                for ($i = 0; $i < strlen($line); $i++) {
-                    if ($line[$i] == 'P' && substr($line, $i, 5) == "Parse"
-                          && ($i === 0 || preg_match('/[^a-zA-Z]/', $line[$i - 1]))) {
-                        if ($i > $iStart) {
-                            fwrite($out, substr($line, $iStart, $i - $iStart));
-                        }
-                        fwrite($out, $name);
-                        $i += 4;
-                        $iStart = $i + 1;
-                    }
-                }
-            }
-            fwrite($out, substr($line, $iStart));
-        }
-    }
-
-    /**
-     * Print a #line directive line to the output file.
-     */
-    private function tplt_linedir($out, $lineno, $filename)
-    {
-        fwrite($out, '#line ' . $lineno . ' "' . $filename . "\"\n");
-    }
-
-    /**
-     * Print a string to the file and keep the linenumber up to date
-     */
-    private function tplt_print($out, $str, $strln, &$lineno)
-    {
-        if ($str == '') {
-            return;
-        }
-        $this->tplt_linedir($out, $strln, $this->filename);
-        $lineno++;
-        fwrite($out, $str);
-        $lineno += count(explode("\n", $str)) - 1;
-        $this->tplt_linedir($out, $lineno + 2, $this->outname);
-        $lineno += 2;
-    }
-    /**#@-*/
-
-    /**
-     * Compute all followsets.
-     *
-     * A followset is the set of all symbols which can come immediately
-     * after a configuration.
-     */
-    public function FindFollowSets()
-    {
-        for ($i = 0; $i < $this->nstate; $i++) {
-            for ($cfp = $this->sorted[$i]->data->cfp; $cfp; $cfp = $cfp->next) {
-                $cfp->status = PHP_ParserGenerator_Config::INCOMPLETE;
-            }
-        }
-
-        do {
-            $progress = 0;
-            for ($i = 0; $i < $this->nstate; $i++) {
-                for ($cfp = $this->sorted[$i]->data->cfp; $cfp; $cfp = $cfp->next) {
-                    if ($cfp->status == PHP_ParserGenerator_Config::COMPLETE) {
-                        continue;
-                    }
-                    for ($plp = $cfp->fplp; $plp; $plp = $plp->next) {
-                        $a = array_diff_key($cfp->fws, $plp->cfp->fws);
-                        if (count($a)) {
-                            $plp->cfp->fws += $a;
-                            $plp->cfp->status = PHP_ParserGenerator_Config::INCOMPLETE;
-                            $progress = 1;
-                        }
-                    }
-                    $cfp->status = PHP_ParserGenerator_Config::COMPLETE;
-                }
-            }
-        } while ($progress);
-    }
-
-    /**
-     * Generate C source code for the parser
-     * @param int Output in makeheaders format if true
-     */
-    public function ReportTable($mhflag)
-    {
-//        FILE *out, *in;
-//        char line[LINESIZE];
-//        int  lineno;
-//        struct state *stp;
-//        struct action *ap;
-//        struct rule *rp;
-//        struct acttab *pActtab;
-//        int i, j, n;
-//        char *name;
-//        int mnTknOfst, mxTknOfst;
-//        int mnNtOfst, mxNtOfst;
-//        struct axset *ax;
-
-        $in = $this->tplt_open();
-        if (!$in) {
-            return;
-        }
-        $out = fopen($this->filenosuffix . ".php", "wb");
-        if (!$out) {
-            fclose($in);
-
-            return;
-        }
-        $this->outname = $this->filenosuffix . ".php";
-        $lineno = 1;
-        $this->tplt_xfer($this->name, $in, $out, $lineno);
-
-        /* Generate the include code, if any */
-        $this->tplt_print($out, $this->include_code, $this->includeln, $lineno);
-        $this->tplt_xfer($this->name, $in, $out, $lineno);
-
-        /* Generate the class declaration code */
-        $this->tplt_print($out, $this->declare_classcode, $this->declare_classln,
-            $lineno);
-        $this->tplt_xfer($this->name, $in, $out, $lineno);
-
-        /* Generate the internal parser class include code, if any */
-        $this->tplt_print($out, $this->include_classcode, $this->include_classln,
-            $lineno);
-        $this->tplt_xfer($this->name, $in, $out, $lineno);
-
-        /* Generate #defines for all tokens */
-        //if ($mhflag) {
-            //fprintf($out, "#if INTERFACE\n");
-            $lineno++;
-            if ($this->tokenprefix) {
-                $prefix = $this->tokenprefix;
-            } else {
-                $prefix = '';
-            }
-            for ($i = 1; $i < $this->nterminal; $i++) {
-                fprintf($out, "    const %s%-30s = %2d;\n", $prefix, $this->symbols[$i]->name, $i);
-                $lineno++;
-            }
-            //fwrite($out, "#endif\n");
-            $lineno++;
-        //}
-        fwrite($out, "    const YY_NO_ACTION = " .
-            ($this->nstate + $this->nrule + 2) . ";\n");
-        $lineno++;
-        fwrite($out, "    const YY_ACCEPT_ACTION = " .
-            ($this->nstate + $this->nrule + 1) . ";\n");
-        $lineno++;
-        fwrite($out, "    const YY_ERROR_ACTION = " .
-            ($this->nstate + $this->nrule) . ";\n");
-        $lineno++;
-        $this->tplt_xfer($this->name, $in, $out, $lineno);
-
-        /* Generate the action table and its associates:
-        **
-        **  yy_action[]        A single table containing all actions.
-        **  yy_lookahead[]     A table containing the lookahead for each entry in
-        **                     yy_action.  Used to detect hash collisions.
-        **  yy_shift_ofst[]    For each state, the offset into yy_action for
-        **                     shifting terminals.
-        **  yy_reduce_ofst[]   For each state, the offset into yy_action for
-        **                     shifting non-terminals after a reduce.
-        **  yy_default[]       Default action for each state.
-        */
-
-        /* Compute the actions on all states and count them up */
-
-        $ax = array();
-        for ($i = 0; $i < $this->nstate; $i++) {
-            $stp = $this->sorted[$i];
-            $ax[$i * 2] = array();
-            $ax[$i * 2]['stp'] = $stp;
-            $ax[$i * 2]['isTkn'] = 1;
-            $ax[$i * 2]['nAction'] = $stp->nTknAct;
-            $ax[$i * 2 + 1] = array();
-            $ax[$i * 2 + 1]['stp'] = $stp;
-            $ax[$i * 2 + 1]['isTkn'] = 0;
-            $ax[$i * 2 + 1]['nAction'] = $stp->nNtAct;
-        }
-        $mxTknOfst = $mnTknOfst = 0;
-        $mxNtOfst = $mnNtOfst = 0;
-
-        /* Compute the action table.  In order to try to keep the size of the
-        ** action table to a minimum, the heuristic of placing the largest action
-        ** sets first is used.
-        */
-
-        usort($ax, array('PHP_ParserGenerator_Data', 'axset_compare'));
-        $pActtab = new PHP_ParserGenerator_ActionTable;
-        for ($i = 0; $i < $this->nstate * 2 && $ax[$i]['nAction'] > 0; $i++) {
-            $stp = $ax[$i]['stp'];
-            if ($ax[$i]['isTkn']) {
-                for ($ap = $stp->ap; $ap; $ap = $ap->next) {
-                    if ($ap->sp->index >= $this->nterminal) {
-                        continue;
-                    }
-                    $action = $this->compute_action($ap);
-                    if ($action < 0) {
-                        continue;
-                    }
-                    $pActtab->acttab_action($ap->sp->index, $action);
-                }
-                $stp->iTknOfst = $pActtab->acttab_insert();
-                if ($stp->iTknOfst < $mnTknOfst) {
-                    $mnTknOfst = $stp->iTknOfst;
-                }
-                if ($stp->iTknOfst > $mxTknOfst) {
-                    $mxTknOfst = $stp->iTknOfst;
-                }
-            } else {
-                for ($ap = $stp->ap; $ap; $ap = $ap->next) {
-                    if ($ap->sp->index < $this->nterminal) {
-                        continue;
-                    }
-                    if ($ap->sp->index == $this->nsymbol) {
-                        continue;
-                    }
-                    $action = $this->compute_action($ap);
-                    if ($action < 0) {
-                        continue;
-                    }
-                    $pActtab->acttab_action($ap->sp->index, $action);
-                }
-                $stp->iNtOfst = $pActtab->acttab_insert();
-                if ($stp->iNtOfst < $mnNtOfst) {
-                    $mnNtOfst = $stp->iNtOfst;
-                }
-                if ($stp->iNtOfst > $mxNtOfst) {
-                    $mxNtOfst = $stp->iNtOfst;
-                }
-            }
-        }
-        /* Output the yy_action table */
-
-        fprintf($out, "    const YY_SZ_ACTTAB = %d;\n", $pActtab->nAction);
-        $lineno++;
-        fwrite($out, "static public \$yy_action = array(\n");
-        $lineno++;
-        $n = $pActtab->nAction;
-        for ($i = $j = 0; $i < $n; $i++) {
-            $action = $pActtab->aAction[$i]['action'];
-            if ($action < 0) {
-                $action = $this->nsymbol + $this->nrule + 2;
-            }
-            // change next line
-            if ($j === 0) {
-                fprintf($out, " /* %5d */ ", $i);
-            }
-            fprintf($out, " %4d,", $action);
-            if ($j == 9 || $i == $n - 1) {
-                fwrite($out, "\n");
-                $lineno++;
-                $j = 0;
-            } else {
-                $j++;
-            }
-        }
-        fwrite($out, "    );\n"); $lineno++;
-
-        /* Output the yy_lookahead table */
-
-        fwrite($out, "    static public \$yy_lookahead = array(\n");
-        $lineno++;
-        for ($i = $j = 0; $i < $n; $i++) {
-            $la = $pActtab->aAction[$i]['lookahead'];
-            if ($la < 0) {
-                $la = $this->nsymbol;
-            }
-            // change next line
-            if ($j === 0) {
-                fprintf($out, " /* %5d */ ", $i);
-            }
-            fprintf($out, " %4d,", $la);
-            if ($j == 9 || $i == $n - 1) {
-                fwrite($out, "\n");
-                $lineno++;
-                $j = 0;
-            } else {
-                $j++;
-            }
-        }
-        fwrite($out, ");\n");
-        $lineno++;
-
-        /* Output the yy_shift_ofst[] table */
-        fprintf($out, "    const YY_SHIFT_USE_DFLT = %d;\n", $mnTknOfst - 1);
-        $lineno++;
-        $n = $this->nstate;
-        while ($n > 0 && $this->sorted[$n - 1]->iTknOfst == PHP_ParserGenerator_Data::NO_OFFSET) {
-            $n--;
-        }
-        fprintf($out, "    const YY_SHIFT_MAX = %d;\n", $n - 1);
-        $lineno++;
-        fwrite($out, "    static public \$yy_shift_ofst = array(\n");
-        $lineno++;
-        for ($i = $j = 0; $i < $n; $i++) {
-            $stp = $this->sorted[$i];
-            $ofst = $stp->iTknOfst;
-            if ($ofst === PHP_ParserGenerator_Data::NO_OFFSET) {
-                $ofst = $mnTknOfst - 1;
-            }
-            // change next line
-            if ($j === 0) {
-                fprintf($out, " /* %5d */ ", $i);
-            }
-            fprintf($out, " %4d,", $ofst);
-            if ($j == 9 || $i == $n - 1) {
-                fwrite($out, "\n");
-                $lineno++;
-                $j = 0;
-            } else {
-                $j++;
-            }
-        }
-        fwrite($out, ");\n");
-        $lineno++;
-
-        /* Output the yy_reduce_ofst[] table */
-
-        fprintf($out, "    const YY_REDUCE_USE_DFLT = %d;\n", $mnNtOfst - 1);
-        $lineno++;
-        $n = $this->nstate;
-        while ($n > 0 && $this->sorted[$n - 1]->iNtOfst == PHP_ParserGenerator_Data::NO_OFFSET) {
-            $n--;
-        }
-        fprintf($out, "    const YY_REDUCE_MAX = %d;\n", $n - 1);
-        $lineno++;
-        fwrite($out, "    static public \$yy_reduce_ofst = array(\n");
-        $lineno++;
-        for ($i = $j = 0; $i < $n; $i++) {
-            $stp = $this->sorted[$i];
-            $ofst = $stp->iNtOfst;
-            if ($ofst == PHP_ParserGenerator_Data::NO_OFFSET) {
-                $ofst = $mnNtOfst - 1;
-            }
-            // change next line
-            if ($j == 0) {
-                fprintf($out, " /* %5d */ ", $i);
-            }
-            fprintf($out, " %4d,", $ofst);
-            if ($j == 9 || $i == $n - 1) {
-                fwrite($out, "\n");
-                $lineno++;
-                $j = 0;
-            } else {
-                $j++;
-            }
-        }
-        fwrite($out, ");\n");
-        $lineno++;
-
-        /* Output the expected tokens table */
-
-        fwrite($out, "    static public \$yyExpectedTokens = array(\n");
-        $lineno++;
-        for ($i = 0; $i < $this->nstate; $i++) {
-            $stp = $this->sorted[$i];
-            fwrite($out, "        /* $i */ array(");
-            for ($ap = $stp->ap; $ap; $ap = $ap->next) {
-                if ($ap->sp->index < $this->nterminal) {
-                    if ($ap->type == PHP_ParserGenerator_Action::SHIFT ||
-                          $ap->type == PHP_ParserGenerator_Action::REDUCE) {
-                        fwrite($out, $ap->sp->index . ', ');
-                    }
-                }
-            }
-            fwrite($out, "),\n");
-            $lineno++;
-        }
-        fwrite($out, ");\n");
-        $lineno++;
-
-        /* Output the default action table */
-
-        fwrite($out, "    static public \$yy_default = array(\n");
-        $lineno++;
-        $n = $this->nstate;
-        for ($i = $j = 0; $i < $n; $i++) {
-            $stp = $this->sorted[$i];
-            // change next line
-            if ($j == 0) {
-                fprintf($out, " /* %5d */ ", $i);
-            }
-            fprintf($out, " %4d,", $stp->iDflt);
-            if ($j == 9 || $i == $n - 1) {
-                fprintf($out, "\n"); $lineno++;
-                $j = 0;
-            } else {
-                $j++;
-            }
-        }
-        fwrite($out, ");\n");
-        $lineno++;
-        $this->tplt_xfer($this->name, $in, $out, $lineno);
-
-        /* Generate the defines */
-        fprintf($out, "    const YYNOCODE = %d;\n", $this->nsymbol + 1);
-        $lineno++;
-        if ($this->stacksize) {
-            if ($this->stacksize <= 0) {
-                PHP_ParserGenerator::ErrorMsg($this->filename, 0,
-                    "Illegal stack size: [%s].  The stack size should be an integer constant.",
-                    $this->stacksize);
-                $this->errorcnt++;
-                $this->stacksize = "100";
-            }
-            fprintf($out, "    const YYSTACKDEPTH = %s;\n", $this->stacksize);
-            $lineno++;
-        } else {
-            fwrite($out,"    const YYSTACKDEPTH = 100;\n");
-            $lineno++;
-        }
-        fprintf($out, "    const YYNSTATE = %d;\n", $this->nstate);
-        $lineno++;
-        fprintf($out, "    const YYNRULE = %d;\n", $this->nrule);
-        $lineno++;
-        fprintf($out, "    const YYERRORSYMBOL = %d;\n", $this->errsym->index);
-        $lineno++;
-        fprintf($out, "    const YYERRSYMDT = 'yy%d';\n", $this->errsym->dtnum);
-        $lineno++;
-        if ($this->has_fallback) {
-            fwrite($out, "    const YYFALLBACK = 1;\n");
-        } else {
-            fwrite($out, "    const YYFALLBACK = 0;\n");
-        }
-        $lineno++;
-        $this->tplt_xfer($this->name, $in, $out, $lineno);
-
-        /* Generate the table of fallback tokens.
-        */
-
-        if ($this->has_fallback) {
-            for ($i = 0; $i < $this->nterminal; $i++) {
-                $p = $this->symbols[$i];
-                if ($p->fallback === 0) {
-                    // change next line
-                    fprintf($out, "    0,  /* %10s => nothing */\n", $p->name);
-                } else {
-                    // change next line
-                    fprintf($out, "  %3d,  /* %10s => %s */\n",
-                        $p->fallback->index, $p->name, $p->fallback->name);
-                }
-                $lineno++;
-            }
-        }
-        $this->tplt_xfer($this->name, $in, $out, $lineno);
-
-        /* Generate a table containing the symbolic name of every symbol
-            ($yyTokenName)
-        */
-
-        for ($i = 0; $i < $this->nsymbol; $i++) {
-            fprintf($out,"  %-15s", "'" . $this->symbols[$i]->name . "',");
-            if (($i & 3) == 3) {
-                fwrite($out,"\n");
-                $lineno++;
-            }
-        }
-        if (($i & 3) != 0) {
-            fwrite($out, "\n");
-            $lineno++;
-        }
-        $this->tplt_xfer($this->name, $in, $out, $lineno);
-
-        /* Generate a table containing a text string that describes every
-        ** rule in the rule set of the grammer.  This information is used
-        ** when tracing REDUCE actions.
-        */
-
-        for ($i = 0, $rp = $this->rule; $rp; $rp = $rp->next, $i++) {
-            if ($rp->index !== $i) {
-                throw new Exception('rp->index != i and should be');
-            }
-            // change next line
-            fprintf($out, " /* %3d */ \"%s ::=", $i, $rp->lhs->name);
-            for ($j = 0; $j < $rp->nrhs; $j++) {
-                $sp = $rp->rhs[$j];
-                fwrite($out,' ' . $sp->name);
-                if ($sp->type == PHP_ParserGenerator_Symbol::MULTITERMINAL) {
-                    for ($k = 1; $k < $sp->nsubsym; $k++) {
-                        fwrite($out, '|' . $sp->subsym[$k]->name);
-                    }
-                }
-            }
-            fwrite($out, "\",\n");
-            $lineno++;
-        }
-        $this->tplt_xfer($this->name, $in, $out, $lineno);
-
-        /* Generate code which executes every time a symbol is popped from
-        ** the stack while processing errors or while destroying the parser.
-        ** (In other words, generate the %destructor actions)
-        */
-
-        if ($this->tokendest) {
-            for ($i = 0; $i < $this->nsymbol; $i++) {
-                $sp = $this->symbols[$i];
-                if ($sp === 0 || $sp->type != PHP_ParserGenerator_Symbol::TERMINAL) {
-                    continue;
-                }
-                fprintf($out, "    case %d:\n", $sp->index);
-                $lineno++;
-            }
-            for ($i = 0; $i < $this->nsymbol &&
-                         $this->symbols[$i]->type != PHP_ParserGenerator_Symbol::TERMINAL; $i++);
-            if ($i < $this->nsymbol) {
-                $this->emit_destructor_code($out, $this->symbols[$i], $lineno);
-                fprintf($out, "      break;\n");
-                $lineno++;
-            }
-        }
-        if ($this->vardest) {
-            $dflt_sp = 0;
-            for ($i = 0; $i < $this->nsymbol; $i++) {
-                $sp = $this->symbols[$i];
-                if ($sp === 0 || $sp->type == PHP_ParserGenerator_Symbol::TERMINAL ||
-                      $sp->index <= 0 || $sp->destructor != 0) {
-                    continue;
-                }
-                fprintf($out, "    case %d:\n", $sp->index);
-                $lineno++;
-                $dflt_sp = $sp;
-            }
-            if ($dflt_sp != 0) {
-                $this->emit_destructor_code($out, $dflt_sp, $lineno);
-                fwrite($out, "      break;\n");
-                $lineno++;
-            }
-        }
-        for ($i = 0; $i < $this->nsymbol; $i++) {
-            $sp = $this->symbols[$i];
-            if ($sp === 0 || $sp->type == PHP_ParserGenerator_Symbol::TERMINAL ||
-                  $sp->destructor === 0) {
-                continue;
-            }
-            fprintf($out, "    case %d:\n", $sp->index);
-            $lineno++;
-
-            /* Combine duplicate destructors into a single case */
-
-            for ($j = $i + 1; $j < $this->nsymbol; $j++) {
-                $sp2 = $this->symbols[$j];
-                if ($sp2 && $sp2->type != PHP_ParserGenerator_Symbol::TERMINAL && $sp2->destructor
-                      && $sp2->dtnum == $sp->dtnum
-                      && $sp->destructor == $sp2->destructor) {
-                    fprintf($out, "    case %d:\n", $sp2->index);
-                    $lineno++;
-                    $sp2->destructor = 0;
-                }
-            }
-
-            $this->emit_destructor_code($out, $this->symbols[$i], $lineno);
-            fprintf($out, "      break;\n");
-            $lineno++;
-        }
-        $this->tplt_xfer($this->name, $in, $out, $lineno);
-
-        /* Generate code which executes whenever the parser stack overflows */
-
-        $this->tplt_print($out, $this->overflow, $this->overflowln, $lineno);
-        $this->tplt_xfer($this->name, $in, $out, $lineno);
-
-        /* Generate the table of rule information
-        **
-        ** Note: This code depends on the fact that rules are number
-        ** sequentually beginning with 0.
-        */
-
-        for ($rp = $this->rule; $rp; $rp = $rp->next) {
-            fprintf($out, "  array( 'lhs' => %d, 'rhs' => %d ),\n",
-                $rp->lhs->index, $rp->nrhs);
-            $lineno++;
-        }
-        $this->tplt_xfer($this->name, $in, $out, $lineno);
-
-        /* Generate code which executes during each REDUCE action */
-
-        for ($rp = $this->rule; $rp; $rp = $rp->next) {
-            if ($rp->code) {
-                $this->translate_code($rp);
-            }
-        }
-
-        /* Generate the method map for each REDUCE action */
-
-        for ($rp = $this->rule; $rp; $rp = $rp->next) {
-            if ($rp->code === 0) {
-                continue;
-            }
-            fwrite($out, '        ' . $rp->index . ' => ' . $rp->index . ",\n");
-            $lineno++;
-            for ($rp2 = $rp->next; $rp2; $rp2 = $rp2->next) {
-                if ($rp2->code === $rp->code) {
-                    fwrite($out, '        ' . $rp2->index . ' => ' .
-                        $rp->index . ",\n");
-                    $lineno++;
-                    $rp2->code = 0;
-                }
-            }
-        }
-        $this->tplt_xfer($this->name, $in, $out, $lineno);
-
-        for ($rp = $this->rule; $rp; $rp = $rp->next) {
-            if ($rp->code === 0) {
-                continue;
-            }
-            $this->emit_code($out, $rp, $lineno);
-        }
-        $this->tplt_xfer($this->name, $in, $out, $lineno);
-
-        /* Generate code which executes if a parse fails */
-
-        $this->tplt_print($out, $this->failure, $this->failureln, $lineno);
-        $this->tplt_xfer($this->name, $in, $out, $lineno);
-
-        /* Generate code which executes when a syntax error occurs */
-
-        $this->tplt_print($out, $this->error, $this->errorln, $lineno);
-        $this->tplt_xfer($this->name, $in, $out, $lineno);
-
-        /* Generate code which executes when the parser accepts its input */
-
-        $this->tplt_print($out, $this->accept, $this->acceptln, $lineno);
-        $this->tplt_xfer($this->name, $in, $out, $lineno);
-
-        /* Append any addition code the user desires */
-
-        $this->tplt_print($out, $this->extracode, $this->extracodeln, $lineno);
-
-        fclose($in);
-        fclose($out);
-    }
-
-    /**
-     * Generate code which executes when the rule "rp" is reduced.  Write
-     * the code to "out".  Make sure lineno stays up-to-date.
-     */
-    public function emit_code($out, PHP_ParserGenerator_Rule $rp, &$lineno)
-    {
-        $linecnt = 0;
-
-        /* Generate code to do the reduce action */
-        if ($rp->code) {
-            $this->tplt_linedir($out, $rp->line, $this->filename);
-            fwrite($out, "    function yy_r$rp->index(){" . $rp->code);
-            $linecnt += count(explode("\n", $rp->code)) - 1;
-            $lineno += 3 + $linecnt;
-            fwrite($out, "    }\n");
-            $this->tplt_linedir($out, $lineno, $this->outname);
-        } /* End if( rp->code ) */
-    }
-
-    /**
-     * Append text to a dynamically allocated string.  If zText is 0 then
-     * reset the string to be empty again.  Always return the complete text
-     * of the string (which is overwritten with each call).
-     *
-     * n bytes of zText are stored.  If n==0 then all of zText is stored.
-     *
-     * If n==-1, then the previous character is overwritten.
-     * @param string
-     * @param int
-     */
-    public function append_str($zText, $n)
-    {
-        static $z = '';
-        $zInt = '';
-
-        if ($zText === '') {
-            $ret = $z;
-            $z = '';
-
-            return $ret;
-        }
-        if ($n <= 0) {
-            if ($n < 0) {
-                if (!strlen($z)) {
-                    throw new Exception('z is zero-length');
-                }
-                $z = substr($z, 0, strlen($z) - 1);
-                if (!$z) {
-                    $z = '';
-                }
-            }
-            $n = strlen($zText);
-        }
-        $i = 0;
-        $z .= substr($zText, 0, $n);
-
-        return $z;
-    }
-
-    /**
-     * zCode is a string that is the action associated with a rule.  Expand
-     * the symbols in this string so that the refer to elements of the parser
-     * stack.
-     */
-    public function translate_code(PHP_ParserGenerator_Rule $rp)
-    {
-        $lhsused = 0;    /* True if the LHS element has been used */
-        $used = array();   /* True for each RHS element which is used */
-
-        for ($i = 0; $i < $rp->nrhs; $i++) {
-            $used[$i] = 0;
-        }
-
-        $this->append_str('', 0);
-        for ($i = 0; $i < strlen($rp->code); $i++) {
-            $cp = $rp->code[$i];
-            if (preg_match('/[A-Za-z]/', $cp) &&
-                 ($i === 0 || (!preg_match('/[A-Za-z0-9_]/', $rp->code[$i - 1])))) {
-                //*xp = 0;
-                // previous line is in essence a temporary substr, so
-                // we will simulate it
-                $test = substr($rp->code, $i);
-                preg_match('/[A-Za-z0-9_]+/', $test, $matches);
-                $tempcp = $matches[0];
-                $j = strlen($tempcp) + $i;
-                if ($rp->lhsalias && $tempcp == $rp->lhsalias) {
-                    $this->append_str("\$this->_retvalue", 0);
-                    $cp = $rp->code[$j];
-                    $i = $j;
-                    $lhsused = 1;
-                } else {
-                    for ($ii = 0; $ii < $rp->nrhs; $ii++) {
-                        if ($rp->rhsalias[$ii] && $tempcp == $rp->rhsalias[$ii]) {
-                            if ($ii !== 0 && $rp->code[$ii - 1] == '@') {
-                                /* If the argument is of the form @X then substitute
-                                ** the token number of X, not the value of X */
-                                $this->append_str("\$this->yystack[\$this->yyidx + " .
-                                    ($ii - $rp->nrhs + 1) . "]->major", -1);
-                            } else {
-                                $sp = $rp->rhs[$ii];
-                                if ($sp->type == PHP_ParserGenerator_Symbol::MULTITERMINAL) {
-                                    $dtnum = $sp->subsym[0]->dtnum;
-                                } else {
-                                    $dtnum = $sp->dtnum;
-                                }
-                                $this->append_str("\$this->yystack[\$this->yyidx + " .
-                                    ($ii - $rp->nrhs + 1) . "]->minor", 0);
-                            }
-                            $cp = $rp->code[$j];
-                            $i = $j;
-                            $used[$ii] = 1;
-                            break;
-                        }
-                    }
-                }
-            }
-            $this->append_str($cp, 1);
-        } /* End loop */
-
-        /* Check to make sure the LHS has been used */
-        if ($rp->lhsalias && !$lhsused) {
-            PHP_ParserGenerator::ErrorMsg($this->filename, $rp->ruleline,
-                "Label \"%s\" for \"%s(%s)\" is never used.",
-                $rp->lhsalias, $rp->lhs->name, $rp->lhsalias);
-                $this->errorcnt++;
-        }
-
-        /* Generate destructor code for RHS symbols which are not used in the
-        ** reduce code */
-        for ($i = 0; $i < $rp->nrhs; $i++) {
-            if ($rp->rhsalias[$i] && !isset($used[$i])) {
-                PHP_ParserGenerator::ErrorMsg($this->filename, $rp->ruleline,
-                    "Label %s for \"%s(%s)\" is never used.",
-                    $rp->rhsalias[$i], $rp->rhs[$i]->name, $rp->rhsalias[$i]);
-                $this->errorcnt++;
-            } elseif ($rp->rhsalias[$i] == 0) {
-                if ($rp->rhs[$i]->type == PHP_ParserGenerator_Symbol::TERMINAL) {
-                    $hasdestructor = $this->tokendest != 0;
-                } else {
-                    $hasdestructor = $this->vardest !== 0 || $rp->rhs[$i]->destructor !== 0;
-                }
-                if ($hasdestructor) {
-                    $this->append_str("  \$this->yy_destructor(" .
-                        ($rp->rhs[$i]->index) . ", \$this->yystack[\$this->yyidx + " .
-                        ($i - $rp->nrhs + 1) . "]->minor);\n", 0);
-                } else {
-                    /* No destructor defined for this term */
-                }
-            }
-        }
-        $cp = $this->append_str('', 0);
-        $rp->code = $cp;
-    }
-
-    /**
-     * The following routine emits code for the destructor for the
-     * symbol sp
-     */
-    public function emit_destructor_code($out, PHP_ParserGenerator_Symbol $sp, &$lineno)
-//    FILE *out;
-//    struct symbol *sp;
-//    struct lemon *lemp;
-//    int *lineno;
-    {
-        $cp = 0;
-
-        $linecnt = 0;
-        if ($sp->type == PHP_ParserGenerator_Symbol::TERMINAL) {
-            $cp = $this->tokendest;
-            if ($cp === 0) {
-                return;
-            }
-            $this->tplt_linedir($out, $this->tokendestln, $this->filename);
-            fwrite($out, "{");
-        } elseif ($sp->destructor) {
-            $cp = $sp->destructor;
-            $this->tplt_linedir($out, $sp->destructorln, $this->filename);
-            fwrite($out, "{");
-        } elseif ($this->vardest) {
-            $cp = $this->vardest;
-            if ($cp === 0) {
-                return;
-            }
-            $this->tplt_linedir($out, $this->vardestln, $this->filename);
-            fwrite($out, "{");
-        } else {
-            throw new Exception('emit_destructor'); /* Cannot happen */
-        }
-        for ($i = 0; $i < strlen($cp); $i++) {
-            if ($cp[$i]=='$' && $cp[$i + 1]=='$') {
-                fprintf($out, "(yypminor->yy%d)", $sp->dtnum);
-                $i++;
-                continue;
-            }
-            if ($cp[$i] == "\n") {
-                $linecnt++;
-            }
-            fwrite($out, $cp[$i]);
-        }
-        $lineno += 3 + $linecnt;
-        fwrite($out, "}\n");
-        $this->tplt_linedir($out, $lineno, $this->outname);
-    }
-
-    /**
-     * Compare to axset structures for sorting purposes
-     */
-    public static function axset_compare($a, $b)
-    {
-        return $b['nAction'] - $a['nAction'];
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+oQLrcjzlSquZL2GUTCRfFtIi0z6WofHG1W==

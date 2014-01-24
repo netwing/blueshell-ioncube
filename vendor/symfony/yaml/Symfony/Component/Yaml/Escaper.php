@@ -1,89 +1,41 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\Yaml;
-
-/**
- * Escaper encapsulates escaping rules for single and double-quoted
- * YAML strings.
- *
- * @author Matthew Lewinski <matthew@lewinski.org>
- */
-class Escaper
-{
-    // Characters that would cause a dumped string to require double quoting.
-    const REGEX_CHARACTER_TO_ESCAPE = "[\\x00-\\x1f]|\xc2\x85|\xc2\xa0|\xe2\x80\xa8|\xe2\x80\xa9";
-
-    // Mapping arrays for escaping a double quoted string. The backslash is
-    // first to ensure proper escaping because str_replace operates iteratively
-    // on the input arrays. This ordering of the characters avoids the use of strtr,
-    // which performs more slowly.
-    private static $escapees = array('\\\\', '\\"', '"',
-                                     "\x00",  "\x01",  "\x02",  "\x03",  "\x04",  "\x05",  "\x06",  "\x07",
-                                     "\x08",  "\x09",  "\x0a",  "\x0b",  "\x0c",  "\x0d",  "\x0e",  "\x0f",
-                                     "\x10",  "\x11",  "\x12",  "\x13",  "\x14",  "\x15",  "\x16",  "\x17",
-                                     "\x18",  "\x19",  "\x1a",  "\x1b",  "\x1c",  "\x1d",  "\x1e",  "\x1f",
-                                     "\xc2\x85", "\xc2\xa0", "\xe2\x80\xa8", "\xe2\x80\xa9");
-    private static $escaped  = array('\\"', '\\\\', '\\"',
-                                     "\\0",   "\\x01", "\\x02", "\\x03", "\\x04", "\\x05", "\\x06", "\\a",
-                                     "\\b",   "\\t",   "\\n",   "\\v",   "\\f",   "\\r",   "\\x0e", "\\x0f",
-                                     "\\x10", "\\x11", "\\x12", "\\x13", "\\x14", "\\x15", "\\x16", "\\x17",
-                                     "\\x18", "\\x19", "\\x1a", "\\e",   "\\x1c", "\\x1d", "\\x1e", "\\x1f",
-                                     "\\N", "\\_", "\\L", "\\P");
-
-    /**
-     * Determines if a PHP value would require double quoting in YAML.
-     *
-     * @param string $value A PHP value
-     *
-     * @return Boolean True if the value would require double quotes.
-     */
-    public static function requiresDoubleQuoting($value)
-    {
-        return preg_match('/'.self::REGEX_CHARACTER_TO_ESCAPE.'/u', $value);
-    }
-
-    /**
-     * Escapes and surrounds a PHP value with double quotes.
-     *
-     * @param string $value A PHP value
-     *
-     * @return string The quoted, escaped string
-     */
-    public static function escapeWithDoubleQuotes($value)
-    {
-        return sprintf('"%s"', str_replace(self::$escapees, self::$escaped, $value));
-    }
-
-    /**
-     * Determines if a PHP value would require single quoting in YAML.
-     *
-     * @param string $value A PHP value
-     *
-     * @return Boolean True if the value would require single quotes.
-     */
-    public static function requiresSingleQuoting($value)
-    {
-        return preg_match('/[ \s \' " \: \{ \} \[ \] , & \* \# \?] | \A[ \- ? | < > = ! % @ ` ]/x', $value);
-    }
-
-    /**
-     * Escapes and surrounds a PHP value with single quotes.
-     *
-     * @param string $value A PHP value
-     *
-     * @return string The quoted, escaped string
-     */
-    public static function escapeWithSingleQuotes($value)
-    {
-        return sprintf("'%s'", str_replace('\'', '\'\'', $value));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPpQhRAPmTrMA6HlvXNPXkTlOsljTgem0Nw+ijTWcMNQbLh4C1aSsWtG0Fz8rtEPY1SoAx0Cf
+o81bUmxcqdxb6Oi4WpZtykfMtHDiJvDil7TUMvQcxQz5zLQ8Z4kcGdX18vSswnFuc8CL+8wAo4XG
+yaarhm8BiHIcxGVdzZ3vsAxBGwVpxLJBkAzdxj1l/Uh2qzaNjGoGa8U8NLJCEBo/zQm6ddALjlgP
+gQEW0k7K+leSLl7QtXRfhr4euJltSAgiccy4GDnfT79gzBoOVenCIdOxdyZqexXa1Not4VZWX6L3
+mqr2uUUciUdfwkwY4ek16a1697T1JEg8Z8SMqdJj3jGbud6fsma5+Hao8Al+v53JuqOYI1zNJvwo
+jnHqrGBNcj9hczZUWEEmIJrN7XldOTpGQIFD1/0cGbWKXl2UJKPDoDL7zbQm110Ur7rSy4S81YnG
+rRYf7vb557SDz3S+0tEtVdBLPfUCD7m8GR9nXzTvsykYqsE825ntohtCouS/H5IWqzYsCkxPNsVg
+y0+H3LLNbn3hRXS/MSg8pMysBHKR79JEDOCV3JLjAvLtzT2Vyg8iOgQ0vhYpeI8wpDA/XbZZ90Wj
+5lSSDNOz0BXdwc2mBBieFT2HXbBtgGlQgmmwJfw1btoNxUuBQMyeoLplLvRnTC0HA2dBxZets19e
+XhDmwOB7cAt1obRMxLd6dfDqxlJ1iG598/NDSOnyEiIn8+EarWNJVRAm5fy3+KmtyJ0NtF1LMinX
+9Ibu7aJn4Hbasmb3T+qGtdmqFoH6u7Ayw3RoyJG9PFFy7B2IZiXJdiwCO0XgBSvyeNM54H94tbnJ
+fbbSrT3hibX+AyunwMGOlW4CiCe0qBgBHiWF2O6kZo2M0vbeG8/IAh0HsFDUnXo0qW72WMQ3K7Cv
+nhQytGMvgtE+COFPbyrqUeC0X/bLnEfgxLpyBuPqqnU4qQ3vXr5DMxkQzEbELifBmztd6iyZQtru
+9jbD/TIExej/StILtullvYXgqlXLJB425x6pwgF9AsVrAegxhOysvHk3WF0GGQTcCeGBdBtDiPJo
+brwnaJ/1yxlwOmORsabaKOf1cDCo0KqejyRFNlWdzM8trFOk5xlMjNVNMEl71xPsWyjGZObWMHcf
+Uq0FukQ4jr40Wk33xzMRrU/SHzrCp3PVb1ky7JOBE8hQsDmfH6LRx4MnrMLKWWCa2BteApahZE9w
+qmfqDMQpeEa0Qqc6XuuljMMkRKkCpPlJfbt15Ms1rjORqC7m+SB63mTDL3JS5NDeXfrT9RylZqww
+MlYarMXBz/GQbAgiYBXTA+eAcqZR8UGGpJUHNmAsWoLrpiipJiPp0+hIYpNAUC/R9rGOQMxuEQaP
+2DXMT/r4HnKDp2XSfMe8ofVKT+tIkiUNy/MzmeeBEOxUqTl4DODCkwuI8lN48W4r3V9fxV0Ef6Ms
+KXdOAGaIY+StYnumF+s0h3LAfayCIM5Rn8Z/IuSLi9x6OAglB7t6Jd1/47yZWWyiQKHGnxg17CBE
+VxEkxFXWHtnX0vlDYC62PIYOfJuiIHNcu4G/PbTgf2TSYMuwlsCRyOB09tZ5zzYuFoXoZXjo5wtB
+e9Z6io8rMRh1IzKIbQKXC27+Zq5o9sTXv55BDeR4pWkE4yoeDry0tM29JlfSZeu4Oi0o5CDtoTpQ
+gMhYfgmK20B/23flUYe8BbGAw6dTdtCYEZGaSFX2Mt+iUS6Q1/QS5//teDu92WLfqTKComQErsIQ
+7PrM/toEPkjbp6Fyj8PFTQ/zdE9zgsSnuN4Nq84XG9GCN8htntym0rcWdk0L70zORf55HSKVCH0f
+nEgQLtu1waAghLuwTkHP4g21seFxaxj9zwL6NO5F/iw+cNSIPb5WvEvyq+3XjtwOOWzCECImUipw
+hFNls1RtAxFqXlFEA7gKtlICsz9mhWsfzEGgLWLk1F2Qpwamd+7ri+qOttuLj1En/aAuOBFJRCrg
+3Ih3C4C8BD/VYnKvWoXTcK4OoguDe9E/3XFkp59Oo0l5L4QJ40qfKtJ41QQ2DUb83e91a2TYOfLf
+Jl7o5VKgcz4ZWVDpYP3GUg5NQyAYXp/shavM/ueWjX4mLLJPMSoDjCZRsP5AbcPEY+oFza+QU90q
+RKVp3PyKU8MQ/oi7f6ldsaFnJHubD/H1ZzsnNRG2J0vPrIFvsAGdWb1uZXXsY5b2zn5rrIZi92XQ
+fCvFxaHOwmjWJDKXHgdMqzpgjWIUHE0Sa1OG0IYZZgPcAt/RTa6jrsleWrs/qVKBEdJcW7A1BX0m
+9FR7RJ2XJdJQDxEWc3vX3ANbu1a6k0tcJ37qJKaLWP5Gyz32ydR66cLjpcGlsPsfFPyJbH7IdjWx
+5FdexGdUYMQk/aVHgWGD/sAJU0ZCURzY4FhZHgkhreeRKIUCKVNjDL3nbYyRsS2Sm4Ppx5Bmffua
+P9ffSnRXx1IozKwgmpdzBV2wvvljpzhWGwTiGSd4/OLr1GfMFV6Z13TMcd+z8g7HMaFy4KAdYEmt
+3seMulyneW3LQ8ewGkc6XTISr2BdVl17kaO0bH556thqlYifJwy01jIxz1BdslSUx+TfqxYxXK4Q
+MkrL1X1sQpKR97UfZw2i1wWo/Aw2Xi1GkfDUYD65KSdPCMdTdnRYjaR6QTFfBWnc+UK6ZgET8aew
+lpsTTYjMretV5QH6H1ejX0EmuYCqypEPrtzCPpu8JXqzfmsxncOAl8rXKoTbceMP0DvyGQ1bEAN6
+BAq3jPyko7FoCv6FVc2116XChEPyjqqFySOF+5ro1LQowB613B+MTNiMs5xmJIEgcuuImXWMvzbS
+IpgOCVc1mRP6pIm6nFC4pJd46xOI8ZL1CntMcZ7Rfboi/RxT+W==

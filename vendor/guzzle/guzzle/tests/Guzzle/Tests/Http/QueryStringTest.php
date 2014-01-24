@@ -1,232 +1,141 @@
-<?php
-
-namespace Guzzle\Tests\Http;
-
-use Guzzle\Http\QueryString;
-use Guzzle\Http\QueryAggregator\DuplicateAggregator;
-use Guzzle\Http\QueryAggregator\CommaAggregator;
-
-class QueryStringTest extends \Guzzle\Tests\GuzzleTestCase
-{
-    /** @var \Guzzle\Http\QueryString The query string object to test */
-    protected $q;
-
-    public function setup()
-    {
-        $this->q = new QueryString();
-    }
-
-    public function testGetFieldSeparator()
-    {
-        $this->assertEquals('&', $this->q->getFieldSeparator());
-    }
-
-    public function testGetValueSeparator()
-    {
-        $this->assertEquals('=', $this->q->getValueSeparator());
-    }
-
-    public function testIsUrlEncoding()
-    {
-        $this->assertEquals('RFC 3986', $this->q->getUrlEncoding());
-        $this->assertTrue($this->q->isUrlEncoding());
-        $this->assertEquals('foo%20bar', $this->q->encodeValue('foo bar'));
-
-        $this->q->useUrlEncoding(QueryString::FORM_URLENCODED);
-        $this->assertTrue($this->q->isUrlEncoding());
-        $this->assertEquals(QueryString::FORM_URLENCODED, $this->q->getUrlEncoding());
-        $this->assertEquals('foo+bar', $this->q->encodeValue('foo bar'));
-
-        $this->assertSame($this->q, $this->q->useUrlEncoding(false));
-        $this->assertFalse($this->q->isUrlEncoding());
-        $this->assertFalse($this->q->isUrlEncoding());
-    }
-
-    public function testSetFieldSeparator()
-    {
-        $this->assertEquals($this->q, $this->q->setFieldSeparator('/'));
-        $this->assertEquals('/', $this->q->getFieldSeparator());
-    }
-
-    public function testSetValueSeparator()
-    {
-        $this->assertEquals($this->q, $this->q->setValueSeparator('/'));
-        $this->assertEquals('/', $this->q->getValueSeparator());
-    }
-
-    public function testUrlEncode()
-    {
-        $params = array(
-            'test'   => 'value',
-            'test 2' => 'this is a test?',
-            'test3'  => array('v1', 'v2', 'v3'),
-            'ሴ'      => 'bar'
-        );
-        $encoded = array(
-            'test'         => 'value',
-            'test%202'     => rawurlencode('this is a test?'),
-            'test3%5B0%5D' => 'v1',
-            'test3%5B1%5D' => 'v2',
-            'test3%5B2%5D' => 'v3',
-            '%E1%88%B4'    => 'bar'
-        );
-        $this->q->replace($params);
-        $this->assertEquals($encoded, $this->q->urlEncode());
-
-        // Disable encoding
-        $testData = array('test 2' => 'this is a test');
-        $this->q->replace($testData);
-        $this->q->useUrlEncoding(false);
-        $this->assertEquals($testData, $this->q->urlEncode());
-    }
-
-    public function testToString()
-    {
-        // Check with no parameters
-        $this->assertEquals('', $this->q->__toString());
-
-        $params = array(
-            'test'   => 'value',
-            'test 2' => 'this is a test?',
-            'test3'  => array('v1', 'v2', 'v3'),
-            'test4'  => null,
-        );
-        $this->q->replace($params);
-        $this->assertEquals('test=value&test%202=this%20is%20a%20test%3F&test3%5B0%5D=v1&test3%5B1%5D=v2&test3%5B2%5D=v3&test4=', $this->q->__toString());
-        $this->q->useUrlEncoding(false);
-        $this->assertEquals('test=value&test 2=this is a test?&test3[0]=v1&test3[1]=v2&test3[2]=v3&test4=', $this->q->__toString());
-
-        // Use an alternative aggregator
-        $this->q->setAggregator(new CommaAggregator());
-        $this->assertEquals('test=value&test 2=this is a test?&test3=v1,v2,v3&test4=', $this->q->__toString());
-    }
-
-    public function testAllowsMultipleValuesPerKey()
-    {
-        $q = new QueryString();
-        $q->add('facet', 'size');
-        $q->add('facet', 'width');
-        $q->add('facet.field', 'foo');
-        // Use the duplicate aggregator
-        $q->setAggregator(new DuplicateAggregator());
-        $this->assertEquals('facet=size&facet=width&facet.field=foo', $q->__toString());
-    }
-
-    public function testAllowsNestedQueryData()
-    {
-        $this->q->replace(array(
-            'test' => 'value',
-            't' => array(
-                'v1' => 'a',
-                'v2' => 'b',
-                'v3' => array(
-                    'v4' => 'c',
-                    'v5' => 'd',
-                )
-            )
-        ));
-
-        $this->q->useUrlEncoding(false);
-        $this->assertEquals('test=value&t[v1]=a&t[v2]=b&t[v3][v4]=c&t[v3][v5]=d', $this->q->__toString());
-    }
-
-    public function parseQueryProvider()
-    {
-        return array(
-            // Ensure that multiple query string values are allowed per value
-            array('q=a&q=b', array('q' => array('a', 'b'))),
-            // Ensure that PHP array style query string values are parsed
-            array('q[]=a&q[]=b', array('q' => array('a', 'b'))),
-            // Ensure that a single PHP array style query string value is parsed into an array
-            array('q[]=a', array('q' => array('a'))),
-            // Ensure that decimals are allowed in query strings
-            array('q.a=a&q.b=b', array(
-                'q.a' => 'a',
-                'q.b' => 'b'
-            )),
-            // Ensure that query string values are percent decoded
-            array('q%20a=a%20b', array('q a' => 'a b')),
-            // Ensure null values can be added
-            array('q&a', array('q' => null, 'a' => null)),
-        );
-    }
-
-    /**
-     * @dataProvider parseQueryProvider
-     */
-    public function testParsesQueryStrings($query, $data)
-    {
-        $query = QueryString::fromString($query);
-        $this->assertEquals($data, $query->getAll());
-    }
-
-    public function testProperlyDealsWithDuplicateQueryStringValues()
-    {
-        $query = QueryString::fromString('foo=a&foo=b&?µ=c');
-        $this->assertEquals(array('a', 'b'), $query->get('foo'));
-        $this->assertEquals('c', $query->get('?µ'));
-    }
-
-    public function testAllowsBlankQueryStringValues()
-    {
-        $query = QueryString::fromString('foo');
-        $this->assertEquals('foo=', (string) $query);
-        $query->set('foo', QueryString::BLANK);
-        $this->assertEquals('foo', (string) $query);
-    }
-
-    public function testAllowsFalsyQueryStringValues()
-    {
-        $query = QueryString::fromString('0');
-        $this->assertEquals('0=', (string) $query);
-        $query->set('0', QueryString::BLANK);
-        $this->assertSame('0', (string) $query);
-    }
-
-    public function testFromStringIgnoresQuestionMark()
-    {
-        $query = QueryString::fromString('foo=baz&bar=boo');
-        $this->assertEquals('foo=baz&bar=boo', (string) $query);
-    }
-
-    public function testConvertsPlusSymbolsToSpaces()
-    {
-        $query = QueryString::fromString('var=foo+bar');
-        $this->assertEquals('foo bar', $query->get('var'));
-    }
-
-    public function testFromStringDoesntMangleZeroes()
-    {
-        $query = QueryString::fromString('var=0');
-        $this->assertSame('0', $query->get('var'));
-    }
-
-    public function testAllowsZeroValues()
-    {
-        $query = new QueryString(array(
-            'foo' => 0,
-            'baz' => '0',
-            'bar' => null,
-            'boo' => false
-        ));
-        $this->assertEquals('foo=0&baz=0&bar=&boo=', (string) $query);
-    }
-
-    public function testFromStringDoesntStripTrailingEquals()
-    {
-        $query = QueryString::fromString('data=mF0b3IiLCJUZWFtIERldiJdfX0=');
-        $this->assertEquals('mF0b3IiLCJUZWFtIERldiJdfX0=', $query->get('data'));
-    }
-
-    public function testGuessesIfDuplicateAggregatorShouldBeUsed()
-    {
-        $query = QueryString::fromString('test=a&test=b');
-        $this->assertEquals('test=a&test=b', (string) $query);
-    }
-
-    public function testGuessesIfDuplicateAggregatorShouldBeUsedAndChecksForPhpStyle()
-    {
-        $query = QueryString::fromString('test[]=a&test[]=b');
-        $this->assertEquals('test%5B0%5D=a&test%5B1%5D=b', (string) $query);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+KNKXoOFLs/3fHQB8EsQqB1IXFiGccW==

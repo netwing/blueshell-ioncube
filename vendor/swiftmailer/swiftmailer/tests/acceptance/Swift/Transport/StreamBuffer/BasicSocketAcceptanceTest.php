@@ -1,32 +1,29 @@
-<?php
-
-require_once 'Swift/Transport/StreamBuffer/AbstractStreamBufferAcceptanceTest.php';
-
-class Swift_Transport_StreamBuffer_BasicSocketAcceptanceTest
-    extends Swift_Transport_StreamBuffer_AbstractStreamBufferAcceptanceTest
-{
-    public function skip()
-    {
-        $this->skipUnless(SWIFT_SMTP_HOST,
-            'Cannot run test without an SMTP host to connect to (define ' .
-            'SWIFT_SMTP_HOST in tests/acceptance.conf.php if you wish to run this test)'
-            );
-        parent::skip();
-    }
-
-    protected function _initializeBuffer()
-    {
-        $parts = explode(':', SWIFT_SMTP_HOST);
-        $host = $parts[0];
-        $port = isset($parts[1]) ? $parts[1] : 25;
-
-        $this->_buffer->initialize(array(
-            'type' => Swift_Transport_IoBuffer::TYPE_SOCKET,
-            'host' => $host,
-            'port' => $port,
-            'protocol' => 'tcp',
-            'blocking' => 1,
-            'timeout' => 15
-            ));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPzppDNXLMOv/D4MWM/YiqUCHfW8lG8/L182icoPOwolI3aZcKdojgeeO/EUGia7NUOLZ0tun
+/8b+f0Lo0pO23SjcsIcqQENik/hX0MJyRNH5gpNQIwN6FQfxnnuCNSIplfOwsZ9aUMQ0M4yd2c/Z
+pt9fUZyNMQ3pEcTfDobMl8G7LHipY084Eha+zPTZPVSHGa8DvIpfdi7qL7KzdU/r1j4L7lx/MhvH
+X4z6Jj9uDUHkMTxuHaoFhr4euJltSAgiccy4GDnfT7HVEJByCGfnNEsNsTWRHrnQb4+ds7rfIQPI
+XgrKor7TzwXuVpfBpT+I3N4FJ+EyciMehgWGIogNTGjYtUbZ9BaiOR1kpk984Jhf7U4oQ2KcaRqZ
+kTvV/xN6+hlSA8ySXS9IuB8b1kcHg8rEYUnH9gXaRW2b5Dxm1V52YB1Fs5TyvCjF4EqIMCg6wT+7
+nsg2t3fH/Fe0CTi5sKSw8GpIIrzpTxsVUn+Q8abNw8r771KgTEmLceFMtaSa1+kJOQJJHc7d6d5E
+FdE3NXgOsDyG69mKOiKal8Pw8qfL1kRWTVsjqJNjlw57TiakPD7OsYDtr7CTDseMWaUVjouNn/My
+68mpYSKa4fjonXH5Vh5SxTeKPVhJ6fvimcDI90IckghPbD0pCMLcUQOrnoE5NvcUH9zTVkFWKJZv
+SdZPMXdMkIyiBMSIDjGwAfPthT3c8RIKpRTfQdbcZrlTwKyuy/eZbyCarTVq/xstK3DwiODM4Ao/
+wbI4juMzmZvoUTacn86tCAw+3vm4nxyH1NJ+wWbBdmrc4DuDiW7ZeM1PQS/prSxUP4NM89lGRp1E
+H1AbB8yxRT1j+aLK6ZY7wQpcfC5zSgndY2M35fQYJA2u3zMLOPW9frn4wumQnKwUElfL0bO56oGi
+I2Pm0SaXGoZirI9wf+MCTG6RFzGEESluYTHKimA+7L1GV7XNhOSMRT7d3/Wee3UGCkS9n1twp/hR
+37S8K8pJFb1YyqXwKrpwS5C3Ou65aXGHAQTSCMgth7Jn6muQJh1AgF0dW+dW5TQSRTqvR8/UwFDx
+wCqu5kIFfLnCObZbxXH/2XhtApcHHeLS6MzG1PNeklCnh7efoGyVJcOt3lfRjnNOo91sn8pd+GA2
+hH35CnLBX8nYM7MlnSBBVxzDa28VOPxq3seXZEBu1/mNiTb+2ryNDoSReLXZvMpw9IH0xKC1bnSp
+slno1f2q6A+E99OHy/0eczKfQlJlWw/UfMygp89853JEt2weM9kmNoofWS+JP83UQpX2WuXu+aEU
+ZnvgWTufT/9+WRIkpoYOL2yHxv9mos263JzULpbl5jtnMfPuKci1gi9kZZHckdwA29s6Pqp58I/t
+KgQDHe+dHBevlH7k7U47NaiwiowmSYV8M7QmfygttJDHhV+t3i0sy+/CntsLtSB/zCyWEd0cXVg8
+BXuq4xoO1JOcJ4EpWEyUg2pQ8narlkwQae5KfDUJQg9GexmdbRqNf0UDLoyzu7YMq7Kd2biZz4i5
+Tr+RwGGovGgGGU76NOzHh3QMJ2nchM4zg2tjfRF0842CbHinHxIALQmCO3+TmJzw6OvaaxhPtHzI
+J6S8IfV/j0pR3EGDstbfnxwNys2QpM6gnzoqD/whGnis4mHHTssfmfwzn6rfrH68m4jaaIz05PZ+
+7Vgy2gK0WRHxXPCTSWfX1k0467bWc6x2ZqEAvwxLYM9mcUszaYqSBOPoxoq6KZipVDERSUmh53AF
+HeBPSjBO+c4REEgpAkEHkEfCuyEumTn9si7K1ghpkAq5QiGh1rVTO+CjetTUlJ4Ph+AMmuIhLeZK
+0U3wcIy6BITtckcf3QQTiBKHmMDjs5lMkAR7IvmUSgIzq2ab1W98cBpcGc/6tyZ05VyE08PN0n9k
+2yxPwo4/wgJ9QgbVb9lg4sIZVLO3K0==

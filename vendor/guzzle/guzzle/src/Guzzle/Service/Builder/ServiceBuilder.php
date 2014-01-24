@@ -1,189 +1,99 @@
-<?php
-
-namespace Guzzle\Service\Builder;
-
-use Guzzle\Common\AbstractHasDispatcher;
-use Guzzle\Service\ClientInterface;
-use Guzzle\Service\Exception\ServiceBuilderException;
-use Guzzle\Service\Exception\ServiceNotFoundException;
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-
-/**
- * {@inheritdoc}
- *
- * Clients and data can be set, retrieved, and removed by accessing the service builder like an associative array.
- */
-class ServiceBuilder extends AbstractHasDispatcher implements ServiceBuilderInterface, \ArrayAccess, \Serializable
-{
-    /** @var array Service builder configuration data */
-    protected $builderConfig = array();
-
-    /** @var array Instantiated client objects */
-    protected $clients = array();
-
-    /** @var ServiceBuilderLoader Cached instance of the service builder loader */
-    protected static $cachedFactory;
-
-    /** @var array Plugins to attach to each client created by the service builder */
-    protected $plugins = array();
-
-    /**
-     * Create a new ServiceBuilder using configuration data sourced from an
-     * array, .js|.json or .php file.
-     *
-     * @param array|string $config           The full path to an .json|.js or .php file, or an associative array
-     * @param array        $globalParameters Array of global parameters to pass to every service as it is instantiated.
-     *
-     * @return ServiceBuilderInterface
-     * @throws ServiceBuilderException if a file cannot be opened
-     * @throws ServiceNotFoundException when trying to extend a missing client
-     */
-    public static function factory($config = null, array $globalParameters = array())
-    {
-        // @codeCoverageIgnoreStart
-        if (!static::$cachedFactory) {
-            static::$cachedFactory = new ServiceBuilderLoader();
-        }
-        // @codeCoverageIgnoreEnd
-
-        return self::$cachedFactory->load($config, $globalParameters);
-    }
-
-    /**
-     * @param array $serviceBuilderConfig Service configuration settings:
-     *     - name: Name of the service
-     *     - class: Client class to instantiate using a factory method
-     *     - params: array of key value pair configuration settings for the builder
-     */
-    public function __construct(array $serviceBuilderConfig = array())
-    {
-        $this->builderConfig = $serviceBuilderConfig;
-    }
-
-    public static function getAllEvents()
-    {
-        return array('service_builder.create_client');
-    }
-
-    public function unserialize($serialized)
-    {
-        $this->builderConfig = json_decode($serialized, true);
-    }
-
-    public function serialize()
-    {
-        return json_encode($this->builderConfig);
-    }
-
-    /**
-     * Attach a plugin to every client created by the builder
-     *
-     * @param EventSubscriberInterface $plugin Plugin to attach to each client
-     *
-     * @return self
-     */
-    public function addGlobalPlugin(EventSubscriberInterface $plugin)
-    {
-        $this->plugins[] = $plugin;
-
-        return $this;
-    }
-
-    /**
-     * Get data from the service builder without triggering the building of a service
-     *
-     * @param string $name Name of the service to retrieve
-     *
-     * @return array|null
-     */
-    public function getData($name)
-    {
-        return isset($this->builderConfig[$name]) ? $this->builderConfig[$name] : null;
-    }
-
-    public function get($name, $throwAway = false)
-    {
-        if (!isset($this->builderConfig[$name])) {
-
-            // Check to see if arbitrary data is being referenced
-            if (isset($this->clients[$name])) {
-                return $this->clients[$name];
-            }
-
-            // Check aliases and return a match if found
-            foreach ($this->builderConfig as $actualName => $config) {
-                if (isset($config['alias']) && $config['alias'] == $name) {
-                    return $this->get($actualName, $throwAway);
-                }
-            }
-            throw new ServiceNotFoundException('No service is registered as ' . $name);
-        }
-
-        if (!$throwAway && isset($this->clients[$name])) {
-            return $this->clients[$name];
-        }
-
-        $builder =& $this->builderConfig[$name];
-
-        // Convert references to the actual client
-        foreach ($builder['params'] as &$v) {
-            if (is_string($v) && substr($v, 0, 1) == '{' && substr($v, -1) == '}') {
-                $v = $this->get(trim($v, '{} '));
-            }
-        }
-
-        // Get the configured parameters and merge in any parameters provided for throw-away clients
-        $config = $builder['params'];
-        if (is_array($throwAway)) {
-            $config = $throwAway + $config;
-        }
-
-        $client = $builder['class']::factory($config);
-
-        if (!$throwAway) {
-            $this->clients[$name] = $client;
-        }
-
-        if ($client instanceof ClientInterface) {
-            foreach ($this->plugins as $plugin) {
-                $client->addSubscriber($plugin);
-            }
-            // Dispatch an event letting listeners know a client was created
-            $this->dispatch('service_builder.create_client', array('client' => $client));
-        }
-
-        return $client;
-    }
-
-    public function set($key, $service)
-    {
-        if (is_array($service) && isset($service['class']) && isset($service['params'])) {
-            $this->builderConfig[$key] = $service;
-        } else {
-            $this->clients[$key] = $service;
-        }
-
-        return $this;
-    }
-
-    public function offsetSet($offset, $value)
-    {
-        $this->set($offset, $value);
-    }
-
-    public function offsetUnset($offset)
-    {
-        unset($this->builderConfig[$offset]);
-        unset($this->clients[$offset]);
-    }
-
-    public function offsetExists($offset)
-    {
-        return isset($this->builderConfig[$offset]) || isset($this->clients[$offset]);
-    }
-
-    public function offsetGet($offset)
-    {
-        return $this->get($offset);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

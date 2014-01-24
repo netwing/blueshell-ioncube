@@ -1,149 +1,85 @@
-<?php
-/**
- * Smarty PHPunit test suite
- *
- * @package PHPunit
- * @author Uwe Tews
- */
-
-define ('SMARTY_DIR', '../../distribution/libs/');
-
-require_once SMARTY_DIR . 'SmartyBC.class.php';
-
-/**
- * class for running test suite
- */
-class SmartyTests
-{
-    public static $smarty = null;
-    public static $smartyBC = null;
-
-    protected static function _init($smarty)
-    {
-        $smarty->template_dir = array('.' . DS . 'templates' . DS);
-        $smarty->compile_dir = '.' . DS . 'templates_c' . DS;
-        $smarty->plugins_dir = array(SMARTY_PLUGINS_DIR);
-        $smarty->cache_dir = '.' . DS . 'cache' . DS;
-        $smarty->config_dir = array('.' . DS . 'configs' . DS);
-        $smarty->template_objects = array();
-        $smarty->config_vars = array();
-        Smarty::$global_tpl_vars = array();
-        $smarty->template_functions = array();
-        $smarty->tpl_vars = array();
-        $smarty->force_compile = false;
-        $smarty->force_cache = false;
-        $smarty->auto_literal = true;
-        $smarty->caching = false;
-        $smarty->debugging = false;
-        Smarty::$_smarty_vars = array();
-        $smarty->registered_plugins = array();
-        $smarty->default_plugin_handler_func = null;
-        $smarty->registered_objects = array();
-        $smarty->default_modifiers = array();
-        $smarty->registered_filters = array();
-        $smarty->autoload_filters = array();
-        $smarty->escape_html = false;
-        $smarty->use_sub_dirs = false;
-        $smarty->config_overwrite = true;
-        $smarty->config_booleanize = true;
-        $smarty->config_read_hidden = true;
-        $smarty->security_policy = null;
-        $smarty->left_delimiter = '{';
-        $smarty->right_delimiter = '}';
-        $smarty->php_handling = Smarty::PHP_PASSTHRU;
-        $smarty->enableSecurity();
-        $smarty->error_reporting = null;
-        $smarty->error_unassigned = true;
-        $smarty->caching_type = 'file';
-        $smarty->cache_locking = false;
-        $smarty->cache_id = null;
-        $smarty->compile_id = null;
-        $smarty->default_resource_type = 'file';
-    }
-
-    public static function init()
-    {
-        error_reporting(E_ALL | E_STRICT);
-        self::_init(SmartyTests::$smarty);
-        self::_init(SmartyTests::$smartyBC);
-        SmartyTests::$smartyBC->registerPlugin('block','php','smarty_php_tag');
-        Smarty_Resource::$sources = array();
-        Smarty_Resource::$compileds = array();
-    }
-}
-
-class  PHPUnit_Framework_TestCase
-{
-    public $current_function = '';
-    public $error_functions = array();
-
-    public function __construct()
-    {
-        $this->setUp();
-    }
-    public function __call($a,$b)
-    {
-        $this->error();
-        echo '<br>Missing method  '.$a;
-
-        return true;
-    }
-
-    public function assertContains($a,$b)
-    {
-        if (strpos($b,$a) === false) {
-            $this->error();
-            echo '<br><br>result: '.$b;
-            echo '<br>should contain: '.$a;
-        }
-    }
-
-    public function assertNotContains($a,$b)
-    {
-        if (strpos($b,$a) !== false) {
-            $this->error();
-            echo '<br>result: '.$b;
-            echo '<br>should not contain: '.$a;
-        }
-    }
-
-    public function assertEquals($a,$b)
-    {
-        if ($a !== $b) {
-            $this->error();
-            echo '<br>expected '.$a;
-            echo '<br>is: '.$b;
-        }
-    }
-
-    public function assertFalse($a)
-    {
-        if ($a !== false) {
-            $this->error();
-            echo '<br>result was not false';
-        }
-    }
-    public function assertTrue($a)
-    {
-        if ($a !== true) {
-            $this->error();
-            echo '<br>result was not true';
-        }
-    }
-    public function assertNull($a)
-    {
-        if ($a !== null) {
-            $this->error();
-            echo '<br>result was not "null"';
-        }
-    }
-
-    public function error()
-    {
-        echo '<br><br><br>ERROR in test:  '. get_class($this).'::'.$this->current_function;
-        $this->error_functions[] = $this->current_function;
-    }
-}
-
-SmartyTests::$smartyBC = new SmartyBC();
-SmartyTests::$smarty = new Smarty();
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

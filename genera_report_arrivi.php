@@ -1,66 +1,64 @@
-<?php
-require_once("config.inc.php");
-$ricerca_sostituzione=array();
-$clienti=$blue->elenco_clienti();
-$posti_barca=$blue->elenco_posti_barca();
-$inizio_dal = $_POST['inizio_dal'];
-$inizio_al = $_POST['inizio_al'];
-
-$pontili=$blue->elenco_pontili();
-$pontile=intval($_POST['pontile']);
-$pontile_codice=$pontili[$pontile];
-$select_posti_barca = "SELECT posto_barca_id FROM ".$tabelle['posti_barca']." 
-					   WHERE posto_barca_pontile='".$pontile."' ORDER BY posto_barca_id ASC";					   
-$result_posti_barca=$sql->select_query($select_posti_barca);
-$posti_barca_pontile=array();
-if ($sql->select_num_rows==0) {
-	header("Location:report_arrivi.php?nopb");
-	exit;
-}
-while ($row_posti_barca=mysql_fetch_array($result_posti_barca)) {
-	$posti_barca_pontile[]=$row_posti_barca['posto_barca_id'];
-}
-$where_pontili="( presenza_posto_barca=".implode(" OR presenza_posto_barca=",$posti_barca_pontile)." )";
-// Carichiamo i posti barca che appartengono al pontile in questione
-$select = "SELECT presenza_posto_barca,presenza_cliente,presenza_arrivo,presenza_partenza,
-				  barca_nome,barca_modello,barca_targa,barca_lunghezza,barca_larghezza,
-				  dimensione_lunghezza,dimensione_larghezza 
-				  FROM ".$tabelle['presenze'].",".$tabelle['barche'].",".$tabelle['dimensioni'].",".$tabelle['posti_barca']." 
-				  WHERE barca_id=presenza_barca AND dimensione_id=posto_barca_dimensioni AND posto_barca_id=presenza_posto_barca 
-				  AND ".$where_pontili." AND presenza_arrivo>='".$inizio_dal."' AND presenza_arrivo<='".$inizio_al."' 
-				  ORDER BY presenza_arrivo ASC";
-
-$result=$sql->select_query($select);
-if ($sql->select_num_rows==0) {
-	header("Location:report_arrivi.php?nopr");
-	exit;
-}
-while ($row=mysql_fetch_array($result)) {
-	$arrivo=$sql->data_ita($row['presenza_arrivo']);
-	$arrivo=$arrivo[0];
-	$partenza=$sql->data_ita($row['presenza_partenza']);
-	$partenza=$partenza[0];
-	$dimensioni_barca=$row['barca_lunghezza']." m. x ".$row['barca_larghezza']." m. ";	
-	$dimensioni_posto_barca=$row['dimensione_lunghezza']." m. x ".$row['dimensione_larghezza']." m. ";	
-	$ricerca_sostituzione[]=array(	'<PB>'=>$posti_barca[$row['presenza_posto_barca']],
-									'<DIMPB>'=>$dimensioni_posto_barca,									
-									'<CLIENTE>'=>$clienti[$row['presenza_cliente']],
-									'<BARCA>'=>$row['barca_nome'],
-									'<MODELLO>'=>$row['barca_modello'],
-									'<TARGA>'=>$row['barca_targa'],
-									'<DIMBARCA>'=>$dimensioni_barca,									
-									'<ARRIVO>'=>$arrivo,
-									'<PARTENZA>'=>$partenza
-									);
-}
-
-$rtf=new RTF();
-//$rtf->intestazioni=array("Codice","Contratto","Cliente","Barca","Posto Barca","Data","Dal","Al");
-$rtf->carica_template("template/report_arrivi.rtf");
-$rtf->rtf_multiriga($ricerca_sostituzione);
-$rtf->contenuto_finale=str_replace("<ARRIVO_DAL>",$inizio_dal,$rtf->contenuto_finale);
-$rtf->contenuto_finale=str_replace("<ARRIVO_AL>",$inizio_al,$rtf->contenuto_finale);
-$rtf->contenuto_finale=str_replace("<BOFEOF>","",$rtf->contenuto_finale);
-$rtf->contenuto_finale=str_replace("<BOHEOH>","",$rtf->contenuto_finale);
-$rtf->output("Report_Arrivi_Pontile_".$pontile_codice.".doc");
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

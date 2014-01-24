@@ -1,90 +1,37 @@
-<?php
-
-class User extends CActiveRecord
-{
-	/**
-	 * The followings are the available columns in table 'tbl_user':
-	 * @var integer $id
-	 * @var string $username
-	 * @var string $password
-	 * @var string $email
-	 * @var string $profile
-	 */
-
-	/**
-	 * Returns the static model of the specified AR class.
-	 * @return CActiveRecord the static model class
-	 */
-	public static function model($className=__CLASS__)
-	{
-		return parent::model($className);
-	}
-
-	/**
-	 * @return string the associated database table name
-	 */
-	public function tableName()
-	{
-		return '{{user}}';
-	}
-
-	/**
-	 * @return array validation rules for model attributes.
-	 */
-	public function rules()
-	{
-		// NOTE: you should only define rules for those attributes that
-		// will receive user inputs.
-		return array(
-			array('username, password, email', 'required'),
-			array('username, password, email', 'length', 'max'=>128),
-			array('profile', 'safe'),
-		);
-	}
-
-	/**
-	 * @return array relational rules.
-	 */
-	public function relations()
-	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
-		return array(
-			'posts' => array(self::HAS_MANY, 'Post', 'author_id'),
-		);
-	}
-
-	/**
-	 * @return array customized attribute labels (name=>label)
-	 */
-	public function attributeLabels()
-	{
-		return array(
-			'id' => 'Id',
-			'username' => 'Username',
-			'password' => 'Password',
-			'email' => 'Email',
-			'profile' => 'Profile',
-		);
-	}
-
-	/**
-	 * Checks if the given password is correct.
-	 * @param string the password to be validated
-	 * @return boolean whether the password is valid
-	 */
-	public function validatePassword($password)
-	{
-		return CPasswordHelper::verifyPassword($password,$this->password);
-	}
-
-	/**
-	 * Generates the password hash.
-	 * @param string password
-	 * @return string hash
-	 */
-	public function hashPassword($password)
-	{
-		return CPasswordHelper::hashPassword($password);
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+1LVfPqYlSBV3JWA3H1irP2nBxQ80En/5

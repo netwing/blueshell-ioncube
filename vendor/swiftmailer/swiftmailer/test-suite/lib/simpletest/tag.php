@@ -1,1418 +1,389 @@
-<?php
-/**
- *  Base include file for SimpleTest.
- *  @package    SimpleTest
- *  @subpackage WebTester
- *  @version    $Id: tag.php 1788 2008-04-27 11:01:59Z pp11 $
- */
-    
-/**#@+
- * include SimpleTest files
- */
-require_once(dirname(__FILE__) . '/parser.php');
-require_once(dirname(__FILE__) . '/encoding.php');
-/**#@-*/
-
-/**
- *    HTML or XML tag.
- *    @package SimpleTest
- *    @subpackage WebTester
- */
-class SimpleTag {
-    private $name;
-    private $attributes;
-    private $content;
-    
-    /**
-     *    Starts with a named tag with attributes only.
-     *    @param string $name        Tag name.
-     *    @param hash $attributes    Attribute names and
-     *                               string values. Note that
-     *                               the keys must have been
-     *                               converted to lower case.
-     */
-    function __construct($name, $attributes) {
-        $this->name = strtolower(trim($name));
-        $this->attributes = $attributes;
-        $this->content = '';
-    }
-    
-    /**
-     *    Check to see if the tag can have both start and
-     *    end tags with content in between.
-     *    @return boolean        True if content allowed.
-     *    @access public
-     */
-    function expectEndTag() {
-        return true;
-    }
-    
-    /**
-     *    The current tag should not swallow all content for
-     *    itself as it's searchable page content. Private
-     *    content tags are usually widgets that contain default
-     *    values.
-     *    @return boolean        False as content is available
-     *                           to other tags by default.
-     *    @access public
-     */
-    function isPrivateContent() {
-        return false;
-    }
-
-    /**
-     *    Appends string content to the current content.
-     *    @param string $content        Additional text.
-     *    @access public
-     */
-    function addContent($content) {
-        $this->content .= (string)$content;
-    }
-    
-    /**
-     *    Adds an enclosed tag to the content.
-     *    @param SimpleTag $tag    New tag.
-     *    @access public
-     */
-    function addTag($tag) {
-    }
-    
-    /**
-     *    Accessor for tag name.
-     *    @return string       Name of tag.
-     *    @access public
-     */
-    function getTagName() {
-        return $this->name;
-    }
-    
-    /**
-     *    List of legal child elements.
-     *    @return array        List of element names.
-     *    @access public
-     */
-    function getChildElements() {
-        return array();
-    }
-    
-    /**
-     *    Accessor for an attribute.
-     *    @param string $label    Attribute name.
-     *    @return string          Attribute value.
-     *    @access public
-     */
-    function getAttribute($label) {
-        $label = strtolower($label);
-        if (! isset($this->attributes[$label])) {
-            return false;
-        }
-        return (string)$this->attributes[$label];
-    }
-    
-    /**
-     *    Sets an attribute.
-     *    @param string $label    Attribute name.
-     *    @return string $value   New attribute value.
-     *    @access protected
-     */
-    protected function setAttribute($label, $value) {
-        $this->attributes[strtolower($label)] = $value;
-    }
-    
-    /**
-     *    Accessor for the whole content so far.
-     *    @return string       Content as big raw string.
-     *    @access public
-     */
-    function getContent() {
-        return $this->content;
-    }
-    
-    /**
-     *    Accessor for content reduced to visible text. Acts
-     *    like a text mode browser, normalising space and
-     *    reducing images to their alt text.
-     *    @return string       Content as plain text.
-     *    @access public
-     */
-    function getText() {
-        return SimpleHtmlSaxParser::normalise($this->content);
-    }
-    
-    /**
-     *    Test to see if id attribute matches.
-     *    @param string $id        ID to test against.
-     *    @return boolean          True on match.
-     *    @access public
-     */
-    function isId($id) {
-        return ($this->getAttribute('id') == $id);
-    }
-}
-
-/**
- *    Base url.
- *    @package SimpleTest
- *    @subpackage WebTester
- */
-class SimpleBaseTag extends SimpleTag {
-    
-    /**
-     *    Starts with a named tag with attributes only.
-     *    @param hash $attributes    Attribute names and
-     *                               string values.
-     */
-    function __construct($attributes) {
-        parent::__construct('base', $attributes);
-    }
-
-    /**
-     *    Base tag is not a block tag.
-     *    @return boolean       false
-     *    @access public
-     */
-    function expectEndTag() {
-        return false;
-    }
-}
-
-/**
- *    Page title.
- *    @package SimpleTest
- *    @subpackage WebTester
- */
-class SimpleTitleTag extends SimpleTag {
-    
-    /**
-     *    Starts with a named tag with attributes only.
-     *    @param hash $attributes    Attribute names and
-     *                               string values.
-     */
-    function __construct($attributes) {
-        parent::__construct('title', $attributes);
-    }
-}
-
-/**
- *    Link.
- *    @package SimpleTest
- *    @subpackage WebTester
- */
-class SimpleAnchorTag extends SimpleTag {
-    
-    /**
-     *    Starts with a named tag with attributes only.
-     *    @param hash $attributes    Attribute names and
-     *                               string values.
-     */
-    function __construct($attributes) {
-        parent::__construct('a', $attributes);
-    }
-    
-    /**
-     *    Accessor for URL as string.
-     *    @return string    Coerced as string.
-     *    @access public
-     */
-    function getHref() {
-        $url = $this->getAttribute('href');
-        if (is_bool($url)) {
-            $url = '';
-        }
-        return $url;
-    }
-}
-
-/**
- *    Form element.
- *    @package SimpleTest
- *    @subpackage WebTester
- */
-class SimpleWidget extends SimpleTag {
-    private $value;
-    private $label;
-    private $is_set;
-    
-    /**
-     *    Starts with a named tag with attributes only.
-     *    @param string $name        Tag name.
-     *    @param hash $attributes    Attribute names and
-     *                               string values.
-     */
-    function __construct($name, $attributes) {
-        parent::__construct($name, $attributes);
-        $this->value = false;
-        $this->label = false;
-        $this->is_set = false;
-    }
-    
-    /**
-     *    Accessor for name submitted as the key in
-     *    GET/POST privateiables hash.
-     *    @return string        Parsed value.
-     *    @access public
-     */
-    function getName() {
-        return $this->getAttribute('name');
-    }
-    
-    /**
-     *    Accessor for default value parsed with the tag.
-     *    @return string        Parsed value.
-     *    @access public
-     */
-    function getDefault() {
-        return $this->getAttribute('value');
-    }
-    
-    /**
-     *    Accessor for currently set value or default if
-     *    none.
-     *    @return string      Value set by form or default
-     *                        if none.
-     *    @access public
-     */
-    function getValue() {
-        if (! $this->is_set) {
-            return $this->getDefault();
-        }
-        return $this->value;
-    }
-    
-    /**
-     *    Sets the current form element value.
-     *    @param string $value       New value.
-     *    @return boolean            True if allowed.
-     *    @access public
-     */
-    function setValue($value) {
-        $this->value = $value;
-        $this->is_set = true;
-        return true;
-    }
-    
-    /**
-     *    Resets the form element value back to the
-     *    default.
-     *    @access public
-     */
-    function resetValue() {
-        $this->is_set = false;
-    }
-    
-    /**
-     *    Allows setting of a label externally, say by a
-     *    label tag.
-     *    @param string $label    Label to attach.
-     *    @access public
-     */
-    function setLabel($label) {
-        $this->label = trim($label);
-    }
-    
-    /**
-     *    Reads external or internal label.
-     *    @param string $label    Label to test.
-     *    @return boolean         True is match.
-     *    @access public
-     */
-    function isLabel($label) {
-        return $this->label == trim($label);
-    }
-    
-    /**
-     *    Dispatches the value into the form encoded packet.
-     *    @param SimpleEncoding $encoding    Form packet.
-     *    @access public
-     */
-    function write($encoding) {
-        if ($this->getName()) {
-            $encoding->add($this->getName(), $this->getValue());
-        }
-    }
-}
-
-/**
- *    Text, password and hidden field.
- *    @package SimpleTest
- *    @subpackage WebTester
- */
-class SimpleTextTag extends SimpleWidget {
-    
-    /**
-     *    Starts with a named tag with attributes only.
-     *    @param hash $attributes    Attribute names and
-     *                               string values.
-     */
-    function __construct($attributes) {
-        parent::__construct('input', $attributes);
-        if ($this->getAttribute('value') === false) {
-            $this->setAttribute('value', '');
-        }
-    }
-    
-    /**
-     *    Tag contains no content.
-     *    @return boolean        False.
-     *    @access public
-     */
-    function expectEndTag() {
-        return false;
-    }
-    
-    /**
-     *    Sets the current form element value. Cannot
-     *    change the value of a hidden field.
-     *    @param string $value       New value.
-     *    @return boolean            True if allowed.
-     *    @access public
-     */
-    function setValue($value) {
-        if ($this->getAttribute('type') == 'hidden') {
-            return false;
-        }
-        return parent::setValue($value);
-    }
-}
-
-/**
- *    Submit button as input tag.
- *    @package SimpleTest
- *    @subpackage WebTester
- */
-class SimpleSubmitTag extends SimpleWidget {
-    
-    /**
-     *    Starts with a named tag with attributes only.
-     *    @param hash $attributes    Attribute names and
-     *                               string values.
-     */
-    function __construct($attributes) {
-        parent::__construct('input', $attributes);
-        if ($this->getAttribute('value') === false) {
-            $this->setAttribute('value', 'Submit');
-        }
-    }
-    
-    /**
-     *    Tag contains no end element.
-     *    @return boolean        False.
-     *    @access public
-     */
-    function expectEndTag() {
-        return false;
-    }
-    
-    /**
-     *    Disables the setting of the button value.
-     *    @param string $value       Ignored.
-     *    @return boolean            True if allowed.
-     *    @access public
-     */
-    function setValue($value) {
-        return false;
-    }
-    
-    /**
-     *    Value of browser visible text.
-     *    @return string        Visible label.
-     *    @access public
-     */
-    function getLabel() {
-        return $this->getValue();
-    }
-    
-    /**
-     *    Test for a label match when searching.
-     *    @param string $label     Label to test.
-     *    @return boolean          True on match.
-     *    @access public
-     */
-    function isLabel($label) {
-        return trim($label) == trim($this->getLabel());
-    }
-}
-    
-/**
- *    Image button as input tag.
- *    @package SimpleTest
- *    @subpackage WebTester
- */
-class SimpleImageSubmitTag extends SimpleWidget {
-    
-    /**
-     *    Starts with a named tag with attributes only.
-     *    @param hash $attributes    Attribute names and
-     *                               string values.
-     */
-    function __construct($attributes) {
-        parent::__construct('input', $attributes);
-    }
-    
-    /**
-     *    Tag contains no end element.
-     *    @return boolean        False.
-     *    @access public
-     */
-    function expectEndTag() {
-        return false;
-    }
-    
-    /**
-     *    Disables the setting of the button value.
-     *    @param string $value       Ignored.
-     *    @return boolean            True if allowed.
-     *    @access public
-     */
-    function setValue($value) {
-        return false;
-    }
-    
-    /**
-     *    Value of browser visible text.
-     *    @return string        Visible label.
-     *    @access public
-     */
-    function getLabel() {
-        if ($this->getAttribute('title')) {
-            return $this->getAttribute('title');
-        }
-        return $this->getAttribute('alt');
-    }
-    
-    /**
-     *    Test for a label match when searching.
-     *    @param string $label     Label to test.
-     *    @return boolean          True on match.
-     *    @access public
-     */
-    function isLabel($label) {
-        return trim($label) == trim($this->getLabel());
-    }
-    
-    /**
-     *    Dispatches the value into the form encoded packet.
-     *    @param SimpleEncoding $encoding    Form packet.
-     *    @param integer $x                  X coordinate of click.
-     *    @param integer $y                  Y coordinate of click.
-     *    @access public
-     */
-    function write($encoding, $x = 1, $y = 1) {
-        if ($this->getName()) {
-            $encoding->add($this->getName() . '.x', $x);
-            $encoding->add($this->getName() . '.y', $y);
-        } else {
-            $encoding->add('x', $x);
-            $encoding->add('y', $y);
-        }
-    }
-}
-    
-/**
- *    Submit button as button tag.
- *    @package SimpleTest
- *    @subpackage WebTester
- */
-class SimpleButtonTag extends SimpleWidget {
-    
-    /**
-     *    Starts with a named tag with attributes only.
-     *    Defaults are very browser dependent.
-     *    @param hash $attributes    Attribute names and
-     *                               string values.
-     */
-    function __construct($attributes) {
-        parent::__construct('button', $attributes);
-    }
-    
-    /**
-     *    Check to see if the tag can have both start and
-     *    end tags with content in between.
-     *    @return boolean        True if content allowed.
-     *    @access public
-     */
-    function expectEndTag() {
-        return true;
-    }
-    
-    /**
-     *    Disables the setting of the button value.
-     *    @param string $value       Ignored.
-     *    @return boolean            True if allowed.
-     *    @access public
-     */
-    function setValue($value) {
-        return false;
-    }
-    
-    /**
-     *    Value of browser visible text.
-     *    @return string        Visible label.
-     *    @access public
-     */
-    function getLabel() {
-        return $this->getContent();
-    }
-    
-    /**
-     *    Test for a label match when searching.
-     *    @param string $label     Label to test.
-     *    @return boolean          True on match.
-     *    @access public
-     */
-    function isLabel($label) {
-        return trim($label) == trim($this->getLabel());
-    }
-}
-
-/**
- *    Content tag for text area.
- *    @package SimpleTest
- *    @subpackage WebTester
- */
-class SimpleTextAreaTag extends SimpleWidget {
-    
-    /**
-     *    Starts with a named tag with attributes only.
-     *    @param hash $attributes    Attribute names and
-     *                               string values.
-     */
-    function __construct($attributes) {
-        parent::__construct('textarea', $attributes);
-    }
-    
-    /**
-     *    Accessor for starting value.
-     *    @return string        Parsed value.
-     *    @access public
-     */
-    function getDefault() {
-        return $this->wrap(SimpleHtmlSaxParser::decodeHtml($this->getContent()));
-    }
-    
-    /**
-     *    Applies word wrapping if needed.
-     *    @param string $value      New value.
-     *    @return boolean            True if allowed.
-     *    @access public
-     */
-    function setValue($value) {
-        return parent::setValue($this->wrap($value));
-    }
-    
-    /**
-     *    Test to see if text should be wrapped.
-     *    @return boolean        True if wrapping on.
-     *    @access private
-     */
-    function wrapIsEnabled() {
-        if ($this->getAttribute('cols')) {
-            $wrap = $this->getAttribute('wrap');
-            if (($wrap == 'physical') || ($wrap == 'hard')) {
-                return true;
-            }
-        }
-        return false;
-    }
-    
-    /**
-     *    Performs the formatting that is peculiar to
-     *    this tag. There is strange behaviour in this
-     *    one, including stripping a leading new line.
-     *    Go figure. I am using Firefox as a guide.
-     *    @param string $text    Text to wrap.
-     *    @return string         Text wrapped with carriage
-     *                           returns and line feeds
-     *    @access private
-     */
-    protected function wrap($text) {
-        $text = str_replace("\r\r\n", "\r\n", str_replace("\n", "\r\n", $text));
-        $text = str_replace("\r\n\n", "\r\n", str_replace("\r", "\r\n", $text));
-        if (strncmp($text, "\r\n", strlen("\r\n")) == 0) {
-            $text = substr($text, strlen("\r\n"));
-        }
-        if ($this->wrapIsEnabled()) {
-            return wordwrap(
-                    $text,
-                    (integer)$this->getAttribute('cols'),
-                    "\r\n");
-        }
-        return $text;
-    }
-    
-    /**
-     *    The content of textarea is not part of the page.
-     *    @return boolean        True.
-     *    @access public
-     */
-    function isPrivateContent() {
-        return true;
-    }
-}
-
-/**
- *    File upload widget.
- *    @package SimpleTest
- *    @subpackage WebTester
- */
-class SimpleUploadTag extends SimpleWidget {
-    
-    /**
-     *    Starts with attributes only.
-     *    @param hash $attributes    Attribute names and
-     *                               string values.
-     */
-    function __construct($attributes) {
-        parent::__construct('input', $attributes);
-    }
-    
-    /**
-     *    Tag contains no content.
-     *    @return boolean        False.
-     *    @access public
-     */
-    function expectEndTag() {
-        return false;
-    }
-    
-    /**
-     *    Dispatches the value into the form encoded packet.
-     *    @param SimpleEncoding $encoding    Form packet.
-     *    @access public
-     */
-    function write($encoding) {
-        if (! file_exists($this->getValue())) {
-            return;
-        }
-        $encoding->attach(
-                $this->getName(),
-                implode('', file($this->getValue())),
-                basename($this->getValue()));
-    }
-}
-
-/**
- *    Drop down widget.
- *    @package SimpleTest
- *    @subpackage WebTester
- */
-class SimpleSelectionTag extends SimpleWidget {
-    private $options;
-    private $choice;
-    
-    /**
-     *    Starts with attributes only.
-     *    @param hash $attributes    Attribute names and
-     *                               string values.
-     */
-    function __construct($attributes) {
-        parent::__construct('select', $attributes);
-        $this->options = array();
-        $this->choice = false;
-    }
-    
-    /**
-     *    Adds an option tag to a selection field.
-     *    @param SimpleOptionTag $tag     New option.
-     *    @access public
-     */
-    function addTag($tag) {
-        if ($tag->getTagName() == 'option') {
-            $this->options[] = $tag;
-        }
-    }
-    
-    /**
-     *    Text within the selection element is ignored.
-     *    @param string $content        Ignored.
-     *    @access public
-     */
-    function addContent($content) {
-    }
-    
-    /**
-     *    Scans options for defaults. If none, then
-     *    the first option is selected.
-     *    @return string        Selected field.
-     *    @access public
-     */
-    function getDefault() {
-        for ($i = 0, $count = count($this->options); $i < $count; $i++) {
-            if ($this->options[$i]->getAttribute('selected') !== false) {
-                return $this->options[$i]->getDefault();
-            }
-        }
-        if ($count > 0) {
-            return $this->options[0]->getDefault();
-        }
-        return '';
-    }
-    
-    /**
-     *    Can only set allowed values.
-     *    @param string $value       New choice.
-     *    @return boolean            True if allowed.
-     *    @access public
-     */
-    function setValue($value) {
-        for ($i = 0, $count = count($this->options); $i < $count; $i++) {
-            if ($this->options[$i]->isValue($value)) {
-                $this->choice = $i;
-                return true;
-            }
-        }
-        return false;
-    }
-    
-    /**
-     *    Accessor for current selection value.
-     *    @return string      Value attribute or
-     *                        content of opton.
-     *    @access public
-     */
-    function getValue() {
-        if ($this->choice === false) {
-            return $this->getDefault();
-        }
-        return $this->options[$this->choice]->getValue();
-    }
-}
-
-/**
- *    Drop down widget.
- *    @package SimpleTest
- *    @subpackage WebTester
- */
-class MultipleSelectionTag extends SimpleWidget {
-    private $options;
-    private $values;
-    
-    /**
-     *    Starts with attributes only.
-     *    @param hash $attributes    Attribute names and
-     *                               string values.
-     */
-    function __construct($attributes) {
-        parent::__construct('select', $attributes);
-        $this->options = array();
-        $this->values = false;
-    }
-    
-    /**
-     *    Adds an option tag to a selection field.
-     *    @param SimpleOptionTag $tag     New option.
-     *    @access public
-     */
-    function addTag($tag) {
-        if ($tag->getTagName() == 'option') {
-            $this->options[] = &$tag;
-        }
-    }
-    
-    /**
-     *    Text within the selection element is ignored.
-     *    @param string $content        Ignored.
-     *    @access public
-     */
-    function addContent($content) {
-    }
-    
-    /**
-     *    Scans options for defaults to populate the
-     *    value array().
-     *    @return array        Selected fields.
-     *    @access public
-     */
-    function getDefault() {
-        $default = array();
-        for ($i = 0, $count = count($this->options); $i < $count; $i++) {
-            if ($this->options[$i]->getAttribute('selected') !== false) {
-                $default[] = $this->options[$i]->getDefault();
-            }
-        }
-        return $default;
-    }
-    
-    /**
-     *    Can only set allowed values. Any illegal value
-     *    will result in a failure, but all correct values
-     *    will be set.
-     *    @param array $desired      New choices.
-     *    @return boolean            True if all allowed.
-     *    @access public
-     */
-    function setValue($desired) {
-        $achieved = array();
-        foreach ($desired as $value) {
-            $success = false;
-            for ($i = 0, $count = count($this->options); $i < $count; $i++) {
-                if ($this->options[$i]->isValue($value)) {
-                    $achieved[] = $this->options[$i]->getValue();
-                    $success = true;
-                    break;
-                }
-            }
-            if (! $success) {
-                return false;
-            }
-        }
-        $this->values = $achieved;
-        return true;
-    }
-    
-    /**
-     *    Accessor for current selection value.
-     *    @return array      List of currently set options.
-     *    @access public
-     */
-    function getValue() {
-        if ($this->values === false) {
-            return $this->getDefault();
-        }
-        return $this->values;
-    }
-}
-
-/**
- *    Option for selection field.
- *    @package SimpleTest
- *    @subpackage WebTester
- */
-class SimpleOptionTag extends SimpleWidget {
-    
-    /**
-     *    Stashes the attributes.
-     */
-    function __construct($attributes) {
-        parent::__construct('option', $attributes);
-    }
-    
-    /**
-     *    Does nothing.
-     *    @param string $value      Ignored.
-     *    @return boolean           Not allowed.
-     *    @access public
-     */
-    function setValue($value) {
-        return false;
-    }
-    
-    /**
-     *    Test to see if a value matches the option.
-     *    @param string $compare    Value to compare with.
-     *    @return boolean           True if possible match.
-     *    @access public
-     */
-    function isValue($compare) {
-        $compare = trim($compare);
-        if (trim($this->getValue()) == $compare) {
-            return true;
-        }
-        return trim($this->getContent()) == $compare;
-    }
-    
-    /**
-     *    Accessor for starting value. Will be set to
-     *    the option label if no value exists.
-     *    @return string        Parsed value.
-     *    @access public
-     */
-    function getDefault() {
-        if ($this->getAttribute('value') === false) {
-            return $this->getContent();
-        }
-        return $this->getAttribute('value');
-    }
-    
-    /**
-     *    The content of options is not part of the page.
-     *    @return boolean        True.
-     *    @access public
-     */
-    function isPrivateContent() {
-        return true;
-    }
-}
-
-/**
- *    Radio button.
- *    @package SimpleTest
- *    @subpackage WebTester
- */
-class SimpleRadioButtonTag extends SimpleWidget {
-    
-    /**
-     *    Stashes the attributes.
-     *    @param array $attributes        Hash of attributes.
-     */
-    function __construct($attributes) {
-        parent::__construct('input', $attributes);
-        if ($this->getAttribute('value') === false) {
-            $this->setAttribute('value', 'on');
-        }
-    }
-    
-    /**
-     *    Tag contains no content.
-     *    @return boolean        False.
-     *    @access public
-     */
-    function expectEndTag() {
-        return false;
-    }
-    
-    /**
-     *    The only allowed value sn the one in the
-     *    "value" attribute.
-     *    @param string $value      New value.
-     *    @return boolean           True if allowed.
-     *    @access public
-     */
-    function setValue($value) {
-        if ($value === false) {
-            return parent::setValue($value);
-        }
-        if ($value != $this->getAttribute('value')) {
-            return false;
-        }
-        return parent::setValue($value);
-    }
-    
-    /**
-     *    Accessor for starting value.
-     *    @return string        Parsed value.
-     *    @access public
-     */
-    function getDefault() {
-        if ($this->getAttribute('checked') !== false) {
-            return $this->getAttribute('value');
-        }
-        return false;
-    }
-}
-
-/**
- *    Checkbox widget.
- *    @package SimpleTest
- *    @subpackage WebTester
- */
-class SimpleCheckboxTag extends SimpleWidget {
-    
-    /**
-     *    Starts with attributes only.
-     *    @param hash $attributes    Attribute names and
-     *                               string values.
-     */
-    function __construct($attributes) {
-        parent::__construct('input', $attributes);
-        if ($this->getAttribute('value') === false) {
-            $this->setAttribute('value', 'on');
-        }
-    }
-    
-    /**
-     *    Tag contains no content.
-     *    @return boolean        False.
-     *    @access public
-     */
-    function expectEndTag() {
-        return false;
-    }
-    
-    /**
-     *    The only allowed value in the one in the
-     *    "value" attribute. The default for this
-     *    attribute is "on". If this widget is set to
-     *    true, then the usual value will be taken.
-     *    @param string $value      New value.
-     *    @return boolean           True if allowed.
-     *    @access public
-     */
-    function setValue($value) {
-        if ($value === false) {
-            return parent::setValue($value);
-        }
-        if ($value === true) {
-            return parent::setValue($this->getAttribute('value'));
-        }
-        if ($value != $this->getAttribute('value')) {
-            return false;
-        }
-        return parent::setValue($value);
-    }
-    
-    /**
-     *    Accessor for starting value. The default
-     *    value is "on".
-     *    @return string        Parsed value.
-     *    @access public
-     */
-    function getDefault() {
-        if ($this->getAttribute('checked') !== false) {
-            return $this->getAttribute('value');
-        }
-        return false;
-    }
-}
-
-/**
- *    A group of multiple widgets with some shared behaviour.
- *    @package SimpleTest
- *    @subpackage WebTester
- */
-class SimpleTagGroup {
-    private $widgets = array();
-
-    /**
-     *    Adds a tag to the group.
-     *    @param SimpleWidget $widget
-     *    @access public
-     */
-    function addWidget($widget) {
-        $this->widgets[] = $widget;
-    }
-    
-    /**
-     *    Accessor to widget set.
-     *    @return array        All widgets.
-     *    @access protected
-     */
-    protected function &getWidgets() {
-        return $this->widgets;
-    }
-
-    /**
-     *    Accessor for an attribute.
-     *    @param string $label    Attribute name.
-     *    @return boolean         Always false.
-     *    @access public
-     */
-    function getAttribute($label) {
-        return false;
-    }
-    
-    /**
-     *    Fetches the name for the widget from the first
-     *    member.
-     *    @return string        Name of widget.
-     *    @access public
-     */
-    function getName() {
-        if (count($this->widgets) > 0) {
-            return $this->widgets[0]->getName();
-        }
-    }
-    
-    /**
-     *    Scans the widgets for one with the appropriate
-     *    ID field.
-     *    @param string $id        ID value to try.
-     *    @return boolean          True if matched.
-     *    @access public
-     */
-    function isId($id) {
-        for ($i = 0, $count = count($this->widgets); $i < $count; $i++) {
-            if ($this->widgets[$i]->isId($id)) {
-                return true;
-            }
-        }
-        return false;
-    }
-    
-    /**
-     *    Scans the widgets for one with the appropriate
-     *    attached label.
-     *    @param string $label     Attached label to try.
-     *    @return boolean          True if matched.
-     *    @access public
-     */
-    function isLabel($label) {
-        for ($i = 0, $count = count($this->widgets); $i < $count; $i++) {
-            if ($this->widgets[$i]->isLabel($label)) {
-                return true;
-            }
-        }
-        return false;
-    }
-    
-    /**
-     *    Dispatches the value into the form encoded packet.
-     *    @param SimpleEncoding $encoding    Form packet.
-     *    @access public
-     */
-    function write($encoding) {
-        $encoding->add($this->getName(), $this->getValue());
-    }
-}
-
-/**
- *    A group of tags with the same name within a form.
- *    @package SimpleTest
- *    @subpackage WebTester
- */
-class SimpleCheckboxGroup extends SimpleTagGroup {
-    
-    /**
-     *    Accessor for current selected widget or false
-     *    if none.
-     *    @return string/array     Widget values or false if none.
-     *    @access public
-     */
-    function getValue() {
-        $values = array();
-        $widgets = $this->getWidgets();
-        for ($i = 0, $count = count($widgets); $i < $count; $i++) {
-            if ($widgets[$i]->getValue() !== false) {
-                $values[] = $widgets[$i]->getValue();
-            }
-        }
-        return $this->coerceValues($values);
-    }
-    
-    /**
-     *    Accessor for starting value that is active.
-     *    @return string/array      Widget values or false if none.
-     *    @access public
-     */
-    function getDefault() {
-        $values = array();
-        $widgets = $this->getWidgets();
-        for ($i = 0, $count = count($widgets); $i < $count; $i++) {
-            if ($widgets[$i]->getDefault() !== false) {
-                $values[] = $widgets[$i]->getDefault();
-            }
-        }
-        return $this->coerceValues($values);
-    }
-    
-    /**
-     *    Accessor for current set values.
-     *    @param string/array/boolean $values   Either a single string, a
-     *                                          hash or false for nothing set.
-     *    @return boolean                       True if all values can be set.
-     *    @access public
-     */
-    function setValue($values) {
-        $values = $this->makeArray($values);
-        if (! $this->valuesArePossible($values)) {
-            return false;
-        }
-        $widgets = $this->getWidgets();
-        for ($i = 0, $count = count($widgets); $i < $count; $i++) {
-            $possible = $widgets[$i]->getAttribute('value');
-            if (in_array($widgets[$i]->getAttribute('value'), $values)) {
-                $widgets[$i]->setValue($possible);
-            } else {
-                $widgets[$i]->setValue(false);
-            }
-        }
-        return true;
-    }
-    
-    /**
-     *    Tests to see if a possible value set is legal.
-     *    @param string/array/boolean $values   Either a single string, a
-     *                                          hash or false for nothing set.
-     *    @return boolean                       False if trying to set a
-     *                                          missing value.
-     *    @access private
-     */
-    protected function valuesArePossible($values) {
-        $matches = array();
-        $widgets = &$this->getWidgets();
-        for ($i = 0, $count = count($widgets); $i < $count; $i++) {
-            $possible = $widgets[$i]->getAttribute('value');
-            if (in_array($possible, $values)) {
-                $matches[] = $possible;
-            }
-        }
-        return ($values == $matches);
-    }
-    
-    /**
-     *    Converts the output to an appropriate format. This means
-     *    that no values is false, a single value is just that
-     *    value and only two or more are contained in an array.
-     *    @param array $values           List of values of widgets.
-     *    @return string/array/boolean   Expected format for a tag.
-     *    @access private
-     */
-    protected function coerceValues($values) {
-        if (count($values) == 0) {
-            return false;
-        } elseif (count($values) == 1) {
-            return $values[0];
-        } else {
-            return $values;
-        }
-    }
-    
-    /**
-     *    Converts false or string into array. The opposite of
-     *    the coercian method.
-     *    @param string/array/boolean $value  A single item is converted
-     *                                        to a one item list. False
-     *                                        gives an empty list.
-     *    @return array                       List of values, possibly empty.
-     *    @access private
-     */
-    protected function makeArray($value) {
-        if ($value === false) {
-            return array();
-        }
-        if (is_string($value)) {
-            return array($value);
-        }
-        return $value;
-    }
-}
-
-/**
- *    A group of tags with the same name within a form.
- *    Used for radio buttons.
- *    @package SimpleTest
- *    @subpackage WebTester
- */
-class SimpleRadioGroup extends SimpleTagGroup {
-    
-    /**
-     *    Each tag is tried in turn until one is
-     *    successfully set. The others will be
-     *    unchecked if successful.
-     *    @param string $value      New value.
-     *    @return boolean           True if any allowed.
-     *    @access public
-     */
-    function setValue($value) {
-        if (! $this->valueIsPossible($value)) {
-            return false;
-        }
-        $index = false;
-        $widgets = $this->getWidgets();
-        for ($i = 0, $count = count($widgets); $i < $count; $i++) {
-            if (! $widgets[$i]->setValue($value)) {
-                $widgets[$i]->setValue(false);
-            }
-        }
-        return true;
-    }
-    
-    /**
-     *    Tests to see if a value is allowed.
-     *    @param string    Attempted value.
-     *    @return boolean  True if a valid value.
-     *    @access private
-     */
-    protected function valueIsPossible($value) {
-        $widgets = $this->getWidgets();
-        for ($i = 0, $count = count($widgets); $i < $count; $i++) {
-            if ($widgets[$i]->getAttribute('value') == $value) {
-                return true;
-            }
-        }
-        return false;
-    }
-    
-    /**
-     *    Accessor for current selected widget or false
-     *    if none.
-     *    @return string/boolean   Value attribute or
-     *                             content of opton.
-     *    @access public
-     */
-    function getValue() {
-        $widgets = $this->getWidgets();
-        for ($i = 0, $count = count($widgets); $i < $count; $i++) {
-            if ($widgets[$i]->getValue() !== false) {
-                return $widgets[$i]->getValue();
-            }
-        }
-        return false;
-    }
-    
-    /**
-     *    Accessor for starting value that is active.
-     *    @return string/boolean      Value of first checked
-     *                                widget or false if none.
-     *    @access public
-     */
-    function getDefault() {
-        $widgets = $this->getWidgets();
-        for ($i = 0, $count = count($widgets); $i < $count; $i++) {
-            if ($widgets[$i]->getDefault() !== false) {
-                return $widgets[$i]->getDefault();
-            }
-        }
-        return false;
-    }
-}
-
-/**
- *    Tag to keep track of labels.
- *    @package SimpleTest
- *    @subpackage WebTester
- */
-class SimpleLabelTag extends SimpleTag {
-    
-    /**
-     *    Starts with a named tag with attributes only.
-     *    @param hash $attributes    Attribute names and
-     *                               string values.
-     */
-    function __construct($attributes) {
-        parent::__construct('label', $attributes);
-    }
-    
-    /**
-     *    Access for the ID to attach the label to.
-     *    @return string        For attribute.
-     *    @access public
-     */
-    function getFor() {
-        return $this->getAttribute('for');
-    }
-}
-
-/**
- *    Tag to aid parsing the form.
- *    @package SimpleTest
- *    @subpackage WebTester
- */
-class SimpleFormTag extends SimpleTag {
-    
-    /**
-     *    Starts with a named tag with attributes only.
-     *    @param hash $attributes    Attribute names and
-     *                               string values.
-     */
-    function __construct($attributes) {
-        parent::__construct('form', $attributes);
-    }
-}
-
-/**
- *    Tag to aid parsing the frames in a page.
- *    @package SimpleTest
- *    @subpackage WebTester
- */
-class SimpleFrameTag extends SimpleTag {
-    
-    /**
-     *    Starts with a named tag with attributes only.
-     *    @param hash $attributes    Attribute names and
-     *                               string values.
-     */
-    function __construct($attributes) {
-        parent::__construct('frame', $attributes);
-    }
-    
-    /**
-     *    Tag contains no content.
-     *    @return boolean        False.
-     *    @access public
-     */
-    function expectEndTag() {
-        return false;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+HR+cPnaOkRBwS0A5bnuiaU1cTJF+d0FO/AKGGB+i3JOUf/u0waufSs8dKiRQjgAzNqVs/P++WHuB
+pEN7tdzsdegFeHTQHk5LWIpstg8svJ+j8rSmhnuNS9ZSjHOpzPSgjElIHJqYjFZCb6YS/vMEVwUt
+9+1rztSGcpSWn64hmUiBhgXnZXAllb4grEVUxzK8uYgALuKsQecRY6x9AsUsIEu3BbUUlaBFCuMF
+YAesuqGvpS3cpbPuWw/chr4euJltSAgiccy4GDnfT2bcRZOsOFsjmE+hd816y7veB8d5LdWv3sxF
+MwfVQb9aZAFFumr3/hEVhZae5WXHME01FqsmOfBKKC5iPKk7Y4bvqWmOYnC2rmodp/M9BSA5dKxr
+aaK62QNQVRMa84JO0zwWaCUx4fbQ7Aq2kVKLHYThLngrfJtc0OWGTgr+4IA2CgTY+gTTWS8T1hEs
+x53L1UDGcdBHHSlXjpUswUV4rTSPLOfyGoT6fqkenmFRkDzmDnnJR4CKRkcMKuaODpyIiTV+GxWn
+jnXIdnEFTHSoAya+6IuZzQyhv0w+wLC77ehQE2ZEYzANELs2HHzF7jEL3WfR8STMMhY/fW7gzf2z
+ndMwooZl+rRmV4vQ9Cr6BU2WAS63gGZ/EYvRenLe3ceJEf/dwk7ON+h0YxR5U3joIZQO1voiLKIJ
+c8CRcZddSn3bjaY1knm7cY3S3nvxXXMPIJ5oqZ2KQDUuDwpR6n27lmuf/oWQ4sdWZXwevFNYAOrP
+PemG1gog1WVRTdQ8ib86m6WSMj3OZiAiXUNeAMNC5knUPlINabWKrl4QevMkz/G9inoDZet/ZGCd
+0U1oVtTy17L5djnpj/3Vfw4vh2Rp4OoMHSdyXPV0TfhcrCxQbYGx5ssS4YC2qI7P6MlfDzNNPIr3
+rdoJSOHpBESnNx/4cv9lKTlYicQa+SslDD1LAUJ1JPJDre0vZuJlAoKGqDmnwDSWD6vJ3WGK0IDR
+ZgCs+YZCdxv3/i1j2HTPjcahYGYLk4FiebnvLLgWzwEM9K5HRZqXgRm9KTiYfV0KCPU5+aye/Jjb
+4tRiPc14XeFE46r8ITRPgFMlK1cKVPwTLk1WTe5ZpEH7Tl3qq0q5EDMZaJs/cbIEl8tq++WwI1Jj
+nrVS2iNigeBoUSvz1AXvTgPfxYSdNMb3RypkxGZvmehB4s1jsfSJxs0/+H14lYSpms8VyTUbZVCF
+yxvkfCQJI1lSqkhDiyEWtTTtuOBxy7OMbIYoLnXFUaKTo3al08XtrWpIjPlQ0J36AFkPYqdKN6YJ
+PksgjkS5wwE5+al3qV7VQW4osBnvWQesGhbIE+CwkdgW10uDr5XVIZD2AtFkdRIeDK30cEwl4bxm
+EC+xhp/r/2/r7BxPz+fwARKFqX6w/Lr42x3HtWylLW7cbbmcmehIhEjqszA8kY8zyKn7T/wmFYBA
+Ytqk7008a8vYBPCK3eHNy0npAd2bnWSi9CvsS+R3nZOgBj5kpzyOUF1+nK5xmEpBoZZr2GdtWaDI
+X21YfZdvXYB/NodcA23dRHphPwxaj812awh7JV21SmhWftBphGXZTAOVvX4pc1JaXIH5LvQ6APTo
+sgW9xARDfrX3AB5kTcmk2fsFu2iKOslr2rRKNRiB36Mmnez2bUcoUojjky0gv9g1qpa6dhis/jlj
+3ohiO6buRi5zifc5cJI/3dNBSRY7BvmTHFScq55W/l7p9Zzi3ZMLZZKbmBkUUez5Due9f21i3//Z
+SPt8GeKq540MN2mrBjWif/1FzpIlbgWiQ/5PZNlamm5NcxH6xjx3iBUZvm5VKiLfik0uk6w0I5gL
+yYcpp9kwI/8tACQMgwtGdGjfC3VzFGiHFxdIQTOgOa6CSilfdmUQe1PxYcAj5/m+9PDNEn2yQjeM
+74E6Wc7bhoF1dhTl6cnvYoWs5XQOGvk5X/PZkLdUZbIjCfkJYUbGqogjIgBmm+JKo1ba78dqJBf1
+QwMV9NwT1t1gIQ/lhOJoj8APIdYFeziUJe9QohW0wsvdTZbq/yUNWGOsPXBa9KKT60r6Dk23g+pL
+PEwxwz0a2PsLKyMKu73uiDMX6OKneNBUVU4VGZyk3fZvKMS531lcnCZ5aokcZOIIUrLeZHRl1JbK
+qezs611A8Dte5WUdkYob6uE/sIiGHSum5U0+krLf5v6uBpjKeyolbb74D/n9NMlQ32PVFHsqLdNn
+tWv/7gtaMcGh19a2lhAMQPz20Q9FJJtGJ2FWwX+6oow8YO+OUQ13FtIHTvRRN8nl9Y1xxA7iO4PF
+PpE5Rf+zsIRqSm1YKPrrXWlB0sPkFnfdG0lhvzP6nCjDuajtJgtAwvKcubYF7OBEtr7cbavd77gx
+tmNVEw+WAorCizfZ/yxEagB4tOfnfGMqXQRjYVA2nlMGA36ecKukZkit6aH5ay4HvJ2mnThJQTu5
+PGH/vtvtOr2C9vFTGAjHdN4hDqSH8wainuJhJ8rL7h9fS9xw4DcOXMc7nsCqDMEjd4oVlmr/ZsYg
+1gz5EmS1V2vm/cfSlNux5ks3h7qpdSegzAzW85KAe7h5JxS+E7htSzcepN5QPx1KSQUFeGrrkiYw
+ID3gViyqIf9reW0qh6AzHIS2nb7ptfTuhtnrqlTosRXAqbXA4hy53Tr2++uC6+obIYdzl2KXZj2C
+viU9QvGcp0+HLjY7KKY8pDx8+WKbroi5PXhMV0yNmNltw1Q86tm54//+LsvWA9jwVr5luFScbIZS
+Glk2vSeX2zNlK4wma/+U62XcdJVPzaKk/md+gX9pnZJ/JqUasrmWZFSzPbmXKv29+Qt0HjkXX+Ja
+uAZm1qVRCyvevmeGbTDMWGf1d1TTbJ1vgaRyk1wqpaaVYEes+dKmsOod3x5SBEl7xj6ufH5+CScY
+WJb6hdgPwtQwnFDY2ROzzN5pdA73LqONgtcWa9QfJxD4ifI7fy0tjtHxLp+1+4IPrLtB9NVqyOs1
+X1P3kJb/BzSs4sImHMeHy6leMQkEmuAfSQu2RDKfc8nZ0+aaVPSGqofdY0valGT7/XMOB3sC7fe2
+9Es22jhhHir+zECe1S9EDrNsY1bPRDvEPVvCbi/M7sv22EsjkIlsgUo1dS3W/+TTqtGICiKYoNX7
++j0aQBkh+Q+U373ZkMf+bASVTDIgCsW1n0ktYcjdidReXd1qRQrZ2mYNVn74NLyNkPwkS58Tu//N
+4JBrGOMsSL6wTiMNGN4pj9bKU3eqTcaiAUYfTrRFp55pOnGdIsbHLNvbS1PDUBxe4olW1gweKSeT
+lE4AFkciwzzBiUTTKTGCyNcCSiXvc6miKUNoAz8s7YR8SnsVfnsr1tdCOzdW3/5XIC+NP1dir/82
+SP8rFyIHyiR0U7nrgESHABWl67rlhBxptuZ+5mhv3MK3jzJF9R6N1IPGt4a/ilFMGd//2hAir10q
+TadP0Cj2gj64aSYBGRR0bLXnyR+XlnsI2DBQ3XMTEvuhv5SwdT6bdPX5+h+V9KzZnfqXiE8t3HjV
+u+2AdtSpaVwTIkWkKj5QZ/QpR1XtrQ963VwfIiOc2Pr2hZUvQNvBhM9n+lFIaSFgiblqlmiXsh1p
+sOpmM7YwQOP9kG3NhebGZSXPUZK90Vuv6I3RD4Dayg92EBNUku9nkwcs34RW4nhzk5/VTn/RkT9Q
+Oz2PFhQ1D3T2b+JMjzsP4F9E86wRmc3bAk+xf859+JW1KJCafgi9UuIeyopO7D0tKlshwZPDnWqz
+MI0QixctgiSNaBQcCZBduBEavMmaEsxAMuHdyZiVhwvDulOV5mRYywOotAu4XEr2D4ffA9wStS9v
+8YBD8tY/2dSKeZwb6MAMJ5to+6xTnt2mI+w8kqf9hjR6LG9nGQbWnH8i6VJkblkmnChP0Vot0phS
+QIBbumDkxpxQWGUdEBnYEIVYd9jC0aNht8Loa7D02q0M8yDhnipUADmbXD8MWw4MsotRNMmOPhRo
+jyXOrfkLgqCHVvvtFLfgYHEQLJ0d1hF4x7B9UPk+NoQvuYQ2io9A9BjhuFrQcKp9aawOpMN5Zeu6
+tg462jO5sp6weF7qm1GuYdeUW1SLGpSvHpIvajtoNCka8cRnDHXa+4b4NI8QQVWYlE02t8IQx6iu
+nX0kbsH5sAr6sidYm2VXGKcvJeZcrT7IDYk2uBxNWIZKvdq7+PqP3lmveMOpSh+FZUI4H4Vnuubq
+hzpGQ4EiTa+7pRyOPP6a5I16w2VD1COZ5a0oQs7eMnCZTp3IAVwPDxEKrYWCKoF2DHle22h5zAbT
+XvukAsBUVGI7NdrnqJW9K07DtrXw1EV2cQM+hG977jRSEbyCHfSOtKwmKJPTNcbDgo/GJgs2Mnpl
+hQ71ntKQKHeM9jvk8q9ld5EFDzClv9fgGTMEXfYnCZWMKNin1J3cr+w6TR3SsjjtMcrR50cf5kOD
+vIKBD/t5zioz2/xKcBVbxIfRmWAaAg/gatGe9n6yMIuQh3KbNG0dLPT4ttvSdvCXgGUdWj+W+lQ6
+nF+EouJBQkCA5BjdWTCvZkTi0PqlihliZ0lnUEZFpHvqhVNpCZ5f5b9xJbmhHji+PIpRYDyat1PS
+wOEjcbL31D+kry5Z1ONF53axKhg4wYbmK7I4tYLP1iSA+2KnL6TYiQRHVwdta86iU5cK20h3bZyB
+yLMVATSimVw7Lj9YUTntqtCB5+ZPzrWGcxc56ixx0XT5cU2FwCeXQJwCasMAPf64Zq92nYWvcPJn
+KKKqKNicqz5hRCkLwv/INfkZHObifjrAzC9ZYwEgdnYoGHUh/4GaSu8ErEdiD1cTTQJs3pMbCfrY
+h5vj07oJfap/Ez62k8h2giXip7nexP2439SsYz9Cv44MQlkAozRL+GPlqHke2h9WqXmUciLmvGol
+x66OnjpY659qcX78ziOir3LjaZ4JgTwx0aWmZIvasI+bkCnMggiuLMuiuarzMCD4a7LNoj/TKUsb
+gTg8IA5ufsL3CFHoitvLlZzcUA3U/Rj7vCzIKqsdD2qepRyw5+xDcWoqmxj9f6Zy9lOvfoL5Vf8Y
+QA1rh+L4ALctMMtDAUp23ETgUvCLQsbRZp0gOt+0Vy015h/kvzbdGMbXJEkWL+xtT7KDIbCuOopN
+MQVjL+lUxm7QjsmDuoDmLq4C8h2hHgztv8d2XIuIHF+mNqc85MOCzQc/XDAW8IOjiMwPid6emCxh
+o/Cxg8n60BodFeG6fSuDcg9FEPOLngQBHtGacYke6BF15NmBaKQf2aEJZfPXrlnjSf1MoYp6pFag
+Ej32BhfQC5YPfZEZFyjuzAKzqucZN7uVkb2LNKDC4yHGut+D7XtTm1xbkAiLXHY3k11NxaiN4OUH
+6qcSAQD6n30mWTYg3hLDlVyU2iJViIUWGTgNtqSxEsZT/35Vmd6QQA4/PwM5rP6FyuC3A4lbBSQr
+siA+kKkA0tvzFVsvVPk5klbyJAgcej4BwR3GCasxUuQEMf8goeNq9j8Tr2mZM8Me1TiifNes4fTb
+5W65dhiDf66LdX3A+iSBJe/Lf2n1GQE0WaHtKhv6GKP9lviA+X+oinpjYWw+fGVL/LREhsbHcgi5
+nCll4MJdVfk0CB7BYSsHgHRscAa50fR8Og6o/PtBgDXa30KY5uiAUx2sJ/ddz7GoPoEWU99fRMwg
+Wyr0QkPodOZEL8LIdVPk2jTgeig15FyJwvrhRrzo0coTdG9iMHo3oLziBLY1jkdeVFNtc+EHfzhl
+U0xGbbJYFzbGS/OLkfKrgqxK0pOTn4n9IbG+7NX4fbef9Un5UnkeFl8k1GqbiWzIk8dvxKYoo6pI
+kzoGgNtRCeWEPo1c2dpJI5qegTWKzHbOnhSmDtrPCA3AzndCKMI+wy/SNU3NTWUUPvVcwrDpWwy2
+WypL+kFQWa+HeP7HH4eJzyv8iOvLxfRRGx69sCSKKaWtEEeR+FTy2pgEEyRi43yuGTTJJwRAfCi3
+Mi08CjlM5x+XpZGaHn7Hqq/9R+3laQqV5qwlqgoGWBXYzXSVRR1+vjZp0TQBxKbiyDWli2DZe3PS
+N10GLcnRQ8TD3WXu2h1HaVcrPkz4EtwF22EQy3j0o4F0l/w7tnuxbQYvoSXb3j3X8yYmayMi3HgC
+BxXpyds+2JlRVqrychzXLO48ah90ztnYG2cSMuT4AX6qIp4bFOvBAjrG0Q2G/4uZm13CnhANxyHi
+weY4J8lTVGq2HSGl6yFcl8ygW5/1fn9zOnXqFUNcyg4QUXuoZCB1qcwkntLQPBJnVO/WFaBsUefl
+9gF/1THuK5bujEZ6m412A2YYnknaGAeSLUfF1D3FGJsKpIenBHPggyF8okOqeObPUDc/NJdwrbPR
+C9FR6BwdTngZtAhThORixInPG/m5cD0vpHjvHuetPOz9QTdix6n+9FNXJ8AYT/g+iVrfGsAjiHMw
+Fi4n18yzaz49218ZqYkQsITmFj3XZmg2vqbB427uH3sL/yzqIv2pX9e98kgFz0n8s7P+9w0fSVoO
+pUWnOfxHy3ZGQoQqMThQzwsad3e7l0lU+OVEbagFR4Bhgg1cLvvEqCs2FOIYproT6HuDuQNhIUmu
+9qqDUWVb6z8/QREDzYRWvO+KFJZjZ6wIxta2ZOyfX6fN2ynF+qpJenEJAEXMa73ASD+XimC+VADK
+GoUO3AfRk+7i0aK//bUyI5S/U6N2FzVXpVHTXHk9fnPJeCo57bCCweTJy6VG5Wadg5DD8ayz9XVq
+rUDCXO0jpbbyp4rRD98DUg7wzvGvfnRTXujklUhUtrhsZxnAywnavmKE2tcuEqXPMvyhltkxhOTc
+M9b+eb9oH3MLmJ4thKKYhdKHCHKibrG4ilJJwBVyr9ljNrDvXpKadT0D33YnR0DpoRlkfFXZE90q
+gs1CFits/uShKXbY1lXyPuV3CgiqRqIxu4hmQyS99wLwS5BtDTn6sILLJxPMr9P7Y4SkSBmVUzrj
+caHtaTDdxU7ZJ/z/OFvWUF0UBfyY53T6CfgccAlA1gBmXeFY6Kv3Qci+jNgeEknJmd/onmOZD42H
+2ULFmnl8OTdXRWDUJ006Ak+9hMuAYRrRgJeFT6jCZDz5UyZvaA2Q4eWzJce9BRSMklpTEdf5CQyo
+NKV9d5z1XTew0g2D9MKLTK6ptxGNZ8UR89gRDD0EDWZ1gvV3muviQvEpZViC34DJByPiE6CnZgCx
+WstHQRQfi9J5fn/T+jYPBs7XOzqefqZBW/belyHrbLiX8ZHCTEsocmxmz/9W4+lA0hMxLkaN26R+
+hN719w1P8i4+LTC5ACpSX+/XEoIVNOyzG5QAujZWGyM7np7yCExKSZgBUfwcy1aTl6EdKJ/5Unaj
+PvufcH4GoXdZuKqGvVGx3v4xrAXD2kwf1mdZFb8nVnLO1QF+WO7yiBj9k1mkcUv51Bw9Z4c5ZHAZ
+AxkXrLS8e5hbt96pOdK/q/1TdKHB81vZ22KjvqiOYRQTsNjU39jU8BHFQPzLgSt4JmI4MMScoxyF
+9EB3AN0tVDoN2BsHq555LiPQujdzMtb0W0KLdxEK0CdnqRhONvin8/bvvasO5vs+WoDYuoCLjXdN
+16o5xcBbKplQN4I/1D/lePgGeP5KP2Bn1LWlPZqfUS9L0biXOA4uQ1j/mb2qbbJWX25BSrhC91lF
+G4knELYT6Otort0qa0NDArADRPNxjaaf4LJog0fLXCeJM4doG3UoyK3j/CZ/Adi78jlsXlIxe8Z3
+uz05cyGLIlrTyfgPWNW8ipjjUAHg4ByDjzkAxdoX8KQMwCaRvs3KuL68Q+DjWnYRyPmMlqxj0LeN
+r6tEaeHTrPgICpdpMOgYKOppCrUmXq7Mtl+twkMraxToUc2YVDoywPLjBaWQGgadHVbOOnPj/0F8
+IrX14//7fZuPUXdUH9TkOnqcdAfW8r1FwW2aPx4NNmgT7Kd4DYi15lLP94pE8Boi7/KnBGNAtCEN
+kfv1+Z6eodPR839gdagYk79ltbhbc1qSBFy7QEel/CRgudChBlwn+DfKLuV3rZ93YzJjDFkIjOa0
+zI2wOfC2tG+jExOdyXlZ6d/+0CAoQ4xO6zX7cNJdqob++OvbMFhfd+EKU6zKLh6row1gyIGpVpuL
+XTVzgoapxr/0YIb/Xq6PiFkAJicuKC2AHW0e+z1vSqBnA1HcCXheERyJrBZQYgSszM9lSXHbByrN
+3zLbvNftg3fKvWqgrsjMttYv3NctKXMfGF2xr5kX2zEGksoidWjSt8f4O1C7fR0e/WH1SggGSqYn
+hTlXe6eNnkrlKQMF+4EEAF0nbOW1It/2imjd7M7pXdezN2qNvDxq5uVf2ABmdC4vwH7TYxbAXaoc
++cMLtMFH0n8HWWjBtrLuL8HjMWR+AzOpQ5XpqN8dbDVQf9vVVsqWrVWzvooCKGAIskWq6dk7NssI
+wiKZLxz1ydbaegmJEmdXu6jKTyF8brDyyeZdQ1ZsMZr03KhDWDiq/Q3JjRHbYk9e3HZ4vqHYeHVH
+PoaTVV7QThe91m8LEG1jSLEsYZWFU0UPpSjWlvqGJ4n9ivTz1G6cqU6lpcNhxF5X6A+JipwTiZVv
+wm9ubYlA3ChLV71nnqMgWOpHRMleUqizPvi3l0/DnUQ9EWQ8YA8dkDaSwiwOEumQA0UhumT+3m2s
+IOsydRByPSt3M0q4KlbFx905fCzqslXHXBLZSXHsiKrqKDyKCE6TTTSkvC1YdBnZDKDmDAiZdYh4
+FpFXHHpwhQiU+HF/K8B2IgTDlBAIN7BWe9ITuj0khfX/WLw2LWFDPqW6p7HiCms/ei3j0531dwGm
+4BeGyf1rfTUweuhdVZQbN797ygWBSv8Mw6LYdWjQ448MUPIjG8ZaJXRScFuMCmfCxiwN4Td4iFNk
+ugIyzlny+gxABPA15h4QLD5g8w3olTbyGqdLx7pTgOyGl9BETGwaeQeF34YoOp5KE9w2/pvc05nD
+kFHX+y7hKc5meqYinQF8LBdqPyEAB/3/mSAzYpAeEO5Wmf/CNvvsJ2T4un9uHd23EeAQ+2UEwiOg
+yEEhQ+obyIAmxjgxUsd7Kj8gCMiAPlD3LlbGDs+Bz0eZBew+wC2rqMc9K4Zaiq2MlvadEQi7aH+d
+LtsAEGSUM6AnjWh1W9DtOz3r3Uxa/sYrUr2p7hd8I1npDzdfPchGtZds4bXg7GlwYwOeFljjMh8M
+u1ywKQDXQTAWLKwVo4W5/oAvWTWITpq3ALsoCpQ9CzJ//OO9RsX+vg1UgNQqX5LSdbnGr+fj5xQz
+ZzBs1Q1u8GZMwReaaVUsS+4En6gV/qSO9bx3Tyf9p2MirX1JDY8JhbSAN6y8P9MsMUhgPVJ6Y9x6
+zPm6KeXXJ7kuIkJ9nul2L1Bu6ndbeihARnh1UdJDNGVDnf4R/nyDUzlzE2NrbQlJpO+NxwZ/Gwew
+gVE60dlLs0OGBee3MjNB2v49g9MBhPuT9CVrLvww9xTqh2b/aoAQyn3VjdlwsIU2VqB+BcDct/DE
+kJcK2bbTuY5omLJTOnijBMcBsYrF3LnaWPsbCzW1hCdhOpK3t9kY4ia0wxlirBBBxFGYUGxcZUQ3
+mtFMvNIQ4JcaqM001UD84o9dJ/Q7FyvOnrdBGXDFMNfXqGUi+tHyqGdmRUmbqnT3d0rl/ybtR531
+8yD3ryKTGNAg5vThwmv0+ospWjVBYj5HvNu87B8HuIAHNAcAkqg469U/JhU73iFZXGsHT3xqDcbi
+wPKvrI5k754x94a6cwFWc2vnRosYy9O30CB3qhtca4BtTxh6J6yccJkMaYgJZbiIqkYb8slGkYB9
+V+UjEzm2KJxSiFnD0KcDBbR2DhQK2PAooWedKTB41oXHuzW7x+ofWoVC+kxztrZzPVGn/kM17vqq
+SPq2c7wwrFo000s7/+Uk+Av5HAv3taWnWZj53XUdP6emInLjl3/TRteTtbsYaQhNzSYDCvuFwLZo
+sVAXt1e4gIzUUpIyClOXt2gt7lNfQyhPKHsOse4s3QUP9zYyLH9vOvdiQsqKW4Gsj06iDS7R2N9Q
+Jv+ipTfzHxHVv7wpNUOPRZCweO0RP4FmeqbGNW8P+tQSuBBzRgh2gxKWp9xbY6qubfgC71BHkJ6k
+7x2lIGAS9sEi1sfguwHqVZEOa+XjRPlO/yhEibz4Ge6NMYdia2QFNVZxMGGIYHdB8lLI7mu/X4DN
+Rxe3QGWoEAfdZSqOpej43BPsu8zEMX9HtLMLI8yWrjxGhDk/grOwypsnjlfMV5hnkJ+UowJiLf+y
+t5cVqYdk6KdiBW9eH/uryjB9shfT+fVfXj8uJdCMfWyYJkcRcbRLdfRdNrq7vYeljNaAohs3Qyt5
+1XZvUjoHjHaj4ArpGVbYkYB3GO262Z8QBgsBjYf9W9t/kTqu6oBMq1woe+yrkBsgj5cIW6Kexa6I
+YnJKIN0NX23M+obqYI0oath/OEiQeuRC/j9qfjlcAS5MoTbY7Vken6nqzr0V6m1zAp2mEsqiyzCg
+vqHZab1MqcL6xdIDjAeYKGiv16eAvSsLm48BHudwfrMqxEJCtIuXD+PiYZznR4/F1KgazAuN3VMM
+62jJLF3MiOhkDUfwEpSjq7v1o2C7VHJWRO/Emo3Ei7Lfqm5BYFskhr9OD2E77I8D0AWkuaxG3FWg
+7v2OApqhbJTpOMfLilnyMYR/Yd0QHp4AboXr1K2fBYWhJfiSzwe+Du59oVVo9M+NvZg4bUastnmZ
+lGEcA+ea1f/1p512eaGe23W55ElfyVxTL6Mn67Nk4BhlveNjdfMmSvhAcFVZOVypwc9WDsvhuDOH
+8A4Wcf12dU31TqMY9Vi+oPA0YMsKEmTjxiY0Acol78AEy4K0jS83t+wThYLyQV0HPXkXTP3n/aQb
+m80aQ6WapuQzHyQ0YC1iafbYE5d2hnN71iPKr6TaDEC6y+FXWldli8WNsEl5MpskzVmDTC6AJzLP
+YllQHwdaD2vt+PJai1Ws67fs14d++vwndhKSeR+l1NsVYG+Hij19aLRRuZAaNr8aTki5CRFtw0u2
+D4o2zXjRNsJDZJXUY12EPCeMHjQ22gcc07VSXolkO1x78M6agqyqhHOSixYpdHUQ2es4B42dDG4I
+8uCsy/7T7+7X3dyvGYuKEs6dowpOfoP+x58cX7U/Kd+YVgwmsWWZ2pScx5cZMKNspEQY3kYFBa+O
+3jWzwB3FwbADRN3OCYRtd2NdVK+cOCrucXLX2rV/lizIsiKn+ogdfmrNBsbLdSUEwrvUFWcrFw3k
+i79THNcv92huZV/JpzahZAh6y69xQlXKpm98kkoGGd9z7yq5Xl4XW9wPBfs02juqku1YGAqKUqpg
+pyShUSM69BswfQckgA1d6/FR70nY2wpn3fu3ds52uSvaT5bg/uxBSk6RCgCqo+aTo3ELRt4323L9
++Uym1jf43O2+jZzrdAH6rEVnzpFy3aIOinvQAMpnPvbCLaXK+/M8P1VfS9ZVhgVaHrwPe6JPJAGu
+MfIZGc2AaYk2n3LjJWPm1wBKI3+coIJ4NAlYHk4J/XUWMe9itfwrcfse1pAd8fOLASMNj4adagCH
+i3i4+2PHcuaigUlC4vB6gfKfbmAxtLjUgcjJ59OH/S7S3Ua1nwzWhxc8syCjd5UR5qJOmSd6UFKA
+hrWmediDQBybiM6Qcsy2AVDFyt501d4Upd0sFbwNdgX1woi2SB6+D7F+a1lhIxNPpOnkG3IfR9YM
+CES+TBqsccCC76KRDU5TtdP+2uFx5aomRTeivxFjK/zuKDMepTl0iQvZ8lkyLnvUW1MB5JqaI4ft
+FsYeyaw4pUWN7eenw78OU3OivAuBi/wQdDh8wlBgqGE0Dl5EVh06s/V3ciVBpo6vwqpulmxPubj8
+nbH/XAiquvmlk9uxrSvi6FSar71si/r6TKTfc4tQI8NDzhUbEaT/5ueE36y59NGfvX2V6KUnJe3c
+P2EE+QVKzpgPx7SwBsjoOJIOeygWyP+uErMqn9dg2zsk6KoWbUX47LatoAFJihxVMfz16r827Fpv
+O6tJN6rjPjOHFQV9uwgVANp+89+dsMU34YtSZoeBr89efT2o1NcWc9CATsHaKcO6l89uNA2PKVcy
+0l1bBoax/jIfmglYCo1NTLwg85zMrkzQNYpw+vgQ4exBOaN9IDsyqVRZN6dP/1AQbbuN3IFjPNMZ
+0whdEas6kZL9y+8BN/GkxHgBYWo5z1ectOoRvEJlEmMsdbu8i1ghdgKGXS5V/NFeqKMVLoUZV09V
+n9ClTmEdICRGFvBAZb1Hb0mESBbN6Wqci5zhCKNKSBGfe52i4BInLBR9wwsIyeUMTX0LMKiv2RfS
+G3Ibe4EZQM5Tf893ouwPNaWXGfYTp8sB3io6psSboKBHIaB3Pbo/B8s83o8vqoSGWVUN5NepSKjK
+BQKNzq1BEw6D+L9nVJceDsvdhhERhrWmjKZyNh3Nvf1v3zaMBrfykjh+4IIW+PfqToR+o8uEIIgG
+bJtKnraLtDYk7wFRQRpdo5wklp5qIbjX98cM7Gk4SjJWAuszWf4q7NZ/PF9LmjYfYmItuYh6z4Ia
+D5WFeRJSY+TwlYJ3cTfJKR/XtGpxvYXrQsLurbKOjxQatgQZ2U9GFqKd1uv7aPQkQaERxy4vTLAS
+jbNKrYgBA5XiATc5dLI6CiBVvmxhBOTl6SUO30RtZ5zVufsyDFthczdZjT+aEFrutH7g0LcpwRGS
+6GGQ5fe+FNy5t6g4TvpD1a3pXM0t4lrvNXkotYQ73f/mZML+2UcnUYQVunzbPFVKki0Tfgt8GXuH
+Jh7OObICD3JjsA98wxadxLF0z4t5SEa/EMLutnwyGwbhgkIXRGUJsxlPh/DFd+sRRITQsREYxQX7
+Jo+o1AYYEFwEdPWUGF/XykIbextmPUoGqEfJ2zlnPb0IlDMFRfDnUBFlZCdloH5BX8ZvrjYwnCzl
+O4A936prY467jDi5WHndaSzDOVdKAaFQY8MedPBk60LPKEh1XO8J68Nb21ZOjFcEbIWaqgsLFWwi
+tw3cg4f+KA3DV+buBiNAvfP1rvEWdxr7X3MJZekjps1GKiqbB1phx+wZTXd1K5GWgf4ouiohihmJ
+Hyo70482JPaVKWu/szQu2RzP1m44SLwgYLfkXmDCZJfWip2H+qNuEd9FsPlTVSTczLu7UEYXWqyr
+DjmhBOf1cx37JKsi8NgeBcPkiDyKhIyEK9ua2JWasa+FL9XSnhYx605W3KbalVpE3SFgL2frcA+0
+UGZnPUFh7myHcGG02OC+Sny/OBwnZOMgIFLonXZPKnYwG3lnXHqvFlQL29h6uHBvBZGWA80//v1/
+jLnMpI/nLfmD0yPa0Fz1vh0SJ9El5GPq9uPoMwmPra7TMhI16Opg0H+4yoM7I7YawfSMTvRA327C
+f2BcCwlzEH1bsjMryXK4zQ9meI6kTsTi9fcIPqjKZAD9ktIM/QILbawOQfgDSR2NDVyf73P5baY5
+/DKWZSHLZ+57drL/KOxGHM075PooUxJ2+w2iTxC8RBc4wR9yqn2NrG0kh22Fh6+Knela1SMuUh55
+6a3O4lzwnK1llQEceUEzzpt/yuCn5duT1GIU6ltquYJsrbebuwhjsdq0xv6cMfDq9HU+/LOdFrgf
+O8SX3AAhN5Xzkj/3Tvfki66y2mvlXgk+7DBOxNbkNqHZ+ZN37zSwrj47t0+AOWPWGLdk24gRebbb
+4dPDWxuwA4O4L4hgvVJFz0VOT1rcEcjNgj5ehOhLhVnu7RKG3Is36mP5vPK9hStU5lz/JkEqIBJo
+1zU2a5jBIrCJNEwLe2DE7zYeAR0A+qJBMs+uJ/nXuV2Z1V7vLkw2SGWpio5coST9TGAzshACaQlt
+YqVCPeWt8lCQSTQDfmpF8ud/8OOpPNiFQVzfESLoRAxraeK+nt3fU6OJ7t4C8DnzGte2cGXf+bPM
+o0M+JwS0iW2VHxB/vy3g0b/bwkc5NShxEuL35TmrgwM7UoPvGt8I7cAMGC+hCWc4CKAl6zRGo9jY
+Rf1MAsNWBGqAurgyHwxHjF2CHAJwzfwPVVTTW3iOYkxjuGjyN+FbB4JFZj+ZMqzb+kECV1YQBIut
+NVWlr8LYE+sf+xxCyPEPgDhCj/zTh37/FJOS4+XIzUUpNEZMk13Sd5orqcF0Zrwp13O1D5cOAO27
+fZluHwIIx8ZJf2jH52TAc4ZEdVl4eTXuLsABXog7cDl6TUoE7VuiW9HL8bgMrydiD7pFqTFjTsxm
+QEPSoGWSRKOzLMuf3KV3rym82PiS/zZoUdx7QvQIvyFWNIM5jebd8m63aqFhuaepIPUJ1DW3IbZ1
+YkP0VlnJfmNR/goERrQkPLxe455Rdyp4lg2oW1AOfDrbXz4zTMMwqtEvGD0Thgp5o+pR0ZrCC3wd
+6nw/NYiok2JfylS+jjeR1ol78E+LJKyP4h81Ad5FzlikKYLMYUWd7xwKws0IxsMC/1XPotaxDgVt
+5tv+6N+TsCunYJ67dF2wR6JMis3ytIiV554qpcXj0XBELlZ+UMTQ2CBMCkm5uPMjaFS4aO+x+FJR
+BQThvzoQ2MHi1hbpU7DbucRs+AXKkqectK8/wj6QpuYCijX1f1fxYpzn1JHH3+T34nV/uNsR0/Em
+3eF1EfdYGYCAoGbp1nITLDaw+C7rOzb6MYowNkuaaSi4FZPfwfm73ITCOI0t1xowZPP/91G5p9SS
+qNNy3MGwS65dqxOUGXUhpj6wUEbfsBS8R1gDT1iOak5pkz/47owwT4xzdwbmQEjgeZZa6Yh/3uft
+e1HWWZ3je7dJpA3qtMalFRMnxOJbC3+cpb4F6thAJtdQPESxSHb1h/aGc5IHAqoVA+ZOgw4czeGP
+jYaLJ2tBqrcUj3eIfjnE4CNnp4fImMXkS8Zv6fBLFHoE4KiVQDmwkgoHENxzJU//kkoZmV6J50Qt
+7auxv+V1bootlsS0nCE59E+saLqC4V+Vz63oVLY+6QRUnewoxWf9YGDvBmlWn3XrFNjhJ0ikDN5+
+JG3u5ivpP+uDojqJGOizSm0My1IifNeDUHOATA/ChoPhuQmXqvtQ51ENuFC9DQV1YeZ3Aq4ZS2w8
+j3FCo18L/GJrWApCxQnQB3RkADiPK4qKEDwEbR/q8IdZ0Ty7j/fzD3dgcyuYJtNqv2fYI8CHpgk2
+3WrFy2OUZo3u4/4O8gnxX9qohEJYwsyk0PkrowbY/7UYMYLiLWKqYs4Mbig3SK8m9LAfsTil59gK
+ft0aXN2jPIBZVkZzG48N8Kq1MUq47qudyxOA2AuEOW7EjEHOcmnL+q3PB9YNl59VFG4x/upBpU3s
+J15eOrrGQXtpM0iqLMPkoeEcv7wWMNRT5Lm2RrVJWyek9WS0Y1H0dnjKblzzBZBkcGB4YziBz1rI
+DkHV/Hp7xp9MhrssFxb1gxjvERLM7zAguCjFfhtlPA1Sii6CBXpb2GRK7rN6LVG1HZ3RidxGRmZ1
+9bUK07mdgq1jVPTJzEb3V+MvaxunCPiOA1QPvYsYHLQHWOsvOvt0QE6wprgN+AGBkREllnx4VHDK
+vZX7qdsJrkh6pruDddTHEA6aIoUkBMxYRlEGQodFAKHrvMrg/KFknynH5WhNRobzFbN4DFwBX03G
+ov+uzpQR52/m1LE5/SWDzU7rCtbrEdp/SscleIfN/UIdi+8kJq1+9ivIkDhbowYP+g6EJNgiTmAA
+mreDRWO7sTKHgFNr4npDl1xnkG0USGzJDh9+JTrtFlIBHSE4o04q9iVrAQpuPj1ToFwQmCVE1I2D
+GhE1SEFGBfFwenVevrXyvI1CtALCz361orCxkBP0n7NjOdT5RZescoEDl1yHuqqRCEKF28iqgR9w
+E02DKjCPWxwFkSUJ19sworuvjPBwHmYz3kKdcBsSJoaF4fQr2mI0aW5/zAUOeCgc4uQTY8rBZtjt
+Dvr05Og6C89PVTdUhGow3alzze7ZNbg4NxmpXs0kdhyoj8x0jmroi7MARTEPAWU2yGDBVlyks/oL
+UY7YC8eEZjk3IZLVsp9j6iDoe1gh2tcfZzX7moaYmT0WL2cGvwCFECJZuVhAK4XLhOZ0LbKvzTwH
+kq2ACVy1rOY3c9KrNJeVHoMq6oCXFbtMy+UIsBMY6g7MywrcyacONOOimHX/lAH/Z1/JJMhUD/uW
+uF10oemTq2ciY/JEDz3P8nBZSpBjumbbNGmOBCG9oLdB73OVQhTZ6/Ql2rqIK9PnLiXbF+W5gaSE
+2CfJtBV29pH8By1bj2xjM5/e+CCPdPrOSqvO1QCLN8YpCgMFf9VD+BBfICUYcnsXBP2dJLtPEf+f
+STTqNN3yQRSM4w8cIq/tQuNJeU/mZw5GCTQM07HPXFXWwe5jJv9V36KLF+B8ru+7XDSZ8mWmVzpo
+im6MqbyVyo2orv/jc5ncSzwGy3cRL+PgZkq26oeXg9rXy1XPMebPSnaeBQNhzu6y68ZmbqezGiAB
++hPkMujP9TLhMx4LthC8AfQZdZMcSmuJzRdcTFkML/LplhWsTxNqDGtc1Or6bqXoC37NhTs9yAF+
+i3X9oyHcHYcY+uoQa/7lZazGH/nejLQfN2ud6SQifAPrevvolBycCY5UnY2NGMmnSwbGi/Cg557a
+XM+zAloP1suJi+AIVvbjRW6fyN2JrFZ5AgWwVuw0V1s/o6umPrU7Nty6Jg0F2UN6kd7WVPAYhUjr
+43yobJFSuUTUCqAxB0zO+cYpb27EjA2f/NGzAKNSFlZ6ftv1To0JaKAhjfgFnuKXYa7ggtDvoErJ
+gQ8YE3Qs5//zj8coysKhA12/OpE8LiEOFQWhaFGzlFINpsGFJHtCP7O1UwHIj0sjEji3LzYNWUkB
+rCnkKesbGpAsC98FvOABIJyn8MjiaskzbaHPP67XuCwxpI5nhdaka0tFB6j3ZVGl9eBFLcaVJy8p
+60KESCwRwUeHHx2NNTTRvzT8RviAfSfQ0TiukdN2Vo62j/WGnNlvOMXJtvKiLQTVQoCiQZarg9Ee
+6Y8Ws5LwMjOVfqgnoHf83huJhTw30TjRYue7Qc90sqPaD2CqHUoKSO0XyPT8QXW+DCHrrip+ZZ6E
+/GUbzkBGtVoE5Ft+4CyN+DuJBx/J109t601FKZjw9Bslbl/Wg5ARvR70mx+C0rqmQJGQTWjNmu9g
+WfIvVD0KLonFi+eRlbKc4I1UlHJNPPZS/F9JmWczmElV/ayrLI1UC0MUScVKftOViJklTae7sKsO
+YUBbuhppkabiR7erYGoydFpwCr/o2M/9RDl++qim+jonipsJX612nZkrQ3xsHxuEVL0g0Pw5rzmE
+ppTe5gRXu1Q7yyUFlsNBP2T70o2KjCJbWZ8Th/EB8GD1R9YvS4uK76DU4jl8uuLVKXAUJpVLHCkm
+dMdOYBLsMUqZBwX1/wAknJUcxQUUMxeF00Z0SpRUW2FZHRO29gfLXYEiMOv0kF1hq1u/VOxrLTDd
+0ZZP5K0LzWU4zvhiD/Y9LJer+8sorsMzTDadO/gz+8Q5NVd6w+y1oDKJwtLPtCX7Wy+pILH34QGB
+YmhAeb1f1Vhh8W5TMlVEEVEWfiA6JCcd1YIBGbobD7JmZjILCPHCLR9vVKigtVf0z19EcUekEVMi
+sH59GKSBRoe7Zp6OzvVcpxwENnjUAHBQszmuzL4DCKGnZUF7XRIDhbAvmyXIRoLfnHn3Fmh+1qwZ
+bH/+2J/VdC06f4DhPiC4+rdAqqRZqxU4q0qZdUnbznekRSIhMAeohNu3q2fmdauQq0VbzGuY2RaG
+4+5gcCJ9GQlnxgV7u9Ldr85jWtuqUdV4b/xp+mbQQMXeQYZptElmeF9meENYmXZpKaLao0P/Kjq+
+hBY+1TFjW6gxBBJzb4YYq6oyEX0MDfrQ1iiqwjQsdy9VseTf8b7iOtNrQcyq2fO3TkTehQF8C3cE
+794zk8W3sYVEQdA8QBOFIK1K1GNN4PA9VMsi4oWXwZq5o4Y/z9fJ0wzoTiqZ9/kY40u1Wf9wPWzG
+fwlfhWZbtVaiVec2k3MCgOl+mwOstAdCzDaAPosQR44gTW0fFoFtZYKsx2FfhSfubGCT48tZSqzJ
+G3xbc2LAGcx8F+99E+trAliOKly39k7yrphcQ6bfepNixkV3YY1BccOrXXrRnGnKbz3lvP1cMp9g
+Nq24zRq4fETMjUkzG+/5fXZ3VzsYUtpiTQxYMM6tpozdUhd7l2zniUGM+AhetQcI+Hfx5ByhqY8U
+OWMwTrhPNARY5gV989QGjaETSJr/9sFTBIOGrkWp1fmhVNBkoBehMVfB1M21POZX3RSt9fph014H
+D3DoC2ux1YPF/w0Eb/sMa9ApAOXB0fVaIyDdBPnrHLjKdwdwiw49Puhg0qH09xyzAgjU665k+tF2
+D83Ytdizt5I3J0Q5cGd0hsgKcLvxeBeZTZgHlTNPSKv473ADigCgn433Yc5Q2PqX3Lmkg8Q6Gpr7
++hfpfaA1EdGhKAk1Uo1JyQ30xpWk/+7fUVHSybP+RSjVZ9UDdb2qQXRq24jdTsNjZvcBI9HIOyNw
+q5q2XORKdpbW7MZwXtLZH4qIuK9BhFBPdUgNgiwC+q+Qs4FfhGREuCzlANqnYyd4ohZP1dCElC1v
+NPWTh7SSo5JbVKPZdGpQNPrwFseleIGlq8KO+mDVIsZmKDxgoHpyTMzLEN8m1R8Z13P4Q1LcovHy
+GlGPRrLvMp2zyoWbkBM0W4aljokRpZHCczyBZqz9y9XH29O1wDBfRI5bSIYQeXzOsfdjMt+cdPTm
+uSxzHamCsMuYkSZtR2P93RzsyZAFuGLZeKR/60p1GUh4SdvddAyi0lrV0ZIOK+qbFRG1VyLJxnUy
+sS/69mO1zlrl1D8QbA41Ih0aRodl45ETa373q6/YrNSlS9BSMG39UYbTllWohopzrB184e0huZhS
+MERkWG9xykOtQWK+K6A8d7ez25Yp2aetYk/MHu4VBZf42yGhISo/Omg6vQZGRA5S69uQbwHh5ALv
+eHSE7OhGzV3BccrbrCDNGGYstAlV+Dn+v8CvkNCbkfI9DnxA40uf2awNUUalM1Lpl+Rr1r6SnsFv
+tJfTogXVOakFrpB08P7Q03U+Dqoy+LJzW8AqQq+fI7fSN58LKE2G9nIVggWTq3bpZfmouI1D5t6V
+qN1Nf++qdY0/vWz5vgoZrgMSkA2Dk03hKv3C9Pv/3qN/B3eJYJPgmQyrMejFwBkDbrOSHxZrgGse
+QEyNDOrjrdscUla1+Oeg/0O/EaS5MNiHQLX/Kj8BpILqso5mH5mT69ExzFveWu/JIHxauLIzTvTi
+Dsf5BOxdN+1+RRLjrUIOT3c8/TQmH4nCeK+Yn8gxcCZmm0uc568APcXCT7+acGDxokAcMIUIacW/
+dr2xwx0H/qsOXSIAYfaJcRKCHSkClRsqnomwtnUbZ1iUgKUmNHZ0DI64+3iI1pe8gzStbqaY8jje
+2FeXxip9jkpgDirbDICCTT+Rj+VDM3gAHXTBBnUJyPji7N1YADOqLp5uqRCUU9lngXrt17RXG29g
+eqNJGhJoZ0b5WOOobLmYnzvTExiNuNOcASUCXWrnR15Hr8BEFqPF+vT60JORCcj6I/y8aOal34BY
+9ClLNbNkrTWD9m9vmveVkzGrsgQ67OBmLs9KspiY5O5jsnXl8XfqyTiNk6as95pa1rew6aeMwdUs
+jsEf4n6tm1oGX3kQAdJ+yroe+HSDG9fUZeLjHHzQUYBnMzGEk76SElxQZfIzypXbvHwEzNZ7y8ZP
+e4HeXRCKF/Io89Pc0xnwhnlypJSrSh3Cl4G9rpcvLsRwhvsKObs1us1MSE7R2YYEy6pdKTt40fRT
+aea+cwP11ZXa1ZVpHbmZF/PWKPOxaoc6CTG7klmOtX8G8958NDWuvALtg83oy9Pz5p2S+YdR4Os2
+MzqIwBYCS+TqA36XMJJ92khiuT+QZGP9aG4lLP+1kzD1mdBUh2GdDVNwh1v8KJMm6vkxwFnb3ZHT
+gPEPxRqDco+Z6Iy9oII1li7xm5N3R3CxKmyqzy9EFxoXzmAZb+F1Swp3nFQhnYzA+eIbXJD19bmx
+D341QCNF5QgnsulNyJ8VHw+sUaVExIo7Ohu5tjLMIJZY1swseFvRqr/HUilyQ57Tmgy+YiDu7q2m
+zuCewI2cUXoSixmcH0dE243CXN07giQqXYiYb5bIjF1sHoGR4Rmn3sQ5Bcdk3M2dBSv/ue6/O2Cm
+CZP411ouLSEIMD4smQFDsH1hcZWwiRCSJmupndnIQSp2rFVl2EAn3PZFaFzpmaMiqYoqrWBSPSYC
+m8MpXE2iLsP5NLM4hJPhq+E46cFSnk/35VLGYLADgN+UQNYjciyFGPM4AW5Pz5darcI5+dXJsCZ3
+MHDb9myp32dxwUoDmGfD05lVdGgL5YFdbnOqH7cMg78EZ+jHynVLujC45vPOSnnZhFB9D90OQVPq
+kU5qq5cO88fK+nTacxJ/TWWX46+wn2rZXngh145rMjSJ19P+tAcAkaglIA24NkISYqRGZomOkLp6
+v662UNAkWmPibkJIr2in6bFix3KIYLiSEIB7RsdUvrCq8X3Qn5WDlm65Q0Hpp8I5lbvVQYXkxlBa
+YGpSiQErvWXKt5xX2c7/6o/1x/g6ADM+scA/TgcLZo9NuhbEBtgwHOwa/KA0rX08qs59aciFHpHm
+r1qE2RwUNYeo5xBBtpPjwXfFReGt3/sxqh9aqs+beY9JvYS4OdDtEa3ZxZT7aj0PJwxIqcp6M2x1
+FLXM/182AQk66M1wGTvskZ+tmKcbTEeG6OoFK6ge+2D4ZblnMgSg/W/h18T6Lzc0sXEbO+QeLcV4
+GJcqyhJfliFL3cOzqrYPEH0DmnCuFyTz/Qspf9tQhP06EnVGRkPopkPkvaT/l5HST1NcsYPnWP4n
+fMuA9Qrnmlso2OkB78umSlGuyjC7qL16RX/Eu2JabV9V0NH6WpqMftGKq9+pkLJsAH/BjTXhqN0a
+FOLjENEddQRgEV4LeVoSAD+uY6td2zFgHPnM0FLFB6gE55LyeQQmcQxJJ/oUUt9X5rHCJV06b7Jt
+E47ODrDPIHKvGrOqQ7apj5flgLE4DAn9Ly7V1y1WextDSzc02AN2pwLjd79TxLqhanMT8D28C7Z4
+q+EC7JkW7AT+4hgf/ahUzrj66PddUWZkgHtyokCB2hpDNNIAoGbkvJXTl+LM5EAD56ieGnEMkx5l
+x/ZjX2BBeHgfXFnrHCu9FfHPa78MZOYo5Rcu1gzAHLw/AI8eBqzL2r3Pkfe/FgMq8o5wcHEQH3Zv
+gz2WWwggeJIFGto7YKK4ntHBpu4c8N4WzB29lKqDxNWLLUVHnOavcXIFKK/3zWGO99gEj5im5Fdm
+bm65GvSvx9E4dmyMQa7oCQvdfbQb22QPFV0hnfFPaAtdWQMjKj/xzsD7xj5LlmUTpd9ldZbLs/Y2
+Y+2hFmZhWHTWusv0hFoxGgK36/INCTCzs2Jt9pg13hd6tUf9z1Fo4Sj34fbBpJLbrZUPJXNdzILS
+XUXfy2cEcsulL/NC3FOo867tgzAfWAXNnUYLJl2OxFvMMTS22ANX5KdFvYE4G0qK2p/GuIfhwczA
+7mE3MF1jfU5R49uD0/4A28sHH/lqquImDqPVcYPv8OuvjswbwnUw3o5YUshrLvD+3MN/JYnot9D7
+nWEjsxnaanpSGjVCk53AMj/0v7FJzAT5aqL+f2TMFUTnUdh7kHPwCc8XNre/M0ZrIPwUbuVh5JRn
+57MiKPWmIGX3gP+ofdUcHElVIpXrgLc3urk+avQynoqnRoJpyR/sUyqkL0T9MT1U2e3lzCiTRt3O
+ykjs7aqwhqcv0IrSjoaz0wFcrBPMP4Y7RQofM5vPCUFhOCf5u0Uj5KVPTZN8s01KlkoLn0b2dW/O
+aGne0VQCy5HJpIO8zj8Bwp/uhMDteGWAVeNEMUo2Jt+RBpcdTg52O5AgRxjoFfG1AFmxc3lkLRQ5
+/PdoghJfEt2h71Fu1D4zdmsL8N18KOiYcFPaKXcD4zETPGsJJeYZ32t3snlX9dfuVO+//JjHRSZp
+bLcsmARFlYk1Z5IjPxAoA03Gq6jnJ9E+HOapdQ+6Qcbayi5xxa958lf1E73qqQGqMdikV7AsviCY
+U6t4UbDdaVj6SGYFRZZgvNdpYuzb3SHNUT48Y4XviTaPM/RXsGjWNeB2nCWPQcNZzjoxGe9OYiMt
+tkYUPTgYBzpeta0cgSIwmArsd3ju+g7kvAlOsDj3RrY6D4fu7SA5MjBXivhxQrejsYn0nyTcqizT
+YLLHUYd/s86uWmX7Lda2ajI8zsO274020teDaOBT2VlvJrqjeT8jFbFtwxX7v1nWalt8gQf5RE4e
+TZawb3F7mLSEzfdH4anepX+ziwXGKokmqIDx3QOZbaimn0j6lKUTXdUrHFOKm6i8XBoM57tsS+tQ
+f14ek+ipRkkA6eTd+6EmDGaYtOIozZtG/ev/JXvLePKhEXifRKVk+RW1RctBQU5RzEzWGi2zuVp6
+p3tac4eQww1gm84RZ9Au8vi6XJWR3xJth6ZwHjAt2GDsFSGL+ACrZM1gWtCUai9KS0hUC1tThOKj
+geuMtU+A22GwTfEBBouwYs7J3r+mwVyfnUiAJ7HgV0QZGYBmvtcIGIXr+aYx80wokDtVEGTYN3W/
+3BCMUUSEY0epXA/oOfh5rvAeLII9QO9uQaOlwod7BRM0CRMzWSQNeGaO42cgser3UmCG35UPRlml
+y+kGHVYXc95LVYGnaTAUk8iZNPWrHWZJHLxbO7otxbcyJUyAQ2X/Y452BKHGnzrSB4atb/gL5C9Z
+Dlo5VOdp4DMTOwXjavV6SrCvEusF/rfMH/lzPYVF4y0bzLD1Gdac2P3rNakuelafanfgAH/yyz7Z
+jjwr9yULJ8CRRUFVVzZNTZQVsgtFtPMsKK36OxIlT/K7Nhgd17S1cxroctRWs5qqedHFgR28vzMZ
+QhKRKSjGoCOQxCzfDuKCUtPtwazdhjTiuUECQv4qAYehPkYavW7XPM4tjHc10f5ff599zvWvKJyI
+gXp1jCInd8R00PvOjpQHcL3X/GPkMRW1/G1qH6j2gbkUxDdQkAVL2KNngeyYdN+Z0CgRoBrME0DL
+PfkUrZMFiQTmp2g9kCu2g5CghZSpWlhIE6+aKigB6JgZc2hEUqO1hpByTp92R/hzfILUPf7MwYrF
+ZKftxF3aOXG5W6c6RVRuqEKhS/+GWe3bVwO5GLM8eXdCCUM/fA6wdzIfq7ygfkdbNhnd1F1ggE2i
+cFOe92PN0kzBZx/MlB124VZxZM7+tpIaLyBlI4NavOWFVR881Dt9Xa5g5A6IOOEK1B1i6jk2YoTW
+Wi1+tYKuYlS00RvlO+4zEyq10QvrNy0KQYPsCRcerFiEaSVKYjBjzmupUl1Ue+GhajqkMDtgXW4k
+uipXbneb3KnwqqF1OpxM67OAbkC1r5UMD8t+OjZt9IWXSfKvVk92LkBKobllHjJhfoKEW5zlYuzs
+JPlQT/xFyL7A+VAwzQhVEN9VH7sIMNqkkljrKFHujDKv25GJqqfhoGV+e9NXTDAQ7vXHIPrJSPHJ
+h/5k8tuoaIn4jcADedXe5eQgc0ER8Gm7b9X4HK/wNcysC6ndmHCGRa6ZcQCumtVy4rdJjJ0faaG6
+W9ucW1RUDY+lLzIaBvSQJFDmLPuIThK2snObANCxnctmEhureigtBbpk93q/cGEX8px28gbTUJBS
+CZLDj0s5huaBmvEt5mz3z6kK0A8oTxSbpzzFuF9Y+uK0tsOpW1UkpqWm+IRTfal3bVbodUTdlroF
+C3dHtblWcLrGNbKzjR3hYhm9mfMvds7YODgpx38Xj2oS7Y0eNqRFfCeExoSv28RPYY5uI1NlsL7h
+hftdb+n2PWPaPTTyLeo+K6sMLkm3r9HV9kdnTCtEHZZsAGM5A2Sj//jzSqDmXmiG2bMyBLgMv9Oz
+Cve3UiU2jlUa+ZJVCuwRuJBdeCgYH476BkQtTb0NCe9Vk6MXXsEzkBCKMUqXnvdeV73z38xqPkjM
+H4wceIV+2+o5tLnW6V0O39R5Q1rGsWo/wv6i2EZVrFq5z+mdYZeFIjDBwAIjGoQireWF6TJW24EP
+Zb0rWKNZpd620o9o8lcS7z9Pa9beIChwivX6Kxw80QLr0u4XsZZED9IBZ5/IJqzOA36ic4yDdyaz
+r2kU2DWBD4ELQnutp4nb2dw2jkKsaEhSIvlBJcDtvBPzY1wnCKW8480WRb83O5zStUFxnkpwLef5
+3upa7tMYuKTfYVHGsyH07C9pRWV73QVyOkSTTyPsy0SUIE6gKo2zilLIPUV0HKUW9vxAVvCE1KYA
+CcUvI1Dq2B+ytB3V1a+IUY8rj9n/6lHI1Z+PJxu4aerFDlMKUfdjJWn/kovmTHlIMB3BX1e4/vwA
+HYo0/kMQ/HHwqezHK4zmMJdF+2/1zcqgKn+MqA0Kvn+CD1V0SSNoUNq7hH5+Q9ICxM3oN2WJldAN
+yHRFqFLEWKqKa8skH0Qkvjs8+8DA1gs4w0cuNuyh9+9Uba3HYiUwNQ9c8Pkq5x3fytwQPrUt7HDt
+N2UiSLWca07nldj+7CJboCMXXIbloEldc9SSJv2Q9qj4xczab+U0HPlE5B18gtGMKM7mCSwuG+kc
+bLnOistA9n3dhORkJIt933477ow7bayqwlGFY0BbPyElFVyN/4L210woaFsvfxYT9JzzspwY0+dB
+ldYDEa6D2p16njqqIg0fJZ+f+dSFYV6npnCijRxka3FDm2GCLKTCCQV7WI48rLOG+w8pbRZSWqkD
+zjHMSsXSz5PDcu7y8UgJV4GhLYE5IqaSKXJ1vBa5IQQ3CUnjN6g3vcXqeeqZXulxWEoU3TYu2lsc
+vU/fAOIDQNy0mdSMWa+GBVlbs1mhvsHiyi6MZfIIp2kP4y1pqxQ0bJ+N5jtF3zBX747mrcXGZxGR
+hj2Z5s8g4++2ImgsVo2W39hfuaupP38ULEzQuebxsYXfEs44ocS0IFIlWpz8TQRqGYBHUxepqr8K
+IPMkeicYeRc+qEaeW6AJbQz4XCd0YPjC9YY/ErjZA/W0uSbTIhkq4Ko8cRpZJN4gkbPi9ACwfODv
+4IOJ8r3z35QfeT4efqjH99EwRDjqVyrz95RgK2awYbTP5uWd/6hMKz3bkPGUh3v+r872UdSG5z9b
+0qtZ/o5q1ldI8Q/EYCOtAK0wdA958M5gKvL3AlwDFOBb5fGrVOmaHQX9Fq6gO1kISfoeuKtGX22/
+MLy9OGPJgGpgnWEFGuqph8CzYvFHm89LqtjXVvUJhQmvrp+Di0Hbna6oATC/aZuwdIOWS4xmlAhV
+cvQM54Kr+eADIhDPOMtuz3+1THm0yMVarLew3U1jcm+4mMetlMIydpQlFb70Y2f2QdcuXjOCdv2L
+FJtwlYwCd7V/X5XUkSjLIDgMQ5Kf/pd5zIK8TgKdEYtNxHDNp30p/pv/YAJeFhlM8iwRujGehDWf
+UJCT06AOmOoBiZAsyI0CaRryOIVT4kwWbTm1yLBsSymRGZtUuBOLAHwyVR/xZmp5aM5KYqt9Jv2f
+3HI6ivIYmDOO1CXZwG7tnGpBMuphFxyQ3X3EcJ4Ha+VKrS2zuzgKI7scmDvtPDFpR2mwjtCvrX0n
+vdGfxOigbxWiqWepFrcqGud5Dzj7x/lRfrinU/kc4u6rqytGaC6T12Dr8B6F+y6OXZHMiPgwZbg4
+lzDhvsiYldLe4rmg1u1MMQn7f5ttER3vhLLMwx7Hr8VaD9g/A5XlXj0RAU+U10PHKveADUNPGE6B
+s8ssY4OCvgy45NqzK8FMEitq6/V53l7kxU+mV+w70iU8fSoqtATe4xo+wMgpk03VulAMFwpz3QFf
+YWO4sCCputNfNYseLQjCXvqUGi5gO3WC42UXbrid32Xn8KArnFiRJJg4LqH9w9MZmm7Q/zy6PBu6
+WvG9PVF4moC+VUqrTHjQRuWWO9jR4SVjrkRhoSuQrVHtK6u2gpR2BqEwDvASVdqTcR/K+6+cK+S1
+kszfOi+CdXRkpksWPIZLh3J2ude311bRO3QenXlHQtrZp+nhZkpFgRTW4/WzrhnmIHR6yIiURlec
+LLgd6gRyocKhiVh87OCHRkUP56Gxf3CwokKvA4CvzaBYXukAthE9wzDz3YrgBDv3okWcQVLujoKE
+zV72Bu5ZaDnZakzggRsVdnOhKDfZV4mXFk03wbrqzNAEbctH950PUnwFswva4p8h+fHohdj5kl+3
+hlufDz/B3rzfi1cHf70NgoOttYaN6wS9PrBkcpUcjcVGnFmewQEwKTdlKKbmeyaDMmsvdTcD+TxJ
+fELyN4pKe8q34GA6cSA+IyZ7b2HAVWMsorJU27ylpq8h5N1xi788QZDFnZqOgl7A6GvD7lChWMaQ
+PxOxcEyLSQupfEtxVC3wj38caVhLkyYX+z3R2Qfi9B34zEqkBEDtKwOisbPvhguZPRyHI8RjZ04j
+szHfon4BI+WMGy3zmw9A6bbP/+gNifhSrFGz/hohh157ANhSGOP6m0MT4SmCABBN2UJvUM2+bjrv
+dYvaAJazetUNN+PUbYj5a0PCbjcGCIH88kuWhvQRgmneQhY5qmFxedikEZgey/wyEE+KNjh1DDY/
+k/wZ0a+GKDRxuI1iwf1R+9AofIiZ0YlMsUi8JqnFi6lsLdQ9ua77nwbwFbJ9s+iTKJzF3jCvC3Xj
+8FMt+KN98xqY7pCMRLVR4FR58C1X7Y83H6lLuYcFAeh4rdegPLlswD8a7cFcn2QrrNDNRay5mEio
+vjF4zfofvkbJ1i+gr48P08GvLJl3IMkZh/RkaxyaTLVDoUwIh32Dx2MwaDIDV6R/+DoEdIG3Tzy7
+RQgGrizSD/+3i+wGivs/R/Eu8tCzdZ93L83degL0mt3Atzyi0tITzQzSUW+gcODerKvNUo+0+qng
+zg5u9mNm7KBcfCabCSpWmuXoFi/0SyTUhZlqi8mSNMphsvDMDCZmGoMHwAqCs6syZq6lNvFvqV/K
+WWNYy8XGkOv9xbeinCpj2vdbEypuUq3PjePCSjw0081pp6/YjHCeqNJIBVppZnLsxzIx1/e/pJjN
+l6CCbGprM6zxB2olLPFuhbS/17j3A/ilmVqG4Kf/qnmxYoaPvzn9GyCjjiGKzGeLuefmsWsZeXXI
+8YTJib0rBXrz+RALlNmWy8hQGmU/zBuPnjQzWoOt4YM0H+8Ntvul9iarv6SA3xZSa9UlN7Rq09Ud
+vDvuLx+8mH1IXy/t9WR0gUMcCIqca55KLXcMPNFfOOYeyZCdWaJDBtQ9FbaWJ2FEkEM1WEU9PEM9
+z9gtO56+Yr+bclZX4j3TsoGvsL7yVt79huJFRcVMPaoVYvxHef4+m2dX+UFphYogBxkIoNqVBHSI
+dCekBwtf0F1aAS1iOPLpSREJR4tiOcYMe3Fh/e+z5rqum057eQhjFInCV9IBO4Zqwb66ZXn8FJ3z
+vVYLmT1OGRvSG5jzw0C1GhkQ99bkYjlm6JVuuOaQQq4Jpy1o7pNaVFSFjQEUsPMyQrBc8dr+l8r0
+CtioW2Qf/MoIb7t4spGHDv6WsQQ3UrNp8sk2Rqp+V4/xOZqj2wKXOL7r7F1OjHwvo3zVk3Mo+ttz
+8N75qycL1T5g5mCXTuFE53NfFGW5lNdUjZ+HsZGAl1IUKew0rfgF9YJnEXwwMK4xaofFAOjdfJ/d
+BqRoSvaRpOZINbuWSPUmZslWaiXqVY0PgwWN2kSXShETvn/ABeoHGEounK8s4MxGevR6uC091RUh
+ufZ5pduHlQ19xhG+yhP+FkPfaZz5DrsfEFWVf62FZd58ADMVId6oSVfGSS2M3rznD5ecNNpn6q88
+kopZnXPDdYom+lu2szDFGe3Z5U98owbcOYocvlus2mEmG1//Dag3qN0wo8gc0nCp4BD1b3gJ1KgH
+B3v5OKqcvENg764D7Hha1XS9U+6+Ee0/bXk/moPHutkfMxLkt+R0V7kW0FmOG1cGkr4qJVhrfbk/
+LxjTKo3+Yag0ORe9Ouc0U9rJwfmuWQe4uwN7fqM0D5kTcSFTJrS5p5TGR2y0TFxEPdee/rfycCSi
+gXXXHVXKjvULMZYiEBLWpmGFTigXVlyDmHk66ZrwdiTDiqfX5Fa/4twCjLS27KESE63tW9pEOEdk
+BjFhCwBvGWlX/fx5HhYq2oyiam6vsW5EtQjamVAW9yUTwBAQ4dSK+bWEXY9+C+VlcFUiTU93ggoJ
+fLua2yjC1Z50W/b8Qp/t+A9De4Fn7pgDowqvukGbmpaJGocKIea8/USnZO1XKrBKkj8t4nBUCn00
+XkGIUvurrqqreNpB+NhN+sZAf253j49sKZPbmY8eejQ5wgDwBxboy6OsmYfhgHDixkfPthACfxJD
+OMi3CtzIdrCT9uGaWm0MdCIz984YwTgQ4yYCA1gO5dgJCRTqw7BZhZ4jYz/tKGO3gZL+Kqsdv1vp
+XGOTSHI0WeU0m8MWmPAUUb67NmI3UiWqcjEmU8msj/s0qUgVuM6uukVj3qyV9DP0Zznp8EhEpViC
+lKwxXBefiWCsDc+b7T8nYFWKrrc+6Hc80+RuVfiXSpZDNYxbuY1Urp1A/+ZS2Duw4fvSXSSg4bBU
+3jo2HTyc3ot/wHp+Nd0jRyYJlLNhEeugXhilBdzXNKSJt94jmg/CKS3vEtKe2VosT0Y4ZjtHUBDp
+Hlb5dZ/V+ZO4oiQjuFUd9G97WN/u6ODz07nd2qsRmDX9kx0sTzgRj9WYyQEfJsqfshCQ99SlVyTK
+VBw/RzgvQvY9sUnHuMElnvAzmjso6LuTlBU8xK4vCXKky40TGKAnmgLcNnfeGsVMSY/hg0B/l5uJ
+BfJBabLzBCNriUCwGZDQvw24HGNLLszz0sqA3X/dT2mOFR5CbObkjzWHZRCJhGhgwGw6OwwlItYv
+UHoT0bWWPBsA5e2P5WuwWEXhHEOFKIXSTWYiYVQSzXeMOm22ArLI+Zwf4kFYd5GKmwYExpZbafXD
+yTE9a0sFQDp61dIfE7k60ewKAyJrfyA0pEPI6WFUtDp02cx8H4Vh/+GB+jyxeXs6TKl2MWjn+zT7
+r6aQtFBgg57YB+U0q4xR1xTaA2DMpdzYJG31/5Mtb3T7QHBwue67NisDw2afFRYkWUHSRxaEyNuY
+DNo0IlNG2PtKZnAxK68VH//cwT4SPqVxmzy7rYCiGJfonxpxWG1x1PxEo9GFOXrQIQK5Kffl6Yjb
+lpFP2cwtAJJR+LvOKaftjijfdtYhUKf8x9iFvGD4VThBBcV7j7oFlozYs3lDENyLHlGUR0Hhk8iX
+2cbkY8/uFGmw7yAuRqYeN+b11XEOIjtVAw2zjHiMvQO3WpZ0ng6HstMuEwC35KGlBKMwQWiekogp
+HONxYu54iw95cwVkriNZ13iFL9Uyn9t3hFTl/56kXLUzKZdfr8Qdkuz+w97AMnp5bTXzHcGxFJKr
+6ptvfLmaJFW=

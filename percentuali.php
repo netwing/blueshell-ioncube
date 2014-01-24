@@ -1,531 +1,269 @@
-<?php
-require_once("config.inc.php");
-
-$a2005=array();
-$a2006=array();
-
-$anno1=array();
-$anno2=array();
-$prenotazioni=array();
-
-$risultati=array();
-
-$dal1 = strftime("%Y-%m-%d", strtotime("1 month ago"));
-$al1 = strftime("%Y-%m-%d", time());
-$dal2 = strftime("%Y-%m-%d", strtotime("13 month ago"));
-$al2 = strftime("%Y-%m-%d", strtotime("12 month ago"));
-$dal3 = '0000-00-00';
-$al3 = '0000-00-00';
-
-$visualizza = false;
-
-if (count($_POST) > 0) {
-
-	$dal1 = $_POST['dal1'];
-	$al1 = $_POST['al1'];
-	$dal2 = $_POST['dal2'];
-	$al2 = $_POST['al2'];
-
-	$dal3 = strftime("%Y-%m-%d", strtotime("1 year ago", strtotime($_POST['dal2'])));
-	$al3 = strftime("%Y-%m-%d", strtotime("1 year ago", strtotime($_POST['al2'])));
-		
-	$periodi=array(1=>'annuali',2=>'stagionali',3=>'mensili',5=>'settimanali',6=>'pluriennali');
-	$dati=array();
-	foreach ($periodi as $k=>$v)
-	{
-		$select="SELECT DISTINCT contratto_anagrafica2,COUNT(*) AS numero FROM blue_contratti WHERE contratto_anagrafica1=1 AND contratto_anagrafica2<>1 AND contratto_tipo='1' AND contratto_periodo='".$k."' AND contratto_inizio<='".$al2."' AND contratto_fine>='".$dal2."' GROUP BY contratto_anagrafica2";
-		$result=mysql_query($select);
-		$dati[$k][2005]=array();
-		while ($r=mysql_fetch_array($result))
-		{
-			$dati[$k][2005][$r['contratto_anagrafica2']]=$r['numero'];
-		}
-		
-		$select="SELECT DISTINCT contratto_anagrafica2, COUNT(*) AS numero FROM blue_contratti WHERE contratto_anagrafica1=1 AND contratto_anagrafica2<>1 AND contratto_tipo='1' AND contratto_periodo='".$k."' AND contratto_inizio<='".$al1."' AND contratto_fine>='".$dal1."' GROUP BY contratto_anagrafica2";
-		$result=mysql_query($select);
-		$dati[$k][2006]=array();
-		while ($r=mysql_fetch_array($result))
-		{
-			$dati[$k][2006][$r['contratto_anagrafica2']]=$r['numero'];
-		}
-	}
-	$supertotale=0;
-	foreach ($dati as $k=>$v)
-	{
-		$rinnovi=0;
-		$non_rinnovi=0;
-		$totale2005=array_sum($dati[$k][2005]);
-		$totale2006=array_sum($dati[$k][2006]);
-		$supertotale+=$totale2005;
-		// Per ogni cliente del 2005
-		foreach ($v[2005] as $id=>$num)
-		{
-			// Se l'utente è presente nell'array dell'anno successivo, ha rinnovato qualcosa
-			if (array_key_exists($id,$v[2006]))
-			{
-				// Se hanno lo stesso numero di contratti o superiore, ha rinnovato tutto
-				if ($num<=$v[2006][$id])
-				{
-					// Tutti i contratti del 2005 sono stati rinnovati
-					$rinnovi+=$num;
-					// Nessun contratto NON rinnovato
-					$non_rinnovi+=0;
-				}
-				// Se l'anno scorso aveva più contratti, alcuni non sono stati rinnovati
-				elseif ($num>$v[2006][$id])
-				{
-					// Ha rinnovato i contratti che ci sono anche nel 2006
-					$rinnovi+=$v[2006][$id];
-					// Non ha rinnovato i contratti che ci sono nel 2005 ma NON nel 2006
-					$non_rinnovi+=$num-$v[2006][$id];
-				}
-			}
-			// Se non è presente, non ha rinnovato un tubo
-			else
-			{
-				// NON ha rinnovato TUTTI i contratti del 2005
-				$non_rinnovi+=$num;
-			}
-		}
-		$risultati[$k]['rinnovati']=$rinnovi;
-		$risultati[$k]['non_rinnovati']=$non_rinnovi;
-		$risultati[$k]['totali']=$totale2005;
-		//$non_rinnovati_annuali=count($anno2005)-$rinnovati_annuali;
-		/**/
-		//$dati[$k][2005]['totale']=array_sum($dati[$k][2005]);
-		//$dati[$k][2006]['totale']=array_sum($dati[$k][2006]);
-	}
-	$newrisultati=array();
-	foreach ($risultati as $k=>$v)
-	{
-		$stringa="Contratto Affitto ".$periodi[$k].": dei ".$v['totali']." contratti del " . $_POST['dal2'] . ", ".$v['rinnovati']." (".round($v['rinnovati']/$supertotale*100,2)."%) sono stati rinnovati mentre ".$v['non_rinnovati']." (".round($v['non_rinnovati']/$supertotale*100,2)."%) NON sono stati rinnovati"; 
-		$newrisultati[]=$stringa;
-	}
-	$rinnovati = $newrisultati;
-	
-	$periodi=$blue->elenco_periodi();
-
-	// Array con ID del tipo di contratto e relativo nome
-	$stipi="SELECT * FROM blue_contratti_tipo";
-	$res=$sql->select_query($stipi);
-	$tipi=array();
-	while ($r=mysql_fetch_array($res))
-	{
-		$tipi[$r['contratto_tipo_id']]=$r['contratto_tipo_nome'];
-	}
-	
-	//echo "Periodo dal ".$dal1." al ".$al1."<br><br>";
-	
-	##########################################################################################################
-	# PARTE RELATIVA AI CONTRATTI
-	##########################################################################################################
-	##########################################################################################################
-	# ANNO 2006
-	##########################################################################################################
-	
-	//echo "ANNO 2006:<br>";
-	
-	// Totale di tutti i contratti di vendita
-	$select="SELECT COUNT(*) AS totale FROM blue_contratti WHERE contratto_anagrafica2<>1 AND contratto_anagrafica1<=1 AND contratto_inizio<='".$al1."' AND (contratto_fine>='".$al1."' OR contratto_fine='0000-00-00') AND contratto_tipo=2";
-	$result=$sql->select_query($select);
-	$vendite2006=mysql_result($result,0,'totale');
-	
-	// Totale di tutti i contratti di vendita di ritorno
-	$select="SELECT COUNT(*) AS totale FROM blue_contratti WHERE contratto_anagrafica2=1 AND contratto_anagrafica1>1 AND contratto_inizio<='".$al1."' AND contratto_fine>='".$dal1."' AND contratto_tipo=2";
-	$result=$sql->select_query($select);
-	$ritorni2006=mysql_result($result,0,'totale');
-	
-	// Totale di tutti i contratti di gestione
-	$select="SELECT COUNT(*) AS totale FROM blue_contratti WHERE contratto_inizio<='".$al1."' AND contratto_fine>='".$al1."' AND contratto_tipo=3";
-	$result=$sql->select_query($select);
-	$gestioni2006=mysql_result($result,0,'totale');
-	
-	// Totale di tutti i contratti di transito
-	$select="SELECT COUNT(*) AS totale FROM blue_contratti WHERE contratto_anagrafica2>1 AND contratto_inizio<='".$al1."' AND contratto_fine>='".$dal1."' AND contratto_tipo=11";
-	$result=$sql->select_query($select);
-	$transiti2006=mysql_result($result,0,'totale');
-	
-	// Totale di tutti i contratti di affitto suddivisi per durata dell'affitto
-	$select="SELECT contratto_periodo,COUNT(*) AS totale FROM blue_contratti WHERE contratto_anagrafica2>1 AND contratto_inizio<='".$al1."' AND contratto_fine>='".$dal1."' AND contratto_tipo=1 GROUP BY contratto_periodo";
-	$result=$sql->select_query($select);
-	$periodi_affitti2006=array();
-	while ($r=mysql_fetch_array($result))
-	{
-		$periodi_affitti2006[$r['contratto_periodo']]=$r['totale'];
-	}
-	$affitti2006=array_sum($periodi_affitti2006);
-	$affitti2006=$affitti2006+$transiti2006;
-	
-	$contratti2006=$vendite2006+$affitti2006;
-	$anno1['totale_contratti']=$contratti2006;
-	
-	//echo "TOTALE CONTRATTI: ".$contratti2006."<br>";
-	
-	//$vendite2006=$vendite2006-$ritorni2006;
-	//echo "Totale Vendite: ".$vendite2006." (".round(($vendite2006)/$contratti2006*100,2)."%), ";
-	$anno1['totale_vendite']=$vendite2006;
-	$anno1['totale_vendite_percentuale']=round(($vendite2006)/$contratti2006*100,2);
-	
-	//echo "Gestioni: ".$gestioni2006." (".round($gestioni2006/$vendite2006*100,2)."% delle vendite)<br>";
-	$anno1['totale_gestioni']=$gestioni2006;
-	$anno1['totale_gestioni_percentuale']=round($gestioni2006/$vendite2006*100,2);
-		
-	//echo "Totale Affitti: ".$affitti2006." (".round($affitti2006/$contratti2006*100,2)."%), di cui:<br><br>";
-	$anno1['totale_affitti']=$affitti2006;
-	$anno1['totale_affitti_percentuale']=round($affitti2006/$contratti2006*100,2);
-	
-	foreach ($periodi_affitti2006 as $k=>$v)
-	{
-		//echo "Affitto ".$periodi[$k].": ".$v." (".round($v/$affitti2006*100,2)."%)<br>";
-		$nomeaffitto='affitto_'.$periodi[$k];
-		$nomeaffittopercentuale=$nomeaffitto."_percentuale";
-		$anno1[$nomeaffitto]=$v;
-		$anno1[$nomeaffittopercentuale]=round($v/$affitti2006*100,2);
-	}
-	//echo "Transito: ".$transiti2006." (".round($transiti2006/$affitti2006*100,2)."%)<br>";
-	$anno1['totale_transiti']=$transiti2006;
-	$anno1['totale_transiti_percentuale']=round($transiti2006/$affitti2006*100,2);
-
-	
-	##########################################################################################################
-	# PARTE RELATIVA AI CONTRATTI
-	##########################################################################################################
-	##########################################################################################################
-	# ANNO 2006
-	##########################################################################################################
-	
-	//$dal2="2005-01-01";
-	//$al2="2005-04-26";
-	
-	//echo "ANNO 2005:<br>";
-	
-	// Totale di tutti i contratti di vendita
-	$select="SELECT COUNT(*) AS totale FROM blue_contratti WHERE contratto_anagrafica2>1 AND contratto_anagrafica1=1 AND contratto_inizio<='".$al2."' AND contratto_fine>='".$al2."' AND contratto_tipo=2";
-	$result=$sql->select_query($select);
-	$vendite2005=mysql_result($result,0,'totale');
-	
-	// Totale di tutti i contratti di vendita di ritorno
-	$select="SELECT COUNT(*) AS totale FROM blue_contratti WHERE contratto_anagrafica2=1 AND contratto_anagrafica1>1 AND contratto_inizio<='".$al2."' AND contratto_fine>='".$dal2."' AND contratto_tipo=2";
-	$result=$sql->select_query($select);
-	$ritorni2005=mysql_result($result,0,'totale');
-	
-	// Totale di tutti i contratti di gestione
-	$select="SELECT COUNT(*) AS totale FROM blue_contratti WHERE contratto_inizio<='".$al2."' AND contratto_fine>='".$al2."' AND contratto_tipo=3";
-	$result=$sql->select_query($select);
-	$gestioni2005=mysql_result($result,0,'totale');
-	
-	// Totale di tutti i contratti di transito
-	$select="SELECT COUNT(*) AS totale FROM blue_contratti WHERE contratto_anagrafica2>1 AND contratto_inizio<='".$al2."' AND contratto_fine>='".$dal2."' AND contratto_tipo=11";
-	$result=$sql->select_query($select);
-	$transiti2005=mysql_result($result,0,'totale');
-	//*/
-	// Totale di tutti i contratti di affitto suddivisi per durata dell'affitto
-	$select="SELECT contratto_periodo,COUNT(*) AS totale FROM blue_contratti WHERE contratto_anagrafica1=1 AND contratto_anagrafica2>1 AND contratto_inizio<='".$al2."' AND contratto_fine>='".$dal2."' AND contratto_tipo=1 GROUP BY contratto_periodo";
-	$result=$sql->select_query($select);
-	$periodi_affitti2005=array();
-	while ($r=mysql_fetch_array($result))
-	{
-		$periodi_affitti2005[$r['contratto_periodo']]=$r['totale'];
-	}
-	$affitti2005=array_sum($periodi_affitti2005);
-	$affitti2005=$affitti2005+$transiti2005;
-	
-	$contratti2005=$vendite2005+$affitti2005;
-	//echo "TOTALE CONTRATTI: ".$contratti2005."<br>";
-	$anno2['totale_contratti']=$contratti2005;
-	
-	//$vendite2005=$vendite2005-$ritorni2005;
-	//echo "Totale Vendite: ".$vendite2005." (".round(($vendite2005)/$contratti2005*100,2)."%), ";
-	$anno2['totale_vendite']=$vendite2005;
-	$anno2['totale_vendite_percentuale']=round(($vendite2005)/$contratti2005*100,2);
-	
-	//echo "Gestioni: ".$gestioni2005." (".round($gestioni2005/$vendite2005*100,2)."% delle vendite)<br>";
-	$anno2['totale_gestioni']=$gestioni2005;
-	$anno2['totale_gestioni_percentuale']=round($gestioni2005/$vendite2005*100,2);
-	
-	//echo "Totale Affitti: ".$affitti2005." (".round($affitti2005/$contratti2005*100,2)."%), di cui:<br><br>";
-	$anno2['totale_affitti']=$affitti2005;
-	$anno2['totale_affitti_percentuale']=round($affitti2005/$contratti2005*100,2);
-	
-	foreach ($periodi_affitti2005 as $k=>$v)
-	{
-		//echo "Affitto ".$periodi[$k].": ".$v." (".round($v/$affitti2005*100,2)."%)<br>";
-		$nomeaffitto="affitto_".$periodi[$k];
-		$nomeaffittopercentuale=$nomeaffitto."_percentuale";
-		$anno2[$nomeaffitto]=$v;
-		$anno2[$nomeaffittopercentuale]=round($v/$affitti2005*100,2);
-	}
-	//echo "Transito: ".$transiti2005." (".round($transiti2005/$affitti2005*100,2)."%)<br>";
-	$anno2['totale_transiti']=$transiti2005;
-	$anno2['totale_transiti_percentuale']=round($transiti2005/$affitti2005*100,2);
-		
-	//echo "<br><br>";
-	//echo "Differenze nel 2006 rispetto al 2005:<br>";
-	$differenze_affitti=round(($affitti2006-$affitti2005)/$affitti2005*100,2);
-	$differenze_vendite=round(($vendite2006-$vendite2005)/$vendite2005*100,2);
-	
-	//echo "Affitti: ".round(($affitti2006-$affitti2005)/$affitti2005*100,2)."%<br>";
-	//echo "Vendite: ".round(($vendite2006-$vendite2005)/$vendite2005*100,2)."%<br>";
-	
-	//echo "<br><br>";
-	
-	// Elenco delle prenotazioni che cadono nel periodo
-	$prenotazioni_fallite=0;
-	$prenotazioni_riuscite=0;
-	$select="SELECT contratto_anagrafica2,contratto_posto_barca,contratto_inizio,contratto_fine FROM blue_contratti WHERE contratto_anagrafica2>1 AND contratto_inizio<='".$al1."' AND contratto_fine>='".$dal1."' AND contratto_tipo=4";
-	$result=$sql->select_query($select);
-	$totale_prenotazioni=$sql->select_num_rows;
-	while ($r=mysql_fetch_array($result))
-	{
-		$sel2="SELECT COUNT(*) AS totale FROM blue_contratti WHERE contratto_tipo=1 AND contratto_anagrafica2='".$r['contratto_anagrafica2']."' AND contratto_posto_barca='".$r['contratto_posto_barca']."'";// AND contratto_inizio='".$r['contratto_inizio']."' AND contratto_fine='".$r['contratto_fine']."'";
-		$res2=$sql->select_query($sel2);
-		$totale=mysql_result($res2,0,'totale');
-		if ($totale==0)
-		{
-			$prenotazioni_fallite++;
-		}
-		else
-		{
-			$prenotazioni_riuscite++;
-		}
-	}
-	
-	$prenotazioni['totale']=$totale_prenotazioni;
-	$prenotazioni['fallite']=$prenotazioni_fallite;
-	$prenotazioni['fallite_percentuale']=round($prenotazioni_fallite/$totale_prenotazioni*100,2);
-	$prenotazioni['riuscite']=$prenotazioni_riuscite;
-	$prenotazioni['riuscite_percentuale']=round($prenotazioni_riuscite/$totale_prenotazioni*100,2);
-	
-	//echo "Prenotazioni nel periodo ".date("d-m-Y",strtotime($dal1))." al ".date("d-m-Y",strtotime($al1)).": ".$totale_prenotazioni."<br>";
-	//echo "Prenotazioni che NON sono diventate contratti: ".$prenotazioni_fallite." (".round($prenotazioni_fallite/$totale_prenotazioni*100,2)."%)<br>";
-	//echo "Prenotazioni che sono diventate contratti: ".$prenotazioni_riuscite." (".round($prenotazioni_riuscite/$totale_prenotazioni*100,2)."%)<br>";
-	// Elenco degl'affitti che cadono nel periodo
-	
-	// Totale delle prenotazioni dopo la fine del periodo...
-	$select="SELECT COUNT(*) AS totale FROM blue_contratti WHERE contratto_anagrafica2>1 AND contratto_inizio>'".$al1."' AND contratto_tipo=4";
-	$result=$sql->select_query($select);
-	$prenotazioni2006=mysql_result($result,0,'totale');
-	//echo "Prenotazioni con inizio oltre il ".date("d-m-Y",strtotime($al1)).": ".$prenotazioni2006."<br>";
-	
-	$prenotazioni['future']=$prenotazioni2006;
-	
-	// Totale delle opzioni stipulate nel 2006
-	$select="SELECT COUNT(*) AS totale FROM blue_contratti WHERE contratto_anagrafica2>1 AND contratto_data<='".$al1."' AND contratto_data>='".$dal1."' AND contratto_tipo=13";
-	$result=$sql->select_query($select);
-	$opzioni2006=mysql_result($result,0,'totale');
-	//echo "Opzioni stipulate nel 2006: ".$opzioni2006."<br>";
-	
-	##########################################################################################################
-	# PARTE RELATIVA AI CLIENTI
-	##########################################################################################################
-	##########################################################################################################
-	# ANNO 2006
-	##########################################################################################################
-	
-	// Questo raccoglie l'elenco dei clienti del marina nel periodo dell'anno 2004
-	$select="SELECT DISTINCT cliente_id FROM blue_clienti,blue_contratti WHERE contratto_inizio<='".$al3."' AND contratto_fine>='".$dal3."' AND (contratto_tipo=1 OR contratto_tipo=11) AND cliente_id=contratto_anagrafica2 ORDER BY cliente_id ASC";
-	$result=$sql->select_query($select);
-	$elenco_clienti2004=array();
-	while ($r=mysql_fetch_array($result))
-	{
-		$elenco_clienti2004[]=$r['cliente_id'];
-	}
-	
-	// Questo raccoglie l'elenco dei clienti del marina nel periodo dell'anno 2005
-	$select="SELECT DISTINCT cliente_id FROM blue_clienti,blue_contratti WHERE contratto_inizio<='".$al2."' AND contratto_fine>='".$dal2."' AND (contratto_tipo=1 OR contratto_tipo=11) AND cliente_id=contratto_anagrafica2 ORDER BY cliente_id ASC";
-	$result=$sql->select_query($select);
-	$elenco_clienti2005=array();
-	while ($r=mysql_fetch_array($result))
-	{
-		$elenco_clienti2005[]=$r['cliente_id'];
-	}
-	
-	$rinnovato2005=0;
-	$acquisito2005=0;
-	foreach ($elenco_clienti2005 as $v)
-	{
-		if (in_array($v,$elenco_clienti2004))
-		{
-			$rinnovato2005++;
-		}
-		else
-		{
-			$acquisito2005++;
-		}
-	}
-	$perduto2005=count($elenco_clienti2004)-$rinnovato2005;
-	
-	$infoclienti=array();
-	
-	$infoclienti['clienti2005']=count($elenco_clienti2005);
-	$infoclienti['rinnovato2005']=$rinnovato2005;
-	$infoclienti['rinnovato2005_percentuale']=round($rinnovato2005/count($elenco_clienti2005)*100,2);
-	$infoclienti['acquisito2005']=$acquisito2005;
-	$infoclienti['acquisito2005_percentuale']=round($acquisito2005/count($elenco_clienti2005)*100,2);
-	
-	//echo "Nel periodo del 2005 abbiamo ".count($elenco_clienti2005)." clienti totali, di cui ".$rinnovato2005." (".round($rinnovato2005/count($elenco_clienti2005)*100,2)."%) sono clienti che hanno rinnovato, mentre ".$acquisito2005." (".round($acquisito2005/count($elenco_clienti2005)*100,2)."%) sono nuovi clienti acquisiti.";
-	
-	//echo "<br>";
-	
-	// Questo raccoglie l'elenco dei clienti del marina nel periodo dell'anno 2006
-	$select="SELECT DISTINCT cliente_id FROM blue_clienti,blue_contratti WHERE contratto_inizio<='".$al1."' AND contratto_fine>='".$dal1."' AND (contratto_tipo=1 OR contratto_tipo=11) AND cliente_id=contratto_anagrafica2 ORDER BY cliente_id ASC";
-	$result=$sql->select_query($select);
-	$elenco_clienti2006=array();
-	while ($r=mysql_fetch_array($result))
-	{
-		$elenco_clienti2006[]=$r['cliente_id'];
-	}
-	
-	$rinnovato2006=0;
-	$acquisito2006=0;
-	foreach ($elenco_clienti2006 as $v)
-	{
-		if (in_array($v,$elenco_clienti2005))
-		{
-			$rinnovato2006++;
-		}
-		else
-		{
-			$acquisito2006++;
-		}
-	}
-	$perduto2006=count($elenco_clienti2005)-$rinnovato2006;
-	
-	$infoclienti['clienti2006']=count($elenco_clienti2006);
-	$infoclienti['rinnovato2006']=$rinnovato2006;
-	$infoclienti['rinnovato2006_percentuale']=round($rinnovato2006/count($elenco_clienti2006)*100,2);
-	$infoclienti['acquisito2006']=$acquisito2006;
-	$infoclienti['acquisito2006_percentuale']=round($acquisito2006/count($elenco_clienti2006)*100,2);
-	
-	//echo "Nel periodo del 2006 abbiamo ".count($elenco_clienti2006)." clienti totali, di cui ".$rinnovato2006." (".round($rinnovato2006/count($elenco_clienti2006)*100,2)."%) sono clienti che hanno rinnovato, mentre ".$acquisito2006." (".round($acquisito2006/count($elenco_clienti2006)*100,2)."%) sono nuovi clienti acquisiti.";
-	
-	//echo "<br><br>";
-	$aumento=round((count($elenco_clienti2006)-count($elenco_clienti2005))/count($elenco_clienti2005)*100,2);
-	//echo "L'aumento di clienti nel 2006 rispetto al 2005 e' stato del ".round($aumento,2)."%<br>";
-	$rinnovo=round(($rinnovato2006-$rinnovato2005)/$rinnovato2005*100,2);
-	//echo "La percentuale di clienti che hanno rinnovato nel 2006 (".$rinnovato2006.") rispetto al 2005 (".$rinnovato2005.") e' del ".round($rinnovo,2)."%<br>";
-	$acquisizione=round(($acquisito2006-$acquisito2005)/$acquisito2005*100,2);
-	//echo "La percentuale di clienti acquisiti nel 2006 (".$acquisito2006.") rispetto al 2005 (".$acquisito2005.") e' del ".round($acquisizione,2)."%<br>";
-	$persi=round(($perduto2006-$perduto2005)/$perduto2005*100,2);
-	//echo "La percentuale di clienti che NON hanno rinnovato nel 2006 (".$perduto2006.") rispetto al 2005 (".$perduto2005.") e' del ".round($persi,2)."%<br>";
-	$infoclienti['aumento']=$aumento;
-	$infoclienti['rinnovo']=$rinnovo;
-	$infoclienti['acquisizione']=$acquisizione;
-	$infoclienti['persi']=$persi;
-	
-	##########################################################################################################
-	# PARTE RELATIVA A VARIE INFORMAZIONI
-	##########################################################################################################
-	##########################################################################################################
-	# ANNO 2006
-	##########################################################################################################
-	
-	$infofinali=array();
-	
-	$select="SELECT contratto_inizio,contratto_fine FROM blue_contratti WHERE (contratto_tipo=1 OR contratto_tipo=11) AND contratto_anagrafica1=1 AND contratto_anagrafica2>1 AND contratto_inizio<='".$al1."' AND contratto_fine>='".$dal1."'";
-	$result=$sql->select_query($select);
-	$inizioanno=time(0,0,0,$_POST['dal1']['Date_Month'],$_POST['dal1']['Date_Day'],$_POST['dal1']['Date_Year']);
-	$fineanno=time(0,0,0,$_POST['al1']['Date_Month'],$_POST['al1']['Date_Day'],$_POST['al1']['Date_Year']);
-	$i=0;
-	$totale=0;
-	while ($r=mysql_fetch_array($result))
-	{
-		$i++;
-		$inizio=strtotime($r['contratto_inizio']);
-		$fine=strtotime($r['contratto_fine']);
-		if ($inizio<=$inizioanno)
-		{
-			$inizio=$inizioanno;
-		}
-		if ($fine>=$fineanno)
-		{
-			$fine=$fineanno;
-		}
-		$giorni=round(($fine-$inizio)/86400,0);
-		$totale+=$giorni;
-	}
-	$infofinali['con']['totale1']=$totale;
-	$infofinali['con']['media1']=round($totale/$i,2);
-
-	$select="SELECT contratto_inizio,contratto_fine FROM blue_contratti WHERE (contratto_tipo=1 OR contratto_tipo=11) AND contratto_anagrafica1=1 AND contratto_anagrafica2>1 AND contratto_inizio<='".$al2."' AND contratto_fine>='".$dal2."'";
-	$result=$sql->select_query($select);
-	$inizioanno=time(0,0,0,$_POST['dal2']['Date_Month'],$_POST['dal2']['Date_Day'],$_POST['dal2']['Date_Year']);
-	$fineanno=time(0,0,0,$_POST['al2']['Date_Month'],$_POST['al2']['Date_Day'],$_POST['al2']['Date_Year']);
-	$i=0;
-	$totale=0;
-	while ($r=mysql_fetch_array($result))
-	{
-		$i++;
-		$inizio=strtotime($r['contratto_inizio']);
-		$fine=strtotime($r['contratto_fine']);
-		if ($inizio<=$inizioanno)
-		{
-			$inizio=$inizioanno;
-		}
-		if ($fine>=$fineanno)
-		{
-			$fine=$fineanno;
-		}
-		$giorni=round(($fine-$inizio)/86400,0);
-		$totale+=$giorni;
-	}
-	$infofinali['con']['totale2']=$totale;
-	$infofinali['con']['media2']=round($totale/$i,2);
-
-	// SENZA TRANSITI
-
-	$select="SELECT contratto_inizio,contratto_fine FROM blue_contratti WHERE (contratto_tipo=1) AND contratto_anagrafica1=1 AND contratto_anagrafica2>1 AND contratto_inizio<='".$al1."' AND contratto_fine>='".$dal1."'";
-	$result=$sql->select_query($select);
-	$inizioanno=time(0,0,0,$_POST['dal1']['Date_Month'],$_POST['dal1']['Date_Day'],$_POST['dal1']['Date_Year']);
-	$fineanno=time(0,0,0,$_POST['al1']['Date_Month'],$_POST['al1']['Date_Day'],$_POST['al1']['Date_Year']);
-	$i=0;
-	$totale=0;
-	while ($r=mysql_fetch_array($result))
-	{
-		$i++;
-		$inizio=strtotime($r['contratto_inizio']);
-		$fine=strtotime($r['contratto_fine']);
-		if ($inizio<=$inizioanno)
-		{
-			$inizio=$inizioanno;
-		}
-		if ($fine>=$fineanno)
-		{
-			$fine=$fineanno;
-		}
-		$giorni=round(($fine-$inizio)/86400,0);
-		$totale+=$giorni;
-	}
-	$infofinali['senza']['totale1']=$totale;
-	$infofinali['senza']['media1']=round($totale/$i,2);
-
-	$select="SELECT contratto_inizio,contratto_fine FROM blue_contratti WHERE (contratto_tipo=1) AND contratto_anagrafica1=1 AND contratto_anagrafica2>1 AND contratto_inizio<='".$al2."' AND contratto_fine>='".$dal2."'";
-	$result=$sql->select_query($select);
-	$inizioanno=time(0,0,0,$_POST['dal2']['Date_Month'],$_POST['dal2']['Date_Day'],$_POST['dal2']['Date_Year']);
-	$fineanno=time(0,0,0,$_POST['al2']['Date_Month'],$_POST['al2']['Date_Day'],$_POST['al2']['Date_Year']);
-	$i=0;
-	$totale=0;
-	while ($r=mysql_fetch_array($result))
-	{
-		$i++;
-		$inizio=strtotime($r['contratto_inizio']);
-		$fine=strtotime($r['contratto_fine']);
-		if ($inizio<=$inizioanno)
-		{
-			$inizio=$inizioanno;
-		}
-		if ($fine>=$fineanno)
-		{
-			$fine=$fineanno;
-		}
-		$giorni=round(($fine-$inizio)/86400,0);
-		$totale+=$giorni;
-	}
-	$infofinali['senza']['totale2']=$totale;
-	$infofinali['senza']['media2']=round($totale/$i,2);
-
-	$visualizza = true;
-}
-
-require_once "views/site/percentuali.php";
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+LE2WCrMZPi1Kb6zvGBXm+CEJ

@@ -1,109 +1,98 @@
-<?php // <ERRORS><ERROR><DESCRIPTION>Your testing server do not has support for PHP pages</DESCRIPTION></ERROR>\n</ERRORS>
-
-$debug_to_file = false;
-
-function log_messages($error_message){
-		global $f, $debug_to_file;
-		if ($debug_to_file === true){
-				if (!is_resource($f)){
-						@ini_set('display_errors', 1);
-						@error_reporting(E_ALL);
-						$f = @fopen('log.txt', 'a');
-				}
-				if (is_resource($f)){
-						return @fwrite($f, $error_message."\n");
-				}
-		}
-		return false;
-}
-function create_error($error_msg = '', $line = -1){
-		if ($error_msg != ''){
-				return '<ERRORS><ERROR><DESCRIPTION>'.$error_msg.'</DESCRIPTION></ERROR></ERRORS>\n';
-		}else{
-				return '<ERRORS><ERROR><DESCRIPTION> Unidentified Connection Error at Line '.$line.'</DESCRIPTION></ERROR></ERRORS>\n';
-		}
-}
-
-log_messages("\n--------------------------------");
-// what parameters were sent ?!
-foreach($_POST as $key=>$value) {
-	 if (strtoupper($key) != 'PASSWORD'){
-	 		log_messages('$_POST["'.$key.'"] = \''.$value."';");
-	 }
-}
-// We need these information only once when the test button is hit
-if (isset($_POST['opCode']) && $_POST['opCode'] == 'IsOpen' ){
-		// What PHP version
-		log_messages("\nPHP-Version: ".phpversion());
-		// What OS System is running on
-		log_messages('PHP-OS: '.PHP_OS);
-		// How PHP is installed (CGI, ISAPI, FastCGI) 
-		// !!!! Major difference exists on these servers for $_ENV, $_SERVER
-		log_messages('PHP-SAPI-NAME: '.php_sapi_name());
-		// MySQL, mbstring modules are installed ?!
-		log_messages('PHP-Extensions: '.var_export(get_loaded_extensions(),true));
-}
-
-if(extension_loaded('mbstring'))
-{
-	$acceptCharsetHeader = 'Accept-Charset: ' . mb_internal_encoding();
-	header( $acceptCharsetHeader );
-	$head = '<html><head><meta http-equiv=\'Content-Type\' content=\'text/html; charset=' . mb_http_output() . '\'></head>';
-	echo $head;
-}else{
-	echo '<html><head></head>';
-}
-
-// Build connection object
-if (isset($_POST['Type']) && $_POST['Type'] == 'MYSQL')
-{
-	require("./mysql.php");
-	$oConn = new MySqlConnection(@$_POST['ConnectionString'], @$_POST['Timeout'], @$_POST['Host'], @$_POST['Database'], @$_POST['UserName'], @$_POST['Password']);
-	if (!isset($oConn) || $oConn == false){
-			log_messages("\n".'MySQL Connection Object initialisation failed'."\n\n".@$error);
-	}else{
-			log_messages("\n".'MySQL Connection Object Created'."\n\n");	
-	}
-}else{
-	 $error=create_error('The files from the _mmServerScripts folder are for the server model PHP-MySQL. You try to connect to a database using a different server model '.@$_POST['Type'].".\n\nPlease remove this folder outside the Dreamweaver environment on both local and testing machines and try again.",__LINE__);
-	 log_messages("\nError Sent:\n\n\t".@$error."\n\n\n");	 	
-	 echo $error.'</HTML>';
-	 return;
-}
-
-// Process opCode
-if (isset($oConn) && $oConn)
-{
-	$oConn->Open();
-
-	if ($_POST['opCode'] == 'IsOpen'){
-			$answer = $oConn->TestOpen();
-	}elseif (is_resource($oConn->connectionId) && $oConn->isOpen){
-
-		switch ($_POST['opCode']){
-				case 'GetTables': 				$answer = $oConn->GetTables(@$_POST['Database']); break;
-				case 'GetColsOfTable': 		$answer = $oConn->GetColumnsOfTable(@$_POST['TableName']); break;
-				case 'ExecuteSQL':				$answer = $oConn->ExecuteSQL(@$_POST['SQL'], @$_POST['MaxRows']); break;
-				case 'GetODBCDSNs':				$answer = $oConn->GetDatabaseList(); break;
-				case 'SupportsProcedure': $answer = $oConn->SupportsProcedure(); break;
-				case 'GetProviderTypes': 	$answer = $oConn->GetProviderTypes(); break;
-				case 'GetViews': 					$answer = $oConn->GetViews(); break;
-				case 'GetProcedures': 		$answer = $oConn->GetProcedures(); break;
-				case 'GetParametersOfProcedure': $answer = $oConn->GetParametersOfProcedure(@$_POST['ProcName']); break;
-				case 'ReturnsResultset': 	$answer = $oConn->ReturnsResultSet($_POST['RRProcName']); break;
-				case 'ExecuteSP': 				$answer = $oConn->ExecuteSP(@$_POST['ExecProcName'], 0, @$_POST['ExecProcParameters']); break;
-				case 'GetKeysOfTable': 		$answer = $oConn->GetPrimaryKeysOfTable(@$_POST['TableName']); break;
-				default: $answer = create_error('The \''.$_POST['opCode'].'\' command is not supported.');	break;
-		}
-	}
-
-	$oConn->Close();
-}else{
-	$answer = create_error('The Connection Module was not initialized properly for an unknown reason.');
-}
-
-log_messages("\nAnswer From Database:\n\n\t".@$answer."\n\n\n");
-echo $answer;
-
-echo '</html>';
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+3Qe+/AZD

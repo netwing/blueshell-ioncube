@@ -1,186 +1,96 @@
-<?php
-
-namespace Guzzle\Tests\Http;
-
-use Guzzle\Http\Exception\BadResponseException;
-use Guzzle\Common\Exception\RuntimeException;
-use Guzzle\Http\Message\Request;
-use Guzzle\Http\Message\Response;
-use Guzzle\Http\Message\RequestInterface;
-use Guzzle\Http\Message\RequestFactory;
-use Guzzle\Http\Client;
-
-/**
- * The Server class is used to control a scripted webserver using node.js that
- * will respond to HTTP requests with queued responses.
- *
- * Queued responses will be served to requests using a FIFO order.  All requests
- * received by the server are stored on the node.js server and can be retrieved
- * by calling {@see Server::getReceivedRequests()}.
- *
- * Mock responses that don't require data to be transmitted over HTTP a great
- * for testing.  Mock response, however, cannot test the actual sending of an
- * HTTP request using cURL.  This test server allows the simulation of any
- * number of HTTP request response transactions to test the actual sending of
- * requests over the wire without having to leave an internal network.
- */
-class Server
-{
-    const DEFAULT_PORT = 8124;
-    const REQUEST_DELIMITER = "\n----[request]\n";
-
-    /** @var int Port that the server will listen on */
-    private $port;
-
-    /** @var bool Is the server running */
-    private $running = false;
-
-    /** @var Client */
-    private $client;
-
-    /**
-     * Create a new scripted server
-     *
-     * @param int $port Port to listen on (defaults to 8124)
-     */
-    public function __construct($port = null)
-    {
-        $this->port = $port ?: self::DEFAULT_PORT;
-        $this->client = new Client($this->getUrl());
-    }
-
-    /**
-     * Flush the received requests from the server
-     * @throws RuntimeException
-     */
-    public function flush()
-    {
-        $this->client->delete('guzzle-server/requests')->send();
-    }
-
-    /**
-     * Queue an array of responses or a single response on the server.
-     *
-     * Any currently queued responses will be overwritten.  Subsequent requests
-     * on the server will return queued responses in FIFO order.
-     *
-     * @param array|Response $responses A single or array of Responses to queue
-     * @throws BadResponseException
-     */
-    public function enqueue($responses)
-    {
-        $data = array();
-        foreach ((array) $responses as $response) {
-
-            // Create the response object from a string
-            if (is_string($response)) {
-                $response = Response::fromMessage($response);
-            } elseif (!($response instanceof Response)) {
-                throw new BadResponseException('Responses must be strings or implement Response');
-            }
-
-            $data[] = array(
-                'statusCode'   => $response->getStatusCode(),
-                'reasonPhrase' => $response->getReasonPhrase(),
-                'headers'      => $response->getHeaders()->toArray(),
-                'body'         => $response->getBody(true)
-            );
-        }
-
-        $request = $this->client->put('guzzle-server/responses', null, json_encode($data));
-        $request->send();
-    }
-
-    /**
-     * Check if the server is running
-     *
-     * @return bool
-     */
-    public function isRunning()
-    {
-        if ($this->running) {
-            return true;
-        }
-
-        try {
-            $this->client->get('guzzle-server/perf', array(), array('timeout' => 5))->send();
-            return $this->running = true;
-        } catch (\Exception $e) {
-            return false;
-        }
-    }
-
-    /**
-     * Get the URL to the server
-     *
-     * @return string
-     */
-    public function getUrl()
-    {
-        return 'http://127.0.0.1:' . $this->getPort() . '/';
-    }
-
-    /**
-     * Get the port that the server is listening on
-     *
-     * @return int
-     */
-    public function getPort()
-    {
-        return $this->port;
-    }
-
-    /**
-     * Get all of the received requests
-     *
-     * @param bool $hydrate Set to TRUE to turn the messages into
-     *      actual {@see RequestInterface} objects.  If $hydrate is FALSE,
-     *      requests will be returned as strings.
-     *
-     * @return array
-     * @throws RuntimeException
-     */
-    public function getReceivedRequests($hydrate = false)
-    {
-        $response = $this->client->get('guzzle-server/requests')->send();
-        $data = array_filter(explode(self::REQUEST_DELIMITER, $response->getBody(true)));
-        if ($hydrate) {
-            $data = array_map(function($message) {
-                return RequestFactory::getInstance()->fromMessage($message);
-            }, $data);
-        }
-
-        return $data;
-    }
-
-    /**
-     * Start running the node.js server in the background
-     */
-    public function start()
-    {
-        if (!$this->isRunning()) {
-            exec('node ' . __DIR__ . \DIRECTORY_SEPARATOR . 'server.js ' . $this->port . ' >> /tmp/server.log 2>&1 &');
-            // Wait at most 5 seconds for the server the setup before proceeding
-            $start = time();
-            while (!$this->isRunning() && time() - $start < 5);
-            if (!$this->running) {
-                throw new RuntimeException(
-                    'Unable to contact server.js. Have you installed node.js v0.5.0+? node must be in your path.'
-                );
-            }
-        }
-    }
-
-    /**
-     * Stop running the node.js server
-     */
-    public function stop()
-    {
-        if (!$this->isRunning()) {
-            return false;
-        }
-
-        $this->running = false;
-        $this->client->delete('guzzle-server')->send();
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+p3Uu2TLXpm==

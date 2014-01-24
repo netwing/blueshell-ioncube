@@ -1,107 +1,62 @@
-<?php
-
-Yii::import('application.modules.admin.models.base.BaseUser');
-
-class User extends BaseUser
-{
-    /**
-     * Returns the static model of the specified AR class.
-     * Please note that you should have this exact method in all your CActiveRecord descendants!
-     * @param string $className active record class name.
-     * @return AuthItem the static model class
-     */
-    public static function model($className=__CLASS__)
-    {
-        return parent::model($className);
-    }
-
-    /**
-     * @return array validation rules for model attributes.
-     */
-    public function rules()
-    {
-        // NOTE: you should only define rules for those attributes that
-        // will receive user inputs.
-        return array(
-            array('name, username, password', 'required', 'on' => 'create'),
-            array('role', 'required'),
-            array('name, username, password', 'length', 'max'=>255),
-            array('username', 'length', 'min'=>5),
-            array('password', 'length', 'min'=>8),
-            array('username', 'unique', 'on' => 'create'),
-            // The following rule is used by search().
-            // Please remove those attributes that should not be searched.
-            array('name, username', 'safe', 'on'=>'search'),
-        );
-    }
-
-    /**
-     * Retrieves a list of models based on the current search/filter conditions.
-     * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
-     */
-    public function search()
-    {
-        // Warning: Please modify the following code to remove attributes that
-        // should not be searched.
-
-        $criteria=new CDbCriteria;
-
-        $criteria->compare('name',$this->name,true);
-        $criteria->compare('username',$this->username,true);
-        $criteria->compare('role',$this->role,true);
-
-        return new CActiveDataProvider($this, array(
-            'criteria'=>$criteria,
-        ));
-    }
-
-    public function beforeSave()
-    {
-        // Force NO change to administrator user
-        if (!$this->isNewRecord) {
-            $curr = self::findByPk($this->id);
-            if ($curr->username == 'administrator') {
-                $this->username = "administrator";
-                $this->role = $curr->role;
-            }
-        }
-
-        if ($this->isNewRecord and strlen($this->password) > 0) {
-            $this->password = crypt($this->password);
-        }
-        // If no password on update, reset to original password
-        if (!$this->isNewRecord) {
-            if (strlen($this->password) == 0) {
-                $user = $this->findByPk($this->id);
-                $this->password = $user->password;
-            } else {
-                $this->password = crypt($this->password);       
-            }
-        }
-
-        if (!is_array($this->role)) {
-            $this->role = array();
-        }
-        $this->role = json_encode($this->role);
-
-
-        return parent::beforeSave();
-    }
-
-    public function afterFind()
-    {
-        $this->role = json_decode($this->role);
-        return parent::afterFind();
-    }
-
-    public function beforeDelete()
-    {
-        if (isset(Yii::app()->user)) {
-            if (Yii::app()->user->getId() == $this->id) {
-                return false;
-            }
-        }
-        return parent::beforeDelete();
-    }
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

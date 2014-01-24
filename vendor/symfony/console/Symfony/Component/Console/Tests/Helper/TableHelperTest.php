@@ -1,294 +1,110 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\Console\Tests\Helper;
-
-use Symfony\Component\Console\Helper\TableHelper;
-use Symfony\Component\Console\Output\StreamOutput;
-
-class TableHelperTest extends \PHPUnit_Framework_TestCase
-{
-    protected $stream;
-
-    protected function setUp()
-    {
-        $this->stream = fopen('php://memory', 'r+');
-    }
-
-    protected function tearDown()
-    {
-        fclose($this->stream);
-        $this->stream = null;
-    }
-
-    /**
-     * @dataProvider testRenderProvider
-     */
-    public function testRender($headers, $rows, $layout, $expected)
-    {
-        $table = new TableHelper();
-        $table
-            ->setHeaders($headers)
-            ->setRows($rows)
-            ->setLayout($layout)
-        ;
-        $table->render($output = $this->getOutputStream());
-
-        $this->assertEquals($expected, $this->getOutputContent($output));
-    }
-
-    /**
-     * @dataProvider testRenderProvider
-     */
-    public function testRenderAddRows($headers, $rows, $layout, $expected)
-    {
-        $table = new TableHelper();
-        $table
-            ->setHeaders($headers)
-            ->addRows($rows)
-            ->setLayout($layout)
-        ;
-        $table->render($output = $this->getOutputStream());
-
-        $this->assertEquals($expected, $this->getOutputContent($output));
-    }
-
-    /**
-     * @dataProvider testRenderProvider
-     */
-    public function testRenderAddRowsOneByOne($headers, $rows, $layout, $expected)
-    {
-        $table = new TableHelper();
-        $table
-            ->setHeaders($headers)
-            ->setLayout($layout)
-        ;
-        foreach ($rows as $row) {
-            $table->addRow($row);
-        }
-        $table->render($output = $this->getOutputStream());
-
-        $this->assertEquals($expected, $this->getOutputContent($output));
-    }
-
-    public function testRenderProvider()
-    {
-        $books = array(
-            array('99921-58-10-7', 'Divine Comedy', 'Dante Alighieri'),
-            array('9971-5-0210-0', 'A Tale of Two Cities', 'Charles Dickens'),
-            array('960-425-059-0', 'The Lord of the Rings', 'J. R. R. Tolkien'),
-            array('80-902734-1-6', 'And Then There Were None', 'Agatha Christie'),
-        );
-
-        return array(
-            array(
-                array('ISBN', 'Title', 'Author'),
-                $books,
-                TableHelper::LAYOUT_DEFAULT,
-<<<TABLE
-+---------------+--------------------------+------------------+
-| ISBN          | Title                    | Author           |
-+---------------+--------------------------+------------------+
-| 99921-58-10-7 | Divine Comedy            | Dante Alighieri  |
-| 9971-5-0210-0 | A Tale of Two Cities     | Charles Dickens  |
-| 960-425-059-0 | The Lord of the Rings    | J. R. R. Tolkien |
-| 80-902734-1-6 | And Then There Were None | Agatha Christie  |
-+---------------+--------------------------+------------------+
-
-TABLE
-            ),
-            array(
-                array('ISBN', 'Title', 'Author'),
-                $books,
-                TableHelper::LAYOUT_COMPACT,
-<<<TABLE
- ISBN          Title                    Author           
- 99921-58-10-7 Divine Comedy            Dante Alighieri  
- 9971-5-0210-0 A Tale of Two Cities     Charles Dickens  
- 960-425-059-0 The Lord of the Rings    J. R. R. Tolkien 
- 80-902734-1-6 And Then There Were None Agatha Christie  
-
-TABLE
-            ),
-            array(
-                array('ISBN', 'Title', 'Author'),
-                $books,
-                TableHelper::LAYOUT_BORDERLESS,
-<<<TABLE
- =============== ========================== ================== 
-  ISBN            Title                      Author            
- =============== ========================== ================== 
-  99921-58-10-7   Divine Comedy              Dante Alighieri   
-  9971-5-0210-0   A Tale of Two Cities       Charles Dickens   
-  960-425-059-0   The Lord of the Rings      J. R. R. Tolkien  
-  80-902734-1-6   And Then There Were None   Agatha Christie   
- =============== ========================== ================== 
-
-TABLE
-            ),
-            array(
-                array('ISBN', 'Title'),
-                array(
-                    array('99921-58-10-7', 'Divine Comedy', 'Dante Alighieri'),
-                    array('9971-5-0210-0'),
-                    array('960-425-059-0', 'The Lord of the Rings', 'J. R. R. Tolkien'),
-                    array('80-902734-1-6', 'And Then There Were None', 'Agatha Christie'),
-                ),
-                TableHelper::LAYOUT_DEFAULT,
-<<<TABLE
-+---------------+--------------------------+------------------+
-| ISBN          | Title                    |                  |
-+---------------+--------------------------+------------------+
-| 99921-58-10-7 | Divine Comedy            | Dante Alighieri  |
-| 9971-5-0210-0 |                          |                  |
-| 960-425-059-0 | The Lord of the Rings    | J. R. R. Tolkien |
-| 80-902734-1-6 | And Then There Were None | Agatha Christie  |
-+---------------+--------------------------+------------------+
-
-TABLE
-            ),
-            array(
-                array(),
-                array(
-                    array('99921-58-10-7', 'Divine Comedy', 'Dante Alighieri'),
-                    array('9971-5-0210-0'),
-                    array('960-425-059-0', 'The Lord of the Rings', 'J. R. R. Tolkien'),
-                    array('80-902734-1-6', 'And Then There Were None', 'Agatha Christie'),
-                ),
-                TableHelper::LAYOUT_DEFAULT,
-<<<TABLE
-+---------------+--------------------------+------------------+
-| 99921-58-10-7 | Divine Comedy            | Dante Alighieri  |
-| 9971-5-0210-0 |                          |                  |
-| 960-425-059-0 | The Lord of the Rings    | J. R. R. Tolkien |
-| 80-902734-1-6 | And Then There Were None | Agatha Christie  |
-+---------------+--------------------------+------------------+
-
-TABLE
-            ),
-            array(
-                array('ISBN', 'Title', 'Author'),
-                array(
-                    array("99921-58-10-7", "Divine\nComedy", "Dante Alighieri"),
-                    array("9971-5-0210-2", "Harry Potter\nand the Chamber of Secrets", "Rowling\nJoanne K."),
-                    array("9971-5-0210-2", "Harry Potter\nand the Chamber of Secrets", "Rowling\nJoanne K."),
-                    array("960-425-059-0", "The Lord of the Rings", "J. R. R.\nTolkien"),
-                ),
-                TableHelper::LAYOUT_DEFAULT,
-<<<TABLE
-+---------------+----------------------------+-----------------+
-| ISBN          | Title                      | Author          |
-+---------------+----------------------------+-----------------+
-| 99921-58-10-7 | Divine                     | Dante Alighieri |
-|               | Comedy                     |                 |
-| 9971-5-0210-2 | Harry Potter               | Rowling         |
-|               | and the Chamber of Secrets | Joanne K.       |
-| 9971-5-0210-2 | Harry Potter               | Rowling         |
-|               | and the Chamber of Secrets | Joanne K.       |
-| 960-425-059-0 | The Lord of the Rings      | J. R. R.        |
-|               |                            | Tolkien         |
-+---------------+----------------------------+-----------------+
-
-TABLE
-            ),
-            array(
-                array('ISBN', 'Title'),
-                array(),
-                TableHelper::LAYOUT_DEFAULT,
-<<<TABLE
-+------+-------+
-| ISBN | Title |
-+------+-------+
-
-TABLE
-            ),
-            array(
-                array(),
-                array(),
-                TableHelper::LAYOUT_DEFAULT,
-                '',
-            ),
-            'Cell text with tags used for Output styling' => array(
-                array('ISBN', 'Title', 'Author'),
-                array(
-                    array('<info>99921-58-10-7</info>', '<error>Divine Comedy</error>', '<fg=blue;bg=white>Dante Alighieri</fg=blue;bg=white>'),
-                    array('9971-5-0210-0', 'A Tale of Two Cities', '<info>Charles Dickens</>'),
-                ),
-                TableHelper::LAYOUT_DEFAULT,
-<<<TABLE
-+---------------+----------------------+-----------------+
-| ISBN          | Title                | Author          |
-+---------------+----------------------+-----------------+
-| 99921-58-10-7 | Divine Comedy        | Dante Alighieri |
-| 9971-5-0210-0 | A Tale of Two Cities | Charles Dickens |
-+---------------+----------------------+-----------------+
-
-TABLE
-            ),
-            'Cell text with tags not used for Output styling' => array(
-                array('ISBN', 'Title', 'Author'),
-                array(
-                    array('<strong>99921-58-10-700</strong>', '<f>Divine Com</f>', 'Dante Alighieri'),
-                    array('9971-5-0210-0', 'A Tale of Two Cities', 'Charles Dickens'),
-                ),
-                TableHelper::LAYOUT_DEFAULT,
-<<<TABLE
-+----------------------------------+----------------------+-----------------+
-| ISBN                             | Title                | Author          |
-+----------------------------------+----------------------+-----------------+
-| <strong>99921-58-10-700</strong> | <f>Divine Com</f>    | Dante Alighieri |
-| 9971-5-0210-0                    | A Tale of Two Cities | Charles Dickens |
-+----------------------------------+----------------------+-----------------+
-
-TABLE
-            ),
-        );
-    }
-
-    public function testRenderMultiByte()
-    {
-        if (!function_exists('mb_strlen')) {
-            $this->markTestSkipped('The "mbstring" extension is not available');
-        }
-
-        $table = new TableHelper();
-        $table
-            ->setHeaders(array('■■'))
-            ->setRows(array(array(1234)))
-            ->setLayout(TableHelper::LAYOUT_DEFAULT)
-        ;
-        $table->render($output = $this->getOutputStream());
-
-        $expected =
-<<<TABLE
-+------+
-| ■■   |
-+------+
-| 1234 |
-+------+
-
-TABLE;
-
-        $this->assertEquals($expected, $this->getOutputContent($output));
-    }
-
-    protected function getOutputStream()
-    {
-        return new StreamOutput($this->stream, StreamOutput::VERBOSITY_NORMAL, false);
-    }
-
-    protected function getOutputContent(StreamOutput $output)
-    {
-        rewind($output->getStream());
-
-        return str_replace(PHP_EOL, "\n", stream_get_contents($output->getStream()));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

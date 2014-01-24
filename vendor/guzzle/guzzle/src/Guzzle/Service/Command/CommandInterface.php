@@ -1,128 +1,43 @@
-<?php
-
-namespace Guzzle\Service\Command;
-
-use Guzzle\Common\Collection;
-use Guzzle\Common\Exception\InvalidArgumentException;
-use Guzzle\Http\Message\Response;
-use Guzzle\Http\Message\RequestInterface;
-use Guzzle\Service\Exception\CommandException;
-use Guzzle\Service\Description\OperationInterface;
-use Guzzle\Service\ClientInterface;
-use Guzzle\Common\ToArrayInterface;
-
-/**
- * A command object that contains parameters that can be modified and accessed like an array and turned into an array
- */
-interface CommandInterface extends \ArrayAccess, ToArrayInterface
-{
-    /**
-     * Get the short form name of the command
-     *
-     * @return string
-     */
-    public function getName();
-
-    /**
-     * Get the API operation information about the command
-     *
-     * @return OperationInterface
-     */
-    public function getOperation();
-
-    /**
-     * Execute the command and return the result
-     *
-     * @return mixed Returns the result of {@see CommandInterface::execute}
-     * @throws CommandException if a client has not been associated with the command
-     */
-    public function execute();
-
-    /**
-     * Get the client object that will execute the command
-     *
-     * @return ClientInterface|null
-     */
-    public function getClient();
-
-    /**
-     * Set the client object that will execute the command
-     *
-     * @param ClientInterface $client The client object that will execute the command
-     *
-     * @return self
-     */
-    public function setClient(ClientInterface $client);
-
-    /**
-     * Get the request object associated with the command
-     *
-     * @return RequestInterface
-     * @throws CommandException if the command has not been executed
-     */
-    public function getRequest();
-
-    /**
-     * Get the response object associated with the command
-     *
-     * @return Response
-     * @throws CommandException if the command has not been executed
-     */
-    public function getResponse();
-
-    /**
-     * Get the result of the command
-     *
-     * @return Response By default, commands return a Response object unless overridden in a subclass
-     * @throws CommandException if the command has not been executed
-     */
-    public function getResult();
-
-    /**
-     * Set the result of the command
-     *
-     * @param mixed $result Result to set
-     *
-     * @return self
-     */
-    public function setResult($result);
-
-    /**
-     * Returns TRUE if the command has been prepared for executing
-     *
-     * @return bool
-     */
-    public function isPrepared();
-
-    /**
-     * Returns TRUE if the command has been executed
-     *
-     * @return bool
-     */
-    public function isExecuted();
-
-    /**
-     * Prepare the command for executing and create a request object.
-     *
-     * @return RequestInterface Returns the generated request
-     * @throws CommandException if a client object has not been set previously or in the prepare()
-     */
-    public function prepare();
-
-    /**
-     * Get the object that manages the request headers that will be set on any outbound requests from the command
-     *
-     * @return Collection
-     */
-    public function getRequestHeaders();
-
-    /**
-     * Specify a callable to execute when the command completes
-     *
-     * @param mixed $callable Callable to execute when the command completes. The callable must accept a
-     *                        {@see CommandInterface} object as the only argument.
-     * @return self
-     * @throws InvalidArgumentException
-     */
-    public function setOnComplete($callable);
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+ez+mSW==

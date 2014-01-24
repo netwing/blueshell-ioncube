@@ -1,143 +1,84 @@
-<?php
-/* @var $this InvoiceRowController */
-/* @var $model InvoiceRow */
-/* @var $form CActiveForm */
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
-
-<div class="form">
-
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'invoice-row-form',
-	// Please note: When you enable ajax validation, make sure the corresponding
-	// controller action is handling ajax validation correctly.
-	// There is a call to performAjaxValidation() commented in generated controller code.
-	// See class documentation of CActiveForm for details on this.
-    'enableClientValidation'=>false,
-    'enableAjaxValidation'=>true,
-    'htmlOptions'=>array('class'=>'form-horizontal well'),
-    'errorMessageCssClass' => 'text-danger'
-)); ?>
-
-	<p class="help-block"><?php echo Yii::t('app', 'Fields with <span class="required">*</span> are required.'); ?>
-</p>
-
-	<?php echo $form->errorSummary($model, null, null, array('class' => 'text-danger')); ?>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'description', array('class' => 'col-md-2 control-label')); ?>
-        <div class="col-md-10">
-        <?php echo $form->textField($model, 'description', array('class' => 'form-control')); ?>
-        <?php echo $form->error($model,'description'); ?>
-        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'price', array('class' => 'col-md-2 control-label')); ?>
-        <div class="col-md-2">
-        <?php echo $form->textField($model, 'price', array('class' => 'form-control', 'onkeyup' => 'calcTotal();')); ?>
-        <?php echo $form->error($model,'price'); ?>
-        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
-        </div>
-
-        <?php echo $form->labelEx($model, 'quantity', array('class' => 'col-md-2 control-label')); ?>
-        <div class="col-md-2">
-        <?php echo $form->textField($model, 'quantity', array('class' => 'form-control', 'onkeyup' => 'calcTotal();')); ?>
-        <?php echo $form->error($model,'quantity'); ?>
-        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
-        </div>
-
-        <?php echo $form->labelEx($model, 'total_no_vat', array('class' => 'col-md-2 control-label')); ?>
-        <div class="col-md-2">
-        <?php echo $form->textField($model, 'total_no_vat', array('class' => 'form-control', 'readonly' => 'readonly')); ?>
-        <?php echo $form->error($model,'total_no_vat'); ?>
-        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'vat', array('class' => 'col-md-2 control-label')); ?>
-        <div class="col-md-2">
-        <?php echo $form->textField($model, 'vat', array('class' => 'form-control', 'onkeyup' => 'calcTotal();')); ?>
-        <?php echo $form->error($model,'vat'); ?>
-        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
-        </div>
-
-        <?php echo $form->labelEx($model, 'vat_value', array('class' => 'col-md-2 control-label')); ?>
-        <div class="col-md-2">
-        <?php echo $form->textField($model, 'vat_value', array('class' => 'form-control', 'readonly' => 'readonly')); ?>
-        <?php echo $form->error($model,'vat_value'); ?>
-        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
-        </div>
-
-        <?php echo $form->labelEx($model, 'total_vat', array('class' => 'col-md-2 control-label')); ?>
-        <div class="col-md-2">
-        <?php echo $form->textField($model, 'total_vat', array('class' => 'form-control')); ?>
-        <?php echo $form->error($model,'total_vat'); ?>
-        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'discount', array('class' => 'col-md-2 control-label')); ?>
-        <div class="col-md-2">
-        <?php echo $form->textField($model, 'discount', array('class' => 'form-control', 'onkeyup' => 'calcTotal();')); ?>
-        <?php echo $form->error($model,'discount'); ?>
-        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
-        </div>
-
-        <?php echo $form->labelEx($model, 'discount_value', array('class' => 'col-md-2 control-label')); ?>
-        <div class="col-md-2">
-        <?php echo $form->textField($model, 'discount_value', array('class' => 'form-control', 'readonly' => 'readonly')); ?>
-        <?php echo $form->error($model,'discount_value'); ?>
-        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
-        </div>
-
-        <?php echo $form->labelEx($model, 'total', array('class' => 'col-md-2 control-label')); ?>
-        <div class="col-md-2">
-        <?php echo $form->textField($model, 'total', array('class' => 'form-control', 'readonly' => 'readonly')); ?>
-        <?php echo $form->error($model,'total'); ?>
-        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'notes', array('class' => 'col-md-2 control-label')); ?>
-        <div class="col-md-10">
-        <?php echo $form->textField($model, 'notes', array('class' => 'form-control')); ?>
-        <?php echo $form->error($model,'notes'); ?>
-        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <button type="reset" class="btn btn-warning">Reset</button>
-            <button type="submit" class="btn btn-primary"><?php echo ($model->isNewRecord) ? Yii::t('app', 'Create') : Yii::t('app', 'Save'); ?></button>
-        </div>
-    </div>
-
-<?php $this->endWidget(); ?>
-
-</div><!-- form -->
-
-<?php Yii::app()->clientScript->registerScript('form_functions',
-'function calcTotal() {
-    var total_no_vat = $("#InvoiceRow_price").val() * $("#InvoiceRow_quantity").val();
-    $("#InvoiceRow_total_no_vat").val(total_no_vat.toFixed(2));
-    var vat_value = total_no_vat / 100 * $("#InvoiceRow_vat").val();
-    $("#InvoiceRow_vat_value").val(vat_value.toFixed(2));
-    var total_vat = total_no_vat + vat_value;
-    $("#InvoiceRow_total_vat").val(total_vat.toFixed(2));
-    $("#InvoiceRow_total").val(total_vat.toFixed(2));
-
-    var discount_value = total_vat / 100 * $("#InvoiceRow_discount").val();
-    $("#InvoiceRow_discount_value").val(discount_value.toFixed(2));
-    var total = total_vat - discount_value;
-    $("#InvoiceRow_total").val(total.toFixed(2));
-
-    var total_work_time = $("#InvoiceRow_work_time").val() * $("#InvoiceRow_quantity").val();
-    $("#InvoiceRow_total_work_time").val(total_work_time.toFixed(2));
-
-    return true;
-}', CClientScript::POS_END); ?>
+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
+Om==

@@ -1,169 +1,77 @@
-<?php
-
-class ContractTypeController extends Controller
-{
-	/**
-	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
-	 * using two-column layout. See 'protected/views/layouts/column2.php'.
-	 */
-	public $layout='//layouts/column2';
-
-	/**
-	 * @var string the detault page title
-	 */
-	public $pageTitle = 'contractType';
-
-	/**
-	 * @return array action filters
-	 */
-	public function filters()
-	{
-		return array(
-			'accessControl', // perform access control for CRUD operations
-		);
-	}
-
-	/**
-	 * Specifies the access control rules.
-	 * This method is used by the 'accessControl' filter.
-	 * @return array access control rules
-	 */
-	public function accessRules()
-	{
-		// RBAC access control
-        return array(
-            array('allow', 'actions' => array('index', 'view', 'admin'), 'roles' => array('admin:contract:read')),
-            array('allow', 'actions' => array('create'), 'roles' => array('admin:contract:create')),
-            array('allow', 'actions' => array('update'), 'roles' => array('admin:contract:update')),
-            array('allow', 'actions' => array('delete'), 'roles' => array('admin:contract:delete')),
-            array('deny', 'users'=>array('*')),
-        );
-	}
-
-	/**
-	 * Displays a particular model.
-	 * @param integer $id the ID of the model to be displayed
-	 */
-	public function actionView($id)
-	{
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
-		));
-	}
-
-	/**
-	 * Creates a new model.
-	 * If creation is successful, the browser will be redirected to the 'view' page.
-	 */
-	public function actionCreate()
-	{
-		$model=new ContractType;
-
-		// Uncomment the following line if AJAX validation is needed
-		$this->performAjaxValidation($model);
-
-		if(isset($_POST['ContractType']))
-		{
-			$model->attributes=$_POST['ContractType'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->contratto_tipo_id));
-		}
-
-		$this->render('create',array(
-			'model'=>$model,
-		));
-	}
-
-	/**
-	 * Updates a particular model.
-	 * If update is successful, the browser will be redirected to the 'view' page.
-	 * @param integer $id the ID of the model to be updated
-	 */
-	public function actionUpdate($id)
-	{
-		$model=$this->loadModel($id);
-
-		// Uncomment the following line if AJAX validation is needed
-		$this->performAjaxValidation($model);
-
-		if(isset($_POST['ContractType']))
-		{
-			$model->attributes=$_POST['ContractType'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->contratto_tipo_id));
-		}
-
-		$this->render('update',array(
-			'model'=>$model,
-		));
-	}
-
-	/**
-	 * Deletes a particular model.
-	 * If deletion is successful, the browser will be redirected to the 'admin' page.
-	 * @param integer $id the ID of the model to be deleted
-	 */
-	public function actionDelete($id)
-	{
-		$this->loadModel($id)->delete();
-
-		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-	}
-
-	/**
-	 * Lists all models.
-	 */
-	public function actionIndex()
-	{
-		$this->redirect(array('admin'));
-		$dataProvider=new CActiveDataProvider('ContractType');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
-	}
-
-	/**
-	 * Manages all models.
-	 */
-	public function actionAdmin()
-	{
-		$model=new ContractType('search');
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['ContractType']))
-			$model->attributes=$_GET['ContractType'];
-
-		$this->render('admin',array(
-			'model'=>$model,
-		));
-	}
-
-	/**
-	 * Returns the data model based on the primary key given in the GET variable.
-	 * If the data model is not found, an HTTP exception will be raised.
-	 * @param integer $id the ID of the model to be loaded
-	 * @return ContractType the loaded model
-	 * @throws CHttpException
-	 */
-	public function loadModel($id)
-	{
-		$model=ContractType::model()->findByPk($id);
-		if($model===null)
-			throw new CHttpException(404,'The requested page does not exist.');
-		return $model;
-	}
-
-	/**
-	 * Performs the AJAX validation.
-	 * @param ContractType $model the model to be validated
-	 */
-	protected function performAjaxValidation($model)
-	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='contract-type-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

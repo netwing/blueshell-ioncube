@@ -1,127 +1,93 @@
-<?php
-
-Yii::import('system.web.CUploadedFile');
-
-/**
- * Unit test for "system.web.CUploadedFile".
- * @see CUploadedFile
- */
-class CUploadedFileTest extends CTestCase
-{
-	public function setUp()
-	{
-		$_FILES=array();
-		CUploadedFile::reset();
-	}
-
-	public function testGetInstanceByName()
-	{
-		$inputName='test_name';
-		$_FILES[$inputName]=array(
-			'name'=>'test_file.dat',
-			'type'=>'somemime/type',
-			'tmp_name'=>'/tmp/test_file',
-			'error'=>UPLOAD_ERR_OK,
-			'size'=>100,
-		);
-		$uploadedFile=CUploadedFile::getInstanceByName($inputName);
-		$this->assertTrue(is_object($uploadedFile),'Unable to get uploaded file by name!');
-		$this->assertEquals($_FILES[$inputName]['name'],$uploadedFile->getName(),'Wrong name!');
-		$this->assertEquals($_FILES[$inputName]['type'],$uploadedFile->getType(),'Wrong type!');
-		$this->assertEquals($_FILES[$inputName]['tmp_name'],$uploadedFile->getTempName(),'Wrong temp name!');
-		$this->assertEquals($_FILES[$inputName]['error'],$uploadedFile->getError(),'Wrong error!');
-		$this->assertEquals($_FILES[$inputName]['size'],$uploadedFile->getSize(),'Wrong size!');
-	}
-
-	public function testGetInstancesByName()
-	{
-		$inputName='test_name';
-		$inputCount=3;
-		$_FILES[$inputName]=array(
-			'name'=>array(),
-			'type'=>array(),
-			'tmp_name'=>array(),
-			'error'=>array(),
-			'size'=>array(),
-		);
-		for($i=0;$i<$inputCount;$i++)
-		{
-			$_FILES[$inputName]['name'][$i]='test_file_'.$i.'.dat';
-			$_FILES[$inputName]['type'][$i]='mime/type'.$i;
-			$_FILES[$inputName]['tmp_name'][$i]='/tmp/file'.$i;
-			$_FILES[$inputName]['error'][$i]=UPLOAD_ERR_OK;
-			$_FILES[$inputName]['size'][$i]=500+$i*10;
-		}
-
-		$uploadedFiles=CUploadedFile::getInstancesByName($inputName);
-		$this->assertFalse(empty($uploadedFiles),'Unable to get instances by name!');
-		for($i=0;$i<$inputCount;$i++)
-		{
-			$this->assertEquals($_FILES[$inputName]['name'][$i],$uploadedFiles[$i]->getName(),'Wrong name!');
-			$this->assertEquals($_FILES[$inputName]['type'][$i],$uploadedFiles[$i]->getType(),'Wrong type!');
-			$this->assertEquals($_FILES[$inputName]['tmp_name'][$i],$uploadedFiles[$i]->getTempName(),'Wrong temp name!');
-			$this->assertEquals($_FILES[$inputName]['error'][$i],$uploadedFiles[$i]->getError(),'Wrong error!');
-			$this->assertEquals($_FILES[$inputName]['size'][$i],$uploadedFiles[$i]->getSize(),'Wrong size!');
-		}
-	}
-
-	public function testGetInstanceByNestedName()
-	{
-		$baseInputName='SomeModel';
-		$subInputName='test_name';
-		$_FILES[$baseInputName]=array(
-			'name'=>array(
-				$subInputName=>'test_file.dat'
-			),
-			'type'=>array(
-				$subInputName=>'somemime/type'
-			),
-			'tmp_name'=>array(
-				$subInputName=>'/tmp/test_file'
-			),
-			'error'=>array(
-				$subInputName=>UPLOAD_ERR_OK
-			),
-			'size'=>array(
-				$subInputName=>100
-			),
-		);
-		$uploadedFile=CUploadedFile::getInstanceByName("{$baseInputName}[{$subInputName}]");
-		$this->assertTrue(is_object($uploadedFile),'Unable to get uploaded file by nested name!');
-		$this->assertEquals($_FILES[$baseInputName]['name'][$subInputName],$uploadedFile->getName(),'Wrong name!');
-		$this->assertEquals($_FILES[$baseInputName]['type'][$subInputName],$uploadedFile->getType(),'Wrong type!');
-		$this->assertEquals($_FILES[$baseInputName]['tmp_name'][$subInputName],$uploadedFile->getTempName(),'Wrong temp name!');
-		$this->assertEquals($_FILES[$baseInputName]['error'][$subInputName],$uploadedFile->getError(),'Wrong error!');
-		$this->assertEquals($_FILES[$baseInputName]['size'][$subInputName],$uploadedFile->getSize(),'Wrong size!');
-	}
-
-	/**
-	 * @depends testGetInstancesByName
-	 *
-	 * @see https://github.com/yiisoft/yii/issues/159
-	 */
-	public function testGetInstancesByNamePartOfOtherName()
-	{
-		$baseInputName='base_name';
-		$tailedInputName=$baseInputName.'_tail';
-
-		$_FILES[$baseInputName]=array(
-			'name'=>$baseInputName.'.dat',
-			'type'=>'somemime/'.$baseInputName,
-			'tmp_name'=>'/tmp/'.$baseInputName,
-			'error'=>UPLOAD_ERR_OK,
-			'size'=>100,
-		);
-		$_FILES[$tailedInputName]=array(
-			'name'=>$tailedInputName.'.dat',
-			'type'=>'somemime/'.$tailedInputName,
-			'tmp_name'=>'/tmp/'.$tailedInputName,
-			'error'=>UPLOAD_ERR_OK,
-			'size'=>100,
-		);
-
-		$uploadedFiles=CUploadedFile::getInstancesByName($baseInputName);
-		foreach($uploadedFiles as $uploadedFile)
-			$this->assertEquals($_FILES[$baseInputName]['name'],$uploadedFile->getName(),'Wrong file fetched!');
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

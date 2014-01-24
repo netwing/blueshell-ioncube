@@ -1,78 +1,29 @@
-<?php
-/**
- * PHPUnit
- *
- * Copyright (c) 2010-2013, Sebastian Bergmann <sb@sebastian-bergmann.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @package    PHPUnit_MockObject
- * @author     Sebastian Bergmann <sb@sebastian-bergmann.de>
- * @copyright  2010-2013 Sebastian Bergmann <sb@sebastian-bergmann.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://github.com/sebastianbergmann/phpunit-mock-objects
- * @since      File available since Release 1.0.0
- */
-
-/**
- * Stubs a method by returning an argument that was passed to the mocked method.
- *
- * @package    PHPUnit_MockObject
- * @author     Sebastian Bergmann <sb@sebastian-bergmann.de>
- * @copyright  2010-2013 Sebastian Bergmann <sb@sebastian-bergmann.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @version    Release: @package_version@
- * @link       http://github.com/sebastianbergmann/phpunit-mock-objects
- * @since      Class available since Release 1.0.0
- */
-class PHPUnit_Framework_MockObject_Stub_ReturnArgument extends PHPUnit_Framework_MockObject_Stub_Return
-{
-    protected $argumentIndex;
-
-    public function __construct($argumentIndex)
-    {
-        $this->argumentIndex = $argumentIndex;
-    }
-
-    public function invoke(PHPUnit_Framework_MockObject_Invocation $invocation)
-    {
-        if (isset($invocation->parameters[$this->argumentIndex])) {
-            return $invocation->parameters[$this->argumentIndex];
-        } else {
-            return NULL;
-        }
-    }
-
-    public function toString()
-    {
-        return sprintf('return argument #%d', $this->argumentIndex);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPwIaRWAsZrCsMnBx8MLR7m8g/gb8r5ybiEYKeTcCeiRgwh7tmNkbmW+Dbt7FOYp4gUH5OAOT
+w03NTZbntp+MLln9BEd/oMjqioIfOlDcAhXYWW0gBILKptxvsa65IhLWihKhWPUZyN6f0me+MoXX
+bg+NzXwvRphbpl8MztOCLyPy5uic/YzzCzwShrqSwInb3ZhvqTJMY1Tj7dZzTW1YzGmt7B4tDUXE
+s1JMhZE4aRqNCcI3Ncm0DAzHAE4xzt2gh9fl143SQNJGONbEpBnL5fVq2CmGXCY/Nl+NZY0Q38/s
+mNKFb5k6e7siIcZFb0ckifv2y/cRRW4owpvAttDq59ckAHEYjxQJiYPbejPN4EmJXBg/xoMsdjLa
+++PhApAEI1zQ6tpIasVdFhe2KJi9JF/s3KGV+z1r37zkHj9hil5lijziIwtsrsu7kXZZHVbEMUtt
+7pXFIeARZ7acHfpiNDjAT7QVRG0jv8558c7AqffMMnYCeijwSOFEVTtvs9kW8AIfINW3DJHI41eo
+oyMk1Ls076twX6okqr3jxDdwgfWJOsAuqwn1S+ruB3EoP+D6Wy8IzI0uBfMH5Ozget8n+DnPysy7
+8JEOi+4Dc2RExEarifvA26g4mEWc/oFzpl7EcUDfxTdj3yYRRkBWDsBDJAToydG26X4ZIGkdYK6l
+MPzGuB5E5WkomQMK31Ra3Mw+ti06UcUTdOWQYYj0YSb+CYbg0cZWWXa9wTeZVZkq7KteBiBawXww
+kzIWxKoFGKqSlZacuBqQXb88cJsDFOFkGvGXQjJwPRSu5DD/SZ7mTNktniq0uMnN95X/BRjmuIEh
+uFsMvZOaTKpT9ZZs7Uwe3glfxKQCr9QxdwJi9dC5osWcNpzlixk4PNekZPGULCEKvdp1IUwFCZNZ
+T8aqOFNezj44zsHvGhlBq2I+Z9zKxnxeFNgyOL/b6lP3LfR0CIM4FV2HCf4BBCd2+MXMCMzQQb9f
++gnVajvNYZ8+ld+cN1nbNOQXyGZcKwtCpZwWxnnoBP7tws+KZ5zfdZgCo2pwkHZAxhHhiBN1vWK5
+UMvTEOx55tftBEd8QIuAP8Ud56UWw768FJesFccIVwMhhTo09VI/Y0IKIGAEU5NIdjgdgw/+wwcm
+MiClLdz2JTDMT67lfM540Wmf1kVhY9anck5KSGWB7Zzr2vC1LcSb7R00NShe8f5isXrsCxhwjsWo
+y4nocQnjR5s4TIiANbo6bi19DA+5jXMiXAPqiXHxQgXwAbxLKKMYU4oKLBxfvHBRRFB5l2X4jonp
+SENbNNVFUfuNd4fNrjMz8dOeNRq4fCg29yOT8cQQyKJpMEFH1CNgRyk4pILs0k+yPp6nrz4aLVRg
+HYQ8XE1KLmR11RVX+gJiMymn9n7Z2cuj0HebhSmxORbuR0hcpvBz+VRoe8vaBu+acqUUHFsYBnGX
+/DY72Vo5nrTRJPm9zqVb/MM2z66OtIPV/+FL6ux6zFxiels/tXmzGtmPq0mFL+uH9FZMzT7X5Hhn
+cYDILu8VvyeZyn7Udyky9nT8NGcaNecRKD/woJkyzHOZVfM47/BiBRBuGHYaNvehlyOndw/yMfQ6
+IBu1ubk7OH5dZzYaHAcYHe9mc24WfmS9yGh0IJeipRgLrmK/mdMuHgKq9stCQ+Eh5MSP0d9iol4P
+X9XCe+x96LlxQC8VJIeacGwI9zQwi2cQXFsBMyH7xVK5OTrWz303A5671z8MoYaK7nw+3vgV+ZcR
+3DXFFsb4mPZqDKREVOd8YGIiTCr4jeZYPuGcyH/5YSMBWVgyqQBzTkOwMrcvq6rJbOf4JPR7tkb2
+ukwxJKBOAMzRyx0tLA6rA5jfweV3kMRry7vDjZhx2iEuTjvNwpz4s1Myny3nIHIwRzKARlUsy5wF
+50==

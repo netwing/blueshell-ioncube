@@ -1,245 +1,50 @@
-<?php
-/**
- * Auto-generated class. XML syntax highlighting 
- *
- * PHP version 4 and 5
- *
- * LICENSE: This source file is subject to version 3.0 of the PHP license
- * that is available through the world-wide-web at the following URI:
- * http://www.php.net/license/3_0.txt.  If you did not receive a copy of
- * the PHP License and are unable to obtain it through the web, please
- * send a note to license@php.net so we can mail you a copy immediately.
- *
- * @copyright  2004-2006 Andrey Demenev
- * @license    http://www.php.net/license/3_0.txt  PHP License
- * @link       http://pear.php.net/package/Text_Highlighter
- * @category   Text
- * @package    Text_Highlighter
- * @version    generated from: : xml.xml,v 1.1 2007/06/03 02:35:28 ssttoo Exp 
- * @author Andrey Demenev <demenev@gmail.com>
- *
- */
-
-/**
- * Auto-generated class. XML syntax highlighting
- *
- * @author Andrey Demenev <demenev@gmail.com>
- * @category   Text
- * @package    Text_Highlighter
- * @copyright  2004-2006 Andrey Demenev
- * @license    http://www.php.net/license/3_0.txt  PHP License
- * @version    Release: 0.7.1
- * @link       http://pear.php.net/package/Text_Highlighter
- */
-class  Text_Highlighter_XML extends Text_Highlighter
-{
-    var $_language = 'xml';
-
-    /**
-     *  Constructor
-     *
-     * @param array  $options
-     * @access public
-     */
-    function __construct($options=array())
-    {
-
-        $this->_options = $options;
-        $this->_regs = array (
-            -1 => '/((?i)\\<\\!\\[CDATA\\[)|((?i)\\<!--)|((?i)\\<[\\?\\/]?)|((?i)(&|%)[\\w\\-\\.]+;)/',
-            0 => '//',
-            1 => '//',
-            2 => '/((?i)(?<=[\\<\\/?])[\\w\\-\\:]+)|((?i)[\\w\\-\\:]+)|((?i)")/',
-            3 => '/((?i)(&|%)[\\w\\-\\.]+;)/',
-        );
-        $this->_counts = array (
-            -1 => 
-            array (
-                0 => 0,
-                1 => 0,
-                2 => 0,
-                3 => 1,
-            ),
-            0 => 
-            array (
-            ),
-            1 => 
-            array (
-            ),
-            2 => 
-            array (
-                0 => 0,
-                1 => 0,
-                2 => 0,
-            ),
-            3 => 
-            array (
-                0 => 1,
-            ),
-        );
-        $this->_delim = array (
-            -1 => 
-            array (
-                0 => 'comment',
-                1 => 'comment',
-                2 => 'brackets',
-                3 => '',
-            ),
-            0 => 
-            array (
-            ),
-            1 => 
-            array (
-            ),
-            2 => 
-            array (
-                0 => '',
-                1 => '',
-                2 => 'quotes',
-            ),
-            3 => 
-            array (
-                0 => '',
-            ),
-        );
-        $this->_inner = array (
-            -1 => 
-            array (
-                0 => 'comment',
-                1 => 'comment',
-                2 => 'code',
-                3 => 'special',
-            ),
-            0 => 
-            array (
-            ),
-            1 => 
-            array (
-            ),
-            2 => 
-            array (
-                0 => 'reserved',
-                1 => 'var',
-                2 => 'string',
-            ),
-            3 => 
-            array (
-                0 => 'special',
-            ),
-        );
-        $this->_end = array (
-            0 => '/(?i)\\]\\]\\>/',
-            1 => '/(?i)--\\>/',
-            2 => '/(?i)[\\/\\?]?\\>/',
-            3 => '/(?i)"/',
-        );
-        $this->_states = array (
-            -1 => 
-            array (
-                0 => 0,
-                1 => 1,
-                2 => 2,
-                3 => -1,
-            ),
-            0 => 
-            array (
-            ),
-            1 => 
-            array (
-            ),
-            2 => 
-            array (
-                0 => -1,
-                1 => -1,
-                2 => 3,
-            ),
-            3 => 
-            array (
-                0 => -1,
-            ),
-        );
-        $this->_keywords = array (
-            -1 => 
-            array (
-                0 => -1,
-                1 => -1,
-                2 => -1,
-                3 => 
-                array (
-                ),
-            ),
-            0 => 
-            array (
-            ),
-            1 => 
-            array (
-            ),
-            2 => 
-            array (
-                0 => 
-                array (
-                ),
-                1 => 
-                array (
-                ),
-                2 => -1,
-            ),
-            3 => 
-            array (
-                0 => 
-                array (
-                ),
-            ),
-        );
-        $this->_parts = array (
-            0 => 
-            array (
-            ),
-            1 => 
-            array (
-            ),
-            2 => 
-            array (
-                0 => NULL,
-                1 => NULL,
-                2 => NULL,
-            ),
-            3 => 
-            array (
-                0 => NULL,
-            ),
-        );
-        $this->_subst = array (
-            -1 => 
-            array (
-                0 => false,
-                1 => false,
-                2 => false,
-                3 => false,
-            ),
-            0 => 
-            array (
-            ),
-            1 => 
-            array (
-            ),
-            2 => 
-            array (
-                0 => false,
-                1 => false,
-                2 => false,
-            ),
-            3 => 
-            array (
-                0 => false,
-            ),
-        );
-        $this->_conditions = array (
-        );
-        $this->_kwmap = array (
-        );
-        $this->_defClass = 'code';
-        $this->_checkDefines();
-    }
-    
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+jXBevPpCf9AS0/EVdDiNwogaORB2Om==

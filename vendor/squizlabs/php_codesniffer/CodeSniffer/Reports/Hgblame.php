@@ -1,134 +1,60 @@
-<?php
-/**
- * Mercurial report for PHP_CodeSniffer.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Ben Selby <benmatselby@gmail.com>
- * @copyright 2009 SQLI <www.sqli.com>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Mercurial report for PHP_CodeSniffer.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Ben Selby <benmatselby@gmail.com>
- * @copyright 2009 SQLI <www.sqli.com>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class PHP_CodeSniffer_Reports_Hgblame extends PHP_CodeSniffer_Reports_VersionControl
-{
-
-    /**
-     * The name of the report we want in the output
-     *
-     * @var string
-     */
-    protected $reportName = 'MERCURIAL';
-
-
-    /**
-     * Extract the author from a blame line.
-     *
-     * @param string $line Line to parse.
-     *
-     * @return mixed string or false if impossible to recover.
-     */
-    protected function getAuthor($line)
-    {
-        $blameParts = array();
-        $line       = preg_replace('|\s+|', ' ', $line);
-
-        preg_match(
-            '|(.+[0-9]{2}:[0-9]{2}:[0-9]{2}\s[0-9]{4}\s.[0-9]{4}:)|',
-            $line,
-            $blameParts
-        );
-
-        if (isset($blameParts[0]) === false) {
-            return false;
-        }
-
-        $parts = explode(' ', $blameParts[0]);
-
-        if (count($parts) < 6) {
-            return false;
-        }
-
-        $parts = array_slice($parts, 0, (count($parts) - 6));
-
-        return trim(preg_replace('|<.+>|', '', implode($parts, ' ')));
-
-    }//end getAuthor()
-
-
-    /**
-     * Gets the blame output.
-     *
-     * @param string $filename File to blame.
-     *
-     * @return array
-     */
-    protected function getBlameContent($filename)
-    {
-        $cwd = getcwd();
-
-        if (PHP_CODESNIFFER_VERBOSITY > 0) {
-            echo 'Getting MERCURIAL blame info for '.basename($filename).'... ';
-        }
-
-        $fileParts = explode(DIRECTORY_SEPARATOR, $filename);
-        $found     = false;
-        $location  = '';
-        while (empty($fileParts) === false) {
-            array_pop($fileParts);
-            $location = implode($fileParts, DIRECTORY_SEPARATOR);
-            if (is_dir($location.DIRECTORY_SEPARATOR.'.hg') === true) {
-                $found = true;
-                break;
-            }
-        }
-
-        if ($found === true) {
-            chdir($location);
-        } else {
-            echo 'ERROR: Could not locate .hg directory '.PHP_EOL.PHP_EOL;
-            exit(2);
-        }
-
-        $command = 'hg blame -u -d -v "'.$filename.'"';
-        $handle  = popen($command, 'r');
-        if ($handle === false) {
-            echo 'ERROR: Could not execute "'.$command.'"'.PHP_EOL.PHP_EOL;
-            exit(2);
-        }
-
-        $rawContent = stream_get_contents($handle);
-        fclose($handle);
-
-        if (PHP_CODESNIFFER_VERBOSITY > 0) {
-            echo 'DONE'.PHP_EOL;
-        }
-
-        $blames = explode("\n", $rawContent);
-        chdir($cwd);
-
-        return $blames;
-
-    }//end getBlameContent()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
++xxhqn4i/iptNHKvRH9aHZDPxjScxg9Qubx9

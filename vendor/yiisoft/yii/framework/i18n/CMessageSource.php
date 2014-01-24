@@ -1,166 +1,72 @@
-<?php
-/**
- * CMessageSource class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CMessageSource is the base class for message translation repository classes.
- *
- * A message source is an application component that provides message internationalization (i18n).
- * It stores messages translated in different languages and provides
- * these translated versions when requested.
- *
- * A concrete class must implement {@link loadMessages} or override {@link translateMessage}.
- *
- * @property string $language The language that the source messages are written in.
- * Defaults to {@link CApplication::language application language}.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.i18n
- * @since 1.0
- */
-abstract class CMessageSource extends CApplicationComponent
-{
-	/**
-	 * @var boolean whether to force message translation when the source and target languages are the same.
-	 * Defaults to false, meaning translation is only performed when source and target languages are different.
-	 * @since 1.1.4
-	 */
-	public $forceTranslation=false;
-
-	private $_language;
-	private $_messages=array();
-
-	/**
-	 * Loads the message translation for the specified language and category.
-	 * @param string $category the message category
-	 * @param string $language the target language
-	 * @return array the loaded messages
-	 */
-	abstract protected function loadMessages($category,$language);
-
-	/**
-	 * @return string the language that the source messages are written in.
-	 * Defaults to {@link CApplication::language application language}.
-	 */
-	public function getLanguage()
-	{
-		return $this->_language===null ? Yii::app()->sourceLanguage : $this->_language;
-	}
-
-	/**
-	 * @param string $language the language that the source messages are written in.
-	 */
-	public function setLanguage($language)
-	{
-		$this->_language=CLocale::getCanonicalID($language);
-	}
-
-	/**
-	 * Translates a message to the specified language.
-	 *
-	 * Note, if the specified language is the same as
-	 * the {@link getLanguage source message language}, messages will NOT be translated.
-	 *
-	 * If the message is not found in the translations, an {@link onMissingTranslation}
-	 * event will be raised. Handlers can mark this message or do some
-	 * default handling. The {@link CMissingTranslationEvent::message}
-	 * property of the event parameter will be returned.
-	 *
-	 * @param string $category the message category
-	 * @param string $message the message to be translated
-	 * @param string $language the target language. If null (default), the {@link CApplication::getLanguage application language} will be used.
-	 * @return string the translated message (or the original message if translation is not needed)
-	 */
-	public function translate($category,$message,$language=null)
-	{
-		if($language===null)
-			$language=Yii::app()->getLanguage();
-		if($this->forceTranslation || $language!==$this->getLanguage())
-			return $this->translateMessage($category,$message,$language);
-		else
-			return $message;
-	}
-
-	/**
-	 * Translates the specified message.
-	 * If the message is not found, an {@link onMissingTranslation}
-	 * event will be raised.
-	 * @param string $category the category that the message belongs to
-	 * @param string $message the message to be translated
-	 * @param string $language the target language
-	 * @return string the translated message
-	 */
-	protected function translateMessage($category,$message,$language)
-	{
-		$key=$language.'.'.$category;
-		if(!isset($this->_messages[$key]))
-			$this->_messages[$key]=$this->loadMessages($category,$language);
-		if(isset($this->_messages[$key][$message]) && $this->_messages[$key][$message]!=='')
-			return $this->_messages[$key][$message];
-		elseif($this->hasEventHandler('onMissingTranslation'))
-		{
-			$event=new CMissingTranslationEvent($this,$category,$message,$language);
-			$this->onMissingTranslation($event);
-			return $event->message;
-		}
-		else
-			return $message;
-	}
-
-	/**
-	 * Raised when a message cannot be translated.
-	 * Handlers may log this message or do some default handling.
-	 * The {@link CMissingTranslationEvent::message} property
-	 * will be returned by {@link translateMessage}.
-	 * @param CMissingTranslationEvent $event the event parameter
-	 */
-	public function onMissingTranslation($event)
-	{
-		$this->raiseEvent('onMissingTranslation',$event);
-	}
-}
-
-
-/**
- * CMissingTranslationEvent represents the parameter for the {@link CMessageSource::onMissingTranslation onMissingTranslation} event.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.i18n
- * @since 1.0
- */
-class CMissingTranslationEvent extends CEvent
-{
-	/**
-	 * @var string the message to be translated
-	 */
-	public $message;
-	/**
-	 * @var string the category that the message belongs to
-	 */
-	public $category;
-	/**
-	 * @var string the ID of the language that the message is to be translated to
-	 */
-	public $language;
-
-	/**
-	 * Constructor.
-	 * @param mixed $sender sender of this event
-	 * @param string $category the category that the message belongs to
-	 * @param string $message the message to be translated
-	 * @param string $language the ID of the language that the message is to be translated to
-	 */
-	public function __construct($sender,$category,$message,$language)
-	{
-		parent::__construct($sender);
-		$this->message=$message;
-		$this->category=$category;
-		$this->language=$language;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

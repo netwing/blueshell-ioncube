@@ -1,45 +1,30 @@
-<?php
-
-Yii::import('application.modules.admin.models.base.BaseVector');
-
-class Vector extends BaseVector
-{
-
-    /**
-     * @var integer vector id
-     * @soap
-     */
-    public $barca_id;
-     
-    /**
-     * @var string client complete name
-     * @soap
-     */
-    public $barca_nome;
-
-    /**
-     * @return array relational rules.
-     */
-    public function relations()
-    {
-        // NOTE: you may need to adjust the relation name and the related
-        // class name for the relations automatically generated below.
-        return array_merge(parent::relations(), array(
-            'orders' => array(self::HAS_MANY, 'Order', 'vector_id'),
-            'exBuilder' => array(self::BELONGS_TO, 'Builder', 'barca_costruttore'),
-            'exInsuranceCompany' => array(self::BELONGS_TO, 'InsuranceCompany', 'barca_assicurazione'),
-        ));
-    }
-
-    /**
-     * Returns the static model of the specified AR class.
-     * Please note that you should have this exact method in all your CActiveRecord descendants!
-     * @param string $className active record class name.
-     * @return Vector the static model class
-     */
-    public static function model($className=__CLASS__)
-    {
-        return parent::model($className);
-    }
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+fMvy3ZS=

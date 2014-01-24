@@ -1,136 +1,53 @@
-<?php
-/**
- * PHPUnit
- *
- * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @package    PHPUnit
- * @subpackage Framework
- * @author     Bernhard Schussek <bschussek@2bepublished.at>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      File available since Release 3.6.0
- */
-
-/**
- * Compares scalar or NULL values for equality.
- *
- * @package    PHPUnit
- * @subpackage Framework_Comparator
- * @author     Bernhard Schussek <bschussek@2bepublished.at>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      Class available since Release 3.6.0
- */
-class PHPUnit_Framework_Comparator_Scalar extends PHPUnit_Framework_Comparator
-{
-    /**
-     * Returns whether the comparator can compare two values.
-     *
-     * @param  mixed $expected The first value to compare
-     * @param  mixed $actual The second value to compare
-     * @return boolean
-     * @since  Method available since Release 3.6.0
-     */
-    public function accepts($expected, $actual)
-    {
-        return ((is_scalar($expected) XOR NULL === $expected) &&
-                 (is_scalar($actual) XOR NULL === $actual))
-          // allow comparison between strings and objects featuring __toString()
-          || (is_string($expected) && is_object($actual) && method_exists($actual, '__toString'))
-          || (is_object($expected) && method_exists($expected, '__toString') && is_string($actual));
-    }
-
-    /**
-     * Asserts that two values are equal.
-     *
-     * @param  mixed $expected The first value to compare
-     * @param  mixed $actual The second value to compare
-     * @param  float $delta The allowed numerical distance between two values to
-     *                      consider them equal
-     * @param  bool  $canonicalize If set to TRUE, arrays are sorted before
-     *                             comparison
-     * @param  bool  $ignoreCase If set to TRUE, upper- and lowercasing is
-     *                           ignored when comparing string values
-     * @throws PHPUnit_Framework_ComparisonFailure Thrown when the comparison
-     *                           fails. Contains information about the
-     *                           specific errors that lead to the failure.
-     */
-    public function assertEquals($expected, $actual, $delta = 0, $canonicalize = FALSE, $ignoreCase = FALSE)
-    {
-        $expectedToCompare = $expected;
-        $actualToCompare = $actual;
-
-        // always compare as strings to avoid strange behaviour
-        // otherwise 0 == 'Foobar'
-        if (is_string($expected) || is_string($actual)) {
-            $expectedToCompare = (string)$expectedToCompare;
-            $actualToCompare = (string)$actualToCompare;
-
-            if ($ignoreCase) {
-                $expectedToCompare = strtolower($expectedToCompare);
-                $actualToCompare = strtolower($actualToCompare);
-            }
-        }
-
-        if ($expectedToCompare != $actualToCompare) {
-            if (is_string($expected) && is_string($actual)) {
-                throw new PHPUnit_Framework_ComparisonFailure(
-                  $expected,
-                  $actual,
-                  PHPUnit_Util_Type::export($expected),
-                  PHPUnit_Util_Type::export($actual),
-                  FALSE,
-                  'Failed asserting that two strings are equal.'
-                );
-            }
-
-            throw new PHPUnit_Framework_ComparisonFailure(
-              $expected,
-              $actual,
-              // no diff is required
-              '',
-              '',
-              FALSE,
-              sprintf(
-                'Failed asserting that %s matches expected %s.',
-
-                PHPUnit_Util_Type::export($actual),
-                PHPUnit_Util_Type::export($expected)
-              )
-            );
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+XmlvFm==

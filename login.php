@@ -1,49 +1,52 @@
-<?php
-require_once("config.inc.php");
-if (count($_POST) > 0)
-{
-    if ($_POST['username']!="" and $_POST['password']!="")
-    {
-        $select="SELECT utente_id,utente_username,utente_nominativo,utente_accesso_principale,utente_accesso_contratti,utente_accesso_anagrafica,utente_accesso_imbarcazioni,utente_accesso_posti_barca,utente_accesso_documenti,utente_accesso_fatture,utente_accesso_template,utente_accesso_listini,utente_accesso_preferenze FROM ".$tabelle['utenti']." WHERE utente_username='".$_POST['username']."' AND utente_password='".md5($_POST['password'])."'";
-        $result=$sql->select_query($select);
-        if ($sql->select_num_rows==1)
-        {
-            $row=mysql_fetch_array($result);
-            $_SESSION['utente']=array();
-            $_SESSION['utente']['utente_id']=$row['utente_id'];
-            $_SESSION['utente']['utente_username'] = $row['utente_username'];
-            $_SESSION['utente']['utente_nominativo'] = $row['utente_nominativo'];
-            $_SESSION['utente']['principale']=$row['utente_accesso_principale'];
-            $_SESSION['utente']['contratti']=$row['utente_accesso_contratti'];
-            $_SESSION['utente']['anagrafica']=$row['utente_accesso_anagrafica'];
-            $_SESSION['utente']['imbarcazioni']=$row['utente_accesso_imbarcazioni'];
-            $_SESSION['utente']['posti_barca']=$row['utente_accesso_posti_barca'];
-            $_SESSION['utente']['documenti']=$row['utente_accesso_documenti'];
-            $_SESSION['utente']['fatture']=$row['utente_accesso_fatture'];
-            $_SESSION['utente']['template']=$row['utente_accesso_template'];
-            $_SESSION['utente']['listini']=$row['utente_accesso_listini'];
-            $_SESSION['utente']['preferenze']=$row['utente_accesso_preferenze'];
-            Yii::app()->user->setFlash('success', Yii::t('app', 'Login successful, welcome back.'));
-            header("Location:".$_GET['ritorno']);
-            exit;
-        } else {
-            Yii::app()->user->setFlash('danger', Yii::t('app', 'Username not found or invalid password.'));
-            header("Location:login.php?ritorno=" . $_GET['ritorno']);
-            exit;    
-        }
-    }
-}
-if (array_key_exists("logout",$_GET))
-{
-    unset($_SESSION['utente']);
-    session_destroy();
-    header("Location:index.php");
-    exit;
-}
-
-if (!array_key_exists('ritorno', $_GET)) {
-    header("Location:login.php?ritorno=index.php");
-    exit;
-}
-
-require_once "views/site/login.php";
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

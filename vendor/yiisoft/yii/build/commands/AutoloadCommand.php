@@ -1,83 +1,49 @@
-<?php
-/**
- * AutoloadCommand class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * AutoloadCommand generates the class map for {@link YiiBase}.
- * The class file YiiBase.php will be modified with updated class map.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.build
- * @since 1.0
- */
-class AutoloadCommand extends CConsoleCommand
-{
-	public function getHelp()
-	{
-		return <<<EOD
-USAGE
-  build autoload
-
-DESCRIPTION
-  This command updates YiiBase.php with the latest class map.
-  The class map is used by Yii::autoload() to quickly include a class on demand.
-
-  Do not run this command unless you change or add core framework classes.
-
-EOD;
-	}
-
-	/**
-	 * Execute the action.
-	 * @param array command line parameters specific for this command
-	 */
-	public function run($args)
-	{
-		$options=array(
-			'fileTypes'=>array('php'),
-			'exclude'=>array(
-				'.gitignore',
-				'/messages',
-				'/views',
-				'/cli',
-				'/yii.php',
-				'/yiit.php',
-				'/yiilite.php',
-				'/web/js',
-				'/vendors',
-				'/i18n/data',
-				'/utils/mimeTypes.php',
-				'/test',
-				'/zii',
-				'/gii',
-			),
-		);
-		$files=CFileHelper::findFiles(YII_PATH,$options);
-		$map='';
-		foreach($files as $file)
-		{
-			if(($pos=strpos($file,YII_PATH))!==0)
-				die("Invalid file '$file' found.");
-			$path=str_replace('\\','/',substr($file,strlen(YII_PATH)));
-			$className=substr(basename($path),0,-4);
-			if($className[0]==='C')
-				$map.="\t\t'$className' => '$path',\n";
-		}
-
-		$yiiBase=file_get_contents(YII_PATH.'/YiiBase.php');
-		$newYiiBase=preg_replace('/private\s+static\s+\$_coreClasses\s*=\s*array\s*\([^\)]*\)\s*;/',"private static \$_coreClasses=array(\n{$map}\t);",$yiiBase);
-		if($yiiBase!==$newYiiBase)
-		{
-			file_put_contents(YII_PATH.'/YiiBase.php',$newYiiBase);
-			echo "YiiBase.php is updated successfully.\n";
-		}
-		else
-			echo "Nothing changed.\n";
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

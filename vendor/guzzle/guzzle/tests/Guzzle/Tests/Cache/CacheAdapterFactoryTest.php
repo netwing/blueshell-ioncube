@@ -1,64 +1,38 @@
-<?php
-
-namespace Guzzle\Tests\Cache;
-
-use Guzzle\Cache\CacheAdapterFactory;
-use Guzzle\Cache\DoctrineCacheAdapter;
-use Doctrine\Common\Cache\ArrayCache;
-use Zend\Cache\StorageFactory;
-
-/**
- * @covers Guzzle\Cache\CacheAdapterFactory
- */
-class CacheAdapterFactoryTest extends \Guzzle\Tests\GuzzleTestCase
-{
-    /** @var ArrayCache */
-    private $cache;
-
-    /** @var DoctrineCacheAdapter */
-    private $adapter;
-
-    /**
-     * Prepares the environment before running a test.
-     */
-    protected function setup()
-    {
-        parent::setUp();
-        $this->cache = new ArrayCache();
-        $this->adapter = new DoctrineCacheAdapter($this->cache);
-    }
-
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testEnsuresConfigIsObject()
-    {
-        CacheAdapterFactory::fromCache(array());
-    }
-
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testEnsuresKnownType()
-    {
-        CacheAdapterFactory::fromCache(new \stdClass());
-    }
-
-    public function cacheProvider()
-    {
-        return array(
-            array(new DoctrineCacheAdapter(new ArrayCache()), 'Guzzle\Cache\DoctrineCacheAdapter'),
-            array(new ArrayCache(), 'Guzzle\Cache\DoctrineCacheAdapter'),
-            array(StorageFactory::factory(array('adapter' => 'memory')), 'Guzzle\Cache\Zf2CacheAdapter'),
-        );
-    }
-
-    /**
-     * @dataProvider cacheProvider
-     */
-    public function testCreatesNullCacheAdapterByDefault($cache, $type)
-    {
-        $adapter = CacheAdapterFactory::fromCache($cache);
-        $this->assertInstanceOf($type, $adapter);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

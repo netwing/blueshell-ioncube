@@ -1,162 +1,116 @@
-<?php
-require_once("config.inc.php");
-$blue->autentica_utente("contratti","R");
-
-$anno = date('Y',time());
-
-if (array_key_exists('date_year',$_POST)) {
-	$anno=$_POST['date_year'];
-}
-$spese=array();
-$totali=array();
-$totale_affitti=array();
-
-$periodi=$blue->elenco_periodi();
-unset($periodi[0]);
-/*$spese['condominiali'][99]=0;
-$spese['vendite'][99]=0;
-$spese['transiti'][99]=0;
-$spese['varie'][99]=0;
-$spese['indefinite'][99]=0;
-$totale_affitti[99]=0;
-$totali[99]=0;
-foreach ($periodi as $k=>$v)
-{
-	$nomeaffitto="affitti ".$v;
-	for ($i=1;$i<=12;$i++)
-	{
-		if (strlen($i)==1)
-		{
-			$q='0'.$i;
-		}
-		else
-		{
-			$q=$i;
-		}
-		$spese[$nomeaffitto][$q]=0;
-		$spese[$nomeaffitto][99]=0;
-		$totale_affitti[$q]=0;
-		$totale_affitti[99]=0;
-	}
-}
-
-$spese['affitti'][99]=0;
-*/	
-// SPESE CONDOMINIALI
-$sel="SELECT fattura_numero+0,fattura_data,cliente_nominativo,fattura_riga_descrizione,fattura_riga_imponibile,fattura_riga_totale FROM blue_fatture,blue_fatture_righe,blue_clienti WHERE cliente_id=fattura_cliente_id AND fattura_spese_condominiali='1' AND fattura_varie='0' AND fattura_id=fattura_riga_fattura_id AND fattura_data LIKE '".$anno."%' ORDER BY fattura_numero ASC";
-$res=$sql->select_query($sel);
-$spese=array();
-while ($row=mysql_fetch_array($res))
-{
-	$spese[]=$row;
-}
-
-// VARIE
-$sel="SELECT fattura_numero+0,fattura_data,cliente_nominativo,fattura_riga_descrizione,fattura_riga_imponibile,fattura_riga_totale FROM blue_fatture,blue_fatture_righe,blue_clienti WHERE cliente_id=fattura_cliente_id AND fattura_spese_condominiali='0' AND fattura_varie='1' AND fattura_id=fattura_riga_fattura_id AND fattura_data LIKE '".$anno."%' ORDER BY fattura_numero ASC";
-$res=$sql->select_query($sel);
-$varie=array();
-while ($row=mysql_fetch_array($res))
-{
-	$varie[]=$row;
-}
-
-// VENDITE
-$sel="SELECT fattura_numero+0,fattura_data,cliente_nominativo,fattura_riga_descrizione,fattura_riga_imponibile,fattura_riga_totale FROM blue_fatture,blue_fatture_righe,blue_clienti,blue_contratti WHERE contratto_tipo='2' AND contratto_id=fattura_contratto_id AND cliente_id=fattura_cliente_id AND fattura_spese_condominiali='0' AND fattura_varie='0' AND fattura_id=fattura_riga_fattura_id AND fattura_data LIKE '".$anno."%' ORDER BY fattura_numero ASC";
-$res=$sql->select_query($sel);
-$vendite=array();
-while ($row=mysql_fetch_array($res))
-{
-	$vendite[]=$row;
-}
-
-// INDEFINITE
-$sel="SELECT fattura_numero+0,fattura_data,cliente_nominativo,fattura_riga_descrizione,fattura_riga_imponibile,fattura_riga_totale FROM blue_fatture,blue_fatture_righe,blue_clienti WHERE fattura_contratto_id=0 AND cliente_id=fattura_cliente_id AND fattura_spese_condominiali='0' AND fattura_varie='0' AND fattura_id=fattura_riga_fattura_id AND fattura_data LIKE '".$anno."%' ORDER BY fattura_numero ASC";
-$res=$sql->select_query($sel);
-$indefinite=array();
-while ($row=mysql_fetch_array($res))
-{
-	$indefinite[]=$row;
-}
-
-// TRANSITI
-$sel="SELECT fattura_numero+0,fattura_data,cliente_nominativo,fattura_riga_descrizione,fattura_riga_imponibile,fattura_riga_totale FROM blue_fatture,blue_fatture_righe,blue_clienti,blue_contratti WHERE contratto_tipo='11' AND contratto_id=fattura_contratto_id AND cliente_id=fattura_cliente_id AND fattura_spese_condominiali='0' AND fattura_varie='0' AND fattura_id=fattura_riga_fattura_id AND fattura_data LIKE '".$anno."%' ORDER BY fattura_numero ASC";
-$res=$sql->select_query($sel);
-$transiti=array();
-while ($row=mysql_fetch_array($res))
-{
-	$transiti[]=$row;
-}
-
-// PRENOTAZIONI
-$sel="SELECT fattura_numero+0,fattura_data,cliente_nominativo,fattura_riga_descrizione,fattura_riga_imponibile,fattura_riga_totale FROM blue_fatture,blue_fatture_righe,blue_clienti,blue_contratti WHERE contratto_tipo='4' AND contratto_id=fattura_contratto_id AND cliente_id=fattura_cliente_id AND fattura_spese_condominiali='0' AND fattura_varie='0' AND fattura_id=fattura_riga_fattura_id AND fattura_data LIKE '".$anno."%' ORDER BY fattura_numero ASC";
-$res=$sql->select_query($sel);
-$prenotazioni=array();
-while ($row=mysql_fetch_array($res))
-{
-	$prenotazioni[]=$row;
-}
-
-// AFFITTI
-// Fatture degli Affitti suddivisi per periodo
-foreach ($periodi as $k=>$v)
-{
-	$nomeaffitto="affitti ".$v;
-	$sel="SELECT fattura_numero+0,fattura_data,cliente_nominativo,fattura_riga_descrizione,fattura_riga_imponibile,fattura_riga_totale FROM blue_fatture,blue_fatture_righe,blue_clienti,blue_contratti WHERE contratto_tipo='1' AND contratto_periodo='".$k."' AND contratto_id=fattura_contratto_id AND cliente_id=fattura_cliente_id AND fattura_spese_condominiali='0' AND fattura_varie='0' AND fattura_id=fattura_riga_fattura_id AND fattura_data LIKE '".$anno."%' ORDER BY fattura_numero ASC";
-	$res=$sql->select_query($sel);
-	$affitti[$nomeaffitto]=array();
-	while ($row=mysql_fetch_array($res))
-	{
-		$affitti[$nomeaffitto][]=$row;
-	}
-}
-
-
-//$spese['varie'][99]=$totali[99]-($spese['condominiali'][99]+$spese['vendite'][99]+$spese['transiti'][99]+$spese['affitti'][99]+$totale_affitti[99]);
-
-$intestazione="Fattura\tData\tCliente\tDescrizione\tImponibile\tTotale\n";
-$excel="";
-//echo "<pre>";print_r($affitti);exit();
-foreach ($affitti as $affitto=>$dati)
-{	
-	$excel.="\n\n".strtoupper($affitto)."\n".$intestazione;
-	foreach ($dati as $k=>$v)
-	{
-		$excel.=$v[0]."\t".date("d-m-Y",strtotime($v[1]))."\t".html_entity_decode($v[2])."\t".$v[3]."\t".number_format($v[4],2,",","")."\t".number_format($v[5],2,",","")."\n";
-	}
-}
-$excel.="\n\nTRANSITI\n".$intestazione;
-foreach ($transiti as $k=>$v)
-{
-	$excel.=$v[0]."\t".date("d-m-Y",strtotime($v[1]))."\t".html_entity_decode($v[2])."\t".$v[3]."\t".number_format($v[4],2,",","")."\t".number_format($v[5],2,",","")."\n";
-}
-$excel.="\n\nPRENOTAZIONI (acconti)\n".$intestazione;
-foreach ($prenotazioni as $k=>$v)
-{
-	$excel.=$v[0]."\t".date("d-m-Y",strtotime($v[1]))."\t".html_entity_decode($v[2])."\t".$v[3]."\t".number_format($v[4],2,",","")."\t".number_format($v[5],2,",","")."\n";
-}
-$excel.="\n\nVENDITE\n".$intestazione;
-foreach ($vendite as $k=>$v)
-{
-	$excel.=$v[0]."\t".date("d-m-Y",strtotime($v[1]))."\t".html_entity_decode($v[2])."\t".$v[3]."\t".number_format($v[4],2,",","")."\t".number_format($v[5],2,",","")."\n";
-}
-$excel.="\n\nSPESE CONDOMINIALI\n".$intestazione;
-foreach ($spese as $k=>$v)
-{
-	$excel.=$v[0]."\t".date("d-m-Y",strtotime($v[1]))."\t".html_entity_decode($v[2])."\t".$v[3]."\t".number_format($v[4],2,",","")."\t".number_format($v[5],2,",","")."\n";
-}
-$excel.="\n\nVARIE\n".$intestazione;
-foreach ($varie as $k=>$v)
-{
-	$excel.=$v[0]."\t".date("d-m-Y",strtotime($v[1]))."\t".html_entity_decode($v[2])."\t".$v[3]."\t".number_format($v[4],2,",","")."\t".number_format($v[5],2,",","")."\n";
-}
-$excel.="\n\nINDEFINITE\n".$intestazione;
-foreach ($indefinite as $k=>$v)
-{
-	$excel.=$v[0]."\t".date("d-m-Y",strtotime($v[1]))."\t".html_entity_decode($v[2])."\t".$v[3]."\t".number_format($v[4],2,",","")."\t".number_format($v[5],2,",","")."\n";
-}
-
-
-header('Content-Type: application/xls');
-header("Content-Disposition: attachment; filename=Report_Dettagliato_".$anno.".xls");
-echo $excel;
-exit;
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

@@ -1,92 +1,59 @@
-<?php
-/**
- * CBooleanValidator class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CBooleanValidator validates that the attribute value is either {@link trueValue}  or {@link falseValue}.
- *
- * When using the {@link message} property to define a custom error message, the message
- * may contain additional placeholders that will be replaced with the actual content. In addition
- * to the "{attribute}" placeholder, recognized by all validators (see {@link CValidator}),
- * CBooleanValidator allows for the following placeholders to be specified:
- * <ul>
- * <li>{true}: replaced with value representing the true status {@link trueValue}.</li>
- * <li>{false}: replaced with value representing the false status {@link falseValue}.</li>
- * </ul>
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.validators
- */
-class CBooleanValidator extends CValidator
-{
-	/**
-	 * @var mixed the value representing true status. Defaults to '1'.
-	 */
-	public $trueValue='1';
-	/**
-	 * @var mixed the value representing false status. Defaults to '0'.
-	 */
-	public $falseValue='0';
-	/**
-	 * @var boolean whether the comparison to {@link trueValue} and {@link falseValue} is strict.
-	 * When this is true, the attribute value and type must both match those of {@link trueValue} or {@link falseValue}.
-	 * Defaults to false, meaning only the value needs to be matched.
-	 */
-	public $strict=false;
-	/**
-	 * @var boolean whether the attribute value can be null or empty. Defaults to true,
-	 * meaning that if the attribute is empty, it is considered valid.
-	 */
-	public $allowEmpty=true;
-
-	/**
-	 * Validates the attribute of the object.
-	 * If there is any error, the error message is added to the object.
-	 * @param CModel $object the object being validated
-	 * @param string $attribute the attribute being validated
-	 */
-	protected function validateAttribute($object,$attribute)
-	{
-		$value=$object->$attribute;
-		if($this->allowEmpty && $this->isEmpty($value))
-			return;
-		if(!$this->strict && $value!=$this->trueValue && $value!=$this->falseValue
-			|| $this->strict && $value!==$this->trueValue && $value!==$this->falseValue)
-		{
-			$message=$this->message!==null?$this->message:Yii::t('yii','{attribute} must be either {true} or {false}.');
-			$this->addError($object,$attribute,$message,array(
-				'{true}'=>$this->trueValue,
-				'{false}'=>$this->falseValue,
-			));
-		}
-	}
-
-	/**
-	 * Returns the JavaScript needed for performing client-side validation.
-	 * @param CModel $object the data object being validated
-	 * @param string $attribute the name of the attribute to be validated.
-	 * @return string the client-side validation script.
-	 * @see CActiveForm::enableClientValidation
-	 * @since 1.1.7
-	 */
-	public function clientValidateAttribute($object,$attribute)
-	{
-		$message=$this->message!==null ? $this->message : Yii::t('yii','{attribute} must be either {true} or {false}.');
-		$message=strtr($message, array(
-			'{attribute}'=>$object->getAttributeLabel($attribute),
-			'{true}'=>$this->trueValue,
-			'{false}'=>$this->falseValue,
-		));
-		return "
-if(".($this->allowEmpty ? "jQuery.trim(value)!='' && " : '')."value!=".CJSON::encode($this->trueValue)." && value!=".CJSON::encode($this->falseValue).") {
-	messages.push(".CJSON::encode($message).");
-}
-";
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPoVdu/zw9cVOy2ihTjnaRoAmhAw6wCcdaC0YccTBnBZXup7u6xXrLEVbWMKGhoixSbT2Uuhf
+dkvnLN81IzLVKH5siXjtTdigBuRGnLJHg7tWRp8c2dFlz3MZiMy7PtOro9kgzc6UIbntPgV3ek+m
+b3M2/hvM7TZONnIyJuqa/osoLJtuTu+8AQLG0JRl1bc9Fz+otdZh74zQipK7L5dr09SegxcNq1Xu
+v2xHbtqwUxxx/bKu+NaAWS6Phr4euJltSAgiccy4GDnfT8bclFn9RWWcxGZBmTWVKzvK/tVMto/7
+Y51QIJuiJEHmh03hcJHXhe824gMPWIFbKLxmJa6peT98CwlC6sSod71xYYRoTchtZUyjPXH96Si+
+ai8Zw9i6UPZUckU+OhmbIu1hsrbCMXYPw1YXTXuelwS5LWc+QXWd/MQNlUafRNwYedwG2cue0/oO
+fvsPC+cmKQmJKVi5RWWLYHIQJfEt+5SmM+EtP11jsocwSLlYGMxl32DAnlnp3Y4PjxNDRMdDUxF4
+1O8TSFMDOYMDQ5gXet5lmJVUVGnfQoheOWTu5s2x1be4bxh9otiNNlpt60/LKcyHKIwP/Nk+rgJl
+ZQ6hn3225c286jI8GMz54LwAtuKf8IrLdInsq62GYx68mVcH1BKk183ou9tabZ5O1/1Gm+HXqGM+
+fQtMJ90pAhfiS1J0n9Q3dAk2Hhmp4v6wSJPLNTw6L6YpTnZOTEXPXZK+7D+ijXmRO49AMus/JQav
+OIspgaG1boRfz+6f4W+OQRQpny/aG58r9kv/Qt/zW6X0yJ7lJemtkCJu3BdjzvjbbHJhMUnMLrzu
+J1NpR+uB4EXDhzJlvBGvSWYecEPGItKhlT2Ltl5+oexo1ympZO93gexyLjbQ9OxVJZl0i+D/ATKa
+h313YOgQSFmpd7eOT03kqdpBWoH6pe2/YYRMo+yTOIf74kyCh/ACWC5+5Zf/VfjmEt2+O5WfJIbn
+pjbzlgUsYjV6qIRiJ0hyzSiXX4kRcwJkPbkm3J+F9dDZG0SVB1Eir8qr6jMXs8DcMPK0M8MMsMg9
+CeLfv0HyR8kFEfqcM+Kw4RzWuKYZBS6OdLAlLR3HlZBSouCj69ffCbRGaIDnkKOhfpvnMA8agtug
+x/PtocfzPNDLg/oNAozqCbGHFnnJMTMtiC+a5cD0AEV5YO1NrPN4HlRQTlIhWrQtuWrX/0IDoGpU
+23SIIyi0NOgYkW98LyMGKcDUq0X2VUZhbJUXm55XQg4kofAvvOxAvDU6zeyin/qtfU/rNvIZsxp9
+f4XQGoRDW2yP3Faqol+313Ypb3qHFk5KMZP4ZQnH9GVLwtg0Wu9bOjNhKNkd+y/RmIq43Z2YUTz9
+/oIMyRR4GtOdB0MHSN4s94ocOc4wJWvOQFoDOXcXklNKTRh248w122w2qPJMai92uEtx0aZEYb4J
+9bBUa9919hyFoy7DaNu/efJXNlcjJYC4gYa0h37hS7Zv4oEjbK+OX5vEPgFID4TOUvagxdccOh4x
+0Axy6A+n8rwwq+XVkDQx8FaRn02mK9BYYC5iuHf7Wrac749P3X4msw2wG76Xw8q0OMe2DS0eHQOq
+mrwonYCZ3xQde9/W8Futtwm6sYkmZp3gNcrimYBnuhPKyiBRqrDQ4iiqB3lB5rJF0REJPPSIP+mM
+435BbVu8OKT39W43ub6GV1j8OW4KnMDY+jweQtrpKDpRGHjvlIzJ0J1JW94rAj+94sYYJ5letoZ/
+OugqkwCtRZtqlLPDam/g6PzHM8TG3BiJoFrAXhHjIszmdsBKpf+hu9D0s706VW0sAnGnFn2p4AY7
+rje3DSpC6uJR2ix0OLV/mfA+JVwJPQRmA8O2/sJXw/h+FI793W8p+/pD/JAIULeogk5NQzmZRjxB
+yVUBtv+Y9aLwXq87XradKI8q/qJ4BMRoxWRYOI9CavgZWHI5BkbwcSs6+NKH+3CnbpqkfNOs5CA+
+2XtDC70Sj646apstkPCmaSPCjERIFKmvQvbMyz3xmPFTbOEBiWYZDXsNCxS7nUX4lLnSy/Ordbz1
+1VPQYoZU4HVpIPfLJvObUtyWIMEfw8ihybMVvKLn7WmXVXRWNJigzGvY1BEzJklo/uNm79Ius9+K
+DI8jgAELr6KAx3LMhgpQy29w0Qou+n2FysdP/Hewk6wSqjuHYpMd3NKF6MeUxwa5S9oDaL7nV9Jf
+C6hk08F9eMh6/rFyqLZDQS9ILo9AYw9Vgi9jOLKlcnynOUykaziWTJ/28fX4aEMoR6HkdzgesiKL
+0GqdJuDL1qt0RKBEEYWFu/VVATeLLW201lGY2cpCcOYZthzx4fG2pLEaBsrF3IR5J1PgBCd211D5
+ZIvYzhYsZhDfn858RA7MEASFE5vZ6kVanTcp81sbFmS7w6s5ImtCkinl5rF1iI1PgMxxrhBcsT6D
+RbPa/FLE4z5g6KrpgdGdwCqxZs9lngv+kUMz58uhs3csf6wG0DbSDFIwpTMcvXPRuPOLUjIseoWd
+EhHQtiY1RVlYcShwflj66gZtkHxR5rL6RjvHfc1Ui7fcq0JEvsCZU0weOZuSTuZkFax5+rAd+6ob
+sIhGN24cjDOMzAWpuKNSswiZREt4pcYa3QfduLj+DL2zEcJDU7e22tjGxfrpxQ4BKNKcpNgpALzF
+wx/LsRClJy5HGOYyu11LMBV8h2O8kapU8oSmrbY7Yo6FfXsVksbLP5wQgaDr0C/HGZ4vtx61zaxb
+WPfjj4Z+dyKcOWrRbNWWIVZFdOJiV2XO1j0P6Oz/8WDSjeG/CqyiaW9M4r4hxqgUstDEaG8snOMk
+WRnGpnme2C5xc4xHWj4QmhvOdg5itXr5tXwwhiu4Fvzp4eVHIdFAiZrSzUrCHWtOUTFj0CBMvzPP
+n3W73LrynD6MRpcObbNYO8NRdZ0BtYJifhPxDOwr/5cC+ywIBocsa3xn5FfJAoXQR4M3C7WW6gYP
+IJtrOG+oY4pFN71/EnFYAte0/aU952pmqDJy7qlW+IZWe8CYkJYT1JHFhFlqahjaVVQ4qqO52+1d
+bEOG2uyADneclvDVkNOpMU7VpU5SBbldE/ykIkhuWuhYB8/98DQlJ67/o8of6V7+QHzVPeCk0dfr
+SGdBS6sGUms2pE1Dvm4qUIkK5M+ZZ4eZs5fhDh1A5u7RTGHeot38w5+dAgjwd/eH8GT38ZCeWAOV
+Nxtd55bs27fTqhMGljuxDnuscEqQltj4Jzze267AfBn1JZkOvGbhyNTa2SNrbH6eA/f76fhRMjgY
+RYLz3hdCap/aLa3T7wCT6x0xPqJjLSMMrCB/FIe1gw9aSjS8Q2MrWjhCy8HAqiFJyr1zPmcdFYxZ
+Ik/o73bKqh/8/yovHI5E5SeFv7+r7ZPqKqsH1evRB8l1HgDz6A5RPZlX9ZbAe/Lb0mFuHTLR/qS0
+qCdjlVwUMU7QylPtFPfYG2nVm5lENhnhpn+Iam10GOpU81h8RCJp0u7QiNp87mhBQozfvPWf6x/8
+klBngOGehHapV6bZGP+xL/cYB1EqvAIeZ/F9qxMd4R9IzLKoAZO6YsNHDETN5dcTXPVaNE6ko8hp
+v4wfbGcBwmt//19bThqxxwZHfi7EjVD47gAh0cljZ0fyyuYJEpiMelmFReiWg1PLGVOUyPhA6OFO
+9OpDS0JXuNH52PteeSQrESnReAe/cux6vWNOLwa93HxxUoKVHFeC/RsGDwqsKavcCDSBYfMlUteL
+OA6cAv76pphrzz8z2oRKsylzuvzeELw40qKHDYAfW5PpP1L9PTDkSdu3nuI5RIuxreTwCfvzviF4
+NazFcH+bQe+z3qpAKkPArpxVtqzwPN+XHkLi0pXd0OtUDn9jrb5JyKoy3webS7f2cpsEOYOPWoKT
+ryNv69KCarzKOaQcxeZjnGkDvo8szeOnO9S2J3dgmn6uM8UboJwDZj+/qvFVqi8ueG2jEADQZLhz
+wNH4BlAHWSyOWSk595ZFrhC1pPuZP0sNhG4POwdMuZaWC80oEC14nbQLaIPjb8Q+Fw0oB/AIB+R9
+z10/l1tTkktaqJ8EJc1HghXezsH2sPeNYjM/dgYYTikTm0xsrcloMbxsFbYh8LYaAdvVr3H3dKQQ
+uBcS5HUZA32ioxMCsRIlcz0gPjOvn8DBDUASIL9tIcbSgE3tvrvzCyscsY7KzxF6EyLcH/AQqjcl
+Q9i6rm==

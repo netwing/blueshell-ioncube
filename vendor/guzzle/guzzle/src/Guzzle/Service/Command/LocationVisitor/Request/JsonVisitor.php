@@ -1,63 +1,44 @@
-<?php
-
-namespace Guzzle\Service\Command\LocationVisitor\Request;
-
-use Guzzle\Http\Message\RequestInterface;
-use Guzzle\Service\Command\CommandInterface;
-use Guzzle\Service\Description\Parameter;
-
-/**
- * Visitor used to apply a parameter to an array that will be serialized as a top level key-value pair in a JSON body
- */
-class JsonVisitor extends AbstractRequestVisitor
-{
-    /** @var bool Whether or not to add a Content-Type header when JSON is found */
-    protected $jsonContentType = 'application/json';
-
-    /** @var \SplObjectStorage Data object for persisting JSON data */
-    protected $data;
-
-    public function __construct()
-    {
-        $this->data = new \SplObjectStorage();
-    }
-
-    /**
-     * Set the Content-Type header to add to the request if JSON is added to the body. This visitor does not add a
-     * Content-Type header unless you specify one here.
-     *
-     * @param string $header Header to set when JSON is added (e.g. application/json)
-     *
-     * @return self
-     */
-    public function setContentTypeHeader($header = 'application/json')
-    {
-        $this->jsonContentType = $header;
-
-        return $this;
-    }
-
-    public function visit(CommandInterface $command, RequestInterface $request, Parameter $param, $value)
-    {
-        if (isset($this->data[$command])) {
-            $json = $this->data[$command];
-        } else {
-            $json = array();
-        }
-        $json[$param->getWireName()] = $this->prepareValue($value, $param);
-        $this->data[$command] = $json;
-    }
-
-    public function after(CommandInterface $command, RequestInterface $request)
-    {
-        if (isset($this->data[$command])) {
-            // Don't overwrite the Content-Type if one is set
-            if ($this->jsonContentType && !$request->hasHeader('Content-Type')) {
-                $request->setHeader('Content-Type', $this->jsonContentType);
-            }
-
-            $request->setBody(json_encode($this->data[$command]));
-            unset($this->data[$command]);
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+oM5eKV/M31Te2aHtTkIXy6hlNHcypHUSUm==

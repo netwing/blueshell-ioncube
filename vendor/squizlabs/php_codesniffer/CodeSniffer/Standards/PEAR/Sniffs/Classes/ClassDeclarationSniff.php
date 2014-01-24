@@ -1,125 +1,61 @@
-<?php
-/**
- * Class Declaration Test.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Class Declaration Test.
- *
- * Checks the declaration of the class is correct.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class PEAR_Sniffs_Classes_ClassDeclarationSniff implements PHP_CodeSniffer_Sniff
-{
-
-    /**
-     * The number of spaces code should be indented.
-     *
-     * @var int
-     */
-    public $indent = 4;
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        return array(
-                T_CLASS,
-                T_INTERFACE,
-               );
-
-    }//end register()
-
-
-    /**
-     * Processes this test, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param integer              $stackPtr  The position of the current token in the
-     *                                        stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens    = $phpcsFile->getTokens();
-        $errorData = array($tokens[$stackPtr]['content']);
-
-        if (isset($tokens[$stackPtr]['scope_opener']) === false) {
-            $error = 'Possible parse error: %s missing opening or closing brace';
-            $phpcsFile->addWarning($error, $stackPtr, 'MissingBrace', $errorData);
-            return;
-        }
-
-        $curlyBrace  = $tokens[$stackPtr]['scope_opener'];
-        $lastContent = $phpcsFile->findPrevious(T_WHITESPACE, ($curlyBrace - 1), $stackPtr, true);
-        $classLine   = $tokens[$lastContent]['line'];
-        $braceLine   = $tokens[$curlyBrace]['line'];
-        if ($braceLine === $classLine) {
-            $error = 'Opening brace of a %s must be on the line after the definition';
-            $phpcsFile->addError($error, $curlyBrace, 'OpenBraceNewLine', $errorData);
-            return;
-        } else if ($braceLine > ($classLine + 1)) {
-            $error = 'Opening brace of a %s must be on the line following the %s declaration; found %s line(s)';
-            $data  = array(
-                      $tokens[$stackPtr]['content'],
-                      $tokens[$stackPtr]['content'],
-                      ($braceLine - $classLine - 1),
-                     );
-            $phpcsFile->addError($error, $curlyBrace, 'OpenBraceWrongLine', $data);
-            return;
-        }
-
-        if ($tokens[($curlyBrace + 1)]['content'] !== $phpcsFile->eolChar) {
-            $error = 'Opening %s brace must be on a line by itself';
-            $phpcsFile->addError($error, $curlyBrace, 'OpenBraceNotAlone', $errorData);
-        }
-
-        if ($tokens[($curlyBrace - 1)]['code'] === T_WHITESPACE) {
-            $prevContent = $tokens[($curlyBrace - 1)]['content'];
-            if ($prevContent === $phpcsFile->eolChar) {
-                $spaces = 0;
-            } else {
-                $blankSpace = substr($prevContent, strpos($prevContent, $phpcsFile->eolChar));
-                $spaces     = strlen($blankSpace);
-            }
-
-            $expected = ($tokens[$stackPtr]['level'] * $this->indent);
-            if ($spaces !== $expected) {
-                $error = 'Expected %s spaces before opening brace; %s found';
-                $data  = array(
-                          $expected,
-                          $spaces,
-                         );
-                $phpcsFile->addError($error, $curlyBrace, 'SpaceBeforeBrace', $data);
-            }
-        }
-
-    }//end process()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

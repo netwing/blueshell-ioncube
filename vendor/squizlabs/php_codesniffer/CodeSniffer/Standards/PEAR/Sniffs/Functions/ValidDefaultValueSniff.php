@@ -1,108 +1,48 @@
-<?php
-/**
- * PEAR_Sniffs_Functions_ValidDefaultValueSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * PEAR_Sniffs_Functions_ValidDefaultValueSniff.
- *
- * A Sniff to ensure that parameters defined for a function that have a default
- * value come at the end of the function signature.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class PEAR_Sniffs_Functions_ValidDefaultValueSniff implements PHP_CodeSniffer_Sniff
-{
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        return array(T_FUNCTION);
-
-    }//end register()
-
-
-    /**
-     * Processes this test, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token in the
-     *                                        stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-
-        $argStart = $tokens[$stackPtr]['parenthesis_opener'];
-        $argEnd   = $tokens[$stackPtr]['parenthesis_closer'];
-
-        // Flag for when we have found a default in our arg list.
-        // If there is a value without a default after this, it is an error.
-        $defaultFound = false;
-
-        $nextArg = $argStart;
-        while (($nextArg = $phpcsFile->findNext(T_VARIABLE, ($nextArg + 1), $argEnd)) !== false) {
-            $argHasDefault = self::_argHasDefault($phpcsFile, $nextArg);
-            if (($argHasDefault === false) && ($defaultFound === true)) {
-                $error  = 'Arguments with default values must be at the end of the argument list';
-                $phpcsFile->addError($error, $nextArg, 'NotAtEnd');
-                return;
-            }
-
-            if ($argHasDefault === true) {
-                $defaultFound = true;
-            }
-        }
-
-    }//end process()
-
-
-    /**
-     * Returns true if the passed argument has a default value.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $argPtr    The position of the argument
-     *                                        in the stack.
-     *
-     * @return bool
-     */
-    private static function _argHasDefault(PHP_CodeSniffer_File $phpcsFile, $argPtr)
-    {
-        $tokens    = $phpcsFile->getTokens();
-        $nextToken = $phpcsFile->findNext(PHP_CodeSniffer_Tokens::$emptyTokens, ($argPtr + 1), null, true);
-        if ($tokens[$nextToken]['code'] !== T_EQUAL) {
-            return false;
-        }
-
-        return true;
-
-    }//end _argHasDefault()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

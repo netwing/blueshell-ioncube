@@ -1,75 +1,37 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\CssSelector\Node;
-
-/**
- * Represents a "<selector>:<identifier>" node.
- *
- * This component is a port of the Python cssselector library,
- * which is copyright Ian Bicking, @see https://github.com/SimonSapin/cssselect.
- *
- * @author Jean-François Simon <jeanfrancois.simon@sensiolabs.com>
- */
-class PseudoNode extends AbstractNode
-{
-    /**
-     * @var NodeInterface
-     */
-    private $selector;
-
-    /**
-     * @var string
-     */
-    private $identifier;
-
-    /**
-     * @param NodeInterface $selector
-     * @param string        $identifier
-     */
-    public function __construct(NodeInterface $selector, $identifier)
-    {
-        $this->selector = $selector;
-        $this->identifier = strtolower($identifier);
-    }
-
-    /**
-     * @return NodeInterface
-     */
-    public function getSelector()
-    {
-        return $this->selector;
-    }
-
-    /**
-     * @return string
-     */
-    public function getIdentifier()
-    {
-        return $this->identifier;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getSpecificity()
-    {
-        return $this->selector->getSpecificity()->plus(new Specificity(0, 1, 0));
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function __toString()
-    {
-        return sprintf('%s[%s:%s]', $this->getNodeName(), $this->selector, $this->identifier);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+b6zPClMu1K2+km==

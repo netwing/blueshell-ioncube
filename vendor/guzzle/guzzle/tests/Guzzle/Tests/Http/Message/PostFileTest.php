@@ -1,74 +1,63 @@
-<?php
-
-namespace Guzzle\Tests\Http\Message;
-
-use Guzzle\Http\Client;
-use Guzzle\Http\Message\PostFile;
-
-/**
- * @covers Guzzle\Http\Message\PostFile
- * @group server
- */
-class PostFileTest extends \Guzzle\Tests\GuzzleTestCase
-{
-    public function testConstructorConfiguresPostFile()
-    {
-        $file = new PostFile('foo', __FILE__, 'x-foo');
-        $this->assertEquals('foo', $file->getFieldName());
-        $this->assertEquals(__FILE__, $file->getFilename());
-        $this->assertEquals('x-foo', $file->getContentType());
-    }
-
-    public function testRemovesLeadingAtSymbolFromPath()
-    {
-        $file = new PostFile('foo', '@' . __FILE__);
-        $this->assertEquals(__FILE__, $file->getFilename());
-    }
-
-    /**
-     * @expectedException Guzzle\Common\Exception\InvalidArgumentException
-     */
-    public function testEnsuresFileIsReadable()
-    {
-        $file = new PostFile('foo', '/foo/baz/bar');
-    }
-
-    public function testCanChangeContentType()
-    {
-        $file = new PostFile('foo', '@' . __FILE__);
-        $file->setContentType('Boo');
-        $this->assertEquals('Boo', $file->getContentType());
-    }
-
-    public function testCanChangeFieldName()
-    {
-        $file = new PostFile('foo', '@' . __FILE__);
-        $file->setFieldName('Boo');
-        $this->assertEquals('Boo', $file->getFieldName());
-    }
-
-    public function testReturnsCurlValueString()
-    {
-        $file = new PostFile('foo', __FILE__);
-        if (version_compare(phpversion(), '5.5.0', '<')) {
-            $this->assertContains('@' . __FILE__ . ';filename=PostFileTest.php;type=text/x-', $file->getCurlValue());
-        } else {
-            $c = $file->getCurlValue();
-            $this->assertEquals(__FILE__, $c->getFilename());
-            $this->assertEquals('PostFileTest.php', $c->getPostFilename());
-            $this->assertContains('text/x-', $c->getMimeType());
-        }
-    }
-
-    public function testContentDispositionFilePathIsStripped()
-    {
-        $this->getServer()->flush();
-        $client = new Client($this->getServer()->getUrl());
-        $this->getServer()->enqueue("HTTP/1.1 200 OK\r\nContent-Length: 0\r\n\r\n");
-        $request = $client->post()->addPostFile('file', __FILE__);
-        $request->send();
-        $requests = $this->getServer()->getReceivedRequests(false);
-        $this->assertContains('POST / HTTP/1.1', $requests[0]);
-        $this->assertContains('Content-Disposition: form-data; name="file"; filename="PostFileTest.php"', $requests[0]);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+Km==

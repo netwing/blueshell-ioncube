@@ -1,155 +1,51 @@
-<?php
-// Copyright 2004-present Facebook. All Rights Reserved.
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
-/**
- * Interface for an HTML element in the WebDriver framework.
- */
-interface WebDriverElement extends WebDriverSearchContext {
-
-  /**
-   * If this element is a TEXTAREA or text INPUT element, this will clear the
-   * value.
-   *
-   * @return WebDriverElement The current instance.
-   */
-  public function clear();
-
-  /**
-   * Click this element.
-   *
-   * @return WebDriverElement The current instance.
-   */
-  public function click();
-
-  /**
-   * Find the first WebDriverElement within this element using the given
-   * mechanism.
-   *
-   * @param WebDriverBy $locator
-   * @return WebDriverElement NoSuchElementWebDriverError is thrown in
-   *    HttpCommandExecutor if no element is found.
-   * @see WebDriverBy
-   */
-  public function findElement(WebDriverBy $locator);
-
-  /**
-   * Find all WebDriverElements within this element using the given mechanism.
-   *
-   * @param WebDriverBy $locator
-   * @return array A list of all WebDriverElements, or an empty array if
-   *    nothing matches
-   * @see WebDriverBy
-   */
-  public function findElements(WebDriverBy $locator);
-
-  /**
-   * Get the value of a the given attribute of the element.
-   *
-   * @param string $attribute_name The name of the attribute.
-   * @return string The value of the attribute.
-   */
-  public function getAttribute($attribute_name);
-
-  /**
-   * Get the value of a given CSS property.
-   *
-   * @param string $css_property_name The name of the CSS property.
-   * @return string The value of the CSS property.
-   */
-  public function getCSSValue($css_property_name);
-
-  /**
-   * Get the location of element relative to the top-left corner of the page.
-   *
-   * @return WebDriverLocation The location of the element.
-   */
-  public function getLocation();
-
-  /**
-   * Try scrolling the element into the view port and return the location of
-   * element relative to the top-left corner of the page afterwards.
-   *
-   * @return WebDriverLocation The location of the element.
-   */
-  public function getLocationOnScreenOnceScrolledIntoView();
-
-  /**
-   * Get the size of element.
-   *
-   * @return WebDriverDimension The dimension of the element.
-   */
-  public function getSize();
-
-  /**
-   * Get the tag name of this element.
-   *
-   * @return string The tag name.
-   */
-  public function getTagName();
-
-  /**
-   * Get the visible (i.e. not hidden by CSS) innerText of this element,
-   * including sub-elements, without any leading or trailing whitespace.
-   *
-   * @return string The visible innerText of this element.
-   */
-  public function getText();
-
-  /**
-   * Is this element displayed or not? This method avoids the problem of having
-   * to parse an element's "style" attribute.
-   *
-   * @return bool
-   */
-  public function isDisplayed();
-
-  /**
-   * Is the element currently enabled or not? This will generally return true
-   * for everything but disabled input elements.
-   *
-   * @return bool
-   */
-  public function isEnabled();
-
-  /**
-   * Determine whether or not this element is selected or not.
-   *
-   * @return bool
-   */
-  public function isSelected();
-
-  /**
-   * Simulate typing into an element, which may set its value.
-   *
-   * @param mixed $value The data to be typed.
-   * @return WebDriverElement The current instance.
-   */
-  public function sendKeys($value);
-
-  /**
-   * If this current element is a form, or an element within a form, then this
-   * will be submitted to the remote server.
-   *
-   * @return WebDriverElement The current instance.
-   */
-  public function submit();
-
-  /**
-   * Get the opaque ID of the element.
-   *
-   * @return string The opaque ID.
-   */
-  public function getID();
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

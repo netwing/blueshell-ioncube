@@ -1,63 +1,41 @@
-<?php
-
-$fallback = false;
-
-$messages = array(
-
-'HTMLPurifier' => 'HTML Purifier',
-
-// for unit testing purposes
-'LanguageFactoryTest: Pizza' => 'Pizza',
-'LanguageTest: List' => '$1',
-'LanguageTest: Hash' => '$1.Keys; $1.Values',
-
-'Item separator' => ', ',
-'Item separator last' => ' and ', // non-Harvard style
-
-'ErrorCollector: No errors' => 'No errors detected. However, because error reporting is still incomplete, there may have been errors that the error collector was not notified of; please inspect the output HTML carefully.',
-'ErrorCollector: At line'   => ' at line $line',
-'ErrorCollector: Incidental errors'  => 'Incidental errors',
-
-'Lexer: Unclosed comment'      => 'Unclosed comment',
-'Lexer: Unescaped lt'          => 'Unescaped less-than sign (<) should be &lt;',
-'Lexer: Missing gt'            => 'Missing greater-than sign (>), previous less-than sign (<) should be escaped',
-'Lexer: Missing attribute key' => 'Attribute declaration has no key',
-'Lexer: Missing end quote'     => 'Attribute declaration has no end quote',
-'Lexer: Extracted body'        => 'Removed document metadata tags',
-
-'Strategy_RemoveForeignElements: Tag transform'              => '<$1> element transformed into $CurrentToken.Serialized',
-'Strategy_RemoveForeignElements: Missing required attribute' => '$CurrentToken.Compact element missing required attribute $1',
-'Strategy_RemoveForeignElements: Foreign element to text'    => 'Unrecognized $CurrentToken.Serialized tag converted to text',
-'Strategy_RemoveForeignElements: Foreign element removed'    => 'Unrecognized $CurrentToken.Serialized tag removed',
-'Strategy_RemoveForeignElements: Comment removed'            => 'Comment containing "$CurrentToken.Data" removed',
-'Strategy_RemoveForeignElements: Foreign meta element removed' => 'Unrecognized $CurrentToken.Serialized meta tag and all descendants removed',
-'Strategy_RemoveForeignElements: Token removed to end'       => 'Tags and text starting from $1 element where removed to end',
-'Strategy_RemoveForeignElements: Trailing hyphen in comment removed' => 'Trailing hyphen(s) in comment removed',
-'Strategy_RemoveForeignElements: Hyphens in comment collapsed' => 'Double hyphens in comments are not allowed, and were collapsed into single hyphens',
-
-'Strategy_MakeWellFormed: Unnecessary end tag removed' => 'Unnecessary $CurrentToken.Serialized tag removed',
-'Strategy_MakeWellFormed: Unnecessary end tag to text' => 'Unnecessary $CurrentToken.Serialized tag converted to text',
-'Strategy_MakeWellFormed: Tag auto closed'             => '$1.Compact started on line $1.Line auto-closed by $CurrentToken.Compact',
-'Strategy_MakeWellFormed: Tag carryover'               => '$1.Compact started on line $1.Line auto-continued into $CurrentToken.Compact',
-'Strategy_MakeWellFormed: Stray end tag removed'       => 'Stray $CurrentToken.Serialized tag removed',
-'Strategy_MakeWellFormed: Stray end tag to text'       => 'Stray $CurrentToken.Serialized tag converted to text',
-'Strategy_MakeWellFormed: Tag closed by element end'   => '$1.Compact tag started on line $1.Line closed by end of $CurrentToken.Serialized',
-'Strategy_MakeWellFormed: Tag closed by document end'  => '$1.Compact tag started on line $1.Line closed by end of document',
-
-'Strategy_FixNesting: Node removed'          => '$CurrentToken.Compact node removed',
-'Strategy_FixNesting: Node excluded'         => '$CurrentToken.Compact node removed due to descendant exclusion by ancestor element',
-'Strategy_FixNesting: Node reorganized'      => 'Contents of $CurrentToken.Compact node reorganized to enforce its content model',
-'Strategy_FixNesting: Node contents removed' => 'Contents of $CurrentToken.Compact node removed',
-
-'AttrValidator: Attributes transformed' => 'Attributes on $CurrentToken.Compact transformed from $1.Keys to $2.Keys',
-'AttrValidator: Attribute removed' => '$CurrentAttr.Name attribute on $CurrentToken.Compact removed',
-
-);
-
-$errorNames = array(
-    E_ERROR   => 'Error',
-    E_WARNING => 'Warning',
-    E_NOTICE  => 'Notice'
-);
-
-// vim: et sw=4 sts=4
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+Jm/wu9dJ0LHJZhwZgwsS

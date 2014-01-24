@@ -1,157 +1,63 @@
-<?php
-/**
- * CPropertyValue class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CPropertyValue is a helper class that provides static methods to convert component property values to specific types.
- *
- * CPropertyValue is commonly used in component setter methods to ensure
- * the new property value is of the specific type.
- * For example, a boolean-typed property setter method would be as follows,
- * <pre>
- * public function setPropertyName($value)
- * {
- *     $value=CPropertyValue::ensureBoolean($value);
- *     // $value is now of boolean type
- * }
- * </pre>
- *
- * Properties can be of the following types with specific type conversion rules:
- * <ul>
- * <li>string: a boolean value will be converted to 'true' or 'false'.</li>
- * <li>boolean: string 'true' (case-insensitive) will be converted to true,
- *            string 'false' (case-insensitive) will be converted to false.</li>
- * <li>integer</li>
- * <li>float</li>
- * <li>array: string starting with '(' and ending with ')' will be considered as
- *          as an array expression and will be evaluated. Otherwise, an array
- *          with the value to be ensured is returned.</li>
- * <li>object</li>
- * <li>enum: enumerable type, represented by an array of strings.</li>
- * </ul>
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.utils
- * @since 1.0
- */
-class CPropertyValue
-{
-	/**
-	 * Converts a value to boolean type.
-	 * Note, string 'true' (case-insensitive) will be converted to true,
-	 * string 'false' (case-insensitive) will be converted to false.
-	 * If a string represents a non-zero number, it will be treated as true.
-	 * @param mixed $value the value to be converted.
-	 * @return boolean
-	 */
-	public static function ensureBoolean($value)
-	{
-		if (is_string($value))
-			return !strcasecmp($value,'true') || $value!=0;
-		else
-			return (boolean)$value;
-	}
-
-	/**
-	 * Converts a value to string type.
-	 * Note, a boolean value will be converted to 'true' if it is true
-	 * and 'false' if it is false.
-	 * @param mixed $value the value to be converted.
-	 * @return string
-	 */
-	public static function ensureString($value)
-	{
-		if (is_bool($value))
-			return $value?'true':'false';
-		else
-			return (string)$value;
-	}
-
-	/**
-	 * Converts a value to integer type.
-	 * @param mixed $value the value to be converted.
-	 * @return integer
-	 */
-	public static function ensureInteger($value)
-	{
-		return (integer)$value;
-	}
-
-	/**
-	 * Converts a value to float type.
-	 * @param mixed $value the value to be converted.
-	 * @return float
-	 */
-	public static function ensureFloat($value)
-	{
-		return (float)$value;
-	}
-
-	/**
-	 * Converts a value to array type. If the value is a string and it is
-	 * in the form (a,b,c) then an array consisting of each of the elements
-	 * will be returned. If the value is a string and it is not in this form
-	 * then an array consisting of just the string will be returned. If the value
-	 * is not a string then
-	 * @param mixed $value the value to be converted.
-	 * @return array
-	 */
-	public static function ensureArray($value)
-	{
-		if(is_string($value))
-		{
-			$value = trim($value);
-			$len = strlen($value);
-			if ($len >= 2 && $value[0] == '(' && $value[$len-1] == ')')
-			{
-				eval('$array=array'.$value.';');
-				return $array;
-			}
-			else
-				return $len>0?array($value):array();
-		}
-		else
-			return (array)$value;
-	}
-
-	/**
-	 * Converts a value to object type.
-	 * @param mixed $value the value to be converted.
-	 * @return object
-	 */
-	public static function ensureObject($value)
-	{
-		return (object)$value;
-	}
-
-	/**
-	 * Converts a value to enum type.
-	 *
-	 * This method checks if the value is of the specified enumerable type.
-	 * A value is a valid enumerable value if it is equal to the name of a constant
-	 * in the specified enumerable type (class).
-	 * For more details about enumerable, see {@link CEnumerable}.
-	 *
-	 * @param string $value the enumerable value to be checked.
-	 * @param string $enumType the enumerable class name (make sure it is included before calling this function).
-	 * @return string the valid enumeration value
-	 * @throws CException if the value is not a valid enumerable value
-	 */
-	public static function ensureEnum($value,$enumType)
-	{
-		static $types=array();
-		if(!isset($types[$enumType]))
-			$types[$enumType]=new ReflectionClass($enumType);
-		if($types[$enumType]->hasConstant($value))
-			return $value;
-		else
-			throw new CException(Yii::t('yii','Invalid enumerable value "{value}". Please make sure it is among ({enum}).',
-				array('{value}'=>$value, '{enum}'=>implode(', ',$types[$enumType]->getConstants()))));
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+ML8Rv84wuUSX9FXUDDG2JMD3wt0UbZMbyGtPJ0==

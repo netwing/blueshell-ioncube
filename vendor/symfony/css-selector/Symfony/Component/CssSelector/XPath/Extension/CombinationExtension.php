@@ -1,93 +1,37 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\CssSelector\XPath\Extension;
-
-use Symfony\Component\CssSelector\XPath\XPathExpr;
-
-/**
- * XPath expression translator combination extension.
- *
- * This component is a port of the Python cssselector library,
- * which is copyright Ian Bicking, @see https://github.com/SimonSapin/cssselect.
- *
- * @author Jean-François Simon <jeanfrancois.simon@sensiolabs.com>
- */
-class CombinationExtension extends AbstractExtension
-{
-    /**
-     * {@inheritdoc}
-     */
-    public function getCombinationTranslators()
-    {
-        return array(
-            ' ' => array($this, 'translateDescendant'),
-            '>' => array($this, 'translateChild'),
-            '+' => array($this, 'translateDirectAdjacent'),
-            '~' => array($this, 'translateIndirectAdjacent'),
-        );
-    }
-
-    /**
-     * @param XPathExpr $xpath
-     * @param XPathExpr $combinedXpath
-     *
-     * @return XPathExpr
-     */
-    public function translateDescendant(XPathExpr $xpath, XPathExpr $combinedXpath)
-    {
-        return $xpath->join('/descendant-or-self::*/', $combinedXpath);
-    }
-
-    /**
-     * @param XPathExpr $xpath
-     * @param XPathExpr $combinedXpath
-     *
-     * @return XPathExpr
-     */
-    public function translateChild(XPathExpr $xpath, XPathExpr $combinedXpath)
-    {
-        return $xpath->join('/', $combinedXpath);
-    }
-
-    /**
-     * @param XPathExpr $xpath
-     * @param XPathExpr $combinedXpath
-     *
-     * @return XPathExpr
-     */
-    public function translateDirectAdjacent(XPathExpr $xpath, XPathExpr $combinedXpath)
-    {
-        return $xpath
-            ->join('/following-sibling::', $combinedXpath)
-            ->addNameTest()
-            ->addCondition('position() = 1');
-    }
-
-    /**
-     * @param XPathExpr $xpath
-     * @param XPathExpr $combinedXpath
-     *
-     * @return XPathExpr
-     */
-    public function translateIndirectAdjacent(XPathExpr $xpath, XPathExpr $combinedXpath)
-    {
-        return $xpath->join('/following-sibling::', $combinedXpath);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getName()
-    {
-        return 'combination';
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

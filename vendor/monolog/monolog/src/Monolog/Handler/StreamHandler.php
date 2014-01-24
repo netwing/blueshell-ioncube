@@ -1,79 +1,55 @@
-<?php
-
-/*
- * This file is part of the Monolog package.
- *
- * (c) Jordi Boggiano <j.boggiano@seld.be>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Monolog\Handler;
-
-use Monolog\Logger;
-
-/**
- * Stores to any stream resource
- *
- * Can be used to store into php://stderr, remote and local files, etc.
- *
- * @author Jordi Boggiano <j.boggiano@seld.be>
- */
-class StreamHandler extends AbstractProcessingHandler
-{
-    protected $stream;
-    protected $url;
-    private $errorMessage;
-
-    /**
-     * @param string  $stream
-     * @param integer $level  The minimum logging level at which this handler will be triggered
-     * @param Boolean $bubble Whether the messages that are handled can bubble up the stack or not
-     */
-    public function __construct($stream, $level = Logger::DEBUG, $bubble = true)
-    {
-        parent::__construct($level, $bubble);
-        if (is_resource($stream)) {
-            $this->stream = $stream;
-        } else {
-            $this->url = $stream;
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function close()
-    {
-        if (is_resource($this->stream)) {
-            fclose($this->stream);
-        }
-        $this->stream = null;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function write(array $record)
-    {
-        if (null === $this->stream) {
-            if (!$this->url) {
-                throw new \LogicException('Missing stream url, the stream can not be opened. This may be caused by a premature call to close().');
-            }
-            $this->errorMessage = null;
-            set_error_handler(array($this, 'customErrorHandler'));
-            $this->stream = fopen($this->url, 'a');
-            restore_error_handler();
-            if (!is_resource($this->stream)) {
-                $this->stream = null;
-                throw new \UnexpectedValueException(sprintf('The stream or file "%s" could not be opened: '.$this->errorMessage, $this->url));
-            }
-        }
-        fwrite($this->stream, (string) $record['formatted']);
-    }
-
-    private function customErrorHandler($code, $msg) {
-        $this->errorMessage = preg_replace('{^fopen\(.*?\): }', '', $msg);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

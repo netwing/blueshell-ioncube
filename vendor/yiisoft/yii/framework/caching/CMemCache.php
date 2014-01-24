@@ -1,281 +1,114 @@
-<?php
-/**
- * CMemCache class file
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CMemCache implements a cache application component based on {@link http://memcached.org/ memcached}.
- *
- * CMemCache can be configured with a list of memcache servers by settings
- * its {@link setServers servers} property. By default, CMemCache assumes
- * there is a memcache server running on localhost at port 11211.
- *
- * See {@link CCache} manual for common cache operations that are supported by CMemCache.
- *
- * Note, there is no security measure to protected data in memcache.
- * All data in memcache can be accessed by any process running in the system.
- *
- * To use CMemCache as the cache application component, configure the application as follows,
- * <pre>
- * array(
- *     'components'=>array(
- *         'cache'=>array(
- *             'class'=>'CMemCache',
- *             'servers'=>array(
- *                 array(
- *                     'host'=>'server1',
- *                     'port'=>11211,
- *                     'weight'=>60,
- *                 ),
- *                 array(
- *                     'host'=>'server2',
- *                     'port'=>11211,
- *                     'weight'=>40,
- *                 ),
- *             ),
- *         ),
- *     ),
- * )
- * </pre>
- * In the above, two memcache servers are used: server1 and server2.
- * You can configure more properties of every server, including:
- * host, port, persistent, weight, timeout, retryInterval, status.
- * See {@link http://www.php.net/manual/en/function.memcache-addserver.php}
- * for more details.
- *
- * CMemCache can also be used with {@link http://pecl.php.net/package/memcached memcached}.
- * To do so, set {@link useMemcached} to be true.
- *
- * @property mixed $memCache The memcache instance (or memcached if {@link useMemcached} is true) used by this component.
- * @property array $servers List of memcache server configurations. Each element is a {@link CMemCacheServerConfiguration}.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.caching
- * @since 1.0
- */
-class CMemCache extends CCache
-{
-	/**
-	 * @var boolean whether to use memcached or memcache as the underlying caching extension.
-	 * If true {@link http://pecl.php.net/package/memcached memcached} will be used.
-	 * If false {@link http://pecl.php.net/package/memcache memcache}. will be used.
-	 * Defaults to false.
-	 */
-	public $useMemcached=false;
-	/**
-	 * @var Memcache the Memcache instance
-	 */
-	private $_cache=null;
-	/**
-	 * @var array list of memcache server configurations
-	 */
-	private $_servers=array();
-
-	/**
-	 * Initializes this application component.
-	 * This method is required by the {@link IApplicationComponent} interface.
-	 * It creates the memcache instance and adds memcache servers.
-	 * @throws CException if memcache extension is not loaded
-	 */
-	public function init()
-	{
-		parent::init();
-		$servers=$this->getServers();
-		$cache=$this->getMemCache();
-		if(count($servers))
-		{
-			foreach($servers as $server)
-			{
-				if($this->useMemcached)
-					$cache->addServer($server->host,$server->port,$server->weight);
-				else
-					$cache->addServer($server->host,$server->port,$server->persistent,$server->weight,$server->timeout,$server->retryInterval,$server->status);
-			}
-		}
-		else
-			$cache->addServer('localhost',11211);
-	}
-
-	/**
-	 * @throws CException if extension isn't loaded
-	 * @return Memcache|Memcached the memcache instance (or memcached if {@link useMemcached} is true) used by this component.
-	 */
-	public function getMemCache()
-	{
-		if($this->_cache!==null)
-			return $this->_cache;
-		else
-		{
-			$extension=$this->useMemcached ? 'memcached' : 'memcache';
-			if(!extension_loaded($extension))
-				throw new CException(Yii::t('yii',"CMemCache requires PHP {extension} extension to be loaded.",
-                    array('{extension}'=>$extension)));
-			return $this->_cache=$this->useMemcached ? new Memcached : new Memcache;
-		}
-	}
-
-	/**
-	 * @return array list of memcache server configurations. Each element is a {@link CMemCacheServerConfiguration}.
-	 */
-	public function getServers()
-	{
-		return $this->_servers;
-	}
-
-	/**
-	 * @param array $config list of memcache server configurations. Each element must be an array
-	 * with the following keys: host, port, persistent, weight, timeout, retryInterval, status.
-	 * @see http://www.php.net/manual/en/function.Memcache-addServer.php
-	 */
-	public function setServers($config)
-	{
-		foreach($config as $c)
-			$this->_servers[]=new CMemCacheServerConfiguration($c);
-	}
-
-	/**
-	 * Retrieves a value from cache with a specified key.
-	 * This is the implementation of the method declared in the parent class.
-	 * @param string $key a unique key identifying the cached value
-	 * @return string|boolean the value stored in cache, false if the value is not in the cache or expired.
-	 */
-	protected function getValue($key)
-	{
-		return $this->_cache->get($key);
-	}
-
-	/**
-	 * Retrieves multiple values from cache with the specified keys.
-	 * @param array $keys a list of keys identifying the cached values
-	 * @return array a list of cached values indexed by the keys
-	 */
-	protected function getValues($keys)
-	{
-		return $this->useMemcached ? $this->_cache->getMulti($keys) : $this->_cache->get($keys);
-	}
-
-	/**
-	 * Stores a value identified by a key in cache.
-	 * This is the implementation of the method declared in the parent class.
-	 *
-	 * @param string $key the key identifying the value to be cached
-	 * @param string $value the value to be cached
-	 * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
-	 * @return boolean true if the value is successfully stored into cache, false otherwise
-	 */
-	protected function setValue($key,$value,$expire)
-	{
-		if($expire>0)
-			$expire+=time();
-		else
-			$expire=0;
-
-		return $this->useMemcached ? $this->_cache->set($key,$value,$expire) : $this->_cache->set($key,$value,0,$expire);
-	}
-
-	/**
-	 * Stores a value identified by a key into cache if the cache does not contain this key.
-	 * This is the implementation of the method declared in the parent class.
-	 *
-	 * @param string $key the key identifying the value to be cached
-	 * @param string $value the value to be cached
-	 * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
-	 * @return boolean true if the value is successfully stored into cache, false otherwise
-	 */
-	protected function addValue($key,$value,$expire)
-	{
-		if($expire>0)
-			$expire+=time();
-		else
-			$expire=0;
-
-		return $this->useMemcached ? $this->_cache->add($key,$value,$expire) : $this->_cache->add($key,$value,0,$expire);
-	}
-
-	/**
-	 * Deletes a value with the specified key from cache
-	 * This is the implementation of the method declared in the parent class.
-	 * @param string $key the key of the value to be deleted
-	 * @return boolean if no error happens during deletion
-	 */
-	protected function deleteValue($key)
-	{
-		return $this->_cache->delete($key, 0);
-	}
-
-	/**
-	 * Deletes all values from cache.
-	 * This is the implementation of the method declared in the parent class.
-	 * @return boolean whether the flush operation was successful.
-	 * @since 1.1.5
-	 */
-	protected function flushValues()
-	{
-		return $this->_cache->flush();
-	}
-}
-
-/**
- * CMemCacheServerConfiguration represents the configuration data for a single memcache server.
- *
- * See {@link http://www.php.net/manual/en/function.Memcache-addServer.php}
- * for detailed explanation of each configuration property.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.caching
- * @since 1.0
- */
-class CMemCacheServerConfiguration extends CComponent
-{
-	/**
-	 * @var string memcache server hostname or IP address
-	 */
-	public $host;
-	/**
-	 * @var integer memcache server port
-	 */
-	public $port=11211;
-	/**
-	 * @var boolean whether to use a persistent connection
-	 */
-	public $persistent=true;
-	/**
-	 * @var integer probability of using this server among all servers.
-	 */
-	public $weight=1;
-	/**
-	 * @var integer value in seconds which will be used for connecting to the server
-	 */
-	public $timeout=15;
-	/**
-	 * @var integer how often a failed server will be retried (in seconds)
-	 */
-	public $retryInterval=15;
-	/**
-	 * @var boolean if the server should be flagged as online upon a failure
-	 */
-	public $status=true;
-
-	/**
-	 * Constructor.
-	 * @param array $config list of memcache server configurations.
-	 * @throws CException if the configuration is not an array
-	 */
-	public function __construct($config)
-	{
-		if(is_array($config))
-		{
-			foreach($config as $key=>$value)
-				$this->$key=$value;
-			if($this->host===null)
-				throw new CException(Yii::t('yii','CMemCache server configuration must have "host" value.'));
-		}
-		else
-			throw new CException(Yii::t('yii','CMemCache server configuration must be an array.'));
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+cuMxqMbi//yA8OuZkuRiFkmokQuU4ABgpmBG

@@ -1,172 +1,111 @@
-<?php
-
-class m100000_000000_0 extends CDbMigration
-{
-	public function safeUp()
-	{
-
-        $this->execute("ALTER TABLE {{assicurazioni}} ENGINE = InnoDB");
-        $this->execute("ALTER TABLE {{assicurazioni}} ENGINE = InnoDB");
-        $this->execute("ALTER TABLE {{barche}} ENGINE = InnoDB");
-        $this->execute("ALTER TABLE {{barche_trasferimenti}} ENGINE = InnoDB");
-        $this->execute("ALTER TABLE {{clienti}} ENGINE = InnoDB");
-        $this->execute("ALTER TABLE {{clienti_note}} ENGINE = InnoDB");
-        $this->execute("ALTER TABLE {{contratti}} ENGINE = InnoDB");
-        $this->execute("ALTER TABLE {{contratti_periodi}} ENGINE = InnoDB");
-        $this->execute("ALTER TABLE {{contratti_tipo}} ENGINE = InnoDB");
-        $this->execute("ALTER TABLE {{contratti_dettagli}} ENGINE = InnoDB");
-        $this->execute("ALTER TABLE {{costruttori}} ENGINE = InnoDB");
-        $this->execute("ALTER TABLE {{dimensioni}} ENGINE = InnoDB");
-        $this->execute("ALTER TABLE {{nazioni}} ENGINE = InnoDB");
-        $this->execute("ALTER TABLE {{pontili}} ENGINE = InnoDB");
-        $this->execute("ALTER TABLE {{pontili_tipo}} ENGINE = InnoDB");
-        $this->execute("ALTER TABLE {{posti_barca}} ENGINE = InnoDB");
-        $this->execute("ALTER TABLE {{tipologie_barche}} ENGINE = InnoDB");
-        $this->execute("ALTER TABLE {{scadenze}} ENGINE = InnoDB");
-        $this->execute("ALTER TABLE {{utenti}} ENGINE = InnoDB");
-        $this->execute("ALTER TABLE {{posti_barca_status}} ENGINE = InnoDB");
-        $this->execute("ALTER TABLE {{listini_posti_barca}} ENGINE = InnoDB");
-        $this->execute("ALTER TABLE {{listini_generici}} ENGINE = InnoDB");
-        $this->execute("ALTER TABLE {{fatture}} ENGINE = InnoDB");
-        $this->execute("ALTER TABLE {{fatture_righe}} ENGINE = InnoDB");
-        $this->execute("ALTER TABLE {{presenze}} ENGINE = InnoDB");
-        $this->execute("ALTER TABLE {{prima_nota}} ENGINE = InnoDB");
-        $this->execute("ALTER TABLE {{province}} ENGINE = InnoDB");
-
-		$this->createTable('{{user}}', array(
-			"id" => "INT( 11 ) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ",
-			"name" => "VARCHAR(255) NOT NULL DEFAULT ''",
-			"username" => "VARCHAR(255) NOT NULL DEFAULT ''",
-			"password" => "VARCHAR(255) NOT NULL DEFAULT ''",
-			"role" => "VARCHAR(255) NOT NULL DEFAULT ''",
-			"tstamp" => "TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP",
-		), 'ENGINE = InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci');
-		
-		$this->createIndex("idx_uniq_username", "{{user}}", "username", true);
-        $this->insert("{{user}}", array('username' => 'administrator', 'password' => crypt('password'), 'role' => json_encode(array('ADMIN')), 'name' => 'Amministratore'));
-		$this->insert("{{user}}", array('username' => 'simpleuser', 'password' => crypt('simpleuser'), 'role' => json_encode(array('USER')), 'name' => 'Simple user'));
-
-        $this->createTable('{{auth_item}}', array(
-            "name" => "VARCHAR(64) NOT NULL PRIMARY KEY",
-            "type" => "INTEGER NOT NULL",
-            "description" => "TEXT",
-            "bizrule" => "TEXT",
-            "data" => "TEXT",
-        ), 'ENGINE = InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci');
-        
-        $this->createTable('{{auth_item_child}}', array(
-            "parent" => "VARCHAR(64) NOT NULL",
-            "child" => "VARCHAR(64) NOT NULL",
-        ), 'ENGINE = InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci');
-
-        $this->addPrimaryKey('pk_parent_child', "{{auth_item_child}}", 'parent,child');
-        // Always use DB_TABLE_PREFIX in foreing key name to avoid conflict in MySQL
-        $this->addForeignKey('fk_parent_' . DB_TABLE_PREFIX . 'auth_item_name', '{{auth_item_child}}', 'parent', "{{auth_item}}", "name", 'CASCADE', 'CASCADE');
-        $this->addForeignKey('fk_child_' . DB_TABLE_PREFIX . 'auth_item_name', '{{auth_item_child}}', 'child', "{{auth_item}}", "name", 'CASCADE', 'CASCADE');
-
-        $this->createTable('{{auth_assignment}}', array(
-            "itemname"  => "VARCHAR(64) NOT NULL",
-            "userid"    => "VARCHAR(64) NOT NULL",
-            "bizrule"   => "TEXT",
-            "data"      => "TEXT",
-        ), 'ENGINE = InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci');
-
-        $this->addPrimaryKey('pk_itemname_userid', "{{auth_assignment}}", 'itemname,userid');
-        $this->addForeignKey('fk_' . DB_TABLE_PREFIX . 'itemname', '{{auth_assignment}}', 'itemname', "{{auth_item}}", "name", 'CASCADE', 'CASCADE');
-
-        $auth = Yii::app()->authManager;
-
-        // Roles must be UPPERCASE
-        $role_admin = $auth->createRole('ADMIN', 'Main administrator');
-        $role_user = $auth->createRole('USER', 'Default user');
-
-        // Task contains atomic operations
-        $user = $auth->createTask("admin:user", Yii::t('app', 'Users administration'));
-        $auth->createOperation("admin:user:create", Yii::t('app', 'Create'));
-        $auth->createOperation("admin:user:read", Yii::t('app', 'Read'));
-        $auth->createOperation("admin:user:update", Yii::t('app', 'Update'));
-        $auth->createOperation("admin:user:delete", Yii::t('app', 'Delete'));
-        
-        // Connect operation to parent task
-        $user->addChild('admin:user:create');
-        $user->addChild('admin:user:read');
-        $user->addChild('admin:user:update');
-        $user->addChild('admin:user:delete');
-
-        // Allow this operations to role
-        $role_admin->addChild('admin:user:create');
-        $role_admin->addChild('admin:user:read');
-        $role_admin->addChild('admin:user:update');
-        $role_admin->addChild('admin:user:delete');
-
-        $task = $auth->createTask("main:search", Yii::t('app', 'Main search'));
-        $auth->createOperation('main:search:allow', Yii::t('app', 'Allow'));
-        $task->addChild('main:search:allow');
-        
-        $role_admin->addChild('main:search:allow');
-
-        $auth->save();
-        
-		return true;
-	}
-
-	public function safeDown()
-	{
-
-        $this->execute("SET foreign_key_checks = 0;");
-
-        try {
-            $this->dropTable('{{user}}');
-        } catch (Exception $e) {
-            echo "Table 'user' not found" . PHP_EOL;
-        }
-        try {
-            $this->dropTable('{{auth_item}}');
-        } catch (Exception $e) {
-            echo "Table 'auth_item' not found" . PHP_EOL;
-        }
-        try {
-            $this->dropTable('{{auth_item_child}}');
-        } catch (Exception $e) {
-            echo "Table 'auth_item_child' not found" . PHP_EOL;
-        }
-        try {
-            $this->dropTable('{{auth_assignment}}');
-        } catch (Exception $e) {
-            echo "Table 'auth_assignment' not found" . PHP_EOL;
-        }
-
-        $this->execute("ALTER TABLE {{assicurazioni}} ENGINE = MyISAM");
-        $this->execute("ALTER TABLE {{assicurazioni}} ENGINE = MyISAM");
-        $this->execute("ALTER TABLE {{barche}} ENGINE = MyISAM");
-        $this->execute("ALTER TABLE {{barche_trasferimenti}} ENGINE = MyISAM");
-        $this->execute("ALTER TABLE {{clienti}} ENGINE = MyISAM");
-        $this->execute("ALTER TABLE {{clienti_note}} ENGINE = MyISAM");
-        $this->execute("ALTER TABLE {{contratti}} ENGINE = MyISAM");
-        $this->execute("ALTER TABLE {{contratti_periodi}} ENGINE = MyISAM");
-        $this->execute("ALTER TABLE {{contratti_tipo}} ENGINE = MyISAM");
-        $this->execute("ALTER TABLE {{contratti_dettagli}} ENGINE = MyISAM");
-        $this->execute("ALTER TABLE {{costruttori}} ENGINE = MyISAM");
-        $this->execute("ALTER TABLE {{dimensioni}} ENGINE = MyISAM");
-        $this->execute("ALTER TABLE {{nazioni}} ENGINE = MyISAM");
-        $this->execute("ALTER TABLE {{pontili}} ENGINE = MyISAM");
-        $this->execute("ALTER TABLE {{pontili_tipo}} ENGINE = MyISAM");
-        $this->execute("ALTER TABLE {{posti_barca}} ENGINE = MyISAM");
-        $this->execute("ALTER TABLE {{tipologie_barche}} ENGINE = MyISAM");
-        $this->execute("ALTER TABLE {{scadenze}} ENGINE = MyISAM");
-        $this->execute("ALTER TABLE {{utenti}} ENGINE = MyISAM");
-        $this->execute("ALTER TABLE {{posti_barca_status}} ENGINE = MyISAM");
-        $this->execute("ALTER TABLE {{listini_posti_barca}} ENGINE = MyISAM");
-        $this->execute("ALTER TABLE {{listini_generici}} ENGINE = MyISAM");
-        $this->execute("ALTER TABLE {{fatture}} ENGINE = MyISAM");
-        $this->execute("ALTER TABLE {{fatture_righe}} ENGINE = MyISAM");
-        $this->execute("ALTER TABLE {{presenze}} ENGINE = MyISAM");
-        $this->execute("ALTER TABLE {{prima_nota}} ENGINE = MyISAM");
-        $this->execute("ALTER TABLE {{province}} ENGINE = MyISAM");
-
-        $this->execute("SET foreign_key_checks = 1;");
-	
-    	return true;
-	}
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

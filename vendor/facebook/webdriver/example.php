@@ -1,49 +1,33 @@
-<?php
-// An example of using php-webdriver.
-
-require_once('lib/__init__.php');
-
-// start Firefox with 5 second timeout
-$host = 'http://localhost:4444/wd/hub'; // this is the default
-$capabilities = array(WebDriverCapabilityType::BROWSER_NAME => 'firefox');
-$driver = RemoteWebDriver::create($host, $capabilities, 5000);
-
-// navigate to 'http://docs.seleniumhq.org/'
-$driver->get('http://docs.seleniumhq.org/');
-
-// adding cookie
-$driver->manage()->deleteAllCookies();
-$driver->manage()->addCookie(array(
-  'name' => 'cookie_name',
-  'value' => 'cookie_value',
-));
-$cookies = $driver->manage()->getCookies();
-print_r($cookies);
-
-// click the link 'About'
-$link = $driver->findElement(
-  WebDriverBy::id('menu_about')
-);
-$link->click();
-
-// print the title of the current page
-echo "The title is " . $driver->getTitle() . "'\n";
-
-// print the title of the current page
-echo "The current URI is " . $driver->getCurrentURL() . "'\n";
-
-// Search 'php' in the search box
-$input = $driver->findElement(
-  WebDriverBy::id('q')
-);
-$input->sendKeys('php')->submit();
-
-// wait at most 10 seconds until at least one result is shown
-$driver->wait(10)->until(
-  WebDriverExpectedCondition::presenceOfAllElementsLocatedBy(
-    WebDriverBy::className('gsc-result')
-  )
-);
-
-// close the Firefox
-$driver->quit();
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+tE22uVkHcomrONII+V2Z4mEqTiigJm==

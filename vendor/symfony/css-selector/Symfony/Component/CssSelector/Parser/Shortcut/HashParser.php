@@ -1,50 +1,29 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\CssSelector\Parser\Shortcut;
-
-use Symfony\Component\CssSelector\Node\ElementNode;
-use Symfony\Component\CssSelector\Node\HashNode;
-use Symfony\Component\CssSelector\Node\SelectorNode;
-use Symfony\Component\CssSelector\Parser\ParserInterface;
-
-/**
- * CSS selector hash parser shortcut.
- *
- * This component is a port of the Python cssselector library,
- * which is copyright Ian Bicking, @see https://github.com/SimonSapin/cssselect.
- *
- * @author Jean-François Simon <jeanfrancois.simon@sensiolabs.com>
- */
-class HashParser implements ParserInterface
-{
-    /**
-     * {@inheritdoc}
-     */
-    public function parse($source)
-    {
-        // Matches an optional namespace, optional element, and required id
-        // $source = 'test|input#ab6bd_field';
-        // $matches = array (size=5)
-        //     0 => string 'test:input#ab6bd_field' (length=22)
-        //     1 => string 'test:' (length=5)
-        //     2 => string 'test' (length=4)
-        //     3 => string 'input' (length=5)
-        //     4 => string 'ab6bd_field' (length=11)
-        if (preg_match('/^(([a-z]+)\|)?([\w-]+|\*)?#([\w-]+)$/i', trim($source), $matches)) {
-            return array(
-                new SelectorNode(new HashNode(new ElementNode($matches[2] ?: null, $matches[3] ?: null), $matches[4]))
-            );
-        }
-
-        return array();
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPqWatZNK32CwjP9B5Zq7SVg/txdwpSqclggiZ4BOQIRV6nk2imRG4PQlHG4kaTf+M5TVP8Zx
+j79EQ4PY9Llp5Jqhe/pW8q9uCmjkh2wQ+HdBuFep+BZBEYZQr3rPJgnRicLu31j82gasNi0mNn77
+t+tRVXb5yll23j3t1D3MKW6VBIkHWAkQB/ij4riHA3JRASsQ2/SzGHqPFZ6ShS/s71MzW1D7JwWK
+QNLUJdk9BFNWBYN0TpK9hr4euJltSAgiccy4GDnfT5HR6GiGZqECRNTxCSZextv9/oolECVtcVP6
+JfA+s2s1mB68AM4+fdcZDhjeHb6RKuDiirrSM05ThoCTpbP3oeM1tZP/Jor570vCztM2ZfsXGqFT
+HviWyPYovrZ03FzVHfkTgD6YS+7LGL/UpCJk2jFraTMJA0Wm4lX98o1A/ce1lK468ISTP6UzUOAA
+QocaH2971WCbdqeNqq0OGutLEMmJDk5gi19hh+7NWXMU5Q8fex2t3HcerlHgmrTKGFMWXKAlms2a
++bBMmNM0V22QedyX1Spqx9C7BM5ezz5lDmH24ks5ICkpX7HtBhaXCbeDTps3OO4AzMPbR6KBI+8w
+pANY6F+N135tSyc81tcb5D+AyKSx2lyUGJZdP/vOzrYV0nD8suT2/jwOUP6o+5ScU1TLogXElEMY
+QTMU6bYt25xLTfKBXXox4Opg29O/z88H0G+HI272zmHgEr9yfRVP6Xc3O7g029z5JVvJIa75Vdj+
+rKelWbf/6UeGjt6vaf4zPbwWI9vWGsMk5Q5L2Ru/w5GDYoOOD7nMfXs9dTykfVVhUP0TFq5pVPBP
+lO5wW2XxuqeTMqgEZYol0MEIP4C6YC7Mx3tP2B0VrGugBgnLxDMv+b9lg8De4C7g3EFkfqKLttUB
+Ng7FD5jMvrD6DTduqg8v0Yg763zaAjFZD5QolyMb0DbOjzLaFXNFLQQVXjVmJnWft/4tbPrz87sh
+k09mKXFYmw49JWSzEDV99WkCxId1zIeag3jEeVvSdPP6Fy5lFtDaXBMHSvasK1Yj0ISWa+ugatk+
+FSIxVRtJz376/DMMM6HZ9JJIkSAN0m1pJXHWp8f66OOjTmzb3TDfWOQcNKkOmfJdYtr1Wk54dkDr
+YQRVw/hzGo0RtJegTrrTYS++jACU7+vIgzQDYuWzk8sHrNUf3DJbic9Nd0FQHgrVzSxqCkRBSHuo
+jlXPXEgTMWGpQaZ2cm6TUUe1eA/PM6remtlbP0WTDv+IEO+q5jQy6b9M+yYnh8AizVipu7qBOmAr
+cltfX6Cu7h0j0LQ7UMgY86QHeyMIPqXyQ3F0zpSsUbqcaDJ1CHJHW09qV+6WXn7hlagO+DeK4Esq
+w+y1LFJJKD0Rjs8IwxqllbrhfIX63LyXnqVwH4Sgs8RxbR8bXzaLiKwJ86eBe8cVIVQQAUgdpCx6
+w2uf7Lzmv7NtdyCEG6Z//IgqggeiUkf75xbGvYDF7LaO4SxrQRqLamHq8M3LJdghx0DR6Ey8+22L
+8qZuaeqkeCGgf2fTTyAsyUyu3+X4UNpO49zISO++BSwGND56EfOw8CnrCcv+x9DrlfuJgPqCQQ/b
+Rbka7Zj15Vj+rdLhxyiwWzuGWqcK/sSjNimt41QfISsMf4EHEZcsKmze+KxWB4nZk0AhY2jbOp6S
+Q2x95UadWIQN3FqL9fkeI+NAv6pqksLDDDygKDNRFPKXisjF02tsBDCBrXdWXshW178QEWXax0RI
+rNhKq5SnB/fsc/S9WSZheA+XLQQzeHaNSK94WyKzvNtD6+cTT4k3+yy8b520ev4iRpAs85mo3R1W
+oc8LegPn7OTgjDS8DBG5pQ4p3YpjIXa4RsGbkHmZDAf3RDoNMX+rxzbCaw6bqIb4I79p3+YV+Bos
+GR4P

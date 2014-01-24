@@ -1,142 +1,52 @@
-<?php
-/**
- * PHP_Timer
- *
- * Copyright (c) 2010-2013, Sebastian Bergmann <sebastian@phpunit.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @package    PHP
- * @subpackage Timer
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2010 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://github.com/sebastianbergmann/php-timer
- * @since      File available since Release 1.0.0
- */
-
-require_once dirname(dirname(__FILE__)) . '/PHP/Timer.php';
-
-/**
- * Tests for PHP_Timer.
- *
- * @package    PHP
- * @subpackage Timer
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2010-2013 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @version    Release: @package_version@
- * @link       http://github.com/sebastianbergmann/php-timer
- * @since      Class available since Release 1.0.0
- */
-class PHP_TimerTest extends PHPUnit_Framework_TestCase
-{
-    /**
-     * @covers PHP_Timer::start
-     * @covers PHP_Timer::stop
-     */
-    public function testStartStop()
-    {
-        $this->assertInternalType('float', PHP_Timer::stop());
-    }
-
-    /**
-     * @covers       PHP_Timer::secondsToTimeString
-     * @dataProvider secondsProvider
-     */
-    public function testSecondsToTimeString($string, $seconds)
-    {
-        $this->assertEquals(
-          $string, PHP_Timer::secondsToTimeString($seconds)
-        );
-    }
-
-    /**
-     * @covers PHP_Timer::timeSinceStartOfRequest
-     */
-    public function testTimeSinceStartOfRequest()
-    {
-        $this->assertStringMatchesFormat(
-          '%f %s', PHP_Timer::timeSinceStartOfRequest()
-        );
-    }
-
-
-    /**
-     * @covers PHP_Timer::resourceUsage
-     */
-    public function testResourceUsage()
-    {
-        $this->assertStringMatchesFormat(
-          'Time: %s, Memory: %s', PHP_Timer::resourceUsage()
-        );
-    }
-
-    public function secondsProvider()
-    {
-        return array(
-          array('0 ms', 0),
-          array('1 ms', .001),
-          array('10 ms', .01),
-          array('100 ms', .1),
-          array('999 ms', .999),
-          array('1 second', .9999),
-          array('1 second', 1),
-          array('2 seconds', 2),
-          array('59.9 seconds', 59.9),
-          array('59.99 seconds', 59.99),
-          array('59.99 seconds', 59.999),
-          array('1 minute', 59.9999),
-          array('59 seconds', 59.001),
-          array('59.01 seconds', 59.01),
-          array('1 minute', 60),
-          array('1.01 minutes', 61),
-          array('2 minutes', 120),
-          array('2.01 minutes', 121),
-          array('59.99 minutes', 3599.9),
-          array('59.99 minutes', 3599.99),
-          array('59.99 minutes', 3599.999),
-          array('1 hour', 3599.9999),
-          array('59.98 minutes', 3599.001),
-          array('59.98 minutes', 3599.01),
-          array('1 hour', 3600),
-          array('1 hour', 3601),
-          array('1 hour', 3601.9),
-          array('1 hour', 3601.99),
-          array('1 hour', 3601.999),
-          array('1 hour', 3601.9999),
-          array('1.01 hours', 3659.9999),
-          array('1.01 hours', 3659.001),
-          array('1.01 hours', 3659.01),
-          array('2 hours', 7199.9999),
-        );
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+dKveDyxRHcoGPEmaNg5x/Xc5

@@ -1,135 +1,77 @@
-<?php
-
-require_once 'Swift/Tests/SwiftUnitTestCase.php';
-require_once 'Swift/StreamFilters/ByteArrayReplacementFilter.php';
-
-class Swift_StreamFilters_ByteArrayReplacementFilterTest
-    extends Swift_Tests_SwiftUnitTestCase
-{
-    public function testBasicReplacementsAreMade()
-    {
-        $filter = $this->_createFilter(array(0x61, 0x62), array(0x63, 0x64));
-        $this->assertEqual(
-            array(0x59, 0x60, 0x63, 0x64, 0x65),
-            $filter->filter(array(0x59, 0x60, 0x61, 0x62, 0x65))
-            );
-    }
-
-    public function testShouldBufferReturnsTrueIfPartialMatchAtEndOfBuffer()
-    {
-        $filter = $this->_createFilter(array(0x61, 0x62), array(0x63, 0x64));
-        $this->assertTrue($filter->shouldBuffer(array(0x59, 0x60, 0x61)),
-            '%s: Filter should buffer since 0x61 0x62 is the needle and the ending ' .
-            '0x61 could be from 0x61 0x62'
-            );
-    }
-
-    public function testFilterCanMakeMultipleReplacements()
-    {
-        $filter = $this->_createFilter(array(array(0x61), array(0x62)), array(0x63));
-        $this->assertEqual(
-            array(0x60, 0x63, 0x60, 0x63, 0x60),
-            $filter->filter(array(0x60, 0x61, 0x60, 0x62, 0x60))
-            );
-    }
-
-    public function testMultipleReplacementsCanBeDifferent()
-    {
-        $filter = $this->_createFilter(array(array(0x61), array(0x62)), array(array(0x63), array(0x64)));
-        $this->assertEqual(
-            array(0x60, 0x63, 0x60, 0x64, 0x60),
-            $filter->filter(array(0x60, 0x61, 0x60, 0x62, 0x60))
-            );
-    }
-
-    public function testShouldBufferReturnsFalseIfPartialMatchNotAtEndOfString()
-    {
-        $filter = $this->_createFilter(array(0x0D, 0x0A), array(0x0A));
-        $this->assertFalse($filter->shouldBuffer(array(0x61, 0x62, 0x0D, 0x0A, 0x63)),
-            '%s: Filter should not buffer since x0Dx0A is the needle and is not at EOF'
-            );
-    }
-
-    public function testShouldBufferReturnsTrueIfAnyOfMultipleMatchesAtEndOfString()
-    {
-        $filter = $this->_createFilter(array(array(0x61, 0x62), array(0x63)), array(0x64));
-        $this->assertTrue($filter->shouldBuffer(array(0x59, 0x60, 0x61)),
-            '%s: Filter should buffer since 0x61 0x62 is a needle and the ending ' .
-            '0x61 could be from 0x61 0x62'
-            );
-    }
-
-    public function testConvertingAllLineEndingsToCRLFWhenInputIsLF()
-    {
-        $filter = $this->_createFilter(
-            array(array(0x0D, 0x0A), array(0x0D), array(0x0A)),
-            array(array(0x0A), array(0x0A), array(0x0D, 0x0A))
-            );
-
-        $this->assertEqual(
-            array(0x60, 0x0D, 0x0A, 0x61, 0x0D, 0x0A, 0x62, 0x0D, 0x0A, 0x63),
-            $filter->filter(array(0x60, 0x0A, 0x61, 0x0A, 0x62, 0x0A, 0x63))
-            );
-    }
-
-    public function testConvertingAllLineEndingsToCRLFWhenInputIsCR()
-    {
-        $filter = $this->_createFilter(
-            array(array(0x0D, 0x0A), array(0x0D), array(0x0A)),
-            array(array(0x0A), array(0x0A), array(0x0D, 0x0A))
-            );
-
-        $this->assertEqual(
-            array(0x60, 0x0D, 0x0A, 0x61, 0x0D, 0x0A, 0x62, 0x0D, 0x0A, 0x63),
-            $filter->filter(array(0x60, 0x0D, 0x61, 0x0D, 0x62, 0x0D, 0x63))
-            );
-    }
-
-    public function testConvertingAllLineEndingsToCRLFWhenInputIsCRLF()
-    {
-        $filter = $this->_createFilter(
-            array(array(0x0D, 0x0A), array(0x0D), array(0x0A)),
-            array(array(0x0A), array(0x0A), array(0x0D, 0x0A))
-            );
-
-        $this->assertEqual(
-            array(0x60, 0x0D, 0x0A, 0x61, 0x0D, 0x0A, 0x62, 0x0D, 0x0A, 0x63),
-            $filter->filter(array(0x60, 0x0D, 0x0A, 0x61, 0x0D, 0x0A, 0x62, 0x0D, 0x0A, 0x63))
-            );
-    }
-
-    public function testConvertingAllLineEndingsToCRLFWhenInputIsLFCR()
-    {
-        $filter = $this->_createFilter(
-            array(array(0x0D, 0x0A), array(0x0D), array(0x0A)),
-            array(array(0x0A), array(0x0A), array(0x0D, 0x0A))
-            );
-
-        $this->assertEqual(
-            array(0x60, 0x0D, 0x0A, 0x0D, 0x0A, 0x61, 0x0D, 0x0A, 0x0D, 0x0A, 0x62, 0x0D, 0x0A, 0x0D, 0x0A, 0x63),
-            $filter->filter(array(0x60, 0x0A, 0x0D, 0x61, 0x0A, 0x0D, 0x62, 0x0A, 0x0D, 0x63))
-            );
-    }
-
-    public function testConvertingAllLineEndingsToCRLFWhenInputContainsLFLF()
-    {
-        //Lighthouse Bug #23
-
-        $filter = $this->_createFilter(
-            array(array(0x0D, 0x0A), array(0x0D), array(0x0A)),
-            array(array(0x0A), array(0x0A), array(0x0D, 0x0A))
-            );
-
-        $this->assertEqual(
-            array(0x60, 0x0D, 0x0A, 0x0D, 0x0A, 0x61, 0x0D, 0x0A, 0x0D, 0x0A, 0x62, 0x0D, 0x0A, 0x0D, 0x0A, 0x63),
-            $filter->filter(array(0x60, 0x0A, 0x0A, 0x61, 0x0A, 0x0A, 0x62, 0x0A, 0x0A, 0x63))
-            );
-    }
-
-    // -- Creation methods
-
-    private function _createFilter($search, $replace)
-    {
-        return new Swift_StreamFilters_ByteArrayReplacementFilter($search, $replace);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

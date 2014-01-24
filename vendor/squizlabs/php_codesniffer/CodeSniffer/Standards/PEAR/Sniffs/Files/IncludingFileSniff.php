@@ -1,137 +1,63 @@
-<?php
-/**
- * PEAR_Sniffs_Files_IncludingFileSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * PEAR_Sniffs_Files_IncludingFileSniff.
- *
- * Checks that the include_once is used in conditional situations, and
- * require_once is used elsewhere. Also checks that brackets do not surround
- * the file being included.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class PEAR_Sniffs_Files_IncludingFileSniff implements PHP_CodeSniffer_Sniff
-{
-
-    /**
-     * Conditions that should use include_once
-     *
-     * @var array(int)
-     */
-    private static $_conditions = array(
-                                   T_IF,
-                                   T_ELSE,
-                                   T_ELSEIF,
-                                   T_SWITCH,
-                                  );
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        return array(
-                T_INCLUDE_ONCE,
-                T_REQUIRE_ONCE,
-                T_REQUIRE,
-                T_INCLUDE,
-               );
-
-    }//end register()
-
-
-    /**
-     * Processes this test, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token in the
-     *                                        stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-
-        $nextToken = $phpcsFile->findNext(PHP_CodeSniffer_Tokens::$emptyTokens, ($stackPtr + 1), null, true);
-        if ($tokens[$nextToken]['code'] === T_OPEN_PARENTHESIS) {
-            $error = '"%s" is a statement not a function; no parentheses are required';
-            $data  = array($tokens[$stackPtr]['content']);
-            $phpcsFile->addError($error, $stackPtr, 'BracketsNotRequired', $data);
-        }
-
-        $inCondition = (count($tokens[$stackPtr]['conditions']) !== 0) ? true : false;
-
-        // Check to see if this including statement is within the parenthesis
-        // of a condition. If that's the case then we need to process it as being
-        // within a condition, as they are checking the return value.
-        if (isset($tokens[$stackPtr]['nested_parenthesis']) === true) {
-            foreach ($tokens[$stackPtr]['nested_parenthesis'] as $left => $right) {
-                if (isset($tokens[$left]['parenthesis_owner']) === true) {
-                    $inCondition = true;
-                }
-            }
-        }
-
-        // Check to see if they are assigning the return value of this
-        // including call. If they are then they are probably checking it, so
-        // it's conditional.
-        $previous = $phpcsFile->findPrevious(PHP_CodeSniffer_Tokens::$emptyTokens, ($stackPtr - 1), null, true);
-        if (in_array($tokens[$previous]['code'], PHP_CodeSniffer_Tokens::$assignmentTokens) === true) {
-            // The have assigned the return value to it, so its conditional.
-            $inCondition = true;
-        }
-
-        $tokenCode = $tokens[$stackPtr]['code'];
-        if ($inCondition === true) {
-            // We are inside a conditional statement. We need an include_once.
-            if ($tokenCode === T_REQUIRE_ONCE) {
-                $error  = 'File is being conditionally included; ';
-                $error .= 'use "include_once" instead';
-                $phpcsFile->addError($error, $stackPtr, 'UseIncludeOnce');
-            } else if ($tokenCode === T_REQUIRE) {
-                $error  = 'File is being conditionally included; ';
-                $error .= 'use "include" instead';
-                $phpcsFile->addError($error, $stackPtr, 'UseInclude');
-            }
-        } else {
-            // We are unconditionally including, we need a require_once.
-            if ($tokenCode === T_INCLUDE_ONCE) {
-                $error  = 'File is being unconditionally included; ';
-                $error .= 'use "require_once" instead';
-                $phpcsFile->addError($error, $stackPtr, 'UseRequireOnce');
-            } else if ($tokenCode === T_INCLUDE) {
-                $error  = 'File is being unconditionally included; ';
-                $error .= 'use "require" instead';
-                $phpcsFile->addError($error, $stackPtr, 'UseRequire');
-            }
-        }//end if
-
-    }//end process()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

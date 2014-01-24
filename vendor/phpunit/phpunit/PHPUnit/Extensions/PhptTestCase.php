@@ -1,269 +1,108 @@
-<?php
-/**
- * PHPUnit
- *
- * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @package    PHPUnit
- * @subpackage Extensions_PhptTestCase
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      File available since Release 3.1.4
- */
-
-if (stream_resolve_include_path('PEAR/RunTest.php')) {
-    $currentErrorReporting = error_reporting(E_ERROR | E_WARNING | E_PARSE);
-    require_once 'PEAR/RunTest.php';
-    error_reporting($currentErrorReporting);
-}
-
-/**
- * Wrapper to run .phpt test cases.
- *
- * @package    PHPUnit
- * @subpackage Extensions_PhptTestCase
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      Class available since Release 3.1.4
- */
-class PHPUnit_Extensions_PhptTestCase implements PHPUnit_Framework_Test, PHPUnit_Framework_SelfDescribing
-{
-    /**
-     * The filename of the .phpt file.
-     *
-     * @var    string
-     */
-    protected $filename;
-
-    /**
-     * Options for PEAR_RunTest.
-     *
-     * @var    array
-     */
-    protected $options = array();
-
-    /**
-     * Constructs a test case with the given filename.
-     *
-     * @param  string $filename
-     * @param  array  $options
-     */
-    public function __construct($filename, array $options = array())
-    {
-        if (!is_string($filename)) {
-            throw PHPUnit_Util_InvalidArgumentHelper::factory(1, 'string');
-        }
-
-        if (!is_file($filename)) {
-            throw new PHPUnit_Framework_Exception(
-              sprintf(
-                'File "%s" does not exist.',
-                $filename
-              )
-            );
-        }
-
-        $this->filename = $filename;
-        $this->options  = $options;
-    }
-
-    /**
-     * Counts the number of test cases executed by run(TestResult result).
-     *
-     * @return integer
-     */
-    public function count()
-    {
-        return 1;
-    }
-
-    /**
-     * Runs a test and collects its result in a TestResult instance.
-     *
-     * @param  PHPUnit_Framework_TestResult $result
-     * @param  array                        $options
-     * @return PHPUnit_Framework_TestResult
-     */
-    public function run(PHPUnit_Framework_TestResult $result = NULL, array $options = array())
-    {
-        if (!class_exists('PEAR_RunTest', FALSE)) {
-            throw new PHPUnit_Framework_Exception('Class PEAR_RunTest not found.');
-        }
-
-        if (isset($GLOBALS['_PEAR_destructor_object_list']) &&
-            is_array($GLOBALS['_PEAR_destructor_object_list']) &&
-            !empty($GLOBALS['_PEAR_destructor_object_list'])) {
-            $pearDestructorObjectListCount = count($GLOBALS['_PEAR_destructor_object_list']);
-        } else {
-            $pearDestructorObjectListCount = 0;
-        }
-
-        if ($result === NULL) {
-            $result = new PHPUnit_Framework_TestResult;
-        }
-
-        $coverage = $result->getCollectCodeCoverageInformation();
-        $options  = array_merge($options, $this->options);
-
-        if (!isset($options['include_path'])) {
-            $options['include_path'] = get_include_path();
-        }
-
-        if ($coverage) {
-            $options['coverage'] = TRUE;
-        } else {
-            $options['coverage'] = FALSE;
-        }
-
-        $currentErrorReporting = error_reporting(E_ERROR | E_WARNING | E_PARSE);
-        $runner                = new PEAR_RunTest(new PHPUnit_Extensions_PhptTestCase_Logger, $options);
-
-        if ($coverage) {
-            $runner->xdebug_loaded = TRUE;
-        } else {
-            $runner->xdebug_loaded = FALSE;
-        }
-
-        $result->startTest($this);
-
-        PHP_Timer::start();
-
-        $buffer = $runner->run($this->filename, $options);
-        $time   = PHP_Timer::stop();
-
-        error_reporting($currentErrorReporting);
-
-        $base         = basename($this->filename);
-        $path         = dirname($this->filename);
-        $coverageFile = $path . DIRECTORY_SEPARATOR . str_replace(
-                          '.phpt', '.xdebug', $base
-                        );
-        $diffFile     = $path . DIRECTORY_SEPARATOR . str_replace(
-                          '.phpt', '.diff', $base
-                        );
-        $expFile      = $path . DIRECTORY_SEPARATOR . str_replace(
-                          '.phpt', '.exp', $base
-                        );
-        $logFile      = $path . DIRECTORY_SEPARATOR . str_replace(
-                          '.phpt', '.log', $base
-                        );
-        $outFile      = $path . DIRECTORY_SEPARATOR . str_replace(
-                          '.phpt', '.out', $base
-                        );
-        $phpFile      = $path . DIRECTORY_SEPARATOR . str_replace(
-                          '.phpt', '.php', $base
-                        );
-
-        if (is_object($buffer) && $buffer instanceof PEAR_Error) {
-            $result->addError(
-              $this,
-              new PHPUnit_Framework_Exception($buffer->getMessage()),
-              $time
-            );
-        }
-
-        else if ($buffer == 'SKIPPED') {
-            $result->addFailure($this, new PHPUnit_Framework_SkippedTestError, 0);
-        }
-
-        else if ($buffer != 'PASSED') {
-            $expContent = file_get_contents($expFile);
-            $outContent = file_get_contents($outFile);
-
-            $result->addFailure(
-              $this,
-              new PHPUnit_Framework_ComparisonFailure(
-                $expContent,
-                $outContent,
-                $expContent,
-                $outContent
-              ),
-              $time
-            );
-        }
-
-        foreach (array($diffFile, $expFile, $logFile, $phpFile, $outFile) as $file) {
-            if (file_exists($file)) {
-                unlink($file);
-            }
-        }
-
-        if ($coverage && file_exists($coverageFile)) {
-            eval('$coverageData = ' . file_get_contents($coverageFile) . ';');
-            unset($coverageData[$phpFile]);
-
-            $result->getCodeCoverage()->append($coverageData, $this);
-            unlink($coverageFile);
-        }
-
-        $result->endTest($this, $time);
-
-        // Do not invoke PEAR's destructor mechanism for PHP 4
-        // as it raises an E_STRICT.
-        if ($pearDestructorObjectListCount == 0) {
-            unset($GLOBALS['_PEAR_destructor_object_list']);
-        } else {
-            $count = count($GLOBALS['_PEAR_destructor_object_list']) - $pearDestructorObjectListCount;
-
-            for ($i = 0; $i < $count; $i++) {
-                array_pop($GLOBALS['_PEAR_destructor_object_list']);
-            }
-        }
-
-        return $result;
-    }
-
-    /**
-     * Returns the name of the test case.
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->toString();
-    }
-
-    /**
-     * Returns a string representation of the test case.
-     *
-     * @return string
-     */
-    public function toString()
-    {
-        return $this->filename;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

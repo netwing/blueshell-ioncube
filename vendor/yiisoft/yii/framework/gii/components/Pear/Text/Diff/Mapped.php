@@ -1,55 +1,41 @@
-<?php
-/**
- * $Horde: framework/Text_Diff/Diff/Mapped.php,v 1.3.2.3 2008/01/04 10:37:27 jan Exp $
- *
- * Copyright 2007-2008 The Horde Project (http://www.horde.org/)
- *
- * See the enclosed file COPYING for license information (LGPL). If you did
- * not receive this file, see http://opensource.org/licenses/lgpl-license.php.
- *
- * @package Text_Diff
- * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
- */
-class Text_Diff_Mapped extends Text_Diff {
-
-    /**
-     * Computes a diff between sequences of strings.
-     *
-     * This can be used to compute things like case-insensitve diffs, or diffs
-     * which ignore changes in white-space.
-     *
-     * @param array $from_lines         An array of strings.
-     * @param array $to_lines           An array of strings.
-     * @param array $mapped_from_lines  This array should have the same size
-     *                                  number of elements as $from_lines.  The
-     *                                  elements in $mapped_from_lines and
-     *                                  $mapped_to_lines are what is actually
-     *                                  compared when computing the diff.
-     * @param array $mapped_to_lines    This array should have the same number
-     *                                  of elements as $to_lines.
-     */
-    function Text_Diff_Mapped($from_lines, $to_lines,
-                              $mapped_from_lines, $mapped_to_lines)
-    {
-        assert(count($from_lines) == count($mapped_from_lines));
-        assert(count($to_lines) == count($mapped_to_lines));
-
-        parent::Text_Diff($mapped_from_lines, $mapped_to_lines);
-
-        $xi = $yi = 0;
-        for ($i = 0; $i < count($this->_edits); $i++) {
-            $orig = &$this->_edits[$i]->orig;
-            if (is_array($orig)) {
-                $orig = array_slice($from_lines, $xi, count($orig));
-                $xi += count($orig);
-            }
-
-            $final = &$this->_edits[$i]->final;
-            if (is_array($final)) {
-                $final = array_slice($to_lines, $yi, count($final));
-                $yi += count($final);
-            }
-        }
-    }
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

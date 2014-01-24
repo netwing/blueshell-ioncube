@@ -1,1254 +1,531 @@
-<?php
-/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
-/**
-* Syntax highlighter class generator
-*
-* To simplify the process of creating new syntax highlighters
-* for different languages, {@link Text_Highlighter_Generator} class is
-* provided. It takes highlighting rules from XML file and generates
-* a code of a class inherited from {@link Text_Highlighter}.
-*
-* PHP versions 4 and 5
-*
-* LICENSE: This source file is subject to version 3.0 of the PHP license
-* that is available through the world-wide-web at the following URI:
-* http://www.php.net/license/3_0.txt.  If you did not receive a copy of
-* the PHP License and are unable to obtain it through the web, please
-* send a note to license@php.net so we can mail you a copy immediately.
-*
-* @category   Text
-* @package    Text_Highlighter
-* @author     Andrey Demenev <demenev@gmail.com>
-* @copyright  2004-2006 Andrey Demenev
-* @license    http://www.php.net/license/3_0.txt  PHP License
-* @version    CVS: $Id: Generator.php,v 1.1 2007/06/03 02:36:35 ssttoo Exp $
-* @link       http://pear.php.net/package/Text_Highlighter
-*/
-
-// {{{ error codes
-
-define ('TEXT_HIGHLIGHTER_EMPTY_RE',          1);
-define ('TEXT_HIGHLIGHTER_INVALID_RE',        2);
-define ('TEXT_HIGHLIGHTER_EMPTY_OR_MISSING',  3);
-define ('TEXT_HIGHLIGHTER_EMPTY',             4);
-define ('TEXT_HIGHLIGHTER_REGION_REGION',     5);
-define ('TEXT_HIGHLIGHTER_REGION_BLOCK',      6);
-define ('TEXT_HIGHLIGHTER_BLOCK_REGION',      7);
-define ('TEXT_HIGHLIGHTER_KEYWORD_BLOCK',     8);
-define ('TEXT_HIGHLIGHTER_KEYWORD_INHERITS',  9);
-define ('TEXT_HIGHLIGHTER_PARSE',            10);
-define ('TEXT_HIGHLIGHTER_FILE_WRITE',       11);
-define ('TEXT_HIGHLIGHTER_FILE_READ',        12);
-// }}}
-
-/**
-* Syntax highliter class generator class
-*
-* This class is used to generate PHP classes
-* from XML files with highlighting rules
-*
-* Usage example
-* <code>
-*require_once 'Text/Highlighter/Generator.php';
-*$generator =& new Text_Highlighter_Generator('php.xml');
-*$generator->generate();
-*$generator->saveCode('PHP.php');
-* </code>
-*
-* A command line script <b>generate</b> is provided for
-* class generation (installs in scripts/Text/Highlighter).
-*
-* @author     Andrey Demenev <demenev@gmail.com>
-* @copyright  2004-2006 Andrey Demenev
-* @license    http://www.php.net/license/3_0.txt  PHP License
-* @version    Release: 0.7.1
-* @link       http://pear.php.net/package/Text_Highlighter
-*/
-
-class Text_Highlighter_Generator extends  XML_Parser
-{
-    // {{{ properties
-    /**
-    * Whether to do case folding.
-    * We have to declare it here, because XML_Parser
-    * sets case folding in constructor
-    *
-    * @var  boolean
-    */
-    var $folding = false;
-
-    /**
-    * Holds name of file with highlighting rules
-    *
-    * @var string
-    * @access private
-    */
-    var $_syntaxFile;
-
-    /**
-    * Current element being processed
-    *
-    * @var array
-    * @access private
-    */
-    var $_element;
-
-    /**
-    * List of regions
-    *
-    * @var array
-    * @access private
-    */
-    var $_regions = array();
-
-    /**
-    * List of blocks
-    *
-    * @var array
-    * @access private
-    */
-    var $_blocks = array();
-
-    /**
-    * List of keyword groups
-    *
-    * @var array
-    * @access private
-    */
-    var $_keywords = array();
-
-    /**
-    * List of authors
-    *
-    * @var array
-    * @access private
-    */
-    var $_authors = array();
-
-    /**
-    * Name of language
-    *
-    * @var string
-    * @access public
-    */
-    var $language = '';
-
-    /**
-    * Generated code
-    *
-    * @var string
-    * @access private
-    */
-    var $_code = '';
-
-    /**
-    * Default class
-    *
-    * @var string
-    * @access private
-    */
-    var $_defClass = 'default';
-
-    /**
-    * Comment
-    *
-    * @var string
-    * @access private
-    */
-    var $_comment = '';
-
-    /**
-    * Flag for comment processing
-    *
-    * @var boolean
-    * @access private
-    */
-    var $_inComment = false;
-
-    /**
-    * Sorting order of current block/region
-    *
-    * @var integer
-    * @access private
-    */
-    var $_blockOrder = 0;
-
-    /**
-    * Generation errors
-    *
-    * @var array
-    * @access private
-    */
-    var $_errors;
-
-    // }}}
-    // {{{ constructor
-
-    /**
-    * Constructor
-    *
-    * @param string $syntaxFile Name of XML file
-    * with syntax highlighting rules
-    *
-    * @access public
-    */
-
-    function __construct($syntaxFile = '')
-    {
-        XML_Parser::XML_Parser(null, 'func');
-        $this->_errors = array();
-        $this->_declareErrorMessages();
-        if ($syntaxFile) {
-            $this->setInputFile($syntaxFile);
-        }
-    }
-
-    // }}}
-    // {{{ _formatError
-
-    /**
-    * Format error message
-    *
-    * @param integer $code error code
-    * @param string $params parameters
-    * @param string $fileName file name
-    * @param integer $lineNo line number
-    * @return  array
-    * @access  public
-    */
-    function _formatError($code, $params, $fileName, $lineNo)
-    {
-        $template = $this->_templates[$code];
-        $ret = call_user_func_array('sprintf', array_merge(array($template), $params));
-        if ($fileName) {
-            $ret = '[' . $fileName . '] ' . $ret;
-        }
-        if ($lineNo) {
-            $ret .= ' (line ' . $lineNo . ')';
-        }
-        return $ret;
-    }
-
-    // }}}
-    // {{{ declareErrorMessages
-
-    /**
-    * Set up error message templates
-    *
-    * @access  private
-    */
-    function _declareErrorMessages()
-    {
-        $this->_templates = array (
-        TEXT_HIGHLIGHTER_EMPTY_RE => 'Empty regular expression',
-        TEXT_HIGHLIGHTER_INVALID_RE => 'Invalid regular expression : %s',
-        TEXT_HIGHLIGHTER_EMPTY_OR_MISSING => 'Empty or missing %s',
-        TEXT_HIGHLIGHTER_EMPTY  => 'Empty %s',
-        TEXT_HIGHLIGHTER_REGION_REGION => 'Region %s refers undefined region %s',
-        TEXT_HIGHLIGHTER_REGION_BLOCK => 'Region %s refers undefined block %s',
-        TEXT_HIGHLIGHTER_BLOCK_REGION => 'Block %s refers undefined region %s',
-        TEXT_HIGHLIGHTER_KEYWORD_BLOCK => 'Keyword group %s refers undefined block %s',
-        TEXT_HIGHLIGHTER_KEYWORD_INHERITS => 'Keyword group %s inherits undefined block %s',
-        TEXT_HIGHLIGHTER_PARSE => '%s',
-        TEXT_HIGHLIGHTER_FILE_WRITE => 'Error writing file %s',
-        TEXT_HIGHLIGHTER_FILE_READ => '%s'
-        );
-    }
-
-    // }}}
-    // {{{ setInputFile
-
-    /**
-    * Sets the input xml file to be parsed
-    *
-    * @param    string      Filename (full path)
-    * @return   boolean
-    * @access   public
-    */
-    function setInputFile($file)
-    {
-        $this->_syntaxFile = $file;
-        $ret = parent::setInputFile($file);
-        if (PEAR::isError($ret)) {
-            $this->_error(TEXT_HIGHLIGHTER_FILE_READ, $ret->message);
-            return false;
-        }
-        return true;
-    }
-
-    // }}}
-    // {{{ generate
-
-    /**
-    * Generates class code
-    *
-    * @access public
-    */
-
-    function generate()
-    {
-        $this->_regions    = array();
-        $this->_blocks     = array();
-        $this->_keywords   = array();
-        $this->language    = '';
-        $this->_code       = '';
-        $this->_defClass   = 'default';
-        $this->_comment    = '';
-        $this->_inComment  = false;
-        $this->_authors    = array();
-        $this->_blockOrder = 0;
-        $this->_errors   = array();
-
-        $ret = $this->parse();
-        if (PEAR::isError($ret)) {
-            $this->_error(TEXT_HIGHLIGHTER_PARSE, $ret->message);
-            return false;
-        }
-        return true;
-    }
-
-    // }}}
-    // {{{ getCode
-
-    /**
-    * Returns generated code as a string.
-    *
-    * @return string Generated code
-    * @access public
-    */
-
-    function getCode()
-    {
-        return $this->_code;
-    }
-
-    // }}}
-    // {{{ saveCode
-
-    /**
-    * Saves generated class to file. Note that {@link Text_Highlighter::factory()}
-    * assumes that filename is uppercase (SQL.php, DTD.php, etc), and file
-    * is located in Text/Highlighter
-    *
-    * @param string $filename Name of file to write the code to
-    * @return boolean true on success, false on failure
-    * @access public
-    */
-
-    function saveCode($filename)
-    {
-        $f = @fopen($filename, 'wb');
-        if (!$f) {
-            $this->_error(TEXT_HIGHLIGHTER_FILE_WRITE, array('outfile'=>$filename));
-            return false;
-        }
-        fwrite ($f, $this->_code);
-        fclose($f);
-        return true;
-    }
-
-    // }}}
-    // {{{ hasErrors
-
-    /**
-    * Reports if there were errors
-    *
-    * @return boolean
-    * @access public
-    */
-
-    function hasErrors()
-    {
-        return count($this->_errors) > 0;
-    }
-
-    // }}}
-    // {{{ getErrors
-
-    /**
-    * Returns errors
-    *
-    * @return array
-    * @access public
-    */
-
-    function getErrors()
-    {
-        return $this->_errors;
-    }
-
-    // }}}
-    // {{{ _sortBlocks
-
-    /**
-    * Sorts blocks
-    *
-    * @access private
-    */
-
-    function _sortBlocks($b1, $b2) {
-        return $b1['order'] - $b2['order'];
-    }
-
-    // }}}
-    // {{{ _sortLookFor
-    /**
-    * Sort 'look for' list
-    * @return int
-    * @param string $b1
-    * @param string $b2
-    */
-    function _sortLookFor($b1, $b2) {
-        $o1 = isset($this->_blocks[$b1]) ? $this->_blocks[$b1]['order'] : $this->_regions[$b1]['order'];
-        $o2 = isset($this->_blocks[$b2]) ? $this->_blocks[$b2]['order'] : $this->_regions[$b2]['order'];
-        return $o1 - $o2;
-    }
-
-    // }}}
-    // {{{ _makeRE
-
-    /**
-    * Adds delimiters and modifiers to regular expression if necessary
-    *
-    * @param string $text Original RE
-    * @return string Final RE
-    * @access private
-    */
-    function _makeRE($text, $case = false)
-    {
-        if (!strlen($text)) {
-            $this->_error(TEXT_HIGHLIGHTER_EMPTY_RE);
-        }
-        if (!strlen($text) || $text{0} != '/') {
-            $text = '/' . $text . '/';
-        }
-        if (!$case) {
-            $text .= 'i';
-        }
-        $php_errormsg = '';
-        @preg_match($text, '');
-        if ($php_errormsg) {
-            $this->_error(TEXT_HIGHLIGHTER_INVALID_RE, $php_errormsg);
-        }
-        preg_match ('#^/(.+)/(.*)$#', $text, $m);
-        if (@$m[2]) {
-            $text = '(?' . $m[2] . ')' . $m[1];
-        } else {
-            $text = $m[1];
-        }
-        return $text;
-    }
-
-    // }}}
-    // {{{ _exportArray
-
-    /**
-    * Exports array as PHP code
-    *
-    * @param array $array
-    * @return string Code
-    * @access private
-    */
-    function _exportArray($array)
-    {
-        $array = var_export($array, true);
-        return trim(preg_replace('~^(\s*)~m','        \1\1',$array));
-    }
-
-    // }}}
-    // {{{ _countSubpatterns
-    /**
-    * Find number of capturing suppaterns in regular expression
-    * @return int
-    * @param string $re Regular expression (without delimiters)
-    */
-    function _countSubpatterns($re)
-    {
-        preg_match_all('/' . $re . '/', '', $m);
-        return count($m)-1;
-    }
-
-    // }}}
-
-    /**#@+
-    * @access private
-    * @param resource $xp      XML parser resource
-    * @param string   $elem    XML element name
-    * @param array    $attribs XML element attributes
-    */
-
-    // {{{ xmltag_Default
-
-    /**
-    * start handler for <default> element
-    */
-    function xmltag_Default($xp, $elem, $attribs)
-    {
-        $this->_aliasAttributes($attribs);
-        if (!isset($attribs['innerGroup']) || $attribs['innerGroup'] === '') {
-            $this->_error(TEXT_HIGHLIGHTER_EMPTY_OR_MISSING, 'innerGroup');
-        }
-        $this->_defClass = @$attribs['innerGroup'];
-    }
-
-    // }}}
-    // {{{ xmltag_Region
-
-    /**
-    * start handler for <region> element
-    */
-    function xmltag_Region($xp, $elem, $attribs)
-    {
-        $this->_aliasAttributes($attribs);
-        if (!isset($attribs['name']) || $attribs['name'] === '') {
-            $this->_error(TEXT_HIGHLIGHTER_EMPTY_OR_MISSING, 'region name');
-        }
-        if (!isset($attribs['innerGroup']) || $attribs['innerGroup'] === '') {
-            $this->_error(TEXT_HIGHLIGHTER_EMPTY_OR_MISSING, 'innerGroup');
-        }
-        $this->_element = array('name' => $attribs['name']);
-        $this->_element['line'] = xml_get_current_line_number($this->parser);
-        if (isset($attribs['case'])) {
-            $this->_element['case'] = $attribs['case'] == 'yes';
-        } else {
-            $this->_element['case'] = $this->_case;
-        }
-        $this->_element['innerGroup'] = $attribs['innerGroup'];
-        $this->_element['delimGroup'] = isset($attribs['delimGroup']) ?
-        $attribs['delimGroup'] :
-        $attribs['innerGroup'];
-        $this->_element['start'] = $this->_makeRE(@$attribs['start'], $this->_element['case']);
-        $this->_element['end'] = $this->_makeRE(@$attribs['end'], $this->_element['case']);
-        $this->_element['contained'] = @$attribs['contained'] == 'yes';
-        $this->_element['never-contained'] = @$attribs['never-contained'] == 'yes';
-        $this->_element['remember'] = @$attribs['remember'] == 'yes';
-        if (isset($attribs['startBOL']) && $attribs['startBOL'] == 'yes') {
-            $this->_element['startBOL'] = true;
-        }
-        if (isset($attribs['endBOL']) && $attribs['endBOL'] == 'yes') {
-            $this->_element['endBOL'] = true;
-        }
-        if (isset($attribs['neverAfter'])) {
-            $this->_element['neverafter'] = $this->_makeRE($attribs['neverAfter']);
-        }
-    }
-
-    // }}}
-    // {{{ xmltag_Block
-
-    /**
-    * start handler for <block> element
-    */
-    function xmltag_Block($xp, $elem, $attribs)
-    {
-        $this->_aliasAttributes($attribs);
-        if (!isset($attribs['name']) || $attribs['name'] === '') {
-            $this->_error(TEXT_HIGHLIGHTER_EMPTY_OR_MISSING, 'block name');
-        }
-        if (isset($attribs['innerGroup']) && $attribs['innerGroup'] === '') {
-            $this->_error(TEXT_HIGHLIGHTER_EMPTY, 'innerGroup');
-        }
-        $this->_element = array('name' => $attribs['name']);
-        $this->_element['line'] = xml_get_current_line_number($this->parser);
-        if (isset($attribs['case'])) {
-            $this->_element['case'] = $attribs['case'] == 'yes';
-        } else {
-            $this->_element['case'] = $this->_case;
-        }
-        if (isset($attribs['innerGroup'])) {
-            $this->_element['innerGroup'] = @$attribs['innerGroup'];
-        }
-        $this->_element['match'] = $this->_makeRE($attribs['match'], $this->_element['case']);
-        $this->_element['contained'] = @$attribs['contained'] == 'yes';
-        $this->_element['multiline'] = @$attribs['multiline'] == 'yes';
-        if (isset($attribs['BOL']) && $attribs['BOL'] == 'yes') {
-            $this->_element['BOL'] = true;
-        }
-        if (isset($attribs['neverAfter'])) {
-            $this->_element['neverafter'] = $this->_makeRE($attribs['neverAfter']);
-        }
-    }
-
-    // }}}
-    // {{{ cdataHandler
-
-    /**
-    * Character data handler. Used for comment
-    */
-    function cdataHandler($xp, $cdata)
-    {
-        if ($this->_inComment) {
-            $this->_comment .= $cdata;
-        }
-    }
-
-    // }}}
-    // {{{ xmltag_Comment
-
-    /**
-    * start handler for <comment> element
-    */
-    function xmltag_Comment($xp, $elem, $attribs)
-    {
-        $this->_comment = '';
-        $this->_inComment = true;
-    }
-
-    // }}}
-    // {{{ xmltag_PartGroup
-
-    /**
-    * start handler for <partgroup> element
-    */
-    function xmltag_PartGroup($xp, $elem, $attribs)
-    {
-        $this->_aliasAttributes($attribs);
-        if (!isset($attribs['innerGroup']) || $attribs['innerGroup'] === '') {
-            $this->_error(TEXT_HIGHLIGHTER_EMPTY_OR_MISSING, 'innerGroup');
-        }
-        $this->_element['partClass'][$attribs['index']] = @$attribs['innerGroup'];
-    }
-
-    // }}}
-    // {{{ xmltag_PartClass
-
-    /**
-    * start handler for <partclass> element
-    */
-    function xmltag_PartClass($xp, $elem, $attribs)
-    {
-        $this->xmltag_PartGroup($xp, $elem, $attribs);
-    }
-
-    // }}}
-    // {{{ xmltag_Keywords
-
-    /**
-    * start handler for <keywords> element
-    */
-    function xmltag_Keywords($xp, $elem, $attribs)
-    {
-        $this->_aliasAttributes($attribs);
-        if (!isset($attribs['name']) || $attribs['name'] === '') {
-            $this->_error(TEXT_HIGHLIGHTER_EMPTY_OR_MISSING, 'keyword group name');
-        }
-        if (!isset($attribs['innerGroup']) || $attribs['innerGroup'] === '') {
-            $this->_error(TEXT_HIGHLIGHTER_EMPTY_OR_MISSING, 'innerGroup');
-        }
-        if (!isset($attribs['inherits']) || $attribs['inherits'] === '') {
-            $this->_error(TEXT_HIGHLIGHTER_EMPTY_OR_MISSING, 'inherits');
-        }
-        $this->_element = array('name'=>@$attribs['name']);
-        $this->_element['line'] = xml_get_current_line_number($this->parser);
-        $this->_element['innerGroup'] = @$attribs['innerGroup'];
-        if (isset($attribs['case'])) {
-            $this->_element['case'] = $attribs['case'] == 'yes';
-        } else {
-            $this->_element['case'] = $this->_case;
-        }
-        $this->_element['inherits'] = @$attribs['inherits'];
-        if (isset($attribs['otherwise'])) {
-            $this->_element['otherwise'] = $attribs['otherwise'];
-        }
-        if (isset($attribs['ifdef'])) {
-            $this->_element['ifdef'] = $attribs['ifdef'];
-        }
-        if (isset($attribs['ifndef'])) {
-            $this->_element['ifndef'] = $attribs['ifndef'];
-        }
-    }
-
-    // }}}
-    // {{{ xmltag_Keyword
-
-    /**
-    * start handler for <keyword> element
-    */
-    function xmltag_Keyword($xp, $elem, $attribs)
-    {
-        if (!isset($attribs['match']) || $attribs['match'] === '') {
-            $this->_error(TEXT_HIGHLIGHTER_EMPTY_OR_MISSING, 'match');
-        }
-        $keyword = @$attribs['match'];
-        if (!$this->_element['case']) {
-            $keyword = strtolower($keyword);
-        }
-        $this->_element['match'][$keyword] = true;
-    }
-
-    // }}}
-    // {{{ xmltag_Contains
-
-    /**
-    * start handler for <contains> element
-    */
-    function xmltag_Contains($xp, $elem, $attribs)
-    {
-        $this->_element['contains-all'] = @$attribs['all'] == 'yes';
-        if (isset($attribs['region'])) {
-            $this->_element['contains']['region'][$attribs['region']] =
-            xml_get_current_line_number($this->parser);
-        }
-        if (isset($attribs['block'])) {
-            $this->_element['contains']['block'][$attribs['block']] =
-            xml_get_current_line_number($this->parser);
-        }
-    }
-
-    // }}}
-    // {{{ xmltag_But
-
-    /**
-    * start handler for <but> element
-    */
-    function xmltag_But($xp, $elem, $attribs)
-    {
-        if (isset($attribs['region'])) {
-            $this->_element['not-contains']['region'][$attribs['region']] = true;
-        }
-        if (isset($attribs['block'])) {
-            $this->_element['not-contains']['block'][$attribs['block']] = true;
-        }
-    }
-
-    // }}}
-    // {{{ xmltag_Onlyin
-
-    /**
-    * start handler for <onlyin> element
-    */
-    function xmltag_Onlyin($xp, $elem, $attribs)
-    {
-        if (!isset($attribs['region']) || $attribs['region'] === '') {
-            $this->_error(TEXT_HIGHLIGHTER_EMPTY_OR_MISSING, 'region');
-        }
-        $this->_element['onlyin'][$attribs['region']] = xml_get_current_line_number($this->parser);
-    }
-
-    // }}}
-    // {{{ xmltag_Author
-
-    /**
-    * start handler for <author> element
-    */
-    function xmltag_Author($xp, $elem, $attribs)
-    {
-        if (!isset($attribs['name']) || $attribs['name'] === '') {
-            $this->_error(TEXT_HIGHLIGHTER_EMPTY_OR_MISSING, 'author name');
-        }
-        $this->_authors[] = array(
-        'name'  => @$attribs['name'],
-        'email' => (string)@$attribs['email']
-        );
-    }
-
-    // }}}
-    // {{{ xmltag_Highlight
-
-    /**
-    * start handler for <highlight> element
-    */
-    function xmltag_Highlight($xp, $elem, $attribs)
-    {
-        if (!isset($attribs['lang']) || $attribs['lang'] === '') {
-            $this->_error(TEXT_HIGHLIGHTER_EMPTY_OR_MISSING, 'language name');
-        }
-        $this->_code = '';
-        $this->language = strtoupper(@$attribs['lang']);
-        $this->_case = @$attribs['case'] == 'yes';
-    }
-
-    // }}}
-
-    /**#@-*/
-
-    // {{{ _error
-
-    /**
-    * Add an error message
-    *
-    * @param integer $code Error code
-    * @param mixed   $message Error message or array with error message parameters
-    * @param integer $lineNo Source code line number
-    * @access private
-    */
-    function _error($code, $params = array(), $lineNo = 0)
-    {
-        if (!$lineNo && !empty($this->parser)) {
-            $lineNo = xml_get_current_line_number($this->parser);
-        }
-        $this->_errors[] = $this->_formatError($code, $params, $this->_syntaxFile, $lineNo);
-    }
-
-    // }}}
-    // {{{ _aliasAttributes
-
-    /**
-    * BC trick
-    *
-    * @param array $attrs attributes
-    */
-    function _aliasAttributes(&$attrs)
-    {
-        if (isset($attrs['innerClass']) && !isset($attrs['innerGroup'])) {
-            $attrs['innerGroup'] = $attrs['innerClass'];
-        }
-        if (isset($attrs['delimClass']) && !isset($attrs['delimGroup'])) {
-            $attrs['delimGroup'] = $attrs['delimClass'];
-        }
-        if (isset($attrs['partClass']) && !isset($attrs['partGroup'])) {
-            $attrs['partGroup'] = $attrs['partClass'];
-        }
-    }
-
-    // }}}
-
-    /**#@+
-    * @access private
-    * @param resource $xp      XML parser resource
-    * @param string   $elem    XML element name
-    */
-
-    // {{{ xmltag_Comment_
-
-    /**
-    * end handler for <comment> element
-    */
-    function xmltag_Comment_($xp, $elem)
-    {
-        $this->_inComment = false;
-    }
-
-    // }}}
-    // {{{ xmltag_Region_
-
-    /**
-    * end handler for <region> element
-    */
-    function xmltag_Region_($xp, $elem)
-    {
-        $this->_element['type'] = 'region';
-        $this->_element['order'] = $this->_blockOrder ++;
-        $this->_regions[$this->_element['name']] = $this->_element;
-    }
-
-    // }}}
-    // {{{ xmltag_Keywords_
-
-    /**
-    * end handler for <keywords> element
-    */
-    function xmltag_Keywords_($xp, $elem)
-    {
-        $this->_keywords[$this->_element['name']] = $this->_element;
-    }
-
-    // }}}
-    // {{{ xmltag_Block_
-
-    /**
-    * end handler for <block> element
-    */
-    function xmltag_Block_($xp, $elem)
-    {
-        $this->_element['type'] = 'block';
-        $this->_element['order'] = $this->_blockOrder ++;
-        $this->_blocks[$this->_element['name']] = $this->_element;
-    }
-
-    // }}}
-    // {{{ xmltag_Highlight_
-
-    /**
-    * end handler for <highlight> element
-    */
-    function xmltag_Highlight_($xp, $elem)
-    {
-        $conditions = array();
-        $toplevel = array();
-        foreach ($this->_blocks as $i => $current) {
-            if (!$current['contained'] && !isset($current['onlyin'])) {
-                $toplevel[] = $i;
-            }
-            foreach ((array)@$current['onlyin'] as $region => $lineNo) {
-                if (!isset($this->_regions[$region])) {
-                    $this->_error(TEXT_HIGHLIGHTER_BLOCK_REGION,
-                    array(
-                    'block' => $current['name'],
-                    'region' => $region
-                    ));
-                }
-            }
-        }
-        foreach ($this->_regions as $i=>$current) {
-            if (!$current['contained'] && !isset($current['onlyin'])) {
-                $toplevel[] = $i;
-            }
-            foreach ((array)@$current['contains']['region'] as $region => $lineNo) {
-                if (!isset($this->_regions[$region])) {
-                    $this->_error(TEXT_HIGHLIGHTER_REGION_REGION,
-                    array(
-                    'region1' => $current['name'],
-                    'region2' => $region
-                    ));
-                }
-            }
-            foreach ((array)@$current['contains']['block'] as $region => $lineNo) {
-                if (!isset($this->_blocks[$region])) {
-                    $this->_error(TEXT_HIGHLIGHTER_REGION_BLOCK,
-                    array(
-                    'block' => $current['name'],
-                    'region' => $region
-                    ));
-                }
-            }
-            foreach ((array)@$current['onlyin'] as $region => $lineNo) {
-                if (!isset($this->_regions[$region])) {
-                    $this->_error(TEXT_HIGHLIGHTER_REGION_REGION,
-                    array(
-                    'region1' => $current['name'],
-                    'region2' => $region
-                    ));
-                }
-            }
-            foreach ($this->_regions as $j => $region) {
-                if (isset($region['onlyin'])) {
-                    $suits = isset($region['onlyin'][$current['name']]);
-                } elseif (isset($current['not-contains']['region'][$region['name']])) {
-                    $suits = false;
-                } elseif (isset($current['contains']['region'][$region['name']])) {
-                    $suits = true;
-                } else {
-                    $suits = @$current['contains-all'] && @!$region['never-contained'];
-                }
-                if ($suits) {
-                    $this->_regions[$i]['lookfor'][] = $j;
-                }
-            }
-            foreach ($this->_blocks as $j=>$region) {
-                if (isset($region['onlyin'])) {
-                    $suits = isset($region['onlyin'][$current['name']]);
-                } elseif (isset($current['not-contains']['block'][$region['name']])) {
-                    $suits = false;
-                } elseif (isset($current['contains']['block'][$region['name']])) {
-                    $suits = true;
-                } else {
-                    $suits = @$current['contains-all'] && @!$region['never-contained'];
-                }
-                if ($suits) {
-                    $this->_regions[$i]['lookfor'][] = $j;
-                }
-            }
-        }
-        foreach ($this->_blocks as $i=>$current) {
-            unset ($this->_blocks[$i]['never-contained']);
-            unset ($this->_blocks[$i]['contained']);
-            unset ($this->_blocks[$i]['contains-all']);
-            unset ($this->_blocks[$i]['contains']);
-            unset ($this->_blocks[$i]['onlyin']);
-            unset ($this->_blocks[$i]['line']);
-        }
-
-        foreach ($this->_regions as $i=>$current) {
-            unset ($this->_regions[$i]['never-contained']);
-            unset ($this->_regions[$i]['contained']);
-            unset ($this->_regions[$i]['contains-all']);
-            unset ($this->_regions[$i]['contains']);
-            unset ($this->_regions[$i]['onlyin']);
-            unset ($this->_regions[$i]['line']);
-        }
-
-        foreach ($this->_keywords as $name => $keyword) {
-            if (isset($keyword['ifdef'])) {
-                $conditions[$keyword['ifdef']][] = array($name, true);
-            }
-            if (isset($keyword['ifndef'])) {
-                $conditions[$keyword['ifndef']][] = array($name, false);
-            }
-            unset($this->_keywords[$name]['line']);
-            if (!isset($this->_blocks[$keyword['inherits']])) {
-                $this->_error(TEXT_HIGHLIGHTER_KEYWORD_INHERITS,
-                array(
-                'keyword' => $keyword['name'],
-                'block' => $keyword['inherits']
-                ));
-            }
-            if (isset($keyword['otherwise']) && !isset($this->_blocks[$keyword['otherwise']]) ) {
-                $this->_error(TEXT_HIGHLIGHTER_KEYWORD_BLOCK,
-                array(
-                'keyword' => $keyword['name'],
-                'block' => $keyword['inherits']
-                ));
-            }
-        }
-
-        $syntax=array(
-        'keywords'   => $this->_keywords,
-        'blocks'     => array_merge($this->_blocks, $this->_regions),
-        'toplevel'   => $toplevel,
-        );
-        uasort($syntax['blocks'], array(&$this, '_sortBlocks'));
-        foreach ($syntax['blocks'] as $name => $block) {
-            if ($block['type'] == 'block') {
-                continue;
-            }
-            if (is_array(@$syntax['blocks'][$name]['lookfor'])) {
-                usort($syntax['blocks'][$name]['lookfor'], array(&$this, '_sortLookFor'));
-            }
-        }
-        usort($syntax['toplevel'], array(&$this, '_sortLookFor'));
-        $syntax['case'] = $this->_case;
-        $this->_code = <<<CODE
-<?php
-/**
- * Auto-generated class. {$this->language} syntax highlighting
-CODE;
-
-        if ($this->_comment) {
-            $comment = preg_replace('~^~m',' * ',$this->_comment);
-            $this->_code .= "\n * \n" . $comment;
-        }
-
-        $this->_code .= <<<CODE
- 
- *
- * PHP version 4 and 5
- *
- * LICENSE: This source file is subject to version 3.0 of the PHP license
- * that is available through the world-wide-web at the following URI:
- * http://www.php.net/license/3_0.txt.  If you did not receive a copy of
- * the PHP License and are unable to obtain it through the web, please
- * send a note to license@php.net so we can mail you a copy immediately.
- *
- * @copyright  2004-2006 Andrey Demenev
- * @license    http://www.php.net/license/3_0.txt  PHP License
- * @link       http://pear.php.net/package/Text_Highlighter
- * @category   Text
- * @package    Text_Highlighter
- * @version    generated from: $this->_syntaxFile
-
-CODE;
-
-        foreach ($this->_authors as $author) {
-            $this->_code .= ' * @author ' . $author['name'];
-            if ($author['email']) {
-                $this->_code .= ' <' . $author['email'] . '>';
-            }
-            $this->_code .= "\n";
-        }
-
-        $this->_code .= <<<CODE
- *
- */
-
-/**
- * Auto-generated class. {$this->language} syntax highlighting
- *
-
-CODE;
-        foreach ($this->_authors as $author) {
-            $this->_code .= ' * @author ' . $author['name'];
-            if ($author['email']) {
-                $this->_code .= ' <' . $author['email']. '>';
-            }
-            $this->_code .= "\n";
-        }
-
-
-        $this->_code .= <<<CODE
- * @category   Text
- * @package    Text_Highlighter
- * @copyright  2004-2006 Andrey Demenev
- * @license    http://www.php.net/license/3_0.txt  PHP License
- * @version    Release: 0.7.1
- * @link       http://pear.php.net/package/Text_Highlighter
- */
-class  Text_Highlighter_{$this->language} extends Text_Highlighter
-{
-    
-CODE;
-        $this->_code .= 'var $_language = \'' . strtolower($this->language) . "';\n\n";
-        $array = var_export($syntax, true);
-        $array = trim(preg_replace('~^(\s*)~m','        \1\1',$array));
-        //        \$this->_syntax = $array;
-        $this->_code .= <<<CODE
-
-    /**
-     *  Constructor
-     *
-     * @param array  \$options
-     * @access public
-     */
-    function __construct(\$options=array())
-    {
-
-CODE;
-        $this->_code .= <<<CODE
-
-        \$this->_options = \$options;
-CODE;
-        $states = array();
-        $i = 0;
-        foreach ($syntax['blocks'] as $name => $block) {
-            if ($block['type'] == 'region') {
-                $states[$name] = $i++;
-            }
-        }
-        $regs = array();
-        $counts = array();
-        $delim = array();
-        $inner = array();
-        $end = array();
-        $stat = array();
-        $keywords = array();
-        $parts = array();
-        $kwmap = array();
-        $subst = array();
-        $re = array();
-        $ce = array();
-        $rd = array();
-        $in = array();
-        $st = array();
-        $kw = array();
-        $sb = array();
-        foreach ($syntax['toplevel'] as $name) {
-            $block = $syntax['blocks'][$name];
-            if ($block['type'] == 'block') {
-                $kwm = array();
-                $re[] = '(' . $block['match'] . ')';
-                $ce[] = $this->_countSubpatterns($block['match']);
-                $rd[] = '';
-                $sb[] = false;;
-                $st[] = -1;
-                foreach ($syntax['keywords'] as $kwname => $kwgroup) {
-                    if ($kwgroup['inherits'] != $name) {
-                        continue;
-                    }
-                    $gre = implode('|', array_keys($kwgroup['match']));
-                    if (!$kwgroup['case']) {
-                        $gre = '(?i)' . $gre;
-                    }
-                    $kwm[$kwname][] =  $gre;
-                    $kwmap[$kwname] = $kwgroup['innerGroup'];
-                }
-                foreach ($kwm as $g => $ma) {
-                    $kwm[$g] = '/^(' . implode(')|(', $ma) . ')$/';
-                }
-                $kw[] = $kwm;
-            } else {
-                $kw[] = -1;
-                $re[] = '(' . $block['start'] . ')';
-                $ce[] = $this->_countSubpatterns($block['start']);
-                $rd[] = $block['delimGroup'];
-                $st[] = $states[$name];
-                $sb[] = $block['remember'];
-            }
-            $in[] = $block['innerGroup'];
-        }
-        $re = implode('|', $re);
-        $regs[-1] = '/' . $re . '/';
-        $counts[-1] = $ce;
-        $delim[-1] = $rd;
-        $inner[-1] = $in;
-        $stat[-1] = $st;
-        $keywords[-1] = $kw;
-        $subst[-1] = $sb;
-
-        foreach ($syntax['blocks'] as $ablock) {
-            if ($ablock['type'] != 'region') {
-                continue;
-            }
-            $end[] = '/' . $ablock['end'] . '/';
-            $re = array();
-            $ce = array();
-            $rd = array();
-            $in = array();
-            $st = array();
-            $kw = array();
-            $pc = array();
-            $sb = array();
-            foreach ((array)@$ablock['lookfor'] as $name) {
-                $block = $syntax['blocks'][$name];
-                if (isset($block['partClass'])) {
-                    $pc[] = $block['partClass'];
-                } else {
-                    $pc[] = null;
-                }
-                if ($block['type'] == 'block') {
-                    $kwm = array();;
-                    $re[] = '(' . $block['match'] . ')';
-                    $ce[] = $this->_countSubpatterns($block['match']);
-                    $rd[] = '';
-                    $sb[] = false;
-                    $st[] = -1;
-                    foreach ($syntax['keywords'] as $kwname => $kwgroup) {
-                        if ($kwgroup['inherits'] != $name) {
-                            continue;
-                        }
-                        $gre = implode('|', array_keys($kwgroup['match']));
-                        if (!$kwgroup['case']) {
-                            $gre = '(?i)' . $gre;
-                        }
-                        $kwm[$kwname][] =  $gre;
-                        $kwmap[$kwname] = $kwgroup['innerGroup'];
-                    }
-                    foreach ($kwm as $g => $ma) {
-                        $kwm[$g] = '/^(' . implode(')|(', $ma) . ')$/';
-                    }
-                    $kw[] = $kwm;
-                } else {
-                    $sb[] = $block['remember'];
-                    $kw[] = -1;
-                    $re[] = '(' . $block['start'] . ')';
-                    $ce[] = $this->_countSubpatterns($block['start']);
-                    $rd[] = $block['delimGroup'];
-                    $st[] = $states[$name];
-                }
-                $in[] = $block['innerGroup'];
-            }
-            $re = implode('|', $re);
-            $regs[] = '/' . $re . '/';
-            $counts[] = $ce;
-            $delim[] = $rd;
-            $inner[] = $in;
-            $stat[] = $st;
-            $keywords[] = $kw;
-            $parts[] = $pc;
-            $subst[] = $sb;
-        }
-
-
-        $this->_code .= "\n        \$this->_regs = " . $this->_exportArray($regs);
-        $this->_code .= ";\n        \$this->_counts = " .$this->_exportArray($counts);
-        $this->_code .= ";\n        \$this->_delim = " .$this->_exportArray($delim);
-        $this->_code .= ";\n        \$this->_inner = " .$this->_exportArray($inner);
-        $this->_code .= ";\n        \$this->_end = " .$this->_exportArray($end);
-        $this->_code .= ";\n        \$this->_states = " .$this->_exportArray($stat);
-        $this->_code .= ";\n        \$this->_keywords = " .$this->_exportArray($keywords);
-        $this->_code .= ";\n        \$this->_parts = " .$this->_exportArray($parts);
-        $this->_code .= ";\n        \$this->_subst = " .$this->_exportArray($subst);
-        $this->_code .= ";\n        \$this->_conditions = " .$this->_exportArray($conditions);
-        $this->_code .= ";\n        \$this->_kwmap = " .$this->_exportArray($kwmap);
-        $this->_code .= ";\n        \$this->_defClass = '" .$this->_defClass . '\'';
-        $this->_code .= <<<CODE
-;
-        \$this->_checkDefines();
-    }
-    
-}
-CODE;
-}
-
-// }}}
-}
-
-
-/*
-* Local variables:
-* tab-width: 4
-* c-basic-offset: 4
-* c-hanging-comment-ender-p: nil
-* End:
-*/
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+mxlSpAf+

@@ -1,183 +1,92 @@
-<?php
-/**
- * CStringValidator class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CStringValidator validates that the attribute value is of certain length.
- *
- * Note, this validator should only be used with string-typed attributes.
- *
- * In addition to the {@link message} property for setting a custom error message,
- * CStringValidator has a couple custom error messages you can set that correspond to different
- * validation scenarios. For defining a custom message when the string is too short,
- * you may use the {@link tooShort} property. Similarly with {@link tooLong}. The messages may contain
- * placeholders that will be replaced with the actual content. In addition to the "{attribute}"
- * placeholder, recognized by all validators (see {@link CValidator}), CStringValidator allows for the following
- * placeholders to be specified:
- * <ul>
- * <li>{min}: when using {@link tooShort}, replaced with minimum length, {@link min}, if set.</li>
- * <li>{max}: when using {@link tooLong}, replaced with the maximum length, {@link max}, if set.</li>
- * <li>{length}: when using {@link message}, replaced with the exact required length, {@link is}, if set.</li>
- * </ul>
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.validators
- * @since 1.0
- */
-class CStringValidator extends CValidator
-{
-	/**
-	 * @var integer maximum length. Defaults to null, meaning no maximum limit.
-	 */
-	public $max;
-	/**
-	 * @var integer minimum length. Defaults to null, meaning no minimum limit.
-	 */
-	public $min;
-	/**
-	 * @var integer exact length. Defaults to null, meaning no exact length limit.
-	 */
-	public $is;
-	/**
-	 * @var string user-defined error message used when the value is too short.
-	 */
-	public $tooShort;
-	/**
-	 * @var string user-defined error message used when the value is too long.
-	 */
-	public $tooLong;
-	/**
-	 * @var boolean whether the attribute value can be null or empty. Defaults to true,
-	 * meaning that if the attribute is empty, it is considered valid.
-	 */
-	public $allowEmpty=true;
-	/**
-	 * @var string the encoding of the string value to be validated (e.g. 'UTF-8').
-	 * This property is used only when mbstring PHP extension is enabled.
-	 * The value of this property will be used as the 2nd parameter of the
-	 * mb_strlen() function. If this property is not set, the application charset
-	 * will be used.
-	 * If this property is set false, then strlen() will be used even if mbstring is enabled.
-	 * @since 1.1.1
-	 */
-	public $encoding;
-
-	/**
-	 * Validates the attribute of the object.
-	 * If there is any error, the error message is added to the object.
-	 * @param CModel $object the object being validated
-	 * @param string $attribute the attribute being validated
-	 */
-	protected function validateAttribute($object,$attribute)
-	{
-		$value=$object->$attribute;
-		if($this->allowEmpty && $this->isEmpty($value))
-			return;
-
-		if(is_array($value))
-		{
-			// https://github.com/yiisoft/yii/issues/1955
-			$this->addError($object,$attribute,Yii::t('yii','{attribute} is invalid.'));
-			return;
-		}
-
-		if(function_exists('mb_strlen') && $this->encoding!==false)
-			$length=mb_strlen($value, $this->encoding ? $this->encoding : Yii::app()->charset);
-		else
-			$length=strlen($value);
-
-		if($this->min!==null && $length<$this->min)
-		{
-			$message=$this->tooShort!==null?$this->tooShort:Yii::t('yii','{attribute} is too short (minimum is {min} characters).');
-			$this->addError($object,$attribute,$message,array('{min}'=>$this->min));
-		}
-		if($this->max!==null && $length>$this->max)
-		{
-			$message=$this->tooLong!==null?$this->tooLong:Yii::t('yii','{attribute} is too long (maximum is {max} characters).');
-			$this->addError($object,$attribute,$message,array('{max}'=>$this->max));
-		}
-		if($this->is!==null && $length!==$this->is)
-		{
-			$message=$this->message!==null?$this->message:Yii::t('yii','{attribute} is of the wrong length (should be {length} characters).');
-			$this->addError($object,$attribute,$message,array('{length}'=>$this->is));
-		}
-	}
-
-	/**
-	 * Returns the JavaScript needed for performing client-side validation.
-	 * @param CModel $object the data object being validated
-	 * @param string $attribute the name of the attribute to be validated.
-	 * @return string the client-side validation script.
-	 * @see CActiveForm::enableClientValidation
-	 * @since 1.1.7
-	 */
-	public function clientValidateAttribute($object,$attribute)
-	{
-		$label=$object->getAttributeLabel($attribute);
-
-		if(($message=$this->message)===null)
-			$message=Yii::t('yii','{attribute} is of the wrong length (should be {length} characters).');
-		$message=strtr($message, array(
-			'{attribute}'=>$label,
-			'{length}'=>$this->is,
-		));
-
-		if(($tooShort=$this->tooShort)===null)
-			$tooShort=Yii::t('yii','{attribute} is too short (minimum is {min} characters).');
-		$tooShort=strtr($tooShort, array(
-			'{attribute}'=>$label,
-			'{min}'=>$this->min,
-		));
-
-		if(($tooLong=$this->tooLong)===null)
-			$tooLong=Yii::t('yii','{attribute} is too long (maximum is {max} characters).');
-		$tooLong=strtr($tooLong, array(
-			'{attribute}'=>$label,
-			'{max}'=>$this->max,
-		));
-
-		$js='';
-		if($this->min!==null)
-		{
-			$js.="
-if(value.length<{$this->min}) {
-	messages.push(".CJSON::encode($tooShort).");
-}
-";
-		}
-		if($this->max!==null)
-		{
-			$js.="
-if(value.length>{$this->max}) {
-	messages.push(".CJSON::encode($tooLong).");
-}
-";
-		}
-		if($this->is!==null)
-		{
-			$js.="
-if(value.length!={$this->is}) {
-	messages.push(".CJSON::encode($message).");
-}
-";
-		}
-
-		if($this->allowEmpty)
-		{
-			$js="
-if(jQuery.trim(value)!='') {
-	$js
-}
-";
-		}
-
-		return $js;
-	}
-}
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cP+9AYv98072b0OuUiQLefwQK4RBwycR1sgsiva101uJkbI37INpRyVQnRG8sSHc2CI2BXmpS
+vbtlMenoAjbMFfywf9CQGMrHv/8DL0aFpKyholpLRZc4XACdJLNlVS5NeFnPQWm3rUP5XUHshz6+
+wVn897m1d4meX5U9lNg9NTskRHiI8kLbzUr2FQV7QNMMI8WRj86JfjrGeTnNR3NtADJbOhZE8v4T
+s/Xew+Eo6ggYACPWQJw8hr4euJltSAgiccy4GDnfTATagx84EvRE46YRZzYhNNuq/szRVs/6VrCw
+lcyF5yvU9iYj4vuHCjF7U3A9xYwVzyAhpoEwV/OLsn7ftzecXmEOoDwXjgMeg5Wl7qJALJlYnkGM
+m9iLzecAeBvbUDNCIvcNcFAAg9+tRpH/lekuQolwlEVjrx5OZ0CmVSpu9404yhNiFTm7BZFEGGxi
+cSR+0yxP0fJ9FH266PFOTOCW4UtDcY6wwthp8rD5S+XeDu2VjNqOgdFXMklbQV5AYO6M8hja4y9K
+re4aJ3lB3pu7gIOWfp0HQBVrKE8cHx0onE/isYQp6m2b/DbUrfMjS5nNjMXbZbf+JHAjfLPRqcRY
+v8cEByfpKKX/EAHSh9gF/L5+B57/mqcLAJC+YMfOhsNWEebiuQtoJdoQ0tEKKQNLf2xIhKPjBSbv
+A8q3eekgpiook2XAA7zv+oGJa8oM3x4GXJIihJ1sg4llO030iP4U3pyb/zGbI0H+XpMUNwdvg9Db
+fx9n0X+VWfZL46e6knVGnISw7LzR3FLllptr7f/VGavqGtU4jS6dQaCl6twhaPCZPjlHdBa09NTo
+7KwjcLwhsmFfk+ZEk1uGq5XNQYmAGJPUpPH9TIssca9e+AcBYs8gf7r0PJylATX2o2DiU2fDPMvi
+kxINhQwHfBuDHreKp9bmo9SEuIfYaeaPPu6s2V7y3t27bbkHtpObjwXOviJzwwq16F/oeZ4WdLbH
+CgTnWnKltnCSxEAvA//sdksIlN6Ceu9vSDDmxCQgTh9HySQ1G5qsdIaNvqBeLVBh7WzvmB2eizod
+8QQveM43u4jfRIPkLXccJ+4EM5DOyJ16tKCNbkngMbKBJfYAN4+nu6ln1FBYX4ZPbWJZI4XRihB2
+fGYzCeE+CPDW0JYxRuulkNOPSHiNvTOcQ6APl4YUuZudf3yMgSqRgUBRWAyZ18cMMY3+Cw5NfCII
+m1tIWtXPRmgQ0b3ZyVwCD1tlqBBGYoB0nt+NleLPUeSTUqtXRXyr1F6tVVdh9/8QtMFccbkh7GGV
+xulOsATrEJzP3Mz4e8/o2RI9370L3EZD7wFiBkANabkSTvNc8LFiAViaaCipbDsFGBMAfwdbJLGL
+CGrKs4nR+0m9Y5hKHcxY+oLFBtT+fVnJ54xFCn/g9DiUVMCjgrsgeUAa4+pC3LomPThjS6D/PkGE
+cP8JaShIwu74Uvx4Mp9vZh9Bwsubh1zszJlY/TEZAIn3V4VhZ0ZJljQe6DipzT4L8i2mBPvh0Nb8
+4zVRYQ5Vg6i68MTy4M6bmV8FZbxce4rao0xIL9goNrUVCviXbioNaTw6kKR+b8Uo1EpigVNNgM/m
+gz+eUqJzT091a2WzJxH0N7UGU+QeBZ2ZdcX4uTsH5D59gxIz4hlSAc/Dl8YLnwz59TuP8dlVEMXN
+E0/7+jzLmQhlKP2iWszLmuz0FQb0nU0RSCGQ4XD92/YJT/exSurX9CPbEHLN64XFdfxGIFsW2IXQ
+8bstcDyGvIfyeL18VNC8Q4j2k732WpYx1CzWSYR5Y4LGZYvx8pvuXkhoq3J9SuJYN2W5GWny900X
+XL3BHCQk2UH2uz/bepfci2VJK+1++VB9FILD0iFYUJ+HjPcP0NL5pxK9fwBsecLqPQjlJqNDiJUt
+/jbZEsRomQJbhoiDTv7nhxgBL6gJhnsZeQdvl/UYwTRN944DWraC/+vjJ97Ib/GuMXdIfc8HpWUG
+Yf8I5YUGeqeObNg/rw4tKeKatglpyBfIbfsdvbk/m1Lq13Y1MVvy66Lm/pvToHcDf3MH8lsyHf1i
+RnGxCJx1Uex/1MBJxuklSHHEDTerfTJlhb1kJqhbvIMbNOH/RYTtZksqdZZ8d/GnPeAU9kowoz1/
+dBMgfOEg/tmk9sjh+d3KnY0EY1QEBdsUOQn+U5HU9n6D6y/KgCODvPjpBC/92uDNqsDQ4NR8jInQ
+aa8OCwRu6jo76aRULunhDmKxSbZPIDZVE/bRa2Vvu7MBKO17+IktT5NxQMN06h4tqSoz1QsFL2aG
+wFRrdnUfnKXQedm1MT0u4HItXhwGdK51duZuw6IvGoR4qQ9VBqNdNdPhSsXZMaToDcreIB87JWo1
+Vhobg14TiD344hz2JgfseZTCsW5eYE6Gu4+W1HGieKYamSHDTI285svgODoxud96m8Z5v9Hjq66Q
+GrbLTRAZS4ukfkVsWI9pnhPkSgwxOMRTDd5+hGqujWsGnu939P5x3idTJ3kpnfdYuDLQUY4evSRR
+IiG43PQVu7l0HNwusq3jQwmXHkX5YlAmSENO552LI946v+1m/j4ITG9h6v37Mt6QrR27tcx/0Ntb
+w/xDiHmhhbZvljvrWartvrke/gLk9No26ouLbSvuQW0j36TGGZdHpsMiFzjzbMtY06KtAY/khacK
+NuN6w+GNOAeEuAEdXHOK7f4TUouhdZlbMZJ/PVkfoBn++yUJjxepeHcCxfE7RmTrChrTJhgO+ag5
+/A6Vd06uAEAk9qWMKLV9LxolSgXNMSODA5tkXa1cZ2w/tP58ZxPeGOezLtaMhCGiRIvrmZ0VGVsN
+N0hjuMJMdtaLPA7k3D2s8Ugute9ohIFwTD8jhZ607j/t/kAcbJZ4tsyAwU0qqhvL5crLXrSnBIQS
+7hyRRAwpNsMnki8Mwwq5EtYnnX7enmf2Gf3FSn0gpoLn3Ab5gP1T7gvgyf6pRLlFp378aSS6Dv1J
+D/ZzOAVluaTDDAYZxPfw5lxvOGJAg/PXtSF7fryvUGeWvqv0EhVAXKeOg37Fpi2lQD1WR13hunXI
+Ef29dp3HoPPnwPPlZ/eTGjnXLRhBDCLM2//0LQ2Bga5hbfSPZQNX+JPKvEHB2y0qZXEfHAVi92n/
+hd72OiibxuoN8+F2zOcT5rbntvwiTzV8xOpImFYQEdZioRzJDdCY8IchQ+o5ryxyyNXdBRQs9Jem
+6bvWoAJUjmpEGyZI7lWTI4xEQnWZ8CKsR/ABygeKGpPCoX7y8tK8oMndGjdN0H7NZEj7EmH/Utfu
+9bWb0Rt8XEH81uJpv23rY4n1XbJsjYdU1M9O44DUZV5A3/FkpXnE1RlKVI5OKL497tmlPQVKfla4
+RBOQSJ2uaSuofY0bcfcJHZeK5zIB+zvxtwCv13kizwkKYQk/RFYHEL5pmtNIs0gWcy7Xq8KL/p+k
+teqi3QMILPH9gXEe03+gesqoTYnWG6tZzzJ3tXlWPcXRS1FaOrFZPdh0jfJoZ7AxXqm5tucdG+vg
+keZ76O+1UgFRNY1eja+NMVQt8Ksv9kn4ktCUm8BD/hdpvvjfFf2SAZzs3EUg2VU7pP+4EM6nHizA
+5a6F1pa5K2T3p5yA9VdkxIOuBAQJeeV2ilrx79mO8qcVWlWRAdvN5MQXpqtxH89D2TkJKP/vK7FP
+Z27cYVAAxxmD6oIujXiKH9sV9FhYhfXrOm02yprmoOAsriXnBacUG332EQUwpGAPpf60Zo+2mDzv
+xj4UIyNqPEjcEY2WY08xrnQXwirVjbEOMb7/pQc6iwM36KkhGSAD+IEkYAvR4DD+8QwmdXewLf7q
+6o4uCI2VNH31rL7epdRXPW46yzzgkSw1VUkJQARP7XDFyE8Zv8kh9Jtn74jfaIpjXqIWlFsKuRMF
+cpudSp6svDnW8oDs/QOX6meTtL+IDCOYIUjcCq2tFksQ3//Uo+ROW37KRrnein29muRyfkgO/ld2
+J3KgaOgqkO6FC6rRyo3WuKNKBKRNO6QRBaM5HkZhBjp5G70TIu3r/h3ZH0BGmLQPx0v/YVTmP8hu
+H1zxnyCcZxSOomBAlbadzL1xgGNIGxVJM+kcgN/gPDWjoIHgRSoGr41JPtJhh/OSR8tECcjs7FzS
+m0qf4gxsoM7sJH7LDIIst7D2gElQFHPiwBoZgeD7EluQG2EkznR0F/beqIOqqw6S2GrV0x3r3AjX
+hd1A9TeZljSGRue5QefyHgr2GaKkCyX5DNNr27Hm2Q5KyYOZXsMbo9tlLlJ3fE+rJifU23UhmscL
+3oz+5TcmLOw8g0tfL3KKTw0HW8WfPBod2rDWUxYQGgYen05Lqs8VUEjfm8nEgwfACegLjznUJILa
+KK+v6NgyPEDe8pKMtB/lVMEgpu5Ar/j4BaiP9oyPzfqpDNAbzz/5Mwd4lqDDSa4bwddPW2eiYwuz
+/EzYrKFESqBb4biSoQ8XwN3PiJaW6DNkwn9FN327COXVa3PmRQgITnXO5Iz5hX5qYPGdwTiFRqu/
+99hDKVRvwnwiX3KP/sxL14uqKUisQ6K1uV4nnmmrDSoo2Y7tQZ6hoc9YUN3V4K/k6HzXltheEWft
+ip8X/iXdZrjxeixvNacsMaD5iW4N0+RdGCNz9ZrnqsUuplpUHye9ia+49KEaNZL+SqQ6yGuPJSm7
+yvbtLHxX0pP+cpDxQo6yC/whm9TDf34+Mz2uMJfTYSJBDfWjRS0mMtBtO7t1SsOJjFb4Ezdhib/i
+2+D5DArg3HijtR1eD3BEE3VIs58Lb1BJVJDmP83z3Hs/JW4OfdSw9L/c8G4AIbVJw7Dsl+3f6CjX
+wJB/kdT/PYKEvXUILgSYYnxcy8UgVu6DWVpZTobadAXXKuffbTg4xm1J/f62SzejeWejbivCUCFA
+JdwnLBVqeTfXcqwkJRSF7tYI37rNBIFCY7iZp9KxLLkj/Tb9N59QgfJIfaqUEiAsCsV+of5eSZYE
+38J0jS3GluV4N6TtN1MI5zOeBr5qzXaqOsltGdszLPUMcutcIY6D292ZOonG9e9laCwkGcDmcXwI
+iSvUkUsG/6YfQAoQKt8/GK1LafjOk4C06m/4LTPEKPDklWt9T7fAomyTzH/1a/CSDfVLHa6qDhB3
+iVKq+KlLJfxdaM8VNVX8cDx5rkWF361MxPbXfFrSG07TW39Z/JGm/TBucNIWmwjOqAq3COfWuVEV
+b/WYkb6jcOORuCEYIllq/L/Ut+3RKkspzElufCjC07FLTltgDZcrBZYGvhiHm1cQYFEnAgT6wjQQ
+z1jSpsMH/K9DhuitIGKNU4/+wVO/RmZjiEydw5wRhM62cwbq277MaEQARmaJf9n4InJC2Un3Hqze
+Z0xCKsd6nZIcL/F+dMDjVcF/yIekx5HwkqOMPHdKMZervgomntNlGa2RJpSt7AhTJuXEbboy6gks
+RIZGsZI3uY8Hqujpacn82TwvGXfrkas65oQZX2/p5I26xTSPc20dJV6tfDO2L3c6TgXY/9Zzx9qP
+y439W+bfUB3eesdvQKijJaVaEjsZxBN685wLnFGKRacRMFTg+/XbGrpH6HpxXDOnfPJ6AcWgkXw5
+CYaxILY3t4rk5unz1Zz6Rhj8A69oP99ju4qGiKWfgXbE/M+sfaAXuJXyGBBrl1n4UXSnK7cnl9A3
+0KXsOccrjk3kFp9PCebLI8RA0VmKUCcurV0nt8VKK7dcif4jXMf8xorvUKCJOD1a0iTEoVWZBNyI
+3ByKv+7WcQN2kJ9ZYb6jfrjDCj1qsnVWLE+gxV2KAEPeK777cezvCiDyRML8U/Db8qFQH5STrh3k
+p35tuJE+GCK50DGAGYFUMDi6VAkcdBXEzFIMWjNBDekRIr7zDmV/ipulHjqT7Hh/wMHx8JOu5Z0P
+bomKiLiYei1Q6ogx9xCc/qTAccai8UpVhFOlr+iVZarGS0U/HftkEtTfNyMO5rpG11pza11dYY1S
+qhEpwwCTyAyfDlCoVfI/NSPY915I0GmlyvxDqYJjSDhULIfYk8p8uJvKma2sMGr15C7/4SOVQgrL
+YbSzpavoOcNl3UvPBYijjjYIuT8v50h6n4omcJQhn1jiXOkeUbrVQgzvHmiNrLx7rFZVRqv8BAEm
+P3eIw+nhttR56r7MALxzFNsgk+gSMdmeIPMI0Ztv7i4HNB2G8E36Z/4YXI9/C3TJc9PiFM7m9cbB
+sbppxkHB+qJMNFzPYax3ZnVL6mzyEBSD4FC7l9ZEOiTL4bfbcDRwsrg1H0m0we3bp6AfQmjw11HW
+OaPbADwpUxqDMdUgPGStM+/5T+DivRJHjOTSSD/8FrCsksnPr722d0jUE6HYm3XP8FOblzlwPPB9
+cu3c14NPY727Yy/P0vE/WI6due5WbGVENl8QnYnShLlGvsHwiM92ff5Hg90RHbEkeoCC8jcwBsSK
+VA7gS26r4RjNbwsjLtYTMmvr7WjXfONVnuCVVW0M0f0IPyh4uawK7gPXLPsPMTQ9wXDDiVxxmwtS
+6TURuPRwHhT5Sxlkfb0F3M463Yn/XwqgBUpzprZvOthiDCHkGFHgbCTp7Mc1nCx8jfIiwVZbG9Se
+5RpxsNXT0Ex3Gm3WHe1H0vdHzWb9rvPGY+51A/UZBmel3sVYeaDziI8kJE22KDokAJRJBm252vxa
+1aoDLKvc0VXU96gqsr3eBkq5UIFyMqCQnHMvyKltZrsBQ8Ycnfm5JiL6Ntmnmij4QVZJGmP/Wrpr
+G/FdV1pPIXws3aRno0si0qcvbLlgQm==

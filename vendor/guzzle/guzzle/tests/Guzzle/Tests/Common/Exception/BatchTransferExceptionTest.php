@@ -1,21 +1,29 @@
-<?php
-
-namespace Guzzle\Tests\Common\Exception;
-
-use Guzzle\Batch\Exception\BatchTransferException;
-
-class BatchTransferExceptionTest extends \Guzzle\Tests\GuzzleTestCase
-{
-    public function testContainsBatch()
-    {
-        $e = new \Exception('Baz!');
-        $t = $this->getMock('Guzzle\Batch\BatchTransferInterface');
-        $d = $this->getMock('Guzzle\Batch\BatchDivisorInterface');
-        $transferException = new BatchTransferException(array('foo'), array(1, 2), $e, $t, $d);
-        $this->assertEquals(array('foo'), $transferException->getBatch());
-        $this->assertSame($t, $transferException->getTransferStrategy());
-        $this->assertSame($d, $transferException->getDivisorStrategy());
-        $this->assertSame($e, $transferException->getPrevious());
-        $this->assertEquals(array(1, 2), $transferException->getTransferredItems());
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

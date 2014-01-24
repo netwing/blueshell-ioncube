@@ -1,302 +1,126 @@
-<?php
-/**
- * CBaseController class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-
-/**
- * CBaseController is the base class for {@link CController} and {@link CWidget}.
- *
- * It provides the common functionalities shared by controllers who need to render views.
- *
- * CBaseController also implements the support for the following features:
- * <ul>
- * <li>{@link CClipWidget Clips} : a clip is a piece of captured output that can be inserted elsewhere.</li>
- * <li>{@link CWidget Widgets} : a widget is a self-contained sub-controller with its own view and model.</li>
- * <li>{@link COutputCache Fragment cache} : fragment cache selectively caches a portion of the output.</li>
- * </ul>
- *
- * To use a widget in a view, use the following in the view:
- * <pre>
- * $this->widget('path.to.widgetClass',array('property1'=>'value1',...));
- * </pre>
- * or
- * <pre>
- * $this->beginWidget('path.to.widgetClass',array('property1'=>'value1',...));
- * // ... display other contents here
- * $this->endWidget();
- * </pre>
- *
- * To create a clip, use the following:
- * <pre>
- * $this->beginClip('clipID');
- * // ... display the clip contents
- * $this->endClip();
- * </pre>
- * Then, in a different view or place, the captured clip can be inserted as:
- * <pre>
- * echo $this->clips['clipID'];
- * </pre>
- *
- * Note that $this in the code above refers to current controller so, for example,
- * if you need to access clip from a widget where $this refers to widget itself
- * you need to do it the following way:
- *
- * <pre>
- * echo $this->getController()->clips['clipID'];
- * </pre>
- *
- * To use fragment cache, do as follows,
- * <pre>
- * if($this->beginCache('cacheID',array('property1'=>'value1',...))
- * {
- *     // ... display the content to be cached here
- *    $this->endCache();
- * }
- * </pre>
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.web
- * @since 1.0
- */
-abstract class CBaseController extends CComponent
-{
-	private $_widgetStack=array();
-
-	/**
-	 * Returns the view script file according to the specified view name.
-	 * This method must be implemented by child classes.
-	 * @param string $viewName view name
-	 * @return string the file path for the named view. False if the view cannot be found.
-	 */
-	abstract public function getViewFile($viewName);
-
-
-	/**
-	 * Renders a view file.
-	 *
-	 * @param string $viewFile view file path
-	 * @param array $data data to be extracted and made available to the view
-	 * @param boolean $return whether the rendering result should be returned instead of being echoed
-	 * @return string the rendering result. Null if the rendering result is not required.
-	 * @throws CException if the view file does not exist
-	 */
-	public function renderFile($viewFile,$data=null,$return=false)
-	{
-		$widgetCount=count($this->_widgetStack);
-		if(($renderer=Yii::app()->getViewRenderer())!==null && $renderer->fileExtension==='.'.CFileHelper::getExtension($viewFile))
-			$content=$renderer->renderFile($this,$viewFile,$data,$return);
-		else
-			$content=$this->renderInternal($viewFile,$data,$return);
-		if(count($this->_widgetStack)===$widgetCount)
-			return $content;
-		else
-		{
-			$widget=end($this->_widgetStack);
-			throw new CException(Yii::t('yii','{controller} contains improperly nested widget tags in its view "{view}". A {widget} widget does not have an endWidget() call.',
-				array('{controller}'=>get_class($this), '{view}'=>$viewFile, '{widget}'=>get_class($widget))));
-		}
-	}
-
-	/**
-	 * Renders a view file.
-	 * This method includes the view file as a PHP script
-	 * and captures the display result if required.
-	 * @param string $_viewFile_ view file
-	 * @param array $_data_ data to be extracted and made available to the view file
-	 * @param boolean $_return_ whether the rendering result should be returned as a string
-	 * @return string the rendering result. Null if the rendering result is not required.
-	 */
-	public function renderInternal($_viewFile_,$_data_=null,$_return_=false)
-	{
-		// we use special variable names here to avoid conflict when extracting data
-		if(is_array($_data_))
-			extract($_data_,EXTR_PREFIX_SAME,'data');
-		else
-			$data=$_data_;
-		if($_return_)
-		{
-			ob_start();
-			ob_implicit_flush(false);
-			require($_viewFile_);
-			return ob_get_clean();
-		}
-		else
-			require($_viewFile_);
-	}
-
-	/**
-	 * Creates a widget and initializes it.
-	 * This method first creates the specified widget instance.
-	 * It then configures the widget's properties with the given initial values.
-	 * At the end it calls {@link CWidget::init} to initialize the widget.
-	 * Starting from version 1.1, if a {@link CWidgetFactory widget factory} is enabled,
-	 * this method will use the factory to create the widget, instead.
-	 * @param string $className class name (can be in path alias format)
-	 * @param array $properties initial property values
-	 * @return CWidget the fully initialized widget instance.
-	 */
-	public function createWidget($className,$properties=array())
-	{
-		$widget=Yii::app()->getWidgetFactory()->createWidget($this,$className,$properties);
-		$widget->init();
-		return $widget;
-	}
-
-	/**
-	 * Creates a widget and executes it.
-	 * @param string $className the widget class name or class in dot syntax (e.g. application.widgets.MyWidget)
-	 * @param array $properties list of initial property values for the widget (Property Name => Property Value)
-	 * @param boolean $captureOutput whether to capture the output of the widget. If true, the method will capture
-	 * and return the output generated by the widget. If false, the output will be directly sent for display
-	 * and the widget object will be returned. This parameter is available since version 1.1.2.
-	 * @return mixed the widget instance when $captureOutput is false, or the widget output when $captureOutput is true.
-	 */
-	public function widget($className,$properties=array(),$captureOutput=false)
-	{
-		if($captureOutput)
-		{
-			ob_start();
-			ob_implicit_flush(false);
-			$widget=$this->createWidget($className,$properties);
-			$widget->run();
-			return ob_get_clean();
-		}
-		else
-		{
-			$widget=$this->createWidget($className,$properties);
-			$widget->run();
-			return $widget;
-		}
-	}
-
-	/**
-	 * Creates a widget and executes it.
-	 * This method is similar to {@link widget()} except that it is expecting
-	 * a {@link endWidget()} call to end the execution.
-	 * @param string $className the widget class name or class in dot syntax (e.g. application.widgets.MyWidget)
-	 * @param array $properties list of initial property values for the widget (Property Name => Property Value)
-	 * @return CWidget the widget created to run
-	 * @see endWidget
-	 */
-	public function beginWidget($className,$properties=array())
-	{
-		$widget=$this->createWidget($className,$properties);
-		$this->_widgetStack[]=$widget;
-		return $widget;
-	}
-
-	/**
-	 * Ends the execution of the named widget.
-	 * This method is used together with {@link beginWidget()}.
-	 * @param string $id optional tag identifying the method call for debugging purpose.
-	 * @return CWidget the widget just ended running
-	 * @throws CException if an extra endWidget call is made
-	 * @see beginWidget
-	 */
-	public function endWidget($id='')
-	{
-		if(($widget=array_pop($this->_widgetStack))!==null)
-		{
-			$widget->run();
-			return $widget;
-		}
-		else
-			throw new CException(Yii::t('yii','{controller} has an extra endWidget({id}) call in its view.',
-				array('{controller}'=>get_class($this),'{id}'=>$id)));
-	}
-
-	/**
-	 * Begins recording a clip.
-	 * This method is a shortcut to beginning {@link CClipWidget}.
-	 * @param string $id the clip ID.
-	 * @param array $properties initial property values for {@link CClipWidget}.
-	 */
-	public function beginClip($id,$properties=array())
-	{
-		$properties['id']=$id;
-		$this->beginWidget('CClipWidget',$properties);
-	}
-
-	/**
-	 * Ends recording a clip.
-	 * This method is an alias to {@link endWidget}.
-	 */
-	public function endClip()
-	{
-		$this->endWidget('CClipWidget');
-	}
-
-	/**
-	 * Begins fragment caching.
-	 * This method will display cached content if it is availabe.
-	 * If not, it will start caching and would expect a {@link endCache()}
-	 * call to end the cache and save the content into cache.
-	 * A typical usage of fragment caching is as follows,
-	 * <pre>
-	 * if($this->beginCache($id))
-	 * {
-	 *     // ...generate content here
-	 *     $this->endCache();
-	 * }
-	 * </pre>
-	 * @param string $id a unique ID identifying the fragment to be cached.
-	 * @param array $properties initial property values for {@link COutputCache}.
-	 * @return boolean whether we need to generate content for caching. False if cached version is available.
-	 * @see endCache
-	 */
-	public function beginCache($id,$properties=array())
-	{
-		$properties['id']=$id;
-		$cache=$this->beginWidget('COutputCache',$properties);
-		if($cache->getIsContentCached())
-		{
-			$this->endCache();
-			return false;
-		}
-		else
-			return true;
-	}
-
-	/**
-	 * Ends fragment caching.
-	 * This is an alias to {@link endWidget}.
-	 * @see beginCache
-	 */
-	public function endCache()
-	{
-		$this->endWidget('COutputCache');
-	}
-
-	/**
-	 * Begins the rendering of content that is to be decorated by the specified view.
-	 * @param mixed $view the name of the view that will be used to decorate the content. The actual view script
-	 * is resolved via {@link getViewFile}. If this parameter is null (default),
-	 * the default layout will be used as the decorative view.
-	 * Note that if the current controller does not belong to
-	 * any module, the default layout refers to the application's {@link CWebApplication::layout default layout};
-	 * If the controller belongs to a module, the default layout refers to the module's
-	 * {@link CWebModule::layout default layout}.
-	 * @param array $data the variables (name=>value) to be extracted and made available in the decorative view.
-	 * @see endContent
-	 * @see CContentDecorator
-	 */
-	public function beginContent($view=null,$data=array())
-	{
-		$this->beginWidget('CContentDecorator',array('view'=>$view, 'data'=>$data));
-	}
-
-	/**
-	 * Ends the rendering of content.
-	 * @see beginContent
-	 */
-	public function endContent()
-	{
-		$this->endWidget('CContentDecorator');
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+/zbIGLN7CpWBS4pkFWXI3sSstQML0OrL

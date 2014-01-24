@@ -1,111 +1,51 @@
-
-<?php
-/* @var $this PresenceController */
-/* @var $model Presence */
-
-$this->pageTitle = Yii::t('app', 'Manage Presences');
-
-$this->breadcrumbs=array(
-	'Presences'=>array('index'),
-	'Manage',
-);
-
-$this->menu=array(
-	array('label' => Yii::t('app', 'Manage Presence'), 'url'=>array('admin')),
-	array('label' => Yii::t('app', 'Create Presence'), 'url'=>array('create')),
-);
-
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#presence-grid').yiiGridView('update', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
-
-<p>
-<?php echo Yii::t('app', 'You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.'); ?></p>
-
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button btn btn-default')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
-
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'presence-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'rowCssClass'   => array(),
-	'itemsCssClass' => 'table table-hover table-bordered',
-	'pagerCssClass'     => "col-md-12 text-right",
-	'pager'             => array(
-	    'header'                => '',
-	    'internalPageCssClass'  => '',
-	    'firstPageCssClass'     => '',
-	    'lastPageCssClass'      => '',
-	    'selectedPageCssClass'  => 'active',
-	    'htmlOptions'   => array(
-	        'class'     => 'pagination pagination-sm',
-	    )
-	),
-	'columns'=>array(
-		'presenza_id',
-		'presenza_posto_barca',
-		'presenza_cliente',
-		'presenza_barca',
-		'presenza_arrivo',
-		'presenza_partenza',
-    // Show a column with 3 icons as buttons
-    array(
-        'class'         => 'zii.widgets.grid.CButtonColumn',
-        'htmlOptions'   => array('style' => 'white-space: nowrap'),
-        'afterDelete'   => 'function(link,success,data) { if (success && data) alert(data); }',
-        'buttons'       => array(
-            'view'      => array(
-                'options'       => array('rel' => 'tooltip', 'data-toggle' => 'tooltip', 'title' => Yii::t('app', 'View')),
-                'label'         => '<i class="fa fa-eye"></i>',
-                'imageUrl'      => false,
-            ),
-            'update'      => array(
-                'options'       => array('rel' => 'tooltip', 'data-toggle' => 'tooltip', 'title' => Yii::t('app', 'Update')),
-                'label'         => '<i class="fa fa-pencil"></i>',
-                'imageUrl'      => false,
-            ),
-            'delete'      => array(
-                'options'       => array('rel' => 'tooltip', 'data-toggle' => 'tooltip', 'title' => Yii::t('app', 'Delete')),
-                'label'         => '<i class="fa fa-times"></i>',
-                'imageUrl'      => false,
-            )
-        )
-    ),
-    /*
-    // Show a column with dropdown actions
-    array( 'header'=>'Action', 'type'=>'raw',
-        'value'=>'\'
-            <div class="btn-group">
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                Action <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="\' . Yii::app()->createUrl("/admin/user/update", array("id" => $data->id)) . \'">Edit \' . $data->id . \'</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-              </ul>
-            </div>
-            \'', 
-        ),    
-    */
-	),
-)); ?>
-
+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

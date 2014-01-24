@@ -1,293 +1,127 @@
-<?php
-
-namespace Guzzle\Service;
-
-use Guzzle\Common\Collection;
-use Guzzle\Common\Exception\InvalidArgumentException;
-use Guzzle\Common\Exception\BadMethodCallException;
-use Guzzle\Common\Version;
-use Guzzle\Inflection\InflectorInterface;
-use Guzzle\Inflection\Inflector;
-use Guzzle\Http\Client as HttpClient;
-use Guzzle\Http\Exception\MultiTransferException;
-use Guzzle\Service\Exception\CommandTransferException;
-use Guzzle\Http\Message\RequestInterface;
-use Guzzle\Service\Command\CommandInterface;
-use Guzzle\Service\Command\Factory\CompositeFactory;
-use Guzzle\Service\Command\Factory\FactoryInterface as CommandFactoryInterface;
-use Guzzle\Service\Resource\ResourceIteratorClassFactory;
-use Guzzle\Service\Resource\ResourceIteratorFactoryInterface;
-use Guzzle\Service\Description\ServiceDescriptionInterface;
-
-/**
- * Client object for executing commands on a web service.
- */
-class Client extends HttpClient implements ClientInterface
-{
-    const COMMAND_PARAMS = 'command.params';
-
-    /** @var ServiceDescriptionInterface Description of the service and possible commands */
-    protected $serviceDescription;
-
-    /** @var CommandFactoryInterface */
-    protected $commandFactory;
-
-    /** @var ResourceIteratorFactoryInterface */
-    protected $resourceIteratorFactory;
-
-    /** @var InflectorInterface Inflector associated with the service/client */
-    protected $inflector;
-
-    /**
-     * Basic factory method to create a new client. Extend this method in subclasses to build more complex clients.
-     *
-     * @param array|Collection $config Configuration data
-     *
-     * @return Client
-     */
-    public static function factory($config = array())
-    {
-        return new static(isset($config['base_url']) ? $config['base_url'] : null, $config);
-    }
-
-    public static function getAllEvents()
-    {
-        return array_merge(HttpClient::getAllEvents(), array(
-            'client.command.create',
-            'command.before_prepare',
-            'command.after_prepare',
-            'command.before_send',
-            'command.after_send',
-            'command.parse_response'
-        ));
-    }
-
-    /**
-     * Magic method used to retrieve a command
-     *
-     * @param string $method Name of the command object to instantiate
-     * @param array  $args   Arguments to pass to the command
-     *
-     * @return mixed Returns the result of the command
-     * @throws BadMethodCallException when a command is not found
-     */
-    public function __call($method, $args)
-    {
-        return $this->getCommand($method, isset($args[0]) ? $args[0] : array())->getResult();
-    }
-
-    public function getCommand($name, array $args = array())
-    {
-        // Add global client options to the command
-        if ($options = $this->getConfig(self::COMMAND_PARAMS)) {
-            $args += $options;
-        }
-
-        if (!($command = $this->getCommandFactory()->factory($name, $args))) {
-            throw new InvalidArgumentException("Command was not found matching {$name}");
-        }
-
-        $command->setClient($this);
-        $this->dispatch('client.command.create', array('client' => $this, 'command' => $command));
-
-        return $command;
-    }
-
-    /**
-     * Set the command factory used to create commands by name
-     *
-     * @param CommandFactoryInterface $factory Command factory
-     *
-     * @return self
-     */
-    public function setCommandFactory(CommandFactoryInterface $factory)
-    {
-        $this->commandFactory = $factory;
-
-        return $this;
-    }
-
-    /**
-     * Set the resource iterator factory associated with the client
-     *
-     * @param ResourceIteratorFactoryInterface $factory Resource iterator factory
-     *
-     * @return self
-     */
-    public function setResourceIteratorFactory(ResourceIteratorFactoryInterface $factory)
-    {
-        $this->resourceIteratorFactory = $factory;
-
-        return $this;
-    }
-
-    public function getIterator($command, array $commandOptions = null, array $iteratorOptions = array())
-    {
-        if (!($command instanceof CommandInterface)) {
-            $command = $this->getCommand($command, $commandOptions ?: array());
-        }
-
-        return $this->getResourceIteratorFactory()->build($command, $iteratorOptions);
-    }
-
-    public function execute($command)
-    {
-        if ($command instanceof CommandInterface) {
-            $this->send($this->prepareCommand($command));
-            $this->dispatch('command.after_send', array('command' => $command));
-            return $command->getResult();
-        } elseif (is_array($command) || $command instanceof \Traversable) {
-            return $this->executeMultiple($command);
-        } else {
-            throw new InvalidArgumentException('Command must be a command or array of commands');
-        }
-    }
-
-    public function setDescription(ServiceDescriptionInterface $service)
-    {
-        $this->serviceDescription = $service;
-
-        // If a baseUrl was set on the description, then update the client
-        if ($baseUrl = $service->getBaseUrl()) {
-            $this->setBaseUrl($baseUrl);
-        }
-
-        return $this;
-    }
-
-    public function getDescription()
-    {
-        return $this->serviceDescription;
-    }
-
-    /**
-     * Set the inflector used with the client
-     *
-     * @param InflectorInterface $inflector Inflection object
-     *
-     * @return self
-     */
-    public function setInflector(InflectorInterface $inflector)
-    {
-        $this->inflector = $inflector;
-
-        return $this;
-    }
-
-    /**
-     * Get the inflector used with the client
-     *
-     * @return self
-     */
-    public function getInflector()
-    {
-        if (!$this->inflector) {
-            $this->inflector = Inflector::getDefault();
-        }
-
-        return $this->inflector;
-    }
-
-    /**
-     * Prepare a command for sending and get the RequestInterface object created by the command
-     *
-     * @param CommandInterface $command Command to prepare
-     *
-     * @return RequestInterface
-     */
-    protected function prepareCommand(CommandInterface $command)
-    {
-        // Set the client and prepare the command
-        $request = $command->setClient($this)->prepare();
-        // Set the state to new if the command was previously executed
-        $request->setState(RequestInterface::STATE_NEW);
-        $this->dispatch('command.before_send', array('command' => $command));
-
-        return $request;
-    }
-
-    /**
-     * Execute multiple commands in parallel
-     *
-     * @param array|Traversable $commands Array of CommandInterface objects to execute
-     *
-     * @return array Returns an array of the executed commands
-     * @throws Exception\CommandTransferException
-     */
-    protected function executeMultiple($commands)
-    {
-        $requests = array();
-        $commandRequests = new \SplObjectStorage();
-
-        foreach ($commands as $command) {
-            $request = $this->prepareCommand($command);
-            $commandRequests[$request] = $command;
-            $requests[] = $request;
-        }
-
-        try {
-            $this->send($requests);
-            foreach ($commands as $command) {
-                $this->dispatch('command.after_send', array('command' => $command));
-            }
-            return $commands;
-        } catch (MultiTransferException $failureException) {
-            // Throw a CommandTransferException using the successful and failed commands
-            $e = CommandTransferException::fromMultiTransferException($failureException);
-
-            // Remove failed requests from the successful requests array and add to the failures array
-            foreach ($failureException->getFailedRequests() as $request) {
-                if (isset($commandRequests[$request])) {
-                    $e->addFailedCommand($commandRequests[$request]);
-                    unset($commandRequests[$request]);
-                }
-            }
-
-            // Always emit the command after_send events for successful commands
-            foreach ($commandRequests as $success) {
-                $e->addSuccessfulCommand($commandRequests[$success]);
-                $this->dispatch('command.after_send', array('command' => $commandRequests[$success]));
-            }
-
-            throw $e;
-        }
-    }
-
-    protected function getResourceIteratorFactory()
-    {
-        if (!$this->resourceIteratorFactory) {
-            // Build the default resource iterator factory if one is not set
-            $clientClass = get_class($this);
-            $prefix = substr($clientClass, 0, strrpos($clientClass, '\\'));
-            $this->resourceIteratorFactory = new ResourceIteratorClassFactory(array(
-                "{$prefix}\\Iterator",
-                "{$prefix}\\Model"
-            ));
-        }
-
-        return $this->resourceIteratorFactory;
-    }
-
-    /**
-     * Get the command factory associated with the client
-     *
-     * @return CommandFactoryInterface
-     */
-    protected function getCommandFactory()
-    {
-        if (!$this->commandFactory) {
-            $this->commandFactory = CompositeFactory::getDefaultChain($this);
-        }
-
-        return $this->commandFactory;
-    }
-
-    /**
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function enableMagicMethods($isEnabled)
-    {
-        Version::warn(__METHOD__ . ' is deprecated');
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPm/Fa5WMZscV+nC5Ux6/LexgVeyIeADijgIi/A6clFm3GwokGPUunED93zyZZ9bfAUW8001V
+Ux5js7xGgVpoOVVMJq6Pn0YNim13s9o/8rIA5dgPfHGYtH2J7zOCntUQItDopQ3fNWdYzg2t8mP8
+nB2wUriIneiV+nFDumS9pjkVn7lhNJR3GO8cj5nDWIWWysstnyiKnbrovDGf5wxn4h6rFmsxWjE2
+ICUnN7T7BarWxxfttWJOhr4euJltSAgiccy4GDnfT7faM3EoVWCws/yKpzZ1AyS4/reHapx+uJe3
+D3vT5eZgDo+85HoNlbLzeK20NcgobwLAzL+jIaA3n67bLcldMv4/HaAVvWtKVmlt7Xom+6IYA03e
+Ez8hPxHYvCjJYC9XtfPW0j1/1kyN8VuHVWEK0O7QBegoHTOGblTN2LNf9lZ4+ZFC4VP77GAw2EQb
+Kdl84Zerx+LnxQaSvTuv0mrC99O5llQYrMWurw8a3fVmLlydwvDDDsYSOApTp1hX6Pgz8VSx8kqI
+QfiwNKU7IpG/7kCkKhfuYJfXezElPRoQ3JuRtkfG2pPqx5S4T34pe5gr4oaHZts8YKN4ZbQtMQ0d
+rcfPZEpmveVl9naGAR0eW/2gyLt/tiFAXxRzrDrPi+GpPTOWKRmJBlVnaJA2Wg8f6Sojp3b6XtaV
+8CItnaCcvwQ089zr+S9p8uHSXY+wKLCXogWaMa+GEemX9f10IZ2gYRB9uZOdWebrpbc/FkU3SNIJ
+DQH6g6HtDZiPIfVDFSH0Ar3GZJ2SshEIBc6YB9oVS9emqZ9zzLPoeS3bGkhNuzBr9yL2GCDql0QT
+67lVeEiTylh4VzfMkdXP5A+iK/Se8D9HtfM8OvIXinYwMSZZRus7vCP6qHX60QFo4oBpTzMyhTgU
+gIhIx/8eCSfRtkHuiLJzV8owVWLrNxr+zW5ccLe1eJytqLSQyGsfSlf+0BSSqbTUMk//qnza0mbX
+njpC7MoqxSQZM1bfQ2Ps9csUXr1CWg2yvEr0l5JlJj+1O4QtwGyP3IbFyPiVovAoGNgy7CXus642
+O+8/rWacHlj78zxVBD+vdi5E+eT71NB6p6QjLyfUwpJ+i1KXVIPQEeZnmt1iG8jXWTjgae0dM0N0
+6UHFKB3KXgTxaGgxtrOQdmrTUmRC4Xde9Mv4kZK0+youXZE/9BAlP9gwTU6fabkcM/HxrXJNlbEh
+Brt3uDf9ey6pDE/dPXV9wWaoRO6MegoRE5EQcyrSBFDDgJJLtUTE0VXQVvE+1MxYVf7AT26H5NId
+rUalxvePUmyhL39rgNCc4xXcfjCSa1e5fDeTsEhmVJF6gSY6nkxVlM4gohrIWPJiegXJHccZIZ+z
+p79gubnHpAxzmMJLYHIBow2QKJXqMv5ZUYnJdH6nJK0at6jzH0T/hpj7GXUdfqWiKigtIASVgNax
+DgntfrHN2Sky+hB/ak/yZa6i6S6lB5rd+rGMx5Bo5I3A5Nv1k0dxqj7CA6hRbcr/FLRaZBX0qspi
+EvB6S+L+I//VVSPm4/FoSJI2XNubMXhEIIOdSNUkn7BhRZ9TvtsvqOGPUTc51muxGZ3whtd6NKyu
+B382wHFLt69YK66lun3m7ocs4DyjjoyVmLuYFi99p5/Xlfy3meiQaCKH7BFCQG0WrMMrwIHUFm//
+WQmz8unNeUdg5vEujcYvCOdXuCrHKFufGGvW5mAvIYSu90x00C2iDnN9ZBheMLehtVKhhr9aN7sj
+qMMWsa17wKKNpn0IFucXgnMVuZLA4dOksB0t9Focb1HCvbgIqow8KrbFrTi8T2D4hWF3HK1n52we
+LW28SYktB28Ewcwl7/m7w31kiuGjF+a8LsX8AWjv4+fh3C9ehTs6I1JzmtHKOBImbJafOjEnW2Y0
+BpOBlbEqreJ8NLjJDhonpRPEWnt3jvQRro9Fkx4K205c+DAtNKi9YiHAV2/KXdhBeqlIVxXurqa2
+fpiodNxSguvN1ngSKPRAkwo06GB365R4Mbq4H/zS4+02eSOVXmI5f7+xlkxaZA1EXfBOq1Y459mB
+xu7Xf4lQSRrreO5aieX+bVC7Nu2sHO0ERwyJziSucKpYnHoaYHXmwwZq3kzFVQyZ0DSzSMBlMSuu
+ZtgLAebm8xMrQGoX/iPRw+duKyh5cjOv8HfVCbbm+pdkypyfRO0edng5euxLH3yKLoJQGaOwoXjO
+bDoT8P4Lolst0ljmQeU5bS94hbcCI9JO1J8TMCafEvqEOTgB7H4ueNJsG1mnFHMON05eUfOeFp3V
+RpgTKTKWYYppw4WotPWWTyqwPargkefmr0pzrMxPPHQOOh5+W/tZpifnrWh0rRZHiodbeUe4NSD1
+/uHguLDG5iYLfTZpvyG/amP1Cx//Gx4SQVQYSJiTqJbPUUfjTKYNG9ujlIzL6RtIHpK88vRI2ef6
+q6Z6onogp2wRo3UzqnIiTKbxNy3r5+vfHARWhHd49jBLseg3BZa2lIYJlwwVy4ZzTCA3zXumy9pN
+1BiapeJpxZrqJKcFqOF0BnlOxBN1+2g11tVsUENDqK48M12jZkpd8rA4ckg6JDGAspe7e1BQKK04
+i8yaelO/4O28pU3p+XaBJUBsT36rJrGcW9VstFS7W6Szy4vr/e0qLGxm2UzRorH3XYjTOFmkZXth
+f4L9/XrLdGAh099TLBrq4moBAI/ASqiEls03VcznI0a5Lj03rALhTfSw+Fuf8jv7VF5LWBJV1C5B
+izERgN5SflzfB+IqDp9JZmr6jx02j/Suh51Dq0Z59/s+5ewtJ4fAEEKgQxxHZKGSXMsfhU0KsTN2
+RMvwROq34nCODZhnQb58zWTmBM0Ylzmb6upQwDUFK05eyhovkH3R8zCwSog0POXWNwwtc2X79Ihi
+UWqgIb37jPbpaqFgI3qL4qTvhlXsfnAUq5HoQpOnukDq3+POAUyezJEXMMZOP2DDHThBZxTBRV5q
+/phST09qPUiS5uFrLXU9WVXEJ922Qi61V6GaNzpMR25NJTy2YVi2M/v8EVt+yzbghphLKKgpKNd8
+aZTo4C7wCVyodtjJLMSlttFKki1k0VTQRTv6cztrIpIf4mNK2kRbUvl86HVElbz527kvhA0zrs0O
+GH2YKd1bUUjJpXVKDsZbImzH1O5mvg0F+SW/ymqHrCCF92iAGFk+uCst9tSLZu819NwWPC3DMSmf
+4F3IGJDFn/THxywyb2XrbTQ/XsszkyG3oJvqu6OHzbSz5Bt2TGVLhhIditWic1jgqNXft2QAJaJT
+vrXAiJ2r8ydymlV3Il7vVcMVP81lrIIOrUBxbsD304bjCuN+Cytd9JKEzDDveuIs0n8u9s9eFNHq
+ajz9OjoA4b52yFo0nIYC2ijavOw0YvUfpPKX/EQaZAnzGxur7GoPDFdgQ4gV2L9wcAKisHY5afFV
+ltthJ0RaPCUJbRX9hBOSh3/uhojGc7q54ozk16VfptRtbSCAnAPYrJgRXvQWOCWfyn+MYSdCRCN+
+f4hpuyqtYL44xda7J4uDiaMxHjoE1Lm6q5uYLvda1XfQERGH2jXDDsevrBkG490FzhjwwCSuehNk
+L41jEK30R6tcYSLQ9ROd/f7oyuSO3KCvMq37uRHHt7MzgMYwI+D94KKl0dnBCDVg6Q8fTnTLqiUa
+xzc4IVaRZZrnag6e8QA9urWqoybOkVymz54E62e4+G+jf/dv5+E2X9yC+0NauoZBKqwMWVhOinO/
+VC7piINb3GbpxHYGMGB/31oed0DlInNrhuWbnm0Kq6SbtpfxDB/K2GnTrEJ7COUE75E4mQlK7eIK
+TM4fRwudara0x9E3e5WfZ27GBTFOMSdJ20pTo5Uzxa6Eh9ZFLDAx9SdwafpvAMr7kw5YsJR3UbZG
+3FCtzl3EwtlBoiUDOAcaeznEJO3DLWu2hM8rMpGQd1rC55+DwWENgvjaSTPDabJ7QipDDKyCZ6g1
+Dl2iUgCvIbvA620H0NphZACp9qwkrV/0rYdLUnXnjM5a0ItlXLmh6nJUzxRJL4BITufGBnCfEZ+Z
+opkliAYl0qgTUOJZDjoQosdXeBOQcqfs5ROfsHb1OJGT+UD4hDYDjLye6/+3JoifRsq7xAgaclae
+t5LdZPQIB0Z28ZqSBJd0RmzHuYAKeXkgydF6wFP3vvJbQu+QVz84m3J7arhxOjBh/l0SjpuIjF8S
+dAQXEmZTH2xFQmQzWuII57RgEXhl37pogVvTRbMiCT3jCQq4MOJYvudYMIyzP1BafrUzMjaGBmFU
+imrSm6PmU25i33dBNAeKStV8Zq5nv38CfYLnylqpmI4jize/MWZN2wdv6X8l8cXYIeUoal+xyAGh
+rfVU0REHbG2TloYA+2a8p4cdsZVWFVoyzQ9/gYv/PGxQIAgsD3h4U19x06foHoXdzMgSfT65o7yY
+Vo0frcAGHi6YNgygl4e3/+KlOAYT9YtOoPiQxG2ZZw8NowKpkVlWnBkCbW0QT9/Xx4kYxHjLf37c
+DZiNfSMO7iqrs7SES+ZFV32OspLE1mOrRg27k9pD9B+p+NeMMJRHDh8/TYmIxYO9a3Fa4VOLrT4v
+TURFtynHkJGqcVG6eEcBf2VXOFJ99pEEjP3Sre8kEkQ06fVHkgmt/Kl2W0tmGw05aK4VPNv7AYZP
++U5M3FkC+rfW6r/wIVwLeXn7AqReyaErxwuCdSrrzS8W/AUjs+mkiy5J6pHp7Rr4lbXNcPP5WJh0
+JTZEp9Y7cJCgWrUABDrTjjof5rkbk9FdoiysLxZ/RDKLxEfpULzXz5xYuLx/WHdzaN7wv1s0Zj0G
+n8yChQ8rO/QTwRXlrRNKi8eG1CmZEQ9bH+UzXgnmgo/Mbh8AAu8nINWmtJqFqe8iT+CC5oeMsEQI
+m/1U7pwfc51IR6fgQRuggtCMX8QyHs/YzVEMuMotphpf1aI1Nx5zu5zdlMoohABMu9CL28v4nOSz
+7K/Pr17rz77jKh1e4T0bWdS6oKWoWtBnXri+1U4Go45SHOQ/PXtnwFqVuTbbtoEm05YiSoErJVEM
+3hciGReadhx5J7+6/UeiA+llyZZFHv4mkosvT6uAHGEWMI0bNkZOSYdT/9OXP35xUI7hv8iNTlgc
+zclQgq5R8ij6lPzM1bb17PPf4QCD46vHeF1QTDGJAv0IYb1Y7ZDXSdxYskEbnzEhfNMwPcg/xBQY
+xMi+9MX5sauek5MWSJSh+qL8rx7DZx8R+S8OFLgMTHMWvSJ2dTLjc/JLNp61+1fva0J8OsrzmEeF
+3zQ0Eyh2TnCzL7+ASPbll8awjt8Q/0zHS8j0dGqEQ4gMQAJzdYojMOyKnIO1YvhDoB7B0yET4387
+/RDM0Q+SWvAV860MIsgAUC6iCTECIz2XQ4Dw0xNxxNX2iQ2ux5whkKpnRFNBE1B/CQt4s24Ncu/g
+0mPaE67GG3rGnZbOuGtzb4Ay7bs1cUZmqY58/mpUDkpzZ8veVYwH9CmrIoM7IY36FtOG/xjVX1Mr
+1V1EokALSRPhNkhquK3oUoB2e00WkrViKMkDRKAEUTzddi+BzYwX4Ke6FqsLq1o//gcsGGKnc8jE
+Zk7jyApExWhA2omd+LHxVldnNyQUfkZXNfVY5ieJYYcML9Miebl+dGFyzpFrIbW8z5njgL6CQzLy
+71iJxsg+lBRxjifV0Rrg0ZeNp0YzTDadPqCuzQjzwNoQRQWJimJ4BF0mgoD7PBsRXu9bK8hi7Fev
+l23GUTvTZq6qWjAANwHylQvSk5EMk16Fjljdr+zNhydcYqkuIHvah9H6gjYhsSOm4NcA5BY9yCvW
+oEVTXl9LB1iLU/Q6p33HSHiQLEUjwJdPTN1sY4Xqwhqc0NIFjUvKfjai517YinKH5YI+yLP8PQIM
+5aZWw83U7KW6RrcOXQ/PMKU9PyhxIlz1FvB9ZKMDhkwApaTd/zbXOFeTi67/sDRYt8jYHQlmN4R7
+OsK3sBGgmTSL/qBKJMlhhiQ+I5tCKJ0n7bOnLdC0eU1oZJcqyaHn5bTqUe1DX/TCSSbx5C6Q43Kn
+TgmPEqmV7icrTg0EzMyWRKobgugo1C5hHWYjyMFbPFI34axObH8C+tCF6gnZwylzYZFqueW6yPGY
+bMVsIbl2If/ta0yJ6vdiVYM2bitJLoX2+zat482oJsxL44iA0O/N21elyu2Tbetl53+x4O5rB7qT
+9rjE8OryyHjYIC2gqYruz9Hggcet62blQ7iiOGBziXNtdLQ6eebepuETZTe2iRmr9ZwXnvBo0NrE
+NY+KBJ3D3DOoMj2i1BfUP24s47wFt7tZF/JRUgQJDTidWzeIZTvYh4RJ8HX0LfFzvbk4MHFRsZOQ
+A5ABFvbyDvNZ38p6CO6O9jINN3RfupJTNM3EoVV40yvzomYEX/n0015XTlDf6capobsHV7Rqgqru
+wgoKG8CTRXEjzu4RraBk8D8KdJyixdLZlm3Ihp/bP/lyc3XOvzKLkXxw0yHvoB5jQSMOREZ5kuE3
+6+6NW7dmlPQWjCLD2J6DYYEIL4GinLKYf3ufaWyC6m9nSZZs2wO5VDFLs2n3w543/+r1fejbDVDw
+yOpbENQcfFKkvsMrolVNLUsSFZT0ki6nZ2FJ8m+h5SLpZAVtylb3z3Aed0AtizHP/fPjKUvTyWyJ
+CfmMUm3xWrR9wNfPerV7SdyI8eUBPf6LRAFxpl688ApxHuU1KUjE1Eu51X2ep8jfRLESSXVq26Zf
+LHoQDyCgqPURcHD+R9SFpGI4n9F3wy9TXz9zcF8WdBYkPm5zLyP4aQPSEDiv3C10mt5jiIWoMtov
+0sziMb4OEu2Bd+OASMnuoal3H0BkYQ1+Nr+dPNIDLZGEUEOiAW2n/0td0ewrUWO9WLjx4ZWnP0qn
+IRiTyVfznYH3xsVSwGE0TZWSxed37fk3TMksEO8ZuC1NrHozVQqpBsE6asoz8fc8EAhCctCZTa3q
+VK1kAJTc6q4S1gaITBVSDBj6n8IR4Bk5QXWqTK3lUmByTOopSLuSDZ/vtwrMdJzhLVibr6mx4CwR
+shf9491BETW7VcLLiZF94C6LiFLIBSaP4jCrN8Iv0Yf0QeyQxjDvBlKe4uJfYWnfQICgbk7xHBWE
+Y5YZq4c7m/Vu9VMFvzRfa/Jau/dhGHeL1k4iCM2oqFvEdLDA1+NKtjWN4g+KPSw1nNNYaJeHOs6m
+MfNhV+tLZGPLbcwwpcW9khAUUgLAWOnKDg5tR/eEwbKO6FoqKC3F7gM7WhoeHekFSR+ukRQ9X2at
+UcmfdRTqyr131pIgB2Ry/95xkYPbBMNSYXPTIJ4AJ86d/87883TyZaeL2pwc5yukhpBEzrnKXBV7
+VmVFfHdaWdIwD2MzRUrIESQY3iEj9Ag5c3dyfX5832eZOtaINsyQwSePdabnSV4UGnMDPlm/P+9T
+UEkA2uBCxIrXTVIsSnJVRPpCxY3WH9Jw88NqukUKOQ4HwJEUaaCUcMt+N1A0TXTarz2nH7/bfNEd
+pU8jTNMbw4RwAWs1W/TaDY8LQS6gcnYF48QPzUB6UTmSHXtmAPavP0sl0zF+j2A1705z/CzG2Dyc
+jNjg3cZPTKmu7gRPVuJ4BGD5cXqkZOX/EJNMiZLfm9XTnL1OqPPqBRzpJwYWeTu03KQ8kmT+eU5N
+zsLASofXAYfiRhG9GXY8EUpMr7yfByuso8LjRbtOq9KEMjHAhTwZY/F72TwRmLhw29m39b4GylOo
+HJP2967n1YbcoJUJruWYWah+j6Slzt3NEA8UfmvwyHwIeWwG02uvKT7qpbQxaex5UuxW66xyWTIo
+81ebYUHLT9Tn8lxwEkXF/+XxQLK8LR/8xjnSe2KKGSFuXvaqmedPins+uHHPp7moxpChIsZocES2
+k5AUx2mZm5YGOTv7o0q8CQ7YnODEPoIPRLcQhvHi8NYmlL3k3N7auqgmfqua2fOKZvXRV091P0OV
+KRIpQG3c9ABjCe7A/+0+S8Klax3jGKw+sgdhzVmvz8R1MceUkEUeeA8X0itwtx4Uz93QOCLmoCSf
+3jC6BC15Tob44s7R5xi0PUF6DtDq8wJOXxOMntTjzwhJ7J/u1gdura3y41Rzrk4NlgbB/CGJY3w5
+SahRdL/QJRiW9Cai1v6vfTIYRY6QI8Lu+RJyckrET8+NTXC+g4rfeqvWvBNfT36lYHTlY2KTGdkD
+UjhlbsjKRLNLehpEa78hh/z7jXkwgGcN70ihdkvP+/oxMCCh4O6GaAJjYnT/HTOzwaJofuOS1ntd
+W4jNvZ3E4g2FNI7228Jrbn/x2lJYsEZAg6r0mYT4H0PxJEIDxY6Fha6B318PFqXdOvBjw5CcedNL
+OlTBKsDaf+XpYGksUT1ldGcZyUU1QijA+XvK/lJM6y2AHKdBpBEPsm/gMe6mPzcb51Wzd1Pg67+V
+NyHppQmCndqMTrvN43cxL3RHAebYggoVef6ldr6i8k7DVcABL0XwXJBeqyWI9u9MSEL8Q4JvnfPo
+bt9kdAZk7xmFmdQorPcPDjDpxfOiy6sTrgED9hVU1CLu56WfuAQjKvkgAfTohZCe8+SLWwth6Y+k
+mdMHAG5x6D16uhHQqTG6WV5ol9rBnqqOrB1hdVUxQ4nod1AC0LiQ+th/FLQm2Sh//1VZjnNZbbFO
+0hGqAKVjebKVkozVHf1QUJlTMgI6YiWlpeqM+iKzUck1j0aZOv/vqhCcR+YPoskXAIZKpwQQSOtP
+j7dJmonbcCMcsRYhQd1NFSo+EOSb+jsoyXppWg/AZ1aaH2C6EyPZOvjKysU0cccKmImieYEvwQ+E
+nAcEylzwFYULlTe6OihErE2zV7DNR2an/H9U+NEATjeDAF2XY33Qbrtyfk5ulmgcFfD0Eh0/fwy9
+k3LoucNHjBpIcnYTfnyROZPKTqdUNLU95GQVZ613kxbQi/ynQ5LJuUeqbQBMApf1qjm5bFe5/uJK
+5Dxxe/WX9aYR1NotI66AeJM28Ub7e/x9iMArwj+p9Flwf+meESJccLoRBM7OWP9PKn4fHmH7eQfg
+8LJpUESQlGky6QlWnUC/uILlZAAMcEobHeQnMIcOYLpkiapslsnyDLceWogybwA0ozJ1ZZkc04vZ
+9D4mAme5aK2oZ7+imzJT+dXqLilLbA6QCes7RXvZetBk25S+DmvGHmpSxZhxGWUh5yPZZqheHDGd
+M7ueBG3Rf20R7OpnsJKkkYz/15QfAJ03I/MS4mTZQ2li2RAh2Px32r4tsiXy/1rlofZP4VNxeEdQ
+nKRHSoPkpiknhQ9jiOZIA0KCm58k4mP8EnFWikTW6ASER2gVFP2VebDjReVFlkcsahE2rlmfV9he
+G4rssEApKkdL4Cy4fJOP4p5WRDk3ZFrqL27zV/lDFljirm+XxFWpoiEUYi8hkpFj65FJ1/eY2hxz
+VHohaBklS8FXan5C9hzlt3jeSN8mZo5N02x6mmlyeKfGoXKSrnPd6GNBd0CYIeNuow3qgln4cdy=

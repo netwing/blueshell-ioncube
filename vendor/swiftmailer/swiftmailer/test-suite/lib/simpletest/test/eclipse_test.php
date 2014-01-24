@@ -1,32 +1,32 @@
-<?php
-// $Id: eclipse_test.php 1739 2008-04-09 20:48:37Z edwardzyang $
-
-//To run this from the eclipse plugin...you need to make sure that the 
-//SimpleTest path in the preferences is the same as the location of the 
-//eclipse.php file below otherwise you end up with two "different" eclipse.php 
-//files included and that does not work...
-
-include_once(dirname(__FILE__) . '/../eclipse.php');
-Mock::generate('SimpleSocket');
-
-class TestOfEclipse extends UnitTestCase {
-	
-	function testPass() {
-		$listener = &new MockSimpleSocket();
-		
-		$fullpath = realpath(dirname(__FILE__).'/support/test1.php');
-		$testpath = EclipseReporter::escapeVal($fullpath);
-		$expected = "{status:\"pass\",message:\"pass1 at [$testpath line 4]\",group:\"$testpath\",case:\"test1\",method:\"test_pass\"}";
-		//this should work...but it doesn't so the next line and the last line are the hacks
-		//$listener->expectOnce('write',array($expected));
-		$listener->setReturnValue('write',-1);
-		
-		$pathparts = pathinfo($fullpath);
-		$filename = $pathparts['basename'];
-		$test= &new TestSuite($filename);
-		$test->addTestFile($fullpath);
-		$test->run(new EclipseReporter($listener));
-		$this->assertEqual($expected,$listener->output);
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+DMRZwNtuyJYkdhQrgW==

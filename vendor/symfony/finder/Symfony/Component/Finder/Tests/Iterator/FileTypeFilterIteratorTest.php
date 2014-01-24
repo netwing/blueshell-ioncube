@@ -1,72 +1,38 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\Finder\Tests\Iterator;
-
-use Symfony\Component\Finder\Iterator\FileTypeFilterIterator;
-
-class FileTypeFilterIteratorTest extends RealIteratorTestCase
-{
-    /**
-     * @dataProvider getAcceptData
-     */
-    public function testAccept($mode, $expected)
-    {
-        $inner = new InnerTypeIterator(self::$files);
-
-        $iterator = new FileTypeFilterIterator($inner, $mode);
-
-        $this->assertIterator($expected, $iterator);
-    }
-
-    public function getAcceptData()
-    {
-        $onlyFiles = array(
-            'test.py',
-            'foo/bar.tmp',
-            'test.php',
-            '.bar',
-            '.foo/.bar',
-            '.foo/bar',
-            'foo bar',
-        );
-
-        $onlyDirectories = array(
-            '.git',
-            'foo',
-            'toto',
-            '.foo',
-        );
-
-        return array(
-            array(FileTypeFilterIterator::ONLY_FILES, $this->toAbsolute($onlyFiles)),
-            array(FileTypeFilterIterator::ONLY_DIRECTORIES, $this->toAbsolute($onlyDirectories)),
-        );
-    }
-}
-
-class InnerTypeIterator extends \ArrayIterator
-{
-   public function current()
-    {
-        return new \SplFileInfo(parent::current());
-    }
-
-    public function isFile()
-    {
-        return $this->current()->isFile();
-    }
-
-    public function isDir()
-    {
-        return $this->current()->isDir();
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+UBR5KS4RRlh6bUWPkWYAkM1acQS=

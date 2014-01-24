@@ -1,149 +1,74 @@
-<?php
-/**
- *	@package JAMA
- *
- *	Cholesky decomposition class
- *
- *	For a symmetric, positive definite matrix A, the Cholesky decomposition
- *	is an lower triangular matrix L so that A = L*L'.
- *
- *	If the matrix is not symmetric or positive definite, the constructor
- *	returns a partial decomposition and sets an internal flag that may
- *	be queried by the isSPD() method.
- *
- *	@author Paul Meagher
- *	@author Michael Bommarito
- *	@version 1.2
- */
-class CholeskyDecomposition {
-
-	/**
-	 *	Decomposition storage
-	 *	@var array
-	 *	@access private
-	 */
-	private $L = array();
-
-	/**
-	 *	Matrix row and column dimension
-	 *	@var int
-	 *	@access private
-	 */
-	private $m;
-
-	/**
-	 *	Symmetric positive definite flag
-	 *	@var boolean
-	 *	@access private
-	 */
-	private $isspd = true;
-
-
-	/**
-	 *	CholeskyDecomposition
-	 *
-	 *	Class constructor - decomposes symmetric positive definite matrix
-	 *	@param mixed Matrix square symmetric positive definite matrix
-	 */
-	public function __construct($A = null) {
-		if ($A instanceof Matrix) {
-			$this->L = $A->getArray();
-			$this->m = $A->getRowDimension();
-
-			for($i = 0; $i < $this->m; ++$i) {
-				for($j = $i; $j < $this->m; ++$j) {
-					for($sum = $this->L[$i][$j], $k = $i - 1; $k >= 0; --$k) {
-						$sum -= $this->L[$i][$k] * $this->L[$j][$k];
-					}
-					if ($i == $j) {
-						if ($sum >= 0) {
-							$this->L[$i][$i] = sqrt($sum);
-						} else {
-							$this->isspd = false;
-						}
-					} else {
-						if ($this->L[$i][$i] != 0) {
-							$this->L[$j][$i] = $sum / $this->L[$i][$i];
-						}
-					}
-				}
-
-				for ($k = $i+1; $k < $this->m; ++$k) {
-					$this->L[$i][$k] = 0.0;
-				}
-			}
-		} else {
-			throw new Exception(JAMAError(ArgumentTypeException));
-		}
-	}	//	function __construct()
-
-
-	/**
-	 *	Is the matrix symmetric and positive definite?
-	 *
-	 *	@return boolean
-	 */
-	public function isSPD() {
-		return $this->isspd;
-	}	//	function isSPD()
-
-
-	/**
-	 *	getL
-	 *
-	 *	Return triangular factor.
-	 *	@return Matrix Lower triangular matrix
-	 */
-	public function getL() {
-		return new Matrix($this->L);
-	}	//	function getL()
-
-
-	/**
-	 *	Solve A*X = B
-	 *
-	 *	@param $B Row-equal matrix
-	 *	@return Matrix L * L' * X = B
-	 */
-	public function solve($B = null) {
-		if ($B instanceof Matrix) {
-			if ($B->getRowDimension() == $this->m) {
-				if ($this->isspd) {
-					$X  = $B->getArrayCopy();
-					$nx = $B->getColumnDimension();
-
-					for ($k = 0; $k < $this->m; ++$k) {
-						for ($i = $k + 1; $i < $this->m; ++$i) {
-							for ($j = 0; $j < $nx; ++$j) {
-								$X[$i][$j] -= $X[$k][$j] * $this->L[$i][$k];
-							}
-						}
-						for ($j = 0; $j < $nx; ++$j) {
-							$X[$k][$j] /= $this->L[$k][$k];
-						}
-					}
-
-					for ($k = $this->m - 1; $k >= 0; --$k) {
-						for ($j = 0; $j < $nx; ++$j) {
-							$X[$k][$j] /= $this->L[$k][$k];
-						}
-						for ($i = 0; $i < $k; ++$i) {
-							for ($j = 0; $j < $nx; ++$j) {
-								$X[$i][$j] -= $X[$k][$j] * $this->L[$k][$i];
-							}
-						}
-					}
-
-					return new Matrix($X, $this->m, $nx);
-				} else {
-					throw new Exception(JAMAError(MatrixSPDException));
-				}
-			} else {
-				throw new Exception(JAMAError(MatrixDimensionException));
-			}
-		} else {
-			throw new Exception(JAMAError(ArgumentTypeException));
-		}
-	}	//	function solve()
-
-}	//	class CholeskyDecomposition
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+6B6uQ9D3

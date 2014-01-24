@@ -1,257 +1,121 @@
-<?php
-/**
- * CRedisCache class file
- *
- * @author Carsten Brandt <mail@cebe.cc>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CRedisCache implements a cache application component based on {@link http://redis.io/ redis}.
- *
- * CRedisCache needs to be configured with {@link hostname}, {@link port} and {@link database} of the server
- * to connect to. By default CRedisCache assumes there is a redis server running on localhost at
- * port 6379 and uses the database number 0.
- *
- * CRedisCache also supports {@link http://redis.io/commands/auth the AUTH command} of redis.
- * When the server needs authentication, you can set the {@link password} property to
- * authenticate with the server after connect.
- *
- * See {@link CCache} manual for common cache operations that are supported by CRedisCache.
- *
- * To use CRedisCache as the cache application component, configure the application as follows,
- * <pre>
- * array(
- *     'components'=>array(
- *         'cache'=>array(
- *             'class'=>'CRedisCache',
- *             'hostname'=>'localhost',
- *             'port'=>6379,
- *             'database'=>0,
- *         ),
- *     ),
- * )
- * </pre>
- *
- * The minimum required redis version is 2.0.0.
- *
- * @author Carsten Brandt <mail@cebe.cc>
- * @package system.caching
- * @since 1.1.14
- */
-class CRedisCache extends CCache
-{
-	/**
-	 * @var string hostname to use for connecting to the redis server. Defaults to 'localhost'.
-	 */
-	public $hostname='localhost';
-	/**
-	 * @var int the port to use for connecting to the redis server. Default port is 6379.
-	 */
-	public $port=6379;
-	/**
-	 * @var string the password to use to authenticate with the redis server. If not set, no AUTH command will be sent.
-	 */
-	public $password;
-	/**
-	 * @var int the redis database to use. This is an integer value starting from 0. Defaults to 0.
-	 */
-	public $database=0;
-	/**
-	 * @var float timeout to use for connection to redis. If not set the timeout set in php.ini will be used: ini_get("default_socket_timeout")
-	 */
-	public $timeout=null;
-	/**
-	 * @var resource redis socket connection
-	 */
-	private $_socket;
-
-	/**
-	 * Establishes a connection to the redis server.
-	 * It does nothing if the connection has already been established.
-	 * @throws CException if connecting fails
-	 */
-	protected function connect()
-	{
-		$this->_socket=@stream_socket_client(
-			$this->hostname.':'.$this->port,
-			$errorNumber,
-			$errorDescription,
-			$this->timeout ? $this->timeout : ini_get("default_socket_timeout")
-		);
-		if ($this->_socket)
-		{
-			if($this->password!==null)
-				$this->executeCommand('AUTH',array($this->password));
-			$this->executeCommand('SELECT',array($this->database));
-		}
-		else
-			throw new CException('Failed to connect to redis: '.$errorDescription,(int)$errorNumber);
-	}
-
-	/**
-	 * Executes a redis command.
-	 * For a list of available commands and their parameters see {@link http://redis.io/commands}.
-	 *
-	 * @param string $name the name of the command
-	 * @param array $params list of parameters for the command
-	 * @return array|bool|null|string Dependend on the executed command this method
-	 * will return different data types:
-	 * <ul>
-	 *   <li><code>true</code> for commands that return "status reply".</li>
-	 *   <li><code>string</code> for commands that return "integer reply"
-	 *       as the value is in the range of a signed 64 bit integer.</li>
-	 *   <li><code>string</code> or <code>null</code> for commands that return "bulk reply".</li>
-	 *   <li><code>array</code> for commands that return "Multi-bulk replies".</li>
-	 * </ul>
-	 * See {@link http://redis.io/topics/protocol redis protocol description}
-	 * for details on the mentioned reply types.
-	 * @trows CException for commands that return {@link http://redis.io/topics/protocol#error-reply error reply}.
-	 */
-	public function executeCommand($name,$params=array())
-	{
-		if($this->_socket===null)
-			$this->connect();
-
-		array_unshift($params,$name);
-		$command='*'.count($params)."\r\n";
-		foreach($params as $arg)
-			$command.='$'.strlen($arg)."\r\n".$arg."\r\n";
-
-		fwrite($this->_socket,$command);
-
-		return $this->parseResponse(implode(' ',$params));
-	}
-
-	/**
-	 * Reads the result from socket and parses it
-	 * @return array|bool|null|string
-	 * @throws CException socket or data problems
-	 */
-	private function parseResponse()
-	{
-		if(($line=fgets($this->_socket))===false)
-			throw new CException('Failed reading data from redis connection socket.');
-		$type=$line[0];
-		$line=substr($line,1,-2);
-		switch($type)
-		{
-			case '+': // Status reply
-				return true;
-			case '-': // Error reply
-				throw new CException('Redis error: '.$line);
-			case ':': // Integer reply
-				// no cast to int as it is in the range of a signed 64 bit integer
-				return $line;
-			case '$': // Bulk replies
-				if($line=='-1')
-					return null;
-				$length=$line+2;
-				$data='';
-				while($length>0)
-				{
-					if(($block=fread($this->_socket,$length))===false)
-						throw new CException('Failed reading data from redis connection socket.');
-					$data.=$block;
-					$length-=(function_exists('mb_strlen') ? mb_strlen($block,'8bit') : strlen($block));
-				}
-				return substr($data,0,-2);
-			case '*': // Multi-bulk replies
-				$count=(int)$line;
-				$data=array();
-				for($i=0;$i<$count;$i++)
-					$data[]=$this->parseResponse();
-				return $data;
-			default:
-				throw new CException('Unable to parse data received from redis.');
-		}
-	}
-
-	/**
-	 * Retrieves a value from cache with a specified key.
-	 * This is the implementation of the method declared in the parent class.
-	 * @param string $key a unique key identifying the cached value
-	 * @return string|boolean the value stored in cache, false if the value is not in the cache or expired.
-	 */
-	protected function getValue($key)
-	{
-		return $this->executeCommand('GET',array($key));
-	}
-
-	/**
-	 * Retrieves multiple values from cache with the specified keys.
-	 * @param array $keys a list of keys identifying the cached values
-	 * @return array a list of cached values indexed by the keys
-	 */
-	protected function getValues($keys)
-	{
-		$response=$this->executeCommand('MGET',$keys);
-		$result=array();
-		$i=0;
-		foreach($keys as $key)
-			$result[$key]=$response[$i++];
-		return $result;
-	}
-
-	/**
-	 * Stores a value identified by a key in cache.
-	 * This is the implementation of the method declared in the parent class.
-	 *
-	 * @param string $key the key identifying the value to be cached
-	 * @param string $value the value to be cached
-	 * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
-	 * @return boolean true if the value is successfully stored into cache, false otherwise
-	 */
-	protected function setValue($key,$value,$expire)
-	{
-		if ($expire==0)
-			return (bool)$this->executeCommand('SET',array($key,$value));
-		return (bool)$this->executeCommand('SETEX',array($key,$expire,$value));
-	}
-
-	/**
-	 * Stores a value identified by a key into cache if the cache does not contain this key.
-	 * This is the implementation of the method declared in the parent class.
-	 *
-	 * @param string $key the key identifying the value to be cached
-	 * @param string $value the value to be cached
-	 * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
-	 * @return boolean true if the value is successfully stored into cache, false otherwise
-	 */
-	protected function addValue($key,$value,$expire)
-	{
-		if ($expire == 0)
-			return (bool)$this->executeCommand('SETNX',array($key,$value));
-
-		if($this->executeCommand('SETNX',array($key,$value)))
-		{
-			$this->executeCommand('EXPIRE',array($key,$expire));
-			return true;
-		}
-		else
-			return false;
-	}
-
-	/**
-	 * Deletes a value with the specified key from cache
-	 * This is the implementation of the method declared in the parent class.
-	 * @param string $key the key of the value to be deleted
-	 * @return boolean if no error happens during deletion
-	 */
-	protected function deleteValue($key)
-	{
-		return (bool)$this->executeCommand('DEL',array($key));
-	}
-
-	/**
-	 * Deletes all values from cache.
-	 * This is the implementation of the method declared in the parent class.
-	 * @return boolean whether the flush operation was successful.
-	 */
-	protected function flushValues()
-	{
-		return $this->executeCommand('FLUSHDB');
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+/UeuoXIsOuDkMGA5sNRw785kjgQJUVC=

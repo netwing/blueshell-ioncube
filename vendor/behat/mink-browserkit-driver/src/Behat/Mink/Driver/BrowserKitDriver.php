@@ -1,751 +1,297 @@
-<?php
-
-namespace Behat\Mink\Driver;
-
-use Symfony\Component\BrowserKit\Client,
-    Symfony\Component\BrowserKit\Cookie,
-    Symfony\Component\BrowserKit\Response,
-    Symfony\Component\DomCrawler\Crawler,
-    Symfony\Component\DomCrawler\Form,
-    Symfony\Component\DomCrawler\Field,
-    Symfony\Component\DomCrawler\Field\FormField;
-use Symfony\Component\HttpFoundation\Response as HttpFoundationResponse;
-
-use Behat\Mink\Session,
-    Behat\Mink\Element\NodeElement,
-    Behat\Mink\Exception\DriverException,
-    Behat\Mink\Exception\UnsupportedDriverActionException,
-    Behat\Mink\Exception\ElementNotFoundException;
-
-/*
- * This file is part of the Behat\Mink.
- * (c) Konstantin Kudryashov <ever.zet@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-/**
- * Symfony2 BrowserKit driver.
- *
- * @author Konstantin Kudryashov <ever.zet@gmail.com>
- */
-class BrowserKitDriver extends CoreDriver
-{
-    private $session;
-    private $client;
-    private $forms = array();
-    private $started = false;
-    private $removeScriptFromUrl = true;
-    private $removeHostFromUrl = false;
-
-    /**
-     * Initializes Goutte driver.
-     *
-     * @param Client $client BrowserKit client instance
-     */
-    public function __construct(Client $client = null)
-    {
-        $this->client = $client;
-        $this->client->followRedirects(true);
-    }
-
-    /**
-     * Returns BrowserKit HTTP client instance.
-     *
-     * @return Client
-     */
-    public function getClient()
-    {
-        return $this->client;
-    }
-
-    /**
-     * Sets driver's current session.
-     *
-     * @param Session $session
-     */
-    public function setSession(Session $session)
-    {
-        $this->session = $session;
-    }
-
-    /**
-     * Tells driver to remove hostname from URL.
-     *
-     * @param Boolean $remove
-     */
-    public function setRemoveHostFromUrl($remove = true)
-    {
-        $this->removeHostFromUrl = (bool) $remove;
-    }
-
-    /**
-     * Tells driver to remove scriptname from URL.
-     *
-     * @param Boolean $remove
-     */
-    public function setRemoveScriptFromUrl($remove = true)
-    {
-        $this->removeScriptFromUrl = (bool) $remove;
-    }
-
-    /**
-     * Starts driver.
-     */
-    public function start()
-    {
-        $this->started = true;
-    }
-
-    /**
-     * Checks whether driver is started.
-     *
-     * @return Boolean
-     */
-    public function isStarted()
-    {
-        return $this->started;
-    }
-
-    /**
-     * Stops driver.
-     */
-    public function stop()
-    {
-        $this->client->restart();
-        $this->started = false;
-        $this->forms = array();
-    }
-
-    /**
-     * Resets driver.
-     */
-    public function reset()
-    {
-        $this->client->restart();
-        $this->forms = array();
-    }
-
-    /**
-     * Visit specified URL.
-     *
-     * @param string $url url of the page
-     */
-    public function visit($url)
-    {
-        $this->client->request('GET', $this->prepareUrl($url));
-        $this->forms = array();
-    }
-
-    /**
-     * Returns current URL address.
-     *
-     * @return string
-     */
-    public function getCurrentUrl()
-    {
-        return $this->client->getRequest()->getUri();
-    }
-
-    /**
-     * Reloads current page.
-     */
-    public function reload()
-    {
-        $this->client->reload();
-        $this->forms = array();
-    }
-
-    /**
-     * Moves browser forward 1 page.
-     */
-    public function forward()
-    {
-        $this->client->forward();
-        $this->forms = array();
-    }
-
-    /**
-     * Moves browser backward 1 page.
-     */
-    public function back()
-    {
-        $this->client->back();
-        $this->forms = array();
-    }
-
-    /**
-     * Sets HTTP Basic authentication parameters
-     *
-     * @param string|Boolean $user     user name or false to disable authentication
-     * @param string         $password password
-     */
-    public function setBasicAuth($user, $password)
-    {
-        $this->client->setServerParameter('PHP_AUTH_USER', $user);
-        $this->client->setServerParameter('PHP_AUTH_PW', $password);
-    }
-
-    /**
-     * Sets specific request header on client.
-     *
-     * @param string $name
-     * @param string $value
-     */
-    public function setRequestHeader($name, $value)
-    {
-        switch (strtolower($name)) {
-            case 'accept':
-                $name = 'HTTP_ACCEPT';
-                break;
-            case 'accept-charset':
-                $name = 'HTTP_ACCEPT_CHARSET';
-                break;
-            case 'accept-encoding':
-                $name = 'HTTP_ACCEPT_ENCODING';
-                break;
-            case 'accept-language':
-                $name = 'HTTP_ACCEPT_LANGUAGE';
-                break;
-            case 'connection':
-                $name = 'HTTP_CONNECTION';
-                break;
-            case 'host':
-                $name = 'HTTP_HOST';
-                break;
-            case 'user-agent':
-                $name = 'HTTP_USER_AGENT';
-                break;
-            case 'authorization':
-                $name = 'PHP_AUTH_DIGEST';
-                break;
-        }
-
-        $this->client->setServerParameter($name, $value);
-    }
-
-    /**
-     * Returns last response headers.
-     *
-     * @return array
-     */
-    public function getResponseHeaders()
-    {
-        return $this->getResponse()->getHeaders();
-    }
-
-    /**
-     * Sets cookie.
-     *
-     * @param string $name
-     * @param string $value
-     */
-    public function setCookie($name, $value = null)
-    {
-        $jar = $this->client->getCookieJar();
-
-        if (null === $value) {
-            if (null !== $jar->get($name)) {
-                $jar->expire($name);
-            }
-
-            return;
-        }
-
-        $jar->set(new Cookie($name, $value));
-    }
-
-    /**
-     * Returns cookie by name.
-     *
-     * @param string $name
-     *
-     * @return string|null
-     */
-    public function getCookie($name)
-    {
-        // Note that the following doesn't work well because
-        // Symfony\Component\BrowserKit\CookieJar stores cookies by name,
-        // path, AND domain and if you don't fill them all in correctly then
-        // you won't get the value that you're expecting.
-        //
-        // $jar = $this->client->getCookieJar();
-        //
-        // if (null !== $cookie = $jar->get($name)) {
-        //     return $cookie->getValue();
-        // }
-
-        $allValues = $this->client->getCookieJar()->allValues($this->getCurrentUrl());
-
-        if (isset($allValues[$name])) {
-            return $allValues[$name];
-        } else {
-            return null;
-        }
-    }
-
-    /**
-     * Returns last response status code.
-     *
-     * @return integer
-     */
-    public function getStatusCode()
-    {
-        return $this->getResponse()->getStatus();
-    }
-
-    /**
-     * Returns last response content.
-     *
-     * @return string
-     */
-    public function getContent()
-    {
-        return $this->getResponse()->getContent();
-    }
-
-    /**
-     * Finds elements with specified XPath query.
-     *
-     * @param string $xpath
-     *
-     * @return array array of NodeElements
-     */
-    public function find($xpath)
-    {
-        $nodes = $this->getCrawler()->filterXPath($xpath);
-
-        $elements = array();
-        foreach ($nodes as $i => $node) {
-            $elements[] = new NodeElement(sprintf('(%s)[%d]', $xpath, $i + 1), $this->session);
-        }
-
-        return $elements;
-    }
-
-    /**
-     * Returns element's tag name by it's XPath query.
-     *
-     * @param string $xpath
-     *
-     * @return string
-     */
-    public function getTagName($xpath)
-    {
-        return $this->getCrawlerNode($this->getCrawler()->filterXPath($xpath)->eq(0))->nodeName;
-    }
-
-    /**
-     * Returns element's text by it's XPath query.
-     *
-     * @param string $xpath
-     *
-     * @return string
-     */
-    public function getText($xpath)
-    {
-        $text = $this->getCrawler()->filterXPath($xpath)->eq(0)->text();
-        $text = str_replace("\n", ' ', $text);
-        $text = preg_replace('/ {2,}/', ' ', $text);
-
-        return trim($text);
-    }
-
-    /**
-     * Returns element's html by it's XPath query.
-     *
-     * @param string $xpath
-     *
-     * @return string
-     */
-    public function getHtml($xpath)
-    {
-        $node = $this->getCrawlerNode($this->getCrawler()->filterXPath($xpath)->eq(0));
-        $text = $node->ownerDocument->saveXML($node);
-
-        // cut the tag itself (making innerHTML out of outerHTML)
-        $text = preg_replace('/^\<[^\>]+\>|\<[^\>]+\>$/', '', $text);
-
-        return $text;
-    }
-
-    /**
-     * Returns element's attribute by it's XPath query.
-     *
-     * @param string $xpath
-     * @param string $name
-     *
-     * @return mixed
-     */
-    public function getAttribute($xpath, $name)
-    {
-        $value = $this->getCrawler()->filterXPath($xpath)->eq(0)->attr($name);
-
-        return '' !== $value ? $value : null;
-    }
-
-    /**
-     * Returns element's value by it's XPath query.
-     *
-     * @param string $xpath
-     *
-     * @return mixed
-     */
-    public function getValue($xpath)
-    {
-        if (in_array($this->getAttribute($xpath, 'type'), array('submit', 'image', 'button'))) {
-            return $this->getAttribute($xpath, 'value');
-        }
-
-        try {
-            $field = $this->getFormField($xpath);
-        } catch (\InvalidArgumentException $e) {
-            return $this->getAttribute($xpath, 'value');
-        }
-
-        $value = $field->getValue();
-
-        if ($field instanceof Field\ChoiceFormField && 'checkbox' === $field->getType()) {
-            $value = '1' == $value;
-        }
-
-        return $value;
-    }
-
-    /**
-     * Sets element's value by it's XPath query.
-     *
-     * @param string $xpath
-     * @param string $value
-     */
-    public function setValue($xpath, $value)
-    {
-        $this->getFormField($xpath)->setValue($value);
-    }
-
-    /**
-     * Checks checkbox by it's XPath query.
-     *
-     * @param string $xpath
-     */
-    public function check($xpath)
-    {
-        $this->getFormField($xpath)->tick();
-    }
-
-    /**
-     * Unchecks checkbox by it's XPath query.
-     *
-     * @param string $xpath
-     */
-    public function uncheck($xpath)
-    {
-        $this->getFormField($xpath)->untick();
-    }
-
-    /**
-     * Selects option from select field located by it's XPath query.
-     *
-     * @param string  $xpath
-     * @param string  $value
-     * @param Boolean $multiple
-     */
-    public function selectOption($xpath, $value, $multiple = false)
-    {
-        $field = $this->getFormField($xpath);
-
-        if ($multiple) {
-            $oldValue   = (array) $field->getValue();
-            $oldValue[] = $value;
-            $value      = $oldValue;
-        }
-
-        $field->select($value);
-    }
-
-    /**
-     * Clicks button or link located by it's XPath query.
-     *
-     * @param string $xpath
-     *
-     * @throws ElementNotFoundException
-     * @throws DriverException
-     */
-    public function click($xpath)
-    {
-        if (!count($nodes = $this->getCrawler()->filterXPath($xpath))) {
-            throw new ElementNotFoundException(
-                $this->session, 'link or button', 'xpath', $xpath
-            );
-        }
-        $node = $nodes->eq(0);
-        $type = $this->getCrawlerNode($node)->nodeName;
-
-        if ('a' === $type) {
-            $this->client->click($node->link());
-        } elseif('input' === $type || 'button' === $type) {
-            $form   = $node->form();
-            $formId = $this->getFormNodeId($form->getFormNode());
-
-            if (isset($this->forms[$formId])) {
-                $this->mergeForms($form, $this->forms[$formId]);
-            }
-
-            // remove empty file fields from request
-            foreach ($form->getFiles() as $name => $field) {
-                if (empty($field['name']) && empty($field['tmp_name'])) {
-                    $form->remove($name);
-                }
-            }
-
-            $this->client->submit($form);
-        } else {
-            throw new DriverException(sprintf(
-                'Goutte driver supports clicking on inputs and links only. But "%s" provided', $type
-            ));
-        }
-
-        $this->forms = array();
-    }
-
-    /**
-     * Checks whether checkbox checked located by it's XPath query.
-     *
-     * @param string $xpath
-     *
-     * @return Boolean
-     */
-    public function isChecked($xpath)
-    {
-        return (bool) $this->getValue($xpath);
-    }
-
-    /**
-     * Attaches file path to file field located by it's XPath query.
-     *
-     * @param string $xpath
-     * @param string $path
-     */
-    public function attachFile($xpath, $path)
-    {
-        $this->getFormField($xpath)->upload($path);
-    }
-
-    protected function getResponse()
-    {
-        $response = $this->getClient()->getResponse();
-
-        if ($response instanceof Response) {
-            return $response;
-        }
-
-        // due to a bug, the HttpKernel client implementation returns the HttpFoundation response
-        // The conversion logic is copied from Symfony\Component\HttpKernel\Client::filterResponse
-        if ($response instanceof HttpFoundationResponse) {
-            $headers = $response->headers->all();
-            if ($response->headers->getCookies()) {
-                $cookies = array();
-                foreach ($response->headers->getCookies() as $cookie) {
-                    $cookies[] = new Cookie($cookie->getName(), $cookie->getValue(), $cookie->getExpiresTime(), $cookie->getPath(), $cookie->getDomain(), $cookie->isSecure(), $cookie->isHttpOnly());
-                }
-                $headers['Set-Cookie'] = $cookies;
-            }
-
-            // this is needed to support StreamedResponse
-            ob_start();
-            $response->sendContent();
-            $content = ob_get_clean();
-
-            return new Response($content, $response->getStatusCode(), $headers);
-        }
-
-        throw new \LogicException(sprintf(
-            'The BrowserKit client returned an unsupported response implementation: %s',
-            get_class($response)
-        ));
-    }
-
-    /**
-     * Prepares URL for visiting.
-     * Removes "*.php/" from urls and then passes it to GoutteDriver::visit().
-     *
-     * @param string $url
-     *
-     * @return string
-     */
-    protected function prepareUrl($url)
-    {
-        return preg_replace('#(https?\://[^/]+)(/[^/\.]+\.php)?#',
-            ($this->removeHostFromUrl ? '' : '$1').($this->removeScriptFromUrl ? '' : '$2'), $url
-        );
-    }
-
-    /**
-     * Returns form field from XPath query.
-     *
-     * @param string $xpath
-     *
-     * @return FormField
-     *
-     * @throws ElementNotFoundException
-     * @throws \LogicException
-     */
-    protected function getFormField($xpath)
-    {
-        if (!count($crawler = $this->getCrawler()->filterXPath($xpath))) {
-            throw new ElementNotFoundException(
-                $this->session, 'form field', 'xpath', $xpath
-            );
-        }
-
-        $fieldNode = $this->getCrawlerNode($crawler);
-        $fieldName = str_replace('[]', '', $fieldNode->getAttribute('name'));
-        $formNode  = $fieldNode;
-
-        // we will access our element by name next, but that's not unique, so we need to know wich is ou element
-        $elements = $this->getCrawler()->filterXPath('//*[@name=\''.$fieldNode->getAttribute('name').'\']');
-        $position = 0;
-        if(count($elements) > 1) {
-            // more than one element contains this name !
-            // so we need to find the position of $fieldNode
-            foreach($elements as $key => $element) {
-                if($element->getAttribute('id') == $fieldNode->getAttribute('id')) {
-                    $position = $key;
-                }
-            }
-        }
-
-        do {
-            // use the ancestor form element
-            if (null === $formNode = $formNode->parentNode) {
-                throw new \LogicException('The selected node does not have a form ancestor.');
-            }
-        } while ('form' != $formNode->nodeName);
-
-        $formId = $this->getFormNodeId($formNode);
-
-        // check if form already exists
-        if (isset($this->forms[$formId])) {
-            if (is_array($this->forms[$formId][$fieldName])) {
-                return $this->forms[$formId][$fieldName][$position];
-            }
-
-            return $this->forms[$formId][$fieldName];
-        }
-
-        // find form button
-        if (null === $buttonNode = $this->findFormButton($formNode)) {
-            throw new ElementNotFoundException(
-                $this->session, 'form submit button for field with xpath "'.$xpath.'"'
-            );
-        }
-
-        $this->forms[$formId] = new Form($buttonNode, $this->client->getRequest()->getUri());
-
-        if (is_array($this->forms[$formId][$fieldName])) {
-            return $this->forms[$formId][$fieldName][$position];
-        }
-
-        return $this->forms[$formId][$fieldName];
-    }
-
-    /**
-     * Returns form node unique identifier.
-     *
-     * @param \DOMElement $form
-     *
-     * @return mixed
-     */
-    private function getFormNodeId(\DOMElement $form)
-    {
-        return md5($form->getLineNo() . $form->getNodePath() . $form->nodeValue);
-    }
-
-    /**
-     * Finds form submit button inside form node.
-     *
-     * @param \DOMElement $form
-     *
-     * @return \DOMElement
-     */
-    private function findFormButton(\DOMElement $form)
-    {
-        $document = new \DOMDocument('1.0', 'UTF-8');
-        $node     = $document->importNode($form, true);
-        $root     = $document->appendChild($document->createElement('_root'));
-
-        $root->appendChild($node);
-        $xpath = new \DOMXPath($document);
-
-        foreach ($xpath->query('descendant::input | descendant::button', $root) as $node) {
-            if ('button' == $node->nodeName || in_array($node->getAttribute('type'), array('submit', 'button', 'image'))) {
-                return $node;
-            }
-        }
-
-        return null;
-    }
-
-    /**
-     * Merges second form values into first one.
-     *
-     * @param Form $to   merging target
-     * @param Form $from merging source
-     */
-    private function mergeForms(Form $to, Form $from)
-    {
-        foreach ($from->all() as $name => $field) {
-            $fieldReflection = new \ReflectionObject($field);
-            $nodeReflection  = $fieldReflection->getProperty('node');
-            $valueReflection = $fieldReflection->getProperty('value');
-
-            $nodeReflection->setAccessible(true);
-            $valueReflection->setAccessible(true);
-
-            if (!($field instanceof Field\InputFormField && in_array(
-                $nodeReflection->getValue($field)->getAttribute('type'),
-                array('submit', 'button', 'image')
-            ))) {
-                $valueReflection->setValue($to[$name], $valueReflection->getValue($field));
-            }
-        }
-    }
-
-    /**
-     * Returns DOMNode from crawler instance.
-     *
-     * @param Crawler $crawler
-     * @param integer $num     number of node from crawler
-     *
-     * @return \DOMNode
-     */
-    private function getCrawlerNode(Crawler $crawler, $num = 0)
-    {
-        foreach ($crawler as $i => $node) {
-            if ($num == $i) {
-                return $node;
-            }
-        }
-
-        return null;
-    }
-
-    /**
-     * Returns crawler instance (got from client).
-     *
-     * @return Crawler
-     *
-     * @throws DriverException
-     */
-    private function getCrawler()
-    {
-        $crawler = $this->client->getCrawler();
-
-        if (null === $crawler) {
-            throw new DriverException('Crawler can\'t be initialized. Did you started driver?');
-        }
-
-        return $crawler;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+NR844DQt1nvHQ04Ji9altv0=

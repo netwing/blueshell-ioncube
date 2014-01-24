@@ -1,67 +1,47 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\Finder\Tests\Iterator;
-
-use Symfony\Component\Finder\Iterator\MultiplePcreFilterIterator;
-
-class MultiplePcreFilterIteratorTest extends \PHPUnit_Framework_TestCase
-{
-    /**
-     * @dataProvider getIsRegexFixtures
-     */
-    public function testIsRegex($string, $isRegex, $message)
-    {
-        $testIterator = new TestMultiplePcreFilterIterator();
-        $this->assertEquals($isRegex, $testIterator->isRegex($string), $message);
-    }
-
-    public function getIsRegexFixtures()
-    {
-        return array(
-            array('foo', false, 'string'),
-            array(' foo ', false, '" " is not a valid delimiter'),
-            array('\\foo\\', false, '"\\" is not a valid delimiter'),
-            array('afooa', false, '"a" is not a valid delimiter'),
-            array('//', false, 'the pattern should contain at least 1 character'),
-            array('/a/', true, 'valid regex'),
-            array('/foo/', true, 'valid regex'),
-            array('/foo/i', true, 'valid regex with a single modifier'),
-            array('/foo/imsxu', true, 'valid regex with multiple modifiers'),
-            array('#foo#', true, '"#" is a valid delimiter'),
-            array('{foo}', true, '"{,}" is a valid delimiter pair'),
-            array('*foo.*', false, '"*" is not considered as a valid delimiter'),
-            array('?foo.?', false, '"?" is not considered as a valid delimiter'),
-        );
-    }
-}
-
-class TestMultiplePcreFilterIterator extends MultiplePcreFilterIterator
-{
-    public function __construct()
-    {
-    }
-
-    public function accept()
-    {
-        throw new \BadFunctionCallException('Not implemented');
-    }
-
-    public function isRegex($str)
-    {
-        return parent::isRegex($str);
-    }
-
-    public function toRegex($str)
-    {
-        throw new \BadFunctionCallException('Not implemented');
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

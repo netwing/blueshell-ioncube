@@ -1,125 +1,38 @@
-<?php
-/**
- * PHPExcel
- *
- * Copyright (c) 2006 - 2012 PHPExcel
- *
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation; either
- * version 2.1 of the License, or (at your option) any later version.
- *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
- *
- * @category	PHPExcel
- * @package		PHPExcel_Chart
- * @copyright	Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- * @license		http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
- * @version		1.7.8, 2012-10-12
- */
-
-
-/**
- * PHPExcel_Chart_PlotArea
- *
- * @category	PHPExcel
- * @package		PHPExcel_Chart
- * @copyright	Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- */
-class PHPExcel_Chart_PlotArea
-{
-	/**
-	 * PlotArea Layout
-	 *
-	 * @var PHPExcel_Chart_Layout
-	 */
-	private $_layout = null;
-
-	/**
-	 * Plot Series
-	 *
-	 * @var array of PHPExcel_Chart_DataSeries
-	 */
-	private $_plotSeries = array();
-
-	/**
-	 * Create a new PHPExcel_Chart_PlotArea
-	 */
-	public function __construct(PHPExcel_Chart_Layout $layout = null, $plotSeries = array())
-	{
-		$this->_layout = $layout;
-		$this->_plotSeries = $plotSeries;
-	}
-
-	/**
-	 * Get Layout
-	 *
-	 * @return PHPExcel_Chart_Layout
-	 */
-	public function getLayout() {
-		return $this->_layout;
-	}
-
-	/**
-	 * Get Number of Plot Groups
-	 *
-	 * @return array of PHPExcel_Chart_DataSeries
-	 */
-	public function getPlotGroupCount() {
-		return count($this->_plotSeries);
-	}
-
-	/**
-	 * Get Number of Plot Series
-	 *
-	 * @return integer
-	 */
-	public function getPlotSeriesCount() {
-		$seriesCount = 0;
-		foreach($this->_plotSeries as $plot) {
-			$seriesCount += $plot->getPlotSeriesCount();
-		}
-		return $seriesCount;
-	}
-
-	/**
-	 * Get Plot Series
-	 *
-	 * @return array of PHPExcel_Chart_DataSeries
-	 */
-	public function getPlotGroup() {
-		return $this->_plotSeries;
-	}
-
-	/**
-	 * Get Plot Series by Index
-	 *
-	 * @return PHPExcel_Chart_DataSeries
-	 */
-	public function getPlotGroupByIndex($index) {
-		return $this->_plotSeries[$index];
-	}
-
-	/**
-	 * Set Plot Series
-	 *
-	 * @param array of PHPExcel_Chart_DataSeries
-	 */
-	public function setPlotSeries($plotSeries = array()) {
-		$this->_plotSeries = $plotSeries;
-	}
-
-	public function refresh(PHPExcel_Worksheet $worksheet) {
-	    foreach($this->_plotSeries as $plotSeries) {
-			$plotSeries->refresh($worksheet);
-		}
-	}
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
++IuFESxcawg/fc5sPW==

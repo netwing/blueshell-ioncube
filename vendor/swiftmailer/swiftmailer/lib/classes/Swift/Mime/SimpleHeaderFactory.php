@@ -1,192 +1,73 @@
-<?php
-
-/*
- * This file is part of SwiftMailer.
- * (c) 2004-2009 Chris Corbyn
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-/**
- * Creates MIME headers.
- *
- * @package    Swift
- * @subpackage Mime
- * @author     Chris Corbyn
- */
-class Swift_Mime_SimpleHeaderFactory implements Swift_Mime_HeaderFactory
-{
-    /** The HeaderEncoder used by these headers */
-    private $_encoder;
-
-    /** The Encoder used by parameters */
-    private $_paramEncoder;
-
-    /** The Grammar */
-    private $_grammar;
-
-    /** The charset of created Headers */
-    private $_charset;
-
-    /**
-     * Creates a new SimpleHeaderFactory using $encoder and $paramEncoder.
-     *
-     * @param Swift_Mime_HeaderEncoder $encoder
-     * @param Swift_Encoder            $paramEncoder
-     * @param Swift_Mime_Grammar       $grammar
-     * @param string|null              $charset
-     */
-    public function __construct(Swift_Mime_HeaderEncoder $encoder, Swift_Encoder $paramEncoder, Swift_Mime_Grammar $grammar, $charset = null)
-    {
-        $this->_encoder = $encoder;
-        $this->_paramEncoder = $paramEncoder;
-        $this->_grammar = $grammar;
-        $this->_charset = $charset;
-    }
-
-    /**
-     * Create a new Mailbox Header with a list of $addresses.
-     *
-     * @param string            $name
-     * @param array|string|null $addresses
-     *
-     * @return Swift_Mime_Header
-     */
-    public function createMailboxHeader($name, $addresses = null)
-    {
-        $header = new Swift_Mime_Headers_MailboxHeader($name, $this->_encoder, $this->_grammar);
-        if (isset($addresses)) {
-            $header->setFieldBodyModel($addresses);
-        }
-        $this->_setHeaderCharset($header);
-
-        return $header;
-    }
-
-    /**
-     * Create a new Date header using $timestamp (UNIX time).
-     * @param string       $name
-     * @param integer|null $timestamp
-     *
-     * @return Swift_Mime_Header
-     */
-    public function createDateHeader($name, $timestamp = null)
-    {
-        $header = new Swift_Mime_Headers_DateHeader($name, $this->_grammar);
-        if (isset($timestamp)) {
-            $header->setFieldBodyModel($timestamp);
-        }
-        $this->_setHeaderCharset($header);
-
-        return $header;
-    }
-
-    /**
-     * Create a new basic text header with $name and $value.
-     *
-     * @param string $name
-     * @param string $value
-     *
-     * @return Swift_Mime_Header
-     */
-    public function createTextHeader($name, $value = null)
-    {
-        $header = new Swift_Mime_Headers_UnstructuredHeader($name, $this->_encoder, $this->_grammar);
-        if (isset($value)) {
-            $header->setFieldBodyModel($value);
-        }
-        $this->_setHeaderCharset($header);
-
-        return $header;
-    }
-
-    /**
-     * Create a new ParameterizedHeader with $name, $value and $params.
-     *
-     * @param string $name
-     * @param string $value
-     * @param array  $params
-     *
-     * @return Swift_Mime_ParameterizedHeader
-     */
-    public function createParameterizedHeader($name, $value = null,
-        $params = array())
-    {
-        $header = new Swift_Mime_Headers_ParameterizedHeader($name,
-            $this->_encoder, (strtolower($name) == 'content-disposition')
-                ? $this->_paramEncoder
-                : null,
-                $this->_grammar
-            );
-        if (isset($value)) {
-            $header->setFieldBodyModel($value);
-        }
-        foreach ($params as $k => $v) {
-            $header->setParameter($k, $v);
-        }
-        $this->_setHeaderCharset($header);
-
-        return $header;
-    }
-
-    /**
-     * Create a new ID header for Message-ID or Content-ID.
-     *
-     * @param string       $name
-     * @param string|array $ids
-     *
-     * @return Swift_Mime_Header
-     */
-    public function createIdHeader($name, $ids = null)
-    {
-        $header = new Swift_Mime_Headers_IdentificationHeader($name, $this->_grammar);
-        if (isset($ids)) {
-            $header->setFieldBodyModel($ids);
-        }
-        $this->_setHeaderCharset($header);
-
-        return $header;
-    }
-
-    /**
-     * Create a new Path header with an address (path) in it.
-     *
-     * @param string $name
-     * @param string $path
-     *
-     * @return Swift_Mime_Header
-     */
-    public function createPathHeader($name, $path = null)
-    {
-        $header = new Swift_Mime_Headers_PathHeader($name, $this->_grammar);
-        if (isset($path)) {
-            $header->setFieldBodyModel($path);
-        }
-        $this->_setHeaderCharset($header);
-
-        return $header;
-    }
-
-    /**
-     * Notify this observer that the entity's charset has changed.
-     *
-     * @param string $charset
-     */
-    public function charsetChanged($charset)
-    {
-        $this->_charset = $charset;
-        $this->_encoder->charsetChanged($charset);
-        $this->_paramEncoder->charsetChanged($charset);
-    }
-
-    // -- Private methods
-
-    /** Apply the charset to the Header */
-    private function _setHeaderCharset(Swift_Mime_Header $header)
-    {
-        if (isset($this->_charset)) {
-            $header->setCharset($this->_charset);
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

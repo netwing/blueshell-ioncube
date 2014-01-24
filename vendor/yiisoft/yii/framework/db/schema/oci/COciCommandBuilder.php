@@ -1,147 +1,84 @@
-<?php
-/**
- * COciCommandBuilder class file.
- *
- * @author Ricardo Grana <rickgrana@yahoo.com.br>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * COciCommandBuilder provides basic methods to create query commands for tables.
- *
- * @author Ricardo Grana <rickgrana@yahoo.com.br>
- * @package system.db.schema.oci
- */
-class COciCommandBuilder extends CDbCommandBuilder
-{
-	/**
-	 * @var integer the last insertion ID
-	 */
-	public $returnID;
-
-	/**
-	 * Returns the last insertion ID for the specified table.
-	 * @param mixed $table the table schema ({@link CDbTableSchema}) or the table name (string).
-	 * @return mixed last insertion id. Null is returned if no sequence name.
-	 */
-	public function getLastInsertID($table)
-	{
-		return $this->returnID;
-	}
-
-	/**
-	 * Alters the SQL to apply LIMIT and OFFSET.
-	 * Default implementation is applicable for PostgreSQL, MySQL and SQLite.
-	 * @param string $sql SQL query string without LIMIT and OFFSET.
-	 * @param integer $limit maximum number of rows, -1 to ignore limit.
-	 * @param integer $offset row offset, -1 to ignore offset.
-	 * @return string SQL with LIMIT and OFFSET
-	 */
-	public function applyLimit($sql,$limit,$offset)
-	{
-		if (($limit < 0) and ($offset < 0)) return $sql;
-
-		$filters = array();
-		if($offset>0){
-			$filters[] = 'rowNumId > '.(int)$offset;
-		}
-
-		if($limit>=0){
-			$filters[]= 'rownum <= '.(int)$limit;
-		}
-
-		if (count($filters) > 0){
-			$filter = implode(' and ', $filters);
-			$filter= " WHERE ".$filter;
-		}else{
-			$filter = '';
-		}
-
-
-		$sql = <<<EOD
-WITH USER_SQL AS ({$sql}),
-	PAGINATION AS (SELECT USER_SQL.*, rownum as rowNumId FROM USER_SQL)
-SELECT *
-FROM PAGINATION
-{$filter}
-EOD;
-
-		return $sql;
-	}
-
-	/**
-	 * Creates an INSERT command.
-	 * @param mixed $table the table schema ({@link CDbTableSchema}) or the table name (string).
-	 * @param array $data data to be inserted (column name=>column value). If a key is not a valid column name, the corresponding value will be ignored.
-	 * @return CDbCommand insert command
-	 */
-	public function createInsertCommand($table,$data)
-	{
-		$this->ensureTable($table);
-		$fields=array();
-		$values=array();
-		$placeholders=array();
-		$i=0;
-		foreach($data as $name=>$value)
-		{
-			if(($column=$table->getColumn($name))!==null && ($value!==null || $column->allowNull))
-			{
-				$fields[]=$column->rawName;
-				if($value instanceof CDbExpression)
-				{
-					$placeholders[]=$value->expression;
-					foreach($value->params as $n=>$v)
-						$values[$n]=$v;
-				}
-				else
-				{
-					$placeholders[]=self::PARAM_PREFIX.$i;
-					$values[self::PARAM_PREFIX.$i]=$column->typecast($value);
-					$i++;
-				}
-			}
-		}
-
-		$sql="INSERT INTO {$table->rawName} (".implode(', ',$fields).') VALUES ('.implode(', ',$placeholders).')';
-
-		if(is_string($table->primaryKey) && ($column=$table->getColumn($table->primaryKey))!==null && $column->type!=='string')
-		{
-			$sql.=' RETURNING '.$column->rawName.' INTO :RETURN_ID';
-			$command=$this->getDbConnection()->createCommand($sql);
-			$command->bindParam(':RETURN_ID', $this->returnID, PDO::PARAM_INT, 12);
-			$table->sequenceName='RETURN_ID';
-		}
-		else
-			$command=$this->getDbConnection()->createCommand($sql);
-
-		foreach($values as $name=>$value)
-			$command->bindValue($name,$value);
-
-		return $command;
-	}
-
-	/**
-	 * Creates a multiple INSERT command.
-	 * This method could be used to achieve better performance during insertion of the large
-	 * amount of data into the database tables.
-	 * @param mixed $table the table schema ({@link CDbTableSchema}) or the table name (string).
-	 * @param array[] $data list data to be inserted, each value should be an array in format (column name=>column value).
-	 * If a key is not a valid column name, the corresponding value will be ignored.
-	 * @return CDbCommand multiple insert command
-	 * @since 1.1.14
-	 */
-	public function createMultipleInsertCommand($table,array $data)
-	{
-		$templates=array(
-			'main'=>'INSERT ALL {{rowInsertValues}} SELECT * FROM dual',
-			'columnInsertValue'=>'{{value}}',
-			'columnInsertValueGlue'=>', ',
-			'rowInsertValue'=>'INTO {{tableName}} ({{columnInsertNames}}) VALUES ({{columnInsertValues}})',
-			'rowInsertValueGlue'=>' ',
-			'columnInsertNameGlue'=>', ',
-		);
-		return $this->composeMultipleInsertCommand($table,$data,$templates);
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+zqsubmg+dSXV2GuxS4fojZYU2NO=

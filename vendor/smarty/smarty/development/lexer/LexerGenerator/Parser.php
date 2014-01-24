@@ -1,2105 +1,829 @@
-<?php
-/* Driver template for the PHP_PHP_LexerGenerator_ParserrGenerator parser generator. (PHP port of LEMON)
-*/
-
-/**
- * This can be used to store both the string representation of
- * a token, and any useful meta-data associated with the token.
- *
- * meta-data should be stored as an array
- */
-class PHP_LexerGenerator_ParseryyToken implements ArrayAccess
-{
-    public $string = '';
-    public $metadata = array();
-
-    public function __construct($s, $m = array())
-    {
-        if ($s instanceof PHP_LexerGenerator_ParseryyToken) {
-            $this->string = $s->string;
-            $this->metadata = $s->metadata;
-        } else {
-            $this->string = (string) $s;
-            if ($m instanceof PHP_LexerGenerator_ParseryyToken) {
-                $this->metadata = $m->metadata;
-            } elseif (is_array($m)) {
-                $this->metadata = $m;
-            }
-        }
-    }
-
-    public function __toString()
-    {
-        return $this->_string;
-    }
-
-    public function offsetExists($offset)
-    {
-        return isset($this->metadata[$offset]);
-    }
-
-    public function offsetGet($offset)
-    {
-        return $this->metadata[$offset];
-    }
-
-    public function offsetSet($offset, $value)
-    {
-        if ($offset === null) {
-            if (isset($value[0])) {
-                $x = ($value instanceof PHP_LexerGenerator_ParseryyToken) ?
-                    $value->metadata : $value;
-                $this->metadata = array_merge($this->metadata, $x);
-
-                return;
-            }
-            $offset = count($this->metadata);
-        }
-        if ($value === null) {
-            return;
-        }
-        if ($value instanceof PHP_LexerGenerator_ParseryyToken) {
-            if ($value->metadata) {
-                $this->metadata[$offset] = $value->metadata;
-            }
-        } elseif ($value) {
-            $this->metadata[$offset] = $value;
-        }
-    }
-
-    public function offsetUnset($offset)
-    {
-        unset($this->metadata[$offset]);
-    }
-}
-
-/** The following structure represents a single element of the
- * parser's stack.  Information stored includes:
- *
- *   +  The state number for the parser at this level of the stack.
- *
- *   +  The value of the token stored at this level of the stack.
- *      (In other words, the "major" token.)
- *
- *   +  The semantic value stored at this level of the stack.  This is
- *      the information used by the action routines in the grammar.
- *      It is sometimes called the "minor" token.
- */
-class PHP_LexerGenerator_ParseryyStackEntry
-{
-    public $stateno;       /* The state-number */
-    public $major;         /* The major token value.  This is the code
-                     ** number for the token at this stack level */
-    public $minor; /* The user-supplied minor token value.  This
-                     ** is the value of the token  */
-};
-
-// code external to the class is included here
-#line 3 "Parser.y"
-
-/* ?><?php {//*/
-/**
- * PHP_LexerGenerator, a php 5 lexer generator.
- *
- * This lexer generator translates a file in a format similar to
- * re2c ({@link http://re2c.org}) and translates it into a PHP 5-based lexer
- *
- * PHP version 5
- *
- * LICENSE:
- *
- * Copyright (c) 2006, Gregory Beaver <cellog@php.net>
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *     * Redistributions of source code must retain the above copyright
- *       notice, this list of conditions and the following disclaimer.
- *     * Redistributions in binary form must reproduce the above copyright
- *       notice, this list of conditions and the following disclaimer in
- *       the documentation and/or other materials provided with the distribution.
- *     * Neither the name of the PHP_LexerGenerator nor the names of its
- *       contributors may be used to endorse or promote products derived
- *       from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
- * IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
- * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
- * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
- * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
- * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
- * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
- * PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
- * OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
- * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
- * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- *
- * @category   php
- * @package    PHP_LexerGenerator
- * @author     Gregory Beaver <cellog@php.net>
- * @copyright  2006 Gregory Beaver
- * @license    http://www.opensource.org/licenses/bsd-license.php New BSD License
- * @version    CVS: $Id: Parser.php 246683 2007-11-22 04:43:52Z instance $
- * @since      File available since Release 0.1.0
- */
-/**
- * For regular expression validation
- */
-require_once './LexerGenerator/Regex/Lexer.php';
-require_once './LexerGenerator/Regex/Parser.php';
-require_once './LexerGenerator/Exception.php';
-/**
- * Token parser for plex files.
- *
- * This parser converts tokens pulled from {@link PHP_LexerGenerator_Lexer}
- * into abstract patterns and rules, then creates the output file
- * @package    PHP_LexerGenerator
- * @author     Gregory Beaver <cellog@php.net>
- * @copyright  2006 Gregory Beaver
- * @license    http://www.php.net/license/3_01.txt  PHP License 3.01
- * @version    @package_version@
- * @since      Class available since Release 0.1.0
- */
-#line 166 "Parser.php"
-
-// declare_class is output here
-#line 2 "Parser.y"
-class PHP_LexerGenerator_Parser#line 171 "Parser.php"
-{
-/* First off, code is included which follows the "include_class" declaration
-** in the input file. */
-#line 82 "Parser.y"
-
-    private $patterns;
-    private $out;
-    private $lex;
-    private $input;
-    private $counter;
-    private $token;
-    private $value;
-    private $line;
-    private $matchlongest;
-    private $_regexLexer;
-    private $_regexParser;
-    private $_patternIndex = 0;
-    private $_outRuleIndex = 1;
-    private $caseinsensitive;
-    private $patternFlags;
-    private $unicode;
-
-    public $transTable = array(
-        1 => self::PHPCODE,
-        2 => self::COMMENTSTART,
-        3 => self::COMMENTEND,
-        4 => self::QUOTE,
-        5 => self::SINGLEQUOTE,
-        6 => self::PATTERN,
-        7 => self::CODE,
-        8 => self::SUBPATTERN,
-        9 => self::PI,
-    );
-
-    public function __construct($outfile, $lex)
-    {
-        $this->out = fopen($outfile, 'wb');
-        if (!$this->out) {
-            throw new Exception('unable to open lexer output file "' . $outfile . '"');
-        }
-        $this->lex = $lex;
-        $this->_regexLexer = new PHP_LexerGenerator_Regex_Lexer('');
-        $this->_regexParser = new PHP_LexerGenerator_Regex_Parser($this->_regexLexer);
-    }
-
-    public function doLongestMatch($rules, $statename, $ruleindex)
-    {
-        fwrite($this->out, '
-        if (' . $this->counter . ' >= strlen(' . $this->input . ')) {
-            return false; // end of input
-        }
-        do {
-            $rules = array(');
-        foreach ($rules as $rule) {
-            fwrite($this->out, '
-                \'/\G' . $rule['pattern'] . '/' . $this->patternFlags . ' \',');
-        }
-        fwrite($this->out, '
-            );
-            $match = false;
-            foreach ($rules as $index => $rule) {
-                if (preg_match($rule, substr(' . $this->input . ', ' .
-                 $this->counter . '), $yymatches)) {
-                    if ($match) {
-                        if (strlen($yymatches[0]) > strlen($match[0][0])) {
-                            $match = array($yymatches, $index); // matches, token
-                        }
-                    } else {
-                        $match = array($yymatches, $index);
-                    }
-                }
-            }
-            if (!$match) {
-                throw new Exception(\'Unexpected input at line \' . ' . $this->line . ' .
-                    \': \' . ' . $this->input . '[' . $this->counter . ']);
-            }
-            ' . $this->token . ' = $match[1];
-            ' . $this->value . ' = $match[0][0];
-            $yysubmatches = $match[0];
-            array_shift($yysubmatches);
-            if (!$yysubmatches) {
-                $yysubmatches = array();
-            }
-            $r = $this->{\'yy_r' . $ruleindex . '_\' . ' . $this->token . '}($yysubmatches);
-            if ($r === null) {
-                ' . $this->counter . ' += strlen(' . $this->value . ');
-                ' . $this->line . ' += substr_count(' . $this->value . ', "\n");
-                // accept this token
-                return true;
-            } elseif ($r === true) {
-                // we have changed state
-                // process this token in the new state
-                return $this->yylex();
-            } elseif ($r === false) {
-                ' . $this->counter . ' += strlen(' . $this->value . ');
-                ' . $this->line . ' += substr_count(' . $this->value . ', "\n");
-                if (' . $this->counter . ' >= strlen(' . $this->input . ')) {
-                    return false; // end of input
-                }
-                // skip this token
-                continue;
-            } else {');
-            fwrite($this->out, '
-                $yy_yymore_patterns = array_slice($rules, $this->token, true);
-                // yymore is needed
-                do {
-                    if (!isset($yy_yymore_patterns[' . $this->token . '])) {
-                        throw new Exception(\'cannot do yymore for the last token\');
-                    }
-                    $match = false;
-                    foreach ($yy_yymore_patterns[' . $this->token . '] as $index => $rule) {
-                        if (preg_match(\'/\' . $rule . \'/' . $this->patternFlags . '\',
-                                ' . $this->input . ', $yymatches, null, ' . $this->counter . ')) {
-                            $yymatches = array_filter($yymatches, \'strlen\'); // remove empty sub-patterns
-                            if ($match) {
-                                if (strlen($yymatches[0]) > strlen($match[0][0])) {
-                                    $match = array($yymatches, $index); // matches, token
-                                }
-                            } else {
-                                $match = array($yymatches, $index);
-                            }
-                        }
-                    }
-                    if (!$match) {
-                        throw new Exception(\'Unexpected input at line \' . ' . $this->line . ' .
-                            \': \' . ' . $this->input . '[' . $this->counter . ']);
-                    }
-                    ' . $this->token . ' = $match[1];
-                    ' . $this->value . ' = $match[0][0];
-                    $yysubmatches = $match[0];
-                    array_shift($yysubmatches);
-                    if (!$yysubmatches) {
-                        $yysubmatches = array();
-                    }
-                    ' . $this->line . ' = substr_count(' . $this->value . ', "\n");
-                    $r = $this->{\'yy_r' . $ruleindex . '_\' . ' . $this->token . '}();
-                } while ($r !== null || !$r);
-                if ($r === true) {
-                    // we have changed state
-                    // process this token in the new state
-                    return $this->yylex();
-                } else {
-                    // accept
-                    ' . $this->counter . ' += strlen(' . $this->value . ');
-                    ' . $this->line . ' += substr_count(' . $this->value . ', "\n");
-
-                    return true;
-                }
-            }
-        } while (true);
-');
-    }
-
-    public function doFirstMatch($rules, $statename, $ruleindex)
-    {
-        $patterns = array();
-        $pattern = '/';
-        $ruleMap = array();
-        $tokenindex = array();
-        $actualindex = 1;
-        $i = 0;
-        foreach ($rules as $rule) {
-            $ruleMap[$i++] = $actualindex;
-            $tokenindex[$actualindex] = $rule['subpatterns'];
-            $actualindex += $rule['subpatterns'] + 1;
-            $patterns[] = '\G(' . $rule['pattern'] . ')';
-        }
-        // Re-index tokencount from zero.
-        $tokencount = array_values($tokenindex);
-        $tokenindex = var_export($tokenindex, true);
-        $tokenindex = explode("\n", $tokenindex);
-        // indent for prettiness
-        $tokenindex = implode("\n            ", $tokenindex);
-        $pattern .= implode('|', $patterns);
-        $pattern .= '/' . $this->patternFlags;
-        fwrite($this->out, '
-        $tokenMap = ' . $tokenindex . ';
-        if (' . $this->counter . ' >= ($this->mbstring_overload ? mb_strlen(' . $this->input . ',\'latin1\'): strlen(' . $this->input . '))) {
-            return false; // end of input
-        }
-        ');
-        fwrite($this->out, '$yy_global_pattern = "' .
-            $pattern . 'iS";' . "\n");
-        fwrite($this->out, '
-        do {
-            if ($this->mbstring_overload ? preg_match($yy_global_pattern, mb_substr(' . $this->input . ', ' .
-             $this->counter .
-                    ',2000000000,\'latin1\'), $yymatches) : preg_match($yy_global_pattern,' . $this->input . ', $yymatches, null, ' .
-             $this->counter .
-                    ')) {
-                $yysubmatches = $yymatches;
-                $yymatches = array_filter($yymatches, \'strlen\'); // remove empty sub-patterns
-                if (!count($yymatches)) {
-                    throw new Exception(\'Error: lexing failed because a rule matched\' .
-                        \' an empty string.  Input "\' . substr(' . $this->input . ',
-                        ' . $this->counter . ', 5) . \'... state ' . $statename . '\');
-                }
-                next($yymatches); // skip global match
-                ' . $this->token . ' = key($yymatches); // token number
-                if ($tokenMap[' . $this->token . ']) {
-                    // extract sub-patterns for passing to lex function
-                    $yysubmatches = array_slice($yysubmatches, ' . $this->token . ' + 1,
-                        $tokenMap[' . $this->token . ']);
-                } else {
-                    $yysubmatches = array();
-                }
-                ' . $this->value . ' = current($yymatches); // token value
-                $r = $this->{\'yy_r' . $ruleindex . '_\' . ' . $this->token . '}($yysubmatches);
-                if ($r === null) {
-                    ' . $this->counter . ' += ($this->mbstring_overload ? mb_strlen(' . $this->value . ',\'latin1\'): strlen(' . $this->value . '));
-                    ' . $this->line . ' += substr_count(' . $this->value . ', "\n");
-                    // accept this token
-                    return true;
-                } elseif ($r === true) {
-                    // we have changed state
-                    // process this token in the new state
-                    return $this->yylex();
-                } elseif ($r === false) {
-                    ' . $this->counter . ' += ($this->mbstring_overload ? mb_strlen(' . $this->value . ',\'latin1\'): strlen(' . $this->value . '));
-                    ' . $this->line . ' += substr_count(' . $this->value . ', "\n");
-                    if (' . $this->counter . ' >= ($this->mbstring_overload ? mb_strlen(' . $this->input . ',\'latin1\'): strlen(' . $this->input . '))) {
-                        return false; // end of input
-                    }
-                    // skip this token
-                    continue;
-                }');
-//                } else {');
-/**        fwrite($this->out, '                    $yy_yymore_patterns = array(' . "\n");
-        $extra = 0;
-        for ($i = 0; count($patterns); $i++) {
-            unset($patterns[$i]);
-            $extra += $tokencount[0];
-            array_shift($tokencount);
-            fwrite($this->out, '        ' . $ruleMap[$i] . ' => array(' . $extra . ', "' .
-                implode('|', $patterns) . "\"),\n");
-        }
-        fwrite($this->out, '    );' . "\n");
-        fwrite($this->out, '
-                    // yymore is needed
-                    do {
-                        if (!strlen($yy_yymore_patterns[' . $this->token . '][1])) {
-                            throw new Exception(\'cannot do yymore for the last token\');
-                        }
-                        $yysubmatches = array();
-                        if (preg_match(\'/\' . $yy_yymore_patterns[' . $this->token . '][1] . \'/' . $this->patternFlags . '\',
-                              ' . $this->input . ', $yymatches, null, ' . $this->counter .')) {
-                            $yysubmatches = $yymatches;
-                            $yymatches = array_filter($yymatches, \'strlen\'); // remove empty sub-patterns
-                            next($yymatches); // skip global match
-                            ' . $this->token . ' += key($yymatches) + $yy_yymore_patterns[' . $this->token . '][0]; // token number
-                            ' . $this->value . ' = current($yymatches); // token value
-                            ' . $this->line . ' = substr_count(' . $this->value . ', "\n");
-                            if ($tokenMap[' . $this->token . ']) {
-                                // extract sub-patterns for passing to lex function
-                                $yysubmatches = array_slice($yysubmatches, ' . $this->token . ' + 1,
-                                    $tokenMap[' . $this->token . ']);
-                            } else {
-                                $yysubmatches = array();
-                            }
-                        }
-                        $r = $this->{\'yy_r' . $ruleindex . '_\' . ' . $this->token . '}($yysubmatches);
-                    } while ($r !== null && !is_bool($r));
-                    if ($r === true) {
-                        // we have changed state
-                        // process this token in the new state
-                        return $this->yylex();
-                    } elseif ($r === false) {
-                        ' . $this->counter . ' += ($this->mbstring_overload ? mb_strlen(' . $this->value . ',\'latin1\'): strlen(' . $this->value . '));
-                        ' . $this->line . ' += substr_count(' . $this->value . ', "\n");
-                        if (' . $this->counter . ' >= ($this->mbstring_overload ? mb_strlen(' . $this->input . ',\'latin1\'): strlen(' . $this->input . '))) {
-                            return false; // end of input
-                        }
-                        // skip this token
-                        continue;
-                    } else {
-                        // accept
-                        ' . $this->counter . ' += ($this->mbstring_overload ? mb_strlen(' . $this->value . ',\'latin1\'): strlen(' . $this->value . '));
-                        ' . $this->line . ' += substr_count(' . $this->value . ', "\n");
-
-                        return true;
-                    }
-                }
-*/
-       fwrite($this->out, '            } else {
-                throw new Exception(\'Unexpected input at line\' . ' . $this->line . ' .
-                    \': \' . ' . $this->input . '[' . $this->counter . ']);
-            }
-            break;
-        } while (true);
-');
-    }
-
-    public function makeCaseInsensitve($string)
-    {
-        return preg_replace('/[a-z]/ie', "'[\\0'.strtoupper('\\0').']'", strtolower($string));
-    }
-
-    public function outputRules($rules, $statename)
-    {
-        if (!$statename) {
-            $statename = $this -> _outRuleIndex;
-        }
-        fwrite($this->out, '
-    public function yylex' . $this -> _outRuleIndex . '()
-    {');
-        if ($this->matchlongest) {
-            $ruleMap = array();
-            foreach ($rules as $i => $rule) {
-                $ruleMap[$i] = $i;
-            }
-            $this->doLongestMatch($rules, $statename, $this -> _outRuleIndex);
-        } else {
-            $ruleMap = array();
-            $actualindex = 1;
-            $i = 0;
-            foreach ($rules as $rule) {
-                $ruleMap[$i++] = $actualindex;
-                $actualindex += $rule['subpatterns'] + 1;
-            }
-            $this->doFirstMatch($rules, $statename, $this -> _outRuleIndex);
-        }
-        fwrite($this->out, '
-    } // end function
-
-');
-        if (is_string($statename)) {
-            fwrite($this->out, '
-    const ' . $statename . ' = ' . $this -> _outRuleIndex . ';
-');
-        }
-        foreach ($rules as $i => $rule) {
-            fwrite($this->out, '    function yy_r' . $this -> _outRuleIndex . '_' . $ruleMap[$i] . '($yy_subpatterns)
-    {
-' . $rule['code'] .
-'    }
-');
-        }
-        $this -> _outRuleIndex++; // for next set of rules
-    }
-
-    public function error($msg)
-    {
-        echo 'Error on line ' . $this->lex->line . ': ' , $msg;
-    }
-
-    public function _validatePattern($pattern, $update = false)
-    {
-        $this->_regexLexer->reset($pattern, $this->lex->line);
-        $this->_regexParser->reset($this->_patternIndex, $update);
-        try {
-            while ($this->_regexLexer->yylex()) {
-                $this->_regexParser->doParse(
-                    $this->_regexLexer->token, $this->_regexLexer->value);
-            }
-            $this->_regexParser->doParse(0, 0);
-        } catch (PHP_LexerGenerator_Exception $e) {
-            $this->error($e->getMessage());
-            throw new PHP_LexerGenerator_Exception('Invalid pattern "' . $pattern . '"');
-        }
-
-        return $this->_regexParser->result;
-    }
-#line 529 "Parser.php"
-
-/* Next is all token values, as class constants
-*/
-/*
-** These constants (all generated automatically by the parser generator)
-** specify the various kinds of tokens (terminals) that the parser
-** understands.
-**
-** Each symbol here is a terminal symbol in the grammar.
-*/
-    const PHPCODE                        =  1;
-    const COMMENTSTART                   =  2;
-    const COMMENTEND                     =  3;
-    const PI                             =  4;
-    const SUBPATTERN                     =  5;
-    const CODE                           =  6;
-    const PATTERN                        =  7;
-    const QUOTE                          =  8;
-    const SINGLEQUOTE                    =  9;
-    const YY_NO_ACTION = 99;
-    const YY_ACCEPT_ACTION = 98;
-    const YY_ERROR_ACTION = 97;
-
-/* Next are that tables used to determine what action to take based on the
-** current state and lookahead token.  These tables are used to implement
-** functions that take a state number and lookahead value and return an
-** action integer.
-**
-** Suppose the action integer is N.  Then the action is determined as
-** follows
-**
-**   0 <= N < self::YYNSTATE                              Shift N.  That is,
-**                                                        push the lookahead
-**                                                        token onto the stack
-**                                                        and goto state N.
-**
-**   self::YYNSTATE <= N < self::YYNSTATE+self::YYNRULE   Reduce by rule N-YYNSTATE.
-**
-**   N == self::YYNSTATE+self::YYNRULE                    A syntax error has occurred.
-**
-**   N == self::YYNSTATE+self::YYNRULE+1                  The parser accepts its
-**                                                        input. (and concludes parsing)
-**
-**   N == self::YYNSTATE+self::YYNRULE+2                  No such action.  Denotes unused
-**                                                        slots in the yy_action[] table.
-**
-** The action table is constructed as a single large static array $yy_action.
-** Given state S and lookahead X, the action is computed as
-**
-**      self::$yy_action[self::$yy_shift_ofst[S] + X ]
-**
-** If the index value self::$yy_shift_ofst[S]+X is out of range or if the value
-** self::$yy_lookahead[self::$yy_shift_ofst[S]+X] is not equal to X or if
-** self::$yy_shift_ofst[S] is equal to self::YY_SHIFT_USE_DFLT, it means that
-** the action is not in the table and that self::$yy_default[S] should be used instead.
-**
-** The formula above is for computing the action when the lookahead is
-** a terminal symbol.  If the lookahead is a non-terminal (as occurs after
-** a reduce action) then the static $yy_reduce_ofst array is used in place of
-** the static $yy_shift_ofst array and self::YY_REDUCE_USE_DFLT is used in place of
-** self::YY_SHIFT_USE_DFLT.
-**
-** The following are the tables generated in this section:
-**
-**  self::$yy_action        A single table containing all actions.
-**  self::$yy_lookahead     A table containing the lookahead for each entry in
-**                          yy_action.  Used to detect hash collisions.
-**  self::$yy_shift_ofst    For each state, the offset into self::$yy_action for
-**                          shifting terminals.
-**  self::$yy_reduce_ofst   For each state, the offset into self::$yy_action for
-**                          shifting non-terminals after a reduce.
-**  self::$yy_default       Default action for each state.
-*/
-    const YY_SZ_ACTTAB = 91;
-static public $yy_action = array(
- /*     0 */    25,   50,   49,   31,   49,   54,   53,   54,   53,   35,
- /*    10 */    11,   49,   18,   22,   54,   53,   14,   59,   51,   28,
- /*    20 */    55,   57,   58,   59,   47,    1,   55,   57,   32,   15,
- /*    30 */    49,   29,   49,   54,   53,   54,   53,   30,   52,   49,
- /*    40 */    42,   46,   54,   53,   98,   56,    5,   13,   38,   18,
- /*    50 */    49,   43,   40,   54,   53,   12,   39,   18,    3,   37,
- /*    60 */    36,   17,    7,    8,    2,   10,   33,   18,    9,    2,
- /*    70 */    41,   44,    1,   24,   16,   34,   45,   27,   60,   48,
- /*    80 */     4,    1,    2,    1,   20,   19,   21,   26,   23,    6,
- /*    90 */     7,
-    );
-    public static $yy_lookahead = array(
- /*     0 */     3,    1,    5,    4,    5,    8,    9,    8,    9,    3,
- /*    10 */    19,    5,   21,    4,    8,    9,    7,    5,    6,   14,
- /*    20 */     8,    9,    3,    5,    6,   20,    8,    9,    3,    7,
- /*    30 */     5,    4,    5,    8,    9,    8,    9,    3,    1,    5,
- /*    40 */     5,    6,    8,    9,   11,   12,   13,   19,    5,   21,
- /*    50 */     5,    8,    9,    8,    9,   19,    5,   21,    5,    8,
- /*    60 */     9,    1,    2,    1,    2,   19,   14,   21,    1,    2,
- /*    70 */     5,    6,   20,   15,   16,   14,    2,   14,    1,    1,
- /*    80 */     5,   20,    2,   20,   18,   21,   18,   17,    4,   13,
- /*    90 */     2,
-);
-    const YY_SHIFT_USE_DFLT = -4;
-    const YY_SHIFT_MAX = 35;
-    public static $yy_shift_ofst = array(
- /*     0 */    60,   27,   -1,   45,   45,   62,   67,   84,   80,   80,
- /*    10 */    34,   25,   -3,    6,   51,   51,    9,   88,   12,   18,
- /*    20 */    43,   43,   65,   35,   19,    0,   22,   74,   74,   75,
- /*    30 */    78,   53,   77,   74,   74,   37,
-);
-    const YY_REDUCE_USE_DFLT = -10;
-    const YY_REDUCE_MAX = 17;
-    public static $yy_reduce_ofst = array(
- /*     0 */    33,   28,   -9,   46,   36,   52,   63,   58,   61,    5,
- /*    10 */    64,   64,   64,   64,   66,   68,   70,   76,
-);
-    public static $yyExpectedTokens = array(
-        /* 0 */ array(1, 2, ),
-        /* 1 */ array(4, 5, 8, 9, ),
-        /* 2 */ array(4, 5, 8, 9, ),
-        /* 3 */ array(5, 8, 9, ),
-        /* 4 */ array(5, 8, 9, ),
-        /* 5 */ array(1, 2, ),
-        /* 6 */ array(1, 2, ),
-        /* 7 */ array(4, ),
-        /* 8 */ array(2, ),
-        /* 9 */ array(2, ),
-        /* 10 */ array(3, 5, 8, 9, ),
-        /* 11 */ array(3, 5, 8, 9, ),
-        /* 12 */ array(3, 5, 8, 9, ),
-        /* 13 */ array(3, 5, 8, 9, ),
-        /* 14 */ array(5, 8, 9, ),
-        /* 15 */ array(5, 8, 9, ),
-        /* 16 */ array(4, 7, ),
-        /* 17 */ array(2, ),
-        /* 18 */ array(5, 6, 8, 9, ),
-        /* 19 */ array(5, 6, 8, 9, ),
-        /* 20 */ array(5, 8, 9, ),
-        /* 21 */ array(5, 8, 9, ),
-        /* 22 */ array(5, 6, ),
-        /* 23 */ array(5, 6, ),
-        /* 24 */ array(3, ),
-        /* 25 */ array(1, ),
-        /* 26 */ array(7, ),
-        /* 27 */ array(2, ),
-        /* 28 */ array(2, ),
-        /* 29 */ array(5, ),
-        /* 30 */ array(1, ),
-        /* 31 */ array(5, ),
-        /* 32 */ array(1, ),
-        /* 33 */ array(2, ),
-        /* 34 */ array(2, ),
-        /* 35 */ array(1, ),
-        /* 36 */ array(),
-        /* 37 */ array(),
-        /* 38 */ array(),
-        /* 39 */ array(),
-        /* 40 */ array(),
-        /* 41 */ array(),
-        /* 42 */ array(),
-        /* 43 */ array(),
-        /* 44 */ array(),
-        /* 45 */ array(),
-        /* 46 */ array(),
-        /* 47 */ array(),
-        /* 48 */ array(),
-        /* 49 */ array(),
-        /* 50 */ array(),
-        /* 51 */ array(),
-        /* 52 */ array(),
-        /* 53 */ array(),
-        /* 54 */ array(),
-        /* 55 */ array(),
-        /* 56 */ array(),
-        /* 57 */ array(),
-        /* 58 */ array(),
-        /* 59 */ array(),
-        /* 60 */ array(),
-);
-    public static $yy_default = array(
- /*     0 */    97,   97,   97,   97,   97,   97,   97,   97,   97,   97,
- /*    10 */    97,   97,   97,   97,   97,   97,   97,   97,   97,   97,
- /*    20 */    72,   73,   97,   97,   97,   79,   67,   64,   65,   97,
- /*    30 */    75,   97,   74,   62,   63,   78,   92,   91,   96,   93,
- /*    40 */    95,   70,   68,   94,   71,   82,   69,   84,   77,   87,
- /*    50 */    81,   83,   80,   86,   85,   88,   61,   89,   66,   90,
- /*    60 */    76,
-);
-/* The next thing included is series of defines which control
-** various aspects of the generated parser.
-**    self::YYNOCODE      is a number which corresponds
-**                        to no legal terminal or nonterminal number.  This
-**                        number is used to fill in empty slots of the hash
-**                        table.
-**    self::YYFALLBACK    If defined, this indicates that one or more tokens
-**                        have fall-back values which should be used if the
-**                        original value of the token will not parse.
-**    self::YYSTACKDEPTH  is the maximum depth of the parser's stack.
-**    self::YYNSTATE      the combined number of states.
-**    self::YYNRULE       the number of rules in the grammar
-**    self::YYERRORSYMBOL is the code number of the error symbol.  If not
-**                        defined, then do no error processing.
-*/
-    const YYNOCODE = 23;
-    const YYSTACKDEPTH = 100;
-    const YYNSTATE = 61;
-    const YYNRULE = 36;
-    const YYERRORSYMBOL = 10;
-    const YYERRSYMDT = 'yy0';
-    const YYFALLBACK = 0;
-    /** The next table maps tokens into fallback tokens.  If a construct
-     * like the following:
-     *
-     *      %fallback ID X Y Z.
-     *
-     * appears in the grammer, then ID becomes a fallback token for X, Y,
-     * and Z.  Whenever one of the tokens X, Y, or Z is input to the parser
-     * but it does not parse, the type of the token is changed to ID and
-     * the parse is retried before an error is thrown.
-     */
-    public static $yyFallback = array(
-    );
-    /**
-     * Turn parser tracing on by giving a stream to which to write the trace
-     * and a prompt to preface each trace message.  Tracing is turned off
-     * by making either argument NULL
-     *
-     * Inputs:
-     *
-     * - A stream resource to which trace output should be written.
-     *   If NULL, then tracing is turned off.
-     * - A prefix string written at the beginning of every
-     *   line of trace output.  If NULL, then tracing is
-     *   turned off.
-     *
-     * Outputs:
-     *
-     * - None.
-     * @param resource
-     * @param string
-     */
-    public static function Trace($TraceFILE, $zTracePrompt)
-    {
-        if (!$TraceFILE) {
-            $zTracePrompt = 0;
-        } elseif (!$zTracePrompt) {
-            $TraceFILE = 0;
-        }
-        $this->yyTraceFILE = $TraceFILE;
-        $this->yyTracePrompt = $zTracePrompt;
-    }
-
-    /**
-     * Output debug information to output (php://output stream)
-     */
-    public static function PrintTrace()
-    {
-        $this->yyTraceFILE = fopen('php://output', 'w');
-        $this->yyTracePrompt = '';
-    }
-
-    /**
-     * @var resource|0
-     */
-    public $yyTraceFILE;
-    /**
-     * String to prepend to debug output
-     * @var string|0
-     */
-    public $yyTracePrompt;
-    /**
-     * @var int
-     */
-    public $yyidx;                    /* Index of top element in stack */
-    /**
-     * @var int
-     */
-    public $yyerrcnt;                 /* Shifts left before out of the error */
-    /**
-     * @var array
-     */
-    public $yystack = array();  /* The parser's stack */
-
-    /**
-     * For tracing shifts, the names of all terminals and nonterminals
-     * are required.  The following table supplies these names
-     * @var array
-     */
-    public static $yyTokenName = array(
-  '$',             'PHPCODE',       'COMMENTSTART',  'COMMENTEND',
-  'PI',            'SUBPATTERN',    'CODE',          'PATTERN',
-  'QUOTE',         'SINGLEQUOTE',   'error',         'start',
-  'lexfile',       'declare',       'rules',         'declarations',
-  'processing_instructions',  'pattern_declarations',  'subpattern',    'rule',
-  'reset_rules',   'rule_subpattern',
-    );
-
-    /**
-     * For tracing reduce actions, the names of all rules are required.
-     * @var array
-     */
-    public static $yyRuleName = array(
- /*   0 */ "start ::= lexfile",
- /*   1 */ "lexfile ::= declare rules",
- /*   2 */ "lexfile ::= declare PHPCODE rules",
- /*   3 */ "lexfile ::= PHPCODE declare rules",
- /*   4 */ "lexfile ::= PHPCODE declare PHPCODE rules",
- /*   5 */ "declare ::= COMMENTSTART declarations COMMENTEND",
- /*   6 */ "declarations ::= processing_instructions pattern_declarations",
- /*   7 */ "processing_instructions ::= PI SUBPATTERN",
- /*   8 */ "processing_instructions ::= PI CODE",
- /*   9 */ "processing_instructions ::= processing_instructions PI SUBPATTERN",
- /*  10 */ "processing_instructions ::= processing_instructions PI CODE",
- /*  11 */ "pattern_declarations ::= PATTERN subpattern",
- /*  12 */ "pattern_declarations ::= pattern_declarations PATTERN subpattern",
- /*  13 */ "rules ::= COMMENTSTART rule COMMENTEND",
- /*  14 */ "rules ::= COMMENTSTART PI SUBPATTERN rule COMMENTEND",
- /*  15 */ "rules ::= COMMENTSTART rule COMMENTEND PHPCODE",
- /*  16 */ "rules ::= COMMENTSTART PI SUBPATTERN rule COMMENTEND PHPCODE",
- /*  17 */ "rules ::= reset_rules rule COMMENTEND",
- /*  18 */ "rules ::= reset_rules PI SUBPATTERN rule COMMENTEND",
- /*  19 */ "rules ::= reset_rules rule COMMENTEND PHPCODE",
- /*  20 */ "rules ::= reset_rules PI SUBPATTERN rule COMMENTEND PHPCODE",
- /*  21 */ "reset_rules ::= rules COMMENTSTART",
- /*  22 */ "rule ::= rule_subpattern CODE",
- /*  23 */ "rule ::= rule rule_subpattern CODE",
- /*  24 */ "rule_subpattern ::= QUOTE",
- /*  25 */ "rule_subpattern ::= SINGLEQUOTE",
- /*  26 */ "rule_subpattern ::= SUBPATTERN",
- /*  27 */ "rule_subpattern ::= rule_subpattern QUOTE",
- /*  28 */ "rule_subpattern ::= rule_subpattern SINGLEQUOTE",
- /*  29 */ "rule_subpattern ::= rule_subpattern SUBPATTERN",
- /*  30 */ "subpattern ::= QUOTE",
- /*  31 */ "subpattern ::= SINGLEQUOTE",
- /*  32 */ "subpattern ::= SUBPATTERN",
- /*  33 */ "subpattern ::= subpattern QUOTE",
- /*  34 */ "subpattern ::= subpattern SINGLEQUOTE",
- /*  35 */ "subpattern ::= subpattern SUBPATTERN",
-    );
-
-    /**
-     * This function returns the symbolic name associated with a token
-     * value.
-     * @param int
-     * @return string
-     */
-    public function tokenName($tokenType)
-    {
-        if ($tokenType === 0) {
-            return 'End of Input';
-        }
-        if ($tokenType > 0 && $tokenType < count(self::$yyTokenName)) {
-            return self::$yyTokenName[$tokenType];
-        } else {
-            return "Unknown";
-        }
-    }
-
-    /**
-     * The following function deletes the value associated with a
-     * symbol.  The symbol can be either a terminal or nonterminal.
-     * @param int the symbol code
-     * @param mixed the symbol's value
-     */
-    public static function yy_destructor($yymajor, $yypminor)
-    {
-        switch ($yymajor) {
-        /* Here is inserted the actions which take place when a
-        ** terminal or non-terminal is destroyed.  This can happen
-        ** when the symbol is popped from the stack during a
-        ** reduce or during error processing or when a parser is
-        ** being destroyed before it is finished parsing.
-        **
-        ** Note: during a reduce, the only symbols destroyed are those
-        ** which appear on the RHS of the rule, but which are not used
-        ** inside the C code.
-        */
-            default:  break;   /* If no destructor action specified: do nothing */
-        }
-    }
-
-    /**
-     * Pop the parser's stack once.
-     *
-     * If there is a destructor routine associated with the token which
-     * is popped from the stack, then call it.
-     *
-     * Return the major token number for the symbol popped.
-     * @param PHP_LexerGenerator_ParseryyParser
-     * @return int
-     */
-    public function yy_pop_parser_stack()
-    {
-        if (!count($this->yystack)) {
-            return;
-        }
-        $yytos = array_pop($this->yystack);
-        if ($this->yyTraceFILE && $this->yyidx >= 0) {
-            fwrite($this->yyTraceFILE,
-                $this->yyTracePrompt . 'Popping ' . self::$yyTokenName[$yytos->major] .
-                    "\n");
-        }
-        $yymajor = $yytos->major;
-        self::yy_destructor($yymajor, $yytos->minor);
-        $this->yyidx--;
-
-        return $yymajor;
-    }
-
-    /**
-     * Deallocate and destroy a parser.  Destructors are all called for
-     * all stack elements before shutting the parser down.
-     */
-    public function __destruct()
-    {
-        while ($this->yyidx >= 0) {
-            $this->yy_pop_parser_stack();
-        }
-        if (is_resource($this->yyTraceFILE)) {
-            fclose($this->yyTraceFILE);
-        }
-    }
-
-    /**
-     * Based on the current state and parser stack, get a list of all
-     * possible lookahead tokens
-     * @param int
-     * @return array
-     */
-    public function yy_get_expected_tokens($token)
-    {
-        $state = $this->yystack[$this->yyidx]->stateno;
-        $expected = self::$yyExpectedTokens[$state];
-        if (in_array($token, self::$yyExpectedTokens[$state], true)) {
-            return $expected;
-        }
-        $stack = $this->yystack;
-        $yyidx = $this->yyidx;
-        do {
-            $yyact = $this->yy_find_shift_action($token);
-            if ($yyact >= self::YYNSTATE && $yyact < self::YYNSTATE + self::YYNRULE) {
-                // reduce action
-                $done = 0;
-                do {
-                    if ($done++ == 100) {
-                        $this->yyidx = $yyidx;
-                        $this->yystack = $stack;
-                        // too much recursion prevents proper detection
-                        // so give up
-                        return array_unique($expected);
-                    }
-                    $yyruleno = $yyact - self::YYNSTATE;
-                    $this->yyidx -= self::$yyRuleInfo[$yyruleno]['rhs'];
-                    $nextstate = $this->yy_find_reduce_action(
-                        $this->yystack[$this->yyidx]->stateno,
-                        self::$yyRuleInfo[$yyruleno]['lhs']);
-                    if (isset(self::$yyExpectedTokens[$nextstate])) {
-                        $expected += self::$yyExpectedTokens[$nextstate];
-                            if (in_array($token,
-                                  self::$yyExpectedTokens[$nextstate], true)) {
-                            $this->yyidx = $yyidx;
-                            $this->yystack = $stack;
-
-                            return array_unique($expected);
-                        }
-                    }
-                    if ($nextstate < self::YYNSTATE) {
-                        // we need to shift a non-terminal
-                        $this->yyidx++;
-                        $x = new PHP_LexerGenerator_ParseryyStackEntry;
-                        $x->stateno = $nextstate;
-                        $x->major = self::$yyRuleInfo[$yyruleno]['lhs'];
-                        $this->yystack[$this->yyidx] = $x;
-                        continue 2;
-                    } elseif ($nextstate == self::YYNSTATE + self::YYNRULE + 1) {
-                        $this->yyidx = $yyidx;
-                        $this->yystack = $stack;
-                        // the last token was just ignored, we can't accept
-                        // by ignoring input, this is in essence ignoring a
-                        // syntax error!
-                        return array_unique($expected);
-                    } elseif ($nextstate === self::YY_NO_ACTION) {
-                        $this->yyidx = $yyidx;
-                        $this->yystack = $stack;
-                        // input accepted, but not shifted (I guess)
-                        return $expected;
-                    } else {
-                        $yyact = $nextstate;
-                    }
-                } while (true);
-            }
-            break;
-        } while (true);
-
-        return array_unique($expected);
-    }
-
-    /**
-     * Based on the parser state and current parser stack, determine whether
-     * the lookahead token is possible.
-     *
-     * The parser will convert the token value to an error token if not.  This
-     * catches some unusual edge cases where the parser would fail.
-     * @param int
-     * @return bool
-     */
-    public function yy_is_expected_token($token)
-    {
-        if ($token === 0) {
-            return true; // 0 is not part of this
-        }
-        $state = $this->yystack[$this->yyidx]->stateno;
-        if (in_array($token, self::$yyExpectedTokens[$state], true)) {
-            return true;
-        }
-        $stack = $this->yystack;
-        $yyidx = $this->yyidx;
-        do {
-            $yyact = $this->yy_find_shift_action($token);
-            if ($yyact >= self::YYNSTATE && $yyact < self::YYNSTATE + self::YYNRULE) {
-                // reduce action
-                $done = 0;
-                do {
-                    if ($done++ == 100) {
-                        $this->yyidx = $yyidx;
-                        $this->yystack = $stack;
-                        // too much recursion prevents proper detection
-                        // so give up
-                        return true;
-                    }
-                    $yyruleno = $yyact - self::YYNSTATE;
-                    $this->yyidx -= self::$yyRuleInfo[$yyruleno]['rhs'];
-                    $nextstate = $this->yy_find_reduce_action(
-                        $this->yystack[$this->yyidx]->stateno,
-                        self::$yyRuleInfo[$yyruleno]['lhs']);
-                    if (isset(self::$yyExpectedTokens[$nextstate]) &&
-                          in_array($token, self::$yyExpectedTokens[$nextstate], true)) {
-                        $this->yyidx = $yyidx;
-                        $this->yystack = $stack;
-
-                        return true;
-                    }
-                    if ($nextstate < self::YYNSTATE) {
-                        // we need to shift a non-terminal
-                        $this->yyidx++;
-                        $x = new PHP_LexerGenerator_ParseryyStackEntry;
-                        $x->stateno = $nextstate;
-                        $x->major = self::$yyRuleInfo[$yyruleno]['lhs'];
-                        $this->yystack[$this->yyidx] = $x;
-                        continue 2;
-                    } elseif ($nextstate == self::YYNSTATE + self::YYNRULE + 1) {
-                        $this->yyidx = $yyidx;
-                        $this->yystack = $stack;
-                        if (!$token) {
-                            // end of input: this is valid
-                            return true;
-                        }
-                        // the last token was just ignored, we can't accept
-                        // by ignoring input, this is in essence ignoring a
-                        // syntax error!
-                        return false;
-                    } elseif ($nextstate === self::YY_NO_ACTION) {
-                        $this->yyidx = $yyidx;
-                        $this->yystack = $stack;
-                        // input accepted, but not shifted (I guess)
-                        return true;
-                    } else {
-                        $yyact = $nextstate;
-                    }
-                } while (true);
-            }
-            break;
-        } while (true);
-        $this->yyidx = $yyidx;
-        $this->yystack = $stack;
-
-        return true;
-    }
-
-    /**
-     * Find the appropriate action for a parser given the terminal
-     * look-ahead token iLookAhead.
-     *
-     * If the look-ahead token is YYNOCODE, then check to see if the action is
-     * independent of the look-ahead.  If it is, return the action, otherwise
-     * return YY_NO_ACTION.
-     * @param int The look-ahead token
-     */
-    public function yy_find_shift_action($iLookAhead)
-    {
-        $stateno = $this->yystack[$this->yyidx]->stateno;
-
-        /* if ($this->yyidx < 0) return self::YY_NO_ACTION;  */
-        if (!isset(self::$yy_shift_ofst[$stateno])) {
-            // no shift actions
-            return self::$yy_default[$stateno];
-        }
-        $i = self::$yy_shift_ofst[$stateno];
-        if ($i === self::YY_SHIFT_USE_DFLT) {
-            return self::$yy_default[$stateno];
-        }
-        if ($iLookAhead == self::YYNOCODE) {
-            return self::YY_NO_ACTION;
-        }
-        $i += $iLookAhead;
-        if ($i < 0 || $i >= self::YY_SZ_ACTTAB ||
-              self::$yy_lookahead[$i] != $iLookAhead) {
-            if (count(self::$yyFallback) && $iLookAhead < count(self::$yyFallback)
-                   && ($iFallback = self::$yyFallback[$iLookAhead]) != 0) {
-                if ($this->yyTraceFILE) {
-                    fwrite($this->yyTraceFILE, $this->yyTracePrompt . "FALLBACK " .
-                        self::$yyTokenName[$iLookAhead] . " => " .
-                        self::$yyTokenName[$iFallback] . "\n");
-                }
-
-                return $this->yy_find_shift_action($iFallback);
-            }
-
-            return self::$yy_default[$stateno];
-        } else {
-            return self::$yy_action[$i];
-        }
-    }
-
-    /**
-     * Find the appropriate action for a parser given the non-terminal
-     * look-ahead token $iLookAhead.
-     *
-     * If the look-ahead token is self::YYNOCODE, then check to see if the action is
-     * independent of the look-ahead.  If it is, return the action, otherwise
-     * return self::YY_NO_ACTION.
-     * @param int Current state number
-     * @param int The look-ahead token
-     */
-    public function yy_find_reduce_action($stateno, $iLookAhead)
-    {
-        /* $stateno = $this->yystack[$this->yyidx]->stateno; */
-
-        if (!isset(self::$yy_reduce_ofst[$stateno])) {
-            return self::$yy_default[$stateno];
-        }
-        $i = self::$yy_reduce_ofst[$stateno];
-        if ($i == self::YY_REDUCE_USE_DFLT) {
-            return self::$yy_default[$stateno];
-        }
-        if ($iLookAhead == self::YYNOCODE) {
-            return self::YY_NO_ACTION;
-        }
-        $i += $iLookAhead;
-        if ($i < 0 || $i >= self::YY_SZ_ACTTAB ||
-              self::$yy_lookahead[$i] != $iLookAhead) {
-            return self::$yy_default[$stateno];
-        } else {
-            return self::$yy_action[$i];
-        }
-    }
-
-    /**
-     * Perform a shift action.
-     * @param int The new state to shift in
-     * @param int The major token to shift in
-     * @param mixed the minor token to shift in
-     */
-    public function yy_shift($yyNewState, $yyMajor, $yypMinor)
-    {
-        $this->yyidx++;
-        if ($this->yyidx >= self::YYSTACKDEPTH) {
-            $this->yyidx--;
-            if ($this->yyTraceFILE) {
-                fprintf($this->yyTraceFILE, "%sStack Overflow!\n", $this->yyTracePrompt);
-            }
-            while ($this->yyidx >= 0) {
-                $this->yy_pop_parser_stack();
-            }
-            /* Here code is inserted which will execute if the parser
-            ** stack ever overflows */
-
-            return;
-        }
-        $yytos = new PHP_LexerGenerator_ParseryyStackEntry;
-        $yytos->stateno = $yyNewState;
-        $yytos->major = $yyMajor;
-        $yytos->minor = $yypMinor;
-        array_push($this->yystack, $yytos);
-        if ($this->yyTraceFILE && $this->yyidx > 0) {
-            fprintf($this->yyTraceFILE, "%sShift %d\n", $this->yyTracePrompt,
-                $yyNewState);
-            fprintf($this->yyTraceFILE, "%sStack:", $this->yyTracePrompt);
-            for ($i = 1; $i <= $this->yyidx; $i++) {
-                fprintf($this->yyTraceFILE, " %s",
-                    self::$yyTokenName[$this->yystack[$i]->major]);
-            }
-            fwrite($this->yyTraceFILE,"\n");
-        }
-    }
-
-    /**
-     * The following table contains information about every rule that
-     * is used during the reduce.
-     *
-     * <pre>
-     * array(
-     *  array(
-     *   int $lhs;         Symbol on the left-hand side of the rule
-     *   int $nrhs;     Number of right-hand side symbols in the rule
-     *  ),...
-     * );
-     * </pre>
-     */
-    public static $yyRuleInfo = array(
-  array( 'lhs' => 11, 'rhs' => 1 ),
-  array( 'lhs' => 12, 'rhs' => 2 ),
-  array( 'lhs' => 12, 'rhs' => 3 ),
-  array( 'lhs' => 12, 'rhs' => 3 ),
-  array( 'lhs' => 12, 'rhs' => 4 ),
-  array( 'lhs' => 13, 'rhs' => 3 ),
-  array( 'lhs' => 15, 'rhs' => 2 ),
-  array( 'lhs' => 16, 'rhs' => 2 ),
-  array( 'lhs' => 16, 'rhs' => 2 ),
-  array( 'lhs' => 16, 'rhs' => 3 ),
-  array( 'lhs' => 16, 'rhs' => 3 ),
-  array( 'lhs' => 17, 'rhs' => 2 ),
-  array( 'lhs' => 17, 'rhs' => 3 ),
-  array( 'lhs' => 14, 'rhs' => 3 ),
-  array( 'lhs' => 14, 'rhs' => 5 ),
-  array( 'lhs' => 14, 'rhs' => 4 ),
-  array( 'lhs' => 14, 'rhs' => 6 ),
-  array( 'lhs' => 14, 'rhs' => 3 ),
-  array( 'lhs' => 14, 'rhs' => 5 ),
-  array( 'lhs' => 14, 'rhs' => 4 ),
-  array( 'lhs' => 14, 'rhs' => 6 ),
-  array( 'lhs' => 20, 'rhs' => 2 ),
-  array( 'lhs' => 19, 'rhs' => 2 ),
-  array( 'lhs' => 19, 'rhs' => 3 ),
-  array( 'lhs' => 21, 'rhs' => 1 ),
-  array( 'lhs' => 21, 'rhs' => 1 ),
-  array( 'lhs' => 21, 'rhs' => 1 ),
-  array( 'lhs' => 21, 'rhs' => 2 ),
-  array( 'lhs' => 21, 'rhs' => 2 ),
-  array( 'lhs' => 21, 'rhs' => 2 ),
-  array( 'lhs' => 18, 'rhs' => 1 ),
-  array( 'lhs' => 18, 'rhs' => 1 ),
-  array( 'lhs' => 18, 'rhs' => 1 ),
-  array( 'lhs' => 18, 'rhs' => 2 ),
-  array( 'lhs' => 18, 'rhs' => 2 ),
-  array( 'lhs' => 18, 'rhs' => 2 ),
-    );
-
-    /**
-     * The following table contains a mapping of reduce action to method name
-     * that handles the reduction.
-     *
-     * If a rule is not set, it has no handler.
-     */
-    public static $yyReduceMap = array(
-        1 => 1,
-        2 => 2,
-        3 => 3,
-        4 => 4,
-        5 => 5,
-        6 => 6,
-        7 => 7,
-        8 => 7,
-        9 => 9,
-        10 => 9,
-        11 => 11,
-        12 => 12,
-        13 => 13,
-        14 => 14,
-        15 => 15,
-        16 => 16,
-        17 => 17,
-        18 => 18,
-        19 => 19,
-        20 => 20,
-        21 => 21,
-        22 => 22,
-        23 => 23,
-        24 => 24,
-        25 => 25,
-        26 => 26,
-        27 => 27,
-        28 => 28,
-        29 => 29,
-        30 => 30,
-        31 => 31,
-        32 => 32,
-        33 => 33,
-        34 => 34,
-        35 => 35,
-    );
-    /* Beginning here are the reduction cases.  A typical example
-    ** follows:
-    **  #line <lineno> <grammarfile>
-    **   function yy_r0($yymsp){ ... }           // User supplied code
-    **  #line <lineno> <thisfile>
-    */
-#line 438 "Parser.y"
-    public function yy_r1()
-    {
-    fwrite($this->out, '
-    private $_yy_state = 1;
-    private $_yy_stack = array();
-
-    public function yylex()
-    {
-        return $this->{\'yylex\' . $this->_yy_state}();
-    }
-
-    public function yypushstate($state)
-    {
-        if ($this->yyTraceFILE) {
-             fprintf($this->yyTraceFILE, "%sState push %s\n", $this->yyTracePrompt, isset($this->state_name[$this->_yy_state]) ? $this->state_name[$this->_yy_state] : $this->_yy_state);
-        }
-        array_push($this->_yy_stack, $this->_yy_state);
-        $this->_yy_state = $state;
-        if ($this->yyTraceFILE) {
-             fprintf($this->yyTraceFILE, "%snew State %s\n", $this->yyTracePrompt, isset($this->state_name[$this->_yy_state]) ? $this->state_name[$this->_yy_state] : $this->_yy_state);
-        }
-    }
-
-    public function yypopstate()
-    {
-       if ($this->yyTraceFILE) {
-             fprintf($this->yyTraceFILE, "%sState pop %s\n", $this->yyTracePrompt,  isset($this->state_name[$this->_yy_state]) ? $this->state_name[$this->_yy_state] : $this->_yy_state);
-        }
-       $this->_yy_state = array_pop($this->_yy_stack);
-        if ($this->yyTraceFILE) {
-             fprintf($this->yyTraceFILE, "%snew State %s\n", $this->yyTracePrompt, isset($this->state_name[$this->_yy_state]) ? $this->state_name[$this->_yy_state] : $this->_yy_state);
-        }
-
-    }
-
-    public function yybegin($state)
-    {
-       $this->_yy_state = $state;
-        if ($this->yyTraceFILE) {
-             fprintf($this->yyTraceFILE, "%sState set %s\n", $this->yyTracePrompt, isset($this->state_name[$this->_yy_state]) ? $this->state_name[$this->_yy_state] : $this->_yy_state);
-        }
-    }
-
-');
-    foreach ($this->yystack[$this->yyidx + 0]->minor as $rule) {
-        $this->outputRules($rule['rules'], $rule['statename']);
-        if ($rule['code']) {
-            fwrite($this->out, $rule['code']);
-        }
-    }
-    }
-#line 1352 "Parser.php"
-#line 472 "Parser.y"
-    public function yy_r2()
-    {
-    fwrite($this->out, '
-
-    private $_yy_stack = array();
-
-    public function yylex()
-    {
-        return $this->{\'yylex\' . $this->_yy_state}();
-    }
-
-    public function yypushstate($state)
-    {
-        if ($this->yyTraceFILE) {
-             fprintf($this->yyTraceFILE, "%sState push %s\n", $this->yyTracePrompt, isset($this->state_name[$this->_yy_state]) ? $this->state_name[$this->_yy_state] : $this->_yy_state);
-        }
-        array_push($this->_yy_stack, $this->_yy_state);
-        $this->_yy_state = $state;
-        if ($this->yyTraceFILE) {
-             fprintf($this->yyTraceFILE, "%snew State %s\n", $this->yyTracePrompt, isset($this->state_name[$this->_yy_state]) ? $this->state_name[$this->_yy_state] : $this->_yy_state);
-        }
-    }
-
-    public function yypopstate()
-    {
-       if ($this->yyTraceFILE) {
-             fprintf($this->yyTraceFILE, "%sState pop %s\n", $this->yyTracePrompt,  isset($this->state_name[$this->_yy_state]) ? $this->state_name[$this->_yy_state] : $this->_yy_state);
-        }
-       $this->_yy_state = array_pop($this->_yy_stack);
-        if ($this->yyTraceFILE) {
-             fprintf($this->yyTraceFILE, "%snew State %s\n", $this->yyTracePrompt, isset($this->state_name[$this->_yy_state]) ? $this->state_name[$this->_yy_state] : $this->_yy_state);
-        }
-
-    }
-
-    public function yybegin($state)
-    {
-       $this->_yy_state = $state;
-        if ($this->yyTraceFILE) {
-             fprintf($this->yyTraceFILE, "%sState set %s\n", $this->yyTracePrompt, isset($this->state_name[$this->_yy_state]) ? $this->state_name[$this->_yy_state] : $this->_yy_state);
-        }
-    }
-
-');
-    if (strlen($this->yystack[$this->yyidx + -1]->minor)) {
-        fwrite($this->out, $this->yystack[$this->yyidx + -1]->minor);
-    }
-    foreach ($this->yystack[$this->yyidx + 0]->minor as $rule) {
-        $this->outputRules($rule['rules'], $rule['statename']);
-        if ($rule['code']) {
-            fwrite($this->out, $rule['code']);
-        }
-    }
-    }
-#line 1391 "Parser.php"
-#line 509 "Parser.y"
-    public function yy_r3()
-    {
-    if (strlen($this->yystack[$this->yyidx + -2]->minor)) {
-        fwrite($this->out, $this->yystack[$this->yyidx + -2]->minor);
-    }
-    fwrite($this->out, '
-    private $_yy_state = 1;
-    private $_yy_stack = array();
-
-    public function yylex()
-    {
-        return $this->{\'yylex\' . $this->_yy_state}();
-    }
-
-    public function yypushstate($state)
-    {
-        if ($this->yyTraceFILE) {
-             fprintf($this->yyTraceFILE, "%sState push %s\n", $this->yyTracePrompt, isset($this->state_name[$this->_yy_state]) ? $this->state_name[$this->_yy_state] : $this->_yy_state);
-        }
-        array_push($this->_yy_stack, $this->_yy_state);
-        $this->_yy_state = $state;
-        if ($this->yyTraceFILE) {
-             fprintf($this->yyTraceFILE, "%snew State %s\n", $this->yyTracePrompt, isset($this->state_name[$this->_yy_state]) ? $this->state_name[$this->_yy_state] : $this->_yy_state);
-        }
-    }
-
-    public function yypopstate()
-    {
-       if ($this->yyTraceFILE) {
-             fprintf($this->yyTraceFILE, "%sState pop %s\n", $this->yyTracePrompt,  isset($this->state_name[$this->_yy_state]) ? $this->state_name[$this->_yy_state] : $this->_yy_state);
-        }
-       $this->_yy_state = array_pop($this->_yy_stack);
-        if ($this->yyTraceFILE) {
-             fprintf($this->yyTraceFILE, "%snew State %s\n", $this->yyTracePrompt, isset($this->state_name[$this->_yy_state]) ? $this->state_name[$this->_yy_state] : $this->_yy_state);
-        }
-
-    }
-
-    public function yybegin($state)
-    {
-       $this->_yy_state = $state;
-        if ($this->yyTraceFILE) {
-             fprintf($this->yyTraceFILE, "%sState set %s\n", $this->yyTracePrompt, isset($this->state_name[$this->_yy_state]) ? $this->state_name[$this->_yy_state] : $this->_yy_state);
-        }
-    }
-
-');
-    foreach ($this->yystack[$this->yyidx + 0]->minor as $rule) {
-        $this->outputRules($rule['rules'], $rule['statename']);
-        if ($rule['code']) {
-            fwrite($this->out, $rule['code']);
-        }
-    }
-    }
-#line 1430 "Parser.php"
-#line 546 "Parser.y"
-    public function yy_r4()
-    {
-    if (strlen($this->yystack[$this->yyidx + -3]->minor)) {
-        fwrite($this->out, $this->yystack[$this->yyidx + -3]->minor);
-    }
-    fwrite($this->out, '
-    private $_yy_state = 1;
-    private $_yy_stack = array();
-
-    public function yylex()
-    {
-        return $this->{\'yylex\' . $this->_yy_state}();
-    }
-
-    public function yypushstate($state)
-    {
-        if ($this->yyTraceFILE) {
-             fprintf($this->yyTraceFILE, "%sState push %s\n", $this->yyTracePrompt, isset($this->state_name[$this->_yy_state]) ? $this->state_name[$this->_yy_state] : $this->_yy_state);
-        }
-        array_push($this->_yy_stack, $this->_yy_state);
-        $this->_yy_state = $state;
-        if ($this->yyTraceFILE) {
-             fprintf($this->yyTraceFILE, "%snew State %s\n", $this->yyTracePrompt, isset($this->state_name[$this->_yy_state]) ? $this->state_name[$this->_yy_state] : $this->_yy_state);
-        }
-    }
-
-    public function yypopstate()
-    {
-       if ($this->yyTraceFILE) {
-             fprintf($this->yyTraceFILE, "%sState pop %s\n", $this->yyTracePrompt,  isset($this->state_name[$this->_yy_state]) ? $this->state_name[$this->_yy_state] : $this->_yy_state);
-        }
-       $this->_yy_state = array_pop($this->_yy_stack);
-        if ($this->yyTraceFILE) {
-             fprintf($this->yyTraceFILE, "%snew State %s\n", $this->yyTracePrompt, isset($this->state_name[$this->_yy_state]) ? $this->state_name[$this->_yy_state] : $this->_yy_state);
-        }
-
-    }
-
-    public function yybegin($state)
-    {
-       $this->_yy_state = $state;
-        if ($this->yyTraceFILE) {
-             fprintf($this->yyTraceFILE, "%sState set %s\n", $this->yyTracePrompt, isset($this->state_name[$this->_yy_state]) ? $this->state_name[$this->_yy_state] : $this->_yy_state);
-        }
-    }
-
-');
-    if (strlen($this->yystack[$this->yyidx + -1]->minor)) {
-        fwrite($this->out, $this->yystack[$this->yyidx + -1]->minor);
-    }
-    foreach ($this->yystack[$this->yyidx + 0]->minor as $rule) {
-        $this->outputRules($rule['rules'], $rule['statename']);
-        if ($rule['code']) {
-            fwrite($this->out, $rule['code']);
-        }
-    }
-    }
-#line 1472 "Parser.php"
-#line 587 "Parser.y"
-    public function yy_r5()
-    {
-    $this->_retvalue = $this->yystack[$this->yyidx + -1]->minor;
-    $this->patterns = $this->yystack[$this->yyidx + -1]->minor['patterns'];
-    $this->_patternIndex = 1;
-    }
-#line 1479 "Parser.php"
-#line 593 "Parser.y"
-    public function yy_r6()
-    {
-    $expected = array(
-        'counter' => true,
-        'input' => true,
-        'token' => true,
-        'value' => true,
-        'line' => true,
-    );
-    foreach ($this->yystack[$this->yyidx + -1]->minor as $pi) {
-        if (isset($expected[$pi['pi']])) {
-            unset($expected[$pi['pi']]);
-            continue;
-        }
-        if (count($expected)) {
-            throw new Exception('Processing Instructions "' .
-                implode(', ', array_keys($expected)) . '" must be defined');
-        }
-    }
-    $expected = array(
-        'caseinsensitive' => true,
-        'counter' => true,
-        'input' => true,
-        'token' => true,
-        'value' => true,
-        'line' => true,
-        'matchlongest' => true,
-        'unicode' => true,
-    );
-    foreach ($this->yystack[$this->yyidx + -1]->minor as $pi) {
-        if (isset($expected[$pi['pi']])) {
-            $this->{$pi['pi']} = $pi['definition'];
-            if ($pi['pi'] == 'matchlongest') {
-                $this->matchlongest = true;
-            }
-            continue;
-        }
-        $this->error('Unknown processing instruction %' . $pi['pi'] .
-            ', should be one of "' . implode(', ', array_keys($expected)) . '"');
-    }
-    $this->patternFlags = ($this->caseinsensitive ? 'i' : '')
-        . ($this->unicode ? 'u' : '');
-    $this->_retvalue = array('patterns' => $this->yystack[$this->yyidx + 0]->minor, 'pis' => $this->yystack[$this->yyidx + -1]->minor);
-    $this->_patternIndex = 1;
-    }
-#line 1525 "Parser.php"
-#line 638 "Parser.y"
-    public function yy_r7()
-    {
-    $this->_retvalue = array(array('pi' => $this->yystack[$this->yyidx + -1]->minor, 'definition' => $this->yystack[$this->yyidx + 0]->minor));
-    }
-#line 1530 "Parser.php"
-#line 644 "Parser.y"
-    public function yy_r9()
-    {
-    $this->_retvalue = $this->yystack[$this->yyidx + -2]->minor;
-    $this->_retvalue[] = array('pi' => $this->yystack[$this->yyidx + -1]->minor, 'definition' => $this->yystack[$this->yyidx + 0]->minor);
-    }
-#line 1536 "Parser.php"
-#line 653 "Parser.y"
-    public function yy_r11()
-    {
-    $this->_retvalue = array($this->yystack[$this->yyidx + -1]->minor => $this->yystack[$this->yyidx + 0]->minor);
-    // reset internal indicator of where we are in a pattern
-    $this->_patternIndex = 0;
-    }
-#line 1543 "Parser.php"
-#line 658 "Parser.y"
-    public function yy_r12()
-    {
-    $this->_retvalue = $this->yystack[$this->yyidx + -2]->minor;
-    if (isset($this->_retvalue[$this->yystack[$this->yyidx + -1]->minor])) {
-        throw new Exception('Pattern "' . $this->yystack[$this->yyidx + -1]->minor . '" is already defined as "' .
-            $this->_retvalue[$this->yystack[$this->yyidx + -1]->minor] . '", cannot redefine as "' . $this->yystack[$this->yyidx + 0]->minor->string . '"');
-    }
-    $this->_retvalue[$this->yystack[$this->yyidx + -1]->minor] = $this->yystack[$this->yyidx + 0]->minor;
-    // reset internal indicator of where we are in a pattern declaration
-    $this->_patternIndex = 0;
-    }
-#line 1555 "Parser.php"
-#line 669 "Parser.y"
-    public function yy_r13()
-    {
-    $this->_retvalue = array(array('rules' => $this->yystack[$this->yyidx + -1]->minor, 'code' => '', 'statename' => ''));
-    }
-#line 1560 "Parser.php"
-#line 672 "Parser.y"
-    public function yy_r14()
-    {
-    if ($this->yystack[$this->yyidx + -3]->minor != 'statename') {
-        throw new Exception('Error: only %statename processing instruction ' .
-            'is allowed in rule sections (found ' . $this->yystack[$this->yyidx + -3]->minor . ').');
-    }
-    $this->_retvalue = array(array('rules' => $this->yystack[$this->yyidx + -1]->minor, 'code' => '', 'statename' => $this->yystack[$this->yyidx + -2]->minor));
-    }
-#line 1569 "Parser.php"
-#line 679 "Parser.y"
-    public function yy_r15()
-    {
-    $this->_retvalue = array(array('rules' => $this->yystack[$this->yyidx + -2]->minor, 'code' => $this->yystack[$this->yyidx + 0]->minor, 'statename' => ''));
-    }
-#line 1574 "Parser.php"
-#line 682 "Parser.y"
-    public function yy_r16()
-    {
-    if ($this->yystack[$this->yyidx + -4]->minor != 'statename') {
-        throw new Exception('Error: only %statename processing instruction ' .
-            'is allowed in rule sections (found ' . $this->yystack[$this->yyidx + -4]->minor . ').');
-    }
-    $this->_retvalue = array(array('rules' => $this->yystack[$this->yyidx + -2]->minor, 'code' => $this->yystack[$this->yyidx + 0]->minor, 'statename' => $this->yystack[$this->yyidx + -3]->minor));
-    $this->_patternIndex = 1;
-    }
-#line 1584 "Parser.php"
-#line 690 "Parser.y"
-    public function yy_r17()
-    {
-    $this->_retvalue = $this->yystack[$this->yyidx + -2]->minor;
-    $this->_retvalue[] = array('rules' => $this->yystack[$this->yyidx + -1]->minor, 'code' => '', 'statename' => '');
-    $this->_patternIndex = 1;
-    }
-#line 1591 "Parser.php"
-#line 695 "Parser.y"
-    public function yy_r18()
-    {
-    if ($this->yystack[$this->yyidx + -3]->minor != 'statename') {
-        throw new Exception('Error: only %statename processing instruction ' .
-            'is allowed in rule sections (found ' . $this->yystack[$this->yyidx + -3]->minor . ').');
-    }
-    $this->_retvalue = $this->yystack[$this->yyidx + -4]->minor;
-    $this->_retvalue[] = array('rules' => $this->yystack[$this->yyidx + -1]->minor, 'code' => '', 'statename' => $this->yystack[$this->yyidx + -2]->minor);
-    }
-#line 1601 "Parser.php"
-#line 703 "Parser.y"
-    public function yy_r19()
-    {
-    $this->_retvalue = $this->yystack[$this->yyidx + -3]->minor;
-    $this->_retvalue[] = array('rules' => $this->yystack[$this->yyidx + -2]->minor, 'code' => $this->yystack[$this->yyidx + 0]->minor, 'statename' => '');
-    }
-#line 1607 "Parser.php"
-#line 707 "Parser.y"
-    public function yy_r20()
-    {
-    if ($this->yystack[$this->yyidx + -4]->minor != 'statename') {
-        throw new Exception('Error: only %statename processing instruction ' .
-            'is allowed in rule sections (found ' . $this->yystack[$this->yyidx + -4]->minor . ').');
-    }
-    $this->_retvalue = $this->yystack[$this->yyidx + -5]->minor;
-    $this->_retvalue[] = array('rules' => $this->yystack[$this->yyidx + -2]->minor, 'code' => $this->yystack[$this->yyidx + 0]->minor, 'statename' => $this->yystack[$this->yyidx + -3]->minor);
-    }
-#line 1617 "Parser.php"
-#line 716 "Parser.y"
-    public function yy_r21()
-    {
-    $this->_retvalue = $this->yystack[$this->yyidx + -1]->minor;
-    $this->_patternIndex = 1;
-    }
-#line 1623 "Parser.php"
-#line 721 "Parser.y"
-    public function yy_r22()
-    {
-    $name = $this->yystack[$this->yyidx + -1]->minor[1];
-    $this->yystack[$this->yyidx + -1]->minor = $this->yystack[$this->yyidx + -1]->minor[0];
-    $this->yystack[$this->yyidx + -1]->minor = $this->_validatePattern($this->yystack[$this->yyidx + -1]->minor);
-    $this->_patternIndex += $this->yystack[$this->yyidx + -1]->minor['subpatterns'] + 1;
-    if (@preg_match('/' . str_replace('/', '\\/', $this->yystack[$this->yyidx + -1]->minor['pattern']) . '/', '')) {
-        $this->error('Rule "' . $name . '" can match the empty string, this will break lexing');
-    }
-    $this->_retvalue = array(array('pattern' => str_replace('/', '\\/', $this->yystack[$this->yyidx + -1]->minor->string), 'code' => $this->yystack[$this->yyidx + 0]->minor, 'subpatterns' => $this->yystack[$this->yyidx + -1]->minor['subpatterns']));
-    }
-#line 1635 "Parser.php"
-#line 731 "Parser.y"
-    public function yy_r23()
-    {
-    $this->_retvalue = $this->yystack[$this->yyidx + -2]->minor;
-    $name = $this->yystack[$this->yyidx + -1]->minor[1];
-    $this->yystack[$this->yyidx + -1]->minor = $this->yystack[$this->yyidx + -1]->minor[0];
-    $this->yystack[$this->yyidx + -1]->minor = $this->_validatePattern($this->yystack[$this->yyidx + -1]->minor);
-    $this->_patternIndex += $this->yystack[$this->yyidx + -1]->minor['subpatterns'] + 1;
-    if (@preg_match('/' . str_replace('/', '\\/', $this->yystack[$this->yyidx + -1]->minor['pattern']) . '/', '')) {
-        $this->error('Rule "' . $name . '" can match the empty string, this will break lexing');
-    }
-    $this->_retvalue[] = array('pattern' => str_replace('/', '\\/', $this->yystack[$this->yyidx + -1]->minor->string), 'code' => $this->yystack[$this->yyidx + 0]->minor, 'subpatterns' => $this->yystack[$this->yyidx + -1]->minor['subpatterns']);
-    }
-#line 1648 "Parser.php"
-#line 743 "Parser.y"
-    public function yy_r24()
-    {
-    $this->_retvalue = array(preg_quote($this->yystack[$this->yyidx + 0]->minor, '/'), $this->yystack[$this->yyidx + 0]->minor);
-    }
-#line 1653 "Parser.php"
-#line 746 "Parser.y"
-    public function yy_r25()
-    {
-    $this->_retvalue = array($this->makeCaseInsensitve(preg_quote($this->yystack[$this->yyidx + 0]->minor, '/')), $this->yystack[$this->yyidx + 0]->minor);
-    }
-#line 1658 "Parser.php"
-#line 749 "Parser.y"
-    public function yy_r26()
-    {
-    if (!isset($this->patterns[$this->yystack[$this->yyidx + 0]->minor])) {
-        $this->error('Undefined pattern "' . $this->yystack[$this->yyidx + 0]->minor . '" used in rules');
-        throw new Exception('Undefined pattern "' . $this->yystack[$this->yyidx + 0]->minor . '" used in rules');
-    }
-    $this->_retvalue = array($this->patterns[$this->yystack[$this->yyidx + 0]->minor], $this->yystack[$this->yyidx + 0]->minor);
-    }
-#line 1667 "Parser.php"
-#line 756 "Parser.y"
-    public function yy_r27()
-    {
-    $this->_retvalue = array($this->yystack[$this->yyidx + -1]->minor[0] . preg_quote($this->yystack[$this->yyidx + 0]->minor, '/'), $this->yystack[$this->yyidx + -1]->minor[1] . ' ' . $this->yystack[$this->yyidx + 0]->minor);
-    }
-#line 1672 "Parser.php"
-#line 759 "Parser.y"
-    public function yy_r28()
-    {
-    $this->_retvalue = array($this->yystack[$this->yyidx + -1]->minor[0] . $this->makeCaseInsensitve(preg_quote($this->yystack[$this->yyidx + 0]->minor, '/')), $this->yystack[$this->yyidx + -1]->minor[1] . ' ' . $this->yystack[$this->yyidx + 0]->minor);
-    }
-#line 1677 "Parser.php"
-#line 762 "Parser.y"
-    public function yy_r29()
-    {
-    if (!isset($this->patterns[$this->yystack[$this->yyidx + 0]->minor])) {
-        $this->error('Undefined pattern "' . $this->yystack[$this->yyidx + 0]->minor . '" used in rules');
-        throw new Exception('Undefined pattern "' . $this->yystack[$this->yyidx + 0]->minor . '" used in rules');
-    }
-    $this->_retvalue = array($this->yystack[$this->yyidx + -1]->minor[0] . $this->patterns[$this->yystack[$this->yyidx + 0]->minor], $this->yystack[$this->yyidx + -1]->minor[1] . ' ' . $this->yystack[$this->yyidx + 0]->minor);
-    }
-#line 1686 "Parser.php"
-#line 770 "Parser.y"
-    public function yy_r30()
-    {
-    $this->_retvalue = preg_quote($this->yystack[$this->yyidx + 0]->minor, '/');
-    }
-#line 1691 "Parser.php"
-#line 773 "Parser.y"
-    public function yy_r31()
-    {
-    $this->_retvalue = $this->makeCaseInsensitve(preg_quote($this->yystack[$this->yyidx + 0]->minor, '/'));
-    }
-#line 1696 "Parser.php"
-#line 776 "Parser.y"
-    public function yy_r32()
-    {
-    // increment internal sub-pattern counter
-    // adjust back-references in pattern based on previous pattern
-    $test = $this->_validatePattern($this->yystack[$this->yyidx + 0]->minor, true);
-    $this->_patternIndex += $test['subpatterns'];
-    $this->_retvalue = $test['pattern'];
-    }
-#line 1705 "Parser.php"
-#line 783 "Parser.y"
-    public function yy_r33()
-    {
-    $this->_retvalue = $this->yystack[$this->yyidx + -1]->minor . preg_quote($this->yystack[$this->yyidx + 0]->minor, '/');
-    }
-#line 1710 "Parser.php"
-#line 786 "Parser.y"
-    public function yy_r34()
-    {
-    $this->_retvalue = $this->yystack[$this->yyidx + -1]->minor . $this->makeCaseInsensitve(preg_quote($this->yystack[$this->yyidx + 0]->minor, '/'));
-    }
-#line 1715 "Parser.php"
-#line 789 "Parser.y"
-    public function yy_r35()
-    {
-    // increment internal sub-pattern counter
-    // adjust back-references in pattern based on previous pattern
-    $test = $this->_validatePattern($this->yystack[$this->yyidx + 0]->minor, true);
-    $this->_patternIndex += $test['subpatterns'];
-    $this->_retvalue = $this->yystack[$this->yyidx + -1]->minor . $test['pattern'];
-    }
-#line 1724 "Parser.php"
-
-    /**
-     * placeholder for the left hand side in a reduce operation.
-     *
-     * For a parser with a rule like this:
-     * <pre>
-     * rule(A) ::= B. { A = 1; }
-     * </pre>
-     *
-     * The parser will translate to something like:
-     *
-     * <code>
-     * function yy_r0(){$this->_retvalue = 1;}
-     * </code>
-     */
-    private $_retvalue;
-
-    /**
-     * Perform a reduce action and the shift that must immediately
-     * follow the reduce.
-     *
-     * For a rule such as:
-     *
-     * <pre>
-     * A ::= B blah C. { dosomething(); }
-     * </pre>
-     *
-     * This function will first call the action, if any, ("dosomething();" in our
-     * example), and then it will pop three states from the stack,
-     * one for each entry on the right-hand side of the expression
-     * (B, blah, and C in our example rule), and then push the result of the action
-     * back on to the stack with the resulting state reduced to (as described in the .out
-     * file)
-     * @param int Number of the rule by which to reduce
-     */
-    public function yy_reduce($yyruleno)
-    {
-        //int $yygoto;                     /* The next state */
-        //int $yyact;                      /* The next action */
-        //mixed $yygotominor;        /* The LHS of the rule reduced */
-        //PHP_LexerGenerator_ParseryyStackEntry $yymsp;            /* The top of the parser's stack */
-        //int $yysize;                     /* Amount to pop the stack */
-        $yymsp = $this->yystack[$this->yyidx];
-        if ($this->yyTraceFILE && $yyruleno >= 0
-              && $yyruleno < count(self::$yyRuleName)) {
-            fprintf($this->yyTraceFILE, "%sReduce (%d) [%s].\n",
-                $this->yyTracePrompt, $yyruleno,
-                self::$yyRuleName[$yyruleno]);
-        }
-
-        $this->_retvalue = $yy_lefthand_side = null;
-        if (array_key_exists($yyruleno, self::$yyReduceMap)) {
-            // call the action
-            $this->_retvalue = null;
-            $this->{'yy_r' . self::$yyReduceMap[$yyruleno]}();
-            $yy_lefthand_side = $this->_retvalue;
-        }
-        $yygoto = self::$yyRuleInfo[$yyruleno]['lhs'];
-        $yysize = self::$yyRuleInfo[$yyruleno]['rhs'];
-        $this->yyidx -= $yysize;
-        for ($i = $yysize; $i; $i--) {
-            // pop all of the right-hand side parameters
-            array_pop($this->yystack);
-        }
-        $yyact = $this->yy_find_reduce_action($this->yystack[$this->yyidx]->stateno, $yygoto);
-        if ($yyact < self::YYNSTATE) {
-            /* If we are not debugging and the reduce action popped at least
-            ** one element off the stack, then we can push the new element back
-            ** onto the stack here, and skip the stack overflow test in yy_shift().
-            ** That gives a significant speed improvement. */
-            if (!$this->yyTraceFILE && $yysize) {
-                $this->yyidx++;
-                $x = new PHP_LexerGenerator_ParseryyStackEntry;
-                $x->stateno = $yyact;
-                $x->major = $yygoto;
-                $x->minor = $yy_lefthand_side;
-                $this->yystack[$this->yyidx] = $x;
-            } else {
-                $this->yy_shift($yyact, $yygoto, $yy_lefthand_side);
-            }
-        } elseif ($yyact == self::YYNSTATE + self::YYNRULE + 1) {
-            $this->yy_accept();
-        }
-    }
-
-    /**
-     * The following code executes when the parse fails
-     *
-     * Code from %parse_fail is inserted here
-     */
-    public function yy_parse_failed()
-    {
-        if ($this->yyTraceFILE) {
-            fprintf($this->yyTraceFILE, "%sFail!\n", $this->yyTracePrompt);
-        }
-        while ($this->yyidx >= 0) {
-            $this->yy_pop_parser_stack();
-        }
-        /* Here code is inserted which will be executed whenever the
-        ** parser fails */
-    }
-
-    /**
-     * The following code executes when a syntax error first occurs.
-     *
-     * %syntax_error code is inserted here
-     * @param int The major type of the error token
-     * @param mixed The minor type of the error token
-     */
-    public function yy_syntax_error($yymajor, $TOKEN)
-    {
-#line 70 "Parser.y"
-
-    echo "Syntax Error on line " . $this->lex->line . ": token '" .
-        $this->lex->value . "' while parsing rule:";
-    foreach ($this->yystack as $entry) {
-        echo $this->tokenName($entry->major) . ' ';
-    }
-    foreach ($this->yy_get_expected_tokens($yymajor) as $token) {
-        $expect[] = self::$yyTokenName[$token];
-    }
-    throw new Exception('Unexpected ' . $this->tokenName($yymajor) . '(' . $TOKEN
-        . '), expected one of: ' . implode(',', $expect));
-#line 1849 "Parser.php"
-    }
-
-    /**
-     * The following is executed when the parser accepts
-     *
-     * %parse_accept code is inserted here
-     */
-    public function yy_accept()
-    {
-        if ($this->yyTraceFILE) {
-            fprintf($this->yyTraceFILE, "%sAccept!\n", $this->yyTracePrompt);
-        } while ($this->yyidx >= 0) {
-            $stack = $this->yy_pop_parser_stack();
-        }
-        /* Here code is inserted which will be executed whenever the
-        ** parser accepts */
-    }
-
-    /**
-     * The main parser program.
-     *
-     * The first argument is the major token number.  The second is
-     * the token value string as scanned from the input.
-     *
-     * @param int the token number
-     * @param mixed the token value
-     * @param mixed any extra arguments that should be passed to handlers
-     */
-    public function doParse($yymajor, $yytokenvalue)
-    {
-//        $yyact;            /* The parser action. */
-//        $yyendofinput;     /* True if we are at the end of input */
-        $yyerrorhit = 0;   /* True if yymajor has invoked an error */
-
-        /* (re)initialize the parser, if necessary */
-        if ($this->yyidx === null || $this->yyidx < 0) {
-            /* if ($yymajor == 0) return; // not sure why this was here... */
-            $this->yyidx = 0;
-            $this->yyerrcnt = -1;
-            $x = new PHP_LexerGenerator_ParseryyStackEntry;
-            $x->stateno = 0;
-            $x->major = 0;
-            $this->yystack = array();
-            array_push($this->yystack, $x);
-        }
-        $yyendofinput = ($yymajor==0);
-
-        if ($this->yyTraceFILE) {
-            fprintf($this->yyTraceFILE, "%sInput %s\n",
-                $this->yyTracePrompt, self::$yyTokenName[$yymajor]);
-        }
-
-        do {
-            $yyact = $this->yy_find_shift_action($yymajor);
-            if ($yymajor < self::YYERRORSYMBOL &&
-                  !$this->yy_is_expected_token($yymajor)) {
-                // force a syntax error
-                $yyact = self::YY_ERROR_ACTION;
-            }
-            if ($yyact < self::YYNSTATE) {
-                $this->yy_shift($yyact, $yymajor, $yytokenvalue);
-                $this->yyerrcnt--;
-                if ($yyendofinput && $this->yyidx >= 0) {
-                    $yymajor = 0;
-                } else {
-                    $yymajor = self::YYNOCODE;
-                }
-            } elseif ($yyact < self::YYNSTATE + self::YYNRULE) {
-                $this->yy_reduce($yyact - self::YYNSTATE);
-            } elseif ($yyact == self::YY_ERROR_ACTION) {
-                if ($this->yyTraceFILE) {
-                    fprintf($this->yyTraceFILE, "%sSyntax Error!\n",
-                        $this->yyTracePrompt);
-                }
-                if (self::YYERRORSYMBOL) {
-                    /* A syntax error has occurred.
-                    ** The response to an error depends upon whether or not the
-                    ** grammar defines an error token "ERROR".
-                    **
-                    ** This is what we do if the grammar does define ERROR:
-                    **
-                    **  * Call the %syntax_error function.
-                    **
-                    **  * Begin popping the stack until we enter a state where
-                    **    it is legal to shift the error symbol, then shift
-                    **    the error symbol.
-                    **
-                    **  * Set the error count to three.
-                    **
-                    **  * Begin accepting and shifting new tokens.  No new error
-                    **    processing will occur until three tokens have been
-                    **    shifted successfully.
-                    **
-                    */
-                    if ($this->yyerrcnt < 0) {
-                        $this->yy_syntax_error($yymajor, $yytokenvalue);
-                    }
-                    $yymx = $this->yystack[$this->yyidx]->major;
-                    if ($yymx == self::YYERRORSYMBOL || $yyerrorhit) {
-                        if ($this->yyTraceFILE) {
-                            fprintf($this->yyTraceFILE, "%sDiscard input token %s\n",
-                                $this->yyTracePrompt, self::$yyTokenName[$yymajor]);
-                        }
-                        $this->yy_destructor($yymajor, $yytokenvalue);
-                        $yymajor = self::YYNOCODE;
-                    } else {
-                        while ($this->yyidx >= 0 &&
-                                 $yymx != self::YYERRORSYMBOL &&
-        ($yyact = $this->yy_find_shift_action(self::YYERRORSYMBOL)) >= self::YYNSTATE
-                              ){
-                            $this->yy_pop_parser_stack();
-                        }
-                        if ($this->yyidx < 0 || $yymajor==0) {
-                            $this->yy_destructor($yymajor, $yytokenvalue);
-                            $this->yy_parse_failed();
-                            $yymajor = self::YYNOCODE;
-                        } elseif ($yymx != self::YYERRORSYMBOL) {
-                            $u2 = 0;
-                            $this->yy_shift($yyact, self::YYERRORSYMBOL, $u2);
-                        }
-                    }
-                    $this->yyerrcnt = 3;
-                    $yyerrorhit = 1;
-                } else {
-                    /* YYERRORSYMBOL is not defined */
-                    /* This is what we do if the grammar does not define ERROR:
-                    **
-                    **  * Report an error message, and throw away the input token.
-                    **
-                    **  * If the input token is $, then fail the parse.
-                    **
-                    ** As before, subsequent error messages are suppressed until
-                    ** three input tokens have been successfully shifted.
-                    */
-                    if ($this->yyerrcnt <= 0) {
-                        $this->yy_syntax_error($yymajor, $yytokenvalue);
-                    }
-                    $this->yyerrcnt = 3;
-                    $this->yy_destructor($yymajor, $yytokenvalue);
-                    if ($yyendofinput) {
-                        $this->yy_parse_failed();
-                    }
-                    $yymajor = self::YYNOCODE;
-                }
-            } else {
-                $this->yy_accept();
-                $yymajor = self::YYNOCODE;
-            }
-        } while ($yymajor != self::YYNOCODE && $this->yyidx >= 0);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+y0==

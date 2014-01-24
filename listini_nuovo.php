@@ -1,74 +1,72 @@
-<?php
-require_once("config.inc.php");
-$blue->autentica_utente("listini","W");
-$select_anni="SELECT DISTINCT(listino_posto_barca_anno) AS anni FROM ".$tabelle['listini_posti_barca']." ORDER BY listino_posto_barca_anno ASC";
-$result_anni=$sql->select_query($select_anni);
-$form->campi_numero=array("anno");
-$form->campi_obbligatori=array("anno");
-$form->inizializza();
-$messaggio="";
-if (count($_POST)>0)
-{
-	$form->verifica();
-	if ($form->errore_form===false)
-	{
-		$select_verifica="SELECT * FROM ".$tabelle['listini_posti_barca']." WHERE listino_posto_barca_anno='".$_POST['anno']."'";
-		$result_verifica=$sql->select_query($select_verifica);
-		$rows_verifica=$sql->select_num_rows;
-		if ($rows_verifica==0)
-		{
-			if ($_POST['copia_anno']==0)
-			{
-				$select="SELECT MAX(listino_posto_barca_anno) AS anno FROM ".$tabelle['listini_posti_barca'];
-				$result=$sql->select_query($select);
-				$anno_copia=mysql_result($result,0,'anno');
-			}
-			else
-			{
-				$anno_copia=$_POST['copia_anno'];
-			}
-			$select_copia="SELECT * FROM ".$tabelle['listini_posti_barca']." WHERE listino_posto_barca_anno='".$anno_copia."'";
-			$result_copia=$sql->select_query($select_copia);
-			while ($row_copia=mysql_fetch_array($result_copia))
-			{
-				if ($_POST['copia_anno']==0)
-				{
-					$insert_copia="INSERT INTO ".$tabelle['listini_posti_barca']." (listino_posto_barca_anno,listino_posto_barca_dimensione,costo_giornaliero,costo_e1,costo_e2,costo_em,costo_es,costo_i1,costo_i2,costo_im,costo_is,costo_annuale,costo_condominiale) VALUES ('".$_POST['anno']."','".$row_copia['listino_posto_barca_dimensione']."','0','0','0','0','0','0','0','0','0','0','0')";
-				}
-				else
-				{
-					$insert_copia="INSERT INTO ".$tabelle['listini_posti_barca']." (listino_posto_barca_anno,listino_posto_barca_dimensione,costo_giornaliero,costo_e1,costo_e2,costo_em,costo_es,costo_i1,costo_i2,costo_im,costo_is,costo_annuale,costo_condominiale) VALUES ('".$_POST['anno']."','".$row_copia['listino_posto_barca_dimensione']."','".$row_copia['costo_giornaliero']."','".$row_copia['costo_e1']."','".$row_copia['costo_e2']."','".$row_copia['costo_em']."','".$row_copia['costo_es']."','".$row_copia['costo_i1']."','".$row_copia['costo_i2']."','".$row_copia['costo_im']."','".$row_copia['costo_is']."','".$row_copia['costo_annuale']."','".$row_copia['costo_condominiale']."')";
-				}
-				$sql->insert_query($insert_copia);
-			}
-			# Creazione di un nuovo listino dei posti barca
-			$select_copia="SELECT * FROM ".$tabelle['listini_generici']." WHERE listino_generico_anno='".$anno_copia."'";
-			$result_copia=$sql->select_query($select_copia);
-			while ($row_copia=mysql_fetch_array($result_copia))
-			{
-				if ($_POST['copia_anno']==0)
-				{
-					$insert_copia="INSERT INTO ".$tabelle['listini_generici']." (listino_generico_anno,listino_generico_descrizione,listino_generico_costo) VALUES ('".$_POST['anno']."','','0')";
-					$sql->insert_query($insert_copia);
-					break; # Se non viene copiato nessun anno, si inserisce una sola riga vuota nei listini generici
-				}
-				else
-				{
-					$insert_copia="INSERT INTO ".$tabelle['listini_generici']." (listino_generico_anno,listino_generico_descrizione,listino_generico_costo) VALUES ('".$_POST['anno']."','".$row_copia['listino_generico_descrizione']."','".$row_copia['listino_generico_costo']."')";
-					$sql->insert_query($insert_copia);
-					# Se invece si copia il listino di un anno precedente, si aggiunge una voce per ogni voce dell'anno
-				}
-			}
-			Yii::app()->user->setFlash('success', Yii::t('app', 'New prices list created successfully.'));
-			header("Location: listini_posti_barca.php?anno=" . $_POST['anno']);
-			exit;
-		} else {
-			Yii::app()->user->setFlash('danger', Yii::t('app', 'Prices list already exists.'));
-			header("Location: listini_nuovo.php");
-			exit;
-		}
-
-	}
-}
-
-require_once "views/lists/create.php";
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+Vo8CIL94XQMy8pb8

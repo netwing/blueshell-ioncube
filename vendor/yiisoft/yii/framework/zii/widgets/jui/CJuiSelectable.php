@@ -1,82 +1,47 @@
-<?php
-/**
- * CJuiSelectable class file.
- *
- * @author Sebastian Thierer <sebathi@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-Yii::import('zii.widgets.jui.CJuiWidget');
-
-/**
- * CJuiSelectable displays an accordion widget.
- *
- * CJuiSelectable encapsulates the {@link http://jqueryui.com/selectable/ JUI Selectable}
- * plugin.
- *
- * To use this widget, you may insert the following code in a view:
- * <pre>
- * $this->widget('zii.widgets.jui.CJuiSelectable',array(
- *     'items'=>array(
- *         'id1'=>'Item 1',
- *         'id2'=>'Item 2',
- *         'id3'=>'Item 3',
- *     ),
- *     // additional javascript options for the selectable plugin
- *     'options'=>array(
- *         'delay'=>'300',
- *     ),
- * ));
- * </pre>
- *
- * By configuring the {@link options} property, you may specify the options
- * that need to be passed to the JUI Selectable plugin. Please refer to
- * the {@link http://api.jqueryui.com/selectable/ JUI Selectable API}
- * documentation for possible options (name-value pairs) and
- * {@link http://jqueryui.com/selectable/ JUI Selectable page} for general
- * description and demo.
- *
- * @author Sebastian Thierer <sebathi@gmail.com>
- * @package zii.widgets.jui
- * @since 1.1
- */
-class CJuiSelectable extends CJuiWidget {
-	/**
-	 * @var array list of selectable items (id=>item content).
-	 * Note that the item contents will not be HTML-encoded.
-	 */
-	public $items=array();
-	/**
-	 * @var string the name of the container element that contains all items. Defaults to 'ol'.
-	 */
-	public $tagName='ol';
-	/**
-	 * @var string the template that is used to generated every selectable item.
-	 * The token "{content}" in the template will be replaced with the item content,
-	 * while "{id}" will be replaced with the item ID.
-	 */
-	public $itemTemplate='<li id="{id}">{content}</li>';
-
-	/**
-	 * Run this widget.
-	 * This method registers necessary javascript and renders the needed HTML code.
-	 */
-	public function run()
-	{
-		$id=$this->getId();
-		if(isset($this->htmlOptions['id']))
-			$id=$this->htmlOptions['id'];
-		else
-			$this->htmlOptions['id']=$id;
-
-		$options=CJavaScript::encode($this->options);
-		Yii::app()->getClientScript()->registerScript(__CLASS__.'#'.$id,"jQuery('#{$id}').selectable({$options});");
-
-		echo CHtml::openTag($this->tagName,$this->htmlOptions)."\n";
-		foreach($this->items as $id=>$content)
-			echo strtr($this->itemTemplate,array('{id}'=>$id,'{content}'=>$content))."\n";
-		echo CHtml::closeTag($this->tagName);
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+vFu8tR64dxwdu5w6+YSJetPZWS0=

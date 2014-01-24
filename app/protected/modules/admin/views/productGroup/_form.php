@@ -1,76 +1,49 @@
-<?php
-/* @var $this ProductGroupController */
-/* @var $model ProductGroup */
-/* @var $form CActiveForm */
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
-
-<div class="form">
-
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'product-group-form',
-	// Please note: When you enable ajax validation, make sure the corresponding
-	// controller action is handling ajax validation correctly.
-	// There is a call to performAjaxValidation() commented in generated controller code.
-	// See class documentation of CActiveForm for details on this.
-    'enableClientValidation'=>false,
-    'enableAjaxValidation'=>true,
-    'htmlOptions'=>array('class'=>'form-horizontal well'),
-    'errorMessageCssClass' => 'text-danger'
-)); ?>
-
-	<p class="help-block"><?php echo Yii::t('app', 'Fields with <span class="required">*</span> are required.'); ?>
-</p>
-
-	<?php echo $form->errorSummary($model, null, null, array('class' => 'text-danger')); ?>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'name', array('class' => 'col-lg-2 control-label')); ?>
-        <div class="col-lg-10">
-        <?php echo $form->textField($model, 'name', array('class' => 'form-control')); ?>
-        <?php echo $form->error($model,'name'); ?>
-        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'description', array('class' => 'col-lg-2 control-label')); ?>
-        <div class="col-lg-10">
-        <?php echo $form->textField($model, 'description', array('class' => 'form-control')); ?>
-        <?php echo $form->error($model,'description'); ?>
-        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'enabled', array('class' => 'col-lg-2 control-label')); ?>
-        <div class="col-lg-10">
-        <label class="radio-inline">
-            <?php echo $form->radioButton($model, 'enabled', array('value' => 1, 'uncheckValue' => null)); ?> <?php echo Yii::t('app', 'Yes'); ?>
-        </label>
-        <label class="radio-inline">
-            <?php echo $form->radioButton($model, 'enabled', array('value' => 0, 'uncheckValue' => null)); ?> <?php echo Yii::t('app', 'No'); ?>
-        </label>
-        <?php echo $form->error($model,'enabled'); ?>
-        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'sort_order', array('class' => 'col-lg-2 control-label')); ?>
-        <div class="col-lg-10">
-        <?php echo $form->textField($model, 'sort_order', array('class' => 'form-control')); ?>
-        <?php echo $form->error($model,'sort_order'); ?>
-        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="col-lg-offset-2 col-lg-10">
-            <button type="reset" class="btn btn-warning">Reset</button>
-            <button type="submit" class="btn btn-primary"><?php echo ($model->isNewRecord) ? Yii::t('app', 'Create') : Yii::t('app', 'Save'); ?></button>
-        </div>
-    </div>
-
-<?php $this->endWidget(); ?>
-
-</div><!-- form -->
+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

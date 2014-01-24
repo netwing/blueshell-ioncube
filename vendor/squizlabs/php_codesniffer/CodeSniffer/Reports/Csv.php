@@ -1,108 +1,52 @@
-<?php
-/**
- * Csv report for PHP_CodeSniffer.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Gabriele Santini <gsantini@sqli.com>
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2009 SQLI <www.sqli.com>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Csv report for PHP_CodeSniffer.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Gabriele Santini <gsantini@sqli.com>
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2009 SQLI <www.sqli.com>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class PHP_CodeSniffer_Reports_Csv implements PHP_CodeSniffer_Report
-{
-
-
-    /**
-     * Generate a partial report for a single processed file.
-     *
-     * Function should return TRUE if it printed or stored data about the file
-     * and FALSE if it ignored the file. Returning TRUE indicates that the file and
-     * its data should be counted in the grand totals.
-     *
-     * @param array   $report      Prepared report data.
-     * @param boolean $showSources Show sources?
-     * @param int     $width       Maximum allowed line width.
-     *
-     * @return boolean
-     */
-    public function generateFileReport(
-        $report,
-        $showSources=false,
-        $width=80
-    ) {
-        if ($report['errors'] === 0 && $report['warnings'] === 0) {
-            // Nothing to print.
-            return false;
-        }
-
-        foreach ($report['messages'] as $line => $lineErrors) {
-            foreach ($lineErrors as $column => $colErrors) {
-                foreach ($colErrors as $error) {
-                    $filename = str_replace('"', '\"', $report['filename']);
-                    $message  = str_replace('"', '\"', $error['message']);
-                    $type     = strtolower($error['type']);
-                    $source   = $error['source'];
-                    $severity = $error['severity'];
-                    echo "\"$filename\",$line,$column,$type,\"$message\",$source,$severity".PHP_EOL;
-                }
-            }
-        }
-
-        return true;
-
-    }//end generateFileReport()
-
-
-    /**
-     * Generates a csv report.
-     * 
-     * @param string  $cachedData    Any partial report data that was returned from
-     *                               generateFileReport during the run.
-     * @param int     $totalFiles    Total number of files processed during the run.
-     * @param int     $totalErrors   Total number of errors found during the run.
-     * @param int     $totalWarnings Total number of warnings found during the run.
-     * @param boolean $showSources   Show sources?
-     * @param int     $width         Maximum allowed line width.
-     * @param boolean $toScreen      Is the report being printed to screen?
-     *
-     * @return void
-     */
-    public function generate(
-        $cachedData,
-        $totalFiles,
-        $totalErrors,
-        $totalWarnings,
-        $showSources=false,
-        $width=80,
-        $toScreen=true
-    ) {
-        echo 'File,Line,Column,Type,Message,Source,Severity'.PHP_EOL;
-        echo $cachedData;
-
-    }//end generate()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

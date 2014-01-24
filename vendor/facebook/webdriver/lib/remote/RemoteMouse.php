@@ -1,80 +1,42 @@
-<?php
-// Copyright 2004-present Facebook. All Rights Reserved.
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
-/**
- * Execute mouse commands for RemoteWebDriver.
- */
-class RemoteMouse implements WebDriverMouse {
-
-  private $executor;
-
-  public function __construct($executor) {
-    $this->executor = $executor;
-  }
-
-  public function click(WebDriverCoordinates $where = null) {
-    $this->moveIfNeeded($where);
-    $this->executor->execute('mouseClick', array(
-      'button' => 0,
-    ));
-    return $this;
-  }
-
-  public function contextClick(WebDriverCoordinates $where = null) {
-    $this->moveIfNeeded($where);
-    $this->executor->execute('mouseClick', array(
-      'button' => 2,
-    ));
-    return $this;
-  }
-
-  public function doubleClick(WebDriverCoordinates $where = null) {
-    $this->moveIfNeeded($where);
-    $this->executor->execute('mouseDoubleClick');
-    return $this;
-  }
-
-  public function mouseDown(WebDriverCoordinates $where = null) {
-    $this->moveIfNeeded($where);
-    $this->executor->execute('mouseButtonDown');
-    return $this;
-  }
-
-  public function mouseMove(WebDriverCoordinates $where,
-                            $x_offset = null,
-                            $y_offset = null) {
-    $params = array('element' => $where->getAuxiliary());
-    if ($x_offset !== null) {
-      $params['xoffset'] = $x_offset;
-    }
-    if ($y_offset !== null) {
-      $params['yoffset'] = $y_offset;
-    }
-    $this->executor->execute('mouseMoveTo', $params);
-    return $this;
-  }
-
-  public function mouseUp(WebDriverCoordinates $where = null) {
-    $this->moveIfNeeded($where);
-    $this->executor->execute('mouseButtonUp');
-    return $this;
-  }
-
-  protected function moveIfNeeded(WebDriverCoordinates $where = null) {
-    if ($where) {
-      $this->mouseMove($where);
-    }
-  }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+XS5tMCB9Fb+bjf49AGQiMXWz1Sgppibu/W==

@@ -1,258 +1,143 @@
-<?php
-/**
- * CDetailView class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CDetailView displays the detail of a single data model.
- *
- * CDetailView is best used for displaying a model in a regular format (e.g. each model attribute
- * is displayed as a row in a table.) The model can be either an instance of {@link CModel}
- * or an associative array.
- *
- * CDetailView uses the {@link attributes} property to determines which model attributes
- * should be displayed and how they should be formatted.
- *
- * A typical usage of CDetailView is as follows:
- * <pre>
- * $this->widget('zii.widgets.CDetailView', array(
- *     'data'=>$model,
- *     'attributes'=>array(
- *         'title',             // title attribute (in plain text)
- *         'owner.name',        // an attribute of the related object "owner"
- *         'description:html',  // description attribute in HTML
- *         array(               // related city displayed as a link
- *             'label'=>'City',
- *             'type'=>'raw',
- *             'value'=>CHtml::link(CHtml::encode($model->city->name),
- *                                  array('city/view','id'=>$model->city->id)),
- *         ),
- *     ),
- * ));
- * </pre>
- *
- * @property CFormatter $formatter The formatter instance. Defaults to the 'format' application component.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package zii.widgets
- * @since 1.1
- */
-class CDetailView extends CWidget
-{
-	private $_formatter;
-
-	/**
-	 * @var mixed the data model whose details are to be displayed. This can be either a {@link CModel} instance
-	 * (e.g. a {@link CActiveRecord} object or a {@link CFormModel} object) or an associative array.
-	 */
-	public $data;
-	/**
-	 * @var array a list of attributes to be displayed in the detail view. Each array element
-	 * represents the specification for displaying one particular attribute.
-	 *
-	 * An attribute can be specified as a string in the format of "Name:Type:Label".
-	 * Both "Type" and "Label" are optional.
-	 *
-	 * "Name" refers to the attribute name. It can be either a property (e.g. "title") or a sub-property (e.g. "owner.username").
-	 *
-	 * "Label" represents the label for the attribute display. If it is not given, "Name" will be used to generate the appropriate label.
-	 *
-	 * "Type" represents the type of the attribute. It determines how the attribute value should be formatted and displayed.
-	 * It is defaulted to be 'text'.
-	 * "Type" should be recognizable by the {@link formatter}. In particular, if "Type" is "xyz", then the "formatXyz" method
-	 * of {@link formatter} will be invoked to format the attribute value for display. By default when {@link CFormatter} is used,
-	 * these "Type" values are valid: raw, text, ntext, html, date, time, datetime, boolean, number, email, image, url.
-	 * For more details about these types, please refer to {@link CFormatter}.
-	 *
-	 * An attribute can also be specified in terms of an array with the following elements:
-	 * <ul>
-	 * <li>label: the label associated with the attribute. If this is not specified, the following "name" element
-	 * will be used to generate an appropriate label.</li>
-	 * <li>name: the name of the attribute. This can be either a property or a sub-property of the model.
-	 * If the below "value" element is specified, this will be ignored.</li>
-	 * <li>value: the value to be displayed. If this is not specified, the above "name" element will be used
-	 * to retrieve the corresponding attribute value for display. Note that this value will be formatted according
-	 * to the "type" option as described below.</li>
-	 * <li>type: the type of the attribute that determines how the attribute value would be formatted.
-	 * Please see above for possible values.
-	 * <li>cssClass: the CSS class to be used for this item. This option is available since version 1.1.3.</li>
-	 * <li>template: the template used to render the attribute. If this is not specified, {@link itemTemplate}
-	 * will be used instead. For more details on how to set this option, please refer to {@link itemTemplate}.
-	 * This option is available since version 1.1.1.</li>
-	 * <li>visible: whether the attribute is visible. If set to <code>false</code>, the table row for the attribute will not be rendered.
-	 * This option is available since version 1.1.5.</li>
-	 * </ul>
-	 */
-	public $attributes;
-	/**
-	 * @var string the text to be displayed when an attribute value is null. Defaults to "Not set".
-	 */
-	public $nullDisplay;
-	/**
-	 * @var string the name of the tag for rendering the detail view. Defaults to 'table'.
-	 * If set to null, no tag will be rendered.
-	 * @see itemTemplate
-	 */
-	public $tagName='table';
-	/**
-	 * @var string the template used to render a single attribute. Defaults to a table row.
-	 * These tokens are recognized: "{class}", "{label}" and "{value}". They will be replaced
-	 * with the CSS class name for the item, the label and the attribute value, respectively.
-	 * @see itemCssClass
-	 */
-	public $itemTemplate="<tr class=\"{class}\"><th>{label}</th><td>{value}</td></tr>\n";
-	/**
-	 * @var array the CSS class names for the items displaying attribute values. If multiple CSS class names are given,
-	 * they will be assigned to the items sequentially and repeatedly.
-	 * Defaults to <code>array('odd', 'even')</code>.
-	 */
-	public $itemCssClass=array('odd','even');
-	/**
-	 * @var array the HTML options used for {@link tagName}
-	 */
-	public $htmlOptions=array('class'=>'detail-view');
-	/**
-	 * @var string the base script URL for all detail view resources (e.g. javascript, CSS file, images).
-	 * Defaults to null, meaning using the integrated detail view resources (which are published as assets).
-	 */
-	public $baseScriptUrl;
-	/**
-	 * @var string the URL of the CSS file used by this detail view. Defaults to null, meaning using the integrated
-	 * CSS file. If this is set false, you are responsible to explicitly include the necessary CSS file in your page.
-	 */
-	public $cssFile;
-
-	/**
-	 * Initializes the detail view.
-	 * This method will initialize required property values.
-	 */
-	public function init()
-	{
-		if($this->data===null)
-			throw new CException(Yii::t('zii','Please specify the "data" property.'));
-		if($this->attributes===null)
-		{
-			if($this->data instanceof CModel)
-				$this->attributes=$this->data->attributeNames();
-			elseif(is_array($this->data))
-				$this->attributes=array_keys($this->data);
-			else
-				throw new CException(Yii::t('zii','Please specify the "attributes" property.'));
-		}
-		if($this->nullDisplay===null)
-			$this->nullDisplay='<span class="null">'.Yii::t('zii','Not set').'</span>';
-		if(isset($this->htmlOptions['id']))
-			$this->id=$this->htmlOptions['id'];
-		else
-			$this->htmlOptions['id']=$this->id;
-
-		if($this->baseScriptUrl===null)
-			$this->baseScriptUrl=Yii::app()->getAssetManager()->publish(Yii::getPathOfAlias('zii.widgets.assets')).'/detailview';
-
-		if($this->cssFile!==false)
-		{
-			if($this->cssFile===null)
-				$this->cssFile=$this->baseScriptUrl.'/styles.css';
-			Yii::app()->getClientScript()->registerCssFile($this->cssFile);
-		}
-	}
-
-	/**
-	 * Renders the detail view.
-	 * This is the main entry of the whole detail view rendering.
-	 */
-	public function run()
-	{
-		$formatter=$this->getFormatter();
-		if ($this->tagName!==null)
-			echo CHtml::openTag($this->tagName,$this->htmlOptions);
-
-		$i=0;
-		$n=is_array($this->itemCssClass) ? count($this->itemCssClass) : 0;
-
-		foreach($this->attributes as $attribute)
-		{
-			if(is_string($attribute))
-			{
-				if(!preg_match('/^([\w\.]+)(:(\w*))?(:(.*))?$/',$attribute,$matches))
-					throw new CException(Yii::t('zii','The attribute must be specified in the format of "Name:Type:Label", where "Type" and "Label" are optional.'));
-				$attribute=array(
-					'name'=>$matches[1],
-					'type'=>isset($matches[3]) ? $matches[3] : 'text',
-				);
-				if(isset($matches[5]))
-					$attribute['label']=$matches[5];
-			}
-
-			if(isset($attribute['visible']) && !$attribute['visible'])
-				continue;
-
-			$tr=array('{label}'=>'', '{class}'=>$n ? $this->itemCssClass[$i%$n] : '');
-			if(isset($attribute['cssClass']))
-				$tr['{class}']=$attribute['cssClass'].' '.($n ? $tr['{class}'] : '');
-
-			if(isset($attribute['label']))
-				$tr['{label}']=$attribute['label'];
-			elseif(isset($attribute['name']))
-			{
-				if($this->data instanceof CModel)
-					$tr['{label}']=$this->data->getAttributeLabel($attribute['name']);
-				else
-					$tr['{label}']=ucwords(trim(strtolower(str_replace(array('-','_','.'),' ',preg_replace('/(?<![A-Z])[A-Z]/', ' \0', $attribute['name'])))));
-			}
-
-			if(!isset($attribute['type']))
-				$attribute['type']='text';
-			if(isset($attribute['value']))
-				$value=is_callable($attribute['value']) ? call_user_func($attribute['value'],$this->data) : $attribute['value'];
-			elseif(isset($attribute['name']))
-				$value=CHtml::value($this->data,$attribute['name']);
-			else
-				$value=null;
-
-			$tr['{value}']=$value===null ? $this->nullDisplay : $formatter->format($value,$attribute['type']);
-
-			$this->renderItem($attribute, $tr);
-
-			$i++;
-		}
-
-		if ($this->tagName!==null)
-			echo CHtml::closeTag($this->tagName);
-	}
-
-	/**
-	 * This method is used by run() to render item row
-	 *
-	 * @param array $options config options for this item/attribute from {@link attributes}
-	 * @param string $templateData data that will be inserted into {@link itemTemplate}
-	 * @since 1.1.11
-	 */
-	protected function renderItem($options,$templateData)
-	{
-		echo strtr(isset($options['template']) ? $options['template'] : $this->itemTemplate,$templateData);
-	}
-
-	/**
-	 * @return CFormatter the formatter instance. Defaults to the 'format' application component.
-	 */
-	public function getFormatter()
-	{
-		if($this->_formatter===null)
-			$this->_formatter=Yii::app()->format;
-		return $this->_formatter;
-	}
-
-	/**
-	 * @param CFormatter $value the formatter instance
-	 */
-	public function setFormatter($value)
-	{
-		$this->_formatter=$value;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

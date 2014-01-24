@@ -1,78 +1,41 @@
-<?php
-/**
- * CJuiDroppable class file.
- *
- * @author Sebastian Thierer <sebathi@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-Yii::import('zii.widgets.jui.CJuiWidget');
-
-/**
- * CJuiDroppable displays a droppable widget.
- *
- * CJuiDroppable encapsulates the {@link http://jqueryui.com/droppable/ JUI Droppable}
- * plugin.
- *
- * To use this widget, you may insert the following code in a view:
- * <pre>
- * $this->beginWidget('zii.widgets.jui.CJuiDroppable',array(
- *     // additional javascript options for the droppable plugin
- *     'options'=>array(
- *         'scope'=>'myScope',
- *     ),
- * ));
- *     echo 'Your droppable content here';
- *
- * $this->endWidget();
- *
- * </pre>
- *
- * By configuring the {@link options} property, you may specify the options
- * that need to be passed to the JUI Droppable plugin. Please refer to
- * the {@link http://api.jqueryui.com/droppable/ JUI Droppable API} documentation
- * for possible options (name-value pairs) and
- * {@link http://jqueryui.com/droppable/ JUI Droppable page} for general
- * description and demo.
- *
- * @author Sebastian Thierer <sebathi@gmail.com>
- * @package zii.widgets.jui
- * @since 1.1
- */
-class CJuiDroppable extends CJuiWidget
-{
-	/**
-	 * @var string the HTML tag name of the Droppable element. Defaults to 'div'.
-	 */
-	public $tagName='div';
-
-	/**
-	 * Renders the open tag of the droppable element.
-	 * This method also registers the necessary javascript code.
-	 */
-	public function init()
-	{
-		parent::init();
-
-		$id=$this->getId();
-		if(isset($this->htmlOptions['id']))
-			$id=$this->htmlOptions['id'];
-		else
-			$this->htmlOptions['id']=$id;
-
-		$options=CJavaScript::encode($this->options);
-		Yii::app()->getClientScript()->registerScript(__CLASS__.'#'.$id,"jQuery('#{$id}').droppable($options);");
-
-		echo CHtml::openTag($this->tagName,$this->htmlOptions)."\n";
-	}
-
-	/**
-	 * Renders the close tag of the droppable element.
-	 */
-	public function run()
-	{
-		echo CHtml::closeTag($this->tagName);
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

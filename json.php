@@ -1,358 +1,244 @@
-<?php
-define("APPLICATION_LOAD_WEBINTERFACE", false);
-
-require_once "config.inc.php";
-$blue->autentica_utente("principale", "R");
-
-$json = array();
-if (!array_key_exists('s', $_GET)) {
-    $_GET['s'] = null;
-}
-
-if ($_GET['s'] == 'clients') {
-
-    // get results count
-    $sql = "SELECT COUNT(*) AS total
-            FROM {{clienti}} 
-            WHERE cliente_nominativo LIKE :search 
-            OR cliente_nome LIKE :search 
-            OR cliente_cognome LIKE :search";
-    $command = Yii::app()->db->createCommand($sql);
-    $command->bindValue(':search', '%' . $_GET['q'] . '%', PDO::PARAM_STR);
-    $total = $command->queryScalar();
-
-    // get real results
-    $sql = "SELECT *
-            FROM {{clienti}} 
-            WHERE cliente_nominativo LIKE :search 
-            OR cliente_nome LIKE :search 
-            OR cliente_cognome LIKE :search 
-            LIMIT :start, :limit";
-    $command = Yii::app()->db->createCommand($sql);
-    $command->bindValue(':search', '%' . $_GET['q'] . '%', PDO::PARAM_STR);
-    $command->bindValue(':limit', intval($_GET['page_limit']), PDO::PARAM_INT);
-    $command->bindValue(':start', intval(($_GET['page']-1)*10), PDO::PARAM_INT);
-    $rows = $command->queryAll();
-    $array = array();
-    foreach ($rows as $c) {
-        if (array_key_exists('format', $_GET)) {
-            if ($_GET['format'] == 'select2') {
-                $array[] = array(
-                    'id' => $c['cliente_id'], 
-                    'text' => "<strong>" . $c['cliente_nominativo'] . "</strong> (" . $c['cliente_nome'] . " " . $c['cliente_cognome'] . ")"
-                );
-            }
-        } else {
-            $array[] = $c;
-        }
-    }
-    
-    $json = new StdClass();
-    $json->total = $total;
-    $json->results = $array;
-}
-
-if ($_GET['s'] == 'client') {
-
-    // get real results
-    $sql = "SELECT *
-            FROM {{clienti}} 
-            WHERE cliente_id = :cliente_id";
-    $command = Yii::app()->db->createCommand($sql);
-    $command->bindValue(':cliente_id', intval($_GET['id']), PDO::PARAM_INT);
-    $row = $command->queryRow();
-
-    if (array_key_exists('format', $_GET)) {
-        if ($_GET['format'] == 'select2') {
-            $json = array(
-                'id' => $row['cliente_id'], 
-                'text' => "<strong>" . $row['cliente_nominativo'] . "</strong> (" . $row['cliente_nome'] . " " . $row['cliente_cognome'] . ")"
-            );
-        }
-    } else {
-        $json = $row;
-
-        // get real results
-        $elenco_nazioni = $blue->elenco_nazioni();
-        $json['cliente_nazione_nome'] = $elenco_nazioni[$row['country']];
-
-    }
-
-}
-
-if ($_GET['s'] == 'client_vectors') {
-    // get real results
-    $sql = "SELECT *
-            FROM {{barche}} 
-            WHERE barca_proprietario = :barca_proprietario
-            ORDER BY barca_nome ASC";
-    $command = Yii::app()->db->createCommand($sql);
-    $command->bindValue(':barca_proprietario', $_GET['client'], PDO::PARAM_INT);
-    $rows = $command->queryAll();
-    $array = array();
-    if (array_key_exists('first_null', $_GET)) {
-        $array = array(array('id' => 0, 'text' => Yii::t('app', 'Not available or not needed')));
-    }
-    foreach ($rows as $c) {
-        if (array_key_exists('format', $_GET)) {
-            if ($_GET['format'] == 'select2') {
-                $array[] = array(
-                    'id' => $c['barca_id'], 
-                    'text' => "<strong>" . $c['barca_nome'] . "</strong>"
-                );
-            }
-        } else {
-            $array[] = $c;
-        }
-    }
-    
-    $json = new StdClass();
-    $json->results = $array;
-
-}
-
-if ($_GET['s'] == 'vector') {
-
-    // get real results
-    $sql = "SELECT *
-            FROM {{barche}} 
-            WHERE barca_id = :barca_id";
-    $command = Yii::app()->db->createCommand($sql);
-    $command->bindValue(':barca_id', intval($_GET['id']), PDO::PARAM_INT);
-    $row = $command->queryRow();
-
-    if (array_key_exists('format', $_GET)) {
-        if ($_GET['format'] == 'select2') {
-            $json = array(
-                'id' => $row['barca_id'], 
-                'text' => "<strong>" . $row['barca_nome'] . "</strong>",
-            );
-        }
-    } else {
-        $json = $row;
-    }
-
-}
-
-
-if ($_GET['s'] == 'resources') {
-    // get real results
-    $sql = "SELECT posto_barca_id,pontile_codice,posto_barca_numero 
-            FROM blue_posti_barca,blue_pontili 
-            WHERE pontile_id = posto_barca_pontile AND posto_barca_dimensioni = :posto_barca_dimensioni 
-            AND posto_barca_disponibile='1' ORDER BY posto_barca_pontile ASC, posto_barca_numero ASC";
-    $command = Yii::app()->db->createCommand($sql);
-    $command->bindValue(':posto_barca_dimensioni', $_GET['dimension'], PDO::PARAM_INT);
-    $rows = $command->queryAll();
-    $array = array();
-    foreach ($rows as $row) {
-        $r = array(
-            'posto_barca_id' => $row['posto_barca_id'],
-            'posto_barca'    => $row['pontile_codice'] . $row['posto_barca_numero'],
-        );
-        $array[] = $r;
-    }
-    $json = $array;
-}
-
-if ($_GET['s'] == 'resources_prices') {
-
-    $anno_attuale = date('Y', time());
-    $sql = "SELECT costo_giornaliero,costo_e1,costo_e2,costo_em,costo_es,costo_i1,costo_i2,costo_im,costo_is,costo_annuale 
-            FROM blue_listini_posti_barca 
-            WHERE listino_posto_barca_dimensione = :listino_posto_barca_dimensione 
-            AND listino_posto_barca_anno = :anno";
-    $command = Yii::app()->db->createCommand($sql);
-    $command->bindValue(':listino_posto_barca_dimensione', $_GET['dimension'], PDO::PARAM_INT);
-    $command->bindValue(':anno', $anno_attuale, PDO::PARAM_INT);
-    $rows = $command->queryAll();
-    $row = array_shift($rows);
-
-    if (is_array($row)) {
-        $row["costo_giornaliero"] = array('value' => $row["costo_giornaliero"], 'text' => "Giornaliero: " . $row['costo_giornaliero']);
-        $row["costo_e1"] = array('value' => $row["costo_e1"], 'text' => "Alta stagione 1 settimana: " . $row['costo_e1']);
-        $row["costo_e2"] = array('value' => $row["costo_e2"], 'text' => "Alta stagione 2 settimane: " . $row['costo_e2']);
-        $row["costo_em"] = array('value' => $row["costo_em"], 'text' => "Alta stagione mensile: " . $row['costo_em']);
-        $row["costo_es"] = array('value' => $row["costo_es"], 'text' => "Alta stagione stagionale: " . $row['costo_es']);
-        $row["costo_i1"] = array('value' => $row["costo_i1"], 'text' => "Bassa stagione 1 settimana: " . $row['costo_i1']);
-        $row["costo_i2"] = array('value' => $row["costo_i2"], 'text' => "Bassa stagione 2 settimane: " . $row['costo_i2']);
-        $row["costo_im"] = array('value' => $row["costo_im"], 'text' => "Basta stagione mensile: " . $row['costo_im']);
-        $row["costo_is"] = array('value' => $row["costo_is"], 'text' => "Basta stagione stagionale: " . $row['costo_is']);
-        $row["costo_annuale"] = array('value' => $row["costo_annuale"], 'text' => "Annuale: " . $row['costo_annuale']);
-    }
-
-    $json['prices_current_year'] = $row;
-
-    $anno_successivo = $anno_attuale + 1;
-    $sql = "SELECT costo_giornaliero,costo_e1,costo_e2,costo_em,costo_es,costo_i1,costo_i2,costo_im,costo_is,costo_annuale 
-            FROM blue_listini_posti_barca 
-            WHERE listino_posto_barca_dimensione = :listino_posto_barca_dimensione 
-            AND listino_posto_barca_anno = :anno";
-    $command = Yii::app()->db->createCommand($sql);
-    $command->bindValue(':listino_posto_barca_dimensione', $_GET['dimension'], PDO::PARAM_INT);
-    $command->bindValue(':anno', $anno_successivo, PDO::PARAM_INT);
-    $rows = $command->queryAll();
-    $row = array_shift($rows);
-    if (is_array($row)) {
-        $row["costo_giornaliero"] = array('value' => $row["costo_giornaliero"], 'text' => "Giornaliero: " . $row['costo_giornaliero']);
-        $row["costo_e1"] = array('value' => $row["costo_e1"], 'text' => "Alta stagione 1 settimana: " . $row['costo_e1']);
-        $row["costo_e2"] = array('value' => $row["costo_e2"], 'text' => "Alta stagione 2 settimane: " . $row['costo_e2']);
-        $row["costo_em"] = array('value' => $row["costo_em"], 'text' => "Alta stagione mensile: " . $row['costo_em']);
-        $row["costo_es"] = array('value' => $row["costo_es"], 'text' => "Alta stagione stagionale: " . $row['costo_es']);
-        $row["costo_i1"] = array('value' => $row["costo_i1"], 'text' => "Bassa stagione 1 settimana: " . $row['costo_i1']);
-        $row["costo_i2"] = array('value' => $row["costo_i2"], 'text' => "Bassa stagione 2 settimane: " . $row['costo_i2']);
-        $row["costo_im"] = array('value' => $row["costo_im"], 'text' => "Basta stagione mensile: " . $row['costo_im']);
-        $row["costo_is"] = array('value' => $row["costo_is"], 'text' => "Basta stagione stagionale: " . $row['costo_is']);
-        $row["costo_annuale"] = array('value' => $row["costo_annuale"], 'text' => "Annuale: " . $row['costo_annuale']);
-    }
-
-    $json['prices_next_year'] = $row;
-
-}
-
-if ($_GET['s'] == 'resource_status') {
-
-    $pb = intval($_GET['resource']);
-    
-    $fine = strftime("%Y-%m-%d", time());
-    if (array_key_exists('dal', $_GET)) {
-        if (is_string($_GET['dal'])) {
-            $fine = $_GET['dal'];
-        }
-    }
-    
-    $inizio = strftime("%Y-%m-%d", time());
-    if (array_key_exists('al', $_GET)) {
-        if (is_string($_GET['al'])) {
-            $inizio = $_GET['al'];
-        }
-    }
-
-    $res = $sql->select_query("SELECT posto_barca_proprietario,posto_barca_proprietario_data,posto_barca_gestore,posto_barca_gestore_data,posto_barca_gestore_data_fine FROM blue_posti_barca WHERE posto_barca_id='".$pb."'");
-    $prop_id = mysql_result($res,0,'posto_barca_proprietario');
-    $proprietario_data = mysql_result($res,0,'posto_barca_proprietario_data');
-    $prop=$sql->select_query("SELECT cliente_nominativo FROM blue_clienti WHERE cliente_id='".$prop_id."'");
-    $proprietario=mysql_result($prop,0,'cliente_nominativo');
-    $json['owner'] = Yii::t('app', 'Owner') . ": <strong>" . $proprietario . "</strong> " . Yii::t('app', 'From') . " <strong>" . Yii::app()->format->formatDate($proprietario_data) . "</strong>";
-
-    $gest_dal = mysql_result($res, 0, 'posto_barca_gestore_data');
-    $gest_al = mysql_result($res, 0, 'posto_barca_gestore_data_fine');
-    $gest_id = mysql_result($res, 0, 'posto_barca_gestore');
-    $gest = $sql->select_query("SELECT cliente_nominativo FROM blue_clienti WHERE cliente_id='".$gest_id."'");
-    $gestore=mysql_result($gest, 0, 'cliente_nominativo');
-
-    $json['manager'] = Yii::t('app', 'Manager') . ": <strong>" . $gestore . "</strong> " . Yii::t('app', 'From') . " <strong>" . Yii::app()->format->formatDate($gest_dal) . "</strong> ";
-    if ($gest_al != '0000-00-00') {
-        $json['manager'].= Yii::t('app', 'To')  . " <strong>" . Yii::app()->format->formatDate($gest_al) . "</strong>";
-    }
-    
-    $query = "SELECT contratto_id,contratto_anagrafica2,contratto_inizio,contratto_fine,contratto_tipo FROM blue_contratti WHERE contratto_posto_barca='".$pb."' AND (contratto_tipo=1 OR contratto_tipo=4 OR contratto_tipo=11) AND (contratto_inizio<='".$fine."' AND contratto_fine>='".$inizio."')";
-    $res=$sql->select_query($query);
-    $contratti='';
-    while ($r = mysql_fetch_array($res)) {
-        $dal = $r['contratto_inizio'];
-        $al = $r['contratto_fine'];
-        $rescli = $sql->select_query("SELECT cliente_nominativo FROM blue_clienti WHERE cliente_id='".$r['contratto_anagrafica2']."'");
-        $cli = mysql_result($rescli,0,'cliente_nominativo');
-        $contratti.= Yii::t('app', 'Current contract') . ' <a href="riepilogo.php?id=' . $r['contratto_id'] . '">' . $cli . '</a> (' . Yii::app()->format->formatDate($dal) . " - " . Yii::app()->format->formatDate($al) . ")";
-    }
-
-    $json['contract'] = $contratti;
-
-}
-
-if ($_GET['s'] == 'products') {
-
-    // get results count
-    $criteria = new CDbCriteria;
-    $criteria->compare('sku', $_GET['q'], true, 'OR');
-    $criteria->compare('name', $_GET['q'], true, 'OR');
-    require_once "app/protected/modules/admin/models/Product.php";
-    $total = Product::model()->count($criteria);
-
-    $criteria->limit = intval($_GET['page_limit']);
-    $criteria->offset = intval(($_GET['page']-1)*$criteria->limit);
-    $rows = Product::model()->findAll($criteria);
-
-    $array = array();
-    foreach ($rows as $c) {
-        if (array_key_exists('format', $_GET)) {
-            if ($_GET['format'] == 'select2') {
-                $array[] = array(
-                    'id' => $c->id, 
-                    'text' => "<strong>" . $c->sku . "</strong> " . $c->name,
-                );
-            }
-        } else {
-            $array[] = $c;
-        }
-    }
-    
-    $json = new StdClass();
-    $json->total = $total;
-    $json->results = $array;
-}
-
-if ($_GET['s'] == 'product') {
-
-    require_once "app/protected/modules/admin/models/Product.php";
-    $row = Product::model()->findByPk(intval($_GET['id']));
-
-    if (array_key_exists('format', $_GET)) {
-        if ($_GET['format'] == 'select2') {
-            $json = array(
-                'id' => $row->id, 
-                'text' => "<strong>" . $row->sku . "</strong> " . $row->name,
-            );
-        }
-    } else {
-        $json = $row;
-    }
-
-}
-
-if ($_GET['s'] == 'productDetail') {
-
-    require_once "app/protected/modules/admin/models/Product.php";
-    $row = Product::model()->findByPk(intval($_GET['id']));
-    $json = $row->attributes;
-    
-}
-
-if ($_GET['s'] == 'builder') {
-
-    require_once "app/protected/modules/admin/models/Vector.php";
-    $models = Vector::model()->findAll(array(
-        'select'=>'builder',
-        'distinct'=>true,
-        'condition' => "builder LIKE '%" . $_GET['term'] . "%'",
-    ));
-    foreach ($models as $model) {
-        $json[] = $model->builder;
-    }
-    
-}
-
-if ($_GET['s'] == 'insuranceCompany') {
-
-    require_once "app/protected/modules/admin/models/Vector.php";
-    $models = Vector::model()->findAll(array(
-        'select'=>'insurance_company',
-        'distinct'=>true,
-        'condition' => "insurance_company LIKE '%" . $_GET['term'] . "%'",
-    ));
-    foreach ($models as $model) {
-        $json[] = $model->insurance_company;
-    }
-
-}
-
-
-
-if ($_GET['s'] == null) {
-    $json = array('error' => 'You should pass at least one parameter: "s" with the name of the service you want to use');
-}
-
-header("Content-type: application/json");
-echo json_encode($json);
-Yii::app()->end();
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

@@ -1,152 +1,49 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\Console\Input;
-
-/**
- * InputInterface is the interface implemented by all input classes.
- *
- * @author Fabien Potencier <fabien@symfony.com>
- */
-interface InputInterface
-{
-    /**
-     * Returns the first argument from the raw parameters (not parsed).
-     *
-     * @return string The value of the first argument or null otherwise
-     */
-    public function getFirstArgument();
-
-    /**
-     * Returns true if the raw parameters (not parsed) contain a value.
-     *
-     * This method is to be used to introspect the input parameters
-     * before they have been validated. It must be used carefully.
-     *
-     * @param string|array $values The values to look for in the raw parameters (can be an array)
-     *
-     * @return Boolean true if the value is contained in the raw parameters
-     */
-    public function hasParameterOption($values);
-
-    /**
-     * Returns the value of a raw option (not parsed).
-     *
-     * This method is to be used to introspect the input parameters
-     * before they have been validated. It must be used carefully.
-     *
-     * @param string|array $values  The value(s) to look for in the raw parameters (can be an array)
-     * @param mixed        $default The default value to return if no result is found
-     *
-     * @return mixed The option value
-     */
-    public function getParameterOption($values, $default = false);
-
-    /**
-     * Binds the current Input instance with the given arguments and options.
-     *
-     * @param InputDefinition $definition A InputDefinition instance
-     */
-    public function bind(InputDefinition $definition);
-
-    /**
-     * Validates if arguments given are correct.
-     *
-     * Throws an exception when not enough arguments are given.
-     *
-     * @throws \RuntimeException
-     */
-    public function validate();
-
-    /**
-     * Returns all the given arguments merged with the default values.
-     *
-     * @return array
-     */
-    public function getArguments();
-
-    /**
-     * Gets argument by name.
-     *
-     * @param string $name The name of the argument
-     *
-     * @return mixed
-     */
-    public function getArgument($name);
-
-    /**
-     * Sets an argument value by name.
-     *
-     * @param string $name  The argument name
-     * @param string $value The argument value
-     *
-     * @throws \InvalidArgumentException When argument given doesn't exist
-     */
-    public function setArgument($name, $value);
-
-    /**
-     * Returns true if an InputArgument object exists by name or position.
-     *
-     * @param string|integer $name The InputArgument name or position
-     *
-     * @return Boolean true if the InputArgument object exists, false otherwise
-     */
-    public function hasArgument($name);
-
-    /**
-     * Returns all the given options merged with the default values.
-     *
-     * @return array
-     */
-    public function getOptions();
-
-    /**
-     * Gets an option by name.
-     *
-     * @param string $name The name of the option
-     *
-     * @return mixed
-     */
-    public function getOption($name);
-
-    /**
-     * Sets an option value by name.
-     *
-     * @param string $name  The option name
-     * @param string $value The option value
-     *
-     * @throws \InvalidArgumentException When option given doesn't exist
-     */
-    public function setOption($name, $value);
-
-    /**
-     * Returns true if an InputOption object exists by name.
-     *
-     * @param string $name The InputOption name
-     *
-     * @return Boolean true if the InputOption object exists, false otherwise
-     */
-    public function hasOption($name);
-
-    /**
-     * Is this input means interactive?
-     *
-     * @return Boolean
-     */
-    public function isInteractive();
-
-    /**
-     * Sets the input interactivity.
-     *
-     * @param Boolean $interactive If the input should be interactive
-     */
-    public function setInteractive($interactive);
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+YocHTbFI0ZSvkNYDhvC=

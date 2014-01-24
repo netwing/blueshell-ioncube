@@ -1,205 +1,81 @@
-<?php
-/**
- * Generic_Sniffs_PHP_ForbiddenFunctionsSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Generic_Sniffs_PHP_ForbiddenFunctionsSniff.
- *
- * Discourages the use of alias functions that are kept in PHP for compatibility
- * with older versions. Can be used to forbid the use of any function.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class Generic_Sniffs_PHP_ForbiddenFunctionsSniff implements PHP_CodeSniffer_Sniff
-{
-
-    /**
-     * A list of forbidden functions with their alternatives.
-     *
-     * The value is NULL if no alternative exists. IE, the
-     * function should just not be used.
-     *
-     * @var array(string => string|null)
-     */
-    protected $forbiddenFunctions = array(
-                                     'sizeof' => 'count',
-                                     'delete' => 'unset',
-                                    );
-
-    /**
-     * A cache of forbidden function names, for faster lookups.
-     *
-     * @var array(string)
-     */
-    protected $forbiddenFunctionNames = array();
-
-    /**
-     * If true, forbidden functions will be considered regular expressions.
-     *
-     * @var bool
-     */
-    protected $patternMatch = false;
-
-    /**
-     * If true, an error will be thrown; otherwise a warning.
-     *
-     * @var bool
-     */
-    public $error = true;
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        // Everyone has had a chance to figure out what forbidden functions
-        // they want to check for, so now we can cache out the list.
-        $this->forbiddenFunctionNames = array_keys($this->forbiddenFunctions);
-
-        if ($this->patternMatch === true) {
-            foreach ($this->forbiddenFunctionNames as $i => $name) {
-                $this->forbiddenFunctionNames[$i] = '/'.$name.'/i';
-            }
-        }
-
-        return array(T_STRING);
-
-    }//end register()
-
-
-    /**
-     * Processes this test, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token in
-     *                                        the stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-
-        $ignore = array(
-                   T_DOUBLE_COLON,
-                   T_OBJECT_OPERATOR,
-                   T_FUNCTION,
-                   T_CONST,
-                   T_PUBLIC,
-                   T_PRIVATE,
-                   T_PROTECTED,
-                   T_AS,
-                   T_NEW,
-                   T_INSTEADOF,
-                   T_NS_SEPARATOR,
-                   T_IMPLEMENTS,
-                  );
-
-        $prevToken = $phpcsFile->findPrevious(T_WHITESPACE, ($stackPtr - 1), null, true);
-        if (in_array($tokens[$prevToken]['code'], $ignore) === true) {
-            // Not a call to a PHP function.
-            return;
-        }
-
-        $nextToken = $phpcsFile->findNext(T_WHITESPACE, ($stackPtr + 1), null, true);
-        if (in_array($tokens[$nextToken]['code'], $ignore) === true) {
-            // Not a call to a PHP function.
-            return;
-        }
-
-        $function = strtolower($tokens[$stackPtr]['content']);
-        $pattern  = null;
-
-        if ($this->patternMatch === true) {
-            $count   = 0;
-            $pattern = preg_replace(
-                $this->forbiddenFunctionNames,
-                $this->forbiddenFunctionNames,
-                $function,
-                1,
-                $count
-            );
-
-            if ($count === 0) {
-                return;
-            }
-
-            // Remove the pattern delimiters and modifier.
-            $pattern = substr($pattern, 1, -2);
-        } else {
-            if (in_array($function, $this->forbiddenFunctionNames) === false) {
-                return;
-            }
-        }
-
-        $this->addError($phpcsFile, $stackPtr, $function, $pattern);
-
-    }//end process()
-
-
-    /**
-     * Generates the error or warning for this sniff.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the forbidden function
-     *                                        in the token array.
-     * @param string               $function  The name of the forbidden function.
-     * @param string               $pattern   The pattern used for the match.
-     *
-     * @return void
-     */
-    protected function addError($phpcsFile, $stackPtr, $function, $pattern=null)
-    {
-        $data  = array($function);
-        $error = 'The use of function %s() is ';
-        if ($this->error === true) {
-            $type   = 'Found';
-            $error .= 'forbidden';
-        } else {
-            $type   = 'Discouraged';
-            $error .= 'discouraged';
-        }
-
-        if ($pattern === null) {
-            $pattern = $function;
-        }
-
-        if ($this->forbiddenFunctions[$pattern] !== null) {
-            $type  .= 'WithAlternative';
-            $data[] = $this->forbiddenFunctions[$pattern];
-            $error .= '; use %s() instead';
-        }
-
-        if ($this->error === true) {
-            $phpcsFile->addError($error, $stackPtr, $type, $data);
-        } else {
-            $phpcsFile->addWarning($error, $stackPtr, $type, $data);
-        }
-
-    }//end addError()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+pUMHfqfpbZO91U8Ab1dAOojITEkmiQWgn6a=

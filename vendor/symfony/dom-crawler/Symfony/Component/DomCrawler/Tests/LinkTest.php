@@ -1,132 +1,81 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\DomCrawler\Tests;
-
-use Symfony\Component\DomCrawler\Link;
-
-class LinkTest extends \PHPUnit_Framework_TestCase
-{
-    /**
-     * @expectedException \LogicException
-     */
-    public function testConstructorWithANonATag()
-    {
-        $dom = new \DOMDocument();
-        $dom->loadHTML('<html><div><div></html>');
-
-        new Link($dom->getElementsByTagName('div')->item(0), 'http://www.example.com/');
-    }
-
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testConstructorWithAnInvalidCurrentUri()
-    {
-        $dom = new \DOMDocument();
-        $dom->loadHTML('<html><a href="/foo">foo</a></html>');
-
-        new Link($dom->getElementsByTagName('a')->item(0), 'example.com');
-    }
-
-    public function testGetNode()
-    {
-        $dom = new \DOMDocument();
-        $dom->loadHTML('<html><a href="/foo">foo</a></html>');
-
-        $node = $dom->getElementsByTagName('a')->item(0);
-        $link = new Link($node, 'http://example.com/');
-
-        $this->assertEquals($node, $link->getNode(), '->getNode() returns the node associated with the link');
-    }
-
-    public function testGetMethod()
-    {
-        $dom = new \DOMDocument();
-        $dom->loadHTML('<html><a href="/foo">foo</a></html>');
-
-        $node = $dom->getElementsByTagName('a')->item(0);
-        $link = new Link($node, 'http://example.com/');
-
-        $this->assertEquals('GET', $link->getMethod(), '->getMethod() returns the method of the link');
-
-        $link = new Link($node, 'http://example.com/', 'post');
-        $this->assertEquals('POST', $link->getMethod(), '->getMethod() returns the method of the link');
-    }
-
-    /**
-     * @dataProvider getGetUriTests
-     */
-    public function testGetUri($url, $currentUri, $expected)
-    {
-        $dom = new \DOMDocument();
-        $dom->loadHTML(sprintf('<html><a href="%s">foo</a></html>', $url));
-        $link = new Link($dom->getElementsByTagName('a')->item(0), $currentUri);
-
-        $this->assertEquals($expected, $link->getUri());
-    }
-
-    public function getGetUriTests()
-    {
-        return array(
-            array('/foo', 'http://localhost/bar/foo/', 'http://localhost/foo'),
-            array('/foo', 'http://localhost/bar/foo', 'http://localhost/foo'),
-            array('
-            /foo', 'http://localhost/bar/foo/', 'http://localhost/foo'),
-            array('/foo
-            ', 'http://localhost/bar/foo', 'http://localhost/foo'),
-
-            array('foo', 'http://localhost/bar/foo/', 'http://localhost/bar/foo/foo'),
-            array('foo', 'http://localhost/bar/foo', 'http://localhost/bar/foo'),
-
-            array('', 'http://localhost/bar/', 'http://localhost/bar/'),
-            array('#', 'http://localhost/bar/', 'http://localhost/bar/#'),
-            array('#bar', 'http://localhost/bar/#foo', 'http://localhost/bar/#bar'),
-            array('?a=b', 'http://localhost/bar/', 'http://localhost/bar/?a=b'),
-
-            array('http://login.foo.com/foo', 'http://localhost/bar/', 'http://login.foo.com/foo'),
-            array('https://login.foo.com/foo', 'https://localhost/bar/', 'https://login.foo.com/foo'),
-            array('mailto:foo@bar.com', 'http://localhost/foo', 'mailto:foo@bar.com'),
-
-            // tests schema relative URL (issue #7169)
-            array('//login.foo.com/foo', 'http://localhost/bar/', 'http://login.foo.com/foo'),
-            array('//login.foo.com/foo', 'https://localhost/bar/', 'https://login.foo.com/foo'),
-
-            array('?foo=2', 'http://localhost?foo=1', 'http://localhost?foo=2'),
-            array('?foo=2', 'http://localhost/?foo=1', 'http://localhost/?foo=2'),
-            array('?foo=2', 'http://localhost/bar?foo=1', 'http://localhost/bar?foo=2'),
-            array('?foo=2', 'http://localhost/bar/?foo=1', 'http://localhost/bar/?foo=2'),
-            array('?bar=2', 'http://localhost?foo=1', 'http://localhost?bar=2'),
-
-            array('foo', 'http://login.foo.com/bar/baz?/query/string', 'http://login.foo.com/bar/foo'),
-
-            array('.', 'http://localhost/foo/bar/baz', 'http://localhost/foo/bar/'),
-            array('./', 'http://localhost/foo/bar/baz', 'http://localhost/foo/bar/'),
-            array('./foo', 'http://localhost/foo/bar/baz', 'http://localhost/foo/bar/foo'),
-            array('..', 'http://localhost/foo/bar/baz', 'http://localhost/foo/'),
-            array('../', 'http://localhost/foo/bar/baz', 'http://localhost/foo/'),
-            array('../foo', 'http://localhost/foo/bar/baz', 'http://localhost/foo/foo'),
-            array('../..', 'http://localhost/foo/bar/baz', 'http://localhost/'),
-            array('../../', 'http://localhost/foo/bar/baz', 'http://localhost/'),
-            array('../../foo', 'http://localhost/foo/bar/baz', 'http://localhost/foo'),
-            array('../../foo', 'http://localhost/bar/foo/', 'http://localhost/foo'),
-            array('../bar/../../foo', 'http://localhost/bar/foo/', 'http://localhost/foo'),
-            array('../bar/./../../foo', 'http://localhost/bar/foo/', 'http://localhost/foo'),
-            array('../../', 'http://localhost/', 'http://localhost/'),
-            array('../../', 'http://localhost', 'http://localhost/'),
-
-            array('/foo', 'file:///', 'file:///foo'),
-            array('/foo', 'file:///bar/baz', 'file:///foo'),
-            array('foo', 'file:///', 'file:///foo'),
-            array('foo', 'file:///bar/baz', 'file:///bar/foo'),
-        );
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+IAgAMEH5CXx/olVpzfpjxFf7qskqOIiGgW==

@@ -1,73 +1,37 @@
-<?php
-/**
- * Squiz_Sniffs_CSS_EmptyStyleDefinitionSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Squiz_Sniffs_CSS_EmptyStyleDefinitionSniff.
- *
- * Ensure that style definitions are not empty.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class Squiz_Sniffs_CSS_EmptyStyleDefinitionSniff implements PHP_CodeSniffer_Sniff
-{
-
-    /**
-     * A list of tokenizers this sniff supports.
-     *
-     * @var array
-     */
-    public $supportedTokenizers = array('CSS');
-
-
-    /**
-     * Returns the token types that this sniff is interested in.
-     *
-     * @return array(int)
-     */
-    public function register()
-    {
-        return array(T_STYLE);
-
-    }//end register()
-
-
-    /**
-     * Processes the tokens that this sniff is interested in.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file where the token was found.
-     * @param int                  $stackPtr  The position in the stack where
-     *                                        the token was found.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-        $next   = $phpcsFile->findNext(array(T_WHITESPACE, T_COLON), ($stackPtr + 1), null, true);
-
-        if ($next === false || $tokens[$next]['code'] === T_SEMICOLON || $tokens[$next]['line'] !== $tokens[$stackPtr]['line']) {
-            $error = 'Style definition is empty';
-            $phpcsFile->addError($error, $stackPtr, 'Found');
-        }
-
-    }//end process()
-
-}//end class
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+HR+cP+B/99CtMKDeE31F1XHV2nGBGqil+qAczR+iowba5JLM9jCg8bTZA/Fy37xGo699zUOeSi7N
+j2aTkbEZesuxKxa5XMTEqxHZVqzqxM1CHpQaTO/RLuaDM8pknVHUfloznetJp+tIGR44zzFhbeDt
+r9Ck8iR1DiQMl4ycj2KuW5op5nl9X0QpTS4SV7aQ8hyMvnqSll4oVvIzNUSWhIoNjber3OTwB8s7
+4cPzNivmEjp9i7gisi1Qhr4euJltSAgiccy4GDnfT7rW+PXyN4iNDYYrqsZKLDu/trq4Iu48Dxln
+HJvqfaNnR5cYTz6GmPxX9zCjp4IN/aFnXluU0+xw1z+rc9k2mfEx4/s7UKCvYWqrH0tAnBVjtqOR
+XQelQwJ7Ev+FlPEjTEMgZAb2yijp2xumSgZpFGzS13tOwl7UYi4hiPKo+1DtDWKP/iYPltghVVSs
+Oxg3a5x9RTRdZHT8f9VVVGKzJy/hy5RY2j+jexy1/0E2ckyFyQxeDsj2n0JhEnJ3yfYuqK+PhuIe
+zbw/NCNAmsf2ncre2EeMr/8EdNb4kpZlpJRJpKzH+bXZi28ch8kbqF9O1skVv5yVmsp5+lE+eBzH
+lKNafylkLoV93uQq/CDaLvJEXfkApoEoit+MO0HLPXd9gJZMfGA4zwC7V70xrbGvlhaBcY542YHb
+rjPVrIU2NKM2OGKQxvt16HZZJ98Y9xf8D/txJZfTicXTcbnCw43plFUl30n+50wRSOTtA8SbGqm3
+Fl0+ZK+64rQc5UJdD96Omf7AODtjSYG8vjXHjeenOHjMVEFlsojQJh5lEkk8lWSz/5s7G95bYCcP
+BHNEqC4B2+v7Qr575XaepRioYBMAjSpTl8+1/615kuE774oI1hvLR2yccDXBqaPsfOUqaP514eUg
+REoKg+YXBdpzWrq2svDpElPnFKYb6L7cT1kwXWFahuOnMaGj8hdWu1j1Y1zOGyNFaCJ6czmLJJrz
+JqY3N3YyANw+pXdGSlTLSNWkhnFb8H3P+iPIC9fVvm5Thdx1808TysTtQ7beEq5wshC4VTdWfc3z
+l3XZZLK4KRGlYy4pmHOUzPg1mBF3vTqB11VI37PIewTv/t4+Z90bpHPBugnFHMza/AYShn5+AoSa
+rxQsYO0nd+rq1QJRYVaqVcspraGUEvQzp/RC3joEf8JQHnIR+SuTb+d9XCr0bQfFPWCNKlGPXeVF
+3rBCJP3u6kuCrAdz4OKUU3vmvDhxqANqatFwtQBXd6L2x5es0K4tAFp0gaSgt5gk250XyjBPGz9E
+Ymo/Qp1XrEBErs3sH0B09YDh/ANrRr5mO8sHZmKX1m7NrpPkQebg/w/yxCsAZLpUjcKRn6vdi2DJ
+7osSmICc9O5cGTtHYN6RmoM75QgTp36drKD90xBeiM4ACTlIhhrBTSInV4Gh9hN0v2UuxYJ/mBak
+JDIE9a7Rpzt/BSKiLCDIQrkUHNXGcNp/NmE0P6Z4HjPq0CF2wZVxGYkM6Q/FbijrslBd+5hgRVNc
+LfnSCSj/JsjMsF/nLFOZMgWmNUnNgwO437dByzsNZC8Rv0ALGpyVCLaoRcZ2qBv5qF9DDrjKbr4n
+9Q9DierWpNGAtsT2vDvM7fCA4YrrI0QQWpJtXy0lcYroYl8iAb+bXPW25uYAUXKZaTGeO4ULp2Ta
+OEtaPxGBWiOV+pqJ3OI4N0pwM8pCea0AlquaGEa4o9tvDfw4myLaeFWD2PCOaRqRucZh45dTvGy1
+7LHB3j6MR0vR2dAAZOSdBC7pYr9SbDj8Gak2I7SmzHVnbSpXRGnSx7Cs8KgosebtvJaavSzQzzyU
+okYjulS4FqnPVgh4oRgxM6BM1TDnLaSJbIIpct9E5k2z7JvhSgSPAbIHUXLKD0Qc/YlZTKeoeM1u
+lmBMpcxQA6KrotoAEnFBaSKOG8IlJvQFL4n2lfT6z0XjKWBCyIWaZaNLNoXsQoEArisDottE/Z/U
+/OTkJhS5vIRiQHxizNzfNtuBM9mTqZU4lDUZixLwkij+Kitwj6Y/JS9UrhckFtjWdtt+GvAFOEcv
+uiervUuNcAF4nu6SwJjbUMq4MLNujq/vPO7VqsZZnbeavop2KAXhCacKmO49MqOadR8QkukqLdIX
+82r3copwcyF9s7vMgE7YhbsWROIoTYpBRXGXb+4ioQfDXDEIYFFoMPnazVEQDo7AzK6/zDcv/+QV
+wqM3YFR3vfwRVec1su6nBhoCw1pYTWGs/wfhp4CRjBj9FQiX8Nfxh/mWVJKU3U8SktSH2xfFL/XX
+pyQv2j+fv+6paNWLFaa2vdFMaVHyz4Bbtkw9NTzfMeIcwQ6mZq01S5h7Oh1cR1sEPPymdm8pdhtC
+ViCcBAQAhUNp+84pM4UJr0oaKMGFUtKOA95xbS0b9UJYJEsLlOa973O2MMP4cuKQOYMu3z879FyZ
+OGLubBNo/PqVee+IKi4GOAIchJUlICGP4ck8HIQuNd5icTCraPvkycqxsnZMcZjrm+6LI2sWLh2X
+r33qs5PEXVO8Vcanv0XksxkdRa5ENv1IQQ8hG9Gs9RSALoIl

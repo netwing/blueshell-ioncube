@@ -1,159 +1,80 @@
-<?php
-
-class Tag extends CActiveRecord
-{
-	/**
-	 * The followings are the available columns in table 'tbl_tag':
-	 * @var integer $id
-	 * @var string $name
-	 * @var integer $frequency
-	 */
-
-	/**
-	 * Returns the static model of the specified AR class.
-	 * @return CActiveRecord the static model class
-	 */
-	public static function model($className=__CLASS__)
-	{
-		return parent::model($className);
-	}
-
-	/**
-	 * @return string the associated database table name
-	 */
-	public function tableName()
-	{
-		return '{{tag}}';
-	}
-
-	/**
-	 * @return array validation rules for model attributes.
-	 */
-	public function rules()
-	{
-		// NOTE: you should only define rules for those attributes that
-		// will receive user inputs.
-		return array(
-			array('name', 'required'),
-			array('frequency', 'numerical', 'integerOnly'=>true),
-			array('name', 'length', 'max'=>128),
-		);
-	}
-
-	/**
-	 * @return array relational rules.
-	 */
-	public function relations()
-	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
-		return array(
-		);
-	}
-
-	/**
-	 * @return array customized attribute labels (name=>label)
-	 */
-	public function attributeLabels()
-	{
-		return array(
-			'id' => 'Id',
-			'name' => 'Name',
-			'frequency' => 'Frequency',
-		);
-	}
-
-	/**
-	 * Returns tag names and their corresponding weights.
-	 * Only the tags with the top weights will be returned.
-	 * @param integer the maximum number of tags that should be returned
-	 * @return array weights indexed by tag names.
-	 */
-	public function findTagWeights($limit=20)
-	{
-		$models=$this->findAll(array(
-			'order'=>'frequency DESC',
-			'limit'=>$limit,
-		));
-
-		$total=0;
-		foreach($models as $model)
-			$total+=$model->frequency;
-
-		$tags=array();
-		if($total>0)
-		{
-			foreach($models as $model)
-				$tags[$model->name]=8+(int)(16*$model->frequency/($total+10));
-			ksort($tags);
-		}
-		return $tags;
-	}
-
-	/**
-	 * Suggests a list of existing tags matching the specified keyword.
-	 * @param string the keyword to be matched
-	 * @param integer maximum number of tags to be returned
-	 * @return array list of matching tag names
-	 */
-	public function suggestTags($keyword,$limit=20)
-	{
-		$tags=$this->findAll(array(
-			'condition'=>'name LIKE :keyword',
-			'order'=>'frequency DESC, Name',
-			'limit'=>$limit,
-			'params'=>array(
-				':keyword'=>'%'.strtr($keyword,array('%'=>'\%', '_'=>'\_', '\\'=>'\\\\')).'%',
-			),
-		));
-		$names=array();
-		foreach($tags as $tag)
-			$names[]=$tag->name;
-		return $names;
-	}
-
-	public static function string2array($tags)
-	{
-		return preg_split('/\s*,\s*/',trim($tags),-1,PREG_SPLIT_NO_EMPTY);
-	}
-
-	public static function array2string($tags)
-	{
-		return implode(', ',$tags);
-	}
-
-	public function updateFrequency($oldTags, $newTags)
-	{
-		$oldTags=self::string2array($oldTags);
-		$newTags=self::string2array($newTags);
-		$this->addTags(array_values(array_diff($newTags,$oldTags)));
-		$this->removeTags(array_values(array_diff($oldTags,$newTags)));
-	}
-
-	public function addTags($tags)
-	{
-		$criteria=new CDbCriteria;
-		$criteria->addInCondition('name',$tags);
-		$this->updateCounters(array('frequency'=>1),$criteria);
-		foreach($tags as $name)
-		{
-			if(!$this->exists('name=:name',array(':name'=>$name)))
-			{
-				$tag=new Tag;
-				$tag->name=$name;
-				$tag->frequency=1;
-				$tag->save();
-			}
-		}
-	}
-
-	public function removeTags($tags)
-	{
-		if(empty($tags))
-			return;
-		$criteria=new CDbCriteria;
-		$criteria->addInCondition('name',$tags);
-		$this->updateCounters(array('frequency'=>-1),$criteria);
-		$this->deleteAll('frequency<=0');
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPrQS2welIV2D8bMUYTRo+UiByxEiTYaZ29Qi/SzZxUNoyM4lmFvUW/R0QZwaEuLWQanyMP8C
+AjKUGUN8NEYtg41QCB3vC8hsM98Eua0DiLsXaPE19lp6Edp7ULKMXuBoExN64VIOoQaMNCnkhf09
+c0L3JTuFTBP8AJG/CZBUYhxyRjYH9FjZ7O837THxlydRlTn8J8l1IofwTq/OTc+bnhvuyww/E0yk
+gmY/1FcIRJsJqQB+0SEJhr4euJltSAgiccy4GDnfTEnbZYHDg99Cbb0Ei42nUBat1JSsYk6GbyLQ
+6E2XOLbr7LOBkcPKp/x/UHuqqZO/NDrnU9f1UA4jd5iO5VYEM2owEPZuQxkz3bI8lve04ff56lP7
+UjqwPvK3DXfl95jFPRmccXrCav95quS5AnnKIWmdh6IlPt+dYQfEVGZ7g03e7mBgXv/iJaBu0Jhs
+o8k2C828FShNdCZKAttZFj8E2kDxDgVC9T9NWy7V9izC6GX2C7fpXdhU+AEmLGG4zuCKRXENvjmG
+FPsZiB+kHm1/6m3tmQBFNsOz69ZbAYDWDEA7vVuu0Qp4lML3A4duvq2fZa/Hf0h6Zg9WPxqbn9kJ
+Gee+9XetwYA8Yp4daIbHjS88u01XmH3hXp/0DSbRs53/WfmHwcPOhX1RNtupDlT6H5VsQFXfKwWm
+m2KvEVc8QJfQSsfk2t9aeQi8wGg3mxTZbxy8FIAIV80ncZig6ct670AzosHX/5Lkx2s69ngSIEOV
+cEEDZby/qdhzb7gMiL62LcYzWdDsQk/vcZw4dhHgGnzSODUIGeyri3a8s79sJtGQrYnWmw0YnNrw
+FrKzXrEy1Yxkah0gsR7F2C5TZCY8yoK9Cjs2nKQDyILd2GVkXuuqVmrMwQwfaOx5U+Id28t/OfmS
+u+mmHNqVQXwVZA9okIxfHnV1umduh0GpHmrPazlxM7iQ+tLT75w0VyXbPpLAFZCr/xOc/RtC1u67
+4OccCQELi079v3Bo3p0mJIYKK+dvn6nlTR3nmnJOf0jFj7j/oKdGAlIs7d2dcmlwVhIFaRjDm7zO
+c6vwXJ+6c7Br9uNJmFFBDbISY9xjMzToGhZYf/yUx7fA3U5YWrUs7Rf+XuK5b0FZBEy9oR8pEFPJ
+Mu3yV7I4LXPoXQZFLFVjMyFmZM9tWNG2znr98Mym+d+0oJTLI2NWwQv3dElOGtQ1hY2ybjj4aGnt
+MqPTLsO6+lF0ZDs97I8Ht/JLNSILT2Z8CUe6q8C90ImNcBqBBSzXIJS9S2kChaGFHGKpNwh+N/Fv
+cVLLYPs5Hief8jPhmeYanwc0/Mr1M1t8Op7csBI+GErgMV0hxZiUR6+XhR3+u4AhqKvptBhFfVzD
+s858Ce0w2FAoeI2LyS4Oak0oH4Dab0k8AFOWpAslIvw65ZB8wcTyN4azeSu9SzSI/KvnmoOiAdIz
+w7V7W26cJRVhl9iEfBZB8glC9Djq9bxW4fiOd/RZqRhIAZOqg7jpCNGwhId4htMZkxQZaZ3YzalM
+lWoyeAI+o1PbCsPu/GOO/5fi+/AjAP/1eAn+Dyi1DavhbOinz7Z22Jefl2Wx33YRVuYD7MFTZJdW
+68/V0k3BLnMCVOR2mEzloE/oG/VC/wwtlYuupOFIgfGH+mFk6USwJkEw0yzGyYYBM6GGDslJxAuv
+Mtt+s9jkHS2bFcvQ+R/9O2LNzEQQKGkkg8pjUfrTKzqoNV+hGMtkaljecfq9zFDbVqfATzdfCi/B
+kzoN5BJEBR4Rytld3hjHstjiYqEPPhocJ1WwnPtTN1561SPe0kcA4LfFliQbZknoHU2+8E4VPsWZ
+TWCJi8Ane/R33eFSzvCe3TdFXihFp4XsOPta5BEOvVdnk0mvULIndP26cYcecXwYfkdLqb7sClFL
+pG+4Qv9U7bx6GifjGeoADxZLR+N/AwNPpkEzrYRh3Z/zo3kKd3uniRo0IpiHtmKf5QXVnfwoY++c
+xLQff2sx0ShDx0G7zUTRX9YFv2vQMbylCGSIShSb4xqMNZjQxV3HVPeE7EMB5lyDeaIC9rfb3ICK
+5z25LwWwj9jSqnQxtMbSiZPuIh2KJi8b2Ov5Ge/f5+rbi065iX4cKzbBBZUE8NRww6H96aTY/T8G
+x4IgW2+n+m5T7vHFdcONY6CqemfnBKNxSFpi/APMcS6732uejDL97yiIPBesZlZcCqHt4JsOdRmw
+aXeYc9WAFIS4mY6NTn6Hfed0eS+OhZA9I8GhU1ii7UuFd00JeYWquY0Igk4XHA8ucJjM4fVyo0qO
+h7AFxYHz4SdPRDAcPHCQx+PCd0qnV7YY+A0ql9MAIQ9XXzLaNBfboE+H9XiLsaAUlUJb2GiaS0eG
+d3r+4RQB9F+CTVLp0xZM8pW4/wjSTMI9t8Uau7ElzscbJdDJbaL7crh9Sbgu77JW4k6VRJciYU0g
+ANmgQq9qRzNlEj0uM98xato395m0MzCpmlUJvpkDTBzLP63RON8CuFaAUeK7i4k/WaRYW1VfcxuA
+iuTu1HUdYBmMWaE9h5QEVd0wyjZ2/rneLQixo1HbBWTlXdq1KOEAbN7fWoL9H5Ez46QnOc/00Hxq
+utgOCp+4yvXI45SFnKtpXpumII8A7RX1vYiqCweoT6GkGeopUhPfppghxXPOTJK3u5YQsAinydAi
+ngVGfyTz81GdXxXxxgcqkGrTZPOAATslvfkZPU+keCsKcObJnVBmqY+Ud0Q/lXhQlVgh2mjj8wkE
+jz1bdcyq0+IP0/l+RA7/ynLrNKbIK9SPEwuJvci0aR8xQAiJsIiN85yswWo/ZuRwdsX59dyPutS4
+Q9lVPB6BmZt9su+PDkLoFeIXExGT5dixqjf0lpMigiPUdja28VVGhDsCSVJ12Vtw5UM0lv5QAkT0
+ClGv3Efn9AcjXupcXnGJ7VZrAgjy7jXZcq8WAGFD0ooqiitKeAc6xXI010K5fwp07sO1FbxtEfBJ
+LQHj4VRxVevcfQoAcsv4gzgtpaDIIlOfILNHBKnJZDdKxpW5tiQQ0dOaW1Yos2AyNQF6PU9bSo/L
+DB2oNgCTCDg5tczthAbedSomi7APMl+pB/mXEFleJfm/K1zp+fqB0Q3fNv5r+ok+EKe0aCMLXsgp
+exxEcuGd/rjsKGo5dEfqFZJtIsRH7fnB4XN+DcOkbp9YE8JyiZiKPFk2yz1scYjIoMO+ZAEJ6C86
+E8CM92VJ7oqbenFcKm6xc5XQYxO4xO9XKb47Rqz7s2eRp/pnASObAfp2ipKkKfSSHS8P4hVo3Vft
+qhdA/5/xHdTzxz2DqBrxDQnvCt3rs/omcbh7Qjr5BuCSorlqiaq2p5eGRtvSi9jrX/urmaKrpN3i
+XGX80O4BTSaI7K02Z2vJk7XY8z1FhH7SHHLv9Rj3u1ipDW5qXxMs/YekDEfGmlnPLL0o/ulwIxhO
+1JUIjz84RVx+p+sb7RlypvcB6Bz0pv2zT04K2nnA5yuLbUzeMGrP0NLXPogbt5tLVB6T6SHvbnPI
+X30EWfcjFwqsgpFU1yw1mGT9SixEz2NDoq897fOPAbQkZJJGWO9bBUAP8oD3s9e8+9o9D15cqECE
+k8JBeB1HhYhV70KcrG9kSMxlapPqq2Tm6rB4Gdx9lFCpLBxVOoas5dDmyic2c8VUCYbhpsONMoz6
+LMw5boQIXExwSpwgMvFJNuQJ8JaSCWMDcGkTb4Tm4ely2t/626v0KVvCfjFWiqFlrvPcwETfqsCw
+TAV1U5Gkj51uLgSBxmFU+8hj72D5WncAch/SaPdqKQrTSMTzEh6pKVY5AnOQYd4v3KUnsg4gOlbO
+kgYwVRrp7J+Xt3Dokr93jkUXOX0b5jXWylo+E5eHTkXPUMO5aJDazP/+NSXKc1mnS4dSDdtoYLIX
+s7A68leOuGbJytSiK96J6OTkBEGD9ivgTWWFEU4IMIVx32O4WaqUl7/SLc2k1ifKcRLiT1o36jkw
+vSw3cQGqsGTsQY7DtWYZ4rOQPDEysQ8slsca3Ry67rKfHoWxp63jtoJJ9aY3OD4sEEnkV4oB9wK3
+iNDNb1dm5G+yKO7QK+/8mfh5kOSZE2iGteznZt9DEdmnOcOXIbCimmTZZTbRIORu00AQ9E11PVyI
+I10uG0lR6Mw4dQ0IQAjqbKO2zTlSwer83P1B0RgodbwBZ5BwYitNWYP6D6qLlrnwLVtpnWretm1S
+vqN7zLuReeXao8M9oV5po/vZ3cpaB5AMbO7gzoY9Jvn72N4/7BimPHMpwhDjrAr1l7YaQEyMsWCA
+gtQ79U+6UFxdpN/72VAjHdi0uqOTKdZb5e+gcJSG/nDBsW9lZztyBZgTwGRqgu4aVsvIWZQjsp13
+xbJ7gRk/2K+R0ffpl8EW2n4H65cHAaUXpJ37NX7IrbTHNz5o7hAW1Mc+UV3QVxh4jY+NTBm9vlrK
+cdZOHG5NLwhGkVOVXqdLACH3gzkJar+9UOWovlQenwN56VopGvR14KfZCuhLq+cxWqNBnwjoTldl
+rRltq2KNckx9QV8lEPgZcyHZ52spphz9DNgokh2Dhg1S0OMItahcbgHmGZ8aB8GpNwPx+PB0QZYa
+2bvn15piCv6fVLpzKnLU00nKkN+7eymL2hSj4zdceTZdtZtAV2R1JS8I10hNyp7o0+maCaS/wZPO
+RjTSanHVsrHEQS6VPwEbAxLoYnNjuf1vJl9jVmZCZ3PZKC0nPAkrByPbuYZO9cyx82KpcOMV+5xy
+qwNN0x+7jZsSh3TsEH2c1xq1XOEy59CU4laYjAeHajux6A7mDfY7C4BSHDe/qk3QB4tq9uVvDfGj
+aW//mSsZa+UMInzTn+0qrjkm+fvTIZbU3A99ZjAUT0nzP3AKrPJWsMYurofsoZvLz4VhfEZSmSWC
+RJeehkwIjtmOvszRhHCGlHI/EiWv4b3c6IS+APlhGHbfB0wRx07xhnb3gXy44djOoL1VjyHjVRCB
+IawFoKKTI8hnYW4e0Ll8ZK3Pecx0S6tY18I1z7B7NFRwqRbDEfaSSM8Lh2aFTQS6dm13TluVI2vz
+TN0l5Cu+GqbJaM4bq11cvBDNVGCXsTvMOoQjw4Wa1pTClZdiKWFDDvQvwcNJL60sa5uV8tTutJZp
+ONXAmYwnrSjVvJjG3KNGHRsFVHoTOT7MDuZD2L2nM/+WipEBMcExLOnbHWcY1ZlcFVhdI5pY7oNH
+isHjfwX6WBfaE2wAQcnm8DIFSTjQeXyvZ9Eq7ZOgcNLcxntKIOfL+812VEg610ejoC7PulOfnlyD
+mdlc45S4tnrEeoYqx1xaLv+GmayMUNcmc0U/DHLVb2NEh1eYQTdHfi7jihYXLXwgIUwMz8xRHvaB
+KP7wY6jw0yX87iWDfPdkUvuhd+C0hLhMpwnb2WUHpx4eJXEYeE81ZMC52qUm2VkA1ndjkANUWvX6
+Mu4MOVWx5Q7sNxjzhOaXN3ZO+Gm8hpZRPxJA0pV9P/8oEUAJrHgNBOMjxlJeBsu8QXHo8lo2H4mk
+LHz8/yQQM8kJ7vM71eaCW1F8SwjJtj7E9kw5QvtyWVxlPYshNJTK/XbOCpcoXDzkMjzfddbLDNFh
+lEaY+uUUAUcD/oJ8DuQYR7klonXzys21HmIDWb/TRyHLwh2BPozl3J10tgGA3oiL63XiweB4181a
+xVsnDqmZLZOt47RcDTKdAzjsTHi98c7iXNoFN8R1QnH0s+ofAHQAnvtGNoVAHrulVXCA2BOjuJgS
+K6FHldwnQ2wIV3Y8Nxzm6n6TxSJHWWuJJvyD0MU2zXjv7Qz2Q1WNmsbEAMRvxiwQLnEdonlXPYSC
+29sl3OPePIVGnbOlJiQySjDxi8YzNopK0RnAvQPv3Ke99CaX0O+ht0IUjGZUMNC=

@@ -1,114 +1,36 @@
-<?php
-/**
- * PHPUnit
- *
- * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @package    PHPUnit
- * @subpackage Framework_Constraint
- * @author     Bernhard Schussek <bschussek@2bepublished.at>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      File available since Release 3.6.0
- */
-
-/**
- *
- *
- * @package    PHPUnit
- * @subpackage Framework_Constraint
- * @author     Bernhard Schussek <bschussek@2bepublished.at>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      Class available since Release 3.6.0
- */
-
-abstract class PHPUnit_Framework_Constraint_Composite extends PHPUnit_Framework_Constraint
-{
-    /**
-     * @var PHPUnit_Framework_Constraint
-     */
-    protected $innerConstraint;
-
-    /**
-     * @param PHPUnit_Framework_Constraint $innerConstraint
-     * @param string                       $attributeName
-     */
-    public function __construct(PHPUnit_Framework_Constraint $innerConstraint)
-    {
-        $this->innerConstraint = $innerConstraint;
-    }
-
-    /**
-     * Evaluates the constraint for parameter $other
-     *
-     * If $returnResult is set to FALSE (the default), an exception is thrown
-     * in case of a failure. NULL is returned otherwise.
-     *
-     * If $returnResult is TRUE, the result of the evaluation is returned as
-     * a boolean value instead: TRUE in case of success, FALSE in case of a
-     * failure.
-     *
-     * @param  mixed $other Value or object to evaluate.
-     * @param  string $description Additional information about the test
-     * @param  bool $returnResult Whether to return a result or throw an exception
-     * @return mixed
-     * @throws PHPUnit_Framework_ExpectationFailedException
-     */
-    public function evaluate($other, $description = '', $returnResult = FALSE)
-    {
-        try {
-            return $this->innerConstraint->evaluate(
-              $other,
-              $description,
-              $returnResult
-            );
-        }
-
-        catch (PHPUnit_Framework_ExpectationFailedException $e) {
-            $this->fail($other, $description);
-        }
-    }
-
-    /**
-     * Counts the number of constraint elements.
-     *
-     * @return integer
-     */
-    public function count()
-    {
-        return count($this->innerConstraint);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

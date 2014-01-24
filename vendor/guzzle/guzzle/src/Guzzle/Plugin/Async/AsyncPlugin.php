@@ -1,80 +1,47 @@
-<?php
-
-namespace Guzzle\Plugin\Async;
-
-use Guzzle\Common\Event;
-use Guzzle\Http\Message\Response;
-use Guzzle\Http\Exception\CurlException;
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-
-/**
- * Sends requests but does not wait for the response
- */
-class AsyncPlugin implements EventSubscriberInterface
-{
-    public static function getSubscribedEvents()
-    {
-        return array(
-            'request.before_send'    => 'onBeforeSend',
-            'request.exception'      => 'onRequestTimeout',
-            'request.sent'           => 'onRequestSent',
-            'curl.callback.progress' => 'onCurlProgress'
-        );
-    }
-
-    /**
-     * Event used to ensure that progress callback are emitted from the curl handle's request mediator.
-     *
-     * @param Event $event
-     */
-    public function onBeforeSend(Event $event)
-    {
-        // Ensure that progress callbacks are dispatched
-        $event['request']->getCurlOptions()->set('progress', true);
-    }
-
-    /**
-     * Event emitted when a curl progress function is called. When the amount of data uploaded == the amount of data to
-     * upload OR any bytes have been downloaded, then time the request out after 1ms because we're done with
-     * transmitting the request, and tell curl not download a body.
-     *
-     * @param Event $event
-     */
-    public function onCurlProgress(Event $event)
-    {
-        if ($event['handle'] &&
-            ($event['downloaded'] || ($event['uploaded'] && $event['upload_size'] === $event['uploaded']))
-        ) {
-            // Timeout after 1ms
-            curl_setopt($event['handle'], CURLOPT_TIMEOUT_MS, 1);
-            // Even if the response is quick, tell curl not to download the body
-            curl_setopt($event['handle'], CURLOPT_NOBODY, true);
-        }
-    }
-
-    /**
-     * Event emitted when a curl exception occurs. Ignore the exception and set a mock response.
-     *
-     * @param Event $event
-     */
-    public function onRequestTimeout(Event $event)
-    {
-        if ($event['exception'] instanceof CurlException) {
-            $event['request']->setResponse(new Response(200, array(
-                'X-Guzzle-Async' => 'Did not wait for the response'
-            )));
-        }
-    }
-
-    /**
-     * Event emitted when a request completes because it took less than 1ms. Add an X-Guzzle-Async header to notify the
-     * caller that there is no body in the message.
-     *
-     * @param Event $event
-     */
-    public function onRequestSent(Event $event)
-    {
-        // Let the caller know this was meant to be async
-        $event['request']->getResponse()->setHeader('X-Guzzle-Async', 'Did not wait for the response');
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

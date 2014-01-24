@@ -1,495 +1,271 @@
-<?php
-    // $Id: visual_test.php 1787 2008-04-26 20:35:39Z pp11 $
-
-    // NOTE:
-    // Some of these tests are designed to fail! Do not be alarmed.
-    //                         ----------------
-
-    // The following tests are a bit hacky. Whilst Kent Beck tried to
-    // build a unit tester with a unit tester, I am not that brave.
-    // Instead I have just hacked together odd test scripts until
-    // I have enough of a tester to procede more formally.
-    //
-    // The proper tests start in all_tests.php
-    require_once('../unit_tester.php');
-    require_once('../shell_tester.php');
-    require_once('../mock_objects.php');
-    require_once('../reporter.php');
-    require_once('../xml.php');
-
-    class TestDisplayClass {
-        private $a;
-
-        function TestDisplayClass($a) {
-            $this->a = $a;
-        }
-    }
-
-    class PassingUnitTestCaseOutput extends UnitTestCase {
-
-        function testOfResults() {
-            $this->pass('Pass');
-        }
-
-        function testTrue() {
-            $this->assertTrue(true);
-        }
-
-        function testFalse() {
-            $this->assertFalse(false);
-        }
-
-        function testExpectation() {
-            $expectation = &new EqualExpectation(25, 'My expectation message: %s');
-            $this->assert($expectation, 25, 'My assert message : %s');
-        }
-
-        function testNull() {
-            $this->assertNull(null, "%s -> Pass");
-            $this->assertNotNull(false, "%s -> Pass");
-        }
-
-        function testType() {
-            $this->assertIsA("hello", "string", "%s -> Pass");
-            $this->assertIsA($this, "PassingUnitTestCaseOutput", "%s -> Pass");
-            $this->assertIsA($this, "UnitTestCase", "%s -> Pass");
-        }
-
-        function testTypeEquality() {
-            $this->assertEqual("0", 0, "%s -> Pass");
-        }
-
-        function testNullEquality() {
-            $this->assertNotEqual(null, 1, "%s -> Pass");
-            $this->assertNotEqual(1, null, "%s -> Pass");
-        }
-
-        function testIntegerEquality() {
-            $this->assertNotEqual(1, 2, "%s -> Pass");
-        }
-
-        function testStringEquality() {
-            $this->assertEqual("a", "a", "%s -> Pass");
-            $this->assertNotEqual("aa", "ab", "%s -> Pass");
-        }
-
-        function testHashEquality() {
-            $this->assertEqual(array("a" => "A", "b" => "B"), array("b" => "B", "a" => "A"), "%s -> Pass");
-        }
-
-        function testWithin() {
-            $this->assertWithinMargin(5, 5.4, 0.5, "%s -> Pass");
-        }
-
-        function testOutside() {
-            $this->assertOutsideMargin(5, 5.6, 0.5, "%s -> Pass");
-        }
-
-        function testStringIdentity() {
-            $a = "fred";
-            $b = $a;
-            $this->assertIdentical($a, $b, "%s -> Pass");
-        }
-
-        function testTypeIdentity() {
-            $a = "0";
-            $b = 0;
-            $this->assertNotIdentical($a, $b, "%s -> Pass");
-        }
-
-        function testNullIdentity() {
-            $this->assertNotIdentical(null, 1, "%s -> Pass");
-            $this->assertNotIdentical(1, null, "%s -> Pass");
-        }
-
-        function testHashIdentity() {
-        }
-
-        function testObjectEquality() {
-            $this->assertEqual(new TestDisplayClass(4), new TestDisplayClass(4), "%s -> Pass");
-            $this->assertNotEqual(new TestDisplayClass(4), new TestDisplayClass(5), "%s -> Pass");
-        }
-
-        function testObjectIndentity() {
-            $this->assertIdentical(new TestDisplayClass(false), new TestDisplayClass(false), "%s -> Pass");
-            $this->assertNotIdentical(new TestDisplayClass(false), new TestDisplayClass(0), "%s -> Pass");
-        }
-
-        function testReference() {
-            $a = "fred";
-            $b = &$a;
-            $this->assertReference($a, $b, "%s -> Pass");
-        }
-
-        function testCloneOnDifferentObjects() {
-            $a = "fred";
-            $b = $a;
-            $c = "Hello";
-            $this->assertClone($a, $b, "%s -> Pass");
-        }
-
-        function testPatterns() {
-            $this->assertPattern('/hello/i', "Hello there", "%s -> Pass");
-            $this->assertNoPattern('/hello/', "Hello there", "%s -> Pass");
-        }
-
-        function testLongStrings() {
-            $text = "";
-            for ($i = 0; $i < 10; $i++) {
-                $text .= "0123456789";
-            }
-            $this->assertEqual($text, $text);
-        }
-    }
-
-    class FailingUnitTestCaseOutput extends UnitTestCase {
-
-        function testOfResults() {
-            $this->fail('Fail');        // Fail.
-        }
-
-        function testTrue() {
-            $this->assertTrue(false);        // Fail.
-        }
-
-        function testFalse() {
-            $this->assertFalse(true);        // Fail.
-        }
-
-        function testExpectation() {
-            $expectation = &new EqualExpectation(25, 'My expectation message: %s');
-            $this->assert($expectation, 24, 'My assert message : %s');        // Fail.
-        }
-
-        function testNull() {
-            $this->assertNull(false, "%s -> Fail");        // Fail.
-            $this->assertNotNull(null, "%s -> Fail");        // Fail.
-        }
-
-        function testType() {
-            $this->assertIsA(14, "string", "%s -> Fail");        // Fail.
-            $this->assertIsA(14, "TestOfUnitTestCaseOutput", "%s -> Fail");        // Fail.
-            $this->assertIsA($this, "TestReporter", "%s -> Fail");        // Fail.
-        }
-
-        function testTypeEquality() {
-            $this->assertNotEqual("0", 0, "%s -> Fail");        // Fail.
-        }
-
-        function testNullEquality() {
-            $this->assertEqual(null, 1, "%s -> Fail");        // Fail.
-            $this->assertEqual(1, null, "%s -> Fail");        // Fail.
-        }
-
-        function testIntegerEquality() {
-            $this->assertEqual(1, 2, "%s -> Fail");        // Fail.
-        }
-
-        function testStringEquality() {
-            $this->assertNotEqual("a", "a", "%s -> Fail");    // Fail.
-            $this->assertEqual("aa", "ab", "%s -> Fail");        // Fail.
-        }
-
-        function testHashEquality() {
-            $this->assertEqual(array("a" => "A", "b" => "B"), array("b" => "B", "a" => "Z"), "%s -> Fail");
-        }
-
-        function testWithin() {
-            $this->assertWithinMargin(5, 5.6, 0.5, "%s -> Fail");   // Fail.
-        }
-
-        function testOutside() {
-            $this->assertOutsideMargin(5, 5.4, 0.5, "%s -> Fail");   // Fail.
-        }
-
-        function testStringIdentity() {
-            $a = "fred";
-            $b = $a;
-            $this->assertNotIdentical($a, $b, "%s -> Fail");       // Fail.
-        }
-
-        function testTypeIdentity() {
-            $a = "0";
-            $b = 0;
-            $this->assertIdentical($a, $b, "%s -> Fail");        // Fail.
-        }
-
-        function testNullIdentity() {
-            $this->assertIdentical(null, 1, "%s -> Fail");        // Fail.
-            $this->assertIdentical(1, null, "%s -> Fail");        // Fail.
-        }
-
-        function testHashIdentity() {
-            $this->assertIdentical(array("a" => "A", "b" => "B"), array("b" => "B", "a" => "A"), "%s -> fail");        // Fail.
-        }
-
-        function testObjectEquality() {
-            $this->assertNotEqual(new TestDisplayClass(4), new TestDisplayClass(4), "%s -> Fail");    // Fail.
-            $this->assertEqual(new TestDisplayClass(4), new TestDisplayClass(5), "%s -> Fail");        // Fail.
-        }
-
-        function testObjectIndentity() {
-            $this->assertNotIdentical(new TestDisplayClass(false), new TestDisplayClass(false), "%s -> Fail");    // Fail.
-            $this->assertIdentical(new TestDisplayClass(false), new TestDisplayClass(0), "%s -> Fail");        // Fail.
-        }
-
-        function testReference() {
-            $a = "fred";
-            $b = &$a;
-            $this->assertClone($a, $b, "%s -> Fail");        // Fail.
-        }
-
-        function testCloneOnDifferentObjects() {
-            $a = "fred";
-            $b = $a;
-            $c = "Hello";
-            $this->assertClone($a, $c, "%s -> Fail");        // Fail.
-        }
-
-        function testPatterns() {
-            $this->assertPattern('/hello/', "Hello there", "%s -> Fail");            // Fail.
-            $this->assertNoPattern('/hello/i', "Hello there", "%s -> Fail");      // Fail.
-        }
-
-        function testLongStrings() {
-            $text = "";
-            for ($i = 0; $i < 10; $i++) {
-                $text .= "0123456789";
-            }
-            $this->assertEqual($text . $text, $text . "a" . $text);        // Fail.
-        }
-}
-
-    class Dummy {
-        function Dummy() {
-        }
-
-        function a() {
-        }
-    }
-    Mock::generate('Dummy');
-
-    class TestOfMockObjectsOutput extends UnitTestCase {
-
-        function testCallCounts() {
-            $dummy = &new MockDummy();
-            $dummy->expectCallCount('a', 1, 'My message: %s');
-            $dummy->a();
-            $dummy->a();
-        }
-
-        function testMinimumCallCounts() {
-            $dummy = &new MockDummy();
-            $dummy->expectMinimumCallCount('a', 2, 'My message: %s');
-            $dummy->a();
-            $dummy->a();
-        }
-
-        function testEmptyMatching() {
-            $dummy = &new MockDummy();
-            $dummy->expect('a', array());
-            $dummy->a();
-            $dummy->a(null);        // Fail.
-        }
-
-        function testEmptyMatchingWithCustomMessage() {
-            $dummy = &new MockDummy();
-            $dummy->expect('a', array(), 'My expectation message: %s');
-            $dummy->a();
-            $dummy->a(null);        // Fail.
-        }
-
-        function testNullMatching() {
-            $dummy = &new MockDummy();
-            $dummy->expect('a', array(null));
-            $dummy->a(null);
-            $dummy->a();        // Fail.
-        }
-
-        function testBooleanMatching() {
-            $dummy = &new MockDummy();
-            $dummy->expect('a', array(true, false));
-            $dummy->a(true, false);
-            $dummy->a(true, true);        // Fail.
-        }
-
-        function testIntegerMatching() {
-            $dummy = &new MockDummy();
-            $dummy->expect('a', array(32, 33));
-            $dummy->a(32, 33);
-            $dummy->a(32, 34);        // Fail.
-        }
-
-        function testFloatMatching() {
-            $dummy = &new MockDummy();
-            $dummy->expect('a', array(3.2, 3.3));
-            $dummy->a(3.2, 3.3);
-            $dummy->a(3.2, 3.4);        // Fail.
-        }
-
-        function testStringMatching() {
-            $dummy = &new MockDummy();
-            $dummy->expect('a', array('32', '33'));
-            $dummy->a('32', '33');
-            $dummy->a('32', '34');        // Fail.
-        }
-
-        function testEmptyMatchingWithCustomExpectationMessage() {
-            $dummy = &new MockDummy();
-            $dummy->expect(
-                    'a',
-                    array(new EqualExpectation('A', 'My part expectation message: %s')),
-                    'My expectation message: %s');
-            $dummy->a('A');
-            $dummy->a('B');        // Fail.
-        }
-
-        function testArrayMatching() {
-            $dummy = &new MockDummy();
-            $dummy->expect('a', array(array(32), array(33)));
-            $dummy->a(array(32), array(33));
-            $dummy->a(array(32), array('33'));        // Fail.
-        }
-
-        function testObjectMatching() {
-            $a = new Dummy();
-            $a->a = 'a';
-            $b = new Dummy();
-            $b->b = 'b';
-            $dummy = &new MockDummy();
-            $dummy->expect('a', array($a, $b));
-            $dummy->a($a, $b);
-            $dummy->a($a, $a);        // Fail.
-        }
-
-        function testBigList() {
-            $dummy = &new MockDummy();
-            $dummy->expect('a', array(false, 0, 1, 1.0));
-            $dummy->a(false, 0, 1, 1.0);
-            $dummy->a(true, false, 2, 2.0);        // Fail.
-        }
-    }
-
-    class TestOfPastBugs extends UnitTestCase {
-
-        function testMixedTypes() {
-            $this->assertEqual(array(), null, "%s -> Pass");
-            $this->assertIdentical(array(), null, "%s -> Fail");    // Fail.
-        }
-
-        function testMockWildcards() {
-            $dummy = &new MockDummy();
-            $dummy->expect('a', array('*', array(33)));
-            $dummy->a(array(32), array(33));
-            $dummy->a(array(32), array('33'));        // Fail.
-        }
-    }
-
-    class TestOfVisualShell extends ShellTestCase {
-
-        function testDump() {
-            $this->execute('ls');
-            $this->dumpOutput();
-            $this->execute('dir');
-            $this->dumpOutput();
-        }
-
-        function testDumpOfList() {
-            $this->execute('ls');
-            $this->dump($this->getOutputAsList());
-        }
-    }
-
-    class PassesAsWellReporter extends HtmlReporter {
-
-        protected function getCss() {
-            return parent::getCss() . ' .pass { color: darkgreen; }';
-        }
-
-        function paintPass($message) {
-            parent::paintPass($message);
-            print "<span class=\"pass\">Pass</span>: ";
-            $breadcrumb = $this->getTestList();
-            array_shift($breadcrumb);
-            print implode(" -&gt; ", $breadcrumb);
-            print " -&gt; " . htmlentities($message) . "<br />\n";
-        }
-
-        function paintSignal($type, &$payload) {
-            print "<span class=\"fail\">$type</span>: ";
-            $breadcrumb = $this->getTestList();
-            array_shift($breadcrumb);
-            print implode(" -&gt; ", $breadcrumb);
-            print " -&gt; " . htmlentities(serialize($payload)) . "<br />\n";
-        }
-    }
-    
-    class TestOfSkippingNoMatterWhat extends UnitTestCase {
-        function skip() {
-            $this->skipIf(true, 'Always skipped -> %s');
-        }
-        
-        function testFail() {
-            $this->fail('This really shouldn\'t have happened');
-        }
-    }
-    
-    class TestOfSkippingOrElse extends UnitTestCase {
-        function skip() {
-            $this->skipUnless(false, 'Always skipped -> %s');
-        }
-        
-        function testFail() {
-            $this->fail('This really shouldn\'t have happened');
-        }
-    }
-    
-    class TestOfSkippingTwiceOver extends UnitTestCase {
-        function skip() {
-            $this->skipIf(true, 'First reason -> %s');
-            $this->skipIf(true, 'Second reason -> %s');
-        }
-        
-        function testFail() {
-            $this->fail('This really shouldn\'t have happened');
-        }
-    }
-    
-    class TestThatShouldNotBeSkipped extends UnitTestCase {
-        function skip() {
-            $this->skipIf(false);
-            $this->skipUnless(true);
-        }
-        
-        function testFail() {
-            $this->fail('We should see this message');
-        }
-        
-        function testPass() {
-            $this->pass('We should see this message');
-        }
-    }
-
-    $test = &new TestSuite('Visual test with 46 passes, 47 fails and 0 exceptions');
-    $test->add(new PassingUnitTestCaseOutput());
-    $test->add(new FailingUnitTestCaseOutput());
-    $test->add(new TestOfMockObjectsOutput());
-    $test->add(new TestOfPastBugs());
-    $test->add(new TestOfVisualShell());
-    $test->add(new TestOfSkippingNoMatterWhat());
-    $test->add(new TestOfSkippingOrElse());
-    $test->add(new TestOfSkippingTwiceOver());
-    $test->add(new TestThatShouldNotBeSkipped());
-
-    if (isset($_GET['xml']) || in_array('xml', (isset($argv) ? $argv : array()))) {
-        $reporter = new XmlReporter();
-    } elseif (TextReporter::inCli()) {
-        $reporter = new TextReporter();
-    } else {
-        $reporter = new PassesAsWellReporter();
-    }
-    if (isset($_GET['dry']) || in_array('dry', (isset($argv) ? $argv : array()))) {
-        $reporter->makeDry();
-    }
-    exit ($test->run($reporter) ? 0 : 1);
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

@@ -1,187 +1,126 @@
-<?php
-// $Id: xml_test.php 1787 2008-04-26 20:35:39Z pp11 $
-require_once(dirname(__FILE__) . '/../autorun.php');
-require_once(dirname(__FILE__) . '/../xml.php');
-Mock::generate('SimpleScorer');
-
-if (! function_exists('xml_parser_create')) {
-    SimpleTest::ignore('TestOfXmlStructureParsing');
-    SimpleTest::ignore('TestOfXmlResultsParsing');
-}
-
-class TestOfNestingTags extends UnitTestCase {
-    function testGroupSize() {
-        $nesting = new NestingGroupTag(array('SIZE' => 2));
-        $this->assertEqual($nesting->getSize(), 2);
-    }
-}
-
-class TestOfXmlStructureParsing extends UnitTestCase {
-    function testValidXml() {
-        $listener = new MockSimpleScorer();
-        $listener->expectNever('paintGroupStart');
-        $listener->expectNever('paintGroupEnd');
-        $listener->expectNever('paintCaseStart');
-        $listener->expectNever('paintCaseEnd');
-        $parser = new SimpleTestXmlParser($listener);
-        $this->assertTrue($parser->parse("<?xml version=\"1.0\"?>\n"));
-        $this->assertTrue($parser->parse("<run>\n"));
-        $this->assertTrue($parser->parse("</run>\n"));
-    }
-
-    function testEmptyGroup() {
-        $listener = new MockSimpleScorer();
-        $listener->expectOnce('paintGroupStart', array('a_group', 7));
-        $listener->expectOnce('paintGroupEnd', array('a_group'));
-        $parser = new SimpleTestXmlParser($listener);
-        $parser->parse("<?xml version=\"1.0\"?>\n");
-        $parser->parse("<run>\n");
-        $this->assertTrue($parser->parse("<group size=\"7\">\n"));
-        $this->assertTrue($parser->parse("<name>a_group</name>\n"));
-        $this->assertTrue($parser->parse("</group>\n"));
-        $parser->parse("</run>\n");
-    }
-
-    function testEmptyCase() {
-        $listener = new MockSimpleScorer();
-        $listener->expectOnce('paintCaseStart', array('a_case'));
-        $listener->expectOnce('paintCaseEnd', array('a_case'));
-        $parser = new SimpleTestXmlParser($listener);
-        $parser->parse("<?xml version=\"1.0\"?>\n");
-        $parser->parse("<run>\n");
-        $this->assertTrue($parser->parse("<case>\n"));
-        $this->assertTrue($parser->parse("<name>a_case</name>\n"));
-        $this->assertTrue($parser->parse("</case>\n"));
-        $parser->parse("</run>\n");
-    }
-
-    function testEmptyMethod() {
-        $listener = new MockSimpleScorer();
-        $listener->expectOnce('paintCaseStart', array('a_case'));
-        $listener->expectOnce('paintCaseEnd', array('a_case'));
-        $listener->expectOnce('paintMethodStart', array('a_method'));
-        $listener->expectOnce('paintMethodEnd', array('a_method'));
-        $parser = new SimpleTestXmlParser($listener);
-        $parser->parse("<?xml version=\"1.0\"?>\n");
-        $parser->parse("<run>\n");
-        $parser->parse("<case>\n");
-        $parser->parse("<name>a_case</name>\n");
-        $this->assertTrue($parser->parse("<test>\n"));
-        $this->assertTrue($parser->parse("<name>a_method</name>\n"));
-        $this->assertTrue($parser->parse("</test>\n"));
-        $parser->parse("</case>\n");
-        $parser->parse("</run>\n");
-    }
-
-    function testNestedGroup() {
-        $listener = new MockSimpleScorer();
-        $listener->expectAt(0, 'paintGroupStart', array('a_group', 7));
-        $listener->expectAt(1, 'paintGroupStart', array('b_group', 3));
-        $listener->expectCallCount('paintGroupStart', 2);
-        $listener->expectAt(0, 'paintGroupEnd', array('b_group'));
-        $listener->expectAt(1, 'paintGroupEnd', array('a_group'));
-        $listener->expectCallCount('paintGroupEnd', 2);
-
-        $parser = new SimpleTestXmlParser($listener);
-        $parser->parse("<?xml version=\"1.0\"?>\n");
-        $parser->parse("<run>\n");
-
-        $this->assertTrue($parser->parse("<group size=\"7\">\n"));
-        $this->assertTrue($parser->parse("<name>a_group</name>\n"));
-        $this->assertTrue($parser->parse("<group size=\"3\">\n"));
-        $this->assertTrue($parser->parse("<name>b_group</name>\n"));
-        $this->assertTrue($parser->parse("</group>\n"));
-        $this->assertTrue($parser->parse("</group>\n"));
-        $parser->parse("</run>\n");
-    }
-}
-
-class AnyOldSignal {
-    public $stuff = true;
-}
-
-class TestOfXmlResultsParsing extends UnitTestCase {
-
-    function sendValidStart(&$parser) {
-        $parser->parse("<?xml version=\"1.0\"?>\n");
-        $parser->parse("<run>\n");
-        $parser->parse("<case>\n");
-        $parser->parse("<name>a_case</name>\n");
-        $parser->parse("<test>\n");
-        $parser->parse("<name>a_method</name>\n");
-    }
-
-    function sendValidEnd(&$parser) {
-        $parser->parse("</test>\n");
-        $parser->parse("</case>\n");
-        $parser->parse("</run>\n");
-    }
-
-    function testPass() {
-        $listener = new MockSimpleScorer();
-        $listener->expectOnce('paintPass', array('a_message'));
-        $parser = new SimpleTestXmlParser($listener);
-        $this->sendValidStart($parser);
-        $this->assertTrue($parser->parse("<pass>a_message</pass>\n"));
-        $this->sendValidEnd($parser);
-    }
-
-    function testFail() {
-        $listener = new MockSimpleScorer();
-        $listener->expectOnce('paintFail', array('a_message'));
-        $parser = new SimpleTestXmlParser($listener);
-        $this->sendValidStart($parser);
-        $this->assertTrue($parser->parse("<fail>a_message</fail>\n"));
-        $this->sendValidEnd($parser);
-    }
-
-    function testException() {
-        $listener = new MockSimpleScorer();
-        $listener->expectOnce('paintError', array('a_message'));
-        $parser = new SimpleTestXmlParser($listener);
-        $this->sendValidStart($parser);
-        $this->assertTrue($parser->parse("<exception>a_message</exception>\n"));
-        $this->sendValidEnd($parser);
-    }
-
-    function testSkip() {
-        $listener = new MockSimpleScorer();
-        $listener->expectOnce('paintSkip', array('a_message'));
-        $parser = new SimpleTestXmlParser($listener);
-        $this->sendValidStart($parser);
-        $this->assertTrue($parser->parse("<skip>a_message</skip>\n"));
-        $this->sendValidEnd($parser);
-    }
-
-    function testSignal() {
-        $signal = new AnyOldSignal();
-        $signal->stuff = "Hello";
-        $listener = new MockSimpleScorer();
-        $listener->expectOnce('paintSignal', array('a_signal', $signal));
-        $parser = new SimpleTestXmlParser($listener);
-        $this->sendValidStart($parser);
-        $this->assertTrue($parser->parse(
-                "<signal type=\"a_signal\"><![CDATA[" .
-                serialize($signal) . "]]></signal>\n"));
-        $this->sendValidEnd($parser);
-    }
-
-    function testMessage() {
-        $listener = new MockSimpleScorer();
-        $listener->expectOnce('paintMessage', array('a_message'));
-        $parser = new SimpleTestXmlParser($listener);
-        $this->sendValidStart($parser);
-        $this->assertTrue($parser->parse("<message>a_message</message>\n"));
-        $this->sendValidEnd($parser);
-    }
-
-    function testFormattedMessage() {
-        $listener = new MockSimpleScorer();
-        $listener->expectOnce('paintFormattedMessage', array("\na\tmessage\n"));
-        $parser = new SimpleTestXmlParser($listener);
-        $this->sendValidStart($parser);
-        $this->assertTrue($parser->parse("<formatted><![CDATA[\na\tmessage\n]]></formatted>\n"));
-        $this->sendValidEnd($parser);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+akgGQ0K8/gxMEvuFv0YpR4FrMG==

@@ -1,228 +1,88 @@
-<?php
-/**
- * Squiz_Sniffs_PHP_CommentedOutCodeSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * Squiz_Sniffs_PHP_CommentedOutCodeSniff.
- *
- * Warn about commented out code.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class Squiz_Sniffs_PHP_CommentedOutCodeSniff implements PHP_CodeSniffer_Sniff
-{
-
-    /**
-     * A list of tokenizers this sniff supports.
-     *
-     * @var array
-     */
-    public $supportedTokenizers = array(
-                                   'PHP',
-                                   'CSS',
-                                  );
-
-    /**
-     * If a comment is more than $maxPercentage% code, a warning will be shown.
-     *
-     * @var int
-     */
-    public $maxPercentage = 35;
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        return PHP_CodeSniffer_Tokens::$commentTokens;
-
-    }//end register()
-
-
-    /**
-     * Processes this test, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token
-     *                                        in the stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-
-        // Process whole comment blocks at once, so skip all but the first token.
-        if ($stackPtr > 0 && $tokens[$stackPtr]['code'] === $tokens[($stackPtr - 1)]['code']) {
-            return;
-        }
-
-        // Ignore comments at the end of code blocks.
-        if (substr($tokens[$stackPtr]['content'], 0, 6) === '//end ') {
-            return;
-        }
-
-        $content = '';
-        if ($phpcsFile->tokenizerType === 'PHP') {
-            $content = '<?php ';
-        }
-
-        for ($i = $stackPtr; $i < $phpcsFile->numTokens; $i++) {
-            if ($tokens[$stackPtr]['code'] !== $tokens[$i]['code']) {
-                break;
-            }
-
-            /*
-                Trim as much off the comment as possible so we don't
-                have additional whitespace tokens or comment tokens
-            */
-
-            $tokenContent = trim($tokens[$i]['content']);
-
-            if (substr($tokenContent, 0, 2) === '//') {
-                $tokenContent = substr($tokenContent, 2);
-            }
-
-            if (substr($tokenContent, 0, 1) === '#') {
-                $tokenContent = substr($tokenContent, 1);
-            }
-
-            if (substr($tokenContent, 0, 3) === '/**') {
-                $tokenContent = substr($tokenContent, 3);
-            }
-
-            if (substr($tokenContent, 0, 2) === '/*') {
-                $tokenContent = substr($tokenContent, 2);
-            }
-
-            if (substr($tokenContent, -2) === '*/') {
-                $tokenContent = substr($tokenContent, 0, -2);
-            }
-
-            if (substr($tokenContent, 0, 1) === '*') {
-                $tokenContent = substr($tokenContent, 1);
-            }
-
-            $content .= $tokenContent.$phpcsFile->eolChar;
-        }//end for
-
-        $content = trim($content);
-
-        if ($phpcsFile->tokenizerType === 'PHP') {
-            $content .= ' ?>';
-        }
-
-        // Quite a few comments use multiple dashes, equals signs etc
-        // to frame comments and licence headers.
-        $content = preg_replace('/[-=*]+/', '-', $content);
-
-        // Because we are not really parsing code, the tokenizer can throw all sorts
-        // of errors that don't mean anything, so ignore them.
-        $oldErrors = ini_get('error_reporting');
-        ini_set('error_reporting', 0);
-        $stringTokens = PHP_CodeSniffer_File::tokenizeString($content, $phpcsFile->tokenizer, $phpcsFile->eolChar);
-        ini_set('error_reporting', $oldErrors);
-
-        $emptyTokens = array(
-                        T_WHITESPACE,
-                        T_STRING,
-                        T_STRING_CONCAT,
-                        T_ENCAPSED_AND_WHITESPACE,
-                        T_NONE,
-                       );
-
-        $numTokens = count($stringTokens);
-
-        /*
-            We know what the first two and last two tokens should be
-            (because we put them there) so ignore this comment if those
-            tokens were not parsed correctly. It obviously means this is not
-            valid code.
-        */
-
-        // First token is always the opening PHP tag.
-        if ($stringTokens[0]['code'] !== T_OPEN_TAG) {
-            return;
-        }
-
-        // Last token is always the closing PHP tag, unless something went wrong.
-        if (isset($stringTokens[($numTokens - 1)]) === false
-            || $stringTokens[($numTokens - 1)]['code'] !== T_CLOSE_TAG
-        ) {
-            return;
-        }
-
-        // Second last token is always whitespace or a comment, depending
-        // on the code inside the comment.
-        if (in_array($stringTokens[($numTokens - 2)]['code'], PHP_CodeSniffer_Tokens::$emptyTokens) === false) {
-            return;
-        }
-
-        $numComment  = 0;
-        $numPossible = 0;
-        $numCode     = 0;
-
-        for ($i = 0; $i < $numTokens; $i++) {
-            if (in_array($stringTokens[$i]['code'], $emptyTokens) === true) {
-                // Looks like comment.
-                $numComment++;
-            } else if (in_array($stringTokens[$i]['code'], PHP_CodeSniffer_Tokens::$comparisonTokens)
-                || in_array($stringTokens[$i]['code'], PHP_CodeSniffer_Tokens::$arithmeticTokens)
-            ) {
-                // Commented out HTML/XML and other docs contain a lot of these
-                // characters, so it is best to not use them directly.
-                $numPossible++;
-            } else {
-                // Looks like code.
-                $numCode++;
-            }
-        }
-
-        // We subtract 3 from the token number so we ignore the start/end tokens
-        // and their surrounding whitespace. We take 2 off the number of code
-        // tokens so we ignore the start/end tokens.
-        if ($numTokens > 3) {
-            $numTokens -= 3;
-        }
-
-        if ($numCode >= 2) {
-            $numCode -= 2;
-        }
-
-        $percentCode = ceil((($numCode / $numTokens) * 100));
-        if ($percentCode > $this->maxPercentage) {
-            // Just in case.
-            $percentCode = min(100, $percentCode);
-
-            $error = 'This comment is %s%% valid code; is this commented out code?';
-            $data  = array($percentCode);
-            $phpcsFile->addWarning($error, $stackPtr, 'Found', $data);
-        }
-
-    }//end process()
-
-
-}//end class
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

@@ -1,1090 +1,545 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\Console;
-
-use Symfony\Component\Console\Descriptor\TextDescriptor;
-use Symfony\Component\Console\Descriptor\XmlDescriptor;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\ArgvInput;
-use Symfony\Component\Console\Input\ArrayInput;
-use Symfony\Component\Console\Input\InputDefinition;
-use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Input\InputArgument;
-use Symfony\Component\Console\Input\InputAwareInterface;
-use Symfony\Component\Console\Output\BufferedOutput;
-use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Output\ConsoleOutput;
-use Symfony\Component\Console\Output\ConsoleOutputInterface;
-use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Command\HelpCommand;
-use Symfony\Component\Console\Command\ListCommand;
-use Symfony\Component\Console\Helper\HelperSet;
-use Symfony\Component\Console\Helper\FormatterHelper;
-use Symfony\Component\Console\Helper\DialogHelper;
-use Symfony\Component\Console\Helper\ProgressHelper;
-use Symfony\Component\Console\Helper\TableHelper;
-use Symfony\Component\Console\Event\ConsoleCommandEvent;
-use Symfony\Component\Console\Event\ConsoleExceptionEvent;
-use Symfony\Component\Console\Event\ConsoleTerminateEvent;
-use Symfony\Component\EventDispatcher\EventDispatcherInterface;
-
-/**
- * An Application is the container for a collection of commands.
- *
- * It is the main entry point of a Console application.
- *
- * This class is optimized for a standard CLI environment.
- *
- * Usage:
- *
- *     $app = new Application('myapp', '1.0 (stable)');
- *     $app->add(new SimpleCommand());
- *     $app->run();
- *
- * @author Fabien Potencier <fabien@symfony.com>
- *
- * @api
- */
-class Application
-{
-    private $commands = array();
-    private $wantHelps = false;
-    private $runningCommand;
-    private $name;
-    private $version;
-    private $catchExceptions = true;
-    private $autoExit = true;
-    private $definition;
-    private $helperSet;
-    private $dispatcher;
-    private $terminalDimensions;
-
-    /**
-     * Constructor.
-     *
-     * @param string $name    The name of the application
-     * @param string $version The version of the application
-     *
-     * @api
-     */
-    public function __construct($name = 'UNKNOWN', $version = 'UNKNOWN')
-    {
-        $this->name = $name;
-        $this->version = $version;
-        $this->helperSet = $this->getDefaultHelperSet();
-        $this->definition = $this->getDefaultInputDefinition();
-
-        foreach ($this->getDefaultCommands() as $command) {
-            $this->add($command);
-        }
-    }
-
-    public function setDispatcher(EventDispatcherInterface $dispatcher)
-    {
-        $this->dispatcher = $dispatcher;
-    }
-
-    /**
-     * Runs the current application.
-     *
-     * @param InputInterface  $input  An Input instance
-     * @param OutputInterface $output An Output instance
-     *
-     * @return integer 0 if everything went fine, or an error code
-     *
-     * @throws \Exception When doRun returns Exception
-     *
-     * @api
-     */
-    public function run(InputInterface $input = null, OutputInterface $output = null)
-    {
-        if (null === $input) {
-            $input = new ArgvInput();
-        }
-
-        if (null === $output) {
-            $output = new ConsoleOutput();
-        }
-
-        $this->configureIO($input, $output);
-
-        try {
-            $exitCode = $this->doRun($input, $output);
-        } catch (\Exception $e) {
-            if (!$this->catchExceptions) {
-                throw $e;
-            }
-
-            if ($output instanceof ConsoleOutputInterface) {
-                $this->renderException($e, $output->getErrorOutput());
-            } else {
-                $this->renderException($e, $output);
-            }
-
-            $exitCode = $e->getCode();
-            if (is_numeric($exitCode)) {
-                $exitCode = (int) $exitCode;
-                if (0 === $exitCode) {
-                    $exitCode = 1;
-                }
-            } else {
-                $exitCode = 1;
-            }
-        }
-
-        if ($this->autoExit) {
-            if ($exitCode > 255) {
-                $exitCode = 255;
-            }
-            // @codeCoverageIgnoreStart
-            exit($exitCode);
-            // @codeCoverageIgnoreEnd
-        }
-
-        return $exitCode;
-    }
-
-    /**
-     * Runs the current application.
-     *
-     * @param InputInterface  $input  An Input instance
-     * @param OutputInterface $output An Output instance
-     *
-     * @return integer 0 if everything went fine, or an error code
-     */
-    public function doRun(InputInterface $input, OutputInterface $output)
-    {
-        if (true === $input->hasParameterOption(array('--version', '-V'))) {
-            $output->writeln($this->getLongVersion());
-
-            return 0;
-        }
-
-        $name = $this->getCommandName($input);
-        if (true === $input->hasParameterOption(array('--help', '-h'))) {
-            if (!$name) {
-                $name = 'help';
-                $input = new ArrayInput(array('command' => 'help'));
-            } else {
-                $this->wantHelps = true;
-            }
-        }
-
-        if (!$name) {
-            $name = 'list';
-            $input = new ArrayInput(array('command' => 'list'));
-        }
-
-        // the command name MUST be the first element of the input
-        $command = $this->find($name);
-
-        $this->runningCommand = $command;
-        $exitCode = $this->doRunCommand($command, $input, $output);
-        $this->runningCommand = null;
-
-        return $exitCode;
-    }
-
-    /**
-     * Set a helper set to be used with the command.
-     *
-     * @param HelperSet $helperSet The helper set
-     *
-     * @api
-     */
-    public function setHelperSet(HelperSet $helperSet)
-    {
-        $this->helperSet = $helperSet;
-    }
-
-    /**
-     * Get the helper set associated with the command.
-     *
-     * @return HelperSet The HelperSet instance associated with this command
-     *
-     * @api
-     */
-    public function getHelperSet()
-    {
-        return $this->helperSet;
-    }
-
-    /**
-     * Set an input definition set to be used with this application
-     *
-     * @param InputDefinition $definition The input definition
-     *
-     * @api
-     */
-    public function setDefinition(InputDefinition $definition)
-    {
-        $this->definition = $definition;
-    }
-
-    /**
-     * Gets the InputDefinition related to this Application.
-     *
-     * @return InputDefinition The InputDefinition instance
-     */
-    public function getDefinition()
-    {
-        return $this->definition;
-    }
-
-    /**
-     * Gets the help message.
-     *
-     * @return string A help message.
-     */
-    public function getHelp()
-    {
-        $messages = array(
-            $this->getLongVersion(),
-            '',
-            '<comment>Usage:</comment>',
-            '  [options] command [arguments]',
-            '',
-            '<comment>Options:</comment>',
-        );
-
-        foreach ($this->getDefinition()->getOptions() as $option) {
-            $messages[] = sprintf('  %-29s %s %s',
-                '<info>--'.$option->getName().'</info>',
-                $option->getShortcut() ? '<info>-'.$option->getShortcut().'</info>' : '  ',
-                $option->getDescription()
-            );
-        }
-
-        return implode(PHP_EOL, $messages);
-    }
-
-    /**
-     * Sets whether to catch exceptions or not during commands execution.
-     *
-     * @param Boolean $boolean Whether to catch exceptions or not during commands execution
-     *
-     * @api
-     */
-    public function setCatchExceptions($boolean)
-    {
-        $this->catchExceptions = (Boolean) $boolean;
-    }
-
-    /**
-     * Sets whether to automatically exit after a command execution or not.
-     *
-     * @param Boolean $boolean Whether to automatically exit after a command execution or not
-     *
-     * @api
-     */
-    public function setAutoExit($boolean)
-    {
-        $this->autoExit = (Boolean) $boolean;
-    }
-
-    /**
-     * Gets the name of the application.
-     *
-     * @return string The application name
-     *
-     * @api
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Sets the application name.
-     *
-     * @param string $name The application name
-     *
-     * @api
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
-
-    /**
-     * Gets the application version.
-     *
-     * @return string The application version
-     *
-     * @api
-     */
-    public function getVersion()
-    {
-        return $this->version;
-    }
-
-    /**
-     * Sets the application version.
-     *
-     * @param string $version The application version
-     *
-     * @api
-     */
-    public function setVersion($version)
-    {
-        $this->version = $version;
-    }
-
-    /**
-     * Returns the long version of the application.
-     *
-     * @return string The long application version
-     *
-     * @api
-     */
-    public function getLongVersion()
-    {
-        if ('UNKNOWN' !== $this->getName() && 'UNKNOWN' !== $this->getVersion()) {
-            return sprintf('<info>%s</info> version <comment>%s</comment>', $this->getName(), $this->getVersion());
-        }
-
-        return '<info>Console Tool</info>';
-    }
-
-    /**
-     * Registers a new command.
-     *
-     * @param string $name The command name
-     *
-     * @return Command The newly created command
-     *
-     * @api
-     */
-    public function register($name)
-    {
-        return $this->add(new Command($name));
-    }
-
-    /**
-     * Adds an array of command objects.
-     *
-     * @param Command[] $commands An array of commands
-     *
-     * @api
-     */
-    public function addCommands(array $commands)
-    {
-        foreach ($commands as $command) {
-            $this->add($command);
-        }
-    }
-
-    /**
-     * Adds a command object.
-     *
-     * If a command with the same name already exists, it will be overridden.
-     *
-     * @param Command $command A Command object
-     *
-     * @return Command The registered command
-     *
-     * @api
-     */
-    public function add(Command $command)
-    {
-        $command->setApplication($this);
-
-        if (!$command->isEnabled()) {
-            $command->setApplication(null);
-
-            return;
-        }
-
-        if (null === $command->getDefinition()) {
-            throw new \LogicException(sprintf('Command class "%s" is not correctly initialized. You probably forgot to call the parent constructor.', get_class($command)));
-        }
-
-        $this->commands[$command->getName()] = $command;
-
-        foreach ($command->getAliases() as $alias) {
-            $this->commands[$alias] = $command;
-        }
-
-        return $command;
-    }
-
-    /**
-     * Returns a registered command by name or alias.
-     *
-     * @param string $name The command name or alias
-     *
-     * @return Command A Command object
-     *
-     * @throws \InvalidArgumentException When command name given does not exist
-     *
-     * @api
-     */
-    public function get($name)
-    {
-        if (!isset($this->commands[$name])) {
-            throw new \InvalidArgumentException(sprintf('The command "%s" does not exist.', $name));
-        }
-
-        $command = $this->commands[$name];
-
-        if ($this->wantHelps) {
-            $this->wantHelps = false;
-
-            $helpCommand = $this->get('help');
-            $helpCommand->setCommand($command);
-
-            return $helpCommand;
-        }
-
-        return $command;
-    }
-
-    /**
-     * Returns true if the command exists, false otherwise.
-     *
-     * @param string $name The command name or alias
-     *
-     * @return Boolean true if the command exists, false otherwise
-     *
-     * @api
-     */
-    public function has($name)
-    {
-        return isset($this->commands[$name]);
-    }
-
-    /**
-     * Returns an array of all unique namespaces used by currently registered commands.
-     *
-     * It does not returns the global namespace which always exists.
-     *
-     * @return array An array of namespaces
-     */
-    public function getNamespaces()
-    {
-        $namespaces = array();
-        foreach ($this->commands as $command) {
-            $namespaces[] = $this->extractNamespace($command->getName());
-
-            foreach ($command->getAliases() as $alias) {
-                $namespaces[] = $this->extractNamespace($alias);
-            }
-        }
-
-        return array_values(array_unique(array_filter($namespaces)));
-    }
-
-    /**
-     * Finds a registered namespace by a name or an abbreviation.
-     *
-     * @param string $namespace A namespace or abbreviation to search for
-     *
-     * @return string A registered namespace
-     *
-     * @throws \InvalidArgumentException When namespace is incorrect or ambiguous
-     */
-    public function findNamespace($namespace)
-    {
-        $allNamespaces = $this->getNamespaces();
-        $expr = preg_replace_callback('{([^:]+|)}', function ($matches) { return preg_quote($matches[1]).'[^:]*'; }, $namespace);
-        $namespaces = preg_grep('{^'.$expr.'}', $allNamespaces);
-
-        if (empty($namespaces)) {
-            $message = sprintf('There are no commands defined in the "%s" namespace.', $namespace);
-
-            if ($alternatives = $this->findAlternatives($namespace, $allNamespaces, array())) {
-                if (1 == count($alternatives)) {
-                    $message .= "\n\nDid you mean this?\n    ";
-                } else {
-                    $message .= "\n\nDid you mean one of these?\n    ";
-                }
-
-                $message .= implode("\n    ", $alternatives);
-            }
-
-            throw new \InvalidArgumentException($message);
-        }
-
-        $exact = in_array($namespace, $namespaces, true);
-        if (count($namespaces) > 1 && !$exact) {
-            throw new \InvalidArgumentException(sprintf('The namespace "%s" is ambiguous (%s).', $namespace, $this->getAbbreviationSuggestions(array_values($namespaces))));
-        }
-
-        return $exact ? $namespace : reset($namespaces);
-    }
-
-    /**
-     * Finds a command by name or alias.
-     *
-     * Contrary to get, this command tries to find the best
-     * match if you give it an abbreviation of a name or alias.
-     *
-     * @param string $name A command name or a command alias
-     *
-     * @return Command A Command instance
-     *
-     * @throws \InvalidArgumentException When command name is incorrect or ambiguous
-     *
-     * @api
-     */
-    public function find($name)
-    {
-        $allCommands = array_keys($this->commands);
-        $expr = preg_replace_callback('{([^:]+|)}', function ($matches) { return preg_quote($matches[1]).'[^:]*'; }, $name);
-        $commands = preg_grep('{^'.$expr.'}', $allCommands);
-
-        if (empty($commands) || count(preg_grep('{^'.$expr.'$}', $commands)) < 1) {
-            if (false !== $pos = strrpos($name, ':')) {
-                // check if a namespace exists and contains commands
-                $this->findNamespace(substr($name, 0, $pos));
-            }
-
-            $message = sprintf('Command "%s" is not defined.', $name);
-
-            if ($alternatives = $this->findAlternatives($name, $allCommands, array())) {
-                if (1 == count($alternatives)) {
-                    $message .= "\n\nDid you mean this?\n    ";
-                } else {
-                    $message .= "\n\nDid you mean one of these?\n    ";
-                }
-                $message .= implode("\n    ", $alternatives);
-            }
-
-            throw new \InvalidArgumentException($message);
-        }
-
-        $exact = in_array($name, $commands, true);
-        if (count($commands) > 1 && !$exact) {
-            $suggestions = $this->getAbbreviationSuggestions(array_values($commands));
-
-            throw new \InvalidArgumentException(sprintf('Command "%s" is ambiguous (%s).', $name, $suggestions));
-        }
-
-        return $this->get($exact ? $name : reset($commands));
-    }
-
-    /**
-     * Gets the commands (registered in the given namespace if provided).
-     *
-     * The array keys are the full names and the values the command instances.
-     *
-     * @param string $namespace A namespace name
-     *
-     * @return Command[] An array of Command instances
-     *
-     * @api
-     */
-    public function all($namespace = null)
-    {
-        if (null === $namespace) {
-            return $this->commands;
-        }
-
-        $commands = array();
-        foreach ($this->commands as $name => $command) {
-            if ($namespace === $this->extractNamespace($name, substr_count($namespace, ':') + 1)) {
-                $commands[$name] = $command;
-            }
-        }
-
-        return $commands;
-    }
-
-    /**
-     * Returns an array of possible abbreviations given a set of names.
-     *
-     * @param array $names An array of names
-     *
-     * @return array An array of abbreviations
-     */
-    public static function getAbbreviations($names)
-    {
-        $abbrevs = array();
-        foreach ($names as $name) {
-            for ($len = strlen($name); $len > 0; --$len) {
-                $abbrev = substr($name, 0, $len);
-                $abbrevs[$abbrev][] = $name;
-            }
-        }
-
-        return $abbrevs;
-    }
-
-    /**
-     * Returns a text representation of the Application.
-     *
-     * @param string  $namespace An optional namespace name
-     * @param boolean $raw       Whether to return raw command list
-     *
-     * @return string A string representing the Application
-     *
-     * @deprecated Deprecated since version 2.3, to be removed in 3.0.
-     */
-    public function asText($namespace = null, $raw = false)
-    {
-        $descriptor = new TextDescriptor();
-        $output = new BufferedOutput(BufferedOutput::VERBOSITY_NORMAL, !$raw);
-        $descriptor->describe($output, $this, array('namespace' => $namespace, 'raw_output' => true));
-
-        return $output->fetch();
-    }
-
-    /**
-     * Returns an XML representation of the Application.
-     *
-     * @param string  $namespace An optional namespace name
-     * @param Boolean $asDom     Whether to return a DOM or an XML string
-     *
-     * @return string|\DOMDocument An XML string representing the Application
-     *
-     * @deprecated Deprecated since version 2.3, to be removed in 3.0.
-     */
-    public function asXml($namespace = null, $asDom = false)
-    {
-        $descriptor = new XmlDescriptor();
-
-        if ($asDom) {
-            return $descriptor->getApplicationDocument($this, $namespace);
-        }
-
-        $output = new BufferedOutput();
-        $descriptor->describe($output, $this, array('namespace' => $namespace));
-
-        return $output->fetch();
-    }
-
-    /**
-     * Renders a caught exception.
-     *
-     * @param \Exception       $e      An exception instance
-     * @param OutputInterface $output An OutputInterface instance
-     */
-    public function renderException($e, $output)
-    {
-        $strlen = function ($string) {
-            if (!function_exists('mb_strlen')) {
-                return strlen($string);
-            }
-
-            if (false === $encoding = mb_detect_encoding($string)) {
-                return strlen($string);
-            }
-
-            return mb_strlen($string, $encoding);
-        };
-
-        do {
-            $title = sprintf('  [%s]  ', get_class($e));
-            $len = $strlen($title);
-            $width = $this->getTerminalWidth() ? $this->getTerminalWidth() - 1 : PHP_INT_MAX;
-            $formatter = $output->getFormatter();
-            $lines = array();
-            foreach (preg_split('/\r?\n/', $e->getMessage()) as $line) {
-                foreach (str_split($line, $width - 4) as $line) {
-                    // pre-format lines to get the right string length
-                    $lineLength = $strlen(preg_replace('/\[[^m]*m/', '', $formatter->format($line))) + 4;
-                    $lines[] = array($line, $lineLength);
-
-                    $len = max($lineLength, $len);
-                }
-            }
-
-            $messages = array('', '');
-            $messages[] = $emptyLine = $formatter->format(sprintf('<error>%s</error>', str_repeat(' ', $len)));
-            $messages[] = $formatter->format(sprintf('<error>%s%s</error>', $title, str_repeat(' ', max(0, $len - $strlen($title)))));
-            foreach ($lines as $line) {
-                $messages[] = $formatter->format(sprintf('<error>  %s  %s</error>', $line[0], str_repeat(' ', $len - $line[1])));
-            }
-            $messages[] = $emptyLine;
-            $messages[] = '';
-            $messages[] = '';
-
-            $output->writeln($messages, OutputInterface::OUTPUT_RAW);
-
-            if (OutputInterface::VERBOSITY_VERBOSE <= $output->getVerbosity()) {
-                $output->writeln('<comment>Exception trace:</comment>');
-
-                // exception related properties
-                $trace = $e->getTrace();
-                array_unshift($trace, array(
-                    'function' => '',
-                    'file'     => $e->getFile() != null ? $e->getFile() : 'n/a',
-                    'line'     => $e->getLine() != null ? $e->getLine() : 'n/a',
-                    'args'     => array(),
-                ));
-
-                for ($i = 0, $count = count($trace); $i < $count; $i++) {
-                    $class = isset($trace[$i]['class']) ? $trace[$i]['class'] : '';
-                    $type = isset($trace[$i]['type']) ? $trace[$i]['type'] : '';
-                    $function = $trace[$i]['function'];
-                    $file = isset($trace[$i]['file']) ? $trace[$i]['file'] : 'n/a';
-                    $line = isset($trace[$i]['line']) ? $trace[$i]['line'] : 'n/a';
-
-                    $output->writeln(sprintf(' %s%s%s() at <info>%s:%s</info>', $class, $type, $function, $file, $line));
-                }
-
-                $output->writeln("");
-                $output->writeln("");
-            }
-        } while ($e = $e->getPrevious());
-
-        if (null !== $this->runningCommand) {
-            $output->writeln(sprintf('<info>%s</info>', sprintf($this->runningCommand->getSynopsis(), $this->getName())));
-            $output->writeln("");
-            $output->writeln("");
-        }
-    }
-
-    /**
-     * Tries to figure out the terminal width in which this application runs
-     *
-     * @return int|null
-     */
-    protected function getTerminalWidth()
-    {
-        $dimensions = $this->getTerminalDimensions();
-
-        return $dimensions[0];
-    }
-
-    /**
-     * Tries to figure out the terminal height in which this application runs
-     *
-     * @return int|null
-     */
-    protected function getTerminalHeight()
-    {
-        $dimensions = $this->getTerminalDimensions();
-
-        return $dimensions[1];
-    }
-
-    /**
-     * Tries to figure out the terminal dimensions based on the current environment
-     *
-     * @return array Array containing width and height
-     */
-    public function getTerminalDimensions()
-    {
-        if ($this->terminalDimensions) {
-            return $this->terminalDimensions;
-        }
-
-        if (defined('PHP_WINDOWS_VERSION_BUILD')) {
-            // extract [w, H] from "wxh (WxH)"
-            if (preg_match('/^(\d+)x\d+ \(\d+x(\d+)\)$/', trim(getenv('ANSICON')), $matches)) {
-                return array((int) $matches[1], (int) $matches[2]);
-            }
-            // extract [w, h] from "wxh"
-            if (preg_match('/^(\d+)x(\d+)$/', $this->getConsoleMode(), $matches)) {
-                return array((int) $matches[1], (int) $matches[2]);
-            }
-        }
-
-        if ($sttyString = $this->getSttyColumns()) {
-            // extract [w, h] from "rows h; columns w;"
-            if (preg_match('/rows.(\d+);.columns.(\d+);/i', $sttyString, $matches)) {
-                return array((int) $matches[2], (int) $matches[1]);
-            }
-            // extract [w, h] from "; h rows; w columns"
-            if (preg_match('/;.(\d+).rows;.(\d+).columns/i', $sttyString, $matches)) {
-                return array((int) $matches[2], (int) $matches[1]);
-            }
-        }
-
-        return array(null, null);
-    }
-
-    /**
-     * Sets terminal dimensions.
-     *
-     * Can be useful to force terminal dimensions for functional tests.
-     *
-     * @param integer $width  The width
-     * @param integer $height The height
-     *
-     * @return Application The current application
-     */
-    public function setTerminalDimensions($width, $height)
-    {
-        $this->terminalDimensions = array($width, $height);
-
-        return $this;
-    }
-
-    /**
-     * Configures the input and output instances based on the user arguments and options.
-     *
-     * @param InputInterface  $input  An InputInterface instance
-     * @param OutputInterface $output An OutputInterface instance
-     */
-    protected function configureIO(InputInterface $input, OutputInterface $output)
-    {
-        if (true === $input->hasParameterOption(array('--ansi'))) {
-            $output->setDecorated(true);
-        } elseif (true === $input->hasParameterOption(array('--no-ansi'))) {
-            $output->setDecorated(false);
-        }
-
-        if (true === $input->hasParameterOption(array('--no-interaction', '-n'))) {
-            $input->setInteractive(false);
-        } elseif (function_exists('posix_isatty') && $this->getHelperSet()->has('dialog')) {
-            $inputStream = $this->getHelperSet()->get('dialog')->getInputStream();
-            if (!@posix_isatty($inputStream)) {
-                $input->setInteractive(false);
-            }
-        }
-
-        if (true === $input->hasParameterOption(array('--quiet', '-q'))) {
-            $output->setVerbosity(OutputInterface::VERBOSITY_QUIET);
-        } else {
-            if ($input->hasParameterOption('-vvv') || $input->hasParameterOption('--verbose=3') || $input->getParameterOption('--verbose') === 3) {
-                $output->setVerbosity(OutputInterface::VERBOSITY_DEBUG);
-            } elseif ($input->hasParameterOption('-vv') || $input->hasParameterOption('--verbose=2') || $input->getParameterOption('--verbose') === 2) {
-                $output->setVerbosity(OutputInterface::VERBOSITY_VERY_VERBOSE);
-            } elseif ($input->hasParameterOption('-v') || $input->hasParameterOption('--verbose=1') || $input->hasParameterOption('--verbose') || $input->getParameterOption('--verbose')) {
-                $output->setVerbosity(OutputInterface::VERBOSITY_VERBOSE);
-            }
-        }
-    }
-
-    /**
-     * Runs the current command.
-     *
-     * If an event dispatcher has been attached to the application,
-     * events are also dispatched during the life-cycle of the command.
-     *
-     * @param Command         $command A Command instance
-     * @param InputInterface  $input   An Input instance
-     * @param OutputInterface $output  An Output instance
-     *
-     * @return integer 0 if everything went fine, or an error code
-     */
-    protected function doRunCommand(Command $command, InputInterface $input, OutputInterface $output)
-    {
-        foreach ($command->getHelperSet() as $helper) {
-            if ($helper instanceof InputAwareInterface) {
-                $helper->setInput($input);
-            }
-        }
-
-        if (null === $this->dispatcher) {
-            return $command->run($input, $output);
-        }
-
-        $event = new ConsoleCommandEvent($command, $input, $output);
-        $this->dispatcher->dispatch(ConsoleEvents::COMMAND, $event);
-
-        try {
-            $exitCode = $command->run($input, $output);
-        } catch (\Exception $e) {
-            $event = new ConsoleTerminateEvent($command, $input, $output, $e->getCode());
-            $this->dispatcher->dispatch(ConsoleEvents::TERMINATE, $event);
-
-            $event = new ConsoleExceptionEvent($command, $input, $output, $e, $event->getExitCode());
-            $this->dispatcher->dispatch(ConsoleEvents::EXCEPTION, $event);
-
-            throw $event->getException();
-        }
-
-        $event = new ConsoleTerminateEvent($command, $input, $output, $exitCode);
-        $this->dispatcher->dispatch(ConsoleEvents::TERMINATE, $event);
-
-        return $event->getExitCode();
-    }
-
-    /**
-     * Gets the name of the command based on input.
-     *
-     * @param InputInterface $input The input interface
-     *
-     * @return string The command name
-     */
-    protected function getCommandName(InputInterface $input)
-    {
-        return $input->getFirstArgument();
-    }
-
-    /**
-     * Gets the default input definition.
-     *
-     * @return InputDefinition An InputDefinition instance
-     */
-    protected function getDefaultInputDefinition()
-    {
-        return new InputDefinition(array(
-            new InputArgument('command', InputArgument::REQUIRED, 'The command to execute'),
-
-            new InputOption('--help',           '-h', InputOption::VALUE_NONE, 'Display this help message.'),
-            new InputOption('--quiet',          '-q', InputOption::VALUE_NONE, 'Do not output any message.'),
-            new InputOption('--verbose',        '-v|vv|vvv', InputOption::VALUE_NONE, 'Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug'),
-            new InputOption('--version',        '-V', InputOption::VALUE_NONE, 'Display this application version.'),
-            new InputOption('--ansi',           '',   InputOption::VALUE_NONE, 'Force ANSI output.'),
-            new InputOption('--no-ansi',        '',   InputOption::VALUE_NONE, 'Disable ANSI output.'),
-            new InputOption('--no-interaction', '-n', InputOption::VALUE_NONE, 'Do not ask any interactive question.'),
-        ));
-    }
-
-    /**
-     * Gets the default commands that should always be available.
-     *
-     * @return Command[] An array of default Command instances
-     */
-    protected function getDefaultCommands()
-    {
-        return array(new HelpCommand(), new ListCommand());
-    }
-
-    /**
-     * Gets the default helper set with the helpers that should always be available.
-     *
-     * @return HelperSet A HelperSet instance
-     */
-    protected function getDefaultHelperSet()
-    {
-        return new HelperSet(array(
-            new FormatterHelper(),
-            new DialogHelper(),
-            new ProgressHelper(),
-            new TableHelper(),
-        ));
-    }
-
-    /**
-     * Runs and parses stty -a if it's available, suppressing any error output
-     *
-     * @return string
-     */
-    private function getSttyColumns()
-    {
-        if (!function_exists('proc_open')) {
-            return;
-        }
-
-        $descriptorspec = array(1 => array('pipe', 'w'), 2 => array('pipe', 'w'));
-        $process = proc_open('stty -a | grep columns', $descriptorspec, $pipes, null, null, array('suppress_errors' => true));
-        if (is_resource($process)) {
-            $info = stream_get_contents($pipes[1]);
-            fclose($pipes[1]);
-            fclose($pipes[2]);
-            proc_close($process);
-
-            return $info;
-        }
-    }
-
-    /**
-     * Runs and parses mode CON if it's available, suppressing any error output
-     *
-     * @return string <width>x<height> or null if it could not be parsed
-     */
-    private function getConsoleMode()
-    {
-        if (!function_exists('proc_open')) {
-            return;
-        }
-
-        $descriptorspec = array(1 => array('pipe', 'w'), 2 => array('pipe', 'w'));
-        $process = proc_open('mode CON', $descriptorspec, $pipes, null, null, array('suppress_errors' => true));
-        if (is_resource($process)) {
-            $info = stream_get_contents($pipes[1]);
-            fclose($pipes[1]);
-            fclose($pipes[2]);
-            proc_close($process);
-
-            if (preg_match('/--------+\r?\n.+?(\d+)\r?\n.+?(\d+)\r?\n/', $info, $matches)) {
-                return $matches[2].'x'.$matches[1];
-            }
-        }
-    }
-
-    /**
-     * Returns abbreviated suggestions in string format.
-     *
-     * @param array $abbrevs Abbreviated suggestions to convert
-     *
-     * @return string A formatted string of abbreviated suggestions
-     */
-    private function getAbbreviationSuggestions($abbrevs)
-    {
-        return sprintf('%s, %s%s', $abbrevs[0], $abbrevs[1], count($abbrevs) > 2 ? sprintf(' and %d more', count($abbrevs) - 2) : '');
-    }
-
-    /**
-     * Returns the namespace part of the command name.
-     *
-     * This method is not part of public API and should not be used directly.
-     *
-     * @param string $name  The full name of the command
-     * @param string $limit The maximum number of parts of the namespace
-     *
-     * @return string The namespace of the command
-     */
-    public function extractNamespace($name, $limit = null)
-    {
-        $parts = explode(':', $name);
-        array_pop($parts);
-
-        return implode(':', null === $limit ? $parts : array_slice($parts, 0, $limit));
-    }
-
-    /**
-     * Finds alternative of $name among $collection,
-     * if nothing is found in $collection, try in $abbrevs
-     *
-     * @param string               $name       The string
-     * @param array|Traversable    $collection The collection
-     *
-     * @return array A sorted array of similar string
-     */
-    private function findAlternatives($name, $collection)
-    {
-        $threshold = 1e3;
-        $alternatives = array();
-
-        $collectionParts = array();
-        foreach ($collection as $item) {
-            $collectionParts[$item] = explode(':', $item);
-        }
-
-        foreach (explode(':', $name) as $i => $subname) {
-            foreach ($collectionParts as $collectionName => $parts) {
-                $exists = isset($alternatives[$collectionName]);
-                if (!isset($parts[$i]) && $exists) {
-                    $alternatives[$collectionName] += $threshold;
-                    continue;
-                } elseif (!isset($parts[$i])) {
-                    continue;
-                }
-
-                $lev = levenshtein($subname, $parts[$i]);
-                if ($lev <= strlen($subname) / 3 || false !== strpos($parts[$i], $subname)) {
-                    $alternatives[$collectionName] = $exists ? $alternatives[$collectionName] + $lev : $lev;
-                } elseif ($exists) {
-                    $alternatives[$collectionName] += $threshold;
-                }
-            }
-        }
-
-        foreach ($collection as $item) {
-            $lev = levenshtein($name, $item);
-            if ($lev <= strlen($name) / 3 || false !== strpos($item, $name)) {
-                $alternatives[$item] = isset($alternatives[$item]) ? $alternatives[$item] - $lev : $lev;
-            }
-        }
-
-        $alternatives = array_filter($alternatives, function ($lev) use ($threshold) { return $lev < 2*$threshold; });
-        asort($alternatives);
-
-        return array_keys($alternatives);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+cad8sUz+XsU4LXUX05SWD0==

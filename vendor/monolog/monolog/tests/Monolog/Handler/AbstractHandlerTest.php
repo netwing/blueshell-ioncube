@@ -1,104 +1,59 @@
-<?php
-
-/*
- * This file is part of the Monolog package.
- *
- * (c) Jordi Boggiano <j.boggiano@seld.be>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Monolog\Handler;
-
-use Monolog\TestCase;
-use Monolog\Logger;
-use Monolog\Formatter\LineFormatter;
-use Monolog\Processor\WebProcessor;
-
-class AbstractHandlerTest extends TestCase
-{
-    /**
-     * @covers Monolog\Handler\AbstractHandler::__construct
-     * @covers Monolog\Handler\AbstractHandler::getLevel
-     * @covers Monolog\Handler\AbstractHandler::setLevel
-     * @covers Monolog\Handler\AbstractHandler::getBubble
-     * @covers Monolog\Handler\AbstractHandler::setBubble
-     * @covers Monolog\Handler\AbstractHandler::getFormatter
-     * @covers Monolog\Handler\AbstractHandler::setFormatter
-     */
-    public function testConstructAndGetSet()
-    {
-        $handler = $this->getMockForAbstractClass('Monolog\Handler\AbstractHandler', array(Logger::WARNING, false));
-        $this->assertEquals(Logger::WARNING, $handler->getLevel());
-        $this->assertEquals(false, $handler->getBubble());
-
-        $handler->setLevel(Logger::ERROR);
-        $handler->setBubble(true);
-        $handler->setFormatter($formatter = new LineFormatter);
-        $this->assertEquals(Logger::ERROR, $handler->getLevel());
-        $this->assertEquals(true, $handler->getBubble());
-        $this->assertSame($formatter, $handler->getFormatter());
-    }
-
-    /**
-     * @covers Monolog\Handler\AbstractHandler::handleBatch
-     */
-    public function testHandleBatch()
-    {
-        $handler = $this->getMockForAbstractClass('Monolog\Handler\AbstractHandler');
-        $handler->expects($this->exactly(2))
-            ->method('handle');
-        $handler->handleBatch(array($this->getRecord(), $this->getRecord()));
-    }
-
-    /**
-     * @covers Monolog\Handler\AbstractHandler::isHandling
-     */
-    public function testIsHandling()
-    {
-        $handler = $this->getMockForAbstractClass('Monolog\Handler\AbstractHandler', array(Logger::WARNING, false));
-        $this->assertTrue($handler->isHandling($this->getRecord()));
-        $this->assertFalse($handler->isHandling($this->getRecord(Logger::DEBUG)));
-    }
-
-    /**
-     * @covers Monolog\Handler\AbstractHandler::getFormatter
-     * @covers Monolog\Handler\AbstractHandler::getDefaultFormatter
-     */
-    public function testGetFormatterInitializesDefault()
-    {
-        $handler = $this->getMockForAbstractClass('Monolog\Handler\AbstractHandler');
-        $this->assertInstanceOf('Monolog\Formatter\LineFormatter', $handler->getFormatter());
-    }
-
-    /**
-     * @covers Monolog\Handler\AbstractHandler::pushProcessor
-     * @covers Monolog\Handler\AbstractHandler::popProcessor
-     * @expectedException LogicException
-     */
-    public function testPushPopProcessor()
-    {
-        $logger = $this->getMockForAbstractClass('Monolog\Handler\AbstractHandler');
-        $processor1 = new WebProcessor;
-        $processor2 = new WebProcessor;
-
-        $logger->pushProcessor($processor1);
-        $logger->pushProcessor($processor2);
-
-        $this->assertEquals($processor2, $logger->popProcessor());
-        $this->assertEquals($processor1, $logger->popProcessor());
-        $logger->popProcessor();
-    }
-
-    /**
-     * @covers Monolog\Handler\AbstractHandler::pushProcessor
-     * @expectedException InvalidArgumentException
-     */
-    public function testPushProcessorWithNonCallable()
-    {
-        $handler = $this->getMockForAbstractClass('Monolog\Handler\AbstractHandler');
-
-        $handler->pushProcessor(new \stdClass());
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

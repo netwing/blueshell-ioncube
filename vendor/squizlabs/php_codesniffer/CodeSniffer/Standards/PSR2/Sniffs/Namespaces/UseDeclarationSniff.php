@@ -1,139 +1,64 @@
-<?php
-/**
- * PSR2_Sniffs_Namespaces_UseDeclarationSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * PSR2_Sniffs_Namespaces_UseDeclarationSniff.
- *
- * Ensures USE blocks are declared correctly.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class PSR2_Sniffs_Namespaces_UseDeclarationSniff implements PHP_CodeSniffer_Sniff
-{
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        return array(T_USE);
-
-    }//end register()
-
-
-    /**
-     * Processes this test, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token in
-     *                                        the stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        if ($this->_shouldIgnoreUse($phpcsFile, $stackPtr) === true) {
-            return;
-        }
-
-        $tokens = $phpcsFile->getTokens();
-
-        // Only one USE declaration allowed per statement.
-        $next = $phpcsFile->findNext(array(T_COMMA, T_SEMICOLON), ($stackPtr + 1));
-        if ($tokens[$next]['code'] === T_COMMA) {
-            $error = 'There must be one USE keyword per declaration';
-            $phpcsFile->addError($error, $stackPtr, 'MultipleDeclarations');
-        }
-
-        // Make sure this USE comes after the first namespace declaration.
-        $prev = $phpcsFile->findPrevious(T_NAMESPACE, ($stackPtr - 1));
-        if ($prev !== false) {
-            $first = $phpcsFile->findNext(T_NAMESPACE, 1);
-            if ($prev !== $first) {
-                $error = 'USE declarations must go after the first namespace declaration';
-                $phpcsFile->addError($error, $stackPtr, 'UseAfterNamespace');
-            }
-        }
-
-        // Only interested in the last USE statement from here onwards.
-        $nextUse = $phpcsFile->findNext(T_USE, ($stackPtr + 1));
-        while ($this->_shouldIgnoreUse($phpcsFile, $nextUse) === true) {
-            $nextUse = $phpcsFile->findNext(T_USE, ($nextUse + 1));
-            if ($nextUse === false) {
-                break;
-            }
-        }
-
-        if ($nextUse !== false) {
-            return;
-        }
-
-        $end  = $phpcsFile->findNext(T_SEMICOLON, ($stackPtr + 1));
-        $next = $phpcsFile->findNext(T_WHITESPACE, ($end + 1), null, true);
-        $diff = ($tokens[$next]['line'] - $tokens[$end]['line'] - 1);
-        if ($diff !== 1) {
-            if ($diff < 0) {
-                $diff = 0;
-            }
-
-            $error = 'There must be one blank line after the last USE statement; %s found;';
-            $data  = array($diff);
-            $phpcsFile->addError($error, $stackPtr, 'SpaceAfterLastUse', $data);
-        }
-
-    }//end process()
-
-
-    /**
-     * Check if this use statement is part of the namespace block.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token in
-     *                                        the stack passed in $tokens.
-     *
-     * @return void
-     */
-    private function _shouldIgnoreUse(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-
-        // Ignore USE keywords inside closures.
-        $next = $phpcsFile->findNext(T_WHITESPACE, ($stackPtr + 1), null, true);
-        if ($tokens[$next]['code'] === T_OPEN_PARENTHESIS) {
-            return true;
-        }
-
-        // Ignore USE keywords for traits.
-        if ($phpcsFile->hasCondition($stackPtr, array(T_CLASS, T_TRAIT)) === true) {
-            return true;
-        }
-
-        return false;
-
-    }//end _shouldIgnoreUse()
-
-
-}//end class
-
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

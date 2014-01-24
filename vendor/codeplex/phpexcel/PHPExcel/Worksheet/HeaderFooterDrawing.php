@@ -1,350 +1,96 @@
-<?php
-/**
- * PHPExcel
- *
- * Copyright (c) 2006 - 2012 PHPExcel
- *
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation; either
- * version 2.1 of the License, or (at your option) any later version.
- *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
- *
- * @category   PHPExcel
- * @package    PHPExcel_Worksheet
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
- * @version    1.7.8, 2012-10-12
- */
-
-
-/**
- * PHPExcel_Worksheet_HeaderFooterDrawing
- *
- * @category   PHPExcel
- * @package    PHPExcel_Worksheet
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- */
-class PHPExcel_Worksheet_HeaderFooterDrawing extends PHPExcel_Worksheet_Drawing implements PHPExcel_IComparable
-{
-	/**
-	 * Path
-	 *
-	 * @var string
-	 */
-	private $_path;
-
-	/**
-	 * Name
-	 *
-	 * @var string
-	 */
-	protected $_name;
-
-	/**
-	 * Offset X
-	 *
-	 * @var int
-	 */
-	protected $_offsetX;
-
-	/**
-	 * Offset Y
-	 *
-	 * @var int
-	 */
-	protected $_offsetY;
-
-	/**
-	 * Width
-	 *
-	 * @var int
-	 */
-	protected $_width;
-
-	/**
-	 * Height
-	 *
-	 * @var int
-	 */
-	protected $_height;
-
-	/**
-	 * Proportional resize
-	 *
-	 * @var boolean
-	 */
-	protected $_resizeProportional;
-
-    /**
-     * Create a new PHPExcel_Worksheet_HeaderFooterDrawing
-     */
-    public function __construct()
-    {
-    	// Initialise values
-    	$this->_path				= '';
-    	$this->_name				= '';
-    	$this->_offsetX				= 0;
-    	$this->_offsetY				= 0;
-    	$this->_width				= 0;
-    	$this->_height				= 0;
-    	$this->_resizeProportional	= true;
-    }
-
-    /**
-     * Get Name
-     *
-     * @return string
-     */
-    public function getName() {
-    	return $this->_name;
-    }
-
-    /**
-     * Set Name
-     *
-     * @param string $pValue
-     * @return PHPExcel_Worksheet_HeaderFooterDrawing
-     */
-    public function setName($pValue = '') {
-    	$this->_name = $pValue;
-    	return $this;
-    }
-
-    /**
-     * Get OffsetX
-     *
-     * @return int
-     */
-    public function getOffsetX() {
-    	return $this->_offsetX;
-    }
-
-    /**
-     * Set OffsetX
-     *
-     * @param int $pValue
-     * @return PHPExcel_Worksheet_HeaderFooterDrawing
-     */
-    public function setOffsetX($pValue = 0) {
-    	$this->_offsetX = $pValue;
-    	return $this;
-    }
-
-    /**
-     * Get OffsetY
-     *
-     * @return int
-     */
-    public function getOffsetY() {
-    	return $this->_offsetY;
-    }
-
-    /**
-     * Set OffsetY
-     *
-     * @param int $pValue
-     * @return PHPExcel_Worksheet_HeaderFooterDrawing
-     */
-    public function setOffsetY($pValue = 0) {
-    	$this->_offsetY = $pValue;
-    	return $this;
-    }
-
-    /**
-     * Get Width
-     *
-     * @return int
-     */
-    public function getWidth() {
-    	return $this->_width;
-    }
-
-    /**
-     * Set Width
-     *
-     * @param int $pValue
-     * @return PHPExcel_Worksheet_HeaderFooterDrawing
-     */
-    public function setWidth($pValue = 0) {
-    	// Resize proportional?
-    	if ($this->_resizeProportional && $pValue != 0) {
-    		$ratio = $this->_width / $this->_height;
-    		$this->_height = round($ratio * $pValue);
-    	}
-
-    	// Set width
-    	$this->_width = $pValue;
-
-    	return $this;
-    }
-
-    /**
-     * Get Height
-     *
-     * @return int
-     */
-    public function getHeight() {
-    	return $this->_height;
-    }
-
-    /**
-     * Set Height
-     *
-     * @param int $pValue
-     * @return PHPExcel_Worksheet_HeaderFooterDrawing
-     */
-    public function setHeight($pValue = 0) {
-    	// Resize proportional?
-    	if ($this->_resizeProportional && $pValue != 0) {
-    		$ratio = $this->_width / $this->_height;
-    		$this->_width = round($ratio * $pValue);
-    	}
-
-    	// Set height
-    	$this->_height = $pValue;
-
-    	return $this;
-    }
-
-    /**
-     * Set width and height with proportional resize
-	 * Example:
-	 * <code>
-     * $objDrawing->setResizeProportional(true);
-     * $objDrawing->setWidthAndHeight(160,120);
-	 * </code>
-	 *
-     * @author Vincent@luo MSN:kele_100@hotmail.com
-     * @param int $width
-     * @param int $height
-     * @return PHPExcel_Worksheet_HeaderFooterDrawing
-     */
-	public function setWidthAndHeight($width = 0, $height = 0) {
-		$xratio = $width / $this->_width;
-		$yratio = $height / $this->_height;
-		if ($this->_resizeProportional && !($width == 0 || $height == 0)) {
-			if (($xratio * $this->_height) < $height) {
-				$this->_height = ceil($xratio * $this->_height);
-				$this->_width  = $width;
-			} else {
-				$this->_width	= ceil($yratio * $this->_width);
-				$this->_height	= $height;
-			}
-		}
-		return $this;
-	}
-
-    /**
-     * Get ResizeProportional
-     *
-     * @return boolean
-     */
-    public function getResizeProportional() {
-    	return $this->_resizeProportional;
-    }
-
-    /**
-     * Set ResizeProportional
-     *
-     * @param boolean $pValue
-     * @return PHPExcel_Worksheet_HeaderFooterDrawing
-     */
-    public function setResizeProportional($pValue = true) {
-    	$this->_resizeProportional = $pValue;
-    	return $this;
-    }
-
-    /**
-     * Get Filename
-     *
-     * @return string
-     */
-    public function getFilename() {
-    	return basename($this->_path);
-    }
-
-    /**
-     * Get Extension
-     *
-     * @return string
-     */
-    public function getExtension() {
-        $parts = explode(".", basename($this->_path));
-        return end($parts);
-    }
-
-    /**
-     * Get Path
-     *
-     * @return string
-     */
-    public function getPath() {
-    	return $this->_path;
-    }
-
-    /**
-     * Set Path
-     *
-     * @param 	string 		$pValue			File path
-     * @param 	boolean		$pVerifyFile	Verify file
-     * @throws 	Exception
-     * @return PHPExcel_Worksheet_HeaderFooterDrawing
-     */
-    public function setPath($pValue = '', $pVerifyFile = true) {
-    	if ($pVerifyFile) {
-	    	if (file_exists($pValue)) {
-	    		$this->_path = $pValue;
-
-	    		if ($this->_width == 0 && $this->_height == 0) {
-	    			// Get width/height
-	    			list($this->_width, $this->_height) = getimagesize($pValue);
-	    		}
-	    	} else {
-	    		throw new Exception("File $pValue not found!");
-	    	}
-    	} else {
-    		$this->_path = $pValue;
-    	}
-    	return $this;
-    }
-
-	/**
-	 * Get hash code
-	 *
-	 * @return string	Hash code
-	 */
-	public function getHashCode() {
-    	return md5(
-    		  $this->_path
-    		. $this->_name
-    		. $this->_offsetX
-    		. $this->_offsetY
-    		. $this->_width
-    		. $this->_height
-    		. __CLASS__
-    	);
-    }
-
-	/**
-	 * Implement PHP __clone to create a deep clone, not just a shallow copy.
-	 */
-	public function __clone() {
-		$vars = get_object_vars($this);
-		foreach ($vars as $key => $value) {
-			if (is_object($value)) {
-				$this->$key = clone $value;
-			} else {
-				$this->$key = $value;
-			}
-		}
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

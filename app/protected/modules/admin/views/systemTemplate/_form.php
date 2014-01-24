@@ -1,120 +1,72 @@
-<?php
-/* @var $this SystemTemplateController */
-/* @var $model SystemTemplate */
-/* @var $form CActiveForm */
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
-
-<div class="form">
-
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'system-template-form',
-	// Please note: When you enable ajax validation, make sure the corresponding
-	// controller action is handling ajax validation correctly.
-	// There is a call to performAjaxValidation() commented in generated controller code.
-	// See class documentation of CActiveForm for details on this.
-    'enableClientValidation'=>false,
-    'enableAjaxValidation'=>true,
-    'htmlOptions'=>array('class'=>'form-horizontal well'),
-    'errorMessageCssClass' => 'text-danger'
-)); ?>
-
-	<p class="help-block"><?php echo Yii::t('app', 'Fields with <span class="required">*</span> are required.'); ?>
-</p>
-
-	<?php echo $form->errorSummary($model, null, null, array('class' => 'text-danger')); ?>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'name', array('class' => 'col-lg-2 control-label')); ?>
-        <div class="col-lg-4">
-        <?php echo $form->textField($model, 'name', array('class' => 'form-control')); ?>
-        <?php echo $form->error($model,'name'); ?>
-        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
-        </div>
-
-        <?php if ($model->isNewRecord): ?>
-
-        <?php echo $form->labelEx($model, 'language', array('class' => 'col-lg-2 control-label')); ?>
-        <div class="col-lg-4">
-        <?php echo $form->dropDownList($model, 'language', 
-                    $languages, 
-                    array('class' => 'form-control disabled')); 
-        ?>
-        <?php echo $form->error($model,'language'); ?>
-        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
-        </div>
-
-        <?php else: ?>
-
-        <?php echo $form->labelEx($model, 'language', array('class' => 'col-lg-2 control-label')); ?>
-        <div class="col-lg-4">
-        <?php echo $form->dropDownList($model, 'language', 
-                    ELanguagePicker::getSimpleLanguageList(), 
-                    array('class' => 'form-control disabled', 'disabled' => 'disabled', 'readonly' => 'readonly')); 
-        ?>
-        <?php echo $form->error($model,'language'); ?>
-        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
-        </div>
-
-        <?php endif; ?>
-
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'description', array('class' => 'col-lg-2 control-label')); ?>
-        <div class="col-lg-10">
-        <?php echo $form->textField($model, 'description', array('class' => 'form-control')); ?>
-        <?php echo $form->error($model,'description'); ?>
-        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'text_content', array('class' => 'col-lg-2 control-label')); ?>
-        <div class="col-lg-10">
-        <?php echo $form->textarea($model, 'text_content', array('class' => 'form-control')); ?>
-        <?php echo $form->error($model,'text_content'); ?>
-        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <?php echo $form->labelEx($model, 'html_content', array('class' => 'col-lg-2 control-label')); ?>
-        <div class="col-lg-10">
-        <?php echo $form->textarea($model, 'html_content', array('class' => 'form-control')); ?>
-        <?php echo $form->error($model,'html_content'); ?>
-        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
-        </div>
-    </div>
-
-<?php Yii::app()->clientScript->registerScriptFile("../js/tinymce/js/tinymce/tinymce.min.js"); ?>
-<?php Yii::app()->clientScript->registerScript('tinymce_init',
-'
-tinymce.init({
-    height: 500,
-    cleanup_on_startup: false,
-    trim_span_elements: false,
-    verify_html: false,
-    cleanup: false,
-    convert_urls: false,
-    selector: "textarea#SystemTemplate_html_content",
-    plugins: [
-        "advlist autolink lists link image charmap print preview anchor",
-        "searchreplace visualblocks code fullscreen",
-        "insertdatetime media table contextmenu paste"
-    ],
-    toolbar: "insertfile undo redo | styleselect sizeselect | fontselect | fontsizeselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
- });
-', 
-CClientScript::POS_READY); ?>
-
-    <div class="form-group">
-        <div class="col-lg-offset-2 col-lg-10">
-            <button type="reset" class="btn btn-warning">Reset</button>
-            <a href="<?php echo $this->createUrl('preview', array('id' => $model->id, 'language' => $model->language)); ?>" class="btn btn-warning" target="_blank"><?php echo Yii::t('app', 'Preview template'); ?></a>
-            <button type="submit" class="btn btn-primary"><?php echo ($model->isNewRecord) ? Yii::t('app', 'Create') : Yii::t('app', 'Save'); ?></button>
-        </div>
-    </div>
-
-<?php $this->endWidget(); ?>
-
-</div><!-- form -->
+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
+EOR8yMKcrwXJ7o4N

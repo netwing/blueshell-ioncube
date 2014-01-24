@@ -1,40 +1,41 @@
-<?php
-
-require_once 'Swift/Tests/SwiftUnitTestCase.php';
-
-class Swift_Bug206Test extends Swift_Tests_SwiftUnitTestCase
-{
-    private $_factory;
-
-    public function setUp()
-    {
-        $factory = new Swift_CharacterReaderFactory_SimpleCharacterReaderFactory();
-        $headerEncoder = new Swift_Mime_HeaderEncoder_QpHeaderEncoder(
-            new Swift_CharacterStream_ArrayCharacterStream($factory, 'utf-8')
-        );
-        $paramEncoder = new Swift_Encoder_Rfc2231Encoder(
-            new Swift_CharacterStream_ArrayCharacterStream($factory, 'utf-8')
-        );
-        $grammar = new Swift_Mime_Grammar();
-        $this->_factory = new Swift_Mime_SimpleHeaderFactory($headerEncoder, $paramEncoder, $grammar);
-    }
-
-    public function testMailboxHeaderEncoding()
-    {
-        $this->_testHeaderIsFullyEncoded('email@example.org', 'Family Name, Name', ' "Family Name, Name" <email@example.org>');
-        $this->_testHeaderIsFullyEncoded('email@example.org', 'Family Namé, Name', ' Family =?utf-8?Q?Nam=C3=A9=2C?= Name');
-        $this->_testHeaderIsFullyEncoded('email@example.org', 'Family Namé , Name', ' Family =?utf-8?Q?Nam=C3=A9_=2C?= Name');
-        $this->_testHeaderIsFullyEncoded('email@example.org', 'Family Namé ;Name', ' Family =?utf-8?Q?Nam=C3=A9_=3BName?= ');
-    }
-
-    private function _testHeaderIsFullyEncoded($email, $name, $expected)
-    {
-        $mailboxHeader = $this->_factory->createMailboxHeader('To', array(
-            $email => $name
-        ));
-
-        $headerBody = substr($mailboxHeader->toString(), 3, strlen($expected));
-
-        $this->assertEqual($expected, $headerBody);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

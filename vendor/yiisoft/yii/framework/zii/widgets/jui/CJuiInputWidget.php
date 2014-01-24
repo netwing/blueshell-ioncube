@@ -1,80 +1,48 @@
-<?php
-/**
- * CJuiInputWidget class file.
- *
- * @author Sebastian Thierer <sebathi@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-Yii::import('zii.widgets.jui.CJuiWidget');
-
-/**
- * CJuiInputWidget is the base class for JUI widgets that can collect user input.
- *
- * @author Sebastian Thierer <sebathi@gmail.com>
- * @package zii.widgets.jui
- * @since 1.1
- */
-abstract class CJuiInputWidget extends CJuiWidget
-{
-	/**
-	 * @var CModel the data model associated with this widget.
-	 */
-	public $model;
-	/**
-	 * @var string the attribute associated with this widget.
-	 * The name can contain square brackets (e.g. 'name[1]') which is used to collect tabular data input.
-	 */
-	public $attribute;
-	/**
-	 * @var string the input name. This must be set if {@link model} is not set.
-	 */
-	public $name;
-	/**
-	 * @var string the input value.
-	 */
-	public $value;
-
-	/**
-	 * Resolves name and ID of the input. Source property of the name and/or source property of the attribute
-	 * could be customized by specifying first and/or second parameter accordingly.
-	 * @param string $nameProperty class property name which holds element name to be used. This parameter
-	 * is available since 1.1.14.
-	 * @param string $attributeProperty class property name which holds model attribute name to be used. This
-	 * parameter is available since 1.1.14.
-	 * @return array name and ID of the input: array('name','id').
-	 * @throws CException in case model and attribute property or name property cannot be resolved.
-	 */
-	protected function resolveNameID($nameProperty='name',$attributeProperty='attribute')
-	{
-		if($this->$nameProperty!==null)
-			$name=$this->$nameProperty;
-		elseif(isset($this->htmlOptions[$nameProperty]))
-			$name=$this->htmlOptions[$nameProperty];
-		elseif($this->hasModel())
-			$name=CHtml::activeName($this->model,$this->$attributeProperty);
-		else
-			throw new CException(Yii::t('zii','{class} must specify "model" and "{attribute}" or "{name}" property values.',
-				array('{class}'=>get_class($this),'{attribute}'=>$attributeProperty,'{name}'=>$nameProperty)));
-
-		if(($id=$this->getId(false))===null)
-		{
-			if(isset($this->htmlOptions['id']))
-				$id=$this->htmlOptions['id'];
-			else
-				$id=CHtml::getIdByName($name);
-		}
-
-		return array($name,$id);
-	}
-
-	/**
-	 * @return boolean whether this widget is associated with a data model.
-	 */
-	protected function hasModel()
-	{
-		return $this->model instanceof CModel && $this->attribute!==null;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+9VaULrecWFKO0ZQvf1Xuz0a=

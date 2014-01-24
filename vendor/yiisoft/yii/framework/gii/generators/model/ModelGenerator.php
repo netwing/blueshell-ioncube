@@ -1,25 +1,30 @@
-<?php
-
-class ModelGenerator extends CCodeGenerator
-{
-	public $codeModel='gii.generators.model.ModelCode';
-
-	/**
-	 * Provides autocomplete table names
-	 * @param string $db the database connection component id
-	 * @return string the json array of tablenames that contains the entered term $q
-	 */
-	public function actionGetTableNames($db)
-	{
-		if(Yii::app()->getRequest()->getIsAjaxRequest())
-		{
-			$all = array();
-			if(!empty($db) && Yii::app()->hasComponent($db)!==false && (Yii::app()->getComponent($db) instanceof CDbConnection))
-				$all=array_keys(Yii::app()->{$db}->schema->getTables());
-
-			echo json_encode($all);
-		}
-		else
-			throw new CHttpException(404,'The requested page does not exist.');
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

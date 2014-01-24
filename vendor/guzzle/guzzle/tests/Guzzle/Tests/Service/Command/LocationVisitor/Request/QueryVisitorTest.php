@@ -1,48 +1,41 @@
-<?php
-
-namespace Guzzle\Tests\Service\Command\LocationVisitor\Request;
-
-use Guzzle\Service\Command\LocationVisitor\Request\QueryVisitor as Visitor;
-
-/**
- * @covers Guzzle\Service\Command\LocationVisitor\Request\QueryVisitor
- */
-class QueryVisitorTest extends AbstractVisitorTestCase
-{
-    public function testVisitsLocation()
-    {
-        $visitor = new Visitor();
-        $param = $this->getNestedCommand('query')->getParam('foo')->setSentAs('test');
-        $visitor->visit($this->command, $this->request, $param, '123');
-        $this->assertEquals('123', $this->request->getQuery()->get('test'));
-    }
-
-    /**
-     * @covers Guzzle\Service\Command\LocationVisitor\Request\QueryVisitor
-     * @covers Guzzle\Service\Command\LocationVisitor\Request\AbstractRequestVisitor::resolveRecursively
-     */
-    public function testRecursivelyBuildsQueryStrings()
-    {
-        $command = $this->getCommand('query');
-        $command->getOperation()->getParam('foo')->setSentAs('Foo');
-        $request = $command->prepare();
-        $this->assertEquals(
-            'Foo[test][baz]=1&Foo[test][Jenga_Yall!]=HELLO&Foo[bar]=123',
-            rawurldecode($request->getQuery())
-        );
-    }
-
-    /**
-     * @covers Guzzle\Service\Command\LocationVisitor\Request\AbstractRequestVisitor::resolveRecursively
-     */
-    public function testFiltersAreAppliedToArrayParamType()
-    {
-        $command = $this->getCommandWithArrayParamAndFilters();
-        $request = $command->prepare();
-        $query = $request->getQuery();
-        // param type 'string'
-        $this->assertEquals('BAR', $query->get('Foo'));
-        // param type 'array'
-        $this->assertEquals('123,456,789', $query->get('Arr'));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+5Szl+2lLiSJiKAZSi0h9

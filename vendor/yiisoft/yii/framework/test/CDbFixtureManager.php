@@ -1,365 +1,183 @@
-<?php
-/**
- * This file contains the CDbFixtureManager class.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CDbFixtureManager manages database fixtures during tests.
- *
- * A fixture represents a list of rows for a specific table. For a test method,
- * using a fixture means that at the beginning of the method, the table has and only
- * has the rows that are given in the fixture. Therefore, the table's state is
- * predictable.
- *
- * A fixture is represented as a PHP script whose name (without suffix) is the
- * same as the table name (if schema name is needed, it should be prefixed to
- * the table name). The PHP script returns an array representing a list of table
- * rows. Each row is an associative array of column values indexed by column names.
- *
- * A fixture can be associated with an init script which sits under the same fixture
- * directory and is named as "TableName.init.php". The init script is used to
- * initialize the table before populating the fixture data into the table.
- * If the init script does not exist, the table will be emptied.
- *
- * Fixtures must be stored under the {@link basePath} directory. The directory
- * may contain a file named "init.php" which will be executed once to initialize
- * the database. If this file is not found, all available fixtures will be loaded
- * into the database.
- *
- * @property CDbConnection $dbConnection The database connection.
- * @property array $fixtures The information of the available fixtures (table name => fixture file).
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.test
- * @since 1.1
- */
-class CDbFixtureManager extends CApplicationComponent
-{
-	/**
-	 * @var string the name of the initialization script that would be executed before the whole test set runs.
-	 * Defaults to 'init.php'. If the script does not exist, every table with a fixture file will be reset.
-	 */
-	public $initScript='init.php';
-	/**
-	 * @var string the suffix for fixture initialization scripts.
-	 * If a table is associated with such a script whose name is TableName suffixed this property value,
-	 * then the script will be executed each time before the table is reset.
-	 */
-	public $initScriptSuffix='.init.php';
-	/**
-	 * @var string the base path containing all fixtures. Defaults to null, meaning
-	 * the path 'protected/tests/fixtures'.
-	 */
-	public $basePath;
-	/**
-	 * @var string the ID of the database connection. Defaults to 'db'.
-	 * Note, data in this database may be deleted or modified during testing.
-	 * Make sure you have a backup database.
-	 */
-	public $connectionID='db';
-	/**
-	 * @var array list of database schemas that the test tables may reside in. Defaults to
-	 * array(''), meaning using the default schema (an empty string refers to the
-	 * default schema). This property is mainly used when turning on and off integrity checks
-	 * so that fixture data can be populated into the database without causing problem.
-	 */
-	public $schemas=array('');
-
-	private $_db;
-	private $_fixtures;
-	private $_rows;				// fixture name, row alias => row
-	private $_records;			// fixture name, row alias => record (or class name)
-
-
-	/**
-	 * Initializes this application component.
-	 */
-	public function init()
-	{
-		parent::init();
-		if($this->basePath===null)
-			$this->basePath=Yii::getPathOfAlias('application.tests.fixtures');
-		$this->prepare();
-	}
-
-	/**
-	 * Returns the database connection used to load fixtures.
-	 * @throws CException if {@link connectionID} application component is invalid
-	 * @return CDbConnection the database connection
-	 */
-	public function getDbConnection()
-	{
-		if($this->_db===null)
-		{
-			$this->_db=Yii::app()->getComponent($this->connectionID);
-			if(!$this->_db instanceof CDbConnection)
-				throw new CException(Yii::t('yii','CDbTestFixture.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.',
-					array('{id}'=>$this->connectionID)));
-		}
-		return $this->_db;
-	}
-
-	/**
-	 * Prepares the fixtures for the whole test.
-	 * This method is invoked in {@link init}. It executes the database init script
-	 * if it exists. Otherwise, it will load all available fixtures.
-	 */
-	public function prepare()
-	{
-		$initFile=$this->basePath . DIRECTORY_SEPARATOR . $this->initScript;
-
-		$this->checkIntegrity(false);
-
-		if(is_file($initFile))
-			require($initFile);
-		else
-		{
-			foreach($this->getFixtures() as $tableName=>$fixturePath)
-			{
-				$this->resetTable($tableName);
-				$this->loadFixture($tableName);
-			}
-		}
-		$this->checkIntegrity(true);
-	}
-
-	/**
-	 * Resets the table to the state that it contains no fixture data.
-	 * If there is an init script named "tests/fixtures/TableName.init.php",
-	 * the script will be executed.
-	 * Otherwise, {@link truncateTable} will be invoked to delete all rows in the table
-	 * and reset primary key sequence, if any.
-	 * @param string $tableName the table name
-	 */
-	public function resetTable($tableName)
-	{
-		$initFile=$this->basePath . DIRECTORY_SEPARATOR . $tableName . $this->initScriptSuffix;
-		if(is_file($initFile))
-			require($initFile);
-		else
-			$this->truncateTable($tableName);
-	}
-
-	/**
-	 * Loads the fixture for the specified table.
-	 * This method will insert rows given in the fixture into the corresponding table.
-	 * The loaded rows will be returned by this method.
-	 * If the table has auto-incremental primary key, each row will contain updated primary key value.
-	 * If the fixture does not exist, this method will return false.
-	 * Note, you may want to call {@link resetTable} before calling this method
-	 * so that the table is emptied first.
-	 * @param string $tableName table name
-	 * @return array the loaded fixture rows indexed by row aliases (if any).
-	 * False is returned if the table does not have a fixture.
-	 */
-	public function loadFixture($tableName)
-	{
-		$fileName=$this->basePath.DIRECTORY_SEPARATOR.$tableName.'.php';
-		if(!is_file($fileName))
-			return false;
-
-		$rows=array();
-		$schema=$this->getDbConnection()->getSchema();
-		$builder=$schema->getCommandBuilder();
-		$table=$schema->getTable($tableName);
-
-		foreach(require($fileName) as $alias=>$row)
-		{
-			$builder->createInsertCommand($table,$row)->execute();
-			$primaryKey=$table->primaryKey;
-			if($table->sequenceName!==null)
-			{
-				if(is_string($primaryKey) && !isset($row[$primaryKey]))
-					$row[$primaryKey]=$builder->getLastInsertID($table);
-				elseif(is_array($primaryKey))
-				{
-					foreach($primaryKey as $pk)
-					{
-						if(!isset($row[$pk]))
-						{
-							$row[$pk]=$builder->getLastInsertID($table);
-							break;
-						}
-					}
-				}
-			}
-			$rows[$alias]=$row;
-		}
-		return $rows;
-	}
-
-	/**
-	 * Returns the information of the available fixtures.
-	 * This method will search for all PHP files under {@link basePath}.
-	 * If a file's name is the same as a table name, it is considered to be the fixture data for that table.
-	 * @return array the information of the available fixtures (table name => fixture file)
-	 */
-	public function getFixtures()
-	{
-		if($this->_fixtures===null)
-		{
-			$this->_fixtures=array();
-			$schema=$this->getDbConnection()->getSchema();
-			$folder=opendir($this->basePath);
-			$suffixLen=strlen($this->initScriptSuffix);
-			while($file=readdir($folder))
-			{
-				if($file==='.' || $file==='..' || $file===$this->initScript)
-					continue;
-				$path=$this->basePath.DIRECTORY_SEPARATOR.$file;
-				if(substr($file,-4)==='.php' && is_file($path) && substr($file,-$suffixLen)!==$this->initScriptSuffix)
-				{
-					$tableName=substr($file,0,-4);
-					if($schema->getTable($tableName)!==null)
-						$this->_fixtures[$tableName]=$path;
-				}
-			}
-			closedir($folder);
-		}
-		return $this->_fixtures;
-	}
-
-	/**
-	 * Enables or disables database integrity check.
-	 * This method may be used to temporarily turn off foreign constraints check.
-	 * @param boolean $check whether to enable database integrity check
-	 */
-	public function checkIntegrity($check)
-	{
-		foreach($this->schemas as $schema)
-			$this->getDbConnection()->getSchema()->checkIntegrity($check,$schema);
-	}
-
-	/**
-	 * Removes all rows from the specified table and resets its primary key sequence, if any.
-	 * You may need to call {@link checkIntegrity} to turn off integrity check temporarily
-	 * before you call this method.
-	 * @param string $tableName the table name
-	 * @throws CException if given table does not exist
-	 */
-	public function truncateTable($tableName)
-	{
-		$db=$this->getDbConnection();
-		$schema=$db->getSchema();
-		if(($table=$schema->getTable($tableName))!==null)
-		{
-			$db->createCommand('DELETE FROM '.$table->rawName)->execute();
-			$schema->resetSequence($table,1);
-		}
-		else
-			throw new CException("Table '$tableName' does not exist.");
-	}
-
-	/**
-	 * Truncates all tables in the specified schema.
-	 * You may need to call {@link checkIntegrity} to turn off integrity check temporarily
-	 * before you call this method.
-	 * @param string $schema the schema name. Defaults to empty string, meaning the default database schema.
-	 * @see truncateTable
-	 */
-	public function truncateTables($schema='')
-	{
-		$tableNames=$this->getDbConnection()->getSchema()->getTableNames($schema);
-		foreach($tableNames as $tableName)
-			$this->truncateTable($tableName);
-	}
-
-	/**
-	 * Loads the specified fixtures.
-	 * For each fixture, the corresponding table will be reset first by calling
-	 * {@link resetTable} and then be populated with the fixture data.
-	 * The loaded fixture data may be later retrieved using {@link getRows}
-	 * and {@link getRecord}.
-	 * Note, if a table does not have fixture data, {@link resetTable} will still
-	 * be called to reset the table.
-	 * @param array $fixtures fixtures to be loaded. The array keys are fixture names,
-	 * and the array values are either AR class names or table names.
-	 * If table names, they must begin with a colon character (e.g. 'Post'
-	 * means an AR class, while ':Post' means a table name).
-	 */
-	public function load($fixtures)
-	{
-		$schema=$this->getDbConnection()->getSchema();
-		$schema->checkIntegrity(false);
-
-		$this->_rows=array();
-		$this->_records=array();
-		foreach($fixtures as $fixtureName=>$tableName)
-		{
-			if($tableName[0]===':')
-			{
-				$tableName=substr($tableName,1);
-				unset($modelClass);
-			}
-			else
-			{
-				$modelClass=Yii::import($tableName,true);
-				$tableName=CActiveRecord::model($modelClass)->tableName();
-			}
-			if(($prefix=$this->getDbConnection()->tablePrefix)!==null)
-				$tableName=preg_replace('/{{(.*?)}}/',$prefix.'\1',$tableName);
-			$this->resetTable($tableName);
-			$rows=$this->loadFixture($tableName);
-			if(is_array($rows) && is_string($fixtureName))
-			{
-				$this->_rows[$fixtureName]=$rows;
-				if(isset($modelClass))
-				{
-					foreach(array_keys($rows) as $alias)
-						$this->_records[$fixtureName][$alias]=$modelClass;
-				}
-			}
-		}
-
-		$schema->checkIntegrity(true);
-	}
-
-	/**
-	 * Returns the fixture data rows.
-	 * The rows will have updated primary key values if the primary key is auto-incremental.
-	 * @param string $name the fixture name
-	 * @return array the fixture data rows. False is returned if there is no such fixture data.
-	 */
-	public function getRows($name)
-	{
-		if(isset($this->_rows[$name]))
-			return $this->_rows[$name];
-		else
-			return false;
-	}
-
-	/**
-	 * Returns the specified ActiveRecord instance in the fixture data.
-	 * @param string $name the fixture name
-	 * @param string $alias the alias for the fixture data row
-	 * @return CActiveRecord the ActiveRecord instance. False is returned if there is no such fixture row.
-	 */
-	public function getRecord($name,$alias)
-	{
-		if(isset($this->_records[$name][$alias]))
-		{
-			if(is_string($this->_records[$name][$alias]))
-			{
-				$row=$this->_rows[$name][$alias];
-				$model=CActiveRecord::model($this->_records[$name][$alias]);
-				$key=$model->getTableSchema()->primaryKey;
-				if(is_string($key))
-					$pk=$row[$key];
-				else
-				{
-					foreach($key as $k)
-						$pk[$k]=$row[$k];
-				}
-				$this->_records[$name][$alias]=$model->findByPk($pk);
-			}
-			return $this->_records[$name][$alias];
-		}
-		else
-			return false;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+D5bvM5lFkx6OBQVGWULVjIOKsLgddBlKbTQD

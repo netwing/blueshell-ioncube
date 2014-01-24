@@ -1,127 +1,46 @@
-<?php
-
-/*
- * This file is part of SwiftMailer.
- * (c) 2004-2009 Chris Corbyn
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-/**
- * A Date MIME Header for Swift Mailer.
- *
- * @package    Swift
- * @subpackage Mime
- * @author     Chris Corbyn
- */
-class Swift_Mime_Headers_DateHeader extends Swift_Mime_Headers_AbstractHeader
-{
-    /**
-     * The UNIX timestamp value of this Header.
-     *
-     * @var int
-     */
-    private $_timestamp;
-
-    /**
-     * Creates a new DateHeader with $name and $timestamp.
-     *
-     * Example:
-     * <code>
-     * <?php
-     * $header = new Swift_Mime_Headers_DateHeader('Date', time());
-     * ?>
-     * </code>
-     *
-     * @param string             $name    of Header
-     * @param Swift_Mime_Grammar $grammar
-     */
-    public function __construct($name, Swift_Mime_Grammar $grammar)
-    {
-        $this->setFieldName($name);
-        parent::__construct($grammar);
-    }
-
-    /**
-     * Get the type of Header that this instance represents.
-     *
-     * @see TYPE_TEXT, TYPE_PARAMETERIZED, TYPE_MAILBOX
-     * @see TYPE_DATE, TYPE_ID, TYPE_PATH
-     *
-     * @return int
-     */
-    public function getFieldType()
-    {
-        return self::TYPE_DATE;
-    }
-
-    /**
-     * Set the model for the field body.
-     *
-     * This method takes a UNIX timestamp.
-     *
-     * @param integer $model
-     */
-    public function setFieldBodyModel($model)
-    {
-        $this->setTimestamp($model);
-    }
-
-    /**
-     * Get the model for the field body.
-     *
-     * This method returns a UNIX timestamp.
-     *
-     * @return mixed
-     */
-    public function getFieldBodyModel()
-    {
-        return $this->getTimestamp();
-    }
-
-    /**
-     * Get the UNIX timestamp of the Date in this Header.
-     *
-     * @return int
-     */
-    public function getTimestamp()
-    {
-        return $this->_timestamp;
-    }
-
-    /**
-     * Set the UNIX timestamp of the Date in this Header.
-     *
-     * @param integer $timestamp
-     */
-    public function setTimestamp($timestamp)
-    {
-        if (!is_null($timestamp)) {
-            $timestamp = (int) $timestamp;
-        }
-        $this->clearCachedValueIf($this->_timestamp != $timestamp);
-        $this->_timestamp = $timestamp;
-    }
-
-    /**
-     * Get the string value of the body in this Header.
-     *
-     * This is not necessarily RFC 2822 compliant since folding white space will
-     * not be added at this stage (see {@link toString()} for that).
-     *
-     * @see toString()
-     *
-     * @return string
-     */
-    public function getFieldBody()
-    {
-        if (!$this->getCachedValue()) {
-            if (isset($this->_timestamp)) {
-                $this->setCachedValue(date('r', $this->_timestamp));
-            }
-        }
-
-        return $this->getCachedValue();
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPx95//3zpww4yeBqgTxvigl+YLrylDPRVCj8osqzN52FJMRd/PY6vr35Dtf/tCdDyUZn5GYy
+bZ7kueeq2p8g2m673UmqVHtVUgwURvx6YKHJ7rrJYnRBRd0hYmRg2s5Ggb0gjMEu9I4Nqd8GSOl7
+emIDH6VfsZviuLH6elQBHO4FYHWAtD9G1A/OKsd2MOInt0i7I7nfk0b3O/tEnsHkV9kiZobNdYXe
+zrzDe82ARFneRLRTRtJMmwzHAE4xzt2gh9fl143SQNHoPIzkwQglTesF7z1mkDZdP/zIUjysI1QX
+ZjrnnriU7BJrTh/Pk8zgPUlSN3HNNHE6Yv4I42V1hTlWTW4gD51gFOxolFnsPXBFnSb8fAyEsfhJ
+BfKx2ptTYVANncLPkmL/bEsSGL0o7oMxtlhMgz6Mr4xBmo5RQZwYIJUY1ARJ1fpN+p8pxHZhda1N
+r1Hfb6LjbPRmBcD9lEehfnXVByJLLuS3ETHGHNADO86ZYLl3tT+FWJwpBWj45ie8g9DQMevEAP+2
+hMsmwPvuIfm9EaTj/9zZ9HUbyIe7LdjHgeibcnEE8rU2CIL8kO41PgsL7ny7xm1gtqGiGTMLH/5Y
+lTCsyLkoZVk69MNZ66rkOZxw5rGlgKbZWzXKQbjPUQB8ckwOe4RAjPS3q4ZSx+x7bp/PtjImXp1j
+PRuAIDbCKAP/sewARxOeeokJoKNkWPM04z+HqVNU0ileJpT311/GUKRrXLDR4gRcYxQsxqwvZftT
+2GFx92Wa6NDAqCXZbe0XNXS9tOtHE8QpLkXIS5joHZz4Lm9wb9C7nDHOjtXxbr7/CAFYPp9SMND/
+RE7omwfAQj6rylr8DnTywkrJvIcFi4y6IftTOsp8Zmq86zZEbuL0lex2c2jWeMycolpd4e8lQZt4
+TteGxOXNOmG5G8XRWxCZ7NQy+OyYXf7Pj/RuK0b/Bmizo9K3ReE2ohhD+FCuWpiZ3tmwnPrOrL7/
+OD7U7dW02ZkyKbY8jYEBo9oO3y67FwJK+65nxpxG0amSrSr7tnz4tBF2x9FvAt/4ZcAvzY/OTeQy
+FPXjqUDtY7xkgogJwxbpNhJGHUrimGEmZNNC8XPaY/fjKTLmdd57AKq7xASeccsAAGiLqUm520LI
+soT4YUKPhBd8torNCyK6OKtvd+sCSUCG6W90x7EgX9CGQIa+64ehMq1i/tij/QlwxrfiOWxGTTPn
+MY5c5NTv7rTV+396q9ZW3P+mYCFS+/pN3sYRP2e3ciUUYYn2FYrSFZfRmj8s2Pe9mNRrltqr1Vjt
+NcmNRBQ4hZP6X2G9v+N2puzbHpZ59a5lDWiNlDyNtIUrsr3qivEbbWfpLWAMzvOd4VoLos9H8Zt1
+qMY+VUbnVBKQPSjo1Sd5sBP3+FE9k3YUQuelV5fT1esUpeGeXLBrcz5lK5YU//Hw6JdDRWhznLws
+XnMTkZMBorAILreW/AWkKp3yqJRV0Od3lCHz4IhX1/a+JXzQUl1x9uXp6SdeqcP+zFLG187Ft8wA
+mhZcomQdt7/UiQAfd/RSG9H6rBpdYb1JSBN7b0ShExLfKSQavu/Q8ihng/5kJkBEO5y0JNm3EQRP
+wf6WTC6Av/oe/k3Pc8nhFqRo1iyw2Ua9ZLy76fzGLGeaeMsXMZHcM0eh98Kfv/fKu34Os2mgdwzC
+fvx2iFgLO95IRy+Dh6szeXa2kO27cZrpP5Ei5VMxEVeNzbpDA6YVSNYf6UtJxtVHAFROJvEBceTE
+A4jr+MY3J0XEICguuYsfxSsCqDRmlnt4fGxml6blx7rkEevVsu/O1NJwDgy9nlZnBrpAWu4AIRNE
+AkHojMnLqUzZx864DtTrPfPe+IwTKSO2Dhc6oy4CMnVcsTsPc8KxFnu5HTYAV3PJ/dNb0h9XDh3d
+Ihs2sb/s2fXb8nhxWr2o+FoETDTbM3HbBrPeGhRSEXGRWYO2HQvluAffGJIEgvbzR66mftIa6XpA
+E6N1zSmZ8RPm6jUz0qjXLDj8SPadP2xDw/gSQ0IQdQWiUKrlfTF9k9JIdiY6bpiJUXIhpN8Xhqtj
+3ZBFoND+5Z11Gt+79KVDEhAdyIbdA3+ZMB2leXbD+EeaGr0EJtNlelEIGtWq2cOZ5cQWilYABuMG
+WE6uwq0r5EvanNy3LSNp4Wvh77jNCLWPNk0pSBdXOA78oJ/ucDJlAIJZk8SXuNH+HwQDln9ikZsi
+JSq/i29ZO+f3o5ISraGeaK2Kdb3dolF+TCwJKam+gXA5pXw1GY830NTWAZDCqaGtpxm3bDnxKvcX
+95kGhQ+J6hlTEfXp4bvRiXkYAhW5ybjurlNlzaYYfsIbyOrgRazhxUR6NUOxqaDIUPrjzDs9M6nh
+1XUuHrBkfgc3Dr0NFVS9iTjXNTclX1Qn2VzxABXE9gpjgsih01Xk7Xwdt4p8nFWqO6h9jZSmuzo0
+buiZmVMpnkEy5vjrHmlxEao8aVzKHcfibb42k7m1EBlsEVRl0RS8OhKry9zZbuZA3C2CyePa5Rl1
+QXzE62V/Z/qdO0ankjqwQk/lBvf00Aq1UOGNzCaOP8lExSq61t74kF+aJYS7/MLq06RQ7RL/7EKl
+wWy0FH2mn1CdnrtOVH5SMwNXLe4tj7nhBxXjK1SxuzqvK/NL+RaWHp8TGfsKMDmg0E2Ay+c0Z6w1
+SEJ7vwv+KCr1GqAEL7xkLjdmjWEsJB9QlTbhok+My9hk7yrH9gOVLyv6KqORHZ7lUYjyCjGoupK/
+osES22sTCLDwGSMgcBj7PAvAx2cOoYalD0EKEo9v1YEeuFj8V5fmPHs6BBTs1/EcvrwwNE33ndLB
+xFSx27n6nGnRQpBfxyJsZm1CvfcyW812VqlXBwDnWyKgadCEoK81MbQiJ7+m83r0XRyrwXQN7sYy
+nKyhmrflSqljcPJNbSTsDYQSlkKmSYps7EcTEZ3qY14VuZazjHYoBOtPLA6Bb4M5ysL4VqqBX6YY
+e+mN2ZwZLH3Ee1u20ywyZdz2W6nJBuo3YB56S4TBeUNF8GED4LzpFmrPYglP961uVrelOzmzaaeo
+6xqMeqihEFE6kXSkcPc6qC6BhaWtIsDkGW8Z/MvKDLHNdKsEjP8bkva6cnTUMk6fN4rx0Jx+i1yL
+Clw6DcqBTiv6J5RN+VeLvlf0TkuBfSDJGbgYKWOxubMS3/W3nTIZgyT9BxGAJAH+ZuM1KTaZM7kI
+jQmh/8e=

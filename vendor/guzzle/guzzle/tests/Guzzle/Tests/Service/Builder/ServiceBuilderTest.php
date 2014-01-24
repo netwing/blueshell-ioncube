@@ -1,317 +1,172 @@
-<?php
-
-namespace Guzzle\Tests\Service;
-
-use Guzzle\Plugin\History\HistoryPlugin;
-use Guzzle\Service\Builder\ServiceBuilder;
-use Guzzle\Service\Client;
-
-/**
- * @covers Guzzle\Service\Builder\ServiceBuilder
- */
-class ServiceBuilderTest extends \Guzzle\Tests\GuzzleTestCase
-{
-    protected $arrayData = array(
-        'michael.mock' => array(
-            'class' => 'Guzzle\Tests\Service\Mock\MockClient',
-            'params' => array(
-                'username' => 'michael',
-                'password' => 'testing123',
-                'subdomain' => 'michael',
-            ),
-        ),
-        'billy.mock' => array(
-            'alias' => 'Hello!',
-            'class' => 'Guzzle\Tests\Service\Mock\MockClient',
-            'params' => array(
-                'username' => 'billy',
-                'password' => 'passw0rd',
-                'subdomain' => 'billy',
-            ),
-        ),
-        'billy.testing' => array(
-            'extends' => 'billy.mock',
-            'params' => array(
-                'subdomain' => 'test.billy',
-            ),
-        ),
-        'missing_params' => array(
-            'extends' => 'billy.mock'
-        )
-    );
-
-    public function testAllowsSerialization()
-    {
-        $builder = ServiceBuilder::factory($this->arrayData);
-        $cached = unserialize(serialize($builder));
-        $this->assertEquals($cached, $builder);
-    }
-
-    public function testDelegatesFactoryMethodToAbstractFactory()
-    {
-        $builder = ServiceBuilder::factory($this->arrayData);
-        $c = $builder->get('michael.mock');
-        $this->assertInstanceOf('Guzzle\Tests\Service\Mock\MockClient', $c);
-    }
-
-    /**
-     * @expectedException Guzzle\Service\Exception\ServiceNotFoundException
-     * @expectedExceptionMessage No service is registered as foobar
-     */
-    public function testThrowsExceptionWhenGettingInvalidClient()
-    {
-        ServiceBuilder::factory($this->arrayData)->get('foobar');
-    }
-
-    public function testStoresClientCopy()
-    {
-        $builder = ServiceBuilder::factory($this->arrayData);
-        $client = $builder->get('michael.mock');
-        $this->assertInstanceOf('Guzzle\Tests\Service\Mock\MockClient', $client);
-        $this->assertEquals('http://127.0.0.1:8124/v1/michael', $client->getBaseUrl());
-        $this->assertEquals($client, $builder->get('michael.mock'));
-
-        // Get another client but throw this one away
-        $client2 = $builder->get('billy.mock', true);
-        $this->assertInstanceOf('Guzzle\Tests\Service\Mock\MockClient', $client2);
-        $this->assertEquals('http://127.0.0.1:8124/v1/billy', $client2->getBaseUrl());
-
-        // Make sure the original client is still there and set
-        $this->assertTrue($client === $builder->get('michael.mock'));
-
-        // Create a new billy.mock client that is stored
-        $client3 = $builder->get('billy.mock');
-
-        // Make sure that the stored billy.mock client is equal to the other stored client
-        $this->assertTrue($client3 === $builder->get('billy.mock'));
-
-        // Make sure that this client is not equal to the previous throwaway client
-        $this->assertFalse($client2 === $builder->get('billy.mock'));
-    }
-
-    public function testBuildersPassOptionsThroughToClients()
-    {
-        $s = new ServiceBuilder(array(
-            'michael.mock' => array(
-                'class' => 'Guzzle\Tests\Service\Mock\MockClient',
-                'params' => array(
-                    'base_url' => 'http://www.test.com/',
-                    'subdomain' => 'michael',
-                    'password' => 'test',
-                    'username' => 'michael',
-                    'curl.curlopt_proxyport' => 8080
-                )
-            )
-        ));
-
-        $c = $s->get('michael.mock');
-        $this->assertEquals(8080, $c->getConfig('curl.curlopt_proxyport'));
-    }
-
-    public function testUsesTheDefaultBuilderWhenNoBuilderIsSpecified()
-    {
-        $s = new ServiceBuilder(array(
-            'michael.mock' => array(
-                'class' => 'Guzzle\Tests\Service\Mock\MockClient',
-                'params' => array(
-                    'base_url' => 'http://www.test.com/',
-                    'subdomain' => 'michael',
-                    'password' => 'test',
-                    'username' => 'michael',
-                    'curl.curlopt_proxyport' => 8080
-                )
-            )
-        ));
-
-        $c = $s->get('michael.mock');
-        $this->assertInstanceOf('Guzzle\Tests\Service\Mock\MockClient', $c);
-    }
-
-    public function testUsedAsArray()
-    {
-        $b = ServiceBuilder::factory($this->arrayData);
-        $this->assertTrue($b->offsetExists('michael.mock'));
-        $this->assertFalse($b->offsetExists('not_there'));
-        $this->assertInstanceOf('Guzzle\Service\Client', $b['michael.mock']);
-
-        unset($b['michael.mock']);
-        $this->assertFalse($b->offsetExists('michael.mock'));
-
-        $b['michael.mock'] = new Client('http://www.test.com/');
-        $this->assertInstanceOf('Guzzle\Service\Client', $b['michael.mock']);
-    }
-
-    public function testFactoryCanCreateFromJson()
-    {
-        $tmp = sys_get_temp_dir() . '/test.js';
-        file_put_contents($tmp, json_encode($this->arrayData));
-        $b = ServiceBuilder::factory($tmp);
-        unlink($tmp);
-        $s = $b->get('billy.testing');
-        $this->assertEquals('test.billy', $s->getConfig('subdomain'));
-        $this->assertEquals('billy', $s->getConfig('username'));
-    }
-
-    public function testFactoryCanCreateFromArray()
-    {
-        $b = ServiceBuilder::factory($this->arrayData);
-        $s = $b->get('billy.testing');
-        $this->assertEquals('test.billy', $s->getConfig('subdomain'));
-        $this->assertEquals('billy', $s->getConfig('username'));
-    }
-
-    public function testFactoryDoesNotRequireParams()
-    {
-        $b = ServiceBuilder::factory($this->arrayData);
-        $s = $b->get('missing_params');
-        $this->assertEquals('billy', $s->getConfig('username'));
-    }
-
-    public function testBuilderAllowsReferencesBetweenClients()
-    {
-        $builder = ServiceBuilder::factory(array(
-            'a' => array(
-                'class' => 'Guzzle\Tests\Service\Mock\MockClient',
-                'params' => array(
-                    'other_client' => '{b}',
-                    'username'     => 'x',
-                    'password'     => 'y',
-                    'subdomain'    => 'z'
-                )
-            ),
-            'b' => array(
-                'class' => 'Guzzle\Tests\Service\Mock\MockClient',
-                'params' => array(
-                    'username'  => '1',
-                    'password'  => '2',
-                    'subdomain' => '3'
-                )
-            )
-        ));
-
-        $client = $builder['a'];
-        $this->assertEquals('x', $client->getConfig('username'));
-        $this->assertSame($builder['b'], $client->getConfig('other_client'));
-        $this->assertEquals('1', $builder['b']->getConfig('username'));
-    }
-
-    public function testEmitsEventsWhenClientsAreCreated()
-    {
-        // Ensure that the client signals that it emits an event
-        $this->assertEquals(array('service_builder.create_client'), ServiceBuilder::getAllEvents());
-
-        // Create a test service builder
-        $builder = ServiceBuilder::factory(array(
-            'a' => array(
-                'class' => 'Guzzle\Tests\Service\Mock\MockClient',
-                'params' => array(
-                    'username'  => 'test',
-                    'password'  => '123',
-                    'subdomain' => 'z'
-                )
-            )
-        ));
-
-        // Add an event listener to pick up client creation events
-        $emits = 0;
-        $builder->getEventDispatcher()->addListener('service_builder.create_client', function($event) use (&$emits) {
-            $emits++;
-        });
-
-        // Get the 'a' client by name
-        $client = $builder->get('a');
-
-        // Ensure that the event was emitted once, and that the client was present
-        $this->assertEquals(1, $emits);
-        $this->assertInstanceOf('Guzzle\Tests\Service\Mock\MockClient', $client);
-    }
-
-    public function testCanAddGlobalParametersToServicesOnLoad()
-    {
-        $builder = ServiceBuilder::factory($this->arrayData, array(
-            'username'  => 'fred',
-            'new_value' => 'test'
-        ));
-
-        $data = json_decode($builder->serialize(), true);
-
-        foreach ($data as $service) {
-            $this->assertEquals('fred', $service['params']['username']);
-            $this->assertEquals('test', $service['params']['new_value']);
-        }
-    }
-
-    public function testAddsGlobalPlugins()
-    {
-        $b = new ServiceBuilder($this->arrayData);
-        $b->addGlobalPlugin(new HistoryPlugin());
-        $s = $b->get('michael.mock');
-        $this->assertTrue($s->getEventDispatcher()->hasListeners('request.sent'));
-    }
-
-    public function testCanGetData()
-    {
-        $b = new ServiceBuilder($this->arrayData);
-        $this->assertEquals($this->arrayData['michael.mock'], $b->getData('michael.mock'));
-        $this->assertNull($b->getData('ewofweoweofe'));
-    }
-
-    public function testCanGetByAlias()
-    {
-        $b = new ServiceBuilder($this->arrayData);
-        $this->assertSame($b->get('billy.mock'), $b->get('Hello!'));
-    }
-
-    public function testCanOverwriteParametersForThrowawayClients()
-    {
-        $b = new ServiceBuilder($this->arrayData);
-
-        $c1 = $b->get('michael.mock');
-        $this->assertEquals('michael', $c1->getConfig('username'));
-
-        $c2 = $b->get('michael.mock', array('username' => 'jeremy'));
-        $this->assertEquals('jeremy', $c2->getConfig('username'));
-    }
-
-    public function testGettingAThrowawayClientWithParametersDoesNotAffectGettingOtherClients()
-    {
-        $b = new ServiceBuilder($this->arrayData);
-
-        $c1 = $b->get('michael.mock', array('username' => 'jeremy'));
-        $this->assertEquals('jeremy', $c1->getConfig('username'));
-
-        $c2 = $b->get('michael.mock');
-        $this->assertEquals('michael', $c2->getConfig('username'));
-    }
-
-    public function testCanUseArbitraryData()
-    {
-        $b = new ServiceBuilder();
-        $b['a'] = 'foo';
-        $this->assertTrue(isset($b['a']));
-        $this->assertEquals('foo', $b['a']);
-        unset($b['a']);
-        $this->assertFalse(isset($b['a']));
-    }
-
-    public function testCanRegisterServiceData()
-    {
-        $b = new ServiceBuilder();
-        $b['a'] = array(
-            'class' => 'Guzzle\Tests\Service\Mock\MockClient',
-            'params' => array(
-                'username' => 'billy',
-                'password' => 'passw0rd',
-                'subdomain' => 'billy',
-            )
-        );
-        $this->assertTrue(isset($b['a']));
-        $this->assertInstanceOf('Guzzle\Tests\Service\Mock\MockClient', $b['a']);
-        $client = $b['a'];
-        unset($b['a']);
-        $this->assertFalse(isset($b['a']));
-        // Ensure that instantiated clients can be registered
-        $b['mock'] = $client;
-        $this->assertSame($client, $b['mock']);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

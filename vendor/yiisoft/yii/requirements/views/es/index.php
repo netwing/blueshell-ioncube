@@ -1,75 +1,36 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta http-equiv="content-language" content="es"/>
-<link rel="stylesheet" type="text/css" href="css/main.css" />
-<title>Verificación de requerimientos de Yii</title>
-</head>
-
-<body>
-<div id="page">
-
-<div id="header">
-<h1>Verificación de requerimientos de Yii</h1>
-</div><!-- header-->
-
-<div id="content">
-<h2>Descripción</h2>
-<p>
-Este script verifica que la configuración de su servidor cumpla con los requerimientos
-para poder ejecutar aplicaciones Web <a href="http://www.yiiframework.com/">Yii</a>.
-El mismo verifica que el servidor este corriendo una versión adecuada de PHP,
-que las extensiones PHP necesarias hayan sido cargadas y que las configuraciones del archivo php.ini sean correctas. 
-</p>
-
-<h2>Conclusión</h2>
-<p>
-<?php if($result>0): ?>
-Felicitaciones! Su servidor satisface todos los requerimientos de Yii.
-<?php elseif($result<0): ?>
-La configuración de su servidor satisface los requerimientos mínimos de Yii. Por favor preste atención a las advertencias listadas en el cuadro más abajo si su aplicación utiliza alguna de esas características.
-<?php else: ?>
-Desafortunadamente la configuración de su servidor no satisface los requerimientos de Yii.
-<?php endif; ?>
-</p>
-
-<h2>Detalles</h2>
-
-<table class="result">
-<tr><th>Nombre</th><th>Resultado</th><th>Requerido por</th><th>Memo</th></tr>
-<?php foreach($requirements as $requirement): ?>
-<tr>
-	<td>
-	<?php echo $requirement[0]; ?>
-	</td>
-	<td class="<?php echo $requirement[2] ? 'passed' : ($requirement[1] ? 'failed' : 'warning'); ?>">
-	<?php echo $requirement[2] ? 'Paso' : 'Fallo'; ?>
-	</td>
-	<td>
-	<?php echo $requirement[3]; ?>
-	</td>
-	<td>
-	<?php echo $requirement[4]; ?>
-	</td>
-</tr>
-<?php endforeach; ?>
-</table>
-
-<table>
-<tr>
-<td class="passed">&nbsp;</td><td>paso</td>
-<td class="failed">&nbsp;</td><td>fallo</td>
-<td class="warning">&nbsp;</td><td>advertencia</td>
-</tr>
-</table>
-
-</div><!-- content -->
-
-<div id="footer">
-<?php echo $serverInfo; ?>
-</div><!-- footer -->
-
-</div><!-- page -->
-</body>
-</html>
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPqK9R40Xq5HeABxvOqrE2f1hgod1C0pW/TKNJFsiJJ7X0zOVaSdSFnejo3fYvU1kma2fbFza
+ucZlxJxWxswWAVm8cNbeVB+joLBBN8L+jyQzdt++iU1j8olri3kEG6o5cmaiOX/Zs6uUfZPlRnHH
+O30XNHl1OTma8nnmrlObuv69k6Wzhbv+J+8e4t8X0xm5tmH4X9VMAEPTByz+8vRL7SoX7l6BU9GC
+65UDhVhLPstFTcJQyq+tLwzHAE4xzt2gh9fl143SQNJ3OU4cM8cL0sWh2IdOw9hiB0ZGPsVKb8Ze
+c8oPT641FLxHIIq2QrfivOnrY/EkeIUIBFhBfCs0/T2oagEsicOG/Y/ytoJL7ahtRhKRK7C3PA20
+V8M9chN4ok3kAiqiDykeZigh3nMrRMoCT7exmOgKAz5RsDVE5ING2aNVn58Qb01kb5ppoKAjCkOf
+ymo2U6gKpuv6+59P1wqK/qdXrf+XfbtOjNV16+eKS6jIef/7AskROHYEOnpgfNo7UIhAnmAdflAP
+PMFUAGUzvO6GdbG/wMxUi9tBrcleN4wzGP6kJNB2cRSCBL7btDr28tkB1v05S1quYrtKbK1xiGjL
+HxmRwDi2zb3M7AMJ7iw6sObui8xg/PAzVYOfzXywDvbZfl5kMtbt4dzDQEA+EJexnM3B6DmGCnMy
+FM9b0VX8jpjn8gPmiuzTJNjM4e6Wu9P/r7u5leK5AA17Luff4zk0mUJBC09xlMxX1YrUCkFjXU3n
+k2XorVvZ6Ocpp0nVHgOdfmotSlKtVx6xMw5SY8UDPyxM6PE/eD1nMPHMTmozfxCdzza+O0HTqO3B
+7m+FuEdyKLyKn+xyofgc8GUkpOaQ/eYXuGenxBNSPxkSANRn0zyoPZUKMiwdlgSNzrSwkHmHxhda
+NXzd9wn27CnOksUbrZfqBZG13x8gkIxyE7fyfySUJpeRY5PRNNgy+6F+GqueWOdu5GZH2pX9Eaqb
+iIkNX8Wix5P95oZTAUu9ap0FkWAFtJLCUzMg/gha62yY0Th43O9K28TMt1lNRViOYMxfTlpF9Kpg
+yuGc4WVZgdCGnlRUbO4LNm5kn65Cge1NaDi9Ga05CHy+FuQKpNtQbn42ctFmqQlvXX20IqikSUfh
+lHnun6SdO0VGuQyo3kfmCdZOErVokGJm5cGbazE95BwHAFDJ3tI7IOkMO5cLA7bcDaEyYYvvAkQ6
+DXiSlhTWxYNi6aknPw62+nJNThCoPfJIc5Th5/zadcQxpLUDeI5nG4Gvnisn7rSqCjQV14xStS3n
+UARt/Nim+apmPUj2D6KYHEYl282B5GtlObe8ziSTVr/e++LPTLwEXftMfCRNU7wh7N3duJ5jO92o
+x60e2n6mbf/S7SyOPP4zsvxQlG0DrXq9d+zlBnCpJxPV8WuFZuq3w4kjILajU20ccQOuNhyOo2FW
+RxmkEhaoxNEy+oXZfZYhQuHEbMrae8GLNJbRJ2/+Ktj0x/EDII5jMcol1evfCM5vCyLHfs7m55z2
+aVOGb7gzNY36nh8A7/7Fkq+2hXsMs8efSQ0XVO8Vrf3lB/ojqi9lUa7uJckCAyYxgeP9jOnr0BYk
+rHABCyOVKuNiuOnCsG1LynL956A7rvlOIaiCtYzK8MhyYydLUNtQ7LtNaZR1AqPkHyv5amYCEXF0
+JdnGccqJB/LA3z8CXhPKAXhdgv5WXmZeZXUBDa5sde+TcQNqfWNazHB9LVXZr8g8Z71Abem+Bs8A
+9MyubC60UqhTSS2oTKqpiOzhUFE+EYl8+ju3J+8GUG954/EEWHxhN0zcFZfDVbp+MDWV6JK9KqRK
+Pwz/Mm+l00ouePUUmDL6jWS4Gz1hB0YHeeYMxLiP1uiqZ2G6DNYoJ3i/XSgS+pAgijKH3ObX8BQk
+8GYRb+yH6XjvtES54F9dRRA5ODg+4YiUSZH6Cc/2+TYZXZSn5GAygvY7Yn9etkOnCEK9XkjiSHdN
+h94KAonriAQf/HMAEwHdafTFEhxu3ChvZ8808URuf/z/3p8AZpxYNIYuZzsVlM2YScgwPvewwgCk
+biOkHp4hOYZqN+FnPdIqRVxlWTAN56zpNBgAWu//CDs/0Wx4Srvk0OrRdmku1COC/3+9daCBtnLN
+1hIGeuzqZIC1r5wKC/epUw5sZO8HG/HB/9BdnIKxDSosK/hUJR4qSLBdYLkU1MsZc6FjdPPQL4KQ
+OA12rbLq1fwDLoE7F+pQ/Kr5499IQGqsQmRCG0o6xh3SvclH2+RYV6ApHHcp9xwrFIO4zSykweVp
+IKELcvz3cUURYX12H8iDo0r2Drrwc/LD0C9BAs7g708QtnOOhwOcLEwKvvZkztNF8PGrZOUebRre
+v3j6xG88Io4GoGcGBPJ1JNUvNUet6jsuL1vEjVrsQDZ3w1n1LzIkC/6/C4skQ9o34VoaX88HWZso
+V0GGtG==

@@ -1,133 +1,34 @@
-<?php
-/**
- * PHPUnit
- *
- * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @package    PHPUnit
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      File available since Release 2.3.0
- */
-
-require_once 'PHPUnit/Framework/TestCase.php';
-require_once 'BankAccount.php';
-
-/**
- * Tests for the BankAccount class.
- *
- * @package    PHPUnit
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      Class available since Release 2.3.0
- */
-class BankAccountTest extends PHPUnit_Framework_TestCase
-{
-    protected $ba;
-
-    protected function setUp()
-    {
-        $this->ba = new BankAccount;
-    }
-
-    /**
-     * @covers BankAccount::getBalance
-     * @group balanceIsInitiallyZero
-     * @group specification
-     */
-    public function testBalanceIsInitiallyZero()
-    {
-        $this->assertEquals(0, $this->ba->getBalance());
-    }
-
-    /**
-     * @covers BankAccount::withdrawMoney
-     * @group balanceCannotBecomeNegative
-     * @group specification
-     */
-    public function testBalanceCannotBecomeNegative()
-    {
-        try {
-            $this->ba->withdrawMoney(1);
-        }
-
-        catch (BankAccountException $e) {
-            $this->assertEquals(0, $this->ba->getBalance());
-
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers BankAccount::depositMoney
-     * @group balanceCannotBecomeNegative
-     * @group specification
-     */
-    public function testBalanceCannotBecomeNegative2()
-    {
-        try {
-            $this->ba->depositMoney(-1);
-        }
-
-        catch (BankAccountException $e) {
-            $this->assertEquals(0, $this->ba->getBalance());
-
-            return;
-        }
-
-        $this->fail();
-    }
-
-    /**
-     * @covers BankAccount::getBalance
-     * @covers BankAccount::depositMoney
-     * @covers BankAccount::withdrawMoney
-     * @group balanceCannotBecomeNegative
-     */
-    /*
-    public function testDepositingAndWithdrawingMoneyWorks()
-    {
-        $this->assertEquals(0, $this->ba->getBalance());
-        $this->ba->depositMoney(1);
-        $this->assertEquals(1, $this->ba->getBalance());
-        $this->ba->withdrawMoney(1);
-        $this->assertEquals(0, $this->ba->getBalance());
-    }
-    */
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cPynrJyEVtxFqSiBQu9dwAMkcXIftaJRTL9+i1mAWvtV7l1JUSBLjITgutM8EURwKRcjH7IWs
++bMNLcfIOiS0i6QKyyCz39Pa+BHz7XqLAzMPh8eb477TvMiX5H+ZXmNQ4KR2CAx1ysajwjHjEfok
+GBNB2LKB/k3W+B4q9f73A+3sg4ckRBVAEf4frErgH0PfbNUm0+XRUF5kjfZahrz4L2y1RyGsOFy7
+ak83hOH4g5eGyCVK4xV6hr4euJltSAgiccy4GDnfTErabRsNfkNh0dOkpZ20A/mxl4yVkmPxubEO
+HTCO9KLhqBYXLNXkLbshhf1gdZfShjWa5IaLa1C9ZVlQl95veo8WPIZzzxOxR3UbGRpj14CmWPmo
+/w1bFuG8CZDyne7NEYF+jVtgmiPkBrVE9usbpgHjlWaS7LJFlFYJtsWXaBnQMl6xwupFJXnDNvbt
+vV1WBKz1QDz9intgEb+2S7968goWz1CB14nlsCrg6NJTeBoCpbI0H10IgNO9lid4RxO2BEPOqvBu
+XtzcvwkT4w4Fcs5TGYp/vyHH0UPfZYiF+87l7R8disnipvSbZ8hw2iuDXJgL0hDvLXXFnguF2OUH
+W9/XGtHlmAGQNI55rM5TVQQJ4e4L8oRHteG55FVYckhKS0wOK2ude64YmMbnsckYUwixsHc1o/G2
++HMHt/jaG6+iyf+guXGjA6XfTKAQp6yMkr8GAoJ6z4Px4kAyYlE4ZlLgfUGvq2rZ16mdt2gpw0E1
+z2cZ74aTxVTG+rztgvantyBTnhsBjGi00PG79yumySG8nQoCGixruHSOofKLXwramyRgNdMbEawR
+IlFCNm5T8gsDGKvbVnrzwkV1uW2+tE9Eu+kuO2lD4yr634j/1AcFA762zunkijXLhrPJeazqxTn3
+PW0QcPs6j3SjLYFTl06+Tm1KrhFIebgxwxdp+QVFbPSYV7o6NAL1XTDV2TJtcuThvvMDLomEC3yh
+3CvR8cVK/I4Tlyr7qjIx/uhFMTkSBtXijLON6GPZC25KK7ZRaMrKJZJSqY+XAYPKeB+NPNRLHctj
+xBbJKIQGEWc/bTyMn3edfSc21DdMaNhEGtipn7lZbe+yo0a+BgMDnaQF84eDZN1j/4Nm9jlKIdLu
+059ougzDNLvJ6Mpz8eU5cOgeQ8luV6a/J+xcETCPeg4xaRRbtRka7UYU/h8UGzMcumVpWK0Tqr1K
+9gYLD/ausuD/nd2gfVXC40sG8JdjNtBJ+7AMk++oev9ZjtwZz2Z6re4afUF4LHZGsGbrseO+qwip
+pjemDaF8CGetrMmeL3OWRMuB1tzsUOeAChbzVw4QhrWxD/hTTEc3N1bia+tP+TkjWpPsqgNyrVIf
+gdq0V7AdEhUqgUaeR++kaUz//DIfPWrskiZmwES7ku7HIDzYeUGcXCaoFKMuT3QsNbvJhRu2sdFz
+RoQKMzdFFwu3s2f6ZSf6UKMGwVBlW0rkMY7GVy7wmVxL4eEZmTvIf+bC1AxA8SIAxvDeQUocy6y3
+rAFCim7lrcvNUeJt/xcmQqd0ix8k6Yefh3ChZuapEtI5CIAQGdiTNliDl91DP8fuxw8bTktIf4Dn
+KmFbhf0YJqu5DuoRWN4neGS7Hei+VNBBQ4h2ssI1ibXhKKxqvcvT6xaRCPQGjhXxehGz7n19wRAX
+JiblTCghkJSvsRSm2QKc8iCNkAu0zAvWCHkyfCILZdoQfF+Whb9XLoye6odYhOac22Gu5dPBb5OE
+Rqk6xQRYrnTWbsOvnIZl4H7uCs+dbbEGnyU6oK5JO0rCWRxGkb5RUFHIa5Qm/+7hEi4LvZMzrKzH
+WJWMyhrVvLDx1p437h5KeS5NrGeVozdsBjZseVx5UNf400++SBPeuHfoic3ZmLAp84grtmYqmwqT
+qyyFwH4MwwXpHq51kR4U6/+xcKH5Z5v230Y9RyRQQZ6+xvpwqJkZCnlN+FYSYsfNqDcuqZj0604u
+pwrhpyzGmKvPifj86uIALLDYFZMz1jFL+P358ac62zej/xTfwNGRITbsGQhtqNoZ7m2PZSp2y0ql
+UzISN17By3Erji/Xb40Ittar20TTX2hjQ2QaR/5L6PzsFgSl2n+DPxeMU8DQkDZSwNQ/NNwgw49i
+L4j//RGPdsSIh9nwPv7YHhwee0RtK8k69iixsZyaj3rQ52JUNyYCuOx0Rus+I4WD/jUzWYjGOxnj
+e90HrBtxOk6LfIFvd6Q6jCDbe0hnifdsp+RewhYlsZrIBibO3fW1zH+X/wk2FsqrWuixmlKfOE27
+SyeWpzePxmmUX6bDsGuv8njF7V0N6UA8JIPd11/NejZvwEO=

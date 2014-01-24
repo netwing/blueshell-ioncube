@@ -1,124 +1,102 @@
-<?php
-
-namespace Guzzle\Tests\Service\Command;
-
-use Guzzle\Service\Command\Factory\CompositeFactory;
-
-/**
- * @covers Guzzle\Service\Command\Factory\CompositeFactory
- */
-class CompositeFactoryTest extends \Guzzle\Tests\GuzzleTestCase
-{
-    private function getFactory($class = 'Guzzle\\Service\\Command\\Factory\\MapFactory')
-    {
-        return $mock = $this->getMockBuilder($class)
-            ->disableOriginalConstructor()
-            ->getMock();
-    }
-
-    public function testIsIterable()
-    {
-        $factory = new CompositeFactory(array($this->getFactory(), $this->getFactory()));
-        $this->assertEquals(2, count($factory));
-        $this->assertEquals(2, count(iterator_to_array($factory->getIterator())));
-    }
-
-    public function testFindsFactories()
-    {
-        $f1 = $this->getFactory();
-        $f2 = $this->getFactory('Guzzle\\Service\\Command\\Factory\\CompositeFactory');
-        $factory = new CompositeFactory(array($f1, $f2));
-        $this->assertNull($factory->find('foo'));
-        $this->assertNull($factory->find($this->getFactory()));
-        $this->assertSame($f1, $factory->find('Guzzle\\Service\\Command\\Factory\\MapFactory'));
-        $this->assertSame($f2, $factory->find('Guzzle\\Service\\Command\\Factory\\CompositeFactory'));
-        $this->assertSame($f1, $factory->find($f1));
-        $this->assertSame($f2, $factory->find($f2));
-
-        $this->assertFalse($factory->has('foo'));
-        $this->assertTrue($factory->has('Guzzle\\Service\\Command\\Factory\\MapFactory'));
-        $this->assertTrue($factory->has('Guzzle\\Service\\Command\\Factory\\CompositeFactory'));
-    }
-
-    public function testCreatesCommands()
-    {
-        $factory = new CompositeFactory();
-        $this->assertNull($factory->factory('foo'));
-
-        $f1 = $this->getFactory();
-        $mockCommand1 = $this->getMockForAbstractClass('Guzzle\\Service\\Command\\AbstractCommand');
-
-        $f1->expects($this->once())
-           ->method('factory')
-           ->with($this->equalTo('foo'))
-           ->will($this->returnValue($mockCommand1));
-
-        $factory = new CompositeFactory(array($f1));
-        $this->assertSame($mockCommand1, $factory->factory('foo'));
-    }
-
-    public function testAllowsRemovalOfFactories()
-    {
-        $f1 = $this->getFactory();
-        $f2 = $this->getFactory();
-        $f3 = $this->getFactory('Guzzle\\Service\\Command\\Factory\\CompositeFactory');
-        $factories = array($f1, $f2, $f3);
-        $factory = new CompositeFactory($factories);
-
-        $factory->remove('foo');
-        $this->assertEquals($factories, $factory->getIterator()->getArrayCopy());
-
-        $factory->remove($f1);
-        $this->assertEquals(array($f2, $f3), $factory->getIterator()->getArrayCopy());
-
-        $factory->remove('Guzzle\\Service\\Command\\Factory\\MapFactory');
-        $this->assertEquals(array($f3), $factory->getIterator()->getArrayCopy());
-
-        $factory->remove('Guzzle\\Service\\Command\\Factory\\CompositeFactory');
-        $this->assertEquals(array(), $factory->getIterator()->getArrayCopy());
-
-        $factory->remove('foo');
-        $this->assertEquals(array(), $factory->getIterator()->getArrayCopy());
-    }
-
-    public function testAddsFactoriesBeforeAndAtEnd()
-    {
-        $f1 = $this->getFactory();
-        $f2 = $this->getFactory();
-        $f3 = $this->getFactory('Guzzle\\Service\\Command\\Factory\\CompositeFactory');
-        $f4 = $this->getFactory();
-
-        $factory = new CompositeFactory();
-
-        $factory->add($f1);
-        $this->assertEquals(array($f1), $factory->getIterator()->getArrayCopy());
-
-        $factory->add($f2);
-        $this->assertEquals(array($f1, $f2), $factory->getIterator()->getArrayCopy());
-
-        $factory->add($f3, $f2);
-        $this->assertEquals(array($f1, $f3, $f2), $factory->getIterator()->getArrayCopy());
-
-        $factory->add($f4, 'Guzzle\\Service\\Command\\Factory\\CompositeFactory');
-        $this->assertEquals(array($f1, $f4, $f3, $f2), $factory->getIterator()->getArrayCopy());
-    }
-
-    public function testProvidesDefaultChainForClients()
-    {
-        $client = $this->getMock('Guzzle\\Service\\Client');
-        $chain = CompositeFactory::getDefaultChain($client);
-        $a = $chain->getIterator()->getArrayCopy();
-        $this->assertEquals(1, count($a));
-        $this->assertInstanceOf('Guzzle\\Service\\Command\\Factory\\ConcreteClassFactory', $a[0]);
-
-        $description = $this->getMock('Guzzle\\Service\\Description\\ServiceDescription');
-        $client->expects($this->once())
-               ->method('getDescription')
-               ->will($this->returnValue($description));
-        $chain = CompositeFactory::getDefaultChain($client);
-        $a = $chain->getIterator()->getArrayCopy();
-        $this->assertEquals(2, count($a));
-        $this->assertInstanceOf('Guzzle\\Service\\Command\\Factory\\ServiceDescriptionFactory', $a[0]);
-        $this->assertInstanceOf('Guzzle\\Service\\Command\\Factory\\ConcreteClassFactory', $a[1]);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+84LwTOUcstkUEG==

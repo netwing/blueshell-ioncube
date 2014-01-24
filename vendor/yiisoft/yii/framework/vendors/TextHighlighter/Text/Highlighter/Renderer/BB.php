@@ -1,238 +1,82 @@
-<?php
-/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
-/**
- * BB code renderer.
- *
- * This BB renderer produces BB code, ready to be pasted in bulletin boards and
- * other applications that accept BB code. Based on the HTML renderer by Andrey Demenev.
- *
- * LICENSE: This source file is subject to version 3.0 of the PHP license
- * that is available through the world-wide-web at the following URI:
- * http://www.php.net/license/3_0.txt.  If you did not receive a copy of
- * the PHP License and are unable to obtain it through the web, please
- * send a note to license@php.net so we can mail you a copy immediately.
- *
- * @category   Text
- * @package    Text_Highlighter
- * @author     Stoyan Stefanov <ssttoo@gmail.com>
- * @copyright  2005 Stoyan Stefanov
- * @license    http://www.php.net/license/3_0.txt  PHP License
- * @version    CVS: $Id: BB.php,v 1.1 2007/06/03 02:37:08 ssttoo Exp $
- * @link       http://pear.php.net/package/Text_Highlighter
- */
-
-/**
- * @ignore
- */
-
-require_once dirname(__FILE__).'/../Renderer.php';
-
-/**
- * BB code renderer, based on Andrey Demenev's HTML renderer.
- *
- * Elements of $options argument of constructor (each being optional):
- *
- * - 'numbers' - Line numbering TRUE or FALSE
- * - 'tabsize' - Tab size, default is 4
- * - 'bb_tags' - An array containing three BB tags, see below
- * - 'tag_brackets' - An array that conains opening and closing tags, [ and ]
- * - 'colors' - An array with all the colors to be used for highlighting
- *
- * The default BB tags are:
- * - 'color' => 'color'
- * - 'list'  => 'list'
- * - 'list_item' => '*'
- *
- * The default colors for the highlighter are:
- * - 'default'    => 'Black',
- * - 'code'       => 'Gray',
- * - 'brackets'   => 'Olive',
- * - 'comment'    => 'Orange',
- * - 'mlcomment'  => 'Orange',
- * - 'quotes'     => 'Darkred',
- * - 'string'     => 'Red',
- * - 'identifier' => 'Blue',
- * - 'builtin'    => 'Teal',
- * - 'reserved'   => 'Green',
- * - 'inlinedoc'  => 'Blue',
- * - 'var'        => 'Darkblue',
- * - 'url'        => 'Blue',
- * - 'special'    => 'Navy',
- * - 'number'     => 'Maroon',
- * - 'inlinetags' => 'Blue',
- *
- *
- * @author     Stoyan Stefanov <ssttoo@gmail.com>
- * @category   Text
- * @package    Text_Highlighter
- * @copyright  20045 Stoyan Stefanov
- * @license    http://www.php.net/license/3_0.txt  PHP License
- * @version    Release: 0.5.0
- * @link       http://pear.php.net/package/Text_Highlighter
- */
-
-class Text_Highlighter_Renderer_BB extends Text_Highlighter_Renderer_Array
-{
-
-    /**#@+
-     * @access private
-     */
-
-    /**
-     * Line numbering - will use the specified BB tag for listings
-     *
-     * @var boolean
-     */
-    var $_numbers = false;
-
-    /**
-     * BB tags to be used
-     *
-     * @var array
-     */
-    var $_bb_tags = array (
-        'color'     => 'color',
-        'list'      => 'list',
-        'list_item' => '*',
-        'code'      => 'code',
-    );
-
-    /**
-     * BB brackets - [ and ]
-     *
-     * @var array
-     */
-    var $_tag_brackets = array ('start' => '[', 'end' => ']');
-
-    /**
-     * Colors map
-     *
-     * @var boolean
-     */
-    var $_colors = array(
-        'default'    => 'Black',
-        'code'       => 'Gray',
-        'brackets'   => 'Olive',
-        'comment'    => 'Orange',
-        'mlcomment'  => 'Orange',
-        'quotes'     => 'Darkred',
-        'string'     => 'Red',
-        'identifier' => 'Blue',
-        'builtin'    => 'Teal',
-        'reserved'   => 'Green',
-        'inlinedoc'  => 'Blue',
-        'var'        => 'Darkblue',
-        'url'        => 'Blue',
-        'special'    => 'Navy',
-        'number'     => 'Maroon',
-        'inlinetags' => 'Blue',
-    );
-
-    /**#@-*/
-
-    /**
-     * Resets renderer state
-     *
-     * @access protected
-     *
-     *
-     * Descendents of Text_Highlighter call this method from the constructor,
-     * passing $options they get as parameter.
-     */
-    function reset()
-    {
-        parent::reset();
-        if (isset($this->_options['numbers'])) {
-            $this->_numbers = $this->_options['numbers'];
-        }
-        if (isset($this->_options['bb_tags'])) {
-            $this->_bb_tags = array_merge($this->_bb_tags, $this->_options['bb_tags']);
-        }
-        if (isset($this->_options['tag_brackets'])) {
-            $this->_tag_brackets = array_merge($this->_tag_brackets, $this->_options['tag_brackets']);
-        }
-        if (isset($this->_options['colors'])) {
-            $this->_colors = array_merge($this->_colors, $this->_options['colors']);
-        }
-    }
-
-
-    /**
-     * Signals that no more tokens are available
-     *
-     * @abstract
-     * @access public
-     *
-     */
-    function finalize()
-    {
-
-        // get parent's output
-        parent::finalize();
-        $output = parent::getOutput();
-
-        $bb_output = '';
-
-        $color_start = $this->_tag_brackets['start'] . $this->_bb_tags['color'] . '=%s'  . $this->_tag_brackets['end'];
-        $color_end   = $this->_tag_brackets['start'] . '/' . $this->_bb_tags['color'] . $this->_tag_brackets['end'];
-
-        // loop through each class=>content pair
-        foreach ($output AS $token) {
-
-            if ($this->_enumerated) {
-                $class = $token[0];
-                $content = $token[1];
-            } else {
-                $key = key($token);
-                $class = $key;
-                $content = $token[$key];
-            }
-
-            $iswhitespace = ctype_space($content);
-            if (!$iswhitespace && !empty($this->_colors[$class])) {
-                $bb_output .= sprintf($color_start, $this->_colors[$class]);
-                $bb_output .= $content;
-                $bb_output .= $color_end;
-            } else {
-                $bb_output .= $content;
-            }
-        }
-
-        if ($this->_numbers) {
-
-            $item_tag = $this->_tag_brackets['start'] .
-                        $this->_bb_tags['list_item'] .
-                        $this->_tag_brackets['end'];
-            $this->_output = $item_tag . str_replace("\n", "\n". $item_tag .' ', $bb_output);
-            $this->_output = $this->_tag_brackets['start'] .
-                             $this->_bb_tags['list'] .
-                             $this->_tag_brackets['end'] .
-                             $this->_output .
-                             $this->_tag_brackets['start'] .
-                             '/'.
-                             $this->_bb_tags['list'] .
-                             $this->_tag_brackets['end']
-                             ;
-        } else {
-            $this->_output = $this->_tag_brackets['start'] .
-                             $this->_bb_tags['code'] .
-                             $this->_tag_brackets['end'] .
-                             $bb_output .
-                             $this->_tag_brackets['start'] .
-                             '/' .
-                             $this->_bb_tags['code'] .
-                             $this->_tag_brackets['end'];
-        }
-    }
-
-}
-
-/*
- * Local variables:
- * tab-width: 4
- * c-basic-offset: 4
- * c-hanging-comment-ender-p: nil
- * End:
- */
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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

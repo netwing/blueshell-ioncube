@@ -1,70 +1,41 @@
-<?php
-
-namespace Guzzle\Plugin\Cookie;
-
-use Guzzle\Common\Event;
-use Guzzle\Plugin\Cookie\CookieJar\ArrayCookieJar;
-use Guzzle\Plugin\Cookie\CookieJar\CookieJarInterface;
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-
-/**
- * Adds, extracts, and persists cookies between HTTP requests
- */
-class CookiePlugin implements EventSubscriberInterface
-{
-    /** @var CookieJarInterface Cookie cookieJar used to hold cookies */
-    protected $cookieJar;
-
-    /**
-     * @param CookieJarInterface $cookieJar Cookie jar used to hold cookies. Creates an ArrayCookieJar by default.
-     */
-    public function __construct(CookieJarInterface $cookieJar = null)
-    {
-        $this->cookieJar = $cookieJar ?: new ArrayCookieJar();
-    }
-
-    public static function getSubscribedEvents()
-    {
-        return array(
-            'request.before_send' => array('onRequestBeforeSend', 125),
-            'request.sent'        => array('onRequestSent', 125)
-        );
-    }
-
-    /**
-     * Get the cookie cookieJar
-     *
-     * @return CookieJarInterface
-     */
-    public function getCookieJar()
-    {
-        return $this->cookieJar;
-    }
-
-    /**
-     * Add cookies before a request is sent
-     *
-     * @param Event $event
-     */
-    public function onRequestBeforeSend(Event $event)
-    {
-        $request = $event['request'];
-        if (!$request->getParams()->get('cookies.disable')) {
-            $request->removeHeader('Cookie');
-            // Find cookies that match this request
-            foreach ($this->cookieJar->getMatchingCookies($request) as $cookie) {
-                $request->addCookie($cookie->getName(), $cookie->getValue());
-            }
-        }
-    }
-
-    /**
-     * Extract cookies from a sent request
-     *
-     * @param Event $event
-     */
-    public function onRequestSent(Event $event)
-    {
-        $this->cookieJar->addCookiesFromResponse($event['response'], $event['request']);
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+i+MwWvmbpW==

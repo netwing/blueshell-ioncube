@@ -1,286 +1,125 @@
-<?php
-
-/*
- * This file is part of SwiftMailer.
- * (c) 2004-2009 Chris Corbyn
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-/**
- * Handles Quoted Printable (QP) Encoding in Swift Mailer.
- *
- * Possibly the most accurate RFC 2045 QP implementation found in PHP.
- *
- * @package    Swift
- * @subpackage Encoder
- * @author     Chris Corbyn
- */
-class Swift_Encoder_QpEncoder implements Swift_Encoder
-{
-    /**
-     * The CharacterStream used for reading characters (as opposed to bytes).
-     *
-     * @var Swift_CharacterStream
-     */
-    protected $_charStream;
-
-    /**
-     * A filter used if input should be canonicalized.
-     *
-     * @var Swift_StreamFilter
-     */
-    protected $_filter;
-
-    /**
-     * Pre-computed QP for HUGE optimization.
-     *
-     * @var string[]
-     */
-    protected static $_qpMap = array(
-        0   => '=00', 1   => '=01', 2   => '=02', 3   => '=03', 4   => '=04',
-        5   => '=05', 6   => '=06', 7   => '=07', 8   => '=08', 9   => '=09',
-        10  => '=0A', 11  => '=0B', 12  => '=0C', 13  => '=0D', 14  => '=0E',
-        15  => '=0F', 16  => '=10', 17  => '=11', 18  => '=12', 19  => '=13',
-        20  => '=14', 21  => '=15', 22  => '=16', 23  => '=17', 24  => '=18',
-        25  => '=19', 26  => '=1A', 27  => '=1B', 28  => '=1C', 29  => '=1D',
-        30  => '=1E', 31  => '=1F', 32  => '=20', 33  => '=21', 34  => '=22',
-        35  => '=23', 36  => '=24', 37  => '=25', 38  => '=26', 39  => '=27',
-        40  => '=28', 41  => '=29', 42  => '=2A', 43  => '=2B', 44  => '=2C',
-        45  => '=2D', 46  => '=2E', 47  => '=2F', 48  => '=30', 49  => '=31',
-        50  => '=32', 51  => '=33', 52  => '=34', 53  => '=35', 54  => '=36',
-        55  => '=37', 56  => '=38', 57  => '=39', 58  => '=3A', 59  => '=3B',
-        60  => '=3C', 61  => '=3D', 62  => '=3E', 63  => '=3F', 64  => '=40',
-        65  => '=41', 66  => '=42', 67  => '=43', 68  => '=44', 69  => '=45',
-        70  => '=46', 71  => '=47', 72  => '=48', 73  => '=49', 74  => '=4A',
-        75  => '=4B', 76  => '=4C', 77  => '=4D', 78  => '=4E', 79  => '=4F',
-        80  => '=50', 81  => '=51', 82  => '=52', 83  => '=53', 84  => '=54',
-        85  => '=55', 86  => '=56', 87  => '=57', 88  => '=58', 89  => '=59',
-        90  => '=5A', 91  => '=5B', 92  => '=5C', 93  => '=5D', 94  => '=5E',
-        95  => '=5F', 96  => '=60', 97  => '=61', 98  => '=62', 99  => '=63',
-        100 => '=64', 101 => '=65', 102 => '=66', 103 => '=67', 104 => '=68',
-        105 => '=69', 106 => '=6A', 107 => '=6B', 108 => '=6C', 109 => '=6D',
-        110 => '=6E', 111 => '=6F', 112 => '=70', 113 => '=71', 114 => '=72',
-        115 => '=73', 116 => '=74', 117 => '=75', 118 => '=76', 119 => '=77',
-        120 => '=78', 121 => '=79', 122 => '=7A', 123 => '=7B', 124 => '=7C',
-        125 => '=7D', 126 => '=7E', 127 => '=7F', 128 => '=80', 129 => '=81',
-        130 => '=82', 131 => '=83', 132 => '=84', 133 => '=85', 134 => '=86',
-        135 => '=87', 136 => '=88', 137 => '=89', 138 => '=8A', 139 => '=8B',
-        140 => '=8C', 141 => '=8D', 142 => '=8E', 143 => '=8F', 144 => '=90',
-        145 => '=91', 146 => '=92', 147 => '=93', 148 => '=94', 149 => '=95',
-        150 => '=96', 151 => '=97', 152 => '=98', 153 => '=99', 154 => '=9A',
-        155 => '=9B', 156 => '=9C', 157 => '=9D', 158 => '=9E', 159 => '=9F',
-        160 => '=A0', 161 => '=A1', 162 => '=A2', 163 => '=A3', 164 => '=A4',
-        165 => '=A5', 166 => '=A6', 167 => '=A7', 168 => '=A8', 169 => '=A9',
-        170 => '=AA', 171 => '=AB', 172 => '=AC', 173 => '=AD', 174 => '=AE',
-        175 => '=AF', 176 => '=B0', 177 => '=B1', 178 => '=B2', 179 => '=B3',
-        180 => '=B4', 181 => '=B5', 182 => '=B6', 183 => '=B7', 184 => '=B8',
-        185 => '=B9', 186 => '=BA', 187 => '=BB', 188 => '=BC', 189 => '=BD',
-        190 => '=BE', 191 => '=BF', 192 => '=C0', 193 => '=C1', 194 => '=C2',
-        195 => '=C3', 196 => '=C4', 197 => '=C5', 198 => '=C6', 199 => '=C7',
-        200 => '=C8', 201 => '=C9', 202 => '=CA', 203 => '=CB', 204 => '=CC',
-        205 => '=CD', 206 => '=CE', 207 => '=CF', 208 => '=D0', 209 => '=D1',
-        210 => '=D2', 211 => '=D3', 212 => '=D4', 213 => '=D5', 214 => '=D6',
-        215 => '=D7', 216 => '=D8', 217 => '=D9', 218 => '=DA', 219 => '=DB',
-        220 => '=DC', 221 => '=DD', 222 => '=DE', 223 => '=DF', 224 => '=E0',
-        225 => '=E1', 226 => '=E2', 227 => '=E3', 228 => '=E4', 229 => '=E5',
-        230 => '=E6', 231 => '=E7', 232 => '=E8', 233 => '=E9', 234 => '=EA',
-        235 => '=EB', 236 => '=EC', 237 => '=ED', 238 => '=EE', 239 => '=EF',
-        240 => '=F0', 241 => '=F1', 242 => '=F2', 243 => '=F3', 244 => '=F4',
-        245 => '=F5', 246 => '=F6', 247 => '=F7', 248 => '=F8', 249 => '=F9',
-        250 => '=FA', 251 => '=FB', 252 => '=FC', 253 => '=FD', 254 => '=FE',
-        255 => '=FF'
-        );
-
-    protected static $_safeMapShare = array();
-
-    /**
-     * A map of non-encoded ascii characters.
-     *
-     * @var string[]
-     */
-    protected $_safeMap = array();
-
-    /**
-     * Creates a new QpEncoder for the given CharacterStream.
-     *
-     * @param Swift_CharacterStream $charStream to use for reading characters
-     * @param Swift_StreamFilter    $filter     if input should be canonicalized
-     */
-    public function __construct(Swift_CharacterStream $charStream, Swift_StreamFilter $filter = null)
-    {
-        $this->_charStream = $charStream;
-        if (!isset(self::$_safeMapShare[$this->getSafeMapShareId()])) {
-            $this->initSafeMap();
-            self::$_safeMapShare[$this->getSafeMapShareId()] = $this->_safeMap;
-        } else {
-            $this->_safeMap = self::$_safeMapShare[$this->getSafeMapShareId()];
-        }
-        $this->_filter = $filter;
-    }
-
-    public function __sleep()
-    {
-        return array('_charStream', '_filter');
-    }
-
-    public function __wakeup()
-    {
-        if (!isset(self::$_safeMapShare[$this->getSafeMapShareId()])) {
-            $this->initSafeMap();
-            self::$_safeMapShare[$this->getSafeMapShareId()] = $this->_safeMap;
-        } else {
-            $this->_safeMap = self::$_safeMapShare[$this->getSafeMapShareId()];
-        }
-    }
-
-    protected function getSafeMapShareId()
-    {
-        return get_class($this);
-    }
-
-    protected function initSafeMap()
-    {
-        foreach (array_merge(
-            array(0x09, 0x20), range(0x21, 0x3C), range(0x3E, 0x7E)) as $byte)
-        {
-            $this->_safeMap[$byte] = chr($byte);
-        }
-    }
-
-    /**
-     * Takes an unencoded string and produces a QP encoded string from it.
-     *
-     * QP encoded strings have a maximum line length of 76 characters.
-     * If the first line needs to be shorter, indicate the difference with
-     * $firstLineOffset.
-     *
-     * @param string  $string to encode
-     * @param integer $firstLineOffset, optional
-     * @param integer $maxLineLength,   optional 0 indicates the default of 76 chars
-     *
-     * @return string
-     */
-    public function encodeString($string, $firstLineOffset = 0, $maxLineLength = 0)
-    {
-        if ($maxLineLength > 76 || $maxLineLength <= 0) {
-            $maxLineLength = 76;
-        }
-
-        $thisLineLength = $maxLineLength - $firstLineOffset;
-
-        $lines = array();
-        $lNo = 0;
-        $lines[$lNo] = '';
-        $currentLine =& $lines[$lNo++];
-        $size=$lineLen=0;
-
-        $this->_charStream->flushContents();
-        $this->_charStream->importString($string);
-
-        // Fetching more than 4 chars at one is slower, as is fetching fewer bytes
-        // Conveniently 4 chars is the UTF-8 safe number since UTF-8 has up to 6
-        // bytes per char and (6 * 4 * 3 = 72 chars per line) * =NN is 3 bytes
-        while (false !== $bytes = $this->_nextSequence()) {
-            // If we're filtering the input
-            if (isset($this->_filter)) {
-                // If we can't filter because we need more bytes
-                while ($this->_filter->shouldBuffer($bytes)) {
-                    // Then collect bytes into the buffer
-                    if (false === $moreBytes = $this->_nextSequence(1)) {
-                        break;
-                    }
-
-                    foreach ($moreBytes as $b) {
-                        $bytes[] = $b;
-                    }
-                }
-                // And filter them
-                $bytes = $this->_filter->filter($bytes);
-            }
-
-            $enc = $this->_encodeByteSequence($bytes, $size);
-            if ($currentLine && $lineLen+$size >= $thisLineLength) {
-                $lines[$lNo] = '';
-                $currentLine =& $lines[$lNo++];
-                $thisLineLength = $maxLineLength;
-                $lineLen=0;
-            }
-            $lineLen+=$size;
-            $currentLine .= $enc;
-        }
-
-        return $this->_standardize(implode("=\r\n", $lines));
-    }
-
-    /**
-     * Updates the charset used.
-     *
-     * @param string $charset
-     */
-    public function charsetChanged($charset)
-    {
-        $this->_charStream->setCharacterSet($charset);
-    }
-
-    // -- Protected methods
-
-    /**
-     * Encode the given byte array into a verbatim QP form.
-     *
-     * @param integer[] $bytes
-     * @param integer   $size
-     *
-     * @return string
-     */
-    protected function _encodeByteSequence(array $bytes, &$size)
-    {
-        $ret = '';
-        $size=0;
-        foreach ($bytes as $b) {
-            if (isset($this->_safeMap[$b])) {
-                $ret .= $this->_safeMap[$b];
-                ++$size;
-            } else {
-                $ret .= self::$_qpMap[$b];
-                $size+=3;
-            }
-        }
-
-        return $ret;
-    }
-
-    /**
-     * Get the next sequence of bytes to read from the char stream.
-     *
-     * @param integer $size number of bytes to read
-     *
-     * @return integer[]
-     */
-    protected function _nextSequence($size = 4)
-    {
-        return $this->_charStream->readBytes($size);
-    }
-
-    /**
-     * Make sure CRLF is correct and HT/SPACE are in valid places.
-     *
-     * @param string $string
-     *
-     * @return string
-     */
-    protected function _standardize($string)
-    {
-        $string = str_replace(array("\t=0D=0A", " =0D=0A", "=0D=0A"),
-            array("=09\r\n", "=20\r\n", "\r\n"), $string
-            );
-        switch ($end = ord(substr($string, -1))) {
-            case 0x09:
-            case 0x20:
-                $string = substr_replace($string, self::$_qpMap[$end], -1);
-        }
-
-        return $string;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

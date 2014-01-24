@@ -1,453 +1,168 @@
-<?php
-/**
- * General API for generating and formatting diffs - the differences between
- * two sequences of strings.
- *
- * The original PHP version of this code was written by Geoffrey T. Dairiki
- * <dairiki@dairiki.org>, and is used/adapted with his permission.
- *
- * $Horde: framework/Text_Diff/Diff.php,v 1.11.2.11 2008/02/24 10:57:46 jan Exp $
- *
- * Copyright 2004 Geoffrey T. Dairiki <dairiki@dairiki.org>
- * Copyright 2004-2008 The Horde Project (http://www.horde.org/)
- *
- * See the enclosed file COPYING for license information (LGPL). If you did
- * not receive this file, see http://opensource.org/licenses/lgpl-license.php.
- *
- * @package Text_Diff
- * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
- */
-class Text_Diff {
-
-    /**
-     * Array of changes.
-     *
-     * @var array
-     */
-    var $_edits;
-
-    /**
-     * Computes diffs between sequences of strings.
-     *
-     * @param string $engine     Name of the diffing engine to use.  'auto'
-     *                           will automatically select the best.
-     * @param array $params      Parameters to pass to the diffing engine.
-     *                           Normally an array of two arrays, each
-     *                           containing the lines from a file.
-     */
-    function Text_Diff($engine, $params)
-    {
-        // Backward compatibility workaround.
-        if (!is_string($engine)) {
-            $params = array($engine, $params);
-            $engine = 'auto';
-        }
-
-        if ($engine == 'auto') {
-            $engine = extension_loaded('xdiff') ? 'xdiff' : 'native';
-        } else {
-            $engine = basename($engine);
-        }
-
-        require_once 'Text/Diff/Engine/' . $engine . '.php';
-        $class = 'Text_Diff_Engine_' . $engine;
-        $diff_engine = new $class();
-
-        $this->_edits = call_user_func_array(array($diff_engine, 'diff'), $params);
-    }
-
-    /**
-     * Returns the array of differences.
-     */
-    function getDiff()
-    {
-        return $this->_edits;
-    }
-
-    /**
-     * returns the number of new (added) lines in a given diff.
-     *
-     * @since Text_Diff 1.1.0
-     * @since Horde 3.2
-     *
-     * @return integer The number of new lines
-     */
-    function countAddedLines()
-    {
-        $count = 0;
-        foreach ($this->_edits as $edit) {
-            if (is_a($edit, 'Text_Diff_Op_add') ||
-                is_a($edit, 'Text_Diff_Op_change')) {
-                $count += $edit->nfinal();
-            }
-        }
-        return $count;
-    }
-
-    /**
-     * Returns the number of deleted (removed) lines in a given diff.
-     *
-     * @since Text_Diff 1.1.0
-     * @since Horde 3.2
-     *
-     * @return integer The number of deleted lines
-     */
-    function countDeletedLines()
-    {
-        $count = 0;
-        foreach ($this->_edits as $edit) {
-            if (is_a($edit, 'Text_Diff_Op_delete') ||
-                is_a($edit, 'Text_Diff_Op_change')) {
-                $count += $edit->norig();
-            }
-        }
-        return $count;
-    }
-
-    /**
-     * Computes a reversed diff.
-     *
-     * Example:
-     * <code>
-     * $diff = new Text_Diff($lines1, $lines2);
-     * $rev = $diff->reverse();
-     * </code>
-     *
-     * @return Text_Diff  A Diff object representing the inverse of the
-     *                    original diff.  Note that we purposely don't return a
-     *                    reference here, since this essentially is a clone()
-     *                    method.
-     */
-    function reverse()
-    {
-        if (version_compare(zend_version(), '2', '>')) {
-            $rev = clone($this);
-        } else {
-            $rev = $this;
-        }
-        $rev->_edits = array();
-        foreach ($this->_edits as $edit) {
-            $rev->_edits[] = $edit->reverse();
-        }
-        return $rev;
-    }
-
-    /**
-     * Checks for an empty diff.
-     *
-     * @return boolean  True if two sequences were identical.
-     */
-    function isEmpty()
-    {
-        foreach ($this->_edits as $edit) {
-            if (!is_a($edit, 'Text_Diff_Op_copy')) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    /**
-     * Computes the length of the Longest Common Subsequence (LCS).
-     *
-     * This is mostly for diagnostic purposes.
-     *
-     * @return integer  The length of the LCS.
-     */
-    function lcs()
-    {
-        $lcs = 0;
-        foreach ($this->_edits as $edit) {
-            if (is_a($edit, 'Text_Diff_Op_copy')) {
-                $lcs += count($edit->orig);
-            }
-        }
-        return $lcs;
-    }
-
-    /**
-     * Gets the original set of lines.
-     *
-     * This reconstructs the $from_lines parameter passed to the constructor.
-     *
-     * @return array  The original sequence of strings.
-     */
-    function getOriginal()
-    {
-        $lines = array();
-        foreach ($this->_edits as $edit) {
-            if ($edit->orig) {
-                array_splice($lines, count($lines), 0, $edit->orig);
-            }
-        }
-        return $lines;
-    }
-
-    /**
-     * Gets the final set of lines.
-     *
-     * This reconstructs the $to_lines parameter passed to the constructor.
-     *
-     * @return array  The sequence of strings.
-     */
-    function getFinal()
-    {
-        $lines = array();
-        foreach ($this->_edits as $edit) {
-            if ($edit->final) {
-                array_splice($lines, count($lines), 0, $edit->final);
-            }
-        }
-        return $lines;
-    }
-
-    /**
-     * Removes trailing newlines from a line of text. This is meant to be used
-     * with array_walk().
-     *
-     * @param string $line  The line to trim.
-     * @param integer $key  The index of the line in the array. Not used.
-     */
-    static function trimNewlines(&$line, $key)
-    {
-        $line = str_replace(array("\n", "\r"), '', $line);
-    }
-
-    /**
-     * Determines the location of the system temporary directory.
-     *
-     * @static
-     *
-     * @access protected
-     *
-     * @return string  A directory name which can be used for temp files.
-     *                 Returns false if one could not be found.
-     */
-    function _getTempDir()
-    {
-        $tmp_locations = array('/tmp', '/var/tmp', 'c:\WUTemp', 'c:\temp',
-                               'c:\windows\temp', 'c:\winnt\temp');
-
-        /* Try PHP's upload_tmp_dir directive. */
-        $tmp = ini_get('upload_tmp_dir');
-
-        /* Otherwise, try to determine the TMPDIR environment variable. */
-        if (!strlen($tmp)) {
-            $tmp = getenv('TMPDIR');
-        }
-
-        /* If we still cannot determine a value, then cycle through a list of
-         * preset possibilities. */
-        while (!strlen($tmp) && count($tmp_locations)) {
-            $tmp_check = array_shift($tmp_locations);
-            if (@is_dir($tmp_check)) {
-                $tmp = $tmp_check;
-            }
-        }
-
-        /* If it is still empty, we have failed, so return false; otherwise
-         * return the directory determined. */
-        return strlen($tmp) ? $tmp : false;
-    }
-
-    /**
-     * Checks a diff for validity.
-     *
-     * This is here only for debugging purposes.
-     */
-    function _check($from_lines, $to_lines)
-    {
-        if (serialize($from_lines) != serialize($this->getOriginal())) {
-            trigger_error("Reconstructed original doesn't match", E_USER_ERROR);
-        }
-        if (serialize($to_lines) != serialize($this->getFinal())) {
-            trigger_error("Reconstructed final doesn't match", E_USER_ERROR);
-        }
-
-        $rev = $this->reverse();
-        if (serialize($to_lines) != serialize($rev->getOriginal())) {
-            trigger_error("Reversed original doesn't match", E_USER_ERROR);
-        }
-        if (serialize($from_lines) != serialize($rev->getFinal())) {
-            trigger_error("Reversed final doesn't match", E_USER_ERROR);
-        }
-
-        $prevtype = null;
-        foreach ($this->_edits as $edit) {
-            if ($prevtype == get_class($edit)) {
-                trigger_error("Edit sequence is non-optimal", E_USER_ERROR);
-            }
-            $prevtype = get_class($edit);
-        }
-
-        return true;
-    }
-
-}
-
-/**
- * @package Text_Diff
- * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
- */
-class Text_MappedDiff extends Text_Diff {
-
-    /**
-     * Computes a diff between sequences of strings.
-     *
-     * This can be used to compute things like case-insensitve diffs, or diffs
-     * which ignore changes in white-space.
-     *
-     * @param array $from_lines         An array of strings.
-     * @param array $to_lines           An array of strings.
-     * @param array $mapped_from_lines  This array should have the same size
-     *                                  number of elements as $from_lines.  The
-     *                                  elements in $mapped_from_lines and
-     *                                  $mapped_to_lines are what is actually
-     *                                  compared when computing the diff.
-     * @param array $mapped_to_lines    This array should have the same number
-     *                                  of elements as $to_lines.
-     */
-    function Text_MappedDiff($from_lines, $to_lines,
-                             $mapped_from_lines, $mapped_to_lines)
-    {
-        assert(count($from_lines) == count($mapped_from_lines));
-        assert(count($to_lines) == count($mapped_to_lines));
-
-        parent::Text_Diff($mapped_from_lines, $mapped_to_lines);
-
-        $xi = $yi = 0;
-        for ($i = 0; $i < count($this->_edits); $i++) {
-            $orig = &$this->_edits[$i]->orig;
-            if (is_array($orig)) {
-                $orig = array_slice($from_lines, $xi, count($orig));
-                $xi += count($orig);
-            }
-
-            $final = &$this->_edits[$i]->final;
-            if (is_array($final)) {
-                $final = array_slice($to_lines, $yi, count($final));
-                $yi += count($final);
-            }
-        }
-    }
-
-}
-
-/**
- * @package Text_Diff
- * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
- *
- * @access private
- */
-class Text_Diff_Op {
-
-    var $orig;
-    var $final;
-
-    function &reverse()
-    {
-        trigger_error('Abstract method', E_USER_ERROR);
-    }
-
-    function norig()
-    {
-        return $this->orig ? count($this->orig) : 0;
-    }
-
-    function nfinal()
-    {
-        return $this->final ? count($this->final) : 0;
-    }
-
-}
-
-/**
- * @package Text_Diff
- * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
- *
- * @access private
- */
-class Text_Diff_Op_copy extends Text_Diff_Op {
-
-    function Text_Diff_Op_copy($orig, $final = false)
-    {
-        if (!is_array($final)) {
-            $final = $orig;
-        }
-        $this->orig = $orig;
-        $this->final = $final;
-    }
-
-    function &reverse()
-    {
-        $reverse = new Text_Diff_Op_copy($this->final, $this->orig);
-        return $reverse;
-    }
-
-}
-
-/**
- * @package Text_Diff
- * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
- *
- * @access private
- */
-class Text_Diff_Op_delete extends Text_Diff_Op {
-
-    function Text_Diff_Op_delete($lines)
-    {
-        $this->orig = $lines;
-        $this->final = false;
-    }
-
-    function &reverse()
-    {
-        $reverse = new Text_Diff_Op_add($this->orig);
-        return $reverse;
-    }
-
-}
-
-/**
- * @package Text_Diff
- * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
- *
- * @access private
- */
-class Text_Diff_Op_add extends Text_Diff_Op {
-
-    function Text_Diff_Op_add($lines)
-    {
-        $this->final = $lines;
-        $this->orig = false;
-    }
-
-    function &reverse()
-    {
-        $reverse = new Text_Diff_Op_delete($this->final);
-        return $reverse;
-    }
-
-}
-
-/**
- * @package Text_Diff
- * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
- *
- * @access private
- */
-class Text_Diff_Op_change extends Text_Diff_Op {
-
-    function Text_Diff_Op_change($orig, $final)
-    {
-        $this->orig = $orig;
-        $this->final = $final;
-    }
-
-    function &reverse()
-    {
-        $reverse = new Text_Diff_Op_change($this->final, $this->orig);
-        return $reverse;
-    }
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+AejySACUwhwobCnWRG==

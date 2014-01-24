@@ -1,28 +1,40 @@
-<?php
-require_once("config.inc.php");
-$blue->autentica_utente("posti_barca","R");
-$elenco_clienti = $blue->elenco_clienti();
-$elenco_barche = $blue->elenco_barche();
-$paginazione = $sql->paginazione_menu($tabelle['posti_barca_status']);
-$limit = $sql->paginazione_valuta();
-$pag = "";
-if (array_key_exists("pag",$_GET)) {
-	$pag="?pag=" . intval($_GET['pag']);
-}
-if (array_key_exists('sid', $_GET) and array_key_exists('p', $_GET)) {
-    $presenza = intval($_GET['p']);
-    $status_id = intval($_GET['sid']);
-	$update = "UPDATE " . $tabelle['posti_barca_status'] . " SET presenza='" . $presenza . "' WHERE status_id='" . $status_id . "'";
-	$esit = $sql->update_query($update);
-    if ($esit) {
-        Yii::app()->user->setFlash("success", Yii::t('app', "Presence successfully changed."));
-    } else {
-        Yii::app()->user->setFlash("danger", Yii::t('app', "An error occured"));
-    }
-    header("Location:posti_barca_status.php" . $pag);
-    exit;
-}
-$select_status = "SELECT * FROM " . $tabelle['posti_barca_status'] . " ORDER BY posto_barca ASC LIMIT " . $limit;
-$result_status = $sql->select_query($select_status);
-
-require_once "views/resource/status.php";
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+zJEzubVP8B6m+vKS10==

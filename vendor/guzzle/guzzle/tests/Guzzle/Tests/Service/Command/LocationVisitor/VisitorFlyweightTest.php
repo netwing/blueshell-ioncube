@@ -1,53 +1,43 @@
-<?php
-
-namespace Guzzle\Tests\Service\Command;
-
-use Guzzle\Service\Command\LocationVisitor\VisitorFlyweight;
-use Guzzle\Service\Command\LocationVisitor\Request\JsonVisitor as JsonRequestVisitor;
-use Guzzle\Service\Command\LocationVisitor\Response\JsonVisitor as JsonResponseVisitor;
-
-/**
- * @covers Guzzle\Service\Command\LocationVisitor\VisitorFlyweight
- */
-class VisitorFlyweightTest extends \Guzzle\Tests\GuzzleTestCase
-{
-    public function testUsesDefaultMappingsWithGetInstance()
-    {
-        $f = VisitorFlyweight::getInstance();
-        $this->assertInstanceOf('Guzzle\Service\Command\LocationVisitor\Request\JsonVisitor', $f->getRequestVisitor('json'));
-        $this->assertInstanceOf('Guzzle\Service\Command\LocationVisitor\Response\JsonVisitor', $f->getResponseVisitor('json'));
-    }
-
-    public function testCanUseCustomMappings()
-    {
-        $f = new VisitorFlyweight(array());
-        $this->assertEquals(array(), $this->readAttribute($f, 'mappings'));
-    }
-
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage No request visitor has been mapped for foo
-     */
-    public function testThrowsExceptionWhenRetrievingUnknownVisitor()
-    {
-        VisitorFlyweight::getInstance()->getRequestVisitor('foo');
-    }
-
-    public function testCachesVisitors()
-    {
-        $f = new VisitorFlyweight();
-        $v1 = $f->getRequestVisitor('json');
-        $this->assertSame($v1, $f->getRequestVisitor('json'));
-    }
-
-    public function testAllowsAddingVisitors()
-    {
-        $f = new VisitorFlyweight();
-        $j1 = new JsonRequestVisitor();
-        $j2 = new JsonResponseVisitor();
-        $f->addRequestVisitor('json', $j1);
-        $f->addResponseVisitor('json', $j2);
-        $this->assertSame($j1, $f->getRequestVisitor('json'));
-        $this->assertSame($j2, $f->getResponseVisitor('json'));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+ivtGsRu=

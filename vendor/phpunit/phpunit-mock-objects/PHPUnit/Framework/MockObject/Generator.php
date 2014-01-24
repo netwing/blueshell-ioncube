@@ -1,808 +1,286 @@
-<?php
-/**
- * PHPUnit
- *
- * Copyright (c) 2010-2013, Sebastian Bergmann <sb@sebastian-bergmann.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @package    PHPUnit_MockObject
- * @author     Sebastian Bergmann <sb@sebastian-bergmann.de>
- * @copyright  2010-2013 Sebastian Bergmann <sb@sebastian-bergmann.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://github.com/sebastianbergmann/phpunit-mock-objects
- * @since      File available since Release 1.0.0
- */
-
-/**
- * Mock Object Code Generator
- *
- * @package    PHPUnit_MockObject
- * @author     Sebastian Bergmann <sb@sebastian-bergmann.de>
- * @copyright  2010-2013 Sebastian Bergmann <sb@sebastian-bergmann.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @version    Release: @package_version@
- * @link       http://github.com/sebastianbergmann/phpunit-mock-objects
- * @since      Class available since Release 1.0.0
- */
-class PHPUnit_Framework_MockObject_Generator
-{
-    /**
-     * @var array
-     */
-    protected static $cache = array();
-
-    /**
-     * @var array
-     */
-    protected static $blacklistedMethodNames = array(
-      '__clone' => TRUE,
-      'abstract' => TRUE,
-      'and' => TRUE,
-      'array' => TRUE,
-      'as' => TRUE,
-      'break' => TRUE,
-      'case' => TRUE,
-      'catch' => TRUE,
-      'class' => TRUE,
-      'clone' => TRUE,
-      'const' => TRUE,
-      'continue' => TRUE,
-      'declare' => TRUE,
-      'default' => TRUE,
-      'die' => TRUE,
-      'do' => TRUE,
-      'echo' => TRUE,
-      'else' => TRUE,
-      'elseif' => TRUE,
-      'empty' => TRUE,
-      'enddeclare' => TRUE,
-      'endfor' => TRUE,
-      'endforeach' => TRUE,
-      'endif' => TRUE,
-      'endswitch' => TRUE,
-      'endwhile' => TRUE,
-      'eval' => TRUE,
-      'exit' => TRUE,
-      'expects' => TRUE,
-      'extends' => TRUE,
-      'final' => TRUE,
-      'for' => TRUE,
-      'foreach' => TRUE,
-      'function' => TRUE,
-      'global' => TRUE,
-      'goto' => TRUE,
-      'if' => TRUE,
-      'implements' => TRUE,
-      'include' => TRUE,
-      'include_once' => TRUE,
-      'instanceof' => TRUE,
-      'interface' => TRUE,
-      'isset' => TRUE,
-      'list' => TRUE,
-      'namespace' => TRUE,
-      'new' => TRUE,
-      'or' => TRUE,
-      'print' => TRUE,
-      'private' => TRUE,
-      'protected' => TRUE,
-      'public' => TRUE,
-      'require' => TRUE,
-      'require_once' => TRUE,
-      'return' => TRUE,
-      'static' => TRUE,
-      'staticExpects' => TRUE,
-      'switch' => TRUE,
-      'throw' => TRUE,
-      'try' => TRUE,
-      'unset' => TRUE,
-      'use' => TRUE,
-      'var' => TRUE,
-      'while' => TRUE,
-      'xor' => TRUE
-    );
-
-    /**
-     * @var boolean
-     */
-    protected static $soapLoaded = NULL;
-
-    /**
-     * Returns a mock object for the specified class.
-     *
-     * @param  string  $originalClassName
-     * @param  array   $methods
-     * @param  array   $arguments
-     * @param  string  $mockClassName
-     * @param  boolean $callOriginalConstructor
-     * @param  boolean $callOriginalClone
-     * @param  boolean $callAutoload
-     * @param  boolean $cloneArguments
-     * @return object
-     * @throws InvalidArgumentException
-     * @since  Method available since Release 1.0.0
-     */
-    public static function getMock($originalClassName, $methods = array(), array $arguments = array(), $mockClassName = '', $callOriginalConstructor = TRUE, $callOriginalClone = TRUE, $callAutoload = TRUE, $cloneArguments = TRUE)
-    {
-        if (!is_string($originalClassName)) {
-            throw PHPUnit_Util_InvalidArgumentHelper::factory(1, 'string');
-        }
-
-        if (!is_string($mockClassName)) {
-            throw PHPUnit_Util_InvalidArgumentHelper::factory(4, 'string');
-        }
-
-        if (!is_array($methods) && !is_null($methods)) {
-            throw new InvalidArgumentException;
-        }
-
-        if (NULL !== $methods) {
-            foreach ($methods as $method) {
-                if (!preg_match('~[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*~', $method)) {
-                    throw new PHPUnit_Framework_Exception(
-                      sprintf(
-                        'Cannot stub or mock method with invalid name "%s"',
-                        $method
-                      )
-                    );
-                }
-            }
-            if ($methods != array_unique($methods)) {
-                throw new PHPUnit_Framework_Exception(
-                  sprintf(
-                    'Cannot stub or mock using a method list that contains duplicates: "%s"',
-                    implode(', ', $methods)
-                  )
-                );
-            }
-        }
-
-        if ($mockClassName != '' && class_exists($mockClassName, FALSE)) {
-            $reflect = new ReflectionClass($mockClassName);
-            if (!$reflect->implementsInterface("PHPUnit_Framework_MockObject_MockObject")) {
-                throw new PHPUnit_Framework_Exception(
-                  sprintf(
-                    'Class "%s" already exists.',
-                    $mockClassName
-                  )
-                );
-            }
-        }
-
-        $mock = self::generate(
-          $originalClassName,
-          $methods,
-          $mockClassName,
-          $callOriginalClone,
-          $callAutoload,
-          $cloneArguments
-        );
-
-        return self::getObject(
-          $mock['code'],
-          $mock['mockClassName'],
-          $originalClassName,
-          $callOriginalConstructor,
-          $callAutoload,
-          $arguments
-        );
-    }
-
-    /**
-     * @param  string $code
-     * @param  string $className
-     * @param  string $originalClassName
-     * @param  string $callOriginalConstructor
-     * @param  string $callAutoload
-     * @param  array  $arguments
-     * @return object
-     */
-    protected static function getObject($code, $className, $originalClassName = '', $callOriginalConstructor = FALSE, $callAutoload = FALSE, array $arguments = array())
-    {
-        if (!class_exists($className, FALSE)) {
-            eval($code);
-        }
-
-        if ($callOriginalConstructor &&
-            !interface_exists($originalClassName, $callAutoload)) {
-            if (count($arguments) == 0) {
-                $object = new $className;
-            } else {
-                $class = new ReflectionClass($className);
-                $object = $class->newInstanceArgs($arguments);
-            }
-        } else {
-            // Use a trick to create a new object of a class
-            // without invoking its constructor.
-            $object = unserialize(
-              sprintf('O:%d:"%s":0:{}', strlen($className), $className)
-            );
-        }
-
-        return $object;
-    }
-
-    /**
-     * Returns a mock object for the specified abstract class with all abstract
-     * methods of the class mocked. Concrete methods to mock can be specified with
-     * the last parameter
-     *
-     * @param  string  $originalClassName
-     * @param  array   $arguments
-     * @param  string  $mockClassName
-     * @param  boolean $callOriginalConstructor
-     * @param  boolean $callOriginalClone
-     * @param  boolean $callAutoload
-     * @param  array   $mockedMethods
-     * @param  boolean $cloneArguments
-     * @return object
-     * @since  Method available since Release 1.0.0
-     * @throws InvalidArgumentException
-     */
-    public static function getMockForAbstractClass($originalClassName, array $arguments = array(), $mockClassName = '', $callOriginalConstructor = TRUE, $callOriginalClone = TRUE, $callAutoload = TRUE, $mockedMethods = array(), $cloneArguments = TRUE)
-    {
-        if (!is_string($originalClassName)) {
-            throw PHPUnit_Util_InvalidArgumentHelper::factory(1, 'string');
-        }
-
-        if (!is_string($mockClassName)) {
-            throw PHPUnit_Util_InvalidArgumentHelper::factory(3, 'string');
-        }
-
-        if (class_exists($originalClassName, $callAutoload) ||
-            interface_exists($originalClassName, $callAutoload)) {
-            $methods   = array();
-            $reflector = new ReflectionClass($originalClassName);
-
-            foreach ($reflector->getMethods() as $method) {
-                if ($method->isAbstract() || in_array($method->getName(), $mockedMethods)) {
-                    $methods[] = $method->getName();
-                }
-            }
-
-            if (empty($methods)) {
-                $methods = NULL;
-            }
-
-            return self::getMock(
-              $originalClassName,
-              $methods,
-              $arguments,
-              $mockClassName,
-              $callOriginalConstructor,
-              $callOriginalClone,
-              $callAutoload,
-              $cloneArguments
-            );
-        } else {
-            throw new PHPUnit_Framework_Exception(
-              sprintf(
-                'Class "%s" does not exist.',
-                $originalClassName
-              )
-            );
-        }
-    }
-
-    /**
-     * Returns an object for the specified trait.
-     *
-     * @param  string  $traitName
-     * @param  array   $arguments
-     * @param  string  $traitClassName
-     * @param  boolean $callOriginalConstructor
-     * @param  boolean $callOriginalClone
-     * @param  boolean $callAutoload
-     * @return object
-     * @since  Method available since Release 1.1.0
-     * @throws InvalidArgumentException
-     */
-    public static function getObjectForTrait($traitName, array $arguments = array(), $traitClassName = '', $callOriginalConstructor = TRUE, $callOriginalClone = TRUE, $callAutoload = TRUE)
-    {
-        if (!is_string($traitName)) {
-            throw PHPUnit_Util_InvalidArgumentHelper::factory(1, 'string');
-        }
-
-        if (!is_string($traitClassName)) {
-            throw PHPUnit_Util_InvalidArgumentHelper::factory(3, 'string');
-        }
-
-        if (!trait_exists($traitName, $callAutoload)) {
-            throw new PHPUnit_Framework_Exception(
-              sprintf(
-                'Trait "%s" does not exist.',
-                $traitName
-              )
-            );
-        }
-
-        $className = self::generateClassName(
-          $traitName, $traitClassName, 'Trait_'
-        );
-
-        $templateDir   = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'Generator' .
-                         DIRECTORY_SEPARATOR;
-        $classTemplate = new Text_Template(
-                           $templateDir . 'trait_class.tpl'
-                         );
-
-        $classTemplate->setVar(
-          array(
-            'class_name' => $className['className'],
-            'trait_name' => $traitName
-          )
-        );
-
-        return self::getObject(
-          $classTemplate->render(),
-          $className['className']
-        );
-    }
-
-    /**
-     * @param  string  $originalClassName
-     * @param  array   $methods
-     * @param  string  $mockClassName
-     * @param  boolean $callOriginalClone
-     * @param  boolean $callAutoload
-     * @param  boolean $cloneArguments
-     * @return array
-     */
-    public static function generate($originalClassName, array $methods = NULL, $mockClassName = '', $callOriginalClone = TRUE, $callAutoload = TRUE, $cloneArguments = TRUE)
-    {
-        if ($mockClassName == '') {
-            $key = md5(
-              $originalClassName .
-              serialize($methods) .
-              serialize($callOriginalClone) .
-              serialize($cloneArguments)
-            );
-
-            if (isset(self::$cache[$key])) {
-                return self::$cache[$key];
-            }
-        }
-
-        $mock = self::generateMock(
-          $originalClassName,
-          $methods,
-          $mockClassName,
-          $callOriginalClone,
-          $callAutoload,
-          $cloneArguments
-        );
-
-        if (isset($key)) {
-            self::$cache[$key] = $mock;
-        }
-
-        return $mock;
-    }
-
-    /**
-     * @param  string $wsdlFile
-     * @param  string $originalClassName
-     * @param  array  $methods
-     * @param  array  $options
-     * @return array
-     */
-    public static function generateClassFromWsdl($wsdlFile, $originalClassName, array $methods = array(), array $options = array())
-    {
-        if (self::$soapLoaded === NULL) {
-            self::$soapLoaded = extension_loaded('soap');
-        }
-
-        if (self::$soapLoaded) {
-            $client   = new SOAPClient($wsdlFile, $options);
-            $_methods = array_unique($client->__getFunctions());
-            unset($client);
-
-            $templateDir    = dirname(__FILE__) . DIRECTORY_SEPARATOR .
-                              'Generator' . DIRECTORY_SEPARATOR;
-            $methodTemplate = new Text_Template(
-                                $templateDir . 'wsdl_method.tpl'
-                              );
-            $methodsBuffer  = '';
-
-            foreach ($_methods as $method) {
-                $nameStart = strpos($method, ' ') + 1;
-                $nameEnd   = strpos($method, '(');
-                $name      = substr($method, $nameStart, $nameEnd - $nameStart);
-
-                if (empty($methods) || in_array($name, $methods)) {
-                    $args    = explode(
-                                 ',',
-                                 substr(
-                                   $method,
-                                   $nameEnd + 1,
-                                   strpos($method, ')') - $nameEnd - 1
-                                 )
-                               );
-                    $numArgs = count($args);
-
-                    for ($i = 0; $i < $numArgs; $i++) {
-                        $args[$i] = substr($args[$i], strpos($args[$i], '$'));
-                    }
-
-                    $methodTemplate->setVar(
-                      array(
-                        'method_name' => $name,
-                        'arguments'   => join(', ', $args)
-                      )
-                    );
-
-                    $methodsBuffer .= $methodTemplate->render();
-                }
-            }
-
-            $optionsBuffer = 'array(';
-            foreach ($options as $key => $value) {
-                $optionsBuffer .= $key . ' => ' . $value;
-            }
-
-            $optionsBuffer .= ')';
-
-            $classTemplate = new Text_Template(
-              $templateDir . 'wsdl_class.tpl'
-            );
-
-            $namespace = '';
-            if(strpos($originalClassName, '\\') !== FALSE) {
-                $parts = explode('\\', $originalClassName);
-                $originalClassName = array_pop($parts);
-                $namespace = 'namespace ' . join('\\', $parts) . ';';
-            }
-
-            $classTemplate->setVar(
-              array(
-                'namespace'  => $namespace,
-                'class_name' => $originalClassName,
-                'wsdl'       => $wsdlFile,
-                'options'    => $optionsBuffer,
-                'methods'    => $methodsBuffer
-              )
-            );
-
-            return $classTemplate->render();
-        } else {
-            throw new PHPUnit_Framework_Exception(
-              'The SOAP extension is required to generate a mock object ' .
-              'from WSDL.'
-            );
-        }
-    }
-
-    /**
-     * @param  string     $originalClassName
-     * @param  array|null $methods
-     * @param  string     $mockClassName
-     * @param  boolean    $callOriginalClone
-     * @param  boolean    $callAutoload
-     * @param  boolean    $cloneArguments
-     * @return array
-     */
-    protected static function generateMock($originalClassName, $methods, $mockClassName, $callOriginalClone, $callAutoload, $cloneArguments = TRUE)
-    {
-        $templateDir   = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'Generator' .
-                         DIRECTORY_SEPARATOR;
-        $classTemplate = new Text_Template(
-                           $templateDir . 'mocked_class.tpl'
-                         );
-        $cloneTemplate = '';
-        $isClass       = FALSE;
-        $isInterface   = FALSE;
-
-        $mockClassName = self::generateClassName(
-          $originalClassName, $mockClassName, 'Mock_'
-        );
-
-        if (class_exists($mockClassName['fullClassName'], $callAutoload)) {
-            $isClass = TRUE;
-        } else {
-            if (interface_exists($mockClassName['fullClassName'], $callAutoload)) {
-                $isInterface = TRUE;
-            }
-        }
-
-        if (!class_exists($mockClassName['fullClassName'], $callAutoload) &&
-            !interface_exists($mockClassName['fullClassName'], $callAutoload)) {
-            $prologue = 'class ' . $mockClassName['originalClassName'] . "\n{\n}\n\n";
-
-            if (!empty($mockClassName['namespaceName'])) {
-                $prologue = 'namespace ' . $mockClassName['namespaceName'] .
-                            " {\n\n" . $prologue . "}\n\n" .
-                            "namespace {\n\n";
-
-                $epilogue = "\n\n}";
-            }
-
-            $cloneTemplate = new Text_Template(
-              $templateDir . 'mocked_clone.tpl'
-            );
-        } else {
-            $class = new ReflectionClass($mockClassName['fullClassName']);
-
-            if ($class->isFinal()) {
-                throw new PHPUnit_Framework_Exception(
-                  sprintf(
-                    'Class "%s" is declared "final" and cannot be mocked.',
-                    $mockClassName['fullClassName']
-                  )
-                );
-            }
-
-            if ($class->hasMethod('__clone')) {
-                $cloneMethod = $class->getMethod('__clone');
-
-                if (!$cloneMethod->isFinal()) {
-                    if ($callOriginalClone && !$isInterface) {
-                        $cloneTemplate = new Text_Template(
-                          $templateDir . 'unmocked_clone.tpl'
-                        );
-                    } else {
-                        $cloneTemplate = new Text_Template(
-                          $templateDir . 'mocked_clone.tpl'
-                        );
-                    }
-                }
-            } else {
-                $cloneTemplate = new Text_Template(
-                  $templateDir . 'mocked_clone.tpl'
-                );
-            }
-        }
-
-        if (is_object($cloneTemplate)) {
-            $cloneTemplate = $cloneTemplate->render();
-        }
-
-        if (is_array($methods) && empty($methods) &&
-            ($isClass || $isInterface)) {
-            $methods = get_class_methods($mockClassName['fullClassName']);
-        }
-
-        if (!is_array($methods)) {
-            $methods = array();
-        }
-
-        $mockedMethods = '';
-
-        if (isset($class)) {
-            foreach ($methods as $methodName) {
-                try {
-                    $method = $class->getMethod($methodName);
-
-                    if (self::canMockMethod($method)) {
-                        $mockedMethods .= self::generateMockedMethodDefinitionFromExisting(
-                          $templateDir, $method, $cloneArguments
-                        );
-                    }
-                }
-
-                catch (ReflectionException $e) {
-                    $mockedMethods .= self::generateMockedMethodDefinition(
-                      $templateDir, $mockClassName['fullClassName'], $methodName, $cloneArguments
-                    );
-                }
-            }
-        } else {
-            foreach ($methods as $methodName) {
-                $mockedMethods .= self::generateMockedMethodDefinition(
-                  $templateDir, $mockClassName['fullClassName'], $methodName, $cloneArguments
-                );
-            }
-        }
-
-        $classTemplate->setVar(
-          array(
-            'prologue'          => isset($prologue) ? $prologue : '',
-            'epilogue'          => isset($epilogue) ? $epilogue : '',
-            'class_declaration' => self::generateMockClassDeclaration(
-                                     $mockClassName, $isInterface
-                                   ),
-            'clone'             => $cloneTemplate,
-            'mock_class_name'   => $mockClassName['className'],
-            'mocked_methods'    => $mockedMethods
-          )
-        );
-
-        return array(
-          'code'          => $classTemplate->render(),
-          'mockClassName' => $mockClassName['className']
-        );
-    }
-
-    /**
-     * @param  string $originalClassName
-     * @param  string $className
-     * @param  string $prefix
-     * @return array
-     */
-    protected static function generateClassName($originalClassName, $className, $prefix)
-    {
-        if ($originalClassName[0] == '\\') {
-            $originalClassName = substr($originalClassName, 1);
-        }
-
-        $classNameParts = explode('\\', $originalClassName);
-
-        if (count($classNameParts) > 1) {
-            $originalClassName = array_pop($classNameParts);
-            $namespaceName     = join('\\', $classNameParts);
-            $fullClassName     = $namespaceName . '\\' . $originalClassName;
-        } else {
-            $namespaceName = '';
-            $fullClassName = $originalClassName;
-        }
-
-        if ($className == '') {
-            do {
-                $className = $prefix . $originalClassName . '_' .
-                             substr(md5(microtime()), 0, 8);
-            }
-            while (class_exists($className, FALSE));
-        }
-
-        return array(
-          'className'         => $className,
-          'originalClassName' => $originalClassName,
-          'fullClassName'     => $fullClassName,
-          'namespaceName'     => $namespaceName
-        );
-    }
-
-    /**
-     * @param  array   $mockClassName
-     * @param  boolean $isInterface
-     * @return array
-     */
-    protected static function generateMockClassDeclaration(array $mockClassName, $isInterface)
-    {
-        $buffer = 'class ';
-
-        if ($isInterface) {
-            $buffer .= sprintf(
-              "%s implements PHPUnit_Framework_MockObject_MockObject, %s%s",
-              $mockClassName['className'],
-              !empty($mockClassName['namespaceName']) ? $mockClassName['namespaceName'] . '\\' : '',
-              $mockClassName['originalClassName']
-            );
-        } else {
-            $buffer .= sprintf(
-              "%s extends %s%s implements PHPUnit_Framework_MockObject_MockObject",
-              $mockClassName['className'],
-              !empty($mockClassName['namespaceName']) ? $mockClassName['namespaceName'] . '\\' : '',
-              $mockClassName['originalClassName']
-            );
-        }
-
-        return $buffer;
-    }
-
-    /**
-     * @param  string           $templateDir
-     * @param  ReflectionMethod $method
-     * @param  boolean          $cloneArguments
-     * @return string
-     */
-    protected static function generateMockedMethodDefinitionFromExisting($templateDir, ReflectionMethod $method, $cloneArguments = TRUE)
-    {
-        if ($method->isPrivate()) {
-            $modifier = 'private';
-        }
-
-        else if ($method->isProtected()) {
-            $modifier = 'protected';
-        }
-
-        else {
-            $modifier = 'public';
-        }
-
-        if ($method->isStatic()) {
-            $static = TRUE;
-        } else {
-            $static = FALSE;
-        }
-
-        if ($method->returnsReference()) {
-            $reference = '&';
-        } else {
-            $reference = '';
-        }
-
-        return self::generateMockedMethodDefinition(
-          $templateDir,
-          $method->getDeclaringClass()->getName(),
-          $method->getName(),
-          $cloneArguments,
-          $modifier,
-          PHPUnit_Util_Class::getMethodParameters($method),
-          PHPUnit_Util_Class::getMethodParameters($method, TRUE),
-          $reference,
-          $static
-        );
-    }
-
-    /**
-     * @param  string  $templateDir
-     * @param  string  $className
-     * @param  string  $methodName
-     * @param  boolean $cloneArguments
-     * @param  string  $modifier
-     * @param  string  $arguments_decl
-     * @param  string  $arguments_call
-     * @param  string  $reference
-     * @param  boolean $static
-     * @return string
-     */
-    protected static function generateMockedMethodDefinition($templateDir, $className, $methodName, $cloneArguments = TRUE, $modifier = 'public', $arguments_decl = '', $arguments_call = '', $reference = '', $static = FALSE)
-    {
-        if ($static) {
-            $template = new Text_Template(
-              $templateDir . 'mocked_static_method.tpl'
-            );
-        } else {
-            $template = new Text_Template(
-              $templateDir . 'mocked_object_method.tpl'
-            );
-        }
-
-        $template->setVar(
-          array(
-            'arguments_decl'  => $arguments_decl,
-            'arguments_call'  => $arguments_call,
-            'arguments_count' => !empty($arguments_call) ? count(explode(',', $arguments_call)) : 0,
-            'class_name'      => $className,
-            'method_name'     => $methodName,
-            'modifier'        => $modifier,
-            'reference'       => $reference,
-            'clone_arguments' => $cloneArguments ? 'TRUE' : 'FALSE'
-          )
-        );
-
-        return $template->render();
-    }
-
-    /**
-     * @param  ReflectionMethod $method
-     * @return boolean
-     */
-    protected static function canMockMethod(ReflectionMethod $method)
-    {
-        if ($method->isConstructor() || $method->isFinal() ||
-            isset(self::$blacklistedMethodNames[$method->getName()])) {
-            return FALSE;
-        }
-
-        return TRUE;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

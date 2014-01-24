@@ -1,67 +1,32 @@
-<?php
-/**
- * "Unified" diff renderer.
- *
- * This class renders the diff in classic "unified diff" format.
- *
- * $Horde: framework/Text_Diff/Diff/Renderer/unified.php,v 1.3.10.6 2008/01/04 10:37:27 jan Exp $
- *
- * Copyright 2004-2008 The Horde Project (http://www.horde.org/)
- *
- * See the enclosed file COPYING for license information (LGPL). If you did
- * not receive this file, see http://opensource.org/licenses/lgpl-license.php.
- *
- * @author  Ciprian Popovici
- * @package Text_Diff
- */
-
-/** Text_Diff_Renderer */
-require_once 'Text/Diff/Renderer.php';
-
-/**
- * @package Text_Diff
- */
-class Text_Diff_Renderer_unified extends Text_Diff_Renderer {
-
-    /**
-     * Number of leading context "lines" to preserve.
-     */
-    var $_leading_context_lines = 4;
-
-    /**
-     * Number of trailing context "lines" to preserve.
-     */
-    var $_trailing_context_lines = 4;
-
-    function _blockHeader($xbeg, $xlen, $ybeg, $ylen)
-    {
-        if ($xlen != 1) {
-            $xbeg .= ',' . $xlen;
-        }
-        if ($ylen != 1) {
-            $ybeg .= ',' . $ylen;
-        }
-        return "@@ -$xbeg +$ybeg @@";
-    }
-
-    function _context($lines)
-    {
-        return $this->_lines($lines, ' ');
-    }
-
-    function _added($lines)
-    {
-        return $this->_lines($lines, '+');
-    }
-
-    function _deleted($lines)
-    {
-        return $this->_lines($lines, '-');
-    }
-
-    function _changed($orig, $final)
-    {
-        return $this->_deleted($orig) . $this->_added($final);
-    }
-
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

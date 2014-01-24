@@ -1,205 +1,106 @@
-<?php
-/**
- * CStarRating class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CStarRating displays a star rating control that can collect user rating input.
- *
- * CStarRating is based on {@link http://www.fyneworks.com/jquery/star-rating/ jQuery Star Rating Plugin}.
- * It displays a list of stars indicating the rating values. Users can toggle these stars
- * to indicate their rating input. On the server side, when the rating input is submitted,
- * the value can be retrieved in the same way as working with a normal HTML input.
- * For example, using
- * <pre>
- * $this->widget('CStarRating',array('name'=>'rating'));
- * </pre>
- * we can retrieve the rating value via <code>$_POST['rating']</code>.
- *
- * CStarRating allows customization of its appearance. It also supports empty rating as well as read-only rating.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.web.widgets
- * @since 1.0
- */
-class CStarRating extends CInputWidget
-{
-	/**
-	 * @var integer the number of stars. Defaults to 5.
-	 */
-	public $starCount=5;
-	/**
-	 * @var mixed the minimum rating allowed. This can be either an integer or a float value. Defaults to 1.
-	 */
-	public $minRating=1;
-	/**
-	 * @var mixed the maximum rating allowed. This can be either an integer or a float value. Defaults to 10.
-	 */
-	public $maxRating=10;
-	/**
-	 * @var mixed the step size of rating. This is the minimum difference between two rating values. Defaults to 1.
-	 */
-	public $ratingStepSize=1;
-	/**
-	 * @var mixed the CSS file used for the widget. Defaults to null, meaning
-	 * using the default CSS file included together with the widget.
-	 * If false, no CSS file will be used. Otherwise, the specified CSS file
-	 * will be included when using this widget.
-	 */
-	public $cssFile;
-	/**
-	 * @var array the titles associated with the rating options. The keys are ratings and the values are the corresponding titles.
-	 * Defaults to null, meaning using the rating value as the title.
-	 */
-	public $titles;
-	/**
-	 * @var string the hint text for the reset button. Defaults to null, meaning using the system-defined text (which is 'Cancel Rating').
-	 */
-	public $resetText;
-	/**
-	 * @var string the value taken when the rating is cleared. Defaults to null, meaning using the system-defined value (which is '').
-	 */
-	public $resetValue;
-	/**
-	 * @var boolean whether the rating value can be empty (not set). Defaults to true.
-	 * When this is true, a reset button will be displayed in front of stars.
-	 */
-	public $allowEmpty;
-	/**
-	 * @var integer the width of star image. Defaults to null, meaning using the system-defined value (which is 16).
-	 */
-	public $starWidth;
-	/**
-	 * @var boolean whether the rating value is read-only or not. Defaults to false.
-	 * When this is true, the rating cannot be changed.
-	 */
-	public $readOnly;
-	/**
-	 * @var string Callback when the stars are focused.
-	 */
-	public $focus;
-	/**
-	 * @var string Callback when the stars are not focused.
-	 */
-	public $blur;
-	/**
-	 * @var string Callback when the stars are clicked.
-	 */
-	public $callback;
-
-
-	/**
-	 * Executes the widget.
-	 * This method registers all needed client scripts and renders
-	 * the text field.
-	 */
-	public function run()
-	{
-		list($name,$id)=$this->resolveNameID();
-		if(isset($this->htmlOptions['id']))
-			$id=$this->htmlOptions['id'];
-		else
-			$this->htmlOptions['id']=$id;
-		if(isset($this->htmlOptions['name']))
-			$name=$this->htmlOptions['name'];
-
-		$this->registerClientScript($id);
-
-		echo CHtml::openTag('span',$this->htmlOptions)."\n";
-		$this->renderStars($id,$name);
-		echo "</span>";
-	}
-
-	/**
-	 * Registers the necessary javascript and css scripts.
-	 * @param string $id the ID of the container
-	 */
-	public function registerClientScript($id)
-	{
-		$jsOptions=$this->getClientOptions();
-		$jsOptions=empty($jsOptions) ? '' : CJavaScript::encode($jsOptions);
-		$js="jQuery('#{$id} > input').rating({$jsOptions});";
-		$cs=Yii::app()->getClientScript();
-		$cs->registerCoreScript('rating');
-		$cs->registerScript('Yii.CStarRating#'.$id,$js);
-
-		if($this->cssFile!==false)
-			self::registerCssFile($this->cssFile);
-	}
-
-	/**
-	 * Registers the needed CSS file.
-	 * @param string $url the CSS URL. If null, a default CSS URL will be used.
-	 */
-	public static function registerCssFile($url=null)
-	{
-		$cs=Yii::app()->getClientScript();
-		if($url===null)
-			$url=$cs->getCoreScriptUrl().'/rating/jquery.rating.css';
-		$cs->registerCssFile($url);
-	}
-
-	/**
-	 * Renders the stars.
-	 * @param string $id the ID of the container
-	 * @param string $name the name of the input
-	 */
-	protected function renderStars($id,$name)
-	{
-		$inputCount=(int)(($this->maxRating-$this->minRating)/$this->ratingStepSize+1);
-		$starSplit=(int)($inputCount/$this->starCount);
-		if($this->hasModel())
-		{
-			$attr=$this->attribute;
-			CHtml::resolveName($this->model,$attr);
-			$selection=$this->model->$attr;
-		}
-		else
-			$selection=$this->value;
-		$options=$starSplit>1 ? array('class'=>"{split:{$starSplit}}") : array();
-		for($value=$this->minRating, $i=0;$i<$inputCount; ++$i, $value+=$this->ratingStepSize)
-		{
-			$options['id']=$id.'_'.$i;
-			$options['value']=$value;
-			if(isset($this->titles[$value]))
-				$options['title']=$this->titles[$value];
-			else
-				unset($options['title']);
-			echo CHtml::radioButton($name,!strcmp($value,$selection),$options) . "\n";
-		}
-	}
-
-	/**
-	 * @return array the javascript options for the star rating
-	 */
-	protected function getClientOptions()
-	{
-		$options=array();
-		if($this->resetText!==null)
-			$options['cancel']=$this->resetText;
-		if($this->resetValue!==null)
-			$options['cancelValue']=$this->resetValue;
-		if($this->allowEmpty===false)
-			$options['required']=true;
-		if($this->starWidth!==null)
-			$options['starWidth']=$this->starWidth;
-		if($this->readOnly===true)
-			$options['readOnly']=true;
-		foreach(array('focus', 'blur', 'callback') as $event)
-		{
-			if($this->$event!==null)
-			{
-				if($this->$event instanceof CJavaScriptExpression)
-					$options[$event]=$this->$event;
-				else
-					$options[$event]=new CJavaScriptExpression($this->$event);
-			}
-		}
-		return $options;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+1B5yo7CpMMn6mqPhBM9qizp+YqG=

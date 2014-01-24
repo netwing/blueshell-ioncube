@@ -1,114 +1,43 @@
-<?php
-/**
- * PHPUnit
- *
- * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @package    PHPUnit
- * @subpackage Framework
- * @author     Bernhard Schussek <bschussek@2bepublished.at>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      File available since Release 3.6.0
- */
-
-/**
- * Compares SplObjectStorage instances for equality.
- *
- * @package    PHPUnit
- * @subpackage Framework_Comparator
- * @author     Bernhard Schussek <bschussek@2bepublished.at>
- * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://www.phpunit.de/
- * @since      Class available since Release 3.6.0
- */
-class PHPUnit_Framework_Comparator_SplObjectStorage extends PHPUnit_Framework_Comparator
-{
-    /**
-     * Returns whether the comparator can compare two values.
-     *
-     * @param  mixed $expected The first value to compare
-     * @param  mixed $actual The second value to compare
-     * @return boolean
-     */
-    public function accepts($expected, $actual)
-    {
-        return $expected instanceof SplObjectStorage && $actual instanceof SplObjectStorage;
-    }
-
-    /**
-     * Asserts that two values are equal.
-     *
-     * @param  mixed $expected The first value to compare
-     * @param  mixed $actual The second value to compare
-     * @param  float $delta The allowed numerical distance between two values to
-     *                      consider them equal
-     * @param  bool  $canonicalize If set to TRUE, arrays are sorted before
-     *                             comparison
-     * @param  bool  $ignoreCase If set to TRUE, upper- and lowercasing is
-     *                           ignored when comparing string values
-     * @throws PHPUnit_Framework_ComparisonFailure Thrown when the comparison
-     *                           fails. Contains information about the
-     *                           specific errors that lead to the failure.
-     */
-    public function assertEquals($expected, $actual, $delta = 0, $canonicalize = FALSE, $ignoreCase = FALSE)
-    {
-        foreach ($actual as $object) {
-            if (!$expected->contains($object)) {
-                throw new PHPUnit_Framework_ComparisonFailure(
-                  $expected,
-                  $actual,
-                  PHPUnit_Util_Type::export($expected),
-                  PHPUnit_Util_Type::export($actual),
-                  FALSE,
-                  'Failed asserting that two objects are equal.'
-                );
-            }
-        }
-
-        foreach ($expected as $object) {
-            if (!$actual->contains($object)) {
-                throw new PHPUnit_Framework_ComparisonFailure(
-                  $expected,
-                  $actual,
-                  PHPUnit_Util_Type::export($expected),
-                  PHPUnit_Util_Type::export($actual),
-                  FALSE,
-                  'Failed asserting that two objects are equal.'
-                );
-            }
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+yM7AiBNiWJXQqAKlAE1hczUOGE+jYk9lsm==

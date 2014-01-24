@@ -1,93 +1,37 @@
-<?php
-/**
- * CMapIterator class file.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright 2008-2013 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
-/**
- * CMapIterator implements an iterator for {@link CMap}.
- *
- * It allows CMap to return a new iterator for traversing the items in the map.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @package system.collections
- * @since 1.0
- */
-class CMapIterator implements Iterator
-{
-	/**
-	 * @var array the data to be iterated through
-	 */
-	private $_d;
-	/**
-	 * @var array list of keys in the map
-	 */
-	private $_keys;
-	/**
-	 * @var mixed current key
-	 */
-	private $_key;
-
-	/**
-	 * Constructor.
-	 * @param array $data the data to be iterated through
-	 */
-	public function __construct(&$data)
-	{
-		$this->_d=&$data;
-		$this->_keys=array_keys($data);
-		$this->_key=reset($this->_keys);
-	}
-
-	/**
-	 * Rewinds internal array pointer.
-	 * This method is required by the interface Iterator.
-	 */
-	public function rewind()
-	{
-		$this->_key=reset($this->_keys);
-	}
-
-	/**
-	 * Returns the key of the current array element.
-	 * This method is required by the interface Iterator.
-	 * @return mixed the key of the current array element
-	 */
-	public function key()
-	{
-		return $this->_key;
-	}
-
-	/**
-	 * Returns the current array element.
-	 * This method is required by the interface Iterator.
-	 * @return mixed the current array element
-	 */
-	public function current()
-	{
-		return $this->_d[$this->_key];
-	}
-
-	/**
-	 * Moves the internal pointer to the next array element.
-	 * This method is required by the interface Iterator.
-	 */
-	public function next()
-	{
-		$this->_key=next($this->_keys);
-	}
-
-	/**
-	 * Returns whether there is an element at current position.
-	 * This method is required by the interface Iterator.
-	 * @return boolean
-	 */
-	public function valid()
-	{
-		return $this->_key!==false;
-	}
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+ODZqqK/Qnj6WkLHPSW==

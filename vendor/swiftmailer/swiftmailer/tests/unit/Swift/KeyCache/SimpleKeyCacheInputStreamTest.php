@@ -1,77 +1,56 @@
-<?php
-
-require_once 'Swift/Tests/SwiftUnitTestCase.php';
-require_once 'Swift/KeyCache/SimpleKeyCacheInputStream.php';
-require_once 'Swift/KeyCache.php';
-
-class Swift_KeyCache_SimpleKeyCacheInputStreamTest
-    extends Swift_Tests_SwiftUnitTestCase
-{
-    private $_nsKey = 'ns1';
-
-    public function testStreamWritesToCacheInAppendMode()
-    {
-        $cache = $this->_createKeyCache();
-        $this->_checking(Expectations::create()
-            -> one($cache)->setString($this->_nsKey, 'foo', 'a', Swift_KeyCache::MODE_APPEND)
-            -> one($cache)->setString($this->_nsKey, 'foo', 'b', Swift_KeyCache::MODE_APPEND)
-            -> one($cache)->setString($this->_nsKey, 'foo', 'c', Swift_KeyCache::MODE_APPEND)
-            );
-
-        $stream = new Swift_KeyCache_SimpleKeyCacheInputStream();
-        $stream->setKeyCache($cache);
-        $stream->setNsKey($this->_nsKey);
-        $stream->setItemKey('foo');
-
-        $stream->write('a');
-        $stream->write('b');
-        $stream->write('c');
-    }
-
-    public function testFlushContentClearsKey()
-    {
-        $cache = $this->_createKeyCache();
-        $this->_checking(Expectations::create()
-            -> one($cache)->clearKey($this->_nsKey, 'foo')
-            );
-
-        $stream = new Swift_KeyCache_SimpleKeyCacheInputStream();
-        $stream->setKeyCache($cache);
-        $stream->setNsKey($this->_nsKey);
-        $stream->setItemKey('foo');
-
-        $stream->flushBuffers();
-    }
-
-    public function testClonedStreamStillReferencesSameCache()
-    {
-        $cache = $this->_createKeyCache();
-        $this->_checking(Expectations::create()
-            -> one($cache)->setString($this->_nsKey, 'foo', 'a', Swift_KeyCache::MODE_APPEND)
-            -> one($cache)->setString($this->_nsKey, 'foo', 'b', Swift_KeyCache::MODE_APPEND)
-            -> one($cache)->setString('test', 'bar', 'x', Swift_KeyCache::MODE_APPEND)
-            );
-
-        $stream = new Swift_KeyCache_SimpleKeyCacheInputStream();
-        $stream->setKeyCache($cache);
-        $stream->setNsKey($this->_nsKey);
-        $stream->setItemKey('foo');
-
-        $stream->write('a');
-        $stream->write('b');
-
-        $newStream = clone $stream;
-        $newStream->setKeyCache($cache);
-        $newStream->setNsKey('test');
-        $newStream->setItemKey('bar');
-
-        $newStream->write('x');
-    }
-
-    // -- Creation Methods
-
-    private function _createKeyCache()
-    {
-        return $this->_mock('Swift_KeyCache');
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+C+eahmQ/KE5Y7hpN+gn1KOfK

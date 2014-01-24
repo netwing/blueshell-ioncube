@@ -1,122 +1,75 @@
-<?php
-
-Yii::import("application.modules.admin.models.*");
-
-/**
- * Class for bridging between old and new application
- */
-class Bridge extends CApplicationComponent 
-{
-
-    public function orderFromContract($id)
-    {
-        $result = array();
-
-        $id = intval($id);
-
-        $criteria = new CDbCriteria;
-        $criteria->condition = 'opened=:opened';
-        $criteria->order = "sort_order ASC";
-        $criteria->params = array(':opened' => 1);
-        $status = OrderStatus::model()->find($criteria);
-
-        $contract = Contract::model()->findByPk($id);
-
-        // If reservations, do not create order
-        if ($contract->type->reservation == 1) {
-            return $result;
-        }
-
-        // Check if row already exists
-        $order_detail = OrderDetail::model()->findByAttributes(array('contract_id' => $id));
-        
-        if ($order_detail) {
-
-            // Update with contract data
-            $order_detail->price = $contract->contratto_imponibile;
-            $order_detail->quantity = 1;
-            $order_detail->total_no_vat = $contract->contratto_imponibile;
-            $order_detail->vat = VAT_PERCENTAGE;
-            $order_detail->vat_value = ($contract->contratto_totale - $contract->contratto_imponibile);
-            $order_detail->discount = $contract->contratto_sconto;
-            $discount_value = $contract->contratto_totale / 100 * $contract->contratto_sconto;
-            $order_detail->discount_value = $discount_value;
-            $order_detail->total_vat = ($contract->contratto_totale - $contract->contratto_imponibile);
-            $order_detail->total = $contract->contratto_totale - $discount_value;
-            // Save
-            $order_detail->save();
-            // Return error if any
-            $result+= $order_detail->getErrors();
-
-        } else {
-
-            // Create a new order for this customer, of type "2"
-            $order = new Order();
-            $order->customer_id = $contract->contratto_anagrafica2;
-            if ($contract->contratto_tipo == "3") {
-                $order->customer_id = $contract->contratto_anagrafica1;
-            }
-            if ($contract->contratto_barca) {
-                $order->vector_id = $contract->contratto_barca;
-            }
-            $order->date = $contract->contratto_data;
-            $order->type_id = 2;
-            $order->status_id = $status->id;
-            $result+= $order->getErrors();
-
-            if ($order->save()) {
-                // Create a new row with contract_id
-                $order_detail = new OrderDetail();
-                $order_detail->order_id = (integer) $order->id;
-                $order_detail->contract_id = intval($_GET['id']);
-                $order_detail->price = (float) $contract->contratto_imponibile;
-                $order_detail->quantity = 1;
-                $order_detail->total_no_vat = (float) $contract->contratto_imponibile;
-                $order_detail->vat = VAT_PERCENTAGE;
-                $order_detail->vat_value = ((float) $contract->contratto_totale - (float) $contract->contratto_imponibile);
-                $order_detail->discount = (float) $contract->contratto_sconto;
-                $discount_value = $contract->contratto_totale / 100 * $contract->contratto_sconto;
-                $order_detail->discount_value = $discount_value;
-                $order_detail->total_vat = ($contract->contratto_totale - $contract->contratto_imponibile);
-                $order_detail->total = $contract->contratto_totale - $discount_value;
-                $order_detail->done = 1;
-
-                $order_detail->save();
-
-                $result+= $order_detail->getErrors();
-            }
-
-
-        }
-
-        return $result;
-    }
-
-    /**
-     * Render URL correct if in Yii app or in old app
-     */
-    public function menuUrl($route, $params = array())
-    {
-        $url = Yii::app()->createUrl($route, $params);
-        list($base, $query) = explode("?", $url);
-        $result = APPLICATION_BASE_URL . "/app/index.php?" . $query;
-        if (substr(Yii::app()->request->requestUri, 0, 4) == '/app') {
-            $result = Yii::app()->createUrl($route, $params);
-        }
-
-        return $result;
-    }
- 
-    /**
-     * Render URL correct if in Yii app or in old app
-     */
-    public function oldUrl($route, $params = array())
-    {
-        $result = $route;
-        if (stripos(Yii::app()->request->requestUri, APPLICATION_BASE_URL . "/app/") !== false) {
-            $result = "../" . $route;
-        }
-
-        return $result;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+iORGDyejX/6koy5M9L5rW4wX7v72VW==

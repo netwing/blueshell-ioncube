@@ -1,120 +1,50 @@
-<?php
-/**
- * PHPExcel
- *
- * Copyright (c) 2006 - 2012 PHPExcel
- *
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation; either
- * version 2.1 of the License, or (at your option) any later version.
- *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
- *
- * @category   PHPExcel
- * @package    PHPExcel_Shared_Trend
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
- * @version    1.7.8, 2012-10-12
- */
-
-
-require_once(PHPEXCEL_ROOT . 'PHPExcel/Shared/trend/bestFitClass.php');
-
-
-/**
- * PHPExcel_Logarithmic_Best_Fit
- *
- * @category   PHPExcel
- * @package    PHPExcel_Shared_Trend
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- */
-class PHPExcel_Logarithmic_Best_Fit extends PHPExcel_Best_Fit
-{
-	/**
-	 * Algorithm type to use for best-fit
-	 * (Name of this trend class)
-	 *
-	 * @var	string
-	 **/
-	protected $_bestFitType		= 'logarithmic';
-
-
-	/**
-	 * Return the Y-Value for a specified value of X
-	 *
-	 * @param	 float		$xValue			X-Value
-	 * @return	 float						Y-Value
-	 **/
-	public function getValueOfYForX($xValue) {
-		return $this->getIntersect() + $this->getSlope() * log($xValue - $this->_Xoffset);
-	}	//	function getValueOfYForX()
-
-
-	/**
-	 * Return the X-Value for a specified value of Y
-	 *
-	 * @param	 float		$yValue			Y-Value
-	 * @return	 float						X-Value
-	 **/
-	public function getValueOfXForY($yValue) {
-		return exp(($yValue - $this->getIntersect()) / $this->getSlope());
-	}	//	function getValueOfXForY()
-
-
-	/**
-	 * Return the Equation of the best-fit line
-	 *
-	 * @param	 int		$dp		Number of places of decimal precision to display
-	 * @return	 string
-	 **/
-	public function getEquation($dp=0) {
-		$slope = $this->getSlope($dp);
-		$intersect = $this->getIntersect($dp);
-
-		return 'Y = '.$intersect.' + '.$slope.' * log(X)';
-	}	//	function getEquation()
-
-
-	/**
-	 * Execute the regression and calculate the goodness of fit for a set of X and Y data values
-	 *
-	 * @param	 float[]	$yValues	The set of Y-values for this regression
-	 * @param	 float[]	$xValues	The set of X-values for this regression
-	 * @param	 boolean	$const
-	 */
-	private function _logarithmic_regression($yValues, $xValues, $const) {
-		foreach($xValues as &$value) {
-			if ($value < 0.0) {
-				$value = 0 - log(abs($value));
-			} elseif ($value > 0.0) {
-				$value = log($value);
-			}
-		}
-		unset($value);
-
-		$this->_leastSquareFit($yValues, $xValues, $const);
-	}	//	function _logarithmic_regression()
-
-
-	/**
-	 * Define the regression and calculate the goodness of fit for a set of X and Y data values
-	 *
-	 * @param	float[]		$yValues	The set of Y-values for this regression
-	 * @param	float[]		$xValues	The set of X-values for this regression
-	 * @param	boolean		$const
-	 */
-	function __construct($yValues, $xValues=array(), $const=True) {
-		if (parent::__construct($yValues, $xValues) !== False) {
-			$this->_logarithmic_regression($yValues, $xValues, $const);
-		}
-	}	//	function __construct()
-
-}	//	class logarithmicBestFit
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

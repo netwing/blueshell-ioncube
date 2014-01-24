@@ -1,44 +1,29 @@
-<?php
-/**
- * This is the template for generating a form script file.
- * The following variables are available in this template:
- * - $this: the FormCode object
- */
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
-<?php echo "<?php\n"; ?>
-/* @var $this <?php echo $this->getModelClass(); ?>Controller */
-/* @var $model <?php echo $this->getModelClass(); ?> */
-/* @var $form CActiveForm */
-?>
-
-<div class="form">
-
-<?php echo "<?php \$form=\$this->beginWidget('CActiveForm', array(
-	'id'=>'".$this->class2id($this->modelClass).'-'.basename($this->viewName)."-form',
-	// Please note: When you enable ajax validation, make sure the corresponding
-	// controller action is handling ajax validation correctly.
-	// See class documentation of CActiveForm for details on this,
-	// you need to use the performAjaxValidation()-method described there.
-	'enableAjaxValidation'=>false,
-)); ?>\n"; ?>
-
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
-	<?php echo "<?php echo \$form->errorSummary(\$model); ?>\n"; ?>
-
-<?php foreach($this->getModelAttributes() as $attribute): ?>
-	<div class="row">
-		<?php echo "<?php echo \$form->labelEx(\$model,'$attribute'); ?>\n"; ?>
-		<?php echo "<?php echo \$form->textField(\$model,'$attribute'); ?>\n"; ?>
-		<?php echo "<?php echo \$form->error(\$model,'$attribute'); ?>\n"; ?>
-	</div>
-
-<?php endforeach; ?>
-
-	<div class="row buttons">
-		<?php echo "<?php echo CHtml::submitButton('Submit'); ?>\n"; ?>
-	</div>
-
-<?php echo "<?php \$this->endWidget(); ?>\n"; ?>
-
-</div><!-- form -->
+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

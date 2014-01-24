@@ -1,145 +1,93 @@
-<?php
-// $Id: authentication_test.php 1748 2008-04-14 01:50:41Z lastcraft $
-require_once(dirname(__FILE__) . '/../autorun.php');
-require_once(dirname(__FILE__) . '/../authentication.php');
-require_once(dirname(__FILE__) . '/../http.php');
-Mock::generate('SimpleHttpRequest');
-
-class TestOfRealm extends UnitTestCase {
-    
-    function testWithinSameUrl() {
-        $realm = new SimpleRealm(
-                'Basic',
-                new SimpleUrl('http://www.here.com/path/hello.html'));
-        $this->assertTrue($realm->isWithin(
-                new SimpleUrl('http://www.here.com/path/hello.html')));
-    }
-    
-    function testInsideWithLongerUrl() {
-        $realm = new SimpleRealm(
-                'Basic',
-                new SimpleUrl('http://www.here.com/path/'));
-        $this->assertTrue($realm->isWithin(
-                new SimpleUrl('http://www.here.com/path/hello.html')));
-    }
-    
-    function testBelowRootIsOutside() {
-        $realm = new SimpleRealm(
-                'Basic',
-                new SimpleUrl('http://www.here.com/path/'));
-        $this->assertTrue($realm->isWithin(
-                new SimpleUrl('http://www.here.com/path/more/hello.html')));
-    }
-    
-    function testOldNetscapeDefinitionIsOutside() {
-        $realm = new SimpleRealm(
-                'Basic',
-                new SimpleUrl('http://www.here.com/path/'));
-        $this->assertFalse($realm->isWithin(
-                new SimpleUrl('http://www.here.com/pathmore/hello.html')));
-    }
-    
-    function testInsideWithMissingTrailingSlash() {
-        $realm = new SimpleRealm(
-                'Basic',
-                new SimpleUrl('http://www.here.com/path/'));
-        $this->assertTrue($realm->isWithin(
-                new SimpleUrl('http://www.here.com/path')));
-    }
-    
-    function testDifferentPageNameStillInside() {
-        $realm = new SimpleRealm(
-                'Basic',
-                new SimpleUrl('http://www.here.com/path/hello.html'));
-        $this->assertTrue($realm->isWithin(
-                new SimpleUrl('http://www.here.com/path/goodbye.html')));
-    }
-    
-    function testNewUrlInSameDirectoryDoesNotChangeRealm() {
-        $realm = new SimpleRealm(
-                'Basic',
-                new SimpleUrl('http://www.here.com/path/hello.html'));
-        $realm->stretch(new SimpleUrl('http://www.here.com/path/goodbye.html'));
-        $this->assertTrue($realm->isWithin(
-                new SimpleUrl('http://www.here.com/path/index.html')));
-        $this->assertFalse($realm->isWithin(
-                new SimpleUrl('http://www.here.com/index.html')));
-    }
-    
-    function testNewUrlMakesRealmTheCommonPath() {
-        $realm = new SimpleRealm(
-                'Basic',
-                new SimpleUrl('http://www.here.com/path/here/hello.html'));
-        $realm->stretch(new SimpleUrl('http://www.here.com/path/there/goodbye.html'));
-        $this->assertTrue($realm->isWithin(
-                new SimpleUrl('http://www.here.com/path/here/index.html')));
-        $this->assertTrue($realm->isWithin(
-                new SimpleUrl('http://www.here.com/path/there/index.html')));
-        $this->assertTrue($realm->isWithin(
-                new SimpleUrl('http://www.here.com/path/index.html')));
-        $this->assertFalse($realm->isWithin(
-                new SimpleUrl('http://www.here.com/index.html')));
-        $this->assertFalse($realm->isWithin(
-                new SimpleUrl('http://www.here.com/paths/index.html')));
-        $this->assertFalse($realm->isWithin(
-                new SimpleUrl('http://www.here.com/pathindex.html')));
-    }
-}
-
-class TestOfAuthenticator extends UnitTestCase {
-    
-    function testNoRealms() {
-        $request = new MockSimpleHttpRequest();
-        $request->expectNever('addHeaderLine');
-        $authenticator = new SimpleAuthenticator();
-        $authenticator->addHeaders($request, new SimpleUrl('http://here.com/'));
-    }
-    
-    function &createSingleRealm() {
-        $authenticator = new SimpleAuthenticator();
-        $authenticator->addRealm(
-                new SimpleUrl('http://www.here.com/path/hello.html'),
-                'Basic',
-                'Sanctuary');
-        $authenticator->setIdentityForRealm('www.here.com', 'Sanctuary', 'test', 'secret');
-        return $authenticator;
-    }
-    
-    function testOutsideRealm() {
-        $request = new MockSimpleHttpRequest();
-        $request->expectNever('addHeaderLine');
-        $authenticator = &$this->createSingleRealm();
-        $authenticator->addHeaders(
-                $request,
-                new SimpleUrl('http://www.here.com/hello.html'));
-    }
-    
-    function testWithinRealm() {
-        $request = new MockSimpleHttpRequest();
-        $request->expectOnce('addHeaderLine');
-        $authenticator = &$this->createSingleRealm();
-        $authenticator->addHeaders(
-                $request,
-                new SimpleUrl('http://www.here.com/path/more/hello.html'));
-    }
-    
-    function testRestartingClearsRealm() {
-        $request = new MockSimpleHttpRequest();
-        $request->expectNever('addHeaderLine');
-        $authenticator = &$this->createSingleRealm();
-        $authenticator->restartSession();
-        $authenticator->addHeaders(
-                $request,
-                new SimpleUrl('http://www.here.com/hello.html'));
-    }
-    
-    function testDifferentHostIsOutsideRealm() {
-        $request = new MockSimpleHttpRequest();
-        $request->expectNever('addHeaderLine');
-        $authenticator = &$this->createSingleRealm();
-        $authenticator->addHeaders(
-                $request,
-                new SimpleUrl('http://here.com/path/hello.html'));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+u0==

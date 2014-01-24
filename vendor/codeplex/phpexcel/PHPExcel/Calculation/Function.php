@@ -1,149 +1,43 @@
-<?php
-/**
- * PHPExcel
- *
- * Copyright (c) 2006 - 2012 PHPExcel
- *
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation; either
- * version 2.1 of the License, or (at your option) any later version.
- *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
- *
- * @category   PHPExcel
- * @package    PHPExcel_Calculation
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
- * @version    1.7.8, 2012-10-12
- */
-
-
-/**
- * PHPExcel_Calculation_Function
- *
- * @category   PHPExcel
- * @package    PHPExcel_Calculation
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
- */
-class PHPExcel_Calculation_Function {
-	/* Function categories */
-	const CATEGORY_CUBE						= 'Cube';
-	const CATEGORY_DATABASE					= 'Database';
-	const CATEGORY_DATE_AND_TIME			= 'Date and Time';
-	const CATEGORY_ENGINEERING				= 'Engineering';
-	const CATEGORY_FINANCIAL				= 'Financial';
-	const CATEGORY_INFORMATION				= 'Information';
-	const CATEGORY_LOGICAL					= 'Logical';
-	const CATEGORY_LOOKUP_AND_REFERENCE		= 'Lookup and Reference';
-	const CATEGORY_MATH_AND_TRIG			= 'Math and Trig';
-	const CATEGORY_STATISTICAL				= 'Statistical';
-	const CATEGORY_TEXT_AND_DATA			= 'Text and Data';
-
-	/**
-	 * Category (represented by CATEGORY_*)
-	 *
-	 * @var string
-	 */
-	private $_category;
-
-	/**
-	 * Excel name
-	 *
-	 * @var string
-	 */
-	private $_excelName;
-
-	/**
-	 * PHPExcel name
-	 *
-	 * @var string
-	 */
-	private $_phpExcelName;
-
-    /**
-     * Create a new PHPExcel_Calculation_Function
-     *
-     * @param 	string		$pCategory 		Category (represented by CATEGORY_*)
-     * @param 	string		$pExcelName		Excel function name
-     * @param 	string		$pPHPExcelName	PHPExcel function mapping
-     * @throws 	Exception
-     */
-    public function __construct($pCategory = NULL, $pExcelName = NULL, $pPHPExcelName = NULL)
-    {
-    	if (($pCategory !== NULL) && ($pExcelName !== NULL) && ($pPHPExcelName !== NULL)) {
-    		// Initialise values
-    		$this->_category 		= $pCategory;
-    		$this->_excelName 		= $pExcelName;
-    		$this->_phpExcelName 	= $pPHPExcelName;
-    	} else {
-    		throw new Exception("Invalid parameters passed.");
-    	}
-    }
-
-    /**
-     * Get Category (represented by CATEGORY_*)
-     *
-     * @return string
-     */
-    public function getCategory() {
-    	return $this->_category;
-    }
-
-    /**
-     * Set Category (represented by CATEGORY_*)
-     *
-     * @param 	string		$value
-     * @throws 	Exception
-     */
-    public function setCategory($value = null) {
-    	if (!is_null($value)) {
-    		$this->_category = $value;
-    	} else {
-    		throw new Exception("Invalid parameter passed.");
-    	}
-    }
-
-    /**
-     * Get Excel name
-     *
-     * @return string
-     */
-    public function getExcelName() {
-    	return $this->_excelName;
-    }
-
-    /**
-     * Set Excel name
-     *
-     * @param string	$value
-     */
-    public function setExcelName($value) {
-    	$this->_excelName = $value;
-    }
-
-    /**
-     * Get PHPExcel name
-     *
-     * @return string
-     */
-    public function getPHPExcelName() {
-    	return $this->_phpExcelName;
-    }
-
-    /**
-     * Set PHPExcel name
-     *
-     * @param string	$value
-     */
-    public function setPHPExcelName($value) {
-    	$this->_phpExcelName = $value;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+dzwljVM17IWoM8SuWiYpO1GseixpoES=

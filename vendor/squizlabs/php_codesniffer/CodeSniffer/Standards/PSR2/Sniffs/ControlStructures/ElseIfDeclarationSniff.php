@@ -1,68 +1,35 @@
-<?php
-/**
- * PSR2_Sniffs_ControlStructures_ElseIfDeclarationSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-
-/**
- * PSR2_Sniffs_ControlStructures_ElseIfDeclarationSniff.
- *
- * Verifies that there are no else if statements. Elseif should be used instead.
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Greg Sherwood <gsherwood@squiz.net>
- * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
- * @version   Release: @package_version@
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
-class PSR2_Sniffs_ControlStructures_ElseIfDeclarationSniff implements PHP_CodeSniffer_Sniff
-{
-
-
-    /**
-     * Returns an array of tokens this test wants to listen for.
-     *
-     * @return array
-     */
-    public function register()
-    {
-        return array(T_ELSE);
-
-    }//end register()
-
-
-    /**
-     * Processes this test, when one of its tokens is encountered.
-     *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token in the
-     *                                        stack passed in $tokens.
-     *
-     * @return void
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
-    {
-        $tokens = $phpcsFile->getTokens();
-        $next   = $phpcsFile->findNext(T_WHITESPACE, ($stackPtr + 1), null, true);
-        if ($tokens[$next]['code'] === T_IF) {
-            $error = 'Usage of ELSE IF is discouraged; use ELSEIF instead';
-            $phpcsFile->addWarning($error, $stackPtr, 'NotAllowed');
-        }
-
-    }//end process()
-
-
-}//end class
-
-
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
 ?>
+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
+G1OgMG4zlUC7r+G=

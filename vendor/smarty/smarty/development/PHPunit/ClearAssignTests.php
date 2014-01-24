@@ -1,72 +1,49 @@
-<?php
-/**
-* Smarty PHPunit tests clearing assigned variables
-*
-* @package PHPunit
-* @author Uwe Tews
-*/
-
-/**
-* class for clearing assigned variables tests
-*/
-class ClearAssignTests extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $this->smarty = SmartyTests::$smarty;
-        $this->smartyBC = SmartyTests::$smartyBC;
-        SmartyTests::init();
-
-        $this->smarty->assign('foo','foo');
-        $this->smarty->assign('bar','bar');
-        $this->smarty->assign('blar','blar');
-
-        $this->smartyBC->assign('foo','foo');
-        $this->smartyBC->assign('bar','bar');
-        $this->smartyBC->assign('blar','blar');
-    }
-
-    static function isRunnable()
-    {
-        return true;
-    }
-
-    /**
-    * test all variables accessable
-    */
-    public function testAllVariablesAccessable()
-    {
-        $this->assertEquals('foobarblar', $this->smarty->fetch('eval:{$foo}{$bar}{$blar}'));
-    }
-
-    /**
-    * test simple clear assign
-    */
-    public function testClearAssign()
-    {
-         $this->smarty->error_reporting  = error_reporting() & ~(E_NOTICE|E_USER_NOTICE);
-        $this->smarty->clearAssign('blar');
-        $this->assertEquals('foobar', $this->smarty->fetch('eval:{$foo}{$bar}{$blar}'));
-    }
-    public function testSmarty2ClearAssign()
-    {
-         $this->smartyBC->error_reporting  = error_reporting() & ~(E_NOTICE|E_USER_NOTICE);
-        $this->smartyBC->clear_assign('blar');
-        $this->assertEquals('foobar', $this->smartyBC->fetch('eval:{$foo}{$bar}{$blar}'));
-    }
-    /**
-    * test clear assign array of variables
-    */
-    public function testArrayClearAssign()
-    {
-         $this->smarty->error_reporting  = error_reporting() & ~(E_NOTICE|E_USER_NOTICE);
-        $this->smarty->clearAssign(array('blar','foo'));
-        $this->assertEquals('bar', $this->smarty->fetch('eval:{$foo}{$bar}{$blar}'));
-    }
-    public function testSmarty2ArrayClearAssign()
-    {
-         $this->smartyBC->error_reporting  = error_reporting() & ~(E_NOTICE|E_USER_NOTICE);
-        $this->smartyBC->clear_assign(array('blar','foo'));
-        $this->assertEquals('bar', $this->smartyBC->fetch('eval:{$foo}{$bar}{$blar}'));
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

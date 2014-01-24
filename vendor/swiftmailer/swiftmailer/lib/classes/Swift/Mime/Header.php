@@ -1,95 +1,29 @@
-<?php
-
-/*
- * This file is part of SwiftMailer.
- * (c) 2004-2009 Chris Corbyn
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-/**
- * A MIME Header.
- *
- * @package    Swift
- * @subpackage Mime
- * @author     Chris Corbyn
- */
-interface Swift_Mime_Header
-{
-    /** Text headers */
-    const TYPE_TEXT = 2;
-
-    /**  headers (text + params) */
-    const TYPE_PARAMETERIZED = 6;
-
-    /** Mailbox and address headers */
-    const TYPE_MAILBOX = 8;
-
-    /** Date and time headers */
-    const TYPE_DATE = 16;
-
-    /** Identification headers */
-    const TYPE_ID = 32;
-
-    /** Address path headers */
-    const TYPE_PATH = 64;
-
-    /**
-     * Get the type of Header that this instance represents.
-     *
-     * @see TYPE_TEXT, TYPE_PARAMETERIZED, TYPE_MAILBOX
-     * @see TYPE_DATE, TYPE_ID, TYPE_PATH
-     *
-     * @return integer
-     */
-    public function getFieldType();
-
-    /**
-     * Set the model for the field body.
-     *
-     * The actual types needed will vary depending upon the type of Header.
-     *
-     * @param mixed $model
-     */
-    public function setFieldBodyModel($model);
-
-    /**
-     * Set the charset used when rendering the Header.
-     *
-     * @param string $charset
-     */
-    public function setCharset($charset);
-
-    /**
-     * Get the model for the field body.
-     *
-     * The return type depends on the specifics of the Header.
-     *
-     * @return mixed
-     */
-    public function getFieldBodyModel();
-
-    /**
-     * Get the name of this header (e.g. Subject).
-     *
-     * The name is an identifier and as such will be immutable.
-     *
-     * @return string
-     */
-    public function getFieldName();
-
-    /**
-     * Get the field body, prepared for folding into a final header value.
-     *
-     * @return string
-     */
-    public function getFieldBody();
-
-    /**
-     * Get this Header rendered as a compliant string.
-     *
-     * @return string
-     */
-    public function toString();
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

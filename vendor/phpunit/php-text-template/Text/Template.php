@@ -1,164 +1,53 @@
-<?php
-/**
- * Text_Template
- *
- * Copyright (c) 2009-2012, Sebastian Bergmann <sb@sebastian-bergmann.de>.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *
- *   * Neither the name of Sebastian Bergmann nor the names of his
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * @category   Text
- * @package    Template
- * @author     Sebastian Bergmann <sb@sebastian-bergmann.de>
- * @copyright  2009-2012 Sebastian Bergmann <sb@sebastian-bergmann.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @link       http://github.com/sebastianbergmann/php-text-template
- * @since      File available since Release 1.0.0
- */
-
-/**
- * A simple template engine.
- *
- * @category   Text
- * @package    Template
- * @author     Sebastian Bergmann <sb@sebastian-bergmann.de>
- * @copyright  2009-2012 Sebastian Bergmann <sb@sebastian-bergmann.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @version    Release: @package_version@
- * @link       http://github.com/sebastianbergmann/php-text-template
- * @since      Class available since Release 1.0.0
- */
-class Text_Template
-{
-    /**
-     * @var string
-     */
-    protected $template = '';
-
-    /**
-     * @var array
-     */
-    protected $values = array();
-
-    /**
-     * Constructor.
-     *
-     * @param  string $file
-     * @throws InvalidArgumentException
-     */
-    public function __construct($file = '')
-    {
-        $this->setFile($file);
-    }
-
-    /**
-     * Sets the template file.
-     *
-     * @param  string $file
-     * @throws InvalidArgumentException
-     */
-    public function setFile($file)
-    {
-        $distFile = $file . '.dist';
-
-        if (file_exists($file)) {
-            $this->template = file_get_contents($file);
-        }
-
-        else if (file_exists($distFile)) {
-            $this->template = file_get_contents($distFile);
-        }
-
-        else {
-            throw new InvalidArgumentException(
-              'Template file could not be loaded.'
-            );
-        }
-    }
-
-    /**
-     * Sets one or more template variables.
-     *
-     * @param  array   $values
-     * @param  boolean $merge
-     */
-    public function setVar(array $values, $merge = TRUE)
-    {
-        if (!$merge || empty($this->values)) {
-            $this->values = $values;
-        } else {
-            $this->values = array_merge($this->values, $values);
-        }
-    }
-
-    /**
-     * Renders the template and returns the result.
-     *
-     * @return string
-     */
-    public function render()
-    {
-        $keys = array();
-
-        foreach ($this->values as $key => $value) {
-            $keys[] = '{' . $key . '}';
-        }
-
-        return str_replace($keys, $this->values, $this->template);
-    }
-
-    /**
-     * Renders the template and writes the result to a file.
-     *
-     * @param string $target
-     */
-    public function renderTo($target)
-    {
-        $fp = @fopen($target, 'wt');
-
-        if ($fp) {
-            fwrite($fp, $this->render());
-            fclose($fp);
-        } else {
-            $error = error_get_last();
-
-            throw new RuntimeException(
-              sprintf(
-                'Could not write to %s: %s',
-                $target,
-                substr(
-                  $error['message'],
-                  strpos($error['message'], ':') + 2
-                )
-              )
-            );
-        }
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

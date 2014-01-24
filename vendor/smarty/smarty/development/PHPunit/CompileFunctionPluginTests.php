@@ -1,63 +1,44 @@
-<?php
-/**
-* Smarty PHPunit tests compilation of function plugins
-*
-* @package PHPunit
-* @author Uwe Tews
-*/
-
-/**
-* class for function plugin tests
-*/
-class CompileFunctionPluginTests extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $this->smarty = SmartyTests::$smarty;
-        SmartyTests::init();
-    }
-
-    static function isRunnable()
-    {
-        return true;
-    }
-
-    /**
-    * test function plugin tag in template file
-    */
-    public function testFunctionPluginFromTemplateFile()
-    {
-        $tpl = $this->smarty->createTemplate('functionplugintest.tpl', $this->smarty);
-        $this->assertEquals("10", $this->smarty->fetch($tpl));
-    }
-    /**
-    * test function plugin tag in compiled template file
-    */
-    public function testFunctionPluginFromCompiledTemplateFile()
-    {
-        $this->smarty->force_compile = false;
-        $tpl = $this->smarty->createTemplate('functionplugintest.tpl', $this->smarty);
-        $this->assertEquals("10", $this->smarty->fetch($tpl));
-    }
-    /**
-    * test function plugin function definition in script
-    */
-    public function testFunctionPluginRegisteredFunction()
-    {
-        $this->smarty->registerPlugin(Smarty::PLUGIN_FUNCTION,'plugintest', 'myplugintest');
-        $tpl = $this->smarty->createTemplate('eval:{plugintest foo=bar}', $this->smarty);
-        $this->assertEquals("plugin test called bar", $this->smarty->fetch($tpl));
-    }
-
-    /**
-    * test muiltiline tags
-    */
-    public function testMultiLineTags()
-    {
-        $this->assertEquals("10", $this->smarty->fetch("eval:{counter\n\tstart=10}"));
-    }
-}
-        function myplugintest($params, &$smarty)
-        {
-            return "plugin test called $params[foo]";
-        }
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

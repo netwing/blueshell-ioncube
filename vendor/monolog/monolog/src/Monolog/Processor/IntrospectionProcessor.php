@@ -1,72 +1,41 @@
-<?php
-
-/*
- * This file is part of the Monolog package.
- *
- * (c) Jordi Boggiano <j.boggiano@seld.be>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Monolog\Processor;
-
-use Monolog\Logger;
-
-/**
- * Injects line/file:class/function where the log message came from
- *
- * Warning: This only works if the handler processes the logs directly.
- * If you put the processor on a handler that is behind a FingersCrossedHandler
- * for example, the processor will only be called once the trigger level is reached,
- * and all the log records will have the same file/line/.. data from the call that
- * triggered the FingersCrossedHandler.
- *
- * @author Jordi Boggiano <j.boggiano@seld.be>
- */
-class IntrospectionProcessor
-{
-    private $level;
-
-    public function __construct($level = Logger::DEBUG)
-    {
-        $this->level = $level;
-    }
-
-    /**
-     * @param  array $record
-     * @return array
-     */
-    public function __invoke(array $record)
-    {
-        // return if the level is not high enough
-        if ($record['level'] < $this->level) {
-            return $record;
-        }
-
-        $trace = debug_backtrace();
-
-        // skip first since it's always the current method
-        array_shift($trace);
-        // the call_user_func call is also skipped
-        array_shift($trace);
-
-        $i = 0;
-        while (isset($trace[$i]['class']) && false !== strpos($trace[$i]['class'], 'Monolog\\')) {
-            $i++;
-        }
-
-        // we should have the call source now
-        $record['extra'] = array_merge(
-            $record['extra'],
-            array(
-                'file'      => isset($trace[$i-1]['file']) ? $trace[$i-1]['file'] : null,
-                'line'      => isset($trace[$i-1]['line']) ? $trace[$i-1]['line'] : null,
-                'class'     => isset($trace[$i]['class']) ? $trace[$i]['class'] : null,
-                'function'  => isset($trace[$i]['function']) ? $trace[$i]['function'] : null,
-            )
-        );
-
-        return $record;
-    }
-}
+<?php //0046a
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
